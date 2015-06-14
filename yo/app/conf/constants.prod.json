@@ -1,0 +1,4 @@
+{
+	"name": "production",
+    "apiEndpoint": "http://pyrogress-env.elasticbeanstalk.com"
+}

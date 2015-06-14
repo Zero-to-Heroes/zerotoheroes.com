@@ -1,0 +1,11 @@
+.classpath
+.project
+.settings
+target
+tmp-git-deployment-staging
+yo/node_modules
+yo/dist
+yo/.tmp
+yo/.sass-cache
+yo/bower_components
+/*.log

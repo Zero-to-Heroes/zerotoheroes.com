@@ -1,0 +1,4 @@
+{
+	"name": "development",
+    "apiEndpoint": "http://localhost:8080"
+}

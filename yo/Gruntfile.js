@@ -455,6 +455,10 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
+  grunt.registerTask('dbg', [
+    'wiredep'
+  ]);
+
   grunt.registerTask('default', [
     'newer:jshint',
     'test',

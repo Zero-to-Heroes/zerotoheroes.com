@@ -16,13 +16,14 @@
 	</head>
 	<body ng-app="app">
 
-		<navbar></navbar> 
-
-		<div class="content">
-			<div ng-view></div>
+		<div class="main">
+			<div class="header">
+				<h1>Zero to Heroes</h1>
+			</div>
+			<div ng-view class="content"></div>
+			<div class="footer"></div>
 		</div>
 
-		<div class="footer"></div>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 		<script>
@@ -69,6 +70,7 @@
 		<script src="scripts/app.js"></script>
 		<script src="scripts/services.js"></script>
 		<script src="scripts/controllers/home.js"></script>
+		<script src="scripts/controllers/thankyou.js"></script>
 		<!-- endbuild -->
 
 		<!-- When calling the grunt task processhtml, the following scripts will automatically be included. This is for now used when doing local-only development -->

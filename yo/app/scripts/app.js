@@ -18,6 +18,10 @@ app.config(['$routeProvider',
         templateUrl: 'views/home-page.html',
         controller: 'HomePageCtrl'
       }).
+      when('/thankyou', {
+        templateUrl: 'views/thankyou.html',
+        controller: 'ThankYouCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });

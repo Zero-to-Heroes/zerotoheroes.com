@@ -19,6 +19,11 @@ p {
 	color: #f0f0f0;
 }
 
+.logo {
+	width: 150px;
+	margin-left: -75px;
+}
+
 .main {
 	width: 800px;
 	height: 100%;

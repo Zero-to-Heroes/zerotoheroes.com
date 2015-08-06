@@ -14,6 +14,11 @@ h1 {
 	margin-bottom: 50px;
 }
 
+h2 {
+	font-size: 24px;
+	border-bottom: 1px solid #ededed;
+}
+
 p {
 	margin: auto;
 	color: #f0f0f0;
@@ -40,4 +45,5 @@ p {
 .content {
 	max-width: 600px;
 	margin: auto;
+	padding-bottom: 50px;
 }

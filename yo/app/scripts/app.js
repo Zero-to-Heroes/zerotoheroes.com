@@ -4,8 +4,6 @@
 
 var app = angular.module('app', [
   'ngRoute',
-  'ngDragDrop',
-  'ngCookies', 
   'controllers',
   'services'
 ]);

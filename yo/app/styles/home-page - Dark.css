@@ -1,15 +1,10 @@
-.homePage {
-  max-width: 470px;
-  margin: auto;
-}
-
 .comingSoon {
-	color: #FFB700;
+	color: orange;
 }
 
 .headline {
   text-align: center;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .subheadline {
@@ -28,34 +23,36 @@
 
 .addButton, .addButton:focus, .addButton:active  {
   padding: 0;
-
-  -moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.7);
-  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.7);
-  box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.7);
-
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0.05,#FFB700),color-stop(1,#F0A400));
-  background: -moz-linear-gradient(center top,#FFB700 5%,#F0A400 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFB700',endColorstr='#F0A400');
-  background-color: #FFB700;
-
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  border: 1px solid #EFAF00;
-
-  color: #9B4C00;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  color: white;
   text-align: center;
   text-decoration: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   width: 200px;
   height: 40px;
   font-size: 20px;
-  font-weight: bold;
-  font-family: 'Open Sans';
+  font-weight: normal;
   line-height: 20px;
 }
 
 .input-group-btn {
   display: inherit;
+}
+
+.addButton, .addButton:active, .addButton:focus {
+	outline: none !important;
+	border: 0 !important;
+	color: white !important;
 }
 
 .followUs, .followUs:hover {

@@ -36,7 +36,7 @@
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 			} else { 
-				console.log("Running non-production google analytics replacement now"); 
+				console.log("Running non-production google analytics replacement now from " + document.location.hostname); 
 				ga = function(arg) { 
 					console.log("ga:", arguments);
 				};

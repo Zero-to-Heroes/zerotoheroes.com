@@ -16,6 +16,10 @@ app.config(['$routeProvider',
         templateUrl: 'views/home-page.html',
         controller: 'HomePageCtrl'
       }).
+      when('/uploadDetails', {
+        templateUrl: 'views/uploadDetails.html',
+        controller: 'UploadDetailsCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });

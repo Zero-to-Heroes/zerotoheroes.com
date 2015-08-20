@@ -6,6 +6,9 @@
     "url": "https://github.com/sebastientromp/simple-rankings.git"
   },
   "dependencies": {
+    "angular": "^1.4.4",
+    "angular-ui-bootstrap": "^0.13.3",
+    "bootstrap": "^3.3.5"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

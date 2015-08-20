@@ -1,3 +1,58 @@
-<div >
-	Video upload
+<input type="file" onchange="angular.element(this).scope().fileNameChanged(this.files)" id="fileInput" />
+
+<div class="videogular-container">
+	<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-theme="config.theme">
+		<vg-media vg-src="sources">
+		</vg-media>
+
+		<vg-controls>
+			<!-- <vg-play-pause-button></vg-play-pause-button> -->
+			<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+			<vg-scrub-bar id="scrubBar">
+				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+				<div class="markerZone" ng-show="review.beginning >= 0"  ng-style="{'left': markerLeft, 'width': zoneWidth}">
+					<div class="marker leftMarker" />
+					<div class="zone" />
+					<div class="marker rightMarker" />
+				</div>
+			</vg-scrub-bar>
+			<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+			<!-- <vg-volume>
+				<vg-mute-button></vg-mute-button>
+				<vg-volume-bar></vg-volume-bar>
+			</vg-volume>
+			<vg-fullscreen-button></vg-fullscreen-button> -->
+		</vg-controls>
+
+		<!-- <vg-overlay-play></vg-overlay-play> -->
+		<!-- <vg-poster vg-url='controller.config.plugins.poster'></vg-poster> -->
+	</videogular>
 </div>
+
+<div class="editionStatus">
+	
+
+</div>
+
+<div class="editingTools">
+	<button ng-click="setBeginning()">{ BEG</button>
+	<button ng-click="playPause()">{{playLabel}}</button>
+	<button ng-click="setEnding()">END }</button>
+</div>
+
+<div>
+	<select ng-model="review.sport">
+		<option>Pick a sport...</option>
+		<option>Squash</option>
+		<option>Badminton</option>
+		<option>League of Legends</option>
+		<option>Starcraft 2</option>
+		<option>Other</option>
+	</select>
+	<input type="text" placeholder="Name your video review" ng-model="review.name"/>
+	<span>by</span>
+	<input type="text" placeholder="Your name?" style="width: 150px" ng-model="review.author"/>
+	<textarea placeholder="Any additional comments?" style="width: 100%" ng-model="review.description"></textarea>
+</div>
+
+<button ng-click="upload()">Upload</button>

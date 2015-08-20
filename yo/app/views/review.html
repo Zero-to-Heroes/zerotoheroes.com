@@ -1,0 +1,62 @@
+<div class="videogular-container">
+	<videogular vg-player-ready="onPlayerReady($API)" vg-theme="config.theme">
+		<vg-media vg-src="sources">
+		</vg-media>
+
+		<vg-controls>
+			<vg-play-pause-button></vg-play-pause-button>
+			<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+			<vg-scrub-bar>
+				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+			</vg-scrub-bar>
+			<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+			<vg-volume>
+				<vg-mute-button></vg-mute-button>
+				<vg-volume-bar></vg-volume-bar>
+			</vg-volume>
+			<vg-fullscreen-button></vg-fullscreen-button>
+		</vg-controls>
+
+		<vg-overlay-play></vg-overlay-play>
+	</videogular>
+</div>
+<hr/>
+<div>
+	<span>{{review.sport}}</span>
+	<span>{{review.name}}</span>
+	<span>by</span>
+	<span>{{review.author}}</span><br/>
+	<span style="width: 100%" ng-readonly="true">{{review.description}}</span>
+	<button ng-click="askAPro()">Ask A Pro!</button>
+</div>
+<hr/>
+<div>
+	<input ng-model="commentAuthor" placeholder="Your name" style="width: 20%"/>
+	<textarea placeholder="{{'Help ' + review.author + '?'}}" style="width: 70%" ng-model="commentText" />	
+	<button ng-click="addComment()" style="float: right">Comment</button>
+</div>
+
+<div ng-repeat="comment in review.comments">
+	<span>{{comment.author}}</span>
+	<span>{{comment.text}}</span>
+</div>
+
+<div ng-show="selectedCoach">
+	Thanks for asking {{coach.name}} for advice! This feature is not automated yet, and we have just sent them an email about your request. They should contact you soon. Stay tuned!
+</div>
+
+<script type="text/ng-template" id="myModalContent.html">
+	<div class="modal-header">
+        <h3 class="modal-title">Choose your pro</h3>
+    </div>
+    <div class="modal-body">
+        <div ng-repeat="coach in coaches">
+			<span>{{coach.tariff}}</span>
+			<span>{{coach.name}}</span>
+			<span>{{coach.level}}</span>
+			<button ng-click="ok(coach)">-></button>
+		</div>
+    </div>
+</script>
+
+    

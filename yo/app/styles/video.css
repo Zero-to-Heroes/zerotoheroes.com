@@ -1,0 +1,26 @@
+.markerZone {
+  position: relative;
+}
+
+.marker {
+  margin-top: -5px;
+  padding-top: 10px;
+  width: 10px;
+  height: 2px;
+  background-color: orange;
+  position: absolute;
+}
+
+.leftMarker {
+  left: 0;
+}
+
+.rightMarker {
+  right: 0;
+  margin-top: -10px;
+}
+
+.zone {
+  background-color: brown;
+  height: 5px;
+} 

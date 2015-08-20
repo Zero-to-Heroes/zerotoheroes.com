@@ -9,11 +9,12 @@
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<!-- build:css(.) styles/vendor.css -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-		<link rel="stylesheet" href="bower_components/video.js/dist/video-js/video-js.css" />
+		<link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css" />
 		<!-- endbuild -->
 		<!-- build:css(.tmp) styles/main.css -->
 		<link rel="stylesheet" href="styles/main.css" />
 		<link rel="stylesheet" href="styles/home-page.css" />
+		<link rel="stylesheet" href="styles/video.css" />
 		<!-- endbuild -->
 
 		<!-- Video.js -->
@@ -69,7 +70,34 @@
 		<script src="bower_components/angular-route/angular-route.js"></script>
 		<script src="bower_components/angular-resource/angular-resource.js"></script>
 		<script src="bower_components/angular-mocks/angular-mocks.js"></script>
-		<script src="bower_components/video.js/dist/video-js/video.js"></script>
+		<script src="bower_components/videogular/videogular.js"></script>
+		<script src="bower_components/videogular-controls/vg-controls.js"></script>
+		<script src="bower_components/videogular-buffering/vg-buffering.js"></script>
+		<script src="bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+		<script src="bower_components/videogular-poster/vg-poster.js"></script>
+		<script src="bower_components/videogular-ima-ads/vg-ima-ads.js"></script>
+		<script src="bower_components/waypoints/waypoints.js"></script>
+		<script src="bower_components/SHA-1/sha1.js"></script>
+		<script src="bower_components/angulartics/src/angulartics.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-adobe.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-chartbeat.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-cnzz.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-flurry.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-ga-cordova.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-ga.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-gtm.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-kissmetrics.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-mixpanel.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-piwik.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-scroll.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-segmentio.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-splunk.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-woopra.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-marketo.js"></script>
+		<script src="bower_components/angulartics/src/angulartics-intercom.js"></script>
+		<script src="bower_components/videogular-angulartics/vg-analytics.js"></script>
+		<script src="bower_components/ngDialog/js/ngDialog.js"></script>
+		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 
@@ -79,6 +107,7 @@
 		<script src="scripts/services.js"></script>
 		<script src="scripts/controllers/home.js"></script>
 		<script src="scripts/controllers/uploadDetails.js"></script>
+		<script src="scripts/controllers/review.js"></script>
 		<!-- endbuild -->
 
 		<!-- When calling the grunt task processhtml, the following scripts will automatically be included. This is for now used when doing local-only development -->

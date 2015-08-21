@@ -1,0 +1,97 @@
+.review .left {
+  display: table-cell;
+  width: 25%;
+  padding-right: 30px;
+}
+
+.review .center {
+  display: table-cell;
+}
+
+.review .right {
+  display: table-cell;
+  width: 25%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.review input, .review textarea {
+  width: 100%;
+}
+
+.commentButton {
+  float: right;
+}
+
+.commentText {
+  font-size: 14px;
+}
+
+.choose-pro-header {
+  background-color: #663300;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+
+.choose-pro-header .popup-title {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.choose-pro-header .close-button {
+  float: right;
+}
+
+.choose-pro .coach-row {
+  text-align: center;
+  height: 50px;
+  margin-bottom: 0;
+}
+
+.choose-pro .coach-row span, .choose-pro .coach-row .select-coach {
+  vertical-align: middle;
+}
+
+.choose-pro .even {
+  background-color: #FF962D;
+}
+
+.choose-pro .odd {
+  background-color: #F2BB55;
+}
+
+.choose-pro .tariff {
+  display: table-cell;
+  width: 15%;
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+.choose-pro .name {
+  display: table-cell;
+  width: 25%;
+}
+
+.choose-pro .qualifications {
+  display: table-cell;
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+.choose-pro .select-coach {
+  display: table-cell;
+  width: 20%;
+}
+
+.coach-selected {
+  background-color: #F2BB55;
+  font-size: 18px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.coach-selected hr {
+  margin-bottom: 20px;
+}

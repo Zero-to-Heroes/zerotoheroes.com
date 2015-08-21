@@ -1,0 +1,58 @@
+.reviewSummary {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.sportsTag {
+  display: block;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+  color: #333399;
+  background-color: #66CCFF;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.reviewSummary .left {
+  width: 30%;
+  display: table-cell;
+  padding: 10px 30px 10px 10px;
+}
+
+.author {
+  float: right;
+  width: 100px;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}
+
+.reviewSummary .center {
+  /*width: 50%;*/
+  display: table-cell;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reviewSummary .right {
+  width: 15%;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.videoTitle {
+  color: #006600;
+  font-weight: bold;
+  display: block;
+}
+
+.videoDescription {
+  font-size: 14px;
+}

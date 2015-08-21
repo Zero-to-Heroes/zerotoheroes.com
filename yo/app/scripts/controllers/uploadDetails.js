@@ -9,7 +9,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			'beginning': -1,
 			'ending': -1,
 			'sport': '',
-			'name': '',
+			'title': '',
 			'author': '',
 			'description': '',
 			'comments': [],
@@ -88,7 +88,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			Api.Reviews.save($scope.review, 
 				function(data) {
 					console.log(data.videoUrl);
-					$location.path('/t/' + data.videoUrl);
+					$location.path('/r/' + data.videoUrl);
 				},
 				function(error) {
 					console.error('Something went wrong!!' + error);

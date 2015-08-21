@@ -55,3 +55,12 @@ p {
 	margin: auto;
 	padding-bottom: 50px;
 }
+
+.table {
+	display: table;
+	table-layout: fixed;
+}
+
+.top {
+	vertical-align: top;
+}

@@ -1,0 +1,32 @@
+<tabset>
+    <tab heading="All videos" select="retrieveVideos(false)">
+    	<div ng-repeat="video in videos" class="reviewSummary">
+    		<div class="left">
+				<span class="sportsTag">{{video.sport}}</span>
+				<span class="author">{{video.author}}</span>
+			</div>
+			<div class="center">
+				<span class="videoTitle">{{video.title}}</span>
+				<span class="videoDescription">{{video.description}}</span>
+			</div>
+			<div class="right">
+				<button ng-click="goTo(video.id)">-></button>
+			</div>
+		</div>
+    </tab>
+    <tab heading="My videos" select="retrieveVideos(true)">
+		<div ng-repeat="video in videos" class="reviewSummary">
+    		<div class="left">
+				<span class="sportsTag">{{video.sport}}</span>
+				<span class="author">{{video.author}}</span>
+			</div>
+			<div class="center">
+				<span class="videoTitle">{{video.title}}</span>
+				<span class="videoDescription">{{video.description}}</span>
+			</div>
+			<div class="right">
+				<button ng-click="goTo(video.id)">-></button>
+			</div>
+		</div>
+    </tab>
+</tabset>

@@ -11,7 +11,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.onPlayerReady = function(API) {
 			$scope.API = API;
 			// Load the video
-			console.log($routeParams.reviewId);
 			$timeout(function() { 
 				Api.Reviews.get({id: $routeParams.reviewId}, function(data) {
 					$scope.review = data;
@@ -39,6 +38,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
   			);
 		};
 
+		// TODO: replace by a popover from boostrap, it's closer to what we want
 		$scope.askAPro = function() {
 			var modalInstance = $modal.open({
 	      		templateUrl: 'myModalContent.html',
@@ -53,10 +53,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 	    	modalInstance.result.then(function (selected) {
 	    			console.log("result with selected = " + selected);
+	    			// TODO: real service here
 		      		$scope.selectedCoach = selected;
 		    	}, 
 		    	function () {
-		      		$log.info('Modal dismissed at: ' + new Date());
+		      		console.log('Modal dismissed at: ' + new Date());
 		    	}
 		    );
 		};
@@ -74,5 +75,9 @@ angular.module('controllers').controller('ModalInstanceCtrl', function ($scope, 
   $scope.ok = function (coach) {
   	console.log(coach);
     $modalInstance.close(coach);
+  };
+
+  $scope.close = function () {
+    $modalInstance.dismiss('close');
   };
 });

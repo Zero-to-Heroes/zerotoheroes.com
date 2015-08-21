@@ -21,42 +21,56 @@
 	</videogular>
 </div>
 <hr/>
-<div>
-	<span>{{review.sport}}</span>
-	<span>{{review.name}}</span>
-	<span>by</span>
-	<span>{{review.author}}</span><br/>
-	<span style="width: 100%" ng-readonly="true">{{review.description}}</span>
-	<button ng-click="askAPro()">Ask A Pro!</button>
+<div class="table review">
+	<div class="left">
+		<span class="sportsTag">{{review.sport}}</span>
+		<span class="author">{{review.author}}</span>
+	</div>
+	<div class="center">
+		<span class="videoTitle">{{review.title}}</span>
+		<span class="videoDescription" ng-readonly="true">{{review.description}}</span>
+	</div>
+	<div class="right">
+		<button ng-click="askAPro()">Ask A Pro!</button>
+	</div>
 </div>
 <hr/>
-<div>
-	<input ng-model="commentAuthor" placeholder="Your name" style="width: 20%"/>
-	<textarea placeholder="{{'Help ' + review.author + '?'}}" style="width: 70%" ng-model="commentText" />	
-	<button ng-click="addComment()" style="float: right">Comment</button>
-</div>
-
-<div ng-repeat="comment in review.comments">
-	<span>{{comment.author}}</span>
-	<span>{{comment.text}}</span>
-</div>
-
 <div ng-show="selectedCoach">
-	Thanks for asking {{coach.name}} for advice! This feature is not automated yet, and we have just sent them an email about your request. They should contact you soon. Stay tuned!
+	<div class="coach-selected">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
+	<hr/>
+</div>
+<div class="table review">
+	<div class="left top">
+		<input ng-model="commentAuthor" placeholder="Your name"/>
+	</div>
+	<div class="center">
+		<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="comment" />	
+		<button ng-click="addComment()" class="commentButton">Publish</button>
+	</div>
+</div>
+
+<div ng-repeat="comment in review.comments" class="comment review table">
+	<div class="left top">
+		<span class="author">{{comment.author}}</span>
+	</div>
+	<div class="center">
+		<span class="commentText">{{comment.text}}</span>
+	</div>	
 </div>
 
 <script type="text/ng-template" id="myModalContent.html">
-	<div class="modal-header">
-        <h3 class="modal-title">Choose your pro</h3>
+	<div class="choose-pro-header">
+        <h3 class="popup-title">Choose your pro</h3>
+        <button class="close-button" on-click="close()">X</button>
     </div>
-    <div class="modal-body">
-        <div ng-repeat="coach in coaches">
-			<span>{{coach.tariff}}</span>
-			<span>{{coach.name}}</span>
-			<span>{{coach.level}}</span>
-			<button ng-click="ok(coach)">-></button>
+    <div class="choose-pro">
+        <div ng-repeat="coach in coaches" class="table coach-row" ng-class-even="'even'" ng-class-odd="'odd'">
+			<span class="tariff">{{coach.tariff}}</span>
+			<span class="name">{{coach.name}}</span>
+			<span class="qualifications">{{coach.level}}</span>
+			<div class="select-coach">
+				<button ng-click="ok(coach)">-></button>
+			</div>
 		</div>
     </div>
 </script>
-
-    

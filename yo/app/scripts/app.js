@@ -4,7 +4,6 @@
 
 var app = angular.module('app', [
   "ngSanitize",
-  "ngDialog",
   "com.2fdevs.videogular",
   "com.2fdevs.videogular.plugins.controls",
   "com.2fdevs.videogular.plugins.overlayplay",
@@ -27,9 +26,13 @@ app.config(['$routeProvider',
         templateUrl: 'views/uploadDetails.html',
         controller: 'UploadDetailsCtrl'
       }).
-      when('/t/:reviewId', {
+      when('/r/:reviewId', {
         templateUrl: 'views/review.html',
         controller: 'ReviewCtrl'
+      }).
+      when('/videoListing', {
+        templateUrl: 'views/videoListing.html',
+        controller: 'VideoListingCtrl'
       }).
       otherwise({
         redirectTo: '/'

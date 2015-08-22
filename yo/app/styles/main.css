@@ -61,6 +61,14 @@ p {
 	table-layout: fixed;
 }
 
+.table-cell {
+	display: table-cell;
+}
+
 .top {
 	vertical-align: top;
+}
+
+.table-row {
+	display: table-row;
 }

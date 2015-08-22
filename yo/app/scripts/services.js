@@ -15,6 +15,21 @@ services.factory('Api', ['$resource', 'ENV',
 	}
 ]);
 
+services.factory('User', [
+	function () {
+		var name ;
+
+		return {
+            getName: function () {
+                return name;
+            },
+            setName: function(value) {
+                name = value;
+            }
+        };
+	}
+]);
+
 /*services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', 
 	function ($http, $window, $timeout, Api) {
 		var service = {};

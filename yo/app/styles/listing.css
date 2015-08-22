@@ -24,7 +24,7 @@
   padding: 10px 30px 10px 10px;
 }
 
-.author {
+.author, .review .user-name {
   float: right;
   width: 100px;
   margin-top: 10px;

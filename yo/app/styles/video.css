@@ -1,26 +1,50 @@
-.markerZone {
-  position: relative;
+.video-information {
+  font-size: 16px;
 }
 
-.marker {
-  margin-top: -5px;
-  padding-top: 10px;
-  width: 10px;
-  height: 2px;
-  background-color: orange;
-  position: absolute;
+.video-information-title {
+  font-weight: bolder;
+  font-size: 24px;
+  display: block;
+  margin-bottom: 20px;
 }
 
-.leftMarker {
-  left: 0;
+.video-information input {
+  height: 30px;
+  display: table-cell;
+  width: 100%;
 }
 
-.rightMarker {
-  right: 0;
-  margin-top: -10px;
+.video-information textarea {
+  width: 70%;
+  display: inline-block;
 }
 
-.zone {
-  background-color: brown;
-  height: 5px;
-} 
+.video-information-details {
+  width: 100%;
+}
+
+.editing-tools {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.editing-tools .buttons {
+  //margin-top: 20px;
+  text-align: center;
+}
+
+.editing-tools .error {
+  font-size: 16px;
+  color: red;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.ngrs-range-slider {
+  margin-bottom: 20px;
+}
+
+.uploadFileButton {
+  margin-bottom: 20px;
+}

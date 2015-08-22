@@ -9,7 +9,7 @@
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<!-- build:css(.) styles/vendor.css -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-		<link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css" />
+		<link rel="stylesheet" href="bower_components/angular-rangeslider/angular.rangeSlider.css">
 		<!-- endbuild -->
 		<!-- build:css(.tmp) styles/main.css -->
 		<link rel="stylesheet" href="styles/main.css" />
@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="styles/video.css" />
 		<link rel="stylesheet" href="styles/listing.css" />
 		<link rel="stylesheet" href="styles/review.css" />
+		<link rel="stylesheet" href="styles/navigation.css" />
 		<!-- endbuild -->
 
 		<!-- Video.js -->
@@ -99,6 +100,7 @@
 		<script src="bower_components/angulartics/src/angulartics-intercom.js"></script>
 		<script src="bower_components/videogular-angulartics/vg-analytics.js"></script>
 		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+		<script src="bower_components/angular-rangeslider/angular.rangeSlider.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 
@@ -110,6 +112,9 @@
 		<script src="scripts/controllers/uploadDetails.js"></script>
 		<script src="scripts/controllers/review.js"></script>
 		<script src="scripts/controllers/videoListing.js"></script>
+
+		<script src="scripts/directives/navigation.js"></script>		
+		<script src="scripts/directives/nameInput.js"></script>		
 		<!-- endbuild -->
 
 		<!-- When calling the grunt task processhtml, the following scripts will automatically be included. This is for now used when doing local-only development -->

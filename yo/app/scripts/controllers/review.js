@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', '$modal', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, $modal) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', '$modal', 'User', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, $modal, User) { 
 
 		$scope.API = null;
 		$scope.sources = null;
@@ -27,7 +27,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.addComment = function() {
 			console.log($scope.newComment);
-			Api.Reviews.save({id: $scope.review.id}, {'author': $scope.commentAuthor, 'text': $scope.commentText}, 
+			Api.Reviews.save({id: $scope.review.id}, {'author': User.getName(), 'text': $scope.commentText}, 
   				function(data) {
 		  			$scope.review.comments.push(data.newComment);
   				}, 

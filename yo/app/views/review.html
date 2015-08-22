@@ -1,3 +1,5 @@
+<div zth-navigation></div>
+
 <div class="videogular-container">
 	<videogular vg-player-ready="onPlayerReady($API)" vg-theme="config.theme">
 		<vg-media vg-src="sources">
@@ -41,7 +43,7 @@
 </div>
 <div class="table review">
 	<div class="left top">
-		<input ng-model="commentAuthor" placeholder="Your name"/>
+		<div zth-name-input/>
 	</div>
 	<div class="center">
 		<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="comment" />	

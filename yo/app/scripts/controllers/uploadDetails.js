@@ -18,11 +18,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.API = null;
 		$scope.sources = null;
-		$scope.playLabel = "Play";
-		$scope.markerLeft = 0;
-		$scope.zoneWidth = 0;
-
-		$scope.temp = null;
 
 		$scope.onPlayerReady = function(API) {
 			$scope.API = API;
@@ -41,16 +36,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$scope.review.fileType = fileObj.type;
 		};
 
-		$scope.setBeginning = function() {
-			$scope.review.beginning = $scope.API.currentTime;
-			updateMarkersPosition()
-		};
-
-		$scope.setEnding = function() {
-			$scope.review.ending = $scope.API.currentTime;
-			updateMarkersPosition()
-		};
-
 		$scope.onSourceChanged = function(sources) {
 			$timeout(function() { updateMarkers() }, 333);
 		};
@@ -58,31 +43,37 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		function updateMarkers() {
 			$scope.review.beginning = 0;
 			$scope.review.ending = $scope.API.totalTime;
-			updateMarkersPosition();
+			$scope.sliderMax = $scope.API.totalTime;
+			$scope.updateTotalTime();
 		};
 
-		function updateMarkersPosition() {
-			$scope.markerLeft = $scope.computeLeft();
-			$scope.zoneWidth = $scope.computeZoneWidth();
+		$scope.updateTotalTime = function() {
+			console.log('updating total time');
+			$scope.clipDuration = $scope.review.ending - $scope.review.beginning;
 		};
 
-		$scope.playPause = function() {
-			$scope.API.playPause();
-			$scope.playLabel = $scope.API.currentState == "play" ? "Pause" : "Play";
-		};
+		$scope.min = function(newValue) {
+			if (newValue && newValue != $scope.review.beginning) {
+				$scope.review.beginning = newValue;
+				$scope.updateTotalTime();
+				$scope.updateVideoPosition(newValue);
+			}
+			return $scope.review.beginning;
+	    };
 
-		$scope.computeLeft = function() {
-			var barLength = document.getElementById('scrubBar').offsetWidth;
-			var percentageTime = $scope.review.beginning / $scope.API.totalTime;
-			return barLength * percentageTime;
-		};
+	    $scope.max = function(newValue) {
+	        if (newValue && newValue != $scope.review.ending) {
+				$scope.review.ending = newValue;
+				$scope.updateTotalTime();
+				$scope.updateVideoPosition(newValue);
+			}
+			return $scope.review.ending;
+	    };
 
-		$scope.computeZoneWidth = function() {
-			var zoneTime = $scope.review.ending - $scope.review.beginning;
-			var percentageTime = zoneTime / $scope.API.totalTime;
-			var barLength = document.getElementById('scrubBar').offsetWidth;
-			return barLength * percentageTime;
-		};
+	    $scope.updateVideoPosition = function(value) {
+	    	console.log('eseking time ' + value);
+	    	$scope.API.seekTime(value / 1000);
+	    }
 
 		$scope.upload = function() {
 			Api.Reviews.save($scope.review, 
@@ -101,3 +92,16 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		};
 	}
 ]);
+
+app.filter('timeFilter', function () {
+    return function (value) {
+    	var s = parseInt(value / 1000);
+        var m = parseInt(s / 60);
+        s = parseInt(s % 60);
+
+        var mStr = (m > 0) ? (m < 10 ? '0' : '') + m + ':' : '00:';
+        var sStr = (s < 10) ? '0' + s : s;
+
+        return mStr + sStr;
+    };
+});

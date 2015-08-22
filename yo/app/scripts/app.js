@@ -11,7 +11,8 @@ var app = angular.module('app', [
   'ngRoute',
   'controllers',
   'services',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui-rangeSlider'
 ]);
 
 
@@ -22,15 +23,15 @@ app.config(['$routeProvider',
         templateUrl: 'views/home-page.html',
         controller: 'HomePageCtrl'
       }).
-      when('/uploadDetails', {
-        templateUrl: 'views/uploadDetails.html',
+      when('/upload', {
+        templateUrl: 'views/upload.html',
         controller: 'UploadDetailsCtrl'
       }).
       when('/r/:reviewId', {
         templateUrl: 'views/review.html',
         controller: 'ReviewCtrl'
       }).
-      when('/videoListing', {
+      when('/reviews', {
         templateUrl: 'views/videoListing.html',
         controller: 'VideoListingCtrl'
       }).

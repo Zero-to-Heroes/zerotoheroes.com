@@ -8,13 +8,29 @@ var services = angular.module('services', ['ngResource', 'config']);
 services.factory('Api', ['$resource', 'ENV', 
 	function($resource, ENV) {
 		return {
-			Login: $resource(ENV.apiEndpoint + url + 'login', {}),
-			Users: $resource(ENV.apiEndpoint + url + 'users', {})
+			Reviews: $resource(ENV.apiEndpoint + url + 'reviews/:id', {id: '@id'}),
+			Coaches: $resource(ENV.apiEndpoint + url + 'coaches/:reviewId', {reviewId: '@reviewId'})
+			//Login: $resource(ENV.apiEndpoint + url + 'login', {})
 		};
 	}
 ]);
 
-services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', 
+services.factory('User', [
+	function () {
+		var name ;
+
+		return {
+            getName: function () {
+                return name;
+            },
+            setName: function(value) {
+                name = value;
+            }
+        };
+	}
+]);
+
+/*services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', 
 	function ($http, $window, $timeout, Api) {
 		var service = {};
 
@@ -55,4 +71,4 @@ services.factory('authInterceptor', function ($rootScope, $q, $window) {
 
 services.config(function ($httpProvider) {
 		$httpProvider.interceptors.push('authInterceptor');
-});
+});*/

@@ -1,0 +1,50 @@
+.video-information {
+  font-size: 16px;
+}
+
+.video-information-title {
+  font-weight: bolder;
+  font-size: 24px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.video-information input {
+  height: 30px;
+  display: table-cell;
+  width: 100%;
+}
+
+.video-information textarea {
+  width: 70%;
+  display: inline-block;
+}
+
+.video-information-details {
+  width: 100%;
+}
+
+.editing-tools {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.editing-tools .buttons {
+  //margin-top: 20px;
+  text-align: center;
+}
+
+.editing-tools .error {
+  font-size: 16px;
+  color: red;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.ngrs-range-slider {
+  margin-bottom: 20px;
+}
+
+.uploadFileButton {
+  margin-bottom: 20px;
+}

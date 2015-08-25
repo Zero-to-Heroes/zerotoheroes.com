@@ -1,0 +1,14 @@
+.upload {
+  margin-bottom: 20px;
+  width: 50%;
+  display: table-cell;
+}
+
+.controls {
+  display: table-cell;
+  text-align: right;
+}
+
+.nameInput {
+  display: inline-block;
+}

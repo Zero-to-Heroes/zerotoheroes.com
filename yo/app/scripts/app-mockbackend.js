@@ -73,7 +73,7 @@ app.requires[app.requires.length] = 'config';
 
 app.run(['$httpBackend', 'ENV', function($httpBackend, ENV) {
   	$httpBackend.whenGET(/^views\//).passThrough();
-  	$httpBackend.whenGET(/^template\//).passThrough();
+  	$httpBackend.whenGET(/^templates\//).passThrough();
 
   	$httpBackend.whenPOST(ENV.apiEndpoint + '/api/reviews').respond(function(method, url, data) {
 		console.log(url);

@@ -7,7 +7,7 @@ app.directive('zthNameInput', ['User', function(User) {
 	return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: 'template/nameInput.html',
+		templateUrl: 'templates/nameInput.html',
 		controller: function($scope, User) {
 			$scope.name = User.getName();
 

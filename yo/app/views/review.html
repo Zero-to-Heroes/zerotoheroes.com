@@ -1,7 +1,7 @@
 <div zth-navigation></div>
 
 <div class="videogular-container">
-	<videogular vg-player-ready="onPlayerReady($API)" vg-theme="config.theme">
+	<videogular vg-player-ready="onPlayerReady($API)">
 		<vg-media vg-src="sources">
 		</vg-media>
 
@@ -43,10 +43,10 @@
 </div>
 <div class="table review">
 	<div class="left top">
-		<div zth-name-input/>
+		<div zth-name-input>&nbsp;</div>
 	</div>
 	<div class="center">
-		<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="comment" />	
+		<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="comment"></textarea>
 		<button ng-click="addComment()" class="commentButton">Publish</button>
 	</div>
 </div>
@@ -67,11 +67,11 @@
     </div>
     <div class="choose-pro">
         <div ng-repeat="coach in coaches" class="table coach-row" ng-class-even="'even'" ng-class-odd="'odd'">
-			<span class="tariff">{{coach.tariff}}</span>
 			<span class="name">{{coach.name}}</span>
 			<span class="qualifications">{{coach.level}}</span>
+			<span class="tariff">{{coach.tariff}}</span>
 			<div class="select-coach">
-				<button ng-click="ok(coach)">-></button>
+				<button ng-click="ok(coach)">Request review</button>
 			</div>
 		</div>
     </div>

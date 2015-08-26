@@ -54,6 +54,7 @@ module.exports = function(config) {
       'bower_components/videogular-angulartics/vg-analytics.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-rangeslider/angular.rangeSlider.js',
+      'bower_components/angular-file-upload/dist/angular-file-upload.min.js',
 
       'app/scripts/app.js',
       'app/scripts/**/*.js',

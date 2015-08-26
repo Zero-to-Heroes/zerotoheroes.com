@@ -1,4 +1,5 @@
 {
 	"name": "production",
-    "apiEndpoint": "http://pyrogress-env.elasticbeanstalk.com"
+    "apiEndpoint": "http://coaching-landing-env.elasticbeanstalk.com",
+	"videoStorageUrl": "https://s3.amazonaws.com/com.zerotoheroes/"
 }

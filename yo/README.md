@@ -92,3 +92,8 @@ mvn install:install-file -Dfile=lib/trueskill-1.0.jar -DgroupId=com.rubberfruits
   * Codeship?
 * Reintegrate protractor for continuous testing
 * Build using Gradle instead of maven
+
+
+
+rmdir /S /Q <dir>
+http://superuser.com/questions/45697/how-to-delete-a-file-in-windows-with-a-too-long-filename

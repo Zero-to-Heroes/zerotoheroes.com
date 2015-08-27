@@ -45,6 +45,7 @@ public class S3Storage implements IFileStorage {
 		this.bucketName = bucketName;
 		this.username = username;
 		this.password = password;
+		log.debug("Initializing storage with bucket: " + bucketName + ", username " + username);
 	}
 
 	public String storeFile(final File file, long fileSize, final IUploadProgress callback) {
@@ -70,11 +71,13 @@ public class S3Storage implements IFileStorage {
 		// the upload is asynchronous (could be an issue if something goes
 		// wrong, we'll have to look at that later)
 		TransferManager transferManager = new TransferManager(new ProfileCredentialsProvider());
+		log.debug("Instanciated transferManager");
 
 		// cf
 		// http://docs.aws.amazon.com/AmazonS3/latest/dev/HLuploadFileJava.html
 		PutObjectRequest request = new PutObjectRequest(bucketName, keyName, file);
 		final Upload upload = transferManager.upload(request.withCannedAcl(CannedAccessControlList.PublicRead));
+		log.debug("Sent upload request");
 		upload.addProgressListener(new ProgressListener() {
 
 			@Override

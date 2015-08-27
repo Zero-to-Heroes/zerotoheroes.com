@@ -34,7 +34,7 @@ public class UploadProgressCallback implements IUploadProgress {
 		// log.debug("review id is " + reviewId);
 		if (progress >= 100 || new Date().getTime() > lastUpdate + UPDATE_DELAY) {
 			Review tempReview = repo.findById(reviewId);
-			// log.debug("temp review is " + tempReview);
+			log.debug("temp review is " + tempReview);
 			// log.debug("current time is " + new Date().getTime() +
 			// " and last update is " + lastUpdate);
 			if (tempReview != null) {

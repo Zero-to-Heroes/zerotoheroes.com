@@ -6,24 +6,27 @@
 			</Pattern>
 		</layout>
 	</appender>
-	
+
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
-	    <file>logs/server.log</file>
+		<file>/var/log/server.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-	      	<!-- daily rollover -->
-	      	<fileNamePattern>logs/server.%d{yyyy-MM-dd}.log</fileNamePattern>
-	
-	      	<!-- keep 30 days' worth of history -->
-	      	<maxHistory>30</maxHistory>
-	    </rollingPolicy>
-	    <append>true</append>
-	    <!-- encoders are assigned the type
-	         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
-	    <encoder>
-	      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-	    </encoder>
-	    
-  	</appender>
+			<!-- daily rollover -->
+			<fileNamePattern>/var/log/server.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 100MB -->
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+
+	</appender>
 
 	<!-- Don't show all Memched message in the console -->
 	<logger name="net.spy" level="WARN" />
@@ -33,13 +36,13 @@
 	<logger name="org.apache" level="DEBUG" />
 
 	<logger name="org.apache.http" level="DEBUG" />
-	
+
 	<logger name="com.amazonaws" level="INFO" />
-	
+
 	<logger name="org.springframework" level="DEBUG" />
-	
+
 	<logger name="com.coach" level="DEBUG" />
-	
+
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />

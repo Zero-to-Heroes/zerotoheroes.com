@@ -82,6 +82,15 @@ public class S3Storage implements IFileStorage {
 		PutObjectRequest request = new PutObjectRequest(bucketName, keyName, file);
 		// final Upload upload =
 		// transferManager.upload(request.withCannedAcl(CannedAccessControlList.PublicRead));
+		request.setGeneralProgressListener(new ProgressListener() {
+
+			@Override
+			public void progressChanged(ProgressEvent progressEvent) {
+				log.debug("Progress changed on rezquest progress listener and transfered "
+						+ progressEvent.getBytesTransferred() + " bytes since last called. Overall progress is at "
+						+ upload.getProgress().getPercentTransferred());
+			}
+		});
 		upload = transferManager.upload(request.withCannedAcl(CannedAccessControlList.PublicRead),
 				new S3ProgressListener() {
 

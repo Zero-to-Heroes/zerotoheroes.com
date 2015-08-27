@@ -32,7 +32,14 @@ public class CoachRepository {
 	}
 
 	public static Coach findById(String coachId) {
-		return allCoaches.stream().filter(coach -> coach.getId().equals(coachId)).findFirst().get();
+		Coach ret = null;
+		for (Coach coach : allCoaches) {
+			if (coach.getId().equals(coachId)) {
+				ret = coach;
+				break;
+			}
+		}
+		return ret;
 	}
 
 }

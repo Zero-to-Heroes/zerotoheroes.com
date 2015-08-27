@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -46,7 +47,7 @@ public class S3Storage implements IFileStorage {
 		this.password = password;
 	}
 
-	public String storeFile(File file, long fileSize, IUploadProgress callback) {
+	public String storeFile(final File file, long fileSize, final IUploadProgress callback) {
 
 		// Initialize the folders. Should be done only once, and not at each
 		// call
@@ -73,17 +74,26 @@ public class S3Storage implements IFileStorage {
 		// cf
 		// http://docs.aws.amazon.com/AmazonS3/latest/dev/HLuploadFileJava.html
 		PutObjectRequest request = new PutObjectRequest(bucketName, keyName, file);
-		Upload upload = transferManager.upload(request.withCannedAcl(CannedAccessControlList.PublicRead));
-		upload.addProgressListener((ProgressListener) progressEvent -> callback.onUploadProgress(upload.getProgress()
-				.getPercentTransferred()));
-		upload.addProgressListener((ProgressListener) progressEvent -> {
-			if (upload.getProgress().getPercentTransferred() >= 100 && file != null) {
-				try {
-					log.info("Deleting temporary file");
-					file.delete();
-				}
-				catch (Exception e) {
-					log.error("Could not delete file", e);
+		final Upload upload = transferManager.upload(request.withCannedAcl(CannedAccessControlList.PublicRead));
+		upload.addProgressListener(new ProgressListener() {
+
+			@Override
+			public void progressChanged(ProgressEvent progressEvent) {
+				callback.onUploadProgress(upload.getProgress().getPercentTransferred());
+			}
+		});
+		upload.addProgressListener(new ProgressListener() {
+
+			@Override
+			public void progressChanged(ProgressEvent progressEvent) {
+				if (upload.getProgress().getPercentTransferred() >= 100 && file != null) {
+					try {
+						log.info("Deleting temporary file");
+						file.delete();
+					}
+					catch (Exception e) {
+						log.error("Could not delete file", e);
+					}
 				}
 			}
 		});

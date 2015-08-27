@@ -1,5 +1,5 @@
 {
 	"name": "production",
-    "apiEndpoint": "http://coaching-landing-env.elasticbeanstalk.com",
+    "apiEndpoint": "http://www.zerotoheroes.com",
 	"videoStorageUrl": "https://s3.amazonaws.com/com.zerotoheroes/"
 }

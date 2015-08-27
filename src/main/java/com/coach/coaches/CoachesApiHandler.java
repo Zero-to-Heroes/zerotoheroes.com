@@ -1,7 +1,7 @@
 package com.coach.coaches;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,8 +39,12 @@ public class CoachesApiHandler {
 
 	private List<Coach> getAllCoachesForSport(String sport) {
 		log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
-		return CoachRepository.allCoaches.stream()
-				.peek(coach -> log.debug("Coach " + coach.getName() + " has sport " + coach.getSport()))
-				.filter(coach -> coach.getSport().equals(sport)).collect(Collectors.toList());
+		List<Coach> ret = new ArrayList<Coach>();
+		for (Coach coach : CoachRepository.allCoaches) {
+			if (coach.getSport().equals(sport)) {
+				ret.add(coach);
+			}
+		}
+		return ret;
 	}
 }

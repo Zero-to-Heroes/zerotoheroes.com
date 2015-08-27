@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.AmazonS3;
@@ -74,7 +73,7 @@ public class S3Storage implements IFileStorage {
 		// Get the transfer manager to allow upload from an input stream. And,
 		// the upload is asynchronous (could be an issue if something goes
 		// wrong, we'll have to look at that later)
-		TransferManager transferManager = new TransferManager(new ProfileCredentialsProvider());
+		TransferManager transferManager = new TransferManager(credentials);
 		log.debug("Instanciated transferManager");
 
 		// cf

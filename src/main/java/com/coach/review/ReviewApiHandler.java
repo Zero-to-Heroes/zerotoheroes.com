@@ -42,6 +42,10 @@ public class ReviewApiHandler {
 	@Autowired
 	IUploadProgress progressCallback;
 
+	public ReviewApiHandler() {
+		log.debug("Initializing Review Api Handler");
+	}
+
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<Review>> listAllReviews(
 			@RequestParam(value = "userName", required = false) String userName) {

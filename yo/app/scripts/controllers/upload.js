@@ -53,6 +53,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			        	}, 1000);
 			        }
 			        else {
+			        	uploader.clearQueue();
+			        	$scope.sources = null;
 			        	//console.log("upload finished!");
 			        	$location.path('/r/' + data.id);
 			        }

@@ -10,9 +10,12 @@ import java.util.UUID;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.AmazonS3;
@@ -25,25 +28,38 @@ import com.amazonaws.services.s3.transfer.Upload;
 import com.coach.review.IUploadProgress;
 
 @Slf4j
-// @Component
+@Component
 public class S3Storage implements IFileStorage {
 
 	private static final String SUFFIX = "/";
-	private static final String BUCKET_NAME = "com.zerotoheroes";
 	private static final String FOLDER_NAME = "videos";
 
-	public String storeFile(InputStream input, long fileSize, IUploadProgress callback) {
+	private final String username, password;
+	private final String bucketName;
+
+	@Autowired
+	public S3Storage(@Value("${videos.bucket.name}") String bucketName, @Value("${s3.username}") String username,
+			@Value("${s3.password}") String password) {
+		super();
+		this.bucketName = bucketName;
+		this.username = username;
+		this.password = password;
+	}
+
+	public String storeFile(File file, long fileSize, IUploadProgress callback) {
 
 		// Initialize the folders. Should be done only once, and not at each
 		// call
-		AWSCredentials credentials = new ProfileCredentialsProvider().getCredentials();
+		BasicAWSCredentials credentials = new BasicAWSCredentials(username, password);
+		// AWSCredentials credentials = new
+		// ProfileCredentialsProvider().getCredentials();
 		AmazonS3 s3client = new AmazonS3Client(credentials);
 		log.info("created client");
 
-		s3client.createBucket(BUCKET_NAME);
+		s3client.createBucket(bucketName);
 		log.info("created bucket");
 
-		createFolder(BUCKET_NAME, FOLDER_NAME, s3client);
+		createFolder(bucketName, FOLDER_NAME, s3client);
 		log.info("created folder");
 
 		// Build the random key name
@@ -54,21 +70,23 @@ public class S3Storage implements IFileStorage {
 		// wrong, we'll have to look at that later)
 		TransferManager transferManager = new TransferManager(new ProfileCredentialsProvider());
 
-		// Create the metadata we will use for the upload
-		ObjectMetadata metadata = new ObjectMetadata();
-		metadata.setContentLength(fileSize);
-		log.info("Setting content size to " + fileSize);
-
-		// How to show progress? Possibly update the mongo record with the
-		// progress advancement on a regular basis, and have the UI regularly
-		// request the info, showing a progress bar to indicate the progress
-		// (like "upload" and "treatment")
 		// cf
 		// http://docs.aws.amazon.com/AmazonS3/latest/dev/HLuploadFileJava.html
-		PutObjectRequest request = new PutObjectRequest(BUCKET_NAME, keyName, input, metadata);
+		PutObjectRequest request = new PutObjectRequest(bucketName, keyName, file);
 		Upload upload = transferManager.upload(request.withCannedAcl(CannedAccessControlList.PublicRead));
 		upload.addProgressListener((ProgressListener) progressEvent -> callback.onUploadProgress(upload.getProgress()
 				.getPercentTransferred()));
+		upload.addProgressListener((ProgressListener) progressEvent -> {
+			if (upload.getProgress().getPercentTransferred() >= 100 && file != null) {
+				try {
+					log.info("Deleting temporary file");
+					file.delete();
+				}
+				catch (Exception e) {
+					log.error("Could not delete file", e);
+				}
+			}
+		});
 
 		return keyName;
 	}
@@ -76,12 +94,9 @@ public class S3Storage implements IFileStorage {
 	@Override
 	public String storeFile(MultipartFile multipart, IUploadProgress callback) {
 		String key = null;
-		try {
-			key = storeFile(multipart.getInputStream(), multipart.getSize(), callback);
-		}
-		catch (IOException e) {
-			log.error("Could not get input stream from multipart file " + multipart);
-		}
+		File file = convert(multipart);
+		key = storeFile(file, multipart.getSize(), callback);
+		// And delete the file
 		return key;
 	}
 
@@ -99,7 +114,7 @@ public class S3Storage implements IFileStorage {
 	}
 
 	public File convert(MultipartFile file) {
-		File convFile = new File(file.getOriginalFilename());
+		File convFile = new File(file.getOriginalFilename() + new Date().getTime());
 		try {
 			long time = new Date().getTime();
 			log.info("Converting multipart file to standard file");
@@ -110,8 +125,7 @@ public class S3Storage implements IFileStorage {
 			log.info("Conversion done in " + (new Date().getTime() - time));
 		}
 		catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("Could not convert file to multipart", e);
 		}
 		return convFile;
 	}

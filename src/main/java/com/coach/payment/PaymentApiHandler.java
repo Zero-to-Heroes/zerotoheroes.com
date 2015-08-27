@@ -13,6 +13,7 @@ import javax.mail.internet.MimeMessage;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,17 @@ public class PaymentApiHandler {
 
 	@Autowired
 	ReviewRepository reviewRepo;
+
+	private final String smtpUsername, smtpPassword, smtpRegion;
+
+	@Autowired
+	public PaymentApiHandler(@Value("${smtp.username}") String smtpUsername,
+			@Value("${smtp.password}") String smtpPassword, @Value("${smtp.region}") String smtpRegion) {
+		super();
+		this.smtpUsername = smtpUsername;
+		this.smtpPassword = smtpPassword;
+		this.smtpRegion = smtpRegion;
+	}
 
 	@RequestMapping(value = "/{reviewId}/{coachId}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> addComment(@PathVariable("reviewId") final String reviewId,
@@ -82,8 +94,7 @@ public class PaymentApiHandler {
 
 			// Connect to Amazon SES using the SMTP username and password you
 			// specified above.
-			transport.connect("email-smtp.us-west-2.amazonaws.com", "AKIAIZYHQOWVUSCKHFNA",
-					"AkuHjxAaNJ6asBOKgo4JU9bf64xKXIRtIBIBonJYaFqQ");
+			transport.connect(smtpRegion, smtpUsername, smtpPassword);
 
 			transport.sendMessage(msg, msg.getAllRecipients());
 			log.debug("Mail sent using standard transport");

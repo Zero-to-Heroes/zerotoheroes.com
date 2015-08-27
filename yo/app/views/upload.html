@@ -1,9 +1,11 @@
 <div zth-navigation></div>
 
-<input type="file" onchange="angular.element(this).scope().fileNameChanged(this.files)" id="fileInput" class="uploadFileButton" />
+<input type="file" name="file" nv-file-select uploader="uploader" class="uploadFileButton"></input>
+
+<!-- <input type="file" onchange="angular.element(this).scope().fileNameChanged(this.files)" id="fileInput" class="uploadFileButton" /> -->
 
 <div class="videogular-container">
-	<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-theme="config.theme">
+	<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)">
 		<vg-media vg-src="sources">
 		</vg-media>
 
@@ -21,7 +23,7 @@
 </div>
 
 <div class="editing-tools">
-	<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0" class=></div>
+	<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0"></div>
 	<div class="buttons" ng-show="review.ending > 0">
 		<div class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</div>
 	</div>
@@ -46,7 +48,7 @@
 						<option>Other</option>
 					</select>
 				</div>
-				<div style="width: 5%; float: left; height: 2px"/>
+				<div style="width: 5%; float: left; height: 2px">&nbsp;</div>
 				<div style="width: 55%; float: left">
 					<input type="text" placeholder="Title of your video review*" ng-model="review.title" style="width: 100%"/>
 				</div>
@@ -55,11 +57,19 @@
 				<textarea placeholder="Any remarks about what you want to improve" ng-model="review.description" style="width:100%"></textarea>
 			</div>
 		</div>
-		<div style="width: 5%; float: left; height: 2px"/>
+		<div style="width: 5%; float: left; height: 2px">&nbsp;</div>
 		<div style="width: 25%; float: left;">
 			<button ng-click="upload()" style="margin-top: 15px; width: 100%; height: 50px">Upload now</button>
 		</div>
 	</div>
-	<div style="clear:both;"></div>
-	
+	<div style="clear:both;"></div>	
+</div>
+
+<div ng-repeat="item in uploader.queue">
+	<div ng-show="uploader.isHTML5">
+	    <div class="progress" style="margin-bottom: 0;">
+	        <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+	        <div class="progress-bar second" style="background-color: #5cb85c" ng-style="{ 'width': review.treatmentCompletion + '%' }"></div>
+	    </div>
+	</div>
 </div>

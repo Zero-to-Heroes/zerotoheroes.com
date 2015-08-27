@@ -7,7 +7,7 @@ app.directive('zthNavigation', ['User', function(User) {
 	return {
 		restrict: 'A',
 		replace: true,
-		templateUrl: 'template/navigation.html',
+		templateUrl: 'templates/navigation.html',
 		controller: function($scope, User) {
 			$scope.name = User.getName();
 

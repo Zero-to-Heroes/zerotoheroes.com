@@ -4,6 +4,7 @@
 
 var app = angular.module('app', [
   "ngSanitize",
+  'angularFileUpload',
   "com.2fdevs.videogular",
   "com.2fdevs.videogular.plugins.controls",
   "com.2fdevs.videogular.plugins.overlayplay",

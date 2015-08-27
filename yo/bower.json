@@ -18,7 +18,8 @@
     "videogular-ima-ads": "~1.2.5",
     "videogular-angulartics": "~1.2.5",
     "angular-bootstrap": "~0.13.3",
-    "angular-rangeslider": "~0.0.14"
+    "angular-rangeslider": "~0.0.14",
+    "angular-file-upload": "~2.1.1"
   },
   "appPath": "app",
   "resolutions": {

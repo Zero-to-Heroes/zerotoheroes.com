@@ -148,7 +148,9 @@ public class S3Storage implements IFileStorage {
 	}
 
 	public File convert(MultipartFile file) {
-		File convFile = new File(file.getOriginalFilename() + new Date().getTime());
+		String extension = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+		log.debug("extension is " + extension);
+		File convFile = new File(file.getOriginalFilename() + new Date().getTime() + extension);
 		try {
 			long time = new Date().getTime();
 			log.info("Converting multipart file to standard file");

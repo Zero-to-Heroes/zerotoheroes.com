@@ -17,6 +17,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					function(data) {
 						console.log($routeParams.reviewId);
 						$scope.review = data;
+						console.log($scope.review);
 						//console.log(data);
 						var fileLocation = ENV.videoStorageUrl + data.key;
 						//console.log(fileLocation);

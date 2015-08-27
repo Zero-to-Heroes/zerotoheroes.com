@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.amazonaws.util.StringUtils;
 import com.coach.review.Review;
 import com.coach.review.access.ReviewRepository;
 
@@ -38,6 +39,7 @@ public class CoachesApiHandler {
 	}
 
 	private List<Coach> getAllCoachesForSport(String sport) {
+		sport = StringUtils.trim(sport);
 		log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
 		List<Coach> ret = new ArrayList<Coach>();
 		for (Coach coach : CoachRepository.allCoaches) {

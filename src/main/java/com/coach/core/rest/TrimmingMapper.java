@@ -23,7 +23,7 @@ public class TrimmingMapper extends ObjectMapper {
 	private static final long serialVersionUID = 8226204269677984978L;
 
 	public TrimmingMapper() {
-		log.debug('"Registering trimming module");
+		log.debug("Registering trimming module");
 		registerModule(new MyModule());
 	}
 }

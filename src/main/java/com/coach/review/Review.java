@@ -11,6 +11,7 @@ import lombok.ToString;
 
 import org.springframework.data.annotation.Id;
 
+import com.amazonaws.util.StringUtils;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Getter
@@ -36,5 +37,9 @@ public class Review {
 	public void addComment(Comment comment) {
 		if (comments == null) comments = new ArrayList<>();
 		comments.add(comment);
+	}
+
+	public void setSport(String sport) {
+		this.sport = StringUtils.trim(sport);
 	}
 }

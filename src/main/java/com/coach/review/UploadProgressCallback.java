@@ -30,17 +30,17 @@ public class UploadProgressCallback implements IUploadProgress {
 
 	@Override
 	public void onUploadProgress(double progress) {
-		log.debug("In callback head of method, progress is " + progress);
-		log.debug("review id is " + reviewId);
-		log.debug("Current time is " + new Date().getTime());
-		log.debug("next update tick is at " + (lastUpdate + UPDATE_DELAY));
+		// log.debug("In callback head of method, progress is " + progress);
+		// log.debug("review id is " + reviewId);
+		// log.debug("Current time is " + new Date().getTime());
+		// log.debug("next update tick is at " + (lastUpdate + UPDATE_DELAY));
 		if (progress >= 100 || new Date().getTime() > lastUpdate + UPDATE_DELAY) {
 			Review tempReview = repo.findById(reviewId);
-			log.debug("temp review is " + tempReview);
+			// log.debug("temp review is " + tempReview);
 			// log.debug("current time is " + new Date().getTime() +
 			// " and last update is " + lastUpdate);
 			if (tempReview != null) {
-				log.debug("In callback, progress is " + progress);
+				// log.debug("In callback, progress is " + progress);
 				lastUpdate = new Date().getTime();
 				// log.debug("Loaded review " + tempReview);
 				tempReview.setTreatmentCompletion(progress);

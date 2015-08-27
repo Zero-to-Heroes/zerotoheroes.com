@@ -23,10 +23,8 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.transfer.PersistableTransfer;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.Upload;
-import com.amazonaws.services.s3.transfer.internal.S3ProgressListener;
 import com.coach.review.IUploadProgress;
 
 @Slf4j
@@ -38,8 +36,6 @@ public class S3Storage implements IFileStorage {
 
 	private final String username, password;
 	private final String bucketName;
-
-	private Upload upload;
 
 	@Autowired
 	public S3Storage(@Value("${videos.bucket.name}") String bucketName, @Value("${s3.username}") String username,
@@ -79,33 +75,7 @@ public class S3Storage implements IFileStorage {
 		// cf
 		// http://docs.aws.amazon.com/AmazonS3/latest/dev/HLuploadFileJava.html
 		PutObjectRequest request = new PutObjectRequest(bucketName, keyName, file);
-		// final Upload upload =
-		// transferManager.upload(request.withCannedAcl(CannedAccessControlList.PublicRead));
-		request.setGeneralProgressListener(new ProgressListener() {
-
-			@Override
-			public void progressChanged(ProgressEvent progressEvent) {
-				log.debug("Progress changed on rezquest progress listener and transfered "
-						+ progressEvent.getBytesTransferred() + " bytes since last called. Overall progress is at "
-						+ upload.getProgress().getPercentTransferred());
-			}
-		});
-		upload = transferManager.upload(request.withCannedAcl(CannedAccessControlList.PublicRead),
-				new S3ProgressListener() {
-
-					@Override
-					public void progressChanged(ProgressEvent progressEvent) {
-						log.debug("Progress changed on new listener and transfered "
-								+ progressEvent.getBytesTransferred()
-								+ " bytes since last called. Overall progress is at "
-								+ upload.getProgress().getPercentTransferred());
-					}
-
-					@Override
-					public void onPersistableTransfer(PersistableTransfer persistableTransfer) {
-						log.debug("on PersistableTransfer on new listener " + persistableTransfer);
-					}
-				});
+		final Upload upload = transferManager.upload(request.withCannedAcl(CannedAccessControlList.PublicRead));
 		log.debug("Sent upload request");
 		upload.addProgressListener(new ProgressListener() {
 

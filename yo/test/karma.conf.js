@@ -52,9 +52,10 @@ module.exports = function(config) {
       'bower_components/angulartics/src/angulartics-marketo.js',
       'bower_components/angulartics/src/angulartics-intercom.js',
       'bower_components/videogular-angulartics/vg-analytics.js',
-      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-rangeslider/angular.rangeSlider.js',
       'bower_components/angular-file-upload/dist/angular-file-upload.min.js',
+      'bower_components/angular-strap/dist/angular-strap.js',
+      'bower_components/angular-strap/dist/angular-strap.tpl.js',
 
       'app/scripts/app.js',
       'app/scripts/**/*.js',

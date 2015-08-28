@@ -3,17 +3,20 @@
 angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', 
 	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User) {
 
-		$scope.review = {
-			'key': null,
-			'fileType': '',
-			'beginning': -1,
-			'ending': -1,
-			'sport': '',
-			'title': '',
-			'author': '',
-			'description': '',
-			'comments': []
-		};
+		$scope.initializeReview = function() {
+			$scope.review = {
+				'key': null,
+				'fileType': '',
+				'beginning': -1,
+				'ending': -1,
+				'sport': '',
+				'title': '',
+				'author': '',
+				'description': '',
+				'comments': []
+			};
+		}
+		$scope.initializeReview();
 
 		var uploader = $scope.uploader = new FileUploader({
 			url: ENV.apiEndpoint + '/api/reviews'
@@ -70,7 +73,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
         }
 
 		$scope.API = null;
-		$scope.sources = null;
 
 		$scope.upload = function() {
 			//console.log('uploading');
@@ -81,23 +83,29 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		};
 
 		$scope.onPlayerReady = function(API) {
+        	$scope.initializeReview();
 			$scope.API = API;
+        	uploader.clearQueue();
+        	$scope.sources = null;
 		};
 
 		$scope.updateSourceWithFile = function(fileObj) {
+			console.log('new file selected');
 			var objectURL = window.URL.createObjectURL(fileObj);
 			$scope.temp = fileObj;
 		  	$scope.sources =  [
 				{src: $sce.trustAsResourceUrl(objectURL), type: fileObj.type}
 			];
-			$scope.API.play();
-
 			$scope.review.file = objectURL;
 			$scope.review.fileType = fileObj.type;
+        	console.log(uploader.queue);
+        	console.log(uploader.queue[0]);
 		}
 
 		$scope.onSourceChanged = function(sources) {
-			$timeout(function() { updateMarkers() }, 333);
+			$timeout(function() { 
+				updateMarkers() 
+			}, 333);
 		};
 
 		function updateMarkers() {
@@ -105,6 +113,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$scope.review.ending = $scope.API.totalTime;
 			$scope.sliderMax = $scope.API.totalTime;
 			$scope.updateTotalTime();
+			if ($scope.review.ending > 0) $scope.dataLoaded = true;
 		};
 
 		$scope.updateTotalTime = function() {
@@ -135,6 +144,17 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 	    	$scope.API.seekTime(value / 1000);
 	    }
 
+	    $scope.onOverlayClick = function() {
+	    	console.log('On onOverlayClick');
+	    	refreshMarkers();
+	    }
+
+	    function refreshMarkers() {
+	    	if (!$scope.dataLoaded) {
+	    		updateMarkers();
+	    		$timeout(function() {refreshMarkers() }, 100);
+	    	}
+	    }
 
 		$scope.config = {
 			theme: "bower_components/videogular-themes-default/videogular.css"

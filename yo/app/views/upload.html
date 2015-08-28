@@ -5,9 +5,8 @@
 <!-- <input type="file" onchange="angular.element(this).scope().fileNameChanged(this.files)" id="fileInput" class="uploadFileButton" /> -->
 
 <div class="videogular-container">
-	<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)">
-		<vg-media vg-src="sources">
-		</vg-media>
+	<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)">
+		<vg-media vg-src="sources"></vg-media>
 
 		<vg-controls>
 			<vg-play-pause-button></vg-play-pause-button>
@@ -18,13 +17,13 @@
 			<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
 		</vg-controls>
 
-		<vg-overlay-play></vg-overlay-play>
+		<vg-overlay-play ng-click="onOverlayClick()"></vg-overlay-play>
 	</videogular>
 </div>
 
 <div class="editing-tools">
 	<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0"></div>
-	<div class="buttons" ng-show="review.ending > 0">
+	<div class="buttons" ng-show="dataLoaded">
 		<div class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</div>
 	</div>
 	<div class="error">
@@ -66,10 +65,19 @@
 </div>
 
 <div ng-repeat="item in uploader.queue">
-	<div ng-show="uploader.isHTML5">
-	    <div class="progress" style="margin-bottom: 0;">
-	        <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
-	        <div class="progress-bar second" style="background-color: #5cb85c" ng-style="{ 'width': review.treatmentCompletion + '%' }"></div>
+	<div ng-show="uploader.isHTML5" class="multipleStepProgressGroup">
+		<div class="informationMessages">
+			<span ng-show="item.progress > 0 && item.progress < 100">Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(</span>
+			<span ng-show="item.progress == 100">We are processing your video. If you wait for a bit, we'll automatically take you to your review page</span><br/>
+			<span ng-show="item.progress == 100">And in any case, your video will be available <a href="#/r/{{review.id}}">here</a> in a few minutes</span>
+		</div>
+	    <div class="progress" style="position: relative; left: 0; top: 0">
+	        <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;" ng-show="item.progress > 0">
+	        	<div ng-show="item.progress < 100">{{item.progress}}%</div>
+	        </div>
+	        <div class="progress-bar progress-bar-success" style="position: absolute; top: 0; left: 0; min-width: 2em;" ng-style="{ 'width': review.treatmentCompletion + '%' }" ng-show="item.progress == 100">
+	      	  <div>{{review.treatmentCompletion}}%</div>
+	        </div>
 	    </div>
 	</div>
 </div>

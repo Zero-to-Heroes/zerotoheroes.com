@@ -258,6 +258,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
 				<executions>
 					<execution>
 						<id>add-it-resources</id>
@@ -272,9 +277,9 @@
 									<directory>src/it/resources</directory>
 								</resource>
 							</resources>
-							 <nonFilteredFileExtensions>
-					            <nonFilteredFileExtension>ico</nonFilteredFileExtension>
-					         </nonFilteredFileExtensions>
+							<nonFilteredFileExtensions>
+								<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+							</nonFilteredFileExtensions>
 						</configuration>
 					</execution>
 				</executions>

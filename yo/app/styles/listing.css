@@ -18,7 +18,7 @@
   font-size: 14px;
 }
 
-.reviewSummary .left {
+.reviewSummary .zth-left {
   width: 30%;
   display: table-cell;
   padding: 10px 30px 10px 10px;
@@ -32,7 +32,7 @@
   text-align: center;
 }
 
-.reviewSummary .center {
+.reviewSummary .zth-center {
   /*width: 50%;*/
   display: table-cell;
   white-space: nowrap;
@@ -40,7 +40,7 @@
   text-overflow: ellipsis;
 }
 
-.reviewSummary .right {
+.reviewSummary .zth-right {
   width: 15%;
   display: table-cell;
   text-align: center;

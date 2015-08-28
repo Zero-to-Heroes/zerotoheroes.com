@@ -12,8 +12,9 @@ var app = angular.module('app', [
   'ngRoute',
   'controllers',
   'services',
-  'ui.bootstrap',
-  'ui-rangeSlider'
+  //'ui.bootstrap',
+  'ui-rangeSlider',
+  'mgcrea.ngStrap'
 ]);
 
 

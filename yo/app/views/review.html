@@ -23,17 +23,19 @@
 	</videogular>
 </div>
 <hr/>
-<div class="table review">
-	<div class="left">
+<div class="zth-table review">
+	<div class="zth-left">
 		<span class="sportsTag">{{review.sport}}</span>
 		<span class="author">{{review.author}}</span>
 	</div>
-	<div class="center">
+	<div class="zth-center">
 		<span class="videoTitle">{{review.title}}</span>
 		<span class="videoDescription" ng-readonly="true">{{review.description}}</span>
 	</div>
-	<div class="right">
-		<button ng-click="askAPro()">Ask A Pro!</button>
+	<div class="zth-right">
+		<button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-scale" data-template-url="templates/askPro.tpl.html" bs-modal="modal" data-placement="center" >Ask a Pro
+		</button>
+		<!-- <button ng-click="askAPro()">Ask A Pro!</button> -->
 	</div>
 </div>
 <hr/>
@@ -41,21 +43,21 @@
 	<div class="coach-selected">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
 	<hr/>
 </div>
-<div class="table review">
-	<div class="left top">
+<div class="zth-table review">
+	<div class="zth-left zth-top">
 		<div zth-name-input>&nbsp;</div>
 	</div>
-	<div class="center">
+	<div class="zth-center">
 		<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="comment"></textarea>
 		<button ng-click="addComment()" class="commentButton">Publish</button>
 	</div>
 </div>
 
 <div ng-repeat="comment in review.comments" class="comment review table">
-	<div class="left top">
+	<div class="zth-left zth-top">
 		<span class="author">{{comment.author}}</span>
 	</div>
-	<div class="center">
+	<div class="zth-center">
 		<span class="commentText">{{comment.text}}</span>
 	</div>	
 </div>
@@ -66,13 +68,21 @@
         <button class="close-button" on-click="close()">X</button>
     </div>
     <div class="choose-pro">
-        <div ng-repeat="coach in coaches" class="table coach-row" ng-class-even="'even'" ng-class-odd="'odd'">
-			<span class="name">{{coach.name}}</span>
+        <div ng-repeat="coach in coaches" class="zth-table coach-row" ng-class-even="'even'" ng-class-odd="'odd'">
+        	<button onpopover"Bottom!" popover-placement="bottom" type="button" class="btn btn-default name">{{coach.name}}</button>
 			<span class="qualifications">{{coach.level}}</span>
 			<span class="tariff">{{coach.tariff}}</span>
 			<div class="select-coach">
 				<button ng-click="ok(coach)">Request review</button>
 			</div>
 		</div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="myPopoverTemplate.html">
+    <div>Glut</div>
+    <div class="form-group">
+      <label>Popup Title:</label>
+      <input type="text" class="form-control">
     </div>
 </script>

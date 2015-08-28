@@ -54,7 +54,7 @@ public class ReviewApiHandler {
 		log.debug("Retrieving all reviews");
 
 		List<Review> reviews = null;
-		// log.debug("userName param is " + userName);
+		log.debug("userName param is " + userName);
 
 		Sort newestFirst = new Sort(new Sort.Order(Sort.Direction.DESC, "creationDate"));
 		if (!StringUtils.isEmpty(userName))

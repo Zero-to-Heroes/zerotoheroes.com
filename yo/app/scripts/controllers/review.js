@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', '$modal', 'User', 'ENV', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, $modal, User, ENV) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV) { 
 
 		$scope.API = null;
 		$scope.sources = null;
@@ -54,8 +54,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
   			);
 		};
 
+		$scope.selectCoach = function (coach) {
+		  	//console.log(coach);
+		    //$modalInstance.close(coach);
+		    Api.Payment.save({reviewId: $routeParams.reviewId, coachId: coach.id}, function(data) {
+      			$scope.selectedCoach = coach;	
+			});
+		};
+
 		// TODO: replace by a popover from boostrap, it's closer to what we want
-		$scope.askAPro = function() {
+		/*$scope.askAPro = function() {
 			var modalInstance = $modal.open({
 	      		templateUrl: 'myModalContent.html',
 	      		controller: 'ModalInstanceCtrl',
@@ -79,12 +87,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		      		console.log('Modal dismissed at: ' + new Date());
 		    	}
 		    );
-		};
+		};*/
+
+
 	}
 ]);
 
 // Necessary to bind the popup controller to the data provided by the external controller
-angular.module('controllers').controller('ModalInstanceCtrl', function ($scope, $modalInstance, coaches) {
+/*angular.module('controllers').controller('ModalInstanceCtrl', function ($scope, $modalInstance, coaches) {
   $scope.coaches = coaches;
 
   $scope.ok = function (coach) {
@@ -95,4 +105,4 @@ angular.module('controllers').controller('ModalInstanceCtrl', function ($scope, 
   $scope.close = function () {
     $modalInstance.dismiss('close');
   };
-});
+});*/

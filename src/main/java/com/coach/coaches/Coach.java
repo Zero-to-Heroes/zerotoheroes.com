@@ -22,4 +22,5 @@ public class Coach {
 	private String sport;
 	private String tariff;
 	private String level;
+	private String description;
 }

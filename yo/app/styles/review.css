@@ -1,14 +1,14 @@
-.review .left {
+.review .zth-left {
   display: table-cell;
   width: 25%;
   padding-right: 30px;
 }
 
-.review .center {
+.review .zth-center {
   display: table-cell;
 }
 
-.review .right {
+.review .zth-right {
   display: table-cell;
   width: 25%;
   text-align: center;

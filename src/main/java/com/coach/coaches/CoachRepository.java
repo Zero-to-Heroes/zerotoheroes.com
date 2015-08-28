@@ -12,21 +12,23 @@ public class CoachRepository {
 
 		// Squash
 		coaches.add(new Coach("0", "Fake Amaury Fribourg", "seb@zerotoheroes.com", "Squash", "15€",
-				"Former top 15 French"));
-		coaches.add(new Coach("1", "Fake Alex Muller", "seb@zerotoheroes.com", "Squash", "15€", "Former top 15 French"));
+				"Former top 15 French", "bla oziejv oeiv oezivjov"));
+		coaches.add(new Coach("1", "Fake Alex Muller", "seb@zerotoheroes.com", "Squash", "15€", "Former top 15 French",
+				"bla oziejv oeiv oezivjov"));
 
 		// Bad
 		coaches.add(new Coach("2", "Fake Guillaume Tromp", "seb@zerotoheroes.com", "Badminton", "9€",
-				"Former top 14 French"));
+				"Former top 14 French", "bla oziejv oeiv oezivjov"));
 
 		// LoL
 		coaches.add(new Coach("3", "Fake Julien Debon", "seb@zerotoheroes.com", "League of Legends", "10€",
-				"Platinium  IV"));
+				"Platinium  IV", "bla oziejv oeiv oezivjov"));
 		coaches.add(new Coach("3", "Fake Julien Debon", "seb@zerotoheroes.com", "League of Legends", "20€",
-				"Diamond III"));
+				"Diamond III", "bla oziejv oeiv oezivjov"));
 
 		// SC2
-		coaches.add(new Coach("4", "Fake Alex Jobert", "seb@zerotoheroes.com", "Starcraft 2", "5€", "Platinium"));
+		coaches.add(new Coach("4", "Fake Alex Jobert", "seb@zerotoheroes.com", "Starcraft 2", "5€", "Platinium",
+				"bla oziejv oeiv oezivjov"));
 
 		return coaches;
 	}

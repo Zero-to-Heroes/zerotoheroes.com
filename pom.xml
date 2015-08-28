@@ -272,6 +272,9 @@
 									<directory>src/it/resources</directory>
 								</resource>
 							</resources>
+							 <nonFilteredFileExtensions>
+					            <nonFilteredFileExtension>ico</nonFilteredFileExtension>
+					         </nonFilteredFileExtensions>
 						</configuration>
 					</execution>
 				</executions>

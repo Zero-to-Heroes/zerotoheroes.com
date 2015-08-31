@@ -47,7 +47,7 @@ public class PaymentApiHandler {
 	}
 
 	@RequestMapping(value = "/{reviewId}/{coachId}/{email}", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<String> addComment(@PathVariable("reviewId") final String reviewId,
+	public @ResponseBody ResponseEntity<String> registerReviewRequest(@PathVariable("reviewId") final String reviewId,
 			@PathVariable("coachId") final String coachId, @PathVariable("email") String requesterEmail)
 			throws IOException {
 

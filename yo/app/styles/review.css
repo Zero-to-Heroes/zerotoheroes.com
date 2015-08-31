@@ -15,10 +15,6 @@
   vertical-align: middle;
 }
 
-.review input, .review textarea {
-  width: 100%;
-}
-
 .commentButton {
   float: right;
 }

@@ -23,21 +23,20 @@
 	</videogular>
 </div>
 <hr/>
-<div class="zth-table review">
-	<div class="zth-left">
-		<span class="sportsTag">{{review.sport}}</span>
-		<span class="author">{{review.author}}</span>
-	</div>
-	<div class="zth-center">
-		<span class="videoTitle">{{review.title}}</span>
-		<span class="videoDescription" ng-readonly="true">{{review.description}}</span>
-	</div>
-	<div class="zth-right">
-		<!-- <button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-scale" data-template-url="templates/askPro.html" bs-modal="modal" data-placement="center" >Ask a Pro
-		</button> -->
-		<button type="button" class="btn btn-lg btn-danger" ng-click="showProModal()" >Ask a Pro
-		</button>
-		<!-- <button ng-click="askAPro()">Ask A Pro!</button> -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="zth-left">
+			<h4><span class="label label-primary">{{review.sport}}</span></h4>
+			<span class="author">{{review.author}}</span>
+		</div>
+		<div class="zth-center">
+			<h1>{{review.title}}</h1>
+			<span class="videoDescription" ng-readonly="true">{{review.description}}</span>
+		</div>
+		<div class="zth-right">
+			<button type="button" class="btn btn-lg btn-danger" ng-click="showProModal()" >Ask a Pro
+			</button>
+		</div>
 	</div>
 </div>
 <hr/>

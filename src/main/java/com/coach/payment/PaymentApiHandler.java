@@ -46,16 +46,17 @@ public class PaymentApiHandler {
 		this.smtpRegion = smtpRegion;
 	}
 
-	@RequestMapping(value = "/{reviewId}/{coachId}", method = RequestMethod.POST)
+	@RequestMapping(value = "/{reviewId}/{coachId}/{email}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> addComment(@PathVariable("reviewId") final String reviewId,
-			@PathVariable("coachId") final String coachId) throws IOException {
+			@PathVariable("coachId") final String coachId, @PathVariable("email") String requesterEmail)
+			throws IOException {
 
 		log.debug("Requesting payment");
 		Review review = reviewRepo.findById(reviewId);
 
 		Coach coach = CoachRepository.findById(coachId);
 
-		log.info("requesting payment for review " + review + " by coach " + coach);
+		log.info("requesting payment for review " + review + " by coach " + coach + ", requested by " + requesterEmail);
 
 		log.debug("Sending an email");
 
@@ -84,8 +85,13 @@ public class PaymentApiHandler {
 		try {
 			msg.setFrom(new InternetAddress("seb@zerotoheroes.com"));
 			msg.setRecipient(Message.RecipientType.TO, new InternetAddress("seb@zerotoheroes.com"));
-			msg.setSubject("Payment requested");
-			msg.setContent("For review " + review + " to coach " + coach, "text/plain");
+			msg.setSubject("Payment requested from " + requesterEmail + " to " + coach.getName() + " for "
+					+ coach.getTariff());
+			msg.setContent(
+					requesterEmail + " has requested a review for http://www.zerotoheroes.com/#/r/" + review.getId()
+							+ ".<br/> Coach is " + coach.getName() + " and requested for " + coach.getTariff()
+							+ " with following conditions: " + coach.getTariffDescription()
+							+ ".<br/><br/> For information, full details of " + coach + "<br/>" + review, "text/html");
 
 			log.debug("Email created, attempting to send it");
 

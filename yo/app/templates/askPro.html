@@ -1,0 +1,38 @@
+<div class="modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="$hide()">&times;</button>
+				<h4 class="modal-title">Choose your coach</h4>
+			</div>
+			<div class="modal-body .table-responsive">
+				<table class="table coaches-table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Languages</th>
+							<th>Level</th>
+							<th>Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="coach in coaches">
+							<td class="vert-align">
+								<span>{{coach.name}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="We have verified the coach information is accurate"></span>
+							</td>
+							<td class="vert-align">
+								<span ng-repeat="language in coach.languagesSpoken" class="lang-sm" lang="{{language.code}}"></span>
+							</td>
+							<td class="vert-align"><span class="qualifications">{{coach.level}}</span></td>
+							<td class="vert-align"><span class="tariff">{{coach.tariff}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/tariffDescription.html"></span></td>
+							<td class="vert-align"><button type="button" class="btn btn-primary" data-animation="am-fade-and-scale" data-template-url="templates/confirmPro.html" bs-modal="modal" data-placement="center">Request review</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

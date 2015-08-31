@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal) { 
 
 		$scope.API = null;
 		$scope.sources = null;
@@ -32,7 +32,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					//console.log(data);
 					for (var i = 0; i < data.length; i++) {
 						//console.log(data[0]);
-						//console.log(data[i]);
+						console.log(data[i]);
 						$scope.coaches.push(data[i]);
 					};
 				});
@@ -54,55 +54,22 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
   			);
 		};
 
-		$scope.selectCoach = function (coach) {
-		  	//console.log(coach);
-		    //$modalInstance.close(coach);
-		    Api.Payment.save({reviewId: $routeParams.reviewId, coachId: coach.id}, function(data) {
-      			$scope.selectedCoach = coach;	
+		$scope.selectCoach = function (coach, email) {
+      		$scope.hideProModal();
+      		console.log(email);
+		    Api.Payment.save({reviewId: $routeParams.reviewId, coachId: coach.id, email: email}, function(data) {
+      			$scope.selectedCoach = coach;
 			});
 		};
 
-		// TODO: replace by a popover from boostrap, it's closer to what we want
-		/*$scope.askAPro = function() {
-			var modalInstance = $modal.open({
-	      		templateUrl: 'myModalContent.html',
-	      		controller: 'ModalInstanceCtrl',
-	      		resolve: {
-	        		coaches: function () {
-	        			console.log($scope.coaches);
-	          			return $scope.coaches;
-	        		}
-	      		}
-	    	});
+		var askProModel = $modal({templateUrl: 'templates/askPro.html', show: false, animation: 'am-fade-and-scale', placement: 'center', scope: $scope});
 
-	    	modalInstance.result.then(function (selected) {
-	    			//console.log("result with selected = " + selected);
-	    			// TODO: real service here
+		$scope.showProModal = function() {
+			askProModel.$promise.then(askProModel.show);
+		}
 
-		      		Api.Payment.save({reviewId: $routeParams.reviewId, coachId: selected.id}, function(data) {
-		      			$scope.selectedCoach = selected;	
-					});
-		    	}, 
-		    	function () {
-		      		console.log('Modal dismissed at: ' + new Date());
-		    	}
-		    );
-		};*/
-
-
+		$scope.hideProModal = function() {
+			askProModel.$promise.then(askProModel.hide);
+		}
 	}
 ]);
-
-// Necessary to bind the popup controller to the data provided by the external controller
-/*angular.module('controllers').controller('ModalInstanceCtrl', function ($scope, $modalInstance, coaches) {
-  $scope.coaches = coaches;
-
-  $scope.ok = function (coach) {
-  	//console.log(coach);
-    $modalInstance.close(coach);
-  };
-
-  $scope.close = function () {
-    $modalInstance.dismiss('close');
-  };
-});*/

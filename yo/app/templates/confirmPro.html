@@ -1,0 +1,25 @@
+<div class="modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="$hide()">&times;</button>
+				<h4 class="modal-title">Confirm Request</h4>
+			</div>
+			<div class="modal-body">
+				<p>To confirm the request to {{coach.name}} for {{coach.tariff}} to review your video, please enter your email address below.</p>
+				<form class="form-inline" ng-submit="selectCoach(coach, email); $hide();">
+					<div class="form-group">
+				    	<div class="input-group">
+				      		<label class="sr-only" for="email">Email address</label>
+    						<input type="email" class="form-control" ng-model="email" placeholder="Email">
+				    	</div>
+				  	</div>
+				  	<button type="submit" class="btn btn-primary">Confirm</button>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

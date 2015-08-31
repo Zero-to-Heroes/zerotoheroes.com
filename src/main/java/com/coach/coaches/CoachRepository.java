@@ -1,7 +1,13 @@
 package com.coach.coaches;
 
+import static com.coach.coaches.Coach.Language.*;
+import static com.coach.coaches.Coach.Sport.*;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import com.coach.coaches.Coach.Language;
 
 public class CoachRepository {
 
@@ -9,26 +15,21 @@ public class CoachRepository {
 
 	private static List<Coach> buildCoachesList() {
 		List<Coach> coaches = new ArrayList<>();
+		Coach coach;
+
+		// Badminton
+		coach = Coach
+				.builder()
+				.id("0")
+				.description(
+						"<p>Currently part of a national club team. <ul><li>Coaching in 3 different clubs around Lyon, France</li><li>Diploma Brevet d'Etat</ul>")
+				.email("guillaumetromp@gmail.com").languagesSpoken(Arrays.asList(new Language[] { French, English }))
+				.level("Former French top 14").name("Guillaume Tromp").picture("guillaume.jpg").sport(Badminton)
+				.tariff("5€").tariffDescription("Provides 3 pieces of advice + how to put them into practice")
+				.verified(true).build();
+		coaches.add(coach);
 
 		// Squash
-		coaches.add(new Coach("0", "Fake Amaury Fribourg", "seb@zerotoheroes.com", "Squash", "15€",
-				"Former top 15 French", "bla oziejv oeiv oezivjov"));
-		coaches.add(new Coach("1", "Fake Alex Muller", "seb@zerotoheroes.com", "Squash", "15€", "Former top 15 French",
-				"bla oziejv oeiv oezivjov"));
-
-		// Bad
-		coaches.add(new Coach("2", "Fake Guillaume Tromp", "seb@zerotoheroes.com", "Badminton", "9€",
-				"Former top 14 French", "bla oziejv oeiv oezivjov"));
-
-		// LoL
-		coaches.add(new Coach("3", "Fake Julien Debon", "seb@zerotoheroes.com", "League of Legends", "10€",
-				"Platinium  IV", "bla oziejv oeiv oezivjov"));
-		coaches.add(new Coach("3", "Fake Julien Debon", "seb@zerotoheroes.com", "League of Legends", "20€",
-				"Diamond III", "bla oziejv oeiv oezivjov"));
-
-		// SC2
-		coaches.add(new Coach("4", "Fake Alex Jobert", "seb@zerotoheroes.com", "Starcraft 2", "5€", "Platinium",
-				"bla oziejv oeiv oezivjov"));
 
 		return coaches;
 	}

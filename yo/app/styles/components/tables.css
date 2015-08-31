@@ -1,0 +1,7 @@
+.table>tbody>tr>td.vert-align{
+    vertical-align: middle;
+}
+
+th {
+    text-align: center;
+}

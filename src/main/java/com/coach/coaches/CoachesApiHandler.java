@@ -43,7 +43,7 @@ public class CoachesApiHandler {
 		log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
 		List<Coach> ret = new ArrayList<Coach>();
 		for (Coach coach : CoachRepository.allCoaches) {
-			if (coach.getSport().equals(sport)) {
+			if (coach.getSport().toString().equals(sport)) {
 				ret.add(coach);
 			}
 		}

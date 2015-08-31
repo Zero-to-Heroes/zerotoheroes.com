@@ -33,14 +33,16 @@
 		<span class="videoDescription" ng-readonly="true">{{review.description}}</span>
 	</div>
 	<div class="zth-right">
-		<button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-scale" data-template-url="templates/askPro.tpl.html" bs-modal="modal" data-placement="center" >Ask a Pro
+		<!-- <button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-scale" data-template-url="templates/askPro.html" bs-modal="modal" data-placement="center" >Ask a Pro
+		</button> -->
+		<button type="button" class="btn btn-lg btn-danger" ng-click="showProModal()" >Ask a Pro
 		</button>
 		<!-- <button ng-click="askAPro()">Ask A Pro!</button> -->
 	</div>
 </div>
 <hr/>
 <div ng-show="selectedCoach">
-	<div class="coach-selected">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
+	<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
 	<hr/>
 </div>
 <div class="zth-table review">
@@ -61,23 +63,6 @@
 		<span class="commentText">{{comment.text}}</span>
 	</div>	
 </div>
-
-<script type="text/ng-template" id="myModalContent.html">
-	<div class="choose-pro-header">
-        <h3 class="popup-title">Choose your pro</h3>
-        <button class="close-button" on-click="close()">X</button>
-    </div>
-    <div class="choose-pro">
-        <div ng-repeat="coach in coaches" class="zth-table coach-row" ng-class-even="'even'" ng-class-odd="'odd'">
-        	<button onpopover"Bottom!" popover-placement="bottom" type="button" class="btn btn-default name">{{coach.name}}</button>
-			<span class="qualifications">{{coach.level}}</span>
-			<span class="tariff">{{coach.tariff}}</span>
-			<div class="select-coach">
-				<button ng-click="ok(coach)">Request review</button>
-			</div>
-		</div>
-    </div>
-</script>
 
 <script type="text/ng-template" id="myPopoverTemplate.html">
     <div>Glut</div>

@@ -1,6 +1,14 @@
-<div class="tooltip in">
+<div class="tooltip in coach-description">
   	<div class="tooltip-arrow"></div>
 	<div class="tooltip-inner" >
-		{{coach.description}}
+		<div class="media">
+			<div class="media-left" ng-show="coach.picture">
+		    	<a href="#">
+		      		<img class="media-object" src="images/coaches/{{coach.picture}}">
+		    	</a>
+		  	</div>
+			<div class="media-body" ng-bind-html="coach.description">
+			</div>
+		</div>
 	</div>
 </div>

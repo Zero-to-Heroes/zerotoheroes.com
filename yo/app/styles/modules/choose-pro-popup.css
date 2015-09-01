@@ -1,0 +1,20 @@
+.coaches-table {
+  text-align: center;
+}
+
+.coach-description .tooltip-inner {
+  max-width: 300px;
+}
+
+.coach-description .media-object {
+  border-radius: 50%;
+  width: 75px;
+}
+
+.coach-description .media-body {
+  text-align: left;
+}
+
+.wide-span {
+	margin-right: 0.5em;
+}

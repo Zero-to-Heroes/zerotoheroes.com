@@ -15,6 +15,9 @@
 				<button ng-click="goTo(video.id)">-></button>
 			</div>
 		</div>
+		<div ng-hide="videos">
+			<span>It looks like there are no videos yet. You could start and <a href="#/upload">upload your own</a></span>
+		</div>
     </div>
     <div title="My videos" name="true" ng-click="retrieveVideos(true)" bs-pane>
 		<div ng-repeat="video in videos" class="reviewSummary">

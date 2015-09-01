@@ -17,14 +17,14 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="coach in coaches">
-							<td class="vert-align">
-								<span>{{coach.name}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="We have verified the coach information is accurate"></span>
+							<td class="vert-align text-nowrap">
+								<span class="wide-span">{{coach.name}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="We have verified the coach information is accurate"></span>
 							</td>
 							<td class="vert-align">
 								<span ng-repeat="language in coach.languagesSpoken" class="lang-sm" lang="{{language.code}}"></span>
 							</td>
-							<td class="vert-align"><span class="qualifications">{{coach.level}}</span></td>
-							<td class="vert-align"><span class="tariff">{{coach.tariff}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/tariffDescription.html"></span></td>
+							<td class="vert-align"><span>{{coach.level}}</span></td>
+							<td class="vert-align"><span class="wide-span">{{coach.tariff}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/tariffDescription.html"></span></td>
 							<td class="vert-align"><button type="button" class="btn btn-primary" data-animation="am-fade-and-scale" data-template-url="templates/confirmPro.html" bs-modal="modal" data-placement="center">Request review</button></td>
 						</tr>
 					</tbody>

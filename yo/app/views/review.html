@@ -27,10 +27,10 @@
 	<div class="row">
 		<div class="col-md-3">
 			<h4><span class="label label-primary">{{review.sport}}</span></h4>
-			<span class="author">{{review.author}}</span>
+			<span>{{review.author}}</span>
 		</div>
 		<div class="col-md-6">
-			<h1>{{review.title}}</h1>
+			<h1 class="video-title">{{review.title}}</h1>
 			<span class="videoDescription" ng-readonly="true">{{review.description}}</span>
 		</div>
 		<div class="col-md-3">
@@ -45,22 +45,26 @@
 	<hr/>
 </div>
 <div class="container-fluid">
-	<div class="col-md-3">
-		<div zth-name-input style="width: 100%">&nbsp;</div>
-	</div>
-	<div class="col-md-9">
-		<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="comment" style="width: 100%"></textarea>
-		<button ng-click="addComment()" class="commentButton">Publish</button>
+	<div class="row">
+		<div class="col-md-3">
+			<div zth-name-input style="width: 80%">&nbsp;</div>
+		</div>
+		<div class="col-md-9">
+			<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="comment" style="width: 100%"></textarea>
+			<button ng-click="addComment()" class="commentButton">Publish</button>
+		</div>
 	</div>
 </div>
 
 <div ng-repeat="comment in review.comments" class="container-fluid">
-	<div class="col-md-3">
-		<span class="author">{{comment.author}}</span>
+	<div class="row">
+		<div class="col-md-3">
+			<span>{{comment.author}}</span>
+		</div>
+		<div class="col-md-9">
+			<span>{{comment.text}}</span>
+		</div>	
 	</div>
-	<div class="col-md-9">
-		<span class="commentText">{{comment.text}}</span>
-	</div>	
 </div>
 
 <script type="text/ng-template" id="myPopoverTemplate.html">

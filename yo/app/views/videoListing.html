@@ -19,11 +19,11 @@
     <div title="My videos" name="true" ng-click="retrieveVideos(true)" bs-pane>
 		<div ng-repeat="video in videos" class="reviewSummary">
     		<div class="zth-left">
-				<span class="sportsTag">{{video.sport}}</span>
-				<span class="author">{{video.author}}</span>
+				<h4><span class="label label-primary">{{video.sport}}</span></h4>
+				<span>{{video.author}}</span>
 			</div>
 			<div class="zth-center">
-				<span class="videoTitle">{{video.title}}</span>
+				<h3>{{video.title}}</h3>
 				<span class="videoDescription">{{video.description}}</span>
 			</div>
 			<div class="zth-right">

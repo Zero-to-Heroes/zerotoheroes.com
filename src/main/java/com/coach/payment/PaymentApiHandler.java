@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.coach.coaches.Coach;
 import com.coach.coaches.CoachRepository;
 import com.coach.review.Review;
-import com.coach.review.access.ReviewRepository;
+import com.coach.review.ReviewRepository;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/payment")

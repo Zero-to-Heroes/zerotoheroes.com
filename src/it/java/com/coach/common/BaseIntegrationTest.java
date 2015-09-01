@@ -13,7 +13,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
 import com.coach.Application;
-import com.coach.review.access.ReviewRepository;
+import com.coach.review.ReviewRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = { Application.class })

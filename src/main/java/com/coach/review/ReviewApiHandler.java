@@ -21,8 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.coach.review.access.IFileStorage;
-import com.coach.review.access.ReviewRepository;
+import com.coach.review.video.storage.IFileStorage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RepositoryRestController
@@ -38,9 +37,6 @@ public class ReviewApiHandler {
 
 	@Autowired
 	IFileStorage fileStorage;
-
-	@Autowired
-	IUploadProgress progressCallback;
 
 	public ReviewApiHandler() {
 		log.debug("Initializing Review Api Handler");
@@ -83,16 +79,16 @@ public class ReviewApiHandler {
 		// Create a review entry with the appropriate link to the S3 file
 		final Review review = new ObjectMapper().readValue(strReview, Review.class);
 		log.debug("Review as string: " + review);
-		String key = fileStorage.storeFile(file, progressCallback);
+		String key = fileStorage.storeFile(file);
 		log.debug("Stored file " + file.getName() + " as " + key);
 
 		// Create the entry on the database
-		review.setKey(key);
+		review.setTemporaryKey(key);
 		review.setCreationDate(new Date());
 
 		// Store that entry in DB
 		mongoTemplate.save(review);
-		progressCallback.setReviewId(review.getId());
+		fileStorage.setReviewId(review.getId());
 		log.debug("Saved review with ID: " + review.getId());
 
 		// String currentUser =

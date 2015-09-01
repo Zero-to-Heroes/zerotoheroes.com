@@ -25,7 +25,7 @@ public class Review {
 	private String id;
 	private Date creationDate;
 	// The key of the associated video / file
-	private String key;
+	private String key, temporaryKey;
 	private String fileType;
 	private String sport;
 	private String title, description;

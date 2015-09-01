@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.review.Review;
-import com.coach.review.access.ReviewRepository;
+import com.coach.review.ReviewRepository;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/coaches")

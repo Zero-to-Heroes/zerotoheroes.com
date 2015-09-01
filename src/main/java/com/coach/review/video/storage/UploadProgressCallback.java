@@ -1,4 +1,4 @@
-package com.coach.review;
+package com.coach.review.video.storage;
 
 import java.util.Date;
 
@@ -9,7 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 
-import com.coach.review.access.ReviewRepository;
+import com.coach.review.Review;
+import com.coach.review.ReviewRepository;
 
 @Slf4j
 @Component
@@ -43,11 +44,10 @@ public class UploadProgressCallback implements IUploadProgress {
 				// log.debug("In callback, progress is " + progress);
 				lastUpdate = new Date().getTime();
 				// log.debug("Loaded review " + tempReview);
-				tempReview.setTreatmentCompletion(progress);
+				tempReview.setTreatmentCompletion(Math.min(progress, 99));
 				mongoTemplate.save(tempReview);
 				// log.debug("Updated review");
 			}
 		}
 	}
-
 }

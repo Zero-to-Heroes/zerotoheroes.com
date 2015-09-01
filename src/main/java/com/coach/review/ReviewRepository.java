@@ -1,11 +1,9 @@
-package com.coach.review.access;
+package com.coach.review;
 
 import java.util.List;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-import com.coach.review.Review;
 
 //@RepositoryRestResource(collectionResourceRel = "reviews", path = "reviews")
 public interface ReviewRepository extends MongoRepository<Review, String> {

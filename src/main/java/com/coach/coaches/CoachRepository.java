@@ -23,9 +23,15 @@ public class CoachRepository {
 				.id("0")
 				.description(
 						"<p>Currently part of a national club team. <ul><li>Coaching in 3 different clubs around Lyon, France</li><li>Diploma Brevet d'Etat</ul>")
-				.email("guillaumetromp@gmail.com").languagesSpoken(Arrays.asList(new Language[] { French, English }))
-				.level("Former French top 14").name("Guillaume Tromp").picture("guillaume.jpg").sport(Badminton)
-				.tariff("5€").tariffDescription("Provides 3 pieces of advice + how to put them into practice")
+				.email("guillaumetromp@gmail.com")
+				.languagesSpoken(Arrays.asList(new Language[] { French, English }))
+				.level("Former French top 14")
+				.name("Guillaume Tromp")
+				.picture("guillaume.jpg")
+				.sport(Badminton)
+				.tariff("5€")
+				.tariffDescription(
+						"The review will include at least: <ul><li>If it's a video of a match, 2 tactical recommendations</li><li>Otherwise, 2 technical recommendations</li></ul>")
 				.verified(true).build();
 		coaches.add(coach);
 

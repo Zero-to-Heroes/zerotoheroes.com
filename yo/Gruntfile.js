@@ -440,7 +440,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'ngconstant:development',
+    'ngconstant:production',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

@@ -109,7 +109,7 @@ public class S3Storage implements IFileStorage {
 
 			@Override
 			public void progressChanged(ProgressEvent progressEvent) {
-				if (upload.getProgress().getPercentTransferred() >= 100 && file != null) {
+				if (upload.getProgress().getPercentTransferred() >= 100 && file != null && file.exists()) {
 					try {
 						log.debug("Deleting temporary file");
 						file.delete();

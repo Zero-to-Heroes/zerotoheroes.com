@@ -70,9 +70,11 @@ public class TranscodingStatusNotification {
 					if (jobStatusNotification.getState().isTerminalState()) {
 						log.debug("Completing transcoding for review id " + reviewId);
 						Review review = repo.findById(reviewId);
+						log.debug("Loaded review " + review);
 						review.setTreatmentCompletion(100);
 						mongoTemplate.save(review);
-						// TODO: delete input file
+						log.debug("Updated review: " + review);
+						// TODO: delete bucket input file
 						synchronized (this) {
 							notifyAll();
 						}

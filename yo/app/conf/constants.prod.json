@@ -1,5 +1,5 @@
 {
 	"name": "production",
     "apiEndpoint": "http://www.zerotoheroes.com",
-	"videoStorageUrl": "https://s3.amazonaws.com/com.zerotoheroes/"
+	"videoStorageUrl": "https://s3-us-west-2.amazonaws.com/com.zerotoheroes.output/"
 }

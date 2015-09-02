@@ -3,6 +3,8 @@
 angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', 
 	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User) {
 
+		$scope.uploadInProgress = false;
+
 		$scope.initializeReview = function() {
 			$scope.review = {
 				'key': null,
@@ -24,9 +26,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		});
 
 		uploader.onBeforeUploadItem = function(item) {
-            //console.info('onBeforeUploadItem', item);
+            console.info('onBeforeUploadItem', item);
             $scope.review.author = User.getName();
             item.formData = [{'review': JSON.stringify($scope.review)}];
+            $scope.uploadInProgress = true;
         };
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
@@ -58,6 +61,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			        else {
 			        	uploader.clearQueue();
 			        	$scope.sources = null;
+			        	$scope.uploadInProgress = false;
 			        	//console.log("upload finished!");
 			        	$location.path('/r/' + data.id);
 			        }
@@ -76,10 +80,15 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.upload = function() {
 			//console.log('uploading');
-			//console.log($scope.uploader);
-			//console.log($scope.uploader.queue);
-			//console.log($scope.uploader.queue[0]);
-			$scope.uploader.uploadItem(0);
+			$scope.$broadcast('show-errors-check-validity');
+
+  			if ($scope.uploadForm.$valid) {
+				//console.log('really uploading');
+				//console.log($scope.uploader);
+				//console.log($scope.uploader.queue);
+				//console.log($scope.uploader.queue[0]);
+				$scope.uploader.uploadItem(0);
+			}
 		};
 
 		$scope.onPlayerReady = function(API) {

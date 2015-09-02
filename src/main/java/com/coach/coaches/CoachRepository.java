@@ -25,7 +25,7 @@ public class CoachRepository {
 						"<p>Currently part of a national club team. <ul><li>Coaching in 3 different clubs around Lyon, France</li><li>Diploma Brevet d'Etat</ul>")
 				.email("guillaumetromp@gmail.com")
 				.languagesSpoken(Arrays.asList(new Language[] { French, English }))
-				.level("Former French top 14")
+				.level("Former French top 20")
 				.name("Guillaume Tromp")
 				.picture("guillaume.jpg")
 				.sport(Badminton)

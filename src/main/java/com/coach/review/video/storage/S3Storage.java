@@ -148,7 +148,15 @@ public class S3Storage implements IFileStorage {
 			log.info("Converting multipart file to standard file");
 			convFile.createNewFile();
 			FileOutputStream fos = new FileOutputStream(convFile);
-			fos.write(file.getBytes());
+
+			// 1kb buffer
+			byte[] buffer = new byte[1024];
+			int read = 0;
+			InputStream inputStream = file.getInputStream();
+			while ((read = inputStream.read(buffer)) != -1) {
+				fos.write(buffer, 0, read);
+			}
+			fos.flush();
 			fos.close();
 			log.info("Conversion done in " + (new Date().getTime() - time));
 		}

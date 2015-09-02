@@ -18,3 +18,7 @@
 .wide-span {
 	margin-right: 0.5em;
 }
+
+.tariff-description .tooltip-inner {
+	text-align: left;
+}

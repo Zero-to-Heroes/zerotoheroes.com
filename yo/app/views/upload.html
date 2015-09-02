@@ -1,70 +1,73 @@
-<div zth-navigation></div>
+<form name="uploadForm">
 
-<input type="file" name="file" nv-file-select uploader="uploader" class="uploadFileButton"></input>
+	<div zth-navigation></div>
+
+	<input type="file" name="file" class="form-control" nv-file-select uploader="uploader" class="uploadFileButton" ng-required="true"></input>
 
 <!-- <input type="file" onchange="angular.element(this).scope().fileNameChanged(this.files)" id="fileInput" class="uploadFileButton" /> -->
 
-<div class="videogular-container">
-	<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)">
-		<vg-media vg-src="sources"></vg-media>
+	<div class="videogular-container">
+		<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)">
+			<vg-media vg-src="sources"></vg-media>
 
-		<vg-controls>
-			<vg-play-pause-button></vg-play-pause-button>
-			<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
-			<vg-scrub-bar id="scrubBar">
-				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-			</vg-scrub-bar>
-			<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
-		</vg-controls>
+			<vg-controls>
+				<vg-play-pause-button></vg-play-pause-button>
+				<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+				<vg-scrub-bar id="scrubBar">
+					<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+				</vg-scrub-bar>
+				<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
+			</vg-controls>
 
-		<vg-overlay-play ng-click="onOverlayClick()"></vg-overlay-play>
-	</videogular>
-</div>
-
-<div class="editing-tools">
-	<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0"></div>
-	<div class="buttons" ng-show="dataLoaded">
-		<div class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</div>
+			<vg-overlay-play ng-click="onOverlayClick()"></vg-overlay-play>
+		</videogular>
 	</div>
-	<div class="error">
-		<span ng-show="(clipDuration / 1000) > 301">Please use the above sliders to change the start and end times of your video so that it doesn't exceed 5 minutes</span>
-	</div>
-</div>
-<hr/>
-<div class="video-information">
-	<span class="video-information-title">Video information</span>
 
-	<div style="float: left; width: 100%">
-		<div style="width:70%; float:left; height: ">
-			<div style="width:100%; float:left;">
-				<div style="width: 40%; float: left">
-					<select ng-model="review.sport" ng-required="true" style="width: 100%">
-						<option value="">Choose your sport...*</option>
-						<option>Squash</option>
-						<option>Badminton</option>
-						<option>League of Legends</option>
-						<option>Starcraft 2</option>
-						<option>Other</option>
-					</select>
-				</div>
-				<div style="width: 5%; float: left; height: 2px">&nbsp;</div>
-				<div style="width: 55%; float: left">
-					<input type="text" placeholder="Title of your video review*" ng-model="review.title" style="width: 100%"/>
-				</div>
-			</div>
-			<div style="width: 100%; float: left; margin-top: 20px;">
-				<textarea placeholder="Any remarks about what you want to improve" ng-model="review.description" style="width:100%"></textarea>
-			</div>
+	<div class="editing-tools">
+		<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0"></div>
+		<div class="buttons" ng-show="dataLoaded">
+			<div class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</div>
 		</div>
-		<div style="width: 5%; float: left; height: 2px">&nbsp;</div>
-		<div style="width: 25%; float: left;">
-			<button ng-click="upload()" style="margin-top: 15px; width: 100%; height: 50px">Upload now</button>
+		<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > 301">
+			<span>Please use the sliders above to change the start and end times of your video so that it doesn't exceed 5 minutes</span>
 		</div>
 	</div>
-	<div style="clear:both;"></div>	
-</div>
+	<hr/>
+	<div class="video-information">
+		<h1>Video information</h1>
 
-<div ng-repeat="item in uploader.queue">
+		<div class="container-fluid">
+	  		<div class="row">
+				<div class="col-md-4">
+		  			<div class="form-group" show-errors="{ showSuccess: true }">
+					    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true">
+							<option value="">Choose your sport...</option>
+							<option>Squash</option>
+							<option>Badminton</option>
+							<option>League of Legends</option>
+							<option>Starcraft 2</option>
+							<option>Other</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-8">
+		  			<div class="form-group" show-errors="{ showSuccess: true }">
+				    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
+				  	</div>
+			  	</div>
+		  	</div>
+	  		<div class="row">
+				<div class="col-md-12">
+				  	<div class="form-group">
+				    	<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.description"></textarea>
+				   </div>
+				</div>
+		  	</div>
+		  	<button type="submit" class="btn btn-primary" ng-click="upload()" ng-disabled="uploadInProgress">Upload now</button>
+		</form>
+	</div>
+</div>
+<div ng-repeat="item in uploader.queue" ng-show="uploadInProgress">
 	<div ng-show="uploader.isHTML5" class="multipleStepProgressGroup">
 		<div class="informationMessages">
 			<span ng-show="item.progress > 0 && item.progress < 100">Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(</span>

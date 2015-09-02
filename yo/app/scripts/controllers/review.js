@@ -40,18 +40,26 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		};
 
 		$scope.addComment = function() {
-			console.log($scope.newComment);
-			Api.Reviews.save({reviewId: $scope.review.id}, {'author': User.getName(), 'text': $scope.commentText}, 
-  				function(data) {
-  					//console.log(data);
-		  			$scope.review.comments.push(data);
-		  			$scope.commentText = '';
-  				}, 
-  				function(error) {
-  					// Error handling
-  					console.error(error);
-  				}
-  			);
+			//console.log('adding comment');
+			$scope.$broadcast('show-errors-check-validity');
+
+			//console.log($scope.newComment);
+			if ($scope.commentForm.$valid) {
+				//console.log('really adding comment');
+				Api.Reviews.save({reviewId: $scope.review.id}, {'author': User.getName(), 'text': $scope.commentText}, 
+	  				function(data) {
+	  					//console.log(data);
+			  			$scope.commentText = '';
+			  			$scope.commentForm.$setPristine();
+			  			$scope.review.comments.push(data);
+			  			$scope.$broadcast('show-errors-reset');
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					console.error(error);
+	  				}
+	  			);
+			}
 		};
 
 		$scope.selectCoach = function (coach, email) {

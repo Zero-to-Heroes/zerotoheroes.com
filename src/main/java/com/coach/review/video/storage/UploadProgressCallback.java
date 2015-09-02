@@ -40,13 +40,19 @@ public class UploadProgressCallback implements IUploadProgress {
 			log.debug("temp review is " + tempReview);
 			// log.debug("current time is " + new Date().getTime() +
 			// " and last update is " + lastUpdate);
-			if (tempReview != null && tempReview.getTreatmentCompletion() < 100) {
-				log.debug("In callback, progress is " + progress);
-				lastUpdate = new Date().getTime();
-				log.debug("Loaded review " + tempReview);
-				tempReview.setTreatmentCompletion(Math.min(progress, 99));
+			if (tempReview != null) {
+				if (!tempReview.isTranscodingDone()) {
+					log.debug("In callback, progress is " + progress);
+					lastUpdate = new Date().getTime();
+					log.debug("Loaded review " + tempReview);
+					tempReview.setTreatmentCompletion(Math.min(progress, 99));
+					log.debug("Updated review");
+				}
+				else {
+					log.warn("Still in progress callback when the transcoding is already done");
+					tempReview.setTreatmentCompletion(100);
+				}
 				mongoTemplate.save(tempReview);
-				log.debug("Updated review");
 			}
 		}
 	}

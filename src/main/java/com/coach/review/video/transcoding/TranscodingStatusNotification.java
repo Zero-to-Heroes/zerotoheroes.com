@@ -72,6 +72,7 @@ public class TranscodingStatusNotification {
 						Review review = repo.findById(reviewId);
 						log.debug("Loaded review " + review);
 						review.setTreatmentCompletion(100);
+						review.setTranscodingDone(true);
 						mongoTemplate.save(review);
 						log.debug("Updated review: " + review);
 						// TODO: delete bucket input file

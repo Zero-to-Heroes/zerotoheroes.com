@@ -33,6 +33,7 @@ public class Review {
 	private int beginning, ending;
 	private List<Comment> comments;
 	private double treatmentCompletion;
+	private boolean transcodingDone;
 
 	public void addComment(Comment comment) {
 		if (comments == null) comments = new ArrayList<>();

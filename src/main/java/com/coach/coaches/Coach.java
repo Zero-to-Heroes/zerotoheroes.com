@@ -31,7 +31,14 @@ public class Coach {
 	}
 
 	public enum Sport {
-		Badminton, Squash, LeagueOfLegends
+		Badminton("Badminton"), Squash("Squash"), LeagueOfLegends("League of Legends"), HearthStone("HearthStone");
+		
+		@Getter
+		private String value;
+		
+		private Sport(String value) {
+			this.value = value;
+		}
 	}
 
 	@Id

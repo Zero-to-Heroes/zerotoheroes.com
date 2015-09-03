@@ -19,8 +19,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @NoArgsConstructor
 @ToString(exclude = "comments")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Review {
 
+public class Review {
 	@Id
 	private String id;
 	private Date creationDate;

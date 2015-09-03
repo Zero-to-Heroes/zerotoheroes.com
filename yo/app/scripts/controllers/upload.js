@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$resource', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $resource) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -59,7 +59,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
         var retrieveCompletionPercentage = function() {
 			//console.log("Retrieving completion percentage");
-        	Api.Reviews.get({reviewId: $scope.review.id}, 
+			Api.Reviews.get({reviewId: $scope.review.id}, 
 				function(data) {
 					//console.log('Received review: ' + data);
 					$scope.review.treatmentCompletion = data.treatmentCompletion;
@@ -80,7 +80,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 					//
 				},
 				function(error) {
-					console.error('Something went wrong!!' + error);
+					console.error('Something went wrong!!' + JSON.stringify(error) + '. Retrying in 5s...');
+					$timeout(function() {
+			        		retrieveCompletionPercentage();
+			        	}, 5000);
 				}
 			);
 

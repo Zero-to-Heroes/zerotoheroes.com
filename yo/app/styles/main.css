@@ -3,6 +3,10 @@ body {
   	padding-top: 0;
 }
 
+a[ng-click] {
+	cursor: pointer;
+}
+
 .header {
 	background-color: #1094D1;
 	font-family: 'Open Sans';

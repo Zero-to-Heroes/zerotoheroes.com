@@ -11,7 +11,8 @@
 			<vg-scrub-bar>
 				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 			</vg-scrub-bar>
-			<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+			<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
+			<vg-playback-button></vg-playback-button>
 			<vg-volume>
 				<vg-mute-button></vg-mute-button>
 				<vg-volume-bar></vg-volume-bar>
@@ -73,15 +74,7 @@
 			<span>{{comment.author}}</span>
 		</div>
 		<div class="col-md-9">
-			<span>{{comment.text}}</span>
+			<span compilecontent content="comment.text"></span>
 		</div>	
 	</div>
 </div>
-
-<script type="text/ng-template" id="myPopoverTemplate.html">
-    <div>Glut</div>
-    <div class="form-group">
-      <label>Popup Title:</label>
-      <input type="text" class="form-control">
-    </div>
-</script>

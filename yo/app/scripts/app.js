@@ -43,6 +43,20 @@ app.config(['$routeProvider',
       });
   }]);
 
+app.directive('compilecontent', function($compile, $parse) {
+    return {
+      restrict: 'A',
+      replace: true,
+      link: function(scope, element, attr) {
+        scope.$watch(attr.content, function() {
+          var parsed = $parse(attr.content)(scope);
+          element.html(parsed);
+          $compile(element.contents())(scope);
+        }, true);
+      }
+    }
+  })
+
 angular.module('controllers', []);
 angular.module('directives', []);
 

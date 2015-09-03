@@ -15,9 +15,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$timeout(function() { 
 				Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 					function(data) {
-						console.log($routeParams.reviewId);
+						//console.log($routeParams.reviewId);
 						$scope.review = data;
-						console.log($scope.review);
+						//console.log($scope.review);
 						//console.log(data);
 						var fileLocation = ENV.videoStorageUrl + data.key;
 						//console.log(fileLocation);
@@ -79,5 +79,61 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.hideProModal = function() {
 			askProModel.$promise.then(askProModel.hide);
 		}
+
+		var timestampRegex = /\d\d:\d\d(:\d\d\d)?(\+(p|(s(\d?\.?\d?)?)))?/g;
+
+		$scope.$watchCollection('review.comments', function(newComments, oldValue) {
+			if (newComments) {
+				angular.forEach(newComments, function(comment) {
+					if (!comment.processed) {
+						var oldText = comment.text;
+						var newText = $scope.parseComment(oldText);
+						comment.text = newText;
+						comment.processed = true;
+					}
+				})
+			}
+		});
+
+		$scope.parseComment = function(comment) {
+			// Replacing timestamps
+			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')">$&</a>');
+
+			return result;
+		};
+
+		$scope.goToTimestamp = function(timeString) {
+			var split = timeString.split("+");
+			//console.log(split);
+
+			// The timestamp
+			var timestamp = split[0].split(":");
+			//console.log(timestamp);
+			var convertedTime = 60 * parseInt(timestamp[0]) + parseInt(timestamp[1]) + (parseInt(timestamp[2]) || 0)  / 1000;
+			//console.log(convertedTime);
+
+			$scope.API.pause();
+			$scope.API.seekTime(convertedTime);
+
+			// The attribputes
+			var attributes = split[1];
+
+			// Should we slow down the video?
+			if (attributes && attributes.indexOf('s') !== -1) {
+				var playbackSpeed = attributes.substring(attributes.indexOf('s') + 1);
+				//console.log(playbackSpeed);
+				$scope.API.setPlayback(playbackSpeed ? playbackSpeed : 0.5);
+				$scope.API.play();
+			}
+			// Is playing?
+			else if (attributes && attributes.indexOf('p') !== -1) {
+				$scope.API.play();
+				$scope.API.setPlayback(1);
+			}
+			else {
+				console.log('setting playback to 1');
+				$scope.API.setPlayback(1);
+			}
+		};
 	}
 ]);

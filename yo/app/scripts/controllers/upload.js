@@ -4,6 +4,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User) {
 
 		$scope.uploadInProgress = false;
+		$scope.treatmentInProgress = false;
 
 		$scope.initializeReview = function() {
 			$scope.review = {
@@ -22,18 +23,27 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		var uploader = $scope.uploader = new FileUploader({
 			url: ENV.apiEndpoint + '/api/reviews'
-			//formData: [{'review': JSON.stringify($scope.review)}]
 		});
 
 		uploader.onBeforeUploadItem = function(item) {
-            console.info('onBeforeUploadItem', item);
+            //console.info('onBeforeUploadItem', item);
             $scope.review.author = User.getName();
             item.formData = [{'review': JSON.stringify($scope.review)}];
             $scope.uploadInProgress = true;
         };
+
+        // Make sure we only have one element in the queue
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
 			//console.log(fileItem);
+			//console.log(uploader.queue);
+			var lastItem = uploader.queue[uploader.queue.length - 1];
+			//console.log(lastItem);
+			uploader.clearQueue();
+			uploader.queue[0] = lastItem;
+			//console.log(uploader.queue);
+			//console.log(fileItem);
+			//console.log(fileItem._file);
 			$scope.review.title = fileItem._file.name;
 		};
         uploader.onSuccessItem = function(fileItem, response, status, headers) {
@@ -41,6 +51,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
             // Set the file id
             $scope.review.id = response;
+            $scope.treatmentInProgress = true;
 
             // Periodically query the server to get the s3 transfer percentage (as well as possibly other treatment infos)
             retrieveCompletionPercentage();
@@ -83,10 +94,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$scope.$broadcast('show-errors-check-validity');
 
   			if ($scope.uploadForm.$valid) {
-				//console.log('really uploading');
-				//console.log($scope.uploader);
-				//console.log($scope.uploader.queue);
-				//console.log($scope.uploader.queue[0]);
+				console.log('really uploading');
+				console.log($scope.uploader);
+				console.log($scope.uploader.queue);
+				console.log($scope.uploader.queue[0]);
 				$scope.uploader.uploadItem(0);
 			}
 		};
@@ -99,6 +110,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		};
 
 		$scope.updateSourceWithFile = function(fileObj) {
+            //uploader.clearQueue();
 			console.log('new file selected');
 			var objectURL = window.URL.createObjectURL(fileObj);
 			$scope.temp = fileObj;
@@ -107,8 +119,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			];
 			$scope.review.file = objectURL;
 			$scope.review.fileType = fileObj.type;
-        	console.log(uploader.queue);
-        	console.log(uploader.queue[0]);
+        	//console.log(uploader.queue);
+        	//console.log(uploader.queue[0]);
 		}
 
 		$scope.onSourceChanged = function(sources) {

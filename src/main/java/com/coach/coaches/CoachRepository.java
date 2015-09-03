@@ -38,8 +38,47 @@ public class CoachRepository {
 		// Squash
 
 		// LoL
+		coaches.add(buildLoLFakeCoach());
+		// HearthStone
+		coaches.add(buildHSFakeCoach());
 
 		return coaches;
+	}
+
+	private static Coach buildHSFakeCoach() {
+		return Coach
+				.builder()
+				.id("2")
+				.description(
+						"<p>Currently part of Pomf&Thud team. <ul><li>mostly streaming</li><li>can show you how to be the boss</li></ul>")
+				.email("thibaud@zerotoheroes.com")
+				.languagesSpoken(Arrays.asList(new Language[] { French, English }))
+				.level("Legend")
+				.name("Thud (FAKE)")
+				.picture("thud.jpg")
+				.sport(HearthStone)
+				.tariff("3€")
+				.tariffDescription(
+						"The review will include a complete analysis of one game")
+				.verified(true).build();
+	}
+
+	private static Coach buildLoLFakeCoach() {
+		return Coach
+				.builder()
+				.id("1")
+				.description(
+						"<p>Currently part of Dignitas team. <ul><li>unranked to Diamond youtube serie</li><li>mostly streaming</li></ul>")
+				.email("thibaud@zerotoheroes.com")
+				.languagesSpoken(Arrays.asList(new Language[] { English }))
+				.level("Diamond")
+				.name("Sean Huzzy Herbert (FAKE)")
+				.picture("huzzy.jpg")
+				.sport(LeagueOfLegends)
+				.tariff("6€")
+				.tariffDescription(
+						"The review will include at least: <ul><li>2 biggest execution mistakes analysis</li><li>2 biggest decision-making mistakes analysis</li></ul>")
+				.verified(true).build();
 	}
 
 	public static Coach findById(String coachId) {

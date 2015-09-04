@@ -57,6 +57,7 @@ module.exports = function(config) {
       'bower_components/angular-strap/dist/angular-strap.js',
       'bower_components/angular-strap/dist/angular-strap.tpl.js',
       'bower_components/angular-bootstrap-show-errors/src/showErrors.js',
+      'bower_components/moment/moment.js',
 
       'app/scripts/app.js',
       'app/scripts/**/*.js',

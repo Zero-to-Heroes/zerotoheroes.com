@@ -1,6 +1,7 @@
 package com.coach.review;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -52,7 +53,8 @@ public class ReviewApiHandler {
 		List<Review> reviews = null;
 		log.debug("userName param is " + userName);
 
-		Sort newestFirst = new Sort(new Sort.Order(Sort.Direction.DESC, "creationDate"));
+		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
+				"lastModifiedDate"));
 		if (!StringUtils.isEmpty(userName))
 			reviews = repo.findByAuthorAndTreatmentCompletion(userName, 100, newestFirst);
 		else
@@ -109,6 +111,7 @@ public class ReviewApiHandler {
 
 		comment.setCreationDate(new Date());
 		review.addComment(comment);
+		review.setLastModifiedDate(new Date());
 		mongoTemplate.save(review);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);

@@ -7,6 +7,14 @@ a[ng-click] {
 	cursor: pointer;
 }
 
+.inline-block {
+	display: inline-block;
+}
+
+.block {
+	display: block;
+}
+
 .header {
 	background-color: #1094D1;
 	font-family: 'Open Sans';

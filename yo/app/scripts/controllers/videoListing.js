@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 
+angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User',
 	function($scope, $routeParams, Api, $location, User) {
 		$scope.videos = [];
 		$scope.tabs = []; 
@@ -22,6 +22,22 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 		$scope.goTo = function(reviewId) {
 			$location.path('/r/' + reviewId);
+		}
+
+		$scope.formatDate = function(video) {
+			console.log(video);
+			console.log(video.creationDate);
+			console.log(video.lastModifiedDate);
+			// Is the last update a creation or a modification?
+			var statusString = video.lastModifiedDate ? 'modified ' : 'asked ';
+			//console.log(statusString);
+
+			// What is the time difference compared to now?
+			var usefulDate = video.lastModifiedDate ? video.lastModifiedDate : video.creationDate;
+			//console.log(usefulDate);
+			var fromNowString = moment(usefulDate).fromNow();
+			//console.log(fromNowString);
+			return statusString + fromNowString;
 		}
 	}
 ]);

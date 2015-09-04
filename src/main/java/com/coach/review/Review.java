@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 
 import com.amazonaws.util.StringUtils;
@@ -19,11 +20,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @NoArgsConstructor
 @ToString(exclude = "comments")
 @JsonIgnoreProperties(ignoreUnknown = true)
-
 public class Review {
 	@Id
 	private String id;
+	@CreatedDate
 	private Date creationDate;
+	private Date lastModifiedDate;
+	private Date sortingDate;
 	// The key of the associated video / file
 	private String key, temporaryKey;
 	private String fileType;
@@ -42,5 +45,15 @@ public class Review {
 
 	public void setSport(String sport) {
 		this.sport = StringUtils.trim(sport);
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+		setSortingDate(this.creationDate);
+	}
+
+	public void setLastModifiedDate(Date modifiedDate) {
+		lastModifiedDate = modifiedDate;
+		setSortingDate(lastModifiedDate);
 	}
 }

@@ -21,7 +21,8 @@
     "angular-file-upload": "~2.1.1",
     "angular-strap": "~2.3.1",
     "angular-motion": "~0.4.2",
-    "angular-bootstrap-show-errors": "~2.3.0"
+    "angular-bootstrap-show-errors": "~2.3.0",
+    "moment": "~2.10.6"
   },
   "appPath": "app",
   "resolutions": {

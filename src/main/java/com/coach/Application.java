@@ -7,9 +7,11 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
 @SpringBootApplication
 @EnableAutoConfiguration
+@EnableMongoAuditing
 @ComponentScan
 @PropertySource("classpath:/application.properties")
 // @EnableSpringDataWebSupport

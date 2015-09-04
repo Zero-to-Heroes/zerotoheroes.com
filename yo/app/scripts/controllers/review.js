@@ -153,7 +153,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
 	  				function(data) {
 			  			comment.text = data.text;
-			  			comme.tediting = false;
+			  			comment.editing = false;
 	  				}, 
 	  				function(error) {
 	  					// Error handling

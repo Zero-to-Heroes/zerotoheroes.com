@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 public class Comment {
 
+	private String id;
 	private String author, text;
 	private Date creationDate;
 }

@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @ToString(exclude = "comments")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Review {
+
 	@Id
 	private String id;
 	@CreatedDate
@@ -38,8 +39,11 @@ public class Review {
 	private double treatmentCompletion;
 	private boolean transcodingDone;
 
+	private int totalInsertedComments;
+
 	public void addComment(Comment comment) {
 		if (comments == null) comments = new ArrayList<>();
+		comment.setId(String.valueOf(++totalInsertedComments));
 		comments.add(comment);
 	}
 
@@ -55,5 +59,15 @@ public class Review {
 	public void setLastModifiedDate(Date modifiedDate) {
 		lastModifiedDate = modifiedDate;
 		setSortingDate(lastModifiedDate);
+	}
+
+	public Comment getComment(int commentId) {
+		if (comments == null) return null;
+
+		for (Comment comment : comments) {
+			if (comment.getId() != null && comment.getId().equals(String.valueOf(commentId))) { return comment; }
+		}
+
+		return null;
 	}
 }

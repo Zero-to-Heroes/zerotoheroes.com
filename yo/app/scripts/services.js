@@ -8,7 +8,7 @@ var services = angular.module('services', ['ngResource', 'config']);
 services.factory('Api', ['$resource', 'ENV', 
 	function($resource, ENV) {
 		return {
-			Reviews: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId', {reviewId: '@reviewId'}),
+			Reviews: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
 			Coaches: $resource(ENV.apiEndpoint + url + 'coaches/:reviewId', {reviewId: '@reviewId'}),
 			Payment: $resource(ENV.apiEndpoint + url + 'payment/:reviewId/:coachId/:email', {reviewId: '@reviewId', coachId: '@coachId', email:'@email'})
 			//Login: $resource(ENV.apiEndpoint + url + 'login', {})

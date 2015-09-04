@@ -68,13 +68,20 @@
 	</div>
 </form>
 
-<div ng-repeat="comment in review.comments" class="container-fluid">
-	<div class="row">
-		<div class="col-md-3">
-			<span>{{comment.author}}</span>
+<div ng-repeat="comment in review.comments" class="container-fluid comment-block">
+	<div class="comment-header">
+		<span class="comment-author">{{comment.author}}</span>
+		<span><small>{{formatDate(comment)}}</small></span>
+		<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id"> - Edit</a>
+	</div>
+	<div class="comment-body">
+		<p compilecontent content="comment.compiledText" ng-hide="comment.editing"></p>
+		<div ng-show="comment.editing">
+			<textarea class="form-control" ng-model="comment.text"></textarea>
+			<div class="text-right">
+				<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
+				<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
+			</div>
 		</div>
-		<div class="col-md-9">
-			<span compilecontent content="comment.text"></span>
-		</div>	
 	</div>
 </div>

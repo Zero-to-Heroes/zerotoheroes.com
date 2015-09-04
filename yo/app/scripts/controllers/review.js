@@ -86,9 +86,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if (newComments) {
 				angular.forEach(newComments, function(comment) {
 					if (!comment.processed) {
-						var oldText = comment.text;
-						var newText = $scope.parseComment(oldText);
-						comment.text = newText;
+						comment.compiledText = $scope.parseComment(comment.text);
 						comment.processed = true;
 					}
 				})
@@ -135,5 +133,33 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.API.setPlayback(1);
 			}
 		};
+
+		$scope.formatDate = function(comment) {
+			return moment(comment.creationDate).fromNow();
+		}
+
+		$scope.startEditing = function(comment) {
+			comment.editing = true;
+			comment.oldText = comment.text;
+		}
+
+		$scope.cancelUpdateComment = function(comment) {
+			comment.text = comment.oldText;
+			comment.editing = false;
+		}
+
+		$scope.updateComment = function(comment) {
+			console.log('Updating comment from ' + comment.oldText + ' to ' + comment.text);
+			Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
+	  				function(data) {
+			  			comment.text = data.text;
+			  			comme.tediting = false;
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					console.error(error);
+	  				}
+	  			);
+		}
 	}
 ]);

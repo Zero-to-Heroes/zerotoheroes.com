@@ -1,0 +1,16 @@
+.comment-block {
+	margin-left: 20px;
+}
+
+.comment-header {
+	margin-bottom: 5px;
+	font-size: 0.9em;
+}
+
+.comment-author {
+	font-weight: bold;
+}
+
+.comment-body p {
+	margin-bottom: 15px;
+}

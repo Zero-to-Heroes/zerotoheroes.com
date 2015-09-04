@@ -114,6 +114,24 @@ public class ReviewApiHandler {
 		review.setLastModifiedDate(new Date());
 		mongoTemplate.save(review);
 
+		log.debug("Created comment " + comment + " with id " + comment.getId());
+
+		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Comment> updateComment(@PathVariable("reviewId") final String reviewId,
+			@PathVariable("commentId") final int commentId, @RequestBody Comment newComment) throws IOException {
+
+		log.debug("Updating comment " + commentId + " to review " + reviewId);
+
+		Review review = repo.findById(reviewId);
+		Comment comment = review.getComment(commentId);
+		comment.setText(newComment.getText());
+
+		review.setLastModifiedDate(new Date());
+		mongoTemplate.save(review);
+
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
 }

@@ -25,9 +25,9 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		}
 
 		$scope.formatDate = function(video) {
-			console.log(video);
-			console.log(video.creationDate);
-			console.log(video.lastModifiedDate);
+			//console.log(video);
+			//console.log(video.creationDate);
+			//console.log(video.lastModifiedDate);
 			// Is the last update a creation or a modification?
 			var statusString = video.lastModifiedDate ? 'modified ' : 'asked ';
 			//console.log(statusString);

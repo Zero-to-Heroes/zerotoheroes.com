@@ -79,14 +79,18 @@ public class Transcoder {
 
 		// Setup the job input using the provided input key.
 		JobInput input = new JobInput().withKey(review.getTemporaryKey());
-		if (review.getVideoFramerateRatio() == 2) {
-			input.withFrameRate("60");
-		}
+
 		// log.debug("Created input: " + input);
 
 		// Output configuration
 		String startTime = formatTime(review.getBeginning());
-		String duration = formatTime((review.getEnding() - review.getBeginning()) / 2);
+		int intDuration = review.getEnding() - review.getBeginning();
+		if (review.getVideoFramerateRatio() == 2) {
+			log.debug("doubling frame rate");
+			input.withFrameRate("60");
+			intDuration = intDuration / 2;
+		}
+		String duration = formatTime(intDuration);
 		TimeSpan timeSpan = new TimeSpan().withStartTime(startTime).withDuration(duration);
 		Clip composition = new Clip().withTimeSpan(timeSpan);
 		CreateJobOutput output = new CreateJobOutput().withKey(keyName).withPresetId(GENERIC_480p_16_9_PRESET_ID)

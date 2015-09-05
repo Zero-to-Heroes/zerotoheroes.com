@@ -25,6 +25,8 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.Upload;
+import com.coach.review.Review;
+import com.coach.review.ReviewRepository;
 import com.coach.review.video.transcoding.Transcoder;
 
 @Slf4j
@@ -39,6 +41,11 @@ public class S3Storage implements IFileStorage {
 
 	@Autowired
 	Transcoder transcoder;
+
+	@Autowired
+	ReviewRepository repo;
+
+	private String reviewId;
 
 	private final String username, password;
 	private final String inputBucketName;
@@ -55,6 +62,7 @@ public class S3Storage implements IFileStorage {
 
 	@Override
 	public void setReviewId(String id) {
+		reviewId = id;
 		progressCallback.setReviewId(id);
 		transcoder.setReviewId(id);
 	}
@@ -106,18 +114,21 @@ public class S3Storage implements IFileStorage {
 			}
 		});
 		upload.addProgressListener(new ProgressListener() {
-
 			@Override
 			public void progressChanged(ProgressEvent progressEvent) {
 				if (upload.getProgress().getPercentTransferred() >= 100 && file != null && file.exists()) {
-					try {
-						log.debug("Deleting temporary file");
-						file.delete();
-						log.debug("Transcoding video");
-						transcoder.transcode();
-					}
-					catch (Exception e) {
-						log.error("Could not delete file", e);
+					Review review = repo.findById(reviewId);
+					log.debug("Transcoding already done? " + review.isTranscodingDone());
+					if (!review.isTranscodingDone()) {
+						try {
+							log.debug("Deleting temporary file");
+							file.delete();
+							log.debug("Transcoding video");
+							transcoder.transcode();
+						}
+						catch (Exception e) {
+							log.error("Could not delete file", e);
+						}
 					}
 				}
 			}

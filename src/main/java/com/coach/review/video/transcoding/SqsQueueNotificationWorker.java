@@ -70,7 +70,7 @@ public class SqsQueueNotificationWorker implements Runnable {
 
 			synchronized (handlers) {
 				for (Message message : messages) {
-					log.debug("Handling message: " + message);
+					// log.debug("Handling message: " + message);
 					try {
 						// Parse notification and call handlers.
 						JobStatusNotification notification = parseNotification(message);

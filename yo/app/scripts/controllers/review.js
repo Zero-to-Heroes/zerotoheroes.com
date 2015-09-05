@@ -20,12 +20,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						console.log($scope.review);
 						//console.log(data);
 						var fileLocation = ENV.videoStorageUrl + data.key;
-						//console.log(fileLocation);
+						console.log(fileLocation);
 						$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
 						//$scope.API.changeSource($scope.sources);
 					}
 				);
-			}, 333);
+			}, 500);
 			$timeout(function() { 
 				Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
 					$scope.coaches = [];

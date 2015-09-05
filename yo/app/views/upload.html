@@ -26,10 +26,16 @@
 	<div class="editing-tools">
 		<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0"></div>
 		<div class="buttons" ng-show="dataLoaded">
-			<div class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</div>
+			<span class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</span>
+			<span class="block"><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">Double the speed</a> of the video</span>
+			<span class="block" ng-show="review.videoFramerateRatio && review.videoFramerateRatio != 1">The final video will be {{videoFramerateRatio}} times as fast (and as short) as the original. Click <a ng-click="maximumAllowedDuration = maximumAllowedDuration / review.videoFramerateRatio; review.videoFramerateRatio = 1">here</a> to go back to the original speed</span>
 		</div>
-		<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > 301">
-			<span>Please use the sliders above to change the start and end times of your video so that it doesn't exceed 5 minutes</span>
+		<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration">
+			<span>To keep the reviews focused, we are enforcing a 5 minutes time limit on videos. You can either:</span>
+			<ul>
+				<li>Use the slider above the select up to 5 minutes of video to use</li>
+				<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">Double the speed</a> of the video to use up to 10 minutes of video. This is for now experimental and will only work if your video has less than 30 images per seconds (which is the case for most camera and phone videos, and the default for many video recording softwares)</li>
+			</ul>
 		</div>
 	</div>
 	<hr/>

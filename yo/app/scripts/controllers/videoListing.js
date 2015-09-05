@@ -20,9 +20,9 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			});
 		}
 
-		$scope.goTo = function(reviewId) {
+		/*$scope.goTo = function(reviewId) {
 			$location.path('/r/' + reviewId);
-		}
+		}*/
 
 		$scope.formatDate = function(video) {
 			//console.log(video);

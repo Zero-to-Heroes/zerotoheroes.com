@@ -67,24 +67,26 @@ public class Transcoder {
 		log.debug("Starting transcoding for review id " + reviewId);
 		// First retrieve the video we want to transcode
 		Review review = repo.findById(reviewId);
+		if (review.getTreatmentCompletion() == 100) {
+			log.debug("Transcoding already done, aborting");
+		}
 
 		String keyName = FOLDER_NAME + SUFFIX + UUID.randomUUID();
-		log.debug("Assigning final key: " + keyName);
+		// log.debug("Assigning final key: " + keyName);
 		review.setKey(keyName);
 		mongoTemplate.save(review);
-		log.debug("Updated review " + review);
+		// log.debug("Updated review " + review);
 
 		// Setup the job input using the provided input key.
 		JobInput input = new JobInput().withKey(review.getTemporaryKey());
-		log.debug("Created input: " + input);
+		if (review.getVideoFramerateRatio() == 2) {
+			input.withFrameRate("60");
+		}
+		// log.debug("Created input: " + input);
 
 		// Output configuration
-		log.debug("Input beginning time is " + review.getBeginning());
 		String startTime = formatTime(review.getBeginning());
-		log.debug("String of start time " + startTime);
-		log.debug("Input duration is " + (review.getEnding() - review.getBeginning()));
-		String duration = formatTime(review.getEnding() - review.getBeginning());
-		log.debug("String of duration is " + duration);
+		String duration = formatTime((review.getEnding() - review.getBeginning()) / 2);
 		TimeSpan timeSpan = new TimeSpan().withStartTime(startTime).withDuration(duration);
 		Clip composition = new Clip().withTimeSpan(timeSpan);
 		CreateJobOutput output = new CreateJobOutput().withKey(keyName).withPresetId(GENERIC_480p_16_9_PRESET_ID)

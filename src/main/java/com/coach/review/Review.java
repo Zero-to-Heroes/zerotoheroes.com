@@ -38,6 +38,7 @@ public class Review {
 	private List<Comment> comments;
 	private double treatmentCompletion;
 	private boolean transcodingDone;
+	private float videoFramerateRatio;
 
 	private int totalInsertedComments;
 

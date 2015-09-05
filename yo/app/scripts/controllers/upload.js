@@ -5,6 +5,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
+		$scope.maximumAllowedDuration = 5 * 60 + 1;
 
 		$scope.initializeReview = function() {
 			$scope.review = {
@@ -35,7 +36,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
         // Make sure we only have one element in the queue
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
-			//console.log(fileItem);
+			console.log(fileItem);
 			//console.log(uploader.queue);
 			var lastItem = uploader.queue[uploader.queue.length - 1];
 			//console.log(lastItem);
@@ -122,8 +123,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			];
 			$scope.review.file = objectURL;
 			$scope.review.fileType = fileObj.type;
-        	//console.log(uploader.queue);
-        	//console.log(uploader.queue[0]);
+        	console.log(uploader.queue);
+        	console.log(uploader.queue[0]);
 		}
 
 		$scope.onSourceChanged = function(sources) {

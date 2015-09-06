@@ -1,0 +1,22 @@
+header {
+	background-color: #1094D1;
+	font-family: 'Open Sans';
+	margin-top: 0;
+	margin-bottom: 3em;
+	padding-bottom: 1em;
+}
+
+header h1 {
+	display: block;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.logo {
+	width: 2em;
+	margin-left: -0.5em;
+	margin-top: 0.1em;
+}

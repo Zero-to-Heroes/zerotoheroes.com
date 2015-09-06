@@ -25,7 +25,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						//$scope.API.changeSource($scope.sources);
 					}
 				);
-			}, 500);
+			}, 300);
 			$timeout(function() { 
 				Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
 					$scope.coaches = [];

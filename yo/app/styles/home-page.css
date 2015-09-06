@@ -1,137 +1,75 @@
-.homePageContainer {
-  color: #555555;
-  font-size: 20px;
-}
-
-
-.homePageContainer h1 {
-  display: block;
-  color: white;
-  font-size: 65px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 50px;
-}
-
-.homePageContainer h2 {
-  font-size: 24px;
-  border-bottom: 1px solid #555555;
-}
-
-.homePageContainer p {
-  margin: auto;
-  color: #555555;
-}
-
-.homePage {
+.headline {
   max-width: 470px;
   margin: auto;
 }
 
-.comingSoon {
-	color: #FFB700;
-}
-
-.headline {
+.homePageContainer h1 {
   text-align: center;
   font-size: 28px;
 }
 
-.homePageContainer .subheadline {
-  margin-top: 15px;
+.comingSoon {
+  color: #FFB700;
+}
+
+.homePageContainer h3 {
   text-align: center;
+  font-size: 22px;
 }
 
 .thankYouMsg {
-  margin-top: 55px;
+  margin-top: 30px;
   text-align: center;
 }
 
-.notifyMeForm {
-	margin-top: 55px;
+.signup-form {
+  margin: auto;
+  margin-top: 30px;
+  max-width: 500px;
 }
 
-.addButton, .addButton:focus, .addButton:active  {
-  padding: 0;
-
-  -moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.7);
-  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.7);
-  box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.7);
-
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0.05,#FFB700),color-stop(1,#F0A400));
-  background: -moz-linear-gradient(center top,#FFB700 5%,#F0A400 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFB700',endColorstr='#F0A400');
-  background-color: #FFB700;
-
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  border: 1px solid #EFAF00;
-
-  color: #9B4C00;
-  text-align: center;
-  text-decoration: none;
-  width: 300px;
-  height: 40px;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: 'Open Sans';
-  line-height: 20px;
+.signup-form .input-group {
+  display: block;
 }
 
-.input-group-btn {
-  display: inherit;
+.signup-form input[type="email"] {
+  display: block;
 }
 
-.followUs, .followUs:hover {
-	display: block;
-	width: 400px;
-	color: #f0f0f0;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 50px;
-	text-align: center;
+.signup-form input[type="submit"] {
+  width: 100%;
 }
 
-.email {
-	width: 300px !important;
-	height: 40px !important;
-}
-
-.input-group {
-	margin: auto;
-}
-
-.whoarewe {
-  margin-top: 125px;
-  margin-bottom: 50px;
+.homePageContainer h2 {
+  margin-top: 30px;
+  border-bottom: 1px solid #555555;
+  font-size: 24px;
 }
 
 .founders {
-  margin-left: 40px;
-  margin-top: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .founder {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
-.thumbnailAvatar {
-  width: 120px;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 24px;
-  border-radius: 60px;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
+.thumbnail-avatar {
+  width: 25%;
+  max-width: 120px;
+  display: block;
+  /*vertical-align: top;*/
+  /*margin-right: 5%;*/
+  border-radius: 50%;
+  margin: auto;
 }
 
 .text {
-  display: inline-block;
-  width: 400px;
-  border-left: 1px solid #ededed;
-  padding-left: 24px;
+  display: block;
+  /*border-left: 1px solid #ededed;
+  padding-left: 5%;*/
 }
 
 .name {
@@ -142,4 +80,30 @@
 .text p {
   font-size: 14px;
   text-align: justify;
+}
+
+@media screen and (min-width: 400px) {
+  .signup-form .input-group {
+    display: table;
+  }
+
+  .founder {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .founder .thumbnail-avatar {
+    display: inline-block;
+    margin-right: 5%;
+    vertical-align: top;
+  }
+
+  .founder .text {
+    display: inline-block;
+    border-left: 1px solid #ededed;
+    padding-left: 5%;
+    width: 70%;
+  }
 }

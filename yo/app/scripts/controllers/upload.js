@@ -75,7 +75,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			        	$scope.sources = null;
 			        	$scope.uploadInProgress = false;
 			        	//console.log("upload finished!");
-			        	$location.path('/r/' + data.id);
+			        	$timeout(function() {
+			        		$location.path('/r/' + data.id);
+			        	}, 2000);
 			        }
 
 					//

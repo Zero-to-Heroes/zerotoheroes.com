@@ -120,9 +120,15 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
             //uploader.clearQueue();
 			console.log('new file selected');
 			var objectURL = window.URL.createObjectURL(fileObj);
+			// Hack for mkv, not supported properly by videogular
+			var type = fileObj.type;
+			if (type  == 'video/x-matroska') {
+				console.log('hacking type');
+				type = 'video/mp4';
+			}
 			$scope.temp = fileObj;
 		  	$scope.sources =  [
-				{src: $sce.trustAsResourceUrl(objectURL), type: fileObj.type}
+				{src: $sce.trustAsResourceUrl(objectURL), type: type}
 			];
 			$scope.review.file = objectURL;
 			$scope.review.fileType = fileObj.type;

@@ -1,9 +1,29 @@
-<div class="navigation zth-table">
-	<div class="upload">
-		<a href="#/upload">Submit a video</a>
-	</div>
-	<div class="controls">
-		<a href="#/reviews">Home</a>
-		<div zth-name-input class="nameInput"/>
-	</div>
-</div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  	<div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#links" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		    </button>
+		    <a class="navbar-brand" href="#/reviews">
+		    	<div class="brand">
+		    		<img src="/images/logo.png" class="logo"/>
+		    		<span>Zero to Heroes</span>
+	    		</div>
+	    	</a>
+	    </div>
+
+    	<!-- Collect the nav links, forms, and other content for toggling -->
+    	<div class="collapse navbar-collapse" id="links">
+      		<ul class="nav navbar-nav">
+        		<li><a href="#/upload">Submit a video <span class="sr-only">(current)</span></a></li>
+        		<li><a href="#/reviews">Home</a></li>
+        		<li><div zth-name-input class="nameInput"/></li>
+      		</ul>
+				
+    	</div><!-- /.navbar-collapse -->
+  	</div><!-- /.container-fluid -->
+</nav>

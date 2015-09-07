@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="app">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<title>Video Review Platform - Zero to Heroes</title>
@@ -37,12 +37,12 @@
 		  document.createElement('video');document.createElement('audio');document.createElement('track');
 		</script>
 	</head>
-	<body>
+	<body ng-app="app">
 		<div class="main" >
 			<!-- We want landing pages to be self-contained -->
-			<header ng-show="!isLandingPage">
+			<!--<header ng-hide="isLandingPage">
 				<h1><img src="/images/logo.png" class="logo"/>Zero to Heroes</h1>
-			</header>
+			</header>-->
 			<div ng-view></div>
 		</div>
 

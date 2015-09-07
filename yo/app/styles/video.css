@@ -1,25 +1,99 @@
-.editing-tools {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.upload-form {
+	background-color: white;
+	padding: 0 1em;
+	padding-top: 70px;
 }
 
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.form-container {
+	max-width: 800px;
+	margin: auto;
+	padding-bottom: 50px;
+}
+
+.videogular {
+	margin-bottom: 60px;
+	max-width: 800px;
+}
+
+.videogular .controls {
+	margin-top: 50px;
+}
+
+.editing-tools {
+  	margin-top: 20px;
+  	margin-bottom: 20px;
+}
+
+/* Making the sliders more usable on mobile 
+.ngrs-range-slider .ngrs-handle {
+	padding: 20px;
+	margin-top: -10px;
+}
+
+.ngrs-handle-min {
+
+}*/
+
 .editing-tools .buttons {
-  margin-top: 20px;
-  text-align: center;
+  	margin-top: 20px;
+  	text-align: center;
 }
 
 .ngrs-range-slider {
-  margin-bottom: 20px;
+  	margin-bottom: 20px;
 }
 
 .second {
-  margin-top: -20px
+  	margin-top: -20px
 }
 
 .video-title {
-  margin-top: 0;
+  	margin-top: 0;
 }
 
 .editing-tools .alert {
-  margin-top: 20px;
+ 	margin-top: 20px;
+}
+
+.video-information .nameInput {
+	display: block;
+}
+
+
+@media screen and (min-width: 500px) {
+  	.btn-file {
+  		margin-left: auto;
+  		margin-right: auto;
+  		width: 150px;
+  	}
+}
+
+/* Don't show the name input if it appears on the navbar */
+@media screen and (min-width: 768px) {
+  	.video-information .name-input-row {
+		display: none;
+	}
 }

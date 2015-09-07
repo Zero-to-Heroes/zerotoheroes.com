@@ -1,3 +1,17 @@
+.homePageContainer {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-bottom: 30px;
+}
+
+.homePageContainer .content {
+  margin: 0 1em;
+}
+
 .headline {
   max-width: 470px;
   margin: auto;
@@ -41,12 +55,12 @@
 }
 
 .homePageContainer h2 {
-  margin-top: 30px;
   border-bottom: 1px solid #555555;
   font-size: 24px;
 }
 
 .founders {
+  margin-top: 30px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -83,13 +97,26 @@
 }
 
 @media screen and (min-width: 400px) {
+  .homePageContainer h3 {
+    margin-top: 30px;
+  }
+
   .signup-form .input-group {
     display: table;
   }
 
+  .founders {
+    margin-top: 50px;
+  }
+
   .founder {
+    margin-top: 50px;
     margin-left: 10%;
     margin-right: 10%;
+  }
+
+  .founder .text {
+    margin-top: 20px;
   }
 }
 
@@ -105,5 +132,6 @@
     border-left: 1px solid #ededed;
     padding-left: 5%;
     width: 70%;
+    margin-top: 0;
   }
 }

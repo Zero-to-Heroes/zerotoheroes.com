@@ -1,5 +1,9 @@
-.table>tbody>tr>td.vert-align{
+.table>tbody>tr>td.vert-align {
     vertical-align: middle;
+}
+
+.table>tbody>tr>td.vert-align-bottom {
+    vertical-align: bottom;
 }
 
 th {

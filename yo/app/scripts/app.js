@@ -24,7 +24,8 @@ app.config(['$routeProvider',
     $routeProvider.
       when('/', {
         templateUrl: 'views/home-page.html',
-        controller: 'HomePageCtrl'
+        controller: 'HomePageCtrl',
+        isLandingPage: true
       }).
       when('/upload', {
         templateUrl: 'views/upload.html',
@@ -69,3 +70,9 @@ app.run(['$rootScope', '$window', '$location', '$http',
             }
         });*/
     }]);
+
+app.run(['$rootScope', function($rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        $rootScope.isLandingPage = current.$$route.isLandingPage;
+    });
+}]);

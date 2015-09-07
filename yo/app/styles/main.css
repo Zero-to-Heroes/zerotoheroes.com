@@ -15,61 +15,31 @@ a[ng-click] {
 	display: block;
 }
 
-.header {
-	background-color: #1094D1;
-	font-family: 'Open Sans';
-}
-
-.header h1 {
-	display: block;
-	color: white;
-	font-size: 65px;
-	font-weight: bold;
-	text-align: center;
-	margin-top: 0;
-	margin-bottom: 50px;
-	padding-bottom: 20px;
-}
-
-.logo {
-	width: 150px;
-	margin-left: -75px;
-	margin-top: 10px;
-}
-
 .main {
-	width: 800px;
+	background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;
+	width: 100%;
 	height: 100%;
-	min-height: 800px;
+	/*min-height: 800px;*/
 	margin: 0 auto;
-	background-color: white;
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+	/*box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);*/
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 }
 
-.content {
-	max-width: 675px;
-	margin: auto;
-	padding-bottom: 50px;
+.main-panel {
+  background-color: white;
+  padding: 0;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 70px;
 }
 
-.zth-table {
-	width: 100%;
-	display: table;
-	table-layout: fixed;
+.center-column {
+  /*max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;*/
+  padding-bottom: 50px;
 }
-
-.zth-top {
-	vertical-align: top;
-}
-
-.zth-table-row {
-	display: table-row;
-}
-
-
-
 
 .modal-backdrop.am-fade {
   opacity: .5;

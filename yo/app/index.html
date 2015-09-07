@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Video Review Platform - Zero to Heroes</title>
 		<meta name="description" content="A video review platform to share your passion and improve your skills. Record yourself playing. Get the feedback you need. Progress and help others" />
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="robots" content="index,follow" />
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<link rel="icon" type="image/png" href="/images/favicon.png">
@@ -27,6 +27,7 @@
 		<link rel="stylesheet" href="styles/components/tables.css" />
 		<link rel="stylesheet" href="styles/components/languages.css">
 		<link rel="stylesheet" href="styles/components/buttons.css">
+		<link rel="stylesheet" href="styles/modules/header.css" />
 		<link rel="stylesheet" href="styles/modules/choose-pro-popup.css" />
 		<link rel="stylesheet" href="styles/modules/comment.css" />
 		<!-- endbuild -->
@@ -37,15 +38,12 @@
 		</script>
 	</head>
 	<body ng-app="app">
-
-		<div class="main">
-			<div class="header">
-				<h1><img src="images/logo.png" class="logo"/>Zero to Heroes</h1>
-			</div>
-			<div ng-view class="content"></div>
-			<div class="footer">
-				<!-- <a href="https://twitter.com/0toheroes" target="_blank" class="followUs">Follow us on Twitter</a>-->
-			</div>
+		<div class="main" >
+			<!-- We want landing pages to be self-contained -->
+			<!--<header ng-hide="isLandingPage">
+				<h1><img src="/images/logo.png" class="logo"/>Zero to Heroes</h1>
+			</header>-->
+			<div ng-view></div>
 		</div>
 
 

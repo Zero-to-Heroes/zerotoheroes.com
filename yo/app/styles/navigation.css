@@ -1,3 +1,16 @@
+.brand {
+	margin-top: -8px;
+  font-size: 20px;
+}
+
+.navbar .logo {
+	width: 2em;
+}
+
+.navbar-nav .nameInput {
+	padding: 10px 15px;
+}
+
 .upload {
   margin-bottom: 20px;
   width: 50%;

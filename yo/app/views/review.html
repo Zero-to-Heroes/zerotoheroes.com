@@ -1,11 +1,13 @@
 <div zth-navigation></div>
 
+<div class="main-panel">
+<div class="center-column">
 <div class="videogular-container">
-	<videogular vg-player-ready="onPlayerReady($API)">
+	<videogular vg-player-ready="onPlayerReady($API)" class="videogular">
 		<vg-media vg-src="sources">
 		</vg-media>
 
-		<vg-controls>
+		<vg-controls class="controls">
 			<vg-play-pause-button></vg-play-pause-button>
 			<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
 			<vg-scrub-bar>
@@ -27,7 +29,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-3">
-			<h4><span class="label label-primary">{{review.sport}}</span></h4>
+			<div><span class="label label-primary">{{review.sport}}</span></div>
 			<span>{{review.author}}</span>
 		</div>
 		<div class="col-md-6">
@@ -84,4 +86,6 @@
 			</div>
 		</div>
 	</div>
+</div>
+</div>
 </div>

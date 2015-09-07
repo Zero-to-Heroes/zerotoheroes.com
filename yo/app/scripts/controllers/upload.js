@@ -6,6 +6,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
 		$scope.maximumAllowedDuration = 5 * 60 + 1;
+		$scope.User = User;
 
 		$scope.initializeReview = function() {
 			$scope.review = {
@@ -75,7 +76,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			        	$scope.sources = null;
 			        	$scope.uploadInProgress = false;
 			        	//console.log("upload finished!");
-			        	$location.path('/r/' + data.id);
+			        	$timeout(function() {
+			        		$location.path('/r/' + data.id);
+			        	}, 2000);
 			        }
 
 					//

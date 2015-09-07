@@ -29,7 +29,8 @@ public class Transcoder {
 	private static final String GENERIC_480p_16_9_PRESET_ID = "1351620000001-000020";
 
 	private static final String SUFFIX = "/";
-	private static final String FOLDER_NAME = "videos";
+	private static final String VIDEO_FOLDER_NAME = "videos";
+	private static final String THUMBNAIL_FOLDER_NAME = "thumbnails";
 
 	@Autowired
 	ReviewRepository repo;
@@ -41,26 +42,19 @@ public class Transcoder {
 	TranscodingStatusNotification notification;
 
 	private final String username, password;
-	private final String inputBucketName, outputBucketName;
 	private final String pipelineId;
 	private final String endpoint;
 
 	private String reviewId;
 
 	@Autowired
-	public Transcoder(@Value("${videos.bucket.input.name}") String inputBucketName,
-			@Value("${videos.bucket.output.name}") String outputBucketName, @Value("${s3.username}") String username,
-			@Value("${s3.password}") String password, @Value("${transcoding.pipeline.id}") String pipelineId,
-			@Value("${transcoding.endpoint}") String endpoint) {
+	public Transcoder(@Value("${s3.username}") String username, @Value("${s3.password}") String password,
+			@Value("${transcoding.pipeline.id}") String pipelineId, @Value("${transcoding.endpoint}") String endpoint) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.inputBucketName = inputBucketName;
-		this.outputBucketName = outputBucketName;
 		this.pipelineId = pipelineId;
 		this.endpoint = endpoint;
-		log.debug("Initializing transcoder with buckets: " + inputBucketName + ", " + outputBucketName + ", "
-				+ username);
 	}
 
 	public void transcode() {
@@ -71,9 +65,13 @@ public class Transcoder {
 			log.debug("Transcoding already done, aborting");
 		}
 
-		String keyName = FOLDER_NAME + SUFFIX + UUID.randomUUID();
+		UUID randomUUID = UUID.randomUUID();
+		String keyName = VIDEO_FOLDER_NAME + SUFFIX + randomUUID;
 		// log.debug("Assigning final key: " + keyName);
 		review.setKey(keyName);
+		String thumbnailKey = THUMBNAIL_FOLDER_NAME + SUFFIX + randomUUID + "_";
+		String thumbnailName = thumbnailKey + "00001.png";
+		review.setThumbnail(thumbnailName);
 		mongoTemplate.save(review);
 		// log.debug("Updated review " + review);
 
@@ -93,8 +91,9 @@ public class Transcoder {
 		String duration = formatTime(intDuration);
 		TimeSpan timeSpan = new TimeSpan().withStartTime(startTime).withDuration(duration);
 		Clip composition = new Clip().withTimeSpan(timeSpan);
+
 		CreateJobOutput output = new CreateJobOutput().withKey(keyName).withPresetId(GENERIC_480p_16_9_PRESET_ID)
-				.withComposition(composition);
+				.withComposition(composition).withThumbnailPattern(thumbnailKey + "{count}");
 		log.debug("Created output: " + output);
 
 		BasicAWSCredentials credentials = new BasicAWSCredentials(username, password);

@@ -30,6 +30,7 @@ public class Review {
 	private Date sortingDate;
 	// The key of the associated video / file
 	private String key, temporaryKey;
+	private String thumbnail;
 	private String fileType;
 	private String sport;
 	private String title, description;

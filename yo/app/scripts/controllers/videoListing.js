@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User',
-	function($scope, $routeParams, Api, $location, User) {
+angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', 
+	function($scope, $routeParams, Api, $location, User, ENV) {
 		$scope.videos = [];
 		$scope.tabs = []; 
 		$scope.tabs.activeTab = 0;
+		$scope.ENV = ENV;
 
 		$scope.$watch('tabs.activeTab', function(newValue, oldValue) {
 			$scope.retrieveVideos(newValue);

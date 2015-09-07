@@ -39,3 +39,22 @@
   max-width: 900px;
   margin: auto;
 }
+
+.thumbnails {
+  display: none;
+}
+
+.thumbnails img {
+  width: 100px;
+}
+
+.info-column h3 {
+  margin-top: 0;
+}
+
+/* Don't show the name input if it appears on the navbar */
+@media screen and (min-width: 600px) {
+    .thumbnails {
+        display: table-cell;
+    }
+}

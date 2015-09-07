@@ -5,6 +5,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.API = null;
 		$scope.sources = null;
+		$scope.thumbnail = null;
 		$scope.newComment = '';
 		$scope.coaches = [];
 		$scope.selectedCoach;
@@ -20,7 +21,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						console.log($scope.review);
 						//console.log(data);
 						var fileLocation = ENV.videoStorageUrl + data.key;
-						console.log(fileLocation);
+						$scope.thumbnail = data.thumbnail ? ENV.videoStorageUrl + data.thumbnail : null;
+						console.log($scope.thumbnail);
 						$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
 						//$scope.API.changeSource($scope.sources);
 					}

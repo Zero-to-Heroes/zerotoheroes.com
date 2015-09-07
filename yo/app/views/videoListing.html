@@ -10,6 +10,9 @@
 					<td class="vert-align text-center">
 						<span class="block">{{video.comments.length}}</span><span><small>comments</small></span>
 					</td>
+					<td class="thumbnails vert-align text-center">
+						<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
+					</td>
 					<td class="vert-align info-column">
 						<div class="container-fluid">
 							<div class="row">

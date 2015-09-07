@@ -4,8 +4,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface IFileStorage {
 
-	String storeFile(MultipartFile file);
+	String storeFile(MultipartFile file, String reviewId);
 
-	void setReviewId(String id);
+	// void setReviewId(String id);
 
 }

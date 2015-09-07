@@ -22,7 +22,8 @@
     "angular-strap": "~2.3.1",
     "angular-motion": "~0.4.2",
     "angular-bootstrap-show-errors": "~2.3.0",
-    "moment": "~2.10.6"
+    "moment": "~2.10.6",
+    "angular-scroll": "~0.7.2"
   },
   "appPath": "app",
   "resolutions": {

@@ -45,7 +45,7 @@ public class Transcoder {
 	private final String pipelineId;
 	private final String endpoint;
 
-	private String reviewId;
+	// private String reviewId;
 
 	@Autowired
 	public Transcoder(@Value("${s3.username}") String username, @Value("${s3.password}") String password,
@@ -57,7 +57,7 @@ public class Transcoder {
 		this.endpoint = endpoint;
 	}
 
-	public void transcode() {
+	public void transcode(String reviewId) {
 		log.debug("Starting transcoding for review id " + reviewId);
 		// First retrieve the video we want to transcode
 		Review review = repo.findById(reviewId);
@@ -112,15 +112,15 @@ public class Transcoder {
 		log.debug("Created job request: " + createJobRequest);
 		Job job = amazonElasticTranscoder.createJob(createJobRequest).getJob();
 		log.debug("Created job");
-		notification.listen(job.getId());
+		notification.listen(job.getId(), reviewId);
 	}
 
 	private String formatTime(int beginning) {
 		return beginning / 1000 + "." + beginning % 1000;
 	}
 
-	public void setReviewId(String reviewId) {
-		this.reviewId = reviewId;
-		notification.setReviewId(reviewId);
-	}
+	// public void setReviewId(String reviewId) {
+	// this.reviewId = reviewId;
+	// notification.setReviewId(reviewId);
+	// }
 }

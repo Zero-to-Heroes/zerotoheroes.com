@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$resource', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $resource) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -32,6 +32,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
             $scope.review.author = User.getName();
             item.formData = [{'review': JSON.stringify($scope.review)}];
             $scope.uploadInProgress = true;
+
+            var bottom = angular.element(document.getElementById('bottom'));
+			$document.scrollToElementAnimated(bottom, 0, 1);
         };
 
         // Make sure we only have one element in the queue
@@ -48,6 +51,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			//console.log(fileItem._file);
 			$scope.review.title = fileItem._file.name;
 		};
+
         uploader.onSuccessItem = function(fileItem, response, status, headers) {
             //console.info('onSuccess', fileItem, response, status, headers);
 
@@ -63,6 +67,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			//console.log("Retrieving completion percentage");
 			Api.Reviews.get({reviewId: $scope.review.id}, 
 				function(data) {
+
 					//console.log('Received review: ' + data);
 					$scope.review.treatmentCompletion = data.treatmentCompletion;
 

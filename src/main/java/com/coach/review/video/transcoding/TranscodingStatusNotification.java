@@ -1,6 +1,5 @@
 package com.coach.review.video.transcoding;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,30 +24,29 @@ public class TranscodingStatusNotification {
 	MongoTemplate mongoTemplate;
 
 	private final String username, password;
-	private final String inputBucketName, outputBucketName;
-	private final String pipelineId;
+	// private final String inputBucketName, outputBucketName;
+	// private final String pipelineId;
 	private final String sqsQueueUrl;
 
-	@Setter
-	private String reviewId;
+	// @Setter
+	// private String reviewId;
 
 	@Autowired
-	public TranscodingStatusNotification(@Value("${videos.bucket.input.name}") String inputBucketName,
-			@Value("${videos.bucket.output.name}") String outputBucketName, @Value("${s3.username}") String username,
-			@Value("${s3.password}") String password, @Value("${transcoding.pipeline.id}") String pipelineId,
-			@Value("${transcoding.sqs.queue.url}") String sqsQueueUrl) {
+	public TranscodingStatusNotification(@Value("${s3.username}") String username,
+			@Value("${s3.password}") String password, @Value("${transcoding.sqs.queue.url}") String sqsQueueUrl) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.inputBucketName = inputBucketName;
-		this.outputBucketName = outputBucketName;
-		this.pipelineId = pipelineId;
+		// this.inputBucketName = inputBucketName;
+		// this.outputBucketName = outputBucketName;
+		// this.pipelineId = pipelineId;
 		this.sqsQueueUrl = sqsQueueUrl;
-		log.debug("Initializing transcoder with buckets: " + inputBucketName + ", " + outputBucketName + ", "
-				+ username + " with queue URL " + sqsQueueUrl);
+		// log.debug("Initializing transcoder with buckets: " + inputBucketName
+		// + ", " + outputBucketName + ", "
+		// + username + " with queue URL " + sqsQueueUrl);
 	}
 
-	public void listen(final String jobId) {
+	public void listen(final String jobId, final String reviewId) {
 		log.debug("Listing for job id: " + jobId);
 		BasicAWSCredentials credentials = new BasicAWSCredentials(username, password);
 		AmazonSQS amazonSqs = new AmazonSQSClient(credentials);

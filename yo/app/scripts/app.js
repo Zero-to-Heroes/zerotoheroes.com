@@ -15,7 +15,8 @@ var app = angular.module('app', [
   //'ui.bootstrap',
   'ui-rangeSlider',
   'ui.bootstrap.showErrors',
-  'mgcrea.ngStrap'
+  'mgcrea.ngStrap',
+  'duScroll'
 ]);
 
 

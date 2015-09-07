@@ -81,17 +81,20 @@ public class ReviewApiHandler {
 		// Create a review entry with the appropriate link to the S3 file
 		final Review review = new ObjectMapper().readValue(strReview, Review.class);
 		log.debug("Review as string: " + review);
-		String key = fileStorage.storeFile(file);
-		log.debug("Stored file " + file.getName() + " as " + key);
 
 		// Create the entry on the database
-		review.setTemporaryKey(key);
 		review.setCreationDate(new Date());
 
 		// Store that entry in DB
 		mongoTemplate.save(review);
-		fileStorage.setReviewId(review.getId());
 		log.debug("Saved review with ID: " + review.getId());
+
+		// fileStorage.setReviewId(review.getId());
+		String key = fileStorage.storeFile(file, review.getId());
+		log.debug("Stored file " + file.getName() + " as " + key);
+		review.setTemporaryKey(key);
+		mongoTemplate.save(review);
+		log.debug("Saved again review with ID: " + review.getId());
 
 		// String currentUser =
 		// SecurityContextHolder.getContext().getAuthentication().getName();

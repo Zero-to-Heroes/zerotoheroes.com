@@ -2,7 +2,6 @@ package com.coach.review.video.storage;
 
 import java.util.Date;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,17 +23,18 @@ public class UploadProgressCallback implements IUploadProgress {
 	@Autowired
 	MongoTemplate mongoTemplate;
 
-	@Setter
-	private String reviewId;
+	// @Setter
+	// private String reviewId;
 
-	private double lastUpdate;
+	// private double lastUpdate;
 
 	@Override
-	public void onUploadProgress(double progress) {
+	public double onUploadProgress(String reviewId, double progress, double lastUpdate) {
 		// log.debug("In callback head of method, progress is " + progress);
 		// log.debug("review id is " + reviewId);
 		// log.debug("Current time is " + new Date().getTime());
 		// log.debug("next update tick is at " + (lastUpdate + UPDATE_DELAY));
+		double currentUpdate = lastUpdate;
 		if (progress >= 100 || new Date().getTime() > lastUpdate + UPDATE_DELAY) {
 			Review tempReview = repo.findById(reviewId);
 			// log.debug("temp review is " + tempReview);
@@ -43,7 +43,7 @@ public class UploadProgressCallback implements IUploadProgress {
 			if (tempReview != null) {
 				if (!tempReview.isTranscodingDone()) {
 					// log.debug("In callback, progress is " + progress);
-					lastUpdate = new Date().getTime();
+					currentUpdate = new Date().getTime();
 					// log.debug("Loaded review " + tempReview);
 					tempReview.setTreatmentCompletion(Math.min(progress, 99));
 					// log.debug("Updated review");
@@ -55,5 +55,6 @@ public class UploadProgressCallback implements IUploadProgress {
 				mongoTemplate.save(tempReview);
 			}
 		}
+		return currentUpdate;
 	}
 }

@@ -45,7 +45,7 @@ public class S3Storage implements IFileStorage {
 	@Autowired
 	ReviewRepository repo;
 
-	private String reviewId;
+	// private String reviewId;
 
 	private final String username, password;
 	private final String inputBucketName;
@@ -60,23 +60,21 @@ public class S3Storage implements IFileStorage {
 		log.debug("Initializing storage with bucket: " + inputBucketName + ", username " + username);
 	}
 
-	@Override
-	public void setReviewId(String id) {
-		reviewId = id;
-		progressCallback.setReviewId(id);
-		transcoder.setReviewId(id);
-	}
+	/*
+	 * @Override public void setReviewId(String id) { reviewId = id;
+	 * progressCallback.setReviewId(id); transcoder.setReviewId(id); }
+	 */
 
 	@Override
-	public String storeFile(MultipartFile multipart) {
+	public String storeFile(MultipartFile multipart, String reviewId) {
 		String key = null;
 		File file = convert(multipart);
-		key = storeFile(file, multipart.getSize());
+		key = storeFile(file, multipart.getSize(), reviewId);
 		// And delete the file
 		return key;
 	}
 
-	private String storeFile(final File file, long fileSize) {
+	private String storeFile(final File file, long fileSize, final String reviewId) {
 
 		// Initialize the folders. Should be done only once, and not at each
 		// call
@@ -93,7 +91,7 @@ public class S3Storage implements IFileStorage {
 		log.info("created folder");
 
 		// Build the random key name
-		String keyName = FOLDER_NAME + SUFFIX + UUID.randomUUID();
+		final String keyName = FOLDER_NAME + SUFFIX + UUID.randomUUID();
 
 		// Get the transfer manager to allow upload from an input stream. And,
 		// the upload is asynchronous (could be an issue if something goes
@@ -108,9 +106,12 @@ public class S3Storage implements IFileStorage {
 		log.debug("Sent upload request");
 		upload.addProgressListener(new ProgressListener() {
 
+			private double lastUpdate;
+
 			@Override
 			public void progressChanged(ProgressEvent progressEvent) {
-				progressCallback.onUploadProgress(upload.getProgress().getPercentTransferred());
+				lastUpdate = progressCallback.onUploadProgress(reviewId, upload.getProgress().getPercentTransferred(),
+						lastUpdate);
 			}
 		});
 		upload.addProgressListener(new ProgressListener() {
@@ -124,7 +125,7 @@ public class S3Storage implements IFileStorage {
 							log.debug("Deleting temporary file");
 							file.delete();
 							log.debug("Transcoding video");
-							transcoder.transcode();
+							transcoder.transcode(reviewId);
 						}
 						catch (Exception e) {
 							log.error("Could not delete file", e);

@@ -8,12 +8,6 @@
   table-layout: fixed;
 }
 
-.reviewSummary .zth-left {
-  width: 30%;
-  display: table-cell;
-  padding: 10px 30px 10px 10px;
-}
-
 .author, .review .user-name {
   float: right;
   width: 100px;
@@ -39,4 +33,9 @@
 
 .videoDescription {
   font-size: 14px;
+}
+
+.video-listing {
+  max-width: 900px;
+  margin: auto;
 }

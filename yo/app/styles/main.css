@@ -26,6 +26,19 @@ a[ng-click] {
 	border-bottom-left-radius: 20px;
 }
 
+.main-panel {
+  background-color: white;
+  padding: 0 1em;
+  padding-top: 70px;
+}
+
+.center-column {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
 .modal-backdrop.am-fade {
   opacity: .5;
   transition: opacity .15s linear;

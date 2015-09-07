@@ -6,6 +6,11 @@
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   padding-bottom: 30px;
+  box-shadow: 0 0 5px rgba(0,0,0,.75);
+}
+
+.homePageContainer p {
+  color: #555;
 }
 
 .homePageContainer .content {
@@ -17,7 +22,7 @@
   margin: auto;
 }
 
-.homePageContainer h1 {
+.headline h1 {
   text-align: center;
   font-size: 28px;
 }
@@ -42,16 +47,32 @@
   max-width: 500px;
 }
 
-.signup-form .input-group {
+.email {
+  height: 40px;
+  min-width: 250px;
+}
+
+.button-group {
   display: block;
 }
 
-.signup-form input[type="email"] {
-  display: block;
-}
-
-.signup-form input[type="submit"] {
-  width: 100%;
+.signup-button, .signup-button:active, .signup-button:focus {
+    padding: 0;
+    box-shadow: inset 0 1px 0 0 rgba(255,255,255,.7);
+    background: -moz-linear-gradient(center top,#FFB700 5%,#F0A400 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFB700', endColorstr='#F0A400');
+    background-color: #FFB700;
+    border-radius: 6px;
+    border: 1px solid #EFAF00;
+    color: #9B4C00;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Open Sans';
+    line-height: 20px;
 }
 
 .homePageContainer h2 {
@@ -101,10 +122,6 @@
     margin-top: 30px;
   }
 
-  .signup-form .input-group {
-    display: table;
-  }
-
   .founders {
     margin-top: 50px;
   }
@@ -117,6 +134,16 @@
 
   .founder .text {
     margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .button-group {
+    display: table;
+  }
+
+  .signup-button, .signup-button:active, .signup-button:focus {
+      width: 300px;
   }
 }
 

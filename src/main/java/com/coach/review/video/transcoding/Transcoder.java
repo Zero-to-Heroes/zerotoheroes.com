@@ -66,9 +66,10 @@ public class Transcoder {
 		}
 
 		UUID randomUUID = UUID.randomUUID();
-		String keyName = VIDEO_FOLDER_NAME + SUFFIX + randomUUID;
+		String keyName = VIDEO_FOLDER_NAME + SUFFIX + randomUUID + ".mp4";
 		// log.debug("Assigning final key: " + keyName);
 		review.setKey(keyName);
+		review.setFileType("video/mp4");
 		String thumbnailKey = THUMBNAIL_FOLDER_NAME + SUFFIX + randomUUID + "_";
 		String thumbnailName = thumbnailKey + "00001.png";
 		review.setThumbnail(thumbnailName);
@@ -81,19 +82,24 @@ public class Transcoder {
 		// log.debug("Created input: " + input);
 
 		// Output configuration
-		String startTime = formatTime(review.getBeginning());
-		int intDuration = review.getEnding() - review.getBeginning();
-		if (review.getVideoFramerateRatio() == 2) {
-			log.debug("doubling frame rate");
-			input.withFrameRate("60");
-			intDuration = intDuration / 2;
-		}
-		String duration = formatTime(intDuration);
-		TimeSpan timeSpan = new TimeSpan().withStartTime(startTime).withDuration(duration);
-		Clip composition = new Clip().withTimeSpan(timeSpan);
-
 		CreateJobOutput output = new CreateJobOutput().withKey(keyName).withPresetId(GENERIC_480p_16_9_PRESET_ID)
-				.withComposition(composition).withThumbnailPattern(thumbnailKey + "{count}");
+				.withThumbnailPattern(thumbnailKey + "{count}");
+
+		// Hotfix for unsupported formats that you can't play when uploading
+		if (review.getEnding() > 0) {
+			String startTime = formatTime(review.getBeginning());
+			int intDuration = review.getEnding() - review.getBeginning();
+			if (review.getVideoFramerateRatio() == 2) {
+				log.debug("doubling frame rate");
+				input.withFrameRate("60");
+				intDuration = intDuration / 2;
+			}
+			String duration = formatTime(intDuration);
+			TimeSpan timeSpan = new TimeSpan().withStartTime(startTime).withDuration(duration);
+			Clip composition = new Clip().withTimeSpan(timeSpan);
+			output.withComposition(composition);
+		}
+
 		log.debug("Created output: " + output);
 
 		BasicAWSCredentials credentials = new BasicAWSCredentials(username, password);

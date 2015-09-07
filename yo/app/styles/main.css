@@ -28,14 +28,16 @@ a[ng-click] {
 
 .main-panel {
   background-color: white;
-  padding: 0 1em;
-  padding-top: 70px;
+  padding: 0;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 70px;
 }
 
 .center-column {
-  max-width: 900px;
+  /*max-width: 900px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;*/
   padding-bottom: 50px;
 }
 

@@ -4,7 +4,7 @@
 
 	<div class="form-container">
 		<span class="btn btn-default btn-file">
-			Select video <input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" ng-required="true"></input>
+			Browse video <input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" ng-required="true"></input>
 		</span>
 
 	<!-- <input type="file" onchange="angular.element(this).scope().fileNameChanged(this.files)" id="fileInput" class="uploadFileButton" /> -->
@@ -13,7 +13,7 @@
 			<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)" class="videogular">
 				<vg-media vg-src="sources"></vg-media>
 
-				<vg-controls class="controls">
+				<vg-controls>
 					<vg-play-pause-button></vg-play-pause-button>
 					<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
 					<vg-scrub-bar id="scrubBar">

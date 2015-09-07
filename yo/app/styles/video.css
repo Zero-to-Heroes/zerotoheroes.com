@@ -28,12 +28,14 @@
 }
 
 .videogular {
+  margin: auto;
 	margin-bottom: 60px;
-	max-width: 800px;
+	/*max-width: 800px;*/
 }
 
-.videogular .controls {
-	margin-top: 50px;
+.videogular .controls-container {
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .editing-tools {

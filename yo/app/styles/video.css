@@ -90,6 +90,13 @@
   background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;
 }
 
+.video-information .btn-upload {
+  margin-bottom: 10px;
+}
+
+.formatting-help {
+  max-width: 400px;
+}
 
 @media screen and (min-width: 500px) {
   	.btn-file {

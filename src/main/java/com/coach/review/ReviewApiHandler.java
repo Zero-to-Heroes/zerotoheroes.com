@@ -130,6 +130,20 @@ public class ReviewApiHandler {
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/{reviewId}/field/{fieldName}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Review> updateDescription(@PathVariable("reviewId") final String id,
+			@PathVariable("fieldName") final String fieldName, @RequestBody Review inputReview) throws IOException {
+
+		String description = inputReview.getDescription();
+		log.debug("Upading description to " + description);
+
+		Review review = repo.findById(id);
+		review.setDescription(description);
+		mongoTemplate.save(review);
+
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Comment> updateComment(@PathVariable("reviewId") final String reviewId,
 			@PathVariable("commentId") final int commentId, @RequestBody Comment newComment) throws IOException {

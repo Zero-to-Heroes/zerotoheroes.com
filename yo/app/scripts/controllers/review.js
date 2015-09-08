@@ -18,6 +18,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					function(data) {
 						//console.log($routeParams.reviewId);
 						$scope.review = data;
+						$scope.setDescriptionText($scope.review.description);
 						//console.log($scope.review);
 						//console.log(data);
 						var fileLocation = ENV.videoStorageUrl + data.key;
@@ -97,6 +98,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		});
 
 		$scope.parseComment = function(comment) {
+			if (!comment) 
+				return '';
+
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
 			//console.log(result);
@@ -191,6 +195,46 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		    return String(string).replace(/[&<>\/]/g, function (s) {
 		      	return entityMap[s];
 		    });
+		}
+
+		$scope.startEditingDescription = function() {
+			$scope.review.editing = true;
+			$scope.review.oldDescription = $scope.review.description;
+		}
+
+		$scope.cancelUpdateDescription = function() {
+			console.log('canceling, previous description is ' + $scope.review.description );
+			console.log($scope.review.oldText);
+			//$scope.review.description = $scope.review.oldText;
+			$scope.review.editing = false;
+		}
+
+		$scope.updateDescription = function() {
+			console.log('Updating description from ' + $scope.review.oldText + ' to ' + $scope.review.description);
+			Api.ReviewsUpdate.save({reviewId: $scope.review.id, fieldName: 'description'}, { description: $scope.review.description }, 
+	  				function(data) {
+	  					$scope.setDescriptionText(data.description);
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					console.error(error);
+	  				}
+	  			);
+		}
+
+		$scope.setDescriptionText = function(text) {
+			if (text && $scope.review) {
+				console.log('setting text ' + text);
+				$scope.review.description = escapeHtml(text);
+				console.log('text sanitized to ' + $scope.review.description);
+				// Add timestamps
+				$scope.review.compiledText = $scope.parseComment($scope.review.description);
+				// Parse markdown
+				$scope.review.markedText = marked($scope.review.compiledText);
+				//console.log(comment.markedText);
+	  			$scope.review.editing = false;
+				$scope.review.processed = true;
+			}
 		}
 	}
 ]);

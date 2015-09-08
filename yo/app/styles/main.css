@@ -29,7 +29,7 @@ a[ng-click] {
 .main-panel {
   background-color: white;
   padding: 0;
-  max-width: 400px;
+  max-width: 450px;
   margin: auto;
   margin-top: 90px;
 }
@@ -60,29 +60,23 @@ a[ng-click] {
 
 @media screen and (min-height: 700px) {
     .main-panel {
-        max-width: 450px;
+        max-width: 600px;
     }
 }
 
 @media screen and (min-height: 800px) {
     .main-panel {
-        max-width: 600px;
+        max-width: 750px;
     }
 }
 
 @media screen and (min-height: 900px) {
     .main-panel {
-        max-width: 650px;
-    }
-}
-
-@media screen and (min-height: 1000px) {
-    .main-panel {
         max-width: 800px;
     }
 }
 
-@media screen and (min-height: 1100px) {
+@media screen and (min-height: 1000px) {
     .main-panel {
         max-width: 900px;
     }

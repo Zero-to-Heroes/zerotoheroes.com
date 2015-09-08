@@ -1,6 +1,7 @@
 package com.coach.review;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -47,6 +48,7 @@ public class Review {
 		if (comments == null) comments = new ArrayList<>();
 		comment.setId(String.valueOf(++totalInsertedComments));
 		comments.add(comment);
+		sortComments();
 	}
 
 	public void setSport(String sport) {
@@ -69,7 +71,17 @@ public class Review {
 		for (Comment comment : comments) {
 			if (comment.getId() != null && comment.getId().equals(String.valueOf(commentId))) { return comment; }
 		}
-
 		return null;
+	}
+
+	public void sortComments() {
+		// For now, simply sort them by date
+		comments.sort(new Comparator<Comment>() {
+			@Override
+			public int compare(Comment o1, Comment o2) {
+				if (o2.getCreationDate() == null) return 1;
+				return o2.getCreationDate().compareTo(o1.getCreationDate());
+			}
+		});
 	}
 }

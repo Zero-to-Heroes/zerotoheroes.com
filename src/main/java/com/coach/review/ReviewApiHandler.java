@@ -68,6 +68,11 @@ public class ReviewApiHandler {
 		// String currentUser =
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		Review review = repo.findById(id);
+
+		// Sort the comments. We'll probably need this for a rather long time,
+		// as our sorting algorithm will evolve
+		review.sortComments();
+
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
@@ -105,7 +110,7 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Comment> addComment(@PathVariable("reviewId") final String id,
+	public @ResponseBody ResponseEntity<Review> addComment(@PathVariable("reviewId") final String id,
 			@RequestBody Comment comment) throws IOException {
 
 		log.debug("Adding comment " + comment + " to review " + id);
@@ -115,11 +120,12 @@ public class ReviewApiHandler {
 		comment.setCreationDate(new Date());
 		review.addComment(comment);
 		review.setLastModifiedDate(new Date());
+		review.sortComments();
 		mongoTemplate.save(review);
 
 		log.debug("Created comment " + comment + " with id " + comment.getId());
 
-		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.POST)

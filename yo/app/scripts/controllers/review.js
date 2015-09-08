@@ -53,7 +53,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 	  					//console.log(data);
 			  			$scope.commentText = '';
 			  			$scope.commentForm.$setPristine();
-			  			$scope.review.comments.push(data);
+			  			$scope.review.comments = data.comments;
 			  			$scope.$broadcast('show-errors-reset');
 	  				}, 
 	  				function(error) {

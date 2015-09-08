@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize) { 
 
 		$scope.API = null;
 		$scope.sources = null;
@@ -18,11 +18,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					function(data) {
 						//console.log($routeParams.reviewId);
 						$scope.review = data;
-						console.log($scope.review);
+						//console.log($scope.review);
 						//console.log(data);
 						var fileLocation = ENV.videoStorageUrl + data.key;
 						$scope.thumbnail = data.thumbnail ? ENV.videoStorageUrl + data.thumbnail : null;
-						console.log($scope.thumbnail);
+						//console.log($scope.thumbnail);
 						$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
 						//$scope.API.changeSource($scope.sources);
 					}
@@ -44,6 +44,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.addComment = function() {
 			//console.log('adding comment');
 			$scope.$broadcast('show-errors-check-validity');
+			//console.log($scope.commentText);
+			//console.log($sanitize(($scope.commentText)));
 
 			//console.log($scope.newComment);
 			if ($scope.commentForm.$valid) {
@@ -88,8 +90,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if (newComments) {
 				angular.forEach(newComments, function(comment) {
 					if (!comment.processed) {
-						comment.compiledText = $scope.parseComment(comment.text);
-						comment.processed = true;
+						$scope.setCommentText(comment, comment.text);
 					}
 				})
 			}
@@ -98,6 +99,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.parseComment = function(comment) {
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')">$&</a>');
+			console.log(result);
 
 			return result;
 		};
@@ -154,14 +156,37 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			console.log('Updating comment from ' + comment.oldText + ' to ' + comment.text);
 			Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
 	  				function(data) {
-			  			comment.text = data.text;
-			  			comment.editing = false;
+	  					$scope.setCommentText(comment, data.text);
 	  				}, 
 	  				function(error) {
 	  					// Error handling
 	  					console.error(error);
 	  				}
 	  			);
+		}
+
+		$scope.setCommentText = function(comment, text) {
+			console.log('setting text ' + text + ' for comment ' + comment);
+			comment.text = escapeHtml(text);
+			console.log('comment text sanitized to ' + comment.text);
+			comment.compiledText = $scope.parseComment(comment.text);
+  			comment.editing = false;
+			comment.processed = true;
+		}
+
+		var entityMap = {
+		    "&": "&amp;",
+		    "<": "&lt;",
+		    ">": "&gt;",
+		    '"': '&quot;',
+		    "'": '&#39;',
+		    "/": '&#x2F;'
+		};
+
+		function escapeHtml(string) {
+		    return String(string).replace(/[&<>"'\/]/g, function (s) {
+		      	return entityMap[s];
+		    });
 		}
 	}
 ]);

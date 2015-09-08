@@ -59,6 +59,7 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap-show-errors/src/showErrors.js',
       'bower_components/moment/moment.js',
       'bower_components/angular-scroll/angular-scroll.js',
+      'bower_components/angular-marked/angular-marked.js',
 
       'app/scripts/app.js',
       'app/scripts/**/*.js',

@@ -3,7 +3,7 @@
 /* App Module */
 
 var app = angular.module('app', [
-  "ngSanitize",
+  'ngSanitize',
   'angularFileUpload',
   "com.2fdevs.videogular",
   "com.2fdevs.videogular.plugins.controls",
@@ -16,7 +16,8 @@ var app = angular.module('app', [
   'ui-rangeSlider',
   'ui.bootstrap.showErrors',
   'mgcrea.ngStrap',
-  'duScroll'
+  'duScroll',
+  'hc.marked'
 ]);
 
 
@@ -44,6 +45,13 @@ app.config(['$routeProvider',
         redirectTo: '/'
       });
   }]);
+
+app.config(['markedProvider', function(markedProvider) {
+    markedProvider.setOptions({
+        gfm: false,
+        sanitize: false
+    });
+}]);
 
 app.directive('compilecontent', function($compile, $parse) {
     return {

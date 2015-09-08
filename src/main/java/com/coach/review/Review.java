@@ -1,6 +1,7 @@
 package com.coach.review;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -76,7 +77,7 @@ public class Review {
 
 	public void sortComments() {
 		// For now, simply sort them by date
-		comments.sort(new Comparator<Comment>() {
+		Collections.sort(comments, new Comparator<Comment>() {
 			@Override
 			public int compare(Comment o1, Comment o2) {
 				if (o2.getCreationDate() == null) return 1;

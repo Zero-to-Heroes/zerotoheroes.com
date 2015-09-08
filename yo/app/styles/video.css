@@ -82,6 +82,14 @@
 	display: block;
 }
 
+.keep-on-top {
+  position: relative;
+  z-index: 999;
+  padding-top: 300px;
+  margin-top: -300px;
+  background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;
+}
+
 
 @media screen and (min-width: 500px) {
   	.btn-file {

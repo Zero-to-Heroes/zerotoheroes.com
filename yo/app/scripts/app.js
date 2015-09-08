@@ -85,3 +85,18 @@ app.run(['$rootScope', function($rootScope) {
         $rootScope.isLandingPage = current.$$route.isLandingPage;
     });
 }]);
+
+
+
+app.directive('keepOnTop', function ($window) {
+    var $win = angular.element($window); // wrap window object as jQuery object
+
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            $win.on('scroll', function (e) {
+                element.css('top', $win.scrollTop() + 'px');
+            });
+        }
+    };
+});

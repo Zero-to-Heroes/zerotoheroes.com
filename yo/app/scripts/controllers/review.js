@@ -99,7 +99,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.parseComment = function(comment) {
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
-			console.log(result);
+			//console.log(result);
 
 			return result;
 		};
@@ -166,14 +166,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.setCommentText = function(comment, text) {
-			console.log('setting text ' + text + ' for comment ' + comment);
+			//console.log('setting text ' + text + ' for comment ' + comment);
 			comment.text = escapeHtml(text);
-			console.log('comment text sanitized to ' + comment.text);
+			//console.log('comment text sanitized to ' + comment.text);
 			// Add timestamps
 			comment.compiledText = $scope.parseComment(comment.text);
 			// Parse markdown
 			comment.markedText = marked(comment.compiledText);
-			console.log(comment.markedText);
+			//console.log(comment.markedText);
   			comment.editing = false;
 			comment.processed = true;
 		}

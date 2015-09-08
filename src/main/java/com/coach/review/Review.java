@@ -36,7 +36,7 @@ public class Review {
 	private String fileType;
 	private String sport;
 	private String title, description;
-	private String author;
+	private String author, lastModifiedBy;
 	private int beginning, ending;
 	private List<Comment> comments;
 	private double treatmentCompletion;

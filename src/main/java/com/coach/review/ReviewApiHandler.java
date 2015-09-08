@@ -89,6 +89,7 @@ public class ReviewApiHandler {
 
 		// Create the entry on the database
 		review.setCreationDate(new Date());
+		review.setLastModifiedBy(review.getAuthor());
 
 		// Store that entry in DB
 		mongoTemplate.save(review);
@@ -119,8 +120,9 @@ public class ReviewApiHandler {
 
 		comment.setCreationDate(new Date());
 		review.addComment(comment);
-		review.setLastModifiedDate(new Date());
 		review.sortComments();
+		review.setLastModifiedDate(new Date());
+		review.setLastModifiedBy(comment.getAuthor());
 		mongoTemplate.save(review);
 
 		log.debug("Created comment " + comment + " with id " + comment.getId());
@@ -139,6 +141,7 @@ public class ReviewApiHandler {
 		comment.setText(newComment.getText());
 
 		review.setLastModifiedDate(new Date());
+		review.setLastModifiedBy(comment.getAuthor());
 		mongoTemplate.save(review);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);

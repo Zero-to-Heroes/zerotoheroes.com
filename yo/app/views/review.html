@@ -34,7 +34,7 @@
 			<span>{{review.author}}</span>
 		</div>
 		<div class="col-md-6">
-			<h1 class="video-title">{{review.title}}</h1>
+			<h2 class="video-title">{{review.title}}</h2>
 			<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
 			<div ng-show="review.editing">
 				<textarea class="form-control" ng-model="review.description"></textarea>

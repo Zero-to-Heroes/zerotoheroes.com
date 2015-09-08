@@ -1,4 +1,4 @@
 <div class="form-group">
-	<input type="text" placeholder="Your name" ng-hide="name" ng-blur="saveName()" ng-model="newName" class="name-input form-control" ng-required="!name" name="nameInput"></input>
+	<input type="text" placeholder="Your name" ng-hide="name" on-key-enter="saveName()" ng-blur="saveName()" ng-model="newName" class="name-input form-control" ng-required="!name" name="nameInput"></input>
 	<p ng-show="name" ng-click="changeName()" class="form-control-static">{{name}}</p>
 </div>

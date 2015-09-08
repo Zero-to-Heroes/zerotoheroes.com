@@ -55,7 +55,7 @@
 								</div>
 								<div class="col-md-8 text-right">
 									<span><small>{{formatDate(video)}}</small></span>
-									<span><small>by {{video.author}}</small></span>
+									<span><small>by {{video.lastModifiedBy ? video.lastModifiedBy : video.author}}</small></span>
 								</div>
 							</div>
 						</div>

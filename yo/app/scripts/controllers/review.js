@@ -84,7 +84,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			askProModel.$promise.then(askProModel.hide);
 		}
 
-		var timestampRegex = /\d\d:\d\d(:\d\d\d)?(\+(p|(s(\d?\.?\d?)?)))?/g;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\+(p|(s(\d?\.?\d?)?)))?/g;
 
 		$scope.$watchCollection('review.comments', function(newComments, oldValue) {
 			if (newComments) {

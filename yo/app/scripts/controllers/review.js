@@ -98,7 +98,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.parseComment = function(comment) {
 			// Replacing timestamps
-			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')">$&</a>');
+			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
 			console.log(result);
 
 			return result;
@@ -106,13 +106,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.goToTimestamp = function(timeString) {
 			var split = timeString.split("+");
-			//console.log(split);
+			console.log(split);
 
 			// The timestamp
 			var timestamp = split[0].split(":");
-			//console.log(timestamp);
+			console.log(timestamp);
 			var convertedTime = 60 * parseInt(timestamp[0]) + parseInt(timestamp[1]) + (parseInt(timestamp[2]) || 0)  / 1000;
-			//console.log(convertedTime);
+			console.log(convertedTime);
 
 			$scope.API.pause();
 			$scope.API.seekTime(convertedTime);
@@ -123,7 +123,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Should we slow down the video?
 			if (attributes && attributes.indexOf('s') !== -1) {
 				var playbackSpeed = attributes.substring(attributes.indexOf('s') + 1);
-				//console.log(playbackSpeed);
+				console.log(playbackSpeed);
 				$scope.API.setPlayback(playbackSpeed ? playbackSpeed : 0.5);
 				$scope.API.play();
 			}
@@ -169,7 +169,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			console.log('setting text ' + text + ' for comment ' + comment);
 			comment.text = escapeHtml(text);
 			console.log('comment text sanitized to ' + comment.text);
+			// Add timestamps
 			comment.compiledText = $scope.parseComment(comment.text);
+			// Parse markdown
+			comment.markedText = marked(comment.compiledText);
+			console.log(comment.markedText);
   			comment.editing = false;
 			comment.processed = true;
 		}
@@ -184,7 +188,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		};
 
 		function escapeHtml(string) {
-		    return String(string).replace(/[&<>"'\/]/g, function (s) {
+		    return String(string).replace(/[&<>\/]/g, function (s) {
 		      	return entityMap[s];
 		    });
 		}

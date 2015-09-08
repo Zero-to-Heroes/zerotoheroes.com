@@ -88,7 +88,7 @@
 		<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id"> - Edit</a>
 	</div>
 	<div class="comment-body">
-		<div compilecontent content="comment.compiledText" marked="comment.compiledText" ng-hide="comment.editing">
+		<div compilecontent content="comment.markedText" ng-hide="comment.editing">
 		</div>
 		<div ng-show="comment.editing">
 			<textarea class="form-control" ng-model="comment.text"></textarea>

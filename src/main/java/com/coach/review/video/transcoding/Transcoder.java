@@ -28,7 +28,7 @@ public class Transcoder {
 	// http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/system-presets.html
 	private static final String GENERIC_480p_16_9_PRESET_ID = "1351620000001-000020";
 	// https://console.aws.amazon.com/elastictranscoder/home?region=us-west-2#preset-details:1441828521339-vj8xaf
-	private static final String GENERIC_480p_16_9_PRESET_ID_NO_AUDIO = "1441828521339-vj8xaf";
+	private static final String CUSTOM_480p_16_9_NO_AUDIO_PRESET_ID = "1441828521339-vj8xaf";
 
 	private static final String SUFFIX = "/";
 	private static final String VIDEO_FOLDER_NAME = "videos";
@@ -96,7 +96,7 @@ public class Transcoder {
 				log.debug("doubling frame rate");
 				input.withFrameRate("60");
 				intDuration = intDuration / 2;
-				output.withPresetId(GENERIC_480p_16_9_PRESET_ID_NO_AUDIO);
+				output.withPresetId(CUSTOM_480p_16_9_NO_AUDIO_PRESET_ID);
 			}
 			String duration = formatTime(intDuration);
 			TimeSpan timeSpan = new TimeSpan().withStartTime(startTime).withDuration(duration);

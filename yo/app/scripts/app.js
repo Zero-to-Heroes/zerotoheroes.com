@@ -96,6 +96,11 @@ app.directive('keepOnTop', function ($window) {
         link: function (scope, element, attrs) {
             $win.on('scroll', function (e) {
                 element.css('top', $win.scrollTop() + 'px');
+                //console.log(attrs['keepOnTop'] );
+                //console.log($win.scrollTop());
+                if (attrs['keepOnTop'] == 'false') {
+                  element.css('top', '0');
+                }
             });
         }
     };

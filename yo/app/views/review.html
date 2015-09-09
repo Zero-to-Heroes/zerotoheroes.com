@@ -3,7 +3,12 @@
 <div class="main-panel">
 <div class="center-column">
 
-<div class="videogular-container keep-on-top" keep-on-top>
+<div class="videogular-container keep-on-top" keep-on-top="{{videoVisible}}">
+	<div class="checkbox">
+    	<label>
+      		<input type="checkbox" ng-model="videoVisible">Keep video always visible
+    	</label>
+  	</div>
 	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
 		<vg-media vg-src="sources">
 		</vg-media>

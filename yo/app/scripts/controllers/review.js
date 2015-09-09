@@ -9,6 +9,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.newComment = '';
 		$scope.coaches = [];
 		$scope.selectedCoach;
+		$scope.videoVisible = true;
 
 
 		$scope.onPlayerReady = function(API) {

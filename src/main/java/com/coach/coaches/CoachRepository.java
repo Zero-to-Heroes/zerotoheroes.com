@@ -55,10 +55,11 @@ public class CoachRepository {
 						"<p>I'm an avid gamer and love to play as a team. I used to play League of Legends competitively"
 						+ " but I have now moved to competitive Heroes of the Storm. I'm an Australian born "
 						+ "and raised in Melbourne and run a youtube channel that aims to help other players "
-						+ "which I very much enjoy. I would love to teach the community what I have learnt so far and share my knowledge.")
+						+ "which I very much enjoy. I would love to teach the community what I have learnt so far and share my knowledge.</p>"
+						+ "<p> I'm also Legend in HearthStone and Diamond 3 in League of Legends!")
 				.email("zerocityhots@gmail.com")
 				.languagesSpoken(Arrays.asList(new Language[] { English }))
-				.level("Rank 1 (Legend in HearthStone and Diamond 3 in League of Legends)")
+				.level("Rank 1")
 				.name("Andrew (PentaUnleash)")
 				.picture("Andrew.png")
 				.sport(HeroesOfTheStorm)

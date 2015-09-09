@@ -10,6 +10,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.coaches = [];
 		$scope.selectedCoach;
 
+
 		$scope.onPlayerReady = function(API) {
 			$scope.API = API;
 			// Load the video

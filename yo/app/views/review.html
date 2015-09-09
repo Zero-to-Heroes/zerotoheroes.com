@@ -28,19 +28,27 @@
 <hr/>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-3">
-			<div><span class="label label-primary">{{review.sport}}</span></div>
-			<span>{{review.author}}</span>
+		<div class="col-md-2">
+			<span><h4 class="text-left">{{review.author}}</h4></span>
 		</div>
-		<div class="col-md-6">
-			<h1 class="video-title">{{review.title}}</h1>
-			<div class="videoDescription" ng-readonly="true">{{review.description}}</div>
+		<div class="col-md-10">
+			<div><span class="label label-primary pull-right vertical-align">{{review.sport}}</span></div>
 		</div>
-		<div class="col-md-3 text-right">
+	</div>
+	<div class="row">
+			<div class="col-md-10">
+				<div><h2 class="video-title">{{review.title}}</h2></div>	
+			</div>
+		<div ng-show="!!coaches.length" class="col-md-2 text-right">
 			<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
 			</button>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="videoDescription" ng-readonly="true">{{review.description}}</div>
+		</div>
+	</div>	
 </div>
 <hr/>
 <div ng-show="selectedCoach">

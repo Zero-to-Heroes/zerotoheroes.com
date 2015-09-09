@@ -7,8 +7,6 @@
 			Choose your video <input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" ng-required="true"></input>
 		</span>
 
-	<!-- <input type="file" onchange="angular.element(this).scope().fileNameChanged(this.files)" id="fileInput" class="uploadFileButton" /> -->
-
 		<div class="videogular-container" ng-show="uploader.queue[0]">
 			<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)" class="videogular">
 				<vg-media vg-src="sources"></vg-media>
@@ -41,7 +39,7 @@
 				</ul>
 			</div>
 		</div>
-		<hr/>
+		<hr>
 		<div class="video-information">
 			<h1>Video information</h1>
 
@@ -88,7 +86,7 @@
 						<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 					</div>
 				</div>
-			</form>
+			</div>
 		</div>
 	</div>
 
@@ -110,4 +108,4 @@
 		</div>
 	</div>
 	<div id="bottom"></div>
-</div>
+</form>

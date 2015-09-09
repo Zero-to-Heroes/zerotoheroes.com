@@ -85,7 +85,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			askProModel.$promise.then(askProModel.hide);
 		}
 
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\+(p|(s(\d?\.?\d?)?)))?/g;
+		// (m)m:(s)s:(SSS) format
+		// then an optional + sign
+		// if present, needs at least either p, s or l
+		//var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\+(p|(s(\d?\.?\d?)?)))?/g;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(.*L(\d?\.?\d?\d?)?)?/g;
 
 		$scope.$watchCollection('review.comments', function(newComments, oldValue) {
 			if (newComments) {
@@ -126,8 +130,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// Should we slow down the video?
 			if (attributes && attributes.indexOf('s') !== -1) {
-				var playbackSpeed = attributes.substring(attributes.indexOf('s') + 1);
-				console.log(playbackSpeed);
+				var indexOfLoop = attributes.indexOf('L');
+				//console.log(indexOfLoop);
+				var lastIndexForSpeed = indexOfLoop == -1 ? attributes.length : indexOfLoop;
+				//console.log(lastIndexForSpeed);
+				var playbackSpeed = attributes.substring(attributes.indexOf('s') + 1, lastIndexForSpeed);
+				//console.log(playbackSpeed);
+
+				//console.log(playbackSpeed);
 				$scope.API.setPlayback(playbackSpeed ? playbackSpeed : 0.5);
 				$scope.API.play();
 			}
@@ -140,7 +150,38 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				console.log('setting playback to 1');
 				$scope.API.setPlayback(1);
 			}
+
+			if (attributes && attributes.indexOf('L') !== -1) {
+				$scope.loopStartTime = convertedTime;
+				var duration = parseFloat(attributes.substring(attributes.indexOf('L') + 1));
+				console.log(duration);
+				$scope.loopDuration = duration ? duration : 5;
+				//console.log('loop: ' + $scope.loopDuration);
+				$scope.loopStatus = 'Loop (' + $scope.loopDuration + 's)';
+			}
+			else {
+				$scope.stopLoop();
+			}
 		};
+
+		$scope.stopLoop = function() {
+			$scope.loopDuration = undefined;
+			$scope.loopStatus = '';
+		}
+
+		$scope.onUpdateTime = function(currentTime, duration) {
+			if (!$scope.loopDuration) return;
+
+			//console.log('current ' + currentTime);
+			//console.log('start' + $scope.loopStartTime);
+			//console.log('duration' + $scope.loopDuration);
+			var test = $scope.loopStartTime + $scope.loopDuration;
+			//console.log(test);
+			if (currentTime	> test) {
+				console.log('Going back to ' + $scope.loopStartTime);
+				$scope.API.seekTime($scope.loopStartTime);
+			}
+		}
 
 		$scope.formatDate = function(comment) {
 			return moment(comment.creationDate).fromNow();

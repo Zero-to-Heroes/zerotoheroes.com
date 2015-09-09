@@ -4,7 +4,7 @@
 <div class="center-column">
 
 <div class="videogular-container keep-on-top" keep-on-top>
-	<videogular vg-player-ready="onPlayerReady($API)" class="videogular">
+	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
 		<vg-media vg-src="sources">
 		</vg-media>
 
@@ -16,6 +16,7 @@
 			</vg-scrub-bar>
 			<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
 			<vg-playback-button></vg-playback-button>
+			<video-loop-button></video-loop-button>
 			<vg-volume>
 				<vg-mute-button></vg-mute-button>
 				<vg-volume-bar></vg-volume-bar>

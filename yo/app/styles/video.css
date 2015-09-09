@@ -98,6 +98,38 @@
   max-width: 400px;
 }
 
+videogular video-loop-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular video-loop-button a,
+videogular video-loop-button a:hover,
+videogular video-loop-button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+videogular div.my-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular div.my-button a,
+videogular div.my-button a:hover,
+videogular div.my-button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+
+
 @media screen and (min-width: 500px) {
   	.btn-file {
   		margin-left: auto;

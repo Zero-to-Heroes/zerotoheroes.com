@@ -27,6 +27,8 @@ public class Transcoder {
 
 	// http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/system-presets.html
 	private static final String GENERIC_480p_16_9_PRESET_ID = "1351620000001-000020";
+	// https://console.aws.amazon.com/elastictranscoder/home?region=us-west-2#preset-details:1441828521339-vj8xaf
+	private static final String GENERIC_480p_16_9_PRESET_ID_NO_AUDIO = "1441828521339-vj8xaf";
 
 	private static final String SUFFIX = "/";
 	private static final String VIDEO_FOLDER_NAME = "videos";
@@ -67,25 +69,26 @@ public class Transcoder {
 
 		UUID randomUUID = UUID.randomUUID();
 		String keyName = VIDEO_FOLDER_NAME + SUFFIX + randomUUID + ".mp4";
-		// log.debug("Assigning final key: " + keyName);
+		log.debug("Assigning final key: " + keyName);
 		review.setKey(keyName);
 		review.setFileType("video/mp4");
 		String thumbnailKey = THUMBNAIL_FOLDER_NAME + SUFFIX + randomUUID + "_";
 		String thumbnailName = thumbnailKey + "00001.png";
 		review.setThumbnail(thumbnailName);
 		mongoTemplate.save(review);
-		// log.debug("Updated review " + review);
+		log.debug("Updated review " + review);
 
 		// Setup the job input using the provided input key.
 		JobInput input = new JobInput().withKey(review.getTemporaryKey());
-
-		// log.debug("Created input: " + input);
+		log.debug("Created input: " + input);
+		log.debug("Detected input properties are " + input.getDetectedProperties());
 
 		// Output configuration
 		CreateJobOutput output = new CreateJobOutput().withKey(keyName).withPresetId(GENERIC_480p_16_9_PRESET_ID)
 				.withThumbnailPattern(thumbnailKey + "{count}");
 
 		// Hotfix for unsupported formats that you can't play when uploading
+		log.debug("Review ending is " + review.getEnding());
 		if (review.getEnding() > 0) {
 			String startTime = formatTime(review.getBeginning());
 			int intDuration = review.getEnding() - review.getBeginning();
@@ -93,6 +96,7 @@ public class Transcoder {
 				log.debug("doubling frame rate");
 				input.withFrameRate("60");
 				intDuration = intDuration / 2;
+				output.withPresetId(GENERIC_480p_16_9_PRESET_ID_NO_AUDIO);
 			}
 			String duration = formatTime(intDuration);
 			TimeSpan timeSpan = new TimeSpan().withStartTime(startTime).withDuration(duration);

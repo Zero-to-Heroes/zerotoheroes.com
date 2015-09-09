@@ -31,7 +31,8 @@ public class Coach {
 	}
 
 	public enum Sport {
-		Badminton("Badminton"), Squash("Squash"), LeagueOfLegends("League of Legends"), HearthStone("HearthStone");
+		Badminton("Badminton"), Squash("Squash"), 
+		LeagueOfLegends("League of Legends"), HearthStone("HearthStone"), HeroesOfTheStorm("Heroes of the Storm");
 		
 		@Getter
 		private String value;

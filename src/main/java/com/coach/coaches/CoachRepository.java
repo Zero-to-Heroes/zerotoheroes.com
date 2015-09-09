@@ -40,26 +40,49 @@ public class CoachRepository {
 		// LoL
 		coaches.add(buildLoLFakeCoach());
 		// HearthStone
-		coaches.add(buildHSFakeCoach());
+		coaches.add(buildChris());
+		// Heroes of the Storm
+		coaches.add(buildAndrew());
 
 		return coaches;
 	}
 
-	private static Coach buildHSFakeCoach() {
+	private static Coach buildAndrew() {
+		return Coach
+				.builder()
+				.id("3")
+				.description(
+						"<p>I'm an avid gamer and love to play as a team. I used to play League of Legends competitively"
+						+ " but I have now moved to competitive Heroes of the Storm. I'm an Australian born "
+						+ "and raised in Melbourne and run a youtube channel that aims to help other players "
+						+ "which I very much enjoy. I would love to teach the community what I have learnt so far and share my knowledge.")
+				.email("zerocityhots@gmail.com")
+				.languagesSpoken(Arrays.asList(new Language[] { English }))
+				.level("Rank 1 (Legend in HearthStone and Diamond 3 in League of Legends)")
+				.name("Andrew (PentaUnleash)")
+				.picture("Andrew.png")
+				.sport(HeroesOfTheStorm)
+				.tariff("3$")
+				.tariffDescription(
+						"I will comment on every mistake made in the uploaded video and will describe in-depth to what should have been done")
+				.verified(true).build();
+	}
+
+	private static Coach buildChris() {
 		return Coach
 				.builder()
 				.id("2")
 				.description(
-						"<p>Currently part of Pomf&Thud team. <ul><li>mostly streaming</li><li>can show you how to be the boss</li></ul>")
-				.email("thibaud@zerotoheroes.com")
-				.languagesSpoken(Arrays.asList(new Language[] { French, English }))
+						"<p>6 time legend with 5 tournament top 8's")
+				.email("cshawver18@yahoo.com")
+				.languagesSpoken(Arrays.asList(new Language[] { English }))
 				.level("Legend")
-				.name("Thud (FAKE)")
-				.picture("thud.jpg")
+				.name("Chris Shawver")
+				.picture("default_coach_HS.jpg")
 				.sport(HearthStone)
-				.tariff("3€")
+				.tariff("5$")
 				.tariffDescription(
-						"The review will include a complete analysis of one game")
+						"I will review in details the three biggest mistakes of the video")
 				.verified(true).build();
 	}
 

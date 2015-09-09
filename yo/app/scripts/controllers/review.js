@@ -114,13 +114,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.goToTimestamp = function(timeString) {
 			var split = timeString.split("+");
-			console.log(split);
+			//console.log(split);
 
 			// The timestamp
 			var timestamp = split[0].split(":");
-			console.log(timestamp);
+			//console.log(timestamp);
 			var convertedTime = 60 * parseInt(timestamp[0]) + parseInt(timestamp[1]) + (parseInt(timestamp[2]) || 0)  / 1000;
-			console.log(convertedTime);
+			//console.log(convertedTime);
 
 			$scope.API.pause();
 			$scope.API.seekTime(convertedTime);
@@ -138,23 +138,23 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				//console.log(playbackSpeed);
 
 				//console.log(playbackSpeed);
-				$scope.API.setPlayback(playbackSpeed ? playbackSpeed : 0.5);
+				$scope.setPlayback(playbackSpeed ? playbackSpeed : 0.5);
 				$scope.API.play();
 			}
 			// Is playing?
 			else if (attributes && attributes.indexOf('p') !== -1) {
 				$scope.API.play();
-				$scope.API.setPlayback(1);
+				$scope.resetPlayback();
 			}
 			else {
 				console.log('setting playback to 1');
-				$scope.API.setPlayback(1);
+				$scope.resetPlayback();
 			}
 
 			if (attributes && attributes.indexOf('L') !== -1) {
 				$scope.loopStartTime = convertedTime;
 				var duration = parseFloat(attributes.substring(attributes.indexOf('L') + 1));
-				console.log(duration);
+				//console.log(duration);
 				$scope.loopDuration = duration ? duration : 5;
 				//console.log('loop: ' + $scope.loopDuration);
 				$scope.loopStatus = 'Loop (' + $scope.loopDuration + 's)';
@@ -166,7 +166,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.stopLoop = function() {
 			$scope.loopDuration = undefined;
-			$scope.loopStatus = '';
+			$scope.loopStatus = undefined;
+		}
+
+		$scope.resetPlayback = function() {
+			$scope.setPlayback(1);
+		}
+
+		$scope.setPlayback = function(playback) {
+			$scope.playbackRate = playback;
+			$scope.API.setPlayback(playback);
 		}
 
 		$scope.onUpdateTime = function(currentTime, duration) {

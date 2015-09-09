@@ -1,12 +1,12 @@
 'use strict';
 var app = angular.module('app');
 
-app.directive("videoLoopButton",
+app.directive("videoPlaybackButton",
     function() {
         return {
             restrict: "E",
             require: "^videogular",
-            template: "<div class='iconButton' ng-click='stopLoop()'>{{loopStatus ? loopStatus : 'No loop'}}</div>"
+            template: "<div class='iconButton' ng-click='resetPlayback()'>{{playbackRate ? playbackRate : 1.0}}x</div>"
         }
     }
 );

@@ -82,6 +82,82 @@
 	display: block;
 }
 
+.keep-on-top {
+  position: relative;
+  z-index: 999;
+  padding-top: 300px;
+  margin-top: -300px;
+  background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;
+}
+
+.video-information .btn-upload {
+  margin-bottom: 10px;
+}
+
+.formatting-help {
+  max-width: 400px;
+}
+
+videogular video-loop-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular video-loop-button a,
+videogular video-loop-button a:hover,
+videogular video-loop-button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+videogular div.video-loop-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular div.video-loop-button a,
+videogular div.video-loop-button a:hover,
+videogular div.video-loop-button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+videogular video-playback-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular video-playback-button a,
+videogular video-playback-button a:hover,
+videogular video-playback-button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+videogular div.video-playback-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular div.video-playback-button a,
+videogular div.video-playback-button a:hover,
+videogular div.video-playback-button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
 
 @media screen and (min-width: 500px) {
   	.btn-file {

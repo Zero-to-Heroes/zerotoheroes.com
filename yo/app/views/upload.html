@@ -78,7 +78,16 @@
 					   </div>
 					</div>
 			  	</div>
-			  	<button type="submit" class="btn btn-primary" ng-click="upload()" ng-disabled="uploadInProgress">Upload now</button>
+		  		<div class="row">
+					<div class="col-sm-2">
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="upload()" ng-disabled="uploadInProgress">Upload now</button>
+		  			</div>
+					<div class="col-sm-6">
+					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
+						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+						<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>

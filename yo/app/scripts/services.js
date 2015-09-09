@@ -9,6 +9,7 @@ services.factory('Api', ['$resource', 'ENV',
 	function($resource, ENV) {
 		return {
 			Reviews: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
+			ReviewsUpdate: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/field/:fieldName', {reviewId: '@reviewId', fieldName: '@fieldName'}),
 			Coaches: $resource(ENV.apiEndpoint + url + 'coaches/:reviewId', {reviewId: '@reviewId'}),
 			Payment: $resource(ENV.apiEndpoint + url + 'payment/:reviewId/:coachId/:email', {reviewId: '@reviewId', coachId: '@coachId', email:'@email'})
 			//Login: $resource(ENV.apiEndpoint + url + 'login', {})

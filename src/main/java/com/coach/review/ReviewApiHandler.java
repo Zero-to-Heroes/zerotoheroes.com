@@ -89,6 +89,7 @@ public class ReviewApiHandler {
 
 		// Create the entry on the database
 		review.setCreationDate(new Date());
+		review.setLastModifiedBy(review.getAuthor());
 
 		// Store that entry in DB
 		mongoTemplate.save(review);
@@ -119,11 +120,26 @@ public class ReviewApiHandler {
 
 		comment.setCreationDate(new Date());
 		review.addComment(comment);
-		review.setLastModifiedDate(new Date());
 		review.sortComments();
+		review.setLastModifiedDate(new Date());
+		review.setLastModifiedBy(comment.getAuthor());
 		mongoTemplate.save(review);
 
 		log.debug("Created comment " + comment + " with id " + comment.getId());
+
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/{reviewId}/field/{fieldName}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Review> updateDescription(@PathVariable("reviewId") final String id,
+			@PathVariable("fieldName") final String fieldName, @RequestBody Review inputReview) throws IOException {
+
+		String description = inputReview.getDescription();
+		log.debug("Upading description to " + description);
+
+		Review review = repo.findById(id);
+		review.setDescription(description);
+		mongoTemplate.save(review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -139,6 +155,7 @@ public class ReviewApiHandler {
 		comment.setText(newComment.getText());
 
 		review.setLastModifiedDate(new Date());
+		review.setLastModifiedBy(comment.getAuthor());
 		mongoTemplate.save(review);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);

@@ -2,19 +2,22 @@
 
 <div class="main-panel">
 <div class="center-column">
-<div class="videogular-container">
-	<videogular vg-player-ready="onPlayerReady($API)" class="videogular">
+
+<div class="videogular-container keep-on-top" keep-on-top>
+	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
 		<vg-media vg-src="sources">
 		</vg-media>
 
-		<vg-controls class="controls">
+		<vg-controls>
 			<vg-play-pause-button></vg-play-pause-button>
 			<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
 			<vg-scrub-bar>
 				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 			</vg-scrub-bar>
 			<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
-			<vg-playback-button></vg-playback-button>
+			<!--<vg-playback-button></vg-playback-button>-->
+			<video-playback-button></video-playback-button>
+			<video-loop-button></video-loop-button>
 			<vg-volume>
 				<vg-mute-button></vg-mute-button>
 				<vg-volume-bar></vg-volume-bar>
@@ -32,23 +35,33 @@
 			<span><h4 class="text-left">{{review.author}}</h4></span>
 		</div>
 		<div class="col-md-10">
-			<div><span class="label label-primary pull-right vertical-align">{{review.sport}}</span></div>
+			<div>
+				<span class="label label-primary pull-right">{{review.sport}}</span>
+			</div>
 		</div>
 	</div>
 	<div class="row">
-			<div class="col-md-10">
-				<div><h2 class="video-title">{{review.title}}</h2></div>	
+		<div class="col-md-10">
+			<h2 class="video-title">{{review.title}}</h2>
+			<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
+			<div ng-show="review.editing">
+				<textarea class="form-control" ng-model="review.description"></textarea>
+				<div class="text-right">
+					<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs">Cancel</button>
+					<button ng-click="updateDescription()" class="btn btn-default btn-xs">Update</button>
+				</div>
 			</div>
+		</div>
 		<div ng-show="!!coaches.length" class="col-md-2 text-right">
 			<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
 			</button>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12">
-			<div class="videoDescription" ng-readonly="true">{{review.description}}</div>
+		<div class="col-md-10 text-right">
+			<a ng-click="startEditingDescription()" class="link-minor" ng-show="!review.editing"> Edit description</a>
 		</div>
-	</div>	
+	</div>
 </div>
 <hr/>
 <div ng-show="selectedCoach">
@@ -73,17 +86,7 @@
 					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
 					<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
 				</div>
-				<div ng-show="showHelp">
-					<p>You can use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdow syntex</a> to format your text</p>
-					<p>Additionally, you can:
-						<ul>
-							<li>Enter time information in the form mm:ss to create a link to directly go to the specified time in the video (e.g. 01:21 will create a link to go to 1 min 21 seconds into the video)</li>
-							<li>Add +p after a time information to automatically start playing the video at that time when clicking on the link</li>
-							<li>Or add +s to start playing in slow motion (half speed)</li>
-							<li>Or add +s with a number to specify the video playback rate. For instance, +s0.25 will play the video at quarter the speed, while +s2 will play it at double the speed</li>
-						</ul>
-					</p>	
-				</div>
+				<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 			</div>
 		</div>
 	</div>

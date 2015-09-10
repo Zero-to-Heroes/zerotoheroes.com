@@ -20,10 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
-import com.coach.review.video.storage.IFileStorage;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.coach.review.video.transcoding.Transcoder;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/reviews")
@@ -36,8 +34,11 @@ public class ReviewApiHandler {
 	@Autowired
 	MongoTemplate mongoTemplate;
 
+	// @Autowired
+	// IFileStorage fileStorage;
+
 	@Autowired
-	IFileStorage fileStorage;
+	Transcoder transcoder;
 
 	public ReviewApiHandler() {
 		log.debug("Initializing Review Api Handler");
@@ -77,15 +78,15 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<String> createReview(@RequestParam("file") MultipartFile file,
-			@RequestParam("review") String strReview) throws IOException {
+	public @ResponseBody ResponseEntity<Review> createReview(@RequestBody Review review) throws IOException {
 
 		// TOOD: checks
 
 		// Store the file on S3
 		// Create a review entry with the appropriate link to the S3 file
-		final Review review = new ObjectMapper().readValue(strReview, Review.class);
-		log.debug("Review as string: " + review);
+		// final Review review = new ObjectMapper().readValue(strReview,
+		// Review.class);
+		log.debug("Review request creation: " + review);
 
 		// Create the entry on the database
 		review.setCreationDate(new Date());
@@ -95,19 +96,23 @@ public class ReviewApiHandler {
 		mongoTemplate.save(review);
 		log.debug("Saved review with ID: " + review.getId());
 
+		// Start transcoding
+		log.debug("Transcoding video");
+		transcoder.transcode(review.getId());
+
 		// fileStorage.setReviewId(review.getId());
-		String key = fileStorage.storeFile(file, review.getId());
-		log.debug("Stored file " + file.getName() + " as " + key);
-		review.setTemporaryKey(key);
-		mongoTemplate.save(review);
-		log.debug("Saved again review with ID: " + review.getId());
+		// String key = fileStorage.storeFile(file, review.getId());
+		// log.debug("Stored file " + file.getName() + " as " + key);
+		// review.setTemporaryKey(key);
+		// mongoTemplate.save(review);
+		// log.debug("Saved again review with ID: " + review.getId());
 
 		// String currentUser =
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		// log.info("Request review creation: " + newReview);
 		// mongoTemplate.save(newReview);
 
-		return new ResponseEntity<String>(review.getId(), HttpStatus.OK);
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.POST)

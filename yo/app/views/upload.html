@@ -4,10 +4,10 @@
 
 	<div class="form-container">
 		<span class="btn btn-default btn-file">
-			Choose your video <input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" ng-required="true"></input>
+			Choose your video <input type="file" name="file" class="upload-file-button" ng-required="true" nv-file-select uploader="uploader" file></input>
 		</span>
 
-		<div class="videogular-container" ng-show="uploader.queue[0]">
+		<div class="videogular-container" ng-show="file">
 			<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)" class="videogular">
 				<vg-media vg-src="sources"></vg-media>
 
@@ -24,7 +24,7 @@
 			</videogular>
 		</div>
 
-		<div class="editing-tools" ng-show="uploader.queue[0]">
+		<div class="editing-tools" ng-show="file">
 			<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0"></div>
 			<div class="buttons" ng-show="dataLoaded">
 				<span class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</span>
@@ -89,19 +89,15 @@
 			</div>
 		</div>
 
-		<div ng-repeat="item in uploader.queue" ng-show="uploadInProgress">
-			<div ng-show="uploader.isHTML5" class="multipleStepProgressGroup">
+		<div ng-show="uploadInProgress">
+			<div class="multipleStepProgressGroup">
 				<div class="informationMessages">
-					<span ng-show="uploadStarted && item.progress < 100">Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(</span>
-					<span ng-show="item.progress == 100 && review.treatmentCompletion < 99">We are processing your video. If you wait for a bit, we'll automatically take you to your review page.</span>
-					<span ng-show="item.progress == 100 && review.treatmentCompletion >= 99">Finalizing, it should only take a couple of minutes max</span>
+					<span ng-show="uploadStarted && uploadProgress  < 100">Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(</span>
+					<span ng-show="uploadProgress  == 100">Finalizing your video. Depending on its size, it may take up to 5 minutes. Take this time to think about how you can help others get better too :)</span>
 				</div>
 			    <div class="progress" style="position: relative; left: 0; top: 0">
-			        <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;"style="min-width: 2em;" ng-show="uploadStarted">
-			        	<div ng-show="item.progress < 100">{{item.progress | number : 0}}%</div>
-			        </div>
-			        <div class="progress-bar progress-bar-success" style="position: absolute; top: 0; left: 0; min-width: 2em;" ng-style="{ 'width': review.treatmentCompletion + '%' }" ng-show="item.progress == 100">
-			      	  <div>{{review.treatmentCompletion | number : 0}}%</div>
+			        <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploadProgress  + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;" style="min-width: 2em;" ng-show="uploadInProgress">
+			        	<div ng-show="uploadProgress  < 100">{{uploadProgress  | number : 0}}%</div>
 			        </div>
 			    </div>
 			</div>

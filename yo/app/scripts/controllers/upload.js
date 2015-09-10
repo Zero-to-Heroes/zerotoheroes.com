@@ -5,80 +5,98 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
+		$scope.uploadProgress  = 0;
+
 		$scope.maximumAllowedDuration = 5 * 60 + 1;
 		$scope.User = User;
+		$scope.review = {};
 
-		$scope.initializeReview = function() {
-			$scope.review = {
-				'key': null,
-				'fileType': '',
-				'beginning': -1,
-				'ending': -1,
-				'sport': '',
-				'title': '',
-				'author': '',
-				'description': '',
-				'comments': []
-			};
+		$scope.creds = {
+		  	bucket: ENV.bucket + '/' + ENV.folder,
+		  	access_key: 'AKIAJHSXPMPE223KS7PA',
+		  	secret_key: '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'
 		}
-		$scope.initializeReview();
 
-		var uploader = $scope.uploader = new FileUploader({
-			url: ENV.apiEndpoint + '/api/reviews'
-		});
+		// We use it for nice out-of-the-box file features
+		var uploader = $scope.uploader = new FileUploader();
 
-		uploader.onBeforeUploadItem = function(item) {
-            $log.log('onBeforeUploadItem', item);
-            $scope.review.author = User.getName();
-            item.formData = [{'review': JSON.stringify($scope.review)}];
-            $scope.uploadInProgress = true;
-
-            var bottom = angular.element(document.getElementById('bottom'));
-			$document.scrollToElementAnimated(bottom, 0, 1);
-        };
-
-        uploader.onProgressItem = function(fileItem, progress) {
-        	$scope.uploadStarted = true;
-            $log.log('onProgressItem', fileItem, progress);
-        };
-
-        uploader.onProgressAll = function(progress) {
-            $log.log('onProgressAll', progress);
-        };
-
-        // Make sure we only have one element in the queue
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
-			$log.log('Adding file', fileItem);
-			//$log.log(uploader.queue);
-			var lastItem = uploader.queue[uploader.queue.length - 1];
-			//$log.log(lastItem);
-			uploader.clearQueue();
-			uploader.queue[0] = lastItem;
+			//$log.log('Adding file', fileItem);
 			$scope.review.title = fileItem._file.name;
+		};		
+
+		$scope.upload = function() {
+			$log.log('Requesting upload');
+			$scope.$broadcast('show-errors-check-validity');
+
+  			if ($scope.uploadForm.$valid) {
+
+				$log.log('Setting S3 config');
+
+				// Configure The S3 Object 
+				AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
+				AWS.config.region = 'us-west-2';
+				var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
+
+				// Setting file values
+				$scope.review.author = User.getName();
+				var fileKey = $scope.guid();
+				$scope.review.temporaryKey = ENV.folder + '/' + fileKey;
+
+				// Starting the upload
+				$log.log('uploading');
+	            $scope.uploadInProgress = true;
+
+	            // Scrolling to the bottom of the screen
+	            var bottom = angular.element(document.getElementById('bottom'));
+				$document.scrollToElementAnimated(bottom, 0, 1);
+				
+				// Initializing upload
+				var params = { Key: fileKey, ContentType: $scope.file.type, Body: $scope.file };
+				bucket.putObject(params, function(err, data) {
+
+				    // There Was An Error With Your S3 Config
+					if (err) {
+				        $log.error('An error during upload', err.message);
+				        return false;
+				    }
+				    else {
+				        // Success!
+				        $log.log('upload success, review: ', $scope.review);
+
+			            // Start transcoding
+			            $scope.transcode();
+				    }
+				})
+				.on('httpUploadProgress',function(progress) {
+				    // Log Progress Information
+				    $scope.uploadProgress  = progress.loaded / progress.total * 100;
+				    $scope.$digest();
+				});
+			}
 		};
 
-        uploader.onSuccessItem = function(fileItem, response, status, headers) {
-            $log.log('onSuccess', fileItem, response, status, headers);
+		$scope.transcode = function() {
+			$log.log('Creating review ', $scope.review);
+			Api.Reviews.save($scope.review, 
+				function(data) {
+					$log.log('review created, transcoding ', data);
+					$scope.review.id = data.id;
+					retrieveCompletionStatus();
+				}
+			);
+		}
 
-            // Set the file id
-            $scope.review.id = response;
-            $scope.treatmentInProgress = true;
-
-            // Periodically query the server to get the s3 transfer percentage (as well as possibly other treatment infos)
-            retrieveCompletionPercentage();
-        };
-
-
-        var retrieveCompletionPercentage = function() {
-			$log.log('Retrieving completion percentage for review ' + $scope.review.id);
+        var retrieveCompletionStatus = function() {
+			$log.log('Retrieving completion status for review ', $scope.review);
 			try {
 				Api.Reviews.get({reviewId: $scope.review.id}, 
 					function(data) {
 
-						$log.log('Received review: ' + data);
-						$scope.review.treatmentCompletion = data.treatmentCompletion;
+						$log.log('Received review: ', data);
 						$scope.review.transcodingDone = data.transcodingDone;
+						$log.log('Review is now ', $scope.review);
 
 			        	if (!$scope.review.transcodingDone) {
 				        	$timeout(function() {
@@ -86,7 +104,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				        	}, 1000);
 				        }
 				        else {
-				        	uploader.clearQueue();
 				        	$scope.sources = null;
 				        	$scope.uploadInProgress = false;
 				        	$log.log("upload finished!");
@@ -98,10 +115,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 						//
 					},
 					function(error) {
-						$log.error('Something went wrong!!' + JSON.stringify(error) + '. Retrying in 5s...');
-						$timeout(function() {
-			        		retrieveCompletionPercentage();
-			        	}, 5000);
+						$log.error('Something went wrong!!', error);
 					}
 				);
 			}
@@ -114,25 +128,22 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
         	
         }
 
-		$scope.API = null;
+		
 
-		$scope.upload = function() {
-			$log.log('uploading');
-			$scope.$broadcast('show-errors-check-validity');
-
-  			if ($scope.uploadForm.$valid) {
-				//$log.log('really uploading');
-				//$log.log($scope.uploader);
-				//$log.log($scope.uploader.queue);
-				//$log.log($scope.uploader.queue[0]);
-				$scope.uploader.uploadItem(0);
-			}
-		};
+		$scope.guid = function() {
+		  function s4() {
+		    return Math.floor((1 + Math.random()) * 0x10000)
+		      .toString(16)
+		      .substring(1);
+		  }
+		  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+		    s4() + '-' + s4() + s4() + s4();
+		}
 
 		$scope.onPlayerReady = function(API) {
-        	$scope.initializeReview();
+        	//$scope.initializeReview();
 			$scope.API = API;
-        	uploader.clearQueue();
+        	//uploader.clearQueue();
         	$scope.sources = null;
 		};
 
@@ -152,8 +163,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			];
 			$scope.review.file = objectURL;
 			$scope.review.fileType = fileObj.type;
-        	$log.log(uploader.queue);
-        	$log.log(uploader.queue[0]);
+        	//$log.log(uploader.queue);
+        	//$log.log(uploader.queue[0]);
 		}
 
 		$scope.onSourceChanged = function(sources) {

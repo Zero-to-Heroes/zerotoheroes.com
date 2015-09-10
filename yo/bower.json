@@ -26,14 +26,15 @@
     "angular-scroll": "~0.7.2",
     "angular-marked": "~0.0.21",
     "angular-logger": "~1.0.1",
-    "sprintf": "~1.0.3"
+    "sprintf": "~1.0.3",
+    "aws-sdk-js": "~2.1.50"
   },
   "overrides": {
     "sprintf": {
-        "main": [
-            "./dist/sprintf.min.js",
-            "./dist/angular-sprintf.min.js"
-        ]
+      "main": [
+        "./dist/sprintf.min.js",
+        "./dist/angular-sprintf.min.js"
+      ]
     }
   },
   "appPath": "app",

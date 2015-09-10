@@ -77,6 +77,8 @@ public class Review {
 
 	public void sortComments() {
 		// For now, simply sort them by date
+		if (comments == null) return;
+
 		Collections.sort(comments, new Comparator<Comment>() {
 			@Override
 			public int compare(Comment o1, Comment o2) {

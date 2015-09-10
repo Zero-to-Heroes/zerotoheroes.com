@@ -92,12 +92,12 @@
 		<div ng-repeat="item in uploader.queue" ng-show="uploadInProgress">
 			<div ng-show="uploader.isHTML5" class="multipleStepProgressGroup">
 				<div class="informationMessages">
-					<span ng-show="item.progress > 0 && item.progress < 100">Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(</span>
+					<span ng-show="uploadStarted && item.progress < 100">Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(</span>
 					<span ng-show="item.progress == 100 && review.treatmentCompletion < 99">We are processing your video. If you wait for a bit, we'll automatically take you to your review page.</span>
 					<span ng-show="item.progress == 100 && review.treatmentCompletion >= 99">Finalizing, it should only take a couple of minutes max</span>
 				</div>
 			    <div class="progress" style="position: relative; left: 0; top: 0">
-			        <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;" ng-show="item.progress > 0">
+			        <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;"style="min-width: 2em;" ng-show="uploadStarted">
 			        	<div ng-show="item.progress < 100">{{item.progress | number : 0}}%</div>
 			        </div>
 			        <div class="progress-bar progress-bar-success" style="position: absolute; top: 0; left: 0; min-width: 2em;" ng-style="{ 'width': review.treatmentCompletion + '%' }" ng-show="item.progress == 100">

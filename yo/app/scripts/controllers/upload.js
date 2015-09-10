@@ -38,6 +38,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
         };
 
         uploader.onProgressItem = function(fileItem, progress) {
+        	$scope.uploadStarted = true;
             $log.log('onProgressItem', fileItem, progress);
         };
 

@@ -56,7 +56,7 @@ app.config(['markedProvider', function(markedProvider) {
 }]);
 
 app.config(function (logEnhancerProvider) {
-   logEnhancerProvider.datetimePattern = 'yyyy/MM/dd HH:mm:ss:SSS';
+   logEnhancerProvider.datetimePattern = 'YYYY/MM/DD HH:mm:ss:SSS';
 });
 
 app.directive('compilecontent', function($compile, $parse) {

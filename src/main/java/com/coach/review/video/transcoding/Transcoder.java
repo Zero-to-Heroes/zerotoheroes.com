@@ -63,7 +63,7 @@ public class Transcoder {
 		log.debug("Starting transcoding for review id " + reviewId);
 		// First retrieve the video we want to transcode
 		Review review = repo.findById(reviewId);
-		if (review.getTreatmentCompletion() == 100) {
+		if (review.isTranscodingDone()) {
 			log.debug("Transcoding already done, aborting");
 		}
 

@@ -57,9 +57,9 @@ public class ReviewApiHandler {
 		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
 				"lastModifiedDate"));
 		if (!StringUtils.isEmpty(userName))
-			reviews = repo.findByAuthorAndTreatmentCompletion(userName, 100, newestFirst);
+			reviews = repo.findByAuthor(userName, newestFirst);
 		else
-			reviews = repo.findByTreatmentCompletion(100, newestFirst);
+			reviews = repo.findAll(newestFirst);
 
 		return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
 	}

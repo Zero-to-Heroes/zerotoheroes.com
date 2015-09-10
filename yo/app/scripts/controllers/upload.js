@@ -22,7 +22,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
-			//$log.log('Adding file', fileItem);
 			$scope.review.title = fileItem._file.name;
 		};		
 
@@ -111,8 +110,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				        		$location.path('/r/' + data.id);
 				        	}, 2000);
 				        }
-
-						//
 					},
 					function(error) {
 						$log.error('Something went wrong!!', error);
@@ -148,7 +145,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		};
 
 		$scope.updateSourceWithFile = function(fileObj) {
-            //uploader.clearQueue();
 			$log.log('new file selected');
 			var objectURL = window.URL.createObjectURL(fileObj);
 			// Hack for mkv, not supported properly by videogular
@@ -163,8 +159,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			];
 			$scope.review.file = objectURL;
 			$scope.review.fileType = fileObj.type;
-        	//$log.log(uploader.queue);
-        	//$log.log(uploader.queue[0]);
 		}
 
 		$scope.onSourceChanged = function(sources) {

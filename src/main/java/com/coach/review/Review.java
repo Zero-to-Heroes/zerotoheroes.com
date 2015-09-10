@@ -39,7 +39,7 @@ public class Review {
 	private String author, lastModifiedBy;
 	private int beginning, ending;
 	private List<Comment> comments;
-	private double treatmentCompletion;
+	// private double treatmentCompletion;
 	private boolean transcodingDone;
 	private float videoFramerateRatio;
 

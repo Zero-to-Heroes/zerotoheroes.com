@@ -47,12 +47,12 @@ public class UploadProgressCallback implements IUploadProgress {
 					// log.debug("Loaded review " + tempReview);
 					// tempReview.setTreatmentCompletion(Math.min(progress,
 					// 99));
-					tempReview.setTreatmentCompletion(progress);
+					// tempReview.setTreatmentCompletion(progress);
 					// log.debug("Updated review");
 				}
 				else {
 					log.warn("Still in progress callback when the transcoding is already done");
-					tempReview.setTreatmentCompletion(100);
+					// tempReview.setTreatmentCompletion(100);
 				}
 				mongoTemplate.save(tempReview);
 			}

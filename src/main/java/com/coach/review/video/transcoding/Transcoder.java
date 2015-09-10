@@ -65,6 +65,7 @@ public class Transcoder {
 		Review review = repo.findById(reviewId);
 		if (review.isTranscodingDone()) {
 			log.debug("Transcoding already done, aborting");
+			return;
 		}
 
 		UUID randomUUID = UUID.randomUUID();

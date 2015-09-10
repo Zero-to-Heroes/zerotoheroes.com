@@ -71,6 +71,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				.on('httpUploadProgress',function(progress) {
 				    // Log Progress Information
 				    $scope.uploadProgress  = progress.loaded / progress.total * 100;
+				    $log.log('Updating progress ' + $scope.uploadProgress);
 				    $scope.$digest();
 				});
 			}

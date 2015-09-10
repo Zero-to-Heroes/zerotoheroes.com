@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -28,7 +28,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		});
 
 		uploader.onBeforeUploadItem = function(item) {
-            //console.info('onBeforeUploadItem', item);
+            $log.log('onBeforeUploadItem', item);
             $scope.review.author = User.getName();
             item.formData = [{'review': JSON.stringify($scope.review)}];
             $scope.uploadInProgress = true;
@@ -37,23 +37,28 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$document.scrollToElementAnimated(bottom, 0, 1);
         };
 
+        uploader.onProgressItem = function(fileItem, progress) {
+            $log.log('onProgressItem', fileItem, progress);
+        };
+
+        uploader.onProgressAll = function(progress) {
+            $log.log('onProgressAll', progress);
+        };
+
         // Make sure we only have one element in the queue
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
-			console.log(fileItem);
-			//console.log(uploader.queue);
+			$log.log('Adding file', fileItem);
+			//$log.log(uploader.queue);
 			var lastItem = uploader.queue[uploader.queue.length - 1];
-			//console.log(lastItem);
+			//$log.log(lastItem);
 			uploader.clearQueue();
 			uploader.queue[0] = lastItem;
-			//console.log(uploader.queue);
-			//console.log(fileItem);
-			//console.log(fileItem._file);
 			$scope.review.title = fileItem._file.name;
 		};
 
         uploader.onSuccessItem = function(fileItem, response, status, headers) {
-            //console.info('onSuccess', fileItem, response, status, headers);
+            $log.log('onSuccess', fileItem, response, status, headers);
 
             // Set the file id
             $scope.review.id = response;
@@ -65,12 +70,12 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 
         var retrieveCompletionPercentage = function() {
-			console.log("Retrieving completion percentage for review " + $scope.review.id);
+			$log.log('Retrieving completion percentage for review ' + $scope.review.id);
 			try {
 				Api.Reviews.get({reviewId: $scope.review.id}, 
 					function(data) {
 
-						console.log('Received review: ' + data);
+						$log.log('Received review: ' + data);
 						$scope.review.treatmentCompletion = data.treatmentCompletion;
 						$scope.review.transcodingDone = data.transcodingDone;
 
@@ -83,7 +88,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				        	uploader.clearQueue();
 				        	$scope.sources = null;
 				        	$scope.uploadInProgress = false;
-				        	//console.log("upload finished!");
+				        	$log.log("upload finished!");
 				        	$timeout(function() {
 				        		$location.path('/r/' + data.id);
 				        	}, 2000);
@@ -92,7 +97,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 						//
 					},
 					function(error) {
-						console.error('Something went wrong!!' + JSON.stringify(error) + '. Retrying in 5s...');
+						$log.error('Something went wrong!!' + JSON.stringify(error) + '. Retrying in 5s...');
 						$timeout(function() {
 			        		retrieveCompletionPercentage();
 			        	}, 5000);
@@ -100,7 +105,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				);
 			}
 			catch (e) {
-				console.error('Something went wrong!!' + e + '. Retrying in 5s...');
+				$log.error('Something went wrong!!' + e + '. Retrying in 5s...');
 				$timeout(function() {
 	        		retrieveCompletionPercentage();
 	        	}, 5000);
@@ -111,14 +116,14 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.API = null;
 
 		$scope.upload = function() {
-			//console.log('uploading');
+			$log.log('uploading');
 			$scope.$broadcast('show-errors-check-validity');
 
   			if ($scope.uploadForm.$valid) {
-				console.log('really uploading');
-				console.log($scope.uploader);
-				console.log($scope.uploader.queue);
-				console.log($scope.uploader.queue[0]);
+				//$log.log('really uploading');
+				//$log.log($scope.uploader);
+				//$log.log($scope.uploader.queue);
+				//$log.log($scope.uploader.queue[0]);
 				$scope.uploader.uploadItem(0);
 			}
 		};
@@ -132,12 +137,12 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.updateSourceWithFile = function(fileObj) {
             //uploader.clearQueue();
-			console.log('new file selected');
+			$log.log('new file selected');
 			var objectURL = window.URL.createObjectURL(fileObj);
 			// Hack for mkv, not supported properly by videogular
 			var type = fileObj.type;
 			if (type  == 'video/x-matroska') {
-				console.log('hacking type');
+				$log.log('hacking type');
 				type = 'video/mp4';
 			}
 			$scope.temp = fileObj;
@@ -146,8 +151,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			];
 			$scope.review.file = objectURL;
 			$scope.review.fileType = fileObj.type;
-        	console.log(uploader.queue);
-        	console.log(uploader.queue[0]);
+        	$log.log(uploader.queue);
+        	$log.log(uploader.queue[0]);
 		}
 
 		$scope.onSourceChanged = function(sources) {
@@ -165,7 +170,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		};
 
 		$scope.updateTotalTime = function() {
-			//console.log('updating total time');
+			//$log.log('updating total time');
 			$scope.clipDuration = $scope.review.ending - $scope.review.beginning;
 		};
 
@@ -188,12 +193,12 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 	    };
 
 	    $scope.updateVideoPosition = function(value) {
-	    	//console.log('eseking time ' + value);
+	    	//$log.log('eseking time ' + value);
 	    	$scope.API.seekTime(value / 1000);
 	    }
 
 	    $scope.onOverlayClick = function() {
-	    	console.log('On onOverlayClick');
+	    	$log.log('On onOverlayClick');
 	    	refreshMarkers();
 	    }
 

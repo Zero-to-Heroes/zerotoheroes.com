@@ -17,7 +17,9 @@ var app = angular.module('app', [
   'ui.bootstrap.showErrors',
   'mgcrea.ngStrap',
   'duScroll',
-  'hc.marked'
+  'hc.marked',
+  'angular-logger',
+  'sprintf'
 ]);
 
 
@@ -52,6 +54,10 @@ app.config(['markedProvider', function(markedProvider) {
         sanitize: false
     });
 }]);
+
+app.config(function (logEnhancerProvider) {
+   logEnhancerProvider.datetimePattern = 'yyyy/MM/dd HH:mm:ss:SSS';
+});
 
 app.directive('compilecontent', function($compile, $parse) {
     return {

@@ -24,7 +24,17 @@
     "angular-bootstrap-show-errors": "~2.3.0",
     "moment": "~2.10.6",
     "angular-scroll": "~0.7.2",
-    "angular-marked": "~0.0.21"
+    "angular-marked": "~0.0.21",
+    "angular-logger": "~1.0.1",
+    "sprintf": "~1.0.3"
+  },
+  "overrides": {
+    "sprintf": {
+        "main": [
+            "./dist/sprintf.min.js",
+            "./dist/angular-sprintf.min.js"
+        ]
+    }
   },
   "appPath": "app",
   "resolutions": {

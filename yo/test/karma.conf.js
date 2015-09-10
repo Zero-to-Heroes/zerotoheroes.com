@@ -60,6 +60,9 @@ module.exports = function(config) {
       'bower_components/moment/moment.js',
       'bower_components/angular-scroll/angular-scroll.js',
       'bower_components/angular-marked/angular-marked.js',
+      'bower_components/angular-logger/dist/angular-logger.min.js',
+      'bower_components/sprintf/dist/sprintf.min.js',
+      'bower_components/sprintf/dist/angular-sprintf.min.js',
 
       'app/scripts/app.js',
       'app/scripts/**/*.js',

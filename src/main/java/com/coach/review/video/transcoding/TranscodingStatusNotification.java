@@ -68,11 +68,11 @@ public class TranscodingStatusNotification {
 					if (jobStatusNotification.getState().isTerminalState()) {
 						log.debug("Completing transcoding for review id " + reviewId);
 						Review review = repo.findById(reviewId);
-						if (review.getTreatmentCompletion() == 100) {
+						if (review.isTranscodingDone()) {
 							log.warn("Video already transcoded, should not come back here");
 						}
 						log.debug("Loaded review " + review);
-						review.setTreatmentCompletion(100);
+						// review.setTreatmentCompletion(100);
 						review.setTranscodingDone(true);
 						mongoTemplate.save(review);
 						log.debug("Updated review: " + review);

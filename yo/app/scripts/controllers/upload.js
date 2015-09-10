@@ -72,8 +72,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 						console.log('Received review: ' + data);
 						$scope.review.treatmentCompletion = data.treatmentCompletion;
+						$scope.review.transcodingDone = data.transcodingDone;
 
-			        	if ($scope.review.treatmentCompletion < 100) {
+			        	if (!$scope.review.transcodingDone) {
 				        	$timeout(function() {
 				        		retrieveCompletionPercentage();
 				        	}, 1000);

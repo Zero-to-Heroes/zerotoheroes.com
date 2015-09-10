@@ -45,7 +45,9 @@ public class UploadProgressCallback implements IUploadProgress {
 					// log.debug("In callback, progress is " + progress);
 					currentUpdate = new Date().getTime();
 					// log.debug("Loaded review " + tempReview);
-					tempReview.setTreatmentCompletion(Math.min(progress, 99));
+					// tempReview.setTreatmentCompletion(Math.min(progress,
+					// 99));
+					tempReview.setTreatmentCompletion(progress);
 					// log.debug("Updated review");
 				}
 				else {

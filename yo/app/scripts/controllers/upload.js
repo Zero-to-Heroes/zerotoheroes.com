@@ -63,39 +63,47 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
             retrieveCompletionPercentage();
         };
 
+
         var retrieveCompletionPercentage = function() {
-			//console.log("Retrieving completion percentage");
-			Api.Reviews.get({reviewId: $scope.review.id}, 
-				function(data) {
+			console.log("Retrieving completion percentage for review " + $scope.review.id);
+			try {
+				Api.Reviews.get({reviewId: $scope.review.id}, 
+					function(data) {
 
-					//console.log('Received review: ' + data);
-					$scope.review.treatmentCompletion = data.treatmentCompletion;
+						console.log('Received review: ' + data);
+						$scope.review.treatmentCompletion = data.treatmentCompletion;
 
-		        	if ($scope.review.treatmentCompletion < 100) {
-			        	$timeout(function() {
-			        		retrieveCompletionPercentage();
-			        	}, 1000);
-			        }
-			        else {
-			        	uploader.clearQueue();
-			        	$scope.sources = null;
-			        	$scope.uploadInProgress = false;
-			        	//console.log("upload finished!");
-			        	$timeout(function() {
-			        		$location.path('/r/' + data.id);
-			        	}, 2000);
-			        }
+			        	if ($scope.review.treatmentCompletion < 100) {
+				        	$timeout(function() {
+				        		retrieveCompletionPercentage();
+				        	}, 1000);
+				        }
+				        else {
+				        	uploader.clearQueue();
+				        	$scope.sources = null;
+				        	$scope.uploadInProgress = false;
+				        	//console.log("upload finished!");
+				        	$timeout(function() {
+				        		$location.path('/r/' + data.id);
+				        	}, 2000);
+				        }
 
-					//
-				},
-				function(error) {
-					console.error('Something went wrong!!' + JSON.stringify(error) + '. Retrying in 5s...');
-					$timeout(function() {
+						//
+					},
+					function(error) {
+						console.error('Something went wrong!!' + JSON.stringify(error) + '. Retrying in 5s...');
+						$timeout(function() {
 			        		retrieveCompletionPercentage();
 			        	}, 5000);
-				}
-			);
-
+					}
+				);
+			}
+			catch (e) {
+				console.error('Something went wrong!!' + e + '. Retrying in 5s...');
+				$timeout(function() {
+	        		retrieveCompletionPercentage();
+	        	}, 5000);
+			}
         	
         }
 

@@ -12,7 +12,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.review = {};
 
 		$scope.creds = {
-		  	bucket: ENV.bucket + '/' + ENV.folder,
+		  	bucket: ENV.bucket,
 		  	access_key: 'AKIAJHSXPMPE223KS7PA',
 		  	secret_key: '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'
 		}
@@ -36,7 +36,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				// Configure The S3 Object 
 				AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
 				AWS.config.region = 'us-west-2';
-				var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
 
 				// Setting file values
 				$scope.review.author = User.getName();
@@ -52,8 +51,15 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				$document.scrollToElementAnimated(bottom, 0, 1);
 				
 				// Initializing upload
-				var params = { Key: fileKey, ContentType: $scope.file.type, Body: $scope.file };
-				bucket.putObject(params, function(err, data) {
+				var upload = new AWS.S3.ManagedUpload({
+				  params: {Bucket: $scope.creds.bucket, Key: fileKey, ContentType: $scope.file.type, Body: $scope.file }
+				});
+				$log.log('upload is ', upload);
+				upload.send(function(err, data) {
+
+				//var bucket = new AWS.S3({ params: { Bucket:  } });
+				//var params = { Key: fileKey, ContentType: $scope.file.type, Body: $scope.file };
+				//bucket.putObject(params, function(err, data) {
 
 				    // There Was An Error With Your S3 Config
 					if (err) {
@@ -67,8 +73,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			            // Start transcoding
 			            $scope.transcode();
 				    }
-				})
-				.on('httpUploadProgress',function(progress) {
+				});
+				upload.on('httpUploadProgress',function(progress) {
 				    // Log Progress Information
 				    $scope.uploadProgress  = progress.loaded / progress.total * 100;
 				    $log.log('Updating progress ' + $scope.uploadProgress);

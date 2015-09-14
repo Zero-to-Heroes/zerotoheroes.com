@@ -53,7 +53,8 @@ public class TranscodingStatusNotification {
 		log.debug("Acquired amazonSQS client");
 
 		log.debug("Setting up notification worker for queue " + sqsQueueUrl);
-		SqsQueueNotificationWorker sqsQueueNotificationWorker = new SqsQueueNotificationWorker(amazonSqs, sqsQueueUrl);
+		final SqsQueueNotificationWorker sqsQueueNotificationWorker = new SqsQueueNotificationWorker(amazonSqs,
+				sqsQueueUrl);
 		Thread notificationThread = new Thread(sqsQueueNotificationWorker);
 		notificationThread.start();
 		log.debug("Starting notification thread");
@@ -77,9 +78,13 @@ public class TranscodingStatusNotification {
 						mongoTemplate.save(review);
 						log.debug("Updated review: " + review);
 						// TODO: delete bucket input file
-						synchronized (this) {
-							notifyAll();
-						}
+
+						sqsQueueNotificationWorker.shutdown();
+						log.debug("Job completed, shutting down");
+
+						/*
+						 * synchronized (this) { notifyAll(); }
+						 */
 					}
 				}
 			}
@@ -87,18 +92,15 @@ public class TranscodingStatusNotification {
 		sqsQueueNotificationWorker.addHandler(handler);
 
 		// Wait for job to complete.
-		synchronized (handler) {
-			try {
-				handler.wait();
-			}
-			catch (InterruptedException e) {
-				log.error("Could not wait for handler thread", e);
-			}
-		}
-
-		// When job completes, shutdown the sqs notification worker.
-		sqsQueueNotificationWorker.shutdown();
-		log.debug("Job completed, shutting down");
+		/*
+		 * synchronized (handler) { try { handler.wait(); } catch
+		 * (InterruptedException e) {
+		 * log.error("Could not wait for handler thread", e); } }
+		 *
+		 * // When job completes, shutdown the sqs notification worker.
+		 * sqsQueueNotificationWorker.shutdown();
+		 * log.debug("Job completed, shutting down");
+		 */
 	}
 
 }

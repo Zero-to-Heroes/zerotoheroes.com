@@ -94,6 +94,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				},
 				function(error) {
 					$log.error('Received error', error);
+					retrieveCompletionStatus();
 				}
 			);
 		}
@@ -110,7 +111,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 			        	if (!$scope.review.transcodingDone) {
 				        	$timeout(function() {
-				        		retrieveCompletionPercentage();
+				        		retrieveCompletionStatus();
 				        	}, 1000);
 				        }
 				        else {
@@ -130,7 +131,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			catch (e) {
 				$log.error('Something went wrong!!' + e + '. Retrying in 5s...');
 				$timeout(function() {
-	        		retrieveCompletionPercentage();
+	        		retrieveCompletionStatus();
 	        	}, 5000);
 			}
         	

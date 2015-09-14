@@ -36,6 +36,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				// Configure The S3 Object 
 				AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
 				AWS.config.region = 'us-west-2';
+				AWS.config.httpOptions.timeout = 3600 * 1000;
 
 				// Setting file values
 				$scope.review.author = User.getName();
@@ -51,15 +52,14 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				$document.scrollToElementAnimated(bottom, 0, 1);
 				
 				// Initializing upload
-				var upload = new AWS.S3.ManagedUpload({
+				var upload = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
+				var params = { Key: fileKey, ContentType: $scope.file.type, Body: $scope.file };
+				/*var upload = new AWS.S3.ManagedUpload({
 				  params: {Bucket: $scope.creds.bucket, Key: fileKey, ContentType: $scope.file.type, Body: $scope.file }
-				});
+				});*/
 				$log.log('upload is ', upload);
-				upload.send(function(err, data) {
-
-				//var bucket = new AWS.S3({ params: { Bucket:  } });
-				//var params = { Key: fileKey, ContentType: $scope.file.type, Body: $scope.file };
-				//bucket.putObject(params, function(err, data) {
+				//upload.send(function(err, data) {
+				upload.upload(params, function(err, data) {
 
 				    // There Was An Error With Your S3 Config
 					if (err) {
@@ -73,15 +73,19 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			            // Start transcoding
 			            $scope.transcode();
 				    }
-				});
-				upload.on('httpUploadProgress',function(progress) {
+				})
+				.on('httpUploadProgress',function(progress) {
 				    // Log Progress Information
-				    $scope.uploadProgress  = progress.loaded / progress.total * 100;
-				    $log.log('Updating progress ' + $scope.uploadProgress);
+				    $log.log(progress);
+				    $scope.uploadProgress = progress.loaded / progress.total * 100;
+				    $log.log('Updating progress ' + progress.loaded + ' out of ' + progress.total + ', meaning ' + $scope.uploadProgress + '%');
 				    $scope.$digest();
 				});
 			}
 		};
+
+		$scope.totalTransferred = 0;
+		$scope.previousTransferred = 0;
 
 		$scope.transcode = function() {
 			$log.log('Creating review ', $scope.review);

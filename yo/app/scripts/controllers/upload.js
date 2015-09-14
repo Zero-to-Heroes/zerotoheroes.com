@@ -91,6 +91,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 					$log.log('review created, transcoding ', data);
 					$scope.review.id = data.id;
 					retrieveCompletionStatus();
+				},
+				function(error) {
+					$log.error('Received error', error);
 				}
 			);
 		}

@@ -11,6 +11,7 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Getter
 @Setter
@@ -31,12 +32,12 @@ public class Coach {
 	}
 
 	public enum Sport {
-		Badminton("Badminton"), Squash("Squash"), 
-		LeagueOfLegends("League of Legends"), HearthStone("HearthStone"), HeroesOfTheStorm("Heroes of the Storm");
-		
+		Badminton("Badminton"), Squash("Squash"), LeagueOfLegends("League of Legends"), HearthStone("HearthStone"), HeroesOfTheStorm(
+				"Heroes of the Storm");
+
 		@Getter
 		private String value;
-		
+
 		private Sport(String value) {
 			this.value = value;
 		}
@@ -46,6 +47,7 @@ public class Coach {
 	private String id;
 	private String name;
 	private Sport sport;
+	@JsonIgnore
 	private String email;
 	@Singular("languageSpoken")
 	private List<Language> languagesSpoken;

@@ -8,7 +8,7 @@
 			<tbody>
 				<tr ng-repeat="video in videos">
 					<td class="vert-align text-center">
-						<span class="block">{{video.comments.length}}</span><span><small>comments</small></span>
+						<span class="block">{{video.comments ? video.comments.length : '0'}}</span><span><small>comments</small></span>
 					</td>
 					<td class="thumbnails vert-align text-center">
 						<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">

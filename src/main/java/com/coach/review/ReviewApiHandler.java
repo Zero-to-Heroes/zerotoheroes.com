@@ -111,6 +111,7 @@ public class ReviewApiHandler {
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		// log.info("Request review creation: " + newReview);
 		// mongoTemplate.save(newReview);
+		log.debug("Transcoding started, returning with created review: " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}

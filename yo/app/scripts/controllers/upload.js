@@ -84,9 +84,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			}
 		};
 
-		$scope.totalTransferred = 0;
-		$scope.previousTransferred = 0;
-
 		$scope.transcode = function() {
 			$log.log('Creating review ', $scope.review);
 			Api.Reviews.save($scope.review, 

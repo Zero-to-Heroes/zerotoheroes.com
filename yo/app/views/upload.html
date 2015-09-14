@@ -92,11 +92,11 @@
 		<div ng-show="uploadInProgress">
 			<div class="multipleStepProgressGroup">
 				<div class="informationMessages">
-					<span ng-show="uploadStarted && uploadProgress  < 100">Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(</span>
+					<span ng-show="uploadProgress  < 100">Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(</span>
 					<span ng-show="uploadProgress  == 100">Finalizing your video. Depending on its size, it may take up to 5 minutes. Take some time to think about how you can help others get better too :)</span>
 				</div>
 			    <div class="progress" style="position: relative; left: 0; top: 0">
-			        <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploadProgress  + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;" ng-show="uploadInProgress">
+			        <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploadProgress  + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;">
 			        	<div>{{uploadProgress  | number : 0}}%</div>
 			        </div>
 			    </div>

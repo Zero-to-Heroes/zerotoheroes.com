@@ -91,7 +91,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// then an optional + sign
 		// if present, needs at least either p, s or l
 		//var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\+(p|(s(\d?\.?\d?)?)))?/g;
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(.*L(\d?\.?\d?\d?)?)?/g;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/g;
 
 		$scope.$watchCollection('review.comments', function(newComments, oldValue) {
 			if (newComments) {

@@ -84,15 +84,15 @@ app.run(['$rootScope', '$window', '$location', '$http',
                 $location.path('/');
             }
         });*/
-    }]);
+    }
+]);
 
-app.run(['$rootScope', function($rootScope) {
+app.run(['$rootScope', '$window', '$location', function($rootScope, $window, $location) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        $rootScope.isLandingPage = current.$$route.isLandingPage;
+        $window.ga('send', 'pageview', { page: $location.url() });
+        $rootScope.isLandingPage = current.$$route.isLandingPage; 
     });
 }]);
-
-
 
 app.directive('keepOnTop', function ($window) {
     var $win = angular.element($window); // wrap window object as jQuery object

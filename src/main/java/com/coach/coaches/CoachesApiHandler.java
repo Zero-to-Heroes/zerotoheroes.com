@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.amazonaws.util.StringUtils;
 import com.coach.review.Review;
+import com.coach.review.Review.Sport;
 import com.coach.review.ReviewRepository;
 
 @RepositoryRestController
@@ -31,15 +31,15 @@ public class CoachesApiHandler {
 		log.debug("Retrieving coaches");
 		Review review = reviewRepo.findById(id);
 		log.debug("For review id: " + id);
-		String sport = review.getSport();
+		Sport sport = review.getSport();
 		log.debug("And sport " + sport + ".");
 		List<Coach> coaches = getAllCoachesForSport(sport);
 		log.debug("Giving full list of coaches " + coaches);
 		return new ResponseEntity<List<Coach>>(coaches, HttpStatus.OK);
 	}
 
-	private List<Coach> getAllCoachesForSport(String sport) {
-		sport = StringUtils.trim(sport);
+	private List<Coach> getAllCoachesForSport(Sport sport) {
+		// sport = StringUtils.trim(sport);
 		log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
 		List<Coach> ret = new ArrayList<Coach>();
 		for (Coach coach : CoachRepository.allCoaches) {

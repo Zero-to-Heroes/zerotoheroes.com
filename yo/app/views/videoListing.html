@@ -22,7 +22,7 @@
 							</div>
 					  		<div class="row">
 								<div class="col-sm-4">
-									<span class="label label-primary">{{video.sport}}</span>
+									<span class="label label-primary">{{video.sport.value}}</span>
 								</div>
 								<div class="col-sm-8 text-right">
 									<span><small>{{formatDate(video)}}</small></span>
@@ -36,24 +36,27 @@
     	</table>
     </div>
     <div title="My videos" name="true" ng-click="retrieveVideos(true)" class="table-responsive" bs-pane>
-		<table class="table video-listing">
+		<table class="table">
 			<tbody>
 				<tr ng-repeat="video in videos">
 					<td class="vert-align text-center">
-						<span class="block">{{video.comments.length}}</span><span><small>comments</small></span>
+						<span class="block">{{video.comments ? video.comments.length : '0'}}</span><span><small>comments</small></span>
+					</td>
+					<td class="thumbnails vert-align text-center">
+						<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
 					</td>
 					<td class="vert-align info-column">
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col-md-12">
+								<div class="col-sm-12">
 									<a href="#/r/{{video.id}}"><h3>{{video.title}}</h3></a>
 								</div>
 							</div>
 					  		<div class="row">
-								<div class="col-md-4">
-									<span class="label label-primary">{{video.sport}}</span>
+								<div class="col-sm-4">
+									<span class="label label-primary">{{video.sport.value}}</span>
 								</div>
-								<div class="col-md-8 text-right">
+								<div class="col-sm-8 text-right">
 									<span><small>{{formatDate(video)}}</small></span>
 									<span><small>by {{video.lastModifiedBy ? video.lastModifiedBy : video.author}}</small></span>
 								</div>

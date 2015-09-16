@@ -14,7 +14,7 @@ import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 
-import com.amazonaws.util.StringUtils;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Getter
@@ -23,6 +23,19 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @ToString(exclude = "comments")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Review {
+
+	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+	public enum Sport {
+		Badminton("Badminton"), Squash("Squash"), LeagueOfLegends("League of Legends"), HearthStone("HearthStone"), HeroesOfTheStorm(
+				"Heroes of the Storm");
+
+		@Getter
+		private String value;
+
+		private Sport(String value) {
+			this.value = value;
+		}
+	}
 
 	@Id
 	private String id;
@@ -34,7 +47,7 @@ public class Review {
 	private String key, temporaryKey;
 	private String thumbnail;
 	private String fileType;
-	private String sport;
+	private Sport sport;
 	private String title, description;
 	private String author, lastModifiedBy;
 	private int beginning, ending;
@@ -52,8 +65,8 @@ public class Review {
 		sortComments();
 	}
 
-	public void setSport(String sport) {
-		this.sport = StringUtils.trim(sport);
+	public void setSport(Sport sport) {
+		this.sport = sport; // StringUtils.trim(sport);
 	}
 
 	public void setCreationDate(Date creationDate) {

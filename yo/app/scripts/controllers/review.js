@@ -21,7 +21,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						//console.log($routeParams.reviewId);
 						$scope.review = data;
 						$scope.setDescriptionText($scope.review.description);
-						//console.log($scope.review);
+						console.log($scope.review);
 						//console.log(data);
 						var fileLocation = ENV.videoStorageUrl + data.key;
 						$scope.thumbnail = data.thumbnail ? ENV.videoStorageUrl + data.thumbnail : null;

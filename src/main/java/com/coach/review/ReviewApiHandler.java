@@ -13,7 +13,6 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,20 +45,21 @@ public class ReviewApiHandler {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<Review>> listAllReviews(
-			@RequestParam(value = "userName", required = false) String userName) {
+			@RequestParam(value = "userName", required = false) String userName,
+			@RequestParam(value = "sport", required = false) String sport) {
 		// String currentUser =
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		log.debug("Retrieving all reviews");
 
 		List<Review> reviews = null;
 		log.debug("userName param is " + userName);
+		log.debug("sport param is " + sport);
 
+		// Sorting in ascending order
 		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
 				"lastModifiedDate"));
-		if (!StringUtils.isEmpty(userName))
-			reviews = repo.findByAuthor(userName, newestFirst);
-		else
-			reviews = repo.findAll(newestFirst);
+
+		reviews = repo.findAll(userName, sport, newestFirst);
 
 		return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
 	}

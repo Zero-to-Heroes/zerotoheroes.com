@@ -1,7 +1,7 @@
 package com.coach.coaches;
 
 import static com.coach.coaches.Coach.Language.*;
-import static com.coach.coaches.Coach.Sport.*;
+import static com.coach.review.Review.Sport.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,10 +53,10 @@ public class CoachRepository {
 				.id("3")
 				.description(
 						"<p>I'm an avid gamer and love to play as a team. I used to play League of Legends competitively"
-						+ " but I have now moved to competitive Heroes of the Storm. I'm an Australian born "
-						+ "and raised in Melbourne and run a youtube channel that aims to help other players "
-						+ "which I very much enjoy. I would love to teach the community what I have learnt so far and share my knowledge.</p>"
-						+ "<p> I'm also Legend in HearthStone and Diamond 3 in League of Legends!")
+								+ " but I have now moved to competitive Heroes of the Storm. I'm an Australian born "
+								+ "and raised in Melbourne and run a youtube channel that aims to help other players "
+								+ "which I very much enjoy. I would love to teach the community what I have learnt so far and share my knowledge.</p>"
+								+ "<p> I'm also Legend in HearthStone and Diamond 3 in League of Legends!")
 				.email("zerocityhots@gmail.com")
 				.languagesSpoken(Arrays.asList(new Language[] { English }))
 				.level("Rank 1")

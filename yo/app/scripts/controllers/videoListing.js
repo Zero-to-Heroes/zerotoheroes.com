@@ -6,14 +6,22 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.tabs = []; 
 		$scope.tabs.activeTab = 0;
 		$scope.ENV = ENV;
+		$scope.sport = $routeParams.sport;
 
 		$scope.$watch('tabs.activeTab', function(newValue, oldValue) {
 			$scope.retrieveVideos(newValue);
 		})
 
 		$scope.retrieveVideos = function(shouldGetOnlyMine) {
-			var param = (shouldGetOnlyMine == 'true') ? {userName: User.getName()} : {};
-			Api.Reviews.query(param, function(data) {
+			var params = {};
+			
+			if (shouldGetOnlyMine == 'true')
+				params.userName = User.getName();
+
+			if ($scope.sport)
+				params.sport = $scope.sport;
+			
+			Api.Reviews.query(params, function(data) {
 				$scope.videos = [];
 				for (var i = 0; i < data.length; i++) {
 					$scope.videos.push(data[i]);

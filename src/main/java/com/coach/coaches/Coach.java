@@ -10,6 +10,7 @@ import lombok.ToString;
 
 import org.springframework.data.annotation.Id;
 
+import com.coach.review.Review.Sport;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -28,18 +29,6 @@ public class Coach {
 
 		private Language(String code) {
 			this.code = code;
-		}
-	}
-
-	public enum Sport {
-		Badminton("Badminton"), Squash("Squash"), LeagueOfLegends("League of Legends"), HearthStone("HearthStone"), HeroesOfTheStorm(
-				"Heroes of the Storm");
-
-		@Getter
-		private String value;
-
-		private Sport(String value) {
-			this.value = value;
 		}
 	}
 

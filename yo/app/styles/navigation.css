@@ -40,8 +40,30 @@
   	border: 1px solid #e7e7e7;
 }
 
+.collapse-sports {
+	display: none;
+}
+
 @media (max-width: 767px) {
 .navbar-collapse .nav > .divider-vertical {
     display: none;
   }
+}
+
+@media (min-width: 1370px) {
+	.expand-sports {
+	    
+	}
+	.collapse-sports {
+		display: none;
+	}
+}
+
+@media (min-width: 767px) and (max-width: 1370px) {
+	.expand-sports {
+	    display: none;
+	}
+	.collapse-sports {
+		display: inline-block;
+	}
 }

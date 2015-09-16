@@ -27,7 +27,7 @@ public class Review {
 	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 	public enum Sport {
 		Badminton("Badminton"), Squash("Squash"), LeagueOfLegends("League of Legends"), HearthStone("HearthStone"), HeroesOfTheStorm(
-				"Heroes of the Storm");
+				"Heroes of the Storm"), Other("Other");
 
 		@Getter
 		private String value;

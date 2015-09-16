@@ -33,8 +33,7 @@ app.config(['$routeProvider',
       }).
       when('/upload', {
         templateUrl: 'views/upload.html',
-        controller: 'UploadDetailsCtrl',
-        isUpload: true
+        controller: 'UploadDetailsCtrl'
       }).
       when('/r/:reviewId', {
         templateUrl: 'views/review.html',
@@ -42,8 +41,7 @@ app.config(['$routeProvider',
       }).
       when('/reviews', {
         templateUrl: 'views/videoListing.html',
-        controller: 'VideoListingCtrl',
-        reviews: true
+        controller: 'VideoListingCtrl'
       }).
       when('/s/:sport', {
         templateUrl: 'views/videoListing.html',

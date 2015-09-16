@@ -40,11 +40,6 @@
   	border: 1px solid #e7e7e7;
 }
 
-.navbar-inverse .divider-vertical {
-  	border-right-color: #222222;
-  	border-left-color: #111111;
-}
-
 @media (max-width: 767px) {
 .navbar-collapse .nav > .divider-vertical {
     display: none;

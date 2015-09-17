@@ -252,11 +252,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.startEditingInformation = function() {
 			$scope.review.oldTitle = $scope.review.title;
 			$scope.review.oldDescription = $scope.review.description;
-			$log.log('Sport is', $scope.review.sport);
-			$log.log('oldSport is', $scope.review.oldSport);
 			$scope.review.oldSport = angular.copy($scope.review.sport);
-			$log.log('Sport is', $scope.review.sport);
-			$log.log('oldSport is', $scope.review.oldSport);
+			$scope.review.oldSportForDisplay = $scope.review.sportForDisplay;
 			//$scope.review.oldSport = $scope.review.sport;
 
 			$scope.review.editing = true;
@@ -270,16 +267,17 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			$scope.review.title = $scope.review.oldTitle;
 			$scope.review.description = $scope.review.oldDescription;
-			$scope.review.sport = $scope.review.oldSport;
+			$scope.review.sport = angular.copy($scope.review.oldSport);
+			$scope.review.sportForDisplay = $scope.review.oldSportForDisplay;
 
 			$scope.review.editing = false;
 		}
 
 		$scope.updateDescription = function() {
-			$log.log('Updating description from ' + $scope.review.oldTitle + ' to ' + $scope.review.title);
+			$log.log('Updating title from ' + $scope.review.oldTitle + ' to ' + $scope.review.title);
 			$log.log('Updating description from ' + $scope.review.oldDescription + ' to ' + $scope.review.description);
-			$log.log('Updating description from ' + $scope.review.oldSport + ' to ' + $scope.review.sport);
-			$scope.review.sport = $scope.review.sport.value;
+			$log.log('Updating sport', $scope.review.oldSport, $scope.review.sportForDisplay);
+			$scope.review.sport = $scope.review.sportForDisplay;
 			Api.ReviewsUpdate.save({reviewId: $scope.review.id}, $scope.review, 
 	  				function(data) {
 	  					$log.log('Setting new review', data);
@@ -306,6 +304,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.review.compiledText = $scope.parseComment($scope.review.description);
 			// Parse markdown
 			$scope.review.markedText = marked($scope.review.compiledText);
+
+			$scope.review.sportForDisplay = $scope.review.sport.key;
 			//$log.log(comment.markedText);
   			$scope.review.editing = false;
 			$scope.review.processed = true;

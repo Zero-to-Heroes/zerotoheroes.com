@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,16 +26,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Review {
 
 	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+	@AllArgsConstructor
 	public enum Sport {
-		Badminton("Badminton"), Squash("Squash"), LeagueOfLegends("League of Legends"), HearthStone("HearthStone"), HeroesOfTheStorm(
-				"Heroes of the Storm"), Other("Other");
+		Badminton("Badminton", "Badminton"), Squash("Squash", "Squash"), LeagueOfLegends("LeagueOfLegends",
+				"League of Legends"), HearthStone("HearthStone", "HearthStone"), HeroesOfTheStorm(
+				"HeroesOfTheStorm", "Heroes of the Storm"), Other("Other", "Other");
 
 		@Getter
-		private String value;
-
-		private Sport(String value) {
-			this.value = value;
-		}
+		private String key, value;
 	}
 
 	@Id

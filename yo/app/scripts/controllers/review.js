@@ -20,7 +20,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					function(data) {
 						//$log.log($routeParams.reviewId);
 						$scope.review = data;
-						$log.log('Setting initial review', $scope.review);
+						//$log.log('Setting initial review', $scope.review);
 						$scope.updateVideoInformation($scope.review);
 						//$log.log(data);
 						var fileLocation = ENV.videoStorageUrl + data.key;
@@ -232,6 +232,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//$log.log(comment.markedText);
   			comment.editing = false;
 			comment.processed = true;
+
+			// rebuild the scrollbar
+  			$scope.$broadcast('rebuild:me');
 		}
 
 		var entityMap = {
@@ -291,15 +294,15 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.updateVideoInformation = function(data) {
-			$log.log('setting data', data);
+			//$log.log('setting data', data);
 			$scope.review.title = data.title;
 			$scope.review.sport = data.sport;
 
 			var text = data.description;
 
-			$log.log('setting text ' + text);
+			//$log.log('setting text ' + text);
 			$scope.review.description = escapeHtml(text);
-			$log.log('text sanitized to ' + $scope.review.description);
+			//$log.log('text sanitized to ' + $scope.review.description);
 			// Add timestamps
 			$scope.review.compiledText = $scope.parseComment($scope.review.description);
 			// Parse markdown
@@ -309,6 +312,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//$log.log(comment.markedText);
   			$scope.review.editing = false;
 			$scope.review.processed = true;
+
+			// rebuild the scrollbar
+  			$scope.$broadcast('rebuild:me');
 		}
 	}
 ]);

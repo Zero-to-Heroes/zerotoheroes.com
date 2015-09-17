@@ -98,19 +98,42 @@ app.run(['$rootScope', '$window', '$location', function($rootScope, $window, $lo
     });
 }]);
 
-app.directive('keepOnTop', function ($window) {
-    var $win = angular.element($window); // wrap window object as jQuery object
+
+app.directive('scrollable', function ($window, $document) {
+	var $win = angular.element($window);
+	var windowHeight = $win.height();
 
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
-            $win.on('scroll', function (e) {
-                element.css('top', $win.scrollTop() + 'px');
-                //console.log(attrs['keepOnTop'] );
-                //console.log($win.scrollTop());
-                if (attrs['keepOnTop'] == 'false') {
-                  element.css('top', '0');
-                }
+        	// FF doesn't recognize mousewheel event, cf http://stackoverflow.com/questions/16788995/mousewheel-event-is-not-triggering-in-firefox-browser
+            element.on('mousewheel DOMMouseScroll', function (evt) {
+            	var e = window.event || evt
+            	var bottom = element.find('#bottom');
+            	// Position of the bottom of the page
+            	var bottomTop = bottom[0].getBoundingClientRect().top;
+            	var strMarginTop = element.css('marginTop');
+            	var marginTop = parseInt(strMarginTop.substring(0, strMarginTop.indexOf('px')));
+            	var newMarginTop;
+            	var scrollAmount = e.wheelDelta ? -e.wheelDelta : e.originalEvent.detail * 40;
+            	// If we're at the bottom and scrolling down
+            	if (bottomTop <= windowHeight && scrollAmount > 0) {
+            		// Do nothing
+            	}
+            	// If scrolling would bring the elements above the fold of the window
+            	else if (bottomTop - scrollAmount <= windowHeight) {
+            		// Scroll amount is reduced
+            		scrollAmount = scrollAmount - (bottomTop - windowHeight);
+					newMarginTop = marginTop - scrollAmount;
+            	}
+            	else {
+	            	// Don't allow scroll up if already at the top
+	            	newMarginTop = Math.min(0, marginTop - scrollAmount);
+	            }
+
+                element.css('marginTop', newMarginTop + 'px'); 
+                e.stopPropagation();
+                e.preventDefault();
             });
         }
     };

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log) { 
 
 		$scope.API = null;
 		$scope.sources = null;
@@ -18,14 +18,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$timeout(function() { 
 				Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 					function(data) {
-						//console.log($routeParams.reviewId);
+						//$log.log($routeParams.reviewId);
 						$scope.review = data;
-						$scope.setDescriptionText($scope.review.description);
-						console.log($scope.review);
-						//console.log(data);
+						$log.log('Setting initial review', $scope.review);
+						$scope.updateVideoInformation($scope.review);
+						//$log.log(data);
 						var fileLocation = ENV.videoStorageUrl + data.key;
 						$scope.thumbnail = data.thumbnail ? ENV.videoStorageUrl + data.thumbnail : null;
-						//console.log($scope.thumbnail);
+						//$log.log($scope.thumbnail);
 						$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
 						//$scope.API.changeSource($scope.sources);
 					}
@@ -34,10 +34,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$timeout(function() { 
 				Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
 					$scope.coaches = [];
-					//console.log(data);
+					//$log.log(data);
 					for (var i = 0; i < data.length; i++) {
-						//console.log(data[0]);
-						console.log(data[i]);
+						//$log.log(data[0]);
+						$log.log(data[i]);
 						$scope.coaches.push(data[i]);
 					};
 				});
@@ -45,17 +45,17 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		};
 
 		$scope.addComment = function() {
-			//console.log('adding comment');
+			//$log.log('adding comment');
 			$scope.$broadcast('show-errors-check-validity');
-			//console.log($scope.commentText);
-			//console.log($sanitize(($scope.commentText)));
+			//$log.log($scope.commentText);
+			//$log.log($sanitize(($scope.commentText)));
 
-			//console.log($scope.newComment);
+			//$log.log($scope.newComment);
 			if ($scope.commentForm.$valid) {
-				//console.log('really adding comment');
+				//$log.log('really adding comment');
 				Api.Reviews.save({reviewId: $scope.review.id}, {'author': User.getName(), 'text': $scope.commentText}, 
 	  				function(data) {
-	  					//console.log(data);
+	  					//$log.log(data);
 			  			$scope.commentText = '';
 			  			$scope.commentForm.$setPristine();
 			  			$scope.review.comments = data.comments;
@@ -63,7 +63,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 	  				}, 
 	  				function(error) {
 	  					// Error handling
-	  					console.error(error);
+	  					$log.error(error);
 	  				}
 	  			);
 			}
@@ -71,7 +71,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.selectCoach = function (coach, email) {
       		$scope.hideProModal();
-      		console.log(email);
+      		$log.log(email);
 		    Api.Payment.save({reviewId: $routeParams.reviewId, coachId: coach.id, email: email}, function(data) {
       			$scope.selectedCoach = coach;
 			});
@@ -109,20 +109,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
-			//console.log(result);
+			//$log.log(result);
 
 			return result;
 		};
 
 		$scope.goToTimestamp = function(timeString) {
 			var split = timeString.split("+");
-			//console.log(split);
+			//$log.log(split);
 
 			// The timestamp
 			var timestamp = split[0].split(":");
-			//console.log(timestamp);
+			//$log.log(timestamp);
 			var convertedTime = 60 * parseInt(timestamp[0]) + parseInt(timestamp[1]) + (parseInt(timestamp[2]) || 0)  / 1000;
-			//console.log(convertedTime);
+			//$log.log(convertedTime);
 
 			$scope.API.pause();
 			$scope.API.seekTime(convertedTime);
@@ -133,13 +133,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Should we slow down the video?
 			if (attributes && attributes.indexOf('s') !== -1) {
 				var indexOfLoop = attributes.indexOf('L');
-				//console.log(indexOfLoop);
+				//$log.log(indexOfLoop);
 				var lastIndexForSpeed = indexOfLoop == -1 ? attributes.length : indexOfLoop;
-				//console.log(lastIndexForSpeed);
+				//$log.log(lastIndexForSpeed);
 				var playbackSpeed = attributes.substring(attributes.indexOf('s') + 1, lastIndexForSpeed);
-				//console.log(playbackSpeed);
+				//$log.log(playbackSpeed);
 
-				//console.log(playbackSpeed);
+				//$log.log(playbackSpeed);
 				$scope.setPlayback(playbackSpeed ? playbackSpeed : 0.5);
 				$scope.API.play();
 			}
@@ -149,16 +149,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.resetPlayback();
 			}
 			else {
-				console.log('setting playback to 1');
+				$log.log('setting playback to 1');
 				$scope.resetPlayback();
 			}
 
 			if (attributes && attributes.indexOf('L') !== -1) {
 				$scope.loopStartTime = convertedTime;
 				var duration = parseFloat(attributes.substring(attributes.indexOf('L') + 1));
-				//console.log(duration);
+				//$log.log(duration);
 				$scope.loopDuration = duration ? duration : 5;
-				//console.log('loop: ' + $scope.loopDuration);
+				//$log.log('loop: ' + $scope.loopDuration);
 				$scope.loopStatus = 'Loop (' + $scope.loopDuration + 's)';
 			}
 			else {
@@ -183,13 +183,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.onUpdateTime = function(currentTime, duration) {
 			if (!$scope.loopDuration) return;
 
-			//console.log('current ' + currentTime);
-			//console.log('start' + $scope.loopStartTime);
-			//console.log('duration' + $scope.loopDuration);
+			//$log.log('current ' + currentTime);
+			//$log.log('start' + $scope.loopStartTime);
+			//$log.log('duration' + $scope.loopDuration);
 			var test = $scope.loopStartTime + $scope.loopDuration;
-			//console.log(test);
+			//$log.log(test);
 			if (currentTime	> test) {
-				console.log('Going back to ' + $scope.loopStartTime);
+				$log.log('Going back to ' + $scope.loopStartTime);
 				$scope.API.seekTime($scope.loopStartTime);
 			}
 		}
@@ -209,27 +209,27 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.updateComment = function(comment) {
-			console.log('Updating comment from ' + comment.oldText + ' to ' + comment.text);
+			$log.log('Updating comment from ' + comment.oldText + ' to ' + comment.text);
 			Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
 	  				function(data) {
 	  					$scope.setCommentText(comment, data.text);
 	  				}, 
 	  				function(error) {
 	  					// Error handling
-	  					console.error(error);
+	  					$log.error(error);
 	  				}
 	  			);
 		}
 
 		$scope.setCommentText = function(comment, text) {
-			//console.log('setting text ' + text + ' for comment ' + comment);
+			//$log.log('setting text ' + text + ' for comment ' + comment);
 			comment.text = escapeHtml(text);
-			//console.log('comment text sanitized to ' + comment.text);
+			//$log.log('comment text sanitized to ' + comment.text);
 			// Add timestamps
 			comment.compiledText = $scope.parseComment(comment.text);
 			// Parse markdown
 			comment.markedText = marked(comment.compiledText);
-			//console.log(comment.markedText);
+			//$log.log(comment.markedText);
   			comment.editing = false;
 			comment.processed = true;
 		}
@@ -249,44 +249,66 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		    });
 		}
 
-		$scope.startEditingDescription = function() {
-			$scope.review.editing = true;
+		$scope.startEditingInformation = function() {
+			$scope.review.oldTitle = $scope.review.title;
 			$scope.review.oldDescription = $scope.review.description;
+			$log.log('Sport is', $scope.review.sport);
+			$log.log('oldSport is', $scope.review.oldSport);
+			$scope.review.oldSport = angular.copy($scope.review.sport);
+			$log.log('Sport is', $scope.review.sport);
+			$log.log('oldSport is', $scope.review.oldSport);
+			//$scope.review.oldSport = $scope.review.sport;
+
+			$scope.review.editing = true;
 		}
 
 		$scope.cancelUpdateDescription = function() {
-			console.log('canceling, previous description is ' + $scope.review.description );
-			console.log($scope.review.oldText);
-			//$scope.review.description = $scope.review.oldText;
+			$log.log('canceling, previous description is ' + $scope.review.description );
+			$log.log($scope.review.oldTitle);
+			$log.log($scope.review.oldDescription);
+			$log.log($scope.review.oldSport);
+
+			$scope.review.title = $scope.review.oldTitle;
+			$scope.review.description = $scope.review.oldDescription;
+			$scope.review.sport = $scope.review.oldSport;
+
 			$scope.review.editing = false;
 		}
 
 		$scope.updateDescription = function() {
-			console.log('Updating description from ' + $scope.review.oldText + ' to ' + $scope.review.description);
-			Api.ReviewsUpdate.save({reviewId: $scope.review.id, fieldName: 'description'}, { description: $scope.review.description }, 
+			$log.log('Updating description from ' + $scope.review.oldTitle + ' to ' + $scope.review.title);
+			$log.log('Updating description from ' + $scope.review.oldDescription + ' to ' + $scope.review.description);
+			$log.log('Updating description from ' + $scope.review.oldSport + ' to ' + $scope.review.sport);
+			$scope.review.sport = $scope.review.sport.value;
+			Api.ReviewsUpdate.save({reviewId: $scope.review.id}, $scope.review, 
 	  				function(data) {
-	  					$scope.setDescriptionText(data.description);
+	  					$log.log('Setting new review', data);
+	  					$scope.updateVideoInformation(data);
 	  				}, 
 	  				function(error) {
 	  					// Error handling
-	  					console.error(error);
+	  					$log.error(error);
 	  				}
 	  			);
 		}
 
-		$scope.setDescriptionText = function(text) {
-			if (text && $scope.review) {
-				console.log('setting text ' + text);
-				$scope.review.description = escapeHtml(text);
-				console.log('text sanitized to ' + $scope.review.description);
-				// Add timestamps
-				$scope.review.compiledText = $scope.parseComment($scope.review.description);
-				// Parse markdown
-				$scope.review.markedText = marked($scope.review.compiledText);
-				//console.log(comment.markedText);
-	  			$scope.review.editing = false;
-				$scope.review.processed = true;
-			}
+		$scope.updateVideoInformation = function(data) {
+			$log.log('setting data', data);
+			$scope.review.title = data.title;
+			$scope.review.sport = data.sport;
+
+			var text = data.description;
+
+			$log.log('setting text ' + text);
+			$scope.review.description = escapeHtml(text);
+			$log.log('text sanitized to ' + $scope.review.description);
+			// Add timestamps
+			$scope.review.compiledText = $scope.parseComment($scope.review.description);
+			// Parse markdown
+			$scope.review.markedText = marked($scope.review.compiledText);
+			//$log.log(comment.markedText);
+  			$scope.review.editing = false;
+			$scope.review.processed = true;
 		}
 	}
 ]);

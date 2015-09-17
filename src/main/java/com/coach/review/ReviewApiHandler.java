@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.coach.review.Review.Sport;
 import com.coach.review.video.transcoding.Transcoder;
 
 @RepositoryRestController
@@ -136,15 +137,19 @@ public class ReviewApiHandler {
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/{reviewId}/field/{fieldName}", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Review> updateDescription(@PathVariable("reviewId") final String id,
-			@PathVariable("fieldName") final String fieldName, @RequestBody Review inputReview) throws IOException {
+	@RequestMapping(value = "/{reviewId}/information", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Review> updateInformation(@PathVariable("reviewId") final String id,
+			@RequestBody Review inputReview) throws IOException {
 
+		log.debug("Upading review with " + inputReview);
 		String description = inputReview.getDescription();
-		log.debug("Upading description to " + description);
+		Sport sport = inputReview.getSport();
+		String title = inputReview.getTitle();
 
 		Review review = repo.findById(id);
 		review.setDescription(description);
+		review.setSport(sport);
+		review.setTitle(title);
 		mongoTemplate.save(review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

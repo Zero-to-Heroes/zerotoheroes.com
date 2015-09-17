@@ -34,28 +34,41 @@
 	</videogular>
 </div>
 <hr/>
-<div class="container-fluid">
+<form class="container-fluid">
 	<div class="row">
 		<div class="col-md-2">
 			<span><h4 class="text-left">{{review.author}}</h4></span>
 		</div>
 		<div class="col-md-10">
 			<div>
-				<span class="label label-primary pull-right">{{review.sport.value}}</span>
+				<span class="label label-primary pull-right"  ng-show="!review.editing" ng-model="review.sport.value">{{review.sport.value}}</span>
+			</div>
+		</div>
+		<div class="col-md-6" ng-show="review.editing"></div>
+		<div class="col-md-4" ng-show="review.editing">
+			<div>
+				<div class="form-group" show-errors="{ showSuccess: true }">
+				    <select ng-model="review.sport.value" name="sport" class="form-control" ng-required="true">
+						<option value="">Choose your sport...</option>
+						<option value="Squash">Squash</option>
+						<option value="Badminton">Badminton</option>
+						<option value="LeagueOfLegends">League of Legends</option>
+						<option value="HeroesOfTheStorm">Heroes of the Storm</option>
+						<option value="HearthStone">HearthStone</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-10">
-			<h2 class="video-title">{{review.title}}</h2>
+			<h2 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h2>
+			<div class="form-group" show-errors="{ showSuccess: true }" ng-show="review.editing">
+		    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
+		  	</div>
 			<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
-			<div ng-show="review.editing">
-				<textarea class="form-control" ng-model="review.description"></textarea>
-				<div class="text-right">
-					<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs">Cancel</button>
-					<button ng-click="updateDescription()" class="btn btn-default btn-xs">Update</button>
-				</div>
-			</div>
+			<textarea class="form-control" ng-show="review.editing" ng-model="review.description"></textarea>
 		</div>
 		<div ng-show="!!coaches.length" class="col-md-2 text-right">
 			<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
@@ -64,10 +77,14 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12 text-left">
-			<a ng-click="startEditingDescription()" class="link-minor" ng-show="!review.editing"> Edit description</a>
+			<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing"> Edit description</a>
+			<div ng-show="review.editing">
+				<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs">Cancel</button>
+				<button ng-click="updateDescription()" class="btn btn-default btn-xs">Update</button>
+			</div>
 		</div>
 	</div>
-</div>
+</form>
 <hr/>
 <div ng-show="selectedCoach">
 	<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>

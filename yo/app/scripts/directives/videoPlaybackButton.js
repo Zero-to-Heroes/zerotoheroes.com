@@ -6,7 +6,7 @@ app.directive("videoPlaybackButton",
         return {
             restrict: "E",
             require: "^videogular",
-            template: "<div class='iconButton' ng-click='resetPlayback()'>{{playbackRate ? playbackRate : 1.0}}x</div>"
+            templateUrl: 'templates/videoPlaybackButton.html'
         }
     }
 );

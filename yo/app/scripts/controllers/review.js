@@ -176,6 +176,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.setPlayback = function(playback) {
+			$log.log('Setting playback to ' + playback);
 			$scope.playbackRate = playback;
 			$scope.API.setPlayback(playback);
 		}

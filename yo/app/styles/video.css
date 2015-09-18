@@ -134,7 +134,7 @@ videogular div.video-loop-button a:visited {
 
 videogular video-playback-button {
     display: table-cell;
-    width: 50px;
+    width: 70px;
     vertical-align: middle;
     text-align: center;
     cursor: pointer;
@@ -149,7 +149,7 @@ videogular video-playback-button a:visited {
 
 videogular div.video-playback-button {
     display: table-cell;
-    width: 50px;
+    width: 70px;
     vertical-align: middle;
     text-align: center;
     cursor: pointer;
@@ -162,6 +162,13 @@ videogular div.video-playback-button a:visited {
     text-decoration: none;
 }
 
+videogular video-playback-button .dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+videogular video-playback-button .dropdown-menu > li > a {
+  color: white;
+}
 
 @media screen and (min-width: 500px) {
   	.btn-file {

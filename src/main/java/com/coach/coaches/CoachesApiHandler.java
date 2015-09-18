@@ -27,7 +27,7 @@ public class CoachesApiHandler {
 	ReviewRepository reviewRepo;
 
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<List<Coach>> getReviewById(@PathVariable("reviewId") final String id) {
+	public @ResponseBody ResponseEntity<List<Coach>> getCoachesForReview(@PathVariable("reviewId") final String id) {
 		log.debug("Retrieving coaches");
 		Review review = reviewRepo.findById(id);
 		log.debug("For review id: " + id);
@@ -43,7 +43,7 @@ public class CoachesApiHandler {
 		log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
 		List<Coach> ret = new ArrayList<Coach>();
 		for (Coach coach : CoachRepository.allCoaches) {
-			if (coach.getSport().getValue().equals(sport)) {
+			if (coach.getSport().equals(sport)) {
 				ret.add(coach);
 			}
 		}

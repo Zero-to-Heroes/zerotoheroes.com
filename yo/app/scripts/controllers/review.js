@@ -103,6 +103,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		var askProModel = $modal({templateUrl: 'templates/askPro.html', show: false, animation: 'am-fade-and-scale', placement: 'center', scope: $scope});
 
 		$scope.showProModal = function() {
+			$scope.email = User.getEmail();
 			askProModel.$promise.then(askProModel.show);
 		}
 

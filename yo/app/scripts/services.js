@@ -20,7 +20,6 @@ services.factory('Api', ['$resource', 'ENV',
 
 services.factory('User', ['$window', 
 	function ($window) {
-		var name ;
 
 		return {
             getName: function () {
@@ -31,6 +30,12 @@ services.factory('User', ['$window',
             },
             isLoggedIn: function() {
             	return ($window.sessionStorage.token && $window.sessionStorage.token.length > 0);
+            },
+            getEmail: function () {
+                return ($window.sessionStorage.email ? $window.sessionStorage.email : undefined);
+            },
+            setEmail: function(value) {
+                $window.sessionStorage.email = value;
             }
         };
 	}

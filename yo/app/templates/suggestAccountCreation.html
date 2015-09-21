@@ -7,7 +7,6 @@
 			</div>
 			<div class="modal-body">
 				<p>Creating an account is optional, and lets you edit your video information later on, be notified when there are new comments, and automatically benefit from all the new features we'll add in the coming weeks<br>If you already have an account, you can just <a ng-click='$hide(); signIn()'>sign in</a> instead</p>
-				{{onUpload}}
 				<form class="form-horizontal" name="accountForm">
 					<div class="alert alert-danger" ng-show="error" role="alert">{{error}}</div>
 					<div class="form-group" show-errors="{ showSuccess: true }">

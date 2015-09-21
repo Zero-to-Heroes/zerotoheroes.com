@@ -2,7 +2,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" ng-click="skipAccountCreation()">&times;</button>
+				<button type="button" class="close" ng-click="endAccountCreation()">&times;</button>
 				<h4 class="modal-title">Sign in</h4>
 			</div>
 			<div class="modal-body">
@@ -18,7 +18,7 @@
 				    	<input type="password" class="form-control" id="password" placeholder="Password" ng-model="account.password">
 				  	</div>
 				  	<div class="text-right">
-				  		<a class="link-minor" ng-click="skipAccountCreation()">Cancel</a>
+				  		<a class="link-minor" ng-click="endAccountCreation()">Cancel</a>
 				  		<button type="submit" class="btn btn-primary" ng-click="login()">Log me in</button>
 				  	</div>
 				</form>

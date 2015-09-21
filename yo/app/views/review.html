@@ -86,15 +86,15 @@
 		<hr/>
 	</div>
 	<form name="commentForm">
-		<div class="container-fluid">
+		<div class="container-fluid comment-block">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-2">
 					<div class="form-group" show-errors="{ showSuccess: true }">
 						<input type="text" name="author" class="form-control" ng-model="commentAuthor" placeholder="Your name" ng-show="!User.isLoggedIn()" ng-required="!User.isLoggedIn()">
 						<span ng-show="User.isLoggedIn()">{{User.getName()}}</span>
 					</div>
 				</div>
-				<div class="col-md-9">
+				<div class="col-md-10">
 					<div class="form-group" show-errors="{ showSuccess: true }">
 						<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="form-control" ng-required="true"></textarea>
 					</div>

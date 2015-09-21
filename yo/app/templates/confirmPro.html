@@ -11,7 +11,7 @@
 					<div class="form-group">
 				    	<div class="input-group">
 				      		<label class="sr-only" for="email">Email address</label>
-    						<input type="email" class="form-control" ng-model="email" placeholder="Email">
+    						<input type="email" class="form-control" ng-model="email" ng-init="User.getEmail()" placeholder="Email">
 				    	</div>
 				  	</div>
 				  	<button type="submit" class="btn btn-primary">Confirm</button>

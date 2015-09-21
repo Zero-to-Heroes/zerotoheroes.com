@@ -60,6 +60,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 			Api.Users.get({identifier: $scope.account.username}, 
 				function(data) {
 					User.setName(data.username);
+					User.setEmail(data.email);
 					$scope.endAccountCreation();
 				}
 			);

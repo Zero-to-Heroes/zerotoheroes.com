@@ -155,7 +155,6 @@ public class ReviewApiHandler {
 	public @ResponseBody ResponseEntity<Review> addComment(@PathVariable("reviewId") final String id,
 			@RequestBody Comment comment) throws IOException {
 
-		// Add current logged in user as the author of the review
 		String currentUser =
 				SecurityContextHolder.getContext().getAuthentication().getName();
 		log.info("Current user is " + currentUser);
@@ -163,6 +162,8 @@ public class ReviewApiHandler {
 				.getAuthorities();
 		log.info("authorities are " + authorities);
 
+		// Security
+		// Add current logged in user as the author of the review
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
 			comment.setAuthor(currentUser);
@@ -181,6 +182,7 @@ public class ReviewApiHandler {
 			}
 		}
 
+		// Adding the comment
 		log.debug("Adding comment " + comment + " to review " + id);
 
 		Review review = reviewRepo.findById(id);
@@ -191,6 +193,12 @@ public class ReviewApiHandler {
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(comment.getAuthor());
 		mongoTemplate.save(review);
+
+		// Notifying the user who submitted the review (if he is registered)
+		if (review.getAuthorId() != null) {
+			User author = userRepo.findById(review.getAuthorId());
+			author.getEmail();
+		}
 
 		log.debug("Created comment " + comment + " with id " + comment.getId());
 

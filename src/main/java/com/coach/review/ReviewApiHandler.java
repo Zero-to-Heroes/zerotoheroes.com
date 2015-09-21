@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amazonaws.util.StringUtils;
+import com.coach.core.email.EmailMessage;
+import com.coach.core.email.EmailSender;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
 import com.coach.review.Review.Sport;
@@ -44,8 +46,8 @@ public class ReviewApiHandler {
 	@Autowired
 	MongoTemplate mongoTemplate;
 
-	// @Autowired
-	// IFileStorage fileStorage;
+	@Autowired
+	EmailSender emailSender;
 
 	@Autowired
 	Transcoder transcoder;
@@ -197,7 +199,21 @@ public class ReviewApiHandler {
 		// Notifying the user who submitted the review (if he is registered)
 		if (review.getAuthorId() != null) {
 			User author = userRepo.findById(review.getAuthorId());
-			author.getEmail();
+			String recipient = author.getEmail();
+
+			EmailMessage message = EmailMessage
+					.builder()
+					.from("seb@zerotoheroes.com")
+					.to(recipient)
+					.subject("New comment on your review " + review.getTitle() + " at ZeroToHeroes")
+					.content(
+							"Hey there!<br/>"
+									+
+									comment.getAuthor()
+									+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
+									+ review.getId() + "\">here</a> to see what they said.").type(
+							"text/html").build();
+			emailSender.send(message);
 		}
 
 		log.debug("Created comment " + comment + " with id " + comment.getId());

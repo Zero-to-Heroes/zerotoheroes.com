@@ -72,7 +72,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 text-left">
-				<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing"> Edit information</a>
+				<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && User.getName() == review.author"> Edit information</a>
 				<div ng-show="review.editing">
 					<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs">Cancel</button>
 					<button ng-click="updateDescription()" class="btn btn-default btn-xs">Update</button>
@@ -113,7 +113,7 @@
 		<div class="comment-header">
 			<span class="comment-author">{{comment.author}}</span>
 			<span><small>{{formatDate(comment)}}</small></span>
-			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id"> - Edit</a>
+			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author"> - Edit</a>
 		</div>
 		<div class="comment-body">
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">

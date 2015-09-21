@@ -225,12 +225,26 @@ public class ReviewApiHandler {
 	public @ResponseBody ResponseEntity<Review> updateInformation(@PathVariable("reviewId") final String id,
 			@RequestBody Review inputReview) throws IOException {
 
+		Review review = reviewRepo.findById(id);
+
+		// Security
+		String currentUser =
+				SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+		// Disallow anonymous edits
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
+		}
+		// Disable edits when you're not the author
+		else if (!currentUser.equals(review.getAuthor())) { return new ResponseEntity<Review>((Review) null,
+				HttpStatus.UNAUTHORIZED); }
+
 		log.debug("Upading review with " + inputReview);
 		String description = inputReview.getDescription();
 		Sport sport = inputReview.getSport();
 		String title = inputReview.getTitle();
 
-		Review review = reviewRepo.findById(id);
 		review.setDescription(description);
 		review.setSport(sport);
 		review.setTitle(title);
@@ -247,6 +261,20 @@ public class ReviewApiHandler {
 
 		Review review = reviewRepo.findById(reviewId);
 		Comment comment = review.getComment(commentId);
+
+		// Security
+		String currentUser =
+				SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+		// Disallow anonymous edits
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+			return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED);
+		}
+		// Disable edits when you're not the author
+		else if (!currentUser.equals(comment.getAuthor())) { return new ResponseEntity<Comment>((Comment) null,
+				HttpStatus.UNAUTHORIZED); }
+
 		comment.setText(newComment.getText());
 
 		review.setLastModifiedDate(new Date());

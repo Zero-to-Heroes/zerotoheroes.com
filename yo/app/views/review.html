@@ -16,7 +16,7 @@
 			</vg-scrub-bar>
 			<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
 			<video-playback-button></video-playback-button>
-			<video-loop-button></video-loop-button>
+			<video-loop-button ng-show="loopStatus"></video-loop-button>
 			<vg-volume>
 				<vg-mute-button></vg-mute-button>
 				<vg-volume-bar></vg-volume-bar>

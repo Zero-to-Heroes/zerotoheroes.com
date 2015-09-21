@@ -183,7 +183,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				//$log.log(duration);
 				$scope.loopDuration = duration ? duration : 5;
 				//$log.log('loop: ' + $scope.loopDuration);
-				$scope.loopStatus = 'Loop (' + $scope.loopDuration + 's)';
+				$scope.loopStatus = 'Exit loop';
 			}
 			else {
 				$scope.stopLoop();

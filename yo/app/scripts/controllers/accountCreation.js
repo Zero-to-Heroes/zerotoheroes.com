@@ -72,6 +72,9 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 			if ($scope.onUpload) {
 				$scope.backToUpload();
 			}
+			else if ($scope.onAddComment) {
+				$scope.backToUploadComment();
+			}
 			else {
 				$scope.onAccountCreationClosed(); 
 			}

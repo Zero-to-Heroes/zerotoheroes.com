@@ -85,13 +85,13 @@
 		<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
 		<hr/>
 	</div>
-
 	<form name="commentForm">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3">
 					<div class="form-group" show-errors="{ showSuccess: true }">
-						<div zth-name-input>&nbsp;</div>
+						<input type="text" name="author" class="form-control" ng-model="commentAuthor" placeholder="Your name" ng-show="!User.isLoggedIn()" ng-required="!User.isLoggedIn()">
+						<span ng-show="User.isLoggedIn()">{{User.getName()}}</span>
 					</div>
 				</div>
 				<div class="col-md-9">

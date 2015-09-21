@@ -1,5 +1,7 @@
 package com.coach.core.security;
 
+import java.util.Collection;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,5 +17,16 @@ import org.springframework.security.core.GrantedAuthority;
 public class UserAuthority implements GrantedAuthority {
 
 	private String authority;
+
+	public static boolean isAnonymous(Collection<? extends GrantedAuthority> authorities) {
+		boolean anonymous = true;
+		for (GrantedAuthority grantedAuthority : authorities) {
+			if (grantedAuthority != null && !"ROLE_ANONYMOUS".equals(grantedAuthority.getAuthority())) {
+				anonymous = false;
+				break;
+			}
+		}
+		return anonymous;
+	}
 
 }

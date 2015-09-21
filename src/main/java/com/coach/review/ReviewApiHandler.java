@@ -2,6 +2,7 @@ package com.coach.review;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
+import com.coach.core.security.UserAuthority;
 import com.coach.review.Review.Sport;
 import com.coach.review.video.transcoding.Transcoder;
 import com.coach.user.UserRepository;
@@ -94,7 +97,11 @@ public class ReviewApiHandler {
 		String currentUser =
 				SecurityContextHolder.getContext().getAuthentication().getName();
 		log.info("Current user is " + currentUser);
-		if (!StringUtils.isNullOrEmpty(currentUser)) {
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+		log.info("authorities are " + authorities);
+
+		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
 			review.setAuthor(currentUser);
 			// Add the ID of the author in addition to the name (we still keep
@@ -147,6 +154,32 @@ public class ReviewApiHandler {
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Review> addComment(@PathVariable("reviewId") final String id,
 			@RequestBody Comment comment) throws IOException {
+
+		// Add current logged in user as the author of the review
+		String currentUser =
+				SecurityContextHolder.getContext().getAuthentication().getName();
+		log.info("Current user is " + currentUser);
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+		log.info("authorities are " + authorities);
+
+		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
+			log.debug("Setting current user as review author " + currentUser);
+			comment.setAuthor(currentUser);
+			// Add the ID of the author in addition to the name (we still keep
+			// the nmae
+			User user = userRepo.findByUsername(currentUser);
+			comment.setAuthorId(user.getId());
+		}
+		// If anonymous, make sure the user doesn't use someone else's name
+		else {
+			log.debug("Validating that the name used to created the review is allowed");
+			User user = userRepo.findByUsername(comment.getAuthor());
+			if (user != null) {
+				log.debug("Name not allowed: " + comment.getAuthor());
+				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
+			}
+		}
 
 		log.debug("Adding comment " + comment + " to review " + id);
 

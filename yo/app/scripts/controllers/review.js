@@ -10,6 +10,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.videoVisible = true;
+		$scope.User = User;
 
 
 		$scope.onPlayerReady = function(API) {
@@ -53,7 +54,30 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//$log.log($scope.newComment);
 			if ($scope.commentForm.$valid) {
 				//$log.log('really adding comment');
-				Api.Reviews.save({reviewId: $scope.review.id}, {'author': User.getName(), 'text': $scope.commentText}, 
+				if (!User.isLoggedIn()) {
+  					$scope.onAddComment = true;
+  					$scope.modalConfig = {identifier: $scope.commentAuthor};
+  					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+  				}
+  				// Otherwise directly proceed to the upload
+  				else {
+					$scope.uploadComment();
+				}
+			}
+		};
+
+		$scope.backToUploadComment = function() {
+  			$log.log('Closing account creation popup');
+  			$scope.onUploadComment = false;
+  			// We shouldn't be aware of popups created elsewhere, but for some reason they are global. 
+  			// No idea how to solve this (defined in nameinput.js. Possibly because it is included in 
+  			// the header of the page)
+			$scope.onAccountCreationClosed();
+			$scope.uploadComment();
+  		}
+
+		$scope.uploadComment = function() {
+			Api.Reviews.save({reviewId: $scope.review.id}, {'author': $scope.commentAuthor, 'text': $scope.commentText}, 
 	  				function(data) {
 	  					//$log.log(data);
 			  			$scope.commentText = '';
@@ -65,9 +89,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 	  					// Error handling
 	  					$log.error(error);
 	  				}
-	  			);
-			}
-		};
+	  		);
+		}
 
 		$scope.selectCoach = function (coach, email) {
       		$scope.hideProModal();

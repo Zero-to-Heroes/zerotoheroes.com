@@ -74,7 +74,7 @@ public class Transcoder {
 		review.setKey(keyName);
 		review.setFileType("video/mp4");
 		String thumbnailKey = THUMBNAIL_FOLDER_NAME + SUFFIX + randomUUID + "_";
-		String thumbnailName = thumbnailKey + "00001.png";
+		String thumbnailName = thumbnailKey + "00005.png";
 		review.setThumbnail(thumbnailName);
 		mongoTemplate.save(review);
 		log.debug("Updated review " + review);

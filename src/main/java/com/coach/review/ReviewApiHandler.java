@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +21,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.amazonaws.util.StringUtils;
+import com.coach.core.security.User;
 import com.coach.review.Review.Sport;
 import com.coach.review.video.transcoding.Transcoder;
+import com.coach.user.UserRepository;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/reviews")
@@ -29,7 +33,10 @@ import com.coach.review.video.transcoding.Transcoder;
 public class ReviewApiHandler {
 
 	@Autowired
-	ReviewRepository repo;
+	ReviewRepository reviewRepo;
+
+	@Autowired
+	UserRepository userRepo;
 
 	@Autowired
 	MongoTemplate mongoTemplate;
@@ -60,7 +67,7 @@ public class ReviewApiHandler {
 		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
 				"lastModifiedDate"));
 
-		reviews = repo.findAll(userName, sport, newestFirst);
+		reviews = reviewRepo.findAll(userName, sport, newestFirst);
 
 		return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
 	}
@@ -69,11 +76,12 @@ public class ReviewApiHandler {
 	public @ResponseBody ResponseEntity<Review> getReviewById(@PathVariable("reviewId") final String id) {
 		// String currentUser =
 		// SecurityContextHolder.getContext().getAuthentication().getName();
-		Review review = repo.findById(id);
+		Review review = reviewRepo.findById(id);
 
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
 		review.sortComments();
+		log.debug("Returning review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -82,6 +90,27 @@ public class ReviewApiHandler {
 	public @ResponseBody ResponseEntity<Review> createReview(@RequestBody Review review) throws IOException {
 
 		// TOOD: checks
+		// Add current logged in user as the author of the review
+		String currentUser =
+				SecurityContextHolder.getContext().getAuthentication().getName();
+		log.info("Current user is " + currentUser);
+		if (!StringUtils.isNullOrEmpty(currentUser)) {
+			log.debug("Setting current user as review author " + currentUser);
+			review.setAuthor(currentUser);
+			// Add the ID of the author in addition to the name (we still keep
+			// the nmae
+			User user = userRepo.findByUsername(currentUser);
+			review.setAuthorId(user.getId());
+		}
+		// If anonymous, make sure the user doesn't use someone else's name
+		else {
+			log.debug("Validating that the name used to created the review is allowed");
+			User user = userRepo.findByUsername(review.getAuthor());
+			if (user != null) {
+				log.debug("Name not allowed: " + review.getAuthor());
+				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
+			}
+		}
 
 		// Store the file on S3
 		// Create a review entry with the appropriate link to the S3 file
@@ -108,8 +137,6 @@ public class ReviewApiHandler {
 		// mongoTemplate.save(review);
 		// log.debug("Saved again review with ID: " + review.getId());
 
-		// String currentUser =
-		// SecurityContextHolder.getContext().getAuthentication().getName();
 		// log.info("Request review creation: " + newReview);
 		// mongoTemplate.save(newReview);
 		log.debug("Transcoding started, returning with created review: " + review);
@@ -123,7 +150,7 @@ public class ReviewApiHandler {
 
 		log.debug("Adding comment " + comment + " to review " + id);
 
-		Review review = repo.findById(id);
+		Review review = reviewRepo.findById(id);
 
 		comment.setCreationDate(new Date());
 		review.addComment(comment);
@@ -146,7 +173,7 @@ public class ReviewApiHandler {
 		Sport sport = inputReview.getSport();
 		String title = inputReview.getTitle();
 
-		Review review = repo.findById(id);
+		Review review = reviewRepo.findById(id);
 		review.setDescription(description);
 		review.setSport(sport);
 		review.setTitle(title);
@@ -161,7 +188,7 @@ public class ReviewApiHandler {
 
 		log.debug("Updating comment " + commentId + " to review " + reviewId);
 
-		Review review = repo.findById(reviewId);
+		Review review = reviewRepo.findById(reviewId);
 		Comment comment = review.getComment(commentId);
 		comment.setText(newComment.getText());
 

@@ -49,6 +49,7 @@ public class Review {
 	private Sport sport;
 	private String title, description;
 	private String author, lastModifiedBy;
+	private String authorId, lastModifiedById;
 	private int beginning, ending;
 	private List<Comment> comments;
 	// private double treatmentCompletion;

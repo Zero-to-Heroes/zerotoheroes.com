@@ -1,6 +1,6 @@
-<form name="uploadForm" class="upload-form main-panel">
+<div zth-navigation></div>
 
-	<div zth-navigation></div>
+<form name="uploadForm" class="upload-form main-panel">
 
 	<div class="form-container">
 		<span class="btn btn-default btn-file">
@@ -44,9 +44,11 @@
 			<h1>Video information</h1>
 
 			<div class="container-fluid">
-				<div class="row name-input-row" ng-show="!User.getName()">
+				<div class="row" ng-hide="User.isLoggedIn()">
 					<div class="col-sm-12">
-						<div zth-name-input class="form-group nameInput"></div>
+						<div class="form-group" show-errors="{ showSuccess: true }">
+							<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
+						</div>
 				  	</div>
 			  	</div>
 		  		<div class="row">
@@ -78,7 +80,7 @@
 			  	</div>
 		  		<div class="row">
 					<div class="col-sm-2">
-			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="upload()" ng-disabled="uploadInProgress">Upload now</button>
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="uploadInProgress">Upload now</button>
 		  			</div>
 					<div class="col-sm-6">
 					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>

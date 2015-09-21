@@ -102,7 +102,7 @@ public class CoachRepository {
 				.tariff("6€")
 				.tariffDescription(
 						"The review will include at least: <ul><li>2 biggest execution mistakes analysis</li><li>2 biggest decision-making mistakes analysis</li></ul>")
-				.verified(true).build();
+				.verified(false).build();
 	}
 
 	public static Coach findById(String coachId) {

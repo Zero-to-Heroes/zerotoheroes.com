@@ -232,6 +232,10 @@ videogular div.video-dual-mode-button a:visited {
     text-decoration: none;
 }
 
+.videogular-container videogular vg-time-display {
+  width: 100px;
+}
+
 @media screen and (min-width: 500px) {
   	.btn-file {
   		margin-left: auto;

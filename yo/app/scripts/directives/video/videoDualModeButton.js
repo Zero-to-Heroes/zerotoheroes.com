@@ -1,12 +1,12 @@
 'use strict';
 var app = angular.module('app');
 
-app.directive("videoPlaybackButton",
+app.directive("videoDualModeButton",
     function() {
         return {
             restrict: "E",
             require: "^videogular",
-            templateUrl: 'templates/videoPlaybackButton.html'
+            template: "<div class='iconButton' ng-click='playerControls.mode = 1'>Exit Dual Mode</div>"
         }
     }
 );

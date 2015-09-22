@@ -47,16 +47,6 @@
   	margin-bottom: 20px;
 }
 
-/* Making the sliders more usable on mobile 
-.ngrs-range-slider .ngrs-handle {
-	padding: 20px;
-	margin-top: -10px;
-}
-
-.ngrs-handle-min {
-
-}*/
-
 .editing-tools .buttons {
   	margin-top: 20px;
   	text-align: center;
@@ -88,6 +78,48 @@
   padding-top: 300px;
   margin-top: -300px;
   background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;
+}
+
+.second-player {
+  	position: absolute;
+  	top: 0;
+  	width: 100%;
+  	height: 100%;
+	left: 50%;
+}
+
+.right-shift {
+	left: -50%;
+	/* Make sure it is above the other video */
+	z-index: 2;
+}
+
+.center-shift {
+	left: 0;
+}
+
+.center-shift-left {
+	left: -25%;
+}
+
+.center-shift-right {
+	left: 25%;
+}
+
+.second-player video {
+	margin-top: -2px;
+}
+
+.second-player .videogular {
+	margin: 0;
+}
+
+.multi-player {
+  	overflow: hidden;
+}
+
+.multi-player vg-media {
+  	position: relative;
 }
 
 .keep-on-top .checkbox {
@@ -168,6 +200,36 @@ videogular video-playback-button .dropdown-menu {
 
 videogular video-playback-button .dropdown-menu > li > a {
   color: white;
+}
+
+videogular video-dual-mode-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular video-dual-mode-button a,
+videogular video-dual-mode-button a:hover,
+videogular video-dual-mode-button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+videogular div.video-dual-mode-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular div.video-dual-mode-button a,
+videogular div.video-dual-mode-button a:hover,
+videogular div.video-dual-mode-button a:visited {
+    color: white;
+    text-decoration: none;
 }
 
 @media screen and (min-width: 500px) {

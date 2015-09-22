@@ -6,7 +6,7 @@ app.directive("videoLoopButton",
         return {
             restrict: "E",
             require: "^videogular",
-            template: "<div class='iconButton' ng-click='stopLoop()'>{{loopStatus ? loopStatus : 'No loop'}}</div>"
+            template: "<div class='iconButton' ng-click='playerControls.stopLoop()'>{{playerControls.loopStatus}}</div>"
         }
     }
 );

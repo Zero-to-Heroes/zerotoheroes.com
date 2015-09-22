@@ -44,6 +44,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.onSecondPlayerReady = function($API) {
 			$scope.API2 = $API;
+			$scope.API2.setVolume(0);
 			$scope.media = $scope.API2.mediaElement;
 			$scope.media.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {

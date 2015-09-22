@@ -7,6 +7,7 @@
 			<li>Or add <i>+s</i> to start playing in slow motion (half speed)</li>
 			<li>Or add <i>+s</i> with a number to specify the video playback rate. For instance, <i>+s0.25</i> will play the video at quarter the speed, while <i>+s2</i> will play it at double the speed</li>
 			<li>Add <i>L</i> after any of +p or +s commands to start a 5-seconds loop starting from the timestamp. You can also specify the loop duration in the same format as for <i>+s</i>. For instance, <i>00:54+s0.25L2.2</i> will start playing the video at 54s in at quarter the speed, and loop every 2.2 seconds</li>
+			<li>You can display two different sequences of a single video side-by-side. Simply specify the moment of the first video, a pipe, then the second one. For instance, <i>0:50|2:45</i> will show you side-by-side the left side of the video at 0:50 and 2:45. If you want the right side instead, add 'r' at the end, like <i>0:50|2:45r</i>. You can then use loop and speed comments as usual (a full command might look like <i>0:50|0:50r+s0.25L2.2</i>)</li>
 		</ul>
 	</p>
 </div>

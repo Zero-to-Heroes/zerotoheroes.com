@@ -9,7 +9,7 @@
 		</vg-media>
 
 		<vg-controls>
-			<vg-play-pause-button></vg-play-pause-button>
+			<vg-play-pause-button ng-click="API2.playPause()"></vg-play-pause-button>
 			<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
 			<vg-scrub-bar>
 				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
@@ -32,7 +32,7 @@
 			</videogular>
 		</div>
 
-		<vg-overlay-play></vg-overlay-play>
+		<vg-overlay-play ng-click="API2.playPause()"></vg-overlay-play>
 	</videogular>
 </div>
 <hr/>

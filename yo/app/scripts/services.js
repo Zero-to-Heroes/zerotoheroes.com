@@ -23,19 +23,19 @@ services.factory('User', ['$window',
 
 		return {
             getName: function () {
-                return ($window.sessionStorage.name ? $window.sessionStorage.name : undefined);
+                return ($window.localStorage.name ? $window.localStorage.name : undefined);
             },
             setName: function(value) {
-                $window.sessionStorage.name = value;
+                $window.localStorage.name = value;
             },
             isLoggedIn: function() {
-            	return ($window.sessionStorage.token && $window.sessionStorage.token.length > 0);
+            	return ($window.localStorage.token && $window.localStorage.token.length > 0);
             },
             getEmail: function () {
-                return ($window.sessionStorage.email ? $window.sessionStorage.email : undefined);
+                return ($window.localStorage.email ? $window.localStorage.email : undefined);
             },
             setEmail: function(value) {
-                $window.sessionStorage.email = value;
+                $window.localStorage.email = value;
             }
         };
 	}
@@ -50,14 +50,14 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 		};
 
 		service.setAuthentication = function (username, responseHeaders, callback) {
-			$window.sessionStorage.token = responseHeaders('x-auth-token');
-			$window.sessionStorage.name = username;
-			callback ($window.sessionStorage.token && $window.sessionStorage.token != 'null' && $window.sessionStorage.token.trim().length > 0)
+			$window.localStorage.token = responseHeaders('x-auth-token');
+			$window.localStorage.name = username;
+			callback ($window.localStorage.token && $window.localStorage.token != 'null' && $window.localStorage.token.trim().length > 0)
 		};
 
 		service.clearCredentials = function () {
-			delete $window.sessionStorage.token;
-			delete $window.sessionStorage.name;
+			delete $window.localStorage.token;
+			delete $window.localStorage.name;
 		};
 
 		return service;
@@ -69,8 +69,8 @@ services.factory('authInterceptor', function ($rootScope, $q, $window) {
 	return {
 		request: function (config) {
 			config.headers = config.headers || {};
-			if ($window.sessionStorage.token) {
-				config.headers['x-auth-token'] = $window.sessionStorage.token;
+			if ($window.localStorage.token) {
+				config.headers['x-auth-token'] = $window.localStorage.token;
 			}
 			return config;
 		},

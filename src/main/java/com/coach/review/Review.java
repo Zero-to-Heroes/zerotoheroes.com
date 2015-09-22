@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -55,6 +57,7 @@ public class Review {
 	// private double treatmentCompletion;
 	private boolean transcodingDone;
 	private float videoFramerateRatio;
+	private Map<String, String> reviewVideoMap;
 
 	private int totalInsertedComments;
 
@@ -99,5 +102,11 @@ public class Review {
 				return o2.getCreationDate().compareTo(o1.getCreationDate());
 			}
 		});
+	}
+
+	public void addExternalLink(String reviewId, String videoKey) {
+		if (reviewVideoMap == null) reviewVideoMap = new HashMap<>();
+
+		reviewVideoMap.put(reviewId, videoKey);
 	}
 }

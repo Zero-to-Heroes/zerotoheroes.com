@@ -133,6 +133,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			  			$scope.commentText = '';
 			  			$scope.commentForm.$setPristine();
 			  			$scope.review.comments = data.comments;
+			  			$scope.review.reviewVideoMap = data.reviewVideoMap;
 			  			$scope.$broadcast('show-errors-reset');
 	  				}, 
 	  				function(error) {
@@ -255,7 +256,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// (m)m:(s)s:(SSS) format
 		// then an optional + sign
 		// if present, needs at least either p, s or l
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/g;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\(.*\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/g;
 
 		// Parse new comments when they are added
 		$scope.$watchCollection('review.comments', function(newComments, oldValue) {
@@ -276,14 +277,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		};
 
 		$scope.goToTimestamp = function(timeString) {
-			$log.log('going to timestamp');
+			//$log.log('going to timestamp');
 			$scope.playerControls.pause();
 			var split = timeString.split("+");
 
 			// The timestamp
 			var timestampInfo = split[0].split('|');
 
-			// First the timestamp
+			// First the timestamp (the first part is always the current video)
 			var convertedTime = $scope.extractTime(timestampInfo[0]);
 
 			// Then check if we're trying to play videos in dual mode
@@ -295,13 +296,21 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				// The URL of the video. For now, default to the same video
 				var key = $scope.review.key;
 				var dataType = $scope.review.fileType;
+				// A reviewID has been specified
+				if (otherVideo.indexOf('(') > -1) {
+					var externalReviewId = otherVideo.substring(otherVideo.indexOf('(') + 1, otherVideo.indexOf(')'));
+					//$log.log('external review id', externalReviewId);
+					//$log.log('review map is ', $scope.review.reviewVideoMap);
+					key = $scope.review.reviewVideoMap[externalReviewId];
+					//$log.log('external video key is ', key);
+				}
 
 				var fileLocation2 = ENV.videoStorageUrl + key;
 				$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation2), type: dataType}];
 				$scope.allPlayersReady = false;
 
 				// Now move the videos side-byside
-				var sideInfo = otherVideo;
+				var sideInfo = otherVideo.indexOf('(') > -1 ? otherVideo.split('(')[0] : otherVideo;
 				if (otherVideo.indexOf('r') > -1) {
 					$scope.playerControls.firstPlayerClass = 'right-shift';
 					$scope.playerControls.secondPlayerClass = 'center-shift';
@@ -374,7 +383,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					else {
 						$scope.playerControls.stopLoop();
 					}
-					$log.log('Finished parsing timestamp');
+					//$log.log('Finished parsing timestamp');
 				}
 			});
 		}

@@ -50,6 +50,9 @@ public class ReviewApiHandler {
 	EmailSender emailSender;
 
 	@Autowired
+	CommentParser commentParser;
+
+	@Autowired
 	Transcoder transcoder;
 
 	public ReviewApiHandler() {
@@ -194,6 +197,9 @@ public class ReviewApiHandler {
 		review.sortComments();
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(comment.getAuthor());
+
+		// See if there are external references to videos in the comment
+		commentParser.parseComment(review, comment);
 		mongoTemplate.save(review);
 
 		// Notifying the user who submitted the review (if he is registered)
@@ -279,6 +285,9 @@ public class ReviewApiHandler {
 
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(comment.getAuthor());
+
+		// See if there are external references to videos in the comment
+		commentParser.parseComment(review, comment);
 		mongoTemplate.save(review);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);

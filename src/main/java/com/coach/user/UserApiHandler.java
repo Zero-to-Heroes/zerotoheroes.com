@@ -5,10 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
-import com.coach.core.security.UserAuthentication;
 import com.coach.core.security.UserRole;
 
 @RestController
@@ -28,29 +25,38 @@ public class UserApiHandler {
 	@Autowired
 	UserRepository userRepository;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public User getCurrent() {
-		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if (authentication instanceof UserAuthentication) { return ((UserAuthentication) authentication).getDetails(); }
-		return new User(authentication.getName()); // anonymous user support
-	}
+	// @RequestMapping(method = RequestMethod.GET)
+	// public User getCurrent() {
+	// final Authentication authentication =
+	// SecurityContextHolder.getContext().getAuthentication();
+	// if (authentication instanceof UserAuthentication) { return
+	// ((UserAuthentication) authentication).getDetails(); }
+	// return new User(authentication.getName()); // anonymous user support
+	// }
 
-	@RequestMapping(value = "/{identifier}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<User> getUser(@PathVariable("identifier") String identifier) {
-		// String currentUser =
-		// SecurityContextHolder.getContext().getAuthentication().getName();
-		log.debug("Retrieving user by " + identifier);
+	@RequestMapping(method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<User> getLoggedInUser() {
+		String currentUser =
+				SecurityContextHolder.getContext().getAuthentication().getName();
+		log.debug("Retrieving user by " + currentUser);
 
 		User user = null;
-		if (StringUtils.isNullOrEmpty(identifier)) return new ResponseEntity<User>(user, HttpStatus.NOT_ACCEPTABLE);
-		if (identifier.contains("@")) {
-			user = userRepository.findByEmail(identifier);
+		if (StringUtils.isNullOrEmpty(currentUser)) {
+			log.debug("No identifier provided, returning 406");
+			return new ResponseEntity<User>(user, HttpStatus.NOT_ACCEPTABLE);
+		}
+		if (currentUser.contains("@")) {
+			user = userRepository.findByEmail(currentUser);
 		}
 		else {
-			user = userRepository.findByUsername(identifier);
+			user = userRepository.findByUsername(currentUser);
 		}
+		log.debug("Loaded user " + user);
 
-		if (user == null) return new ResponseEntity<User>(user, HttpStatus.NOT_FOUND);
+		if (user == null) {
+			log.debug("Returning 404");
+			return new ResponseEntity<User>(user, HttpStatus.NOT_FOUND);
+		}
 
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}

@@ -57,11 +57,16 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		};
 
 		$scope.retrieveUserInfo = function() {
-			Api.Users.get({identifier: $scope.account.username}, 
+			$log.log('Retrieving user info from ', $scope.account.username);
+			Api.Users.get( 
 				function(data) {
+					$log.log('Received response', data);
 					User.setName(data.username);
 					User.setEmail(data.email);
 					$scope.endAccountCreation();
+				},
+				function(error) {
+					$log.error('Error while retrieving user info', error);
 				}
 			);
 		}

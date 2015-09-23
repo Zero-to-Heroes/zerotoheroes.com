@@ -27,7 +27,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						var fileLocation = ENV.videoStorageUrl + data.key;
 						$scope.thumbnail = data.thumbnail ? ENV.videoStorageUrl + data.thumbnail : null;
 						$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
-						$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
+						$log.log('Init all linked vids', $scope.review.reviewVideoMap);
+						$scope.sources2 = []
+						angular.forEach($scope.review.reviewVideoMap, function(key, value) {
+							$log.log('Init vid', value, key);
+							fileLocation = ENV.videoStorageUrl + key;
+							$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType});
+						})
+						$log.log('second player sources', $scope.sources2);
 					}
 				);
 			}, 300);
@@ -44,13 +51,74 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.onSecondPlayerReady = function($API) {
 			$scope.API2 = $API;
-			$scope.API2.setVolume(0);
+			//$scope.API2.setVolume(0);
 			$scope.media = $scope.API2.mediaElement;
 			$scope.media.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {
+					$log.log('can play');
 					$scope.allPlayersReady = true;
 					$scope.$apply();
 				}
+			});
+			// For FF ?
+			$scope.media.on('loadeddata', function() {
+				/*if ($scope.playerControls.mode == 2) {
+					$log.log('loadeddata');
+					$scope.allPlayersReady = true;
+					$scope.$apply();
+				}*/
+				$log.log('loadeddata');
+			});
+			$scope.media.on('seeked', function() {
+				$log.log('seeked');
+			});
+			$scope.media.on('abort', function() {
+				$log.log('abort');
+			});
+			$scope.media.on('canplaythrough', function() {
+				$log.log('canplaythrough');
+			});
+			$scope.media.on('durationchange', function() {
+				$log.log('durationchange');
+			});
+			$scope.media.on('emptied', function() {
+				$log.log('emptied');
+			});
+			$scope.media.on('ended', function() {
+				$log.log('ended');
+			});
+			$scope.media.on('error', function() {
+				$log.log('error');
+			});
+			$scope.media.on('loadedmetadata', function() {
+				$log.log('loadedmetadata');
+			});
+			$scope.media.on('loadstart', function() {
+				$log.log('loadstart');
+			});
+			$scope.media.on('pause', function() {
+				$log.log('pause');
+			});
+			$scope.media.on('play', function() {
+				$log.log('play');
+			});
+			$scope.media.on('playing', function() {
+				$log.log('playing');
+			});
+			$scope.media.on('ratechange', function() {
+				$log.log('ratechange');
+			});
+			$scope.media.on('seeking', function() {
+				$log.log('seeking');
+			});
+			$scope.media.on('stalled', function() {
+				$log.log('stalled');
+			});
+			$scope.media.on('suspend', function() {
+				$log.log('suspend');
+			});
+			$scope.media.on('waiting', function() {
+				$log.log('waiting');
 			});
 		}
 
@@ -64,6 +132,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			firstPlayerClass: '',
 			secondPlayerClass: '',
 			play: function() {
+				$log.log('request playing');
 				$scope.API.play();
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.play();
@@ -335,6 +404,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			var buffering2 = false;
 			$scope.$watch('allPlayersReady', function (newVal, oldVal) {
 				if (newVal && buffering) {
+					$log.log('ready for phase 2, seeking');
 					if (otherVideo) {
 						$scope.allPlayersReady = false;
 					}
@@ -350,8 +420,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// conveniently processed first
 			$scope.$watch('allPlayersReady', function (newVal, oldVal) {
 				if (newVal && buffering2) {
+					$log.log('ready for phase 3, playing');
 					// The attributes
 					var attributes = split[1];
+					$scope.playerControls.play();
 
 					// Should we slow down the video?
 					if (attributes && attributes.indexOf('s') !== -1) {

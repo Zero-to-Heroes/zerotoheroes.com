@@ -26,8 +26,8 @@
 		</vg-controls>
 
 		<div class="videogular-container second-player" ng-class="playerControls.secondPlayerClass" ng-show="playerControls.mode == 2">
-			<videogular vg-player-ready="onSecondPlayerReady($API)" vg-change-source="onSecondSourceChanged($source)" vg-update-state="onSecondPlayerStateUpdate($state)" class="videogular">
-				<vg-media vg-src="sources2" ng-show="playerControls.mode == 2">
+			<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
+				<vg-media vg-src="sources2">
 				</vg-media>
 			</videogular>
 		</div>

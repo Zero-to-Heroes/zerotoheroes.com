@@ -91,9 +91,11 @@ public class Transcoder {
 		// Hotfix for unsupported formats that you can't play when uploading
 		log.debug("Review ending is " + review.getEnding());
 		if (review.getEnding() > 0) {
-			String startTime = formatTime(review.getBeginning() / 2);
-			int intDuration = review.getEnding() - review.getBeginning();
+			int beginning = review.getBeginning();
+			int intDuration = review.getEnding() - beginning;
+			String startTime = formatTime(beginning);
 			if (review.getVideoFramerateRatio() == 2) {
+				startTime = formatTime(beginning / 2);
 				log.debug("doubling frame rate");
 				input.withFrameRate("60");
 

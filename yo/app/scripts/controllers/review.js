@@ -423,7 +423,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$log.log('ready for phase 3, playing');
 					// The attributes
 					var attributes = split[1];
-					$scope.playerControls.play();
 
 					// Should we slow down the video?
 					if (attributes && attributes.indexOf('s') !== -1) {

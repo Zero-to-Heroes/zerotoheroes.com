@@ -452,7 +452,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						$scope.playerControls.loop2StartTime = convertedTime2;
 
 						var duration = parseFloat(attributes.substring(attributes.indexOf('L') + 1));
-						$scope.playerControls.loopDuration = duration ? duration : 5;
+						$scope.playerControls.loopDuration = duration ? duration : 1;
 						$scope.playerControls.loopStatus = 'Exit loop';
 					}
 					else {

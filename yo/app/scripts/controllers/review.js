@@ -396,6 +396,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			else {
 				$scope.allPlayersReady = true;
 				$scope.playerControls.mode = 1;
+				// Redondant with watching the "playerControls.mode"?
+				$scope.playerControls.firstPlayerClass = '';
+				$scope.playerControls.secondPlayerClass = '';
+				$scope.API2.stop();
 			}
 
 			// There are two additional steps

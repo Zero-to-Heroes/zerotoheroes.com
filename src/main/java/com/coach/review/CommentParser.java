@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class CommentParser {
 
 	private static final String TIMESTAMP_REGEX =
-			"\\d?\\d:\\d?\\d(:\\d\\d\\d)?(\\|\\d?\\d:\\d?\\d(:\\d\\d\\d)?(\\(.*\\))?r?)?(\\+)?(p)?(s(\\d?\\.?\\d?\\d?)?)?(L(\\d?\\.?\\d?\\d?)?)?";
+			"\\d?\\d:\\d?\\d(:\\d\\d\\d)?(\\|\\d?\\d:\\d?\\d(:\\d\\d\\d)?(\\([a-z0-9]+\\))?r?)?(\\+)?(p)?(s(\\d?\\.?\\d?\\d?)?)?(L(\\d?\\.?\\d?\\d?)?)?";
 
 	@Autowired
 	ReviewRepository reviewRepo;
@@ -27,7 +27,8 @@ public class CommentParser {
 			String reviewId = extractReviewId(group);
 			if (reviewId != null) {
 				Review refReview = reviewRepo.findById(reviewId);
-				review.addExternalLink(reviewId, refReview.getKey());
+				if (refReview != null)
+					review.addExternalLink(reviewId, refReview.getKey());
 			}
 		}
 	}

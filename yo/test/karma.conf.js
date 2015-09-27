@@ -64,6 +64,7 @@ module.exports = function(config) {
       'bower_components/sprintf/dist/sprintf.min.js',
       'bower_components/sprintf/dist/angular-sprintf.min.js',
       'bower_components/aws-sdk-js/dist/aws-sdk.js',
+      'bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
 
       'app/scripts/app.js',
       'app/scripts/**/*.js',

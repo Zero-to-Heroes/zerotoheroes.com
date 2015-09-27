@@ -41,8 +41,8 @@ services.factory('User', ['$window',
 	}
 ]);
 
-services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', 
-	function ($http, $window, $timeout, Api) {
+services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', '$analytics', '$log', 
+	function ($http, $window, $timeout, Api, $analytics, $log) {
 		var service = {};
 
 		service.login = function (username, password, callbackSucces, callbackError) {
@@ -50,8 +50,11 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 		};
 
 		service.setAuthentication = function (username, responseHeaders, callback) {
+			$log.log('Setting authentication');
 			$window.localStorage.token = responseHeaders('x-auth-token');
 			$window.localStorage.name = username;
+			$analytics.setAlias(username);
+			$analytics.setUsername(username);
 			callback ($window.localStorage.token && $window.localStorage.token != 'null' && $window.localStorage.token.trim().length > 0)
 		};
 

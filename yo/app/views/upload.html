@@ -4,7 +4,7 @@
 
 	<div class="form-container">
 		<span class="btn btn-default btn-file">
-			Choose your video <input type="file" name="file" class="upload-file-button" ng-required="true" nv-file-select uploader="uploader" file></input>
+			Choose your video <input type="file" name="file" class="upload-file-button" ng-required="true" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
 		</span>
 
 		<div class="videogular-container" ng-show="file">
@@ -80,7 +80,7 @@
 			  	</div>
 		  		<div class="row">
 					<div class="col-sm-2">
-			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="uploadInProgress">Upload now</button>
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="uploadInProgress"  analytics-on="click" analytics-category="upload" analytics-event="upload.request">Upload now</button>
 		  			</div>
 					<div class="col-sm-6">
 					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>

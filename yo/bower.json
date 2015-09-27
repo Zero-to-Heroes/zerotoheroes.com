@@ -27,7 +27,9 @@
     "angular-marked": "~0.0.21",
     "angular-logger": "~1.0.1",
     "sprintf": "~1.0.3",
-    "aws-sdk-js": "~2.1.50"
+    "aws-sdk-js": "~2.1.50",
+    "angulartics": "~0.20.1",
+    "angulartics-google-analytics": "~0.1.1"
   },
   "overrides": {
     "sprintf": {
@@ -41,6 +43,7 @@
   "resolutions": {
     "angular-route": "~1.4.0",
     "angular-resource": "~1.4.0",
-    "angular": "1.4.x"
+    "angular": "1.4.x",
+    "angulartics": "~0.20.1"
   }
 }

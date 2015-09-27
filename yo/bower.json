@@ -28,7 +28,7 @@
     "angular-logger": "~1.0.1",
     "sprintf": "~1.0.3",
     "aws-sdk-js": "~2.1.50",
-    "angulartics": "~0.17.2",
+    "angulartics": "~0.20.1",
     "angulartics-google-analytics": "~0.1.1"
   },
   "overrides": {
@@ -44,6 +44,7 @@
     "angular-route": "~1.4.0",
     "angular-resource": "~1.4.0",
     "angular": "1.4.x",
-    "angulartics": "~0.20.1"
+    "angulartics": "^0.17.2",
+    "waypoints": "~2.0.3"
   }
 }

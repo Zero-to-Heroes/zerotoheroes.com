@@ -2,3 +2,6 @@
   float: right;
 }
 
+scrollable #bottom {
+	margin-top: 50px;
+}

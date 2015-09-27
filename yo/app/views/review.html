@@ -9,7 +9,8 @@
 		</vg-media>
 
 		<vg-controls>
-			<vg-play-pause-button ng-click="if (mode == 2) { API2.playPause() }"></vg-play-pause-button>
+			
+			<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
 			<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
 			<vg-scrub-bar>
 				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
@@ -32,7 +33,8 @@
 			</videogular>
 		</div>
 
-		<vg-overlay-play ng-click="API2.playPause()"></vg-overlay-play>
+		
+		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()"></vg-overlay-play>
 	</videogular>
 </div>
 <hr/>
@@ -121,7 +123,8 @@
 		<div class="comment-header">
 			<span class="comment-author">{{comment.author}}</span>
 			<span><small>{{formatDate(comment)}}</small></span>
-			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author"> - Edit</a>
+			
+			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author && !comment.editing"> - Edit</a>
 		</div>
 		<div class="comment-body">
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">

@@ -157,6 +157,15 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.API2.setPlayback(rate);
 				}
 			},
+			playPauseSecondPlayer: function() {
+				var playerState = $scope.API.currentState;
+				if (playerState == 'play') {
+					$scope.API2.play();
+				}
+				else {
+					$scope.API2.pause();
+				}
+			},
 			reloop: function() {
 				$scope.playerControls.seekTime($scope.playerControls.loopStartTime, $scope.playerControls.loop2StartTime);
 			},

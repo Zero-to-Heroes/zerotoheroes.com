@@ -92,7 +92,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$scope.review.temporaryKey = ENV.folder + '/' + fileKey;
 
 			// Starting the upload
-			$log.log('uploading');
+			$log.log('uploading', $scope.review);
             $scope.uploadInProgress = true;
 
             // Scrolling to the bottom of the screen

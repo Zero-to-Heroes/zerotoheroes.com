@@ -13,7 +13,8 @@ services.factory('Api', ['$resource', 'ENV',
 			Coaches: $resource(ENV.apiEndpoint + url + 'coaches/:reviewId', {reviewId: '@reviewId'}),
 			Payment: $resource(ENV.apiEndpoint + url + 'payment/:reviewId/:coachId/:email', {reviewId: '@reviewId', coachId: '@coachId', email:'@email'}),
       		Users: $resource(ENV.apiEndpoint + url + 'users/:identifier', {identifier: '@identifier'}),
-			Login: $resource(ENV.apiEndpoint + url + 'login', {})
+			Login: $resource(ENV.apiEndpoint + url + 'login', {}),
+			Reputation: $resource(ENV.apiEndpoint + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'})
 		};
 	}
 ]);

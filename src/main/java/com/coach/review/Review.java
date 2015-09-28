@@ -17,7 +17,9 @@ import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 
+import com.coach.reputation.Reputation;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Getter
@@ -58,9 +60,10 @@ public class Review {
 	private boolean transcodingDone;
 	private float videoFramerateRatio;
 	private Map<String, String> reviewVideoMap;
+	private Reputation reputation;
 
 	private int totalInsertedComments;
-
+	
 	public void addComment(Comment comment) {
 		if (comments == null) comments = new ArrayList<>();
 		comment.setId(String.valueOf(++totalInsertedComments));

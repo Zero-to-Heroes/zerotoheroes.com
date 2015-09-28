@@ -12,6 +12,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.User = User;
+		$scope.test = true;
 
 		//===============
 		// Video player
@@ -204,6 +205,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			  			$scope.review.comments = data.comments;
 			  			$scope.review.reviewVideoMap = data.reviewVideoMap;
 			  			$scope.$broadcast('show-errors-reset');
+
+			  			Api.Reputation.get({reviewId: $routeParams.reviewId}, function(data) {
+							$scope.addReputationToReview(data);
+						});
 	  				}, 
 	  				function(error) {
 	  					// Error handling
@@ -248,6 +253,85 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
   			comment.editing = false;
 			comment.processed = true;
 		}
+
+		/*$scope.addReputationToReview= function(reputation) {
+			$log.log('adding reputation info to the review object');
+			$scope.review.reputation = {};
+			$scope.review.reputation.votes = reputation.reviewVotes;
+			$scope.review.reputation.userVote = reputation.isReviewVoted;
+			for (var i = 0; i < $scope.review.comments.length; i++) {
+				var commentId = $scope.review.comments[i].id;
+				$scope.review.comments[i].reputation = {};
+				$log.log('comment '+commentId);
+				angular.forEach(reputation.commentsVotes, function(value, key) {
+					$log.log('key'+key);
+					if (commentId == key) {
+						$scope.review.comments[i].reputation.votes = value;
+						$log.log('comment '+commentId+' has '+ value.Upvote);
+					}
+				})
+				angular.forEach(reputation.areCommentsVoted, function(value, key) {
+					if (commentId == key) {
+						$scope.review.comments[i].reputation.userVote = value;
+					}
+				})
+			}
+		}*/
+
+		$scope.upvoteReview = function() {
+			$log.log('Upvoting review');
+			Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
+	  				function(data) {
+	  					$scope.review = data;
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					$log.error(error);
+	  				}
+	  			);
+		}
+
+		$scope.downvoteReview = function() {
+			$log.log('Downvoting review');
+			Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
+	  				function(data) {
+	  					$scope.review = data;
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					$log.error(error);
+	  				}
+	  			);
+		}
+
+		$scope.upvoteComment = function(comment) {
+			$log.log('Upvoting comment');
+			Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
+	  				function(data) {
+	  					$log.log(data);
+	  					comment.reputation = data.reputation;
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					$log.error(error);
+	  				}
+	  			);
+		}
+
+		$scope.downvoteComment = function(comment) {
+			$log.log('Downvoting comment');
+			Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Downvote'},
+	  				function(data) {
+	  					comment.reputation = data.reputation;
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					$log.error(error);
+	  				}
+	  			);
+		}
+
+		//$scope.setCommentVote =
 
 		//===============
 		// Video information

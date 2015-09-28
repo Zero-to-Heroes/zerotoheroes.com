@@ -28,6 +28,9 @@ import com.coach.core.email.EmailMessage;
 import com.coach.core.email.EmailSender;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
+import com.coach.reputation.Reputation;
+import com.coach.reputation.ReputationAction;
+import com.coach.reputation.ReputationManager;
 import com.coach.review.Review.Sport;
 import com.coach.review.video.transcoding.Transcoder;
 import com.coach.user.UserRepository;
@@ -72,11 +75,23 @@ public class ReviewApiHandler {
 		log.debug("sport param is " + sport);
 
 		// Sorting in ascending order
-		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
-				"lastModifiedDate"));
+		Sort newestFirst = new Sort(Sort.Direction.DESC,
+				Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
 
 		reviews = reviewRepo.findAll(userName, sport, newestFirst);
 
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = userRepo.findByUsername(currentUser);
+		String userId = "";
+		if (user != null) {
+			userId = user.getId();
+		}
+		// tweak info about reputation
+		for (Review review : reviews) {
+			ReputationManager manager = new ReputationManager();
+			manager.modifyReviewAccordingToUser(review, userId);
+		}
+		
 		return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
 	}
 
@@ -89,6 +104,15 @@ public class ReviewApiHandler {
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
 		review.sortComments();
+		
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = userRepo.findByUsername(currentUser);
+		String userId = "";
+		if (user != null) {
+			userId = user.getId();
+		}
+		ReputationManager manager = new ReputationManager();
+		manager.modifyReviewAccordingToUser(review, userId);
 		log.debug("Returning review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
@@ -99,8 +123,7 @@ public class ReviewApiHandler {
 
 		// TOOD: checks
 		// Add current logged in user as the author of the review
-		String currentUser =
-				SecurityContextHolder.getContext().getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		log.info("Current user is " + currentUser);
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
@@ -110,9 +133,12 @@ public class ReviewApiHandler {
 			log.debug("Setting current user as review author " + currentUser);
 			review.setAuthor(currentUser);
 			// Add the ID of the author in addition to the name (we still keep
-			// the nmae
+			// the name
 			User user = userRepo.findByUsername(currentUser);
 			review.setAuthorId(user.getId());
+			// by default a poster likes his post
+			review.setReputation(new Reputation());
+			review.getReputation().addVote(ReputationAction.Upvote, user.getId());
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -160,8 +186,7 @@ public class ReviewApiHandler {
 	public @ResponseBody ResponseEntity<Review> addComment(@PathVariable("reviewId") final String id,
 			@RequestBody Comment comment) throws IOException {
 
-		String currentUser =
-				SecurityContextHolder.getContext().getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		log.info("Current user is " + currentUser);
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
@@ -176,6 +201,8 @@ public class ReviewApiHandler {
 			// the nmae
 			User user = userRepo.findByUsername(currentUser);
 			comment.setAuthorId(user.getId());
+			comment.setReputation(new Reputation());
+			comment.getReputation().addVote(ReputationAction.Upvote, user.getId());
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -207,18 +234,12 @@ public class ReviewApiHandler {
 			User author = userRepo.findById(review.getAuthorId());
 			String recipient = author.getEmail();
 
-			EmailMessage message = EmailMessage
-					.builder()
-					.from("seb@zerotoheroes.com")
-					.to(recipient)
+			EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
 					.subject("New comment on your review " + review.getTitle() + " at ZeroToHeroes")
-					.content(
-							"Hey there!<br/>"
-									+
-									comment.getAuthor()
-									+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
-									+ review.getId() + "\">here</a> to see what they said.").type(
-							"text/html").build();
+					.content("Hey there!<br/>" + comment.getAuthor()
+							+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
+							+ review.getId() + "\">here</a> to see what they said.")
+					.type("text/html").build();
 			emailSender.send(message);
 		}
 
@@ -234,8 +255,7 @@ public class ReviewApiHandler {
 		Review review = reviewRepo.findById(id);
 
 		// Security
-		String currentUser =
-				SecurityContextHolder.getContext().getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// Disallow anonymous edits
@@ -243,8 +263,8 @@ public class ReviewApiHandler {
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
 		// Disable edits when you're not the author
-		else if (!currentUser.equals(review.getAuthor())) { return new ResponseEntity<Review>((Review) null,
-				HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(
+				review.getAuthor())) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
 
 		log.debug("Upading review with " + inputReview);
 		String description = inputReview.getDescription();
@@ -269,8 +289,7 @@ public class ReviewApiHandler {
 		Comment comment = review.getComment(commentId);
 
 		// Security
-		String currentUser =
-				SecurityContextHolder.getContext().getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// Disallow anonymous edits
@@ -278,8 +297,8 @@ public class ReviewApiHandler {
 			return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED);
 		}
 		// Disable edits when you're not the author
-		else if (!currentUser.equals(comment.getAuthor())) { return new ResponseEntity<Comment>((Comment) null,
-				HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(
+				comment.getAuthor())) { return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED); }
 
 		comment.setText(newComment.getText());
 
@@ -292,4 +311,6 @@ public class ReviewApiHandler {
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
+
+	
 }

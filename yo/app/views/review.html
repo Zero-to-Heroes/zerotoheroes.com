@@ -79,12 +79,16 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 text-left">
+			<div class="col-md-10 text-left">
 				<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && User.getName() == review.author"> Edit information</a>
 				<div ng-show="review.editing">
 					<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs">Cancel</button>
 					<button ng-click="updateDescription()" class="btn btn-default btn-xs">Update</button>
 				</div>
+			</div>
+			<div class="col-md-2">
+  				<span class="glyphicon glyphicon-thumbs-up" ng-class="{'green':review.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview()" aria-hidden="true">{{review.reputation.nbVotes.Upvote}} </span> 
+  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'red':review.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview()" aria-hidden="true">{{review.reputation.nbVotes.Downvote}} </span> 
 			</div>
 		</div>
 	</form>
@@ -118,19 +122,28 @@
 	</form>
 
 	<div ng-repeat="comment in review.comments" class="container-fluid comment-block">
-		<div class="comment-header">
-			<span class="comment-author">{{comment.author}}</span>
-			<span><small>{{formatDate(comment)}}</small></span>
-			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author"> - Edit</a>
-		</div>
-		<div class="comment-body">
-			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
-			</div>
-			<div ng-show="comment.editing">
-				<textarea class="form-control" ng-model="comment.text"></textarea>
-				<div class="text-right">
-					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
-					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
+		<div class="row">
+			<div class="col-md-1">
+				<span class="glyphicon glyphicon-thumbs-up" ng-class="{'green':comment.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteComment(comment)" aria-hidden="true">{{comment.reputation.nbVotes.Upvote}} </span>
+	  			<span class="glyphicon glyphicon-thumbs-down" ng-class="{'red':comment.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteComment(comment)" aria-hidden="true">{{comment.reputation.nbVotes.Downvote}} </span>
+	  		</div>
+	  		<div class="col-md-11">
+				<div class="comment-header">
+					<span class="comment-author">{{comment.author}}</span>
+					<span><small>{{formatDate(comment)}}</small></span>
+					<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author"> - Edit</a>
+				</div>
+				<div class="comment-body">
+		  			
+					<div compilecontent content="comment.markedText" ng-hide="comment.editing">
+					</div>
+					<div ng-show="comment.editing">
+						<textarea class="form-control" ng-model="comment.text"></textarea>
+						<div class="text-right">
+							<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
+							<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

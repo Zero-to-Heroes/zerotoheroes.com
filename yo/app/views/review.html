@@ -72,7 +72,7 @@
 			    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
 			  	</div>
 				<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
-				<textarea class="form-control" ng-show="review.editing" ng-model="review.description"></textarea>
+				<textarea class="form-control" ng-show="review.editing" ng-model="review.description" auto-grow></textarea>
 			</div>
 			<div ng-show="!!coaches.length" class="col-md-2 text-right">
 				<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
@@ -95,7 +95,7 @@
 	</div>
 	<form name="commentForm">
 		<hr/>
-		<div class="container-fluid comment-block">
+		<div class="container-fluid comment-block main-block">
 			<div class="row">
 				<div class="col-md-2" ng-show="!User.isLoggedIn()">
 					<div class="form-group" show-errors="{ showSuccess: true }">
@@ -104,12 +104,17 @@
 				</div>
 				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 					<div class="form-group" show-errors="{ showSuccess: true }">
-						<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="form-control" ng-required="true"></textarea>
+						<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="commentText" class="form-control" ng-required="true" auto-grow></textarea>
 					</div>
-					<div class="text-right">
-						<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
-						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
-						<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
+					<div>
+						<div class="inline-block">
+							<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
+							<button ng-click="cancelComment()" class="btn btn-default text-right">Cancel</button>
+						</div>
+						<div class="inline-block float-right">
+							<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
+							<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+						</div>
 					</div>
 					<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 				</div>

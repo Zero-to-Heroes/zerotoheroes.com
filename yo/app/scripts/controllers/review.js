@@ -191,6 +191,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}
 		};
 
+		$scope.cancelComment = function() {
+			$scope.commentText = '';
+  			$scope.commentForm.$setPristine();
+  			$scope.$broadcast('show-errors-reset');
+		};
+
 		$scope.backToUploadComment = function() {
   			$scope.onUploadComment = false;
   			// We shouldn't be aware of popups created elsewhere, but for some reason they are global. 

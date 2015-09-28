@@ -63,7 +63,12 @@ a[ng-click] {
 }
 
 textarea.form-control {
-  height: 100px;
+  min-height: 100px;
+ resize: none;
+ transition: 0.05s;
+ -moz-transition: 0.05s;
+ -webkit-transition: 0.05s;
+ -o-transition: 0.05s;
 }
 
 @media screen and (min-height: 700px) {

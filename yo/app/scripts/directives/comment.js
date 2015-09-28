@@ -43,7 +43,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 
 				$scope.$watch($scope.indentationLevel, function() {
 					$scope.indentation = (20 + $scope.indentationLevel * 10) + 'px';
-					$log.log('indentation', $scope.indentation);
 				});
 
 				$scope.formatDate = function(comment) {
@@ -61,7 +60,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				}
 
 				$scope.updateComment = function(comment) {
-					$log.log('Updating comment from ' + comment.oldText + ' to ' + comment.text);
 					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
 			  				function(data) {
 			  					$scope.setCommentText(comment, data.text);
@@ -94,12 +92,9 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				$scope.postReply = function() {
 					$scope.$broadcast('show-errors-check-validity');
 					if ($scope.replyForm.$valid) {
-						$log.log('posting reply', $scope.reply);
 						Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply, 
 				  				function(data) {
-				  					$log.log('posted reply', data);
 				  					$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
-				  					$log.log('Found comment', $scope.comment);
 				  					$scope.reply = {};
 				  				}, 
 				  				function(error) {

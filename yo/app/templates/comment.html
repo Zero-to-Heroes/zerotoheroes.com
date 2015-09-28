@@ -10,7 +10,7 @@
 		<div compilecontent content="comment.markedText" ng-hide="comment.editing">
 		</div>
 		<div ng-show="comment.editing">
-			<textarea class="form-control" ng-model="comment.text"></textarea>
+			<textarea class="form-control" ng-model="comment.text" auto-grow></textarea>
 			<div class="text-right">
 				<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
 				<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
@@ -29,7 +29,7 @@
 			</div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 				<div class="form-group" show-errors="{ showSuccess: true }">
-					<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true"></textarea>
+					<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" auto-grow></textarea>
 				</div>
 			</div>
 		</div>
@@ -37,8 +37,8 @@
 			<div class="col-md-2" ng-show="!User.isLoggedIn()"></div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 				<div class="inline-block">
-					<button ng-click="cancelReply()" class="btn btn-default btn-xs">Cancel</button>
 					<button ng-click="postReply()" class="btn btn-default btn-xs">Reply</button>
+					<button ng-click="cancelReply()" class="btn btn-default btn-xs">Cancel</button>
 				</div>
 				<div class="inline-block float-right">
 					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>

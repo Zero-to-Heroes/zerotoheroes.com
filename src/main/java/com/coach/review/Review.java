@@ -49,7 +49,8 @@ public class Review {
 	private String thumbnail;
 	private String fileType;
 	private Sport sport;
-	private String title, description;
+	private String title;
+	private String description = "";
 	private String author, lastModifiedBy;
 	private String authorId, lastModifiedById;
 	private int beginning, ending;

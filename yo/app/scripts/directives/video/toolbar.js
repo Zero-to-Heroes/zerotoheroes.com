@@ -14,18 +14,20 @@ app.directive('toolbar', ['$log', '$parse',
 			controller: function($scope) {
 
 				$scope.insertTimestamp = function() {
-					$log.log('API', $scope.API);
 					// Convert the numeral timestamp into the string we want to input
 					var timestamp = moment.duration($scope.API.currentTime).format('mm:ss:SSS', { trim: false });
 					$scope.insert(timestamp);
 			  	}
 
 				$scope.insertSlow = function() {
+					// Convert the numeral timestamp into the string we want to input
+					$scope.insertTimestamp();
 					var speed = 0.5;
 					$scope.insert('+s' + speed);
 				}
 
 				$scope.insertLoop = function() {
+					$scope.insertSlow();
 					var duration = 1;
 					$scope.insert('L' + duration);
 				}

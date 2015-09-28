@@ -221,43 +221,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 	  		);
 		}
 
-		$scope.formatDate = function(comment) {
-			return moment(comment.creationDate).fromNow();
-		}
-
-		$scope.startEditing = function(comment) {
-			comment.editing = true;
-			comment.oldText = comment.text;
-		}
-
-		$scope.cancelUpdateComment = function(comment) {
-			comment.text = comment.oldText;
-			comment.editing = false;
-		}
-
-		$scope.updateComment = function(comment) {
-			$log.log('Updating comment from ' + comment.oldText + ' to ' + comment.text);
-			Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
-	  				function(data) {
-	  					$scope.setCommentText(comment, data.text);
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  			);
-		}
-
-		$scope.setCommentText = function(comment, text) {
-			comment.text = escapeHtml(text);
-			// Add timestamps
-			comment.compiledText = $scope.parseComment(comment.text);
-			// Parse markdown
-			comment.markedText = marked(comment.compiledText);
-  			comment.editing = false;
-			comment.processed = true;
-		}
-
 		//===============
 		// Video information
 		//===============
@@ -297,7 +260,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			var text = data.description;
 			$scope.review.description = escapeHtml(text);
 			// Add timestamps
-			$scope.review.compiledText = $scope.parseComment($scope.review.description);
+			$scope.review.compiledText = $scope.parseText($scope.review.description);
 			// Parse markdown
 			$scope.review.markedText = marked($scope.review.compiledText);
 
@@ -337,7 +300,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/g;
 
 		// Parse new comments when they are added
-		$scope.$watchCollection('review.comments', function(newComments, oldValue) {
+		/*$scope.$watchCollection('review.comments', function(newComments, oldValue) {
 			if (newComments) {
 				angular.forEach(newComments, function(comment) {
 					if (!comment.processed) {
@@ -345,9 +308,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					}
 				})
 			}
-		});
+		});*/
 
-		$scope.parseComment = function(comment) {
+		$scope.parseText = function(comment) {
 			if (!comment) return '';
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');

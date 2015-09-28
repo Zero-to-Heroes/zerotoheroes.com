@@ -37,7 +37,6 @@
 		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()"></vg-overlay-play>
 	</videogular>
 </div>
-<hr/>
 
 <div scrollable>
 	<form class="container-fluid">
@@ -90,12 +89,12 @@
 			</div>
 		</div>
 	</form>
-	<hr/>
 	<div ng-show="selectedCoach">
-		<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
 		<hr/>
+		<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
 	</div>
 	<form name="commentForm">
+		<hr/>
 		<div class="container-fluid comment-block">
 			<div class="row">
 				<div class="col-md-2">
@@ -119,26 +118,9 @@
 		</div>
 	</form>
 
-	<div ng-repeat="comment in review.comments" class="container-fluid comment-block">
-		<div class="comment-header">
-			<span class="comment-author">{{comment.author}}</span>
-			<span><small>{{formatDate(comment)}}</small></span>
-			
-			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author && !comment.editing"> - Edit</a>
-		</div>
-		<div class="comment-body">
-			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
-			</div>
-			<div ng-show="comment.editing">
-				<textarea class="form-control" ng-model="comment.text"></textarea>
-				<div class="text-right">
-					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
-					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<comment ng-repeat="comment in review.comments" comment="comment"></comment>
 	<!-- Prevent scrolling center area if we're already at the bottom -->
+	<div id="padder"></div>
 	<div id="bottom"></div>
 </div>
 </div>

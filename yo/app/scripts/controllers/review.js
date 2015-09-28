@@ -27,14 +27,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						var fileLocation = ENV.videoStorageUrl + data.key;
 						$scope.thumbnail = data.thumbnail ? ENV.videoStorageUrl + data.thumbnail : null;
 						$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
-						$log.log('Init all linked vids', $scope.review.reviewVideoMap);
+						//$log.log('Init all linked vids', $scope.review.reviewVideoMap);
 						$scope.sources2 = []
 						angular.forEach($scope.review.reviewVideoMap, function(key, value) {
-							$log.log('Init vid', value, key);
+							//$log.log('Init vid', value, key);
 							fileLocation = ENV.videoStorageUrl + key;
 							$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType});
 						})
-						$log.log('second player sources', $scope.sources2);
+						//$log.log('second player sources', $scope.sources2);
 					}
 				);
 			}, 300);
@@ -55,18 +55,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.media = $scope.API2.mediaElement;
 			$scope.media.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {
-					$log.log('can play');
+					//$log.log('can play');
 					$scope.allPlayersReady = true;
 					$scope.$apply();
 				}
 			});
 			// For FF ?
-			$scope.media.on('loadeddata', function() {
-				/*if ($scope.playerControls.mode == 2) {
-					$log.log('loadeddata');
-					$scope.allPlayersReady = true;
-					$scope.$apply();
-				}*/
+			/*$scope.media.on('loadeddata', function() {
 				$log.log('loadeddata');
 			});
 			$scope.media.on('seeked', function() {
@@ -119,7 +114,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			});
 			$scope.media.on('waiting', function() {
 				$log.log('waiting');
-			});
+			});*/
 		}
 
 		$scope.playerControls = {
@@ -132,7 +127,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			firstPlayerClass: '',
 			secondPlayerClass: '',
 			play: function() {
-				$log.log('request playing');
+				//$log.log('request playing');
 				$scope.API.play();
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.play();
@@ -410,12 +405,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					}
 					// Is playing?
 					else if (attributes && attributes.indexOf('p') !== -1) {
-						$log.log('Starting playing both vids');
+						//$log.log('Starting playing both vids');
 						$scope.playerControls.resetPlayback();
 						$scope.playerControls.play();
 					}
 					else {
-						$log.log('setting playback to 1');
+						//$log.log('setting playback to 1');
 						$scope.playerControls.resetPlayback();
 					}
 
@@ -437,7 +432,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.$watch('playerControls.mode', function (newVal, oldVal) {
 			if (newVal == 1) {
-				$log.log('stopping background video');
+				//$log.log('stopping background video');
 				$scope.API2.stop();
 				$scope.playerControls.firstPlayerClass = '';
 				$scope.playerControls.secondPlayerClass = '';

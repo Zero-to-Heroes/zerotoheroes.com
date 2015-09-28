@@ -4,7 +4,7 @@
 
 .comment-header {
 	margin-bottom: 5px;
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 
 .comment-author {
@@ -13,5 +13,10 @@
 
 .comment-footer  {
 	margin-top: -10px;
-	font-size: 0.9em;
+	font-size: 0.8em;
+	margin-bottom: 20px;
+}
+
+.reply-form {
+	margin-bottom: 15px;
 }

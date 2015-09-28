@@ -58,6 +58,14 @@ a[ng-click] {
   }
 }
 
+.float-right {
+  float: right;
+}
+
+textarea.form-control {
+  height: 100px;
+}
+
 @media screen and (min-height: 700px) {
     .main-panel {
         max-width: 600px;

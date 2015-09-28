@@ -58,6 +58,19 @@ a[ng-click] {
   }
 }
 
+.float-right {
+  float: right;
+}
+
+textarea.form-control {
+  min-height: 100px;
+ resize: none;
+ transition: 0.05s;
+ -moz-transition: 0.05s;
+ -webkit-transition: 0.05s;
+ -o-transition: 0.05s;
+}
+
 @media screen and (min-height: 700px) {
     .main-panel {
         max-width: 600px;

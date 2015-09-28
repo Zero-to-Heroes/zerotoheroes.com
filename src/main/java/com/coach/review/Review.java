@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString(exclude = "comments")
+@ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Review {
 
@@ -49,12 +49,12 @@ public class Review {
 	private String thumbnail;
 	private String fileType;
 	private Sport sport;
-	private String title, description;
+	private String title;
+	private String description = "";
 	private String author, lastModifiedBy;
 	private String authorId, lastModifiedById;
 	private int beginning, ending;
 	private List<Comment> comments;
-	// private double treatmentCompletion;
 	private boolean transcodingDone;
 	private float videoFramerateRatio;
 	private Map<String, String> reviewVideoMap;
@@ -66,6 +66,11 @@ public class Review {
 		comment.setId(String.valueOf(++totalInsertedComments));
 		comments.add(comment);
 		sortComments();
+	}
+
+	public void addComment(Comment comment, Comment reply) {
+		reply.setId(String.valueOf(++totalInsertedComments));
+		comment.addComment(reply);
 	}
 
 	public void setSport(Sport sport) {
@@ -87,6 +92,9 @@ public class Review {
 
 		for (Comment comment : comments) {
 			if (comment.getId() != null && comment.getId().equals(String.valueOf(commentId))) { return comment; }
+			Comment found = comment.getComment(commentId);
+			if (found != null) return found;
+
 		}
 		return null;
 	}

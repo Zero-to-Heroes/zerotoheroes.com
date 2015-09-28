@@ -29,7 +29,8 @@
     "sprintf": "~1.0.3",
     "aws-sdk-js": "~2.1.50",
     "angulartics": "~0.20.1",
-    "angulartics-google-analytics": "~0.1.1"
+    "angulartics-google-analytics": "~0.1.1",
+    "angular-recursion": "~1.0.5"
   },
   "overrides": {
     "sprintf": {

@@ -93,15 +93,15 @@ public class Transcoder {
 		if (review.getEnding() > 0) {
 			int beginning = review.getBeginning();
 			int intDuration = review.getEnding() - beginning;
-			String startTime = formatTime(beginning);
 			if (review.getVideoFramerateRatio() == 2) {
-				startTime = formatTime(beginning / 2);
+				beginning = beginning / 2;
 				log.debug("doubling frame rate");
 				input.withFrameRate("60");
 
 				intDuration = intDuration / 2;
 				output.withPresetId(CUSTOM_480p_16_9_NO_AUDIO_PRESET_ID);
 			}
+			String startTime = formatTime(beginning);
 			String duration = formatTime(intDuration);
 			TimeSpan timeSpan = new TimeSpan().withStartTime(startTime).withDuration(duration);
 			Clip composition = new Clip().withTimeSpan(timeSpan);

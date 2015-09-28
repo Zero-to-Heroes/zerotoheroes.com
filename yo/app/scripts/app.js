@@ -21,7 +21,8 @@ var app = angular.module('app', [
   'angular-logger',
   'sprintf',
   'angulartics', 
-  'angulartics.google.analytics'
+  'angulartics.google.analytics',
+  'RecursionHelper'
 ]);
 
 

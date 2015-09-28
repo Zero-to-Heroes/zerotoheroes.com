@@ -37,7 +37,6 @@
 		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()"></vg-overlay-play>
 	</videogular>
 </div>
-<hr/>
 
 <div scrollable>
 	<form class="container-fluid">
@@ -73,7 +72,7 @@
 			    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
 			  	</div>
 				<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
-				<textarea class="form-control" ng-show="review.editing" ng-model="review.description"></textarea>
+				<textarea class="form-control" ng-show="review.editing" ng-model="review.description" auto-grow></textarea>
 			</div>
 			<div ng-show="!!coaches.length" class="col-md-2 text-right">
 				<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
@@ -90,28 +89,32 @@
 			</div>
 		</div>
 	</form>
-	<hr/>
 	<div ng-show="selectedCoach">
-		<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
 		<hr/>
+		<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
 	</div>
 	<form name="commentForm">
-		<div class="container-fluid comment-block">
+		<hr/>
+		<div class="container-fluid comment-block main-block">
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-2" ng-show="!User.isLoggedIn()">
 					<div class="form-group" show-errors="{ showSuccess: true }">
-						<input type="text" name="author" class="form-control" ng-model="commentAuthor" placeholder="Your name" ng-show="!User.isLoggedIn()" ng-required="!User.isLoggedIn()">
-						<span ng-show="User.isLoggedIn()">{{User.getName()}}</span>
+						<input type="text" name="author" class="form-control" ng-model="commentAuthor" placeholder="Your name" ng-required="!User.isLoggedIn()">
 					</div>
 				</div>
-				<div class="col-md-10">
+				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 					<div class="form-group" show-errors="{ showSuccess: true }">
-						<textarea placeholder="{{'Help ' + review.author + '?'}}" ng-model="commentText" class="form-control" ng-required="true"></textarea>
+						<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="commentText" class="form-control" ng-required="true" auto-grow></textarea>
 					</div>
-					<div class="text-right">
-						<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
-						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
-						<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
+					<div>
+						<div class="inline-block">
+							<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
+							<button ng-click="cancelComment()" class="btn btn-default text-right">Cancel</button>
+						</div>
+						<div class="inline-block float-right">
+							<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
+							<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+						</div>
 					</div>
 					<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 				</div>
@@ -119,26 +122,9 @@
 		</div>
 	</form>
 
-	<div ng-repeat="comment in review.comments" class="container-fluid comment-block">
-		<div class="comment-header">
-			<span class="comment-author">{{comment.author}}</span>
-			<span><small>{{formatDate(comment)}}</small></span>
-			
-			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author && !comment.editing"> - Edit</a>
-		</div>
-		<div class="comment-body">
-			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
-			</div>
-			<div ng-show="comment.editing">
-				<textarea class="form-control" ng-model="comment.text"></textarea>
-				<div class="text-right">
-					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
-					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0"></comment>
 	<!-- Prevent scrolling center area if we're already at the bottom -->
+	<div id="padder"></div>
 	<div id="bottom"></div>
 </div>
 </div>

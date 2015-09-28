@@ -28,19 +28,19 @@ public class CoachesApiHandler {
 
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<Coach>> getCoachesForReview(@PathVariable("reviewId") final String id) {
-		log.debug("Retrieving coaches");
+		// log.debug("Retrieving coaches");
 		Review review = reviewRepo.findById(id);
-		log.debug("For review id: " + id);
+		// log.debug("For review id: " + id);
 		Sport sport = review.getSport();
-		log.debug("And sport " + sport + ".");
+		// log.debug("And sport " + sport + ".");
 		List<Coach> coaches = getAllCoachesForSport(sport);
-		log.debug("Giving full list of coaches " + coaches);
+		// log.debug("Giving full list of coaches " + coaches);
 		return new ResponseEntity<List<Coach>>(coaches, HttpStatus.OK);
 	}
 
 	private List<Coach> getAllCoachesForSport(Sport sport) {
 		// sport = StringUtils.trim(sport);
-		log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
+		// log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
 		List<Coach> ret = new ArrayList<Coach>();
 		for (Coach coach : CoachRepository.allCoaches) {
 			if (coach.getSport().equals(sport)) {

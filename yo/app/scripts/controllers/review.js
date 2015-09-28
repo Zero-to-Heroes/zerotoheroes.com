@@ -8,7 +8,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.sources = null;
 		$scope.sources2 = null;
 		$scope.thumbnail = null;
-		$scope.newComment = '';
+		$scope.newComment = {};
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.User = User;
@@ -181,7 +181,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if ($scope.commentForm.$valid) {
 				if (!User.isLoggedIn()) {
   					$scope.onAddComment = true;
-  					$scope.modalConfig = {identifier: $scope.commentAuthor};
+  					$scope.modalConfig = {identifier: $scope.newComment.author};
   					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
   				}
   				// Otherwise directly proceed to the upload
@@ -192,7 +192,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		};
 
 		$scope.cancelComment = function() {
-			$scope.commentText = '';
+			$scope.newComment = {};
   			$scope.commentForm.$setPristine();
   			$scope.$broadcast('show-errors-reset');
 		};
@@ -207,9 +207,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
   		}
 
 		$scope.uploadComment = function() {
-			Api.Reviews.save({reviewId: $scope.review.id}, {'author': $scope.commentAuthor, 'text': $scope.commentText}, 
+			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
 	  				function(data) {
-			  			$scope.commentText = '';
+			  			$scope.newComment = {};
 			  			$scope.commentForm.$setPristine();
 			  			$scope.review.comments = data.comments;
 			  			$scope.review.reviewVideoMap = data.reviewVideoMap;

@@ -12,7 +12,7 @@
 			
 			<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
 			<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
-			<vg-scrub-bar>
+			<vg-scrub-bar video-fine-time-control>
 				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 			</vg-scrub-bar>
 			<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>

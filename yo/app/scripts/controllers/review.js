@@ -207,6 +207,34 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
   			$scope.$broadcast('show-errors-reset');
 		};
 
+		$scope.suggestAccountCreationModal = $modal({
+			templateUrl: 'templates/suggestAccountCreation.html', 
+			show: false, 
+			animation: 'am-fade-and-scale', 
+			placement: 'center', 
+			scope: $scope, 
+			controller: 'AccountTemplate',
+			keyboard: false,
+		});
+
+		$scope.signUpModal = $modal({
+			templateUrl: 'templates/signIn.html', 
+			show: false, 
+			animation: 'am-fade-and-scale', 
+			placement: 'center', 
+			scope: $scope, 
+			controller: 'AccountTemplate',
+			keyboard: false,
+		});
+
+		$scope.signUp = function() {
+			$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+		}
+
+		$scope.signIn = function() {
+			$scope.signUpModal.$promise.then($scope.signUpModal.show);
+		}
+
 		$scope.backToUploadComment = function() {
   			$scope.onUploadComment = false;
   			// We shouldn't be aware of popups created elsewhere, but for some reason they are global. 
@@ -215,6 +243,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.onAccountCreationClosed();
 			$scope.uploadComment();
   		}
+
+  		$scope.onAccountCreationClosed = function() {
+  			$log.log('onAccountCreationClosed review.js')
+			$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.hide);
+			$scope.signUpModal.$promise.then($scope.signUpModal.hide);
+
+			$log.log('upvoting', $scope.upvotingComment);
+			if ($scope.upvoting) {
+				$scope.upvoteReview();
+			}
+			else if ($scope.downvoting) {
+				$scope.downvoteReview();
+			}
+		}
 
 		$scope.uploadComment = function() {
 			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
@@ -233,29 +275,45 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.upvoteReview = function() {
-			$log.log('Upvoting review');
-			Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
+			if (!User.isLoggedIn()) {
+				$scope.upvoting = true;
+				$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+			}
+			// Otherwise directly proceed to the upload
+			else {
+				Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
 	  				function(data) {
 	  					$scope.review.reputation = data.reputation;
+	  					$scope.upvoting = false;
 	  				}, 
 	  				function(error) {
 	  					// Error handling
 	  					$log.error(error);
+	  					$scope.upvoting = false;
 	  				}
 	  			);
+			}
 		}
 
 		$scope.downvoteReview = function() {
-			$log.log('Downvoting review');
-			Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
+			if (!User.isLoggedIn()) {
+				$scope.downvoting = true;
+				$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+			}
+			// Otherwise directly proceed to the upload
+			else {
+				Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
 	  				function(data) {
 	  					$scope.review.reputation = data.reputation;
+	  					$scope.downvoting = false;
 	  				}, 
 	  				function(error) {
 	  					// Error handling
 	  					$log.error(error);
+	  					$scope.downvoting = false;
 	  				}
 	  			);
+			}
 		}
 		
 		//===============

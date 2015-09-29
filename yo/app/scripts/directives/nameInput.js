@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', 
-	function(User, $log, Api, $modal, AuthenticationService) {
+app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', 
+	function(User, $log, Api, $modal, AuthenticationService, $rootScope) {
 
 	var linkFunction = function(scope, element, attributes) {
 		scope.showLogout = attributes['showLogout'];
@@ -13,13 +13,18 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 		restrict: 'A',
 		replace: true,
 		templateUrl: 'templates/nameInput.html',
+		scope: {},
 		link: linkFunction,
 		controller: function($scope, User) {
 			$scope.refresh = function() {
+				$log.log('Refreshing user');
 				$scope.name = User.getName();
 				$scope.loggedIn = User.isLoggedIn();
 			}
 			$scope.refresh();
+			$rootScope.$on('user.logged.in', function() {
+				$scope.refresh();
+			});
 
 			$scope.suggestAccountCreationModal = $modal({
 				templateUrl: 'templates/suggestAccountCreation.html', 
@@ -59,7 +64,6 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 
 			$scope.onAccountCreationClosed = function() {
 				$log.log('Closing account creation in nameInput');
-				$scope.refresh();
 				$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.hide);
 				$scope.signUpModal.$promise.then($scope.signUpModal.hide);
 			}

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService',
-	function($scope, $log, Api, User, AuthenticationService) {
+angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService', '$rootScope',
+	function($scope, $log, Api, User, AuthenticationService, $rootScope) {
 		$scope.account = {};
 
 		$scope.init = function() {
@@ -63,6 +63,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 					$log.log('Received response', data);
 					User.setName(data.username);
 					User.setEmail(data.email);
+					$rootScope.$broadcast('user.logged.in');
 					$scope.endAccountCreation();
 				},
 				function(error) {
@@ -74,7 +75,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		$scope.endAccountCreation = function() {
 			$log.log('Skipping account creation');
 			// TODO: hack, cf comment in upload.js
-			$scope.refresh();
+
 			if ($scope.onUpload) {
 				$scope.backToUpload();
 			}

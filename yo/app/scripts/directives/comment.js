@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', 
-	function(User, $log, Api, RecursionHelper) {
+app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', 
+	function(User, $log, Api, RecursionHelper, $modal, $rootScope) {
 
 		return {
 			restrict: 'E',
@@ -109,39 +109,88 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 					return null;
 				}
 
-				$scope.upvoteComment = function(comment) {
-					$log.log('Upvoting comment');
-					if ($scope.commentForm.$valid) {
-						if (!User.isLoggedIn()) {
-		  					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
-		  				}
-		  				// Otherwise directly proceed to the upload
-		  				else {
-							Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
-				  				function(data) {
-				  					$log.log(data);
-				  					comment.reputation = data.reputation;
-				  				}, 
-				  				function(error) {
-				  					// Error handling
-				  					$log.error(error);
-				  				}
-				  			);
-						}
+				$scope.suggestAccountCreationModal = $modal({
+					templateUrl: 'templates/suggestAccountCreation.html', 
+					show: false, 
+					animation: 'am-fade-and-scale', 
+					placement: 'center', 
+					scope: $scope, 
+					controller: 'AccountTemplate',
+					keyboard: false,
+				});
+
+				$scope.signUpModal = $modal({
+					templateUrl: 'templates/signIn.html', 
+					show: false, 
+					animation: 'am-fade-and-scale', 
+					placement: 'center', 
+					scope: $scope, 
+					controller: 'AccountTemplate',
+					keyboard: false,
+				});
+
+				$scope.signUp = function() {
+					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+				}
+
+				$scope.signIn = function() {
+					$scope.signUpModal.$promise.then($scope.signUpModal.show);
+				}
+
+				$scope.onAccountCreationClosed = function() {
+					$log.log('Closing account creation in comment.js');
+					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.hide);
+					$scope.signUpModal.$promise.then($scope.signUpModal.hide);
+
+					if ($scope.upvotingComment) {
+						$scope.upvoteComment($scope.upvotingComment);
+					}
+					else if ($scope.downvotingComment) {
+						$scope.downvoteComment($scope.downvotingComment);
 					}
 				}
 
-				$scope.downvoteComment = function(comment) {
-					$log.log('Downvoting comment');
-					Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Downvote'},
+				$scope.upvoteComment = function(comment) {
+					if (!User.isLoggedIn()) {
+						$scope.upvotingComment = comment;
+	  					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+	  				}
+	  				// Otherwise directly proceed to the upload
+	  				else {
+						Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
 			  				function(data) {
+			  					$log.log(data);
 			  					comment.reputation = data.reputation;
+			  					$scope.upvotingComment = null;
 			  				}, 
 			  				function(error) {
 			  					// Error handling
 			  					$log.error(error);
+			  					$scope.upvotingComment = null;
 			  				}
 			  			);
+					}
+				}
+
+				$scope.downvoteComment = function(comment) {
+					if (!User.isLoggedIn()) {
+						$scope.downvotingComment = comment;
+	  					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+	  				}
+	  				// Otherwise directly proceed to the upload
+	  				else {
+						Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Downvote'},
+			  				function(data) {
+			  					comment.reputation = data.reputation;
+			  					$scope.downvotingComment = null;
+			  				}, 
+			  				function(error) {
+			  					// Error handling
+			  					$log.error(error);
+			  					$scope.downvotingComment = null;
+			  				}
+			  			);
+					}
 				}
 
 				var entityMap = {

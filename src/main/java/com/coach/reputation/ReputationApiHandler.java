@@ -56,7 +56,7 @@ public class ReputationApiHandler {
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Comment>(
 				(Comment) null, HttpStatus.UNAUTHORIZED); }
 		User user = userRepo.findByUsername(currentUser);
-		reputationUpdater.updateReputationAfterAction(comment.getReputation(), action, user.getId());
+		reputationUpdater.updateReputationAfterAction(comment.getReputation(), action, comment.getAuthorId(), user);
 		// might be nice to update only the reputation, I think I read this is
 		// doable
 		log.debug("Comment updated " + comment);
@@ -78,7 +78,7 @@ public class ReputationApiHandler {
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Review>(
 				(Review) null, HttpStatus.UNAUTHORIZED); }
 		User user = userRepo.findByUsername(currentUser);
-		reputationUpdater.updateReputationAfterAction(review.getReputation(), action, user.getId());
+		reputationUpdater.updateReputationAfterAction(review.getReputation(), action, review.getAuthorId(), user);
 		// might be nice to update only the reputation, I think I read this is
 		// doable
 		mongoTemplate.save(review);

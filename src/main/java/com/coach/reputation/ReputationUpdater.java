@@ -2,9 +2,13 @@ package com.coach.reputation;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 
+import com.coach.core.security.User;
 import com.coach.review.Review;
+import com.coach.user.UserRepository;
 
 /**
  *
@@ -13,6 +17,12 @@ import com.coach.review.Review;
  */
 @Component
 public class ReputationUpdater {
+
+	@Autowired
+	UserRepository userRepo;
+
+	@Autowired
+	MongoTemplate mongoTemplate;
 
 	/**
 	 * update reputation after an action by the current user
@@ -24,7 +34,8 @@ public class ReputationUpdater {
 	 * @param userId
 	 *            , id of the current user
 	 */
-	public void updateReputationAfterAction(Reputation reputation, ReputationAction action, String userId) {
+	public void updateReputationAfterAction(Reputation reputation, ReputationAction action, String authorId, User user) {
+		String userId = user.getId();
 		boolean isCurrentlyUpvoted = reputation.getUserIds().get(ReputationAction.Upvote).contains(userId);
 		boolean isCurrentlyDownvoted = reputation.getUserIds().get(ReputationAction.Downvote).contains(userId);
 		// similar reddit/youtube way, though an upvote on a downvoted element
@@ -32,24 +43,38 @@ public class ReputationUpdater {
 		if (action.equals(ReputationAction.Upvote)) {
 			if (isCurrentlyUpvoted) {
 				reputation.removeVote(ReputationAction.Upvote, userId);
+				changeAuthorReputation(authorId, -1);
 			}
 			else if (isCurrentlyDownvoted) {
 				reputation.removeVote(ReputationAction.Downvote, userId);
+				changeAuthorReputation(authorId, 1);
 			}
 			else {
 				reputation.addVote(action, userId);
+				changeAuthorReputation(authorId, 1);
 			}
 		}
-		if (action.equals(ReputationAction.Downvote)) {
+		else if (action.equals(ReputationAction.Downvote)) {
 			if (isCurrentlyDownvoted) {
 				reputation.removeVote(ReputationAction.Downvote, userId);
+				changeAuthorReputation(authorId, 1);
 			}
 			else if (isCurrentlyUpvoted) {
 				reputation.removeVote(ReputationAction.Upvote, userId);
+				changeAuthorReputation(authorId, -1);
 			}
 			else {
 				reputation.addVote(action, userId);
+				changeAuthorReputation(authorId, -1);
 			}
+		}
+	}
+
+	private void changeAuthorReputation(String authorId, int amount) {
+		User author = userRepo.findById(authorId);
+		if (author != null) {
+			author.modifyReputation(amount);
+			mongoTemplate.save(author);
 		}
 	}
 

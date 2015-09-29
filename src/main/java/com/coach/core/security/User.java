@@ -47,6 +47,8 @@ public class User implements UserDetails {
 	private Set<UserAuthority> authorities;
 	private Date lastLoginDate;
 
+	private int reputation;
+
 	@Override
 	@JsonIgnore
 	public String getPassword() {
@@ -120,5 +122,9 @@ public class User implements UserDetails {
 	@JsonIgnore
 	public boolean isEnabled() {
 		return accountEnabled;
+	}
+
+	public void modifyReputation(int amount) {
+		reputation += amount;
 	}
 }

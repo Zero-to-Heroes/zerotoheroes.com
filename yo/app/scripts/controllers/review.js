@@ -27,14 +27,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						var fileLocation = ENV.videoStorageUrl + data.key;
 						$scope.thumbnail = data.thumbnail ? ENV.videoStorageUrl + data.thumbnail : null;
 						$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
-						$log.log('Init all linked vids', $scope.review.reviewVideoMap);
+						//$log.log('Init all linked vids', $scope.review.reviewVideoMap);
 						$scope.sources2 = []
 						angular.forEach($scope.review.reviewVideoMap, function(key, value) {
-							$log.log('Init vid', value, key);
+							//$log.log('Init vid', value, key);
 							fileLocation = ENV.videoStorageUrl + key;
 							$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType});
 						})
-						$log.log('second player sources', $scope.sources2);
+						//$log.log('second player sources', $scope.sources2);
 					}
 				);
 			}, 300);
@@ -55,18 +55,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.media = $scope.API2.mediaElement;
 			$scope.media.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {
-					$log.log('can play');
+					//$log.log('can play');
 					$scope.allPlayersReady = true;
 					$scope.$apply();
 				}
 			});
 			// For FF ?
-			$scope.media.on('loadeddata', function() {
-				/*if ($scope.playerControls.mode == 2) {
-					$log.log('loadeddata');
-					$scope.allPlayersReady = true;
-					$scope.$apply();
-				}*/
+			/*$scope.media.on('loadeddata', function() {
 				$log.log('loadeddata');
 			});
 			$scope.media.on('seeked', function() {
@@ -119,7 +114,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			});
 			$scope.media.on('waiting', function() {
 				$log.log('waiting');
-			});
+			});*/
 		}
 
 		$scope.playerControls = {
@@ -132,7 +127,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			firstPlayerClass: '',
 			secondPlayerClass: '',
 			play: function() {
-				$log.log('request playing');
+				//$log.log('request playing');
 				$scope.API.play();
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.play();
@@ -155,6 +150,15 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.API.setPlayback(rate);
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.setPlayback(rate);
+				}
+			},
+			playPauseSecondPlayer: function() {
+				var playerState = $scope.API.currentState;
+				if (playerState == 'play') {
+					$scope.API2.play();
+				}
+				else {
+					$scope.API2.pause();
 				}
 			},
 			reloop: function() {
@@ -187,6 +191,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}
 		};
 
+		$scope.cancelComment = function() {
+			$scope.commentText = '';
+  			$scope.commentForm.$setPristine();
+  			$scope.$broadcast('show-errors-reset');
+		};
+
 		$scope.backToUploadComment = function() {
   			$scope.onUploadComment = false;
   			// We shouldn't be aware of popups created elsewhere, but for some reason they are global. 
@@ -210,43 +220,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 	  					$log.error(error);
 	  				}
 	  		);
-		}
-
-		$scope.formatDate = function(comment) {
-			return moment(comment.creationDate).fromNow();
-		}
-
-		$scope.startEditing = function(comment) {
-			comment.editing = true;
-			comment.oldText = comment.text;
-		}
-
-		$scope.cancelUpdateComment = function(comment) {
-			comment.text = comment.oldText;
-			comment.editing = false;
-		}
-
-		$scope.updateComment = function(comment) {
-			$log.log('Updating comment from ' + comment.oldText + ' to ' + comment.text);
-			Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
-	  				function(data) {
-	  					$scope.setCommentText(comment, data.text);
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  			);
-		}
-
-		$scope.setCommentText = function(comment, text) {
-			comment.text = escapeHtml(text);
-			// Add timestamps
-			comment.compiledText = $scope.parseComment(comment.text);
-			// Parse markdown
-			comment.markedText = marked(comment.compiledText);
-  			comment.editing = false;
-			comment.processed = true;
 		}
 
 		$scope.upvoteReview = function() {
@@ -274,36 +247,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 	  				}
 	  			);
 		}
-
-		$scope.upvoteComment = function(comment) {
-			$log.log('Upvoting comment');
-			Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
-	  				function(data) {
-	  					$log.log(data);
-	  					comment.reputation = data.reputation;
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  			);
-		}
-
-		$scope.downvoteComment = function(comment) {
-			$log.log('Downvoting comment');
-			Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Downvote'},
-	  				function(data) {
-	  					comment.reputation = data.reputation;
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  			);
-		}
-
-		//$scope.setCommentVote =
-
+		
 		//===============
 		// Video information
 		//===============
@@ -343,7 +287,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			var text = data.description;
 			$scope.review.description = escapeHtml(text);
 			// Add timestamps
-			$scope.review.compiledText = $scope.parseComment($scope.review.description);
+			$scope.review.compiledText = $scope.parseText($scope.review.description);
 			// Parse markdown
 			$scope.review.markedText = marked($scope.review.compiledText);
 
@@ -383,7 +327,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/g;
 
 		// Parse new comments when they are added
-		$scope.$watchCollection('review.comments', function(newComments, oldValue) {
+		/*$scope.$watchCollection('review.comments', function(newComments, oldValue) {
 			if (newComments) {
 				angular.forEach(newComments, function(comment) {
 					if (!comment.processed) {
@@ -391,9 +335,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					}
 				})
 			}
-		});
+		});*/
 
-		$scope.parseComment = function(comment) {
+		$scope.parseText = function(comment) {
 			if (!comment) return '';
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
@@ -493,12 +437,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					}
 					// Is playing?
 					else if (attributes && attributes.indexOf('p') !== -1) {
-						$log.log('Starting playing both vids');
+						//$log.log('Starting playing both vids');
 						$scope.playerControls.resetPlayback();
 						$scope.playerControls.play();
 					}
 					else {
-						$log.log('setting playback to 1');
+						//$log.log('setting playback to 1');
 						$scope.playerControls.resetPlayback();
 					}
 
@@ -520,7 +464,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.$watch('playerControls.mode', function (newVal, oldVal) {
 			if (newVal == 1) {
-				$log.log('stopping background video');
+				//$log.log('stopping background video');
 				$scope.API2.stop();
 				$scope.playerControls.firstPlayerClass = '';
 				$scope.playerControls.secondPlayerClass = '';

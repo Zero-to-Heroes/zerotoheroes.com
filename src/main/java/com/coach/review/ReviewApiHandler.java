@@ -28,7 +28,6 @@ import com.coach.core.email.EmailMessage;
 import com.coach.core.email.EmailSender;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
-import com.coach.reputation.Reputation;
 import com.coach.reputation.ReputationAction;
 import com.coach.reputation.ReputationUpdater;
 import com.coach.review.Review.Sport;
@@ -57,7 +56,7 @@ public class ReviewApiHandler {
 
 	@Autowired
 	Transcoder transcoder;
-	
+
 	@Autowired
 	ReputationUpdater reputationUpdater;
 
@@ -85,10 +84,10 @@ public class ReviewApiHandler {
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
-		String userId = (user != null) ? user.getId() : "";
+		String userId = user != null ? user.getId() : "";
 		// tweak info about reputation
-		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);		
-		
+		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);
+
 		return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
 	}
 
@@ -101,10 +100,10 @@ public class ReviewApiHandler {
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
 		review.sortComments();
-		
+
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
-		String userId = (user != null) ? user.getId() : "";
+		String userId = user != null ? user.getId() : "";
 		reputationUpdater.modifyReviewAccordingToUser(review, userId);
 		log.debug("Returning review " + review);
 
@@ -225,11 +224,16 @@ public class ReviewApiHandler {
 			User author = userRepo.findById(review.getAuthorId());
 			String recipient = author.getEmail();
 
-			EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
+			EmailMessage message = EmailMessage
+					.builder()
+					.from("seb@zerotoheroes.com")
+					.to(recipient)
 					.subject("New comment on your review " + review.getTitle() + " at ZeroToHeroes")
-					.content("Hey there!<br/>" + comment.getAuthor()
-							+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
-							+ review.getId() + "\">here</a> to see what they said.")
+					.content(
+							"Hey there!<br/>"
+									+ comment.getAuthor()
+									+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
+									+ review.getId() + "\">here</a> to see what they said.")
 					.type("text/html").build();
 			emailSender.send(message);
 		}
@@ -303,5 +307,72 @@ public class ReviewApiHandler {
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
 
-	
+	@RequestMapping(value = "/{reviewId}/{commentId}/reply", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Review> reply(@PathVariable("reviewId") final String reviewId,
+			@PathVariable("commentId") final String commentId,
+			@RequestBody Comment reply) throws IOException {
+
+		Review review = reviewRepo.findById(reviewId);
+		Comment comment = review.getComment(Integer.parseInt(commentId));
+
+		// Security
+		String currentUser =
+				SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+		// Add current logged in user as the author of the review
+		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
+			log.debug("Setting current user as review author " + currentUser);
+			reply.setAuthor(currentUser);
+			// Add the ID of the author in addition to the name (we still keep
+			// the nmae
+			User user = userRepo.findByUsername(currentUser);
+			reply.setAuthorId(user.getId());
+		}
+		// If anonymous, make sure the user doesn't use someone else's name
+		else {
+			log.debug("Validating that the name used to created the review is allowed");
+			User user = userRepo.findByUsername(reply.getAuthor());
+			if (user != null) {
+				log.debug("Name not allowed: " + reply.getAuthor());
+				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
+			}
+		}
+
+		// Adding the comment
+		log.debug("Adding reply " + reply + " to review " + review + " and comment " + comment);
+
+		reply.setCreationDate(new Date());
+		review.addComment(comment, reply);
+		review.setLastModifiedDate(new Date());
+		review.setLastModifiedBy(reply.getAuthor());
+
+		// See if there are external references to videos in the comment
+		commentParser.parseComment(review, reply);
+		mongoTemplate.save(review);
+
+		// Notifying the user who submitted the review (if he is registered)
+		if (review.getAuthorId() != null) {
+			User author = userRepo.findById(review.getAuthorId());
+			String recipient = author.getEmail();
+
+			EmailMessage message = EmailMessage
+					.builder()
+					.from("seb@zerotoheroes.com")
+					.to(recipient)
+					.subject("New comment on your review " + review.getTitle() + " at ZeroToHeroes")
+					.content(
+							"Hey there!<br/>"
+									+
+									comment.getAuthor()
+									+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
+									+ review.getId() + "\">here</a> to see what they said.").type(
+							"text/html").build();
+			emailSender.send(message);
+		}
+
+		log.debug("Created reply " + reply + " with id " + reply.getId());
+
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
+	}
 }

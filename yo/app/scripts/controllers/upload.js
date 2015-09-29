@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$modal', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $modal) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$modal', '$analytics', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $modal, $analytics) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -66,12 +66,20 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
   					$scope.upload();
   				}
   			}
+  			else {
+				$analytics.eventTrack('upload.checkFailed', {
+			      	category: 'upload'
+			    });
+  			}
   		}
 
 
   		$scope.upload = function() {
 
 			$log.log('Setting S3 config');
+			$analytics.eventTrack('upload.start', {
+		      	category: 'upload'
+		    });
 
 			// Configure The S3 Object 
 			AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
@@ -84,7 +92,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$scope.review.temporaryKey = ENV.folder + '/' + fileKey;
 
 			// Starting the upload
-			$log.log('uploading');
+			$log.log('uploading', $scope.review);
             $scope.uploadInProgress = true;
 
             // Scrolling to the bottom of the screen

@@ -74,7 +74,7 @@ public class Transcoder {
 		review.setKey(keyName);
 		review.setFileType("video/mp4");
 		String thumbnailKey = THUMBNAIL_FOLDER_NAME + SUFFIX + randomUUID + "_";
-		String thumbnailName = thumbnailKey + "00005.png";
+		String thumbnailName = thumbnailKey + "00001.png";
 		review.setThumbnail(thumbnailName);
 		mongoTemplate.save(review);
 		log.debug("Updated review " + review);
@@ -91,15 +91,17 @@ public class Transcoder {
 		// Hotfix for unsupported formats that you can't play when uploading
 		log.debug("Review ending is " + review.getEnding());
 		if (review.getEnding() > 0) {
-			String startTime = formatTime(review.getBeginning() / 2);
-			int intDuration = review.getEnding() - review.getBeginning();
+			int beginning = review.getBeginning();
+			int intDuration = review.getEnding() - beginning;
 			if (review.getVideoFramerateRatio() == 2) {
+				beginning = beginning / 2;
 				log.debug("doubling frame rate");
 				input.withFrameRate("60");
 
 				intDuration = intDuration / 2;
 				output.withPresetId(CUSTOM_480p_16_9_NO_AUDIO_PRESET_ID);
 			}
+			String startTime = formatTime(beginning);
 			String duration = formatTime(intDuration);
 			TimeSpan timeSpan = new TimeSpan().withStartTime(startTime).withDuration(duration);
 			Clip composition = new Clip().withTimeSpan(timeSpan);

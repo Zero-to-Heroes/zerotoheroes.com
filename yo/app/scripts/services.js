@@ -9,7 +9,8 @@ services.factory('Api', ['$resource', 'ENV',
 	function($resource, ENV) {
 		return {
 			Reviews: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
-			ReviewsUpdate: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/information', {reviewId: '@reviewId', fieldName: '@fieldName'}),
+			ReviewsUpdate: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/information', {reviewId: '@reviewId'}),
+			CommentsReply: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId/reply', {reviewId: '@reviewId', commentId: '@commentId'}),
 			Coaches: $resource(ENV.apiEndpoint + url + 'coaches/:reviewId', {reviewId: '@reviewId'}),
 			Payment: $resource(ENV.apiEndpoint + url + 'payment/:reviewId/:coachId/:email', {reviewId: '@reviewId', coachId: '@coachId', email:'@email'}),
       		Users: $resource(ENV.apiEndpoint + url + 'users/:identifier', {identifier: '@identifier'}),
@@ -42,8 +43,8 @@ services.factory('User', ['$window',
 	}
 ]);
 
-services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', 
-	function ($http, $window, $timeout, Api) {
+services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', '$analytics', '$log', 
+	function ($http, $window, $timeout, Api, $analytics, $log) {
 		var service = {};
 
 		service.login = function (username, password, callbackSucces, callbackError) {
@@ -51,8 +52,11 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 		};
 
 		service.setAuthentication = function (username, responseHeaders, callback) {
+			$log.log('Setting authentication');
 			$window.localStorage.token = responseHeaders('x-auth-token');
 			$window.localStorage.name = username;
+			$analytics.setAlias(username);
+			$analytics.setUsername(username);
 			callback ($window.localStorage.token && $window.localStorage.token != 'null' && $window.localStorage.token.trim().length > 0)
 		};
 

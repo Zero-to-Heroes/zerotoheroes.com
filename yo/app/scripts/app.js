@@ -19,7 +19,10 @@ var app = angular.module('app', [
   'duScroll',
   'hc.marked',
   'angular-logger',
-  'sprintf'
+  'sprintf',
+  'angulartics', 
+  'angulartics.google.analytics',
+  'RecursionHelper'
 ]);
 
 
@@ -63,6 +66,13 @@ app.config(function (logEnhancerProvider) {
    logEnhancerProvider.datetimePattern = 'YYYY/MM/DD HH:mm:ss:SSS';
 });
 
+app.config(['$analyticsProvider', function ($analyticsProvider) {
+    var username = 'anon_' + guid();
+    //$analytics.setAlias(username);
+    //$analytics.setUsername(username);
+    $analyticsProvider.settings.ga.userId = username;
+}]);
+
 app.directive('compilecontent', function($compile, $parse) {
     return {
       restrict: 'A',
@@ -93,7 +103,7 @@ app.run(['$rootScope', '$window', '$location', '$http',
 
 app.run(['$rootScope', '$window', '$location', function($rootScope, $window, $location) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        $window.ga('send', 'pageview', { page: $location.url() });
+        //$window.ga('send', 'pageview', { page: $location.url() });
         $rootScope.isLandingPage = current.$$route.isLandingPage; 
     });
 }]);
@@ -138,3 +148,14 @@ app.directive('scrollable', function ($window, $document) {
         }
     };
 });
+
+
+var guid = function() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
+  }

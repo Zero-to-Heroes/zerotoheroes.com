@@ -64,6 +64,8 @@ module.exports = function(config) {
       'bower_components/sprintf/dist/sprintf.min.js',
       'bower_components/sprintf/dist/angular-sprintf.min.js',
       'bower_components/aws-sdk-js/dist/aws-sdk.js',
+      'bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
+      'bower_components/angular-recursion/angular-recursion.js',
 
       'app/scripts/app.js',
       'app/scripts/**/*.js',
@@ -75,7 +77,7 @@ module.exports = function(config) {
     exclude: [],
 
     // web server port
-    port: 8080,
+    port: 9991,
 
     // Start these browsers, currently available:
     // - Chrome

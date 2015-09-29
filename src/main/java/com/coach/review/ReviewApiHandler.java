@@ -30,7 +30,7 @@ import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
 import com.coach.reputation.Reputation;
 import com.coach.reputation.ReputationAction;
-import com.coach.reputation.ReputationManager;
+import com.coach.reputation.ReputationUpdater;
 import com.coach.review.Review.Sport;
 import com.coach.review.video.transcoding.Transcoder;
 import com.coach.user.UserRepository;
@@ -57,6 +57,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	Transcoder transcoder;
+	
+	@Autowired
+	ReputationUpdater reputationUpdater;
 
 	public ReviewApiHandler() {
 		log.debug("Initializing Review Api Handler");
@@ -82,15 +85,10 @@ public class ReviewApiHandler {
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
-		String userId = "";
-		if (user != null) {
-			userId = user.getId();
-		}
+		String userId = (user != null) ? user.getId() : "";
 		// tweak info about reputation
-		for (Review review : reviews) {
-			ReputationManager manager = new ReputationManager();
-			manager.modifyReviewAccordingToUser(review, userId);
-		}
+		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);
+		
 		
 		return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
 	}
@@ -107,12 +105,8 @@ public class ReviewApiHandler {
 		
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
-		String userId = "";
-		if (user != null) {
-			userId = user.getId();
-		}
-		ReputationManager manager = new ReputationManager();
-		manager.modifyReviewAccordingToUser(review, userId);
+		String userId = (user != null) ? user.getId() : "";
+		reputationUpdater.modifyReviewAccordingToUser(review, userId);
 		log.debug("Returning review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

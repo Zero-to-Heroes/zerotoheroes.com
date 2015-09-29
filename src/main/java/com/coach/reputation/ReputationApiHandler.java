@@ -37,31 +37,9 @@ public class ReputationApiHandler {
 
 	@Autowired
 	MongoTemplate mongoTemplate;
-/*
-	@RequestMapping(value = "/{reviewId}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<ReviewReputation> getReviewReputation(
-			@PathVariable("reviewId") final String reviewId) throws IOException {
-		Review review = reviewRepo.findById(reviewId);
-		log.debug("getting all reputation markers for review " + reviewId);
-		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		User user = userRepo.findByUsername(currentUser);
-		ReputationConverter converter = new ReputationConverter();
-		String userId = "";
-		if (user != null) {
-			userId = user.getId();
-		}
-		if (review.getReputation() == null) {
-			review.setReputation(new Reputation());
-			if (review.getComments() != null) {
-				for (Comment comment : review.getComments()) {
-					comment.setReputation(new Reputation());
-				}
-			}
-			mongoTemplate.save(review);
-		}
-		ReviewReputation reputation = converter.convert(review, userId);
-		return new ResponseEntity<ReviewReputation>(reputation, HttpStatus.OK);
-	}*/
+	
+	@Autowired
+	ReputationUpdater reputationUpdater;
 
 	@RequestMapping(value = "/{reviewId}/{commentId}/{action}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Comment> updateCommentReputation(
@@ -80,8 +58,7 @@ public class ReputationApiHandler {
 		}
 		User user = userRepo.findByUsername(currentUser);
 		
-		ReputationManager reputationManager = new ReputationManager();
-		reputationManager.process(comment.getReputation(), action, user.getId());
+		reputationUpdater.updateReputationAfterAction(comment.getReputation(), action, user.getId());
 		// might be nice to update only the reputation, I think I read this is doable
 		mongoTemplate.save(review);
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
@@ -102,8 +79,7 @@ public class ReputationApiHandler {
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
 		User user = userRepo.findByUsername(currentUser);
-		ReputationManager reputationManager = new ReputationManager();
-		reputationManager.process(review.getReputation(), action, user.getId());
+		reputationUpdater.updateReputationAfterAction(review.getReputation(), action, user.getId());
 		// might be nice to update only the reputation, I think I read this is doable
 		mongoTemplate.save(review);
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

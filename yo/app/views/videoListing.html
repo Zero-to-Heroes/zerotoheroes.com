@@ -8,8 +8,8 @@
 			<tbody>
 				<tr ng-repeat="video in videos">
 					<td class="vert-align text-center">
-						<span class="glyphicon glyphicon-thumbs-up block" ng-class="{'green':video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Upvote}} </span> 
-		  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'red':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Downvote}} </span> 
+						<span class="glyphicon glyphicon-thumbs-up block" ng-class="{'upvote':video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Upvote}} </span> 
+		  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Downvote}} </span> 
 		  			</td>
 					<td class="vert-align text-center">
 						<span class="block">{{video.comments ? video.comments.length : '0'}}</span><span><small>comments</small></span>
@@ -44,8 +44,8 @@
 			<tbody>
 				<tr ng-repeat="video in videos">
 					<td class="vert-align text-center">
-						<span class="glyphicon glyphicon-thumbs-up block" ng-class="{'green':video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Upvote}} </span> 
-		  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'red':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Downvote}} </span> 
+						<span class="glyphicon glyphicon-thumbs-up block" ng-class="{'upvote':video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Upvote}} </span> 
+		  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Downvote}} </span> 
 		  			</td>
 					<td class="vert-align text-center">
 						<span class="block">{{video.comments ? video.comments.length : '0'}}</span><span><small>comments</small></span>

@@ -41,6 +41,14 @@ a[ng-click] {
   padding-bottom: 50px;
 }
 
+.upvote {
+  color: green;
+}
+
+.downvote {
+  color: red;
+}
+
 .modal-backdrop.am-fade {
   opacity: .5;
   transition: opacity .15s linear;

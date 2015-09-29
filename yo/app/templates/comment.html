@@ -1,8 +1,8 @@
 <div class="container-fluid comment-block" ng-style="{'margin-left': indentation}">
 	<div class="reputation">
-		<span class="glyphicon glyphicon-chevron-up" ng-class="{'upvote':comment.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteComment(comment)" aria-hidden="true"></span>
+		<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': comment.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="upvoteComment(comment)" aria-hidden="true"></span>
 		<span class="reputation-score glyphicon">{{comment.reputation.nbVotes.Upvote - comment.reputation.nbVotes.Downvote}}</span>
-		<span class="glyphicon glyphicon-chevron-down" ng-class="{'downvote':comment.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteComment(comment)" aria-hidden="true"></span>
+		<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':comment.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteComment(comment)" aria-hidden="true"></span>
 	</div>
 	<div class="comment-main">
 		<div class="comment-header">
@@ -33,7 +33,7 @@
 		<div class="row">
 			<div class="col-md-2" ng-show="!User.isLoggedIn()">
 				<div class="form-group" show-errors="{ showSuccess: true }">
-					<input type="text" name="author" class="form-control" ng-model="reply.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
+					<input type="text" name="author" class="form-control comment-author" ng-model="reply.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
 				</div>
 			</div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">

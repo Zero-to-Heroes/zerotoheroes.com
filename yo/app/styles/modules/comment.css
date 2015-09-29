@@ -29,3 +29,22 @@
 	margin-bottom: 15px;
 	padding-left: 0;
 }
+
+.comment-author {
+	margin-top: 37px;
+}
+
+.reputation {
+	width: 20px;
+	vertical-align: top;
+	float: left;
+	text-align: center;
+}
+
+.reputation span {
+	display: block;
+}
+
+.reputation-score {
+	padding-bottom: 4px;
+}

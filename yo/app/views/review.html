@@ -105,7 +105,7 @@
 			<div class="row">
 				<div class="col-md-2" ng-show="!User.isLoggedIn()">
 					<div class="form-group" show-errors="{ showSuccess: true }">
-						<input type="text" name="author" class="form-control" ng-model="newComment.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
+						<input type="text" name="author" class="form-control comment-author" ng-model="newComment.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
 					</div>
 				</div>
 				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">

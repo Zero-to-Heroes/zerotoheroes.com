@@ -111,16 +111,24 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 
 				$scope.upvoteComment = function(comment) {
 					$log.log('Upvoting comment');
-					Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
-			  				function(data) {
-			  					$log.log(data);
-			  					comment.reputation = data.reputation;
-			  				}, 
-			  				function(error) {
-			  					// Error handling
-			  					$log.error(error);
-			  				}
-			  			);
+					if ($scope.commentForm.$valid) {
+						if (!User.isLoggedIn()) {
+		  					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+		  				}
+		  				// Otherwise directly proceed to the upload
+		  				else {
+							Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
+				  				function(data) {
+				  					$log.log(data);
+				  					comment.reputation = data.reputation;
+				  				}, 
+				  				function(error) {
+				  					// Error handling
+				  					$log.error(error);
+				  				}
+				  			);
+						}
+					}
 				}
 
 				$scope.downvoteComment = function(comment) {

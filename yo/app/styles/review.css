@@ -6,18 +6,3 @@ scrollable #padder {
 	height: 100px;
 	width: 100%;
 }
-
-.reputation {
-	width: 20px;
-	vertical-align: top;
-	float: left;
-	text-align: center;
-}
-
-.reputation span {
-	display: block;
-}
-
-.reputation-score {
-	padding-bottom: 4px;
-}

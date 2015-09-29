@@ -17,13 +17,14 @@ import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 
+import com.coach.reputation.Reputation;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+@ToString(exclude = "comments")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Review {
 
@@ -58,6 +59,7 @@ public class Review {
 	private boolean transcodingDone;
 	private float videoFramerateRatio;
 	private Map<String, String> reviewVideoMap;
+	private Reputation reputation;
 
 	private int totalInsertedComments;
 
@@ -66,6 +68,13 @@ public class Review {
 		comment.setId(String.valueOf(++totalInsertedComments));
 		comments.add(comment);
 		sortComments();
+	}
+
+	public Reputation getReputation() {
+		if (reputation == null) {
+			reputation = new Reputation();
+		}
+		return reputation;
 	}
 
 	public void addComment(Comment comment, Comment reply) {
@@ -116,5 +125,15 @@ public class Review {
 		if (reviewVideoMap == null) reviewVideoMap = new HashMap<>();
 
 		reviewVideoMap.put(reviewId, videoKey);
+	}
+
+	public void prepareForDisplay(String userId) {
+		getReputation().modifyAccordingToUser(userId);
+		// comments
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.prepareForDisplay(userId);
+			}
+		}
 	}
 }

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', 
-	function($scope, $routeParams, Api, $location, User, ENV) {
+angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', 
+	function($scope, $routeParams, Api, $location, User, ENV, $log) {
 		$scope.videos = [];
 		$scope.tabs = []; 
 		$scope.tabs.activeTab = 0;
@@ -47,6 +47,30 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			var fromNowString = moment(usefulDate).fromNow();
 			//console.log(fromNowString);
 			return statusString + fromNowString;
+		}
+
+		$scope.upvoteReview = function(video) {
+			Api.Reputation.save({reviewId: video.id, action: 'Upvote'},
+	  				function(data) {
+	  					video.reputation = data.reputation;
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					$log.error(error);
+	  				}
+	  			);
+		}
+
+		$scope.downvoteReview = function(video) {
+			Api.Reputation.save({reviewId: video.id, action: 'Downvote'},
+	  				function(data) {
+	  					video.reputation = data.reputation;
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					$log.error(error);
+	  				}
+	  			);
 		}
 	}
 ]);

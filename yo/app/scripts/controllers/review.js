@@ -232,6 +232,32 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 	  		);
 		}
 
+		$scope.upvoteReview = function() {
+			$log.log('Upvoting review');
+			Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
+	  				function(data) {
+	  					$scope.review.reputation = data.reputation;
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					$log.error(error);
+	  				}
+	  			);
+		}
+
+		$scope.downvoteReview = function() {
+			$log.log('Downvoting review');
+			Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
+	  				function(data) {
+	  					$scope.review.reputation = data.reputation;
+	  				}, 
+	  				function(error) {
+	  					// Error handling
+	  					$log.error(error);
+	  				}
+	  			);
+		}
+		
 		//===============
 		// Video information
 		//===============

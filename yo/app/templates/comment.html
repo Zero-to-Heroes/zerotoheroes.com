@@ -1,26 +1,33 @@
 <div class="container-fluid comment-block" ng-style="{'margin-left': indentation}">
-	<div class="comment-header">
-		<span class="comment-author">{{comment.author}}</span>
-		<span><small>{{formatDate(comment)}}</small></span>
-
-		<span ng-show="comment.id && User.getName() == comment.author && !comment.editing"> - </span>
-		<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author && !comment.editing">Edit</a>
+	<div class="reputation">
+		<span class="glyphicon glyphicon-chevron-up" ng-class="{'upvote':comment.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteComment(comment)" aria-hidden="true"></span>
+		<span class="reputation-score glyphicon">{{comment.reputation.nbVotes.Upvote - comment.reputation.nbVotes.Downvote}}</span>
+		<span class="glyphicon glyphicon-chevron-down" ng-class="{'downvote':comment.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteComment(comment)" aria-hidden="true"></span>
 	</div>
-	<div class="comment-body">
-		<div compilecontent content="comment.markedText" ng-hide="comment.editing">
+	<div class="comment-main">
+		<div class="comment-header">
+			<span class="comment-author">{{comment.author}}</span>
+			<span><small>{{formatDate(comment)}}</small></span>
+
+			<span ng-show="comment.id && User.getName() == comment.author && !comment.editing"> - </span>
+			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author && !comment.editing">Edit</a>
 		</div>
-		<div ng-show="comment.editing">
-			<toolbar>
-				<textarea class="form-control" ng-model="comment.text" auto-grow toolbar-target></textarea>
-			</toolbar>
-			<div class="text-right">
-				<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
-				<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
+		<div class="comment-body">
+			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
+			</div>
+			<div ng-show="comment.editing">
+				<toolbar>
+					<textarea class="form-control" ng-model="comment.text" auto-grow toolbar-target></textarea>
+				</toolbar>
+				<div class="text-right">
+					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
+					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="comment-footer">
-		<a ng-click="startReply()" class="link-minor" ng-hide="reply.replying">Reply</a>
+		<div class="comment-footer">
+			<a ng-click="startReply()" class="link-minor" ng-hide="reply.replying">Reply</a>
+		</div>
 	</div>
 	<form ng-show="reply.replying" class="container-fluid reply-form" name="replyForm">
 		<div class="row">

@@ -14,20 +14,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				indentationLevel:'='
 			},
 			templateUrl: 'templates/comment.html',
-			/*link: function (scope, element, attrs) {
-			  	//check if this member has children
-			  	if (angular.isArray(scope.comment.comments)) {
-			      	// append the collection directive to this element
-			      	element.append("<collection collection='member.children'></collection>");
-			      	element.append('<comment ng-repeat="replyComment in comment.comments" comment="replyComment" indentation-level="indentationLevel + 1">');
-			      	// we need to tell angular to render the directive
-			      	$compile(element.contents())(scope);
-
-			      	$compile('<collection collection="member.children"></collection>')(scope, function(cloned, scope){
-					   element.append(cloned); 
-					});
-			  	}
-			},*/
 			controller: function($scope, User) {
 
 				$scope.User = User;
@@ -36,6 +22,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				$scope.review = {id: $scope.$parent.review.id};
 				$scope.API = $scope.$parent.API;
 				$scope.reply = {};
+				$scope.indentationSize = 8;
 
 				$scope.$watch($scope.comment, function() {
 					//$log.log('comment changed', $scope.comment);
@@ -43,7 +30,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				});
 
 				$scope.$watch($scope.indentationLevel, function() {
-					$scope.indentation = (20 + $scope.indentationLevel * 10) + 'px';
+					$scope.indentation = (20 + $scope.indentationLevel * $scope.indentationSize) + 'px';
 				});
 
 				$scope.$watch($scope.$parent.API, function() {
@@ -120,6 +107,33 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 						if (found) return found;
 					}
 					return null;
+				}
+
+				$scope.upvoteComment = function(comment) {
+					$log.log('Upvoting comment');
+					Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
+			  				function(data) {
+			  					$log.log(data);
+			  					comment.reputation = data.reputation;
+			  				}, 
+			  				function(error) {
+			  					// Error handling
+			  					$log.error(error);
+			  				}
+			  			);
+				}
+
+				$scope.downvoteComment = function(comment) {
+					$log.log('Downvoting comment');
+					Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Downvote'},
+			  				function(data) {
+			  					comment.reputation = data.reputation;
+			  				}, 
+			  				function(error) {
+			  					// Error handling
+			  					$log.error(error);
+			  				}
+			  			);
 				}
 
 				var entityMap = {

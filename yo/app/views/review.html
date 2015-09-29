@@ -82,12 +82,16 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 text-left">
+			<div class="col-md-10 text-left">
 				<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && User.getName() == review.author"> Edit information</a>
 				<div ng-show="review.editing">
 					<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs">Cancel</button>
 					<button ng-click="updateDescription()" class="btn btn-default btn-xs">Update</button>
 				</div>
+			</div>
+			<div class="col-md-2">
+  				<span class="glyphicon glyphicon-thumbs-up" ng-class="{'upvote':review.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview()" aria-hidden="true">{{review.reputation.nbVotes.Upvote}} </span> 
+  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview()" aria-hidden="true">{{review.reputation.nbVotes.Downvote}} </span> 
 			</div>
 		</div>
 	</form>
@@ -123,7 +127,6 @@
 			</div>
 		</div>
 	</form>
-
 	<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0"></comment>
 	<!-- Prevent scrolling center area if we're already at the bottom -->
 	<div id="padder"></div>

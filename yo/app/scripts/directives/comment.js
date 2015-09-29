@@ -21,6 +21,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				$scope.parseText = $scope.$parent.parseText;
 				$scope.review = {id: $scope.$parent.review.id};
 				$scope.reply = {};
+				$scope.indentationSize = 8;
 
 				$scope.$watch($scope.comment, function() {
 					$log.log('comment changed', $scope.comment);
@@ -28,7 +29,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				});
 
 				$scope.$watch($scope.indentationLevel, function() {
-					$scope.indentation = (20 + $scope.indentationLevel * 10) + 'px';
+					$scope.indentation = (20 + $scope.indentationLevel * $scope.indentationSize) + 'px';
 				});
 
 				$scope.formatDate = function(comment) {

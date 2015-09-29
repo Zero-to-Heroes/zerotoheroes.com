@@ -10,7 +10,7 @@ scrollable #padder {
 .reputation {
 	width: 20px;
 	vertical-align: top;
-	display: inline-block;
+	float: left;
 	text-align: center;
 }
 
@@ -20,8 +20,4 @@ scrollable #padder {
 
 .reputation-score {
 	padding-bottom: 4px;
-}
-
-.comment-main {
-	display: inline-block;
 }

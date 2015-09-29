@@ -1,8 +1,8 @@
 <div class="container-fluid comment-block" ng-style="{'margin-left': indentation}">
 	<div class="reputation">
-		<span class="glyphicon glyphicon-chevron-up" ng-class="{'upvote':comment.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteComment(comment)" aria-hidden="true" ng-show="User.isLoggedIn()"></span>
+		<span class="glyphicon glyphicon-chevron-up" ng-class="{'upvote':comment.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteComment(comment)" aria-hidden="true"></span>
 		<span class="reputation-score glyphicon">{{comment.reputation.nbVotes.Upvote - comment.reputation.nbVotes.Downvote}}</span>
-		<span class="glyphicon glyphicon-chevron-down" ng-class="{'downvote':comment.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteComment(comment)" aria-hidden="true" ng-show="User.isLoggedIn()"></span>
+		<span class="glyphicon glyphicon-chevron-down" ng-class="{'downvote':comment.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteComment(comment)" aria-hidden="true"></span>
 	</div>
 	<div class="comment-main">
 		<div class="comment-header">

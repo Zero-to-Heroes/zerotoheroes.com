@@ -1,6 +1,7 @@
 package com.coach.core.security;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -27,12 +29,14 @@ class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter {
 
 	private final TokenAuthenticationService tokenAuthenticationService;
 	private final UserDetailsService userDetailsService;
+	private final MongoTemplate mongoTemplate;
 
 	protected StatelessLoginFilter(String urlMapping, TokenAuthenticationService tokenAuthenticationService,
-			UserDetailsService userDetailsService, AuthenticationManager authManager) {
+			UserDetailsService userDetailsService, MongoTemplate mongoTemplate, AuthenticationManager authManager) {
 		super(new AntPathRequestMatcher(urlMapping));
 		this.userDetailsService = userDetailsService;
 		this.tokenAuthenticationService = tokenAuthenticationService;
+		this.mongoTemplate = mongoTemplate;
 		setAuthenticationManager(authManager);
 	}
 
@@ -64,6 +68,10 @@ class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter {
 
 		// Add the authentication to the Security context
 		SecurityContextHolder.getContext().setAuthentication(userAuthentication);
+
+		// Update the user with last connection date
+		authenticatedUser.setLastLoginDate(new Date());
+		mongoTemplate.save(authenticatedUser);
 	}
 
 	@Override

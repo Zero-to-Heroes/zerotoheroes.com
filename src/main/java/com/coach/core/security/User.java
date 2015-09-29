@@ -45,6 +45,7 @@ public class User implements UserDetails {
 	private final boolean accountEnabled = true;
 	private String newPassword;
 	private Set<UserAuthority> authorities;
+	private Date lastLoginDate;
 
 	@Override
 	@JsonIgnore

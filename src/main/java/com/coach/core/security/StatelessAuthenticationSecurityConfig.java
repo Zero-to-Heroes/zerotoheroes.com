@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -24,19 +25,32 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 	@Autowired
 	private TokenAuthenticationService tokenAuthenticationService;
 
+	@Autowired
+	MongoTemplate mongoTemplate;
+
 	public StatelessAuthenticationSecurityConfig() {
 		super(true);
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.exceptionHandling().and().anonymous().and().servletApi().and().headers()
+		http.exceptionHandling().and()
+				.anonymous()
+				.and()
+				.servletApi()
+				.and()
+				.headers()
 				.cacheControl()
 				.and()
 				.authorizeRequests()
 
 				// allow anonymous resource requests
-				.antMatchers("/").permitAll().antMatchers("/*").permitAll().antMatchers("/**/*").permitAll()
+				.antMatchers("/")
+				.permitAll()
+				.antMatchers("/*")
+				.permitAll()
+				.antMatchers("/**/*")
+				.permitAll()
 
 				.and()
 
@@ -45,6 +59,7 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 				// token header upon authentication
 				.addFilterBefore(
 						new StatelessLoginFilter("/api/login", tokenAuthenticationService, userDetailsService,
+								mongoTemplate,
 								authenticationManager()), UsernamePasswordAuthenticationFilter.class)
 
 				// custom Token based authentication based on the header

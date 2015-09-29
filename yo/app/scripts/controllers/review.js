@@ -245,17 +245,18 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
   		}
 
   		$scope.onAccountCreationClosed = function() {
-  			$log.log('onAccountCreationClosed review.js')
-			$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.hide);
-			$scope.signUpModal.$promise.then($scope.signUpModal.hide);
 
-			$log.log('upvoting', $scope.upvotingComment);
+			$log.log($scope.upvoting, $scope.downvoting);
 			if ($scope.upvoting) {
 				$scope.upvoteReview();
 			}
 			else if ($scope.downvoting) {
 				$scope.downvoteReview();
 			}
+			
+  			$log.log('onAccountCreationClosed review.js')
+			$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.hide);
+			$scope.signUpModal.$promise.then($scope.signUpModal.hide);
 		}
 
 		$scope.uploadComment = function() {
@@ -281,15 +282,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}
 			// Otherwise directly proceed to the upload
 			else {
+				$scope.upvoting = false;
 				Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
 	  				function(data) {
 	  					$scope.review.reputation = data.reputation;
-	  					$scope.upvoting = false;
 	  				}, 
 	  				function(error) {
 	  					// Error handling
 	  					$log.error(error);
-	  					$scope.upvoting = false;
 	  				}
 	  			);
 			}
@@ -302,15 +302,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}
 			// Otherwise directly proceed to the upload
 			else {
+				$scope.downvoting = false;
 				Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
 	  				function(data) {
 	  					$scope.review.reputation = data.reputation;
-	  					$scope.downvoting = false;
 	  				}, 
 	  				function(error) {
 	  					// Error handling
 	  					$log.error(error);
-	  					$scope.downvoting = false;
 	  				}
 	  			);
 			}

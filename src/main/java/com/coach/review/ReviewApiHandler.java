@@ -87,8 +87,7 @@ public class ReviewApiHandler {
 		User user = userRepo.findByUsername(currentUser);
 		String userId = (user != null) ? user.getId() : "";
 		// tweak info about reputation
-		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);
-		
+		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);		
 		
 		return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
 	}
@@ -131,7 +130,6 @@ public class ReviewApiHandler {
 			User user = userRepo.findByUsername(currentUser);
 			review.setAuthorId(user.getId());
 			// by default a poster likes his post
-			review.setReputation(new Reputation());
 			review.getReputation().addVote(ReputationAction.Upvote, user.getId());
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
@@ -195,7 +193,6 @@ public class ReviewApiHandler {
 			// the nmae
 			User user = userRepo.findByUsername(currentUser);
 			comment.setAuthorId(user.getId());
-			comment.setReputation(new Reputation());
 			comment.getReputation().addVote(ReputationAction.Upvote, user.getId());
 		}
 		// If anonymous, make sure the user doesn't use someone else's name

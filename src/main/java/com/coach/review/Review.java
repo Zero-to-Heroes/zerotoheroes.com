@@ -71,6 +71,13 @@ public class Review {
 		sortComments();
 	}
 
+	public Reputation getReputation() {
+		if (reputation == null) {
+			reputation = new Reputation();
+		}
+		return reputation;
+	}
+	
 	public void setSport(Sport sport) {
 		this.sport = sport; // StringUtils.trim(sport);
 	}

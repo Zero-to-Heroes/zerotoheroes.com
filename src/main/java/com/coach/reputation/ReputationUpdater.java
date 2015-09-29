@@ -64,15 +64,6 @@ public class ReputationUpdater {
 	 *            id of the current user, "" if unlogged
 	 */
 	public void modifyReviewAccordingToUser(Review review, String userId) {
-		// for old videos without reputation
-		if (review.getReputation() == null) {
-			review.setReputation(new Reputation());
-			if (review.getComments() != null) {
-				for (Comment comment : review.getComments()) {
-					comment.setReputation(new Reputation());
-				}
-			}
-		}
 		// review
 		review.getReputation().modifyAccordingToUser(userId);
 		// comments

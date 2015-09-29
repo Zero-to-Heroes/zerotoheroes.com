@@ -18,4 +18,11 @@ public class Comment {
 	private String author, authorId, text;
 	private Date creationDate;
 	private Reputation reputation;
+	
+	public Reputation getReputation() {
+		if (reputation == null) {
+			reputation = new Reputation();
+		}
+		return reputation;
+	}
 }

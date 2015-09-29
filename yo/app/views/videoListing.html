@@ -3,10 +3,14 @@
 <div class="main-panel">
 <div class="center-column">
 <div bs-active-pane="tabs.activeTab " bs-tabs>
-    <div title="All videos" name="false" ng-click="retrieveVideos(false)" bs-pane>
+    <div title="All videos" name="false" bs-pane>
     	<table class="table">
 			<tbody>
 				<tr ng-repeat="video in videos">
+					<td class="vert-align text-center">
+						<span class="glyphicon glyphicon-thumbs-up block" ng-class="{'upvote':video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Upvote}} </span> 
+		  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Downvote}} </span> 
+		  			</td>
 					<td class="vert-align text-center">
 						<span class="block">{{video.comments ? video.comments.length : '0'}}</span><span><small>comments</small></span>
 					</td>
@@ -35,10 +39,14 @@
 			</tbody>
     	</table>
     </div>
-    <div title="My videos" name="true" ng-click="retrieveVideos(true)" class="table-responsive" bs-pane>
+    <div title="My videos" name="true" class="table-responsive" bs-pane>
 		<table class="table">
 			<tbody>
 				<tr ng-repeat="video in videos">
+					<td class="vert-align text-center">
+						<span class="glyphicon glyphicon-thumbs-up block" ng-class="{'upvote':video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Upvote}} </span> 
+		  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Downvote}} </span> 
+		  			</td>
 					<td class="vert-align text-center">
 						<span class="block">{{video.comments ? video.comments.length : '0'}}</span><span><small>comments</small></span>
 					</td>

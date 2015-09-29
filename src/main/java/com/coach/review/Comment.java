@@ -10,15 +10,25 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import com.coach.reputation.Reputation;
+
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "comments")
 public class Comment {
 
 	private String id;
 	private String author, authorId, text;
 	private Date creationDate;
 	private List<Comment> comments;
+	private Reputation reputation;
+
+	public Reputation getReputation() {
+		if (reputation == null) {
+			reputation = new Reputation();
+		}
+		return reputation;
+	}
 
 	public void addComment(Comment reply) {
 		if (comments == null) comments = new ArrayList<>();
@@ -49,5 +59,15 @@ public class Comment {
 
 		}
 		return null;
+	}
+
+	public void prepareForDisplay(String userId) {
+		getReputation().modifyAccordingToUser(userId);
+		// comments
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.prepareForDisplay(userId);
+			}
+		}
 	}
 }

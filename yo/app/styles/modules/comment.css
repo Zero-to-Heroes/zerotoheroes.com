@@ -6,6 +6,10 @@
 	margin-bottom: 20px;
 }
 
+.comment-main {
+	margin-left: 25px;
+}
+
 .comment-header {
 	margin-bottom: 5px;
 	font-size: 0.8em;
@@ -23,4 +27,5 @@
 
 .reply-form {
 	margin-bottom: 15px;
+	padding-left: 0;
 }

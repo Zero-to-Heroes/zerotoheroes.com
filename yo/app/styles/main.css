@@ -42,11 +42,11 @@ a[ng-click] {
 }
 
 .upvote {
-  color: green;
+  color: #5cb85c;
 }
 
 .downvote {
-  color: red;
+  color: #d9534f;
 }
 
 .modal-backdrop.am-fade {

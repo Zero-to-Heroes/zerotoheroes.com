@@ -104,7 +104,7 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
-		reputationUpdater.modifyReviewAccordingToUser(review, userId);
+		review.prepareForDisplay(userId);
 		log.debug("Returning review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

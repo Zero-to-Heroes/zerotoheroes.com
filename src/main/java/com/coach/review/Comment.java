@@ -14,7 +14,7 @@ import com.coach.reputation.Reputation;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "comments")
 public class Comment {
 
 	private String id;
@@ -59,5 +59,15 @@ public class Comment {
 
 		}
 		return null;
+	}
+
+	public void prepareForDisplay(String userId) {
+		getReputation().modifyAccordingToUser(userId);
+		// comments
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.prepareForDisplay(userId);
+			}
+		}
 	}
 }

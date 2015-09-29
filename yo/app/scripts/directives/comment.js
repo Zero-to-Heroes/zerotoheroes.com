@@ -14,20 +14,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				indentationLevel:'='
 			},
 			templateUrl: 'templates/comment.html',
-			/*link: function (scope, element, attrs) {
-			  	//check if this member has children
-			  	if (angular.isArray(scope.comment.comments)) {
-			      	// append the collection directive to this element
-			      	element.append("<collection collection='member.children'></collection>");
-			      	element.append('<comment ng-repeat="replyComment in comment.comments" comment="replyComment" indentation-level="indentationLevel + 1">');
-			      	// we need to tell angular to render the directive
-			      	$compile(element.contents())(scope);
-
-			      	$compile('<collection collection="member.children"></collection>')(scope, function(cloned, scope){
-					   element.append(cloned); 
-					});
-			  	}
-			},*/
 			controller: function($scope, User) {
 
 				$scope.User = User;
@@ -37,7 +23,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				$scope.reply = {};
 
 				$scope.$watch($scope.comment, function() {
-					//$log.log('comment changed', $scope.comment);
+					$log.log('comment changed', $scope.comment);
 					$scope.setCommentText($scope.comment, $scope.comment.text);
 				});
 

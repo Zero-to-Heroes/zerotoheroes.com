@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+@ToString(exclude = "comments")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Review {
 
@@ -125,5 +125,15 @@ public class Review {
 		if (reviewVideoMap == null) reviewVideoMap = new HashMap<>();
 
 		reviewVideoMap.put(reviewId, videoKey);
+	}
+
+	public void prepareForDisplay(String userId) {
+		getReputation().modifyAccordingToUser(userId);
+		// comments
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.prepareForDisplay(userId);
+			}
+		}
 	}
 }

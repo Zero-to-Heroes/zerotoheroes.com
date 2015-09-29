@@ -4,26 +4,25 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.coach.review.Comment;
 import com.coach.review.Review;
 
 /**
- * 
- * @author Thibaud
- * responsible of all interactions with Reputation objects in element
+ *
+ * @author Thibaud responsible of all interactions with Reputation objects in
+ *         element
  */
 @Component
 public class ReputationUpdater {
 
 	/**
 	 * update reputation after an action by the current user
-	 * 
-	 * @param reputation,
-	 *            reputation object, can be linked to comment or review
-	 * @param action,
-	 *            action executed by the user (for now only votes:up or down)
-	 * @param userId,
-	 *            id of the current user
+	 *
+	 * @param reputation
+	 *            , reputation object, can be linked to comment or review
+	 * @param action
+	 *            , action executed by the user (for now only votes:up or down)
+	 * @param userId
+	 *            , id of the current user
 	 */
 	public void updateReputationAfterAction(Reputation reputation, ReputationAction action, String userId) {
 		boolean isCurrentlyUpvoted = reputation.getUserIds().get(ReputationAction.Upvote).contains(userId);
@@ -55,37 +54,17 @@ public class ReputationUpdater {
 	}
 
 	/**
-	 * prepare review for UI with missing info about reputation linked to the
-	 * current user
-	 * 
-	 * @param review,
-	 *            taken from DB
-	 * @param userId,
-	 *            id of the current user, "" if unlogged
-	 */
-	public void modifyReviewAccordingToUser(Review review, String userId) {
-		// review
-		review.getReputation().modifyAccordingToUser(userId);
-		// comments
-		if (review.getComments() != null) {
-			for (Comment comment : review.getComments()) {
-				comment.getReputation().modifyAccordingToUser(userId);
-			}
-		}
-	}
-	
-	/**
-	 * prepare list of reviews for UI with missing info about reputation linked to the
-	 * current user
-	 * 
-	 * @param review,
-	 *            taken from DB, can't be null
-	 * @param userId,
-	 *            id of the current user, "" if unlogged
+	 * prepare list of reviews for UI with missing info about reputation linked
+	 * to the current user
+	 *
+	 * @param review
+	 *            , taken from DB, can't be null
+	 * @param userId
+	 *            , id of the current user, "" if unlogged
 	 */
 	public void modifyReviewsAccordingToUser(List<Review> reviews, String userId) {
 		for (Review review : reviews) {
-			modifyReviewAccordingToUser(review, userId);
+			review.prepareForDisplay(userId);
 		}
 	}
 }

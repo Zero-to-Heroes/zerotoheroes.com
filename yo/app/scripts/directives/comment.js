@@ -20,16 +20,21 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper',
 				$scope.goToTimestamp = $scope.$parent.goToTimestamp;
 				$scope.parseText = $scope.$parent.parseText;
 				$scope.review = {id: $scope.$parent.review.id};
+				$scope.API = $scope.$parent.API;
 				$scope.reply = {};
 				$scope.indentationSize = 8;
 
 				$scope.$watch($scope.comment, function() {
-					$log.log('comment changed', $scope.comment);
+					//$log.log('comment changed', $scope.comment);
 					$scope.setCommentText($scope.comment, $scope.comment.text);
 				});
 
 				$scope.$watch($scope.indentationLevel, function() {
 					$scope.indentation = (20 + $scope.indentationLevel * $scope.indentationSize) + 'px';
+				});
+
+				$scope.$watch($scope.$parent.API, function() {
+					$scope.API = $scope.$parent.API;
 				});
 
 				$scope.formatDate = function(comment) {

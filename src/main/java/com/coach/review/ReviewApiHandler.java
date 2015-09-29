@@ -219,6 +219,10 @@ public class ReviewApiHandler {
 		commentParser.parseComment(review, comment);
 		mongoTemplate.save(review);
 
+		User user = userRepo.findByUsername(currentUser);
+		String userId = user != null ? user.getId() : "";
+		review.prepareForDisplay(userId);
+
 		// Notifying the user who submitted the review (if he is registered)
 		if (review.getAuthorId() != null) {
 			User author = userRepo.findById(review.getAuthorId());
@@ -328,6 +332,7 @@ public class ReviewApiHandler {
 			// the nmae
 			User user = userRepo.findByUsername(currentUser);
 			reply.setAuthorId(user.getId());
+			reply.getReputation().addVote(ReputationAction.Upvote, user.getId());
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -350,6 +355,10 @@ public class ReviewApiHandler {
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, reply);
 		mongoTemplate.save(review);
+
+		User user = userRepo.findByUsername(currentUser);
+		String userId = user != null ? user.getId() : "";
+		review.prepareForDisplay(userId);
 
 		// Notifying the user who submitted the review (if he is registered)
 		if (review.getAuthorId() != null) {

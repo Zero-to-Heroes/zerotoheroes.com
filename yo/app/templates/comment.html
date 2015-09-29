@@ -16,7 +16,9 @@
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
 			</div>
 			<div ng-show="comment.editing">
-				<textarea class="form-control" ng-model="comment.text" auto-grow></textarea>
+				<toolbar>
+					<textarea class="form-control" ng-model="comment.text" auto-grow toolbar-target></textarea>
+				</toolbar>
 				<div class="text-right">
 					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
 					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
@@ -26,34 +28,34 @@
 		<div class="comment-footer">
 			<a ng-click="startReply()" class="link-minor" ng-hide="reply.replying">Reply</a>
 		</div>
-		<form ng-show="reply.replying" class="container-fluid reply-form" name="replyForm">
-			<div class="row">
-				<div class="col-md-2" ng-show="!User.isLoggedIn()">
-					<div class="form-group" show-errors="{ showSuccess: true }">
-						<input type="text" name="author" class="form-control" ng-model="reply.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
-					</div>
-				</div>
-				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-					<div class="form-group" show-errors="{ showSuccess: true }">
-						<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" auto-grow></textarea>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2" ng-show="!User.isLoggedIn()"></div>
-				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-					<div class="inline-block">
-						<button ng-click="postReply()" class="btn btn-default btn-xs">Reply</button>
-						<button ng-click="cancelReply()" class="btn btn-default btn-xs">Cancel</button>
-					</div>
-					<div class="inline-block float-right">
-						<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
-						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
-					</div>
-				</div>
-			</div>
-			<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
-		</form>
-		<comment ng-repeat="replyComment in comment.comments" comment="replyComment" indentation-level="indentationLevel + 1"></comment>
 	</div>
+	<form ng-show="reply.replying" class="container-fluid reply-form" name="replyForm">
+		<div class="row">
+			<div class="col-md-2" ng-show="!User.isLoggedIn()">
+				<div class="form-group" show-errors="{ showSuccess: true }">
+					<input type="text" name="author" class="form-control" ng-model="reply.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
+				</div>
+			</div>
+			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
+				<toolbar class="form-group" show-errors="{ showSuccess: true }">
+					<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" auto-grow toolbar-target></textarea>
+				</toolbar>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2" ng-show="!User.isLoggedIn()"></div>
+			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
+				<div class="inline-block">
+					<button ng-click="postReply()" class="btn btn-default btn-xs">Reply</button>
+					<button ng-click="cancelReply()" class="btn btn-default btn-xs">Cancel</button>
+				</div>
+				<div class="inline-block float-right">
+					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
+					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+				</div>
+			</div>
+		</div>
+		<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
+	</form>
+	<comment ng-repeat="replyComment in comment.comments" comment="replyComment" indentation-level="indentationLevel + 1"></comment>
 </div>

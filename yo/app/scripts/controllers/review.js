@@ -8,7 +8,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.sources = null;
 		$scope.sources2 = null;
 		$scope.thumbnail = null;
-		$scope.newComment = '';
+		$scope.newComment = {};
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.User = User;
@@ -145,6 +145,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.API2.seekTime(time2);
 				}
 			},
+			moveTime: function(amountInMilliseconds) {
+				var currentTime1 = $scope.API.currentTime;
+				var time1 = Math.min(Math.max(currentTime1 + amountInMilliseconds, 0), $scope.API.totalTime);
+				$scope.API.seekTime(time1 / 1000);
+				if ($scope.playerControls.mode == 2) {
+					var currentTime2 = $scope.API2.currentTime;
+					var time2 = Math.min(Math.max(currentTime2 + amountInMilliseconds, 0), $scope.API2.totalTime);
+					$scope.API2.seekTime(time2 / 1000);
+				}
+			},
 			setPlayback: function(rate) {
 				$scope.playerControls.playbackRate = rate;
 				$scope.API.setPlayback(rate);
@@ -181,7 +191,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if ($scope.commentForm.$valid) {
 				if (!User.isLoggedIn()) {
   					$scope.onAddComment = true;
-  					$scope.modalConfig = {identifier: $scope.commentAuthor};
+  					$scope.modalConfig = {identifier: $scope.newComment.author};
   					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
   				}
   				// Otherwise directly proceed to the upload
@@ -192,7 +202,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		};
 
 		$scope.cancelComment = function() {
-			$scope.commentText = '';
+			$scope.newComment = {};
   			$scope.commentForm.$setPristine();
   			$scope.$broadcast('show-errors-reset');
 		};
@@ -207,9 +217,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
   		}
 
 		$scope.uploadComment = function() {
-			Api.Reviews.save({reviewId: $scope.review.id}, {'author': $scope.commentAuthor, 'text': $scope.commentText}, 
+			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
 	  				function(data) {
-			  			$scope.commentText = '';
+			  			$scope.newComment = {};
 			  			$scope.commentForm.$setPristine();
 			  			$scope.review.comments = data.comments;
 			  			$scope.review.reviewVideoMap = data.reviewVideoMap;

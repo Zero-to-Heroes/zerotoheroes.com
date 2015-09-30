@@ -2,20 +2,29 @@
 	<div class="panel-heading" ng-show="User.isLoggedIn()">
     	<h3 class="panel-title">Welcome back {{User.getName()}}!</h3>
   	</div>
-	<div ng-show="User.isLoggedIn()" class="panel-body">
-		<div ng-show="!!features.length">
-			<h4>While you were away...</h4>
-			<p>We haven't slept much, and have continued to add features since the last time you visited:</p>
-			<ul>
-				<li ng-repeat="feature in features">{{feature.date | date:yyyy-MM-dd}} - {{feature.description}}</comment>
-			</ul>
-		</div>
-	</div>
-
 	<div class="panel-heading" ng-hide="User.isLoggedIn()">
     	<h3 class="panel-title">Welcome to Zero to Heroes!</h3>
   	</div>
-  	<div ng-hide="User.isLoggedIn()" class="panel-body">
-		<p>You can browse existing videos using the navigation bar at the top. If you already have an account, you can <a ng-click="signIn()">sign in</a>, or <a ng-click="signUp()">create a new account</a> to fully benefit from the site's features</p>
+
+	<div class="panel-body">
+		<div ng-show="!!features.length && User.isLoggedIn()" >
+			<h4>While you were away...</h4>
+			<p>We have continued to add features since the last time you visited. We hope you'll like them!</p>
+			<ul>
+				<li ng-repeat="feature in features">{{feature.date | date:yyyy-MM-dd}} - {{feature.description}}</li>
+			</ul>
+		</div>
+		<div ng-hide="User.isLoggedIn()">
+			<h4>Getting started</h4>
+			<p>You can browse existing videos using the navigation bar at the top. If you already have an account, you can <a ng-click="signIn()">sign in</a>, or <a ng-click="signUp()">create a new account</a> to fully benefit from the site's features</p>
+		</div>
+		<div>
+			<h4>Coming soon</h4>
+			<p>We're trying to push out new awesome stuff every few days, and here are the main things we are working on right now:</p>
+			<ul>
+				<li>We're looking at a better way for you to give us your feedback and discuss the site improvements (for now you have to email us at <a href="mailto:contact@zerotoheroes.com">contact@zerotoheroes.com</a></li>
+				<li>Various small improvements on the video player</li>
+			</ul>
+		</div>
 	</div>
 </div>

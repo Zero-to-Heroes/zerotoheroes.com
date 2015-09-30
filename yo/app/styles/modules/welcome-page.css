@@ -1,0 +1,7 @@
+.welcome-page {
+	min-width: 450px;
+	min-height: 300px;
+	float: left;
+	background-color: white;
+	margin: 0 40px 0 10px;
+}

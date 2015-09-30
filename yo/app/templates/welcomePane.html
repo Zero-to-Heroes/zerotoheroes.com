@@ -1,0 +1,12 @@
+<div class="welcome-page panel panel-default">
+	<div ng-show="User.isLoggedIn()" class="panel-body">
+		<h3>Welcome back {{User.getName()}}!</h3>
+		<h4>While you were away...</h4>
+		<p>We haven't slept much, and have continued to add awesome features since the last time you visited</p>
+		<ul>
+			<li ng-repeat="feature in features">{{feature.description}}, on {{feature.dateAdded}}</comment>
+		</ul>
+	</div>
+
+	<h3 ng-hide="User.isLoggedIn()">Welcome to ZeroToHeroes!</h3>
+</div>

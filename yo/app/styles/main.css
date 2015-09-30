@@ -26,18 +26,16 @@ a[ng-click] {
 	border-bottom-left-radius: 20px;
 }
 
+.main-container {
+  margin-top: 60px;
+}
+
 .main-panel {
+  float: left;
   background-color: white;
   padding: 0;
   max-width: 450px;
   margin: auto;
-  margin-top: 90px;
-}
-
-.center-column {
-  /*max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;*/
   padding-bottom: 50px;
 }
 

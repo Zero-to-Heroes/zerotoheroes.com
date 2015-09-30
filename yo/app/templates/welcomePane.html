@@ -1,12 +1,21 @@
-<div class="welcome-page panel panel-default">
+<div class="welcome-page panel" ng-class="{'panel-default': User.isLoggedIn(), 'panel-primary': !User.isLoggedIn()}">
+	<div class="panel-heading" ng-show="User.isLoggedIn()">
+    	<h3 class="panel-title">Welcome back {{User.getName()}}!</h3>
+  	</div>
 	<div ng-show="User.isLoggedIn()" class="panel-body">
-		<h3>Welcome back {{User.getName()}}!</h3>
-		<h4>While you were away...</h4>
-		<p>We haven't slept much, and have continued to add awesome features since the last time you visited</p>
-		<ul>
-			<li ng-repeat="feature in features">{{feature.description}}, on {{feature.dateAdded}}</comment>
-		</ul>
+		<div ng-show="!!features.length">
+			<h4>While you were away...</h4>
+			<p>We haven't slept much, and have continued to add features since the last time you visited:</p>
+			<ul>
+				<li ng-repeat="feature in features">{{feature.date | date:yyyy-MM-dd}} - {{feature.description}}</comment>
+			</ul>
+		</div>
 	</div>
 
-	<h3 ng-hide="User.isLoggedIn()">Welcome to ZeroToHeroes!</h3>
+	<div class="panel-heading" ng-hide="User.isLoggedIn()">
+    	<h3 class="panel-title">Welcome to ZeroToHeroes!</h3>
+  	</div>
+  	<div ng-hide="User.isLoggedIn()" class="panel-body">
+		<p>You can browse existing videos using the navigation bar at the top. If you already have an account, you can <a ng-click="signIn()">sign in</a>, or <a ng-click="signUp()">create a new account</a> to fully benefit from the site's features</p>
+	</div>
 </div>

@@ -41,9 +41,11 @@
 	<body ng-app="app">
 		<div class="main" >
 			<div zth-navigation ng-hide="isLandingPage"></div>
-			<div class="main-container">
+			<div ng-class="{'main-container-nolanding': !isLandingPage}">
 				<div welcome-pane ng-hide="isLandingPage"></div>
-				<div ng-view class="main-panel"></div>
+				<div class="main-panel" ng-class="{'main-panel-nolanding': !isLandingPage}">
+					<div ng-view></div>
+				</div>
 			</div>
 		</div>
 

@@ -48,3 +48,9 @@
 .reputation-score {
 	padding-bottom: 4px;
 }
+
+.inline-icon {
+	font-size: 75%;
+	padding-left: 0.20em;
+	vertical-align: top;
+}

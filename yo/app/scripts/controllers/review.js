@@ -392,7 +392,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// (m)m:(s)s:(SSS) format
 		// then an optional + sign
 		// if present, needs at least either p, s or l
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/g;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/gm;
+		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?</gm;
 
 		// Parse new comments when they are added
 		/*$scope.$watchCollection('review.comments', function(newComments, oldValue) {
@@ -409,8 +410,74 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if (!comment) return '';
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
-			return result;
+			var linksToPrettify = result.match(timestampRegexLink);
+			if (!linksToPrettify) return '';
+
+			//$log.log('linksToPrettify', linksToPrettify);
+			var prettyResult = result;
+			for (var i = 0; i < linksToPrettify.length; i++) {
+				var linkToPrettify = linksToPrettify[i];
+				var pretty = $scope.prettifyLink(linkToPrettify.substring(1, linkToPrettify.length - 1));
+				prettyResult = prettyResult.replace(linkToPrettify, 'title="' + pretty.tooltip + '">' + pretty.link + '<');
+			}
+			return prettyResult;
 		};
+
+		var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
+		var millisecondsRegex = /:\d\d\d/;
+		var slowRegex = /\+s(\d?\.?\d?\d?)?/;
+		var playRegex = /\+p/;
+		var loopRegex = /L(\d?\.?\d?\d?)?/;
+		var externalRegex = /\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?/;
+		var externalIdRegex = /\([a-z0-9]+\)/;
+		$scope.prettifyLink = function(timestamp) {
+			//$log.log('Prettifying', timestamp);
+			// Always keep the timestamp part
+			var prettyLink = '';
+			var tooltip = 'Go to ' + timestamp.match(timestampOnlyRegex)[0] + ' on the video';
+
+			// Put the timestamp
+			var time = timestamp.match(timestampOnlyRegex)[0];
+			// Remove the milliseconds (if any)
+			time = time.replace(millisecondsRegex, '');
+			prettyLink = prettyLink + time;
+
+			// Add icon for slow
+			var slow = timestamp.match(slowRegex);
+			if (slow) {
+				prettyLink = prettyLink + '<span class="glyphicon glyphicon-dashboard inline-icon" title="Automatically plays video at timestamp and adds slow motion"></span>';
+			}
+
+			// Icon for play
+			var play = timestamp.match(playRegex);
+			if (play) {
+				prettyLink = prettyLink + '<span class="glyphicon glyphicon-play inline-icon" title="Automatically play video at timestamp"></span>';
+			}
+
+			// Icon for loop
+			var loop = timestamp.match(loopRegex);
+			if (loop) {
+				prettyLink = prettyLink + '<span class="glyphicon glyphicon-repeat inline-icon" title="Video will loop"></span>';
+			}
+
+			// Text for linked video
+			var externalVideo = timestamp.match(externalRegex);
+			if (externalVideo) {
+				var command = externalVideo[0].substring(1, externalVideo[0].length);
+				var externalTimestamp = command.match(timestampOnlyRegex)[0];
+				var externalId = command.match(externalIdRegex);
+				var externalIdText = externalId ? '. The linked video is /r/' + externalId[0].substring(1, externalId[0].length - 1) : '';
+				//$log.log('external video', command, externalTimestamp, externalId);
+				prettyLink = prettyLink + '<span class="glyphicon glyphicon-facetime-video inline-icon" title="Link to another video, starting at ' + externalTimestamp + externalIdText + '"></span>';
+			}
+
+			// Remove any residual '+' sign
+			prettyLink = prettyLink.replace(/\+/, '');
+
+
+
+			return {link: prettyLink, tooltip: tooltip};
+		}
 
 		$scope.goToTimestamp = function(timeString) {
 			//$log.log('going to timestamp');

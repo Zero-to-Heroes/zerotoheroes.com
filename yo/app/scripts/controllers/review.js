@@ -23,18 +23,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 					function(data) {
 						$scope.review = data;
+						//$log.log('retrieved review', $scope.review);
 						$scope.updateVideoInformation($scope.review);
 						var fileLocation = ENV.videoStorageUrl + data.key;
 						$scope.thumbnail = data.thumbnail ? ENV.videoStorageUrl + data.thumbnail : null;
 						$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
-						//$log.log('Init all linked vids', $scope.review.reviewVideoMap);
 						$scope.sources2 = []
 						angular.forEach($scope.review.reviewVideoMap, function(key, value) {
-							//$log.log('Init vid', value, key);
 							fileLocation = ENV.videoStorageUrl + key;
 							$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType});
 						})
-						//$log.log('second player sources', $scope.sources2);
 					}
 				);
 			}, 300);
@@ -42,7 +40,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
 					$scope.coaches = [];
 					for (var i = 0; i < data.length; i++) {
-						//$log.log(data[i]);
 						$scope.coaches.push(data[i]);
 					};
 				});
@@ -411,7 +408,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
 			var linksToPrettify = result.match(timestampRegexLink);
-			if (!linksToPrettify) return '';
+			if (!linksToPrettify) return comment;
 
 			//$log.log('linksToPrettify', linksToPrettify);
 			var prettyResult = result;

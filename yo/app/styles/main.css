@@ -26,19 +26,21 @@ a[ng-click] {
 	border-bottom-left-radius: 20px;
 }
 
+.main-container-nolanding {
+  margin-top: 60px;
+}
+
 .main-panel {
   background-color: white;
   padding: 0;
   max-width: 450px;
   margin: auto;
-  margin-top: 90px;
+  padding-bottom: 50px;
 }
 
-.center-column {
-  /*max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;*/
-  padding-bottom: 50px;
+.main-panel-nolanding {
+  float: left;
+
 }
 
 .upvote {
@@ -101,7 +103,13 @@ textarea.form-control {
     }
 }
 
-@media screen and (min-height: 1000px) {
+@media screen and (max-width: 1120px) {
+    .main-panel-nolanding {
+        float: none;
+    }
+}
+
+@media screen and (max-width: 1020px) {
     .main-panel {
         max-width: 900px;
     }

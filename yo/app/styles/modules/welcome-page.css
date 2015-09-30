@@ -1,0 +1,13 @@
+.welcome-page {
+	width: 450px;
+	float: left;
+	background-color: white;
+	margin: 0 40px 0 10px;
+	margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1120px) {
+    .welcome-page {
+        display: none;
+    }
+}

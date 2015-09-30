@@ -30,6 +30,7 @@
 		<link rel="stylesheet" href="styles/modules/header.css" />
 		<link rel="stylesheet" href="styles/modules/choose-pro-popup.css" />
 		<link rel="stylesheet" href="styles/modules/comment.css" />
+		<link rel="stylesheet" href="styles/modules/welcome-page.css" />
 		<!-- endbuild -->
 
 		<!-- Video.js -->
@@ -39,7 +40,13 @@
 	</head>
 	<body ng-app="app">
 		<div class="main" >
-			<div ng-view></div>
+			<div zth-navigation ng-hide="isLandingPage"></div>
+			<div ng-class="{'main-container-nolanding': !isLandingPage}">
+				<div welcome-pane ng-hide="isLandingPage"></div>
+				<div class="main-panel" ng-class="{'main-panel-nolanding': !isLandingPage}">
+					<div ng-view></div>
+				</div>
+			</div>
 		</div>
 
 
@@ -139,6 +146,7 @@
 		<script src="scripts/directives/compareTo.js"></script>	
 		<script src="scripts/directives/comment.js"></script>	
 		<script src="scripts/directives/autoGrow.js"></script>
+		<script src="scripts/directives/welcomePane.js"></script>
 		<script src="scripts/directives/video/toolbar.js"></script>
 		<script src="scripts/directives/video/videoFineTimeControl.js"></script>
 		<script src="scripts/directives/video/videoLoopButton.js"></script>

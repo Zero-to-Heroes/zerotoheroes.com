@@ -1,0 +1,30 @@
+<div class="welcome-page panel" ng-class="{'panel-default': User.isLoggedIn(), 'panel-primary': !User.isLoggedIn()}">
+	<div class="panel-heading" ng-show="User.isLoggedIn()">
+    	<h3 class="panel-title">Welcome back {{User.getName()}}!</h3>
+  	</div>
+	<div class="panel-heading" ng-hide="User.isLoggedIn()">
+    	<h3 class="panel-title">Welcome to Zero to Heroes!</h3>
+  	</div>
+
+	<div class="panel-body">
+		<div ng-show="!!features.length && User.isLoggedIn()" >
+			<h4>While you were away...</h4>
+			<p>We have continued to add features since the last time you visited. We hope you'll like them!</p>
+			<ul>
+				<li ng-repeat="feature in features">{{feature.date | date:yyyy-MM-dd}} - {{feature.description}}</li>
+			</ul>
+		</div>
+		<div ng-hide="User.isLoggedIn()">
+			<h4>Getting started</h4>
+			<p>If you're new to the site, we suggest you: 
+				<ul>
+					<li><a ng-click="signUp()">Create a new account</a> to enjoy the full experience</li>
+					<li>Have a look at existing videos, and why not even help someone by commenting on one of them</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<div class="panel-footer text-center">
+		Any comment or question? <a href="mailto:contact@zerotoheroes.com" target="_blank">Let us know!</a>
+	</div>
+</div>

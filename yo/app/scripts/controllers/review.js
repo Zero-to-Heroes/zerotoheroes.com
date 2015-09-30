@@ -445,7 +445,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Add icon for slow
 			var slow = timestamp.match(slowRegex);
 			if (slow) {
-				prettyLink = prettyLink + '<span class="glyphicon glyphicon-dashboard inline-icon" title="Automatically plays video at timestamp and adds slow motion"></span>';
+				prettyLink = prettyLink + '<span class="glyphicon glyphicon-play inline-icon"></span><span class="glyphicon glyphicon-pause inline-icon" style="margin-left: -7px" title="Automatically plays video at timestamp and adds slow motion"></span>';
 			}
 
 			// Icon for play

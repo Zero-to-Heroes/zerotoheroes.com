@@ -42,7 +42,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
 					$scope.coaches = [];
 					for (var i = 0; i < data.length; i++) {
-						$log.log(data[i]);
+						//$log.log(data[i]);
 						$scope.coaches.push(data[i]);
 					};
 				});
@@ -246,15 +246,15 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
   		$scope.onAccountCreationClosed = function() {
 
-			$log.log($scope.upvoting, $scope.downvoting);
+			//$log.log($scope.upvoting, $scope.downvoting);
 			if ($scope.upvoting) {
 				$scope.upvoteReview();
 			}
 			else if ($scope.downvoting) {
 				$scope.downvoteReview();
 			}
-			
-  			$log.log('onAccountCreationClosed review.js')
+
+  			//$log.log('onAccountCreationClosed review.js')
 			$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.hide);
 			$scope.signUpModal.$promise.then($scope.signUpModal.hide);
 		}
@@ -368,7 +368,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		$scope.selectCoach = function (coach, email) {
       		$scope.hideProModal();
-      		$log.log(email);
+      		//$log.log(email);
 		    Api.Payment.save({reviewId: $routeParams.reviewId, coachId: coach.id, email: email}, function(data) {
       			$scope.selectedCoach = coach;
 			});
@@ -378,6 +378,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.showProModal = function() {
 			$scope.email = User.getEmail();
+			//$log.log('user email', $scope.email);
 			askProModel.$promise.then(askProModel.show);
 		}
 

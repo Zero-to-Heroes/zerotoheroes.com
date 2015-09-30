@@ -36,6 +36,7 @@ public class CoachRepository {
 		coaches.add(coach);
 
 		// Squash
+		coaches.add(buildAlex());
 
 		// LoL
 		coaches.add(buildLoLFakeCoach());
@@ -45,6 +46,24 @@ public class CoachRepository {
 		coaches.add(buildAndrew());
 
 		return coaches;
+	}
+
+	private static Coach buildAlex() {
+		return Coach
+				.builder()
+				.id("4")
+				.description(
+						"<p>Description à venir</p>")
+				.email("alex.mullex@yahoo.fr")
+				.languagesSpoken(Arrays.asList(new Language[] { French }))
+				.level("2A")
+				.name("Alex Muller")
+				.picture("")
+				.sport(Squash)
+				.tariff("Tarif à venir")
+				.tariffDescription(
+						"Modalité de la revue à définir directement avec lui")
+				.verified(true).build();
 	}
 
 	private static Coach buildAndrew() {

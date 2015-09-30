@@ -103,8 +103,9 @@ textarea.form-control {
     }
 }
 
-@media screen and (min-height: 1000px) {
-    .main-panel {
+@media screen and (max-width: 1020px) {
+    .main-panel-nolanding {
         max-width: 900px;
+        float: none;
     }
 }

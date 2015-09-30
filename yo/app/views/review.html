@@ -90,8 +90,8 @@
 				</div>
 			</div>
 			<div class="col-md-2">
-  				<span class="glyphicon glyphicon-thumbs-up pointer" ng-class="{'upvote':review.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview()" aria-hidden="true">{{review.reputation.nbVotes.Upvote}} </span> 
-  				<span class="glyphicon glyphicon-thumbs-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview()" aria-hidden="true">{{review.reputation.nbVotes.Downvote}} </span> 
+  				<span class="glyphicon glyphicon-thumbs-up pointer" ng-class="{'upvote':review.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview()" aria-hidden="true" title="Upvote the video (you should do this if you find the video interesting, if the submitter tool time to give indications to help reviewers, or if you just feel like it)">{{review.reputation.nbVotes.Upvote}} </span> 
+  				<span class="glyphicon glyphicon-thumbs-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview()" aria-hidden="true" title="Downvote the video (you should do this if you find the video shouldn't belong here, or if the submitter didn't make any effort to help the community provide relevant feedback)">{{review.reputation.nbVotes.Downvote}} </span> 
 			</div>
 		</div>
 	</form>

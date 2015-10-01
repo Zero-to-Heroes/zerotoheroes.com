@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amazonaws.util.StringUtils;
+import com.coach.news.News.Type;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/news")
@@ -27,7 +28,29 @@ public class NewsApiHandler {
 	public @ResponseBody ResponseEntity<List<News>> getLatestFeatures(
 			@RequestParam(value = "dateFrom", required = false) String dateFrom) {
 
-		log.debug("Retrieving all news from " + dateFrom);
+		log.debug("Retrieving all latest features from " + dateFrom);
+		News.Type type = News.Type.Feature;
+
+		List<News> news = getNews(dateFrom, type);
+		log.debug("Retrieved news " + news);
+		// log.debug("Giving full list of coaches " + coaches);
+		return new ResponseEntity<List<News>>(news, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/bugfixes", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<List<News>> getLatestBugFixes(
+			@RequestParam(value = "dateFrom", required = false) String dateFrom) {
+
+		log.debug("Retrieving all latest bugfixes from " + dateFrom);
+		News.Type type = News.Type.Bug;
+
+		List<News> news = getNews(dateFrom, type);
+		log.debug("Retrieved bugs " + news);
+		// log.debug("Giving full list of coaches " + coaches);
+		return new ResponseEntity<List<News>>(news, HttpStatus.OK);
+	}
+
+	private List<News> getNews(String dateFrom, Type type) {
 		Date date;
 		if (StringUtils.isNullOrEmpty(dateFrom)) {
 			log.debug("Input date is empty, fallbacking to default date");
@@ -38,10 +61,6 @@ public class NewsApiHandler {
 		else {
 			date = new Date(Long.parseLong(dateFrom));
 		}
-
-		List<News> news = NewsRepository.getNewsAfter(date);
-		log.debug("Retrieved news " + news);
-		// log.debug("Giving full list of coaches " + coaches);
-		return new ResponseEntity<List<News>>(news, HttpStatus.OK);
+		return NewsRepository.getNewsAfter(date, type);
 	}
 }

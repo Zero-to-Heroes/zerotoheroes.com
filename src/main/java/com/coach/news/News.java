@@ -11,6 +11,11 @@ import lombok.ToString;
 @ToString
 public class News {
 
+	public enum Type {
+		Feature, Bug
+	}
+
 	private final Date date;
 	private final String description;
+	private final Type type;
 }

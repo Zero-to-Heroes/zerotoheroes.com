@@ -16,7 +16,8 @@ services.factory('Api', ['$resource', 'ENV',
       		Users: $resource(ENV.apiEndpoint + url + 'users/:identifier', {identifier: '@identifier'}),
 			Login: $resource(ENV.apiEndpoint + url + 'login', {}),
 			Reputation: $resource(ENV.apiEndpoint + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'}),
-			Features: $resource(ENV.apiEndpoint + url + 'news/features')
+			Features: $resource(ENV.apiEndpoint + url + 'news/features'),
+			BugFixes: $resource(ENV.apiEndpoint + url + 'news/bugfixes')
 		};
 	}
 ]);

@@ -76,6 +76,10 @@ a[ng-click] {
   cursor: pointer;
 }
 
+.panel-no-border {
+  padding: 15px;
+}
+
 textarea.form-control {
   min-height: 100px;
  resize: none;

@@ -59,7 +59,10 @@ public class NewsApiHandler {
 			date = fetchDate.toDate();
 		}
 		else {
-			date = new Date(Long.parseLong(dateFrom));
+			DateTime dt = new DateTime(Long.parseLong(dateFrom));
+			// Display a bit more than strictly necessary
+			DateTime fetchDate = dt.minusDays(1);
+			date = fetchDate.toDate();
 		}
 		return NewsRepository.getNewsAfter(date, type);
 	}

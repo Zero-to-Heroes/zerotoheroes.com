@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', 
-	function($scope, $routeParams, Api, $location, User, ENV, $log) {
+angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', 
+	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope) {
 		$scope.videos = [];
 		$scope.tabs = []; 
 		$scope.tabs.activeTab = 0;
@@ -27,16 +27,13 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 					$scope.videos.push(data[i]);
 				};
 			});
-		}
+		};
 
-		/*$scope.goTo = function(reviewId) {
-			$location.path('/r/' + reviewId);
-		}*/
+		$rootScope.$on('user.logged.in', function() {
+			$scope.retrieveVideos($scope.tabs.activeTab);
+		});
 
 		$scope.formatDate = function(video) {
-			//console.log(video);
-			//console.log(video.creationDate);
-			//console.log(video.lastModifiedDate);
 			// Is the last update a creation or a modification?
 			var statusString = video.lastModifiedDate ? 'modified ' : 'asked ';
 			//console.log(statusString);
@@ -51,26 +48,34 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 		$scope.upvoteReview = function(video) {
 			Api.Reputation.save({reviewId: video.id, action: 'Upvote'},
-	  				function(data) {
-	  					video.reputation = data.reputation;
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  			);
+  				function(data) {
+  					video.reputation = data.reputation;
+  				}, 
+  				function(error) {
+  					// Error handling
+  					$log.error(error);
+  				}
+  			);
 		}
 
 		$scope.downvoteReview = function(video) {
 			Api.Reputation.save({reviewId: video.id, action: 'Downvote'},
-	  				function(data) {
-	  					video.reputation = data.reputation;
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  			);
+  				function(data) {
+  					video.reputation = data.reputation;
+  				}, 
+  				function(error) {
+  					// Error handling
+  					$log.error(error);
+  				}
+  			);
+		}
+
+		$scope.signUp = function() {
+			$rootScope.$broadcast('account.signup.show');
+		}
+
+		$scope.signIn = function() {
+			$rootScope.$broadcast('account.signin.show');
 		}
 	}
 ]);

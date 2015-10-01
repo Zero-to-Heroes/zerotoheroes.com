@@ -1,77 +1,14 @@
 <div bs-active-pane="tabs.activeTab " bs-tabs>
     <div title="All videos" name="false" bs-pane>
-    	<table class="table">
-			<tbody>
-				<tr ng-repeat="video in videos">
-					<td class="vert-align text-center">
-						<span class="glyphicon glyphicon-thumbs-up block" ng-class="{'upvote':video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Upvote}} </span> 
-		  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Downvote}} </span> 
-		  			</td>
-					<td class="vert-align text-center">
-						<span class="block">{{video.comments ? video.comments.length : '0'}}</span><span><small>comments</small></span>
-					</td>
-					<td class="thumbnails vert-align text-center">
-						<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
-					</td>
-					<td class="vert-align info-column">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-sm-12">
-									<a href="#/r/{{video.id}}"><h3>{{video.title}}</h3></a>
-								</div>
-							</div>
-					  		<div class="row">
-								<div class="col-sm-4">
-									<span class="label label-primary">{{video.sport.value}}</span>
-								</div>
-								<div class="col-sm-8 text-right">
-									<span><small>{{formatDate(video)}}</small></span>
-									<span><small>by {{video.lastModifiedBy ? video.lastModifiedBy : video.author}}</small></span>
-								</div>
-							</div>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-    	</table>
+    	<div ng-include="'/templates/videoListingTable.html'"></div>
     </div>
     <div title="My videos" name="true" class="table-responsive" bs-pane>
-		<table class="table">
-			<tbody>
-				<tr ng-repeat="video in videos">
-					<td class="vert-align text-center">
-						<span class="glyphicon glyphicon-thumbs-up block" ng-class="{'upvote':video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Upvote}} </span> 
-		  				<span class="glyphicon glyphicon-thumbs-down" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true">{{video.reputation.nbVotes.Downvote}} </span> 
-		  			</td>
-					<td class="vert-align text-center">
-						<span class="block">{{video.comments ? video.comments.length : '0'}}</span><span><small>comments</small></span>
-					</td>
-					<td class="thumbnails vert-align text-center">
-						<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
-					</td>
-					<td class="vert-align info-column">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-sm-12">
-									<a href="#/r/{{video.id}}"><h3>{{video.title}}</h3></a>
-								</div>
-							</div>
-					  		<div class="row">
-								<div class="col-sm-4">
-									<span class="label label-primary">{{video.sport.value}}</span>
-								</div>
-								<div class="col-sm-8 text-right">
-									<span><small>{{formatDate(video)}}</small></span>
-									<span><small>by {{video.lastModifiedBy ? video.lastModifiedBy : video.author}}</small></span>
-								</div>
-							</div>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-    	</table>
-		<div ng-hide="videos">
+    	<div ng-show="User.isLoggedIn()" ng-include="'/templates/videoListingTable.html'"></div>
+		<div ng-hide="videos || !User.isLoggedIn()">
 			<span>It looks like there are no videos yet. You could start and <a href="#/upload">upload your own</a></span>
 		</div>
+    	<div ng-hide="User.isLoggedIn()" class="panel-no-border">
+			<p>It looks like you are not logged in. To see your videos, please <a ng-click="signIn()">sign in</a> or <a ng-click="signUp()">create a new account</a><p>
+    	</div>
     </div>
 </div>

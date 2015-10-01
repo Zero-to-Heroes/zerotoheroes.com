@@ -32,9 +32,11 @@ public class NewsRepository {
 
 		// Bug fixes
 		news.add(new News(new DateTime("2015-10-01").toDate(),
-				"Controls don't appear on fullscreen video", News.Type.Bug));
+				"All videos displayed on the \"My videos\" tab when you are not logged in", News.Type.Bug));
 		news.add(new News(new DateTime("2015-10-01").toDate(),
 				"Notification email contains the incorrect commentator name on nested comments", News.Type.Bug));
+		news.add(new News(new DateTime("2015-10-01").toDate(),
+				"Controls don't appear on fullscreen video", News.Type.Bug));
 
 		return news;
 	}

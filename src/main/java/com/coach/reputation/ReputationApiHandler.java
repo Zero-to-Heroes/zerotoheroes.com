@@ -61,6 +61,7 @@ public class ReputationApiHandler {
 		// doable
 		log.debug("Comment updated " + comment);
 		mongoTemplate.save(review);
+		comment.prepareForDisplay(user.getId());
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
 
@@ -82,6 +83,7 @@ public class ReputationApiHandler {
 		// might be nice to update only the reputation, I think I read this is
 		// doable
 		mongoTemplate.save(review);
+		review.prepareForDisplay(user.getId());
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 }

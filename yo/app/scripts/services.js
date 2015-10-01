@@ -60,7 +60,7 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 		};
 
 		service.setAuthentication = function (username, responseHeaders, callback) {
-			$log.log('Setting authentication');
+			//$log.log('Setting authentication');
 			$window.localStorage.token = responseHeaders('x-auth-token');
 			$window.localStorage.name = username;
 			$analytics.setAlias(username);

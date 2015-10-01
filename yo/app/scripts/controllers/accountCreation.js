@@ -12,14 +12,20 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		}
 		$scope.init();
 
+		$scope.signUp = function() {
+			$rootScope.$broadcast('account.signup.show', {identifier: $scope.account.username});
+		}
+
+		$scope.signIn = function() {
+			$rootScope.$broadcast('account.signin.show', {identifier: $scope.account.username});
+		}
+
 		$scope.createAccount = function() {
 			$scope.$broadcast('show-errors-check-validity');
   			if ($scope.accountForm.$valid) {
-				$log.log('Creating account', $scope.account);
 				Api.Users.save({username: $scope.account.username, password: $scope.account.password, email: $scope.account.email}, 
 			        function(data) {
 			          	// Not necessarily the best way, but easier to separate registration from actual login
-			          	$log.log('Logging in', data);
 			            $scope.login();
 			        }, 
 			        function(error) {
@@ -32,13 +38,10 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		};
 
 		$scope.login = function() {
-			$log.log('Performing login with ', $scope.account);
 	  		AuthenticationService.login($scope.account.username, $scope.account.password, 
 				function(response, responseHeaders) {
-					$log.log('Received response and responseHeaders', response, responseHeaders);
 					AuthenticationService.setAuthentication(response.username, responseHeaders, 
 			  			function(authenticated) {
-							$log.log("Callback with authenticated = " + authenticated);
 							if (authenticated) {
 								$scope.retrieveUserInfo();
 							}
@@ -50,17 +53,14 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		  		function(error) {
 					// Error handling
 					$log.warn('Error after login: ', error);
-					$log.log("Authentication issue");
 	  				$scope.error = '<strong>We\'re sorry :(</strong> We couldn\'t find any account that matches your identifiers';
 		  		}
 	  		);
 		};
 
 		$scope.retrieveUserInfo = function() {
-			$log.log('Retrieving user info from ', $scope.account.username);
 			Api.Users.get( 
 				function(data) {
-					$log.log('Received response', data);
 					User.setName(data.username);
 					User.setEmail(data.email);
 					User.setLastLoginDate(data.lastLoginDate);
@@ -74,18 +74,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		}
 		
 		$scope.endAccountCreation = function() {
-			$log.log('Skipping account creation');
-			// TODO: hack, cf comment in upload.js
-
-			if ($scope.onUpload) {
-				$scope.backToUpload();
-			}
-			else if ($scope.onAddComment) {
-				$scope.backToUploadComment();
-			}
-			else {
-				$scope.onAccountCreationClosed(); 
-			}
+			$rootScope.$broadcast('account.close');
 		};
 	}
 ]);

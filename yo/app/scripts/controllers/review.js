@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope',
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope) { 
 
 		$scope.API = null;
 		$scope.API2 = null;
@@ -57,61 +57,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.$apply();
 				}
 			});
-			// For FF ?
-			/*$scope.media.on('loadeddata', function() {
-				$log.log('loadeddata');
-			});
-			$scope.media.on('seeked', function() {
-				$log.log('seeked');
-			});
-			$scope.media.on('abort', function() {
-				$log.log('abort');
-			});
-			$scope.media.on('canplaythrough', function() {
-				$log.log('canplaythrough');
-			});
-			$scope.media.on('durationchange', function() {
-				$log.log('durationchange');
-			});
-			$scope.media.on('emptied', function() {
-				$log.log('emptied');
-			});
-			$scope.media.on('ended', function() {
-				$log.log('ended');
-			});
-			$scope.media.on('error', function() {
-				$log.log('error');
-			});
-			$scope.media.on('loadedmetadata', function() {
-				$log.log('loadedmetadata');
-			});
-			$scope.media.on('loadstart', function() {
-				$log.log('loadstart');
-			});
-			$scope.media.on('pause', function() {
-				$log.log('pause');
-			});
-			$scope.media.on('play', function() {
-				$log.log('play');
-			});
-			$scope.media.on('playing', function() {
-				$log.log('playing');
-			});
-			$scope.media.on('ratechange', function() {
-				$log.log('ratechange');
-			});
-			$scope.media.on('seeking', function() {
-				$log.log('seeking');
-			});
-			$scope.media.on('stalled', function() {
-				$log.log('stalled');
-			});
-			$scope.media.on('suspend', function() {
-				$log.log('suspend');
-			});
-			$scope.media.on('waiting', function() {
-				$log.log('waiting');
-			});*/
 		}
 
 		$scope.playerControls = {
@@ -124,7 +69,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			firstPlayerClass: '',
 			secondPlayerClass: '',
 			play: function() {
-				//$log.log('request playing');
 				$scope.API.play();
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.play();
@@ -181,6 +125,24 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		//===============
+		// Account management hooks
+		//===============
+		$rootScope.$on('account.close', function() {
+			if ($scope.onAddComment) {
+				$scope.onAddComment = false;
+				$scope.addComment();
+			}
+			else if ($scope.upvoting) {
+				$scope.upvoting = false;
+				$scope.upvoteReview();
+			}
+			else if ($scope.downvoting) {
+				$scope.downvoting = false;
+				$scope.downvoteReview();
+			}
+		});
+
+		//===============
 		// Comments
 		//===============
 		$scope.addComment = function() {
@@ -188,8 +150,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if ($scope.commentForm.$valid) {
 				if (!User.isLoggedIn()) {
   					$scope.onAddComment = true;
-  					$scope.modalConfig = {identifier: $scope.newComment.author};
-  					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+  					$rootScope.$broadcast('account.signup.show', {identifier: $scope.newComment.author});
   				}
   				// Otherwise directly proceed to the upload
   				else {
@@ -203,58 +164,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
   			$scope.commentForm.$setPristine();
   			$scope.$broadcast('show-errors-reset');
 		};
-
-		$scope.suggestAccountCreationModal = $modal({
-			templateUrl: 'templates/suggestAccountCreation.html', 
-			show: false, 
-			animation: 'am-fade-and-scale', 
-			placement: 'center', 
-			scope: $scope, 
-			controller: 'AccountTemplate',
-			keyboard: false,
-		});
-
-		$scope.signUpModal = $modal({
-			templateUrl: 'templates/signIn.html', 
-			show: false, 
-			animation: 'am-fade-and-scale', 
-			placement: 'center', 
-			scope: $scope, 
-			controller: 'AccountTemplate',
-			keyboard: false,
-		});
-
-		$scope.signUp = function() {
-			$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
-		}
-
-		$scope.signIn = function() {
-			$scope.signUpModal.$promise.then($scope.signUpModal.show);
-		}
-
-		$scope.backToUploadComment = function() {
-  			$scope.onUploadComment = false;
-  			// We shouldn't be aware of popups created elsewhere, but for some reason they are global. 
-  			// No idea how to solve this (defined in nameinput.js. Possibly because it is included in 
-  			// the header of the page)
-			$scope.onAccountCreationClosed();
-			$scope.uploadComment();
-  		}
-
-  		$scope.onAccountCreationClosed = function() {
-
-			//$log.log($scope.upvoting, $scope.downvoting);
-			if ($scope.upvoting) {
-				$scope.upvoteReview();
-			}
-			else if ($scope.downvoting) {
-				$scope.downvoteReview();
-			}
-
-  			//$log.log('onAccountCreationClosed review.js')
-			$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.hide);
-			$scope.signUpModal.$promise.then($scope.signUpModal.hide);
-		}
 
 		$scope.uploadComment = function() {
 			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
@@ -272,14 +181,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 	  		);
 		}
 
+		//===============
+		// Reputation
+		//===============
 		$scope.upvoteReview = function() {
 			if (!User.isLoggedIn()) {
 				$scope.upvoting = true;
-				$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+				$rootScope.$broadcast('account.signup.show');
 			}
 			// Otherwise directly proceed to the upload
 			else {
-				$scope.upvoting = false;
 				Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
 	  				function(data) {
 	  					$scope.review.reputation = data.reputation;
@@ -295,11 +206,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.downvoteReview = function() {
 			if (!User.isLoggedIn()) {
 				$scope.downvoting = true;
-				$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+				$rootScope.$broadcast('account.signup.show');
 			}
 			// Otherwise directly proceed to the upload
 			else {
-				$scope.downvoting = false;
 				Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
 	  				function(data) {
 	  					$scope.review.reputation = data.reputation;
@@ -391,17 +301,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// if present, needs at least either p, s or l
 		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/gm;
 		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?</gm;
-
-		// Parse new comments when they are added
-		/*$scope.$watchCollection('review.comments', function(newComments, oldValue) {
-			if (newComments) {
-				angular.forEach(newComments, function(comment) {
-					if (!comment.processed) {
-						$scope.setCommentText(comment, comment.text);
-					}
-				})
-			}
-		});*/
 
 		$scope.parseText = function(comment) {
 			if (!comment) return '';

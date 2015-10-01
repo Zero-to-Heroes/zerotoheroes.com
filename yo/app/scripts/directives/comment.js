@@ -25,7 +25,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.indentationSize = 8;
 
 				$scope.$watch($scope.comment, function() {
-					//$log.log('comment changed', $scope.comment);
 					$scope.setCommentText($scope.comment, $scope.comment.text);
 				});
 
@@ -37,6 +36,9 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					$scope.API = $scope.$parent.API;
 				});
 
+				//===============
+				// Basic comment fonctions
+				//===============
 				$scope.formatDate = function(comment) {
 					return moment(comment.creationDate).fromNow();
 				}
@@ -73,6 +75,10 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					comment.processed = true;
 				}
 
+
+				//===============
+				// Replying to comments
+				//===============
 				$scope.startReply = function() {
 					$scope.reply.replying = true;
 				}
@@ -84,7 +90,12 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.postReply = function() {
 					$scope.$broadcast('show-errors-check-validity');
 					if ($scope.replyForm.$valid) {
-						Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply, 
+						if (!User.isLoggedIn()) {
+							$scope.onAddReply = true;
+							$rootScope.$broadcast('account.signup.show', {identifier: $scope.reply.author});
+						}
+						else {
+							Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply, 
 				  				function(data) {
 				  					$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
 				  					$scope.reply = {};
@@ -95,73 +106,23 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				  					$scope.reply = {};
 				  				}
 				  			);
+						}
 					}
 				}
 
-				$scope.findComment = function(comments, commentId) {
-					if (!comments || comments.length == 0) return null;
-					for (var i = 0; i < comments.length; i++) {
-						var comment = comments[i];
-						if (comment.id == commentId) return comment;
-						var found = $scope.findComment(comment.comments, commentId);
-						if (found) return found;
-					}
-					return null;
-				}
-
-				$scope.suggestAccountCreationModal = $modal({
-					templateUrl: 'templates/suggestAccountCreation.html', 
-					show: false, 
-					animation: 'am-fade-and-scale', 
-					placement: 'center', 
-					scope: $scope, 
-					controller: 'AccountTemplate',
-					keyboard: false,
-				});
-
-				$scope.signUpModal = $modal({
-					templateUrl: 'templates/signIn.html', 
-					show: false, 
-					animation: 'am-fade-and-scale', 
-					placement: 'center', 
-					scope: $scope, 
-					controller: 'AccountTemplate',
-					keyboard: false,
-				});
-
-				$scope.signUp = function() {
-					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
-				}
-
-				$scope.signIn = function() {
-					$scope.signUpModal.$promise.then($scope.signUpModal.show);
-				}
-
-				$scope.onAccountCreationClosed = function() {
-					$log.log('Closing account creation in comment.js');
-					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.hide);
-					$scope.signUpModal.$promise.then($scope.signUpModal.hide);
-
-					if ($scope.upvotingComment) {
-						$scope.upvoteComment($scope.upvotingComment);
-					}
-					else if ($scope.downvotingComment) {
-						$scope.downvoteComment($scope.downvotingComment);
-					}
-				}
-
+				//===============
+				// Reputation
+				//===============
 				$scope.upvoteComment = function(comment) {
 					if (!User.isLoggedIn()) {
 						$scope.upvotingComment = comment;
-	  					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+	  					$rootScope.$broadcast('account.signup.show');
 	  				}
 	  				// Otherwise directly proceed to the upload
 	  				else {
 						Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
 			  				function(data) {
-			  					$log.log(data);
 			  					comment.reputation = data.reputation;
-			  					$scope.upvotingComment = null;
 			  				}, 
 			  				function(error) {
 			  					// Error handling
@@ -175,14 +136,13 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.downvoteComment = function(comment) {
 					if (!User.isLoggedIn()) {
 						$scope.downvotingComment = comment;
-	  					$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.show);
+	  					$rootScope.$broadcast('account.signup.show');
 	  				}
 	  				// Otherwise directly proceed to the upload
 	  				else {
 						Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Downvote'},
 			  				function(data) {
 			  					comment.reputation = data.reputation;
-			  					$scope.downvotingComment = null;
 			  				}, 
 			  				function(error) {
 			  					// Error handling
@@ -191,6 +151,38 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 			  				}
 			  			);
 					}
+				}
+
+				//===============
+				// Account management hooks
+				//===============
+				$rootScope.$on('account.close', function() {
+					if ($scope.onAddReply) {
+						$scope.onAddReply = false;
+						$scope.postReply();
+					}
+					else if ($scope.upvotingComment) {
+						$scope.upvoteComment($scope.upvotingComment);
+	  					$scope.upvotingComment = null;
+					}
+					else if ($scope.downvotingComment) {
+						$scope.downvoteComment($scope.downvotingComment);
+						$scope.downvotingComment = null;
+					}
+				});
+
+				//===============
+				// Utility
+				//===============
+				$scope.findComment = function(comments, commentId) {
+					if (!comments || comments.length == 0) return null;
+					for (var i = 0; i < comments.length; i++) {
+						var comment = comments[i];
+						if (comment.id == commentId) return comment;
+						var found = $scope.findComment(comment.comments, commentId);
+						if (found) return found;
+					}
+					return null;
 				}
 
 				var entityMap = {

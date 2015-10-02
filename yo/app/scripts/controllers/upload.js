@@ -21,6 +21,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			theme: "bower_components/videogular-themes-default/videogular.css"
 		};
 
+		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone'];
+
   		//===============
 		// Init player
 		//===============
@@ -37,6 +39,13 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$scope.API = API;
         	//uploader.clearQueue();
         	$scope.sources = null;
+
+        	angular.forEach($scope.possibleSports, function(value) {
+        		if (value.toLowerCase() == $routeParams.sport) {
+        			$scope.review.sport = value;
+        		}
+        	})
+        	$log.log('current sport', $routeParams.sport);
 		};
 
 		$scope.updateSourceWithFile = function(fileObj) {

@@ -36,7 +36,18 @@ app.config(['$routeProvider',
       }).
       when('/upload', {
         templateUrl: 'views/upload.html',
-        controller: 'UploadDetailsCtrl'
+        controller: 'UploadDetailsCtrl',
+        upload: true
+      }).
+      when('/s/upload', {
+        templateUrl: 'views/upload.html',
+        controller: 'UploadDetailsCtrl',
+        upload: true
+      }).
+      when('/s/:sport/upload', {
+        templateUrl: 'views/upload.html',
+        controller: 'UploadDetailsCtrl',
+        upload: true
       }).
       when('/r/:reviewId', {
         templateUrl: 'views/review.html',

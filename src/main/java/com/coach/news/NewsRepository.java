@@ -33,6 +33,8 @@ public class NewsRepository {
 				"You can see the new features we've added since the last time you've visited", News.Type.Feature));
 
 		// Bug fixes
+		news.add(new News(new DateTime("2015-10-02").toDate(),
+				"Site is not responsive on mobile anymore", News.Type.Bug));
 		news.add(new News(
 				new DateTime("2015-10-02").toDate(),
 				"Using command buttons when editing the video description inserts the command in the comment box instead",

@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', 
-	function(User, $log, Api, RecursionHelper, $modal, $rootScope) {
+app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', 
+	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse) {
 
 		return {
 			restrict: 'E',
@@ -75,6 +75,9 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					comment.processed = true;
 				}
 
+				$scope.insertModel = function(model, newValue) {
+					$parse(model).assign($scope, newValue);
+				}
 
 				//===============
 				// Replying to comments

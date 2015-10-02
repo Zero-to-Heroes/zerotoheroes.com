@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -112,6 +112,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 	    		$timeout(function() {refreshMarkers() }, 100);
 	    	}
 	    }
+
+		$scope.insertModel = function(model, newValue) {
+			$parse(model).assign($scope, newValue);
+		}
 
   		//===============
 		// Upload core methods

@@ -16,7 +16,7 @@
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
 			</div>
 			<div ng-show="comment.editing">
-				<toolbar>
+				<toolbar player-api="API" insert-model="insertModel">
 					<textarea class="form-control" ng-model="comment.text" auto-grow toolbar-target></textarea>
 				</toolbar>
 				<div class="text-right">
@@ -37,7 +37,7 @@
 				</div>
 			</div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-				<toolbar class="form-group" show-errors="{ showSuccess: true }">
+				<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel">
 					<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" auto-grow toolbar-target></textarea>
 				</toolbar>
 			</div>

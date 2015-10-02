@@ -7,9 +7,18 @@ app.directive('toolbar', ['$log', '$parse',
 			restrict: 'E',
 			transclude: true,
 			templateUrl: 'templates/video/toolbar.html',
-			link: function (scope, element, attrs) {
-				scope.element = element;
-				scope.insertionElement = angular.element(element[0].querySelector("[toolbar-target]"));
+			scope: {
+				API: '=playerApi',
+				insertModel: '='
+			},
+			link: function ($scope, element, attrs) {
+				$scope.element = element;
+				//$log.log(attrs["target"]);
+				//scope.insertionElement = angular.element(element[0].querySelector("[" + attrs["target"] + "]"));
+				$log.log('element', element[0]);
+				$log.log('non-angular insertion', element[0].querySelector('[toolbar-target]'));
+				$scope.insertionElement = angular.element(element[0].querySelector('[toolbar-target]'));
+				$log.log('insertion', $scope.insertionElement);
 			},
 			controller: function($scope) {
 
@@ -37,11 +46,12 @@ app.directive('toolbar', ['$log', '$parse',
 					var model = domElement.getAttribute("ng-model");
 
 					if (domElement.selectionStart || domElement.selectionStart === 0) {
-						$log.log('element', $scope.element);
+						$log.log('element', domElement);
 					  	var startPos = domElement.selectionStart;
 					  	var endPos = domElement.selectionEnd;
 					  	var newValue = domElement.value.substring(0, startPos) + value + domElement.value.substring(endPos, domElement.value.length);
-					  	$parse(model).assign($scope, newValue);
+					  	$scope.insertModel(model, newValue);
+					  	//$parse(model).assign($scope, newValue);
 					  	domElement.value = newValue;
 					  	domElement.selectionStart = startPos + value.length;
 					  	domElement.selectionEnd = startPos + value.length;

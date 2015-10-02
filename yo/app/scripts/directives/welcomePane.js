@@ -17,6 +17,9 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', fun
 				Api.BugFixes.query({dateFrom: User.getLastLoginDate()}, function(data) {
 					$scope.bugfixes = data;
 				});
+				var currentDate = moment();
+				var newDate = moment().add(-1, 'days').unix() * 1000;
+				User.setLastLoginDate(newDate);
 			}
 			$scope.getLatestFeatures();
 

@@ -38,14 +38,12 @@
 		  document.createElement('video');document.createElement('audio');document.createElement('track');
 		</script>
 	</head>
-	<body ng-app="app">
-		<div class="main" >
-			<div zth-navigation ng-hide="isLandingPage"></div>
-			<div ng-class="{'main-container-nolanding': !isLandingPage}">
-				<div welcome-pane ng-hide="isLandingPage"></div>
-				<div class="main-panel panel panel-default" ng-class="{'main-panel-nolanding': !isLandingPage}">
-					<div ng-view></div>
-				</div>
+	<body ng-app="app" ng-controller="LayoutCtrl" background="{{background}}">
+		<div zth-navigation ng-hide="isLandingPage"></div>
+		<div ng-class="{'main-container-nolanding': !isLandingPage}">
+			<div welcome-pane ng-hide="isLandingPage"></div>
+			<div class="main-panel panel panel-default" ng-class="{'main-panel-nolanding': !isLandingPage}">
+				<div ng-view></div>
 			</div>
 		</div>
 
@@ -134,12 +132,14 @@
 		<script src="scripts/app.js"></script>
 		<script src="scripts/services.js"></script>
 		<script src="scripts/controllers/home.js"></script>
+		<script src="scripts/controllers/layout.js"></script>
 		<script src="scripts/controllers/upload.js"></script>
 		<script src="scripts/controllers/review.js"></script>
 		<script src="scripts/controllers/videoListing.js"></script>
 		<script src="scripts/controllers/accountCreation.js"></script>
 
 		<script src="scripts/directives/accountManagement.js"></script>	
+		<script src="scripts/directives/background.js"></script>	
 		<script src="scripts/directives/navigation.js"></script>		
 		<script src="scripts/directives/nameInput.js"></script>			
 		<script src="scripts/directives/onKeyEnter.js"></script>		

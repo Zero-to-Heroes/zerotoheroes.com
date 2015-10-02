@@ -12,7 +12,7 @@
 			<p>We have continued to add features since the last time you visited. We hope you'll like them!</p>
 			<ul>
 				<li ng-repeat="feature in features">{{feature.date | date:yyyy-MM-dd}} - <span ng-bind-html="feature.description"></span></li>
-				<li ng-show="!!bugfixes.length">And <a ng-click="showBugfixes = !showBugfixes">various bug fixes</a>
+				<li ng-show="bugfixes && bugfixes.length > 0">And <a ng-click="showBugfixes = !showBugfixes">various bug fixes <span class="caret"></span></a>
 					<ul ng-show="showBugfixes">
 						<li ng-repeat="bug in bugfixes">{{bug.date | date:yyyy-MM-dd}} - <span ng-bind-html="bug.description"></span></li>
 					</ul>

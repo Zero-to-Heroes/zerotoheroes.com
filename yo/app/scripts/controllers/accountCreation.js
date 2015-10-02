@@ -64,6 +64,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 					User.setName(data.username);
 					User.setEmail(data.email);
 					User.setLastLoginDate(data.lastLoginDate);
+					$log.log('lastlogindate', data.lastLoginDate);
 					$rootScope.$broadcast('user.logged.in');
 					$scope.endAccountCreation();
 				},

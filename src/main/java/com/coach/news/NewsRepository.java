@@ -27,8 +27,10 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(new DateTime("2015-10-02").toDate(),
+				"New custom background image per sport", News.Type.Feature));
 		news.add(new News(new DateTime("2015-10-01").toDate(),
-				"You can now see the new features we've added since the last time you've visited", News.Type.Feature));
+				"You can see the new features we've added since the last time you've visited", News.Type.Feature));
 
 		// Bug fixes
 		news.add(new News(new DateTime("2015-10-01").toDate(),

@@ -42,6 +42,10 @@ app.config(['$routeProvider',
         templateUrl: 'views/review.html',
         controller: 'ReviewCtrl'
       }).
+      when('/r/:sport/:reviewId', {
+        templateUrl: 'views/review.html',
+        controller: 'ReviewCtrl'
+      }).
       when('/reviews', {
         templateUrl: 'views/videoListing.html',
         controller: 'VideoListingCtrl'

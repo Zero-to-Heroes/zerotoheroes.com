@@ -34,6 +34,8 @@ public class NewsRepository {
 
 		// Bug fixes
 		news.add(new News(new DateTime("2015-10-02").toDate(),
+				"Comment panel can disappear when scrolling on videos without comments", News.Type.Bug));
+		news.add(new News(new DateTime("2015-10-02").toDate(),
 				"Site is not responsive on mobile anymore", News.Type.Bug));
 		news.add(new News(
 				new DateTime("2015-10-02").toDate(),

@@ -2,7 +2,7 @@
   float: right;
 }
 
-scrollable #padder {
+#padder {
 	height: 100px;
 	width: 100%;
 }

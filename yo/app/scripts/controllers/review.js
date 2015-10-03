@@ -48,7 +48,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.onSecondPlayerReady = function($API) {
 			$scope.API2 = $API;
-			//$scope.API2.setVolume(0);
+			$scope.API2.setVolume(0);
 			$scope.media = $scope.API2.mediaElement;
 			$scope.media.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {
@@ -68,6 +68,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			playbackRate: 1,
 			firstPlayerClass: '',
 			secondPlayerClass: '',
+			previousVolume: 100,
 			play: function() {
 				$scope.API.play();
 				if ($scope.playerControls.mode == 2) {
@@ -99,6 +100,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			setPlayback: function(rate) {
 				$scope.playerControls.playbackRate = rate;
 				$scope.API.setPlayback(rate);
+				if ($scope.API.volume > 0) $scope.playerControls.previousVolume = $scope.API.volume;
+
+				if (rate == 1) $scope.API.setVolume($scope.playerControls.previousVolume);
+				else $scope.API.setVolume(0);
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.setPlayback(rate);
 				}

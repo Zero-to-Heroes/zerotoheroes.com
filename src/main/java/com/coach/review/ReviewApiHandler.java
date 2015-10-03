@@ -349,4 +349,40 @@ public class ReviewApiHandler {
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
+
+	@RequestMapping(value = "/{reviewId}/{commentId}/validate", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Comment> toggleHelpful(@PathVariable("reviewId") final String reviewId,
+			@PathVariable("commentId") final String commentId) throws IOException {
+
+		Review review = reviewRepo.findById(reviewId);
+		Comment comment = review.getComment(Integer.parseInt(commentId));
+
+		// Security
+		String currentUser =
+				SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+
+		// No anonymous access
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Comment>(
+				(Comment) null, HttpStatus.UNAUTHORIZED); }
+
+		log.debug("Validating that the logged in user is the review author");
+		User user = userRepo.findByUsername(currentUser);
+		if (!user.getId().equals(review.getAuthorId())) { return new ResponseEntity<Comment>((Comment) null,
+				HttpStatus.UNAUTHORIZED); }
+
+		comment.setHelpful(!comment.isHelpful());
+
+		// Update the reputation only if the review author and comment author
+		// are different to avoid self-boosting
+		if (!StringUtils.isNullOrEmpty(comment.getAuthorId()) && !comment.getAuthorId().equals(review.getAuthorId())) {
+			ReputationAction action = comment.isHelpful() ? ReputationAction.Helpful : ReputationAction.LostHelpful;
+			reputationUpdater.updateReputation(action, comment.getAuthorId());
+		}
+
+		mongoTemplate.save(review);
+
+		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
+	}
 }

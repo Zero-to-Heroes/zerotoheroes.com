@@ -27,6 +27,8 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(new DateTime("2015-10-03").toDate(),
+				"The author of a review can indicate that a specific comment has helped them", News.Type.Feature));
 		news.add(new News(new DateTime("2015-10-02").toDate(),
 				"New custom background image per sport", News.Type.Feature));
 		news.add(new News(new DateTime("2015-10-01").toDate(),

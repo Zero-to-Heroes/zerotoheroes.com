@@ -11,6 +11,10 @@
 
 			<span ng-show="comment.id && User.getName() == comment.author && !comment.editing"> - </span>
 			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author && !comment.editing">Edit</a>
+			
+			<span ng-show="User.getName() == review.author"> - </span>
+			<a ng-click="toggleHelpful(comment)" class="validated" ng-show="comment.helpful"><span class="glyphicon glyphicon-ok"></span> Helped {{review.author}} </a>
+			<a ng-click="toggleHelpful(comment)" class="link-minor" ng-show="!comment.helpful && User.getName() == review.author"><span class="glyphicon glyphicon-ok"></span> Mark as helpful to me</a>
 		</div>
 		<div class="comment-body">
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">

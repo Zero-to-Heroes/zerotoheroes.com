@@ -21,7 +21,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			theme: "bower_components/videogular-themes-default/videogular.css"
 		};
 
-		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone'];
+		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone', 'Meta'];
 
   		//===============
 		// Init player
@@ -45,7 +45,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
         			$scope.review.sport = value;
         		}
         	})
-        	$log.log('current sport', $routeParams.sport);
 		};
 
 		$scope.updateSourceWithFile = function(fileObj) {
@@ -149,6 +148,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
   			}
   		}
 
+  		$scope.previousError = false;
+
   		$scope.upload = function() {
 			//$log.log('Setting S3 config');
 			$analytics.eventTrack('upload.start', {
@@ -185,8 +186,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 			    // There Was An Error With Your S3 Config
 				if (err) {
-			        $log.error('An error during upload', err.message);
-			        return false;
+			        $log.error('An error during upload', err);
 			    }
 			    else {
 			        // Success!
@@ -206,27 +206,31 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		};
 
 		$scope.transcode = function() {
-			//$log.log('Creating review ', $scope.review);
+			$log.log('Creating review ', $scope.review);
 			Api.Reviews.save($scope.review, 
 				function(data) {
-					//$log.log('review created, transcoding ', data);
+					$log.log('review created, transcoding ', data);
 					$scope.review.id = data.id;
 					retrieveCompletionStatus();
 				},
 				function(error) {
 					$log.error('Received error', error);
-					retrieveCompletionStatus();
+			        if (!$scope.previousErrorpre) {
+			        	$scope.previousError = true;	
+			        	transcode();
+			        }
+					//retrieveCompletionStatus();
 				}
 			);
 		}
 
         var retrieveCompletionStatus = function() {
-			//$log.log('Retrieving completion status for review ', $scope.review);
+			$log.log('Retrieving completion status for review ', $scope.review);
 			try {
 				Api.Reviews.get({reviewId: $scope.review.id}, 
 					function(data) {
 
-						//$log.log('Received review: ', data);
+						$log.log('Received review: ', data);
 						$scope.review.transcodingDone = data.transcodingDone;
 						//$log.log('Review is now ', $scope.review);
 

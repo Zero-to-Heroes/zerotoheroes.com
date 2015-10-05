@@ -1,11 +1,11 @@
 <form name="uploadForm" class="upload-form main-panel">
 
 	<div class="form-container">
-		<span class="btn btn-default btn-file">
-			Choose your video <input type="file" name="file" class="upload-file-button" ng-required="true" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
+		<span class="btn btn-default btn-file" ng-hide="!useVideo">
+			Choose your video <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
 		</span>
 
-		<div class="videogular-container" ng-show="file">
+		<div class="videogular-container" ng-show="file && useVideo">
 			<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)" class="videogular">
 				<vg-media vg-src="sources"></vg-media>
 
@@ -22,7 +22,7 @@
 			</videogular>
 		</div>
 
-		<div class="editing-tools" ng-show="file">
+		<div class="editing-tools" ng-show="file && useVideo">
 			<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0"></div>
 			<div class="buttons" ng-show="dataLoaded">
 				<span class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</span>
@@ -36,8 +36,8 @@
 					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">Double the speed</a> of the video to use up to 10 minutes of video. This is for now experimental and will only work if your video has less than 30 images per seconds (which is the case for most camera and phone videos, and the default for many video recording softwares)</li>
 				</ul>
 			</div>
+			<hr>
 		</div>
-		<hr>
 		<div class="video-information panel-no-border">
 			<h1>Video information</h1>
 
@@ -52,14 +52,15 @@
 		  		<div class="row">
 					<div class="col-sm-4">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
-						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true">
-								<option value="">Choose your sport...</option>
-								<option value="Squash">Squash</option>
-								<option value="Badminton">Badminton</option>
-								<option value="LeagueOfLegends">League of Legends</option>
-								<option value="HeroesOfTheStorm">Heroes of the Storm</option>
-								<option value="HearthStone">HearthStone</option>
-								<option value="Other">Other</option>
+						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo">
+								<option value="" ng-hide="!useVideo">Choose your sport...</option>
+								<option value="Squash" ng-hide="!useVideo">Squash</option>
+								<option value="Badminton" ng-hide="!useVideo">Badminton</option>
+								<option value="LeagueOfLegends" ng-hide="!useVideo">League of Legends</option>
+								<option value="HeroesOfTheStorm" ng-hide="!useVideo">Heroes of the Storm</option>
+								<option value="HearthStone" ng-hide="!useVideo">HearthStone</option>
+								<option value="Meta" ng-show="!useVideo">Meta</option>
+								<option value="Other" ng-hide="!useVideo">Other</option>
 							</select>
 						</div>
 					</div>

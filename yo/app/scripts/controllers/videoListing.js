@@ -12,6 +12,8 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			$scope.retrieveVideos(newValue);
 		})
 
+		$log.log('using videos?', $scope.useVideo);
+
 		$scope.retrieveVideos = function(shouldGetOnlyMine) {
 			var params = {};
 			

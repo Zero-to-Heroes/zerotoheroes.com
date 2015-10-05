@@ -20,9 +20,15 @@
     	<div class="collapse navbar-collapse" id="links">
       		<ul class="nav navbar-nav upload-link">
         		<li>
-        			<a href="/s{{sport ? '/' + sport : ''}}/upload">Submit a video <span class="sr-only">(current)</span></a>
+        			<a href="/s{{sport ? '/' + sport : ''}}/upload">{{useVideo ? 'Submit a video' : 'Post feedback' }} <span class="sr-only">(current)</span></a>
         		</li>
           	</ul>
+          	<!--
+      		<ul class="nav navbar-nav meta">
+            	<li role="separator" class="divider-vertical"></li>
+        		<li ng-class="{active: sport == 'meta' && !upload}"><a href="/s/meta">Locker Room</a></li>
+    		</ul>
+    		-->
       		<ul class="nav navbar-nav expand-sports">
             	<li role="separator" class="divider-vertical"></li>
         		<li ng-class="{active: (!sport && retrieveVideos && !upload)}"><a href="/reviews">All sports</a></li>

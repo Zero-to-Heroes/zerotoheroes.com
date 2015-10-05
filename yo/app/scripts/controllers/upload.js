@@ -240,7 +240,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				        	$scope.uploadInProgress = false;
 				        	//$log.log("upload finished!");
 				        	$timeout(function() {
-				        		$location.path('/r/' + data.sport + '/' + data.id);
+				        		$location.path('/r/' + data.sport.key.toLowerCase() + '/' + data.id);
 				        	}, 2000);
 				        }
 					},

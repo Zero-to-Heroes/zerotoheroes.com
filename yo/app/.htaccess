@@ -211,8 +211,7 @@ AddDefaultCharset utf-8
 <IfModule mod_rewrite.c>
     Options +FollowSymlinks
   # Options +SymLinksIfOwnerMatch
-    RewriteEngine On
-  # RewriteBase /
+  RewriteEngine On  
 </IfModule>
 
 # ------------------------------------------------------------------------------

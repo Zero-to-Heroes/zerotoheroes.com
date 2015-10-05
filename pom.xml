@@ -106,6 +106,16 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.ocpsoft.rewrite</groupId>
+			<artifactId>rewrite-servlet</artifactId>
+			<version>2.0.12.Final</version> <!-- or latest version -->
+		</dependency>
+		<dependency>
+			<groupId>org.tuckey</groupId>
+			<artifactId>urlrewritefilter</artifactId>
+			<version>4.0.3</version>
+		</dependency>
 
 		<!-- Testing -->
 		<dependency>
@@ -124,11 +134,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
-		<!--  dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<version>4.0.0.RC1</version>
-		</dependency>-->
+		<!-- dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-test</artifactId> <version>4.0.0.RC1</version> 
+			</dependency> -->
 	</dependencies>
 
 	<build>

@@ -9,3 +9,7 @@
 th {
     text-align: center;
 }
+
+.table-comfy tr {
+	height: 110px;
+}

@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
@@ -13,8 +14,16 @@ public class AllResources extends WebMvcConfigurerAdapter {
 	// http://stackoverflow.com/a/23938850/548701
 	@Override
 	public void configurePathMatch(PathMatchConfigurer matcher) {
-		log.debug("Init configuration");
 		matcher.setUseRegisteredSuffixPatternMatch(true);
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry
+				.addResourceHandler("/fonts/**", "/images/**", "/scripts/**", "/styles/**", "/templates/**",
+						"/views/**")
+				.addResourceLocations("/fonts/", "/images/", "/scripts/", "/styles/", "/templates/", "/views/")
+				.setCachePeriod(31556926);
 	}
 
 }

@@ -38,12 +38,12 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 				.anonymous()
 				.and()
 				.servletApi()
-				// .and()
-				// .headers()
+				.and()
+				.headers()
 				// http://docs.spring.io/spring-security/site/docs/current/reference/html/headers.html#headers-cache-control
 				// Could be useful to add selective cache control for only
 				// static resources
-				// .cacheControl()
+				.cacheControl()
 				.and()
 				.authorizeRequests()
 

@@ -218,7 +218,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 					$log.error('Received error', error);
 					if ($scope.retry) {
 						$scope.retry = false;
-						transcode();
+						$scope.transcode();
 					}
 					//retrieveCompletionStatus();
 				}

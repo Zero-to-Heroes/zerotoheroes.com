@@ -18,7 +18,8 @@ public class RouteController {
 			"/upload",
 			"/r/{reviewId}",
 			"/r/{sport}/{reviewId}",
-			"/s/{sport}"
+			"/s/{sport}",
+			"/s/{sport}/upload"
 	})
 	public String index(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		log.debug("Forwarding to index.html");

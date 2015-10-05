@@ -205,17 +205,22 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			});
 		};
 
+		$scope.retry = true;
 		$scope.transcode = function() {
-			//$log.log('Creating review ', $scope.review);
+			$log.log('Creating review ', $scope.review);
 			Api.Reviews.save($scope.review, 
 				function(data) {
-					//$log.log('review created, transcoding ', data);
+					$log.log('review created, transcoding ', data);
 					$scope.review.id = data.id;
 					retrieveCompletionStatus();
 				},
 				function(error) {
 					$log.error('Received error', error);
-					retrieveCompletionStatus();
+					if ($scope.retry) {
+						$scope.retry = false;
+						transcode();
+					}
+					//retrieveCompletionStatus();
 				}
 			);
 		}

@@ -92,4 +92,20 @@ public class ReputationUpdater {
 			review.prepareForDisplay(userId);
 		}
 	}
+
+	/**
+	 * Update reputation when a review author marks a comment as "helpful"
+	 */
+	public void updateReputation(ReputationAction action, String authorId) {
+		if (ReputationAction.Helpful.equals(action)) {
+			User author = userRepo.findById(authorId);
+			author.modifyReputation(3);
+			mongoTemplate.save(author);
+		}
+		else if (ReputationAction.LostHelpful.equals(action)) {
+			User author = userRepo.findById(authorId);
+			author.modifyReputation(-3);
+			mongoTemplate.save(author);
+		}
+	}
 }

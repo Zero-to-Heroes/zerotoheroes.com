@@ -3,7 +3,7 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('zthNavigation', ['User', function(User) {
+app.directive('zthNavigation', ['User', '$log', function(User, $log) {
 	return {
 		restrict: 'A',
 		replace: true,
@@ -19,6 +19,8 @@ app.directive('zthNavigation', ['User', function(User) {
 				User.setName($scope.newName);
 				$scope.name = User.getName();
 			}
+
+			$log.log('scope', $scope);
 		}
 	};
 }]);

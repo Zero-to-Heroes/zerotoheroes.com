@@ -3,6 +3,6 @@ package com.coach.reputation;
 public enum ReputationAction {
 
 	Upvote,
-	Downvote;
+	Downvote, Helpful, LostHelpful;
 
 }

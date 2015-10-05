@@ -11,12 +11,16 @@
 
 			<span ng-show="comment.id && User.getName() == comment.author && !comment.editing"> - </span>
 			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && User.getName() == comment.author && !comment.editing">Edit</a>
+			
+			<span ng-show="User.getName() == review.author"> - </span>
+			<a ng-click="toggleHelpful(comment)" class="validated" ng-show="comment.helpful"><span class="glyphicon glyphicon-ok"></span> Helped {{review.author}} </a>
+			<a ng-click="toggleHelpful(comment)" class="link-minor" ng-show="!comment.helpful && User.getName() == review.author"><span class="glyphicon glyphicon-ok"></span> Mark as helpful to me</a>
 		</div>
 		<div class="comment-body">
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
 			</div>
 			<div ng-show="comment.editing">
-				<toolbar>
+				<toolbar player-api="API" insert-model="insertModel">
 					<textarea class="form-control" ng-model="comment.text" auto-grow toolbar-target></textarea>
 				</toolbar>
 				<div class="text-right">
@@ -37,7 +41,7 @@
 				</div>
 			</div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-				<toolbar class="form-group" show-errors="{ showSuccess: true }">
+				<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel">
 					<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" auto-grow toolbar-target></textarea>
 				</toolbar>
 			</div>

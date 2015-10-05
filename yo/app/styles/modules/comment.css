@@ -54,3 +54,7 @@
 	padding-left: 0.25em;
 	vertical-align: top;
 }
+
+.comment-block .validated {
+	color: #9B4C00;
+}

@@ -53,16 +53,58 @@ public class CoachRepository {
 				.builder()
 				.id("4")
 				.description(
-						"<p>Description à venir</p>")
+						"<p>J'ai commencé le squash a l'âge de 11 ans, à St Raphaël, ma mère travaillait dans le club, j'étais sur les courts tous les soirs après l'école ;) \r\n"
+								+
+								"<ul>\r\n"
+								+
+								" 	<li>Champion de France junior -14 ans\r\n"
+								+
+								" 	<li>3 fois champion de France par équipes junior avec la ligue PACA \r\n"
+								+
+								" 	<li>Médaille de Bronze au Championnat d'Europe junior par équipe à Malmö \r\n"
+								+
+								"	<li>Intégration au pôle France à Aix en Provence à l'âge de 18 ans, avec comme partenaire un certain Greg Gaultier :)\r\n"
+								+
+								"	<li>Première sélection en équipe de France senior à l'âge de 20 ans\r\n"
+								+
+								"	<li>Circuit PSA de 21 ans jusqu'à 28 ans (New York, Mexico, San Francisco, Kenya, Hong Kong, Égypte, Europe, ...)\r\n"
+								+
+								"	<li>Meilleur résultat PSA : demi finaliste Hong Kong et Kenya\r\n"
+								+
+								"	<li>Meilleur classement PSA : n° 80 \r\n"
+								+
+								"	<li>Meilleur classement français : n° 5 \r\n"
+								+
+								"</ul>\r\n"
+								+
+								"</p>\r\n"
+								+
+								"<p>\r\n"
+								+
+								"En parallèle, j'ai voulu passer, très tôt, mon diplôme de Brevet d'État afin de pouvoir enseigner le squash. J'ai eu la chance de pouvoir côtoyer de nombreux professeurs de squash durant mon parcours tels que Paul Sciberras, Neil Harvey, Richard Pons et bien d autres, ce qui m'a donné le goût de l'enseignement et l'envie de partager ma passion ...\r\n"
+								+
+								"<br>\r\n"
+								+
+								"J'ai eu l'occasion de travailler dans différents clubs en tant que prof : Aix en Provence, Toulouse, St Raphaël, Antibes, la Réunion... <br>\r\n"
+								+
+								"Aujourd'hui, j'enseigne dans différents clubs sur la Côte d'Azur (Nice , Antibes et Monaco).\r\n"
+								+
+								"</p>\r\n"
+								+
+								"<p>\r\n"
+								+
+								"Je suis à votre disposition, si besoin, afin de vous faire progresser dans votre jeu et vous faire profiter de mon expérience.\r\n"
+								+
+								"</p>")
 				.email("alex.mullex@yahoo.fr")
 				.languagesSpoken(Arrays.asList(new Language[] { French }))
 				.level("2A")
 				.name("Alex Muller")
-				.picture("")
+				.picture("alex_muller.jpg")
 				.sport(Squash)
-				.tariff("Tarif à venir")
+				.tariff("12€")
 				.tariffDescription(
-						"Modalité de la revue à définir directement avec lui")
+						"Au minimum deux conseils techniques et un conseil tactique")
 				.verified(true).build();
 	}
 

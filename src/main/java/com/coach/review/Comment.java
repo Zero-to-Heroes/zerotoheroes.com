@@ -20,6 +20,7 @@ public class Comment {
 	private String id;
 	private String author, authorId, text;
 	private Date creationDate;
+	private boolean helpful;
 	private List<Comment> comments;
 	private Reputation reputation;
 

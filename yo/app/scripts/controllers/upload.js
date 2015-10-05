@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -21,6 +21,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			theme: "bower_components/videogular-themes-default/videogular.css"
 		};
 
+		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone'];
+
   		//===============
 		// Init player
 		//===============
@@ -37,6 +39,13 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$scope.API = API;
         	//uploader.clearQueue();
         	$scope.sources = null;
+
+        	angular.forEach($scope.possibleSports, function(value) {
+        		if (value.toLowerCase() == $routeParams.sport) {
+        			$scope.review.sport = value;
+        		}
+        	})
+        	$log.log('current sport', $routeParams.sport);
 		};
 
 		$scope.updateSourceWithFile = function(fileObj) {
@@ -112,6 +121,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 	    		$timeout(function() {refreshMarkers() }, 100);
 	    	}
 	    }
+
+		$scope.insertModel = function(model, newValue) {
+			$parse(model).assign($scope, newValue);
+		}
 
   		//===============
 		// Upload core methods
@@ -227,7 +240,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				        	$scope.uploadInProgress = false;
 				        	//$log.log("upload finished!");
 				        	$timeout(function() {
-				        		$location.path('/r/' + data.id);
+				        		$location.path('/r/' + data.sport.key.toLowerCase() + '/' + data.id);
 				        	}, 2000);
 				        }
 					},

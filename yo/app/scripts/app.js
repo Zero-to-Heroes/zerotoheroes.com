@@ -29,6 +29,7 @@ app.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
+    // If you modify this, don't forget to modify the RouteController.java
     $routeProvider.
       when('/', {
         templateUrl: 'views/home-page.html',
@@ -37,7 +38,18 @@ app.config(['$routeProvider', '$locationProvider',
       }).
       when('/upload', {
         templateUrl: 'views/upload.html',
-        controller: 'UploadDetailsCtrl'
+        controller: 'UploadDetailsCtrl',
+        upload: true
+      }).
+      when('/s/upload', {
+        templateUrl: 'views/upload.html',
+        controller: 'UploadDetailsCtrl',
+        upload: true
+      }).
+      when('/s/:sport/upload', {
+        templateUrl: 'views/upload.html',
+        controller: 'UploadDetailsCtrl',
+        upload: true
       }).
       when('/r/:reviewId', {
         templateUrl: 'views/review.html',

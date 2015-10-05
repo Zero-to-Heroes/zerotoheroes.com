@@ -4,6 +4,8 @@
 	background-color: white;
 	margin: 0 40px 0 10px;
 	margin-bottom: 30px;
+	position: relative;
+	top: 10px;
 }
 
 @media screen and (max-width: 1120px) {

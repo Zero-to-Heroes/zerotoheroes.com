@@ -18,37 +18,37 @@
 
     	<!-- Collect the nav links, forms, and other content for toggling -->
     	<div class="collapse navbar-collapse" id="links">
-      		<ul class="nav navbar-nav">
-      			<!-- Supposes there is a function call upload defined -->
-        		<li ng-class="{active: upload}"><a href="/upload">Submit a video <span class="sr-only">(current)</span></a></li>
+      		<ul class="nav navbar-nav upload-link">
+        		<li>
+        			<a href="/s{{sport ? '/' + sport : ''}}/upload">Submit a video <span class="sr-only">(current)</span></a>
+        		</li>
           	</ul>
       		<ul class="nav navbar-nav expand-sports">
             	<li role="separator" class="divider-vertical"></li>
-        		<li ng-class="{active: (!sport && retrieveVideos)}"><a href="/reviews">All sports</a></li>
-            	<li ng-class="{active: sport == 'badminton'}"><a href="/s/badminton">Badminton</a></li>
-            	<li ng-class="{active: sport == 'hearthstone'}"><a href="/s/hearthstone">HearthStone</a></li>
-            	<li ng-class="{active: sport == 'heroesofthestorm'}"><a href="/s/heroesofthestorm">Heroes of the Storm</a></li>
-            	<li ng-class="{active: sport == 'leagueoflegends'}"><a href="/s/leagueoflegends">League of Legends</a></li>
-            	<li ng-class="{active: sport == 'squash'}"><a href="/s/squash">Squash</a></li>
-            	<li ng-class="{active: sport == 'other'}"><a href="/s/other">Other</a></li>
+        		<li ng-class="{active: (!sport && retrieveVideos && !upload)}"><a href="/reviews">All sports</a></li>
+            	<li ng-class="{active: sport == 'badminton' && !upload}"><a href="/s/badminton">Badminton</a></li>
+            	<li ng-class="{active: sport == 'hearthstone' && !upload}"><a href="/s/hearthstone">HearthStone</a></li>
+            	<li ng-class="{active: sport == 'heroesofthestorm' && !upload}"><a href="/s/heroesofthestorm">Heroes of the Storm</a></li>
+            	<li ng-class="{active: sport == 'leagueoflegends' && !upload}"><a href="/s/leagueoflegends">League of Legends</a></li>
+            	<li ng-class="{active: sport == 'squash' && !upload}"><a href="/s/squash">Squash</a></li>
+            	<li ng-class="{active: sport == 'other' && !upload}"><a href="/s/other">Other</a></li>
             	<li role="separator" class="divider-vertical"></li>
         	</ul>
         	<ul class="nav navbar-nav collapse-sports">
 			  	<li class="dropdown">
 		          	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Choose a sport <span class="caret"></span></a>
 		          	<ul class="dropdown-menu">
-			            <li ng-class="{active: (!sport && retrieveVideos)}"><a href="/reviews">All sports</a></li>
-		            	<li ng-class="{active: sport == 'badminton'}"><a href="/s/badminton">Badminton</a></li>
-		            	<li ng-class="{active: sport == 'hearthstone'}"><a href="/s/hearthstone">HearthStone</a></li>
-		            	<li ng-class="{active: sport == 'heroesofthestorm'}"><a href="/s/heroesofthestorm">Heroes of the Storm</a></li>
-		            	<li ng-class="{active: sport == 'leagueoflegends'}"><a href="/s/leagueoflegends">League of Legends</a></li>
-		            	<li ng-class="{active: sport == 'squash'}"><a href="/s/squash">Squash</a></li>
-		            	<li ng-class="{active: sport == 'other'}"><a href="/s/other">Other</a></li>
+			            <li ng-class="{active: (!sport && retrieveVideos && !upload)}"><a href="/reviews">All sports</a></li>
+		            	<li ng-class="{active: sport == 'badminton' && !upload}"><a href="/s/badminton">Badminton</a></li>
+		            	<li ng-class="{active: sport == 'hearthstone' && !upload}"><a href="/s/hearthstone">HearthStone</a></li>
+		            	<li ng-class="{active: sport == 'heroesofthestorm' && !upload}"><a href="/s/heroesofthestorm">Heroes of the Storm</a></li>
+		            	<li ng-class="{active: sport == 'leagueoflegends' && !upload}"><a href="/s/leagueoflegends">League of Legends</a></li>
+		            	<li ng-class="{active: sport == 'squash' && !upload}"><a href="/s/squash">Squash</a></li>
+		            	<li ng-class="{active: sport == 'other' && !upload}"><a href="/s/other">Other</a></li>
 		          	</ul>
 		        </li>
 			</ul>
-        	<ul zth-name-input show-logout="true" class="nav navbar-nav">
-      		</ul>
+        	<ul zth-name-input show-logout="true" class="nav navbar-nav"></ul>
       		<div account-management></div>
     	</div><!-- /.navbar-collapse -->
   	</div><!-- /.container-fluid -->

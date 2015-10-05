@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', 
-	function(User, $log, Api, RecursionHelper, $modal, $rootScope) {
+app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', 
+	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse) {
 
 		return {
 			restrict: 'E',
@@ -19,7 +19,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.User = User;
 				$scope.goToTimestamp = $scope.$parent.goToTimestamp;
 				$scope.parseText = $scope.$parent.parseText;
-				$scope.review = {id: $scope.$parent.review.id};
+				$scope.review = $scope.$parent.review;
 				$scope.API = $scope.$parent.API;
 				$scope.reply = {};
 				$scope.indentationSize = 8;
@@ -55,14 +55,14 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 
 				$scope.updateComment = function(comment) {
 					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
-			  				function(data) {
-			  					$scope.setCommentText(comment, data.text);
-			  				}, 
-			  				function(error) {
-			  					// Error handling
-			  					$log.error(error);
-			  				}
-			  			);
+		  				function(data) {
+		  					$scope.setCommentText(comment, data.text);
+		  				}, 
+		  				function(error) {
+		  					// Error handling
+		  					$log.error(error);
+		  				}
+		  			);
 				}
 
 				$scope.setCommentText = function(comment, text) {
@@ -75,6 +75,25 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					comment.processed = true;
 				}
 
+				$scope.insertModel = function(model, newValue) {
+					$parse(model).assign($scope, newValue);
+				}
+
+				//===============
+				// Other comment function
+				//===============
+				$scope.toggleHelpful = function(comment) {
+					Api.CommentValidation.save({reviewId: $scope.review.id, commentId: comment.id}, 
+		  				function(data) {
+		  					$log.log('response data', data);
+		  					comment.helpful = data.helpful;
+		  				}, 
+		  				function(error) {
+		  					// Error handling
+		  					$log.error(error);
+		  				}
+		  			);
+				}
 
 				//===============
 				// Replying to comments

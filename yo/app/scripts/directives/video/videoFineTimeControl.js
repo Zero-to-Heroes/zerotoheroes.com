@@ -13,7 +13,7 @@ app.directive('videoFineTimeControl', ['$log',
 	            	var scrollAmount = parseInt(e.wheelDelta ? -e.wheelDelta : e.originalEvent.detail * 40);
 	            	
 	            	// Move the player very slightly depending on the amount scrolled
-	            	scope.playerControls.moveTime(-scrollAmount / 4);
+	            	scope.playerControls.moveTime(scrollAmount / 4);
 
 	                e.stopPropagation();
 	                e.preventDefault();

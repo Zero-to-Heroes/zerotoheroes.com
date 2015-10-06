@@ -37,6 +37,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.onPlayerReady = function(API) {
         	//$scope.initializeReview();
 			$scope.API = API;
+			$scope.API.setVolume(1);
         	//uploader.clearQueue();
         	$scope.sources = null;
 
@@ -159,6 +160,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
   		$scope.previousError = false;
 
   		$scope.upload = function() {
+
 			//$log.log('Setting S3 config');
 			$analytics.eventTrack('upload.start', {
 		      	category: 'upload'
@@ -216,6 +218,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.retry = true;
 		$scope.transcode = function() {
 			$log.log('Creating review ', $scope.review);
+			$scope.normalizeTimestamps($scope.review);
 			Api.Reviews.save($scope.review, 
 				function(data) {
 					$log.log('review created, transcoding ', data);
@@ -323,6 +326,37 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				$scope.postText();
 			}
 		});
+
+  		//===============
+		// Timestamp manipulation
+		//===============
+		var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/gm;
+		$scope.normalizeTimestamps = function() {
+			if (!$scope.review.description) return;
+
+			var timestampsToChange = $scope.review.description.match(timestampOnlyRegex);
+			if (!timestampsToChange) return;
+
+			$log.log('normalizeTimestamps');
+			for (var i = 0; i < timestampsToChange.length; i++) {
+				var timestampToChange = timestampsToChange[i];
+				var newTimestamp = $scope.normalizeTimestamp(timestampToChange);
+				$scope.review.description = $scope.review.description.replace(timestampToChange, newTimestamp);
+			}
+		}
+
+		$scope.normalizeTimestamp = function(timestamp) {
+			var split = timestamp.split(':');
+			var msValue = 1000 * 60 * parseInt(split[0]) + 1000 * parseInt(split[1]);
+			if (split.length == 3) {
+				msValue += parseInt(split[2]);
+			}
+			// Now substract beginning of video
+			var newMsValue = msValue - $scope.review.beginning;
+			// And format it back 
+			var newStrValue = moment.duration(newMsValue, 'milliseconds').format('mm:ss:SSS', { trim: false });
+			return newStrValue;
+		}
 
   		//===============
 		// Utilities

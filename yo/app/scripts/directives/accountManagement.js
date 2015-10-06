@@ -27,6 +27,7 @@ app.directive('accountManagement', ['$log', '$modal', '$rootScope',
 			});
 
 			$rootScope.$on('account.close', function() {
+				$log.log('listening to account close');
 				$scope.suggestAccountCreationModal.$promise.then($scope.suggestAccountCreationModal.hide);
 				$scope.signUpModal.$promise.then($scope.signUpModal.hide);
 

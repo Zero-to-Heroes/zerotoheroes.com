@@ -109,8 +109,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.postReply = function() {
 					$scope.$broadcast('show-errors-check-validity');
 					if ($scope.replyForm.$valid) {
-						if (!User.isLoggedIn()) {
-							$scope.onAddReply = true;
+						if (!User.isLoggedIn() && !$scope.onAddReply) {
+							$scope.onAddReply = true; 
 							$rootScope.$broadcast('account.signup.show', {identifier: $scope.reply.author});
 						}
 						else {
@@ -177,8 +177,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				//===============
 				$rootScope.$on('account.close', function() {
 					if ($scope.onAddReply) {
-						$scope.onAddReply = false;
 						$scope.postReply();
+						$scope.onAddReply = false;
 					}
 					else if ($scope.upvotingComment) {
 						$scope.upvoteComment($scope.upvotingComment);

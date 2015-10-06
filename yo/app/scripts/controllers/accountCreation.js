@@ -75,6 +75,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		}
 		
 		$scope.endAccountCreation = function() {
+			$log.log('ending account creation');
 			$rootScope.$broadcast('account.close');
 		};
 	}

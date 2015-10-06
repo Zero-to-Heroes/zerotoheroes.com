@@ -39,7 +39,7 @@
 			<hr>
 		</div>
 		<div class="video-information panel-no-border">
-			<h1>Video information</h1>
+			<h1>{{useVideo ? 'Video information' : 'New post'}}</h1>
 
 			<div class="container-fluid">
 				<div class="row" ng-hide="User.isLoggedIn()">
@@ -50,7 +50,7 @@
 				  	</div>
 			  	</div>
 		  		<div class="row">
-					<div class="col-sm-4">
+					<div ng-class="{'col-sm-4': useVideo}" ng-show="useVideo">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
 						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo">
 								<option value="" ng-hide="!useVideo">Choose your sport...</option>
@@ -64,24 +64,25 @@
 							</select>
 						</div>
 					</div>
-					<div class="col-sm-8">
+					<div ng-class="{'col-sm-8': useVideo, 'col-sm-12': !useVideo}">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
-					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
+					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title {{useVideo ? 'of your video review' : ''}}" ng-required="true">
 					  	</div>
 				  	</div>
 			  	</div>
 		  		<div class="row">
 					<div class="col-sm-12">
 					  	<div class="form-group">
-							<toolbar player-api="API" insert-model="insertModel">
+							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo">
 					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.description" auto-grow toolbar-target></textarea>
 					    	</toolbar>
+					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.description" auto-grow ng-hide="useVideo"></textarea>
 					   </div>
 					</div>
 			  	</div>
 		  		<div class="row">
 					<div class="col-sm-2">
-			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="uploadInProgress"  analytics-on="click" analytics-category="upload" analytics-event="upload.request">Upload now</button>
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress"  analytics-on="click" analytics-category="upload" analytics-event="upload.request">{{useVideo ? 'Upload' : 'Post'}} now</button>
 		  			</div>
 					<div class="col-sm-6">
 					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>

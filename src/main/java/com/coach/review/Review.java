@@ -33,7 +33,7 @@ public class Review {
 	public enum Sport {
 		Badminton("Badminton", "Badminton"), Squash("Squash", "Squash"), LeagueOfLegends("LeagueOfLegends",
 				"League of Legends"), HearthStone("HearthStone", "HearthStone"), HeroesOfTheStorm(
-				"HeroesOfTheStorm", "Heroes of the Storm"), Other("Other", "Other");
+				"HeroesOfTheStorm", "Heroes of the Storm"), Meta("Meta", "Meta"), Other("Other", "Other");
 
 		@Getter
 		private String key, value;

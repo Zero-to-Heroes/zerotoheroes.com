@@ -1,4 +1,4 @@
-<div class="videogular-container keep-on-top multi-player">
+<div class="videogular-container keep-on-top multi-player" ng-show="review.key">
 	<videogular vg-player-ready="onPlayerReady($API)" vg-update-state="onVideoStateUpdate($state)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
 		<vg-media vg-src="sources" ng-class="playerControls.firstPlayerClass">
 		</vg-media>
@@ -53,6 +53,7 @@
 							<option value="LeagueOfLegends">League of Legends</option>
 							<option value="HeroesOfTheStorm">Heroes of the Storm</option>
 							<option value="HearthStone">HearthStone</option>
+							<option value="Meta">Meta</option>
 							<option value="Other">Other</option>
 						</select>
 					</div>
@@ -66,9 +67,10 @@
 			    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
 			  	</div>
 				<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
-				<toolbar ng-show="review.editing" player-api="API" insert-model="insertModel">
+				<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel">
 					<textarea class="form-control" ng-model="review.description" auto-grow toolbar-target></textarea>
 				</toolbar>
+				<textarea class="form-control" ng-model="review.description" ng-show="review.editing && !review.key" auto-grow></textarea>
 			</div>
 			<div ng-show="!!coaches.length" class="col-md-2 text-right">
 				<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
@@ -103,9 +105,10 @@
 					</div>
 				</div>
 				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-					<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel">
+					<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key">
 						<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" auto-grow toolbar-target></textarea>
 					</toolbar>
+					<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" auto-grow toolbar-target></textarea>
 					<div>
 						<div class="inline-block">
 							<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>

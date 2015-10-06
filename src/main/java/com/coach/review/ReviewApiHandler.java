@@ -139,10 +139,6 @@ public class ReviewApiHandler {
 			}
 		}
 
-		// Store the file on S3
-		// Create a review entry with the appropriate link to the S3 file
-		// final Review review = new ObjectMapper().readValue(strReview,
-		// Review.class);
 		log.debug("Review request creation: " + review);
 
 		// Create the entry on the database
@@ -154,18 +150,11 @@ public class ReviewApiHandler {
 		log.debug("Saved review with ID: " + review.getId());
 
 		// Start transcoding
-		log.debug("Transcoding video");
-		transcoder.transcode(review.getId());
+		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())) {
+			log.debug("Transcoding video");
+			transcoder.transcode(review.getId());
+		}
 
-		// fileStorage.setReviewId(review.getId());
-		// String key = fileStorage.storeFile(file, review.getId());
-		// log.debug("Stored file " + file.getName() + " as " + key);
-		// review.setTemporaryKey(key);
-		// mongoTemplate.save(review);
-		// log.debug("Saved again review with ID: " + review.getId());
-
-		// log.info("Request review creation: " + newReview);
-		// mongoTemplate.save(newReview);
 		log.debug("Transcoding started, returning with created review: " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

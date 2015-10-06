@@ -224,6 +224,46 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			);
 		}
 
+		$scope.initPostText = function() {
+			$scope.$broadcast('show-errors-check-validity');
+  			if ($scope.uploadForm.$valid) {
+  				// If user is not registered, offer them to create an account
+  				if (!User.isLoggedIn()) {
+  					$scope.onPostText = true;
+  					$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author});
+  				}
+  				// Otherwise directly proceed to the upload
+  				else {
+  					$scope.postText();
+  				}
+  			}
+  			else {
+				$analytics.eventTrack('upload.checkFailed', {
+			      	category: 'upload'
+			    });
+  			}
+  		}
+
+  		$scope.postText = function() {
+			$log.log('Posting simple text post', $scope.review);
+			$scope.review.temporaryKey = null;
+			Api.Reviews.save($scope.review, 
+				function(data) {
+					$log.log('Posted simple text post ', data);
+					$scope.sources = null;
+		        	$scope.uploadInProgress = false;
+		        	//$log.log("upload finished!");
+		        	$timeout(function() {
+		        		$location.path('/r/' + data.sport.key.toLowerCase() + '/' + data.id);
+		        	}, 2000);
+				},
+				function(error) {
+					$log.error('Received error when posting text', error);
+					//retrieveCompletionStatus();
+				}
+			);
+		}
+
         var retrieveCompletionStatus = function() {
 			$log.log('Retrieving completion status for review ', $scope.review);
 			try {
@@ -269,6 +309,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			if ($scope.onUpload) {
 				$scope.onUpload = false;
 				$scope.upload();
+			}
+			else if ($scope.onPostText) {
+				$scope.onPostText = false;
+				$scope.postText();
 			}
 		});
 

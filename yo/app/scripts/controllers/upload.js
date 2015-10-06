@@ -126,6 +126,14 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$parse(model).assign($scope, newValue);
 		}
 
+		$scope.playerControls = {
+			moveTime: function(amountInMilliseconds) {
+				var currentTime1 = $scope.API.currentTime;
+				var time1 = Math.min(Math.max(currentTime1 + amountInMilliseconds, 0), $scope.API.totalTime);
+				$scope.API.seekTime(time1 / 1000);
+			}
+		}
+
   		//===============
 		// Upload core methods
 		//===============

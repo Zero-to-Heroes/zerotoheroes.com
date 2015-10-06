@@ -11,8 +11,8 @@
 
 				<vg-controls>
 					<vg-play-pause-button></vg-play-pause-button>
-					<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
-					<vg-scrub-bar id="scrubBar">
+					<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
+					<vg-scrub-bar id="scrubBar"  video-fine-time-control>
 						<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 					</vg-scrub-bar>
 					<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>

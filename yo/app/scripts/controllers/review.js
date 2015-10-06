@@ -77,6 +77,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			secondPlayerClass: '',
 			previousVolume: 100,
 			play: function() {
+				$rootScope.$broadcast('activity.play', {reviewId: $scope.review.id});
 				$scope.API.play();
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.play();
@@ -140,17 +141,18 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// Account management hooks
 		//===============
 		$rootScope.$on('account.close', function() {
+			$log.log('on account close in review.js');
 			if ($scope.onAddComment) {
+				$scope.uploadComment();
 				$scope.onAddComment = false;
-				$scope.addComment();
 			}
 			else if ($scope.upvoting) {
-				$scope.upvoting = false;
 				$scope.upvoteReview();
+				$scope.upvoting = false;
 			}
 			else if ($scope.downvoting) {
-				$scope.downvoting = false;
 				$scope.downvoteReview();
+				$scope.downvoting = false;
 			}
 		});
 
@@ -197,7 +199,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// Reputation
 		//===============
 		$scope.upvoteReview = function() {
-			if (!User.isLoggedIn()) {
+			if (!User.isLoggedIn() && !scope.upvoting) {
 				$scope.upvoting = true;
 				$rootScope.$broadcast('account.signup.show');
 			}
@@ -216,7 +218,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.downvoteReview = function() {
-			if (!User.isLoggedIn()) {
+			if (!User.isLoggedIn() && !$scope.downvoting) {
 				$scope.downvoting = true;
 				$rootScope.$broadcast('account.signup.show');
 			}

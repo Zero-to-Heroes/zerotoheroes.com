@@ -11,13 +11,13 @@
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<link rel="icon" type="image/png" href="/images/favicon.png">
 		<!-- build:css(.) styles/vendor.css -->
+		<link rel="stylesheet" href="styles/components/angularstrap.css" />
+		<link rel="stylesheet" href="styles/components/angularstrap2.css" />
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="bower_components/angular-rangeslider/angular.rangeSlider.css">
 		<!-- endbuild -->
 		<!-- build:css(.tmp) styles/main.css -->
 		<!-- reset css provided by angular normalize.less -->
-		<link rel="stylesheet" href="styles/components/angularstrap.css" />
-		<link rel="stylesheet" href="styles/components/angularstrap2.css" />
 		<link rel="stylesheet" href="styles/main.css" />
 		<link rel="stylesheet" href="styles/home-page.css" />
 		<link rel="stylesheet" href="styles/video.css" />
@@ -35,16 +35,25 @@
 		<link rel="stylesheet" href="styles/modules/welcome-page.css" />
 		<!-- endbuild -->
 
+        <link href="styles/landing/style.css" rel="stylesheet" type="text/css">
+        <link href="styles/landing/owl.carousel.css" rel="stylesheet" type="text/css">
+        <link href="styles/landing/owl.theme.css" rel="stylesheet" type="text/css">
+        <link href="styles/landing/animate.css" rel="stylesheet" type="text/css">
+        <link href="styles/landing/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="styles/landing.css" />
+
 		<!-- Video.js -->
 		<script type="text/javascript">
 		  document.createElement('video');document.createElement('audio');document.createElement('track');
 		</script>
 	</head>
-	<body ng-app="app" ng-controller="LayoutCtrl" background="{{background}}">
+	<!--<body ng-app="app" ng-controller="LayoutCtrl" background="{{background}}" data-spy="scroll" data-offset="80">-->
+	<body ng-app="app" ng-controller="LayoutCtrl" background="{{background}}" data-spy="scroll" data-offset="80">
 		<div zth-navigation ng-hide="isLandingPage"></div>
-		<div ng-class="{'main-container-nolanding': !isLandingPage}">
+		<div ng-class="{'main-container-nolanding': !isLandingPage, 'main-container-landing': isLandingPage}">
 			<div welcome-pane ng-hide="isLandingPage"></div>
-			<div class="main-panel panel panel-default" ng-class="{'main-panel-nolanding': !isLandingPage}">
+			<div class="panel panel-default" ng-class="{'main-panel-nolanding': !isLandingPage, 'main-panel': !isFullPage, 'full-page': isFullPage, 'landing-page': isLandingPage}">
 				<div ng-view></div>
 			</div>
 		</div>
@@ -139,6 +148,7 @@
 		<script src="scripts/controllers/review.js"></script>
 		<script src="scripts/controllers/videoListing.js"></script>
 		<script src="scripts/controllers/accountCreation.js"></script>
+		<script src="scripts/controllers/landing/sport.js"></script>
 
 		<script src="scripts/directives/accountManagement.js"></script>	
 		<script src="scripts/directives/background.js"></script>	
@@ -155,6 +165,15 @@
 		<script src="scripts/directives/video/videoLoopButton.js"></script>
 		<script src="scripts/directives/video/videoDualModeButton.js"></script>
 		<script src="scripts/directives/video/videoPlaybackButton.js"></script>
+
+		<script src="scripts/landing/jquery-1.11.1.min.js"></script>
+		<script src="scripts/landing/wow.min.js"></script>
+		<script src="scripts/landing/jquery.stellar.min.js"></script>
+		<script src="scripts/landing/owl.carousel.min.js"></script>
+		<script src="scripts/landing/tweetie.min.js"></script>
+		<script src="scripts/landing/contact_me.js"></script>
+		<script src="scripts/landing/jqBootstrapValidation.js"></script>
+		<script src="scripts/landing/app2.js"></script>
 		
 		<!-- endbuild -->
 

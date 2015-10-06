@@ -1,0 +1,29 @@
+.main-container-landing {
+	height: 100%;
+	width: 100%;
+}
+
+.full-page, .full-page > div:first-child {
+	height: 100%;
+	width: 100%;
+}
+
+.full-page > div:first-child {
+	height: 80%;
+}
+
+.features-intro-box i.red {
+    background-color: #d9534f;
+}
+
+.features-intro-box i.green {
+    background-color: #5cb85c;
+}
+
+.features-intro-box i.blue {
+    background-color: #337ab7;
+}
+
+.features-intro-box i.orange {
+    background-color: #f0ad4e;
+}

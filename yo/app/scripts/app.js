@@ -31,11 +31,20 @@ app.config(['$routeProvider', '$locationProvider',
 
     // If you modify this, don't forget to modify the RouteController.java
     $routeProvider.
+      // landing pages
       when('/', {
         templateUrl: 'views/home-page.html',
         controller: 'HomePageCtrl',
         isLandingPage: true
       }).
+      when('/squash', {
+        templateUrl: 'views/landing/sport.html',
+        controller: 'SportPageCtrl',
+        isLandingPage: true,
+        isFullPage: true,
+        sport: 'squash'
+      }).
+      // site pages
       when('/upload', {
         templateUrl: 'views/upload.html',
         controller: 'UploadDetailsCtrl',

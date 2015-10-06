@@ -27,6 +27,8 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(new DateTime("2015-10-06").toDate(),
+				"New forum to discuss things related to the site itself", News.Type.Feature));
 		news.add(new News(new DateTime("2015-10-03").toDate(),
 				"The author of a review can indicate that a specific comment has helped them", News.Type.Feature));
 		news.add(new News(new DateTime("2015-10-02").toDate(),
@@ -35,6 +37,10 @@ public class NewsRepository {
 				"You can see the new features we've added since the last time you've visited", News.Type.Feature));
 
 		// Bug fixes
+		news.add(new News(new DateTime("2015-10-06").toDate(),
+				"No sound in the player when uploading a video", News.Type.Bug));
+		news.add(new News(new DateTime("2015-10-06").toDate(),
+				"Coach description may go outside of the top screen when the text is long", News.Type.Bug));
 		news.add(new News(new DateTime("2015-10-02").toDate(),
 				"Comment panel can disappear when scrolling on videos without comments", News.Type.Bug));
 		news.add(new News(new DateTime("2015-10-02").toDate(),

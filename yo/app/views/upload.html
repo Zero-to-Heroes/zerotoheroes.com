@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="editing-tools" ng-show="file && useVideo">
-			<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0"></div>
+			<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0" show-values="true" disabled="uploadInProgress"></div>
 			<div class="buttons" ng-show="dataLoaded">
 				<span class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</span>
 				<span class="block"><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">Double the speed</a> of the video</span>
@@ -45,14 +45,14 @@
 				<div class="row" ng-hide="User.isLoggedIn()">
 					<div class="col-sm-12">
 						<div class="form-group" show-errors="{ showSuccess: true }">
-							<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
+							<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="Your name" ng-required="!User.isLoggedIn()" ng-readonly="uploadInProgress">
 						</div>
 				  	</div>
 			  	</div>
 		  		<div class="row">
 					<div ng-class="{'col-sm-4': useVideo}" ng-show="useVideo">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
-						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo">
+						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo" ng-readonly="uploadInProgress">
 								<option value="" ng-hide="!useVideo">Choose your sport...</option>
 								<option value="Squash" ng-hide="!useVideo">Squash</option>
 								<option value="Badminton" ng-hide="!useVideo">Badminton</option>
@@ -66,7 +66,7 @@
 					</div>
 					<div ng-class="{'col-sm-8': useVideo, 'col-sm-12': !useVideo}">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
-					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title {{useVideo ? 'of your video review' : ''}}" ng-required="true">
+					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title {{useVideo ? 'of your video review' : ''}}" ng-required="true" ng-readonly="uploadInProgress">
 					  	</div>
 				  	</div>
 			  	</div>
@@ -74,9 +74,9 @@
 					<div class="col-sm-12">
 					  	<div class="form-group">
 							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo">
-					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.description" auto-grow toolbar-target></textarea>
+					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.description" ng-readonly="uploadInProgress" auto-grow toolbar-target></textarea>
 					    	</toolbar>
-					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.description" auto-grow ng-hide="useVideo"></textarea>
+					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.description" ng-readonly="uploadInProgress" auto-grow ng-hide="useVideo"></textarea>
 					   </div>
 					</div>
 			  	</div>

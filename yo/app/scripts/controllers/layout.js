@@ -32,9 +32,15 @@ angular.module('controllers').controller('LayoutCtrl', ['$scope', '$routeParams'
 
 		$scope.$on('$routeChangeSuccess', function(next, current) { 
 		   	$scope.sport = $routeParams.sport;
+		   	$log.log('sport', $scope.sport);
 		   	$scope.upload = current.$$route.upload;
-		   	$scope.useVideo = $scope.sportsConfig[$scope.sport].useVideo;
-			$scope.background = $scope.sportsConfig[$scope.sport] ? $scope.imagesRootFolder + $scope.sportsConfig[$scope.sport].background : undefined;
+		   	if ($scope.sportsConfig[$scope.sport]) {
+			   	$scope.useVideo = $scope.sportsConfig[$scope.sport].useVideo;
+				$scope.background = $scope.sportsConfig[$scope.sport] ? $scope.imagesRootFolder + $scope.sportsConfig[$scope.sport].background : undefined;
+			}
+			else {
+				$scope.useVideo = true;
+			}
 		});
 	}
 ]);

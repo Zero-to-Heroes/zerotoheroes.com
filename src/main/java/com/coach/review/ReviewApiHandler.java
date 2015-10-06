@@ -78,7 +78,12 @@ public class ReviewApiHandler {
 		Sort newestFirst = new Sort(Sort.Direction.DESC,
 				Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
 
-		reviews = reviewRepo.findAll(userName, sport, newestFirst);
+		if ("meta".equalsIgnoreCase(sport)) {
+			reviews = reviewRepo.findAll(userName, sport, newestFirst);
+		}
+		else {
+			reviews = reviewRepo.findAllWithKey(userName, sport, newestFirst);
+		}
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);

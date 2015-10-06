@@ -25,4 +25,21 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			"}")
 	List<Review> findAll(String author, String sport, Sort sort);
 
+	// Sport is case-insensitive
+	// Key exists, cf
+	// http://stackoverflow.com/questions/4057196/how-do-you-query-this-in-mongo-is-not-null
+	@Query("{ $and :" +
+			"  [" +
+			"    {" +
+			"      $and: " +
+			"        [" +
+			"          {$or : [ { $where: '?0 == null' } , { author : ?0 }]}, " +
+			"          {$or : [ { $where: '?1 == null' } , { sport : {$regex : '^?1$', $options: 'i'} }]}" +
+			"        ]" +
+			"    }," +
+			"    {key: {$exists : true}}" +
+			"  ]" +
+			"}")
+	List<Review> findAllWithKey(String userName, String sport, Sort newestFirst);
+
 }

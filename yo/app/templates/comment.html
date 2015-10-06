@@ -20,9 +20,10 @@
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
 			</div>
 			<div ng-show="comment.editing">
-				<toolbar player-api="API" insert-model="insertModel">
+				<toolbar player-api="API" insert-model="insertModel" ng-show="review.key">
 					<textarea class="form-control" ng-model="comment.text" auto-grow toolbar-target></textarea>
 				</toolbar>
+				<textarea class="form-control" ng-model="comment.text" auto-grow ng-hide="review.key"></textarea>
 				<div class="text-right">
 					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
 					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
@@ -41,9 +42,10 @@
 				</div>
 			</div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-				<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel">
+				<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key">
 					<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" auto-grow toolbar-target></textarea>
 				</toolbar>
+				<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" auto-grow ng-hide="review.key"></textarea>
 			</div>
 		</div>
 		<div class="row">

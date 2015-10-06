@@ -13,6 +13,21 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.selectedCoach;
 		$scope.User = User;
 
+		$scope.initReview = function() {
+			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
+				function(data) {
+					$scope.review = data;
+				}
+			);
+			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
+				$scope.coaches = [];
+				for (var i = 0; i < data.length; i++) {
+					$scope.coaches.push(data[i]);
+				};
+			});
+		}
+		$scope.initReview();
+
 		//===============
 		// Video player
 		//===============
@@ -20,30 +35,22 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.API = API;
 			// Load the video
 			$timeout(function() { 
-				Api.Reviews.get({reviewId: $routeParams.reviewId}, 
-					function(data) {
-						$scope.review = data;
-						//$log.log('retrieved review', $scope.review);
-						$scope.updateVideoInformation($scope.review);
-						var fileLocation = ENV.videoStorageUrl + data.key;
-						$scope.thumbnail = data.thumbnail ? ENV.videoStorageUrl + data.thumbnail : null;
-						$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
-						$scope.sources2 = []
-						angular.forEach($scope.review.reviewVideoMap, function(key, value) {
-							fileLocation = ENV.videoStorageUrl + key;
-							$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType});
-						})
-					}
-				);
+				if (!$scope.review) {
+					$log.log('waiting until review is loaded');
+					$scope.onPlayerReady(API);
+					return;
+				}
+				$scope.updateVideoInformation($scope.review);
+				var fileLocation = ENV.videoStorageUrl + $scope.review.key;
+				$scope.thumbnail = $scope.review.thumbnail ? ENV.videoStorageUrl + $scope.review.thumbnail : null;
+				$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType}];
+				$scope.sources2 = []
+				angular.forEach($scope.review.reviewVideoMap, function(key, value) {
+					fileLocation = ENV.videoStorageUrl + key;
+					$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType});
+				})
 			}, 300);
-			$timeout(function() { 
-				Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
-					$scope.coaches = [];
-					for (var i = 0; i < data.length; i++) {
-						$scope.coaches.push(data[i]);
-					};
-				});
-			}, 333);
+			
 		};
 
 		$scope.onSecondPlayerReady = function($API) {

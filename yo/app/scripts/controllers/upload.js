@@ -37,6 +37,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.onPlayerReady = function(API) {
         	//$scope.initializeReview();
 			$scope.API = API;
+			$scope.API.setVolume(1);
         	//uploader.clearQueue();
         	$scope.sources = null;
 

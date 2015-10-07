@@ -3,10 +3,10 @@
     <div class="home-content">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-9 col-md-offset-2">
                     <div class="intro-text">
                         <!--<img src="images/logo.png" alt="app-logo" class="app-logo">-->
-                        <h1>We help squashers improve together</h1>
+                        <h1 ng-bind="sportsConfig['{{sport}}'].landing.headline"></h1>
                         <h3>Online video review tools and advice powered by the Zero to Heroes community</h3>
                         <div class="download-button scroll-to">
                             <a href="#features" class="btn btn-link">
@@ -26,16 +26,14 @@
 <section class="features-intro">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6 margin-btm-30">
+            <div class="col-md-3 col-sm-6 margin-btm-30" ng-hide="sportsConfig['{{sport}}'].landing.hideVideoReview">
                 <div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
                     <i class="ion-qr-scanner red"></i>
                     <h3>Powerful review tools</h3>
-                    <p>
-                        Watch any sequence in slow motion, in loop, or even side-by-side with another high-level sequence to see where you could improve.
-                    </p>
+                    <p>Watch any sequence in slow motion, in loop, or even side-by-side with another high-level sequence to see where you could improve.</p>
                 </div><!--features box intro end-->
             </div><!--col end-->
-            <div class="col-md-3 col-sm-6 margin-btm-30">
+            <div ng-class="{'col-md-offset-2': nbFeatures == 3}" class="col-md-3 col-sm-6 margin-btm-30">
                 <div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
                     <i class="ion-bonfire green"></i>
                     <h3>Community wisdom</h3>
@@ -49,7 +47,7 @@
                     <i class="ion-trophy blue"></i>
                     <h3>Professional coaches</h3>
                     <p>
-                        If community advice is not enough for you, professional coaches are available to give you advice on any video you choose.
+                        If community advice is not enough for you, professional coaches are available to give you advice on any video you choose (and if you're a professionnal coach, feel free to <a href="mailto:contact@zerotoheroes.com" target="_blank">contact us</a>!)
                     </p>
                 </div><!--features box intro end-->
             </div><!--col end-->
@@ -58,7 +56,7 @@
                     <i class="ion-ios-chatboxes orange"></i>
                     <h3>Contribute</h3>
                     <p>
-                        You too can help others become better squashers by providing advice and voting on what looks important to you.
+                        You too can help others become better <span ng-bind="sportsConfig['{{sport}}'].landing.athletes"></span> by providing advice and voting on what looks important to you.
                     </p>
                 </div><!--features box intro end-->
             </div><!--col end-->
@@ -76,72 +74,77 @@
     </div>
 </div>
 
-<section id="features" class="features-mobile sec-padded">
+<section class="section" id="features">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="center-heading">
-                    <h3>Site features</h3>
-                    <span class="center-line"></span>
-                    <p>
-                        Use this section to showcase core features of your app. like this<br> section shows the theme features.
-                    </p>
-                </div>
-            </div>
-        </div><!--this row is use for section center heading-->
-        <div class="row">
-            <div class="col-md-4 col-sm-6">
-                <div class="features-box top margin-btm-30">
-                    <i class="ion-ipad"></i>
-                    <div class="features-text">
-                        <h4>Fully responsive Design</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    </div>
-                </div>  <!--feature box-->
-                <div class="features-box  margin-btm-30">
-                    <i class="ion-social-buffer-outline"></i>
-                    <div class="features-text">
-                        <h4>Easy to use</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    </div>
-                </div>  <!--feature box-->
-                <div class="features-box  margin-btm-30">
-                    <i class="ion-ipad"></i>
-                    <div class="features-text">
-                        <h4>Fully responsive Design</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    </div>
-                </div>  <!--feature box-->
-            </div>
-            <div class="col-md-4 col-md-push-4 col-sm-6">
-                <div class="features-box left top margin-btm-30">
-                    <i class="ion-ios-heart-outline"></i>
-                    <div class="features-text ">
-                        <h4>Made with love</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    </div>
-                </div><!--feature box-->
-                <div class="features-box left  margin-btm-30">
-                    <i class="ion-ios-gear-outline"></i>
-                    <div class="features-text ">
-                        <h4>Free Support &amp; Updates</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    </div>
-                </div><!--feature box-->
-                <div class="features-box left  margin-btm-30">
-                    <i class="ion-ipad"></i>
-                    <div class="features-text ">
-                        <h4>Twitter feeds</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    </div>
-                </div><!--feature box-->
-            </div>
-            <div class="col-md-4 col-md-pull-4 text-center">
-                <img src="images/iphone-intro.png" alt="">
-            </div>
-        </div>
+      	<div class="row">
+        	<div class="col-sm-6">
+          		<div class="feature-1">
+            		<img src="images/landing/{{sport}}/side-by-side.jpg" class="img-responsive" alt="features-img">
+          		</div>
+        	</div>
+	        <div class="col-sm-6">
+	          	<div class="feature-detail">
+		            <h1 class="title animated fadeInRight wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">Video review tools</h1>
+	            	<p class="features-txt animated fadeInRight wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">Directly control the video from the comment system to precisely illustrate what you need to say and see. Point to a specific image on a video, play a sequence in slow motion or loop it. You can even compare side-by-side sequences from two any two videos from the site to illustrate the difference between how the same move is done by a top player. And all directly from the comments!</p>
+	          	</div>
+        	</div>
+      	</div>
     </div>
-</section><!--features end-->
+</section>
+
+<section class="section padding-t-0">
+    <div class="container">
+      	<div class="row">
+        	<div class="col-sm-6">
+          		<div class="feature-detail">
+            		<h1 class="title animated fadeInLeft wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">The best from the community</h1>
+            		<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">Get advice from the other squashers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier</p>
+          		</div>
+        	</div>
+        	<div class="col-sm-6">
+          		<div class="feature-1">
+            		<img src="images/landing/{{sport}}/community.jpg" class="img-responsive" alt="features-img">
+          		</div>
+        	</div>
+      	</div>
+    </div>
+</section>
+
+<section class="section" id="features">
+    <div class="container">
+      	<div class="row">
+        	<div class="col-sm-6">
+          		<div class="feature-1">
+            		<img src="images/landing/{{sport}}/pros.jpg" class="img-responsive" alt="features-img">
+          		</div>
+        	</div>
+	        <div class="col-sm-6">
+	          	<div class="feature-detail">
+		            <h1 class="title animated fadeInRight wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">Professional coaches</h1>
+	            	<p class="features-txt animated fadeInRight wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href="mailto:contact@zerotoheroes.com" target="_blank">contact us</a>!)</p>
+	          	</div>
+        	</div>
+      	</div>
+    </div>
+</section>
+
+<section class="section padding-t-0">
+    <div class="container">
+      	<div class="row">
+        	<div class="col-sm-6">
+          		<div class="feature-detail">
+            		<h1 class="title animated fadeInLeft wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">Contribute and help the community</h1>
+            		<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, you're the one they need help from. So don't hesitate to leave a small piece of advice, they'll be thankful for it :)</p>
+          		</div>
+        	</div>
+        	<div class="col-sm-6">
+          		<div class="feature-1">
+            		<img src="images/landing/{{sport}}/contribute.jpg" class="img-responsive" alt="features-img">
+          		</div>
+        	</div>
+      	</div>
+    </div>
+</section>
 
 <div id="cta3" class="container testimonials-container">
     <div class="row">
@@ -292,39 +295,37 @@
                     <h3>The team</h3>
                     <span class="center-line"></span>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br> sed do eiusmod tempor incididunt
+                        Yup, that's us! :)
                     </p>
                 </div>
             </div>
         </div><!--this row is use for section center heading-->
         <div class="row">
-            <div class="col-sm-6 col-md-3 margin-btm-30">
+            <div class="col-sm-4 col-md-4 margin-btm-30 col-md-offset-1">
                 <div class="team-col">
-                    <img src="images/team-1.jpg" alt="">
-                    <h3>Robin - <em>Project manager</em></h3>
+                    <img src="images/seb.jpg" alt="">
+                    <h3>Seb</h3>
                     <ul class="list-inline list-follow">
-                        <li><a href="#"><i class="ion-social-facebook" data-toggle="tooltip" title="" data-original-title="Facebook" data-placement="top"></i></a></li>
                         <li><a href="#"><i class="ion-social-twitter" data-toggle="tooltip" title="" data-original-title="Twitter" data-placement="top"></i></a></li>
-                        <li><a href="#"><i class="ion-social-linkedin" data-toggle="tooltip" title="" data-original-title="Linkedin" data-placement="top"></i></a></li>
                     </ul>
+                    <p class="description">I'm a software engineer by trade, and an athlete and gamer by heart. I've been frustrated by the difficulty to get advice adapted to my style, and want to help athletes and gamers get over that hurdle. I love meeting interesting people of all kind, so feel free to email me directly at <a href="mailto:seb@zerotoheroes.com">seb@zerotoheroes.com</a> :)</p>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3 margin-btm-30">
+            <div class="col-sm-4 col-md-4 margin-btm-30 col-md-offset-2">
                 <div class="team-col">
-                    <img src="images/team-2.jpg" alt="">
-                    <h3>Jacks - <em>Team leader</em></h3>
+                    <img src="images/thibaud.jpg" alt="">
+                    <h3>Thibaud</h3>
                     <ul class="list-inline list-follow">
-                        <li><a href="#"><i class="ion-social-facebook" data-toggle="tooltip" title="" data-original-title="Facebook" data-placement="top"></i></a></li>
                         <li><a href="#"><i class="ion-social-twitter" data-toggle="tooltip" title="" data-original-title="Twitter" data-placement="top"></i></a></li>
-                        <li><a href="#"><i class="ion-social-linkedin" data-toggle="tooltip" title="" data-original-title="Linkedin" data-placement="top"></i></a></li>
                     </ul>
+                    <p class="description">Driven by logic and passionate about games I'm a software engineer who strongly believes that there is a bit of magic/awesomeness in everybody. Together we can be heroes! Feel free to share your thoughts with me at <a href="mailto:thibaud@zerotoheroes.com">thibaud@zerotoheroes.com</a></p>
                 </div>
             </div>
         </div>
     </div>
 </section><!--the team section end here-->
 
-
+<!--
 <section class="screens sec-padded">
     <div class="container">
          <div class="row">
@@ -337,7 +338,7 @@
                     </p>
                 </div>
             </div>
-        </div><!--this row is use for section center heading-->
+        </div>
         <div class="row">
             <div class="col-sm-12">
                 <div id="screens" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
@@ -367,6 +368,7 @@
         </div>
     </div>
 </section>
+-->
 
 <!--
 <div class="latest-tweet-wrapper">
@@ -461,17 +463,26 @@
         <div class="col-sm-8 col-sm-offset-2 text-center">
             <h3>Get the latest updates</h3>
             <p>Subscribe to newsletter and get latest news</p>
-            <form class="form-inline" role="form">
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2" value="Your Email address" onfocus="if (this.value == this.defaultValue)
-                                this.value = '';" onblur="if (this.value == '')
-                                            this.value = this.defaultValue;">
-                </div>
-                <a href="index.html" class="btn-theme btn btn-lg">Subscribe</a>
-                <!-- <button type="submit" class="btn-theme-color btn btn-lg">Notify me</button> -->
-                <span class="help-block">Don't worry, we do not spam </span>
-            </form>
+            <div id="mc_embed_signup">
+	            <form class="form-inline validate signup-form" action="//zerotoheroes.us10.list-manage.com/subscribe/post?u=97a00cb6ce6b2e5486876f29c&amp;id=074f9f6027" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" novalidate>
+	            	<div id="mc_embed_signup_scroll">
+	            		<div id="mce-responses" >
+							<div class="response" id="mce-error-response" style="display:none"></div>
+							<div class="response" id="mce-success-response" style="display:none"></div>
+						</div>
+						<div style="position: absolute; left: -5000px;"><input type="text" name="b_97a00cb6ce6b2e5486876f29c_074f9f6027" tabindex="-1" value=""></div>
+		                <div class="form-group">
+		                    <label class="sr-only" for="mce-EMAIL">Email address</label>
+		                    <input type="email" name="EMAIL" class="form-control" id="mce-EMAIL" value="Your Email address" onfocus="if (this.value == this.defaultValue)
+		                                this.value = '';" onblur="if (this.value == '')
+		                                            this.value = this.defaultValue;">
+		                    <button type="submit" class="btn-theme btn btn-lg" ng-click="notifyGa()" id="mc-embedded-subscribe">Notify me</button>
+		                </div>
+		            </div>
+	                <!-- <button type="submit" class="btn-theme-color btn btn-lg">Notify me</button> -->
+	                <span class="help-block">Don't worry, we do not spam </span>
+	            </form>
+	        </div>
         </div>
     </div>
 </section><!--Newsletter end-->
@@ -539,9 +550,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
-                <a href="index.html"><img src="images/logo-white.png" alt=""></a>
+                <!-- <a href="index.html"><img src="images/logo-white.png" alt=""></a> -->
                 <div class="clearfix"></div>
-                <ul class="list-inline footer-social">
+                <!--<ul class="list-inline footer-social">
                     <li><a href="#" data-toggle="tooltip" title="" data-original-title="Facebook" data-placement="top"><i class="ion-social-facebook"></i></a></li>
                     <li><a href="#" data-toggle="tooltip" title="" data-original-title="twitter" data-placement="top"><i class="ion-social-twitter"></i></a></li>
                     <li><a href="#" data-toggle="tooltip" title="" data-original-title="Linkedin" data-placement="top"><i class="ion-social-linkedin"></i></a></li>
@@ -557,9 +568,9 @@
                     <li><a href="#">Support</a></li>
                     <li><a href="#">Terms &amp; Condition</a></li>
                     <li><a href="#">Contact</a></li>
-                </ul>
+                </ul>-->
 
-                <span class="copyrights">© 2014. Designed by Design_mylife</span>
+                <span class="copyrights">©2015</span>
             </div>
         </div>
     </div>

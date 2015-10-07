@@ -27,3 +27,18 @@
 .features-intro-box i.orange {
     background-color: #f0ad4e;
 }
+
+.landing-page .section {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.landing-page .title {
+	line-height: 50px;
+}
+
+.landing-page .features-txt {    
+	font-size: 16px;
+    line-height: 30px;
+    margin-top: 30px;
+}

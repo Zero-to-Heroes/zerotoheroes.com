@@ -32,19 +32,21 @@
 	</videogular>
 </div>
 
-<div scrollable="{{useVideo}}">
+<div scrollable="{{useVideo}}" class="video-information">
 	<form class="container-fluid">
 		<div class="row">
-			<div class="col-md-2">
-				<span><h4 class="text-left">{{review.author}}</h4></span>
-			</div>
 			<div class="col-md-10">
+				<h2 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h2>
+				<div class="form-group" show-errors="{ showSuccess: true }" ng-show="review.editing">
+			    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
+			  	</div>
+			</div>
+			<div class="col-md-2" ng-show="!review.editing">
 				<div>
-					<span class="label label-primary pull-right"  ng-show="!review.editing" ng-model="review.sport.value">{{review.sport.value}}</span>
+					<span class="label label-primary pull-right" ng-model="review.sport.value">{{review.sport.value}}</span>
 				</div>
 			</div>
-			<div class="col-md-6" ng-show="review.editing"></div>
-			<div class="col-md-4" ng-show="review.editing">
+			<div class="col-md-2" ng-show="review.editing">
 				<div>
 					<div class="form-group" show-errors="{ showSuccess: true }">
 					    <select ng-model="review.sportForDisplay" name="sport" class="form-control" ng-required="true">
@@ -62,10 +64,6 @@
 		</div>
 		<div class="row">
 			<div class="col-md-10">
-				<h2 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h2>
-				<div class="form-group" show-errors="{ showSuccess: true }" ng-show="review.editing">
-			    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
-			  	</div>
 				<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
 				<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel">
 					<textarea class="form-control" ng-model="review.description" auto-grow toolbar-target></textarea>
@@ -77,15 +75,17 @@
 				</button>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-10 text-left">
+		<div class="row author-information">
+			<div class="col-xs-6 text-left">
+				<h4 class="text-left review-author">{{review.author}}</h4>
+				<span  class="link-minor" ng-show="!review.editing && User.getName() == review.author"> - </span>
 				<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && User.getName() == review.author"> Edit information</a>
 				<div ng-show="review.editing">
 					<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs">Cancel</button>
 					<button ng-click="updateDescription()" class="btn btn-default btn-xs">Update</button>
 				</div>
 			</div>
-			<div class="col-md-2">
+			<div class="col-xs-6 thumbs text-right">
   				<span class="glyphicon glyphicon-thumbs-up pointer" ng-class="{'upvote':review.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview()" aria-hidden="true" title="Upvote the video (you should do this if you find the video interesting, if the submitter tool time to give indications to help reviewers, or if you just feel like it)">{{review.reputation.nbVotes.Upvote}} </span> 
   				<span class="glyphicon glyphicon-thumbs-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview()" aria-hidden="true" title="Downvote the video (you should do this if you find the video shouldn't belong here, or if the submitter didn't make any effort to help the community provide relevant feedback)">{{review.reputation.nbVotes.Downvote}} </span> 
 			</div>

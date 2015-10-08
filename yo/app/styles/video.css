@@ -37,6 +37,10 @@
 	/*max-width: 800px;*/
 }
 
+.videogular-container {
+  margin-bottom: 30px;
+}
+
 .videogular-fullscreen {
   margin-bottom: 0;
 }

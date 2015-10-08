@@ -47,6 +47,7 @@ public class User implements UserDetails {
 	private Set<UserAuthority> authorities;
 	private Date lastLoginDate;
 
+	private String registerLocation;
 	private int reputation;
 
 	@Override

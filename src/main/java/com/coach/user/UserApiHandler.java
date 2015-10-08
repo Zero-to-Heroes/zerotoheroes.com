@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
 import com.coach.core.security.UserRole;
+import com.coach.review.EmailNotifier;
 
 @RestController
 @RequestMapping(value = "/api/users")
@@ -24,6 +25,9 @@ public class UserApiHandler {
 
 	@Autowired
 	UserRepository userRepository;
+
+	@Autowired
+	EmailNotifier emailNotifier;
 
 	// @RequestMapping(method = RequestMethod.GET)
 	// public User getCurrent() {
@@ -87,6 +91,8 @@ public class UserApiHandler {
 
 		userRepository.save(user);
 		log.debug("Registered user: " + user);
+
+		emailNotifier.notifyNewUser(user);
 
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}

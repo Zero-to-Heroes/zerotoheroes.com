@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService', '$rootScope',
-	function($scope, $log, Api, User, AuthenticationService, $rootScope) {
+angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService', '$rootScope', '$location',
+	function($scope, $log, Api, User, AuthenticationService, $rootScope, $location) {
 		$scope.account = {};
 
 		$scope.init = function() {
@@ -23,7 +23,8 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		$scope.createAccount = function() {
 			$scope.$broadcast('show-errors-check-validity');
   			if ($scope.accountForm.$valid) {
-				Api.Users.save({username: $scope.account.username, password: $scope.account.password, email: $scope.account.email}, 
+  				var location = $location.$$url;
+				Api.Users.save({username: $scope.account.username, password: $scope.account.password, email: $scope.account.email, registerLocation: location}, 
 			        function(data) {
 			          	// Not necessarily the best way, but easier to separate registration from actual login
 			            $scope.login();

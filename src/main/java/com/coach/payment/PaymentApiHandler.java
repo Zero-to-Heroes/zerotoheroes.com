@@ -47,7 +47,7 @@ public class PaymentApiHandler {
 		EmailMessage message = EmailMessage
 				.builder()
 				.from("seb@zerotoheroes.com")
-				.to("seb@zerotoheroes.com")
+				.to("contact@zerotoheroes.com")
 				.subject("Payment requested from " + requesterEmail + " to " + coach.getName() + " for "
 						+ coach.getTariff())
 				.content(

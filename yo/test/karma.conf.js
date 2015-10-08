@@ -67,10 +67,10 @@ module.exports = function(config) {
       'bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
       'bower_components/angular-recursion/angular-recursion.js',
       'bower_components/moment-duration-format/lib/moment-duration-format.js',
+      'bower_components/wowjs/dist/wow.js',
+      'bower_components/jquery.stellar/jquery.stellar.js',
 
       'app/scripts/app.js',
-      'app/scripts/landing/jquery.stellar.min.js',
-      'app/scripts/landing/wow.min.js',
       'app/scripts/landing/owl.carousel.min.js',
       'app/scripts/landing/tweetie.min.js',
       'app/scripts/landing/contact_me.js',

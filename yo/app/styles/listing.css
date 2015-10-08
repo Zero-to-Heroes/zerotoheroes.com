@@ -62,3 +62,9 @@
         display: table-cell;
     }
 }
+
+@media screen and (max-width: 400px) {
+  .video-listing .comments {
+    display: none;
+  }
+}

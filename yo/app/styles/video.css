@@ -252,10 +252,3 @@ videogular div.video-dual-mode-button a:visited {
   		width: 150px;
   	}
 }
-
-/* Don't show the name input if it appears on the navbar */
-@media screen and (min-width: 768px) {
-  	.video-information .name-input-row {
-		display: none;
-	}
-}

@@ -37,6 +37,10 @@
 	/*max-width: 800px;*/
 }
 
+.videogular-fullscreen {
+  margin-bottom: 0;
+}
+
 .videogular .controls-container {
   margin-top: 50px;
   background-color: rgba(0, 0, 0, 0.9);
@@ -44,7 +48,10 @@
 
 /* I don't know of any way to update the controls-container class directly based on a javascript variable */
 .videogular .controls-container-fullscreen > div:first-child{
+  position: absolute;
+  bottom: 0;
   margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .editing-tools {

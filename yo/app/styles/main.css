@@ -132,29 +132,3 @@ textarea.form-control {
       max-width: 900px;
     }
 }
-
-/*@media screen and (min-height: 800px) {
-    .main-panel {
-        min-width: 600px;
-        max-width: 800px;
-    }
-
-
-.main-panel-nolanding {
-  float: left;
-
-}
-}
-
-@media screen and (min-height: 900px) {
-    .main-panel {
-        min-width: 850px;
-        max-width: 900px;
-    }
-}
-
-@media screen and (max-width: 1120px) {
-    .main-panel-nolanding {
-        float: none;
-    }
-}*/

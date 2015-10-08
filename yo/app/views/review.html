@@ -1,5 +1,5 @@
 <div class="videogular-container keep-on-top multi-player" ng-show="review.key">
-	<videogular vg-player-ready="onPlayerReady($API)" vg-update-state="onVideoStateUpdate($state)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
+	<videogular vg-player-ready="onPlayerReady($API)" vg-update-state="onVideoStateUpdate($state)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen}" vg-update-time="onUpdateTime($currentTime, $duration)">
 		<vg-media vg-src="sources" ng-class="playerControls.firstPlayerClass">
 		</vg-media>
 

@@ -397,7 +397,7 @@ BUTTONS
 
 ***********************/
 
-.btn{
+.landing-page .btn{
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
@@ -407,7 +407,7 @@ BUTTONS
     -moz-transition: all 0.3s ease-in;
     -o-transition: all 0.3s ease-in;
 }
-.btn-download {
+.landing-page .btn-download {
     position: relative;
     padding: 10px 20px 10px 60px;
     text-align: left;
@@ -415,17 +415,17 @@ BUTTONS
     background: #00aeff;
     color:#fff;
 }
-.btn-download.app{
+.landing-page .btn-download.app{
     background-color: #333;
 }
-.btn-download.window{
+.landing-page .btn-download.window{
     background-color: #f54c54;
 }
-.btn-download:hover, .btn-download:focus{
+.landing-page .btn-download:hover, .landing-page .btn-download:focus{
     color:#fff;
     opacity: .85;
 }
-.btn-link {
+.landing-page .btn-link {
     position: relative;
     padding: 10px 20px 10px 60px;
     text-align: left;
@@ -434,15 +434,15 @@ BUTTONS
     color:#fff;
     text-decoration: none;
 }
-.btn-link:hover, .btn-link:focus{
+.landing-page .btn-link:hover, .landing-page .btn-link:focus{
     text-decoration: none;
     color:#fff;
     outline: none;
 }
-.btn-link i{
+.landing-page .btn-link i{
     margin-left: 5px;
 }
-.btn-download i {
+.landing-page .btn-download i {
     position: absolute;
     top: 0;
     left: 0;
@@ -450,12 +450,12 @@ BUTTONS
     font-size: 40px;
     line-height: 1;
 }
-.btn-download strong {
+.landing-page .btn-download strong {
     display: block;
     margin-bottom: 6px;
     font-weight: 800;
 }
-.btn-download span {
+.landing-page .btn-download span {
     display: block;
     font-size: 10px;
     font-weight: 300;
@@ -463,23 +463,23 @@ BUTTONS
     margin-top: -5px;
     opacity: 0.8;
 }
-.btn-theme{
+.landing-page .btn-theme{
     color:#fff;
     background-color: #00aeff;
     border-radius: 2px;
     -webkit-border-radius: 2px;
 }
-.btn-lg{
+.landing-page .btn-lg{
     border-radius: 2px;
     -webkit-border-radius: 2px;   
 }
-.btn-theme:hover, .btn-theme:focus{
+.landing-page .btn-theme:hover, .landing-page .btn-theme:focus{
     color:#00aeff;
     background-color: transparent;
     outline: 0;
     border-color: #00aeff;
 }
-.btn-gray{
+.landing-page .btn-gray{
     background: #F5F5F5;
     background: -webkit-gradient(linear, left bottom, left top, from(#F5F5F5), to(#FFF)), #FFF;
     background: -moz-linear-gradient(90deg, #F5F5F5 0%, #FFF 100%), #FFF;
@@ -497,7 +497,7 @@ BUTTONS
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-.btn-gray:hover{
+.landing-page .btn-gray:hover{
     border-color: #00aeff;
     color:#00aeff;
 }
@@ -823,7 +823,7 @@ features
     background-size: auto;
     background-repeat: repeat;
     background-attachment: fixed;
-    background-image: url(/images/landing/parallax-bg-2.jpg);
+    /*background-image: url(/images/landing/parallax-bg-2.jpg);*/
 }
 .newsletter h3{
     color:#fff;

@@ -9,7 +9,11 @@
 }
 
 .full-page > div:first-child {
-	height: 80%;
+	height: 75%;
+}
+
+.features-intro {
+	padding-top: 65px;
 }
 
 .features-intro-box i.red {
@@ -41,4 +45,12 @@
 	font-size: 16px;
     line-height: 30px;
     margin-top: 30px;
+}
+
+.landing-page .white-background {
+	background-color: white;
+}
+
+.landing-page .parallax-overlay {
+	height: 75%;
 }

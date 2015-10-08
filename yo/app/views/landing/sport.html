@@ -6,13 +6,13 @@
                 <div class="col-md-9 col-md-offset-2">
                     <div class="intro-text">
                         <!--<img src="images/logo.png" alt="app-logo" class="app-logo">-->
-                        <h1 ng-bind="sportsConfig['{{sport}}'].landing.headline"></h1>
-                        <h3>Online video review tools and advice powered by the Zero to Heroes community</h3>
+                        <h1>We help <span ng-bind="sportsConfig['{{sport}}'].landing.athletes"></span> improve together</h1>
+                        <h3>Post a video of yourself playing and get advice from the {{sportsConfig[sport].landing.displayName}} community</h3>
                         <div class="download-button scroll-to">
                             <a href="#features" class="btn btn-link">
                                 Learn more <i class="ion-chevron-right"></i>
                             </a>
-                            <a href="/s/squash" class="btn btn-link">
+                            <a href="/s/squash" class="btn btn-link" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta1">
                                 Get in for free <i class="ion-chevron-right"></i>
                             </a>
                         </div>
@@ -23,22 +23,24 @@
     </div>
 </section>
 
-<section class="features-intro">
+<section class="features-intro white-background">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6 margin-btm-30" ng-hide="sportsConfig['{{sport}}'].landing.hideVideoReview">
+            <div class="col-md-3 col-sm-6 margin-btm-30" ng-hide="hideVideoReview">
                 <div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
                     <i class="ion-qr-scanner red"></i>
                     <h3>Powerful review tools</h3>
-                    <p>Watch any sequence in slow motion, in loop, or even side-by-side with another high-level sequence to see where you could improve.</p>
+                    <p>
+                    	Identify and understand your flaws precisely. Watch any sequence in slow motion, in a loop, or even side-by-side with another sequence from a top player.
+                    </p>
                 </div><!--features box intro end-->
             </div><!--col end-->
-            <div ng-class="{'col-md-offset-2': nbFeatures == 3}" class="col-md-3 col-sm-6 margin-btm-30">
+            <div ng-class="{'col-md-offset-2': hideVideoReview}" class="col-md-3 col-sm-6 margin-btm-30">
                 <div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
                     <i class="ion-bonfire green"></i>
                     <h3>Community wisdom</h3>
                     <p>
-                        Any member can help you by providing advice, and a reputation and voting system ensures top advice always come out at the top.
+                        {{sportsConfig[sport].landing.communityWisdomIntro}} with the best advice from the {{sportsConfig[sport].landing.displayName}} community. A reputation and voting system ensures top advice always come out at the top.
                     </p>
                 </div><!--features box intro end-->
             </div><!--col end-->
@@ -47,7 +49,7 @@
                     <i class="ion-trophy blue"></i>
                     <h3>Professional coaches</h3>
                     <p>
-                        If community advice is not enough for you, professional coaches are available to give you advice on any video you choose (and if you're a professionnal coach, feel free to <a href="mailto:contact@zerotoheroes.com" target="_blank">contact us</a>!)
+                        If community advice is not enough for you, professional coaches are available to help you overcome your biggest hurdles
                     </p>
                 </div><!--features box intro end-->
             </div><!--col end-->
@@ -56,7 +58,7 @@
                     <i class="ion-ios-chatboxes orange"></i>
                     <h3>Contribute</h3>
                     <p>
-                        You too can help others become better <span ng-bind="sportsConfig['{{sport}}'].landing.athletes"></span> by providing advice and voting on what looks important to you.
+                    	Help others become better <span ng-bind="sportsConfig['{{sport}}'].landing.athletes"></span>. Get recognition from the community by giving advice and voting on what looks important to you.
                     </p>
                 </div><!--features box intro end-->
             </div><!--col end-->
@@ -64,18 +66,18 @@
     </div>
 </section><!--features intro-->
 
-<div id="cta2" class="container testimonials-container">
+<section id="cta2" class="container testimonials-container">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-            <a href="/s/squash" class="btn btn-danger btn-lg">
+            <a href="/s/squash" class="btn btn-danger btn-lg" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta2">
                 Get in for free <i class="ion-chevron-right"></i>
             </a>
 		</div>
     </div>
-</div>
+</section>
 
 <section class="section" id="features">
-    <div class="container">
+    <div class="container" ng-hide="hideVideoReview">
       	<div class="row">
         	<div class="col-sm-6">
           		<div class="feature-1">
@@ -98,7 +100,7 @@
         	<div class="col-sm-6">
           		<div class="feature-detail">
             		<h1 class="title animated fadeInLeft wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">The best from the community</h1>
-            		<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">Get advice from the other squashers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier</p>
+            		<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">Get advice from the other <span ng-bind="sportsConfig['{{sport}}'].landing.athletes"></span>, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier</p>
           		</div>
         	</div>
         	<div class="col-sm-6">
@@ -134,7 +136,7 @@
         	<div class="col-sm-6">
           		<div class="feature-detail">
             		<h1 class="title animated fadeInLeft wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">Contribute and help the community</h1>
-            		<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, you're the one they need help from. So don't hesitate to leave a small piece of advice, they'll be thankful for it :)</p>
+            		<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)</p>
           		</div>
         	</div>
         	<div class="col-sm-6">
@@ -149,7 +151,7 @@
 <div id="cta3" class="container testimonials-container">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-            <a href="/s/squash" class="btn btn-danger btn-lg">
+            <a href="/s/squash" class="btn btn-danger btn-lg" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta3">
                 Get in for free <i class="ion-chevron-right"></i>
             </a>
 		</div>
@@ -480,7 +482,7 @@
 		                </div>
 		            </div>
 	                <!-- <button type="submit" class="btn-theme-color btn btn-lg">Notify me</button> -->
-	                <span class="help-block">Don't worry, we do not spam </span>
+	                <span class="help-block">You know where to find us, so we won't spam </span>
 	            </form>
 	        </div>
         </div>

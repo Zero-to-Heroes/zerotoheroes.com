@@ -17,6 +17,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data;
+					$scope.useVideo = $scope.review.key ? true : false;
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {

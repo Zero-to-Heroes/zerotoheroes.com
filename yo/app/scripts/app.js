@@ -44,6 +44,27 @@ app.config(['$routeProvider', '$locationProvider',
         isFullPage: true,
         sport: 'squash'
       }).
+      when('/heroesofthestorm', {
+        templateUrl: 'views/landing/sport.html',
+        controller: 'SportPageCtrl',
+        isLandingPage: true,
+        isFullPage: true,
+        sport: 'heroesofthestorm'
+      }).
+      when('/leagueoflegends', {
+        templateUrl: 'views/landing/sport.html',
+        controller: 'SportPageCtrl',
+        isLandingPage: true,
+        isFullPage: true,
+        sport: 'leagueoflegends'
+      }).
+      when('/hearthstone', {
+        templateUrl: 'views/landing/sport.html',
+        controller: 'SportPageCtrl',
+        isLandingPage: true,
+        isFullPage: true,
+        sport: 'hearthstone'
+      }).
       // site pages
       when('/upload', {
         templateUrl: 'views/upload.html',
@@ -142,6 +163,8 @@ app.directive('scrollable', function ($window, $document) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
+          console.log('scrollable', attrs['scrollable'], attrs);
+          if (attrs['scrollable'] != 'false') {
         	// FF doesn't recognize mousewheel event, cf http://stackoverflow.com/questions/16788995/mousewheel-event-is-not-triggering-in-firefox-browser
             element.on('mousewheel DOMMouseScroll', function (evt) {
             	var e = window.event || evt
@@ -160,7 +183,7 @@ app.directive('scrollable', function ($window, $document) {
             	else if (bottomTop - scrollAmount <= windowHeight) {
             		// Scroll amount is reduced
             		scrollAmount = scrollAmount - (bottomTop - windowHeight);
-					newMarginTop = marginTop - scrollAmount;
+					       newMarginTop = marginTop - scrollAmount;
             	}
             	else {
 	            	// Don't allow scroll up if already at the top
@@ -171,6 +194,7 @@ app.directive('scrollable', function ($window, $document) {
                 e.stopPropagation();
                 e.preventDefault();
             });
+          }
         }
     };
 });

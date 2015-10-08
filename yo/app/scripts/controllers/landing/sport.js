@@ -20,14 +20,14 @@ angular.module('controllers').controller('SportPageCtrl', ['$scope', '$routePara
 			athlete: 'gamer',
 			athletes: 'gamers',
 			displayName: 'HearthStone',
-			communityWisdomIntro: 'Climb to the top',
+			communityWisdomIntro: 'Climb to Legend',
 			hideVideoReview: true
 		}
 		$scope.sportsConfig.leagueoflegends.landing = {
 			athlete: 'gamer',
 			athletes: 'gamers',
 			displayName: 'League of Legends',
-			communityWisdomIntro: 'Climb to the top',
+			communityWisdomIntro: 'Climb the ladder to the top',
 			hideVideoReview: true
 		}
 

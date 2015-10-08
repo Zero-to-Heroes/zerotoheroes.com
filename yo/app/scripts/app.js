@@ -51,13 +51,13 @@ app.config(['$routeProvider', '$locationProvider',
         isFullPage: true,
         sport: 'heroesofthestorm'
       }).
-      when('/leagueoflegends', {
+      /*when('/leagueoflegends', {
         templateUrl: 'views/landing/sport.html',
         controller: 'SportPageCtrl',
         isLandingPage: true,
         isFullPage: true,
         sport: 'leagueoflegends'
-      }).
+      }).*/
       when('/hearthstone', {
         templateUrl: 'views/landing/sport.html',
         controller: 'SportPageCtrl',

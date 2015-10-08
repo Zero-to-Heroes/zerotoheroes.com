@@ -66,8 +66,15 @@ module.exports = function(config) {
       'bower_components/aws-sdk-js/dist/aws-sdk.js',
       'bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
       'bower_components/angular-recursion/angular-recursion.js',
+      'bower_components/moment-duration-format/lib/moment-duration-format.js',
 
       'app/scripts/app.js',
+      'app/scripts/landing/jquery.stellar.min.js',
+      'app/scripts/landing/wow.min.js',
+      'app/scripts/landing/owl.carousel.min.js',
+      'app/scripts/landing/tweetie.min.js',
+      'app/scripts/landing/contact_me.js',
+      'app/scripts/landing/jqBootstrapValidation.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'

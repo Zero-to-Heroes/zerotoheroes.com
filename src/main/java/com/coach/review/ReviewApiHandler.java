@@ -100,6 +100,12 @@ public class ReviewApiHandler {
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		Review review = reviewRepo.findById(id);
 
+		// Increase the view count
+		if (review.isTranscodingDone()) {
+			review.incrementViewCount();
+			mongoTemplate.save(review);
+		}
+
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
 		review.sortComments();

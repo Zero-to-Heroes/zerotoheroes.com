@@ -60,6 +60,7 @@ public class Review {
 	private float videoFramerateRatio;
 	private Map<String, String> reviewVideoMap;
 	private Reputation reputation;
+	private int viewCount;
 
 	private int totalInsertedComments;
 
@@ -135,5 +136,9 @@ public class Review {
 				comment.prepareForDisplay(userId);
 			}
 		}
+	}
+
+	public void incrementViewCount() {
+		viewCount++;
 	}
 }

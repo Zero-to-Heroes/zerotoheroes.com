@@ -27,6 +27,8 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(new DateTime("2015-10-09").toDate(),
+				"Added view count to reviews. Views are only counted from October 10th onwards", News.Type.Feature));
 		news.add(new News(new DateTime("2015-10-06").toDate(),
 				"New forum to discuss things related to the site itself", News.Type.Feature));
 		news.add(new News(new DateTime("2015-10-03").toDate(),

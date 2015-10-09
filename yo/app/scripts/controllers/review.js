@@ -13,6 +13,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.selectedCoach;
 		$scope.User = User;
 
+		$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
+
 		$scope.initReview = function() {
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {

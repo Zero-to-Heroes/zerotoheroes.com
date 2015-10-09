@@ -37,6 +37,8 @@ public class NewsRepository {
 				"You can see the new features we've added since the last time you've visited", News.Type.Feature));
 
 		// Bug fixes
+		news.add(new News(new DateTime("2015-10-09").toDate(),
+				"The video player control bar is now properly displayed in full screen", News.Type.Bug));
 		news.add(new News(new DateTime("2015-10-06").toDate(),
 				"No sound in the player when uploading a video", News.Type.Bug));
 		news.add(new News(new DateTime("2015-10-06").toDate(),

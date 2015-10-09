@@ -45,6 +45,7 @@
 				<div class="row" ng-hide="User.isLoggedIn()">
 					<div class="col-sm-12">
 						<div class="form-group" show-errors="{ showSuccess: true }">
+							<div class="alert alert-danger" role="alert" ng-show="uploadForm.author.$error.nameTaken"><span>This name is already in use, please pick another one, or <a ng-click="signIn()">sign in</a> if that's you</span></div>
 							<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="Your name" ng-required="!User.isLoggedIn()" ng-readonly="uploadInProgress">
 						</div>
 				  	</div>

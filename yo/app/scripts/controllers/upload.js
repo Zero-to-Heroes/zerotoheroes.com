@@ -138,12 +138,27 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		// Upload core methods
 		//===============
 		$scope.initUpload = function() {
+			$scope.uploadForm.author.$setValidity('nameTaken', true);
+			$scope.$broadcast('show-errors-reset');
 			$scope.$broadcast('show-errors-check-validity');
   			if ($scope.uploadForm.$valid) {
   				// If user is not registered, offer them to create an account
   				if (!User.isLoggedIn()) {
-  					$scope.onUpload = true;
-  					$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author});
+  					// Validate that the name is free
+	  				Api.Users.get({identifier: $scope.review.author}, 
+						function(data) {
+							$log.log('User', data);
+							// User exists
+							if (data.username) {
+								$log.log('User already exists', data);
+								$scope.uploadForm.author.$setValidity('nameTaken', false);
+							}
+							else {
+								$scope.onUpload = true;
+	  							$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author});
+	  						}
+						}
+					);
   				}
   				// Otherwise directly proceed to the upload
   				else {
@@ -326,6 +341,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				$scope.postText();
 			}
 		});
+
+		$scope.signIn = function() {
+			$rootScope.$broadcast('account.signin.show', {identifier: $scope.review.author});
+		}
 
   		//===============
 		// Timestamp manipulation

@@ -32,100 +32,102 @@
 	</videogular>
 </div>
 
-<div scrollable="{{useVideo}}" class="video-information">
-	<form class="container-fluid">
-		<div class="row">
-			<div class="col-md-10">
-				<h2 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h2>
-				<div class="form-group" show-errors="{ showSuccess: true }" ng-show="review.editing">
-			    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
-			  	</div>
-			</div>
-			<div class="col-md-2" ng-show="!review.editing">
-				<div>
-					<span class="label label-primary pull-right" ng-model="review.sport.value">{{review.sport.value}}</span>
-				</div>
-			</div>
-			<div class="col-md-2" ng-show="review.editing">
-				<div>
-					<div class="form-group" show-errors="{ showSuccess: true }">
-					    <select ng-model="review.sportForDisplay" name="sport" class="form-control" ng-required="true">
-							<option value="Squash">Squash</option>
-							<option value="Badminton">Badminton</option>
-							<option value="LeagueOfLegends">League of Legends</option>
-							<option value="HeroesOfTheStorm">Heroes of the Storm</option>
-							<option value="HearthStone">HearthStone</option>
-							<option value="Meta">Meta</option>
-							<option value="Other">Other</option>
-						</select>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-10">
-				<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
-				<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel">
-					<textarea class="form-control" ng-model="review.description" auto-grow toolbar-target></textarea>
-				</toolbar>
-				<textarea class="form-control" ng-model="review.description" ng-show="review.editing && !review.key" auto-grow></textarea>
-			</div>
-			<div ng-show="!!coaches.length" class="col-md-2 text-right">
-				<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
-				</button>
-			</div>
-		</div>
-		<div class="row author-information">
-			<div class="col-xs-6 text-left">
-				<h4 class="text-left review-author">{{review.author}}</h4>
-				<span  class="link-minor" ng-show="!review.editing && User.getName() == review.author"> - </span>
-				<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && User.getName() == review.author"> Edit information</a>
-				<div ng-show="review.editing">
-					<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs">Cancel</button>
-					<button ng-click="updateDescription()" class="btn btn-default btn-xs">Update</button>
-				</div>
-			</div>
-			<div class="col-xs-6 thumbs text-right">
-  				<span class="glyphicon glyphicon-thumbs-up pointer" ng-class="{'upvote':review.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview()" aria-hidden="true" title="Upvote the video (you should do this if you find the video interesting, if the submitter tool time to give indications to help reviewers, or if you just feel like it)">{{review.reputation.nbVotes.Upvote}} </span> 
-  				<span class="glyphicon glyphicon-thumbs-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview()" aria-hidden="true" title="Downvote the video (you should do this if you find the video shouldn't belong here, or if the submitter didn't make any effort to help the community provide relevant feedback)">{{review.reputation.nbVotes.Downvote}} </span> 
-			</div>
-		</div>
-	</form>
-	<div ng-show="selectedCoach">
-		<hr/>
-		<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
-	</div>
-	<form name="commentForm">
-		<hr/>
-		<div class="container-fluid comment-block main-block">
+<div  class="video-information background-white">
+	<div scrollable="{{useVideo}}">
+		<form class="container-fluid">
 			<div class="row">
-				<div class="col-md-2" ng-show="!User.isLoggedIn()">
-					<div class="form-group" show-errors="{ showSuccess: true }">
-						<input type="text" name="author" class="form-control comment-author" ng-model="newComment.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
+				<div class="col-md-10">
+					<h2 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h2>
+					<div class="form-group" show-errors="{ showSuccess: true }" ng-show="review.editing">
+				    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
+				  	</div>
+				</div>
+				<div class="col-md-2" ng-show="!review.editing">
+					<div>
+						<span class="label label-primary pull-right" ng-model="review.sport.value">{{review.sport.value}}</span>
 					</div>
 				</div>
-				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-					<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key">
-						<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" auto-grow toolbar-target></textarea>
-					</toolbar>
-					<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" auto-grow toolbar-target></textarea>
+				<div class="col-md-2" ng-show="review.editing">
 					<div>
-						<div class="inline-block">
-							<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
-							<button ng-click="cancelComment()" class="btn btn-default text-right">Cancel</button>
+						<div class="form-group" show-errors="{ showSuccess: true }">
+						    <select ng-model="review.sportForDisplay" name="sport" class="form-control" ng-required="true">
+								<option value="Squash">Squash</option>
+								<option value="Badminton">Badminton</option>
+								<option value="LeagueOfLegends">League of Legends</option>
+								<option value="HeroesOfTheStorm">Heroes of the Storm</option>
+								<option value="HearthStone">HearthStone</option>
+								<option value="Meta">Meta</option>
+								<option value="Other">Other</option>
+							</select>
 						</div>
-						<div class="inline-block float-right">
-							<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
-							<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10">
+					<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
+					<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel">
+						<textarea class="form-control" ng-model="review.description" auto-grow toolbar-target></textarea>
+					</toolbar>
+					<textarea class="form-control" ng-model="review.description" ng-show="review.editing && !review.key" auto-grow></textarea>
+				</div>
+				<div ng-show="!!coaches.length" class="col-md-2 text-right">
+					<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
+					</button>
+				</div>
+			</div>
+			<div class="row author-information">
+				<div class="col-xs-6 text-left">
+					<h4 class="text-left review-author">{{review.author}}</h4>
+					<span  class="link-minor" ng-show="!review.editing && User.getName() == review.author"> - </span>
+					<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && User.getName() == review.author"> Edit information</a>
+					<div ng-show="review.editing">
+						<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs">Cancel</button>
+						<button ng-click="updateDescription()" class="btn btn-default btn-xs">Update</button>
+					</div>
+				</div>
+				<div class="col-xs-6 thumbs text-right">
+	  				<span class="glyphicon glyphicon-thumbs-up pointer" ng-class="{'upvote':review.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview()" aria-hidden="true" title="Upvote the video (you should do this if you find the video interesting, if the submitter tool time to give indications to help reviewers, or if you just feel like it)">{{review.reputation.nbVotes.Upvote}} </span> 
+	  				<span class="glyphicon glyphicon-thumbs-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview()" aria-hidden="true" title="Downvote the video (you should do this if you find the video shouldn't belong here, or if the submitter didn't make any effort to help the community provide relevant feedback)">{{review.reputation.nbVotes.Downvote}} </span> 
+				</div>
+			</div>
+		</form>
+		<div ng-show="selectedCoach">
+			<hr/>
+			<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
+		</div>
+		<form name="commentForm">
+			<hr/>
+			<div class="container-fluid comment-block main-block">
+				<div class="row">
+					<div class="col-md-2" ng-show="!User.isLoggedIn()">
+						<div class="form-group" show-errors="{ showSuccess: true }">
+							<input type="text" name="author" class="form-control comment-author" ng-model="newComment.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
+						</div>
+					</div>
+					<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
+						<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key">
+							<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" auto-grow toolbar-target></textarea>
+						</toolbar>
+						<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" auto-grow toolbar-target></textarea>
+						<div>
+							<div class="inline-block">
+								<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
+								<button ng-click="cancelComment()" class="btn btn-default text-right">Cancel</button>
+							</div>
+							<div class="inline-block float-right">
+								<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
+								<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+							</div>
 						</div>
 					</div>
 					<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 				</div>
 			</div>
-		</div>
-	</form>
-	<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0"></comment>
-	<!-- Prevent scrolling center area if we're already at the bottom -->
-	<div id="padder"></div>
-	<div id="bottom"></div>
+		</form>
+		<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0"></comment>
+		<!-- Prevent scrolling center area if we're already at the bottom -->
+		<div id="padder"></div>
+		<div id="bottom"></div>
+	</div>
 </div>

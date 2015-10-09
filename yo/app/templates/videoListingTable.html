@@ -1,7 +1,7 @@
 <table class="table table-comfy video-listing">
 	<tbody>
 		<tr ng-repeat="video in videos">
-			<td class="vert-align text-center">
+			<td class="vert-align text-center reputation-cell">
 				<div class="reputation">
 	  				<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true" title="Upvote this video"></span>
 					<span class="reputation-score glyphicon">{{video.reputation.nbVotes.Upvote - video.reputation.nbVotes.Downvote}}</span>

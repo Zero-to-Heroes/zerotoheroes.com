@@ -26,7 +26,6 @@
 }
 
 .form-container {
-	max-width: 800px;
 	margin: auto;
 	padding-bottom: 50px;
 }
@@ -34,11 +33,11 @@
 .videogular {
   margin: auto;
 	margin-bottom: 60px;
-	/*max-width: 800px;*/
+	max-width: 1000px;
+  margin-top: 10px;
 }
 
 .videogular-container {
-  margin-bottom: 30px;
 }
 
 .videogular-fullscreen {
@@ -59,6 +58,8 @@
 }
 
 .editing-tools {
+    max-width: 1000px;
+    margin: auto;
   	margin-top: 20px;
   	margin-bottom: 20px;
 }
@@ -84,6 +85,12 @@
  	margin-top: 20px;
 }
 
+.video-information {
+  padding: 45px;
+  padding-top: 30px;
+  overflow: hidden;
+}
+
 .video-information .nameInput {
 	display: block;
 }
@@ -93,7 +100,7 @@
   z-index: 999;
   padding-top: 300px;
   margin-top: -300px;
-  background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;
+  /*background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;*/
 }
 
 .second-player {
@@ -147,7 +154,12 @@
 }
 
 .formatting-help {
-  max-width: 400px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.formatting-help li {
+  margin-bottom: 7px;
 }
 
 .toolbar {

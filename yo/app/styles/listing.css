@@ -36,7 +36,7 @@
 }
 
 .video-listing {
-  max-width: 900px;
+  /*max-width: 900px;*/
   margin: auto;
 }
 
@@ -52,6 +52,18 @@
   margin-top: 0;
 }
 
+.video-listing .reputation-cell {
+  width: 80px;
+}
+
+.video-listing .comments {
+  width: 100px;
+}
+
+.video-listing .thumbnails {
+  width: 150px;
+}
+
 .video-listing .reputation {
   width: 60px;
 }
@@ -63,8 +75,8 @@
     }
 }
 
-@media screen and (max-width: 400px) {
-  .video-listing .comments {
-    display: none;
-  }
+@media screen and (max-width: 600px) {
+    .video-listing .comments {
+      display: none;
+    }
 }

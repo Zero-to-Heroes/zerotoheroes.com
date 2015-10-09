@@ -23,8 +23,20 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 					User.setLastLoginDate(newDate);
 				}
 
+				$scope.recommendVideo = function() {
+					$log.log('Building recommended video from scope and user ', $scope, User);
+					$scope.recommendedVideo = $scope.sportsConfig[$scope.sport].recommendedVideo;
+				}
+				$timeout(function() {
+					$scope.recommendVideo();
+				}, 0);
+
 				$rootScope.$on('user.logged.in', function() {
 					$scope.getLatestFeatures();
+				});
+
+				$scope.$on('$routeChangeSuccess', function(next, current) { 
+					$scope.recommendVideo();
 				});
 
 				$scope.signUp = function() {

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('LayoutCtrl', ['$scope', '$routeParams', '$log', 
-	function($scope, $routeParams, $log, $route) { 
+angular.module('controllers').controller('LayoutCtrl', ['$rootScope', '$scope', '$routeParams', '$log', 
+	function($rootScope, $scope, $routeParams, $log, $route) { 
 		$scope.imagesRootFolder = '/images/backgrounds/';
 		$scope.sportsConfig =
 			{
@@ -36,17 +36,23 @@ angular.module('controllers').controller('LayoutCtrl', ['$scope', '$routeParams'
 			}
 
 		$scope.$on('$routeChangeSuccess', function(next, current) { 
+
+			if ($rootScope) {
+				$rootScope.$broadcast('user.activity.visit');
+			}
+
 		   	$scope.sport = $routeParams.sport;
-		   	if (!$scope.sport) $scope.sport = current.$$route.sport;
+		   	if (!$scope.sport) {
+		   		$scope.sport = current.$$route.sport;
+		   	}
+
 		   	$scope.isLandingPage = current.$$route.isLandingPage;
 		   	$scope.isFullPage = current.$$route.isFullPage;
-		   	//$log.log('sport', $scope.sport);
 		   	$scope.upload = current.$$route.upload;
 		   	if ($scope.sportsConfig[$scope.sport]) {
 			   	$scope.useVideo = $scope.sportsConfig[$scope.sport].useVideo;
 			   	$scope.backgroundImage = $scope.sportsConfig[$scope.sport] ? $scope.imagesRootFolder + $scope.sportsConfig[$scope.sport].background : undefined;
 			   	if (!$scope.isLandingPage) {
-			   		$log.log('not a landing page, setting background');
 					$scope.background = $scope.backgroundImage;
 				}
 				else {

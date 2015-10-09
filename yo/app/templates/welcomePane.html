@@ -22,10 +22,11 @@
 		<div ng-show="(!features || features.length == 0) && User.isLoggedIn()">
 			<p>We hope you're enjoying your time on Zero to Heroes :)</p>
 		</div>
-		<div ng-hide="User.isLoggedIn()">
-			<h4>Getting started</h4>
-			<p>We're glad to see you here :) If you're looking for a place to start, why not have a look at <a href="/r/{{sport}}/{{recommendedVideo}}">this video</a>? 
+		<div>
+			<h4 ng-show="engagement <= 1 && recommendedVideo">Getting started</h4>
+			<p ng-show="engagement == 0 && recommendedVideo">We're glad to see you here :) If you're looking for a place to start, why not have a look at <a href="/r/{{sport}}/{{recommendedVideo}}">this video</a>? 
 			</p>
+			<p ng-show="engagement == 1 && recommendedVideo">Hey! Glad to see you back today! How would you feel about helping someone out today? <a href="/r/{{sport}}/{{recommendedVideo}}">This review</a> has not received any advice, would you mind helping?</p>
 		</div>
 	</div>
 	<div class="panel-footer text-center">

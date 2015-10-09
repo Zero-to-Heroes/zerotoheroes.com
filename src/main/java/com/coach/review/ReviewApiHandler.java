@@ -1,10 +1,12 @@
 package com.coach.review;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -384,5 +386,44 @@ public class ReviewApiHandler {
 		mongoTemplate.save(review);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/suggestion/comment/{sport}", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<Review> getRecommendedReviewForComment(@PathVariable("sport") final String sport) {
+
+		String currentUser =
+				SecurityContextHolder.getContext().getAuthentication().getName();
+
+		List<Review> reviews = null;
+		log.debug("Retrieving recommended review for " + sport);
+
+		// Sorting in ascending order
+		Sort newestFirst = new Sort(Sort.Direction.DESC,
+				Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
+
+		if (!"meta".equalsIgnoreCase(sport)) {
+			reviews = reviewRepo.findAllWithKey(null, sport, newestFirst);
+		}
+		log.debug("All reviews " + reviews);
+
+		// TODO: do that in the DB directly?
+		List<Review> result = new ArrayList<>();
+		for (Review review : reviews) {
+			if (!review.getAuthor().equals(currentUser)
+					&& (review.getComments() == null || review.getComments().isEmpty())) {
+				result.add(review);
+			}
+		}
+		log.debug("Filtered reviews " + result);
+
+		// Take a random video
+		Review recommended = null;
+		if (!result.isEmpty()) {
+			int index = new Random().nextInt(result.size());
+			recommended = result.get(index);
+		}
+		log.debug("Recommended " + recommended);
+
+		return new ResponseEntity<Review>(recommended, HttpStatus.OK);
 	}
 }

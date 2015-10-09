@@ -11,8 +11,6 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 
 	Review findById(String id);
 
-	List<Review> findByAuthor(String author, Sort sort);
-
 	// Sport is case-insensitive
 	@Query("{ $and :" +
 			"    [{" +

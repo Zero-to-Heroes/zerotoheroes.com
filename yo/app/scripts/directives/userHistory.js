@@ -8,9 +8,13 @@ app.directive('userHistory', ['$log', '$rootScope', '$timeout', 'User',
 		restrict: 'A',
 		scope: {},
 		controller: function($scope, User) {
+
 			$rootScope.$on('user.activity.view', function(event, params) {
-				$log.log('viewing review', params.reviewId);
 				User.storeView(params.reviewId);
+			});
+
+			$rootScope.$on('user.activity.visit', function(event, params) {
+				User.logNewVisit();
 			});
 		}
 	};

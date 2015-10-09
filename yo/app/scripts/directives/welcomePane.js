@@ -9,6 +9,7 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 			templateUrl: 'templates/welcomePane.html',
 			controller: function($scope, User) {
 				$scope.User = User;
+				$scope.engagement = 0;
 
 				$scope.getLatestFeatures = function() {
 					if (!$scope.User.isLoggedIn()) return;
@@ -24,8 +25,26 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 				}
 
 				$scope.recommendVideo = function() {
-					if ($scope.sportsConfig[$scope.sport]) {
+					if ($scope.engagement == 0 && $scope.sportsConfig[$scope.sport]) {
 						$scope.recommendedVideo = $scope.sportsConfig[$scope.sport].recommendedVideo;
+					}
+					else if ($scope.engagement == 1) {
+						Api.ReviewsSuggestion.get({sport: $scope.sport}, function(data) {
+							if (data) {
+								$scope.recommendedVideo = data.id;
+							}
+						})
+					}
+				}
+
+				$scope.buildEngagement = function() {
+					var views = User.getNumberOfViews();
+					var daysHere = User.getNumberOfDaysVisited();
+					if (views >= 5 && daysHere >= 3) {
+						$scope.engagement = 1;
+					}
+					else {
+						$scope.engagement = 0;
 					}
 				}
 
@@ -35,11 +54,8 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 
 				$scope.$on('$routeChangeSuccess', function(next, current) { 
 					$scope.recommendVideo();
+					$scope.buildEngagement();
 				});
-
-				$scope.signUp = function() {
-					$rootScope.$broadcast('account.signup.show');
-				}
 			}
 		};
 }]);

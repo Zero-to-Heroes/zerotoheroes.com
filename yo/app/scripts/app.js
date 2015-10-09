@@ -33,9 +33,10 @@ app.config(['$routeProvider', '$locationProvider',
     $routeProvider.
       // landing pages
       when('/', {
-        templateUrl: 'views/home-page.html',
+        /*templateUrl: 'views/home-page.html',
         controller: 'HomePageCtrl',
-        isLandingPage: true
+        isLandingPage: true*/
+        redirectTo: '/reviews'
       }).
       when('/squash', {
         templateUrl: 'views/landing/sport.html',

@@ -34,6 +34,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		$scope.onPlayerReady = function(API) {
 			$scope.API = API;
+			$scope.API.setVolume(1);
 			// Load the video
 			$timeout(function() { 
 				if (!$scope.review) {

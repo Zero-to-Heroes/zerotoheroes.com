@@ -24,12 +24,10 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 				}
 
 				$scope.recommendVideo = function() {
-					$log.log('Building recommended video from scope and user ', $scope, User);
-					$scope.recommendedVideo = $scope.sportsConfig[$scope.sport].recommendedVideo;
+					if ($scope.sportsConfig[$scope.sport]) {
+						$scope.recommendedVideo = $scope.sportsConfig[$scope.sport].recommendedVideo;
+					}
 				}
-				$timeout(function() {
-					$scope.recommendVideo();
-				}, 0);
 
 				$rootScope.$on('user.logged.in', function() {
 					$scope.getLatestFeatures();

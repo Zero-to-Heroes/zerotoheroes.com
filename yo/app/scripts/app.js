@@ -164,7 +164,6 @@ app.directive('scrollable', function ($window, $document) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
-          console.log('scrollable', attrs['scrollable'], attrs);
           if (attrs['scrollable'] != 'false') {
         	// FF doesn't recognize mousewheel event, cf http://stackoverflow.com/questions/16788995/mousewheel-event-is-not-triggering-in-firefox-browser
             element.on('mousewheel DOMMouseScroll', function (evt) {

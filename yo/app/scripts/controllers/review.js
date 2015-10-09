@@ -13,13 +13,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.selectedCoach;
 		$scope.User = User;
 
-		$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
-
 		$scope.initReview = function() {
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data;
 					$scope.useVideo = $scope.review.key ? true : false;
+					$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -52,7 +51,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				angular.forEach($scope.review.reviewVideoMap, function(key, value) {
 					fileLocation = ENV.videoStorageUrl + key;
 					$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType});
-				})
+				});
+				$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
 			}, 300);
 			
 		};

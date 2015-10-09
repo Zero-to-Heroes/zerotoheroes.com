@@ -23,30 +23,46 @@ services.factory('Api', ['$resource', 'ENV',
 	}
 ]);
 
-services.factory('User', ['$window', 
-	function ($window) {
+services.factory('User', ['$window', '$log', 
+	function ($window, $log) {
 
 		return {
+			setUser: function(user) {
+				$window.localStorage.user = JSON.stringify(user);
+			},
             getName: function () {
-                return ($window.localStorage.name ? $window.localStorage.name : undefined);
-            },
-            setName: function(value) {
-                $window.localStorage.name = value;
+                return ($window.localStorage.user && JSON.parse($window.localStorage.user).username ? JSON.parse($window.localStorage.user).username : undefined);
             },
             isLoggedIn: function() {
             	return ($window.localStorage.token && $window.localStorage.token.length > 0);
             },
             getEmail: function () {
-                return ($window.localStorage.email ? $window.localStorage.email : undefined);
-            },
-            setEmail: function(value) {
-                $window.localStorage.email = value;
+                return ($window.localStorage.user && JSON.parse($window.localStorage.user).email ? JSON.parse($window.localStorage.user).email : undefined);
             },
             getLastLoginDate: function () {
-                return ($window.localStorage.lastLoginDate ? $window.localStorage.lastLoginDate : undefined);
+                return ($window.localStorage.user && JSON.parse($window.localStorage.user).lastLoginDate ? JSON.parse($window.localStorage.user).lastLoginDate : undefined);
             },
             setLastLoginDate: function(value) {
-                $window.localStorage.lastLoginDate = value;
+                var user = JSON.parse($window.localStorage.user);
+                user.lastLoginDate = value;
+				this.setUser(user);
+            },
+            storeView: function(viewId) {
+            	var strViews = $window.localStorage.views;
+            	var views = [];
+            	if (!strViews) {
+            		strViews = JSON.stringify(views);
+            		$window.localStorage.views = strViews;
+            	}
+            	views = JSON.parse(strViews);
+            	//$log.log('retrieved views', views);
+            	if (views.indexOf(viewId) == -1) {
+            		views.push(viewId);
+            		//$log.log('added value, now is ', views);
+            	}
+            	strViews = JSON.stringify(views);
+            	$window.localStorage.views = strViews;
+            	//$log.log('stored views', $window.localStorage.views);
             }
         };
 	}
@@ -71,7 +87,7 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 
 		service.clearCredentials = function () {
 			delete $window.localStorage.token;
-			delete $window.localStorage.name;
+			delete $window.localStorage.user;
 		};
 
 		return service;

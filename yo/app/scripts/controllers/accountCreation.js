@@ -62,9 +62,10 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		$scope.retrieveUserInfo = function() {
 			Api.Users.get( 
 				function(data) {
-					User.setName(data.username);
-					User.setEmail(data.email);
-					User.setLastLoginDate(data.lastLoginDate);
+					User.setUser(data);
+					//User.setName(data.username);
+					//User.setEmail(data.email);
+					//User.setLastLoginDate(data.lastLoginDate);
 					$log.log('lastlogindate', data.lastLoginDate);
 					$rootScope.$broadcast('user.logged.in');
 					$scope.endAccountCreation();

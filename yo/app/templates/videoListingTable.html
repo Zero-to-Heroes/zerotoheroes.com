@@ -11,6 +11,9 @@
 			<td class="vert-align text-center comments">
 				<span class="block">{{video.comments ? video.comments.length : '0'}}</span><span><small>comments</small></span>
 			</td>
+			<td class="vert-align text-center comments">
+				<span class="block">{{video.viewCount ? video.viewCount : '0'}}</span><span><small>views</small></span>
+			</td>
 			<td class="thumbnails vert-align text-center">
 				<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
 			</td>

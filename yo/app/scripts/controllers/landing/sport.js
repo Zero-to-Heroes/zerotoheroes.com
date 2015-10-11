@@ -13,8 +13,8 @@ angular.module('controllers').controller('SportPageCtrl', ['$scope', '$routePara
 		}
 
 		$scope.sportsConfig.squash.landing = {
-			athlete: 'squasher',
-			athletes: 'squashers',
+			athlete: 'squash player',
+			athletes: 'squash players',
 			displayName: 'squash',
 			communityWisdomIntro: 'Climb to the top'
 		}

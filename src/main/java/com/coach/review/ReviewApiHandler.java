@@ -401,26 +401,26 @@ public class ReviewApiHandler {
 		Sort newestFirst = new Sort(Sort.Direction.DESC,
 				Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
 
+		Review recommended = null;
 		if (!"meta".equalsIgnoreCase(sport)) {
 			reviews = reviewRepo.findAllWithKey(null, sport, newestFirst);
-		}
-		log.debug("All reviews " + reviews);
+			log.debug("All reviews " + reviews);
 
-		// TODO: do that in the DB directly?
-		List<Review> result = new ArrayList<>();
-		for (Review review : reviews) {
-			if (review.getAuthor() != null && !review.getAuthor().equals(currentUser)
-					&& (review.getComments() == null || review.getComments().isEmpty())) {
-				result.add(review);
+			// TODO: do that in the DB directly?
+			List<Review> result = new ArrayList<>();
+			for (Review review : reviews) {
+				if (review.getAuthor() != null && !review.getAuthor().equals(currentUser)
+						&& (review.getComments() == null || review.getComments().isEmpty())) {
+					result.add(review);
+				}
 			}
-		}
-		log.debug("Filtered reviews " + result);
+			log.debug("Filtered reviews " + result);
 
-		// Take a random video
-		Review recommended = null;
-		if (!result.isEmpty()) {
-			int index = new Random().nextInt(result.size());
-			recommended = result.get(index);
+			// Take a random video
+			if (!result.isEmpty()) {
+				int index = new Random().nextInt(result.size());
+				recommended = result.get(index);
+			}
 		}
 		log.debug("Recommended " + recommended);
 

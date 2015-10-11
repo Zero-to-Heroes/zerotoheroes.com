@@ -20,7 +20,7 @@
 			<vg-fullscreen-button></vg-fullscreen-button>
 		</vg-controls>
 
-		<div class="second-player" ng-class="{playerControls.secondPlayerClass, 'videogular-container': API.isFullScreen}" ng-show="playerControls.mode == 2">
+		<div class="second-player" ng-class="{'playerControls.secondPlayerClass': true, 'videogular-container': !API.isFullScreen}" ng-show="playerControls.mode == 2">
 			<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
 				<vg-media vg-src="sources2">
 				</vg-media>

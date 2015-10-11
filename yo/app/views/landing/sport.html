@@ -24,25 +24,28 @@
         <div class="container sports-logos" ng-show="sportsConfig['{{sport}}'].landing.displayAllSports">
             <div class="row">
                 <div class="col-xs-4 margin-btm-30 sport-logo">
-                    <a href="/hearthstone"><img src="/images/logos/hearthstone-medium.png" width="250px"></a>
+                    <a href="/hearthstone"><img src="/images/logos/hearthstone-medium.png" title="Go to the HearthStone page" width="250px"></a>
                 </div>
                 <div class="col-xs-4 margin-btm-30 sport-logo">
-                    <a href="/heroesofthestorm"><img src="/images/logos/heroesofthestorm-medium.png" width="250px"></a>
+                    <a href="/heroesofthestorm"><img src="/images/logos/heroesofthestorm-medium.png" title="Go to the Heroes of the Storm page" width="250px"></a>
                 </div>
                 <div class="col-xs-4 margin-btm-30 sport-logo">
-                    <a href="/leagueoflegends"><img src="/images/logos/leagueoflegends-medium.png" width="250px"></a>
+                    <img src="/images/logos/leagueoflegends-medium-disabled.png" title="COMING SOON" width="250px">
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-offset-2 col-xs-4 margin-btm-30 sport-logo">
-                    <a href="/badminton"><img src="/images/logos/badminton-medium.png" width="250px"></a>
+                    <a href="/badminton"><img src="/images/logos/badminton-medium.png" title="Go to the Badminton page" width="250px"></a>
                 </div>
                 <div class="col-xs-4 margin-btm-30 sport-logo">
-                    <a href="/squash"><img src="/images/logos/squash-medium.png" width="250px"></a>
+                    <a href="/squash"><img src="/images/logos/squash-medium.png" title="Go to the Squash page" width="250px"></a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-offset-2 col-xs-9 margin-btm-30 text-center general-access-link">
+                    <a href="#features" class="btn btn-link">
+                        Learn more <i class="ion-chevron-right"></i>
+                    </a>
                     <a href="/reviews" class="btn btn-link" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta1">
                         Or directly access the site <i class="ion-chevron-right"></i>
                     </a>

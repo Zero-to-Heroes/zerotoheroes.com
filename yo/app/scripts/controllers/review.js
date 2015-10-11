@@ -147,14 +147,17 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$rootScope.$on('account.close', function() {
 			$log.log('on account close in review.js');
 			if ($scope.onAddComment) {
+						$log.log('in onAddComment');
 				$scope.uploadComment();
 				$scope.onAddComment = false;
 			}
 			else if ($scope.upvoting) {
+						$log.log('in upvoting');
 				$scope.upvoteReview();
 				$scope.upvoting = false;
 			}
 			else if ($scope.downvoting) {
+						$log.log('in downvoting');
 				$scope.downvoteReview();
 				$scope.downvoting = false;
 			}

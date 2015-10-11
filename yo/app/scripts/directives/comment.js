@@ -133,7 +133,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				// Reputation
 				//===============
 				$scope.upvoteComment = function(comment) {
-					if (!User.isLoggedIn()) {
+					if (!User.isLoggedIn() && !$scope.upvotingComment) {
 						$scope.upvotingComment = comment;
 	  					$rootScope.$broadcast('account.signup.show');
 	  				}
@@ -153,7 +153,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.downvoteComment = function(comment) {
-					if (!User.isLoggedIn()) {
+					if (!User.isLoggedIn() && !$scope.downvotingComment) {
 						$scope.downvotingComment = comment;
 	  					$rootScope.$broadcast('account.signup.show');
 	  				}
@@ -176,15 +176,19 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				// Account management hooks
 				//===============
 				$rootScope.$on('account.close', function() {
+					$log.log('closing popup');
 					if ($scope.onAddReply) {
+						$log.log('in onAddReply');
 						$scope.postReply();
 						$scope.onAddReply = false;
 					}
 					else if ($scope.upvotingComment) {
+						$log.log('in upvotingComment');
 						$scope.upvoteComment($scope.upvotingComment);
 	  					$scope.upvotingComment = null;
 					}
 					else if ($scope.downvotingComment) {
+						$log.log('in downvotingComment');
 						$scope.downvoteComment($scope.downvotingComment);
 						$scope.downvotingComment = null;
 					}

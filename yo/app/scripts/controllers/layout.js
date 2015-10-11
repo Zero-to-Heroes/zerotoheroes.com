@@ -53,9 +53,11 @@ angular.module('controllers').controller('LayoutCtrl', ['$rootScope', '$scope', 
 		   		$scope.sport = current.$$route.sport;
 		   	}
 
-		   	$scope.isLandingPage = current.$$route.isLandingPage;
-		   	$scope.isFullPage = current.$$route.isFullPage;
-		   	$scope.upload = current.$$route.upload;
+		   	if (current.$$route) {
+			   	$scope.isLandingPage = current.$$route.isLandingPage;
+			   	$scope.isFullPage = current.$$route.isFullPage;
+			   	$scope.upload = current.$$route.upload;
+		   }
 		   	if ($scope.sportsConfig[$scope.sport]) {
 			   	$scope.useVideo = $scope.sportsConfig[$scope.sport].useVideo;
 			   	$scope.backgroundImage = $scope.sportsConfig[$scope.sport] ? $scope.imagesRootFolder + $scope.sportsConfig[$scope.sport].background : undefined;

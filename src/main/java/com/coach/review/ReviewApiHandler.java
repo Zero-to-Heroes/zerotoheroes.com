@@ -409,7 +409,7 @@ public class ReviewApiHandler {
 		// TODO: do that in the DB directly?
 		List<Review> result = new ArrayList<>();
 		for (Review review : reviews) {
-			if (!review.getAuthor().equals(currentUser)
+			if (review.getAuthor() != null && !review.getAuthor().equals(currentUser)
 					&& (review.getComments() == null || review.getComments().isEmpty())) {
 				result.add(review);
 			}
@@ -425,5 +425,11 @@ public class ReviewApiHandler {
 		log.debug("Recommended " + recommended);
 
 		return new ResponseEntity<Review>(recommended, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/suggestion/comment", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<Review> getRecommendedReviewForComment() {
+
+		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);
 	}
 }

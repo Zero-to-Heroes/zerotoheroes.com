@@ -22,8 +22,7 @@ var app = angular.module('app', [
   'sprintf',
   'angulartics', 
   'angulartics.google.analytics',
-  'RecursionHelper',
-  'ng-backstretch'
+  'RecursionHelper'
 ]);
 
 app.config(['$routeProvider', '$locationProvider',

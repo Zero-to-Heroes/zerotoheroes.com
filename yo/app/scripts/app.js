@@ -22,7 +22,8 @@ var app = angular.module('app', [
   'sprintf',
   'angulartics', 
   'angulartics.google.analytics',
-  'RecursionHelper'
+  'RecursionHelper',
+  'ng-backstretch'
 ]);
 
 app.config(['$routeProvider', '$locationProvider',
@@ -33,8 +34,11 @@ app.config(['$routeProvider', '$locationProvider',
     $routeProvider.
       // landing pages
       when('/', {
-        templateUrl: 'views/videoListing.html',
-        controller: 'VideoListingCtrl'
+        templateUrl: 'views/landing/sport.html',
+        controller: 'SportPageCtrl',
+        isLandingPage: true,
+        isFullPage: true,
+        sport: 'all'
       }).
       when('/squash', {
         templateUrl: 'views/landing/sport.html',
@@ -50,13 +54,20 @@ app.config(['$routeProvider', '$locationProvider',
         isFullPage: true,
         sport: 'heroesofthestorm'
       }).
-      /*when('/leagueoflegends', {
+      when('/leagueoflegends', {
         templateUrl: 'views/landing/sport.html',
         controller: 'SportPageCtrl',
         isLandingPage: true,
         isFullPage: true,
         sport: 'leagueoflegends'
-      }).*/
+      }).
+      when('/badminton', {
+        templateUrl: 'views/landing/sport.html',
+        controller: 'SportPageCtrl',
+        isLandingPage: true,
+        isFullPage: true,
+        sport: 'badminton'
+      }).
       when('/hearthstone', {
         templateUrl: 'views/landing/sport.html',
         controller: 'SportPageCtrl',

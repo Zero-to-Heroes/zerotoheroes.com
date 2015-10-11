@@ -67,6 +67,10 @@ a[ng-click] {
   background-color: white;
 }
 
+.background-gray {
+  background-color: #444;
+}
+
 .upvote {
   color: #5cb85c;
 }

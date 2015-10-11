@@ -1,4 +1,6 @@
 
+
+
 //smooth scroll
 $(function () {
     $('.scroll-to a[href*=#]:not([href=#])').click(function () {
@@ -42,7 +44,6 @@ $(document).ready(function() {
  
 });
 
-
 /* ==============================================
  WOW plugin triggers animate.css on scroll
  =============================================== */
@@ -55,3 +56,4 @@ var wow = new WOW(
         }
 );
 wow.init();
+

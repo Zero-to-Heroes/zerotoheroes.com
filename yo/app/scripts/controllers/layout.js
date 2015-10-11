@@ -31,7 +31,14 @@ angular.module('controllers').controller('LayoutCtrl', ['$rootScope', '$scope', 
 					recommendedVideo: '5602ad0fe4b07125e2fbbf69'
 				},
 				meta: {
-					useVideo: false
+					useVideo: false,
+					isSport: false
+				},
+				all: {
+					isSport: false,
+					landing: {
+						displayAllSports: true
+					}
 				}
 			}
 
@@ -52,11 +59,15 @@ angular.module('controllers').controller('LayoutCtrl', ['$rootScope', '$scope', 
 		   	if ($scope.sportsConfig[$scope.sport]) {
 			   	$scope.useVideo = $scope.sportsConfig[$scope.sport].useVideo;
 			   	$scope.backgroundImage = $scope.sportsConfig[$scope.sport] ? $scope.imagesRootFolder + $scope.sportsConfig[$scope.sport].background : undefined;
+			   	
 			   	if (!$scope.isLandingPage) {
 					$scope.background = $scope.backgroundImage;
 				}
 				else {
 					$scope.background = undefined;
+				}
+				if ( $scope.sportsConfig[$scope.sport].landing) {
+					$scope.useFullHeight = $scope.sportsConfig[$scope.sport].landing.displayAllSports
 				}
 			}
 			else {

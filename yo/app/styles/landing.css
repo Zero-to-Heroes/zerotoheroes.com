@@ -12,6 +12,10 @@
 	height: 75%;
 }
 
+.full-page-full > div:first-child {
+	height: 100%;
+}
+
 .features-intro {
 	padding-top: 65px;
 }
@@ -53,4 +57,52 @@
 
 .landing-page .parallax-overlay {
 	height: 75%;
+}
+
+.landing-page .parallax-overlay-full {
+	height: 100%;
+}
+
+.landing-page .sports-logos {
+	margin-top: 50px;
+}
+
+.landing-page .sports-logos .sport-logo {
+	text-align: right;
+}
+
+.landing-page .sports-logos h3 {
+	color: white;
+}
+
+.landing-page .general-access-link {
+	margin-top: 20px;
+}
+
+
+.landing-page #home {
+    transition: background-image 1s ease-in-out;
+}
+
+@media screen and (max-width: 991px) {
+	.landing-page .sports-logos img {
+		width: 200px;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.landing-page .intro-text h1 {
+		font-size: 32px;
+		line-height: 32px;
+	}
+
+	.landing-page .intro-text h3 {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 610px) {
+	.landing-page .sports-logos img {
+		width: 150px;
+	}
 }

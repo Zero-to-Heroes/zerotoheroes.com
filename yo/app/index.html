@@ -57,7 +57,7 @@
 			<div class="left-column" ng-hide="isLandingPage">
 				<div welcome-pane></div>
 			</div>
-			<div ng-class="{'main-panel-nolanding': !isLandingPage, 'main-panel': !isFullPage, 'full-page': isFullPage, 'landing-page': isLandingPage}">
+			<div ng-class="{'main-panel-nolanding': !isLandingPage, 'main-panel': !isFullPage, 'full-page': isFullPage, 'landing-page': isLandingPage, 'full-page-full': useFullHeight}">
 				<div ng-view class="center-column"></div>
 			</div>
 			<div class="right-column" ng-hide="isLandingPage"></div>
@@ -90,7 +90,7 @@
 
 		<!-- build:js(.) scripts/vendor.js -->
 		<!-- bower:js -->
-		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/jquery/jquery.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -142,6 +142,7 @@
 		<script src="bower_components/moment-duration-format/lib/moment-duration-format.js"></script>
 		<script src="bower_components/wowjs/dist/wow.js"></script>
 		<script src="bower_components/jquery.stellar/jquery.stellar.js"></script>
+		<script src="bower_components/ng-backstretch/dist/ng-backstretch.min.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 
@@ -158,7 +159,8 @@
 		<script src="scripts/controllers/landing/sport.js"></script>
 
 		<script src="scripts/directives/accountManagement.js"></script>	
-		<script src="scripts/directives/background.js"></script>	
+		<script src="scripts/directives/background.js"></script>
+		<script src="scripts/directives/dynamicStyle.js"></script>
 		<script src="scripts/directives/navigation.js"></script>		
 		<script src="scripts/directives/nameInput.js"></script>			
 		<script src="scripts/directives/onKeyEnter.js"></script>		

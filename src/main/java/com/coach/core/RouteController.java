@@ -22,7 +22,9 @@ public class RouteController {
 			"/s/{sport}/upload",
 			"/squash",
 			"/heroesofthestorm",
-			"/hearthstone"
+			"/hearthstone",
+			"/badminton",
+			"/leagueoflegends"
 	})
 	public String index(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		log.debug("Forwarding to index.html");

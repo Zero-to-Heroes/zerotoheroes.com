@@ -11,7 +11,6 @@
 				<a class="comment-author logged-author" ng-show="comment.authorId">{{comment.author}}</a>
 				<span bs-tooltip data-title="{{comment.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="comment.authorId">{{comment.authorReputation ? comment.authorReputation : 0}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
 			</span>
-			{{comment.authorId}}
 
 			<span><small>{{formatDate(comment)}}</small></span>
 

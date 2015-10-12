@@ -79,5 +79,12 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.signIn = function() {
 			$rootScope.$broadcast('account.signin.show');
 		}
+
+		$scope.buildUrl = function(video) {
+			// The . makes our redirect fail (probably caused by the regex used in modRewrite)
+			var titleForUrl = video.title.replace(new RegExp(' ', 'g'), '-').replace(new RegExp('\\.', 'g'), '-');
+			var url = '/r/' + video.sport.key.toLowerCase() + '/' + video.id + '/' + titleForUrl;
+			return url;
+		}
 	}
 ]);

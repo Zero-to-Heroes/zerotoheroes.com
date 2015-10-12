@@ -22,7 +22,8 @@ var app = angular.module('app', [
   'sprintf',
   'angulartics', 
   'angulartics.google.analytics',
-  'RecursionHelper'
+  'RecursionHelper',
+  'viewhead'
 ]);
 
 app.config(['$routeProvider', '$locationProvider',
@@ -90,11 +91,11 @@ app.config(['$routeProvider', '$locationProvider',
         controller: 'UploadDetailsCtrl',
         upload: true
       }).
-      when('/r/:reviewId', {
+      when('/r/:reviewId/:reviewTitle', {
         templateUrl: 'views/review.html',
         controller: 'ReviewCtrl'
       }).
-      when('/r/:sport/:reviewId', {
+      when('/r/:sport/:reviewId/:reviewTitle', {
         templateUrl: 'views/review.html',
         controller: 'ReviewCtrl'
       }).

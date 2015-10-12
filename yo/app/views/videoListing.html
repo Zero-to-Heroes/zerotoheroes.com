@@ -1,3 +1,5 @@
+<view-title>{{sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} All videos</view-title>
+
 <div bs-active-pane="tabs.activeTab " bs-tabs class="background-white">
     <div title="All {{useVideo ? 'videos' : 'posts'}}" name="false" bs-pane>
     	<div ng-include="'/templates/videoListingTable.html'"></div>

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('SportPageCtrl', ['$scope', '$routeParams', '$log', '$timeout', 
-	function($scope, $routeParams, $log, $timeout) { 
+angular.module('controllers').controller('SportPageCtrl', ['$scope', '$routeParams', '$log', '$timeout', '$rootScope', 
+	function($scope, $routeParams, $log, $timeout, $rootScope) { 
 
 		$scope.sportsConfig.all.landing = {
 			athlete: '(e-)athlete',
@@ -15,13 +15,13 @@ angular.module('controllers').controller('SportPageCtrl', ['$scope', '$routePara
 		$scope.sportsConfig.squash.landing = {
 			athlete: 'squash player',
 			athletes: 'squash players',
-			displayName: 'squash',
+			displayName: 'Squash',
 			communityWisdomIntro: 'Climb to the top'
 		}
 		$scope.sportsConfig.badminton.landing = {
 			athlete: 'player',
 			athletes: 'players',
-			displayName: 'badminton',
+			displayName: 'Badminton',
 			communityWisdomIntro: 'Climb to the top'
 		}
 		$scope.sportsConfig.heroesofthestorm.landing = {

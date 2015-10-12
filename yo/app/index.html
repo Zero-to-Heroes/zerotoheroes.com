@@ -1,11 +1,11 @@
 <!doctype html>
-<html>
+<html ng-app="app">
 	<head>
 		<meta charset="utf-8">
 		<meta name="google-site-verification" content="TMNhNHnK1oArt4LxpT4ulhFjzq6D4lenz-nNZIoBgWs" />
 		<base href="/">
-		<title>Video Review Platform - Zero to Heroes</title>
-		<meta name="description" content="A video review platform to share your passion and improve your skills. Record yourself playing. Get the feedback you need. Progress and help others" />
+		<title ng-bind="viewTitle + ' - Zero to Heroes'"></title>
+		<meta view-head name="description" content="{{pageDescription ? pageDescription : 'A video review platform to share your passion and improve your skills. Record yourself playing. Get the feedback you need. Progress and help others'}}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="robots" content="index,follow" />
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -53,7 +53,7 @@
 		</script>
 	</head>
 	<!--<body ng-app="app" ng-controller="LayoutCtrl" background="{{background}}" data-spy="scroll" data-offset="80">-->
-	<body ng-app="app" ng-controller="LayoutCtrl" background="{{background}}" data-spy="scroll" data-offset="80">
+	<body ng-controller="LayoutCtrl" background="{{background}}" data-spy="scroll" data-offset="80">
 		<div zth-navigation ng-hide="isLandingPage"></div>
 		<div ng-class="{'main-container-nolanding': !isLandingPage, 'main-container-landing': isLandingPage}">
 			<div class="left-column" ng-hide="isLandingPage">
@@ -144,6 +144,7 @@
 		<script src="bower_components/moment-duration-format/lib/moment-duration-format.js"></script>
 		<script src="bower_components/wowjs/dist/wow.js"></script>
 		<script src="bower_components/jquery.stellar/jquery.stellar.js"></script>
+		<script src="bower_components/angularjs-viewhead/angularjs-viewhead.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 

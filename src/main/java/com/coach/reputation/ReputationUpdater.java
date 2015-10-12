@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.coach.core.security.User;
 import com.coach.review.Review;
+import com.coach.review.Review.Sport;
 import com.coach.user.UserRepository;
 
 /**
@@ -34,7 +35,8 @@ public class ReputationUpdater {
 	 * @param userId
 	 *            , id of the current user
 	 */
-	public void updateReputationAfterAction(Reputation reputation, ReputationAction action, String authorId, User user) {
+	public void updateReputationAfterAction(Sport sport, Reputation reputation, ReputationAction action,
+			String authorId, User user) {
 		String userId = user.getId();
 		boolean isCurrentlyUpvoted = reputation.getUserIds().get(ReputationAction.Upvote).contains(userId);
 		boolean isCurrentlyDownvoted = reputation.getUserIds().get(ReputationAction.Downvote).contains(userId);
@@ -43,37 +45,37 @@ public class ReputationUpdater {
 		if (action.equals(ReputationAction.Upvote)) {
 			if (isCurrentlyUpvoted) {
 				reputation.removeVote(ReputationAction.Upvote, userId);
-				changeAuthorReputation(authorId, -1);
+				changeAuthorReputation(sport, authorId, -1);
 			}
 			else if (isCurrentlyDownvoted) {
 				reputation.removeVote(ReputationAction.Downvote, userId);
-				changeAuthorReputation(authorId, 1);
+				changeAuthorReputation(sport, authorId, 1);
 			}
 			else {
 				reputation.addVote(action, userId);
-				changeAuthorReputation(authorId, 1);
+				changeAuthorReputation(sport, authorId, 1);
 			}
 		}
 		else if (action.equals(ReputationAction.Downvote)) {
 			if (isCurrentlyDownvoted) {
 				reputation.removeVote(ReputationAction.Downvote, userId);
-				changeAuthorReputation(authorId, 1);
+				changeAuthorReputation(sport, authorId, 1);
 			}
 			else if (isCurrentlyUpvoted) {
 				reputation.removeVote(ReputationAction.Upvote, userId);
-				changeAuthorReputation(authorId, -1);
+				changeAuthorReputation(sport, authorId, -1);
 			}
 			else {
 				reputation.addVote(action, userId);
-				changeAuthorReputation(authorId, -1);
+				changeAuthorReputation(sport, authorId, -1);
 			}
 		}
 	}
 
-	private void changeAuthorReputation(String authorId, int amount) {
+	private void changeAuthorReputation(Sport sport, String authorId, int amount) {
 		User author = userRepo.findById(authorId);
 		if (author != null) {
-			author.modifyReputation(amount);
+			author.modifyReputation(sport, amount);
 			mongoTemplate.save(author);
 		}
 	}
@@ -96,15 +98,15 @@ public class ReputationUpdater {
 	/**
 	 * Update reputation when a review author marks a comment as "helpful"
 	 */
-	public void updateReputation(ReputationAction action, String authorId) {
+	public void updateReputation(Sport sport, ReputationAction action, String authorId) {
 		if (ReputationAction.Helpful.equals(action)) {
 			User author = userRepo.findById(authorId);
-			author.modifyReputation(3);
+			author.modifyReputation(sport, 3);
 			mongoTemplate.save(author);
 		}
 		else if (ReputationAction.LostHelpful.equals(action)) {
 			User author = userRepo.findById(authorId);
-			author.modifyReputation(-3);
+			author.modifyReputation(sport, -3);
 			mongoTemplate.save(author);
 		}
 	}

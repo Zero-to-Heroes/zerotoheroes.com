@@ -140,7 +140,9 @@ public class ReviewApiHandler {
 			User user = userRepo.findByUsername(currentUser);
 			review.setAuthorId(user.getId());
 			// by default a poster likes his post
-			review.getReputation().addVote(ReputationAction.Upvote, user.getId());
+			reputationUpdater.updateReputationAfterAction(review.getSport(), review.getReputation(),
+					ReputationAction.Upvote,
+					review.getAuthorId(), user);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -183,6 +185,11 @@ public class ReviewApiHandler {
 				.getAuthorities();
 		log.info("authorities are " + authorities);
 
+		// Adding the comment
+		log.debug("Adding comment " + comment + " to review " + id);
+
+		Review review = reviewRepo.findById(id);
+
 		// Security
 		// Add current logged in user as the author of the review
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
@@ -192,7 +199,9 @@ public class ReviewApiHandler {
 			// the nmae
 			User user = userRepo.findByUsername(currentUser);
 			comment.setAuthorId(user.getId());
-			comment.getReputation().addVote(ReputationAction.Upvote, user.getId());
+			reputationUpdater.updateReputationAfterAction(review.getSport(), comment.getReputation(),
+					ReputationAction.Upvote,
+					comment.getAuthorId(), user);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -203,11 +212,6 @@ public class ReviewApiHandler {
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
-
-		// Adding the comment
-		log.debug("Adding comment " + comment + " to review " + id);
-
-		Review review = reviewRepo.findById(id);
 
 		comment.setCreationDate(new Date());
 		review.addComment(comment);
@@ -316,7 +320,9 @@ public class ReviewApiHandler {
 			// the nmae
 			User user = userRepo.findByUsername(currentUser);
 			reply.setAuthorId(user.getId());
-			reply.getReputation().addVote(ReputationAction.Upvote, user.getId());
+			reputationUpdater.updateReputationAfterAction(review.getSport(), comment.getReputation(),
+					ReputationAction.Upvote,
+					comment.getAuthorId(), user);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -380,7 +386,7 @@ public class ReviewApiHandler {
 		// are different to avoid self-boosting
 		if (!StringUtils.isNullOrEmpty(comment.getAuthorId()) && !comment.getAuthorId().equals(review.getAuthorId())) {
 			ReputationAction action = comment.isHelpful() ? ReputationAction.Helpful : ReputationAction.LostHelpful;
-			reputationUpdater.updateReputation(action, comment.getAuthorId());
+			reputationUpdater.updateReputation(review.getSport(), action, comment.getAuthorId());
 		}
 
 		mongoTemplate.save(review);

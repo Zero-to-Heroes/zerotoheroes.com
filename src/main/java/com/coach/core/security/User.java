@@ -12,6 +12,8 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.coach.reputation.UserReputation;
+import com.coach.review.Review.Sport;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -49,6 +51,7 @@ public class User implements UserDetails {
 
 	private String registerLocation;
 	private int reputation;
+	private UserReputation explodedReputation;
 
 	@Override
 	@JsonIgnore
@@ -125,7 +128,9 @@ public class User implements UserDetails {
 		return accountEnabled;
 	}
 
-	public void modifyReputation(int amount) {
+	public void modifyReputation(Sport sport, int amount) {
 		reputation += amount;
+		if (explodedReputation == null) explodedReputation = new UserReputation();
+		explodedReputation.modifyReputation(sport, amount);
 	}
 }

@@ -11,7 +11,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 			replace: true,
 			scope: {
 				comment:'=comment',
-				indentationLevel:'='
+				indentationLevel:'=',
+				commentIndex:'='
 			},
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {

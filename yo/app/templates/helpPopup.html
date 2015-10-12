@@ -1,0 +1,12 @@
+<div class="popover popover-help" tabindex="-1" ng-show="content">
+  	<div class="arrow"></div>
+  	<div class="popover-header">
+  		<h3 class="popover-title">
+  			<span><i class="ion-ios-lightbulb popover-title-icon"></i></span>{{title}}
+  			<a class="help-close" ng-click="close(true)"><span><i class="ion-close-round"></i></span></a>
+  		</h3>		
+	</div>
+  	<div class="popover-content" ng-bind-html="content">
+  	</div>
+</div>
+

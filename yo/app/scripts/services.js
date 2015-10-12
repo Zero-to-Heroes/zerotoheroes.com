@@ -28,9 +28,9 @@ services.factory('User', ['$window', '$log',
 	function ($window, $log) {
 
 		return {
-			setUser: function(user) {
-				$window.localStorage.user = JSON.stringify(user);
-			},
+		setUser: function(user) {
+			$window.localStorage.user = JSON.stringify(user);
+		},
             getName: function () {
                 return ($window.localStorage.user && JSON.parse($window.localStorage.user).username ? JSON.parse($window.localStorage.user).username : undefined);
             },
@@ -73,6 +73,7 @@ services.factory('User', ['$window', '$log',
             		$window.localStorage.views = strViews;
             	}
             	views = JSON.parse(strViews);
+                  //$log.log('number of views', views.length);
             	return views.length;
             },
             logNewVisit: function() {

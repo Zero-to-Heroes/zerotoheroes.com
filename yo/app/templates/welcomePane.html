@@ -26,7 +26,7 @@
 			<h4 ng-show="engagement <= 1 && recommendedVideo">Getting started</h4>
 			<p ng-show="engagement == 0 && recommendedVideo">We're glad to see you here :) If you're looking for a place to start, why not have a look at <a href="/r/{{sport}}/{{recommendedVideo}}">this video</a>? 
 			</p>
-			<p ng-show="engagement == 1 && recommendedVideo">Hey! Glad to see you back today! How would you feel about helping someone out today? <a href="/r/{{sport}}/{{recommendedVideo}}">This review</a> has not received any advice, would you mind helping?</p>
+			<p ng-show="engagement == 1 && recommendedVideo">Hey! Glad to see you back today! How would you feel about helping someone out today? <a href="/r/{{sport}}/{{recommendedVideo}}">This review</a> has not received any love lately, would you mind helping?</p>
 			<p ng-show="(engagement <= 1 && !User.isLoggedIn()) || (User.isLoggedIn() && engagement == 0)">It looks like you're new here. If you feel a bit lost, have a look at <a href="/{{sport =='meta' ? '' : sport}}">this presentation page</a> to get a better idea of what we do here, or stop by the <a href="/{{meta}}">forums</a></p>
 		</div>
 	</div>

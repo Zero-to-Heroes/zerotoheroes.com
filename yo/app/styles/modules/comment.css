@@ -20,7 +20,8 @@
 }
 
 .author-information  .logged-author, .author-information  .logged-author:focus, .author-information  .logged-author:active {
-	color: #8B4513;
+	/*color: #8B4513;*/
+	color: #333;
 	text-decoration: none;
 }
 

@@ -64,7 +64,6 @@ angular.module('controllers').controller('LayoutCtrl', ['$rootScope', '$scope', 
 		   		$scope.sport = current.$$route.sport;
 		   	}
 
-		   	$log.log('sport', $scope.sport, $scope.sportsConfig[$scope.sport], $scope.sportsConfig[$scope.sport].isSport);
 		   	if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
 				$rootScope.pageDescription = 'Get better at ' + $scope.sportsConfig[$scope.sport].displayName + '. A video review platform to share your passion and improve your skills. Record yourself playing. Get the feedback you need. Progress and help others';
 				$log.log('pageDescription', $rootScope.pageDescription);

@@ -18,7 +18,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'bower_components/jquery/dist/jquery.js',
+      'bower_components/jquery/jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
@@ -69,6 +69,7 @@ module.exports = function(config) {
       'bower_components/moment-duration-format/lib/moment-duration-format.js',
       'bower_components/wowjs/dist/wow.js',
       'bower_components/jquery.stellar/jquery.stellar.js',
+      'bower_components/angularjs-viewhead/angularjs-viewhead.js',
 
       'app/scripts/app.js',
       'app/scripts/landing/owl.carousel.min.js',

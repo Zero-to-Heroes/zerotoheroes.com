@@ -17,6 +17,8 @@ import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 
+import com.amazonaws.util.StringUtils;
+import com.coach.core.security.User;
 import com.coach.reputation.Reputation;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -54,6 +56,7 @@ public class Review {
 	private String description = "";
 	private String author, lastModifiedBy;
 	private String authorId, lastModifiedById;
+	private int authorReputation;
 	private int beginning, ending;
 	private List<Comment> comments;
 	private boolean transcodingDone;
@@ -140,5 +143,31 @@ public class Review {
 
 	public void incrementViewCount() {
 		viewCount++;
+	}
+
+	public List<String> getAllAuthors() {
+		List<String> allAuthors = new ArrayList<>();
+		if (!StringUtils.isNullOrEmpty(authorId)) allAuthors.add(authorId);
+
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.getAllAuthors(allAuthors);
+			}
+		}
+
+		return allAuthors;
+	}
+
+	public void normalizeUsers(Map<String, User> userMap) {
+		User author = userMap.get(authorId);
+		if (author != null) {
+			authorReputation = author.getReputation(sport);
+		}
+
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.normalizeUsers(sport, userMap);
+			}
+		}
 	}
 }

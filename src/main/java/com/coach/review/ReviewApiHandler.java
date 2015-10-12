@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import lombok.extern.slf4j.Slf4j;
@@ -105,12 +107,15 @@ public class ReviewApiHandler {
 		// Increase the view count
 		if (review.isTranscodingDone()) {
 			review.incrementViewCount();
-			mongoTemplate.save(review);
 		}
 
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
 		review.sortComments();
+
+		denormalizeReputations(review);
+
+		updateReview(review);
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
@@ -143,6 +148,7 @@ public class ReviewApiHandler {
 			reputationUpdater.updateReputationAfterAction(review.getSport(), review.getReputation(),
 					ReputationAction.Upvote,
 					review.getAuthorId(), user);
+			review.setAuthorReputation(user.getReputation(review.getSport()) + 1);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -160,8 +166,7 @@ public class ReviewApiHandler {
 		review.setCreationDate(new Date());
 		review.setLastModifiedBy(review.getAuthor());
 
-		// Store that entry in DB
-		mongoTemplate.save(review);
+		updateReview(review);
 		log.debug("Saved review with ID: " + review.getId());
 
 		// Start transcoding
@@ -202,6 +207,7 @@ public class ReviewApiHandler {
 			reputationUpdater.updateReputationAfterAction(review.getSport(), comment.getReputation(),
 					ReputationAction.Upvote,
 					comment.getAuthorId(), user);
+			comment.setAuthorReputation(user.getReputation(review.getSport()) + 1);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -221,7 +227,7 @@ public class ReviewApiHandler {
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
-		mongoTemplate.save(review);
+		updateReview(review);
 
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
@@ -261,7 +267,7 @@ public class ReviewApiHandler {
 		review.setDescription(description);
 		review.setSport(sport);
 		review.setTitle(title);
-		mongoTemplate.save(review);
+		updateReview(review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -269,8 +275,6 @@ public class ReviewApiHandler {
 	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Comment> updateComment(@PathVariable("reviewId") final String reviewId,
 			@PathVariable("commentId") final int commentId, @RequestBody Comment newComment) throws IOException {
-
-		log.debug("Updating comment " + commentId + " to review " + reviewId);
 
 		Review review = reviewRepo.findById(reviewId);
 		Comment comment = review.getComment(commentId);
@@ -294,7 +298,7 @@ public class ReviewApiHandler {
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
-		mongoTemplate.save(review);
+		updateReview(review);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
@@ -320,9 +324,10 @@ public class ReviewApiHandler {
 			// the nmae
 			User user = userRepo.findByUsername(currentUser);
 			reply.setAuthorId(user.getId());
-			reputationUpdater.updateReputationAfterAction(review.getSport(), comment.getReputation(),
+			reputationUpdater.updateReputationAfterAction(review.getSport(), reply.getReputation(),
 					ReputationAction.Upvote,
-					comment.getAuthorId(), user);
+					reply.getAuthorId(), user);
+			reply.setAuthorReputation(user.getReputation(review.getSport()) + 1);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -344,7 +349,7 @@ public class ReviewApiHandler {
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, reply);
-		mongoTemplate.save(review);
+		updateReview(review);
 
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
@@ -389,7 +394,7 @@ public class ReviewApiHandler {
 			reputationUpdater.updateReputation(review.getSport(), action, comment.getAuthorId());
 		}
 
-		mongoTemplate.save(review);
+		updateReview(review);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
@@ -437,5 +442,20 @@ public class ReviewApiHandler {
 	public @ResponseBody ResponseEntity<Review> getRecommendedReviewForComment() {
 
 		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);
+	}
+
+	private void updateReview(Review review) {
+		mongoTemplate.save(review);
+	}
+
+	private void denormalizeReputations(Review review) {
+		List<String> userIds = review.getAllAuthors();
+		Iterable<User> users = userRepo.findAll(userIds);
+
+		Map<String, User> userMap = new HashMap<>();
+		for (User user : users) {
+			userMap.put(user.getId(), user);
+		}
+		review.normalizeUsers(userMap);
 	}
 }

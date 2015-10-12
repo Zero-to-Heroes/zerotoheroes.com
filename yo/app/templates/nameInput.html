@@ -1,6 +1,12 @@
 <div>
 	<li><a class="link-minor" ng-show="!loggedIn" ng-click="signIn()">Sign In</a></li>
 	<li><a class="link-minor" ng-show="!loggedIn" ng-click="signUp()">Create account</a></li>
-	<li><a ng-show="loggedIn">{{name}} <span class="glyphicon glyphicon-ok" ng-show="loggedIn" bs-tooltip="tooltip" title="You are logged in"></a></li>
+	<li>
+		<a ng-show="loggedIn">
+			{{name}}
+			<span bs-tooltip data-title="Your total reputation. You can increase it by giving useful advice to others" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation">{{User.reputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
+			<!--<span bs-tooltip data-title="How many bronze badges you got" data-placement="bottom" data-animation="am-fade-and-scale" >1<span><i class="ion-trophy reputation-icon reputation-badge reputation-badge-bronze"></i></span></span>-->
+		</a>
+	</li>
 	<li><a class="link-minor" ng-show="showLogout && loggedIn" ng-click="signOut()">Sign out</a></li>
 </div>

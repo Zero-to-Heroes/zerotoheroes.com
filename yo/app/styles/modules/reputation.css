@@ -1,0 +1,20 @@
+.total-reputation {
+	margin-left: 10px;
+}
+
+.reputation-icon {
+	margin-right: 10px;
+	margin-left: 5px;
+}
+
+.reputation-badge-bronze {
+	color: #CD7F32;
+}
+
+.reputation-badge-silver {
+	color: silver;
+}
+
+.reputation-badge-gold {
+	color: #FFD700;
+}

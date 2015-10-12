@@ -78,7 +78,10 @@
 			</div>
 			<div class="row author-information">
 				<div class="col-xs-6 text-left">
-					<h4 class="text-left review-author">{{review.author}}</h4>
+					<h4 ng-hide="review.authorId" class="text-left review-author">{{review.author}}</h4>
+					<h4 ng-show="review.authorId" class="text-left review-author"><a class="logged-author">{{review.author}}</a></h4>
+					<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="review.authorReputation">{{review.authorReputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
+
 					<span  class="link-minor" ng-show="!review.editing && User.getName() == review.author"> - </span>
 					<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && User.getName() == review.author"> Edit information</a>
 					<div ng-show="review.editing">

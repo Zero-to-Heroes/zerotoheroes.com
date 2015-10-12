@@ -5,12 +5,16 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import com.amazonaws.util.StringUtils;
+import com.coach.core.security.User;
 import com.coach.reputation.Reputation;
+import com.coach.review.Review.Sport;
 
 @Getter
 @Setter
@@ -19,6 +23,7 @@ public class Comment {
 
 	private String id;
 	private String author, authorId, text;
+	private int authorReputation;
 	private Date creationDate;
 	private boolean helpful;
 	private List<Comment> comments;
@@ -68,6 +73,31 @@ public class Comment {
 		if (comments != null) {
 			for (Comment comment : comments) {
 				comment.prepareForDisplay(userId);
+			}
+		}
+	}
+
+	public void getAllAuthors(List<String> allAuthors) {
+		if (!StringUtils.isNullOrEmpty(authorId) && !allAuthors.contains(authorId)) {
+			allAuthors.add(authorId);
+		}
+
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.getAllAuthors(allAuthors);
+			}
+		}
+	}
+
+	public void normalizeUsers(Sport sport, Map<String, User> userMap) {
+		User author = userMap.get(authorId);
+		if (author != null) {
+			authorReputation = author.getReputation(sport);
+		}
+
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.normalizeUsers(sport, userMap);
 			}
 		}
 	}

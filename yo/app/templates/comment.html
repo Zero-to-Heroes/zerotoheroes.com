@@ -6,7 +6,12 @@
 	</div>
 	<div class="comment-main">
 		<div class="comment-header">
-			<span class="comment-author">{{comment.author}}</span>
+			<span class="author-information">
+				<span class="comment-author" ng-hide="comment.authorId">{{comment.author}}</span>
+				<a class="comment-author logged-author" ng-show="comment.authorId">{{comment.author}}</a>
+				<span bs-tooltip data-title="{{comment.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="comment.authorReputation">{{comment.authorReputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
+			</span>
+
 			<span><small>{{formatDate(comment)}}</small></span>
 
 			<span ng-show="comment.id && User.getName() == comment.author && !comment.editing"> - </span>

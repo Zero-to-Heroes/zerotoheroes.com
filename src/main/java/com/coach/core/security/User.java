@@ -133,4 +133,9 @@ public class User implements UserDetails {
 		if (explodedReputation == null) explodedReputation = new UserReputation();
 		explodedReputation.modifyReputation(sport, amount);
 	}
+
+	public int getReputation(Sport sport) {
+		if (explodedReputation == null) explodedReputation = new UserReputation();
+		return explodedReputation.getReputation(sport);
+	}
 }

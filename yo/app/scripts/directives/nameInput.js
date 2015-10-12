@@ -20,6 +20,8 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 				//$log.log('Refreshing user');
 				$scope.name = User.getName();
 				$scope.loggedIn = User.isLoggedIn();
+				$scope.User = User.getUser();
+				$log.log('user is ', $scope.User);
 			}
 			$scope.refresh();
 			

@@ -19,6 +19,19 @@
 	font-weight: bold;
 }
 
+.author-information  .logged-author, .author-information  .logged-author:focus, .author-information  .logged-author:active {
+	color: #8B4513;
+	text-decoration: none;
+}
+
+.author-information  .total-reputation {
+	margin-left: 0.3em;
+}
+
+.author-information  .reputation-icon {
+	margin-right: 0.3em;
+}
+
 .comment-footer  {
 	margin-top: -10px;
 	font-size: 0.8em;

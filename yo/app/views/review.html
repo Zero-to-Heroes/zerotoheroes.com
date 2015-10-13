@@ -51,7 +51,7 @@
 						    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
 						  	</div>
 						</div>
-						<div class="col-md-2">
+						<div class="col-md-2" ng-hide="sport">
 							<div>
 								<span class="label label-primary pull-right" ng-model="review.sport.value">{{review.sport.value}}</span>
 							</div>

@@ -1,0 +1,17 @@
+tags-input[disabled] .tags {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+tags-input[disabled] .tags .input {
+	background-color: transparent;
+}
+
+tags-input[disabled] .tags .tag-item {
+	opacity: 1;
+}
+
+tags-input[disabled] .tags .tag-item .remove-button {
+	display: none;
+}

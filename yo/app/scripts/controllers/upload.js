@@ -44,6 +44,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
         	angular.forEach($scope.possibleSports, function(value) {
         		if (value.toLowerCase() == $routeParams.sport) {
         			$scope.review.sport = value;
+        			$scope.loadTags();
         		}
         	})
 		};
@@ -133,6 +134,36 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				$scope.API.seekTime(time1 / 1000);
 			}
 		}
+
+  		//===============
+		// Tags
+		//===============
+		$scope.autocompleteTag = function($query) {
+			var validTags = $scope.allowedTags.filter(function (el) {
+				return el.text.startsWith($query);
+			});
+			return validTags;
+		}
+
+		$scope.$watch('review.sport', function (newVal, oldVal) {
+			$log.log('watching sport value ', oldVal, newVal);
+			// edit mode
+			if (oldVal != newVal) {
+				$log.log('getting the new tags for sport ', $scope.review.sport);
+				$scope.loadTags();
+			}
+		});
+
+		$scope.loadTags = function() {
+			Api.Tags.query({sport: $scope.review.sport}, 
+				function(data) {
+					$scope.allowedTags = data;
+					$log.log('allowedTags set to', $scope.allowedTags);
+				}
+			);
+		}
+
+
 
   		//===============
 		// Upload core methods

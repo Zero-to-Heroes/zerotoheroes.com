@@ -32,7 +32,6 @@ import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
 import com.coach.reputation.ReputationAction;
 import com.coach.reputation.ReputationUpdater;
-import com.coach.review.Review.Sport;
 import com.coach.review.video.transcoding.Transcoder;
 import com.coach.user.UserRepository;
 
@@ -260,13 +259,11 @@ public class ReviewApiHandler {
 				review.getAuthor())) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
 
 		log.debug("Upading review with " + inputReview);
-		String description = inputReview.getDescription();
-		Sport sport = inputReview.getSport();
-		String title = inputReview.getTitle();
 
-		review.setDescription(description);
-		review.setSport(sport);
-		review.setTitle(title);
+		review.setDescription(inputReview.getDescription());
+		review.setSport(inputReview.getSport());
+		review.setTitle(inputReview.getTitle());
+		review.setTags(inputReview.getTags());
 		updateReview(review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

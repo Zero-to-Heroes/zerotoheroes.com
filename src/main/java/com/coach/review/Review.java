@@ -20,6 +20,7 @@ import org.springframework.data.annotation.Id;
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
 import com.coach.reputation.Reputation;
+import com.coach.tag.Tag;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -64,6 +65,7 @@ public class Review {
 	private Map<String, String> reviewVideoMap;
 	private Reputation reputation;
 	private int viewCount;
+	private List<Tag> tags;
 
 	private int totalInsertedComments;
 

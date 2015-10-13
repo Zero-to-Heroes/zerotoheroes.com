@@ -83,6 +83,13 @@
 					   </div>
 					</div>
 			  	</div>
+				<div class="row video-tags" ng-show="allowedTags && allowedTags.length > 0">
+					<div class="col-xs-12 text-left">
+						<tags-input ng-model="review.tags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group">
+							<auto-complete source="autocompleteTag($query)" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
+						</tags-input>
+					</div>
+				</div>
 		  		<div class="row">
 					<div class="col-sm-2">
 			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress"  analytics-on="click" analytics-category="upload" analytics-event="upload.request">{{useVideo ? 'Upload' : 'Post'}} now</button>
@@ -109,6 +116,7 @@
 			    </div>
 			</div>
 		</div>
+		<div id="padder"></div>
+		<div id="bottom"></div>
 	</div>
-	<div id="bottom"></div>
 </form>

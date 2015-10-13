@@ -16,5 +16,14 @@
 }
 
 .video-information .author-information {
-	margin-top: 30px;
+	margin-top: 15px;
+}
+
+.video-details .reputation {
+	width: auto;
+	font-size: 1.3em;
+}
+
+.video-tags {
+	margin-top: 15px;
 }

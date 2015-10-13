@@ -13,12 +13,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.selectedCoach;
 		$scope.User = User;
 
+
 		$scope.initReview = function() {
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data;
 					$scope.useVideo = $scope.review.key ? true : false;
 					$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
+
+					Api.Tags.query({sport: $scope.review.sport.key}, 
+						function(data) {
+							$scope.allowedTags = data;
+							$log.log('allowedTags set to', $scope.allowedTags);
+						}
+					);
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -170,11 +178,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.$broadcast('show-errors-check-validity');
 			if ($scope.commentForm.$valid) {
 				if (!User.isLoggedIn()) {
-  					$scope.onAddComment = true;
-  					$rootScope.$broadcast('account.signup.show', {identifier: $scope.newComment.author});
-  				}
-  				// Otherwise directly proceed to the upload
-  				else {
+					$scope.onAddComment = true;
+					$rootScope.$broadcast('account.signup.show', {identifier: $scope.newComment.author});
+				}
+				// Otherwise directly proceed to the upload
+				else {
 					$scope.uploadComment();
 				}
 			}
@@ -182,24 +190,49 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.cancelComment = function() {
 			$scope.newComment = {};
-  			$scope.commentForm.$setPristine();
-  			$scope.$broadcast('show-errors-reset');
+			$scope.commentForm.$setPristine();
+			$scope.$broadcast('show-errors-reset');
 		};
 
 		$scope.uploadComment = function() {
 			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
-	  				function(data) {
-			  			$scope.newComment = {};
-			  			$scope.commentForm.$setPristine();
-			  			$scope.review.comments = data.comments;
-			  			$scope.review.reviewVideoMap = data.reviewVideoMap;
-			  			$scope.$broadcast('show-errors-reset');
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  		);
+				function(data) {
+					$scope.newComment = {};
+					$scope.commentForm.$setPristine();
+					$scope.review.comments = data.comments;
+					$scope.review.reviewVideoMap = data.reviewVideoMap;
+					$scope.$broadcast('show-errors-reset');
+				}, 
+				function(error) {
+					// Error handling
+					$log.error(error);
+				}
+			);
+		}
+
+		//===============
+		// Tag system
+		//===============
+		$scope.$watch('review.editing', function (newVal, oldVal) {
+			// edit mode
+			if (newVal) {
+				$scope.tagsPlaceholder = 'Add a tag';
+			}
+			// if not edit mode and there are no tags
+			else if ($scope.review && (!$scope.review.tags || $scope.review.tags.length == 0)) {
+				$scope.tagsPlaceholder = 'No tags defined';
+			}
+			// Fallback to default empty value
+			else {
+				$scope.tagsPlaceholder = '';
+			}
+		});
+
+		$scope.loadTags = function($query) {
+			var validTags = $scope.allowedTags.filter(function (el) {
+				return el.text.startsWith($query);
+			});
+			return validTags;
 		}
 
 		//===============
@@ -213,14 +246,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Otherwise directly proceed to the upload
 			else {
 				Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
-	  				function(data) {
-	  					$scope.review.reputation = data.reputation;
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  			);
+					function(data) {
+						$scope.review.reputation = data.reputation;
+					}, 
+					function(error) {
+						// Error handling
+						$log.error(error);
+					}
+				);
 			}
 		}
 
@@ -232,14 +265,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Otherwise directly proceed to the upload
 			else {
 				Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
-	  				function(data) {
-	  					$scope.review.reputation = data.reputation;
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  			);
+					function(data) {
+						$scope.review.reputation = data.reputation;
+					}, 
+					function(error) {
+						// Error handling
+						$log.error(error);
+					}
+				);
 			}
 		}
 		
@@ -249,30 +282,35 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.startEditingInformation = function() {
 			$scope.review.oldTitle = $scope.review.title;
 			$scope.review.oldDescription = $scope.review.description;
-			$scope.review.oldSport = angular.copy($scope.review.sport);
+			//$scope.review.oldSport = angular.copy($scope.review.sport);
 			$scope.review.oldSportForDisplay = $scope.review.sportForDisplay;
+			$scope.review.oldTags = $scope.review.tags;
 			$scope.review.editing = true;
 		}
 
 		$scope.cancelUpdateDescription = function() {
 			$scope.review.title = $scope.review.oldTitle;
 			$scope.review.description = $scope.review.oldDescription;
-			$scope.review.sport = angular.copy($scope.review.oldSport);
+			//$scope.review.sport = angular.copy($scope.review.oldSport);
 			$scope.review.sportForDisplay = $scope.review.oldSportForDisplay;
+			$scope.review.tags = $scope.review.oldTags;
 			$scope.review.editing = false;
 		}
 
 		$scope.updateDescription = function() {
-			$scope.review.sport = $scope.review.sportForDisplay;
-			Api.ReviewsUpdate.save({reviewId: $scope.review.id}, $scope.review, 
-	  				function(data) {
-	  					$scope.updateVideoInformation(data);
-	  				}, 
-	  				function(error) {
-	  					// Error handling
-	  					$log.error(error);
-	  				}
-	  			);
+			//$scope.review.sport = $scope.review.sportForDisplay;
+			if ($scope.videoInformationForm.$valid) {
+				$log.log('updating review to ', $scope.review);
+				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, $scope.review, 
+					function(data) {
+						$scope.updateVideoInformation(data);
+					}, 
+					function(error) {
+						// Error handling
+						$log.error(error);
+					}
+				);
+			}
 		}
 
 		$scope.updateVideoInformation = function(data) {
@@ -287,7 +325,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.review.markedText = marked($scope.review.compiledText);
 
 			$scope.review.sportForDisplay = $scope.review.sport.key;
-  			$scope.review.editing = false;
+			$scope.review.editing = false;
 			$scope.review.processed = true;
 		}
 
@@ -299,10 +337,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// Coach
 		//===============
 		$scope.selectCoach = function (coach, email) {
-      		$scope.hideProModal();
-      		//$log.log(email);
-		    Api.Payment.save({reviewId: $routeParams.reviewId, coachId: coach.id, email: email}, function(data) {
-      			$scope.selectedCoach = coach;
+			$scope.hideProModal();
+			//$log.log(email);
+			Api.Payment.save({reviewId: $routeParams.reviewId, coachId: coach.id, email: email}, function(data) {
+				$scope.selectedCoach = coach;
 			});
 		};
 
@@ -546,14 +584,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 
 		var entityMap = {
-		    "<": "&lt;",
-		    ">": "&gt;"
+			"<": "&lt;",
+			">": "&gt;"
 		};
 
 		function escapeHtml(string) {
-		    return String(string).replace(/[<>]/g, function (s) {
-		      	return entityMap[s];
-		    });
+			return String(string).replace(/[<>]/g, function (s) {
+				return entityMap[s];
+			});
 		}
 
 		

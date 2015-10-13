@@ -55,6 +55,7 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 				$scope.$on('$routeChangeSuccess', function(next, current) { 
 					$scope.recommendVideo();
 					$scope.buildEngagement();
+					$scope.getLatestFeatures();
 				});
 			}
 		};

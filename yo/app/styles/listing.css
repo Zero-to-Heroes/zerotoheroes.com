@@ -68,15 +68,33 @@
   width: 60px;
 }
 
+.video-listing .sport {
+  display: inline-block;
+  margin-top: 1px;
+  vertical-align: top;
+}
+
+.video-listing .sport .label {
+	height: 22px;
+	line-height: 21px;
+	font-size: 12px;
+	border-radius: 3px;
+	font-weight: normal;
+}
+
+.video-listing .sport-tags {
+  display: inline-block;
+}
+
 /* Don't show the name input if it appears on the navbar */
 @media screen and (min-width: 600px) {
-    .thumbnails {
-        display: table-cell;
-    }
+	.thumbnails {
+		display: table-cell;
+	}
 }
 
 @media screen and (max-width: 600px) {
-    .video-listing .comments {
-      display: none;
-    }
+	.video-listing .comments {
+	  display: none;
+	}
 }

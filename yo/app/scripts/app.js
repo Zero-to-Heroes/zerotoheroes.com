@@ -92,11 +92,11 @@ app.config(['$routeProvider', '$locationProvider',
 		controller: 'UploadDetailsCtrl',
 		upload: true
 	  }).
-	  when('/r/:reviewId/:reviewTitle', {
+	  /*when('/r/:reviewId/:reviewTitle', {
 		templateUrl: 'views/review.html',
 		controller: 'ReviewCtrl'
-	  }).
-	  when('/r/:sport/:reviewId/:reviewTitle', {
+	  }).*/
+	  when('/r/:sport/:reviewId/:reviewTitle?', {
 		templateUrl: 'views/review.html',
 		controller: 'ReviewCtrl'
 	  }).
@@ -167,7 +167,9 @@ app.run(['$rootScope', '$window', '$location', '$http',
 app.run(['$rootScope', '$window', '$location', function($rootScope, $window, $location) {
 	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 		//$window.ga('send', 'pageview', { page: $location.url() });
-		$rootScope.isLandingPage = current.$$route.isLandingPage; 
+		if (current.$$route) {
+			$rootScope.isLandingPage = current.$$route.isLandingPage; 
+		}
 	});
 }]);
 

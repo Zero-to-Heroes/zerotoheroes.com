@@ -13,7 +13,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.selectedCoach;
 		$scope.User = User;
 
-
 		$scope.initReview = function() {
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
@@ -27,6 +26,22 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 							$log.log('allowedTags set to', $scope.allowedTags);
 						}
 					);
+
+					// Update page description
+					if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
+						$rootScope.pageDescription = 'Get better at ' + $scope.sportsConfig[$scope.sport].displayName;
+						if ($scope.review.tags) {
+							angular.forEach($scope.review.tags, function(key) {
+								$rootScope.pageDescription += ' ' + key.text;
+							})
+							$rootScope.pageDescription += $scope.review.description;
+						}
+						else {
+							$rootScope.pageDescription += $scope.review.description;
+							$rootScope.pageDescription += '. A video review platform to share your passion and improve your skills. Record yourself playing. Get the feedback you need. Progress and help others';
+						}
+						$log.log('pageDescription in review.js', $rootScope.pageDescription);
+					}
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -283,7 +298,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.review.oldTitle = $scope.review.title;
 			$scope.review.oldDescription = $scope.review.description;
 			//$scope.review.oldSport = angular.copy($scope.review.sport);
-			$scope.review.oldSportForDisplay = $scope.review.sportForDisplay;
+			//$scope.review.oldSportForDisplay = $scope.review.sportForDisplay;
 			$scope.review.oldTags = $scope.review.tags;
 			$scope.review.editing = true;
 		}
@@ -292,13 +307,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.review.title = $scope.review.oldTitle;
 			$scope.review.description = $scope.review.oldDescription;
 			//$scope.review.sport = angular.copy($scope.review.oldSport);
-			$scope.review.sportForDisplay = $scope.review.oldSportForDisplay;
+			//$scope.review.sportForDisplay = $scope.review.oldSportForDisplay;
 			$scope.review.tags = $scope.review.oldTags;
 			$scope.review.editing = false;
 		}
 
 		$scope.updateDescription = function() {
-			//$scope.review.sport = $scope.review.sportForDisplay;
+			$scope.review.sport = $scope.review.sport.key;
 			if ($scope.videoInformationForm.$valid) {
 				$log.log('updating review to ', $scope.review);
 				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, $scope.review, 
@@ -324,7 +339,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Parse markdown
 			$scope.review.markedText = marked($scope.review.compiledText);
 
-			$scope.review.sportForDisplay = $scope.review.sport.key;
+			//$scope.review.sportForDisplay = $scope.review.sport.key;
 			$scope.review.editing = false;
 			$scope.review.processed = true;
 		}

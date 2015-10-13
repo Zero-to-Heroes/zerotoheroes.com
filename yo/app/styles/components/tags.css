@@ -6,6 +6,7 @@ tags-input[disabled] .tags {
 
 tags-input[disabled] .tags .input {
 	background-color: transparent;
+	display: none;
 }
 
 tags-input[disabled] .tags .tag-item {

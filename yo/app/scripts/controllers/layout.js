@@ -23,7 +23,7 @@ angular.module('controllers').controller('LayoutCtrl', ['$rootScope', '$scope', 
 					background: 'hots.jpg',
 					displayName: 'Heroes of the Storm',
 					useVideo: true,
-					recommendedVideo: '55f143bce4b0e4380e860d37',
+					recommendedVideo: '55fc3a7de4b049db505af11e',
 					isSport: true
 				},
 				leagueoflegends: {

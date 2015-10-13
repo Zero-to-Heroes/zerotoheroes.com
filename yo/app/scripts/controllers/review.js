@@ -23,7 +23,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					Api.Tags.query({sport: $scope.review.sport.key}, 
 						function(data) {
 							$scope.allowedTags = data;
-							$log.log('allowedTags set to', $scope.allowedTags);
+							//$log.log('allowedTags set to', $scope.allowedTags);
 						}
 					);
 
@@ -40,7 +40,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 							$rootScope.pageDescription += $scope.review.description;
 							$rootScope.pageDescription += '. A video review platform to share your passion and improve your skills. Record yourself playing. Get the feedback you need. Progress and help others';
 						}
-						$log.log('pageDescription in review.js', $rootScope.pageDescription);
+						//$log.log('pageDescription in review.js', $rootScope.pageDescription);
 					}
 				}
 			);
@@ -77,6 +77,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				});
 				$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
 			}, 300);
+
+			$scope.API.mediaElement.on('canplay', function() {
+				//$log.log('can play player1');
+				$scope.player1ready = true;
+				$scope.$apply();
+			});
 			
 		};
 
@@ -84,10 +90,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.API2 = $API;
 			$scope.API2.setVolume(0);
 			$scope.media = $scope.API2.mediaElement;
+
 			$scope.media.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {
-					//$log.log('can play');
-					$scope.allPlayersReady = true;
+					//$log.log('can play player2');
+					$scope.player2ready = true;
 					$scope.$apply();
 				}
 			});
@@ -454,6 +461,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.goToTimestamp = function(timeString) {
+			//$log.log('going to timestamp', timeString);
+			// Player1 already has a loaded source
+			$scope.player1ready = true;
+			$scope.player2ready = false;
+			$scope.allPlayersReady = false;
+
 			//$log.log('going to timestamp');
 			$scope.playerControls.pause();
 			var split = timeString.split("+");
@@ -484,7 +497,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 				var fileLocation2 = ENV.videoStorageUrl + key;
 				$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation2), type: dataType}];
-				$scope.allPlayersReady = false;
 
 				// Now move the videos side-byside
 				var sideInfo = otherVideo.indexOf('(') > -1 ? otherVideo.split('(')[0] : otherVideo;
@@ -502,7 +514,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				var convertedTime2 = $scope.extractTime(sideInfo);
 			}
 			else {
-				$scope.allPlayersReady = true;
+				//$scope.player = true;
 				$scope.playerControls.mode = 1;
 				// Redondant with watching the "playerControls.mode"?
 				$scope.playerControls.firstPlayerClass = '';
@@ -514,12 +526,37 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// 1- We need to wait until the source has been loaded to navigate in the video
 			var buffering = true;
 			var buffering2 = false;
+			$scope.$watch('player1ready', function (newVal, oldVal) {
+				//$log.log('player1ready?', oldVal, newVal);
+				if (!$scope.player2ready && $scope.playerControls.mode == 2) return;
+
+				if (newVal && buffering) {
+					$scope.allPlayersReady = true;
+				}
+
+				if (newVal && buffering2) {
+					$scope.allPlayersReady = true;
+				}
+			});
+
+			$scope.$watch('player2ready', function (newVal, oldVal) {
+				if (!$scope.player1ready) return;
+
+				if (newVal && buffering) {
+					$scope.allPlayersReady = true;
+				}
+
+				if (newVal && buffering2) {
+					$scope.allPlayersReady = true;
+				}
+			});
+
 			$scope.$watch('allPlayersReady', function (newVal, oldVal) {
 				if (newVal && buffering) {
-					$log.log('ready for phase 2, seeking');
-					if (otherVideo) {
-						$scope.allPlayersReady = false;
-					}
+					//$log.log('ready for phase 2, seeking');
+					$scope.player1ready = false;
+					$scope.player2ready = false;
+					$scope.allPlayersReady = false;
 					$scope.playerControls.pause();
 					$scope.playerControls.seekTime(convertedTime, convertedTime2);
 					buffering2 = true;
@@ -532,7 +569,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// conveniently processed first
 			$scope.$watch('allPlayersReady', function (newVal, oldVal) {
 				if (newVal && buffering2) {
-					$log.log('ready for phase 3, playing');
+					//$log.log('ready for phase 3, playing');
 					// The attributes
 					var attributes = split[1];
 

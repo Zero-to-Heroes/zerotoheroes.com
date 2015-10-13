@@ -49,10 +49,21 @@ public class Comment {
 		Collections.sort(comments, new Comparator<Comment>() {
 			@Override
 			public int compare(Comment o1, Comment o2) {
-				if (o2.getCreationDate() == null) return 1;
-				return o2.getCreationDate().compareTo(o1.getCreationDate());
+				if (o1.getReputation().getScore() != o2.getReputation().getScore()) {
+					return o2.getReputation().getScore() - o1.getReputation().getScore();
+				}
+				else if (o2.getCreationDate() == null) {
+					return 1;
+				}
+				else {
+					return o2.getCreationDate().compareTo(o1.getCreationDate());
+				}
 			}
 		});
+
+		for (Comment comment : comments) {
+			comment.sortComments();
+		}
 	}
 
 	public Comment getComment(int commentId) {

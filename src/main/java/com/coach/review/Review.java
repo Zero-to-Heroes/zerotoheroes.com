@@ -29,7 +29,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @NoArgsConstructor
 @ToString(exclude = "comments")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Review {
+public class Review implements HasText, HasReputation {
 
 	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 	@AllArgsConstructor
@@ -66,6 +66,7 @@ public class Review {
 	private Reputation reputation;
 	private int viewCount;
 	private List<Tag> tags;
+	private Map<String, String> canvas = new HashMap<>();
 
 	private int totalInsertedComments;
 
@@ -76,6 +77,7 @@ public class Review {
 		sortComments();
 	}
 
+	@Override
 	public Reputation getReputation() {
 		if (reputation == null) {
 			reputation = new Reputation();
@@ -182,5 +184,21 @@ public class Review {
 				comment.normalizeUsers(sport, userMap);
 			}
 		}
+	}
+
+	public void addCanvas(String key, String newCanvas) {
+		if (canvas == null) canvas = new HashMap<>();
+
+		canvas.put(key, newCanvas);
+	}
+
+	@Override
+	public String getText() {
+		return description;
+	}
+
+	@Override
+	public void setText(String newText) {
+		description = newText;
 	}
 }

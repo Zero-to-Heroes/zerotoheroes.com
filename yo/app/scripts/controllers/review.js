@@ -12,6 +12,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.User = User;
+		$scope.canvasIdIndex = 0;
+		$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
 
 		$scope.initReview = function() {
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
@@ -26,6 +28,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 							//$log.log('allowedTags set to', $scope.allowedTags);
 						}
 					);
+
+					$scope.hideCanvas();
 
 					// Update page description
 					if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
@@ -42,6 +46,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						}
 						//$log.log('pageDescription in review.js', $rootScope.pageDescription);
 					}
+
+					// Init the canvas
+					if (!$scope.review.canvas) {
+						$scope.review.canvas = {};
+					}
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -52,6 +61,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			});
 		}
 		$scope.initReview();
+
+		$scope.canvasOptions = {
+			width: 400, 
+			height: 300, 
+			color: '#ff0', 
+			lineWidth: 10,
+			backgroundColor: 'rgba(255, 255, 255, 0.5)'
+		};
 
 		//===============
 		// Video player
@@ -217,12 +234,26 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		};
 
 		$scope.uploadComment = function() {
+			$log.log('before filter, all canvas are', $scope.review.canvas);
+			var newCanvas = $scope.getNewCanvas($scope.review);
+			$log.log('new canvas are', newCanvas);
+			var usefulNewCanvas = $scope.filterOutUnusedCanvas($scope.newComment, newCanvas);
+			$log.log('usefulNewCanvas', usefulNewCanvas);
+			$scope.newComment.tempCanvas = usefulNewCanvas;
+			$log.log('saving comment', $scope.newComment);
 			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
 				function(data) {
 					$scope.newComment = {};
 					$scope.commentForm.$setPristine();
 					$scope.review.comments = data.comments;
 					$scope.review.reviewVideoMap = data.reviewVideoMap;
+					if (data.tempCanvas) {
+						angular.forEach(data.tempCanvas, function(value, key) {
+							$log.log('adding new canvas to the review', key, value);
+							$scope.review.canvas[key] = value;
+						});
+						$log.log('review canvas are now', $scope.review.canvas);
+					}
 					$scope.$broadcast('show-errors-reset');
 				}, 
 				function(error) {
@@ -230,6 +261,65 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$log.error(error);
 				}
 			);
+		}
+
+		//===============
+		// Drawing system
+		//===============
+		$scope.drawingCanvas = false;
+		$scope.$watch('drawingCanvas', function (newVal, oldVal) {
+			//$log.log('watching canvasFlag', oldVal, newVal);
+			// edit mode
+			if (newVal) {
+				//$log.log('starting edit canvas mode');
+				$scope.showCanvas();
+			}
+			else if (newVal != oldVal) {
+				//$log.log('Done editing, need to save');
+				$scope.hideCanvas();
+			}
+		});
+
+		$rootScope.$on('loadcanvas', function(event, canvasIdTag) {
+			//$log.log('TODO: need to load canvas with id', canvasIdTag);
+			var jsonCanvas = JSON.parse($scope.review.canvas[canvasIdTag]);
+			//$log.log('loaded canvas is', jsonCanvas);
+			$scope.loadCanvas(jsonCanvas);
+		});
+		$rootScope.$on('insertcanvas', function(event) {
+			//$log.log('updating canvas id to', $scope.canvasId);
+			$scope.canvasIdIndex++;
+			$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
+		});
+		$rootScope.$on('closecanvas', function(event, canvasIdTag) {
+			//$log.log('Closing canvas, need to save', canvasIdTag);
+			var currentCanvas = $scope.serializeCanvas();
+			//$log.log('Current serialized canvas is', currentCanvas);
+			$scope.review.canvas[canvasIdTag] = JSON.stringify(currentCanvas);
+			//$log.log('draft canvas are', $scope.review.canvas);
+			$scope.clearCanvas();
+		});
+
+		$scope.getNewCanvas = function(review) {
+			var newCanvas = {};
+			angular.forEach(review.canvas, function(value, key) {
+				$log.log('going through all temp canvs', key, value);
+				if (key.startsWith('tmp')) {
+					newCanvas[key] = value;
+				}
+			})
+			$log.log('all new canvas are', newCanvas);
+			return newCanvas;
+		}
+
+		$scope.filterOutUnusedCanvas = function(comment, newCanvas) {
+			var useful = {};
+			angular.forEach(newCanvas, function(value, key) {
+				if (comment.text.indexOf('[' + key + ']') != -1) {
+					useful[key] = value;
+				}
+			})
+			return useful;
 		}
 
 		//===============

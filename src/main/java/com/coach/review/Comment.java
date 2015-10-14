@@ -11,6 +11,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import org.springframework.data.annotation.Transient;
+
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
 import com.coach.reputation.Reputation;
@@ -19,7 +21,7 @@ import com.coach.review.Review.Sport;
 @Getter
 @Setter
 @ToString(exclude = "comments")
-public class Comment {
+public class Comment implements HasText, HasReputation {
 
 	private String id;
 	private String author, authorId, text;
@@ -29,6 +31,12 @@ public class Comment {
 	private List<Comment> comments;
 	private Reputation reputation;
 
+	// The canvas that have been drawn for this comment, and that need to be
+	// added to the review
+	@Transient
+	private Map<String, String> tempCanvas;
+
+	@Override
 	public Reputation getReputation() {
 		if (reputation == null) {
 			reputation = new Reputation();

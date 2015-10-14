@@ -28,10 +28,13 @@
 				</vg-media>
 			</videogular>
 		</div>
-
 		
-		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()"></vg-overlay-play>
+		<!--<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!drawingCanvas"></vg-overlay-play>
+
+		<div pw-canvas extended-canvas options="canvasOptions" class="drawing-canvas" ng-show="drawingCanvas"></div>-->
+		<canvas id="fabricCanvas" pw-canvas></canvas>
 	</videogular>
+
 </div>
 
 <div  class="video-information background-white">
@@ -124,13 +127,13 @@
 						</div>
 					</div>
 					<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-						<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key">
+						<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" canvas-flag="drawingCanvas" canvas-id="canvasId">
 							<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" auto-grow toolbar-target></textarea>
 						</toolbar>
 						<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" auto-grow toolbar-target></textarea>
 						<div>
 							<div class="inline-block">
-								<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
+								<button ng-click="addComment()" class="btn btn-default text-right" ng-disabled="drawingCanvas">Add comment</button>
 								<button ng-click="cancelComment()" class="btn btn-default text-right">Cancel</button>
 							</div>
 							<div class="inline-block float-right">

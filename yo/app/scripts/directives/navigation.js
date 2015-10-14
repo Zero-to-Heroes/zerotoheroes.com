@@ -19,8 +19,6 @@ app.directive('zthNavigation', ['User', '$log', function(User, $log) {
 				User.setName($scope.newName);
 				$scope.name = User.getName();
 			}
-
-			$log.log('scope', $scope);
 		}
 	};
 }]);

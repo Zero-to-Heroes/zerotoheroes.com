@@ -32,6 +32,7 @@ import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
 import com.coach.reputation.ReputationAction;
 import com.coach.reputation.ReputationUpdater;
+import com.coach.review.Review.Sport;
 import com.coach.review.video.transcoding.Transcoder;
 import com.coach.user.UserRepository;
 
@@ -111,9 +112,7 @@ public class ReviewApiHandler {
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
 		review.sortComments();
-
 		denormalizeReputations(review);
-
 		updateReview(review);
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -138,16 +137,7 @@ public class ReviewApiHandler {
 
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
-			review.setAuthor(currentUser);
-			// Add the ID of the author in addition to the name (we still keep
-			// the name
-			User user = userRepo.findByUsername(currentUser);
-			review.setAuthorId(user.getId());
-			// by default a poster likes his post
-			reputationUpdater.updateReputationAfterAction(review.getSport(), review.getReputation(),
-					ReputationAction.Upvote,
-					review.getAuthorId(), user);
-			review.setAuthorReputation(user.getReputation(review.getSport()) + 1);
+			addAuthorInformation(review.getSport(), review, currentUser);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -184,10 +174,8 @@ public class ReviewApiHandler {
 			@RequestBody Comment comment) throws IOException {
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		log.info("Current user is " + currentUser);
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
-		log.info("authorities are " + authorities);
 
 		// Adding the comment
 		log.debug("Adding comment " + comment + " to review " + id);
@@ -198,19 +186,10 @@ public class ReviewApiHandler {
 		// Add current logged in user as the author of the review
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
-			comment.setAuthor(currentUser);
-			// Add the ID of the author in addition to the name (we still keep
-			// the nmae
-			User user = userRepo.findByUsername(currentUser);
-			comment.setAuthorId(user.getId());
-			reputationUpdater.updateReputationAfterAction(review.getSport(), comment.getReputation(),
-					ReputationAction.Upvote,
-					comment.getAuthorId(), user);
-			comment.setAuthorReputation(user.getReputation(review.getSport()) + 1);
+			addAuthorInformation(review.getSport(), comment, currentUser);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
-			log.debug("Validating that the name used to created the review is allowed");
 			User user = userRepo.findByUsername(comment.getAuthor());
 			if (user != null) {
 				log.debug("Name not allowed: " + comment.getAuthor());
@@ -224,6 +203,8 @@ public class ReviewApiHandler {
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(comment.getAuthor());
 
+		consolidateCanvas(currentUser, review, comment, comment.getTempCanvas());
+
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
 		updateReview(review);
@@ -236,6 +217,7 @@ public class ReviewApiHandler {
 		emailNotifier.notifyNewComment(comment, review);
 
 		log.debug("Created comment " + comment + " with id " + comment.getId());
+		log.debug("Updated review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -260,7 +242,9 @@ public class ReviewApiHandler {
 
 		log.debug("Upading review with " + inputReview);
 
+		consolidateCanvas(currentUser, review, inputReview, inputReview.getCanvas());
 		review.setDescription(inputReview.getDescription());
+
 		review.setSport(inputReview.getSport());
 		review.setTitle(inputReview.getTitle());
 		review.setTags(inputReview.getTags());
@@ -288,6 +272,7 @@ public class ReviewApiHandler {
 		else if (!currentUser.equals(
 				comment.getAuthor())) { return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED); }
 
+		consolidateCanvas(currentUser, review, newComment, newComment.getTempCanvas());
 		comment.setText(newComment.getText());
 
 		review.setLastModifiedDate(new Date());
@@ -316,15 +301,7 @@ public class ReviewApiHandler {
 		// Add current logged in user as the author of the review
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
-			reply.setAuthor(currentUser);
-			// Add the ID of the author in addition to the name (we still keep
-			// the nmae
-			User user = userRepo.findByUsername(currentUser);
-			reply.setAuthorId(user.getId());
-			reputationUpdater.updateReputationAfterAction(review.getSport(), reply.getReputation(),
-					ReputationAction.Upvote,
-					reply.getAuthorId(), user);
-			reply.setAuthorReputation(user.getReputation(review.getSport()) + 1);
+			addAuthorInformation(review.getSport(), reply, currentUser);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -344,6 +321,7 @@ public class ReviewApiHandler {
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(reply.getAuthor());
 
+		consolidateCanvas(currentUser, review, reply, reply.getTempCanvas());
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, reply);
 		updateReview(review);
@@ -454,5 +432,31 @@ public class ReviewApiHandler {
 			userMap.put(user.getId(), user);
 		}
 		review.normalizeUsers(userMap);
+	}
+
+	private void consolidateCanvas(String prefix, Review review, HasText textHolder, Map<String, String> tempCanvas) {
+		String text = textHolder.getText();
+		String normalizedPrefix = prefix.replaceAll(" ", "");
+
+		for (String canvasKey : tempCanvas.keySet()) {
+			String newKey = normalizedPrefix + review.getCanvas().size();
+			review.addCanvas(newKey, tempCanvas.get(canvasKey));
+			log.debug("Replacing " + canvasKey + " with " + newKey);
+			String newText = text.replaceAll(canvasKey, newKey);
+			textHolder.setText(newText);
+		}
+	}
+
+	private void addAuthorInformation(Sport sport, HasReputation entity, String currentUser) {
+		entity.setAuthor(currentUser);
+		// Add the ID of the author in addition to the name (we still keep
+		// the name
+		User user = userRepo.findByUsername(currentUser);
+		entity.setAuthorId(user.getId());
+		// by default a poster likes his post
+		reputationUpdater.updateReputationAfterAction(sport, entity.getReputation(),
+				ReputationAction.Upvote,
+				entity.getAuthorId(), user);
+		entity.setAuthorReputation(user.getReputation(sport) + 1);
 	}
 }

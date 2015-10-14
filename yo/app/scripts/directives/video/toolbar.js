@@ -1,15 +1,17 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('toolbar', ['$log', '$parse', 
-	function($log, $parse) {
+app.directive('toolbar', ['$log', '$parse', '$rootScope', 
+	function($log, $parse, $rootScope) {
 		return {
 			restrict: 'E',
 			transclude: true,
 			templateUrl: 'templates/video/toolbar.html',
 			scope: {
 				API: '=playerApi',
-				insertModel: '='
+				insertModel: '=',
+				canvasFlag: '=',
+				canvasId: '='
 			},
 			link: function ($scope, element, attrs) {
 				$scope.element = element;
@@ -36,6 +38,34 @@ app.directive('toolbar', ['$log', '$parse',
 					$scope.insert('L' + duration);
 				}
 
+				$scope.insertCanvas = function() {
+					$log.log('insertCanvas, flag is ', $scope.canvasFlag);
+					// Edit canvas mode
+					if (!$scope.canvasFlag) {
+						// The cursor is positioned inside a canvas ID [], so we need to edit that one
+						var canvasTagId = $scope.readCanvasId();
+						$scope.currentCanvasId = $scope.canvasId;	
+						if (canvasTagId) {
+							//$log.log('editing canvas id', canvasTagId);
+							$scope.canvasFlag = true;
+							// Load the canvas
+							$rootScope.$broadcast('loadcanvas', canvasTagId);
+						}
+						// The cursor is outside a canvas ID [], so we create a new one
+						else {
+							$scope.canvasFlag = true;
+							var canvasTag = '[' + $scope.canvasId + ']';
+							$scope.insert(canvasTag);
+							$rootScope.$broadcast('insertcanvas');
+						}
+					}
+					// Save canvas
+					else {
+						$scope.canvasFlag = false;
+						$rootScope.$broadcast('closecanvas', $scope.currentCanvasId);
+					}
+				}
+
 				$scope.insert = function(value) {
 					var domElement = $scope.insertionElement[0];
 					var model = domElement.getAttribute("ng-model");
@@ -55,7 +85,44 @@ app.directive('toolbar', ['$log', '$parse',
 					  	$scope[model] = domElement.value;
 					  	domElement.focus();
 					}
+				}
 
+				$scope.readCanvasId = function() {
+					var domElement = $scope.insertionElement[0];
+					var canvasId = undefined;
+
+					if (domElement.selectionStart || domElement.selectionStart === 0) {
+					  	var startPos = domElement.selectionStart;
+					  	//$log.log('start position is');
+					  	//$log.log('first substring is', domElement.value.substring(0, startPos));
+					  	// find a [ before the position
+					  	var indexOfOpeningBracket = domElement.value.substring(0, startPos).lastIndexOf('[');
+					  	var indexOfPreviousClosingBracket = domElement.value.substring(0, startPos).lastIndexOf(']');
+
+					  	if (indexOfPreviousClosingBracket > indexOfOpeningBracket) {
+					  		//$log.log('closed before', indexOfPreviousClosingBracket, indexOfOpeningBracket);
+					  		return canvasId;
+					  	}
+
+					  	// find a ] after the position
+					  	var tempSubString = domElement.value.substring(indexOfOpeningBracket + 1, domElement.value.length);
+					  	//$log.log('tempsubstring is ', tempSubString);
+					  	var indexOfClosingBracket = tempSubString.indexOf(']');
+					  	var indexOfNextOpeningBracket = tempSubString.indexOf('[');
+
+					  	if (indexOfOpeningBracket == -1 || indexOfClosingBracket == -1) return canvasId;
+					  	if (indexOfNextOpeningBracket != -1 && indexOfNextOpeningBracket < indexOfClosingBracket) {
+					  		//$log.log('opened after', indexOfNextOpeningBracket, indexOfClosingBracket);
+					  		return canvasId;
+					  	}
+
+
+
+					  	canvasId = tempSubString.substring(0, indexOfClosingBracket);
+					  	//$log.log('indexOfOpeningBracket, indexOfClosingBracket, canvasId', indexOfOpeningBracket, indexOfClosingBracket, canvasId);
+					}
+
+					return canvasId;
 				}
 			}
 		};

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,7 +35,7 @@ public class Comment implements HasText, HasReputation {
 	// The canvas that have been drawn for this comment, and that need to be
 	// added to the review
 	@Transient
-	private Map<String, String> tempCanvas;
+	private Map<String, String> tempCanvas = new HashMap<>();
 
 	@Override
 	public Reputation getReputation() {

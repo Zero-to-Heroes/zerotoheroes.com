@@ -54,7 +54,7 @@ public class Review implements HasText, HasReputation {
 	private String fileType;
 	private Sport sport;
 	private String title;
-	private String description = "";
+	private String description = "", text = "";
 	private String author, lastModifiedBy;
 	private String authorId, lastModifiedById;
 	private int authorReputation;
@@ -69,6 +69,7 @@ public class Review implements HasText, HasReputation {
 	private Map<String, String> canvas = new HashMap<>();
 
 	private int totalInsertedComments;
+	private int canvasId;
 
 	public void addComment(Comment comment) {
 		if (comments == null) comments = new ArrayList<>();
@@ -188,17 +189,32 @@ public class Review implements HasText, HasReputation {
 
 	public void addCanvas(String key, String newCanvas) {
 		if (canvas == null) canvas = new HashMap<>();
-
 		canvas.put(key, newCanvas);
+		canvasId++;
+	}
+
+	public void removeCanvas(String canvasKey) {
+		if (canvas == null) canvas = new HashMap<>();
+		canvas.remove(canvasKey);
 	}
 
 	@Override
 	public String getText() {
-		return description;
+		text = description;
+		return text;
 	}
 
 	@Override
 	public void setText(String newText) {
 		description = newText;
+		text = newText;
+	}
+	
+	private String getDescription() {
+		return description;
+	}
+	
+	private void setDescription(String description) {
+		this.description = description;
 	}
 }

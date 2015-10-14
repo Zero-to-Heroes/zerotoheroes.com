@@ -9,3 +9,5 @@ yo/.tmp
 yo/.sass-cache
 yo/bower_components
 /*.log
+/*.lck
+/*.1

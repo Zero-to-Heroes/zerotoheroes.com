@@ -78,10 +78,10 @@
 					<div class="row">
 						<div class="col-md-10">
 							<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
-							<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel">
-								<textarea class="form-control" ng-model="review.description" auto-grow toolbar-target></textarea>
+							<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel" canvas-flag="drawingCanvas" canvas-id="canvasId">
+								<textarea class="form-control" ng-model="review.text" auto-grow toolbar-target></textarea>
 							</toolbar>
-							<textarea class="form-control" ng-model="review.description" ng-show="review.editing && !review.key" auto-grow></textarea>
+							<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" auto-grow></textarea>
 						</div>
 						<div ng-show="!!coaches.length && !review.editing" class="col-md-2 text-right">
 							<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
@@ -146,7 +146,7 @@
 				</div>
 			</div>
 		</form>
-		<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index"></comment>
+		<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" canvas-flag="drawingCanvas" canvas-id="canvasId"></comment>
 		<!-- Prevent scrolling center area if we're already at the bottom -->
 		<div id="padder"></div>
 		<div id="bottom"></div>

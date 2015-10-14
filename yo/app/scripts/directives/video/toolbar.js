@@ -44,19 +44,22 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					if (!$scope.canvasFlag) {
 						// The cursor is positioned inside a canvas ID [], so we need to edit that one
 						var canvasTagId = $scope.readCanvasId();
-						$scope.currentCanvasId = $scope.canvasId;	
+						$log.log('iediting existing canvas, id is ', canvasTagId);
+						$scope.currentCanvasId = canvasTagId;	
 						if (canvasTagId) {
-							//$log.log('editing canvas id', canvasTagId);
+							$log.log('editing canvas id', canvasTagId);
 							$scope.canvasFlag = true;
 							// Load the canvas
 							$rootScope.$broadcast('loadcanvas', canvasTagId);
 						}
 						// The cursor is outside a canvas ID [], so we create a new one
 						else {
+							$log.log('Creating new canvas');
 							$scope.canvasFlag = true;
 							var canvasTag = '[' + $scope.canvasId + ']';
 							$scope.insert(canvasTag);
-							$rootScope.$broadcast('insertcanvas');
+							$scope.currentCanvasId = $scope.canvasId;
+							$rootScope.$broadcast('insertcanvas', $scope.currentCanvasId);
 						}
 					}
 					// Save canvas

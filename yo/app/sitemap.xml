@@ -4,36 +4,78 @@
 		<loc>http://www.zerotoheroes.com/reviews</loc>
 		<lastmod>2015-10-06</lastmod>
 		<changefreq>daily</changefreq>
-		<priority>0.8</priority>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://www.zerotoheroes.com/s/badminton</loc>
-		<lastmod>2015-10-06</lastmod>
+		<lastmod>2015-10-15</lastmod>
 		<changefreq>daily</changefreq>
-		<priority>0.8</priority>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://www.zerotoheroes.com/s/squash</loc>
-		<lastmod>2015-10-06</lastmod>
+		<lastmod>2015-10-15</lastmod>
 		<changefreq>daily</changefreq>
-		<priority>0.8</priority>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://www.zerotoheroes.com/s/hearthstone</loc>
-		<lastmod>2015-10-06</lastmod>
+		<lastmod>2015-10-15</lastmod>
 		<changefreq>daily</changefreq>
-		<priority>0.8</priority>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://www.zerotoheroes.com/s/heroesofthestorm</loc>
-		<lastmod>2015-10-06</lastmod>
+		<lastmod>2015-10-15</lastmod>
 		<changefreq>daily</changefreq>
-		<priority>0.8</priority>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://www.zerotoheroes.com/s/leagueoflegends</loc>
-		<lastmod>2015-10-06</lastmod>
+		<lastmod>2015-10-15</lastmod>
 		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://www.zerotoheroes.com/s/meta</loc>
+		<lastmod>2015-10-15</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://www.zerotoheroes.com</loc>
+		<lastmod>2015-10-15</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>http://www.zerotoheroes.com/squash</loc>
+		<lastmod>2015-10-15</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>http://www.zerotoheroes.com/badminton</loc>
+		<lastmod>2015-10-15</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>http://www.zerotoheroes.com/hearthstone</loc>
+		<lastmod>2015-10-15</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>http://www.zerotoheroes.com/heroesofthestorm</loc>
+		<lastmod>2015-10-15</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>http://www.zerotoheroes.com/leagueoflegends</loc>
+		<lastmod>2015-10-15</lastmod>
+		<changefreq>weekly</changefreq>
 		<priority>0.8</priority>
 	</url>
 </urlset>

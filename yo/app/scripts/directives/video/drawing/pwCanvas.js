@@ -7,9 +7,7 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 			},*/
 			//templateUrl: '/templates/video/drawing/canvas.html',
 			link: function postLink($scope, element, attrs) {
-
-				(function() {
-					var canvas = $scope.canvas = this.__canvas = new fabric.Canvas('fabricCanvas', {
+					var canvas = $scope.canvas = new fabric.Canvas('fabricCanvas', {
 						isDrawingMode: true
 					});
 
@@ -21,7 +19,6 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 						canvas.freeDrawingBrush.shadowBlur = 0;
 					}
 
-				})();
 
 				$timeout(function() {
 					var container = element[0].parentElement;

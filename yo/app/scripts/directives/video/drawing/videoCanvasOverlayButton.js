@@ -6,7 +6,7 @@ app.directive("videoCanvasOverlayButton",
         return {
             restrict: "E",
             require: "^videogular",
-            template: "<div class='iconButton' ng-click='playerControls.canvasPlaying = !playerControls.canvasPlaying'>{{playerControls.canvasPlaying ? 'Hide drawings' : 'Show drawings'}}</div>"
+            template: "<div class='iconButton' ng-click='toggleCanvas()'>{{playerControls.canvasPlaying ? 'Hide drawings' : 'Show drawings'}}</div>"
         }
     }
 );

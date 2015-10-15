@@ -1,7 +1,7 @@
 <view-title>{{review.title}}</view-title>
 
 <div class="videogular-container keep-on-top multi-player" ng-show="review.key">
-	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': !review.editing}" vg-update-time="onUpdateTime($currentTime, $duration)">
+	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
 		<vg-media vg-src="sources" ng-class="playerControls.firstPlayerClass">
 		</vg-media>
 

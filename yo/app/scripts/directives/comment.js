@@ -22,8 +22,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.User = User;
 				$scope.goToTimestamp = $scope.$parent.goToTimestamp;
 				$scope.parseText = $scope.$parent.parseText;
-				$scope.showCanvas = $scope.$parent.showCanvas;
-				$scope.hideCanvas = $scope.$parent.hideCanvas;
 				$scope.prepareCanvasForUpload = $scope.$parent.prepareCanvasForUpload;
 				$scope.clearTemporaryCanvas = $scope.$parent.clearTemporaryCanvas;
 
@@ -49,11 +47,12 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					// edit mode
 					if (newVal) {
 						$log.log('starting edit canvas mode');
-						$scope.showCanvas();
+						$rootScope.$broadcast('editcanvas.start');
+						//$scope.showCanvas();
 					}
 					else if (newVal != oldVal) {
 						$log.log('Done editing, need to save');
-						$scope.hideCanvas();
+						$rootScope.$broadcast('editcanvas.end');
 					}
 				});
 

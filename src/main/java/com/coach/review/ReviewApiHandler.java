@@ -84,7 +84,8 @@ public class ReviewApiHandler {
 
 		if ("meta".equalsIgnoreCase(sport)) {
 			reviews = reviewRepo.findAll(userName, sport, newestFirst);
-		} else {
+		}
+		else {
 			reviews = reviewRepo.findAllWithKey(userName, sport, newestFirst);
 		}
 
@@ -252,10 +253,8 @@ public class ReviewApiHandler {
 					HttpStatus.UNAUTHORIZED);
 		}
 		// Disable edits when you're not the author
-		else if (!currentUser.equals(review.getAuthor())) {
-			return new ResponseEntity<Review>((Review) null,
-					HttpStatus.UNAUTHORIZED);
-		}
+		else if (!currentUser.equals(review.getAuthor())) { return new ResponseEntity<Review>((Review) null,
+				HttpStatus.UNAUTHORIZED); }
 
 		log.debug("Upading review with " + inputReview);
 		log.debug("Canvas from UI are " + inputReview.getCanvas());
@@ -269,7 +268,7 @@ public class ReviewApiHandler {
 		review.setTitle(inputReview.getTitle());
 		review.setTags(inputReview.getTags());
 		updateReview(review);
-		
+
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
@@ -294,10 +293,8 @@ public class ReviewApiHandler {
 					HttpStatus.UNAUTHORIZED);
 		}
 		// Disable edits when you're not the author
-		else if (!currentUser.equals(comment.getAuthor())) {
-			return new ResponseEntity<Comment>((Comment) null,
-					HttpStatus.UNAUTHORIZED);
-		}
+		else if (!currentUser.equals(comment.getAuthor())) { return new ResponseEntity<Comment>((Comment) null,
+				HttpStatus.UNAUTHORIZED); }
 
 		consolidateCanvas(currentUser, review, newComment,
 				newComment.getTempCanvas());
@@ -351,6 +348,7 @@ public class ReviewApiHandler {
 				+ " and comment " + comment);
 
 		consolidateCanvas(currentUser, review, reply, reply.getTempCanvas());
+		log.debug("modified text is " + reply.getText());
 
 		reply.setCreationDate(new Date());
 		review.addComment(comment, reply);
@@ -390,17 +388,13 @@ public class ReviewApiHandler {
 
 		// No anonymous access
 		if (StringUtils.isNullOrEmpty(currentUser)
-				|| UserAuthority.isAnonymous(authorities)) {
-			return new ResponseEntity<Comment>((Comment) null,
-					HttpStatus.UNAUTHORIZED);
-		}
+				|| UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Comment>((Comment) null,
+				HttpStatus.UNAUTHORIZED); }
 
 		log.debug("Validating that the logged in user is the review author");
 		User user = userRepo.findByUsername(currentUser);
-		if (!user.getId().equals(review.getAuthorId())) {
-			return new ResponseEntity<Comment>((Comment) null,
-					HttpStatus.UNAUTHORIZED);
-		}
+		if (!user.getId().equals(review.getAuthorId())) { return new ResponseEntity<Comment>((Comment) null,
+				HttpStatus.UNAUTHORIZED); }
 
 		comment.setHelpful(!comment.isHelpful());
 
@@ -493,15 +487,16 @@ public class ReviewApiHandler {
 		for (String canvasKey : tempCanvas.keySet()) {
 			if (review.getCanvas().containsKey(canvasKey)) {
 				review.getCanvas().put(canvasKey, tempCanvas.get(canvasKey));
-			} else {
+			}
+			else {
 				String newKey = normalizedPrefix + review.getCanvasId();
 				// review.removeCanvas(canvasKey);
 				review.addCanvas(newKey, tempCanvas.get(canvasKey));
 				log.debug("Replacing " + canvasKey + " with " + newKey);
-				String newText = text.replaceAll(canvasKey, newKey);
-				textHolder.setText(newText);
+				text = text.replaceAll(canvasKey, newKey);
 			}
 		}
+		textHolder.setText(text);
 	}
 
 	private void addAuthorInformation(Sport sport, HasReputation entity,

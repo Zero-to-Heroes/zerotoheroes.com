@@ -107,7 +107,7 @@ public class ReviewApiHandler {
 		Review review = reviewRepo.findById(id);
 
 		// Increase the view count
-		if (review.isTranscodingDone()) {
+		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {
 			review.incrementViewCount();
 		}
 

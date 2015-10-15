@@ -12,7 +12,9 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 			scope: {
 				comment:'=comment',
 				indentationLevel:'=',
-				commentIndex:'='
+				commentIndex:'=',
+				canvasFlag: '=',
+				canvasId: '='
 			},
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {
@@ -20,6 +22,9 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.User = User;
 				$scope.goToTimestamp = $scope.$parent.goToTimestamp;
 				$scope.parseText = $scope.$parent.parseText;
+				$scope.prepareCanvasForUpload = $scope.$parent.prepareCanvasForUpload;
+				$scope.clearTemporaryCanvas = $scope.$parent.clearTemporaryCanvas;
+
 				$scope.review = $scope.$parent.review;
 				$scope.API = $scope.$parent.API;
 				$scope.reply = {};
@@ -37,6 +42,20 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					$scope.API = $scope.$parent.API;
 				});
 
+				$scope.$watch('canvasFlag', function (newVal, oldVal) {
+					$log.log('watching canvasFlag in comment', oldVal, newVal);
+					// edit mode
+					if (newVal) {
+						$log.log('starting edit canvas mode');
+						$rootScope.$broadcast('editcanvas.start');
+						//$scope.showCanvas();
+					}
+					else if (newVal != oldVal) {
+						$log.log('Done editing, need to save');
+						$rootScope.$broadcast('editcanvas.end');
+					}
+				});
+
 				//===============
 				// Basic comment fonctions
 				//===============
@@ -50,14 +69,19 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.cancelUpdateComment = function(comment) {
+					$scope.clearTemporaryCanvas();
 					comment.text = comment.oldText;
 					comment.editing = false;
 				}
 
 				$scope.updateComment = function(comment) {
+					$scope.prepareCanvasForUpload($scope.review, $scope.comment);
+					$log.log('updating comment', $scope.comment);
 					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
 		  				function(data) {
 		  					$scope.setCommentText(comment, data.text);
+		  					$scope.review.canvas = data.tempCanvas;
+		  					// TODO: update canvas from server
 		  				}, 
 		  				function(error) {
 		  					// Error handling
@@ -110,6 +134,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.postReply = function() {
 					$scope.$broadcast('show-errors-check-validity');
 					if ($scope.replyForm.$valid) {
+						$scope.prepareCanvasForUpload($scope.review, $scope.reply);
 						if (!User.isLoggedIn() && !$scope.onAddReply) {
 							$scope.onAddReply = true; 
 							$rootScope.$broadcast('account.signup.show', {identifier: $scope.reply.author});
@@ -118,6 +143,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 							Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply, 
 				  				function(data) {
 				  					$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
+		  							$scope.review.canvas = data.canvas;
 				  					$scope.reply = {};
 				  				}, 
 				  				function(error) {

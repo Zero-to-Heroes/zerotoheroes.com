@@ -29,6 +29,10 @@ public class NewsRepository {
 		// Features
 		news.add(new News(
 				new DateTime("2015-10-13").toDate(),
+				"You can now draw on the videos to illustrate your comments! More information on <a href=\"r/meta/561f89c9e4b077e916dd5752/Drawing-on-videos\">this thread</a>",
+				News.Type.Feature));
+		news.add(new News(
+				new DateTime("2015-10-13").toDate(),
 				"Videos can now be tagged. More information on <a href=\"/r/meta/5617e6cfe4b09ef58bc85c04/Need-tagging-features\">this thread</a>",
 				News.Type.Feature));
 		news.add(new News(new DateTime("2015-10-09").toDate(),

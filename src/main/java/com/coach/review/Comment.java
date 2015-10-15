@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import org.springframework.data.annotation.Transient;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
@@ -19,7 +22,7 @@ import com.coach.review.Review.Sport;
 @Getter
 @Setter
 @ToString(exclude = "comments")
-public class Comment {
+public class Comment implements HasText, HasReputation {
 
 	private String id;
 	private String author, authorId, text;
@@ -29,6 +32,12 @@ public class Comment {
 	private List<Comment> comments;
 	private Reputation reputation;
 
+	// The canvas that have been drawn for this comment, and that need to be
+	// added to the review
+	@Transient
+	private Map<String, String> tempCanvas = new HashMap<>();
+
+	@Override
 	public Reputation getReputation() {
 		if (reputation == null) {
 			reputation = new Reputation();
@@ -49,10 +58,21 @@ public class Comment {
 		Collections.sort(comments, new Comparator<Comment>() {
 			@Override
 			public int compare(Comment o1, Comment o2) {
-				if (o2.getCreationDate() == null) return 1;
-				return o2.getCreationDate().compareTo(o1.getCreationDate());
+				if (o1.getReputation().getScore() != o2.getReputation().getScore()) {
+					return o2.getReputation().getScore() - o1.getReputation().getScore();
+				}
+				else if (o2.getCreationDate() == null) {
+					return 1;
+				}
+				else {
+					return o2.getCreationDate().compareTo(o1.getCreationDate());
+				}
 			}
 		});
+
+		for (Comment comment : comments) {
+			comment.sortComments();
+		}
 	}
 
 	public Comment getComment(int commentId) {

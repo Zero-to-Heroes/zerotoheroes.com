@@ -238,8 +238,8 @@ videogular video-playback-button .dropdown-menu > li > a {
 
 videogular video-dual-mode-button {
     display: table-cell;
-    width: 50px;
-    vertical-align: middle;
+    width: 50px
+;    vertical-align: middle;
     text-align: center;
     cursor: pointer;
 }
@@ -262,6 +262,36 @@ videogular div.video-dual-mode-button {
 videogular div.video-dual-mode-button a,
 videogular div.video-dual-mode-button a:hover,
 videogular div.video-dual-mode-button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+videogular video-canvas-overlay-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular video-canvas-overlay-button a,
+videogular video-canvas-overlay-button a:hover,
+videogular video-canvas-overlay-button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+videogular div.video-canvas-overlay-button {
+    display: table-cell;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+videogular div.video-canvas-overlay-button a,
+videogular div.video-canvas-overlay-button a:hover,
+videogular div.video-canvas-overlay-button a:visited {
     color: white;
     text-decoration: none;
 }

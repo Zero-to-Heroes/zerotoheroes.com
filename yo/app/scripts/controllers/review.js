@@ -12,6 +12,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.User = User;
+		$scope.canvasIdIndex = 0;
+		$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
 
 		$scope.initReview = function() {
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
@@ -23,9 +25,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					Api.Tags.query({sport: $scope.review.sport.key}, 
 						function(data) {
 							$scope.allowedTags = data;
-							$log.log('allowedTags set to', $scope.allowedTags);
+							//$log.log('allowedTags set to', $scope.allowedTags);
 						}
 					);
+
+					$scope.hideCanvas();
 
 					// Update page description
 					if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
@@ -34,14 +38,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 							angular.forEach($scope.review.tags, function(key) {
 								$rootScope.pageDescription += ' ' + key.text;
 							})
-							$rootScope.pageDescription += $scope.review.description;
+							$rootScope.pageDescription += $scope.review.text;
 						}
 						else {
-							$rootScope.pageDescription += $scope.review.description;
+							$rootScope.pageDescription += $scope.review.text;
 							$rootScope.pageDescription += '. A video review platform to share your passion and improve your skills. Record yourself playing. Get the feedback you need. Progress and help others';
 						}
-						$log.log('pageDescription in review.js', $rootScope.pageDescription);
+						//$log.log('pageDescription in review.js', $rootScope.pageDescription);
 					}
+
+					// Init the canvas
+					if (!$scope.review.canvas) {
+						$scope.review.canvas = {};
+					}
+					$log.log('review canvas', $scope.review.canvas);
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -77,6 +87,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				});
 				$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
 			}, 300);
+
+			$scope.API.mediaElement.on('canplay', function() {
+				$log.log('can play player1');
+				$scope.player1ready = true;
+				$scope.$apply();
+			});
 			
 		};
 
@@ -84,10 +100,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.API2 = $API;
 			$scope.API2.setVolume(0);
 			$scope.media = $scope.API2.mediaElement;
+
 			$scope.media.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {
-					//$log.log('can play');
-					$scope.allPlayersReady = true;
+					$log.log('can play player2');
+					$scope.player2ready = true;
 					$scope.$apply();
 				}
 			});
@@ -103,6 +120,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			firstPlayerClass: '',
 			secondPlayerClass: '',
 			previousVolume: 100,
+			canvasId: '',
+			canvasPlaying: false,
 			play: function() {
 				$rootScope.$broadcast('activity.play', {reviewId: $scope.review.id});
 				$scope.API.play();
@@ -117,7 +136,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				}
 			},
 			seekTime: function(time, time2) {
-				$scope.API.seekTime(time);
+				$log.log('seeking times', time, time2, $scope.API.currentTime);
+				if (time * 1000 == $scope.API.currentTime) {
+					$log.log('staying at the same time, no action required');
+					$timeout(function() { $scope.player1ready = true; }, 0);					
+				}
+				else {
+					$scope.API.seekTime(time);
+				}
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.seekTime(time2);
 				}
@@ -170,17 +196,17 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$rootScope.$on('account.close', function() {
 			$log.log('on account close in review.js');
 			if ($scope.onAddComment) {
-						$log.log('in onAddComment');
+				$log.log('in onAddComment');
 				$scope.uploadComment();
 				$scope.onAddComment = false;
 			}
 			else if ($scope.upvoting) {
-						$log.log('in upvoting');
+				$log.log('in upvoting');
 				$scope.upvoteReview();
 				$scope.upvoting = false;
 			}
 			else if ($scope.downvoting) {
-						$log.log('in downvoting');
+				$log.log('in downvoting');
 				$scope.downvoteReview();
 				$scope.downvoting = false;
 			}
@@ -207,15 +233,32 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.newComment = {};
 			$scope.commentForm.$setPristine();
 			$scope.$broadcast('show-errors-reset');
+			$scope.drawingCanvas = false;
+			$scope.hideCanvas();
+			$scope.clearTemporaryCanvas();
 		};
 
 		$scope.uploadComment = function() {
+			$scope.prepareCanvasForUpload($scope.review, $scope.newComment);
 			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
 				function(data) {
 					$scope.newComment = {};
 					$scope.commentForm.$setPristine();
 					$scope.review.comments = data.comments;
 					$scope.review.reviewVideoMap = data.reviewVideoMap;
+		  			$scope.review.canvas = data.canvas;
+		  			if ($scope.review.canvas) {
+						angular.forEach($scope.review.canvas, function(value, key) {
+							$log.log('review canvas include', key);
+						});
+					}
+					if (data.tempCanvas) {
+						angular.forEach(data.tempCanvas, function(value, key) {
+							$log.log('adding new canvas to the review', key, value);
+							$scope.review.canvas[key] = value;
+						});
+						$log.log('review canvas are now', $scope.review.canvas);
+					}
 					$scope.$broadcast('show-errors-reset');
 				}, 
 				function(error) {
@@ -223,6 +266,126 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$log.error(error);
 				}
 			);
+		}
+
+		//===============
+		// Drawing system
+		//===============
+		$scope.drawingCanvas = false;
+		$scope.$watch('drawingCanvas', function (newVal, oldVal) {
+			$log.log('watching canvasFlag', oldVal, newVal);
+			// edit mode
+			if (newVal) {
+				$log.log('starting edit canvas mode');
+				$scope.showCanvas();
+			}
+			else if (newVal != oldVal) {
+				$log.log('Done editing, need to save');
+				$scope.hideCanvas();
+			}
+		});
+
+		$rootScope.$on('editcanvas.start', function(event, canvasIdTag) {
+			$log.log('heard editcanvas.start');
+			$scope.drawingCanvas = true;
+			$scope.showCanvas();
+		});
+
+
+		$rootScope.$on('editcanvas.end', function(event, canvasIdTag) {
+			$log.log('heard editcanvas.end');
+			$scope.drawingCanvas = false;
+			$scope.hideCanvas();
+		});
+
+		$rootScope.$on('loadcanvas', function(event, canvasIdTag) {
+			$scope.playerControls.canvasId = undefined;
+			$scope.playerControls.canvasPlaying = false;
+			$log.log('TODO: need to load canvas with id', canvasIdTag);
+			$log.log('String canvas is ', $scope.review.canvas[canvasIdTag]);
+			var jsonCanvas = JSON.parse($scope.review.canvas[canvasIdTag]);
+			$log.log('loaded canvas is', jsonCanvas);
+			$scope.loadCanvas(jsonCanvas);
+		});
+
+		$rootScope.$on('insertcanvas', function(event, insertedId) {
+			$scope.playerControls.canvasId = undefined;
+			$scope.playerControls.canvasPlaying = false;
+			$log.log('updating canvas id to', insertedId);
+			$scope.canvasIdIndex++;
+			$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
+		});
+
+		$rootScope.$on('closecanvas', function(event, canvasIdTag) {
+			$scope.playerControls.canvasId = undefined;
+			$scope.playerControls.canvasPlaying = false;
+			//$log.log('Closing canvas, need to save', canvasIdTag);
+			var currentCanvas = $scope.serializeCanvas();
+			$log.log('Current serialized canvas is', canvasIdTag, currentCanvas);
+			$scope.review.canvas[canvasIdTag] = JSON.stringify(currentCanvas);
+			//$log.log('draft canvas are', $scope.review.canvas);
+			$scope.clearCanvas();
+		});
+
+
+		$scope.prepareCanvasForUpload = function(review, comment) {
+			$log.log('before filter, all canvas are', $scope.review.canvas);
+			//var newCanvas = $scope.getNewCanvas(review);
+			//$log.log('new canvas are', newCanvas);
+			var usefulNewCanvas = $scope.filterOutUnusedCanvas(comment, review.canvas);
+			$log.log('usefulNewCanvas', usefulNewCanvas);
+			comment.tempCanvas = usefulNewCanvas;
+			//$log.log('saving comment', comment);
+			$scope.clearTemporaryCanvas();
+		}
+
+		$scope.getNewCanvas = function(review) {
+			var newCanvas = {};
+			angular.forEach(review.canvas, function(value, key) {
+				$log.log('going through all temp canvs', key);
+				if (key.startsWith('tmp')) {
+					newCanvas[key] = value;
+					$log.log('Adding ' + key);
+				}
+			})
+			//$log.log('all new canvas are', newCanvas);
+			return newCanvas;
+		}
+
+		$scope.filterOutUnusedCanvas = function(comment, newCanvas) {
+			var useful = {};
+			angular.forEach(newCanvas, function(value, key) {
+				if (comment.text.indexOf('[' + key + ']') != -1) {
+					useful[key] = value;
+				}
+			})
+			return useful;
+		}
+
+		$scope.clearTemporaryCanvas = function() {
+			var fullCanvas = {};
+			angular.forEach($scope.review.canvas, function(value, key) {
+				if (!key.startsWith('tmp')) {
+					fullCanvas[key] = value;
+				}
+			})
+			$scope.review.canvas = fullCanvas;
+			$scope.canvasIdIndex = 0;
+			$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
+		}
+
+		$scope.toggleCanvas = function() {
+			$scope.playerControls.canvasPlaying = !$scope.playerControls.canvasPlaying;
+
+			if ($scope.playerControls.canvasPlaying) {
+				var jsonCanvas = JSON.parse($scope.review.canvas[$scope.playerControls.canvasId]);
+				$scope.loadCanvas(jsonCanvas);
+				$scope.showCanvas();
+			}
+			else {
+				$scope.clearCanvas();
+				$scope.hideCanvas();
+			}
 		}
 
 		//===============
@@ -296,7 +459,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		$scope.startEditingInformation = function() {
 			$scope.review.oldTitle = $scope.review.title;
-			$scope.review.oldDescription = $scope.review.description;
+			$scope.review.oldText = $scope.review.text;
 			//$scope.review.oldSport = angular.copy($scope.review.sport);
 			//$scope.review.oldSportForDisplay = $scope.review.sportForDisplay;
 			$scope.review.oldTags = $scope.review.tags;
@@ -305,7 +468,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.cancelUpdateDescription = function() {
 			$scope.review.title = $scope.review.oldTitle;
-			$scope.review.description = $scope.review.oldDescription;
+			$scope.review.text = $scope.review.oldText;
 			//$scope.review.sport = angular.copy($scope.review.oldSport);
 			//$scope.review.sportForDisplay = $scope.review.oldSportForDisplay;
 			$scope.review.tags = $scope.review.oldTags;
@@ -313,12 +476,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.updateDescription = function() {
-			$scope.review.sport = $scope.review.sport.key;
+			$scope.prepareCanvasForUpload($scope.review, $scope.review);
+			var newReview = {
+				text: $scope.review.text,
+				sport: $scope.review.sport.key,
+				title: $scope.review.title,
+				tags: $scope.review.tags,
+				canvas: $scope.review.tempCanvas
+			}
 			if ($scope.videoInformationForm.$valid) {
-				$log.log('updating review to ', $scope.review);
-				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, $scope.review, 
+				$log.log('updating review to ', newReview);
+				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview, 
 					function(data) {
 						$scope.updateVideoInformation(data);
+		  				$scope.review.canvas = data.canvas;
 					}, 
 					function(error) {
 						// Error handling
@@ -332,16 +503,17 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.review.title = data.title;
 			$scope.review.sport = data.sport;
 
-			var text = data.description;
-			$scope.review.description = escapeHtml(text);
+			var text = data.text;
+			$scope.review.text = escapeHtml(text);
 			// Add timestamps
-			$scope.review.compiledText = $scope.parseText($scope.review.description);
+			$scope.review.compiledText = $scope.parseText($scope.review.text);
 			// Parse markdown
 			$scope.review.markedText = marked($scope.review.compiledText);
 
 			//$scope.review.sportForDisplay = $scope.review.sport.key;
 			$scope.review.editing = false;
 			$scope.review.processed = true;
+			$scope.clearTemporaryCanvas();
 		}
 
 		$scope.insertModel = function(model, newValue) {
@@ -377,8 +549,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// (m)m:(s)s:(SSS) format
 		// then an optional + sign
 		// if present, needs at least either p, s or l
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/gm;
-		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?</gm;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?/gm;
+		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?</gm;
 
 		$scope.parseText = function(comment) {
 			if (!comment) return '';
@@ -404,6 +576,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		var loopRegex = /L(\d?\.?\d?\d?)?/;
 		var externalRegex = /\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?/;
 		var externalIdRegex = /\([a-z0-9]+\)/;
+		var canvasRegex = /\[.+?\]/;
 		$scope.prettifyLink = function(timestamp) {
 			//$log.log('Prettifying', timestamp);
 			// Always keep the timestamp part
@@ -434,6 +607,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				prettyLink = prettyLink + '<span class="glyphicon glyphicon-repeat inline-icon" title="Video will loop"></span>';
 			}
 
+			// Icon for canvas
+			var canvas = timestamp.match(canvasRegex);
+			if (canvas) {
+				prettyLink = prettyLink + '<span class="glyphicon glyphicon-picture inline-icon" title="There is a video drawing attached"></span>';
+			}
+
 			// Text for linked video
 			var externalVideo = timestamp.match(externalRegex);
 			if (externalVideo) {
@@ -448,12 +627,17 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Remove any residual '+' sign
 			prettyLink = prettyLink.replace(/\+/, '');
 
-
-
 			return {link: prettyLink, tooltip: tooltip};
 		}
 
 		$scope.goToTimestamp = function(timeString) {
+			$log.log('going to timestamp', timeString);
+			// Player1 already has a loaded source
+			$scope.player1ready = true;
+			$scope.player2ready = false;
+			$scope.allPlayersReady = false;
+			$log.log('Finished initialized player ready variables');
+
 			//$log.log('going to timestamp');
 			$scope.playerControls.pause();
 			var split = timeString.split("+");
@@ -484,7 +668,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 				var fileLocation2 = ENV.videoStorageUrl + key;
 				$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation2), type: dataType}];
-				$scope.allPlayersReady = false;
 
 				// Now move the videos side-byside
 				var sideInfo = otherVideo.indexOf('(') > -1 ? otherVideo.split('(')[0] : otherVideo;
@@ -502,7 +685,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				var convertedTime2 = $scope.extractTime(sideInfo);
 			}
 			else {
-				$scope.allPlayersReady = true;
+				//$scope.player = true;
 				$scope.playerControls.mode = 1;
 				// Redondant with watching the "playerControls.mode"?
 				$scope.playerControls.firstPlayerClass = '';
@@ -514,27 +697,59 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// 1- We need to wait until the source has been loaded to navigate in the video
 			var buffering = true;
 			var buffering2 = false;
-			$scope.$watch('allPlayersReady', function (newVal, oldVal) {
+			$scope.$watch('player1ready', function (newVal, oldVal) {
+				$log.log('player1ready?', oldVal, newVal);
+				if (!$scope.player2ready && $scope.playerControls.mode == 2) return;
+
+				if (newVal && buffering) {
+					$scope.allPlayersReady = true;
+				}
+
+				if (newVal && buffering2) {
+					$scope.allPlayersReady = true;
+				}
+			});
+
+			$scope.$watch('player2ready', function (newVal, oldVal) {
+				if (!$scope.player1ready || $scope.playerControls.mode != 2) return;
+
+				if (newVal && buffering) {
+					$scope.allPlayersReady = true;
+				}
+
+				if (newVal && buffering2) {
+					$scope.allPlayersReady = true;
+				}
+			});
+
+			var unregisterWatchPhase1 = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
+				$log.log('All players ready?', oldVal, newVal);
 				if (newVal && buffering) {
 					$log.log('ready for phase 2, seeking');
-					if (otherVideo) {
-						$scope.allPlayersReady = false;
-					}
+					$scope.player1ready = false;
+					$scope.player2ready = false;
+					$scope.allPlayersReady = false;
 					$scope.playerControls.pause();
 					$scope.playerControls.seekTime(convertedTime, convertedTime2);
 					buffering2 = true;
 					buffering = false;
+
+					unregisterWatchPhase1();
 				}
 			});
 
 			// We need to wait until both videos have finished seeking the proper time
 			// Actually, we always wait for the second one, as it seems the first one is always 
 			// conveniently processed first
-			$scope.$watch('allPlayersReady', function (newVal, oldVal) {
-				if (newVal && buffering2) {
+			var unregisterWatchPhase2 = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
+				$log.log('All players ready bis?', oldVal, newVal);
+				if (newVal && newVal != oldVal && buffering2) {
 					$log.log('ready for phase 3, playing');
 					// The attributes
 					var attributes = split[1];
+					if (attributes && attributes.indexOf('[') != -1) {
+						attributes = attributes.substring(0, attributes.indexOf('['));
+					}
 
 					// Should we slow down the video?
 					if (attributes && attributes.indexOf('s') !== -1) {
@@ -566,10 +781,34 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					else {
 						$scope.playerControls.stopLoop();
 					}
+
+					$scope.playerControls.canvasId = undefined;
+					$scope.playerControls.canvasPlaying = false;
+					$log.log('looking for canvas attributes', timeString);
+					var canvas = timeString.match(canvasRegex);
+					$log.log('matching canvas', canvas);
+					if (canvas) {
+						$log.log('Setting canvas to be displayed');
+						$scope.playerControls.canvasId = canvas[0].substring(1, canvas[0].length - 1);
+						$scope.playerControls.canvasPlaying = true;
+						$log.log('canvasId, canvasPlaying', $scope.playerControls.canvasId, $scope.playerControls.canvasPlaying);
+						var jsonCanvas = JSON.parse($scope.review.canvas[$scope.playerControls.canvasId]);
+						$scope.loadCanvas(jsonCanvas);
+					}
 					//$log.log('Finished parsing timestamp');
+					unregisterWatchPhase2();
 				}
 			});
 		}
+
+		$scope.$watch('playerControls.canvasPlaying', function (newVal, oldVal) {
+			if (newVal) {
+				$scope.showCanvas();
+			}
+			else {
+				$scope.hideCanvas();
+			}
+		});
 
 		$scope.$watch('playerControls.mode', function (newVal, oldVal) {
 			if (newVal == 1) {
@@ -596,7 +835,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.playerControls.reloop();
 			}
 		}
-
 
 		var entityMap = {
 			"<": "&lt;",

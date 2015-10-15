@@ -27,6 +27,8 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				$scope.videos = [];
 				for (var i = 0; i < data.length; i++) {
 					$scope.videos.push(data[i]);
+
+					$scope.countVideoComments(data[i]);
 				};
 			});
 		};
@@ -85,6 +87,23 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			var titleForUrl = video.title.replace(new RegExp(' ', 'g'), '-').replace(new RegExp('\\.', 'g'), '-');
 			var url = '/r/' + video.sport.key.toLowerCase() + '/' + video.id + '/' + titleForUrl;
 			return url;
+		}
+
+		$scope.countVideoComments = function(video) {
+			//$log.log('counting comments for video', video);
+			video.totalComments = 0;
+			if (!video.comments) return;
+			$scope.countComments(video, video.comments);
+		}
+
+		$scope.countComments = function(video, comments) {
+			//$log.log('counting comments for comments', comments);
+			if (!comments) return;
+
+			angular.forEach(comments, function(comment) {
+				video.totalComments++;
+				$scope.countComments(video, comment.comments);
+			})
 		}
 	}
 ]);

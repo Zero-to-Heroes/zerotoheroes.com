@@ -95,7 +95,7 @@ services.factory('User', ['$window', '$log',
             	}
             	strVisits = JSON.stringify(visits);
             	$window.localStorage.visits = strVisits;
-            	$log.log('visits are ', visits);
+            	//$log.log('visits are ', visits);
             },
             getNumberOfDaysVisited: function() {
             	var strVisits = $window.localStorage.visits;

@@ -1,7 +1,7 @@
 <view-title>{{review.title}}</view-title>
 
 <div class="videogular-container keep-on-top multi-player" ng-show="review.key">
-	<videogular vg-player-ready="onPlayerReady($API)" vg-update-state="onVideoStateUpdate($state)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen}" vg-update-time="onUpdateTime($currentTime, $duration)">
+	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
 		<vg-media vg-src="sources" ng-class="playerControls.firstPlayerClass">
 		</vg-media>
 
@@ -15,6 +15,7 @@
 			<video-playback-button></video-playback-button>
 			<video-loop-button ng-show="playerControls.loopStatus"></video-loop-button>
 			<video-dual-mode-button ng-show="playerControls.mode == 2"></video-dual-mode-button>
+			<video-canvas-overlay-button ng-show="playerControls.canvasId"></video-canvas-overlay-button>
 			<vg-volume>
 				<vg-mute-button></vg-mute-button>
 				<vg-volume-bar></vg-volume-bar>
@@ -22,16 +23,18 @@
 			<vg-fullscreen-button></vg-fullscreen-button>
 		</vg-controls>
 
-		<div class="second-player" ng-class="{'playerControls.secondPlayerClass': true, 'videogular-container': !API.isFullScreen}" ng-show="playerControls.mode == 2">
+		<div class="second-player" ng-class="playerControls.secondPlayerClass" ng-show="playerControls.mode == 2">
 			<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
 				<vg-media vg-src="sources2">
 				</vg-media>
 			</videogular>
 		</div>
-
 		
-		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()"></vg-overlay-play>
+		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!drawingCanvas"></vg-overlay-play>
+
+		<canvas id="fabricCanvas" pw-canvas></canvas>
 	</videogular>
+
 </div>
 
 <div  class="video-information background-white">
@@ -75,17 +78,17 @@
 					<div class="row">
 						<div class="col-md-10">
 							<div compilecontent content="review.markedText" ng-hide="review.editing" class="videoDescription"></div>
-							<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel">
-								<textarea class="form-control" ng-model="review.description" auto-grow toolbar-target></textarea>
+							<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel" canvas-flag="drawingCanvas" canvas-id="canvasId">
+								<textarea class="form-control" ng-model="review.text" auto-grow toolbar-target></textarea>
 							</toolbar>
-							<textarea class="form-control" ng-model="review.description" ng-show="review.editing && !review.key" auto-grow></textarea>
+							<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" auto-grow></textarea>
 						</div>
 						<div ng-show="!!coaches.length && !review.editing" class="col-md-2 text-right">
 							<button type="button" class="btn btn-danger" ng-click="showProModal()" >Ask a Pro
 							</button>
 						</div>
 					</div>
-					<div class="row video-tags" ng-show="allowedTags && allowedTags.length > 0">
+					<div class="row video-tags" ng-show="allowedTags && allowedTags.length > 0 && (review.editing || (review.tags && review.tags.length > 0))">
 						<div class="col-xs-10 text-left">
 							<tags-input ng-model="review.tags" ng-disabled="!review.editing" placeholder="{{tagsPlaceholder}}" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group">
 								<auto-complete source="loadTags($query)" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
@@ -124,13 +127,13 @@
 						</div>
 					</div>
 					<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-						<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key">
+						<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" canvas-flag="drawingCanvas" canvas-id="canvasId">
 							<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" auto-grow toolbar-target></textarea>
 						</toolbar>
 						<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" auto-grow toolbar-target></textarea>
 						<div>
 							<div class="inline-block">
-								<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
+								<button ng-click="addComment()" class="btn btn-default text-right" ng-disabled="drawingCanvas">Add comment</button>
 								<button ng-click="cancelComment()" class="btn btn-default text-right">Cancel</button>
 							</div>
 							<div class="inline-block float-right">
@@ -143,7 +146,7 @@
 				</div>
 			</div>
 		</form>
-		<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index"></comment>
+		<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" canvas-flag="drawingCanvas" canvas-id="canvasId"></comment>
 		<!-- Prevent scrolling center area if we're already at the bottom -->
 		<div id="padder"></div>
 		<div id="bottom"></div>

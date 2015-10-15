@@ -57,4 +57,11 @@ public class Reputation {
 		hasCurrentUserVoted.put(ReputationAction.Downvote, userIds.get(ReputationAction.Downvote).contains(userId));
 		hasCurrentUserVoted.put(ReputationAction.Upvote, userIds.get(ReputationAction.Upvote).contains(userId));
 	}
+
+	public int getScore() {
+		int upvotes = userIds.get(ReputationAction.Upvote) != null ? userIds.get(ReputationAction.Upvote).size() : 0;
+		int downvotes = userIds.get(ReputationAction.Downvote) != null ? userIds.get(ReputationAction.Downvote).size()
+				: 0;
+		return upvotes - downvotes;
+	}
 }

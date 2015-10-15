@@ -142,7 +142,22 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			var validTags = $scope.allowedTags.filter(function (el) {
 				return ~el.text.toLowerCase().indexOf($query);
 			});
-			return validTags;
+			return validTags.sort(function(a, b) {
+    			var tagA = a.text.toLowerCase();
+    			var tagB = b.text.toLowerCase();
+    			if (~tagA.indexOf(':')) {
+    				if (~tagB.indexOf(':')) {
+    					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
+    				}
+    				return 1;
+    			}
+    			else {
+    				if (~tagB.indexOf(':')) {
+    					return -1;
+    				}
+    				return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
+    			}
+			});;
 		}
 
 		$scope.$watch('review.sport', function (newVal, oldVal) {

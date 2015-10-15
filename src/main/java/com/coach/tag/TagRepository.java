@@ -30,6 +30,8 @@ public class TagRepository {
 		squash.add(new Tag("volley"));
 		squash.add(new Tag("dropshot"));
 		squash.add(new Tag("kill"));
+		squash.add(new Tag("boast"));
+		squash.add(new Tag("lob"));
 		tags.put(Squash, squash);
 
 		// Tags for badminton
@@ -77,7 +79,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Totem"));
 		hearthstone.add(new Tag("Control"));
 		tags.put(HearthStone, hearthstone);
-		
+
 		// Tags for Heroes of the Storm
 		List<Tag> heroes = new ArrayList<>();
 		heroes.add(new Tag("Map: Infernal Shrines"));
@@ -142,7 +144,7 @@ public class TagRepository {
 		heroes.add(new Tag("Hero: Abathur"));
 		heroes.add(new Tag("Hero: Sgt. Hammer"));
 		tags.put(HeroesOfTheStorm, heroes);
-		
+
 		// Tags for Heroes of the Storm
 		List<Tag> league = new ArrayList<>();
 		league.add(new Tag("Bronze"));

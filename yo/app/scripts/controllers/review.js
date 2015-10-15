@@ -378,7 +378,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.playerControls.canvasPlaying = !$scope.playerControls.canvasPlaying;
 
 			if ($scope.playerControls.canvasPlaying) {
-				var jsonCanvas = JSON.parse($scope.review.canvas[$scope.playerControls.canvasPlaying.canvasId]);
+				var jsonCanvas = JSON.parse($scope.review.canvas[$scope.playerControls.canvasId]);
 				$scope.loadCanvas(jsonCanvas);
 				$scope.showCanvas();
 			}

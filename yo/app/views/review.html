@@ -1,7 +1,7 @@
 <view-title>{{review.title}}</view-title>
 
 <div class="videogular-container keep-on-top multi-player" ng-show="review.key">
-	<videogular vg-player-ready="onPlayerReady($API)" vg-update-state="onVideoStateUpdate($state)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen}" vg-update-time="onUpdateTime($currentTime, $duration)">
+	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': !review.editing}" vg-update-time="onUpdateTime($currentTime, $duration)">
 		<vg-media vg-src="sources" ng-class="playerControls.firstPlayerClass">
 		</vg-media>
 
@@ -15,6 +15,7 @@
 			<video-playback-button></video-playback-button>
 			<video-loop-button ng-show="playerControls.loopStatus"></video-loop-button>
 			<video-dual-mode-button ng-show="playerControls.mode == 2"></video-dual-mode-button>
+			<video-canvas-overlay-button ng-show="playerControls.canvasId"></video-canvas-overlay-button>
 			<vg-volume>
 				<vg-mute-button></vg-mute-button>
 				<vg-volume-bar></vg-volume-bar>
@@ -29,9 +30,8 @@
 			</videogular>
 		</div>
 		
-		<!--<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!drawingCanvas"></vg-overlay-play>
+		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!drawingCanvas"></vg-overlay-play>
 
-		<div pw-canvas extended-canvas options="canvasOptions" class="drawing-canvas" ng-show="drawingCanvas"></div>-->
 		<canvas id="fabricCanvas" pw-canvas></canvas>
 	</videogular>
 

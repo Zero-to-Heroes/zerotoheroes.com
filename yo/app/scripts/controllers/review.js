@@ -63,14 +63,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 		$scope.initReview();
 
-		$scope.canvasOptions = {
-			width: 400, 
-			height: 300, 
-			color: '#ff0', 
-			lineWidth: 10,
-			backgroundColor: 'rgba(255, 255, 255, 0.5)'
-		};
-
 		//===============
 		// Video player
 		//===============
@@ -128,6 +120,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			firstPlayerClass: '',
 			secondPlayerClass: '',
 			previousVolume: 100,
+			canvasId: '',
+			canvasPlaying: false,
 			play: function() {
 				$rootScope.$broadcast('activity.play', {reviewId: $scope.review.id});
 				$scope.API.play();
@@ -506,8 +500,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// (m)m:(s)s:(SSS) format
 		// then an optional + sign
 		// if present, needs at least either p, s or l
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?/gm;
-		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?</gm;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?/gm;
+		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?</gm;
 
 		$scope.parseText = function(comment) {
 			if (!comment) return '';
@@ -533,6 +527,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		var loopRegex = /L(\d?\.?\d?\d?)?/;
 		var externalRegex = /\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?/;
 		var externalIdRegex = /\([a-z0-9]+\)/;
+		var canvasRegex = /\[.+?\]/;
 		$scope.prettifyLink = function(timestamp) {
 			//$log.log('Prettifying', timestamp);
 			// Always keep the timestamp part
@@ -563,6 +558,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				prettyLink = prettyLink + '<span class="glyphicon glyphicon-repeat inline-icon" title="Video will loop"></span>';
 			}
 
+			// Icon for canvas
+			var canvas = timestamp.match(canvasRegex);
+			if (canvas) {
+				prettyLink = prettyLink + '<span class="glyphicon glyphicon-picture inline-icon" title="There is a video drawing attached"></span>';
+			}
+
 			// Text for linked video
 			var externalVideo = timestamp.match(externalRegex);
 			if (externalVideo) {
@@ -576,8 +577,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// Remove any residual '+' sign
 			prettyLink = prettyLink.replace(/\+/, '');
-
-
 
 			return {link: prettyLink, tooltip: tooltip};
 		}
@@ -725,10 +724,31 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					else {
 						$scope.playerControls.stopLoop();
 					}
+
+					$scope.playerControls.canvasId = undefined;
+					$scope.playerControls.canvasPlaying = false;
+					if (attributes) {
+						var canvas = attributes.match(canvasRegex);
+						if (canvas) {
+							$scope.playerControls.canvasId = canvas[0].substring(1, canvas[0].length - 1);
+							$scope.playerControls.canvasPlaying = true;
+							var jsonCanvas = JSON.parse($scope.review.canvas[$scope.playerControls.canvasId]);
+							$scope.loadCanvas(jsonCanvas);
+						}
+					}
 					//$log.log('Finished parsing timestamp');
 				}
 			});
 		}
+
+		$scope.$watch('playerControls.canvasPlaying', function (newVal, oldVal) {
+			if (newVal) {
+				$scope.showCanvas();
+			}
+			else {
+				$scope.hideCanvas();
+			}
+		});
 
 		$scope.$watch('playerControls.mode', function (newVal, oldVal) {
 			if (newVal == 1) {
@@ -755,7 +775,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.playerControls.reloop();
 			}
 		}
-
 
 		var entityMap = {
 			"<": "&lt;",

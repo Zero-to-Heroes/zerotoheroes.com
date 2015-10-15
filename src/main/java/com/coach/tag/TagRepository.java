@@ -58,8 +58,15 @@ public class TagRepository {
 		hearthstone.add(new Tag("Class: Druid"));
 		hearthstone.add(new Tag("Class: Priest"));
 		hearthstone.add(new Tag("Class: Hunter"));
+		hearthstone.add(new Tag("Rank 20-25"));
+		hearthstone.add(new Tag("Rank 15-19"));
+		hearthstone.add(new Tag("Rank 10-14"));
+		hearthstone.add(new Tag("Rank 1-9"));
+		hearthstone.add(new Tag("Legend"));
 		hearthstone.add(new Tag("Secret"));
 		hearthstone.add(new Tag("Oil"));
+		hearthstone.add(new Tag("Dragon"));
+		hearthstone.add(new Tag("Midrange"));
 		hearthstone.add(new Tag("Patron"));
 		hearthstone.add(new Tag("Mech"));
 		hearthstone.add(new Tag("Demon"));
@@ -82,6 +89,13 @@ public class TagRepository {
 		heroes.add(new Tag("Map: Cursed Hollow"));
 		heroes.add(new Tag("Map: Dragon Shire"));
 		heroes.add(new Tag("Map: Haunted Mines"));
+		heroes.add(new Tag("Hero League"));
+		heroes.add(new Tag("Quick Match"));
+		heroes.add(new Tag("Rank 1-10"));
+		heroes.add(new Tag("Rank 11-20"));
+		heroes.add(new Tag("Rank 21-30"));
+		heroes.add(new Tag("Rank 31-40"));
+		heroes.add(new Tag("Rank 41-50"));
 		heroes.add(new Tag("Specialist"));
 		heroes.add(new Tag("Mage"));
 		heroes.add(new Tag("Support"));
@@ -131,6 +145,19 @@ public class TagRepository {
 		
 		// Tags for Heroes of the Storm
 		List<Tag> league = new ArrayList<>();
+		league.add(new Tag("Bronze"));
+		league.add(new Tag("Silver"));
+		league.add(new Tag("Gold"));
+		league.add(new Tag("Platinum"));
+		league.add(new Tag("Diamond"));
+		league.add(new Tag("Master - Challenger"));
+		league.add(new Tag("Decision Making"));
+		league.add(new Tag("Laning Phase"));
+		league.add(new Tag("Mid Game"));
+		league.add(new Tag("Late Game"));
+		league.add(new Tag("Team Fights"));
+		league.add(new Tag("Decision Making"));
+		league.add(new Tag("Positioning"));
 		league.add(new Tag("Top"));
 		league.add(new Tag("Jungle"));
 		league.add(new Tag("Suppord"));

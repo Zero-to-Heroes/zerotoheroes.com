@@ -140,7 +140,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		//===============
 		$scope.autocompleteTag = function($query) {
 			var validTags = $scope.allowedTags.filter(function (el) {
-				return el.text.startsWith($query);
+				return ~el.text.toLowerCase().indexOf($query);
 			});
 			return validTags;
 		}

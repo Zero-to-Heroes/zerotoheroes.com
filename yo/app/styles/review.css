@@ -16,7 +16,7 @@
 }
 
 .video-information .author-information {
-	margin-top: 15px;
+	/*margin-top: 15px;*/
 }
 
 .video-details .reputation {
@@ -26,4 +26,8 @@
 
 .video-tags {
 	margin-top: 15px;
+}
+
+.adding-comment {
+	padding-left: 40px;
 }

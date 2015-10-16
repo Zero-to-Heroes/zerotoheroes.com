@@ -59,21 +59,6 @@
 								<span class="label label-primary pull-right" ng-model="review.sport.value">{{review.sport.value}}</span>
 							</div>
 						</div>
-						<!--<div class="col-md-2" ng-show="review.editing">
-							<div>
-								<div class="form-group" show-errors="{ showSuccess: true }">
-								    <select ng-model="review.sportForDisplay" name="sport" class="form-control" ng-required="true">
-										<option value="Squash">Squash</option>
-										<option value="Badminton">Badminton</option>
-										<option value="LeagueOfLegends">League of Legends</option>
-										<option value="HeroesOfTheStorm">Heroes of the Storm</option>
-										<option value="HearthStone">HearthStone</option>
-										<option value="Meta">Meta</option>
-										<option value="Other">Other</option>
-									</select>
-								</div>
-							</div>
-						</div>-->
 					</div>
 					<div class="row">
 						<div class="col-md-10">
@@ -117,7 +102,15 @@
 			<hr/>
 			<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
 		</div>
-		<form name="commentForm">
+		<div class="container-fluid comment-block main-block" ng-show="!addingComment">
+			<hr/>
+			<div class="row">
+				<div class="col-md-10 adding-comment">
+					<textarea ng-click="addingComment = true" placeholder="Add a public comment" class="form-control textarea-button " rows="1"></textarea>
+				</div>
+			</div>
+		</div>
+		<form name="commentForm" ng-show="addingComment">
 			<hr/>
 			<div class="container-fluid comment-block main-block">
 				<div class="row">

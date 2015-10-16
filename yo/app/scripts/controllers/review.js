@@ -240,6 +240,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.commentForm.$setPristine();
 			$scope.$broadcast('show-errors-reset');
 			$scope.cancelCanvasEdition();
+			$scope.addingComment = false;
 		};
 
 		$scope.uploadComment = function() {
@@ -264,6 +265,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						$log.log('review canvas are now', $scope.review.canvas);
 					}
 					$scope.$broadcast('show-errors-reset');
+					$scope.addingComment = false;
 				}, 
 				function(error) {
 					// Error handling

@@ -4,3 +4,7 @@
 	padding: 0 1px;
 	font-size: 0.9em;
 }
+
+textarea.textarea-button {
+	min-height: 0;
+}

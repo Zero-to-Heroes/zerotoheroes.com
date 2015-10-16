@@ -116,6 +116,12 @@
 			<artifactId>urlrewritefilter</artifactId>
 			<version>4.0.3</version>
 		</dependency>
+		<dependency>
+			<groupId>com.ullink.slack</groupId>
+			<artifactId>simpleslackapi</artifactId>
+			<version>0.4.6</version>
+		</dependency>
+
 
 		<!-- Testing -->
 		<dependency>

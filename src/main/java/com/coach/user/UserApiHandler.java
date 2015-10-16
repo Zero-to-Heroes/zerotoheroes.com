@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.amazonaws.util.StringUtils;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserRole;
 import com.coach.review.EmailNotifier;
@@ -29,6 +30,9 @@ public class UserApiHandler {
 
 	@Autowired
 	EmailNotifier emailNotifier;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	// @RequestMapping(method = RequestMethod.GET)
 	// public User getCurrent() {
@@ -114,6 +118,7 @@ public class UserApiHandler {
 		log.debug("Registered user: " + user);
 
 		emailNotifier.notifyNewUser(user);
+		slackNotifier.notifyNewUser(user);
 
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}

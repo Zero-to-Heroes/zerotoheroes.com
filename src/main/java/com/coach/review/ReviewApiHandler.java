@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amazonaws.util.StringUtils;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
 import com.coach.reputation.ReputationAction;
@@ -61,6 +62,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	ReputationUpdater reputationUpdater;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	public ReviewApiHandler() {
 		log.debug("Initializing Review Api Handler");
@@ -173,6 +177,7 @@ public class ReviewApiHandler {
 
 		log.debug("Transcoding started, returning with created review: "
 				+ review);
+		slackNotifier.notifyNewReview(review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -227,6 +232,7 @@ public class ReviewApiHandler {
 
 		// Notifying the user who submitted the review (if he is registered)
 		emailNotifier.notifyNewComment(comment, review);
+		slackNotifier.notifyNewComment(review, comment);
 
 		log.debug("Created comment " + comment + " with id " + comment.getId());
 		log.debug("Updated review " + review);
@@ -365,6 +371,7 @@ public class ReviewApiHandler {
 
 		// Notifying the user who submitted the review (if he is registered)
 		emailNotifier.notifyNewComment(reply, review);
+		slackNotifier.notifyNewComment(review, reply);
 
 		log.debug("Created reply " + reply + " with id " + reply.getId());
 

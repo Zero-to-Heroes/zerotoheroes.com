@@ -17,6 +17,7 @@ import com.coach.coaches.Coach;
 import com.coach.coaches.CoachRepository;
 import com.coach.core.email.EmailMessage;
 import com.coach.core.email.EmailSender;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 
@@ -30,6 +31,9 @@ public class PaymentApiHandler {
 
 	@Autowired
 	EmailSender emailSender;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	@RequestMapping(value = "/{reviewId}/{coachId}/{email}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> registerReviewRequest(@PathVariable("reviewId") final String reviewId,
@@ -58,6 +62,7 @@ public class PaymentApiHandler {
 								+ ".<br/><br/> For information, full details of " + coach + "<br/>" + review).type(
 						"text/html").build();
 		emailSender.send(message);
+		slackNotifier.notifyNewPaymentRequest(review, coach, requesterEmail);
 
 		return new ResponseEntity<String>("coach contacted", HttpStatus.OK);
 	}

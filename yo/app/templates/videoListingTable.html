@@ -11,6 +11,9 @@
 			<td class="vert-align text-center comments">
 				<span class="block">{{video.totalComments}}</span><span><small>comments</small></span>
 			</td>
+			<td class="vert-align text-center comments" ng-class="{'validated': video.totalHelpful > 0}" title="Comments on this video that have been marked as helpful by the author of the video">
+				<span class="block">{{video.totalHelpful}}</span><span><small>approved <span class="validated" ng-show="video.hasHelpfulComments"><span class="glyphicon glyphicon-ok"></span></span></small></span>
+			</td>
 			<td class="vert-align text-center comments">
 				<span class="block">{{video.viewCount ? video.viewCount : '0'}}</span><span><small>views</small></span>
 			</td>

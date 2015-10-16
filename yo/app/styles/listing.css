@@ -57,7 +57,12 @@
 }
 
 .video-listing .comments {
-  width: 100px;
+  width: 90px;
+}
+
+.video-listing .validated {
+  font-weight: bold;
+  color: #5cb85c;
 }
 
 .video-listing .thumbnails {
@@ -94,7 +99,7 @@
 }
 
 @media screen and (max-width: 600px) {
-	.video-listing .comments {
+	.video-listing .comments, .video-listing .validated-comments {
 	  display: none;
 	}
 }

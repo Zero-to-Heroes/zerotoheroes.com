@@ -29,6 +29,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 					$scope.videos.push(data[i]);
 
 					$scope.countVideoComments(data[i]);
+					$scope.hasHelpfulComments(data[i]);
 				};
 			});
 		};
@@ -92,6 +93,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.countVideoComments = function(video) {
 			//$log.log('counting comments for video', video);
 			video.totalComments = 0;
+			video.totalHelpful = 0;
 			if (!video.comments) return;
 			$scope.countComments(video, video.comments);
 		}
@@ -102,7 +104,27 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 			angular.forEach(comments, function(comment) {
 				video.totalComments++;
+				if (comment.helpful) {
+					video.totalHelpful++;
+				}
 				$scope.countComments(video, comment.comments);
+			})
+		}
+
+		$scope.hasHelpfulComments = function(video) {
+			//$log.log('counting comments for video', video);
+			video.hasHelpfulComments = false;
+			if (!video.comments) return;
+			$scope.isHelpfulComment(video, video.comments);
+		}
+
+		$scope.isHelpfulComment = function(video, comments) {
+			//$log.log('counting comments for comments', comments);
+			if (!comments) return;
+
+			angular.forEach(comments, function(comment) {
+				video.hasHelpfulComments = video.hasHelpfulComments || comment.helpful;
+				$scope.isHelpfulComment(video, comment.comments);
 			})
 		}
 	}

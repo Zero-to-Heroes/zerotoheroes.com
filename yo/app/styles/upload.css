@@ -6,3 +6,11 @@
 .upload-form .video-information {
 	overflow: visible;
 }
+
+.progress-group {
+	padding: 15px;
+}
+
+.progress-group .informationMessages {
+	margin-bottom: 20px;
+}

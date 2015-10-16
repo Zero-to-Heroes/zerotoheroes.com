@@ -65,7 +65,7 @@
 				<div welcome-pane></div>
 			</div>
 			<div ng-class="{'main-panel-nolanding': !isLandingPage, 'main-panel': !isFullPage, 'full-page': isFullPage, 'landing-page': isLandingPage, 'full-page-full': useFullHeight}">
-				<div ng-view class="center-column"></div>
+				<div ng-view class="center-column" autoscroll="true"></div>
 			</div>
 			<div class="right-column" ng-hide="isLandingPage"></div>
 		</div>

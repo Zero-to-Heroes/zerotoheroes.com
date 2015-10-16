@@ -29,7 +29,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						}
 					);
 
-					$scope.hideCanvas();
+					$scope.cancelCanvasEdition();
 
 					// Update page description
 					if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
@@ -239,9 +239,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.newComment = {};
 			$scope.commentForm.$setPristine();
 			$scope.$broadcast('show-errors-reset');
-			$scope.drawingCanvas = false;
-			$scope.hideCanvas();
-			$scope.clearTemporaryCanvas();
+			$scope.cancelCanvasEdition();
 		};
 
 		$scope.uploadComment = function() {
@@ -304,6 +302,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.hideCanvas();
 		});
 
+		$rootScope.$on('editcanvas.cancel', function(event, canvasIdTag) {
+			$log.log('canceling canvas');
+			$scope.cancelCanvasEdition();
+		});
+
 		$rootScope.$on('loadcanvas', function(event, canvasIdTag) {
 			$scope.playerControls.canvasId = undefined;
 			$scope.playerControls.canvasPlaying = false;
@@ -333,6 +336,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.clearCanvas();
 		});
 
+		$scope.cancelCanvasEdition = function() {
+			$scope.drawingCanvas = false;
+			$scope.hideCanvas();
+			$scope.clearCanvas();
+			$scope.clearTemporaryCanvas();
+		}
 
 		$scope.prepareCanvasForUpload = function(review, comment) {
 			$log.log('before filter, all canvas are', $scope.review.canvas);
@@ -369,6 +378,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.clearTemporaryCanvas = function() {
+			$log.log('canvas are', $scope.review.canvas);
 			var fullCanvas = {};
 			angular.forEach($scope.review.canvas, function(value, key) {
 				if (!key.startsWith('tmp')) {
@@ -376,6 +386,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				}
 			})
 			$scope.review.canvas = fullCanvas;
+			$log.log('cleared canvas to ', $scope.review.canvas);
 			$scope.canvasIdIndex = 0;
 			$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
 		}
@@ -494,6 +505,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//$scope.review.sportForDisplay = $scope.review.oldSportForDisplay;
 			$scope.review.tags = $scope.review.oldTags;
 			$scope.review.editing = false;
+			$scope.cancelCanvasEdition();
 		}
 
 		$scope.updateDescription = function() {

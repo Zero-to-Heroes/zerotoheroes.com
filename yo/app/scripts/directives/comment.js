@@ -69,9 +69,12 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.cancelUpdateComment = function(comment) {
+					$log.log('cancelling comment update');
 					$scope.clearTemporaryCanvas();
 					comment.text = comment.oldText;
 					comment.editing = false;
+					$scope.canvasFlag = false;
+					$rootScope.$broadcast('editcanvas.cancel');
 				}
 
 				$scope.updateComment = function(comment) {
@@ -128,7 +131,11 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.cancelReply = function() {
-					$scope.reply.replying = false;
+					$scope.reply = {};
+					$scope.replyForm.$setPristine();
+					$scope.canvasFlag = false;
+					$scope.$broadcast('show-errors-reset');
+					$rootScope.$broadcast('editcanvas.cancel');
 				}
 
 				$scope.postReply = function() {

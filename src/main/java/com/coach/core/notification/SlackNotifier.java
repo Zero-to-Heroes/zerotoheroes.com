@@ -34,11 +34,14 @@ public class SlackNotifier {
 	}
 
 	public void notifyNewComment(final Review review, final Comment reply) {
+		log.debug("Should we send slack notification?");
 		if (!"prod".equalsIgnoreCase(environment)) return;
+		log.debug("Sending");
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
 			public String call() throws Exception {
+				log.debug("In executor call for slacknotifier#notifyNewComment");
 				SlackSession session = createSession();
 				SlackChannel channel = session.findChannelByName("notifications-prod");
 				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase() + "/"
@@ -48,6 +51,7 @@ public class SlackNotifier {
 				attachment.color = "good";
 				session.sendMessage(channel,
 						"New comment by " + reply.getAuthor() + " at " + reviewUrl, attachment);
+				log.debug("Notification sent to channel");
 				return null;
 			}
 

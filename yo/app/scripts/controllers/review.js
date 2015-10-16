@@ -323,8 +323,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.playerControls.canvasId = undefined;
 			$scope.playerControls.canvasPlaying = false;
 			$log.log('updating canvas id to', insertedId);
-			$scope.canvasIdIndex++;
-			$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
 		});
 
 		$rootScope.$on('closecanvas', function(event, canvasIdTag) {
@@ -336,6 +334,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.review.canvas[canvasIdTag] = JSON.stringify(currentCanvas);
 			//$log.log('draft canvas are', $scope.review.canvas);
 			$scope.clearCanvas();
+			$scope.canvasIdIndex++;
+			$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
 		});
 
 		$scope.cancelCanvasEdition = function() {
@@ -346,6 +346,15 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.prepareCanvasForUpload = function(review, comment) {
+			// Save potential unclosed cavans
+			if ($scope.drawingCanvas) {
+				var currentCanvas = $scope.serializeCanvas();
+				$scope.review.canvas[$scope.canvasId] = JSON.stringify(currentCanvas);
+				$scope.clearCanvas();
+				$scope.canvasIdIndex++;
+				$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
+				$scope.drawingCanvas = false;
+			}
 			$log.log('before filter, all canvas are', $scope.review.canvas);
 			//var newCanvas = $scope.getNewCanvas(review);
 			//$log.log('new canvas are', newCanvas);

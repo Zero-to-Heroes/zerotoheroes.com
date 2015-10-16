@@ -21,7 +21,7 @@ import com.coach.review.Review.Sport;
 
 @Getter
 @Setter
-@ToString(exclude = "comments")
+@ToString(exclude = { "comments", "tempCanvas" })
 public class Comment implements HasText, HasReputation {
 
 	private String id;

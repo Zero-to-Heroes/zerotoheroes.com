@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString(exclude = "comments")
+@ToString(exclude = { "comments", "canvas" })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Review implements HasText, HasReputation {
 
@@ -209,11 +209,11 @@ public class Review implements HasText, HasReputation {
 		description = newText;
 		text = newText;
 	}
-	
+
 	private String getDescription() {
 		return description;
 	}
-	
+
 	private void setDescription(String description) {
 		this.description = description;
 	}

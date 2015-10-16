@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.coach.core.email.EmailMessage;
-import com.coach.core.email.EmailSender;
+import com.coach.core.notification.EmailMessage;
+import com.coach.core.notification.EmailSender;
 import com.coach.core.security.User;
 import com.coach.user.UserRepository;
 

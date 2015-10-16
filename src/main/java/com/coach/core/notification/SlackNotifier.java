@@ -1,6 +1,7 @@
 package com.coach.core.notification;
 
 import java.io.IOException;
+import java.util.concurrent.Callable;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,6 +22,9 @@ import com.ullink.slack.simpleslackapi.impl.SlackSessionFactory;
 @Component
 public class SlackNotifier {
 
+	@Autowired
+	private ExecutorProvider executorProvider;
+
 	private final String environment;
 
 	@Autowired
@@ -32,9 +36,9 @@ public class SlackNotifier {
 	public void notifyNewComment(final Review review, final Comment reply) {
 		if (!"prod".equalsIgnoreCase(environment)) return;
 
-		Thread thread = new Thread(new Runnable() {
+		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
-			public void run() {
+			public String call() throws Exception {
 				SlackSession session = createSession();
 				SlackChannel channel = session.findChannelByName("notifications-prod");
 				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase() + "/"
@@ -44,17 +48,18 @@ public class SlackNotifier {
 				attachment.color = "good";
 				session.sendMessage(channel,
 						"New comment by " + reply.getAuthor() + " at " + reviewUrl, attachment);
+				return null;
 			}
+
 		});
-		thread.start();
 	}
 
 	public void notifyNewReview(final Review review) {
 		if (!"prod".equalsIgnoreCase(environment)) return;
 
-		Thread thread = new Thread(new Runnable() {
+		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
-			public void run() {
+			public String call() throws Exception {
 				SlackSession session = createSession();
 				SlackChannel channel = session.findChannelByName("notifications-prod");
 				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase() + "/"
@@ -64,17 +69,17 @@ public class SlackNotifier {
 						"");
 				attachment.color = "good";
 				session.sendMessage(channel, "New review created at " + reviewUrl, attachment);
+				return null;
 			}
 		});
-		thread.start();
 	}
 
 	public void notifyNewUser(final User user) {
 		if (!"prod".equalsIgnoreCase(environment)) return;
 
-		Thread thread = new Thread(new Runnable() {
+		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
-			public void run() {
+			public String call() throws Exception {
 				SlackSession session = createSession();
 				SlackChannel channel = session.findChannelByName("notifications-prod");
 				SlackAttachment attachment = new SlackAttachment("", "placeholder text",
@@ -82,17 +87,17 @@ public class SlackNotifier {
 						"");
 				attachment.color = "good";
 				session.sendMessage(channel, "A new user has just registered", attachment);
+				return null;
 			}
 		});
-		thread.start();
 	}
 
 	public void notifyNewPaymentRequest(final Review review, final Coach coach, final String requesterEmail) {
 		if (!"prod".equalsIgnoreCase(environment)) return;
 
-		Thread thread = new Thread(new Runnable() {
+		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
-			public void run() {
+			public String call() throws Exception {
 				SlackSession session = createSession();
 				SlackChannel channel = session.findChannelByName("notifications-prod");
 				SlackAttachment attachment = new SlackAttachment("", "placeholder text",
@@ -105,9 +110,9 @@ public class SlackNotifier {
 				// Also post in important notifs
 				SlackChannel importantChannel = session.findChannelByName("notifications-prod-hi");
 				session.sendMessage(importantChannel, "New payment request", attachment);
+				return null;
 			}
 		});
-		thread.start();
 	}
 
 	private SlackSession createSession() {

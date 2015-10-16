@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.coach.coaches.Coach;
 import com.coach.coaches.CoachRepository;
-import com.coach.core.email.EmailMessage;
-import com.coach.core.email.EmailSender;
+import com.coach.core.notification.EmailMessage;
+import com.coach.core.notification.EmailSender;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;

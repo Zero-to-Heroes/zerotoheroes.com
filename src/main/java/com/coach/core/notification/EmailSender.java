@@ -1,4 +1,4 @@
-package com.coach.core.email;
+package com.coach.core.notification;
 
 import java.util.Properties;
 
@@ -23,6 +23,9 @@ public class EmailSender {
 	private final String smtpUsername, smtpPassword, smtpRegion;
 
 	@Autowired
+	private ExecutorProvider executorProvider;
+
+	@Autowired
 	public EmailSender(@Value("${smtp.username}") String smtpUsername,
 			@Value("${smtp.password}") String smtpPassword, @Value("${smtp.region}") String smtpRegion) {
 		super();
@@ -33,8 +36,9 @@ public class EmailSender {
 
 	public void send(EmailMessage message) {
 		Runnable runnable = new EmailSenderRunnable(message);
-		Thread mailThread = new Thread(runnable);
-		mailThread.start();
+		executorProvider.getExecutor().submit(runnable);
+		// Thread mailThread = new Thread(runnable);
+		// mailThread.start();
 	}
 
 	@AllArgsConstructor

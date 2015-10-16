@@ -1,4 +1,4 @@
-package com.coach.core.email;
+package com.coach.core.notification;
 
 import java.util.Set;
 

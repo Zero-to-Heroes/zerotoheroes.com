@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', 
-	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope) {
+angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', 'string', 
+	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, string) {
 		$scope.videos = [];
 		$scope.tabs = []; 
 		$scope.tabs.activeTab = 0;
@@ -83,8 +83,10 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		}
 
 		$scope.buildUrl = function(video) {
-			// The . makes our redirect fail (probably caused by the regex used in modRewrite)
-			var titleForUrl = video.title.replace(new RegExp(' ', 'g'), '-').replace(new RegExp('\\.', 'g'), '-');
+			// Replace all special characters ex
+			// http://stackoverflow.com/questions/9705194/replace-special-characters-in-a-string-with
+			var titleForUrl = string(video.title).latinise().s;
+			titleForUrl = titleForUrl.replace(new RegExp(' ', 'g'), '-').replace(new RegExp('\\.', 'g'), '-');
 			var url = '/r/' + video.sport.key.toLowerCase() + '/' + video.id + '/' + titleForUrl;
 			return url;
 		}

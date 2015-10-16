@@ -145,7 +145,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.API.seekTime(time);
 				}
 				if ($scope.playerControls.mode == 2) {
-					$scope.API2.seekTime(time2);
+					if (time2 * 1000 == $scope.API2.currentTime) {
+						$log.log('staying at the same time2, no action required');
+						$timeout(function() { $scope.player2ready = true; }, 0);					
+					}
+					else {
+						$scope.API2.seekTime(time2);
+					}
 				}
 			},
 			moveTime: function(amountInMilliseconds) {
@@ -729,7 +735,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.player1ready = false;
 					$scope.player2ready = false;
 					$scope.allPlayersReady = false;
+					// Cancel current playing mode
 					$scope.playerControls.pause();
+					$scope.playerControls.loopDuration = undefined;
 					$scope.playerControls.seekTime(convertedTime, convertedTime2);
 					buffering2 = true;
 					buffering = false;

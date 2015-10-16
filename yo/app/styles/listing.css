@@ -91,6 +91,10 @@
   display: inline-block;
 }
 
+.video-info-details {
+  width: 30px;
+}
+
 /* Don't show the name input if it appears on the navbar */
 @media screen and (min-width: 600px) {
 	.thumbnails {

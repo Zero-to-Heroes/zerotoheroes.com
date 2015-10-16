@@ -38,12 +38,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 							angular.forEach($scope.review.tags, function(key) {
 								$rootScope.pageDescription += ' ' + key.text;
 							})
-							$rootScope.pageDescription += $scope.review.text;
 						}
-						else {
-							$rootScope.pageDescription += $scope.review.text;
-							$rootScope.pageDescription += '. A video review platform to share your passion and improve your skills. Record yourself playing. Get the feedback you need. Progress and help others';
-						}
+						$rootScope.pageDescription += $scope.review.text;
 						//$log.log('pageDescription in review.js', $rootScope.pageDescription);
 					}
 

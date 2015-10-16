@@ -8,7 +8,16 @@
 					<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true" title="Downvote this video"></span>
 				</div>
   			</td>
-			<td class="vert-align text-center comments">
+  			<td class="vert-align text-center video-info-details" title="Number of comments">
+				<span><span class="block">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment"></span></span>
+			</td>
+			<td class="vert-align text-center video-info-details" title="Number of comments the author of the video found useful">
+				<span><span class="block">{{video.totalHelpful}}</span><span class="validated"><span class="glyphicon glyphicon-ok"></span></span></span>
+			</td>
+			<td class="vert-align text-center video-info-details" title="Number of views">
+				<span><span class="block">{{video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open"></span></span>
+			</td>
+			<!--<td class="vert-align text-center comments">
 				<span class="block">{{video.totalComments}}</span><span><small>comments</small></span>
 			</td>
 			<td class="vert-align text-center comments" ng-class="{'validated': video.totalHelpful > 0}" title="Comments on this video that have been marked as helpful by the author of the video">
@@ -16,7 +25,7 @@
 			</td>
 			<td class="vert-align text-center comments">
 				<span class="block">{{video.viewCount ? video.viewCount : '0'}}</span><span><small>views</small></span>
-			</td>
+			</td>-->
 			<td class="thumbnails vert-align text-center">
 				<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
 			</td>

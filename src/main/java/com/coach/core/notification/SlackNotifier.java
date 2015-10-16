@@ -15,6 +15,7 @@ import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.ullink.slack.simpleslackapi.SlackAttachment;
 import com.ullink.slack.simpleslackapi.SlackChannel;
+import com.ullink.slack.simpleslackapi.SlackMessageHandle;
 import com.ullink.slack.simpleslackapi.SlackSession;
 import com.ullink.slack.simpleslackapi.impl.SlackSessionFactory;
 
@@ -40,7 +41,7 @@ public class SlackNotifier {
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
-			public String call() throws Exception {
+			public String call() throws IOException {
 				log.debug("In executor call for slacknotifier#notifyNewComment");
 				SlackSession session = createSession();
 				SlackChannel channel = session.findChannelByName("notifications-prod");
@@ -49,8 +50,23 @@ public class SlackNotifier {
 				SlackAttachment attachment = new SlackAttachment("", "placeholder text", reply.getText(),
 						"");
 				attachment.color = "good";
-				session.sendMessage(channel,
-						"New comment by " + reply.getAuthor() + " at " + reviewUrl, attachment);
+				try {
+					log.debug("Trying to send message");
+					SlackMessageHandle messageHandle = session.sendMessage(channel,
+							"New comment by " + reply.getAuthor() + " at " + reviewUrl, attachment);
+					log.debug("Is message ackowledged? " + messageHandle.isAcked());
+					log.debug("Slack message reply: [timestamp= " + messageHandle.getSlackReply().getTimestamp()
+							+ ", replyTo=" + messageHandle.getSlackReply().getReplyTo() + ", eventtype"
+							+ messageHandle.getSlackReply().getEventType());
+					log.debug("Message id " + messageHandle.getMessageId());
+				}
+				catch (Exception e) {
+					log.error("Exception while trying to send message to slack", e);
+				}
+				finally {
+					session.disconnect();
+				}
+
 				log.debug("Notification sent to channel");
 				return null;
 			}
@@ -65,15 +81,21 @@ public class SlackNotifier {
 			@Override
 			public String call() throws Exception {
 				SlackSession session = createSession();
-				SlackChannel channel = session.findChannelByName("notifications-prod");
-				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase() + "/"
-						+ review.getId();
-				SlackAttachment attachment = new SlackAttachment(review.getSport().getValue() + " - "
-						+ review.getTitle(), "placeholder text", review.getText(),
-						"");
-				attachment.color = "good";
-				session.sendMessage(channel, "New review created at " + reviewUrl, attachment);
-				return null;
+				try {
+					SlackChannel channel = session.findChannelByName("notifications-prod");
+					String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase()
+							+ "/"
+							+ review.getId();
+					SlackAttachment attachment = new SlackAttachment(review.getSport().getValue() + " - "
+							+ review.getTitle(), "placeholder text", review.getText(),
+							"");
+					attachment.color = "good";
+					session.sendMessage(channel, "New review created at " + reviewUrl, attachment);
+					return null;
+				}
+				finally {
+					session.disconnect();
+				}
 			}
 		});
 	}
@@ -85,12 +107,18 @@ public class SlackNotifier {
 			@Override
 			public String call() throws Exception {
 				SlackSession session = createSession();
-				SlackChannel channel = session.findChannelByName("notifications-prod");
-				SlackAttachment attachment = new SlackAttachment("", "placeholder text",
-						"A new user has just registered " + user.getUsername() + " from " + user.getRegisterLocation(),
-						"");
-				attachment.color = "good";
-				session.sendMessage(channel, "A new user has just registered", attachment);
+				try {
+					SlackChannel channel = session.findChannelByName("notifications-prod");
+					SlackAttachment attachment = new SlackAttachment("", "placeholder text",
+							"A new user has just registered " + user.getUsername() + " from "
+									+ user.getRegisterLocation(),
+							"");
+					attachment.color = "good";
+					session.sendMessage(channel, "A new user has just registered", attachment);
+				}
+				finally {
+					session.disconnect();
+				}
 				return null;
 			}
 		});
@@ -103,17 +131,23 @@ public class SlackNotifier {
 			@Override
 			public String call() throws Exception {
 				SlackSession session = createSession();
-				SlackChannel channel = session.findChannelByName("notifications-prod");
-				SlackAttachment attachment = new SlackAttachment("", "placeholder text",
-						requesterEmail + " has requeted a review from " + coach.getName() + " for a tariff of "
-								+ coach.getTariff() + " with the following conditions " + coach.getTariffDescription(),
-						"");
-				attachment.color = "good";
-				session.sendMessage(channel, "New payment request", attachment);
+				try {
+					SlackChannel channel = session.findChannelByName("notifications-prod");
+					SlackAttachment attachment = new SlackAttachment("", "placeholder text",
+							requesterEmail + " has requeted a review from " + coach.getName() + " for a tariff of "
+									+ coach.getTariff() + " with the following conditions "
+									+ coach.getTariffDescription(),
+							"");
+					attachment.color = "good";
+					SlackMessageHandle messageHandle = session.sendMessage(channel, "New payment request", attachment);
 
-				// Also post in important notifs
-				SlackChannel importantChannel = session.findChannelByName("notifications-prod-hi");
-				session.sendMessage(importantChannel, "New payment request", attachment);
+					// Also post in important notifs
+					SlackChannel importantChannel = session.findChannelByName("notifications-prod-hi");
+					session.sendMessage(importantChannel, "New payment request", attachment);
+				}
+				finally {
+					session.disconnect();
+				}
 				return null;
 			}
 		});

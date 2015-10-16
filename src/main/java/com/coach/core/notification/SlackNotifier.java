@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.concurrent.Callable;
 
 import lombok.extern.slf4j.Slf4j;
+import net.gpedro.integrations.slack.SlackApi;
+import net.gpedro.integrations.slack.SlackMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -43,33 +45,56 @@ public class SlackNotifier {
 			@Override
 			public String call() throws IOException {
 				log.debug("In executor call for slacknotifier#notifyNewComment");
-				SlackSession session = null;
 				try {
-					session = createSession();
-					log.debug("Created session");
-					SlackChannel channel = session.findChannelByName("notifications-prod");
-					log.debug("Found slack channel " + channel);
+					SlackApi api = new SlackApi(
+							"https://hooks.slack.com/services/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");
+					SlackMessage message = new SlackMessage();
+					net.gpedro.integrations.slack.SlackAttachment attach = new net.gpedro.integrations.slack.SlackAttachment();
+					attach.setColor("good");
+					attach.setText(reply.getText());
+					attach.setFallback("placeholder fallback");
+					message.addAttachments(attach);
 					String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase()
-							+ "/"
-							+ review.getId();
-					SlackAttachment attachment = new SlackAttachment("", "placeholder text", reply.getText(),
-							"");
-					attachment.color = "good";
-					log.debug("Trying to send message");
-					SlackMessageHandle messageHandle = session.sendMessage(channel,
-							"New comment by " + reply.getAuthor() + " at " + reviewUrl, attachment);
-					log.debug("Is message ackowledged? " + messageHandle.isAcked());
-					log.debug("Slack message reply: [timestamp= " + messageHandle.getSlackReply().getTimestamp()
-							+ ", replyTo=" + messageHandle.getSlackReply().getReplyTo() + ", eventtype"
-							+ messageHandle.getSlackReply().getEventType());
-					log.debug("Message id " + messageHandle.getMessageId());
+							+ "/" + review.getId();
+					message.setText("New comment by " + reply.getAuthor() + " at " + reviewUrl);
+					api.call(message);
+					log.debug("Sent message");
 				}
+				// SlackSession session = null;
+				// try {
+				// session = createSession();
+				// log.debug("Created session");
+				// SlackChannel channel =
+				// session.findChannelByName("notifications-prod");
+				// log.debug("Found slack channel " + channel);
+				// String reviewUrl = "http://www.zerotoheroes.com/r/" +
+				// review.getSport().getKey().toLowerCase()
+				// + "/"
+				// + review.getId();
+				// SlackAttachment attachment = new SlackAttachment("",
+				// "placeholder text", reply.getText(),
+				// "");
+				// attachment.color = "good";
+				// log.debug("Trying to send message");
+				// SlackMessageHandle messageHandle =
+				// session.sendMessage(channel,
+				// "New comment by " + reply.getAuthor() + " at " + reviewUrl,
+				// attachment);
+				// log.debug("Is message ackowledged? " +
+				// messageHandle.isAcked());
+				// log.debug("Slack message reply: [timestamp= " +
+				// messageHandle.getSlackReply().getTimestamp()
+				// + ", replyTo=" + messageHandle.getSlackReply().getReplyTo() +
+				// ", eventtype"
+				// + messageHandle.getSlackReply().getEventType());
+				// log.debug("Message id " + messageHandle.getMessageId());
+				// }
 				catch (Exception e) {
 					log.error("Exception while trying to send message to slack", e);
 				}
-				finally {
-					if (session != null) session.disconnect();
-				}
+				// finally {
+				// if (session != null) session.disconnect();
+				// }
 
 				log.debug("Notification sent to channel");
 				return null;
@@ -158,13 +183,16 @@ public class SlackNotifier {
 	}
 
 	private SlackSession createSession() {
-		SlackSession session = SlackSessionFactory
-				.createWebSocketSlackSession("xoxb-12632536997-ZzcHGR3IKIceL5ewaQ9gxFCJ");
-		log.debug("Retrieved session " + session + ", connecting");
+		log.debug("Creating session");
+		SlackSession session = null;
 		try {
+			session = SlackSessionFactory
+					.createWebSocketSlackSession("xoxb-12632536997-ZzcHGR3IKIceL5ewaQ9gxFCJ");
+			log.debug("Created session " + session + ", connecting");
+			log.info("Connection ongoing");
 			session.connect();
 		}
-		catch (IOException e) {
+		catch (Exception e) {
 			log.error("Error while connecting to the Slack session", e);
 		}
 		return session;

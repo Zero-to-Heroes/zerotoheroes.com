@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 'string', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse, string) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -326,7 +326,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		        	$scope.uploadInProgress = false;
 		        	//$log.log("upload finished!");
 		        	$timeout(function() {
-		        		$location.path('/r/' + data.sport.key.toLowerCase() + '/' + data.id);
+						var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + string(data.title).slugify().s;
+		        		$location.path(url);
 		        	}, 2000);
 				},
 				function(error) {
@@ -356,7 +357,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				        	$scope.uploadInProgress = false;
 				        	//$log.log("upload finished!");
 				        	$timeout(function() {
-				        		$location.path('/r/' + data.sport.key.toLowerCase() + '/' + data.id);
+				        		var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + string(data.title).slugify().s;
+		        				$location.path(url);
 				        	}, 2000);
 				        }
 					},

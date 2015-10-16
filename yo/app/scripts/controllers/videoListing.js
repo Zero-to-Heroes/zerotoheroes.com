@@ -85,9 +85,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.buildUrl = function(video) {
 			// Replace all special characters ex
 			// http://stackoverflow.com/questions/9705194/replace-special-characters-in-a-string-with
-			var titleForUrl = string(video.title).latinise().s;
-			titleForUrl = titleForUrl.replace(new RegExp(' ', 'g'), '-').replace(new RegExp('\\.', 'g'), '-');
-			var url = '/r/' + video.sport.key.toLowerCase() + '/' + video.id + '/' + titleForUrl;
+			var url = '/r/' + video.sport.key.toLowerCase() + '/' + video.id + '/' + string(video.title).slugify().s;
 			return url;
 		}
 

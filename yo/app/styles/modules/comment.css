@@ -70,5 +70,6 @@
 }
 
 .comment-block .validated {
-	color: #9B4C00;
+	font-weight: bold;
+	color: #5cb85c;
 }

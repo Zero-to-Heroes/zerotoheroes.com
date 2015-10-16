@@ -43,14 +43,18 @@ public class SlackNotifier {
 			@Override
 			public String call() throws IOException {
 				log.debug("In executor call for slacknotifier#notifyNewComment");
-				SlackSession session = createSession();
-				SlackChannel channel = session.findChannelByName("notifications-prod");
-				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase() + "/"
-						+ review.getId();
-				SlackAttachment attachment = new SlackAttachment("", "placeholder text", reply.getText(),
-						"");
-				attachment.color = "good";
+				SlackSession session = null;
 				try {
+					session = createSession();
+					log.debug("Created session");
+					SlackChannel channel = session.findChannelByName("notifications-prod");
+					log.debug("Found slack channel " + channel);
+					String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase()
+							+ "/"
+							+ review.getId();
+					SlackAttachment attachment = new SlackAttachment("", "placeholder text", reply.getText(),
+							"");
+					attachment.color = "good";
 					log.debug("Trying to send message");
 					SlackMessageHandle messageHandle = session.sendMessage(channel,
 							"New comment by " + reply.getAuthor() + " at " + reviewUrl, attachment);
@@ -64,7 +68,7 @@ public class SlackNotifier {
 					log.error("Exception while trying to send message to slack", e);
 				}
 				finally {
-					session.disconnect();
+					if (session != null) session.disconnect();
 				}
 
 				log.debug("Notification sent to channel");
@@ -156,6 +160,7 @@ public class SlackNotifier {
 	private SlackSession createSession() {
 		SlackSession session = SlackSessionFactory
 				.createWebSocketSlackSession("xoxb-12632536997-ZzcHGR3IKIceL5ewaQ9gxFCJ");
+		log.debug("Retrieved session " + session + ", connecting");
 		try {
 			session.connect();
 		}

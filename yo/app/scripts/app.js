@@ -24,8 +24,7 @@ var app = angular.module('app', [
   'angulartics.google.analytics',
   'RecursionHelper',
   'viewhead',
-  'ngTagsInput',
-  'string'
+  'ngTagsInput'
 ]);
 
 app.config(['$routeProvider', '$locationProvider',

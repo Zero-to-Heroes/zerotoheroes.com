@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 'string', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse, string) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -10,6 +10,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.maximumAllowedDuration = 5 * 60 + 1;
 		$scope.User = User;
 		$scope.review = {};
+
+		$scope.S = require('string');
 
 		$scope.creds = {
 		  	bucket: ENV.bucket + '/' + ENV.folder,
@@ -326,7 +328,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		        	$scope.uploadInProgress = false;
 		        	//$log.log("upload finished!");
 		        	$timeout(function() {
-						var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + string(data.title).slugify().s;
+						var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s;
 		        		$location.path(url);
 		        	}, 2000);
 				},
@@ -357,7 +359,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				        	$scope.uploadInProgress = false;
 				        	//$log.log("upload finished!");
 				        	$timeout(function() {
-				        		var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + string(data.title).slugify().s;
+				        		var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s;
 		        				$location.path(url);
 				        	}, 2000);
 				        }

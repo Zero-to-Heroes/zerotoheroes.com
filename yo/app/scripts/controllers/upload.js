@@ -11,8 +11,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.User = User;
 		$scope.review = {};
 
-		$scope.S = require('string');
-
 		$scope.creds = {
 		  	bucket: ENV.bucket + '/' + ENV.folder,
 		  	access_key: 'AKIAJHSXPMPE223KS7PA',

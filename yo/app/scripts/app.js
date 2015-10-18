@@ -174,7 +174,7 @@ app.run(['$rootScope', '$window', '$location', function($rootScope, $window, $lo
 }]);
 
 
-app.directive('scrollable', function ($window, $document) {
+app.directive('scrollable',  function ($window, $document, $log) {
 	var $win = angular.element($window);
 	var windowHeight = $win.height();
 
@@ -190,17 +190,20 @@ app.directive('scrollable', function ($window, $document) {
 				var bottomTop = bottom[0].getBoundingClientRect().top;
 				var strMarginTop = element.css('marginTop');
 				var marginTop = parseInt(strMarginTop.substring(0, strMarginTop.indexOf('px')));
-				var newMarginTop;
+				var newMarginTop = marginTop;
 				var scrollAmount = e.wheelDelta ? -e.wheelDelta : e.originalEvent.detail * 40;
 				// If we're at the bottom and scrolling down
 				if (bottomTop <= windowHeight && scrollAmount > 0) {
 					// Do nothing
+					//$log.log('Dont scroll bottomTop, scrollAmount, windowHeight', bottomTop, scrollAmount, windowHeight);
 				}
 				// If scrolling would bring the elements above the fold of the window
 				else if (bottomTop - scrollAmount <= windowHeight) {
+					//$log.log('Scrolling? bottomTop, scrollAmount, windowHeight', bottomTop, scrollAmount, windowHeight);
 					// Scroll amount is reduced
-					scrollAmount = scrollAmount - (bottomTop - windowHeight);
-						   newMarginTop = marginTop - scrollAmount;
+					scrollAmount = Math.min(scrollAmount - Math.abs(bottomTop - windowHeight), Math.abs(windowHeight - bottomTop));
+					//$log.log('Scrolling bottomTop, scrollAmount, windowHeight', bottomTop, scrollAmount, windowHeight);
+					newMarginTop = marginTop - scrollAmount;
 				}
 				else {
 					// Don't allow scroll up if already at the top

@@ -32,6 +32,7 @@ public class TagRepository {
 		squash.add(new Tag("kill"));
 		squash.add(new Tag("boast"));
 		squash.add(new Tag("lob"));
+		squash.add(new Tag("movement"));
 		tags.put(Squash, squash);
 
 		// Tags for badminton
@@ -47,6 +48,7 @@ public class TagRepository {
 		badminton.add(new Tag("drop"));
 		badminton.add(new Tag("net"));
 		badminton.add(new Tag("clear"));
+		badminton.add(new Tag("movement"));
 		tags.put(Badminton, badminton);
 
 		// Tags for HearthStone

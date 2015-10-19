@@ -12,8 +12,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.User = User;
-		$scope.canvasIdIndex = 0;
+		$scope.canvasState = {
+			canvasIdIndex: 0,
+			canvasId: 'tmp0',
+			drawingCanvas: false
+		}
+		/*$scope.canvasIdIndex = 0;
 		$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
+		$scope.drawingCanvas = false;*/
 
 		$scope.initReview = function() {
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
@@ -29,7 +35,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						}
 					);
 
-					$scope.cancelCanvasEdition();
+					//$scope.cancelCanvasEdition();
 
 					// Update page description
 					if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
@@ -273,7 +279,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Drawing system
 		//===============
-		$scope.drawingCanvas = false;
+		/*$scope.drawingCanvas = false;
 		$scope.$watch('drawingCanvas', function (newVal, oldVal) {
 			$log.log('watching canvasFlag', oldVal, newVal);
 			// edit mode
@@ -410,7 +416,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.clearCanvas();
 				$scope.hideCanvas();
 			}
-		}
+		}*/
 
 		//===============
 		// Tag system
@@ -550,7 +556,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Parse markdown
 			$scope.review.markedText = marked($scope.review.compiledText);
 
-			//$scope.review.sportForDisplay = $scope.review.sport.key;
 			$scope.review.editing = false;
 			$scope.review.processed = true;
 			$scope.clearTemporaryCanvas();

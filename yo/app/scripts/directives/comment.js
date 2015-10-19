@@ -13,17 +13,21 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				comment:'=comment',
 				indentationLevel:'=',
 				commentIndex:'=',
-				canvasFlag: '=',
-				canvasId: '='
+				canvasState: '=',
+				//drawingCanvas: '=',
+				//canvasId: '=',
+				goToTimestamp: '=timestampClickAction',
+				prepareCanvasForUpload: '=',
+				clearTemporaryCanvas: '='
 			},
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {
 
 				$scope.User = User;
-				$scope.goToTimestamp = $scope.$parent.goToTimestamp;
+				//$scope.goToTimestamp = $scope.$parent.goToTimestamp;
 				$scope.parseText = $scope.$parent.parseText;
-				$scope.prepareCanvasForUpload = $scope.$parent.prepareCanvasForUpload;
-				$scope.clearTemporaryCanvas = $scope.$parent.clearTemporaryCanvas;
+				//$scope.prepareCanvasForUpload = $scope.$parent.prepareCanvasForUpload;
+				//$scope.clearTemporaryCanvas = $scope.$parent.clearTemporaryCanvas;
 
 				$scope.review = $scope.$parent.review;
 				$scope.API = $scope.$parent.API;
@@ -42,8 +46,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					$scope.API = $scope.$parent.API;
 				});
 
-				$scope.$watch('canvasFlag', function (newVal, oldVal) {
-					$log.log('watching canvasFlag in comment', oldVal, newVal);
+				/*$scope.$watch('drawingCanvas', function (newVal, oldVal) {
+					$log.log('watching drawingCanvas in comment', oldVal, newVal);
 					// edit mode
 					if (newVal) {
 						$log.log('starting edit canvas mode');
@@ -54,7 +58,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 						$log.log('Done editing, need to save');
 						$rootScope.$broadcast('editcanvas.end');
 					}
-				});
+				});*/
 
 				//===============
 				// Basic comment fonctions
@@ -73,7 +77,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					$scope.clearTemporaryCanvas();
 					comment.text = comment.oldText;
 					comment.editing = false;
-					$scope.canvasFlag = false;
+					//$scope.canvasState.drawingCanvas = false;
 					$rootScope.$broadcast('editcanvas.cancel');
 				}
 
@@ -133,7 +137,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.cancelReply = function() {
 					$scope.reply = {};
 					$scope.replyForm.$setPristine();
-					$scope.canvasFlag = false;
+					//$scope.drawingCanvas = false;
 					$scope.$broadcast('show-errors-reset');
 					$rootScope.$broadcast('editcanvas.cancel');
 				}

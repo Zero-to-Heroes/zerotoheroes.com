@@ -196,6 +196,8 @@ app.directive('scrollable',  function ($window, $document, $log) {
 				if (bottomTop <= windowHeight && scrollAmount > 0) {
 					// Do nothing
 					//$log.log('Dont scroll bottomTop, scrollAmount, windowHeight', bottomTop, scrollAmount, windowHeight);
+					e.stopPropagation();
+					e.preventDefault();
 				}
 				// If scrolling would bring the elements above the fold of the window
 				else if (bottomTop - scrollAmount <= windowHeight) {
@@ -204,15 +206,20 @@ app.directive('scrollable',  function ($window, $document, $log) {
 					scrollAmount = Math.min(scrollAmount - Math.abs(bottomTop - windowHeight), Math.abs(windowHeight - bottomTop));
 					//$log.log('Scrolling bottomTop, scrollAmount, windowHeight', bottomTop, scrollAmount, windowHeight);
 					newMarginTop = marginTop - scrollAmount;
+					e.stopPropagation();
+					e.preventDefault();
 				}
 				else {
 					// Don't allow scroll up if already at the top
 					newMarginTop = Math.min(0, marginTop - scrollAmount);
+					if (newMarginTop != 0) {
+						e.stopPropagation();
+						e.preventDefault();	
+					}
+					
 				}
 
 				element.css('marginTop', newMarginTop + 'px'); 
-				e.stopPropagation();
-				e.preventDefault();
 			});
 		  }
 		}

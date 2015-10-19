@@ -40,21 +40,17 @@ public class EmailNotifier {
 							"Hey there!<br/>"
 									+ comment.getAuthor()
 									+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
-									+ review.getId() + "\">here</a> to see what they said.")
-					.type("text/html").build();
+									+ review.getSport().getKey() + "/" + review.getId()
+									+ "\">here</a> to see what they said.").type("text/html").build();
 			emailSender.send(message);
 		}
 	}
 
 	public void notifyNewUser(User user) {
 		if ("prod".equalsIgnoreCase(environment)) {
-			EmailMessage message = EmailMessage
-					.builder()
-					.from("seb@zerotoheroes.com")
-					.to("contact@zerotoheroes.com")
+			EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to("contact@zerotoheroes.com")
 					.subject(environment + ": A new user has just registered! " + user.getUsername())
-					.content(user.toString())
-					.type("text/html").build();
+					.content(user.toString()).type("text/html").build();
 			emailSender.send(message);
 		}
 	}

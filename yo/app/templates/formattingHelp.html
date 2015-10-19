@@ -1,15 +1,14 @@
 <div class="formatting-help">
-	<p>You can use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdow syntax</a> to format your text</p>
+	<p>You can use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdow syntax</a> to format your text (bold, italics, paragraphs, etc)</p>
 	<div  ng-show="useVideo">
 		<p>Additionally, you can:
 			<ul>
-				<li>Enter time information in the form mm:ss to create a link to directly go to the specified time in the video (e.g. <i>01:21</i> will create a link to go to 1 min 21 seconds into the video).</li>
-				<li>Add <i>+p</i> after a time information to automatically start playing the video at that time when clicking on the link</li>
-				<li>Or add <i>+s</i> to start playing in slow motion (half speed)</li>
-				<li>Or add <i>+s</i> with a number to specify the video playback rate. For instance, <i>+s0.25</i> will play the video at quarter the speed, while <i>+s2</i> will play it at double the speed</li>
-				<li>Add <i>L</i> after any of +p or +s commands to start a 5-seconds loop starting from the timestamp. You can also specify the loop duration in the same format as for <i>+s</i>. For instance, <i>00:54+s0.25L2.2</i> will start playing the video at 54s in at quarter the speed, and loop every 2.2 seconds</li>
-				<li>You can display two different sequences of a single video side-by-side. Simply specify the moment of the first video, a pipe, then the second one. For instance, <i>0:50|2:45</i> will show you side-by-side the left side of the video at 0:50 and 2:45. If you want the right side instead, add 'r' at the end, like <i>0:50|2:45r</i>. You can then use loop and speed comments as usual (a full command might look like <i>0:50|0:50r+s0.25L2.2</i>)</li>
-				<li>You can now also use a sequence from another video. Simply specify the id of the video (what you have in the URL after the /r/, like /r/56034cbfe4b07125e2fbbf6e) in parenthesis after the timestam, like <i>0:50|0:05(560027c2776ef7265195c092)</i></li>
+				<li>Use the <strong>timestamp icon <span class="glyphicon glyphicon-time"></span></strong> to create a link to a specific moment in the video. You can freely adjust the timestamp figures to match exactly what you need</li>
+				<li>Use the <strong>slow motion icon <span class="glyphicon glyphicon-play"></span><span class="glyphicon glyphicon-pause" style="margin-left: -5px"></span></strong> to create a timestamp and make the video play in slow motion once the user clicks on it. You can change how much the video is slowed by changing the <code>0.5</code> figure after the <code>s</code> (the lower, the slower the video)</li>
+				<li>Use the <strong>loop icon <span class="glyphicon glyphicon-repeat"></span></strong> to create a slow motion link, and make a one-second-long sequence that repeats endlessly. You can change the duration of the loop by changing the value after the <code>L</code> (<code>L1.5</code> would mean a 1.5s loop)</li>
+				<li>Use the <strong>drawing icon <span class="glyphicon glyphicon-picture"></span></strong> to create a timestamp with a drawing. Once you click on the icon, you will enter <i>drawing mode</i>. Simply click and hold on the white canvas on the video to draw anything you like, and click again on the icon to save. If you don't like what you just drew, simply erase the <code>[tmp0]</code> part in the comment, and start again!</li>
+				<li><i>Expert feature</i>: You can <strong>display two video sequences side-by-side</strong>. You need to specify the moment of the first video, a pipe, then the second one. For instance, <code>0:50|2:45</code> will show you side-by-side the left side of the video at 0:50 and 2:45. If you want the right side instead, add 'r' at the end, like <code>0:50|2:45r</code>. 
+				<br> You can also use a sequence from another video by specifying the id of the video (what you have in the URL after the /r/, like /r/56034cbfe4b07125e2fbbf6e) in parenthesis after the timestamp, like <code>0:50|0:05(560027c2776ef7265195c092)</code></li>
 			</ul>
 		</p>
 	</div>

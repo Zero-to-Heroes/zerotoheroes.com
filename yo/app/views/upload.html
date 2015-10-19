@@ -85,7 +85,12 @@
 					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.text" ng-readonly="uploadInProgress" auto-grow ng-hide="useVideo"></textarea>
 					   </div>
 					</div>
+					<div class="inline-block float-right show-help-buttons">
+					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
+						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+					</div>
 			  	</div>
+				<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 				<div class="alert alert-info" role="alert" ng-show="hasTimestamps && review.beginning > 0">
 					<span>It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)</span>
 				</div>
@@ -101,11 +106,6 @@
 					<div class="col-sm-2">
 			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress"  analytics-on="click" analytics-category="upload" analytics-event="upload.request">{{useVideo ? 'Upload' : 'Post'}} now</button>
 		  			</div>
-					<div class="col-sm-6">
-					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
-						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
-						<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
-					</div>
 				</div>
 			</div>
 

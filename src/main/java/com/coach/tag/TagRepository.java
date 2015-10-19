@@ -23,6 +23,7 @@ public class TagRepository {
 		List<Tag> squash = new ArrayList<>();
 		squash.add(new Tag("match"));
 		squash.add(new Tag("drill"));
+		squash.add(new Tag("training"));
 		squash.add(new Tag("forehand"));
 		squash.add(new Tag("backhand"));
 		squash.add(new Tag("drive"));
@@ -49,6 +50,7 @@ public class TagRepository {
 		badminton.add(new Tag("net"));
 		badminton.add(new Tag("clear"));
 		badminton.add(new Tag("movement"));
+		badminton.add(new Tag("training"));
 		tags.put(Badminton, badminton);
 
 		// Tags for HearthStone

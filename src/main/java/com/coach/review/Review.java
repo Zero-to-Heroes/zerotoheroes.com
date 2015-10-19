@@ -35,8 +35,8 @@ public class Review implements HasText, HasReputation {
 	@AllArgsConstructor
 	public enum Sport {
 		Badminton("Badminton", "Badminton"), Squash("Squash", "Squash"), LeagueOfLegends("LeagueOfLegends",
-				"League of Legends"), HearthStone("HearthStone", "HearthStone"), HeroesOfTheStorm(
-				"HeroesOfTheStorm", "Heroes of the Storm"), Meta("Meta", "Meta"), Other("Other", "Other");
+				"League of Legends"), HearthStone("HearthStone", "HearthStone"), HeroesOfTheStorm("HeroesOfTheStorm",
+				"Heroes of the Storm"), Meta("Meta", "Meta"), Other("Other", "Other");
 
 		@Getter
 		private String key, value;
@@ -216,5 +216,9 @@ public class Review implements HasText, HasReputation {
 
 	private void setDescription(String description) {
 		this.description = description;
+	}
+
+	public void resetCanvas() {
+		canvas = new HashMap<>();
 	}
 }

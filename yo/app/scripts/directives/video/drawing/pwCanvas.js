@@ -7,20 +7,24 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 			},*/
 			//templateUrl: '/templates/video/drawing/canvas.html',
 			link: function postLink($scope, element, attrs) {
-					var canvas = $scope.canvas = new fabric.Canvas('fabricCanvas', {
-						isDrawingMode: true
-					});
+				var canvas = $scope.canvas = new fabric.Canvas('fabricCanvas', {
+					isDrawingMode: true
+				});
 
-					fabric.Object.prototype.transparentCorners = false;
+				fabric.Object.prototype.transparentCorners = false;
 
-					if (canvas.freeDrawingBrush) {
-						canvas.freeDrawingBrush.color = '#ff0'; //drawingColorEl.value;
-						canvas.freeDrawingBrush.width = 10; //parseInt(drawingLineWidthEl.value, 10) || 1;
-						canvas.freeDrawingBrush.shadowBlur = 0;
-					}
+				if (canvas.freeDrawingBrush) {
+					canvas.freeDrawingBrush.color = '#ff0'; //drawingColorEl.value;
+					canvas.freeDrawingBrush.width = 10; //parseInt(drawingLineWidthEl.value, 10) || 1;
+					canvas.freeDrawingBrush.shadowBlur = 0;
+				}
 
 
 				$timeout(function() {
+					$scope.refreshCanvas();
+				}, 1000);
+
+				$scope.refreshCanvas = function() {
 					var container = element[0].parentElement;
 
 					$scope.canvas.setHeight(container.offsetHeight);
@@ -28,7 +32,7 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 
 					$scope.canvas.calcOffset();
 					$scope.canvas.renderAll();
-				}, 1000);
+				}
 
 				$scope.serializeCanvas = function() {
 					//$log.log('serializing in directive');

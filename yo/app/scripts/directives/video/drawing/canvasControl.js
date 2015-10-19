@@ -19,7 +19,8 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 				canvasState: '=',
 				clearTemporaryCanvas: '=',
 				prepareCanvasForUpload: '=',
-				toggleCanvas: '='
+				toggleCanvas: '=',
+				cancelCanvasEdition: '='
 			},
 			controller: function($scope) {
 				//$scope.drawingCanvas = false;
@@ -33,6 +34,13 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 					else if (newVal != oldVal) {
 						$log.log('Done editing, need to save');
 						$scope.hideCanvas();
+					}
+				});
+
+				$scope.$watch('review', function (newVal, oldVal) {
+					$log.log('watching review', oldVal, newVal);
+					if (newVal) {
+						$scope.cancelCanvasEdition();
 					}
 				});
 
@@ -84,7 +92,6 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 				});
 				
 				$scope.clearTemporaryCanvas = function() {
-					$log.log('canvas are', $scope.review.canvas);
 					var fullCanvas = {};
 					angular.forEach($scope.review.canvas, function(value, key) {
 						if (!key.startsWith('tmp')) {
@@ -109,13 +116,13 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 					// Save potential unclosed cavans
 					if ($scope.canvasState.drawingCanvas) {
 						var currentCanvas = $scope.serializeCanvas();
-						$scope.review.canvas[$scope.canvasState.canvasId] = JSON.stringify(currentCanvas);
+						review.canvas[$scope.canvasState.canvasId] = JSON.stringify(currentCanvas);
 						$scope.clearCanvas();
 						$scope.canvasState.canvasIdIndex++;
 						$scope.canvasState.canvasId = 'tmp' + $scope.canvasState.canvasIdIndex;
 						$scope.canvasState.drawingCanvas = false;
 					}
-					$log.log('before filter, all canvas are', $scope.review.canvas);
+					$log.log('before filter, all canvas are', review.canvas);
 					//var newCanvas = $scope.getNewCanvas(review);
 					//$log.log('new canvas are', newCanvas);
 					var usefulNewCanvas = $scope.filterOutUnusedCanvas(comment, review.canvas);

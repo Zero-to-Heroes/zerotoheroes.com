@@ -83,8 +83,8 @@ public class ReviewApiHandler {
 		log.debug("sport param is " + sport);
 
 		// Sorting in ascending order
-		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList(
-				"sortingDate", "creationDate", "lastModifiedDate"));
+		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
+				"lastModifiedDate"));
 
 		if ("meta".equalsIgnoreCase(sport)) {
 			reviews = reviewRepo.findAll(userName, sport, newestFirst);
@@ -93,8 +93,7 @@ public class ReviewApiHandler {
 			reviews = reviewRepo.findAllWithKey(userName, sport, newestFirst);
 		}
 
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
 		// tweak info about reputation
@@ -104,8 +103,7 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<Review> getReviewById(
-			@PathVariable("reviewId") final String id) {
+	public @ResponseBody ResponseEntity<Review> getReviewById(@PathVariable("reviewId") final String id) {
 		// String currentUser =
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		Review review = reviewRepo.findById(id);
@@ -121,8 +119,7 @@ public class ReviewApiHandler {
 		denormalizeReputations(review);
 		updateReview(review);
 
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
 		review.prepareForDisplay(userId);
@@ -132,20 +129,17 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Review> createReview(
-			@RequestBody Review review) throws IOException {
+	public @ResponseBody ResponseEntity<Review> createReview(@RequestBody Review review) throws IOException {
 
 		// TOOD: checks
 		// Add current logged in user as the author of the review
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		log.info("Current user is " + currentUser);
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder
-				.getContext().getAuthentication().getAuthorities();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
 		log.info("authorities are " + authorities);
 
-		if (!StringUtils.isNullOrEmpty(currentUser)
-				&& !UserAuthority.isAnonymous(authorities)) {
+		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
 			addAuthorInformation(review.getSport(), review, currentUser);
 		}
@@ -155,12 +149,14 @@ public class ReviewApiHandler {
 			User user = userRepo.findByUsername(review.getAuthor());
 			if (user != null) {
 				log.debug("Name not allowed: " + review.getAuthor());
-				return new ResponseEntity<Review>((Review) null,
-						HttpStatus.UNAUTHORIZED);
+				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
 
 		log.debug("Review request creation: " + review);
+		Map<String, String> inputCanvas = review.getCanvas();
+		review.resetCanvas();
+		consolidateCanvas(currentUser, review, review, inputCanvas);
 
 		// Create the entry on the database
 		review.setCreationDate(new Date());
@@ -175,22 +171,19 @@ public class ReviewApiHandler {
 			transcoder.transcode(review.getId());
 		}
 
-		log.debug("Transcoding started, returning with created review: "
-				+ review);
+		log.debug("Transcoding started, returning with created review: " + review);
 		slackNotifier.notifyNewReview(review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Review> addComment(
-			@PathVariable("reviewId") final String id,
+	public @ResponseBody ResponseEntity<Review> addComment(@PathVariable("reviewId") final String id,
 			@RequestBody Comment comment) throws IOException {
 
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder
-				.getContext().getAuthentication().getAuthorities();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
 
 		// Adding the comment
 		log.debug("Adding comment " + comment + " to review " + id);
@@ -199,8 +192,7 @@ public class ReviewApiHandler {
 
 		// Security
 		// Add current logged in user as the author of the review
-		if (!StringUtils.isNullOrEmpty(currentUser)
-				&& !UserAuthority.isAnonymous(authorities)) {
+		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
 			addAuthorInformation(review.getSport(), comment, currentUser);
 		}
@@ -209,8 +201,7 @@ public class ReviewApiHandler {
 			User user = userRepo.findByUsername(comment.getAuthor());
 			if (user != null) {
 				log.debug("Name not allowed: " + comment.getAuthor());
-				return new ResponseEntity<Review>((Review) null,
-						HttpStatus.UNAUTHORIZED);
+				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
 
@@ -241,22 +232,18 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(value = "/{reviewId}/information", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Review> updateInformation(
-			@PathVariable("reviewId") final String id,
+	public @ResponseBody ResponseEntity<Review> updateInformation(@PathVariable("reviewId") final String id,
 			@RequestBody Review inputReview) throws IOException {
 
 		Review review = reviewRepo.findById(id);
 
 		// Security
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder
-				.getContext().getAuthentication().getAuthorities();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
 		// Disallow anonymous edits
-		if (StringUtils.isNullOrEmpty(currentUser)
-				|| UserAuthority.isAnonymous(authorities)) {
-			return new ResponseEntity<Review>((Review) null,
-					HttpStatus.UNAUTHORIZED);
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
 		// Disable edits when you're not the author
 		else if (!currentUser.equals(review.getAuthor())) { return new ResponseEntity<Review>((Review) null,
@@ -279,31 +266,25 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Comment> updateComment(
-			@PathVariable("reviewId") final String reviewId,
-			@PathVariable("commentId") final int commentId,
-			@RequestBody Comment newComment) throws IOException {
+	public @ResponseBody ResponseEntity<Comment> updateComment(@PathVariable("reviewId") final String reviewId,
+			@PathVariable("commentId") final int commentId, @RequestBody Comment newComment) throws IOException {
 
 		Review review = reviewRepo.findById(reviewId);
 		Comment comment = review.getComment(commentId);
 
 		// Security
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder
-				.getContext().getAuthentication().getAuthorities();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
 		// Disallow anonymous edits
-		if (StringUtils.isNullOrEmpty(currentUser)
-				|| UserAuthority.isAnonymous(authorities)) {
-			return new ResponseEntity<Comment>((Comment) null,
-					HttpStatus.UNAUTHORIZED);
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+			return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED);
 		}
 		// Disable edits when you're not the author
 		else if (!currentUser.equals(comment.getAuthor())) { return new ResponseEntity<Comment>((Comment) null,
 				HttpStatus.UNAUTHORIZED); }
 
-		consolidateCanvas(currentUser, review, newComment,
-				newComment.getTempCanvas());
+		consolidateCanvas(currentUser, review, newComment, newComment.getTempCanvas());
 		comment.setText(newComment.getText());
 
 		review.setLastModifiedDate(new Date());
@@ -319,22 +300,18 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(value = "/{reviewId}/{commentId}/reply", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Review> reply(
-			@PathVariable("reviewId") final String reviewId,
-			@PathVariable("commentId") final String commentId,
-			@RequestBody Comment reply) throws IOException {
+	public @ResponseBody ResponseEntity<Review> reply(@PathVariable("reviewId") final String reviewId,
+			@PathVariable("commentId") final String commentId, @RequestBody Comment reply) throws IOException {
 
 		Review review = reviewRepo.findById(reviewId);
 		Comment comment = review.getComment(Integer.parseInt(commentId));
 
 		// Security
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder
-				.getContext().getAuthentication().getAuthorities();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
 		// Add current logged in user as the author of the review
-		if (!StringUtils.isNullOrEmpty(currentUser)
-				&& !UserAuthority.isAnonymous(authorities)) {
+		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
 			addAuthorInformation(review.getSport(), reply, currentUser);
 		}
@@ -344,14 +321,12 @@ public class ReviewApiHandler {
 			User user = userRepo.findByUsername(reply.getAuthor());
 			if (user != null) {
 				log.debug("Name not allowed: " + reply.getAuthor());
-				return new ResponseEntity<Review>((Review) null,
-						HttpStatus.UNAUTHORIZED);
+				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
 
 		// Adding the comment
-		log.debug("Adding reply " + reply + " to review " + review
-				+ " and comment " + comment);
+		log.debug("Adding reply " + reply + " to review " + review + " and comment " + comment);
 
 		consolidateCanvas(currentUser, review, reply, reply.getTempCanvas());
 		log.debug("modified text is " + reply.getText());
@@ -379,24 +354,20 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(value = "/{reviewId}/{commentId}/validate", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Comment> toggleHelpful(
-			@PathVariable("reviewId") final String reviewId,
-			@PathVariable("commentId") final String commentId)
-			throws IOException {
+	public @ResponseBody ResponseEntity<Comment> toggleHelpful(@PathVariable("reviewId") final String reviewId,
+			@PathVariable("commentId") final String commentId) throws IOException {
 
 		Review review = reviewRepo.findById(reviewId);
 		Comment comment = review.getComment(Integer.parseInt(commentId));
 
 		// Security
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder
-				.getContext().getAuthentication().getAuthorities();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
 
 		// No anonymous access
-		if (StringUtils.isNullOrEmpty(currentUser)
-				|| UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Comment>((Comment) null,
-				HttpStatus.UNAUTHORIZED); }
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Comment>(
+				(Comment) null, HttpStatus.UNAUTHORIZED); }
 
 		log.debug("Validating that the logged in user is the review author");
 		User user = userRepo.findByUsername(currentUser);
@@ -407,12 +378,9 @@ public class ReviewApiHandler {
 
 		// Update the reputation only if the review author and comment author
 		// are different to avoid self-boosting
-		if (!StringUtils.isNullOrEmpty(comment.getAuthorId())
-				&& !comment.getAuthorId().equals(review.getAuthorId())) {
-			ReputationAction action = comment.isHelpful() ? ReputationAction.Helpful
-					: ReputationAction.LostHelpful;
-			reputationUpdater.updateReputation(review.getSport(), action,
-					comment.getAuthorId());
+		if (!StringUtils.isNullOrEmpty(comment.getAuthorId()) && !comment.getAuthorId().equals(review.getAuthorId())) {
+			ReputationAction action = comment.isHelpful() ? ReputationAction.Helpful : ReputationAction.LostHelpful;
+			reputationUpdater.updateReputation(review.getSport(), action, comment.getAuthorId());
 		}
 
 		updateReview(review);
@@ -421,18 +389,16 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(value = "/suggestion/comment/{sport}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<Review> getRecommendedReviewForComment(
-			@PathVariable("sport") final String sport) {
+	public @ResponseBody ResponseEntity<Review> getRecommendedReviewForComment(@PathVariable("sport") final String sport) {
 
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 
 		List<Review> reviews = null;
 		log.debug("Retrieving recommended review for " + sport);
 
 		// Sorting in ascending order
-		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList(
-				"sortingDate", "creationDate", "lastModifiedDate"));
+		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
+				"lastModifiedDate"));
 
 		Review recommended = null;
 		if (!"meta".equalsIgnoreCase(sport)) {
@@ -442,10 +408,8 @@ public class ReviewApiHandler {
 			// TODO: do that in the DB directly?
 			List<Review> result = new ArrayList<>();
 			for (Review review : reviews) {
-				if (review.getAuthor() != null
-						&& !review.getAuthor().equals(currentUser)
-						&& (review.getComments() == null || review
-								.getComments().isEmpty())) {
+				if (review.getAuthor() != null && !review.getAuthor().equals(currentUser)
+						&& (review.getComments() == null || review.getComments().isEmpty())) {
 					result.add(review);
 				}
 			}
@@ -483,8 +447,7 @@ public class ReviewApiHandler {
 		review.normalizeUsers(userMap);
 	}
 
-	private void consolidateCanvas(String prefix, Review review,
-			HasText textHolder, Map<String, String> tempCanvas) {
+	private void consolidateCanvas(String prefix, Review review, HasText textHolder, Map<String, String> tempCanvas) {
 		String text = textHolder.getText();
 		log.debug("Initial text is " + text);
 		String normalizedPrefix = prefix.replaceAll(" ", "");
@@ -506,16 +469,14 @@ public class ReviewApiHandler {
 		textHolder.setText(text);
 	}
 
-	private void addAuthorInformation(Sport sport, HasReputation entity,
-			String currentUser) {
+	private void addAuthorInformation(Sport sport, HasReputation entity, String currentUser) {
 		entity.setAuthor(currentUser);
 		// Add the ID of the author in addition to the name (we still keep
 		// the name
 		User user = userRepo.findByUsername(currentUser);
 		entity.setAuthorId(user.getId());
 		// by default a poster likes his post
-		reputationUpdater.updateReputationAfterAction(sport,
-				entity.getReputation(), ReputationAction.Upvote,
+		reputationUpdater.updateReputationAfterAction(sport, entity.getReputation(), ReputationAction.Upvote,
 				entity.getAuthorId(), user);
 		entity.setAuthorReputation(user.getReputation(sport) + 1);
 	}

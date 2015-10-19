@@ -35,8 +35,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						}
 					);
 
-					//$scope.cancelCanvasEdition();
-
 					// Update page description
 					if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
 						$rootScope.pageDescription = 'Get better at ' + $scope.sportsConfig[$scope.sport].displayName;

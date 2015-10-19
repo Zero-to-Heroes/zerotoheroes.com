@@ -8,7 +8,7 @@
 		</span>
 
 		<div class="videogular-container" ng-show="file && useVideo">
-			<videogular vg-player-ready="onPlayerReady($API)" vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)" class="videogular">
+			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': !canvasState.drawingCanvas}"  vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)" class="videogular">
 				<vg-media vg-src="sources"></vg-media>
 
 				<vg-controls>
@@ -18,9 +18,12 @@
 						<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 					</vg-scrub-bar>
 					<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
+					<video-canvas-overlay-button ng-show="playerControls.canvasId"></video-canvas-overlay-button>
 				</vg-controls>
 
-				<vg-overlay-play ng-click="onOverlayClick()"></vg-overlay-play>
+				<vg-overlay-play ng-click="onOverlayClick()" ng-show="!canvasState.drawingCanvas"></vg-overlay-play>
+
+				<canvas id="fabricCanvas" pw-canvas></canvas>
 			</videogular>
 		</div>
 
@@ -76,10 +79,10 @@
 		  		<div class="row">
 					<div class="col-sm-12">
 					  	<div class="form-group">
-							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo">
-					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.description" ng-readonly="uploadInProgress" auto-grow toolbar-target ng-required="true"></textarea>
+							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
+					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.text" ng-readonly="uploadInProgress" auto-grow toolbar-target ng-required="true"></textarea>
 					    	</toolbar>
-					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.description" ng-readonly="uploadInProgress" auto-grow ng-hide="useVideo"></textarea>
+					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.text" ng-readonly="uploadInProgress" auto-grow ng-hide="useVideo"></textarea>
 					   </div>
 					</div>
 			  	</div>
@@ -122,3 +125,5 @@
 		<div id="bottom"></div>
 	</div>
 </form>
+
+<canvas-control show-canvas="showCanvas" hide-canvas="hideCanvas" player-controls="playerControls" review="review" load-canvas="loadCanvas" serialize-canvas="serializeCanvas" clear-canvas="clearCanvas" canvas-state="canvasState" clear-temporary-canvas="clearTemporaryCanvas" prepare-canvas-for-upload="prepareCanvasForUpload" toggle-canvas="toggleCanvas" cancel-canvas-edition="cancelCanvasEdition"></canvas-control>

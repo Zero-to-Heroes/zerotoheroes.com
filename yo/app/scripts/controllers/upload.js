@@ -9,7 +9,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.maximumAllowedDuration = 5 * 60 + 1;
 		$scope.User = User;
-		$scope.review = {};
+		$scope.review = {
+			canvas: {}
+		};
 
 		$scope.creds = {
 		  	bucket: ENV.bucket + '/' + ENV.folder,
@@ -22,6 +24,12 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		};
 
 		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone', 'Meta'];
+
+		$scope.canvasState = {
+			canvasIdIndex: 0,
+			canvasId: 'tmp0',
+			drawingCanvas: false
+		}
 
   		//===============
 		// Init player
@@ -68,7 +76,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.onSourceChanged = function(sources) {
 			$timeout(function() { 
-				updateMarkers() 
+				updateMarkers() ;	
+				$scope.refreshCanvas();
 			}, 333);
 		};
 
@@ -221,6 +230,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
   		$scope.previousError = false;
 
   		$scope.upload = function() {
+  			$log.log('Before prep, canvas are', $scope.review.canvas);
+			$scope.prepareCanvasForUpload($scope.review, $scope.review);
+			$scope.review.canvas = $scope.review.tempCanvas;
+			$log.log('After prep, canvas are', $scope.review.canvas);
 
 			//$log.log('Setting S3 config');
 			$analytics.eventTrack('upload.start', {
@@ -399,16 +412,16 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		//===============
 		var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/gm;
 		$scope.normalizeTimestamps = function() {
-			if (!$scope.review.description) return;
+			if (!$scope.review.text) return;
 
-			var timestampsToChange = $scope.review.description.match(timestampOnlyRegex);
+			var timestampsToChange = $scope.review.text.match(timestampOnlyRegex);
 			if (!timestampsToChange) return;
 
 			$log.log('normalizeTimestamps');
 			for (var i = 0; i < timestampsToChange.length; i++) {
 				var timestampToChange = timestampsToChange[i];
 				var newTimestamp = $scope.normalizeTimestamp(timestampToChange);
-				$scope.review.description = $scope.review.description.replace(timestampToChange, newTimestamp);
+				$scope.review.text = $scope.review.text.replace(timestampToChange, newTimestamp);
 			}
 		}
 

@@ -19,7 +19,21 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 			},
 			controller: function($scope) {
 
-				$scope.insertTimestamp = function() {
+				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
+				var slowRegex = /\d?\d:\d?\d(:\d\d\d)?\+s(\d?\.?\d?\d?)?/;
+				var loopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L(\d?\.?\d?\d?)?/;
+				var optionalLoopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L?(\d?\.?\d?\d?)?/;
+
+				$scope.insertTimestamp = function(regex) {
+					regex = typeof regex !== 'undefined' ? regex : timestampOnlyRegex;
+					var insertionIndex = $scope.command(regex);
+					if (insertionIndex > -1) {
+						var domElement = $scope.insertionElement[0];
+						domElement.selectionStart = insertionIndex;
+						domElement.selectionEnd = insertionIndex;
+					  	domElement.focus();
+						return;
+					}
 					// Convert the numeral timestamp into the string we want to input
 					var timestamp = moment.duration($scope.API.currentTime).format('mm:ss:SSS', { trim: false });
 					$scope.insert(timestamp);
@@ -28,12 +42,32 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				$scope.insertSlow = function() {
 					// Convert the numeral timestamp into the string we want to input
 					$scope.insertTimestamp();
+
+					var insertionIndex = $scope.command(slowRegex);
+					if (insertionIndex > -1) {
+						var domElement = $scope.insertionElement[0];
+						domElement.selectionStart = insertionIndex;
+						domElement.selectionEnd = insertionIndex;
+					  	domElement.focus();
+					  	return;
+					}
+
 					var speed = 0.5;
 					$scope.insert('+s' + speed);
 				}
 
 				$scope.insertLoop = function() {
 					$scope.insertSlow();
+					
+					var insertionIndex = $scope.command(loopRegex);
+					if (insertionIndex > -1) {
+						var domElement = $scope.insertionElement[0];
+						domElement.selectionStart = insertionIndex;
+						domElement.selectionEnd = insertionIndex;
+					  	domElement.focus();
+					  	return;
+					}
+
 					var duration = 1;
 					$scope.insert('L' + duration);
 				}
@@ -57,7 +91,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 							//$log.log('Creating new canvas');
 							$scope.drawingCanvas = true;
 							var canvasTag = '[' + $scope.canvasId + ']';
-							$scope.insertTimestamp();
+							$scope.insertTimestamp(optionalLoopRegex);
 							$scope.insert(canvasTag);
 							$scope.currentCanvasId = $scope.canvasId;
 							$rootScope.$broadcast('insertcanvas', $scope.currentCanvasId);
@@ -89,6 +123,8 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					  	$scope[model] = domElement.value;
 					  	domElement.focus();
 					}
+
+					$log.log('after insert, selectionStart, selectionEnd', domElement.selectionStart, domElement.selectionEnd);
 				}
 
 				$scope.readCanvasId = function() {
@@ -120,13 +156,46 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					  		return canvasId;
 					  	}
 
-
-
 					  	canvasId = tempSubString.substring(0, indexOfClosingBracket);
 					  	//$log.log('indexOfOpeningBracket, indexOfClosingBracket, canvasId', indexOfOpeningBracket, indexOfClosingBracket, canvasId);
 					}
 
 					return canvasId;
+				}
+
+				$scope.getExistingCommand = function() {
+					// Build the current command string
+					var domElement = $scope.insertionElement[0];
+
+					var existingCommand;
+					var startOffset;
+					if (domElement.selectionStart || domElement.selectionStart === 0) {
+					  	var startPos = domElement.selectionStart;
+					  	// find a " " before the current position
+					  	var commandStartIndex = Math.max(0, domElement.value.substring(0, startPos).lastIndexOf(' '));
+					  	startOffset = commandStartIndex;
+
+					  	// find a " " after the position
+					  	var tempSubString = domElement.value.substring(commandStartIndex + 1, domElement.value.length);
+					  	var commandEndIndex = Math.max(tempSubString.indexOf(' ') - 1, tempSubString.length);
+
+					  	existingCommand = tempSubString.substring(0, commandEndIndex);
+					  	$log.log('existing command', existingCommand, startOffset);
+					}
+					return [existingCommand, startOffset];
+				}
+
+				$scope.command = function(regex) {
+					var commandReturn = $scope.getExistingCommand();
+					var existingCommand = commandReturn[0];
+					var startOffset = commandReturn[1];
+					var match = existingCommand ? existingCommand.match(regex) : false;
+					$log.log('matching?', existingCommand.match(regex));
+					if (match) {
+						var insertionIndex = startOffset + match.index + match[0].length + 1;
+						return insertionIndex ;
+					}
+					return -1;
 				}
 			}
 		};

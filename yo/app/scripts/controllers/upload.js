@@ -438,6 +438,15 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			return newStrValue;
 		}
 
+		$scope.$watch('review.text', function (newVal, oldVal) {
+			if (newVal && newVal.match(timestampOnlyRegex)) {
+				$scope.hasTimestamps = true;
+			}
+			else {
+				$scope.hasTimestamps = false;
+			}
+		});
+
   		//===============
 		// Utilities
 		//===============

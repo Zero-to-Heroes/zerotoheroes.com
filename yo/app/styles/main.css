@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   	background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;
   	padding-top: 0;

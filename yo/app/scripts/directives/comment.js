@@ -73,7 +73,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.cancelUpdateComment = function(comment) {
-					$log.log('cancelling comment update');
+					//$log.log('cancelling comment update');
 					$scope.clearTemporaryCanvas();
 					comment.text = comment.oldText;
 					comment.editing = false;
@@ -83,7 +83,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 
 				$scope.updateComment = function(comment) {
 					$scope.prepareCanvasForUpload($scope.review, $scope.comment);
-					$log.log('updating comment', $scope.comment);
+					//$log.log('updating comment', $scope.comment);
 					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
 		  				function(data) {
 		  					$scope.setCommentText(comment, data.text);
@@ -117,7 +117,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.toggleHelpful = function(comment) {
 					Api.CommentValidation.save({reviewId: $scope.review.id, commentId: comment.id}, 
 		  				function(data) {
-		  					$log.log('response data', data);
+		  					//$log.log('response data', data);
 		  					comment.helpful = data.helpful;
 		  				}, 
 		  				function(error) {
@@ -214,19 +214,19 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				// Account management hooks
 				//===============
 				$rootScope.$on('account.close', function() {
-					$log.log('closing popup');
+					//$log.log('closing popup');
 					if ($scope.onAddReply) {
-						$log.log('in onAddReply');
+						//$log.log('in onAddReply');
 						$scope.postReply();
 						$scope.onAddReply = false;
 					}
 					else if ($scope.upvotingComment) {
-						$log.log('in upvotingComment');
+						//$log.log('in upvotingComment');
 						$scope.upvoteComment($scope.upvotingComment);
 	  					$scope.upvotingComment = null;
 					}
 					else if ($scope.downvotingComment) {
-						$log.log('in downvotingComment');
+						//$log.log('in downvotingComment');
 						$scope.downvoteComment($scope.downvotingComment);
 						$scope.downvotingComment = null;
 					}

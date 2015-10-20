@@ -88,9 +88,17 @@
 }
 
 .video-information {
+  overflow-y: hidden;
+  padding-left: 400px;
+  margin-left: -400px;
+  padding-right: 400px;
+  margin-right: -400px;
+}
+
+.video-information .show-x {
+  overflow-x: visible;
   padding: 45px;
   padding-top: 30px;
-  overflow: hidden;
 }
 
 .video-information .nameInput {

@@ -53,6 +53,7 @@
 	vertical-align: top;
 	float: left;
 	text-align: center;
+  	position: relative;
 }
 
 .reputation span {

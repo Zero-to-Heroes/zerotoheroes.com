@@ -1,5 +1,6 @@
 .popover-help {
 	padding: 0;
+	min-width: 275px;
 }
 
 .popover-help.popover-header, .popover-help .popover-header .popover-title {

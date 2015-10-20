@@ -6,9 +6,9 @@ services.factory('HelpPopupConfig', ['$window', '$log', 'User',
 
             service.config = {
                   commentVote: {
-                        text: "You can use the up and down arrows to reward a comment you have found useful (or punish one you felt was out of place). Comments with the most upvotes will naturally emerge at the top of the list",
+                        text: "You can use the up and down arrows to reward a comment you have found useful. Comments with the most upvotes will naturally emerge at the top of the list",
                         showCondition: function() {
-                              return User.getNumberOfViews() >= 4
+                              return User.getNumberOfViews() >= 4;
                         }
                   } 
             }
@@ -17,6 +17,7 @@ services.factory('HelpPopupConfig', ['$window', '$log', 'User',
                   //$log.log('should trigger?', !service.isRead(params.helpKey), service.config[params.helpKey].showCondition());
                   var show = !service.isRead(params.helpKey) && service.config[params.helpKey].showCondition();
                   return show;
+                  //return true;
             }
 
             service.markAsRead = function(helpKey) {

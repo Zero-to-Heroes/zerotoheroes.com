@@ -25,57 +25,57 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 			controller: function($scope) {
 				//$scope.drawingCanvas = false;
 				$scope.$watch('canvasState.drawingCanvas', function (newVal, oldVal) {
-					$log.log('watching canvasFlag', oldVal, newVal);
+					//$log.log('watching canvasFlag', oldVal, newVal);
 					// edit mode
 					if (newVal) {
-						$log.log('starting edit canvas mode');
+						//$log.log('starting edit canvas mode');
 						$scope.showCanvas();
 					}
 					else if (newVal != oldVal) {
-						$log.log('Done editing, need to save');
+						//$log.log('Done editing, need to save');
 						$scope.hideCanvas();
 					}
 				});
 
 				$scope.$watch('review', function (newVal, oldVal) {
-					$log.log('watching review', oldVal, newVal);
+					//$log.log('watching review', oldVal, newVal);
 					if (newVal) {
 						$scope.cancelCanvasEdition();
 					}
 				});
 
 				$rootScope.$on('editcanvas.start', function(event, canvasIdTag) {
-					$log.log('heard editcanvas.start');
+					//$log.log('heard editcanvas.start');
 					$scope.canvasState.drawingCanvas = true;
 					$scope.showCanvas();
 				});
 
 
 				$rootScope.$on('editcanvas.end', function(event, canvasIdTag) {
-					$log.log('heard editcanvas.end');
+					//$log.log('heard editcanvas.end');
 					$scope.canvasState.drawingCanvas = false;
 					$scope.hideCanvas();
 				});
 
 				$rootScope.$on('editcanvas.cancel', function(event, canvasIdTag) {
-					$log.log('canceling canvas');
+					//$log.log('canceling canvas');
 					$scope.cancelCanvasEdition();
 				});
 
 				$rootScope.$on('loadcanvas', function(event, canvasIdTag) {
 					$scope.playerControls.canvasId = undefined;
 					$scope.playerControls.canvasPlaying = false;
-					$log.log('TODO: need to load canvas with id', canvasIdTag);
-					$log.log('String canvas is ', $scope.review.canvas[canvasIdTag]);
+					//$log.log('TODO: need to load canvas with id', canvasIdTag);
+					//$log.log('String canvas is ', $scope.review.canvas[canvasIdTag]);
 					var jsonCanvas = JSON.parse($scope.review.canvas[canvasIdTag]);
-					$log.log('loaded canvas is', jsonCanvas);
+					//$log.log('loaded canvas is', jsonCanvas);
 					$scope.loadCanvas(jsonCanvas);
 				});
 
 				$rootScope.$on('insertcanvas', function(event, insertedId) {
 					$scope.playerControls.canvasId = undefined;
 					$scope.playerControls.canvasPlaying = false;
-					$log.log('updating canvas id to', insertedId);
+					//$log.log('updating canvas id to', insertedId);
 				});
 
 				$rootScope.$on('closecanvas', function(event, canvasIdTag) {
@@ -99,7 +99,7 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 						}
 					})
 					$scope.review.canvas = fullCanvas;
-					$log.log('cleared canvas to ', $scope.review.canvas);
+					//$log.log('cleared canvas to ', $scope.review.canvas);
 					$scope.canvasState.canvasIdIndex = 0;
 					$scope.canvasState.canvasId = 'tmp' + $scope.canvasState.canvasIdIndex;
 				}
@@ -122,11 +122,11 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 						$scope.canvasState.canvasId = 'tmp' + $scope.canvasState.canvasIdIndex;
 						$scope.canvasState.drawingCanvas = false;
 					}
-					$log.log('before filter, all canvas are', review.canvas);
+					//$log.log('before filter, all canvas are', review.canvas);
 					//var newCanvas = $scope.getNewCanvas(review);
 					//$log.log('new canvas are', newCanvas);
 					var usefulNewCanvas = $scope.filterOutUnusedCanvas(comment, review.canvas);
-					$log.log('usefulNewCanvas', usefulNewCanvas);
+					//$log.log('usefulNewCanvas', usefulNewCanvas);
 					comment.tempCanvas = usefulNewCanvas;
 					//$log.log('saving comment', comment);
 					$scope.clearTemporaryCanvas();
@@ -135,10 +135,10 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 				$scope.getNewCanvas = function(review) {
 					var newCanvas = {};
 					angular.forEach(review.canvas, function(value, key) {
-						$log.log('going through all temp canvs', key);
+						//$log.log('going through all temp canvs', key);
 						if (key.startsWith('tmp')) {
 							newCanvas[key] = value;
-							$log.log('Adding ' + key);
+							//$log.log('Adding ' + key);
 						}
 					})
 					//$log.log('all new canvas are', newCanvas);

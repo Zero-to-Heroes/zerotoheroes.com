@@ -15,99 +15,13 @@ services.factory('Api', ['$resource', 'ENV',
 			CommentValidation: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId/validate', {reviewId: '@reviewId', commentId: '@commentId'}),
 			Coaches: $resource(ENV.apiEndpoint + url + 'coaches/:reviewId', {reviewId: '@reviewId'}),
 			Payment: $resource(ENV.apiEndpoint + url + 'payment/:reviewId/:coachId/:email', {reviewId: '@reviewId', coachId: '@coachId', email:'@email'}),
-      		Users: $resource(ENV.apiEndpoint + url + 'users/:identifier', {identifier: '@identifier'}),
+			Users: $resource(ENV.apiEndpoint + url + 'users/:identifier', {identifier: '@identifier'}),
 			Login: $resource(ENV.apiEndpoint + url + 'login', {}),
 			Reputation: $resource(ENV.apiEndpoint + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'}),
 			Features: $resource(ENV.apiEndpoint + url + 'news/features'),
 			BugFixes: $resource(ENV.apiEndpoint + url + 'news/bugfixes'),
-                  Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport')
+				  Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport')
 		};
-	}
-]);
-
-services.factory('User', ['$window', '$log', 
-	function ($window, $log) {
-
-		return {
-		setUser: function(user) {
-			$window.localStorage.user = JSON.stringify(user);
-		},
-            getUser: function () {
-                return ($window.localStorage.user && JSON.parse($window.localStorage.user) ? JSON.parse($window.localStorage.user) : undefined);
-            },
-            getName: function () {
-                return ($window.localStorage.user && JSON.parse($window.localStorage.user).username ? JSON.parse($window.localStorage.user).username : undefined);
-            },
-            isLoggedIn: function() {
-            	return ($window.localStorage.token && $window.localStorage.token.length > 0);
-            },
-            getEmail: function () {
-                return ($window.localStorage.user && JSON.parse($window.localStorage.user).email ? JSON.parse($window.localStorage.user).email : undefined);
-            },
-            getLastLoginDate: function () {
-                return ($window.localStorage.user && JSON.parse($window.localStorage.user).lastLoginDate ? JSON.parse($window.localStorage.user).lastLoginDate : undefined);
-            },
-            setLastLoginDate: function(value) {
-                var user = JSON.parse($window.localStorage.user);
-                user.lastLoginDate = value;
-				this.setUser(user);
-            },
-            storeView: function(viewId) {
-            	var strViews = $window.localStorage.views;
-            	var views = [];
-            	if (!strViews) {
-            		strViews = JSON.stringify(views);
-            		$window.localStorage.views = strViews;
-            	}
-            	views = JSON.parse(strViews);
-            	//$log.log('retrieved views', views);
-            	if (views.indexOf(viewId) == -1) {
-            		views.push(viewId);
-            		//$log.log('added value, now is ', views);
-            	}
-            	strViews = JSON.stringify(views);
-            	$window.localStorage.views = strViews;
-            	//$log.log('stored views', $window.localStorage.views);
-            },
-            getNumberOfViews: function() {
-            	var strViews = $window.localStorage.views;
-            	var views = [];
-            	if (!strViews) {
-            		strViews = JSON.stringify(views);
-            		$window.localStorage.views = strViews;
-            	}
-            	views = JSON.parse(strViews);
-                  //$log.log('number of views', views.length);
-            	return views.length;
-            },
-            logNewVisit: function() {
-            	var today = moment().format("YYYY-MM-DD");
-
-            	var strVisits = $window.localStorage.visits;
-            	var visits = [];
-            	if (!strVisits) {
-            		strVisits = JSON.stringify(visits);
-            		$window.localStorage.visits = strVisits;
-            	}
-            	visits = JSON.parse(strVisits);
-            	if (visits.indexOf(today) == -1) {
-            		visits.push(today);
-            	}
-            	strVisits = JSON.stringify(visits);
-            	$window.localStorage.visits = strVisits;
-            	//$log.log('visits are ', visits);
-            },
-            getNumberOfDaysVisited: function() {
-            	var strVisits = $window.localStorage.visits;
-            	var visits = [];
-            	if (!strVisits) {
-            		strVisits = JSON.stringify(visits);
-            		$window.localStorage.visits = strVisits;
-            	}
-            	visits = JSON.parse(strVisits);
-            	return visits.length;
-            }
-        };
 	}
 ]);
 

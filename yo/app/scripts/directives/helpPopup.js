@@ -4,15 +4,18 @@ app.directive('helpPopup', ['$log', '$rootScope', 'HelpPopupConfig', function ($
 		restrict: 'A',
 		scope: {
 			helpPopupKey:'@',
-			helpPopupViewport:'@',
-			helpPopupActive:'@'
+			helpPopupActive:'@',
+			helpPopupPosition:'@'
 		},
 		link: function($scope, element, attr) {
+			//$log.log('isActive', $scope.helpPopupKey, $scope.helpPopupActive);
 			if (!$scope.helpPopupActive || $scope.helpPopupActive != 0) return;
 
-			$scope.params = {helpKey: $scope.helpPopupKey, element: element, viewport: $scope.helpPopupViewport};
+			$scope.params = {helpKey: $scope.helpPopupKey, element: element, helpPopupPosition: $scope.helpPopupPosition};
+			//$log.log('retrieved parameters', $scope.params);
 
 			if (HelpPopupConfig.shouldTrigger($scope.params)) {
+				//$log.log('broadcasting help popup event');
 				$rootScope.$broadcast('help.popup', $scope.params);
 			}
 		}

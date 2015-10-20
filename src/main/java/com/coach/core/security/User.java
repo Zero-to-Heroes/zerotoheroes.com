@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.coach.reputation.UserReputation;
 import com.coach.review.Review.Sport;
+import com.coach.user.Stats;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -52,6 +53,7 @@ public class User implements UserDetails {
 	private String registerLocation;
 	private int reputation;
 	private UserReputation explodedReputation;
+	private Stats stats;
 
 	@Override
 	@JsonIgnore
@@ -137,5 +139,10 @@ public class User implements UserDetails {
 	public int getReputation(Sport sport) {
 		if (explodedReputation == null) explodedReputation = new UserReputation();
 		return explodedReputation.getReputation(sport);
+	}
+
+	public Stats getStats() {
+		if (stats == null) stats = new Stats();
+		return stats;
 	}
 }

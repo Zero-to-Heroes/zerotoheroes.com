@@ -45,8 +45,7 @@ public class UserApiHandler {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<User> getLoggedInUser() {
-		String currentUser =
-				SecurityContextHolder.getContext().getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		log.debug("Retrieving user by " + currentUser);
 
 		User user = null;
@@ -122,29 +121,4 @@ public class UserApiHandler {
 
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
-
-	// @RequestMapping(method = RequestMethod.PATCH)
-	// public ResponseEntity<String> changePassword(@RequestBody final User
-	// user) {
-	// final Authentication authentication =
-	// SecurityContextHolder.getContext().getAuthentication();
-	// final User currentUser =
-	// userRepository.findOne(authentication.getName());
-	// if (currentUser == null) { return new
-	// ResponseEntity<String>("invalid user", HttpStatus.FORBIDDEN); }
-	//
-	// if (user.getNewPassword() == null || user.getNewPassword().length() < 4)
-	// { return new ResponseEntity<String>(
-	// "new password to short", HttpStatus.UNPROCESSABLE_ENTITY); }
-	//
-	// final BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
-	// if (!pwEncoder.matches(user.getPassword(), currentUser.getPassword())) {
-	// return new ResponseEntity<String>(
-	// "old password mismatch", HttpStatus.UNPROCESSABLE_ENTITY); }
-	//
-	// currentUser.setPassword(pwEncoder.encode(user.getNewPassword()));
-	// userRepository.save(currentUser);
-	// return new ResponseEntity<String>("password changed", HttpStatus.OK);
-	// }
-
 }

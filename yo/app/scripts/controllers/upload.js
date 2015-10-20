@@ -298,6 +298,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 					$log.log('review created, transcoding ', data);
 					$scope.review.id = data.id;
 					retrieveCompletionStatus();
+					if (data.text.match(timestampOnlyRegex)) {
+						$log.log('incrementing timestamps after comment upload');
+						User.incrementTimestamps();
+					}
 				},
 				function(error) {
 					$log.error('Received error', error);

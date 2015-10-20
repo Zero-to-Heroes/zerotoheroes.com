@@ -142,6 +142,13 @@ public class ReviewApiHandler {
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
 			addAuthorInformation(review.getSport(), review, currentUser);
+			User user = userRepo.findByUsername(currentUser);
+
+			// Updating user stats
+			if (commentParser.hasTimestamp(review.getText())) {
+				user.getStats().incrementTimestamps();
+				userRepo.save(user);
+			}
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -195,6 +202,13 @@ public class ReviewApiHandler {
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
 			addAuthorInformation(review.getSport(), comment, currentUser);
+			User user = userRepo.findByUsername(currentUser);
+
+			// Updating user stats
+			if (commentParser.hasTimestamp(comment.getText())) {
+				user.getStats().incrementTimestamps();
+				userRepo.save(user);
+			}
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -262,6 +276,16 @@ public class ReviewApiHandler {
 		review.setTags(inputReview.getTags());
 		updateReview(review);
 
+		User user = userRepo.findByUsername(currentUser);
+
+		// Updating user stats
+		log.debug("Has timestamps? " + review.getText());
+		if (commentParser.hasTimestamp(review.getText())) {
+			log.debug("incrementing timestamps");
+			user.getStats().incrementTimestamps();
+			userRepo.save(user);
+		}
+
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
@@ -294,6 +318,14 @@ public class ReviewApiHandler {
 		commentParser.parseComment(review, comment);
 		updateReview(review);
 
+		User user = userRepo.findByUsername(currentUser);
+
+		// Updating user stats
+		if (commentParser.hasTimestamp(comment.getText())) {
+			user.getStats().incrementTimestamps();
+			userRepo.save(user);
+		}
+
 		comment.setTempCanvas(review.getCanvas());
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
@@ -314,6 +346,13 @@ public class ReviewApiHandler {
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			log.debug("Setting current user as review author " + currentUser);
 			addAuthorInformation(review.getSport(), reply, currentUser);
+			User user = userRepo.findByUsername(currentUser);
+
+			// Updating user stats
+			if (commentParser.hasTimestamp(reply.getText())) {
+				user.getStats().incrementTimestamps();
+				userRepo.save(user);
+			}
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {

@@ -9,7 +9,7 @@
 			<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
 			<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
 			<vg-scrub-bar video-fine-time-control>
-				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+				<vg-scrub-bar-current-time help-popup help-popup-key="fineScrolling" help-popup-active="0" help-popup-position="top"></vg-scrub-bar-current-time>
 			</vg-scrub-bar>
 			<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
 			<video-playback-button></video-playback-button>
@@ -39,7 +39,7 @@
 
 <div class="video-information">
 	<div class="show-x background-white">
-		<div scrollable="{{useVideo}}">
+		<div scrollable="{{useVideo}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">
 			<form class="container-fluid video-details" name="videoInformationForm">
 				<div class="row">
 					<div class="col-md-1 reputation">

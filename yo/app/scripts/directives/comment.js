@@ -46,19 +46,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					$scope.API = $scope.$parent.API;
 				});
 
-				/*$scope.$watch('drawingCanvas', function (newVal, oldVal) {
-					$log.log('watching drawingCanvas in comment', oldVal, newVal);
-					// edit mode
-					if (newVal) {
-						$log.log('starting edit canvas mode');
-						$rootScope.$broadcast('editcanvas.start');
-						//$scope.showCanvas();
-					}
-					else if (newVal != oldVal) {
-						$log.log('Done editing, need to save');
-						$rootScope.$broadcast('editcanvas.end');
-					}
-				});*/
+				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
 
 				//===============
 				// Basic comment fonctions
@@ -88,7 +76,10 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 		  				function(data) {
 		  					$scope.setCommentText(comment, data.text);
 		  					$scope.review.canvas = data.tempCanvas;
-		  					// TODO: update canvas from server
+		  					if (data.text.match(timestampOnlyRegex)) {
+								$log.log('incrementing timestamps after comment upload');
+								User.incrementTimestamps();
+							}
 		  				}, 
 		  				function(error) {
 		  					// Error handling
@@ -156,6 +147,10 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				  					$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
 		  							$scope.review.canvas = data.canvas;
 				  					$scope.reply = {};
+				  					if (data.text.match(timestampOnlyRegex)) {
+										//$log.log('incrementing timestamps after comment upload');
+										User.incrementTimestamps();
+									}
 				  				}, 
 				  				function(error) {
 				  					// Error handling

@@ -11,7 +11,7 @@ app.directive('helpPopupManager', ['$log', '$popover', '$rootScope', '$timeout',
 
 			// Only display at most one help popup at a time
 			$scope.elementForPopup;
-			$scope.viewport;
+			//$scope.viewport;
 			$scope.helpKey;
 
 			// Listen to all possible events
@@ -32,7 +32,8 @@ app.directive('helpPopupManager', ['$log', '$popover', '$rootScope', '$timeout',
 				if (eventPriority < $scope.lowestPriority) {
 					$scope.lowestPriority = eventPriority;
 					$scope.elementForPopup = params.element;
-					$scope.viewport = params.viewport;
+					$scope.helpPopupPosition = params.helpPopupPosition;
+					//$scope.viewport = params.viewport;
 					//$log.log('viewport is ', $scope.viewport);
 					$scope.helpKey = params.helpKey;
 
@@ -49,7 +50,7 @@ app.directive('helpPopupManager', ['$log', '$popover', '$rootScope', '$timeout',
 				var options = {
 					title: 'Did you know?',
 					trigger: 'manual',
-					placement: 'left ',
+					placement: $scope.helpPopupPosition || 'left',
 					target: $scope.elementForPopup,
 					container: $scope.elementForPopup[0].$parent,
 					content: HelpPopupConfig.config[$scope.helpKey].text,
@@ -61,8 +62,8 @@ app.directive('helpPopupManager', ['$log', '$popover', '$rootScope', '$timeout',
 				//$log.log('displaying popover', $scope.currentPopover);
 				$scope.currentPopover.$promise.then($scope.currentPopover.toggle);
 				$timeout(function() {
-					//$scope.currentPopover.$applyPlacement();
-					$scope.place($scope.currentPopover.$element, $scope.elementForPopup);
+					if ($scope.helpPopupPosition == 'top') $scope.currentPopover.$applyPlacement();
+					else $scope.place($scope.currentPopover.$element, $scope.elementForPopup);
 				}, 100);
 			}
 

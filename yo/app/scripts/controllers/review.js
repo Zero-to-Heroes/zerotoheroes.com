@@ -266,6 +266,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					}
 					$scope.$broadcast('show-errors-reset');
 					$scope.addingComment = false;
+					if (data.text.match(timestampOnlyRegex)) {
+						$log.log('incrementing timestamps after comment upload');
+						User.incrementTimestamps();
+					}
 				}, 
 				function(error) {
 					// Error handling
@@ -392,6 +396,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					function(data) {
 						$scope.updateVideoInformation(data);
 		  				$scope.review.canvas = data.canvas;
+		  				if (data.text.match(timestampOnlyRegex)) {
+							$log.log('incrementing timestamps after comment upload');
+							User.incrementTimestamps();
+						}
 					}, 
 					function(error) {
 						// Error handling

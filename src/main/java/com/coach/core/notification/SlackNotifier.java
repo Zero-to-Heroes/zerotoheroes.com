@@ -48,8 +48,8 @@ public class SlackNotifier {
 
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
-				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase()
-						+ "/" + review.getId();
+				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase() + "/"
+						+ review.getId();
 				message.setText("New comment by " + reply.getAuthor() + " at " + reviewUrl);
 
 				api.call(message);
@@ -69,11 +69,12 @@ public class SlackNotifier {
 
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("good");
+				attach.setTitle(review.getTitle());
 				attach.setText(review.getText());
 				attach.setFallback("placeholder fallback");
 
-				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase()
-						+ "/" + review.getId();
+				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase() + "/"
+						+ review.getId();
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
 				message.setText("New review created by " + review.getAuthor() + " at " + reviewUrl);
@@ -121,8 +122,7 @@ public class SlackNotifier {
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("good");
 				attach.setText(requesterEmail + " has requeted a review from " + coach.getName() + " for a tariff of "
-						+ coach.getTariff() + " with the following conditions "
-						+ coach.getTariffDescription());
+						+ coach.getTariff() + " with the following conditions " + coach.getTariffDescription());
 				attach.setFallback("placeholder fallback");
 
 				SlackMessage message = new SlackMessage();

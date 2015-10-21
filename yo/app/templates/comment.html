@@ -30,8 +30,12 @@
 				</toolbar>
 				<textarea class="form-control" ng-model="comment.text" auto-grow ng-hide="review.key"></textarea>
 				<div class="text-left comment-reply-buttons">
-					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
 					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
+					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
+				</div>
+				<div class="inline-block float-right">
+					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
+					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
 				</div>
 			</div>
 		</div>
@@ -66,7 +70,7 @@
 				</div>
 			</div>
 		</div>
-		<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 	</form>
+	<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 	<comment ng-repeat="replyComment in comment.comments" comment="replyComment" indentation-level="indentationLevel + 1"  drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasId" timestamp-click-action="goToTimestamp" prepare-canvas-for-upload="prepareCanvasForUpload" clear-temporary-canvas="clearTemporaryCanvas" canvas-state="canvasState"></comment>
 </div>

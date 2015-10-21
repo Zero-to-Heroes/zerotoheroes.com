@@ -43,21 +43,11 @@
                     <a href="/squash"><img src="/images/logos/squash-medium.png" title="Go to the Squash page" width="250px"></a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-offset-2 col-xs-9 margin-btm-30 text-center general-access-link">
-                    <a href="#features" class="btn btn-link">
-                        Learn more <i class="ion-chevron-right"></i>
-                    </a>
-                    <a href="/reviews" class="btn btn-link" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta1">
-                        Or directly access the site <i class="ion-chevron-right"></i>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </section>
 
-<section class="features-intro white-background">
+<section class="features-intro white-background" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6 margin-btm-30" ng-hide="hideVideoReview">
@@ -100,7 +90,7 @@
     </div>
 </section><!--features intro-->
 
-<section id="cta2" class="container testimonials-container">
+<section id="cta2" class="container testimonials-container" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
             <a href="/s/{{sport}}" class="btn btn-danger btn-lg" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta2">
@@ -110,7 +100,7 @@
     </div>
 </section>
 
-<section class="section" id="features">
+<section class="section" id="features" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="container" ng-hide="hideVideoReview">
       	<div class="row">
         	<div class="col-sm-6">
@@ -128,7 +118,7 @@
     </div>
 </section>
 
-<section class="section padding-t-0">
+<section class="section padding-t-0" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="container">
       	<div class="row">
         	<div class="col-sm-6">
@@ -146,7 +136,7 @@
     </div>
 </section>
 
-<section class="section" id="features">
+<section class="section" id="features" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="container">
       	<div class="row">
         	<div class="col-sm-6">
@@ -164,7 +154,7 @@
     </div>
 </section>
 
-<section class="section padding-t-0">
+<section class="section padding-t-0" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="container">
       	<div class="row">
         	<div class="col-sm-6">
@@ -182,7 +172,7 @@
     </div>
 </section>
 
-<div id="cta3" class="container testimonials-container">
+<div id="cta3" class="container testimonials-container" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
             <a href="/s/{{sport}}" class="btn btn-danger btn-lg" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta3">
@@ -192,7 +182,7 @@
     </div>
 </div>
 
-<section class="the-team">
+<section class="the-team" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -230,7 +220,7 @@
     </div>
 </section>
 
-<section class="newsletter" data-stellar-background-ratio="0.5" style="background-position: 50% 3345px;">
+<section class="newsletter" data-stellar-background-ratio="0.5" style="background-position: 50% 3345px;" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="container">
         <div class="col-sm-8 col-sm-offset-2 text-center">
             <h3>Get the latest updates</h3>
@@ -258,7 +248,7 @@
     </div>
 </section>
 
-<footer id="footer" class="footer-main">
+<footer id="footer" class="footer-main" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">

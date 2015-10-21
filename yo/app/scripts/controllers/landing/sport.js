@@ -6,7 +6,7 @@ angular.module('controllers').controller('SportPageCtrl', ['$scope', '$routePara
 		$scope.sportsConfig.all.landing = {
 			athlete: '(e-)athlete',
 			athletes: '(e-)athletes',
-			alternativeIntroText: 'Post a video of yourself playing and get advice by joining one of the Zero to Heroes communities below',
+			alternativeIntroText: 'Post a video of yourself playing and get advice from the community. Start now by choosing your sport below',
 			displayName: 'Zero to Heroes',
 			communityWisdomIntro: 'Climb to the top',
 			displayAllSports: true

@@ -174,10 +174,14 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					  	// find a " " before the current position
 					  	var commandStartIndex = Math.max(0, domElement.value.substring(0, startPos).lastIndexOf(' '));
 					  	startOffset = commandStartIndex;
+					  	$log.log('command start index is', commandStartIndex);
 
 					  	// find a " " after the position
 					  	var tempSubString = domElement.value.substring(commandStartIndex + 1, domElement.value.length);
-					  	var commandEndIndex = Math.max(tempSubString.indexOf(' ') - 1, tempSubString.length);
+					  	$log.log('tempSubString', tempSubString);
+					  	var commandEndIndex = tempSubString.indexOf(' ') - 1;
+					  	if (commandEndIndex < 0 || commandEndIndex == tempSubString.length - 1) commandEndIndex = tempSubString.length;
+					  	$log.log('commandEndIndex', commandEndIndex);
 
 					  	existingCommand = tempSubString.substring(0, commandEndIndex);
 					  	$log.log('existing command', existingCommand, startOffset);

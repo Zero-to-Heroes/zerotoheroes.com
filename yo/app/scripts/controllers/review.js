@@ -250,7 +250,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.newComment = {};
 					$scope.commentForm.$setPristine();
 					$scope.review.comments = data.comments;
-					$scope.review.reviewVideoMap = data.reviewVideoMap;
+					$scope.review.reviewVideoMap = data.reviewVideoMap || {};
 		  			$scope.review.canvas = data.canvas;
 		  			if ($scope.review.canvas) {
 						angular.forEach($scope.review.canvas, function(value, key) {

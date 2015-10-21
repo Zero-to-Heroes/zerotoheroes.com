@@ -72,6 +72,15 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					$scope.insert('L' + duration);
 				}
 
+				$scope.insertOtherSequence = function() {
+					$rootScope.$broadcast('sequence');
+
+					var unregister = $rootScope.$on('sequence.end', function (event, params) {
+						// Do stuff
+						unregister();
+					});
+				}
+
 				$scope.insertCanvas = function() {
 					//$log.log('insertCanvas, flag is ', $scope.drawingCanvas);
 					// Edit canvas mode

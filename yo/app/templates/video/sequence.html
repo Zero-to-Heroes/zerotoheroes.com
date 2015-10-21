@@ -1,0 +1,56 @@
+<div class="modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog sequence-modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="endAccountCreation()">&times;</button>
+				<h4 class="modal-title">Adding a sequence</h4>
+			</div>
+			<div class="modal-body">
+
+				<videogular vg-player-ready="onPlayerReady($API)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
+					<vg-media vg-src="sources" ng-class="playerControls.firstPlayerClass">
+					</vg-media>
+
+					<vg-controls style="width: 50%">
+						<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
+						<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
+						<vg-scrub-bar video-fine-time-control>
+							<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+						</vg-scrub-bar>
+						<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
+						<video-loop-button ng-show="playerControls.loopStatus"></video-loop-button>
+						<vg-volume>
+							<vg-mute-button></vg-mute-button>
+							<vg-volume-bar></vg-volume-bar>
+						</vg-volume>
+					</vg-controls>
+
+					<div class="second-player" ng-class="playerControls.secondPlayerClass">
+						<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
+							<vg-media vg-src="sources2">
+							</vg-media>
+
+							<vg-controls style="width: 50%">
+								<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
+								<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
+								<vg-scrub-bar video-fine-time-control>
+									<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+								</vg-scrub-bar>
+								<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
+								<video-loop-button ng-show="playerControls.loopStatus"></video-loop-button>
+								<vg-volume>
+									<vg-mute-button></vg-mute-button>
+									<vg-volume-bar></vg-volume-bar>
+								</vg-volume>
+							</vg-controls>
+						</videogular>
+					</div>
+				</videogular>
+
+				<form>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

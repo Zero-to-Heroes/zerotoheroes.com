@@ -62,7 +62,7 @@ public class Review implements HasText, HasReputation {
 	private List<Comment> comments;
 	private boolean transcodingDone;
 	private float videoFramerateRatio;
-	private Map<String, String> reviewVideoMap;
+	private Map<String, String> reviewVideoMap = new HashMap<>();
 	private Reputation reputation;
 	private int viewCount;
 	private List<Tag> tags;

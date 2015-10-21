@@ -1,0 +1,7 @@
+.sequence-modal .videogular {
+	overflow: hidden;
+}
+
+.sequence-modal .videogular .controls-container {
+	margin-top: 0;
+}

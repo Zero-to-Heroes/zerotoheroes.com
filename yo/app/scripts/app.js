@@ -192,6 +192,7 @@ app.directive('scrollable',  function ($window, $document, $log) {
 				var marginTop = parseInt(strMarginTop.substring(0, strMarginTop.indexOf('px')));
 				var newMarginTop = marginTop;
 				var scrollAmount = e.wheelDelta ? -e.wheelDelta : e.originalEvent.detail * 40;
+				scrollAmount = scrollAmount / 3;
 				// If we're at the bottom and scrolling down
 				if (bottomTop <= windowHeight && scrollAmount > 0) {
 					// Do nothing

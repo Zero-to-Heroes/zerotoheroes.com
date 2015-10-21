@@ -9,44 +9,35 @@
 				</div>
   			</td>
   			<td class="vert-align text-center video-info-details" title="Number of comments">
-				<span><span class="block">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment"></span></span>
+  				<div title="Number of comments" class="icon-container">
+					<span><span class="stat-value">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment"></span></span>
+				</div>
+				<div title="Number of comments the author of the video marked as useful" class="icon-container">
+					<span><span class="stat-value">{{video.totalHelpful}}</span><span class="validated"><span class="glyphicon glyphicon-ok"></span></span></span>
+				</div>
+					<div title="Number of views" class="icon-container">
+					<span><span class="stat-value">{{video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open"></span></span>
+				</div>
 			</td>
-			<td class="vert-align text-center video-info-details" title="Number of comments the author of the video marked as useful">
-				<span><span class="block">{{video.totalHelpful}}</span><span class="validated"><span class="glyphicon glyphicon-ok"></span></span></span>
-			</td>
-			<td class="vert-align text-center video-info-details" title="Number of views">
-				<span><span class="block">{{video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open"></span></span>
-			</td>
-			<!--<td class="vert-align text-center comments">
-				<span class="block">{{video.totalComments}}</span><span><small>comments</small></span>
-			</td>
-			<td class="vert-align text-center comments" ng-class="{'validated': video.totalHelpful > 0}" title="Comments on this video that have been marked as helpful by the author of the video">
-				<span class="block">{{video.totalHelpful}}</span><span><small>approved <span class="validated" ng-show="video.hasHelpfulComments"><span class="glyphicon glyphicon-ok"></span></span></small></span>
-			</td>
-			<td class="vert-align text-center comments">
-				<span class="block">{{video.viewCount ? video.viewCount : '0'}}</span><span><small>views</small></span>
-			</td>-->
 			<td class="thumbnails vert-align text-center">
 				<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
 			</td>
 			<td class="vert-align info-column">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-sm-12">
-							<a href="{{buildUrl(video)}}"><h3>{{video.title}}</h3></a>
-						</div>
+				<div class="row review-title">
+					<div class="col-sm-12">
+						<a href="{{buildUrl(video)}}"><h3>{{video.title}}</h3></a>
 					</div>
-			  		<div class="row">
-						<div class="col-sm-8">
-							<div class="sport">
-								<span class="label label-primary" ng-hide="sport">{{video.sport.value}}</span>
-							</div>
-							<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false"></tags-input>
+				</div>
+		  		<div class="row">
+					<div class="col-sm-8">
+						<div class="sport">
+							<span class="label label-primary" ng-hide="sport">{{video.sport.value}}</span>
 						</div>
-						<div class="col-sm-4 text-right">
-							<span><small>{{formatDate(video)}}</small></span>
-							<span><small>by {{video.lastModifiedBy ? video.lastModifiedBy : video.author}}</small></span>
-						</div>
+						<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false"></tags-input>
+					</div>
+					<div class="col-sm-4 date-information">
+						<span><small>{{formatDate(video)}}</small></span>
+						<span><small>by {{video.lastModifiedBy ? video.lastModifiedBy : video.author}}</small></span>
 					</div>
 				</div>
 			</td>

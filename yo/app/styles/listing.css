@@ -1,82 +1,82 @@
 .reviewSummary {
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
-  border-radius: 10px;
-  margin-top: 10px;
-  padding: 10px;
-  display: table;
-  width: 100%;
-  table-layout: fixed;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+	border-radius: 10px;
+	margin-top: 10px;
+	padding: 10px;
+	display: table;
+	width: 100%;
+	table-layout: fixed;
 }
 
 .author, .review .user-name {
-  float: right;
-  width: 100px;
-  margin-top: 10px;
-  display: block;
-  text-align: center;
+	float: right;
+	width: 100px;
+	margin-top: 10px;
+	display: block;
+	text-align: center;
 }
 
 .reviewSummary .zth-center {
-  /*width: 50%;*/
-  display: table-cell;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	/*width: 50%;*/
+	display: table-cell;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .reviewSummary .zth-right {
-  width: 15%;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
+	width: 15%;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
 }
 
 .videoDescription {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 .video-listing {
-  /*max-width: 900px;*/
-  margin: auto;
+	/*max-width: 900px;*/
+	margin: auto;
 }
 
 .thumbnails {
-  display: none;
+	display: none;
 }
 
 .thumbnails img {
-  width: 100px;
+	width: 100px;
 }
 
 .info-column h3 {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 .video-listing .reputation-cell {
-  width: 80px;
+	width: 80px;
 }
 
 .video-listing .comments {
-  width: 90px;
+	width: 90px;
 }
 
 .video-listing .validated {
-  font-weight: bold;
-  color: #5cb85c;
+	font-weight: bold;
+	color: #5cb85c;
 }
 
 .video-listing .thumbnails {
-  width: 200px;
+	width: 200px;
 }
 
 .video-listing .reputation {
-  width: 60px;
+	width: 60px;
 }
 
 .video-listing .sport {
-  display: inline-block;
-  margin-top: 1px;
-  vertical-align: top;
+	display: inline-block;
+	margin-top: 1px;
+	vertical-align: top;
 }
 
 .video-listing .sport .label {
@@ -88,11 +88,24 @@
 }
 
 .video-listing .sport-tags {
-  display: inline-block;
+	display: inline-block;
 }
 
 .video-info-details {
-  width: 30px;
+	width: 120px;
+}
+
+.video-info-details .icon-container {
+	display: inline-block;
+	width: 25px;
+}
+
+.video-info-details .stat-value {
+	display: block;
+}
+
+.info-column .date-information {
+	text-align: right;
 }
 
 /* Don't show the name input if it appears on the navbar */
@@ -103,7 +116,34 @@
 }
 
 @media screen and (max-width: 600px) {
-	.video-listing .comments, .video-listing .validated-comments {
-	  display: none;
+	.video-listing .video-info-details {
+		padding-left: 0;
+		width: 70px;
+	}
+
+	.video-info-details .icon-container {
+		display: block;
+		width: 55px;
+	}
+
+	.video-info-details .stat-value {
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	.video-listing .reputation {
+		width: 30px;
+	}
+
+	.video-listing .review-title h3 {
+		font-size: 20px;
+	}
+
+	.video-listing .reputation-cell {
+		width: 40px;
+	}
+	
+	.info-column .date-information {
+		text-align: left;
 	}
 }

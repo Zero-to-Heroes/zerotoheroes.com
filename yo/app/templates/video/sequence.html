@@ -8,36 +8,34 @@
 			<div class="modal-body">
 
 				<videogular vg-player-ready="onPlayerReady($API)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
-					<vg-media vg-src="sources" ng-class="playerControls.firstPlayerClass">
+					<vg-media vg-src="sources" ng-class="params.firstPlayerClass">
 					</vg-media>
 
-					<vg-controls style="width: 50%">
-						<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
+					<vg-controls>
+						<vg-play-pause-button></vg-play-pause-button>
 						<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
 						<vg-scrub-bar video-fine-time-control>
 							<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 						</vg-scrub-bar>
 						<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
-						<video-loop-button ng-show="playerControls.loopStatus"></video-loop-button>
 						<vg-volume>
 							<vg-mute-button></vg-mute-button>
 							<vg-volume-bar></vg-volume-bar>
 						</vg-volume>
 					</vg-controls>
 
-					<div class="second-player" ng-class="playerControls.secondPlayerClass">
+					<div class="second-player" ng-class="params.secondPlayerClass">
 						<videogular vg-player-ready="onPlayerReady2($API)" class="videogular">
 							<vg-media vg-src="sources2">
 							</vg-media>
 
-							<vg-controls style="width: 50%">
-								<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
+							<vg-controls>
+								<vg-play-pause-button></vg-play-pause-button>
 								<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
 								<vg-scrub-bar video-fine-time-control>
 									<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 								</vg-scrub-bar>
 								<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
-								<video-loop-button ng-show="playerControls.loopStatus"></video-loop-button>
 								<vg-volume>
 									<vg-mute-button></vg-mute-button>
 									<vg-volume-bar></vg-volume-bar>
@@ -47,7 +45,23 @@
 					</div>
 				</videogular>
 
-				
+				<form class="form-inline sequence-form" name="sequenceForm">
+					<div class="form-group speed-factor">
+						<label for="speedFactor">Playback speed</label>
+						<input type="text" class="form-control" id="speedFactor" ng-model="params.speed" placeholder="0.5">
+					</div>
+					<div class="form-group loop-duration">
+						<label for="loopDuration">Loop duration (s)</label>
+						<input type="text" class="form-control" id="loopDuration" ng-model="params.loopDuration" placeholder="1">
+					</div>
+					<div class="checkbox use-right-side">
+						<label>
+							Show right side <input type="checkbox" ng-model="params.useRight">
+						</label>
+					</div>
+					<button type="button" class="btn btn-default test-button" ng-click="testSequence()" ng-hide="testing">Test sequence</button>
+					<button type="button" class="btn btn-default test-button" ng-click="stopSequence()" ng-show="testing">Stop test</button>
+				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" ng-click="addSequence()">Add sequence</button>

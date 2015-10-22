@@ -14,6 +14,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 				review: '='
 			},
 			controller: function($scope) {
+
 				$scope.params = {};
 				
 				$rootScope.$on('sequence.add.init', function(event, params) {
@@ -79,8 +80,9 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 							};
 						});
 					}
-					else {
+					else if (newVal == 'sameVideo') {
 						$scope.choosingOtherVideo = false;
+						$scope.sources2 = $scope.sources;
 					}
 				});
 
@@ -138,6 +140,18 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
 						$scope.choosingOtherVideo = false;
 					});
+				}
+
+				$scope.moveTime1 = function(amountInMilliseconds) {
+					var currentTime1 = $scope.API.currentTime;
+					var time1 = Math.min(Math.max(currentTime1 + amountInMilliseconds, 0), $scope.API.totalTime);
+					$scope.API.seekTime(time1 / 1000);
+				}
+
+				$scope.moveTime2 = function(amountInMilliseconds) {
+					var currentTime1 = $scope.API2.currentTime;
+					var time1 = Math.min(Math.max(currentTime1 + amountInMilliseconds, 0), $scope.API2.totalTime);
+					$scope.API2.seekTime(time1 / 1000);
 				}
 			}
 		};

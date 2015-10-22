@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('videoFineTimeControl', ['$log', 
+app.directive('videoFineTimeControl', ['$log', '$parse', 
 	function($log, $parse) {
 		return {
 			restrict: 'A',
@@ -13,7 +13,13 @@ app.directive('videoFineTimeControl', ['$log',
 	            	var scrollAmount = parseInt(e.wheelDelta ? -e.wheelDelta : e.originalEvent.detail * 40);
 	            	
 	            	// Move the player very slightly depending on the amount scrolled
-	            	scope.playerControls.moveTime(scrollAmount / 4);
+	            	if (attrs.videoFineTimeControl) {
+	            		var timeControl = $parse(attrs.videoFineTimeControl);
+	            		timeControl(scope, {amountInMilliseconds: scrollAmount / 4});
+	            	}
+	            	else {
+	            		scope.playerControls.moveTime(scrollAmount / 4);
+	            	}
 
 	                e.stopPropagation();
 	                e.preventDefault();

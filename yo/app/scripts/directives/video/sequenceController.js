@@ -15,14 +15,13 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope',
 			},
 			controller: function($scope) {
 				$rootScope.$on('sequence.add.init', function(event, params) {
+					$scope.params = {
+						loopDuration: 1,
+						speed: 0.5,
+						useRight: false
+					}
 					$scope.sequenceModal.$promise.then($scope.sequenceModal.show);
 				});
-
-				$scope.params = {
-					loopDuration: 1,
-					speed: 0.5,
-					useRight: false
-				}
 
 				$scope.sequenceModal = $modal({
 					templateUrl: 'templates/video/sequence.html', 

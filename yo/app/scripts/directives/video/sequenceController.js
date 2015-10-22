@@ -14,6 +14,8 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope',
 				review: '='
 			},
 			controller: function($scope) {
+				$scope.params = {};
+				
 				$rootScope.$on('sequence.add.init', function(event, params) {
 					$scope.params = {
 						loopDuration: 1,

@@ -6,6 +6,9 @@
 		<span class="btn btn-default btn-file" ng-hide="!useVideo">
 			Choose your video <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
 		</span>
+		<div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
+			<span>We're sorry, we only support .mp4, .ogg, .mkv and .webm files. We have a post on <a href="/r/meta/561e5905e4b0e41639be51cf/about-the-uploading-feature-for-e-sports-5-minutes-time-limit-and-replay-upload" target="_blank">the forums</a> that details the reasons why, but the gist of it is that we can't provide our more advanced features if we have to rely on a Flash video player, which is mandatory for some file formats.</span>
+		</div>
 
 		<div class="videogular-container" ng-show="file && useVideo">
 			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': !canvasState.drawingCanvas}"  vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)" class="videogular">
@@ -104,7 +107,7 @@
 				</div>
 		  		<div class="row">
 					<div class="col-sm-2">
-			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress"  analytics-on="click" analytics-category="upload" analytics-event="upload.request">{{useVideo ? 'Upload' : 'Post'}} now</button>
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError"  analytics-on="click" analytics-category="upload" analytics-event="upload.request">{{useVideo ? 'Upload' : 'Post'}} now</button>
 		  			</div>
 				</div>
 			</div>

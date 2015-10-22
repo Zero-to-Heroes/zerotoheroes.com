@@ -57,11 +57,21 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
         	})
 		};
 
+		var supportedFileTypes = ['video/mp4', 'video/x-matroska', 'video/webm', 'video/ogg'];
+		
 		$scope.updateSourceWithFile = function(fileObj) {
-			$log.log('new file selected');
+			$scope.hasUnsupportedFormatError = false;
+			$log.log('new file selected', fileObj);
+
+			var type = fileObj.type;
+
+			if (supportedFileTypes.indexOf(type) == -1) {
+				$scope.hasUnsupportedFormatError = true;
+				return;
+			}
+
 			var objectURL = window.URL.createObjectURL(fileObj);
 			// Hack for mkv, not supported properly by videogular
-			var type = fileObj.type;
 			if (type  == 'video/x-matroska') {
 				$log.log('hacking type');
 				type = 'video/mp4';

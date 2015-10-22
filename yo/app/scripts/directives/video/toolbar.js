@@ -22,7 +22,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
 				var slowRegex = /\d?\d:\d?\d(:\d\d\d)?\+s(\d?\.?\d?\d?)?/;
 				var loopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L(\d?\.?\d?\d?)?/;
-				var optionalLoopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L?(\d?\.?\d?\d?)?/;
+				var optionalLoopRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+s)?(\d?\.?\d?\d?)?L?(\d?\.?\d?\d?)?/;
 
 				$scope.insertTimestamp = function(inputTimestamp, regex) {
 					regex = typeof regex !== 'undefined' ? regex : timestampOnlyRegex;

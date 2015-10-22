@@ -1,20 +1,23 @@
 'use strict';
 
-angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', 
-	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope) {
+angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', 
+	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route) {
 		$scope.videos = [];
 		$scope.tabs = []; 
 		$scope.tabs.activeTab = 0;
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
+		$scope.pageNumber = $routeParams.pageNumber || 1;
+
+		$log.log('Getting videos for page ', $scope.pageNumber);
 
 		$scope.$watch('tabs.activeTab', function(newValue, oldValue) {
-			$scope.retrieveVideos(newValue);
+			$scope.retrieveVideos(newValue, $scope.pageNumber);
 		})
 
 		$log.log('using videos?', $scope.useVideo);
 
-		$scope.retrieveVideos = function(shouldGetOnlyMine) {
+		$scope.retrieveVideos = function(shouldGetOnlyMine, pageNumber) {
 			var params = {};
 			
 			if (shouldGetOnlyMine == 'true')
@@ -22,20 +25,25 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 			if ($scope.sport)
 				params.sport = $scope.sport;
-			
-			Api.Reviews.query(params, function(data) {
-				$scope.videos = [];
-				for (var i = 0; i < data.length; i++) {
-					$scope.videos.push(data[i]);
 
-					$scope.countVideoComments(data[i]);
-					$scope.hasHelpfulComments(data[i]);
+			if (pageNumber)
+				params.pageNumber = pageNumber;
+			
+			Api.Reviews.get(params, function(data) {
+				$scope.videos = [];
+				$scope.totalPages = data.totalPages;
+				$log.log('totalPages are ', $scope.totalPages);
+				for (var i = 0; i < data.reviews.length; i++) {
+					$scope.videos.push(data.reviews[i]);
+
+					$scope.countVideoComments(data.reviews[i]);
+					$scope.hasHelpfulComments(data.reviews[i]);
 				};
 			});
 		};
 
 		$rootScope.$on('user.logged.in', function() {
-			$scope.retrieveVideos($scope.tabs.activeTab);
+			$scope.retrieveVideos($scope.tabs.activeTab, $scope.pageNumber);
 		});
 
 		$scope.formatDate = function(video) {
@@ -126,6 +134,50 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				video.hasHelpfulComments = video.hasHelpfulComments || comment.helpful;
 				$scope.isHelpfulComment(video, comment.comments);
 			})
+		}
+
+		$scope.range = function() {
+			var pages = [];
+			
+			for (var i = -2; i <= 2; i++) {
+				pages.push(parseInt($scope.pageNumber) + i);
+			}
+
+			// No negative pages
+			if (pages[0] < 0) {
+				var offset = pages[0];
+				for (var i = 0; i < pages.length; i++) {
+					pages[i] = pages[i] - offset;
+				}
+			}
+
+			// Remove pages if there are too many of them
+			if (pages[pages.length - 1] > $scope.totalPages) {
+				for (var i = 1; i <= pages.length; i++) {
+					if (pages[pages.length - 1] >= $scope.totalPages) {
+						pages.splice(pages.length - 1, 1);
+					}
+				}
+			}
+
+			return pages;
+		}
+
+		$scope.goToPage = function(page) {
+			$log.log('going to page', page);
+			$log.log('routeparams', $routeParams);
+			$log.log('route is', $route);
+			$route.updateParams({'pageNumber': page});
+			//$scope.retrieveVideos($scope.tabs.activeTab, page);
+			//$location.path('pageNumber', page);
+		}
+
+		$scope.goToPreviousPage = function() {
+			$route.updateParams({'pageNumber': $scope.pageNumber - 1});
+		}
+
+		$scope.goToNextPage = function() {
+			$route.updateParams({'pageNumber': $scope.pageNumber + 1});
 		}
 	}
 ]);

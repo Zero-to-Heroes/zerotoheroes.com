@@ -44,3 +44,20 @@
 		</tr>
 	</tbody>
 </table>
+
+<nav>
+  	<ul class="pagination">
+    	<li>
+      		<a aria-label="Previous" ng-click="goToPreviousPage()">
+        		<span aria-hidden="true">&laquo;</span>
+      		</a>
+    	</li>
+    	<li ng-repeat="n in range()">
+    		<a ng-click="goToPage(n + 1)">{{n + 1}}</a></li>
+    	<li>
+      		<a href="#" aria-label="Next" ng-click="goToNextPage()">
+        		<span aria-hidden="true">&raquo;</span>
+    	  	</a>
+    	</li>
+  	</ul>
+</nav>

@@ -100,13 +100,15 @@ app.config(['$routeProvider', '$locationProvider',
 		templateUrl: 'views/review.html',
 		controller: 'ReviewCtrl'
 	  }).
-	  when('/reviews', {
+	  when('/reviews/:pageNumber?', {
 		templateUrl: 'views/videoListing.html',
-		controller: 'VideoListingCtrl'
+		controller: 'VideoListingCtrl',
+		reloadOnSearch: false
 	  }).
-	  when('/s/:sport', {
+	  when('/s/:sport/:pageNumber?', {
 		templateUrl: 'views/videoListing.html',
-		controller: 'VideoListingCtrl'
+		controller: 'VideoListingCtrl',
+		reloadOnSearch: false
 	  }).
 	  otherwise({
 		redirectTo: '/'

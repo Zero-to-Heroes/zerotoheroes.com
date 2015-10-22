@@ -7,7 +7,7 @@
 			Choose your video <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
 		</span>
 		<div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
-			<span>We're sorry, we only support .mp4, .ogg, .mkv and .webm files. We have a post on <a href="/r/meta/561e5905e4b0e41639be51cf/about-the-uploading-feature-for-e-sports-5-minutes-time-limit-and-replay-upload" target="_blank">the forums</a> that details the reasons why, but the gist of it is that we can't provide our more advanced features if we have to rely on a Flash video player, which is mandatory for some file formats.</span>
+			<span>We're sorry, we only support .mp4, .ogg, .mkv and .webm video files, and don't support other media types for now. The main reason is that we can't provide our more advanced features if we have to rely on a Flash video player, which is mandatory for some file formats.</span>
 		</div>
 
 		<div class="videogular-container" ng-show="file && useVideo">
@@ -95,7 +95,7 @@
 			  	</div>
 				<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 				<div class="alert alert-info" role="alert" ng-show="hasTimestamps && review.beginning > 0">
-					<span>It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)</span>
+					<span>It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)</span>
 				</div>
 				<div class="row video-tags" ng-show="allowedTags && allowedTags.length > 0">
 					<div class="col-xs-12 text-left">

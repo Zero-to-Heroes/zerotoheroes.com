@@ -13,6 +13,8 @@ import java.util.Random;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
@@ -41,6 +43,8 @@ import com.coach.user.UserRepository;
 @RequestMapping(value = "/api/reviews")
 @Slf4j
 public class ReviewApiHandler {
+
+	private static final int PAGE_SIZE = 15;
 
 	@Autowired
 	ReviewRepository reviewRepo;
@@ -71,27 +75,36 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<List<Review>> listAllReviews(
+	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(
 			@RequestParam(value = "userName", required = false) String userName,
-			@RequestParam(value = "sport", required = false) String sport) {
+			@RequestParam(value = "sport", required = false) String sport,
+			@RequestParam(value = "pageNumber", required = false) Integer pageNumber) {
 		// String currentUser =
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		log.debug("Retrieving all reviews");
 
-		List<Review> reviews = null;
-		log.debug("userName param is " + userName);
-		log.debug("sport param is " + sport);
+		// log.debug("userName param is " + userName);
+		// log.debug("sport param is " + sport);
+		log.debug("pageNumber is " + pageNumber);
 
 		// Sorting in ascending order
 		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
 				"lastModifiedDate"));
 
+		// Start pageing at 1 like normal people, not at 0 like nerds
+		PageRequest pageRequest = new PageRequest(pageNumber != null && pageNumber > 0 ? pageNumber - 1 : 0, PAGE_SIZE,
+				newestFirst);
+		Page<Review> page = null;
 		if ("meta".equalsIgnoreCase(sport)) {
-			reviews = reviewRepo.findAll(userName, sport, newestFirst);
+			page = reviewRepo.findAll(userName, sport, pageRequest);
 		}
 		else {
-			reviews = reviewRepo.findAllWithKey(userName, sport, newestFirst);
+			page = reviewRepo.findAllWithKey(userName, sport, pageRequest);
 		}
+
+		List<Review> reviews = page.getContent();
+		ListReviewResponse response = new ListReviewResponse(reviews);
+		response.setTotalPages(page.getTotalPages());
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
@@ -99,7 +112,7 @@ public class ReviewApiHandler {
 		// tweak info about reputation
 		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);
 
-		return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
+		return new ResponseEntity<ListReviewResponse>(response, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.GET)
@@ -436,12 +449,13 @@ public class ReviewApiHandler {
 		log.debug("Retrieving recommended review for " + sport);
 
 		// Sorting in ascending order
-		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
-				"lastModifiedDate"));
+		Sort oldestFirst = new Sort(Sort.Direction.ASC,
+				Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
 
+		PageRequest pageRequest = new PageRequest(0, PAGE_SIZE, oldestFirst);
 		Review recommended = null;
 		if (!"meta".equalsIgnoreCase(sport)) {
-			reviews = reviewRepo.findAllWithKey(null, sport, newestFirst);
+			reviews = reviewRepo.findAllWithKey(null, sport, pageRequest).getContent();
 			log.debug("All reviews " + reviews);
 
 			// TODO: do that in the DB directly?

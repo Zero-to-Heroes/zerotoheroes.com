@@ -24,7 +24,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				var loopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L(\d?\.?\d?\d?)?/;
 				var optionalLoopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L?(\d?\.?\d?\d?)?/;
 
-				$scope.insertTimestamp = function(regex) {
+				$scope.insertTimestamp = function(inputTimestamp, regex) {
 					regex = typeof regex !== 'undefined' ? regex : timestampOnlyRegex;
 					var insertionIndex = $scope.command(regex);
 					if (insertionIndex > -1) {
@@ -35,13 +35,13 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 						return;
 					}
 					// Convert the numeral timestamp into the string we want to input
-					var timestamp = moment.duration($scope.API.currentTime).format('mm:ss:SSS', { trim: false });
+					var timestamp = inputTimestamp || moment.duration($scope.API.currentTime).format('mm:ss:SSS', { trim: false });
 					$scope.insert(timestamp);
 			  	}
 
-				$scope.insertSlow = function() {
+				$scope.insertSlow = function(inputTimestamp, inputSpeed) {
 					// Convert the numeral timestamp into the string we want to input
-					$scope.insertTimestamp();
+					$scope.insertTimestamp(inputTimestamp);
 
 					var insertionIndex = $scope.command(slowRegex);
 					if (insertionIndex > -1) {
@@ -52,12 +52,12 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					  	return;
 					}
 
-					var speed = 0.5;
+					var speed = inputSpeed || 0.5;
 					$scope.insert('+s' + speed);
 				}
 
-				$scope.insertLoop = function() {
-					$scope.insertSlow();
+				$scope.insertLoop = function(inputTimestamp, inputSpeed, inputLoop) {
+					$scope.insertSlow(inputTimestamp, inputSpeed);
 					
 					var insertionIndex = $scope.command(loopRegex);
 					if (insertionIndex > -1) {
@@ -68,14 +68,34 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					  	return;
 					}
 
-					var duration = 1;
+					var duration = inputLoop || 1;
 					$scope.insert('L' + duration);
 				}
 
 				$scope.insertOtherSequence = function() {
-					$rootScope.$broadcast('sequence');
+					$rootScope.$broadcast('sequence.add.init');
 
-					var unregister = $rootScope.$on('sequence.end', function (event, params) {
+					var unregister = $rootScope.$on('sequence.add.end', function (event, params) {
+						$log.log('Inserting sequence with params', params);
+
+						var timestamp1 = moment.duration(params.sequenceStart1).format('mm:ss:SSS', { trim: false });
+						$scope.insertLoop(timestamp1, params.speed, params.loop);
+						$log.log('loop inserted');
+
+						var insertionIndex = $scope.command(timestampOnlyRegex);
+						$log.log('insertionIndex', insertionIndex);
+						if (insertionIndex > -1) {
+							var domElement = $scope.insertionElement[0];
+							domElement.selectionStart = insertionIndex;
+							domElement.selectionEnd = insertionIndex;
+						  	domElement.focus();
+						  	//return;
+						}
+
+						var timestamp2 = moment.duration(params.sequenceStart2).format('mm:ss:SSS', { trim: false });
+						$log.log('inserting', '|' + timestamp2);
+						$scope.insert('|' + timestamp2);
+
 						// Do stuff
 						unregister();
 					});
@@ -100,7 +120,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 							//$log.log('Creating new canvas');
 							$scope.drawingCanvas = true;
 							var canvasTag = '[' + $scope.canvasId + ']';
-							$scope.insertTimestamp(optionalLoopRegex);
+							$scope.insertTimestamp(undefined, optionalLoopRegex);
 							$scope.insert(canvasTag);
 							$scope.currentCanvasId = $scope.canvasId;
 							$rootScope.$broadcast('insertcanvas', $scope.currentCanvasId);

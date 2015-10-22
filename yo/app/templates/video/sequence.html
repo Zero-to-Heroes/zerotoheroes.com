@@ -26,7 +26,7 @@
 					</vg-controls>
 
 					<div class="second-player" ng-class="playerControls.secondPlayerClass">
-						<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
+						<videogular vg-player-ready="onPlayerReady2($API)" class="videogular">
 							<vg-media vg-src="sources2">
 							</vg-media>
 
@@ -47,9 +47,11 @@
 					</div>
 				</videogular>
 
-				<form>
-					
-				</form>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" ng-click="addSequence()">Add sequence</button>
+				<button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
 			</div>
 		</div>
 	</div>

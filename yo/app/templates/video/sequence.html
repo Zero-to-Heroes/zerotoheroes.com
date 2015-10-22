@@ -6,6 +6,20 @@
 				<h4 class="modal-title">Adding a sequence</h4>
 			</div>
 			<div class="modal-body">
+			
+				<span>Use a sequence from:</span>
+				<label class="radio-inline">
+					<input type="radio" name="sequenceSource" id="sequenceSource1" value="sameVideo" ng-model="params.comparisonSource">
+					this video
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="sequenceSource" id="sequenceSource2" value="otherVideo" ng-model="params.comparisonSource">
+					another video
+				</label>
+				<label class="radio-inline disabled">
+					<input type="radio" name="sequenceSource" id="sequenceSource3" value="sequence" ng-model="params.comparisonSource" disabled>
+					an existing sequence (coming soon)
+				</label>
 
 				<videogular vg-player-ready="onPlayerReady($API)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
 					<vg-media vg-src="sources" ng-class="params.firstPlayerClass">
@@ -25,7 +39,7 @@
 					</vg-controls>
 
 					<div class="second-player" ng-class="params.secondPlayerClass">
-						<videogular vg-player-ready="onPlayerReady2($API)" class="videogular">
+						<videogular vg-player-ready="onPlayerReady2($API)" class="videogular" ng-hide="choosingOtherVideo">
 							<vg-media vg-src="sources2">
 							</vg-media>
 
@@ -42,6 +56,32 @@
 								</vg-volume>
 							</vg-controls>
 						</videogular>
+
+						<div class="other-video-choice" ng-show="choosingOtherVideo">
+							<h3 class="choice-title">Choose an existing video</h3>
+
+							<table class="table video-listing">
+								<tbody>
+									<tr ng-repeat="video in videos">
+										<td class="vert-align info-column">
+											<div class="row review-title">
+												<div class="col-sm-12">
+													<a href="{{buildUrl(video)}}"><h3>{{video.title}}</h3></a>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-12">
+													<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false"></tags-input>
+												</div>
+											</div>
+										</td>
+										<td>
+											<button class="btn btn-default" ng-click="selectVideo(video)">Select</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</videogular>
 

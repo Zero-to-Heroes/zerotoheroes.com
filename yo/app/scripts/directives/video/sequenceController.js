@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope',
-	function($log, Api, $modal, $rootScope) {
+app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV', '$sce', 
+	function($log, Api, $modal, $rootScope, ENV, $sce) {
 
 		return {
 			restrict: 'E',
@@ -20,7 +20,9 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope',
 					$scope.params = {
 						loopDuration: 1,
 						speed: 0.5,
-						useRight: false
+						useRight: false,
+						comparisonSource: 'sameVideo',
+						otherSource: undefined
 					}
 					$scope.sequenceModal.$promise.then($scope.sequenceModal.show);
 				});
@@ -55,7 +57,32 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope',
 					}
 				});
 
-				
+				$scope.$watch('params.comparisonSource', function (newVal, oldVal) {
+					$log.log('params.comparisonSource', oldVal, newVal);
+
+					$scope.params.otherSource = undefined;
+
+					if (newVal == 'otherVideo') {
+						$scope.choosingOtherVideo = true;
+
+						// Fetch the videos
+						var params = {};
+
+						if ($scope.sport)
+							params.sport = $scope.review.sport.key;
+						
+						Api.Reviews.get(params, function(data) {
+							$scope.videos = [];
+							for (var i = 0; i < data.reviews.length; i++) {
+								$scope.videos.push(data.reviews[i]);
+
+							};
+						});
+					}
+					else {
+						$scope.choosingOtherVideo = false;
+					}
+				});
 
 				$scope.addSequence = function() {
 					var params = {
@@ -63,7 +90,8 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope',
 						sequenceStart2: $scope.API2.currentTime,
 						useRight: $scope.params.useRight,
 						speed: parseFloat($scope.params.speed),
-						loopDuration: parseFloat($scope.params.loopDuration)
+						loopDuration: parseFloat($scope.params.loopDuration),
+						comparisonSource: $scope.params.otherSource
 					}
 					$log.log('Adding sequence with params', params);
 					$rootScope.$broadcast('sequence.add.end', params);
@@ -100,6 +128,16 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope',
 
 					$scope.API.seekTime($scope.sequenceStart1);
 					$scope.API2.seekTime($scope.sequenceStart2);
+				}
+
+				$scope.selectVideo = function(review) {
+					// Get the video id
+					Api.Reviews.get({reviewId: review.id},  function(data) {
+						$scope.params.otherSource = review.id;
+						var fileLocation = ENV.videoStorageUrl + data.key;
+						$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
+						$scope.choosingOtherVideo = false;
+					});
 				}
 			}
 		};

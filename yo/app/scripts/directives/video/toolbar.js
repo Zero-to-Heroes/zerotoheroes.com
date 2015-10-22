@@ -96,6 +96,8 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 						$log.log('inserting', '|' + timestamp2);
 						$scope.insert('|' + timestamp2);
 
+						if (params.comparisonSource) $scope.insert('(' + params.comparisonSource + ')');
+
 						if (params.useRight == true) $scope.insert('r');
 
 						// Do stuff

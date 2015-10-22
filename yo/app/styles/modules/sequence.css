@@ -35,3 +35,15 @@
 .sequence-modal .center-shift vg-controls {
 	margin-left: 50%;
 }
+
+.sequence-modal .other-video-choice {
+	background-color: white;
+	width: 50%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.other-video-choice .choice-title {
+	margin-top: 0;
+	text-align: center;
+}

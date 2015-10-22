@@ -112,10 +112,6 @@ a[ng-click] {
   padding: 15px;
 }
 
-.modal-dialog {
-  margin-top: 400px;
-}
-
 textarea.form-control {
   min-height: 100px;
  resize: none;
@@ -170,16 +166,4 @@ textarea.form-control {
     padding-left: 0;
     padding-right: 0;
   }
-}
-
-@media screen and (min-height: 500px) {
-    .modal-dialog {
-        margin-top: 200px;
-    }
-}
-
-@media screen and (min-height: 700px) {
-    .modal-dialog {
-        margin-top: 400px;
-    }
 }

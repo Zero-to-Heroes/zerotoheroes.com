@@ -1,0 +1,20 @@
+.modal.center .sequence-modal {
+	width: 900px;
+	max-width: 900px;
+}
+
+.modal-dialog.modal-pro {
+  margin-top: 400px;
+}
+
+@media screen and (min-height: 500px) {
+    .modal-dialog.modal-pro {
+        margin-top: 200px;
+    }
+}
+
+@media screen and (min-height: 700px) {
+    .modal-dialog.modal-pro {
+        margin-top: 400px;
+    }
+}

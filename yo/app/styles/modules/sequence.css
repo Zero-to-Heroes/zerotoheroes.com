@@ -1,0 +1,37 @@
+.sequence-modal .videogular {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.sequence-modal .videogular .controls-container {
+	margin-top: 0;
+}
+
+.sequence-form {
+}
+
+.sequence-modal .speed-factor input {
+	width: 70px;
+	margin-right: 50px;
+}
+
+.sequence-modal .loop-duration input {
+	width: 70px;
+	margin-right: 50px;
+}
+
+.sequence-modal .use-right-side {
+	margin-right: 50px;
+}
+
+.sequence-modal .test-button {
+	float: right;
+}
+
+.sequence-modal vg-controls {
+	width: 50%;
+}
+
+.sequence-modal .center-shift vg-controls {
+	margin-left: 50%;
+}

@@ -3,13 +3,13 @@
 		<tr ng-repeat="video in videos">
 			<td class="vert-align text-center reputation-cell">
 				<div class="reputation">
-	  				<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true" title="Upvote this video"></span>
+					<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true" title="Upvote this video"></span>
 					<span class="reputation-score glyphicon">{{video.reputation.nbVotes.Upvote - video.reputation.nbVotes.Downvote}}</span>
 					<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true" title="Downvote this video"></span>
 				</div>
-  			</td>
-  			<td class="vert-align text-center video-info-details" title="Number of comments">
-  				<div title="Number of comments" class="icon-container">
+			</td>
+			<td class="vert-align text-center video-info-details" title="Number of comments">
+				<div title="Number of comments" class="icon-container">
 					<span><span class="stat-value">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment"></span></span>
 				</div>
 				<div title="Number of comments the author of the video marked as useful" class="icon-container">
@@ -28,7 +28,7 @@
 						<a href="{{buildUrl(video)}}"><h3>{{video.title}}</h3></a>
 					</div>
 				</div>
-		  		<div class="row">
+				<div class="row">
 					<div class="col-sm-8">
 						<div class="sport">
 							<span class="label label-primary" ng-hide="sport">{{video.sport.value}}</span>
@@ -45,19 +45,13 @@
 	</tbody>
 </table>
 
-<nav>
-  	<ul class="pagination">
-    	<li>
-      		<a aria-label="Previous" ng-click="goToPreviousPage()">
-        		<span aria-hidden="true">&laquo;</span>
-      		</a>
-    	</li>
-    	<li ng-repeat="n in range()">
-    		<a ng-click="goToPage(n + 1)">{{n + 1}}</a></li>
-    	<li>
-      		<a href="#" aria-label="Next" ng-click="goToNextPage()">
-        		<span aria-hidden="true">&raquo;</span>
-    	  	</a>
-    	</li>
-  	</ul>
+<nav ng-show="range.length > 1">
+	<ul class="pagination">
+		<li ng-class="{'disabled': pageNumber == 1}" ng-show="range.length > 2"><a aria-label="First" ng-click="goToPage(1)"><span aria-hidden="true">&laquo;&laquo;</span></a></li>
+		<li ng-class="{'disabled': pageNumber == 1}"><a aria-label="Previous" ng-click="goToPreviousPage()"><span aria-hidden="true">&laquo;</span></a></li>
+		<li ng-repeat="n in range" ng-class="{'active': pageNumber == n + 1}">
+			<a ng-click="goToPage(n + 1)">{{n + 1}}</a></li>
+		<li ng-class="{'disabled': pageNumber == totalPages}"><a aria-label="Next" ng-click="goToNextPage()"><span aria-hidden="true">&raquo;</span></a></li>
+		<li ng-class="{'disabled': pageNumber == totalPages}" ng-show="range.length > 2"><a aria-label="Last" ng-click="goToPage(totalPages)"><span aria-hidden="true">&raquo;&raquo;</span></a></li>
+	</ul>
 </nav>

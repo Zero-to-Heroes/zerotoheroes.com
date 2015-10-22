@@ -7,7 +7,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.tabs.activeTab = 0;
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
-		$scope.pageNumber = $routeParams.pageNumber || 1;
+		$scope.pageNumber = parseInt($routeParams.pageNumber) || 1;
 
 		$log.log('Getting videos for page ', $scope.pageNumber);
 
@@ -38,7 +38,9 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 					$scope.countVideoComments(data.reviews[i]);
 					$scope.hasHelpfulComments(data.reviews[i]);
+
 				};
+				$scope.range = $scope.getRange();
 			});
 		};
 
@@ -136,29 +138,34 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			})
 		}
 
-		$scope.range = function() {
+		$scope.getRange = function() {
 			var pages = [];
 			
 			for (var i = -2; i <= 2; i++) {
-				pages.push(parseInt($scope.pageNumber) + i);
+				pages.push($scope.pageNumber + i);
 			}
 
+			$log.log('first pages are', pages);
 			// No negative pages
-			if (pages[0] < 0) {
+			if (pages[0] <= 0) {
 				var offset = pages[0];
 				for (var i = 0; i < pages.length; i++) {
 					pages[i] = pages[i] - offset;
 				}
 			}
-
-			// Remove pages if there are too many of them
-			if (pages[pages.length - 1] > $scope.totalPages) {
-				for (var i = 1; i <= pages.length; i++) {
-					if (pages[pages.length - 1] >= $scope.totalPages) {
-						pages.splice(pages.length - 1, 1);
-					}
+			else if (pages[pages.length - 1] > $scope.totalPages) {
+				var offset = pages[pages.length - 1] - $scope.totalPages;
+				for (var i = 0; i < pages.length; i++) {
+					pages[i] = pages[i] - offset;
 				}
 			}
+
+			$log.log('pages are', pages);
+			// Remove pages if there are too many of them
+			while (pages[pages.length - 1] >= $scope.totalPages) {
+				pages.splice(pages.length - 1, 1);
+			}
+			$log.log('finally, apges are', pages);
 
 			return pages;
 		}
@@ -173,11 +180,11 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		}
 
 		$scope.goToPreviousPage = function() {
-			$route.updateParams({'pageNumber': $scope.pageNumber - 1});
+			$route.updateParams({'pageNumber': Math.max(1, $scope.pageNumber - 1)});
 		}
 
 		$scope.goToNextPage = function() {
-			$route.updateParams({'pageNumber': $scope.pageNumber + 1});
+			$route.updateParams({'pageNumber': Math.min($scope.totalPages, $scope.pageNumber + 1)});
 		}
 	}
 ]);

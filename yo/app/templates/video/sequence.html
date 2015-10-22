@@ -9,11 +9,11 @@
 			
 				<span>Use a sequence from:</span>
 				<label class="radio-inline">
-					<input type="radio" name="sequenceSource" id="sequenceSource1" value="sameVideo" ng-model="params.comparisonSource">
+					<input type="radio" name="sequenceSource" id="sequenceSource1" value="sameVideo" ng-model="params.comparisonSource" ng-click="toggleMode('sameVideo')">
 					this video
 				</label>
 				<label class="radio-inline">
-					<input type="radio" name="sequenceSource" id="sequenceSource2" value="otherVideo" ng-model="params.comparisonSource">
+					<input type="radio" name="sequenceSource" id="sequenceSource2" value="otherVideo" ng-model="params.comparisonSource" ng-click="toggleMode('otherVideo')">
 					another video
 				</label>
 				<label class="radio-inline disabled">

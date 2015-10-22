@@ -58,12 +58,13 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					}
 				});
 
-				$scope.$watch('params.comparisonSource', function (newVal, oldVal) {
-					$log.log('params.comparisonSource', oldVal, newVal);
+				//$scope.$watch('params.comparisonSource', function (newVal, oldVal) {
+				$scope.toggleMode = function(mode) {
+					$log.log('params.comparisonSource', mode);
 
 					$scope.params.otherSource = undefined;
 
-					if (newVal == 'otherVideo') {
+					if (mode == 'otherVideo') {
 						$scope.choosingOtherVideo = true;
 
 						// Fetch the videos
@@ -80,11 +81,11 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 							};
 						});
 					}
-					else if (newVal == 'sameVideo') {
+					else if (mode == 'sameVideo') {
 						$scope.choosingOtherVideo = false;
 						$scope.sources2 = $scope.sources;
 					}
-				});
+				};
 
 				$scope.addSequence = function() {
 					var params = {

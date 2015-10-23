@@ -136,7 +136,7 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" ng-click="addSequence()">Create and add sequence</button>
+				<button type="button" class="btn btn-primary" ng-click="addSequence()">{{currentMode == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
 				<button type="button" class="btn btn-default" ng-click="$hide()">Cancel</button>
 			</div>
 		</div>

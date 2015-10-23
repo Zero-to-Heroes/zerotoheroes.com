@@ -98,6 +98,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						Api.Sequences.get(params, function(data) {
 							$scope.videos = [];
 							for (var i = 0; i < data.sequences.length; i++) {
+								data.sequences[i].sequence = true;
 								$scope.videos.push(data.sequences[i]);
 							};
 						});
@@ -119,10 +120,11 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					// And if we used a sequence, no need to create it again
 					if ($scope.params.comparisonSource == 'otherVideo') {
 						var newSequence = {
-							videoKey: params.otherSource,
+							videoKey: $scope.currentVideoKey,
 							start: params.sequenceStart2,
 							title: 'test sequence ' + moment().valueOf(),
-							sport: $scope.review.sport.key 
+							sport: $scope.review.sport.key,
+							videoPosition: params.video2position
 						}
 						$log.log('Creating sequence', newSequence);
 
@@ -172,14 +174,29 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					$scope.API2.seekTime($scope.sequenceStart2);
 				}
 
-				$scope.selectVideo = function(review) {
-					// Get the video id
-					Api.Reviews.get({reviewId: review.id},  function(data) {
-						$scope.params.otherSource = review.id;
-						var fileLocation = ENV.videoStorageUrl + data.key;
-						$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
+				$scope.selectVideo = function(video) {
+					if (video.sequence) {
+						$scope.params.otherSource = video.id;
+						var fileLocation = ENV.videoStorageUrl + video.videoKey;
+						$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: 'video/mp4'}];
+
+						$scope.params.video2position = video.videoPosition;
+						$scope.sequenceStart2 = parseFloat(video.start) / 1000;
+						$scope.API2.seekTime($scope.sequenceStart2);
+
 						$scope.choosingOtherVideo = false;
-					});
+					}
+					else {
+						// Get the video id
+						Api.Reviews.get({reviewId: video.id},  function(data) {
+							$log.log('loaded video', data);
+							$scope.params.otherSource = video.id;
+							var fileLocation = ENV.videoStorageUrl + data.key;
+							$scope.currentVideoKey = data.key;
+							$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
+							$scope.choosingOtherVideo = false;
+						});
+					}
 				}
 
 				$scope.moveTime1 = function(amountInMilliseconds) {

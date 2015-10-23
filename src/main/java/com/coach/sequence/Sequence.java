@@ -27,4 +27,5 @@ public class Sequence {
 	private int start;
 	private String title;
 	private Date creationDate;
+	private String videoPosition;
 }

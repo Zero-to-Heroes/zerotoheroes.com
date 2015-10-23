@@ -70,14 +70,12 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						// Fetch the videos
 						var params = {};
 
-						if ($scope.sport)
-							params.sport = $scope.review.sport.key;
+						params.sport = $scope.review.sport.key;
 						
 						Api.Reviews.get(params, function(data) {
 							$scope.videos = [];
 							for (var i = 0; i < data.reviews.length; i++) {
 								$scope.videos.push(data.reviews[i]);
-
 							};
 						});
 					}

@@ -29,6 +29,9 @@ public class NewsRepository {
 		// Features
 		news.add(new News(
 				new DateTime("2015-10-23").toDate(),
+				"It's not possible to independantly choose, for each video in a side-by-side comparison, which side you want to use (left, center, right)",
+				News.Type.Feature));
+		news.add(new News(new DateTime("2015-10-23").toDate(),
 				"Extended the comparison feature to include external videos (no search is possible for now though)",
 				News.Type.Feature));
 		news.add(new News(

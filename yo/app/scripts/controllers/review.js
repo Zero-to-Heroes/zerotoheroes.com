@@ -81,10 +81,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.thumbnail = $scope.review.thumbnail ? ENV.videoStorageUrl + $scope.review.thumbnail : null;
 				$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType}];
 				$scope.sources2 = []
-				angular.forEach($scope.review.reviewVideoMap, function(key, value) {
+				/*angular.forEach($scope.review.reviewVideoMap, function(key, value) {
 					fileLocation = ENV.videoStorageUrl + key;
 					$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType});
-				});
+				});*/
 				$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
 			}, 300);
 
@@ -578,6 +578,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				// The URL of the video. For now, default to the same video
 				var key = $scope.review.key;
 				var dataType = $scope.review.fileType;
+
 				// A reviewID has been specified
 				var externalId = otherVideo.match(externalIdRegex);
 				if (externalId) {

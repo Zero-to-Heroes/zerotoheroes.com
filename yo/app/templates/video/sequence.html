@@ -16,9 +16,9 @@
 					<input type="radio" name="sequenceSource" id="sequenceSource2" value="otherVideo" ng-model="params.comparisonSource" ng-click="toggleMode('otherVideo')">
 					another video
 				</label>
-				<label class="radio-inline disabled">
-					<input type="radio" name="sequenceSource" id="sequenceSource3" value="sequence" ng-model="params.comparisonSource" disabled>
-					an existing sequence (coming soon)
+				<label class="radio-inline">
+					<input type="radio" name="sequenceSource" id="sequenceSource3" value="sequence" ng-model="params.comparisonSource"  ng-click="toggleMode('sequence')">
+					an existing sequence
 				</label>
 
 				<videogular vg-player-ready="onPlayerReady($API)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
@@ -71,7 +71,7 @@
 														<a href="{{buildUrl(video)}}"><h3>{{video.title}}</h3></a>
 													</div>
 												</div>
-												<div class="row">
+												<div class="row" ng-show="video.tags">
 													<div class="col-sm-12">
 														<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false"></tags-input>
 													</div>
@@ -136,7 +136,7 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" ng-click="addSequence()">Add sequence</button>
+				<button type="button" class="btn btn-primary" ng-click="addSequence()">Create and add sequence</button>
 				<button type="button" class="btn btn-default" ng-click="$hide()">Cancel</button>
 			</div>
 		</div>

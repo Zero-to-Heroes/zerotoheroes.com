@@ -73,16 +73,13 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 				//$scope.$watch('params.comparisonSource', function (newVal, oldVal) {
 				$scope.toggleMode = function(mode) {
 					$log.log('params.comparisonSource', mode);
+					$scope.currentMode = mode;
 
 					$scope.params.otherSource = undefined;
 
 					if (mode == 'otherVideo') {
 						$scope.choosingOtherVideo = true;
-
-						// Fetch the videos
-						var params = {};
-
-						params.sport = $scope.review.sport.key;
+						var params = {sport: $scope.review.sport.key};
 						
 						Api.Reviews.get(params, function(data) {
 							$scope.videos = [];
@@ -95,9 +92,20 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						$scope.choosingOtherVideo = false;
 						$scope.sources2 = $scope.sources;
 					}
+					else if (mode == 'sequence') {
+						$scope.choosingOtherVideo = true;
+						var params = {sport: $scope.review.sport.key};
+						Api.Sequences.get(params, function(data) {
+							$scope.videos = [];
+							for (var i = 0; i < data.sequences.length; i++) {
+								$scope.videos.push(data.sequences[i]);
+							};
+						});
+					}
 				};
 
 				$scope.addSequence = function() {
+					$log.log('adding sequence', $scope.choosingOtherVideo)
 					var params = {
 						sequenceStart1: $scope.API.currentTime,
 						sequenceStart2: $scope.API2.currentTime,
@@ -105,10 +113,30 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						video2position: $scope.params.video2position,
 						speed: parseFloat($scope.params.speed),
 						loopDuration: parseFloat($scope.params.loopDuration),
-						comparisonSource: $scope.params.otherSource
+						otherSource: $scope.params.otherSource
 					}
-					$log.log('Adding sequence with params', params);
-					$rootScope.$broadcast('sequence.add.end', params);
+					// Don't create a sequence with your own video
+					// And if we used a sequence, no need to create it again
+					if ($scope.params.comparisonSource == 'otherVideo') {
+						var newSequence = {
+							videoKey: params.otherSource,
+							start: params.sequenceStart2,
+							title: 'test sequence ' + moment().valueOf(),
+							sport: $scope.review.sport.key 
+						}
+						$log.log('Creating sequence', newSequence);
+
+						Api.Sequences.save(newSequence, function(data) {
+							// Insert the sequenceId, not the video ID
+							//params.otherSource = 's=' + data.id;
+							$rootScope.$broadcast('sequence.add.end', params);
+						})
+					}
+					// Otherwise insert the side-by-side without creating any sequence
+					else {
+						$rootScope.$broadcast('sequence.add.end', params);
+					}
+
 					$scope.sequenceModal.$promise.then($scope.sequenceModal.hide);
 				}
 

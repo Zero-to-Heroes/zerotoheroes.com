@@ -16,6 +16,7 @@ import com.coach.coaches.Coach;
 import com.coach.core.security.User;
 import com.coach.review.Comment;
 import com.coach.review.Review;
+import com.coach.sequence.Sequence;
 
 @Slf4j
 @Component
@@ -128,6 +129,31 @@ public class SlackNotifier {
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
 				message.setText("New payment request");
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
+	public void notifyNewSequence(final Sequence sequence) {
+		if (!"prod".equalsIgnoreCase(environment)) return;
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("good");
+				attach.setText("A new sequence has been created: " + sequence.getName() + " for "
+						+ sequence.getSport().getValue());
+				attach.setFallback("placeholder fallback");
+
+				SlackMessage message = new SlackMessage();
+				message.addAttachments(attach);
+				message.setText("A new sequence has been created");
 
 				api.call(message);
 				return null;

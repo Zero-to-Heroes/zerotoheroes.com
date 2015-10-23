@@ -77,7 +77,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					$rootScope.$broadcast('sequence.add.init');
 
 					var unregister = $rootScope.$on('sequence.add.end', function (event, params) {
-						//$log.log('Inserting sequence with params', params);
+						$log.log('Inserting sequence with params', params);
 
 						var timestamp1 = moment.duration(params.sequenceStart1).format('mm:ss:SSS', { trim: false });
 						$scope.insertLoop(timestamp1, params.speed, params.loop);
@@ -99,7 +99,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 						//$log.log('inserting', '|' + timestamp2);
 						$scope.insert('|' + timestamp2);
 
-						if (params.comparisonSource) $scope.insert('(' + params.comparisonSource + ')');
+						if (params.otherSource) $scope.insert('(' + params.otherSource + ')');
 
 						if (params.video2position) $scope.insert(params.video2position);
 

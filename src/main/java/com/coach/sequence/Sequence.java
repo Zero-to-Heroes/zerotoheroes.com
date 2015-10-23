@@ -1,6 +1,7 @@
 package com.coach.sequence;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -11,6 +12,7 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 import com.coach.review.Review.Sport;
+import com.coach.tag.Tag;
 
 @Getter
 @Setter
@@ -28,4 +30,5 @@ public class Sequence {
 	private String title;
 	private Date creationDate;
 	private String videoPosition;
+	private List<Tag> tags;
 }

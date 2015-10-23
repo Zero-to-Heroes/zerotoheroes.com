@@ -122,13 +122,13 @@
 				</div>
 
 				<form class="form-inline sequence-form text-center" name="sequenceForm">
-					<div class="form-group speed-factor">
+					<div class="form-group speed-factor" show-errors="{ showSuccess: true }">
 						<label for="speedFactor">Playback speed</label>
-						<input type="text" class="form-control text-right" id="speedFactor" ng-model="params.speed" placeholder="0.5">
+						<input name="sequenceForm.speed" type="text" class="form-control text-right" id="speedFactor" ng-model="params.speed" placeholder="0.5" ng-required="true">
 					</div>
-					<div class="form-group loop-duration">
+					<div class="form-group loop-duration" show-errors="{ showSuccess: true }">
 						<label for="loopDuration">Loop duration</label>
-						<input type="text" class="form-control text-right" id="loopDuration" ng-model="params.loopDuration" placeholder="1">
+						<input name="sequenceForm.loopDuration" type="text" class="form-control text-right" id="loopDuration" ng-model="params.loopDuration" placeholder="1" ng-required="true">
 						s
 					</div>
 					<button type="button" class="btn btn-default test-button" ng-click="testSequence()" ng-hide="testing">Test sequence</button>
@@ -136,8 +136,23 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" ng-click="addSequence()">{{currentMode == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
-				<button type="button" class="btn btn-default" ng-click="$hide()">Cancel</button>
+				<form name="form.createSequenceForm" class="form-inline create-sequence-form" ng-show="params.comparisonSource == 'otherVideo' && !choosingOtherVideo">
+					<p class="text-left">The sequence you have chosen will be added to the list of existing sequences, so that others can easily find and use it too. We just would like you to add a few details to make it more easily searchable</p>
+					<div class="row text-left">
+						<div class="form-group sequence-title col-md-6" show-errors="{ showSuccess: true }">
+							<input name="createSequenceForm.title" type="text" class="form-control" id="sequenceTitle" ng-model="params.newSequenceTitle" placeholder="A descriptive title that makes finding it easy" ng-required="true">
+						</div>
+						<div class="form-group sequence-tags col-md-6">
+							<tags-input ng-model="params.newSequenceTags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false">
+								<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
+							</tags-input>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-disabled="form.createSequenceForm.$invalid">{{params.comparisonSource == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
+					<button type="button" class="btn btn-default" ng-click="$hide()">Cancel</button>
+				</form>
+				<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo">{{params.comparisonSource == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
+				<button type="button" class="btn btn-default" ng-click="$hide()"ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo">Cancel</button>
 			</div>
 		</div>
 	</div>

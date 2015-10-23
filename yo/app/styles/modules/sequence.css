@@ -44,3 +44,15 @@
 	margin-top: 0;
 	text-align: center;
 }
+
+.sequence-modal .sequence-title input {
+	width: 100%;
+}
+
+.sequence-modal .sequence-tags tags-input {
+	width: 100%;
+}
+
+.create-sequence-form button {
+	margin-top: 20px;
+}

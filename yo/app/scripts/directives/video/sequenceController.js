@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV', '$sce', 
-	function($log, Api, $modal, $rootScope, ENV, $sce) {
+app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV', '$sce', '$timeout', 
+	function($log, Api, $modal, $rootScope, ENV, $sce, $timeout) {
 
 		return {
 			restrict: 'E',
@@ -16,8 +16,10 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 			controller: function($scope) {
 
 				$scope.params = {};
+				$scope.form = {}
 				
 				$rootScope.$on('sequence.add.init', function(event, params) {
+					$scope.loadTags();
 					$scope.params = {
 						loopDuration: 1,
 						speed: 0.5,
@@ -35,7 +37,13 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					animation: 'am-fade-and-scale', 
 					placement: 'center', 
 					scope: $scope,
-					keyboard: true
+					keyboard: true,
+					// cf https://gist.github.com/rnkoaa/8333940
+					resolve: {
+	                    createSequenceForm: function () {
+	                        return $scope.createSequenceForm;
+	                    }
+	                }
 				});
 
 				$scope.onPlayerReady = function(API) {
@@ -43,6 +51,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 				};
 
 				$scope.onPlayerReady2 = function(API) {
+					$log.log('player2ready');
 					$scope.API2 = API;
 					$scope.sources2 = $scope.sources;//[]
 				};
@@ -73,7 +82,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 				//$scope.$watch('params.comparisonSource', function (newVal, oldVal) {
 				$scope.toggleMode = function(mode) {
 					$log.log('params.comparisonSource', mode);
-					$scope.currentMode = mode;
+					$scope.params.comparisonSource = mode;
 
 					$scope.params.otherSource = undefined;
 
@@ -122,24 +131,27 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						var newSequence = {
 							videoKey: $scope.currentVideoKey,
 							start: params.sequenceStart2,
-							title: 'test sequence ' + moment().valueOf(),
+							title: $scope.params.newSequenceTitle,
 							sport: $scope.review.sport.key,
-							videoPosition: params.video2position
+							videoPosition: params.video2position,
+							tags: $scope.params.newSequenceTags
 						}
 						$log.log('Creating sequence', newSequence);
+						$log.log('scope', $scope);
 
 						Api.Sequences.save(newSequence, function(data) {
 							// Insert the sequenceId, not the video ID
 							//params.otherSource = 's=' + data.id;
 							$rootScope.$broadcast('sequence.add.end', params);
-						})
+							$scope.sequenceModal.$promise.then($scope.sequenceModal.hide);
+						});
 					}
 					// Otherwise insert the side-by-side without creating any sequence
 					else {
 						$rootScope.$broadcast('sequence.add.end', params);
+						$scope.sequenceModal.$promise.then($scope.sequenceModal.hide);
 					}
 
-					$scope.sequenceModal.$promise.then($scope.sequenceModal.hide);
 				}
 
 				$scope.testSequence = function() {
@@ -176,15 +188,18 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 
 				$scope.selectVideo = function(video) {
 					if (video.sequence) {
+						$scope.choosingOtherVideo = false;
+
+						$log.log('loaded sequence', video);
 						$scope.params.otherSource = video.id;
 						var fileLocation = ENV.videoStorageUrl + video.videoKey;
 						$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: 'video/mp4'}];
 
 						$scope.params.video2position = video.videoPosition;
 						$scope.sequenceStart2 = parseFloat(video.start) / 1000;
-						$scope.API2.seekTime($scope.sequenceStart2);
-
-						$scope.choosingOtherVideo = false;
+						$timeout(function() {
+							$scope.API2.seekTime($scope.sequenceStart2);
+						}, 0)						
 					}
 					else {
 						// Get the video id
@@ -209,6 +224,37 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					var currentTime1 = $scope.API2.currentTime;
 					var time1 = Math.min(Math.max(currentTime1 + amountInMilliseconds, 0), $scope.API2.totalTime);
 					$scope.API2.seekTime(time1 / 1000);
+				}
+				
+				$scope.loadTags = function() {
+					Api.Tags.query({sport: $scope.review.sport.key}, 
+						function(data) {
+							$scope.allowedTags = data;
+							$log.log('allowedTags set to', $scope.allowedTags);
+						}
+					);
+				}
+
+				$scope.autocompleteTag = function($query) {
+					var validTags = $scope.allowedTags.filter(function (el) {
+						return ~el.text.toLowerCase().indexOf($query);
+					});
+					return validTags.sort(function(a, b) {
+						var tagA = a.text.toLowerCase();
+						var tagB = b.text.toLowerCase();
+						if (~tagA.indexOf(':')) {
+							if (~tagB.indexOf(':')) {
+								return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
+							}
+							return 1;
+						}
+						else {
+							if (~tagB.indexOf(':')) {
+								return -1;
+							}
+							return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
+						}
+					});;
 				}
 			}
 		};

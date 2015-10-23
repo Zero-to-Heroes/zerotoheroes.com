@@ -147,7 +147,7 @@ public class SlackNotifier {
 
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("good");
-				attach.setText("A new sequence has been created: " + sequence.getName() + " for "
+				attach.setText("A new sequence has been created: " + sequence.getTitle() + " for "
 						+ sequence.getSport().getValue());
 				attach.setFallback("placeholder fallback");
 

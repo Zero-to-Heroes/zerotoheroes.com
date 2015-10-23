@@ -22,8 +22,9 @@
 				</label>
 
 				<videogular vg-player-ready="onPlayerReady($API)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
-					<vg-media vg-src="sources" ng-class="params.firstPlayerClass">
-					</vg-media>
+					<div class="first-player-container">
+						<vg-media vg-src="sources" class="first-player" ng-class="params.firstPlayerClass"></vg-media>
+					</div>
 
 					<vg-controls>
 						<vg-play-pause-button></vg-play-pause-button>
@@ -38,66 +39,97 @@
 						</vg-volume>
 					</vg-controls>
 
-					<div class="second-player" ng-class="params.secondPlayerClass">
-						<videogular vg-player-ready="onPlayerReady2($API)" class="videogular" ng-hide="choosingOtherVideo">
-							<vg-media vg-src="sources2">
-							</vg-media>
+					<div class="second-player-container">
+						<div class="second-player">
+							<videogular vg-player-ready="onPlayerReady2($API)" class="videogular" ng-hide="choosingOtherVideo">
+								<vg-media vg-src="sources2" ng-class="params.secondPlayerClass">
+								</vg-media>
 
-							<vg-controls>
-								<vg-play-pause-button></vg-play-pause-button>
-								<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
-								<vg-scrub-bar video-fine-time-control="moveTime2(amountInMilliseconds)">
-									<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-								</vg-scrub-bar>
-								<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
-								<vg-volume>
-									<vg-mute-button></vg-mute-button>
-									<vg-volume-bar></vg-volume-bar>
-								</vg-volume>
-							</vg-controls>
-						</videogular>
+								<vg-controls>
+									<vg-play-pause-button></vg-play-pause-button>
+									<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
+									<vg-scrub-bar video-fine-time-control="moveTime2(amountInMilliseconds)">
+										<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+									</vg-scrub-bar>
+									<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
+									<vg-volume>
+										<vg-mute-button></vg-mute-button>
+										<vg-volume-bar></vg-volume-bar>
+									</vg-volume>
+								</vg-controls>
+							</videogular>
 
-						<div class="other-video-choice" ng-show="choosingOtherVideo">
-							<h3 class="choice-title">Choose an existing video</h3>
+							<div class="other-video-choice" ng-show="choosingOtherVideo">
+								<h3 class="choice-title">Choose an existing video</h3>
 
-							<table class="table video-listing">
-								<tbody>
-									<tr ng-repeat="video in videos">
-										<td class="vert-align info-column">
-											<div class="row review-title">
-												<div class="col-sm-12">
-													<a href="{{buildUrl(video)}}"><h3>{{video.title}}</h3></a>
+								<table class="table video-listing">
+									<tbody>
+										<tr ng-repeat="video in videos">
+											<td class="vert-align info-column">
+												<div class="row review-title">
+													<div class="col-sm-12">
+														<a href="{{buildUrl(video)}}"><h3>{{video.title}}</h3></a>
+													</div>
 												</div>
-											</div>
-											<div class="row">
-												<div class="col-sm-12">
-													<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false"></tags-input>
+												<div class="row">
+													<div class="col-sm-12">
+														<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false"></tags-input>
+													</div>
 												</div>
-											</div>
-										</td>
-										<td class="vert-align">
-											<button class="btn btn-default" ng-click="selectVideo(video)">Select</button>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+											</td>
+											<td class="vert-align">
+												<button class="btn btn-default" ng-click="selectVideo(video)">Select</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</videogular>
 
-				<form class="form-inline sequence-form" name="sequenceForm">
+				<div class="row position-select">
+					<div class="col-md-6 text-center">
+						<span>Use: </span>
+						<label class="radio-inline">
+							<input type="radio" name="video1position" id="video1position1" value="l" ng-model="params.video1position">
+							left side
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="video1position" id="video1position2" value="c" ng-model="params.video1position">
+							center
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="video1position" id="video1position3" value="r" ng-model="params.video1position">
+							right side
+						</label>
+					</div>
+					<div class="col-md-6 text-center">
+						<span>Use: </span>
+						<label class="radio-inline">
+							<input type="radio" name="video2position" id="video2position1" value="l" ng-model="params.video2position">
+							left side
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="video2position" id="video2position2" value="c" ng-model="params.video2position">
+							center
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="video2position" id="video2position3" value="r" ng-model="params.video2position">
+							right side
+						</label>
+					</div>
+				</div>
+
+				<form class="form-inline sequence-form text-center" name="sequenceForm">
 					<div class="form-group speed-factor">
 						<label for="speedFactor">Playback speed</label>
-						<input type="text" class="form-control" id="speedFactor" ng-model="params.speed" placeholder="0.5">
+						<input type="text" class="form-control text-right" id="speedFactor" ng-model="params.speed" placeholder="0.5">
 					</div>
 					<div class="form-group loop-duration">
-						<label for="loopDuration">Loop duration (s)</label>
-						<input type="text" class="form-control" id="loopDuration" ng-model="params.loopDuration" placeholder="1">
-					</div>
-					<div class="checkbox use-right-side">
-						<label>
-							Show right side <input type="checkbox" ng-model="params.useRight">
-						</label>
+						<label for="loopDuration">Loop duration</label>
+						<input type="text" class="form-control text-right" id="loopDuration" ng-model="params.loopDuration" placeholder="1">
+						s
 					</div>
 					<button type="button" class="btn btn-default test-button" ng-click="testSequence()" ng-hide="testing">Test sequence</button>
 					<button type="button" class="btn btn-default test-button" ng-click="stopSequence()" ng-show="testing">Stop test</button>

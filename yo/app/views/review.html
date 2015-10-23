@@ -2,8 +2,9 @@
 
 <div class="videogular-container keep-on-top multi-player" ng-show="review.key">
 	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
-		<vg-media vg-src="sources" ng-class="playerControls.firstPlayerClass">
-		</vg-media>
+		<div class="first-player-container">
+			<vg-media vg-src="sources" class="first-player" ng-class="playerControls.firstPlayerClass"></vg-media>
+		</div>
 
 		<vg-controls ng-class="{'controls-container-fullscreen': API.isFullScreen}">
 			<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
@@ -23,11 +24,12 @@
 			<vg-fullscreen-button></vg-fullscreen-button>
 		</vg-controls>
 
-		<div class="second-player" ng-class="playerControls.secondPlayerClass" ng-show="playerControls.mode == 2">
-			<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
-				<vg-media vg-src="sources2">
-				</vg-media>
-			</videogular>
+		<div class="second-player-container">
+			<div class="second-player">
+				<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular" ng-show="playerControls.mode == 2">
+					<vg-media vg-src="sources2" ng-class="playerControls.secondPlayerClass"></vg-media>
+				</videogular>
+			</div>
 		</div>
 		
 		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!canvasState.drawingCanvas"></vg-overlay-play>

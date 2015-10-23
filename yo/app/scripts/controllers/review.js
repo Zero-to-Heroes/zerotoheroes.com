@@ -458,8 +458,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// (m)m:(s)s:(SSS) format
 		// then an optional + sign
 		// if present, needs at least either p, s or l
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?/gm;
-		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?</gm;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(l|c|r)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?/gm;
+		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(l|c|r)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?</gm;
 
 		$scope.parseText = function(comment) {
 			if (!comment) return '';
@@ -483,7 +483,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		var slowRegex = /\+s(\d?\.?\d?\d?)?/;
 		var playRegex = /\+p/;
 		var loopRegex = /L(\d?\.?\d?\d?)?/;
-		var externalRegex = /\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?/;
+		var externalRegex = /\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?/;
 		var externalIdRegex = /\([a-z0-9]+\)/;
 		var canvasRegex = /\[.+?\]/;
 		$scope.prettifyLink = function(timestamp) {
@@ -534,7 +534,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}
 
 			// Remove any residual '+' sign
-			prettyLink = prettyLink.replace(/\+/, '');
+			//prettyLink = prettyLink.replace(/\+/, '');
 
 			return {link: prettyLink, tooltip: tooltip};
 		}
@@ -554,8 +554,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// The timestamp
 			var timestampInfo = split[0].split('|');
 
+			var videoOffset = timestampInfo[0].slice(-1);
+			$scope.playerControls.firstPlayerClass = 'show-left';
+			$scope.playerControls.secondPlayerClass = 'show-left';
+			
+			if (videoOffset == 'c') {
+				$scope.playerControls.firstPlayerClass = 'show-center';
+			} 
+			else if (videoOffset == 'r') {
+				$scope.playerControls.firstPlayerClass = 'show-right';
+			}
+
+			var timestampString = timestampInfo[0].match(timestampOnlyRegex)[0];
 			// First the timestamp (the first part is always the current video)
-			var convertedTime = $scope.extractTime(timestampInfo[0]);
+			var convertedTime = $scope.extractTime(timestampString);
 
 			// Then check if we're trying to play videos in dual mode
 			var otherVideo = timestampInfo[1];
@@ -567,8 +579,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				var key = $scope.review.key;
 				var dataType = $scope.review.fileType;
 				// A reviewID has been specified
-				if (otherVideo.indexOf('(') > -1) {
-					var externalReviewId = otherVideo.substring(otherVideo.indexOf('(') + 1, otherVideo.indexOf(')'));
+				var externalId = otherVideo.match(externalIdRegex);
+				if (externalId) {
+					var externalReviewId = externalId[0].substring(1, externalId[0].length - 1);
 					//$log.log('external review id', externalReviewId);
 					//$log.log('review map is ', $scope.review.reviewVideoMap);
 					key = $scope.review.reviewVideoMap[externalReviewId];
@@ -580,7 +593,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 				// Now move the videos side-byside
 				var sideInfo = otherVideo.indexOf('(') > -1 ? otherVideo.split('(')[0] : otherVideo;
-				if (otherVideo.indexOf('r') > -1) {
+
+				var video2offset = otherVideo.slice(-1);
+				if (video2offset == 'c') {
+					$scope.playerControls.secondPlayerClass = 'show-center';
+				} 
+				else if (video2offset == 'r') {
+					$scope.playerControls.secondPlayerClass = 'show-right';
+				}
+
+				/*if (otherVideo.indexOf('r') > -1) {
 					$scope.playerControls.firstPlayerClass = 'right-shift';
 					$scope.playerControls.secondPlayerClass = 'center-shift';
 					sideInfo = otherVideo.split('r')[0];
@@ -588,17 +610,18 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				else {
 					$scope.playerControls.firstPlayerClass = '';
 					$scope.playerControls.secondPlayerClass = '';
-				}
+				}*/
 
-				// Compute the time for the second video
-				var convertedTime2 = $scope.extractTime(sideInfo);
+				var timestampString2 = otherVideo.match(timestampOnlyRegex)[0];
+				// First the timestamp (the first part is always the current video)
+				var convertedTime2 = $scope.extractTime(timestampString2);
 			}
 			else {
 				//$scope.player = true;
 				$scope.playerControls.mode = 1;
 				// Redondant with watching the "playerControls.mode"?
-				$scope.playerControls.firstPlayerClass = '';
-				$scope.playerControls.secondPlayerClass = '';
+				//$scope.playerControls.firstPlayerClass = '';
+				//$scope.playerControls.secondPlayerClass = '';
 				$scope.API2.stop();
 			}
 

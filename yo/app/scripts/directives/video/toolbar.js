@@ -22,7 +22,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
 				var slowRegex = /\d?\d:\d?\d(:\d\d\d)?\+s(\d?\.?\d?\d?)?/;
 				var loopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L(\d?\.?\d?\d?)?/;
-				var optionalLoopRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+s)?(\d?\.?\d?\d?)?L?(\d?\.?\d?\d?)?/;
+				var optionalLoopRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+s)?(\d?\.?\d?\d?)?L?(\d?\.?\d?\d?)?/;
 
 				$scope.insertTimestamp = function(inputTimestamp, regex) {
 					regex = typeof regex !== 'undefined' ? regex : timestampOnlyRegex;
@@ -76,14 +76,14 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					$rootScope.$broadcast('sequence.add.init');
 
 					var unregister = $rootScope.$on('sequence.add.end', function (event, params) {
-						$log.log('Inserting sequence with params', params);
+						//$log.log('Inserting sequence with params', params);
 
 						var timestamp1 = moment.duration(params.sequenceStart1).format('mm:ss:SSS', { trim: false });
 						$scope.insertLoop(timestamp1, params.speed, params.loop);
-						$log.log('loop inserted');
+						//$log.log('loop inserted');
 
 						var insertionIndex = $scope.command(timestampOnlyRegex);
-						$log.log('insertionIndex', insertionIndex);
+						//$log.log('insertionIndex', insertionIndex);
 						if (insertionIndex > -1) {
 							var domElement = $scope.insertionElement[0];
 							domElement.selectionStart = insertionIndex;
@@ -92,13 +92,15 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 						  	//return;
 						}
 
+						if (params.video1position) $scope.insert(params.video1position);
+
 						var timestamp2 = moment.duration(params.sequenceStart2).format('mm:ss:SSS', { trim: false });
-						$log.log('inserting', '|' + timestamp2);
+						//$log.log('inserting', '|' + timestamp2);
 						$scope.insert('|' + timestamp2);
 
 						if (params.comparisonSource) $scope.insert('(' + params.comparisonSource + ')');
 
-						if (params.useRight == true) $scope.insert('r');
+						if (params.video2position) $scope.insert(params.video2position);
 
 						// Do stuff
 						unregister();
@@ -157,7 +159,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					  	domElement.focus();
 					}
 
-					$log.log('after insert, selectionStart, selectionEnd', domElement.selectionStart, domElement.selectionEnd);
+					//$log.log('after insert, selectionStart, selectionEnd', domElement.selectionStart, domElement.selectionEnd);
 				}
 
 				$scope.readCanvasId = function() {
@@ -207,17 +209,17 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					  	// find a " " before the current position
 					  	var commandStartIndex = Math.max(0, domElement.value.substring(0, startPos).lastIndexOf(' '));
 					  	startOffset = commandStartIndex;
-					  	$log.log('command start index is', commandStartIndex);
+					  	//$log.log('command start index is', commandStartIndex);
 
 					  	// find a " " after the position
 					  	var tempSubString = domElement.value.substring(commandStartIndex + 1, domElement.value.length);
-					  	$log.log('tempSubString', tempSubString);
+					  	//$log.log('tempSubString', tempSubString);
 					  	var commandEndIndex = tempSubString.indexOf(' ') - 1;
 					  	if (commandEndIndex < 0 || commandEndIndex == tempSubString.length - 1) commandEndIndex = tempSubString.length;
-					  	$log.log('commandEndIndex', commandEndIndex);
+					  	//$log.log('commandEndIndex', commandEndIndex);
 
 					  	existingCommand = tempSubString.substring(0, commandEndIndex);
-					  	$log.log('existing command', existingCommand, startOffset);
+					  	//$log.log('existing command', existingCommand, startOffset);
 					}
 					return [existingCommand, startOffset];
 				}
@@ -227,7 +229,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					var existingCommand = commandReturn[0];
 					var startOffset = commandReturn[1];
 					var match = existingCommand ? existingCommand.match(regex) : false;
-					$log.log('matching?', existingCommand.match(regex));
+					//$log.log('matching?', existingCommand.match(regex));
 					if (match) {
 						var insertionIndex = startOffset + match.index + match[0].length + 1;
 						return insertionIndex ;

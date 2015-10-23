@@ -21,7 +21,8 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					$scope.params = {
 						loopDuration: 1,
 						speed: 0.5,
-						useRight: false,
+						video1position: 'l',
+						video2position: 'l',
 						comparisonSource: 'sameVideo',
 						otherSource: undefined
 					}
@@ -46,15 +47,26 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					$scope.sources2 = $scope.sources;//[]
 				};
 
-				$scope.$watch('params.useRight', function (newVal, oldVal) {
-					$log.log('params.useRight', oldVal, newVal);
-					if (newVal == true) {
-						$scope.params.firstPlayerClass = 'right-shift';
-						$scope.params.secondPlayerClass = 'center-shift';
-					}
-					else {
+				$scope.$watch('params.video1position', function (newVal, oldVal) {
+					if (newVal == 'l') {
 						$scope.params.firstPlayerClass = '';
+					}
+					else if (newVal == 'c') {
+						$scope.params.firstPlayerClass = 'show-center';
+					}
+					else if (newVal == 'r') {
+						$scope.params.firstPlayerClass = 'show-right';
+					}
+				});
+				$scope.$watch('params.video2position', function (newVal, oldVal) {
+					if (newVal == 'l') {
 						$scope.params.secondPlayerClass = '';
+					}
+					else if (newVal == 'c') {
+						$scope.params.secondPlayerClass = 'show-center';
+					}
+					else if (newVal == 'r') {
+						$scope.params.secondPlayerClass = 'show-right';
 					}
 				});
 
@@ -89,7 +101,8 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					var params = {
 						sequenceStart1: $scope.API.currentTime,
 						sequenceStart2: $scope.API2.currentTime,
-						useRight: $scope.params.useRight,
+						video1position: $scope.params.video1position,
+						video2position: $scope.params.video2position,
 						speed: parseFloat($scope.params.speed),
 						loopDuration: parseFloat($scope.params.loopDuration),
 						comparisonSource: $scope.params.otherSource

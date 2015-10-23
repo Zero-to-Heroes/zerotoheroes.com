@@ -82,7 +82,7 @@
 		  		<div class="row">
 					<div class="col-sm-12">
 					  	<div class="form-group">
-							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
+							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true">
 					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.text" ng-readonly="uploadInProgress" auto-grow toolbar-target ng-required="true"></textarea>
 					    	</toolbar>
 					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.text" ng-readonly="uploadInProgress" auto-grow ng-hide="useVideo"></textarea>

@@ -11,7 +11,8 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				API: '=playerApi',
 				insertModel: '=',
 				drawingCanvas: '=',
-				canvasId: '='
+				canvasId: '=',
+				hideComparison: '='
 			},
 			link: function ($scope, element, attrs) {
 				$scope.element = element;

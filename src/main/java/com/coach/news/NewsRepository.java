@@ -28,6 +28,14 @@ public class NewsRepository {
 
 		// Features
 		news.add(new News(
+				new DateTime("2015-10-23").toDate(),
+				"Extended the comparison feature to include external videos (no search is possible for now though)",
+				News.Type.Feature));
+		news.add(new News(
+				new DateTime("2015-10-22").toDate(),
+				"You can now easily add a side-by-side comparison of another sequence from the same video (we're working on extending that feature right now)",
+				News.Type.Feature));
+		news.add(new News(
 				new DateTime("2015-10-22").toDate(),
 				"You can now easily add a side-by-side comparison of another sequence from the same video (we're working on extending that feature right now)",
 				News.Type.Feature));

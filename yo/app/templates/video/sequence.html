@@ -124,14 +124,14 @@
 				<form class="form-inline sequence-form text-center" name="sequenceForm">
 					<div class="form-group speed-factor" show-errors="{ showSuccess: true }">
 						<label for="speedFactor">Playback speed</label>
-						<input name="sequenceForm.speed" type="text" class="form-control text-right" id="speedFactor" ng-model="params.speed" placeholder="0.5" ng-required="true">
+						<input name="speed" type="text" class="form-control text-right" id="speedFactor" ng-model="params.speed" placeholder="0.5" ng-required="true">
 					</div>
 					<div class="form-group loop-duration" show-errors="{ showSuccess: true }">
 						<label for="loopDuration">Loop duration</label>
-						<input name="sequenceForm.loopDuration" type="text" class="form-control text-right" id="loopDuration" ng-model="params.loopDuration" placeholder="1" ng-required="true">
+						<input name="loopDuration" type="text" class="form-control text-right" id="loopDuration" ng-model="params.loopDuration" placeholder="1" ng-required="true">
 						s
 					</div>
-					<button type="button" class="btn btn-default test-button" ng-click="testSequence()" ng-hide="testing">Test sequence</button>
+					<button type="button" class="btn btn-default test-button" ng-click="testSequence()" ng-hide="testing">Test this sequence</button>
 					<button type="button" class="btn btn-default test-button" ng-click="stopSequence()" ng-show="testing">Stop test</button>
 				</form>
 			</div>

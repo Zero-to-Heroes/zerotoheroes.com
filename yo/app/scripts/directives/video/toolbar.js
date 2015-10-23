@@ -80,7 +80,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 						$log.log('Inserting sequence with params', params);
 
 						var timestamp1 = moment.duration(params.sequenceStart1).format('mm:ss:SSS', { trim: false });
-						$scope.insertLoop(timestamp1, params.speed, params.loop);
+						$scope.insertLoop(timestamp1, params.speed, params.loopDuration);
 						//$log.log('loop inserted');
 
 						var insertionIndex = $scope.command(timestampOnlyRegex);

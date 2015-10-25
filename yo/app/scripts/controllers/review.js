@@ -86,7 +86,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType});
 				});*/
 				$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
-			}, 300);
+			}, 0);
 
 			$scope.API.mediaElement.on('canplay', function() {
 				//$log.log('can play player1');
@@ -252,6 +252,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.review.comments = data.comments;
 					$scope.review.reviewVideoMap = data.reviewVideoMap || {};
 		  			$scope.review.canvas = data.canvas;
+		  			$scope.review.subscribers = data.subscribers;
 		  			if ($scope.review.canvas) {
 						angular.forEach($scope.review.canvas, function(value, key) {
 							//$log.log('review canvas include', key);
@@ -276,6 +277,23 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$log.error(error);
 				}
 			);
+		}
+
+		$scope.unsubscribe = function() {
+			Api.Subscriptions.delete({itemId: $scope.review.id}, function(data) {
+				$scope.review.subscribers = data.subscribers;
+			});
+		}
+
+		$scope.subscribe = function() {
+			Api.Subscriptions.save({itemId: $scope.review.id}, function(data) {
+				$scope.review.subscribers = data.subscribers;
+			});
+		}
+
+		$scope.subscribed = function() {
+			//$log.log('usbscribed', $scope.review.subscribers, User.getUser().id);
+			return $scope.review && $scope.review.subscribers && User.getUser() && $scope.review.subscribers.indexOf(User.getUser().id) > -1;
 		}
 
 		//===============
@@ -362,6 +380,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Video information
 		//===============
+		$scope.formatDate = function(date) {
+			return moment(date).fromNow();
+		}
+
 		$scope.startEditingInformation = function() {
 			$scope.review.oldTitle = $scope.review.title;
 			$scope.review.oldText = $scope.review.text;

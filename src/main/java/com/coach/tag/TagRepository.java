@@ -21,36 +21,38 @@ public class TagRepository {
 
 		// Tags for squash
 		List<Tag> squash = new ArrayList<>();
-		squash.add(new Tag("match"));
-		squash.add(new Tag("drill"));
-		squash.add(new Tag("training"));
-		squash.add(new Tag("forehand"));
-		squash.add(new Tag("backhand"));
-		squash.add(new Tag("drive"));
-		squash.add(new Tag("crosscourt"));
-		squash.add(new Tag("volley"));
-		squash.add(new Tag("dropshot"));
-		squash.add(new Tag("kill"));
-		squash.add(new Tag("boast"));
-		squash.add(new Tag("lob"));
-		squash.add(new Tag("movement"));
+		squash.add(new Tag("Match"));
+		squash.add(new Tag("Drill"));
+		squash.add(new Tag("Training"));
+		squash.add(new Tag("Forehand"));
+		squash.add(new Tag("Backhand"));
+		squash.add(new Tag("Drive"));
+		squash.add(new Tag("Crosscourt"));
+		squash.add(new Tag("Volley"));
+		squash.add(new Tag("Dropshot"));
+		squash.add(new Tag("Kill"));
+		squash.add(new Tag("Boast"));
+		squash.add(new Tag("Lob"));
+		squash.add(new Tag("Movement"));
+		squash.add(new Tag("Pro"));
 		tags.put(Squash, squash);
 
 		// Tags for badminton
 		List<Tag> badminton = new ArrayList<>();
-		badminton.add(new Tag("match"));
-		badminton.add(new Tag("drill"));
-		badminton.add(new Tag("single"));
-		badminton.add(new Tag("double"));
-		badminton.add(new Tag("mixed-double"));
-		badminton.add(new Tag("forehand"));
-		badminton.add(new Tag("backhand"));
-		badminton.add(new Tag("smash"));
-		badminton.add(new Tag("drop"));
-		badminton.add(new Tag("net"));
-		badminton.add(new Tag("clear"));
-		badminton.add(new Tag("movement"));
-		badminton.add(new Tag("training"));
+		badminton.add(new Tag("Match"));
+		badminton.add(new Tag("Drill"));
+		badminton.add(new Tag("Single"));
+		badminton.add(new Tag("Double"));
+		badminton.add(new Tag("Mixed double"));
+		badminton.add(new Tag("Forehand"));
+		badminton.add(new Tag("Backhand"));
+		badminton.add(new Tag("Smash"));
+		badminton.add(new Tag("Drop"));
+		badminton.add(new Tag("Net"));
+		badminton.add(new Tag("Clear"));
+		badminton.add(new Tag("Movement"));
+		badminton.add(new Tag("Training"));
+		badminton.add(new Tag("Pro"));
 		tags.put(Badminton, badminton);
 
 		// Tags for HearthStone
@@ -82,6 +84,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Beast"));
 		hearthstone.add(new Tag("Totem"));
 		hearthstone.add(new Tag("Control"));
+		hearthstone.add(new Tag("Pro"));
 		tags.put(HearthStone, hearthstone);
 
 		// Tags for Heroes of the Storm
@@ -147,6 +150,7 @@ public class TagRepository {
 		heroes.add(new Tag("Hero: Gazlowe"));
 		heroes.add(new Tag("Hero: Abathur"));
 		heroes.add(new Tag("Hero: Sgt. Hammer"));
+		heroes.add(new Tag("Pro"));
 		tags.put(HeroesOfTheStorm, heroes);
 
 		// Tags for Heroes of the Storm
@@ -303,6 +307,7 @@ public class TagRepository {
 		league.add(new Tag("Champion: Ziggs"));
 		league.add(new Tag("Champion: Zilean"));
 		league.add(new Tag("Champion: Zyra"));
+		league.add(new Tag("Pro"));
 		tags.put(LeagueOfLegends, league);
 		return tags;
 	}

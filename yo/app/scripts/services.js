@@ -21,7 +21,8 @@ services.factory('Api', ['$resource', 'ENV',
 			Features: $resource(ENV.apiEndpoint + url + 'news/features'),
 			BugFixes: $resource(ENV.apiEndpoint + url + 'news/bugfixes'),
 			Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport'),
-			Sequences: $resource(ENV.apiEndpoint + url + 'sequences/:sport/:sequenceId')
+			Sequences: $resource(ENV.apiEndpoint + url + 'sequences/:sport/:sequenceId'),
+			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
 		};
 	}
 ]);

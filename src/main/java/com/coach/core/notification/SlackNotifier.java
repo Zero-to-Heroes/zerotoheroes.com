@@ -17,6 +17,7 @@ import com.coach.core.security.User;
 import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.sequence.Sequence;
+import com.coach.subscription.HasSubscribers;
 
 @Slf4j
 @Component
@@ -154,6 +155,30 @@ public class SlackNotifier {
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
 				message.setText("A new sequence has been created");
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
+	public void notifyNewSubscriber(final HasSubscribers item, final User user) {
+		if (!"prod".equalsIgnoreCase(environment)) return;
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("good");
+				attach.setText(user.getUsername() + " has subscribed to " + item.getTitle());
+				attach.setFallback("placeholder fallback");
+
+				SlackMessage message = new SlackMessage();
+				message.addAttachments(attach);
+				message.setText(user.getUsername() + " has subscribed to " + item.getTitle());
 
 				api.call(message);
 				return null;

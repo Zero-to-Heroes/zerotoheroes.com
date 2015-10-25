@@ -37,6 +37,7 @@ import com.coach.reputation.ReputationAction;
 import com.coach.reputation.ReputationUpdater;
 import com.coach.review.Review.Sport;
 import com.coach.review.video.transcoding.Transcoder;
+import com.coach.subscription.SubscriptionManager;
 import com.coach.user.UserRepository;
 
 @RepositoryRestController
@@ -56,9 +57,6 @@ public class ReviewApiHandler {
 	MongoTemplate mongoTemplate;
 
 	@Autowired
-	EmailNotifier emailNotifier;
-
-	@Autowired
 	CommentParser commentParser;
 
 	@Autowired
@@ -69,6 +67,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	SlackNotifier slackNotifier;
+
+	@Autowired
+	SubscriptionManager subscriptionManager;
 
 	public ReviewApiHandler() {
 		log.debug("Initializing Review Api Handler");
@@ -182,6 +183,7 @@ public class ReviewApiHandler {
 		review.setCreationDate(new Date());
 		review.setLastModifiedBy(review.getAuthor());
 
+		subscriptionManager.subscribe(review, review.getAuthorId());
 		updateReview(review);
 		log.debug("Saved review with ID: " + review.getId());
 
@@ -192,6 +194,7 @@ public class ReviewApiHandler {
 		}
 
 		log.debug("Transcoding started, returning with created review: " + review);
+		subscriptionManager.notifyNewReview(review.getSport());
 		slackNotifier.notifyNewReview(review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
@@ -233,6 +236,8 @@ public class ReviewApiHandler {
 		}
 
 		comment.setCreationDate(new Date());
+		subscriptionManager.notifyNewComment(comment, review);
+
 		review.addComment(comment);
 		review.sortComments();
 		review.setLastModifiedDate(new Date());
@@ -242,6 +247,7 @@ public class ReviewApiHandler {
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
+		subscriptionManager.subscribe(review, comment.getAuthorId());
 		updateReview(review);
 
 		User user = userRepo.findByUsername(currentUser);
@@ -249,7 +255,6 @@ public class ReviewApiHandler {
 		review.prepareForDisplay(userId);
 
 		// Notifying the user who submitted the review (if he is registered)
-		emailNotifier.notifyNewComment(comment, review);
 		slackNotifier.notifyNewComment(review, comment);
 
 		log.debug("Created comment " + comment + " with id " + comment.getId());
@@ -384,6 +389,8 @@ public class ReviewApiHandler {
 		log.debug("modified text is " + reply.getText());
 
 		reply.setCreationDate(new Date());
+		subscriptionManager.subscribe(review, reply.getAuthorId());
+
 		review.addComment(comment, reply);
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(reply.getAuthor());
@@ -397,7 +404,7 @@ public class ReviewApiHandler {
 		review.prepareForDisplay(userId);
 
 		// Notifying the user who submitted the review (if he is registered)
-		emailNotifier.notifyNewComment(reply, review);
+		subscriptionManager.notifyNewComment(reply, review);
 		slackNotifier.notifyNewComment(review, reply);
 
 		log.debug("Created reply " + reply + " with id " + reply.getId());

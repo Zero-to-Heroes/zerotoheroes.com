@@ -26,24 +26,23 @@ public class EmailNotifier {
 		this.environment = environment;
 	}
 
-	public void notifyNewComment(Comment comment, Review review) {
-		if ("prod".equalsIgnoreCase(environment) && review.getAuthorId() != null) {
-			User author = userRepo.findById(review.getAuthorId());
-			String recipient = author.getEmail();
+	public void notifyNewComment(User subscriber, Comment comment, Review review) {
+		if (!"prod".equalsIgnoreCase(environment)) return;
 
-			EmailMessage message = EmailMessage
-					.builder()
-					.from("seb@zerotoheroes.com")
-					.to(recipient)
-					.subject("New comment on your review " + review.getTitle() + " at ZeroToHeroes")
-					.content(
-							"Hey there!<br/>"
-									+ comment.getAuthor()
-									+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
-									+ review.getSport().getKey() + "/" + review.getId()
-									+ "\">here</a> to see what they said.").type("text/html").build();
-			emailSender.send(message);
-		}
+		String recipient = subscriber.getEmail();
+
+		EmailMessage message = EmailMessage
+				.builder()
+				.from("seb@zerotoheroes.com")
+				.to(recipient)
+				.subject("New comment on your review " + review.getTitle() + " at ZeroToHeroes")
+				.content(
+						"Hey there!<br/>"
+								+ comment.getAuthor()
+								+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
+								+ review.getSport().getKey() + "/" + review.getId()
+								+ "\">here</a> to see what they said.").type("text/html").build();
+		emailSender.send(message);
 	}
 
 	public void notifyNewUser(User user) {

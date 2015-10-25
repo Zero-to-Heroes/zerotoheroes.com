@@ -5,8 +5,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,6 +22,7 @@ import org.springframework.data.annotation.Id;
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
 import com.coach.reputation.Reputation;
+import com.coach.subscription.HasSubscribers;
 import com.coach.tag.Tag;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -29,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @NoArgsConstructor
 @ToString(exclude = { "comments", "canvas" })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Review implements HasText, HasReputation {
+public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 	@AllArgsConstructor
@@ -70,6 +73,9 @@ public class Review implements HasText, HasReputation {
 
 	private int totalInsertedComments;
 	private int canvasId;
+
+	// Users who will be notified when something is posted on this review
+	private Set<String> subscribers = new HashSet<>();
 
 	public void addComment(Comment comment) {
 		if (comments == null) comments = new ArrayList<>();
@@ -221,4 +227,31 @@ public class Review implements HasText, HasReputation {
 	public void resetCanvas() {
 		canvas = new HashMap<>();
 	}
+
+	public Set<String> getSubscribers() {
+		if (subscribers == null) {
+			subscribers = new HashSet<>();
+			addSubscriber(authorId);
+			for (Comment comment : getComments()) {
+				subscribers.addAll(comment.getAuthorIds());
+			}
+		}
+		return subscribers;
+	}
+
+	public List<Comment> getComments() {
+		if (comments == null) comments = new ArrayList<>();
+		return comments;
+	}
+
+	@Override
+	public void addSubscriber(String subscriberId) {
+		if (!StringUtils.isNullOrEmpty(subscriberId)) getSubscribers().add(subscriberId);
+	}
+
+	@Override
+	public void removeSubscriber(String subscriberId) {
+		if (!StringUtils.isNullOrEmpty(subscriberId)) getSubscribers().remove(subscriberId);
+	}
+
 }

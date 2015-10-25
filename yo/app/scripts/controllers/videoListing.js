@@ -3,17 +3,17 @@
 angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', 
 	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route) {
 		$scope.videos = [];
-		$scope.tabs = []; 
-		$scope.tabs.activeTab = 0;
+		//$scope.tabs = []; 
+		//$scope.tabs.activeTab = 0;
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
 		$scope.pageNumber = parseInt($routeParams.pageNumber) || 1;
 
 		$log.log('Getting videos for page ', $scope.pageNumber);
 
-		$scope.$watch('tabs.activeTab', function(newValue, oldValue) {
+		/*$scope.$watch('tabs.activeTab', function(newValue, oldValue) {
 			$scope.retrieveVideos(newValue, $scope.pageNumber);
-		})
+		})*/
 
 		$log.log('using videos?', $scope.useVideo);
 
@@ -42,10 +42,15 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				};
 				$scope.range = $scope.getRange();
 			});
+
+			Api.Sports.get({sport: $scope.sport}, function(data) {
+				$scope.subscribers = data.subscribers;
+			});
 		};
+		$scope.retrieveVideos('false', $scope.pageNumber);
 
 		$rootScope.$on('user.logged.in', function() {
-			$scope.retrieveVideos($scope.tabs.activeTab, $scope.pageNumber);
+			$scope.retrieveVideos('false', $scope.pageNumber);
 		});
 
 		$scope.formatDate = function(video) {
@@ -185,6 +190,24 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 		$scope.goToNextPage = function() {
 			$route.updateParams({'pageNumber': Math.min($scope.totalPages, $scope.pageNumber + 1)});
+		}
+
+		$scope.unsubscribe = function() {
+			Api.Subscriptions.delete({itemId: $scope.sport}, function(data) {
+				$scope.subscribers = data.subscribers;
+			});
+		}
+
+		$scope.subscribe = function() {
+			Api.Subscriptions.save({itemId: $scope.sport}, function(data) {
+				$log.log('subscribed', data);
+				$scope.subscribers = data.subscribers;
+			});
+		}
+
+		$scope.subscribed = function() {
+			//$log.log('usbscribed', $scope.review.subscribers, User.getUser().id);
+			return $scope.subscribers && User.getUser() && $scope.subscribers.indexOf(User.getUser().id) > -1;
 		}
 	}
 ]);

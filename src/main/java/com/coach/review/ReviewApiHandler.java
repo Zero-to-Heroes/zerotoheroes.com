@@ -194,7 +194,7 @@ public class ReviewApiHandler {
 		}
 
 		log.debug("Transcoding started, returning with created review: " + review);
-		subscriptionManager.notifyNewReview(review.getSport());
+		subscriptionManager.notifyNewReview(review.getSport(), review);
 		slackNotifier.notifyNewReview(review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

@@ -46,11 +46,28 @@ public class EmailNotifier {
 	}
 
 	public void notifyNewUser(User user) {
-		if ("prod".equalsIgnoreCase(environment)) {
-			EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to("contact@zerotoheroes.com")
-					.subject(environment + ": A new user has just registered! " + user.getUsername())
-					.content(user.toString()).type("text/html").build();
-			emailSender.send(message);
-		}
+		if (!"prod".equalsIgnoreCase(environment)) return;
+
+		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to("contact@zerotoheroes.com")
+				.subject(environment + ": A new user has just registered! " + user.getUsername())
+				.content(user.toString()).type("text/html").build();
+		emailSender.send(message);
+	}
+
+	public void notifyNewReview(User subscriber, Review review) {
+		if (!"prod".equalsIgnoreCase(environment)) return;
+
+		String recipient = subscriber.getEmail();
+
+		EmailMessage message = EmailMessage
+				.builder()
+				.from("seb@zerotoheroes.com")
+				.to(recipient)
+				.subject("New review posted at ZeroToHeroes")
+				.content(
+						"Hey there!<br/>" + review.getAuthor() + " has just posted a new review \"" + review.getTitle()
+								+ "\". Click <a href=\"http://www.zerotoheroes.com/#/r/" + review.getSport().getKey()
+								+ "/" + review.getId() + "\">here</a> to have a look").type("text/html").build();
+		emailSender.send(message);
 	}
 }

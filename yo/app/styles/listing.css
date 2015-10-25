@@ -1,3 +1,7 @@
+.all-videos-header {
+	padding: 10px 45px 25px 45px;
+}
+
 .reviewSummary {
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
 	border-radius: 10px;
@@ -147,3 +151,4 @@
 		text-align: left;
 	}
 }
+

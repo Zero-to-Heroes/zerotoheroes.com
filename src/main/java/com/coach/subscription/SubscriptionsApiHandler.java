@@ -22,6 +22,7 @@ import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
 import com.coach.review.ReviewRepository;
+import com.coach.sport.SportManager;
 import com.coach.user.UserRepository;
 
 @RepositoryRestController
@@ -31,6 +32,9 @@ public class SubscriptionsApiHandler {
 
 	@Autowired
 	ReviewRepository reviewRepo;
+
+	@Autowired
+	SportManager sportManager;
 
 	@Autowired
 	UserRepository userRepo;
@@ -112,6 +116,9 @@ public class SubscriptionsApiHandler {
 
 	private HasSubscribers getItem(String itemId) {
 		HasSubscribers item = reviewRepo.findById(itemId);
+		if (item == null) {
+			item = sportManager.findById(itemId);
+		}
 		return item;
 	}
 }

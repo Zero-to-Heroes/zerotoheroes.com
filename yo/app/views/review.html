@@ -99,9 +99,9 @@
 			</div>
 			<h3 class="comments-headline">Comments</h3>
 			<div class="comments-links">
-				<button class="btn btn-link link-minor" ng-click="unsubscribe()" ng-show="subscribed()">Unsubscribe</button>
-				<button class="btn btn-link link-minor" ng-click="subscribe()" ng-hide="subscribed()">Subscribe</button>
-				<button type="button" class="btn btn-link link-minor" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing">Ask a Pro</button>
+				<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed()" title="Click to be notified when a new comment is posted">Unsubscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+				<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed()" title="Click to stop receiving notifications when a new comment is posted">Subscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+				<a class="link-minor link-nodeco" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="Get professional advice on your video">Ask a Pro</a>
 			</div>
 			<div class="container-fluid comment-block main-block" ng-show="!addingComment">
 				<div class="row">

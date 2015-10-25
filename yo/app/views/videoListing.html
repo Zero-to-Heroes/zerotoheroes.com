@@ -3,8 +3,8 @@
 <div class="background-white">
     <div class="all-videos-header">
         <h2 class="all-videos-headline">All videos
-            <button class="btn btn-link link-minor" ng-click="unsubscribe()" ng-show="subscribed()"><small>(unsubscribe)</small></button>
-            <button class="btn btn-link link-minor" ng-click="subscribe()" ng-hide="subscribed()"><small>(subscribe)</small></button>
+            <a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed()"><small title="Click to stop receiving notifications when a new review is posted">(unsubscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true">)</span></small></button>
+            <a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed()" title="Click to be notified when a new review is posted"><small>(subscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
         </h2>
     </div>
     <div ng-include="'/templates/videoListingTable.html'"></div>

@@ -8,3 +8,7 @@
 textarea.textarea-button {
 	min-height: 0;
 }
+
+a.link-nodeco, a.link-nodeco:focus, a.link-nodeco:hover {
+	text-decoration: none;
+}

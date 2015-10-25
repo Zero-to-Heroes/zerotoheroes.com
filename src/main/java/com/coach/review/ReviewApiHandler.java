@@ -273,33 +273,29 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
+		User user = userRepo.findByUsername(currentUser);
+
 		// Disallow anonymous edits
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
 		// Disable edits when you're not the author
-		else if (!currentUser.equals(review.getAuthor())) { return new ResponseEntity<Review>((Review) null,
-				HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(review.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Review>(
+				(Review) null, HttpStatus.UNAUTHORIZED); }
 
 		log.debug("Upading review with " + inputReview);
-		log.debug("Canvas from UI are " + inputReview.getCanvas());
 
 		review.setText(inputReview.getText());
 		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
 		log.debug("updated text is " + review.getText());
-		log.debug("updated review is " + review);
 
 		review.setSport(inputReview.getSport());
 		review.setTitle(inputReview.getTitle());
 		review.setTags(inputReview.getTags());
 		updateReview(review);
 
-		User user = userRepo.findByUsername(currentUser);
-
 		// Updating user stats
-		log.debug("Has timestamps? " + review.getText());
 		if (commentParser.hasTimestamp(review.getText())) {
-			log.debug("incrementing timestamps");
 			user.getStats().incrementTimestamps();
 			userRepo.save(user);
 		}
@@ -318,13 +314,14 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
+		User user = userRepo.findByUsername(currentUser);
 		// Disallow anonymous edits
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 			return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED);
 		}
 		// Disable edits when you're not the author
-		else if (!currentUser.equals(comment.getAuthor())) { return new ResponseEntity<Comment>((Comment) null,
-				HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(comment.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Comment>(
+				(Comment) null, HttpStatus.UNAUTHORIZED); }
 
 		consolidateCanvas(currentUser, review, newComment, newComment.getTempCanvas());
 		comment.setText(newComment.getText());
@@ -335,8 +332,6 @@ public class ReviewApiHandler {
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
 		updateReview(review);
-
-		User user = userRepo.findByUsername(currentUser);
 
 		// Updating user stats
 		if (commentParser.hasTimestamp(comment.getText())) {

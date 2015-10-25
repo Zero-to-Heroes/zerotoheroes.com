@@ -793,6 +793,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}
 		}
 
+		$scope.canEdit = function(review) {
+			//$log.log('can edit review?', User.getUser());
+			return review && (User.getName() == review.author || User.getUser().canEdit);
+		}
+
 		var entityMap = {
 			"<": "&lt;",
 			">": "&gt;"

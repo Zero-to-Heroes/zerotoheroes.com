@@ -242,6 +242,10 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					return null;
 				}
 
+				$scope.canEdit = function(comment) {
+					return (User.getName() == comment.author || User.getUser().canEdit);
+				}
+
 				var entityMap = {
 				    "<": "&lt;",
 				    ">": "&gt;"

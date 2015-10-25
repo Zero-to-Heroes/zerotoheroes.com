@@ -59,8 +59,8 @@
 							  	<div class="author-information" ng-hide="review.editing">
 								  	<span class="link-minor">Submitted {{formatDate(review.creationDate)}} by {{review.author}}</span>
 								  	<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="review.authorReputation">{{review.authorReputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
-								  	<span class="link-minor" ng-show="!review.editing && User.getName() == review.author"> - </span>
-									<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && User.getName() == review.author"> Edit</a>
+								  	<span class="link-minor" ng-show="!review.editing && canEdit(review)"> - </span>
+									<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && canEdit(review)"> Edit</a>
 								</div>
 							</div>
 						</div>

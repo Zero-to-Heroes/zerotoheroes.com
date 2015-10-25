@@ -31,43 +31,50 @@ public class EmailNotifier {
 
 		String recipient = subscriber.getEmail();
 
-		EmailMessage message = EmailMessage
-				.builder()
-				.from("seb@zerotoheroes.com")
-				.to(recipient)
-				.subject("New comment on your review " + review.getTitle() + " at ZeroToHeroes")
-				.content(
-						"Hey there!<br/>"
-								+ comment.getAuthor()
-								+ " has just added a comment on your review. Click <a href=\"http://www.zerotoheroes.com/#/r/"
-								+ review.getSport().getKey() + "/" + review.getId()
-								+ "\">here</a> to see what they said.").type("text/html").build();
+		String reviewUrl = "http://www.zerotoheroes.com/#/r/" + review.getSport().getKey() + "/" + review.getId();
+		//@formatter:off
+		String body = "Hey there!<br/>"
+				+ "<p>" + comment.getAuthor() + " has just added a comment on your review. "
+						+ "Click <a href=\"" + reviewUrl + "\">here</a> to see what they said.</p>"
+			    + "<p><small>And if you wish to stop receiving notifications on this review, just hit \"unsubsribe\" from the url above</small></p>";
+		//@formatter:on
+
+		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
+				.subject("New comment on your review " + review.getTitle() + " at ZeroToHeroes").content(body)
+				.type("text/html").build();
 		emailSender.send(message);
 	}
 
-	public void notifyNewUser(User user) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
-
-		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to("contact@zerotoheroes.com")
-				.subject(environment + ": A new user has just registered! " + user.getUsername())
-				.content(user.toString()).type("text/html").build();
-		emailSender.send(message);
-	}
+	/*
+	 * public void notifyNewUser(User user) { if
+	 * (!"prod".equalsIgnoreCase(environment)) return;
+	 *
+	 * EmailMessage message =
+	 * EmailMessage.builder().from("seb@zerotoheroes.com")
+	 * .to("contact@zerotoheroes.com") .subject(environment +
+	 * ": A new user has just registered! " + user.getUsername())
+	 * .content(user.toString()).type("text/html").build();
+	 * emailSender.send(message); }
+	 */
 
 	public void notifyNewReview(User subscriber, Review review) {
 		if (!"prod".equalsIgnoreCase(environment)) return;
 
 		String recipient = subscriber.getEmail();
 
-		EmailMessage message = EmailMessage
-				.builder()
-				.from("seb@zerotoheroes.com")
-				.to(recipient)
-				.subject("New review posted at ZeroToHeroes")
-				.content(
-						"Hey there!<br/>" + review.getAuthor() + " has just posted a new review \"" + review.getTitle()
-								+ "\". Click <a href=\"http://www.zerotoheroes.com/#/r/" + review.getSport().getKey()
-								+ "/" + review.getId() + "\">here</a> to have a look").type("text/html").build();
+		String sportUrl = "http://www.zerotoheroes.com/#/r/" + review.getSport().getKey();
+		String reviewUrl = sportUrl + "/" + review.getId();
+		//@formatter:off
+		String body = "Hey there!<br/>"
+				+ "<p>" + review.getAuthor() + " has just posted a new review \"" + review.getTitle() + "\". "
+						+ "Click <a href=\"" + reviewUrl + "\">here</a> to have a look.</p>"
+				+ "<p><small>And if you wish to stop receiving notifications on this review, just hit \"unsubsribe\" "
+						+ "on the <a href=\"" + sportUrl + "\">sport page</a></small></p>";
+		//@formatter:on
+
+		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
+				.subject("New " + review.getSport().getValue() + " review posted at ZeroToHeroes").content(body)
+				.type("text/html").build();
 		emailSender.send(message);
 	}
 }

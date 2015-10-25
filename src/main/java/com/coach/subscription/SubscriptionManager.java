@@ -35,7 +35,6 @@ public class SubscriptionManager {
 				emailNotifier.notifyNewComment(subscriber, comment, review);
 			}
 		}
-
 	}
 
 	public void notifyNewReview(Review.Sport sportInput, Review review) {

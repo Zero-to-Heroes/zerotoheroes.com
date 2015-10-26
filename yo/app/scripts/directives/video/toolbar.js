@@ -77,33 +77,37 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					$rootScope.$broadcast('sequence.add.init');
 
 					var unregister = $rootScope.$on('sequence.add.end', function (event, params) {
-						$log.log('Inserting sequence with params', params);
+						// params are null when canceling
+						if (params) {
+							$log.log('Inserting sequence with params', params);
 
-						var timestamp1 = moment.duration(params.sequenceStart1).format('mm:ss:SSS', { trim: false });
-						$scope.insertLoop(timestamp1, params.speed, params.loopDuration);
-						//$log.log('loop inserted');
+							var timestamp1 = moment.duration(params.sequenceStart1).format('mm:ss:SSS', { trim: false });
+							$scope.insertLoop(timestamp1, params.speed, params.loopDuration);
+							//$log.log('loop inserted');
 
-						var insertionIndex = $scope.command(timestampOnlyRegex);
-						//$log.log('insertionIndex', insertionIndex);
-						if (insertionIndex > -1) {
-							var domElement = $scope.insertionElement[0];
-							domElement.selectionStart = insertionIndex;
-							domElement.selectionEnd = insertionIndex;
-						  	domElement.focus();
-						  	//return;
+							var insertionIndex = $scope.command(timestampOnlyRegex);
+							//$log.log('insertionIndex', insertionIndex);
+							if (insertionIndex > -1) {
+								var domElement = $scope.insertionElement[0];
+								domElement.selectionStart = insertionIndex;
+								domElement.selectionEnd = insertionIndex;
+							  	domElement.focus();
+							  	//return;
+							}
+
+							if (params.video1position) $scope.insert(params.video1position);
+
+							var timestamp2 = moment.duration(params.sequenceStart2).format('mm:ss:SSS', { trim: false });
+							//$log.log('inserting', '|' + timestamp2);
+							$scope.insert('|' + timestamp2);
+
+							if (params.otherSource) $scope.insert('(' + params.otherSource + ')');
+
+							if (params.video2position) $scope.insert(params.video2position);
 						}
 
-						if (params.video1position) $scope.insert(params.video1position);
-
-						var timestamp2 = moment.duration(params.sequenceStart2).format('mm:ss:SSS', { trim: false });
-						//$log.log('inserting', '|' + timestamp2);
-						$scope.insert('|' + timestamp2);
-
-						if (params.otherSource) $scope.insert('(' + params.otherSource + ')');
-
-						if (params.video2position) $scope.insert(params.video2position);
-
 						// Do stuff
+						$log.log('unregistering');
 						unregister();
 					});
 				}

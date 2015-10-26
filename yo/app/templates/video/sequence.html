@@ -2,7 +2,7 @@
 	<div class="modal-dialog sequence-modal">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" ng-click="$hide()">&times;</button>
+				<button type="button" class="close" ng-click="close()">&times;</button>
 				<h4 class="modal-title">Adding a side-by-side comparison</h4>
 			</div>
 			<div class="modal-body">
@@ -149,10 +149,10 @@
 						</div>
 					</div>
 					<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-disabled="form.createSequenceForm.$invalid">{{params.comparisonSource == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
-					<button type="button" class="btn btn-default" ng-click="$hide()">Cancel</button>
+					<button type="button" class="btn btn-default" ng-click="close()">Cancel</button>
 				</form>
 				<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo">{{params.comparisonSource == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
-				<button type="button" class="btn btn-default" ng-click="$hide()"ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo">Cancel</button>
+				<button type="button" class="btn btn-default" ng-click="close()"ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo">Cancel</button>
 			</div>
 		</div>
 	</div>

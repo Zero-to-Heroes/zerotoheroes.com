@@ -15,10 +15,13 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 			},
 			controller: function($scope) {
 
+				$log.log('instantiating sequence controller');
+
 				$scope.params = {};
 				$scope.form = {}
 				
 				$rootScope.$on('sequence.add.init', function(event, params) {
+					$log.log('on sequence.add.init', event, params);
 					$scope.loadTags();
 					$scope.params = {
 						loopDuration: 1,
@@ -37,7 +40,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					animation: 'am-fade-and-scale', 
 					placement: 'center', 
 					scope: $scope,
-					keyboard: true,
+					keyboard: false,
 					// cf https://gist.github.com/rnkoaa/8333940
 					resolve: {
 	                    createSequenceForm: function () {
@@ -115,7 +118,6 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 				};
 
 				$scope.addSequence = function() {
-					$log.log('adding sequence', $scope.choosingOtherVideo)
 					var params = {
 						sequenceStart1: $scope.API.currentTime,
 						sequenceStart2: $scope.API2.currentTime,
@@ -125,6 +127,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						loopDuration: parseFloat($scope.params.loopDuration),
 						otherSource: $scope.params.otherSource
 					}
+					$log.log('adding sequence', params);
 					// Don't create a sequence with your own video
 					// And if we used a sequence, no need to create it again
 					if ($scope.params.comparisonSource == 'otherVideo') {
@@ -143,16 +146,19 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						Api.Sequences.save(newSequence, function(data) {
 							// Insert the sequenceId, not the video ID
 							//params.otherSource = 's=' + data.id;
-							$rootScope.$broadcast('sequence.add.end', params);
-							$scope.sequenceModal.$promise.then($scope.sequenceModal.hide);
+							$scope.close(params);
 						});
 					}
 					// Otherwise insert the side-by-side without creating any sequence
 					else {
-						$rootScope.$broadcast('sequence.add.end', params);
-						$scope.sequenceModal.$promise.then($scope.sequenceModal.hide);
+						$scope.close(params);
 					}
 
+				}
+
+				$scope.close = function(params) {
+					$rootScope.$broadcast('sequence.add.end', params);
+					$scope.sequenceModal.$promise.then($scope.sequenceModal.hide);
 				}
 
 				$scope.testSequence = function() {

@@ -40,6 +40,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
 			$scope.review.title = fileItem._file.name;
+
+			//$log.log('sport', $scope.sport);
+			//$log.log('review.sport', $scope.review.sport);
+			//$log.log('sportsConfig', $scope.sportsConfig);
 		};
 
 		$scope.onPlayerReady = function(API) {
@@ -61,7 +65,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		
 		$scope.updateSourceWithFile = function(fileObj) {
 			$scope.hasUnsupportedFormatError = false;
-			$log.log('new file selected', fileObj);
+			//$log.log('new file selected', fileObj);
 
 			var type = fileObj.type;
 
@@ -73,7 +77,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			var objectURL = window.URL.createObjectURL(fileObj);
 			// Hack for mkv, not supported properly by videogular
 			if (type  == 'video/x-matroska') {
-				$log.log('hacking type');
+				//$log.log('hacking type');
 				type = 'video/mp4';
 			}
 			$scope.temp = fileObj;
@@ -131,7 +135,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		}
 
 		$scope.onOverlayClick = function() {
-			$log.log('On onOverlayClick');
+			//$log.log('On onOverlayClick');
 			refreshMarkers();
 		}
 
@@ -180,7 +184,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		}
 
 		$scope.$watch('review.sport', function (newVal, oldVal) {
-			$log.log('watching sport value ', oldVal, newVal);
+			//$log.log('watching sport value ', oldVal, newVal);
 			// edit mode
 			if (oldVal != newVal) {
 				$log.log('getting the new tags for sport ', $scope.review.sport);
@@ -192,7 +196,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			Api.Tags.query({sport: $scope.review.sport}, 
 				function(data) {
 					$scope.allowedTags = data;
-					$log.log('allowedTags set to', $scope.allowedTags);
+					//$log.log('allowedTags set to', $scope.allowedTags);
 				}
 			);
 		}
@@ -212,10 +216,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 					// Validate that the name is free
 					Api.Users.get({identifier: $scope.review.author}, 
 						function(data) {
-							$log.log('User', data);
+							//$log.log('User', data);
 							// User exists
 							if (data.username) {
-								$log.log('User already exists', data);
+								//$log.log('User already exists', data);
 								$scope.uploadForm.author.$setValidity('nameTaken', false);
 							}
 							else {
@@ -240,10 +244,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.previousError = false;
 
 		$scope.upload = function() {
-			$log.log('Before prep, canvas are', $scope.review.canvas);
+			//$log.log('Before prep, canvas are', $scope.review.canvas);
 			$scope.prepareCanvasForUpload($scope.review, $scope.review);
 			$scope.review.canvas = $scope.review.tempCanvas;
-			$log.log('After prep, canvas are', $scope.review.canvas);
+			//$log.log('After prep, canvas are', $scope.review.canvas);
 
 			//$log.log('Setting S3 config');
 			$analytics.eventTrack('upload.start', {

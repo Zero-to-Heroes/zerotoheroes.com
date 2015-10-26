@@ -173,7 +173,8 @@ public class SlackNotifier {
 
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("good");
-				attach.setText(user.getUsername() + " has subscribed to " + item.getTitle());
+				attach.setText(user.getUsername() + " has subscribed to " + item.getTitle()
+						+ ". We can contact them at " + user.getEmail());
 				attach.setFallback("placeholder fallback");
 
 				SlackMessage message = new SlackMessage();

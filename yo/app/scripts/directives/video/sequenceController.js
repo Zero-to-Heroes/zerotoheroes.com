@@ -130,6 +130,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					if ($scope.params.comparisonSource == 'otherVideo') {
 						var newSequence = {
 							videoKey: $scope.currentVideoKey,
+							videoId: params.otherSource,
 							start: params.sequenceStart2,
 							title: $scope.params.newSequenceTitle,
 							sport: $scope.review.sport.key,
@@ -191,7 +192,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						$scope.choosingOtherVideo = false;
 
 						$log.log('loaded sequence', video);
-						$scope.params.otherSource = video.id;
+						$scope.params.otherSource = video.videoId;
 						var fileLocation = ENV.videoStorageUrl + video.videoKey;
 						$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: 'video/mp4'}];
 

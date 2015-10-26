@@ -25,6 +25,7 @@ public class Sequence {
 	private String id;
 
 	private Sport sport;
+	private String videoId;
 	private String videoKey;
 	private int start;
 	private String title;

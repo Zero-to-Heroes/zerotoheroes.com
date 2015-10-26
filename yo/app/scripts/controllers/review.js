@@ -562,7 +562,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.goToTimestamp = function(timeString) {
-			//$log.log('going to timestamp', timeString);
+			$log.log('going to timestamp', timeString);
 			// Player1 already has a loaded source
 			$scope.player1ready = true;
 			$scope.player2ready = false;
@@ -605,10 +605,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				var externalId = otherVideo.match(externalIdRegex);
 				if (externalId) {
 					var externalReviewId = externalId[0].substring(1, externalId[0].length - 1);
-					//$log.log('external review id', externalReviewId);
-					//$log.log('review map is ', $scope.review.reviewVideoMap);
+					$log.log('external review id', externalReviewId);
+					$log.log('review map is ', $scope.review.reviewVideoMap);
 					key = $scope.review.reviewVideoMap[externalReviewId];
-					//$log.log('external video key is ', key);
+					$log.log('external video key is ', key);
 				}
 
 				var fileLocation2 = ENV.videoStorageUrl + key;

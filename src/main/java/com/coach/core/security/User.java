@@ -54,6 +54,7 @@ public class User implements UserDetails {
 	private int reputation;
 	private UserReputation explodedReputation;
 	private Stats stats;
+	private boolean canEdit;
 
 	@Override
 	@JsonIgnore
@@ -144,5 +145,9 @@ public class User implements UserDetails {
 	public Stats getStats() {
 		if (stats == null) stats = new Stats();
 		return stats;
+	}
+
+	public boolean canEdit() {
+		return canEdit;
 	}
 }

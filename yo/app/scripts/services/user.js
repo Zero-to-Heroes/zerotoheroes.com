@@ -6,7 +6,7 @@ services.factory('User', ['$window', '$log', 'Api',
 				$window.localStorage.user = JSON.stringify(user);
 			},
 			getUser: function () {
-				return ($window.localStorage.user && JSON.parse($window.localStorage.user) ? JSON.parse($window.localStorage.user) : undefined);
+				return ($window.localStorage.user && JSON.parse($window.localStorage.user) ? JSON.parse($window.localStorage.user) : {});
 			},
 			getName: function () {
 				return ($window.localStorage.user && JSON.parse($window.localStorage.user).username ? JSON.parse($window.localStorage.user).username : undefined);

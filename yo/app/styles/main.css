@@ -112,6 +112,10 @@ a[ng-click] {
   padding: 15px;
 }
 
+.top-spacing {
+  margin-top:  10px;
+}
+
 textarea.form-control {
   min-height: 100px;
  resize: none;

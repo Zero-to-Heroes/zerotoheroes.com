@@ -15,8 +15,8 @@
 	margin-top: 10px;
 }
 
-.video-information .author-information {
-	/*margin-top: 15px;*/
+.video-information .video-description p:last-child {
+	margin: 0;
 }
 
 .video-details .reputation {
@@ -25,9 +25,24 @@
 }
 
 .video-tags {
-	margin-top: 15px;
+	
 }
 
 .adding-comment {
 	padding-left: 40px;
+}
+
+.video-information-header {
+}
+
+.video-information .author-information {
+	margin-bottom: 20px;
+}
+
+.comments-headline {
+	border-bottom: 1px solid #ddd;
+}
+
+.comments-links {
+	margin-bottom: 25px;
 }

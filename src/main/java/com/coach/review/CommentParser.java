@@ -12,8 +12,9 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class CommentParser {
 
-	private static final String TIMESTAMP_REGEX = "\\d?\\d:\\d?\\d(:\\d\\d\\d)?(\\|\\d?\\d:\\d?\\d(:\\d\\d\\d)?(\\([a-z0-9]+\\))?r?)?(\\+)?(p)?(s(\\d?\\.?\\d?\\d?)?)?(L(\\d?\\.?\\d?\\d?)?)?";
 	private static final String TIMESTAMP_ONLY_REGEX = "\\d?\\d:\\d?\\d(:\\d\\d\\d)?";
+	private static final String TIMESTAMP_REGEX = TIMESTAMP_ONLY_REGEX + "(l|c|r)?(\\|" + TIMESTAMP_ONLY_REGEX
+			+ "(\\([a-z0-9]+\\))?(l|c|r)?)?(\\+)?(p)?(s(\\d?\\.?\\d?\\d?)?)?(L(\\d?\\.?\\d?\\d?)?)?(\\[.+?\\])?";
 
 	@Autowired
 	ReviewRepository reviewRepo;

@@ -20,7 +20,10 @@ services.factory('Api', ['$resource', 'ENV',
 			Reputation: $resource(ENV.apiEndpoint + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'}),
 			Features: $resource(ENV.apiEndpoint + url + 'news/features'),
 			BugFixes: $resource(ENV.apiEndpoint + url + 'news/bugfixes'),
-			Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport')
+			Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport'),
+			Sequences: $resource(ENV.apiEndpoint + url + 'sequences/:sport/:sequenceId'),
+			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
+			Sports: $resource(ENV.apiEndpoint + url + 'sports/:sport', {sport: '@sport'})
 		};
 	}
 ]);

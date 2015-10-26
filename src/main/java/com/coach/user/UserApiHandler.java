@@ -111,7 +111,7 @@ public class UserApiHandler {
 		userRepository.save(user);
 		log.debug("Registered user: " + user);
 
-		emailNotifier.notifyNewUser(user);
+		// emailNotifier.notifyNewUser(user);
 		slackNotifier.notifyNewUser(user);
 
 		return new ResponseEntity<String>(HttpStatus.OK);

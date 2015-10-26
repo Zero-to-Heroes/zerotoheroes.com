@@ -1,12 +1,15 @@
 package com.coach.review;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -120,5 +123,19 @@ public class Comment implements HasText, HasReputation {
 				comment.normalizeUsers(sport, userMap);
 			}
 		}
+	}
+
+	public Collection<? extends String> getAuthorIds() {
+		Set<String> authorIds = new HashSet<>();
+		if (!StringUtils.isNullOrEmpty(authorId)) authorIds.add(authorId);
+		for (Comment comment : getComments()) {
+			authorIds.addAll(comment.getAuthorIds());
+		}
+		return authorIds;
+	}
+
+	public List<Comment> getComments() {
+		if (comments == null) comments = new ArrayList<>();
+		return comments;
 	}
 }

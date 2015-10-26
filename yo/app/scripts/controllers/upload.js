@@ -14,9 +14,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		};
 
 		$scope.creds = {
-		  	bucket: ENV.bucket + '/' + ENV.folder,
-		  	access_key: 'AKIAJHSXPMPE223KS7PA',
-		  	secret_key: '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'
+			bucket: ENV.bucket + '/' + ENV.folder,
+			access_key: 'AKIAJHSXPMPE223KS7PA',
+			secret_key: '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'
 		}
 
 		$scope.config = {
@@ -31,7 +31,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			drawingCanvas: false
 		}
 
-  		//===============
+		//===============
 		// Init player
 		//===============
 		// We use it for nice out-of-the-box file features
@@ -40,28 +40,32 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
 			$scope.review.title = fileItem._file.name;
+
+			//$log.log('sport', $scope.sport);
+			//$log.log('review.sport', $scope.review.sport);
+			//$log.log('sportsConfig', $scope.sportsConfig);
 		};
 
 		$scope.onPlayerReady = function(API) {
-        	//$scope.initializeReview();
+			//$scope.initializeReview();
 			$scope.API = API;
 			$scope.API.setVolume(1);
-        	//uploader.clearQueue();
-        	$scope.sources = null;
+			//uploader.clearQueue();
+			$scope.sources = null;
 
-        	angular.forEach($scope.possibleSports, function(value) {
-        		if (value.toLowerCase() == $routeParams.sport) {
-        			$scope.review.sport = value;
-        			$scope.loadTags();
-        		}
-        	})
+			angular.forEach($scope.possibleSports, function(value) {
+				if (value.toLowerCase() == $routeParams.sport) {
+					$scope.review.sport = value;
+					$scope.loadTags();
+				}
+			})
 		};
 
 		var supportedFileTypes = ['video/mp4', 'video/x-matroska', 'video/webm', 'video/ogg'];
 		
 		$scope.updateSourceWithFile = function(fileObj) {
 			$scope.hasUnsupportedFormatError = false;
-			$log.log('new file selected', fileObj);
+			//$log.log('new file selected', fileObj);
 
 			var type = fileObj.type;
 
@@ -73,11 +77,11 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			var objectURL = window.URL.createObjectURL(fileObj);
 			// Hack for mkv, not supported properly by videogular
 			if (type  == 'video/x-matroska') {
-				$log.log('hacking type');
+				//$log.log('hacking type');
 				type = 'video/mp4';
 			}
 			$scope.temp = fileObj;
-		  	$scope.sources =  [
+			$scope.sources =  [
 				{src: $sce.trustAsResourceUrl(objectURL), type: type}
 			];
 			$scope.review.file = objectURL;
@@ -114,33 +118,33 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				$scope.updateVideoPosition(newValue);
 			}
 			return $scope.review.beginning;
-	    };
+		};
 
-	    $scope.max = function(newValue) {
-	        if (newValue && newValue != $scope.review.ending) {
+		$scope.max = function(newValue) {
+			if (newValue && newValue != $scope.review.ending) {
 				$scope.review.ending = newValue;
 				$scope.updateTotalTime();
 				$scope.updateVideoPosition(newValue);
 			}
 			return $scope.review.ending;
-	    };
+		};
 
-	    $scope.updateVideoPosition = function(value) {
-	    	//$log.log('eseking time ' + value);
-	    	$scope.API.seekTime(value / 1000);
-	    }
+		$scope.updateVideoPosition = function(value) {
+			//$log.log('eseking time ' + value);
+			$scope.API.seekTime(value / 1000);
+		}
 
-	    $scope.onOverlayClick = function() {
-	    	$log.log('On onOverlayClick');
-	    	refreshMarkers();
-	    }
+		$scope.onOverlayClick = function() {
+			//$log.log('On onOverlayClick');
+			refreshMarkers();
+		}
 
-	    function refreshMarkers() {
-	    	if (!$scope.dataLoaded) {
-	    		updateMarkers();
-	    		$timeout(function() {refreshMarkers() }, 100);
-	    	}
-	    }
+		function refreshMarkers() {
+			if (!$scope.dataLoaded) {
+				updateMarkers();
+				$timeout(function() {refreshMarkers() }, 100);
+			}
+		}
 
 		$scope.insertModel = function(model, newValue) {
 			$parse(model).assign($scope, newValue);
@@ -154,7 +158,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			}
 		}
 
-  		//===============
+		//===============
 		// Tags
 		//===============
 		$scope.autocompleteTag = function($query) {
@@ -162,25 +166,25 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				return ~el.text.toLowerCase().indexOf($query);
 			});
 			return validTags.sort(function(a, b) {
-    			var tagA = a.text.toLowerCase();
-    			var tagB = b.text.toLowerCase();
-    			if (~tagA.indexOf(':')) {
-    				if (~tagB.indexOf(':')) {
-    					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
-    				}
-    				return 1;
-    			}
-    			else {
-    				if (~tagB.indexOf(':')) {
-    					return -1;
-    				}
-    				return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
-    			}
+				var tagA = a.text.toLowerCase();
+				var tagB = b.text.toLowerCase();
+				if (~tagA.indexOf(':')) {
+					if (~tagB.indexOf(':')) {
+						return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
+					}
+					return 1;
+				}
+				else {
+					if (~tagB.indexOf(':')) {
+						return -1;
+					}
+					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
+				}
 			});;
 		}
 
 		$scope.$watch('review.sport', function (newVal, oldVal) {
-			$log.log('watching sport value ', oldVal, newVal);
+			//$log.log('watching sport value ', oldVal, newVal);
 			// edit mode
 			if (oldVal != newVal) {
 				$log.log('getting the new tags for sport ', $scope.review.sport);
@@ -192,63 +196,63 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			Api.Tags.query({sport: $scope.review.sport}, 
 				function(data) {
 					$scope.allowedTags = data;
-					$log.log('allowedTags set to', $scope.allowedTags);
+					//$log.log('allowedTags set to', $scope.allowedTags);
 				}
 			);
 		}
 
 
 
-  		//===============
+		//===============
 		// Upload core methods
 		//===============
 		$scope.initUpload = function() {
 			$scope.uploadForm.author.$setValidity('nameTaken', true);
 			$scope.$broadcast('show-errors-reset');
 			$scope.$broadcast('show-errors-check-validity');
-  			if ($scope.uploadForm.$valid) {
-  				// If user is not registered, offer them to create an account
-  				if (!User.isLoggedIn()) {
-  					// Validate that the name is free
-	  				Api.Users.get({identifier: $scope.review.author}, 
+			if ($scope.uploadForm.$valid) {
+				// If user is not registered, offer them to create an account
+				if (!User.isLoggedIn()) {
+					// Validate that the name is free
+					Api.Users.get({identifier: $scope.review.author}, 
 						function(data) {
-							$log.log('User', data);
+							//$log.log('User', data);
 							// User exists
 							if (data.username) {
-								$log.log('User already exists', data);
+								//$log.log('User already exists', data);
 								$scope.uploadForm.author.$setValidity('nameTaken', false);
 							}
 							else {
 								$scope.onUpload = true;
-	  							$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author});
-	  						}
+								$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author});
+							}
 						}
 					);
-  				}
-  				// Otherwise directly proceed to the upload
-  				else {
-  					$scope.upload();
-  				}
-  			}
-  			else {
+				}
+				// Otherwise directly proceed to the upload
+				else {
+					$scope.upload();
+				}
+			}
+			else {
 				$analytics.eventTrack('upload.checkFailed', {
-			      	category: 'upload'
-			    });
-  			}
-  		}
+					category: 'upload'
+				});
+			}
+		}
 
-  		$scope.previousError = false;
+		$scope.previousError = false;
 
-  		$scope.upload = function() {
-  			$log.log('Before prep, canvas are', $scope.review.canvas);
+		$scope.upload = function() {
+			//$log.log('Before prep, canvas are', $scope.review.canvas);
 			$scope.prepareCanvasForUpload($scope.review, $scope.review);
 			$scope.review.canvas = $scope.review.tempCanvas;
-			$log.log('After prep, canvas are', $scope.review.canvas);
+			//$log.log('After prep, canvas are', $scope.review.canvas);
 
 			//$log.log('Setting S3 config');
 			$analytics.eventTrack('upload.start', {
-		      	category: 'upload'
-		    });
+				category: 'upload'
+			});
 
 			// Configure The S3 Object 
 			AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
@@ -262,10 +266,10 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 			// Starting the upload
 			//$log.log('uploading', $scope.review);
-            $scope.uploadInProgress = true;
+			$scope.uploadInProgress = true;
 
-            // Scrolling to the bottom of the screen
-            var bottom = angular.element(document.getElementById('bottom'));
+			// Scrolling to the bottom of the screen
+			var bottom = angular.element(document.getElementById('bottom'));
 			$document.scrollToElementAnimated(bottom, 0, 1);
 			
 			// Initializing upload
@@ -278,24 +282,24 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			//upload.send(function(err, data) {
 			upload.upload(params, function(err, data) {
 
-			    // There Was An Error With Your S3 Config
+				// There Was An Error With Your S3 Config
 				if (err) {
-			        $log.error('An error during upload', err);
-			    }
-			    else {
-			        // Success!
-			       // $log.log('upload success, review: ', $scope.review);
+					$log.error('An error during upload', err);
+				}
+				else {
+					// Success!
+				   // $log.log('upload success, review: ', $scope.review);
 
-		            // Start transcoding
-		            $scope.transcode();
-			    }
+					// Start transcoding
+					$scope.transcode();
+				}
 			})
 			.on('httpUploadProgress',function(progress) {
-			    // Log Progress Information
+				// Log Progress Information
 			   // $log.log(progress);
-			    $scope.uploadProgress = progress.loaded / progress.total * 100;
-			    //$log.log('Updating progress ' + progress.loaded + ' out of ' + progress.total + ', meaning ' + $scope.uploadProgress + '%');
-			    $scope.$digest();
+				$scope.uploadProgress = progress.loaded / progress.total * 100;
+				//$log.log('Updating progress ' + progress.loaded + ' out of ' + progress.total + ', meaning ' + $scope.uploadProgress + '%');
+				$scope.$digest();
 			});
 		};
 
@@ -325,37 +329,37 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.initPostText = function() {
 			$scope.$broadcast('show-errors-check-validity');
-  			if ($scope.uploadForm.$valid) {
-  				// If user is not registered, offer them to create an account
-  				if (!User.isLoggedIn()) {
-  					$scope.onPostText = true;
-  					$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author});
-  				}
-  				// Otherwise directly proceed to the upload
-  				else {
-  					$scope.postText();
-  				}
-  			}
-  			else {
+			if ($scope.uploadForm.$valid) {
+				// If user is not registered, offer them to create an account
+				if (!User.isLoggedIn()) {
+					$scope.onPostText = true;
+					$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author});
+				}
+				// Otherwise directly proceed to the upload
+				else {
+					$scope.postText();
+				}
+			}
+			else {
 				$analytics.eventTrack('upload.checkFailed', {
-			      	category: 'upload'
-			    });
-  			}
-  		}
+					category: 'upload'
+				});
+			}
+		}
 
-  		$scope.postText = function() {
+		$scope.postText = function() {
 			$log.log('Posting simple text post', $scope.review);
 			$scope.review.temporaryKey = null;
 			Api.Reviews.save($scope.review, 
 				function(data) {
 					$log.log('Posted simple text post ', data);
 					$scope.sources = null;
-		        	$scope.uploadInProgress = false;
-		        	//$log.log("upload finished!");
-		        	$timeout(function() {
+					$scope.uploadInProgress = false;
+					//$log.log("upload finished!");
+					$timeout(function() {
 						var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s;
-		        		$location.path(url);
-		        	}, 2000);
+						$location.path(url);
+					}, 2000);
 				},
 				function(error) {
 					$log.error('Received error when posting text', error);
@@ -364,7 +368,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			);
 		}
 
-        var retrieveCompletionStatus = function() {
+		var retrieveCompletionStatus = function() {
 			$log.log('Retrieving completion status for review ', $scope.review);
 			try {
 				Api.Reviews.get({reviewId: $scope.review.id}, 
@@ -374,20 +378,20 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 						$scope.review.transcodingDone = data.transcodingDone;
 						//$log.log('Review is now ', $scope.review);
 
-			        	if (!$scope.review.transcodingDone) {
-				        	$timeout(function() {
-				        		retrieveCompletionStatus();
-				        	}, 1000);
-				        }
-				        else {
-				        	$scope.sources = null;
-				        	$scope.uploadInProgress = false;
-				        	//$log.log("upload finished!");
-				        	$timeout(function() {
-				        		var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s;
-		        				$location.path(url);
-				        	}, 2000);
-				        }
+						if (!$scope.review.transcodingDone) {
+							$timeout(function() {
+								retrieveCompletionStatus();
+							}, 1000);
+						}
+						else {
+							$scope.sources = null;
+							$scope.uploadInProgress = false;
+							//$log.log("upload finished!");
+							$timeout(function() {
+								var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s;
+								$location.path(url);
+							}, 2000);
+						}
 					},
 					function(error) {
 						$log.error('Something went wrong!!', error);
@@ -397,13 +401,13 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			catch (e) {
 				$log.error('Something went wrong!!' + e + '. Retrying in 5s...');
 				$timeout(function() {
-	        		retrieveCompletionStatus();
-	        	}, 5000);
+					retrieveCompletionStatus();
+				}, 5000);
 			}
-        	
-        }
+			
+		}
 
-  		//===============
+		//===============
 		// Account management hooks
 		//===============
 		$rootScope.$on('account.close', function() {
@@ -421,7 +425,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$rootScope.$broadcast('account.signin.show', {identifier: $scope.review.author});
 		}
 
-  		//===============
+		//===============
 		// Timestamp manipulation
 		//===============
 		var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/gm;
@@ -461,30 +465,30 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			}
 		});
 
-  		//===============
+		//===============
 		// Utilities
 		//===============
 		$scope.guid = function() {
 		  function s4() {
-		    return Math.floor((1 + Math.random()) * 0x10000)
-		      .toString(16)
-		      .substring(1);
+			return Math.floor((1 + Math.random()) * 0x10000)
+			  .toString(16)
+			  .substring(1);
 		  }
 		  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-		    s4() + '-' + s4() + s4() + s4();
+			s4() + '-' + s4() + s4() + s4();
 		}
 	}
 ]);
 
 app.filter('timeFilter', function () {
-    return function (value) {
-    	var s = parseInt(value / 1000);
-        var m = parseInt(s / 60);
-        s = parseInt(s % 60);
+	return function (value) {
+		var s = parseInt(value / 1000);
+		var m = parseInt(s / 60);
+		s = parseInt(s % 60);
 
-        var mStr = (m > 0) ? (m < 10 ? '0' : '') + m + ':' : '00:';
-        var sStr = (s < 10) ? '0' + s : s;
+		var mStr = (m > 0) ? (m < 10 ? '0' : '') + m + ':' : '00:';
+		var sStr = (s < 10) ? '0' + s : s;
 
-        return mStr + sStr;
-    };
+		return mStr + sStr;
+	};
 });

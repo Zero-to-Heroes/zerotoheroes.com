@@ -37,8 +37,11 @@
 				<span class="block"><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">Double the speed</a> of the video</span>
 				<span class="block" ng-show="review.videoFramerateRatio && review.videoFramerateRatio != 1">The final video will be {{videoFramerateRatio}} times as fast (and as short) as the original, and won't have any audio. Click <a ng-click="maximumAllowedDuration = maximumAllowedDuration / review.videoFramerateRatio; review.videoFramerateRatio = 1">here</a> to go back to the original speed</span>
 			</div>
-			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration">
-				<span>To keep the reviews focused, we are enforcing a 5 minutes time limit on videos. You can either:</span>
+			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[review.sport.toLowerCase()] && !sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed">
+				<span>Our goal is to keep the analysis as focused as possible, so that other people can easily search and benefit from comments on your video. Having a focused analysis will also make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos. Please use the above slider to select the part of the video you need analyzed</span>
+			</div>
+			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[review.sport.toLowerCase()] && sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed">
+				<span>Our goal is to keep the analysis as focused as possible, so that other people can easily search and benefit from comments on your video. Having a focused analysis will also make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos. Please either:</span>
 				<ul>
 					<li>Use the slider above the select up to 5 minutes of video to use</li>
 					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">Double the speed</a> of the video to use up to 10 minutes of video. This is for now experimental and will only work if your video has less than 30 images per seconds (which is the case for most camera and phone videos, and the default for many video recording softwares)</li>
@@ -61,7 +64,7 @@
 		  		<div class="row">
 					<div ng-class="{'col-sm-4': useVideo}" ng-show="useVideo">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
-						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo" ng-readonly="uploadInProgress">
+						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo || uploadInProgress">
 								<option value="" ng-hide="!useVideo">Choose your sport...</option>
 								<option value="Squash" ng-hide="!useVideo">Squash</option>
 								<option value="Badminton" ng-hide="!useVideo">Badminton</option>
@@ -82,7 +85,7 @@
 		  		<div class="row">
 					<div class="col-sm-12">
 					  	<div class="form-group">
-							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
+							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true">
 					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.text" ng-readonly="uploadInProgress" auto-grow toolbar-target ng-required="true"></textarea>
 					    	</toolbar>
 					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.text" ng-readonly="uploadInProgress" auto-grow ng-hide="useVideo"></textarea>
@@ -99,7 +102,7 @@
 				</div>
 				<div class="row video-tags" ng-show="allowedTags && allowedTags.length > 0">
 					<div class="col-xs-12 text-left">
-						<tags-input ng-model="review.tags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false">
+						<tags-input ng-model="review.tags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false" ng-disabled="uploadInProgress">
 							<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
 						</tags-input>
 						<a href="/r/meta/561f7880e4b0e41639be51d0" target="_blank">Do you miss a tag?</a>
@@ -107,7 +110,7 @@
 				</div>
 		  		<div class="row">
 					<div class="col-sm-2">
-			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError"  analytics-on="click" analytics-category="upload" analytics-event="upload.request">{{useVideo ? 'Upload' : 'Post'}} now</button>
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration"  analytics-on="click" analytics-category="upload" analytics-event="upload.request">{{useVideo ? 'Upload' : 'Post'}} now</button>
 		  			</div>
 				</div>
 			</div>

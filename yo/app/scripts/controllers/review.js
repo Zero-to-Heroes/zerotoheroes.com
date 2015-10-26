@@ -81,12 +81,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.thumbnail = $scope.review.thumbnail ? ENV.videoStorageUrl + $scope.review.thumbnail : null;
 				$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType}];
 				$scope.sources2 = []
-				angular.forEach($scope.review.reviewVideoMap, function(key, value) {
+				/*angular.forEach($scope.review.reviewVideoMap, function(key, value) {
 					fileLocation = ENV.videoStorageUrl + key;
 					$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType});
-				});
+				});*/
 				$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
-			}, 300);
+			}, 0);
 
 			$scope.API.mediaElement.on('canplay', function() {
 				//$log.log('can play player1');
@@ -252,6 +252,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.review.comments = data.comments;
 					$scope.review.reviewVideoMap = data.reviewVideoMap || {};
 		  			$scope.review.canvas = data.canvas;
+		  			$scope.review.subscribers = data.subscribers;
 		  			if ($scope.review.canvas) {
 						angular.forEach($scope.review.canvas, function(value, key) {
 							//$log.log('review canvas include', key);
@@ -276,6 +277,23 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$log.error(error);
 				}
 			);
+		}
+
+		$scope.unsubscribe = function() {
+			Api.Subscriptions.delete({itemId: $scope.review.id}, function(data) {
+				$scope.review.subscribers = data.subscribers;
+			});
+		}
+
+		$scope.subscribe = function() {
+			Api.Subscriptions.save({itemId: $scope.review.id}, function(data) {
+				$scope.review.subscribers = data.subscribers;
+			});
+		}
+
+		$scope.subscribed = function() {
+			//$log.log('usbscribed', $scope.review.subscribers, User.getUser().id);
+			return $scope.review && $scope.review.subscribers && User.getUser() && $scope.review.subscribers.indexOf(User.getUser().id) > -1;
 		}
 
 		//===============
@@ -362,6 +380,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Video information
 		//===============
+		$scope.formatDate = function(date) {
+			return moment(date).fromNow();
+		}
+
 		$scope.startEditingInformation = function() {
 			$scope.review.oldTitle = $scope.review.title;
 			$scope.review.oldText = $scope.review.text;
@@ -458,8 +480,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// (m)m:(s)s:(SSS) format
 		// then an optional + sign
 		// if present, needs at least either p, s or l
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?/gm;
-		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?</gm;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(l|c|r)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?/gm;
+		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(l|c|r)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?</gm;
 
 		$scope.parseText = function(comment) {
 			if (!comment) return '';
@@ -483,7 +505,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		var slowRegex = /\+s(\d?\.?\d?\d?)?/;
 		var playRegex = /\+p/;
 		var loopRegex = /L(\d?\.?\d?\d?)?/;
-		var externalRegex = /\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?r?/;
+		var externalRegex = /\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?/;
 		var externalIdRegex = /\([a-z0-9]+\)/;
 		var canvasRegex = /\[.+?\]/;
 		$scope.prettifyLink = function(timestamp) {
@@ -534,13 +556,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}
 
 			// Remove any residual '+' sign
-			prettyLink = prettyLink.replace(/\+/, '');
+			//prettyLink = prettyLink.replace(/\+/, '');
 
 			return {link: prettyLink, tooltip: tooltip};
 		}
 
 		$scope.goToTimestamp = function(timeString) {
-			//$log.log('going to timestamp', timeString);
+			$log.log('going to timestamp', timeString);
 			// Player1 already has a loaded source
 			$scope.player1ready = true;
 			$scope.player2ready = false;
@@ -554,8 +576,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// The timestamp
 			var timestampInfo = split[0].split('|');
 
+			var videoOffset = timestampInfo[0].slice(-1);
+			$scope.playerControls.firstPlayerClass = 'show-left';
+			$scope.playerControls.secondPlayerClass = 'show-left';
+			
+			if (videoOffset == 'c') {
+				$scope.playerControls.firstPlayerClass = 'show-center';
+			} 
+			else if (videoOffset == 'r') {
+				$scope.playerControls.firstPlayerClass = 'show-right';
+			}
+
+			var timestampString = timestampInfo[0].match(timestampOnlyRegex)[0];
 			// First the timestamp (the first part is always the current video)
-			var convertedTime = $scope.extractTime(timestampInfo[0]);
+			var convertedTime = $scope.extractTime(timestampString);
 
 			// Then check if we're trying to play videos in dual mode
 			var otherVideo = timestampInfo[1];
@@ -566,13 +600,15 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				// The URL of the video. For now, default to the same video
 				var key = $scope.review.key;
 				var dataType = $scope.review.fileType;
+
 				// A reviewID has been specified
-				if (otherVideo.indexOf('(') > -1) {
-					var externalReviewId = otherVideo.substring(otherVideo.indexOf('(') + 1, otherVideo.indexOf(')'));
-					//$log.log('external review id', externalReviewId);
-					//$log.log('review map is ', $scope.review.reviewVideoMap);
+				var externalId = otherVideo.match(externalIdRegex);
+				if (externalId) {
+					var externalReviewId = externalId[0].substring(1, externalId[0].length - 1);
+					$log.log('external review id', externalReviewId);
+					$log.log('review map is ', $scope.review.reviewVideoMap);
 					key = $scope.review.reviewVideoMap[externalReviewId];
-					//$log.log('external video key is ', key);
+					$log.log('external video key is ', key);
 				}
 
 				var fileLocation2 = ENV.videoStorageUrl + key;
@@ -580,7 +616,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 				// Now move the videos side-byside
 				var sideInfo = otherVideo.indexOf('(') > -1 ? otherVideo.split('(')[0] : otherVideo;
-				if (otherVideo.indexOf('r') > -1) {
+
+				var video2offset = otherVideo.slice(-1);
+				if (video2offset == 'c') {
+					$scope.playerControls.secondPlayerClass = 'show-center';
+				} 
+				else if (video2offset == 'r') {
+					$scope.playerControls.secondPlayerClass = 'show-right';
+				}
+
+				/*if (otherVideo.indexOf('r') > -1) {
 					$scope.playerControls.firstPlayerClass = 'right-shift';
 					$scope.playerControls.secondPlayerClass = 'center-shift';
 					sideInfo = otherVideo.split('r')[0];
@@ -588,17 +633,18 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				else {
 					$scope.playerControls.firstPlayerClass = '';
 					$scope.playerControls.secondPlayerClass = '';
-				}
+				}*/
 
-				// Compute the time for the second video
-				var convertedTime2 = $scope.extractTime(sideInfo);
+				var timestampString2 = otherVideo.match(timestampOnlyRegex)[0];
+				// First the timestamp (the first part is always the current video)
+				var convertedTime2 = $scope.extractTime(timestampString2);
 			}
 			else {
 				//$scope.player = true;
 				$scope.playerControls.mode = 1;
 				// Redondant with watching the "playerControls.mode"?
-				$scope.playerControls.firstPlayerClass = '';
-				$scope.playerControls.secondPlayerClass = '';
+				//$scope.playerControls.firstPlayerClass = '';
+				//$scope.playerControls.secondPlayerClass = '';
 				$scope.API2.stop();
 			}
 
@@ -745,6 +791,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if (currentTime	> test) {
 				$scope.playerControls.reloop();
 			}
+		}
+
+		$scope.canEdit = function(review) {
+			//$log.log('can edit review?', User.getUser());
+			return review && (User.getName() == review.author || User.getUser().canEdit);
 		}
 
 		var entityMap = {

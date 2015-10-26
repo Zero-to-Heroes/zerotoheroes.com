@@ -11,9 +11,14 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 
+import org.joda.time.DateTime;
+
+import lombok.extern.slf4j.Slf4j;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@Slf4j
 public final class TokenHandler {
 
 	private static final String HMAC_ALGO = "HmacSHA256";
@@ -33,16 +38,21 @@ public final class TokenHandler {
 	}
 
 	public User parseUserFromToken(String token) {
+		log.debug("Parsing token " + token);
 		final String[] parts = token.split(SEPARATOR_SPLITTER);
 		if (parts.length == 2 && parts[0].length() > 0 && parts[1].length() > 0) {
+			log.debug("Both parts are present " + parts);
 			try {
 				final byte[] userBytes = fromBase64(parts[0]);
 				final byte[] hash = fromBase64(parts[1]);
 
 				boolean validHash = Arrays.equals(createHmac(userBytes), hash);
 				if (validHash) {
+					log.debug("Hash is valid");
 					final User user = fromJSON(userBytes);
-					if (new Date().getTime() < user.getExpires()) { return user; }
+					// TODO: expiry date
+					return user;
+					//if (new Date().getTime() < user.getExpires()) { return user; }
 				}
 			}
 			catch (IllegalArgumentException e) {
@@ -73,7 +83,13 @@ public final class TokenHandler {
 
 	private byte[] toJSON(User user) {
 		try {
-			return new ObjectMapper().writeValueAsBytes(user);
+			User userForSecurity = new User();
+			userForSecurity.setId(user.getId());
+			userForSecurity.setUsername(user.getUsername());
+//			DateTime expiryDate = new DateTime();
+//			expiryDate.plusDays(15);
+//			userForSecurity.setExpires(expiryDate.getMillis());
+			return new ObjectMapper().writeValueAsBytes(userForSecurity);
 		}
 		catch (JsonProcessingException e) {
 			throw new IllegalStateException(e);

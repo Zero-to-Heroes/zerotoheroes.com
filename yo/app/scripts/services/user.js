@@ -50,7 +50,7 @@ services.factory('User', ['$window', '$log', 'Api',
 					this.incrementLocalTimestamp();
 				}
 				else {
-					//$log.log('incrementing remote timestamps')
+					$log.log('incrementing remote timestamps')
 					var that = this;
 					Api.Users.get({identifier: that.getUser().username}, function(data) {
 						//$log.log('retrieved user', data);

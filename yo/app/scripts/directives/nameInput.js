@@ -21,6 +21,13 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 				$scope.name = User.getName();
 				$scope.loggedIn = User.isLoggedIn();
 				$scope.User = User.getUser();
+				var testDate = moment('2015-10-25 10:00:00');
+				if (!User.getLastLoginDate() || moment(User.getLastLoginDate()).isBefore(testDate)) {
+					$log.log('Fundamental modifications have been made and you need to log in again');
+					AuthenticationService.clearCredentials();
+					$scope.name = User.getName();
+					$scope.loggedIn = User.isLoggedIn();
+				}
 				//$log.log('user is ', $scope.User);
 			}
 			$scope.refresh();

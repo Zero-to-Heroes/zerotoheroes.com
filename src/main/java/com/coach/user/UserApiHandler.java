@@ -34,18 +34,10 @@ public class UserApiHandler {
 	@Autowired
 	SlackNotifier slackNotifier;
 
-	// @RequestMapping(method = RequestMethod.GET)
-	// public User getCurrent() {
-	// final Authentication authentication =
-	// SecurityContextHolder.getContext().getAuthentication();
-	// if (authentication instanceof UserAuthentication) { return
-	// ((UserAuthentication) authentication).getDetails(); }
-	// return new User(authentication.getName()); // anonymous user support
-	// }
-
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<User> getLoggedInUser() {
-		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext()
+				.getAuthentication().getName();
 		log.debug("Retrieving user by " + currentUser);
 
 		User user = null;
@@ -55,8 +47,7 @@ public class UserApiHandler {
 		}
 		if (currentUser.contains("@")) {
 			user = userRepository.findByEmail(currentUser);
-		}
-		else {
+		} else {
 			user = userRepository.findByUsername(currentUser);
 		}
 		log.debug("Loaded user " + user);
@@ -70,7 +61,8 @@ public class UserApiHandler {
 	}
 
 	@RequestMapping(value = "/{identifier}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<User> getUserByIdentifier(@PathVariable("identifier") String identifier) {
+	public @ResponseBody ResponseEntity<User> getUserByIdentifier(
+			@PathVariable("identifier") String identifier) {
 		log.debug("Retrieving user by " + identifier);
 
 		User user = null;
@@ -80,8 +72,7 @@ public class UserApiHandler {
 		}
 		if (identifier.contains("@")) {
 			user = userRepository.findByEmail(identifier);
-		}
-		else {
+		} else {
 			user = userRepository.findByUsername(identifier);
 		}
 		log.debug("Loaded user " + user);
@@ -93,13 +84,17 @@ public class UserApiHandler {
 	public ResponseEntity<String> register(@RequestBody final User user) {
 		log.debug("Registering user: " + user);
 		boolean exists = userRepository.findByUsername(user.getUsername()) != null;
-		if (exists) { return new ResponseEntity<String>(
-				"{\"msg\": \"This username is already in use by someone else, please choose another one\"}",
-				HttpStatus.UNPROCESSABLE_ENTITY); }
+		if (exists) {
+			return new ResponseEntity<String>(
+					"{\"msg\": \"This username is already in use by someone else, please choose another one\"}",
+					HttpStatus.UNPROCESSABLE_ENTITY);
+		}
 		exists = userRepository.findByEmail(user.getEmail()) != null;
-		if (exists) { return new ResponseEntity<String>(
-				"{\"msg\": \"This email address is already in use by someone else, please choose another one\"}",
-				HttpStatus.UNPROCESSABLE_ENTITY); }
+		if (exists) {
+			return new ResponseEntity<String>(
+					"{\"msg\": \"This email address is already in use by someone else, please choose another one\"}",
+					HttpStatus.UNPROCESSABLE_ENTITY);
+		}
 
 		// Perform checks on password
 		String password = user.getPassword();

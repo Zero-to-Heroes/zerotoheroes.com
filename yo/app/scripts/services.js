@@ -20,7 +20,7 @@ services.factory('Api', ['$resource', 'ENV',
 			Reputation: $resource(ENV.apiEndpoint + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'}),
 			Features: $resource(ENV.apiEndpoint + url + 'news/features'),
 			BugFixes: $resource(ENV.apiEndpoint + url + 'news/bugfixes'),
-				  Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport')
+			Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport')
 		};
 	}
 ]);
@@ -36,6 +36,7 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 		service.setAuthentication = function (username, responseHeaders, callback) {
 			//$log.log('Setting authentication');
 			$window.localStorage.token = responseHeaders('x-auth-token');
+			$log.log('token', $window.localStorage.token);
 			$window.localStorage.name = username;
 			$analytics.setAlias(username);
 			$analytics.setUsername(username);
@@ -57,7 +58,11 @@ services.factory('authInterceptor', function ($rootScope, $q, $window) {
 		request: function (config) {
 			config.headers = config.headers || {};
 			if ($window.localStorage.token) {
+				//console.log('adding token to the request', $window.localStorage.token );
 				config.headers['x-auth-token'] = $window.localStorage.token;
+			}
+			else {
+				//console.log('Not adding token to the request');
 			}
 			return config;
 		},

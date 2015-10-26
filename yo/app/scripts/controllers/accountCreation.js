@@ -41,9 +41,11 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		$scope.login = function() {
 	  		AuthenticationService.login($scope.account.username, $scope.account.password, 
 				function(response, responseHeaders) {
+					$log.log('login with', response, responseHeaders);
 					AuthenticationService.setAuthentication(response.username, responseHeaders, 
 			  			function(authenticated) {
 							if (authenticated) {
+								$log.log('retrieving user info');
 								$scope.retrieveUserInfo();
 							}
 							else {
@@ -60,6 +62,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		};
 
 		$scope.retrieveUserInfo = function() {
+			$log.log('retrieving user info 2');
 			Api.Users.get( 
 				function(data) {
 					User.setUser(data);

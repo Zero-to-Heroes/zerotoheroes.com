@@ -20,8 +20,8 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 				$scope.params = {};
 				$scope.form = {}
 				
-				$rootScope.$on('sequence.add.init', function(event, params) {
-					$log.log('on sequence.add.init', event, params);
+				var unregister = $rootScope.$on('sequence.add.init', function(event, params) {
+					$log.log('on sequence.add.init', event, params, $scope);
 					$scope.loadTags();
 					$scope.params = {
 						loopDuration: 1,
@@ -33,6 +33,8 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					}
 					$scope.sequenceModal.$promise.then($scope.sequenceModal.show);
 				});
+
+				$scope.$on('$destroy', unregister);
 
 				$scope.sequenceModal = $modal({
 					templateUrl: 'templates/video/sequence.html', 

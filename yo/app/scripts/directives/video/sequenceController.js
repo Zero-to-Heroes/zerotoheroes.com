@@ -170,7 +170,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 
 				$scope.onUpdateTime = function($currentTime, $duration) {
 					//$log.log('onUpdateTime', $currentTime, $scope.sequenceStart1 + parseFloat($scope.params.loopDuration), $duration);
-					if ($currentTime > $scope.sequenceStart1 + parseFloat($scope.params.loopDuration)) {
+					if ($scope.testing && $currentTime > $scope.sequenceStart1 + parseFloat($scope.params.loopDuration)) {
 						//$log.log('running loop');
 						$scope.API.seekTime($scope.sequenceStart1);
 						$scope.API2.seekTime($scope.sequenceStart2);

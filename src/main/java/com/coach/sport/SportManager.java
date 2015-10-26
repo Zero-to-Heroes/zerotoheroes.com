@@ -31,7 +31,8 @@ public class SportManager {
 		}
 
 		if (sport.getSubscribers() == null || sport.getSubscribers().isEmpty()) {
-			List<Review> all = reviewRepo.findAll();
+
+			List<Review> all = reviewRepo.findAll(null, sportId);
 			for (Review review : all) {
 				sport.addSubscriber(review.getAuthorId());
 			}

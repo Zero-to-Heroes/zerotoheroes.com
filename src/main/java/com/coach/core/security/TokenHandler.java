@@ -5,13 +5,10 @@ import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
-import java.util.Date;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
-
-import org.joda.time.DateTime;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -52,7 +49,8 @@ public final class TokenHandler {
 					final User user = fromJSON(userBytes);
 					// TODO: expiry date
 					return user;
-					//if (new Date().getTime() < user.getExpires()) { return user; }
+					// if (new Date().getTime() < user.getExpires()) { return
+					// user; }
 				}
 			}
 			catch (IllegalArgumentException e) {
@@ -86,9 +84,11 @@ public final class TokenHandler {
 			User userForSecurity = new User();
 			userForSecurity.setId(user.getId());
 			userForSecurity.setUsername(user.getUsername());
-//			DateTime expiryDate = new DateTime();
-//			expiryDate.plusDays(15);
-//			userForSecurity.setExpires(expiryDate.getMillis());
+			userForSecurity.setPassword(user.getPassword());
+			userForSecurity.setAuthorities(user.getAuthorities());
+			// DateTime expiryDate = new DateTime();
+			// expiryDate.plusDays(15);
+			// userForSecurity.setExpires(expiryDate.getMillis());
 			return new ObjectMapper().writeValueAsBytes(userForSecurity);
 		}
 		catch (JsonProcessingException e) {
@@ -112,7 +112,7 @@ public final class TokenHandler {
 	 * public static void main(String[] args) { Date start = new Date(); byte[]
 	 * secret = new byte[70]; new
 	 * java.security.SecureRandom().nextBytes(secret);
-	 *
+	 * 
 	 * TokenHandler tokenHandler = new TokenHandler(secret); for (int i = 0; i <
 	 * 1000; i++) { final User user = new
 	 * User(java.util.UUID.randomUUID().toString().substring(0, 8), new Date(

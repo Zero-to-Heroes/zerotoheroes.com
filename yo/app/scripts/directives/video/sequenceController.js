@@ -121,8 +121,8 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 
 				$scope.addSequence = function() {
 					var params = {
-						sequenceStart1: $scope.API.currentTime,
-						sequenceStart2: $scope.API2.currentTime,
+						sequenceStart1: $scope.sequenceStart1 ? $scope.sequenceStart1 : $scope.API.currentTime,
+						sequenceStart2: $scope.sequenceStart2 ? $scope.sequenceStart2 : $scope.API2.currentTime,
 						video1position: $scope.params.video1position,
 						video2position: $scope.params.video2position,
 						speed: parseFloat($scope.params.speed),
@@ -155,7 +155,6 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					else {
 						$scope.close(params);
 					}
-
 				}
 
 				$scope.close = function(params) {

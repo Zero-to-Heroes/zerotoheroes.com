@@ -303,7 +303,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			});
 		};
 
-		$scope.retry = true;
 		$scope.transcode = function() {
 			$log.log('Creating review ', $scope.review);
 			$scope.normalizeTimestamps($scope.review);
@@ -319,10 +318,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				},
 				function(error) {
 					$log.error('Received error', error);
-					if ($scope.retry) {
-						$scope.retry = false;
-						$scope.transcode();
-					}
+					$timeout(function() {
+						retrieveCompletionStatus();
+					}, 5000);
 				}
 			);
 		}
@@ -368,6 +366,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			);
 		}
 
+		$scope.retryCount = 5;
 		var retrieveCompletionStatus = function() {
 			$log.log('Retrieving completion status for review ', $scope.review);
 			try {
@@ -395,6 +394,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 					},
 					function(error) {
 						$log.error('Something went wrong!!', error);
+						$timeout(function() {
+							retrieveCompletionStatus();
+						}, 5000);
 					}
 				);
 			}

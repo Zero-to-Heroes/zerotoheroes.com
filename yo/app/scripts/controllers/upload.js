@@ -452,7 +452,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				msValue += parseInt(split[2]);
 			}
 			// Now substract beginning of video
-			var newMsValue = msValue - $scope.review.beginning;
+			var newMsValue = (msValue - $scope.review.beginning) / $scope.review.videoFramerateRatio;
 			// And format it back 
 			var newStrValue = moment.duration(newMsValue, 'milliseconds').format('mm:ss:SSS', { trim: false });
 			return newStrValue;

@@ -22,16 +22,24 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 
 				$timeout(function() {
 					$scope.refreshCanvas();
-				}, 1000);
+				}, 0);
 
 				$scope.refreshCanvas = function() {
+					$log.log('refreshing canvas');
 					var container = element[0].parentElement;
 
-					$scope.canvas.setHeight(container.offsetHeight);
-					$scope.canvas.setWidth(container.offsetWidth);
+					$log.log('setting size to ', container.offsetWidth, container.offsetHeight);
+					if (container.offsetWidth != 0 && container.offsetHeight != 0) {
+						$scope.canvas.setHeight(container.offsetHeight);
+						$scope.canvas.setWidth(container.offsetWidth);
 
-					$scope.canvas.calcOffset();
-					$scope.canvas.renderAll();
+						$scope.canvas.calcOffset();
+						$scope.canvas.renderAll();
+					}
+					else {
+						$timeout(function() { refreshCanvas() }, 200);
+					}
+					
 				}
 
 				$scope.serializeCanvas = function() {

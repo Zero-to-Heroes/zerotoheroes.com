@@ -112,10 +112,18 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					});
 				}
 
+				$scope.tooltip = {
+				  	title: {
+				  		'true': 'When you\'re done, re-click on the button to save your drawing and continue editing your comment',
+				  		'false': 'Add shapes and drawings on the video'
+				  	}
+				};
+
 				$scope.insertCanvas = function() {
 					//$log.log('insertCanvas, flag is ', $scope.drawingCanvas);
 					// Edit canvas mode
 					if (!$scope.drawingCanvas) {
+
 						// The cursor is positioned inside a canvas ID [], so we need to edit that one
 						var canvasTagId = $scope.readCanvasId();
 						//$log.log('iediting existing canvas, id is ', canvasTagId);
@@ -139,6 +147,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					}
 					// Save canvas
 					else {
+
 						$scope.drawingCanvas = false;
 						$rootScope.$broadcast('closecanvas', $scope.currentCanvasId);
 					}

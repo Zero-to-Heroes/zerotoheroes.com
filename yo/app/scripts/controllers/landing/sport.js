@@ -1,51 +1,9 @@
 'use strict';
 
-angular.module('controllers').controller('SportPageCtrl', ['$scope', '$routeParams', '$log', '$timeout', '$rootScope', 
-	function($scope, $routeParams, $log, $timeout, $rootScope) { 
+angular.module('controllers').controller('SportPageCtrl', ['SportsConfig', '$scope', '$routeParams', '$log', '$timeout', '$rootScope', 
+	function(SportsConfig, $scope, $routeParams, $log, $timeout, $rootScope) { 
 
-		$scope.sportsConfig.all.landing = {
-			athlete: '(e-)athlete',
-			athletes: '(e-)athletes',
-			alternativeIntroText: 'Post a video of yourself playing and get advice from the community. Start now by choosing your sport below',
-			displayName: 'Zero to Heroes',
-			communityWisdomIntro: 'Climb to the top',
-			displayAllSports: true
-		}
-
-		$scope.sportsConfig.squash.landing = {
-			athlete: 'squash player',
-			athletes: 'squash players',
-			displayName: 'Squash',
-			communityWisdomIntro: 'Climb to the top'
-		}
-		$scope.sportsConfig.badminton.landing = {
-			athlete: 'player',
-			athletes: 'players',
-			displayName: 'Badminton',
-			communityWisdomIntro: 'Climb to the top'
-		}
-		$scope.sportsConfig.heroesofthestorm.landing = {
-			athlete: 'gamer',
-			athletes: 'gamers',
-			displayName: 'Heroes of the Storm',
-			communityWisdomIntro: 'Climb the ladder to rank 1',
-			hideVideoReview: true
-		}
-		$scope.sportsConfig.hearthstone.landing = {
-			athlete: 'gamer',
-			athletes: 'gamers',
-			displayName: 'HearthStone',
-			communityWisdomIntro: 'Climb to Legend',
-			hideVideoReview: true
-		}
-		$scope.sportsConfig.leagueoflegends.landing = {
-			athlete: 'gamer',
-			athletes: 'gamers',
-			displayName: 'League of Legends',
-			communityWisdomIntro: 'Climb the ladder to the top',
-			hideVideoReview: true
-		}
-
+		$scope.sportsConfig = SportsConfig;
 		$scope.hideVideoReview = $scope.sportsConfig[$scope.sport].landing.hideVideoReview;
 
 		$scope.currentSportIndex = 0;

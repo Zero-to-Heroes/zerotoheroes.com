@@ -59,6 +59,8 @@ public class TagRepository {
 		badminton.add(new Tag("Men"));
 		badminton.add(new Tag("Women"));
 		badminton.add(new Tag("Tactics"));
+		badminton.add(new Tag("Serve"));
+		badminton.add(new Tag("Return"));
 		tags.put(Badminton, badminton);
 
 		// Tags for HearthStone

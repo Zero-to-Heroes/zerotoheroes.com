@@ -184,6 +184,7 @@ public class ReviewApiHandler {
 		review.setLastModifiedBy(review.getAuthor());
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
+		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
 		updateReview(review);
 		log.debug("Saved review with ID: " + review.getId());
 

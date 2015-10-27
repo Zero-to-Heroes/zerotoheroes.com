@@ -60,4 +60,10 @@ public class SubscriptionManager {
 		if (!StringUtils.isNullOrEmpty(subscriberId)) item.removeSubscriber(subscriberId);
 	}
 
+	public void subscribe(com.coach.review.Review.Sport sportInput, String authorId) {
+		Sport sport = sportManager.findById(sportInput.getKey());
+		log.debug("Notifying new review for " + sportInput + " meaning " + sport);
+		subscribe(sport, authorId);
+	}
+
 }

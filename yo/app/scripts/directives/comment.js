@@ -147,6 +147,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				  					$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
 		  							$scope.review.canvas = data.canvas;
 		  							$scope.review.subscribers = data.subscribers;
+		  							$scope.review.reviewVideoMap = data.reviewVideoMap || {};
 				  					$scope.reply = {};
 				  					if (data.text.match(timestampOnlyRegex)) {
 										//$log.log('incrementing timestamps after comment upload');

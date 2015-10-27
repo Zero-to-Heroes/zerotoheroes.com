@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Slf4j
 public class RouteController {
+	//@formatter:off
 	@RequestMapping({
 			"/reviews",
 			"/upload",
@@ -21,6 +22,7 @@ public class RouteController {
 			"/r/{sport}/{reviewId}",
 			"/r/{sport}/{reviewId}/{reviewTitle}",
 			"/s/{sport}",
+			"/s/{sport}/{pageNumber}",
 			"/s/{sport}/upload",
 			"/squash",
 			"/heroesofthestorm",
@@ -28,6 +30,7 @@ public class RouteController {
 			"/badminton",
 			"/leagueoflegends"
 	})
+	//@formatter:on
 	public String index(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		log.debug("Forwarding to index.html");
 		return "forward:/index.html";

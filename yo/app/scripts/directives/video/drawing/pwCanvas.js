@@ -37,7 +37,7 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 						$scope.canvas.renderAll();
 					}
 					else {
-						$timeout(function() { refreshCanvas() }, 200);
+						$timeout(function() { $scope.refreshCanvas() }, 200);
 					}
 					
 				}

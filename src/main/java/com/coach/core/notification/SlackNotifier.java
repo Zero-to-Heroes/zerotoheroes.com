@@ -99,7 +99,7 @@ public class SlackNotifier {
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("good");
 				attach.setText("A new user has just registered: " + user.getUsername() + " from "
-						+ user.getRegisterLocation());
+						+ user.getRegisterLocation() + " with email " + user.getEmail());
 				attach.setFallback("placeholder fallback");
 
 				SlackMessage message = new SlackMessage();

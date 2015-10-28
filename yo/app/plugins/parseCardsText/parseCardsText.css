@@ -1,3 +1,11 @@
 .parseCardsText .comment-body p .tooltip-inner {
   background-color: transparent;
 }
+
+.tooltip.parse-cards-text {
+	opacity: 1;
+}
+
+.parse-cards-text .tooltip-inner {
+	background-color: transparent;
+}

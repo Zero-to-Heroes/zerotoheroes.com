@@ -14,7 +14,7 @@ function parseCardsText(text) {
 			var cardImage = getCardImage(cardName);
 			if (cardImage) {
 				//console.log('cardImage', cardImage);
-				result = result.replace(match, '<a data-title="<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/cards/' + cardImage + '\'>" data-html="true" bs-tooltip>' + cardName + '</a>');
+				result = result.replace(match, '<a data-template-url="plugins/parseCardsText/template.html" data-title="' + cardImage + '" data-container="body" bs-tooltip>' + cardName + '</a>');
 			}
 		})
 	}

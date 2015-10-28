@@ -34,7 +34,8 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.exceptionHandling().and()
+		http.exceptionHandling()
+				.and()
 				.anonymous()
 				.and()
 				.servletApi()
@@ -62,8 +63,7 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 				// token header upon authentication
 				.addFilterBefore(
 						new StatelessLoginFilter("/api/login", tokenAuthenticationService, userDetailsService,
-								mongoTemplate,
-								authenticationManager()), UsernamePasswordAuthenticationFilter.class)
+								mongoTemplate, authenticationManager()), UsernamePasswordAuthenticationFilter.class)
 
 				// custom Token based authentication based on the header
 				// previously given to the client

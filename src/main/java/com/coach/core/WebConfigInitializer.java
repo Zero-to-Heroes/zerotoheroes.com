@@ -37,8 +37,9 @@ public class WebConfigInitializer implements ServletContextInitializer {
 		registration.setFilter(preRenderSEOFilter());
 		registration.addUrlPatterns("/*");
 		registration.addInitParameter("prerenderToken", "Pyd6EO6IRaMKowTwFGCQ");
-		registration.addInitParameter("prerenderServiceUrl", "http://localhost:3000");
-		registration.addInitParameter("crawlerUserAgents", "YahooSeeker");
+		// registration.addInitParameter("prerenderServiceUrl",
+		// "http://localhost:3000");
+		// registration.addInitParameter("crawlerUserAgents", "YahooSeeker");
 		registration.setName("prerender");
 		return registration;
 	}

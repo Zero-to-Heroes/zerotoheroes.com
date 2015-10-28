@@ -69,6 +69,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					if (!$scope.review.canvas) {
 						$scope.review.canvas = {};
 					}
+					//window.prerenderReady = true;
 					//$log.log('review canvas', $scope.review.canvas);
 				}
 			);

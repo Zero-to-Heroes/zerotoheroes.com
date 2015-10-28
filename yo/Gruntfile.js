@@ -314,7 +314,8 @@ module.exports = function (grunt) {
 			'templates/{,*/}*.html',
 			'images/**/*',
 			'fonts/{,*/}*.*',
-			'sitemap.xml'
+			'sitemap.xml',
+			'plugins/{,*/}*.*',
 		  ]
 		}, {
 		  expand: true,

@@ -72,6 +72,7 @@ module.exports = function(config) {
       'bower_components/jquery.stellar/jquery.stellar.js',
       'bower_components/angularjs-viewhead/angularjs-viewhead.js',
       'bower_components/ng-tags-input/ng-tags-input.min.js',
+      'bower_components/angular-load/angular-load.js',
 
       'app/scripts/app.js',
       'app/scripts/landing/owl.carousel.min.js',

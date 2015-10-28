@@ -55,8 +55,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
 						$rootScope.pageDescription = 'Get better at ' + $scope.sportsConfig[$scope.sport].displayName;
 						if ($scope.review.tags) {
+							$scope.review.tagValues = '';
 							angular.forEach($scope.review.tags, function(key) {
 								$rootScope.pageDescription += ' ' + key.text;
+								$scope.review.tagValues += ' ' + key.text;
 							})
 						}
 						$rootScope.pageDescription += $scope.review.text;

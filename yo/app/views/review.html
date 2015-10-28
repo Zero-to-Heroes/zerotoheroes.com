@@ -1,4 +1,4 @@
-<view-title>{{review.title}}</view-title>
+<view-title>{{review.title}} - {{review.tagValues}}</view-title>
 
 <div class="videogular-container keep-on-top multi-player" ng-show="review.key">
 	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">

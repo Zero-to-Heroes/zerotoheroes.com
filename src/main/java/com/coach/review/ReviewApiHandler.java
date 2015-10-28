@@ -293,6 +293,10 @@ public class ReviewApiHandler {
 		review.setSport(inputReview.getSport());
 		review.setTitle(inputReview.getTitle());
 		review.setTags(inputReview.getTags());
+
+		review.setLastModifiedDate(new Date());
+		review.setLastModifiedBy(currentUser);
+
 		updateReview(review);
 
 		// Updating user stats
@@ -328,7 +332,7 @@ public class ReviewApiHandler {
 		comment.setText(newComment.getText());
 
 		review.setLastModifiedDate(new Date());
-		review.setLastModifiedBy(comment.getAuthor());
+		review.setLastModifiedBy(currentUser);
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);

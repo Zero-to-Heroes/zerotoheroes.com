@@ -27,6 +27,10 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(
+				new DateTime("2015-10-28").toDate(),
+				"HearthStone players can now add a [[card name]] between brackets in the comments, and see the corresponding card image",
+				News.Type.Feature));
 		news.add(new News(new DateTime("2015-10-25").toDate(),
 				"You can now decide to be notified when a new review is added, or a comment added in a review",
 				News.Type.Feature));

@@ -579,5 +579,6 @@ var jsonDatabase = [
 	{ "cardimage" : "715.png", "name" : "Murloc"},
 	{ "cardimage" : "439.png", "name" : "Repair Bot"},
 	{ "cardimage" : "559.png", "name" : "Captain's Parrot"},
-	{ "cardimage" : "217.png", "name" : "Old Murk-Eye"}
+	{ "cardimage" : "217.png", "name" : "Old Murk-Eye"},
+	{ "cardimage" : "22460.png", "name" : "Competitive Spirit"}
 ]

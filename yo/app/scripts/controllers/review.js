@@ -517,7 +517,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Triggering the various plugins
 			if ($scope.plugins) {
 				angular.forEach($scope.plugins, function(plugin) {
-					prettyResult = SportsConfig.executePlugin($scope, plugin, prettyResult);
+					if (plugin) {
+						prettyResult = SportsConfig.executePlugin($scope, plugin, prettyResult);
+					}
 				})
 			}
 

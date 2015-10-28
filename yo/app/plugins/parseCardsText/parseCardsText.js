@@ -5,15 +5,15 @@ function parseCardsText(text) {
 	if (!matches) return text;
 
 	var result = text;
-	console.log('matches', matches);
+	//console.log('matches', matches);
 	if (matches) {
 		matches.forEach(function(match) {
-			console.log('match', match);
+			//console.log('match', match);
 			var cardName = match.substring(2, match.length - 2);
-			console.log('cardName', cardName);
+			//console.log('cardName', cardName);
 			var cardImage = getCardImage(cardName);
 			if (cardImage) {
-				console.log('cardImage', cardImage);
+				//console.log('cardImage', cardImage);
 				result = result.replace(match, '<a data-title="<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/cards/' + cardImage + '\'>" data-html="true" bs-tooltip>' + cardName + '</a>');
 			}
 		})

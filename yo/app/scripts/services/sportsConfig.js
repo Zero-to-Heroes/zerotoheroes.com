@@ -110,6 +110,9 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 		service.loadPlugin = function(plugins, plugin) {
 			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js').then(function() {
 				plugins.push(plugin);
+			}).catch(function() {
+				plugins.push(undefined);
+				console.error('could not load plugin', plugin );
 			});
 			angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
 				//console.log('loaded css');

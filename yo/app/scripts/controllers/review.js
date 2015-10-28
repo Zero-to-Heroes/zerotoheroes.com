@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig) { 
 
 		$scope.API = null;
 		$scope.API2 = null;
@@ -12,6 +12,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.User = User;
+		$scope.sport = $routeParams.sport;
 		$scope.canvasState = {
 			canvasIdIndex: 0,
 			canvasId: 'tmp0',
@@ -20,8 +21,23 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		/*$scope.canvasIdIndex = 0;
 		$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
 		$scope.drawingCanvas = false;*/
+		var plugins = SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
+		$scope.plugins = [];
+		if (plugins) {
+			angular.forEach(plugins, function(plugin) {
+				SportsConfig.loadPlugin($scope.plugins, plugin);
+			})
+		}
+
+		$scope.$watchCollection('plugins', function(newValue, oldValue) {
+			if (!plugins || newValue.length == plugins.length) {
+				$log.log('all plugins loaded', newValue, plugins);
+				$scope.initReview();
+			}
+		})
 
 		$scope.initReview = function() {
+			$log.log('initializing review');
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data;
@@ -61,7 +77,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				};
 			});
 		}
-		$scope.initReview();
 
 		//===============
 		// Video player
@@ -485,18 +500,27 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.parseText = function(comment) {
 			if (!comment) return '';
+
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
 			var linksToPrettify = result.match(timestampRegexLink);
-			if (!linksToPrettify) return comment;
-
-			//$log.log('linksToPrettify', linksToPrettify);
 			var prettyResult = result;
-			for (var i = 0; i < linksToPrettify.length; i++) {
-				var linkToPrettify = linksToPrettify[i];
-				var pretty = $scope.prettifyLink(linkToPrettify.substring(1, linkToPrettify.length - 1));
-				prettyResult = prettyResult.replace(linkToPrettify, 'title="' + pretty.tooltip + '">' + pretty.link + '<');
+			if (linksToPrettify) {
+				//$log.log('linksToPrettify', linksToPrettify);
+				for (var i = 0; i < linksToPrettify.length; i++) {
+					var linkToPrettify = linksToPrettify[i];
+					var pretty = $scope.prettifyLink(linkToPrettify.substring(1, linkToPrettify.length - 1));
+					prettyResult = prettyResult.replace(linkToPrettify, 'title="' + pretty.tooltip + '">' + pretty.link + '<');
+				}
 			}
+
+			// Triggering the various plugins
+			if ($scope.plugins) {
+				angular.forEach($scope.plugins, function(plugin) {
+					prettyResult = SportsConfig.executePlugin($scope, plugin, prettyResult);
+				})
+			}
+
 			return prettyResult;
 		};
 

@@ -1,6 +1,6 @@
 var services = angular.module('services');
-services.factory('SportsConfig', ['$log', 
-	function ($log) {
+services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 
+	function ($log, angularLoad, $parse) {
 		var service = {};
 
 		service =
@@ -26,6 +26,9 @@ services.factory('SportsConfig', ['$log',
 					recommendedVideo: '55e8101be4b051128109112e',
 					isSport: true,
 					allowDoubleSpeed: true,
+					plugins: {
+						plugins: ['parseCardsText']
+					},
 					landing: {
 						athlete: 'gamer',
 						athletes: 'gamers',
@@ -96,6 +99,22 @@ services.factory('SportsConfig', ['$log',
 					}
 				}
 			}
+
+		service.executePlugin = function(scope, plugin, target) {
+			//$log.log('Executing lpugin', plugin, target);
+			//var fn = $parse(plugin);
+			//return fn(scope, target);
+			return window[plugin](target);
+		}
+
+		service.loadPlugin = function(plugins, plugin) {
+			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js').then(function() {
+				plugins.push(plugin);
+			});
+			angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
+				//console.log('loaded css');
+			});
+		}
 
 		return service;
 	}

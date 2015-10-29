@@ -204,7 +204,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				}
 			},
 			reloop: function() {
+				$scope.API.stop();
+				$scope.API2.stop();
 				$scope.playerControls.seekTime($scope.playerControls.loopStartTime, $scope.playerControls.loop2StartTime);
+				$scope.playSimultaneously();
 			},
 			resetPlayback: function() {
 				$scope.playerControls.setPlayback(1, 1);
@@ -213,6 +216,39 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.playerControls.loopDuration = undefined;
 				$scope.playerControls.loopStatus = undefined;
 			}
+		}
+
+		$scope.playSimultaneously = function() {
+			$log.log('Stopped players, waiting for both to be ready to reloop');
+			$scope.player1ready = false;
+			$scope.player2ready = false;
+			$scope.relooping = true;
+
+			$scope.$watch('player1ready', function (newVal, oldVal) {
+				if (!$scope.relooping) return;
+
+				if (!$scope.player2ready) return;
+
+				$scope.allPlayersReady = true;
+			});
+
+			$scope.$watch('player2ready', function (newVal, oldVal) {
+				if (!$scope.relooping) return;
+
+				if (!$scope.player1ready) return;
+				
+				$scope.allPlayersReady = true;
+			});
+
+			var unregister = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
+				//$log.log('All players ready?', oldVal, newVal);
+				if ($scope.relooping) {
+					$scope.API.play();
+					$scope.API2.play();
+					$scope.relooping = false;
+					unregister();
+				}
+			});
 		}
 
 		//===============
@@ -403,8 +439,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			return moment(date).fromNow();
 		}
 
-		$scope.formatExactDate = function(comment) {
-			return moment(comment.creationDate).format("YYYY-MM-DD HH:mm:ss");
+		$scope.formatExactDate = function(date) {
+			return moment(date).format("YYYY-MM-DD HH:mm:ss");
 		}
 
 		$scope.startEditingInformation = function() {

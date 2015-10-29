@@ -11,7 +11,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.User = User;
 		$scope.review = {
 			canvas: {},
-			videoFramerateRatio: 1;
+			videoFramerateRatio: 1
 		};
 
 		$scope.creds = {

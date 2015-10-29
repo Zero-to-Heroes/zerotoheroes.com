@@ -78,8 +78,12 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					//$log.log('updating comment', $scope.comment);
 					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
 		  				function(data) {
-		  					$scope.setCommentText(comment, data.text);
-		  					$scope.review.canvas = data.tempCanvas;
+		  					$log.log('Review', data);
+		  					var newComment = $scope.findComment(data.comments, comment.id);
+		  					$scope.setCommentText(comment, newComment.text);
+		  					$scope.review.canvas = newComment.tempCanvas;
+		  					$scope.review.plugins = data.plugins;
+		  					$log.log('updating plugins', $scope.review.plugins);
 		  					if (data.text.match(timestampOnlyRegex)) {
 								$log.log('incrementing timestamps after comment upload');
 								User.incrementTimestamps();
@@ -152,6 +156,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 		  							$scope.review.canvas = data.canvas;
 		  							$scope.review.subscribers = data.subscribers;
 		  							$scope.review.reviewVideoMap = data.reviewVideoMap || {};
+		  							$scope.review.plugins = data.plugins;
 				  					$scope.reply = {};
 				  					if (data.text.match(timestampOnlyRegex)) {
 										//$log.log('incrementing timestamps after comment upload');

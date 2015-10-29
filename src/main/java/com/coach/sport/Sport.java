@@ -17,7 +17,8 @@ public class Sport implements HasSubscribers {
 
 	private String id;
 
-	private Set<String> subscribers;
+	private Set<String> subscribers = new HashSet<>();
+	private Set<String> plugins = new HashSet<>();
 
 	public Set<String> getSubscribers() {
 		if (subscribers == null) subscribers = new HashSet<>();

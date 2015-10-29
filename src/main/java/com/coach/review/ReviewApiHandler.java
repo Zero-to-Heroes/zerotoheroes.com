@@ -33,10 +33,12 @@ import com.amazonaws.util.StringUtils;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
+import com.coach.plugin.Plugin;
 import com.coach.reputation.ReputationAction;
 import com.coach.reputation.ReputationUpdater;
 import com.coach.review.Review.Sport;
 import com.coach.review.video.transcoding.Transcoder;
+import com.coach.sport.SportManager;
 import com.coach.subscription.SubscriptionManager;
 import com.coach.user.UserRepository;
 
@@ -70,6 +72,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	SubscriptionManager subscriptionManager;
+
+	@Autowired
+	SportManager sportManager;
 
 	public ReviewApiHandler() {
 		log.debug("Initializing Review Api Handler");
@@ -178,6 +183,7 @@ public class ReviewApiHandler {
 		Map<String, String> inputCanvas = review.getCanvas();
 		review.resetCanvas();
 		consolidateCanvas(currentUser, review, review, inputCanvas);
+		activatePlugins(currentUser, review, review);
 
 		// Create the entry on the database
 		review.setCreationDate(new Date());
@@ -245,6 +251,7 @@ public class ReviewApiHandler {
 		review.setLastModifiedBy(comment.getAuthor());
 
 		consolidateCanvas(currentUser, review, comment, comment.getTempCanvas());
+		activatePlugins(currentUser, review, comment);
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
@@ -288,6 +295,7 @@ public class ReviewApiHandler {
 
 		review.setText(inputReview.getText());
 		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
+		activatePlugins(currentUser, review, review);
 		log.debug("updated text is " + review.getText());
 
 		review.setSport(inputReview.getSport());
@@ -309,7 +317,7 @@ public class ReviewApiHandler {
 	}
 
 	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Comment> updateComment(@PathVariable("reviewId") final String reviewId,
+	public @ResponseBody ResponseEntity<Review> updateComment(@PathVariable("reviewId") final String reviewId,
 			@PathVariable("commentId") final int commentId, @RequestBody Comment newComment) throws IOException {
 
 		Review review = reviewRepo.findById(reviewId);
@@ -322,13 +330,14 @@ public class ReviewApiHandler {
 		User user = userRepo.findByUsername(currentUser);
 		// Disallow anonymous edits
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
-			return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
 		// Disable edits when you're not the author
-		else if (!currentUser.equals(comment.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Comment>(
-				(Comment) null, HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(comment.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Review>(
+				(Review) null, HttpStatus.UNAUTHORIZED); }
 
 		consolidateCanvas(currentUser, review, newComment, newComment.getTempCanvas());
+		activatePlugins(currentUser, review, newComment);
 		comment.setText(newComment.getText());
 
 		review.setLastModifiedDate(new Date());
@@ -346,7 +355,7 @@ public class ReviewApiHandler {
 
 		comment.setTempCanvas(review.getCanvas());
 
-		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{reviewId}/{commentId}/reply", method = RequestMethod.POST)
@@ -386,6 +395,7 @@ public class ReviewApiHandler {
 		log.debug("Adding reply " + reply + " to review " + review + " and comment " + comment);
 
 		consolidateCanvas(currentUser, review, reply, reply.getTempCanvas());
+		activatePlugins(currentUser, review, reply);
 		log.debug("modified text is " + reply.getText());
 
 		reply.setCreationDate(new Date());
@@ -527,6 +537,22 @@ public class ReviewApiHandler {
 			}
 		}
 		textHolder.setText(text);
+	}
+
+	private void activatePlugins(String currentUser, Review review, HasText textHolder) {
+		com.coach.sport.Sport sportEntity = sportManager.findById(review.getSport().getKey());
+		for (String pluginClass : sportEntity.getPlugins()) {
+			try {
+				Plugin plugin = (Plugin) Class.forName(pluginClass).newInstance();
+				String newText = plugin.execute(currentUser,
+						review.getPluginData(sportEntity.getId(), plugin.getName()), textHolder);
+				log.debug("Plugin data " + review.getPlugins());
+				textHolder.setText(newText);
+			}
+			catch (Exception e) {
+				log.warn("Incorrect plugin execution " + pluginClass, e);
+			}
+		}
 	}
 
 	private void addAuthorInformation(Sport sport, HasReputation entity, String currentUser) {

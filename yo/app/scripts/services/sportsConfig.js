@@ -27,7 +27,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					isSport: true,
 					allowDoubleSpeed: true,
 					plugins: {
-						plugins: ['parseCardsText']
+						plugins: ['parseCardsText', 'parseDecks']
 					},
 					landing: {
 						athlete: 'gamer',
@@ -100,11 +100,11 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 				}
 			}
 
-		service.executePlugin = function(scope, plugin, target) {
+		service.executePlugin = function(scope, review, plugin, target) {
 			//$log.log('Executing lpugin', plugin, target);
 			//var fn = $parse(plugin);
 			//return fn(scope, target);
-			return window[plugin](target);
+			return window[plugin](review, target);
 		}
 
 		service.loadPlugin = function(plugins, plugin) {

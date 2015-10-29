@@ -74,6 +74,9 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private int totalInsertedComments;
 	private int canvasId;
 
+	// The plugin data for this review
+	private Map<String, Map<String, Map<String, String>>> plugins = new HashMap<>();
+
 	// Users who will be notified when something is posted on this review
 	private Set<String> subscribers = new HashSet<>();
 
@@ -258,4 +261,19 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		return "http://www.zerotoheroes.com/r/" + getSport().getKey() + "/" + getId() + "/" + getTitle();
 	}
 
+	public Map<String, String> getPluginData(String sport, String plugin) {
+		Map<String, Map<String, String>> pluginsForSport = plugins.get(sport);
+		if (pluginsForSport == null) {
+			pluginsForSport = new HashMap<>();
+			plugins.put(sport, pluginsForSport);
+		}
+
+		Map<String, String> pluginData = pluginsForSport.get(plugin);
+		if (pluginData == null) {
+			pluginData = new HashMap<>();
+			pluginsForSport.put(plugin, pluginData);
+		}
+
+		return pluginData;
+	}
 }

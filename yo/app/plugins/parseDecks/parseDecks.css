@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Bliz Quadrata';
+    src: url('fonts/bliz-quadrata.woff');
+}
+
+.deck.tooltip {
+	/*opacity: 1;
+	min-width: 300px;*/
+}
+
+.deck .tooltip-inner {
+	padding: 10px;
+	max-width: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.deck .deck-header {
+	height: 50px;
+    background-repeat: no-repeat;
+    color: #66559E;
+    /*text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5), 0 0 2px rgba(255, 255, 255, 0.5);*/
+    font-family: 'Bliz Quadrata', 'Hiragino Kaku Gothic Pro', 'Hiragino Kaku Gothic ProN W3', Osaka, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'Times New Roman', serif;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.deck .deck-body {
+	text-align: left;
+}
+
+.deck .card-type-title {
+	text-align: center;
+}
+
+.deck .deck-footer {
+	height: 20px;	
+}
+
+.deck .card {
+	font-weight: bold;
+	width: 200px;
+	height: 25px;
+}
+
+.deck .card.free {
+	color: #D3D3D3;
+}
+
+.deck .card.common {
+	color: #0FAF03;
+}
+
+.deck .card.rare {
+	color: #198EFF;
+}
+
+.deck .card.epic {
+	color: #AB48EE;
+}
+
+.deck .card.legendary {
+	color: #F07000;
+}

@@ -1,6 +1,6 @@
 var cardRegex = /\[\[.+?\]\]/gm;
 
-function parseCardsText(text) {
+function parseCardsText(review, text) {
 	var matches = text.match(cardRegex);
 	if (!matches) return text;
 
@@ -14,7 +14,7 @@ function parseCardsText(text) {
 			var card = getCard(cardName);
 			if (card) {
 				//console.log('cardImage', cardImage);
-				var cssClass = card.rarity.toLowerCase();
+				var cssClass = card.rarity ? card.rarity.toLowerCase() : 'common';
 				result = result.replace(match, '<a class="card ' + cssClass + '" data-template-url="plugins/parseCardsText/template.html" data-title="' + card.cardImage + '" data-container="body" bs-tooltip>' + card.name + '</a>');
 			}
 		})
@@ -1322,8 +1322,6 @@ var jsonDatabase = [
 	{"cardImage":"FP1_013.png","cost":8,"collectible":true,"set":"Curse of Naxxramas","artist":"Chris Robinson","health":8,"type":"Minion","howToGetGold":"Can be crafted after defeating every boss in Naxxramas!","flavor":"Kel'Thuzad could not resist the call of the Lich King. Even when it's just a robo-call extolling the Lich King's virtues.","elite":true,"attack":6,"name":"Kel'Thuzad","howToGet":"Unlocked by defeating every boss in Naxxramas!","id":"FP1_013","text":"At the end of each turn, summon all friendly minions that died this turn.","rarity":"Legendary"},
 	{"cardImage":"NAX9_02H.png","elite":true,"cost":3,"set":"Curse of Naxxramas","attack":2,"name":"Lady Blaumeux","health":7,"id":"NAX9_02H","text":"Your hero is <b>Immune<\/b>.","type":"Minion"},
 	{"cardImage":"NAX9_02.png","elite":true,"cost":3,"set":"Curse of Naxxramas","attack":1,"name":"Lady Blaumeux","health":7,"id":"NAX9_02","text":"Your hero is <b>Immune<\/b>.","type":"Minion"},
-	{"cardImage":"NAX6_01H.png","set":"Curse of Naxxramas","name":"Loatheb","health":99,"id":"NAX6_01H","type":"Hero"},
-	{"cardImage":"NAX6_01.png","set":"Curse of Naxxramas","name":"Loatheb","health":75,"id":"NAX6_01","type":"Hero"},
 	{"cardImage":"FP1_030.png","cost":5,"collectible":true,"set":"Curse of Naxxramas","artist":"Samwise","health":5,"mechanics":["Battlecry"],"type":"Minion","howToGetGold":"Can be crafted after completing the Plague Quarter.","flavor":"Loatheb used to be a simple Bog Beast.  This is why we need stricter regulations on mining and agriculture.","elite":true,"attack":5,"name":"Loatheb","howToGet":"Unlocked by completing the Plague Quarter.","id":"FP1_030","text":"<b>Battlecry:<\/b> Enemy spells cost (5) more next turn.","rarity":"Legendary"},
 	{"cardImage":"NAX1_05.png","cost":7,"set":"Curse of Naxxramas","name":"Locust Swarm","id":"NAX1_05","text":"Deal $3 damage to all enemy minions. Restore #3 Health to your hero.","type":"Spell"},
 	{"cardImage":"FP1_004.png","cost":2,"collectible":true,"set":"Curse of Naxxramas","artist":"James Ryman","health":2,"mechanics":["Deathrattle"],"type":"Minion","howToGetGold":"Can be crafted after defeating Grobbulus in the Construct Quarter.","flavor":"His mother wanted him to be a mage or a warlock, but noooooooo, he had to go and be a scientist like his father.","attack":2,"name":"Mad Scientist","howToGet":"Unlocked by defeating Grobbulus in the Construct Quarter.","id":"FP1_004","text":"<b>Deathrattle:<\/b> Put a <b>Secret<\/b> from your deck into the battlefield.","rarity":"Common"},

@@ -10,7 +10,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.maximumAllowedDuration = 5 * 60 + 1;
 		$scope.User = User;
 		$scope.review = {
-			canvas: {}
+			canvas: {},
+			videoFramerateRatio: 1;
 		};
 
 		$scope.creds = {

@@ -56,12 +56,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						$rootScope.pageDescription = 'Get better at ' + $scope.sportsConfig[$scope.sport].displayName;
 						if ($scope.review.tags) {
 							$scope.review.tagValues = '';
+							$rootScope.pageDescription += '. ';
 							angular.forEach($scope.review.tags, function(key) {
 								$rootScope.pageDescription += ' ' + key.text;
 								$scope.review.tagValues += ' ' + key.text;
 							})
 						}
-						$rootScope.pageDescription += $scope.review.text;
+						$rootScope.pageDescription += '. ' + $scope.review.text;
 						//$log.log('pageDescription in review.js', $rootScope.pageDescription);
 					}
 

@@ -403,6 +403,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			return moment(date).fromNow();
 		}
 
+		$scope.formatExactDate = function(comment) {
+			return moment(comment.creationDate).format("YYYY-MM-DD HH:mm:ss");
+		}
+
 		$scope.startEditingInformation = function() {
 			$scope.review.oldTitle = $scope.review.title;
 			$scope.review.oldText = $scope.review.text;

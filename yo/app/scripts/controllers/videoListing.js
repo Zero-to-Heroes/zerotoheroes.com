@@ -66,6 +66,15 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			return statusString + fromNowString;
 		}
 
+		$scope.formatExactDate = function(video) {
+			// What is the time difference compared to now?
+			var usefulDate = video.lastModifiedDate ? video.lastModifiedDate : video.creationDate;
+			//console.log(usefulDate);
+			var fromNowString = moment(usefulDate).format("YYYY-MM-DD HH:mm:ss");
+			//console.log(fromNowString);
+			return fromNowString;
+		}
+
 		$scope.upvoteReview = function(video) {
 			Api.Reputation.save({reviewId: video.id, action: 'Upvote'},
   				function(data) {

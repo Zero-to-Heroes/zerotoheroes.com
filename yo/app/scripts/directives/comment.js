@@ -55,6 +55,10 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					return moment(comment.creationDate).fromNow();
 				}
 
+				$scope.formatExactDate = function(comment) {
+					return moment(comment.creationDate).format("YYYY-MM-DD HH:mm:ss");
+				}
+
 				$scope.startEditing = function(comment) {
 					comment.editing = true;
 					comment.oldText = comment.text;

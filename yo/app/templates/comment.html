@@ -12,7 +12,7 @@
 				<span bs-tooltip data-title="{{comment.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="comment.authorId">{{comment.authorReputation ? comment.authorReputation : 0}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
 			</span>
 
-			<span><small>{{formatDate(comment)}}</small></span>
+			<span title="{{formatExactDate(comment)}}"><small>{{formatDate(comment)}}</small></span>
 
 			<span ng-show="comment.id && canEdit(comment) && !comment.editing"> - </span>
 			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && canEdit(comment) && !comment.editing">Edit</a>

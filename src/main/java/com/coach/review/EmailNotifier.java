@@ -31,11 +31,10 @@ public class EmailNotifier {
 
 		String recipient = subscriber.getEmail();
 
-		String reviewUrl = "http://www.zerotoheroes.com/#/r/" + review.getSport().getKey() + "/" + review.getId();
 		//@formatter:off
 		String body = "Hey there!<br/>"
 				+ "<p>" + comment.getAuthor() + " has just added a comment on your review. "
-						+ "Click <a href=\"" + reviewUrl + "\">here</a> to see what they said.</p>"
+						+ "Click <a href=\"" + review.getUrl() + "\">here</a> to see what they said.</p>"
 			    + "<p><small>And if you wish to stop receiving notifications on this review, just hit \"unsubsribe\" from the url above</small></p>";
 		//@formatter:on
 
@@ -48,7 +47,7 @@ public class EmailNotifier {
 	/*
 	 * public void notifyNewUser(User user) { if
 	 * (!"prod".equalsIgnoreCase(environment)) return;
-	 *
+	 * 
 	 * EmailMessage message =
 	 * EmailMessage.builder().from("seb@zerotoheroes.com")
 	 * .to("contact@zerotoheroes.com") .subject(environment +
@@ -63,11 +62,10 @@ public class EmailNotifier {
 		String recipient = subscriber.getEmail();
 
 		String sportUrl = "http://www.zerotoheroes.com/#/r/" + review.getSport().getKey();
-		String reviewUrl = sportUrl + "/" + review.getId();
 		//@formatter:off
 		String body = "Hey there!<br/>"
 				+ "<p>" + review.getAuthor() + " has just posted a new review \"" + review.getTitle() + "\". "
-						+ "Click <a href=\"" + reviewUrl + "\">here</a> to have a look.</p>"
+						+ "Click <a href=\"" + review.getUrl() + "\">here</a> to have a look.</p>"
 				+ "<p><small>And if you wish to stop receiving notifications on this review, just hit \"unsubsribe\" "
 						+ "on the <a href=\"" + sportUrl + "\">sport page</a></small></p>";
 		//@formatter:on

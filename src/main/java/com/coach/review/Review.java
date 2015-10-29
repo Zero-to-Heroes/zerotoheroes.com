@@ -254,4 +254,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		if (!StringUtils.isNullOrEmpty(subscriberId)) getSubscribers().remove(subscriberId);
 	}
 
+	public String getUrl() {
+		return "http://www.zerotoheroes.com/r/" + getSport().getKey() + "/" + getId() + "/" + getTitle();
+	}
+
 }

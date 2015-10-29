@@ -1,5 +1,25 @@
-.parseCardsText .comment-body p .tooltip-inner {
-  background-color: transparent;
+.parseCardsText .card {
+	font-weight: bold;
+}
+
+.parseCardsText .card {
+	color: black;
+}
+
+.parseCardsText .card.common {
+	color: #0FAF03;
+}
+
+.parseCardsText .card.rare {
+	color: #198EFF;
+}
+
+.parseCardsText .card.epic {
+	color: #AB48EE;
+}
+
+.parseCardsText .card.legendary {
+	color: #F07000;
 }
 
 .tooltip.parse-cards-text {

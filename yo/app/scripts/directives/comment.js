@@ -80,9 +80,9 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 		  				function(data) {
 		  					$log.log('Review', data);
 		  					var newComment = $scope.findComment(data.comments, comment.id);
-		  					$scope.setCommentText(comment, newComment.text);
 		  					$scope.review.canvas = newComment.tempCanvas;
 		  					$scope.review.plugins = data.plugins;
+		  					$scope.setCommentText(comment, newComment.text);
 		  					$log.log('updating plugins', $scope.review.plugins);
 		  					if (data.text.match(timestampOnlyRegex)) {
 								$log.log('incrementing timestamps after comment upload');

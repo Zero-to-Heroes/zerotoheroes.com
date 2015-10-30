@@ -206,8 +206,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			reloop: function() {
 				$scope.API.stop();
 				$scope.API2.stop();
-				$scope.playerControls.seekTime($scope.playerControls.loopStartTime, $scope.playerControls.loop2StartTime);
-				$scope.playSimultaneously();
+				$timeout(function() {
+					$scope.playerControls.seekTime($scope.playerControls.loopStartTime, $scope.playerControls.loop2StartTime);
+					$scope.playSimultaneously();
+				}, 0);
 			},
 			resetPlayback: function() {
 				$scope.playerControls.setPlayback(1, 1);
@@ -476,9 +478,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				//$log.log('updating review to ', newReview);
 				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview, 
 					function(data) {
-						$scope.updateVideoInformation(data);
 		  				$scope.review.canvas = data.canvas;
 		  				$scope.review.plugins = data.plugins;
+		  				$log.log('plugins', $scope.review.plugins);
+						$scope.updateVideoInformation(data);
 		  				if (data.text.match(timestampOnlyRegex)) {
 							$log.log('incrementing timestamps after comment upload');
 							User.incrementTimestamps();
@@ -564,6 +567,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if ($scope.plugins) {
 				angular.forEach($scope.plugins, function(plugin) {
 					if (plugin) {
+						$log.log('executing plugin for text', plugin, prettyResult);
 						prettyResult = SportsConfig.executePlugin($scope, $scope.review, plugin, prettyResult);
 					}
 				})

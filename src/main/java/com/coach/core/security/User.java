@@ -52,6 +52,7 @@ public class User implements UserDetails {
 
 	private String registerLocation;
 	private int reputation;
+	private String frame;
 	private UserReputation explodedReputation;
 	private Stats stats;
 	private boolean canEdit;

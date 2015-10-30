@@ -61,6 +61,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private String author, lastModifiedBy;
 	private String authorId, lastModifiedById;
 	private int authorReputation;
+	private String authorFrame;
 	private int beginning, ending;
 	private List<Comment> comments;
 	private boolean transcodingDone;
@@ -187,6 +188,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		User author = userMap.get(authorId);
 		if (author != null) {
 			authorReputation = author.getReputation(sport);
+			authorFrame = author.getFrame();
 		}
 
 		if (comments != null) {

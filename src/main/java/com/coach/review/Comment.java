@@ -30,6 +30,7 @@ public class Comment implements HasText, HasReputation {
 	private String id;
 	private String author, authorId, text;
 	private int authorReputation;
+	private String authorFrame;
 	private Date creationDate;
 	private boolean helpful;
 	private List<Comment> comments;
@@ -116,6 +117,7 @@ public class Comment implements HasText, HasReputation {
 		User author = userMap.get(authorId);
 		if (author != null) {
 			authorReputation = author.getReputation(sport);
+			authorFrame = author.getFrame();
 		}
 
 		if (comments != null) {

@@ -5,6 +5,7 @@
 
 .deck-link:before {
 	content: url('images/deck_small.png');
+	margin-right: 4px;
 }
 
 .deck.tooltip {

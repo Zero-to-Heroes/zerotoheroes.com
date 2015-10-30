@@ -12,6 +12,7 @@
 
 .parseCardsText .card.common:before {
 	content: url('images/common.png');
+	margin-right: 4px;
 }
 
 .parseCardsText .card.rare {
@@ -20,6 +21,7 @@
 
 .parseCardsText .card.rare:before {
 	content: url('images/rare.png');
+	margin-right: 4px;
 }
 
 .parseCardsText .card.epic {
@@ -28,6 +30,7 @@
 
 .parseCardsText .card.epic:before {
 	content: url('images/epic.png');
+	margin-right: 4px;
 }
 
 .parseCardsText .card.legendary {
@@ -36,6 +39,7 @@
 
 .parseCardsText .card.legendary:before {
 	content: url('images/legendary.png');
+	margin-right: 4px;
 }
 
 .tooltip.parse-cards-text {

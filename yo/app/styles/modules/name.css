@@ -1,0 +1,4 @@
+.earlybird:before {
+	content: url('/images/flair/earlybird.png');
+	margin-right: 3px;
+}

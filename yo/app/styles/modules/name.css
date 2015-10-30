@@ -1,4 +1,4 @@
-.earlybird:before {
-	content: url('/images/flair/earlybird.png');
-	margin-right: 3px;
+.earlybird {
+	font-weight: bold;
+	color: #F07000;
 }

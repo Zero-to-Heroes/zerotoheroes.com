@@ -86,6 +86,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// Video player
 		//===============
 		$scope.onPlayerReady = function(API) {
+			//$log.log('on player ready');
 			$scope.API = API;
 			$scope.API.setVolume(1);
 			// Load the video
@@ -105,17 +106,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType});
 				});*/
 				$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
+					$scope.API.mediaElement.on('canplay', function() {
+					$log.log('can play player1');
+					$scope.player1ready = true;
+					$scope.$apply();
+				});
 			}, 0);
-
-			$scope.API.mediaElement.on('canplay', function() {
-				$log.log('can play player1');
-				$scope.player1ready = true;
-				$scope.$apply();
-			});
-			
 		};
 
 		$scope.onSecondPlayerReady = function($API) {
+			//$log.log('onSecondPlayerReady');
 			$scope.API2 = $API;
 			$scope.API2.setVolume(0);
 			$scope.media = $scope.API2.mediaElement;
@@ -155,7 +155,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				}
 			},
 			seekTime: function(time, time2) {
-				//$log.log('seeking times', time, time2, $scope.API.currentTime);
+				$log.log('seeking times', time, time2, $scope.API.currentTime);
 				if (time * 1000 == $scope.API.currentTime) {
 					//$log.log('staying at the same time, no action required');
 					$timeout(function() { $scope.player1ready = true; }, 0);					
@@ -204,9 +204,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				}
 			},
 			reloop: function() {
-				$scope.API.stop();
-				$scope.API2.stop();
+				$scope.API.pause();
+				$scope.API2.pause();
+				$scope.relooping = true;
 				$timeout(function() {
+					$log.log('seeking time in reloop');
 					$scope.playerControls.seekTime($scope.playerControls.loopStartTime, $scope.playerControls.loop2StartTime);
 					$scope.playSimultaneously();
 				}, 0);
@@ -224,33 +226,35 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$log.log('Stopped players, waiting for both to be ready to reloop');
 			$scope.player1ready = false;
 			$scope.player2ready = false;
-			$scope.relooping = true;
+			$scope.allPlayersReady = false;
 
-			$scope.$watch('player1ready', function (newVal, oldVal) {
+			var unregister1 = $scope.$watch('player1ready', function (newVal, oldVal) {
 				if (!$scope.relooping) return;
 
 				if (!$scope.player2ready) return;
 
-				$log.log('in player1ready, all player ready to play simultaneously');
+				//$log.log('in player1ready, all player ready to play simultaneously');
 				$scope.allPlayersReady = true;
 			});
 
-			$scope.$watch('player2ready', function (newVal, oldVal) {
+			var unregister2 = $scope.$watch('player2ready', function (newVal, oldVal) {
 				if (!$scope.relooping) return;
 
 				if (!$scope.player1ready) return;
 				
-				$log.log('in player2ready, all player ready to play simultaneously');
+				//$log.log('in player2ready, all player ready to play simultaneously');
 				$scope.allPlayersReady = true;
 			});
 
 			var unregister = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
 				if ($scope.relooping && newVal) {
-					$log.log('All players ready to play simultaneously?', oldVal, newVal);
+					//$log.log('All players ready to play simultaneously?', oldVal, newVal);
 					$scope.API.play();
 					$scope.API2.play();
 					$scope.relooping = false;
 					unregister();
+					unregister1();
+					unregister2();
 				}
 			});
 		}
@@ -846,6 +850,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		});
 
 		$scope.$watch('playerControls.mode', function (newVal, oldVal) {
+			$log.log('changing playerControls.mode', newVal, oldVal);
 			if (newVal == 1) {
 				//$log.log('stopping background video');
 				$scope.API2.stop();
@@ -862,7 +867,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.onUpdateTime = function(currentTime, duration) {
-			if (!$scope.playerControls.loopDuration) return;
+			if (!$scope.playerControls.loopDuration || $scope.relooping) return;
+			//$log.log('updating time');
 
 			var test = $scope.playerControls.loopStartTime + $scope.playerControls.loopDuration;
 			// Always reset both loops at the same time, so we're fine with dealing only with the main player

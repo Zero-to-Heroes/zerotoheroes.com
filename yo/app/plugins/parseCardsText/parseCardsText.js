@@ -33,7 +33,8 @@ function getCard(cardName) {
 		//console.log('\tlooking at card', card.name);
 		//console.log('\tcardimage is', card.cardimage);
 		//console.log('\tis equal', card.name, cardName, card.name == cardName);
-		if (card.name == cardName) {
+		// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
+		if (card.name == cardName && card.id.toUpperCase() == card.id) {
 			result = card;
 			return true;
 		}
@@ -165,7 +166,7 @@ var jsonDatabase = [
 	{"cardImage":"EX1_025t.png","cost":1,"set":"Basic","race":"Mech","attack":2,"faction":"Neutral","name":"Mechanical Dragonling","health":1,"id":"EX1_025t","type":"Minion","rarity":"Common"},
 	{"set":"Basic","name":"Might of Stormwind","id":"CS2_222o","text":"Has +1/+1.","type":"Enchantment"},
 	{"cardImage":"DS1_233.png","cost":2,"collectible":true,"set":"Basic","artist":"Dave Allsop","type":"Spell","howToGetGold":"Unlocked at Level 15.","flavor":"This spell blasts you directly in the MIND.","playerClass":"Priest","faction":"Neutral","name":"Mind Blast","howToGet":"Unlocked at Level 1.","id":"DS1_233","text":"Deal $5 damage to the enemy hero.","rarity":"Free"},
-	{"cardImage":"CS1_113.png","cost":10,"collectible":true,"set":"Basic","artist":"Sean Oâ\u20ac™Daniels","type":"Spell","howToGetGold":"Unlocked at Level 49.","flavor":"Nominated as \"Spell Most Likely to Make Your Opponent Punch the Wall.\"","playerClass":"Priest","faction":"Neutral","name":"Mind Control","howToGet":"Unlocked at Level 10.","id":"CS1_113","text":"Take control of an enemy minion.","rarity":"Common"},
+	{"cardImage":"CS1_113.png","cost":10,"collectible":true,"set":"Basic","artist":"Sean Oâ\u20ac™Daniels","type":"Spell","howToGetGold":"Unlocked at Level 49.","flavor":"Nominated as \"Spell Most Likely to Make Your Opponent Punch the Wall.\"","playerClass":"Priest","faction":"Neutral","name":"Mind Control","howToGet":"Unlocked at Level 10.","id":"CS1_113","text":"Take control of an enemy minion.","rarity":"Free"},
 	{"cardImage":"CS2_003.png","cost":1,"collectible":true,"set":"Basic","artist":"Michael Komarck","type":"Spell","howToGetGold":"Unlocked at Level 32.","flavor":"I see what you did there.","playerClass":"Priest","faction":"Neutral","name":"Mind Vision","howToGet":"Unlocked at Level 4.","id":"CS2_003","text":"Put a copy of a random card in your opponent's hand into your hand.","rarity":"Common"},
 	{"cardImage":"CS2_mirror.png","cost":0,"set":"Basic","health":2,"mechanics":["Taunt"],"type":"Minion","playerClass":"Mage","attack":0,"faction":"Neutral","name":"Mirror Image","id":"CS2_mirror","text":"<b>Taunt<\/b>","rarity":"Common"},
 	{"cardImage":"CS2_027.png","cost":1,"collectible":true,"set":"Basic","artist":"Jim Nelson","type":"Spell","howToGetGold":"Unlocked at Level 36.","flavor":"Oh hey it's Mirror Image! !egamI rorriM s'ti yeh hO","playerClass":"Mage","faction":"Neutral","name":"Mirror Image","howToGet":"Unlocked at Level 4.","id":"CS2_027","text":"Summon two 0/2 minions with <b>Taunt<\/b>.","rarity":"Common"},

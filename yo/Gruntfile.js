@@ -315,7 +315,7 @@ module.exports = function (grunt) {
 			'images/**/*',
 			'fonts/{,*/}*.*',
 			'sitemap.xml',
-			'plugins/{,*/}*.*',
+			'plugins/**/*.*',
 		  ]
 		}, {
 		  expand: true,
@@ -405,6 +405,7 @@ module.exports = function (grunt) {
 	  //return grunt.task.run(['build', 'connect:dist:keepalive']);
 	  grunt.task.run([
 		'clean:dist',
+		//'ngconstant:production',
 		'ngconstant:development',
 		'wiredep',
 		'useminPrepare',
@@ -418,19 +419,22 @@ module.exports = function (grunt) {
 		'filerev',
 		'usemin',
 		'imagemin',
-		'htmlmin'
+		'htmlmin',
+	  	'connect:dist:livereload',
+	  	'watch'
 	  ]);
 	}
-
-	grunt.task.run([
-	  'clean:server',
-	  'ngconstant:development',
-	  'wiredep',
-	  'concurrent:server',
-	  'autoprefixer',
-	  'connect:livereload',
-	  'watch'
-	]);
+	else {
+		grunt.task.run([
+		  'clean:server',
+		  'ngconstant:development',
+		  'wiredep',
+		  'concurrent:server',
+		  'autoprefixer',
+		  'connect:livereload',
+		  'watch'
+		]);
+	}
   });
 
   grunt.registerTask('ui-only', 'Compile then start a connect web server without contacting the backend', function () {

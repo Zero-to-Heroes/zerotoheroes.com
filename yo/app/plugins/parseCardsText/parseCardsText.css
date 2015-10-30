@@ -44,6 +44,8 @@
 
 .tooltip.parse-cards-text {
 	opacity: 1;
+	min-width: 350px;
+	min-height:	470px;
 }
 
 .parse-cards-text .tooltip-inner {

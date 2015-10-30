@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Slf4j
 public class DeckParser implements Plugin {
 
-	private static final String DECK_ID_REGEX = "\\[hearthpwnDeck=.+?\\]";
+	private static final String DECK_ID_REGEX = "\\[(http:\\/\\/www\\.hearthpwn\\.com\\/decks\\/).+?\\]";
 	private static final String DECK_HOST_URL = "http://www.hearthpwn.com/decks/";
 
 	@Override
@@ -43,7 +43,7 @@ public class DeckParser implements Plugin {
 			String group = matcher.group();
 			// log.debug("Found matching pattern: " + group);
 
-			String deckId = group.substring(15, group.length() - 1);
+			String deckId = group.substring(32, group.length() - 1);
 			String deckUrl = DECK_HOST_URL + deckId;
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 

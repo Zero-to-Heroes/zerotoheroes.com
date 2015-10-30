@@ -29,7 +29,7 @@ public class NewsRepository {
 		// Features
 		news.add(new News(
 				new DateTime("2015-10-29").toDate(),
-				"HearthStone players can now link to a deck from HearthPwn.com from the comments (using [hearthpwnDeck=your_deck_id])",
+				"HearthStone players can now link to a deck from HearthPwn.com from the comments (using [the_url_of_your_hearthpwn_deck])",
 				News.Type.Feature));
 		news.add(new News(
 				new DateTime("2015-10-28").toDate(),

@@ -108,7 +108,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}, 0);
 
 			$scope.API.mediaElement.on('canplay', function() {
-				//$log.log('can play player1');
+				$log.log('can play player1');
 				$scope.player1ready = true;
 				$scope.$apply();
 			});
@@ -122,7 +122,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			$scope.media.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {
-					//$log.log('can play player2');
+					$log.log('can play player2');
 					$scope.player2ready = true;
 					$scope.$apply();
 				}
@@ -231,6 +231,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 				if (!$scope.player2ready) return;
 
+				$log.log('in player1ready, all player ready to play simultaneously');
 				$scope.allPlayersReady = true;
 			});
 
@@ -239,12 +240,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 				if (!$scope.player1ready) return;
 				
+				$log.log('in player2ready, all player ready to play simultaneously');
 				$scope.allPlayersReady = true;
 			});
 
 			var unregister = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
-				//$log.log('All players ready?', oldVal, newVal);
-				if ($scope.relooping) {
+				if ($scope.relooping && newVal) {
+					$log.log('All players ready to play simultaneously?', oldVal, newVal);
 					$scope.API.play();
 					$scope.API2.play();
 					$scope.relooping = false;

@@ -3,6 +3,10 @@
     src: url('fonts/bliz-quadrata.woff');
 }
 
+.deck-link:before {
+	content: url('images/deck_small.png');
+}
+
 .deck.tooltip {
 	/*opacity: 1;
 	min-width: 300px;*/
@@ -46,11 +50,11 @@
 }
 
 .deck .card.free {
-	color: #D3D3D3;
+	color: white;
 }
 
 .deck .card.common {
-	color: #0FAF03;
+	color: #A6B3C6;
 }
 
 .deck .card.rare {

@@ -7,19 +7,35 @@
 }
 
 .parseCardsText .card.common {
-	color: #0FAF03;
+	color: #A6B3C6;
+}
+
+.parseCardsText .card.common:before {
+	content: url('images/common.png');
 }
 
 .parseCardsText .card.rare {
 	color: #198EFF;
 }
 
+.parseCardsText .card.rare:before {
+	content: url('images/rare.png');
+}
+
 .parseCardsText .card.epic {
 	color: #AB48EE;
 }
 
+.parseCardsText .card.epic:before {
+	content: url('images/epic.png');
+}
+
 .parseCardsText .card.legendary {
 	color: #F07000;
+}
+
+.parseCardsText .card.legendary:before {
+	content: url('images/legendary.png');
 }
 
 .tooltip.parse-cards-text {

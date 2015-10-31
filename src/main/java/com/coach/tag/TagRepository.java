@@ -38,6 +38,7 @@ public class TagRepository {
 		squash.add(new Tag("Men"));
 		squash.add(new Tag("Women"));
 		squash.add(new Tag("Tactics"));
+		squash.add(new Tag("Sequence"));
 		tags.put(Squash, squash);
 
 		// Tags for badminton
@@ -61,6 +62,8 @@ public class TagRepository {
 		badminton.add(new Tag("Tactics"));
 		badminton.add(new Tag("Serve"));
 		badminton.add(new Tag("Return"));
+		badminton.add(new Tag("Backcourt"));
+		badminton.add(new Tag("Sequence"));
 		tags.put(Badminton, badminton);
 
 		// Tags for HearthStone

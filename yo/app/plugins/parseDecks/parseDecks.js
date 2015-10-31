@@ -12,7 +12,7 @@ function parseDecks(review, text) {
 		matches.forEach(function(match) {
 			//console.log('match', match);
 			var deckName = match.substring(32, match.length - 1);
-			console.log('deck name', deckName);
+			//console.log('deck name', deckName);
 
 			var plugins = review.plugins.hearthstone;
 			if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {

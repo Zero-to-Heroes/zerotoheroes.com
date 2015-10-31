@@ -486,7 +486,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					function(data) {
 		  				$scope.review.canvas = data.canvas;
 		  				$scope.review.plugins = data.plugins;
-		  				$log.log('plugins', $scope.review.plugins);
+		  				//$log.log('plugins', $scope.review.plugins);
 						$scope.updateVideoInformation(data);
 		  				if (data.text.match(timestampOnlyRegex)) {
 							$log.log('incrementing timestamps after comment upload');
@@ -573,7 +573,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if ($scope.plugins) {
 				angular.forEach($scope.plugins, function(plugin) {
 					if (plugin) {
-						$log.log('executing plugin for text', plugin, prettyResult);
+						//$log.log('executing plugin for text', plugin, prettyResult);
 						prettyResult = SportsConfig.executePlugin($scope, $scope.review, plugin, prettyResult);
 					}
 				})

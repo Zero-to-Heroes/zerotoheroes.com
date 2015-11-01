@@ -27,6 +27,9 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(new DateTime("2015-11-01").toDate(),
+				"You now have autocomplete when trying to add a card for HearthStone in the comments",
+				News.Type.Feature));
 		news.add(new News(
 				new DateTime("2015-10-29").toDate(),
 				"HearthStone players can now link to a deck from HearthPwn.com from the comments (using [the_url_of_your_hearthpwn_deck])",

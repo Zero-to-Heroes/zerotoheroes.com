@@ -14,7 +14,7 @@ function parseCardsText(review, text) {
 			var card = getCard(cardName);
 			if (card) {
 				//console.log('cardImage', cardImage);
-				var cssClass = card.rarity ? card.rarity.toLowerCase() : 'common';
+				var cssClass = card.rarity ? getRarity(card).toLowerCase() : 'common';
 				result = result.replace(match, '<a class="card ' + cssClass + '" data-template-url="plugins/parseCardsText/template.html" data-title="' + card.cardImage + '" data-container="body" bs-tooltip>' + card.name + '</a>');
 			}
 		})
@@ -43,7 +43,7 @@ function parseCardsText_attach(element) {
 			return text.toLowerCase(); 
 		},
 		template: function(card, term) {
-			var cssClass = card.rarity ? card.rarity.toLowerCase() : 'common';
+			var cssClass = card.rarity ? getRarity(card).toLowerCase() : 'common';
 			return '<span class="autocomplete card ' + cssClass + '">' + card.name + '</span>'; 
 		},
 		className: 'autocomplete-dropdown',
@@ -54,6 +54,13 @@ function parseCardsText_attach(element) {
 function parseCardsText_detach(element) {
 	console.log('detaching from element', element);
 	element.textcomplete('destroy');
+}
+
+function getRarity(card) {
+	if (card.set == 'Basic') {
+		card.rarity = 'Free';
+	}
+	return card.rarity;
 }
 
 function getCard(cardName) {

@@ -50,9 +50,7 @@ public class SlackNotifier {
 
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
-				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase() + "/"
-						+ review.getId();
-				message.setText("New comment by " + reply.getAuthor() + " at " + reviewUrl);
+				message.setText("New comment by " + reply.getAuthor() + " at " + review.getUrl());
 
 				api.call(message);
 				return null;
@@ -75,11 +73,9 @@ public class SlackNotifier {
 				attach.setText(review.getText());
 				attach.setFallback("placeholder fallback");
 
-				String reviewUrl = "http://www.zerotoheroes.com/r/" + review.getSport().getKey().toLowerCase() + "/"
-						+ review.getId();
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
-				message.setText("New review created by " + review.getAuthor() + " at " + reviewUrl);
+				message.setText("New review created by " + review.getAuthor() + " at " + review.getUrl());
 
 				api.call(message);
 				return null;

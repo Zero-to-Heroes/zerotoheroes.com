@@ -260,7 +260,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public String getUrl() {
-		return "http://www.zerotoheroes.com/r/" + getSport().getKey() + "/" + getId() + "/" + getTitle();
+		return "http://www.zerotoheroes.com/r/" + getSport().getKey().toLowerCase() + "/" + getId() + "/" + getTitle();
 	}
 
 	public Map<String, String> getPluginData(String sport, String plugin) {

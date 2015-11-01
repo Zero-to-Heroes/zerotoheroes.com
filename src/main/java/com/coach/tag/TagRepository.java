@@ -49,6 +49,7 @@ public class TagRepository {
 		badminton.add(new Tag("Double"));
 		badminton.add(new Tag("Mixed double"));
 		badminton.add(new Tag("Forehand"));
+		badminton.add(new Tag("OVerhead forehand"));
 		badminton.add(new Tag("Backhand"));
 		badminton.add(new Tag("Smash"));
 		badminton.add(new Tag("Drop"));

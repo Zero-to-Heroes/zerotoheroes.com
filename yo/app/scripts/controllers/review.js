@@ -12,7 +12,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.User = User;
-		$scope.sport = $routeParams.sport;
+		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
 		$scope.canvasState = {
 			canvasIdIndex: 0,
 			canvasId: 'tmp0',

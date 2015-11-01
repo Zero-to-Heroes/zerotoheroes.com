@@ -107,6 +107,21 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			return window[plugin](review, target);
 		}
 
+		service.attachPlugin = function(scope, plugin, element) {
+			//console.log('trying to attach plugin', plugin, element);
+			//console.log(window[plugin]);
+			//console.log(window[plugin + '_attach']);
+			if (window[plugin + '_attach']) {
+				window[plugin + '_attach'](element);
+			}
+		}
+
+		service.detachPlugin = function(scope, plugin, element) {
+			if (window[plugin + '_detach']) {
+				window[plugin + '_detach'](element);
+			}
+		}
+
 		service.loadPlugin = function(plugins, plugin) {
 			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js').then(function() {
 				plugins.push(plugin);

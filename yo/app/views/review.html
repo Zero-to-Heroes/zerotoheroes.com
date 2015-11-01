@@ -70,9 +70,9 @@
 									<div compilecontent content="review.markedText" class="panel-body video-description"></div>
 								</div>
 								<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
-									<textarea class="form-control" ng-model="review.text" auto-grow toolbar-target></textarea>
+									<textarea class="form-control" ng-model="review.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
-								<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" auto-grow></textarea>
+								<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" comment-plugins="plugins" auto-grow></textarea>
 							</div>
 						</div>
 						<div class="row video-tags" ng-show="allowedTags && allowedTags.length > 0 && (review.editing || (review.tags && review.tags.length > 0))" ng-class="{'top-spacing': review.editing}">
@@ -120,9 +120,9 @@
 						</div>
 						<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 							<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
-								<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" auto-grow toolbar-target></textarea>
+								<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 							</toolbar>
-							<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" auto-grow toolbar-target></textarea>
+							<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
 							<div>
 								<div class="inline-block">
 									<button ng-click="addComment()" class="btn btn-default text-right">Add comment</button>
@@ -138,7 +138,7 @@
 					</div>
 				</div>
 			</form>
-			<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" timestamp-click-action="goToTimestamp" prepare-canvas-for-upload="prepareCanvasForUpload" clear-temporary-canvas="clearTemporaryCanvas" canvas-state="canvasState"></comment>
+			<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" timestamp-click-action="goToTimestamp" prepare-canvas-for-upload="prepareCanvasForUpload" clear-temporary-canvas="clearTemporaryCanvas" canvas-state="canvasState" plugins="plugins"></comment>
 			<!-- Prevent scrolling center area if we're already at the bottom -->
 			<div id="padder"></div>
 			<div id="bottom"></div>

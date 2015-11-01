@@ -15,7 +15,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 			},
 			controller: function($scope) {
 
-				$log.log('instantiating sequence controller');
+				//$log.log('instantiating sequence controller');
 
 				$scope.params = {};
 				$scope.form = {}

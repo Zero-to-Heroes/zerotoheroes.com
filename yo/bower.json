@@ -39,7 +39,8 @@
     "ng-tags-input": "~3.0.0",
     "fabric": "~1.5.0",
     "string": "~3.3.1",
-    "angular-load": "~0.4.0"
+    "angular-load": "~0.4.0",
+    "jquery-textcomplete": "~0.8.1"
   },
   "overrides": {
     "sprintf": {

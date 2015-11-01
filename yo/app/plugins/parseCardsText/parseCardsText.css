@@ -6,38 +6,43 @@
 	color: black;
 }
 
-.parseCardsText .card.common {
+.autocomplete-dropdown.dropdown-menu > .active > a, .autocomplete-dropdown.dropdown-menu > .active > a:hover, .autocomplete-dropdown.dropdown-menu > .active > a:focus {
+	background-color: transparent;
+	color: black;
+}
+
+.parseCardsText .card.common, .autocomplete.card.common {
 	color: #A6B3C6;
 }
 
-.parseCardsText .card.common:before {
+.parseCardsText .card.common:before, .autocomplete.card.common:before {
 	content: url('images/common.png');
 	margin-right: 4px;
 }
 
-.parseCardsText .card.rare {
+.parseCardsText .card.rare, .autocomplete.card.rare {
 	color: #198EFF;
 }
 
-.parseCardsText .card.rare:before {
+.parseCardsText .card.rare:before, .autocomplete.card.rare:before {
 	content: url('images/rare.png');
 	margin-right: 4px;
 }
 
-.parseCardsText .card.epic {
+.parseCardsText .card.epic, .autocomplete.card.epic {
 	color: #AB48EE;
 }
 
-.parseCardsText .card.epic:before {
+.parseCardsText .card.epic:before, .autocomplete.card.epic:before {
 	content: url('images/epic.png');
 	margin-right: 4px;
 }
 
-.parseCardsText .card.legendary {
+.parseCardsText .card.legendary, .autocomplete.card.legendary {
 	color: #F07000;
 }
 
-.parseCardsText .card.legendary:before {
+.parseCardsText .card.legendary:before, .autocomplete.card.legendary:before {
 	content: url('images/legendary.png');
 	margin-right: 4px;
 }

@@ -19,11 +19,41 @@ function parseCardsText(review, text) {
 			}
 		})
 	}
-
-	//var result = text.replace(cardRegex, '<a data-title="<img src=\'images/$&.png\'>" data-html="true" bs-tooltip>$&</a>');
-	//result = result.replace(/\[\[/gm, '').replace(/\]\]/gm, '')
-
 	return result;
+}
+
+function parseCardsText_attach(element) {
+	console.log('attaching to element', element);
+	element.textcomplete([{
+		match: /\[\[[a-zA-Z\s]{3,}$/,
+		search: function (term, callback, match) {
+			//console.log('term and match', term, match);
+			callback($.map(jsonDatabase, function(card) {
+				//console.log(term);
+				//var res = card.name.toLowerCase().indexOf(term.substring(2)) === 0 ? card.name : null;
+				var res = card.name.toLowerCase().indexOf(term.substring(2)) === 0 ? card : null;
+				if (res) console.log(res);
+				return res;
+			}))
+		},
+		replace: function(card) {
+			return '[[' + card.name + ']]';
+		},
+		context: function (text) { 
+			return text.toLowerCase(); 
+		},
+		template: function(card, term) {
+			var cssClass = card.rarity ? card.rarity.toLowerCase() : 'common';
+			return '<span class="autocomplete card ' + cssClass + '">' + card.name + '</span>'; 
+		},
+		className: 'autocomplete-dropdown',
+		index: 0
+	}])
+}
+
+function parseCardsText_detach(element) {
+	console.log('detaching from element', element);
+	element.textcomplete('destroy');
 }
 
 function getCard(cardName) {

@@ -25,10 +25,10 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 				}, 0);
 
 				$scope.refreshCanvas = function() {
-					$log.log('refreshing canvas');
+					//$log.log('refreshing canvas');
 					var container = element[0].parentElement;
 
-					$log.log('setting size to ', container.offsetWidth, container.offsetHeight);
+					//$log.log('setting size to ', container.offsetWidth, container.offsetHeight);
 					if (container.offsetWidth != 0 && container.offsetHeight != 0) {
 						$scope.canvas.setHeight(container.offsetHeight);
 						$scope.canvas.setWidth(container.offsetWidth);

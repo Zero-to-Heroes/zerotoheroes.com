@@ -9,13 +9,13 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.sport = $routeParams.sport;
 		$scope.pageNumber = parseInt($routeParams.pageNumber) || 1;
 
-		$log.log('Getting videos for page ', $scope.pageNumber);
+		//$log.log('Getting videos for page ', $scope.pageNumber);
 
 		/*$scope.$watch('tabs.activeTab', function(newValue, oldValue) {
 			$scope.retrieveVideos(newValue, $scope.pageNumber);
 		})*/
 
-		$log.log('using videos?', $scope.useVideo);
+		//$log.log('using videos?', $scope.useVideo);
 
 		$scope.retrieveVideos = function(shouldGetOnlyMine, pageNumber) {
 			var params = {};
@@ -32,7 +32,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			Api.Reviews.get(params, function(data) {
 				$scope.videos = [];
 				$scope.totalPages = data.totalPages;
-				$log.log('totalPages are ', $scope.totalPages);
+				//$log.log('totalPages are ', $scope.totalPages);
 				for (var i = 0; i < data.reviews.length; i++) {
 					$scope.videos.push(data.reviews[i]);
 
@@ -159,7 +159,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				pages.push($scope.pageNumber + i);
 			}
 
-			$log.log('first pages are', pages);
+			//$log.log('first pages are', pages);
 			// No negative pages
 			if (pages[0] <= 0) {
 				var offset = pages[0];
@@ -174,20 +174,20 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				}
 			}
 
-			$log.log('pages are', pages);
+			//$log.log('pages are', pages);
 			// Remove pages if there are too many of them
 			while (pages[pages.length - 1] >= $scope.totalPages) {
 				pages.splice(pages.length - 1, 1);
 			}
-			$log.log('finally, apges are', pages);
+			//$log.log('finally, apges are', pages);
 
 			return pages;
 		}
 
 		$scope.goToPage = function(page) {
-			$log.log('going to page', page);
-			$log.log('routeparams', $routeParams);
-			$log.log('route is', $route);
+			//$log.log('going to page', page);
+			//$log.log('routeparams', $routeParams);
+			//$log.log('route is', $route);
 			$route.updateParams({'pageNumber': page});
 			//$scope.retrieveVideos($scope.tabs.activeTab, page);
 			//$location.path('pageNumber', page);
@@ -209,7 +209,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 		$scope.subscribe = function() {
 			Api.Subscriptions.save({itemId: $scope.sport}, function(data) {
-				$log.log('subscribed', data);
+				//$log.log('subscribed', data);
 				$scope.subscribers = data.subscribers;
 			});
 		}

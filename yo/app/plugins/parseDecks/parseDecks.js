@@ -4,7 +4,7 @@ var decksRegex = /\[(http:\/\/www\.hearthpwn\.com\/decks\/).+?\]/gm;
 function parseDecks(review, text) {
 	var matches = text.match(decksRegex);
 	if (!matches) return text;
-	console.log('parsing for decks', text);
+	//console.log('parsing for decks', text);
 
 	var result = text;
 	//console.log('matches', matches);

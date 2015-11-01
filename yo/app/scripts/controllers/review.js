@@ -37,7 +37,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		})
 
 		$scope.initReview = function() {
-			$log.log('initializing review');
+			//$log.log('initializing review');
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data;
@@ -850,7 +850,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		});
 
 		$scope.$watch('playerControls.mode', function (newVal, oldVal) {
-			$log.log('changing playerControls.mode', newVal, oldVal);
+			//$log.log('changing playerControls.mode', newVal, oldVal);
 			if (newVal == 1) {
 				//$log.log('stopping background video');
 				$scope.API2.stop();

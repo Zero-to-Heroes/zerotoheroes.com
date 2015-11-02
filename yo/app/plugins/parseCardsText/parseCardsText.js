@@ -71,7 +71,7 @@ function getCard(cardName) {
 		//console.log('\tcardimage is', card.cardimage);
 		//console.log('\tis equal', card.name, cardName, card.name == cardName);
 		// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
-		if (card.name == cardName && card.id.toUpperCase() == card.id) {
+		if (card.name.toLowerCase() == cardName.toLowerCase() && card.id.toUpperCase() == card.id) {
 			if (card.set == 'Basic') {
 				card.rarity = 'Free';
 			}

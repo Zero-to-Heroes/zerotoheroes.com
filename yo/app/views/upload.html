@@ -49,7 +49,7 @@
 			</div>
 			<hr>
 		</div>
-		<div class="video-information panel-no-border">
+		<div class="video-information panel-no-border" ng-class="plugins">
 			<h1>{{useVideo ? 'Video information' : 'New post'}}</h1>
 
 			<div class="container-fluid">
@@ -86,9 +86,9 @@
 					<div class="col-sm-12">
 					  	<div class="form-group">
 							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true">
-					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.text" ng-readonly="uploadInProgress" auto-grow toolbar-target ng-required="true"></textarea>
+					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.text" ng-readonly="uploadInProgress" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
 					    	</toolbar>
-					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.text" ng-readonly="uploadInProgress" auto-grow ng-hide="useVideo"></textarea>
+					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.text" ng-readonly="uploadInProgress" comment-plugins="plugins" auto-grow ng-hide="useVideo"></textarea>
 					   </div>
 					</div>
 					<div class="inline-block float-right show-help-buttons">

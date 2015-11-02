@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 'SportsConfig', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse, SportsConfig) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -30,6 +30,14 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			canvasIdIndex: 0,
 			canvasId: 'tmp0',
 			drawingCanvas: false
+		}
+
+		var plugins = SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
+		$scope.plugins = [];
+		if (plugins) {
+			angular.forEach(plugins, function(plugin) {
+				SportsConfig.loadPlugin($scope.plugins, plugin);
+			})
 		}
 
 		//===============

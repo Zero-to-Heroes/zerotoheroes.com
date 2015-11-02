@@ -34,7 +34,9 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						athletes: 'gamers',
 						displayName: 'HearthStone',
 						communityWisdomIntro: 'Climb to Legend',
-						hideVideoReview: true
+						hideVideoReview: true,
+						customTitle1: 'Integrated with HearthStone',
+						customText1: 'Immediately link to an existing card or deck, so you have everything you need in a single place' 
 					}
 				},
 				heroesofthestorm: {

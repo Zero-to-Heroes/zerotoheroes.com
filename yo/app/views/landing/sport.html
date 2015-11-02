@@ -101,7 +101,7 @@
 </section>
 
 <section class="section" id="features" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="container" ng-hide="hideVideoReview">
+    <div class="container" ng-hide="hideVideoReview && !sportsConfig['{{sport}}'].landing.customTitle1">
       	<div class="row">
         	<div class="col-sm-6">
           		<div class="feature-1">
@@ -110,8 +110,8 @@
         	</div>
 	        <div class="col-sm-6">
 	          	<div class="feature-detail">
-		            <h1 class="title animated fadeInRight wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">Video review tools</h1>
-	            	<p class="features-txt animated fadeInRight wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">Directly control the video from the comment system to precisely illustrate what you need to say and see. Point to a specific image on a video, play a sequence in slow motion or loop it. You can even compare side-by-side sequences from two any two videos from the site to illustrate the difference between how the same move is done by a top player. And all directly from the comments!</p>
+		            <h1 class="title animated fadeInRight wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">{{ sportsConfig[sport].landing.customTitle1 ? sportsConfig[sport].landing.customTitle1 : 'Video review tools' }}</h1>
+	            	<p class="features-txt animated fadeInRight wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">{{ sportsConfig[sport].landing.customText1 ? sportsConfig[sport].landing.customText1 : 'Directly control the video from the comment system to precisely illustrate what you need to say and see. Point to a specific image on a video, play a sequence in slow motion or loop it. You can even compare side-by-side sequences from two any two videos from the site to illustrate the difference between how the same move is done by a top player. And all directly from the comments!' }}</p>
 	          	</div>
         	</div>
       	</div>

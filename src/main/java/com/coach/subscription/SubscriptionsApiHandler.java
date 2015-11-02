@@ -107,7 +107,7 @@ public class SubscriptionsApiHandler {
 		subscriptionManager.unsubscribe(item, user.getId());
 
 		mongoTemplate.save(item);
-		// slackNotifier.notifyNewSubscriber(item, user);
+		slackNotifier.notifyNewUnsubscriber(item, user);
 
 		log.debug("Unsubscribed user " + user + " to " + item);
 

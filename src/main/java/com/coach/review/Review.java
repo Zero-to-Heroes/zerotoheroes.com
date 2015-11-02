@@ -1,5 +1,6 @@
 package com.coach.review;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -26,6 +27,7 @@ import com.coach.subscription.HasSubscribers;
 import com.coach.tag.Tag;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.github.slugify.Slugify;
 
 @Getter
 @Setter
@@ -260,7 +262,17 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public String getUrl() {
-		return "http://www.zerotoheroes.com/r/" + getSport().getKey().toLowerCase() + "/" + getId() + "/" + getTitle();
+		return "http://www.zerotoheroes.com/r/" + getSport().getKey().toLowerCase() + "/" + getId() + "/"
+				+ getSlugifiedTitle();
+	}
+
+	private String getSlugifiedTitle() {
+		try {
+			return new Slugify().slugify(getTitle());
+		}
+		catch (IOException e) {
+			return getTitle();
+		}
 	}
 
 	public Map<String, String> getPluginData(String sport, String plugin) {

@@ -97,6 +97,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Totem"));
 		hearthstone.add(new Tag("Control"));
 		hearthstone.add(new Tag("Pro"));
+		hearthstone.add(new Tag("Early game"));
 		tags.put(HearthStone, hearthstone);
 
 		// Tags for Heroes of the Storm

@@ -191,6 +191,7 @@ public class ReviewApiHandler {
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
+		sportManager.addNewReviewActivity(review);
 		updateReview(review);
 		log.debug("Saved review with ID: " + review.getId());
 
@@ -264,6 +265,7 @@ public class ReviewApiHandler {
 
 		// Notifying the user who submitted the review (if he is registered)
 		slackNotifier.notifyNewComment(review, comment);
+		sportManager.addNewCommentActivity(review, comment);
 
 		log.debug("Created comment " + comment + " with id " + comment.getId());
 		log.debug("Updated review " + review);
@@ -314,6 +316,7 @@ public class ReviewApiHandler {
 		}
 
 		slackNotifier.notifyReviewUpdatet(review);
+		sportManager.addReviewUpdatedActivity(review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -357,6 +360,7 @@ public class ReviewApiHandler {
 
 		comment.setTempCanvas(review.getCanvas());
 		slackNotifier.notifyCommentUpdate(review, comment);
+		sportManager.addCommentUpdatedActivity(review, comment);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -419,6 +423,7 @@ public class ReviewApiHandler {
 		// Notifying the user who submitted the review (if he is registered)
 		subscriptionManager.notifyNewComment(reply, review);
 		slackNotifier.notifyNewComment(review, reply);
+		sportManager.addNewCommentActivity(review, reply);
 
 		log.debug("Created reply " + reply + " with id " + reply.getId());
 
@@ -456,6 +461,9 @@ public class ReviewApiHandler {
 		}
 
 		updateReview(review);
+		if (comment.isHelpful()) {
+			sportManager.addMarkedCommentHelpfulActivity(user, review, comment);
+		}
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}

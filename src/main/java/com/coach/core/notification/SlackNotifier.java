@@ -123,7 +123,7 @@ public class SlackNotifier {
 
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
-				message.setText("Review by " + review.getText() + " updated at " + review.getUrl());
+				message.setText("Review by " + review.getAuthor() + " updated at " + review.getUrl());
 
 				api.call(message);
 				return null;

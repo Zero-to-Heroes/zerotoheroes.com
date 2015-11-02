@@ -1,11 +1,15 @@
 package com.coach.sport;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.util.StringUtils;
+import com.coach.activities.Activity;
+import com.coach.core.security.User;
+import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 
@@ -39,6 +43,42 @@ public class SportManager {
 			sportRepo.save(sport);
 		}
 		return sport;
+	}
+
+	public void addNewReviewActivity(Review review) {
+		Activity activity = new Activity(new Date(), review.getAuthor() + " posted a new review <a href=\""
+				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
+		addActivity(review, activity);
+	}
+
+	public void addNewCommentActivity(Review review, Comment comment) {
+		Activity activity = new Activity(new Date(), comment.getAuthor() + " commented on <a href=\"" + review.getUrl()
+				+ "\">" + review.getTitle() + "</a>");
+		addActivity(review, activity);
+	}
+
+	public void addReviewUpdatedActivity(Review review) {
+		Activity activity = new Activity(new Date(), review.getAuthor() + " updated the review <a href=\""
+				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
+		addActivity(review, activity);
+	}
+
+	public void addCommentUpdatedActivity(Review review, Comment comment) {
+		Activity activity = new Activity(new Date(), comment.getAuthor() + " updated a comment on <a href=\""
+				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
+		addActivity(review, activity);
+	}
+
+	public void addMarkedCommentHelpfulActivity(User user, Review review, Comment comment) {
+		Activity activity = new Activity(new Date(), user.getUsername() + " marked a comment as helpful on <a href=\""
+				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
+		addActivity(review, activity);
+	}
+
+	private void addActivity(Review review, Activity activity) {
+		Sport sport = findById(review.getSport().getKey());
+		sport.addActivity(activity);
+		sportRepo.save(sport);
 	}
 
 }

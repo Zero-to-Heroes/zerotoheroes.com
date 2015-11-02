@@ -7,7 +7,22 @@
   	</div>
 
 	<div class="panel-body">
-		<div ng-show="!!features.length && User.isLoggedIn()" >
+		<section>
+			<h4 ng-show="engagement <= 1 && recommendedVideo">Getting started</h4>
+			<p ng-show="engagement == 0 && recommendedVideo">We're glad to see you here :) If you're looking for a place to start, why not have a look at <a href="/r/{{sport}}/{{recommendedVideo}}">this video</a>? 
+			</p>
+			<p ng-show="engagement == 1 && recommendedVideo">Hey! Glad to see you back today! How would you feel about helping someone out today? <a href="/r/{{sport}}/{{recommendedVideo}}">This review</a> has not received any love lately, would you mind helping?</p>
+			<p ng-show="(engagement <= 1 && !User.isLoggedIn()) || (User.isLoggedIn() && engagement == 0)">It looks like you're new here. If you feel a bit lost, have a look at <a href="/{{sport =='meta' ? '' : sport}}">this presentation page</a> to get a better idea of what we do here, or stop by the <a href="/{{meta}}">forums</a></p>
+		</section>
+
+		<section ng-show="!!lastActivities.length" >
+			<h4>Latest activity</h4>
+			<ul>
+				<li ng-repeat="activity in lastActivities"><span ng-bind-html="activity.description"></span> <small>{{formatDate(activity.date)}}</small></li>
+			</ul>
+		</section>
+
+		<section ng-show="!!features.length && User.isLoggedIn()" >
 			<h4>While you were away...</h4>
 			<p>We have continued to add features since the last time you visited. We hope you'll like them!</p>
 			<ul>
@@ -18,17 +33,7 @@
 					</ul>
 				</li>
 			</ul>
-		</div>
-		<div ng-show="(!features || features.length == 0) && User.isLoggedIn()">
-			<p>We hope you're enjoying your time on Zero to Heroes :)</p>
-		</div>
-		<div>
-			<h4 ng-show="engagement <= 1 && recommendedVideo">Getting started</h4>
-			<p ng-show="engagement == 0 && recommendedVideo">We're glad to see you here :) If you're looking for a place to start, why not have a look at <a href="/r/{{sport}}/{{recommendedVideo}}">this video</a>? 
-			</p>
-			<p ng-show="engagement == 1 && recommendedVideo">Hey! Glad to see you back today! How would you feel about helping someone out today? <a href="/r/{{sport}}/{{recommendedVideo}}">This review</a> has not received any love lately, would you mind helping?</p>
-			<p ng-show="(engagement <= 1 && !User.isLoggedIn()) || (User.isLoggedIn() && engagement == 0)">It looks like you're new here. If you feel a bit lost, have a look at <a href="/{{sport =='meta' ? '' : sport}}">this presentation page</a> to get a better idea of what we do here, or stop by the <a href="/{{meta}}">forums</a></p>
-		</div>
+		</section>
 	</div>
 	<div class="panel-footer text-center">
 		Any comment or question? <a href="/s/meta">Let us know!</a>

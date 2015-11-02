@@ -24,6 +24,12 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 					User.setLastLoginDate(newDate);
 				}
 
+				$scope.getLatestActivities = function() {
+					Api.Activities.query({sport: $scope.sport, quantity: 4}, function(data) {
+						$scope.lastActivities = data;
+					});
+				}
+
 				$scope.recommendVideo = function() {
 					if ($scope.engagement == 0 && $scope.sportsConfig[$scope.sport]) {
 						$scope.recommendedVideo = $scope.sportsConfig[$scope.sport].recommendedVideo;
@@ -48,6 +54,10 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 					}
 				}
 
+				$scope.formatDate = function(date) {
+					return moment(date).fromNow();
+				}
+
 				$rootScope.$on('user.logged.in', function() {
 					$scope.getLatestFeatures();
 				});
@@ -56,6 +66,7 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 					$scope.recommendVideo();
 					$scope.buildEngagement();
 					$scope.getLatestFeatures();
+					$scope.getLatestActivities();
 				});
 			}
 		};

@@ -1,24 +1,32 @@
 var cardRegex = /\[\[.+?\]\]/gm;
+var manaRegex = /\d-mana/gm;
 
 function parseCardsText(review, text) {
 	var matches = text.match(cardRegex);
-	if (!matches) return text;
-
 	var result = text;
-	//console.log('matches', matches);
+	// Parsing card names
 	if (matches) {
 		matches.forEach(function(match) {
-			//console.log('match', match);
 			var cardName = match.substring(2, match.length - 2);
-			//console.log('cardName', cardName);
 			var card = getCard(cardName);
 			if (card) {
-				//console.log('cardImage', cardImage);
 				var cssClass = card.rarity ? getRarity(card).toLowerCase() : 'common';
 				result = result.replace(match, '<a class="card ' + cssClass + '" data-template-url="plugins/parseCardsText/template.html" data-title="' + card.cardImage + '" data-container="body" bs-tooltip>' + card.name + '</a>');
 			}
 		})
 	}
+
+	// Parsing mana costs
+	matches = text.match(manaRegex);
+	// Parsing card names
+	if (matches) {
+		matches.forEach(function(match) {
+			var cost = match.substring(0, match.indexOf('-'));
+			result = result.replace(match, '<img src="https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cost + '.png" class="parse-cards-text mana-cost">');
+		})
+	}
+
+
 	return result;
 }
 
@@ -77,7 +85,7 @@ function getCard(cardName) {
 			}
 			result = card;
 			if (result.cardImage) {
-				console.log('returning card', result);
+				//console.log('returning card', result);
 				return true;
 			}
 		}

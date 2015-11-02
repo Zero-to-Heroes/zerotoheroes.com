@@ -9,8 +9,7 @@
 }
 
 .deck.tooltip {
-	/*opacity: 1;
-	min-width: 300px;*/
+	opacity: .95;
 }
 
 .deck .tooltip-inner {
@@ -48,6 +47,11 @@
 	font-weight: bold;
 	width: 200px;
 	height: 25px;
+}
+
+.deck .card-cost img {
+	width: 18px;
+	margin-right: 5px;
 }
 
 .deck .card.free {

@@ -47,6 +47,11 @@
 	margin-right: 4px;
 }
 
+.parseCardsText .mana-cost {
+	width: 18px;
+	margin-bottom: 7px;
+}
+
 .tooltip.parse-cards-text {
 	opacity: 1;
 	min-width: 350px;

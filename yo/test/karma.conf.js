@@ -73,6 +73,7 @@ module.exports = function(config) {
       'bower_components/angularjs-viewhead/angularjs-viewhead.js',
       'bower_components/ng-tags-input/ng-tags-input.min.js',
       'bower_components/angular-load/angular-load.js',
+      'bower_components/jquery-textcomplete/dist/jquery.textcomplete.js',
 
       'app/scripts/app.js',
       'app/scripts/landing/owl.carousel.min.js',

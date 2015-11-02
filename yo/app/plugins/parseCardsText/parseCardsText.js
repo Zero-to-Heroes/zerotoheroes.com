@@ -23,7 +23,7 @@ function parseCardsText(review, text) {
 }
 
 function parseCardsText_attach(element) {
-	console.log('attaching to element', element);
+	//console.log('attaching to element', element);
 	element.textcomplete([{
 		match: /\[\[[a-zA-Z\s]{3,}$/,
 		search: function (term, callback, match) {
@@ -32,7 +32,7 @@ function parseCardsText_attach(element) {
 				//console.log(term);
 				//var res = card.name.toLowerCase().indexOf(term.substring(2)) === 0 ? card.name : null;
 				var res = card.name.toLowerCase().indexOf(term.substring(2)) === 0 ? card : null;
-				if (res) console.log(res);
+				//if (res) console.log(res);
 				return res;
 			}))
 		},
@@ -52,7 +52,7 @@ function parseCardsText_attach(element) {
 }
 
 function parseCardsText_detach(element) {
-	console.log('detaching from element', element);
+	//console.log('detaching from element', element);
 	element.textcomplete('destroy');
 }
 
@@ -71,12 +71,15 @@ function getCard(cardName) {
 		//console.log('\tcardimage is', card.cardimage);
 		//console.log('\tis equal', card.name, cardName, card.name == cardName);
 		// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
-		if (card.name.toLowerCase() == cardName.toLowerCase() && card.id.toUpperCase() == card.id) {
+		if (card.name.toLowerCase() == cardName.toLowerCase()) {
 			if (card.set == 'Basic') {
 				card.rarity = 'Free';
 			}
 			result = card;
-			return true;
+			if (result.cardImage) {
+				console.log('returning card', result);
+				return true;
+			}
 		}
 	});
 	return result;

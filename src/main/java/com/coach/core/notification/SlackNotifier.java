@@ -83,6 +83,54 @@ public class SlackNotifier {
 		});
 	}
 
+	public void notifyCommentUpdate(final Review review, final Comment comment) {
+		if (!"prod".equalsIgnoreCase(environment)) return;
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws IOException {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("good");
+				attach.setText(comment.getText());
+				attach.setFallback("placeholder fallback");
+
+				SlackMessage message = new SlackMessage();
+				message.addAttachments(attach);
+				message.setText("Comment by " + comment.getAuthor() + " updated at " + review.getUrl());
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
+	public void notifyReviewUpdatet(final Review review) {
+		if (!"prod".equalsIgnoreCase(environment)) return;
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws IOException {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("good");
+				attach.setText(review.getText());
+				attach.setFallback("placeholder fallback");
+
+				SlackMessage message = new SlackMessage();
+				message.addAttachments(attach);
+				message.setText("Review by " + review.getText() + " updated at " + review.getUrl());
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
 	public void notifyNewUser(final User user) {
 		if (!"prod".equalsIgnoreCase(environment)) return;
 

@@ -313,6 +313,8 @@ public class ReviewApiHandler {
 			userRepo.save(user);
 		}
 
+		slackNotifier.notifyReviewUpdatet(review);
+
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
@@ -354,6 +356,7 @@ public class ReviewApiHandler {
 		}
 
 		comment.setTempCanvas(review.getCanvas());
+		slackNotifier.notifyCommentUpdate(review, comment);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}

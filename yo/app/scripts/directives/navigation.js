@@ -3,7 +3,7 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('zthNavigation', ['User', '$log', '$location', 'Api', function(User, $log, $location, Api) {
+app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$timeout', function(User, $log, $location, Api, $alert, $timeout) {
 	return {
 		restrict: 'A',
 		replace: true,
@@ -29,6 +29,10 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', function(Use
 					Api.Passwords.save({'key': key}, function(data) {
 						$location.search('resetpassword', null);
 						$scope.info = 'Your password has been changed';
+						
+						$timeout(function() {
+							$alert({content: 'Your password has been changed successfully', placement: 'top-right', type: 'success', show: true, container: 'nav', duration: 6});
+						});
 					})
 				}
 			});

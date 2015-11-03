@@ -162,12 +162,15 @@ public class UserApiHandler {
 		log.debug("Validating reset password for unique key " + uniqueKey);
 
 		ResetPassword resetPassword = resetPasswordRepository.findOne(uniqueKey);
-		log.debug("Loaded reset password " + resetPassword);
 
-		User user = userRepository.findById(resetPassword.getUserId());
-		user.setPassword(resetPassword.getNewPassword());
-		userRepository.save(user);
-		resetPasswordRepository.delete(uniqueKey);
+		if (resetPassword != null) {
+			log.debug("Loaded reset password " + resetPassword);
+
+			User user = userRepository.findById(resetPassword.getUserId());
+			user.setPassword(resetPassword.getNewPassword());
+			userRepository.save(user);
+			resetPasswordRepository.delete(uniqueKey);
+		}
 
 		return new ResponseEntity<String>((String) null, HttpStatus.OK);
 	}

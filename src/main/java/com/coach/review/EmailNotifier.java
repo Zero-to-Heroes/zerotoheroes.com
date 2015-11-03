@@ -50,7 +50,7 @@ public class EmailNotifier {
 	/*
 	 * public void notifyNewUser(User user) { if
 	 * (!"prod".equalsIgnoreCase(environment)) return;
-	 * 
+	 *
 	 * EmailMessage message =
 	 * EmailMessage.builder().from("seb@zerotoheroes.com")
 	 * .to("contact@zerotoheroes.com") .subject(environment +
@@ -88,8 +88,9 @@ public class EmailNotifier {
 				+ "<p>If you have any question, please reply to this email. Have a good day!</p>";
 		//@formatter:on
 
-		EmailMessage message = EmailMessage.builder().from("contact@zerotoheroes.com").to(user.getEmail())
-				.subject("Zero to Heroes reset password link").content(body).type("text/html").build();
+		EmailMessage message = EmailMessage.builder().from("Reset Password <contact@zerotoheroes.com>")
+				.to(user.getEmail()).subject("Zero to Heroes reset password link").content(body).type("text/html")
+				.build();
 		emailSender.send(message);
 	}
 }

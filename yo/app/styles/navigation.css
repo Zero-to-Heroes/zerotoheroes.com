@@ -53,6 +53,11 @@
   float: right;
 }
 
+nav .alert {
+  position: absolute;
+  right: 0;
+}
+
 @media (max-width: 950px) {
 .navbar-collapse .nav > .divider-vertical {
     display: none;

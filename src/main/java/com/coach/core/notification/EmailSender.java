@@ -26,8 +26,8 @@ public class EmailSender {
 	private ExecutorProvider executorProvider;
 
 	@Autowired
-	public EmailSender(@Value("${smtp.username}") String smtpUsername,
-			@Value("${smtp.password}") String smtpPassword, @Value("${smtp.region}") String smtpRegion) {
+	public EmailSender(@Value("${smtp.username}") String smtpUsername, @Value("${smtp.password}") String smtpPassword,
+			@Value("${smtp.region}") String smtpRegion) {
 		super();
 		this.smtpUsername = smtpUsername;
 		this.smtpPassword = smtpPassword;

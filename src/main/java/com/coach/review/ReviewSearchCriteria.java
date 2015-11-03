@@ -1,5 +1,6 @@
 package com.coach.review;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Getter;
@@ -20,12 +21,11 @@ public class ReviewSearchCriteria {
 	private List<Tag> wantedTags;
 	private List<Tag> unwantedTags;
 
-	// public List<Tag> getWantedTags() {
-	// return wantedTags != null && wantedTags.size() > 0 ? wantedTags : null;
-	// }
-	//
-	// public List<Tag> getUnwantedTags() {
-	// return unwantedTags != null && unwantedTags.size() > 0 ? unwantedTags :
-	// null;
-	// }
+	public List<Tag> getWantedTags() {
+		return wantedTags == null ? new ArrayList<Tag>() : wantedTags;
+	}
+
+	public List<Tag> getUnwantedTags() {
+		return unwantedTags == null ? new ArrayList<Tag>() : unwantedTags;
+	}
 }

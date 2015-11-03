@@ -42,29 +42,29 @@
 .videoDescription {
 	font-size: 14px;
 }
-.listing-view .search-section {
+.search-section {
 	text-align: center;
 }
-.listing-view .search-panel {
+.search-panel {
 	display: inline-block;
 	text-align: left;
 }
-.listing-view .search-panel .panel-heading a {
+.search-panel .panel-heading a {
 	cursor: pointer;
 }
-.listing-view .search-panel .panel-heading a:after {
+.search-panel .panel-heading a:after {
     font-family:'Glyphicons Halflings';
     content:"\e114";
     float: right;
     color: grey;
 }
-.listing-view .search-panel .panel-heading a.collapsed:after {
+.search-panel .panel-heading a.collapsed:after {
     content:"\e080";
 }
-.listing-view .search-panel .wanted-tags, .listing-view .search-panel .unwanted-tags {
+.search-panel .wanted-tags, .listing-view .search-panel .unwanted-tags {
 	min-width: 300px;
 }
-.listing-view .search-panel tags-input {
+.search-panel tags-input {
 	width: 100%;
 }
 

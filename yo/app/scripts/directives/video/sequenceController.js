@@ -33,6 +33,12 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						otherSource: undefined
 					}
 					$scope.sequenceModal.$promise.then($scope.sequenceModal.show);
+
+					$scope.criteria = {
+					 	sport: $scope.review.sport.key,
+					 	wantedTags: [],
+					 	unwantedTags: []
+					}
 				});
 
 				$scope.$on('$destroy', unregister);
@@ -95,14 +101,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 
 					if (mode == 'otherVideo') {
 						$scope.choosingOtherVideo = true;
-						var params = {sport: $scope.review.sport.key};
-						
-						Api.Reviews.get(params, function(data) {
-							$scope.videos = [];
-							for (var i = 0; i < data.reviews.length; i++) {
-								$scope.videos.push(data.reviews[i]);
-							};
-						});
+						$scope.searchVideos();
 					}
 					else if (mode == 'sameVideo') {
 						$scope.choosingOtherVideo = false;
@@ -120,6 +119,15 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						});
 					}
 				};
+
+				$scope.searchVideos = function() {
+					Api.ReviewsQuery.save($scope.criteria, function(data) {
+						$scope.videos = [];
+						for (var i = 0; i < data.reviews.length; i++) {
+							$scope.videos.push(data.reviews[i]);
+						};
+					});
+				}
 
 				$scope.addSequence = function() {
 					var params = {

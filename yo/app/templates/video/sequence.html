@@ -62,6 +62,35 @@
 							<div class="other-video-choice" ng-show="choosingOtherVideo">
 								<h3 class="choice-title">Choose an existing video</h3>
 
+								<section class="search-section">
+									<div class="panel panel-default search-panel">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-target="#searchPanel" class="collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="searchPanel">Search videos</a>
+											</h4>
+										</div>
+										<div class="panel-collapse collapse" id="searchPanel" aria-expanded="false">
+											<form class="panel-body ">
+												<div class="form-group title-search">
+												    <label class="sr-only" for="title">Title</label>
+												    <input type="text" class="form-control" id="title" placeholder="Title" ng-model="criteria.title">
+												</div>
+												<div class="form-group wanted-tags">
+													<tags-input ng-model="criteria.wantedTags" placeholder="Tags you want to see" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
+														<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
+													</tags-input>
+												</div>
+												<div class="form-group unwanted-tags">
+													<tags-input ng-model="criteria.unwantedTags" placeholder="Tags you don't want to see" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
+														<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
+													</tags-input>
+												</div>
+												<button type="submit" class="btn btn-default" ng-click="searchVideos()">Search</button>
+											</form>
+										</div>
+									</div>
+								</section>
+
 								<table class="table video-listing">
 									<tbody>
 										<tr ng-repeat="video in videos">

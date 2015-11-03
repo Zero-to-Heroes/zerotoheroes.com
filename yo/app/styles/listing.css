@@ -2,6 +2,10 @@
 	padding: 10px 45px 25px 45px;
 }
 
+.all-videos-headline {
+	display: inline-block;
+}
+
 .reviewSummary {
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
 	border-radius: 10px;
@@ -37,6 +41,31 @@
 
 .videoDescription {
 	font-size: 14px;
+}
+.listing-view .search-section {
+	text-align: center;
+}
+.listing-view .search-panel {
+	display: inline-block;
+	text-align: left;
+}
+.listing-view .search-panel .panel-heading a {
+	cursor: pointer;
+}
+.listing-view .search-panel .panel-heading a:after {
+    font-family:'Glyphicons Halflings';
+    content:"\e114";
+    float: right;
+    color: grey;
+}
+.listing-view .search-panel .panel-heading a.collapsed:after {
+    content:"\e080";
+}
+.listing-view .search-panel .wanted-tags, .listing-view .search-panel .unwanted-tags {
+	min-width: 300px;
+}
+.listing-view .search-panel tags-input {
+	width: 100%;
 }
 
 .video-listing {

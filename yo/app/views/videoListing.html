@@ -1,28 +1,39 @@
 <view-title>{{sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} All videos</view-title>
 
-<div class="background-white">
-    <div class="all-videos-header">
-        <h2 class="all-videos-headline">All videos
-            <a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed() && sport"><small title="Click to stop receiving notifications when a new review is posted">(unsubscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true">)</span></small></a>
-            <a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed() || !sport" title="Click to be notified when a new review is posted"><small>(subscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
-        </h2>
-    </div>
-    <div ng-include="'/templates/videoListingTable.html'"></div>
-</div>
-
-<!--
-<div bs-active-pane="tabs.activeTab " bs-tabs class="background-white">
-    <div title="All {{useVideo ? 'videos' : 'posts'}}" name="false" bs-pane>
-    	<div ng-include="'/templates/videoListingTable.html'"></div>
-    </div>
-    <div title="My {{useVideo ? 'videos' : 'posts'}}" name="true" class="table-responsive" bs-pane>
-    	<div ng-show="User.isLoggedIn()" ng-include="'/templates/videoListingTable.html'"></div>
-		<div ng-hide="videos || !User.isLoggedIn()">
-			<span>It looks like there are no {{useVideo ? 'videos' : 'posts'}} yet. You could start and <a href="#/upload">{{useVideo ? 'upload' : 'post'}} your own</a></span>
+<div class="background-white listing-view">
+	<section class="all-videos-header">
+		<h2 class="all-videos-headline">All videos
+			<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed() && sport"><small title="Click to stop receiving notifications when a new review is posted">(unsubscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true">)</span></small></a>
+			<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed() || !sport" title="Click to be notified when a new review is posted"><small>(subscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
+		</h2>
+	</section>
+	<section class="search-section" ng-show="sport && sport != 'meta'">
+		<div class="panel panel-default search-panel">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-target="#searchPanel" class="collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="searchPanel">Search videos</a>
+				</h4>
+			</div>
+			<div class="panel-collapse collapse" id="searchPanel" aria-expanded="false">
+				<form class="panel-body form-inline">
+					<div class="form-group title-search">
+					    <label class="sr-only" for="title">Title</label>
+					    <input type="text" class="form-control" id="title" placeholder="Title" ng-model="criteria.title">
+					</div>
+					<div class="form-group wanted-tags">
+						<tags-input ng-model="criteria.wantedTags" placeholder="Tags you want to see" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
+							<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
+						</tags-input>
+					</div>
+					<div class="form-group unwanted-tags">
+						<tags-input ng-model="criteria.unwantedTags" placeholder="Tags you don't want to see" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
+							<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
+						</tags-input>
+					</div>
+					<button type="submit" class="btn btn-default" ng-click="search()">Search</button>
+				</form>
+			</div>
 		</div>
-    	<div ng-hide="User.isLoggedIn()" class="panel-no-border">
-			<p>It looks like you are not logged in. To see your {{useVideo ? 'videos' : 'posts'}}, please <a ng-click="signIn()">sign in</a> or <a ng-click="signUp()">create a new account</a><p>
-    	</div>
-    </div>
+	</section>
+	<div ng-include="'/templates/videoListingTable.html'"></div>
 </div>
--->

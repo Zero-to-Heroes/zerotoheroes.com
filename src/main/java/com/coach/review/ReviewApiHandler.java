@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amazonaws.util.StringUtils;
@@ -80,33 +79,23 @@ public class ReviewApiHandler {
 		log.debug("Initializing Review Api Handler");
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(
-			@RequestParam(value = "userName", required = false) String userName,
-			@RequestParam(value = "sport", required = false) String sport,
-			@RequestParam(value = "pageNumber", required = false) Integer pageNumber) {
-		// String currentUser =
-		// SecurityContextHolder.getContext().getAuthentication().getName();
-		log.debug("Retrieving all reviews");
+	@RequestMapping(value = "/query", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(@RequestBody ReviewSearchCriteria criteria) {
+		log.debug("Retrieving all reviews with criteria " + criteria);
 
-		// log.debug("userName param is " + userName);
-		// log.debug("sport param is " + sport);
-		log.debug("pageNumber is " + pageNumber);
+		int pageNumber = criteria.getPageNumber() != null && criteria.getPageNumber() > 0 ? criteria.getPageNumber() - 1
+				: 0;
+		String sport = criteria.getSport();
 
 		// Sorting in ascending order
 		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
 				"lastModifiedDate"));
 
 		// Start pageing at 1 like normal people, not at 0 like nerds
-		PageRequest pageRequest = new PageRequest(pageNumber != null && pageNumber > 0 ? pageNumber - 1 : 0, PAGE_SIZE,
-				newestFirst);
-		Page<Review> page = null;
-		if ("meta".equalsIgnoreCase(sport)) {
-			page = reviewRepo.findAll(userName, sport, pageRequest);
-		}
-		else {
-			page = reviewRepo.findAllWithKey(userName, sport, pageRequest);
-		}
+		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, newestFirst);
+		String sportCriteria = Sport.load(sport).getKey();
+		Page<Review> page = reviewRepo.listReviews(criteria.getTitle(), sportCriteria, criteria.getWantedTags(),
+				criteria.getUnwantedTags(), pageRequest);
 
 		List<Review> reviews = page.getContent();
 		ListReviewResponse response = new ListReviewResponse(reviews);
@@ -483,7 +472,7 @@ public class ReviewApiHandler {
 		PageRequest pageRequest = new PageRequest(0, PAGE_SIZE, oldestFirst);
 		Review recommended = null;
 		if (!"meta".equalsIgnoreCase(sport)) {
-			reviews = reviewRepo.findAllWithKey(null, sport, pageRequest).getContent();
+			reviews = reviewRepo.findBySport(sport, pageRequest).getContent();
 			log.debug("All reviews " + reviews);
 
 			// TODO: do that in the DB directly?

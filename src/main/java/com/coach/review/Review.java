@@ -45,6 +45,13 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 		@Getter
 		private String key, value;
+
+		public static Sport load(String sport) {
+			for (Sport temp : Review.Sport.values()) {
+				if (temp.getKey().equalsIgnoreCase(sport)) { return temp; }
+			}
+			return null;
+		}
 	}
 
 	@Id

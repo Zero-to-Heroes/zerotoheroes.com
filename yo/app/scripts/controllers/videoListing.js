@@ -3,22 +3,13 @@
 angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', 
 	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route) {
 		$scope.videos = [];
-		//$scope.tabs = []; 
-		//$scope.tabs.activeTab = 0;
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
 		$scope.pageNumber = parseInt($routeParams.pageNumber) || 1;
 
-		//$log.log('Getting videos for page ', $scope.pageNumber);
-
-		/*$scope.$watch('tabs.activeTab', function(newValue, oldValue) {
-			$scope.retrieveVideos(newValue, $scope.pageNumber);
-		})*/
-
-		//$log.log('using videos?', $scope.useVideo);
-
-		$scope.retrieveVideos = function(shouldGetOnlyMine, pageNumber) {
-			var params = {};
+		$scope.retrieveVideos = function(shouldGetOnlyMine, pageNumber, criteria) {
+			var params = criteria ? criteria : {};
+			$log.log('search with criteria', criteria)
 			
 			if (shouldGetOnlyMine == 'true')
 				params.userName = User.getName();
@@ -29,7 +20,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			if (pageNumber)
 				params.pageNumber = pageNumber;
 			
-			Api.Reviews.get(params, function(data) {
+			Api.ReviewsQuery.save(params, function(data) {
 				$scope.videos = [];
 				$scope.totalPages = data.totalPages;
 				//$log.log('totalPages are ', $scope.totalPages);
@@ -47,11 +38,10 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				$scope.subscribers = data.subscribers;
 			});
 		};
-		$scope.retrieveVideos('false', $scope.pageNumber);
 
-		$rootScope.$on('user.logged.in', function() {
+		/*$rootScope.$on('user.logged.in', function() {
 			$scope.retrieveVideos('false', $scope.pageNumber);
-		});
+		});*/
 
 		$scope.formatDate = function(video) {
 			// Is the last update a creation or a modification?
@@ -217,6 +207,61 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.subscribed = function() {
 			//$log.log('usbscribed', $scope.review.subscribers, User.getUser().id);
 			return $scope.subscribers && User.getUser() && $scope.subscribers.indexOf(User.getUser().id) > -1;
+		}
+
+
+		//===============
+		// Search
+		//===============
+		$scope.criteria = {
+			wantedTags: [],
+			unwantedTags: []
+		};
+		$scope.loadTags = function() {
+			Api.Tags.query({sport: $scope.sport}, 
+				function(data) {
+					$scope.allowedTags = data;
+					$log.log('allowedTags set to', $scope.allowedTags);
+					
+					// By default mask the Sequence videos
+					$scope.allowedTags.forEach(function(tag) {
+						if (tag.text.toLowerCase() == 'sequence') {
+							$log.log('adding sequence to unwanted tags', tag);
+							$scope.criteria.unwantedTags.push(tag);
+						}
+					})
+
+					$scope.search();
+				}
+			);
+		}
+		$scope.loadTags();
+
+		$scope.autocompleteTag = function($query) {
+			var validTags = $scope.allowedTags.filter(function (el) {
+				// http://sametmax.com/loperateur-not-bitwise-ou-tilde-en-javascript/
+				return ~el.text.toLowerCase().indexOf($query);
+			});
+			return validTags.sort(function(a, b) {
+				var tagA = a.text.toLowerCase();
+				var tagB = b.text.toLowerCase();
+				if (~tagA.indexOf(':')) {
+					if (~tagB.indexOf(':')) {
+						return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
+					}
+					return 1;
+				}
+				else {
+					if (~tagB.indexOf(':')) {
+						return -1;
+					}
+					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
+				}
+			});;
+		}
+
+		$scope.search = function() {
+			$scope.retrieveVideos('false', $scope.pageNumber, $scope.criteria);
 		}
 	}
 ]);

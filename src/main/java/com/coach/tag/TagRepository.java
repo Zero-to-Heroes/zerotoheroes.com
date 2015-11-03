@@ -39,6 +39,7 @@ public class TagRepository {
 		squash.add(new Tag("Women"));
 		squash.add(new Tag("Tactics"));
 		squash.add(new Tag("Sequence"));
+		squash.add(new Tag("Serve"));
 		tags.put(Squash, squash);
 
 		// Tags for badminton
@@ -326,7 +327,8 @@ public class TagRepository {
 	}
 
 	public static List<Tag> getAllTagsForSport(String sport) {
-		return tags.get(Sport.valueOf(sport));
+		Sport theSport = Sport.load(sport);
+		return tags.get(theSport);
 	}
 
 }

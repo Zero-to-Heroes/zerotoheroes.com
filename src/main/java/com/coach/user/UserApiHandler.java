@@ -1,5 +1,7 @@
 package com.coach.user;
 
+import java.util.UUID;
+
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +36,12 @@ public class UserApiHandler {
 	@Autowired
 	SlackNotifier slackNotifier;
 
+	@Autowired
+	ResetPasswordRepository resetPasswordRepository;
+
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<User> getLoggedInUser() {
-		String currentUser = SecurityContextHolder.getContext()
-				.getAuthentication().getName();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		log.debug("Retrieving user by " + currentUser);
 
 		User user = null;
@@ -47,7 +51,8 @@ public class UserApiHandler {
 		}
 		if (currentUser.contains("@")) {
 			user = userRepository.findByEmail(currentUser);
-		} else {
+		}
+		else {
 			user = userRepository.findByUsername(currentUser);
 		}
 		log.debug("Loaded user " + user);
@@ -61,8 +66,7 @@ public class UserApiHandler {
 	}
 
 	@RequestMapping(value = "/{identifier}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<User> getUserByIdentifier(
-			@PathVariable("identifier") String identifier) {
+	public @ResponseBody ResponseEntity<User> getUserByIdentifier(@PathVariable("identifier") String identifier) {
 		log.debug("Retrieving user by " + identifier);
 
 		User user = null;
@@ -72,7 +76,8 @@ public class UserApiHandler {
 		}
 		if (identifier.contains("@")) {
 			user = userRepository.findByEmail(identifier);
-		} else {
+		}
+		else {
 			user = userRepository.findByUsername(identifier);
 		}
 		log.debug("Loaded user " + user);
@@ -84,17 +89,13 @@ public class UserApiHandler {
 	public ResponseEntity<String> register(@RequestBody final User user) {
 		log.debug("Registering user: " + user);
 		boolean exists = userRepository.findByUsername(user.getUsername()) != null;
-		if (exists) {
-			return new ResponseEntity<String>(
-					"{\"msg\": \"This username is already in use by someone else, please choose another one\"}",
-					HttpStatus.UNPROCESSABLE_ENTITY);
-		}
+		if (exists) { return new ResponseEntity<String>(
+				"{\"msg\": \"This username is already in use by someone else, please choose another one\"}",
+				HttpStatus.UNPROCESSABLE_ENTITY); }
 		exists = userRepository.findByEmail(user.getEmail()) != null;
-		if (exists) {
-			return new ResponseEntity<String>(
-					"{\"msg\": \"This email address is already in use by someone else, please choose another one\"}",
-					HttpStatus.UNPROCESSABLE_ENTITY);
-		}
+		if (exists) { return new ResponseEntity<String>(
+				"{\"msg\": \"This email address is already in use by someone else, please choose another one\"}",
+				HttpStatus.UNPROCESSABLE_ENTITY); }
 
 		// Perform checks on password
 		String password = user.getPassword();
@@ -115,5 +116,59 @@ public class UserApiHandler {
 		slackNotifier.notifyNewUser(user);
 
 		return new ResponseEntity<String>(HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/password", method = RequestMethod.POST)
+	public ResponseEntity<String> resetPassword(@RequestBody User newUser) {
+		String identifier = newUser.getUsername();
+		log.debug("resetting password for " + newUser);
+
+		User user = null;
+		if (StringUtils.isNullOrEmpty(identifier)) {
+			log.debug("No identifier provided, returning 406");
+			return new ResponseEntity<String>((String) null, HttpStatus.NOT_ACCEPTABLE);
+		}
+		if (identifier.contains("@")) {
+			user = userRepository.findByEmail(identifier);
+		}
+		else {
+			user = userRepository.findByUsername(identifier);
+		}
+		log.debug("Loaded user " + user);
+
+		if (user == null) {
+			log.debug("Returning 404");
+			return new ResponseEntity<String>((String) null, HttpStatus.NOT_FOUND);
+		}
+
+		// Creating reset password link
+		String uniqueId = UUID.randomUUID().toString();
+		// Associate the unique ID with the user
+		final BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
+		String newPassword = pwEncoder.encode(newUser.getPassword());
+		ResetPassword reset = new ResetPassword(uniqueId, user.getId(), newPassword);
+		resetPasswordRepository.save(reset);
+
+		// Build the link to send
+		String url = "http://www.zerotoheroes.com" + newUser.getRegisterLocation() + "?resetpassword=" + uniqueId;
+		emailNotifier.sendResetPasswordLink(user, url);
+		slackNotifier.notifyResetPassword(user);
+
+		return new ResponseEntity<String>((String) null, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/password/{uniqueKey}", method = RequestMethod.POST)
+	public ResponseEntity<String> resetPassword(@PathVariable("uniqueKey") String uniqueKey) {
+		log.debug("Validating reset password for unique key " + uniqueKey);
+
+		ResetPassword resetPassword = resetPasswordRepository.findOne(uniqueKey);
+		log.debug("Loaded reset password " + resetPassword);
+
+		User user = userRepository.findById(resetPassword.getUserId());
+		user.setPassword(resetPassword.getNewPassword());
+		userRepository.save(user);
+		resetPasswordRepository.delete(uniqueKey);
+
+		return new ResponseEntity<String>((String) null, HttpStatus.OK);
 	}
 }

@@ -256,4 +256,29 @@ public class SlackNotifier {
 		});
 	}
 
+	public void notifyResetPassword(final User user) {
+		if (!"prod".equalsIgnoreCase(environment)) return;
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("good");
+				attach.setText(user.getUsername() + " has requested a password reset. We can contact them at "
+						+ user.getEmail());
+				attach.setFallback("placeholder fallback");
+
+				SlackMessage message = new SlackMessage();
+				message.addAttachments(attach);
+				message.setText(user.getUsername() + " password reset");
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
 }

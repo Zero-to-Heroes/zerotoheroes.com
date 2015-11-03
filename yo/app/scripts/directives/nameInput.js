@@ -3,9 +3,9 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', 
-	function(User, $log, Api, $modal, AuthenticationService, $rootScope) {
-
+app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', '$location', 
+	function(User, $log, Api, $modal, AuthenticationService, $rootScope, $location) {
+		
 	var linkFunction = function(scope, element, attributes) {
 		scope.showLogout = attributes['showLogout'];
 	}
@@ -16,6 +16,7 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 		scope: {},
 		link: linkFunction,
 		controller: function($scope, User) {
+			
 			$scope.refresh = function() {
 				//$log.log('Refreshing user');
 				$scope.name = User.getName();
@@ -35,6 +36,7 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 			$rootScope.$on('user.logged.in', function() {
 				$scope.refresh();
 			});
+
 
 			$scope.signUp = function() {
 				$rootScope.$broadcast('account.signup.show');

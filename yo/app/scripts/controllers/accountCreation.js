@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService', '$rootScope', '$location',
-	function($scope, $log, Api, User, AuthenticationService, $rootScope, $location) {
+angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService', '$rootScope', '$location', '$route', 
+	function($scope, $log, Api, User, AuthenticationService, $rootScope, $location, $route) {
 		$scope.account = {};
 
 		$scope.init = function() {
@@ -19,6 +19,29 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		$scope.signIn = function() {
 			$rootScope.$broadcast('account.signin.show', {identifier: $scope.account.username});
 		}
+
+		$scope.forgotPassword = function() {
+			$rootScope.$broadcast('account.forgotpassword.show', {identifier: $scope.account.username});
+		}
+
+		$scope.resetPassword = function() {
+			$scope.$broadcast('show-errors-check-validity');
+  			if ($scope.resetForm.$valid) {
+  				var location = $location.$$url;
+  				$log.log('identifier is ', $scope.account.username, $scope.account.password, $location);
+				Api.Passwords.save({username: $scope.account.username, password: $scope.account.password, registerLocation: $location.$$path}, 
+			        function(data) {
+			          	// Show message
+			          	$scope.info = 'Thank you! We have just sent you an email with a link to click on to activate your new password. Until you do, your old password is still active.';
+			        }, 
+			        function(error) {
+			            // Error handling
+			            console.log(error);
+	  					$scope.error = error.data.msg;
+			        }
+			    );
+			}
+		};
 
 		$scope.createAccount = function() {
 			$scope.$broadcast('show-errors-check-validity');

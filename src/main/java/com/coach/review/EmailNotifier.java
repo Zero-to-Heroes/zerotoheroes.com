@@ -1,5 +1,7 @@
 package com.coach.review;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -10,6 +12,7 @@ import com.coach.core.security.User;
 import com.coach.user.UserRepository;
 
 @Component
+@Slf4j
 public class EmailNotifier {
 
 	@Autowired
@@ -73,6 +76,20 @@ public class EmailNotifier {
 		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
 				.subject("New " + review.getSport().getValue() + " review posted at ZeroToHeroes").content(body)
 				.type("text/html").build();
+		emailSender.send(message);
+	}
+
+	public void sendResetPasswordLink(User user, String url) {
+		log.debug("Sending email to " + user.getEmail() + " with link " + url);
+		//@formatter:off
+		String body = "<p>You have requested to reset your password at http://www.zerotoheroes.com. "
+				+ "If you don't recall having made that request, please simply ignore this email.</p>"
+				+ "<p>Otherwise, please click on <a href=\"" + url + "\">this link</a> to reset your password.</p>"
+				+ "<p>If you have any question, please reply to this email. Have a good day!</p>";
+		//@formatter:on
+
+		EmailMessage message = EmailMessage.builder().from("contact@zerotoheroes.com").to(user.getEmail())
+				.subject("Zero to Heroes reset password link").content(body).type("text/html").build();
 		emailSender.send(message);
 	}
 }

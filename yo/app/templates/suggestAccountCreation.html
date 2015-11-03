@@ -18,25 +18,25 @@
 					<div class="form-group" show-errors="{ showSuccess: true }">
 						<label for="email" class="col-sm-4 control-label">Email</label>
 						<div class="col-sm-6">
-				    		<input type="email" id="email" name="email" class="form-control" placeholder="Email address" ng-model="account.email" ng-required="true">
-				    	</div>
-				    </div>
-				    <div class="form-group" show-errors="{ showSuccess: true }">
-				    	<label for="password" class="col-sm-4 control-label">Password</label>
-				    	<div class="col-sm-6">
-				    		<input type="password" id="password" name="password" class="form-control" placeholder="Password" ng-model="account.password" ng-required="true">
-				    	</div>
-				    </div>
-				    <div class="form-group" show-errors="{ showSuccess: true }">
-				    	<label for="confirmPassword" class="col-sm-4 control-label">Confirm your password</label>
-				    	<div class="col-sm-6">
-				    		<input type="password" name="confirmPassword" class="form-control" placeholder="Confirm your password" ng-model="account.confirmPassword" compare-to="account.password" ng-required="true">
-				    	</div>
-				  	</div>
-				  	<div class="text-right">
-				  		<a class="link-minor" ng-click="endAccountCreation()">No thanks, I'll create my account later</a>
-				  		<button type="submit" class="btn btn-primary" ng-click="createAccount()">Create account now</button>
-				  	</div>
+							<input type="email" id="email" name="email" class="form-control" placeholder="Email address" ng-model="account.email" ng-required="true">
+						</div>
+					</div>
+					<div class="form-group" show-errors="{ showSuccess: true }">
+						<label for="password" class="col-sm-4 control-label">Password</label>
+						<div class="col-sm-6">
+							<input type="password" id="password" name="password" class="form-control" placeholder="Password" ng-model="account.password" ng-required="true">
+						</div>
+					</div>
+					<div class="form-group" show-errors="{ showSuccess: true }">
+						<label for="confirmPassword" class="col-sm-4 control-label">Confirm your password</label>
+						<div class="col-sm-6">
+							<input type="password" name="confirmPassword" class="form-control" placeholder="Confirm your password" ng-model="account.confirmPassword" compare-to="account.password" ng-required="true">
+						</div>
+					</div>
+					<div class="text-right">
+						<a class="link-minor" ng-click="endAccountCreation()">No thanks, I'll create my account later</a>
+						<button type="submit" class="btn btn-primary" ng-click="createAccount()">Create account now</button>
+					</div>
 				</form>
 			</div>
 		</div>

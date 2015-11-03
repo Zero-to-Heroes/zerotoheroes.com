@@ -74,7 +74,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				}
 
 				$scope.insertOtherSequence = function() {
-					$rootScope.$broadcast('sequence.add.init');
+					$rootScope.$broadcast('sequence.add.init', {startTime: $scope.API.currentTime});
 
 					var unregister = $rootScope.$on('sequence.add.end', function (event, params) {
 						// params are null when canceling

@@ -22,6 +22,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 				
 				var unregister = $rootScope.$on('sequence.add.init', function(event, params) {
 					$log.log('on sequence.add.init', event, params, $scope);
+					$scope.initialTime = params.startTime;
 					$scope.loadTags();
 					$scope.params = {
 						loopDuration: 1,
@@ -53,6 +54,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 
 				$scope.onPlayerReady = function(API) {
 					$scope.API = API;
+					$scope.API.seekTime($scope.initialTime / 1000)
 				};
 
 				$scope.onPlayerReady2 = function(API) {

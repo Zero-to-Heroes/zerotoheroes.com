@@ -16,3 +16,8 @@ tags-input[disabled] .tags .tag-item {
 tags-input[disabled] .tags .tag-item .remove-button {
 	display: none;
 }
+
+tags-input .autocomplete .suggestion-item.selected {
+    color: #fff;
+    background-color: #0097cf;
+}

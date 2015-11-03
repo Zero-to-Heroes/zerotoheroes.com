@@ -10,6 +10,7 @@ import lombok.Setter;
 public class ListSequenceResponse {
 
 	private List<Sequence> sequences;
+	private int totalPages;
 
 	public ListSequenceResponse(List<Sequence> sequences) {
 		super();

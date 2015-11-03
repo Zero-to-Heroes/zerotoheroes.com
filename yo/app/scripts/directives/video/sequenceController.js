@@ -109,8 +109,21 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					}
 					else if (mode == 'sequence') {
 						$scope.choosingOtherVideo = true;
-						var params = {sport: $scope.review.sport.key};
-						Api.Sequences.get(params, function(data) {
+						$scope.searchVideos();
+					}
+				};
+
+				$scope.searchVideos = function() {
+					if ($scope.params.comparisonSource == 'otherVideo') {
+						Api.ReviewsQuery.save($scope.criteria, function(data) {
+							$scope.videos = [];
+							for (var i = 0; i < data.reviews.length; i++) {
+								$scope.videos.push(data.reviews[i]);
+							};
+						});
+					}
+					else if ($scope.params.comparisonSource == 'sequence') {
+						Api.SequencesQuery.save($scope.criteria, function(data) {
 							$scope.videos = [];
 							for (var i = 0; i < data.sequences.length; i++) {
 								data.sequences[i].sequence = true;
@@ -118,15 +131,6 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 							};
 						});
 					}
-				};
-
-				$scope.searchVideos = function() {
-					Api.ReviewsQuery.save($scope.criteria, function(data) {
-						$scope.videos = [];
-						for (var i = 0; i < data.reviews.length; i++) {
-							$scope.videos.push(data.reviews[i]);
-						};
-					});
 				}
 
 				$scope.addSequence = function() {

@@ -24,6 +24,7 @@ services.factory('Api', ['$resource', 'ENV',
 			BugFixes: $resource(ENV.apiEndpoint + url + 'news/bugfixes'),
 			Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport'),
 			Sequences: $resource(ENV.apiEndpoint + url + 'sequences/:sport/:sequenceId'),
+			SequencesQuery: $resource(ENV.apiEndpoint + url + 'sequences/query'),
 			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
 			Sports: $resource(ENV.apiEndpoint + url + 'sports/:sport', {sport: '@sport'}),
 			Activities: $resource(ENV.apiEndpoint + url + 'activities/:sport', {sport: '@sport'})

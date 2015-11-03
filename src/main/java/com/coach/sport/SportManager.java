@@ -57,14 +57,14 @@ public class SportManager {
 		addActivity(review, activity);
 	}
 
-	public void addReviewUpdatedActivity(Review review) {
-		Activity activity = new Activity(new Date(), review.getAuthor() + " updated the review <a href=\""
+	public void addReviewUpdatedActivity(User user, Review review) {
+		Activity activity = new Activity(new Date(), user.getUsername() + " updated the review <a href=\""
 				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
 		addActivity(review, activity);
 	}
 
-	public void addCommentUpdatedActivity(Review review, Comment comment) {
-		Activity activity = new Activity(new Date(), comment.getAuthor() + " updated a comment on <a href=\""
+	public void addCommentUpdatedActivity(User user, Review review, Comment comment) {
+		Activity activity = new Activity(new Date(), user.getUsername() + " updated a comment on <a href=\""
 				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
 		addActivity(review, activity);
 	}

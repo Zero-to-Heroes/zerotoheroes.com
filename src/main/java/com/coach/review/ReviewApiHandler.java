@@ -305,7 +305,7 @@ public class ReviewApiHandler {
 		}
 
 		slackNotifier.notifyReviewUpdatet(review);
-		sportManager.addReviewUpdatedActivity(review);
+		sportManager.addReviewUpdatedActivity(user, review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -349,7 +349,7 @@ public class ReviewApiHandler {
 
 		comment.setTempCanvas(review.getCanvas());
 		slackNotifier.notifyCommentUpdate(review, comment);
-		sportManager.addCommentUpdatedActivity(review, comment);
+		sportManager.addCommentUpdatedActivity(user, review, comment);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}

@@ -40,9 +40,6 @@ public class TagRepository {
 		squash.add(new Tag("Tactics"));
 		squash.add(new Tag("Sequence"));
 		squash.add(new Tag("Serve"));
-		squash.add(new Tag("Level: National"));
-		squash.add(new Tag("Level: Regional"));
-		squash.add(new Tag("Level: Beginner"));
 		tags.put(Squash, squash);
 
 		// Tags for badminton

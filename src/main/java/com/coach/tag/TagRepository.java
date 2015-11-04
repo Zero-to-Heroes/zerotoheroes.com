@@ -40,6 +40,9 @@ public class TagRepository {
 		squash.add(new Tag("Tactics"));
 		squash.add(new Tag("Sequence"));
 		squash.add(new Tag("Serve"));
+		squash.add(new Tag("Level: National"));
+		squash.add(new Tag("Level: Regional"));
+		squash.add(new Tag("Level: Beginner"));
 		tags.put(Squash, squash);
 
 		// Tags for badminton
@@ -180,7 +183,6 @@ public class TagRepository {
 		league.add(new Tag("Mid Game"));
 		league.add(new Tag("Late Game"));
 		league.add(new Tag("Team Fights"));
-		league.add(new Tag("Decision Making"));
 		league.add(new Tag("Positioning"));
 		league.add(new Tag("Top"));
 		league.add(new Tag("Jungle"));

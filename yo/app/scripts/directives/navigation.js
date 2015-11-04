@@ -33,6 +33,10 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 						$timeout(function() {
 							$alert({content: 'Your password has been changed successfully', placement: 'top-right', type: 'success', show: true, container: 'nav', duration: 6});
 						});
+					}, function(error) {
+						$timeout(function() {
+							$alert({content: 'Your password could not be reset. Please leave us a message on the forum and we\'ll get back to you', placement: 'top-right', type: 'danger', show: true, container: 'nav'});
+						});
 					})
 				}
 			});

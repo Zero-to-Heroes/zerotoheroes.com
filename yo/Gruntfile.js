@@ -420,7 +420,7 @@ module.exports = function (grunt) {
 		'usemin',
 		'imagemin',
 		'htmlmin',
-	  	'connect:dist:livereload',
+	  	'connect:livereload',
 	  	'watch'
 	  ]);
 	}

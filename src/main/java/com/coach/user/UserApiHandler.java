@@ -121,7 +121,7 @@ public class UserApiHandler {
 	@RequestMapping(value = "/password", method = RequestMethod.POST)
 	public ResponseEntity<String> resetPassword(@RequestBody User newUser) {
 		String identifier = newUser.getUsername();
-		log.debug("resetting password for " + newUser);
+		log.debug("resetting password for " + newUser.getUsername());
 
 		User user = null;
 		if (StringUtils.isNullOrEmpty(identifier)) {
@@ -148,9 +148,11 @@ public class UserApiHandler {
 		String newPassword = pwEncoder.encode(newUser.getPassword());
 		ResetPassword reset = new ResetPassword(uniqueId, user.getId(), newPassword);
 		resetPasswordRepository.save(reset);
+		log.debug("Saved new password reset " + reset);
 
 		// Build the link to send
-		String url = "http://www.zerotoheroes.com" + newUser.getRegisterLocation() + "?resetpassword=" + uniqueId;
+		String url = "http://www.zerotoheroes.com" + newUser.getRegisterLocation() + "?resetpassword="
+				+ reset.getUniqueId();
 		emailNotifier.sendResetPasswordLink(user, url);
 		slackNotifier.notifyResetPassword(user);
 
@@ -170,8 +172,10 @@ public class UserApiHandler {
 			user.setPassword(resetPassword.getNewPassword());
 			userRepository.save(user);
 			resetPasswordRepository.delete(uniqueKey);
+			return new ResponseEntity<String>((String) null, HttpStatus.OK);
 		}
-
-		return new ResponseEntity<String>((String) null, HttpStatus.OK);
+		else {
+			return new ResponseEntity<String>((String) null, HttpStatus.UNPROCESSABLE_ENTITY);
+		}
 	}
 }

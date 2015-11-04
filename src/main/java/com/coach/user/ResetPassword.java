@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import org.springframework.data.annotation.Id;
 
@@ -11,6 +12,7 @@ import org.springframework.data.annotation.Id;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class ResetPassword {
 
 	@Id

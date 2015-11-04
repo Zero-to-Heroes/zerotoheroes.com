@@ -164,6 +164,14 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				var currentTime1 = $scope.API.currentTime;
 				var time1 = Math.min(Math.max(currentTime1 + amountInMilliseconds, 0), $scope.API.totalTime);
 				$scope.API.seekTime(time1 / 1000);
+			},
+			setPlayback: function(rate) {
+				$scope.playerControls.playbackRate = rate;
+				$scope.API.setPlayback(rate);
+				if ($scope.API.volume > 0) $scope.playerControls.previousVolume = $scope.API.volume;
+
+				if (rate == 1) $scope.API.setVolume($scope.playerControls.previousVolume);
+				else $scope.API.setVolume(0);
 			}
 		}
 

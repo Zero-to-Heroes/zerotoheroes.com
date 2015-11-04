@@ -58,6 +58,7 @@ public class ReputationApiHandler {
 		User user = userRepo.findByUsername(currentUser);
 		reputationUpdater.updateReputationAfterAction(review.getSport(), comment.getReputation(), action,
 				comment.getAuthorId(), user);
+
 		// might be nice to update only the reputation, I think I read this is
 		// doable
 		log.debug("Comment updated " + comment);

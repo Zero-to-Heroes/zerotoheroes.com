@@ -144,7 +144,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			@Override
 			public int compare(Comment o1, Comment o2) {
 				if (o1.getReputation().getScore() != o2.getReputation().getScore()) {
-					return o2.getReputation().getScore() - o1.getReputation().getScore();
+					return (int) (1000 * (o2.getReputation().getScore() - o1.getReputation().getScore()));
 				}
 				else if (o2.getCreationDate() == null) {
 					return 1;

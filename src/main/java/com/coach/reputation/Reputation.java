@@ -27,6 +27,8 @@ public class Reputation {
 	@Transient
 	private Map<ReputationAction, Boolean> hasCurrentUserVoted;
 
+	private float score = -1;
+
 	public Reputation() {
 		userIds = new HashMap<ReputationAction, List<String>>();
 		userIds.put(ReputationAction.Downvote, new ArrayList<String>());
@@ -43,12 +45,14 @@ public class Reputation {
 		userIds.get(action).add(userId);
 		nbVotes.put(action, userIds.get(action).size());
 		hasCurrentUserVoted.put(action, true);
+		updateScore();
 	}
 
 	public void removeVote(ReputationAction action, String userId) {
 		userIds.get(action).remove(userId);
 		nbVotes.put(action, userIds.get(action).size());
 		hasCurrentUserVoted.put(action, false);
+		updateScore();
 	}
 
 	public void modifyAccordingToUser(String userId) {
@@ -58,10 +62,29 @@ public class Reputation {
 		hasCurrentUserVoted.put(ReputationAction.Upvote, userIds.get(ReputationAction.Upvote).contains(userId));
 	}
 
-	public int getScore() {
-		int upvotes = userIds.get(ReputationAction.Upvote) != null ? userIds.get(ReputationAction.Upvote).size() : 0;
-		int downvotes = userIds.get(ReputationAction.Downvote) != null ? userIds.get(ReputationAction.Downvote).size()
-				: 0;
-		return upvotes - downvotes;
+	// https://possiblywrong.wordpress.com/2011/06/05/reddits-comment-ranking-algorithm/
+	// Original from http://amix.dk/blog/post/19588
+	private void updateScore() {
+		score = computeScore();
+	}
+
+	private float computeScore() {
+		int ups = userIds.get(ReputationAction.Upvote) != null ? userIds.get(ReputationAction.Upvote).size() : 0;
+		int downs = userIds.get(ReputationAction.Downvote) != null ? userIds.get(ReputationAction.Downvote).size() : 0;
+
+		if (ups == 0) return -downs;
+
+		int n = ups + downs;
+		float z = 1.64485f; // 1.0 = 85%, 1.6 = 95%
+		float phat = Float.valueOf(ups) / n;
+
+		float bottomEstimate = (float) ((phat + z * z / (2 * n) - z
+				* Math.sqrt((phat * (1 - phat) + z * z / (4 * n)) / n)) / (1 + z * z / n));
+		return bottomEstimate;
+	}
+
+	public float getScore() {
+		if (score == -1) updateScore();
+		return score;
 	}
 }

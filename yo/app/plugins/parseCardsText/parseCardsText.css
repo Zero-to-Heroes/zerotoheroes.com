@@ -6,6 +6,10 @@
 	color: black;
 }
 
+.autocomplete-dropdown.dropdown-menu a {
+	cursor: pointer;
+}
+
 .autocomplete-dropdown.dropdown-menu > .active > a, .autocomplete-dropdown.dropdown-menu > .active > a:hover, .autocomplete-dropdown.dropdown-menu > .active > a:focus {
 	background-color: transparent;
 	color: black;

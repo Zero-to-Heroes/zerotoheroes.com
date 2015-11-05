@@ -39,7 +39,11 @@ function parseCardsText_attach(element) {
 				//console.log(term);
 				//var res = card.name.toLowerCase().indexOf(term.substring(2)) === 0 ? card.name : null;
 				var res = card.name.toLowerCase().indexOf(term.substring(2)) === 0 && card.cardImage ? card : null;
-				//if (res) console.log(res);
+				/*if (res) {
+					var image = new Image;
+					image.src = 'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + card.cardImage;
+					console.log('Preloading', image);
+				}*/
 				return res;
 			}))
 			$(function () {
@@ -54,7 +58,7 @@ function parseCardsText_attach(element) {
 			return text.toLowerCase(); 
 		},
 		template: function(card, term) {
-			var tooltipTemplate = '<div class=\'tooltip in parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
+			var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
 			var title =	'<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + card.cardImage + '\'>';
 			var cssClass = card.rarity ? getRarity(card).toLowerCase() : 'common';
 			//return '<span class="autocomplete card ' + cssClass + '" data-trigger="hover" data-template-url="plugins/parseCardsText/template.html" data-title="' + card.cardImage + '" data-container="body" bs-tooltip>' + card.name + '</span>';

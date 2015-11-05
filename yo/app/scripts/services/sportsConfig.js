@@ -47,6 +47,9 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					recommendedVideo: '55fc3a7de4b049db505af11e',
 					isSport: true,
 					allowDoubleSpeed: true,
+					plugins: {
+						plugins: ['parseCardsTextHots']
+					},
 					landing: {
 						athlete: 'gamer',
 						athletes: 'gamers',
@@ -127,6 +130,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 		}
 
 		service.loadPlugin = function(plugins, plugin) {
+			console.log('loading plugin', plugin);
 			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js').then(function() {
 				plugins.push(plugin);
 			}).catch(function() {

@@ -61,8 +61,6 @@ function parseCardsText_attach(element) {
 			var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
 			var title =	'<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + card.cardImage + '\'>';
 			var cssClass = card.rarity ? getRarity(card).toLowerCase() : 'common';
-			//return '<span class="autocomplete card ' + cssClass + '" data-trigger="hover" data-template-url="plugins/parseCardsText/template.html" data-title="' + card.cardImage + '" data-container="body" bs-tooltip>' + card.name + '</span>';
-			//return '<span class="autocomplete card ' + cssClass + '">' + card.name + '</span>'; 
 			return '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '" data-html="true" data-container="body" data-animation="false">' + card.name + '</span>';
 		},
 		className: 'autocomplete-dropdown',

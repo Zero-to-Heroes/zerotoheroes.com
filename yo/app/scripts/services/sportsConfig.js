@@ -12,6 +12,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					recommendedVideo: "5616d523e4b0a456c4a54192",
 					isSport: true,
 					allowDoubleSpeed: false,
+					mandatoryTags: ['level'],
 					landing: {
 						athlete: 'player',
 						athletes: 'players',

@@ -64,7 +64,13 @@ public class TagRepository {
 		badminton.add(new Tag("Clear"));
 		badminton.add(new Tag("Movement"));
 		badminton.add(new Tag("Training"));
-		badminton.add(new Tag("Pro"));
+		badminton.add(new Tag("Beginner", "level"));
+		badminton.add(new Tag("Casual", "level"));
+		badminton.add(new Tag("Club", "level"));
+		badminton.add(new Tag("County", "level"));
+		badminton.add(new Tag("Regional", "level"));
+		badminton.add(new Tag("National", "level"));
+		badminton.add(new Tag("Pro", "level"));
 		badminton.add(new Tag("Men"));
 		badminton.add(new Tag("Women"));
 		badminton.add(new Tag("Tactics"));

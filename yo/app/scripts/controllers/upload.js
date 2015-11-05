@@ -11,6 +11,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.User = User;
 		$scope.review = {
 			canvas: {},
+			editing: true,
 			videoFramerateRatio: 1
 		};
 		$log.log($scope.review);

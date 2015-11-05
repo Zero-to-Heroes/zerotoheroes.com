@@ -8,7 +8,8 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 			transclude: true,
 			templateUrl: 'templates/video/reviewTagsInput.html',
 			scope: {
-				review: '='
+				review: '=',
+				reviewDisabled: '='
 			},
 			controller: function($scope) {
 
@@ -90,21 +91,46 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 
 				$scope.$watch('review.sport', function (newVal, oldVal) {
 					$log.log('watching sport value ', oldVal, newVal);
-					$log.log('getting the new tags for sport ', $scope.review.sport);
 					$scope.loadTags();
 				});
 
 				$scope.loadTags = function() {
-					Api.Tags.query({sport: $scope.review.sport}, 
-						function(data) {
-							$scope.allowedTags = data;
-							$log.log('loaded tags', $scope.allowedTags);
-						}
-					);
-					$scope.mandatoryTags = SportsConfig[$scope.review.sport.toLowerCase()].mandatoryTags;
+					if ($scope.review) {
+						var sport = $scope.review.sport.key ? $scope.review.sport.key : $scope.review.sport;
+					}
+					$log.log('getting the new tags for sport ', sport);
+					if (sport) {
+						Api.Tags.query({sport: sport}, 
+							function(data) {
+								$scope.allowedTags = data;
+								$log.log('loaded tags', $scope.allowedTags);
+							}
+						);
+						$scope.mandatoryTags = SportsConfig[sport.toLowerCase()].mandatoryTags;
+					}
 				}
 				$scope.getMinTags = function() {
 					return Math.max(1, $scope.mandatoryTags ? $scope.mandatoryTags.length : 0);
+				}
+
+				$scope.$watch('review.editing', function (newVal, oldVal) {
+					$log.log('review.editing', newVal, oldVal);
+					// edit mode
+					if (newVal) {
+						$scope.tagsPlaceholder = 'Please add a tag';
+					}
+					// if not edit mode and there are no tags
+					else if ($scope.review && (!$scope.review.tags || $scope.review.tags.length == 0)) {
+						$scope.tagsPlaceholder = 'No tags defined';
+					}
+					// Fallback to default empty value
+					else {
+						$scope.tagsPlaceholder = '';
+					}
+				});
+
+				$scope.getTagsPlaceholder = function() {
+					return $scope.tagsPlaceholder;
 				}
 			}
 		};

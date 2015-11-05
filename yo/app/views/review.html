@@ -75,11 +75,12 @@
 								<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" comment-plugins="plugins" auto-grow></textarea>
 							</div>
 						</div>
-						<div class="row video-tags" ng-show="allowedTags && allowedTags.length > 0 && (review.editing || (review.tags && review.tags.length > 0))" ng-class="{'top-spacing': review.editing}">
+						<div class="row video-tags" ng-show="review.editing || (review.tags && review.tags.length > 0)" ng-class="{'top-spacing': review.editing}">
 							<div class="col-xs-10 text-left">
-								<tags-input ng-model="review.tags" ng-disabled="!review.editing" placeholder="{{tagsPlaceholder}}" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false">
+								<review-tags-input review-disabled="!review.editing" review="review"></review-tags-input>
+								<!--<tags-input ng-model="review.tags" ng-disabled="!review.editing" placeholder="{{tagsPlaceholder}}" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false">
 									<auto-complete source="autocompleteTag($query)" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
-								</tags-input>
+								</tags-input>-->
 							</div>
 						</div>
 						<div class="row">

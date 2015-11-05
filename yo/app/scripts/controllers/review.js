@@ -363,7 +363,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Tag system
 		//===============
-		$scope.$watch('review.editing', function (newVal, oldVal) {
+		/*$scope.$watch('review.editing', function (newVal, oldVal) {
 			// edit mode
 			if (newVal) {
 				$scope.tagsPlaceholder = 'Add a tag';
@@ -398,7 +398,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
     				return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
     			}
 			});;
-		}
+		}*/
 
 		//===============
 		// Reputation

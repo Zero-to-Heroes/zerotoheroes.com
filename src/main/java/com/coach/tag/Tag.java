@@ -14,4 +14,10 @@ import lombok.ToString;
 public class Tag {
 
 	private String text;
+	private String type;
+
+	public Tag(String text) {
+		this(text, "");
+	}
+
 }

@@ -76,6 +76,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					recommendedVideo: '5602ad0fe4b07125e2fbbf69',
 					isSport: true,
 					allowDoubleSpeed: false,
+					mandatoryTags: ['level'],
 					landing: {
 						athlete: 'squash player',
 						athletes: 'squash players',

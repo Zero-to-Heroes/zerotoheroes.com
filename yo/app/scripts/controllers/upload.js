@@ -13,6 +13,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			canvas: {},
 			videoFramerateRatio: 1
 		};
+		$log.log($scope.review);
 
 		$scope.creds = {
 			bucket: ENV.bucket + '/' + ENV.folder,
@@ -65,7 +66,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			angular.forEach($scope.possibleSports, function(value) {
 				if (value.toLowerCase() == $routeParams.sport) {
 					$scope.review.sport = value;
-					$scope.loadTags();
+					//$scope.loadTags();
 				}
 			})
 		};
@@ -178,45 +179,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		//===============
 		// Tags
 		//===============
-		$scope.autocompleteTag = function($query) {
-			var validTags = $scope.allowedTags.filter(function (el) {
-				return ~el.text.toLowerCase().indexOf($query);
-			});
-			return validTags.sort(function(a, b) {
-				var tagA = a.text.toLowerCase();
-				var tagB = b.text.toLowerCase();
-				if (~tagA.indexOf(':')) {
-					if (~tagB.indexOf(':')) {
-						return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
-					}
-					return 1;
-				}
-				else {
-					if (~tagB.indexOf(':')) {
-						return -1;
-					}
-					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
-				}
-			});;
-		}
-
-		$scope.$watch('review.sport', function (newVal, oldVal) {
-			//$log.log('watching sport value ', oldVal, newVal);
-			// edit mode
-			if (oldVal != newVal) {
-				$log.log('getting the new tags for sport ', $scope.review.sport);
-				$scope.loadTags();
-			}
-		});
-
-		$scope.loadTags = function() {
-			Api.Tags.query({sport: $scope.review.sport}, 
-				function(data) {
-					$scope.allowedTags = data;
-					//$log.log('allowedTags set to', $scope.allowedTags);
-				}
-			);
-		}
 
 
 
@@ -282,7 +244,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$scope.review.temporaryKey = ENV.folder + '/' + fileKey;
 
 			// Starting the upload
-			//$log.log('uploading', $scope.review);
+			$log.log('uploading', $scope.review);
 			$scope.uploadInProgress = true;
 
 			// Scrolling to the bottom of the screen

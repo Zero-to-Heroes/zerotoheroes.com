@@ -105,11 +105,12 @@
 				<div class="alert alert-info" role="alert" ng-show="hasTimestamps && review.beginning > 0">
 					<span>It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)</span>
 				</div>
-				<div class="row video-tags" ng-show="allowedTags && allowedTags.length > 0">
+				<div class="row video-tags">
 					<div class="col-xs-12 text-left">
-						<tags-input ng-model="review.tags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false" ng-disabled="uploadInProgress">
+						<review-tags-input ng-disabled="uploadInProgress" review="review"></review-tags-input>
+						<!--<tags-input ng-model="review.tags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false" ng-disabled="uploadInProgress">
 							<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
-						</tags-input>
+						</tags-input>-->
 						<a href="/r/meta/561f7880e4b0e41639be51d0" target="_blank">Do you miss a tag?</a>
 					</div>
 				</div>

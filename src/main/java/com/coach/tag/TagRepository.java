@@ -34,7 +34,13 @@ public class TagRepository {
 		squash.add(new Tag("Boast"));
 		squash.add(new Tag("Lob"));
 		squash.add(new Tag("Movement"));
-		squash.add(new Tag("Pro"));
+		squash.add(new Tag("Beginner", "level"));
+		squash.add(new Tag("Casual", "level"));
+		squash.add(new Tag("Club", "level"));
+		squash.add(new Tag("County", "level"));
+		squash.add(new Tag("Regional", "level"));
+		squash.add(new Tag("National", "level"));
+		squash.add(new Tag("Pro", "level"));
 		squash.add(new Tag("Men"));
 		squash.add(new Tag("Women"));
 		squash.add(new Tag("Tactics"));

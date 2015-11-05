@@ -18,7 +18,6 @@ function parseCardsText(review, text) {
 
 	// Parsing mana costs
 	matches = text.match(manaRegex);
-	// Parsing card names
 	if (matches) {
 		matches.forEach(function(match) {
 			var cost = match.substring(0, match.indexOf('-'));
@@ -39,10 +38,14 @@ function parseCardsText_attach(element) {
 			callback($.map(jsonDatabase, function(card) {
 				//console.log(term);
 				//var res = card.name.toLowerCase().indexOf(term.substring(2)) === 0 ? card.name : null;
-				var res = card.name.toLowerCase().indexOf(term.substring(2)) === 0 ? card : null;
+				var res = card.name.toLowerCase().indexOf(term.substring(2)) === 0 && card.cardImage ? card : null;
 				//if (res) console.log(res);
 				return res;
 			}))
+			$(function () {
+				console.log('loading tooltips', $('[data-toggle="tooltip"]'));
+			  	$('[data-toggle="tooltip"]').tooltip()
+			})
 		},
 		replace: function(card) {
 			return '[[' + card.name + ']]';
@@ -51,8 +54,12 @@ function parseCardsText_attach(element) {
 			return text.toLowerCase(); 
 		},
 		template: function(card, term) {
+			var tooltipTemplate = '<div class=\'tooltip in parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
+			var title =	'<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + card.cardImage + '\'>';
 			var cssClass = card.rarity ? getRarity(card).toLowerCase() : 'common';
-			return '<span class="autocomplete card ' + cssClass + '">' + card.name + '</span>'; 
+			//return '<span class="autocomplete card ' + cssClass + '" data-trigger="hover" data-template-url="plugins/parseCardsText/template.html" data-title="' + card.cardImage + '" data-container="body" bs-tooltip>' + card.name + '</span>';
+			//return '<span class="autocomplete card ' + cssClass + '">' + card.name + '</span>'; 
+			return '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '" data-html="true" data-container="body" data-animation="false">' + card.name + '</span>';
 		},
 		className: 'autocomplete-dropdown',
 		index: 0

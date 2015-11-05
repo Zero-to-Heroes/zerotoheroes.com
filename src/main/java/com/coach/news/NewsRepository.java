@@ -27,6 +27,12 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(new DateTime("2015-11-05").toDate(),
+				"A player level tag is now mandatory on sports to more easily know if a review could be of interest",
+				News.Type.Feature));
+		news.add(new News(new DateTime("2015-11-05").toDate(),
+				"Heroes of the Storm player now have autocomplete for talents and tooltips to display what they are",
+				News.Type.Feature));
 		news.add(new News(new DateTime("2015-11-01").toDate(),
 				"You now have autocomplete when trying to add a card for HearthStone in the comments",
 				News.Type.Feature));

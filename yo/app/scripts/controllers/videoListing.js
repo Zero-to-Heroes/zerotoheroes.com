@@ -6,6 +6,59 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
 		$scope.pageNumber = parseInt($routeParams.pageNumber) || 1;
+		$scope.criteria = {
+			wantedTags: [],
+			unwantedTags: []
+		};
+
+		$scope.relaunchSearch = function () {
+			var hasCriteria = false;
+
+			var params = $scope.criteria;
+
+			if ($scope.sport) 
+				params.sport = $scope.sport;
+
+			$log.log('triggering search', $location);
+			if ($location.search().title) {
+				hasCriteria = true;
+				params.title = $location.search().title;
+			}
+
+			if ($location.search().wantedTags) {
+				hasCriteria = true;
+				params.wantedTags = $scope.unserializeTags($location.search().wantedTags);
+			}
+
+			if ($location.search().unwantedTags) {
+				hasCriteria = true;
+				params.wantedTags = $scope.unserializeTags($location.search().unwantedTags);
+			}
+
+			$scope.search();
+		}
+
+		$scope.unserializeTags = function(tags) {
+			var result = []
+			if (!tags) return result;
+
+			if (tags.constructor === Array) {
+				tags.forEach(function(value) {
+					var tag = $scope.findAllowedTag(value);
+					if (tag) {
+						result.push(tag);
+					}
+				})
+			}
+			else {
+				var tag = $scope.findAllowedTag(tags);
+				if (tag) {
+					result.push(tag);
+				}
+			}
+
+			return result;
+		}
 
 		$scope.retrieveVideos = function(shouldGetOnlyMine, pageNumber, criteria) {
 			var params = criteria ? criteria : {};
@@ -14,10 +67,10 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			if (shouldGetOnlyMine == 'true')
 				params.userName = User.getName();
 
-			if ($scope.sport)
+			if ($scope.sport) 
 				params.sport = $scope.sport;
 
-			if (pageNumber)
+			if (pageNumber) 
 				params.pageNumber = pageNumber;
 			
 			Api.ReviewsQuery.save(params, function(data) {
@@ -32,12 +85,36 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 				};
 				$scope.range = $scope.getRange();
+
+				// Update the URL
+				$scope.updateUrl(params);
 			});
 
 			Api.Sports.get({sport: $scope.sport}, function(data) {
 				$scope.subscribers = data.subscribers;
 			});
 		};
+
+		$scope.updateUrl = function(params) {
+			// cleariung params
+			$location.search('');
+
+			if (params.userName) $location.search('username', params.userName);
+			if ($scope.criteria.wantedTags.length > 0) $location.search('wantedTags', $scope.serializeTags($scope.criteria.wantedTags));
+			if ($scope.criteria.unwantedTags.length > 0) $location.search('unwantedTags', $scope.serializeTags($scope.criteria.unwantedTags));
+			if ($scope.criteria.title) $location.search('title', $scope.criteria.title);
+		}
+
+		$scope.serializeTags = function(tags) {
+			$log.log('serializing tags', tags);
+			if (!tags) return '';
+
+			var result = [];
+			tags.forEach(function(tag) {
+				result.push(tag.text);
+			})
+			return result;
+		}
 
 		/*$rootScope.$on('user.logged.in', function() {
 			$scope.retrieveVideos('false', $scope.pageNumber);
@@ -213,10 +290,17 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		//===============
 		// Search
 		//===============
-		$scope.criteria = {
-			wantedTags: [],
-			unwantedTags: []
-		};
+		$scope.findAllowedTag = function(tagName) {
+			var result;
+			$scope.allowedTags.some(function(tag) {
+				if (tag.text.toLowerCase() == tagName) {
+					result = tag;
+					return true;
+				}
+			})
+			return result;
+		}
+
 		$scope.loadTags = function() {
 			Api.Tags.query({sport: $scope.sport}, 
 				function(data) {
@@ -224,17 +308,15 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 					$log.log('allowedTags set to', $scope.allowedTags);
 					
 					// By default mask the Sequence videos
-					$scope.allowedTags.forEach(function(tag) {
-						if (tag.text.toLowerCase() == 'sequence') {
-							$log.log('adding sequence to unwanted tags', tag);
-							$scope.criteria.unwantedTags.push(tag);
-						}
-					})
-
-					$scope.search();
+					var sequenceTag = $scope.findAllowedTag('sequence');
+					if (sequenceTag) {
+						$scope.criteria.unwantedTags.push(sequenceTag);
+					}
+					$scope.relaunchSearch();
 				}
 			);
 		}
+
 		$scope.loadTags();
 
 		$scope.autocompleteTag = function($query) {

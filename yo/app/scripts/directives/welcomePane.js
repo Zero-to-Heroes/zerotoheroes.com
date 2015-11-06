@@ -68,6 +68,9 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 					$scope.getLatestFeatures();
 					$scope.getLatestActivities();
 				});
+				$scope.recommendVideo();
+				$scope.getLatestFeatures();
+				$scope.getLatestActivities();
 			}
 		};
 }]);

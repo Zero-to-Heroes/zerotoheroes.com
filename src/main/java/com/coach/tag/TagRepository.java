@@ -37,7 +37,7 @@ public class TagRepository {
 		squash.add(new Tag("Beginner", "level"));
 		squash.add(new Tag("Casual", "level"));
 		squash.add(new Tag("Club", "level"));
-		squash.add(new Tag("County", "level"));
+		squash.add(new Tag("Club competitive", "level"));
 		squash.add(new Tag("Regional", "level"));
 		squash.add(new Tag("National", "level"));
 		squash.add(new Tag("Pro", "level"));
@@ -56,7 +56,7 @@ public class TagRepository {
 		badminton.add(new Tag("Double"));
 		badminton.add(new Tag("Mixed double"));
 		badminton.add(new Tag("Forehand"));
-		badminton.add(new Tag("OVerhead forehand"));
+		badminton.add(new Tag("Overhead forehand"));
 		badminton.add(new Tag("Backhand"));
 		badminton.add(new Tag("Smash"));
 		badminton.add(new Tag("Drop"));
@@ -67,7 +67,7 @@ public class TagRepository {
 		badminton.add(new Tag("Beginner", "level"));
 		badminton.add(new Tag("Casual", "level"));
 		badminton.add(new Tag("Club", "level"));
-		badminton.add(new Tag("County", "level"));
+		badminton.add(new Tag("Club competitive", "level"));
 		badminton.add(new Tag("Regional", "level"));
 		badminton.add(new Tag("National", "level"));
 		badminton.add(new Tag("Pro", "level"));

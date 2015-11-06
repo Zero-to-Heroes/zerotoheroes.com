@@ -17,7 +17,7 @@ public class Tag {
 	private String type;
 
 	public Tag(String text) {
-		this(text, "");
+		this(text, null);
 	}
 
 }

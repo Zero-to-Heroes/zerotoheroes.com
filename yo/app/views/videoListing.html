@@ -8,10 +8,10 @@
 		</h2>
 	</section>
 	<section class="search-section" ng-show="sport && sport != 'meta'">
-		<div class="panel panel-default search-panel">
+		<div class="panel panel-default search-panel" ng-class="{'expanded' : searchExpanded}">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-target="#searchPanel" class="collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="searchPanel">Search videos</a>
+					<a data-target="#searchPanel" class="collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="searchPanel" ng-click="searchExpanded = !searchExpanded">Search videos</a>
 				</h4>
 			</div>
 			<div class="panel-collapse collapse" id="searchPanel" aria-expanded="false">
@@ -30,7 +30,7 @@
 							<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
 						</tags-input>
 					</div>
-					<button type="submit" class="btn btn-default" ng-click="search()">Search</button>
+					<button type="submit" class="btn btn-default" ng-click="search()"><span>Search</span></button>
 				</form>
 			</div>
 		</div>

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootScope', '$scope', '$routeParams', '$log', 
-	function(SportsConfig, $rootScope, $scope, $routeParams, $log, $route) { 
+angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootScope', '$scope', '$routeParams', '$log', 'angularLoad', 'User', 
+	function(SportsConfig, $rootScope, $scope, $routeParams, $log, angularLoad, User, $route) { 
 		$scope.imagesRootFolder = '/images/backgrounds/';
 		$scope.sportsConfig = SportsConfig;
 
@@ -42,6 +42,14 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 			}
 			else {
 				$scope.useVideo = true;
+			}
+
+			// Load custom theme
+			$log.log(User.getUser());
+			if (User.getUser().betaTester && $scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].plugins && $scope.sportsConfig[$scope.sport].plugins.customCss)  {
+				angularLoad.loadCSS('/sports/' + $scope.sport + '/' + $scope.sportsConfig[$scope.sport].plugins.customCss).then(function() {
+					$log.log('loaded sport css');
+				});
 			}
 		});
 	}

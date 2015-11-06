@@ -11,6 +11,10 @@
 	color: black;
 }
 
+.heroesofthestorm .parseCardsTextHots .talent-hots, .heroesofthestorm .parseCardsTextHots .talent-hots:active, .heroesofthestorm .parseCardsTextHots .talent-hots:hover, .heroesofthestorm .parseCardsTextHots .talent-hots:focus {
+	color: white;
+}
+
 .parse-cards-text-hots .tooltip-inner {
 	max-width: 450px;
 	margin-left: 2px;

@@ -48,7 +48,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					isSport: true,
 					allowDoubleSpeed: true,
 					plugins: {
-						plugins: ['parseCardsTextHots']
+						plugins: ['parseCardsTextHots'],
+						customCss: 'hots.css'
 					},
 					landing: {
 						athlete: 'gamer',

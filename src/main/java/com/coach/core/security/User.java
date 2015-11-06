@@ -56,6 +56,7 @@ public class User implements UserDetails {
 	private UserReputation explodedReputation;
 	private Stats stats;
 	private boolean canEdit;
+	private boolean betaTester;
 
 	@Override
 	@JsonIgnore

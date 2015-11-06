@@ -140,4 +140,12 @@ public class Comment implements HasText, HasReputation {
 		if (comments == null) comments = new ArrayList<>();
 		return comments;
 	}
+
+	public String getFullText() {
+		String fullText = text;
+		for (Comment comment : getComments()) {
+			fullText += " " + comment.getFullText();
+		}
+		return fullText;
+	}
 }

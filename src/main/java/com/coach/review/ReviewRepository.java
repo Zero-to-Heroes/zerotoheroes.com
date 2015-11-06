@@ -18,7 +18,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 	List<Review> findBySport(String sport);
 
 	//@formatter:off
-	@Query("{  $or : [ { $where : '?0 == null' }, { title : { $regex : '?0', $options: 'ix' } } ],"
+	@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
 			+ "sport : ?1, "
 			+ "$and : ["
 			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $all : ?2 } } ] }, "

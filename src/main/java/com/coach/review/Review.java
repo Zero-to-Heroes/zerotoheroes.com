@@ -26,6 +26,7 @@ import com.coach.reputation.Reputation;
 import com.coach.subscription.HasSubscribers;
 import com.coach.tag.Tag;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.github.slugify.Slugify;
 
@@ -67,6 +68,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private Sport sport;
 	private String title;
 	private String description = "", text = "";
+	@JsonIgnore
+	private String fullTextSearchField;
 	private String author, lastModifiedBy;
 	private String authorId, lastModifiedById;
 	private int authorReputation;
@@ -296,5 +299,12 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		}
 
 		return pluginData;
+	}
+
+	public void updateFullTextSearch() {
+		fullTextSearchField = title + " " + description;
+		for (Comment comment : getComments()) {
+			fullTextSearchField += " " + comment.getFullText();
+		}
 	}
 }

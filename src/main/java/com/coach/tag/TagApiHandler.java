@@ -26,7 +26,7 @@ public class TagApiHandler {
 		log.debug("Retrieving all tags for sport " + sport);
 
 		List<Tag> tags = TagRepository.getAllTagsForSport(sport);
-		log.debug("Retrieved tags: " + tags);
+		// log.debug("Retrieved tags: " + tags);
 
 		return new ResponseEntity<List<Tag>>(tags, HttpStatus.OK);
 	}

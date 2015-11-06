@@ -131,7 +131,7 @@ public class ReviewApiHandler {
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
 		review.prepareForDisplay(userId);
-		log.debug("Returning review " + review);
+		// log.debug("Returning review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -142,13 +142,14 @@ public class ReviewApiHandler {
 		// TOOD: checks
 		// Add current logged in user as the author of the review
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		log.info("Current user is " + currentUser);
+		// log.info("Current user is " + currentUser);
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
-		log.info("authorities are " + authorities);
+		// log.info("authorities are " + authorities);
 
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
-			log.debug("Setting current user as review author " + currentUser);
+			// log.debug("Setting current user as review author " +
+			// currentUser);
 			addAuthorInformation(review.getSport(), review, currentUser);
 			User user = userRepo.findByUsername(currentUser);
 
@@ -160,15 +161,15 @@ public class ReviewApiHandler {
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
-			log.debug("Validating that the name used to created the review is allowed");
+			// log.debug("Validating that the name used to created the review is allowed");
 			User user = userRepo.findByUsername(review.getAuthor());
 			if (user != null) {
-				log.debug("Name not allowed: " + review.getAuthor());
+				// log.debug("Name not allowed: " + review.getAuthor());
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
 
-		log.debug("Review request creation: " + review);
+		// log.debug("Review request creation: " + review);
 		Map<String, String> inputCanvas = review.getCanvas();
 		review.resetCanvas();
 		consolidateCanvas(currentUser, review, review, inputCanvas);
@@ -182,15 +183,16 @@ public class ReviewApiHandler {
 		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
 		sportManager.addNewReviewActivity(review);
 		updateReview(review);
-		log.debug("Saved review with ID: " + review.getId());
+		// log.debug("Saved review with ID: " + review.getId());
 
 		// Start transcoding
 		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())) {
-			log.debug("Transcoding video");
+			// log.debug("Transcoding video");
 			transcoder.transcode(review.getId());
 		}
 
-		log.debug("Transcoding started, returning with created review: " + review);
+		// log.debug("Transcoding started, returning with created review: " +
+		// review);
 		subscriptionManager.notifyNewReview(review.getSport(), review);
 		slackNotifier.notifyNewReview(review);
 
@@ -213,7 +215,8 @@ public class ReviewApiHandler {
 		// Security
 		// Add current logged in user as the author of the review
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
-			log.debug("Setting current user as review author " + currentUser);
+			// log.debug("Setting current user as review author " +
+			// currentUser);
 			addAuthorInformation(review.getSport(), comment, currentUser);
 			User user = userRepo.findByUsername(currentUser);
 
@@ -227,7 +230,7 @@ public class ReviewApiHandler {
 		else {
 			User user = userRepo.findByUsername(comment.getAuthor());
 			if (user != null) {
-				log.debug("Name not allowed: " + comment.getAuthor());
+				// log.debug("Name not allowed: " + comment.getAuthor());
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
@@ -256,8 +259,9 @@ public class ReviewApiHandler {
 		slackNotifier.notifyNewComment(review, comment);
 		sportManager.addNewCommentActivity(review, comment);
 
-		log.debug("Created comment " + comment + " with id " + comment.getId());
-		log.debug("Updated review " + review);
+		// log.debug("Created comment " + comment + " with id " +
+		// comment.getId());
+		// log.debug("Updated review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -282,12 +286,12 @@ public class ReviewApiHandler {
 		else if (!currentUser.equals(review.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Review>(
 				(Review) null, HttpStatus.UNAUTHORIZED); }
 
-		log.debug("Upading review with " + inputReview);
+		// log.debug("Upading review with " + inputReview);
 
 		review.setText(inputReview.getText());
 		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
 		activatePlugins(currentUser, review, review);
-		log.debug("updated text is " + review.getText());
+		// log.debug("updated text is " + review.getText());
 
 		review.setSport(inputReview.getSport());
 		review.setTitle(inputReview.getTitle());
@@ -367,7 +371,8 @@ public class ReviewApiHandler {
 				.getAuthorities();
 		// Add current logged in user as the author of the review
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
-			log.debug("Setting current user as review author " + currentUser);
+			// log.debug("Setting current user as review author " +
+			// currentUser);
 			addAuthorInformation(review.getSport(), reply, currentUser);
 			User user = userRepo.findByUsername(currentUser);
 
@@ -379,20 +384,21 @@ public class ReviewApiHandler {
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
-			log.debug("Validating that the name used to created the review is allowed");
+			// log.debug("Validating that the name used to created the review is allowed");
 			User user = userRepo.findByUsername(reply.getAuthor());
 			if (user != null) {
-				log.debug("Name not allowed: " + reply.getAuthor());
+				// log.debug("Name not allowed: " + reply.getAuthor());
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
 
 		// Adding the comment
-		log.debug("Adding reply " + reply + " to review " + review + " and comment " + comment);
+		// log.debug("Adding reply " + reply + " to review " + review +
+		// " and comment " + comment);
 
 		consolidateCanvas(currentUser, review, reply, reply.getTempCanvas());
 		activatePlugins(currentUser, review, reply);
-		log.debug("modified text is " + reply.getText());
+		// log.debug("modified text is " + reply.getText());
 
 		reply.setCreationDate(new Date());
 		subscriptionManager.subscribe(review, reply.getAuthorId());
@@ -435,7 +441,7 @@ public class ReviewApiHandler {
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Comment>(
 				(Comment) null, HttpStatus.UNAUTHORIZED); }
 
-		log.debug("Validating that the logged in user is the review author");
+		// log.debug("Validating that the logged in user is the review author");
 		User user = userRepo.findByUsername(currentUser);
 		if (!user.getId().equals(review.getAuthorId())) { return new ResponseEntity<Comment>((Comment) null,
 				HttpStatus.UNAUTHORIZED); }
@@ -463,7 +469,7 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 
 		List<Review> reviews = null;
-		log.debug("Retrieving recommended review for " + sport);
+		// log.debug("Retrieving recommended review for " + sport);
 
 		// Sorting in ascending order
 		Sort oldestFirst = new Sort(Sort.Direction.ASC,
@@ -473,7 +479,7 @@ public class ReviewApiHandler {
 		Review recommended = null;
 		if (!"meta".equalsIgnoreCase(sport)) {
 			reviews = reviewRepo.findBySport(sport, pageRequest).getContent();
-			log.debug("All reviews " + reviews);
+			// log.debug("All reviews " + reviews);
 
 			// TODO: do that in the DB directly?
 			List<Review> result = new ArrayList<>();
@@ -483,7 +489,7 @@ public class ReviewApiHandler {
 					result.add(review);
 				}
 			}
-			log.debug("Filtered reviews " + result);
+			// log.debug("Filtered reviews " + result);
 
 			// Take a random video
 			if (!result.isEmpty()) {
@@ -491,7 +497,7 @@ public class ReviewApiHandler {
 				recommended = result.get(index);
 			}
 		}
-		log.debug("Recommended " + recommended);
+		// log.debug("Recommended " + recommended);
 
 		return new ResponseEntity<Review>(recommended, HttpStatus.OK);
 	}
@@ -531,9 +537,9 @@ public class ReviewApiHandler {
 
 	private void consolidateCanvas(String prefix, Review review, HasText textHolder, Map<String, String> tempCanvas) {
 		String text = textHolder.getText();
-		log.debug("Initial text is " + text);
+		// log.debug("Initial text is " + text);
 		String normalizedPrefix = prefix.replaceAll(" ", "");
-		log.debug("Normalized prefix is " + normalizedPrefix);
+		// log.debug("Normalized prefix is " + normalizedPrefix);
 
 		log.debug("Temp canvas is " + tempCanvas);
 		for (String canvasKey : tempCanvas.keySet()) {
@@ -544,7 +550,7 @@ public class ReviewApiHandler {
 				String newKey = normalizedPrefix + review.getCanvasId();
 				// review.removeCanvas(canvasKey);
 				review.addCanvas(newKey, tempCanvas.get(canvasKey));
-				log.debug("Replacing " + canvasKey + " with " + newKey);
+				// log.debug("Replacing " + canvasKey + " with " + newKey);
 				text = text.replaceAll(canvasKey, newKey);
 			}
 		}
@@ -558,7 +564,7 @@ public class ReviewApiHandler {
 				Plugin plugin = (Plugin) Class.forName(pluginClass).newInstance();
 				String newText = plugin.execute(currentUser,
 						review.getPluginData(sportEntity.getId(), plugin.getName()), textHolder);
-				log.debug("Plugin data " + review.getPlugins());
+				// log.debug("Plugin data " + review.getPlugins());
 				textHolder.setText(newText);
 			}
 			catch (Exception e) {

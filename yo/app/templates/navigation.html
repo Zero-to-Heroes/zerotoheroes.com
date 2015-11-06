@@ -28,7 +28,6 @@
 			</ul>
 			<ul class="nav navbar-nav expand-sports">
 				<li role="separator" class="divider-vertical"></li>
-				<li ng-class="{active: (!sport && retrieveVideos && !upload)}" ng-hide="true"><a href="/reviews">All sports</a></li>
 				<li ng-class="{active: sport == 'badminton' && !upload}"><a href="/s/badminton">Badminton</a></li>
 				<li ng-class="{active: sport == 'hearthstone' && !upload}"><a href="/s/hearthstone">HearthStone</a></li>
 				<li ng-class="{active: sport == 'heroesofthestorm' && !upload}"><a href="/s/heroesofthestorm">Heroes of the Storm</a></li>
@@ -40,7 +39,6 @@
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Choose a sport <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li ng-class="{active: (!sport && retrieveVideos && !upload)}"><a href="/reviews">All sports</a></li>
 						<li ng-class="{active: sport == 'badminton' && !upload}"><a href="/s/badminton">Badminton</a></li>
 						<li ng-class="{active: sport == 'hearthstone' && !upload}"><a href="/s/hearthstone">HearthStone</a></li>
 						<li ng-class="{active: sport == 'heroesofthestorm' && !upload}"><a href="/s/heroesofthestorm">Heroes of the Storm</a></li>

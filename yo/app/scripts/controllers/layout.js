@@ -48,7 +48,7 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 			// Load custom theme
 			$scope.customClass = undefined;
 			if (User.getUser().betaTester && $scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].plugins && $scope.sportsConfig[$scope.sport].plugins.customCss)  {
-				angularLoad.loadCSS('/sports/' + $scope.sport + '/' + $scope.sportsConfig[$scope.sport].plugins.customCss).then(function() {
+				angularLoad.loadCSS('/plugins/sports/' + $scope.sport + '/' + $scope.sportsConfig[$scope.sport].plugins.customCss).then(function() {
 					$log.log('loaded sport css');
 				});
 				$scope.customClass = $scope.sport;

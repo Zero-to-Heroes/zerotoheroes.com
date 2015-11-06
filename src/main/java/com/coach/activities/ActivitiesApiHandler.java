@@ -34,7 +34,7 @@ public class ActivitiesApiHandler {
 		Sport sportObject = sportManager.findById(sport);
 		int howMany = quantity == null ? 4 : quantity;
 		List<Activity> activities = sportObject.getLatestActivities(howMany);
-		log.debug("Latest activities " + activities);
+		// log.debug("Latest activities " + activities);
 
 		return new ResponseEntity<List<Activity>>(activities, HttpStatus.OK);
 	}

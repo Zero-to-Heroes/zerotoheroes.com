@@ -32,7 +32,7 @@ public class NewsApiHandler {
 		News.Type type = News.Type.Feature;
 
 		List<News> news = getNews(dateFrom, type);
-		log.debug("Retrieved news " + news);
+		// log.debug("Retrieved news " + news);
 		// log.debug("Giving full list of coaches " + coaches);
 		return new ResponseEntity<List<News>>(news, HttpStatus.OK);
 	}
@@ -45,7 +45,7 @@ public class NewsApiHandler {
 		News.Type type = News.Type.Bug;
 
 		List<News> news = getNews(dateFrom, type);
-		log.debug("Retrieved bugs " + news);
+		// log.debug("Retrieved bugs " + news);
 		// log.debug("Giving full list of coaches " + coaches);
 		return new ResponseEntity<List<News>>(news, HttpStatus.OK);
 	}
@@ -53,7 +53,7 @@ public class NewsApiHandler {
 	private List<News> getNews(String dateFrom, Type type) {
 		Date date;
 		if (StringUtils.isNullOrEmpty(dateFrom)) {
-			log.debug("Input date is empty, fallbacking to default date");
+			// log.debug("Input date is empty, fallbacking to default date");
 			DateTime dt = new DateTime();
 			DateTime fetchDate = dt.minusDays(PAST_DAYS_FOR_UNLOGGED);
 			date = fetchDate.toDate();

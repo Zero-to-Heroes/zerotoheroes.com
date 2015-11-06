@@ -2,7 +2,8 @@
 ** General overrides
 ** =============*/
 .heroesofthestorm {
-	background: #08000f url(images/background.jpg) fixed 0 no-repeat !important;
+    background-color: #08000f !important;
+	background: url(images/background2.png) fixed no-repeat, url(images/background.jpg) fixed no-repeat !important;
 	background-size: cover !important;
 	font-family: Metronic,"Myriad Pro",Myriad,Arial,sans-serif;
     color: #718e97;
@@ -10,14 +11,24 @@
 
 .heroesofthestorm input, .heroesofthestorm textarea, .heroesofthestorm select, .heroesofthestorm tags-input .tags {
 	background: linear-gradient(to top,#0e0520,#1b1146);
+    border: 2px solid #14324A;
 }
 
 .heroesofthestorm tags-input[disabled] .tags {
 	background: transparent;
+    border: none;
 }
 
 .heroesofthestorm .form-control {
     color: #718e97;
+    border: 2px solid #14324A;
+}
+
+.heroesofthestorm .panel {
+    background: linear-gradient(to top,#0e0520,#1b1146);
+    border: none;
+    color: #8eb1bc;
+    line-height: 1.6;
 }
 
 
@@ -26,6 +37,12 @@
 ** =============*/
 .heroesofthestorm .logged-author {
     color: rgba(255,255,255,.8);
+}
+
+.heroesofthestorm tags-input .tags .tag-item, .heroesofthestorm tags-input[disabled] .tags .tag-item {
+    background-color: #0c3c59;
+    background: linear-gradient(#19193f,#0f325b);
+    border: 2px solid #0f2e63;
 }
 
 
@@ -147,9 +164,11 @@
 ** Central panel
 ** =============*/
 .heroesofthestorm .background-white {
-	background: linear-gradient(to top,#170E3B,#1b1146);
-	border: none;
+	/*background: linear-gradient(to top,#170E3B,#1b1146);
+	border: none;*/
     color: #718e97;
+    border: 4px solid #43286b;
+    background: #08000f;
 }
 
 .heroesofthestorm h2 {
@@ -187,12 +206,12 @@
     font-size: 30px;
 }
 
-.heroesofthestorm .video-information .panel {
+/*.heroesofthestorm .video-information .panel {
 	background: transparent;
 	border: none;
     color: #8eb1bc;
     line-height: 1.6;
-}
+}*/
 
 .heroesofthestorm .toolbar .btn-default {
 	font-weight: 700;

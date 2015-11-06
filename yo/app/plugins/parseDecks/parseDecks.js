@@ -11,6 +11,7 @@ function parseDecks(review, text) {
 	if (matches) {
 		matches.forEach(function(match) {
 			//console.log('match', match);
+			var deckUrl = match.substring(1, match.length - 1);
 			var deckName = match.substring(32, match.length - 1);
 			//console.log('deck name', deckName);
 
@@ -23,7 +24,7 @@ function parseDecks(review, text) {
 
 				var deckNameForDisplay = deck.title;
 
-				result = result.replace(match, '<a class="deck-link" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="top-right" bs-tooltip>' + deckNameForDisplay + '</a>');
+				result = result.replace(match, '<a class="deck-link" href="' + deckUrl + '" target="_blank" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="top-right" bs-tooltip>' + deckNameForDisplay + '</a>');
 			}
 		})
 	}

@@ -316,6 +316,7 @@ module.exports = function (grunt) {
 			'fonts/{,*/}*.*',
 			'sitemap.xml',
 			'plugins/**/*.*',
+			'sports/**/*.*',
 		  ]
 		}, {
 		  expand: true,

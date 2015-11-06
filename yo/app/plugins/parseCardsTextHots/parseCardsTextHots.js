@@ -3,11 +3,14 @@ var talentRegex = /\[\[.+?\]\]/gm;
 function parseCardsTextHots(review, text) {
 	var matches = text.match(talentRegex);
 	var result = text;
+   // console.log('in hots plugin for ', review, text);
 	// Parsing card names
 	if (matches) {
 		matches.forEach(function(match) {
 			var talentName = match.substring(2, match.length - 2);
+            //console.log('talent name', talentName);
 			var talent = parseCardsTextHots_getTalent(talentName);
+            //console.log('talent', talent);
 			if (talent) {
 				var template = parseCardsTextHots_template(talent);
 				var html = parseCardsTextHots_html(talent);
@@ -16,10 +19,12 @@ function parseCardsTextHots(review, text) {
 			}
 		})
 	}
-	$(function () {
-		console.log('loading tooltips', $('[data-toggle="tooltip"]'));
-	  	$('[data-toggle="tooltip"]').tooltip()
-	})
+	setTimeout(function() {
+        $(function () {
+    		//console.log('loading tooltips', $('[data-toggle="tooltip"]'));
+    	  	$('[data-toggle="tooltip"]').tooltip()
+    	})
+    }, 50);
 
 	return result;
 }

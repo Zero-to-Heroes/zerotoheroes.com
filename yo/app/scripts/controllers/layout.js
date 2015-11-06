@@ -4,6 +4,7 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 	function(SportsConfig, $rootScope, $scope, $routeParams, $log, angularLoad, User, $route) { 
 		$scope.imagesRootFolder = '/images/backgrounds/';
 		$scope.sportsConfig = SportsConfig;
+		$scope.User = User;
 
 		$scope.$on('$routeChangeSuccess', function(next, current) { 
 
@@ -45,11 +46,11 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 			}
 
 			// Load custom theme
-			$log.log(User.getUser());
 			if (User.getUser().betaTester && $scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].plugins && $scope.sportsConfig[$scope.sport].plugins.customCss)  {
 				angularLoad.loadCSS('/sports/' + $scope.sport + '/' + $scope.sportsConfig[$scope.sport].plugins.customCss).then(function() {
 					$log.log('loaded sport css');
 				});
+				$scope.customClass = $scope.sport;
 			}
 		});
 	}

@@ -50,7 +50,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
-			$scope.review.title = fileItem._file.name;
+			if (!$scope.review.title) {
+				$scope.review.title = fileItem._file.name;
+			}
 
 			//$log.log('sport', $scope.sport);
 			//$log.log('review.sport', $scope.review.sport);

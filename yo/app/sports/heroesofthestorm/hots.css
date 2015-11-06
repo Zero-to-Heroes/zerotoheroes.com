@@ -20,6 +20,15 @@
     color: #718e97;
 }
 
+
+/* =============
+** General functional overrides
+** =============*/
+.heroesofthestorm .logged-author {
+    color: rgba(255,255,255,.8);
+}
+
+
 /* =============
 ** Navbar
 ** =============*/

@@ -19,7 +19,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			if ($scope.sport) 
 				params.sport = $scope.sport;
 
-			$log.log('triggering search', $location);
+			//$log.log('triggering search', $location);
 			if ($location.search().title) {
 				hasCriteria = true;
 				params.title = $location.search().title;
@@ -41,6 +41,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.unserializeTags = function(tags) {
 			var result = []
 			if (!tags) return result;
+			//$log.log('unserializing', tags);
 
 			if (tags.constructor === Array) {
 				tags.forEach(function(value) {
@@ -51,7 +52,9 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				})
 			}
 			else {
+				//$log.log('finding tags', tags);
 				var tag = $scope.findAllowedTag(tags);
+				//$log.log('tag is ', tag);
 				if (tag) {
 					result.push(tag);
 				}
@@ -291,9 +294,12 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		// Search
 		//===============
 		$scope.findAllowedTag = function(tagName) {
+			//$log.log('finding', tagName);
 			var result;
 			$scope.allowedTags.some(function(tag) {
-				if (tag.text.toLowerCase() == tagName) {
+				//$log.log('comparing', tag, tagName);
+				if (tag.text.toLowerCase() == tagName.toLowerCase()) {
+					//$log.log('found a match', tag);
 					result = tag;
 					return true;
 				}
@@ -305,7 +311,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			Api.Tags.query({sport: $scope.sport}, 
 				function(data) {
 					$scope.allowedTags = data;
-					$log.log('allowedTags set to', $scope.allowedTags);
+					//$log.log('allowedTags set to', $scope.allowedTags);
 					
 					// By default mask the Sequence videos
 					var sequenceTag = $scope.findAllowedTag('sequence');

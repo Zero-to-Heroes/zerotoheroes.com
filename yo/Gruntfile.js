@@ -348,7 +348,7 @@ module.exports = function (grunt) {
 	  ],
 	  dist: [
 		'copy:styles',
-		'imagemin'
+		//'imagemin'
 		//'svgmin'
 	  ]
 	},
@@ -419,7 +419,7 @@ module.exports = function (grunt) {
 		'cssmin',
 		'filerev',
 		'usemin',
-		'imagemin',
+		//'imagemin',
 		'htmlmin',
 	  	'connect:livereload',
 	  	'watch'
@@ -479,7 +479,7 @@ module.exports = function (grunt) {
 	'cssmin',
 	'filerev',
 	'usemin',
-	'imagemin',
+	//'imagemin',
 	'htmlmin'
   ]);
 
@@ -488,7 +488,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-	'newer:jshint',
+	//'newer:jshint',
 	'test',
 	'build'
   ]);

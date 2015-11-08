@@ -189,7 +189,7 @@ app.directive('scrollable',  function ($window, $document, $log) {
 			// FF doesn't recognize mousewheel event, cf http://stackoverflow.com/questions/16788995/mousewheel-event-is-not-triggering-in-firefox-browser
 			element.on('mousewheel DOMMouseScroll', function (evt) {
 				var e = window.event || evt
-				console.log('scrolling event', e);
+				//console.log('scrolling event', e);
 				var srcElement = e.srcElement;
 				// If there is a scrollbar, don't do anything
 				if (srcElement.clientHeight < srcElement.scrollHeight) {

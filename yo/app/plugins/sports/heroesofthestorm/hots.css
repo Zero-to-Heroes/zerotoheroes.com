@@ -179,6 +179,15 @@
     border: 1px solid rgba(255,255,255,.15);
 }
 
+.heroesofthestorm .brand img {
+    content:url('images/logo.png');
+    width: 6em;
+}
+
+.heroesofthestorm .brand span {
+    display: none;
+}
+
 
 /* =============
 ** Welcome panel

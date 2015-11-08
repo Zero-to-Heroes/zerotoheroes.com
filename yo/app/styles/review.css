@@ -50,3 +50,7 @@
 .comments-links {
 	margin-bottom: 25px;
 }
+
+.text-editing-area {
+	max-height: 300px;
+}

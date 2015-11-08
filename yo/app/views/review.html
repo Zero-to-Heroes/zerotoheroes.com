@@ -33,7 +33,7 @@
 		</div>
 
 		<canvas id="fabricCanvas" pw-canvas></canvas>
-		
+
 		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!canvasState.drawingCanvas"></vg-overlay-play>
 	</videogular>
 
@@ -71,7 +71,7 @@
 										<div compilecontent content="review.markedText" class="panel-body video-description"></div>
 									</div>
 									<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
-										<textarea class="form-control" ng-model="review.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
+										<textarea class="form-control text-editing-area" ng-model="review.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 									</toolbar>
 									<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" comment-plugins="plugins" auto-grow></textarea>
 								</div>
@@ -122,7 +122,7 @@
 							</div>
 							<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 								<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
-									<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
+									<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control text-editing-area" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
 								<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
 								<div>

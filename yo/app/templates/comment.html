@@ -27,7 +27,7 @@
 			</div>
 			<div ng-show="comment.editing">
 				<toolbar player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
-					<textarea class="form-control" ng-model="comment.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
+					<textarea class="form-control text-editing-area" ng-model="comment.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 				</toolbar>
 				<textarea class="form-control" ng-model="comment.text" comment-plugins="plugins" auto-grow ng-hide="review.key"></textarea>
 				<div class="text-left comment-reply-buttons">
@@ -53,7 +53,7 @@
 			</div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 				<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
-					<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
+					<textarea class="form-control text-editing-area" ng-model="reply.text" name="replyText" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 				</toolbar>
 				<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" comment-plugins="plugins" auto-grow ng-hide="review.key"></textarea>
 			</div>

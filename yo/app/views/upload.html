@@ -4,7 +4,7 @@
 
 	<div class="form-container">
 		<span class="btn btn-default btn-file" ng-hide="!useVideo">
-			Choose your video <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
+			<span>Choose your video</span> <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
 		</span>
 		<div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
 			<span>We're sorry, we only support .mp4, .ogg, .mkv and .webm video files, and don't support other media types for now. The main reason is that we can't provide our more advanced features if we have to rely on a Flash video player, which is mandatory for some file formats.</span>

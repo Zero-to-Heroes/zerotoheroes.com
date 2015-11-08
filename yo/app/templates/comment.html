@@ -31,8 +31,8 @@
 				</toolbar>
 				<textarea class="form-control" ng-model="comment.text" comment-plugins="plugins" auto-grow ng-hide="review.key"></textarea>
 				<div class="text-left comment-reply-buttons">
-					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs">Update</button>
-					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs">Cancel</button>
+					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs"><span>Update</span></button>
+					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs"><span>Cancel</span></button>
 				</div>
 				<div class="inline-block float-right">
 					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
@@ -62,8 +62,8 @@
 			<div class="col-md-2" ng-show="!User.isLoggedIn()"></div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 				<div class="inline-block">
-					<button ng-click="postReply()" class="btn btn-default btn-xs">Reply</button>
-					<button ng-click="cancelReply()" class="btn btn-default btn-xs">Cancel</button>
+					<button ng-click="postReply()" class="btn btn-default btn-xs"><span>Reply</span></button>
+					<button ng-click="cancelReply()" class="btn btn-default btn-xs"><span>Cancel</span></button>
 				</div>
 				<div class="inline-block float-right">
 					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>

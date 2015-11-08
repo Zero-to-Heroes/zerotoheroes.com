@@ -43,7 +43,8 @@
 .navbar .upload-link>li>a, .navbar .upload-link>li>a:focus, .navbar .upload-link>li>a:hover {
 	color: #fff;
 	background-color: #d9534f;
-	border-radius: 4px;}
+	/*border-radius: 4px;*/
+}
 
 .collapse-sports {
 	display: none;

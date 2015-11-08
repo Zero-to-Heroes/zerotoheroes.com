@@ -31,6 +31,109 @@
     line-height: 1.6;
 }
 
+.heroesofthestorm table>caption {
+    color: #718e97;
+}
+
+.heroesofthestorm .btn-primary {
+    background-color: #8782d4;
+    background: linear-gradient(#8782d4,#6ebfd4);
+    padding: 4px;
+    border: none;
+}
+
+.heroesofthestorm .btn-primary:hover {
+    border: 4px solid #fff;
+    padding: 0;
+}
+
+.heroesofthestorm .btn-primary span {
+    text-transform: uppercase;
+    display: block;
+    padding: .3em 1em;
+    background-color: #021e50;
+    font-weight: 700;
+    color: #fff;
+    background-image: linear-gradient(#021e50,#300e66);
+}
+
+.heroesofthestorm .btn-default {
+    background-color: #494794;
+    background: linear-gradient(to bottom,transparent 5%,#494794 50%,transparent 95%);
+    text-transform: uppercase;
+    border: 2px solid #0f2e63;
+    padding: .2em 1em;
+}
+
+.heroesofthestorm .btn-default span {
+    color: #fff;
+    padding: .5rem .5rem;
+    font-size: .8em;
+    text-align: center;
+}
+
+.heroesofthestorm .toolbar .btn-default {
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2;
+    background-color: #0c3c59;
+    background: linear-gradient(#19193f,#0f325b);
+    border: 2px solid #0f2e63;
+    display: inline-block;
+    padding: .7em 2em;
+    margin: .5rem 0;
+    position: relative;
+    border-width: 1px;
+    border-bottom: 1px solid #1f62b5;
+    text-shadow: 0 0 1rem #009cff;
+    margin-top: .6rem;
+    padding: .7rem 1rem;
+    text-align: center;
+    margin-left: 3px;
+}
+
+/*.heroesofthestorm .search-panel .btn-default {
+    background-color: #8332cd;
+    background-image: linear-gradient(#046bb3,#8332cd);
+    padding: 3px;
+    text-align: center;
+}*/
+
+
+/* =============
+** Modals
+** =============*/
+.heroesofthestorm .modal-dialog {
+    background: linear-gradient(to top,#0e0520,#1b1146);
+    border: none;
+    color: #718e97;
+    border: 4px solid #43286b;
+}
+
+.heroesofthestorm .modal-content {
+    background: transparent;
+    border: none;
+}
+
+.heroesofthestorm .modal-header {
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    border: none;
+}
+
+.heroesofthestorm .modal-body {
+    color: #718e97;
+}
+
+.heroesofthestorm .modal-footer {
+    border: none;
+}
+
+
 
 /* =============
 ** General functional overrides
@@ -182,16 +285,24 @@
 	border: none;
 }
 
+
+/* =============
+** Video listing
+** =============*/
 .heroesofthestorm .video-listing a, .heroesofthestorm .video-listing a:focus, .heroesofthestorm .video-listing a:hover, .heroesofthestorm .video-listing a:active, .heroesofthestorm .video-listing a h3 {
 	/*color: #6cf;*/
 	font-weight: 400;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     color: #6cf;
 	text-decoration: none;
 }
 
 .heroesofthestorm h1 small, .heroesofthestorm h2 small, .heroesofthestorm h3 small, .heroesofthestorm h4 small, .heroesofthestorm h5 small, .heroesofthestorm h6 small {
 	color: #718e97;
+}
+
+.heroesofthestorm .listing-view .table>tbody>tr>td.vert-align {
+    vertical-align: top;
 }
 
 

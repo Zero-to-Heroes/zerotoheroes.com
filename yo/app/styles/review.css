@@ -19,6 +19,10 @@
 	margin: 0;
 }
 
+.video-information .background-white {
+  overflow-y : hidden;
+}
+
 .video-details .reputation {
 	width: auto;
 	font-size: 1.3em;

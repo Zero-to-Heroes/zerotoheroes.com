@@ -85,7 +85,7 @@
 														<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
 													</tags-input>
 												</div>
-												<button type="submit" class="btn btn-default" ng-click="searchVideos()">Search</button>
+												<button type="submit" class="btn btn-default" ng-click="searchVideos()"><span>Search</span></button>
 											</form>
 										</div>
 									</div>
@@ -107,7 +107,7 @@
 												</div>
 											</td>
 											<td class="vert-align">
-												<button class="btn btn-default" ng-click="selectVideo(video)">Select</button>
+												<button class="btn btn-default" ng-click="selectVideo(video)"><span>Select</span></button>
 											</td>
 										</tr>
 									</tbody>
@@ -160,8 +160,8 @@
 						<input name="loopDuration" type="text" class="form-control text-right" id="loopDuration" ng-model="params.loopDuration" placeholder="1" ng-required="true">
 						s
 					</div>
-					<button type="button" class="btn btn-default test-button" ng-click="testSequence()" ng-hide="testing">Test this sequence</button>
-					<button type="button" class="btn btn-default test-button" ng-click="stopSequence()" ng-show="testing">Stop test</button>
+					<button type="button" class="btn btn-default test-button" ng-click="testSequence()" ng-hide="testing"><span>Test this sequence</span></button>
+					<button type="button" class="btn btn-default test-button" ng-click="stopSequence()" ng-show="testing"><span>Stop test</span></button>
 				</form>
 			</div>
 			<div class="modal-footer">
@@ -178,10 +178,10 @@
 						</div>
 					</div>
 					<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-disabled="form.createSequenceForm.$invalid">{{params.comparisonSource == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
-					<button type="button" class="btn btn-default" ng-click="close()">Cancel</button>
+					<button type="button" class="btn btn-default" ng-click="close()"><span>Cancel</span></button>
 				</form>
 				<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo">{{params.comparisonSource == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
-				<button type="button" class="btn btn-default" ng-click="close()"ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo">Cancel</button>
+				<button type="button" class="btn btn-default" ng-click="close()"ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo"><span>Cancel</span></button>
 			</div>
 		</div>
 	</div>

@@ -32,7 +32,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 			if ($location.search().unwantedTags) {
 				hasCriteria = true;
-				params.wantedTags = $scope.unserializeTags($location.search().unwantedTags);
+				params.unwantedTags = $scope.unserializeTags($location.search().unwantedTags);
 			}
 
 			$scope.search();

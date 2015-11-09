@@ -337,6 +337,7 @@ public class TagRepository {
 		league.add(new Tag("Champion: Zyra"));
 		league.add(new Tag("Pro"));
 		tags.put(LeagueOfLegends, league);
+
 		return tags;
 	}
 

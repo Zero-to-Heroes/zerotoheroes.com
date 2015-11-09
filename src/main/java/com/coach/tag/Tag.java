@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import org.springframework.data.annotation.Transient;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,6 +16,7 @@ import lombok.ToString;
 public class Tag {
 
 	private String text;
+	@Transient
 	private String type;
 
 	public Tag(String text) {

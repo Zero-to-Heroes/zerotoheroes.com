@@ -10,6 +10,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.coach.reputation.UserReputation;
@@ -38,8 +39,10 @@ public class User implements UserDetails {
 
 	@Id
 	private String id;
+	@Indexed
 	private String username;
 	private String password;
+	@Indexed
 	private String email;
 	private long expires;
 	private boolean accountExpired;

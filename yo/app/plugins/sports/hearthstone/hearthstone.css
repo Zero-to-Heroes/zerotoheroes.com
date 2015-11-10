@@ -1,0 +1,310 @@
+/* =============
+** General overrides
+** =============*/
+.hearthstone {
+    background: rgb(241, 214, 169) url(images/body-content-bg.jpg) 50% 0 repeat-y !important;
+	/*background: url(images/background2.png) fixed no-repeat, url(images/background.jpg) fixed no-repeat !important;
+	background-size: cover !important;*/
+	font-family: Metronic,"Myriad Pro",Myriad,Arial,sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hearthstone a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hearthstone input, .hearthstone textarea, .hearthstone select, .hearthstone tags-input .tags {
+	background: #f1d6a9;
+    border: 2px solid #867249;
+    color: #2e2e2e;
+}
+
+.hearthstone tags-input[disabled] .tags {
+	background: transparent;
+    border: none;
+}
+
+.hearthstone .panel:before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    border: 8px solid #dec79b;
+    border-width: 17px 20px;
+    border-image: url(images/border-image.png) 17 20 stretch;
+    z-index: -1;
+}
+
+.hearthstone .panel {
+    background-color: #3A240F;
+    position: relative;
+    border: none;
+    z-index: 1;
+}
+
+.hearthstone .panel .panel-heading {
+    background: url(images/panel-header.jpg);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    background-size: cover;
+}
+
+.hearthstone .panel .panel-footer {
+    background: transparent;
+    border: none;
+}
+
+.hearthstone .btn-primary {
+    background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
+    box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
+    color: white;
+    text-decoration: none;
+    text-shadow: black 1px 1px;
+    text-align: center;
+    padding: 4px;
+}
+
+.hearthstone .btn-primary span {
+    display: table-cell;
+    width: 100%;
+    padding: 0 24px;
+    background: radial-gradient(circle, #bc22c7 25%, #7c1693 75%, #5c1096);
+    vertical-align: middle;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 4px #000, 0 0 8px #000;
+}
+
+.hearthstone .btn-primary:focus span, .hearthstone .btn-primary:hover span {
+    background: radial-gradient(circle, #e235ee 22%, #981cb4);
+}
+
+.hearthstone .btn-default {
+    background: transparent url(images/button-bg.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    border: none;
+    padding: 10px 15px;
+}
+
+.hearthstone .btn-default:active, .hearthstone .btn-default:hover {
+    background: transparent url(images/button-bg-active.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* =============
+** Modals
+** =============*/
+.hearthstone .modal-dialog:before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    border: 8px solid #dec79b;
+    border-width: 17px 20px;
+    border-image: url(images/border-image.png) 17 20 stretch;
+    z-index: -1;
+}
+
+.hearthstone .modal-dialog {
+    background-color: #3A240F;
+    position: relative;
+    border: none;
+    z-index: 1;
+}
+
+.hearthstone .modal-header {
+    background: url(images/panel-header.jpg);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    background-size: cover;
+}
+
+.hearthstone .panel .modal-footer {
+    background: transparent;
+    border: none;
+}
+
+.hearthstone .modal-content {
+    background: transparent;
+    border: none;
+}
+
+
+/* =============
+** General functional overrides
+** =============*/
+.hearthstone tags-input .tags .tag-item, .hearthstone tags-input[disabled] .tags .tag-item {
+    background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
+    box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
+    color: white;
+    text-decoration: none;
+    text-shadow: black 1px 1px;
+    text-align: center;
+    padding: 2px 10px;
+    border: none;
+}
+
+
+/* =============
+** Navbar
+** =============*/
+.hearthstone .navbar-default {
+	background-color: #0C051D;
+	background: url("images/nav-bg-left.png") 200px no-repeat, url("images/nav-bg-right.png") right no-repeat, url("images/nav-bg-center.png") repeat-x;
+    padding-right: 60px;
+    height: 66px;
+    border: none;
+}
+
+.hearthstone .navbar-default .navbar-collapse { 
+    padding-left: 280px;
+}
+
+.hearthstone .navbar-default .navbar-nav > li > a {
+    font-size: 18px;
+    line-height: 66px;
+    text-shadow: 0 0 10px #000, 0 0 10px #000;    
+    color: #fcd144;
+    padding: 0 15px;
+}
+
+.hearthstone .navbar-default span {
+    text-shadow: 0 0 10px #000, 0 0 10px #000;    
+    color: #fcd144;
+}
+
+.hearthstone .navbar .upload-link>li>a {
+	margin-top: 15px;
+    height: 25px;
+    background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
+    box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
+    color: white;
+    text-decoration: none;
+    text-shadow: black 1px 1px;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 33px;
+    padding: 0;
+}
+
+.hearthstone .navbar .upload-link>li>a span {
+    display: table-cell;
+    width: 100%;
+    padding: 0 24px;
+    background: radial-gradient(circle, #bc22c7 25%, #7c1693 75%, #5c1096);
+    vertical-align: middle;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 4px #000, 0 0 8px #000;
+}
+
+.hearthstone .navbar .upload-link>li>a:focus span, .hearthstone .navbar .upload-link>li>a:hover span {
+    background: radial-gradient(circle, #e235ee 22%, #981cb4);
+}
+
+.hearthstone .navbar .divider-vertical {
+    border: none;
+}
+
+.hearthstone .navbar-default .navbar-nav > .active > a, .hearthstone .navbar-default .navbar-nav > .active > a:hover, .hearthstone .navbar-default .navbar-nav > .active > a:focus {
+    background-color: transparent;
+    color: #fff;
+}
+
+.hearthstone .navbar .name-group > li > a {
+    font-size: 18px;
+}
+
+.hearthstone .brand {
+    margin-top: -20px;
+}
+
+.hearthstone .brand img {
+    content:url('images/logo.png');
+    width: 9em;
+}
+
+.hearthstone .brand span {
+    display: none;
+}
+
+/* =============
+** Welcome panel
+** =============*/
+.hearthstone .welcome-page {
+    top: 30px;
+    left: 10px;
+}
+
+
+/* =============
+** Search panel
+** =============*/
+.hearthstone .search-section .panel-heading a, .hearthstone .search-section .panel-heading a:after {
+	color: #fff;
+}
+
+
+/* =============
+** Central panel
+** =============*/
+.hearthstone .background-white:before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    border: 8px solid #dec79b;
+    border-width: 17px 20px;
+    border-image: url(images/border-image.png) 17 20 stretch;
+    z-index: -1;
+}
+
+.hearthstone .background-white {
+    position: relative;
+    background-color: #3A240F;
+    top: 30px;
+}
+
+.hearthstone h2 {
+	font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.hearthstone .table > thead > tr > th, .hearthstone .table > tbody > tr > th, .hearthstone .table > tfoot > tr > th, .hearthstone .table > thead > tr > td, .hearthstone .table > tbody > tr > td, .hearthstone .table > tfoot > tr > td {
+	border: none;
+}
+
+/* =============
+** Video listing
+** =============*/
+.hearthstone .video-listing a, .hearthstone .video-listing a:focus, .hearthstone .video-listing a:hover, .hearthstone .video-listing a:active, .hearthstone .video-listing a h3 {
+	font-weight: 400;
+    color: #e22c14;
+	text-decoration: none;
+}
+
+
+/* =============
+** Video review
+** =============*/
+.hearthstone .videogular {
+    background-color: #000;
+    margin-top: 25px;
+}

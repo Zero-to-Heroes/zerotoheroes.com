@@ -47,10 +47,19 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 
 			// Load custom theme
 			$scope.customClass = undefined;
-			if (User.getUser().betaTester && $scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].plugins && $scope.sportsConfig[$scope.sport].plugins.customCss)  {
-				angularLoad.loadCSS('/plugins/sports/' + $scope.sport + '/' + $scope.sportsConfig[$scope.sport].plugins.customCss).then(function() {
-					$log.log('loaded sport css');
-				});
+			if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].plugins && $scope.sportsConfig[$scope.sport].plugins.customCss)  {
+				var css = $scope.sportsConfig[$scope.sport].plugins.customCss;
+				if (User.getUser().betaTester && S(css).startsWith("beta-")) {
+					css = S(css).chompLeft("beta-");
+					angularLoad.loadCSS('/plugins/sports/' + $scope.sport + '/' + css).then(function() {
+						$log.log('loaded sport css');
+					});
+				}
+				else if (!S(css).startsWith("beta-")) {
+					angularLoad.loadCSS('/plugins/sports/' + $scope.sport + '/' + css).then(function() {
+						$log.log('loaded sport css');
+					});
+				}
 				$scope.customClass = $scope.sport;
 			}
 		});

@@ -163,6 +163,10 @@
     border: none;
 }
 
+.hearthstone .logged-author {
+    color: #fff;
+}
+
 
 /* =============
 ** Navbar

@@ -147,6 +147,7 @@
 ** =============*/
 .hearthstone tags-input .tags .tag-item, .hearthstone tags-input[disabled] .tags .tag-item {
     background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
+    background: rgba(115, 5, 174, 0.5);
     box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
     color: white;
     text-decoration: none;

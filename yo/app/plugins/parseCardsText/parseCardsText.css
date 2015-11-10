@@ -6,6 +6,10 @@
 	color: black;
 }
 
+.hearthstone .parseCardsText .card {
+	color: white;
+}
+
 .autocomplete-dropdown.dropdown-menu a {
 	cursor: pointer;
 }

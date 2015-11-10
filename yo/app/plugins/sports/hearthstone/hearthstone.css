@@ -67,6 +67,7 @@
     text-shadow: black 1px 1px;
     text-align: center;
     padding: 4px;
+    border: none;
 }
 
 .hearthstone .btn-primary span {
@@ -96,6 +97,11 @@
 .hearthstone .btn-default:active, .hearthstone .btn-default:hover {
     background: transparent url(images/button-bg-active.png) no-repeat;
     background-size: 100% 100%;
+}
+
+.hearthstone .ngrs-range-slider {
+    background: transparent;
+    border: none;
 }
 
 

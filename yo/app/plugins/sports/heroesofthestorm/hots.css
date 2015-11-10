@@ -93,6 +93,12 @@
     margin-left: 3px;
 }
 
+
+.heroesofthestorm .ngrs-range-slider {
+    background: transparent;
+    border: none;
+}
+
 /*.heroesofthestorm .search-panel .btn-default {
     background-color: #8332cd;
     background-image: linear-gradient(#046bb3,#8332cd);

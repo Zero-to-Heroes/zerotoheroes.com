@@ -260,6 +260,15 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		if (comments == null) comments = new ArrayList<>();
 		return comments;
 	}
+	
+	public List<Comment> getAllComments() {
+		List<Comment> allComments = new ArrayList<>();
+		for (Comment comment : getComments()) {
+			allComments.add(comment);
+			allComments.addAll(comment.getAllComments());
+		}
+		return allComments;
+	}
 
 	@Override
 	public void addSubscriber(String subscriberId) {

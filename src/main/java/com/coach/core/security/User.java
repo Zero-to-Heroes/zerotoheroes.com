@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -44,6 +45,8 @@ public class User implements UserDetails {
 	private String password;
 	@Indexed
 	private String email;
+	@CreatedDate
+	private Date creationDate;
 	private long expires;
 	private boolean accountExpired;
 	private boolean accountLocked;

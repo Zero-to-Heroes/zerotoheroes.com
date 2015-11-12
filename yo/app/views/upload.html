@@ -70,14 +70,12 @@
 					<div ng-class="{'col-sm-4': useVideo}" ng-show="useVideo">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
 						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo || uploadInProgress">
-								<option value="" ng-hide="!useVideo">Choose your sport...</option>
 								<option value="Squash" ng-hide="!useVideo">Squash</option>
 								<option value="Badminton" ng-hide="!useVideo">Badminton</option>
 								<option value="LeagueOfLegends" ng-hide="!useVideo">League of Legends</option>
 								<option value="HeroesOfTheStorm" ng-hide="!useVideo">Heroes of the Storm</option>
 								<option value="HearthStone" ng-hide="!useVideo">HearthStone</option>
 								<option value="Meta" ng-show="!useVideo">Meta</option>
-								<option value="Other" ng-hide="!useVideo">Other</option>
 							</select>
 						</div>
 					</div>

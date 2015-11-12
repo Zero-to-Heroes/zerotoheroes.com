@@ -308,6 +308,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		}
 
 		$scope.initPostText = function() {
+			$log.log('init post text');
 			$scope.$broadcast('show-errors-check-validity');
 			if ($scope.uploadForm.$valid) {
 				// If user is not registered, offer them to create an account
@@ -321,6 +322,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 				}
 			}
 			else {
+				$log.log('form not valid', $scope.uploadForm.$error);
 				$analytics.eventTrack('upload.checkFailed', {
 					category: 'upload'
 				});

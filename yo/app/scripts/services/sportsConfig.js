@@ -29,7 +29,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					allowDoubleSpeed: true,
 					plugins: {
 						plugins: ['parseCardsText', 'parseDecks'],
-						customCss: 'beta-hearthstone.css'
+						customCss: 'hearthstone.css'
 					},
 					landing: {
 						athlete: 'gamer',

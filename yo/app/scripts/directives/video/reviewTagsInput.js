@@ -13,10 +13,6 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 			},
 			controller: function($scope) {
 
-				$scope.isRequired = function() {
-					return $scope.allowedTags && $scope.allowedTags.length > 0;
-				}
-
 				$scope.autocompleteTag = function($query) {
 					$log.log('reviewTags, mandatoryTags', $scope.review, $scope.review.tags, $scope.mandatoryTags);
 					var allMandatoryTagsFilled = $scope.areAllMandatoryTagsFilled($scope.review.tags, $scope.mandatoryTags);
@@ -110,6 +106,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 					}
 				}
 				$scope.getMinTags = function() {
+					if (!$scope.allowedTags) return 0;
 					return Math.max(1, $scope.mandatoryTags ? $scope.mandatoryTags.length : 0);
 				}
 

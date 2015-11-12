@@ -27,6 +27,10 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(
+				new DateTime("2015-11-12").toDate(),
+				"New theme for HearthStone is out! Please let us know in the discussion room if you have comments or suggestions :)",
+				News.Type.Feature));
 		news.add(new News(new DateTime("2015-11-05").toDate(),
 				"A player level tag is now mandatory on sports to more easily know if a review could be of interest",
 				News.Type.Feature));

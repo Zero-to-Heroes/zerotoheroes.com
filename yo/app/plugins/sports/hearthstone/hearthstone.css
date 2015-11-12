@@ -323,3 +323,17 @@
     background-color: #000;
     margin-top: 25px;
 }
+
+
+/* =============
+** Smaller device
+** =============*/
+.hearthstone .navbar-collapse.collapse.in ul {
+    background: rgb(241, 214, 169) url(images/body-content-bg.jpg) 50% 0 repeat-y !important;
+}
+
+@media (max-width: 1090px) {
+    .hearthstone .nav.navbar-nav.meta {
+        display: none;
+    }
+}

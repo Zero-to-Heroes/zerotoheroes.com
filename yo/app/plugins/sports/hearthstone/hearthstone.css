@@ -243,9 +243,13 @@
     margin-top: -20px;
 }
 
-.hearthstone .brand img {
+.hearthstone .brand:before {
     content:url('images/logo.png');
     width: 9em;
+}
+
+.hearthstone .brand img {
+    display: none;
 }
 
 .hearthstone .brand span {

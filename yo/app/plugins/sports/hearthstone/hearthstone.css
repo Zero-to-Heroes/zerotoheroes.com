@@ -1,3 +1,8 @@
+@font-face {
+    font-family: myriadPro;
+    src: url(myriadpro-regular.woff);
+}
+
 /* =============
 ** General overrides
 ** =============*/
@@ -5,7 +10,7 @@
     background: rgb(241, 214, 169) url(images/body-content-bg.jpg) 50% 0 repeat-y !important;
 	/*background: url(images/background2.png) fixed no-repeat, url(images/background.jpg) fixed no-repeat !important;
 	background-size: cover !important;*/
-	font-family: Metronic,"Myriad Pro",Myriad,Arial,sans-serif;
+	font-family: myriadPro,Arial,sans-serif;
     color: rgba(255, 255, 255, 0.7);
 }
 

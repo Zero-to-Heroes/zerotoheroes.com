@@ -47,18 +47,6 @@ public class EmailNotifier {
 		emailSender.send(message);
 	}
 
-	/*
-	 * public void notifyNewUser(User user) { if
-	 * (!"prod".equalsIgnoreCase(environment)) return;
-	 * 
-	 * EmailMessage message =
-	 * EmailMessage.builder().from("seb@zerotoheroes.com")
-	 * .to("contact@zerotoheroes.com") .subject(environment +
-	 * ": A new user has just registered! " + user.getUsername())
-	 * .content(user.toString()).type("text/html").build();
-	 * emailSender.send(message); }
-	 */
-
 	public void notifyNewReview(User subscriber, Review review) {
 		if (!"prod".equalsIgnoreCase(environment)) return;
 
@@ -91,6 +79,33 @@ public class EmailNotifier {
 		EmailMessage message = EmailMessage.builder().from("Zero to Heroes reset password <contact@zerotoheroes.com>")
 				.to(user.getEmail()).subject("Zero to Heroes reset password link").content(body).type("text/html")
 				.build();
+		emailSender.send(message);
+	}
+
+	public void notifyNewUser(User user) {
+		if (!"prod".equalsIgnoreCase(environment)) return;
+
+		String recipient = user.getEmail();
+
+		//@formatter:off
+		String body = "Hey there!<br/>"
+				+ "<p>I really appreciate you joining us at Zero to Heroes, and I know you'll love it "
+				+ "when you see how easier it has just become to have your play analyzed.</p>"
+				+ "<p>We built Zero to Heroes to help (e-)athletes grow and improve together, "
+				+ "and I hope we'll be able to do that for you too.</p>"
+				+ "<p>If you wouldn't mind, I'd love it if you answered one quick question: why did you sign up on Zero to Heroes?</p>"
+				+ "<p>I'm asking because knowing what made you sign up is really helpful for us in making sure we're delivering what our "
+				+ "users want. Just hit \"reply\" and let me know.</p>"
+			    + "<p>And by the way, feel free to contact me if you have any question, suggestion or complaint, "
+			    + "and I'll be happy to help you :)</p>"
+				+ "<p>Thanks,</p>"
+				+ "<p>Seb</p>"
+				+ "<p>Zero to Heroes</p>";
+		//@formatter:on
+
+		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
+				.subject("You're in :) | Plus, a quick question...").content(body)
+				.type("text/html").build();
 		emailSender.send(message);
 	}
 }

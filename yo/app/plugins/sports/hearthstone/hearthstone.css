@@ -147,6 +147,9 @@
     border: none;
 }
 
+.hearthstone .popover-help {
+    color: #333;
+}
 
 /* =============
 ** General functional overrides

@@ -114,6 +114,7 @@ public class UserApiHandler {
 
 		// emailNotifier.notifyNewUser(user);
 		slackNotifier.notifyNewUser(user);
+		emailNotifier.notifyNewUser(user);
 
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}

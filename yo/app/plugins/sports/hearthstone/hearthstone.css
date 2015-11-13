@@ -191,6 +191,11 @@
     padding: 0 15px;
 }
 
+.hearthstone .navbar-default .navbar-nav > li > a, .hearthstone .navbar-default .navbar-nav > li > a:focus, .hearthstone .navbar-default .navbar-nav > li > a:active, .hearthstone .navbar-default .navbar-nav > li > a:hover {
+    background-color: transparent;
+    color: #fcd144;
+}
+
 .hearthstone .navbar-default span {
     text-shadow: 0 0 10px #000, 0 0 10px #000;    
     color: #fcd144;
@@ -335,5 +340,21 @@
 @media (max-width: 1090px) {
     .hearthstone .nav.navbar-nav.meta {
         display: none;
+    }
+
+    .hearthstone .navbar .name-group > li > a {
+        font-size: 16px;
+        padding: 0;
+        margin-right: 15px;
+    }
+}
+@media (max-width: 900px) {
+    .hearthstone .navbar-collapse.collapse.in ul {
+        width: 100%;
+    }
+
+    .hearthstone div[zth-name-input] {
+        background: rgb(241, 214, 169) url(images/body-content-bg.jpg) 50% 0 repeat-y !important;
+        margin-top: 0;
     }
 }

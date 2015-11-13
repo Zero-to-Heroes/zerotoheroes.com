@@ -1,0 +1,102 @@
+{
+	"squash": {
+		"landing": {
+			"headline": "We help Squash players improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the Squash community",
+			"communityIntro": "Climb to the top with the best advice from the Squash community. A reputation and voting system ensures top advice always come out at the top.",
+			"contributeIntro": "Help others become better players. Get recognition from the community by giving advice and voting on what looks important to you.",
+			"feature1Headline": "Video review tools",
+			"feature1Text": "Directly control the video from the comment system to precisely illustrate what you need to say and see. Point to a specific image on a video, play a sequence in slow motion or loop it. You can even compare side-by-side sequences from two any two videos from the site to illustrate the difference between how the same move is done by a top player. And all directly from the comments!",
+			"feature2Headline": "The best from the community",
+			"feature2Text": "Get advice from the other players, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
+			"feature3Headline": "Professional coaches",
+			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
+			"feature4Headline": "Contribute and help the community",
+			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		}
+	},
+	"badminton": {
+		"landing": {
+			"headline": "We help Badminton players improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the Badminton community",
+			"communityIntro": "Climb to the top with the best advice from the Badminton community. A reputation and voting system ensures top advice always come out at the top.",
+			"contributeIntro": "Help others become better players. Get recognition from the community by giving advice and voting on what looks important to you.",
+			"feature1Headline": "Video review tools",
+			"feature1Text": "Directly control the video from the comment system to precisely illustrate what you need to say and see. Point to a specific image on a video, play a sequence in slow motion or loop it. You can even compare side-by-side sequences from two any two videos from the site to illustrate the difference between how the same move is done by a top player. And all directly from the comments!",
+			"feature2Headline": "The best from the community",
+			"feature2Text": "Get advice from the other players, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
+			"feature3Headline": "Professional coaches",
+			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
+			"feature4Headline": "Contribute and help the community",
+			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		}
+	},
+	"hearthstone": {
+		"landing": {
+			"headline": "We help Hearthstone players improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the Hearthstone community",
+			"communityIntro": "Climb to Legend with the best advice from the Hearthstone community. A reputation and voting system ensures top advice always come out at the top.",
+			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
+			"feature1Headline": "Integrated with HearthStone",
+			"feature1Text": "Immediately link to an existing card or deck, so you have everything you need in a single place",
+			"feature2Headline": "The best from the community",
+			"feature2Text": "Get advice from the other gamers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
+			"feature3Headline": "Professional coaches",
+			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
+			"feature4Headline": "Contribute and help the community",
+			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		}
+	},
+	"heroesofthestorm": {
+		"landing": {
+			"headline": "We help Heroes of the Storm players improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the Heroes of the Storm community",
+			"communityIntro": "Climb the ladder to rank 1 with the best advice from the Heroes of the Storm community. A reputation and voting system ensures top advice always come out at the top.",
+			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
+			"feature2Headline": "The best from the community",
+			"feature2Text": "Get advice from the other gamers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
+			"feature3Headline": "Professional coaches",
+			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
+			"feature4Headline": "Contribute and help the community",
+			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		}
+	},
+	"leagueoflegends": {
+		"landing": {
+			"headline": "We help League of Legends players improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the League of Legends community",
+			"communityIntro": "Climb the ladder to the top with the best advice from the League of Legends community. A reputation and voting system ensures top advice always come out at the top.",
+			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
+			"feature2Headline": "The best from the community",
+			"feature2Text": "Get advice from the other gamers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
+			"feature3Headline": "Professional coaches",
+			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
+			"feature4Headline": "Contribute and help the community",
+			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		}
+	},
+	"global": {
+		"landing": {
+			"learnMore": "Learn more",
+			"getIn": "Get in for free",
+			"reviewToolsHeadline": "Powerful review tools",
+			"reviewToolsIntro": "Identify and understand your flaws precisely. Watch any sequence in slow motion, in a loop, or even side-by-side with another sequence from a top player.",
+			"communityHeadline": "Community wisdom",
+			"coachHeadline": "Professional coaches",
+			"coachIntro": "If community advice is not enough for you, professional coaches are available to help you overcome your biggest hurdles",
+			"contributeHeadline": "Contribute",
+			"teamHeadline": "The team",
+			"teamSubHeadline": "Yup, that's us! :)",
+			"sebDescription": "I'm a software engineer by trade, and an athlete and gamer by heart. I've been frustrated by the difficulty to get advice adapted to my style, and want to help athletes and gamers get over that hurdle. I love meeting interesting people of all kind, so feel free to email me directly at <a href=\"mailto:seb@zerotoheroes.com\">seb@zerotoheroes.com</a> :)",
+			"thibDescription": "Driven by logic and passionate about games I'm a software engineer who strongly believes that there is a bit of magic/awesomeness in everybody. Together we can be heroes! Feel free to share your thoughts with me at <a href=\"mailto:thibaud@zerotoheroes.com\">thibaud@zerotoheroes.com</a>",
+			"newsLetterHeadline": "Get the latest updates",
+			"newsLetterSubHeadline": "Subscribe to newsletter and get latest news",
+			"newsLetterButton": "Notify me",
+			"noSpam": "You know where to find us, so we won't spam"
+		},
+		"listing": {
+			"allVideos": "All videos",
+			"unsubscribeTooltip": "Click to stop receiving notifications when a new review is posted"
+		}
+	}
+}

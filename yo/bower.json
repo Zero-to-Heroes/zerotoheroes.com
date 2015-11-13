@@ -40,7 +40,10 @@
     "fabric": "~1.5.0",
     "string": "~3.3.1",
     "angular-load": "~0.4.0",
-    "jquery-textcomplete": "~0.8.1"
+    "jquery-textcomplete": "~0.8.1",
+    "angular-translate": "~2.8.1",
+    "angular-translate-loader-url": "~2.8.1",
+    "angular-translate-loader-static-files": "~2.8.1"
   },
   "overrides": {
     "sprintf": {

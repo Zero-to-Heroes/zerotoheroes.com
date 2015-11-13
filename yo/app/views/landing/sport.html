@@ -1,279 +1,270 @@
 <view-title>{{sportsConfig[sport].landing.displayName}}</view-title>
 
 <section id="home" data-stellar-background-ratio="0.5" dynamic-style style="background-image: url({{backgroundImage}})">
-    <div class="parallax-overlay" ng-class="{'parallax-overlay-full': sportsConfig['{{sport}}'].landing.displayAllSports}"></div> 
-    <div class="home-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-md-offset-2">
-                    <div class="intro-text">
-                        <!--<img src="images/logo.png" alt="app-logo" class="app-logo">-->
-                        <h1>We help <span ng-bind="sportsConfig['{{sport}}'].landing.athletes"></span> improve together</h1>
-                        <h3 ng-hide="sportsConfig['{{sport}}'].landing.alternativeIntroText">Post a video of yourself playing and get advice from the {{sportsConfig[sport].landing.displayName}} community</h3>
-                        <h3 ng-show="sportsConfig['{{sport}}'].landing.alternativeIntroText">{{sportsConfig[sport].landing.alternativeIntroText}}</h3>
-                        <div class="download-button scroll-to" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-                            <a href="#features" class="btn btn-link">
-                                Learn more <i class="ion-chevron-right"></i>
-                            </a>
-                            <a href="/s/{{sport}}" class="btn btn-link" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta1">
-                                Get in for free <i class="ion-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div><!--intro text-->
-                </div>
-            </div>
-        </div>
-        <div class="container sports-logos" ng-show="sportsConfig['{{sport}}'].landing.displayAllSports">
-            <div class="row">
-                <div class="col-xs-4 margin-btm-30 sport-logo">
-                    <a href="/hearthstone"><img src="/images/logos/hearthstone-medium.png" title="Go to the HearthStone page" width="250px"></a>
-                </div>
-                <div class="col-xs-4 margin-btm-30 sport-logo">
-                    <a href="/heroesofthestorm"><img src="/images/logos/heroesofthestorm-medium.png" title="Go to the Heroes of the Storm page" width="250px"></a>
-                </div>
-                <div class="col-xs-4 margin-btm-30 sport-logo">
-                    <img src="/images/logos/leagueoflegends-medium-disabled.png" title="COMING SOON" width="250px">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-offset-2 col-xs-4 margin-btm-30 sport-logo">
-                    <a href="/badminton"><img src="/images/logos/badminton-medium.png" title="Go to the Badminton page" width="250px"></a>
-                </div>
-                <div class="col-xs-4 margin-btm-30 sport-logo">
-                    <a href="/squash"><img src="/images/logos/squash-medium.png" title="Go to the Squash page" width="250px"></a>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="parallax-overlay" ng-class="{'parallax-overlay-full': sportsConfig['{{sport}}'].landing.displayAllSports}"></div> 
+	<div class="home-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 col-md-offset-2">
+					<div class="intro-text">
+						<h1>{{ sport + '.landing.headline' | translate }}</h1>
+						<h3 ng-hide="sportsConfig['{{sport}}'].landing.alternativeIntroText">{{ sport + '.landing.subHeadline' | translate }}</h3>
+						<!-- TODO TRANSLATE -->
+						<h3 ng-show="sportsConfig['{{sport}}'].landing.alternativeIntroText">{{sportsConfig[sport].landing.alternativeIntroText}}</h3>
+						<div class="download-button scroll-to" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
+							<a href="#features" class="btn btn-link">
+								{{ 'global.landing.learnMore' | translate }} <i class="ion-chevron-right"></i>
+							</a>
+							<a href="/s/{{sport}}" class="btn btn-link" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta1">
+								{{ 'global.landing.getIn' | translate }} <i class="ion-chevron-right"></i>
+							</a>
+						</div>
+					</div><!--intro text-->
+				</div>
+			</div>
+		</div>
+		<!-- TODO TRANSLATE -->
+		<div class="container sports-logos" ng-show="sportsConfig['{{sport}}'].landing.displayAllSports">
+			<div class="row">
+				<div class="col-xs-4 margin-btm-30 sport-logo">
+					<a href="/hearthstone"><img src="/images/logos/hearthstone-medium.png" title="Go to the HearthStone page" width="250px"></a>
+				</div>
+				<div class="col-xs-4 margin-btm-30 sport-logo">
+					<a href="/heroesofthestorm"><img src="/images/logos/heroesofthestorm-medium.png" title="Go to the Heroes of the Storm page" width="250px"></a>
+				</div>
+				<div class="col-xs-4 margin-btm-30 sport-logo">
+					<img src="/images/logos/leagueoflegends-medium-disabled.png" title="COMING SOON" width="250px">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-offset-2 col-xs-4 margin-btm-30 sport-logo">
+					<a href="/badminton"><img src="/images/logos/badminton-medium.png" title="Go to the Badminton page" width="250px"></a>
+				</div>
+				<div class="col-xs-4 margin-btm-30 sport-logo">
+					<a href="/squash"><img src="/images/logos/squash-medium.png" title="Go to the Squash page" width="250px"></a>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <section class="features-intro white-background" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6 margin-btm-30" ng-hide="hideVideoReview">
-                <div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
-                    <i class="ion-qr-scanner red"></i>
-                    <h3>Powerful review tools</h3>
-                    <p>
-                    	Identify and understand your flaws precisely. Watch any sequence in slow motion, in a loop, or even side-by-side with another sequence from a top player.
-                    </p>
-                </div><!--features box intro end-->
-            </div><!--col end-->
-            <div ng-class="{'col-md-offset-2': hideVideoReview}" class="col-md-3 col-sm-6 margin-btm-30">
-                <div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
-                    <i class="ion-bonfire green"></i>
-                    <h3>Community wisdom</h3>
-                    <p>
-                        {{sportsConfig[sport].landing.communityWisdomIntro}} with the best advice from the {{sportsConfig[sport].landing.displayName}} community. A reputation and voting system ensures top advice always come out at the top.
-                    </p>
-                </div><!--features box intro end-->
-            </div><!--col end-->
-            <div class="col-md-3 col-sm-6 margin-btm-30">
-                <div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-                    <i class="ion-trophy blue"></i>
-                    <h3>Professional coaches</h3>
-                    <p>
-                        If community advice is not enough for you, professional coaches are available to help you overcome your biggest hurdles
-                    </p>
-                </div><!--features box intro end-->
-            </div><!--col end-->
-            <div class="col-md-3 col-sm-6 margin-btm-30">
-                <div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
-                    <i class="ion-ios-chatboxes orange"></i>
-                    <h3>Contribute</h3>
-                    <p>
-                    	Help others become better <span ng-bind="sportsConfig['{{sport}}'].landing.athletes"></span>. Get recognition from the community by giving advice and voting on what looks important to you.
-                    </p>
-                </div><!--features box intro end-->
-            </div><!--col end-->
-        </div>
-    </div>
-</section><!--features intro-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-6 margin-btm-30" ng-hide="hideVideoReview">
+				<div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+					<i class="ion-qr-scanner red"></i>
+					<h3>{{ 'global.landing.reviewToolsHeadline' | translate }}</h3>
+					<p>{{ 'global.landing.reviewToolsIntro' | translate }}</p>
+				</div>
+			</div>
+			<div ng-class="{'col-md-offset-2': hideVideoReview}" class="col-md-3 col-sm-6 margin-btm-30">
+				<div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+					<i class="ion-bonfire green"></i>
+					<h3>{{ 'global.landing.communityHeadline' | translate }}</h3>
+					<p>{{ sport + '.landing.communityIntro'  | translate }}</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 margin-btm-30">
+				<div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+					<i class="ion-trophy blue"></i>
+					<h3>{{ 'global.landing.coachHeadline' | translate }}</h3>
+					<p>{{ 'global.landing.coachIntro' | translate }}</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 margin-btm-30">
+				<div class="features-intro-box wow animated fadeIn animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+					<i class="ion-ios-chatboxes orange"></i>
+					<h3>{{ 'global.landing.contributeHeadline' | translate }}</h3>
+					<p>{{ sport + '.landing.contributeIntro'  | translate }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 <section id="cta2" class="container testimonials-container" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <a href="/s/{{sport}}" class="btn btn-danger btn-lg" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta2">
-                Get in for free <i class="ion-chevron-right"></i>
-            </a>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<a href="/s/{{sport}}" class="btn btn-danger btn-lg" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta2">
+				{{ 'global.landing.getIn' | translate }} <i class="ion-chevron-right"></i>
+			</a>
 		</div>
-    </div>
+	</div>
 </section>
 
 <section class="section" id="features" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="container" ng-hide="hideVideoReview && !sportsConfig['{{sport}}'].landing.customTitle1">
-      	<div class="row">
-        	<div class="col-sm-6">
-          		<div class="feature-1">
-            		<img src="images/landing/{{sport}}/side-by-side.jpg" class="img-responsive" alt="features-img">
-          		</div>
-        	</div>
-	        <div class="col-sm-6">
-	          	<div class="feature-detail">
-		            <h1 class="title animated fadeInRight wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">{{ sportsConfig[sport].landing.customTitle1 ? sportsConfig[sport].landing.customTitle1 : 'Video review tools' }}</h1>
-	            	<p class="features-txt animated fadeInRight wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">{{ sportsConfig[sport].landing.customText1 ? sportsConfig[sport].landing.customText1 : 'Directly control the video from the comment system to precisely illustrate what you need to say and see. Point to a specific image on a video, play a sequence in slow motion or loop it. You can even compare side-by-side sequences from two any two videos from the site to illustrate the difference between how the same move is done by a top player. And all directly from the comments!' }}</p>
-	          	</div>
-        	</div>
-      	</div>
-    </div>
+	<div class="container" ng-hide="hideVideoReview && !sportsConfig['{{sport}}'].landing.customTitle1">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="feature-1">
+					<img src="images/landing/{{sport}}/side-by-side.jpg" class="img-responsive" alt="features-img">
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="feature-detail">
+					<h1 class="title animated fadeInRight wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">{{ sport + '.landing.feature1Headline'  | translate }}</h1>
+					<p class="features-txt animated fadeInRight wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">{{ sport + '.landing.feature1Text'  | translate }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <section class="section padding-t-0" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="container">
-      	<div class="row">
-        	<div class="col-sm-6">
-          		<div class="feature-detail">
-            		<h1 class="title animated fadeInLeft wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">The best from the community</h1>
-            		<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">Get advice from the other <span ng-bind="sportsConfig['{{sport}}'].landing.athletes"></span>, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier</p>
-          		</div>
-        	</div>
-        	<div class="col-sm-6">
-          		<div class="feature-1">
-            		<img src="images/landing/{{sport}}/community.jpg" class="img-responsive" alt="features-img">
-          		</div>
-        	</div>
-      	</div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="feature-detail">
+					<h1 class="title animated fadeInLeft wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">{{ sport + '.landing.feature2Headline'  | translate }}</h1>
+					<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">{{ sport + '.landing.feature2Text'  | translate }}</p>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="feature-1">
+					<img src="images/landing/{{sport}}/community.jpg" class="img-responsive" alt="features-img">
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <section class="section" id="features" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="container">
-      	<div class="row">
-        	<div class="col-sm-6">
-          		<div class="feature-1">
-            		<img src="images/landing/{{sport}}/pros.jpg" class="img-responsive" alt="features-img">
-          		</div>
-        	</div>
-	        <div class="col-sm-6">
-	          	<div class="feature-detail">
-		            <h1 class="title animated fadeInRight wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">Professional coaches</h1>
-	            	<p class="features-txt animated fadeInRight wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href="mailto:contact@zerotoheroes.com" target="_blank">contact us</a>!)</p>
-	          	</div>
-        	</div>
-      	</div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="feature-1">
+					<img src="images/landing/{{sport}}/pros.jpg" class="img-responsive" alt="features-img">
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="feature-detail">
+					<h1 class="title animated fadeInRight wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">{{ sport + '.landing.feature3Headline'  | translate }}</h1>
+					<p class="features-txt animated fadeInRight wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;" translate="{{ sport + '.landing.feature3Text'}}"></p>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <section class="section padding-t-0" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="container">
-      	<div class="row">
-        	<div class="col-sm-6">
-          		<div class="feature-detail">
-            		<h1 class="title animated fadeInLeft wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">Contribute and help the community</h1>
-            		<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)</p>
-          		</div>
-        	</div>
-        	<div class="col-sm-6">
-          		<div class="feature-1">
-            		<img src="images/landing/{{sport}}/contribute.jpg" class="img-responsive" alt="features-img">
-          		</div>
-        	</div>
-      	</div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="feature-detail">
+					<h1 class="title animated fadeInLeft wow animated" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">{{ sport + '.landing.feature4Headline'  | translate }}</h1>
+					<p class="features-txt animated fadeInLeft wow animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">{{ sport + '.landing.feature4Text'  | translate }}</p>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="feature-1">
+					<img src="images/landing/{{sport}}/contribute.jpg" class="img-responsive" alt="features-img">
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <div id="cta3" class="container testimonials-container" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <a href="/s/{{sport}}" class="btn btn-danger btn-lg" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta3">
-                Get in for free <i class="ion-chevron-right"></i>
-            </a>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<a href="/s/{{sport}}" class="btn btn-danger btn-lg" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta3">
+				{{ 'global.landing.getIn' | translate }} <i class="ion-chevron-right"></i>
+			</a>
 		</div>
-    </div>
+	</div>
 </div>
 
 <section class="the-team" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="center-heading">
-                    <h3>The team</h3>
-                    <span class="center-line"></span>
-                    <p>
-                        Yup, that's us! :)
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-md-4 margin-btm-30 col-md-offset-1">
-                <div class="team-col">
-                    <img src="images/seb.jpg" alt="">
-                    <h3>Seb</h3>
-                    <ul class="list-inline list-follow">
-                        <li><a href="https://twitter.com/sebastientromp" target="_blank"><i class="ion-social-twitter" data-toggle="tooltip" title="" data-original-title="Twitter" data-placement="top"></i></a></li>
-                    </ul>
-                    <p class="description">I'm a software engineer by trade, and an athlete and gamer by heart. I've been frustrated by the difficulty to get advice adapted to my style, and want to help athletes and gamers get over that hurdle. I love meeting interesting people of all kind, so feel free to email me directly at <a href="mailto:seb@zerotoheroes.com">seb@zerotoheroes.com</a> :)</p>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-4 margin-btm-30 col-md-offset-2">
-                <div class="team-col">
-                    <img src="images/thibaud.jpg" alt="">
-                    <h3>Thibaud</h3>
-                    <ul class="list-inline list-follow">
-                        <li><a href="https://twitter.com/thibaud_jobert" target="_blank"><i class="ion-social-twitter" data-toggle="tooltip" title="" data-original-title="Twitter" data-placement="top"></i></a></li>
-                    </ul>
-                    <p class="description">Driven by logic and passionate about games I'm a software engineer who strongly believes that there is a bit of magic/awesomeness in everybody. Together we can be heroes! Feel free to share your thoughts with me at <a href="mailto:thibaud@zerotoheroes.com">thibaud@zerotoheroes.com</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="center-heading">
+					<h3>{{ 'global.landing.teamHeadline' | translate }}</h3>
+					<span class="center-line"></span>
+					<p>{{ 'global.landing.teamSubHeadline' | translate }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 col-md-4 margin-btm-30 col-md-offset-1">
+				<div class="team-col">
+					<img src="images/seb.jpg" alt="">
+					<h3>Seb</h3>
+					<ul class="list-inline list-follow">
+						<li><a href="https://twitter.com/sebastientromp" target="_blank"><i class="ion-social-twitter" data-toggle="tooltip" title="" data-original-title="Twitter" data-placement="top"></i></a></li>
+					</ul>
+					<p class="description" translate="{{ 'global.landing.sebDescription'}}"></p>
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 margin-btm-30 col-md-offset-2">
+				<div class="team-col">
+					<img src="images/thibaud.jpg" alt="">
+					<h3>Thibaud</h3>
+					<ul class="list-inline list-follow">
+						<li><a href="https://twitter.com/thibaud_jobert" target="_blank"><i class="ion-social-twitter" data-toggle="tooltip" title="" data-original-title="Twitter" data-placement="top"></i></a></li>
+					</ul>
+					<p class="description" translate="{{ 'global.landing.thibDescription'}}"></p>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <section class="newsletter" data-stellar-background-ratio="0.5" style="background-position: 50% 3345px;" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="container">
-        <div class="col-sm-8 col-sm-offset-2 text-center">
-            <h3>Get the latest updates</h3>
-            <p>Subscribe to newsletter and get latest news</p>
-            <div id="mc_embed_signup">
-	            <form class="form-inline validate signup-form" action="//zerotoheroes.us10.list-manage.com/subscribe/post?u=97a00cb6ce6b2e5486876f29c&amp;id=074f9f6027" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" novalidate>
-	            	<div id="mc_embed_signup_scroll">
-	            		<div id="mce-responses" >
+	<div class="container">
+		<div class="col-sm-8 col-sm-offset-2 text-center">
+			<h3>{{ 'global.landing.newsLetterHeadline' | translate }}</h3>
+			<p>{{ 'global.landing.newsLetterSubHeadline' | translate }}</p>
+			<div id="mc_embed_signup">
+				<form class="form-inline validate signup-form" action="//zerotoheroes.us10.list-manage.com/subscribe/post?u=97a00cb6ce6b2e5486876f29c&amp;id=074f9f6027" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" novalidate>
+					<div id="mc_embed_signup_scroll">
+						<div id="mce-responses" >
 							<div class="response" id="mce-error-response" style="display:none"></div>
 							<div class="response" id="mce-success-response" style="display:none"></div>
 						</div>
 						<div style="position: absolute; left: -5000px;"><input type="text" name="b_97a00cb6ce6b2e5486876f29c_074f9f6027" tabindex="-1" value=""></div>
-		                <div class="form-group">
-		                    <label class="sr-only" for="mce-EMAIL">Email address</label>
-		                    <input type="email" name="EMAIL" class="form-control" id="mce-EMAIL" value="Your Email address" onfocus="if (this.value == this.defaultValue)
-		                                this.value = '';" onblur="if (this.value == '')
-		                                            this.value = this.defaultValue;">
-		                    <button type="submit" class="btn-theme btn btn-lg" ng-click="notifyGa()" id="mc-embedded-subscribe">Notify me</button>
-		                </div>
-		            </div>
-	                <span class="help-block">You know where to find us, so we won't spam </span>
-	            </form>
-	        </div>
-        </div>
-    </div>
+						<div class="form-group">
+							<label class="sr-only" for="mce-EMAIL">Email</label>
+							<input type="email" name="EMAIL" class="form-control" id="mce-EMAIL" value="Your Email address" onfocus="if (this.value == this.defaultValue)
+										this.value = '';" onblur="if (this.value == '')
+													this.value = this.defaultValue;">
+							<button type="submit" class="btn-theme btn btn-lg" ng-click="notifyGa()" id="mc-embedded-subscribe">{{ 'global.landing.newsLetterButton' | translate }}</button>
+						</div>
+					</div>
+					<span class="help-block">{{ 'global.landing.noSpam' | translate }}</span>
+				</form>
+			</div>
+		</div>
+	</div>
 </section>
 
 <footer id="footer" class="footer-main" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2 text-center">
-                <!-- <a href="index.html"><img src="images/logo-white.png" alt=""></a> -->
-                <div class="clearfix"></div>
-                <!--<ul class="list-inline footer-social">
-                    <li><a href="#" data-toggle="tooltip" title="" data-original-title="Facebook" data-placement="top"><i class="ion-social-facebook"></i></a></li>
-                    <li><a href="#" data-toggle="tooltip" title="" data-original-title="twitter" data-placement="top"><i class="ion-social-twitter"></i></a></li>
-                    <li><a href="#" data-toggle="tooltip" title="" data-original-title="Linkedin" data-placement="top"><i class="ion-social-linkedin"></i></a></li>
-                    <li><a href="#" data-toggle="tooltip" title="" data-original-title="Google plus" data-placement="top"><i class="ion-social-googleplus"></i></a></li>
-                    <li><a href="#" data-toggle="tooltip" title="" data-original-title="youtube" data-placement="top"><i class="ion-social-youtube"></i></a></li>
-                    <li><a href="#" data-toggle="tooltip" title="" data-original-title="Dribbble" data-placement="top"><i class="ion-social-dribbble"></i></a></li>
-                </ul>
-                <div class="clearfix"></div>
-                <ul class="list-inline footer-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Terms &amp; Condition</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>-->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<!-- <a href="index.html"><img src="images/logo-white.png" alt=""></a> -->
+				<div class="clearfix"></div>
+				<!--<ul class="list-inline footer-social">
+					<li><a href="#" data-toggle="tooltip" title="" data-original-title="Facebook" data-placement="top"><i class="ion-social-facebook"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" title="" data-original-title="twitter" data-placement="top"><i class="ion-social-twitter"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" title="" data-original-title="Linkedin" data-placement="top"><i class="ion-social-linkedin"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" title="" data-original-title="Google plus" data-placement="top"><i class="ion-social-googleplus"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" title="" data-original-title="youtube" data-placement="top"><i class="ion-social-youtube"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" title="" data-original-title="Dribbble" data-placement="top"><i class="ion-social-dribbble"></i></a></li>
+				</ul>
+				<div class="clearfix"></div>
+				<ul class="list-inline footer-nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">News</a></li>
+					<li><a href="#">Jobs</a></li>
+					<li><a href="#">Support</a></li>
+					<li><a href="#">Terms &amp; Condition</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>-->
 
-                <span class="copyrights">©2015</span>
-            </div>
-        </div>
-    </div>
+				<span class="copyrights">©2015</span>
+			</div>
+		</div>
+	</div>
 </footer><!--footer end-->

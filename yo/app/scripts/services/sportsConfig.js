@@ -14,10 +14,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					allowDoubleSpeed: false,
 					mandatoryTags: ['level'],
 					landing: {
-						athlete: 'player',
-						athletes: 'players',
-						displayName: 'Badminton',
-						communityWisdomIntro: 'Climb to the top'
+						displayName: 'Badminton'
 					}
 				},
 				hearthstone: {
@@ -32,13 +29,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						customCss: 'hearthstone.css'
 					},
 					landing: {
-						athlete: 'gamer',
-						athletes: 'gamers',
 						displayName: 'HearthStone',
-						communityWisdomIntro: 'Climb to Legend',
-						hideVideoReview: true,
-						customTitle1: 'Integrated with HearthStone',
-						customText1: 'Immediately link to an existing card or deck, so you have everything you need in a single place' 
+						hideVideoReview: true
 					}
 				},
 				heroesofthestorm: {
@@ -53,10 +45,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						customCss: 'beta-hots.css'
 					},
 					landing: {
-						athlete: 'gamer',
-						athletes: 'gamers',
 						displayName: 'Heroes of the Storm',
-						communityWisdomIntro: 'Climb the ladder to rank 1',
 						hideVideoReview: true
 					}
 				},
@@ -68,10 +57,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					isSport: true,
 					allowDoubleSpeed: true,
 					landing: {
-						athlete: 'gamer',
-						athletes: 'gamers',
 						displayName: 'League of Legends',
-						communityWisdomIntro: 'Climb the ladder to the top',
 						hideVideoReview: true
 					}
 				},
@@ -84,10 +70,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					allowDoubleSpeed: false,
 					mandatoryTags: ['level'],
 					landing: {
-						athlete: 'squash player',
-						athletes: 'squash players',
-						displayName: 'Squash',
-						communityWisdomIntro: 'Climb to the top'
+						displayName: 'Squash'
 					}
 				},
 				meta: {
@@ -99,11 +82,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 				all: {
 					isSport: false,
 					landing: {
-						athlete: '(e-)athlete',
-						athletes: '(e-)athletes',
-						alternativeIntroText: 'Post a video of yourself playing and get advice from the community. Start now by choosing your sport below',
 						displayName: 'Zero to Heroes',
-						communityWisdomIntro: 'Climb to the top',
 						displayAllSports: true
 					}
 				}

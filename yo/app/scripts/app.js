@@ -25,7 +25,8 @@ var app = angular.module('app', [
   'RecursionHelper',
   'viewhead',
   'ngTagsInput',
-  'angularLoad'
+  'angularLoad',
+  'pascalprecht.translate'
 ]);
 
 app.config(['$routeProvider', '$locationProvider',
@@ -140,19 +141,37 @@ app.config(function (tagsInputConfigProvider) {
 	tagsInputConfigProvider.setActiveInterpolation('tagsInput', { placeholder: true });
 });
 
+app.config(['$translateProvider', '$windowProvider', function($translateProvider, $windowProvider) {
+	console.log('$windowProvider', $windowProvider, $translateProvider);
+	$translateProvider.useStaticFilesLoader({
+	  	prefix: '/languages/',
+	  	suffix: '.json'
+	});
+	$translateProvider.determinePreferredLanguage(function () {
+	  	// define a function to determine the language
+	  	// and return a language key
+	  	var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
+		console.log('browser language is ', lang);
+		// if (S(lang).startsWith('fr')) 
+		// 	return 'fr'
+	 //  	else 
+	  		return 'en';
+	});
+}]);
+
 app.directive('compilecontent', function($compile, $parse) {
 	return {
-	  restrict: 'A',
-	  replace: true,
-	  link: function(scope, element, attr) {
-		scope.$watch(attr.content, function() {
-		  var parsed = $parse(attr.content)(scope);
-		  element.html(parsed);
-		  $compile(element.contents())(scope);
-		}, true);
-	  }
+		restrict: 'A',
+		replace: true,
+		link: function(scope, element, attr) {
+			scope.$watch(attr.content, function() {
+				var parsed = $parse(attr.content)(scope);
+				element.html(parsed);
+				$compile(element.contents())(scope);
+			}, true);
+		}
 	}
-  })
+})
 
 angular.module('controllers', []);
 angular.module('directives', []);

@@ -96,7 +96,49 @@
 		},
 		"listing": {
 			"allVideos": "All videos",
-			"unsubscribeTooltip": "Click to stop receiving notifications when a new review is posted"
+			"unsubscribe": "Unsubscribe",
+			"unsubscribeTooltip": "Click to stop receiving notifications when a new review is posted",
+			"subscribe": "Subscribe",
+			"subscribeTooltip": "Click to be notified when a new review is posted",
+			"searchVideos": "Search videos",
+			"search": {
+				"title": "Title",
+				"wantedTags": "Tags you want to see",
+				"unwantedTags": "Tags you don't want to see",
+				"button": "Search"
+			},
+			"video": {
+				"upvote": "Upvote this video",
+				"downvote": "Downvote this video",
+				"commentsTitle": "Number of comments",
+				"usefulTitle": "Number of comments the author of the video marked as useful",
+				"viewsTitle": "Number of views"
+			}
+		},
+		"review": {
+			"player": {
+
+			},
+			"toolbar": {
+
+			},
+			"comment": {
+				"upvote": "Upvote this review (you should do this if you feel the review is valuable)",
+				"downvote": "Downvote this review (you should do this if you feel the review is illegible, poorly formatted or doesn't bring anything to the discussion)",
+				"reviewTitle": "Title of your video review",
+				"edit": "Edit",
+				"cancelEdit": "Cancel",
+				"validateEdit": "Update",
+				"commentsHeadline": "Comments",
+				//TODO
+				"unsubscribeReview": "Unsubscribe",
+				"unsubscribeReviewTooltip": "Click to stop receiving notifications when a new review is posted",
+				"subscribeReview": "Subscribe",
+				"subscribeReviewTooltip": "Click to be notified when a new review is posted",
+				"searchVideos": "Search videos",
+			},
+			"proNotified": "{{name}} has been notified of your request. They will get back to you soon. Stay tuned!"
+
 		}
 	}
 }

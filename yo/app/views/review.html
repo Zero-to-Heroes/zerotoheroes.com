@@ -46,22 +46,22 @@
 				<form class="container-fluid video-details" name="videoInformationForm">
 					<div class="row">
 						<div class="col-md-1 reputation">
-							<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': review.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="upvoteReview(review)" aria-hidden="true" title="Upvote this review (you should do this if you feel the review is valuable)"></span>
+							<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': review.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="upvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.upvote' | translate }}"></span>
 							<span class="reputation-score glyphicon">{{review.reputation.nbVotes.Upvote - review.reputation.nbVotes.Downvote}}</span>
-							<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteReview(review)" aria-hidden="true" title="Downvote this review (you should do this if you feel the review is illegible, poorly formatted or doesn't bring anything to the discussion)"></span>
+							<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.downvote' | translate }}"></span>
 						</div>
 						<div class="col-md-11">
 							<div class="row video-information-header">
 								<div class="col-md-10">
 									<h1 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h1>
 									<div class="form-group" show-errors="{ showSuccess: true }" ng-show="review.editing">
-								    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title of your video review" ng-required="true">
+								    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.review.comment.reviewTitle' | translate }}" ng-required="true">
 								  	</div>
 								  	<div class="author-information" ng-hide="review.editing">
 									  	<span class="link-minor">Submitted <span title="{{formatExactDate(review.creationDate)}}">{{formatDate(review.creationDate)}}</span> by <span author-name entity="review"></span></span>
 									  	<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="review.authorReputation">{{review.authorReputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
 									  	<span class="link-minor" ng-show="!review.editing && canEdit(review)"> - </span>
-										<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && canEdit(review)"> Edit</a>
+										<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && canEdit(review)"> {{ 'global.review.comment.edit' | translate }}</a>
 									</div>
 								</div>
 							</div>
@@ -79,16 +79,13 @@
 							<div class="row video-tags" ng-show="review.editing || (review.tags && review.tags.length > 0)" ng-class="{'top-spacing': review.editing}">
 								<div class="col-xs-10 text-left">
 									<review-tags-input review-disabled="!review.editing" review="review"></review-tags-input>
-									<!--<tags-input ng-model="review.tags" ng-disabled="!review.editing" placeholder="{{tagsPlaceholder}}" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false">
-										<auto-complete source="autocompleteTag($query)" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
-									</tags-input>-->
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-xs-6 text-left">
 									<div ng-show="review.editing">
-										<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs"><span>Cancel</span></button>
-										<button ng-click="updateDescription()" class="btn btn-default btn-xs"><span>Update</span></button>
+										<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
+										<button ng-click="updateDescription()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
 									</div>
 								</div>
 							</div>
@@ -97,9 +94,9 @@
 				</form>
 				<div ng-show="selectedCoach">
 					<hr/>
-					<div class="alert alert-info">{{selectedCoach.name}} has been notified of your request. They will get back to you soon. Stay tuned!</div>
+					<div class="alert alert-info">{{ 'global.review.comment.validateEdit' | translate:'{name: selectedCoach.name}' }}</div>
 				</div>
-				<h3 class="comments-headline">Comments</h3>
+				<h3 class="comments-headline">{{ 'global.review.comment.commentsHeadline' | translate }}</h3>
 				<div class="comments-links">
 					<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed()" title="Click to be notified when a new comment is posted">Unsubscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
 					<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed()" title="Click to stop receiving notifications when a new comment is posted">Subscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>

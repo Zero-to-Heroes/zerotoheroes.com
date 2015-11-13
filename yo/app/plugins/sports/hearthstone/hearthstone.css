@@ -184,6 +184,7 @@
 }
 
 .hearthstone .navbar-default .navbar-nav > li > a {
+    background-color: transparent;
     font-size: 18px;
     line-height: 66px;
     text-shadow: 0 0 10px #000, 0 0 10px #000;    
@@ -191,9 +192,9 @@
     padding: 0 15px;
 }
 
-.hearthstone .navbar-default .navbar-nav > li > a, .hearthstone .navbar-default .navbar-nav > li > a:focus, .hearthstone .navbar-default .navbar-nav > li > a:active, .hearthstone .navbar-default .navbar-nav > li > a:hover {
-    background-color: transparent;
+.hearthstone .navbar-default .navbar-nav > li > a:focus, .hearthstone .navbar-default .navbar-nav > li > a:active, .hearthstone .navbar-default .navbar-nav > li > a:hover {
     color: #fcd144;
+    background: transparent url(images/nav-bg-center-active.png) repeat-x;
 }
 
 .hearthstone .navbar-default span {
@@ -216,7 +217,7 @@
 }
 
 .hearthstone .navbar .upload-link>li>a span {
-    display: table-cell;
+    display: inline-block;
     width: 100%;
     padding: 0 24px;
     background: radial-gradient(circle, #bc22c7 25%, #7c1693 75%, #5c1096);
@@ -331,11 +332,24 @@
 
 
 /* =============
+** Landing page
+** =============*/
+.hearthstone .landing-page {
+    color: rgb(46, 46, 46);
+}
+
+.hearthstone .landing-page h1 {
+    color: #233a6e;
+}
+
+.hearthstone .landing-page .intro-text h1 {
+    color: #fff;
+}
+
+
+/* =============
 ** Smaller device
 ** =============*/
-.hearthstone .navbar-collapse.collapse.in ul {
-    background: rgb(241, 214, 169) url(images/body-content-bg.jpg) 50% 0 repeat-y !important;
-}
 
 @media (max-width: 1090px) {
     .hearthstone .nav.navbar-nav.meta {
@@ -347,14 +361,33 @@
         padding: 0;
         margin-right: 15px;
     }
+
+    .hearthstone .navbar-collapse.collapse.in {
+    }
 }
+
 @media (max-width: 900px) {
     .hearthstone .navbar-collapse.collapse.in ul {
-        width: 100%;
     }
 
     .hearthstone div[zth-name-input] {
         background: rgb(241, 214, 169) url(images/body-content-bg.jpg) 50% 0 repeat-y !important;
         margin-top: 0;
+    }
+
+    .hearthstone .navbar-default .navbar-nav > li > a, .hearthstone .navbar-default .navbar-nav > li > a:focus, .hearthstone .navbar-default .navbar-nav > li > a:active, .hearthstone .navbar-default .navbar-nav > li > a:hover {
+        background: transparent;
+        color: rgb(46, 46, 46);
+        text-shadow: none;
+    }
+    
+    .hearthstone .navbar-collapse.collapse.in ul {
+        background: rgb(241, 214, 169) url(images/body-content-bg.jpg) 50% 0 repeat-y !important;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 767px) {
+    .hearthstone .navbar-collapse.collapse.in ul {
+        width: 100%;
     }
 }

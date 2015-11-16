@@ -407,8 +407,7 @@ module.exports = function (grunt) {
 	  //return grunt.task.run(['build', 'connect:dist:keepalive']);
 	  grunt.task.run([
 		'clean:dist',
-		//'ngconstant:production',
-		'ngconstant:development',
+		'ngconstant:production',
 		'wiredep',
 		'useminPrepare',
 		'concurrent:dist',
@@ -422,8 +421,7 @@ module.exports = function (grunt) {
 		'usemin',
 		//'imagemin',
 		'htmlmin',
-	  	'connect:livereload',
-	  	'watch'
+	  	'connect:dist:keepalive'
 	  ]);
 	}
 	else {

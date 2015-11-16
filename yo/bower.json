@@ -9,14 +9,14 @@
     "angular-route": "~1.4.0",
     "angular-resource": "~1.4.0",
     "angular-mocks": "~1.4.0",
-    "videogular": "~1.2.5",
-    "videogular-themes-default": "~1.2.5",
-    "videogular-controls": "~1.2.5",
-    "videogular-buffering": "~1.2.5",
-    "videogular-overlay-play": "~1.2.5",
-    "videogular-poster": "~1.2.5",
-    "videogular-ima-ads": "~1.2.5",
-    "videogular-angulartics": "~1.2.5",
+    "videogular": "~1.3.2",
+    "videogular-themes-default": "~1.3.2",
+    "videogular-controls": "~1.3.2",
+    "videogular-buffering": "~1.3.2",
+    "videogular-overlay-play": "~1.3.2",
+    "videogular-poster": "~1.3.2",
+    "videogular-ima-ads": "~1.3.2",
+    "videogular-angulartics": "~1.3.2",
     "angular-rangeslider": "~0.0.14",
     "angular-file-upload": "~2.1.1",
     "angular-strap": "~2.3.1",
@@ -28,8 +28,6 @@
     "angular-logger": "~1.0.1",
     "sprintf": "~1.0.3",
     "aws-sdk-js": "~2.1.50",
-    "angulartics": "~0.20.1",
-    "angulartics-google-analytics": "~0.1.1",
     "angular-recursion": "~1.0.5",
     "moment-duration-format": "~1.3.0",
     "ionicons": "~2.0.1",
@@ -43,7 +41,9 @@
     "jquery-textcomplete": "~0.8.1",
     "angular-translate": "~2.8.1",
     "angular-translate-loader-url": "~2.8.1",
-    "angular-translate-loader-static-files": "~2.8.1"
+    "angular-translate-loader-static-files": "~2.8.1",
+    "angulartics": "~0.20",
+    "angulartics-google-analytics": "~0.1.2"
   },
   "overrides": {
     "sprintf": {
@@ -58,7 +58,7 @@
     "angular-route": "~1.4.0",
     "angular-resource": "~1.4.0",
     "angular": "1.4.x",
-    "angulartics": "^0.17.2",
-    "waypoints": "~2.0.3"
+    "waypoints": "~2.0.3",
+    "angulartics": "~0.20"
   }
 }

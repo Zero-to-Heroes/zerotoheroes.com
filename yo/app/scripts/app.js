@@ -20,13 +20,13 @@ var app = angular.module('app', [
   'hc.marked',
   'angular-logger',
   'sprintf',
-  'angulartics', 
-  'angulartics.google.analytics',
   'RecursionHelper',
   'viewhead',
   'ngTagsInput',
   'angularLoad',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'angulartics', 
+  'angulartics.google.analytics'
 ]);
 
 app.config(['$routeProvider', '$locationProvider',

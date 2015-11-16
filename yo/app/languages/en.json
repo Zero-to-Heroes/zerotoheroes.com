@@ -75,6 +75,12 @@
 			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
 		}
 	},
+	"all": {
+		"landing": {
+			"headline": "We help (e-)athletes improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the community. Start by picking your community below"
+		}
+	},
 	"global": {
 		"landing": {
 			"learnMore": "Learn more",
@@ -95,7 +101,7 @@
 			"noSpam": "You know where to find us, so we won't spam"
 		},
 		"general": {
-			"email": "Email address",
+			"email": "Email address"
 		},
 		"listing": {
 			"allVideos": "All videos",

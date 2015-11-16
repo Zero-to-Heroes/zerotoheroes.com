@@ -3,22 +3,22 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" ng-click="close()">&times;</button>
-				<h4 class="modal-title">Adding a side-by-side comparison</h4>
+				<h4 class="modal-title">{{ 'global.review.sequence.headline' | translate }}</h4>
 			</div>
 			<div class="modal-body">
 			
-				<span>Use a sequence from:</span>
+				<span>{{ 'global.review.sequence.choiceHeadline' | translate }}</span>
 				<label class="radio-inline">
 					<input type="radio" name="sequenceSource" id="sequenceSource1" value="sameVideo" ng-model="params.comparisonSource" ng-click="toggleMode('sameVideo')">
-					this video
+					{{ 'global.review.sequence.sameVideoChoice' | translate }}
 				</label>
 				<label class="radio-inline">
 					<input type="radio" name="sequenceSource" id="sequenceSource2" value="otherVideo" ng-model="params.comparisonSource" ng-click="toggleMode('otherVideo')">
-					another video
+					{{ 'global.review.sequence.otherVideoChoice' | translate }}
 				</label>
 				<label class="radio-inline">
 					<input type="radio" name="sequenceSource" id="sequenceSource3" value="sequence" ng-model="params.comparisonSource"  ng-click="toggleMode('sequence')">
-					an existing sequence
+					{{ 'global.review.sequence.existingSequenceChoice' | translate }}
 				</label>
 
 				<videogular vg-player-ready="onPlayerReady($API)" class="videogular" vg-update-time="onUpdateTime($currentTime, $duration)">
@@ -60,32 +60,32 @@
 							</videogular>
 
 							<div class="other-video-choice" ng-show="choosingOtherVideo">
-								<h3 class="choice-title">Choose an existing video</h3>
+								<h3 class="choice-title">{{ 'global.review.sequence.otherVideoHeadline' | translate }}</h3>
 
 								<section class="search-section">
 									<div class="panel panel-default search-panel">
 										<div class="panel-heading">
 											<h4 class="panel-title">
-												<a data-target="#searchPanel" class="collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="searchPanel">Search videos</a>
+												<a data-target="#searchPanel" class="collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="searchPanel">{{ 'global.listing.searchVideos' | translate }}</a>
 											</h4>
 										</div>
 										<div class="panel-collapse collapse" id="searchPanel" aria-expanded="false">
 											<form class="panel-body ">
 												<div class="form-group title-search">
-												    <label class="sr-only" for="title">Title</label>
-												    <input type="text" class="form-control" id="title" placeholder="Title" ng-model="criteria.title">
+												    <label class="sr-only" for="title">{{ 'global.listing.search.title' | translate }}</label>
+												    <input type="text" class="form-control" id="title" placeholder="{{ 'global.listing.search.title' | translate }}" ng-model="criteria.title">
 												</div>
 												<div class="form-group wanted-tags">
-													<tags-input ng-model="criteria.wantedTags" placeholder="Tags you want to see" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
+													<tags-input ng-model="criteria.wantedTags" placeholder="{{ 'global.listing.search.wantedTags' | translate }}" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
 														<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
 													</tags-input>
 												</div>
 												<div class="form-group unwanted-tags">
-													<tags-input ng-model="criteria.unwantedTags" placeholder="Tags you don't want to see" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
+													<tags-input ng-model="criteria.unwantedTags" placeholder="{{ 'global.listing.search.unwantedTags' | translate }}" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
 														<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
 													</tags-input>
 												</div>
-												<button type="submit" class="btn btn-default" ng-click="searchVideos()"><span>Search</span></button>
+												<button type="submit" class="btn btn-default" ng-click="searchVideos()"><span>{{ 'global.listing.search.button' | translate }}</span></button>
 											</form>
 										</div>
 									</div>
@@ -107,7 +107,7 @@
 												</div>
 											</td>
 											<td class="vert-align">
-												<button class="btn btn-default" ng-click="selectVideo(video)"><span>Select</span></button>
+												<button class="btn btn-default" ng-click="selectVideo(video)"><span>{{ 'global.review.sequence.selectVideo' | translate }}</span></button>
 											</td>
 										</tr>
 									</tbody>
@@ -119,57 +119,57 @@
 
 				<div class="row position-select">
 					<div class="col-md-6 text-center">
-						<span>Use: </span>
+						<span>{{ 'global.review.sequence.useSideHeadline' | translate }}</span>
 						<label class="radio-inline">
 							<input type="radio" name="video1position" id="video1position1" value="l" ng-model="params.video1position">
-							left side
+							{{ 'global.review.sequence.useSideLeft' | translate }}
 						</label>
 						<label class="radio-inline">
 							<input type="radio" name="video1position" id="video1position2" value="c" ng-model="params.video1position">
-							center
+							{{ 'global.review.sequence.useSideCenter' | translate }}
 						</label>
 						<label class="radio-inline">
 							<input type="radio" name="video1position" id="video1position3" value="r" ng-model="params.video1position">
-							right side
+							{{ 'global.review.sequence.useSideRight' | translate }}
 						</label>
 					</div>
 					<div class="col-md-6 text-center">
-						<span>Use: </span>
+						<span>{{ 'global.review.sequence.useSideHeadline' | translate }}</span>
 						<label class="radio-inline">
 							<input type="radio" name="video2position" id="video2position1" value="l" ng-model="params.video2position">
-							left side
+							{{ 'global.review.sequence.useSideLeft' | translate }}
 						</label>
 						<label class="radio-inline">
 							<input type="radio" name="video2position" id="video2position2" value="c" ng-model="params.video2position">
-							center
+							{{ 'global.review.sequence.useSideCenter' | translate }}
 						</label>
 						<label class="radio-inline">
 							<input type="radio" name="video2position" id="video2position3" value="r" ng-model="params.video2position">
-							right side
+							{{ 'global.review.sequence.useSideRight' | translate }}
 						</label>
 					</div>
 				</div>
 
 				<form class="form-inline sequence-form text-center" name="sequenceForm">
 					<div class="form-group speed-factor" show-errors="{ showSuccess: true }">
-						<label for="speedFactor">Playback speed</label>
+						<label for="speedFactor">{{ 'global.review.sequence.playbackSpeed' | translate }}</label>
 						<input name="speed" type="text" class="form-control text-right" id="speedFactor" ng-model="params.speed" placeholder="0.5" ng-required="true">
 					</div>
 					<div class="form-group loop-duration" show-errors="{ showSuccess: true }">
-						<label for="loopDuration">Loop duration</label>
+						<label for="loopDuration">{{ 'global.review.sequence.loopDuration' | translate }}</label>
 						<input name="loopDuration" type="text" class="form-control text-right" id="loopDuration" ng-model="params.loopDuration" placeholder="1" ng-required="true">
 						s
 					</div>
-					<button type="button" class="btn btn-default test-button" ng-click="testSequence()" ng-hide="testing"><span>Test this sequence</span></button>
-					<button type="button" class="btn btn-default test-button" ng-click="stopSequence()" ng-show="testing"><span>Stop test</span></button>
+					<button type="button" class="btn btn-default test-button" ng-click="testSequence()" ng-hide="testing"><span>{{ 'global.review.sequence.testSequence' | translate }}</span></button>
+					<button type="button" class="btn btn-default test-button" ng-click="stopSequence()" ng-show="testing"><span>{{ 'global.review.sequence.stopTest' | translate }}</span></button>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<form name="form.createSequenceForm" class="form-inline create-sequence-form" ng-show="params.comparisonSource == 'otherVideo' && !choosingOtherVideo">
-					<p class="text-left">We'll add this sequence to the list of existing sequences, so that others can easily find and use it too. We'd love it if you could fill in the fields below to help them find it more easily :)</p>
+					<p class="text-left">{{ 'global.review.sequence.addSequenceInfo' | translate }}</p>
 					<div class="row text-left">
 						<div class="form-group sequence-title col-md-6" show-errors="{ showSuccess: true }">
-							<input name="createSequenceForm.title" type="text" class="form-control" id="sequenceTitle" ng-model="params.newSequenceTitle" placeholder="A descriptive title that makes finding it easy" ng-required="true">
+							<input name="createSequenceForm.title" type="text" class="form-control" id="sequenceTitle" ng-model="params.newSequenceTitle" placeholder="{{ 'global.review.sequence.addSequenceTitle' | translate }}" ng-required="true">
 						</div>
 						<div class="form-group sequence-tags col-md-6">
 							<tags-input ng-model="params.newSequenceTags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false">
@@ -177,11 +177,11 @@
 							</tags-input>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-disabled="form.createSequenceForm.$invalid">{{params.comparisonSource == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
+					<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-disabled="form.createSequenceForm.$invalid">{{params.comparisonSource == 'otherVideo' ? 'global.review.sequence.createAndAddButton' : 'global.review.sequence.addSequenceButton' | translate}}</button>
 					<button type="button" class="btn btn-default" ng-click="close()"><span>Cancel</span></button>
 				</form>
-				<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo">{{params.comparisonSource == 'otherVideo' ? 'Create and add sequence' : 'Add sequence'}}</button>
-				<button type="button" class="btn btn-default" ng-click="close()"ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo"><span>Cancel</span></button>
+				<button type="submit" class="btn btn-primary" ng-click="addSequence()" ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo">{{params.comparisonSource == 'otherVideo' ? 'global.review.sequence.createAndAddButton' : 'global.review.sequence.addSequenceButton' | translate}}</button>
+				<button type="button" class="btn btn-default" ng-click="close()"ng-show="params.comparisonSource != 'otherVideo' || choosingOtherVideo"><span>{{ 'global.review.sequence.cancelButton' | translate }}</span></button>
 			</div>
 		</div>
 	</div>

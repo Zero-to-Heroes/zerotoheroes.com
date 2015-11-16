@@ -94,6 +94,9 @@
 			"newsLetterButton": "Notify me",
 			"noSpam": "You know where to find us, so we won't spam"
 		},
+		"general": {
+			"email": "Email address",
+		},
 		"listing": {
 			"allVideos": "All videos",
 			"unsubscribe": "Unsubscribe",
@@ -115,30 +118,168 @@
 				"viewsTitle": "Number of views"
 			}
 		},
+		"videoPlayer": {
+
+		},
+		"toolbar": {
+			"timestamp": "Insert current timestamp",
+			"slow": "Insert playing in slow motion",
+			"loop": "Insert loop in slow motion",
+			"sequence": "Compare a specific sequence from your video to an existing sequence"
+		},
+		"askPro": {
+			"headline": "Choose your coach",
+			"tableCaption": ">You can ask a professional coach / trainer to give you feedback on this video. Each coach may offer slightly different things, so be sure to check the <spa n class=\"glyphicon glyphicon-info-sign\"></span> icon before making your choice",
+			"name": "Name",
+			"languages": "Languages",
+			"level": "Level",
+			"price": "Price",
+			"verifiedInfo": "We have verified the coach information is accurate",
+			"requestButton": "Request review",
+			"closeButton": "Close",
+			"confirmRequestTitle": "Confirm Request",
+			"confirmInfo" : "To confirm the request to {{name}} for {{tariff}} to review your video, please enter your email address below.",
+			"confirmButton": "Confirm",
+			"closeButton": "Close"
+		},
+		"forgotPassword": {
+			"headline": "Forgot your password?",
+			"newPassword": "New password",
+			"confirmPwd": "Confirm your new password",
+			"confirm": "Reset password"
+		},
+		"formattingHelp": {
+			"markdownText": "You can use <a href=\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\" target=\"_blank\">Markdow syntax</a> to format your text (bold, italics, paragraphs, etc)",
+			"advancedIntro": "Additionally, you can:",
+			"hearthstoneCard": "Add a link to a card name using <code>[[The Card Name]]</code>. This will create a hyperlink that will display the card on hover",
+			"hearthstoneDeck": "Add a link to a deck hosted on HearthPwn.com using <code>[http://www.hearthpwn.com/decks/your_deck_id]</code>. This will create a hyperlink that will display the cards list on hover",
+			"timestamp": "Use the <strong>timestamp icon <span class=\"glyphicon glyphicon-time\"></span></strong> to create a link to a specific moment in the video. You can freely adjust the timestamp figures to match exactly what you need",
+			"slow": "Use the <strong>slow motion icon <span class=\"glyphicon glyphicon-play\"></span><span class=\"glyphicon glyphicon-pause\" style=\"margin-left: -5px\"></span></strong> to create a timestamp and make the video play in slow motion once the user clicks on it. You can change how much the video is slowed by changing the <code>0.5</code> figure after the <code>s</code> (the lower, the slower the video)",
+			"loop": "Use the <strong>loop icon <span class=\"glyphicon glyphicon-repeat\"></span></strong> to create a slow motion link, and make a one-second-long sequence that repeats endlessly. You can change the duration of the loop by changing the value after the <code>L</code> (<code>L1.5</code> would mean a 1.5s loop)",
+			"drawing": "Use the <strong>drawing icon <span class=\"glyphicon glyphicon-picture\"></span></strong> to create a timestamp with a drawing. Once you click on the icon, you will enter <i>drawing mode</i>. Simply click and hold on the white canvas on the video to draw anything you like, and click again on the icon to save. If you don't like what you just drew, simply erase the <code>[tmp0]</code> part in the comment, and start again!",
+			"comparison": "Use the <strong>side-by-side video icon <span class=\"glyphicon glyphicon-facetime-video\"></span></strong> to create a sequence with side-by-side videos, to compare two clips to show a difference. You can of course combine it with the other tools provided above (by default a sequence is created with loop and slow motion)"
+		},
+		"user": {
+			"reputationExplanation": "Your total reputation. You can increase it by giving useful advice to others",
+			"signOut": "Sign out",
+			"signIn": "Sign in",
+			"createAccount": "Create account",
+			"noAccount": "If you don't have an account yet, please ",
+			"signUp": "sign up",
+			"noAccount2": " instead",
+			"incorrectCredentials": "<strong>We're sorry :/</strong> We couldn't find any account that matches your identifiers",
+			"identifier": "Your name or email",
+			"password": "Password",
+			"cancel": "Cancel",
+			"login": "Log me in",
+			"createAccountHeadline": "Would you like to create an account?",
+			"createAccountIntro": "Creating an account is optional, and lets you edit your video information later on, be notified when there are new comments, and automatically benefit from all the new features we'll add in the coming weeks",
+			"createAccountIntro2": "If you already have an account, you can just ",
+			"createAccountLink": "sign in",
+			"createAccountIntro3": "instead",
+			"name": "Name",
+			"email": "Email",
+			"confirmPassword": "Confirm your password",
+			"createAccountCancel": "No thanks, I'll create my account later",
+			"createAccountConfirm": "Create account now"
+		},
 		"review": {
 			"player": {
 
 			},
-			"toolbar": {
-
+			"sequence": {
+				"headline": "Adding a side-by-side comparison",
+				"choiceHeadline": "Use a sequence from:",
+				"sameVideoChoice": "this video",
+				"otherVideoChoice": "another video",
+				"existingSequenceChoice": "an existing sequence",
+				"otherVideoHeadline": "Choose an existing video",
+				"selectVideo": "Select",
+				"useSideHeadline": "Use: ",
+				"useSideLeft": "left side",
+				"useSideCenter": "center",
+				"useSideRight": "right side",
+				"playbackSpeed": "Playback speed",
+				"loopDuration": "Loop duration",
+				"testSequence": "Test this sequence",
+				"stopTest": "Stop test",
+				"addSequenceInfo": "We'll add this sequence to the list of existing sequences, so that others can easily find and use it too. We'd love it if you could fill in the fields below to help them find it more easily :)",
+				"addSequenceTitle": "A descriptive title that makes finding it easy",
+				"createAndAddButton": "Create and add sequence",
+				"addSequenceButton": "Add sequence",
+				"cancelButton": "Cancel"
 			},
 			"comment": {
 				"upvote": "Upvote this review (you should do this if you feel the review is valuable)",
 				"downvote": "Downvote this review (you should do this if you feel the review is illegible, poorly formatted or doesn't bring anything to the discussion)",
+				"upvoteComment": "Upvote this comment (you should do this if you feel the review is valuable)",
+				"downvoteComment": "Downvote this comment (you should do this if you feel the review is illegible, poorly formatted or doesn't bring anything to the discussion)",
 				"reviewTitle": "Title of your video review",
 				"edit": "Edit",
 				"cancelEdit": "Cancel",
 				"validateEdit": "Update",
 				"commentsHeadline": "Comments",
-				//TODO
 				"unsubscribeReview": "Unsubscribe",
-				"unsubscribeReviewTooltip": "Click to stop receiving notifications when a new review is posted",
+				"unsubscribeReviewTooltip": "Click to stop receiving notifications when a new comment is posted",
 				"subscribeReview": "Subscribe",
-				"subscribeReviewTooltip": "Click to be notified when a new review is posted",
+				"subscribeReviewTooltip": "Click to be notified when a new comment is posted",
 				"searchVideos": "Search videos",
+				"addCommentButton": "Add a public comment",
+				"authorNamePlaceholder": "Your name",
+				"addCommentTextPlaceholder": "Help {{name}}?",
+				"confirmCommentButton": "Add comment",
+				"cancelCommentButton": "Cancel",
+				"showFormattingHelpButton": "Show formatting help",
+				"hideFormattingHelpButton": "Hide formatting help",
+				"missTagLink": "Do you miss a tag?",
+				"helpedAuthor": "Helped {{name}}",
+				"helpedMe": "Mark as helpful to me",
+				"replyButton": "Reply"
 			},
+			"askProButton": "Ask a Pro",
+			"askProTooltip": "Get professional advice on your video",
 			"proNotified": "{{name}} has been notified of your request. They will get back to you soon. Stay tuned!"
-
+		},
+		"upload": {
+			"chooseFileButton": "Choose your video",
+			"invalidFormatMessage": "We're sorry, we only support .mp4, .ogg, .mkv and .webm video files, and don't support other media types for now. The main reason is that we can't provide our more advanced features if we have to rely on a Flash video player, which is mandatory for some file formats.",
+			"clipDurationText": "Clip Duration: ",
+			"doubleSpeedLink": "Double the speed",
+			"doubleSpeedText": " of the video",
+			"fasterVideoText": "The final video will be {{videoFramerateRatio}} times as fast (and as short) as the original, and won't have any audio.",
+			"fasterVideoClick1": "Click",
+			"fastVideoLink": "here",
+			"fasterVideoClick2": " to revert back to the original speed",
+			"timeLimitExplanationText": "Our goal is to keep the analysis as focused as possible, so that other people can easily search and benefit from comments on your video. Having a focused analysis will also make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos. Please use the above slider to select the part of the video you need analyzed",
+			"timeLimitExplanationText2": "Our goal is to keep the analysis as focused as possible, so that other people can easily search and benefit from comments on your video. Having a focused analysis will also make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos. Please use the above slider to select the part of the video you need analyzed. Please either: ",
+			"timeLimiteReason1": "Use the slider above the select up to 5 minutes of video to use",
+			"timeLimitReason2Link": "Double the speed",
+			"timeLimitReason2": " of the video to use up to 10 minutes of video. This is for now experimental and will only work if your video has less than 30 images per seconds (which is the case for most camera and phone videos, and the default for many video recording softwares)",
+			"newVideoHeadline": "Video information",
+			"newPostHeadline": "New post",
+			"nameTaken": "This name is already in use. Please pick another one, or ",
+			"nameTakenLink": "sign in",
+			"nameTaken2": " if that's you",
+			"authorNamePlaceholder": "Your name",
+			"titlePlaceholder": "Title",
+			"descriptionPlaceholder": "Any remarks about what you want to improve?",
+			"descriptionPlaceholderNoVideo": "Any additional information?",
+			"timestampTranslationInfo": "It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)",
+			"uploadButton": "Post now",
+			"dontCloseWindowMessage": "Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
+			"finalizeVideoMessage": "Finalizing your video. Depending on its size, it may take up to 5 minutes. Take some time to think about how you can help others get better too :)"
+		},
+		"welcome": {
+			"headlineLogged": "Welcome back {{name}}!",
+			"headline": "Welcome to Zero to Heroes!",
+			"gettingStarted": "Getting started",
+			"videoSuggestion": "We're glad to see you here :) If you're looking for a place to start, why not have a look at <a href=\"/r/{{sport}}/{{recommendedVideo}}\">this video</a>?",
+			"reviewSuggestion": "Hey! Glad to see you back today! How would you feel about helping someone out today? <a href=\"/r/{{sport}}/{{recommendedVideo}}\">This review</a> has not received any love lately, would you mind helping?",
+			"newcomer": "It looks like you're new here. If you feel a bit lost, have a look at <a href=\"/{{sport}}\">this presentation page</a> to get a better idea of what we do here, or stop by the <a href=\"/{{meta}}\">forums</a>",
+			"latestActivity": "Latest activity",
+			"latestFeatures": "While you were away...",
+			"latestFeaturesSubHeadline": "We have continued to add features since the last time you visited. We hope you'll like them!",
+			"contactUs": "Any comment or question? <a href=\"/s/meta\">Let us know!</a>"
 		}
 	}
 }

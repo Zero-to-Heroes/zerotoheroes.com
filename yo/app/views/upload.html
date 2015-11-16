@@ -4,10 +4,10 @@
 
 	<div class="form-container">
 		<span class="btn btn-default btn-file" ng-hide="!useVideo">
-			<span>Choose your video</span> <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
+			<span>{{ 'global.upload.chooseFileButton' | translate }}</span> <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
 		</span>
 		<div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
-			<span>We're sorry, we only support .mp4, .ogg, .mkv and .webm video files, and don't support other media types for now. The main reason is that we can't provide our more advanced features if we have to rely on a Flash video player, which is mandatory for some file formats.</span>
+			<span>{{ 'global.upload.invalidFormatMessage' | translate }}</span>
 		</div>
 
 		<div class="videogular-container" ng-show="file && useVideo">
@@ -38,31 +38,32 @@
 		<div class="editing-tools" ng-show="file && useVideo">
 			<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0" show-values="true" disabled="uploadInProgress"></div>
 			<div class="buttons" ng-show="dataLoaded">
-				<span class="durationText">Clip duration: {{clipDuration | date:'mm:ss' }}</span>
-				<span class="block"><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">Double the speed</a> of the video</span>
-				<span class="block" ng-show="review.videoFramerateRatio && review.videoFramerateRatio != 1">The final video will be {{videoFramerateRatio}} times as fast (and as short) as the original, and won't have any audio. Click <a ng-click="maximumAllowedDuration = maximumAllowedDuration / review.videoFramerateRatio; review.videoFramerateRatio = 1">here</a> to go back to the original speed</span>
+				<span class="durationText">{{ 'global.upload.clipDurationText' | translate }} {{clipDuration | date:'mm:ss' }}</span>
+				<span class="block"><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.doubleSpeedLink' | translate }}</a> {{ 'global.upload.doubleSpeedText' | translate }}</span>
+				<span class="block" ng-show="review.videoFramerateRatio && review.videoFramerateRatio != 1">{{ 'global.upload.fasterVideoText' | translate }} {{ 'global.upload.fasterVideoClick1' | translate }} <a ng-click="maximumAllowedDuration = maximumAllowedDuration / review.videoFramerateRatio; review.videoFramerateRatio = 1">{{ 'global.upload.fastVideoLink' | translate }}</a>{{ 'global.upload.fasterVideoClick2' | translate }}</span>
 			</div>
 			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[review.sport.toLowerCase()] && !sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed">
-				<span>Our goal is to keep the analysis as focused as possible, so that other people can easily search and benefit from comments on your video. Having a focused analysis will also make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos. Please use the above slider to select the part of the video you need analyzed</span>
+				<span>{{ 'global.upload.timeLimitExplanationText' | translate }}</span>
 			</div>
 			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[review.sport.toLowerCase()] && sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed">
-				<span>Our goal is to keep the analysis as focused as possible, so that other people can easily search and benefit from comments on your video. Having a focused analysis will also make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos. Please either:</span>
+				<span>{{ 'global.upload.timeLimitExplanationText2' | translate }}</span>
 				<ul>
-					<li>Use the slider above the select up to 5 minutes of video to use</li>
-					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">Double the speed</a> of the video to use up to 10 minutes of video. This is for now experimental and will only work if your video has less than 30 images per seconds (which is the case for most camera and phone videos, and the default for many video recording softwares)</li>
+					<li>{{ 'global.upload.timeLimiteReason1' | translate }}</li>
+					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.timeLimitReason2Link' | translate }}</a>{{ 'global.upload.timeLimiteReason2' | translate }}</li>
 				</ul>
 			</div>
 			<hr>
 		</div>
 		<div class="video-information panel-no-border" ng-class="plugins">
-			<h1>{{useVideo ? 'Video information' : 'New post'}}</h1>
+			<h1 ng-show="useVideo">{{ 'global.upload.newVideoHeadline' | translate }}</h1>
+			<h1 ng-hide="useVideo">{{ 'global.upload.newPostHeadline' | translate }}</h1>
 
 			<div class="container-fluid">
 				<div class="row" ng-hide="User.isLoggedIn()">
 					<div class="col-sm-12">
 						<div class="form-group" show-errors="{ showSuccess: true }">
-							<div class="alert alert-danger" role="alert" ng-show="uploadForm.author.$error.nameTaken"><span>This name is already in use, please pick another one, or <a ng-click="signIn()">sign in</a> if that's you</span></div>
-							<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="Your name" ng-required="!User.isLoggedIn()" ng-readonly="uploadInProgress">
+							<div class="alert alert-danger" role="alert" ng-show="uploadForm.author.$error.nameTaken"><span>{{ 'global.upload.nameTaken' | translate }}<a ng-click="signIn()">{{ 'global.upload.nameTakenLink' | translate }}</a>{{ 'global.upload.nameTaken2' | translate }}</span></div>
+							<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="{{ 'global.upload.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()" ng-readonly="uploadInProgress">
 						</div>
 				  	</div>
 			  	</div>
@@ -81,7 +82,7 @@
 					</div>
 					<div ng-class="{'col-sm-8': useVideo, 'col-sm-12': !useVideo}">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
-					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="Title {{useVideo ? 'of your video review' : ''}}" ng-required="true" ng-readonly="uploadInProgress">
+					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="uploadInProgress">
 					  	</div>
 				  	</div>
 			  	</div>
@@ -89,31 +90,28 @@
 					<div class="col-sm-12">
 					  	<div class="form-group">
 							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true">
-					    		<textarea class="form-control" rows="3" placeholder="Any remarks about what you want to improve" ng-model="review.text" ng-readonly="uploadInProgress" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
+					    		<textarea class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholder' | translate }}" ng-model="review.text" ng-readonly="uploadInProgress" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
 					    	</toolbar>
-					    	<textarea class="form-control" rows="3" placeholder="Any remarks {{useVideo ? 'about what you want to improve' : 'or comments'}}" ng-model="review.text" ng-readonly="uploadInProgress" comment-plugins="plugins" auto-grow ng-hide="useVideo"></textarea>
+					    	<textarea class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholderNoVideo' | translate }}" ng-model="review.text" ng-readonly="uploadInProgress" comment-plugins="plugins" auto-grow ng-hide="useVideo"></textarea>
 					   </div>
 					</div>
 					<div class="inline-block float-right show-help-buttons">
-					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
-						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
+						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
 					</div>
 			  	</div>
 				<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 				<div class="alert alert-info" role="alert" ng-show="hasTimestamps && review.beginning > 0">
-					<span>It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)</span>
+					<span>{{ 'global.upload.timestampTranslationInfo' | translate }}</span>
 				</div>
 				<div class="row video-tags">
 					<div class="col-xs-12 text-left">
 						<review-tags-input review-disabled="uploadInProgress" review="review"></review-tags-input>
-						<!--<tags-input ng-model="review.tags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false" ng-disabled="uploadInProgress">
-							<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
-						</tags-input>-->
 					</div>
 				</div>
 		  		<div class="row">
 					<div class="col-sm-2">
-			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration"  analytics-on="click" analytics-category="upload" analytics-event="upload.request"><span>{{useVideo ? 'Upload' : 'Post'}} now</span></button>
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration"  analytics-on="click" analytics-category="upload" analytics-event="upload.request"><span>{{ 'global.upload.timestampTranslationInfo' | translate }}</span></button>
 		  			</div>
 				</div>
 			</div>
@@ -121,8 +119,8 @@
 
 			<div ng-show="uploadInProgress" class="progress-group">
 				<div class="informationMessages">
-					<span ng-show="uploadProgress  < 100">Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(</span>
-					<span ng-show="uploadProgress  == 100">Finalizing your video. Depending on its size, it may take up to 5 minutes. Take some time to think about how you can help others get better too :)</span>
+					<span ng-show="uploadProgress  < 100">{{ 'global.upload.dontCloseWindowMessage' | translate }}</span>
+					<span ng-show="uploadProgress  == 100">{{ 'global.upload.finalizeVideoMessage' | translate }}</span>
 				</div>
 			    <div class="progress" style="position: relative; left: 0; top: 0">
 			        <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploadProgress  + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;">

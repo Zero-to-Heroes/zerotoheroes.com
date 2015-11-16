@@ -3,37 +3,37 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" ng-click="$hide()">&times;</button>
-				<h4 class="modal-title">Choose your coach</h4>
+				<h4 class="modal-title">{{ 'global.askPro.headline' | translate }}</h4>
 			</div>
 			<div class="modal-body .table-responsive">
 				
 				<table class="table coaches-table">
-					<caption>You can ask a professional coach / trainer to give you feedback on this video. Each coach may offer slightly different things, so be sure to check the <span class="glyphicon glyphicon-info-sign"></span> icon before making your choice</caption>
+					<caption>{{ 'global.askPro.tableCaption' | translate }}</caption>
 					<thead>
 						<tr>
-							<th>Name</th>
-							<th>Languages</th>
-							<th>Level</th>
-							<th>Price</th>
+							<th>{{ 'global.askPro.name' | translate }}</th>
+							<th>{{ 'global.askPro.languages' | translate }}</th>
+							<th>{{ 'global.askPro.level' | translate }}</th>
+							<th>{{ 'global.askPro.price' | translate }}</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr ng-repeat="coach in coaches">
 							<td class="vert-align text-nowrap">
-								<span class="wide-span">{{coach.name}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="We have verified the coach information is accurate"></span>
+								<span class="wide-span">{{coach.name}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="{{ 'global.askPro.verifiedInfo' | translate }}"></span>
 							</td>
 							<td class="vert-align">
 								<span ng-repeat="language in coach.languagesSpoken" class="lang-sm" lang="{{language.code}}"></span>
 							</td>
 							<td class="vert-align"><span>{{coach.level}}</span></td>
 							<td class="vert-align"><span class="wide-span">{{coach.tariff}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/tariffDescription.html"></span></td>
-							<td class="vert-align"><button type="button" class="btn btn-primary" data-animation="am-fade-and-scale" data-template-url="templates/confirmPro.html" bs-modal="modal" data-placement="center"><span>Request review</span></button></td>
+							<td class="vert-align"><button type="button" class="btn btn-primary" data-animation="am-fade-and-scale" data-template-url="templates/confirmPro.html" bs-modal="modal" data-placement="center"><span>{{ 'global.askPro.requestButton' | translate }}</span></button></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" ng-click="$hide()"><span>Close</span></button>
+				<button type="button" class="btn btn-default" ng-click="$hide()"><span>{{ 'global.askPro.closeButton' | translate }}</span></button>
 			</div>
 		</div>
 	</div>

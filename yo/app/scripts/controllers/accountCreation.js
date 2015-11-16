@@ -37,7 +37,8 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 			        function(error) {
 			            // Error handling
 			            console.log(error);
-	  					$scope.error = error.data.msg;
+	  					$scope.error = "error";
+	  					console.log($scope.error);
 			        }
 			    );
 			}

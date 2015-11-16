@@ -1,26 +1,25 @@
 <div class="container-fluid comment-block" ng-style="{'margin-left': indentation}">
 	<div class="reputation">
-		<span id="upvote{{commentIndex}}" class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': comment.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="upvoteComment(comment)" aria-hidden="true" title="Upvote this comment (you should do this if you feel the comment is valuable)" help-popup help-popup-key="commentVote" help-popup-active="{{commentIndex}}"></span>
+		<span id="upvote{{commentIndex}}" class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': comment.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="upvoteComment(comment)" aria-hidden="true" title="{{ 'global.review.comment.upvoteComment' | translate }}" help-popup help-popup-key="commentVote" help-popup-active="{{commentIndex}}"></span>
 		<span class="reputation-score glyphicon">{{comment.reputation.nbVotes.Upvote - comment.reputation.nbVotes.Downvote}}</span>
-		<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':comment.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteComment(comment)" aria-hidden="true" title="Downvote this comment (you should do this if you feel the comment is illegible, poorly formatted or doesn't bring anything to the discussion)"></span>
+		<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':comment.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteComment(comment)" aria-hidden="true" title="{{ 'global.review.comment.downvoteComment' | translate }}"></span>
 	</div>
 	<div class="comment-main">
 		<div class="comment-header">
 			<span class="author-information">
 				<span class="comment-author" ng-hide="comment.authorId">{{comment.author}}</span>
 				<a author-name class="comment-author" entity="comment" ng-show="comment.authorId"></a>
-				<!--<a class="comment-author logged-author" ng-show="comment.authorId"><span ng-class="comment.authorFrame" title="{{comment.authorFrame}}"></span>{{comment.author}}</a>-->
 				<span bs-tooltip data-title="{{comment.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="comment.authorId">{{comment.authorReputation ? comment.authorReputation : 0}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
 			</span>
 
 			<span title="{{formatExactDate(comment)}}"><small>{{formatDate(comment)}}</small></span>
 
 			<span ng-show="comment.id && canEdit(comment) && !comment.editing"> - </span>
-			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && canEdit(comment) && !comment.editing">Edit</a>
+			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && canEdit(comment) && !comment.editing">{{ 'global.review.comment.edit' | translate }}</a>
 			
 			<span ng-show="User.getName() == review.author && review.authorId"> - </span>
-			<a ng-click="toggleHelpful(comment)" class="validated" ng-show="comment.helpful"><span class="glyphicon glyphicon-ok"></span> Helped {{review.author}} </a>
-			<a ng-click="toggleHelpful(comment)" class="link-minor" ng-show="!comment.helpful && User.getName() == review.author && review.authorId"><span class="glyphicon glyphicon-ok"></span> Mark as helpful to me</a>
+			<a ng-click="toggleHelpful(comment)" class="validated" ng-show="comment.helpful"><span class="glyphicon glyphicon-ok"></span> {{ 'global.review.comment.helpedAuthor' | translate:'{name: review.author}' }} </a>
+			<a ng-click="toggleHelpful(comment)" class="link-minor" ng-show="!comment.helpful && User.getName() == review.author && review.authorId"><span class="glyphicon glyphicon-ok"></span> {{ 'global.review.comment.helpedMe' | translate }}</a>
 		</div>
 		<div class="comment-body">
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
@@ -31,24 +30,24 @@
 				</toolbar>
 				<textarea class="form-control" ng-model="comment.text" comment-plugins="plugins" auto-grow ng-hide="review.key"></textarea>
 				<div class="text-left comment-reply-buttons">
-					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs"><span>Update</span></button>
-					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs"><span>Cancel</span></button>
+					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
+					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
 				</div>
 				<div class="inline-block float-right">
-					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
-					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
+					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
 				</div>
 			</div>
 		</div>
 		<div class="comment-footer">
-			<a ng-click="startReply()" class="link-minor" ng-hide="reply.replying">Reply</a>
+			<a ng-click="startReply()" class="link-minor" ng-hide="reply.replying">{{ 'global.review.comment.replayButton' | translate }}</a>
 		</div>
 	</div>
 	<form ng-show="reply.replying" class="container-fluid reply-form" name="replyForm">
 		<div class="row">
 			<div class="col-md-2" ng-show="!User.isLoggedIn()">
 				<div class="form-group" show-errors="{ showSuccess: true }">
-					<input type="text" name="author" class="form-control comment-author" ng-model="reply.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
+					<input type="text" name="author" class="form-control comment-author" ng-model="reply.author" placeholder="{{ 'global.review.comment.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()">
 				</div>
 			</div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
@@ -62,12 +61,12 @@
 			<div class="col-md-2" ng-show="!User.isLoggedIn()"></div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 				<div class="inline-block">
-					<button ng-click="postReply()" class="btn btn-default btn-xs"><span>Reply</span></button>
-					<button ng-click="cancelReply()" class="btn btn-default btn-xs"><span>Cancel</span></button>
+					<button ng-click="postReply()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.replyButton' | translate }}</span></button>
+					<button ng-click="cancelReply()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
 				</div>
 				<div class="inline-block float-right">
-					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
-					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
+					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
 				</div>
 			</div>
 		</div>

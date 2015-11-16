@@ -98,14 +98,14 @@
 				</div>
 				<h3 class="comments-headline">{{ 'global.review.comment.commentsHeadline' | translate }}</h3>
 				<div class="comments-links">
-					<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed()" title="Click to be notified when a new comment is posted">Unsubscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-					<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed()" title="Click to stop receiving notifications when a new comment is posted">Subscribe <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-					<a class="link-minor link-nodeco" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="Get professional advice on your video">Ask a Pro</a>
+					<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed()" title="{{ 'global.review.comment.unsubscribeReviewTooltip' | translate }}">{{ 'global.review.comment.unsubscribeReview' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+					<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed()" title="{{ 'global.review.comment.subscribeReviewTooltip' | translate }}">{{ 'global.review.comment.subscribeReview' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+					<a class="link-minor link-nodeco" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="{{ 'global.review.comment.askProTooltip' | translate }}">{{ 'global.review.comment.askProButton' | translate }}</a>
 				</div>
 				<div class="container-fluid comment-block main-block" ng-show="!addingComment">
 					<div class="row">
 						<div class="col-md-10 adding-comment">
-							<textarea ng-click="addingComment = true" placeholder="Add a public comment" class="form-control textarea-button " rows="1"></textarea>
+							<textarea ng-click="addingComment = true" placeholder="{{ 'global.review.comment.addCommentButton' | translate }}" class="form-control textarea-button " rows="1"></textarea>
 						</div>
 					</div>
 				</div>
@@ -114,22 +114,22 @@
 						<div class="row">
 							<div class="col-md-2" ng-show="!User.isLoggedIn()">
 								<div class="form-group" show-errors="{ showSuccess: true }">
-									<input type="text" name="author" class="form-control comment-author" ng-model="newComment.author" placeholder="Your name" ng-required="!User.isLoggedIn()">
+									<input type="text" name="author" class="form-control comment-author" ng-model="newComment.author" placeholder="{{ 'global.review.comment.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()">
 								</div>
 							</div>
 							<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 								<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
-									<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control text-editing-area" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
+									<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control text-editing-area" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
-								<textarea placeholder="{{'Help ' + review.author + '?'}}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
+								<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
 								<div>
 									<div class="inline-block">
-										<button ng-click="addComment()" class="btn btn-default text-right"><span>Add comment</span></button>
-										<button ng-click="cancelComment()" class="btn btn-default text-right"><span>Cancel</span></button>
+										<button ng-click="addComment()" class="btn btn-default text-right"><span>{{ 'global.review.comment.confirmCommentButton' | translate }}</span></button>
+										<button ng-click="cancelComment()" class="btn btn-default text-right"><span>{{ 'global.review.comment.cancelCommentButton' | translate }}</span></button>
 									</div>
 									<div class="inline-block float-right">
-										<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">Show formatting help</a>
-										<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">Hide formatting help</a>
+										<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
+										<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
 									</div>
 								</div>
 							</div>

@@ -287,5 +287,8 @@
 			"latestFeaturesSubHeadline": "We have continued to add features since the last time you visited. We hope you'll like them!",
 			"contactUs": "Any comment or question? <a href=\"/s/meta\">Let us know!</a>"
 		}
+	},
+	"news": {
+		"news1": "Localized in French!"
 	}
 }

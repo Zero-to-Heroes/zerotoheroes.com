@@ -26,7 +26,7 @@
 			<h4>{{ 'global.welcome.latestFeatures' | translate }}<h4>
 			<p>{{ 'global.welcome.latestFeaturesSubHeadline' | translate }}</p>
 			<ul>
-				<li ng-repeat="feature in features">{{feature.date | date:yyyy-MM-dd}} - <span ng-bind-html="feature.description"></span></li>
+				<li ng-repeat="feature in features">{{feature.date | date:yyyy-MM-dd}} - <span translate="{{ 'news.' + feature.description | translate }}"></span></li> 
 				<li ng-show="bugfixes && bugfixes.length > 0">And <a ng-click="showBugfixes = !showBugfixes">various bug fixes <span class="caret"></span></a>
 					<ul ng-show="showBugfixes">
 						<li ng-repeat="bug in bugfixes">{{bug.date | date:yyyy-MM-dd}} - <span ng-bind-html="bug.description"></span></li>

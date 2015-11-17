@@ -152,15 +152,13 @@ app.config(['$translateProvider', '$windowProvider', function($translateProvider
 	  	// and return a language key
 		if (!$windowProvider.$get().localStorage.language) {
 			var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
-			if (lang && (S(lang).startsWith('fr') || S(lang).startsWith('en'))) {
+			console.log('language is ', lang);
+			if (lang && lang.slice(0, 2) == 'fr') {
 				console.log('browser language is ', lang);
-				$windowProvider.$get().localStorage.language = lang;
-				return lang;
+				$windowProvider.$get().localStorage.language = 'fr';
+				return 'fr';
 			}
 		}
-		// if (S(lang).startsWith('fr')) 
-		// 	return 'fr'
-	 //  	else 
 	  	return 'en';
 	});
 }]);

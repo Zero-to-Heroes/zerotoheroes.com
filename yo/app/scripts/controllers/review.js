@@ -60,6 +60,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 							angular.forEach($scope.review.tags, function(key) {
 								$rootScope.pageDescription += ' ' + key.text;
 								$scope.review.tagValues += ' ' + key.text;
+								key.sport = $scope.review.sport.key.toLowerCase();
 							})
 						}
 						$rootScope.pageDescription += '. ' + $scope.review.text;

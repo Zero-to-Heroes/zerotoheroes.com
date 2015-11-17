@@ -33,7 +33,7 @@
 						<div class="sport" ng-hide="sport">
 							<span class="label label-primary">{{video.sport.value}}</span>
 						</div>
-						<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false"></tags-input>
+						<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
 					</div>
 					<div class="col-sm-4 date-information">
 						<span title="{{formatExactDate(video)}}"><small>{{formatDate(video)}}</small></span>

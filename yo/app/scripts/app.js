@@ -150,12 +150,17 @@ app.config(['$translateProvider', '$windowProvider', function($translateProvider
 	$translateProvider.determinePreferredLanguage(function () {
 	  	// define a function to determine the language
 	  	// and return a language key
-	  	var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
-		console.log('browser language is ', lang);
+		if (!$windowProvider.$get().localStorage.language) {
+			var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
+			if (lang && (S(lang).startsWith('fr') || S(lang).startsWith('en'))) {
+				console.log('browser language is ', lang);
+				return lang;
+			}
+		}
 		// if (S(lang).startsWith('fr')) 
 		// 	return 'fr'
 	 //  	else 
-	  		return 'en';
+	  	return 'en';
 	});
 }]);
 

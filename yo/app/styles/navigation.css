@@ -54,6 +54,10 @@
   float: right;
 }
 
+.navbar .profile-menu {
+  display: inline-block;
+}
+
 nav .alert {
   position: absolute;
   right: 0;

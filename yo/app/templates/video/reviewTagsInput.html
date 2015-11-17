@@ -1,10 +1,6 @@
 <div ng-show="allowedTags && allowedTags.length > 0">
-	<tags-input ng-model="review.tags" placeholder="{{getTagsPlaceholder()}}" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false" min-tags="{{getMinTags()}}" ng-disabled="reviewDisabled" template="autocomplete-template"> 
-		<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20" template="autocomplete-template"></auto-complete>
+	<tags-input ng-model="review.tags" placeholder="{{getTagsPlaceholder()}}" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false" min-tags="{{getMinTags()}}" ng-disabled="reviewDisabled" template="templates/video/tagsTemplate.html"> 
+		<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20" template="templates/video/tagsTemplate.html"></auto-complete>
 	</tags-input>
 	<a href="/r/meta/561f7880e4b0e41639be51d0" target="_blank">{{ 'global.review.comment.missTagLink' | translate }}</a>
 </div>
-
-<script type="text/ng-template" id="autocomplete-template">
-	<span translate-default="{{data.text}}" translate="{{ 'tags.' + data.sport + '.' + data.text}}"></span>
-</script>

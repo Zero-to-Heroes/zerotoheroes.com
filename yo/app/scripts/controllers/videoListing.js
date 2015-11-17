@@ -86,6 +86,12 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 					$scope.countVideoComments(data.reviews[i]);
 					$scope.hasHelpfulComments(data.reviews[i]);
 
+					if (data.reviews[i].tags) {
+						data.reviews[i].tags.forEach(function(tag) {
+							tag.sport = data.reviews[i].sport.key.toLowerCase();
+						})
+					}
+
 				};
 				$scope.range = $scope.getRange();
 

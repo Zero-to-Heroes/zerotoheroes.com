@@ -97,7 +97,7 @@ function getCard(cardName) {
 		//console.log('\tcardimage is', card.cardimage);
 		//console.log('\tis equal', card.name, cardName, card.name == cardName);
 		// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
-		if (card.name.toLowerCase() == cardName.toLowerCase() && card.type != 'Hero') {
+		if (card.name.toLowerCase() == cardName.toLowerCase() && card.type != 'Hero' && card.id.toUpperCase() == card.id) {
 			if (card.set == 'Basic') {
 				card.rarity = 'Free';
 			}
@@ -155,7 +155,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 15.",
         "fr": {
-            "name": "GuÃƒÂ©rison ancestrale"
+            "name": "Guérison ancestrale"
         },
         "flavor": "I personally prefer some non-ancestral right-the-heck-now healing, but maybe that is just me.",
         "playerClass": "Shaman",
@@ -309,7 +309,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Faucheuse en arcanite"
         },
-        "flavor": "NoÃ¢â‚¬Â¦ actually you should fear the Reaper.",
+        "flavor": "No… actually you should fear the Reaper.",
         "playerClass": "Warrior",
         "attack": 5,
         "faction": "Neutral",
@@ -352,7 +352,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nGain 2 Armor.",
         "type": "Hero Power",
         "fr": {
-            "name": "Gain dÃ¢â‚¬â„¢armure !"
+            "name": "Gain d’armure !"
         },
         "rarity": "Free"
     },
@@ -366,7 +366,7 @@ var jsonDatabase = [
         "type": "Weapon",
         "howToGetGold": "Unlocked at Level 32.",
         "fr": {
-            "name": "Lame dÃ¢â‚¬â„¢assassin"
+            "name": "Lame d’assassin"
         },
         "flavor": "Guaranteed to have been owned by a real assassin.   Certificate of authenticity included.",
         "playerClass": "Rogue",
@@ -408,7 +408,7 @@ var jsonDatabase = [
         "text": "<i>You lost the coin flip, but gained a friend.</i>",
         "type": "Minion",
         "fr": {
-            "name": "Avatar de la piÃƒÂ¨ce"
+            "name": "Avatar de la pièce"
         },
         "rarity": "Free"
     },
@@ -451,7 +451,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 49.",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction des rois"
+            "name": "Bénédiction des rois"
         },
         "flavor": "Given the number of kings who have been assassinated, are you sure you want their blessing?",
         "playerClass": "Paladin",
@@ -470,7 +470,7 @@ var jsonDatabase = [
         "text": "+4/+4.",
         "type": "Enchantment",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction des rois"
+            "name": "Bénédiction des rois"
         }
     },
     {
@@ -482,7 +482,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 45.",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction de puissance"
+            "name": "Bénédiction de puissance"
         },
         "flavor": "\"As in, you MIGHT want to get out of my way.\" - Toad Mackle, recently buffed.",
         "playerClass": "Paladin",
@@ -502,7 +502,7 @@ var jsonDatabase = [
         "text": "+3 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction de puissance"
+            "name": "Bénédiction de puissance"
         }
     },
     {
@@ -703,7 +703,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Warrior Level 55.",
         "fr": {
-            "name": "YÃƒÂ©ti noroÃƒÂ®t"
+            "name": "Yéti noroît"
         },
         "flavor": "He always dreamed of coming down from the mountains and opening a noodle shop, but he never got the nerve.",
         "attack": 4,
@@ -769,9 +769,9 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 40.",
         "fr": {
-            "name": "EnchaÃƒÂ®nement"
+            "name": "Enchaînement"
         },
-        "flavor": "Hey you twoÃ¢â‚¬Â¦could you stand next to each other for a secondÃ¢â‚¬Â¦",
+        "flavor": "Hey you two…could you stand next to each other for a second…",
         "playerClass": "Warrior",
         "faction": "Neutral",
         "name": "Cleave",
@@ -788,7 +788,7 @@ var jsonDatabase = [
         "text": "+1/+1.",
         "type": "Enchantment",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction du clerc"
+            "name": "Bénédiction du clerc"
         }
     },
     {
@@ -798,7 +798,7 @@ var jsonDatabase = [
         "text": "Going second makes your first minion stronger.",
         "type": "Enchantment",
         "fr": {
-            "name": "Vengeance de la piÃƒÂ¨ce"
+            "name": "Vengeance de la pièce"
         }
     },
     {
@@ -808,7 +808,7 @@ var jsonDatabase = [
         "text": "Going second makes your first minion stronger.",
         "type": "Enchantment",
         "fr": {
-            "name": "Vengeance de la piÃƒÂ¨ce"
+            "name": "Vengeance de la pièce"
         }
     },
     {
@@ -820,7 +820,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 43.",
         "fr": {
-            "name": "ConsÃƒÂ©cration"
+            "name": "Consécration"
         },
         "flavor": "Consecrated ground glows with Holy energy.  But it smells a little, too.",
         "playerClass": "Paladin",
@@ -844,7 +844,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Chien du Magma"
         },
-        "flavor": "You donÃ¢â‚¬â„¢t tame a Core Hound. You just train it to eat someone else before it eats you.",
+        "flavor": "You don’t tame a Core Hound. You just train it to eat someone else before it eats you.",
         "attack": 9,
         "name": "Core Hound",
         "id": "CS2_201",
@@ -892,7 +892,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nEquip a 1/2 Dagger.",
         "type": "Hero Power",
         "fr": {
-            "name": "MaÃƒÂ®trise des dagues"
+            "name": "Maîtrise des dagues"
         },
         "rarity": "Free"
     },
@@ -932,7 +932,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Priest Level 55.",
         "fr": {
-            "name": "Soigneuse sombrÃƒÂ©caille"
+            "name": "Soigneuse sombrécaille"
         },
         "flavor": "Healing is just something she does in her free time.  It's more of a hobby really.",
         "attack": 4,
@@ -1015,7 +1015,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Mage Level 53.",
         "fr": {
-            "name": "MÃƒÂ©cano de petit dragon"
+            "name": "Mécano de petit dragon"
         },
         "flavor": "She is still working on installing the rocket launcher add-on for Mr. Bitey.",
         "attack": 2,
@@ -1059,7 +1059,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Level 23.",
         "fr": {
-            "name": "Infernal de lÃ¢â‚¬â„¢effroi"
+            "name": "Infernal de l’effroi"
         },
         "flavor": "\"INFERNOOOOOOOOOO!\" - Jaraxxus, Eredar Lord of the Burning Legion",
         "playerClass": "Warlock",
@@ -1084,7 +1084,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Druid Level 57.",
         "fr": {
-            "name": "ArchÃƒÂ¨re elfe"
+            "name": "Archère elfe"
         },
         "flavor": "Don't bother asking her out on a date.  She'll shoot you down.",
         "attack": 1,
@@ -1101,7 +1101,7 @@ var jsonDatabase = [
         "text": "Raid Leader is granting this minion +1 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "AmÃƒÂ©lioration"
+            "name": "Amélioration"
         }
     },
     {
@@ -1114,7 +1114,7 @@ var jsonDatabase = [
         "text": "Draw a card. <i>(You can only have 10 Mana in your tray.)</i>",
         "type": "Spell",
         "fr": {
-            "name": "ExcÃƒÂ¨s de mana"
+            "name": "Excès de mana"
         }
     },
     {
@@ -1126,7 +1126,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 47.",
         "fr": {
-            "name": "ExÃƒÂ©cution"
+            "name": "Exécution"
         },
         "flavor": "It's okay, he deserved it.",
         "playerClass": "Warrior",
@@ -1145,7 +1145,7 @@ var jsonDatabase = [
         "text": "Leokk is granting this minion +1 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ã…â€™il cÃƒÂ©leste"
+            "name": "Œil céleste"
         }
     },
     {
@@ -1157,7 +1157,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 29.",
         "fr": {
-            "name": "Ãƒâ€°ventail de couteaux"
+            "name": "Éventail de couteaux"
         },
         "flavor": "I wouldn't say I LOVE knives, but I'm definitely a fan.",
         "playerClass": "Rogue",
@@ -1178,7 +1178,7 @@ var jsonDatabase = [
         "type": "Weapon",
         "howToGetGold": "Unlocked at Level 49.",
         "fr": {
-            "name": "Hache de guerre embrasÃƒÂ©e"
+            "name": "Hache de guerre embrasée"
         },
         "flavor": "During times of tranquility and harmony, this weapon was called by its less popular name, Chilly Peace Axe.",
         "playerClass": "Warrior",
@@ -1202,7 +1202,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Level 49.",
         "fr": {
-            "name": "Ãƒâ€°lÃƒÂ©mentaire de feu"
+            "name": "Élémentaire de feu"
         },
         "flavor": "He can never take a bath. Ewww.",
         "playerClass": "Shaman",
@@ -1386,7 +1386,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 40.",
         "fr": {
-            "name": "Ãƒâ€°clair de givre"
+            "name": "Éclair de givre"
         },
         "flavor": "It is customary to yell \"Chill out!\" or \"Freeze!\" or \"Ice ice, baby!\" when you play this card.",
         "playerClass": "Mage",
@@ -1404,7 +1404,7 @@ var jsonDatabase = [
         "text": "Increased stats.",
         "type": "Enchantment",
         "fr": {
-            "name": "BanniÃƒÂ¨re loup-de-givre"
+            "name": "Bannière loup-de-givre"
         }
     },
     {
@@ -1515,7 +1515,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Paladin Level 57.",
         "fr": {
-            "name": "Soldat de ComtÃƒÂ©-de-lÃ¢â‚¬â„¢Or"
+            "name": "Soldat de Comté-de-l’Or"
         },
         "flavor": "If 1/2 minions are all that is defending Goldshire, you would think it would have been overrun years ago.",
         "attack": 1,
@@ -1536,9 +1536,9 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Warlock Level 53.",
         "fr": {
-            "name": "Oracle sinistrÃƒÂ©caille"
+            "name": "Oracle sinistrécaille"
         },
-        "flavor": "These are the brainy murlocs.  It turns out that doesnÃ¢â‚¬â„¢t mean much.",
+        "flavor": "These are the brainy murlocs.  It turns out that doesn’t mean much.",
         "attack": 1,
         "faction": "Neutral",
         "name": "Grimscale Oracle",
@@ -1561,7 +1561,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Gardien des rois"
         },
-        "flavor": "Holy beings from the beyond are so clichÃƒÂ©!",
+        "flavor": "Holy beings from the beyond are so cliché!",
         "playerClass": "Paladin",
         "attack": 5,
         "faction": "Neutral",
@@ -1582,7 +1582,7 @@ var jsonDatabase = [
         "id": "HERO_07",
         "type": "Hero",
         "fr": {
-            "name": "GulÃ¢â‚¬â„¢dan"
+            "name": "Gul’dan"
         },
         "rarity": "Free"
     },
@@ -1637,7 +1637,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Main de protection"
         },
-        "flavor": "This spell has been renamed so many times, even paladins donÃ¢â‚¬â„¢t know what it should be called anymore.",
+        "flavor": "This spell has been renamed so many times, even paladins don’t know what it should be called anymore.",
         "playerClass": "Paladin",
         "faction": "Neutral",
         "name": "Hand of Protection",
@@ -1672,7 +1672,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 15.",
         "fr": {
-            "name": "Toucher guÃƒÂ©risseur"
+            "name": "Toucher guérisseur"
         },
         "flavor": "8 Health, no waiting.",
         "playerClass": "Druid",
@@ -1712,7 +1712,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 15.",
         "fr": {
-            "name": "Frappe hÃƒÂ©roÃƒÂ¯que"
+            "name": "Frappe héroïque"
         },
         "flavor": "Really, if you're a hero, this is <i>every</i> strike.",
         "playerClass": "Warrior",
@@ -1734,7 +1734,7 @@ var jsonDatabase = [
         "text": "+4 Attack this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "Frappe hÃƒÂ©roÃƒÂ¯que"
+            "name": "Frappe héroïque"
         }
     },
     {
@@ -1746,7 +1746,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 47.",
         "fr": {
-            "name": "MalÃƒÂ©fice"
+            "name": "Maléfice"
         },
         "flavor": "If you Hex a Murloc... it really isn't much of a change, is it?",
         "playerClass": "Shaman",
@@ -1768,7 +1768,7 @@ var jsonDatabase = [
         "text": "This minion has been transformed!",
         "type": "Enchantment",
         "fr": {
-            "name": "MalÃƒÂ©ficiÃƒÂ©"
+            "name": "Maléficié"
         }
     },
     {
@@ -1780,7 +1780,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 15.",
         "fr": {
-            "name": "LumiÃƒÂ¨re sacrÃƒÂ©e"
+            "name": "Lumière sacrée"
         },
         "flavor": "If you are often bathed in Holy Light, you should consider wearing sunscreen.",
         "playerClass": "Paladin",
@@ -1800,7 +1800,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 45.",
         "fr": {
-            "name": "Nova sacrÃƒÂ©e"
+            "name": "Nova sacrée"
         },
         "flavor": "If the Holy Light forsakes you, good luck casting this spell.  Also, you're probably a jerk.",
         "playerClass": "Priest",
@@ -1820,7 +1820,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 23.",
         "fr": {
-            "name": "ChÃƒÂ¢timent sacrÃƒÂ©"
+            "name": "Châtiment sacré"
         },
         "flavor": "It doesn't matter how pious you are.  Everyone needs a good smiting now and again.",
         "playerClass": "Priest",
@@ -1844,7 +1844,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Level 28.",
         "fr": {
-            "name": "MaÃƒÂ®tre-chien"
+            "name": "Maître-chien"
         },
         "flavor": "\"Who let the dogs out?\" he asks.  It's rhetorical.",
         "playerClass": "Hunter",
@@ -1886,7 +1886,7 @@ var jsonDatabase = [
         "text": "Attack has been changed to 1.",
         "type": "Enchantment",
         "fr": {
-            "name": "HumilitÃƒÂ©"
+            "name": "Humilité"
         }
     },
     {
@@ -1898,7 +1898,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 28.",
         "fr": {
-            "name": "HumilitÃƒÂ©"
+            "name": "Humilité"
         },
         "flavor": "This card makes something really damp.  Oh wait.  That's \"Humidity.\"",
         "playerClass": "Paladin",
@@ -1973,7 +1973,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Level 49.",
         "fr": {
-            "name": "Protecteur Ãƒâ€°corcefer"
+            "name": "Protecteur Écorcefer"
         },
         "flavor": "I <i>dare</i> you to attack Darnassus.",
         "playerClass": "Druid",
@@ -2080,7 +2080,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Warlock Level 59.",
         "fr": {
-            "name": "GÃƒÂ©omancien kobold"
+            "name": "Géomancien kobold"
         },
         "flavor": "In the old days, Kobolds were the finest candle merchants in the land. Then they got pushed too far...",
         "attack": 2,
@@ -2103,7 +2103,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Level 44.",
         "fr": {
-            "name": "Soldat dÃ¢â‚¬â„¢ÃƒÂ©lite korÃ¢â‚¬â„¢kron"
+            "name": "Soldat d’élite kor’kron"
         },
         "flavor": "The Kor'kron are the elite forces of Garrosh Hellscream. Let's just say you don't want to run into these guys while wearing a blue tabard.",
         "playerClass": "Warrior",
@@ -2142,7 +2142,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nRestore #2 Health.",
         "type": "Hero Power",
         "fr": {
-            "name": "Soins infÃƒÂ©rieurs"
+            "name": "Soins inférieurs"
         },
         "rarity": "Free"
     },
@@ -2171,7 +2171,7 @@ var jsonDatabase = [
         "type": "Weapon",
         "howToGetGold": "Unlocked at Level 36.",
         "fr": {
-            "name": "Justice de la LumiÃƒÂ¨re"
+            "name": "Justice de la Lumière"
         },
         "flavor": "Prince Malchezaar was a collector of rare weapons. He'd animate them and have them dance for him.",
         "playerClass": "Paladin",
@@ -2195,7 +2195,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Priest Level 59.",
         "fr": {
-            "name": "Seigneur de lÃ¢â‚¬â„¢arÃƒÂ¨ne"
+            "name": "Seigneur de l’arène"
         },
         "flavor": "He used to be a 2100+ rated arena player, but that was years ago and nobody can get him to shut up about it.",
         "attack": 6,
@@ -2212,7 +2212,7 @@ var jsonDatabase = [
         "text": "Going second grants you increased Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Chance de la piÃƒÂ¨ce"
+            "name": "Chance de la pièce"
         }
     },
     {
@@ -2225,7 +2225,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Shaman Level 51.",
         "fr": {
-            "name": "EnragÃƒÂ© du magma"
+            "name": "Enragé du magma"
         },
         "flavor": "He likes to think he is powerful, but pretty much anyone can solo Molten Core now.",
         "attack": 5,
@@ -2287,7 +2287,7 @@ var jsonDatabase = [
         "text": "+2/+2 and <b>Taunt</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "PrÃƒÂ©sence du maÃƒÂ®tre"
+            "name": "Présence du maître"
         }
     },
     {
@@ -2302,7 +2302,7 @@ var jsonDatabase = [
         "id": "EX1_025t",
         "type": "Minion",
         "fr": {
-            "name": "Petit dragon mÃƒÂ©canique"
+            "name": "Petit dragon mécanique"
         },
         "rarity": "Common"
     },
@@ -2345,7 +2345,7 @@ var jsonDatabase = [
         "text": "This minion has switched controllers.",
         "type": "Enchantment",
         "fr": {
-            "name": "ContrÃƒÂ´le mental"
+            "name": "Contrôle mental"
         },
         "rarity": "Common"
     },
@@ -2354,11 +2354,11 @@ var jsonDatabase = [
         "cost": 10,
         "collectible": true,
         "set": "Basic",
-        "artist": "Sean OÃ¢â‚¬â„¢Daniels",
+        "artist": "Sean O’Daniels",
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 49.",
         "fr": {
-            "name": "ContrÃƒÂ´le mental"
+            "name": "Contrôle mental"
         },
         "flavor": "Nominated as \"Spell Most Likely to Make Your Opponent Punch the Wall.\"",
         "playerClass": "Priest",
@@ -2378,7 +2378,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 32.",
         "fr": {
-            "name": "Vision tÃƒÂ©lÃƒÂ©pathique"
+            "name": "Vision télépathique"
         },
         "flavor": "I see what you did there.",
         "playerClass": "Priest",
@@ -2468,7 +2468,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 40.",
         "fr": {
-            "name": "Ãƒâ€°clat lunaire"
+            "name": "Éclat lunaire"
         },
         "flavor": "\"Cast Moonfire, and never stop.\" - How to Be a Druid, Chapter 5, Section 3",
         "playerClass": "Druid",
@@ -2508,7 +2508,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 36.",
         "fr": {
-            "name": "FlÃƒÂ¨ches multiples"
+            "name": "Flèches multiples"
         },
         "flavor": "You see, it's all about <i>throughput</i>.",
         "playerClass": "Hunter",
@@ -2530,7 +2530,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Priest Level 51.",
         "fr": {
-            "name": "Ãƒâ€°cumeur murloc"
+            "name": "Écumeur murloc"
         },
         "flavor": "Mrrraggglhlhghghlgh, mrgaaag blarrghlgaahahl mrgggg glhalhah a bghhll graggmgmg Garrosh mglhlhlh mrghlhlhl!!",
         "attack": 2,
@@ -2551,7 +2551,7 @@ var jsonDatabase = [
         "id": "EX1_506a",
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°claireur murloc"
+            "name": "Éclaireur murloc"
         },
         "rarity": "Common"
     },
@@ -2569,7 +2569,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Rogue Level 53.",
         "fr": {
-            "name": "Chasse-marÃƒÂ©e murloc"
+            "name": "Chasse-marée murloc"
         },
         "flavor": "\"Death will rise, from the tides!\"",
         "attack": 2,
@@ -2628,7 +2628,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Level 40.",
         "fr": {
-            "name": "Clerc de ComtÃƒÂ©-du-Nord"
+            "name": "Clerc de Comté-du-Nord"
         },
         "flavor": "They help the downtrodden and distressed.  Also they sell cookies.",
         "playerClass": "Priest",
@@ -2652,9 +2652,9 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Druid Level 59.",
         "fr": {
-            "name": "IngÃƒÂ©nieur novice"
+            "name": "Ingénieur novice"
         },
-        "flavor": "\"Half of this class will not graduateÃ¢â‚¬Â¦ since they'll have been turned to chickens.\" - Tinkmaster Overspark, teaching Gizmos 101.",
+        "flavor": "\"Half of this class will not graduate… since they'll have been turned to chickens.\" - Tinkmaster Overspark, teaching Gizmos 101.",
         "attack": 1,
         "faction": "Alliance",
         "name": "Novice Engineer",
@@ -2673,7 +2673,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Druid Level 51.",
         "fr": {
-            "name": "Gueule dÃ¢â‚¬â„¢acier des oasis"
+            "name": "Gueule d’acier des oasis"
         },
         "flavor": "His dreams of flying and breathing fire like his idol will never be realized.",
         "attack": 2,
@@ -2716,7 +2716,7 @@ var jsonDatabase = [
         "text": "This minion has been transformed into a 1/1 Sheep.",
         "type": "Enchantment",
         "fr": {
-            "name": "MÃƒÂ©tamorphose"
+            "name": "Métamorphose"
         },
         "rarity": "Common"
     },
@@ -2729,7 +2729,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 47.",
         "fr": {
-            "name": "MÃƒÂ©tamorphose"
+            "name": "Métamorphose"
         },
         "flavor": "There was going to be a pun in this flavor text, but it just came out baa-d.",
         "playerClass": "Mage",
@@ -2829,7 +2829,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Shaman Level 59.",
         "fr": {
-            "name": "MissiliÃƒÂ¨re tÃƒÂ©mÃƒÂ©raire"
+            "name": "Missilière téméraire"
         },
         "flavor": "One Insane Rocketeer.   One Rocket full of Explosives.   Infinite Fun.",
         "attack": 5,
@@ -2880,7 +2880,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Druid Level 55.",
         "fr": {
-            "name": "Crocilisque des riviÃƒÂ¨res"
+            "name": "Crocilisque des rivières"
         },
         "flavor": "Edward \"Lefty\" Smith tried to make luggage out of a river crocolisk once.",
         "attack": 2,
@@ -3025,7 +3025,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Rogue Level 59.",
         "fr": {
-            "name": "MaÃƒÂ®tre-bouclier de SenÃ¢â‚¬â„¢jin"
+            "name": "Maître-bouclier de Sen’jin"
         },
         "flavor": "Sen'jin Villiage is nice, if you like trolls and dust.",
         "attack": 3,
@@ -3044,9 +3044,9 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 47.",
         "fr": {
-            "name": "Trait de lÃ¢â‚¬â„¢ombre"
+            "name": "Trait de l’ombre"
         },
-        "flavor": "ItÃ¢â‚¬â„¢s a Bolt.   Its made out of Shadow.   What more do you need to know!",
+        "flavor": "It’s a Bolt.   Its made out of Shadow.   What more do you need to know!",
         "playerClass": "Warlock",
         "faction": "Neutral",
         "name": "Shadow Bolt",
@@ -3064,7 +3064,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 43.",
         "fr": {
-            "name": "Mot de lÃ¢â‚¬â„¢ombre : Mort"
+            "name": "Mot de l’ombre : Mort"
         },
         "flavor": "If you miss, it leaves a lightning-bolt-shaped scar on your target.",
         "playerClass": "Priest",
@@ -3083,7 +3083,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 36.",
         "fr": {
-            "name": "Mot de lÃ¢â‚¬â„¢ombre : Douleur"
+            "name": "Mot de l’ombre : Douleur"
         },
         "flavor": "A step up from a spell cast by many beginning acolytes: \"Shadow Word: Annoy\".",
         "playerClass": "Priest",
@@ -3119,7 +3119,7 @@ var jsonDatabase = [
         "text": "+1 Attack this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "AiguisÃƒÂ©"
+            "name": "Aiguisé"
         }
     },
     {
@@ -3135,9 +3135,9 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Priest Level 53.",
         "fr": {
-            "name": "Clerc du Soleil brisÃƒÂ©"
+            "name": "Clerc du Soleil brisé"
         },
-        "flavor": "They always have a spare flask of Sunwell Energy DrinkÃ¢â€žÂ¢!",
+        "flavor": "They always have a spare flask of Sunwell Energy Drink™!",
         "attack": 3,
         "faction": "Neutral",
         "name": "Shattered Sun Cleric",
@@ -3170,7 +3170,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 28.",
         "fr": {
-            "name": "MaÃƒÂ®trise du blocage"
+            "name": "Maîtrise du blocage"
         },
         "flavor": "Shields were invented because Face Block is USELESS.",
         "playerClass": "Warrior",
@@ -3212,7 +3212,7 @@ var jsonDatabase = [
         "id": "CS2_101t",
         "type": "Minion",
         "fr": {
-            "name": "Recrue de la Main dÃ¢â‚¬â„¢argent"
+            "name": "Recrue de la Main d’argent"
         },
         "rarity": "Free"
     },
@@ -3230,7 +3230,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Warrior Level 53.",
         "fr": {
-            "name": "Patriarche dos-argentÃƒÂ©"
+            "name": "Patriarche dos-argenté"
         },
         "flavor": "He likes to act like he's in charge, but the silverback matriarch actually runs things.",
         "attack": 1,
@@ -3285,7 +3285,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 28.",
         "fr": {
-            "name": "Feu de lÃ¢â‚¬â„¢ÃƒÂ¢me"
+            "name": "Feu de l’âme"
         },
         "flavor": "Are you lighting a soul on fire? Or burning someone with your OWN soul? This seems like an important distinction.",
         "playerClass": "Warlock",
@@ -3347,7 +3347,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Level 47.",
         "fr": {
-            "name": "Busard affamÃƒÂ©"
+            "name": "Busard affamé"
         },
         "flavor": "If you feed him, he loses his whole <i>identity</i>.",
         "playerClass": "Hunter",
@@ -3370,7 +3370,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal $2 damage to the enemy hero.",
         "type": "Hero Power",
         "fr": {
-            "name": "Tir assurÃƒÂ©"
+            "name": "Tir assuré"
         },
         "rarity": "Free"
     },
@@ -3520,7 +3520,7 @@ var jsonDatabase = [
         "cost": 4,
         "collectible": true,
         "set": "Basic",
-        "artist": "Sean OÃ¢â‚¬â„¢Daniels",
+        "artist": "Sean O’Daniels",
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 47.",
         "fr": {
@@ -3543,7 +3543,7 @@ var jsonDatabase = [
         "text": "Gain 1 Mana Crystal this turn only.",
         "type": "Spell",
         "fr": {
-            "name": "La piÃƒÂ¨ce"
+            "name": "La pièce"
         }
     },
     {
@@ -3552,7 +3552,7 @@ var jsonDatabase = [
         "id": "GAME_005e",
         "type": "Enchantment",
         "fr": {
-            "name": "La piÃƒÂ¨ce"
+            "name": "La pièce"
         }
     },
     {
@@ -3607,7 +3607,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon a random Totem.",
         "type": "Hero Power",
         "fr": {
-            "name": "Appel totÃƒÂ©mique"
+            "name": "Appel totémique"
         },
         "rarity": "Free"
     },
@@ -3619,7 +3619,7 @@ var jsonDatabase = [
         "text": "+2 Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Puissance totÃƒÂ©mique"
+            "name": "Puissance totémique"
         }
     },
     {
@@ -3631,7 +3631,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 28.",
         "fr": {
-            "name": "Puissance totÃƒÂ©mique"
+            "name": "Puissance totémique"
         },
         "flavor": "Totem-stomping is no longer recommended.",
         "playerClass": "Shaman",
@@ -3718,7 +3718,7 @@ var jsonDatabase = [
         "id": "HERO_04",
         "type": "Hero",
         "fr": {
-            "name": "Uther le Porteur de LumiÃƒÂ¨re"
+            "name": "Uther le Porteur de Lumière"
         },
         "rarity": "Free"
     },
@@ -3742,7 +3742,7 @@ var jsonDatabase = [
         "cost": 6,
         "collectible": true,
         "set": "Basic",
-        "artist": "Sean OÃ¢â‚¬â„¢Daniels",
+        "artist": "Sean O’Daniels",
         "type": "Spell",
         "howToGetGold": "Unlocked at Level 23.",
         "fr": {
@@ -3861,7 +3861,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked at Level 49.",
         "fr": {
-            "name": "Ãƒâ€°lÃƒÂ©mentaire dÃ¢â‚¬â„¢eau"
+            "name": "Élémentaire d’eau"
         },
         "flavor": "Don't summon a water elemental at a party.  It'll dampen the mood.",
         "playerClass": "Mage",
@@ -4009,7 +4009,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Totem de courroux de lÃ¢â‚¬â„¢air"
+            "name": "Totem de courroux de l’air"
         },
         "playerClass": "Shaman",
         "attack": 0,
@@ -4029,7 +4029,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "Gueule-dÃ¢â‚¬â„¢acide"
+            "name": "Gueule-d’acide"
         },
         "flavor": "With the help of his trusty sidekick Dreadscale, the giant jormungar Acidmaw is ready to face any knight!",
         "playerClass": "Hunter",
@@ -4048,7 +4048,7 @@ var jsonDatabase = [
         "text": "+1 Attack and <b>Charge</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "Aubaine dÃ¢â‚¬â„¢Alexstrasza"
+            "name": "Aubaine d’Alexstrasza"
         }
     },
     {
@@ -4063,7 +4063,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Championne dÃ¢â‚¬â„¢Alexstrasza"
+            "name": "Championne d’Alexstrasza"
         },
         "flavor": "\"Put more spikes on her.  No, more spikes.  What part of 'more spikes' do you not understand?  MORE SPIKES!\" - Alexstrasza",
         "playerClass": "Warrior",
@@ -4118,7 +4118,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "AnubÃ¢â‚¬â„¢arak"
+            "name": "Anub’arak"
         },
         "flavor": "Was actually a pretty nice guy before, you know, the whole Lich King thing.",
         "playerClass": "Rogue",
@@ -4137,7 +4137,7 @@ var jsonDatabase = [
         "artist": "Gabor Szikszai",
         "type": "Spell",
         "fr": {
-            "name": "DÃƒÂ©flagration des Arcanes"
+            "name": "Déflagration des Arcanes"
         },
         "flavor": "Now with 100% more blast!",
         "playerClass": "Mage",
@@ -4159,7 +4159,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Cavalier dÃ¢â‚¬â„¢Argent"
+            "name": "Cavalier d’Argent"
         },
         "flavor": "His horse's name is Betsy.",
         "attack": 2,
@@ -4180,7 +4180,7 @@ var jsonDatabase = [
         ],
         "type": "Weapon",
         "fr": {
-            "name": "Lance dÃ¢â‚¬â„¢Argent"
+            "name": "Lance d’Argent"
         },
         "flavor": "The stripes make it look like a candy cane, but we recommend against licking it.",
         "playerClass": "Paladin",
@@ -4202,7 +4202,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Guetteur dÃ¢â‚¬â„¢Argent"
+            "name": "Guetteur d’Argent"
         },
         "flavor": "Who argent watches the Argent Watchman?",
         "attack": 2,
@@ -4224,7 +4224,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Cheval de guerre cuirassÃƒÂ©"
+            "name": "Cheval de guerre cuirassé"
         },
         "flavor": "Yep.  It's a horse... wearing armor... going to war.",
         "attack": 5,
@@ -4281,7 +4281,7 @@ var jsonDatabase = [
         "artist": "Skan Srisuwan",
         "type": "Spell",
         "fr": {
-            "name": "Boule dÃ¢â‚¬â„¢araignÃƒÂ©es"
+            "name": "Boule d’araignées"
         },
         "flavor": "\"THEY'RE EVERYWHERE GET THEM OFF!!!\" - Everyone",
         "playerClass": "Hunter",
@@ -4331,7 +4331,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "PiÃƒÂ¨ge ÃƒÂ  ours"
+            "name": "Piège à ours"
         },
         "flavor": "You'll never guess what's in that conveniently bear-sized, bear-smelling box.",
         "playerClass": "Hunter",
@@ -4348,7 +4348,7 @@ var jsonDatabase = [
         "artist": "Daren Bader",
         "type": "Spell",
         "fr": {
-            "name": "EmbusquÃƒÂ©"
+            "name": "Embusqué"
         },
         "flavor": "Can you hold these eggs for just a second?  I promise they're not full of giant enraged undead spider things.",
         "playerClass": "Rogue",
@@ -4384,7 +4384,7 @@ var jsonDatabase = [
         "health": 9,
         "type": "Minion",
         "fr": {
-            "name": "Bolf BÃƒÂ©lier-Frondeur"
+            "name": "Bolf Bélier-Frondeur"
         },
         "flavor": "Bolf keeps coming in 2nd at the Grand Tournament.  It might be his year this year, if Lebron doesn't enter.",
         "elite": true,
@@ -4419,7 +4419,7 @@ var jsonDatabase = [
         "text": "+2/+2.",
         "type": "Enchantment",
         "fr": {
-            "name": "RenforcÃƒÂ©"
+            "name": "Renforcé"
         }
     },
     {
@@ -4434,7 +4434,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Lieutenant de la garde dÃ¢â‚¬â„¢os"
+            "name": "Lieutenant de la garde d’os"
         },
         "flavor": "Underneath all that impressive armor, he's just skin and bones.  Okay, maybe just bones.",
         "attack": 3,
@@ -4450,7 +4450,7 @@ var jsonDatabase = [
         "text": "Increased Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Garde dÃ¢â‚¬â„¢os"
+            "name": "Garde d’os"
         }
     },
     {
@@ -4465,7 +4465,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Brave archÃƒÂ¨re"
+            "name": "Brave archère"
         },
         "flavor": "This is a \"bearly\" concealed reference.",
         "playerClass": "Hunter",
@@ -4530,7 +4530,7 @@ var jsonDatabase = [
         "text": "Cost reduced.",
         "type": "Enchantment",
         "fr": {
-            "name": "Appel des ÃƒÂ©tendues sauvages"
+            "name": "Appel des étendues sauvages"
         }
     },
     {
@@ -4543,7 +4543,7 @@ var jsonDatabase = [
         "health": 9,
         "type": "Minion",
         "fr": {
-            "name": "Jormungar capturÃƒÂ©"
+            "name": "Jormungar capturé"
         },
         "flavor": "You can keep him, but you have to promise to feed him and clean out his tank every day!",
         "attack": 5,
@@ -4558,7 +4558,7 @@ var jsonDatabase = [
         "text": "+2/+2.",
         "type": "Enchantment",
         "fr": {
-            "name": "CÃƒÂ©rÃƒÂ©monie"
+            "name": "Cérémonie"
         }
     },
     {
@@ -4573,7 +4573,7 @@ var jsonDatabase = [
         ],
         "type": "Weapon",
         "fr": {
-            "name": "Marteau chargÃƒÂ©"
+            "name": "Marteau chargé"
         },
         "flavor": "You can only pick it up if you are worthy.",
         "playerClass": "Shaman",
@@ -4630,7 +4630,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Chevalier mÃƒÂ©canique"
+            "name": "Chevalier mécanique"
         },
         "flavor": "It takes a lot to wind him up.",
         "attack": 5,
@@ -4674,7 +4674,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "RÃƒÂ©gisseur du ColisÃƒÂ©e"
+            "name": "Régisseur du Colisée"
         },
         "flavor": "Meets monthly with the gladiators to discuss career goals.",
         "attack": 2,
@@ -4725,7 +4725,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Confesseur dÃ¢â‚¬â„¢argent Paletress"
+            "name": "Confesseur d’argent Paletress"
         },
         "flavor": "She sees into your past and makes you face your fears.  Most common fear:  Getting Majordomo out of Sneed's Old Shredder.",
         "playerClass": "Priest",
@@ -4848,7 +4848,7 @@ var jsonDatabase = [
         "artist": "Paul Mafayon",
         "type": "Spell",
         "fr": {
-            "name": "Sombre marchÃƒÂ©"
+            "name": "Sombre marché"
         },
         "flavor": "A prime example of lose-lose negotiating.",
         "playerClass": "Warlock",
@@ -4898,7 +4898,7 @@ var jsonDatabase = [
         "artist": "Kevin Chen",
         "type": "Spell",
         "fr": {
-            "name": "Fusion dÃƒÂ©moniaque"
+            "name": "Fusion démoniaque"
         },
         "flavor": "Very dangerous when attached to a demonbomb.",
         "playerClass": "Warlock",
@@ -4946,7 +4946,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Grave-totem draeneÃƒÂ¯"
+            "name": "Grave-totem draeneï"
         },
         "flavor": "It's nice to find a real craftsman in this day and age of mass-produced totems.",
         "playerClass": "Shaman",
@@ -5000,7 +5000,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°caille-dÃ¢â‚¬â„¢effroi"
+            "name": "Écaille-d’effroi"
         },
         "flavor": "Let's be clear about this:  ACIDMAW is the sidekick.",
         "playerClass": "Hunter",
@@ -5024,7 +5024,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Destrier de lÃ¢â‚¬â„¢effroi"
+            "name": "Destrier de l’effroi"
         },
         "flavor": "Crescendo himself summoned this steed, riding it to victory in the Grand Tournament.  Wherever he rides, an army of riders ride behind him, supporting the legendary champion.",
         "playerClass": "Warlock",
@@ -5107,7 +5107,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Destruction ÃƒÂ©lÃƒÂ©mentaire"
+            "name": "Destruction élémentaire"
         },
         "flavor": "I'm not a shaman or anything, but isn't Elemental Destruction the opposite of what they want to do?",
         "playerClass": "Shaman",
@@ -5134,7 +5134,7 @@ var jsonDatabase = [
         "artist": "Mauricio Herrera",
         "type": "Spell",
         "fr": {
-            "name": "EntrÃƒÂ©e dans le ColisÃƒÂ©e"
+            "name": "Entrée dans le Colisée"
         },
         "flavor": "You have to get past the vendors first.  So many are lost to shopping...",
         "playerClass": "Paladin",
@@ -5150,7 +5150,7 @@ var jsonDatabase = [
         "text": "+2 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€°quipÃƒÂ©"
+            "name": "Équipé"
         }
     },
     {
@@ -5165,7 +5165,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Provocateur malÃƒÂ©fique"
+            "name": "Provocateur maléfique"
         },
         "flavor": "To be honest, heckling is not the most effective form of evil.",
         "attack": 5,
@@ -5182,7 +5182,7 @@ var jsonDatabase = [
         "text": "Increased stats.",
         "type": "Enchantment",
         "fr": {
-            "name": "ExpÃƒÂ©rimentÃƒÂ©"
+            "name": "Expérimenté"
         }
     },
     {
@@ -5192,7 +5192,7 @@ var jsonDatabase = [
         "text": "+1 Durability.",
         "type": "Enchantment",
         "fr": {
-            "name": "Pique supplÃƒÂ©mentaire"
+            "name": "Pique supplémentaire"
         }
     },
     {
@@ -5202,7 +5202,7 @@ var jsonDatabase = [
         "text": "+1 Attack",
         "type": "Enchantment",
         "fr": {
-            "name": "Lame effilÃƒÂ©e"
+            "name": "Lame effilée"
         }
     },
     {
@@ -5233,7 +5233,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "HÃƒÂ©ros dÃƒÂ©funt"
+            "name": "Héros défunt"
         },
         "flavor": "And he can't get up.",
         "playerClass": "Mage",
@@ -5285,7 +5285,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre dÃ¢â‚¬â„¢escrime"
+            "name": "Maître d’escrime"
         },
         "flavor": "Good fencers make good neighbors, right?",
         "attack": 2,
@@ -5301,7 +5301,7 @@ var jsonDatabase = [
         "text": "Your Hero Power costs (2) less.",
         "type": "Enchantment",
         "fr": {
-            "name": "EntraÃƒÂ®nement ÃƒÂ  lÃ¢â‚¬â„¢escrime"
+            "name": "Entraînement à l’escrime"
         }
     },
     {
@@ -5416,7 +5416,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Forges dÃ¢â‚¬â„¢Orgrimmar"
+            "name": "Forges d’Orgrimmar"
         }
     },
     {
@@ -5449,7 +5449,7 @@ var jsonDatabase = [
         "health": 8,
         "type": "Minion",
         "fr": {
-            "name": "GÃƒÂ©ant du givre"
+            "name": "Géant du givre"
         },
         "flavor": "Don't ask him about the beard.  JUST DON'T.",
         "attack": 8,
@@ -5512,7 +5512,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Gormok lÃ¢â‚¬â„¢Empaleur"
+            "name": "Gormok l’Empaleur"
         },
         "flavor": "Gormok has been giving impaling lessons in a small tent near the tournament grounds.  For only 25g you too could learn the fine art of impaling!",
         "elite": true,
@@ -5534,7 +5534,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Grande croisÃƒÂ©e"
+            "name": "Grande croisée"
         },
         "flavor": "A veteran of a number of crusades, she is a force for light and goodness.  Her latest crusade is against goblin telemarketers.",
         "attack": 5,
@@ -5554,7 +5554,7 @@ var jsonDatabase = [
         "text": "<b>Immune</b> this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€°trillÃƒÂ©"
+            "name": "Étrillé"
         }
     },
     {
@@ -5611,7 +5611,7 @@ var jsonDatabase = [
         "health": 5,
         "type": "Minion",
         "fr": {
-            "name": "Championne sacrÃƒÂ©e"
+            "name": "Championne sacrée"
         },
         "flavor": "She really likes seeing people get better.  That's why she hurts them in the first place.",
         "playerClass": "Priest",
@@ -5628,7 +5628,7 @@ var jsonDatabase = [
         "text": "Increased stats.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ego ÃƒÂ©norme"
+            "name": "Ego énorme"
         }
     },
     {
@@ -5640,7 +5640,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "EnragÃƒÂ© de glace"
+            "name": "Enragé de glace"
         },
         "flavor": "He's a lot cooler than Magma Rager.",
         "attack": 5,
@@ -5682,7 +5682,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Kvaldir blessÃƒÂ©"
+            "name": "Kvaldir blessé"
         },
         "flavor": "Don't worry.  With a little skin cream he's going to clear right up.",
         "attack": 2,
@@ -5701,7 +5701,7 @@ var jsonDatabase = [
         "text": "Can attack this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "ExaltÃƒÂ©"
+            "name": "Exalté"
         }
     },
     {
@@ -5711,7 +5711,7 @@ var jsonDatabase = [
         "text": "Increased Stats.",
         "type": "Enchantment",
         "fr": {
-            "name": "ExaltÃƒÂ©"
+            "name": "Exalté"
         }
     },
     {
@@ -5726,7 +5726,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "JusticiÃƒÂ¨re CÃ…â€œur-Vrai"
+            "name": "Justicière Cœur-Vrai"
         },
         "flavor": "It's like putting racing stripes and a giant spoiler on your hero power.",
         "elite": true,
@@ -5744,7 +5744,7 @@ var jsonDatabase = [
         "text": "+3 Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€šme sÃ…â€œur"
+            "name": "Âme sœur"
         }
     },
     {
@@ -5754,7 +5754,7 @@ var jsonDatabase = [
         "text": "+1 Durability.",
         "type": "Enchantment",
         "fr": {
-            "name": "DÃƒÂ©fenseur du roi"
+            "name": "Défenseur du roi"
         }
     },
     {
@@ -5769,7 +5769,7 @@ var jsonDatabase = [
         ],
         "type": "Weapon",
         "fr": {
-            "name": "DÃƒÂ©fenseur du roi"
+            "name": "Défenseur du roi"
         },
         "flavor": "\"King's Attacker\" is a shield.  Funny, huh?",
         "playerClass": "Warrior",
@@ -5811,7 +5811,7 @@ var jsonDatabase = [
         "health": 6,
         "type": "Minion",
         "fr": {
-            "name": "Chevalier des ÃƒÂ©tendues sauvages"
+            "name": "Chevalier des étendues sauvages"
         },
         "flavor": "He gets a discount on the tournament entry fee because he is his own horse.",
         "playerClass": "Druid",
@@ -5854,7 +5854,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°cumeur kvaldir"
+            "name": "Écumeur kvaldir"
         },
         "flavor": "Coming soon... to a tuskarr village near you!",
         "attack": 4,
@@ -5905,7 +5905,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction par la LumiÃƒÂ¨re"
+            "name": "Bénédiction par la Lumière"
         }
     },
     {
@@ -5920,7 +5920,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Champion de la LumiÃƒÂ¨re"
+            "name": "Champion de la Lumière"
         },
         "flavor": "When there's something strange (say, a gibbering demon) in your neighborhood, who are you going to call?",
         "attack": 4,
@@ -5939,7 +5939,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal $2 damage.",
         "type": "Hero Power",
         "fr": {
-            "name": "DÃƒÂ©charge de foudre"
+            "name": "Décharge de foudre"
         }
     },
     {
@@ -6002,7 +6002,7 @@ var jsonDatabase = [
         "artist": "Matt Dixon",
         "type": "Spell",
         "fr": {
-            "name": "PrÃƒÂªt ÃƒÂ  tirer"
+            "name": "Prêt à tirer"
         },
         "flavor": "Rexxar narrowed his eyes, grabbed his machine gun, and said: \"It's go time.  Lock and load.\"\nThis card pays homage to that special moment.",
         "playerClass": "Hunter",
@@ -6021,7 +6021,7 @@ var jsonDatabase = [
         "id": "AT_061e",
         "type": "Enchantment",
         "fr": {
-            "name": "PrÃƒÂªt ÃƒÂ  tirer"
+            "name": "Prêt à tirer"
         }
     },
     {
@@ -6036,7 +6036,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Modeste ÃƒÂ©cuyer"
+            "name": "Modeste écuyer"
         },
         "flavor": "But not the lowliest!",
         "attack": 1,
@@ -6097,7 +6097,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre jouteur"
+            "name": "Maître jouteur"
         },
         "flavor": "Needs just a few more ratings points to become Grandmaster Jouster.",
         "attack": 5,
@@ -6118,7 +6118,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tresse de cÃƒÂ©rÃƒÂ©monie"
+            "name": "Maîtresse de cérémonie"
         },
         "flavor": "Goes by \"MC ElfyElf\".",
         "attack": 4,
@@ -6135,7 +6135,7 @@ var jsonDatabase = [
         "text": "Costs (0).",
         "type": "Enchantment",
         "fr": {
-            "name": "MaÃƒÂ®tre invocateur"
+            "name": "Maître invocateur"
         }
     },
     {
@@ -6146,7 +6146,7 @@ var jsonDatabase = [
         "text": "Warhorse Trainer is granting this minion +1 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Puissance du valet dÃ¢â‚¬â„¢ÃƒÂ©curie"
+            "name": "Puissance du valet d’écurie"
         }
     },
     {
@@ -6260,7 +6260,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Adversaire mystÃƒÂ©rieux"
+            "name": "Adversaire mystérieux"
         },
         "flavor": "He may sound surly and antisocial, but he's actually just really shy.",
         "playerClass": "Paladin",
@@ -6281,7 +6281,7 @@ var jsonDatabase = [
         "id": "AT_036t",
         "type": "Minion",
         "fr": {
-            "name": "NÃƒÂ©rubien"
+            "name": "Nérubien"
         }
     },
     {
@@ -6318,7 +6318,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Kraken de la mer BorÃƒÂ©ale"
+            "name": "Kraken de la mer Boréale"
         },
         "flavor": "You have no idea how tired this guy is of being released.",
         "attack": 9,
@@ -6339,7 +6339,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Aspirant dÃ¢â‚¬â„¢Orgrimmar"
+            "name": "Aspirant d’Orgrimmar"
         },
         "flavor": "\"Four out of three orcs struggle with math.\" - Angry Zurge",
         "playerClass": "Warrior",
@@ -6358,7 +6358,7 @@ var jsonDatabase = [
         "text": "+1/+1 and <b>Stealth</b>",
         "type": "Spell",
         "fr": {
-            "name": "Forme de panthÃƒÂ¨re"
+            "name": "Forme de panthère"
         },
         "rarity": "Common"
     },
@@ -6388,7 +6388,7 @@ var jsonDatabase = [
         "durability": 3,
         "type": "Weapon",
         "fr": {
-            "name": "Lame empoisonnÃƒÂ©e"
+            "name": "Lame empoisonnée"
         },
         "flavor": "How much more poisoned can a blade get?  The answer is a lot.  A lot more poisoned.",
         "playerClass": "Rogue",
@@ -6409,7 +6409,7 @@ var jsonDatabase = [
         "id": "AT_132_ROGUEt",
         "type": "Weapon",
         "fr": {
-            "name": "Dague empoisonnÃƒÂ©e"
+            "name": "Dague empoisonnée"
         }
     },
     {
@@ -6422,7 +6422,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nEquip a 2/2 Weapon.",
         "type": "Hero Power",
         "fr": {
-            "name": "Dagues empoisonnÃƒÂ©es"
+            "name": "Dagues empoisonnées"
         }
     },
     {
@@ -6433,7 +6433,7 @@ var jsonDatabase = [
         "artist": "Mike Sass",
         "type": "Spell",
         "fr": {
-            "name": "MÃƒÂ©tamorphose : sanglier"
+            "name": "Métamorphose : sanglier"
         },
         "flavor": "It's always Huffer.",
         "playerClass": "Mage",
@@ -6516,7 +6516,7 @@ var jsonDatabase = [
         "text": "Attack changed to 1.",
         "type": "Enchantment",
         "fr": {
-            "name": "PurifiÃƒÂ©"
+            "name": "Purifié"
         }
     },
     {
@@ -6531,7 +6531,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Dompteur de bÃƒÂ©liers"
+            "name": "Dompteur de béliers"
         },
         "flavor": "Not getting trampled is really the trick here.",
         "playerClass": "Hunter",
@@ -6574,7 +6574,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Vendeur de rafraÃƒÂ®chissements"
+            "name": "Vendeur de rafraîchissements"
         },
         "flavor": "Menu:  Funnel cakes, carrots, popcorn, jormungar steaks.  It's hard serving a diverse clientele.",
         "attack": 3,
@@ -6637,7 +6637,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "PanthÃƒÂ¨re dent-de-sabre"
+            "name": "Panthère dent-de-sabre"
         },
         "playerClass": "Druid",
         "attack": 3,
@@ -6828,7 +6828,7 @@ var jsonDatabase = [
         "text": "Costs (1) less.",
         "type": "Enchantment",
         "fr": {
-            "name": "Effet dÃ¢â‚¬â„¢ombrefiel"
+            "name": "Effet d’ombrefiel"
         }
     },
     {
@@ -6861,7 +6861,7 @@ var jsonDatabase = [
         "text": "+1/+1.",
         "type": "Enchantment",
         "fr": {
-            "name": "MarchÃƒÂ© douteux"
+            "name": "Marché douteux"
         }
     },
     {
@@ -6919,7 +6919,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "RÃƒÂ©gente de la Main dÃ¢â‚¬â„¢argent"
+            "name": "Régente de la Main d’argent"
         },
         "flavor": "The Silver Hand is the best paladin organization.  The Argent Crusaders are super jealous.",
         "attack": 3,
@@ -6941,7 +6941,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "CapÃ¢â‚¬â„¢taine cÃƒÂ©leste Kragg"
+            "name": "Cap’taine céleste Kragg"
         },
         "flavor": "What's more boss than riding a parrot with a jawbone for a shoulderpad while wielding a giant hook-lance-thing and wearing a pirate hat?  NOTHING.",
         "elite": true,
@@ -6961,7 +6961,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDraw a card.",
         "type": "Hero Power",
         "fr": {
-            "name": "Connexion dÃ¢â‚¬â„¢ÃƒÂ¢me"
+            "name": "Connexion d’âme"
         }
     },
     {
@@ -6977,7 +6977,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Partenaire dÃ¢â‚¬â„¢entraÃƒÂ®nement"
+            "name": "Partenaire d’entraînement"
         },
         "flavor": "Come at me, bro.",
         "playerClass": "Warrior",
@@ -7043,7 +7043,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre des ÃƒÂ©curies"
+            "name": "Maître des écuries"
         },
         "flavor": "Takes way better care of her pets than her brother, Unstablemaster.",
         "playerClass": "Hunter",
@@ -7078,7 +7078,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nGain 4 Armor.",
         "type": "Hero Power",
         "fr": {
-            "name": "DÃƒÂ©fense stoÃƒÂ¯que"
+            "name": "Défense stoïque"
         }
     },
     {
@@ -7114,7 +7114,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
         "type": "Hero Power",
         "fr": {
-            "name": "La Main dÃ¢â‚¬â„¢argent"
+            "name": "La Main d’argent"
         }
     },
     {
@@ -7171,7 +7171,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "Minuscule chevalier malÃƒÂ©fique"
+            "name": "Minuscule chevalier maléfique"
         },
         "flavor": "\"No, no, no. I asked for a tiny JESTER of evil.\"",
         "playerClass": "Warlock",
@@ -7194,7 +7194,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Golem totÃƒÂ©mique"
+            "name": "Golem totémique"
         },
         "flavor": "What happens when you glue a buncha totems together.",
         "playerClass": "Shaman",
@@ -7214,7 +7214,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon a Totem of your choice.",
         "type": "Hero Power",
         "fr": {
-            "name": "Heurt totÃƒÂ©mique"
+            "name": "Heurt totémique"
         }
     },
     {
@@ -7250,7 +7250,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MÃƒÂ©decin du tournoi"
+            "name": "Médecin du tournoi"
         },
         "flavor": "The medic tournament is less entertaining than the Grand Tournament.",
         "attack": 1,
@@ -7266,7 +7266,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "EntraÃƒÂ®nement"
+            "name": "Entraînement"
         }
     },
     {
@@ -7277,7 +7277,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>",
         "type": "Enchantment",
         "fr": {
-            "name": "EntraÃƒÂ®nement terminÃƒÂ©"
+            "name": "Entraînement terminé"
         }
     },
     {
@@ -7314,7 +7314,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Rohart totÃƒÂ©mique"
+            "name": "Rohart totémique"
         },
         "flavor": "Turns out the tuskarr aren't real choosy about their totems.",
         "playerClass": "Shaman",
@@ -7337,7 +7337,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Gardien du CrÃƒÂ©puscule"
+            "name": "Gardien du Crépuscule"
         },
         "flavor": "A result of magical experiments carried out by the Black Dragonflight, it's not his fault that he's a vicious killer.",
         "attack": 2,
@@ -7353,7 +7353,7 @@ var jsonDatabase = [
         "text": "+1 Attack and <b>Taunt</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€°treinte du CrÃƒÂ©puscule"
+            "name": "Étreinte du Crépuscule"
         }
     },
     {
@@ -7434,7 +7434,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°craseur du Vide"
+            "name": "Écraseur du Vide"
         },
         "flavor": "We like to call him \"Wesley\".",
         "playerClass": "Warlock",
@@ -7470,7 +7470,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre des chevaux de guerre"
+            "name": "Maître des chevaux de guerre"
         },
         "flavor": "He doesn't even get Sundays off.  Every day he's hostling.",
         "playerClass": "Paladin",
@@ -7529,7 +7529,7 @@ var jsonDatabase = [
         "text": "+1/+1.",
         "type": "Enchantment",
         "fr": {
-            "name": "RemontÃƒÂ©"
+            "name": "Remonté"
         }
     },
     {
@@ -7544,7 +7544,7 @@ var jsonDatabase = [
         "text": "<b>Spell Damage +1</b>",
         "type": "Minion",
         "fr": {
-            "name": "Totem de courroux de lÃ¢â‚¬â„¢air"
+            "name": "Totem de courroux de l’air"
         }
     },
     {
@@ -7639,7 +7639,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nActivate Electron!",
         "type": "Hero Power",
         "fr": {
-            "name": "Activer Ãƒâ€°lectron"
+            "name": "Activer Électron"
         }
     },
     {
@@ -7651,7 +7651,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nActivate Electron!",
         "type": "Hero Power",
         "fr": {
-            "name": "Activer Ãƒâ€°lectron"
+            "name": "Activer Électron"
         }
     },
     {
@@ -7754,7 +7754,7 @@ var jsonDatabase = [
         "id": "BRMA16_1",
         "type": "Hero",
         "fr": {
-            "name": "AtramÃƒÂ©dÃƒÂ¨s"
+            "name": "Atramédès"
         }
     },
     {
@@ -7765,7 +7765,7 @@ var jsonDatabase = [
         "id": "BRMA16_1H",
         "type": "Hero",
         "fr": {
-            "name": "AtramÃƒÂ©dÃƒÂ¨s"
+            "name": "Atramédès"
         }
     },
     {
@@ -7864,7 +7864,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Maloriak in the Hidden Laboratory.",
         "fr": {
-            "name": "Corrupteur de lÃ¢â‚¬â„¢Aile noire"
+            "name": "Corrupteur de l’Aile noire"
         },
         "flavor": "He got his name when he gave Blackwing some comic books and rock & roll records.",
         "attack": 5,
@@ -7888,7 +7888,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Baron Geddon in Molten Core.",
         "fr": {
-            "name": "Technicienne de lÃ¢â‚¬â„¢Aile noire"
+            "name": "Technicienne de l’Aile noire"
         },
         "flavor": "This is who you go to when your Blackwing needs a tune up. Don't go to a cut rate Blackwing tune up shop!",
         "attack": 2,
@@ -7919,7 +7919,7 @@ var jsonDatabase = [
         "id": "BRMA17_6",
         "type": "Minion",
         "fr": {
-            "name": "Assemblage dÃ¢â‚¬â„¢os"
+            "name": "Assemblage d’os"
         }
     },
     {
@@ -7932,7 +7932,7 @@ var jsonDatabase = [
         "id": "BRMA17_6H",
         "type": "Minion",
         "fr": {
-            "name": "Assemblage dÃ¢â‚¬â„¢os"
+            "name": "Assemblage d’os"
         }
     },
     {
@@ -7944,7 +7944,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon two 4/2 Bone Constructs.",
         "type": "Hero Power",
         "fr": {
-            "name": "SÃƒÂ©ides des os"
+            "name": "Séides des os"
         }
     },
     {
@@ -7956,7 +7956,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon two 2/1 Bone Constructs.",
         "type": "Hero Power",
         "fr": {
-            "name": "SÃƒÂ©ides des os"
+            "name": "Séides des os"
         }
     },
     {
@@ -7968,7 +7968,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nAt the end of your turn, add a Brood Affliction card to your opponent's hand.",
         "type": "Hero Power",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce"
+            "name": "Affliction de l’espèce"
         }
     },
     {
@@ -7980,7 +7980,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nAt the end of your turn, add a Brood Affliction card to your opponent's hand.",
         "type": "Hero Power",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce"
+            "name": "Affliction de l’espèce"
         }
     },
     {
@@ -7992,7 +7992,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, whenever Chromaggus draws a card, he gets another copy of it.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : noir"
+            "name": "Affliction de l’espèce : noir"
         }
     },
     {
@@ -8004,7 +8004,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, whenever Chromaggus draws a card, he gets another copy of it.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : noir"
+            "name": "Affliction de l’espèce : noir"
         }
     },
     {
@@ -8016,7 +8016,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, Chromaggus' spells cost (1) less.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : bleu"
+            "name": "Affliction de l’espèce : bleu"
         }
     },
     {
@@ -8028,7 +8028,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, Chromaggus' spells cost (3) less.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : bleu"
+            "name": "Affliction de l’espèce : bleu"
         }
     },
     {
@@ -8040,7 +8040,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, Chromaggus' minions cost (3) less.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : bronze"
+            "name": "Affliction de l’espèce : bronze"
         }
     },
     {
@@ -8052,7 +8052,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, Chromaggus' minions cost (1) less.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : bronze"
+            "name": "Affliction de l’espèce : bronze"
         }
     },
     {
@@ -8064,7 +8064,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, restore 2 health to your opponent at the start of your turn.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : vert"
+            "name": "Affliction de l’espèce : vert"
         }
     },
     {
@@ -8076,7 +8076,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, restore 6 health to your opponent at the start of your turn.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : vert"
+            "name": "Affliction de l’espèce : vert"
         }
     },
     {
@@ -8091,7 +8091,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, take 1 damage at the start of your turn.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : rouge"
+            "name": "Affliction de l’espèce : rouge"
         }
     },
     {
@@ -8106,7 +8106,7 @@ var jsonDatabase = [
         "text": "While this is in your hand, take 3 damage at the start of your turn.",
         "type": "Spell",
         "fr": {
-            "name": "Affliction de lÃ¢â‚¬â„¢espÃƒÂ¨ce : rouge"
+            "name": "Affliction de l’espèce : rouge"
         }
     },
     {
@@ -8118,7 +8118,7 @@ var jsonDatabase = [
         "text": "Deal $2 damage to the enemy hero.",
         "type": "Spell",
         "fr": {
-            "name": "MontÃƒÂ©e dÃ¢â‚¬â„¢adrÃƒÂ©naline"
+            "name": "Montée d’adrénaline"
         }
     },
     {
@@ -8281,7 +8281,7 @@ var jsonDatabase = [
         "id": "BRMA01_1H",
         "type": "Hero",
         "fr": {
-            "name": "Coren NavrebiÃƒÂ¨re"
+            "name": "Coren Navrebière"
         }
     },
     {
@@ -8292,7 +8292,7 @@ var jsonDatabase = [
         "id": "BRMA01_1",
         "type": "Hero",
         "fr": {
-            "name": "Coren NavrebiÃƒÂ¨re"
+            "name": "Coren Navrebière"
         }
     },
     {
@@ -8306,7 +8306,7 @@ var jsonDatabase = [
         "text": "When this minion has 4 or more Health, it hatches.",
         "type": "Minion",
         "fr": {
-            "name": "Ã…â€™uf corrompu"
+            "name": "Œuf corrompu"
         }
     },
     {
@@ -8320,7 +8320,7 @@ var jsonDatabase = [
         "text": "When this minion has 5 or more Health, it hatches.",
         "type": "Minion",
         "fr": {
-            "name": "Ã…â€™uf corrompu"
+            "name": "Œuf corrompu"
         }
     },
     {
@@ -8390,7 +8390,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Can be crafted after completing the Warlock Class Challenge in Blackrock Mountain.",
         "fr": {
-            "name": "Courroux dÃƒÂ©moniaque"
+            "name": "Courroux démoniaque"
         },
         "flavor": "Demons are not angry most of the time. You have to play this card in order to really bring it out of them.",
         "playerClass": "Warlock",
@@ -8448,7 +8448,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon Gyth. Get a new Hero Power.",
         "type": "Hero Power",
         "fr": {
-            "name": "Pied ÃƒÂ  terre"
+            "name": "Pied à terre"
         }
     },
     {
@@ -8460,7 +8460,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon Gyth. Get a new Hero Power.",
         "type": "Hero Power",
         "fr": {
-            "name": "Pied ÃƒÂ  terre"
+            "name": "Pied à terre"
         }
     },
     {
@@ -8518,7 +8518,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Rend Blackhand in Blackrock Spire.",
         "fr": {
-            "name": "Ã…â€™uf de dragon"
+            "name": "Œuf de dragon"
         },
         "flavor": "Think of them as bullets for your dragon gun.",
         "attack": 0,
@@ -8650,7 +8650,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Atramedes in the Hidden Laboratory.",
         "fr": {
-            "name": "Ãƒâ€°craseur drakÃƒÂ´nide"
+            "name": "Écraseur drakônide"
         },
         "flavor": "Drakonids were created to have all the bad parts of a dragon in the form of a humaniod. But, like, why?",
         "attack": 6,
@@ -8724,7 +8724,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nEquip a weapon that grows as your opponent plays cards.",
         "type": "Hero Power",
         "fr": {
-            "name": "Ãƒâ€°cholocation"
+            "name": "Écholocation"
         }
     },
     {
@@ -8736,7 +8736,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nEquip a weapon that grows as your opponent plays cards.",
         "type": "Hero Power",
         "fr": {
-            "name": "Ãƒâ€°cholocation"
+            "name": "Écholocation"
         }
     },
     {
@@ -8747,7 +8747,7 @@ var jsonDatabase = [
         "health": 6,
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°lectron"
+            "name": "Électron"
         },
         "elite": true,
         "attack": 6,
@@ -8767,7 +8767,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°lectron"
+            "name": "Électron"
         },
         "elite": true,
         "attack": 5,
@@ -8867,7 +8867,7 @@ var jsonDatabase = [
         "text": "Transform into a 5/2 minion.",
         "type": "Spell",
         "fr": {
-            "name": "Forme de fÃƒÂ©lin-de-feu"
+            "name": "Forme de félin-de-feu"
         },
         "rarity": "Common"
     },
@@ -8939,7 +8939,7 @@ var jsonDatabase = [
         "text": "Draw 2 cards.\nGain 4 Armor.",
         "type": "Spell",
         "fr": {
-            "name": "CÃ…â€œur-de-flammes"
+            "name": "Cœur-de-flammes"
         }
     },
     {
@@ -8954,7 +8954,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Attise-flammes"
         },
-        "flavor": "Flamewakers HATE being confused for Flamewalkers. They just wake up fire, they donÃ¢â‚¬â„¢t walk on it. Walking on fire is CRAZY.",
+        "flavor": "Flamewakers HATE being confused for Flamewalkers. They just wake up fire, they don’t walk on it. Walking on fire is CRAZY.",
         "playerClass": "Mage",
         "attack": 2,
         "name": "Flamewaker",
@@ -9038,7 +9038,7 @@ var jsonDatabase = [
         "id": "BRMA08_1H",
         "type": "Hero",
         "fr": {
-            "name": "GÃƒÂ©nÃƒÂ©ral Drakkisath"
+            "name": "Général Drakkisath"
         }
     },
     {
@@ -9049,7 +9049,7 @@ var jsonDatabase = [
         "id": "BRMA08_1",
         "type": "Hero",
         "fr": {
-            "name": "GÃƒÂ©nÃƒÂ©ral Drakkisath"
+            "name": "Général Drakkisath"
         }
     },
     {
@@ -9098,7 +9098,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>",
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°cluseur"
+            "name": "Écluseur"
         }
     },
     {
@@ -9141,7 +9141,7 @@ var jsonDatabase = [
         "id": "BRMA02_1",
         "type": "Hero",
         "fr": {
-            "name": "Juge SupÃƒÂ©rieur Mornepierre"
+            "name": "Juge Supérieur Mornepierre"
         }
     },
     {
@@ -9152,7 +9152,7 @@ var jsonDatabase = [
         "id": "BRMA02_1H",
         "type": "Hero",
         "fr": {
-            "name": "Juge SupÃƒÂ©rieur Mornepierre"
+            "name": "Juge Supérieur Mornepierre"
         }
     },
     {
@@ -9163,7 +9163,7 @@ var jsonDatabase = [
         "id": "BRMA07_1H",
         "type": "Hero",
         "fr": {
-            "name": "GÃƒÂ©nÃƒÂ©ralissime Omokk"
+            "name": "Généralissime Omokk"
         }
     },
     {
@@ -9174,7 +9174,7 @@ var jsonDatabase = [
         "id": "BRMA07_1",
         "type": "Hero",
         "fr": {
-            "name": "GÃƒÂ©nÃƒÂ©ralissime Omokk"
+            "name": "Généralissime Omokk"
         }
     },
     {
@@ -9191,7 +9191,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Chromaggus in Blackwing Lair.",
         "fr": {
-            "name": "Dragon affamÃƒÂ©"
+            "name": "Dragon affamé"
         },
         "flavor": "Hungry Hungry Dragon is NOT a fun game.",
         "attack": 5,
@@ -9208,7 +9208,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Je vous entendsÃ¢â‚¬Â¦"
+            "name": "Je vous entends…"
         }
     },
     {
@@ -9220,7 +9220,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 10 damage to the enemy hero if they have any unspent Mana.",
         "type": "Hero Power",
         "fr": {
-            "name": "Mana enflammÃƒÂ©"
+            "name": "Mana enflammé"
         }
     },
     {
@@ -9232,7 +9232,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 5 damage to the enemy hero if they have any unspent Mana.",
         "type": "Hero Power",
         "fr": {
-            "name": "Mana enflammÃƒÂ©"
+            "name": "Mana enflammé"
         }
     },
     {
@@ -9279,7 +9279,7 @@ var jsonDatabase = [
         "text": "Costs (1) less.",
         "type": "Enchantment",
         "fr": {
-            "name": "Faveur impÃƒÂ©riale"
+            "name": "Faveur impériale"
         }
     },
     {
@@ -9827,7 +9827,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>",
         "type": "Minion",
         "fr": {
-            "name": "Orc de lÃ¢â‚¬â„¢ancienne Horde"
+            "name": "Orc de l’ancienne Horde"
         }
     },
     {
@@ -9844,7 +9844,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>",
         "type": "Minion",
         "fr": {
-            "name": "Orc de lÃ¢â‚¬â„¢ancienne Horde"
+            "name": "Orc de l’ancienne Horde"
         }
     },
     {
@@ -9855,7 +9855,7 @@ var jsonDatabase = [
         "id": "BRMA14_1H",
         "type": "Hero",
         "fr": {
-            "name": "SystÃƒÂ¨me de dÃƒÂ©fense Omnitron"
+            "name": "Système de défense Omnitron"
         }
     },
     {
@@ -9866,7 +9866,7 @@ var jsonDatabase = [
         "id": "BRMA14_1",
         "type": "Hero",
         "fr": {
-            "name": "SystÃƒÂ¨me de dÃƒÂ©fense Omnitron"
+            "name": "Système de défense Omnitron"
         }
     },
     {
@@ -9947,7 +9947,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nPut a minion from each deck into the battlefield.",
         "type": "Hero Power",
         "fr": {
-            "name": "Jeu forcÃƒÂ© !"
+            "name": "Jeu forcé !"
         }
     },
     {
@@ -9959,7 +9959,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nPut two minions from your deck and one from your opponent's into the battlefield.",
         "type": "Hero Power",
         "fr": {
-            "name": "Jeu forcÃƒÂ© !"
+            "name": "Jeu forcé !"
         }
     },
     {
@@ -10007,7 +10007,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Can be crafted after completing the Hunter Class Challenge in Blackrock Mountain.",
         "fr": {
-            "name": "Tir rÃƒÂ©flexe"
+            "name": "Tir réflexe"
         },
         "flavor": "Han shot first.",
         "playerClass": "Hunter",
@@ -10058,7 +10058,7 @@ var jsonDatabase = [
         "id": "BRMA10_1",
         "type": "Hero",
         "fr": {
-            "name": "Tranchetripe lÃ¢â‚¬â„¢IndomptÃƒÂ©"
+            "name": "Tranchetripe l’Indompté"
         }
     },
     {
@@ -10069,7 +10069,7 @@ var jsonDatabase = [
         "id": "BRMA10_1H",
         "type": "Hero",
         "fr": {
-            "name": "Tranchetripe lÃ¢â‚¬â„¢IndomptÃƒÂ©"
+            "name": "Tranchetripe l’Indompté"
         }
     },
     {
@@ -10107,7 +10107,7 @@ var jsonDatabase = [
         "text": "Summon 3 Aberrations.",
         "type": "Spell",
         "fr": {
-            "name": "LibÃƒÂ©rer les aberrations"
+            "name": "Libérer les aberrations"
         }
     },
     {
@@ -10203,7 +10203,7 @@ var jsonDatabase = [
         "text": "Destroy your opponent's weapon.",
         "type": "Spell",
         "fr": {
-            "name": "Gong rÃƒÂ©verbÃƒÂ©rant"
+            "name": "Gong réverbérant"
         }
     },
     {
@@ -10218,7 +10218,7 @@ var jsonDatabase = [
         "text": "Summon 3 Firesworn. <b>Overload:</b> (2)",
         "type": "Spell",
         "fr": {
-            "name": "DÃƒÂ©chaÃƒÂ®nement"
+            "name": "Déchaînement"
         }
     },
     {
@@ -10233,7 +10233,7 @@ var jsonDatabase = [
         "text": "Summon 3 Firesworn. <b>Overload:</b> (2)",
         "type": "Spell",
         "fr": {
-            "name": "DÃƒÂ©chaÃƒÂ®nement"
+            "name": "Déchaînement"
         }
     },
     {
@@ -10314,7 +10314,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\nWhenever a minion is summoned, swap its Attack and Health.",
         "type": "Hero Power",
         "fr": {
-            "name": "LÃ¢â‚¬â„¢alchimiste"
+            "name": "L’alchimiste"
         }
     },
     {
@@ -10325,7 +10325,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\nMinions' Attack and Health are swapped.\nYour minions have +2/+2.",
         "type": "Hero Power",
         "fr": {
-            "name": "LÃ¢â‚¬â„¢alchimiste"
+            "name": "L’alchimiste"
         }
     },
     {
@@ -10385,7 +10385,7 @@ var jsonDatabase = [
         "text": "Destroy a Legendary minion.",
         "type": "Spell",
         "fr": {
-            "name": "VÃƒÂ©ritable chef de guerre"
+            "name": "Véritable chef de guerre"
         }
     },
     {
@@ -10397,7 +10397,7 @@ var jsonDatabase = [
         "text": "Deal $5 damage to a random enemy. Gain 5 Armor.",
         "type": "Spell",
         "fr": {
-            "name": "CASSE-TÃƒÅ TE"
+            "name": "CASSE-TÊTE"
         }
     },
     {
@@ -10443,7 +10443,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nLet the games begin!",
         "type": "Hero Power",
         "fr": {
-            "name": "Forme vÃƒÂ©ritable"
+            "name": "Forme véritable"
         }
     },
     {
@@ -10455,7 +10455,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nLet the games begin!",
         "type": "Hero Power",
         "fr": {
-            "name": "Forme vÃƒÂ©ritable"
+            "name": "Forme véritable"
         }
     },
     {
@@ -10465,7 +10465,7 @@ var jsonDatabase = [
         "text": "Increased Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Endurance du CrÃƒÂ©puscule"
+            "name": "Endurance du Crépuscule"
         }
     },
     {
@@ -10482,7 +10482,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after completing the Priest Class Challenge in Blackrock Mountain.",
         "fr": {
-            "name": "Dragonnet du CrÃƒÂ©puscule"
+            "name": "Dragonnet du Crépuscule"
         },
         "flavor": "The twilight whelps are basically magic-vampires. Despite this, they are not a reference to any popular series of novels.",
         "playerClass": "Priest",
@@ -10501,7 +10501,7 @@ var jsonDatabase = [
         "text": "Your next Dragon costs (2) less.",
         "type": "Enchantment",
         "fr": {
-            "name": "LibÃƒÂ©rÃƒÂ© !"
+            "name": "Libéré !"
         }
     },
     {
@@ -10663,7 +10663,7 @@ var jsonDatabase = [
         "text": "This minion has +2 Attack this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ã‚Â« InspirÃƒÂ© Ã‚Â»"
+            "name": "« Inspiré »"
         }
     },
     {
@@ -10722,7 +10722,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Acolyte de la souffrance"
         },
-        "flavor": "He trained when he was younger to be an acolyte of joy, but things didnÃ¢â‚¬â„¢t work out like he thought they would.",
+        "flavor": "He trained when he was younger to be an acolyte of joy, but things didn’t work out like he thought they would.",
         "attack": 1,
         "name": "Acolyte of Pain",
         "id": "EX1_007",
@@ -10744,7 +10744,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "AlÃ¢â‚¬â„¢Akir, seigneur des Vents"
+            "name": "Al’Akir, seigneur des Vents"
         },
         "flavor": "He is the weakest of the four Elemental Lords.  And the other three don't let him forget it.",
         "playerClass": "Shaman",
@@ -10761,11 +10761,11 @@ var jsonDatabase = [
         "collectible": true,
         "set": "Classic",
         "race": "Mech",
-        "artist": "Sean OÃ¢â‚¬â„¢Daniels",
+        "artist": "Sean O’Daniels",
         "health": 3,
         "type": "Minion",
         "fr": {
-            "name": "Robot dÃ¢â‚¬â„¢alarme"
+            "name": "Robot d’alarme"
         },
         "flavor": "WARNING.  WARNING.  WARNING.",
         "attack": 0,
@@ -10786,7 +10786,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Garde-paix de lÃ¢â‚¬â„¢Aldor"
+            "name": "Garde-paix de l’Aldor"
         },
         "flavor": "The Aldor hate two things: the Scryers and smooth jazz.",
         "playerClass": "Paladin",
@@ -10828,7 +10828,7 @@ var jsonDatabase = [
         "text": "Health set to 15.",
         "type": "Enchantment",
         "fr": {
-            "name": "Feu dÃ¢â‚¬â„¢Alexstrasza"
+            "name": "Feu d’Alexstrasza"
         }
     },
     {
@@ -10894,7 +10894,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ancien maÃƒÂ®tre brasseur"
+            "name": "Ancien maître brasseur"
         },
         "flavor": "Most pandaren say his brew tastes like yak.  But apparently that's a compliment.",
         "attack": 5,
@@ -10950,7 +10950,7 @@ var jsonDatabase = [
         "cost": 7,
         "collectible": true,
         "set": "Classic",
-        "artist": "Sean OÃ¢â‚¬â„¢Daniels",
+        "artist": "Sean O’Daniels",
         "health": 5,
         "type": "Minion",
         "fr": {
@@ -11042,7 +11042,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Fabricante dÃ¢â‚¬â„¢armes"
+            "name": "Fabricante d’armes"
         },
         "flavor": "50% off fist weapons, limited time only!",
         "playerClass": "Warrior",
@@ -11110,7 +11110,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Commandant dÃ¢â‚¬â„¢Argent"
+            "name": "Commandant d’Argent"
         },
         "flavor": "The Argent Dawn stands vigilant against the Scourge, as well as people who cut in line at coffee shops.",
         "attack": 4,
@@ -11132,7 +11132,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Protecteur dÃ¢â‚¬â„¢Argent"
+            "name": "Protecteur d’Argent"
         },
         "flavor": "\"I'm not saying you can dodge fireballs.  I'm saying with this shield, you won't have to.\"",
         "playerClass": "Paladin",
@@ -11155,7 +11155,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°cuyÃƒÂ¨re dÃ¢â‚¬â„¢Argent"
+            "name": "Écuyère d’Argent"
         },
         "flavor": "\"I solemnly swear to uphold the Light, purge the world of darkness, and to eat only burritos.\" - The Argent Dawn Oath",
         "attack": 1,
@@ -11174,7 +11174,7 @@ var jsonDatabase = [
         "health": 4,
         "type": "Minion",
         "fr": {
-            "name": "Fabricante dÃ¢â‚¬â„¢armures"
+            "name": "Fabricante d’armures"
         },
         "flavor": "She accepts guild funds for repairs!",
         "playerClass": "Warrior",
@@ -11213,7 +11213,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "PrÃƒÂªtresse auchenaÃƒÂ¯"
+            "name": "Prêtresse auchenaï"
         },
         "flavor": "The Auchenai know the end is coming, but they're not sure when.",
         "playerClass": "Priest",
@@ -11355,7 +11355,7 @@ var jsonDatabase = [
         "id": "EX1_398t",
         "type": "Weapon",
         "fr": {
-            "name": "Hache dÃ¢â‚¬â„¢armes"
+            "name": "Hache d’armes"
         }
     },
     {
@@ -11386,7 +11386,7 @@ var jsonDatabase = [
         "text": "+2 Health and <b>Taunt</b>.",
         "type": "Spell",
         "fr": {
-            "name": "Forme dÃ¢â‚¬â„¢ours"
+            "name": "Forme d’ours"
         },
         "rarity": "Common"
     },
@@ -11514,7 +11514,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "DÃƒÂ©luge de lames"
+            "name": "Déluge de lames"
         },
         "flavor": "\"Look, it's not just about waving daggers around really fast.  It's a lot more complicated than that.\" - Shan, Rogue Trainer",
         "playerClass": "Rogue",
@@ -11542,7 +11542,7 @@ var jsonDatabase = [
         "text": "This minion's Attack has been doubled.",
         "type": "Enchantment",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction du champion"
+            "name": "Bénédiction du champion"
         }
     },
     {
@@ -11553,7 +11553,7 @@ var jsonDatabase = [
         "artist": "Tyler Walpole",
         "type": "Spell",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction du champion"
+            "name": "Bénédiction du champion"
         },
         "flavor": "This card causes double the trouble AND double the fun.",
         "playerClass": "Paladin",
@@ -11570,7 +11570,7 @@ var jsonDatabase = [
         "text": "When this minion attacks, the enemy player draws a card.",
         "type": "Enchantment",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction de sagesse"
+            "name": "Bénédiction de sagesse"
         }
     },
     {
@@ -11581,7 +11581,7 @@ var jsonDatabase = [
         "artist": "Chippy",
         "type": "Spell",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction de sagesse"
+            "name": "Bénédiction de sagesse"
         },
         "flavor": "Apparently with wisdom comes the knowledge that you should probably be attacking every turn.",
         "playerClass": "Paladin",
@@ -11598,7 +11598,7 @@ var jsonDatabase = [
         "text": "When this minion attacks, the player who blessed it draws a card.",
         "type": "Enchantment",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction de sagesse"
+            "name": "Bénédiction de sagesse"
         }
     },
     {
@@ -11812,7 +11812,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "PrÃƒÂªtresse de la Cabale"
+            "name": "Prêtresse de la Cabale"
         },
         "flavor": "You never know who may be secretly working for the Cabal....",
         "playerClass": "Priest",
@@ -11889,7 +11889,7 @@ var jsonDatabase = [
         "text": "<b>Charge</b>",
         "type": "Spell",
         "fr": {
-            "name": "Forme de fÃƒÂ©lin"
+            "name": "Forme de félin"
         },
         "rarity": "Common"
     },
@@ -11902,7 +11902,7 @@ var jsonDatabase = [
         "health": 8,
         "type": "Minion",
         "fr": {
-            "name": "CÃƒÂ©narius"
+            "name": "Cénarius"
         },
         "flavor": "Yes, he's a demigod. No, he doesn't need to wear a shirt.",
         "playerClass": "Druid",
@@ -11987,7 +11987,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Oracle froide-lumiÃƒÂ¨re"
+            "name": "Oracle froide-lumière"
         },
         "flavor": "They can see the future.   In that future both players draw more cards.   Spoooky.",
         "attack": 2,
@@ -12010,7 +12010,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Voyant froide-lumiÃƒÂ¨re"
+            "name": "Voyant froide-lumière"
         },
         "flavor": "The Coldlight murlocs reside in the darkest pits of the Abyssal Depths.  So no, there's no getting away from murlocs.",
         "attack": 2,
@@ -12091,7 +12091,7 @@ var jsonDatabase = [
         "text": "Stealthed until your next turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "DissimulÃƒÂ©"
+            "name": "Dissimulé"
         }
     },
     {
@@ -12105,7 +12105,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "CÃƒÂ´ne de froid"
+            "name": "Cône de froid"
         },
         "flavor": "Magi of the Kirin Tor were casting Cubes of Cold for many years before Cones came into fashion some 90 years ago.",
         "playerClass": "Mage",
@@ -12159,7 +12159,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Alchimiste dÃƒÂ©ment"
+            "name": "Alchimiste dément"
         },
         "flavor": "\"You'll <i>love</i> my new recipe!\" he says... especially if you're not happy with your current number of limbs.",
         "attack": 2,
@@ -12201,7 +12201,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre de culte"
+            "name": "Maître de culte"
         },
         "flavor": "She may be an evil cult master, but she still calls her parents once a week.",
         "attack": 4,
@@ -12224,7 +12224,7 @@ var jsonDatabase = [
         "id": "skele21",
         "type": "Minion",
         "fr": {
-            "name": "Golem endommagÃƒÂ©"
+            "name": "Golem endommagé"
         },
         "rarity": "Common"
     },
@@ -12303,7 +12303,7 @@ var jsonDatabase = [
         "id": "EX1_130a",
         "type": "Minion",
         "fr": {
-            "name": "DÃƒÂ©fenseur"
+            "name": "Défenseur"
         },
         "rarity": "Common"
     },
@@ -12319,9 +12319,9 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "DÃƒÂ©fenseur dÃ¢â‚¬â„¢Argus"
+            "name": "Défenseur d’Argus"
         },
-        "flavor": "You wouldnÃ¢â‚¬â„¢t think that Argus would need this much defending.  But it does.",
+        "flavor": "You wouldn’t think that Argus would need this much defending.  But it does.",
         "attack": 2,
         "faction": "Alliance",
         "name": "Defender of Argus",
@@ -12341,7 +12341,7 @@ var jsonDatabase = [
         "id": "EX1_131t",
         "type": "Minion",
         "fr": {
-            "name": "Bandit dÃƒÂ©fias"
+            "name": "Bandit défias"
         }
     },
     {
@@ -12356,7 +12356,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Meneur dÃƒÂ©fias"
+            "name": "Meneur défias"
         },
         "flavor": "He stole the deed to town years ago, so technically the town <i>is</i> his. He just calls people Scrub to be mean.",
         "playerClass": "Rogue",
@@ -12402,7 +12402,7 @@ var jsonDatabase = [
         "health": 4,
         "type": "Minion",
         "fr": {
-            "name": "DÃƒÂ©molisseur"
+            "name": "Démolisseur"
         },
         "flavor": "Laying siege isn't fun for anyone.  It's not even all that effective, now that everyone has a flying mount.",
         "attack": 1,
@@ -12422,7 +12422,7 @@ var jsonDatabase = [
         "text": "This Demon has +2/+2.",
         "type": "Enchantment",
         "fr": {
-            "name": "Feu dÃƒÂ©moniaque"
+            "name": "Feu démoniaque"
         },
         "rarity": "Common"
     },
@@ -12434,14 +12434,14 @@ var jsonDatabase = [
         "artist": "Ben Wootten",
         "type": "Spell",
         "fr": {
-            "name": "Feu dÃƒÂ©moniaque"
+            "name": "Feu démoniaque"
         },
         "flavor": "Demonfire is like regular fire except for IT NEVER STOPS BURNING HELLLPPP",
         "playerClass": "Warlock",
         "faction": "Neutral",
         "name": "Demonfire",
         "id": "EX1_596",
-        "text": "Deal $2 damage to a minion. If itÃ¢â‚¬â„¢s a friendly Demon, give it +2/+2 instead.",
+        "text": "Deal $2 damage to a minion. If it’s a friendly Demon, give it +2/+2 instead.",
         "rarity": "Common"
     },
     {
@@ -12493,7 +12493,7 @@ var jsonDatabase = [
         "text": "Stealthed until your next turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "DÃƒÂ©guisÃƒÂ©"
+            "name": "Déguisé"
         }
     },
     {
@@ -12610,7 +12610,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Corsaire de lÃ¢â‚¬â„¢effroi"
+            "name": "Corsaire de l’effroi"
         },
         "flavor": "\"Yarrrr\" is a pirate word that means \"Greetings, milord.\"",
         "attack": 3,
@@ -12629,7 +12629,7 @@ var jsonDatabase = [
         "text": "Return a minion to its owner's hand.",
         "type": "Spell",
         "fr": {
-            "name": "RÃƒÂªve"
+            "name": "Rêve"
         }
     },
     {
@@ -12705,7 +12705,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Diable de poussiÃƒÂ¨re"
+            "name": "Diable de poussière"
         },
         "flavor": "Westfall is full of dust devils. And buzzards. And crazed golems. And pirates. Why does anyone live here?",
         "playerClass": "Shaman",
@@ -12748,7 +12748,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°lÃƒÂ©mentaire de terre"
+            "name": "Élémentaire de terre"
         },
         "flavor": "Nothing beats rock.",
         "playerClass": "Shaman",
@@ -12792,7 +12792,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "ProphÃƒÂ¨te du Cercle terrestre"
+            "name": "Prophète du Cercle terrestre"
         },
         "flavor": "He can see really far, and he doesn't use a telescope like those filthy pirates.",
         "attack": 3,
@@ -12832,7 +12832,7 @@ var jsonDatabase = [
         "text": "Increased Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "GrÃƒÂ¢ce dÃ¢â‚¬â„¢Ãƒâ€°lune"
+            "name": "Grâce d’Élune"
         }
     },
     {
@@ -12847,7 +12847,7 @@ var jsonDatabase = [
         "id": "DREAM_03",
         "type": "Minion",
         "fr": {
-            "name": "Drake ÃƒÂ©meraude"
+            "name": "Drake émeraude"
         }
     },
     {
@@ -12895,7 +12895,7 @@ var jsonDatabase = [
         "artist": "Michal Ivan",
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€°galitÃƒÂ©"
+            "name": "Égalité"
         },
         "flavor": "We are all special unique snowflakes... with 1 Health.",
         "playerClass": "Paladin",
@@ -12913,7 +12913,7 @@ var jsonDatabase = [
         "text": "Health changed to 1.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€°galitÃƒÂ©"
+            "name": "Égalité"
         }
     },
     {
@@ -12924,7 +12924,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€°quipÃƒÂ©"
+            "name": "Équipé"
         }
     },
     {
@@ -12936,7 +12936,7 @@ var jsonDatabase = [
         "health": 3,
         "type": "Minion",
         "fr": {
-            "name": "Arcaniste ÃƒÂ©thÃƒÂ©rien"
+            "name": "Arcaniste éthérien"
         },
         "flavor": "The ethereals are wrapped in cloth to give form to their non-corporeal bodies. Also because it's nice and soft.",
         "playerClass": "Mage",
@@ -12958,7 +12958,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€°viscÃƒÂ©ration"
+            "name": "Éviscération"
         },
         "flavor": "There is a high cost to Eviscerating your opponent:  It takes a long time to get blood stains out of leather armor.",
         "playerClass": "Rogue",
@@ -12975,7 +12975,7 @@ var jsonDatabase = [
         "text": "Attack and Health have been swapped by Crazed Alchemist.",
         "type": "Enchantment",
         "fr": {
-            "name": "Des expÃƒÂ©riences !"
+            "name": "Des expériences !"
         }
     },
     {
@@ -13007,7 +13007,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "PiÃƒÂ¨ge explosif"
+            "name": "Piège explosif"
         },
         "flavor": "It traps your food AND cooks it for you!",
         "playerClass": "Hunter",
@@ -13028,7 +13028,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Ã…â€™il pour Ã…â€œil"
+            "name": "Œil pour œil"
         },
         "flavor": "Justice sometimes takes the form of a closed fist into a soft cheek.",
         "playerClass": "Paladin",
@@ -13070,7 +13070,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "Dragon fÃƒÂ©erique"
+            "name": "Dragon féerique"
         },
         "flavor": "Adorable.  Immune to Magic.  Doesn't pee on the rug.  The perfect pet!",
         "attack": 3,
@@ -13146,7 +13146,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Rampant des tourbiÃƒÂ¨res"
+            "name": "Rampant des tourbières"
         },
         "flavor": "He used to be called Bog Beast, but it confused people because he wasn't an actual beast.   Boom, New Name!",
         "attack": 3,
@@ -13227,7 +13227,7 @@ var jsonDatabase = [
         "id": "EX1_614t",
         "type": "Minion",
         "fr": {
-            "name": "Flamme dÃ¢â‚¬â„¢Azzinoth"
+            "name": "Flamme d’Azzinoth"
         }
     },
     {
@@ -13238,7 +13238,7 @@ var jsonDatabase = [
         "artist": "Tyler Walpole",
         "type": "Spell",
         "fr": {
-            "name": "FusÃƒÂ©e ÃƒÂ©clairante"
+            "name": "Fusée éclairante"
         },
         "flavor": "Not only does it reveal your enemies, but it's also great for parties!",
         "playerClass": "Hunter",
@@ -13297,7 +13297,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Fourche dÃ¢â‚¬â„¢ÃƒÂ©clairs"
+            "name": "Fourche d’éclairs"
         },
         "flavor": "If you combine it with Spooned Lightning and Knived Lightning, you have the full dining set.",
         "playerClass": "Shaman",
@@ -13318,7 +13318,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "PiÃƒÂ¨ge givrant"
+            "name": "Piège givrant"
         },
         "flavor": "\"Dang, that's cold.\" - appropriate response to Freezing Trap, or a mean joke.",
         "playerClass": "Hunter",
@@ -13341,7 +13341,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°lÃƒÂ©mentaire de givre"
+            "name": "Élémentaire de givre"
         },
         "flavor": "When a Water elemental and an Ice elemental love each other VERY much...",
         "attack": 5,
@@ -13360,7 +13360,7 @@ var jsonDatabase = [
         "health": 4,
         "type": "Minion",
         "fr": {
-            "name": "Berserker ÃƒÂ©cumant"
+            "name": "Berserker écumant"
         },
         "flavor": "He used to work as an accountant before he tried his hand at Berserkering.",
         "playerClass": "Warrior",
@@ -13525,7 +13525,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Gruul"
         },
-        "flavor": "He's Gruul \"the Dragonkiller\".  He just wanted to cuddle themÃ¢â‚¬Â¦ he never meant toÃ¢â‚¬Â¦",
+        "flavor": "He's Gruul \"the Dragonkiller\".  He just wanted to cuddle them… he never meant to…",
         "elite": true,
         "attack": 7,
         "name": "Gruul",
@@ -13541,7 +13541,7 @@ var jsonDatabase = [
         "text": "+1/+1 and <b>Taunt</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "Main dÃ¢â‚¬â„¢Argus"
+            "name": "Main d’Argus"
         }
     },
     {
@@ -13558,7 +13558,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Harrison Jones"
         },
-        "flavor": "Ã¢â‚¬Å“That belongs in the Hall of Explorers!Ã¢â‚¬?",
+        "flavor": "“That belongs in the Hall of Explorers!”",
         "elite": true,
         "attack": 5,
         "faction": "Neutral",
@@ -13601,7 +13601,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Casse-tÃƒÂªte"
+            "name": "Casse-tête"
         },
         "flavor": "When all else fails, nothing beats a swift whack upside the head.",
         "playerClass": "Rogue",
@@ -13652,7 +13652,7 @@ var jsonDatabase = [
         "artist": "Miguel Coimbra",
         "type": "Spell",
         "fr": {
-            "name": "Flammes sacrÃƒÂ©es"
+            "name": "Flammes sacrées"
         },
         "flavor": "Often followed by Holy Smokes!",
         "playerClass": "Priest",
@@ -13669,7 +13669,7 @@ var jsonDatabase = [
         "artist": "Justin Sweet",
         "type": "Spell",
         "fr": {
-            "name": "ColÃƒÂ¨re divine"
+            "name": "Colère divine"
         },
         "flavor": "C'mon Molten Giant!!",
         "playerClass": "Paladin",
@@ -13705,7 +13705,7 @@ var jsonDatabase = [
         "text": "Increased Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Heure du CrÃƒÂ©puscule"
+            "name": "Heure du Crépuscule"
         }
     },
     {
@@ -13721,7 +13721,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Crabe affamÃƒÂ©"
+            "name": "Crabe affamé"
         },
         "flavor": "Murloc.  It's what's for dinner.",
         "attack": 1,
@@ -13739,7 +13739,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "HyÃƒÂ¨ne"
+            "name": "Hyène"
         },
         "playerClass": "Hunter",
         "attack": 2,
@@ -13758,7 +13758,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "BarriÃƒÂ¨re de glace"
+            "name": "Barrière de glace"
         },
         "flavor": "This is Rank 1.  Rank 2 is Chocolate Milk Barrier.",
         "playerClass": "Mage",
@@ -13870,7 +13870,7 @@ var jsonDatabase = [
         "health": 5,
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre des diablotins"
+            "name": "Maître des diablotins"
         },
         "flavor": "She would enjoy the job a lot more if she just could get the imps to QUIT BITING HER.",
         "attack": 1,
@@ -13909,7 +13909,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon a 6/6 Infernal.",
         "type": "Hero Power",
         "fr": {
-            "name": "FEU DÃ¢â‚¬â„¢ENFER !"
+            "name": "FEU D’ENFER !"
         }
     },
     {
@@ -13935,7 +13935,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre-lame blessÃƒÂ©"
+            "name": "Maître-lame blessé"
         },
         "flavor": "He claims it is an old war wound, but we think he just cut himself shaving.",
         "attack": 4,
@@ -13954,7 +13954,7 @@ var jsonDatabase = [
         "text": "This minion's Attack is equal to its Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Feu intÃƒÂ©rieur"
+            "name": "Feu intérieur"
         }
     },
     {
@@ -13965,7 +13965,7 @@ var jsonDatabase = [
         "artist": "Steve Prescott",
         "type": "Spell",
         "fr": {
-            "name": "Feu intÃƒÂ©rieur"
+            "name": "Feu intérieur"
         },
         "flavor": "Good idea: Buffing your minions.  Bad idea: Starting a conversation in the Barrens.",
         "playerClass": "Priest",
@@ -13983,7 +13983,7 @@ var jsonDatabase = [
         "text": "+2 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Rage intÃƒÂ©rieure"
+            "name": "Rage intérieure"
         }
     },
     {
@@ -13994,7 +13994,7 @@ var jsonDatabase = [
         "artist": "Slawomir Maniak",
         "type": "Spell",
         "fr": {
-            "name": "Rage intÃƒÂ©rieure"
+            "name": "Rage intérieure"
         },
         "flavor": "They're only smiling on the outside.",
         "playerClass": "Warrior",
@@ -14040,7 +14040,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "PanthÃƒÂ¨re de la jungle"
+            "name": "Panthère de la jungle"
         },
         "flavor": "Stranglethorn is a beautiful place to visit, but you wouldn't want to live there.",
         "attack": 4,
@@ -14139,7 +14139,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Roi Krush"
         },
-        "flavor": "The best defense against King Krush is to have someone you donÃ¢â‚¬â„¢t like standing in front of you.",
+        "flavor": "The best defense against King Krush is to have someone you don’t like standing in front of you.",
         "playerClass": "Hunter",
         "elite": true,
         "attack": 8,
@@ -14226,7 +14226,7 @@ var jsonDatabase = [
         "inPlayText": "Quick",
         "type": "Minion",
         "fr": {
-            "name": "SÃ…â€œur rieuse"
+            "name": "Sœur rieuse"
         }
     },
     {
@@ -14328,7 +14328,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Gnome lÃƒÂ©preux"
+            "name": "Gnome lépreux"
         },
         "flavor": "He really just wants to be your friend, but the constant rejection is starting to really get to him.",
         "attack": 2,
@@ -14359,7 +14359,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€°clair"
+            "name": "Éclair"
         },
         "flavor": "Lightning Bolt! Lightning Bolt! Lightning Bolt!",
         "playerClass": "Shaman",
@@ -14380,7 +14380,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "TempÃƒÂªte de foudre"
+            "name": "Tempête de foudre"
         },
         "flavor": "An umbrella won't be effective, I'm afraid.",
         "playerClass": "Shaman",
@@ -14399,7 +14399,7 @@ var jsonDatabase = [
         "health": 5,
         "type": "Minion",
         "fr": {
-            "name": "Rejeton de lumiÃƒÂ¨re"
+            "name": "Rejeton de lumière"
         },
         "flavor": "Spawn of the Light? Or Pawn of the Lights?",
         "playerClass": "Priest",
@@ -14419,9 +14419,9 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "GardelumiÃƒÂ¨re"
+            "name": "Gardelumière"
         },
-        "flavor": "SheÃ¢â‚¬â„¢s smaller than her sisters Mediumwarden and Heavywarden.",
+        "flavor": "She’s smaller than her sisters Mediumwarden and Heavywarden.",
         "attack": 1,
         "name": "Lightwarden",
         "id": "EX1_001",
@@ -14437,7 +14437,7 @@ var jsonDatabase = [
         "health": 5,
         "type": "Minion",
         "fr": {
-            "name": "Puits de lumiÃƒÂ¨re"
+            "name": "Puits de lumière"
         },
         "flavor": "It isn't clear if people ignore the Lightwell, or if it is just invisible.",
         "playerClass": "Priest",
@@ -14528,7 +14528,7 @@ var jsonDatabase = [
         "faction": "Neutral",
         "name": "Lorewalker Cho",
         "id": "EX1_100",
-        "text": "Whenever a player casts a spell, put a copy into the other playerÃ¢â‚¬â„¢s hand.",
+        "text": "Whenever a player casts a spell, put a copy into the other player’s hand.",
         "rarity": "Legendary"
     },
     {
@@ -14588,7 +14588,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Accro au mana"
         },
-        "flavor": "SheÃ¢â‚¬â„¢s trying to kick the habit, but still takes some mana whenever she has a stressful day.",
+        "flavor": "She’s trying to kick the habit, but still takes some mana whenever she has a stressful day.",
         "attack": 1,
         "faction": "Alliance",
         "name": "Mana Addict",
@@ -14605,7 +14605,7 @@ var jsonDatabase = [
         "text": "Increased attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "GorgÃƒÂ© de mana"
+            "name": "Gorgé de mana"
         }
     },
     {
@@ -14641,7 +14641,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€šme en peine de mana"
+            "name": "Âme en peine de mana"
         },
         "flavor": "They come out at night to eat leftover mana crystals. \"Mmmmmm,\" they say.",
         "attack": 2,
@@ -14769,7 +14769,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tresse du dÃƒÂ©guisement"
+            "name": "Maîtresse du déguisement"
         },
         "flavor": "She's actually a male tauren.  People don't call him \"Master of Disguise\" for nothing.",
         "playerClass": "Rogue",
@@ -14788,7 +14788,7 @@ var jsonDatabase = [
         "health": 3,
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre fabricant dÃ¢â‚¬â„¢ÃƒÂ©pÃƒÂ©es"
+            "name": "Maître fabricant d’épées"
         },
         "flavor": "He's currently trying to craft a \"flail-axe\", but all the other swordsmiths say it can't be done.",
         "attack": 1,
@@ -14809,7 +14809,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Millhouse TempÃƒÂªte-de-Mana"
+            "name": "Millhouse Tempête-de-Mana"
         },
         "flavor": "\"I'm gonna light you up, sweetcheeks!\"",
         "elite": true,
@@ -14831,7 +14831,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "ContrÃƒÂ´leur mental"
+            "name": "Contrôleur mental"
         },
         "flavor": "Mind Control technology is getting better, but that's not saying much.",
         "attack": 3,
@@ -14852,7 +14852,7 @@ var jsonDatabase = [
         "id": "EX1_tk31",
         "type": "Enchantment",
         "fr": {
-            "name": "ContrÃƒÂ´le mental"
+            "name": "Contrôle mental"
         },
         "rarity": "Common"
     },
@@ -14866,7 +14866,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal $3 damage.",
         "type": "Hero Power",
         "fr": {
-            "name": "Briser lÃ¢â‚¬â„¢esprit"
+            "name": "Briser l’esprit"
         }
     },
     {
@@ -14890,7 +14890,7 @@ var jsonDatabase = [
         "artist": "Zoltan & Gabor",
         "type": "Spell",
         "fr": {
-            "name": "Jeux dÃ¢â‚¬â„¢esprit"
+            "name": "Jeux d’esprit"
         },
         "flavor": "Sometimes it feels like this is all a game.",
         "playerClass": "Priest",
@@ -14911,7 +14911,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "EntitÃƒÂ© miroir"
+            "name": "Entité miroir"
         },
         "flavor": "\"You go first.\" - Krush'gor the Behemoth, to his pet boar.",
         "playerClass": "Mage",
@@ -14932,7 +14932,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "DÃƒÂ©tournement"
+            "name": "Détournement"
         },
         "flavor": "Sometimes it's as simple as putting on a fake mustache and pointing at someone else.",
         "playerClass": "Hunter",
@@ -14954,7 +14954,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Gardien moguÃ¢â‚¬â„¢shan"
+            "name": "Gardien mogu’shan"
         },
         "flavor": "All these guys ever do is talk about the Thunder King.   BOOOORRRINNG!",
         "attack": 1,
@@ -14973,7 +14973,7 @@ var jsonDatabase = [
         "health": 8,
         "type": "Minion",
         "fr": {
-            "name": "GÃƒÂ©ant de lave"
+            "name": "Géant de lave"
         },
         "flavor": "He gets terrible heartburn.  BECAUSE HE IS FULL OF LAVA.",
         "attack": 8,
@@ -14992,7 +14992,7 @@ var jsonDatabase = [
         "text": "Deal 2 damage.",
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€°clat lunaire"
+            "name": "Éclat lunaire"
         }
     },
     {
@@ -15022,7 +15022,7 @@ var jsonDatabase = [
         "health": 8,
         "type": "Minion",
         "fr": {
-            "name": "GÃƒÂ©ant des montagnes"
+            "name": "Géant des montagnes"
         },
         "flavor": "His mother said that he was just big boned.",
         "attack": 8,
@@ -15142,7 +15142,7 @@ var jsonDatabase = [
         "text": "Decreased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "AffÃƒÂ»tage nÃƒÂ©cessaire"
+            "name": "Affûtage nécessaire"
         }
     },
     {
@@ -15302,7 +15302,7 @@ var jsonDatabase = [
         "id": "EX1_160t",
         "type": "Minion",
         "fr": {
-            "name": "PanthÃƒÂ¨re"
+            "name": "Panthère"
         },
         "rarity": "Common"
     },
@@ -15321,7 +15321,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Assassin patient"
         },
-        "flavor": "HeÃ¢â‚¬â„¢s not really that patient. It just takes a while for someone to walk by that he can actually reach.",
+        "flavor": "He’s not really that patient. It just takes a while for someone to walk by that he can actually reach.",
         "playerClass": "Rogue",
         "attack": 1,
         "faction": "Neutral",
@@ -15391,7 +15391,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Seigneur des abÃƒÂ®mes"
+            "name": "Seigneur des abîmes"
         },
         "flavor": "Mannoroth, Magtheridon, and Brutallus may be dead, but it turns out there are a LOT of pit lords.",
         "playerClass": "Warlock",
@@ -15475,7 +15475,7 @@ var jsonDatabase = [
         "text": "The next spell you cast this turn costs (3) less.",
         "type": "Enchantment",
         "fr": {
-            "name": "PrÃƒÂ©paration"
+            "name": "Préparation"
         }
     },
     {
@@ -15486,7 +15486,7 @@ var jsonDatabase = [
         "artist": "Clint Langley",
         "type": "Spell",
         "fr": {
-            "name": "PrÃƒÂ©paration"
+            "name": "Préparation"
         },
         "flavor": "\"Be Prepared\" - Rogue Motto",
         "playerClass": "Rogue",
@@ -15508,7 +15508,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "PrÃƒÂªtresse dÃ¢â‚¬â„¢Ãƒâ€°lune"
+            "name": "Prêtresse d’Élune"
         },
         "flavor": "If she threatens to \"moon\" you, it's not what you think.",
         "attack": 5,
@@ -15527,7 +15527,7 @@ var jsonDatabase = [
         "health": 7,
         "type": "Minion",
         "fr": {
-            "name": "ProphÃƒÂ¨te Velen"
+            "name": "Prophète Velen"
         },
         "flavor": "He's been exiled from his home, and all his brothers turned evil, but otherwise he doesn't have a lot to complain about.",
         "playerClass": "Priest",
@@ -15566,7 +15566,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "Aventurier en pleine quÃƒÂªte"
+            "name": "Aventurier en pleine quête"
         },
         "flavor": "\"Does anyone have some extra Boar Pelts?\"",
         "attack": 2,
@@ -15589,7 +15589,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Worgen dÃƒÂ©chaÃƒÂ®nÃƒÂ©"
+            "name": "Worgen déchaîné"
         },
         "flavor": "If he's raging now, just wait until he gets nerfed.",
         "attack": 3,
@@ -15610,7 +15610,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Ragnaros, seigneur du feu"
         },
-        "flavor": "Ragnaros was summoned by the Dark Iron dwarves, who were eventually enslaved by the Firelord.  Summoning Ragnaros often doesnÃ¢â‚¬â„¢t work out the way you want it to.",
+        "flavor": "Ragnaros was summoned by the Dark Iron dwarves, who were eventually enslaved by the Firelord.  Summoning Ragnaros often doesn’t work out the way you want it to.",
         "elite": true,
         "attack": 8,
         "faction": "Neutral",
@@ -15692,9 +15692,9 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "RÃƒÂ©demption"
+            "name": "Rédemption"
         },
-        "flavor": "I am not sure how you get demptioned the first time.  ItÃ¢â‚¬â„¢s a mystery!",
+        "flavor": "I am not sure how you get demptioned the first time.  It’s a mystery!",
         "playerClass": "Paladin",
         "faction": "Neutral",
         "name": "Redemption",
@@ -15755,7 +15755,7 @@ var jsonDatabase = [
         "text": "+5 Health and <b>Taunt</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "EnracinÃƒÂ©"
+            "name": "Enraciné"
         }
     },
     {
@@ -15792,7 +15792,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Grande criniÃƒÂ¨re des savanes"
+            "name": "Grande crinière des savanes"
         },
         "flavor": "In the jungle, the mighty jungle, the lion gets slowly consumed by hyenas.",
         "playerClass": "Hunter",
@@ -15815,7 +15815,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "CroisÃƒÂ©e ÃƒÂ©carlate"
+            "name": "Croisée écarlate"
         },
         "flavor": "Never wash your whites with a Scarlet Crusader.",
         "attack": 3,
@@ -15835,7 +15835,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "HyÃƒÂ¨ne charognarde"
+            "name": "Hyène charognarde"
         },
         "flavor": "Hyenas prefer the bones of kodos or windserpents, but they'll eat pretty much anything.  Even Brussels sprouts.",
         "playerClass": "Hunter",
@@ -15855,7 +15855,7 @@ var jsonDatabase = [
         "health": 8,
         "type": "Minion",
         "fr": {
-            "name": "GÃƒÂ©ant des mers"
+            "name": "Géant des mers"
         },
         "flavor": "See?  Giant.",
         "attack": 8,
@@ -15892,9 +15892,9 @@ var jsonDatabase = [
         "artist": "Raven Mimura",
         "type": "Spell",
         "fr": {
-            "name": "DÃƒÂ©tection des dÃƒÂ©mons"
+            "name": "Détection des démons"
         },
-        "flavor": "Generally demons are pretty obvious and you donÃ¢â‚¬â„¢t need a spell to sense them.",
+        "flavor": "Generally demons are pretty obvious and you don’t need a spell to sense them.",
         "playerClass": "Warlock",
         "faction": "Neutral",
         "name": "Sense Demons",
@@ -15910,7 +15910,7 @@ var jsonDatabase = [
         "artist": "Mark Gibbons",
         "type": "Spell",
         "fr": {
-            "name": "Folie de lÃ¢â‚¬â„¢ombre"
+            "name": "Folie de l’ombre"
         },
         "flavor": "You can rationalize it all you want, it's still a mean thing to do.",
         "playerClass": "Priest",
@@ -15928,7 +15928,7 @@ var jsonDatabase = [
         "text": "This minion has switched controllers this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "Folie de lÃ¢â‚¬â„¢ombre"
+            "name": "Folie de l’ombre"
         }
     },
     {
@@ -15943,7 +15943,7 @@ var jsonDatabase = [
         "text": "Mindgames whiffed! Your opponent had no minions!",
         "type": "Minion",
         "fr": {
-            "name": "Ombre du nÃƒÂ©ant"
+            "name": "Ombre du néant"
         },
         "rarity": "Epic"
     },
@@ -15976,9 +15976,9 @@ var jsonDatabase = [
         "artist": "Alex Horley Orlandelli",
         "type": "Spell",
         "fr": {
-            "name": "Forme dÃ¢â‚¬â„¢Ombre"
+            "name": "Forme d’Ombre"
         },
-        "flavor": "If a bright light shines on a priest in ShadowformÃ¢â‚¬Â¦ do they cast a shadow?",
+        "flavor": "If a bright light shines on a priest in Shadowform… do they cast a shadow?",
         "playerClass": "Priest",
         "name": "Shadowform",
         "id": "EX1_625",
@@ -15992,7 +15992,7 @@ var jsonDatabase = [
         "text": "This minion has consumed Divine Shields and has increased Attack and Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ombres de MÃ¢â‚¬â„¢uru"
+            "name": "Ombres de M’uru"
         },
         "rarity": "Common"
     },
@@ -16004,7 +16004,7 @@ var jsonDatabase = [
         "artist": "Graven Tung",
         "type": "Spell",
         "fr": {
-            "name": "Pas de lÃ¢â‚¬â„¢ombre"
+            "name": "Pas de l’ombre"
         },
         "flavor": "Rogue dance troops will sometimes Shadowstep away at the end of a performance.  Crowds love it.",
         "playerClass": "Rogue",
@@ -16024,7 +16024,7 @@ var jsonDatabase = [
         "text": "Summon two 2/2 Treants with <b>Taunt</b>.",
         "type": "Spell",
         "fr": {
-            "name": "LeÃƒÂ§on de ShanÃ¢â‚¬â„¢do"
+            "name": "Leçon de Shan’do"
         }
     },
     {
@@ -16034,7 +16034,7 @@ var jsonDatabase = [
         "text": "+2 Attack from Spiteful Smith.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€¡a pique !"
+            "name": "Ça pique !"
         }
     },
     {
@@ -16136,7 +16136,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Champion de la Main dÃ¢â‚¬â„¢argent"
+            "name": "Champion de la Main d’argent"
         },
         "flavor": "It's good to be a knight.   Less so to be one's squire.",
         "attack": 4,
@@ -16158,9 +16158,9 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Garde de Lune-dÃ¢â‚¬â„¢argent"
+            "name": "Garde de Lune-d’argent"
         },
-        "flavor": "The first time they tried to guard Silvermoon against the scourge, it didnÃ¢â‚¬â„¢t go so wellÃ¢â‚¬Â¦",
+        "flavor": "The first time they tried to guard Silvermoon against the scourge, it didn’t go so well…",
         "attack": 3,
         "faction": "Horde",
         "name": "Silvermoon Guardian",
@@ -16176,7 +16176,7 @@ var jsonDatabase = [
         "artist": "Tyler Walpole",
         "type": "Spell",
         "fr": {
-            "name": "Siphonner lÃ¢â‚¬â„¢ÃƒÂ¢me"
+            "name": "Siphonner l’âme"
         },
         "flavor": "You probably should avoid siphoning your own soul.  You might create some kind of weird infinite loop.",
         "playerClass": "Warlock",
@@ -16232,7 +16232,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "PiÃƒÂ¨ge ÃƒÂ  serpents"
+            "name": "Piège à serpents"
         },
         "flavor": "Why did it have to be snakes?",
         "playerClass": "Hunter",
@@ -16253,7 +16253,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Tir de prÃƒÂ©cision"
+            "name": "Tir de précision"
         },
         "flavor": "A great sniper hits the spot.  Just like a delicious flank of boar. Mmmmm.",
         "playerClass": "Hunter",
@@ -16294,7 +16294,7 @@ var jsonDatabase = [
         "artist": "Markus Erdt",
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€šme de la forÃƒÂªt"
+            "name": "Âme de la forêt"
         },
         "flavor": "\"Reforestation\" is suddenly a terrifying word.",
         "playerClass": "Druid",
@@ -16312,7 +16312,7 @@ var jsonDatabase = [
         "text": "Deathrattle: Summon a 2/2 Treant.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€šme de la forÃƒÂªt"
+            "name": "Âme de la forêt"
         }
     },
     {
@@ -16469,7 +16469,7 @@ var jsonDatabase = [
         "id": "CS2_152",
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°cuyer"
+            "name": "Écuyer"
         },
         "rarity": "Common"
     },
@@ -16485,7 +16485,7 @@ var jsonDatabase = [
         "id": "EX1_tk28",
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°cureuil"
+            "name": "Écureuil"
         },
         "rarity": "Common"
     },
@@ -16502,7 +16502,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Kodo dÃƒÂ©chaÃƒÂ®nÃƒÂ©"
+            "name": "Kodo déchaîné"
         },
         "flavor": "This Kodo is so big that he can stampede by <i>himself</i>.",
         "attack": 3,
@@ -16531,7 +16531,7 @@ var jsonDatabase = [
         "text": "Deal $5 damage to a minion.",
         "type": "Spell",
         "fr": {
-            "name": "MÃƒÂ©tÃƒÂ©ores"
+            "name": "Météores"
         }
     },
     {
@@ -16543,7 +16543,7 @@ var jsonDatabase = [
         "text": "Deal $2 damage to all enemy minions.",
         "type": "Spell",
         "fr": {
-            "name": "MÃƒÂ©tÃƒÂ©ores"
+            "name": "Météores"
         }
     },
     {
@@ -16554,7 +16554,7 @@ var jsonDatabase = [
         "artist": "Richard Wright",
         "type": "Spell",
         "fr": {
-            "name": "MÃƒÂ©tÃƒÂ©ores"
+            "name": "Météores"
         },
         "flavor": "Is the sky falling?  Yes.  Yes it is.",
         "playerClass": "Druid",
@@ -16629,7 +16629,7 @@ var jsonDatabase = [
         "text": "Summon a 3/2 Panther.",
         "type": "Spell",
         "fr": {
-            "name": "Invocation de panthÃƒÂ¨re"
+            "name": "Invocation de panthère"
         }
     },
     {
@@ -16644,7 +16644,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Portail dÃ¢â‚¬â„¢invocation"
+            "name": "Portail d’invocation"
         },
         "flavor": "NOT LESS THAN 1!  Don't get any ideas!",
         "playerClass": "Warlock",
@@ -16693,7 +16693,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Marche-soleil"
         },
-        "flavor": "She doesnÃ¢â‚¬â„¢t ACTUALLY walk on the Sun.  It's just a name.  DonÃ¢â‚¬â„¢t worry!",
+        "flavor": "She doesn’t ACTUALLY walk on the Sun.  It's just a name.  Don’t worry!",
         "attack": 4,
         "faction": "Alliance",
         "name": "Sunwalker",
@@ -16710,7 +16710,7 @@ var jsonDatabase = [
         "durability": 5,
         "type": "Weapon",
         "fr": {
-            "name": "Ãƒâ€°pÃƒÂ©e de justice"
+            "name": "Épée de justice"
         },
         "flavor": "I dub you Sir Loin of Beef!",
         "playerClass": "Paladin",
@@ -16786,7 +16786,7 @@ var jsonDatabase = [
         "text": "+2 Attack this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "Acier trempÃƒÂ©"
+            "name": "Acier trempé"
         }
     },
     {
@@ -16824,7 +16824,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "La BÃƒÂªte"
+            "name": "La Bête"
         },
         "flavor": "He lives in Blackrock Mountain.  He eats Gnomes.  That's pretty much it.",
         "elite": true,
@@ -16865,7 +16865,7 @@ var jsonDatabase = [
         "artist": "Alex Garner",
         "type": "Spell",
         "fr": {
-            "name": "Vol dÃ¢â‚¬â„¢esprit"
+            "name": "Vol d’esprit"
         },
         "flavor": "\"What do you get when you cast Thoughtsteal on an Orc?  Nothing!\" - Tauren joke",
         "playerClass": "Priest",
@@ -16909,7 +16909,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "SuprÃƒÂ©tincelle"
+            "name": "Suprétincelle"
         },
         "flavor": "Tinkmaster Overspark nearly lost his Tinker's license after the Great Ironforge Squirrel Stampede of '09.",
         "elite": true,
@@ -16954,7 +16954,7 @@ var jsonDatabase = [
         "text": "Will be <b>Frozen</b> again at the start of the next turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "Pris au piÃƒÂ¨ge"
+            "name": "Pris au piège"
         }
     },
     {
@@ -16969,7 +16969,7 @@ var jsonDatabase = [
         "id": "EX1_158t",
         "type": "Minion",
         "fr": {
-            "name": "TrÃƒÂ©ant"
+            "name": "Tréant"
         }
     },
     {
@@ -16982,7 +16982,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "TrÃƒÂ©ant"
+            "name": "Tréant"
         },
         "playerClass": "Druid",
         "attack": 2,
@@ -17007,7 +17007,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>",
         "type": "Minion",
         "fr": {
-            "name": "TrÃƒÂ©ant"
+            "name": "Tréant"
         }
     },
     {
@@ -17017,7 +17017,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "ObnubilÃƒÂ© par les trÃƒÂ©sors"
+            "name": "Obnubilé par les trésors"
         }
     },
     {
@@ -17033,7 +17033,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Drake du CrÃƒÂ©puscule"
+            "name": "Drake du Crépuscule"
         },
         "flavor": "Twilight drakes feed on Mystical Energy.  And Tacos.",
         "attack": 4,
@@ -17051,7 +17051,7 @@ var jsonDatabase = [
         "artist": "Dave Allsop",
         "type": "Spell",
         "fr": {
-            "name": "NÃƒÂ©ant distordu"
+            "name": "Néant distordu"
         },
         "flavor": "The Twisting Nether is a formless place of magic and illusion and destroyed minions.",
         "playerClass": "Warlock",
@@ -17070,7 +17070,7 @@ var jsonDatabase = [
         "health": 4,
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°lÃƒÂ©mentaire dÃƒÂ©liÃƒÂ©"
+            "name": "Élémentaire délié"
         },
         "flavor": "Unlike bound elementals, Unbound ones really enjoy a night on the town.",
         "playerClass": "Shaman",
@@ -17089,7 +17089,7 @@ var jsonDatabase = [
         "artist": "Linggar Bramanty",
         "type": "Spell",
         "fr": {
-            "name": "LÃƒÂ¢cher les chiens"
+            "name": "Lâcher les chiens"
         },
         "flavor": "You must read the name of this card out loud each time you play it.",
         "playerClass": "Hunter",
@@ -17106,7 +17106,7 @@ var jsonDatabase = [
         "artist": "Matt Cavotta",
         "type": "Spell",
         "fr": {
-            "name": "AmÃƒÂ©lioration !"
+            "name": "Amélioration !"
         },
         "flavor": "Easily worth 50 DKP.",
         "playerClass": "Warrior",
@@ -17124,7 +17124,7 @@ var jsonDatabase = [
         "text": "Increased Durability.",
         "type": "Enchantment",
         "fr": {
-            "name": "AmÃƒÂ©lioration"
+            "name": "Amélioration"
         }
     },
     {
@@ -17135,7 +17135,7 @@ var jsonDatabase = [
         "text": "+1 Attack and +1 Durability.",
         "type": "Enchantment",
         "fr": {
-            "name": "AmÃƒÂ©liorÃƒÂ©e"
+            "name": "Améliorée"
         }
     },
     {
@@ -17148,7 +17148,7 @@ var jsonDatabase = [
         "text": "+5 Attack.",
         "type": "Spell",
         "fr": {
-            "name": "DÃƒÂ©raciner"
+            "name": "Déraciner"
         }
     },
     {
@@ -17159,7 +17159,7 @@ var jsonDatabase = [
         "text": "+5 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "DÃƒÂ©racinÃƒÂ©"
+            "name": "Déraciné"
         }
     },
     {
@@ -17277,7 +17277,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Garde rapprochÃƒÂ©e"
+            "name": "Garde rapprochée"
         }
     },
     {
@@ -17438,7 +17438,7 @@ var jsonDatabase = [
         "text": "Deal $3 damage to a minion.",
         "type": "Spell",
         "fr": {
-            "name": "ColÃƒÂ¨re"
+            "name": "Colère"
         }
     },
     {
@@ -17451,7 +17451,7 @@ var jsonDatabase = [
         "text": "Deal $1 damage to a minion. Draw a card.",
         "type": "Spell",
         "fr": {
-            "name": "ColÃƒÂ¨re"
+            "name": "Colère"
         }
     },
     {
@@ -17462,7 +17462,7 @@ var jsonDatabase = [
         "artist": "Raymond Swanland",
         "type": "Spell",
         "fr": {
-            "name": "ColÃƒÂ¨re"
+            "name": "Colère"
         },
         "flavor": "The talk around the Ratchet Inn is that this card is too good and should be a Legendary.",
         "playerClass": "Druid",
@@ -17514,7 +17514,7 @@ var jsonDatabase = [
         "health": 1,
         "type": "Minion",
         "fr": {
-            "name": "Jeune prÃƒÂªtresse"
+            "name": "Jeune prêtresse"
         },
         "flavor": "She can't wait to learn Power Word: Fortitude Rank 2.",
         "attack": 2,
@@ -17535,9 +17535,9 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Jeune maÃƒÂ®tre brasseur"
+            "name": "Jeune maître brasseur"
         },
-        "flavor": "His youthful enthusiasm doesnÃ¢â‚¬â„¢t always equal excellence in his brews.   DonÃ¢â‚¬â„¢t drink the Mogu Stout!",
+        "flavor": "His youthful enthusiasm doesn’t always equal excellence in his brews.   Don’t drink the Mogu Stout!",
         "attack": 3,
         "faction": "Alliance",
         "name": "Youthful Brewmaster",
@@ -17576,7 +17576,7 @@ var jsonDatabase = [
         "text": "Deal $5 damage to all characters except Ysera.",
         "type": "Spell",
         "fr": {
-            "name": "RÃƒÂ©veil dÃ¢â‚¬â„¢Ysera"
+            "name": "Réveil d’Ysera"
         }
     },
     {
@@ -17646,7 +17646,7 @@ var jsonDatabase = [
         "id": "TU4f_005",
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre brasseur"
+            "name": "Maître brasseur"
         },
         "rarity": "Common"
     },
@@ -17678,7 +17678,7 @@ var jsonDatabase = [
         "text": "<b>Battlecry:</b> Throw Bananas.",
         "type": "Minion",
         "fr": {
-            "name": "Singe cinglÃƒÂ©"
+            "name": "Singe cinglé"
         },
         "rarity": "Common"
     },
@@ -17719,7 +17719,7 @@ var jsonDatabase = [
         "id": "TU4e_002t",
         "type": "Minion",
         "fr": {
-            "name": "Flamme dÃ¢â‚¬â„¢Azzinoth"
+            "name": "Flamme d’Azzinoth"
         },
         "rarity": "Common"
     },
@@ -17732,7 +17732,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon two 2/1 minions.",
         "type": "Hero Power",
         "fr": {
-            "name": "Flammes dÃ¢â‚¬â„¢Azzinoth"
+            "name": "Flammes d’Azzinoth"
         }
     },
     {
@@ -17774,7 +17774,7 @@ var jsonDatabase = [
         "text": "Was hiding in a barrel!",
         "type": "Minion",
         "fr": {
-            "name": "Gnome cachÃƒÂ©"
+            "name": "Gnome caché"
         },
         "rarity": "Common"
     },
@@ -17847,7 +17847,7 @@ var jsonDatabase = [
         "text": "Has +2/+2. <i>(+2 Attack/+2 Health)</i>",
         "type": "Enchantment",
         "fr": {
-            "name": "HÃƒÂ©ritage de lÃ¢â‚¬â„¢Empereur"
+            "name": "Héritage de l’Empereur"
         }
     },
     {
@@ -17859,7 +17859,7 @@ var jsonDatabase = [
         "text": "Give your minions +2/+2. <i>(+2 Attack/+2 Health)</i>",
         "type": "Spell",
         "fr": {
-            "name": "HÃƒÂ©ritage de lÃ¢â‚¬â„¢Empereur"
+            "name": "Héritage de l’Empereur"
         },
         "rarity": "Common"
     },
@@ -17910,7 +17910,7 @@ var jsonDatabase = [
         "id": "TU4b_001",
         "type": "Hero",
         "fr": {
-            "name": "Millhouse TempÃƒÂªte-de-Mana"
+            "name": "Millhouse Tempête-de-Mana"
         },
         "rarity": "Common"
     },
@@ -17925,7 +17925,7 @@ var jsonDatabase = [
         "text": "So strong! And only 6 Mana?!",
         "type": "Minion",
         "fr": {
-            "name": "Grand frÃƒÂ¨re de Mukla"
+            "name": "Grand frère de Mukla"
         },
         "rarity": "Common"
     },
@@ -17954,7 +17954,7 @@ var jsonDatabase = [
         "id": "TU4f_002",
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°claireur pandaren"
+            "name": "Éclaireur pandaren"
         },
         "rarity": "Common"
     },
@@ -18010,7 +18010,7 @@ var jsonDatabase = [
         "text": "Deal 2 damage to all enemies.",
         "type": "Spell",
         "fr": {
-            "name": "PiÃƒÂ©tinement"
+            "name": "Piétinement"
         },
         "rarity": "Common"
     },
@@ -18047,7 +18047,7 @@ var jsonDatabase = [
         "id": "TU4e_004",
         "type": "Weapon",
         "fr": {
-            "name": "Glaive de guerre dÃ¢â‚¬â„¢Azzinoth"
+            "name": "Glaive de guerre d’Azzinoth"
         },
         "rarity": "Common"
     },
@@ -18060,7 +18060,7 @@ var jsonDatabase = [
         "text": "Restore 8 Health.",
         "type": "Spell",
         "fr": {
-            "name": "VolontÃƒÂ© de Mukla"
+            "name": "Volonté de Mukla"
         },
         "rarity": "Common"
     },
@@ -18109,7 +18109,7 @@ var jsonDatabase = [
         "text": "Increased Stats.",
         "type": "Enchantment",
         "fr": {
-            "name": "EncouragÃƒÂ© !"
+            "name": "Encouragé !"
         }
     },
     {
@@ -18161,7 +18161,7 @@ var jsonDatabase = [
         "health": 1,
         "type": "Minion",
         "fr": {
-            "name": "Poulet ÃƒÂ  tÃƒÂªte chercheuse"
+            "name": "Poulet à tête chercheuse"
         },
         "attack": 0,
         "faction": "Alliance",
@@ -18234,7 +18234,7 @@ var jsonDatabase = [
         "health": 3,
         "type": "Minion",
         "fr": {
-            "name": "Robot rÃƒÂ©parateur"
+            "name": "Robot réparateur"
         },
         "attack": 0,
         "faction": "Alliance",
@@ -18252,7 +18252,7 @@ var jsonDatabase = [
         "text": "Deal $4 damage. Draw a card.",
         "type": "Spell",
         "fr": {
-            "name": "Les voleurs, ÃƒÂ§a vous prend..."
+            "name": "Les voleurs, ça vous prend..."
         }
     },
     {
@@ -18265,7 +18265,7 @@ var jsonDatabase = [
         "text": "Has been transformed into a chicken!",
         "type": "Enchantment",
         "fr": {
-            "name": "TransformÃƒÂ©"
+            "name": "Transformé"
         }
     },
     {
@@ -18315,7 +18315,7 @@ var jsonDatabase = [
         "health": 8,
         "type": "Minion",
         "fr": {
-            "name": "AtramÃƒÂ©dÃƒÂ¨s"
+            "name": "Atramédès"
         },
         "elite": true,
         "attack": 2,
@@ -18366,7 +18366,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSummon two 2/1 Bone Constructs.",
         "type": "Hero Power",
         "fr": {
-            "name": "SÃƒÂ©ides des os"
+            "name": "Séides des os"
         }
     },
     {
@@ -18377,7 +18377,7 @@ var jsonDatabase = [
         "id": "TB_MechWar_Boss2",
         "type": "Hero",
         "fr": {
-            "name": "RoÃ¢â‚¬â„¢Boum"
+            "name": "Ro’Boum"
         },
         "rarity": "Free"
     },
@@ -18389,7 +18389,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 1 damage to 2 random enemies.",
         "type": "Hero Power",
         "fr": {
-            "name": "RoÃ¢â‚¬â„¢Boum junior"
+            "name": "Ro’Boum junior"
         }
     },
     {
@@ -18398,7 +18398,7 @@ var jsonDatabase = [
         "id": "TB_001",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€°changer les PV des boss"
+            "name": "Échanger les PV des boss"
         }
     },
     {
@@ -18408,7 +18408,7 @@ var jsonDatabase = [
         "text": "Costs (2) less.",
         "type": "Enchantment",
         "fr": {
-            "name": "MontÃƒÂ©e dÃ¢â‚¬â„¢adrÃƒÂ©naline"
+            "name": "Montée d’adrénaline"
         }
     },
     {
@@ -18491,7 +18491,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Coren NavrebiÃƒÂ¨re"
+            "name": "Coren Navrebière"
         },
         "elite": true,
         "attack": 4,
@@ -18506,7 +18506,7 @@ var jsonDatabase = [
         "id": "TB_009",
         "type": "Enchantment",
         "fr": {
-            "name": "CrÃƒÂ©er 15 secrets"
+            "name": "Créer 15 secrets"
         }
     },
     {
@@ -18518,7 +18518,7 @@ var jsonDatabase = [
         "text": "Change the Health of enemy minions to 1.",
         "type": "Spell",
         "fr": {
-            "name": "DÃƒÂ©cimer"
+            "name": "Décimer"
         }
     },
     {
@@ -18529,7 +18529,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nChange the Health of enemy minions to 1.",
         "type": "Hero Power",
         "fr": {
-            "name": "DÃƒÂ©cimer"
+            "name": "Décimer"
         }
     },
     {
@@ -18538,7 +18538,7 @@ var jsonDatabase = [
         "id": "TB_010",
         "type": "Enchantment",
         "fr": {
-            "name": "Enchantement de crÃƒÂ©ation de deck"
+            "name": "Enchantement de création de deck"
         }
     },
     {
@@ -18551,7 +18551,7 @@ var jsonDatabase = [
         "text": "Swap a minion's Attack and Health.",
         "type": "Spell",
         "fr": {
-            "name": "Banane dÃƒÂ©viante"
+            "name": "Banane déviante"
         }
     },
     {
@@ -18561,7 +18561,7 @@ var jsonDatabase = [
         "text": "Attack and Health have been swapped by Deviate Banana.",
         "type": "Enchantment",
         "fr": {
-            "name": "Inversion dÃƒÂ©viante"
+            "name": "Inversion déviante"
         }
     },
     {
@@ -18615,7 +18615,7 @@ var jsonDatabase = [
         "text": "Also damages the minions next to whomever he attacks.",
         "type": "Minion",
         "fr": {
-            "name": "Pourfendeur drakÃƒÂ´nide"
+            "name": "Pourfendeur drakônide"
         }
     },
     {
@@ -18831,7 +18831,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre des rouages MÃƒÂ©cazod"
+            "name": "Maître des rouages Mécazod"
         },
         "elite": true,
         "attack": 2,
@@ -18847,7 +18847,7 @@ var jsonDatabase = [
         "text": "This minion is granted <b>Taunt</b> and <b>Charge</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "ConfÃƒÂ¨re Provocation et Charge"
+            "name": "Confère Provocation et Charge"
         }
     },
     {
@@ -18900,7 +18900,7 @@ var jsonDatabase = [
         "text": "At the start of your turn, summon a <b>Legendary</b> minion.",
         "type": "Minion",
         "fr": {
-            "name": "Juge SupÃƒÂ©rieur Mornepierre"
+            "name": "Juge Supérieur Mornepierre"
         },
         "rarity": "Legendary"
     },
@@ -18911,7 +18911,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Je vous entendsÃ¢â‚¬Â¦"
+            "name": "Je vous entends…"
         }
     },
     {
@@ -18944,7 +18944,7 @@ var jsonDatabase = [
         "text": "Destroy Lorewalker Cho.",
         "type": "Spell",
         "fr": {
-            "name": "DÃƒÂ©truire le chroniqueur"
+            "name": "Détruire le chroniqueur"
         }
     },
     {
@@ -19041,7 +19041,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>",
         "type": "Minion",
         "fr": {
-            "name": "Fan de mÃƒÂ©ca"
+            "name": "Fan de méca"
         }
     },
     {
@@ -19081,7 +19081,7 @@ var jsonDatabase = [
         "text": "Who could it be?!",
         "type": "Enchantment",
         "fr": {
-            "name": "Pilote mystÃƒÂ¨re"
+            "name": "Pilote mystère"
         }
     },
     {
@@ -19105,7 +19105,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, summon a random friendly minion that died this turn.",
         "type": "Minion",
         "fr": {
-            "name": "Soigneur honnÃƒÂªte"
+            "name": "Soigneur honnête"
         }
     },
     {
@@ -19119,7 +19119,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, heal 2 damage from adjacent minions.",
         "type": "Minion",
         "fr": {
-            "name": "Soigneur dÃƒÂ©butant"
+            "name": "Soigneur débutant"
         }
     },
     {
@@ -19133,7 +19133,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, deal 1 damage to random enemy minion.",
         "type": "Minion",
         "fr": {
-            "name": "Mage dÃƒÂ©butant"
+            "name": "Mage débutant"
         }
     },
     {
@@ -19150,7 +19150,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>",
         "type": "Minion",
         "fr": {
-            "name": "Tank dÃƒÂ©butant"
+            "name": "Tank débutant"
         }
     },
     {
@@ -19190,7 +19190,7 @@ var jsonDatabase = [
         "text": "Summon a random Tron.",
         "type": "Spell",
         "fr": {
-            "name": "SystÃƒÂ¨me de dÃƒÂ©fense Omnitron"
+            "name": "Système de défense Omnitron"
         }
     },
     {
@@ -19249,7 +19249,7 @@ var jsonDatabase = [
         "text": "<b>Boss</b>\nAt the beginning of each turn, Mechazod strikes!",
         "type": "Minion",
         "fr": {
-            "name": "MÃƒÂ©cazod surchargÃƒÂ©"
+            "name": "Mécazod surchargé"
         },
         "rarity": "Legendary"
     },
@@ -19313,7 +19313,7 @@ var jsonDatabase = [
         "id": "TB_PickYourFateRandom",
         "type": "Enchantment",
         "fr": {
-            "name": "Choisissez votre destin - AlÃƒÂ©atoire"
+            "name": "Choisissez votre destin - Aléatoire"
         }
     },
     {
@@ -19324,7 +19324,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nPut a minion from each deck into the battlefield.",
         "type": "Hero Power",
         "fr": {
-            "name": "Pioche forcÃƒÂ©e !"
+            "name": "Pioche forcée !"
         }
     },
     {
@@ -19376,7 +19376,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 1 damage to all enemy minions. If any die, summon a slime.",
         "type": "Hero Power",
         "fr": {
-            "name": "Nuage empoisonnÃƒÂ©"
+            "name": "Nuage empoisonné"
         }
     },
     {
@@ -19387,7 +19387,7 @@ var jsonDatabase = [
         "text": "Deal Attack damage to biggest minion.",
         "type": "Spell",
         "fr": {
-            "name": "Fixer des prioritÃƒÂ©s"
+            "name": "Fixer des priorités"
         }
     },
     {
@@ -19442,7 +19442,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>",
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°lÃƒÂ©mentaire de roche"
+            "name": "Élémentaire de roche"
         }
     },
     {
@@ -19487,7 +19487,7 @@ var jsonDatabase = [
         "text": "Find a random Treasure.",
         "type": "Spell",
         "fr": {
-            "name": "Cadeau du Voile dÃ¢â‚¬â„¢hiver volÃƒÂ©"
+            "name": "Cadeau du Voile d’hiver volé"
         }
     },
     {
@@ -19516,7 +19516,7 @@ var jsonDatabase = [
         "text": "Gain 1 Mana Crystal this turn only.",
         "type": "Spell",
         "fr": {
-            "name": "PiÃƒÂ¨ce ternie"
+            "name": "Pièce ternie"
         }
     },
     {
@@ -19611,7 +19611,7 @@ var jsonDatabase = [
         "text": "Each turn, if you have less health then a your opponent, summon a free minion",
         "type": "Enchantment",
         "fr": {
-            "name": "Invocation prÃƒÂ©coce de serviteur"
+            "name": "Invocation précoce de serviteur"
         }
     },
     {
@@ -19717,7 +19717,7 @@ var jsonDatabase = [
         "text": "<b>Deathrattle</b> Give attacking player a Treasure.",
         "type": "Minion",
         "fr": {
-            "name": "Cadeau du Voile dÃ¢â‚¬â„¢hiver"
+            "name": "Cadeau du Voile d’hiver"
         }
     },
     {
@@ -19743,7 +19743,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nGain 2 Armor.",
         "type": "Hero Power",
         "fr": {
-            "name": "Gain dÃ¢â‚¬â„¢armure !"
+            "name": "Gain d’armure !"
         },
         "rarity": "Free"
     },
@@ -19836,7 +19836,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal $2 damage to the enemy hero.",
         "type": "Hero Power",
         "fr": {
-            "name": "Tir assurÃƒÂ©"
+            "name": "Tir assuré"
         },
         "rarity": "Free"
     },
@@ -19850,7 +19850,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nGain 4 Armor.",
         "type": "Hero Power",
         "fr": {
-            "name": "DÃƒÂ©fense stoÃƒÂ¯que"
+            "name": "Défense stoïque"
         }
     },
     {
@@ -19926,7 +19926,7 @@ var jsonDatabase = [
         "name": "Beomki Hong",
         "health": 3,
         "id": "CRED_19",
-        "text": "<b>Taunt.</b> Friendly minions canÃ¢â‚¬â„¢t be <b>Frozen.</b>",
+        "text": "<b>Taunt.</b> Friendly minions can’t be <b>Frozen.</b>",
         "type": "Minion",
         "fr": {
             "name": "Beomki Hong"
@@ -20628,7 +20628,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Unlocked when you have all the Golden Murlocs from the Classic and Basic Sets.",
         "fr": {
-            "name": "Vieux TroublÃ…â€œil"
+            "name": "Vieux Troublœil"
         },
         "flavor": "He's a legend among murlocs.  \"Mrghllghghllghg!\", they say.",
         "elite": true,
@@ -20653,7 +20653,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after completing the Rogue Class Challenge in Naxxramas.",
         "fr": {
-            "name": "EmbusquÃƒÂ© anubÃ¢â‚¬â„¢ar"
+            "name": "Embusqué anub’ar"
         },
         "flavor": "Originally he was called \"Anub'ar Guy who bounces a guy back to your hand\", but it lacked a certain zing.",
         "playerClass": "Rogue",
@@ -20672,7 +20672,7 @@ var jsonDatabase = [
         "id": "NAX1_01",
         "type": "Hero",
         "fr": {
-            "name": "AnubÃ¢â‚¬â„¢Rekhan"
+            "name": "Anub’Rekhan"
         }
     },
     {
@@ -20683,7 +20683,7 @@ var jsonDatabase = [
         "id": "NAX1h_01",
         "type": "Hero",
         "fr": {
-            "name": "AnubÃ¢â‚¬â„¢Rekhan"
+            "name": "Anub’Rekhan"
         }
     },
     {
@@ -20763,7 +20763,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nTake control of a random enemy minion.",
         "type": "Hero Power",
         "fr": {
-            "name": "ChaÃƒÂ®nes"
+            "name": "Chaînes"
         }
     },
     {
@@ -20775,7 +20775,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nTake control of a random enemy minion until end of turn.",
         "type": "Hero Power",
         "fr": {
-            "name": "ChaÃƒÂ®nes"
+            "name": "Chaînes"
         }
     },
     {
@@ -20801,7 +20801,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Instructor Razuvious in the Military Quarter.",
         "fr": {
-            "name": "Ãƒâ€°pÃƒÂ©es dansantes"
+            "name": "Épées dansantes"
         },
         "flavor": "They like to dance to reggae.",
         "attack": 4,
@@ -20842,7 +20842,7 @@ var jsonDatabase = [
         "text": "Increased stats.",
         "type": "Enchantment",
         "fr": {
-            "name": "Appel des tÃƒÂ©nÃƒÂ¨bres"
+            "name": "Appel des ténèbres"
         }
     },
     {
@@ -20930,7 +20930,7 @@ var jsonDatabase = [
         "text": "Health changed to 1.",
         "type": "Enchantment",
         "fr": {
-            "name": "DÃƒÂ©cimer"
+            "name": "Décimer"
         }
     },
     {
@@ -20942,7 +20942,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nChange the Health of all minions to 1.",
         "type": "Hero Power",
         "fr": {
-            "name": "DÃƒÂ©cimer"
+            "name": "Décimer"
         }
     },
     {
@@ -20954,7 +20954,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nChange the Health of enemy minions to 1.",
         "type": "Hero Power",
         "fr": {
-            "name": "DÃƒÂ©cimer"
+            "name": "Décimer"
         }
     },
     {
@@ -20992,7 +20992,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Sapphiron in the Frostwyrm Lair.",
         "fr": {
-            "name": "Limon rÃƒÂ©sonnant"
+            "name": "Limon résonnant"
         },
         "flavor": "OOZE... Ooze... Ooze... (ooze...)",
         "attack": 1,
@@ -21012,7 +21012,7 @@ var jsonDatabase = [
         "text": "+6 Attack this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "AccÃƒÂ¨s de rage"
+            "name": "Accès de rage"
         }
     },
     {
@@ -21024,7 +21024,7 @@ var jsonDatabase = [
         "text": "Give your hero +6 Attack this turn.",
         "type": "Spell",
         "fr": {
-            "name": "AccÃƒÂ¨s de rage"
+            "name": "Accès de rage"
         }
     },
     {
@@ -21036,7 +21036,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 3 damage to the left-most enemy minion.",
         "type": "Hero Power",
         "fr": {
-            "name": "Ãƒâ€°ruption"
+            "name": "Éruption"
         }
     },
     {
@@ -21048,7 +21048,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 2 damage to the left-most enemy minion.",
         "type": "Hero Power",
         "fr": {
-            "name": "Ãƒâ€°ruption"
+            "name": "Éruption"
         }
     },
     {
@@ -21058,7 +21058,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Double rangÃƒÂ©e de dents"
+            "name": "Double rangée de dents"
         }
     },
     {
@@ -21071,7 +21071,7 @@ var jsonDatabase = [
         "id": "NAX11_03",
         "type": "Minion",
         "fr": {
-            "name": "GelÃƒÂ©e polluÃƒÂ©e"
+            "name": "Gelée polluée"
         }
     },
     {
@@ -21169,7 +21169,7 @@ var jsonDatabase = [
         "text": "Permanently Frozen.  Adjacent minions are Immune to Frost Breath.",
         "type": "Minion",
         "fr": {
-            "name": "Champion gelÃƒÂ©"
+            "name": "Champion gelé"
         }
     },
     {
@@ -21366,7 +21366,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Anub'Rekhan in the Arachnid Quarter.",
         "fr": {
-            "name": "Rampante hantÃƒÂ©e"
+            "name": "Rampante hantée"
         },
         "flavor": "Arachnofauxbia: Fear of fake spiders.",
         "attack": 1,
@@ -21385,7 +21385,7 @@ var jsonDatabase = [
         "id": "NAX5_01",
         "type": "Hero",
         "fr": {
-            "name": "Heigan lÃ¢â‚¬â„¢Impur"
+            "name": "Heigan l’Impur"
         }
     },
     {
@@ -21397,7 +21397,7 @@ var jsonDatabase = [
         "id": "NAX5_01H",
         "type": "Hero",
         "fr": {
-            "name": "Heigan lÃ¢â‚¬â„¢Impur"
+            "name": "Heigan l’Impur"
         }
     },
     {
@@ -21486,7 +21486,7 @@ var jsonDatabase = [
         "text": "Whenever a minion with <b>Deathrattle</b> dies, gain +2 Attack.",
         "type": "Weapon",
         "fr": {
-            "name": "MÃƒÂ¢choires"
+            "name": "Mâchoires"
         }
     },
     {
@@ -21500,7 +21500,7 @@ var jsonDatabase = [
         "text": "Whenever a minion with <b>Deathrattle</b> dies, gain +2 Attack.",
         "type": "Weapon",
         "fr": {
-            "name": "MÃƒÂ¢choires"
+            "name": "Mâchoires"
         }
     },
     {
@@ -21511,7 +21511,7 @@ var jsonDatabase = [
         "id": "NAX15_01H",
         "type": "Hero",
         "fr": {
-            "name": "KelÃ¢â‚¬â„¢Thuzad"
+            "name": "Kel’Thuzad"
         }
     },
     {
@@ -21522,7 +21522,7 @@ var jsonDatabase = [
         "id": "NAX15_01",
         "type": "Hero",
         "fr": {
-            "name": "KelÃ¢â‚¬â„¢Thuzad"
+            "name": "Kel’Thuzad"
         }
     },
     {
@@ -21535,7 +21535,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating every boss in Naxxramas!",
         "fr": {
-            "name": "KelÃ¢â‚¬â„¢Thuzad"
+            "name": "Kel’Thuzad"
         },
         "flavor": "Kel'Thuzad could not resist the call of the Lich King. Even when it's just a robo-call extolling the Lich King's virtues.",
         "elite": true,
@@ -21631,7 +21631,7 @@ var jsonDatabase = [
         "text": "Deal $3 damage to all enemy minions. Restore #3 Health to your hero.",
         "type": "Spell",
         "fr": {
-            "name": "NuÃƒÂ©e de sauterelles"
+            "name": "Nuée de sauterelles"
         }
     },
     {
@@ -21763,7 +21763,7 @@ var jsonDatabase = [
         "text": "Activate the Crystal to control the Understudies!",
         "type": "Spell",
         "fr": {
-            "name": "Cristal de contrÃƒÂ´le mental"
+            "name": "Cristal de contrôle mental"
         }
     },
     {
@@ -21831,7 +21831,7 @@ var jsonDatabase = [
         "text": "<b>Deathrattle:</b> Destroy the minions next to this one as well.",
         "type": "Minion",
         "fr": {
-            "name": "NÃƒÂ©cro-chevalier"
+            "name": "Nécro-chevalier"
         }
     },
     {
@@ -21843,7 +21843,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 3 damage to the enemy hero.",
         "type": "Hero Power",
         "fr": {
-            "name": "Aura nÃƒÂ©crotique"
+            "name": "Aura nécrotique"
         }
     },
     {
@@ -21855,7 +21855,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 3 damage to the enemy hero.",
         "type": "Hero Power",
         "fr": {
-            "name": "Aura nÃƒÂ©crotique"
+            "name": "Aura nécrotique"
         }
     },
     {
@@ -21865,7 +21865,7 @@ var jsonDatabase = [
         "text": "Your spells cost (5) more this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "Aura nÃƒÂ©crotique"
+            "name": "Aura nécrotique"
         }
     },
     {
@@ -21877,7 +21877,7 @@ var jsonDatabase = [
         "text": "Destroy a minion.",
         "type": "Spell",
         "fr": {
-            "name": "Poison nÃƒÂ©crotique"
+            "name": "Poison nécrotique"
         }
     },
     {
@@ -21893,7 +21893,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Grand Widow Faerlina in the Arachnid Quarter.",
         "fr": {
-            "name": "Seigneur de la toile nÃƒÂ©rubÃ¢â‚¬â„¢ar"
+            "name": "Seigneur de la toile nérub’ar"
         },
         "flavor": "Weblords spend all day making giant trampoline parks.",
         "attack": 1,
@@ -21913,7 +21913,7 @@ var jsonDatabase = [
         "id": "NAX1h_03",
         "type": "Minion",
         "fr": {
-            "name": "NÃƒÂ©rubien"
+            "name": "Nérubien"
         }
     },
     {
@@ -21926,7 +21926,7 @@ var jsonDatabase = [
         "id": "NAX1_03",
         "type": "Minion",
         "fr": {
-            "name": "NÃƒÂ©rubien"
+            "name": "Nérubien"
         }
     },
     {
@@ -21939,7 +21939,7 @@ var jsonDatabase = [
         "id": "FP1_007t",
         "type": "Minion",
         "fr": {
-            "name": "NÃƒÂ©rubien"
+            "name": "Nérubien"
         },
         "rarity": "Rare"
     },
@@ -21956,7 +21956,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Maexxna in the Arachnid Quarter.",
         "fr": {
-            "name": "Ã…â€™uf de nÃƒÂ©rubien"
+            "name": "Œuf de nérubien"
         },
         "flavor": "Eggs are a good source of protein and Nerubians.",
         "attack": 0,
@@ -22033,7 +22033,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 1 damage to all minions. If any die, summon a slime.",
         "type": "Hero Power",
         "fr": {
-            "name": "Nuage empoisonnÃƒÂ©"
+            "name": "Nuage empoisonné"
         }
     },
     {
@@ -22045,7 +22045,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 2 damage to all enemies. If any die, summon a slime.",
         "type": "Hero Power",
         "fr": {
-            "name": "Nuage empoisonnÃƒÂ©"
+            "name": "Nuage empoisonné"
         }
     },
     {
@@ -22074,7 +22074,7 @@ var jsonDatabase = [
         "text": "Attack and Health swapped.",
         "type": "Enchantment",
         "fr": {
-            "name": "PolaritÃƒÂ©"
+            "name": "Polarité"
         }
     },
     {
@@ -22086,7 +22086,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nSwap the Attack and Health of all minions.",
         "type": "Hero Power",
         "fr": {
-            "name": "Changement de polaritÃƒÂ©"
+            "name": "Changement de polarité"
         }
     },
     {
@@ -22154,7 +22154,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\nWhenever an enemy dies, raise a 1/1 Skeleton.",
         "type": "Hero Power",
         "fr": {
-            "name": "RÃƒÂ©animation morbide"
+            "name": "Réanimation morbide"
         }
     },
     {
@@ -22166,7 +22166,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\nWhenever an enemy dies, raise a 5/5 Skeleton.",
         "type": "Hero Power",
         "fr": {
-            "name": "RÃƒÂ©animation morbide"
+            "name": "Réanimation morbide"
         }
     },
     {
@@ -22178,7 +22178,7 @@ var jsonDatabase = [
         "type": "Spell",
         "howToGetGold": "Can be crafted after completing the Shaman Class Challenge in Naxxramas.",
         "fr": {
-            "name": "RÃƒÂ©incarnation"
+            "name": "Réincarnation"
         },
         "flavor": "It's like birth, except you're an adult and you were just dead a second ago.",
         "playerClass": "Shaman",
@@ -22365,7 +22365,7 @@ var jsonDatabase = [
         "text": "MINE!",
         "type": "Enchantment",
         "fr": {
-            "name": "Esclave de KelÃ¢â‚¬â„¢Thuzad"
+            "name": "Esclave de Kel’Thuzad"
         }
     },
     {
@@ -22382,7 +22382,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>",
         "type": "Minion",
         "fr": {
-            "name": "GelÃƒÂ©e"
+            "name": "Gelée"
         }
     },
     {
@@ -22453,7 +22453,7 @@ var jsonDatabase = [
         "id": "FP1_002t",
         "type": "Minion",
         "fr": {
-            "name": "AraignÃƒÂ©e spectrale"
+            "name": "Araignée spectrale"
         }
     },
     {
@@ -22591,7 +22591,7 @@ var jsonDatabase = [
         "text": "+2 Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€°tat de supercharge"
+            "name": "État de supercharge"
         }
     },
     {
@@ -22643,7 +22643,7 @@ var jsonDatabase = [
         "text": "Your hero is <b>Immune</b>.",
         "type": "Minion",
         "fr": {
-            "name": "Thane KorthÃ¢â‚¬â„¢azz"
+            "name": "Thane Korth’azz"
         }
     },
     {
@@ -22658,7 +22658,7 @@ var jsonDatabase = [
         "text": "Your hero is <b>Immune</b>.",
         "type": "Minion",
         "fr": {
-            "name": "Thane KorthÃ¢â‚¬â„¢azz"
+            "name": "Thane Korth’azz"
         }
     },
     {
@@ -22672,7 +22672,7 @@ var jsonDatabase = [
         "id": "FP1_019t",
         "type": "Minion",
         "fr": {
-            "name": "TrÃƒÂ©ant"
+            "name": "Tréant"
         }
     },
     {
@@ -22684,7 +22684,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 3 damage.",
         "type": "Hero Power",
         "fr": {
-            "name": "Frappe dÃƒÂ©sÃƒÂ©quilibrante"
+            "name": "Frappe déséquilibrante"
         }
     },
     {
@@ -22696,7 +22696,7 @@ var jsonDatabase = [
         "text": "<b>Hero Power</b>\nDeal 4 damage.",
         "type": "Hero Power",
         "fr": {
-            "name": "Frappe dÃƒÂ©sÃƒÂ©quilibrante"
+            "name": "Frappe déséquilibrante"
         }
     },
     {
@@ -22872,7 +22872,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Thaddius in the Construct Quarter.",
         "fr": {
-            "name": "Ãƒâ€šme gÃƒÂ©missante"
+            "name": "Âme gémissante"
         },
         "flavor": "This soul just <i>wails</i> on you. Dang, soul, let up already.",
         "attack": 3,
@@ -22922,7 +22922,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Tisseuse"
         },
-        "flavor": "Spider cocoons are like little piÃƒÂ±atas!",
+        "flavor": "Spider cocoons are like little piñatas!",
         "playerClass": "Hunter",
         "attack": 1,
         "name": "Webspinner",
@@ -22978,7 +22978,7 @@ var jsonDatabase = [
         "type": "Minion",
         "howToGetGold": "Can be crafted after defeating Gluth in the Construct Quarter.",
         "fr": {
-            "name": "CroqÃ¢â‚¬â„¢zombie"
+            "name": "Croq’zombie"
         },
         "flavor": "Zombie.  It's what's for dinner.",
         "attack": 2,
@@ -23853,7 +23853,7 @@ var jsonDatabase = [
         "artist": "Dan Scott",
         "type": "Spell",
         "fr": {
-            "name": "Appel des ancÃƒÂªtres"
+            "name": "Appel des ancêtres"
         },
         "flavor": "\"Hey! Ancestors!\" - Ancestor's call",
         "playerClass": "Shaman",
@@ -23872,7 +23872,7 @@ var jsonDatabase = [
         "health": 9,
         "type": "Minion",
         "fr": {
-            "name": "Golem dÃ¢â‚¬â„¢anima"
+            "name": "Golem d’anima"
         },
         "flavor": "The Dark Animus is evil and mysterious and huge and unable to write sentences that utilize proper grammar.",
         "playerClass": "Warlock",
@@ -23918,7 +23918,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ourson robot anodisÃƒÂ©"
+            "name": "Ourson robot anodisé"
         },
         "flavor": "It's adorable! AND OH MY GOODNESS WHY IS IT EATING MY FACE",
         "playerClass": "Druid",
@@ -23964,7 +23964,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Annulateur dÃ¢â‚¬â„¢Arcane X-21"
+            "name": "Annulateur d’Arcane X-21"
         },
         "flavor": "There was some hard talk between gnome magi and engineers about inventing this mech.",
         "attack": 2,
@@ -23991,7 +23991,7 @@ var jsonDatabase = [
         "text": "+1 Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "Plaque dÃ¢â‚¬â„¢armure"
+            "name": "Plaque d’armure"
         }
     },
     {
@@ -24004,7 +24004,7 @@ var jsonDatabase = [
         "text": "Give a minion +1 Health.",
         "type": "Spell",
         "fr": {
-            "name": "Plaque dÃ¢â‚¬â„¢armure"
+            "name": "Plaque d’armure"
         }
     },
     {
@@ -24109,7 +24109,7 @@ var jsonDatabase = [
         "text": "<b>Deathrattle</b>: Deal 1-4 damage to a random enemy.",
         "type": "Minion",
         "fr": {
-            "name": "RoÃ¢â‚¬â„¢Boum"
+            "name": "Ro’Boum"
         }
     },
     {
@@ -24137,7 +24137,7 @@ var jsonDatabase = [
         "text": "Increased stats.",
         "type": "Enchantment",
         "fr": {
-            "name": "Sourcils froncÃƒÂ©s"
+            "name": "Sourcils froncés"
         }
     },
     {
@@ -24149,7 +24149,7 @@ var jsonDatabase = [
         "health": 5,
         "type": "Minion",
         "fr": {
-            "name": "Trogg mÃƒÂ¢cheroc mastoc"
+            "name": "Trogg mâcheroc mastoc"
         },
         "flavor": "He's burly because he does CrossFit.",
         "attack": 3,
@@ -24213,7 +24213,7 @@ var jsonDatabase = [
         "text": "Stealthed until your next turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "CamouflÃƒÂ©"
+            "name": "Camouflé"
         }
     },
     {
@@ -24226,7 +24226,7 @@ var jsonDatabase = [
         "health": 8,
         "type": "Minion",
         "fr": {
-            "name": "GÃƒÂ©ant mÃƒÂ©canique"
+            "name": "Géant mécanique"
         },
         "flavor": "He and Mountain Giant don't get along.",
         "attack": 8,
@@ -24248,7 +24248,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Gnome mÃƒÂ©canique"
+            "name": "Gnome mécanique"
         },
         "flavor": "Clockwork gnomes are always asking what time it is.",
         "attack": 2,
@@ -24328,7 +24328,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tre des rouages"
+            "name": "Maître des rouages"
         },
         "flavor": "After a while, you don't see the cogs and sprockets. All you see is a robot, a spider tank, a deathray...",
         "attack": 1,
@@ -24349,7 +24349,7 @@ var jsonDatabase = [
         ],
         "type": "Weapon",
         "fr": {
-            "name": "ClÃƒÂ© de maÃƒÂ®tre des rouages"
+            "name": "Clé de maître des rouages"
         },
         "flavor": "For tightening cogs and smashin' troggs!",
         "playerClass": "Rogue",
@@ -24370,7 +24370,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "CrÃƒÂ©pitement"
+            "name": "Crépitement"
         },
         "flavor": "Snap! This card! Pop!",
         "playerClass": "Shaman",
@@ -24387,7 +24387,7 @@ var jsonDatabase = [
         "artist": "Michael Sutfin",
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€°craser"
+            "name": "Écraser"
         },
         "flavor": "Using this card on your enemies is one of the best things in life, according to some barbarians.",
         "playerClass": "Warrior",
@@ -24456,7 +24456,7 @@ var jsonDatabase = [
         "artist": "Jeff Haynie",
         "type": "Spell",
         "fr": {
-            "name": "Bombe de matiÃƒÂ¨re noire"
+            "name": "Bombe de matière noire"
         },
         "flavor": "If you're looking to make an \"Emo\" deck, this card is perfect!",
         "playerClass": "Warlock",
@@ -24473,7 +24473,7 @@ var jsonDatabase = [
         "artist": "Kerem Beyit",
         "type": "Spell",
         "fr": {
-            "name": "CÃ…â€œur de dÃƒÂ©mon"
+            "name": "Cœur de démon"
         },
         "flavor": "Virtually every member of the pro demon lobby is a warlock. Weird.",
         "playerClass": "Warlock",
@@ -24490,7 +24490,7 @@ var jsonDatabase = [
         "text": "+5/+5.",
         "type": "Enchantment",
         "fr": {
-            "name": "CÃ…â€œur de dÃƒÂ©mon"
+            "name": "Cœur de démon"
         }
     },
     {
@@ -24558,7 +24558,7 @@ var jsonDatabase = [
         "cost": 4,
         "collectible": true,
         "set": "Goblins vs Gnomes",
-        "artist": "JosÃƒÂ© LadrÃƒÂ¶nn",
+        "artist": "José Ladrönn",
         "health": 4,
         "mechanics": [
             "Overload",
@@ -24584,7 +24584,7 @@ var jsonDatabase = [
         "artist": "Alex Garner",
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€°cho de Medivh"
+            "name": "Écho de Medivh"
         },
         "flavor": "Medivh's echo haunts Karazhan, eternally cheating at chess and <i>Hearthstone</i>.",
         "playerClass": "Mage",
@@ -24622,7 +24622,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MÃƒÂ©cano-amplificateur"
+            "name": "Mécano-amplificateur"
         },
         "flavor": "His enhancements are gluten free!",
         "attack": 3,
@@ -24660,7 +24660,7 @@ var jsonDatabase = [
         "text": "+1 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Lame affÃƒÂ»tÃƒÂ©e"
+            "name": "Lame affûtée"
         }
     },
     {
@@ -24710,7 +24710,7 @@ var jsonDatabase = [
         "health": 8,
         "type": "Minion",
         "fr": {
-            "name": "Saccageur gangrenÃƒÂ©"
+            "name": "Saccageur gangrené"
         },
         "flavor": "So reaver. Much fel. Wow.",
         "attack": 8,
@@ -24742,7 +24742,7 @@ var jsonDatabase = [
         "health": 7,
         "type": "Minion",
         "fr": {
-            "name": "LÃƒÂ©viathan des flammes"
+            "name": "Léviathan des flammes"
         },
         "flavor": "Mimiron likes to take the Flame Leviathan out on some sweet joyrides.",
         "playerClass": "Mage",
@@ -24805,7 +24805,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Machine volante"
         },
-        "flavor": "To operate, this contraption needs a hula doll on the dashboard. Otherwise it's just a Ã¢â‚¬Å“falling machine.Ã¢â‚¬?",
+        "flavor": "To operate, this contraption needs a hula doll on the dashboard. Otherwise it's just a “falling machine.”",
         "attack": 1,
         "name": "Flying Machine",
         "id": "GVG_084",
@@ -24864,7 +24864,7 @@ var jsonDatabase = [
         "health": 9,
         "type": "Minion",
         "fr": {
-            "name": "GahzÃ¢â‚¬â„¢rilla"
+            "name": "Gahz’rilla"
         },
         "flavor": "The Sen'jin High football team is The Gahz'rillas.",
         "playerClass": "Hunter",
@@ -24884,7 +24884,7 @@ var jsonDatabase = [
         "text": "Gain 1 Mana Crystal this turn only.\n<i>(Won't trigger Gallywix.)</i>",
         "type": "Spell",
         "fr": {
-            "name": "PiÃƒÂ¨ce de Gallywix"
+            "name": "Pièce de Gallywix"
         }
     },
     {
@@ -25018,7 +25018,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "ExpÃƒÂ©rimentateur gnome"
+            "name": "Expérimentateur gnome"
         },
         "flavor": "He's legitimately surprised every time he turns himself into a chicken.",
         "attack": 3,
@@ -25086,7 +25086,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Sapeur gobelin"
         },
-        "flavor": "HeÃ¢â‚¬â„¢s not such a binge exploder anymore. These days, he only explodes socially.",
+        "flavor": "He’s not such a binge exploder anymore. These days, he only explodes socially.",
         "attack": 2,
         "name": "Goblin Sapper",
         "id": "GVG_095",
@@ -25101,7 +25101,7 @@ var jsonDatabase = [
         "text": "Mal'Ganis is granting +2/+2.",
         "type": "Enchantment",
         "fr": {
-            "name": "Ãƒâ€°treinte de MalÃ¢â‚¬â„¢Ganis"
+            "name": "Étreinte de Mal’Ganis"
         }
     },
     {
@@ -25115,7 +25115,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Sylvenier du Bosquet"
         },
-        "flavor": "Likes: Hiking and the great outdoors. Dislikes: Goblin shredders and sandals. (CanÃ¢â‚¬â„¢t find any that fit!).",
+        "flavor": "Likes: Hiking and the great outdoors. Dislikes: Goblin shredders and sandals. (Can’t find any that fit!).",
         "playerClass": "Druid",
         "attack": 2,
         "name": "Grove Tender",
@@ -25214,7 +25214,7 @@ var jsonDatabase = [
         "artist": "Jaemin Kim",
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€°ruption de diablotins"
+            "name": "Éruption de diablotins"
         },
         "flavor": "The shrapnel is waaaaay worse than the explosion.",
         "playerClass": "Warlock",
@@ -25257,7 +25257,7 @@ var jsonDatabase = [
         "health": 2,
         "type": "Minion",
         "fr": {
-            "name": "SenseÃƒÂ¯ de fer"
+            "name": "Senseï de fer"
         },
         "flavor": "Mechs like learning from him because he really speaks their language.\n0110100001101001",
         "playerClass": "Rogue",
@@ -25275,7 +25275,7 @@ var jsonDatabase = [
         "text": "Increased stats.",
         "type": "Enchantment",
         "fr": {
-            "name": "Bien armÃƒÂ©"
+            "name": "Bien armé"
         }
     },
     {
@@ -25307,7 +25307,7 @@ var jsonDatabase = [
         "health": 5,
         "type": "Minion",
         "fr": {
-            "name": "Brik-ÃƒÂ -bot"
+            "name": "Brik-à-bot"
         },
         "flavor": "One bot's junk is another bot's AWESOME UPGRADE!",
         "attack": 1,
@@ -25323,7 +25323,7 @@ var jsonDatabase = [
         "text": "Increased stats.",
         "type": "Enchantment",
         "fr": {
-            "name": "BricolÃƒÂ© ÃƒÂ  fond"
+            "name": "Bricolé à fond"
         }
     },
     {
@@ -25361,7 +25361,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Roi des bÃƒÂªtes"
+            "name": "Roi des bêtes"
         },
         "flavor": "He never sleeps.  Not even in the mighty jungle.",
         "playerClass": "Hunter",
@@ -25379,7 +25379,7 @@ var jsonDatabase = [
         "artist": "Jesper Ejsing",
         "type": "Spell",
         "fr": {
-            "name": "LumiÃƒÂ¨re des naaru"
+            "name": "Lumière des naaru"
         },
         "flavor": "\"Light it up!\" - Command given to both Lightwardens and Goblins holding Flamecannons.",
         "playerClass": "Priest",
@@ -25399,7 +25399,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Bombe de lumiÃƒÂ¨re"
+            "name": "Bombe de lumière"
         },
         "flavor": "This is what happens when you allow goblins to be priests.",
         "playerClass": "Priest",
@@ -25440,7 +25440,7 @@ var jsonDatabase = [
         "health": 4,
         "type": "Minion",
         "fr": {
-            "name": "Haut-trotteur ÃƒÂ©garÃƒÂ©"
+            "name": "Haut-trotteur égaré"
         },
         "flavor": "The message, \"If found, please return to Mulgore,\" is tattooed on his rear.",
         "attack": 5,
@@ -25460,7 +25460,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Bombardier cinglÃƒÂ©"
+            "name": "Bombardier cinglé"
         },
         "flavor": "Dang, Bomber, calm down.",
         "attack": 5,
@@ -25482,7 +25482,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MalÃ¢â‚¬â„¢Ganis"
+            "name": "Mal’Ganis"
         },
         "flavor": "Mal'Ganis doesn't like being betrayed, so if you discard him, watch out.",
         "playerClass": "Warlock",
@@ -25527,7 +25527,7 @@ var jsonDatabase = [
         "health": 6,
         "type": "Minion",
         "fr": {
-            "name": "MÃƒÂ©ca chat-ours"
+            "name": "Méca chat-ours"
         },
         "flavor": "Crushes buildings with his BEAR hands.",
         "playerClass": "Druid",
@@ -25550,7 +25550,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "YÃƒÂ©ti mÃƒÂ©canique"
+            "name": "Yéti mécanique"
         },
         "flavor": "The yetis of Chillwind Point are a source of both inspiration and savage beatings.",
         "attack": 4,
@@ -25572,7 +25572,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "MÃƒÂ©ca-tÃƒÂ©lÃƒÂ©porteur"
+            "name": "Méca-téléporteur"
         },
         "flavor": "Mechs that summon mechs? What's next? Donuts that summon donuts? Mmmmm.",
         "attack": 2,
@@ -25591,9 +25591,9 @@ var jsonDatabase = [
         "health": 7,
         "type": "Minion",
         "fr": {
-            "name": "MekgÃƒÂ©nieur Thermojoncteur"
+            "name": "Mekgénieur Thermojoncteur"
         },
-        "flavor": "He was obsessed with explosives until he discovered knitting. Now he yells, Ã¢â‚¬Å“SWEATERS! MORE SWEATERS!Ã¢â‚¬?",
+        "flavor": "He was obsessed with explosives until he discovered knitting. Now he yells, “SWEATERS! MORE SWEATERS!”",
         "elite": true,
         "attack": 9,
         "name": "Mekgineer Thermaplugg",
@@ -25611,7 +25611,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Magie mÃƒÂ©tabolisÃƒÂ©e"
+            "name": "Magie métabolisée"
         }
     },
     {
@@ -25624,7 +25624,7 @@ var jsonDatabase = [
         "text": "Increased Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Magie mÃƒÂ©tabolisÃƒÂ©e"
+            "name": "Magie métabolisée"
         }
     },
     {
@@ -25635,7 +25635,7 @@ var jsonDatabase = [
         "text": "+2 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Dents de mÃƒÂ©tal"
+            "name": "Dents de métal"
         }
     },
     {
@@ -25651,7 +25651,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Bondisseur dent-de-mÃƒÂ©tal"
+            "name": "Bondisseur dent-de-métal"
         },
         "flavor": "Don't leave them out in the rain. In Un'Goro Crater there is a whole colony of rust-tooth leapers.",
         "playerClass": "Hunter",
@@ -25698,7 +25698,7 @@ var jsonDatabase = [
         "text": "Multiplying Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Puissance de ZulÃ¢â‚¬â„¢Farrak"
+            "name": "Puissance de Zul’Farrak"
         }
     },
     {
@@ -25711,7 +25711,7 @@ var jsonDatabase = [
         "health": 5,
         "type": "Minion",
         "fr": {
-            "name": "TÃƒÂªte de Mimiron"
+            "name": "Tête de Mimiron"
         },
         "flavor": "Do not push the big red button!",
         "elite": true,
@@ -25753,7 +25753,7 @@ var jsonDatabase = [
         "health": 4,
         "type": "Minion",
         "fr": {
-            "name": "MaÃƒÂ®tresse de Douleur"
+            "name": "Maîtresse de Douleur"
         },
         "flavor": "Her sister is the Mistress of Pane who sells windows and shower doors.",
         "playerClass": "Warlock",
@@ -25772,7 +25772,7 @@ var jsonDatabase = [
         "health": 6,
         "type": "Minion",
         "fr": {
-            "name": "Mogor lÃ¢â‚¬â„¢ogre"
+            "name": "Mogor l’ogre"
         },
         "flavor": "Mogor helped reopen the Dark Portal once. You know you're in trouble when you have to rely on an ogre.",
         "elite": true,
@@ -25790,9 +25790,9 @@ var jsonDatabase = [
         "artist": "Mike Hayes",
         "type": "Spell",
         "fr": {
-            "name": "RÃƒÂ©giment de bataille"
+            "name": "Régiment de bataille"
         },
-        "flavor": "\"I'm bringing the guacamole!\" Ã¢â‚¬â€œ One of the most successful (yet rare) Silver Hand rallying cries",
+        "flavor": "\"I'm bringing the guacamole!\" – One of the most successful (yet rare) Silver Hand rallying cries",
         "playerClass": "Paladin",
         "name": "Muster for Battle",
         "id": "GVG_061",
@@ -25814,7 +25814,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Neptulon"
         },
-        "flavor": "Neptulon is \"The Tidehunter\". HeÃ¢â‚¬â„¢s one of the four elemental lords. And he and Ragnaros get together and make really amazing saunas.",
+        "flavor": "Neptulon is \"The Tidehunter\". He’s one of the four elemental lords. And he and Ragnaros get together and make really amazing saunas.",
         "playerClass": "Shaman",
         "elite": true,
         "attack": 7,
@@ -25913,7 +25913,7 @@ var jsonDatabase = [
         "text": "Spell Damage +2.",
         "type": "Enchantment",
         "fr": {
-            "name": "RemontÃƒÂ©"
+            "name": "Remonté"
         }
     },
     {
@@ -25929,7 +25929,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "DÃƒÂ©chiqueteur pilotÃƒÂ©"
+            "name": "Déchiqueteur piloté"
         },
         "flavor": "Once upon a time, only goblins piloted shredders. These days, everyone from Doomsayer to Lorewalker Cho seems to ride one.",
         "attack": 4,
@@ -25951,7 +25951,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Golem cÃƒÂ©leste pilotÃƒÂ©"
+            "name": "Golem céleste piloté"
         },
         "flavor": "The pinnacle of goblin engineering. Includes an espresso machine and foot massager.",
         "attack": 6,
@@ -26068,7 +26068,7 @@ var jsonDatabase = [
         "fr": {
             "name": "Recombobulateur"
         },
-        "flavor": "For when you didnÃ¢â‚¬â„¢t combobulate quite right the first time around.",
+        "flavor": "For when you didn’t combobulate quite right the first time around.",
         "attack": 3,
         "name": "Recombobulator",
         "id": "GVG_108",
@@ -26100,7 +26100,7 @@ var jsonDatabase = [
         "text": "+4 Health.",
         "type": "Enchantment",
         "fr": {
-            "name": "RÃƒÂ©parations !"
+            "name": "Réparations !"
         }
     },
     {
@@ -26136,7 +26136,7 @@ var jsonDatabase = [
         "text": "Give a minion <b>Taunt</b>.",
         "type": "Spell",
         "fr": {
-            "name": "Klaxon rouillÃƒÂ©"
+            "name": "Klaxon rouillé"
         }
     },
     {
@@ -26189,7 +26189,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Purificateur ÃƒÂ©carlate"
+            "name": "Purificateur écarlate"
         },
         "flavor": "The Scarlet Crusade is doing market research to find out if the \"Mauve Crusade\" would be better received.",
         "playerClass": "Paladin",
@@ -26244,7 +26244,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Sceau de LumiÃƒÂ¨re"
+            "name": "Sceau de Lumière"
         },
         "flavor": "The walrus of Light restores EIGHT Health.",
         "playerClass": "Paladin",
@@ -26263,7 +26263,7 @@ var jsonDatabase = [
         "text": "+2 Attack this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "Sceau de LumiÃƒÂ¨re"
+            "name": "Sceau de Lumière"
         }
     },
     {
@@ -26278,7 +26278,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "BombardiÃƒÂ¨re dÃ¢â‚¬â„¢ombre"
+            "name": "Bombardière d’ombre"
         },
         "flavor": "Shadowbomber does her job, but she's kind of phoning it in at this point.",
         "playerClass": "Priest",
@@ -26298,7 +26298,7 @@ var jsonDatabase = [
         "health": 3,
         "type": "Minion",
         "fr": {
-            "name": "Boxeur de lÃ¢â‚¬â„¢ombre"
+            "name": "Boxeur de l’ombre"
         },
         "flavor": "Punching is its primary function. Also, its secondary function.",
         "playerClass": "Priest",
@@ -26316,7 +26316,7 @@ var jsonDatabase = [
         "text": "Health was swapped.",
         "type": "Enchantment",
         "fr": {
-            "name": "DissimulÃƒÂ©"
+            "name": "Dissimulé"
         }
     },
     {
@@ -26332,7 +26332,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Mini-robot blindÃƒÂ©"
+            "name": "Mini-robot blindé"
         },
         "flavor": "He chooses to believe what he is programmed to believe!",
         "playerClass": "Paladin",
@@ -26354,7 +26354,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Vierge guerriÃƒÂ¨re"
+            "name": "Vierge guerrière"
         },
         "flavor": "She has three shieldbearers in her party to supply her with back ups when she gets low on durability.",
         "playerClass": "Warrior",
@@ -26392,7 +26392,7 @@ var jsonDatabase = [
         "text": "-2 Attack this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "Rayon rÃƒÂ©ducteur"
+            "name": "Rayon réducteur"
         }
     },
     {
@@ -26407,7 +26407,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "RÃƒÂ©ducteur fou"
+            "name": "Réducteur fou"
         },
         "flavor": "After the debacle of the Gnomish World Enlarger, gnomes are wary of size-changing inventions.",
         "playerClass": "Priest",
@@ -26427,7 +26427,7 @@ var jsonDatabase = [
         "health": 5,
         "type": "Minion",
         "fr": {
-            "name": "Engin de siÃƒÂ¨ge"
+            "name": "Engin de siège"
         },
         "flavor": "Wintergrasp Keep's only weakness!",
         "playerClass": "Warrior",
@@ -26473,7 +26473,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Vieux dÃƒÂ©chiqueteur de Sneed"
+            "name": "Vieux déchiqueteur de Sneed"
         },
         "flavor": "When Sneed was defeated in the Deadmines, his shredder was sold at auction to an anonymous buyer. (Probably Hogger.)",
         "elite": true,
@@ -26539,7 +26539,7 @@ var jsonDatabase = [
         "health": 4,
         "type": "Minion",
         "fr": {
-            "name": "Char araignÃƒÂ©e"
+            "name": "Char araignée"
         },
         "flavor": "\"What if we put guns on it?\" -Fizzblitz, staring at the spider-transportation-machine",
         "attack": 3,
@@ -26674,7 +26674,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Huile dÃ¢â‚¬â„¢affÃƒÂ»tage de Bricoleur"
+            "name": "Huile d’affûtage de Bricoleur"
         },
         "flavor": "\"Get ready to strike oil!\" - Super-cheesy battle cry",
         "playerClass": "Rogue",
@@ -26690,7 +26690,7 @@ var jsonDatabase = [
         "text": "+3 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Huile dÃ¢â‚¬â„¢affÃƒÂ»tage de Bricoleur"
+            "name": "Huile d’affûtage de Bricoleur"
         }
     },
     {
@@ -26700,7 +26700,7 @@ var jsonDatabase = [
         "text": "+3 Attack.",
         "type": "Enchantment",
         "fr": {
-            "name": "Huile dÃ¢â‚¬â„¢affÃƒÂ»tage de Bricoleur"
+            "name": "Huile d’affûtage de Bricoleur"
         }
     },
     {
@@ -26833,7 +26833,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Robot rÃƒÂ©parateur amÃƒÂ©liorÃƒÂ©"
+            "name": "Robot réparateur amélioré"
         },
         "flavor": "It's the same as the previous generation but they slapped the word \"upgraded\" on it to sell it for double.",
         "playerClass": "Priest",
@@ -26901,7 +26901,7 @@ var jsonDatabase = [
         "health": 3,
         "type": "Minion",
         "fr": {
-            "name": "Totem de vitalitÃƒÂ©"
+            "name": "Totem de vitalité"
         },
         "flavor": "You can usually find these at the totemist's market on Saturdays.",
         "playerClass": "Shaman",
@@ -26923,7 +26923,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "VolÃ¢â‚¬â„¢jin"
+            "name": "Vol’jin"
         },
         "flavor": "Vol'jin is a shadow hunter, which is like a shadow priest except more voodoo.",
         "playerClass": "Priest",
@@ -26987,7 +26987,7 @@ var jsonDatabase = [
         "text": "+2/+2.",
         "type": "Enchantment",
         "fr": {
-            "name": "Bien ÃƒÂ©quipÃƒÂ©"
+            "name": "Bien équipé"
         }
     },
     {
@@ -27061,7 +27061,7 @@ var jsonDatabase = [
         "text": "When you draw this, take 7 damage and draw a card.",
         "type": "Spell",
         "fr": {
-            "name": "MalÃƒÂ©diction ancestrale"
+            "name": "Malédiction ancestrale"
         }
     },
     {
@@ -27118,7 +27118,7 @@ var jsonDatabase = [
         "text": "Give your minions +1/+1 and <b>Taunt</b>.",
         "type": "Spell",
         "fr": {
-            "name": "Terrestre animÃƒÂ©"
+            "name": "Terrestre animé"
         }
     },
     {
@@ -27130,7 +27130,7 @@ var jsonDatabase = [
         "text": "Give your minions +3/+3 and <b>Taunt</b>.",
         "type": "Spell",
         "fr": {
-            "name": "Terrestre animÃƒÂ©"
+            "name": "Terrestre animé"
         }
     },
     {
@@ -27140,7 +27140,7 @@ var jsonDatabase = [
         "text": "+1/+1 and <b>Taunt</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "AnimÃƒÂ©"
+            "name": "Animé"
         }
     },
     {
@@ -27150,7 +27150,7 @@ var jsonDatabase = [
         "text": "+3/+3 and <b>Taunt</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "AnimÃƒÂ©"
+            "name": "Animé"
         }
     },
     {
@@ -27162,7 +27162,7 @@ var jsonDatabase = [
         "health": 4,
         "type": "Minion",
         "fr": {
-            "name": "Armure animÃƒÂ©e"
+            "name": "Armure animée"
         },
         "flavor": "Try putting it on.  Wait, let me get my camera.",
         "playerClass": "Mage",
@@ -27183,7 +27183,7 @@ var jsonDatabase = [
         "text": "You've disturbed the ancient statue...",
         "type": "Minion",
         "fr": {
-            "name": "Statue animÃƒÂ©e"
+            "name": "Statue animée"
         }
     },
     {
@@ -27196,7 +27196,7 @@ var jsonDatabase = [
         "id": "LOEA16_17",
         "type": "Minion",
         "fr": {
-            "name": "Statue animÃƒÂ©e"
+            "name": "Statue animée"
         }
     },
     {
@@ -27347,7 +27347,7 @@ var jsonDatabase = [
         "text": "Restore #10 Health to ALL characters.",
         "type": "Spell",
         "fr": {
-            "name": "Esquille de bÃƒÂ©nÃƒÂ©diction"
+            "name": "Esquille de bénédiction"
         }
     },
     {
@@ -27360,7 +27360,7 @@ var jsonDatabase = [
         "text": "<b>Immune</b> this turn.",
         "type": "Enchantment",
         "fr": {
-            "name": "BÃƒÂ©ni"
+            "name": "Béni"
         }
     },
     {
@@ -27370,7 +27370,7 @@ var jsonDatabase = [
         "text": "<b>Immune</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction du soleil"
+            "name": "Bénédiction du soleil"
         }
     },
     {
@@ -27382,7 +27382,7 @@ var jsonDatabase = [
         "text": "Give a minion <b>Immune</b> this turn.",
         "type": "Spell",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©diction du soleil"
+            "name": "Bénédiction du soleil"
         }
     },
     {
@@ -27393,7 +27393,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\n Phaerix is <b>Immune</b> while he controls the Rod of the Sun.",
         "type": "Hero Power",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©dictions du soleil"
+            "name": "Bénédictions du soleil"
         }
     },
     {
@@ -27404,7 +27404,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\nWhoever controls the Rod of the Sun is <b>Immune.</b>",
         "type": "Hero Power",
         "fr": {
-            "name": "BÃƒÂ©nÃƒÂ©dictions du soleil"
+            "name": "Bénédictions du soleil"
         }
     },
     {
@@ -27418,7 +27418,7 @@ var jsonDatabase = [
         "text": "<b>Battlecry:</b>Take control of your opponent's weapon.",
         "type": "Minion",
         "fr": {
-            "name": "Raptor dÃ¢â‚¬â„¢os"
+            "name": "Raptor d’os"
         }
     },
     {
@@ -27432,7 +27432,7 @@ var jsonDatabase = [
         "text": "<b>Battlecry:</b>Take control of your opponent's weapon.",
         "type": "Minion",
         "fr": {
-            "name": "Raptor dÃ¢â‚¬â„¢os"
+            "name": "Raptor d’os"
         }
     },
     {
@@ -27595,7 +27595,7 @@ var jsonDatabase = [
         "text": "Deal $10 damage randomly split among ALL characters.",
         "type": "Spell",
         "fr": {
-            "name": "Couronne de KaelÃ¢â‚¬â„¢thas"
+            "name": "Couronne de Kael’thas"
         }
     },
     {
@@ -27606,7 +27606,7 @@ var jsonDatabase = [
         "artist": "Alex Horley Orlandelli",
         "type": "Spell",
         "fr": {
-            "name": "MalÃƒÂ©diction de Rafaam"
+            "name": "Malédiction de Rafaam"
         },
         "flavor": "This is what happens when Rafaam stubs his toe unexpectedly.",
         "playerClass": "Warlock",
@@ -27695,7 +27695,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "PiÃƒÂ¨ge de flÃƒÂ©chettes"
+            "name": "Piège de fléchettes"
         },
         "flavor": "Five years of tap-dancing lessons are FINALLY going to pay off!",
         "playerClass": "Hunter",
@@ -27718,7 +27718,7 @@ var jsonDatabase = [
         "text": "<b>Taunt.</b>",
         "type": "Minion",
         "fr": {
-            "name": "DÃƒÂ©bris"
+            "name": "Débris"
         }
     },
     {
@@ -27734,7 +27734,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Dromadaire du dÃƒÂ©sert"
+            "name": "Dromadaire du désert"
         },
         "flavor": "Dang.  This card is sweet.  Almost as sweet as Dessert Camel.",
         "playerClass": "Hunter",
@@ -27748,7 +27748,7 @@ var jsonDatabase = [
         "cardImage": "LOEA02_02.png",
         "cost": 0,
         "set": "League of Explorers",
-        "name": "DjinnÃ¢â‚¬â„¢s Intuition",
+        "name": "Djinn’s Intuition",
         "id": "LOEA02_02",
         "text": "Draw a card.\nGive your opponent a Wish.",
         "type": "Hero Power",
@@ -27760,7 +27760,7 @@ var jsonDatabase = [
         "cardImage": "LOEA02_02h.png",
         "cost": 0,
         "set": "League of Explorers",
-        "name": "DjinnÃ¢â‚¬â„¢s Intuition",
+        "name": "Djinn’s Intuition",
         "id": "LOEA02_02h",
         "text": "Draw a card. Gain a Mana Crystal. Give your opponent a Wish.",
         "type": "Hero Power",
@@ -27777,7 +27777,7 @@ var jsonDatabase = [
         "health": 6,
         "type": "Minion",
         "fr": {
-            "name": "Djinn des zÃƒÂ©phirs"
+            "name": "Djinn des zéphirs"
         },
         "flavor": "If you want your wish granted, don't rub him the wrong way.",
         "attack": 4,
@@ -27795,7 +27795,7 @@ var jsonDatabase = [
         "text": "Draw a card.",
         "type": "Spell",
         "fr": {
-            "name": "Boire ÃƒÂ  grands traits"
+            "name": "Boire à grands traits"
         }
     },
     {
@@ -27864,7 +27864,7 @@ var jsonDatabase = [
         "attack": 7,
         "name": "Eerie Statue",
         "id": "LOE_107",
-        "text": "CanÃ¢â‚¬â„¢t attack unless itÃ¢â‚¬â„¢s the only minion in the battlefield.",
+        "text": "Can’t attack unless it’s the only minion in the battlefield.",
         "rarity": "Rare"
     },
     {
@@ -27879,7 +27879,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°lise CherchÃƒÂ©toile"
+            "name": "Élise Cherchétoile"
         },
         "flavor": "A large part of her job entails not mixing up the Map to the Golden Monkey with the Map to Monkey Island.",
         "elite": true,
@@ -27911,7 +27911,7 @@ var jsonDatabase = [
         "text": "+5 Attack",
         "type": "Enchantment",
         "fr": {
-            "name": "EnragÃƒÂ©"
+            "name": "Enragé"
         }
     },
     {
@@ -27924,7 +27924,7 @@ var jsonDatabase = [
         "text": "+2 Attack",
         "type": "Enchantment",
         "fr": {
-            "name": "EnragÃƒÂ©"
+            "name": "Enragé"
         }
     },
     {
@@ -27936,7 +27936,7 @@ var jsonDatabase = [
         "text": "Give your hero +5 attack this turn.",
         "type": "Hero Power",
         "fr": {
-            "name": "EnragÃƒÂ© !"
+            "name": "Enragé !"
         }
     },
     {
@@ -27948,7 +27948,7 @@ var jsonDatabase = [
         "text": "Give your hero +2 attack this turn.",
         "type": "Hero Power",
         "fr": {
-            "name": "EnragÃƒÂ© !"
+            "name": "Enragé !"
         }
     },
     {
@@ -28005,7 +28005,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Adjurateur ÃƒÂ©thÃƒÂ©rien"
+            "name": "Adjurateur éthérien"
         },
         "flavor": "Despite the name, he's a solid conjurer.",
         "playerClass": "Mage",
@@ -28023,7 +28023,7 @@ var jsonDatabase = [
         "artist": "Andrius Matijoshius",
         "type": "Spell",
         "fr": {
-            "name": "Tout est vraiment gÃƒÂ©nial"
+            "name": "Tout est vraiment génial"
         },
         "flavor": "Everyfin is cool when you're part of a murloc team!",
         "playerClass": "Shaman",
@@ -28040,7 +28040,7 @@ var jsonDatabase = [
         "artist": "Raymond Swanland",
         "type": "Spell",
         "fr": {
-            "name": "Mal dÃƒÂ©terrÃƒÂ©"
+            "name": "Mal déterré"
         },
         "flavor": "MOM! DAD! DON'T TOUCH IT! IT'S EVIL!!!!!!",
         "playerClass": "Priest",
@@ -28057,7 +28057,7 @@ var jsonDatabase = [
         "text": "+1/+1. <b>Deathrattle:</b> Add an Explorer's Hat to your hand.",
         "type": "Enchantment",
         "fr": {
-            "name": "Chapeau dÃ¢â‚¬â„¢explorateur"
+            "name": "Chapeau d’explorateur"
         }
     },
     {
@@ -28068,7 +28068,7 @@ var jsonDatabase = [
         "artist": "Joe Wilson",
         "type": "Spell",
         "fr": {
-            "name": "Chapeau dÃ¢â‚¬â„¢explorateur"
+            "name": "Chapeau d’explorateur"
         },
         "flavor": "Harrison Jones was disappointed that he didn't get to be part of the League of Explorers, but his hat did.",
         "playerClass": "Hunter",
@@ -28087,7 +28087,7 @@ var jsonDatabase = [
         "text": "Take a secret from your opponent's deck and put it into the battlefield.",
         "type": "Spell",
         "fr": {
-            "name": "Ã…â€™il dÃ¢â‚¬â„¢Hakkar"
+            "name": "Œil d’Hakkar"
         }
     },
     {
@@ -28099,7 +28099,7 @@ var jsonDatabase = [
         "text": "Take a secret from your opponent's deck and put it into the battlefield.",
         "type": "Spell",
         "fr": {
-            "name": "Ã…â€™il dÃ¢â‚¬â„¢Hakkar"
+            "name": "Œil d’Hakkar"
         }
     },
     {
@@ -28111,7 +28111,7 @@ var jsonDatabase = [
         "text": "<b>Discover</b> a minion and gain 3 copies of it.",
         "type": "Spell",
         "fr": {
-            "name": "Ã…â€™il dÃ¢â‚¬â„¢Orsis"
+            "name": "Œil d’Orsis"
         }
     },
     {
@@ -28147,7 +28147,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Singe fÃƒÂ©roce"
+            "name": "Singe féroce"
         },
         "flavor": "Fierce monkey.  That funky monkey.",
         "playerClass": "Warrior",
@@ -28189,7 +28189,7 @@ var jsonDatabase = [
         "artist": "Richard Wright",
         "type": "Spell",
         "fr": {
-            "name": "Torche oubliÃƒÂ©e"
+            "name": "Torche oubliée"
         },
         "flavor": "Why does a forgotten torch turn into a roaring torch with no provocation?  It's one of life's many mysteries.",
         "playerClass": "Mage",
@@ -28205,7 +28205,7 @@ var jsonDatabase = [
         "text": "Has <b>Taunt</b>.",
         "type": "Enchantment",
         "fr": {
-            "name": "FossilisÃƒÂ©"
+            "name": "Fossilisé"
         }
     },
     {
@@ -28220,7 +28220,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Diablosaure fossilisÃƒÂ©"
+            "name": "Diablosaure fossilisé"
         },
         "flavor": "This was the only job he could get after the dinosaur theme park debacle.",
         "attack": 8,
@@ -28287,7 +28287,7 @@ var jsonDatabase = [
         "id": "LOEA04_23h",
         "type": "Minion",
         "fr": {
-            "name": "Insecte gÃƒÂ©ant"
+            "name": "Insecte géant"
         }
     },
     {
@@ -28300,7 +28300,7 @@ var jsonDatabase = [
         "id": "LOEA04_23",
         "type": "Minion",
         "fr": {
-            "name": "Insecte gÃƒÂ©ant"
+            "name": "Insecte géant"
         }
     },
     {
@@ -28311,7 +28311,7 @@ var jsonDatabase = [
         "id": "LOEA10_1",
         "type": "Hero",
         "fr": {
-            "name": "Aileron-GÃƒÂ©ant"
+            "name": "Aileron-Géant"
         }
     },
     {
@@ -28327,7 +28327,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, draw 2 cards.",
         "type": "Minion",
         "fr": {
-            "name": "Aileron-GÃƒÂ©ant"
+            "name": "Aileron-Géant"
         }
     },
     {
@@ -28343,7 +28343,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, draw until you have as many cards as your opponent.",
         "type": "Minion",
         "fr": {
-            "name": "Aileron-GÃƒÂ©ant"
+            "name": "Aileron-Géant"
         }
     },
     {
@@ -28362,7 +28362,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>\n<b>Battlecry:</b> Replace your hand and deck with <b>Legendary</b> minions.",
         "type": "Minion",
         "fr": {
-            "name": "Singe dorÃƒÂ©"
+            "name": "Singe doré"
         }
     },
     {
@@ -28421,7 +28421,7 @@ var jsonDatabase = [
         "id": "LOEA08_01h",
         "type": "Hero",
         "fr": {
-            "name": "Archaedas (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Archaedas (héroïque)"
         }
     },
     {
@@ -28432,7 +28432,7 @@ var jsonDatabase = [
         "id": "LOEA04_01h",
         "type": "Hero",
         "fr": {
-            "name": "Fuite (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Fuite (héroïque)"
         }
     },
     {
@@ -28443,7 +28443,7 @@ var jsonDatabase = [
         "id": "LOEA10_1H",
         "type": "Hero",
         "fr": {
-            "name": "Aileron-GÃƒÂ©ant (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Aileron-Géant (héroïque)"
         }
     },
     {
@@ -28454,7 +28454,7 @@ var jsonDatabase = [
         "id": "LOEA07_02h",
         "type": "Hero",
         "fr": {
-            "name": "Puits de mine (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Puits de mine (héroïque)"
         }
     },
     {
@@ -28464,7 +28464,7 @@ var jsonDatabase = [
         "text": "+3/+3 if Phaerix controls the Rod.",
         "type": "Enchantment",
         "fr": {
-            "name": "Mode hÃƒÂ©roÃƒÂ¯que"
+            "name": "Mode héroïque"
         }
     },
     {
@@ -28475,7 +28475,7 @@ var jsonDatabase = [
         "id": "LOEA12_1H",
         "type": "Hero",
         "fr": {
-            "name": "NazÃ¢â‚¬â„¢jar (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Naz’jar (héroïque)"
         }
     },
     {
@@ -28486,7 +28486,7 @@ var jsonDatabase = [
         "id": "LOEA01_01h",
         "type": "Hero",
         "fr": {
-            "name": "Phaerix (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Phaerix (héroïque)"
         }
     },
     {
@@ -28497,7 +28497,7 @@ var jsonDatabase = [
         "id": "LOEA15_1H",
         "type": "Hero",
         "fr": {
-            "name": "Rafaam (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Rafaam (héroïque)"
         }
     },
     {
@@ -28508,7 +28508,7 @@ var jsonDatabase = [
         "id": "LOEA16_1H",
         "type": "Hero",
         "fr": {
-            "name": "Rafaam (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Rafaam (héroïque)"
         }
     },
     {
@@ -28519,7 +28519,7 @@ var jsonDatabase = [
         "id": "LOEA05_01h",
         "type": "Hero",
         "fr": {
-            "name": "Scarvash (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Scarvash (héroïque)"
         }
     },
     {
@@ -28530,7 +28530,7 @@ var jsonDatabase = [
         "id": "LOEA14_1H",
         "type": "Hero",
         "fr": {
-            "name": "Sentinelle (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Sentinelle (héroïque)"
         }
     },
     {
@@ -28541,7 +28541,7 @@ var jsonDatabase = [
         "id": "LOEA13_1h",
         "type": "Hero",
         "fr": {
-            "name": "Squeletosaurus Hex (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Squeletosaurus Hex (héroïque)"
         }
     },
     {
@@ -28552,7 +28552,7 @@ var jsonDatabase = [
         "id": "LOEA09_1H",
         "type": "Hero",
         "fr": {
-            "name": "Ondulance (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Ondulance (héroïque)"
         }
     },
     {
@@ -28563,7 +28563,7 @@ var jsonDatabase = [
         "id": "LOEA02_01h",
         "type": "Hero",
         "fr": {
-            "name": "Zinaar (hÃƒÂ©roÃƒÂ¯que)"
+            "name": "Zinaar (héroïque)"
         }
     },
     {
@@ -28589,7 +28589,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Crapaud ÃƒÂ©norme"
+            "name": "Crapaud énorme"
         },
         "flavor": "Deals damage when he croaks.",
         "attack": 3,
@@ -28608,7 +28608,7 @@ var jsonDatabase = [
         "id": "LOEA09_12",
         "type": "Minion",
         "fr": {
-            "name": "Naga affamÃƒÂ©"
+            "name": "Naga affamé"
         }
     },
     {
@@ -28621,7 +28621,7 @@ var jsonDatabase = [
         "id": "LOEA09_5",
         "type": "Minion",
         "fr": {
-            "name": "Naga affamÃƒÂ©"
+            "name": "Naga affamé"
         }
     },
     {
@@ -28634,7 +28634,7 @@ var jsonDatabase = [
         "id": "LOEA09_11",
         "type": "Minion",
         "fr": {
-            "name": "Naga affamÃƒÂ©"
+            "name": "Naga affamé"
         }
     },
     {
@@ -28647,7 +28647,7 @@ var jsonDatabase = [
         "id": "LOEA09_5H",
         "type": "Minion",
         "fr": {
-            "name": "Naga affamÃƒÂ©"
+            "name": "Naga affamé"
         }
     },
     {
@@ -28660,7 +28660,7 @@ var jsonDatabase = [
         "id": "LOEA09_13",
         "type": "Minion",
         "fr": {
-            "name": "Naga affamÃƒÂ©"
+            "name": "Naga affamé"
         }
     },
     {
@@ -28673,7 +28673,7 @@ var jsonDatabase = [
         "id": "LOEA09_10",
         "type": "Minion",
         "fr": {
-            "name": "Naga affamÃƒÂ©"
+            "name": "Naga affamé"
         }
     },
     {
@@ -28700,7 +28700,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "ScarabÃƒÂ©e ornÃƒÂ© de joyaux"
+            "name": "Scarabée orné de joyaux"
         },
         "flavor": "It's amazing what you can do with super glue!",
         "attack": 1,
@@ -28719,7 +28719,7 @@ var jsonDatabase = [
         "health": 4,
         "type": "Minion",
         "fr": {
-            "name": "SÃƒÂ©lÃƒÂ©nien de la jungle"
+            "name": "Sélénien de la jungle"
         },
         "flavor": "The REAL angry chicken!",
         "playerClass": "Druid",
@@ -28741,7 +28741,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Gardienne dÃ¢â‚¬â„¢Uldaman"
+            "name": "Gardienne d’Uldaman"
         },
         "flavor": "U da man!  No, U da man!",
         "playerClass": "Paladin",
@@ -28771,7 +28771,7 @@ var jsonDatabase = [
         "id": "LOEA12_1",
         "type": "Hero",
         "fr": {
-            "name": "Dame NazÃ¢â‚¬â„¢jar"
+            "name": "Dame Naz’jar"
         }
     },
     {
@@ -28786,7 +28786,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, replace all other minions with new ones of the same Cost.",
         "type": "Minion",
         "fr": {
-            "name": "Dame NazÃ¢â‚¬â„¢jar"
+            "name": "Dame Naz’jar"
         }
     },
     {
@@ -28801,7 +28801,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, replace all other minions with new ones of the same Cost.",
         "type": "Minion",
         "fr": {
-            "name": "Dame NazÃ¢â‚¬â„¢jar"
+            "name": "Dame Naz’jar"
         }
     },
     {
@@ -28851,7 +28851,7 @@ var jsonDatabase = [
         "text": "Draw 2 cards. Gain 4 Armor.",
         "type": "Spell",
         "fr": {
-            "name": "PrÃƒÂ©sence menaÃƒÂ§ante"
+            "name": "Présence menaçante"
         }
     },
     {
@@ -28863,7 +28863,7 @@ var jsonDatabase = [
         "text": "Draw 3 cards. Gain 6 Armor.",
         "type": "Spell",
         "fr": {
-            "name": "PrÃƒÂ©sence menaÃƒÂ§ante"
+            "name": "Présence menaçante"
         }
     },
     {
@@ -28916,7 +28916,7 @@ var jsonDatabase = [
         "text": "Deal 3 damage to all enemies.",
         "type": "Spell",
         "fr": {
-            "name": "GrÃƒÂ¨ves abandonnÃƒÂ©es de Lothar"
+            "name": "Grèves abandonnées de Lothar"
         }
     },
     {
@@ -28942,7 +28942,7 @@ var jsonDatabase = [
         "text": "Shuffle the Golden Monkey into your deck. Draw a card.",
         "type": "Spell",
         "fr": {
-            "name": "Carte du singe dorÃƒÂ©"
+            "name": "Carte du singe doré"
         }
     },
     {
@@ -28956,7 +28956,7 @@ var jsonDatabase = [
         "id": "LOEA07_25",
         "type": "Minion",
         "fr": {
-            "name": "Perroquet mÃƒÂ©canique"
+            "name": "Perroquet mécanique"
         }
     },
     {
@@ -28968,7 +28968,7 @@ var jsonDatabase = [
         "text": "Replace your hand with Unstable Portals.",
         "type": "Spell",
         "fr": {
-            "name": "MÃƒÂ©daillon de Medivh"
+            "name": "Médaillon de Medivh"
         }
     },
     {
@@ -29147,7 +29147,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Conservateur du musÃƒÂ©e"
+            "name": "Conservateur du musée"
         },
         "flavor": "He is forever cursing the kids who climb on the rails and the evil archeologists who animate the exhibits.",
         "playerClass": "Priest",
@@ -29166,7 +29166,7 @@ var jsonDatabase = [
         "text": "Change the Attack of all Hungry Naga to 1.",
         "type": "Spell",
         "fr": {
-            "name": "RÃƒÂ©pulsif ÃƒÂ  nagas"
+            "name": "Répulsif à nagas"
         }
     },
     {
@@ -29178,7 +29178,7 @@ var jsonDatabase = [
         "text": "Destroy all Hungry Naga.",
         "type": "Spell",
         "fr": {
-            "name": "RÃƒÂ©pulsif ÃƒÂ  nagas"
+            "name": "Répulsif à nagas"
         }
     },
     {
@@ -29193,7 +29193,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "SorciÃƒÂ¨re des mers naga"
+            "name": "Sorcière des mers naga"
         },
         "flavor": "If she had studied harder, she would have been a C+ witch.",
         "attack": 5,
@@ -29222,7 +29222,7 @@ var jsonDatabase = [
         "health": 7,
         "type": "Minion",
         "fr": {
-            "name": "Destructeur dÃ¢â‚¬â„¢obsidienne"
+            "name": "Destructeur d’obsidienne"
         },
         "flavor": "No obsidian is safe around the Obsidian Destroyer!",
         "playerClass": "Warrior",
@@ -29246,7 +29246,7 @@ var jsonDatabase = [
         "text": "<b>Divine Shield</b>",
         "type": "Minion",
         "fr": {
-            "name": "Garde dÃ¢â‚¬â„¢Orsis"
+            "name": "Garde d’Orsis"
         }
     },
     {
@@ -29263,7 +29263,7 @@ var jsonDatabase = [
         "text": "<b>Divine Shield</b>",
         "type": "Minion",
         "fr": {
-            "name": "Garde dÃ¢â‚¬â„¢Orsis"
+            "name": "Garde d’Orsis"
         }
     },
     {
@@ -29274,7 +29274,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, replace all minions with new ones that cost (1) more.",
         "type": "Hero Power",
         "fr": {
-            "name": "Perle des marÃƒÂ©es"
+            "name": "Perle des marées"
         }
     },
     {
@@ -29285,7 +29285,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, replace all minions with new ones. Yours cost (1) more.",
         "type": "Hero Power",
         "fr": {
-            "name": "Perle des marÃƒÂ©es"
+            "name": "Perle des marées"
         }
     },
     {
@@ -29374,7 +29374,7 @@ var jsonDatabase = [
         "text": "Attack and Health swapped.",
         "type": "Enchantment",
         "fr": {
-            "name": "PutrÃƒÂ©fiÃƒÂ©"
+            "name": "Putréfié"
         }
     },
     {
@@ -29539,7 +29539,7 @@ var jsonDatabase = [
         "text": "Restore 10 Health.",
         "type": "Spell",
         "fr": {
-            "name": "RÃƒÂ©parations"
+            "name": "Réparations"
         }
     },
     {
@@ -29553,7 +29553,7 @@ var jsonDatabase = [
         "text": "Deal $6 damage.",
         "type": "Spell",
         "fr": {
-            "name": "Torche enflammÃƒÂ©e"
+            "name": "Torche enflammée"
         }
     },
     {
@@ -29631,7 +29631,7 @@ var jsonDatabase = [
         "health": 6,
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°lÃƒÂ©mentaire grondant"
+            "name": "Élémentaire grondant"
         },
         "flavor": "He's a very hungry elemental.",
         "playerClass": "Shaman",
@@ -29676,7 +29676,7 @@ var jsonDatabase = [
         ],
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€°preuve sacrÃƒÂ©e"
+            "name": "Épreuve sacrée"
         },
         "flavor": "You have chosen poorly.",
         "playerClass": "Paladin",
@@ -29696,7 +29696,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "ScarabÃƒÂ©e"
+            "name": "Scarabée"
         },
         "playerClass": "Warrior",
         "attack": 1,
@@ -29741,7 +29741,7 @@ var jsonDatabase = [
         "text": "Deal $5 damage to ALL characters.",
         "type": "Spell",
         "fr": {
-            "name": "Ãƒâ€°clat de Sulfuras"
+            "name": "Éclat de Sulfuras"
         }
     },
     {
@@ -29926,7 +29926,7 @@ var jsonDatabase = [
         "text": "<b>Taunt</b>\nCan't attack.",
         "type": "Minion",
         "fr": {
-            "name": "Leurre ÃƒÂ  pointes"
+            "name": "Leurre à pointes"
         }
     },
     {
@@ -29937,7 +29937,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\nYour hero is <b>Immune</b>.",
         "type": "Hero Power",
         "fr": {
-            "name": "BÃƒÂ¢ton de lÃ¢â‚¬â„¢Origine"
+            "name": "Bâton de l’Origine"
         }
     },
     {
@@ -29948,7 +29948,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\nYour hero is <b>Immune</b> while the staff charges.",
         "type": "Hero Power",
         "fr": {
-            "name": "BÃƒÂ¢ton de lÃ¢â‚¬â„¢Origine"
+            "name": "Bâton de l’Origine"
         }
     },
     {
@@ -29984,7 +29984,7 @@ var jsonDatabase = [
         "health": 6,
         "type": "Minion",
         "fr": {
-            "name": "Pierre dÃ¢â‚¬â„¢invocation"
+            "name": "Pierre d’invocation"
         },
         "flavor": "Sometimes it feels like it's always the same slackers that are waiting for a summon.",
         "attack": 0,
@@ -30001,7 +30001,7 @@ var jsonDatabase = [
         "id": "LOEA01_01",
         "type": "Hero",
         "fr": {
-            "name": "Ãƒâ€°cumeur du soleil Phaerix"
+            "name": "Écumeur du soleil Phaerix"
         }
     },
     {
@@ -30016,7 +30016,7 @@ var jsonDatabase = [
         "text": "At the end of your turn, add a Blessing of the Sun to your hand.",
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°cumeur du soleil Phaerix"
+            "name": "Écumeur du soleil Phaerix"
         }
     },
     {
@@ -30031,7 +30031,7 @@ var jsonDatabase = [
         "text": "Your other minions are <b>Immune</b>.",
         "type": "Minion",
         "fr": {
-            "name": "Ãƒâ€°cumeur du soleil Phaerix"
+            "name": "Écumeur du soleil Phaerix"
         }
     },
     {
@@ -30045,7 +30045,7 @@ var jsonDatabase = [
         "text": "Take 10 damage or no damage, at random.",
         "type": "Spell",
         "fr": {
-            "name": "Franchir dÃ¢â‚¬â„¢un bond"
+            "name": "Franchir d’un bond"
         }
     },
     {
@@ -30097,7 +30097,7 @@ var jsonDatabase = [
         "text": "<b>Take the Shortcut?</b>",
         "type": "Spell",
         "fr": {
-            "name": "Les tÃƒÂ©nÃƒÂ¨bres"
+            "name": "Les ténèbres"
         }
     },
     {
@@ -30109,7 +30109,7 @@ var jsonDatabase = [
         "text": "<b>Choose Your Path!</b>",
         "type": "Spell",
         "fr": {
-            "name": "LÃ¢â‚¬â„¢Ã…â€™il"
+            "name": "L’Œil"
         }
     },
     {
@@ -30124,7 +30124,7 @@ var jsonDatabase = [
         "text": "This minion can only take 1 damage at a time.",
         "type": "Minion",
         "fr": {
-            "name": "La sentinelle dÃ¢â‚¬â„¢acier"
+            "name": "La sentinelle d’acier"
         }
     },
     {
@@ -30139,7 +30139,7 @@ var jsonDatabase = [
         "text": "This minion can only take 1 damage at a time.",
         "type": "Minion",
         "fr": {
-            "name": "La sentinelle dÃ¢â‚¬â„¢acier"
+            "name": "La sentinelle d’acier"
         }
     },
     {
@@ -30150,7 +30150,7 @@ var jsonDatabase = [
         "id": "LOEA14_1",
         "type": "Hero",
         "fr": {
-            "name": "La sentinelle dÃ¢â‚¬â„¢acier"
+            "name": "La sentinelle d’acier"
         }
     },
     {
@@ -30177,7 +30177,7 @@ var jsonDatabase = [
         "text": "Deal $10 damage randomly split among all enemies.",
         "type": "Spell",
         "fr": {
-            "name": "Horloge de lÃ¢â‚¬â„¢horreur"
+            "name": "Horloge de l’horreur"
         }
     },
     {
@@ -30194,7 +30194,7 @@ var jsonDatabase = [
         "text": "<b>Deathrattle:</b> Deal 5 damage to both heroes.",
         "type": "Minion",
         "fr": {
-            "name": "Hoplite tolÃ¢â‚¬â„¢vir"
+            "name": "Hoplite tol’vir"
         }
     },
     {
@@ -30211,7 +30211,7 @@ var jsonDatabase = [
         "text": "<b>Deathrattle:</b> Deal 5 damage to both heroes.",
         "type": "Minion",
         "fr": {
-            "name": "Hoplite tolÃ¢â‚¬â„¢vir"
+            "name": "Hoplite tol’vir"
         }
     },
     {
@@ -30249,7 +30249,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "AraignÃƒÂ©e des tombes"
+            "name": "Araignée des tombes"
         },
         "flavor": "Less serious than its cousin, the Grave Spider.",
         "attack": 3,
@@ -30277,7 +30277,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\n Enemy minions cost (11). Swap at the start of your turn.",
         "type": "Hero Power",
         "fr": {
-            "name": "Trogg dÃƒÂ©tester serviteurs !"
+            "name": "Trogg détester serviteurs !"
         }
     },
     {
@@ -30288,7 +30288,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\n Enemy minions cost (2) more. Swap at the start of your turn.",
         "type": "Hero Power",
         "fr": {
-            "name": "Trogg dÃƒÂ©tester serviteurs !"
+            "name": "Trogg détester serviteurs !"
         }
     },
     {
@@ -30299,7 +30299,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\n Enemy minions cost (11). Swap at the start of your turn.",
         "type": "Hero Power",
         "fr": {
-            "name": "Trogg dÃƒÂ©tester serviteurs !"
+            "name": "Trogg détester serviteurs !"
         }
     },
     {
@@ -30310,7 +30310,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\n Enemy minions cost (2) more. Swap at the start of your turn.",
         "type": "Hero Power",
         "fr": {
-            "name": "Trogg dÃƒÂ©tester serviteurs !"
+            "name": "Trogg détester serviteurs !"
         }
     },
     {
@@ -30321,7 +30321,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\n Enemy spells cost (11). Swap at the start of your turn.",
         "type": "Hero Power",
         "fr": {
-            "name": "Trogg dÃƒÂ©tester sorts !"
+            "name": "Trogg détester sorts !"
         }
     },
     {
@@ -30332,7 +30332,7 @@ var jsonDatabase = [
         "text": "<b>Passive Hero Power</b>\n Enemy spells cost (2) more. Swap at the start of your turn.",
         "type": "Hero Power",
         "fr": {
-            "name": "Trogg dÃƒÂ©tester sorts !"
+            "name": "Trogg détester sorts !"
         }
     },
     {
@@ -30377,7 +30377,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "Raptor dÃƒÂ©terrÃƒÂ©"
+            "name": "Raptor déterré"
         },
         "flavor": "Still hunting for the ones who earthed him.",
         "playerClass": "Rogue",
@@ -30395,7 +30395,7 @@ var jsonDatabase = [
         "text": "Copied <b>Deathrattle</b> from CARD_NAME.",
         "type": "Enchantment",
         "fr": {
-            "name": "Raptor dÃƒÂ©terrÃƒÂ©"
+            "name": "Raptor déterré"
         }
     },
     {
@@ -30431,7 +30431,7 @@ var jsonDatabase = [
         "text": "Gain a Mana Crystal",
         "type": "Spell",
         "fr": {
-            "name": "Traverser ÃƒÂ  pied"
+            "name": "Traverser à pied"
         }
     },
     {
@@ -30442,7 +30442,7 @@ var jsonDatabase = [
         "text": "Take 5 damage.",
         "type": "Spell",
         "fr": {
-            "name": "Traverser avec prÃƒÂ©caution"
+            "name": "Traverser avec précaution"
         }
     },
     {
@@ -30453,7 +30453,7 @@ var jsonDatabase = [
         "text": "Stats changed to 3/3.",
         "type": "Enchantment",
         "fr": {
-            "name": "ObservÃƒÂ©"
+            "name": "Observé"
         }
     },
     {
@@ -30467,7 +30467,7 @@ var jsonDatabase = [
         "id": "LOE_089t2",
         "type": "Minion",
         "fr": {
-            "name": "Avorton rusÃƒÂ©"
+            "name": "Avorton rusé"
         }
     },
     {
@@ -30479,7 +30479,7 @@ var jsonDatabase = [
         "text": "<b>Discover</b> a Companion.",
         "type": "Spell",
         "fr": {
-            "name": "VÃ…â€œu : compagnon"
+            "name": "Vœu : compagnon"
         }
     },
     {
@@ -30491,7 +30491,7 @@ var jsonDatabase = [
         "text": "<b>Discover</b> a minion.",
         "type": "Spell",
         "fr": {
-            "name": "VÃ…â€œu : gloire"
+            "name": "Vœu : gloire"
         }
     },
     {
@@ -30503,7 +30503,7 @@ var jsonDatabase = [
         "text": "Gain 2 Wishes.",
         "type": "Spell",
         "fr": {
-            "name": "VÃ…â€œu : plus de VÃ…â€œux"
+            "name": "Vœu : plus de Vœux"
         }
     },
     {
@@ -30515,7 +30515,7 @@ var jsonDatabase = [
         "text": "<b>Discover</b> a spell.",
         "type": "Spell",
         "fr": {
-            "name": "VÃ…â€œu : puissance"
+            "name": "Vœu : puissance"
         }
     },
     {
@@ -30527,7 +30527,7 @@ var jsonDatabase = [
         "text": "<b>Discover</b> a (4)-Cost card.",
         "type": "Spell",
         "fr": {
-            "name": "VÃ…â€œu : vaillance"
+            "name": "Vœu : vaillance"
         }
     },
     {
@@ -30560,7 +30560,7 @@ var jsonDatabase = [
         "text": "Gain 4 Mana Crystals this turn only.",
         "type": "Spell",
         "fr": {
-            "name": "Larme dÃ¢â‚¬â„¢Ysera"
+            "name": "Larme d’Ysera"
         }
     },
     {
@@ -30627,7 +30627,7 @@ var jsonDatabase = [
         ],
         "type": "Minion",
         "fr": {
-            "name": "zzDELETE? Armure animÃƒÂ©e"
+            "name": "zzDELETE? Armure animée"
         },
         "attack": 1,
         "name": "zzDELETE? Animated Armor",

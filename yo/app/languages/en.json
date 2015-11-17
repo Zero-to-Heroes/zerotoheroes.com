@@ -103,6 +103,12 @@
 		"general": {
 			"email": "Email address"
 		},
+		"navigation": {
+			"postVideo": "Submit a video",
+			"postFeedback": "Post feedback",
+			"forum": "Discussion room",
+			"chooseSport": "Choose a sport"
+		},
 		"listing": {
 			"allVideos": "All videos",
 			"unsubscribe": "Unsubscribe",
@@ -135,7 +141,7 @@
 		},
 		"askPro": {
 			"headline": "Choose your coach",
-			"tableCaption": ">You can ask a professional coach / trainer to give you feedback on this video. Each coach may offer slightly different things, so be sure to check the <spa n class=\"glyphicon glyphicon-info-sign\"></span> icon before making your choice",
+			"tableCaption": "You can ask a professional coach / trainer to give you feedback on this video. Each coach may offer slightly different things, so be sure to check the <spa n class=\"glyphicon glyphicon-info-sign\"></span> icon before making your choice",
 			"name": "Name",
 			"languages": "Languages",
 			"level": "Level",
@@ -179,7 +185,7 @@
 			"cancel": "Cancel",
 			"login": "Log me in",
 			"createAccountHeadline": "Would you like to create an account?",
-			"createAccountIntro": "Creating an account is optional, and lets you edit your video information later on, be notified when there are new comments, and automatically benefit from all the new features we'll add in the coming weeks",
+			"createAccountIntro": "Creating an account is optional, and lets you earn reputation points when others vote on your comments (and lets you vote yourself), be notified when there are new comments, and lets you edit your contributions",
 			"createAccountIntro2": "If you already have an account, you can just ",
 			"createAccountLink": "sign in",
 			"createAccountIntro3": "instead",
@@ -285,7 +291,14 @@
 			"latestActivity": "Latest activity",
 			"latestFeatures": "While you were away...",
 			"latestFeaturesSubHeadline": "We have continued to add features since the last time you visited. We hope you'll like them!",
-			"contactUs": "Any comment or question? <a href=\"/s/meta\">Let us know!</a>"
+			"contactUs": "Any comment or question? <a href=\"/s/meta\">Let us know!</a>",
+			"activities": {
+				"newReview": " posted a new review ",
+				"newComment": " posted a new comment on ",
+				"updateReview": " updated the review ",
+				"updateComment": " updated their comment at ",
+				"helpfulComment": " marked a comment as helpful at "
+			}
 		}
 	},
 	"news": {

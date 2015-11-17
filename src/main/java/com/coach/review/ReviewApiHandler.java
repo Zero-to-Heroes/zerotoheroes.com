@@ -107,6 +107,8 @@ public class ReviewApiHandler {
 		// tweak info about reputation
 		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);
 
+		// throw new IllegalArgumentException("Test");
+
 		return new ResponseEntity<ListReviewResponse>(response, HttpStatus.OK);
 	}
 
@@ -181,8 +183,8 @@ public class ReviewApiHandler {
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
-		sportManager.addNewReviewActivity(review);
 		updateReview(review);
+		sportManager.addNewReviewActivity(review);
 		// log.debug("Saved review with ID: " + review.getId());
 
 		// Start transcoding

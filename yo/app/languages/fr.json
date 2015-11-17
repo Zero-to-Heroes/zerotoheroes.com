@@ -1,0 +1,306 @@
+{
+	"squash": {
+		"landing": {
+			"headline": "Nous aidons les squashers à progresser ensemble",
+			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de toute la communauté",
+			"communityIntro": "Grimpez au sommet grâce aux meilleurs conseils de la communauté. Un système de vote et de réputation assure que les meilleurs commentaires apparaîtront en premier.",
+			"contributeIntro": "Aidez les autres à devenir de meilleurs joueurs. Gagnez la reconnaissance de la communauté en donnant des conseils et en votant pour ceux qui vous paraissent les plus importants.",
+			"feature1Headline": "Outils d'analyse vidéo",
+			"feature1Text": "Contrôlez directement la vidéo depuis le système de commentaires pour illustrer précisément ce que vous voulez dire. Isolez une image spécifique dans la vidéo, jouez une séquence au ralenti ou même en boucle. Vous pouvez même vous comparer à une autre vidéo côte-à-côte pour illustrer les différences avec un meilleur joueur. Et tout cela directement depuis les commentaires!",
+			"feature2Headline": "Le meilleur de la communauté",
+			"feature2Text": "Recevez des conseils d'autres joueurs, et profitez des meilleurs conseils, identifiés grâce à un système de vote. Vous pouvez même identifier quelles commentateurs apportent la plus à la communauté, ce vous permettra d'isoler les meilleurs commentaires encore plus facilement",
+			"feature3Headline": "Des coaches professionnels",
+			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
+			"feature4Headline": "Contribuez et aidez la communauté",
+			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
+		}
+	},
+	"badminton": {
+		"landing": {
+			"headline": "We help Badminton players improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the Badminton community",
+			"communityIntro": "Climb to the top with the best advice from the Badminton community. A reputation and voting system ensures top advice always come out at the top.",
+			"contributeIntro": "Help others become better players. Get recognition from the community by giving advice and voting on what looks important to you.",
+			"feature1Headline": "Video review tools",
+			"feature1Text": "Directly control the video from the comment system to precisely illustrate what you need to say and see. Point to a specific image on a video, play a sequence in slow motion or loop it. You can even compare side-by-side sequences from two any two videos from the site to illustrate the difference between how the same move is done by a top player. And all directly from the comments!",
+			"feature2Headline": "The best from the community",
+			"feature2Text": "Get advice from the other players, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
+			"feature3Headline": "Professional coaches",
+			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
+			"feature4Headline": "Contribute and help the community",
+			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		}
+	},
+	"hearthstone": {
+		"landing": {
+			"headline": "We help Hearthstone players improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the Hearthstone community",
+			"communityIntro": "Climb to Legend with the best advice from the Hearthstone community. A reputation and voting system ensures top advice always come out at the top.",
+			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
+			"feature1Headline": "Integrated with HearthStone",
+			"feature1Text": "Immediately link to an existing card or deck, so you have everything you need in a single place",
+			"feature2Headline": "The best from the community",
+			"feature2Text": "Get advice from the other gamers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
+			"feature3Headline": "Professional coaches",
+			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
+			"feature4Headline": "Contribute and help the community",
+			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		}
+	},
+	"heroesofthestorm": {
+		"landing": {
+			"headline": "We help Heroes of the Storm players improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the Heroes of the Storm community",
+			"communityIntro": "Climb the ladder to rank 1 with the best advice from the Heroes of the Storm community. A reputation and voting system ensures top advice always come out at the top.",
+			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
+			"feature2Headline": "The best from the community",
+			"feature2Text": "Get advice from the other gamers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
+			"feature3Headline": "Professional coaches",
+			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
+			"feature4Headline": "Contribute and help the community",
+			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		}
+	},
+	"leagueoflegends": {
+		"landing": {
+			"headline": "We help League of Legends players improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the League of Legends community",
+			"communityIntro": "Climb the ladder to the top with the best advice from the League of Legends community. A reputation and voting system ensures top advice always come out at the top.",
+			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
+			"feature2Headline": "The best from the community",
+			"feature2Text": "Get advice from the other gamers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
+			"feature3Headline": "Professional coaches",
+			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
+			"feature4Headline": "Contribute and help the community",
+			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		}
+	},
+	"all": {
+		"landing": {
+			"headline": "We help (e-)athletes improve together",
+			"subHeadline": "Post a video of yourself playing and get advice from the community. Start by picking your community below"
+		}
+	},
+	"global": {
+		"landing": {
+			"learnMore": "En savoir plus",
+			"getIn": "Entrer gratuitement",
+			"reviewToolsHeadline": "De puissants outils d'analyse",
+			"reviewToolsIntro": "Identifiez et comprenez précisément vos erreurs. Regardez n'importe quelle séquence au ralenti, en boucle, ou même côte-à-côte avec une autre séquence d'un joueur de haut niveau.",
+			"communityHeadline": "La sagesse populaire",
+			"coachHeadline": "Des coaches professionnels",
+			"coachIntro": "Si les conseils de la communautés ne sont pas suffisants pour vous, des entraîneurs professionnels sont disponibles pour vous aider à surmonter vos plus grosses difficultés",
+			"contributeHeadline": "Contribuez",
+			"teamHeadline": "L'équipe",
+			"teamSubHeadline": "Yep, c'est nous ! :)",
+			"sebDescription": "Je suis développeur logiciel de métier, mais sportif et joueur de coeur. J'ai été frustrué par la difficulté d'avoir des conseils adaptés à mon style, et veux à mon tour aider les athlètes et joueurs à franchir cet obstacle. J'adore rencontrer toutes sortes de gens intéressants, donc n'hésitez pas à m'envoyer un email directement à <a href=\"mailto:seb@zerotoheroes.com\">seb@zerotoheroes.com</a> :)",
+			"thibDescription": "Driven by logic and passionate about games I'm a software engineer who strongly believes that there is a bit of magic/awesomeness in everybody. Together we can be heroes! Feel free to share your thoughts with me at <a href=\"mailto:thibaud@zerotoheroes.com\">thibaud@zerotoheroes.com</a>",
+			"newsLetterHeadline": "Recevez les dernières nouvelles",
+			"newsLetterSubHeadline": "Inscrivez-vous à la newsletter et recevez les dernières nouvelles",
+			"newsLetterButton": "Insrivez moi",
+			"noSpam": "Vous savez où nous trouver, donc on ne vous spammera pas :)"
+		},
+		"general": {
+			"email": "Adresse mail"
+		},
+		"navigation": {
+			"postVideo": "Nouvelle vidéo",
+			"postFeedback": "Nouveau post",
+			"forum": "Forums",
+			"chooseSport": "Choisissez un sport"
+		},
+		"listing": {
+			"allVideos": "Toutes les vidéos",
+			"unsubscribe": "Désinscription",
+			"unsubscribeTooltip": "Cliquez pour arrêter de recevoir des notifications lorsqu'une nouvelle vidéo est postée",
+			"subscribe": "Inscription",
+			"subscribeTooltip": "Cliquez pour être notifié lorsqu'une nouvelle vidéo est postée",
+			"searchVideos": "Recherche",
+			"search": {
+				"title": "Titre",
+				"wantedTags": "Tags que vous voulez voir",
+				"unwantedTags": "Tags que vous ne voulez pas voir",
+				"button": "Recherche"
+			},
+			"video": {
+				"upvote": "Upvotez cette vidéo",
+				"downvote": "Downvote cette vidéo",
+				"commentsTitle": "Nombre de commentaires",
+				"usefulTitle": "Nombre de commentaires que l'auteur a trouvés utiles",
+				"viewsTitle": "Nombre de vues"
+			}
+		},
+		"videoPlayer": {
+
+		},
+		"toolbar": {
+			"timestamp": "Insérez l'instant en cours", 
+			"slow": "Insérez un ralenti",
+			"loop": "Insérez une boucle",
+			"sequence": "Comparez une séquence spéficique de votre vidéo à une séquence existante"
+		},
+		"askPro": {
+			"headline": "Choisissez votre coach",
+			"tableCaption": "Vous pouvez demander à un entraîneur professionnel de vous donner des conseils sur cette vidéo. Chaque coach peut proposer des choses différentes, donc prenez le temps de lire les détails indiqués en laissant votre souris sur l'icône <spa n class=\"glyphicon glyphicon-info-sign\"></span> avant de faire votre choix",
+			"name": "Nom",
+			"languages": "Langues",
+			"level": "Niveau",
+			"price": "Tarif",
+			"verifiedInfo": "Nous avons vérifié que les informations fournies par le coach sont exactes",
+			"requestButton": "Envoyer la requête",
+			"closeButton": "Fermer",
+			"confirmRequestTitle": "Confirmer la requête",
+			"confirmInfo" : "Pour confirmer la requête à {{name}} pour {{tariff}} pour analyser votre vidéo, veuillez entrer votre adresse mail ci-dessous.",
+			"confirmButton": "Confirmer"
+		},
+		"forgotPassword": {
+			"headline": "Vous avez oublié votre mot de passe ?", 
+			"newPassword": "Nouveau mot de passe",
+			"confirmPwd": "Confirmez votre nouveau mot de passe",
+			"confirm": "Modifier votre mot de passe"
+		},
+		"formattingHelp": {
+			"markdownText": "Vous pouvez utiliser la <a href=\"https://fr.wikipedia.org/wiki/Markdown\" target=\"_blank\">syntaxe Markdown</a> pour formatter votre texte (mettre en gras, en italiques, etc)",
+			"advancedIntro": "Vous pouvez également : ",
+			"hearthstoneCard": "Ajouter un lien vers une carte en utilisant <code>[[Le Nom De La Carte]]</code>. Cela déclenchera l'auto-complétion, et vous permettra d'ajouter un lien qui affichera la carte lorsque vous laissez la souris dessus",
+			"hearthstoneDeck": "Ajouter un lien vers un deck hébergé sur HearthPwn.com en utilisant <code>[http://www.hearthpwn.com/decks/id_du_deck]</code>. Cela créera un lien qui affichera la liste de cartes au passage de la souris (et si vous avez besoin de decks hébergés ailleurs, dites-le nous sur les forums)",
+			"timestamp": "Utiliser l'<strong>icône de timestamp <span class=\"glyphicon glyphicon-time\"></span></strong> pour créer un lien vers un instant précis dans la vidéo. Vous pouvez ensuite librement ajuster l'instant pour avoir exactement ce que vous voulez",
+			"slow": "Utiliser l'<strong>icône de ralenti <span class=\"glyphicon glyphicon-play\"></span><span class=\"glyphicon glyphicon-pause\" style=\"margin-left: -5px\"></span></strong> pour créer un lien vers un instant et automatiquement jouer la viédo au ralenti lorsque l'utilisateur clique dessus. Vous pouvez modifier la vitesse de la vidéo en changeant le <code>0.5</code> après le <code>s</code> (plus il est bas, plus lente sera la vidéo)",
+			"loop": "Utiliser l'<strong>icône de boucle <span class=\"glyphicon glyphicon-repeat\"></span></strong> pour créer un lien au ralenti et une séquence d'une seconde qui se répète en boucle indéfiniment. Vous pouvez changer la durée de la boucle en modifiant la valeur après le <code>L</code> (<code>L1.5</code> signifie une boucle de 1.5s)",
+			"drawing": "Utiliser l'<strong>icône de dessin <span class=\"glyphicon glyphicon-picture\"></span></strong> pour créer un lien avec un dessin. Une fois que vous cliquez sur l'icône, vous entrez en <i>mode dessin</i>. Dessinez alors sur le canvas blanc avec la souris, et cliquez de nouveau sur l'icône pour sauvegarder. Si vous n'aimez pas le résultat, effacez simplement le <code>[tmp0]</code> du commentaire, et recommencez !",
+			"comparison": "Utiliser l'<strong>icône de comparaison <span class=\"glyphicon glyphicon-facetime-video\"></span></strong> pour créer une séquence avec deux vidéos côte-à-côte et mettre en évidence les différences. Vous pouvez bien sûr le combiner avec n'importe quel autre outil ci-dessus (par défaut une séquence est créée avec une boucle et un ralenti)"
+		},
+		"user": {
+			"reputationExplanation": "Votre réputation totale. Vous pouvez l'augmenter en donnant des conseils utiles aux autres joueurs",
+			"signOut": "Déconnexion",
+			"signIn": "Connexion",
+			"createAccount": "Créer un compte",
+			"noAccount": "Si vous n'avez pas encore de compte, ",
+			"signUp": "créeez-en un",
+			"noAccount2": " à la place",
+			"incorrectCredentials": "<strong>Désolé :/</strong> Nous n'avons trouvé aucun compte qui corresponde aux identifiants que vous avez donnés",
+			"identifier": "Votre nom ou email",
+			"password": "Mot de passe",
+			"cancel": "Annuler",
+			"login": "Connectez-moi",
+			"createAccountHeadline": "Voulez-vous créer un compte?",
+			"createAccountIntro": "Créer un compte est optionnel. Cela vous permet principalement de gagner de la réputation lorsque d'autres votent pour vos commentaires (ou de voter vous-même), d'être notifié lorsque de nouvelles contributions sont ajoutées, ou de pouvoir éditer vos contributions",
+			"createAccountIntro2": "Si vous avez déjà un compte, vous pouvez simplement ",
+			"createAccountLink": "vous connecter",
+			"createAccountIntro3": " à la place",
+			"name": "Nom",
+			"email": "Email",
+			"confirmPassword": "Confirmez votre mot de passe",
+			"createAccountCancel": "Non merci, je créerai mon compte plus tard",
+			"createAccountConfirm": "Créer mon compte maintenant"
+		},
+		"review": {
+			"player": {
+
+			},
+			"sequence": {
+				"headline": "Ajouter une comparaison",
+				"choiceHeadline": "Utiliser une séquence de :",
+				"sameVideoChoice": "cette vidéo",
+				"otherVideoChoice": "une autre vidéo",
+				"existingSequenceChoice": "une séquence existante",
+				"otherVideoHeadline": "Choisissez une vidéo existante",
+				"selectVideo": "Sélectionner",
+				"useSideHeadline": "Utiliser : ",
+				"useSideLeft": "la guache",
+				"useSideCenter": "le centre",
+				"useSideRight": "la droite",
+				"playbackSpeed": "Vitesse",
+				"loopDuration": "Durée de boucle",
+				"testSequence": "Tester la séquence",
+				"stopTest": "Arrêter le test",
+				"addSequenceInfo": "Nous allons ajouter cette séquence à la liste des séquences existantes, pour que d'autres puissent facilement la réutiliser. Cela nous aiderait beaucoup si vous pouviez remplir les champs suivants afin de la rendre plus accessible :)",
+				"addSequenceTitle": "A descriptive title that makes finding it easy",
+				"createAndAddButton": "Créer et ajouter la séquence",
+				"addSequenceButton": "Ajouter la séquence",
+				"cancelButton": "Annuler"
+			},
+			"comment": {
+				"upvote": "Upvote cette vidéo (faites-le si vous trouvez que cette vidéo peut apporter des choses aux autres joueurs)",
+				"downvote": "Downvote cette vidéo (faites-le si vous trouvez que cette vidéo n'apporte rien, ou si elle est difficile à comprendre ou à regarder)",
+				"upvoteComment": "Upvote ce commentaire (faites-le si vous trouvez qu'il peut aider les autres à progresser)",
+				"downvoteComment": "Downvote ce commentaire (faites-le si vous trouvez qu'il n'aide pas les autres à progresser)",
+				"reviewTitle": "Titre de votre revue vidéo",
+				"edit": "Modifier",
+				"cancelEdit": "Annuler",
+				"validateEdit": "Mettre à jour",
+				"commentsHeadline": "Commentaires",
+				"unsubscribeReview": "Désinscription",
+				"unsubscribeReviewTooltip": "Cliquez pour arrêter de recevoir des notifications lorsqu'un nouveau commentaire est ajouté",
+				"subscribeReview": "Inscription",
+				"subscribeReviewTooltip": "Cliquez pour être notifié lorsqu'un nouveau commentaire est ajouté",
+				"searchVideos": "Recherche",
+				"addCommentButton": "Ajouter un commentaire public", 
+				"authorNamePlaceholder": "Votre nom",
+				"addCommentTextPlaceholder": "Aidez {{name}}?",
+				"confirmCommentButton": "Poster",
+				"cancelCommentButton": "Annuler",
+				"showFormattingHelpButton": "Montrer l'aide au formattage",
+				"hideFormattingHelpButton": "Cacher l'aide au formattage",
+				"missTagLink": "Il vous manque un tag ?", 
+				"helpedAuthor": "A aidé {{name}}",
+				"helpedMe": "Indiquer qu'il m'a aidé",
+				"replyButton": "Répondre"
+			},
+			"askProButton": "Demander à un Pro",
+			"askProTooltip": "Recevez l'avis d'un professionnel sur votre vidéo",
+			"proNotified": "Nous avons notifié {{name}} de votre requête. Vous recevrez bientôt une confirmation par email :)"
+		},
+		"upload": {
+			"chooseFileButton": "Choisissez votre vidéo",
+			"invalidFormatMessage": "Nous sommes désolés, nous ne supportons que les vidéos au format .mp4, .ogg, .mkv and .webm et ne supportons pas d'autres types de fichiers pour l'instant. La raison principale en est que nous ne pouvons offrir nos fonctionalités les plus avancées si nous devons utiliser un lecteur Flash, qui est indispensable pour certains formats de fichiers.",
+			"clipDurationText": "Durée du clip : ",
+			"doubleSpeedLink": "Doubler la vitesse",
+			"doubleSpeedText": " de la vidéo",
+			"fasterVideoText": "La vidéo finale sera {{videoFramerateRatio}} fois plus rapide (et courte) que l'originale, et n'aura pas de son.",
+			"fasterVideoClick1": "Cliquez",
+			"fastVideoLink": "ici",
+			"fasterVideoClick2": " pour revenir à la vitesse initiale",
+			"timeLimitExplanationText": "Notre but est de garder l'analyse aussi ciblée ue possible, afin que d'autres puissent facilement rechercher et bénéficier des commentaires faits sur votre vidéo. Avoir une analyse ciblée est aussi le meilleur moyen d'inciter d'autres à vous donner des conseils. C'est pourquoi nous imposons une durée maximale de 5 minutes sur la vidéo. Veuillez utiliser le slider ci-dessus pour sélectionner la partie de la vidéo que vous souhaitez voir analysée.",
+			"timeLimitExplanationText2": "Notre but est de garder l'analyse aussi ciblée ue possible, afin que d'autres puissent facilement rechercher et bénéficier des commentaires faits sur votre vidéo. Avoir une analyse ciblée est aussi le meilleur moyen d'inciter d'autres à vous donner des conseils. C'est pourquoi nous imposons une durée maximale de 5 minutes sur la vidéo. Veuillez soit : ",
+			"timeLimiteReason1": "Utiliser le slider ci-dessus pour sélectionner la partie de la vidéo que vous souhaitez voir analysée",
+			"timeLimitReason2Link": "Doubler la vitesse",
+			"timeLimitReason2": " de la vidéo pour avoir jusqu'à 10 minutes de vidéo. C'est pour l'instant expérimental et ne fonctionnera que si votre vidéo a environ 30 images par secondes (ce qui est le cas pour la plupart des caméras et téléphones, et la valeur par défaut de la majorité des logiciels d'enregistrement)",
+			"newVideoHeadline": "Informations sur la vidéo",
+			"newPostHeadline": "Nouveau post",
+			"nameTaken": "Ce nom est déjà utilisé. Veuillez en choisir un autre, ou ",
+			"nameTakenLink": "connectez-vous",
+			"nameTaken2": " si c'est vous",
+			"authorNamePlaceholder": "Votre nom",
+			"titlePlaceholder": "Titre",
+			"descriptionPlaceholder": "Des remarques sur ce que vous voulez améliorer ?",
+			"descriptionPlaceholderNoVideo": "Des informations supplémentaires ?",
+			"timestampTranslationInfo": "On dirait que vous utilisez des timestamps et avez changé le moment du début de la vidéo. Ne vous inquiétez pas, nous nous chargeons de faire en sorte que les timestamps soient correctement modifiés pour correspondre au nouveau début de la vidéo :)",
+			"uploadButton": "Mettre en ligne",
+			"dontCloseWindowMessage": "Votre vidéo est en train d'être mise en ligne sur nos serveurs. Merci de ne pas fermer la fenêtre, ou vous devrez tout recommencer :(",
+			"finalizeVideoMessage": "Nous sommes en train de finaliser votre vidéo. En fonction de sa taille, cela peut prendre jusque 5 minutes. Vous pouvez prendre le temps d'aller voir d'autres vidéos :)"
+		},
+		"welcome": {
+			"headlineLogged": "Ravis de vous revoir {{name}}!",
+			"headline": "Bienvenue à Zero to Heroes !",
+			"gettingStarted": "Où commencer ?",
+			"videoSuggestion": "Nous sommes contents de vous voir ici :) Si vous cherchez par où commencer, nous vous conseillons d'aller voir <a href=\"/r/{{sport}}/{{recommendedVideo}}\">cette vidéo</a>",
+			"reviewSuggestion": "Bonjour ! Ravis de vous revoir ! Qu'est-ce que vous diriez d'aider quelqu'un aujourd'hui ? <a href=\"/r/{{sport}}/{{recommendedVideo}}\">Cette vidéo</a> n'a pas reçu beaucoup d'attention récemment ; voulez-vous donner un coup de main ?",
+			"newcomer": "On dirait que vous êtes nouveau par ici. Si vous vous sentez un peu perdu, allez voir <a href=\"/{{sport}}\">cette page de présentation</a> pour avoir une meilleure idée de ce qu'on fait ici, ou passez voir <a href=\"/{{meta}}\">les forums</a>",
+			"latestActivity": "Dernières activités",
+			"latestFeatures": "Pendant que vous étiez absent...",
+			"latestFeaturesSubHeadline": "Nous avons continué à ajouter de nouvelles fonctionnalités depuis la dernière fois. Nous espérons que vous les apprécierez !",
+			"contactUs": "Un commentaire, ou une question ? <a href=\"/s/meta\">Dites-le nous !</a>",
+			"activities": {
+				"newReview": " a posté une nouvelle revue ",
+				"newComment": " a posté un nouveau commentaire sur ",
+				"updateReview": " a mis à jour sa revue ",
+				"updateComment": " a mis à jour son commentaire à ",
+				"helpfulComment": " a marqué un commentaire comme utile à "
+			}
+		}
+	},
+	"news": {
+		"news1": "Le site est maintenant accessible en français !"
+	}
+}

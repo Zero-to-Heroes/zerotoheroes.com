@@ -46,32 +46,32 @@ public class SportManager {
 	}
 
 	public void addNewReviewActivity(Review review) {
-		Activity activity = new Activity(new Date(), review.getAuthor() + " posted a new review <a href=\""
-				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
+		Activity activity = new Activity(new Date(), Activity.Type.NEW_REVIEW, review.getAuthor(), review.getUrl(),
+				review.getTitle());
 		addActivity(review, activity);
 	}
 
 	public void addNewCommentActivity(Review review, Comment comment) {
-		Activity activity = new Activity(new Date(), comment.getAuthor() + " commented on <a href=\"" + review.getUrl()
-				+ "\">" + review.getTitle() + "</a>");
+		Activity activity = new Activity(new Date(), Activity.Type.NEW_COMMENT, comment.getAuthor(), review.getUrl(),
+				review.getTitle());
 		addActivity(review, activity);
 	}
 
 	public void addReviewUpdatedActivity(User user, Review review) {
-		Activity activity = new Activity(new Date(), user.getUsername() + " updated the review <a href=\""
-				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
+		Activity activity = new Activity(new Date(), Activity.Type.UPDATE_REVIEW, user.getUsername(), review.getUrl(),
+				review.getTitle());
 		addActivity(review, activity);
 	}
 
 	public void addCommentUpdatedActivity(User user, Review review, Comment comment) {
-		Activity activity = new Activity(new Date(), user.getUsername() + " updated a comment on <a href=\""
-				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
+		Activity activity = new Activity(new Date(), Activity.Type.UPDATE_COMMENT, user.getUsername(), review.getUrl(),
+				review.getTitle());
 		addActivity(review, activity);
 	}
 
 	public void addMarkedCommentHelpfulActivity(User user, Review review, Comment comment) {
-		Activity activity = new Activity(new Date(), user.getUsername() + " marked a comment as helpful on <a href=\""
-				+ review.getUrl() + "\">" + review.getTitle() + "</a>");
+		Activity activity = new Activity(new Date(), Activity.Type.HELPFUL_COMMENT, user.getUsername(),
+				review.getUrl(), review.getTitle());
 		addActivity(review, activity);
 	}
 

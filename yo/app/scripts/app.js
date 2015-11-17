@@ -187,11 +187,23 @@ app.run(['$rootScope', '$window', '$location', '$http',
 	}
 ]);
 
-app.run(['$rootScope', '$window', '$location', function($rootScope, $window, $location) {
+app.run(['$rootScope', '$window', '$location', '$translate', function($rootScope, $window, $location, $translate) {
 	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 		//$window.ga('send', 'pageview', { page: $location.url() });
 		if (current.$$route) {
 			$rootScope.isLandingPage = current.$$route.isLandingPage; 
+		}
+		// Change the language depending on URL. TEMP
+		console.log('URL language is ', $location.search().hl);
+		if ($location.search().hl) {
+			$window.localStorage.language = $location.search().hl;
+		}
+
+		if ($window.localStorage.language) {
+			$translate.use($window.localStorage.language);
+		}
+		else {
+			$translate.use('en');
 		}
 	});
 }]);

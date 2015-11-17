@@ -15,10 +15,19 @@
 			<p ng-show="(engagement <= 1 && !User.isLoggedIn()) || (User.isLoggedIn() && engagement == 0)" translate="{{ 'global.welcome.newcomer' | translate:'{sport: sport}' }}"></p>
 		</section>
 
-		<section ng-show="!!lastActivities.length" >
+		<section ng-show="!!lastActivities.length && lastActivities[0].type" >
 			<h4>{{ 'global.welcome.latestActivity' | translate }}</h4>
 			<ul>
-				<li ng-repeat="activity in lastActivities"><span ng-bind-html="activity.description"></span> <small>{{formatDate(activity.date)}}</small></li>
+				<li ng-repeat="activity in lastActivities" ng-show="activity.type">
+					<span ng-bind="activity.userName"></span>
+					<span ng-show="activity.type == 'NEW_REVIEW'">{{ 'global.welcome.activities.newReview' | translate }}</span>
+					<span ng-show="activity.type == 'NEW_COMMENT'">{{ 'global.welcome.activities.newComment' | translate }}</span>
+					<span ng-show="activity.type == 'UPDATE_REVIEW'">{{ 'global.welcome.activities.updateReview' | translate }}</span>
+					<span ng-show="activity.type == 'UPDATE_COMMENT'">{{ 'global.welcome.activities.updateComment' | translate }}</span>
+					<span ng-show="activity.type == 'HELPFUL_COMMENT'">{{ 'global.welcome.activities.helpfulComment' | translate }}</span>
+					<a href="{{activity.reviewUrl}}" target="_blank">{{activity.reviewTitle}}</a>
+					<span ng-bind-html="activity.description"></span> <small>{{formatDate(activity.date)}}</small>
+				</li>
 			</ul>
 		</section>
 

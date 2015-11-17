@@ -15,6 +15,14 @@ import lombok.ToString;
 @NoArgsConstructor
 public class Activity {
 
+	public enum Type {
+		NEW_REVIEW, NEW_COMMENT, UPDATE_REVIEW, UPDATE_COMMENT, HELPFUL_COMMENT
+
+	}
+
 	private Date date;
-	private String description;
+	private Type type;
+	private String userName;
+	private String reviewUrl;
+	private String reviewTitle;
 }

@@ -101,7 +101,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 								$scope.allowedTags = data;
 								//$log.log('loaded tags', $scope.allowedTags);
 								$scope.allowedTags.forEach(function(tag) {
-									tag.sport = $scope.review.sport.toLowerCase();
+									tag.sport = $scope.review.sport.key ? $scope.review.sport.key.toLowerCase() : $scope.review.sport.toLowerCase();
 								})
 							}
 						);

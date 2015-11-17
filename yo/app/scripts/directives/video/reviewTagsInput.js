@@ -14,9 +14,9 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 			controller: function($scope) {
 
 				$scope.autocompleteTag = function($query) {
-					$log.log('reviewTags, mandatoryTags', $scope.review, $scope.review.tags, $scope.mandatoryTags);
+					//$log.log('reviewTags, mandatoryTags', $scope.review, $scope.review.tags, $scope.mandatoryTags);
 					var allMandatoryTagsFilled = $scope.areAllMandatoryTagsFilled($scope.review.tags, $scope.mandatoryTags);
-					$log.log('allMandatoryTagsFilled', allMandatoryTagsFilled);
+					//$log.log('allMandatoryTagsFilled', allMandatoryTagsFilled);
 					if (allMandatoryTagsFilled) {
 						var validTags = $scope.allowedTags.filter(function (el) {
 							return ~el.text.toLowerCase().indexOf($query);
@@ -48,24 +48,24 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 
 				$scope.getMissingTagType = function(reviewTags, mandatoryTags) {
 					if (!mandatoryTags) return undefined;
-					$log.log('mandatoryTags present, looking for missing type', reviewTags, mandatoryTags);
+					//$log.log('mandatoryTags present, looking for missing type', reviewTags, mandatoryTags);
 
 					var missingTag;
 					mandatoryTags.some(function(tagType) {
 						if (!$scope.containsTagType(reviewTags, tagType)) {
-							$log.log('tagtype not present', tagType, reviewTags, mandatoryTags);
+							//$log.log('tagtype not present', tagType, reviewTags, mandatoryTags);
 							missingTag = tagType;
 							return true;
 						}
 					});
-					$log.log('returning for missing type', missingTag);
+					//$log.log('returning for missing type', missingTag);
 					return missingTag;
 				};
 
 				$scope.containsTagType = function(reviewTags, tagType) {
 					if (!reviewTags) return false;
 
-					$log.log('containsTagType', reviewTags, tagType);
+					//$log.log('containsTagType', reviewTags, tagType);
 					var contains = false;
 					reviewTags.some(function(tag) {
 						if (tag.type == tagType) {
@@ -78,7 +78,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 
 				$scope.areAllMandatoryTagsFilled = function(reviewTags, mandatoryTags) {
 					if (!mandatoryTags) return true;
-					$log.log('mandatory tags present, looking', mandatoryTags);
+					//$log.log('mandatory tags present, looking', mandatoryTags);
 
 					if ($scope.getMissingTagType(reviewTags, mandatoryTags)) return false;
 
@@ -86,7 +86,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 				}
 
 				$scope.$watch('review.sport', function (newVal, oldVal) {
-					$log.log('watching sport value ', oldVal, newVal);
+					//$log.log('watching sport value ', oldVal, newVal);
 					$scope.loadTags();
 				});
 
@@ -94,12 +94,15 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 					if ($scope.review) {
 						var sport = $scope.review.sport.key ? $scope.review.sport.key : $scope.review.sport;
 					}
-					$log.log('getting the new tags for sport ', sport);
+					//$log.log('getting the new tags for sport ', sport);
 					if (sport) {
 						Api.Tags.query({sport: sport}, 
 							function(data) {
 								$scope.allowedTags = data;
-								$log.log('loaded tags', $scope.allowedTags);
+								//$log.log('loaded tags', $scope.allowedTags);
+								$scope.allowedTags.forEach(function(tag) {
+									tag.sport = $scope.review.sport.toLowerCase();
+								})
 							}
 						);
 						$scope.mandatoryTags = SportsConfig[sport.toLowerCase()].mandatoryTags;
@@ -111,7 +114,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 				}
 
 				$scope.$watch('review.editing', function (newVal, oldVal) {
-					$log.log('review.editing', newVal, oldVal);
+					//$log.log('review.editing', newVal, oldVal);
 					// edit mode
 					if (newVal) {
 						$scope.tagsPlaceholder = 'Please add a tag';

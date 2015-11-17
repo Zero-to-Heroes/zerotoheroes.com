@@ -1,7 +1,7 @@
 {
 	"squash": {
 		"landing": {
-			"headline": "Nous aidons les squashers à progresser ensemble",
+			"headline": "Nous aidons les joueurs de squash à progresser ensemble",
 			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de toute la communauté",
 			"communityIntro": "Grimpez au sommet grâce aux meilleurs conseils de la communauté. Un système de vote et de réputation assure que les meilleurs commentaires apparaîtront en premier.",
 			"contributeIntro": "Aidez les autres à devenir de meilleurs joueurs. Gagnez la reconnaissance de la communauté en donnant des conseils et en votant pour ceux qui vous paraissent les plus importants.",
@@ -17,68 +17,68 @@
 	},
 	"badminton": {
 		"landing": {
-			"headline": "We help Badminton players improve together",
-			"subHeadline": "Post a video of yourself playing and get advice from the Badminton community",
-			"communityIntro": "Climb to the top with the best advice from the Badminton community. A reputation and voting system ensures top advice always come out at the top.",
-			"contributeIntro": "Help others become better players. Get recognition from the community by giving advice and voting on what looks important to you.",
-			"feature1Headline": "Video review tools",
-			"feature1Text": "Directly control the video from the comment system to precisely illustrate what you need to say and see. Point to a specific image on a video, play a sequence in slow motion or loop it. You can even compare side-by-side sequences from two any two videos from the site to illustrate the difference between how the same move is done by a top player. And all directly from the comments!",
-			"feature2Headline": "The best from the community",
-			"feature2Text": "Get advice from the other players, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
-			"feature3Headline": "Professional coaches",
-			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
-			"feature4Headline": "Contribute and help the community",
-			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+			"headline": "Nous aidons les joueurs de bad à progresser ensemble",
+			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de toute la communauté",
+			"communityIntro": "Grimpez au sommet grâce aux meilleurs conseils de la communauté. Un système de vote et de réputation assure que les meilleurs commentaires apparaîtront en premier.",
+			"contributeIntro": "Aidez les autres à devenir de meilleurs joueurs. Gagnez la reconnaissance de la communauté en donnant des conseils et en votant pour ceux qui vous paraissent les plus importants.",
+			"feature1Headline": "Outils d'analyse vidéo",
+			"feature1Text": "Contrôlez directement la vidéo depuis le système de commentaires pour illustrer précisément ce que vous voulez dire. Isolez une image spécifique dans la vidéo, jouez une séquence au ralenti ou même en boucle. Vous pouvez même vous comparer à une autre vidéo côte-à-côte pour illustrer les différences avec un meilleur joueur. Et tout cela directement depuis les commentaires!",
+			"feature2Headline": "Le meilleur de la communauté",
+			"feature2Text": "Recevez des conseils d'autres joueurs, et profitez des meilleurs conseils, identifiés grâce à un système de vote. Vous pouvez même identifier quelles commentateurs apportent la plus à la communauté, ce vous permettra d'isoler les meilleurs commentaires encore plus facilement",
+			"feature3Headline": "Des coaches professionnels",
+			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
+			"feature4Headline": "Contribuez et aidez la communauté",
+			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		}
 	},
 	"hearthstone": {
 		"landing": {
-			"headline": "We help Hearthstone players improve together",
-			"subHeadline": "Post a video of yourself playing and get advice from the Hearthstone community",
-			"communityIntro": "Climb to Legend with the best advice from the Hearthstone community. A reputation and voting system ensures top advice always come out at the top.",
-			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
-			"feature1Headline": "Integrated with HearthStone",
-			"feature1Text": "Immediately link to an existing card or deck, so you have everything you need in a single place",
-			"feature2Headline": "The best from the community",
-			"feature2Text": "Get advice from the other gamers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
-			"feature3Headline": "Professional coaches",
-			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
-			"feature4Headline": "Contribute and help the community",
-			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+			"headline": "Nous aidons les joueurs de HearthStone à progresser ensemble",
+			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de la communauté HearthStone",
+			"communityIntro": "Devenez une Légende grâce aux meilleurs conseils de la communauté. Un système de vote et de réputation assure que les meilleurs commentaires apparaîtront en premier.",
+			"contributeIntro": "Aidez les autres à devenir de meilleurs joueurs. Gagnez la reconnaissance de la communauté en donnant des conseils et en votant pour ceux qui vous paraissent les plus importants.",
+			"feature1Headline": "Intégré avec HearthStone",
+			"feature1Text": "Rajoutez des liens vers les cartes ou decks existants, pour que vous ayez tout ce dont vous avez besoin au même endroit",
+			"feature2Headline": "Le meilleur de la communauté",
+			"feature2Text": "Recevez des conseils d'autres joueurs, et profitez des meilleurs conseils, identifiés grâce à un système de vote. Vous pouvez même identifier quelles commentateurs apportent la plus à la communauté, ce vous permettra d'isoler les meilleurs commentaires encore plus facilement",
+			"feature3Headline": "Des coaches professionnels",
+			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
+			"feature4Headline": "Contribuez et aidez la communauté",
+			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		}
 	},
 	"heroesofthestorm": {
 		"landing": {
-			"headline": "We help Heroes of the Storm players improve together",
-			"subHeadline": "Post a video of yourself playing and get advice from the Heroes of the Storm community",
-			"communityIntro": "Climb the ladder to rank 1 with the best advice from the Heroes of the Storm community. A reputation and voting system ensures top advice always come out at the top.",
-			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
-			"feature2Headline": "The best from the community",
-			"feature2Text": "Get advice from the other gamers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
-			"feature3Headline": "Professional coaches",
-			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
-			"feature4Headline": "Contribute and help the community",
-			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+			"headline": "Nous aidons les joueurs de Heroes of the Storm à progresser ensemble",
+			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de la communauté HotS",
+			"communityIntro": "Montez le ladder jusqu'au rang 1 grâce aux meilleurs conseils de la communauté. Un système de vote et de réputation assure que les meilleurs commentaires apparaîtront en premier.",
+			"contributeIntro": "Aidez les autres à devenir de meilleurs joueurs. Gagnez la reconnaissance de la communauté en donnant des conseils et en votant pour ceux qui vous paraissent les plus importants.",
+			"feature2Headline": "Le meilleur de la communauté",
+			"feature2Text": "Recevez des conseils d'autres joueurs, et profitez des meilleurs conseils, identifiés grâce à un système de vote. Vous pouvez même identifier quelles commentateurs apportent la plus à la communauté, ce vous permettra d'isoler les meilleurs commentaires encore plus facilement",
+			"feature3Headline": "Des coaches professionnels",
+			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
+			"feature4Headline": "Contribuez et aidez la communauté",
+			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		}
 	},
 	"leagueoflegends": {
 		"landing": {
-			"headline": "We help League of Legends players improve together",
-			"subHeadline": "Post a video of yourself playing and get advice from the League of Legends community",
-			"communityIntro": "Climb the ladder to the top with the best advice from the League of Legends community. A reputation and voting system ensures top advice always come out at the top.",
-			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
-			"feature2Headline": "The best from the community",
-			"feature2Text": "Get advice from the other gamers, and let the best comments surface to the top thanks to a voting system. You will soon be able to see how valuable the global contributions of each one is to the community, which will make identifying the best coaches even easier",
-			"feature3Headline": "Professional coaches",
-			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
-			"feature4Headline": "Contribute and help the community",
-			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+			"headline": "Nous aidons les joueurs de Legends players à progresser ensemble",
+			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de la communauté LoL",
+			"communityIntro": "Montez le ladder jusqu'au sommet grâce aux meilleurs conseils de la communauté. Un système de vote et de réputation assure que les meilleurs commentaires apparaîtront en premier.",
+			"contributeIntro": "Aidez les autres à devenir de meilleurs joueurs. Gagnez la reconnaissance de la communauté en donnant des conseils et en votant pour ceux qui vous paraissent les plus importants.",
+			"feature2Headline": "Le meilleur de la communauté",
+			"feature2Text": "Recevez des conseils d'autres joueurs, et profitez des meilleurs conseils, identifiés grâce à un système de vote. Vous pouvez même identifier quelles commentateurs apportent la plus à la communauté, ce vous permettra d'isoler les meilleurs commentaires encore plus facilement",
+			"feature3Headline": "Des coaches professionnels",
+			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
+			"feature4Headline": "Contribuez et aidez la communauté",
+			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		}
 	},
 	"all": {
 		"landing": {
-			"headline": "We help (e-)athletes improve together",
-			"subHeadline": "Post a video of yourself playing and get advice from the community. Start by picking your community below"
+			"headline": "Nous aidons les (e-)athlètes à progresser ensemble",
+			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de la communauté. Commencez par choisir votre communauté ci-dessous"
 		}
 	},
 	"global": {
@@ -302,5 +302,62 @@
 	},
 	"news": {
 		"news1": "Le site est maintenant accessible en français !"
+	},
+	"tags": {
+		"squash": {
+			"Drill": "Exercice",
+			"Training": "Entraînement",
+			"Forehand": "Coup droit",
+			"Backhand": "Revers",
+			"Crosscourt": "Croisé",
+			"Volley": "Vollée",
+			"Dropshot": "Amorti",
+			"Movement": "Déplacement",
+			"Beginner": "Débutant",
+			"Casual": "Loisir",
+			"Club competitive": "Club compétiteur",
+			"Regional": "Régional",
+			"National": "National",
+			"Men": "Homme",
+			"Women": "Femme",
+			"Tactics": "Tactique",
+			"Serve": "Service"
+		},
+		"badminton": {
+			"Drill": "Exercice",
+			"Single": "Simple",
+			"Double": "Double",
+			"Mixed double": "Double mixte",
+			"Forehand": "Coup droit",
+			"Overhead forehand": "Coup droit contourné",
+			"Backhand": "Revers",
+			"Drop": "Amorti",
+			"Net": "Filet",
+			"Clear": "Dégagement",
+			"Movement": "Déplacement",
+			"Training": "Entraînement",
+			"Beginner": "Débutant",
+			"Casual": "Loisir",
+			"Club competitive": "Club compétiteur",
+			"Regional": "Régional",
+			"National": "National",
+			"Men": "Homme",
+			"Women": "Femme",
+			"Tactics": "Tactique",
+			"Serve": "Service",
+			"Return": "Retour",
+			"Backcourt": "Fond du court"
+		},
+		"hearthstone": {
+			"Class: Mage": "Classe: Mage",
+			"Class: Rogue": "Classe: Voleur",
+			"Class: Warrior": "Classe: Guerrier",
+			"Class: Shaman": "Classe: Chaman",
+			"Class: Warlock": "Classe: Démoniste",
+			"Class: Paladin": "Classe: Paladin",
+			"Class: Druid": "Classe: Druide",
+			"Class: Priest": "Classe: Prêtre",
+			"Class: Hunter": "Classe: Chasseur"
+		}
 	}
 }

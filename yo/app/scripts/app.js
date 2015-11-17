@@ -154,6 +154,7 @@ app.config(['$translateProvider', '$windowProvider', function($translateProvider
 			var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
 			if (lang && (S(lang).startsWith('fr') || S(lang).startsWith('en'))) {
 				console.log('browser language is ', lang);
+				$windowProvider.$get().localStorage.language = lang;
 				return lang;
 			}
 		}

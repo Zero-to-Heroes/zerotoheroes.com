@@ -107,7 +107,8 @@
 			"postVideo": "Submit a video",
 			"postFeedback": "Post feedback",
 			"forum": "Discussion room",
-			"chooseSport": "Choose a sport"
+			"chooseSport": "Choose a sport",
+			"language": "Language"
 		},
 		"listing": {
 			"allVideos": "All videos",

@@ -45,11 +45,11 @@
 			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[review.sport.toLowerCase()] && !sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed">
 				<span>{{ 'global.upload.timeLimitExplanationText' | translate }}</span>
 			</div>
-			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[review.sport.toLowerCase()] && sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed">
+			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && (!sportsConfig[review.sport.toLowerCase()] || (sportsConfig[review.sport.toLowerCase()] && sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed))">
 				<span>{{ 'global.upload.timeLimitExplanationText2' | translate }}</span>
 				<ul>
 					<li>{{ 'global.upload.timeLimiteReason1' | translate }}</li>
-					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.timeLimitReason2Link' | translate }}</a>{{ 'global.upload.timeLimiteReason2' | translate }}</li>
+					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.timeLimitReason2Link' | translate }}</a>{{ 'global.upload.timeLimitReason2' | translate }}</li>
 				</ul>
 			</div>
 			<hr>

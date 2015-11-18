@@ -14,8 +14,15 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					allowDoubleSpeed: false,
 					mandatoryTags: ['level'],
 					landing: {
-						displayName: 'Badminton'
+						displayName: 'Badminton',
 					}
+				},
+				duelyst: {
+					background: 'duelyst.jpg',
+					displayName: 'Duelyst',
+					useVideo: true,
+					isSport: true,
+					allowDoubleSpeed: true
 				},
 				hearthstone: {
 					background: 'hearthstone.jpg',

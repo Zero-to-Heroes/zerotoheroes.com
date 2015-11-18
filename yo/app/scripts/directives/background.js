@@ -12,6 +12,7 @@ app.directive('background', ['$log', function ($log) {
           	})
 
           	$scope.updateBackground = function() {
+          		$log.log('updating background', $scope.background);
 	          	if ($scope.background)	{
 	            	element.css("background", "linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) 100%), url(" + $scope.background + ")");
 	            	element.css("background-size", "cover");

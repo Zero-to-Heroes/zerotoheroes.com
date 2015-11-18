@@ -26,7 +26,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			theme: "bower_components/videogular-themes-default/videogular.css"
 		};
 
-		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone', 'Meta'];
+		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone', 'Duelyst', 'Meta'];
 
 		$scope.canvasState = {
 			canvasIdIndex: 0,
@@ -34,7 +34,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			drawingCanvas: false
 		}
 
-		var plugins = SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
+		var plugins = SportsConfig[$scope.sport] && SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
 		$scope.plugins = [];
 		if (plugins) {
 			angular.forEach(plugins, function(plugin) {

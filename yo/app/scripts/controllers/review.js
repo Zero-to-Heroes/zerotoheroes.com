@@ -21,7 +21,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		/*$scope.canvasIdIndex = 0;
 		$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
 		$scope.drawingCanvas = false;*/
-		var plugins = SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
+		var plugins = SportsConfig[$scope.sport] && SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
 		$scope.plugins = [];
 		if (plugins) {
 			angular.forEach(plugins, function(plugin) {

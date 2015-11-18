@@ -68,7 +68,7 @@
 				  	</div>
 			  	</div>
 		  		<div class="row">
-					<div ng-class="{'col-sm-4': useVideo}" ng-show="useVideo">
+					<!--<div ng-class="{'col-sm-4': useVideo}" ng-show="useVideo">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
 						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo || uploadInProgress">
 								<option value="Squash" ng-hide="!useVideo">Squash</option>
@@ -79,8 +79,8 @@
 								<option value="Meta" ng-show="!useVideo">Meta</option>
 							</select>
 						</div>
-					</div>
-					<div ng-class="{'col-sm-8': useVideo, 'col-sm-12': !useVideo}">
+					</div>-->
+					<div class="col-sm-12">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
 					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="uploadInProgress">
 					  	</div>

@@ -108,7 +108,8 @@
 			"postFeedback": "Post feedback",
 			"forum": "Discussion room",
 			"chooseSport": "Choose a sport",
-			"language": "Language"
+			"language": "Language",
+			"otherSections": "Other sections"
 		},
 		"listing": {
 			"allVideos": "All videos",

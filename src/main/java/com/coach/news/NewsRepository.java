@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.joda.time.DateTime;
+
 import com.coach.news.News.Type;
 
 public class NewsRepository {
@@ -25,9 +27,7 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
-		// news.add(new News(
-		// new DateTime("2015-11-16").toDate(),
-		// "news1", News.Type.Feature));
+		news.add(new News(new DateTime("2015-11-19").toDate(), "news1", News.Type.Feature));
 
 		// Bug fixes
 

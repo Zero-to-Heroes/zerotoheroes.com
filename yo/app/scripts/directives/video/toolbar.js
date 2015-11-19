@@ -2,7 +2,7 @@
 
 var app = angular.module('app');
 app.directive('toolbar', ['$log', '$parse', '$rootScope', 
-	function($log, $parse, $rootScope) {
+	function($log, $parse, $rootScope, SportsConfig) {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -12,7 +12,8 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				insertModel: '=',
 				drawingCanvas: '=',
 				canvasId: '=',
-				hideComparison: '='
+				hideComparison: '=',
+				config: '='
 			},
 			link: function ($scope, element, attrs) {
 				$scope.element = element;

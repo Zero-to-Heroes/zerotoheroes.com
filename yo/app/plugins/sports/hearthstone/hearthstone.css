@@ -30,6 +30,21 @@
     border: none;
 }
 
+.hearthstone .has-error .form-control {
+    border-color: #e22c14;
+}
+
+.hearthstone .has-success .form-control {
+    border-color: #233a6e;
+}
+
+.hearthstone .has-error tags-input.form-control .tags { 
+    border-color: #e22c14;
+}
+.hearthstone .has-success tags-input.form-control .tags {
+    border-color: #233a6e;
+}
+
 .hearthstone .panel:before {
     content: "";
     position: absolute;
@@ -161,7 +176,7 @@
 ** =============*/
 .hearthstone tags-input .tags .tag-item, .hearthstone tags-input[disabled] .tags .tag-item {
     background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
-    background: rgba(115, 5, 174, 0.5);
+    background: rgba(115, 5, 174, 1);
     box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
     color: white;
     text-decoration: none;
@@ -172,7 +187,7 @@
 }
 
 .hearthstone tags-input[disabled] .tags .tag-item {
-    background: rgba(115, 5, 174, 1);
+    background: rgba(115, 5, 174, 0.5);
 }
 
 .hearthstone .logged-author {

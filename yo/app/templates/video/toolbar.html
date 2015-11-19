@@ -1,10 +1,10 @@
 <div>
 	<div class="toolbar">
 		<div ng-click="insertTimestamp()" title="{{ 'global.toolbar.timestamp' | translate }}" class="btn btn-default"><span class="glyphicon glyphicon-time"></span></div>
-		<div ng-click="insertSlow()" title="{{ 'global.toolbar.slow' | translate }}" class="btn btn-default"><span class="glyphicon glyphicon-play"></span><span class="glyphicon glyphicon-pause" style="margin-left: -5px"></span></div>
-		<div ng-click="insertLoop()" title="{{ 'global.toolbar.loop' | translate }}" class="btn btn-default"><span class="glyphicon glyphicon-repeat"></span></div>
+		<div ng-hide="config.deactivateControls.slow" ng-click="insertSlow()" title="{{ 'global.toolbar.slow' | translate }}" class="btn btn-default"><span class="glyphicon glyphicon-play"></span><span class="glyphicon glyphicon-pause" style="margin-left: -5px"></span></div>
+		<div ng-hide="config.deactivateControls.loop" ng-click="insertLoop()" title="{{ 'global.toolbar.loop' | translate }}" class="btn btn-default"><span class="glyphicon glyphicon-repeat"></span></div>
 		<div ng-click="insertCanvas()" class="btn btn-default" data-trigger="click" data-type="success" title="{{ 'global.toolbar.drawing' + drawingCanvas | translate }}" bs-tooltip bs-enabled="drawingCanvas"><span class="glyphicon glyphicon-picture"></span></div>
-		<div ng-click="insertOtherSequence()" title="{{ 'global.toolbar.sequence' | translate }}" class="btn btn-default" ng-hide="hideComparison"><span class="glyphicon glyphicon-facetime-video"></span></div>
+		<div ng-hide="config.deactivateControls.compare" ng-click="insertOtherSequence()" title="{{ 'global.toolbar.sequence' | translate }}" class="btn btn-default" ng-hide="hideComparison"><span class="glyphicon glyphicon-facetime-video"></span></div>
 	</div>
 	<div ng-transclude></div>
 </div>

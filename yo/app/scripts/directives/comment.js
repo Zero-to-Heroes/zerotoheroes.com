@@ -19,7 +19,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				goToTimestamp: '=timestampClickAction',
 				prepareCanvasForUpload: '=',
 				clearTemporaryCanvas: '=',
-				plugins: '='
+				plugins: '=',
+				config: '='
 			},
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {

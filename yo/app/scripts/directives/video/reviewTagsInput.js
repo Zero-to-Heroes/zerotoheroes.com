@@ -99,7 +99,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 						Api.Tags.query({sport: sport}, 
 							function(data) {
 								$scope.allowedTags = data;
-								//$log.log('loaded tags', $scope.allowedTags);
+								$log.log('loaded tags', $scope.allowedTags);
 								$scope.allowedTags.forEach(function(tag) {
 									tag.sport = $scope.review.sport.key ? $scope.review.sport.key.toLowerCase() : $scope.review.sport.toLowerCase();
 								})

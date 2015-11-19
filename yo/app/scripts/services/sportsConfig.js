@@ -22,7 +22,11 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					displayName: 'Duelyst',
 					useVideo: true,
 					isSport: true,
-					allowDoubleSpeed: true
+					allowDoubleSpeed: true,
+					deactivateControls: {
+						slow: true,
+						loop: true
+					}
 				},
 				hearthstone: {
 					background: 'hearthstone.jpg',
@@ -34,6 +38,10 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					plugins: {
 						plugins: ['parseCardsText', 'parseDecks'],
 						customCss: 'hearthstone.css'
+					},
+					deactivateControls: {
+						slow: true,
+						loop: true
 					},
 					landing: {
 						displayName: 'HearthStone',

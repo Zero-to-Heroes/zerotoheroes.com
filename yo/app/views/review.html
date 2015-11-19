@@ -70,7 +70,7 @@
 									<div class="panel panel-default" ng-hide="review.editing">
 										<div compilecontent content="review.markedText" class="panel-body video-description"></div>
 									</div>
-									<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
+									<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" config="config">
 										<textarea class="form-control text-editing-area" ng-model="review.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 									</toolbar>
 									<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" comment-plugins="plugins" auto-grow></textarea>
@@ -118,7 +118,7 @@
 								</div>
 							</div>
 							<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-								<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
+								<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" config="config">
 									<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control text-editing-area" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
 								<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
@@ -137,7 +137,7 @@
 						</div>
 					</div>
 				</form>
-				<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" timestamp-click-action="goToTimestamp" prepare-canvas-for-upload="prepareCanvasForUpload" clear-temporary-canvas="clearTemporaryCanvas" canvas-state="canvasState" plugins="plugins"></comment>
+				<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" timestamp-click-action="goToTimestamp" prepare-canvas-for-upload="prepareCanvasForUpload" clear-temporary-canvas="clearTemporaryCanvas" canvas-state="canvasState" plugins="plugins" config="config"></comment>
 				<!-- Prevent scrolling center area if we're already at the bottom -->
 				<div id="padder"></div>
 				<div id="bottom"></div>

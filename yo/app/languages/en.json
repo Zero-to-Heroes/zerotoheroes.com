@@ -280,7 +280,7 @@
 			"descriptionPlaceholder": "Any remarks about what you want to improve?",
 			"descriptionPlaceholderNoVideo": "Any additional information?",
 			"timestampTranslationInfo": "It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)",
-			"uploadButton": "Post now",
+			"uploadButton": "Start upload",
 			"dontCloseWindowMessage": "Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
 			"finalizeVideoMessage": "Finalizing your video. Depending on its size, it may take up to 5 minutes. Take some time to think about how you can help others get better too :)"
 		},

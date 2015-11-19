@@ -165,7 +165,7 @@
 	</div>
 </section>
 
-<div id="cta3" class="container testimonials-container" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
+<section id="cta3" class="container testimonials-container" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2">
 			<a href="/s/{{sport}}" class="btn btn-danger btn-lg" analytics-on="click" analytics-category="landing" analytics-event="landing.{{sport}}.cta3">
@@ -173,7 +173,7 @@
 			</a>
 		</div>
 	</div>
-</div>
+</section>
 
 <section class="the-team" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
 	<div class="container">
@@ -211,7 +211,7 @@
 	</div>
 </section>
 
-<section class="newsletter" data-stellar-background-ratio="0.5" style="background-position: 50% 3345px;" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
+<div class="newsletter" data-stellar-background-ratio="0.5" style="background-position: 50% 3345px;" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
 	<div class="container">
 		<div class="col-sm-8 col-sm-offset-2 text-center">
 			<h3>{{ 'global.landing.newsLetterHeadline' | translate }}</h3>
@@ -237,7 +237,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
 <footer id="footer" class="footer-main" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
 	<div class="container">

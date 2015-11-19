@@ -3,6 +3,11 @@
 	width: 100%;
 }
 
+.landing-page section {
+	width: 100%;
+	background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;
+}
+
 .full-page, .full-page > div:first-child {
 	height: 100%;
 	width: 100%;
@@ -51,8 +56,8 @@
     margin-top: 30px;
 }
 
-.landing-page .white-background {
-	background-color: white;
+.landing-page .white-background, .landing-page .the-team {
+	background: white;
 }
 
 .landing-page .parallax-overlay {

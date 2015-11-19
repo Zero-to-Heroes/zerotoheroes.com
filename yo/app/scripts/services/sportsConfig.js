@@ -49,7 +49,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					allowDoubleSpeed: true,
 					plugins: {
 						plugins: ['parseCardsTextHots'],
-						customCss: 'beta-hots.css'
+						customCss: 'hots.css'
 					},
 					landing: {
 						displayName: 'Heroes of the Storm',

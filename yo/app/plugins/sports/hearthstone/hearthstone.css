@@ -161,7 +161,7 @@
 ** =============*/
 .hearthstone tags-input .tags .tag-item, .hearthstone tags-input[disabled] .tags .tag-item {
     background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
-    background: rgba(115, 5, 174, 1);
+    background: rgba(115, 5, 174, 0.5);
     box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
     color: white;
     text-decoration: none;
@@ -169,6 +169,10 @@
     text-align: center;
     padding: 2px 10px;
     border: none;
+}
+
+.hearthstone tags-input[disabled] .tags .tag-item {
+    background: rgba(115, 5, 174, 1);
 }
 
 .hearthstone .logged-author {
@@ -325,7 +329,7 @@
 ** =============*/
 .hearthstone .video-listing a, .hearthstone .video-listing a:focus, .hearthstone .video-listing a:hover, .hearthstone .video-listing a:active, .hearthstone .video-listing a h3 {
 	font-weight: 400;
-    color: #e22c14;
+    color: #fa5d26;
 	text-decoration: none;
 }
 
@@ -350,16 +354,16 @@
     color: rgb(46, 46, 46);
 }
 
+.hearthstone .landing-page .the-team a, .hearthstone .landing-page .feature-detail a {
+    color: #337ab7;
+}
+
 .hearthstone .landing-page h1 {
     color: #233a6e;
 }
 
 .hearthstone .landing-page .intro-text h1 {
     color: #fff;
-}
-
-.hearthstone .landing-page .team-col a {
-    color: #337ab7;
 }
 
 

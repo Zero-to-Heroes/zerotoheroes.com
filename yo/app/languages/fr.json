@@ -129,7 +129,9 @@
 				"downvote": "Downvote cette vidéo",
 				"commentsTitle": "Nombre de commentaires",
 				"usefulTitle": "Nombre de commentaires que l'auteur a trouvés utiles",
-				"viewsTitle": "Nombre de vues"
+				"viewsTitle": "Nombre de vues",
+				"submitted": "Postée",
+				"by": "par"
 			}
 		},
 		"videoPlayer": {

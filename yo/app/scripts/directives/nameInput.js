@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', '$location', '$translate', '$window', 
-	function(User, $log, Api, $modal, AuthenticationService, $rootScope, $location, $translate, $window) {
+app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', '$location', 'Localization', '$window', 
+	function(User, $log, Api, $modal, AuthenticationService, $rootScope, $location, Localization, $window) {
 		
 	var linkFunction = function(scope, element, attributes) {
 		scope.showLogout = attributes['showLogout'];
@@ -53,15 +53,12 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 			}
 
 			$scope.changeLanguage = function(languageCode) {
-				$window.localStorage.language = languageCode;
-				$translate.use(languageCode);
+				Localization.use(languageCode);
 			}
 
 			$scope.currentLanguage = function() {
-				if ($window.localStorage.language) {
-					return $window.localStorage.language;
-				}
-				else return 'en';
+				return Localization.getLanguage();
+				
 			}
 		}
 	};

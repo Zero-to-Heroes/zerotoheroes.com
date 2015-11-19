@@ -139,7 +139,9 @@
 			"timestamp": "Insert current timestamp",
 			"slow": "Insert playing in slow motion",
 			"loop": "Insert loop in slow motion",
-			"sequence": "Compare a specific sequence from your video to an existing sequence"
+			"sequence": "Compare a specific sequence from your video to an existing sequence",
+			"drawingfalse": "Add shapes and drawings on the video",
+			"drawingtrue": "When you're done, re-click on the button to save your drawing and continue editing your comment"
 		},
 		"askPro": {
 			"headline": "Choose your coach",

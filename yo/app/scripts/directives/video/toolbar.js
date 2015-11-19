@@ -79,8 +79,6 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					var unregister = $rootScope.$on('sequence.add.end', function (event, params) {
 						// params are null when canceling
 						if (params) {
-							$log.log('Inserting sequence with params', params);
-
 							var timestamp1 = moment.duration(params.sequenceStart1).format('mm:ss:SSS', { trim: false });
 							$scope.insertLoop(timestamp1, params.speed, params.loopDuration);
 							//$log.log('loop inserted');

@@ -161,7 +161,7 @@
 ** =============*/
 .hearthstone tags-input .tags .tag-item, .hearthstone tags-input[disabled] .tags .tag-item {
     background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
-    background: rgba(115, 5, 174, 0.5);
+    background: rgba(115, 5, 174, 1);
     box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
     color: white;
     text-decoration: none;
@@ -193,7 +193,7 @@
 
 .hearthstone .navbar-default .navbar-nav > li > a {
     background-color: transparent;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 66px;
     text-shadow: 0 0 10px #000, 0 0 10px #000;    
     color: #fcd144;
@@ -250,7 +250,7 @@
 }
 
 .hearthstone .navbar .name-group > li > a {
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .hearthstone .brand {
@@ -373,7 +373,7 @@
     }
 
     .hearthstone .navbar .name-group > li > a {
-        font-size: 16px;
+        font-size: 14px;
         padding: 0;
         margin-right: 15px;
     }

@@ -272,7 +272,7 @@ app.run(['$rootScope', '$window', '$location', 'Localization', function($rootSco
 }]);
 
 
-app.directive('scrollable',  function ($window, $document, $log) {
+/*app.directive('scrollable',  function ($window, $document, $log) {
 	var $win = angular.element($window);
 	var windowHeight = $win.height();
 
@@ -323,13 +323,13 @@ app.directive('scrollable',  function ($window, $document, $log) {
 					}
 					
 				}
-
+				newMarginTop = Math.min(0, newMarginTop);
 				element.css('marginTop', newMarginTop + 'px'); 
 			});
 		  }
 		}
 	};
-});
+});*/
 
 
 var guid = function() {

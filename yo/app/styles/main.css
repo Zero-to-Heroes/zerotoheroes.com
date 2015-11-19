@@ -76,6 +76,8 @@ blockquote {
 
 .background-white {
   background-color: white;
+  top: 25px;
+  position: relative;
 }
 
 .background-gray {

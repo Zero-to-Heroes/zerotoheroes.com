@@ -305,7 +305,8 @@
 		}
 	},
 	"news": {
-		"news1": "Zero to Heroes has been localized in French. Use the dropdown in the top right to change your language"
+		"news1": "Zero to Heroes has been localized in French. Use the dropdown in the top right to change your language",
+		"news2": "We've changed the video review layout to use the full width of the screen. Let us know what you think!"
 	},
 	"tags": {
 	}

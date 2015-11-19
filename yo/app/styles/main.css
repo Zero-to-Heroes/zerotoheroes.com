@@ -19,6 +19,13 @@ a[ng-click] {
 	display: block;
 }
 
+blockquote {
+  font-size: inherit;
+  margin: 0 0 5px 0;
+  padding: 5px 10px;
+  border-left: 3px solid #eee;
+}
+
 .main {
 	background: url('https://lh3.googleusercontent.com/CB1q7HN0W8q09NAzbB6LRziZRzVHt1nlaC50uPkKErqOhGaN6GuIQpRnq5o0atLKXgCXPeb0nDTwqtpmhN5i=s0') 0 0 repeat;
 	width: 100%;

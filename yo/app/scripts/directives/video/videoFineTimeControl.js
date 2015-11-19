@@ -11,6 +11,7 @@ app.directive('videoFineTimeControl', ['$log', '$parse',
 	            	// Detect the amount of scroll
 	            	var e = window.event || evt
 	            	var scrollAmount = parseInt(e.wheelDelta ? -e.wheelDelta : e.originalEvent.detail * 40);
+	            	if (e.shiftKey) scrollAmount *= 3;
 	            	
 	            	// Move the player very slightly depending on the amount scrolled
 	            	if (attrs.videoFineTimeControl) {

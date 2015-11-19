@@ -263,7 +263,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				};
 
 				function escapeHtml(string) {
-				    return String(string).replace(/[<>]/g, function (s) {
+				    return String(string).replace(/[<]/g, function (s) {
 				      	return entityMap[s];
 				    });
 				}

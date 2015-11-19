@@ -18,7 +18,7 @@ services.factory('HelpPopupConfig', ['$window', '$log', 'User',
 					}
 				},
 				fineScrolling: {
-					text: "You can scroll frame by frame by using the mousewheel on the time bar, letting you choose your timestamp with more precision",
+					text: "You can scroll frame by frame by using the mousewheel on the time bar, letting you choose your timestamp with more precision. You can scroll more quickly if you press the Shift key at the same time",
 					showCondition: function() {
 						return User.getNumberOfTimestamps() >= 2;
 					}

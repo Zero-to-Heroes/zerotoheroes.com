@@ -1,8 +1,8 @@
 {
 	"squash": {
 		"landing": {
-			"headline": "Nous aidons les joueurs de squash à progresser ensemble",
-			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de toute la communauté",
+			"headline": "Nous aidons les squashers à progresser ensemble",
+			"subHeadline": "Postez une vidéo de votre jeu et recevez des conseils de toute la communauté",
 			"communityIntro": "Grimpez au sommet grâce aux meilleurs conseils de la communauté. Un système de vote et de réputation assure que les meilleurs commentaires apparaîtront en premier.",
 			"contributeIntro": "Aidez les autres à devenir de meilleurs joueurs. Gagnez la reconnaissance de la communauté en donnant des conseils et en votant pour ceux qui vous paraissent les plus importants.",
 			"feature1Headline": "Outils d'analyse vidéo",
@@ -84,7 +84,7 @@
 	"global": {
 		"landing": {
 			"learnMore": "En savoir plus",
-			"getIn": "Entrer gratuitement",
+			"getIn": "Entrer",
 			"reviewToolsHeadline": "De puissants outils d'analyse",
 			"reviewToolsIntro": "Identifiez et comprenez précisément vos erreurs. Regardez n'importe quelle séquence au ralenti, en boucle, ou même côte-à-côte avec une autre séquence d'un joueur de haut niveau.",
 			"communityHeadline": "La sagesse populaire",
@@ -97,7 +97,7 @@
 			"thibDescription": "Driven by logic and passionate about games I'm a software engineer who strongly believes that there is a bit of magic/awesomeness in everybody. Together we can be heroes! Feel free to share your thoughts with me at <a href=\"mailto:thibaud@zerotoheroes.com\">thibaud@zerotoheroes.com</a>",
 			"newsLetterHeadline": "Recevez les dernières nouvelles",
 			"newsLetterSubHeadline": "Inscrivez-vous à la newsletter et recevez les dernières nouvelles",
-			"newsLetterButton": "Insrivez moi",
+			"newsLetterButton": "Inscrivez moi",
 			"noSpam": "Vous savez où nous trouver, donc on ne vous spammera pas :)"
 		},
 		"general": {

@@ -42,12 +42,14 @@ function formatToHtml(deck) {
 						var cssClass = 'card';
 						var cardObject = getCard(card.name);
 						//console.log('cardObject', cardObject);
-						cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
-						htmlDeck += '<tr>' + 
+						if (cardObject) {
+							cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
+							htmlDeck += '<tr>' + 
 										'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
 										'<td class=\'card-name ' + cssClass + '\'>' + parseCardsText_localizeName(cardObject, window.localStorage.language)  + '</td>' +
 										'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
 									'</tr>';
+						}
 					})
 				htmlDeck += '</tbody>';
 			htmlDeck += '</table>';
@@ -61,12 +63,12 @@ function formatToHtml(deck) {
 						if (getCard) {
 							var cardObject = getCard(card.name);
 							cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
-						}
-						htmlDeck += '<tr>' + 
+							htmlDeck += '<tr>' + 
 										'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
 										'<td class=\'card-name ' + cssClass + '\'>' + parseCardsText_localizeName(cardObject, window.localStorage.language)  + '</td>' +
 										'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
 									'</tr>';
+						}
 					})
 				htmlDeck += '</tbody>';
 			htmlDeck += '</table>';

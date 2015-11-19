@@ -24,6 +24,7 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 
 		   	if (current.$$route) {
 			   	$scope.isLandingPage = current.$$route.isLandingPage;
+			   	$scope.hideSideBar = current.$$route.hideSideBar;
 			   	$scope.isFullPage = current.$$route.isFullPage;
 			   	$scope.upload = current.$$route.upload;
 		   	}

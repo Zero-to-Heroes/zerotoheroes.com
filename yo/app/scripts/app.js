@@ -101,7 +101,8 @@ app.config(['$routeProvider', '$locationProvider',
 	  }).*/
 	  when('/r/:sport/:reviewId/:reviewTitle?', {
 		templateUrl: 'views/review.html',
-		controller: 'ReviewCtrl'
+		controller: 'ReviewCtrl',
+		hideSideBar: true
 	  }).
 	  when('/reviews/:pageNumber?', {
 		templateUrl: 'views/videoListing.html',

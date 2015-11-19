@@ -66,13 +66,13 @@
 	<body ng-controller="LayoutCtrl" background="{{background}}" data-spy="scroll" data-offset="80" class="{{customClass}}">
 		<div zth-navigation ng-hide="isLandingPage"></div>
 		<div ng-class="{'main-container-nolanding': !isLandingPage, 'main-container-landing': isLandingPage}">
-			<div class="left-column" ng-hide="isLandingPage">
+			<div class="left-column" ng-hide="isLandingPage || hideSideBar">
 				<div welcome-pane></div>
 			</div>
 			<div ng-class="{'main-panel-nolanding': !isLandingPage, 'main-panel': !isFullPage, 'full-page': isFullPage, 'landing-page': isLandingPage, 'full-page-full': useFullHeight}">
 				<div ng-view class="center-column" autoscroll="true"></div>
 			</div>
-			<div class="right-column" ng-hide="isLandingPage"></div>
+			<div class="right-column" ng-hide="isLandingPage || hideSideBar"></div>
 		</div>
 
 

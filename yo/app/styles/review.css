@@ -19,7 +19,7 @@
 	margin: 0;
 }
 
-.video-information .background-white {
+.video-comment .background-white {
   overflow-y : hidden;
 }
 
@@ -36,9 +36,6 @@
 	padding-left: 40px;
 }
 
-.video-information-header {
-}
-
 .video-information .author-information {
 	margin-bottom: 20px;
 }
@@ -53,4 +50,19 @@
 
 .text-editing-area {
 	max-height: 300px;
+}
+
+.video-comment {
+	width: 50%;
+	float: left;
+}
+
+.video-comment .show-x {
+	overflow-x: visible;
+	padding: 45px;
+	padding-top: 30px;
+}
+
+.video-comment .nameInput {
+	display: block;
 }

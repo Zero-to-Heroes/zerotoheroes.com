@@ -121,11 +121,8 @@
 }
 
 .video-information {
-	overflow-y: hidden;
-	padding-left: 400px;
-	margin-left: -400px;
-	padding-right: 400px;
-	margin-right: -400px;
+	width: 50%;
+	float: left;
 }
 
 .video-information .show-x {

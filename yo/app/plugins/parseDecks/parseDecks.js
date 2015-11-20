@@ -24,7 +24,7 @@ function parseDecks(review, text) {
 
 				var deckNameForDisplay = deck.title;
 
-				result = result.replace(match, '<a class="deck-link" href="' + deckUrl + '" target="_blank" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="top-right" bs-tooltip>' + deckNameForDisplay + '</a>');
+				result = result.replace(match, '<a class="deck-link" href="' + deckUrl + '" target="_blank" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
 			}
 		})
 	}

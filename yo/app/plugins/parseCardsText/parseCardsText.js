@@ -14,7 +14,7 @@ function parseCardsText(review, text) {
 				var cssClass = card.rarity ? getRarity(card).toLowerCase() : 'common';
 				var localizedName = parseCardsText_localizeName(card, lang);
 				var localizedImage = parseCardsText_localizeImage(card, lang);
-				result = result.replace(match, '<a class="card ' + cssClass + '" data-template-url="plugins/parseCardsText/template.html" data-title="' + localizedImage + '" data-container="body" bs-tooltip>' + localizedName + '</a>');
+				result = result.replace(match, '<a class="card ' + cssClass + '" data-template-url="plugins/parseCardsText/template.html" data-title="' + localizedImage + '" data-placement="auto left" data-container="body" bs-tooltip>' + localizedName + '</a>');
 			}
 		})
 	}
@@ -72,7 +72,7 @@ function parseCardsText_attach(element) {
 			var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
 			var title =	'<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + parseCardsText_localizeImage(card, window.localStorage.language) + '\'>';
 			var cssClass = card.rarity ? getRarity(card).toLowerCase() : 'common';
-			return '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '" data-html="true" data-container="body" data-animation="false">' + parseCardsText_localizeName(card, window.localStorage.language) + '</span>';
+			return '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-container="body" data-animation="false">' + parseCardsText_localizeName(card, window.localStorage.language) + '</span>';
 		},
         context: function (text) { 
             return text.toLowerCase(); 

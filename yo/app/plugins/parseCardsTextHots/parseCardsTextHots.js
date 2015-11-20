@@ -14,7 +14,7 @@ function parseCardsTextHots(review, text) {
 			if (talent) {
 				var template = parseCardsTextHots_template(talent);
 				var html = parseCardsTextHots_html(talent);
-				var newLink = '<a class="talent-hots" data-toggle="tooltip" data-template="' + template + '" data-title="' + html + '" data-html="true" data-container="body" data-animation="false">' + talent.name + '</a>'
+				var newLink = '<a class="talent-hots" data-placement="auto left" data-toggle="tooltip" data-template="' + template + '" data-title="' + html + '" data-html="true" data-container="body" data-animation="false">' + talent.name + '</a>'
 				result = result.replace(match, newLink);
 			}
 		})
@@ -76,7 +76,7 @@ function parseCardsTextHots_attach(element) {
 		template: function(talent, term) {
 			var template = parseCardsTextHots_template(talent);
 			var html = parseCardsTextHots_html(talent);
-			var newLink = '<span class="talent-hots" data-toggle="tooltip" data-template="' + template + '" data-title="' + html + '" data-html="true" data-container="body" data-animation="false">' + talent.name + '</span>'
+			var newLink = '<span class="talent-hots" data-placement="auto left" data-toggle="tooltip" data-template="' + template + '" data-title="' + html + '" data-html="true" data-container="body" data-animation="false">' + talent.name + '</span>'
 			return newLink;
 		},
 		className: 'autocomplete-dropdown-hots',

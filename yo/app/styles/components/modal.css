@@ -7,6 +7,10 @@
   margin-top: 400px;
 }
 
+.tooltip {
+	z-index: 9999;
+}
+
 @media screen and (min-height: 500px) {
     .modal-dialog.modal-pro {
         margin-top: 200px;

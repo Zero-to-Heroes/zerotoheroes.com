@@ -64,7 +64,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-8">
+							<div class="col-md-11">
 								<div class="panel panel-default" ng-hide="review.editing">
 									<div compilecontent content="review.markedText" class="panel-body video-description"></div>
 								</div>
@@ -75,7 +75,7 @@
 							</div>
 						</div>
 						<div class="row video-tags" ng-show="review.editing || (review.tags && review.tags.length > 0)" ng-class="{'top-spacing': review.editing}">
-							<div class="col-xs-10 text-left">
+							<div class="col-xs-11 text-left">
 								<review-tags-input review-disabled="!review.editing" review="review"></review-tags-input>
 							</div>
 						</div>

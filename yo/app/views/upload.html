@@ -36,7 +36,7 @@
 		</div>
 
 		<div class="editing-tools" ng-show="file && useVideo">
-			<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0" show-values="true" disabled="uploadInProgress"></div>
+			<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0" show-values="true" disabled="transcoding"></div>
 			<div class="buttons" ng-show="dataLoaded">
 				<span class="durationText">{{ 'global.upload.clipDurationText' | translate }} {{clipDuration | date:'mm:ss' }}</span>
 				<span class="block"><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.doubleSpeedLink' | translate }}</a> {{ 'global.upload.doubleSpeedText' | translate }}</span>
@@ -45,11 +45,11 @@
 			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[review.sport.toLowerCase()] && !sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed">
 				<span>{{ 'global.upload.timeLimitExplanationText' | translate }}</span>
 			</div>
-			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[review.sport.toLowerCase()] && sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed">
+			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && (!sportsConfig[review.sport.toLowerCase()] || (sportsConfig[review.sport.toLowerCase()] && sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed))">
 				<span>{{ 'global.upload.timeLimitExplanationText2' | translate }}</span>
 				<ul>
 					<li>{{ 'global.upload.timeLimiteReason1' | translate }}</li>
-					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.timeLimitReason2Link' | translate }}</a>{{ 'global.upload.timeLimiteReason2' | translate }}</li>
+					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.timeLimitReason2Link' | translate }}</a>{{ 'global.upload.timeLimitReason2' | translate }}</li>
 				</ul>
 			</div>
 			<hr>
@@ -63,12 +63,12 @@
 					<div class="col-sm-12">
 						<div class="form-group" show-errors="{ showSuccess: true }">
 							<div class="alert alert-danger" role="alert" ng-show="uploadForm.author.$error.nameTaken"><span>{{ 'global.upload.nameTaken' | translate }}<a ng-click="signIn()">{{ 'global.upload.nameTakenLink' | translate }}</a>{{ 'global.upload.nameTaken2' | translate }}</span></div>
-							<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="{{ 'global.upload.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()" ng-readonly="uploadInProgress">
+							<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="{{ 'global.upload.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()" ng-readonly="transcoding">
 						</div>
 				  	</div>
 			  	</div>
 		  		<div class="row">
-					<div ng-class="{'col-sm-4': useVideo}" ng-show="useVideo">
+					<!--<div ng-class="{'col-sm-4': useVideo}" ng-show="useVideo">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
 						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo || uploadInProgress">
 								<option value="Squash" ng-hide="!useVideo">Squash</option>
@@ -79,20 +79,20 @@
 								<option value="Meta" ng-show="!useVideo">Meta</option>
 							</select>
 						</div>
-					</div>
-					<div ng-class="{'col-sm-8': useVideo, 'col-sm-12': !useVideo}">
+					</div>-->
+					<div class="col-sm-12">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
-					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="uploadInProgress">
+					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="transcoding">
 					  	</div>
 				  	</div>
 			  	</div>
 		  		<div class="row">
 					<div class="col-sm-12">
-					  	<div class="form-group">
-							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true">
-					    		<textarea class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholder' | translate }}" ng-model="review.text" ng-readonly="uploadInProgress" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
+					  	<div class="form-group" show-errors="{ showSuccess: true }">
+							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true" config="sportConfig">
+					    		<textarea name="text" class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholder' | translate }}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
 					    	</toolbar>
-					    	<textarea class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholderNoVideo' | translate }}" ng-model="review.text" ng-readonly="uploadInProgress" comment-plugins="plugins" auto-grow ng-hide="useVideo"></textarea>
+					    	<textarea name="text" class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholderNoVideo' | translate }}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow ng-hide="useVideo"></textarea>
 					   </div>
 					</div>
 					<div class="inline-block float-right show-help-buttons">
@@ -106,7 +106,7 @@
 				</div>
 				<div class="row video-tags">
 					<div class="col-xs-12 text-left">
-						<review-tags-input review-disabled="uploadInProgress" review="review"></review-tags-input>
+						<review-tags-input review-disabled="transcoding" review="review"></review-tags-input>
 					</div>
 				</div>
 		  		<div class="row">

@@ -1,8 +1,8 @@
 {
 	"squash": {
 		"landing": {
-			"headline": "Nous aidons les joueurs de squash à progresser ensemble",
-			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de toute la communauté",
+			"headline": "Nous aidons les squashers à progresser ensemble",
+			"subHeadline": "Postez une vidéo de votre jeu et recevez des conseils de toute la communauté",
 			"communityIntro": "Grimpez au sommet grâce aux meilleurs conseils de la communauté. Un système de vote et de réputation assure que les meilleurs commentaires apparaîtront en premier.",
 			"contributeIntro": "Aidez les autres à devenir de meilleurs joueurs. Gagnez la reconnaissance de la communauté en donnant des conseils et en votant pour ceux qui vous paraissent les plus importants.",
 			"feature1Headline": "Outils d'analyse vidéo",
@@ -12,7 +12,7 @@
 			"feature3Headline": "Des coaches professionnels",
 			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
 			"feature4Headline": "Contribuez et aidez la communauté",
-			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
+			"feature4Text": "Votre expérience est unique et bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		}
 	},
 	"badminton": {
@@ -28,7 +28,7 @@
 			"feature3Headline": "Des coaches professionnels",
 			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
 			"feature4Headline": "Contribuez et aidez la communauté",
-			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
+			"feature4Text": "Votre expérience est unique et bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		}
 	},
 	"hearthstone": {
@@ -44,7 +44,7 @@
 			"feature3Headline": "Des coaches professionnels",
 			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
 			"feature4Headline": "Contribuez et aidez la communauté",
-			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
+			"feature4Text": "Votre expérience est unique et bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		}
 	},
 	"heroesofthestorm": {
@@ -58,7 +58,7 @@
 			"feature3Headline": "Des coaches professionnels",
 			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
 			"feature4Headline": "Contribuez et aidez la communauté",
-			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
+			"feature4Text": "Votre expérience est unique et bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		}
 	},
 	"leagueoflegends": {
@@ -72,7 +72,7 @@
 			"feature3Headline": "Des coaches professionnels",
 			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
 			"feature4Headline": "Contribuez et aidez la communauté",
-			"feature4Text": "Votre expérience est unique est bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
+			"feature4Text": "Votre expérience est unique et bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		}
 	},
 	"all": {
@@ -84,7 +84,7 @@
 	"global": {
 		"landing": {
 			"learnMore": "En savoir plus",
-			"getIn": "Entrer gratuitement",
+			"getIn": "Entrer",
 			"reviewToolsHeadline": "De puissants outils d'analyse",
 			"reviewToolsIntro": "Identifiez et comprenez précisément vos erreurs. Regardez n'importe quelle séquence au ralenti, en boucle, ou même côte-à-côte avec une autre séquence d'un joueur de haut niveau.",
 			"communityHeadline": "La sagesse populaire",
@@ -94,10 +94,10 @@
 			"teamHeadline": "L'équipe",
 			"teamSubHeadline": "Yep, c'est nous ! :)",
 			"sebDescription": "Je suis développeur logiciel de métier, mais sportif et joueur de coeur. J'ai été frustrué par la difficulté d'avoir des conseils adaptés à mon style, et veux à mon tour aider les athlètes et joueurs à franchir cet obstacle. J'adore rencontrer toutes sortes de gens intéressants, donc n'hésitez pas à m'envoyer un email directement à <a href=\"mailto:seb@zerotoheroes.com\">seb@zerotoheroes.com</a> :)",
-			"thibDescription": "Driven by logic and passionate about games I'm a software engineer who strongly believes that there is a bit of magic/awesomeness in everybody. Together we can be heroes! Feel free to share your thoughts with me at <a href=\"mailto:thibaud@zerotoheroes.com\">thibaud@zerotoheroes.com</a>",
+			"thibDescription": "Je suis un jeune ingénieur passionné de jeux et je suis convaincu qu'il existe quelque chose d'extraordinaire dans chacun de nous sur Terre. Ensemble, on peut tous devenir des héros. N'hésitez pas à partager vos idées avec moi en m'écrivant à <a href=\"mailto:thibaud@zerotoheroes.com\">thibaud@zerotoheroes.com</a>",
 			"newsLetterHeadline": "Recevez les dernières nouvelles",
 			"newsLetterSubHeadline": "Inscrivez-vous à la newsletter et recevez les dernières nouvelles",
-			"newsLetterButton": "Insrivez moi",
+			"newsLetterButton": "Inscrivez moi",
 			"noSpam": "Vous savez où nous trouver, donc on ne vous spammera pas :)"
 		},
 		"general": {
@@ -108,7 +108,8 @@
 			"postFeedback": "Nouveau post",
 			"forum": "Forums",
 			"chooseSport": "Choisissez un sport",
-			"language": "Langue"
+			"language": "Langue",
+			"otherSections": "Autres sections"
 		},
 		"listing": {
 			"allVideos": "Toutes les vidéos",
@@ -128,7 +129,9 @@
 				"downvote": "Downvote cette vidéo",
 				"commentsTitle": "Nombre de commentaires",
 				"usefulTitle": "Nombre de commentaires que l'auteur a trouvés utiles",
-				"viewsTitle": "Nombre de vues"
+				"viewsTitle": "Nombre de vues",
+				"submitted": "Postée",
+				"by": "par"
 			}
 		},
 		"videoPlayer": {
@@ -138,7 +141,9 @@
 			"timestamp": "Insérez l'instant en cours", 
 			"slow": "Insérez un ralenti",
 			"loop": "Insérez une boucle",
-			"sequence": "Comparez une séquence spéficique de votre vidéo à une séquence existante"
+			"sequence": "Comparez une séquence spéficique de votre vidéo à une séquence existante",
+			"drawingfalse": "Dessinez et ajoutez des annotations sur la vidéo",
+			"drawingtrue": "Quand vous avez fini, re-cliquez sur le bouton pour sauvegarder votre dessin et continuer à éditer votre commentaire"
 		},
 		"askPro": {
 			"headline": "Choisissez votre coach",
@@ -302,7 +307,8 @@
 		}
 	},
 	"news": {
-		"news1": "Le site est maintenant accessible en français !"
+		"news1": "Le site est maintenant accessible en français ! Vous pouvez changer de langue avec le menu déroulant en haut à droite",
+		"news2": "Nous avons changé l'affichage de la page de revue vidéo pour utiliser toute la largeur de l'écran. Dites-nous ce que vous en pensez !"
 	},
 	"tags": {
 		"squash": {

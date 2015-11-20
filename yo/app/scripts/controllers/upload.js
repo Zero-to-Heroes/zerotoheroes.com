@@ -26,7 +26,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			theme: "bower_components/videogular-themes-default/videogular.css"
 		};
 
-		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone', 'Meta'];
+		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone', 'Duelyst', 'Meta'];
 
 		$scope.canvasState = {
 			canvasIdIndex: 0,
@@ -34,7 +34,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			drawingCanvas: false
 		}
 
-		var plugins = SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
+		$scope.sportConfig = SportsConfig[$scope.sport];
+		var plugins = SportsConfig[$scope.sport] && SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
 		$scope.plugins = [];
 		if (plugins) {
 			angular.forEach(plugins, function(plugin) {
@@ -227,8 +228,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.upload = function() {
 			//$log.log('Before prep, canvas are', $scope.review.canvas);
-			$scope.prepareCanvasForUpload($scope.review, $scope.review);
-			$scope.review.canvas = $scope.review.tempCanvas;
+			// $scope.prepareCanvasForUpload($scope.review, $scope.review);
+			// $scope.review.canvas = $scope.review.tempCanvas;
 			//$log.log('After prep, canvas are', $scope.review.canvas);
 
 			//$log.log('Setting S3 config');
@@ -287,7 +288,12 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 
 		$scope.transcode = function() {
 			$log.log('Creating review ', $scope.review);
+
+			$scope.prepareCanvasForUpload($scope.review, $scope.review);
+			$scope.review.canvas = $scope.review.tempCanvas;
 			$scope.normalizeTimestamps($scope.review);
+			$scope.transcoding = true;
+
 			Api.Reviews.save($scope.review, 
 				function(data) {
 					$log.log('review created, transcoding ', data);

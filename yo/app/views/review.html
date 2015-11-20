@@ -1,97 +1,104 @@
 <view-title>{{review.title}} - {{review.tagValues}}</view-title>
 
-<div class="videogular-container keep-on-top multi-player" ng-show="review.key">
-	<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
-		<div class="first-player-container">
-			<vg-media vg-src="sources" class="first-player" ng-class="playerControls.firstPlayerClass"></vg-media>
+<div class="video-information col-md-5">
+	<div class="background-white" ng-class="plugins">
+		<div class="videogular-container multi-player" ng-show="review.key">
+			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
+				<div class="first-player-container">
+					<vg-media vg-src="sources" class="first-player" ng-class="playerControls.firstPlayerClass"></vg-media>
+				</div>
+
+				<vg-controls ng-class="{'controls-container-fullscreen': API.isFullScreen}">
+					<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
+					<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
+					<vg-scrub-bar video-fine-time-control>
+						<vg-scrub-bar-current-time help-popup help-popup-key="fineScrolling" help-popup-active="0" help-popup-position="top"></vg-scrub-bar-current-time>
+					</vg-scrub-bar>
+					<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
+					<video-playback-button></video-playback-button>
+					<video-loop-button ng-show="playerControls.loopStatus"></video-loop-button>
+					<video-dual-mode-button ng-show="playerControls.mode == 2"></video-dual-mode-button>
+					<video-canvas-overlay-button ng-show="playerControls.canvasId"></video-canvas-overlay-button>
+					<vg-volume>
+						<vg-mute-button></vg-mute-button>
+						<vg-volume-bar></vg-volume-bar>
+					</vg-volume>
+					<vg-fullscreen-button></vg-fullscreen-button>
+				</vg-controls>
+
+				<div class="second-player-container" ng-show="playerControls.mode == 2">
+					<div class="second-player">
+						<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
+							<vg-media vg-src="sources2" ng-class="playerControls.secondPlayerClass"></vg-media>
+						</videogular>
+					</div>
+				</div>
+
+				<canvas id="fabricCanvas" pw-canvas></canvas>
+
+				<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!canvasState.drawingCanvas"></vg-overlay-play>
+			</videogular>
 		</div>
 
-		<vg-controls ng-class="{'controls-container-fullscreen': API.isFullScreen}">
-			<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
-			<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
-			<vg-scrub-bar video-fine-time-control>
-				<vg-scrub-bar-current-time help-popup help-popup-key="fineScrolling" help-popup-active="0" help-popup-position="top"></vg-scrub-bar-current-time>
-			</vg-scrub-bar>
-			<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
-			<video-playback-button></video-playback-button>
-			<video-loop-button ng-show="playerControls.loopStatus"></video-loop-button>
-			<video-dual-mode-button ng-show="playerControls.mode == 2"></video-dual-mode-button>
-			<video-canvas-overlay-button ng-show="playerControls.canvasId"></video-canvas-overlay-button>
-			<vg-volume>
-				<vg-mute-button></vg-mute-button>
-				<vg-volume-bar></vg-volume-bar>
-			</vg-volume>
-			<vg-fullscreen-button></vg-fullscreen-button>
-		</vg-controls>
-
-		<div class="second-player-container" ng-show="playerControls.mode == 2">
-			<div class="second-player">
-				<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
-					<vg-media vg-src="sources2" ng-class="playerControls.secondPlayerClass"></vg-media>
-				</videogular>
-			</div>
-		</div>
-
-		<canvas id="fabricCanvas" pw-canvas></canvas>
-
-		<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!canvasState.drawingCanvas"></vg-overlay-play>
-	</videogular>
-
-</div>
-
-<div class="video-information" ng-class="plugins">
-	<div class="background-white">
-		<div class="show-x background-container">
-			<div scrollable="{{useVideo}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">
-				<form class="container-fluid video-details" name="videoInformationForm">
-					<div class="row">
-						<div class="col-md-1 reputation">
-							<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': review.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="upvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.upvote' | translate }}"></span>
-							<span class="reputation-score glyphicon">{{review.reputation.nbVotes.Upvote - review.reputation.nbVotes.Downvote}}</span>
-							<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.downvote' | translate }}"></span>
+		<div>
+			<form class="container-fluid video-details" name="videoInformationForm">
+				<div class="row">
+					<div class="col-md-1 reputation">
+						<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': review.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="upvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.upvote' | translate }}"></span>
+						<span class="reputation-score glyphicon">{{review.reputation.nbVotes.Upvote - review.reputation.nbVotes.Downvote}}</span>
+						<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.downvote' | translate }}"></span>
+					</div>
+					<div class="col-md-11">
+						<div class="row video-information-header">
+							<div class="col-md-10">
+								<h1 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h1>
+								<div class="form-group" show-errors="{ showSuccess: true }" ng-show="review.editing">
+							    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.review.comment.reviewTitle' | translate }}" ng-required="true">
+							  	</div>
+							  	<div class="author-information" ng-hide="review.editing">
+								  	<span class="link-minor">Submitted <span title="{{formatExactDate(review.creationDate)}}">{{formatDate(review.creationDate)}}</span> by <span author-name entity="review"></span></span>
+								  	<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="review.authorReputation">{{review.authorReputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
+								  	<span class="link-minor" ng-show="!review.editing && canEdit(review)"> - </span>
+									<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && canEdit(review)"> {{ 'global.review.comment.edit' | translate }}</a>
+								</div>
+							</div>
 						</div>
-						<div class="col-md-11">
-							<div class="row video-information-header">
-								<div class="col-md-10">
-									<h1 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h1>
-									<div class="form-group" show-errors="{ showSuccess: true }" ng-show="review.editing">
-								    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.review.comment.reviewTitle' | translate }}" ng-required="true">
-								  	</div>
-								  	<div class="author-information" ng-hide="review.editing">
-									  	<span class="link-minor">Submitted <span title="{{formatExactDate(review.creationDate)}}">{{formatDate(review.creationDate)}}</span> by <span author-name entity="review"></span></span>
-									  	<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="review.authorReputation">{{review.authorReputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
-									  	<span class="link-minor" ng-show="!review.editing && canEdit(review)"> - </span>
-										<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && canEdit(review)"> {{ 'global.review.comment.edit' | translate }}</a>
-									</div>
+						<div class="row">
+							<div class="col-md-8">
+								<div class="panel panel-default" ng-hide="review.editing">
+									<div compilecontent content="review.markedText" class="panel-body video-description"></div>
 								</div>
+								<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" config="config">
+									<textarea class="form-control text-editing-area" ng-model="review.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
+								</toolbar>
+								<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" comment-plugins="plugins" auto-grow></textarea>
 							</div>
-							<div class="row">
-								<div class="col-md-8">
-									<div class="panel panel-default" ng-hide="review.editing">
-										<div compilecontent content="review.markedText" class="panel-body video-description"></div>
-									</div>
-									<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
-										<textarea class="form-control text-editing-area" ng-model="review.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
-									</toolbar>
-									<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" comment-plugins="plugins" auto-grow></textarea>
-								</div>
+						</div>
+						<div class="row video-tags" ng-show="review.editing || (review.tags && review.tags.length > 0)" ng-class="{'top-spacing': review.editing}">
+							<div class="col-xs-10 text-left">
+								<review-tags-input review-disabled="!review.editing" review="review"></review-tags-input>
 							</div>
-							<div class="row video-tags" ng-show="review.editing || (review.tags && review.tags.length > 0)" ng-class="{'top-spacing': review.editing}">
-								<div class="col-xs-10 text-left">
-									<review-tags-input review-disabled="!review.editing" review="review"></review-tags-input>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6 text-left">
-									<div ng-show="review.editing">
-										<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
-										<button ng-click="updateDescription()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
-									</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6 text-left">
+								<div ng-show="review.editing">
+									<button ng-click="cancelUpdateDescription()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
+									<button ng-click="updateDescription()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
 								</div>
 							</div>
 						</div>
 					</div>
-				</form>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="video-comment col-md-7" ng-class="plugins">
+	<div class="background-white show-x">
+		<div class="background-container">
+			<div scrollable="{{useVideo}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">
+				
 				<div ng-show="selectedCoach">
 					<hr/>
 					<div class="alert alert-info">{{ 'global.review.comment.validateEdit' | translate:'{name: selectedCoach.name}' }}</div>
@@ -118,7 +125,7 @@
 								</div>
 							</div>
 							<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-								<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId">
+								<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" config="config">
 									<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control text-editing-area" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
 								<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
@@ -137,7 +144,7 @@
 						</div>
 					</div>
 				</form>
-				<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" timestamp-click-action="goToTimestamp" prepare-canvas-for-upload="prepareCanvasForUpload" clear-temporary-canvas="clearTemporaryCanvas" canvas-state="canvasState" plugins="plugins"></comment>
+				<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" timestamp-click-action="goToTimestamp" prepare-canvas-for-upload="prepareCanvasForUpload" clear-temporary-canvas="clearTemporaryCanvas" canvas-state="canvasState" plugins="plugins" config="config"></comment>
 				<!-- Prevent scrolling center area if we're already at the bottom -->
 				<div id="padder"></div>
 				<div id="bottom"></div>

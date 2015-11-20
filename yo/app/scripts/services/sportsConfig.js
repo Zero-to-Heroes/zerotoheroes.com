@@ -14,7 +14,18 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					allowDoubleSpeed: false,
 					mandatoryTags: ['level'],
 					landing: {
-						displayName: 'Badminton'
+						displayName: 'Badminton',
+					}
+				},
+				duelyst: {
+					background: 'duelyst.jpg',
+					displayName: 'Duelyst',
+					useVideo: true,
+					isSport: true,
+					allowDoubleSpeed: true,
+					deactivateControls: {
+						slow: true,
+						loop: true
 					}
 				},
 				hearthstone: {
@@ -27,6 +38,10 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					plugins: {
 						plugins: ['parseCardsText', 'parseDecks'],
 						customCss: 'hearthstone.css'
+					},
+					deactivateControls: {
+						slow: true,
+						loop: true
 					},
 					landing: {
 						displayName: 'HearthStone',
@@ -42,7 +57,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					allowDoubleSpeed: true,
 					plugins: {
 						plugins: ['parseCardsTextHots'],
-						customCss: 'beta-hots.css'
+						customCss: 'hots.css'
 					},
 					landing: {
 						displayName: 'Heroes of the Storm',

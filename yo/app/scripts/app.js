@@ -101,7 +101,8 @@ app.config(['$routeProvider', '$locationProvider',
 	  }).*/
 	  when('/r/:sport/:reviewId/:reviewTitle?', {
 		templateUrl: 'views/review.html',
-		controller: 'ReviewCtrl'
+		controller: 'ReviewCtrl',
+		hideSideBar: true
 	  }).
 	  when('/reviews/:pageNumber?', {
 		templateUrl: 'views/videoListing.html',
@@ -163,6 +164,69 @@ app.config(['$translateProvider', '$windowProvider', function($translateProvider
 	});
 }]);
 
+app.config(function() {
+	// Configuring French locale
+	moment.locale('fr', {
+	    months : "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
+	    monthsShort : "janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.".split("_"),
+	    weekdays : "dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi".split("_"),
+	    weekdaysShort : "dim._lun._mar._mer._jeu._ven._sam.".split("_"),
+	    weekdaysMin : "Di_Lu_Ma_Me_Je_Ve_Sa".split("_"),
+	    longDateFormat : {
+	        LT : "HH:mm",
+	        LTS : "HH:mm:ss",
+	        L : "DD/MM/YYYY",
+	        LL : "D MMMM YYYY",
+	        LLL : "D MMMM YYYY LT",
+	        LLLL : "dddd D MMMM YYYY LT"
+	    },
+	    calendar : {
+	        sameDay: "[Aujourd'hui à] LT",
+	        nextDay: '[Demain à] LT',
+	        nextWeek: 'dddd [à] LT',
+	        lastDay: '[Hier à] LT',
+	        lastWeek: 'dddd [dernier à] LT',
+	        sameElse: 'L'
+	    },
+	    relativeTime : {
+	        future : "dans %s",
+	        past : "il y a %s",
+	        s : "quelques secondes",
+	        m : "une minute",
+	        mm : "%d minutes",
+	        h : "une heure",
+	        hh : "%d heures",
+	        d : "un jour",
+	        dd : "%d jours",
+	        M : "un mois",
+	        MM : "%d mois",
+	        y : "une année",
+	        yy : "%d années"
+	    },
+	    ordinalParse : /\d{1,2}(er|ème)/,
+	    ordinal : function (number) {
+	        return number + (number === 1 ? 'er' : 'ème');
+	    },
+	    meridiemParse: /PD|MD/,
+	    isPM: function (input) {
+	        return input.charAt(0) === 'M';
+	    },
+	    // in case the meridiem units are not separated around 12, then implement
+	    // this function (look at locale/id.js for an example)
+	    // meridiemHour : function (hour, meridiem) {
+	    //     return /* 0-23 hour, given meridiem token and hour 1-12 */
+	    // },
+	    meridiem : function (hours, minutes, isLower) {
+	        return hours < 12 ? 'PD' : 'MD';
+	    },
+	    week : {
+	        dow : 1, // Monday is the first day of the week.
+	        doy : 4  // The week that contains Jan 4th is the first week of the year.
+	    }
+	});
+	moment.locale('en');
+})
+
 app.directive('compilecontent', function($compile, $parse) {
 	return {
 		restrict: 'A',
@@ -191,24 +255,19 @@ app.run(['$rootScope', '$window', '$location', '$http',
 	}
 ]);
 
-app.run(['$rootScope', '$window', '$location', '$translate', function($rootScope, $window, $location, $translate) {
+app.run(['$rootScope', '$window', '$location', 'Localization', function($rootScope, $window, $location, Localization) {
 	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 		//$window.ga('send', 'pageview', { page: $location.url() });
 		if (current.$$route) {
 			$rootScope.isLandingPage = current.$$route.isLandingPage; 
 		}
 		// Change the language depending on URL. TEMP
-		console.log('URL language is ', $location.search().hl);
+		//console.log('URL language is ', $location.search().hl);
 		if ($location.search().hl) {
 			$window.localStorage.language = $location.search().hl;
 		}
 
-		if ($window.localStorage.language) {
-			$translate.use($window.localStorage.language);
-		}
-		else {
-			$translate.use('en');
-		}
+		Localization.use($window.localStorage.language || 'en');
 	});
 }]);
 
@@ -264,7 +323,7 @@ app.directive('scrollable',  function ($window, $document, $log) {
 					}
 					
 				}
-
+				newMarginTop = Math.min(0, newMarginTop);
 				element.css('marginTop', newMarginTop + 'px'); 
 			});
 		  }

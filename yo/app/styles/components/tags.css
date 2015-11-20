@@ -21,3 +21,19 @@ tags-input .autocomplete .suggestion-item.selected {
     color: #fff;
     background-color: #0097cf;
 }
+
+tags-input.form-control {
+	padding: 0;
+	height: auto;
+	border: none;
+}
+tags-input[disabled].form-control {
+	background-color: transparent;
+}
+
+.has-error tags-input.form-control .tags { 
+	border-color: #a94442;
+}
+.has-success tags-input.form-control .tags {
+	border-color: #3c763d;
+}

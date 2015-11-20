@@ -32,7 +32,7 @@
 		</section>
 
 		<section ng-show="!!features.length && User.isLoggedIn()" >
-			<h4>{{ 'global.welcome.latestFeatures' | translate }}<h4>
+			<h4>{{ 'global.welcome.latestFeatures' | translate }}</h4>
 			<p>{{ 'global.welcome.latestFeaturesSubHeadline' | translate }}</p>
 			<ul>
 				<li ng-repeat="feature in features">{{feature.date | date:yyyy-MM-dd}} - <span translate="{{ 'news.' + feature.description | translate }}"></span></li> 

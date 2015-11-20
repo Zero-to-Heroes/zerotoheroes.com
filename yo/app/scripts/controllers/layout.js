@@ -24,9 +24,13 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 
 		   	if (current.$$route) {
 			   	$scope.isLandingPage = current.$$route.isLandingPage;
+			   	$scope.hideSideBar = current.$$route.hideSideBar;
 			   	$scope.isFullPage = current.$$route.isFullPage;
 			   	$scope.upload = current.$$route.upload;
-		   }
+		   	}
+
+			$scope.useVideo = true;
+			$scope.background = undefined;
 		   	if ($scope.sportsConfig[$scope.sport]) {
 			   	$scope.useVideo = $scope.sportsConfig[$scope.sport].useVideo;
 			   	$scope.backgroundImage = $scope.sportsConfig[$scope.sport] ? $scope.imagesRootFolder + $scope.sportsConfig[$scope.sport].background : undefined;
@@ -40,9 +44,6 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 				if ( $scope.sportsConfig[$scope.sport].landing) {
 					$scope.useFullHeight = $scope.sportsConfig[$scope.sport].landing.displayAllSports
 				}
-			}
-			else {
-				$scope.useVideo = true;
 			}
 
 			// Load custom theme

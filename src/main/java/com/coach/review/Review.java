@@ -42,7 +42,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public enum Sport {
 		Badminton("Badminton", "Badminton"), Squash("Squash", "Squash"), LeagueOfLegends("LeagueOfLegends",
 				"League of Legends"), HearthStone("HearthStone", "HearthStone"), HeroesOfTheStorm("HeroesOfTheStorm",
-				"Heroes of the Storm"), Meta("Meta", "Meta"), Other("Other", "Other");
+				"Heroes of the Storm"), Meta("Meta", "Meta"), Duelyst("Duelyst", "Duelyst"), Other("Other", "Other");
 
 		@Getter
 		private String key, value;
@@ -260,7 +260,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		if (comments == null) comments = new ArrayList<>();
 		return comments;
 	}
-	
+
 	public List<Comment> getAllComments() {
 		List<Comment> allComments = new ArrayList<>();
 		for (Comment comment : getComments()) {

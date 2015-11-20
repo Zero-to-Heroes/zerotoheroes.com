@@ -13,6 +13,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.selectedCoach;
 		$scope.User = User;
 		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
+		$scope.config = SportsConfig[$scope.sport];
 		$scope.canvasState = {
 			canvasIdIndex: 0,
 			canvasId: 'tmp0',
@@ -21,7 +22,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		/*$scope.canvasIdIndex = 0;
 		$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
 		$scope.drawingCanvas = false;*/
-		var plugins = SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
+		var plugins = $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
 		$scope.plugins = [];
 		if (plugins) {
 			angular.forEach(plugins, function(plugin) {
@@ -52,8 +53,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					);
 
 					// Update page description
-					if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
-						$rootScope.pageDescription = 'Get better at ' + $scope.sportsConfig[$scope.sport].displayName;
+					if ($scope.config && $scope.config.isSport)  {
+						$rootScope.pageDescription = 'Get better at ' + $scope.config.displayName;
 						if ($scope.review.tags) {
 							$scope.review.tagValues = '';
 							$rootScope.pageDescription += '. ';

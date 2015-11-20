@@ -66,13 +66,13 @@
 	<body ng-controller="LayoutCtrl" background="{{background}}" data-spy="scroll" data-offset="80" class="{{customClass}}">
 		<div zth-navigation ng-hide="isLandingPage"></div>
 		<div ng-class="{'main-container-nolanding': !isLandingPage, 'main-container-landing': isLandingPage}">
-			<div class="left-column" ng-hide="isLandingPage">
+			<div class="left-column" ng-hide="isLandingPage || hideSideBar">
 				<div welcome-pane></div>
 			</div>
 			<div ng-class="{'main-panel-nolanding': !isLandingPage, 'main-panel': !isFullPage, 'full-page': isFullPage, 'landing-page': isLandingPage, 'full-page-full': useFullHeight}">
 				<div ng-view class="center-column" autoscroll="true"></div>
 			</div>
-			<div class="right-column" ng-hide="isLandingPage"></div>
+			<div class="right-column" ng-hide="isLandingPage || hideSideBar"></div>
 		</div>
 
 
@@ -117,7 +117,7 @@
 		<script src="bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
 		<script src="bower_components/videogular-poster/vg-poster.js"></script>
 		<script src="bower_components/videogular-ima-ads/vg-ima-ads.js"></script>
-		<script src="bower_components/waypoints/waypoints.js"></script>
+		<script src="bower_components/waypoints/lib/noframework.waypoints.min.js"></script>
 		<script src="bower_components/SHA-1/sha1.js"></script>
 		<script src="bower_components/angulartics/src/angulartics.js"></script>
 		<script src="bower_components/angulartics/src/angulartics-clicky.js"></script>
@@ -208,6 +208,7 @@
 		<script src="scripts/directives/video/drawing/videoCanvasOverlayButton.js"></script>
 
 		<script src="scripts/services/helpPopupConfig.js"></script>
+		<script src="scripts/services/localization.js"></script>
 		<script src="scripts/services/user.js"></script>
 		<script src="scripts/services/sportsConfig.js"></script>
 

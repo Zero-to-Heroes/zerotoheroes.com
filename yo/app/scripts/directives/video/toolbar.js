@@ -2,7 +2,7 @@
 
 var app = angular.module('app');
 app.directive('toolbar', ['$log', '$parse', '$rootScope', 
-	function($log, $parse, $rootScope) {
+	function($log, $parse, $rootScope, SportsConfig) {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -12,7 +12,8 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				insertModel: '=',
 				drawingCanvas: '=',
 				canvasId: '=',
-				hideComparison: '='
+				hideComparison: '=',
+				config: '='
 			},
 			link: function ($scope, element, attrs) {
 				$scope.element = element;
@@ -79,8 +80,6 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					var unregister = $rootScope.$on('sequence.add.end', function (event, params) {
 						// params are null when canceling
 						if (params) {
-							$log.log('Inserting sequence with params', params);
-
 							var timestamp1 = moment.duration(params.sequenceStart1).format('mm:ss:SSS', { trim: false });
 							$scope.insertLoop(timestamp1, params.speed, params.loopDuration);
 							//$log.log('loop inserted');

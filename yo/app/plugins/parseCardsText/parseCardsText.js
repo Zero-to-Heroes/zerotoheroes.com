@@ -55,6 +55,10 @@ function parseCardsText_attach(element) {
 				var res = (S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) === 0 && card.cardImage && card.type != 'Hero') ? card : null
 				return res;
 			}))
+            $(function () {
+                console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
+                $('.tooltip.parse-cards-text').hide();
+            })
 			$(function () {
 				console.log('loading tooltips', $('[data-toggle="tooltip"]'));
 			  	$('[data-toggle="tooltip"]').tooltip()
@@ -63,18 +67,26 @@ function parseCardsText_attach(element) {
 		replace: function(card) {
 			return '[[' + card.name + ']]';
 		},
-		context: function (text) { 
-			return text.toLowerCase(); 
-		},
+        index: 0,
 		template: function(card, term) {
 			var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
 			var title =	'<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + parseCardsText_localizeImage(card, window.localStorage.language) + '\'>';
 			var cssClass = card.rarity ? getRarity(card).toLowerCase() : 'common';
 			return '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '" data-html="true" data-container="body" data-animation="false">' + parseCardsText_localizeName(card, window.localStorage.language) + '</span>';
 		},
-		className: 'autocomplete-dropdown',
-		index: 0
-	}])
+        context: function (text) { 
+            return text.toLowerCase(); 
+        }
+	}],
+    {
+        noResultMessage: function() {
+            console.log('unloading');
+            $(function () {
+                console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
+                $('[data-toggle="tooltip"]').tooltip('hide')
+            })
+        }
+    });
 }
 
 function parseCardsText_detach(element) {

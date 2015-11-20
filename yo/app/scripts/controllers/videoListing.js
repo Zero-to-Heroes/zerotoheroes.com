@@ -131,15 +131,15 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 		$scope.formatDate = function(video) {
 			// Is the last update a creation or a modification?
-			var statusString = video.lastModifiedDate ? 'modified ' : 'asked ';
+			//var statusString = video.lastModifiedDate ? 'modified ' : 'asked ';
 			//console.log(statusString);
 
 			// What is the time difference compared to now?
-			var usefulDate = video.lastModifiedDate ? video.lastModifiedDate : video.creationDate;
+			var usefulDate = video.creationDate; //video.lastModifiedDate ? video.lastModifiedDate : video.creationDate;
 			//console.log(usefulDate);
 			var fromNowString = moment(usefulDate).fromNow();
 			//console.log(fromNowString);
-			return statusString + fromNowString;
+			return fromNowString;
 		}
 
 		$scope.formatExactDate = function(video) {

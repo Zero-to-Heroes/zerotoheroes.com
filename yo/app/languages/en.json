@@ -108,7 +108,8 @@
 			"postFeedback": "Post feedback",
 			"forum": "Discussion room",
 			"chooseSport": "Choose a sport",
-			"language": "Language"
+			"language": "Language",
+			"otherSections": "Other sections"
 		},
 		"listing": {
 			"allVideos": "All videos",
@@ -128,17 +129,18 @@
 				"downvote": "Downvote this video",
 				"commentsTitle": "Number of comments",
 				"usefulTitle": "Number of comments the author of the video marked as useful",
-				"viewsTitle": "Number of views"
+				"viewsTitle": "Number of views",
+				"submitted": "Submitted",
+				"by": "by"
 			}
-		},
-		"videoPlayer": {
-
 		},
 		"toolbar": {
 			"timestamp": "Insert current timestamp",
 			"slow": "Insert playing in slow motion",
 			"loop": "Insert loop in slow motion",
-			"sequence": "Compare a specific sequence from your video to an existing sequence"
+			"sequence": "Compare a specific sequence from your video to an existing sequence",
+			"drawingfalse": "Add shapes and drawings on the video",
+			"drawingtrue": "When you're done, re-click on the button to save your drawing and continue editing your comment"
 		},
 		"askPro": {
 			"headline": "Choose your coach",
@@ -264,7 +266,7 @@
 			"fastVideoLink": "here",
 			"fasterVideoClick2": " to revert back to the original speed",
 			"timeLimitExplanationText": "Our goal is to keep the analysis as focused as possible, so that other people can easily search and benefit from comments on your video. Having a focused analysis will also make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos. Please use the above slider to select the part of the video you need analyzed",
-			"timeLimitExplanationText2": "Our goal is to keep the analysis as focused as possible, so that other people can easily search and benefit from comments on your video. Having a focused analysis will also make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos. Please use the above slider to select the part of the video you need analyzed. Please either: ",
+			"timeLimitExplanationText2": "Our goal is to keep the analysis as focused as possible, so that other people can easily search and benefit from comments on your video. Having a focused analysis will also make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos. Please either: ",
 			"timeLimiteReason1": "Use the slider above the select up to 5 minutes of video to use",
 			"timeLimitReason2Link": "Double the speed",
 			"timeLimitReason2": " of the video to use up to 10 minutes of video. This is for now experimental and will only work if your video has less than 30 images per seconds (which is the case for most camera and phone videos, and the default for many video recording softwares)",
@@ -278,7 +280,7 @@
 			"descriptionPlaceholder": "Any remarks about what you want to improve?",
 			"descriptionPlaceholderNoVideo": "Any additional information?",
 			"timestampTranslationInfo": "It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)",
-			"uploadButton": "Post now",
+			"uploadButton": "Start upload",
 			"dontCloseWindowMessage": "Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
 			"finalizeVideoMessage": "Finalizing your video. Depending on its size, it may take up to 5 minutes. Take some time to think about how you can help others get better too :)"
 		},
@@ -303,7 +305,8 @@
 		}
 	},
 	"news": {
-		"news1": "Localized in French!"
+		"news1": "Zero to Heroes has been localized in French. Use the dropdown in the top right to change your language",
+		"news2": "We've changed the video review layout to use the full width of the screen. Let us know what you think!"
 	},
 	"tags": {
 	}

@@ -19,7 +19,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				goToTimestamp: '=timestampClickAction',
 				prepareCanvasForUpload: '=',
 				clearTemporaryCanvas: '=',
-				plugins: '='
+				plugins: '=',
+				config: '='
 			},
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {
@@ -263,7 +264,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				};
 
 				function escapeHtml(string) {
-				    return String(string).replace(/[<>]/g, function (s) {
+				    return String(string).replace(/[<]/g, function (s) {
 				      	return entityMap[s];
 				    });
 				}

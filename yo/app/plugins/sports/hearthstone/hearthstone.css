@@ -30,6 +30,21 @@
     border: none;
 }
 
+.hearthstone .has-error .form-control {
+    border-color: #e22c14;
+}
+
+.hearthstone .has-success .form-control {
+    border-color: #233a6e;
+}
+
+.hearthstone .has-error tags-input.form-control .tags { 
+    border-color: #e22c14;
+}
+.hearthstone .has-success tags-input.form-control .tags {
+    border-color: #233a6e;
+}
+
 .hearthstone .panel:before {
     content: "";
     position: absolute;
@@ -161,7 +176,7 @@
 ** =============*/
 .hearthstone tags-input .tags .tag-item, .hearthstone tags-input[disabled] .tags .tag-item {
     background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
-    background: rgba(115, 5, 174, 0.5);
+    background: rgba(115, 5, 174, 1);
     box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
     color: white;
     text-decoration: none;
@@ -169,6 +184,10 @@
     text-align: center;
     padding: 2px 10px;
     border: none;
+}
+
+.hearthstone tags-input[disabled] .tags .tag-item {
+    background: rgba(115, 5, 174, 0.5);
 }
 
 .hearthstone .logged-author {
@@ -193,7 +212,7 @@
 
 .hearthstone .navbar-default .navbar-nav > li > a {
     background-color: transparent;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 66px;
     text-shadow: 0 0 10px #000, 0 0 10px #000;    
     color: #fcd144;
@@ -250,7 +269,7 @@
 }
 
 .hearthstone .navbar .name-group > li > a {
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .hearthstone .brand {
@@ -306,7 +325,7 @@
 .hearthstone .background-white {
     position: relative;
     background-color: #3A240F;
-    top: 30px;
+    top: 50px;
 }
 
 .hearthstone h2 {
@@ -325,7 +344,7 @@
 ** =============*/
 .hearthstone .video-listing a, .hearthstone .video-listing a:focus, .hearthstone .video-listing a:hover, .hearthstone .video-listing a:active, .hearthstone .video-listing a h3 {
 	font-weight: 400;
-    color: #e22c14;
+    color: #fa5d26;
 	text-decoration: none;
 }
 
@@ -335,7 +354,10 @@
 ** =============*/
 .hearthstone .videogular {
     background-color: #000;
-    margin-top: 25px;
+}
+
+.hearthstone .video-comment .comment-block {
+    margin-bottom: 15px;
 }
 
 
@@ -344,6 +366,10 @@
 ** =============*/
 .hearthstone .landing-page {
     color: rgb(46, 46, 46);
+}
+
+.hearthstone .landing-page .the-team a, .hearthstone .landing-page .feature-detail a {
+    color: #337ab7;
 }
 
 .hearthstone .landing-page h1 {
@@ -365,7 +391,7 @@
     }
 
     .hearthstone .navbar .name-group > li > a {
-        font-size: 16px;
+        font-size: 14px;
         padding: 0;
         margin-right: 15px;
     }

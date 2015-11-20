@@ -19,8 +19,13 @@
 	margin: 0;
 }
 
-.video-information .background-white {
+.video-comment {
+	padding-left: 40px;
+}
+
+.video-comment .background-container {
   overflow-y : hidden;
+  padding: 0 8px;
 }
 
 .video-details .reputation {
@@ -34,9 +39,6 @@
 
 .adding-comment {
 	padding-left: 40px;
-}
-
-.video-information-header {
 }
 
 .video-information .author-information {
@@ -53,4 +55,22 @@
 
 .text-editing-area {
 	max-height: 300px;
+}
+
+.video-comment {
+}
+
+.video-comment .show-x {
+	overflow-x: visible;
+	padding: 10px 20px;
+}
+
+.video-comment .nameInput {
+	display: block;
+}
+
+@media screen and (max-width: 990px) {
+	.video-comment {
+		padding-left: 15px;
+	}
 }

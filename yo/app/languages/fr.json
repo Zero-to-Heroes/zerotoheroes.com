@@ -308,7 +308,8 @@
 	},
 	"news": {
 		"news1": "Le site est maintenant accessible en français ! Vous pouvez changer de langue avec le menu déroulant en haut à droite",
-		"news2": "Nous avons changé l'affichage de la page de revue vidéo pour utiliser toute la largeur de l'écran. Dites-nous ce que vous en pensez !"
+		"news2": "Nous avons changé l'affichage de la page de revue vidéo pour utiliser toute la largeur de l'écran. Dites-nous ce que vous en pensez !",
+		"news3": "Les joueurs de HearthStone peuvent maintenant voir le détail des cartes d'un deck directement sur la page de revue vidéo"
 	},
 	"tags": {
 		"squash": {

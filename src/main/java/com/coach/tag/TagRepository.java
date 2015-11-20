@@ -133,7 +133,6 @@ public class TagRepository {
 		heroes.add(new Tag("Rank 11-20"));
 		heroes.add(new Tag("Rank 21-30"));
 		heroes.add(new Tag("Rank 31-40"));
-		heroes.add(new Tag("Rank 41-50"));
 		heroes.add(new Tag("Specialist"));
 		heroes.add(new Tag("Mage"));
 		heroes.add(new Tag("Support"));
@@ -194,13 +193,13 @@ public class TagRepository {
 		league.add(new Tag("Laning Phase"));
 		league.add(new Tag("Mid Game"));
 		league.add(new Tag("Late Game"));
-		league.add(new Tag("Team Fights"));
+		league.add(new Tag("Team Fight"));
 		league.add(new Tag("Positioning"));
 		league.add(new Tag("Top"));
 		league.add(new Tag("Jungle"));
 		league.add(new Tag("Suppord"));
 		league.add(new Tag("AD Carry"));
-		league.add(new Tag("MID"));
+		league.add(new Tag("Mid"));
 		league.add(new Tag("Dragon"));
 		league.add(new Tag("Nashor"));
 		league.add(new Tag("Backdoor"));

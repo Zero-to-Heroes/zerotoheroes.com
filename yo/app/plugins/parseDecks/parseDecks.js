@@ -1,6 +1,8 @@
 var decksRegex = /\[(http:\/\/www\.hearthpwn\.com\/decks\/).+?\]/gm;
 //var decksRegex = /\[(hearthpwnDeck=.+?\]/gm;
 
+var parseDecks_deck;
+
 function parseDecks(review, text) {
 	var matches = text.match(decksRegex);
 	if (!matches) return text;
@@ -20,15 +22,37 @@ function parseDecks(review, text) {
 				var strDeck = plugins.parseDecks[deckName];
 				var deck = JSON.parse(strDeck);
 				var htmlDeck = formatToHtml(deck);
+				parseDecks_deck = htmlDeck;
 				//console.log('html deck is ', htmlDeck);
 
 				var deckNameForDisplay = deck.title;
 
-				result = result.replace(match, '<a class="deck-link" href="' + deckUrl + '" target="_blank" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
+				result = result.replace(match, '<a class="deck-link" onclick="parseDecksHs_toggleDeck()" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
 			}
 		})
 	}
 	return result;
+}
+
+function parseDecksHs_toggleDeck() {
+	$(".contextual-information .content").addClass('deck');
+	$(".contextual-information .content").html(parseDecks_deck);
+	$(".contextual-information").show();
+	$(function () {
+	  	$('body').tooltip({
+	  		selector: '[data-toggle="tooltip-deck"]',
+	  		template: '<div class="tooltip parse-cards-text"><div class="tooltip-inner"></div></div>',
+	  		html: true,
+	  		container: 'body',
+	  		placement: 'auto left',
+	  		animation: false,
+	  		title: function(element) {
+	  			console.log('title', $(this));
+	  			var image = $(this).attr('data-title');
+	  			return '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + image + '\'>';
+	  		}
+	  	});
+	})
 }
 
 function formatToHtml(deck) {
@@ -44,9 +68,10 @@ function formatToHtml(deck) {
 						//console.log('cardObject', cardObject);
 						if (cardObject) {
 							cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
+							var image = parseCardsText_localizeImage(cardObject, window.localStorage.language);
 							htmlDeck += '<tr>' + 
 										'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
-										'<td class=\'card-name ' + cssClass + '\'>' + parseCardsText_localizeName(cardObject, window.localStorage.language)  + '</td>' +
+										'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText_localizeName(cardObject, window.localStorage.language)  + '</td>' +
 										'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
 									'</tr>';
 						}
@@ -63,9 +88,10 @@ function formatToHtml(deck) {
 						if (getCard) {
 							var cardObject = getCard(card.name);
 							cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
+							var image = parseCardsText_localizeImage(cardObject, window.localStorage.language);
 							htmlDeck += '<tr>' + 
 										'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
-										'<td class=\'card-name ' + cssClass + '\'>' + parseCardsText_localizeName(cardObject, window.localStorage.language)  + '</td>' +
+										'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText_localizeName(cardObject, window.localStorage.language)  + '</td>' +
 										'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
 									'</tr>';
 						}
@@ -75,6 +101,8 @@ function formatToHtml(deck) {
 		htmlDeck += '</div>';
 	htmlDeck += '</div>';
 	htmlDeck += '<div class=\'deck-footer\'></div>';
+
+
 
 	return htmlDeck;
 }

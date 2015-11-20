@@ -3,6 +3,10 @@
     src: url('fonts/bliz-quadrata.woff');
 }
 
+.deck-link {
+	cursor: pointer;
+}
+
 .deck-link:before {
 	content: url('images/deck_small.png');
 	margin-right: 4px;
@@ -72,4 +76,9 @@
 
 .deck .card.legendary {
 	color: #F07000;
+}
+
+.content.deck {
+	text-align: center;
+	padding: 0 10px 10px 10px;
 }

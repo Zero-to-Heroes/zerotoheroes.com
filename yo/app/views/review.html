@@ -1,6 +1,11 @@
 <view-title>{{review.title}} - {{review.tagValues}}</view-title>
 
 <div class="video-information col-md-5">
+	<div class="background-white contextual-information">
+		<span class="close" ng-click="hideContextualInfo()">&times;</span>
+		<div class="content"></div>
+	</div>
+
 	<div class="background-white" ng-class="plugins">
 		<div class="videogular-container multi-player" ng-show="review.key">
 			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">

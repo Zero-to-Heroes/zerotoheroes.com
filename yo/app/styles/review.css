@@ -69,6 +69,18 @@
 	display: block;
 }
 
+.center-column .video-information .contextual-information {
+	display: none;
+	margin-bottom: 30px;
+	width: 100%;
+	top: 30px;
+}
+
+.video-information .contextual-information .close {
+	color: #fff;
+	margin-right: 5px;
+}
+
 @media screen and (max-width: 990px) {
 	.video-comment {
 		padding-left: 15px;

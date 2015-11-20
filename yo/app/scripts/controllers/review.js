@@ -524,6 +524,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$parse(model).assign($scope, newValue);
 		}
 
+		$scope.hideContextualInfo = function() {
+			$(".contextual-information").hide();
+		}
+
 		//===============
 		// Coach
 		//===============

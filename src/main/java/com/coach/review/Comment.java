@@ -50,27 +50,25 @@ public class Comment implements HasText, HasReputation {
 	}
 
 	public void addComment(Comment reply) {
-		if (comments == null)
-			comments = new ArrayList<>();
+		if (comments == null) comments = new ArrayList<>();
 		comments.add(reply);
 		sortComments();
 	}
 
 	public void sortComments() {
 		// For now, simply sort them by date
-		if (comments == null)
-			return;
+		if (comments == null) return;
 
 		Collections.sort(comments, new Comparator<Comment>() {
 			@Override
 			public int compare(Comment o1, Comment o2) {
-				if (o1.getReputation().getScore() != o2.getReputation()
-						.getScore()) {
-					return (int) (1000 * (o2.getReputation().getScore() - o1
-							.getReputation().getScore()));
-				} else if (o2.getCreationDate() == null) {
+				if (o1.getReputation().getScore() != o2.getReputation().getScore()) {
+					return (int) (1000 * (o2.getReputation().getScore() - o1.getReputation().getScore()));
+				}
+				else if (o2.getCreationDate() == null) {
 					return 1;
-				} else {
+				}
+				else {
 					return o2.getCreationDate().compareTo(o1.getCreationDate());
 				}
 			}
@@ -82,17 +80,12 @@ public class Comment implements HasText, HasReputation {
 	}
 
 	public Comment getComment(int commentId) {
-		if (comments == null)
-			return null;
+		if (comments == null) return null;
 
 		for (Comment comment : comments) {
-			if (comment.getId() != null
-					&& comment.getId().equals(String.valueOf(commentId))) {
-				return comment;
-			}
+			if (comment.getId() != null && comment.getId().equals(String.valueOf(commentId))) { return comment; }
 			Comment found = comment.getComment(commentId);
-			if (found != null)
-				return found;
+			if (found != null) return found;
 
 		}
 		return null;
@@ -109,8 +102,7 @@ public class Comment implements HasText, HasReputation {
 	}
 
 	public void getAllAuthors(List<String> allAuthors) {
-		if (!StringUtils.isNullOrEmpty(authorId)
-				&& !allAuthors.contains(authorId)) {
+		if (!StringUtils.isNullOrEmpty(authorId) && !allAuthors.contains(authorId)) {
 			allAuthors.add(authorId);
 		}
 
@@ -137,8 +129,7 @@ public class Comment implements HasText, HasReputation {
 
 	public Collection<? extends String> getAuthorIds() {
 		Set<String> authorIds = new HashSet<>();
-		if (!StringUtils.isNullOrEmpty(authorId))
-			authorIds.add(authorId);
+		if (!StringUtils.isNullOrEmpty(authorId)) authorIds.add(authorId);
 		for (Comment comment : getComments()) {
 			authorIds.addAll(comment.getAuthorIds());
 		}
@@ -146,8 +137,7 @@ public class Comment implements HasText, HasReputation {
 	}
 
 	public List<Comment> getComments() {
-		if (comments == null)
-			comments = new ArrayList<>();
+		if (comments == null) comments = new ArrayList<>();
 		return comments;
 	}
 
@@ -161,7 +151,7 @@ public class Comment implements HasText, HasReputation {
 	}
 
 	public String getFullText() {
-		String fullText = text;
+		String fullText = text == null ? "" : text.toLowerCase();
 		for (Comment comment : getComments()) {
 			fullText += " " + comment.getFullText();
 		}

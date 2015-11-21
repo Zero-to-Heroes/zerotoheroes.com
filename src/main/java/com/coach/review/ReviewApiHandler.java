@@ -10,12 +10,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import javax.annotation.PostConstruct;
+
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
@@ -40,6 +43,8 @@ import com.coach.review.video.transcoding.Transcoder;
 import com.coach.sport.SportManager;
 import com.coach.subscription.SubscriptionManager;
 import com.coach.user.UserRepository;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/reviews")
@@ -75,8 +80,18 @@ public class ReviewApiHandler {
 	@Autowired
 	SportManager sportManager;
 
+	@Autowired
+	MongoOperations mongoOperations;
+
 	public ReviewApiHandler() {
 		log.debug("Initializing Review Api Handler");
+	}
+
+	@PostConstruct
+	public void init() {
+		DBCollection collection = mongoOperations.getCollection("review");
+		log.debug("retrieving collection " + collection);
+		collection.createIndex(new BasicDBObject("fullTextSearchField", "text"));
 	}
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
@@ -94,8 +109,16 @@ public class ReviewApiHandler {
 		// Start pageing at 1 like normal people, not at 0 like nerds
 		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, newestFirst);
 		String sportCriteria = Sport.load(sport).getKey();
-		Page<Review> page = reviewRepo.listReviews(criteria.getTitle(), sportCriteria, criteria.getWantedTags(),
-				criteria.getUnwantedTags(), pageRequest);
+
+		Page<Review> page = null;
+		if (criteria.getText() == null) {
+			page = reviewRepo.listReviews(sportCriteria, criteria.getWantedTags(), criteria.getUnwantedTags(),
+					pageRequest);
+		}
+		else {
+			page = reviewRepo.listReviews(criteria.getText(), sportCriteria, criteria.getWantedTags(),
+					criteria.getUnwantedTags(), pageRequest);
+		}
 
 		List<Review> reviews = page.getContent();
 		ListReviewResponse response = new ListReviewResponse(reviews);

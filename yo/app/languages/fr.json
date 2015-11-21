@@ -131,6 +131,7 @@
 				"usefulTitle": "Nombre de commentaires que l'auteur a trouvés utiles",
 				"viewsTitle": "Nombre de vues",
 				"submitted": "Postée",
+				"modified": "Modifiée",
 				"by": "par"
 			}
 		},
@@ -213,7 +214,7 @@
 				"otherVideoHeadline": "Choisissez une vidéo existante",
 				"selectVideo": "Sélectionner",
 				"useSideHeadline": "Utiliser : ",
-				"useSideLeft": "la guache",
+				"useSideLeft": "la gauche",
 				"useSideCenter": "le centre",
 				"useSideRight": "la droite",
 				"playbackSpeed": "Vitesse",

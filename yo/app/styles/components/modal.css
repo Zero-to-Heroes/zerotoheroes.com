@@ -1,3 +1,6 @@
+.modal-open .modal {
+    z-index: 9999 !important;
+}
 .modal.center .sequence-modal {
 	width: 900px;
 	max-width: 900px;

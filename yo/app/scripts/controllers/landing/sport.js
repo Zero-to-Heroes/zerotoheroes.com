@@ -18,7 +18,7 @@ angular.module('controllers').controller('SportPageCtrl', ['SportsConfig', '$sco
 		
 			$scope.backgroundImages = [];
 			for (var sport in $scope.sportsConfig) {
-				if ($scope.sportsConfig[sport].background) {
+				if ($scope.sportsConfig[sport].background && !$scope.sportsConfig[sport].excludeFromLanding) {
 					$scope.backgroundImages.push($scope.imagesRootFolder + $scope.sportsConfig[sport].background);
 				}
 			}

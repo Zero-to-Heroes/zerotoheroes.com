@@ -23,6 +23,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					useVideo: true,
 					isSport: true,
 					allowDoubleSpeed: true,
+					excludeFromLanding: true,
 					deactivateControls: {
 						slow: true,
 						loop: true

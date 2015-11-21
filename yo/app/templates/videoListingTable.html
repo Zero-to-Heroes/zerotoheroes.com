@@ -36,7 +36,8 @@
 						<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
 					</div>
 					<div class="col-sm-4 date-information">
-						<span title="{{formatExactDate(video)}}"><small>{{ 'global.listing.video.submitted' | translate }} {{formatDate(video)}} {{ 'global.listing.video.by' | translate }} {{video.author}}</small></span>
+						<span title="{{formatExactDate(video.creationDate)}}"><small>{{ 'global.listing.video.submitted' | translate }} {{formatDate(video.creationDate)}} {{ 'global.listing.video.by' | translate }} {{video.author}}</small></span>
+						<span title="{{formatExactDate(video.lastModifiedDate)}}" ng-show="video.lastModifiedDate"><small>{{ 'global.listing.video.modified' | translate }} {{formatDate(video.lastModifiedDate)}}</small></span>
 					</div>
 				</div>
 			</td>

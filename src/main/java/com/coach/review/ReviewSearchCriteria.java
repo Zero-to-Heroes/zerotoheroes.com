@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 import com.coach.tag.Tag;
 
@@ -14,6 +15,7 @@ import com.coach.tag.Tag;
 @Setter
 @ToString
 @NoArgsConstructor
+@Slf4j
 public class ReviewSearchCriteria {
 	private String sport;
 	private Integer pageNumber;
@@ -27,5 +29,16 @@ public class ReviewSearchCriteria {
 
 	public List<Tag> getUnwantedTags() {
 		return unwantedTags == null ? new ArrayList<Tag>() : unwantedTags;
+	}
+
+	public String getText() {
+		if (title == null || title.isEmpty()) return null;
+
+		String text = "";
+		for (String word : title.split(" ")) {
+			text += "\"" + word + "\" ";
+		}
+		log.debug("returning text search " + text);
+		return text;
 	}
 }

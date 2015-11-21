@@ -119,7 +119,7 @@
 			"subscribeTooltip": "Cliquez pour être notifié lorsqu'une nouvelle vidéo est postée",
 			"searchVideos": "Recherche",
 			"search": {
-				"title": "Titre",
+				"title": "Texte",
 				"wantedTags": "Tags que vous voulez voir",
 				"unwantedTags": "Tags que vous ne voulez pas voir",
 				"button": "Recherche"

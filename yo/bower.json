@@ -43,7 +43,10 @@
     "angular-translate-loader-url": "~2.8.1",
     "angular-translate-loader-static-files": "~2.8.1",
     "angulartics": "~0.20",
-    "angulartics-google-analytics": "~0.1.2"
+    "angulartics-google-analytics": "~0.1.2",
+    "lodash": "~3.10.1",
+    "sax-js": "~1.1.4",
+    "eventEmitter": "~4.3.0"
   },
   "overrides": {
     "sprintf": {

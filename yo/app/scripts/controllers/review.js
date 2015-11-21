@@ -23,17 +23,27 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
 		$scope.drawingCanvas = false;*/
 		var plugins = $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
+		var definedPlugins = 0;
 		$scope.plugins = [];
+		$scope.pluginNames = [];
 		if (plugins) {
+			definedPlugins = plugins.length;
 			angular.forEach(plugins, function(plugin) {
+				if (plugin.dependencies) definedPlugins += plugin.dependencies.length;
 				SportsConfig.loadPlugin($scope.plugins, plugin);
 			})
 		}
 
 		$scope.$watchCollection('plugins', function(newValue, oldValue) {
-			if (!plugins || newValue.length == plugins.length) {
+			if (!plugins || newValue.length == definedPlugins) {
 				$log.log('all plugins loaded', newValue, plugins);
 				$scope.initReview();
+				$scope.plugins.forEach(function(plugin) {
+					if (plugin) {
+						console.log('adding style', plugin.name);
+						$scope.pluginNames.push(plugin.name);
+					}
+				})
 			}
 		})
 
@@ -74,6 +84,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					}
 					//window.prerenderReady = true;
 					//$log.log('review canvas', $scope.review.canvas);
+					SportsConfig.initPlayer($scope.config, $scope.review);
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -579,8 +590,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Triggering the various plugins
 			if ($scope.plugins) {
 				angular.forEach($scope.plugins, function(plugin) {
-					if (plugin) {
-						//$log.log('executing plugin for text', plugin, prettyResult);
+					if (plugin && !plugin.player) {
+						// $log.log('executing plugin for text', plugin, prettyResult);
 						prettyResult = SportsConfig.executePlugin($scope, $scope.review, plugin, prettyResult);
 					}
 				})

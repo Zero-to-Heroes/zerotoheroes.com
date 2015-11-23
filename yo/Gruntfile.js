@@ -164,6 +164,17 @@ module.exports = function (grunt) {
 	  }
 	},
 
+	/*less: {
+		development: {
+			options: {
+				paths: ['<%= yeoman.app %>/plugins/hsreplay']
+			},
+			files: {
+				'<%= yeoman.app %>/plugins/hsreplay/hsreplay.css': ['<%= yeoman.app %>/plugins/hsreplay/src/less/styles.less']
+			}
+		}
+	},*/
+
 	// Automatically inject Bower components into the app
 	wiredep: {
 	  app: {
@@ -276,6 +287,20 @@ module.exports = function (grunt) {
 		  dest: '<%= yeoman.dist %>'
 		}]
 	  }
+	},
+
+	coffee: {
+		compile: {
+			expand: true,
+			cwd: '<%= yeoman.app %>/plugins/hsreplay',
+			src: ['**/*.coffee'],
+			dest: '<%= yeoman.app %>/plugins/hsreplay/joust',
+			ext: '.js'
+		}
+	},
+
+	browserify: {
+		'<%= yeoman.app %>/plugins/hsreplay/joust.js': ['<%= yeoman.app %>/plugins/hsreplay/joust/**/*.js']
 	},
 
 	// ng-annotate tries to make the code safe for minification automatically
@@ -428,7 +453,9 @@ module.exports = function (grunt) {
 		grunt.task.run([
 		  'clean:server',
 		  'ngconstant:development',
+		  'browserify',
 		  'wiredep',
+		  'coffee',
 		  'concurrent:server',
 		  'autoprefixer',
 		  'connect:livereload',

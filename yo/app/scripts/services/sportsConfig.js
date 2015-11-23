@@ -39,7 +39,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						plugins: [
 							{name: 'parseCardsText'}, 
 							{name: 'parseDecks'}, 
-							{name: 'hsreplay', player: true, dependencies: ['lib/enums.js', 'lib/parser.js', 'lib/replay-player.js']}
+							{name: 'hsreplay', player: true, dependencies: ['joust.js']}
 						],
 						customCss: 'hearthstone.css'
 					},

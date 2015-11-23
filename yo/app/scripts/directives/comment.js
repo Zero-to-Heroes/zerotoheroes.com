@@ -80,6 +80,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					//$log.log('updating comment', $scope.comment);
 					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
 		  				function(data) {
+		  					$scope.showHelp = false;
 		  					$log.log('Review', data);
 		  					var newComment = $scope.findComment(data.comments, comment.id);
 		  					$scope.review.canvas = newComment.tempCanvas;
@@ -154,6 +155,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 						else {
 							Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply, 
 				  				function(data) {
+				  					$scope.showHelp = false;
 				  					$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
 		  							$scope.review.canvas = data.canvas;
 		  							$scope.review.subscribers = data.subscribers;

@@ -312,6 +312,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.prepareCanvasForUpload($scope.review, $scope.newComment);
 			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
 				function(data) {
+					$scope.showHelp = false;
 					$scope.newComment = {};
 					$scope.commentForm.$setPristine();
 					$scope.review.comments = data.comments;
@@ -487,6 +488,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				//$log.log('updating review to ', newReview);
 				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview, 
 					function(data) {
+						$scope.showHelp = false;
 		  				$scope.review.canvas = data.canvas;
 		  				$scope.review.plugins = data.plugins;
 		  				//$log.log('plugins', $scope.review.plugins);

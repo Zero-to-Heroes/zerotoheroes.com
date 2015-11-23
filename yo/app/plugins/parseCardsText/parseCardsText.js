@@ -103,24 +103,28 @@ function getRarity(card) {
 
 function getCard(cardName) {
 	var result;
+    var possibleResult;
 	// cf http://stackoverflow.com/questions/2641347/how-to-short-circuit-array-foreach-like-calling-break
 	jsonDatabase.some(function(card) {
 		//console.log('\tlooking at card', card.name);
 		//console.log('\tcardimage is', card.cardimage);
 		//console.log('\tis equal', card.name, cardName, card.name == cardName);
 		// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
-		if (card.name.toLowerCase() == cardName.toLowerCase() && card.type != 'Hero' && card.id.toUpperCase() == card.id) {
-			if (card.set == 'Basic') {
-				card.rarity = 'Free';
-			}
-			result = card;
-			if (result.cardImage) {
-				//console.log('returning card', result);
-				return true;
-			}
+		if (card.name.toLowerCase() == cardName.toLowerCase()) {
+            possibleResult = card;
+            if (card.type != 'Hero' && card.id.toUpperCase() == card.id) {
+    			if (card.set == 'Basic') {
+    				card.rarity = 'Free';
+    			}
+    			result = card;
+    			if (result.cardImage) {
+    				//console.log('returning card', result);
+    				return true;
+    			}
+            }
 		}
 	});
-	return result;
+	return result || possibleResult;
 }
 
 // TODO: export this to real db? Do the match on server side?

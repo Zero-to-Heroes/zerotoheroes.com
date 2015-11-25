@@ -299,8 +299,18 @@ module.exports = function (grunt) {
 		}
 	},
 
+	cjsx: {
+		compile: {
+			expand: true,
+			cwd: '<%= yeoman.app %>/plugins/hsreplay',
+			src: ['**/*.cjsx'],
+			dest: '<%= yeoman.app %>/plugins/hsreplay/joust',
+			ext: '.js'
+		}
+	},
+
 	browserify: {
-		'<%= yeoman.app %>/plugins/hsreplay/joust.js': ['<%= yeoman.app %>/plugins/hsreplay/joust/**/*.js']
+		'<%= yeoman.app %>/plugins/hsreplay/hsreplay.js': ['<%= yeoman.app %>/plugins/hsreplay/hsreplay.src.js', '<%= yeoman.app %>/plugins/hsreplay/joust/**/*.js']
 	},
 
 	// ng-annotate tries to make the code safe for minification automatically
@@ -453,9 +463,10 @@ module.exports = function (grunt) {
 		grunt.task.run([
 		  'clean:server',
 		  'ngconstant:development',
-		  'browserify',
 		  'wiredep',
-		  'coffee',
+		  // 'coffee',
+		  // 'csjx',
+		  // 'browserify',
 		  'concurrent:server',
 		  'autoprefixer',
 		  'connect:livereload',

@@ -39,7 +39,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						plugins: [
 							{name: 'parseCardsText'}, 
 							{name: 'parseDecks'}, 
-							{name: 'hsreplay', player: true, dependencies: ['joust.js']}
+							{name: 'joustjs', player: true}
 						],
 						customCss: 'hearthstone.css'
 					},
@@ -119,8 +119,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 
 		service.attachPlugin = function(scope, plugin, element) {
 			// console.log('trying to attach plugin', plugin, element);
-			//console.log(window[plugin]);
-			//console.log(window[plugin + '_attach']);
+			// console.log(window[plugin]);
+			// console.log(window[plugin + '_attach']);
 			if (plugin && plugin.name && window[plugin.name].attach) {
 				window[plugin.name].attach(element);
 			}
@@ -166,7 +166,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			var hasPlayer = false;
 			config.plugins.plugins.forEach(function(plugin) {
 				if (plugin.player) {
-					// console.log('calling', plugin.name + '.init', window[plugin.name], window[plugin.name].init);
+					console.log('joustjs?', window.joustjs);
+					console.log('calling', plugin.name + '.init', window[plugin.name], window[plugin.name].init);
 					window[plugin.name].init(plugin, review);
 				}
 			})

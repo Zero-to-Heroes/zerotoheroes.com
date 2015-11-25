@@ -6,7 +6,7 @@
 		<div class="content"></div>
 	</div>
 
-	<div class="background-white" ng-class="pluginNames">
+	<div class="background-white">
 		<div class="videogular-container multi-player" ng-show="review.key" ng-hide="review.replay">
 			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
 				<div class="first-player-container">
@@ -47,7 +47,7 @@
 		
 		<div ng-show="review.replay" id="externalPlayer" class="external-player"></div>
 
-		<div>
+		<div ng-class="pluginNames">
 			<form class="container-fluid video-details" name="videoInformationForm">
 				<div class="row">
 					<div class="col-md-1 reputation">

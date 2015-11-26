@@ -21,7 +21,6 @@ public class TranscodingStatusNotification {
 
 	@Autowired
 	ReviewRepository repo;
-	
 
 	@Autowired
 	SlackNotifier slackNotifier;
@@ -68,6 +67,9 @@ public class TranscodingStatusNotification {
 		notificationThread.start();
 		log.debug("Starting notification thread");
 
+		final SubscriptionManager subscriptionManager = this.subscriptionManager;
+		final SlackNotifier slackNotifier = this.slackNotifier;
+		
 		// Create a handler that will wait for this specific job to complete.
 		JobStatusNotificationHandler handler = new JobStatusNotificationHandler() {
 			@Override

@@ -389,7 +389,9 @@
 			"Early game": "Début de partie",
 			"Endgame": "Fin de partie",
 			"Arena": "Arène",
-			"Deck": "Deck"
+			"Deck": "Deck",
+			"Mill": "Meule",
+			"Deathrattle": "Râle d'agônie"
 		},
 		"heroesofthestorm": {
 			"Map: Infernal Shrines": "Champ de Bataille: Sanctuaires Infernaux",

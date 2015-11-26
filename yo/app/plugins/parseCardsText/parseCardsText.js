@@ -112,13 +112,15 @@ function getCard(cardName) {
 		// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
 		if (card.name.toLowerCase() == cardName.toLowerCase()) {
             possibleResult = card;
-            if (card.type != 'Hero' && card.id.toUpperCase() == card.id) {
-    			if (card.set == 'Basic') {
-    				card.rarity = 'Free';
-    			}
+            if (card.set == 'Basic') {
+                card.rarity = 'Free';
+            }
+            console.log('card id matches regex?', card.id, card.id.match(/.*\d$/));
+            console.log('card type', card.type)
+            if (card.type != 'Hero' && (card.id.toLowerCase() == card.id || card.id.toUpperCase() == card.id) && card.id.match(/.*\d$/)) {
     			result = card;
     			if (result.cardImage) {
-    				//console.log('returning card', result);
+    				console.log('returning card', result);
     				return true;
     			}
             }

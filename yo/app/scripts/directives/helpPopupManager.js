@@ -63,11 +63,13 @@ app.directive('helpPopupManager', ['$log', '$popover', '$rootScope', '$timeout',
 					$scope.currentPopover = $popover($scope.elementForPopup, options);
 					//$log.log('displaying popover', $scope.currentPopover);
 					$scope.currentPopover.$promise.then($scope.currentPopover.toggle);
-				}, 200)
-				// $timeout(function() {
-				// 	if ($scope.helpPopupPosition == 'top') $scope.currentPopover.$applyPlacement();
-				// 	else $scope.place($scope.currentPopover.$element, $scope.elementForPopup);
-				// }, 100);
+
+					$timeout(function() {
+						$scope.currentPopover.$applyPlacement();
+						// else $scope.place($scope.currentPopover.$element, $scope.elementForPopup);
+					}, 0);
+
+				}, 8000)
 			}
 
 			$scope.close = function(markAsRead) {

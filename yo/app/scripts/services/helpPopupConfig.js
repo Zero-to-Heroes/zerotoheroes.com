@@ -5,16 +5,16 @@ services.factory('HelpPopupConfig', ['$window', '$log', 'User',
 		var service = {};
 
 			service.config = {
-				commentVote: {
-					showCondition: function() {
-						return User.getNumberOfViews() >= 6;
-					}
-				},
-				doubleScroll: {
-					showCondition: function() {
-						return User.getNumberOfViews() >= 3;
-					}
-				},
+				// commentVote: {
+				// 	showCondition: function() {
+				// 		return User.getNumberOfViews() >= 6;
+				// 	}
+				// },
+				// doubleScroll: {
+				// 	showCondition: function() {
+				// 		return User.getNumberOfViews() >= 3;
+				// 	}
+				// },
 				fineScrolling: {
 					showCondition: function() {
 						return User.getNumberOfTimestamps() >= 2;
@@ -25,8 +25,8 @@ services.factory('HelpPopupConfig', ['$window', '$log', 'User',
 			service.shouldTrigger = function(params) {
 				//$log.log('should trigger?', !service.isRead(params.helpKey), service.config[params.helpKey].showCondition());
 				var show = !service.isRead(params.helpKey) && service.config[params.helpKey].showCondition();
-				return show;
-				// return true;
+				// return show;
+				return true;
 			}
 
 			service.markAsRead = function(helpKey) {

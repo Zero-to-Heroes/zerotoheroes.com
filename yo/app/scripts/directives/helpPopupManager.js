@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('helpPopupManager', ['$log', '$popover', '$rootScope', '$timeout', 'HelpPopupConfig', 
-	function($log, $popover, $rootScope, $timeout, HelpPopupConfig) {
+app.directive('helpPopupManager', ['$log', '$popover', '$rootScope', '$timeout', 'HelpPopupConfig', '$translate', 
+	function($log, $popover, $rootScope, $timeout, HelpPopupConfig, $translate) {
 
 	return {
 		restrict: 'A',
@@ -47,24 +47,27 @@ app.directive('helpPopupManager', ['$log', '$popover', '$rootScope', '$timeout',
 			$scope.displayHelp = function() {
 				$log.log('displaying help popup for target', $scope.elementForPopup);
 				// Display the help
-				var options = {
-					title: 'Did you know?',
-					trigger: 'manual',
-					placement: $scope.helpPopupPosition || 'left',
-					target: $scope.elementForPopup,
-					container: $scope.elementForPopup[0].$parent ? $scope.elementForPopup[0].$parent.$parent : $scope.elementForPopup[0].$parent,
-					content: HelpPopupConfig.config[$scope.helpKey].text,
-					template: '/templates/helpPopup.html',
-					//viewport: $scope.viewport,
-					scope: $scope
-				}
-				$scope.currentPopover = $popover($scope.elementForPopup, options);
-				//$log.log('displaying popover', $scope.currentPopover);
-				$scope.currentPopover.$promise.then($scope.currentPopover.toggle);
 				$timeout(function() {
-					if ($scope.helpPopupPosition == 'top') $scope.currentPopover.$applyPlacement();
-					else $scope.place($scope.currentPopover.$element, $scope.elementForPopup);
-				}, 100);
+
+					var options = {
+						title: $translate.instant('help.title'),
+						trigger: 'manual',
+						placement: $scope.helpPopupPosition || 'left',
+						target: $scope.elementForPopup,
+						container: 'body',
+						content: $translate.instant('help.' + $scope.helpKey),
+						template: '/templates/helpPopup.html',
+						//viewport: $scope.viewport,
+						scope: $scope
+					}
+					$scope.currentPopover = $popover($scope.elementForPopup, options);
+					//$log.log('displaying popover', $scope.currentPopover);
+					$scope.currentPopover.$promise.then($scope.currentPopover.toggle);
+				}, 200)
+				// $timeout(function() {
+				// 	if ($scope.helpPopupPosition == 'top') $scope.currentPopover.$applyPlacement();
+				// 	else $scope.place($scope.currentPopover.$element, $scope.elementForPopup);
+				// }, 100);
 			}
 
 			$scope.close = function(markAsRead) {

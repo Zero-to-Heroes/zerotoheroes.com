@@ -12,19 +12,19 @@ function parseDecks(review, text) {
 	console.log('matches', matches);
 	if (matches) {
 		matches.forEach(function(match) {
-			console.log('match', match);
+			// console.log('match', match);
 			var deckUrl = match.substring(1, match.length - 1);
 			var deckName = match.substring(32, match.length - 1);
-			console.log('deck name', deckName);
+			// console.log('deck name', deckName);
 
 			var plugins = review.plugins.hearthstone;
-			console.log('pugins', plugins)
+			// console.log('pugins', plugins)
 			if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
 				var strDeck = plugins.parseDecks[deckName];
 				var deck = JSON.parse(strDeck);
 				var htmlDeck = formatToHtml(deck, deckUrl);
 				parseDecks_deck = htmlDeck;
-				console.log('html deck is ', htmlDeck);
+				// console.log('html deck is ', htmlDeck);
 
 				var deckNameForDisplay = deck.title;
 

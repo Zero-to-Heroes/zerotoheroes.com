@@ -125,7 +125,7 @@ function getCard(cardName) {
             if (card.type != 'Hero' && (card.id.toLowerCase() == card.id || card.id.toUpperCase() == card.id) && card.id.match(/.*\d$/)) {
     			result = card;
     			if (result.cardImage) {
-    				console.log('returning card', result);
+    				// console.log('returning card', result);
     				return true;
     			}
             }

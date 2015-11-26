@@ -52,7 +52,12 @@ function parseCardsText_attach(element) {
 		search: function (term, callback, match) {
 			callback($.map(jsonDatabase, function(card) {
 				var localizeName = parseCardsText_localizeName(card, window.localStorage.language);
-				var res = (S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) === 0 && card.cardImage && card.type != 'Hero') ? card : null
+				var res = S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) === 0;
+                // add search on english term
+                res = res || card.name.toLowerCase().indexOf(term.substring(2).toLowerCase()) === 0;
+                // Keep only valid cards
+                res = res && card.cardImage && card.type != 'Hero';
+                res = res ? card : null
 				return res;
 			}))
             $(function () {

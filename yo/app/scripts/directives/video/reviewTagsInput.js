@@ -20,14 +20,14 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 					if (allMandatoryTagsFilled) {
 						var validTags = $scope.allowedTags.filter(function (el) {
 							var localName = $translate.instant('tags.' + el.sport + "." + el.text);
-							return ~S(localName.toLowerCase()).latinise().indexOf(S($query.toLowerCase()).latinise());
+							return ~S(localName.toLowerCase()).latinise().s.indexOf(S($query.toLowerCase()).latinise().s);
 						});
 					}
 					else {
 						var missingTag = $scope.getMissingTagType($scope.review.tags, $scope.mandatoryTags);
 						var validTags = $scope.allowedTags.filter(function (el) {
 							var localName = $translate.instant('tags.' + el.sport + "." + el.text);
-							return el.type == missingTag && ~S(localName.toLowerCase()).latinise().indexOf(S($query.toLowerCase()).latinise());
+							return el.type == missingTag && ~S(localName.toLowerCase()).latinise().s.indexOf(S($query.toLowerCase()).latinise().s);
 						});
 					}
 					return validTags.sort(function(a, b) {

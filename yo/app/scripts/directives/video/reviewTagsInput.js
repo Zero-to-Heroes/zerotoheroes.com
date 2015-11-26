@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', 
-	function($log, SportsConfig, Api) {
+app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate', 
+	function($log, SportsConfig, Api, $translate) {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -19,13 +19,15 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api',
 					//$log.log('allMandatoryTagsFilled', allMandatoryTagsFilled);
 					if (allMandatoryTagsFilled) {
 						var validTags = $scope.allowedTags.filter(function (el) {
-							return ~el.text.toLowerCase().indexOf($query);
+							var localName = $translate.instant('tags.' + el.sport + "." + el.text);
+							return ~S(localName.toLowerCase()).latinise().indexOf(S($query.toLowerCase()).latinise());
 						});
 					}
 					else {
 						var missingTag = $scope.getMissingTagType($scope.review.tags, $scope.mandatoryTags);
 						var validTags = $scope.allowedTags.filter(function (el) {
-							return el.type == missingTag && ~el.text.toLowerCase().indexOf($query);
+							var localName = $translate.instant('tags.' + el.sport + "." + el.text);
+							return el.type == missingTag && ~S(localName.toLowerCase()).latinise().indexOf(S($query.toLowerCase()).latinise());
 						});
 					}
 					return validTags.sort(function(a, b) {

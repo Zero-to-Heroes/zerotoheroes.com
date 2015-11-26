@@ -137,13 +137,11 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			var plugin = pluginObj.name;
 			console.log('loading plugin', plugin);
 			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js').then(function() {
-				console.log('loaded plugin', plugin);
 				plugins.push(pluginObj);
 				// Load dependencies
 				if (pluginObj.dependencies) {
 					pluginObj.dependencies.forEach(function(dep) {
 						angularLoad.loadScript('/plugins/' + plugin + '/' + dep).then(function() {
-							console.log('loaded dependency', dep);
 							plugins.push(dep);
 						}).catch(function() {
 							plugins.push(undefined);
@@ -156,21 +154,22 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 				console.error('could not load plugin', plugin );
 			});
 			angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
-				console.log('loaded css', plugin);
+				//console.log('loaded css', plugin);
 			});
 		}
 
 		service.initPlayer = function(config, review) {
 			if (!config || !config.plugins || !config.plugins.plugins) return false;
 
-			var hasPlayer = false;
+			var externalPlayer;
 			config.plugins.plugins.forEach(function(plugin) {
 				if (plugin.player) {
-					console.log('joustjs?', window.joustjs);
-					console.log('calling', plugin.name + '.init', window[plugin.name], window[plugin.name].init);
-					window[plugin.name].init(plugin, review);
+					externalPlayer = window[plugin.name];
+					externalPlayer.init(plugin, review);
 				}
-			})
+			});
+
+			return externalPlayer;
 		}
 
 		return service;

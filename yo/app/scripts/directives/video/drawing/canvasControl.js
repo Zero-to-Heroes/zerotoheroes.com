@@ -38,7 +38,7 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 				});
 
 				$scope.$watch('review', function (newVal, oldVal) {
-					//$log.log('watching review', oldVal, newVal);
+					// $log.log('watching review', oldVal, newVal);
 					if (newVal) {
 						$scope.cancelCanvasEdition();
 					}

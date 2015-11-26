@@ -4,11 +4,11 @@
 
   bundle = {
     init: function(replay) {
-      var React, routes;
+      var React;
       console.log('in bundle init');
       React = _dereq_('react');
-      routes = _dereq_('./routes');
-      return routes.init(replay);
+      this.routes = _dereq_('./routes');
+      return this.routes.init(replay);
     }
   };
 
@@ -84,6 +84,7 @@
     function Replay(props) {
       this.onClickPlay = __bind(this.onClickPlay, this);
       this.onClickPause = __bind(this.onClickPause, this);
+      this.callback = __bind(this.callback, this);
       Replay.__super__.constructor.call(this, props);
       console.log('initializing replay');
       this.state = {
@@ -92,7 +93,13 @@
       console.log('state', this.state);
       this.sub = subscribe(this.state.replay, 'players-ready', (function(_this) {
         return function() {
-          return _this.forceUpdate();
+          return _this.callback;
+        };
+      })(this));
+      this.sub = subscribe(this.state.replay, 'moved-timestamp', (function(_this) {
+        return function() {
+          console.log('receiving moved-timestamp');
+          return setTimeout(_this.callback, 1000);
         };
       })(this));
       console.log('sub', this.sub);
@@ -100,7 +107,13 @@
     }
 
     Replay.prototype.componentWillUnmount = function() {
+      console.log('Replay will unmount');
       return this.sub.off();
+    };
+
+    Replay.prototype.callback = function() {
+      console.log('forcing update');
+      return this.forceUpdate();
     };
 
     Replay.prototype.render = function() {
@@ -108,7 +121,7 @@
       replay = this.state.replay;
       console.log('rendering in replay', replay);
       if (replay.players.length === 2) {
-        console.log('All players are here');
+        console.log('All players are here', replay.opponent, replay.player);
         top = React.createElement("div", {
           "className": "top"
         }, React.createElement(PlayerName, {
@@ -150,7 +163,8 @@
       }
       console.log('top and bottom are', top, bottom);
       return React.createElement("div", {
-        "className": "replay"
+        "className": "replay",
+        "key": replay.resetCounter
       }, React.createElement("form", {
         "className": "replay__controls padded"
       }, React.createElement(ButtonGroup, null, React.createElement(Button, {
@@ -159,9 +173,6 @@
       }), React.createElement(Button, {
         "glyph": "play",
         "onClick": this.onClickPlay
-      }), React.createElement(Button, {
-        "glyph": "fast-forward",
-        "onClick": this.onClickFastForward
       })), React.createElement(Timeline, {
         "replay": replay
       }), React.createElement("div", {
@@ -175,20 +186,20 @@
         "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "true"
-      }, " ", this.state.replay.getSpeed(), " ", React.createElement("span", {
+      }, " ", this.state.replay.getSpeed(), "x ", React.createElement("span", {
         "className": "caret"
       }), " "), React.createElement("ul", {
         "className": "dropdown-menu",
         "aria-labelledby": "dropdownMenu1"
       }, React.createElement("li", null, React.createElement("a", {
         "onClick": this.onClickChangeSpeed.bind(this, 1)
-      }, "\"1x\"")), React.createElement("li", null, React.createElement("a", {
+      }, "1x")), React.createElement("li", null, React.createElement("a", {
         "onClick": this.onClickChangeSpeed.bind(this, 2)
-      }, "\"2x\"")), React.createElement("li", null, React.createElement("a", {
+      }, "2x")), React.createElement("li", null, React.createElement("a", {
         "onClick": this.onClickChangeSpeed.bind(this, 4)
-      }, "\"4x\"")), React.createElement("li", null, React.createElement("a", {
+      }, "4x")), React.createElement("li", null, React.createElement("a", {
         "onClick": this.onClickChangeSpeed.bind(this, 8)
-      }, "\"8x\"")))))), React.createElement("div", {
+      }, "8x")))))), React.createElement("div", {
         "className": "replay__game"
       }, top, bottom));
     };
@@ -202,8 +213,6 @@
       e.preventDefault();
       return this.state.replay.run();
     };
-
-    Replay.prototype.onClickFastForward = function() {};
 
     Replay.prototype.onClickChangeSpeed = function(speed) {
       console.log('changing speed', speed);
@@ -403,6 +412,7 @@
   Hand = React.createClass({
     componentDidMount: function() {
       var entity, _i, _len, _ref;
+      console.log('Hand did mount');
       this.subs = new SubscriptionList;
       _ref = this.props.entity.getHand();
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -413,12 +423,14 @@
         return function(_arg) {
           var entity;
           entity = _arg.entity;
+          console.log('entity-entered-hand');
           _this.subscribeToEntity(entity);
           return _this.forceUpdate();
         };
       })(this));
       return this.subs.add(this.props.entity, 'tag-changed:MULLIGAN_STATE', (function(_this) {
         return function() {
+          console.log('tag-changed:MULLIGAN_STATE');
           return _this.forceUpdate();
         };
       })(this));
@@ -439,13 +451,16 @@
       })(this));
     },
     componentWillUnmount: function() {
+      console.log('hand will unmount');
       return this.subs.off();
     },
     render: function() {
       var active, cards;
+      console.log('rendering hand? ', this.props.entity.tags, this.props.entity.tags.MULLIGAN_STATE);
       if (this.props.entity.tags.MULLIGAN_STATE !== 4) {
         return null;
       }
+      console.log('rendering hand');
       active = _.filter(this.props.entity.getHand(), function(entity) {
         return entity.tags.ZONE_POSITION > 0;
       });
@@ -908,28 +923,27 @@
 
   routes = {
     init: function(xmlReplay) {
-      var Application, React, Replay, Route, Router, createMemoryHistory, externalPlayer, render, router, _ref;
+      var Application, React, Route, Router, createMemoryHistory, externalPlayer, render, router, _ref;
       React = _dereq_('react');
       _ref = _dereq_('react-router'), Router = _ref.Router, Route = _ref.Route;
       render = _dereq_('react-dom').render;
       createMemoryHistory = _dereq_('history/lib/createMemoryHistory');
       Application = _dereq_('./components/application');
-      Replay = _dereq_('./components/replay');
+      this.Replay = _dereq_('./components/replay');
       routes = React.createElement(Route, {
         "path": "/",
         "component": Application
       }, React.createElement(Route, {
         "path": "/replay",
-        "component": Replay,
+        "component": this.Replay,
         "replay": xmlReplay
       }));
+      console.log('created routes', routes);
       router = React.createElement(Router, {
         "history": createMemoryHistory()
       }, routes);
       externalPlayer = document.getElementById('externalPlayer');
-      console.log('calling render', render);
-      render(router, externalPlayer);
-      return console.log('routes.render called');
+      return render(router, externalPlayer);
     }
   };
 
@@ -1785,6 +1799,11 @@
     function ReplayPlayer(parser) {
       this.parser = parser;
       EventEmitter.call(this);
+      window.replay = this;
+      console.log('player constructed');
+    }
+
+    ReplayPlayer.prototype.init = function() {
       this.entities = {};
       this.players = [];
       this.game = null;
@@ -1798,11 +1817,6 @@
       this.currentReplayTime = 0;
       this.started = false;
       this.speed = 1;
-      window.replay = this;
-      console.log('player constructed');
-    }
-
-    ReplayPlayer.prototype.init = function() {
       return this.parser.parse(this);
     };
 
@@ -1811,7 +1825,7 @@
       console.log('parsed game');
       this.frequency = 200;
       this.speed = this.initialSpeed || 1;
-      return setInterval(((function(_this) {
+      return this.interval = setInterval(((function(_this) {
         return function() {
           return _this.update();
         };
@@ -1857,14 +1871,36 @@
 
     ReplayPlayer.prototype.moveTime = function(progression) {
       var target;
-      target = this.getTotalLength() * progression;
+      target = this.getTotalLength() * progression * 1000;
       console.log('moving to', target);
-      return this.currentReplayTime = target * 1000;
+      return this.goToTimestamp(target);
+    };
+
+    ReplayPlayer.prototype.goToTimestamp = function(timestamp) {
+      var initialSpeed;
+      initialSpeed = this.speed;
+      if (timestamp < this.currentReplayTime) {
+        console.log('resetting');
+        this.init();
+        this.historyPosition = 0;
+      }
+      this.start(this.startTimestamp);
+      if (!this.interval) {
+        console.log('running the game');
+        this.run();
+        this.changeSpeed(initialSpeed);
+      }
+      console.log('going to timestamp in replay', timestamp);
+      this.currentReplayTime = timestamp;
+      return this.emit('moved-timestamp');
     };
 
     ReplayPlayer.prototype.update = function() {
       var elapsed, results;
       this.currentReplayTime += this.frequency * this.speed;
+      if (this.currentReplayTime >= this.getTotalLength() * 1000) {
+        this.currentReplayTime = this.getTotalLength() * 1000;
+      }
       elapsed = this.getElapsed();
       results = [];
       while (this.historyPosition < this.history.length) {
@@ -1880,7 +1916,6 @@
 
     ReplayPlayer.prototype.receiveGameEntity = function(definition) {
       var entity;
-      console.log('receiving game entity', definition);
       entity = new Entity(this);
       this.game = this.entities[definition.id] = entity;
       return entity.update(definition);
@@ -1888,7 +1923,6 @@
 
     ReplayPlayer.prototype.receivePlayer = function(definition) {
       var entity;
-      console.log('receiving player', definition);
       entity = new Player(this);
       this.entities[definition.id] = entity;
       this.players.push(entity);
@@ -1917,6 +1951,7 @@
           this.opponent = entity.getController();
           this.player = this.opponent.getOpponent();
         }
+        console.log('emitting player-ready event');
         return this.emit('players-ready');
       }
     };
@@ -2079,8 +2114,6 @@
 },{}],24:[function(_dereq_,module,exports){
 var joustjs = {
 
-	replay: undefined,
-
 	init: function(config, review) {
 		$.get('/replay.xml', function(replayXml) {
 			joustjs.loadReplay(replayXml);
@@ -2095,6 +2128,16 @@ var joustjs = {
 		//require('coffee-react/register');
 		var bundle = _dereq_('./joust/src/front/bundle.js');
 		bundle.init(strReplayXml);
+	},
+
+	goToTimestamp: function(timestamp) {
+		var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
+		var time = timestamp.match(timestampOnlyRegex)[0];
+		var timeComponents = time.split(':');
+		var millis = timeComponents[0] * 60 * 1000 + timeComponents[1] * 1000;
+		if (timeComponents[2])
+			millis += timeComponents[2];
+		window.replay.goToTimestamp(millis);
 	}
 
 }

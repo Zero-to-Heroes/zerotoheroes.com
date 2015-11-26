@@ -41,7 +41,7 @@ function parseCardsText_localizeName(card, lang) {
 function parseCardsText_localizeImage(card, lang) {
 	if (!lang) return card.cardImage;
 	if (!card[lang]) return card.cardImage;
-	console.log('localized image', lang + '/' + card.cardImage);
+	// console.log('localized image', lang + '/' + card.cardImage);
 	return lang + '/' + card.cardImage;
 }
 
@@ -61,11 +61,11 @@ function parseCardsText_attach(element) {
 				return res;
 			}))
             $(function () {
-                console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
+                // console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
                 $('.tooltip.parse-cards-text').hide();
             })
 			$(function () {
-				console.log('loading tooltips', $('[data-toggle="tooltip"]'));
+				// console.log('loading tooltips', $('[data-toggle="tooltip"]'));
 			  	$('[data-toggle="tooltip"]').tooltip()
 			})
 		},
@@ -87,7 +87,7 @@ function parseCardsText_attach(element) {
         noResultMessage: function() {
             console.log('unloading');
             $(function () {
-                console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
+                // console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
                 $('[data-toggle="tooltip"]').tooltip('hide')
             })
         }
@@ -120,8 +120,8 @@ function getCard(cardName) {
             if (card.set == 'Basic') {
                 card.rarity = 'Free';
             }
-            console.log('card id matches regex?', card.id, card.id.match(/.*\d$/));
-            console.log('card type', card.type)
+            // console.log('card id matches regex?', card.id, card.id.match(/.*\d$/));
+            // console.log('card type', card.type)
             if (card.type != 'Hero' && (card.id.toLowerCase() == card.id || card.id.toUpperCase() == card.id) && card.id.match(/.*\d$/)) {
     			result = card;
     			if (result.cardImage) {

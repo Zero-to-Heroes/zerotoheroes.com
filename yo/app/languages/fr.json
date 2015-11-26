@@ -311,7 +311,8 @@
 		"news1": "Le site est maintenant accessible en français ! Vous pouvez changer de langue avec le menu déroulant en haut à droite",
 		"news2": "Nous avons changé l'affichage de la page de revue vidéo pour utiliser toute la largeur de l'écran. Dites-nous ce que vous en pensez !",
 		"news3": "Les joueurs d'HearthStone peuvent maintenant voir le détail des cartes d'un deck directement sur la page de revue vidéo",
-		"news4": "Les joueurs d'HearthStone peuvent maintenant aussi utiliser le nom anglais pour chercher une carte"
+		"news4": "Les joueurs d'HearthStone peuvent maintenant aussi utiliser le nom anglais pour chercher une carte",
+		"news5": "Vous pouvez maintenant aller voir le deck d'HearthStone d'origine en cliquant sur le titre lorsque le deck est affiché"
 	},
 	"tags": {
 		"squash": {

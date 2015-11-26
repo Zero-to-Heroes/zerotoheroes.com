@@ -9,21 +9,22 @@ function parseDecks(review, text) {
 	//console.log('parsing for decks', text);
 
 	var result = text;
-	//console.log('matches', matches);
+	console.log('matches', matches);
 	if (matches) {
 		matches.forEach(function(match) {
-			//console.log('match', match);
+			console.log('match', match);
 			var deckUrl = match.substring(1, match.length - 1);
 			var deckName = match.substring(32, match.length - 1);
-			//console.log('deck name', deckName);
+			console.log('deck name', deckName);
 
 			var plugins = review.plugins.hearthstone;
+			console.log('pugins', plugins)
 			if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
 				var strDeck = plugins.parseDecks[deckName];
 				var deck = JSON.parse(strDeck);
-				var htmlDeck = formatToHtml(deck);
+				var htmlDeck = formatToHtml(deck, deckUrl);
 				parseDecks_deck = htmlDeck;
-				//console.log('html deck is ', htmlDeck);
+				console.log('html deck is ', htmlDeck);
 
 				var deckNameForDisplay = deck.title;
 
@@ -55,8 +56,8 @@ function parseDecksHs_toggleDeck() {
 	})
 }
 
-function formatToHtml(deck) {
-	var htmlDeck = '<h3 class=\'deck-header\'>' + deck.title + '</h3>';
+function formatToHtml(deck, deckUrl) {
+	var htmlDeck = '<h3 class=\'deck-header\'><a href=\'' + deckUrl + '\' target=\'_blank\'>' + deck.title + '</a></h3>';
 	htmlDeck += '<div class=\'deck-body row\'>';
 		htmlDeck += '<div class=\'class-cards col-md-6\'>';
 			htmlDeck += '<h4 class=\'card-type-title\'>Class cards</h4>';

@@ -5,20 +5,17 @@ services.factory('HelpPopupConfig', ['$window', '$log', 'User',
 		var service = {};
 
 			service.config = {
-				commentVote: {
-					text: "You can use the up and down arrows to reward a comment you have found useful. Comments with the most upvotes will naturally emerge at the top of the list",
-					showCondition: function() {
-						return User.getNumberOfViews() >= 6;
-					}
-				},
-				doubleScroll: {
-					text: "If you scroll on the comment column it will scroll only the comments, letting you browse what everyone has said while keeping the video fully in view",
-					showCondition: function() {
-						return User.getNumberOfViews() >= 3;
-					}
-				},
+				// commentVote: {
+				// 	showCondition: function() {
+				// 		return User.getNumberOfViews() >= 6;
+				// 	}
+				// },
+				// doubleScroll: {
+				// 	showCondition: function() {
+				// 		return User.getNumberOfViews() >= 3;
+				// 	}
+				// },
 				fineScrolling: {
-					text: "You can scroll frame by frame by using the mousewheel on the time bar, letting you choose your timestamp with more precision. You can scroll more quickly if you press the Shift key at the same time",
 					showCondition: function() {
 						return User.getNumberOfTimestamps() >= 2;
 					}
@@ -29,7 +26,7 @@ services.factory('HelpPopupConfig', ['$window', '$log', 'User',
 				//$log.log('should trigger?', !service.isRead(params.helpKey), service.config[params.helpKey].showCondition());
 				var show = !service.isRead(params.helpKey) && service.config[params.helpKey].showCondition();
 				return show;
-				//return true;
+				// return true;
 			}
 
 			service.markAsRead = function(helpKey) {

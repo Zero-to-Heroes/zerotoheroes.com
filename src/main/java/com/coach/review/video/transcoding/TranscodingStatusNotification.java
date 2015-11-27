@@ -10,8 +10,10 @@ import org.springframework.stereotype.Component;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClient;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import com.coach.subscription.SubscriptionManager;
 
 @Slf4j
 @Component
@@ -19,6 +21,12 @@ public class TranscodingStatusNotification {
 
 	@Autowired
 	ReviewRepository repo;
+
+	@Autowired
+	SlackNotifier slackNotifier;
+
+	@Autowired
+	SubscriptionManager subscriptionManager;
 
 	@Autowired
 	MongoTemplate mongoTemplate;
@@ -59,6 +67,9 @@ public class TranscodingStatusNotification {
 		notificationThread.start();
 		log.debug("Starting notification thread");
 
+		final SubscriptionManager subscriptionManager = this.subscriptionManager;
+		final SlackNotifier slackNotifier = this.slackNotifier;
+		
 		// Create a handler that will wait for this specific job to complete.
 		JobStatusNotificationHandler handler = new JobStatusNotificationHandler() {
 			@Override
@@ -71,6 +82,7 @@ public class TranscodingStatusNotification {
 						Review review = repo.findById(reviewId);
 						if (review.isTranscodingDone()) {
 							log.warn("Video already transcoded, should not come back here");
+							return;
 						}
 						log.debug("Loaded review " + review);
 						// review.setTreatmentCompletion(100);
@@ -79,6 +91,10 @@ public class TranscodingStatusNotification {
 						log.debug("Updated review: " + review);
 						// TODO: delete bucket input file
 
+						// Send notifications
+						subscriptionManager.notifyNewReview(review.getSport(), review);
+						slackNotifier.notifyNewReview(review);
+						
 						sqsQueueNotificationWorker.shutdown();
 						log.debug("Job completed, shutting down");
 

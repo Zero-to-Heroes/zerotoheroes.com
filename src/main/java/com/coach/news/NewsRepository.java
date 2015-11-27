@@ -27,6 +27,8 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(new DateTime("2015-11-26").toDate(), "news5", News.Type.Feature));
+		news.add(new News(new DateTime("2015-11-26").toDate(), "news4", News.Type.Feature));
 		news.add(new News(new DateTime("2015-11-21").toDate(), "news3", News.Type.Feature));
 		news.add(new News(new DateTime("2015-11-20").toDate(), "news2", News.Type.Feature));
 		news.add(new News(new DateTime("2015-11-19").toDate(), "news1", News.Type.Feature));

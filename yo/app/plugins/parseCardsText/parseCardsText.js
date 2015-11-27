@@ -41,7 +41,7 @@ function parseCardsText_localizeName(card, lang) {
 function parseCardsText_localizeImage(card, lang) {
 	if (!lang) return card.cardImage;
 	if (!card[lang]) return card.cardImage;
-	console.log('localized image', lang + '/' + card.cardImage);
+	// console.log('localized image', lang + '/' + card.cardImage);
 	return lang + '/' + card.cardImage;
 }
 
@@ -52,15 +52,20 @@ function parseCardsText_attach(element) {
 		search: function (term, callback, match) {
 			callback($.map(jsonDatabase, function(card) {
 				var localizeName = parseCardsText_localizeName(card, window.localStorage.language);
-				var res = (S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) === 0 && card.cardImage && card.type != 'Hero') ? card : null
+				var res = S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) === 0;
+                // add search on english term
+                res = res || card.name.toLowerCase().indexOf(term.substring(2).toLowerCase()) === 0;
+                // Keep only valid cards
+                res = res && card.cardImage && card.type != 'Hero';
+                res = res ? card : null
 				return res;
 			}))
             $(function () {
-                console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
+                // console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
                 $('.tooltip.parse-cards-text').hide();
             })
 			$(function () {
-				console.log('loading tooltips', $('[data-toggle="tooltip"]'));
+				// console.log('loading tooltips', $('[data-toggle="tooltip"]'));
 			  	$('[data-toggle="tooltip"]').tooltip()
 			})
 		},
@@ -82,7 +87,7 @@ function parseCardsText_attach(element) {
         noResultMessage: function() {
             console.log('unloading');
             $(function () {
-                console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
+                // console.log('unloading tooltips', $('[data-toggle="tooltip"]'));
                 $('[data-toggle="tooltip"]').tooltip('hide')
             })
         }
@@ -112,13 +117,15 @@ function getCard(cardName) {
 		// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
 		if (card.name.toLowerCase() == cardName.toLowerCase()) {
             possibleResult = card;
-            if (card.type != 'Hero' && card.id.toUpperCase() == card.id) {
-    			if (card.set == 'Basic') {
-    				card.rarity = 'Free';
-    			}
+            if (card.set == 'Basic') {
+                card.rarity = 'Free';
+            }
+            // console.log('card id matches regex?', card.id, card.id.match(/.*\d$/));
+            // console.log('card type', card.type)
+            if (card.type != 'Hero' && (card.id.toLowerCase() == card.id || card.id.toUpperCase() == card.id) && card.id.match(/.*\d$/)) {
     			result = card;
     			if (result.cardImage) {
-    				//console.log('returning card', result);
+    				// console.log('returning card', result);
     				return true;
     			}
             }

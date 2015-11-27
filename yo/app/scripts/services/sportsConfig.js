@@ -42,7 +42,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					},
 					deactivateControls: {
 						slow: true,
-						loop: true
+						loop: true,
+						millis: true
 					},
 					landing: {
 						displayName: 'HearthStone',

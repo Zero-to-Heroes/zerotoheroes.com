@@ -72,6 +72,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					recommendedVideo: '56000cb4e4b049db505af11f',
 					isSport: true,
 					allowDoubleSpeed: true,
+					excludeFromLanding: true,
 					landing: {
 						displayName: 'League of Legends',
 						hideVideoReview: true

@@ -148,6 +148,13 @@
 			<artifactId>jaxb-runtime</artifactId>
 			<version>2.2.11</version>
 		</dependency>
+		<dependency>
+			<groupId>com.hearthsim</groupId>
+		<artifactId>hsreplay</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/hsreplay.jar</systemPath>
+		</dependency>
 
 
 

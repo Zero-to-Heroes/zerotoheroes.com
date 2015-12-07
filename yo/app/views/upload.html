@@ -3,7 +3,7 @@
 <form name="uploadForm" class="upload-form main-panel background-white">
 
 	<div class="form-container">
-		<span class="btn btn-default btn-file" ng-hide="!useVideo">
+		<span class="btn btn-default btn-file" ng-hide="!useVideo && !useFile">
 			<span>{{ 'global.upload.chooseFileButton' | translate }}</span> <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
 		</span>
 		<div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
@@ -111,7 +111,7 @@
 				</div>
 		  		<div class="row">
 					<div class="col-sm-2">
-			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration"  analytics-on="click" analytics-category="upload" analytics-event="upload.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useFile ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration"  analytics-on="click" analytics-category="upload" analytics-event="upload.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
 		  			</div>
 				</div>
 			</div>

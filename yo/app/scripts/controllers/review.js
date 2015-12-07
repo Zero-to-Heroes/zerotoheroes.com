@@ -21,21 +21,23 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
 		$scope.config = SportsConfig[$scope.sport];
 
-		var plugins = $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
+		$scope.temp = $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
 		var definedPlugins = 0;
 		$scope.plugins = [];
 		$scope.pluginNames = [];
-		if (plugins) {
-			definedPlugins = plugins.length;
-			angular.forEach(plugins, function(plugin) {
+		if ($scope.temp) {
+			definedPlugins = $scope.temp.length;
+			$log.debug('Defined plugins', definedPlugins, $scope.temp);
+			angular.forEach($scope.temp, function(plugin) {
+				$log.debug('prepaing to load plugin', plugin)
 				if (plugin.dependencies) definedPlugins += plugin.dependencies.length;
 				SportsConfig.loadPlugin($scope.plugins, plugin);
 			})
 		}
 
 		$scope.$watchCollection('plugins', function(newValue, oldValue) {
-			if (!plugins || newValue.length == definedPlugins) {
-				$log.log('all plugins loaded', newValue, plugins);
+			if (!$scope.temp || newValue.length == definedPlugins) {
+				$log.log('all plugins loaded', newValue, $scope.temp);
 				$scope.initReview();
 				$scope.plugins.forEach(function(plugin) {
 					if (plugin) {
@@ -47,7 +49,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		})
 
 		$scope.initReview = function() {
-			//$log.log('initializing review');
+			$log.debug('initializing review');
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data;
@@ -85,7 +87,21 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// Initialize the plugins to replay different formats. Could be done only if necessary though
 					// TODO: make it clearner to decide if the review is to be played by the standard player or a custom one
 					// Controls default to the ones defined in scope
-					$scope.externalPlayer = $scope.review.replay ? SportsConfig.initPlayer($scope.config, $scope.review) : undefined;
+					$scope.externalPlayer = undefined;
+					$log.debug('Deciding whether we need to use another player', $scope.review);
+					if ($scope.review.replay) {
+						$log.debug('loading replay file');
+						// Retrieve the XML replay file from s3
+						var replayUrl = ENV.videoStorageUrl + $scope.review.key;
+						$log.debug('Replay URL: ', replayUrl);
+						$.get(replayUrl, function(data) {
+							$scope.review.replayXml = data;
+							$log.debug('loaded xml', $scope.review.replayXml);
+
+							// Init the external player
+							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review);
+						})
+					}
 
 					// $log.log('review loaded ', $scope.review)
 					// wait for review to be properly applied to child components

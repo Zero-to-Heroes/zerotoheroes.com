@@ -39,7 +39,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						plugins: [
 							{name: 'parseCardsText'}, 
 							{name: 'parseDecks'}, 
-							{name: 'joustjs', player: true}
+							{name: 'joustjs', player: true, format: ['text/plain', 'text/xml']}
 						],
 						customCss: 'hearthstone.css'
 					},
@@ -135,7 +135,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 
 		service.loadPlugin = function(plugins, pluginObj) {
 			var plugin = pluginObj.name;
-			console.log('loading plugin', plugin);
+			$log.debug('loading plugin', plugin);
 			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js').then(function() {
 				plugins.push(pluginObj);
 				// Load dependencies
@@ -145,13 +145,13 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 							plugins.push(dep);
 						}).catch(function() {
 							plugins.push(undefined);
-							console.error('could not load dependency', dep);
+							$log.error('could not load dependency', dep);
 						});
 					})
 				}
 			}).catch(function() {
 				plugins.push(undefined);
-				console.error('could not load plugin', plugin );
+				$log.error('could not load plugin', plugin );
 			});
 			angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
 				//console.log('loaded css', plugin);
@@ -170,6 +170,23 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			});
 
 			return externalPlayer;
+		}
+
+		service.getAdditionalSupportedTypes = function(sport) {
+			var supportedTypes = [];
+			$log.debug('Getting supported types for ', sport, this[sport]);
+			if (sport && this[sport] && this[sport].plugins && this[sport].plugins.plugins) {
+				this[sport].plugins.plugins.forEach(function(plugin) {
+					if (plugin.format) {
+						plugin.format.forEach(function(format) {
+							supportedTypes.push(format);
+						})
+					}
+				})
+			}
+			$log.debug('Supported types are ', supportedTypes);
+
+			return supportedTypes;
 		}
 
 		return service;

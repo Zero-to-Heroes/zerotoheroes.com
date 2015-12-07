@@ -15,7 +15,7 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 
 				if (canvas.freeDrawingBrush) {
 					canvas.freeDrawingBrush.color = '#ff0'; //drawingColorEl.value;
-					canvas.freeDrawingBrush.width = 10; //parseInt(drawingLineWidthEl.value, 10) || 1;
+					canvas.freeDrawingBrush.width = 5; //parseInt(drawingLineWidthEl.value, 10) || 1;
 					canvas.freeDrawingBrush.shadowBlur = 0;
 				}
 

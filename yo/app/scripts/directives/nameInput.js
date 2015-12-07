@@ -53,12 +53,11 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 			}
 
 			$scope.changeLanguage = function(languageCode) {
-				Localization.use(languageCode);
+				User.changeLanguage(languageCode);
 			}
 
 			$scope.currentLanguage = function() {
 				return Localization.getLanguage();
-				
 			}
 		}
 	};

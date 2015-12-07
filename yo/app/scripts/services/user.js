@@ -1,6 +1,6 @@
 var services = angular.module('services');
-services.factory('User', ['$window', '$log', 'Api', 
-	function ($window, $log, Api) {
+services.factory('User', ['$window', '$log', 'Api', 'Localization', 
+	function ($window, $log, Api, Localization) {
 		return {
 			setUser: function(user) {
 				$window.localStorage.user = JSON.stringify(user);
@@ -57,6 +57,19 @@ services.factory('User', ['$window', '$log', 'Api',
 						that.setUser(data);
 						//$log.log('local user', that.getUser());
 						//$log.log('new timestamps', that.getNumberOfTimestamps());
+					});
+				}
+			},
+			changeLanguage: function(lang) {
+				$log.log('changing language to ', lang);
+				Localization.use(lang);
+				if ($window.localStorage.user) {
+					var that = this;
+					var user = that.getUser();
+					user.preferredLanguage = lang;
+					that.setUser(user);
+					Api.Users.save({identifier: user.username}, user, function(data) {
+						$log.log('Changed language', data);
 					});
 				}
 			},

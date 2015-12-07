@@ -107,7 +107,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 								})
 							}
 						);
-						$scope.mandatoryTags = SportsConfig[sport.toLowerCase()].mandatoryTags;
+						$scope.mandatoryTags = SportsConfig[sport.toLowerCase()] ? SportsConfig[sport.toLowerCase()].mandatoryTags : [];
 					}
 				}
 				$scope.getMinTags = function() {

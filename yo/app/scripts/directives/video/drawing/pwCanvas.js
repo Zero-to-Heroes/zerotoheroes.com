@@ -28,7 +28,7 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 					//$log.log('refreshing canvas');
 					var container = element[0].parentElement;
 
-					$log.log('setting size to ', container.offsetWidth, container.offsetHeight);
+					// $log.log('setting size to ', container.offsetWidth, container.offsetHeight);
 					if (container.offsetWidth != 0 && container.offsetHeight != 0) {
 
 						// Not sure why this works. The ratio of the container during "review" is probably slightly different?

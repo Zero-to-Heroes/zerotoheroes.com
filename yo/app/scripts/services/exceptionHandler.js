@@ -81,9 +81,13 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 	  	return {
 	    	// optional method
 	   		'responseError': function(rejection) {
-	   			notify("Http response error: " + rejection.data.path + " " + rejection.config.method + " " + rejection.data.status + " " + rejection.data.error, 
-	   				"Full url is " + rejection.config.url
-	   			);
+	   			var code = rejection.data.status;
+	   			// 401 Unauthorized is a functional error
+	   			if (code != 401) {
+		   			notify("Http response error: " + rejection.data.path + " " + rejection.config.method + " " + rejection.data.status + " " + rejection.data.error, 
+		   				"Full url is " + rejection.config.url
+		   			);
+		   		}
 		      	return $q.reject(rejection);
 		    }
 	  	};

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService', '$rootScope', '$location', '$route', 
-	function($scope, $log, Api, User, AuthenticationService, $rootScope, $location, $route) {
+angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService', '$rootScope', '$location', '$route', 'Localization', '$window', 
+	function($scope, $log, Api, User, AuthenticationService, $rootScope, $location, $route, Localization, $window) {
 		$scope.account = {};
 
 		$scope.init = function() {
@@ -48,7 +48,19 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 			$scope.$broadcast('show-errors-check-validity');
   			if ($scope.accountForm.$valid) {
   				var location = $location.$$url;
-				Api.Users.save({username: $scope.account.username, password: $scope.account.password, email: $scope.account.email, registerLocation: location}, 
+
+  				// Language
+  				var lang;
+  				if (!$window.localStorage.language) {
+					lang = $window.navigator.language || $window.navigator.userLanguage; 
+					if (lang && lang.slice(0, 2) == 'fr') {
+						lang = 'fr';
+					}
+				}
+				if (!lang)
+					lang = Localization.getLanguage();
+
+				Api.Users.save({username: $scope.account.username, password: $scope.account.password, email: $scope.account.email, registerLocation: location, preferredLanguage: lang}, 
 			        function(data) {
 			          	// Not necessarily the best way, but easier to separate registration from actual login
 			            $scope.login();

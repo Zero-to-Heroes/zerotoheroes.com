@@ -39,11 +39,24 @@ public class EmailNotifier {
 				+ "<p>" + comment.getAuthor() + " has just added a comment on your review. "
 						+ "Click <a href=\"" + review.getUrl() + "\">here</a> to see what they said.</p>"
 			    + "<p><small>And if you wish to stop receiving notifications on this review, just hit \"unsubsribe\" from the url above</small></p>";
+		String subject = "New comment on your review " + review.getTitle() + " at ZeroToHeroes";
+
+		if ("fr".equalsIgnoreCase(subscriber.getPreferredLanguage())) {
+			body = "Bonjour!<br/>"
+					+ "<p>"
+					+ comment.getAuthor()
+					+ " vient d'ajouter un commentaire sur votre vidéo. "
+					+ "Cliquez <a href=\""
+					+ review.getUrl()
+					+ "\">ici</a> pour voir le commentaire.</p>"
+					+ "<p><small>Et si vous ne voulez plus recevoir de notifications sur cette vidéo, cliquez simplement sur "
+					+ "\"désinscription\" depuis la page ci-dessus</small></p>";
+			subject = "Nouveau commentaire sur la revue " + review.getTitle() + " sur Zero to Heroes";
+		}
 		//@formatter:on
 
-		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
-				.subject("New comment on your review " + review.getTitle() + " at ZeroToHeroes").content(body)
-				.type("text/html").build();
+		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient).subject(subject)
+				.content(body).type("text/html").build();
 		emailSender.send(message);
 	}
 
@@ -59,11 +72,21 @@ public class EmailNotifier {
 						+ "Click <a href=\"" + review.getUrl() + "\">here</a> to have a look.</p>"
 				+ "<p><small>And if you wish to stop receiving notifications on this review, just hit \"unsubsribe\" "
 						+ "on the <a href=\"" + sportUrl + "\">sport page</a></small></p>";
+		String subject = "New " + review.getSport().getValue() + " review posted at ZeroToHeroes";
+
+		if ("fr".equalsIgnoreCase(subscriber.getPreferredLanguage())) {
+			body = "Bonjour!<br/>"
+					+ "<p>" + review.getAuthor() + " vient de poster une nouvelle revue \"" + review.getTitle() + "\". "
+					+ "Cliquez <a href=\"" + review.getUrl() + "\">ici</a> pour aller voir.</p>"
+					+ "<p><small>Et si vous ne voulez plus recevoir de notifications lorsqu'une nouvelle revue est postée, "
+					+ "cliquez simplement sur \"désinscription\" "
+					+ "sur la <a href=\"" + sportUrl + "\">page principale</a></small></p>";
+			subject = "Nouvelle revue postée sur Zero to Heroes - " + review.getSport().getValue();
+		}
 		//@formatter:on
 
-		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
-				.subject("New " + review.getSport().getValue() + " review posted at ZeroToHeroes").content(body)
-				.type("text/html").build();
+		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient).subject(subject)
+				.content(body).type("text/html").build();
 		emailSender.send(message);
 	}
 
@@ -74,11 +97,19 @@ public class EmailNotifier {
 				+ "If you don't recall having made that request, please simply ignore this email.</p>"
 				+ "<p>Otherwise, please click on <a href=\"" + url + "\">this link</a> to reset your password.</p>"
 				+ "<p>If you have any question, please reply to this email. Have a good day!</p>";
+		String subject = "Zero to Heroes reset password link";
+
+		if ("fr".equalsIgnoreCase(user.getPreferredLanguage())) {
+			body = "<p>Vous avez demandé à réinitialiser votre mot de passe depuis http://www.zerotoheroes.com. "
+					+ "Si vous ne vous souvenez pas avoir fait cette requête, veuillez simplement ignore cet email.</p>"
+					+ "<p>Dans le cas contraire, veuillez cliquer sur <a href=\"" + url + "\">ce lien</a> pour réinitialiser votre mot de passe.</p>"
+					+ "<p>Si vous avez n'importe quelle question, n'hésitez pas à répondre à cet email. Passez une bonne journée !</p>";
+			subject = "Réinitialisation du mot de passe sur Zero to Heroes";
+		}
 		//@formatter:on
 
 		EmailMessage message = EmailMessage.builder().from("Zero to Heroes reset password <contact@zerotoheroes.com>")
-				.to(user.getEmail()).subject("Zero to Heroes reset password link").content(body).type("text/html")
-				.build();
+				.to(user.getEmail()).subject(subject).content(body).type("text/html").build();
 		emailSender.send(message);
 	}
 
@@ -101,11 +132,29 @@ public class EmailNotifier {
 				+ "<p>Thanks,</p>"
 				+ "<p>Seb</p>"
 				+ "<p>Zero to Heroes</p>";
+		String subject = "You're in :) | Plus, a quick question...";
+
+		if ("fr".equalsIgnoreCase(user.getPreferredLanguage())) {
+			body = "Bonjour!<br/>"
+					+ "<p>Ca me fait très plaisir de vous voir nous rejoindre sur Zero to Heroes, et je sais que vous adorerez "
+					+ "le moment où vous réaliserez à quel point c'est devenu facile d'avoir votre jeu analysé.</p>"
+					+ "<p>Nous avons construit Zero to Heroes pour aider les sportifs et gamers à grandir et progresser ensemble, "
+					+ "et j'espère que nous arriverons à vous aider vous aussi.</p>"
+					+ "<p>Si cela ne vous gêne pas, cela me ferait très plaisir si vous pouviez répondre à une question rapide: "
+					+ "pourquoi vous êtes-vous inscrit sur Zero to Heroes ?<p>"
+					+ "<p>Je vous demande ça parce que savoir ces raisons nous est très utile pour être sûrs de fournir ce dont nos utilisateurs "
+					+ "ont besoin. Cliquez simplement sur \"répondre\" et laissez-moi un message.</p>"
+				    + "<p>Et au fait, n'hésitez pas à me contacter si vous avez la moindre question, suggestion ou réclamation, "
+				    + "et je vous aiderai avec plaisir :)</p>"
+					+ "<p>Merci,</p>"
+					+ "<p>Seb</p>"
+					+ "<p>Zero to Heroes</p>";
+			subject = "Bienvenue :) | Et une question rapide...";
+		}
 		//@formatter:on
 
-		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
-				.subject("You're in :) | Plus, a quick question...").content(body)
-				.type("text/html").build();
+		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient).subject(subject)
+				.content(body).type("text/html").build();
 		emailSender.send(message);
 	}
 }

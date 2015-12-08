@@ -1,9 +1,7 @@
 .parseCardsText .card {
 	font-weight: bold;
-}
-
-.parseCardsText .card {
 	color: black;
+	display: inline-block;
 }
 
 .hearthstone .parseCardsText .card {

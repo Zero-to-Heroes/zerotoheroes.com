@@ -119,6 +119,32 @@ public class UserApiHandler {
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/{identifier}", method = RequestMethod.POST)
+	public ResponseEntity<User> updateUser(@RequestBody final User userInput) {
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		log.debug("Retrieving user by " + currentUser);
+
+		User user = null;
+		if (StringUtils.isNullOrEmpty(currentUser)) {
+			log.debug("No identifier provided, returning 406");
+			return new ResponseEntity<User>(user, HttpStatus.NOT_ACCEPTABLE);
+		}
+		if (currentUser.contains("@")) {
+			user = userRepository.findByEmail(currentUser);
+		}
+		else {
+			user = userRepository.findByUsername(currentUser);
+		}
+		log.debug("Loaded user " + user);
+
+		user.setPreferredLanguage(userInput.getPreferredLanguage());
+
+		userRepository.save(user);
+		log.debug("Updated user: " + user);
+
+		return new ResponseEntity<User>(user, HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/password", method = RequestMethod.POST)
 	public ResponseEntity<String> resetPassword(@RequestBody User newUser) {
 		String identifier = newUser.getUsername();

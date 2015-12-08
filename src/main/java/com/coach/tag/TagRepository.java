@@ -128,6 +128,7 @@ public class TagRepository {
 		heroes.add(new Tag("Map: Cursed Hollow"));
 		heroes.add(new Tag("Map: Dragon Shire"));
 		heroes.add(new Tag("Map: Haunted Mines"));
+		heroes.add(new Tag("Map: Towers of Doom"));
 		heroes.add(new Tag("Hero League"));
 		heroes.add(new Tag("Quick Match"));
 		heroes.add(new Tag("Rank 1-10"));
@@ -179,7 +180,11 @@ public class TagRepository {
 		heroes.add(new Tag("Hero: Gazlowe"));
 		heroes.add(new Tag("Hero: Abathur"));
 		heroes.add(new Tag("Hero: Sgt. Hammer"));
+		heroes.add(new Tag("Hero: Artanis"));
+		heroes.add(new Tag("Hero: Lunara"));
+		heroes.add(new Tag("Hero: GreyMane"));
 		heroes.add(new Tag("Pro"));
+		heroes.add(new Tag("Team Fight"));
 		tags.put(HeroesOfTheStorm, heroes);
 
 		// Tags for Heroes of the Storm

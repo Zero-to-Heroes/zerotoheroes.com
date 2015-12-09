@@ -20,7 +20,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
 	protected final ResponseEntity<Object> handleControllerException(Exception ex, WebRequest request) {
-		log.info("Intercepting exception " + ex);
 		slackNotifier.notifyException(request, ex);
 		return super.handleException(ex, request);
 	}

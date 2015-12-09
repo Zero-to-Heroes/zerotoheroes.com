@@ -34,9 +34,7 @@ public class CoachesApiHandler {
 	public @ResponseBody ResponseEntity<List<Coach>> getCoachesForReview(@PathVariable("reviewId") final String id) {
 		// log.debug("Retrieving coaches");
 		Review review = reviewRepo.findById(id);
-		// if (review == null) return new
-		// ResponseEntity<List<Coach>>((List<Coach>) null,
-		// HttpStatus.NOT_FOUND);
+		if (review == null) return new ResponseEntity<List<Coach>>((List<Coach>) null, HttpStatus.NOT_FOUND);
 
 		// log.debug("For review id: " + id);
 		Sport sport = review.getSport();

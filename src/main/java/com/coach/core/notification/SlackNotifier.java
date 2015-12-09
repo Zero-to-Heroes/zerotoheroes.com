@@ -294,17 +294,24 @@ public class SlackNotifier {
 			@Override
 			public String call() throws Exception {
 				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+						"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("danger");
-				attach.setText("Initial request was " + request.getContextPath() + " and triggered the exception: "
-						+ ex.getMessage() + "\n" + ExceptionUtils.getFullStackTrace(ex));
-				attach.setFallback("placeholder fallback");
+				SlackAttachment requestAttach = new SlackAttachment();
+				requestAttach.setColor("danger");
+				requestAttach.setText("Initial request was " + request.getDescription(true)
+						+ " and triggered the exception: " + ex.getMessage());
+				requestAttach.setFallback("placeholder fallback");
+
+				SlackAttachment exAttach = new SlackAttachment();
+				exAttach.setColor("danger");
+				exAttach.setTitle("StackTrace for exception: ");
+				exAttach.setText(ExceptionUtils.getFullStackTrace(ex));
+				exAttach.setFallback("placeholder fallback");
 
 				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("TEST Exception thrown in prod: " + ex.getClass());
+				message.addAttachments(requestAttach);
+				message.addAttachments(exAttach);
+				message.setText("Server exception: " + ex.getClass());
 
 				api.call(message);
 				return null;

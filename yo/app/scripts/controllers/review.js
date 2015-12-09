@@ -85,7 +85,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.coaches.push(data[i]);
 				};
 			}, function(error) {
-				$log.error('Could not retrieve coaches for review', $routeParams.reviewId, review, error, $routeParams, $location);
+				$log.error('Could not retrieve coaches for review', $routeParams.reviewId, error, $routeParams, $location);
 			});
 		}
 

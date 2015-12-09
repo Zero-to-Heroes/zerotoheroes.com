@@ -23,6 +23,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					useVideo: true,
 					isSport: true,
 					allowDoubleSpeed: true,
+					excludeFromLanding: true,
 					deactivateControls: {
 						slow: true,
 						loop: true
@@ -45,7 +46,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					},
 					deactivateControls: {
 						slow: true,
-						loop: true
+						loop: true,
+						millis: true
 					},
 					landing: {
 						displayName: 'HearthStone',
@@ -75,6 +77,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					recommendedVideo: '56000cb4e4b049db505af11f',
 					isSport: true,
 					allowDoubleSpeed: true,
+					excludeFromLanding: true,
 					landing: {
 						displayName: 'League of Legends',
 						hideVideoReview: true

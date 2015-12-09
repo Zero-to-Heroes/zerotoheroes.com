@@ -135,7 +135,7 @@ videogular, [videogular] {
     height: 50px;
     display: block;
     position: absolute;
-    z-index: 2000;
+    z-index: 100;
     top: calc(100% - 50px); }
   videogular vg-controls .controls-container, [videogular] vg-controls .controls-container {
     width: 100%;

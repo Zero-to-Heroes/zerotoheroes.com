@@ -24,7 +24,6 @@ var parseDecks = {
 					var htmlDeck = parseDecks.formatToHtml(deck);
 					parseDecks_deck = htmlDeck;
 					//console.log('html deck is ', htmlDeck);
-
 					var deckNameForDisplay = deck.title;
 
 					result = result.replace(match, '<a class="deck-link" onclick="parseDecks.toggleDeck()" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
@@ -33,6 +32,7 @@ var parseDecks = {
 		}
 		return result;
 	},
+
 	toggleDeck: function () {
 		$(".contextual-information .content").addClass('deck');
 		$(".contextual-information .content").html(parseDecks_deck);
@@ -53,8 +53,9 @@ var parseDecks = {
 		  	});
 		})
 	},
-	formatToHtml: function (deck) {
-		var htmlDeck = '<h3 class=\'deck-header\'>' + deck.title + '</h3>';
+
+	formatToHtml: function (deck, deckUrl) {
+	var htmlDeck = '<h3 class=\'deck-header\'><a href=\'' + deckUrl + '\' target=\'_blank\'>' + deck.title + '</a></h3>';
 		htmlDeck += '<div class=\'deck-body row\'>';
 			htmlDeck += '<div class=\'class-cards col-md-6\'>';
 				htmlDeck += '<h4 class=\'card-type-title\'>Class cards</h4>';
@@ -68,10 +69,10 @@ var parseDecks = {
 								cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
 								var image = parseCardsText.localizeImage(cardObject, window.localStorage.language);
 								htmlDeck += '<tr>' + 
-											'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
-											'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject, window.localStorage.language)  + '</td>' +
-											'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
-										'</tr>';
+												'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
+												'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject, window.localStorage.language)  + '</td>' +
+												'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
+											'</tr>';
 							}
 						})
 					htmlDeck += '</tbody>';

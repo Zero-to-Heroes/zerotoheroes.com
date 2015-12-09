@@ -26,7 +26,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			theme: "bower_components/videogular-themes-default/videogular.css"
 		};
 
-		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone', 'Duelyst', 'Meta'];
+		$scope.possibleSports = ['Squash', 'Badminton', 'LeagueOfLegends', 'HeroesOfTheStorm', 'HearthStone', 'Duelyst', 'Meta', 'Other'];
 
 		$scope.canvasState = {
 			canvasIdIndex: 0,

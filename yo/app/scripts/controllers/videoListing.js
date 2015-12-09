@@ -129,26 +129,12 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			$scope.retrieveVideos('false', $scope.pageNumber);
 		});*/
 
-		$scope.formatDate = function(video) {
-			// Is the last update a creation or a modification?
-			//var statusString = video.lastModifiedDate ? 'modified ' : 'asked ';
-			//console.log(statusString);
-
-			// What is the time difference compared to now?
-			var usefulDate = video.creationDate; //video.lastModifiedDate ? video.lastModifiedDate : video.creationDate;
-			//console.log(usefulDate);
-			var fromNowString = moment(usefulDate).fromNow();
-			//console.log(fromNowString);
-			return fromNowString;
+		$scope.formatDate = function(date) {
+			return moment(date).fromNow();
 		}
 
-		$scope.formatExactDate = function(video) {
-			// What is the time difference compared to now?
-			var usefulDate = video.lastModifiedDate ? video.lastModifiedDate : video.creationDate;
-			//console.log(usefulDate);
-			var fromNowString = moment(usefulDate).format("YYYY-MM-DD HH:mm:ss");
-			//console.log(fromNowString);
-			return fromNowString;
+		$scope.formatExactDate = function(date) {
+			return moment(date).format("YYYY-MM-DD HH:mm:ss");;
 		}
 
 		$scope.upvoteReview = function(video) {

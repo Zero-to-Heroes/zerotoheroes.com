@@ -27,7 +27,9 @@ services.factory('Api', ['$resource', 'ENV',
 			SequencesQuery: $resource(ENV.apiEndpoint + url + 'sequences/query'),
 			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
 			Sports: $resource(ENV.apiEndpoint + url + 'sports/:sport', {sport: '@sport'}),
-			Activities: $resource(ENV.apiEndpoint + url + 'activities/:sport', {sport: '@sport'})
+			Activities: $resource(ENV.apiEndpoint + url + 'activities/:sport', {sport: '@sport'}),
+
+			Slack: $resource('https://hooks.slack.com/services/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', {})
 		};
 	}
 ]);

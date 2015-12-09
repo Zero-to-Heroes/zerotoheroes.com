@@ -19,6 +19,7 @@ import lombok.ToString;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
@@ -71,6 +72,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private String title;
 	private String description = "", text = "";
 	@JsonIgnore
+	@TextIndexed
 	private String fullTextSearchField;
 	private String author, lastModifiedBy;
 	private String authorId, lastModifiedById;
@@ -313,7 +315,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public void updateFullTextSearch() {
-		fullTextSearchField = title + " " + description;
+		fullTextSearchField = title.toLowerCase() + " ";
+		fullTextSearchField += description == null ? "" : description.toLowerCase();
 		for (Comment comment : getComments()) {
 			fullTextSearchField += " " + comment.getFullText();
 		}

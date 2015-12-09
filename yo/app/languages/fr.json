@@ -119,7 +119,7 @@
 			"subscribeTooltip": "Cliquez pour être notifié lorsqu'une nouvelle vidéo est postée",
 			"searchVideos": "Recherche",
 			"search": {
-				"title": "Titre",
+				"title": "Texte",
 				"wantedTags": "Tags que vous voulez voir",
 				"unwantedTags": "Tags que vous ne voulez pas voir",
 				"button": "Recherche"
@@ -131,6 +131,7 @@
 				"usefulTitle": "Nombre de commentaires que l'auteur a trouvés utiles",
 				"viewsTitle": "Nombre de vues",
 				"submitted": "Postée",
+				"modified": "Modifiée",
 				"by": "par"
 			}
 		},
@@ -213,7 +214,7 @@
 				"otherVideoHeadline": "Choisissez une vidéo existante",
 				"selectVideo": "Sélectionner",
 				"useSideHeadline": "Utiliser : ",
-				"useSideLeft": "la guache",
+				"useSideLeft": "la gauche",
 				"useSideCenter": "le centre",
 				"useSideRight": "la droite",
 				"playbackSpeed": "Vitesse",
@@ -306,10 +307,19 @@
 			}
 		}
 	},
+	"help": {
+		"title": "Le saviez-vous ?",
+		"commentVote": "Vous pouvez utiliser les flèches pour récompenser un commentaire que vous avez trouvé utile. Les commentaires avec le plus de votes apparaîtront au sommet de la liste, et seront vus en premiers par les autres utilisateurs",
+		"doubleScroll": "Si vous scrollez en laissant la souris dans la colonne de commentaire, cela fera défiler uniquement les commentaires, vous permettant de garder la vidéo visible en permanence",
+		"fineScrolling": "Vous pouvez faire défiler la vidéo image par image en utilisant la molette sur la barre de progression de la vidéo. Vous pouvez augmenter la vitesse de défilement en laissant la touche Majuscule appuyée en même temps"
+	},
+	
 	"news": {
 		"news1": "Le site est maintenant accessible en français ! Vous pouvez changer de langue avec le menu déroulant en haut à droite",
 		"news2": "Nous avons changé l'affichage de la page de revue vidéo pour utiliser toute la largeur de l'écran. Dites-nous ce que vous en pensez !",
-		"news3": "Les joueurs de HearthStone peuvent maintenant voir le détail des cartes d'un deck directement sur la page de revue vidéo"
+		"news3": "Les joueurs d'HearthStone peuvent maintenant voir le détail des cartes d'un deck directement sur la page de revue vidéo",
+		"news4": "Les joueurs d'HearthStone peuvent maintenant aussi utiliser le nom anglais pour chercher une carte",
+		"news5": "Vous pouvez maintenant aller voir le deck d'HearthStone d'origine en cliquant sur le titre lorsque le deck est affiché"
 	},
 	"tags": {
 		"squash": {
@@ -388,7 +398,9 @@
 			"Early game": "Début de partie",
 			"Endgame": "Fin de partie",
 			"Arena": "Arène",
-			"Deck": "Deck"
+			"Deck": "Deck",
+			"Mill": "Meule",
+			"Deathrattle": "Râle d'agônie"
 		},
 		"heroesofthestorm": {
 			"Map: Infernal Shrines": "Champ de Bataille: Sanctuaires Infernaux",

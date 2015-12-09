@@ -119,7 +119,7 @@
 			"subscribeTooltip": "Click to be notified when a new review is posted",
 			"searchVideos": "Search videos",
 			"search": {
-				"title": "Title",
+				"title": "Text",
 				"wantedTags": "Tags you want to see",
 				"unwantedTags": "Tags you don't want to see",
 				"button": "Search"
@@ -131,6 +131,7 @@
 				"usefulTitle": "Number of comments the author of the video marked as useful",
 				"viewsTitle": "Number of views",
 				"submitted": "Submitted",
+				"modified": "Updated",
 				"by": "by"
 			}
 		},
@@ -304,10 +305,18 @@
 			}
 		}
 	},
+	"help": {
+		"title": "Did you know?",
+		"commentVote": "You can use the up and down arrows to reward a comment you have found useful. Comments with the most upvotes will naturally emerge at the top of the list",
+		"doubleScroll": "If you scroll on the comment column it will scroll only the comments, letting you browse what everyone has said while keeping the video fully in view",
+		"fineScrolling": "You can scroll frame by frame by using the mousewheel on the time bar, letting you choose your timestamp with more precision. You can scroll more quickly if you press the Shift key at the same time"
+	},
 	"news": {
 		"news1": "Zero to Heroes has been localized in French. Use the dropdown in the top right to change your language",
 		"news2": "We've changed the video review layout to use the full width of the screen. Let us know what you think!",
-		"news3": "HearthStone players can now see the details of a deck card without having to go to an external site"
+		"news3": "HearthStone players can now see the details of a deck card without having to go to an external site",
+		"news4": "HearthStone players can now also use the English name when searching for a card",
+		"news5": "When displayed, the HearthStone deck title is now clickable to see the original deck"
 	},
 	"tags": {
 	}

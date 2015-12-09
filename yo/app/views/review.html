@@ -15,7 +15,7 @@
 
 				<vg-controls ng-class="{'controls-container-fullscreen': API.isFullScreen}">
 					<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
-					<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
+					<vg-time-display>{{ currentTime | date: config.deactivateControls && config.deactivateControls.millis ? 'mm:ss' : 'mm:ss:sss' }}</vg-time-display>
 					<vg-scrub-bar video-fine-time-control>
 						<vg-scrub-bar-current-time help-popup help-popup-key="fineScrolling" help-popup-active="0" help-popup-position="top"></vg-scrub-bar-current-time>
 					</vg-scrub-bar>

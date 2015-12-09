@@ -18,7 +18,20 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 	List<Review> findBySport(String sport);
 
 	//@formatter:off
-	@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
+	//@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
+	@Query("{ sport : ?0, "
+			+ "$and : ["
+			+ "		{ $or : [ { $where : '?1 == null' }, { $where : '?1.length == 0' }, { tags : { $all : ?1 } } ] }, "
+			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $nin : ?2 } } ] }"
+			+ "]"
+		+ "}"
+	)
+	//@formatter:on
+	Page<Review> listReviews(String sportCriteria, List<Tag> wantedTags, List<Tag> unwantedTags, Pageable pageable);
+
+	//@formatter:off
+	//@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
+	@Query("{ $text : { $search : ?0 },"
 			+ "sport : ?1, "
 			+ "$and : ["
 			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $all : ?2 } } ] }, "
@@ -27,7 +40,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 		+ "}"
 	)
 	//@formatter:on
-	Page<Review> listReviews(String title, String sportCriteria, List<Tag> wantedTags, List<Tag> unwantedTags,
+	Page<Review> listReviews(String text, String sportCriteria, List<Tag> wantedTags, List<Tag> unwantedTags,
 			Pageable pageable);
 
 }

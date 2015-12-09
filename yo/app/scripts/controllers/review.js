@@ -3,7 +3,6 @@
 angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 
 	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig) { 
 
-
 		$scope.API = null;
 		$scope.API2 = null;
 		$scope.sources = null;
@@ -90,17 +89,21 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.externalPlayer = undefined;
 					$log.debug('Deciding whether we need to use another player', $scope.review);
 					if ($scope.review.replay) {
-						$log.debug('loading replay file');
-						// Retrieve the XML replay file from s3
-						var replayUrl = ENV.videoStorageUrl + $scope.review.key;
-						$log.debug('Replay URL: ', replayUrl);
-						$.get(replayUrl, function(data) {
-							$scope.review.replayXml = data;
-							$log.debug('loaded xml', $scope.review.replayXml);
+						$scope.externalPlayer = true;
+						$timeout(function() {
+							$log.debug('loading replay file');
+							// Retrieve the XML replay file from s3
+							var replayUrl = ENV.videoStorageUrl + $scope.review.key;
+							$log.debug('Replay URL: ', replayUrl);
+							$.get(replayUrl, function(data) {
+								$scope.review.replayXml = data;
+								$log.debug('loaded xml', $scope.review.replayXml);
 
-							// Init the external player
-							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review);
-						})
+								// Init the external player
+								$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review);
+								$log.debug('externalPlayer', $scope.review.replay, $scope.externalPlayer);
+							})
+						});
 					}
 
 					// $log.log('review loaded ', $scope.review)
@@ -113,6 +116,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType}];
 					$scope.sources2 = []
 
+				},
+				function(error) {
+					$log.error('Could not retrieve review', $routeParams.reviewId, error, $routeParams, $location);
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -120,6 +126,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				for (var i = 0; i < data.length; i++) {
 					$scope.coaches.push(data[i]);
 				};
+			}, function(error) {
+				$log.error('Could not retrieve coaches for review', $routeParams.reviewId, error, $routeParams, $location);
 			});
 		}
 
@@ -333,6 +341,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.prepareCanvasForUpload($scope.review, $scope.newComment);
 			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
 				function(data) {
+					$scope.showHelp = false;
 					$scope.newComment = {};
 					$scope.commentForm.$setPristine();
 					$scope.review.comments = data.comments;
@@ -468,6 +477,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				//$log.log('updating review to ', newReview);
 				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview, 
 					function(data) {
+						$scope.showHelp = false;
 		  				$scope.review.canvas = data.canvas;
 		  				$scope.review.plugins = data.plugins;
 		  				//$log.log('plugins', $scope.review.plugins);

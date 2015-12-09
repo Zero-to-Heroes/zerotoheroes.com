@@ -147,6 +147,10 @@
 	text-align: right;
 }
 
+.info-column .date-information span {
+	display: block;
+}
+
 /* Don't show the name input if it appears on the navbar */
 @media screen and (min-width: 600px) {
 	.thumbnails {

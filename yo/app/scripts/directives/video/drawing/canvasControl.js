@@ -94,7 +94,7 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 				$scope.clearTemporaryCanvas = function() {
 					var fullCanvas = {};
 					angular.forEach($scope.review.canvas, function(value, key) {
-						if (!key.startsWith('tmp')) {
+						if (key && !key.startsWith('tmp')) {
 							fullCanvas[key] = value;
 						}
 					})
@@ -136,7 +136,7 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 					var newCanvas = {};
 					angular.forEach(review.canvas, function(value, key) {
 						//$log.log('going through all temp canvs', key);
-						if (key.startsWith('tmp')) {
+						if (key && key.startsWith('tmp')) {
 							newCanvas[key] = value;
 							//$log.log('Adding ' + key);
 						}

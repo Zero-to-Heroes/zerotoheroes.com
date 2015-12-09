@@ -74,6 +74,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					}
 					//window.prerenderReady = true;
 					//$log.log('review canvas', $scope.review.canvas);
+				},
+				function(error) {
+					$log.error('Could not retrieve review', $routeParams.reviewId, error, $routeParams, $location);
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -81,6 +84,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				for (var i = 0; i < data.length; i++) {
 					$scope.coaches.push(data[i]);
 				};
+			}, function(error) {
+				$log.error('Could not retrieve coaches for review', $routeParams.reviewId, review, error, $routeParams, $location);
 			});
 		}
 

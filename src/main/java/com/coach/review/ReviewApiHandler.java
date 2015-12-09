@@ -141,6 +141,8 @@ public class ReviewApiHandler {
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		Review review = reviewRepo.findById(id);
 
+		if (review == null) return new ResponseEntity<Review>(review, HttpStatus.NOT_FOUND);
+
 		// Increase the view count
 		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {
 			review.incrementViewCount();

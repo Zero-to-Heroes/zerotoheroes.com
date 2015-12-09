@@ -3,8 +3,6 @@ package com.coach.core.notification;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 
-import javax.servlet.http.HttpServletRequest;
-
 import lombok.extern.slf4j.Slf4j;
 import net.gpedro.integrations.slack.SlackApi;
 import net.gpedro.integrations.slack.SlackAttachment;
@@ -14,6 +12,7 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.WebRequest;
 
 import com.coach.coaches.Coach;
 import com.coach.core.security.User;
@@ -284,8 +283,12 @@ public class SlackNotifier {
 		});
 	}
 
-	public void notifyException(final HttpServletRequest request, final Throwable ex) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+	public void notifyException(final WebRequest request, final Throwable ex) {
+		log.info("Sending exception to Slack " + ex);
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.error("Exception! " + request + " " + ex);
+			return;
+		}
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -295,7 +298,7 @@ public class SlackNotifier {
 
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("danger");
-				attach.setText("Initial request was " + request.getServletPath() + " and triggered the exception: "
+				attach.setText("Initial request was " + request.getContextPath() + " and triggered the exception: "
 						+ ex.getMessage() + "\n" + ExceptionUtils.getFullStackTrace(ex));
 				attach.setFallback("placeholder fallback");
 

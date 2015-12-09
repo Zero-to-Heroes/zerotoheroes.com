@@ -36,7 +36,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 	var loggingExceptions = [
 		// Coming from videogular, no way to handle it properly: 
 		// https://github.com/videogular/videogular/blob/364e004994edbdcab86801de5a39c745afd6d704/app/scripts/com/2fdevs/videogular/directives/vg-media.js
-		'TypeError: undefined is not an object'
+		/.*sources\[0\]\.src.*/
 	]
 
 	$provide.decorator( '$log', [ '$delegate', '$injector', function( $delegate, $injector )
@@ -53,7 +53,8 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 			var shouldLog = true;
 			try {
 				loggingExceptions.forEach(function(ex) {
-					shouldLog = shouldLog && logArgs[0].indexOf(ex) == -1;
+					var match = logArgs[0].match(ex);
+					shouldLog = shouldLog && !match;
 				})
 			} catch(e) {}
 			if (shouldLog) 

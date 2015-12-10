@@ -58,7 +58,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 				})
 			} catch(e) {}
 			if (shouldLog) 
-				notify("Javascript error: " + logArgs[0], "user: " + JSON.stringify(User.getUser()), "location: " + JSON.stringify($location), "initial args: " + JSON.stringify(arguments));
+				notify("Javascript error: " + logArgs[0], "user: " + JSON.stringify(User.getUser()), "location: " + JSON.stringify($location), "initial args: " + JSON.stringify(logArgs));
 			
 			// Call the original with the output prepended with formatted timestamp
 			debugFn.apply(null, logArgs)

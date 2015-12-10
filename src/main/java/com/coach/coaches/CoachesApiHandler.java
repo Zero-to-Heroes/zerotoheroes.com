@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.coach.core.notification.SlackNotifier;
 import com.coach.review.Review;
 import com.coach.review.Review.Sport;
 import com.coach.review.ReviewRepository;
@@ -26,10 +27,15 @@ public class CoachesApiHandler {
 	@Autowired
 	ReviewRepository reviewRepo;
 
+	@Autowired
+	SlackNotifier slackNotifier;
+
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<List<Coach>> getCoachesForReview(@PathVariable("reviewId") final String id) {
 		// log.debug("Retrieving coaches");
 		Review review = reviewRepo.findById(id);
+		if (review == null) return new ResponseEntity<List<Coach>>((List<Coach>) null, HttpStatus.NOT_FOUND);
+
 		// log.debug("For review id: " + id);
 		Sport sport = review.getSport();
 		// log.debug("And sport " + sport + ".");

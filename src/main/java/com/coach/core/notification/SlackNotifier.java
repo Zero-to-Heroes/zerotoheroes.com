@@ -3,8 +3,6 @@ package com.coach.core.notification;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 
-import javax.servlet.http.HttpServletRequest;
-
 import lombok.extern.slf4j.Slf4j;
 import net.gpedro.integrations.slack.SlackApi;
 import net.gpedro.integrations.slack.SlackAttachment;
@@ -14,6 +12,7 @@ import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.WebRequest;
 
 import com.coach.coaches.Coach;
 import com.coach.core.security.User;
@@ -284,24 +283,35 @@ public class SlackNotifier {
 		});
 	}
 
-	public void notifyException(final HttpServletRequest request, final Throwable ex) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+	public void notifyException(final WebRequest request, final Throwable ex) {
+		log.info("Sending exception to Slack " + ex);
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.error("Exception! " + request + " " + ex);
+			return;
+		}
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
 			public String call() throws Exception {
 				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+						"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("danger");
-				attach.setText("Initial request was " + request.getServletPath() + " and triggered the exception: "
-						+ ex.getMessage() + "\n" + ExceptionUtils.getFullStackTrace(ex));
-				attach.setFallback("placeholder fallback");
+				SlackAttachment requestAttach = new SlackAttachment();
+				requestAttach.setColor("danger");
+				requestAttach.setText("Initial request was " + request.getDescription(true)
+						+ " and triggered the exception: " + ex.getMessage());
+				requestAttach.setFallback("placeholder fallback");
+
+				SlackAttachment exAttach = new SlackAttachment();
+				exAttach.setColor("danger");
+				exAttach.setTitle("StackTrace for exception: ");
+				exAttach.setText(ExceptionUtils.getFullStackTrace(ex));
+				exAttach.setFallback("placeholder fallback");
 
 				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("TEST Exception thrown in prod: " + ex.getClass());
+				message.addAttachments(requestAttach);
+				message.addAttachments(exAttach);
+				message.setText("Server exception: " + ex.getClass());
 
 				api.call(message);
 				return null;

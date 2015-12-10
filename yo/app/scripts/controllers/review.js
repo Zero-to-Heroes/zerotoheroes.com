@@ -7,38 +7,48 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.API2 = null;
 		$scope.sources = null;
 		$scope.sources2 = null;
-		$scope.thumbnail = null;
+		$scope.canvasState = {
+			canvasIdIndex: 0,
+			canvasId: 'tmp0',
+			drawingCanvas: false
+		};
+
 		$scope.newComment = {};
 		$scope.coaches = [];
 		$scope.selectedCoach;
 		$scope.User = User;
 		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
 		$scope.config = SportsConfig[$scope.sport];
-		$scope.canvasState = {
-			canvasIdIndex: 0,
-			canvasId: 'tmp0',
-			drawingCanvas: false
-		}
-		/*$scope.canvasIdIndex = 0;
-		$scope.canvasId = 'tmp' + $scope.canvasIdIndex;
-		$scope.drawingCanvas = false;*/
-		var plugins = $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
+
+		$scope.temp = $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
+		var definedPlugins = 0;
 		$scope.plugins = [];
-		if (plugins) {
-			angular.forEach(plugins, function(plugin) {
+		$scope.pluginNames = [];
+		if ($scope.temp) {
+			definedPlugins = $scope.temp.length;
+			$log.debug('Defined plugins', definedPlugins, $scope.temp);
+			angular.forEach($scope.temp, function(plugin) {
+				$log.debug('prepaing to load plugin', plugin)
+				if (plugin.dependencies) definedPlugins += plugin.dependencies.length;
 				SportsConfig.loadPlugin($scope.plugins, plugin);
 			})
 		}
 
 		$scope.$watchCollection('plugins', function(newValue, oldValue) {
-			if (!plugins || newValue.length == plugins.length) {
-				$log.log('all plugins loaded', newValue, plugins);
+			if (!$scope.temp || newValue.length == definedPlugins) {
+				$log.log('all plugins loaded', newValue, $scope.temp);
 				$scope.initReview();
+				$scope.plugins.forEach(function(plugin) {
+					if (plugin) {
+						console.log('adding style', plugin.name);
+						$scope.pluginNames.push(plugin.name);
+					}
+				})
 			}
 		})
 
 		$scope.initReview = function() {
-			//$log.log('initializing review');
+			$log.debug('initializing review');
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data;
@@ -72,8 +82,43 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					if (!$scope.review.canvas) {
 						$scope.review.canvas = {};
 					}
-					//window.prerenderReady = true;
-					//$log.log('review canvas', $scope.review.canvas);
+
+					// Initialize the plugins to replay different formats. Could be done only if necessary though
+					// TODO: make it clearner to decide if the review is to be played by the standard player or a custom one
+					// Controls default to the ones defined in scope
+					$scope.externalPlayer = undefined;
+					$log.debug('Deciding whether we need to use another player', $scope.review);
+					if ($scope.review.replay) {
+						$scope.externalPlayer = true;
+						$timeout(function() {
+							$log.debug('loading replay file');
+							// Retrieve the XML replay file from s3
+							var replayUrl = ENV.videoStorageUrl + $scope.review.key;
+							$log.debug('Replay URL: ', replayUrl);
+							$.get(replayUrl, function(data) {
+								$scope.review.replayXml = data;
+								$log.debug('loaded xml', $scope.review.replayXml);
+
+								// Init the external player
+								$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review);
+								$log.debug('externalPlayer', $scope.review.replay, $scope.externalPlayer);
+							})
+						});
+					}
+
+					// $log.log('review loaded ', $scope.review)
+					// wait for review to be properly applied to child components
+					$timeout(function() {
+						$scope.updateVideoInformation($scope.review);
+					});
+
+					var fileLocation = ENV.videoStorageUrl + $scope.review.key;
+					$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType}];
+					$scope.sources2 = []
+
+				},
+				function(error) {
+					$log.error('Could not retrieve review', $routeParams.reviewId, error, $routeParams, $location);
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -81,6 +126,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				for (var i = 0; i < data.length; i++) {
 					$scope.coaches.push(data[i]);
 				};
+			}, function(error) {
+				$log.error('Could not retrieve coaches for review', $routeParams.reviewId, error, $routeParams, $location);
 			});
 		}
 
@@ -92,37 +139,19 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.API = API;
 			$scope.API.setVolume(1);
 			// Load the video
-			$timeout(function() { 
-				if (!$scope.review) {
-					//$log.log('waiting until review is loaded');
-					$scope.onPlayerReady(API);
-					return;
-				}
-				$scope.updateVideoInformation($scope.review);
-				var fileLocation = ENV.videoStorageUrl + $scope.review.key;
-				$scope.thumbnail = $scope.review.thumbnail ? ENV.videoStorageUrl + $scope.review.thumbnail : null;
-				$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType}];
-				$scope.sources2 = []
-				/*angular.forEach($scope.review.reviewVideoMap, function(key, value) {
-					fileLocation = ENV.videoStorageUrl + key;
-					$scope.sources2.push({src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType});
-				});*/
-				$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
-					$scope.API.mediaElement.on('canplay', function() {
-					$log.log('can play player1');
-					$scope.player1ready = true;
-					$scope.$apply();
-				});
-			}, 0);
+			$scope.API.mediaElement.on('canplay', function() {
+				$log.log('can play player1');
+				$scope.player1ready = true;
+				$scope.$apply();
+			});
 		};
 
 		$scope.onSecondPlayerReady = function($API) {
 			//$log.log('onSecondPlayerReady');
 			$scope.API2 = $API;
 			$scope.API2.setVolume(0);
-			$scope.media = $scope.API2.mediaElement;
 
-			$scope.media.on('canplay', function() {
+			$scope.API2.mediaElement.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {
 					$log.log('can play player2');
 					$scope.player2ready = true;
@@ -364,46 +393,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		//===============
-		// Tag system
-		//===============
-		/*$scope.$watch('review.editing', function (newVal, oldVal) {
-			// edit mode
-			if (newVal) {
-				$scope.tagsPlaceholder = 'Add a tag';
-			}
-			// if not edit mode and there are no tags
-			else if ($scope.review && (!$scope.review.tags || $scope.review.tags.length == 0)) {
-				$scope.tagsPlaceholder = 'No tags defined';
-			}
-			// Fallback to default empty value
-			else {
-				$scope.tagsPlaceholder = '';
-			}
-		});
-
-		$scope.autocompleteTag = function($query) {
-			var validTags = $scope.allowedTags.filter(function (el) {
-				return ~el.text.toLowerCase().indexOf($query);
-			});
-			return validTags.sort(function(a, b) {
-    			var tagA = a.text.toLowerCase();
-    			var tagB = b.text.toLowerCase();
-    			if (~tagA.indexOf(':')) {
-    				if (~tagB.indexOf(':')) {
-    					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
-    				}
-    				return 1;
-    			}
-    			else {
-    				if (~tagB.indexOf(':')) {
-    					return -1;
-    				}
-    				return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
-    			}
-			});;
-		}*/
-
-		//===============
 		// Reputation
 		//===============
 		$scope.upvoteReview = function() {
@@ -586,8 +575,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Triggering the various plugins
 			if ($scope.plugins) {
 				angular.forEach($scope.plugins, function(plugin) {
-					if (plugin) {
-						//$log.log('executing plugin for text', plugin, prettyResult);
+					if (plugin && !plugin.player) {
+						// $log.log('executing plugin for text', plugin, prettyResult);
 						prettyResult = SportsConfig.executePlugin($scope, $scope.review, plugin, prettyResult);
 					}
 				})
@@ -658,6 +647,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.goToTimestamp = function(timeString) {
+
+			if ($scope.externalPlayer) {
+				$scope.externalPlayer.goToTimestamp(timeString);
+				return;
+			}
+
 			$log.log('going to timestamp', timeString);
 			// Player1 already has a loaded source
 			$scope.player1ready = true;

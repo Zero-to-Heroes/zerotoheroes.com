@@ -37,7 +37,11 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					isSport: true,
 					allowDoubleSpeed: true,
 					plugins: {
-						plugins: ['parseCardsText', 'parseDecks'],
+						plugins: [
+							{name: 'parseCardsText'}, 
+							{name: 'parseDecks'}, 
+							{name: 'joustjs', player: true, format: ['text/plain', 'text/xml']}
+						],
 						customCss: 'hearthstone.css'
 					},
 					deactivateControls: {
@@ -58,7 +62,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					isSport: true,
 					allowDoubleSpeed: true,
 					plugins: {
-						plugins: ['parseCardsTextHots'],
+						plugins: [{name: 'parseCardsTextHots'}],
 						customCss: 'hots.css'
 					},
 					landing: {
@@ -110,35 +114,82 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			//$log.log('Executing lpugin', plugin, target);
 			//var fn = $parse(plugin);
 			//return fn(scope, target);
-			return window[plugin](review, target);
+			// console.log('plguin', plugin);
+			if (!plugin || !plugin.name) return target;
+
+			return window[plugin.name].execute(review, target);
 		}
 
 		service.attachPlugin = function(scope, plugin, element) {
-			//console.log('trying to attach plugin', plugin, element);
-			//console.log(window[plugin]);
-			//console.log(window[plugin + '_attach']);
-			if (window[plugin + '_attach']) {
-				window[plugin + '_attach'](element);
+			// console.log('trying to attach plugin', plugin, element);
+			// console.log(window[plugin]);
+			// console.log(window[plugin + '_attach']);
+			if (plugin && plugin.name && window[plugin.name].attach) {
+				window[plugin.name].attach(element);
 			}
 		}
 
 		service.detachPlugin = function(scope, plugin, element) {
-			if (window[plugin + '_detach']) {
-				window[plugin + '_detach'](element);
+			// console.log('trying to detach plugin', plugin, element);
+			if (plugin && plugin.name && window[plugin.name].detach) {
+				window[plugin.name].detach(element);
 			}
 		}
 
-		service.loadPlugin = function(plugins, plugin) {
-			console.log('loading plugin', plugin);
+		service.loadPlugin = function(plugins, pluginObj) {
+			var plugin = pluginObj.name;
+			$log.debug('loading plugin', plugin);
 			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js').then(function() {
-				plugins.push(plugin);
+				plugins.push(pluginObj);
+				// Load dependencies
+				if (pluginObj.dependencies) {
+					pluginObj.dependencies.forEach(function(dep) {
+						angularLoad.loadScript('/plugins/' + plugin + '/' + dep).then(function() {
+							plugins.push(dep);
+						}).catch(function() {
+							plugins.push(undefined);
+							$log.error('could not load dependency', dep);
+						});
+					})
+				}
 			}).catch(function() {
 				plugins.push(undefined);
-				console.error('could not load plugin', plugin );
+				$log.error('could not load plugin', plugin );
 			});
 			angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
-				//console.log('loaded css');
+				//console.log('loaded css', plugin);
 			});
+		}
+
+		service.initPlayer = function(config, review) {
+			if (!config || !config.plugins || !config.plugins.plugins) return false;
+
+			var externalPlayer;
+			config.plugins.plugins.forEach(function(plugin) {
+				if (plugin.player) {
+					externalPlayer = window[plugin.name];
+					externalPlayer.init(plugin, review);
+				}
+			});
+
+			return externalPlayer;
+		}
+
+		service.getAdditionalSupportedTypes = function(sport) {
+			var supportedTypes = [];
+			$log.debug('Getting supported types for ', sport, this[sport]);
+			if (sport && this[sport] && this[sport].plugins && this[sport].plugins.plugins) {
+				this[sport].plugins.plugins.forEach(function(plugin) {
+					if (plugin.format) {
+						plugin.format.forEach(function(format) {
+							supportedTypes.push(format);
+						})
+					}
+				})
+			}
+			$log.debug('Supported types are ', supportedTypes);
+
+			return supportedTypes;
 		}
 
 		return service;

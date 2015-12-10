@@ -35,10 +35,11 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		}
 
 		$scope.sportConfig = SportsConfig[$scope.sport];
-		var plugins = SportsConfig[$scope.sport] && SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
+		$scope.tempPlugins = SportsConfig[$scope.sport] && SportsConfig[$scope.sport].plugins ? SportsConfig[$scope.sport].plugins.plugins : undefined;
 		$scope.plugins = [];
-		if (plugins) {
-			angular.forEach(plugins, function(plugin) {
+		if ($scope.tempPlugins) {
+			angular.forEach($scope.tempPlugins, function(plugin) {
+				$log.debug('Prepating to load plugin in upload.js');
 				SportsConfig.loadPlugin($scope.plugins, plugin);
 			})
 		}
@@ -75,13 +76,25 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			})
 		};
 
-		var supportedFileTypes = ['video/mp4', 'video/x-matroska', 'video/webm', 'video/ogg'];
+		var videoTypes = ['video/mp4', 'video/x-matroska', 'video/webm', 'video/ogg'];
+		var supportedFileTypes;
 		
 		$scope.updateSourceWithFile = function(fileObj) {
+			$scope.useFile = true;
 			$scope.hasUnsupportedFormatError = false;
-			//$log.log('new file selected', fileObj);
+			$log.log('new file selected', fileObj);
 
 			var type = fileObj.type;
+
+			supportedFileTypes = angular.copy(videoTypes);
+
+			// Add supported types based on sports plugins
+			var additionalTypes = SportsConfig.getAdditionalSupportedTypes($scope.sport);
+			additionalTypes.forEach(function(type) {
+				$log.debug('Adding type', type);
+				supportedFileTypes.push(type);
+			})
+			$log.log('Supported types', supportedFileTypes);
 
 			if (supportedFileTypes.indexOf(type) == -1) {
 				$scope.hasUnsupportedFormatError = true;
@@ -89,17 +102,26 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			}
 
 			var objectURL = window.URL.createObjectURL(fileObj);
-			// Hack for mkv, not supported properly by videogular
-			if (type  == 'video/x-matroska') {
-				//$log.log('hacking type');
-				type = 'video/mp4';
-			}
-			$scope.temp = fileObj;
-			$scope.sources =  [
-				{src: $sce.trustAsResourceUrl(objectURL), type: type}
-			];
 			$scope.review.file = objectURL;
 			$scope.review.fileType = fileObj.type;
+			$scope.temp = fileObj;
+
+			if (videoTypes.indexOf(type) != -1) {
+				$log.debug('Video format detected', type);
+				// Hack for mkv, not supported properly by videogular
+				if (type  == 'video/x-matroska') {
+					//$log.log('hacking type');
+					type = 'video/mp4';
+				}
+				$scope.sources =  [
+					{src: $sce.trustAsResourceUrl(objectURL), type: type}
+				];
+			}
+			else {
+				$log.debug('Non video format detected, masking video player', type);
+				$scope.useVideo = false;
+				$scope.review.replay = true;
+			}
 		}
 
 		$scope.onSourceChanged = function(sources) {
@@ -232,7 +254,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			// $scope.review.canvas = $scope.review.tempCanvas;
 			//$log.log('After prep, canvas are', $scope.review.canvas);
 
-			//$log.log('Setting S3 config');
+			$log.debug('Setting S3 config');
 			$analytics.eventTrack('upload.start', {
 				category: 'upload'
 			});
@@ -248,7 +270,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$scope.review.temporaryKey = ENV.folder + '/' + fileKey;
 
 			// Starting the upload
-			$log.log('uploading', $scope.review);
 			$scope.uploadInProgress = true;
 
 			// Scrolling to the bottom of the screen
@@ -256,6 +277,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 			$document.scrollToElementAnimated(bottom, 0, 1);
 			
 			// Initializing upload
+			$log.debug('uploading', $scope.file);
 			var upload = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
 			var params = { Key: fileKey, ContentType: $scope.file.type, Body: $scope.file };
 			/*var upload = new AWS.S3.ManagedUpload({
@@ -299,7 +321,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 					$log.log('review created, transcoding ', data);
 					$scope.review.id = data.id;
 					retrieveCompletionStatus();
-					if (data.text.match(timestampOnlyRegex)) {
+					if (data.text && data.text.match(timestampOnlyRegex)) {
 						$log.log('incrementing timestamps after comment upload');
 						User.incrementTimestamps();
 					}

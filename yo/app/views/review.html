@@ -6,8 +6,8 @@
 		<div class="content"></div>
 	</div>
 
-	<div class="background-white" ng-class="plugins">
-		<div class="videogular-container multi-player" ng-show="review.key">
+	<div class="background-white">
+		<div class="videogular-container multi-player" ng-show="review.key" ng-hide="review.replay">
 			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
 				<div class="first-player-container">
 					<vg-media vg-src="sources" class="first-player" ng-class="playerControls.firstPlayerClass"></vg-media>
@@ -44,8 +44,10 @@
 				<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!canvasState.drawingCanvas"></vg-overlay-play>
 			</videogular>
 		</div>
+		
+		<div ng-show="review.replay && externalPlayer" id="externalPlayer" class="external-player"></div>
 
-		<div>
+		<div ng-class="pluginNames">
 			<form class="container-fluid video-details" name="videoInformationForm">
 				<div class="row">
 					<div class="col-md-1 reputation">
@@ -111,7 +113,7 @@
 	</div>
 </div>
 
-<div class="video-comment col-md-7" ng-class="plugins">
+<div class="video-comment col-md-7" ng-class="pluginNames">
 	<div class="background-white show-x">
 		<div class="background-container">
 			<div scrollable="{{useVideo}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">

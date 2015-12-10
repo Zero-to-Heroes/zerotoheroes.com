@@ -39,6 +39,7 @@ import com.coach.plugin.Plugin;
 import com.coach.reputation.ReputationAction;
 import com.coach.reputation.ReputationUpdater;
 import com.coach.review.Review.Sport;
+import com.coach.review.replay.ReplayProcessor;
 import com.coach.review.video.transcoding.Transcoder;
 import com.coach.sport.SportManager;
 import com.coach.subscription.SubscriptionManager;
@@ -67,6 +68,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	Transcoder transcoder;
+
+	@Autowired
+	ReplayProcessor replayProcessor;
 
 	@Autowired
 	ReputationUpdater reputationUpdater;
@@ -141,6 +145,8 @@ public class ReviewApiHandler {
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		Review review = reviewRepo.findById(id);
 
+		if (review == null) return new ResponseEntity<Review>(review, HttpStatus.NOT_FOUND);
+
 		// Increase the view count
 		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {
 			review.incrementViewCount();
@@ -213,8 +219,11 @@ public class ReviewApiHandler {
 
 		// Start transcoding
 		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())) {
-			// log.debug("Transcoding video");
-			transcoder.transcode(review.getId());
+			if (!StringUtils.isNullOrEmpty(review.getReplay()))
+				replayProcessor.processReplayFile(review);
+			else
+				// log.debug("Transcoding video");
+				transcoder.transcode(review.getId());
 		}
 
 		// log.debug("Transcoding started, returning with created review: " +

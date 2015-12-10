@@ -65,6 +65,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private Date sortingDate;
 	// The key of the associated video / file
 	private String key, temporaryKey;
+	// The replay file content (or key to where it is stored?)
+	private String replay;
 	private String thumbnail;
 	private String fileType;
 	private Sport sport;

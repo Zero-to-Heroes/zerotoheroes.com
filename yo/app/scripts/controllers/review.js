@@ -482,7 +482,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				sport: $scope.review.sport.key,
 				title: $scope.review.title,
 				tags: $scope.review.tags,
-				canvas: $scope.review.tempCanvas
+				canvas: $scope.review.tempCanvas,
+				language: $scope.review.language
 			}
 			if ($scope.videoInformationForm.$valid) {
 				//$log.log('updating review to ', newReview);
@@ -528,6 +529,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.hideContextualInfo = function() {
 			$(".contextual-information").hide();
+		}
+
+		$scope.editLanguage = function(lang) {
+			$scope.review.language = lang;
 		}
 
 		//===============

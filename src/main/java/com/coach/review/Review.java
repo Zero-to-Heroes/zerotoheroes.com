@@ -22,6 +22,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
 import com.amazonaws.util.StringUtils;
+import com.coach.coaches.Coach.Language;
 import com.coach.core.security.User;
 import com.coach.reputation.Reputation;
 import com.coach.subscription.HasSubscribers;
@@ -67,6 +68,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private String thumbnail;
 	private String fileType;
 	private Sport sport;
+	private String language = "en";
 	private String title;
 	private String description = "", text = "";
 	@JsonIgnore

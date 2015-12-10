@@ -167,7 +167,7 @@
 			"confirm": "Modifier votre mot de passe"
 		},
 		"formattingHelp": {
-			"markdownText": "Vous pouvez utiliser la <a href=\"https://fr.wikipedia.org/wiki/Markdown\" target=\"_blank\">syntaxe Markdown</a> pour formatter votre texte (mettre en gras, en italiques, etc)",
+			"markdownText": "Vous pouvez utiliser la <a href=\"https://letchap.github.io/downloads/memo_markdown_letchap.pdf\" target=\"_blank\">syntaxe Markdown</a> pour formatter votre texte (mettre en gras, en italiques, etc)",
 			"advancedIntro": "Vous pouvez également : ",
 			"hearthstoneCard": "Ajouter un lien vers une carte en utilisant <code>[[Le Nom De La Carte]]</code>. Cela déclenchera l'auto-complétion, et vous permettra d'ajouter un lien qui affichera la carte lorsque vous laissez la souris dessus",
 			"hearthstoneDeck": "Ajouter un lien vers un deck hébergé sur HearthPwn.com en utilisant <code>[http://www.hearthpwn.com/decks/id_du_deck]</code>. Cela créera un lien qui affichera la liste de cartes au passage de la souris (et si vous avez besoin de decks hébergés ailleurs, dites-le nous sur les forums)",
@@ -411,9 +411,11 @@
 			"Map: BlackHeart's Bay": "Champ de Bataille: Baie de Coeur-Noir",
 			"Map: Cursed Hollow": "Champ de Bataille: Val Maudit",
 			"Map: Dragon Shire": "Champ de Bataille: Comté du Dragon",
-			"Map: Haunted Mines": "CHamp de Bataille: Mines Hantées",
+			"Map: Haunted Mines": "Champ de Bataille: Mines Hantées",
+			"Map: Towers of Doom": "Champ de bataille: Tours du Destin",
 			"Hero League": "Ligue Héroïque",
 			"Quick Match": "Partie Rapide",
+			"Team Fight": "Combat en Equipe",
 			"Team League": "Ligue par Equipes",
 			"Rank 1-10": "Rang 1-10",
 			"Rank 11-20": "Rang 11-20",
@@ -469,6 +471,7 @@
 			"Hero: Gazlowe": "Héros: Gazleu",
 			"Hero: Abathur": "Héros: Abathur",
 			"Hero: Sgt. Hammer": "Héros: Sgt. Marteau",
+			"Hero: Greymane": "Héros: Grisetête",
 			"Pro": "Pro"
 		},
 		"leagueoflegends": {

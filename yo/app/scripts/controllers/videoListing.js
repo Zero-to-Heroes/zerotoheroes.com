@@ -99,6 +99,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				$scope.updateUrl(params);
 			});
 
+
 			Api.Sports.get({sport: $scope.sport}, function(data) {
 				$scope.subscribers = data.subscribers;
 			});

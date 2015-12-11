@@ -8,6 +8,7 @@ var parseCardsText = {
 		var lang = window.localStorage.language;
 		// Parsing card names
 		if (matches) {
+			console.log('parsing cards', text);
 			matches.forEach(function(match) {
 				var cardName = match.substring(2, match.length - 2);
 				var card = parseCardsText.getCard(cardName);
@@ -46,18 +47,23 @@ var parseCardsText = {
 	},
 
 	attach: function(element) {
-		//console.log('attaching to element', element);
+		console.log('attaching to element', element);
 		element.textcomplete([{
 			match: /\[\[[a-zA-Z\s]{3,}$/,
 			search: function (term, callback, match) {
 				callback($.map(parseCardsText.jsonDatabase, function(card) {
 					var localizeName = parseCardsText.localizeName(card, window.localStorage.language);
 					var res = S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) === 0;
+					// var debug = false;
+					// if (res) debug = true;
 					// add search on english term
 					res = res || card.name.toLowerCase().indexOf(term.substring(2).toLowerCase()) === 0;
+					// if (debug) console.log('res2', term, localizeName, res);
 					// Keep only valid cards
 					res = res && card.cardImage && card.type != 'Hero';
+					// if (debug) console.log('res3', term, localizeName, res);
 					res = res ? card : null
+					// if (debug) console.log('res4', term, localizeName, res);
 					return res;
 				}))
 				$(function () {
@@ -65,7 +71,7 @@ var parseCardsText = {
 					$('.tooltip.parse-cards-text').hide();
 				})
 				$(function () {
-					// console.log('loading tooltips', $('[data-toggle="tooltip"]'));
+					console.log('loading tooltips', $('[data-toggle="tooltip"]'));
 					$('[data-toggle="tooltip"]').tooltip()
 				})
 			},
@@ -135,6 +141,7 @@ var parseCardsText = {
 		{
 			"artist": "Chris Rahn",
 			"attack": 3,
+			"cardImage": "EX1_066.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Alliance",
@@ -166,6 +173,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dan Scott",
+			"cardImage": "CS2_041.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -198,6 +206,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "HERO_09.png",
 			"collectible": true,
 			"faction": "Neutral",
 			"fr": {
@@ -213,6 +222,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Wei Wang",
+			"cardImage": "NEW1_031.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "You could summon Misha, Leokk, or Huffer!  Huffer is more trouble than he's worth.",
@@ -231,6 +241,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Howard Lyon",
+			"cardImage": "CS2_025.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -250,6 +261,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dave Berggren",
+			"cardImage": "CS2_023.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -269,6 +281,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Warren Mahy",
+			"cardImage": "EX1_277.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -291,6 +304,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Luca Zontini",
+			"cardImage": "DS1_185.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -311,6 +325,7 @@ var parseCardsText = {
 		{
 			"artist": "Stefan Kopinski",
 			"attack": 5,
+			"cardImage": "CS2_112.png",
 			"collectible": true,
 			"cost": 5,
 			"durability": 2,
@@ -331,6 +346,7 @@ var parseCardsText = {
 		{
 			"artist": "Steve Ellis",
 			"attack": 4,
+			"cardImage": "CS2_155.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Alliance",
@@ -351,6 +367,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "CS2_102.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -367,6 +384,7 @@ var parseCardsText = {
 		{
 			"artist": "Brian Huang",
 			"attack": 3,
+			"cardImage": "CS2_080.png",
 			"collectible": true,
 			"cost": 5,
 			"durability": 4,
@@ -386,6 +404,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Glenn Rane",
+			"cardImage": "CS2_076.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -405,6 +424,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "GAME_002.png",
 			"cost": 0,
 			"fr": {
 				"name": "Avatar de la pièce"
@@ -419,6 +439,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Michael Sutfin",
+			"cardImage": "CS2_072.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -448,6 +469,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Lucas Graciano",
+			"cardImage": "CS2_092.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -478,6 +500,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan Boros",
+			"cardImage": "CS2_087.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -510,6 +533,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Brereton",
 			"attack": 3,
+			"cardImage": "CS2_172.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Horde",
@@ -528,6 +552,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Luca Zontini",
+			"cardImage": "CS2_046.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -562,6 +587,7 @@ var parseCardsText = {
 		{
 			"artist": "Jakub Kasper",
 			"attack": 2,
+			"cardImage": "CS2_173.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -584,6 +610,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CS2_boar.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -600,6 +627,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Cavotta",
 			"attack": 5,
+			"cardImage": "CS2_187.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Horde",
@@ -622,6 +650,7 @@ var parseCardsText = {
 		{
 			"artist": "Brian Despain",
 			"attack": 6,
+			"cardImage": "CS2_200.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "\"ME HAVE GOOD STATS FOR THE COST\"",
@@ -649,6 +678,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "CS2_103.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -691,6 +721,7 @@ var parseCardsText = {
 		{
 			"artist": "Mauro Cascioli",
 			"attack": 4,
+			"cardImage": "CS2_182.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -722,6 +753,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dany Orizio",
+			"cardImage": "CS2_005.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -755,6 +787,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Phroilan Gardner",
+			"cardImage": "CS2_114.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -805,6 +838,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Vance Kovacs",
+			"cardImage": "CS2_093.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -825,6 +859,7 @@ var parseCardsText = {
 		{
 			"artist": "E.M. Gist",
 			"attack": 9,
+			"cardImage": "CS2_201.png",
 			"collectible": true,
 			"cost": 7,
 			"flavor": "You don’t tame a Core Hound. You just train it to eat someone else before it eats you.",
@@ -853,6 +888,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Wayne Reynolds",
+			"cardImage": "CS2_063.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -871,6 +907,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "CS2_083b.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -887,6 +924,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 1,
+			"cardImage": "EX1_582.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -909,6 +947,7 @@ var parseCardsText = {
 		{
 			"artist": "Jesper Ejsing",
 			"attack": 4,
+			"cardImage": "DS1_055.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -940,6 +979,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Trevor Jacobs",
+			"cardImage": "CS2_074.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -959,6 +999,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jim Pavelec",
+			"cardImage": "CS2_236.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Double the trouble. Double the fun!",
@@ -989,6 +1030,7 @@ var parseCardsText = {
 		{
 			"artist": "Warren Mahy",
 			"attack": 2,
+			"cardImage": "EX1_025.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Alliance",
@@ -1010,6 +1052,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "CS2_061.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -1030,6 +1073,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan & Gabor",
 			"attack": 6,
+			"cardImage": "CS2_064.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -1055,6 +1099,7 @@ var parseCardsText = {
 		{
 			"artist": "Steve Prescott",
 			"attack": 1,
+			"cardImage": "CS2_189.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Horde",
@@ -1085,6 +1130,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "CS2_013t.png",
 			"cost": 0,
 			"fr": {
 				"name": "Excès de mana"
@@ -1098,6 +1144,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dany Orizio",
+			"cardImage": "CS2_108.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -1128,6 +1175,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Andrew Robinson",
+			"cardImage": "EX1_129.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -1148,6 +1196,7 @@ var parseCardsText = {
 		{
 			"artist": "Lucas Graciano",
 			"attack": 3,
+			"cardImage": "CS2_106.png",
 			"collectible": true,
 			"cost": 2,
 			"durability": 2,
@@ -1168,6 +1217,7 @@ var parseCardsText = {
 		{
 			"artist": "Ralph Horsley",
 			"attack": 6,
+			"cardImage": "CS2_042.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -1191,6 +1241,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Ralph Horsley",
+			"cardImage": "CS2_029.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -1209,6 +1260,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "CS2_034.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -1224,6 +1276,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Romain De Santi",
+			"cardImage": "CS2_032.png",
 			"collectible": true,
 			"cost": 7,
 			"faction": "Neutral",
@@ -1255,6 +1308,7 @@ var parseCardsText = {
 		{
 			"artist": "Jonathan Ryder",
 			"attack": 0,
+			"cardImage": "EX1_565.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -1281,6 +1335,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "hexfrog.png",
 			"cost": 0,
 			"faction": "Neutral",
 			"fr": {
@@ -1300,6 +1355,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Josh Tallman",
+			"cardImage": "CS2_026.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -1322,6 +1378,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "CS2_037.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -1344,6 +1401,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Steve Ellis",
+			"cardImage": "CS2_024.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -1377,6 +1435,7 @@ var parseCardsText = {
 		{
 			"artist": "Richie Marella",
 			"attack": 2,
+			"cardImage": "CS2_121.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -1399,6 +1458,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 4,
+			"cardImage": "CS2_226.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Horde",
@@ -1430,6 +1490,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "HERO_01.png",
 			"collectible": true,
 			"faction": "Neutral",
 			"fr": {
@@ -1446,6 +1507,7 @@ var parseCardsText = {
 		{
 			"artist": "Court Jones",
 			"attack": 2,
+			"cardImage": "CS2_147.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Alliance",
@@ -1468,6 +1530,7 @@ var parseCardsText = {
 		{
 			"artist": "Donato Giancola",
 			"attack": 1,
+			"cardImage": "CS1_042.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Alliance",
@@ -1490,6 +1553,7 @@ var parseCardsText = {
 		{
 			"artist": "Phil Saunders",
 			"attack": 1,
+			"cardImage": "EX1_508.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -1510,6 +1574,7 @@ var parseCardsText = {
 		{
 			"artist": "E.M. Gist",
 			"attack": 5,
+			"cardImage": "CS2_088.png",
 			"collectible": true,
 			"cost": 7,
 			"faction": "Neutral",
@@ -1532,6 +1597,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "HERO_07.png",
 			"collectible": true,
 			"faction": "Neutral",
 			"fr": {
@@ -1548,6 +1614,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 2,
+			"cardImage": "EX1_399.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -1566,6 +1633,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Efrem Palacios",
+			"cardImage": "CS2_094.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -1585,6 +1653,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Clint Langley",
+			"cardImage": "EX1_371.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -1604,6 +1673,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "NEW1_009.png",
 			"cost": 1,
 			"fr": {
 				"name": "Totem de soins"
@@ -1620,6 +1690,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Cyril Van Der Haegen",
+			"cardImage": "CS2_007.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -1639,6 +1710,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Chippy",
+			"cardImage": "CS2_062.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -1658,6 +1730,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jonboy Meyers",
+			"cardImage": "CS2_105.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -1691,6 +1764,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Steve Hui",
+			"cardImage": "EX1_246.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -1724,6 +1798,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan & Gabor",
+			"cardImage": "CS2_089.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -1743,6 +1818,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Luca Zontini",
+			"cardImage": "CS1_112.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -1762,6 +1838,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Steve Ellis",
+			"cardImage": "CS1_130.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -1782,6 +1859,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Brereton",
 			"attack": 4,
+			"cardImage": "DS1_070.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -1806,6 +1884,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "NEW1_034.png",
 			"cost": 3,
 			"fr": {
 				"name": "Souffleur"
@@ -1837,6 +1916,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Daren Bader",
+			"cardImage": "EX1_360.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -1856,6 +1936,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jimmy Lo",
+			"cardImage": "CS2_084.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -1886,6 +1967,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Doug Alexander",
+			"cardImage": "EX1_169.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -1906,6 +1988,7 @@ var parseCardsText = {
 		{
 			"artist": "Dave Allsop",
 			"attack": 8,
+			"cardImage": "CS2_232.png",
 			"collectible": true,
 			"cost": 8,
 			"faction": "Neutral",
@@ -1930,6 +2013,7 @@ var parseCardsText = {
 		{
 			"artist": "Tooth",
 			"attack": 2,
+			"cardImage": "CS2_141.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Alliance",
@@ -1952,6 +2036,7 @@ var parseCardsText = {
 		{
 			"artist": "Lars Grant-West",
 			"attack": 3,
+			"cardImage": "CS2_125.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -1973,6 +2058,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "HERO_08.png",
 			"collectible": true,
 			"faction": "Neutral",
 			"fr": {
@@ -1988,6 +2074,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Gabe from Penny Arcade",
+			"cardImage": "EX1_539.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -2008,6 +2095,7 @@ var parseCardsText = {
 		{
 			"artist": "Gabor Szikszai",
 			"attack": 2,
+			"cardImage": "CS2_142.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Horde",
@@ -2030,6 +2118,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 4,
+			"cardImage": "NEW1_011.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "The Kor'kron are the elite forces of Garrosh Hellscream. Let's just say you don't want to run into these guys while wearing a blue tabard.",
@@ -2052,6 +2141,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NEW1_033.png",
 			"cost": 3,
 			"fr": {
 				"name": "Leokk"
@@ -2067,6 +2157,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "CS1h_001.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -2081,6 +2172,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "CS2_056.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -2097,6 +2189,7 @@ var parseCardsText = {
 		{
 			"artist": "Glenn Rane",
 			"attack": 1,
+			"cardImage": "CS2_091.png",
 			"collectible": true,
 			"cost": 1,
 			"durability": 4,
@@ -2117,6 +2210,7 @@ var parseCardsText = {
 		{
 			"artist": "E.M. Gist",
 			"attack": 6,
+			"cardImage": "CS2_162.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Alliance",
@@ -2149,6 +2243,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Gaser",
 			"attack": 5,
+			"cardImage": "CS2_118.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "He likes to think he is powerful, but pretty much anyone can solo Molten Core now.",
@@ -2164,6 +2259,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "HERO_06.png",
 			"collectible": true,
 			"faction": "Neutral",
 			"fr": {
@@ -2179,6 +2275,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Brad Vancata",
+			"cardImage": "CS2_009.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -2220,6 +2317,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "EX1_025t.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -2245,6 +2343,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dave Allsop",
+			"cardImage": "DS1_233.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -2277,6 +2376,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Sean O’Daniels",
+			"cardImage": "CS1_113.png",
 			"collectible": true,
 			"cost": 10,
 			"faction": "Neutral",
@@ -2296,6 +2396,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Michael Komarck",
+			"cardImage": "CS2_003.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -2315,6 +2416,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "CS2_mirror.png",
 			"cost": 0,
 			"faction": "Neutral",
 			"fr": {
@@ -2334,6 +2436,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jim Nelson",
+			"cardImage": "CS2_027.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -2353,6 +2456,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "NEW1_032.png",
 			"cost": 3,
 			"fr": {
 				"name": "Misha"
@@ -2382,6 +2486,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Richard Wright",
+			"cardImage": "CS2_008.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -2401,6 +2506,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Matt Gaser",
+			"cardImage": "EX1_302.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -2420,6 +2526,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Benjamin Zhang",
+			"cardImage": "DS1_183.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -2440,6 +2547,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 2,
+			"cardImage": "CS2_168.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Alliance",
@@ -2458,6 +2566,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "EX1_506a.png",
 			"cost": 0,
 			"faction": "Neutral",
 			"fr": {
@@ -2474,6 +2583,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 2,
+			"cardImage": "EX1_506.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -2497,6 +2607,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 4,
+			"cardImage": "EX1_593.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -2517,6 +2628,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "GAME_006.png",
 			"cost": 2,
 			"flavor": "Even your flavor text has been deleted. Dang.",
 			"fr": {
@@ -2531,6 +2643,7 @@ var parseCardsText = {
 		{
 			"artist": "Terese Nielsen",
 			"attack": 1,
+			"cardImage": "CS2_235.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "They help the downtrodden and distressed.  Also they sell cookies.",
@@ -2554,6 +2667,7 @@ var parseCardsText = {
 		{
 			"artist": "Karl Richardson",
 			"attack": 1,
+			"cardImage": "EX1_015.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Alliance",
@@ -2576,6 +2690,7 @@ var parseCardsText = {
 		{
 			"artist": "Ittoku",
 			"attack": 2,
+			"cardImage": "CS2_119.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "His dreams of flying and breathing fire like his idol will never be realized.",
@@ -2594,6 +2709,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 4,
+			"cardImage": "CS2_197.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -2631,6 +2747,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Vance Kovacs",
+			"cardImage": "CS2_022.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -2650,6 +2767,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jessica Jung",
+			"cardImage": "CS2_004.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -2681,6 +2799,7 @@ var parseCardsText = {
 		{
 			"artist": "Phill Gonzales",
 			"attack": 2,
+			"cardImage": "CS2_122.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "\"That's a 50 DKP minus!\"",
@@ -2702,6 +2821,7 @@ var parseCardsText = {
 		{
 			"artist": "Clint Langley",
 			"attack": 2,
+			"cardImage": "CS2_196.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Horde",
@@ -2724,6 +2844,7 @@ var parseCardsText = {
 		{
 			"artist": "John Polidora",
 			"attack": 5,
+			"cardImage": "CS2_213.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Horde",
@@ -2744,6 +2865,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "CS2_101.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -2758,6 +2880,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "HERO_05.png",
 			"collectible": true,
 			"faction": "Neutral",
 			"fr": {
@@ -2774,6 +2897,7 @@ var parseCardsText = {
 		{
 			"artist": "Daren Bader",
 			"attack": 2,
+			"cardImage": "CS2_120.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Edward \"Lefty\" Smith tried to make luggage out of a river crocolisk once.",
@@ -2805,6 +2929,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "CS2_045.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -2824,6 +2949,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jim Nelson",
+			"cardImage": "NEW1_003.png",
 			"collectible": true,
 			"cost": 0,
 			"flavor": "This is the reason that Demons never really become friends with Warlocks.",
@@ -2842,6 +2968,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Scott Altmann",
+			"cardImage": "EX1_581.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -2875,6 +3002,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Grace Liu",
+			"cardImage": "CS2_011.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -2894,6 +3022,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CS2_050.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -2911,6 +3040,7 @@ var parseCardsText = {
 		{
 			"artist": "Brian Despain",
 			"attack": 3,
+			"cardImage": "CS2_179.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Horde",
@@ -2932,6 +3062,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dave Allsop",
+			"cardImage": "CS2_057.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -2951,6 +3082,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "EX1_622.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "If you miss, it leaves a lightning-bolt-shaped scar on your target.",
@@ -2969,6 +3101,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "CS2_234.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "A step up from a spell cast by many beginning acolytes: \"Shadow Word: Annoy\".",
@@ -2986,6 +3119,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "CS2_017.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -3016,6 +3150,7 @@ var parseCardsText = {
 		{
 			"artist": "Doug Alexander",
 			"attack": 3,
+			"cardImage": "EX1_019.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -3037,6 +3172,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CS2_tk1.png",
 			"cost": 0,
 			"faction": "Neutral",
 			"fr": {
@@ -3052,6 +3188,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Michael Komarck",
+			"cardImage": "EX1_606.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -3071,6 +3208,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Garner",
+			"cardImage": "EX1_278.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -3090,6 +3228,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CS2_101t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Recrue de la Main d’argent"
@@ -3105,6 +3244,7 @@ var parseCardsText = {
 		{
 			"artist": "Daren Bader",
 			"attack": 1,
+			"cardImage": "CS2_127.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Horde",
@@ -3127,6 +3267,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Frank Cho",
+			"cardImage": "CS2_075.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -3146,6 +3287,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "skele11.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -3161,6 +3303,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "EX1_308.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -3180,6 +3323,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "James Zhang",
+			"cardImage": "CS2_077.png",
 			"collectible": true,
 			"cost": 7,
 			"faction": "Neutral",
@@ -3199,6 +3343,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "EX1_173.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -3219,6 +3364,7 @@ var parseCardsText = {
 		{
 			"artist": "Bernie Kang",
 			"attack": 3,
+			"cardImage": "CS2_237.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "If you feed him, he loses his whole <i>identity</i>.",
@@ -3239,6 +3385,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "DS1h_292.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -3254,6 +3401,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "CS2_051.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -3275,6 +3423,7 @@ var parseCardsText = {
 		{
 			"artist": "Howard Lyon",
 			"attack": 1,
+			"cardImage": "CS2_171.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -3298,6 +3447,7 @@ var parseCardsText = {
 		{
 			"artist": "Kev Walker",
 			"attack": 4,
+			"cardImage": "CS2_150.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Alliance",
@@ -3320,6 +3470,7 @@ var parseCardsText = {
 		{
 			"artist": "Doug Alexander",
 			"attack": 6,
+			"cardImage": "CS2_222.png",
 			"collectible": true,
 			"cost": 7,
 			"faction": "Alliance",
@@ -3343,6 +3494,7 @@ var parseCardsText = {
 		{
 			"artist": "Ladronn",
 			"attack": 2,
+			"cardImage": "CS2_131.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Alliance",
@@ -3365,6 +3517,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 4,
+			"cardImage": "EX1_306.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -3389,6 +3542,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Sean O’Daniels",
+			"cardImage": "CS2_012.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -3407,6 +3561,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "GAME_005.png",
 			"fr": {
 				"name": "La pièce"
 			},
@@ -3426,6 +3581,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "HERO_02.png",
 			"collectible": true,
 			"faction": "Neutral",
 			"fr": {
@@ -3442,6 +3598,7 @@ var parseCardsText = {
 		{
 			"artist": "Malcolm Davis",
 			"attack": 1,
+			"cardImage": "DS1_175.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -3465,6 +3622,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "CS2_049.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -3491,6 +3649,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Trent Kaniuga",
+			"cardImage": "EX1_244.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -3510,6 +3669,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Mauro Cascioli",
+			"cardImage": "DS1_184.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -3530,6 +3690,7 @@ var parseCardsText = {
 		{
 			"artist": "Ryan Sook",
 			"attack": 4,
+			"cardImage": "CS2_097.png",
 			"collectible": true,
 			"cost": 4,
 			"durability": 2,
@@ -3551,6 +3712,7 @@ var parseCardsText = {
 		{
 			"artist": "Lars Grant-West",
 			"attack": 2,
+			"cardImage": "DS1_178.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -3571,6 +3733,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "HERO_04.png",
 			"collectible": true,
 			"faction": "Neutral",
 			"fr": {
@@ -3585,6 +3748,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "HERO_03.png",
 			"collectible": true,
 			"faction": "Neutral",
 			"fr": {
@@ -3600,6 +3764,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Sean O’Daniels",
+			"cardImage": "NEW1_004.png",
 			"collectible": true,
 			"cost": 6,
 			"fr": {
@@ -3618,6 +3783,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 1,
+			"cardImage": "CS2_065.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -3643,6 +3809,7 @@ var parseCardsText = {
 		{
 			"artist": "Karl Richardson",
 			"attack": 2,
+			"cardImage": "EX1_011.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Horde",
@@ -3665,6 +3832,7 @@ var parseCardsText = {
 		{
 			"artist": "Dave Kendall",
 			"attack": 7,
+			"cardImage": "CS2_186.png",
 			"collectible": true,
 			"cost": 7,
 			"faction": "Neutral",
@@ -3683,6 +3851,7 @@ var parseCardsText = {
 		{
 			"artist": "Wei Wang",
 			"attack": 2,
+			"cardImage": "EX1_084.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -3707,6 +3876,7 @@ var parseCardsText = {
 		{
 			"artist": "John Avon",
 			"attack": 3,
+			"cardImage": "CS2_033.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -3731,6 +3901,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jonboy Meyers",
+			"cardImage": "EX1_400.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -3750,6 +3921,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CS2_082.png",
 			"cost": 1,
 			"durability": 2,
 			"faction": "Neutral",
@@ -3765,6 +3937,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "James Ryman",
+			"cardImage": "CS2_013.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -3784,6 +3957,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Justin Sweet",
+			"cardImage": "CS2_039.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -3804,6 +3978,7 @@ var parseCardsText = {
 		{
 			"artist": "Vance Kovacs",
 			"attack": 3,
+			"cardImage": "EX1_587.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -3828,6 +4003,7 @@ var parseCardsText = {
 		{
 			"artist": "Dany Orizio",
 			"attack": 3,
+			"cardImage": "CS2_124.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Horde",
@@ -3849,6 +4025,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "CS2_052.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -3870,6 +4047,7 @@ var parseCardsText = {
 		{
 			"artist": "Andrew Hou",
 			"attack": 4,
+			"cardImage": "AT_063.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -3901,6 +4079,7 @@ var parseCardsText = {
 		{
 			"artist": "Evgeniy Zagumennyy",
 			"attack": 2,
+			"cardImage": "AT_071.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "\"Put more spikes on her.  No, more spikes.  What part of 'more spikes' do you not understand?  MORE SPIKES!\" - Alexstrasza",
@@ -3920,6 +4099,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "AT_035t.png",
 			"cost": 0,
 			"fr": {
 				"name": "Embuscade !"
@@ -3933,6 +4113,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan & Gabor",
+			"cardImage": "AT_053.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "MOMMMMMYYYYYYYYY!!!",
@@ -3953,6 +4134,7 @@ var parseCardsText = {
 		{
 			"artist": "Eric Braddock",
 			"attack": 8,
+			"cardImage": "AT_036.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -3974,6 +4156,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Gabor Szikszai",
+			"cardImage": "AT_004.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Now with 100% more blast!",
@@ -3991,6 +4174,7 @@ var parseCardsText = {
 		{
 			"artist": "Evgeniy Zagumennyy",
 			"attack": 2,
+			"cardImage": "AT_087.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "His horse's name is Betsy.",
@@ -4012,6 +4196,7 @@ var parseCardsText = {
 		{
 			"artist": "Joe Wilson",
 			"attack": 2,
+			"cardImage": "AT_077.png",
 			"collectible": true,
 			"cost": 2,
 			"durability": 2,
@@ -4033,6 +4218,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Zhang",
 			"attack": 2,
+			"cardImage": "AT_109.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Who argent watches the Argent Watchman?",
@@ -4053,6 +4239,7 @@ var parseCardsText = {
 		{
 			"artist": "Edouard Guiton & Tony Washington",
 			"attack": 5,
+			"cardImage": "AT_108.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Yep.  It's a horse... wearing armor... going to war.",
@@ -4073,6 +4260,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Christopher Moeller",
+			"cardImage": "AT_043.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Hey!  Moon!  Can I have some mana crystals?",
@@ -4090,6 +4278,7 @@ var parseCardsText = {
 		{
 			"artist": "Velvet Engine",
 			"attack": 5,
+			"cardImage": "AT_045.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -4111,6 +4300,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Skan Srisuwan",
+			"cardImage": "AT_062.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "\"THEY'RE EVERYWHERE GET THEM OFF!!!\" - Everyone",
@@ -4126,6 +4316,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "AT_132_HUNTER.png",
 			"cost": 2,
 			"fr": {
 				"name": "Tir de baliste"
@@ -4139,6 +4330,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dany Orizio",
+			"cardImage": "AT_064.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "You might think bashing doesn't take a lot of practice.  It doesn't.",
@@ -4155,6 +4347,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Richard Wright",
+			"cardImage": "AT_060.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "You'll never guess what's in that conveniently bear-sized, bear-smelling box.",
@@ -4174,6 +4367,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Daren Bader",
+			"cardImage": "AT_035.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Can you hold these eggs for just a second?  I promise they're not full of giant enraged undead spider things.",
@@ -4190,6 +4384,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "AT_005t.png",
 			"cost": 3,
 			"fr": {
 				"name": "Sanglier"
@@ -4208,6 +4403,7 @@ var parseCardsText = {
 		{
 			"artist": "Wayne Reynolds",
 			"attack": 3,
+			"cardImage": "AT_124.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -4225,6 +4421,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Mishi McCaig",
+			"cardImage": "AT_068.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "The best offense is a good defense.",
@@ -4253,6 +4450,7 @@ var parseCardsText = {
 		{
 			"artist": "Slawomir Maniak",
 			"attack": 3,
+			"cardImage": "AT_089.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Underneath all that impressive armor, he's just skin and bones.  Okay, maybe just bones.",
@@ -4283,6 +4481,7 @@ var parseCardsText = {
 		{
 			"artist": "Eva Widermann",
 			"attack": 2,
+			"cardImage": "AT_059.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "This is a \"bearly\" concealed reference.",
@@ -4315,6 +4514,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 2,
+			"cardImage": "AT_029.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "The best part of buccaneering is the pants.",
@@ -4333,6 +4533,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Matt Dixon",
+			"cardImage": "AT_033.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Yoink!",
@@ -4360,6 +4561,7 @@ var parseCardsText = {
 		{
 			"artist": "Gonzalo Ordonez",
 			"attack": 5,
+			"cardImage": "AT_102.png",
 			"collectible": true,
 			"cost": 7,
 			"flavor": "You can keep him, but you have to promise to feed him and clean out his tank every day!",
@@ -4387,6 +4589,7 @@ var parseCardsText = {
 		{
 			"artist": "Peet Cooper",
 			"attack": 2,
+			"cardImage": "AT_050.png",
 			"collectible": true,
 			"cost": 4,
 			"durability": 4,
@@ -4418,6 +4621,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 6,
+			"cardImage": "AT_123.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -4441,6 +4645,7 @@ var parseCardsText = {
 		{
 			"artist": "Skan Srisuwan",
 			"attack": 5,
+			"cardImage": "AT_096.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "It takes a lot to wind him up.",
@@ -4462,6 +4667,7 @@ var parseCardsText = {
 		{
 			"artist": "Christopher Moeller",
 			"attack": 6,
+			"cardImage": "AT_008.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "The Grand Tournament has a \"No dragons allowed\" policy, but it's rarely enforced.",
@@ -4484,6 +4690,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 2,
+			"cardImage": "AT_110.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Meets monthly with the gladiators to discuss career goals.",
@@ -4503,6 +4710,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jim Nelson",
+			"cardImage": "AT_073.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Competition can be an inspiration to improve oneself.  Or kill all the competitors.",
@@ -4533,6 +4741,7 @@ var parseCardsText = {
 		{
 			"artist": "Chris Rahn",
 			"attack": 5,
+			"cardImage": "AT_018.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -4554,6 +4763,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Sean O'Danield",
+			"cardImage": "AT_016.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "This minion is really powerful!",
@@ -4581,6 +4791,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dan Dos Santos",
+			"cardImage": "AT_015.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "\"Are you interested in... HEALTH benefits?!\"",
@@ -4598,6 +4809,7 @@ var parseCardsText = {
 		{
 			"artist": "Jakub Kasper",
 			"attack": 4,
+			"cardImage": "AT_121.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "The crowd ALWAYS yells lethal.",
@@ -4615,6 +4827,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 2,
+			"cardImage": "AT_031.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "He has a giant collection of purses now.  One for every outfit!",
@@ -4633,6 +4846,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 3,
+			"cardImage": "AT_006.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Is he aspiring or inspiring?  Make up your mind!",
@@ -4653,6 +4867,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Paul Mafayon",
+			"cardImage": "AT_025.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "A prime example of lose-lose negotiating.",
@@ -4680,6 +4895,7 @@ var parseCardsText = {
 		{
 			"artist": "Laurel Austin",
 			"attack": 2,
+			"cardImage": "AT_038.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "She loves mana crystals, she hates mana crystals.   So fickle!",
@@ -4701,6 +4917,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Kevin Chen",
+			"cardImage": "AT_024.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Very dangerous when attached to a demonbomb.",
@@ -4730,6 +4947,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "AT_132_DRUID.png",
 			"cost": 2,
 			"fr": {
 				"name": "Changeforme sinistre"
@@ -4744,6 +4962,7 @@ var parseCardsText = {
 		{
 			"artist": "RK Post",
 			"attack": 4,
+			"cardImage": "AT_047.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "It's nice to find a real craftsman in this day and age of mass-produced totems.",
@@ -4765,6 +4984,7 @@ var parseCardsText = {
 		{
 			"artist": "Anton Zemskov",
 			"attack": 3,
+			"cardImage": "AT_083.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Check it out.  You can do barrel rolls on this thing.",
@@ -4798,6 +5018,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan Boros",
 			"attack": 4,
+			"cardImage": "AT_063t.png",
 			"collectible": true,
 			"cost": 3,
 			"elite": true,
@@ -4818,6 +5039,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 1,
+			"cardImage": "AT_019.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Crescendo himself summoned this steed, riding it to victory in the Grand Tournament.  Wherever he rides, an army of riders ride behind him, supporting the legendary champion.",
@@ -4840,6 +5062,7 @@ var parseCardsText = {
 		{
 			"artist": "Arthur Gimaldinov",
 			"attack": 2,
+			"cardImage": "AT_042.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "That's saberTEETH, not like curved pirate blades.  That's a different kind of druid.  Druid of the Curved Pirate Blades.",
@@ -4858,6 +5081,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 3,
+			"cardImage": "AT_081.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -4879,6 +5103,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Tooth",
+			"cardImage": "AT_002.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Burning man, brah.",
@@ -4898,6 +5123,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Tyler Walpole",
+			"cardImage": "AT_051.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "I'm not a shaman or anything, but isn't Elemental Destruction the opposite of what they want to do?",
@@ -4927,6 +5153,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Mauricio Herrera",
+			"cardImage": "AT_078.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "You have to get past the vendors first.  So many are lost to shopping...",
@@ -4954,6 +5181,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 5,
+			"cardImage": "AT_114.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "To be honest, heckling is not the most effective form of evil.",
@@ -5005,6 +5233,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Thompson",
 			"attack": 3,
+			"cardImage": "AT_131.png",
 			"collectible": true,
 			"cost": 3,
 			"elite": true,
@@ -5023,6 +5252,7 @@ var parseCardsText = {
 		{
 			"artist": "Arthur Bozonnet",
 			"attack": 3,
+			"cardImage": "AT_003.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "And he can't get up.",
@@ -5041,6 +5271,7 @@ var parseCardsText = {
 		{
 			"artist": "Anton Zemskov",
 			"attack": 6,
+			"cardImage": "AT_020.png",
 			"collectible": true,
 			"cost": 7,
 			"flavor": "They were originally called Cuddleguards, but they were not inspiring the proper amount of fear.",
@@ -5070,6 +5301,7 @@ var parseCardsText = {
 		{
 			"artist": "Howard Lyon",
 			"attack": 2,
+			"cardImage": "AT_115.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Good fencers make good neighbors, right?",
@@ -5098,6 +5330,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "AT_132_MAGE.png",
 			"cost": 2,
 			"fr": {
 				"name": "Explosion de feu rang 2"
@@ -5111,6 +5344,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Matt Dixon",
+			"cardImage": "AT_022.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "* Not actually Jaraxxus' fist.",
@@ -5128,6 +5362,7 @@ var parseCardsText = {
 		{
 			"artist": "Mark Zug",
 			"attack": 3,
+			"cardImage": "AT_129.png",
 			"collectible": true,
 			"cost": 3,
 			"elite": true,
@@ -5146,6 +5381,7 @@ var parseCardsText = {
 		{
 			"artist": "James Zhang",
 			"attack": 2,
+			"cardImage": "AT_094.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "At first he liked juggling chain saws, but then he thought, \"Flames are better!  Because FIRE!\"",
@@ -5165,6 +5401,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Nutthapon Petchthai",
+			"cardImage": "AT_001.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "It's on the rack next to ice lance, acid lance, and English muffin lance.",
@@ -5181,6 +5418,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Marcelo Vignali",
+			"cardImage": "AT_055.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Flash!  Ahhhhhhh~",
@@ -5209,6 +5447,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 2,
+			"cardImage": "AT_093.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Ironically, the natural enemy of the snobold is THE CANDLE.",
@@ -5229,6 +5468,7 @@ var parseCardsText = {
 		{
 			"artist": "Greg Staples",
 			"attack": 8,
+			"cardImage": "AT_120.png",
 			"collectible": true,
 			"cost": 10,
 			"flavor": "Don't ask him about the beard.  JUST DON'T.",
@@ -5246,6 +5486,7 @@ var parseCardsText = {
 		{
 			"artist": "Skan Srisuwan",
 			"attack": 1,
+			"cardImage": "AT_133.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "It's not HER fault you didn't put a spinning saw blade on your horse.",
@@ -5266,6 +5507,7 @@ var parseCardsText = {
 		{
 			"artist": "Jesper Ejsing",
 			"attack": 2,
+			"cardImage": "AT_080.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "He'll never admit it, but he pushes you hard because he really cares about you.",
@@ -5286,6 +5528,7 @@ var parseCardsText = {
 		{
 			"artist": "Nutthapon Petchthai",
 			"attack": 4,
+			"cardImage": "AT_122.png",
 			"collectible": true,
 			"cost": 4,
 			"elite": true,
@@ -5307,6 +5550,7 @@ var parseCardsText = {
 		{
 			"artist": "Todd Lockwood",
 			"attack": 5,
+			"cardImage": "AT_118.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "A veteran of a number of crusades, she is a force for light and goodness.  Her latest crusade is against goblin telemarketers.",
@@ -5339,6 +5583,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "AT_132_PRIEST.png",
 			"cost": 2,
 			"fr": {
 				"name": "Soins"
@@ -5352,6 +5597,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "AT_132_SHAMANa.png",
 			"cost": 0,
 			"fr": {
 				"name": "Totem de soins"
@@ -5366,6 +5612,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Luca Zontini",
+			"cardImage": "AT_048.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Favored by shaman who study the art of restoration and healing, this spell would feel smug, if it had feelings.",
@@ -5383,6 +5630,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Garner",
 			"attack": 3,
+			"cardImage": "AT_011.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "She really likes seeing people get better.  That's why she hurts them in the first place.",
@@ -5411,6 +5659,7 @@ var parseCardsText = {
 		{
 			"artist": "Anton Zemskov",
 			"attack": 5,
+			"cardImage": "AT_092.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "He's a lot cooler than Magma Rager.",
@@ -5427,6 +5676,7 @@ var parseCardsText = {
 		{
 			"artist": "John Polidora",
 			"attack": 10,
+			"cardImage": "AT_125.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -5448,6 +5698,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan Boros",
 			"attack": 2,
+			"cardImage": "AT_105.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Don't worry.  With a little skin cream he's going to clear right up.",
@@ -5491,6 +5742,7 @@ var parseCardsText = {
 		{
 			"artist": "Jomaro Kindred",
 			"attack": 6,
+			"cardImage": "AT_132.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -5533,6 +5785,7 @@ var parseCardsText = {
 		{
 			"artist": "Michael Franchina",
 			"attack": 3,
+			"cardImage": "AT_065.png",
 			"collectible": true,
 			"cost": 3,
 			"durability": 2,
@@ -5554,6 +5807,7 @@ var parseCardsText = {
 		{
 			"artist": "James Zhang",
 			"attack": 3,
+			"cardImage": "AT_058.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Elekk jousting is AWESOME.",
@@ -5576,6 +5830,7 @@ var parseCardsText = {
 		{
 			"artist": "Ralph Horsley",
 			"attack": 6,
+			"cardImage": "AT_041.png",
 			"collectible": true,
 			"cost": 7,
 			"flavor": "He gets a discount on the tournament entry fee because he is his own horse.",
@@ -5594,6 +5849,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Wootten",
 			"attack": 3,
+			"cardImage": "AT_099.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "Someone called her a Rhinorider, and she's NOT HAPPY.",
@@ -5614,6 +5870,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 4,
+			"cardImage": "AT_119.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Coming soon... to a tuskarr village near you!",
@@ -5645,6 +5902,7 @@ var parseCardsText = {
 		{
 			"artist": "Tyson Murphy",
 			"attack": 1,
+			"cardImage": "AT_084.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Lance Carrier is an obscure entry level position in orcish armies.  A mystery, since orcs don't generally use lances.",
@@ -5678,6 +5936,7 @@ var parseCardsText = {
 		{
 			"artist": "Andrea Uderzo",
 			"attack": 4,
+			"cardImage": "AT_106.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "When there's something strange (say, a gibbering demon) in your neighborhood, who are you going to call?",
@@ -5696,6 +5955,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "AT_050t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Décharge de foudre"
@@ -5708,6 +5968,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "AT_042a.png",
 			"fr": {
 				"name": "Forme de lion"
 			},
@@ -5720,6 +5981,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "AT_037b.png",
 			"fr": {
 				"name": "Racines vivantes"
 			},
@@ -5730,6 +5992,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "AT_037a.png",
 			"fr": {
 				"name": "Racines vivantes"
 			},
@@ -5741,6 +6004,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dan Brereton",
+			"cardImage": "AT_037.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "2 out of 2 saplings recommend that you summon the saplings.",
@@ -5757,6 +6021,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Matt Dixon",
+			"cardImage": "AT_061.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Rexxar narrowed his eyes, grabbed his machine gun, and said: \"It's go time.  Lock and load.\"\nThis card pays homage to that special moment.",
@@ -5787,6 +6052,7 @@ var parseCardsText = {
 		{
 			"artist": "Ron Spears",
 			"attack": 1,
+			"cardImage": "AT_082.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "But not the lowliest!",
@@ -5807,6 +6073,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 5,
+			"cardImage": "AT_067.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Playing him also gets you into the Magnataur Beta.",
@@ -5825,6 +6092,7 @@ var parseCardsText = {
 		{
 			"artist": "Froilan Gardner",
 			"attack": 2,
+			"cardImage": "AT_085.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Not a good basis for a system of government.",
@@ -5845,6 +6113,7 @@ var parseCardsText = {
 		{
 			"artist": "Penny Arcade",
 			"attack": 5,
+			"cardImage": "AT_112.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "Needs just a few more ratings points to become Grandmaster Jouster.",
@@ -5865,6 +6134,7 @@ var parseCardsText = {
 		{
 			"artist": "Jesper Ejsing",
 			"attack": 4,
+			"cardImage": "AT_117.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Goes by \"MC ElfyElf\".",
@@ -5926,6 +6196,7 @@ var parseCardsText = {
 		{
 			"artist": "Steve Prescott",
 			"attack": 8,
+			"cardImage": "AT_088.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "This champion has learned from the best.  Except for his target selection.",
@@ -5943,6 +6214,7 @@ var parseCardsText = {
 		{
 			"artist": "Andrew Hou",
 			"attack": 4,
+			"cardImage": "AT_090.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "An elegant gorilla, for a more civilized age.",
@@ -5963,6 +6235,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dan Scott",
+			"cardImage": "AT_044.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Is this a noun or a verb?  We will never know.",
@@ -5980,6 +6253,7 @@ var parseCardsText = {
 		{
 			"artist": "Sam Nielson",
 			"attack": 3,
+			"cardImage": "AT_076.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Hee hee!  Look at his cute little feet.",
@@ -6002,6 +6276,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan Boros",
 			"attack": 6,
+			"cardImage": "AT_079.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "He may sound surly and antisocial, but he's actually just really shy.",
@@ -6022,6 +6297,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "AT_036t.png",
 			"cost": 3,
 			"fr": {
 				"name": "Nérubien"
@@ -6036,6 +6312,7 @@ var parseCardsText = {
 		{
 			"artist": "Marcleo Vignali",
 			"attack": 4,
+			"cardImage": "AT_127.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -6057,6 +6334,7 @@ var parseCardsText = {
 		{
 			"artist": "Seamus Gallagher",
 			"attack": 9,
+			"cardImage": "AT_103.png",
 			"collectible": true,
 			"cost": 9,
 			"flavor": "You have no idea how tired this guy is of being released.",
@@ -6077,6 +6355,7 @@ var parseCardsText = {
 		{
 			"artist": "Hideaki Takamura",
 			"attack": 3,
+			"cardImage": "AT_066.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "\"Four out of three orcs struggle with math.\" - Angry Zurge",
@@ -6096,6 +6375,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "AT_042b.png",
 			"fr": {
 				"name": "Forme de panthère"
 			},
@@ -6110,6 +6390,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 5,
+			"cardImage": "AT_101.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "What did the pits ever do to you?",
@@ -6126,6 +6407,7 @@ var parseCardsText = {
 		{
 			"artist": "Nutthapon Petchthai",
 			"attack": 1,
+			"cardImage": "AT_034.png",
 			"collectible": true,
 			"cost": 4,
 			"durability": 3,
@@ -6143,6 +6425,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "AT_132_ROGUEt.png",
 			"cost": 1,
 			"durability": 2,
 			"fr": {
@@ -6155,6 +6438,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "AT_132_ROGUE.png",
 			"cost": 2,
 			"fr": {
 				"name": "Dagues empoisonnées"
@@ -6168,6 +6452,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Mike Sass",
+			"cardImage": "AT_005.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "It's always Huffer.",
@@ -6216,6 +6501,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Mike Sass",
+			"cardImage": "AT_013.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "The promise of glory is a powerful tool to get minions to do your bidding.  Only slightly less powerful than the promise of an ice cream bar!",
@@ -6232,6 +6518,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jonboy Meyers",
+			"cardImage": "AT_056.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "pow POW pow",
@@ -6260,6 +6547,7 @@ var parseCardsText = {
 		{
 			"artist": "Brandon Kitkouski",
 			"attack": 3,
+			"cardImage": "AT_010.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Not getting trampled is really the trick here.",
@@ -6281,6 +6569,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 5,
+			"cardImage": "AT_113.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Join the Argent Crusade!  We have attractive tabards and you get to carry really nice swords!",
@@ -6301,6 +6590,7 @@ var parseCardsText = {
 		{
 			"artist": "Ron Spears",
 			"attack": 3,
+			"cardImage": "AT_111.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Menu:  Funnel cakes, carrots, popcorn, jormungar steaks.  It's hard serving a diverse clientele.",
@@ -6321,6 +6611,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan & Gabor",
 			"attack": 7,
+			"cardImage": "AT_009.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -6342,6 +6633,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "AT_042t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Lion dent-de-sabre"
@@ -6361,6 +6653,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "AT_042t2.png",
 			"cost": 2,
 			"fr": {
 				"name": "Panthère dent-de-sabre"
@@ -6381,6 +6674,7 @@ var parseCardsText = {
 		{
 			"artist": "Greg Staples",
 			"attack": 4,
+			"cardImage": "AT_086.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Listen all y'all it's a saboteur!",
@@ -6400,6 +6694,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "AT_037t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Arbrisseau"
@@ -6428,6 +6723,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Pascenko",
 			"attack": 5,
+			"cardImage": "AT_039.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Maybe if you whistle a tune it will soothe him.  Yeah...  Try that.",
@@ -6450,6 +6746,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 6,
+			"cardImage": "AT_130.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "A little better than Sea Minus Reaver.",
@@ -6467,6 +6764,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jonboy Meyers",
+			"cardImage": "AT_074.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "\"Arf! Arf! Arf!\" - Seal of Champions",
@@ -6494,6 +6792,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "AT_132_SHAMANb.png",
 			"cost": 0,
 			"fr": {
 				"name": "Totem incendiaire"
@@ -6508,6 +6807,7 @@ var parseCardsText = {
 		{
 			"artist": "Ryan Metcaff",
 			"attack": 3,
+			"cardImage": "AT_028.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "He needed a break after that business in the Vale of Eternal Blossoms. Naturally, he chose to spend his vacation in an icy snowscape killing monsters.",
@@ -6529,6 +6829,7 @@ var parseCardsText = {
 		{
 			"artist": "Warren Mahy",
 			"attack": 3,
+			"cardImage": "AT_014.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Hopes to be promoted to \"Shadowfriend\" someday.",
@@ -6558,6 +6859,7 @@ var parseCardsText = {
 		{
 			"artist": "Tooth",
 			"attack": 4,
+			"cardImage": "AT_032.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "I have great deal for you... for 4 damage to your face!",
@@ -6590,6 +6892,7 @@ var parseCardsText = {
 		{
 			"artist": "Wayne Reynolds",
 			"attack": 6,
+			"cardImage": "AT_098.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "Hey!  Let me try that...",
@@ -6610,6 +6913,7 @@ var parseCardsText = {
 		{
 			"artist": "Esad Ribic",
 			"attack": 2,
+			"cardImage": "AT_095.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "He used to be a librarian.  Old habits die hard.",
@@ -6631,6 +6935,7 @@ var parseCardsText = {
 		{
 			"artist": "John Polidora",
 			"attack": 3,
+			"cardImage": "AT_100.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "The Silver Hand is the best paladin organization.  The Argent Crusaders are super jealous.",
@@ -6651,6 +6956,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 4,
+			"cardImage": "AT_070.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -6671,6 +6977,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "AT_132_WARLOCK.png",
 			"cost": 2,
 			"fr": {
 				"name": "Connexion d’âme"
@@ -6685,6 +6992,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 3,
+			"cardImage": "AT_069.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Come at me, bro.",
@@ -6707,6 +7015,7 @@ var parseCardsText = {
 		{
 			"artist": "Dave Allsop",
 			"attack": 5,
+			"cardImage": "AT_012.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "What did you expect to happen?  He's a Spawn.  Of Shadows.",
@@ -6728,6 +7037,7 @@ var parseCardsText = {
 		{
 			"artist": "Andrew Hou",
 			"attack": 3,
+			"cardImage": "AT_007.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Does he sling spells, or do his spells linger about.  Who can say?",
@@ -6749,6 +7059,7 @@ var parseCardsText = {
 		{
 			"artist": "Tyson Murphy",
 			"attack": 4,
+			"cardImage": "AT_057.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Takes way better care of her pets than her brother, Unstablemaster.",
@@ -6769,6 +7080,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "AT_132_SHAMANc.png",
 			"cost": 0,
 			"fr": {
 				"name": "Totem de griffes de pierre"
@@ -6782,6 +7094,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "AT_132_WARRIOR.png",
 			"cost": 2,
 			"fr": {
 				"name": "Défense stoïque"
@@ -6796,6 +7109,7 @@ var parseCardsText = {
 		{
 			"artist": "Wei Wang",
 			"attack": 4,
+			"cardImage": "AT_054.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -6816,6 +7130,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "AT_132_PALADIN.png",
 			"cost": 2,
 			"fr": {
 				"name": "La Main d’argent"
@@ -6830,6 +7145,7 @@ var parseCardsText = {
 		{
 			"artist": "Mike Sass",
 			"attack": 7,
+			"cardImage": "AT_128.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -6851,6 +7167,7 @@ var parseCardsText = {
 		{
 			"artist": "Sean McNally",
 			"attack": 3,
+			"cardImage": "AT_049.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Allowing totems to attack is not cheating.  I mean, there isn't anything in the rule books about it.",
@@ -6872,6 +7189,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 3,
+			"cardImage": "AT_021.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "\"No, no, no. I asked for a tiny JESTER of evil.\"",
@@ -6891,6 +7209,7 @@ var parseCardsText = {
 		{
 			"artist": "Steve Prescott",
 			"attack": 3,
+			"cardImage": "AT_052.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "What happens when you glue a buncha totems together.",
@@ -6911,6 +7230,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "AT_132_SHAMAN.png",
 			"cost": 2,
 			"fr": {
 				"name": "Heurt totémique"
@@ -6925,6 +7245,7 @@ var parseCardsText = {
 		{
 			"artist": "Adam Byrne",
 			"attack": 2,
+			"cardImage": "AT_097.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "He was so excited to get season tickets to this year's Grand Tournament.  He normally doesn't get them at first and has to buy them from Ogre scalpers.",
@@ -6945,6 +7266,7 @@ var parseCardsText = {
 		{
 			"artist": "Sean McNally",
 			"attack": 1,
+			"cardImage": "AT_091.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "The medic tournament is less entertaining than the Grand Tournament.",
@@ -6986,6 +7308,7 @@ var parseCardsText = {
 		{
 			"artist": "Skan Srisuwan",
 			"attack": 5,
+			"cardImage": "AT_104.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Just could not be talked out of using his turtle for the joust...",
@@ -7007,6 +7330,7 @@ var parseCardsText = {
 		{
 			"artist": "Eva Widermann",
 			"attack": 3,
+			"cardImage": "AT_046.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Turns out the tuskarr aren't real choosy about their totems.",
@@ -7028,6 +7352,7 @@ var parseCardsText = {
 		{
 			"artist": "Slawomir Maniak",
 			"attack": 2,
+			"cardImage": "AT_017.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "A result of magical experiments carried out by the Black Dragonflight, it's not his fault that he's a vicious killer.",
@@ -7059,6 +7384,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan Boros",
 			"attack": 3,
+			"cardImage": "AT_030.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Almost went to play for Stormwind before signing with Undercity.",
@@ -7080,6 +7406,7 @@ var parseCardsText = {
 		{
 			"artist": "Wei Wang",
 			"attack": 7,
+			"cardImage": "AT_072.png",
 			"collectible": true,
 			"cost": 10,
 			"elite": true,
@@ -7122,6 +7449,7 @@ var parseCardsText = {
 		{
 			"artist": "Skan Srisuwan",
 			"attack": 5,
+			"cardImage": "AT_023.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "We like to call him \"Wesley\".",
@@ -7143,6 +7471,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "AT_099t.png",
 			"cost": 5,
 			"fr": {
 				"name": "Kodo de guerre"
@@ -7157,6 +7486,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan & Gabor",
 			"attack": 2,
+			"cardImage": "AT_075.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "He doesn't even get Sundays off.  Every day he's hostling.",
@@ -7178,6 +7508,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 4,
+			"cardImage": "AT_040.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "She was born to be something.  She is just not quite sure what yet...",
@@ -7199,6 +7530,7 @@ var parseCardsText = {
 		{
 			"artist": "Tooth",
 			"attack": 4,
+			"cardImage": "AT_027.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -7227,6 +7559,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "AT_132_SHAMANd.png",
 			"cost": 0,
 			"fr": {
 				"name": "Totem de courroux de l’air"
@@ -7242,6 +7575,7 @@ var parseCardsText = {
 		{
 			"artist": "Sojin Hwang",
 			"attack": 4,
+			"cardImage": "AT_026.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "After playing against 5 Annoy-O-Trons, any normal guard will become a Wrathguard.",
@@ -7261,6 +7595,7 @@ var parseCardsText = {
 		{
 			"artist": "Jeff Easley",
 			"attack": 1,
+			"cardImage": "AT_116.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Keeping tabs on the Grand Tournament is priority #1 for the five mighty Dragonflights!",
@@ -7281,6 +7616,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRMA15_4.png",
 			"cost": 1,
 			"fr": {
 				"name": "Aberration"
@@ -7296,6 +7632,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA14_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Activer Arcanotron"
@@ -7307,6 +7644,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA14_2.png",
 			"cost": 2,
 			"fr": {
 				"name": "Activer Arcanotron"
@@ -7318,6 +7656,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA14_6H.png",
 			"cost": 4,
 			"fr": {
 				"name": "Activer Électron"
@@ -7329,6 +7668,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA14_6.png",
 			"cost": 6,
 			"fr": {
 				"name": "Activer Électron"
@@ -7340,6 +7680,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA14_8.png",
 			"cost": 8,
 			"fr": {
 				"name": "Activer Magmatron"
@@ -7351,6 +7692,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA14_8H.png",
 			"cost": 6,
 			"fr": {
 				"name": "Activer Magmatron"
@@ -7362,6 +7704,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA14_4H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Activer Toxitron"
@@ -7373,6 +7716,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA14_4.png",
 			"cost": 4,
 			"fr": {
 				"name": "Activer Toxitron"
@@ -7384,6 +7728,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA14_10.png",
 			"cost": 4,
 			"fr": {
 				"name": "Activation !"
@@ -7395,6 +7740,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA14_10H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Activation !"
@@ -7407,6 +7753,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMA14_3.png",
 			"cost": 0,
 			"elite": true,
 			"fr": {
@@ -7425,6 +7772,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA16_1.png",
 			"fr": {
 				"name": "Atramédès"
 			},
@@ -7435,6 +7783,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA16_1H.png",
 			"fr": {
 				"name": "Atramédès"
 			},
@@ -7447,6 +7796,7 @@ var parseCardsText = {
 		{
 			"artist": "Efrem Palacios",
 			"attack": 2,
+			"cardImage": "BRM_016.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Once a lowly \"Stick Flinger\", he's been relentless on the path to his ultimate dream: \"Tauren Flinger\".",
@@ -7465,6 +7815,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA05_1.png",
 			"fr": {
 				"name": "Baron Geddon"
 			},
@@ -7475,6 +7826,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA05_1H.png",
 			"fr": {
 				"name": "Baron Geddon"
 			},
@@ -7487,6 +7839,7 @@ var parseCardsText = {
 		{
 			"artist": "Jaemin Kim",
 			"attack": 2,
+			"cardImage": "BRM_022t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Dragonnet noir"
@@ -7500,6 +7853,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA09_4H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Aile noire"
@@ -7511,6 +7865,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA09_4.png",
 			"cost": 1,
 			"fr": {
 				"name": "Aile noire"
@@ -7524,6 +7879,7 @@ var parseCardsText = {
 		{
 			"artist": "Greg Staples",
 			"attack": 5,
+			"cardImage": "BRM_034.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -7547,6 +7903,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 2,
+			"cardImage": "BRM_033.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -7579,6 +7936,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMA17_6.png",
 			"cost": 1,
 			"fr": {
 				"name": "Assemblage d’os"
@@ -7591,6 +7949,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMA17_6H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Assemblage d’os"
@@ -7602,6 +7961,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA17_5H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Séides des os"
@@ -7613,6 +7973,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA17_5.png",
 			"cost": 2,
 			"fr": {
 				"name": "Séides des os"
@@ -7624,6 +7985,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA12_2.png",
 			"cost": 0,
 			"fr": {
 				"name": "Affliction de l’espèce"
@@ -7635,6 +7997,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA12_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Affliction de l’espèce"
@@ -7646,6 +8009,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA12_6H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Affliction de l’espèce : noir"
@@ -7657,6 +8021,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_6.png",
 			"cost": 1,
 			"fr": {
 				"name": "Affliction de l’espèce : noir"
@@ -7668,6 +8033,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_5.png",
 			"cost": 1,
 			"fr": {
 				"name": "Affliction de l’espèce : bleu"
@@ -7679,6 +8045,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_5H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Affliction de l’espèce : bleu"
@@ -7690,6 +8057,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_7H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Affliction de l’espèce : bronze"
@@ -7701,6 +8069,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_7.png",
 			"cost": 1,
 			"fr": {
 				"name": "Affliction de l’espèce : bronze"
@@ -7712,6 +8081,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_4.png",
 			"cost": 1,
 			"fr": {
 				"name": "Affliction de l’espèce : vert"
@@ -7723,6 +8093,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_4H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Affliction de l’espèce : vert"
@@ -7734,6 +8105,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_3.png",
 			"cost": 1,
 			"fr": {
 				"name": "Affliction de l’espèce : rouge"
@@ -7748,6 +8120,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_3H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Affliction de l’espèce : rouge"
@@ -7762,6 +8135,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA11_3.png",
 			"cost": 0,
 			"fr": {
 				"name": "Montée d’adrénaline"
@@ -7773,6 +8147,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA12_1H.png",
 			"fr": {
 				"name": "Chromaggus"
 			},
@@ -7783,6 +8158,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA12_1.png",
 			"fr": {
 				"name": "Chromaggus"
 			},
@@ -7795,6 +8171,7 @@ var parseCardsText = {
 		{
 			"artist": "Todd Lockwood",
 			"attack": 6,
+			"cardImage": "BRM_031.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -7815,6 +8192,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMA12_8t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Draconien chromatique"
@@ -7828,6 +8206,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA12_9.png",
 			"fr": {
 				"name": "Draconien chromatique"
 			},
@@ -7839,6 +8218,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "BRMA10_5H.png",
 			"cost": 4,
 			"fr": {
 				"name": "Drake chromatique"
@@ -7852,6 +8232,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "BRMA10_5.png",
 			"cost": 4,
 			"fr": {
 				"name": "Drake chromatique"
@@ -7864,6 +8245,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA12_8.png",
 			"cost": 2,
 			"fr": {
 				"name": "Mutation chromatique"
@@ -7876,6 +8258,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRMA17_7.png",
 			"cost": 2,
 			"fr": {
 				"name": "Prototype chromatique"
@@ -7893,6 +8276,7 @@ var parseCardsText = {
 		{
 			"artist": "Jomaro Kindred",
 			"attack": 4,
+			"cardImage": "BRM_014.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "It takes a special kind of hunter to venture deep into a firey lava pit and convince a monster who lives there to come home and be a cuddly housepet.",
@@ -7915,6 +8299,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA01_1H.png",
 			"fr": {
 				"name": "Coren Navrebière"
 			},
@@ -7925,6 +8310,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA01_1.png",
 			"fr": {
 				"name": "Coren Navrebière"
 			},
@@ -7936,6 +8322,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "BRMA10_4.png",
 			"cost": 1,
 			"fr": {
 				"name": "Œuf corrompu"
@@ -7949,6 +8336,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "BRMA10_4H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Œuf corrompu"
@@ -7962,6 +8350,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMA01_3.png",
 			"cost": 6,
 			"fr": {
 				"name": "Videur sombrefer"
@@ -7976,6 +8365,7 @@ var parseCardsText = {
 		{
 			"artist": "Eric Braddock",
 			"attack": 4,
+			"cardImage": "BRM_008.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "He loves skulking. He skulks after hours just for the joy of it, but his friends are pretty worried he'll get burnt out.",
@@ -7998,6 +8388,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRMA02_2t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Spectateur sombrefer"
@@ -8014,6 +8405,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "BRM_005.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Demons are not angry most of the time. You have to play this card in order to really bring it out of them.",
@@ -8034,6 +8426,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRM_027p.png",
 			"cost": 2,
 			"fr": {
 				"name": "MEURS, INSECTE !"
@@ -8045,6 +8438,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA13_8.png",
 			"cost": 0,
 			"fr": {
 				"name": "MEURS, INSECTE !"
@@ -8059,6 +8453,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRM_027pH.png",
 			"cost": 2,
 			"fr": {
 				"name": "MOUREZ, INSECTES !"
@@ -8070,6 +8465,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA09_5.png",
 			"cost": 4,
 			"fr": {
 				"name": "Pied à terre"
@@ -8081,6 +8477,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA09_5H.png",
 			"cost": 4,
 			"fr": {
 				"name": "Pied à terre"
@@ -8114,6 +8511,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 5,
+			"cardImage": "BRM_018.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Everybody wants someone to snuggle with. Even giant armored scaly draconic beasts of destruction.",
@@ -8138,6 +8536,7 @@ var parseCardsText = {
 		{
 			"artist": "Jaemin Kim",
 			"attack": 0,
+			"cardImage": "BRM_022.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Think of them as bullets for your dragon gun.",
@@ -8156,6 +8555,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Mauricio Herrera",
+			"cardImage": "BRM_003.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Dragons breathe fire, sure, but did you know they can also breathe Cotton Candy?  It's harder to give them a reason to do that, though.",
@@ -8188,6 +8588,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "BRMA09_4t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Draconien"
@@ -8201,6 +8602,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "BRMA09_4Ht.png",
 			"cost": 1,
 			"fr": {
 				"name": "Draconien"
@@ -8215,6 +8617,7 @@ var parseCardsText = {
 		{
 			"artist": "Edouard Guiton & Stuido HIVE",
 			"attack": 3,
+			"cardImage": "BRM_020.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Dragonkin Sorcerers be all \"I'm a wizard\" and everyone else be all \"daaaaang\".",
@@ -8234,6 +8637,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "BRMA16_5.png",
 			"cost": 1,
 			"durability": 6,
 			"fr": {
@@ -8246,6 +8650,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "BRMA08_3.png",
 			"cost": 1,
 			"fr": {
 				"name": "Ordres de Drakkisath"
@@ -8259,6 +8664,7 @@ var parseCardsText = {
 		{
 			"artist": "Slawomir Maniak",
 			"attack": 6,
+			"cardImage": "BRM_024.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "Drakonids were created to have all the bad parts of a dragon in the form of a humaniod. But, like, why?",
@@ -8282,6 +8688,7 @@ var parseCardsText = {
 		{
 			"artist": "Stanley Lau",
 			"attack": 2,
+			"cardImage": "BRM_010.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Druids who fought too long in Northrend were easily seduced by Ragnaros; a mug of hot chocolate was generally all it took.",
@@ -8302,6 +8709,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Zhang",
 			"attack": 5,
+			"cardImage": "BRM_010t.png",
 			"cost": 3,
 			"fr": {
 				"name": "Druidesse de la Flamme"
@@ -8318,6 +8726,7 @@ var parseCardsText = {
 		{
 			"artist": "Hideaki Takamura",
 			"attack": 2,
+			"cardImage": "BRM_010t2.png",
 			"cost": 3,
 			"fr": {
 				"name": "Druidesse de la Flamme"
@@ -8332,6 +8741,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA16_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Écholocation"
@@ -8343,6 +8753,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA16_2.png",
 			"cost": 1,
 			"fr": {
 				"name": "Écholocation"
@@ -8355,6 +8766,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "BRMA14_7H.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -8371,6 +8783,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "BRMA14_7.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -8389,6 +8802,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA03_1H.png",
 			"fr": {
 				"name": "Empereur Thaurissan"
 			},
@@ -8399,6 +8813,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA03_1.png",
 			"fr": {
 				"name": "Empereur Thaurissan"
 			},
@@ -8411,6 +8826,7 @@ var parseCardsText = {
 		{
 			"artist": "Wayne Reynolds",
 			"attack": 5,
+			"cardImage": "BRM_028.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -8429,6 +8845,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA11_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Essence des Rouges"
@@ -8440,6 +8857,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA11_2.png",
 			"cost": 0,
 			"fr": {
 				"name": "Essence des Rouges"
@@ -8451,6 +8869,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRM_010b.png",
 			"fr": {
 				"name": "Forme de faucon-de-feu"
 			},
@@ -8464,6 +8883,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRM_010a.png",
 			"fr": {
 				"name": "Forme de félin-de-feu"
 			},
@@ -8479,6 +8899,7 @@ var parseCardsText = {
 		{
 			"artist": "Paul Mafayon",
 			"attack": 3,
+			"cardImage": "BRM_012.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Ragnaros interviews hundreds of Fire Elementals for the position of \"Destroyer\" but very few have what it takes.",
@@ -8502,6 +8923,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "BRMA04_3.png",
 			"cost": 0,
 			"fr": {
 				"name": "Lige du feu"
@@ -8518,6 +8940,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "BRMA04_3H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Lige du feu"
@@ -8533,6 +8956,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA_01.png",
 			"cost": 3,
 			"fr": {
 				"name": "Cœur-de-flammes"
@@ -8546,6 +8970,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 2,
+			"cardImage": "BRM_002.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Flamewakers HATE being confused for Flamewalkers. They just wake up fire, they don’t walk on it. Walking on fire is CRAZY.",
@@ -8565,6 +8990,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "BRMA06_4H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Acolyte attise-flammes"
@@ -8577,6 +9003,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRMA06_4.png",
 			"cost": 2,
 			"fr": {
 				"name": "Acolyte attise-flammes"
@@ -8589,6 +9016,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jim Nelson",
+			"cardImage": "BRM_007.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "If you are thinking about visiting Moonbrook, you better roll deep.",
@@ -8606,6 +9034,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA04_1H.png",
 			"fr": {
 				"name": "Garr"
 			},
@@ -8616,6 +9045,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA04_1.png",
 			"fr": {
 				"name": "Garr"
 			},
@@ -8626,6 +9056,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA08_1H.png",
 			"fr": {
 				"name": "Général Drakkisath"
 			},
@@ -8636,6 +9067,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA08_1.png",
 			"fr": {
 				"name": "Général Drakkisath"
 			},
@@ -8646,6 +9078,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA01_4.png",
 			"cost": 3,
 			"fr": {
 				"name": "Chopez-les !"
@@ -8659,6 +9092,7 @@ var parseCardsText = {
 		{
 			"artist": "Bobby Chiu",
 			"attack": 3,
+			"cardImage": "BRM_019.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "If you love getting your face punched, come to the Grim Guzzler!",
@@ -8677,6 +9111,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRMA01_4t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Écluseur"
@@ -8693,6 +9128,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 8,
+			"cardImage": "BRMA09_5t.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -8708,6 +9144,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 8,
+			"cardImage": "BRMA09_5Ht.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -8722,6 +9159,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA02_1.png",
 			"fr": {
 				"name": "Juge Supérieur Mornepierre"
 			},
@@ -8732,6 +9170,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA02_1H.png",
 			"fr": {
 				"name": "Juge Supérieur Mornepierre"
 			},
@@ -8742,6 +9181,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA07_1H.png",
 			"fr": {
 				"name": "Généralissime Omokk"
 			},
@@ -8752,6 +9192,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA07_1.png",
 			"fr": {
 				"name": "Généralissime Omokk"
 			},
@@ -8764,6 +9205,7 @@ var parseCardsText = {
 		{
 			"artist": "John Polidora",
 			"attack": 5,
+			"cardImage": "BRM_026.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Hungry Hungry Dragon is NOT a fun game.",
@@ -8795,6 +9237,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMA05_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Mana enflammé"
@@ -8806,6 +9249,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA05_2.png",
 			"cost": 0,
 			"fr": {
 				"name": "Mana enflammé"
@@ -8818,6 +9262,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRM_006t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Diablotin"
@@ -8833,6 +9278,7 @@ var parseCardsText = {
 		{
 			"artist": "Steve Prescott",
 			"attack": 2,
+			"cardImage": "BRM_006.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "His imp gang likes to sneak into Stormwind to spraypaint \"Ragnaros Rulez\" on the Mage Tower.",
@@ -8872,6 +9318,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMA08_2.png",
 			"fr": {
 				"name": "Regard intense"
 			},
@@ -8882,6 +9329,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA08_2H.png",
 			"fr": {
 				"name": "Regard intense"
 			},
@@ -8892,6 +9340,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA02_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Foule moqueuse"
@@ -8903,6 +9352,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA02_2.png",
 			"cost": 1,
 			"fr": {
 				"name": "Foule moqueuse"
@@ -8925,6 +9375,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan Boros",
+			"cardImage": "BRM_011.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Chocolate lava cake is shockingly delicious.",
@@ -8956,6 +9407,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMA17_4.png",
 			"cost": 2,
 			"fr": {
 				"name": "LAVE !"
@@ -8977,6 +9429,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMA05_3H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Bombe vivante"
@@ -8998,6 +9451,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMA05_3.png",
 			"cost": 4,
 			"fr": {
 				"name": "Bombe vivante"
@@ -9010,6 +9464,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "BRMA13_6.png",
 			"cost": 0,
 			"fr": {
 				"name": "Lave vivante"
@@ -9025,6 +9480,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA13_1.png",
 			"fr": {
 				"name": "Seigneur Victor Nefarius"
 			},
@@ -9035,6 +9491,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA13_1H.png",
 			"fr": {
 				"name": "Seigneur Victor Nefarius"
 			},
@@ -9045,6 +9502,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA04_2.png",
 			"cost": 1,
 			"fr": {
 				"name": "Impulsion de magma"
@@ -9057,6 +9515,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "BRMA14_9.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -9076,6 +9535,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 8,
+			"cardImage": "BRMA14_9H.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -9092,6 +9552,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "BRMA14_12.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -9109,6 +9570,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA06_1H.png",
 			"fr": {
 				"name": "Chambellan Executus"
 			},
@@ -9119,6 +9581,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA06_1.png",
 			"fr": {
 				"name": "Chambellan Executus"
 			},
@@ -9131,6 +9594,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 9,
+			"cardImage": "BRM_027.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -9152,6 +9616,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA15_1H.png",
 			"fr": {
 				"name": "Maloriak"
 			},
@@ -9162,6 +9627,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA15_1.png",
 			"fr": {
 				"name": "Maloriak"
 			},
@@ -9172,6 +9638,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA07_2.png",
 			"cost": 1,
 			"fr": {
 				"name": "MOI TOUT CASSER"
@@ -9183,6 +9650,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA07_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "MOI TOUT CASSER"
@@ -9209,6 +9677,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRMA03_3.png",
 			"cost": 2,
 			"fr": {
 				"name": "Moira Barbe-de-Bronze"
@@ -9225,6 +9694,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "BRMA03_3H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Moira Barbe-de-Bronze"
@@ -9240,6 +9710,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA12_10.png",
 			"cost": 1,
 			"fr": {
 				"name": "Mutation"
@@ -9253,6 +9724,7 @@ var parseCardsText = {
 		{
 			"artist": "Ruan Jia",
 			"attack": 8,
+			"cardImage": "BRM_030.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -9275,6 +9747,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA17_2H.png",
 			"fr": {
 				"name": "Nefarian"
 			},
@@ -9285,6 +9758,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA13_3H.png",
 			"fr": {
 				"name": "Nefarian"
 			},
@@ -9295,6 +9769,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA17_2.png",
 			"fr": {
 				"name": "Nefarian"
 			},
@@ -9305,6 +9780,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA13_3.png",
 			"fr": {
 				"name": "Nefarian"
 			},
@@ -9315,6 +9791,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA17_8.png",
 			"cost": 0,
 			"fr": {
 				"name": "Frappe de Nefarian"
@@ -9326,6 +9803,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA17_8H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Frappe de Nefarian"
@@ -9337,6 +9815,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA09_3.png",
 			"cost": 2,
 			"fr": {
 				"name": "Ancienne Horde"
@@ -9348,6 +9827,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA09_3H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Ancienne Horde"
@@ -9360,6 +9840,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMA09_3Ht.png",
 			"cost": 1,
 			"fr": {
 				"name": "Orc de l’ancienne Horde"
@@ -9376,6 +9857,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRMA09_3t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Orc de l’ancienne Horde"
@@ -9391,6 +9873,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA14_1H.png",
 			"fr": {
 				"name": "Système de défense Omnitron"
 			},
@@ -9401,6 +9884,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA14_1.png",
 			"fr": {
 				"name": "Système de défense Omnitron"
 			},
@@ -9421,6 +9905,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMA17_3H.png",
 			"fr": {
 				"name": "Onyxia"
 			},
@@ -9431,6 +9916,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA17_3.png",
 			"fr": {
 				"name": "Onyxia"
 			},
@@ -9442,6 +9928,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMA17_9.png",
 			"cost": 2,
 			"durability": 6,
 			"fr": {
@@ -9453,6 +9940,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "BRMA09_2.png",
 			"cost": 2,
 			"fr": {
 				"name": "Ouvrir les portes"
@@ -9464,6 +9952,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA09_2H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Ouvrir les portes"
@@ -9475,6 +9964,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA01_2.png",
 			"cost": 0,
 			"fr": {
 				"name": "Jeu forcé !"
@@ -9486,6 +9976,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA01_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Jeu forcé !"
@@ -9507,6 +9998,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMA03_2.png",
 			"cost": 2,
 			"fr": {
 				"name": "Puissance de Ragnaros"
@@ -9530,6 +10022,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jonboy Meyers",
+			"cardImage": "BRM_013.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Han shot first.",
@@ -9550,6 +10043,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA06_3.png",
 			"fr": {
 				"name": "Ragnaros, seigneur du feu"
 			},
@@ -9560,6 +10054,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRM_027h.png",
 			"fr": {
 				"name": "Ragnaros, seigneur du feu"
 			},
@@ -9570,6 +10065,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA06_3H.png",
 			"fr": {
 				"name": "Ragnaros, seigneur du feu"
 			},
@@ -9580,6 +10076,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA10_1.png",
 			"fr": {
 				"name": "Tranchetripe l’Indompté"
 			},
@@ -9590,6 +10087,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA10_1H.png",
 			"fr": {
 				"name": "Tranchetripe l’Indompté"
 			},
@@ -9601,6 +10099,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRMA10_6.png",
 			"cost": 1,
 			"durability": 5,
 			"fr": {
@@ -9613,6 +10112,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "BRMA14_11.png",
 			"cost": 0,
 			"fr": {
 				"name": "Recharge"
@@ -9624,6 +10124,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA15_3.png",
 			"cost": 2,
 			"fr": {
 				"name": "Libérer les aberrations"
@@ -9635,6 +10136,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA09_1H.png",
 			"fr": {
 				"name": "Rend Main-Noire"
 			},
@@ -9645,6 +10147,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA09_1.png",
 			"fr": {
 				"name": "Rend Main-Noire"
 			},
@@ -9657,6 +10160,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley",
 			"attack": 8,
+			"cardImage": "BRM_029.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -9679,6 +10183,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Luke Mancini",
+			"cardImage": "BRM_017.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "I walked into the dungeon and noticed a slain adventurer. In his final moments, he had scrawled out a message in the dust on the wall beside him. Two words: \"rez plz\"",
@@ -9697,6 +10202,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Ben Olson",
+			"cardImage": "BRM_015.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "This is better than Arcane Explosion, so I guess warriors are finally getting revenge on mages for Mortal Strike being worse than Fireball.",
@@ -9714,6 +10220,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA16_4.png",
 			"cost": 1,
 			"fr": {
 				"name": "Gong réverbérant"
@@ -9725,6 +10232,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA04_4H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Déchaînement"
@@ -9739,6 +10247,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA04_4.png",
 			"cost": 3,
 			"fr": {
 				"name": "Déchaînement"
@@ -9754,6 +10263,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jaime Jones",
+			"cardImage": "BRM_001.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Each year, folk gather in front of Blackrock Mountain to mourn those who were mind-controlled into the lava.",
@@ -9772,6 +10282,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "BRMA13_5.png",
 			"cost": 0,
 			"fr": {
 				"name": "Fils de la Flamme"
@@ -9787,6 +10298,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA16_3.png",
 			"cost": 4,
 			"fr": {
 				"name": "Souffle sonique"
@@ -9808,6 +10320,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRM_030t.png",
 			"cost": 4,
 			"fr": {
 				"name": "Balayage de queue"
@@ -9819,6 +10332,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA15_2.png",
 			"fr": {
 				"name": "L’alchimiste"
 			},
@@ -9829,6 +10343,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA15_2H.png",
 			"fr": {
 				"name": "L’alchimiste"
 			},
@@ -9839,6 +10354,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA06_2.png",
 			"cost": 2,
 			"fr": {
 				"name": "Le chambellan"
@@ -9850,6 +10366,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA06_2H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Le chambellan"
@@ -9861,6 +10378,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA10_3H.png",
 			"cost": 0,
 			"fr": {
 				"name": "La colonie"
@@ -9872,6 +10390,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA10_3.png",
 			"cost": 1,
 			"fr": {
 				"name": "La colonie"
@@ -9883,6 +10402,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA09_6.png",
 			"cost": 1,
 			"fr": {
 				"name": "Véritable chef de guerre"
@@ -9894,6 +10414,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "BRMA07_3.png",
 			"cost": 4,
 			"fr": {
 				"name": "CASSE-TÊTE"
@@ -9906,6 +10427,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "BRMA14_5.png",
 			"cost": 1,
 			"elite": true,
 			"fr": {
@@ -9922,6 +10444,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMA14_5H.png",
 			"cost": 1,
 			"elite": true,
 			"fr": {
@@ -9937,6 +10460,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA13_2.png",
 			"cost": 1,
 			"fr": {
 				"name": "Forme véritable"
@@ -9948,6 +10472,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA13_2H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Forme véritable"
@@ -9971,6 +10496,7 @@ var parseCardsText = {
 		{
 			"artist": "Sam Nielson",
 			"attack": 2,
+			"cardImage": "BRM_004.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "The twilight whelps are basically magic-vampires. Despite this, they are not a reference to any popular series of novels.",
@@ -10004,6 +10530,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMA11_1H.png",
 			"fr": {
 				"name": "Vaelastrasz le Corrompu"
 			},
@@ -10014,6 +10541,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "BRMA11_1.png",
 			"fr": {
 				"name": "Vaelastrasz le Corrompu"
 			},
@@ -10026,6 +10554,7 @@ var parseCardsText = {
 		{
 			"artist": "Lucas Graciano",
 			"attack": 6,
+			"cardImage": "BRM_025.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "Volcanic Drakes breathe lava instead of fire. The antacid vendor at Thorium Point does a brisk business with them.",
@@ -10046,6 +10575,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 7,
+			"cardImage": "BRM_009.png",
 			"collectible": true,
 			"cost": 9,
 			"flavor": "The roots, the roots, the roots is on fire!",
@@ -10068,6 +10598,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRM_004t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Dragonnet"
@@ -10080,6 +10611,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "BRMA09_2t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Dragonnet"
@@ -10093,6 +10625,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMA09_2Ht.png",
 			"cost": 1,
 			"fr": {
 				"name": "Dragonnet"
@@ -10106,6 +10639,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMA13_7.png",
 			"cost": 0,
 			"fr": {
 				"name": "Cendres tourbillonnantes"
@@ -10121,6 +10655,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMA13_4.png",
 			"cost": 1,
 			"fr": {
 				"name": "Magie sauvage"
@@ -10132,6 +10667,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMA13_4H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Magie sauvage"
@@ -10158,6 +10694,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 4,
+			"cardImage": "EX1_097.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -10180,6 +10717,7 @@ var parseCardsText = {
 		{
 			"artist": "Luca Zontini",
 			"attack": 2,
+			"cardImage": "CS2_188.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Alliance",
@@ -10201,6 +10739,7 @@ var parseCardsText = {
 		{
 			"artist": "Dave Kendall",
 			"attack": 1,
+			"cardImage": "EX1_007.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "He trained when he was younger to be an acolyte of joy, but things didn’t work out like he thought they would.",
@@ -10218,6 +10757,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 3,
+			"cardImage": "NEW1_010.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -10243,6 +10783,7 @@ var parseCardsText = {
 		{
 			"artist": "Sean O’Daniels",
 			"attack": 0,
+			"cardImage": "EX1_006.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "WARNING.  WARNING.  WARNING.",
@@ -10261,6 +10802,7 @@ var parseCardsText = {
 		{
 			"artist": "Dany Orizio",
 			"attack": 3,
+			"cardImage": "EX1_382.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -10283,6 +10825,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 8,
+			"cardImage": "EX1_561.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -10316,6 +10859,7 @@ var parseCardsText = {
 		{
 			"artist": "Chippy",
 			"attack": 2,
+			"cardImage": "EX1_393.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -10336,6 +10880,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan & Gabor",
+			"cardImage": "CS2_038.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -10365,6 +10910,7 @@ var parseCardsText = {
 		{
 			"artist": "Bernie Kang",
 			"attack": 5,
+			"cardImage": "EX1_057.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Alliance",
@@ -10386,6 +10932,7 @@ var parseCardsText = {
 		{
 			"artist": "Howard Lyon",
 			"attack": 2,
+			"cardImage": "EX1_584.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -10407,6 +10954,7 @@ var parseCardsText = {
 		{
 			"artist": "Patrik Hjelm",
 			"attack": 5,
+			"cardImage": "NEW1_008.png",
 			"collectible": true,
 			"cost": 7,
 			"flavor": "Go ahead, carve your initials in him.",
@@ -10425,6 +10973,7 @@ var parseCardsText = {
 		{
 			"artist": "Sean O’Daniels",
 			"attack": 5,
+			"cardImage": "EX1_178.png",
 			"collectible": true,
 			"cost": 7,
 			"faction": "Neutral",
@@ -10442,6 +10991,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NEW1_008b.png",
 			"fr": {
 				"name": "Secrets anciens"
 			},
@@ -10453,6 +11003,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "NEW1_008a.png",
 			"fr": {
 				"name": "Connaissances anciennes"
 			},
@@ -10466,6 +11017,7 @@ var parseCardsText = {
 		{
 			"artist": "Richard Wright",
 			"attack": 4,
+			"cardImage": "EX1_045.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Alliance",
@@ -10484,6 +11036,7 @@ var parseCardsText = {
 		{
 			"artist": "Mike Sass",
 			"attack": 1,
+			"cardImage": "EX1_009.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "There is no beast more frightening (or ridiculous) than a fully enraged chicken.",
@@ -10505,6 +11058,7 @@ var parseCardsText = {
 		{
 			"artist": "Samwise",
 			"attack": 3,
+			"cardImage": "EX1_398.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -10527,6 +11081,7 @@ var parseCardsText = {
 		{
 			"artist": "Sedhayu Ardian",
 			"attack": 4,
+			"cardImage": "EX1_089.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -10549,6 +11104,7 @@ var parseCardsText = {
 		{
 			"artist": "Wayne Reynolds",
 			"attack": 5,
+			"cardImage": "EX1_559.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -10569,6 +11125,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 4,
+			"cardImage": "EX1_067.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -10591,6 +11148,7 @@ var parseCardsText = {
 		{
 			"artist": "Doug Alexander",
 			"attack": 2,
+			"cardImage": "EX1_362.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -10613,6 +11171,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan & Gabor",
 			"attack": 1,
+			"cardImage": "EX1_008.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Alliance",
@@ -10634,6 +11193,7 @@ var parseCardsText = {
 		{
 			"artist": "Greg Hildebrandt",
 			"attack": 1,
+			"cardImage": "EX1_402.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -10653,6 +11213,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "EX1_383t.png",
 			"cost": 5,
 			"durability": 3,
 			"fr": {
@@ -10668,6 +11229,7 @@ var parseCardsText = {
 		{
 			"artist": "Doug Alexander",
 			"attack": 3,
+			"cardImage": "EX1_591.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -10689,6 +11251,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Garner",
+			"cardImage": "EX1_384.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -10710,6 +11273,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Zhang",
 			"attack": 4,
+			"cardImage": "EX1_284.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -10732,6 +11296,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "EX1_110t.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -10745,6 +11310,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "EX1_014t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Banane"
@@ -10767,6 +11333,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "EX1_320.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -10785,6 +11352,7 @@ var parseCardsText = {
 		{
 			"artist": "Ian Ameling",
 			"attack": 7,
+			"cardImage": "EX1_249.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -10803,6 +11371,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "EX1_398t.png",
 			"cost": 1,
 			"durability": 2,
 			"fr": {
@@ -10816,6 +11385,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "EX1_392.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -10832,6 +11402,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "EX1_165b.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Forme d’ours"
@@ -10857,6 +11428,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "EX1_549.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -10888,6 +11460,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Lucas Graciano",
+			"cardImage": "EX1_126.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -10906,6 +11479,7 @@ var parseCardsText = {
 		{
 			"artist": "Chris Seaman",
 			"attack": 4,
+			"cardImage": "EX1_005.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Mere devilsaurs no longer excite him.  Soon he'll be trying to catch Onyxia with only a dull Krol Blade.",
@@ -10925,6 +11499,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Tom Baxa",
+			"cardImage": "EX1_570.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -10955,6 +11530,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Hideaki Takamura",
+			"cardImage": "CS2_233.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -10996,6 +11572,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Tyler Walpole",
+			"cardImage": "EX1_355.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "This card causes double the trouble AND double the fun.",
@@ -11023,6 +11600,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Chippy",
+			"cardImage": "EX1_363.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Apparently with wisdom comes the knowledge that you should probably be attacking every turn.",
@@ -11050,6 +11628,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Chris Seaman",
+			"cardImage": "CS2_028.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -11070,6 +11649,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "EX1_323w.png",
 			"cost": 3,
 			"durability": 8,
 			"fr": {
@@ -11084,6 +11664,7 @@ var parseCardsText = {
 		{
 			"artist": "Bernie Kang",
 			"attack": 0,
+			"cardImage": "CS2_059.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -11107,6 +11688,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 3,
+			"cardImage": "EX1_590.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -11139,6 +11721,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 1,
+			"cardImage": "EX1_012.png",
 			"collectible": true,
 			"cost": 2,
 			"elite": true,
@@ -11173,6 +11756,7 @@ var parseCardsText = {
 		{
 			"artist": "Randy Gallegos",
 			"attack": 1,
+			"cardImage": "NEW1_025.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Every pirate uses the same four digits to access Automated Gold Dispensers.  It's called the \"Pirate's Code\".",
@@ -11194,6 +11778,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 2,
+			"cardImage": "NEW1_018.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "\"I only plunder on days that end in 'y'.\"",
@@ -11224,6 +11809,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Wayne Reynolds",
+			"cardImage": "EX1_407.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -11242,6 +11828,7 @@ var parseCardsText = {
 		{
 			"artist": "Chippy",
 			"attack": 4,
+			"cardImage": "EX1_091.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -11264,6 +11851,7 @@ var parseCardsText = {
 		{
 			"artist": "Wayne Reynolds",
 			"attack": 4,
+			"cardImage": "EX1_110.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -11296,6 +11884,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 5,
+			"cardImage": "NEW1_024.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -11316,6 +11905,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "EX1_165a.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Forme de félin"
@@ -11331,6 +11921,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 5,
+			"cardImage": "EX1_573.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -11350,6 +11941,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Daarken",
+			"cardImage": "EX1_621.png",
 			"collectible": true,
 			"cost": 0,
 			"flavor": "It isn't really a circle.",
@@ -11388,6 +11980,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "CS2_073.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -11409,6 +12002,7 @@ var parseCardsText = {
 		{
 			"artist": "Steve Prescott",
 			"attack": 2,
+			"cardImage": "EX1_050.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -11431,6 +12025,7 @@ var parseCardsText = {
 		{
 			"artist": "Arthur Gimaldinov",
 			"attack": 2,
+			"cardImage": "EX1_103.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -11452,6 +12047,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Wayne Reynolds",
+			"cardImage": "NEW1_036.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "\"Shout! Shout! Let it all out!\" - Advice to warriors-in-training",
@@ -11496,6 +12092,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Steve Hui",
+			"cardImage": "EX1_128.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -11524,6 +12121,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Leo Che",
+			"cardImage": "EX1_275.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -11555,6 +12153,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jason Chan",
+			"cardImage": "EX1_287.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -11576,6 +12175,7 @@ var parseCardsText = {
 		{
 			"artist": "Tom Fleming",
 			"attack": 2,
+			"cardImage": "EX1_059.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -11597,6 +12197,7 @@ var parseCardsText = {
 		{
 			"artist": "Phroilan Gardner",
 			"attack": 2,
+			"cardImage": "EX1_603.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -11619,6 +12220,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 4,
+			"cardImage": "EX1_595.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -11637,6 +12239,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "skele21.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -11653,6 +12256,7 @@ var parseCardsText = {
 		{
 			"artist": "Scott Hampton",
 			"attack": 4,
+			"cardImage": "EX1_046.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Alliance",
@@ -11673,6 +12277,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Steve Prescott",
+			"cardImage": "EX1_617.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -11691,6 +12296,7 @@ var parseCardsText = {
 		{
 			"artist": "Bernie Kang",
 			"attack": 12,
+			"cardImage": "NEW1_030.png",
 			"collectible": true,
 			"cost": 10,
 			"elite": true,
@@ -11712,6 +12318,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "EX1_130a.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -11728,6 +12335,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 2,
+			"cardImage": "EX1_093.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Alliance",
@@ -11748,6 +12356,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "EX1_131t.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -11763,6 +12372,7 @@ var parseCardsText = {
 		{
 			"artist": "Dany Orizio",
 			"attack": 2,
+			"cardImage": "EX1_131.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -11795,6 +12405,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "EX1_573a.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Faveur du demi-dieu"
@@ -11809,6 +12420,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 1,
+			"cardImage": "EX1_102.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -11841,6 +12453,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Ben Wootten",
+			"cardImage": "EX1_596.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -11858,6 +12471,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "EX1_tk29.png",
 			"cost": 5,
 			"faction": "Neutral",
 			"fr": {
@@ -11874,6 +12488,7 @@ var parseCardsText = {
 		{
 			"artist": "John Dickenson",
 			"attack": 2,
+			"cardImage": "EX1_162.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -11907,6 +12522,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "EX1_166b.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Dissipation"
@@ -11923,6 +12539,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Lucas Graciano",
+			"cardImage": "EX1_349.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -11941,6 +12558,7 @@ var parseCardsText = {
 		{
 			"artist": "Lucas Graciano",
 			"attack": 5,
+			"cardImage": "EX1_310.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -11965,6 +12583,7 @@ var parseCardsText = {
 		{
 			"artist": "John Polidora",
 			"attack": 2,
+			"cardImage": "EX1_567.png",
 			"collectible": true,
 			"cost": 5,
 			"durability": 8,
@@ -11988,6 +12607,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 0,
+			"cardImage": "NEW1_021.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "He's almost been right so many times. He was <i>sure</i> it was coming during the Cataclysm.",
@@ -12005,6 +12625,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 3,
+			"cardImage": "NEW1_022.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "\"Yarrrr\" is a pirate word that means \"Greetings, milord.\"",
@@ -12024,6 +12645,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "DREAM_04.png",
 			"cost": 0,
 			"fr": {
 				"name": "Rêve"
@@ -12038,6 +12660,7 @@ var parseCardsText = {
 		{
 			"artist": "Luca Zontini",
 			"attack": 4,
+			"cardImage": "EX1_165.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -12056,6 +12679,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "EX1_165t1.png",
 			"cost": 5,
 			"fr": {
 				"name": "Druide de la Griffe"
@@ -12075,6 +12699,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "EX1_165t2.png",
 			"cost": 5,
 			"fr": {
 				"name": "Druide de la Griffe"
@@ -12095,6 +12720,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 3,
+			"cardImage": "EX1_243.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -12118,6 +12744,7 @@ var parseCardsText = {
 		{
 			"artist": "Cyril Van Der Haegen",
 			"attack": 3,
+			"cardImage": "EX1_536.png",
 			"collectible": true,
 			"cost": 3,
 			"durability": 2,
@@ -12136,6 +12763,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 7,
+			"cardImage": "EX1_250.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -12158,6 +12786,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Kevin Chin",
+			"cardImage": "EX1_245.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -12179,6 +12808,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 3,
+			"cardImage": "CS2_117.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "He can see really far, and he doesn't use a telescope like those filthy pirates.",
@@ -12199,6 +12829,7 @@ var parseCardsText = {
 		{
 			"artist": "Efrem Palacios",
 			"attack": 2,
+			"cardImage": "EX1_613.png",
 			"collectible": true,
 			"cost": 3,
 			"elite": true,
@@ -12231,6 +12862,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "DREAM_03.png",
 			"cost": 4,
 			"fr": {
 				"name": "Drake émeraude"
@@ -12246,6 +12878,7 @@ var parseCardsText = {
 		{
 			"artist": "Lars Grant-West",
 			"attack": 2,
+			"cardImage": "EX1_170.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -12281,6 +12914,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Michal Ivan",
+			"cardImage": "EX1_619.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -12321,6 +12955,7 @@ var parseCardsText = {
 		{
 			"artist": "Michael Komarck",
 			"attack": 3,
+			"cardImage": "EX1_274.png",
 			"collectible": true,
 			"cost": 4,
 			"elite": false,
@@ -12339,6 +12974,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Ariel Olivetti",
+			"cardImage": "EX1_124.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -12369,6 +13005,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Tom Baxa",
+			"cardImage": "EX1_537.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -12386,6 +13023,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Brandon Kitkouski",
+			"cardImage": "EX1_610.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -12406,6 +13044,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "James Ryman",
+			"cardImage": "EX1_132.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -12427,6 +13066,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 3,
+			"cardImage": "EX1_564.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -12448,6 +13088,7 @@ var parseCardsText = {
 		{
 			"artist": "Samwise",
 			"attack": 3,
+			"cardImage": "NEW1_023.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Adorable.  Immune to Magic.  Doesn't pee on the rug.  The perfect pet!",
@@ -12477,6 +13118,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Lars Grant-West",
+			"cardImage": "CS2_053.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -12495,6 +13137,7 @@ var parseCardsText = {
 		{
 			"artist": "John Polidora",
 			"attack": 3,
+			"cardImage": "EX1_301.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -12519,6 +13162,7 @@ var parseCardsText = {
 		{
 			"artist": "Monica Langlois",
 			"attack": 3,
+			"cardImage": "CS1_069.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Alliance",
@@ -12539,6 +13183,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Clint Langley",
+			"cardImage": "EX1_248.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -12559,6 +13204,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "EX1_finkle.png",
 			"cost": 2,
 			"elite": true,
 			"faction": "Neutral",
@@ -12575,6 +13221,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 3,
+			"cardImage": "EX1_319.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -12597,6 +13244,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "EX1_614t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Flamme d’Azzinoth"
@@ -12609,6 +13257,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Tyler Walpole",
+			"cardImage": "EX1_544.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -12627,6 +13276,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 2,
+			"cardImage": "tt_004.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -12645,6 +13295,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Trevor Jacobs",
+			"cardImage": "EX1_571.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -12662,6 +13313,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Ralph Horsley",
+			"cardImage": "EX1_251.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -12682,6 +13334,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Matt Gaser",
+			"cardImage": "EX1_611.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -12703,6 +13356,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 5,
+			"cardImage": "EX1_283.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -12725,6 +13379,7 @@ var parseCardsText = {
 		{
 			"artist": "Simon Bisley",
 			"attack": 2,
+			"cardImage": "EX1_604.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -12765,6 +13420,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 4,
+			"cardImage": "EX1_095.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -12784,6 +13440,7 @@ var parseCardsText = {
 		{
 			"artist": "Peter C. Lee",
 			"attack": 5,
+			"cardImage": "DS1_188.png",
 			"collectible": true,
 			"cost": 7,
 			"durability": 2,
@@ -12802,6 +13459,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NEW1_040t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Gnoll"
@@ -12819,6 +13477,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan & Gabor",
 			"attack": 7,
+			"cardImage": "EX1_411.png",
 			"collectible": true,
 			"cost": 7,
 			"durability": 1,
@@ -12848,6 +13507,7 @@ var parseCardsText = {
 		{
 			"artist": "Glenn Rane",
 			"attack": 4,
+			"cardImage": "EX1_414.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -12882,6 +13542,7 @@ var parseCardsText = {
 		{
 			"artist": "Kev Walker",
 			"attack": 7,
+			"cardImage": "NEW1_038.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -12911,6 +13572,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 5,
+			"cardImage": "EX1_558.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -12933,6 +13595,7 @@ var parseCardsText = {
 		{
 			"artist": "Brian Despain",
 			"attack": 2,
+			"cardImage": "EX1_556.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -12954,6 +13617,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "James Zhang",
+			"cardImage": "EX1_137.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -12974,6 +13638,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "EX1_409t.png",
 			"cost": 1,
 			"durability": 3,
 			"fr": {
@@ -12988,6 +13653,7 @@ var parseCardsText = {
 		{
 			"artist": "Laurel D. Austin",
 			"attack": 4,
+			"cardImage": "NEW1_040.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -13005,6 +13671,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Miguel Coimbra",
+			"cardImage": "EX1_624.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "Often followed by Holy Smokes!",
@@ -13021,6 +13688,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Justin Sweet",
+			"cardImage": "EX1_365.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -13038,6 +13706,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "EX1_538t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Chien"
@@ -13067,6 +13736,7 @@ var parseCardsText = {
 		{
 			"artist": "Jaemin Kim",
 			"attack": 1,
+			"cardImage": "NEW1_017.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Murloc.  It's what's for dinner.",
@@ -13088,6 +13758,7 @@ var parseCardsText = {
 		{
 			"artist": "Andrew Robinson",
 			"attack": 2,
+			"cardImage": "EX1_534t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Hyène"
@@ -13103,6 +13774,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Garner",
+			"cardImage": "EX1_289.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -13123,6 +13795,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Carl Frank",
+			"cardImage": "EX1_295.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -13157,6 +13830,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "CS2_031.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -13178,6 +13852,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 7,
+			"cardImage": "EX1_614.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -13197,6 +13872,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "EX1_598.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -13213,6 +13889,7 @@ var parseCardsText = {
 		{
 			"artist": "Mark Gibbons",
 			"attack": 1,
+			"cardImage": "EX1_597.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -13231,6 +13908,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "EX1_tk34.png",
 			"cost": 6,
 			"faction": "Neutral",
 			"fr": {
@@ -13246,6 +13924,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "EX1_tk33.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -13272,6 +13951,7 @@ var parseCardsText = {
 		{
 			"artist": "Samwise",
 			"attack": 4,
+			"cardImage": "CS2_181.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Horde",
@@ -13304,6 +13984,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Steve Prescott",
+			"cardImage": "CS1_129.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -13332,6 +14013,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Slawomir Maniak",
+			"cardImage": "EX1_607.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -13350,6 +14032,7 @@ var parseCardsText = {
 		{
 			"artist": "Trevor Jacobs",
 			"attack": 2,
+			"cardImage": "CS2_203.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Horde",
@@ -13372,6 +14055,7 @@ var parseCardsText = {
 		{
 			"artist": "Jaemin Kim",
 			"attack": 4,
+			"cardImage": "EX1_017.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Horde",
@@ -13405,6 +14089,7 @@ var parseCardsText = {
 		{
 			"artist": "Gabor Szikszai",
 			"attack": 2,
+			"cardImage": "EX1_166.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -13434,6 +14119,7 @@ var parseCardsText = {
 		{
 			"artist": "Dave Allsop",
 			"attack": 5,
+			"cardImage": "NEW1_005.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "He just wants people to see his vacation photos.",
@@ -13466,6 +14152,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 8,
+			"cardImage": "EX1_543.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -13490,6 +14177,7 @@ var parseCardsText = {
 		{
 			"artist": "Sunny Gho",
 			"attack": 5,
+			"cardImage": "EX1_014.png",
 			"collectible": true,
 			"cost": 3,
 			"elite": true,
@@ -13512,6 +14200,7 @@ var parseCardsText = {
 		{
 			"artist": "Popo Wei",
 			"attack": 4,
+			"cardImage": "EX1_612.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -13534,6 +14223,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Cavotta",
 			"attack": 3,
+			"cardImage": "NEW1_019.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Ambitious Knife Jugglers sometimes graduate to Bomb Jugglers.    They never last long enough to make it onto a card though.",
@@ -13550,6 +14240,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "DREAM_01.png",
 			"cost": 3,
 			"fr": {
 				"name": "Sœur rieuse"
@@ -13565,6 +14256,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dan Scott",
+			"cardImage": "EX1_241.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -13585,6 +14277,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "EX1_354.png",
 			"collectible": true,
 			"cost": 8,
 			"faction": "Neutral",
@@ -13601,6 +14294,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "EX1_160b.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Chef de la meute"
@@ -13626,6 +14320,7 @@ var parseCardsText = {
 		{
 			"artist": "Gabe from Penny Arcade",
 			"attack": 6,
+			"cardImage": "EX1_116.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -13649,6 +14344,7 @@ var parseCardsText = {
 		{
 			"artist": "Glenn Rane",
 			"attack": 2,
+			"cardImage": "EX1_029.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -13679,6 +14375,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Daarken",
+			"cardImage": "EX1_238.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -13699,6 +14396,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Christopher Moeller",
+			"cardImage": "EX1_259.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -13720,6 +14418,7 @@ var parseCardsText = {
 		{
 			"artist": "Daarken",
 			"attack": 0,
+			"cardImage": "EX1_335.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -13739,6 +14438,7 @@ var parseCardsText = {
 		{
 			"artist": "Erik Ko",
 			"attack": 1,
+			"cardImage": "EX1_001.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "She’s smaller than her sisters Mediumwarden and Heavywarden.",
@@ -13756,6 +14456,7 @@ var parseCardsText = {
 		{
 			"artist": "Blizzard Entertainment",
 			"attack": 0,
+			"cardImage": "EX1_341.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -13775,6 +14476,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 2,
+			"cardImage": "EX1_096.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -13795,6 +14497,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "EX1_323h.png",
 			"cost": 0,
 			"faction": "Neutral",
 			"fr": {
@@ -13812,6 +14515,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 3,
+			"cardImage": "EX1_323.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -13835,6 +14539,7 @@ var parseCardsText = {
 		{
 			"artist": "Mark Zug",
 			"attack": 0,
+			"cardImage": "EX1_100.png",
 			"collectible": true,
 			"cost": 2,
 			"elite": true,
@@ -13854,6 +14559,7 @@ var parseCardsText = {
 		{
 			"artist": "Mike Sass",
 			"attack": 3,
+			"cardImage": "EX1_082.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Alliance",
@@ -13875,6 +14581,7 @@ var parseCardsText = {
 		{
 			"artist": "Michael Komarck",
 			"attack": 4,
+			"cardImage": "EX1_563.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -13898,6 +14605,7 @@ var parseCardsText = {
 		{
 			"artist": "Hideaki Takamura",
 			"attack": 1,
+			"cardImage": "EX1_055.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Alliance",
@@ -13928,6 +14636,7 @@ var parseCardsText = {
 		{
 			"artist": "Scott Altmann",
 			"attack": 0,
+			"cardImage": "EX1_575.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -13948,6 +14657,7 @@ var parseCardsText = {
 		{
 			"artist": "Luca Zontini",
 			"attack": 2,
+			"cardImage": "EX1_616.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -13969,6 +14679,7 @@ var parseCardsText = {
 		{
 			"artist": "Blizzard Cinematics",
 			"attack": 1,
+			"cardImage": "NEW1_012.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "These wyrms feed on arcane energies, and while they are generally considered a nuisance rather than a real threat, you really shouldn't leave them alone with a bucket of mana.",
@@ -13986,6 +14697,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "EX1_155b.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Marque de la nature"
@@ -14009,6 +14721,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "EX1_155a.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Marque de la nature"
@@ -14022,6 +14735,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Clint Langley",
+			"cardImage": "EX1_155.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -14050,6 +14764,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Sean O'Daniels",
+			"cardImage": "EX1_626.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "It dispels buffs, powers, hopes, and dreams.",
@@ -14070,6 +14785,7 @@ var parseCardsText = {
 		{
 			"artist": "Ron Spencer",
 			"attack": 4,
+			"cardImage": "NEW1_014.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "She's actually a male tauren.  People don't call him \"Master of Disguise\" for nothing.",
@@ -14091,6 +14807,7 @@ var parseCardsText = {
 		{
 			"artist": "E.M. Gist",
 			"attack": 1,
+			"cardImage": "NEW1_037.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "He's currently trying to craft a \"flail-axe\", but all the other swordsmiths say it can't be done.",
@@ -14108,6 +14825,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 4,
+			"cardImage": "NEW1_029.png",
 			"collectible": true,
 			"cost": 2,
 			"elite": true,
@@ -14129,6 +14847,7 @@ var parseCardsText = {
 		{
 			"artist": "Leo Che",
 			"attack": 3,
+			"cardImage": "EX1_085.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Alliance",
@@ -14163,6 +14882,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "EX1_625t2.png",
 			"cost": 2,
 			"fr": {
 				"name": "Briser l’esprit"
@@ -14175,6 +14895,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "EX1_625t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Pointe mentale"
@@ -14188,6 +14909,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan & Gabor",
+			"cardImage": "EX1_345.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -14205,6 +14927,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raven Mimura",
+			"cardImage": "EX1_294.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -14225,6 +14948,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Daren Bader",
+			"cardImage": "EX1_533.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -14246,6 +14970,7 @@ var parseCardsText = {
 		{
 			"artist": "Cole Eastburn",
 			"attack": 1,
+			"cardImage": "EX1_396.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -14267,6 +14992,7 @@ var parseCardsText = {
 		{
 			"artist": "Glenn Rane",
 			"attack": 8,
+			"cardImage": "EX1_620.png",
 			"collectible": true,
 			"cost": 20,
 			"flavor": "He gets terrible heartburn.  BECAUSE HE IS FULL OF LAVA.",
@@ -14282,6 +15008,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "EX1_166a.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Éclat lunaire"
@@ -14295,6 +15022,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan & Gabor",
+			"cardImage": "EX1_408.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -14313,6 +15041,7 @@ var parseCardsText = {
 		{
 			"artist": "Samwise",
 			"attack": 8,
+			"cardImage": "EX1_105.png",
 			"collectible": true,
 			"cost": 12,
 			"faction": "Neutral",
@@ -14351,6 +15080,7 @@ var parseCardsText = {
 		{
 			"artist": "Jaemin Kim",
 			"attack": 1,
+			"cardImage": "EX1_509.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -14370,6 +15100,7 @@ var parseCardsText = {
 		{
 			"artist": "Tim McBurnie",
 			"attack": 3,
+			"cardImage": "EX1_507.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -14392,6 +15123,7 @@ var parseCardsText = {
 		{
 			"artist": "Steve Prescott",
 			"attack": 0,
+			"cardImage": "EX1_557.png",
 			"collectible": true,
 			"cost": 2,
 			"elite": true,
@@ -14411,6 +15143,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Leo Che",
+			"cardImage": "EX1_161.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -14448,6 +15181,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "DREAM_05.png",
 			"cost": 0,
 			"fr": {
 				"name": "Cauchemar"
@@ -14461,6 +15195,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan & Gabor",
+			"cardImage": "EX1_130.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -14480,6 +15215,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "EX1_164a.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Nourrir"
@@ -14493,6 +15229,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Terese Nielsen",
+			"cardImage": "EX1_164.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Neutral",
@@ -14509,6 +15246,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "EX1_164b.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Nourrir"
@@ -14523,6 +15261,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 8,
+			"cardImage": "EX1_560.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -14544,6 +15283,7 @@ var parseCardsText = {
 		{
 			"artist": "Dany Orizio",
 			"attack": 8,
+			"cardImage": "EX1_562.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -14577,6 +15317,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "EX1_160t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Panthère"
@@ -14593,6 +15334,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Olson",
 			"attack": 1,
+			"cardImage": "EX1_522.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -14617,6 +15359,7 @@ var parseCardsText = {
 		{
 			"artist": "Daren Bader",
 			"attack": 2,
+			"cardImage": "EX1_133.png",
 			"collectible": true,
 			"cost": 3,
 			"durability": 2,
@@ -14640,6 +15383,7 @@ var parseCardsText = {
 		{
 			"artist": "Ron Spears",
 			"attack": 2,
+			"cardImage": "EX1_076.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Alliance",
@@ -14662,6 +15406,7 @@ var parseCardsText = {
 		{
 			"artist": "Glenn Rane",
 			"attack": 5,
+			"cardImage": "EX1_313.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -14698,6 +15443,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Steve Tappin",
+			"cardImage": "EX1_160.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -14715,6 +15461,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Tom Baxa",
+			"cardImage": "EX1_316.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -14758,6 +15505,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Clint Langley",
+			"cardImage": "EX1_145.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -14776,6 +15524,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 5,
+			"cardImage": "EX1_583.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -14797,6 +15546,7 @@ var parseCardsText = {
 		{
 			"artist": "Wei Wang",
 			"attack": 7,
+			"cardImage": "EX1_350.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -14816,6 +15566,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Luca Zontini",
+			"cardImage": "EX1_279.png",
 			"collectible": true,
 			"cost": 10,
 			"faction": "Neutral",
@@ -14834,6 +15585,7 @@ var parseCardsText = {
 		{
 			"artist": "Attila Adorjany",
 			"attack": 2,
+			"cardImage": "EX1_044.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Alliance",
@@ -14853,6 +15605,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 3,
+			"cardImage": "EX1_412.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -14874,6 +15627,7 @@ var parseCardsText = {
 		{
 			"artist": "Greg Staples",
 			"attack": 8,
+			"cardImage": "EX1_298.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -14892,6 +15646,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jonboy Meyers",
+			"cardImage": "CS2_104.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -14921,6 +15676,7 @@ var parseCardsText = {
 		{
 			"artist": "Ralph Horsley",
 			"attack": 7,
+			"cardImage": "CS2_161.png",
 			"collectible": true,
 			"cost": 7,
 			"faction": "Alliance",
@@ -14952,6 +15708,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Ittoku",
+			"cardImage": "EX1_136.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -14983,6 +15740,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Gonzalo Ordonez",
+			"cardImage": "EX1_379.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -15002,6 +15760,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "EX1_178a.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Enraciner"
@@ -15026,6 +15785,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dave Rapoza",
+			"cardImage": "EX1_578.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -15047,6 +15807,7 @@ var parseCardsText = {
 		{
 			"artist": "Milivoj Ceran",
 			"attack": 6,
+			"cardImage": "EX1_534.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "In the jungle, the mighty jungle, the lion gets slowly consumed by hyenas.",
@@ -15070,6 +15831,7 @@ var parseCardsText = {
 		{
 			"artist": "Gonzalo Ordonez",
 			"attack": 3,
+			"cardImage": "EX1_020.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Alliance",
@@ -15091,6 +15853,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 2,
+			"cardImage": "EX1_531.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Hyenas prefer the bones of kodos or windserpents, but they'll eat pretty much anything.  Even Brussels sprouts.",
@@ -15111,6 +15874,7 @@ var parseCardsText = {
 		{
 			"artist": "Svetlin Velinov",
 			"attack": 8,
+			"cardImage": "EX1_586.png",
 			"collectible": true,
 			"cost": 10,
 			"faction": "Neutral",
@@ -15129,6 +15893,7 @@ var parseCardsText = {
 		{
 			"artist": "Gonzalo Ordonez",
 			"attack": 1,
+			"cardImage": "EX1_080.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Alliance",
@@ -15146,6 +15911,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raven Mimura",
+			"cardImage": "EX1_317.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -15163,6 +15929,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Mark Gibbons",
+			"cardImage": "EX1_334.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -15191,6 +15958,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "EX1_345t.png",
 			"cost": 0,
 			"fr": {
 				"name": "Ombre du néant"
@@ -15206,6 +15974,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dave Kendall",
+			"cardImage": "EX1_303.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -15226,6 +15995,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "EX1_625.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "If a bright light shines on a priest in Shadowform… do they cast a shadow?",
@@ -15253,6 +16023,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Graven Tung",
+			"cardImage": "EX1_144.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -15269,6 +16040,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "EX1_573b.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Leçon de Shan’do"
@@ -15292,6 +16064,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "EX1_410.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -15313,6 +16086,7 @@ var parseCardsText = {
 		{
 			"artist": "Carl Critchlow",
 			"attack": 0,
+			"cardImage": "EX1_405.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -15334,6 +16108,7 @@ var parseCardsText = {
 		{
 			"artist": "Chris Moeller",
 			"attack": 3,
+			"cardImage": "EX1_134.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -15355,6 +16130,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan & Gabor",
+			"cardImage": "EX1_332.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -15376,6 +16152,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Starbuck",
 			"attack": 4,
+			"cardImage": "CS2_151.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Alliance",
@@ -15397,6 +16174,7 @@ var parseCardsText = {
 		{
 			"artist": "Phroilan Gardner",
 			"attack": 3,
+			"cardImage": "EX1_023.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Horde",
@@ -15417,6 +16195,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Tyler Walpole",
+			"cardImage": "EX1_309.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Neutral",
@@ -15434,6 +16213,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "E.M. Gist",
+			"cardImage": "EX1_391.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -15451,6 +16231,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "EX1_554t.png",
 			"cost": 0,
 			"faction": "Neutral",
 			"fr": {
@@ -15467,6 +16248,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Bernie Kang",
+			"cardImage": "EX1_554.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -15487,6 +16269,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Lorenzo Minaca",
+			"cardImage": "EX1_609.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -15508,6 +16291,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 3,
+			"cardImage": "EX1_608.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -15529,6 +16313,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Markus Erdt",
+			"cardImage": "EX1_158.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -15558,6 +16343,7 @@ var parseCardsText = {
 		{
 			"artist": "Ken Steacy",
 			"attack": 3,
+			"cardImage": "NEW1_027.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "When he saves enough plunder, he's going to commission an enormous captain's hat.  He has hat envy.",
@@ -15579,6 +16365,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Brereton",
 			"attack": 2,
+			"cardImage": "CS2_146.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Alliance",
@@ -15597,6 +16384,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Gonzalo Ordonez",
+			"cardImage": "tt_010.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -15617,6 +16405,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "tt_010a.png",
 			"cost": 0,
 			"fr": {
 				"name": "Courbe-sort"
@@ -15632,6 +16421,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Cavotta",
 			"attack": 4,
+			"cardImage": "EX1_048.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Horde",
@@ -15652,6 +16442,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "EX1_tk11.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -15672,6 +16463,7 @@ var parseCardsText = {
 		{
 			"artist": "Justin Sweet",
 			"attack": 4,
+			"cardImage": "CS2_221.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Horde",
@@ -15693,6 +16485,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CS2_152.png",
 			"cost": 1,
 			"faction": "Alliance",
 			"fr": {
@@ -15707,6 +16500,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "EX1_tk28.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -15723,6 +16517,7 @@ var parseCardsText = {
 		{
 			"artist": "Daren Bader",
 			"attack": 3,
+			"cardImage": "NEW1_041.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "This Kodo is so big that he can stampede by <i>himself</i>.",
@@ -15753,6 +16548,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "NEW1_007b.png",
 			"fr": {
 				"name": "Météores"
 			},
@@ -15764,6 +16560,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "NEW1_007a.png",
 			"fr": {
 				"name": "Météores"
 			},
@@ -15776,6 +16573,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Richard Wright",
+			"cardImage": "NEW1_007.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Is the sky falling?  Yes.  Yes it is.",
@@ -15793,6 +16591,7 @@ var parseCardsText = {
 		{
 			"artist": "Nate Bowden",
 			"attack": 2,
+			"cardImage": "EX1_247.png",
 			"collectible": true,
 			"cost": 2,
 			"durability": 3,
@@ -15815,6 +16614,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 5,
+			"cardImage": "EX1_028.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Alliance",
@@ -15845,6 +16645,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "EX1_160a.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Invocation de panthère"
@@ -15859,6 +16660,7 @@ var parseCardsText = {
 		{
 			"artist": "Tyler Walpole",
 			"attack": 0,
+			"cardImage": "EX1_315.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -15882,6 +16684,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 2,
+			"cardImage": "EX1_058.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Alliance",
@@ -15903,6 +16706,7 @@ var parseCardsText = {
 		{
 			"artist": "Andrea Uderzo",
 			"attack": 4,
+			"cardImage": "EX1_032.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Alliance",
@@ -15925,6 +16729,7 @@ var parseCardsText = {
 		{
 			"artist": "Efrem Palacios",
 			"attack": 1,
+			"cardImage": "EX1_366.png",
 			"collectible": true,
 			"cost": 3,
 			"durability": 5,
@@ -15944,6 +16749,7 @@ var parseCardsText = {
 		{
 			"artist": "Glenn Rane",
 			"attack": 5,
+			"cardImage": "EX1_016.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -15965,6 +16771,7 @@ var parseCardsText = {
 		{
 			"artist": "Paul Warzecha",
 			"attack": 2,
+			"cardImage": "EX1_390.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -16010,6 +16817,7 @@ var parseCardsText = {
 		{
 			"artist": "Daren Bader",
 			"attack": 6,
+			"cardImage": "EX1_623.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "He also moonlights Thursday nights as a bouncer at the Pig and Whistle Tavern.",
@@ -16031,6 +16839,7 @@ var parseCardsText = {
 		{
 			"artist": "Glenn Rane",
 			"attack": 9,
+			"cardImage": "EX1_577.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -16054,6 +16863,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 4,
+			"cardImage": "EX1_002.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -16074,6 +16884,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Garner",
+			"cardImage": "EX1_339.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -16092,6 +16903,7 @@ var parseCardsText = {
 		{
 			"artist": "Efrem Palacios",
 			"attack": 2,
+			"cardImage": "EX1_021.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Horde",
@@ -16113,6 +16925,7 @@ var parseCardsText = {
 		{
 			"artist": "Tom Baxa",
 			"attack": 3,
+			"cardImage": "EX1_083.png",
 			"collectible": true,
 			"cost": 3,
 			"elite": true,
@@ -16135,6 +16948,7 @@ var parseCardsText = {
 		{
 			"artist": "Brom",
 			"attack": 6,
+			"cardImage": "EX1_383.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -16170,6 +16984,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "EX1_158t.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -16184,6 +16999,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "EX1_tk9.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -16203,6 +17019,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "EX1_573t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Tréant"
@@ -16231,6 +17048,7 @@ var parseCardsText = {
 		{
 			"artist": "Jaemin Kim",
 			"attack": 4,
+			"cardImage": "EX1_043.png",
 			"collectible": true,
 			"cost": 4,
 			"faction": "Neutral",
@@ -16252,6 +17070,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dave Allsop",
+			"cardImage": "EX1_312.png",
 			"collectible": true,
 			"cost": 8,
 			"faction": "Neutral",
@@ -16270,6 +17089,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Gaser",
 			"attack": 2,
+			"cardImage": "EX1_258.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -16288,6 +17108,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Linggar Bramanty",
+			"cardImage": "EX1_538.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "You must read the name of this card out loud each time you play it.",
@@ -16304,6 +17125,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Matt Cavotta",
+			"cardImage": "EX1_409.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Neutral",
@@ -16342,6 +17164,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "EX1_178b.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Déraciner"
@@ -16377,6 +17200,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "EX1_594.png",
 			"collectible": true,
 			"cost": 3,
 			"faction": "Neutral",
@@ -16398,6 +17222,7 @@ var parseCardsText = {
 		{
 			"artist": "John Polidora",
 			"attack": 7,
+			"cardImage": "CS2_227.png",
 			"collectible": true,
 			"cost": 5,
 			"faction": "Horde",
@@ -16418,6 +17243,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "NEW1_026t.png",
 			"cost": 0,
 			"fr": {
 				"name": "Apprenti pourpre"
@@ -16431,6 +17257,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 3,
+			"cardImage": "NEW1_026.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "If you don't pay attention, you may be turned into a pig.  And then you get your name on the board.",
@@ -16448,6 +17275,7 @@ var parseCardsText = {
 		{
 			"artist": "Alexander Alexandrov",
 			"attack": 3,
+			"cardImage": "EX1_304.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "If you put this into your deck, you WILL lose the trust of your other minions.",
@@ -16490,6 +17318,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "EX1_116t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Dragonnet"
@@ -16503,6 +17332,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "ds1_whelptoken.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -16529,6 +17359,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 3,
+			"cardImage": "NEW1_020.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "BOOM BABY BOOM!  BAD IS GOOD!  DOWN WITH GOVERNMENT!",
@@ -16546,6 +17377,7 @@ var parseCardsText = {
 		{
 			"artist": "Luke Mancini",
 			"attack": 4,
+			"cardImage": "EX1_033.png",
 			"collectible": true,
 			"cost": 6,
 			"faction": "Alliance",
@@ -16567,6 +17399,7 @@ var parseCardsText = {
 		{
 			"artist": "Malcolm Davis",
 			"attack": 1,
+			"cardImage": "CS2_231.png",
 			"collectible": true,
 			"cost": 0,
 			"faction": "Neutral",
@@ -16584,6 +17417,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 2,
+			"cardImage": "EX1_010.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Alliance",
@@ -16604,6 +17438,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "EX1_317t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Diablotin sans valeur"
@@ -16619,6 +17454,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "EX1_154a.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Colère"
@@ -16631,6 +17467,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "EX1_154b.png",
 			"faction": "Neutral",
 			"fr": {
 				"name": "Colère"
@@ -16644,6 +17481,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "EX1_154.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Neutral",
@@ -16672,6 +17510,7 @@ var parseCardsText = {
 		{
 			"artist": "Greg Hildebrandt",
 			"attack": 1,
+			"cardImage": "CS2_169.png",
 			"collectible": true,
 			"cost": 1,
 			"faction": "Horde",
@@ -16694,6 +17533,7 @@ var parseCardsText = {
 		{
 			"artist": "Vance Kovacs",
 			"attack": 2,
+			"cardImage": "EX1_004.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "She can't wait to learn Power Word: Fortitude Rank 2.",
@@ -16711,6 +17551,7 @@ var parseCardsText = {
 		{
 			"artist": "Wei Wang",
 			"attack": 3,
+			"cardImage": "EX1_049.png",
 			"collectible": true,
 			"cost": 2,
 			"faction": "Alliance",
@@ -16732,6 +17573,7 @@ var parseCardsText = {
 		{
 			"artist": "Gabor Szikszai",
 			"attack": 4,
+			"cardImage": "EX1_572.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -16750,6 +17592,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "DREAM_02.png",
 			"cost": 2,
 			"fr": {
 				"name": "Réveil d’Ysera"
@@ -16772,6 +17615,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TU4c_006.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -16785,6 +17629,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TU4c_003.png",
 			"cost": 0,
 			"faction": "Neutral",
 			"fr": {
@@ -16803,6 +17648,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "TU4c_002.png",
 			"cost": 1,
 			"faction": "Neutral",
 			"fr": {
@@ -16817,6 +17663,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "TU4f_005.png",
 			"cost": 4,
 			"fr": {
 				"name": "Maître brasseur"
@@ -16830,6 +17677,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "TU4d_002.png",
 			"cost": 1,
 			"fr": {
 				"name": "Chasseur fou"
@@ -16843,6 +17691,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "TU4f_007.png",
 			"cost": 1,
 			"fr": {
 				"name": "Singe cinglé"
@@ -16860,6 +17709,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "TU4e_007.png",
 			"cost": 6,
 			"durability": 2,
 			"fr": {
@@ -16872,6 +17722,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "TU4e_005.png",
 			"cost": 3,
 			"fr": {
 				"name": "Explosion de flammes"
@@ -16885,6 +17736,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "TU4e_002t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Flamme d’Azzinoth"
@@ -16897,6 +17749,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "TU4e_002.png",
 			"cost": 2,
 			"fr": {
 				"name": "Flammes d’Azzinoth"
@@ -16909,6 +17762,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "TU4a_003.png",
 			"cost": 1,
 			"fr": {
 				"name": "Gnoll"
@@ -16921,6 +17775,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "TU4d_001.png",
 			"fr": {
 				"name": "Hemet Nesingwary"
 			},
@@ -16934,6 +17789,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "TU4c_005.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -16948,6 +17804,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "TU4a_001.png",
 			"fr": {
 				"name": "Lardeur"
 			},
@@ -16959,6 +17816,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "TU4a_004.png",
 			"cost": 3,
 			"fr": {
 				"name": "Lardeur TOUT CASSER !"
@@ -16971,6 +17829,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TU4e_001.png",
 			"fr": {
 				"name": "Illidan Hurlorage"
 			},
@@ -16982,6 +17841,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "TU4a_006.png",
 			"fr": {
 				"name": "Jaina Portvaillant"
 			},
@@ -16994,6 +17854,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "TU4c_001.png",
 			"fr": {
 				"name": "Roi Mukla"
 			},
@@ -17015,6 +17876,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TU4f_004.png",
 			"cost": 3,
 			"fr": {
 				"name": "Héritage de l’Empereur"
@@ -17027,6 +17889,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TU4f_001.png",
 			"fr": {
 				"name": "Chroniqueur Cho"
 			},
@@ -17038,6 +17901,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "TU4a_005.png",
 			"cost": 4,
 			"fr": {
 				"name": "Gnoll massif"
@@ -17063,6 +17927,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TU4b_001.png",
 			"fr": {
 				"name": "Millhouse Tempête-de-Mana"
 			},
@@ -17076,6 +17941,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "TU4c_007.png",
 			"cost": 6,
 			"fr": {
 				"name": "Grand frère de Mukla"
@@ -17090,6 +17956,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "TU4e_003.png",
 			"cost": 1,
 			"fr": {
 				"name": "Myrmidon naga"
@@ -17104,6 +17971,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "TU4f_002.png",
 			"cost": 1,
 			"fr": {
 				"name": "Éclaireur pandaren"
@@ -17117,6 +17985,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "TU4a_002.png",
 			"cost": 1,
 			"fr": {
 				"name": "Gnoll rivepatte"
@@ -17130,6 +17999,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "TU4f_003.png",
 			"cost": 2,
 			"fr": {
 				"name": "Moine pandashan"
@@ -17142,6 +18012,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "TU4d_003.png",
 			"cost": 2,
 			"fr": {
 				"name": "Coup de fusil"
@@ -17155,6 +18026,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "TU4c_004.png",
 			"cost": 2,
 			"faction": "Neutral",
 			"fr": {
@@ -17168,6 +18040,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TU4f_006.png",
 			"cost": 1,
 			"fr": {
 				"name": "Transcendance"
@@ -17191,6 +18064,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "TU4e_004.png",
 			"cost": 2,
 			"durability": 2,
 			"fr": {
@@ -17203,6 +18077,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "TU4c_008.png",
 			"cost": 3,
 			"fr": {
 				"name": "Volonté de Mukla"
@@ -17216,6 +18091,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "Mekka4t.png",
 			"cost": 0,
 			"fr": {
 				"name": "Poulet"
@@ -17231,6 +18107,7 @@ var parseCardsText = {
 		{
 			"artist": "Samwise Didier",
 			"attack": 5,
+			"cardImage": "PRO_001.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -17262,6 +18139,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "Mekka3.png",
 			"cost": 1,
 			"faction": "Alliance",
 			"fr": {
@@ -17279,6 +18157,7 @@ var parseCardsText = {
 		{
 			"artist": "Ludo Lullabi",
 			"attack": 6,
+			"cardImage": "EX1_112.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -17301,6 +18180,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "Mekka1.png",
 			"cost": 1,
 			"faction": "Alliance",
 			"fr": {
@@ -17317,6 +18197,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "PRO_001a.png",
 			"cost": 4,
 			"fr": {
 				"name": "Je suis murloc"
@@ -17329,6 +18210,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "PRO_001at.png",
 			"cost": 0,
 			"fr": {
 				"name": "Murloc"
@@ -17342,6 +18224,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "Mekka4.png",
 			"cost": 1,
 			"faction": "Alliance",
 			"fr": {
@@ -17357,6 +18240,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "PRO_001c.png",
 			"cost": 4,
 			"fr": {
 				"name": "Puissance de la Horde"
@@ -17369,6 +18253,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "Mekka2.png",
 			"cost": 1,
 			"faction": "Alliance",
 			"fr": {
@@ -17384,6 +18269,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "PRO_001b.png",
 			"cost": 4,
 			"fr": {
 				"name": "Les voleurs, ça vous prend..."
@@ -17448,6 +18334,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMC_86.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -17473,6 +18360,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_006.png",
 			"collectible": false,
 			"cost": 1,
 			"fr": {
@@ -17485,6 +18373,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_CoOpBossSpell_2.png",
 			"fr": {
 				"name": "Salve de bombes"
 			},
@@ -17518,6 +18407,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "TB_MechWar_Boss2_HeroPower.png",
 			"cost": 2,
 			"fr": {
 				"name": "Ro’Boum junior"
@@ -17558,6 +18448,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_012.png",
 			"cost": 0,
 			"fr": {
 				"name": "Choisir une nouvelle carte !"
@@ -17569,6 +18460,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_014.png",
 			"cost": 0,
 			"fr": {
 				"name": "Choisir une nouvelle carte !"
@@ -17590,6 +18482,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMC_95he.png",
 			"cost": 3,
 			"fr": {
 				"name": "Chiot du magma"
@@ -17603,6 +18496,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "BRMC_95h.png",
 			"cost": 3,
 			"fr": {
 				"name": "Chiots du magma"
@@ -17615,6 +18509,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMC_92.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -17641,6 +18536,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "NAX12_02H_2c_TB.png",
 			"cost": 1,
 			"fr": {
 				"name": "Décimer"
@@ -17672,6 +18568,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_007.png",
 			"collectible": false,
 			"cost": 1,
 			"fr": {
@@ -17694,6 +18591,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_CoOpBossSpell_5.png",
 			"fr": {
 				"name": "Double zap"
 			},
@@ -17705,6 +18603,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMC_84.png",
 			"cost": 5,
 			"fr": {
 				"name": "Lanceur de sorts draconien"
@@ -17732,6 +18631,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "BRMC_88.png",
 			"cost": 6,
 			"fr": {
 				"name": "Pourfendeur drakônide"
@@ -17755,6 +18655,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_FactionWar_Boss_BoomBot.png",
 			"fr": {
 				"name": "FactionWar_BoomBot"
 			},
@@ -17765,6 +18666,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "TB_PickYourFate_1.png",
 			"fr": {
 				"name": "Fate 1"
 			},
@@ -17775,6 +18677,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_PickYourFate_10.png",
 			"fr": {
 				"name": "Destin 10"
 			},
@@ -17794,6 +18697,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_PickYourFate_11.png",
 			"fr": {
 				"name": "Fate 11"
 			},
@@ -17813,6 +18717,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_PickYourFate_2.png",
 			"fr": {
 				"name": "Fate 2"
 			},
@@ -17823,6 +18728,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_PickYourFate_3.png",
 			"fr": {
 				"name": "Fate 3"
 			},
@@ -17833,6 +18739,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_PickYourFate_4.png",
 			"fr": {
 				"name": "Fate 4"
 			},
@@ -17843,6 +18750,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_PickYourFate_5.png",
 			"fr": {
 				"name": "Fate 5"
 			},
@@ -17853,6 +18761,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_PickYourFate_6.png",
 			"fr": {
 				"name": "Fate 6"
 			},
@@ -17863,6 +18772,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_PickYourFate_7.png",
 			"fr": {
 				"name": "Fate 7"
 			},
@@ -17882,6 +18792,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_PickYourFate_8.png",
 			"fr": {
 				"name": "Fate 8"
 			},
@@ -17901,6 +18812,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_PickYourFate_9.png",
 			"fr": {
 				"name": "Fate 9"
 			},
@@ -17921,6 +18833,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMC_99.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -17936,6 +18849,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "TB_CoOp_Mechazod.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -17964,6 +18878,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 20,
+			"cardImage": "BRMC_95.png",
 			"cost": 50,
 			"elite": true,
 			"fr": {
@@ -18001,6 +18916,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMC_96.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -18047,6 +18963,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_CoOpBossSpell_6.png",
 			"fr": {
 				"name": "Détruire le chroniqueur"
 			},
@@ -18067,6 +18984,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMC_100.png",
 			"cost": 3,
 			"fr": {
 				"name": "Bombe vivante"
@@ -18079,6 +18997,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "BRMC_90.png",
 			"cost": 2,
 			"fr": {
 				"name": "Lave vivante"
@@ -18095,6 +19014,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMC_85.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -18135,6 +19055,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "TB_MechWar_Minion1.png",
 			"cost": 2,
 			"fr": {
 				"name": "Fan de méca"
@@ -18151,6 +19072,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMC_87.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -18200,6 +19122,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "TBST_004.png",
 			"cost": 3,
 			"fr": {
 				"name": "Soigneur honnête"
@@ -18213,6 +19136,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "TBST_003.png",
 			"cost": 1,
 			"fr": {
 				"name": "Soigneur débutant"
@@ -18226,6 +19150,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "TBST_002.png",
 			"cost": 1,
 			"fr": {
 				"name": "Mage débutant"
@@ -18239,6 +19164,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "TBST_001.png",
 			"cost": 1,
 			"fr": {
 				"name": "Tank débutant"
@@ -18255,6 +19181,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "TBST_005.png",
 			"cost": 3,
 			"fr": {
 				"name": "Voleur JcJ"
@@ -18281,6 +19208,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "BRMC_93.png",
 			"cost": 3,
 			"fr": {
 				"name": "Système de défense Omnitron"
@@ -18303,6 +19231,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "BRMC_83.png",
 			"cost": 8,
 			"fr": {
 				"name": "Ouvrir les portes"
@@ -18314,6 +19243,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "TB_CoOpBossSpell_4.png",
 			"fr": {
 				"name": "Suralimenter"
 			},
@@ -18336,6 +19266,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 9,
+			"cardImage": "TB_CoOp_Mechazod2.png",
 			"cost": 10,
 			"fr": {
 				"name": "Mécazod surchargé"
@@ -18424,6 +19355,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "TB_015.png",
 			"cost": 2,
 			"fr": {
 				"name": "Pirate"
@@ -18474,6 +19406,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "TB_CoOpBossSpell_1.png",
 			"fr": {
 				"name": "Fixer des priorités"
 			},
@@ -18495,6 +19428,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMC_98.png",
 			"cost": 6,
 			"elite": true,
 			"fr": {
@@ -18510,6 +19444,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "TB_CoOpBossSpell_3.png",
 			"fr": {
 				"name": "Liquide de refroidissement"
 			},
@@ -18521,6 +19456,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMC_99e.png",
 			"cost": 2,
 			"fr": {
 				"name": "Élémentaire de roche"
@@ -18536,6 +19472,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "TB_008.png",
 			"collectible": false,
 			"cost": 1,
 			"fr": {
@@ -18552,6 +19489,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "BRMC_91.png",
 			"cost": 3,
 			"fr": {
 				"name": "Fils de la Flamme"
@@ -18567,6 +19505,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "TB_GiftExchange_Treasure_Spell.png",
 			"cost": 1,
 			"fr": {
 				"name": "Cadeau du Voile d’hiver volé"
@@ -18579,6 +19518,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "BRMC_94.png",
 			"cost": 2,
 			"durability": 6,
 			"fr": {
@@ -18594,6 +19534,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "TB_011.png",
 			"cost": 0,
 			"fr": {
 				"name": "Pièce ternie"
@@ -18642,6 +19583,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_DecreasingCardCostDebug.png",
 			"fr": {
 				"name": "TBDecreasingCardCostDebug"
 			},
@@ -18660,6 +19602,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "TB_FactionWar_BoomBot_Spell.png",
 			"cost": 1,
 			"fr": {
 				"name": "TBFactionWarBoomBotSpell"
@@ -18710,6 +19653,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "BRMC_97.png",
 			"cost": 6,
 			"elite": true,
 			"fr": {
@@ -18737,6 +19681,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "BRMC_89.png",
 			"cost": 2,
 			"fr": {
 				"name": "Cendres tourbillonnantes"
@@ -18752,6 +19697,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "TBA01_5.png",
 			"cost": 2,
 			"fr": {
 				"name": "Magie sauvage"
@@ -18785,6 +19731,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "TB_GiftExchange_Treasure.png",
 			"cost": 0,
 			"fr": {
 				"name": "Cadeau du Voile d’hiver"
@@ -18800,6 +19747,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "HERO_05a.png",
 			"collectible": true,
 			"fr": {
 				"name": "Alleria Coursevent"
@@ -18826,6 +19774,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "DS1h_292_H1_AT_132.png",
 			"cost": 2,
 			"fr": {
 				"name": "Tir de baliste"
@@ -18851,6 +19800,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "CS2_034_H1_AT_132.png",
 			"cost": 2,
 			"fr": {
 				"name": "Explosion de feu rang 2"
@@ -18863,6 +19813,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "HERO_01a.png",
 			"collectible": true,
 			"fr": {
 				"name": "Magni Barbe-de-bronze"
@@ -18876,6 +19827,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "HERO_08a.png",
 			"collectible": true,
 			"fr": {
 				"name": "Medivh"
@@ -18915,6 +19867,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "CS2_102_H1_AT_132.png",
 			"cost": 2,
 			"fr": {
 				"name": "Défense stoïque"
@@ -18928,6 +19881,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CRED_15.png",
 			"cost": 1,
 			"elite": true,
 			"fr": {
@@ -18943,6 +19897,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CRED_18.png",
 			"cost": 2,
 			"elite": true,
 			"fr": {
@@ -18958,6 +19913,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "CRED_08.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -18973,6 +19929,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "CRED_09.png",
 			"cost": 6,
 			"elite": true,
 			"fr": {
@@ -18988,6 +19945,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "CRED_19.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19003,6 +19961,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CRED_03.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -19018,6 +19977,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "CRED_20.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -19033,6 +19993,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "CRED_13.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -19048,6 +20009,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CRED_21.png",
 			"cost": 1,
 			"elite": true,
 			"fr": {
@@ -19063,6 +20025,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "CRED_22.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -19078,6 +20041,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "CRED_23.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19093,6 +20057,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "CRED_24.png",
 			"cost": 7,
 			"elite": true,
 			"fr": {
@@ -19108,6 +20073,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "CRED_06.png",
 			"cost": 1,
 			"elite": true,
 			"fr": {
@@ -19123,6 +20089,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CRED_25.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19138,6 +20105,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CRED_26.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -19153,6 +20121,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "CRED_02.png",
 			"cost": 6,
 			"elite": true,
 			"fr": {
@@ -19168,6 +20137,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 9,
+			"cardImage": "CRED_16.png",
 			"cost": 7,
 			"elite": true,
 			"fr": {
@@ -19183,6 +20153,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "CRED_28.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19198,6 +20169,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "CRED_27.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -19213,6 +20185,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "CRED_01.png",
 			"cost": 6,
 			"elite": true,
 			"fr": {
@@ -19228,6 +20201,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "CRED_29.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -19243,6 +20217,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CRED_11.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19258,6 +20233,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CRED_30.png",
 			"cost": 7,
 			"elite": true,
 			"fr": {
@@ -19273,6 +20249,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "CRED_31.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19288,6 +20265,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "CRED_32.png",
 			"cost": 2,
 			"elite": true,
 			"fr": {
@@ -19303,6 +20281,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "CRED_33.png",
 			"cost": 6,
 			"elite": true,
 			"fr": {
@@ -19318,6 +20297,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "CRED_43.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -19333,6 +20313,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "CRED_45.png",
 			"cost": 6,
 			"elite": true,
 			"fr": {
@@ -19348,6 +20329,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CRED_46.png",
 			"cost": 2,
 			"elite": true,
 			"fr": {
@@ -19363,6 +20345,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "CRED_05.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -19378,6 +20361,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "CRED_34.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -19393,6 +20377,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 9,
+			"cardImage": "CRED_35.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19408,6 +20393,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CRED_10.png",
 			"cost": 2,
 			"elite": true,
 			"fr": {
@@ -19423,6 +20409,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "CRED_36.png",
 			"cost": 6,
 			"elite": true,
 			"fr": {
@@ -19438,6 +20425,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "CRED_12.png",
 			"cost": 2,
 			"elite": true,
 			"fr": {
@@ -19453,6 +20441,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "CRED_37.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19468,6 +20457,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 9,
+			"cardImage": "CRED_17.png",
 			"cost": 9,
 			"elite": true,
 			"fr": {
@@ -19483,6 +20473,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "CRED_38.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19498,6 +20489,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CRED_39.png",
 			"cost": 2,
 			"elite": true,
 			"fr": {
@@ -19513,6 +20505,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "CRED_40.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19529,6 +20522,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CRED_41.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -19544,6 +20538,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "CRED_04.png",
 			"cost": 1,
 			"elite": true,
 			"fr": {
@@ -19559,6 +20554,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "CRED_42.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19574,6 +20570,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "CRED_44.png",
 			"cost": 4,
 			"elite": true,
 			"fr": {
@@ -19589,6 +20586,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "CRED_14.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -19604,6 +20602,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "CRED_07.png",
 			"cost": 2,
 			"elite": true,
 			"fr": {
@@ -19620,6 +20619,7 @@ var parseCardsText = {
 		{
 			"artist": "Daren Bader",
 			"attack": 1,
+			"cardImage": "NEW1_016.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Pirates and Parrots go together like Virmen and Carrots.",
@@ -19643,6 +20643,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 2,
+			"cardImage": "EX1_062.png",
 			"collectible": true,
 			"cost": 4,
 			"elite": true,
@@ -19668,6 +20669,7 @@ var parseCardsText = {
 		{
 			"artist": "Nate Bowden",
 			"attack": 5,
+			"cardImage": "FP1_026.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Originally he was called \"Anub'ar Guy who bounces a guy back to your hand\", but it lacked a certain zing.",
@@ -19689,6 +20691,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX1_01.png",
 			"fr": {
 				"name": "Anub’Rekhan"
 			},
@@ -19699,6 +20702,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX1h_01.png",
 			"fr": {
 				"name": "Anub’Rekhan"
 			},
@@ -19710,6 +20714,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan & Gabor",
+			"cardImage": "FP1_020.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Several paladins have joined together to deliver justice under the name \"Justice Force\".  Their lawyer talked them out of calling themselves the Justice League.",
@@ -19730,6 +20735,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "NAX9_01.png",
 			"fr": {
 				"name": "Baron Vaillefendre"
 			},
@@ -19740,6 +20746,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX9_01H.png",
 			"fr": {
 				"name": "Baron Vaillefendre"
 			},
@@ -19752,6 +20759,7 @@ var parseCardsText = {
 		{
 			"artist": "Ralph Horsley",
 			"attack": 1,
+			"cardImage": "FP1_031.png",
 			"collectible": true,
 			"cost": 4,
 			"elite": true,
@@ -19773,6 +20781,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX15_04H.png",
 			"cost": 8,
 			"fr": {
 				"name": "Chaînes"
@@ -19784,6 +20793,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX15_04.png",
 			"cost": 8,
 			"fr": {
 				"name": "Chaînes"
@@ -19807,6 +20817,7 @@ var parseCardsText = {
 		{
 			"artist": "Jon McConnell",
 			"attack": 4,
+			"cardImage": "FP1_029.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "They like to dance to reggae.",
@@ -19829,6 +20840,7 @@ var parseCardsText = {
 		{
 			"artist": "Phroilan Gardner",
 			"attack": 3,
+			"cardImage": "FP1_023.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "The Cult of the Damned has found it's best not to mention their name when recruiting new cultists.",
@@ -19862,6 +20874,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 4,
+			"cardImage": "FP1_021.png",
 			"collectible": true,
 			"cost": 4,
 			"durability": 2,
@@ -19883,6 +20896,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "NAX6_03.png",
 			"cost": 4,
 			"fr": {
 				"name": "Mortelle floraison"
@@ -19895,6 +20909,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "FP1_006.png",
 			"cost": 1,
 			"fr": {
 				"name": "Destrier de la mort"
@@ -19913,6 +20928,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Olson",
 			"attack": 2,
+			"cardImage": "FP1_009.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "\"Rise from your grave!\" - Kel'Thuzad",
@@ -19944,6 +20960,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "NAX12_02.png",
 			"cost": 2,
 			"fr": {
 				"name": "Décimer"
@@ -19955,6 +20972,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX12_02H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Décimer"
@@ -19967,6 +20985,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Garner",
+			"cardImage": "FP1_018.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "The one time when duping cards won't get your account banned!",
@@ -19989,6 +21008,7 @@ var parseCardsText = {
 		{
 			"artist": "Eric Browning",
 			"attack": 1,
+			"cardImage": "FP1_003.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "OOZE... Ooze... Ooze... (ooze...)",
@@ -20022,6 +21042,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "NAX12_04.png",
 			"cost": 3,
 			"fr": {
 				"name": "Accès de rage"
@@ -20033,6 +21054,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "NAX5_02H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Éruption"
@@ -20044,6 +21066,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX5_02.png",
 			"cost": 1,
 			"fr": {
 				"name": "Éruption"
@@ -20066,6 +21089,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NAX11_03.png",
 			"cost": 1,
 			"fr": {
 				"name": "Gelée polluée"
@@ -20078,6 +21102,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "NAX13_04H.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -20093,6 +21118,7 @@ var parseCardsText = {
 		{
 			"artist": "Dany Orizio",
 			"attack": 4,
+			"cardImage": "FP1_015.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -20114,6 +21140,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX15_02.png",
 			"cost": 0,
 			"fr": {
 				"name": "Trait de givre"
@@ -20128,6 +21155,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX15_02H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Trait de givre"
@@ -20142,6 +21170,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX14_02.png",
 			"cost": 0,
 			"fr": {
 				"name": "Souffle de givre"
@@ -20154,6 +21183,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NAX14_03.png",
 			"cost": 5,
 			"fr": {
 				"name": "Champion gelé"
@@ -20179,6 +21209,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "NAX12_01H.png",
 			"fr": {
 				"name": "Gluth"
 			},
@@ -20189,6 +21220,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX12_01.png",
 			"fr": {
 				"name": "Gluth"
 			},
@@ -20199,6 +21231,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX8_01.png",
 			"fr": {
 				"name": "Gothik le Moissonneur"
 			},
@@ -20209,6 +21242,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX8_01H.png",
 			"fr": {
 				"name": "Gothik le Moissonneur"
 			},
@@ -20219,6 +21253,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX2_01H.png",
 			"fr": {
 				"name": "Grande veuve Faerlina"
 			},
@@ -20229,6 +21264,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX2_01.png",
 			"fr": {
 				"name": "Grande veuve Faerlina"
 			},
@@ -20239,6 +21275,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX11_01H.png",
 			"fr": {
 				"name": "Grobbulus"
 			},
@@ -20249,6 +21286,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX11_01.png",
 			"fr": {
 				"name": "Grobbulus"
 			},
@@ -20260,6 +21298,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "NAX15_03t.png",
 			"cost": 4,
 			"fr": {
 				"name": "Garde de la Couronne de glace"
@@ -20276,6 +21315,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "NAX15_03n.png",
 			"cost": 4,
 			"fr": {
 				"name": "Garde de la Couronne de glace"
@@ -20291,6 +21331,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX8_02.png",
 			"cost": 2,
 			"fr": {
 				"name": "Moisson"
@@ -20302,6 +21343,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX8_02H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Moisson"
@@ -20313,6 +21355,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX10_03H.png",
 			"cost": 4,
 			"fr": {
 				"name": "Frappe haineuse"
@@ -20324,6 +21367,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX10_03.png",
 			"cost": 4,
 			"fr": {
 				"name": "Frappe haineuse"
@@ -20337,6 +21381,7 @@ var parseCardsText = {
 		{
 			"artist": "Jeremy Cranford",
 			"attack": 1,
+			"cardImage": "FP1_002.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Arachnofauxbia: Fear of fake spiders.",
@@ -20358,6 +21403,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX5_01.png",
 			"fr": {
 				"name": "Heigan l’Impur"
 			},
@@ -20369,6 +21415,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX5_01H.png",
 			"fr": {
 				"name": "Heigan l’Impur"
 			},
@@ -20381,6 +21428,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "NAX10_02.png",
 			"cost": 3,
 			"durability": 8,
 			"fr": {
@@ -20397,6 +21445,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "NAX10_02H.png",
 			"cost": 3,
 			"durability": 8,
 			"fr": {
@@ -20413,6 +21462,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "NAX7_01H.png",
 			"fr": {
 				"name": "Instructeur Razuvious"
 			},
@@ -20423,6 +21473,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX7_01.png",
 			"fr": {
 				"name": "Instructeur Razuvious"
 			},
@@ -20452,6 +21503,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "NAX12_03.png",
 			"cost": 1,
 			"durability": 5,
 			"fr": {
@@ -20465,6 +21517,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "NAX12_03H.png",
 			"cost": 1,
 			"durability": 5,
 			"fr": {
@@ -20477,6 +21530,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "NAX15_01H.png",
 			"fr": {
 				"name": "Kel’Thuzad"
 			},
@@ -20487,6 +21541,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX15_01.png",
 			"fr": {
 				"name": "Kel’Thuzad"
 			},
@@ -20499,6 +21554,7 @@ var parseCardsText = {
 		{
 			"artist": "Chris Robinson",
 			"attack": 6,
+			"cardImage": "FP1_013.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -20518,6 +21574,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NAX9_02H.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -20532,6 +21589,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "NAX9_02.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -20545,6 +21603,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX6_01H.png",
 			"fr": {
 				"name": "Horreb"
 			},
@@ -20555,6 +21614,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX6_01.png",
 			"fr": {
 				"name": "Horreb"
 			},
@@ -20567,6 +21627,7 @@ var parseCardsText = {
 		{
 			"artist": "Samwise",
 			"attack": 5,
+			"cardImage": "FP1_030.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -20588,6 +21649,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX1_05.png",
 			"cost": 7,
 			"fr": {
 				"name": "Nuée de sauterelles"
@@ -20601,6 +21663,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 2,
+			"cardImage": "FP1_004.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "His mother wanted him to be a mage or a warlock, but noooooooo, he had to go and be a scientist like his father.",
@@ -20623,6 +21686,7 @@ var parseCardsText = {
 		{
 			"artist": "Howard Lyon",
 			"attack": 2,
+			"cardImage": "FP1_010.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -20645,6 +21709,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX3_01H.png",
 			"fr": {
 				"name": "Maexxna"
 			},
@@ -20655,6 +21720,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX3_01.png",
 			"fr": {
 				"name": "Maexxna"
 			},
@@ -20665,6 +21731,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX9_07.png",
 			"cost": 5,
 			"fr": {
 				"name": "Marque des cavaliers"
@@ -20687,6 +21754,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "NAX7_04H.png",
 			"cost": 3,
 			"durability": 2,
 			"fr": {
@@ -20700,6 +21768,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "NAX7_04.png",
 			"cost": 3,
 			"durability": 2,
 			"fr": {
@@ -20712,6 +21781,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "NAX7_05.png",
 			"cost": 1,
 			"fr": {
 				"name": "Cristal de contrôle mental"
@@ -20723,6 +21793,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "NAX5_03.png",
 			"cost": 2,
 			"fr": {
 				"name": "Cervocalypse"
@@ -20735,6 +21806,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "NAX15_05.png",
 			"cost": 0,
 			"elite": true,
 			"fr": {
@@ -20750,6 +21822,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX11_04.png",
 			"cost": 3,
 			"fr": {
 				"name": "Injection mutante"
@@ -20772,6 +21845,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "NAXM_001.png",
 			"cost": 4,
 			"fr": {
 				"name": "Nécro-chevalier"
@@ -20787,6 +21861,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX6_02.png",
 			"cost": 2,
 			"fr": {
 				"name": "Aura nécrotique"
@@ -20798,6 +21873,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX6_02H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Aura nécrotique"
@@ -20819,6 +21895,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "NAX3_03.png",
 			"cost": 2,
 			"fr": {
 				"name": "Poison nécrotique"
@@ -20832,6 +21909,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 1,
+			"cardImage": "FP1_017.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Weblords spend all day making giant trampoline parks.",
@@ -20853,6 +21931,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "NAX1h_03.png",
 			"cost": 2,
 			"fr": {
 				"name": "Nérubien"
@@ -20865,6 +21944,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "NAX1_03.png",
 			"cost": 2,
 			"fr": {
 				"name": "Nérubien"
@@ -20877,6 +21957,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "FP1_007t.png",
 			"cost": 3,
 			"fr": {
 				"name": "Nérubien"
@@ -20891,6 +21972,7 @@ var parseCardsText = {
 		{
 			"artist": "Justin Thavirat",
 			"attack": 0,
+			"cardImage": "FP1_007.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Eggs are a good source of protein and Nerubians.",
@@ -20911,6 +21993,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX4_01H.png",
 			"fr": {
 				"name": "Noth le Porte-Peste"
 			},
@@ -20922,6 +22005,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX4_01.png",
 			"fr": {
 				"name": "Noth le Porte-Peste"
 			},
@@ -20933,6 +22017,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX10_01H.png",
 			"fr": {
 				"name": "Le Recousu"
 			},
@@ -20943,6 +22028,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX10_01.png",
 			"fr": {
 				"name": "Le Recousu"
 			},
@@ -20953,6 +22039,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX4_05.png",
 			"cost": 6,
 			"fr": {
 				"name": "Peste"
@@ -20964,6 +22051,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "NAX11_02.png",
 			"cost": 2,
 			"fr": {
 				"name": "Nuage empoisonné"
@@ -20975,6 +22063,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX11_02H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Nuage empoisonné"
@@ -20987,6 +22076,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Brian Despain",
+			"cardImage": "FP1_019.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "\"Poisonseed Bagel\" is the least popular bagel at McTiggin's Druidic Bagel Emporium.",
@@ -21014,6 +22104,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "NAX13_02.png",
 			"cost": 0,
 			"fr": {
 				"name": "Changement de polarité"
@@ -21036,6 +22127,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "NAX14_04.png",
 			"cost": 5,
 			"fr": {
 				"name": "Froid absolu"
@@ -21050,6 +22142,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "NAX2_03.png",
 			"cost": 2,
 			"fr": {
 				"name": "Pluie de feu"
@@ -21064,6 +22157,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX2_03H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Pluie de feu"
@@ -21078,6 +22172,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX4_04.png",
 			"cost": 0,
 			"fr": {
 				"name": "Réanimation morbide"
@@ -21089,6 +22184,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX4_04H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Réanimation morbide"
@@ -21101,6 +22197,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dan Scott",
+			"cardImage": "FP1_025.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "It's like birth, except you're an adult and you were just dead a second ago.",
@@ -21119,6 +22216,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NAX9_05H.png",
 			"cost": 3,
 			"durability": 3,
 			"fr": {
@@ -21132,6 +22230,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "NAX9_05.png",
 			"cost": 3,
 			"durability": 3,
 			"fr": {
@@ -21144,6 +22243,7 @@ var parseCardsText = {
 			"type": "Weapon"
 		},
 		{
+			"cardImage": "NAX14_01H.png",
 			"fr": {
 				"name": "Saphiron"
 			},
@@ -21154,6 +22254,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX14_01.png",
 			"fr": {
 				"name": "Saphiron"
 			},
@@ -21166,6 +22267,7 @@ var parseCardsText = {
 		{
 			"artist": "Ittoku Seta",
 			"attack": 2,
+			"cardImage": "FP1_005.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "The Shades of Naxxramas <i>hate</i> the living. They even have a slur they use to refer them: <i>Livers</i>.",
@@ -21187,6 +22289,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "NAX9_04.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -21201,6 +22304,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NAX9_04H.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -21215,6 +22319,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "NAXM_002.png",
 			"cost": 3,
 			"fr": {
 				"name": "Forgeron squelettique"
@@ -21231,6 +22336,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "NAX4_03H.png",
 			"cost": 5,
 			"fr": {
 				"name": "Squelette"
@@ -21243,6 +22349,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "NAX4_03.png",
 			"cost": 1,
 			"fr": {
 				"name": "Squelette"
@@ -21254,6 +22361,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX1h_04.png",
 			"cost": 2,
 			"fr": {
 				"name": "Grouillement"
@@ -21265,6 +22373,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX1_04.png",
 			"cost": 2,
 			"fr": {
 				"name": "Grouillement"
@@ -21287,6 +22396,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "FP1_012t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Gelée"
@@ -21304,6 +22414,7 @@ var parseCardsText = {
 		{
 			"artist": "Nate Bowden",
 			"attack": 3,
+			"cardImage": "FP1_012.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "DO NOT GIVE HIM A ROOT BEER.",
@@ -21327,6 +22438,7 @@ var parseCardsText = {
 		{
 			"artist": "Chris Rahn",
 			"attack": 4,
+			"cardImage": "FP1_008.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "What do Faerie Dragons and Spectral Knights have in common?  They both love pasta!",
@@ -21345,6 +22457,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "NAX8_05t.png",
 			"cost": 5,
 			"fr": {
 				"name": "Cavalier spectral"
@@ -21358,6 +22471,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "FP1_002t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Araignée spectrale"
@@ -21370,6 +22484,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "NAX8_03t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Jeune recrue spectrale"
@@ -21383,6 +22498,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "NAX8_04t.png",
 			"cost": 3,
 			"fr": {
 				"name": "Guerrier spectral"
@@ -21396,6 +22512,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "NAX6_03t.png",
 			"cost": 0,
 			"fr": {
 				"name": "Spore"
@@ -21411,6 +22528,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX6_04.png",
 			"cost": 1,
 			"fr": {
 				"name": "Explosion de spores"
@@ -21423,6 +22541,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "NAX13_05H.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -21438,6 +22557,7 @@ var parseCardsText = {
 		{
 			"artist": "Dany Orizio",
 			"attack": 7,
+			"cardImage": "FP1_014.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -21461,6 +22581,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Smith",
 			"attack": 1,
+			"cardImage": "FP1_027.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Stoneskin Gargoyles love freeze tag.",
@@ -21478,6 +22599,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX13_03.png",
 			"cost": 2,
 			"fr": {
 				"name": "Supercharge"
@@ -21499,6 +22621,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "NAX13_01H.png",
 			"fr": {
 				"name": "Thaddius"
 			},
@@ -21509,6 +22632,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "NAX13_01.png",
 			"fr": {
 				"name": "Thaddius"
 			},
@@ -21520,6 +22644,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 11,
+			"cardImage": "FP1_014t.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -21534,6 +22659,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NAX9_03H.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -21548,6 +22674,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "NAX9_03.png",
 			"cost": 3,
 			"elite": true,
 			"fr": {
@@ -21562,6 +22689,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "FP1_019t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Tréant"
@@ -21574,6 +22702,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX7_03.png",
 			"cost": 2,
 			"fr": {
 				"name": "Frappe déséquilibrante"
@@ -21585,6 +22714,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX7_03H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Frappe déséquilibrante"
@@ -21597,6 +22727,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "NAX7_02.png",
 			"cost": 2,
 			"fr": {
 				"name": "Doublure"
@@ -21614,6 +22745,7 @@ var parseCardsText = {
 		{
 			"artist": "Jonboy Meyers",
 			"attack": 1,
+			"cardImage": "FP1_028.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "In a world where you can run to a spirit healer and resurrect yourself, Undertakers do pretty light business.",
@@ -21631,6 +22763,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX9_06.png",
 			"cost": 5,
 			"fr": {
 				"name": "Ombre impie"
@@ -21643,6 +22776,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "NAX8_05.png",
 			"cost": 6,
 			"fr": {
 				"name": "Cavalier tenace"
@@ -21659,6 +22793,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NAX8_03.png",
 			"cost": 1,
 			"fr": {
 				"name": "Jeune recrue tenace"
@@ -21675,6 +22810,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "NAX8_04.png",
 			"cost": 3,
 			"fr": {
 				"name": "Guerrier tenace"
@@ -21692,6 +22828,7 @@ var parseCardsText = {
 		{
 			"artist": "Mike Nicholson",
 			"attack": 1,
+			"cardImage": "FP1_024.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Filling your Ghouls with Rocket Fuel is all the rage at Necromancer school.",
@@ -21726,6 +22863,7 @@ var parseCardsText = {
 		{
 			"artist": "Robb Shoberg",
 			"attack": 3,
+			"cardImage": "FP1_022.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "\"Void!  Here, void!  Here, buddy!\"",
@@ -21750,6 +22888,7 @@ var parseCardsText = {
 		{
 			"artist": "Glenn Rane",
 			"attack": 3,
+			"cardImage": "FP1_016.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "This soul just <i>wails</i> on you. Dang, soul, let up already.",
@@ -21770,6 +22909,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "NAX3_02.png",
 			"cost": 3,
 			"fr": {
 				"name": "Entoilage"
@@ -21781,6 +22921,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "NAX3_02H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Entoilage"
@@ -21794,6 +22935,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Brereton",
 			"attack": 1,
+			"cardImage": "FP1_011.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Spider cocoons are like little piñatas!",
@@ -21817,6 +22959,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "NAX2_05.png",
 			"cost": 3,
 			"fr": {
 				"name": "Adorateur"
@@ -21833,6 +22976,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "NAX2_05H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Adorateur"
@@ -21850,6 +22994,7 @@ var parseCardsText = {
 		{
 			"artist": "E. M. Gist",
 			"attack": 2,
+			"cardImage": "FP1_001.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Zombie.  It's what's for dinner.",
@@ -21870,6 +23015,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "XXX_048.png",
 			"cost": 0,
 			"fr": {
 				"name": "-1 Durability"
@@ -21882,6 +23028,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_055.png",
 			"cost": 0,
 			"fr": {
 				"name": "1000 Stats"
@@ -21903,6 +23050,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "XXX_095.png",
 			"cost": 0,
 			"fr": {
 				"name": "AI Buddy - All Charge!"
@@ -21929,6 +23077,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "XXX_096.png",
 			"cost": 0,
 			"fr": {
 				"name": "AI Buddy - Damage Own Hero 5"
@@ -21942,6 +23091,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "XXX_097.png",
 			"cost": 0,
 			"durability": 0,
 			"fr": {
@@ -21956,6 +23106,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "XXX_098.png",
 			"cost": 0,
 			"durability": 0,
 			"fr": {
@@ -21970,6 +23121,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "XXX_099.png",
 			"cost": 0,
 			"durability": 0,
 			"elite": false,
@@ -21995,6 +23147,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_053.png",
 			"cost": 0,
 			"fr": {
 				"name": "Armor 100"
@@ -22017,6 +23170,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_039.png",
 			"cost": 0,
 			"fr": {
 				"name": "Become Hogger"
@@ -22028,6 +23182,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_012.png",
 			"cost": 0,
 			"fr": {
 				"name": "Bounce"
@@ -22040,6 +23195,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_006.png",
 			"cost": 0,
 			"fr": {
 				"name": "Break Weapon"
@@ -22052,6 +23208,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_015.png",
 			"cost": 0,
 			"fr": {
 				"name": "Crash"
@@ -22064,6 +23221,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_001.png",
 			"cost": 0,
 			"fr": {
 				"name": "Damage 1"
@@ -22079,6 +23237,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_002.png",
 			"cost": 0,
 			"fr": {
 				"name": "Damage 5"
@@ -22108,6 +23267,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_020.png",
 			"cost": 0,
 			"fr": {
 				"name": "Damage all but 1"
@@ -22124,6 +23284,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "XXX_024.png",
 			"cost": 0,
 			"fr": {
 				"name": "Damage Reflector"
@@ -22137,6 +23298,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "XXX_005.png",
 			"cost": 0,
 			"fr": {
 				"name": "Destroy"
@@ -22149,6 +23311,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_050.png",
 			"cost": 0,
 			"fr": {
 				"name": "Destroy a Mana Crystal"
@@ -22161,6 +23324,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_023.png",
 			"cost": 0,
 			"fr": {
 				"name": "Destroy All Heroes"
@@ -22173,6 +23337,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_049.png",
 			"cost": 0,
 			"fr": {
 				"name": "Destroy all Mana"
@@ -22185,6 +23350,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_018.png",
 			"cost": 0,
 			"fr": {
 				"name": "Destroy All Minions"
@@ -22208,6 +23374,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_047.png",
 			"cost": 0,
 			"fr": {
 				"name": "Destroy Deck"
@@ -22220,6 +23387,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_041.png",
 			"cost": 0,
 			"fr": {
 				"name": "Destroy Hero Power"
@@ -22243,6 +23411,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_057.png",
 			"cost": 0,
 			"fr": {
 				"name": "Destroy Target Secrets"
@@ -22254,6 +23423,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_013.png",
 			"cost": 0,
 			"fr": {
 				"name": "Discard"
@@ -22266,6 +23436,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_025.png",
 			"cost": 0,
 			"fr": {
 				"name": "Do Nothing"
@@ -22278,6 +23449,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_017.png",
 			"cost": 0,
 			"fr": {
 				"name": "Draw 3 Cards"
@@ -22301,6 +23473,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "XXX_026.png",
 			"cost": 0,
 			"fr": {
 				"name": "Enable Emotes"
@@ -22313,6 +23486,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_007.png",
 			"cost": 0,
 			"fr": {
 				"name": "Enable for Attack"
@@ -22325,6 +23499,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_009.png",
 			"cost": 0,
 			"fr": {
 				"name": "Enchant"
@@ -22337,6 +23512,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_046.png",
 			"cost": 0,
 			"fr": {
 				"name": "Force AI to Use Hero Power"
@@ -22349,6 +23525,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_022.png",
 			"cost": 0,
 			"fr": {
 				"name": "Free Cards"
@@ -22371,6 +23548,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "XXX_008.png",
 			"cost": 0,
 			"fr": {
 				"name": "Freeze"
@@ -22386,6 +23564,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_052.png",
 			"cost": 0,
 			"fr": {
 				"name": "Grant Mega-Windfury"
@@ -22399,6 +23578,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "XXX_044.png",
 			"cost": 0,
 			"fr": {
 				"name": "Hand Swapper Minion"
@@ -22412,6 +23592,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "XXX_042.png",
 			"cost": 0,
 			"fr": {
 				"name": "Hand to Deck"
@@ -22424,6 +23605,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_040.png",
 			"fr": {
 				"name": "Hogger"
 			},
@@ -22435,6 +23617,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "XXX_051.png",
 			"cost": 0,
 			"fr": {
 				"name": "Make Immune"
@@ -22447,6 +23630,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_014.png",
 			"cost": 0,
 			"fr": {
 				"name": "Mill 10"
@@ -22459,6 +23643,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_043.png",
 			"cost": 0,
 			"fr": {
 				"name": "Mill 30"
@@ -22471,6 +23656,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_019.png",
 			"fr": {
 				"name": "Molasses"
 			},
@@ -22482,6 +23668,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_029.png",
 			"cost": 0,
 			"fr": {
 				"name": "Opponent Concede"
@@ -22493,6 +23680,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_030.png",
 			"cost": 0,
 			"fr": {
 				"name": "Opponent Disconnect"
@@ -22517,6 +23705,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_003.png",
 			"cost": 0,
 			"fr": {
 				"name": "Restore 1"
@@ -22529,6 +23718,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_004.png",
 			"cost": 0,
 			"fr": {
 				"name": "Restore 5"
@@ -22541,6 +23731,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_021.png",
 			"cost": 0,
 			"fr": {
 				"name": "Restore All Health"
@@ -22553,6 +23744,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_028.png",
 			"fr": {
 				"name": "Reveal Hand"
 			},
@@ -22563,6 +23755,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_027.png",
 			"fr": {
 				"name": "Server Crash"
 			},
@@ -22573,6 +23766,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_010.png",
 			"cost": 0,
 			"fr": {
 				"name": "Silence - debug"
@@ -22585,6 +23779,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_056.png",
 			"cost": 0,
 			"fr": {
 				"name": "Silence and Destroy All Minions"
@@ -22596,6 +23791,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_016.png",
 			"cost": 0,
 			"fr": {
 				"name": "Snake Ball"
@@ -22607,6 +23803,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_045.png",
 			"cost": 0,
 			"fr": {
 				"name": "Steal Card"
@@ -22619,6 +23816,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_011.png",
 			"cost": 0,
 			"fr": {
 				"name": "Summon a random Secret"
@@ -22631,6 +23829,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "XXX_054.png",
 			"cost": 0,
 			"fr": {
 				"name": "Weapon Buff"
@@ -22674,6 +23873,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dan Scott",
+			"cardImage": "GVG_029.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "\"Hey! Ancestors!\" - Ancestor's call",
@@ -22691,6 +23891,7 @@ var parseCardsText = {
 		{
 			"artist": "Josh Harris",
 			"attack": 9,
+			"cardImage": "GVG_077.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "The Dark Animus is evil and mysterious and huge and unable to write sentences that utilize proper grammar.",
@@ -22710,6 +23911,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 1,
+			"cardImage": "GVG_085.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "The inventor of the Annoy-o-Tron was immediately expelled from Tinkerschool, Tinkertown, and was eventually exiled from the Eastern Kingdoms altogether.",
@@ -22732,6 +23934,7 @@ var parseCardsText = {
 		{
 			"artist": "Eva Widermann",
 			"attack": 2,
+			"cardImage": "GVG_030.png",
 			"collectible": true,
 			"cost": 2,
 			"elite": false,
@@ -22755,6 +23958,7 @@ var parseCardsText = {
 		{
 			"artist": "Jesper Ejsing",
 			"attack": 3,
+			"cardImage": "GVG_069.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "They don't make 'em like they used to! (Because of explosions, mostly.)",
@@ -22776,6 +23980,7 @@ var parseCardsText = {
 		{
 			"artist": "Zero Yue",
 			"attack": 2,
+			"cardImage": "GVG_091.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "There was some hard talk between gnome magi and engineers about inventing this mech.",
@@ -22817,6 +24022,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Nutchapol Thitinunthakorn",
+			"cardImage": "PART_001.png",
 			"cost": 1,
 			"fr": {
 				"name": "Plaque d’armure"
@@ -22828,6 +24034,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "GVG_030a.png",
 			"fr": {
 				"name": "Mode Attaque"
 			},
@@ -22852,6 +24059,7 @@ var parseCardsText = {
 		{
 			"artist": "Jomaro Kindred",
 			"attack": 3,
+			"cardImage": "GVG_119.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -22874,6 +24082,7 @@ var parseCardsText = {
 		{
 			"artist": "Tooth",
 			"attack": 1,
+			"cardImage": "GVG_063.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -22893,6 +24102,7 @@ var parseCardsText = {
 		{
 			"artist": "Luca Zontini",
 			"attack": 3,
+			"cardImage": "GVG_099.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "He lobbies Orgrimmar daily on behalf of bombs.",
@@ -22912,6 +24122,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "GVG_110t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Ro’Boum"
@@ -22929,6 +24140,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Andrew Hou",
+			"cardImage": "GVG_050.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Only goblins would think this was a good idea. Even they are starting to have their doubts.",
@@ -22957,6 +24169,7 @@ var parseCardsText = {
 		{
 			"artist": "Aleksi Briclot",
 			"attack": 3,
+			"cardImage": "GVG_068.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "He's burly because he does CrossFit.",
@@ -22973,6 +24186,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Chris Seaman",
+			"cardImage": "GVG_056t.png",
 			"cost": 0,
 			"fr": {
 				"name": "Mine enfouie"
@@ -22989,6 +24203,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "E.M. Gist",
+			"cardImage": "GVG_017.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Real hunters tame hungry crabs.",
@@ -23005,6 +24220,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "GVG_092t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Poulet"
@@ -23029,6 +24245,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 8,
+			"cardImage": "GVG_121.png",
 			"collectible": true,
 			"cost": 12,
 			"flavor": "He and Mountain Giant don't get along.",
@@ -23047,6 +24264,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 2,
+			"cardImage": "GVG_082.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Clockwork gnomes are always asking what time it is.",
@@ -23068,6 +24286,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 6,
+			"cardImage": "GVG_062.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Guardians used to be built out of Adamantium, but production got moved to Gadgetzan and Cobalt was cheap.",
@@ -23086,6 +24305,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Howard Lyon",
+			"cardImage": "GVG_073.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "\"Cobra Shot\" hurts way, way, way more than \"Cobra Cuddle.\"",
@@ -23103,6 +24323,7 @@ var parseCardsText = {
 		{
 			"artist": "Dany Orizio",
 			"attack": 2,
+			"cardImage": "GVG_059.png",
 			"collectible": true,
 			"cost": 3,
 			"durability": 3,
@@ -23124,6 +24345,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 1,
+			"cardImage": "GVG_013.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "After a while, you don't see the cogs and sprockets. All you see is a robot, a spider tank, a deathray...",
@@ -23144,6 +24366,7 @@ var parseCardsText = {
 		{
 			"artist": "Richard Wright",
 			"attack": 1,
+			"cardImage": "GVG_024.png",
 			"collectible": true,
 			"cost": 3,
 			"durability": 3,
@@ -23164,6 +24387,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Warren Mahy",
+			"cardImage": "GVG_038.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Snap! This card! Pop!",
@@ -23183,6 +24407,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Michael Sutfin",
+			"cardImage": "GVG_052.png",
 			"collectible": true,
 			"cost": 7,
 			"flavor": "Using this card on your enemies is one of the best things in life, according to some barbarians.",
@@ -23199,6 +24424,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Trent Kaniuga",
+			"cardImage": "GVG_041.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "Don't worry; we fired the person who named this card.",
@@ -23214,6 +24440,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "GVG_041b.png",
 			"fr": {
 				"name": "Sombres feux follets"
 			},
@@ -23225,6 +24452,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "GVG_041a.png",
 			"fr": {
 				"name": "Sombres feux follets"
 			},
@@ -23248,6 +24476,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jeff Haynie",
+			"cardImage": "GVG_015.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "If you're looking to make an \"Emo\" deck, this card is perfect!",
@@ -23264,6 +24493,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Kerem Beyit",
+			"cardImage": "GVG_019.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Virtually every member of the pro demon lobby is a warlock. Weird.",
@@ -23292,6 +24522,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Garner",
 			"attack": 7,
+			"cardImage": "GVG_110.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -23313,6 +24544,7 @@ var parseCardsText = {
 		{
 			"artist": "Massive Black",
 			"attack": 7,
+			"cardImage": "GVG_080t.png",
 			"cost": 5,
 			"fr": {
 				"name": "Druide du Croc"
@@ -23328,6 +24560,7 @@ var parseCardsText = {
 		{
 			"artist": "Brandon Kitkouski",
 			"attack": 4,
+			"cardImage": "GVG_080.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "The Druids of the Fang live in the Wailing Caverns. They wear cool snake shirts and tell snake jokes and say \"bro\" a lot.",
@@ -23349,6 +24582,7 @@ var parseCardsText = {
 		{
 			"artist": "José Ladrönn",
 			"attack": 5,
+			"cardImage": "GVG_066.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "He just closes his eyes and goes for it. Raarararrrarar!",
@@ -23370,6 +24604,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Garner",
+			"cardImage": "GVG_005.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Medivh's echo haunts Karazhan, eternally cheating at chess and <i>Hearthstone</i>.",
@@ -23386,6 +24621,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Peerasak Senalai",
+			"cardImage": "PART_005.png",
 			"cost": 1,
 			"fr": {
 				"name": "Liquide de refroidissement"
@@ -23402,6 +24638,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan Boros",
 			"attack": 3,
+			"cardImage": "GVG_107.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "His enhancements are gluten free!",
@@ -23423,6 +24660,7 @@ var parseCardsText = {
 		{
 			"artist": "Ralph Horsley",
 			"attack": 1,
+			"cardImage": "GVG_076.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "How is this supposed to work?  Your enemies think, \"<i>Hey!</i> Cute sheep!\" and run over to cuddle it?",
@@ -23453,6 +24691,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Luca Zontini",
+			"cardImage": "GVG_026.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "The hardest part about doing a \"Feign Death\" convincingly is learning how to make the right smell. It takes a lot of commitment.",
@@ -23470,6 +24709,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Gaser",
 			"attack": 3,
+			"cardImage": "GVG_020.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "The box says, \"New and improved, with 200% more fel!\"",
@@ -23489,6 +24729,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan & Gabor",
 			"attack": 8,
+			"cardImage": "GVG_016.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "So reaver. Much fel. Wow.",
@@ -23506,6 +24747,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Nutchapol Thitinunthakorn",
+			"cardImage": "PART_004.png",
 			"cost": 1,
 			"fr": {
 				"name": "Champ de camouflage"
@@ -23519,6 +24761,7 @@ var parseCardsText = {
 		{
 			"artist": "Aleksi Briclot",
 			"attack": 7,
+			"cardImage": "GVG_007.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -23538,6 +24781,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Mauricio Herrera",
+			"cardImage": "GVG_001.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Calling something a flamecannon really doesn't do much to distinguish it from other goblin devices.",
@@ -23555,6 +24799,7 @@ var parseCardsText = {
 		{
 			"artist": "Todd Lockwood",
 			"attack": 4,
+			"cardImage": "GVG_100.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "\"Evil Eye Watcher of Doom\" was the original name, but marketing felt it was a bit too aggressive.",
@@ -23574,6 +24819,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 1,
+			"cardImage": "GVG_084.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "To operate, this contraption needs a hula doll on the dashboard. Otherwise it's just a “falling machine.”",
@@ -23595,6 +24841,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 6,
+			"cardImage": "GVG_113.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -23614,6 +24861,7 @@ var parseCardsText = {
 		{
 			"artist": "Nutchapol Thitinunthakorn",
 			"attack": 7,
+			"cardImage": "GVG_079.png",
 			"collectible": true,
 			"cost": 8,
 			"flavor": "There is a factory in Tanaris for crafting force-tanks, but it only ever made two, because of cost overruns.",
@@ -23635,6 +24883,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 6,
+			"cardImage": "GVG_049.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -23653,6 +24902,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "GVG_028t.png",
 			"cost": 0,
 			"fr": {
 				"name": "Pièce de Gallywix"
@@ -23666,6 +24916,7 @@ var parseCardsText = {
 		{
 			"artist": "Luke Mancini",
 			"attack": 3,
+			"cardImage": "GVG_117.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -23682,6 +24933,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "GVG_032b.png",
 			"fr": {
 				"name": "Don de carte"
 			},
@@ -23693,6 +24945,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "GVG_032a.png",
 			"fr": {
 				"name": "Don de mana"
 			},
@@ -23706,6 +24959,7 @@ var parseCardsText = {
 		{
 			"artist": "Seamus Gallagher",
 			"attack": 2,
+			"cardImage": "GVG_081.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "\"Shhh, I think I hear something.\"\n\"Ah, it's probably nothing.\" - Every Henchman",
@@ -23737,6 +24991,7 @@ var parseCardsText = {
 		{
 			"artist": "Gino Whitehall",
 			"attack": 2,
+			"cardImage": "GVG_043.png",
 			"collectible": true,
 			"cost": 2,
 			"durability": 2,
@@ -23758,6 +25013,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan & Gabor",
 			"attack": 1,
+			"cardImage": "GVG_098.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "The gnomes are valiant and ready to return to their irradiated, poorly ventilated homeland!",
@@ -23779,6 +25035,7 @@ var parseCardsText = {
 		{
 			"artist": "Jesper Ejsing",
 			"attack": 3,
+			"cardImage": "GVG_092.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "He's legitimately surprised every time he turns himself into a chicken.",
@@ -23799,6 +25056,7 @@ var parseCardsText = {
 		{
 			"artist": "Zolton Boros",
 			"attack": 3,
+			"cardImage": "GVG_023.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "This guy is excellent at adjusting your haircut and/or height.",
@@ -23821,6 +25079,7 @@ var parseCardsText = {
 		{
 			"artist": "Glenn Rane",
 			"attack": 5,
+			"cardImage": "GVG_004.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "If you can't find a bomb to throw, just pick up any goblin invention and throw that.",
@@ -23842,6 +25101,7 @@ var parseCardsText = {
 		{
 			"artist": "Jesper Ejsing",
 			"attack": 2,
+			"cardImage": "GVG_095.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "He’s not such a binge exploder anymore. These days, he only explodes socially.",
@@ -23873,6 +25133,7 @@ var parseCardsText = {
 		{
 			"artist": "Chris Rahn",
 			"attack": 2,
+			"cardImage": "GVG_032.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Likes: Hiking and the great outdoors. Dislikes: Goblin shredders and sandals. (Can’t find any that fit!).",
@@ -23891,6 +25152,7 @@ var parseCardsText = {
 		{
 			"artist": "Ralph Horsley",
 			"attack": 6,
+			"cardImage": "GVG_120.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -23922,6 +25184,7 @@ var parseCardsText = {
 		{
 			"artist": "Laurel D. Austin",
 			"attack": 2,
+			"cardImage": "GVG_104.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Hobgoblins are meeting next week to discuss union benefits.  First on the list: dental plan.",
@@ -23939,6 +25202,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 2,
+			"cardImage": "GVG_089.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "\"LUMOS!\" is not what they yell. What do you think this is, Hogwarts?",
@@ -23955,6 +25219,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "GVG_045t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Diablotin"
@@ -23969,6 +25234,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jaemin Kim",
+			"cardImage": "GVG_045.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "The shrapnel is waaaaay worse than the explosion.",
@@ -23986,6 +25252,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 6,
+			"cardImage": "GVG_056.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -24009,6 +25276,7 @@ var parseCardsText = {
 		{
 			"artist": "Brian Despain",
 			"attack": 2,
+			"cardImage": "GVG_027.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Mechs like learning from him because he really speaks their language.\n0110100001101001",
@@ -24039,6 +25307,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 1,
+			"cardImage": "GVG_094.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "This robot is a lean, mean, butlerin' machine.",
@@ -24057,6 +25326,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan Boros",
 			"attack": 1,
+			"cardImage": "GVG_106.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "One bot's junk is another bot's AWESOME UPGRADE!",
@@ -24085,6 +25355,7 @@ var parseCardsText = {
 		{
 			"artist": "Jakub Kasper",
 			"attack": 4,
+			"cardImage": "GVG_074.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "They pretend to be wise and enlightened, but they mostly just hate to be left out of a secret.",
@@ -24105,6 +25376,7 @@ var parseCardsText = {
 		{
 			"artist": "Seamus Gallagher",
 			"attack": 2,
+			"cardImage": "GVG_046.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "He never sleeps.  Not even in the mighty jungle.",
@@ -24127,6 +25399,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jesper Ejsing",
+			"cardImage": "GVG_012.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "\"Light it up!\" - Command given to both Lightwardens and Goblins holding Flamecannons.",
@@ -24143,6 +25416,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Luca Zontini",
+			"cardImage": "GVG_008.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "This is what happens when you allow goblins to be priests.",
@@ -24163,6 +25437,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 2,
+			"cardImage": "GVG_097.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Warlocks have the town exorcist on speed dial in case they unleash the wrong demon.",
@@ -24184,6 +25459,7 @@ var parseCardsText = {
 		{
 			"artist": "Benjamin Zhang",
 			"attack": 5,
+			"cardImage": "GVG_071.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "The message, \"If found, please return to Mulgore,\" is tattooed on his rear.",
@@ -24201,6 +25477,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 5,
+			"cardImage": "GVG_090.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Dang, Bomber, calm down.",
@@ -24221,6 +25498,7 @@ var parseCardsText = {
 		{
 			"artist": "Wayne Reynolds",
 			"attack": 9,
+			"cardImage": "GVG_021.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -24244,6 +25522,7 @@ var parseCardsText = {
 		{
 			"artist": "Oliver Chipping",
 			"attack": 9,
+			"cardImage": "GVG_035.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -24267,6 +25546,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 7,
+			"cardImage": "GVG_034.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "Crushes buildings with his BEAR hands.",
@@ -24286,6 +25566,7 @@ var parseCardsText = {
 		{
 			"artist": "Chris Seaman",
 			"attack": 4,
+			"cardImage": "GVG_078.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "The yetis of Chillwind Point are a source of both inspiration and savage beatings.",
@@ -24307,6 +25588,7 @@ var parseCardsText = {
 		{
 			"artist": "Phil Saunders",
 			"attack": 2,
+			"cardImage": "GVG_006.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Mechs that summon mechs? What's next? Donuts that summon donuts? Mmmmm.",
@@ -24328,6 +25610,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 9,
+			"cardImage": "GVG_116.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -24384,6 +25667,7 @@ var parseCardsText = {
 		{
 			"artist": "Hideaki Takamura",
 			"attack": 3,
+			"cardImage": "GVG_048.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Don't leave them out in the rain. In Un'Goro Crater there is a whole colony of rust-tooth leapers.",
@@ -24406,6 +25690,7 @@ var parseCardsText = {
 		{
 			"artist": "Skan Srisuwan",
 			"attack": 1,
+			"cardImage": "GVG_103.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "This card is the real thing.",
@@ -24445,6 +25730,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 4,
+			"cardImage": "GVG_111.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -24464,6 +25750,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Olson",
 			"attack": 4,
+			"cardImage": "GVG_109.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "He is sometimes found hiding in the treasure chest in the Gurubashi Arena.",
@@ -24485,6 +25772,7 @@ var parseCardsText = {
 		{
 			"artist": "Carl Critchlow",
 			"attack": 1,
+			"cardImage": "GVG_018.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Her sister is the Mistress of Pane who sells windows and shower doors.",
@@ -24504,6 +25792,7 @@ var parseCardsText = {
 		{
 			"artist": "Michal Ivan",
 			"attack": 7,
+			"cardImage": "GVG_112.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -24521,6 +25810,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Mike Hayes",
+			"cardImage": "GVG_061.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "\"I'm bringing the guacamole!\" – One of the most successful (yet rare) Silver Hand rallying cries",
@@ -24538,6 +25828,7 @@ var parseCardsText = {
 		{
 			"artist": "Ruan Jia",
 			"attack": 7,
+			"cardImage": "GVG_042.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -24561,6 +25852,7 @@ var parseCardsText = {
 		{
 			"artist": "Vinod Rams",
 			"attack": 4,
+			"cardImage": "GVG_065.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Ogres have really terrible short-term chocolate.",
@@ -24578,6 +25870,7 @@ var parseCardsText = {
 		{
 			"artist": "Samwise",
 			"attack": 6,
+			"cardImage": "GVG_088.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "He didn't have the grades to get into ninja school, but his dad pulled some strings.",
@@ -24599,6 +25892,7 @@ var parseCardsText = {
 		{
 			"artist": "Richard Wright",
 			"attack": 4,
+			"cardImage": "GVG_054.png",
 			"collectible": true,
 			"cost": 3,
 			"durability": 2,
@@ -24617,6 +25911,7 @@ var parseCardsText = {
 		{
 			"artist": "Danny Beck",
 			"attack": 4,
+			"cardImage": "GVG_025.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "When pirates say there is no \"Eye\" in \"team,\" they are very literal about it.",
@@ -24650,6 +25945,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 4,
+			"cardImage": "GVG_096.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Once upon a time, only goblins piloted shredders. These days, everyone from Doomsayer to Lorewalker Cho seems to ride one.",
@@ -24671,6 +25967,7 @@ var parseCardsText = {
 		{
 			"artist": "Michael Phillippi",
 			"attack": 6,
+			"cardImage": "GVG_105.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "The pinnacle of goblin engineering. Includes an espresso machine and foot massager.",
@@ -24713,6 +26010,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan and Gabor",
 			"attack": 3,
+			"cardImage": "GVG_036.png",
 			"collectible": true,
 			"cost": 3,
 			"durability": 2,
@@ -24734,6 +26032,7 @@ var parseCardsText = {
 		{
 			"artist": "Jaemin Kim",
 			"attack": 3,
+			"cardImage": "GVG_064.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "He pays homage to Morgl, the great murloc oracle! (Who doesn't??)",
@@ -24762,6 +26061,7 @@ var parseCardsText = {
 		{
 			"artist": "Phroilan Gardner",
 			"attack": 2,
+			"cardImage": "GVG_060.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "His specialty? Dividing things into four pieces.",
@@ -24783,6 +26083,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Olson",
 			"attack": 3,
+			"cardImage": "GVG_108.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "For when you didn’t combobulate quite right the first time around.",
@@ -24802,6 +26103,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Efrem Palacios",
+			"cardImage": "GVG_031.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "Druidic recycling involves putting plastics in one bin and enemy minions in another bin.",
@@ -24839,6 +26141,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Nutthapon Petthai",
+			"cardImage": "PART_006.png",
 			"cost": 1,
 			"fr": {
 				"name": "Inverseur"
@@ -24851,6 +26154,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Peerasak Senalai",
+			"cardImage": "PART_003.png",
 			"cost": 1,
 			"fr": {
 				"name": "Klaxon rouillé"
@@ -24863,6 +26167,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Dave Allsop",
+			"cardImage": "GVG_047.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Rogues can't stand it. They know you planned it! They are going to set you straight!",
@@ -24883,6 +26188,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 7,
+			"cardImage": "GVG_070.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "He's recently recovered from being a \"scurvy dog.\"",
@@ -24900,6 +26206,7 @@ var parseCardsText = {
 		{
 			"artist": "Anton Zemskov",
 			"attack": 4,
+			"cardImage": "GVG_101.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "The Scarlet Crusade is doing market research to find out if the \"Mauve Crusade\" would be better received.",
@@ -24921,6 +26228,7 @@ var parseCardsText = {
 		{
 			"artist": "Jesper Ejsing",
 			"attack": 2,
+			"cardImage": "GVG_055.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "If it breaks, just kick it a couple of times while yelling \"Durn thing!\"",
@@ -24953,6 +26261,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jason Chan",
+			"cardImage": "GVG_057.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "The walrus of Light restores EIGHT Health.",
@@ -24986,6 +26295,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 2,
+			"cardImage": "GVG_009.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Shadowbomber does her job, but she's kind of phoning it in at this point.",
@@ -25007,6 +26317,7 @@ var parseCardsText = {
 		{
 			"artist": "Dan Scott",
 			"attack": 2,
+			"cardImage": "GVG_072.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Punching is its primary function. Also, its secondary function.",
@@ -25037,6 +26348,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 2,
+			"cardImage": "GVG_058.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "He chooses to believe what he is programmed to believe!",
@@ -25059,6 +26371,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 5,
+			"cardImage": "GVG_053.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "She has three shieldbearers in her party to supply her with back ups when she gets low on durability.",
@@ -25080,6 +26393,7 @@ var parseCardsText = {
 		{
 			"artist": "Warren Mahy",
 			"attack": 2,
+			"cardImage": "GVG_075.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "If you hear someone yell, \"Cannonball!\" you're about to get wet. Or crushed.",
@@ -25110,6 +26424,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 3,
+			"cardImage": "GVG_011.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "After the debacle of the Gnomish World Enlarger, gnomes are wary of size-changing inventions.",
@@ -25131,6 +26446,7 @@ var parseCardsText = {
 		{
 			"artist": "Zero Yue",
 			"attack": 5,
+			"cardImage": "GVG_086.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Wintergrasp Keep's only weakness!",
@@ -25150,6 +26466,7 @@ var parseCardsText = {
 		{
 			"artist": "Clint Langley",
 			"attack": 2,
+			"cardImage": "GVG_040.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "The elements respond to anyone who calls them for a worthy cause, even if you call them by yelling, \"MRGHRGLGLGL!\"",
@@ -25172,6 +26489,7 @@ var parseCardsText = {
 		{
 			"artist": "Christopher Moeller",
 			"attack": 5,
+			"cardImage": "GVG_114.png",
 			"collectible": true,
 			"cost": 8,
 			"elite": true,
@@ -25194,6 +26512,7 @@ var parseCardsText = {
 		{
 			"artist": "Gabor Szikszai",
 			"attack": 2,
+			"cardImage": "GVG_002.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Do the slow chant when he waddles by: \"Chug! Chug! Chug!\"",
@@ -25216,6 +26535,7 @@ var parseCardsText = {
 		{
 			"artist": "Phil Saunders",
 			"attack": 3,
+			"cardImage": "GVG_123.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "The inventor of the goblin shredder is involved in several patent disputes with the inventor of the soot spewer.",
@@ -25238,6 +26558,7 @@ var parseCardsText = {
 		{
 			"artist": "Dany Orizio",
 			"attack": 3,
+			"cardImage": "GVG_044.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "\"What if we put guns on it?\" -Fizzblitz, staring at the spider-transportation-machine",
@@ -25255,6 +26576,7 @@ var parseCardsText = {
 		{
 			"artist": "Jun Kang",
 			"attack": 2,
+			"cardImage": "GVG_087.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Goblins seldom have the patience for sniping. Most prefer lobbing explosives.",
@@ -25273,6 +26595,7 @@ var parseCardsText = {
 		{
 			"artist": "Peet Cooper",
 			"attack": 2,
+			"cardImage": "GVG_067.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "The only thing worse than smelling troggs is listening to their poetry.",
@@ -25309,6 +26632,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "GVG_030b.png",
 			"fr": {
 				"name": "Mode Char"
 			},
@@ -25322,6 +26646,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 0,
+			"cardImage": "GVG_093.png",
 			"collectible": true,
 			"cost": 0,
 			"flavor": "The engineering equivalent of a \"Kick Me\" sticker.",
@@ -25353,6 +26678,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Nutthapon Petthai",
+			"cardImage": "PART_002.png",
 			"cost": 1,
 			"fr": {
 				"name": "Remontoir"
@@ -25365,6 +26691,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Den",
+			"cardImage": "GVG_022.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "\"Get ready to strike oil!\" - Super-cheesy battle cry",
@@ -25405,6 +26732,7 @@ var parseCardsText = {
 		{
 			"artist": "Gabor Szikszai",
 			"attack": 3,
+			"cardImage": "GVG_102.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Won't you take me to... Tinkertown?",
@@ -25425,6 +26753,7 @@ var parseCardsText = {
 		{
 			"artist": "Zoltan & Gabor",
 			"attack": 5,
+			"cardImage": "GVG_115.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -25447,6 +26776,7 @@ var parseCardsText = {
 		{
 			"artist": "Wei Wang",
 			"attack": 5,
+			"cardImage": "GVG_028.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -25465,6 +26795,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Steve Prescott",
+			"cardImage": "GVG_033.png",
 			"collectible": true,
 			"cost": 9,
 			"flavor": "Healing: It grows on trees!",
@@ -25482,6 +26813,7 @@ var parseCardsText = {
 		{
 			"artist": "Mike Sass",
 			"attack": 6,
+			"cardImage": "GVG_118.png",
 			"collectible": true,
 			"cost": 7,
 			"elite": true,
@@ -25499,6 +26831,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Sean O'Daniels",
+			"cardImage": "GVG_003.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "The denizens of Azeroth have no idea how much work goes into stabilizing portals.  We spend like 30% of GDP on portal upkeep.",
@@ -25516,6 +26849,7 @@ var parseCardsText = {
 		{
 			"artist": "Nutchapol Thitinunthakorn",
 			"attack": 5,
+			"cardImage": "GVG_083.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "It's the same as the previous generation but they slapped the word \"upgraded\" on it to sell it for double.",
@@ -25538,6 +26872,7 @@ var parseCardsText = {
 		{
 			"artist": "Chris Seaman",
 			"attack": 4,
+			"cardImage": "GVG_111t.png",
 			"cost": 8,
 			"elite": true,
 			"fr": {
@@ -25567,6 +26902,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "GVG_010.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Velen wrote a \"Lovely Card\" for Tyrande with a picture of the Deeprun Tram that said \"I Choo-Choo-Choose you!\"",
@@ -25584,6 +26920,7 @@ var parseCardsText = {
 		{
 			"artist": "Guangjian Huang",
 			"attack": 0,
+			"cardImage": "GVG_039.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "You can usually find these at the totemist's market on Saturdays.",
@@ -25603,6 +26940,7 @@ var parseCardsText = {
 		{
 			"artist": "Raymond Swanland",
 			"attack": 6,
+			"cardImage": "GVG_014.png",
 			"collectible": true,
 			"cost": 5,
 			"elite": true,
@@ -25625,6 +26963,7 @@ var parseCardsText = {
 		{
 			"artist": "Tyler Walpole",
 			"attack": 1,
+			"cardImage": "GVG_051.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Mass production of warbots was halted when it was discovered that they were accidentally being produced at \"sample size.\"",
@@ -25647,6 +26986,7 @@ var parseCardsText = {
 		{
 			"artist": "Jonboy Meyers",
 			"attack": 2,
+			"cardImage": "GVG_122.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Bane of spellcasters and spelling bees everywhere.",
@@ -25688,6 +27028,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Nutchapol Thitinunthakorn",
+			"cardImage": "PART_007.png",
 			"cost": 1,
 			"fr": {
 				"name": "Lames tourbillonnantes"
@@ -25701,6 +27042,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 3,
+			"cardImage": "GVG_037.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "If you pay a little extra, you can get it in \"candy-apple red.\"",
@@ -25721,6 +27063,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA04_28.png",
 			"cost": 0,
 			"fr": {
 				"name": "Un bassin luminescent"
@@ -25733,6 +27076,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Slawomir Maniak",
+			"cardImage": "LOE_110t.png",
 			"cost": 0,
 			"fr": {
 				"name": "Malédiction ancestrale"
@@ -25747,6 +27091,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA13_2.png",
 			"cost": 0,
 			"fr": {
 				"name": "Puissance des anciens"
@@ -25758,6 +27103,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA13_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Puissance des anciens"
@@ -25771,6 +27117,7 @@ var parseCardsText = {
 		{
 			"artist": "Slawomir Maniak",
 			"attack": 7,
+			"cardImage": "LOE_110.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Warning: Do not expose to direct sunlight.",
@@ -25789,6 +27136,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA06_03.png",
 			"cost": 2,
 			"fr": {
 				"name": "Terrestre animé"
@@ -25800,6 +27148,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA06_03h.png",
 			"cost": 2,
 			"fr": {
 				"name": "Terrestre animé"
@@ -25833,6 +27182,7 @@ var parseCardsText = {
 		{
 			"artist": "Mike Sass",
 			"attack": 4,
+			"cardImage": "LOE_119.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Try putting it on.  Wait, let me get my camera.",
@@ -25850,6 +27200,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA04_27.png",
 			"cost": 1,
 			"fr": {
 				"name": "Statue animée"
@@ -25863,6 +27214,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_17.png",
 			"cost": 10,
 			"fr": {
 				"name": "Statue animée"
@@ -25876,6 +27228,7 @@ var parseCardsText = {
 		{
 			"artist": "Paul Mafayon",
 			"attack": 4,
+			"cardImage": "LOE_061.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "He's actually a 1/1 who picked up the hammer from the last guy.",
@@ -25895,6 +27248,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "LOEA04_24h.png",
 			"cost": 8,
 			"fr": {
 				"name": "Garde du temple anubisath"
@@ -25907,6 +27261,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA04_24.png",
 			"cost": 8,
 			"fr": {
 				"name": "Garde du temple anubisath"
@@ -25919,6 +27274,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Ryan Metcalf",
+			"cardImage": "LOE_026.png",
 			"collectible": true,
 			"cost": 10,
 			"flavor": "Theme song by Ellie Goldfin and Blagghghlrlrl Harris.",
@@ -25936,6 +27292,7 @@ var parseCardsText = {
 		{
 			"artist": "Alex Horley Orlandelli",
 			"attack": 7,
+			"cardImage": "LOE_092.png",
 			"collectible": true,
 			"cost": 9,
 			"elite": true,
@@ -25956,6 +27313,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA16_22.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -25969,6 +27327,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA08_01.png",
 			"fr": {
 				"name": "Archaedas"
 			},
@@ -25980,6 +27339,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_22H.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -25993,6 +27353,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA07_21.png",
 			"cost": 1,
 			"fr": {
 				"name": "Foncer en avant"
@@ -26004,6 +27365,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA16_7.png",
 			"cost": 0,
 			"fr": {
 				"name": "Esquille de bénédiction"
@@ -26038,6 +27400,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "LOEA16_20.png",
 			"cost": 1,
 			"fr": {
 				"name": "Bénédiction du soleil"
@@ -26049,6 +27412,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA01_02h.png",
 			"fr": {
 				"name": "Bénédictions du soleil"
 			},
@@ -26059,6 +27423,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA01_02.png",
 			"fr": {
 				"name": "Bénédictions du soleil"
 			},
@@ -26070,6 +27435,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "LOEA15_3.png",
 			"cost": 3,
 			"fr": {
 				"name": "Raptor d’os"
@@ -26083,6 +27449,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "LOEA15_3H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Raptor d’os"
@@ -26095,6 +27462,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA07_20.png",
 			"cost": 1,
 			"fr": {
 				"name": "Boum !"
@@ -26108,6 +27476,7 @@ var parseCardsText = {
 		{
 			"artist": "Sam Nielson",
 			"attack": 2,
+			"cardImage": "LOE_077.png",
 			"collectible": true,
 			"cost": 3,
 			"elite": true,
@@ -26128,6 +27497,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "LOEA09_7H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Chaudron"
@@ -26154,6 +27524,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "LOEA09_7.png",
 			"cost": 0,
 			"fr": {
 				"name": "Chaudron"
@@ -26171,6 +27542,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "LOEA07_09.png",
 			"cost": 4,
 			"fr": {
 				"name": "Trogg en chasse"
@@ -26182,6 +27554,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA05_01.png",
 			"fr": {
 				"name": "Chef Scarvash"
 			},
@@ -26193,6 +27566,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA16_21.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -26210,6 +27584,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_21H.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -26226,6 +27601,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA07_26.png",
 			"cost": 1,
 			"fr": {
 				"name": "Consulter Brann"
@@ -26237,6 +27613,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA16_11.png",
 			"cost": 0,
 			"fr": {
 				"name": "Couronne de Kael’thas"
@@ -26249,6 +27626,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Horley Orlandelli",
+			"cardImage": "LOE_007.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "This is what happens when Rafaam stubs his toe unexpectedly.",
@@ -26266,6 +27644,7 @@ var parseCardsText = {
 		{
 			"artist": "Craig Mullins",
 			"attack": 2,
+			"cardImage": "LOE_118.png",
 			"collectible": true,
 			"cost": 1,
 			"durability": 3,
@@ -26294,6 +27673,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Jim Nelson",
+			"cardImage": "LOE_007t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Maudit !"
@@ -26311,6 +27691,7 @@ var parseCardsText = {
 		{
 			"artist": "George Davis",
 			"attack": 2,
+			"cardImage": "LOE_023.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "I'm offering you a bargain here!  This amazing vacuum cleaner for your soul!",
@@ -26331,6 +27712,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan Boros",
+			"cardImage": "LOE_021.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Five years of tap-dancing lessons are FINALLY going to pay off!",
@@ -26350,6 +27732,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "LOEA07_11.png",
 			"cost": 1,
 			"fr": {
 				"name": "Débris"
@@ -26367,6 +27750,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 2,
+			"cardImage": "LOE_020.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Dang.  This card is sweet.  Almost as sweet as Dessert Camel.",
@@ -26387,6 +27771,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA02_02.png",
 			"cost": 0,
 			"fr": {
 				"name": "Intuition de djinn"
@@ -26398,6 +27783,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA02_02h.png",
 			"cost": 0,
 			"fr": {
 				"name": "Intuition de djinn"
@@ -26411,6 +27797,7 @@ var parseCardsText = {
 		{
 			"artist": "Jakub Kasper",
 			"attack": 4,
+			"cardImage": "LOE_053.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "If you want your wish granted, don't rub him the wrong way.",
@@ -26426,6 +27813,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA04_28a.png",
 			"cost": 0,
 			"fr": {
 				"name": "Boire à grands traits"
@@ -26437,6 +27825,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA07_18.png",
 			"cost": 1,
 			"fr": {
 				"name": "Dynamite"
@@ -26449,6 +27838,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "LOEA07_12.png",
 			"cost": 5,
 			"fr": {
 				"name": "Poursuivant terrestre"
@@ -26461,6 +27851,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "LOEA06_02t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Statue de terrestre"
@@ -26473,6 +27864,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "LOEA06_02th.png",
 			"cost": 1,
 			"fr": {
 				"name": "Statue de terrestre"
@@ -26486,6 +27878,7 @@ var parseCardsText = {
 		{
 			"artist": "Jim Nelson",
 			"attack": 7,
+			"cardImage": "LOE_107.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Don't blink!  Don't turn your back, don't look away, and DON'T BLINK.",
@@ -26503,6 +27896,7 @@ var parseCardsText = {
 		{
 			"artist": "Luke Mancini",
 			"attack": 3,
+			"cardImage": "LOE_079.png",
 			"collectible": true,
 			"cost": 4,
 			"elite": true,
@@ -26522,6 +27916,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA09_3H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Faim sans fin"
@@ -26559,6 +27954,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "LOEA09_2H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Enragé !"
@@ -26570,6 +27966,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA09_2.png",
 			"cost": 2,
 			"fr": {
 				"name": "Enragé !"
@@ -26582,6 +27979,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Alex Konstad",
+			"cardImage": "LOE_104.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "It's perfectly safe as long as you remember to put in air holes.",
@@ -26597,6 +27995,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA04_02.png",
 			"cost": 0,
 			"fr": {
 				"name": "Fuyez !"
@@ -26609,6 +28008,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA04_02h.png",
 			"cost": 0,
 			"fr": {
 				"name": "Fuyez !"
@@ -26622,6 +28022,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Zhang",
 			"attack": 6,
+			"cardImage": "LOE_003.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Despite the name, he's a solid conjurer.",
@@ -26642,6 +28043,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Andrius Matijoshius",
+			"cardImage": "LOE_113.png",
 			"collectible": true,
 			"cost": 7,
 			"flavor": "Everyfin is cool when you're part of a murloc team!",
@@ -26658,6 +28060,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Raymond Swanland",
+			"cardImage": "LOE_111.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "MOM! DAD! DON'T TOUCH IT! IT'S EVIL!!!!!!",
@@ -26685,6 +28088,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Joe Wilson",
+			"cardImage": "LOE_105.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Harrison Jones was disappointed that he didn't get to be part of the League of Explorers, but his hat did.",
@@ -26700,6 +28104,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOE_008.png",
 			"cost": 1,
 			"flavor": "-",
 			"fr": {
@@ -26712,6 +28117,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOE_008H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Œil d’Hakkar"
@@ -26723,6 +28129,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA16_13.png",
 			"cost": 0,
 			"fr": {
 				"name": "Œil d’Orsis"
@@ -26756,6 +28163,7 @@ var parseCardsText = {
 		{
 			"artist": "Peter Stapleton",
 			"attack": 3,
+			"cardImage": "LOE_022.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Fierce monkey.  That funky monkey.",
@@ -26776,6 +28184,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA07_03h.png",
 			"cost": 0,
 			"fr": {
 				"name": "Fuir la mine !"
@@ -26787,6 +28196,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA07_03.png",
 			"cost": 0,
 			"fr": {
 				"name": "Fuir la mine !"
@@ -26799,6 +28209,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Richard Wright",
+			"cardImage": "LOE_002.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Why does a forgotten torch turn into a roaring torch with no provocation?  It's one of life's many mysteries.",
@@ -26826,6 +28237,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 8,
+			"cardImage": "LOE_073.png",
 			"collectible": true,
 			"cost": 8,
 			"flavor": "This was the only job he could get after the dinosaur theme park debacle.",
@@ -26844,6 +28256,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA09_3b.png",
 			"cost": 0,
 			"fr": {
 				"name": "Faim"
@@ -26855,6 +28268,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA09_3.png",
 			"cost": 0,
 			"fr": {
 				"name": "Faim"
@@ -26866,6 +28280,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA09_3c.png",
 			"cost": 0,
 			"fr": {
 				"name": "Faim"
@@ -26877,6 +28292,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA09_3d.png",
 			"cost": 0,
 			"fr": {
 				"name": "Faim"
@@ -26889,6 +28305,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA04_23h.png",
 			"cost": 7,
 			"fr": {
 				"name": "Insecte géant"
@@ -26901,6 +28318,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA04_23.png",
 			"cost": 7,
 			"fr": {
 				"name": "Insecte géant"
@@ -26912,6 +28330,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA10_1.png",
 			"fr": {
 				"name": "Aileron-Géant"
 			},
@@ -26923,6 +28342,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_24H.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -26938,6 +28358,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA16_24.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -26954,6 +28375,7 @@ var parseCardsText = {
 		{
 			"artist": "A.J. Nazzaro",
 			"attack": 6,
+			"cardImage": "LOE_019t2.png",
 			"cost": 4,
 			"fr": {
 				"name": "Singe doré"
@@ -26972,6 +28394,7 @@ var parseCardsText = {
 		{
 			"artist": "Skan Srisuwan",
 			"attack": 3,
+			"cardImage": "LOE_039.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "A-1 and A-2 went nuts, when they should have gone bolts.",
@@ -26993,6 +28416,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 2,
+			"cardImage": "LOE_089t3.png",
 			"cost": 2,
 			"fr": {
 				"name": "Avorton grognon"
@@ -27004,6 +28428,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA16_10.png",
 			"cost": 0,
 			"fr": {
 				"name": "Coupe de sang hakkari"
@@ -27015,6 +28440,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA08_01h.png",
 			"fr": {
 				"name": "Archaedas (héroïque)"
 			},
@@ -27025,6 +28451,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA04_01h.png",
 			"fr": {
 				"name": "Fuite (héroïque)"
 			},
@@ -27035,6 +28462,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA10_1H.png",
 			"fr": {
 				"name": "Aileron-Géant (héroïque)"
 			},
@@ -27045,6 +28473,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA07_02h.png",
 			"fr": {
 				"name": "Puits de mine (héroïque)"
 			},
@@ -27065,6 +28494,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "LOEA12_1H.png",
 			"fr": {
 				"name": "Naz’jar (héroïque)"
 			},
@@ -27075,6 +28505,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA01_01h.png",
 			"fr": {
 				"name": "Phaerix (héroïque)"
 			},
@@ -27085,6 +28516,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA15_1H.png",
 			"fr": {
 				"name": "Rafaam (héroïque)"
 			},
@@ -27095,6 +28527,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA16_1H.png",
 			"fr": {
 				"name": "Rafaam (héroïque)"
 			},
@@ -27105,6 +28538,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA05_01h.png",
 			"fr": {
 				"name": "Scarvash (héroïque)"
 			},
@@ -27115,6 +28549,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA14_1H.png",
 			"fr": {
 				"name": "Sentinelle (héroïque)"
 			},
@@ -27125,6 +28560,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA13_1h.png",
 			"fr": {
 				"name": "Squeletosaurus Hex (héroïque)"
 			},
@@ -27135,6 +28571,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA09_1H.png",
 			"fr": {
 				"name": "Ondulance (héroïque)"
 			},
@@ -27145,6 +28582,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA02_01h.png",
 			"fr": {
 				"name": "Zinaar (héroïque)"
 			},
@@ -27167,6 +28605,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 3,
+			"cardImage": "LOE_046.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "Deals damage when he croaks.",
@@ -27187,6 +28626,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "LOEA09_12.png",
 			"cost": 4,
 			"fr": {
 				"name": "Naga affamé"
@@ -27199,6 +28639,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "LOEA09_5.png",
 			"cost": 1,
 			"fr": {
 				"name": "Naga affamé"
@@ -27211,6 +28652,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "LOEA09_11.png",
 			"cost": 3,
 			"fr": {
 				"name": "Naga affamé"
@@ -27223,6 +28665,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "LOEA09_5H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Naga affamé"
@@ -27235,6 +28678,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA09_13.png",
 			"cost": 5,
 			"fr": {
 				"name": "Naga affamé"
@@ -27247,6 +28691,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "LOEA09_10.png",
 			"cost": 2,
 			"fr": {
 				"name": "Naga affamé"
@@ -27258,6 +28703,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA04_29b.png",
 			"fr": {
 				"name": "Examiner les runes"
 			},
@@ -27270,6 +28716,7 @@ var parseCardsText = {
 		{
 			"artist": "Jaemin Kim",
 			"attack": 1,
+			"cardImage": "LOE_029.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "It's amazing what you can do with super glue!",
@@ -27291,6 +28738,7 @@ var parseCardsText = {
 		{
 			"artist": "Mike Sass",
 			"attack": 4,
+			"cardImage": "LOE_051.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "The REAL angry chicken!",
@@ -27310,6 +28758,7 @@ var parseCardsText = {
 		{
 			"artist": "James Ryman",
 			"attack": 3,
+			"cardImage": "LOE_017.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "U da man!  No, U da man!",
@@ -27329,6 +28778,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA16_14.png",
 			"cost": 0,
 			"fr": {
 				"name": "Pipe de Khadgar"
@@ -27340,6 +28790,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA12_1.png",
 			"fr": {
 				"name": "Dame Naz’jar"
 			},
@@ -27351,6 +28802,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA16_25.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -27365,6 +28817,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_25H.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -27388,6 +28841,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "LOEA16_3.png",
 			"cost": 10,
 			"fr": {
 				"name": "Lanterne de puissance"
@@ -27400,6 +28854,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "LOEA02_10a.png",
 			"cost": 0,
 			"fr": {
 				"name": "Leokk"
@@ -27414,6 +28869,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA_01.png",
 			"cost": 3,
 			"fr": {
 				"name": "Présence menaçante"
@@ -27425,6 +28881,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA_01H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Présence menaçante"
@@ -27437,6 +28894,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA16_23.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -27451,6 +28909,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_23H.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -27464,6 +28923,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA09_1.png",
 			"fr": {
 				"name": "Seigneur Ondulance"
 			},
@@ -27474,6 +28934,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA16_9.png",
 			"cost": 0,
 			"fr": {
 				"name": "Grèves abandonnées de Lothar"
@@ -27486,6 +28947,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 6,
+			"cardImage": "LOEA07_14.png",
 			"cost": 6,
 			"fr": {
 				"name": "Golem chancelant"
@@ -27498,6 +28960,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Milivoj Ceran",
+			"cardImage": "LOE_019t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Carte du singe doré"
@@ -27510,6 +28973,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "LOEA07_25.png",
 			"cost": 1,
 			"fr": {
 				"name": "Perroquet mécanique"
@@ -27522,6 +28986,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA16_12.png",
 			"cost": 0,
 			"fr": {
 				"name": "Médaillon de Medivh"
@@ -27533,6 +28998,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA07_01.png",
 			"fr": {
 				"name": "Chariot de mine"
 			},
@@ -27543,6 +29009,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA07_02.png",
 			"fr": {
 				"name": "Puits de mine"
 			},
@@ -27553,6 +29020,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA16_5.png",
 			"cost": 10,
 			"fr": {
 				"name": "Miroir du destin"
@@ -27565,6 +29033,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 4,
+			"cardImage": "LOEA02_10c.png",
 			"cost": 0,
 			"fr": {
 				"name": "Misha"
@@ -27581,6 +29050,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Zhang",
 			"attack": 3,
+			"cardImage": "LOE_050.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Clever girl!",
@@ -27601,6 +29071,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA10_5H.png",
 			"cost": 3,
 			"fr": {
 				"name": "Mrgl mrgl niah niah !"
@@ -27613,6 +29084,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA10_5.png",
 			"cost": 5,
 			"fr": {
 				"name": "Mrgl mrgl niah niah !"
@@ -27635,6 +29107,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "LOEA10_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Mrglmrgl MRGL !"
@@ -27646,6 +29119,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA10_2.png",
 			"cost": 0,
 			"fr": {
 				"name": "Mrglmrgl MRGL !"
@@ -27658,6 +29132,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "LOEA16_5t.png",
 			"cost": 3,
 			"fr": {
 				"name": "Momie zombie"
@@ -27671,6 +29146,7 @@ var parseCardsText = {
 		{
 			"artist": "Oliver Chipping",
 			"attack": 1,
+			"cardImage": "LOEA10_3.png",
 			"collectible": true,
 			"cost": 0,
 			"flavor": "High mortality rate, from often being hugged to death.",
@@ -27688,6 +29164,7 @@ var parseCardsText = {
 		{
 			"artist": "Steve Prescott",
 			"attack": 1,
+			"cardImage": "LOE_006.png",
 			"collectible": true,
 			"cost": 2,
 			"flavor": "He is forever cursing the kids who climb on the rails and the evil archeologists who animate the exhibits.",
@@ -27707,6 +29184,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA09_9H.png",
 			"cost": 1,
 			"fr": {
 				"name": "Répulsif à nagas"
@@ -27718,6 +29196,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA09_9.png",
 			"cost": 1,
 			"fr": {
 				"name": "Répulsif à nagas"
@@ -27731,6 +29210,7 @@ var parseCardsText = {
 		{
 			"artist": "Ben Zhang",
 			"attack": 5,
+			"cardImage": "LOE_038.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "If she had studied harder, she would have been a C+ witch.",
@@ -27749,6 +29229,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA04_31b.png",
 			"fr": {
 				"name": "Pas question !"
 			},
@@ -27761,6 +29242,7 @@ var parseCardsText = {
 		{
 			"artist": "Anton Zemskov",
 			"attack": 7,
+			"cardImage": "LOE_009.png",
 			"collectible": true,
 			"cost": 7,
 			"flavor": "No obsidian is safe around the Obsidian Destroyer!",
@@ -27778,6 +29260,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 7,
+			"cardImage": "LOEA04_13bt.png",
 			"cost": 4,
 			"fr": {
 				"name": "Garde d’Orsis"
@@ -27794,6 +29277,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 8,
+			"cardImage": "LOEA04_13bth.png",
 			"cost": 4,
 			"fr": {
 				"name": "Garde d’Orsis"
@@ -27809,6 +29293,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA12_2.png",
 			"fr": {
 				"name": "Perle des marées"
 			},
@@ -27819,6 +29304,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA12_2H.png",
 			"fr": {
 				"name": "Perle des marées"
 			},
@@ -27829,6 +29315,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA04_06.png",
 			"cost": 0,
 			"fr": {
 				"name": "Fosse remplie de pointes"
@@ -27842,6 +29329,7 @@ var parseCardsText = {
 		{
 			"artist": "Bernie Kang",
 			"attack": 2,
+			"cardImage": "LOE_010.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "It could be worse.  It could be a Snake Pit.",
@@ -27862,6 +29350,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA14_2H.png",
 			"fr": {
 				"name": "Armure de plates"
 			},
@@ -27872,6 +29361,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA14_2.png",
 			"fr": {
 				"name": "Armure de plates"
 			},
@@ -27892,6 +29382,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "LOEA16_8.png",
 			"cost": 0,
 			"fr": {
 				"name": "Fiole de Putrescin"
@@ -27913,6 +29404,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "LOEA15_1.png",
 			"fr": {
 				"name": "Rafaam"
 			},
@@ -27923,6 +29415,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA16_1.png",
 			"fr": {
 				"name": "Rafaam"
 			},
@@ -27934,6 +29427,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "LOEA09_4.png",
 			"cost": 1,
 			"durability": 2,
 			"fr": {
@@ -27947,6 +29441,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "LOEA09_4H.png",
 			"cost": 1,
 			"durability": 2,
 			"fr": {
@@ -27961,6 +29456,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 2,
+			"cardImage": "LOE_089t.png",
 			"cost": 2,
 			"fr": {
 				"name": "Avorton vaurien"
@@ -27973,6 +29469,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "A.J. Nazzaro",
+			"cardImage": "LOE_115.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Was petrified when it found out it didn't make the cut for Azerothean Idol.",
@@ -27989,6 +29486,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "A.J. Nazzaro",
+			"cardImage": "LOE_115b.png",
 			"fr": {
 				"name": "Idole corbeau"
 			},
@@ -28002,6 +29500,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "A.J. Nazzaro",
+			"cardImage": "LOE_115a.png",
 			"fr": {
 				"name": "Idole corbeau"
 			},
@@ -28016,6 +29515,7 @@ var parseCardsText = {
 		{
 			"artist": "Wayne Reynolds",
 			"attack": 1,
+			"cardImage": "LOE_116.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "The Reliquary considers itself the equal of the League of Explorers.  The League of Explorers doesn't.",
@@ -28037,6 +29537,7 @@ var parseCardsText = {
 		{
 			"artist": "Tyson Murphy",
 			"attack": 4,
+			"cardImage": "LOE_011.png",
 			"collectible": true,
 			"cost": 6,
 			"elite": true,
@@ -28056,6 +29557,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA07_28.png",
 			"cost": 1,
 			"fr": {
 				"name": "Réparations"
@@ -28068,6 +29570,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Richard Wright",
+			"cardImage": "LOE_002t.png",
 			"cost": 3,
 			"fr": {
 				"name": "Torche enflammée"
@@ -28081,6 +29584,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "LOE_016t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Rocher"
@@ -28097,6 +29601,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "LOEA01_11.png",
 			"cost": 0,
 			"fr": {
 				"name": "Baguette du Soleil"
@@ -28113,6 +29618,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "LOEA01_11h.png",
 			"cost": 0,
 			"fr": {
 				"name": "Baguette du Soleil"
@@ -28130,6 +29636,7 @@ var parseCardsText = {
 		{
 			"artist": "Richard Wright",
 			"attack": 0,
+			"cardImage": "LOE_024t.png",
 			"cost": 4,
 			"fr": {
 				"name": "Rocher roulant"
@@ -28144,6 +29651,7 @@ var parseCardsText = {
 		{
 			"artist": "Cole Eastburn",
 			"attack": 2,
+			"cardImage": "LOE_016.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "He's a very hungry elemental.",
@@ -28160,6 +29668,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA16_16H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Fouilles"
@@ -28171,6 +29680,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA16_16.png",
 			"cost": 0,
 			"fr": {
 				"name": "Fouilles"
@@ -28183,6 +29693,7 @@ var parseCardsText = {
 		},
 		{
 			"artist": "Zoltan Boros",
+			"cardImage": "LOE_027.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "You have chosen poorly.",
@@ -28203,6 +29714,7 @@ var parseCardsText = {
 		{
 			"artist": "Jaemin Kim",
 			"attack": 1,
+			"cardImage": "LOE_009t.png",
 			"cost": 1,
 			"fr": {
 				"name": "Scarabée"
@@ -28220,6 +29732,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 0,
+			"cardImage": "LOEA04_25.png",
 			"cost": 8,
 			"fr": {
 				"name": "Statue vengeresse"
@@ -28233,6 +29746,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA04_25h.png",
 			"cost": 8,
 			"fr": {
 				"name": "Statue vengeresse"
@@ -28245,6 +29759,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA16_6.png",
 			"cost": 0,
 			"fr": {
 				"name": "Éclat de Sulfuras"
@@ -28256,6 +29771,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA06_04.png",
 			"cost": 2,
 			"fr": {
 				"name": "Pulsion destructrice"
@@ -28267,6 +29783,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA06_04h.png",
 			"cost": 2,
 			"fr": {
 				"name": "Pulsion destructrice"
@@ -28291,6 +29808,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 1,
+			"cardImage": "LOE_076.png",
 			"collectible": true,
 			"cost": 1,
 			"elite": true,
@@ -28311,6 +29829,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA13_1.png",
 			"fr": {
 				"name": "Squeletosaurus Hex"
 			},
@@ -28322,6 +29841,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA16_26.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -28336,6 +29856,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_26H.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -28350,6 +29871,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "LOEA09_6H.png",
 			"cost": 2,
 			"fr": {
 				"name": "Archer ondulant"
@@ -28366,6 +29888,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 2,
+			"cardImage": "LOEA09_6.png",
 			"cost": 2,
 			"fr": {
 				"name": "Archer ondulant"
@@ -28382,6 +29905,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "LOEA09_8.png",
 			"cost": 5,
 			"fr": {
 				"name": "Garde ondulant"
@@ -28398,6 +29922,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA09_8H.png",
 			"cost": 5,
 			"fr": {
 				"name": "Garde ondulant"
@@ -28414,6 +29939,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 3,
+			"cardImage": "LOEA07_24.png",
 			"cost": 1,
 			"fr": {
 				"name": "Leurre à pointes"
@@ -28430,6 +29956,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA16_2H.png",
 			"fr": {
 				"name": "Bâton de l’Origine"
 			},
@@ -28440,6 +29967,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA16_2.png",
 			"fr": {
 				"name": "Bâton de l’Origine"
 			},
@@ -28450,6 +29978,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA06_02h.png",
 			"cost": 1,
 			"fr": {
 				"name": "Sculpture sur pierre"
@@ -28461,6 +29990,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA06_02.png",
 			"cost": 1,
 			"fr": {
 				"name": "Sculpture sur pierre"
@@ -28474,6 +30004,7 @@ var parseCardsText = {
 		{
 			"artist": "Jason Kang",
 			"attack": 0,
+			"cardImage": "LOE_086.png",
 			"collectible": true,
 			"cost": 5,
 			"flavor": "Sometimes it feels like it's always the same slackers that are waiting for a summon.",
@@ -28489,6 +30020,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA01_01.png",
 			"fr": {
 				"name": "Écumeur du soleil Phaerix"
 			},
@@ -28500,6 +30032,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA16_19.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -28514,6 +30047,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_19H.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -28527,6 +30061,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA04_06a.png",
 			"fr": {
 				"name": "Franchir d’un bond"
 			},
@@ -28540,6 +30075,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA04_30a.png",
 			"fr": {
 				"name": "Prendre le raccourci"
 			},
@@ -28550,6 +30086,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA04_01.png",
 			"fr": {
 				"name": "Fuite du temple"
 			},
@@ -28578,6 +30115,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "LOEA04_30.png",
 			"cost": 0,
 			"fr": {
 				"name": "Les ténèbres"
@@ -28589,6 +30127,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA04_29.png",
 			"cost": 0,
 			"fr": {
 				"name": "L’Œil"
@@ -28601,6 +30140,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA16_27.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -28615,6 +30155,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_27H.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -28628,6 +30169,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA14_1.png",
 			"fr": {
 				"name": "La sentinelle d’acier"
 			},
@@ -28638,6 +30180,7 @@ var parseCardsText = {
 			"type": "Hero"
 		},
 		{
+			"cardImage": "LOEA07_29.png",
 			"cost": 1,
 			"fr": {
 				"name": "Lancer des rochers"
@@ -28649,6 +30192,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA16_4.png",
 			"cost": 10,
 			"fr": {
 				"name": "Horloge de l’horreur"
@@ -28664,6 +30208,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA01_12h.png",
 			"cost": 3,
 			"fr": {
 				"name": "Hoplite tol’vir"
@@ -28680,6 +30225,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA01_12.png",
 			"cost": 3,
 			"fr": {
 				"name": "Hoplite tol’vir"
@@ -28697,6 +30243,7 @@ var parseCardsText = {
 		{
 			"artist": "Dave Allsop",
 			"attack": 5,
+			"cardImage": "LOE_012.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "After the guild broke up, he could no longer raid the tombs.",
@@ -28718,6 +30265,7 @@ var parseCardsText = {
 		{
 			"artist": "Turovec Konstantin",
 			"attack": 3,
+			"cardImage": "LOE_047.png",
 			"collectible": true,
 			"cost": 4,
 			"flavor": "Less serious than its cousin, the Grave Spider.",
@@ -28737,6 +30285,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA04_29a.png",
 			"fr": {
 				"name": "Toucher"
 			},
@@ -28747,6 +30296,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA05_02h.png",
 			"fr": {
 				"name": "Trogg détester serviteurs !"
 			},
@@ -28757,6 +30307,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA05_02a.png",
 			"fr": {
 				"name": "Trogg détester serviteurs !"
 			},
@@ -28767,6 +30318,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA05_02ha.png",
 			"fr": {
 				"name": "Trogg détester serviteurs !"
 			},
@@ -28777,6 +30329,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA05_02.png",
 			"fr": {
 				"name": "Trogg détester serviteurs !"
 			},
@@ -28787,6 +30340,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA05_03h.png",
 			"fr": {
 				"name": "Trogg détester sorts !"
 			},
@@ -28797,6 +30351,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA05_03.png",
 			"fr": {
 				"name": "Trogg détester sorts !"
 			},
@@ -28820,6 +30375,7 @@ var parseCardsText = {
 		{
 			"artist": "Andrew Hou",
 			"attack": 1,
+			"cardImage": "LOE_018.png",
 			"collectible": true,
 			"cost": 1,
 			"flavor": "Sure, they're ugly, but they live in tunnels.  You try your beauty routine without natural light.",
@@ -28838,6 +30394,7 @@ var parseCardsText = {
 		{
 			"artist": "Trent Kaniuga",
 			"attack": 3,
+			"cardImage": "LOE_019.png",
 			"collectible": true,
 			"cost": 3,
 			"flavor": "Still hunting for the ones who earthed him.",
@@ -28868,6 +30425,7 @@ var parseCardsText = {
 			"type": "Enchantment"
 		},
 		{
+			"cardImage": "LOEA15_2.png",
 			"cost": 2,
 			"fr": {
 				"name": "Portail instable"
@@ -28879,6 +30437,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA15_2H.png",
 			"cost": 0,
 			"fr": {
 				"name": "Portail instable"
@@ -28890,6 +30449,7 @@ var parseCardsText = {
 			"type": "Hero Power"
 		},
 		{
+			"cardImage": "LOEA04_28b.png",
 			"cost": 0,
 			"fr": {
 				"name": "Traverser à pied"
@@ -28901,6 +30461,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA04_06b.png",
 			"fr": {
 				"name": "Traverser avec précaution"
 			},
@@ -28924,6 +30485,7 @@ var parseCardsText = {
 		{
 			"artist": "Matt Dixon",
 			"attack": 2,
+			"cardImage": "LOE_089t2.png",
 			"cost": 2,
 			"fr": {
 				"name": "Avorton rusé"
@@ -28935,6 +30497,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA02_10.png",
 			"cost": 0,
 			"fr": {
 				"name": "Vœu : compagnon"
@@ -28946,6 +30509,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA02_05.png",
 			"cost": 0,
 			"fr": {
 				"name": "Vœu : gloire"
@@ -28957,6 +30521,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA02_06.png",
 			"cost": 0,
 			"fr": {
 				"name": "Vœu : plus de Vœux"
@@ -28968,6 +30533,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA02_03.png",
 			"cost": 0,
 			"fr": {
 				"name": "Vœu : puissance"
@@ -28979,6 +30545,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA02_04.png",
 			"cost": 0,
 			"fr": {
 				"name": "Vœu : vaillance"
@@ -28992,6 +30559,7 @@ var parseCardsText = {
 		{
 			"artist": "Sam Nielson",
 			"attack": 2,
+			"cardImage": "LOE_089.png",
 			"collectible": true,
 			"cost": 6,
 			"flavor": "The fourth one fell off in a tragic accident.  They don't talk about it.",
@@ -29010,6 +30578,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
+			"cardImage": "LOEA16_15.png",
 			"cost": 0,
 			"fr": {
 				"name": "Larme d’Ysera"
@@ -29021,6 +30590,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
+			"cardImage": "LOEA02_01.png",
 			"fr": {
 				"name": "Zinaar"
 			},
@@ -29032,6 +30602,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 10,
+			"cardImage": "LOEA16_18H.png",
 			"cost": 10,
 			"elite": true,
 			"fr": {
@@ -29046,6 +30617,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 5,
+			"cardImage": "LOEA16_18.png",
 			"cost": 5,
 			"elite": true,
 			"fr": {
@@ -29071,6 +30643,7 @@ var parseCardsText = {
 		},
 		{
 			"attack": 1,
+			"cardImage": "LOE_030.png",
 			"collectible": false,
 			"cost": 4,
 			"fr": {

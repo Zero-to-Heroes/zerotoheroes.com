@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 'SportsConfig', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse, SportsConfig) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 'SportsConfig', 'Localization', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse, SportsConfig, Localization) {
 
 		$scope.uploadInProgress = false;
 		$scope.treatmentInProgress = false;
@@ -12,7 +12,8 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		$scope.review = {
 			canvas: {},
 			editing: true,
-			videoFramerateRatio: 1
+			videoFramerateRatio: 1,
+			language: Localization.getLanguage()
 		};
 		$log.log($scope.review);
 
@@ -491,6 +492,13 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
 			s4() + '-' + s4() + s4() + s4();
 		}
+
+		$scope.editLanguage = function(lang) {
+			$log.log('review will be in '+lang);
+			$scope.review.language = lang;
+		}
+
+
 	}
 ]);
 

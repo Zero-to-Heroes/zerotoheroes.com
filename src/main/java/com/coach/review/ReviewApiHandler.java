@@ -177,13 +177,12 @@ public class ReviewApiHandler {
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// log.info("authorities are " + authorities);
-		User user;
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			// log.debug("Setting current user as review author " +
 			// currentUser);
 			addAuthorInformation(review.getSport(), review, currentUser);
-			user = userRepo.findByUsername(currentUser);
-
+			User user = userRepo.findByUsername(currentUser);
+			
 			// Updating user stats
 			if (commentParser.hasTimestamp(review.getText())) {
 				user.getStats().incrementTimestamps();
@@ -193,7 +192,7 @@ public class ReviewApiHandler {
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
 			// log.debug("Validating that the name used to created the review is allowed");
-			user = userRepo.findByUsername(review.getAuthor());
+			User user = userRepo.findByUsername(review.getAuthor());
 			if (user != null) {
 				// log.debug("Name not allowed: " + review.getAuthor());
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
@@ -209,7 +208,6 @@ public class ReviewApiHandler {
 		// Create the entry on the database
 		review.setCreationDate(new Date());
 		review.setLastModifiedBy(review.getAuthor());
-		review.setLanguage(user.getPreferredLanguage());
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());

@@ -79,11 +79,18 @@
 							</select>
 						</div>
 					</div>-->
-					<div class="col-sm-12">
+					<div class="col-sm-11">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
 					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="transcoding">
 					  	</div>
 				  	</div>
+				  	<div class="col-sm-1">
+						<a class="dropdown-toggle profile-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"><span  class="lang-sm" lang="{{review.language}}"></span></span></a>
+							<ul class="dropdown-menu">
+								<li><a ng-click="editLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
+								<li><a ng-click="editLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
+							</ul>
+					</div>
 			  	</div>
 		  		<div class="row">
 					<div class="col-sm-12">

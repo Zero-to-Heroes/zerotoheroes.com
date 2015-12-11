@@ -132,7 +132,16 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		lastModifiedDate = modifiedDate;
 		setSortingDate(lastModifiedDate);
 	}
-
+	
+	public void setLanguage(String code) {
+		if (code!= null && !code.isEmpty()) {
+			language = code;
+		}
+		else {
+			language = "en";
+		}
+	}
+	
 	public Comment getComment(int commentId) {
 		if (comments == null) return null;
 

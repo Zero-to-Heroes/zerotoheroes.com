@@ -116,9 +116,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType}];
 					$scope.sources2 = []
 
-				},
-				function(error) {
-					$log.error('Could not retrieve review', $routeParams.reviewId, error, $routeParams, $location);
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -126,8 +123,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				for (var i = 0; i < data.length; i++) {
 					$scope.coaches.push(data[i]);
 				};
-			}, function(error) {
-				$log.error('Could not retrieve coaches for review', $routeParams.reviewId, error, $routeParams, $location);
 			});
 		}
 

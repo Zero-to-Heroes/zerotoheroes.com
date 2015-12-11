@@ -61,7 +61,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 			var $location = $injector.get('$location');
 
 			var logArgs = arguments;
-			notify("Javascript error: " + logArgs[0], "user: " + JSON.stringify(User.getUser()), "location: " + JSON.stringify($location), "initial args: " + JSON.stringify(logArgs), "debug: " + loggingExceptions, "debug2: " + logArgs[0].match(loggingExceptions[0]));
+			notify("Javascript error: " + logArgs[0], "user: " + JSON.stringify(User.getUser()), "location: " + JSON.stringify($location.$$absUrl), "initial args: " + JSON.stringify(logArgs));
 			
 			// Call the original with the output prepended with formatted timestamp
 			debugFn.apply(null, logArgs)
@@ -79,14 +79,14 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 			'responseError': function(rejection) {
 				var User = $injector.get('User');
 				if (!rejection.data) {
-					notify('Http response error without data details', "rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location), "user: " + JSON.stringify(User.getUser()));
+					notify('Http response error without data details', "rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
 				}
 				else {
 					var code = rejection.data.status;
 					// 401 Unauthorized is a functional error
 					if (code != 401) {
 						notify("Http response error: " + rejection.data.path + " " + rejection.config.method + " " + rejection.data.status + " " + rejection.data.error, 
-							"rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location), "user: " + JSON.stringify(User.getUser()));
+							"rejection: " + rejection.config.url, "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
 					}
 				}
 				return $q.reject(rejection);

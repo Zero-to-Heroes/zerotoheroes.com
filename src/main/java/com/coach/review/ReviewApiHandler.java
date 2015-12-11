@@ -177,16 +177,12 @@ public class ReviewApiHandler {
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// log.info("authorities are " + authorities);
-		String language = "en";
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			// log.debug("Setting current user as review author " +
 			// currentUser);
 			addAuthorInformation(review.getSport(), review, currentUser);
 			User user = userRepo.findByUsername(currentUser);
 			
-			if (!StringUtils.isNullOrEmpty(user.getPreferredLanguage())) {
-				language = user.getPreferredLanguage();
-			}
 			// Updating user stats
 			if (commentParser.hasTimestamp(review.getText())) {
 				user.getStats().incrementTimestamps();
@@ -212,7 +208,6 @@ public class ReviewApiHandler {
 		// Create the entry on the database
 		review.setCreationDate(new Date());
 		review.setLastModifiedBy(review.getAuthor());
-		review.setLanguage(language);
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());

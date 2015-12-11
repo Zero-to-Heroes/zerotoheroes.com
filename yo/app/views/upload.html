@@ -3,7 +3,7 @@
 <form name="uploadForm" class="upload-form main-panel background-white">
 
 	<div class="form-container">
-		<span class="btn btn-default btn-file" ng-hide="!useVideo && !useFile">
+		<span class="btn btn-default btn-file" ng-hide="!useVideo">
 			<span>{{ 'global.upload.chooseFileButton' | translate }}</span> <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
 		</span>
 		<div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
@@ -52,6 +52,7 @@
 					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.timeLimitReason2Link' | translate }}</a>{{ 'global.upload.timeLimitReason2' | translate }}</li>
 				</ul>
 			</div>
+			<hr>
 		</div>
 		<div class="video-information panel-no-border" ng-class="plugins">
 			<h1 ng-show="useVideo">{{ 'global.upload.newVideoHeadline' | translate }}</h1>
@@ -79,11 +80,18 @@
 							</select>
 						</div>
 					</div>-->
-					<div class="col-sm-12">
+					<div class="col-sm-11">
 			  			<div class="form-group" show-errors="{ showSuccess: true }">
 					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="transcoding">
 					  	</div>
 				  	</div>
+				  	<div class="col-sm-1">
+						<a class="dropdown-toggle profile-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"><span  class="lang-sm" lang="{{review.language}}"></span></span></a>
+							<ul class="dropdown-menu">
+								<li><a ng-click="editLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
+								<li><a ng-click="editLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
+							</ul>
+					</div>
 			  	</div>
 		  		<div class="row">
 					<div class="col-sm-12">
@@ -110,7 +118,7 @@
 				</div>
 		  		<div class="row">
 					<div class="col-sm-2">
-			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useFile ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration"  analytics-on="click" analytics-category="upload" analytics-event="upload.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useVideo ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration"  analytics-on="click" analytics-category="upload" analytics-event="upload.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
 		  			</div>
 				</div>
 			</div>

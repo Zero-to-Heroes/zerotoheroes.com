@@ -7,20 +7,45 @@ import javax.servlet.http.HttpServletResponse;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.coach.review.ReviewRepository;
 
 @Controller
 @Slf4j
 public class RouteController {
+
+	@Autowired
+	ReviewRepository reviewRepo;
+
+	//@formatter:off
+	@RequestMapping({
+		"/r/{reviewId}",
+		"/r/{sport}/{reviewId}",
+		"/r/{sport}/{reviewId}/{reviewTitle}",
+		"/r/{reviewId}/{reviewTitle}"
+	})
+	//@formatter:on
+	public String reviewHandler(@PathVariable("reviewId") String reviewId) throws IOException {
+
+		log.debug("In reviewHandler for id " + reviewId);
+
+		if (reviewRepo.findById(reviewId) == null) {
+			log.debug("forwarding to 404");
+			return "forward:/404.html";
+		}
+
+		log.debug("Forwarding to index.html");
+		return "forward:/index.html";
+	}
+
 	//@formatter:off
 	@RequestMapping({
 			"/reviews",
 			"/upload",
-			"/r/{reviewId}",
-			"/r/{reviewId}/{reviewTitle}",
-			"/r/{sport}/{reviewId}",
-			"/r/{sport}/{reviewId}/{reviewTitle}",
 			"/s/{sport}",
 			"/s/{sport}/{pageNumber}",
 			"/s/{sport}/upload",

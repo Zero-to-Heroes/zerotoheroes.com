@@ -36,87 +36,83 @@ app.config(['$routeProvider', '$locationProvider',
 
 	// If you modify this, don't forget to modify the RouteController.java
 	$routeProvider.
-	  // landing pages
-	  when('/', {
-		templateUrl: 'views/landing/sport.html',
-		controller: 'SportPageCtrl',
-		isLandingPage: true,
-		isFullPage: true,
-		sport: 'all'
-	  }).
-	  when('/squash', {
-		templateUrl: 'views/landing/sport.html',
-		controller: 'SportPageCtrl',
-		isLandingPage: true,
-		isFullPage: true,
-		sport: 'squash'
-	  }).
-	  when('/heroesofthestorm', {
-		templateUrl: 'views/landing/sport.html',
-		controller: 'SportPageCtrl',
-		isLandingPage: true,
-		isFullPage: true,
-		sport: 'heroesofthestorm'
-	  }).
-	  when('/leagueoflegends', {
-		templateUrl: 'views/landing/sport.html',
-		controller: 'SportPageCtrl',
-		isLandingPage: true,
-		isFullPage: true,
-		sport: 'leagueoflegends'
-	  }).
-	  when('/badminton', {
-		templateUrl: 'views/landing/sport.html',
-		controller: 'SportPageCtrl',
-		isLandingPage: true,
-		isFullPage: true,
-		sport: 'badminton'
-	  }).
-	  when('/hearthstone', {
-		templateUrl: 'views/landing/sport.html',
-		controller: 'SportPageCtrl',
-		isLandingPage: true,
-		isFullPage: true,
-		sport: 'hearthstone'
-	  }).
-	  // site pages
-	  when('/upload', {
-		templateUrl: 'views/upload.html',
-		controller: 'UploadDetailsCtrl',
-		upload: true
-	  }).
-	  when('/s/upload', {
-		templateUrl: 'views/upload.html',
-		controller: 'UploadDetailsCtrl',
-		upload: true
-	  }).
-	  when('/s/:sport/upload', {
-		templateUrl: 'views/upload.html',
-		controller: 'UploadDetailsCtrl',
-		upload: true
-	  }).
-	  /*when('/r/:reviewId/:reviewTitle', {
-		templateUrl: 'views/review.html',
-		controller: 'ReviewCtrl'
-	  }).*/
-	  when('/r/:sport/:reviewId/:reviewTitle?', {
-		templateUrl: 'views/review.html',
-		controller: 'ReviewCtrl',
-		hideSideBar: true
-	  }).
-	  when('/reviews/:pageNumber?', {
-		templateUrl: 'views/videoListing.html',
-		controller: 'VideoListingCtrl',
-		reloadOnSearch: false
-	  }).
-	  when('/s/:sport/:pageNumber?', {
-		templateUrl: 'views/videoListing.html',
-		controller: 'VideoListingCtrl',
-		reloadOnSearch: false
-	  }).
-	  otherwise({
-		redirectTo: '/'
-	  });
+	  	// landing pages
+	  	when('/', {
+			templateUrl: 'views/landing/sport.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'all'
+	  	}).
+	  	when('/squash', {
+			templateUrl: 'views/landing/sport.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'squash'
+	  	}).
+	  	when('/heroesofthestorm', {
+			templateUrl: 'views/landing/sport.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'heroesofthestorm'
+	  	}).
+	  	when('/leagueoflegends', {
+			templateUrl: 'views/landing/sport.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'leagueoflegends'
+	  	}).
+	  	when('/badminton', {
+			templateUrl: 'views/landing/sport.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'badminton'
+	  	}).
+	  	when('/hearthstone', {
+			templateUrl: 'views/landing/sport.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'hearthstone'
+	  	}).
+	  	// site pages
+	 	when('/upload', {
+			templateUrl: 'views/upload.html',
+			controller: 'UploadDetailsCtrl',
+			upload: true
+	  	}).
+	  	when('/s/upload', {
+			templateUrl: 'views/upload.html',
+			controller: 'UploadDetailsCtrl',
+			upload: true
+	  	}).
+	  	when('/s/:sport/upload', {
+			templateUrl: 'views/upload.html',
+			controller: 'UploadDetailsCtrl',
+			upload: true
+	  	}).
+	  	when('/r/:sport/:reviewId/:reviewTitle?', {
+			templateUrl: 'views/review.html',
+			controller: 'ReviewCtrl',
+			hideSideBar: true
+	  	}).
+	  	when('/reviews/:pageNumber?', {
+			templateUrl: 'views/videoListing.html',
+			controller: 'VideoListingCtrl',
+			reloadOnSearch: false
+	  	}).
+	  	when('/s/:sport/:pageNumber?', {
+			templateUrl: 'views/videoListing.html',
+			controller: 'VideoListingCtrl',
+			reloadOnSearch: false
+	  	}).
+	  	otherwise({
+			redirectTo: '/'
+	  	});
   }]);
 
 app.config(['markedProvider', function(markedProvider) {

@@ -3,6 +3,17 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 	// original service instance; @see angular-mocks for more examples....
 
 	var notify = function(text) {
+		var shouldLog = true;
+		try {
+			loggingExceptions.forEach(function(ex) {
+				var match = text.match(ex);
+				shouldLog = shouldLog && !match;
+			})
+		} catch(e) {
+			return;
+		}
+		if (!shouldLog) return;
+
 		var payload = {
 			"channel": "#error-monitor",
 			"username": "annoy-o-tron",
@@ -50,15 +61,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 			var $location = $injector.get('$location');
 
 			var logArgs = arguments;
-			var shouldLog = true;
-			try {
-				loggingExceptions.forEach(function(ex) {
-					var match = logArgs[0].match(ex);
-					shouldLog = shouldLog && !match;
-				})
-			} catch(e) {}
-			if (shouldLog) 
-				notify("Javascript error: " + logArgs[0], "user: " + JSON.stringify(User.getUser()), "location: " + JSON.stringify($location), "initial args: " + JSON.stringify(arguments));
+			notify("Javascript error: " + logArgs[0], "user: " + JSON.stringify(User.getUser()), "location: " + JSON.stringify($location), "initial args: " + JSON.stringify(logArgs), "debug: " + loggingExceptions, "debug2: " + logArgs[0].match(loggingExceptions[0]));
 			
 			// Call the original with the output prepended with formatted timestamp
 			debugFn.apply(null, logArgs)

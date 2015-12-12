@@ -8,7 +8,7 @@ var parseCardsText = {
 		var lang = window.localStorage.language;
 		// Parsing card names
 		if (matches) {
-			console.log('parsing cards', text);
+			// console.log('parsing cards', text);
 			matches.forEach(function(match) {
 				var cardName = match.substring(2, match.length - 2);
 				var card = parseCardsText.getCard(cardName);
@@ -47,7 +47,7 @@ var parseCardsText = {
 	},
 
 	attach: function(element) {
-		console.log('attaching to element', element);
+		// console.log('attaching to element', element);
 		element.textcomplete([{
 			match: /\[\[[a-zA-Z\s]{3,}$/,
 			search: function (term, callback, match) {

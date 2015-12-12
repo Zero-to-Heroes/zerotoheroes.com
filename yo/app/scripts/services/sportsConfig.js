@@ -38,9 +38,9 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					allowDoubleSpeed: true,
 					plugins: {
 						plugins: [
-							{name: 'parseCardsText'}, 
-							{name: 'parseDecks'}, 
-							{name: 'joustjs', player: true, format: ['text/plain', 'text/xml']}
+							{name: 'parseCardsText', version: 1}, 
+							{name: 'parseDecks', version: 1}, 
+							{name: 'joustjs', player: true, format: ['text/plain', 'text/xml'], version: 1}
 						],
 						customCss: 'hearthstone.css'
 					},
@@ -62,7 +62,9 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					isSport: true,
 					allowDoubleSpeed: true,
 					plugins: {
-						plugins: [{name: 'parseCardsTextHots'}],
+						plugins: [
+							{name: 'parseCardsTextHots', version: 1}
+						],
 						customCss: 'hots.css'
 					},
 					landing: {
@@ -138,20 +140,21 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 
 		service.loadPlugin = function(plugins, pluginObj) {
 			var plugin = pluginObj.name;
+			var version = pluginObj.version ? '?' + pluginObj.version : '';
 			$log.debug('loading plugin', plugin);
-			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js').then(function() {
+			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js' + version).then(function() {
 				plugins.push(pluginObj);
 				// Load dependencies
-				if (pluginObj.dependencies) {
-					pluginObj.dependencies.forEach(function(dep) {
-						angularLoad.loadScript('/plugins/' + plugin + '/' + dep).then(function() {
-							plugins.push(dep);
-						}).catch(function() {
-							plugins.push(undefined);
-							$log.error('could not load dependency', dep);
-						});
-					})
-				}
+				// if (pluginObj.dependencies) {
+				// 	pluginObj.dependencies.forEach(function(dep) {
+				// 		angularLoad.loadScript('/plugins/' + plugin + '/' + dep).then(function() {
+				// 			plugins.push(dep);
+				// 		}).catch(function() {
+				// 			plugins.push(undefined);
+				// 			$log.error('could not load dependency', dep);
+				// 		});
+				// 	})
+				// }
 			}).catch(function() {
 				plugins.push(undefined);
 				$log.error('could not load plugin', plugin );

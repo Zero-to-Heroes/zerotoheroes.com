@@ -26,9 +26,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.pluginNames = [];
 		if ($scope.temp) {
 			definedPlugins = $scope.temp.length;
-			$log.debug('Defined plugins', definedPlugins, $scope.temp);
+			// $log.debug('Defined plugins', definedPlugins, $scope.temp);
 			angular.forEach($scope.temp, function(plugin) {
-				$log.debug('prepaing to load plugin', plugin)
+				// $log.debug('prepaing to load plugin', plugin)
 				if (plugin.dependencies) definedPlugins += plugin.dependencies.length;
 				SportsConfig.loadPlugin($scope.plugins, plugin);
 			})
@@ -40,7 +40,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.initReview();
 				$scope.plugins.forEach(function(plugin) {
 					if (plugin) {
-						console.log('adding style', plugin.name);
+						// console.log('adding style', plugin.name);
 						$scope.pluginNames.push(plugin.name);
 					}
 				})

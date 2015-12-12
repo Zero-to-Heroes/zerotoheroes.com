@@ -94,8 +94,14 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 				$scope.clearTemporaryCanvas = function() {
 					var fullCanvas = {};
 					angular.forEach($scope.review.canvas, function(value, key) {
-						if (key && !key.startsWith('tmp')) {
-							fullCanvas[key] = value;
+						try {
+							if (key && !key.startsWithH('tmp')) {
+								fullCanvas[key] = value;
+							}
+						}
+						catch (e) {
+							$log.error(e);
+							$log.error('Could not read key with value', key, fullCanvas);
 						}
 					})
 					$scope.review.canvas = fullCanvas;

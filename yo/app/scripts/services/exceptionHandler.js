@@ -57,14 +57,14 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 
 		$delegate.error = function( )
 		{
+			// Call the original
+			debugFn.apply(null, arguments)
+
 			var User = $injector.get('User');
 			var $location = $injector.get('$location');
 
-			var logArgs = arguments;
-			notify("Javascript error: " + logArgs[0], "user: " + JSON.stringify(User.getUser()), "location: " + JSON.stringify($location.$$absUrl), "initial args: " + JSON.stringify(logArgs));
-			
-			// Call the original with the output prepended with formatted timestamp
-			debugFn.apply(null, logArgs)
+			// console.log('error', arguments);
+			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
 		};
 
 

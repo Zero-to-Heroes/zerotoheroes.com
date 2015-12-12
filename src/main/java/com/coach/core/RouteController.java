@@ -23,7 +23,7 @@ public class RouteController {
 
 	//@formatter:off
 	@RequestMapping({
-		"/r/{reviewId}",
+//		"/r/{reviewId}",
 		"/r/{sport}/{reviewId}",
 		"/r/{sport}/{reviewId}/{reviewTitle}",
 		"/r/{reviewId}/{reviewTitle}"
@@ -44,8 +44,8 @@ public class RouteController {
 
 	//@formatter:off
 	@RequestMapping({
-			"/reviews",
-			"/upload",
+//			"/reviews",
+//			"/upload",
 			"/s/{sport}",
 			"/s/{sport}/{pageNumber}",
 			"/s/{sport}/upload",

@@ -80,16 +80,16 @@ app.config(['$routeProvider', '$locationProvider',
 			sport: 'hearthstone'
 	  	}).
 	  	// site pages
-	 	when('/upload', {
-			templateUrl: 'views/upload.html',
-			controller: 'UploadDetailsCtrl',
-			upload: true
-	  	}).
-	  	when('/s/upload', {
-			templateUrl: 'views/upload.html',
-			controller: 'UploadDetailsCtrl',
-			upload: true
-	  	}).
+	 	// when('/upload', {
+			// templateUrl: 'views/upload.html',
+			// controller: 'UploadDetailsCtrl',
+			// upload: true
+	  // 	}).
+	  // 	when('/s/upload', {
+			// templateUrl: 'views/upload.html',
+			// controller: 'UploadDetailsCtrl',
+			// upload: true
+	  // 	}).
 	  	when('/s/:sport/upload', {
 			templateUrl: 'views/upload.html',
 			controller: 'UploadDetailsCtrl',
@@ -100,11 +100,11 @@ app.config(['$routeProvider', '$locationProvider',
 			controller: 'ReviewCtrl',
 			hideSideBar: true
 	  	}).
-	  	when('/reviews/:pageNumber?', {
-			templateUrl: 'views/videoListing.html',
-			controller: 'VideoListingCtrl',
-			reloadOnSearch: false
-	  	}).
+	  // 	when('/reviews/:pageNumber?', {
+			// templateUrl: 'views/videoListing.html',
+			// controller: 'VideoListingCtrl',
+			// reloadOnSearch: false
+	  // 	}).
 	  	when('/s/:sport/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',

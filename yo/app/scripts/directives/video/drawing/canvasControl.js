@@ -95,7 +95,7 @@ app.directive('canvasControl', ['$log', '$parse', '$timeout', '$rootScope',
 					var fullCanvas = {};
 					angular.forEach($scope.review.canvas, function(value, key) {
 						try {
-							if (key && !key.startsWithH('tmp')) {
+							if (key && !key.startsWith('tmp')) {
 								fullCanvas[key] = value;
 							}
 						}

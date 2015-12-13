@@ -62,9 +62,9 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 
 			var User = $injector.get('User');
 			var $location = $injector.get('$location');
+			var $window = $injector.get('$window');
 
-			// console.log('error', arguments);
-			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
+			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'navigator: ' + $window.navigator.userAgent, 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
 		};
 
 

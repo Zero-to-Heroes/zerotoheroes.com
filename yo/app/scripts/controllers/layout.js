@@ -13,7 +13,7 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 			}
 
 		   	$scope.sport = $routeParams.sport;
-		   	if (!$scope.sport) {
+		   	if (!$scope.sport && current.$$route) {
 		   		$scope.sport = current.$$route.sport;
 		   	}
 

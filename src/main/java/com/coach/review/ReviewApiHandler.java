@@ -120,7 +120,7 @@ public class ReviewApiHandler {
 					pageRequest);
 		}
 		else {
-			page = reviewRepo.listReviews(criteria.getText(), sportCriteria, criteria.getWantedTags(),
+			page = reviewRepo.listReviewsWithText(criteria.getText(), sportCriteria, criteria.getWantedTags(),
 					criteria.getUnwantedTags(), pageRequest);
 		}
 

@@ -40,7 +40,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 		+ "}"
 	)
 	//@formatter:on
-	Page<Review> listReviews(String text, String sportCriteria, List<Tag> wantedTags, List<Tag> unwantedTags,
+	Page<Review> listReviewsWithText(String text, String sportCriteria, List<Tag> wantedTags, List<Tag> unwantedTags,
 			Pageable pageable);
 
 }

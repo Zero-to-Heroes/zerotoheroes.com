@@ -343,6 +343,10 @@ public class TagRepository {
 		league.add(new Tag("Pro"));
 		tags.put(LeagueOfLegends, league);
 
+		List<Tag> other = new ArrayList<>();
+		other.add(new Tag("Sequence"));
+		tags.put(Other, other);
+
 		return tags;
 	}
 

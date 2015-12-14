@@ -54,7 +54,12 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$route
 		uploader.onAfterAddingFile = function(fileItem) {
 			$scope.updateSourceWithFile(fileItem._file);
 			if (!$scope.review.title) {
-				$scope.review.title = fileItem._file.name.slice(0, -4);
+				var indexOfLastSpace = fileItem._file.name.lastIndexOf(' ');
+				var indexOfLastDot = fileItem._file.name.lastIndexOf('.');
+				if (indexOfLastDot != -1 && indexOfLastDot > indexOfLastSpace)
+					$scope.review.title = fileItem._file.name.slice(0, indexOfLastDot - fileItem._file.name.length);
+				else
+					$scope.review.title = fileItem._file.name;
 			}
 
 			//$log.log('sport', $scope.sport);

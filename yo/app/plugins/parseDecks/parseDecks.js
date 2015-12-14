@@ -2,7 +2,7 @@
 var parseDecks = {
 
 	decksRegex: /\[(http:\/\/www\.hearthpwn\.com\/decks\/).+?\]/gm,
-	parseDecks_deck: undefined,
+	deck: undefined,
 	execute: function (review, text) {
 		var matches = text.match(parseDecks.decksRegex);
 		if (!matches) return text;
@@ -22,7 +22,7 @@ var parseDecks = {
 					var strDeck = plugins.parseDecks[deckName];
 					var deck = JSON.parse(strDeck);
 					var htmlDeck = parseDecks.formatToHtml(deck);
-					parseDecks_deck = htmlDeck;
+					parseDecks.deck = htmlDeck;
 					//console.log('html deck is ', htmlDeck);
 					var deckNameForDisplay = deck.title;
 
@@ -35,7 +35,7 @@ var parseDecks = {
 
 	toggleDeck: function () {
 		$(".contextual-information .content").addClass('deck');
-		$(".contextual-information .content").html(parseDecks_deck);
+		$(".contextual-information .content").html(parseDecks.deck);
 		$(".contextual-information").show();
 		$(function () {
 		  	$('body').tooltip({

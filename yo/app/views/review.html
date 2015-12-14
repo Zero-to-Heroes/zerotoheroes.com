@@ -7,13 +7,13 @@
 	</div>
 
 	<div class="background-white">
-		<div class="videogular-container multi-player" ng-show="review.key" ng-hide="review.replay">
+		<div class="videogular-container multi-player" ng-show="review.key && !review.replay" >
 			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
 				<div class="first-player-container">
 					<vg-media vg-src="sources" class="first-player" ng-class="playerControls.firstPlayerClass"></vg-media>
 				</div>
 
-				<vg-controls ng-class="{'controls-container-fullscreen': API.isFullScreen}">
+				<vg-controls ng-class="{'controls-container-fullscreen': API.isFullScreen, '{{playerControls.firstPlayerControlsClass}}': true}">
 					<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
 					<vg-time-display>{{ currentTime | date: config.deactivateControls && config.deactivateControls.millis ? 'mm:ss' : 'mm:ss:sss' }}</vg-time-display>
 					<vg-scrub-bar video-fine-time-control>
@@ -31,7 +31,7 @@
 					<vg-fullscreen-button></vg-fullscreen-button>
 				</vg-controls>
 
-				<div class="second-player-container" ng-show="playerControls.mode == 2">
+				<div class="second-player-container"  ng-class="playerControls.secondPlayerContainerClass" ng-show="playerControls.mode == 2">
 					<div class="second-player">
 						<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
 							<vg-media vg-src="sources2" ng-class="playerControls.secondPlayerClass"></vg-media>
@@ -171,4 +171,5 @@
 	</div>
 </div>
 
-<canvas-control show-canvas="showCanvas" hide-canvas="hideCanvas" player-controls="playerControls" review="review" load-canvas="loadCanvas" serialize-canvas="serializeCanvas" clear-canvas="clearCanvas" canvas-state="canvasState" clear-temporary-canvas="clearTemporaryCanvas" prepare-canvas-for-upload="prepareCanvasForUpload" toggle-canvas="toggleCanvas" cancel-canvas-edition="cancelCanvasEdition"></canvas-control> <sequence-controller sources="sources" review="review"></sequence-controller>
+<canvas-control show-canvas="showCanvas" hide-canvas="hideCanvas" player-controls="playerControls" review="review" load-canvas="loadCanvas" serialize-canvas="serializeCanvas" clear-canvas="clearCanvas" canvas-state="canvasState" clear-temporary-canvas="clearTemporaryCanvas" prepare-canvas-for-upload="prepareCanvasForUpload" toggle-canvas="toggleCanvas" cancel-canvas-edition="cancelCanvasEdition"></canvas-control> 
+<sequence-controller sequence-sources="sources" local-review="review"></sequence-controller>

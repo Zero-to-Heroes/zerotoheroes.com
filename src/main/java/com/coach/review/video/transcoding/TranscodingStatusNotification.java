@@ -69,7 +69,7 @@ public class TranscodingStatusNotification {
 
 		final SubscriptionManager subscriptionManager = this.subscriptionManager;
 		final SlackNotifier slackNotifier = this.slackNotifier;
-		
+
 		// Create a handler that will wait for this specific job to complete.
 		JobStatusNotificationHandler handler = new JobStatusNotificationHandler() {
 			@Override
@@ -91,10 +91,13 @@ public class TranscodingStatusNotification {
 						log.debug("Updated review: " + review);
 						// TODO: delete bucket input file
 
-						// Send notifications
-						subscriptionManager.notifyNewReview(review.getSport(), review);
-						slackNotifier.notifyNewReview(review);
-						
+						// Send notifications only if it's a real new video and
+						// not a video response
+						if (!review.isSequence()) {
+							subscriptionManager.notifyNewReview(review.getSport(), review);
+							slackNotifier.notifyNewReview(review);
+						}
+
 						sqsQueueNotificationWorker.shutdown();
 						log.debug("Job completed, shutting down");
 

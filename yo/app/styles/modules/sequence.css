@@ -32,6 +32,30 @@
 	width: 50%;
 }
 
+.sequence-modal .embedded-form {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.sequence-modal .embedded-form .upload-form {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.sequence-modal .embedded-form .upload-form .videogular {
+	width: 100%;
+}
+
+.sequence-modal .embedded-form .upload-form vg-controls {
+	width: 100%;
+}
+
 .sequence-modal .other-video-choice {
 	background-color: white;
 	height: 100%;

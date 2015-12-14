@@ -149,12 +149,25 @@
 	right: 100%;
 }
 
+.show-full {
+	left: 0;
+	width: 100%;
+}
+
+.show-hidden {
+	display: none;
+}
+
 .second-player .show-center {
 	right: 25%;
 }
 
 .second-player .show-right {
 	right: 50%;
+}
+
+.show-full .second-player vg-media {
+	width: 50%;
 }
 
 /*.right-shift {

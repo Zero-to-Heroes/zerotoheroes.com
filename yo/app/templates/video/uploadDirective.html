@@ -1,0 +1,143 @@
+<form name="uploadForm" class="upload-form main-panel background-white">
+
+	<div class="form-container">
+		<span class="btn btn-default btn-file" ng-hide="!useVideo && !useFile">
+			<span>{{ 'global.upload.chooseFileButton' | translate }}</span> <input type="file" name="file" class="upload-file-button" ng-required="useVideo" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
+		</span>
+		<div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
+			<span>{{ 'global.upload.invalidFormatMessage' | translate }}</span>
+		</div>
+
+		<div class="videogular-container" ng-show="file && useVideo">
+			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': !canvasState.drawingCanvas}"  vg-change-source="onSourceChanged($source)" vg-update-state="onStateUpdate($state)" class="videogular">
+				<vg-media vg-src="sources"></vg-media>
+
+				<vg-controls>
+					<vg-play-pause-button></vg-play-pause-button>
+					<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
+					<vg-scrub-bar id="scrubBar" video-fine-time-control>
+						<vg-scrub-bar-current-time help-popup help-popup-key="fineScrolling" help-popup-active="0" help-popup-position="top"></vg-scrub-bar-current-time>
+					</vg-scrub-bar>
+					<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
+					<video-playback-button></video-playback-button>
+					<vg-volume>
+						<vg-mute-button></vg-mute-button>
+						<vg-volume-bar></vg-volume-bar>
+					</vg-volume>
+					<video-canvas-overlay-button ng-show="playerControls.canvasId"></video-canvas-overlay-button>
+				</vg-controls>
+
+				<vg-overlay-play ng-click="onOverlayClick()" ng-show="!canvasState.drawingCanvas"></vg-overlay-play>
+
+				<canvas id="fabricCanvas" pw-canvas></canvas>
+			</videogular>
+		</div>
+
+		<div class="editing-tools" ng-show="file && useVideo">
+			<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="review.ending > 0" show-values="true" disabled="transcoding"></div>
+			<div class="buttons" ng-show="dataLoaded">
+				<span class="durationText">{{ 'global.upload.clipDurationText' | translate }} {{clipDuration | date:'mm:ss' }}</span>
+				<span class="block"><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.doubleSpeedLink' | translate }}</a> {{ 'global.upload.doubleSpeedText' | translate }}</span>
+				<span class="block" ng-show="review.videoFramerateRatio && review.videoFramerateRatio != 1">{{ 'global.upload.fasterVideoText' | translate }} {{ 'global.upload.fasterVideoClick1' | translate }} <a ng-click="maximumAllowedDuration = maximumAllowedDuration / review.videoFramerateRatio; review.videoFramerateRatio = 1">{{ 'global.upload.fastVideoLink' | translate }}</a>{{ 'global.upload.fasterVideoClick2' | translate }}</span>
+			</div>
+			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[review.sport.toLowerCase()] && !sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed">
+				<span>{{ 'global.upload.timeLimitExplanationText' | translate }}</span>
+			</div>
+			<div class="alert alert-danger" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && (!sportsConfig[review.sport.toLowerCase()] || (sportsConfig[review.sport.toLowerCase()] && sportsConfig[review.sport.toLowerCase()].allowDoubleSpeed))">
+				<span>{{ 'global.upload.timeLimitExplanationText2' | translate }}</span>
+				<ul>
+					<li>{{ 'global.upload.timeLimiteReason1' | translate }}</li>
+					<li><a ng-click="review.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * review.videoFramerateRatio">{{ 'global.upload.timeLimitReason2Link' | translate }}</a>{{ 'global.upload.timeLimitReason2' | translate }}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="video-information panel-no-border" ng-class="plugins">
+			<h1 ng-show="useVideo">{{ 'global.upload.newVideoHeadline' | translate }}</h1>
+			<h1 ng-hide="useVideo">{{ 'global.upload.newPostHeadline' | translate }}</h1>
+
+			<div class="container-fluid">
+				<div class="row" ng-hide="User.isLoggedIn()">
+					<div class="col-sm-12">
+						<div class="form-group" show-errors="{ showSuccess: true }">
+							<div class="alert alert-danger" role="alert" ng-show="uploadForm.author.$error.nameTaken"><span>{{ 'global.upload.nameTaken' | translate }}<a ng-click="signIn()">{{ 'global.upload.nameTakenLink' | translate }}</a>{{ 'global.upload.nameTaken2' | translate }}</span></div>
+							<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="{{ 'global.upload.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()" ng-readonly="transcoding">
+						</div>
+				  	</div>
+			  	</div>
+		  		<div class="row">
+					<!--<div ng-class="{'col-sm-4': useVideo}" ng-show="useVideo">
+			  			<div class="form-group" show-errors="{ showSuccess: true }">
+						    <select ng-model="review.sport" name="sport" class="form-control" ng-required="true" ng-readonly="!useVideo || uploadInProgress">
+								<option value="Squash" ng-hide="!useVideo">Squash</option>
+								<option value="Badminton" ng-hide="!useVideo">Badminton</option>
+								<option value="LeagueOfLegends" ng-hide="!useVideo">League of Legends</option>
+								<option value="HeroesOfTheStorm" ng-hide="!useVideo">Heroes of the Storm</option>
+								<option value="HearthStone" ng-hide="!useVideo">HearthStone</option>
+								<option value="Meta" ng-show="!useVideo">Meta</option>
+							</select>
+						</div>
+					</div>-->
+					<div class="col-sm-11">
+			  			<div class="form-group" show-errors="{ showSuccess: true }">
+					    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="transcoding">
+					  	</div>
+				  	</div>
+				  	<div class="col-sm-1">
+						<a class="dropdown-toggle language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span  class="lang-sm" lang="{{review.language}}"></span><span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a ng-click="editLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
+								<li><a ng-click="editLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
+							</ul>
+					</div>
+			  	</div>
+		  		<div class="row">
+					<div class="col-sm-12">
+					  	<div class="form-group" show-errors="{ showSuccess: true }">
+							<toolbar player-api="API" insert-model="insertModel" ng-show="useVideo" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true" config="sportConfig">
+					    		<textarea name="text" class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholder' | translate }}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
+					    	</toolbar>
+					    	<textarea name="text" class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholderNoVideo' | translate }}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow ng-hide="useVideo"></textarea>
+					   </div>
+					</div>
+					<div class="inline-block float-right show-help-buttons">
+					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
+						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
+					</div>
+			  	</div>
+				<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
+				<div class="alert alert-info" role="alert" ng-show="hasTimestamps && review.beginning > 0">
+					<span>{{ 'global.upload.timestampTranslationInfo' | translate }}</span>
+				</div>
+				<div class="row video-tags">
+					<div class="col-xs-12 text-left">
+						<review-tags-input review-disabled="transcoding" review="review"></review-tags-input>
+					</div>
+				</div>
+		  		<div class="row">
+					<div class="col-sm-2">
+			  			<button type="submit" class="btn btn-primary btn-upload" ng-click="useFile ? initUpload() : initPostText()" ng-disabled="uploadInProgress || hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration"  analytics-on="click" analytics-category="upload" analytics-event="upload.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
+		  			</div>
+				</div>
+			</div>
+
+
+			<div ng-show="uploadInProgress" class="progress-group">
+				<div class="informationMessages">
+					<span ng-show="uploadProgress  < 100">{{ 'global.upload.dontCloseWindowMessage' | translate }}</span>
+					<span ng-show="uploadProgress  == 100">{{ 'global.upload.finalizeVideoMessage' | translate }}</span>
+				</div>
+			    <div class="progress" style="position: relative; left: 0; top: 0">
+			        <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploadProgress  + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;">
+			        	<div>{{uploadProgress  | number : 1}}%</div>
+			        </div>
+			    </div>
+			</div>
+
+		</div>
+
+		<div id="padder"></div>
+		<div id="bottom"></div>
+	</div>
+</form>
+
+<canvas-control show-canvas="showCanvas" hide-canvas="hideCanvas" player-controls="playerControls" review="review" load-canvas="loadCanvas" serialize-canvas="serializeCanvas" clear-canvas="clearCanvas" canvas-state="canvasState" clear-temporary-canvas="clearTemporaryCanvas" prepare-canvas-for-upload="prepareCanvasForUpload" toggle-canvas="toggleCanvas" cancel-canvas-edition="cancelCanvasEdition"></canvas-control>

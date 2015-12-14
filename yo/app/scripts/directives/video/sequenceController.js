@@ -4,14 +4,14 @@
 var app = angular.module('app');
 
 app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV', '$sce', '$timeout', 
-	function($log, Api, $modal, $rootScope, ENV, $sce, $timeout) {
+	function($log, Api, $modal, $rootScope, ENV, $sce, $timeout) { 
 
 		return {
 			restrict: 'E',
 			replace: true,
 			scope: {
-				sources: '=',
-				review: '='
+				sequenceSources: '=',
+				localReview: '='
 			},
 			controller: function($scope) {
 
@@ -19,6 +19,8 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 
 				$scope.params = {};
 				$scope.form = {}
+				// Bad design: dependency needed by the uploadDirective
+				$scope.useVideo = true;
 				
 				var unregister = $rootScope.$on('sequence.add.init', function(event, params) {
 					$log.log('on sequence.add.init', event, params, $scope);
@@ -35,7 +37,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					$scope.sequenceModal.$promise.then($scope.sequenceModal.show);
 
 					$scope.criteria = {
-					 	sport: $scope.review.sport.key,
+					 	sport: $scope.localReview.sport.key,
 					 	wantedTags: [],
 					 	unwantedTags: []
 					}
@@ -58,18 +60,21 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 	                }
 				});
 
-				$scope.onPlayerReady = function(API) {
+				$scope.onSequencePlayerReady = function(API) {
 					$scope.API = API;
 					$scope.API.seekTime($scope.initialTime / 1000)
 				};
 
-				$scope.onPlayerReady2 = function(API) {
+				$scope.onSequencePlayerReady2 = function(API) {
 					$log.log('player2ready');
 					$scope.API2 = API;
-					$scope.sources2 = $scope.sources;//[]
+					$scope.sequenceSources2 = $scope.sequenceSources;//[]
 				};
 
 				$scope.$watch('params.video1position', function (newVal, oldVal) {
+					$scope.params.secondPlayerContainerClass = '';
+					$scope.params.firstlayerControlsClass = '';
+
 					if (newVal == 'l') {
 						$scope.params.firstPlayerClass = '';
 					}
@@ -78,6 +83,12 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					}
 					else if (newVal == 'r') {
 						$scope.params.firstPlayerClass = 'show-right';
+					}
+					else if (newVal == 'h') {
+						$scope.params.firstPlayerClass = '';
+						$scope.params.secondPlayerContainerClass = 'show-full';
+						$scope.params.firstPlayerControlsClass = 'show-hidden';
+						$scope.params.secondPlayerClass = '';
 					}
 				});
 				$scope.$watch('params.video2position', function (newVal, oldVal) {
@@ -97,6 +108,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					$log.log('params.comparisonSource', mode);
 					$scope.params.comparisonSource = mode;
 
+					$scope.uploadNewVideo = false;
 					$scope.params.otherSource = undefined;
 
 					if (mode == 'otherVideo') {
@@ -105,7 +117,11 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					}
 					else if (mode == 'sameVideo') {
 						$scope.choosingOtherVideo = false;
-						$scope.sources2 = $scope.sources;
+						$scope.sequenceSources2 = $scope.sequenceSources;
+					}
+					else if (mode == 'newVideo') {
+						$scope.choosingOtherVideo = false;
+						$scope.uploadNewVideo = true;
 					}
 					else if (mode == 'sequence') {
 						$scope.choosingOtherVideo = true;
@@ -141,7 +157,8 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						video2position: $scope.params.video2position,
 						speed: parseFloat($scope.params.speed),
 						loopDuration: parseFloat($scope.params.loopDuration),
-						otherSource: $scope.params.otherSource
+						otherSource: $scope.params.otherSource,
+						fixedImage: $scope.params.fixedImage ? true : false
 					}
 					$log.log('adding sequence', params);
 					// Don't create a sequence with your own video
@@ -152,7 +169,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 							videoId: params.otherSource,
 							start: params.sequenceStart2,
 							title: $scope.params.newSequenceTitle,
-							sport: $scope.review.sport.key,
+							sport: $scope.localReview.sport.key,
 							videoPosition: params.video2position,
 							tags: $scope.params.newSequenceTags
 						}
@@ -215,7 +232,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 						$log.log('loaded sequence', video);
 						$scope.params.otherSource = video.videoId;
 						var fileLocation = ENV.videoStorageUrl + video.videoKey;
-						$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: 'video/mp4'}];
+						$scope.sequenceSources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: 'video/mp4'}];
 
 						$scope.params.video2position = video.videoPosition;
 						$scope.sequenceStart2 = parseFloat(video.start) / 1000;
@@ -226,11 +243,12 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					else {
 						// Get the video id
 						Api.Reviews.get({reviewId: video.id},  function(data) {
+							$scope.uploadNewVideo = false;
 							$log.log('loaded video', data);
 							$scope.params.otherSource = video.id;
 							var fileLocation = ENV.videoStorageUrl + data.key;
 							$scope.currentVideoKey = data.key;
-							$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
+							$scope.sequenceSources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
 							$scope.choosingOtherVideo = false;
 						});
 					}
@@ -249,7 +267,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 				}
 				
 				$scope.loadTags = function() {
-					Api.Tags.query({sport: $scope.review.sport.key}, 
+					Api.Tags.query({sport: $scope.localReview.sport.key}, 
 						function(data) {
 							$scope.allowedTags = data;
 							$log.log('allowedTags set to', $scope.allowedTags);
@@ -277,6 +295,22 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 							return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
 						}
 					});;
+				}
+
+				$scope.initTags = function(review) {
+					$log.debug('initilizing tags before upload', review);
+					if (!$scope.allowedTags) return;
+
+					if (!review.tags)
+						review.tags = [];
+
+					$scope.allowedTags.forEach(function(tag) {
+						if (tag.text == 'Sequence') {
+							review.tags.push(tag);
+						}
+					})
+
+					$log.debug('init tags', review);
 				}
 			}
 		};

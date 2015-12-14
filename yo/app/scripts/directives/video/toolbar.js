@@ -24,7 +24,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
 				var slowRegex = /\d?\d:\d?\d(:\d\d\d)?\+s(\d?\.?\d?\d?)?/;
 				var loopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L(\d?\.?\d?\d?)?/;
-				var optionalLoopRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+s)?(\d?\.?\d?\d?)?L?(\d?\.?\d?\d?)?/;
+				var optionalLoopRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r|h)?)?(\+s)?(\d?\.?\d?\d?)?L?(\d?\.?\d?\d?)?/;
 
 				$scope.insertTimestamp = function(inputTimestamp, regex) {
 					regex = typeof regex !== 'undefined' ? regex : timestampOnlyRegex;
@@ -81,7 +81,11 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 						// params are null when canceling
 						if (params) {
 							var timestamp1 = moment.duration(params.sequenceStart1).format('mm:ss:SSS', { trim: false });
-							$scope.insertLoop(timestamp1, params.speed, params.loopDuration);
+
+							if (!params.fixedImage)
+								$scope.insertLoop(timestamp1, params.speed, params.loopDuration);
+							else 
+								$scope.insertTimestamp(timestamp1);
 							//$log.log('loop inserted');
 
 							var insertionIndex = $scope.command(timestampOnlyRegex);
@@ -97,7 +101,6 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 							if (params.video1position) $scope.insert(params.video1position);
 
 							var timestamp2 = moment.duration(params.sequenceStart2).format('mm:ss:SSS', { trim: false });
-							//$log.log('inserting', '|' + timestamp2);
 							$scope.insert('|' + timestamp2);
 
 							if (params.otherSource) $scope.insert('(' + params.otherSource + ')');

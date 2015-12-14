@@ -72,10 +72,12 @@ app.directive('pwCanvas', ['$log', '$timeout', function ($log, $timeout) {
 					var container = element[0].parentElement;
 
 					var canvas = angular.element(container.querySelector('#fabricCanvas'))[0];
-					canvas.style.display = 'none';
+					if (canvas)
+						canvas.style.display = 'none';
 
 					var upperCanvas = angular.element(container.querySelector('.upper-canvas'))[0];
-					upperCanvas.style.display = 'none';
+					if (upperCanvas)
+						upperCanvas.style.display = 'none';
 				}
 
 				$scope.showCanvas = function() {

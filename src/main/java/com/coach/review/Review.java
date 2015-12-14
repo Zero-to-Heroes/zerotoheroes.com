@@ -22,7 +22,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
 import com.amazonaws.util.StringUtils;
-import com.coach.coaches.Coach.Language;
 import com.coach.core.security.User;
 import com.coach.reputation.Reputation;
 import com.coach.subscription.HasSubscribers;
@@ -132,16 +131,16 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		lastModifiedDate = modifiedDate;
 		setSortingDate(lastModifiedDate);
 	}
-	
+
 	public void setLanguage(String code) {
-		if (code!= null && !code.isEmpty()) {
+		if (code != null && !code.isEmpty()) {
 			language = code;
 		}
 		else {
 			language = "en";
 		}
 	}
-	
+
 	public Comment getComment(int commentId) {
 		if (comments == null) return null;
 
@@ -331,5 +330,15 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		for (Comment comment : getComments()) {
 			fullTextSearchField += " " + comment.getFullText();
 		}
+	}
+
+	public boolean isSequence() {
+		if (tags == null || tags.isEmpty()) return false;
+
+		for (Tag tag : tags) {
+			if (tag.getText().equals("Sequence")) return true;
+		}
+
+		return false;
 	}
 }

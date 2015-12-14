@@ -33,6 +33,17 @@
 	font-size: 1.3em;
 }
 
+.video-details .review-editing-title {
+	width: calc(100% - 50px);
+    display: inline-block;
+}
+
+.video-details .language {
+	margin-left: 15px;
+	display: inline-block;
+	position: relative;
+}
+
 .video-tags {
 	
 }

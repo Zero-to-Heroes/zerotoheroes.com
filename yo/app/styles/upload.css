@@ -32,3 +32,8 @@
 .upload-form .video-informatin {
 	position: inherit;
 }
+
+.upload-form .language {
+	margin-top: 8px;
+	display: block;
+}

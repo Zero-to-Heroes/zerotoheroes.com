@@ -151,6 +151,13 @@
 	display: block;
 }
 
+.video-listing .review-title a {
+	display: inline-block;
+}
+.video-listing .review-title .language {
+	margin-left: 5px;
+}
+
 /* Don't show the name input if it appears on the navbar */
 @media screen and (min-width: 600px) {
 	.thumbnails {

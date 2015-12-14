@@ -57,22 +57,21 @@
 					</div>
 					<div class="col-md-11">
 						<div class="row video-information-header">
-							<div class="col-md-10">
+							<div class="col-md-11">
 								<h1 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h1>
 								<div class="row" ng-show="review.editing">
-									<div class="col-md-11">
-										<div class="form-group" show-errors="{ showSuccess: true }">
+									<div class="col-md-12">
+										<div class="form-group review-editing-title" show-errors="{ showSuccess: true }">
 									    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.review.comment.reviewTitle' | translate }}" ng-required="true">
-									    	
 									  	</div>
+									  	<div class="language">
+										  	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span lang="{{review.language}}"></span><span class="caret"></span></a>
+											<ul class="dropdown-menu">
+												<li><a ng-click="editLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
+												<li><a ng-click="editLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
+											</ul>
+										</div>
 								  	</div>
-								  	<div class="col-md-1">
-									  	<a class="dropdown-toggle profile-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"><span  class="lang-sm"lang="{{review.language}}"></span></span></a>
-										<ul class="dropdown-menu">
-											<li><a ng-click="editLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
-											<li><a ng-click="editLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
-										</ul>
-									 </div>
 							  	</div>
 							  	<div class="author-information" ng-hide="review.editing">
 								  	<span class="link-minor">Submitted <span title="{{formatExactDate(review.creationDate)}}">{{formatDate(review.creationDate)}}</span> by <span author-name entity="review"></span></span>

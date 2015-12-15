@@ -510,7 +510,7 @@ public class ReviewApiHandler {
 		PageRequest pageRequest = new PageRequest(0, PAGE_SIZE, oldestFirst);
 		Review recommended = null;
 		if (!"meta".equalsIgnoreCase(sport)) {
-			reviews = reviewRepo.findBySport(sport, pageRequest).getContent();
+			reviews = reviewRepo.findPageableBySport(sport, pageRequest).getContent();
 			// log.debug("All reviews " + reviews);
 
 			// TODO: do that in the DB directly?

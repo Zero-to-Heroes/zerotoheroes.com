@@ -13,7 +13,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 
 	Review findById(String id);
 
-	Page<Review> findBySport(String sport, Pageable pageable);
+	Page<Review> findPageableBySport(String sport, Pageable pageable);
 
 	List<Review> findBySport(String sport);
 

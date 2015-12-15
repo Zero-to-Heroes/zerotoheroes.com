@@ -167,6 +167,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			previousVolume: 100,
 			canvasId: '',
 			canvasPlaying: false,
+			init: function() {
+				$scope.API.setVolume(1);
+				$scope.API2.setVolume(0);
+			},
 			play: function() {
 				$rootScope.$broadcast('activity.play', {reviewId: $scope.review.id});
 				$scope.API.play();
@@ -245,6 +249,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			stopLoop: function() {
 				$scope.playerControls.loopDuration = undefined;
 				$scope.playerControls.loopStatus = undefined;
+			},
+			unmuteSecondPlayer: function() {
+				$log.debug('switching sound to second player')
+				$scope.API.setVolume(0);
+				$scope.API2.setVolume(1);
 			}
 		}
 
@@ -648,6 +657,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				return;
 			}
 
+			$scope.playerControls.init();
+
 			$log.log('going to timestamp', timeString);
 			// Player1 already has a loaded source
 			$scope.player1ready = true;
@@ -677,6 +688,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.playerControls.secondPlayerContainerClass = 'show-full';
 				$scope.playerControls.firstPlayerControlsClass = 'show-hidden';
 				$scope.playerControls.secondPlayerClass = '';
+
+				// Mute first player and unmute second player
+				$scope.playerControls.unmuteSecondPlayer();
 			}
 
 			var timestampString = timestampInfo[0].match(timestampOnlyRegex)[0];

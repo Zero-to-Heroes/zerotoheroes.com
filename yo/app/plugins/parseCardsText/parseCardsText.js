@@ -5,7 +5,13 @@ var parseCardsText = {
 	execute: function (review, text) {
 		var matches = text.match(parseCardsText.cardRegex);
 		var result = text;
-		var lang = window.localStorage.language;
+		var lang;
+		try {
+			lang = window.localStorage.language;
+		}
+		catch (e) {
+			lang = 'en';
+		}
 		// Parsing card names
 		if (matches) {
 			// console.log('parsing cards', text);
@@ -33,13 +39,27 @@ var parseCardsText = {
 		return result;
 	},
 
-	localizeName: function(card, lang) {
+	localizeName: function(card) {
+		var lang;
+		try {
+			lang = window.localStorage.language;
+		}
+		catch (e) {
+			lang = 'en';
+		}
 		if (!lang) return card.name;
 		if (!card[lang]) return card.name;
 		return card[lang].name;
 	},
 
-	localizeImage: function(card, lang) {
+	localizeImage: function(card) {
+		var lang;
+		try {
+			lang = window.localStorage.language;
+		}
+		catch (e) {
+			lang = 'en';
+		}
 		if (!lang) return card.cardImage;
 		if (!card[lang]) return card.cardImage;
 		// console.log('localized image', lang + '/' + card.cardImage);
@@ -52,7 +72,7 @@ var parseCardsText = {
 			match: /\[\[[a-zA-Z\s]{3,}$/,
 			search: function (term, callback, match) {
 				callback($.map(parseCardsText.jsonDatabase, function(card) {
-					var localizeName = parseCardsText.localizeName(card, window.localStorage.language);
+					var localizeName = parseCardsText.localizeName(card);
 					var res = S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) === 0;
 					// var debug = false;
 					// if (res) debug = true;
@@ -81,9 +101,9 @@ var parseCardsText = {
 			index: 0,
 			template: function(card, term) {
 				var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
-				var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + parseCardsText.localizeImage(card, window.localStorage.language) + '\'>';
+				var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + parseCardsText.localizeImage(card) + '\'>';
 				var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
-				return '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-container="body" data-animation="false">' + parseCardsText.localizeName(card, window.localStorage.language) + '</span>';
+				return '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-container="body" data-animation="false">' + parseCardsText.localizeName(card) + '</span>';
 			},
 			context: function (text) { 
 				return text.toLowerCase(); 

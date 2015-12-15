@@ -147,14 +147,18 @@ app.config(['$translateProvider', '$windowProvider', function($translateProvider
 	$translateProvider.determinePreferredLanguage(function () {
 	  	// define a function to determine the language
 	  	// and return a language key
-		if (!$windowProvider.$get().localStorage.language) {
-			var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
-			console.log('language is ', lang);
-			if (lang && lang.slice(0, 2) == 'fr') {
-				console.log('browser language is ', lang);
-				$windowProvider.$get().localStorage.language = 'fr';
-				return 'fr';
+	  	try {
+			if (!$windowProvider.$get().localStorage.language) {
+				var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
+				console.log('language is ', lang);
+				if (lang && lang.slice(0, 2) == 'fr') {
+					console.log('browser language is ', lang);
+					$windowProvider.$get().localStorage.language = 'fr';
+					return 'fr';
+				}
 			}
+		}
+		catch (e) {
 		}
 	  	return 'en';
 	});
@@ -251,7 +255,7 @@ app.run(['$rootScope', '$window', '$location', '$http',
 	}
 ]);
 
-app.run(['$rootScope', '$window', '$location', 'Localization', function($rootScope, $window, $location, Localization) {
+app.run(['$rootScope', '$window', '$location', 'Localization', 'localStorage', function($rootScope, $window, $location, Localization, localStorage) {
 	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 		//$window.ga('send', 'pageview', { page: $location.url() });
 		if (current.$$route) {
@@ -260,10 +264,10 @@ app.run(['$rootScope', '$window', '$location', 'Localization', function($rootSco
 		// Change the language depending on URL. TEMP
 		//console.log('URL language is ', $location.search().hl);
 		if ($location.search().hl) {
-			$window.localStorage.language = $location.search().hl;
+			localStorage.setItem('language', $location.search().hl);
 		}
 
-		Localization.use($window.localStorage.language || 'en');
+		Localization.use(localStorage.getItem('language') || 'en');
 	});
 }]);
 

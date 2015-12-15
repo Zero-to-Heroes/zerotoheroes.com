@@ -1,15 +1,15 @@
 var services = angular.module('services');
-services.factory('Localization', ['$window', '$log', 'Api', '$translate', 
-	function ($window, $log, Api, $translate) {
+services.factory('Localization', ['$window', '$log', 'Api', '$translate', 'localStorage', 
+	function ($window, $log, Api, $translate, localStorage) {
 		return {
 			use: function(lang) {
-				$window.localStorage.language = lang;
+				localStorage.setItem('language', lang);
 				$translate.use(lang);
 				moment.locale(lang);
 			},
 			getLanguage: function() {
-				if ($window.localStorage.language) {
-					return $window.localStorage.language;
+				if (localStorage.getItem('language')) {
+					return localStorage.getItem('language');
 				}
 				else return 'en';
 			}

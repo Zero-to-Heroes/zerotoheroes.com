@@ -51,12 +51,15 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 
   				// Language
   				var lang;
-  				if (!$window.localStorage.language) {
-					lang = $window.navigator.language || $window.navigator.userLanguage; 
-					if (lang && lang.slice(0, 2) == 'fr') {
-						lang = 'fr';
+  				try {
+	  				if (!$window.localStorage.language) {
+						lang = $window.navigator.language || $window.navigator.userLanguage; 
+						if (lang && lang.slice(0, 2) == 'fr') {
+							lang = 'fr';
+						}
 					}
-				}
+				} catch (e) {}
+				
 				if (!lang)
 					lang = Localization.getLanguage();
 

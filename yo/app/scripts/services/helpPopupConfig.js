@@ -1,7 +1,7 @@
 
 var services = angular.module('services');
-services.factory('HelpPopupConfig', ['$window', '$log', 'User', 
-	function ($window, $log, User) {
+services.factory('HelpPopupConfig', ['$window', '$log', 'User', 'localStorage', 
+	function ($window, $log, User, localStorage) {
 		var service = {};
 
 			service.config = {
@@ -29,11 +29,11 @@ services.factory('HelpPopupConfig', ['$window', '$log', 'User',
 			}
 
 			service.markAsRead = function(helpKey) {
-				$window.localStorage[helpKey] = true;
+				localStorage.setItem(helpKey, true);
 			}
 
 			service.isRead = function(helpKey) {
-				return $window.localStorage[helpKey] || false; 
+				return localStorage.getItem(helpKey) || false; 
 			}
 
 			return service;

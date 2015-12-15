@@ -1,4 +1,3 @@
-
 var parseDecks = {
 
 	decksRegex: /\[(http:\/\/www\.hearthpwn\.com\/decks\/).+?\]/gm,
@@ -67,10 +66,10 @@ var parseDecks = {
 							//console.log('cardObject', cardObject);
 							if (cardObject) {
 								cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
-								var image = parseCardsText.localizeImage(cardObject, window.localStorage.language);
+								var image = parseCardsText.localizeImage(cardObject);
 								htmlDeck += '<tr>' + 
 												'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
-												'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject, window.localStorage.language)  + '</td>' +
+												'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject)  + '</td>' +
 												'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
 											'</tr>';
 							}
@@ -86,10 +85,10 @@ var parseDecks = {
 							var cssClass = 'card';
 							var cardObject = parseCardsText.getCard(card.name);
 							cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
-							var image = parseCardsText.localizeImage(cardObject, window.localStorage.language);
+							var image = parseCardsText.localizeImage(cardObject);
 							htmlDeck += '<tr>' + 
 										'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
-										'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject, window.localStorage.language)  + '</td>' +
+										'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject)  + '</td>' +
 										'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
 									'</tr>';
 						})

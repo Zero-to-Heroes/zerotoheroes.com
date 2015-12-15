@@ -34,8 +34,8 @@ services.factory('Api', ['$resource', 'ENV',
 	}
 ]);
 
-services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', '$analytics', '$log', 
-	function ($http, $window, $timeout, Api, $analytics, $log) {
+services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', '$analytics', '$log', 'localStorage', 
+	function ($http, $window, $timeout, Api, $analytics, $log, localStorage) {
 		var service = {};
 
 		service.login = function (username, password, callbackSucces, callbackError) {
@@ -44,17 +44,17 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 
 		service.setAuthentication = function (username, responseHeaders, callback) {
 			//$log.log('Setting authentication');
-			$window.localStorage.token = responseHeaders('x-auth-token');
-			$log.log('token', $window.localStorage.token);
-			$window.localStorage.name = username;
+			localStorage.setItem('token', responseHeaders('x-auth-token'));
+			localStorage.setItem('name', username);
 			$analytics.setAlias(username);
 			$analytics.setUsername(username);
-			callback ($window.localStorage.token && $window.localStorage.token != 'null' && $window.localStorage.token.trim().length > 0)
+			var localToken = localStorage.getItem('token');
+			callback (localToken && localToken != 'null' && localToken.trim().length > 0)
 		};
 
 		service.clearCredentials = function () {
-			delete $window.localStorage.token;
-			delete $window.localStorage.user;
+			localStorage.deleteItem('token');
+			localStorage.deleteItem('user');
 		};
 
 		return service;
@@ -66,13 +66,15 @@ services.factory('authInterceptor', function ($rootScope, $q, $window) {
 	return {
 		request: function (config) {
 			config.headers = config.headers || {};
-			if ($window.localStorage.token) {
-				//console.log('adding token to the request', $window.localStorage.token );
-				config.headers['x-auth-token'] = $window.localStorage.token;
+			try {
+				if ($window.localStorage.token) {
+					config.headers['x-auth-token'] = $window.localStorage.token;
+				}
+				else {
+					//console.log('Not adding token to the request');
+				}
 			}
-			else {
-				//console.log('Not adding token to the request');
-			}
+			catch (e) {}
 			return config;
 		},
 		response: function (response) {

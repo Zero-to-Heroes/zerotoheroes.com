@@ -64,7 +64,7 @@
 							</videogular>
 
 							<div ng-show="choosingOtherVideo" ng-include="'/templates/video/sequence/chooseOtherVideo.html'" class="embedded-form"></div> 
-							<upload-directive ng-show="uploadNewVideo" callback="selectVideo(review)" class="embedded-form"></upload-directive>
+							<upload-directive ng-show="uploadNewVideo" callback="onUploadComplete(review)" class="embedded-form"></upload-directive>
 						</div>
 					</div>
 				</videogular>

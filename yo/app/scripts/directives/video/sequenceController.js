@@ -225,20 +225,26 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					$scope.API2.seekTime($scope.sequenceStart2);
 				}
 
+				$scope.onUploadComplete = function(video) {
+					video.sequence = false;
+					$scope.selectVideo(video);
+				}
+
 				$scope.selectVideo = function(video) {
+					$log.debug('selecting video', video);
 					if (video.sequence) {
 						$scope.choosingOtherVideo = false;
-
 						$log.log('loaded sequence', video);
 						$scope.params.otherSource = video.videoId;
 						var fileLocation = ENV.videoStorageUrl + video.videoKey;
 						$scope.sequenceSources2 = [{src: $sce.trustAsResourceUrl(fileLocation), type: 'video/mp4'}];
 
 						$scope.params.video2position = video.videoPosition;
+
 						$scope.sequenceStart2 = parseFloat(video.start) / 1000;
 						$timeout(function() {
 							$scope.API2.seekTime($scope.sequenceStart2);
-						}, 0)						
+						}, 0)
 					}
 					else {
 						// Get the video id

@@ -37,11 +37,16 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 			}
 		}
 
-		if (ENV.name == 'production') 
+		if (ENV.name == 'production' && !isIE()) 
 			$.post('https://hooks.slack.com/services/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', JSON.stringify(payload));
 		else {
 			console.error(payload);
 		}
+	}
+
+	function isIE () {
+	  	var ie = (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0);
+	  	return ie;
 	}
 
 	var loggingExceptions = [
@@ -64,7 +69,9 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 			var $location = $injector.get('$location');
 			var $window = $injector.get('$window');
 
-			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'navigator: ' + $window.navigator.userAgent, 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
+
+
+			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
 		};
 
 

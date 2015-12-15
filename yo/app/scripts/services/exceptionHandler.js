@@ -37,7 +37,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 			}
 		}
 
-		if (ENV.name == 'production' && !isIE()) 
+		if (ENV.name == 'production' && !isIE() && !isBot()) 
 			$.post('https://hooks.slack.com/services/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', JSON.stringify(payload));
 		else {
 			console.error(payload);
@@ -47,6 +47,10 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 	function isIE () {
 	  	var ie = (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0);
 	  	return ie;
+	}
+
+	function isBot () {
+	  	return (navigator.userAgent.indexOf('Googlebot') !== -1);
 	}
 
 	var loggingExceptions = [

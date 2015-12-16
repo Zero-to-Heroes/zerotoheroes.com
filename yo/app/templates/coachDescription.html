@@ -7,8 +7,8 @@
 		      		<img class="media-object" src="images/coaches/{{coach.picture}}">
 		    	</a>
 		  	</div>
-			<div class="media-body" ng-bind-html="coach.description">
-			</div>
+			<p class="media-body" translate-default="{{coach.description}}" translate="{{ 'coaches.' + sport.toLowerCase() + '.' + coach.id + '.description'}}">
+			</p>
 		</div>
 	</div>
 </div>

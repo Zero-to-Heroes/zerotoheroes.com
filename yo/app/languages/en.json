@@ -323,5 +323,13 @@
 		"news6": "You can now upload a video as a comment response. The new video will by default be hidden from search (you can see it if you remove the 'Sequence' tag filter"
 	},
 	"tags": {
+	},
+	"coaches": {
+		"leagueoflegends": {
+			"lol0": {
+				"description": "Hi, my name is Julien, but I play as Sir4ur0n on most games. I've been playing League of Legends for quite some time now, and as a casual Rank player, I reached Platinum III. My main roles are Support/Mid/ADC, and what I really enjoy about this game is playing with the team to kill some nexus. I never focus on KDA or most gold earned, as it's usually counter-productive to focus on those indicators alone. see you later on the Rift =)",
+				"tariffDescription": "In my reviews I will focus on your stuff, positioning, and actions to improve your added value to your team, and to help you make your team win the games. E.g. if you are a tank but stay behind your carries, or don't seize an opportunity to engage (and die in the process) so that your team could win. Don't necessarily expect my reviews to increase your KDA, but it will improve your win ratio."
+			}
+		}
 	}
 }

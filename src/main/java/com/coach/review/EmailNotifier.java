@@ -36,16 +36,16 @@ public class EmailNotifier {
 
 		//@formatter:off
 		String body = "Hey there!<br/>"
-				+ "<p>" + comment.getAuthor() + " has just added a comment on your review. "
+				+ "<p>" + comment.getAuthor() + " has just added a comment on review " + review.getTitle() + ". "
 						+ "Click <a href=\"" + review.getUrl() + "\">here</a> to see what they said.</p>"
 			    + "<p><small>And if you wish to stop receiving notifications on this review, just hit \"unsubsribe\" from the url above</small></p>";
-		String subject = "New comment on your review " + review.getTitle() + " at ZeroToHeroes";
+		String subject = "New comment on review " + review.getTitle() + " at ZeroToHeroes";
 
 		if ("fr".equalsIgnoreCase(subscriber.getPreferredLanguage())) {
 			body = "Bonjour!<br/>"
 					+ "<p>"
 					+ comment.getAuthor()
-					+ " vient d'ajouter un commentaire sur votre vidéo. "
+					+ " vient d'ajouter un commentaire sur la vidéo " + review.getTitle() + ". "
 					+ "Cliquez <a href=\""
 					+ review.getUrl()
 					+ "\">ici</a> pour voir le commentaire.</p>"

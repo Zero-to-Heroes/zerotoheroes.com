@@ -106,6 +106,9 @@ public class ReviewApiHandler {
 				: 0;
 		String sport = criteria.getSport();
 
+		if (StringUtils.isNullOrEmpty(sport))
+			return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.BAD_REQUEST);
+
 		// Sorting in ascending order
 		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
 				"lastModifiedDate"));
@@ -182,7 +185,7 @@ public class ReviewApiHandler {
 			// currentUser);
 			addAuthorInformation(review.getSport(), review, currentUser);
 			User user = userRepo.findByUsername(currentUser);
-			
+
 			// Updating user stats
 			if (commentParser.hasTimestamp(review.getText())) {
 				user.getStats().incrementTimestamps();

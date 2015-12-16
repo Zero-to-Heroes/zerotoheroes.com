@@ -319,7 +319,8 @@
 		"news2": "We've changed the video review layout to use the full width of the screen. Let us know what you think!",
 		"news3": "HearthStone players can now see the details of a deck card without having to go to an external site",
 		"news4": "HearthStone players can now also use the English name when searching for a card",
-		"news5": "When displayed, the HearthStone deck title is now clickable to see the original deck"
+		"news5": "When displayed, the HearthStone deck title is now clickable to see the original deck",
+		"news6": "You can now upload a video as a comment response. The new video will by default be hidden from search (you can see it if you remove the 'Sequence' tag filter"
 	},
 	"tags": {
 	}

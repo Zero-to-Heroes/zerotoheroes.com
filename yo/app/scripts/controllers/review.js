@@ -130,7 +130,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// Video player
 		//===============
 		$scope.onPlayerReady = function(API) {
-			//$log.log('on player ready');
+			$log.log('on player ready');
 			$scope.API = API;
 			$scope.API.setVolume(1);
 			// Load the video
@@ -142,7 +142,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		};
 
 		$scope.onSecondPlayerReady = function($API) {
-			//$log.log('onSecondPlayerReady');
+			$log.log('onSecondPlayerReady');
 			$scope.API2 = $API;
 			$scope.API2.setVolume(0);
 
@@ -168,6 +168,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			canvasId: '',
 			canvasPlaying: false,
 			init: function() {
+				$log.debug('Init: restoring players to default config')
 				$scope.API.setVolume(1);
 				$scope.API2.setVolume(0);
 			},
@@ -214,12 +215,15 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				}
 			},
 			setPlayback: function(rate) {
+				$log.debug('Setting playback to', rate)
 				$scope.playerControls.playbackRate = rate;
 				$scope.API.setPlayback(rate);
-				if ($scope.API.volume > 0) $scope.playerControls.previousVolume = $scope.API.volume;
+				$log.debug('initial volume is', $scope.API.volume)
+				$scope.playerControls.previousVolume = $scope.API.volume;
 
 				if (rate == 1) $scope.API.setVolume($scope.playerControls.previousVolume);
 				else $scope.API.setVolume(0);
+				$log.debug('Set API volume to', $scope.API.volume);
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.setPlayback(rate);
 				}

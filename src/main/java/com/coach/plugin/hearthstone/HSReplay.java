@@ -1,5 +1,7 @@
 package com.coach.plugin.hearthstone;
 
+import info.hearthsim.hsreplay.ReplaySerializer;
+
 import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +13,6 @@ import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
-import com.hearthsim.hsreplay.ReplaySerializer;
 
 @Slf4j
 public class HSReplay implements ReplayPlugin {

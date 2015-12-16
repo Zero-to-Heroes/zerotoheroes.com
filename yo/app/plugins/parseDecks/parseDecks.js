@@ -1,7 +1,9 @@
 var parseDecks = {
 
 	decksRegex: /\[(http:\/\/www\.hearthpwn\.com\/decks\/).+?\]/gm,
-	deck: undefined,
+	
+	decks: {},
+
 	execute: function (review, text) {
 		var matches = text.match(parseDecks.decksRegex);
 		if (!matches) return text;
@@ -21,20 +23,21 @@ var parseDecks = {
 					var strDeck = plugins.parseDecks[deckName];
 					var deck = JSON.parse(strDeck);
 					var htmlDeck = parseDecks.formatToHtml(deck);
-					parseDecks.deck = htmlDeck;
+					// parseDecks.deck = htmlDeck;
 					//console.log('html deck is ', htmlDeck);
 					var deckNameForDisplay = deck.title;
+					parseDecks.decks[deckNameForDisplay] = htmlDeck;
 
-					result = result.replace(match, '<a class="deck-link" onclick="parseDecks.toggleDeck()" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
+					result = result.replace(match, '<a class="deck-link" onclick="parseDecks.toggleDeck(\'' + deckNameForDisplay + '\')" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
 				}
 			})
 		}
 		return result;
 	},
 
-	toggleDeck: function () {
+	toggleDeck: function (deckNameForDisplay) {
 		$(".contextual-information .content").addClass('deck');
-		$(".contextual-information .content").html(parseDecks.deck);
+		$(".contextual-information .content").html(parseDecks.decks[deckNameForDisplay]);
 		$(".contextual-information").show();
 		$(function () {
 		  	$('body').tooltip({

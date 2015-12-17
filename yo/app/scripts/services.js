@@ -43,7 +43,6 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 		};
 
 		service.setAuthentication = function (username, responseHeaders, callback) {
-			//$log.log('Setting authentication');
 			localStorage.setItem('token', responseHeaders('x-auth-token'));
 			localStorage.setItem('name', username);
 			$analytics.setAlias(username);
@@ -53,8 +52,11 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 		};
 
 		service.clearCredentials = function () {
+			// $log.debug('clearing credentials')
 			localStorage.deleteItem('token');
+			// $log.debug('token is now', localStorage.getItem('token'))
 			localStorage.deleteItem('user');
+			// $log.debug('user is now', localStorage.getItem('user'))
 		};
 
 		return service;

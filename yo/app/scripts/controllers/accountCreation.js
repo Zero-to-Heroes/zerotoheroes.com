@@ -78,6 +78,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		};
 
 		$scope.login = function() {
+			$log.debug('login', $scope.account.username, $scope.account.password)
 	  		AuthenticationService.login($scope.account.username, $scope.account.password, 
 				function(response, responseHeaders) {
 					$log.log('login with', response, responseHeaders);

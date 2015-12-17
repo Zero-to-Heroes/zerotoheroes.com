@@ -86,11 +86,9 @@
       this.onClickPause = __bind(this.onClickPause, this);
       this.callback = __bind(this.callback, this);
       Replay.__super__.constructor.call(this, props);
-      console.log('initializing replay');
       this.state = {
         replay: new ReplayPlayer(new HSReplayParser(props.route.replay))
       };
-      console.log('state', this.state);
       this.sub = subscribe(this.state.replay, 'players-ready', (function(_this) {
         return function() {
           return _this.callback;
@@ -98,7 +96,6 @@
       })(this));
       this.sub = subscribe(this.state.replay, 'moved-timestamp', (function(_this) {
         return function() {
-          console.log('receiving moved-timestamp');
           return setTimeout(_this.callback, 1000);
         };
       })(this));
@@ -107,21 +104,18 @@
     }
 
     Replay.prototype.componentWillUnmount = function() {
-      console.log('Replay will unmount');
       return this.sub.off();
     };
 
     Replay.prototype.callback = function() {
-      console.log('forcing update');
       return this.forceUpdate();
     };
 
     Replay.prototype.render = function() {
-      var bottom, replay, top;
+      var bottom, playButton, replay, top;
       replay = this.state.replay;
-      console.log('rendering in replay', replay);
       if (replay.players.length === 2) {
-        console.log('All players are here', replay.opponent, replay.player);
+        replay.decidePlayerOpponent();
         top = React.createElement("div", {
           "className": "top"
         }, React.createElement(PlayerName, {
@@ -161,19 +155,23 @@
           "entity": replay.player
         }));
       }
-      console.log('top and bottom are', top, bottom);
+      playButton = React.createElement(Button, {
+        "glyph": "play",
+        "onClick": this.onClickPlay
+      });
+      console.log('speed', this.state.replay.getSpeed());
+      if (this.state.replay.interval > 0 && this.state.replay.getSpeed() > 0) {
+        playButton = React.createElement(Button, {
+          "glyph": "pause",
+          "onClick": this.onClickPause
+        });
+      }
       return React.createElement("div", {
         "className": "replay",
         "key": replay.resetCounter
       }, React.createElement("form", {
         "className": "replay__controls padded"
-      }, React.createElement(ButtonGroup, null, React.createElement(Button, {
-        "glyph": "pause",
-        "onClick": this.onClickPause
-      }), React.createElement(Button, {
-        "glyph": "play",
-        "onClick": this.onClickPlay
-      })), React.createElement(Timeline, {
+      }, React.createElement(ButtonGroup, null, playButton), React.createElement(Timeline, {
         "replay": replay
       }), React.createElement("div", {
         "className": "playback-speed"
@@ -206,12 +204,14 @@
 
     Replay.prototype.onClickPause = function(e) {
       e.preventDefault();
-      return this.state.replay.pause();
+      this.state.replay.pause();
+      return this.forceUpdate();
     };
 
     Replay.prototype.onClickPlay = function(e) {
       e.preventDefault();
-      return this.state.replay.run();
+      this.state.replay.play();
+      return this.forceUpdate();
     };
 
     Replay.prototype.onClickChangeSpeed = function(speed) {
@@ -412,7 +412,6 @@
   Hand = React.createClass({
     componentDidMount: function() {
       var entity, _i, _len, _ref;
-      console.log('Hand did mount');
       this.subs = new SubscriptionList;
       _ref = this.props.entity.getHand();
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -423,14 +422,12 @@
         return function(_arg) {
           var entity;
           entity = _arg.entity;
-          console.log('entity-entered-hand');
           _this.subscribeToEntity(entity);
           return _this.forceUpdate();
         };
       })(this));
       return this.subs.add(this.props.entity, 'tag-changed:MULLIGAN_STATE', (function(_this) {
         return function() {
-          console.log('tag-changed:MULLIGAN_STATE');
           return _this.forceUpdate();
         };
       })(this));
@@ -451,16 +448,13 @@
       })(this));
     },
     componentWillUnmount: function() {
-      console.log('hand will unmount');
       return this.subs.off();
     },
     render: function() {
       var active, cards;
-      console.log('rendering hand? ', this.props.entity.tags, this.props.entity.tags.MULLIGAN_STATE);
       if (this.props.entity.tags.MULLIGAN_STATE !== 4) {
         return null;
       }
-      console.log('rendering hand');
       active = _.filter(this.props.entity.getHand(), function(entity) {
         return entity.tags.ZONE_POSITION > 0;
       });
@@ -1599,6 +1593,7 @@
           this.entityDefinition.id = parseInt(node.attributes.entity || node.attributes.id);
           if (node.attributes.cardID) {
             this.entityDefinition.cardID = node.attributes.cardID;
+            this.replay.mainPlayer(this.stack[this.stack.length - 2].attributes.entity);
           }
           if (node.attributes.name) {
             return this.entityDefinition.name = node.attributes.name;
@@ -1822,7 +1817,6 @@
 
     ReplayPlayer.prototype.run = function() {
       console.log('running player');
-      console.log('parsed game');
       this.frequency = 200;
       this.speed = this.initialSpeed || 1;
       return this.interval = setInterval(((function(_this) {
@@ -1836,6 +1830,11 @@
       console.log('starting game at timestamp', timestamp);
       this.startTimestamp = timestamp;
       return this.started = true;
+    };
+
+    ReplayPlayer.prototype.play = function() {
+      this.speed = this.initialSpeed || 1;
+      return this.goToTimestamp(this.currentReplayTime);
     };
 
     ReplayPlayer.prototype.pause = function() {
@@ -1934,6 +1933,22 @@
       }
     };
 
+    ReplayPlayer.prototype.mainPlayer = function(entityId) {
+      if (!this.mainPlayerId && (parseInt(entityId) === 2 || parseInt(entityId) === 3)) {
+        console.log('updating @mainPlayerId', entityId);
+        return this.mainPlayerId = entityId;
+      }
+    };
+
+    ReplayPlayer.prototype.decidePlayerOpponent = function() {
+      var tempOpponent;
+      if (parseInt(this.opponent.id) === parseInt(this.mainPlayerId)) {
+        tempOpponent = this.player;
+        this.player = this.opponent;
+        return this.opponent = tempOpponent;
+      }
+    };
+
     ReplayPlayer.prototype.receiveEntity = function(definition) {
       var entity;
       if (this.entities[definition.id]) {
@@ -1951,7 +1966,6 @@
           this.opponent = entity.getController();
           this.player = this.opponent.getOpponent();
         }
-        console.log('emitting player-ready event');
         return this.emit('players-ready');
       }
     };
@@ -1993,11 +2007,12 @@
       var args, command, timestamp;
       timestamp = arguments[0], command = arguments[1], args = 3 <= arguments.length ? slice.call(arguments, 2) : [];
       if (!timestamp && this.lastBatch) {
-        return this.lastBatch.addCommand([command, args]);
+        this.lastBatch.addCommand([command, args]);
       } else {
         this.lastBatch = new HistoryBatch(timestamp, [command, args]);
-        return this.history.push(this.lastBatch);
+        this.history.push(this.lastBatch);
       }
+      return this.lastBatch;
     };
 
     return ReplayPlayer;

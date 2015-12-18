@@ -84,6 +84,8 @@
     function Replay(props) {
       this.onClickPlay = __bind(this.onClickPlay, this);
       this.onClickPause = __bind(this.onClickPause, this);
+      this.goPreviousTurn = __bind(this.goPreviousTurn, this);
+      this.goNextTurn = __bind(this.goNextTurn, this);
       this.callback = __bind(this.callback, this);
       Replay.__super__.constructor.call(this, props);
       this.state = {
@@ -115,7 +117,6 @@
       var bottom, playButton, replay, top;
       replay = this.state.replay;
       if (replay.players.length === 2) {
-        replay.decidePlayerOpponent();
         top = React.createElement("div", {
           "className": "top"
         }, React.createElement(PlayerName, {
@@ -159,19 +160,23 @@
         "glyph": "play",
         "onClick": this.onClickPlay
       });
-      console.log('speed', this.state.replay.getSpeed());
-      if (this.state.replay.interval > 0 && this.state.replay.getSpeed() > 0) {
+      if (this.state.replay.frequency > 0 && this.state.replay.getSpeed() > 0) {
         playButton = React.createElement(Button, {
           "glyph": "pause",
           "onClick": this.onClickPause
         });
       }
       return React.createElement("div", {
-        "className": "replay",
-        "key": replay.resetCounter
+        "className": "replay"
       }, React.createElement("form", {
         "className": "replay__controls padded"
-      }, React.createElement(ButtonGroup, null, playButton), React.createElement(Timeline, {
+      }, React.createElement(ButtonGroup, null, React.createElement(Button, {
+        "glyph": "fast-backward",
+        "onClick": this.goPreviousTurn
+      }), playButton, React.createElement(Button, {
+        "glyph": "fast-forward",
+        "onClick": this.goNextTurn
+      })), React.createElement(Timeline, {
         "replay": replay
       }), React.createElement("div", {
         "className": "playback-speed"
@@ -202,6 +207,20 @@
       }, top, bottom));
     };
 
+    Replay.prototype.goNextTurn = function(e) {
+      console.log(this.state);
+      e.preventDefault();
+      this.state.replay.goNextTurn();
+      return this.forceUpdate();
+    };
+
+    Replay.prototype.goPreviousTurn = function(e) {
+      console.log(this.state);
+      e.preventDefault();
+      this.state.replay.goPreviousTurn();
+      return this.forceUpdate();
+    };
+
     Replay.prototype.onClickPause = function(e) {
       e.preventDefault();
       this.state.replay.pause();
@@ -209,13 +228,13 @@
     };
 
     Replay.prototype.onClickPlay = function(e) {
+      console.log(this.state);
       e.preventDefault();
       this.state.replay.play();
       return this.forceUpdate();
     };
 
     Replay.prototype.onClickChangeSpeed = function(speed) {
-      console.log('changing speed', speed);
       this.state.replay.changeSpeed(speed);
       return this.forceUpdate();
     };
@@ -313,9 +332,7 @@
       })(this));
     };
 
-    Card.prototype.componentWillUnmount = function() {
-      return this.sub.off();
-    };
+    Card.prototype.componentWillUnmount = function() {};
 
     Card.prototype.render = function() {
       var art, cls, stats, style;
@@ -447,9 +464,7 @@
         };
       })(this));
     },
-    componentWillUnmount: function() {
-      return this.subs.off();
-    },
+    componentWillUnmount: function() {},
     render: function() {
       var active, cards;
       if (this.props.entity.tags.MULLIGAN_STATE !== 4) {
@@ -515,9 +530,7 @@
       })(this));
     };
 
-    Health.prototype.componentWillUnmount = function() {
-      return this.subs.off();
-    };
+    Health.prototype.componentWillUnmount = function() {};
 
     Health.prototype.render = function() {
       var hero;
@@ -608,9 +621,7 @@
       })(this));
     };
 
-    Mulligan.prototype.componentWillUnmount = function() {
-      return this.sub.off();
-    };
+    Mulligan.prototype.componentWillUnmount = function() {};
 
     Mulligan.prototype.render = function() {
       var cards;
@@ -681,9 +692,7 @@
         playing: null
       };
     },
-    componentWillUnmount: function() {
-      return this.subs.off();
-    },
+    componentWillUnmount: function() {},
     render: function() {
       var card;
       if (this.state.playing) {
@@ -762,9 +771,7 @@
       })(this)), 500);
     };
 
-    Scrubber.prototype.componentWillUnmount = function() {
-      return clearInterval(this.int);
-    };
+    Scrubber.prototype.componentWillUnmount = function() {};
 
     Scrubber.prototype.render = function() {
       var handleStyle, i, length, point, pointStyle, points, position, remaining, remainingMinutes, remainingSeconds, replay, _i, _len, _ref;
@@ -837,9 +844,7 @@
       })(this)), 500);
     };
 
-    Timeline.prototype.componentWillUnmount = function() {
-      return clearInterval(this.int);
-    };
+    Timeline.prototype.componentWillUnmount = function() {};
 
     Timeline.prototype.render = function() {
       var elapsedMinutes, elapsedSeconds, handleStyle, length, position, remaining, remainingMinutes, remainingSeconds, replay, totalMinutes, totalSeconds;
@@ -1795,7 +1800,6 @@
       this.parser = parser;
       EventEmitter.call(this);
       window.replay = this;
-      console.log('player constructed');
     }
 
     ReplayPlayer.prototype.init = function() {
@@ -1807,27 +1811,25 @@
       this.history = [];
       this.historyPosition = 0;
       this.lastBatch = null;
+      this.turns = {
+        length: 0
+      };
+      this.currentTurn = 0;
       this.startTimestamp = null;
       this.startTime = (new Date).getTime();
-      this.currentReplayTime = 0;
+      this.currentReplayTime = 200;
       this.started = false;
       this.speed = 1;
-      return this.parser.parse(this);
+      this.parser.parse(this);
+      return this.finalizeInit();
     };
 
     ReplayPlayer.prototype.run = function() {
-      console.log('running player');
       this.frequency = 200;
-      this.speed = this.initialSpeed || 1;
-      return this.interval = setInterval(((function(_this) {
-        return function() {
-          return _this.update();
-        };
-      })(this)), this.frequency);
+      return this.speed = this.initialSpeed || 1;
     };
 
     ReplayPlayer.prototype.start = function(timestamp) {
-      console.log('starting game at timestamp', timestamp);
       this.startTimestamp = timestamp;
       return this.started = true;
     };
@@ -1838,13 +1840,27 @@
     };
 
     ReplayPlayer.prototype.pause = function() {
-      console.log('pausing in replay-plyaer');
       this.initialSpeed = this.speed;
       return this.speed = 0;
     };
 
+    ReplayPlayer.prototype.goNextTurn = function() {
+      this.currentTurn++;
+      console.log('currentTurn', this.currentTurn, this.turns.length);
+      if (this.currentTurn > this.turns.length) {
+        this.historyPosition = this.history.length - 1;
+      } else {
+        this.currentReplayTime = 1000 * (this.turns[this.currentTurn].timestamp - this.startTimestamp) + 1;
+      }
+      console.log('@turns[@currentTurn]', this.turns[this.currentTurn]);
+      console.log('historyPosition', this.historyPosition);
+      console.log('currentReplayTime', this.currentReplayTime);
+      return this.update();
+    };
+
+    ReplayPlayer.prototype.goPreviousTurn = function() {};
+
     ReplayPlayer.prototype.changeSpeed = function(speed) {
-      console.log('changing speed in replay', speed);
       return this.speed = speed;
     };
 
@@ -1871,46 +1887,44 @@
     ReplayPlayer.prototype.moveTime = function(progression) {
       var target;
       target = this.getTotalLength() * progression * 1000;
-      console.log('moving to', target);
       return this.goToTimestamp(target);
     };
 
     ReplayPlayer.prototype.goToTimestamp = function(timestamp) {
       var initialSpeed;
+      console.log('going to timestamp', timestamp);
       initialSpeed = this.speed;
       if (timestamp < this.currentReplayTime) {
-        console.log('resetting');
         this.init();
         this.historyPosition = 0;
       }
       this.start(this.startTimestamp);
       if (!this.interval) {
-        console.log('running the game');
         this.run();
         this.changeSpeed(initialSpeed);
       }
-      console.log('going to timestamp in replay', timestamp);
       this.currentReplayTime = timestamp;
+      this.update();
       return this.emit('moved-timestamp');
     };
 
     ReplayPlayer.prototype.update = function() {
-      var elapsed, results;
+      var elapsed;
       this.currentReplayTime += this.frequency * this.speed;
       if (this.currentReplayTime >= this.getTotalLength() * 1000) {
         this.currentReplayTime = this.getTotalLength() * 1000;
       }
       elapsed = this.getElapsed();
-      results = [];
       while (this.historyPosition < this.history.length) {
         if (elapsed > this.history[this.historyPosition].timestamp - this.startTimestamp) {
+          console.log('historyPositionTimestamp', this.history[this.historyPosition].timestamp, elapsed);
           this.history[this.historyPosition].execute(this);
-          results.push(this.historyPosition++);
+          this.historyPosition++;
         } else {
           break;
         }
       }
-      return results;
+      return console.log('stopped at history', this.history[this.historyPosition].timestamp, elapsed);
     };
 
     ReplayPlayer.prototype.receiveGameEntity = function(definition) {
@@ -1935,18 +1949,44 @@
 
     ReplayPlayer.prototype.mainPlayer = function(entityId) {
       if (!this.mainPlayerId && (parseInt(entityId) === 2 || parseInt(entityId) === 3)) {
-        console.log('updating @mainPlayerId', entityId);
         return this.mainPlayerId = entityId;
       }
     };
 
-    ReplayPlayer.prototype.decidePlayerOpponent = function() {
-      var tempOpponent;
+    ReplayPlayer.prototype.finalizeInit = function() {
+      var batch, command, i, j, k, l, len, len1, ref, ref1, tempOpponent, turnNumber;
+      if (this.initDone) {
+        return;
+      }
+      this.goToTimestamp(this.currentReplayTime);
+      this.update();
+      this.speed = 0;
       if (parseInt(this.opponent.id) === parseInt(this.mainPlayerId)) {
         tempOpponent = this.player;
         this.player = this.opponent;
-        return this.opponent = tempOpponent;
+        this.opponent = tempOpponent;
       }
+      turnNumber = 1;
+      ref = this.history;
+      for (i = k = 0, len = ref.length; k < len; i = ++k) {
+        batch = ref[i];
+        ref1 = batch.commands;
+        for (j = l = 0, len1 = ref1.length; l < len1; j = ++l) {
+          command = ref1[j];
+          if (command[0] === 'receiveTagChange' && command[1].length > 0 && command[1][0].entity === 1 && command[1][0].tag === 'STEP' && command[1][0].value === 6) {
+            console.log('batch', i, batch);
+            console.log('\tcommand', j, command);
+            this.turns[turnNumber] = {
+              historyPosition: i,
+              timestamp: batch.timestamp
+            };
+            this.turns.length++;
+            turnNumber++;
+          }
+        }
+      }
+      console.log(this.turns.length, 'game turns at position', this.turns);
+      return this.initDone = true;
     };
 
     ReplayPlayer.prototype.receiveEntity = function(definition) {
@@ -2012,6 +2052,7 @@
         this.lastBatch = new HistoryBatch(timestamp, [command, args]);
         this.history.push(this.lastBatch);
       }
+      console.log('enqueued', this.lastBatch.timestamp, this.lastBatch);
       return this.lastBatch;
     };
 

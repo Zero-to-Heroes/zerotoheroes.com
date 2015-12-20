@@ -40,6 +40,8 @@ var parseCardsText = {
 	},
 
 	localizeName: function(card) {
+		if (!card) return ''
+			
 		var lang;
 		try {
 			lang = window.localStorage.language;
@@ -138,7 +140,11 @@ var parseCardsText = {
 		// cf http://stackoverflow.com/questions/2641347/how-to-short-circuit-array-foreach-like-calling-break
 		parseCardsText.jsonDatabase.some(function(card) {
 			// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
-			if (card.name.toLowerCase() == cardName.toLowerCase()) {
+			if (card.id == cardName) {
+				result = card;
+				return true;
+			}
+			else if (card.name.toLowerCase() == cardName.toLowerCase()) {
 				possibleResult = card;
 				if (card.set == 'Basic') {
 					card.rarity = 'Free';

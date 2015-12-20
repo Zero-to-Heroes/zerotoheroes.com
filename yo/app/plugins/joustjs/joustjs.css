@@ -1809,6 +1809,15 @@
   background-color: #fff;
   height: 2px;
 }
+.hearthstone #externalPlayer .game-log {
+  display: block;
+  border: none;
+  background: #DDB570 url(images/felt.png) 50% 50% repeat;
+  height: 50px;
+  padding-left: 50px;
+  padding-top: 10px;
+  color: black;
+}
 .hearthstone #externalPlayer .replay__controls .playback-speed {
   display: table-cell;
   width: 70px;
@@ -1824,7 +1833,7 @@
 }
 .hearthstone #externalPlayer .replay__controls {
   position: absolute;
-  bottom: 0;
+  bottom: 50px;
   background: transparent;
   width: 100%;
   display: table;
@@ -1850,6 +1859,6 @@
   background: url(images/health.png) 50% 50% no-repeat;
 }
 .hearthstone #externalPlayer .btn-group {
-  width: 140px;
+  width: 200px;
   display: table-cell;
 }

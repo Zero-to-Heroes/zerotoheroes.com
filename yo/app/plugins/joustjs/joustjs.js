@@ -1881,8 +1881,8 @@
     ReplayPlayer.prototype.goNextAction = function() {
       this.turnLog = '';
       this.currentActionInTurn++;
-      console.log('going to next action', this.currentActionInTurn, this.turns[this.currentTurn].actions);
       if (this.turns[this.currentTurn] && this.currentActionInTurn <= this.turns[this.currentTurn].actions.length - 1) {
+        console.log('going to next action', this.currentActionInTurn, this.turns[this.currentTurn].actions);
         return this.goToAction();
       } else {
         console.log('going directly to next turn');
@@ -1951,7 +1951,8 @@
         targetTimestamp = 1000 * (this.turns[this.currentTurn].timestamp - this.startTimestamp) + 1;
       }
       this.goToTimestamp(targetTimestamp);
-      return this.update();
+      this.update();
+      return console.log('at previous turn', this.currentTurn, this.currentActionInTurn);
     };
 
     ReplayPlayer.prototype.getTotalLength = function() {

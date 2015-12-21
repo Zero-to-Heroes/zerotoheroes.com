@@ -40,7 +40,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						plugins: [
 							{name: 'parseCardsText', version: 1}, 
 							{name: 'parseDecks', version: 1}, 
-							{name: 'joustjs', player: true, format: ['text/plain', 'text/xml'], version: 1}
+							{name: 'joustjs', player: true, format: ['text/plain', 'text/xml'], version: 2}
 						],
 						customCss: 'hearthstone.css'
 					},

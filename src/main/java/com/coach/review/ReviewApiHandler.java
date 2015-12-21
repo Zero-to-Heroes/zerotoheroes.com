@@ -87,7 +87,7 @@ public class ReviewApiHandler {
 	@Autowired
 	MongoOperations mongoOperations;
 
-	public ReviewApiHandler() {
+	public ReviewApiHandler() throws Exception {
 		log.debug("Initializing Review Api Handler");
 	}
 

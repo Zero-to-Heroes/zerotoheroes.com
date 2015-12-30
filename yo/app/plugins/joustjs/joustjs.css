@@ -1698,8 +1698,6 @@
 }
 .hearthstone #externalPlayer .board .card {
   display: inline-block;
-  top: 0;
-  position: relative;
   margin-right: 10px;
   transition: transform 0.25s, top 0.5s;
   width: 64px;
@@ -1822,6 +1820,20 @@
   display: table-cell;
   width: 70px;
   vertical-align: middle;
+}
+.hearthstone #externalPlayer .target {
+  position: absolute;
+  background-color: red;
+  width: 4px;
+}
+.hearthstone #externalPlayer .target:after {
+  content: '';
+  display: block;
+  left: -8px;
+  position: absolute;
+  border-bottom: 10px solid red;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
 }
 .hearthstone #externalPlayer .title-bar {
   display: none;

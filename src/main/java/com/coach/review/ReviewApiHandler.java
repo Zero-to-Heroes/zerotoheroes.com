@@ -109,13 +109,19 @@ public class ReviewApiHandler {
 		if (StringUtils.isNullOrEmpty(sport))
 			return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.BAD_REQUEST);
 
+		Sport sportObj = Sport.load(sport);
+		// The case when input query contains invalid data, should not arrive
+		// during normal site usage
+		if (sportObj == null)
+			return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.BAD_REQUEST);
+
 		// Sorting in ascending order
 		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
 				"lastModifiedDate"));
 
 		// Start pageing at 1 like normal people, not at 0 like nerds
 		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, newestFirst);
-		String sportCriteria = Sport.load(sport).getKey();
+		String sportCriteria = sportObj.getKey();
 
 		Page<Review> page = null;
 		if (criteria.getText() == null) {

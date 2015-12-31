@@ -1705,8 +1705,8 @@
   border-radius: 50%;
   background-size: 200% auto !important;
   background-position: -32px -10px !important;
-  border: 1px solid white;
-  box-shadow: 0 0 3px 1px black;
+  /*border: 1px solid white;
+		box-shadow: 0 0 3px 1px black;*/
 }
 .hearthstone #externalPlayer .board .card:last-child {
   margin-right: 0;

@@ -125,7 +125,6 @@
     Replay.prototype.render = function() {
       var allCards, bottom, replay, source, target, top;
       replay = this.state.replay;
-      console.log('rerendering replay');
       if (replay.players.length === 2) {
         top = React.createElement("div", {
           "className": "top"
@@ -182,7 +181,6 @@
       }
       if (this.refs['topBoard'] && this.refs['bottomBoard'] && this.refs['topHero'] && this.refs['bottomHero']) {
         allCards = this.merge(this.refs['topBoard'].getCardsMap(), this.refs['bottomBoard'].getCardsMap(), this.refs['topHero'].getCardsMap(), this.refs['bottomHero'].getCardsMap());
-        console.log('merged cards', allCards);
         source = this.findCard(allCards, replay.targetSource);
         target = this.findCard(allCards, replay.targetDestination);
       }
@@ -685,7 +683,6 @@
       }
       this.hero = this.props.entity.getHero();
       this.heroPower = this.props.entity.getHeroPower();
-      console.log('setting entity', this.hero, this.heroPower);
       hidden = false;
       return React.createElement("div", {
         "className": "hero"
@@ -709,10 +706,8 @@
       if (!this.hero || !this.heroPower) {
         return result;
       }
-      console.log('building cards map in hero', this.refs);
       result[this.hero.id] = this.refs[this.hero.id];
       result[this.heroPower.id] = this.refs[this.heroPower.id];
-      console.log('\tbuilt cards map', result);
       return result;
     }
   });
@@ -1008,7 +1003,7 @@
   Target = React.createClass({
     componentDidMount: function() {},
     render: function() {
-      var alpha, arrowHeight, arrowWidth, containerLeft, containerTop, left, playerEl, sourceDims, style, tanAlpha, targetDims, transform;
+      var alpha, arrowHeight, arrowWidth, containerLeft, containerTop, height, left, playerEl, sourceDims, style, tanAlpha, targetDims, top, transform;
       if (!(this.props.source && this.props.target)) {
         return null;
       }
@@ -1016,31 +1011,51 @@
       console.log('sourceDims', sourceDims);
       targetDims = this.props.target.getDimensions();
       console.log('targetDims', targetDims);
-      arrowHeight = Math.abs(sourceDims.centerY - targetDims.centerY);
       arrowWidth = Math.abs(sourceDims.centerX - targetDims.centerX);
+      arrowHeight = Math.abs(sourceDims.centerY - targetDims.centerY);
       playerEl = document.getElementById('externalPlayer');
       containerTop = playerEl.getBoundingClientRect().top;
       containerLeft = playerEl.getBoundingClientRect().left;
       console.log('containerleft', containerLeft);
+      top = void 0;
+      height = void 0;
       transform = '';
-      if (sourceDims.centerY < targetDims.centerY) {
-        transform += 'rotate(180deg)';
+      if (sourceDims.centerY === targetDims.centerY) {
+        console.log('Same line interaction');
+        left = Math.min(sourceDims.centerX, targetDims.centerX) - containerLeft;
+        height = arrowWidth;
+        if (sourceDims.centerX < targetDims.centerX) {
+          transform += 'rotate(90deg) ';
+          left -= height / 2;
+        } else {
+          transform += 'rotate(-90deg) ';
+          left += height / 2;
+        }
+        top = sourceDims.centerY - containerTop - height / 2;
+        console.log('top', top, containerTop);
+      } else {
+        if (sourceDims.centerY < targetDims.centerY) {
+          transform += 'rotate(180deg) ';
+        }
+        tanAlpha = (sourceDims.centerX - targetDims.centerX) * 1.0 / (arrowHeight + 0.0001);
+        alpha = Math.atan(tanAlpha) * 180 / Math.PI;
+        if (sourceDims.centerY < targetDims.centerY) {
+          alpha = -alpha;
+        }
+        console.log('angle is', alpha);
+        transform += 'skewX(' + alpha + 'deg)';
+        alpha = alpha * Math.PI / 180;
+        left = Math.min(sourceDims.centerX, targetDims.centerX) - containerLeft;
+        console.log('readjusted left', left);
+        left = left + Math.cos(alpha) * arrowWidth / 2;
+        console.log('final left', left, alpha, arrowWidth, Math.cos(alpha), Math.cos(alpha) * arrowWidth / 2);
+        console.log('final top', Math.min(sourceDims.centerY, targetDims.centerY) - containerTop, containerTop);
+        top = Math.min(sourceDims.centerY, targetDims.centerY) - containerTop;
+        height = arrowHeight;
       }
-      tanAlpha = (sourceDims.centerX - targetDims.centerX) * 1.0 / arrowHeight;
-      alpha = Math.atan(tanAlpha) * 180 / Math.PI;
-      if (sourceDims.centerY < targetDims.centerY) {
-        alpha = -alpha;
-      }
-      console.log('angle is', alpha);
-      transform += 'skewX(' + alpha + 'deg)';
-      alpha = alpha * Math.PI / 180;
-      left = Math.min(sourceDims.centerX, targetDims.centerX) - containerLeft;
-      console.log('readjusted left', left);
-      left = left + Math.cos(alpha) * arrowWidth / 2;
-      console.log('final left', left, alpha, arrowWidth, Math.cos(alpha), Math.cos(alpha) * arrowWidth / 2);
       style = {
-        height: arrowHeight,
-        top: Math.min(sourceDims.centerY, targetDims.centerY) - containerTop,
+        height: height,
+        top: top,
         left: left,
         transform: transform
       };
@@ -1751,6 +1766,7 @@
           this.entityDefinition.id = parseInt(node.attributes.entity || node.attributes.id);
           if (node.name === 'ShowEntity') {
             this.stack[this.stack.length - 2].showEntity = this.entityDefinition;
+            node.parent = this.stack[this.stack.length - 2];
           }
           if (node.attributes.cardID) {
             this.entityDefinition.cardID = node.attributes.cardID;
@@ -1838,7 +1854,7 @@
     };
 
     HSReplayParser.prototype.actionState = function(node) {
-      var ref, tag;
+      var tag;
       switch (node.name) {
         case 'ShowEntity':
         case 'FullEntity':
@@ -1846,6 +1862,7 @@
           this.entityDefinition.id = parseInt(node.attributes.entity || node.attributes.id);
           if (node.name === 'ShowEntity') {
             this.stack[this.stack.length - 2].showEntity = this.entityDefinition;
+            this.entityDefinition.parent = this.stack[this.stack.length - 2];
           }
           if (node.attributes.cardID) {
             this.entityDefinition.cardID = node.attributes.cardID;
@@ -1868,9 +1885,7 @@
           tag.parent.tags.push(tag);
           return this.replay.enqueue(null, 'receiveTagChange', tag);
         case 'Action':
-          if ((node != null ? (ref = node.attributes) != null ? ref.entity : void 0 : void 0) === '70') {
-            console.log('\tDebug', node);
-          }
+          node.parent = this.stack[this.stack.length - 2];
           this.state.push('action');
           return this.replay.enqueue(tsToSeconds(node.attributes.ts), 'receiveAction', node);
         case 'Choices':
@@ -2233,7 +2248,6 @@
     };
 
     ReplayPlayer.prototype.goToTimestamp = function(timestamp) {
-      console.log('going to timestamp', timestamp);
       if (timestamp < this.currentReplayTime) {
         this.currentReplayTime = timestamp;
         this.historyPosition = 0;
@@ -2291,7 +2305,7 @@
     };
 
     ReplayPlayer.prototype.finalizeInit = function() {
-      var action, actionIndex, batch, command, currentPlayer, currentTurnNumber, dmg, entityTag, i, j, k, l, len, len1, len2, len3, len4, m, n, o, playedCard, playerIndex, players, ref, ref1, ref2, ref3, ref4, ref5, tag, tagValue, target, tempOpponent, turnNumber;
+      var action, actionIndex, batch, command, currentPlayer, currentTurnNumber, dmg, entityTag, i, j, k, l, len, len1, len2, len3, len4, m, n, o, playedCard, playerIndex, players, ref, ref1, ref10, ref11, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, tag, tagValue, target, tempOpponent, turnNumber;
       this.goToTimestamp(this.currentReplayTime);
       this.update();
       players = [this.player, this.opponent];
@@ -2343,7 +2357,8 @@
                   timestamp: batch.timestamp,
                   type: ' draw: ',
                   data: this.entities[playedCard],
-                  owner: this.turns[currentTurnNumber].activePlayer
+                  owner: this.entities[command[1][0].entity],
+                  initialCommand: command[1][0]
                 };
                 this.turns[currentTurnNumber].actions[actionIndex] = action;
               }
@@ -2362,80 +2377,89 @@
                   }
                   if (playedCard > -1) {
                     action = {
-                      turn: currentTurnNumber,
+                      turn: currentTurnNumber - 1,
                       index: actionIndex++,
                       timestamp: batch.timestamp,
                       type: ': ',
                       data: this.entities[playedCard],
-                      owner: this.turns[currentTurnNumber].activePlayer
+                      owner: this.turns[currentTurnNumber].activePlayer,
+                      initialCommand: command[1][0]
                     };
                     this.turns[currentTurnNumber].actions[actionIndex] = action;
                   }
                 }
-                if (command[1].length > 0 && parseInt(command[1][0].attributes.target) > 0) {
+                if (command[1].length > 0 && parseInt(command[1][0].attributes.target) > 0 && (command[1][0].attributes.type === '1' || !command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)) {
                   action = {
-                    turn: currentTurnNumber,
+                    turn: currentTurnNumber - 1,
                     index: actionIndex++,
                     timestamp: batch.timestamp,
                     type: ': ',
                     data: this.entities[command[1][0].attributes.entity],
                     owner: this.turns[currentTurnNumber].activePlayer,
-                    target: this.entities[command[1][0].attributes.target]
+                    target: this.entities[command[1][0].attributes.target],
+                    initialCommand: command[1][0]
                   };
                   this.turns[currentTurnNumber].actions[actionIndex] = action;
                 }
                 if (command[1].length > 0 && command[1][0].attributes.type === '3') {
-                  if (command[1][0].tags) {
-                    dmg = 0;
-                    target = void 0;
-                    ref3 = command[1][0].tags;
-                    for (n = 0, len3 = ref3.length; n < len3; n++) {
-                      tag = ref3[n];
-                      if (tag.tag === 'DAMAGE' && tag.value > 0) {
-                        dmg = tag.value;
-                        target = tag.entity;
+                  console.log('parent target?', parseInt((ref3 = command[1][0].parent) != null ? (ref4 = ref3.attributes) != null ? ref4.target : void 0 : void 0), command[1][0].attributes.entity, command[1][0]);
+                  if (parseInt((ref5 = command[1][0].parent) != null ? (ref6 = ref5.attributes) != null ? ref6.target : void 0 : void 0) <= 0) {
+                    console.log('\tadding', parseInt((ref7 = command[1][0].parent) != null ? (ref8 = ref7.attributes) != null ? ref8.target : void 0 : void 0), command[1][0].attributes.entity, command[1][0]);
+                    if (command[1][0].tags) {
+                      dmg = 0;
+                      target = void 0;
+                      ref9 = command[1][0].tags;
+                      for (n = 0, len3 = ref9.length; n < len3; n++) {
+                        tag = ref9[n];
+                        if (tag.tag === 'DAMAGE' && tag.value > 0) {
+                          dmg = tag.value;
+                          target = tag.entity;
+                        }
                       }
-                    }
-                    if (dmg > 0) {
-                      action = {
-                        turn: currentTurnNumber,
-                        index: actionIndex++,
-                        timestamp: batch.timestamp,
-                        prefix: '\t',
-                        type: ': ',
-                        data: this.entities[command[1][0].attributes.entity],
-                        owner: this.turns[currentTurnNumber].activePlayer,
-                        target: this.entities[target]
-                      };
-                      this.turns[currentTurnNumber].actions[actionIndex] = action;
+                      if (dmg > 0) {
+                        action = {
+                          turn: currentTurnNumber - 1,
+                          index: actionIndex++,
+                          timestamp: batch.timestamp,
+                          prefix: '\t',
+                          type: ': ',
+                          data: this.entities[command[1][0].attributes.entity],
+                          owner: this.turns[currentTurnNumber].activePlayer,
+                          target: this.entities[target],
+                          initialCommand: command[1][0]
+                        };
+                        this.turns[currentTurnNumber].actions[actionIndex] = action;
+                      }
                     }
                   }
                 }
-                if (command[1].length > 0 && command[1][0].showEntity) {
+                if (command[1].length > 0 && command[1][0].showEntity && (command[1][0].attributes.type === '1' || !command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)) {
                   playedCard = -1;
-                  ref4 = command[1][0].showEntity.tags;
-                  for (entityTag in ref4) {
-                    tagValue = ref4[entityTag];
+                  ref10 = command[1][0].showEntity.tags;
+                  for (entityTag in ref10) {
+                    tagValue = ref10[entityTag];
                     if (entityTag === 'ZONE' && tagValue === 1) {
                       playedCard = command[1][0].showEntity.id;
                     }
                   }
-                  ref5 = command[1][0].tags;
-                  for (o = 0, len4 = ref5.length; o < len4; o++) {
-                    tag = ref5[o];
+                  ref11 = command[1][0].tags;
+                  for (o = 0, len4 = ref11.length; o < len4; o++) {
+                    tag = ref11[o];
                     if (tag.tag === 'ZONE' && tag.value === 1) {
                       playedCard = tag.entity;
                     }
                   }
                   if (playedCard > -1) {
                     action = {
-                      turn: currentTurnNumber,
+                      turn: currentTurnNumber - 1,
                       index: actionIndex++,
                       timestamp: batch.timestamp,
                       type: ': ',
                       data: this.entities[command[1][0].showEntity.id] ? this.entities[command[1][0].showEntity.id] : command[1][0].showEntity,
                       owner: this.turns[currentTurnNumber].activePlayer,
-                      debug: command[1][0].showEntity
+                      debugType: 'showEntity',
+                      debug: command[1][0].showEntity,
+                      initialCommand: command[1][0]
                     };
                     if (action.data) {
                       this.turns[currentTurnNumber].actions[actionIndex] = action;

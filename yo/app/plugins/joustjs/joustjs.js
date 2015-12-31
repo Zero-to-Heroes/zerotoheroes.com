@@ -46,7 +46,8 @@
   var Board, Button, ButtonGroup, Deck, GameLog, HSReplayParser, Hand, Health, Hero, Mana, Mulligan, Play, PlayerName, React, Replay, ReplayPlayer, Target, Timeline, subscribe, _, _ref,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    __slice = [].slice;
 
   console.log('in replay');
 
@@ -87,6 +88,8 @@
   _ = _dereq_('lodash');
 
   Replay = (function(_super) {
+    var tap;
+
     __extends(Replay, _super);
 
     function Replay(props) {
@@ -120,7 +123,7 @@
     };
 
     Replay.prototype.render = function() {
-      var bottom, replay, source, target, top;
+      var allCards, bottom, replay, source, target, top;
       replay = this.state.replay;
       console.log('rerendering replay');
       if (replay.players.length === 2) {
@@ -146,7 +149,8 @@
           "entity": replay.opponent,
           "isHidden": true
         }), React.createElement(Hero, {
-          "entity": replay.opponent
+          "entity": replay.opponent,
+          "ref": "topHero"
         }));
         bottom = React.createElement("div", {
           "className": "bottom"
@@ -167,7 +171,8 @@
         }), React.createElement(Play, {
           "entity": replay.player
         }), React.createElement(Hero, {
-          "entity": replay.player
+          "entity": replay.player,
+          "ref": "bottomHero"
         }), React.createElement(Hand, {
           "entity": replay.player,
           "isHidden": false
@@ -175,9 +180,11 @@
       } else {
         console.warn('Missing players', replay.players);
       }
-      if (this.refs['topBoard'] && this.refs['bottomBoard']) {
-        source = this.findCard(this.refs['topBoard'].getCardsMap(), this.refs['bottomBoard'].getCardsMap(), replay.targetSource);
-        target = this.findCard(this.refs['topBoard'].getCardsMap(), this.refs['bottomBoard'].getCardsMap(), replay.targetDestination);
+      if (this.refs['topBoard'] && this.refs['bottomBoard'] && this.refs['topHero'] && this.refs['bottomHero']) {
+        allCards = this.merge(this.refs['topBoard'].getCardsMap(), this.refs['bottomBoard'].getCardsMap(), this.refs['topHero'].getCardsMap(), this.refs['bottomHero'].getCardsMap());
+        console.log('merged cards', allCards);
+        source = this.findCard(allCards, replay.targetSource);
+        target = this.findCard(allCards, replay.targetDestination);
       }
       return React.createElement("div", {
         "className": "replay"
@@ -237,16 +244,42 @@
       return this.forceUpdate();
     };
 
-    Replay.prototype.findCard = function(topBoardCards, bottomBoardCards, cardID) {
+    Replay.prototype.findCard = function(allCards, cardID) {
       var card;
-      if (!topBoardCards || !bottomBoardCards || !cardID) {
+      if (!allCards || !cardID) {
         return void 0;
       }
-      card = topBoardCards[cardID];
-      if (!card) {
-        card = bottomBoardCards[cardID];
-      }
+      card = allCards[cardID];
       return card;
+    };
+
+    Replay.prototype.merge = function() {
+      var xs;
+      xs = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+      if ((xs != null ? xs.length : void 0) > 0) {
+        return tap({}, function(m) {
+          var k, v, x, _i, _len, _results;
+          _results = [];
+          for (_i = 0, _len = xs.length; _i < _len; _i++) {
+            x = xs[_i];
+            _results.push((function() {
+              var _results1;
+              _results1 = [];
+              for (k in x) {
+                v = x[k];
+                _results1.push(m[k] = v);
+              }
+              return _results1;
+            })());
+          }
+          return _results;
+        });
+      }
+    };
+
+    tap = function(o, fn) {
+      fn(o);
+      return o;
     };
 
     return Replay;
@@ -646,27 +679,41 @@
   Hero = React.createClass({
     componentDidMount: function() {},
     render: function() {
-      var hero, heroPower, hidden;
+      var hidden;
       if (this.props.entity.tags.MULLIGAN_STATE !== 4) {
         return null;
       }
-      hero = this.props.entity.getHero();
-      heroPower = this.props.entity.getHeroPower();
-      console.log('setting entity', hero, heroPower);
+      this.hero = this.props.entity.getHero();
+      this.heroPower = this.props.entity.getHeroPower();
+      console.log('setting entity', this.hero, this.heroPower);
       hidden = false;
       return React.createElement("div", {
         "className": "hero"
       }, React.createElement(Card, {
-        "entity": hero,
-        "key": hero.id,
+        "entity": this.hero,
+        "key": this.hero.id,
         "isHidden": hidden,
+        "ref": this.hero.id,
         "className": "avatar"
       }), React.createElement(Card, {
-        "entity": heroPower,
-        "key": heroPower.id,
+        "entity": this.heroPower,
+        "key": this.heroPower.id,
         "isHidden": hidden,
+        "ref": this.heroPower.id,
         "className": "power"
       }));
+    },
+    getCardsMap: function() {
+      var result;
+      result = {};
+      if (!this.hero || !this.heroPower) {
+        return result;
+      }
+      console.log('building cards map in hero', this.refs);
+      result[this.hero.id] = this.refs[this.hero.id];
+      result[this.heroPower.id] = this.refs[this.heroPower.id];
+      console.log('\tbuilt cards map', result);
+      return result;
     }
   });
 
@@ -974,7 +1021,7 @@
       playerEl = document.getElementById('externalPlayer');
       containerTop = playerEl.getBoundingClientRect().top;
       containerLeft = playerEl.getBoundingClientRect().left;
-      console.log(containerTop, containerLeft);
+      console.log('containerleft', containerLeft);
       transform = '';
       if (sourceDims.centerY < targetDims.centerY) {
         transform += 'rotate(180deg)';
@@ -982,12 +1029,15 @@
       tanAlpha = (sourceDims.centerX - targetDims.centerX) * 1.0 / arrowHeight;
       alpha = Math.atan(tanAlpha) * 180 / Math.PI;
       if (sourceDims.centerY < targetDims.centerY) {
-        alpha = -alpha - 180;
+        alpha = -alpha;
       }
       console.log('angle is', alpha);
       transform += 'skewX(' + alpha + 'deg)';
+      alpha = alpha * Math.PI / 180;
       left = Math.min(sourceDims.centerX, targetDims.centerX) - containerLeft;
-      left = left - Math.cos(alpha) * arrowWidth;
+      console.log('readjusted left', left);
+      left = left + Math.cos(alpha) * arrowWidth / 2;
+      console.log('final left', left, alpha, arrowWidth, Math.cos(alpha), Math.cos(alpha) * arrowWidth / 2);
       style = {
         height: arrowHeight,
         top: Math.min(sourceDims.centerY, targetDims.centerY) - containerTop,
@@ -2042,7 +2092,8 @@
       this.started = false;
       this.cardUtils = window['parseCardsText'];
       this.parser.parse(this);
-      return this.finalizeInit();
+      this.finalizeInit();
+      return this.goNextAction();
     };
 
     ReplayPlayer.prototype.start = function(timestamp) {

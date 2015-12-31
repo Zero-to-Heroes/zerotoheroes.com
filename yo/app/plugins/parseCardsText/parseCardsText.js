@@ -135,8 +135,12 @@ var parseCardsText = {
 	},
 
 	getCard: function(cardName) {
+		if (!cardName)
+			return null
+		
 		var result;
 		var possibleResult;
+
 		// cf http://stackoverflow.com/questions/2641347/how-to-short-circuit-array-foreach-like-calling-break
 		parseCardsText.jsonDatabase.some(function(card) {
 			// Seems like variations (the non-standard version) of the card has a lowercase letter in the name

@@ -1869,7 +1869,10 @@
             this.replay.mainPlayer(this.stack[this.stack.length - 2].attributes.entity);
           }
           if (node.attributes.name) {
-            return this.entityDefinition.name = node.attributes.name;
+            this.entityDefinition.name = node.attributes.name;
+          }
+          if (this.entityDefinition.id === 77) {
+            return console.log('parsing Squire token', this.entityDefinition, node);
           }
           break;
         case 'TagChange':
@@ -2158,18 +2161,28 @@
     };
 
     ReplayPlayer.prototype.goToAction = function() {
-      var action, card, targetTimestamp;
+      var action, card, owner, ownerCard, target, targetTimestamp;
       this.newStep();
       action = this.turns[this.currentTurn].actions[this.currentActionInTurn];
       console.log('action', this.currentActionInTurn, this.turns[this.currentTurn], this.turns[this.currentTurn].actions[this.currentActionInTurn]);
       targetTimestamp = 1000 * (action.timestamp - this.startTimestamp) + 1;
       console.log('executing action', action, action.data);
       card = (action != null ? action.data : void 0) ? action.data['cardID'] : '';
-      this.turnLog = action.owner.name + action.type + this.cardUtils.localizeName(this.cardUtils.getCard(card));
+      owner = action.owner.name;
+      if (!owner) {
+        ownerCard = this.entities[action.owner];
+        console.log('ownerCard', ownerCard, action.owner);
+        console.log('\tcardID', ownerCard.cardID);
+        console.log('\treal card', this.cardUtils.getCard(ownerCard.cardID));
+        owner = this.cardUtils.localizeName(this.cardUtils.getCard(ownerCard.cardID));
+        console.log('\tlocalized name', owner);
+      }
+      this.turnLog = owner + action.type + this.cardUtils.localizeName(this.cardUtils.getCard(card));
       if (action.target) {
+        target = this.entities[action.target];
         this.targetSource = action != null ? action.data.id : void 0;
-        this.targetDestination = action.target.id;
-        this.turnLog += ' -> ' + this.cardUtils.localizeName(this.cardUtils.getCard(action.target.cardID));
+        this.targetDestination = target.id;
+        this.turnLog += ' -> ' + this.cardUtils.localizeName(this.cardUtils.getCard(target.cardID));
       }
       console.log(this.turnLog);
       return this.goToTimestamp(targetTimestamp);
@@ -2305,7 +2318,7 @@
     };
 
     ReplayPlayer.prototype.finalizeInit = function() {
-      var action, actionIndex, batch, command, currentPlayer, currentTurnNumber, dmg, entityTag, i, j, k, l, len, len1, len2, len3, len4, m, n, o, playedCard, playerIndex, players, ref, ref1, ref10, ref11, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, tag, tagValue, target, tempOpponent, turnNumber;
+      var action, actionIndex, batch, command, currentPlayer, currentTurnNumber, dmg, entityTag, i, j, k, l, len, len1, len2, len3, len4, len5, m, n, o, p, playedCard, playerIndex, players, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, tag, tagValue, target, tempOpponent, turnNumber;
       this.goToTimestamp(this.currentReplayTime);
       this.update();
       players = [this.player, this.opponent];
@@ -2388,6 +2401,23 @@
                     this.turns[currentTurnNumber].actions[actionIndex] = action;
                   }
                 }
+                if (command[1].length > 0 && command[1][0].tags && command[1][0].attributes.type === '6') {
+                  ref3 = command[1][0].tags;
+                  for (n = 0, len3 = ref3.length; n < len3; n++) {
+                    tag = ref3[n];
+                    if (tag.tag === 'ZONE' && tag.value === 4) {
+                      action = {
+                        turn: currentTurnNumber - 1,
+                        index: actionIndex++,
+                        timestamp: batch.timestamp,
+                        type: 'died ',
+                        owner: tag.entity,
+                        initialCommand: command[1][0]
+                      };
+                      this.turns[currentTurnNumber].actions[actionIndex] = action;
+                    }
+                  }
+                }
                 if (command[1].length > 0 && parseInt(command[1][0].attributes.target) > 0 && (command[1][0].attributes.type === '1' || !command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)) {
                   action = {
                     turn: currentTurnNumber - 1,
@@ -2396,21 +2426,19 @@
                     type: ': ',
                     data: this.entities[command[1][0].attributes.entity],
                     owner: this.turns[currentTurnNumber].activePlayer,
-                    target: this.entities[command[1][0].attributes.target],
+                    target: command[1][0].attributes.target,
                     initialCommand: command[1][0]
                   };
                   this.turns[currentTurnNumber].actions[actionIndex] = action;
                 }
                 if (command[1].length > 0 && command[1][0].attributes.type === '3') {
-                  console.log('parent target?', parseInt((ref3 = command[1][0].parent) != null ? (ref4 = ref3.attributes) != null ? ref4.target : void 0 : void 0), command[1][0].attributes.entity, command[1][0]);
-                  if (parseInt((ref5 = command[1][0].parent) != null ? (ref6 = ref5.attributes) != null ? ref6.target : void 0 : void 0) <= 0) {
-                    console.log('\tadding', parseInt((ref7 = command[1][0].parent) != null ? (ref8 = ref7.attributes) != null ? ref8.target : void 0 : void 0), command[1][0].attributes.entity, command[1][0]);
+                  if (parseInt((ref4 = command[1][0].parent) != null ? (ref5 = ref4.attributes) != null ? ref5.target : void 0 : void 0) <= 0) {
                     if (command[1][0].tags) {
                       dmg = 0;
                       target = void 0;
-                      ref9 = command[1][0].tags;
-                      for (n = 0, len3 = ref9.length; n < len3; n++) {
-                        tag = ref9[n];
+                      ref6 = command[1][0].tags;
+                      for (o = 0, len4 = ref6.length; o < len4; o++) {
+                        tag = ref6[o];
                         if (tag.tag === 'DAMAGE' && tag.value > 0) {
                           dmg = tag.value;
                           target = tag.entity;
@@ -2425,7 +2453,7 @@
                           type: ': ',
                           data: this.entities[command[1][0].attributes.entity],
                           owner: this.turns[currentTurnNumber].activePlayer,
-                          target: this.entities[target],
+                          target: target,
                           initialCommand: command[1][0]
                         };
                         this.turns[currentTurnNumber].actions[actionIndex] = action;
@@ -2435,16 +2463,16 @@
                 }
                 if (command[1].length > 0 && command[1][0].showEntity && (command[1][0].attributes.type === '1' || !command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)) {
                   playedCard = -1;
-                  ref10 = command[1][0].showEntity.tags;
-                  for (entityTag in ref10) {
-                    tagValue = ref10[entityTag];
+                  ref7 = command[1][0].showEntity.tags;
+                  for (entityTag in ref7) {
+                    tagValue = ref7[entityTag];
                     if (entityTag === 'ZONE' && tagValue === 1) {
                       playedCard = command[1][0].showEntity.id;
                     }
                   }
-                  ref11 = command[1][0].tags;
-                  for (o = 0, len4 = ref11.length; o < len4; o++) {
-                    tag = ref11[o];
+                  ref8 = command[1][0].tags;
+                  for (p = 0, len5 = ref8.length; p < len5; p++) {
+                    tag = ref8[p];
                     if (tag.tag === 'ZONE' && tag.value === 1) {
                       playedCard = tag.entity;
                     }
@@ -2493,7 +2521,10 @@
         entity = new Entity(this);
       }
       this.entities[definition.id] = entity;
-      return entity.update(definition);
+      entity.update(definition);
+      if (definition.id === 77) {
+        return console.log('receving Squire token', definition, entity);
+      }
     };
 
     ReplayPlayer.prototype.receiveTagChange = function(change) {

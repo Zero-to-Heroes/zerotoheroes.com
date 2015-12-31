@@ -1,5 +1,5 @@
 .hearthstone #externalPlayer {
-  height: 500px;
+  height: 550px;
 }
 .hearthstone #externalPlayer audio,
 .hearthstone #externalPlayer canvas,
@@ -1719,6 +1719,33 @@
   top: auto;
   bottom: 10px;
 }
+.hearthstone #externalPlayer .hero {
+  text-align: center;
+  position: relative;
+}
+.hearthstone #externalPlayer .hero .card {
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.25s, top 0.5s;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-size: 200% auto !important;
+  background-position: -32px -30px !important;
+}
+.hearthstone #externalPlayer .hero .card:last-child {
+  margin-right: 0;
+}
+.hearthstone #externalPlayer .hero .power {
+  position: absolute;
+  right: 180px;
+}
+.hearthstone #externalPlayer .top .hero {
+  top: -10px;
+}
+.hearthstone #externalPlayer .bottom .hero {
+  top: 10px;
+}
 .hearthstone #externalPlayer .mana {
   background: url(../../image/mana.png) center center no-repeat;
   width: 62px;
@@ -1841,14 +1868,11 @@
 .hearthstone #externalPlayer .replay__game {
   border: none;
   background: #DDB570 url(images/felt.png) 50% 50% repeat;
-  padding-bottom: 80px;
 }
 .hearthstone #externalPlayer .replay__controls {
-  position: absolute;
-  bottom: 50px;
-  background: transparent;
   width: 100%;
   display: table;
+  background: #DDB570 url(images/felt.png) 50% 50% repeat;
 }
 .hearthstone #externalPlayer .deck {
   background: url(images/cardback.jpg) top left no-repeat;
@@ -1858,8 +1882,25 @@
   background: url(images/cardback.jpg) top left no-repeat;
   background-size: cover;
 }
+.hearthstone #externalPlayer .hand {
+  top: -80px;
+}
+.hearthstone #externalPlayer .bottom .hand {
+  top: auto;
+  bottom: -60px;
+}
 .hearthstone #externalPlayer .bottom .hand > .card:hover {
-  transform: scale(2);
+  transform: translateY(-60px) scale(2);
+}
+.hearthstone #externalPlayer .board {
+  position: relative;
+  height: 78px;
+}
+.hearthstone #externalPlayer .top .board {
+  top: 140px;
+}
+.hearthstone #externalPlayer .bottom .board {
+  top: 0;
 }
 .hearthstone #externalPlayer .scrubber {
   display: none;

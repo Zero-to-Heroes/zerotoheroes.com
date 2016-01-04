@@ -1763,10 +1763,10 @@
   margin-right: 0;
 }
 .hearthstone #externalPlayer .hero .power {
-  position: absolute;
+  position: relative;
   background-size: 200% auto !important;
   background-position: -32px -30px !important;
-  right: 180px;
+  left: 10px;
 }
 .hearthstone #externalPlayer .hero .avatar {
   width: 100px;
@@ -1775,18 +1775,6 @@
   border-top-left-radius: 60% 70%;
   border-top-right-radius: 60% 70%;
   background-position: -50px -50px !important;
-}
-.hearthstone #externalPlayer .top .hero {
-  top: 20px;
-}
-.hearthstone #externalPlayer .top .hero .power {
-  bottom: 10px;
-}
-.hearthstone #externalPlayer .bottom .hero {
-  top: 20px;
-}
-.hearthstone #externalPlayer .bottom .hero .power {
-  top: 10px;
 }
 .hearthstone #externalPlayer .mana {
   background: url(../../image/mana.png) center center no-repeat;
@@ -1811,15 +1799,18 @@
   height: 48px;
   background: url(images/health.png) 50% 50% no-repeat;
   position: absolute;
-  font-size: 20px;
+  font-size: 28px;
   color: white;
   text-shadow: 0 0 10px black;
   font-weight: bold;
   text-align: center;
-  line-height: 48px;
+  line-height: 50px;
   top: auto;
   bottom: -15px;
   right: -15px;
+}
+.hearthstone #externalPlayer .health.damaged {
+  color: red;
 }
 .hearthstone #externalPlayer .play {
   position: absolute;

@@ -22,7 +22,8 @@
     "angular-strap": "~2.3.1",
     "angular-motion": "~0.4.2",
     "angular-bootstrap-show-errors": "~2.3.0",
-    "moment": "~2.10.6",
+    "moment": "~2.9.0",
+    "momentjs": "~2.9.0",
     "angular-scroll": "~0.7.2",
     "angular-marked": "~0.0.21",
     "angular-logger": "~1.0.1",
@@ -59,6 +60,7 @@
     "angular-resource": "~1.4.0",
     "angular": "1.4.x",
     "waypoints": "~2.0.3",
-    "angulartics": "~0.20"
+    "angulartics": "~0.20",
+    "momentjs": "~2.9.0"
   }
 }

@@ -1037,7 +1037,7 @@
         if (sourceDims.centerY < targetDims.centerY) {
           transform += 'rotate(180deg) ';
         }
-        tanAlpha = (sourceDims.centerX - targetDims.centerX) * 1.0 / (arrowHeight + 0.0001);
+        tanAlpha = (sourceDims.centerX - targetDims.centerX) * 1.0 / arrowHeight;
         alpha = Math.atan(tanAlpha) * 180 / Math.PI;
         if (sourceDims.centerY < targetDims.centerY) {
           alpha = -alpha;
@@ -1047,8 +1047,8 @@
         alpha = alpha * Math.PI / 180;
         left = Math.min(sourceDims.centerX, targetDims.centerX) - containerLeft;
         console.log('readjusted left', left);
-        left = left + Math.cos(alpha) * arrowWidth / 2;
-        console.log('final left', left, alpha, arrowWidth, Math.cos(alpha), Math.cos(alpha) * arrowWidth / 2);
+        left = left + Math.tan(Math.abs(alpha)) * arrowHeight / 2;
+        console.log('final left', left, alpha, arrowHeight, Math.tan(alpha), Math.tan(alpha) * arrowHeight / 2);
         console.log('final top', Math.min(sourceDims.centerY, targetDims.centerY) - containerTop, containerTop);
         top = Math.min(sourceDims.centerY, targetDims.centerY) - containerTop;
         height = arrowHeight;
@@ -2094,6 +2094,7 @@
       this.currentTurn = 0;
       this.currentActionInTurn = 0;
       this.turnLog = '';
+      this.cardUtils = window['parseCardsText'];
     }
 
     ReplayPlayer.prototype.init = function() {
@@ -2108,7 +2109,6 @@
       this.startTimestamp = null;
       this.currentReplayTime = 200;
       this.started = false;
-      this.cardUtils = window['parseCardsText'];
       this.parser.parse(this);
       this.finalizeInit();
       return this.goNextAction();
@@ -2124,6 +2124,7 @@
     };
 
     ReplayPlayer.prototype.goNextAction = function() {
+      console.log('clicked goNextAction', this.currentTurn, this.currentActionInTurn);
       this.newStep();
       this.turnLog = '';
       this.currentActionInTurn++;
@@ -2257,12 +2258,35 @@
     ReplayPlayer.prototype.moveTime = function(progression) {
       var target;
       target = this.getTotalLength() * progression * 1000;
-      return this.goToTimestamp(target);
+      return this.moveToTimestamp(target);
+    };
+
+    ReplayPlayer.prototype.moveToTimestamp = function(timestamp) {
+      var action, i, j, k, l, ref, ref1, ref2, turn;
+      this.newStep();
+      this.currentTurn = 0;
+      this.currentActionInTurn = 0;
+      for (i = k = 1, ref = this.turns.length; 1 <= ref ? k <= ref : k >= ref; i = 1 <= ref ? ++k : --k) {
+        turn = this.turns[i];
+        if (((ref1 = turn.actions) != null ? ref1.length : void 0) > 0 && (turn.actions[turn.actions.length - 1].timestamp - this.startTimestamp) * 1000 > timestamp) {
+          break;
+        }
+        this.currentTurn = i;
+        for (j = l = 1, ref2 = turn.actions.length; 1 <= ref2 ? l <= ref2 : l >= ref2; j = 1 <= ref2 ? ++l : --l) {
+          action = turn.actions[j];
+          if (!action || !action.timestamp || ((action != null ? action.timestamp : void 0) - this.startTimestamp) * 1000 > timestamp) {
+            break;
+          }
+          this.currentActionInTurn = j;
+        }
+      }
+      console.log('\t', timestamp, 1000 * (this.turns[this.currentTurn].actions[this.currentActionInTurn].timestamp - this.startTimestamp) + 1, this.startTimestamp);
+      return this.goToAction();
     };
 
     ReplayPlayer.prototype.goToTimestamp = function(timestamp) {
       if (timestamp < this.currentReplayTime) {
-        this.currentReplayTime = timestamp;
+        console.log('going back in time, resetting', timestamp, this.currentReplayTime);
         this.historyPosition = 0;
         this.init();
       }
@@ -2318,7 +2342,7 @@
     };
 
     ReplayPlayer.prototype.finalizeInit = function() {
-      var action, actionIndex, batch, command, currentPlayer, currentTurnNumber, dmg, entityTag, i, j, k, l, len, len1, len2, len3, len4, len5, m, n, o, p, playedCard, playerIndex, players, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, tag, tagValue, target, tempOpponent, turnNumber;
+      var action, actionIndex, batch, command, currentPlayer, currentTurnNumber, dmg, entityTag, i, j, k, l, len, len1, len2, len3, len4, len5, m, n, o, p, playedCard, playerIndex, players, ref, ref1, ref2, ref3, ref4, ref5, ref6, tag, tagValue, target, tempOpponent, turnNumber;
       this.goToTimestamp(this.currentReplayTime);
       this.update();
       players = [this.player, this.opponent];
@@ -2410,7 +2434,7 @@
                         turn: currentTurnNumber - 1,
                         index: actionIndex++,
                         timestamp: batch.timestamp,
-                        type: 'died ',
+                        type: ' died ',
                         owner: tag.entity,
                         initialCommand: command[1][0]
                       };
@@ -2418,7 +2442,11 @@
                     }
                   }
                 }
+                if (command[1][0].attributes.entity === '15') {
+                  console.log('considering entity 15', command[1][0], command[1][0].showEntity);
+                }
                 if (command[1].length > 0 && parseInt(command[1][0].attributes.target) > 0 && (command[1][0].attributes.type === '1' || !command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)) {
+                  console.log('considering attack', command[1][0]);
                   action = {
                     turn: currentTurnNumber - 1,
                     index: actionIndex++,
@@ -2432,13 +2460,13 @@
                   this.turns[currentTurnNumber].actions[actionIndex] = action;
                 }
                 if (command[1].length > 0 && command[1][0].attributes.type === '3') {
-                  if (parseInt((ref4 = command[1][0].parent) != null ? (ref5 = ref4.attributes) != null ? ref5.target : void 0 : void 0) <= 0) {
+                  if (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0) {
                     if (command[1][0].tags) {
                       dmg = 0;
                       target = void 0;
-                      ref6 = command[1][0].tags;
-                      for (o = 0, len4 = ref6.length; o < len4; o++) {
-                        tag = ref6[o];
+                      ref4 = command[1][0].tags;
+                      for (o = 0, len4 = ref4.length; o < len4; o++) {
+                        tag = ref4[o];
                         if (tag.tag === 'DAMAGE' && tag.value > 0) {
                           dmg = tag.value;
                           target = tag.entity;
@@ -2461,18 +2489,19 @@
                     }
                   }
                 }
-                if (command[1].length > 0 && command[1][0].showEntity && (command[1][0].attributes.type === '1' || !command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)) {
+                if (command[1].length > 0 && command[1][0].showEntity && (command[1][0].attributes.type === '1' || (command[1][0].attributes.type !== '3' && (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)))) {
+                  console.log('considering action for entity ' + command[1][0].showEntity.id, command[1][0].showEntity.tags, command[1][0]);
                   playedCard = -1;
-                  ref7 = command[1][0].showEntity.tags;
-                  for (entityTag in ref7) {
-                    tagValue = ref7[entityTag];
+                  ref5 = command[1][0].showEntity.tags;
+                  for (entityTag in ref5) {
+                    tagValue = ref5[entityTag];
                     if (entityTag === 'ZONE' && tagValue === 1) {
                       playedCard = command[1][0].showEntity.id;
                     }
                   }
-                  ref8 = command[1][0].tags;
-                  for (p = 0, len5 = ref8.length; p < len5; p++) {
-                    tag = ref8[p];
+                  ref6 = command[1][0].tags;
+                  for (p = 0, len5 = ref6.length; p < len5; p++) {
+                    tag = ref6[p];
                     if (tag.tag === 'ZONE' && tag.value === 1) {
                       playedCard = tag.entity;
                     }

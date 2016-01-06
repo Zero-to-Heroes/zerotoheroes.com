@@ -91,6 +91,7 @@
     __extends(Replay, _super);
 
     function Replay(props) {
+      this.onClickPause = __bind(this.onClickPause, this);
       this.onClickPlay = __bind(this.onClickPlay, this);
       this.goPreviousTurn = __bind(this.goPreviousTurn, this);
       this.goNextTurn = __bind(this.goNextTurn, this);
@@ -121,7 +122,7 @@
     };
 
     Replay.prototype.render = function() {
-      var allCards, bottom, replay, source, target, top;
+      var allCards, bottom, playButton, replay, source, target, top;
       replay = this.state.replay;
       if (replay.players.length === 2) {
         top = React.createElement("div", {
@@ -178,6 +179,16 @@
         source = this.findCard(allCards, replay.targetSource);
         target = this.findCard(allCards, replay.targetDestination);
       }
+      playButton = React.createElement(Button, {
+        "glyph": "play",
+        "onClick": this.onClickPlay
+      });
+      if (this.state.replay.speed > 0) {
+        playButton = React.createElement(Button, {
+          "glyph": "pause",
+          "onClick": this.onClickPause
+        });
+      }
       return React.createElement("div", {
         "className": "replay"
       }, React.createElement("div", {
@@ -193,7 +204,7 @@
       }), React.createElement(Button, {
         "glyph": "to-start",
         "onClick": this.goPreviousAction
-      }), React.createElement(Button, {
+      }), playButton, React.createElement(Button, {
         "glyph": "to-end",
         "onClick": this.goNextAction
       }), React.createElement(Button, {
@@ -201,7 +212,31 @@
         "onClick": this.goNextTurn
       })), React.createElement(Timeline, {
         "replay": replay
-      })), React.createElement(GameLog, {
+      }), React.createElement("div", {
+        "className": "playback-speed"
+      }, React.createElement("div", {
+        "className": "dropup"
+      }, React.createElement("button", {
+        "className": "btn btn-default dropdown-toggle ng-binding",
+        "type": "button",
+        "id": "dropdownMenu1",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "true"
+      }, " ", this.state.replay.speed, "x ", React.createElement("span", {
+        "className": "caret"
+      }), " "), React.createElement("ul", {
+        "className": "dropdown-menu",
+        "aria-labelledby": "dropdownMenu1"
+      }, React.createElement("li", null, React.createElement("a", {
+        "onClick": this.onClickChangeSpeed.bind(this, 1)
+      }, "1x")), React.createElement("li", null, React.createElement("a", {
+        "onClick": this.onClickChangeSpeed.bind(this, 2)
+      }, "2x")), React.createElement("li", null, React.createElement("a", {
+        "onClick": this.onClickChangeSpeed.bind(this, 4)
+      }, "4x")), React.createElement("li", null, React.createElement("a", {
+        "onClick": this.onClickChangeSpeed.bind(this, 8)
+      }, "8x")))))), React.createElement(GameLog, {
         "replay": replay
       }));
     };
@@ -232,7 +267,18 @@
 
     Replay.prototype.onClickPlay = function(e) {
       e.preventDefault();
-      this.state.replay.play();
+      this.state.replay.autoPlay();
+      return this.forceUpdate();
+    };
+
+    Replay.prototype.onClickPause = function(e) {
+      e.preventDefault();
+      this.state.replay.pause();
+      return this.forceUpdate();
+    };
+
+    Replay.prototype.onClickChangeSpeed = function(speed) {
+      this.state.replay.changeSpeed(speed);
       return this.forceUpdate();
     };
 
@@ -2321,8 +2367,10 @@ arguments[4][4][0].apply(exports,arguments)
       this.historyPosition = 0;
       this.lastBatch = null;
       this.startTimestamp = null;
+      this.frequency = 2000;
       this.currentReplayTime = 200;
       this.started = false;
+      this.speed = 0;
       this.parser.parse(this);
       this.finalizeInit();
       return this.goNextAction();
@@ -2333,8 +2381,33 @@ arguments[4][4][0].apply(exports,arguments)
       return this.started = true;
     };
 
-    ReplayPlayer.prototype.play = function() {
-      return this.goToTimestamp(this.currentReplayTime);
+    ReplayPlayer.prototype.autoPlay = function() {
+      console.log('playing, previous speed', this.previousSpeed);
+      this.speed = this.previousSpeed || 1;
+      console.log('speed', this.speed);
+      if (this.speed > 0) {
+        return this.interval = setInterval(((function(_this) {
+          return function() {
+            return _this.goNextAction();
+          };
+        })(this)), this.frequency / this.speed);
+      }
+    };
+
+    ReplayPlayer.prototype.pause = function() {
+      this.previousSpeed = this.speed;
+      this.speed = 0;
+      return clearInterval(this.interval);
+    };
+
+    ReplayPlayer.prototype.changeSpeed = function(speed) {
+      this.speed = speed;
+      clearInterval(this.interval);
+      return this.interval = setInterval(((function(_this) {
+        return function() {
+          return _this.goNextAction();
+        };
+      })(this)), this.frequency / this.speed);
     };
 
     ReplayPlayer.prototype.goNextAction = function() {

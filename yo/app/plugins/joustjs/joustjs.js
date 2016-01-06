@@ -483,8 +483,8 @@
 
     Card.prototype.render = function() {
       var art, cls, healthClass, locale, overlay, stats, style;
-      locale = window.localStorage.language ? window.localStorage.language : '';
-      art = "https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/" + locale + "/" + this.props.entity.cardID + ".png";
+      locale = window.localStorage.language && window.localStorage.language !== 'en' ? '/' + window.localStorage.language : '';
+      art = "https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards" + locale + "/" + this.props.entity.cardID + ".png";
       if (this.props.entity.cardID && !this.props.isHidden) {
         style = {
           background: "url(" + art + ") top left no-repeat",

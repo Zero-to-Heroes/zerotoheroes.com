@@ -51,71 +51,84 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$log.debug('initializing review');
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
-					$scope.review = data;
-					$scope.useVideo = $scope.review.key ? true : false;
+
+					// $scope.review = data;
+					$scope.useVideo = data.key ? true : false;
 					$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
 
-					Api.Tags.query({sport: $scope.review.sport.key}, 
+					Api.Tags.query({sport: data.sport.key}, 
 						function(data) {
 							$scope.allowedTags = data;
-							//$log.log('allowedTags set to', $scope.allowedTags);
 						}
 					);
 
 					// Update page description
 					if ($scope.config && $scope.config.isSport)  {
 						$rootScope.pageDescription = 'Get better at ' + $scope.config.displayName;
-						if ($scope.review.tags) {
-							$scope.review.tagValues = '';
+						if (data.tags) {
+							data.tagValues = '';
 							$rootScope.pageDescription += '. ';
-							angular.forEach($scope.review.tags, function(key) {
+							angular.forEach(data.tags, function(key) {
 								$rootScope.pageDescription += ' ' + key.text;
-								$scope.review.tagValues += ' ' + key.text;
-								key.sport = $scope.review.sport.key.toLowerCase();
+								data.tagValues += ' ' + key.text;
+								key.sport = data.sport.key.toLowerCase();
 							})
 						}
-						$rootScope.pageDescription += '. ' + $scope.review.text;
+						$rootScope.pageDescription += '. ' + data.text;
 						//$log.log('pageDescription in review.js', $rootScope.pageDescription);
 					}
 
 					// Init the canvas
-					if (!$scope.review.canvas) {
-						$scope.review.canvas = {};
+					if (!data.canvas) {
+						data.canvas = {};
 					}
 
 					// Initialize the plugins to replay different formats. Could be done only if necessary though
 					// TODO: make it clearner to decide if the review is to be played by the standard player or a custom one
 					// Controls default to the ones defined in scope
 					$scope.externalPlayer = undefined;
-					$log.debug('Deciding whether we need to use another player', $scope.review);
-					if ($scope.review.replay) {
+					$log.debug('Deciding whether we need to use another player', data);
+					$scope.pluginsReady = false;
+					if (data.replay) {
 						$scope.externalPlayer = true;
-						$timeout(function() {
-							$log.debug('loading replay file');
-							// Retrieve the XML replay file from s3
-							var replayUrl = ENV.videoStorageUrl + $scope.review.key;
-							$log.debug('Replay URL: ', replayUrl);
-							$.get(replayUrl, function(data) {
-								$scope.review.replayXml = data;
-								$log.debug('loaded xml', $scope.review.replayXml);
+						// $timeout(function() {
+						$log.debug('loading replay file');
+						// Retrieve the XML replay file from s3
+						var replayUrl = ENV.videoStorageUrl + data.key;
+						$log.debug('Replay URL: ', replayUrl);
+						$.get(replayUrl, function(data) {
+							data.replayXml = data;
+							$log.debug('loaded xml', data.replayXml);
 
-								// Init the external player
-								$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review);
-								$log.debug('externalPlayer', $scope.review.replay, $scope.externalPlayer);
-							})
-						});
+							// Init the external player
+							// TODO: use an event system
+							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data);
+							$scope.pluginsReady = true;
+							$log.debug('externalPlayer', data.replay, $scope.externalPlayer);
+						})
+						// });
+					}
+					else {
+						$scope.pluginsReady = true;
 					}
 
 					// $log.log('review loaded ', $scope.review)
 					// wait for review to be properly applied to child components
-					$timeout(function() {
-						$scope.updateVideoInformation($scope.review);
-					});
+					//$scope.review = data;
 
-					var fileLocation = ENV.videoStorageUrl + $scope.review.key;
-					$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: $scope.review.fileType}];
+					var fileLocation = ENV.videoStorageUrl + data.key;
+					$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
 					$scope.sources2 = []
 
+					$scope.$watch('pluginsReady', function (newVal, oldVal) {
+						// $log.debug('pluginsReady', newVal, oldVal);
+						if (newVal) {
+							$scope.review = data;
+							$timeout(function() {
+								$scope.updateVideoInformation(data);
+							});
+						}
+					});
 				}
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
@@ -125,6 +138,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				};
 			});
 		}
+
+		
 
 		//===============
 		// Video player
@@ -567,6 +582,17 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.parseText = function(comment) {
 			if (!comment) return '';
 
+			// Triggering the various plugins
+			if ($scope.plugins) {
+				// $log.debug('parsing text with plugins', $scope.plugins);
+				angular.forEach($scope.plugins, function(plugin) {
+					if (plugin) {
+						// $log.debug('executing plugin for text', plugin, prettyResult);
+						comment = SportsConfig.preProcessPlugin($scope, $scope.review, plugin, comment);
+					}
+				})
+			}
+
 			// Replacing timestamps
 			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
 			var linksToPrettify = result.match(timestampRegexLink);
@@ -582,9 +608,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// Triggering the various plugins
 			if ($scope.plugins) {
+				// $log.debug('parsing text with plugins', $scope.plugins);
 				angular.forEach($scope.plugins, function(plugin) {
-					if (plugin && !plugin.player) {
-						// $log.log('executing plugin for text', plugin, prettyResult);
+					if (plugin) {
+						// $log.debug('executing plugin for text', plugin, prettyResult);
 						prettyResult = SportsConfig.executePlugin($scope, $scope.review, plugin, prettyResult);
 					}
 				})

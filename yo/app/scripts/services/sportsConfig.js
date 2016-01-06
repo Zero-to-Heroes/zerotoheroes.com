@@ -113,13 +113,19 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			}
 
 		service.executePlugin = function(scope, review, plugin, target) {
-			//$log.log('Executing lpugin', plugin, target);
-			//var fn = $parse(plugin);
-			//return fn(scope, target);
-			// console.log('plguin', plugin);
-			if (!plugin || !plugin.name) return target;
+			// $log.debug('Executing lpugin', plugin, target);
+			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].execute) return target;
+			// $log.debug('\tFound plugin to execute')
 
 			return window[plugin.name].execute(review, target);
+		}
+
+		service.preProcessPlugin = function(scope, review, plugin, target) {
+			// $log.debug('Executing lpugin', plugin, target);
+			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].preProcess) return target;
+			// $log.debug('\tFound plugin to execute')
+
+			return window[plugin.name].preProcess(review, target);
 		}
 
 		service.attachPlugin = function(scope, plugin, element) {

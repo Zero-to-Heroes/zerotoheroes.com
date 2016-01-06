@@ -19,10 +19,12 @@ var parseCardsText = {
 				var cardName = match.substring(2, match.length - 2);
 				var card = parseCardsText.getCard(cardName);
 				if (card) {
-					var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
-					var localizedName = parseCardsText.localizeName(card, lang);
-					var localizedImage = parseCardsText.localizeImage(card, lang);
-					result = result.replace(match, '<a class="card ' + cssClass + '" data-template-url="plugins/parseCardsText/template.html" data-title="' + localizedImage + '" data-placement="auto left" data-container="body" bs-tooltip>' + localizedName + '</a>');
+					var link = parseCardsText.buildCardLink(card, lang);
+					// var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
+					// var localizedName = parseCardsText.localizeName(card, lang);
+					// var localizedImage = parseCardsText.localizeImage(card, lang);
+					// result = result.replace(match, '<a class="card ' + cssClass + '" data-template-url="plugins/parseCardsText/template.html" data-title="' + localizedImage + '" data-placement="auto left" data-container="body" bs-tooltip>' + localizedName + '</a>');
+					result = result.replace(match, link);
 				}
 			})
 		}
@@ -39,9 +41,27 @@ var parseCardsText = {
 		return result;
 	},
 
-	localizeName: function(card) {
+	buildCardLink: function(card, lang) {
 		if (!card) return ''
 			
+		lang = lang || parseCardsText.getLang();
+		var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
+		var localizedName = parseCardsText.localizeName(card, lang);
+		var localizedImage = parseCardsText.localizeImage(card, lang);
+
+		var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
+		var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + localizedImage + '\'>';
+		var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
+		var link = '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-container="body" data-animation="false">' + localizedName + '</span>';
+
+		setTimeout(function() {
+			$('[data-toggle="tooltip"]').tooltip()
+		}, 300)
+
+		return link;
+	},
+
+	getLang: function() {
 		var lang;
 		try {
 			lang = window.localStorage.language;
@@ -49,6 +69,13 @@ var parseCardsText = {
 		catch (e) {
 			lang = 'en';
 		}
+		return lang;
+	},
+
+	localizeName: function(card, lang) {
+		if (!card) return ''
+			
+		lang = lang || parseCardsText.getLang();
 		if (!lang) return card.name;
 		if (!card[lang]) return card.name;
 		return card[lang].name;

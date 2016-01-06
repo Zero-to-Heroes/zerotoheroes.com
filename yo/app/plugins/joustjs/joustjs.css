@@ -1542,7 +1542,7 @@
   top: auto;
   bottom: 50px;
 }
-.hearthstone #externalPlayer .card {
+.hearthstone #externalPlayer .game-card {
   width: 96px;
   height: 143px;
   background: url(../../image/cardback.jpg) top left no-repeat;
@@ -1613,43 +1613,43 @@
   height: 143px;
   top: -40px;
 }
-.hearthstone #externalPlayer .hand .card {
+.hearthstone #externalPlayer .hand .game-card {
   display: inline-block;
   top: 0;
   position: relative;
   margin-right: -30px;
   transition: transform 0.25s, top 0.5s;
 }
-.hearthstone #externalPlayer .hand .card:last-child {
+.hearthstone #externalPlayer .hand .game-card:last-child {
   margin-right: 0;
 }
 .hearthstone #externalPlayer .bottom .hand {
   top: auto;
   bottom: -40px;
 }
-.hearthstone #externalPlayer .bottom .hand > .card:hover {
+.hearthstone #externalPlayer .bottom .hand > .game-card:hover {
   top: -70px;
   transform: scale(1.5);
   transition: transform 0.5s, top 0.6s;
   z-index: 10;
 }
-.hearthstone #externalPlayer .hand .card.animate-enter {
+.hearthstone #externalPlayer .hand .game-card.animate-enter {
   opacity: 0.1;
   transform: translateX(30px);
   margin-left: -30px;
 }
-.hearthstone #externalPlayer .hand .card.animate-enter-active {
+.hearthstone #externalPlayer .hand .game-card.animate-enter-active {
   opacity: 1;
   transform: translateX(0);
   margin-left: 0;
   transition: opacity 0.5s, transform 0.7s, margin-left 0.7s;
 }
-.hearthstone #externalPlayer .hand .card.animate-leave {
+.hearthstone #externalPlayer .hand .game-card.animate-leave {
   opacity: 1;
   transform: translateY(0);
   margin-left: 0;
 }
-.hearthstone #externalPlayer .hand .card.animate-leave-active {
+.hearthstone #externalPlayer .hand .game-card.animate-leave-active {
   opacity: 0;
   transform: translateY(-40px);
   margin-left: -48px;
@@ -1689,7 +1689,7 @@
   width: 100%;
   z-index: 25;
 }
-.hearthstone #externalPlayer .mulligan .card {
+.hearthstone #externalPlayer .mulligan .game-card {
   display: inline-block;
   position: relative;
   margin-right: 20px;
@@ -1698,7 +1698,7 @@
   height: 156px;
   background-size: 112px auto;
 }
-.hearthstone #externalPlayer .mulligan .card:last-child {
+.hearthstone #externalPlayer .mulligan .game-card:last-child {
   margin-right: 0;
 }
 .hearthstone #externalPlayer .mulligan .card--unknown {
@@ -1712,7 +1712,7 @@
   height: 78px;
   top: 10px;
 }
-.hearthstone #externalPlayer .board .card {
+.hearthstone #externalPlayer .board .game-card {
   display: inline-block;
   margin-right: 10px;
   transition: transform 0.25s, top 0.5s;
@@ -1723,16 +1723,16 @@
   background-position: -32px -32px !important;
   border: none;
 }
-.hearthstone #externalPlayer .board .card:last-child {
+.hearthstone #externalPlayer .board .game-card:last-child {
   margin-right: 0;
 }
-.hearthstone #externalPlayer .board .card.card--taunt {
+.hearthstone #externalPlayer .board .game-card.card--taunt {
   border-top-left-radius: 25%;
   border-top-right-radius: 25%;
   border: 1px solid white;
   box-shadow: 0 0 3px 1px black;
 }
-.hearthstone #externalPlayer .board .card .overlay {
+.hearthstone #externalPlayer .board .game-card .overlay {
   opacity: 0.5;
   border-radius: 50%;
   position: relative;
@@ -1741,10 +1741,10 @@
   width: 110%;
   height: 110%;
 }
-.hearthstone #externalPlayer .board .card .overlay.divine-shield {
+.hearthstone #externalPlayer .board .game-card .overlay.divine-shield {
   background-color: #DEDEB4;
 }
-.hearthstone #externalPlayer .board .card .overlay.silenced {
+.hearthstone #externalPlayer .board .game-card .overlay.silenced {
   background-color: #DBB4DE;
 }
 .hearthstone #externalPlayer .top .board {
@@ -1757,7 +1757,7 @@
   text-align: center;
   position: relative;
 }
-.hearthstone #externalPlayer .hero .card {
+.hearthstone #externalPlayer .hero .game-card {
   display: inline-block;
   margin-right: 10px;
   transition: transform 0.25s, top 0.5s;
@@ -1767,7 +1767,7 @@
   background-size: 200% auto !important;
   background-position: -32px -30px !important;
 }
-.hearthstone #externalPlayer .hero .card:last-child {
+.hearthstone #externalPlayer .hero .game-card:last-child {
   margin-right: 0;
 }
 .hearthstone #externalPlayer .hero .power {
@@ -1830,14 +1830,14 @@
   top: auto;
   bottom: 50px;
 }
-.hearthstone #externalPlayer .play .card.playing-enter {
+.hearthstone #externalPlayer .play .game-card.playing-enter {
   opacity: 0.1;
 }
-.hearthstone #externalPlayer .play .card.playing-enter-active {
+.hearthstone #externalPlayer .play .game-card.playing-enter-active {
   opacity: 1;
   transition: opacity 1s;
 }
-.hearthstone #externalPlayer .play .card.playing-leave-active {
+.hearthstone #externalPlayer .play .game-card.playing-leave-active {
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -1876,11 +1876,15 @@
 .hearthstone #externalPlayer .game-log {
   display: block;
   border: none;
-  background: #DDB570 url(images/felt.png) 50% 50% repeat;
+  background: #5F3F21 50% 50% repeat;
+  /*DDB570*/
   height: 50px;
   padding-left: 50px;
   padding-top: 10px;
-  color: black;
+  color: white;
+}
+.hearthstone #externalPlayer .game-log .span {
+  margin-left: 5px;
 }
 .hearthstone #externalPlayer .replay__controls .playback-speed {
   display: table-cell;
@@ -1917,7 +1921,7 @@
   background: url(images/cardback.jpg) top left no-repeat;
   background-size: cover;
 }
-.hearthstone #externalPlayer .card {
+.hearthstone #externalPlayer .game-card {
   background: url(images/cardback.jpg) top left no-repeat;
   background-size: cover;
 }
@@ -1928,7 +1932,7 @@
   top: auto;
   bottom: -30px;
 }
-.hearthstone #externalPlayer .bottom .hand > .card:hover {
+.hearthstone #externalPlayer .bottom .hand > .game-card:hover {
   transform: translateY(-60px) scale(2);
 }
 .hearthstone #externalPlayer .scrubber {

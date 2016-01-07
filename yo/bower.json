@@ -43,8 +43,8 @@
     "angular-translate": "~2.8.1",
     "angular-translate-loader-url": "~2.8.1",
     "angular-translate-loader-static-files": "~2.8.1",
-    "angulartics": "~0.20",
-    "angulartics-google-analytics": "~0.1.2"
+    "angulartics": "1.0.2",
+    "angulartics-google-analytics": "0.1.4"
   },
   "overrides": {
     "sprintf": {
@@ -60,7 +60,7 @@
     "angular-resource": "~1.4.0",
     "angular": "1.4.x",
     "waypoints": "~2.0.3",
-    "angulartics": "~0.20",
-    "momentjs": "~2.9.0"
+    "momentjs": "~2.9.0",
+    "angulartics": "1.0.2"
   }
 }

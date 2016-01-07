@@ -36,8 +36,12 @@
 	margin-top: 0;
 }
 
+videogular vg-controls .controls-container {
+	width: calc(100% + 1px);
+}
+
 .videogular-container {
-		max-width: 900px;
+		/*max-width: 900px;*/
 		margin-left: auto;
 		margin-right: auto;
 }
@@ -347,6 +351,40 @@ videogular div.video-canvas-overlay-button a:hover,
 videogular div.video-canvas-overlay-button a:visited {
 		color: white;
 		text-decoration: none;
+}
+
+videogular video-wide-mode-button {
+		display: table-cell;
+		width: 50px;
+		vertical-align: middle;
+		text-align: center;
+		cursor: pointer;
+}
+
+videogular video-wide-mode-button a,
+videogular video-wide-mode-button a:hover,
+videogular video-wide-mode-button a:visited {
+		color: white;
+		text-decoration: none;
+}
+
+videogular div.video-wide-mode-button {
+		display: table-cell;
+		width: 50px;
+		vertical-align: middle;
+		text-align: center;
+		cursor: pointer;
+}
+
+videogular div.video-wide-mode-button a,
+videogular div.video-wide-mode-button a:hover,
+videogular div.video-wide-mode-button a:visited {
+		color: white;
+		text-decoration: none;
+}
+
+videogular div.video-wide-mode-button .glyphicon {
+	width: 100%;
 }
 
 .videogular-container videogular vg-time-display {

@@ -182,6 +182,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			previousVolume: 100,
 			canvasId: '',
 			canvasPlaying: false,
+			wideMode: false,
 			init: function() {
 				$log.debug('Init: restoring players to default config')
 				$scope.API.setVolume(1);

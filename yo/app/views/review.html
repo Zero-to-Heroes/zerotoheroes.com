@@ -1,6 +1,6 @@
 <view-title>{{review.title}} - {{review.tagValues}}</view-title>
 
-<div class="video-information col-md-5">
+<div class="video-information" ng-class="{'col-md-7': playerControls.wideMode, 'col-md-5': !playerControls.wideMode}">
 	<div class="background-white contextual-information">
 		<span class="close" ng-click="hideContextualInfo()">&times;</span>
 		<div class="content"></div>
@@ -29,6 +29,7 @@
 						<vg-volume-bar></vg-volume-bar>
 					</vg-volume>
 					<vg-fullscreen-button></vg-fullscreen-button>
+					<video-wide-mode-button></video-wide-mode-button>
 				</vg-controls>
 
 				<div class="second-player-container"  ng-class="playerControls.secondPlayerContainerClass" ng-show="playerControls.mode == 2">
@@ -112,7 +113,7 @@
 	</div>
 </div>
 
-<div class="video-comment col-md-7" ng-class="pluginNames">
+<div class="video-comment col-md-7 {{pluginNames.join(' ')}}" ng-class="playerControls.wideMode ? 'col-md-5' : 'col-md-7'">
 	<div class="background-white show-x">
 		<div class="background-container">
 			<div scrollable="{{useVideo}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">

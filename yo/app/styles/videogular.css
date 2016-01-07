@@ -420,3 +420,6 @@ videogular, [videogular] {
     display: none; }
 
 /*# sourceMappingURL=videogular.css.map */
+videogular vg-scrub-bar [role=slider] {
+	background-color: #676767;
+}

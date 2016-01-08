@@ -511,6 +511,11 @@
           "className": "overlay silenced"
         });
       }
+      if (this.props.entity.tags.FROZEN) {
+        overlay = React.createElement("div", {
+          "className": "overlay frozen"
+        });
+      }
       if (this.props.stats) {
         healthClass = "card__stats__health";
         if (this.props.entity.tags.DAMAGE > 0) {

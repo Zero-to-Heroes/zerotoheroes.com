@@ -1747,6 +1747,9 @@
 .hearthstone #externalPlayer .board .game-card .overlay.silenced {
   background-color: #DBB4DE;
 }
+.hearthstone #externalPlayer .board .game-card .overlay.frozen {
+  background-color: #66A8CE;
+}
 .hearthstone #externalPlayer .top .board {
   top: 210px;
 }

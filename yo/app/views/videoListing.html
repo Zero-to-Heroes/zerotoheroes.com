@@ -3,8 +3,8 @@
 <div class="background-white listing-view">
 	<section class="all-videos-header">
 		<h2 class="all-videos-headline">{{ 'global.listing.allVideos' | translate }}
-			<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed() && sport"><small title="{{ 'global.listing.unsubscribeTooltip' | translate }}">({{ 'global.listing.unsubscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true">)</span></small></a>
-			<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed() || !sport" title="{{ 'global.listing.subscribeTooltip' | translate }}"><small>({{ 'global.listing.subscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
+			<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed() && sport && User.isLoggedIn()"><small title="{{ 'global.listing.unsubscribeTooltip' | translate }}">({{ 'global.listing.unsubscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true">)</span></small></a>
+			<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed() || !sport || !User.isLoggedIn()" title="{{ 'global.listing.subscribeTooltip' | translate }}"><small>({{ 'global.listing.subscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
 		</h2>
 	</section>
 	<section class="search-section" ng-show="sport && sport != 'meta'">

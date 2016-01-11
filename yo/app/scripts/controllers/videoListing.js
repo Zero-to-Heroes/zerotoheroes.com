@@ -6,6 +6,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
 		$scope.pageNumber = parseInt($routeParams.pageNumber) || 1;
+		$scope.User = User
 		$scope.criteria = {
 			wantedTags: [],
 			unwantedTags: []

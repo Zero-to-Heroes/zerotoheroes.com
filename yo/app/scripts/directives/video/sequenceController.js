@@ -73,7 +73,7 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 
 				$scope.$watch('params.video1position', function (newVal, oldVal) {
 					$scope.params.secondPlayerContainerClass = '';
-					$scope.params.firstlayerControlsClass = '';
+					$scope.params.firstPlayerControlsClass = '';
 
 					if (newVal == 'l') {
 						$scope.params.firstPlayerClass = '';

@@ -114,26 +114,6 @@ module.exports = function (grunt) {
 	  }
 	},
 
-	// Make sure code styles are up to par and there are no obvious mistakes
-	// jshint: {
-	//   options: {
-	// 	jshintrc: '.jshintrc',
-	// 	reporter: require('jshint-stylish')
-	//   },
-	//   all: {
-	// 	src: [
-	// 	  'Gruntfile.js',
-	// 	  '<%= yeoman.app %>/scripts/**/*.js'
-	// 	]
-	//   },
-	//   test: {
-	// 	options: {
-	// 	  jshintrc: 'test/.jshintrc'
-	// 	},
-	// 	src: ['test/spec/**/*.js']
-	//   }
-	// },
-
 	// Empties folders to start fresh
 	clean: {
 	  dist: {
@@ -163,17 +143,6 @@ module.exports = function (grunt) {
 		}]
 	  }
 	},
-
-	/*less: {
-		development: {
-			options: {
-				paths: ['<%= yeoman.app %>/plugins/hsreplay']
-			},
-			files: {
-				'<%= yeoman.app %>/plugins/hsreplay/hsreplay.css': ['<%= yeoman.app %>/plugins/hsreplay/src/less/styles.less']
-			}
-		}
-	},*/
 
 	// Automatically inject Bower components into the app
 	wiredep: {
@@ -205,7 +174,7 @@ module.exports = function (grunt) {
 		flow: {
 		  html: {
 			steps: {
-			  js: ['concat'],
+			  js: ['concat', 'uglify'],
 			  css: ['cssmin']
 			},
 			post: {}
@@ -235,18 +204,6 @@ module.exports = function (grunt) {
 	//       ]
 	//     }
 	//   }
-	// },
-	/*uglify: {
-	  dist: {
-		files: {
-		  '<%= yeoman.dist %>/scripts/scripts.js': [
-			'<%= yeoman.dist %>/scripts/scripts.js'
-		  ]
-		}
-	  }
-	},*/
-	// concat: {
-	//   dist: {}
 	// },
 
 	imagemin: {
@@ -287,30 +244,6 @@ module.exports = function (grunt) {
 		  dest: '<%= yeoman.dist %>'
 		}]
 	  }
-	},
-
-	coffee: {
-		compile: {
-			expand: true,
-			cwd: '<%= yeoman.app %>/plugins/hsreplay',
-			src: ['**/*.coffee'],
-			dest: '<%= yeoman.app %>/plugins/hsreplay/joust',
-			ext: '.js'
-		}
-	},
-
-	cjsx: {
-		compile: {
-			expand: true,
-			cwd: '<%= yeoman.app %>/plugins/hsreplay',
-			src: ['**/*.cjsx'],
-			dest: '<%= yeoman.app %>/plugins/hsreplay/joust',
-			ext: '.js'
-		}
-	},
-
-	browserify: {
-		'<%= yeoman.app %>/plugins/hsreplay/hsreplay.js': ['<%= yeoman.app %>/plugins/hsreplay/hsreplay.src.js', '<%= yeoman.app %>/plugins/hsreplay/joust/**/*.js']
 	},
 
 	// ng-annotate tries to make the code safe for minification automatically
@@ -439,25 +372,24 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
 	if (target === 'dist') {
-	  //return grunt.task.run(['build', 'connect:dist:keepalive']);
 	  grunt.task.run([
-		'clean:dist',
-		'ngconstant:development',
-		'wiredep',
-		'useminPrepare',
-		'concurrent:dist',
-		'autoprefixer',
-		'concat',
-		'ngAnnotate',
-		'copy:dist',
-		'cdnify',
-		'cssmin',
-		'filerev',
-		'usemin',
-		//'imagemin',
-		'htmlmin',
-	  	'connect:dist:keepalive'
-	  ]);
+			'clean:dist',
+			'ngconstant:development',
+			'wiredep',
+			'useminPrepare',
+			'concurrent:dist',
+			'autoprefixer',
+			'concat',
+			'ngAnnotate',
+			'copy:dist',
+			'cdnify',
+			'uglify',
+			'cssmin',
+			'filerev',
+			'usemin',
+			'htmlmin',
+			'connect:dist:keepalive'
+	  	]);
 	}
 	else {
 		grunt.task.run([
@@ -472,25 +404,6 @@ module.exports = function (grunt) {
 	}
   });
 
-  grunt.registerTask('ui-only', 'Compile then start a connect web server without contacting the backend', function () {
-
-	grunt.task.run([
-	  'clean:server',
-	  'ngconstant:development',
-	  'wiredep',
-	  'concurrent:server',
-	  'autoprefixer',
-	  'processhtml',
-	  'connect:livereload',
-	  'watch'
-	]);
-  });
-
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-	grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-	grunt.task.run(['serve:' + target]);
-  });
-
   grunt.registerTask('test', [
 	'clean:server',
 	'concurrent:test',
@@ -499,7 +412,25 @@ module.exports = function (grunt) {
 	'karma'
   ]);
 
-  grunt.registerTask('build', [
+  	grunt.registerTask('build', [
+		'clean:dist',
+		'ngconstant:production',
+		'wiredep',
+		'useminPrepare',
+		'concurrent:dist',
+		'autoprefixer',
+		'concat',
+		'ngAnnotate',
+		'copy:dist',
+		'cdnify',
+		'uglify',
+		'cssmin',
+		'filerev',
+		'usemin',
+		'htmlmin'
+  	]);
+
+  grunt.registerTask('dbg', [
 	'clean:dist',
 	'ngconstant:production',
 	'wiredep',
@@ -507,18 +438,13 @@ module.exports = function (grunt) {
 	'concurrent:dist',
 	'autoprefixer',
 	'concat',
+	'uglify',
+	'cssmin',
+	'usemin',
 	'ngAnnotate',
 	'copy:dist',
-	'cdnify',
-	'cssmin',
 	'filerev',
-	'usemin',
-	//'imagemin',
 	'htmlmin'
-  ]);
-
-  grunt.registerTask('dbg', [
-	'wiredep'
   ]);
 
   grunt.registerTask('default', [

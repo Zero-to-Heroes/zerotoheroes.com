@@ -39,19 +39,17 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 				.anonymous()
 				.and()
 				.servletApi()
-				.and()
-				.headers()
+				// TODO: why was caching deactivated ?
+				// .and()
+				// .headers()
 				// http://docs.spring.io/spring-security/site/docs/current/reference/html/headers.html#headers-cache-control
 				// Could be useful to add selective cache control for only
 				// static resources
-				.cacheControl()
-				.and()
-				.authorizeRequests()
+				// .cacheControl()
+				.and().authorizeRequests()
 
 				// allow anonymous resource requests
-				.antMatchers("/")
-				.permitAll()
-				.antMatchers("/*")
+				.antMatchers("/").permitAll().antMatchers("/*")
 				.permitAll()
 				.antMatchers("/**/*")
 				.permitAll()

@@ -27,6 +27,36 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ "]"
 		+ "}",
 			fields =
+				"{"
+			+ 		"'id' : 1,"
+			+ 		"'title' : 1,"
+			+ 		"'author' : 1,"
+			+ 		"'reputation' : 1,"
+			+ 		"'totalComments' : 1,"
+			+ 		"'totalHelpfulComments' : 1,"
+			+ 		"'viewCount' : 1,"
+			+ 		"'thumbnail' : 1,"
+			+ 		"'language' : 1,"
+			+ 		"'tags' : 1,"
+			+ 		"'creationDate' : 1,"
+			+ 		"'sport' : 1,"
+			+ 		"'lastModifiedDate' : 1"
+			+ 	"}"
+	)
+	//@formatter:on
+	Page<Review> listReviews(String sportCriteria, List<Tag> wantedTags, List<Tag> unwantedTags, Pageable pageable);
+
+	//@formatter:off
+	//@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
+	@Query(value =
+		"{ $text : { $search : ?0 },"
+			+ "sport : ?1, "
+			+ "$and : ["
+			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $all : ?2 } } ] }, "
+			+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { tags : { $nin : ?3 } } ] }"
+			+ "]"
+		+ "}",
+		fields =
 			"{"
 		+ 		"'id' : 1,"
 		+ 		"'title' : 1,"
@@ -42,19 +72,6 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 		+ 		"'sport' : 1,"
 		+ 		"'lastModifiedDate' : 1"
 		+ 	"}"
-	)
-	//@formatter:on
-	Page<Review> listReviews(String sportCriteria, List<Tag> wantedTags, List<Tag> unwantedTags, Pageable pageable);
-
-	//@formatter:off
-	//@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
-	@Query("{ $text : { $search : ?0 },"
-			+ "sport : ?1, "
-			+ "$and : ["
-			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $all : ?2 } } ] }, "
-			+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { tags : { $nin : ?3 } } ] }"
-			+ "]"
-		+ "}"
 	)
 	//@formatter:on
 	Page<Review> listReviewsWithText(String text, String sportCriteria, List<Tag> wantedTags, List<Tag> unwantedTags,

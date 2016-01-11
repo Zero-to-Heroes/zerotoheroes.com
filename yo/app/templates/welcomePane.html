@@ -9,10 +9,10 @@
 	<div class="panel-body">
 		<section>
 			<h4 ng-show="engagement <= 1 && recommendedVideo">{{ 'global.welcome.gettingStarted' | translate }}</h4>
-			<p ng-show="engagement == 0 && recommendedVideo" translate="{{ 'global.welcome.videoSuggestion' | translate:'{sport: sport, recommendedVideo: recommendedVideo}' }}">
+			<p ng-show="engagement == 0 && recommendedVideo" translate="global.welcome.videoSuggestion" translate-value-sport="{{sport}}" translate-value-recommended-video="{{recommendedVideo}}">
 			</p>
-			<p ng-show="engagement == 1 && recommendedVideo" translate="{{ 'global.welcome.reviewSuggestion' | translate:'{sport: sport, recommendedVideo: recommendedVideo}' }}"></p>
-			<p ng-show="(engagement <= 1 && !User.isLoggedIn()) || (User.isLoggedIn() && engagement == 0)" translate="{{ 'global.welcome.newcomer' | translate:'{sport: sport}' }}"></p>
+			<p ng-show="engagement == 1 && recommendedVideo" translate="global.welcome.reviewSuggestion" translate-value-sport="{{sport}}" translate-value-recommended-video="{{recommendedVideo}}"></p>
+			<p ng-show="(engagement <= 1 && !User.isLoggedIn()) || (User.isLoggedIn() && engagement == 0)" translate="global.welcome.newcomer" translate-value-sport="{{sport}}"></p>
 		</section>
 
 		<section ng-show="!!lastActivities.length && lastActivities[0].type" >

@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$timeout', 
-	function(User, Api, $rootScope, $log, $modal, $timeout) {
+app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$timeout', '$translate', 
+	function(User, Api, $rootScope, $log, $modal, $timeout, $translate) {
 		return {
 			restrict: 'A',
 			replace: true,
@@ -65,8 +65,8 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 				});
 
 				$scope.$on('$routeChangeSuccess', function(next, current) { 
-					$scope.recommendVideo();
 					$scope.buildEngagement();
+					$scope.recommendVideo();
 					$scope.getLatestFeatures();
 					$scope.getLatestActivities();
 				});

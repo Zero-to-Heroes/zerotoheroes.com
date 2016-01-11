@@ -1,10 +1,15 @@
 .brand {
-	margin-top: -8px;
+  	margin-top: -8px;
   	font-size: 20px;
 }
 
-.navbar .logo {
-	width: 2em;
+.brand span {
+	position: relative;
+	top: -15px;
+}
+
+.navbar .brand:before {
+  content: url("/images/logo_small.png");
 }
 
 .navbar-nav .nameInput {

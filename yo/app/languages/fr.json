@@ -300,7 +300,7 @@
 			"latestActivity": "Dernières activités",
 			"latestFeatures": "Pendant que vous étiez absent...",
 			"latestFeaturesSubHeadline": "Nous avons continué à ajouter de nouvelles fonctionnalités depuis la dernière fois. Nous espérons que vous les apprécierez !",
-			"contactUs": "Un commentaire, ou une question ? <a href=\"/s/meta\">Dites-le nous !</a>",
+			"contactUs": "Un commentaire, ou une question ? <a href=\"/s/meta\">Dites-le nous</a> ! Ou par <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">email</a>",
 			"activities": {
 				"newReview": " a posté une nouvelle revue ",
 				"newComment": " a posté un nouveau commentaire sur ",

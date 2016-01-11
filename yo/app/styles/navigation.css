@@ -68,6 +68,11 @@ nav .alert {
   right: 0;
 }
 
+.navbar .blog {
+	float: right;
+	margin-right: 50px;
+}
+
 @media (max-width: 950px) {
 .navbar-collapse .nav > .divider-vertical {
     display: none;

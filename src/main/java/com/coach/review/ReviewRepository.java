@@ -19,12 +19,29 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 
 	//@formatter:off
 	//@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
-	@Query("{ sport : ?0, "
+	@Query(	value =
+		"{ sport : ?0, "
 			+ "$and : ["
 			+ "		{ $or : [ { $where : '?1 == null' }, { $where : '?1.length == 0' }, { tags : { $all : ?1 } } ] }, "
 			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $nin : ?2 } } ] }"
 			+ "]"
-		+ "}"
+		+ "}",
+			fields =
+			"{"
+		+ 		"'id' : 1,"
+		+ 		"'title' : 1,"
+		+ 		"'author' : 1,"
+		+ 		"'reputation' : 1,"
+		+ 		"'totalComments' : 1,"
+		+ 		"'totalHelpfulComments' : 1,"
+		+ 		"'viewCount' : 1,"
+		+ 		"'thumbnail' : 1,"
+		+ 		"'language' : 1,"
+		+ 		"'tags' : 1,"
+		+ 		"'creationDate' : 1,"
+		+ 		"'sport' : 1,"
+		+ 		"'lastModifiedDate' : 1"
+		+ 	"}"
 	)
 	//@formatter:on
 	Page<Review> listReviews(String sportCriteria, List<Tag> wantedTags, List<Tag> unwantedTags, Pageable pageable);

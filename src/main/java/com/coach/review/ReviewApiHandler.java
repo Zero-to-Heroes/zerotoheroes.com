@@ -143,8 +143,6 @@ public class ReviewApiHandler {
 		// tweak info about reputation
 		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);
 
-		// throw new IllegalArgumentException("Test");
-
 		return new ResponseEntity<ListReviewResponse>(response, HttpStatus.OK);
 	}
 
@@ -549,19 +547,9 @@ public class ReviewApiHandler {
 		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/admin/updateAllReviewText", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<Review> updateAllReviewText() {
-		List<Review> reviews = reviewRepo.findAll();
-		for (Review review : reviews) {
-			review.updateFullTextSearch();
-		}
-		reviewRepo.save(reviews);
-
-		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);
-	}
-
 	private void updateReview(Review review) {
 		review.updateFullTextSearch();
+		review.updateCommentsCount();
 		mongoTemplate.save(review);
 	}
 

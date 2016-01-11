@@ -16,6 +16,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -36,6 +37,7 @@ import com.github.slugify.Slugify;
 @NoArgsConstructor
 @ToString(exclude = { "comments", "canvas" })
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Slf4j
 public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
@@ -81,6 +83,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private String authorFrame;
 	private int beginning, ending;
 	private List<Comment> comments;
+	private int totalComments, totalHelpfulComments;
 	private boolean transcodingDone;
 	private float videoFramerateRatio;
 	private Map<String, String> reviewVideoMap = new HashMap<>();
@@ -304,6 +307,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			return new Slugify().slugify(getTitle());
 		}
 		catch (IOException e) {
+			log.warn("Couldn't slugify title " + getTitle() + ", " + title, e);
 			return getTitle();
 		}
 	}
@@ -340,5 +344,21 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		}
 
 		return false;
+	}
+
+	public void updateCommentsCount() {
+		totalComments = 0;
+		totalHelpfulComments = 0;
+		if (comments == null || comments.isEmpty()) return;
+
+		for (Comment comment : comments) {
+			totalComments++;
+			if (comment.isHelpful()) totalHelpfulComments++;
+
+			comment.updateCommentsCount();
+			totalComments += comment.getTotalComments();
+			totalHelpfulComments += comment.getTotalHelpfulComments();
+
+		}
 	}
 }

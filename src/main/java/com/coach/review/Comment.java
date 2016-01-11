@@ -34,6 +34,7 @@ public class Comment implements HasText, HasReputation {
 	private Date creationDate;
 	private boolean helpful;
 	private List<Comment> comments;
+	private int totalComments, totalHelpfulComments;
 	private Reputation reputation;
 
 	// The canvas that have been drawn for this comment, and that need to be
@@ -156,5 +157,21 @@ public class Comment implements HasText, HasReputation {
 			fullText += " " + comment.getFullText();
 		}
 		return fullText;
+	}
+
+	public void updateCommentsCount() {
+		totalComments = 0;
+		totalHelpfulComments = 0;
+		if (comments == null || comments.isEmpty()) return;
+
+		for (Comment comment : comments) {
+			totalComments++;
+			if (comment.isHelpful()) totalHelpfulComments++;
+
+			comment.updateCommentsCount();
+			totalComments += comment.getTotalComments();
+			totalHelpfulComments += comment.getTotalHelpfulComments();
+
+		}
 	}
 }

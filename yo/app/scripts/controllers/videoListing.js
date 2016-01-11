@@ -83,8 +83,8 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				for (var i = 0; i < data.reviews.length; i++) {
 					$scope.videos.push(data.reviews[i]);
 
-					$scope.countVideoComments(data.reviews[i]);
-					$scope.hasHelpfulComments(data.reviews[i]);
+					// $scope.countVideoComments(data.reviews[i]);
+					// $scope.hasHelpfulComments(data.reviews[i]);
 
 					if (data.reviews[i].tags) {
 						data.reviews[i].tags.forEach(function(tag) {
@@ -177,43 +177,43 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			return url;
 		}
 
-		$scope.countVideoComments = function(video) {
-			//$log.log('counting comments for video', video);
-			video.totalComments = 0;
-			video.totalHelpful = 0;
-			if (!video.comments) return;
-			$scope.countComments(video, video.comments);
-		}
+		// $scope.countVideoComments = function(video) {
+		// 	//$log.log('counting comments for video', video);
+		// 	video.totalComments = 0;
+		// 	video.totalHelpful = 0;
+		// 	if (!video.comments) return;
+		// 	$scope.countComments(video, video.comments);
+		// }
 
-		$scope.countComments = function(video, comments) {
-			//$log.log('counting comments for comments', comments);
-			if (!comments) return;
+		// $scope.countComments = function(video, comments) {
+		// 	//$log.log('counting comments for comments', comments);
+		// 	if (!comments) return;
 
-			angular.forEach(comments, function(comment) {
-				video.totalComments++;
-				if (comment.helpful) {
-					video.totalHelpful++;
-				}
-				$scope.countComments(video, comment.comments);
-			})
-		}
+		// 	angular.forEach(comments, function(comment) {
+		// 		video.totalComments++;
+		// 		if (comment.helpful) {
+		// 			video.totalHelpful++;
+		// 		}
+		// 		$scope.countComments(video, comment.comments);
+		// 	})
+		// }
 
-		$scope.hasHelpfulComments = function(video) {
-			//$log.log('counting comments for video', video);
-			video.hasHelpfulComments = false;
-			if (!video.comments) return;
-			$scope.isHelpfulComment(video, video.comments);
-		}
+		// $scope.hasHelpfulComments = function(video) {
+		// 	//$log.log('counting comments for video', video);
+		// 	video.hasHelpfulComments = false;
+		// 	if (!video.comments) return;
+		// 	$scope.isHelpfulComment(video, video.comments);
+		// }
 
-		$scope.isHelpfulComment = function(video, comments) {
-			//$log.log('counting comments for comments', comments);
-			if (!comments) return;
+		// $scope.isHelpfulComment = function(video, comments) {
+		// 	//$log.log('counting comments for comments', comments);
+		// 	if (!comments) return;
 
-			angular.forEach(comments, function(comment) {
-				video.hasHelpfulComments = video.hasHelpfulComments || comment.helpful;
-				$scope.isHelpfulComment(video, comment.comments);
-			})
-		}
+		// 	angular.forEach(comments, function(comment) {
+		// 		video.hasHelpfulComments = video.hasHelpfulComments || comment.helpful;
+		// 		$scope.isHelpfulComment(video, comment.comments);
+		// 	})
+		// }
 
 		$scope.getRange = function() {
 			var pages = [];

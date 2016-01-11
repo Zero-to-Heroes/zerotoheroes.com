@@ -488,7 +488,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.updateDescription = function() {
-			$log.log('')
 			$scope.prepareCanvasForUpload($scope.review, $scope.review);
 			var newReview = {
 				text: $scope.review.text,

@@ -949,13 +949,15 @@
 
 },{"../../../../subscription":30,"react":580}],14:[function(_dereq_,module,exports){
 (function() {
-  var Card, Mulligan, React, subscribe, _,
+  var Card, Mulligan, React, ReactCSSTransitionGroup, subscribe, _,
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   React = _dereq_('react');
 
   Card = _dereq_('./card');
+
+  ReactCSSTransitionGroup = _dereq_('react-addons-css-transition-group');
 
   _ = _dereq_('lodash');
 
@@ -995,8 +997,12 @@
           });
         };
       })(this));
-      return React.createElement("div", {
-        "className": "mulligan"
+      return React.createElement(ReactCSSTransitionGroup, {
+        "component": "div",
+        "className": "mulligan",
+        "transitionName": "animate",
+        "transitionEnterTimeout": 700.,
+        "transitionLeaveTimeout": 700.
       }, cards);
     };
 
@@ -1008,7 +1014,7 @@
 
 }).call(this);
 
-},{"../../../../subscription":30,"./card":6,"lodash":145,"react":580}],15:[function(_dereq_,module,exports){
+},{"../../../../subscription":30,"./card":6,"lodash":145,"react":580,"react-addons-css-transition-group":146}],15:[function(_dereq_,module,exports){
 (function() {
   var Card, Play, React, ReactCSSTransitionGroup, SubscriptionList, zones, _;
 

@@ -1695,7 +1695,7 @@
   margin-right: 20px;
   transition: transform 0.25s, top 0.5s;
   width: 112px;
-  height: 156px;
+  height: 160px;
   background-size: 112px auto;
 }
 .hearthstone #externalPlayer .mulligan .game-card:last-child {
@@ -1703,6 +1703,10 @@
 }
 .hearthstone #externalPlayer .mulligan .card--unknown {
   background-size: 89px auto;
+}
+.hearthstone #externalPlayer .bottom .mulligan > .game-card:hover {
+  transform: scale(2) translateY(-50px);
+  transition: transform 0.5s;
 }
 .hearthstone #externalPlayer .board {
   text-align: center;

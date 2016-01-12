@@ -2361,9 +2361,6 @@ arguments[4][4][0].apply(exports,arguments)
       this.parser = parser;
       EventEmitter.call(this);
       window.replay = this;
-      this.turns = {
-        length: 0
-      };
       this.currentTurn = 0;
       this.currentActionInTurn = 0;
       this.turnLog = '';
@@ -2383,6 +2380,9 @@ arguments[4][4][0].apply(exports,arguments)
       this.currentReplayTime = 200;
       this.started = false;
       this.speed = 0;
+      this.turns = {
+        length: 0
+      };
       this.parser.parse(this);
       this.finalizeInit();
       this.goNextAction();

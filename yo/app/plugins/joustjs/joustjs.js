@@ -2598,7 +2598,7 @@ arguments[4][4][0].apply(exports,arguments)
 
     ReplayPlayer.prototype.moveTime = function(progression) {
       var target;
-      target = this.getTotalLength() * progression * 1000;
+      target = this.getTotalLength() * progression;
       return this.moveToTimestamp(target);
     };
 
@@ -3253,6 +3253,7 @@ var joustjs = {
 		var time = timestamp.match(timestampOnlyRegex)[0];
 		var timeComponents = time.split(':');
 		var secs = parseInt(timeComponents[0]) * 60 + parseInt(timeComponents[1]);
+		console.log('going to timestamp', secs, timestamp)
 		window.replay.moveToTimestamp(secs);
 	}
 

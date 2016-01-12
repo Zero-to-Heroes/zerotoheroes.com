@@ -2488,8 +2488,10 @@ arguments[4][4][0].apply(exports,arguments)
       this.currentTurn++;
       if (this.turns[this.currentTurn].turn === 'Mulligan') {
         this.turnLog = this.turns[this.currentTurn].turn;
+      } else if (this.turns[this.currentTurn].activePlayer === this.player) {
+        this.turnLog = 't' + Math.ceil(this.turns[this.currentTurn].turn / 2) + ': ' + this.turns[this.currentTurn].activePlayer.name;
       } else {
-        this.turnLog = 't' + this.turns[this.currentTurn].turn + ': ' + this.turns[this.currentTurn].activePlayer.name;
+        this.turnLog = 't' + Math.ceil(this.turns[this.currentTurn].turn / 2) + 'o: ' + this.turns[this.currentTurn].activePlayer.name;
       }
       targetTimestamp = this.getTotalLength() * 1000;
       if (this.currentTurn <= this.turns.length && this.turns[this.currentTurn].actions && this.turns[this.currentTurn].actions.length > 0) {
@@ -2605,20 +2607,48 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ReplayPlayer.prototype.replaceKeywordsWithTimestamp = function(text) {
-      var matches, mulliganRegex, roundRegex, that, turnRegex;
+      var matches, mulliganRegex, opoonentTurnRegex, roundRegex, that, turnRegex;
       turnRegex = /(t|T)\d?\d(:|\s|,|\.)/gm;
+      opoonentTurnRegex = /(t|T)\d?\do(:|\s|,|\.)/gm;
       mulliganRegex = /(m|M)ulligan(:|\s)/gm;
       roundRegex = /(r|R)\d?\d(:|\s|,|\.)/gm;
       that = this;
       matches = text.match(turnRegex);
-      console.log('turn matches', matches);
       if (matches && matches.length > 0) {
         matches.forEach(function(match) {
-          var formattedTimeStamp, timestamp, turn, turnNumber;
+          var formattedTimeStamp, inputTurnNumber, timestamp, turn, turnNumber;
           console.log('\tmatch', match);
-          turnNumber = parseInt(match.substring(1, match.length - 1));
-          console.log('\tturnNumber', turnNumber + 1);
-          turn = that.turns[turnNumber + 1];
+          inputTurnNumber = parseInt(match.substring(1, match.length - 1));
+          console.log('\tinputTurnNumber', inputTurnNumber);
+          if (that.turns[2].activePlayer === that.player) {
+            turnNumber = inputTurnNumber * 2;
+          } else {
+            turnNumber = inputTurnNumber * 2 + 1;
+          }
+          turn = that.turns[turnNumber];
+          console.log('\tturn', turn);
+          if (turn) {
+            timestamp = turn.timestamp + 1;
+            console.log('\ttimestamp', timestamp - that.startTimestamp);
+            formattedTimeStamp = that.formatTimeStamp(timestamp - that.startTimestamp);
+            console.log('\tformattedTimeStamp', formattedTimeStamp);
+            return text = text.replace(match, '<a ng-click="goToTimestamp(\'' + formattedTimeStamp + '\')" class="ng-scope">' + match + '</a>');
+          }
+        });
+      }
+      matches = text.match(opoonentTurnRegex);
+      if (matches && matches.length > 0) {
+        matches.forEach(function(match) {
+          var formattedTimeStamp, inputTurnNumber, timestamp, turn, turnNumber;
+          console.log('\tmatch', match);
+          inputTurnNumber = parseInt(match.substring(1, match.length - 1));
+          console.log('\tinputTurnNumber', inputTurnNumber);
+          if (that.turns[2].activePlayer === that.opponent) {
+            turnNumber = inputTurnNumber * 2;
+          } else {
+            turnNumber = inputTurnNumber * 2 + 1;
+          }
+          turn = that.turns[turnNumber];
           console.log('\tturn', turn);
           if (turn) {
             timestamp = turn.timestamp + 1;

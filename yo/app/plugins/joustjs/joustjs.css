@@ -1707,6 +1707,7 @@
 .hearthstone #externalPlayer .bottom .mulligan > .game-card:hover {
   transform: scale(2) translateY(-50px);
   transition: transform 0.5s;
+  z-index: 50;
 }
 .hearthstone #externalPlayer .board {
   text-align: center;

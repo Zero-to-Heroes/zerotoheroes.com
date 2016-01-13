@@ -941,7 +941,7 @@
     Mana.prototype.render = function() {
       return React.createElement("div", {
         "className": "mana"
-      }, this.props.entity.tags.RESOURCES_USED || 0, " \x2F ", this.props.entity.tags.RESOURCES || 0);
+      }, (this.props.entity.tags.RESOURCES || 0) - (this.props.entity.tags.RESOURCES_USED || 0), " \x2F ", this.props.entity.tags.RESOURCES || 0);
     };
 
     return Mana;

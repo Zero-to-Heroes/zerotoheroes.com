@@ -2468,12 +2468,16 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ReplayPlayer.prototype.goNextAction = function() {
+      console.log('clicked goNextAction', this.currentTurn, this.currentActionInTurn);
       this.newStep();
       this.turnLog = '';
       this.currentActionInTurn++;
+      console.log('goNextAction', this.turns[this.currentTurn], this.currentActionInTurn, this.turns[this.currentTurn] ? this.turns[this.currentTurn].actions : void 0);
       if (this.turns[this.currentTurn] && this.currentActionInTurn <= this.turns[this.currentTurn].actions.length - 1) {
+        console.log('going to next action', this.currentActionInTurn, this.turns[this.currentTurn].actions);
         return this.goToAction();
       } else {
+        console.log('going directly to next turn', this.currentTurn + 1);
         return this.goNextTurn();
       }
     };
@@ -2542,12 +2546,7 @@ arguments[4][4][0].apply(exports,arguments)
         this.turnLog = 't' + Math.ceil(this.turns[this.currentTurn].turn / 2) + 'o: ' + this.turns[this.currentTurn].activePlayer.name;
       }
       targetTimestamp = this.getTotalLength() * 1000;
-      if (this.currentTurn <= this.turns.length && this.turns[this.currentTurn].actions && this.turns[this.currentTurn].actions.length > 0) {
-        this.currentActionInTurn = 1;
-        targetTimestamp = 1000 * (this.turns[this.currentTurn].actions[this.currentActionInTurn].timestamp - this.startTimestamp) + 1;
-      } else {
-        targetTimestamp = 1000 * (this.turns[this.currentTurn].timestamp - this.startTimestamp) + 1;
-      }
+      targetTimestamp = 1000 * (this.turns[this.currentTurn].timestamp - this.startTimestamp) + 1;
       return this.goToTimestamp(targetTimestamp);
     };
 
@@ -2654,6 +2653,7 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ReplayPlayer.prototype.goToTimestamp = function(timestamp) {
+      console.log('going to timestamp', timestamp);
       if (timestamp < this.currentReplayTime) {
         this.historyPosition = 0;
         this.init();

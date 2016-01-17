@@ -111,7 +111,8 @@ videogular, [videogular] {
     max-height: 100%;
     position: absolute;
     z-index: 11;
-    top: 0; }
+    top: 0;
+    left: 0; }
   videogular vg-overlay-play .play:before, [videogular] vg-overlay-play .play:before {
     content: "\e000"; }
   videogular vg-overlay-play .overlayPlayContainer, [videogular] vg-overlay-play .overlayPlayContainer {

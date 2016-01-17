@@ -45,6 +45,12 @@
     border-color: #233a6e;
 }
 
+.hearthstone .alert-danger {
+    background-color: #9C2F22;
+    border: none;
+    color: #BDB5B5;
+}
+
 .hearthstone .panel:before {
     content: "";
     position: absolute;

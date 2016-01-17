@@ -1,0 +1,9 @@
+<div class="main-panel background-white upload-choice">
+	<h1>{{ 'global.upload.choice.title' | translate }}</h1>
+	<div class="content">
+		<div ng-repeat="uploadType in options.allowedUploads" class="upload-type">
+			<button class="btn btn-default btn-lg" ng-click="chooseType(uploadType)">{{ 'global.upload.choice.' + sport + '.' + uploadType | translate }}</button>
+			<span class="description">{{ 'global.upload.choice.' + sport + '.' + uploadType + '.description' | translate }}</span>
+		</div>
+	</div>
+</div>

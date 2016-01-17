@@ -6,12 +6,12 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 	return {
 			restrict: 'E',
 			transclude: true,
-			templateUrl: 'templates/video/uploadDirective.html',
+			templateUrl: 'templates/upload/uploadDirective.html',
 			link: function($scope, element, attrs) {
-				$log.debug('attributes', attrs);
-				$log.debug('callback function', attrs['callback']);
+				//$log.debug('attributes', attrs);
+				//$log.debug('callback function', attrs['callback']);
 				$scope.callback = $parse(attrs.callback);
-				$log.debug('evaluated callback function', $scope.callback);
+				// $log.debug('evaluated callback function', $scope.callback);
 			},
 			controller: function($scope) {
 
@@ -55,7 +55,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 				$scope.plugins = [];
 				if ($scope.tempPlugins) {
 					angular.forEach($scope.tempPlugins, function(plugin) {
-						$log.debug('Prepating to load plugin in upload.js');
+						// $log.debug('Prepating to load plugin in upload.js');
 						SportsConfig.loadPlugin($scope.plugins, plugin);
 					})
 				}
@@ -78,9 +78,9 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					}
 
 					if ($scope.initTags) {
-						$log.debug('before init tags in upload directive', $scope.review);
+						// $log.debug('before init tags in upload directive', $scope.review);
 						$scope.initTags($scope.review);
-						$log.debug('init tags in upload directive', $scope.review);
+						// $log.debug('init tags in upload directive', $scope.review);
 					}
 					//$log.log('sport', $scope.sport);
 					//$log.log('review.sport', $scope.review.sport);
@@ -107,7 +107,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 				$scope.updateSourceWithFile = function(fileObj) {
 					$scope.useFile = true;
 					$scope.hasUnsupportedFormatError = false;
-					$log.log('new file selected', fileObj);
+					// $log.log('new file selected', fileObj);
 
 					var type = fileObj.type;
 
@@ -116,10 +116,10 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					// Add supported types based on sports plugins
 					var additionalTypes = SportsConfig.getAdditionalSupportedTypes($scope.sport);
 					additionalTypes.forEach(function(type) {
-						$log.debug('Adding type', type);
+						// $log.debug('Adding type', type);
 						supportedFileTypes.push(type);
 					})
-					$log.log('Supported types', supportedFileTypes);
+					// $log.log('Supported types', supportedFileTypes);
 
 					if (supportedFileTypes.indexOf(type) == -1) {
 						$scope.hasUnsupportedFormatError = true;
@@ -132,7 +132,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					$scope.temp = fileObj;
 
 					if (videoTypes.indexOf(type) != -1) {
-						$log.debug('Video format detected', type);
+						// $log.debug('Video format detected', type);
 						// Hack for mkv, not supported properly by videogular
 						if (type  == 'video/x-matroska') {
 							//$log.log('hacking type');
@@ -143,7 +143,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 						];
 					}
 					else {
-						$log.debug('Non video format detected, masking video player', type);
+						// $log.debug('Non video format detected, masking video player', type);
 						$scope.useVideo = false;
 						$scope.review.replay = true;
 					}

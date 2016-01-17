@@ -1,0 +1,37 @@
+.upload-choice {
+	text-align: center;
+	padding-bottom: 100px;
+}
+
+.upload-choice h1 {
+	padding-top: 30px;
+	margin-bottom: 40px;
+}
+
+.upload-choice .content {
+	display: table;
+	table-layout: fixed;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.upload-choice .upload-type {
+	margin-left: 15px;
+	margin-right: 15px;
+	display: table-cell;
+	vertical-align: top;
+	width: 300px;
+	padding: 15px;
+}
+
+.upload-choice .upload-type button {
+	width: 200px;
+	height: 120px;
+	display: block;
+	margin: auto;
+}
+
+.upload-choice .upload-type .description {
+	display: inline-block;
+	margin-top: 30px;
+}

@@ -263,7 +263,7 @@
 		},
 		"upload": {
 			"chooseFileButton": "Choisissez votre vidéo",
-			"invalidFormatMessage": "Nous sommes désolés, nous ne supportons que les vidéos au format .mp4, .ogg, .mkv and .webm et ne supportons pas d'autres types de fichiers pour l'instant. La raison principale en est que nous ne pouvons offrir nos fonctionalités les plus avancées si nous devons utiliser un lecteur Flash, qui est indispensable pour certains formats de fichiers.",
+			"invalidFormatMessage": "Nous sommes désolés, nous ne supportons que les vidéos au format .mp4, .ogg, .mkv and .webm. Nous ne pouvons offrir nos fonctionalités les plus avancées si nous devons utiliser un lecteur Flash, qui est indispensable pour certains formats de fichiers.",
 			"clipDurationText": "Durée du clip : ",
 			"doubleSpeedLink": "Doubler la vitesse",
 			"doubleSpeedText": " de la vidéo",

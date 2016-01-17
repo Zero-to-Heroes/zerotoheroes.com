@@ -1,7 +1,27 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 'SportsConfig', 'Localization', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse, SportsConfig, Localization) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', '$log', 'SportsConfig', '$location', '$routeParams', 
+	function($scope, Api, $log, SportsConfig, $location, $routeParams) {
+
+		$scope.state = {
+			uploadType: undefined,
+			allowedUploads: SportsConfig[$scope.sport].allowedUploads
+		}
+		$scope.videoInfo = {}
+
+		// Take care of the defaults - if the sport has no special configuration, we go to the video upload by default
+		if (!$scope.state.allowedUploads && !$routeParams['uploadType']) {
+			$scope.state.uploadType = 'video'
+			// TODO: Update route params
+			var path = $location.path() + '/' + $scope.state.uploadType
+			$log.debug('going to', path)
+			$location.path(path)
+		}
+
+		// Now handle the various upload types
+		$scope.state.uploadType = $routeParams['uploadType']
+		$log.debug('uploadType', $scope.state.uploadType, $routeParams)
+
 
 		$scope.onUploadComplete = function(review) {
 			$log.debug('callback for review', review);

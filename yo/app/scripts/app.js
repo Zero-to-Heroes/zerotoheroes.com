@@ -90,10 +90,11 @@ app.config(['$routeProvider', '$locationProvider',
 			// controller: 'UploadDetailsCtrl',
 			// upload: true
 	  // 	}).
-	  	when('/s/:sport/upload', {
+	  	when('/s/:sport/upload/:uploadType?', {
 			templateUrl: 'views/upload.html',
 			controller: 'UploadDetailsCtrl',
-			upload: true
+			upload: true,
+			hideSideBar: true
 	  	}).
 	  	when('/r/:sport/:reviewId/:reviewTitle?', {
 			templateUrl: 'views/review.html',

@@ -1715,6 +1715,7 @@
   color: red;
   line-height: 1.5em;
   text-align: center;
+  opacity: 0.5;
 }
 .hearthstone #externalPlayer .bottom .mulligan > .game-card:hover {
   transform: scale(2) translateY(-50px);

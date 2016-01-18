@@ -43,15 +43,14 @@ var parseCardsText = {
 
 	buildCardLink: function(card, lang) {
 		if (!card) return ''
-			
-		lang = lang || parseCardsText.getLang();
-		var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
-		var localizedName = parseCardsText.localizeName(card, lang);
-		var localizedImage = parseCardsText.localizeImage(card, lang);
 
+		lang = lang || parseCardsText.getLang();
+		var localizedName = parseCardsText.localizeName(card, lang);
+		var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
+
+		var localizedImage = parseCardsText.localizeImage(card, lang);
 		var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
 		var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + localizedImage + '\'>';
-		var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
 		var link = '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-container="body" data-animation="false">' + localizedName + '</span>';
 
 		setTimeout(function() {

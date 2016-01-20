@@ -2,4 +2,5 @@
 
 <upload-type-choice sport="sport" options="state" ng-show="!state.uploadType"></upload-type-choice>
 
-<upload-video-directive callback="onUploadComplete(review)" video-info="videoInfo" sport="sport" ng-show="state.uploadType == 'video'"></upload-video-directive>
+<upload-video-directive video-info="videoInfo" sport="sport" ng-show="state.uploadType == 'video' && !state.step"></upload-video-directive>
+<upload-video-review sport="sport" ng-show="state.uploadType == 'video' && state.step == 'review'"></upload-video-review>

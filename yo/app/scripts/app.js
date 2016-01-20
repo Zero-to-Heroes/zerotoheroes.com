@@ -90,7 +90,7 @@ app.config(['$routeProvider', '$locationProvider',
 			// controller: 'UploadDetailsCtrl',
 			// upload: true
 	  // 	}).
-	  	when('/s/:sport/upload/:uploadType?', {
+	  	when('/s/:sport/upload/:uploadType?/:step?', {
 			templateUrl: 'views/upload.html',
 			controller: 'UploadDetailsCtrl',
 			upload: true,

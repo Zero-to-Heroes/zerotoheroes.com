@@ -30,9 +30,7 @@
 		<link rel="stylesheet" href="styles/listing.css" />
 		<link rel="stylesheet" href="styles/review.css" />
 		<link rel="stylesheet" href="styles/navigation.css" />
-		<link rel="stylesheet" href="styles/upload.css" />
-		<link rel="stylesheet" href="styles/upload-choice.css" />
-		<link rel="stylesheet" href="styles/video-upload.css" />
+
 		<link rel="stylesheet" href="styles/components/drawing.css">
 		<link rel="stylesheet" href="styles/components/progress-bar.css" />
 		<link rel="stylesheet" href="styles/components/tables.css" />
@@ -41,6 +39,7 @@
 		<link rel="stylesheet" href="styles/components/help.css">
 		<link rel="stylesheet" href="styles/components/modal.css">
 		<link rel="stylesheet" href="styles/components/tags.css">
+		
 		<link rel="stylesheet" href="styles/modules/header.css" />
 		<link rel="stylesheet" href="styles/modules/choose-pro-popup.css" />
 		<link rel="stylesheet" href="styles/modules/comment.css" />
@@ -49,6 +48,10 @@
 		<link rel="stylesheet" href="styles/modules/reputation.css" />
 		<link rel="stylesheet" href="styles/modules/sequence.css" />
 		<link rel="stylesheet" href="styles/modules/welcome-page.css" />
+		<link rel="stylesheet" href="styles/modules/upload/upload.css" />
+		<link rel="stylesheet" href="styles/modules/upload/upload-choice.css" />
+		<link rel="stylesheet" href="styles/modules/upload/video-review-upload.css" />
+		<link rel="stylesheet" href="styles/modules/upload/video-upload.css" />
 
         <link href="styles/landing/style.css" rel="stylesheet" type="text/css">
         <link href="styles/landing/owl.carousel.css" rel="stylesheet" type="text/css">
@@ -185,6 +188,12 @@
 		<script src="scripts/directives/userHistory.js"></script>	
 		<script src="scripts/directives/welcomePane.js"></script>
 
+		<script src="scripts/directives/upload/uploadDirective.js"></script>
+		<script src="scripts/directives/upload/uploadProgress.js"></script>
+		<script src="scripts/directives/upload/uploadTypeChoice.js"></script>	
+		<script src="scripts/directives/upload/uploadVideoReview.js"></script>	
+		<script src="scripts/directives/upload/uploadVideoDirective.js"></script>
+
 		<script src="scripts/directives/video/reviewTagsInput.js"></script>
 		<script src="scripts/directives/video/sequenceController.js"></script>
 		<script src="scripts/directives/video/toolbar.js"></script>
@@ -199,14 +208,11 @@
 		<script src="scripts/directives/video/drawing/pwColorSelector.js"></script>
 		<script src="scripts/directives/video/drawing/videoCanvasOverlayButton.js"></script>
 
-		<script src="scripts/directives/upload/uploadDirective.js"></script>
-		<script src="scripts/directives/upload/uploadTypeChoice.js"></script>	
-		<script src="scripts/directives/upload/uploadVideoDirective.js"></script>
-
 		<script src="scripts/services/exceptionHandler.js"></script>
 		<script src="scripts/services/helpPopupConfig.js"></script>
 		<script src="scripts/services/localization.js"></script>
 		<script src="scripts/services/localStorage.js"></script>
+		<script src="scripts/services/mediaUploader.js"></script>
 		<script src="scripts/services/user.js"></script>
 		<script src="scripts/services/sportsConfig.js"></script>
 

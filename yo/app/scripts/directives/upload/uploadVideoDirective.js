@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadVideoDirective', ['FileUploader', '$log', 'SportsConfig', '$sce', '$timeout', 
-	function(FileUploader, $log, SportsConfig, $sce, $timeout) {
+app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$sce', '$timeout', '$parse', 'ENV', 
+	function(FileUploader, MediaUploader, $log, SportsConfig, $sce, $timeout, $parse, ENV) {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -17,7 +17,6 @@ app.directive('uploadVideoDirective', ['FileUploader', '$log', 'SportsConfig', '
 
 				$scope.maximumAllowedDuration = 5 * 60 + 1
 				$scope.sportsConfig = SportsConfig
-				$log.log('sport', $scope.sport, $scope.sportsConfig[$scope.sport.toLowerCase()].allowDoubleSpeed)
 
 				// We use it for nice out-of-the-box file features
 				$scope.buildUploader = function(sportsConfig) {
@@ -50,6 +49,10 @@ app.directive('uploadVideoDirective', ['FileUploader', '$log', 'SportsConfig', '
 					return uploader
 		        }
 
+
+				//===============
+				// Videogular
+				//===============
 		        $scope.onPlayerReady = function(API) {
 		        	$log.debug('setting API', API)
 					$scope.API = API
@@ -91,28 +94,32 @@ app.directive('uploadVideoDirective', ['FileUploader', '$log', 'SportsConfig', '
 				//===============
 				$scope.min = function(newValue) {
 					if (newValue && newValue != $scope.videoInfo.beginning) {
-						$scope.videoInfo.beginning = newValue;
-						$scope.updateTotalTime();
-						$scope.updateVideoPosition(newValue);
+						$scope.videoInfo.beginning = newValue
+						$log.debug('beginning', newValue)
+						$scope.updateTotalTime()
+						$scope.updateVideoPosition(newValue)
 					}
-					return $scope.videoInfo.beginning;
+					return $scope.videoInfo.beginning
 				};
 
 				$scope.max = function(newValue) {
 					if (newValue && newValue != $scope.videoInfo.ending) {
-						$scope.videoInfo.ending = newValue;
-						$scope.updateTotalTime();
-						$scope.updateVideoPosition(newValue);
+						$scope.videoInfo.ending = newValue
+						$scope.updateTotalTime()
+						$scope.updateVideoPosition(newValue)
 					}
-					return $scope.videoInfo.ending;
+					return $scope.videoInfo.ending
 				};
 				
 				$scope.updateVideoPosition = function(value) {
 					//$log.log('eseking time ' + value);
-					$scope.API.seekTime(value / 1000);
+					$scope.API.seekTime(value / 1000)
 				}
 
 
+				//===============
+				// File Uploader
+				//===============
 				// Proper support for removing the nv-file-over class when we're not over the target
 				FileUploader.FileDrop.prototype.onDragLeave = function(event) {
 		            if (event.currentTarget !== this.element[0]) return
@@ -136,11 +143,30 @@ app.directive('uploadVideoDirective', ['FileUploader', '$log', 'SportsConfig', '
 		        }
 
 
+				//===============
+				// Our own uploader component
+				//===============
+				$scope.initUpload = function() {
+					// Start the upload
+					var fileKey = ENV.folder + '/' + $scope.guid()
 
+					// And signal that our job here is done - let's give the control to the next step
+					$scope.videoInfo.upload = {}
+					$scope.videoInfo.upload.ongoing = true
 
-		        
-				
+					MediaUploader.upload($scope.file, fileKey, $scope.videoInfo)
+				}
+
+				$scope.guid = function() {
+				  	function s4() {
+						return Math.floor((1 + Math.random()) * 0x10000)
+					  		.toString(16)
+					  		.substring(1);
+				  	}
+				  	return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+						s4() + '-' + s4() + s4() + s4();
+				}				
 			}
-		};
+		}
 	}
 ]);

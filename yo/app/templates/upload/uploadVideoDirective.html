@@ -1,4 +1,4 @@
-<view-title>'global.upload.video.pageTitle'</view-title>
+<view-title>{{ 'global.upload.video.pageTitle' | translate }}</view-title>
 
 <div class="background-white video-upload" nv-file-drop uploader="uploader">
 
@@ -6,19 +6,19 @@
 
 	<!-- The controls to add a file -->
 	<span class="btn btn-default btn-file" ng-show="!file">
-		<span>{{ 'global.upload.chooseFileButton' | translate }}</span> 
+		<span>{{ 'global.upload.video.chooseFileButton' | translate }}</span> 
 		<input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" file analytics-on="click" analytics-category="upload" analytics-event="upload.chooseFile"></input>
 	</span>
 	<div class="well drop-zone" nv-file-over uploader="uploader" ng-show="!file">
-        or drop it here
+        {{ 'global.upload.video.dropZone' | translate }}
     </div>
     <span class="btn btn-default btn-file" ng-show="file" ng-click="clearFile()">
-    	Clear current video
+    	{{ 'global.upload.video.clearCurrentFile' | translate }}
     </span>
 
     <!-- The error message if an invalid file format is added. We can't show it during the drag and drop, because we don't know what's the file type being dragged -->
     <div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
-		<span>{{ 'global.upload.invalidFormatMessage' | translate }}</span>
+		<span>{{ 'global.upload.video.invalidFormatMessage' | translate }}</span>
 	</div>
 
 	<!-- The video player. At this stage we just want to prepare the file for upload, so we're only concerned with the raw video editing tools -->
@@ -30,7 +30,8 @@
 				<vg-play-pause-button></vg-play-pause-button>
 				<vg-time-display>{{ currentTime | date:'mm:ss:sss' }}</vg-time-display>
 				<vg-scrub-bar id="scrubBar" video-fine-time-control>
-					<vg-scrub-bar-current-time help-popup help-popup-key="fineScrolling" help-popup-active="0" help-popup-position="top"></vg-scrub-bar-current-time>
+                    <vg-scrub-bar-buffer></vg-scrub-bar-buffer>
+					<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 				</vg-scrub-bar>
 				<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
 				<video-playback-button></video-playback-button>
@@ -44,14 +45,31 @@
 		</videogular>
 	</div>
 
-	<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="videoInfo.ending > 0" show-values="true"></div>
+	<div class="row" ng-show="file">
+		<span class="slider-text">{{ 'global.upload.video.sliderLabel' | translate }}</span>
+		<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="videoInfo.ending > 0" show-values="true"></div>
+	</div>
+	<div class="row" ng-show="file && sportsConfig[sport.toLowerCase()].allowDoubleSpeed">
+		<span class="double-speed-text">{{ 'global.upload.video.doubleSpeedLabel' | translate }}</span>
+		<span class="block double-speed-link" ng-show="videoInfo.videoFramerateRatio && videoInfo.videoFramerateRatio == 1">
+			<a ng-click="videoInfo.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * videoInfo.videoFramerateRatio">{{ 'global.upload.video.doubleSpeedLink' | translate }}<span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.video.doubleSpeedExplanation' | translate }}" data-trigger="click" bs-tooltip></span></a>
+		</span>
+		<span class="block double-speed-link" ng-show="!videoInfo.videoFramerateRatio || videoInfo.videoFramerateRatio != 1">
+			<a ng-click="maximumAllowedDuration = maximumAllowedDuration / videoInfo.videoFramerateRatio; videoInfo.videoFramerateRatio = 1">{{ 'global.upload.video.normalSpeedLink' | translate }}<span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.video.restoreSpeedExplanation' | translate }}" data-trigger="click" bs-tooltip></span></a>
+		</span>
+	</div>
 
 	<!-- The messages that appear if the video is too long -->
 	<div class="alert alert-danger video-time-limit" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && !sportsConfig[sport.toLowerCase()].allowDoubleSpeed">
-		<span>{{ 'global.upload.videoTooLong1' | translate }} <span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.whyLimit' | translate }}" data-trigger="click" bs-tooltip></span></span>
+		<span>{{ 'global.upload.video.videoTooLong1' | translate }} <span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.video.whyLimit' | translate }}" data-trigger="click" bs-tooltip></span></span>
 	</div>
 	<div class="alert alert-danger video-time-limit" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[sport.toLowerCase()].allowDoubleSpeed">
-		<span>{{ 'global.upload.videoTooLong2' | translate }} <span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.whyLimit' | translate }}" data-trigger="click" bs-tooltip></span></span>
+		<span>{{ 'global.upload.video.videoTooLong2' | translate }} <span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.video.whyLimit' | translate }}" data-trigger="click" bs-tooltip></span></span>
+	</div>
+
+	<!-- Let's go! -->
+	<div class="upload-button">
+		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration" analytics-on="click" analytics-category="upload.video" analytics-event="upload.video.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
 	</div>
 
 </div>

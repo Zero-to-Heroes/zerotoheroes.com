@@ -48,3 +48,30 @@
 	margin-left: 182px;
 	margin-right: 255px;
 }
+
+.video-upload .row {
+	margin: 0;
+}
+
+.video-upload .slider-text {
+	float: left;
+	line-height: 50px;
+	margin-left: 50px;
+}
+
+.video-upload .double-speed-text {
+	float: left;
+	line-height: 50px;
+	margin-left: 50px;
+}
+
+.video-upload .double-speed-link {
+	line-height: 50px;
+	text-align: left;
+	text-indent: 20px;
+}
+
+.video-upload .upload-button {
+	text-align: right;
+	margin-right: 50px;
+}

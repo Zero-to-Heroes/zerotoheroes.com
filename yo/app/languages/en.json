@@ -260,6 +260,25 @@
 			"proNotified": "{{name}} has been notified of your request. They will get back to you soon. Stay tuned!"
 		},
 		"upload": {
+			"video": {
+				"pageTitle": "Upload a video",
+				"headline": "Upload a video",
+				"chooseFileButton": "Choose your video",
+				"dropZone": "or drop it here",
+				"clearCurrentFile": "Clear current video",
+				"invalidFormatMessage": "We're sorry, we only support .mp4, .ogg, .mkv and .webm video files. We can't provide our more advanced features if we have to rely on a Flash video player, which is mandatory for some file formats.",
+				"sliderLabel": "Select clip: ",
+				"doubleSpeedLabel": "Video speed control",
+				"doubleSpeedLink": "Double the speed of the video",
+				"doubleSpeedExplanation": "When you double the video speed, the final video will be twice as fast (and twice as short) as the original, meaning you can use a video that is twice as long. You should use that if the general pace is slow enough to still be able to follow what happens",
+				"normalSpeedLink": "Restore video to normal speed",
+				"restoreSpeedExplanation": "Reset the video to its original speed",
+				"whyLimit": "Our goal is to keep the analysis as focused as possible - this will make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos",
+				"videoTooLong1": "The video clip selected is too long. Please keep it at 5 minutes max using the slider above",
+				"videoTooLong2": "The video clip selected is too long. Please keep it at 5 minutes max using the slider or by doubling its speed above",
+				"automatedUpload": "The video will be automatically submitted once the file upload is completed (you can still edit it afterwards if you're logged in). Just sit down and relax :)",
+				"confirmUploadButton": "Finalize upload"
+			},
 			"chooseFileButton": "Choose your video",
 			"invalidFormatMessage": "We're sorry, we only support .mp4, .ogg, .mkv and .webm video files. We can't provide our more advanced features if we have to rely on a Flash video player, which is mandatory for some file formats.",
 			"clipDurationText": "Clip Duration: ",

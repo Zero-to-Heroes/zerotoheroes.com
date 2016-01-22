@@ -1,6 +1,7 @@
 .upload-choice {
 	text-align: center;
 	padding-bottom: 100px;
+	max-width: 1100px;
 }
 
 .upload-choice h1 {
@@ -34,4 +35,25 @@
 .upload-choice .upload-type .description {
 	display: inline-block;
 	margin-top: 30px;
+}
+
+.upload-choice .upload-type .btn:before {
+	position: relative;
+	top: 1px;
+	display: block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	line-height: 1;
+	margin-bottom: 10px;
+	-webkit-font-smoothing: antialiased;
+}
+
+.upload-choice .upload-type .video:before {
+	content: "\e072";
+}
+
+.upload-choice .upload-type .replay:before {
+	content: "\e211";
 }

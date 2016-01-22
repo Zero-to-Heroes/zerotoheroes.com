@@ -8,19 +8,20 @@ app.directive('uploadProgress', ['MediaUploader', '$log',
 			transclude: true,
 			templateUrl: 'templates/upload/uploadProgress.html',
 			scope: {
-				
+				sport: '=',
+				type: '='
 			},
 			link: function($scope, element, attrs) {
 			},
 			controller: function($scope) {
 
-				$log.debug('Displaying review upload page', MediaUploader)
+				$log.debug('Progress upload', $scope.sport, $scope.type)
 				$scope.uploader = MediaUploader
 
 				$scope.progressCallback = function() {
 					$scope.$digest()
 				}
-				$scope.uploader.progressCallback = $scope.progressCallback
+				$scope.uploader.addCallback('upload-progress', $scope.progressCallback)
 			}
 		}
 	}

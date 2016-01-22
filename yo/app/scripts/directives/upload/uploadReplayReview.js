@@ -1,12 +1,12 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$sce', '$timeout', 'User', 'Api', '$location', '$rootScope', 'Localization', '$parse', 
-	function(MediaUploader, $log, SportsConfig, $sce, $timeout, User, Api, $location, $rootScope, Localization, $parse) {
+app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$timeout', 'User', 'Api', '$location', '$rootScope', 'Localization', '$parse', 'ENV', 
+	function(MediaUploader, $log, SportsConfig, $timeout, User, Api, $location, $rootScope, Localization, $parse, ENV) {
 		return {
 			restrict: 'E',
 			transclude: true,
-			templateUrl: 'templates/upload/uploadVideoReview.html',
+			templateUrl: 'templates/upload/uploadReplayReview.html',
 			scope: {
 				sport: '=',
 				active: '='
@@ -14,7 +14,6 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 			link: function($scope, element, attrs) {
 			},
 			controller: function($scope) {
-				$log.debug('Displaying review upload page', MediaUploader)
 
 				$scope.User = User
 				$scope.uploader = MediaUploader
@@ -23,6 +22,7 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				$scope.review = {
 					canvas: {},
 					tags: [],
+					replay: true,
 					strSport: $scope.sport,
 					transcodingDone: false,
 					language: Localization.getLanguage()
@@ -30,45 +30,32 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				
 
 				//===============
-				// Videogular
+				// Init review data
 				//===============
-		        $scope.onPlayerReady = function(API) {
-					$scope.API = API
-					$scope.API.setVolume(1)
-
+				$scope.initReviewData = function() {
 					if (MediaUploader.videoInfo) {
 						var file = MediaUploader.videoInfo.file._file
-						var objectURL = window.URL.createObjectURL(file)
-			            $scope.sources =  [
-							{src: $sce.trustAsResourceUrl(objectURL), type: file.type}
-						]
 
-						var indexOfLastSpace = file.name.lastIndexOf(' ');
-						var indexOfLastDot = file.name.lastIndexOf('.');
+						var indexOfLastSpace = file.name.lastIndexOf(' ')
+						var indexOfLastDot = file.name.lastIndexOf('.')
 						if (indexOfLastDot != -1 && indexOfLastDot > indexOfLastSpace)
-							$scope.review.title = file.name.slice(0, indexOfLastDot - file.name.length);
+							$scope.review.title = file.name.slice(0, indexOfLastDot - file.name.length)
 						else
-							$scope.review.title = file.name;
+							$scope.review.title = file.name
+
+						$scope.review.fileType = file.type
 
 						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKey
 
-					}
-				}
-
-				$scope.$watch('active', function(newVal) {
-					if (newVal) {
-						$log.debug('video review page is active')
 						MediaUploader.addCallback('video-upload-complete', $scope.videoUploadCallback)
 					}
-				})
-
-
-				//===============
-				// Advanced video controls
-				//===============
-				$scope.playerControls = {
-					wideMode: false
 				}
+				$scope.$watch('active', function(newVal) {
+					if (newVal) {
+						$scope.initReviewData()
+					}
+				})
+					
 
 
 				//===============
@@ -81,15 +68,13 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				}
 
 				$scope.startTranscoding = function() {
-					$log.debug('startTranscoding', $scope.review, $scope.uploader)
+					$log.debug('replay start transcoding', $scope.review)
 					Api.Reviews.save($scope.review, 
 						function(data) {
-							$log.debug('review created, transcoding ', data)
 							$scope.review.id = data.id
 							$scope.retrieveCompletionStatus()
 						},
 						function(error) {
-							$log.error('Received error', error)
 							$timeout(function() {
 								$scope.retrieveCompletionStatus()
 							}, 5000)
@@ -102,7 +87,6 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 					try {
 						Api.Reviews.get({reviewId: $scope.review.id}, 
 							function(data) {
-								$log.debug('Received review: ', data)
 								$scope.review.transcodingDone = data.transcodingDone
 
 								if (!$scope.review.transcodingDone) {
@@ -145,23 +129,38 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				$scope.onTranscodingComplete = function() {
 					if ($scope.publishPending)
 						$scope.publishVideo()
+					
+					// And now display something on the replay player
+					$log.debug('Need to display the replay', $scope.review)
+					if ($scope.review.replay) {
+						$scope.externalPlayer = true;
+						$log.debug('loading replay file');
+						// Retrieve the XML replay file from s3
+						var replayUrl = ENV.videoStorageUrl + $scope.review.key;
+						$log.debug('Replay URL: ', replayUrl);
+						$.get(replayUrl, function(data) {
+							$scope.review.replayXml = data;
+							$log.debug('loaded xml', $scope.review.replayXml);
+
+							// Init the external player
+							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review);
+							$log.debug('externalPlayer', $scope.review.replay, $scope.externalPlayer);
+						})
+					}
 				}
 
 				$scope.initPublishVideoWhenReady = function() {
 					// If user is not registered, offer them to create an account
 					if (!User.isLoggedIn()) {
 						// Validate that the name is free
-						$log.debug('user not logged in')
 						Api.Users.get({identifier: $scope.review.author}, 
 							function(data) {
 								// User exists
 								if (data.username) {
-									$log.debug('name already taken')
 									$scope.uploadForm.author.$setValidity('nameTaken', false)
 								}
 								else {
 									$scope.onPublishWhenReady = true
-									$log.debug('broadcasting account creation', {identifier: $scope.review.author})
 									$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author})
 								}
 							}
@@ -183,18 +182,15 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				$scope.initPublishVideo = function() {
 					// If user is not registered, offer them to create an account
 					if (!User.isLoggedIn()) {
-						$log.debug('user not logged in')
 						// Validate that the name is free
 						Api.Users.get({identifier: $scope.review.author}, 
 							function(data) {
 								// User exists
 								if (data.username) {
-									$log.debug('name already taken')
 									$scope.uploadForm.author.$setValidity('nameTaken', false)
 								}
 								else {
 									$scope.onPublish = true
-									$log.debug('broadcasting account creation', {identifier: $scope.review.author})
 									$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author})
 								}
 							}
@@ -206,20 +202,15 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				}
 
 				$scope.publishVideo = function() {
-					$scope.prepareCanvasForUpload($scope.review, $scope.review);
-					$scope.review.canvas = $scope.review.tempCanvas;
-
 					var newReview = {
 						text: $scope.review.text,
 						sport: $scope.review.sport.key,
 						title: $scope.review.title,
 						tags: $scope.review.tags,
-						canvas: $scope.review.tempCanvas,
 						language: $scope.review.language
 					}
 					Api.ReviewsPublish.save({reviewId: $scope.review.id}, newReview, 
 						function(data) {
-							$log.debug('review finalized', data)
 							var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s;
 							$location.path(url);
 						}
@@ -245,16 +236,6 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				//===============
 				$scope.insertModel = function(model, newValue) {
 					$parse(model).assign($scope, newValue);
-				}
-
-
-				//===============
-				// Canvas
-				//===============
-				$scope.canvasState = {
-					canvasIdIndex: 0,
-					canvasId: 'tmp0',
-					drawingCanvas: false
 				}
 
 

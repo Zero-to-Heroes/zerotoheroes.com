@@ -2,5 +2,10 @@
 
 <upload-type-choice sport="sport" options="state" ng-show="!state.uploadType"></upload-type-choice>
 
-<upload-video-directive video-info="videoInfo" sport="sport" ng-show="state.uploadType == 'video' && !state.step"></upload-video-directive>
-<upload-video-review sport="sport" ng-show="state.uploadType == 'video' && state.step == 'review'"></upload-video-review>
+<!-- Video -->
+<upload-video-directive video-info="videoInfo" sport="sport" active="state.uploadType == 'video' && !state.step" ng-show="state.uploadType == 'video' && !state.step"></upload-video-directive>
+<upload-video-review sport="sport" type="state.uploadType" active="state.uploadType == 'video' && state.step == 'review'" ng-show="state.uploadType == 'video' && state.step == 'review'"></upload-video-review>
+
+<!-- Replay -->
+<upload-replay-directive video-info="videoInfo" sport="sport" active="state.uploadType == 'replay' && !state.step" ng-show="state.uploadType == 'replay' && !state.step"></upload-replay-directive>
+<upload-replay-review sport="sport" type="state.uploadType" active="state.uploadType == 'replay' && state.step == 'review'" ng-show="state.uploadType == 'replay' && state.step == 'review'"></upload-replay-review>

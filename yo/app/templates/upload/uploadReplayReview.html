@@ -1,44 +1,19 @@
-<view-title>{{ 'global.upload.video.review.pageTitle' | translate }}</view-title>
+<view-title>{{ 'global.upload.replay.review.pageTitle' | translate }}</view-title>
 
 
 <div class="background-white video-review-upload-title">
 
-	<h1>{{ 'global.upload.video.review.headline' | translate }}</h1>
+	<h1>{{ 'global.upload.replay.review.headline' | translate }}</h1>
 
 	<!-- Show the overall progress of the upload -->
-	<upload-progress sport="sport" type="video"></upload-progress>
+	<upload-progress sport="sport" type="'replay'"></upload-progress>
 
 </div>
 
 <div class="background-white video-review-upload-video" ng-class="{'col-md-7': playerControls.wideMode, 'col-md-5': !playerControls.wideMode}">
 
-	<!-- Show the player with the (local) video that has been selected in the previous step -->
-	<div class="videogular-container">
-		<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-playing': !canvasState.drawingCanvas}" vg-change-source="onSourceChanged($source)" vg-start-time="uploader.videoInfo.beginning / 1000" vg-virtual-clip-duration="uploader.videoInfo.ending / 1000 - uploader.videoInfo.beginning / 1000" >
-			<vg-media vg-src="sources"></vg-media>
-
-			<vg-controls>
-				<vg-play-pause-button></vg-play-pause-button>
-				<vg-time-display>{{ currentTime | date: config.deactivateControls && config.deactivateControls.millis ? 'mm:ss' : 'mm:ss:sss' }}</vg-time-display>
-				<vg-scrub-bar video-fine-time-control>
-                    <vg-scrub-bar-buffer></vg-scrub-bar-buffer>
-					<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-				</vg-scrub-bar>
-				<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
-				<video-playback-button></video-playback-button>
-				<vg-volume>
-					<vg-mute-button></vg-mute-button>
-					<vg-volume-bar></vg-volume-bar>
-				</vg-volume>
-				<video-canvas-overlay-button ng-show="playerControls.canvasId"></video-canvas-overlay-button>
-				<video-wide-mode-button></video-wide-mode-button>
-			</vg-controls>
-
-			<vg-overlay-play ng-click="onOverlayClick()" ng-show="!canvasState.drawingCanvas"></vg-overlay-play>
-
-			<canvas id="fabricCanvas" pw-canvas></canvas>
-		</videogular>
-	</div>
+	<!-- Show the player the replay file -->
+	<div ng-show="review.replay && externalPlayer" id="externalPlayer" class="external-player" ng-class="pluginNames"></div>
 
 </div>
 
@@ -102,5 +77,3 @@
 		</form>
 	</div>
 </div>
-
-<canvas-control show-canvas="showCanvas" hide-canvas="hideCanvas" player-controls="playerControls" review="review" load-canvas="loadCanvas" serialize-canvas="serializeCanvas" clear-canvas="clearCanvas" canvas-state="canvasState" clear-temporary-canvas="clearTemporaryCanvas" prepare-canvas-for-upload="prepareCanvasForUpload" toggle-canvas="toggleCanvas" cancel-canvas-edition="cancelCanvasEdition"></canvas-control>

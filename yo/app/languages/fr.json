@@ -262,6 +262,39 @@
 			"proNotified": "Nous avons notifié {{name}} de votre requête. Vous recevrez bientôt une confirmation par email :)"
 		},
 		"upload": {
+			"choice": {
+				"title": "Que voulez-vous poster ?",
+				"video": "Vidéo",
+				"videoDescription": "Postez une vidéo de vous en train de jouer",
+				"hearthstone": {
+					"videoDescription": "Postez une vidéo d'une de vos parties. Vous pouvez trouvez de l'aide sur comment faire <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/\" target=\"_blank\">sur notre blog</a>",
+					"replay": "HS Replay",
+					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/#nouveau-sur-un-ordinateur8211-fichier-replay\" target=\"_blank\">sur notre blog</a>"
+				}
+			},
+			"video": {
+				"pageTitle": "Mettre en ligne une vidéo",
+				"headline": "Mettre en ligne une vidéo",
+				"chooseFileButton": "Choisissez votre vidéo",
+				"dropZone": "ou déposez-la ici",
+				"clearCurrentFile": "Effacer la vidéo",
+				"invalidFormatMessage": "Nous sommes désolés, nous ne supportons que les vidéos au format .mp4, .ogg, .mkv and .webm. Nous ne pouvons offrir nos fonctionalités les plus avancées si nous devons utiliser un lecteur Flash, qui est indispensable pour certains formats de fichiers.",
+				"sliderLabel": "Clip vidéo: ",
+				"doubleSpeedLabel": "Vitesse de la vidéo",
+				"doubleSpeedLink": "Doublez la vitesse de la vidéo",
+				"doubleSpeedExplanation": "Quand vous doublez la vitesse de la vidéo, la vidéo finale sera deux fois plus rapide (et deux fois plus courte) que l'originale, ce qui vous permet d'utiliser une vidéo deux fois plus longue. Faites attention à n'utiliser ça que si le rythme initial est suffisamment lent pour pouvoir toujours suivre l'action.",
+				"normalSpeedLink": "Restorer la vidéo à sa vitesse initiale",
+				"restoreSpeedExplanation": "Restorer la vidéo à sa vitesse initiale",
+				"whyLimit": "Notre but est de garder l'analyse aussi ciblée que possible. Cela permet aux autres de donner leurs conseils beaucoup plus facilement. C'est pour cela que nous imposons une durée maximum de 5 minutes sur les vidéos",
+				"videoTooLong1": "Le clip vidéo choisi est trop long. Veuillez choisir un clip d'une durée maximum de 5 minutes à l'aide du slider ci-dessus",
+				"videoTooLong2": "Le clip vidéo choisi est trop long. Veuillez choisir un clip d'une durée maximum de 5 minutes à l'aide du slider ci-dessus ou en en doublant la vitesse",
+				"automatedUpload": "La vidéo sera publiée automatiquement une fois que le transfer sera terminé (vous pouvez toujours l'éditer après coup si vous êtes connecté).",
+				"publishReviewButton": "Publier maintenant",
+				"publishReviewWhenReadyButton": "Publier une fois le transfert fini",
+				"publishingPendingUpload": "Annuler la publication",
+				"transferCompleted": "Transfert fini. Vous pouvez maintenant publier votre vidéo"
+			},
+
 			"chooseFileButton": "Choisissez votre vidéo",
 			"invalidFormatMessage": "Nous sommes désolés, nous ne supportons que les vidéos au format .mp4, .ogg, .mkv and .webm. Nous ne pouvons offrir nos fonctionalités les plus avancées si nous devons utiliser un lecteur Flash, qui est indispensable pour certains formats de fichiers.",
 			"clipDurationText": "Durée du clip : ",
@@ -288,7 +321,7 @@
 			"timestampTranslationInfo": "On dirait que vous utilisez des timestamps et avez changé le moment du début de la vidéo. Ne vous inquiétez pas, nous nous chargeons de faire en sorte que les timestamps soient correctement modifiés pour correspondre au nouveau début de la vidéo :)",
 			"uploadButton": "Mettre en ligne",
 			"dontCloseWindowMessage": "Votre vidéo est en train d'être mise en ligne sur nos serveurs. Merci de ne pas fermer la fenêtre, ou vous devrez tout recommencer :(",
-			"finalizeVideoMessage": "Nous sommes en train de finaliser votre vidéo. En fonction de sa taille, cela peut prendre jusque 5 minutes. Vous pouvez prendre le temps d'aller voir d'autres vidéos :)"
+			"finalizeVideoMessage": "Nous sommes en train de finaliser votre vidéo. En fonction de sa taille, cela peut prendre jusque 5 minutes."
 		},
 		"welcome": {
 			"headlineLogged": "Ravis de vous revoir {{name}}!",

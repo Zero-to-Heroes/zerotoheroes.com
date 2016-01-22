@@ -260,6 +260,22 @@
 			"proNotified": "{{name}} has been notified of your request. They will get back to you soon. Stay tuned!"
 		},
 		"upload": {
+			"choice": {
+				"title": "What do you want to upload?",
+				"video": "Video",
+				"videoDescription": "Post a video of yourself playing",
+				"hearthstone": {
+					"videoDescription": "Post a video of one of your games. You can find help on how to record HS games <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/\" target=\"_blank\">one our blog</a>",
+					"replay": "HS Replay",
+					"replayDescription": "Post a replay file. You can find help on how to get one <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/#new-on-pc-8211-replay-file\" target=\"_blank\">here</a> or on <a href=\"http://www.zerotoheroes.com/r/meta/568e2f13e4b0ae321c95b0cb/hearthstone-replay-using-log-files-beta\" target=\"_blank\">our forums</a>"
+				}
+			},
+			"replay": {
+
+				"dontCloseWindowMessage": "Your replay is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
+				"finalizeVideoMessage": "Processing your file. It can take up to one minute. Then you'll be able to view your replay in the viewer on the left",
+				"transferCompleted": "Transfer completed. You can now publish your replay"
+			},
 			"video": {
 				"pageTitle": "Upload a video",
 				"headline": "Upload a video",
@@ -276,8 +292,14 @@
 				"whyLimit": "Our goal is to keep the analysis as focused as possible - this will make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos",
 				"videoTooLong1": "The video clip selected is too long. Please keep it at 5 minutes max using the slider above",
 				"videoTooLong2": "The video clip selected is too long. Please keep it at 5 minutes max using the slider or by doubling its speed above",
-				"automatedUpload": "The video will be automatically submitted once the file upload is completed (you can still edit it afterwards if you're logged in). Just sit down and relax :)",
-				"confirmUploadButton": "Finalize upload"
+				"automatedUpload": "The video will be automatically published once the file upload is completed (you can still edit it afterwards if you're logged in). Just sit down and relax :)",
+				"publishReviewButton": "Publish now",
+				"publishReviewWhenReadyButton": "Publish when upload completes",
+				"publishingPendingUpload": "Cancel publishing",
+
+				"dontCloseWindowMessage": "Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
+				"finalizeVideoMessage": "Finalizing your video. Depending on its size, it may take up to 5 minutes. Sit back and relax :)",
+				"transferCompleted": "Transfer completed. You can now publish your video"
 			},
 			"chooseFileButton": "Choose your video",
 			"invalidFormatMessage": "We're sorry, we only support .mp4, .ogg, .mkv and .webm video files. We can't provide our more advanced features if we have to rely on a Flash video player, which is mandatory for some file formats.",
@@ -304,9 +326,7 @@
 			"descriptionPlaceholder": "Any remarks about what you want to improve?",
 			"descriptionPlaceholderNoVideo": "Any additional information?",
 			"timestampTranslationInfo": "It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)",
-			"uploadButton": "Start upload",
-			"dontCloseWindowMessage": "Your video is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
-			"finalizeVideoMessage": "Finalizing your video. Depending on its size, it may take up to 5 minutes. Take some time to think about how you can help others get better too :)"
+			"uploadButton": "Start upload"
 		},
 		"welcome": {
 			"headlineLogged": "Welcome back {{name}}!",

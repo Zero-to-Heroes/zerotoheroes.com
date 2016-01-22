@@ -75,3 +75,14 @@
 	text-align: right;
 	margin-right: 50px;
 }
+
+.video-upload .alert-info {
+	max-width: 500px;
+	margin: auto;
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+.video-upload .alert-danger {
+	
+}

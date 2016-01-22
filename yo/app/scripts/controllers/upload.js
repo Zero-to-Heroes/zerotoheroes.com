@@ -10,7 +10,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', 
 		$scope.videoInfo = {
 			videoFramerateRatio: 1
 		}
-		$log.debug('initializing videoInfo', $scope.videoInfo)
 
 		// Now handle the various upload types
 		$scope.state.uploadType = $routeParams['uploadType']
@@ -18,7 +17,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', 
 
 		// If no upload is ongoing, don't use the step
 		if ($scope.state.step && (!MediaUploader.videoInfo || !MediaUploader.videoInfo.upload || !MediaUploader.videoInfo.upload.ongoing)) {
-			$log.debug('not correct', $location, $routeParams, $location.path())
 			var path = '/s/' + $routeParams['sport'] + '/upload/' + $routeParams['uploadType']
 			$location.path(path)
 		}
@@ -31,16 +29,13 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', 
 		}
 
 		$scope.$watch('videoInfo.upload.ongoing', function(newVal, oldVal) {
-			$log.debug('upload started, displaying review page', newVal, oldVal, $scope.videoInfo)
 			if (newVal) {
 				var url = $location.path() + '/review'
-				$log.debug('going to', url)
 				$location.path(url)
 			}
 		})
 
 		$scope.onUploadComplete = function(review) {
-			$log.debug('callback for review', review);
 			var url = '/r/' + review.sport.key.toLowerCase() + '/' + review.id + '/' + S(review.title).slugify().s;
 			$location.path(url);
 		}

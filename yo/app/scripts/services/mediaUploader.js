@@ -3,12 +3,18 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 	function ($log, $analytics, ENV) {
 
 		var creds = {
-			bucket: ENV.bucket + '/' + ENV.folder,
+			bucket: ENV.bucket,
 			access_key: 'AKIAJHSXPMPE223KS7PA',
 			secret_key: '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'
 		}
 
-		var service = {};
+		var service = {
+			callbacks: {}
+		}
+
+		service.addCallback = function(name, cb) {
+			service.callbacks[name] = cb
+		}
 
 		service.upload = function(file, fileKey, videoInfo) {
 			service.videoInfo = videoInfo
@@ -30,22 +36,34 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 			var upload = new AWS.S3({ params: { Bucket: creds.bucket } })
 			var params = { Key: fileKey, ContentType: file._file.type, Body: file._file }
 
-			// upload.upload(params, function(err, data) {
-			// 	// There Was An Error With Your S3 Config
-			// 	if (err) {
-			// 		$log.error('An error during upload', err)
-			// 	}
-			// 	else {
-			// 		// Success!
-			// 		$log.debug('upload done!')
-			// 		videoInfo.upload.done = true
-			// 	}
-			// })
-			// .on('httpUploadProgress', function(progress) {
-			// 	service.videoInfo.upload.progress = progress.loaded / progress.total * 100
-			// 	if (service.progressCallback) 
-			// 		service.progressCallback()
-			// })
+			upload.upload(params, function(err, data) {
+				// There Was An Error With Your S3 Config
+				if (err) {
+					$log.error('An error during upload', err)
+				}
+				else {
+					// Success!
+					$log.debug('upload done!')
+					videoInfo.upload.done = true
+					if (service.callbacks) {
+						for (var cb in service.callbacks) {
+							if (service.callbacks.hasOwnProperty(cb)) {
+								service.callbacks[cb]()
+							}
+						}
+					}
+				}
+			})
+			.on('httpUploadProgress', function(progress) {
+				service.videoInfo.upload.progress = progress.loaded / progress.total * 100
+				if (service.callbacks) {
+					for (var cb in service.callbacks) {
+						if (service.callbacks.hasOwnProperty(cb)) {
+							service.callbacks[cb]()
+						}
+					}
+				}
+			})
 		}
 
 		return service;

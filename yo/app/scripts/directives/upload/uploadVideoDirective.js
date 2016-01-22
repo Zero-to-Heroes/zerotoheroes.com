@@ -9,7 +9,8 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 			templateUrl: 'templates/upload/uploadVideoDirective.html',
 			scope: {
 				videoInfo: '=',
-				sport: '='
+				sport: '=',
+				active: '='
 			},
 			link: function($scope, element, attrs) {
 			},
@@ -23,16 +24,10 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 					var videoTypes = ['video/mp4', 'video/x-matroska', 'video/webm', 'video/ogg']
 					var supportedFileTypes = angular.copy(videoTypes)
 
-					var additionalTypes = SportsConfig.getAdditionalSupportedTypes($scope.sport)
-					additionalTypes.forEach(function(type) {
-						supportedFileTypes.push(type)
-					})
-
 		        	var uploader = new FileUploader({
 						filters: [{
 							name: 'videoTypesFilter',
 							fn: function(item) {
-								console.log('validating item', item)
 								var type = item.type;
 								if (supportedFileTypes.indexOf(type) == -1) {
 									return false
@@ -48,13 +43,13 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 
 					return uploader
 		        }
+				$scope.uploader = $scope.buildUploader(SportsConfig)
 
 
 				//===============
 				// Videogular
 				//===============
 		        $scope.onPlayerReady = function(API) {
-		        	$log.debug('setting API', API)
 					$scope.API = API
 					$scope.API.setVolume(1)
 				}
@@ -62,7 +57,6 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 		        $scope.updateMarkers = function() {
 					$scope.videoInfo.beginning = 0
 					$scope.videoInfo.ending = $scope.API.totalTime
-					$log.log('updating markers', $scope.videoInfo, $scope.API)
 					$scope.sliderMax = $scope.API.totalTime
 					$scope.updateTotalTime()
 					if ($scope.videoInfo.ending > 0) $scope.dataLoaded = true
@@ -72,7 +66,6 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 					$scope.clipDuration = $scope.videoInfo.ending - $scope.videoInfo.beginning
 					// $log.debug('clip duration', $scope.clipDuration)
 				}
-				$scope.uploader = $scope.buildUploader(SportsConfig)
 
 				$scope.onSourceChanged = function(sources) {
 					$timeout(function() { 
@@ -95,7 +88,6 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 				$scope.min = function(newValue) {
 					if (newValue && newValue != $scope.videoInfo.beginning) {
 						$scope.videoInfo.beginning = newValue
-						$log.debug('beginning', newValue)
 						$scope.updateTotalTime()
 						$scope.updateVideoPosition(newValue)
 					}
@@ -133,7 +125,6 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 		        }
 
 		        $scope.uploader.onAfterAddingFile = function(fileItem) {
-		            console.info('onAfterAddingFile', fileItem)
 		            $scope.hasUnsupportedFormatError = false
 		            $scope.file = fileItem
 		            var objectURL = window.URL.createObjectURL(fileItem._file)
@@ -153,6 +144,7 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 					// And signal that our job here is done - let's give the control to the next step
 					$scope.videoInfo.upload = {}
 					$scope.videoInfo.upload.ongoing = true
+					$scope.videoInfo.beginning = Math.max(1, $scope.videoInfo.beginning)
 
 					MediaUploader.upload($scope.file, fileKey, $scope.videoInfo)
 				}

@@ -51,6 +51,12 @@
     color: #BDB5B5;
 }
 
+.hearthstone .alert-info {
+    background-color: rgba(173, 99, 57, 0.55);
+    border: none;
+    color: #BDB5B5;
+}
+
 .hearthstone .panel:before {
     content: "";
     position: absolute;

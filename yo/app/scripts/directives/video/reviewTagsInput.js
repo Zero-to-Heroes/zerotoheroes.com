@@ -89,21 +89,31 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 
 				$scope.$watch('review.sport', function (newVal, oldVal) {
 					//$log.log('watching sport value ', oldVal, newVal);
-					$scope.loadTags();
+					if (newVal)
+						$scope.loadTags()
+				});
+				$scope.$watch('review.strSport', function (newVal, oldVal) {
+					//$log.log('watching sport value ', oldVal, newVal);
+					if (newVal)
+						$scope.loadTags()
 				});
 
 				$scope.loadTags = function() {
 					if ($scope.review) {
-						var sport = $scope.review.sport.key ? $scope.review.sport.key : $scope.review.sport;
+						if ($scope.review.sport)
+							var sport = $scope.review.sport.key ? $scope.review.sport.key : $scope.review.sport;
+						else if ($scope.review.strSport)
+							var sport = $scope.review.strSport
 					}
-					//$log.log('getting the new tags for sport ', sport);
+					$log.log('getting the new tags for sport ', sport);
 					if (sport) {
 						Api.Tags.query({sport: sport}, 
 							function(data) {
 								$scope.allowedTags = data;
 								$log.log('loaded tags', $scope.allowedTags);
+
 								$scope.allowedTags.forEach(function(tag) {
-									tag.sport = $scope.review.sport.key ? $scope.review.sport.key.toLowerCase() : $scope.review.sport.toLowerCase();
+									tag.sport = sport.toLowerCase();
 								})
 							}
 						);

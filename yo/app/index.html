@@ -24,13 +24,14 @@
 		<!-- build:css(.tmp) styles/main.css -->
 		<!-- reset css provided by angular normalize.less -->
 		<link rel="stylesheet" href="styles/videogular.css" />
+		<link rel="stylesheet" href="styles/videogular-override.css" />
 		<link rel="stylesheet" href="styles/main.css" />
 		<link rel="stylesheet" href="styles/home-page.css" />
 		<link rel="stylesheet" href="styles/video.css" />
 		<link rel="stylesheet" href="styles/listing.css" />
 		<link rel="stylesheet" href="styles/review.css" />
 		<link rel="stylesheet" href="styles/navigation.css" />
-		<link rel="stylesheet" href="styles/upload.css" />
+
 		<link rel="stylesheet" href="styles/components/drawing.css">
 		<link rel="stylesheet" href="styles/components/progress-bar.css" />
 		<link rel="stylesheet" href="styles/components/tables.css" />
@@ -39,6 +40,7 @@
 		<link rel="stylesheet" href="styles/components/help.css">
 		<link rel="stylesheet" href="styles/components/modal.css">
 		<link rel="stylesheet" href="styles/components/tags.css">
+		
 		<link rel="stylesheet" href="styles/modules/header.css" />
 		<link rel="stylesheet" href="styles/modules/choose-pro-popup.css" />
 		<link rel="stylesheet" href="styles/modules/comment.css" />
@@ -47,6 +49,10 @@
 		<link rel="stylesheet" href="styles/modules/reputation.css" />
 		<link rel="stylesheet" href="styles/modules/sequence.css" />
 		<link rel="stylesheet" href="styles/modules/welcome-page.css" />
+		<link rel="stylesheet" href="styles/modules/upload/upload.css" />
+		<link rel="stylesheet" href="styles/modules/upload/upload-choice.css" />
+		<link rel="stylesheet" href="styles/modules/upload/video-review-upload.css" />
+		<link rel="stylesheet" href="styles/modules/upload/video-upload.css" />
 
         <link href="styles/landing/style.css" rel="stylesheet" type="text/css">
         <link href="styles/landing/owl.carousel.css" rel="stylesheet" type="text/css">
@@ -150,8 +156,6 @@
 		<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 		<script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
 		<!-- endbower -->
-
-		<!-- Node dependencies through browserify -->
 		<!-- endbuild -->
 
 
@@ -185,10 +189,17 @@
 		<script src="scripts/directives/userHistory.js"></script>	
 		<script src="scripts/directives/welcomePane.js"></script>
 
+		<script src="scripts/directives/upload/uploadDirective.js"></script>
+		<script src="scripts/directives/upload/uploadProgress.js"></script>
+		<script src="scripts/directives/upload/uploadTypeChoice.js"></script>	
+		<script src="scripts/directives/upload/uploadVideoDirective.js"></script>
+		<script src="scripts/directives/upload/uploadVideoReview.js"></script>	
+		<script src="scripts/directives/upload/uploadReplayDirective.js"></script>
+		<script src="scripts/directives/upload/uploadReplayReview.js"></script>
+
 		<script src="scripts/directives/video/reviewTagsInput.js"></script>
 		<script src="scripts/directives/video/sequenceController.js"></script>
 		<script src="scripts/directives/video/toolbar.js"></script>
-		<script src="scripts/directives/video/uploadDirective.js"></script>
 		<script src="scripts/directives/video/videoFineTimeControl.js"></script>
 		<script src="scripts/directives/video/videoLoopButton.js"></script>
 		<script src="scripts/directives/video/videoDualModeButton.js"></script>
@@ -204,6 +215,7 @@
 		<script src="scripts/services/helpPopupConfig.js"></script>
 		<script src="scripts/services/localization.js"></script>
 		<script src="scripts/services/localStorage.js"></script>
+		<script src="scripts/services/mediaUploader.js"></script>
 		<script src="scripts/services/user.js"></script>
 		<script src="scripts/services/sportsConfig.js"></script>
 

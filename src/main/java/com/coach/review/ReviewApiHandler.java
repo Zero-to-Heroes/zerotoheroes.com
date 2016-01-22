@@ -180,7 +180,8 @@ public class ReviewApiHandler {
 		// TOOD: checks
 		// Add current logged in user as the author of the review
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		// log.info("Current user is " + currentUser);
+		log.info("Current user is " + currentUser);
+		log.info("Input review is " + review);
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// log.info("authorities are " + authorities);
@@ -206,7 +207,7 @@ public class ReviewApiHandler {
 			}
 		}
 
-		// log.debug("Review request creation: " + review);
+		log.debug("Review request creation: " + review);
 		Map<String, String> inputCanvas = review.getCanvas();
 		review.resetCanvas();
 		consolidateCanvas(currentUser, review, review, inputCanvas);
@@ -224,11 +225,14 @@ public class ReviewApiHandler {
 
 		// Start transcoding
 		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())) {
-			if (!StringUtils.isNullOrEmpty(review.getReplay()))
+			if (!StringUtils.isNullOrEmpty(review.getReplay())) {
+				log.debug("Proessing replay");
 				replayProcessor.processReplayFile(review);
-			else
-				// log.debug("Transcoding video");
+			}
+			else {
+				log.debug("Transcoding video");
 				transcoder.transcode(review.getId());
+			}
 		}
 
 		// log.debug("Transcoding started, returning with created review: " +
@@ -347,10 +351,30 @@ public class ReviewApiHandler {
 			userRepo.save(user);
 		}
 
-		slackNotifier.notifyReviewUpdatet(review);
-		sportManager.addReviewUpdatedActivity(user, review);
+		// slackNotifier.notifyReviewUpdatet(review);
+		// sportManager.addReviewUpdatedActivity(user, review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/{reviewId}/publish", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Review> publish(@PathVariable("reviewId") final String id,
+			@RequestBody Review inputReview) throws IOException {
+
+		ResponseEntity<Review> responseEntity = updateInformation(id, inputReview);
+
+		Review review = responseEntity.getBody();
+		review.setPublished(true);
+		reviewRepo.save(review);
+
+		// Send notifications only if it's a real new video and
+		// not a video response
+		if (!review.isSequence()) {
+			subscriptionManager.notifyNewReview(review.getSport(), review);
+			slackNotifier.notifyNewReview(review);
+		}
+
+		return responseEntity;
 	}
 
 	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.POST)

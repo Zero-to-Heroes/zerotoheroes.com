@@ -28,6 +28,9 @@ app.directive('commentPlugins', ['$log', 'SportsConfig',
 				})
 
 				$scope.$watchCollection('plugins', function(newValue, oldValue) {
+					if (!newValue) 
+						return
+					
 					//$log.log('plugins for comment', newValue);
 					newValue.forEach(function(plugin) {
 						//$log.log('plugin', plugin);
@@ -39,6 +42,9 @@ app.directive('commentPlugins', ['$log', 'SportsConfig',
 				})
 
 				$scope.$on('$destroy', function() {
+					if (!$scope.plugins)
+						return
+					
 					$scope.plugins.forEach(function(plugin) {
 						//$log.log('detaching plugin from element', plugin, $scope.element);
 						SportsConfig.detachPlugin($scope, plugin, $scope.element);

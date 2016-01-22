@@ -32,12 +32,7 @@ public class TranscodingStatusNotification {
 	MongoTemplate mongoTemplate;
 
 	private final String username, password;
-	// private final String inputBucketName, outputBucketName;
-	// private final String pipelineId;
 	private final String sqsQueueUrl;
-
-	// @Setter
-	// private String reviewId;
 
 	@Autowired
 	public TranscodingStatusNotification(@Value("${s3.username}") String username,
@@ -45,13 +40,7 @@ public class TranscodingStatusNotification {
 		super();
 		this.username = username;
 		this.password = password;
-		// this.inputBucketName = inputBucketName;
-		// this.outputBucketName = outputBucketName;
-		// this.pipelineId = pipelineId;
 		this.sqsQueueUrl = sqsQueueUrl;
-		// log.debug("Initializing transcoder with buckets: " + inputBucketName
-		// + ", " + outputBucketName + ", "
-		// + username + " with queue URL " + sqsQueueUrl);
 	}
 
 	public void listen(final String jobId, final String reviewId) {
@@ -66,9 +55,6 @@ public class TranscodingStatusNotification {
 		Thread notificationThread = new Thread(sqsQueueNotificationWorker);
 		notificationThread.start();
 		log.debug("Starting notification thread");
-
-		final SubscriptionManager subscriptionManager = this.subscriptionManager;
-		final SlackNotifier slackNotifier = this.slackNotifier;
 
 		// Create a handler that will wait for this specific job to complete.
 		JobStatusNotificationHandler handler = new JobStatusNotificationHandler() {
@@ -85,41 +71,21 @@ public class TranscodingStatusNotification {
 							return;
 						}
 						log.debug("Loaded review " + review);
-						// review.setTreatmentCompletion(100);
 						review.setTranscodingDone(true);
 						mongoTemplate.save(review);
 						log.debug("Updated review: " + review);
-						// TODO: delete bucket input file
-
-						// Send notifications only if it's a real new video and
-						// not a video response
-						if (!review.isSequence()) {
-							subscriptionManager.notifyNewReview(review.getSport(), review);
-							slackNotifier.notifyNewReview(review);
-						}
 
 						sqsQueueNotificationWorker.shutdown();
 						log.debug("Job completed, shutting down");
-
-						/*
-						 * synchronized (this) { notifyAll(); }
-						 */
 					}
+				}
+				else {
+					log.debug("Job ids don't match " + jobId + " " + jobStatusNotification.getJobId());
+					log.debug("" + jobStatusNotification);
 				}
 			}
 		};
 		sqsQueueNotificationWorker.addHandler(handler);
-
-		// Wait for job to complete.
-		/*
-		 * synchronized (handler) { try { handler.wait(); } catch
-		 * (InterruptedException e) {
-		 * log.error("Could not wait for handler thread", e); } }
-		 *
-		 * // When job completes, shutdown the sqs notification worker.
-		 * sqsQueueNotificationWorker.shutdown();
-		 * log.debug("Job completed, shutting down");
-		 */
 	}
 
 }

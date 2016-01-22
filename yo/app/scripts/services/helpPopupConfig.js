@@ -1,4 +1,3 @@
-
 var services = angular.module('services');
 services.factory('HelpPopupConfig', ['$window', '$log', 'User', 'localStorage', 
 	function ($window, $log, User, localStorage) {

@@ -71,6 +71,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private String thumbnail;
 	private String fileType;
 	private Sport sport;
+	private String strSport;
 	private String language = "en";
 	private String title;
 	private String description = "", text = "";
@@ -85,6 +86,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private List<Comment> comments;
 	private int totalComments, totalHelpfulComments;
 	private boolean transcodingDone;
+	private boolean published;
 	private float videoFramerateRatio;
 	private Map<String, String> reviewVideoMap = new HashMap<>();
 	private Reputation reputation;
@@ -360,5 +362,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			totalHelpfulComments += comment.getTotalHelpfulComments();
 
 		}
+	}
+
+	public Sport getSport() {
+		if (sport == null) sport = Review.Sport.load(strSport);
+		return sport;
 	}
 }

@@ -96,8 +96,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						// Retrieve the XML replay file from s3
 						var replayUrl = ENV.videoStorageUrl + data.key;
 						$log.debug('Replay URL: ', replayUrl);
-						$.get(replayUrl, function(data) {
-							data.replayXml = data;
+						$.get(replayUrl, function(replayData) {
+							data.replayXml = replayData;
 							$log.debug('loaded xml', data.replayXml);
 
 							// Init the external player

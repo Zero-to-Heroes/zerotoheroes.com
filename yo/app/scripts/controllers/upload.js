@@ -1,10 +1,41 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'FileUploader',  'ENV', 'User', '$document', '$log', '$analytics', '$rootScope', '$parse', 'SportsConfig', 'Localization', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse, SportsConfig, Localization) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', '$log', 'SportsConfig', '$location', '$routeParams', 'MediaUploader',
+	function($scope, Api, $log, SportsConfig, $location, $routeParams, MediaUploader) {
+
+		$scope.state = {
+			uploadType: undefined,
+			allowedUploads: SportsConfig[$scope.sport].allowedUploads
+		}
+		$scope.videoInfo = {
+			videoFramerateRatio: 1
+		}
+
+		// Now handle the various upload types
+		$scope.state.uploadType = $routeParams['uploadType']
+		$scope.state.step = $routeParams['step']
+
+		// If no upload is ongoing, don't use the step
+		if ($scope.state.step && (!MediaUploader.videoInfo || !MediaUploader.videoInfo.upload || !MediaUploader.videoInfo.upload.ongoing)) {
+			var path = '/s/' + $routeParams['sport'] + '/upload/' + $routeParams['uploadType']
+			$location.path(path)
+		}
+
+		// Take care of the defaults - if the sport has no special configuration, we go to the video upload by default
+		if (!$scope.state.allowedUploads && !$routeParams['uploadType']) {
+			$scope.state.uploadType = 'video'
+			var path = $location.path() + '/' + $scope.state.uploadType
+			$location.path(path)
+		}
+
+		$scope.$watch('videoInfo.upload.ongoing', function(newVal, oldVal) {
+			if (newVal) {
+				var url = $location.path() + '/review'
+				$location.path(url)
+			}
+		})
 
 		$scope.onUploadComplete = function(review) {
-			$log.debug('callback for review', review);
 			var url = '/r/' + review.sport.key.toLowerCase() + '/' + review.id + '/' + S(review.title).slugify().s;
 			$location.path(url);
 		}

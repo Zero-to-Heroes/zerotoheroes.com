@@ -36,6 +36,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					recommendedVideo: '55e8101be4b051128109112e',
 					isSport: true,
 					allowDoubleSpeed: true,
+					allowedUploads:  ['video', 'replay'],
 					plugins: {
 						plugins: [
 							{name: 'parseCardsText', version: 2}, 
@@ -92,7 +93,6 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					recommendedVideo: '5602ad0fe4b07125e2fbbf69',
 					isSport: true,
 					allowDoubleSpeed: false,
-					allowedUploads:  ['video', 'drill-achievement'],
 					mandatoryTags: ['level'],
 					landing: {
 						displayName: 'Squash'
@@ -148,7 +148,6 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 		service.loadPlugin = function(plugins, pluginObj) {
 			var plugin = pluginObj.name;
 			var version = pluginObj.version ? '?' + pluginObj.version : '';
-			$log.debug('loading plugin', plugin);
 			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js' + version).then(function() {
 				plugins.push(pluginObj);
 				// Load dependencies
@@ -175,6 +174,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			if (!config || !config.plugins || !config.plugins.plugins) return false;
 
 			var externalPlayer;
+			$log.debug('init player with config', config, review)
 			config.plugins.plugins.forEach(function(plugin) {
 				if (plugin.player) {
 					externalPlayer = window[plugin.name];

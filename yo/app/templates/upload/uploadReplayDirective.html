@@ -1,5 +1,3 @@
-<view-title>{{ 'global.upload.replay.pageTitle' | translate }}</view-title>
-
 <div class="background-white video-upload" nv-file-drop uploader="uploader">
 
 	<h1>{{ 'global.upload.replay.headline' | translate }}</h1>
@@ -23,7 +21,7 @@
 
 	<!-- Since we have no video preview (we may have when we support upload of xml files directly), we need to at least show the file has been selected -->
 	<div class="alert alert-info selected-file" role="alert" ng-show="file">
-		<span>{{ 'global.upload.replay.selectedFile' | translate }}</span>
+		<span translate="global.upload.replay.selectedFile" translate-value-file-name="{{file.name}}"></span>
 	</div>
 
 

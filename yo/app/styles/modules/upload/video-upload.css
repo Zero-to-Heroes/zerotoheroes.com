@@ -77,12 +77,25 @@
 }
 
 .video-upload .alert-info {
-	max-width: 500px;
-	margin: auto;
+	min-height: 200px;
+	margin-left: 50px;
+	margin-right: 50px;
+	border: dotted 3px #F0CFA4;
+	border-radius: 4px;
+	padding: 80px;
+	font-size: 20px;
 	margin-bottom: 40px;
 	margin-top: 40px;
 }
 
 .video-upload .alert-danger {
 	
+}
+
+.video-review-upload-video {
+	padding-left: 0;
+	padding-right: 0;
+}
+.video-review-upload-video .videogular {
+	margin-bottom: 50px; 
 }

@@ -41,7 +41,9 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        }
 				$scope.uploader = $scope.buildUploader(SportsConfig)
 
-
+				$scope.clearFile = function() {
+					$scope.file = null
+				}
 
 				//===============
 				// File Uploader
@@ -61,8 +63,9 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        $scope.uploader.onAfterAddingFile = function(fileItem) {
 		            console.info('onAfterAddingFile', fileItem)
 		            $scope.hasUnsupportedFormatError = false
-		            $scope.file = fileItem
-		            var objectURL = window.URL.createObjectURL(fileItem._file)
+		            $scope.file = fileItem._file
+		            $log.debug('added file', $scope.file)
+		            // var objectURL = window.URL.createObjectURL($scope.file)
 		        }
 
 

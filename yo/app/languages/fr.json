@@ -104,7 +104,7 @@
 			"email": "Adresse mail"
 		},
 		"navigation": {
-			"postVideo": "Nouvelle vidéo",
+			"postVideo": "Mettre en ligne",
 			"postFeedback": "Nouveau post",
 			"forum": "Forums",
 			"chooseSport": "Choisissez un sport",
@@ -272,7 +272,25 @@
 					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/#nouveau-sur-un-ordinateur8211-fichier-replay\" target=\"_blank\">sur notre blog</a>"
 				}
 			},
+			"replay": {
+				"review": {
+					"headline": "Ajoutez des informations à votre replay"
+				},
+				"pageTitle": "Publier un replay",
+				"headline": "Publier un replay",
+				"chooseFileButton": "Choisissez votre replay",
+				"dropZone": "ou déposez-le ici",
+				"clearCurrentFile": "Effacer le replay",
+				"selectedFile": "Vous êtes sur le point de mettre en ligne {{fileName}}. Nous devons le traiter avant qu'il soit utilisable, et vous pourrez le rejouer une fois cela fait à la prochaine étape",
+
+				"dontCloseWindowMessage": "Votre replay est en train d'être mis en ligne sur nos serveurs. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
+				"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et vous pourrez ensuite le voir dans le lecteur à gauche",
+				"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier votre replay"
+			},
 			"video": {
+				"review": {
+					"headline": "Ajoutez des informations à votre vidéo"
+				},
 				"pageTitle": "Mettre en ligne une vidéo",
 				"headline": "Mettre en ligne une vidéo",
 				"chooseFileButton": "Choisissez votre vidéo",
@@ -292,7 +310,10 @@
 				"publishReviewButton": "Publier maintenant",
 				"publishReviewWhenReadyButton": "Publier une fois le transfert fini",
 				"publishingPendingUpload": "Annuler la publication",
-				"transferCompleted": "Transfert fini. Vous pouvez maintenant publier votre vidéo"
+
+				"dontCloseWindowMessage": "Votre vidéo est en train d'être mise en ligne sur nos serveurs. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
+				"finalizeVideoMessage": "Nous sommes en train de traiter votre vidéo. Cela peut prendre jusqu'à cinq minutes",
+				"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier votre vidéo"
 			},
 
 			"chooseFileButton": "Choisissez votre vidéo",

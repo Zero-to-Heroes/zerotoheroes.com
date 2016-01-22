@@ -126,10 +126,10 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 
 		        $scope.uploader.onAfterAddingFile = function(fileItem) {
 		            $scope.hasUnsupportedFormatError = false
-		            $scope.file = fileItem
-		            var objectURL = window.URL.createObjectURL(fileItem._file)
+		            $scope.file = fileItem._file
+		            var objectURL = window.URL.createObjectURL($scope.file)
 		            $scope.sources =  [
-						{src: $sce.trustAsResourceUrl(objectURL), type: fileItem._file.type}
+						{src: $sce.trustAsResourceUrl(objectURL), type: $scope.file.type}
 					]
 		        }
 

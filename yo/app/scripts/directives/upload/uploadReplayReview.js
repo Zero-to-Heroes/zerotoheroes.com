@@ -34,7 +34,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				//===============
 				$scope.initReviewData = function() {
 					if (MediaUploader.videoInfo) {
-						var file = MediaUploader.videoInfo.file._file
+						var file = MediaUploader.videoInfo.file
 
 						var indexOfLastSpace = file.name.lastIndexOf(' ')
 						var indexOfLastDot = file.name.lastIndexOf('.')

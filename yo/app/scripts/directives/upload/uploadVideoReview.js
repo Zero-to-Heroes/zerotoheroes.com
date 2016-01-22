@@ -37,7 +37,7 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 					$scope.API.setVolume(1)
 
 					if (MediaUploader.videoInfo) {
-						var file = MediaUploader.videoInfo.file._file
+						var file = MediaUploader.videoInfo.file
 						var objectURL = window.URL.createObjectURL(file)
 			            $scope.sources =  [
 							{src: $sce.trustAsResourceUrl(objectURL), type: file.type}

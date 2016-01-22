@@ -1,6 +1,3 @@
-<view-title>{{ 'global.upload.replay.review.pageTitle' | translate }}</view-title>
-
-
 <div class="background-white video-review-upload-title">
 
 	<h1>{{ 'global.upload.replay.review.headline' | translate }}</h1>
@@ -13,7 +10,7 @@
 <div class="background-white video-review-upload-video" ng-class="{'col-md-7': playerControls.wideMode, 'col-md-5': !playerControls.wideMode}">
 
 	<!-- Show the player the replay file -->
-	<div ng-show="review.replay && externalPlayer" id="externalPlayer" class="external-player" ng-class="pluginNames"></div>
+	<div id="externalPlayer" class="external-player" ng-class="pluginNames"></div>
 
 </div>
 

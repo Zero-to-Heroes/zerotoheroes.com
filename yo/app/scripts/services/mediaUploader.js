@@ -34,7 +34,7 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 			AWS.config.httpOptions.timeout = 3600 * 1000
 
 			var upload = new AWS.S3({ params: { Bucket: creds.bucket } })
-			var params = { Key: fileKey, ContentType: file._file.type, Body: file._file }
+			var params = { Key: fileKey, ContentType: file.type, Body: file }
 
 			upload.upload(params, function(err, data) {
 				// There Was An Error With Your S3 Config

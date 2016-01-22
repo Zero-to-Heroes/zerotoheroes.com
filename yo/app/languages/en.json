@@ -104,7 +104,7 @@
 			"email": "Email address"
 		},
 		"navigation": {
-			"postVideo": "Submit a video",
+			"postVideo": "Upload",
 			"postFeedback": "Post feedback",
 			"forum": "Discussion room",
 			"chooseSport": "Choose a sport",
@@ -271,12 +271,24 @@
 				}
 			},
 			"replay": {
+				"review": {
+					"headline": "Add information to your replay"
+				},
+				"pageTitle": "Upload a replay",
+				"headline": "Upload a replay",
+				"chooseFileButton": "Choose your replay",
+				"dropZone": "or drop it here",
+				"clearCurrentFile": "Clear current replay",
+				"selectedFile": "You're about to upload {{fileName}}. It needs to be processed before being a usable replay, and you'll be able to navigate in it at the next step",
 
 				"dontCloseWindowMessage": "Your replay is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
 				"finalizeVideoMessage": "Processing your file. It can take up to one minute. Then you'll be able to view your replay in the viewer on the left",
 				"transferCompleted": "Transfer completed. You can now publish your replay"
 			},
 			"video": {
+				"review": {
+					"headline": "Add information to your video"
+				},
 				"pageTitle": "Upload a video",
 				"headline": "Upload a video",
 				"chooseFileButton": "Choose your video",

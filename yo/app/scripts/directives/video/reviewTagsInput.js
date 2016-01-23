@@ -88,12 +88,12 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 				}
 
 				$scope.$watch('review.sport', function (newVal, oldVal) {
-					//$log.log('watching sport value ', oldVal, newVal);
+					$log.log('watching sport value ', oldVal, newVal);
 					if (newVal)
 						$scope.loadTags()
 				});
 				$scope.$watch('review.strSport', function (newVal, oldVal) {
-					//$log.log('watching sport value ', oldVal, newVal);
+					$log.log('watching strSport value ', oldVal, newVal);
 					if (newVal)
 						$scope.loadTags()
 				});

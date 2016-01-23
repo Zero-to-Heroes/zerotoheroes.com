@@ -17,7 +17,6 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 			controller: function($scope) {
 
 				$scope.sportsConfig = SportsConfig
-				$log.debug('init ENV', ENV)
 
 				// We use it for nice out-of-the-box file features
 				$scope.buildUploader = function(sportsConfig) {
@@ -27,7 +26,6 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 						filters: [{
 							name: 'videoTypesFilter',
 							fn: function(item) {
-								console.log('validating item', item)
 								var type = item.type;
 								if (supportedFileTypes.indexOf(type) == -1) {
 									return false

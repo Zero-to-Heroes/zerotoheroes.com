@@ -3,7 +3,7 @@
 	<h1>{{ 'global.upload.replay.review.headline' | translate }}</h1>
 
 	<!-- Show the overall progress of the upload -->
-	<upload-progress sport="sport" type="'replay'"></upload-progress>
+	<upload-progress sport="sport" type="'replay'" active="active"></upload-progress>
 
 </div>
 
@@ -42,8 +42,8 @@
 		  	</div>
 	  		<div class="row">
 				<div class="col-sm-12">
-				  	<div class="form-group" show-errors="{ showSuccess: true }">
-						<toolbar player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true" config="config">
+				  	<div class="form-group">
+						<toolbar player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true" config="config" show-errors="{ showSuccess: true }" class="form-group">
 				    		<textarea name="text" class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholder' | translate }}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
 				    	</toolbar>
 				   </div>

@@ -47,7 +47,7 @@
 		<span class="slider-text">{{ 'global.upload.video.sliderLabel' | translate }}</span>
 		<div range-slider min="0" max="sliderMax" model-min="min" model-max="max" attach-handle-values="true" filter="timeFilter" getter-setter="true" ng-show="videoInfo.ending > 0" show-values="true"></div>
 	</div>
-	<!--<div class="row" ng-show="file && sportsConfig[sport.toLowerCase()].allowDoubleSpeed">
+	<div class="row" ng-show="file && sportsConfig[sport.toLowerCase()].allowDoubleSpeed">
 		<span class="double-speed-text">{{ 'global.upload.video.doubleSpeedLabel' | translate }}</span>
 		<span class="block double-speed-link" ng-show="videoInfo.videoFramerateRatio && videoInfo.videoFramerateRatio == 1">
 			<a ng-click="videoInfo.videoFramerateRatio = 2; maximumAllowedDuration = maximumAllowedDuration * videoInfo.videoFramerateRatio">{{ 'global.upload.video.doubleSpeedLink' | translate }}<span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.video.doubleSpeedExplanation' | translate }}" data-trigger="click" bs-tooltip></span></a>
@@ -55,7 +55,7 @@
 		<span class="block double-speed-link" ng-show="!videoInfo.videoFramerateRatio || videoInfo.videoFramerateRatio != 1">
 			<a ng-click="maximumAllowedDuration = maximumAllowedDuration / videoInfo.videoFramerateRatio; videoInfo.videoFramerateRatio = 1">{{ 'global.upload.video.normalSpeedLink' | translate }}<span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.video.restoreSpeedExplanation' | translate }}" data-trigger="click" bs-tooltip></span></a>
 		</span>
-	</div>-->
+	</div>
 
 	<!-- The messages that appear if the video is too long -->
 	<div class="alert alert-danger video-time-limit" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && !sportsConfig[sport.toLowerCase()].allowDoubleSpeed">

@@ -14,8 +14,6 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 			link: function($scope, element, attrs) {
 			},
 			controller: function($scope) {
-				$log.debug('Displaying review upload page', MediaUploader)
-
 				$scope.User = User
 				$scope.uploader = MediaUploader
 				$scope.publishPending = false
@@ -25,6 +23,7 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 					tags: [],
 					strSport: $scope.sport,
 					transcodingDone: false,
+					videoFramerateRatio: 1,
 					language: Localization.getLanguage()
 				}
 				
@@ -43,15 +42,19 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 							{src: $sce.trustAsResourceUrl(objectURL), type: file.type}
 						]
 
-						var indexOfLastSpace = file.name.lastIndexOf(' ');
-						var indexOfLastDot = file.name.lastIndexOf('.');
+						var indexOfLastSpace = file.name.lastIndexOf(' ')
+						var indexOfLastDot = file.name.lastIndexOf('.')
 						if (indexOfLastDot != -1 && indexOfLastDot > indexOfLastSpace)
-							$scope.review.title = file.name.slice(0, indexOfLastDot - file.name.length);
+							$scope.review.title = file.name.slice(0, indexOfLastDot - file.name.length)
 						else
-							$scope.review.title = file.name;
+							$scope.review.title = file.name
 
+						$scope.review.videoFramerateRatio = MediaUploader.videoInfo.videoFramerateRatio
 						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKey
 
+						$timeout(function() {
+							$scope.playerControls.setPlayback($scope.review.videoFramerateRatio)
+						})
 					}
 				}
 
@@ -67,7 +70,16 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				// Advanced video controls
 				//===============
 				$scope.playerControls = {
-					wideMode: false
+					wideMode: false,
+					playbackRate: 1,
+					setPlayback: function(rate) {
+						$scope.playerControls.playbackRate = rate;
+						$scope.API.setPlayback(rate);
+						$scope.playerControls.previousVolume = $scope.API.volume;
+
+						if (rate == 1) $scope.API.setVolume($scope.playerControls.previousVolume);
+						else $scope.API.setVolume(0);
+					}
 				}
 
 
@@ -76,6 +88,7 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				//===============
 				$scope.videoUploadCallback = function() {
 					if ($scope.uploader.videoInfo.upload.done) {
+						$scope.updateVideoInfo()
 						$scope.startTranscoding()
 					}
 				}
@@ -206,8 +219,9 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				}
 
 				$scope.publishVideo = function() {
-					$scope.prepareCanvasForUpload($scope.review, $scope.review);
-					$scope.review.canvas = $scope.review.tempCanvas;
+					$scope.normalizeTimestamps()
+					$scope.prepareCanvasForUpload($scope.review, $scope.review)
+					$scope.review.canvas = $scope.review.tempCanvas
 
 					var newReview = {
 						text: $scope.review.text,
@@ -220,10 +234,47 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 					Api.ReviewsPublish.save({reviewId: $scope.review.id}, newReview, 
 						function(data) {
 							$log.debug('review finalized', data)
-							var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s;
-							$location.path(url);
+							var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s
+							$location.path(url)
 						}
 					)
+				}
+
+
+				//===============
+				// Timestamp manipulation
+				//===============
+				$scope.updateVideoInfo = function() {
+					$scope.review.beginning = 0;
+					$scope.review.ending = $scope.API.totalTime;
+				}
+
+				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/gm;
+
+				$scope.normalizeTimestamps = function() {
+					if (!$scope.review.text) return
+
+					var timestampsToChange = $scope.review.text.match(timestampOnlyRegex)
+					if (!timestampsToChange) return
+
+					$log.debug('normalizeTimestamps')
+					for (var i = 0; i < timestampsToChange.length; i++) {
+						var timestampToChange = timestampsToChange[i]
+						var newTimestamp = $scope.normalizeTimestamp(timestampToChange)
+						$scope.review.text = $scope.review.text.replace(timestampToChange, newTimestamp)
+					}
+				}
+				$scope.normalizeTimestamp = function(timestamp) {
+					var split = timestamp.split(':')
+					var msValue = 1000 * 60 * parseInt(split[0]) + 1000 * parseInt(split[1])
+					if (split.length == 3) {
+						msValue += parseInt(split[2])
+					}
+					// Now substract beginning of video
+					var newMsValue = msValue / $scope.review.videoFramerateRatio
+					// And format it back 
+					var newStrValue = moment.duration(newMsValue, 'milliseconds').format('mm:ss:SSS', { trim: false })
+					return newStrValue
 				}
 
 

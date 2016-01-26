@@ -49,16 +49,25 @@ public class HSReplay implements ReplayPlugin {
 		if ("hdtreplay".equals(review.getFileType())) {
 			// Creating temp file to use the zip API
 			File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
+			log.debug("Created temp file " + tempFile);
 			s3utils.readFromS3ToFile(review.getTemporaryKey(), tempFile);
+			log.debug("Populated temp file from s3 " + tempFile);
+			log.debug("tmp file size " + tempFile.length());
 
 			// Unzipping
 			ZipFile zipFile = new ZipFile(tempFile);
+			log.debug("Created zip file " + zipFile);
 			String tempDir = System.getProperty("java.io.tmpdir");
+			log.debug("tempFile system property: " + tempDir);
 			String destination = tempDir + "/" + new Date().getTime() + "-" + review.getSlugifiedTitle();
 			zipFile.extractFile("output_log.txt", destination);
+			log.debug("Extracted to destination " + new File(destination));
+			log.debug("Output extraction " + new File(destination + "/output_log.txt"));
+			log.debug("Output extraction length " + new File(destination + "/output_log.txt").length());
 
 			// Retrieving the unzipped file
 			String logFile = readFile(destination + "/output_log.txt", StandardCharsets.UTF_8);
+			log.debug("Reading logs " + logFile);
 			xml = new ReplaySerializer().xmlFromLogs(logFile);
 
 			// Delete temp file

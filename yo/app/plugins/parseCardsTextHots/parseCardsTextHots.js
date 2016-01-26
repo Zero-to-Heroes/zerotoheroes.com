@@ -59,7 +59,7 @@ var parseCardsTextHots = {
 			match: /\[\[[a-zA-Z\s]{3,}$/,
 			search: function (term, callback, match) {
 				//console.log('term and match', term, match);
-				callback($.map(hotsTalentDb, function(talent) {
+				callback($.map(parseCardsTextHots.hotsTalentDb, function(talent) {
 					var res = talent.name.toLowerCase().indexOf(term.substring(2)) === 0 && talent.image ? talent : null;
 					return res;
 				}))

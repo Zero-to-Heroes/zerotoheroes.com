@@ -301,6 +301,7 @@
 				"doubleSpeedLabel": "Vitesse de la vidéo",
 				"doubleSpeedLink": "Doublez la vitesse de la vidéo",
 				"doubleSpeedExplanation": "Quand vous doublez la vitesse de la vidéo, la vidéo finale sera deux fois plus rapide (et deux fois plus courte) que l'originale, ce qui vous permet d'utiliser une vidéo deux fois plus longue. Faites attention à n'utiliser ça que si le rythme initial est suffisamment lent pour pouvoir toujours suivre l'action.",
+				"doubleSpeedReminder": "Vous avez choisi de doubler la vitesse de la vidéo - la version finale sera deux fois plus courte que ce que vous voyez à l'écran ici",
 				"normalSpeedLink": "Restorer la vidéo à sa vitesse initiale",
 				"restoreSpeedExplanation": "Restorer la vidéo à sa vitesse initiale",
 				"whyLimit": "Notre but est de garder l'analyse aussi ciblée que possible. Cela permet aux autres de donner leurs conseils beaucoup plus facilement. C'est pour cela que nous imposons une durée maximum de 5 minutes sur les vidéos",

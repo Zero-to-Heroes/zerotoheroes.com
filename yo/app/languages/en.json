@@ -299,6 +299,7 @@
 				"doubleSpeedLabel": "Video speed control",
 				"doubleSpeedLink": "Double the speed of the video",
 				"doubleSpeedExplanation": "When you double the video speed, the final video will be twice as fast (and twice as short) as the original, meaning you can use a video that is twice as long. You should use that if the general pace is slow enough to still be able to follow what happens",
+				"doubleSpeedReminder": "You have decided to double the speed of the video - the final video will be twice as short as what you see on screen here",
 				"normalSpeedLink": "Restore video to normal speed",
 				"restoreSpeedExplanation": "Reset the video to its original speed",
 				"whyLimit": "Our goal is to keep the analysis as focused as possible - this will make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos",

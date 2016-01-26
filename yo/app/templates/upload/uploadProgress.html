@@ -9,6 +9,7 @@
         	<div>{{uploader.videoInfo.upload.progress  | number : 1}}%</div>
         </div>
     </div>
+    <span ng-show="uploader.videoInfo.videoFramerateRatio == 2" translate="{{'global.upload.video.doubleSpeedReminder'}}"></span>
     <button class="btn btn-primary btn-upload" ng-click="initPublish()" ng-show="uploader.videoInfo.upload.progress == 100 && uploader.videoInfo.upload.postProcessed" ng-disabled="!isDataValid()"><span>{{ 'global.upload.video.publishReviewButton' | translate }}</span></button>
 
 </div>

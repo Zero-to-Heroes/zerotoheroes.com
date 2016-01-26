@@ -23,8 +23,9 @@ services.factory('HelpPopupConfig', ['$window', '$log', 'User', 'localStorage',
 
 			service.shouldTrigger = function(params) {
 				var show = !service.isRead(params.helpKey) && service.config[params.helpKey].showCondition();
-				return show;
-				// return true;
+				//return show;
+				// Deactivate that for now, not clean enough
+				return false;
 			}
 
 			service.markAsRead = function(helpKey) {

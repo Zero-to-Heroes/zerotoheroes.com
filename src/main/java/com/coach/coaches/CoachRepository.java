@@ -84,7 +84,7 @@ public class CoachRepository {
 				.tariffDescription("Au minimum deux conseils techniques et un conseil tactique").verified(true).build();
 	}
 
-	private static Coach buildAndrew() {
+	private static Coach buildAndrew() { 
 		return Coach
 				.builder()
 				.id("3")

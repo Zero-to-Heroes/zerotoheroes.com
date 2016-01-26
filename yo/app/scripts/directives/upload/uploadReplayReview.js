@@ -51,7 +51,12 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 					}
 				}
 				$scope.$watch('active', function(newVal) {
-					if (newVal) {
+					if (newVal && !$scope.review.title) {
+						$log.debug('reinit', newVal, $scope.review)
+						$scope.initReviewData()
+					}
+					if (!newVal) {
+						$log.debug('reinit', newVal, $scope.review)
 						$scope.initReviewData()
 					}
 				})
@@ -96,7 +101,17 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 								}
 								else {
 									$scope.sources = null
+
+									var title = $scope.review.title
+									var text = $scope.review.text
+									var tags = $scope.review.tags
+									var author = $scope.review.author
 									$scope.review = data
+									$scope.review.title = title
+									$scope.review.text = text
+									$scope.review.tags = tags
+									$scope.review.author = author
+
 									$scope.uploader.videoInfo.upload.postProcessed = true
 
 									$timeout(function() {
@@ -203,6 +218,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 
 				$scope.publishVideo = function() {
 					var newReview = {
+						author: $scope.review.author,
 						text: $scope.review.text,
 						sport: $scope.review.sport.key,
 						title: $scope.review.title,

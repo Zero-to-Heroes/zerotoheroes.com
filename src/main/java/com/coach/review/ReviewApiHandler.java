@@ -12,8 +12,6 @@ import java.util.Random;
 
 import javax.annotation.PostConstruct;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -46,6 +44,8 @@ import com.coach.subscription.SubscriptionManager;
 import com.coach.user.UserRepository;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
+
+import lombok.extern.slf4j.Slf4j;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/reviews")
@@ -116,22 +116,20 @@ public class ReviewApiHandler {
 			return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.BAD_REQUEST);
 
 		// Sorting in ascending order
-		Sort newestFirst = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate",
-				"lastModifiedDate"));
+		Sort newestFirst = new Sort(Sort.Direction.DESC,
+				Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
 
 		// Start pageing at 1 like normal people, not at 0 like nerds
 		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, newestFirst);
 		String sportCriteria = sportObj.getKey();
 
 		Page<Review> page = null;
-		if (criteria.getText() == null) {
+		if (criteria.getText() == null)
 			page = reviewRepo.listReviews(sportCriteria, criteria.getWantedTags(), criteria.getUnwantedTags(),
 					pageRequest);
-		}
-		else {
+		else
 			page = reviewRepo.listReviewsWithText(criteria.getText(), sportCriteria, criteria.getWantedTags(),
 					criteria.getUnwantedTags(), pageRequest);
-		}
 
 		List<Review> reviews = page.getContent();
 		ListReviewResponse response = new ListReviewResponse(reviews);
@@ -155,9 +153,7 @@ public class ReviewApiHandler {
 		if (review == null) return new ResponseEntity<Review>(review, HttpStatus.NOT_FOUND);
 
 		// Increase the view count
-		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {
-			review.incrementViewCount();
-		}
+		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) review.incrementViewCount();
 
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
@@ -198,11 +194,12 @@ public class ReviewApiHandler {
 			}
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
-		else {
-			// log.debug("Validating that the name used to created the review is allowed");
+		else if (review.getAuthor() != null) {
+			// log.debug("Validating that the name used to created the review is
+			// allowed");
 			User user = userRepo.findByUsername(review.getAuthor());
 			if (user != null) {
-				// log.debug("Name not allowed: " + review.getAuthor());
+				log.debug("Name not allowed: " + review.getAuthor() + ". Found user " + user);
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
@@ -224,15 +221,13 @@ public class ReviewApiHandler {
 		// log.debug("Saved review with ID: " + review.getId());
 
 		// Start transcoding
-		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())) {
-			if (!StringUtils.isNullOrEmpty(review.getReplay())) {
-				log.debug("Proessing replay");
-				replayProcessor.processReplayFile(review);
-			}
-			else {
-				log.debug("Transcoding video");
-				transcoder.transcode(review.getId());
-			}
+		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())) if (!StringUtils.isNullOrEmpty(review.getReplay())) {
+			log.debug("Proessing replay");
+			replayProcessor.processReplayFile(review);
+		}
+		else {
+			log.debug("Transcoding video");
+			transcoder.transcode(review.getId());
 		}
 
 		// log.debug("Transcoding started, returning with created review: " +
@@ -271,10 +266,9 @@ public class ReviewApiHandler {
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
 			User user = userRepo.findByUsername(comment.getAuthor());
-			if (user != null) {
-				// log.debug("Name not allowed: " + comment.getAuthor());
+			if (user != null) // log.debug("Name not allowed: " +
+								// comment.getAuthor());
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
-			}
 		}
 
 		comment.setCreationDate(new Date());
@@ -321,12 +315,10 @@ public class ReviewApiHandler {
 		User user = userRepo.findByUsername(currentUser);
 
 		// Disallow anonymous edits
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities))
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
-		}
-		// Disable edits when you're not the author
-		else if (!currentUser.equals(review.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Review>(
-				(Review) null, HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(review.getAuthor()) && !user.canEdit())
+			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 
 		// log.debug("Upading review with " + inputReview);
 
@@ -361,11 +353,42 @@ public class ReviewApiHandler {
 	public @ResponseBody ResponseEntity<Review> publish(@PathVariable("reviewId") final String id,
 			@RequestBody Review inputReview) throws IOException {
 
-		ResponseEntity<Review> responseEntity = updateInformation(id, inputReview);
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
 
-		Review review = responseEntity.getBody();
+		Review review = reviewRepo.findById(id);
+
+		log.debug("Publishing review " + inputReview);
+		log.debug("Exisint draft in the system is " + review);
+
+		// Updating author information
+		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities))
+			addAuthorInformation(inputReview.getSport(), review, currentUser);
+		else {
+			User user = userRepo.findByUsername(inputReview.getAuthor());
+			if (user != null) {
+				log.debug("Name not authorized: " + inputReview.getAuthor() + ". Found user: " + user);
+				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
+			}
+			review.setAuthor(inputReview.getAuthor());
+		}
+
+		review.setText(inputReview.getText());
+		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
+		activatePlugins(currentUser, review, review);
+		log.debug("updated text is " + review.getText());
+
+		review.setSport(inputReview.getSport());
+		review.setTitle(inputReview.getTitle());
+		review.setTags(inputReview.getTags());
+
+		review.setLastModifiedDate(new Date());
+		review.setLastModifiedBy(currentUser);
+		review.setLanguage(inputReview.getLanguage());
 		review.setPublished(true);
-		reviewRepo.save(review);
+
+		updateReview(review);
 
 		// Send notifications only if it's a real new video and
 		// not a video response
@@ -374,7 +397,7 @@ public class ReviewApiHandler {
 			slackNotifier.notifyNewReview(review);
 		}
 
-		return responseEntity;
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.POST)
@@ -390,12 +413,10 @@ public class ReviewApiHandler {
 				.getAuthorities();
 		User user = userRepo.findByUsername(currentUser);
 		// Disallow anonymous edits
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities))
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
-		}
-		// Disable edits when you're not the author
-		else if (!currentUser.equals(comment.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Review>(
-				(Review) null, HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(comment.getAuthor()) && !user.canEdit())
+			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 
 		consolidateCanvas(currentUser, review, newComment, newComment.getTempCanvas());
 		activatePlugins(currentUser, review, newComment);
@@ -447,12 +468,12 @@ public class ReviewApiHandler {
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
-			// log.debug("Validating that the name used to created the review is allowed");
+			// log.debug("Validating that the name used to created the review is
+			// allowed");
 			User user = userRepo.findByUsername(reply.getAuthor());
-			if (user != null) {
-				// log.debug("Name not allowed: " + reply.getAuthor());
+			if (user != null) // log.debug("Name not allowed: " +
+								// reply.getAuthor());
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
-			}
 		}
 
 		// Adding the comment
@@ -501,13 +522,13 @@ public class ReviewApiHandler {
 				.getAuthorities();
 
 		// No anonymous access
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Comment>(
-				(Comment) null, HttpStatus.UNAUTHORIZED); }
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities))
+			return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED);
 
 		// log.debug("Validating that the logged in user is the review author");
 		User user = userRepo.findByUsername(currentUser);
-		if (!user.getId().equals(review.getAuthorId())) { return new ResponseEntity<Comment>((Comment) null,
-				HttpStatus.UNAUTHORIZED); }
+		if (!user.getId().equals(review.getAuthorId()))
+			return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED);
 
 		comment.setHelpful(!comment.isHelpful());
 
@@ -519,15 +540,14 @@ public class ReviewApiHandler {
 		}
 
 		updateReview(review);
-		if (comment.isHelpful()) {
-			sportManager.addMarkedCommentHelpfulActivity(user, review, comment);
-		}
+		if (comment.isHelpful()) sportManager.addMarkedCommentHelpfulActivity(user, review, comment);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/suggestion/comment/{sport}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<Review> getRecommendedReviewForComment(@PathVariable("sport") final String sport) {
+	public @ResponseBody ResponseEntity<Review> getRecommendedReviewForComment(
+			@PathVariable("sport") final String sport) {
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 
@@ -546,13 +566,10 @@ public class ReviewApiHandler {
 
 			// TODO: do that in the DB directly?
 			List<Review> result = new ArrayList<>();
-			for (Review review : reviews) {
+			for (Review review : reviews)
 				if (review.getAuthor() != null && !review.getAuthor().equals(currentUser)
-						&& (review.getComments() == null || review.getComments().isEmpty())) {
+						&& (review.getComments() == null || review.getComments().isEmpty()))
 					result.add(review);
-				}
-			}
-			// log.debug("Filtered reviews " + result);
 
 			// Take a random video
 			if (!result.isEmpty()) {
@@ -582,9 +599,8 @@ public class ReviewApiHandler {
 		Iterable<User> users = userRepo.findAll(userIds);
 
 		Map<String, User> userMap = new HashMap<>();
-		for (User user : users) {
+		for (User user : users)
 			userMap.put(user.getId(), user);
-		}
 		review.normalizeUsers(userMap);
 	}
 
@@ -595,10 +611,9 @@ public class ReviewApiHandler {
 		// log.debug("Normalized prefix is " + normalizedPrefix);
 
 		log.debug("Temp canvas is " + tempCanvas);
-		for (String canvasKey : tempCanvas.keySet()) {
-			if (review.getCanvas().containsKey(canvasKey)) {
+		for (String canvasKey : tempCanvas.keySet())
+			if (review.getCanvas().containsKey(canvasKey))
 				review.getCanvas().put(canvasKey, tempCanvas.get(canvasKey));
-			}
 			else {
 				String newKey = normalizedPrefix + review.getCanvasId();
 				// review.removeCanvas(canvasKey);
@@ -606,13 +621,12 @@ public class ReviewApiHandler {
 				// log.debug("Replacing " + canvasKey + " with " + newKey);
 				text = text.replaceAll(canvasKey, newKey);
 			}
-		}
 		textHolder.setText(text);
 	}
 
 	private void activatePlugins(String currentUser, Review review, HasText textHolder) {
 		com.coach.sport.Sport sportEntity = sportManager.findById(review.getSport().getKey());
-		for (String pluginClass : sportEntity.getPlugins()) {
+		for (String pluginClass : sportEntity.getPlugins())
 			try {
 				Plugin plugin = (Plugin) Class.forName(pluginClass).newInstance();
 				String newText = plugin.execute(currentUser,
@@ -623,7 +637,6 @@ public class ReviewApiHandler {
 			catch (Exception e) {
 				log.warn("Incorrect plugin execution " + pluginClass, e);
 			}
-		}
 	}
 
 	private void addAuthorInformation(Sport sport, HasReputation entity, String currentUser) {

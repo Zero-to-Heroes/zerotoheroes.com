@@ -8,14 +8,9 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 			transclude: true,
 			templateUrl: 'templates/upload/uploadDirective.html',
 			link: function($scope, element, attrs) {
-				//$log.debug('attributes', attrs);
-				//$log.debug('callback function', attrs['callback']);
 				$scope.callback = $parse(attrs.callback);
-				// $log.debug('evaluated callback function', $scope.callback);
 			},
 			controller: function($scope) {
-
-				// $log.debug('evaluated callback function in ctrl', $scope.callback);
 
 				$scope.uploadInProgress = false;
 				$scope.treatmentInProgress = false;

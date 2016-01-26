@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadProgress', ['MediaUploader', '$log',
-	function(MediaUploader, $log) {
+app.directive('uploadProgress', ['MediaUploader', '$log', '$parse', 
+	function(MediaUploader, $log, $parse) {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -10,9 +10,22 @@ app.directive('uploadProgress', ['MediaUploader', '$log',
 			scope: {
 				sport: '=',
 				type: '=',
-				active: '='
+				active: '=',
+				validation: '&',
+				publish: '&'
 			},
 			link: function($scope, element, attrs) {
+
+				// http://stackoverflow.com/questions/18378520/angularjs-pass-function-to-directive
+				$scope.isDataValid = function() {
+					if ($scope.validation()) 
+						return $scope.validation()()
+				}
+
+				$scope.initPublish = function() {
+					if ($scope.publish())
+						$scope.publish()()
+				}
 			},
 			controller: function($scope) {
 				$scope.uploader = MediaUploader

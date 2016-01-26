@@ -67,8 +67,10 @@ public class HSReplay implements ReplayPlugin {
 
 			// Retrieving the unzipped file
 			String logFile = readFile(destination + "/output_log.txt", StandardCharsets.UTF_8);
+			// All logs are correct at that point
 			log.debug("Reading logs " + logFile);
 			xml = new ReplaySerializer().xmlFromLogs(logFile);
+			log.debug("XML file " + xml);
 
 			// Delete temp file
 			tempFile.delete();

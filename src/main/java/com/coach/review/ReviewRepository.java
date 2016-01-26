@@ -41,6 +41,8 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ 		"'creationDate' : 1,"
 			+ 		"'sport' : 1,"
 			+ 		"'key' : 1,"
+			+ 		"'beginning' : 1,"
+			+ 		"'ending' : 1,"
 			+ 		"'lastModifiedDate' : 1"
 			+ 	"}"
 	)
@@ -72,6 +74,8 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 		+ 		"'creationDate' : 1,"
 		+ 		"'sport' : 1,"
 		+ 		"'key' : 1,"
+		+ 		"'beginning' : 1,"
+		+ 		"'ending' : 1,"
 		+ 		"'lastModifiedDate' : 1"
 		+ 	"}"
 	)

@@ -13,3 +13,7 @@ videogular, [videogular] {
 videogular vg-overlay-play, [videogular] vg-overlay-play {
 	left: 0;
 }
+
+videogular vg-media, [videogular] vg-media {
+	position: relative;
+}

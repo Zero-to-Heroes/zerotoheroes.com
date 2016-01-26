@@ -187,6 +187,7 @@ public class TagRepository {
 		heroes.add(new Tag("Hero: GreyMane"));
 		heroes.add(new Tag("Pro"));
 		heroes.add(new Tag("Team Fight"));
+		heroes.add(new Tag("Team League"));
 		tags.put(HeroesOfTheStorm, heroes);
 
 		// Tags for Heroes of the Storm

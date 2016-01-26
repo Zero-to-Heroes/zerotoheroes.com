@@ -282,6 +282,7 @@
 				"dropZone": "ou déposez-le ici",
 				"clearCurrentFile": "Effacer le replay",
 				"selectedFile": "Vous êtes sur le point de mettre en ligne {{fileName}}. Nous devons le traiter avant qu'il soit utilisable, et vous pourrez le rejouer une fois cela fait à la prochaine étape",
+				"invalidFormatMessage": "Nous ne supportons que les fichiers de log (.txt), les fichiers hsreplay (.xml) ou les fichiers de replay créés par Hearthstone Deck Tracker  (.hdtreplay) pour le moment. Si vous souhaitez utiliser un autre format de fichier, merci de nous laisser un mot sur les forums",
 
 				"dontCloseWindowMessage": "Votre replay est en train d'être mis en ligne sur nos serveurs. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
 				"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et vous pourrez ensuite le voir dans le lecteur à gauche",

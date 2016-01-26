@@ -62,7 +62,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					useVideo: true,
 					recommendedVideo: '55fc3a7de4b049db505af11e',
 					isSport: true,
-					allowDoubleSpeed: true,
+					allowDoubleSpeed: false,
 					plugins: {
 						plugins: [
 							{name: 'parseCardsTextHots', version: 1}
@@ -80,7 +80,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					useVideo: true,
 					recommendedVideo: '56000cb4e4b049db505af11f',
 					isSport: true,
-					allowDoubleSpeed: true,
+					allowDoubleSpeed: false,
 					excludeFromLanding: true,
 					landing: {
 						displayName: 'League of Legends',

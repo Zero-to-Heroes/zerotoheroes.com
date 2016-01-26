@@ -1,11 +1,9 @@
 package com.coach.plugin.hearthstone;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Date;
 import java.util.Map;
 
@@ -68,7 +66,7 @@ public class HSReplay implements ReplayPlugin {
 			// "/output_log.txt").length());
 
 			// Retrieving the unzipped file
-			String logFile = readFile(destination + "/output_log.txt", StandardCharsets.UTF_8);
+			String logFile = readFile(destination + "/output_log.txt");
 			// All logs are correct at that point
 			// log.debug("Reading logs " + logFile);
 			xml = new ReplaySerializer().xmlFromLogs(logFile);
@@ -100,8 +98,20 @@ public class HSReplay implements ReplayPlugin {
 		repo.save(review);
 	}
 
-	static String readFile(String path, Charset encoding) throws IOException {
-		byte[] encoded = Files.readAllBytes(Paths.get(path));
-		return new String(encoded, encoding);
+	static String readFile(String path) throws IOException {
+		File file = new File(path);
+		String fileContents = "";
+
+		BufferedReader reader = new BufferedReader(new FileReader(file));
+		try {
+			String line;
+			while ((line = reader.readLine()) != null)
+				fileContents += line + System.lineSeparator();
+		}
+		finally {
+			reader.close();
+		}
+
+		return fileContents;
 	}
 }

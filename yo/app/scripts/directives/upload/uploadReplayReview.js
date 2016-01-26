@@ -43,7 +43,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						else
 							$scope.review.title = file.name
 
-						$scope.review.fileType = file.type
+						$scope.review.fileType = file.type || file.name.slice(indexOfLastDot + 1)
 
 						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKey
 

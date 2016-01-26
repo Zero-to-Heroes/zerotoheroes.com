@@ -304,7 +304,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 				+ getSlugifiedTitle();
 	}
 
-	private String getSlugifiedTitle() {
+	public String getSlugifiedTitle() {
 		try {
 			return new Slugify().slugify(getTitle());
 		}

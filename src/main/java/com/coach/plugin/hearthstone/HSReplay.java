@@ -1,11 +1,15 @@
 package com.coach.plugin.hearthstone;
 
-import info.hearthsim.hsreplay.ReplaySerializer;
-
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Date;
 import java.util.Map;
 
-import lombok.extern.slf4j.Slf4j;
-
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.coach.core.storage.S3Utils;
@@ -13,6 +17,10 @@ import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+
+import info.hearthsim.hsreplay.ReplaySerializer;
+import lombok.extern.slf4j.Slf4j;
+import net.lingala.zip4j.core.ZipFile;
 
 @Slf4j
 public class HSReplay implements ReplayPlugin {
@@ -38,17 +46,34 @@ public class HSReplay implements ReplayPlugin {
 		log.debug("Processing replay file for review " + review);
 
 		String xml = null;
-		if ("text/plain".equals(review.getFileType())) {
+		if ("hdtreplay".equals(review.getFileType())) {
+			// Creating temp file to use the zip API
+			File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
+			s3utils.readFromS3ToFile(review.getTemporaryKey(), tempFile);
+
+			// Unzipping
+			ZipFile zipFile = new ZipFile(tempFile);
+			String tempDir = System.getProperty("java.io.tmpdir");
+			String destination = tempDir + "/" + new Date().getTime() + "-" + review.getSlugifiedTitle();
+			zipFile.extractFile("output_log.txt", destination);
+
+			// Retrieving the unzipped file
+			String logFile = readFile(destination + "/output_log.txt", StandardCharsets.UTF_8);
+			xml = new ReplaySerializer().xmlFromLogs(logFile);
+
+			// Delete temp file
+			tempFile.delete();
+			FileUtils.deleteDirectory(new File(destination));
+		}
+		else if ("text/plain".equals(review.getFileType())) {
 			// Need to process the file
 			String logFile = s3utils.readFromS3(review.getTemporaryKey());
 			log.debug("Retrieved log file ");
 			xml = new ReplaySerializer().xmlFromLogs(logFile);
 
 		}
-		else if ("text/xml".equals(review.getFileType())) {
-			// Simply store the temporary XML to the final destination
-			xml = s3utils.readFromS3(review.getTemporaryKey());
-		}
+		// Simply store the temporary XML to the final destination
+		else if ("text/xml".equals(review.getFileType())) xml = s3utils.readFromS3(review.getTemporaryKey());
 		log.debug("XML created");
 
 		// Store the new file to S3 and update the review with the correct key
@@ -60,5 +85,10 @@ public class HSReplay implements ReplayPlugin {
 		review.setTemporaryKey(null);
 		review.setTranscodingDone(true);
 		repo.save(review);
+	}
+
+	static String readFile(String path, Charset encoding) throws IOException {
+		byte[] encoded = Files.readAllBytes(Paths.get(path));
+		return new String(encoded, encoding);
 	}
 }

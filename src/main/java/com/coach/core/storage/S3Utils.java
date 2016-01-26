@@ -1,7 +1,9 @@
 package com.coach.core.storage;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -49,6 +51,10 @@ public class S3Utils {
 		}
 
 		return fileContents;
+	}
+	
+	public void readFromS3ToFile(String key, File localFile) throws IOException {
+		s3.getObject(new GetObjectRequest(inputBucket, key), localFile);
 	}
 
 	public void putToS3(String text, String fileName, String type) throws IOException {

@@ -37,6 +37,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					isSport: true,
 					allowDoubleSpeed: true,
 					allowedUploads:  ['video', 'replay'],
+					supportedExtensions: ['hdtreplay'],
 					plugins: {
 						plugins: [
 							{name: 'parseCardsText', version: 2}, 

@@ -13,7 +13,8 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 				drawingCanvas: '=',
 				canvasId: '=',
 				hideComparison: '=',
-				config: '='
+				config: '=',
+				mediaType: '='
 			},
 			link: function ($scope, element, attrs) {
 				$scope.element = element;

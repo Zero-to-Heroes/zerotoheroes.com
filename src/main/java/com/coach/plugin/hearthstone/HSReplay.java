@@ -70,7 +70,7 @@ public class HSReplay implements ReplayPlugin {
 			// All logs are correct at that point
 			// log.debug("Reading logs " + logFile);
 			xml = new ReplaySerializer().xmlFromLogs(logFile);
-			log.debug("XML file " + xml);
+			// log.debug("XML file " + xml);
 
 			// Delete temp file
 			tempFile.delete();
@@ -100,18 +100,18 @@ public class HSReplay implements ReplayPlugin {
 
 	static String readFile(String path) throws IOException {
 		File file = new File(path);
-		String fileContents = "";
+		StringBuilder fileContents = new StringBuilder();
 
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		try {
 			String line;
 			while ((line = reader.readLine()) != null)
-				fileContents += line + System.lineSeparator();
+				fileContents.append(line + System.lineSeparator());
 		}
 		finally {
 			reader.close();
 		}
 
-		return fileContents;
+		return fileContents.toString();
 	}
 }

@@ -259,24 +259,28 @@
 
     Replay.prototype.goNextAction = function(e) {
       e.preventDefault();
+      this.state.replay.pause();
       this.state.replay.goNextAction();
       return this.forceUpdate();
     };
 
     Replay.prototype.goPreviousAction = function(e) {
       e.preventDefault();
+      this.state.replay.pause();
       this.state.replay.goPreviousAction();
       return this.forceUpdate();
     };
 
     Replay.prototype.goNextTurn = function(e) {
       e.preventDefault();
+      this.state.replay.pause();
       this.state.replay.goNextTurn();
       return this.forceUpdate();
     };
 
     Replay.prototype.goPreviousTurn = function(e) {
       e.preventDefault();
+      this.state.replay.pause();
       this.state.replay.goPreviousTurn();
       return this.forceUpdate();
     };
@@ -2551,7 +2555,9 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ReplayPlayer.prototype.pause = function() {
-      this.previousSpeed = this.speed;
+      if (this.speed > 0) {
+        this.previousSpeed = this.speed;
+      }
       this.speed = 0;
       return clearInterval(this.interval);
     };

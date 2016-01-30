@@ -91,6 +91,7 @@
     __extends(Replay, _super);
 
     function Replay(props) {
+      this.onMainPlayerSwitchedChange = __bind(this.onMainPlayerSwitchedChange, this);
       this.onShowCardsChange = __bind(this.onShowCardsChange, this);
       this.onClickPause = __bind(this.onClickPause, this);
       this.onClickPlay = __bind(this.onClickPlay, this);
@@ -104,6 +105,7 @@
         replay: new ReplayPlayer(new HSReplayParser(props.route.replay))
       };
       this.showAllCards = false;
+      this.mainPlayerSwitched = false;
       subscribe(this.state.replay, 'players-ready', (function(_this) {
         return function() {
           return _this.callback;
@@ -201,7 +203,11 @@
         "type": "checkbox",
         "checked": this.showAllCards,
         "onChange": this.onShowCardsChange
-      }), "Try to show hidden cards")), React.createElement("div", {
+      }), "Try to show hidden cards"), React.createElement("label", null, React.createElement("input", {
+        "type": "checkbox",
+        "checked": this.mainPlayerSwitched,
+        "onChange": this.onMainPlayerSwitchedChange
+      }), "Switch main player")), React.createElement("div", {
         "className": "replay__game"
       }, top, bottom, React.createElement(Target, {
         "source": source,
@@ -294,7 +300,12 @@
 
     Replay.prototype.onShowCardsChange = function() {
       this.showAllCards = !this.showAllCards;
-      console.log('changed', this.showAllCards);
+      return this.forceUpdate();
+    };
+
+    Replay.prototype.onMainPlayerSwitchedChange = function() {
+      this.mainPlayerSwitched = !this.mainPlayerSwitched;
+      this.state.replay.switchMainPlayer();
       return this.forceUpdate();
     };
 
@@ -2877,7 +2888,7 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ReplayPlayer.prototype.finalizeInit = function() {
-      var action, actionIndex, armor, batch, command, currentPlayer, currentTurnNumber, definition, dmg, entity, entityTag, excluded, i, info, j, k, l, len, len1, len10, len11, len2, len3, len4, len5, len6, len7, len8, len9, m, meta, n, o, p, playedCard, playerIndex, players, publicSecret, q, r, ref, ref1, ref10, ref11, ref12, ref13, ref14, ref15, ref16, ref17, ref18, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, s, secret, t, tag, tagValue, target, tempOpponent, turnNumber, u, v;
+      var action, actionIndex, armor, batch, command, currentPlayer, currentTurnNumber, definition, dmg, entity, entityTag, excluded, i, info, j, k, l, len, len1, len10, len11, len2, len3, len4, len5, len6, len7, len8, len9, m, meta, n, o, p, playedCard, playerIndex, players, publicSecret, q, r, ref, ref1, ref10, ref11, ref12, ref13, ref14, ref15, ref16, ref17, ref18, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, s, secret, t, tag, tagValue, target, turnNumber, u, v;
       this.goToTimestamp(this.currentReplayTime);
       this.update();
       players = [this.player, this.opponent];
@@ -3206,11 +3217,16 @@ arguments[4][4][0].apply(exports,arguments)
         }
       }
       if (parseInt(this.opponent.id) === parseInt(this.mainPlayerId)) {
-        tempOpponent = this.player;
-        this.player = this.opponent;
-        this.opponent = tempOpponent;
+        this.switchMainPlayer();
       }
       return this.emit('players-ready');
+    };
+
+    ReplayPlayer.prototype.switchMainPlayer = function() {
+      var tempOpponent;
+      tempOpponent = this.player;
+      this.player = this.opponent;
+      return this.opponent = tempOpponent;
     };
 
     ReplayPlayer.prototype.getController = function(controllerId) {

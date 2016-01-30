@@ -2,8 +2,6 @@ package com.coach.admin;
 
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +15,8 @@ import com.coach.review.ReviewRepository;
 import com.coach.sport.SportRepository;
 import com.coach.user.ResetPasswordRepository;
 import com.coach.user.UserRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping(value = "/api/admin")
@@ -38,10 +38,8 @@ public class AdminApiHandler {
 	@RequestMapping(value = "/updateAllReviews", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<Review> updateAllReviews() {
 		List<Review> reviews = reviewRepository.findAll();
-		for (Review review : reviews) {
-			review.updateFullTextSearch();
-			review.updateCommentsCount();
-		}
+		for (Review review : reviews)
+			review.setPublished(true);
 		reviewRepository.save(reviews);
 
 		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);

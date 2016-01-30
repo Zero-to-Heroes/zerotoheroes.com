@@ -11,15 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
 import com.amazonaws.util.StringUtils;
@@ -31,6 +25,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.github.slugify.Slugify;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 @Getter
 @Setter
@@ -45,15 +46,15 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public enum Sport {
 		Badminton("Badminton", "Badminton"), Squash("Squash", "Squash"), LeagueOfLegends("LeagueOfLegends",
 				"League of Legends"), HearthStone("HearthStone", "HearthStone"), HeroesOfTheStorm("HeroesOfTheStorm",
-				"Heroes of the Storm"), Meta("Meta", "Meta"), Duelyst("Duelyst", "Duelyst"), Other("Other", "Other");
+						"Heroes of the Storm"), Meta("Meta", "Meta"), Duelyst("Duelyst", "Duelyst"), Other("Other",
+								"Other");
 
 		@Getter
 		private String key, value;
 
 		public static Sport load(String sport) {
-			for (Sport temp : Review.Sport.values()) {
-				if (temp.getKey().equalsIgnoreCase(sport)) { return temp; }
-			}
+			for (Sport temp : Review.Sport.values())
+				if (temp.getKey().equalsIgnoreCase(sport)) return temp;
 			return null;
 		}
 	}
@@ -86,6 +87,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private List<Comment> comments;
 	private int totalComments, totalHelpfulComments;
 	private boolean transcodingDone;
+	@Indexed
 	private boolean published;
 	private float videoFramerateRatio;
 	private Map<String, String> reviewVideoMap = new HashMap<>();
@@ -112,9 +114,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@Override
 	public Reputation getReputation() {
-		if (reputation == null) {
-			reputation = new Reputation();
-		}
+		if (reputation == null) reputation = new Reputation();
 		return reputation;
 	}
 
@@ -138,19 +138,17 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public void setLanguage(String code) {
-		if (code != null && !code.isEmpty()) {
+		if (code != null && !code.isEmpty())
 			language = code;
-		}
-		else {
+		else
 			language = "en";
-		}
 	}
 
 	public Comment getComment(int commentId) {
 		if (comments == null) return null;
 
 		for (Comment comment : comments) {
-			if (comment.getId() != null && comment.getId().equals(String.valueOf(commentId))) { return comment; }
+			if (comment.getId() != null && comment.getId().equals(String.valueOf(commentId))) return comment;
 			Comment found = comment.getComment(commentId);
 			if (found != null) return found;
 
@@ -165,21 +163,17 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		Collections.sort(comments, new Comparator<Comment>() {
 			@Override
 			public int compare(Comment o1, Comment o2) {
-				if (o1.getReputation().getScore() != o2.getReputation().getScore()) {
+				if (o1.getReputation().getScore() != o2.getReputation().getScore())
 					return (int) (1000 * (o2.getReputation().getScore() - o1.getReputation().getScore()));
-				}
-				else if (o2.getCreationDate() == null) {
+				else if (o2.getCreationDate() == null)
 					return 1;
-				}
-				else {
+				else
 					return o2.getCreationDate().compareTo(o1.getCreationDate());
-				}
 			}
 		});
 
-		for (Comment comment : comments) {
+		for (Comment comment : comments)
 			comment.sortComments();
-		}
 	}
 
 	public void addExternalLink(String reviewId, String videoKey) {
@@ -191,11 +185,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public void prepareForDisplay(String userId) {
 		getReputation().modifyAccordingToUser(userId);
 		// comments
-		if (comments != null) {
-			for (Comment comment : comments) {
-				comment.prepareForDisplay(userId);
-			}
-		}
+		if (comments != null) for (Comment comment : comments)
+			comment.prepareForDisplay(userId);
 	}
 
 	public void incrementViewCount() {
@@ -206,11 +197,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		List<String> allAuthors = new ArrayList<>();
 		if (!StringUtils.isNullOrEmpty(authorId)) allAuthors.add(authorId);
 
-		if (comments != null) {
-			for (Comment comment : comments) {
-				comment.getAllAuthors(allAuthors);
-			}
-		}
+		if (comments != null) for (Comment comment : comments)
+			comment.getAllAuthors(allAuthors);
 
 		return allAuthors;
 	}
@@ -222,11 +210,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			authorFrame = author.getFrame();
 		}
 
-		if (comments != null) {
-			for (Comment comment : comments) {
-				comment.normalizeUsers(sport, userMap);
-			}
-		}
+		if (comments != null) for (Comment comment : comments)
+			comment.normalizeUsers(sport, userMap);
 	}
 
 	public void addCanvas(String key, String newCanvas) {
@@ -268,9 +253,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		if (subscribers == null) {
 			subscribers = new HashSet<>();
 			addSubscriber(authorId);
-			for (Comment comment : getComments()) {
+			for (Comment comment : getComments())
 				subscribers.addAll(comment.getAuthorIds());
-			}
 		}
 		return subscribers;
 	}
@@ -333,17 +317,15 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public void updateFullTextSearch() {
 		fullTextSearchField = title.toLowerCase() + " ";
 		fullTextSearchField += description == null ? "" : description.toLowerCase();
-		for (Comment comment : getComments()) {
+		for (Comment comment : getComments())
 			fullTextSearchField += " " + comment.getFullText();
-		}
 	}
 
 	public boolean isSequence() {
 		if (tags == null || tags.isEmpty()) return false;
 
-		for (Tag tag : tags) {
+		for (Tag tag : tags)
 			if (tag.getText().equals("Sequence")) return true;
-		}
 
 		return false;
 	}

@@ -21,6 +21,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 	//@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
 	@Query(	value =
 		"{ sport : ?0, "
+			+ "published: true,"
 			+ "$and : ["
 			+ "		{ $or : [ { $where : '?1 == null' }, { $where : '?1.length == 0' }, { tags : { $all : ?1 } } ] }, "
 			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $nin : ?2 } } ] }"
@@ -53,6 +54,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 	//@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
 	@Query(value =
 		"{ $text : { $search : ?0 },"
+			+ "published: true,"
 			+ "sport : ?1, "
 			+ "$and : ["
 			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $all : ?2 } } ] }, "

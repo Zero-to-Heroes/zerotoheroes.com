@@ -96,6 +96,7 @@ public class ReviewApiHandler {
 		DBCollection collection = mongoOperations.getCollection("review");
 		log.debug("retrieving collection " + collection);
 		collection.createIndex(new BasicDBObject("fullTextSearchField", "text"));
+		// collection.createIndex(new BasicDBObject("published", 1));
 	}
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)

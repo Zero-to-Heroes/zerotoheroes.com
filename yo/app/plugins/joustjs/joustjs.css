@@ -1943,6 +1943,9 @@
   padding: 10px;
   z-index: 2;
 }
+.hearthstone #externalPlayer .additional-controls label {
+  display: block;
+}
 .hearthstone #externalPlayer .target {
   position: absolute;
   background-color: red;

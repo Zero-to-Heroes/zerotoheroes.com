@@ -2,8 +2,6 @@ package com.coach.activities;
 
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
@@ -17,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.coach.sport.Sport;
 import com.coach.sport.SportManager;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RepositoryRestController
 @RequestMapping(value = "/api/activities")
 @Slf4j
@@ -29,7 +29,7 @@ public class ActivitiesApiHandler {
 	public @ResponseBody ResponseEntity<List<Activity>> getLatestActivities(@PathVariable("sport") final String sport,
 			@RequestParam(value = "quantity", required = false) Integer quantity) {
 
-		log.debug("Retrieving latest activities for " + sport);
+		// log.debug("Retrieving latest activities for " + sport);
 
 		Sport sportObject = sportManager.findById(sport);
 		int howMany = quantity == null ? 4 : quantity;

@@ -3,8 +3,6 @@ package com.coach.news;
 import java.util.Date;
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.joda.time.DateTime;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
@@ -17,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.amazonaws.util.StringUtils;
 import com.coach.news.News.Type;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RepositoryRestController
 @RequestMapping(value = "/api/news")
 @Slf4j
@@ -28,7 +28,7 @@ public class NewsApiHandler {
 	public @ResponseBody ResponseEntity<List<News>> getLatestFeatures(
 			@RequestParam(value = "dateFrom", required = false) String dateFrom) {
 
-		log.debug("Retrieving all latest features from " + dateFrom);
+		// log.debug("Retrieving all latest features from " + dateFrom);
 		News.Type type = News.Type.Feature;
 
 		List<News> news = getNews(dateFrom, type);
@@ -41,7 +41,7 @@ public class NewsApiHandler {
 	public @ResponseBody ResponseEntity<List<News>> getLatestBugFixes(
 			@RequestParam(value = "dateFrom", required = false) String dateFrom) {
 
-		log.debug("Retrieving all latest bugfixes from " + dateFrom);
+		// log.debug("Retrieving all latest bugfixes from " + dateFrom);
 		News.Type type = News.Type.Bug;
 
 		List<News> news = getNews(dateFrom, type);

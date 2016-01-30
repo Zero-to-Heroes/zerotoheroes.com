@@ -55,10 +55,11 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						$log.debug('reinit', newVal, $scope.review)
 						$scope.initReviewData()
 					}
-					if (!newVal) {
-						$log.debug('reinit', newVal, $scope.review)
-						$scope.initReviewData()
-					}
+					// What's this purpose? Why do we want to init if it's not active?
+					// if (!newVal) {
+					// 	$log.debug('reinit', newVal, $scope.review)
+					// 	$scope.initReviewData()
+					// }
 				})
 					
 

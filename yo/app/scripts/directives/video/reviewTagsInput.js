@@ -88,12 +88,12 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 				}
 
 				$scope.$watch('review.sport', function (newVal, oldVal) {
-					$log.log('watching sport value ', oldVal, newVal);
+					// $log.log('watching sport value ', oldVal, newVal);
 					if (newVal)
 						$scope.loadTags()
 				});
 				$scope.$watch('review.strSport', function (newVal, oldVal) {
-					$log.log('watching strSport value ', oldVal, newVal);
+					// $log.log('watching strSport value ', oldVal, newVal);
 					if (newVal)
 						$scope.loadTags()
 				});
@@ -105,7 +105,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 						else if ($scope.review.strSport)
 							var sport = $scope.review.strSport
 					}
-					$log.log('getting the new tags for sport ', sport);
+					// $log.log('getting the new tags for sport ', sport);
 					if (sport) {
 						Api.Tags.query({sport: sport}, 
 							function(data) {

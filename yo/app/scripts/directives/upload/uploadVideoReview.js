@@ -79,6 +79,11 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 
 						if (rate == 1) $scope.API.setVolume($scope.playerControls.previousVolume);
 						else $scope.API.setVolume(0);
+					},
+					moveTime: function(amountInMilliseconds) {
+						var currentTime1 = $scope.API.currentTime
+						var time1 = Math.min(Math.max(currentTime1 + amountInMilliseconds, 0), $scope.API.totalTime)
+						$scope.API.seekTime(time1 / 1000)
 					}
 				}
 
@@ -94,7 +99,7 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				}
 
 				$scope.startTranscoding = function() {
-					$log.debug('startTranscoding', $scope.review, $scope.uploader)
+					$log.debug('startTranscoding in video', $scope.review)
 					Api.Reviews.save($scope.review, 
 						function(data) {
 							$log.debug('review created, transcoding ', data)

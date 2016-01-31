@@ -1522,6 +1522,12 @@
   width: 0;
   height: 0;
 }
+.hearthstone #externalPlayer .player-name.active {
+  background: rgba(117, 234, 143, 0.5);
+}
+.hearthstone #externalPlayer .player-name.active::after {
+  border-color: transparent transparent transparent rgba(117, 234, 143, 0.5);
+}
 .hearthstone #externalPlayer .deck {
   width: 32px;
   height: 48px;

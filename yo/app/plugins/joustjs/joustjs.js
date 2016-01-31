@@ -134,7 +134,8 @@
         top = React.createElement("div", {
           "className": "top"
         }, React.createElement(PlayerName, {
-          "entity": replay.opponent
+          "entity": replay.opponent,
+          "isActive": replay.opponent.id === replay.getActivePlayer().id
         }), React.createElement(Deck, {
           "entity": replay.opponent
         }), React.createElement(Board, {
@@ -159,7 +160,8 @@
         bottom = React.createElement("div", {
           "className": "bottom"
         }, React.createElement(PlayerName, {
-          "entity": replay.player
+          "entity": replay.player,
+          "isActive": replay.player.id === replay.getActivePlayer().id
         }), React.createElement(Deck, {
           "entity": replay.player
         }), React.createElement(Board, {
@@ -1222,8 +1224,13 @@
     }
 
     PlayerName.prototype.render = function() {
+      var cls;
+      cls = "player-name";
+      if (this.props.isActive) {
+        cls += " active";
+      }
       return React.createElement("div", {
-        "className": "player-name"
+        "className": cls
       }, this.props.entity.name);
     };
 
@@ -2725,6 +2732,10 @@ arguments[4][4][0].apply(exports,arguments)
         }
       }
       return console.log('at previous turn', this.currentTurn, this.currentActionInTurn, this.turnLog);
+    };
+
+    ReplayPlayer.prototype.getActivePlayer = function() {
+      return this.turns[this.currentTurn].activePlayer || {};
     };
 
     ReplayPlayer.prototype.newStep = function() {

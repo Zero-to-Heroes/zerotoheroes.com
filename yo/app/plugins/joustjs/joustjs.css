@@ -1523,10 +1523,10 @@
   height: 0;
 }
 .hearthstone #externalPlayer .player-name.active {
-  background: rgba(117, 234, 143, 0.5);
+  background: rgba(64, 154, 204, 0.5);
 }
 .hearthstone #externalPlayer .player-name.active::after {
-  border-color: transparent transparent transparent rgba(117, 234, 143, 0.5);
+  border-color: transparent transparent transparent rgba(64, 154, 204, 0.5);
 }
 .hearthstone #externalPlayer .deck {
   width: 32px;
@@ -1954,7 +1954,7 @@
 }
 .hearthstone #externalPlayer .target {
   position: absolute;
-  background-color: green;
+  background-color: #409ACC;
   width: 4px;
 }
 .hearthstone #externalPlayer .target::after {
@@ -1962,7 +1962,7 @@
   display: block;
   left: -8px;
   position: absolute;
-  border-bottom: 10px solid green;
+  border-bottom: 10px solid #409ACC;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }

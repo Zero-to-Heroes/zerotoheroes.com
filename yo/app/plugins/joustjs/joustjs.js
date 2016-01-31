@@ -217,7 +217,8 @@
         "className": "replay__game"
       }, top, bottom, React.createElement(Target, {
         "source": source,
-        "target": target
+        "target": target,
+        "type": replay.targetType
       })), React.createElement("form", {
         "className": "replay__controls padded"
       }, React.createElement(ButtonGroup, null, React.createElement(Button, {
@@ -1332,7 +1333,7 @@ arguments[4][4][0].apply(exports,arguments)
   Target = React.createClass({
     componentDidMount: function() {},
     render: function() {
-      var alpha, arrowHeight, arrowWidth, containerLeft, containerTop, height, left, playerEl, sourceDims, style, tanAlpha, targetDims, top, transform;
+      var alpha, arrowHeight, arrowWidth, cls, containerLeft, containerTop, height, left, playerEl, sourceDims, style, tanAlpha, targetDims, top, transform;
       if (!(this.props.source && this.props.target)) {
         return null;
       }
@@ -1373,6 +1374,7 @@ arguments[4][4][0].apply(exports,arguments)
         top = Math.min(sourceDims.centerY, targetDims.centerY) - containerTop;
         height = arrowHeight;
       }
+      cls = "target " + this.props.type;
       style = {
         height: height,
         top: top,
@@ -1380,7 +1382,7 @@ arguments[4][4][0].apply(exports,arguments)
         transform: transform
       };
       return React.createElement("div", {
-        "className": "target",
+        "className": cls,
         "style": style
       });
     }
@@ -2673,6 +2675,7 @@ arguments[4][4][0].apply(exports,arguments)
           target = this.entities[action.target];
           this.targetSource = action != null ? action.data.id : void 0;
           this.targetDestination = target.id;
+          this.targetType = action.actionType;
           this.turnLog += ' -> ' + this.cardUtils.buildCardLink(this.cardUtils.getCard(target.cardID));
         }
       } else {
@@ -3175,6 +3178,7 @@ arguments[4][4][0].apply(exports,arguments)
                   index: actionIndex++,
                   timestamp: batch.timestamp,
                   type: ': ',
+                  actionType: 'attack',
                   data: this.entities[command[1][0].attributes.entity],
                   owner: this.turns[currentTurnNumber].activePlayer,
                   target: command[1][0].attributes.target,

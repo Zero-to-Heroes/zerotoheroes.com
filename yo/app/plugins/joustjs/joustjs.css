@@ -1954,17 +1954,23 @@
 }
 .hearthstone #externalPlayer .target {
   position: absolute;
-  background-color: red;
+  background-color: green;
   width: 4px;
 }
-.hearthstone #externalPlayer .target:after {
+.hearthstone #externalPlayer .target::after {
   content: '';
   display: block;
   left: -8px;
   position: absolute;
-  border-bottom: 10px solid red;
+  border-bottom: 10px solid green;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
+}
+.hearthstone #externalPlayer .target.attack {
+  background-color: red;
+}
+.hearthstone #externalPlayer .target.attack::after {
+  border-bottom: 10px solid red;
 }
 .hearthstone #externalPlayer .card-tooltip {
   background-color: transparent;

@@ -53,13 +53,13 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 				if (User.getUser().betaTester && S(css).startsWith("beta-")) {
 					css = S(css).chompLeft("beta-");
 					angularLoad.loadCSS('/plugins/sports/' + $scope.sport + '/' + css).then(function() {
-						$log.log('loaded sport css');
+						// $log.log('loaded sport css');
 					});
 					$scope.customClass = $scope.sport;
 				}
 				else if (!S(css).startsWith("beta-")) {
 					angularLoad.loadCSS('/plugins/sports/' + $scope.sport + '/' + css).then(function() {
-						$log.log('loaded sport css');
+						// $log.log('loaded sport css');
 					});
 					$scope.customClass = $scope.sport;
 				}

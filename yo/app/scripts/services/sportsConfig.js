@@ -180,7 +180,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			if (!config || !config.plugins || !config.plugins.plugins) return false;
 
 			var externalPlayer;
-			$log.debug('init player with config', config, review)
+			// $log.debug('init player with config', config, review)
 			config.plugins.plugins.forEach(function(plugin) {
 				if (plugin.player) {
 					externalPlayer = window[plugin.name];

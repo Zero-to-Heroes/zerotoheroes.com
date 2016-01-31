@@ -87,24 +87,24 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// TODO: make it clearner to decide if the review is to be played by the standard player or a custom one
 					// Controls default to the ones defined in scope
 					$scope.externalPlayer = undefined;
-					$log.debug('Deciding whether we need to use another player', data);
+					// $log.debug('Deciding whether we need to use another player', data);
 					$scope.pluginsReady = false;
 					if (data.replay) {
 						$scope.externalPlayer = true;
 						// $timeout(function() {
-						$log.debug('loading replay file');
+						// $log.debug('loading replay file');
 						// Retrieve the XML replay file from s3
 						var replayUrl = ENV.videoStorageUrl + data.key;
-						$log.debug('Replay URL: ', replayUrl);
+						// $log.debug('Replay URL: ', replayUrl);
 						$.get(replayUrl, function(replayData) {
 							data.replayXml = replayData;
-							$log.debug('loaded xml', data.replayXml);
+							// $log.debug('loaded xml', data.replayXml);
 
 							// Init the external player
 							// TODO: use an event system
 							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data);
 							$scope.pluginsReady = true;
-							$log.debug('externalPlayer', data.replay, $scope.externalPlayer);
+							// $log.debug('externalPlayer', data.replay, $scope.externalPlayer);
 						})
 						// });
 					}
@@ -145,25 +145,25 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// Video player
 		//===============
 		$scope.onPlayerReady = function(API) {
-			$log.log('on player ready');
+			// $log.log('on player ready');
 			$scope.API = API;
 			$scope.API.setVolume(1);
 			// Load the video
 			$scope.API.mediaElement.on('canplay', function() {
-				$log.log('can play player1');
+				// $log.log('can play player1');
 				$scope.player1ready = true;
 				$scope.$apply();
 			});
 		};
 
 		$scope.onSecondPlayerReady = function($API) {
-			$log.log('onSecondPlayerReady');
+			// $log.log('onSecondPlayerReady');
 			$scope.API2 = $API;
 			$scope.API2.setVolume(0);
 
 			$scope.API2.mediaElement.on('canplay', function() {
 				if ($scope.playerControls.mode == 2) {
-					$log.log('can play player2');
+					// $log.log('can play player2');
 					$scope.player2ready = true;
 					$scope.$apply();
 				}

@@ -1960,6 +1960,17 @@
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
+.hearthstone #externalPlayer .card-tooltip {
+  background-color: transparent;
+  padding: 0;
+  opacity: 1;
+}
+.hearthstone #externalPlayer .card-tooltip:after {
+  border: none;
+}
+.hearthstone #externalPlayer .card-tooltip img {
+  height: 400px;
+}
 .hearthstone #externalPlayer .title-bar {
   display: none;
 }

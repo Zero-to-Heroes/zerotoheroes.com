@@ -224,28 +224,28 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					if (domElement.selectionStart || domElement.selectionStart === 0) {
 					  	var startPos = domElement.selectionStart;
 					  	// find a " " before the current position
-					  	$log.debug('substring', JSON.stringify(domElement.value.substring(0, startPos)));
+					  	// $log.debug('substring', JSON.stringify(domElement.value.substring(0, startPos)));
 					  	var commandStartIndex = domElement.value.substring(0, startPos).lastIndexOf(' ');
 					  	if (commandStartIndex < 0) 
 					  		commandStartIndex = domElement.value.substring(0, startPos).lastIndexOf('\n');
 					  		commandStartIndex = Math.max(0, commandStartIndex, domElement.value.substring(0, startPos).lastIndexOf('\r'));
 					  	startOffset = commandStartIndex;
-					  	$log.log('command start index is', commandStartIndex);
+					  	// $log.log('command start index is', commandStartIndex);
 
 					  	// find a " " after the position
 					  	var tempSubString = domElement.value.substring(commandStartIndex + 1, domElement.value.length);
-					  	$log.log('tempSubString', JSON.stringify(tempSubString));
+					  	// $log.log('tempSubString', JSON.stringify(tempSubString));
 					  	var commandEndIndex = tempSubString.indexOf(' ') - 1;
 					  	if (commandEndIndex < 0) 
 					  		commandEndIndex = tempSubString.indexOf('\r');
 					  	if (commandEndIndex < 0) 
 					  		commandEndIndex = tempSubString.indexOf('\n');
-					  	$log.log('commandEndIndex', commandEndIndex);
+					  	// $log.log('commandEndIndex', commandEndIndex);
 					  	if (commandEndIndex < 0 || commandEndIndex == tempSubString.length - 1) commandEndIndex = tempSubString.length;
-					  	$log.log('commandEndIndex', commandEndIndex);
+					  	// $log.log('commandEndIndex', commandEndIndex);
 
 					  	existingCommand = tempSubString.substring(0, commandEndIndex);
-					  	$log.log('existing command', JSON.stringify(existingCommand), startOffset);
+					  	// $log.log('existing command', JSON.stringify(existingCommand), startOffset);
 					}
 					return [existingCommand, startOffset];
 				}

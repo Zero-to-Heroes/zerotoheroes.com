@@ -10,7 +10,7 @@
 		<div class="videogular-container multi-player" ng-show="review.key && !review.replay" >
 			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
 				<div class="first-player-container">
-					<vg-media vg-src="sources" class="first-player" ng-class="playerControls.firstPlayerClass"></vg-media>
+					<vg-media vg-src="sources" vg-preload="metadata" class="first-player" ng-class="playerControls.firstPlayerClass"></vg-media>
 				</div>
 
 				<vg-controls ng-class="{'controls-container-fullscreen': API.isFullScreen, '{{playerControls.firstPlayerControlsClass}}': true}">

@@ -109,7 +109,18 @@ module.exports = function (grunt) {
 	  dist: {
 		options: {
 		  open: true,
-		  base: '<%= yeoman.dist %>'
+		  base: '<%= yeoman.dist %>',
+		  middleware: function (connect) {
+			return [
+				modRewrite(['^[^\\.]*$ /index.html [L]']),
+				connect.static('.tmp'),
+				connect().use(
+					'/bower_components',
+					connect.static('./bower_components')
+				),
+				connect.static(appConfig.app)
+			];
+		  }
 		}
 	  }
 	},
@@ -372,7 +383,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
 	if (target === 'dist') {
-	  grunt.task.run([
+	  	grunt.task.run([
 			'clean:dist',
 			'ngconstant:development',
 			'wiredep',
@@ -388,7 +399,8 @@ module.exports = function (grunt) {
 			'filerev',
 			'usemin',
 			'htmlmin',
-			'connect:dist:keepalive'
+			'connect:dist:keepalive',
+		  	'watch'
 	  	]);
 	}
 	else {

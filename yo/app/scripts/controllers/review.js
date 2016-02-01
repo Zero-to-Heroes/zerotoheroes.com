@@ -149,7 +149,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				var ts = decodeURIComponent($location.search().ts)
 				ts = ts.replace(new RegExp('%2E', 'g'), '.')
 				if (!$scope.player1ready) {
-					$log.debug('waiting for media player')
+					$log.debug('waiting for media player', $scope.player1ready)
 					$timeout(function() { $scope.handleUrlParameters()}, 100)
 				}
 				else {
@@ -169,17 +169,23 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.API.setVolume(1)
 			// Load the video
 			$scope.API.mediaElement.on('canplay', function() {
-				// $log.debug('can play player1')
+				$log.debug('can play player1')
 				$scope.player1ready = true
 				$scope.$apply()
 			})
 			// For some reason, only Chrome keeps fire the canplay after a "seekTime" command.
 			// FireFox only sends the 'seeked' event
 			$scope.API.mediaElement.on('seeked', function() {
-				// $log.debug('seeked')
+				$log.debug('seeked')
 				$scope.player1ready = true
 				$scope.$apply()
 			})
+
+			// And in case the event is already fired before we actually register the event
+			if ($scope.API.mediaElement.readyState > 3) {
+				$log.debug('media ready, missed the event listener')
+				$scope.player1ready = true
+			}
 		}
 
 		$scope.onSecondPlayerReady = function($API) {
@@ -201,6 +207,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.$apply()
 				}
 			})
+
+			// And in case the event is already fired before we actually register the event
+			if ($scope.API2.mediaElement.readyState > 3) {
+				$log.debug('media ready, missed the event listener')
+				$scope.player1ready = true
+			}
 		}
 
 		$scope.playerControls = {

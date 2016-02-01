@@ -36,7 +36,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.$watchCollection('plugins', function(newValue, oldValue) {
 			if (!$scope.temp || newValue.length == definedPlugins) {
-				$log.log('all plugins loaded', newValue, $scope.temp);
+				//$log.log('all plugins loaded', newValue, $scope.temp);
 				$scope.initReview();
 				$scope.plugins.forEach(function(plugin) {
 					if (plugin) {
@@ -48,7 +48,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		})
 
 		$scope.initReview = function() {
-			$log.debug('initializing review');
+			//$log.debug('initializing review');
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 
@@ -149,12 +149,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				var ts = decodeURIComponent($location.search().ts)
 				ts = ts.replace(new RegExp('%2E', 'g'), '.')
 				if (!$scope.player1ready) {
-					$log.debug('waiting for media player', $scope.player1ready)
+					// $log.debug('waiting for media player', $scope.player1ready)
 					$timeout(function() { $scope.handleUrlParameters()}, 100)
 				}
 				else {
-					$log.debug('ts parameter', ts)
-					$timeout(function() { $scope.goToTimestamp(ts) })
+					// $log.debug('ts parameter', ts)
+					$timeout(function() { 
+						// Default to wide mode, which is probably what we expect, since we link to a video directly
+						$scope.playerControls.wideMode = true
+						$scope.goToTimestamp(ts) 
+					})
 				}
 			}
 		}
@@ -169,21 +173,21 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.API.setVolume(1)
 			// Load the video
 			$scope.API.mediaElement.on('canplay', function() {
-				$log.debug('can play player1')
+				// $log.debug('can play player1')
 				$scope.player1ready = true
 				$scope.$apply()
 			})
 			// For some reason, only Chrome keeps fire the canplay after a "seekTime" command.
 			// FireFox only sends the 'seeked' event
 			$scope.API.mediaElement.on('seeked', function() {
-				$log.debug('seeked')
+				// $log.debug('seeked')
 				$scope.player1ready = true
 				$scope.$apply()
 			})
 
 			// And in case the event is already fired before we actually register the event
 			if ($scope.API.mediaElement.readyState > 3) {
-				$log.debug('media ready, missed the event listener')
+				// $log.debug('media ready, missed the event listener')
 				$scope.player1ready = true
 			}
 		}
@@ -210,7 +214,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// And in case the event is already fired before we actually register the event
 			if ($scope.API2.mediaElement.readyState > 3) {
-				$log.debug('media ready, missed the event listener')
+				// $log.debug('media ready, missed the event listener')
 				$scope.player1ready = true
 			}
 		}
@@ -229,7 +233,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			canvasPlaying: false,
 			wideMode: false,
 			init: function() {
-				$log.debug('Init: restoring players to default config')
+				// $log.debug('Init: restoring players to default config')
 				$scope.API.setVolume(1);
 				$scope.API2.setVolume(0);
 			},
@@ -247,7 +251,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				}
 			},
 			seekTime: function(time, time2) {
-				$log.log('seeking times', time, time2, $scope.API.currentTime, $scope.API.mediaElement);
+				//$log.log('seeking times', time, time2, $scope.API.currentTime, $scope.API.mediaElement);
 				if (time * 1000 == $scope.API.currentTime) {
 					//$log.log('staying at the same time, no action required');
 					$timeout(function() { $scope.player1ready = true; }, 0);					
@@ -276,15 +280,15 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				}
 			},
 			setPlayback: function(rate) {
-				$log.debug('Setting playback to', rate)
+				// $log.debug('Setting playback to', rate)
 				$scope.playerControls.playbackRate = rate;
 				$scope.API.setPlayback(rate);
-				$log.debug('initial volume is', $scope.API.volume)
+				// $log.debug('initial volume is', $scope.API.volume)
 				$scope.playerControls.previousVolume = $scope.API.volume;
 
 				if (rate == 1) $scope.API.setVolume($scope.playerControls.previousVolume);
 				else $scope.API.setVolume(0);
-				$log.debug('Set API volume to', $scope.API.volume);
+				// $log.debug('Set API volume to', $scope.API.volume);
 				if ($scope.playerControls.mode == 2) {
 					$scope.API2.setPlayback(rate);
 				}
@@ -303,7 +307,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.API2.pause();
 				$scope.relooping = true;
 				$timeout(function() {
-					$log.log('seeking time in reloop');
+					//$log.log('seeking time in reloop');
 					$scope.playerControls.seekTime($scope.playerControls.loopStartTime, $scope.playerControls.loop2StartTime);
 					$scope.playSimultaneously();
 				}, 0);
@@ -316,14 +320,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.playerControls.loopStatus = undefined;
 			},
 			unmuteSecondPlayer: function() {
-				$log.debug('switching sound to second player')
+				//$log.debug('switching sound to second player')
 				$scope.API.setVolume(0);
 				$scope.API2.setVolume(1);
 			}
 		}
 
 		$scope.playSimultaneously = function() {
-			$log.log('Stopped players, waiting for both to be ready to reloop');
+			//$log.log('Stopped players, waiting for both to be ready to reloop');
 			$scope.player1ready = false;
 			$scope.player2ready = false;
 			$scope.allPlayersReady = false;
@@ -433,7 +437,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.$broadcast('show-errors-reset');
 					$scope.addingComment = false;
 					if (data.text.match(timestampOnlyRegex)) {
-						$log.log('incrementing timestamps after comment upload');
+						//$log.log('incrementing timestamps after comment upload');
 						User.incrementTimestamps();
 					}
 				}, 
@@ -552,7 +556,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		  				//$log.log('plugins', $scope.review.plugins);
 						$scope.updateVideoInformation(data);
 		  				if (data.text.match(timestampOnlyRegex)) {
-							$log.log('incrementing timestamps after comment upload');
+							// $log.log('incrementing timestamps after comment upload');
 							User.incrementTimestamps();
 						}
 					}, 
@@ -739,7 +743,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			$scope.playerControls.init();
 
-			$log.log('going to timestamp', timeString);
+			// $log.log('going to timestamp', timeString);
 			// Player1 already has a loaded source
 			$scope.player1ready = true;
 			$scope.player2ready = false;
@@ -791,10 +795,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				var externalId = otherVideo.match(externalIdRegex);
 				if (externalId) {
 					var externalReviewId = externalId[0].substring(1, externalId[0].length - 1);
-					$log.log('external review id', externalReviewId);
-					$log.log('review map is ', $scope.review.reviewVideoMap);
+					// $log.log('external review id', externalReviewId);
+					// $log.log('review map is ', $scope.review.reviewVideoMap);
 					key = $scope.review.reviewVideoMap[externalReviewId];
-					$log.log('external video key is ', key);
+					// $log.log('external video key is ', key);
 				}
 
 				var fileLocation2 = ENV.videoStorageUrl + key;
@@ -839,7 +843,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			var buffering = true;
 			var buffering2 = false;
 			$scope.$watch('player1ready', function (newVal, oldVal) {
-				$log.debug('player1ready?', oldVal, newVal);
+				// $log.debug('player1ready?', oldVal, newVal);
 				if (!$scope.player2ready && $scope.playerControls.mode == 2) return;
 
 				if (newVal && buffering) {
@@ -852,7 +856,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			});
 
 			$scope.$watch('player2ready', function (newVal, oldVal) {
-				$log.debug('player2ready?', oldVal, newVal)
+				// $log.debug('player2ready?', oldVal, newVal)
 				if (!$scope.player1ready || $scope.playerControls.mode != 2) return;
 
 				if (newVal && buffering) {
@@ -865,9 +869,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			});
 
 			var unregisterWatchPhase1 = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
-				$log.debug('All players ready?', oldVal, newVal);
+				// $log.debug('All players ready?', oldVal, newVal);
 				if (newVal && buffering) {
-					$log.debug('ready for phase 2, seeking');
+					// $log.debug('ready for phase 2, seeking');
 					$scope.player1ready = false;
 					$scope.player2ready = false;
 					$scope.allPlayersReady = false;
@@ -886,9 +890,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// Actually, we always wait for the second one, as it seems the first one is always 
 			// conveniently processed first
 			var unregisterWatchPhase2 = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
-				$log.debug('All players ready bis?', oldVal, newVal);
+				// $log.debug('All players ready bis?', oldVal, newVal);
 				if (newVal && newVal != oldVal && buffering2) {
-					$log.log('ready for phase 3, playing');
+					// $log.log('ready for phase 3, playing');
 					// The attributes
 					var attributes = split[1];
 					if (attributes && attributes.indexOf('[') != -1) {

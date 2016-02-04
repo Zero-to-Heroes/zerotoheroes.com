@@ -2032,7 +2032,12 @@
   background-repeat: no-repeat;
   font-weight: bold;
   font-family: belwe, serif;
-  /*cursor: pointer;*/
+  cursor: pointer;
+}
+.hearthstone #externalPlayer .current-turn:hover,
+.hearthstone #externalPlayer .current-turn:active,
+.hearthstone #externalPlayer .current-turn.active {
+  background-image: url('images/turn-button-active.png');
 }
 .hearthstone #externalPlayer .turn-log {
   position: absolute;
@@ -2042,6 +2047,31 @@
   height: 750px;
   z-index: 2;
   padding: 15px;
+}
+.hearthstone #externalPlayer .turn-log .turn {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+}
+.hearthstone #externalPlayer .turn-log .main-player {
+  color: #0070DE;
+}
+.hearthstone #externalPlayer .turn-log .opponent {
+  color: #F58CBA;
+}
+.hearthstone #externalPlayer .turn-log p {
+  margin-bottom: 0;
+}
+.hearthstone #externalPlayer .turn-log .log-container {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  padding-right: 10px;
+}
+.hearthstone #externalPlayer .turn-log .log-container::-webkit-scrollbar {
+  display: none;
 }
 .hearthstone #externalPlayer .card-tooltip {
   background-color: transparent;

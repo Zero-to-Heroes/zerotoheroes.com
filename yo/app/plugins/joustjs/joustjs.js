@@ -1386,7 +1386,9 @@ arguments[4][4][0].apply(exports,arguments)
         return null;
       }
       sourceDims = this.props.source.getDimensions();
+      console.log('sourceDims', sourceDims);
       targetDims = this.props.target.getDimensions();
+      console.log('targetDims', targetDims);
       arrowWidth = Math.abs(sourceDims.centerX - targetDims.centerX);
       arrowHeight = Math.abs(sourceDims.centerY - targetDims.centerY);
       playerEl = document.getElementById('externalPlayer');
@@ -1395,16 +1397,17 @@ arguments[4][4][0].apply(exports,arguments)
       top = void 0;
       height = void 0;
       transform = '';
-      if (sourceDims.centerY === targetDims.centerY) {
+      if (Math.abs(sourceDims.centerY - targetDims.centerY) < 10) {
+        console.log('Same line interaction');
         left = Math.min(sourceDims.centerX, targetDims.centerX) - containerLeft;
+        console.log('initial left', left);
         height = arrowWidth;
         if (sourceDims.centerX < targetDims.centerX) {
           transform += 'rotate(90deg) ';
-          left += height / 2;
         } else {
           transform += 'rotate(-90deg) ';
-          left -= height / 2;
         }
+        left += height / 2;
         top = sourceDims.centerY - containerTop - height / 2;
       } else {
         if (sourceDims.centerY < targetDims.centerY) {
@@ -1415,10 +1418,15 @@ arguments[4][4][0].apply(exports,arguments)
         if (sourceDims.centerY < targetDims.centerY) {
           alpha = -alpha;
         }
+        console.log('angle is', alpha);
         transform += 'skewX(' + alpha + 'deg)';
         alpha = alpha * Math.PI / 180;
         left = Math.min(sourceDims.centerX, targetDims.centerX) - containerLeft;
+        console.log('readjusted left', left);
         left = left + Math.tan(Math.abs(alpha)) * arrowHeight / 2;
+        console.log('final left', left, alpha, arrowWidth, Math.cos(alpha), Math.cos(alpha) * arrowWidth / 2);
+        console.log('final left', left, alpha, arrowHeight, Math.tan(alpha), Math.tan(alpha) * arrowHeight / 2);
+        console.log('final top', Math.min(sourceDims.centerY, targetDims.centerY) - containerTop, containerTop);
         top = Math.min(sourceDims.centerY, targetDims.centerY) - containerTop;
         height = arrowHeight;
       }
@@ -1429,6 +1437,7 @@ arguments[4][4][0].apply(exports,arguments)
         left: left,
         transform: transform
       };
+      console.log('applying style', style);
       return React.createElement("div", {
         "className": cls,
         "style": style
@@ -2997,12 +3006,18 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ReplayPlayer.prototype.goToAction = function() {
-      var action, targetTimestamp;
+      var action, target, targetTimestamp;
       this.newStep();
       if (this.currentActionInTurn >= 0) {
         action = this.turns[this.currentTurn].actions[this.currentActionInTurn];
         this.emit('new-action', action);
         targetTimestamp = 1000 * (action.timestamp - this.startTimestamp) + 1;
+        if (action.target) {
+          target = this.entities[action.target];
+          this.targetSource = action != null ? action.data.id : void 0;
+          this.targetDestination = target.id;
+          this.targetType = action.actionType;
+        }
         return this.goToTimestamp(targetTimestamp);
       }
     };
@@ -3038,7 +3053,10 @@ arguments[4][4][0].apply(exports,arguments)
       }
       this.currentTurn = 0;
       this.currentActionInTurn = 0;
+      this.historyPosition = 0;
       this.init();
+      this.currentReplayTime = timestamp;
+      this.update();
       console.log('moveToTimestamp init done', targetTurn, targetAction);
       if (targetTurn <= 1 || targetAction < 0) {
         return;

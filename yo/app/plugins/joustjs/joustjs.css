@@ -2084,6 +2084,9 @@
 .hearthstone #externalPlayer .turn-log .log-container::-webkit-scrollbar {
   display: none;
 }
+.hearthstone #externalPlayer .secret-revealed {
+  color: #FCBD0B;
+}
 .hearthstone #externalPlayer .card-tooltip {
   background-color: transparent;
   padding: 0;

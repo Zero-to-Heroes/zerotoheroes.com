@@ -118,6 +118,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("Mill"));
 		hearthstone.add(new Tag("Deathrattle"));
 		hearthstone.add(new Tag("Draft"));
+		hearthstone.add(new Tag("Reno"));
+		hearthstone.add(new Tag("Handlock"));
 		tags.put(HearthStone, hearthstone);
 
 		// Tags for Heroes of the Storm

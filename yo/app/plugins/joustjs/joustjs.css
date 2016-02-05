@@ -2086,6 +2086,7 @@
 }
 .hearthstone #externalPlayer .secret-revealed {
   color: #FCBD0B;
+  margin-right: 5px;
 }
 .hearthstone #externalPlayer .card-tooltip {
   background-color: transparent;

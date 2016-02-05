@@ -46,6 +46,7 @@ public class TagRepository {
 		squash.add(new Tag("Tactics"));
 		squash.add(new Tag("Sequence"));
 		squash.add(new Tag("Serve"));
+		squash.add(new Tag("Ghosting"));
 		squash.add(new Tag("Drill: Solo backhand drive good length", "achievement-drill"));
 		tags.put(Squash, squash);
 

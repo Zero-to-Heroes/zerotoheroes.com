@@ -108,6 +108,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					useVideo: false,
 					displayName: 'Forum',
 					isSport: false,
+					allowedUploads:  ['post'],
 					allowDoubleSpeed: false
 				},
 				all: {

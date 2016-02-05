@@ -28,6 +28,12 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', 
 			$location.path(path)
 		}
 
+		if ($scope.state.allowedUploads && $scope.state.allowedUploads.length == 1 && !$routeParams['uploadType']) {
+			$scope.state.uploadType = $scope.state.allowedUploads[0]
+			var path = $location.path() + '/' + $scope.state.uploadType
+			$location.path(path)
+		}
+
 		$scope.$watch('videoInfo.upload.ongoing', function(newVal, oldVal) {
 			if (newVal) {
 				var url = $location.path() + '/review'

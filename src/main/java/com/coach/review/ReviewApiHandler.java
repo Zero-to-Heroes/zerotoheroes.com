@@ -101,7 +101,7 @@ public class ReviewApiHandler {
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(@RequestBody ReviewSearchCriteria criteria) {
-		log.debug("Retrieving all reviews with criteria " + criteria);
+		// log.debug("Retrieving all reviews with criteria " + criteria);
 
 		int pageNumber = criteria.getPageNumber() != null && criteria.getPageNumber() > 0 ? criteria.getPageNumber() - 1
 				: 0;
@@ -151,10 +151,12 @@ public class ReviewApiHandler {
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		Review review = reviewRepo.findById(id);
 
-		if (review == null) return new ResponseEntity<Review>(review, HttpStatus.NOT_FOUND);
+		if (review == null)
+			return new ResponseEntity<Review>(review, HttpStatus.NOT_FOUND);
 
 		// Increase the view count
-		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) review.incrementViewCount();
+		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport()))
+			review.incrementViewCount();
 
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
@@ -217,19 +219,25 @@ public class ReviewApiHandler {
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
-		updateReview(review);
 		sportManager.addNewReviewActivity(review);
 		// log.debug("Saved review with ID: " + review.getId());
 
 		// Start transcoding
-		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())) if (!StringUtils.isNullOrEmpty(review.getReplay())) {
-			log.debug("Proessing replay");
-			replayProcessor.processReplayFile(review);
-		}
+		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey()))
+			if (!StringUtils.isNullOrEmpty(review.getReplay())) {
+				log.debug("Proessing replay");
+				replayProcessor.processReplayFile(review);
+			}
+			else {
+				log.debug("Transcoding video");
+				transcoder.transcode(review.getId());
+			}
 		else {
-			log.debug("Transcoding video");
-			transcoder.transcode(review.getId());
+			log.debug("No media attached");
+			review.setPublished(true);
 		}
+
+		updateReview(review);
 
 		// log.debug("Transcoding started, returning with created review: " +
 		// review);
@@ -541,7 +549,8 @@ public class ReviewApiHandler {
 		}
 
 		updateReview(review);
-		if (comment.isHelpful()) sportManager.addMarkedCommentHelpfulActivity(user, review, comment);
+		if (comment.isHelpful())
+			sportManager.addMarkedCommentHelpfulActivity(user, review, comment);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}

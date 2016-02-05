@@ -1,5 +1,8 @@
 <view-title>Upload</view-title>
 
+<!-- forums -->
+<upload-directive ng-show="state.uploadType == 'post' && !state.step"  callback="onUploadComplete(review)" ></upload-directive>
+
 <upload-type-choice sport="sport" options="state" ng-show="!state.uploadType"></upload-type-choice>
 
 <!-- Video -->

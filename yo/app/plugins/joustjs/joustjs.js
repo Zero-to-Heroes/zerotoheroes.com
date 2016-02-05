@@ -161,7 +161,8 @@
           "isHidden": !this.showAllCards
         }), React.createElement(Hero, {
           "entity": replay.opponent,
-          "ref": "topHero"
+          "ref": "topHero",
+          "showConcealedInformation": this.showAllCards
         }));
         bottom = React.createElement("div", {
           "className": "bottom"
@@ -184,7 +185,8 @@
           "entity": replay.player
         }), React.createElement(Hero, {
           "entity": replay.player,
-          "ref": "bottomHero"
+          "ref": "bottomHero",
+          "showConcealedInformation": true
         }), React.createElement(Hand, {
           "entity": replay.player,
           "isHidden": false
@@ -413,7 +415,7 @@
     }
 
     Secret.prototype.render = function() {
-      var art, cls, style;
+      var art, cardArt, cls, link, locale, style;
       art = "https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/secrets/" + this.props.entity.tags.CLASS + ".png";
       style = {
         background: "url(" + art + ") top left no-repeat",
@@ -423,10 +425,26 @@
       if (this.props.className) {
         cls += " " + this.props.className;
       }
-      return React.createElement("div", {
-        "className": cls,
-        "style": style
-      });
+      if (this.props.showSecret) {
+        locale = window.localStorage.language && window.localStorage.language !== 'en' ? '/' + window.localStorage.language : '';
+        cardArt = "https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards" + locale + "/" + this.props.entity.cardID + ".png";
+        link = '<img src="' + cardArt + '">';
+        return React.createElement("div", {
+          "className": cls,
+          "style": style,
+          "data-tip": link,
+          "data-html": true,
+          "data-place": "right",
+          "data-effect": "solid",
+          "data-delay-show": "100",
+          "data-class": "card-tooltip"
+        });
+      } else {
+        return React.createElement("div", {
+          "className": cls,
+          "style": style
+        });
+      }
     };
 
     return Secret;
@@ -961,6 +979,7 @@
         "key": this.hero.id,
         "secrets": this.secrets,
         "ref": this.hero.id,
+        "showSecrets": this.props.showConcealedInformation,
         "className": "avatar"
       }), React.createElement(Card, {
         "entity": this.heroPower,
@@ -1016,7 +1035,7 @@
     }
 
     HeroCard.prototype.render = function() {
-      var art, cls, overlay, secrets, style;
+      var art, cls, overlay, secrets, show, style;
       art = "https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/" + this.props.entity.cardID + ".png";
       if (this.props.entity.cardID && !this.props.isHidden) {
         style = {
@@ -1034,10 +1053,12 @@
         });
       }
       if (this.props.secrets) {
+        show = this.props.showSecrets;
         secrets = this.props.secrets.map(function(entity) {
           return React.createElement(Secret, {
             "entity": entity,
-            "key": entity.id
+            "key": entity.id,
+            "showSecret": show
           });
         });
       }

@@ -1980,9 +1980,20 @@
   padding-left: 50px;
   padding-top: 10px;
   color: white;
+  position: relative;
+}
+.hearthstone #externalPlayer .game-log p {
+  margin-top: 5px;
 }
 .hearthstone #externalPlayer .game-log .span {
   margin-left: 5px;
+}
+.hearthstone #externalPlayer .game-log button {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .hearthstone #externalPlayer .replay__controls .playback-speed {
   display: table-cell;

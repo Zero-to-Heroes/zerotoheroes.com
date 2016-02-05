@@ -15,11 +15,8 @@ public class NewsRepository {
 	public static List<News> getNewsAfter(Date date, Type type) {
 		List<News> news = new ArrayList<>();
 
-		for (News candidate : NEWS) {
-			if (candidate.getDate().after(date) && type.equals(candidate.getType())) {
-				news.add(candidate);
-			}
-		}
+		for (News candidate : NEWS)
+			if (candidate.getDate().after(date) && type.equals(candidate.getType())) news.add(candidate);
 		return news;
 	}
 
@@ -27,6 +24,7 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(new DateTime("2016-02-05").toDate(), "hsplayer_ui_1", News.Type.Feature));
 		news.add(new News(new DateTime("2016-01-07").toDate(), "videowidemode", News.Type.Feature));
 		news.add(new News(new DateTime("2016-01-07").toDate(), "news7", News.Type.Feature));
 		news.add(new News(new DateTime("2015-12-16").toDate(), "news6", News.Type.Feature));

@@ -1773,6 +1773,11 @@
   text-align: center;
   opacity: 0.5;
 }
+.hearthstone #externalPlayer .top .mulligan .discarded:after {
+  font-size: 9em;
+  text-align: left;
+  line-height: 0.8em;
+}
 .hearthstone #externalPlayer .board {
   text-align: center;
   position: relative;

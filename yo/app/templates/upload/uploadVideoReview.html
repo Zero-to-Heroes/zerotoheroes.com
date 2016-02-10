@@ -65,6 +65,7 @@
 						</ul>
 				</div>
 		  	</div>
+		  	<participants-details review="review"></participants-details>
 	  		<div class="row">
 				<div class="col-sm-12">
 				  	<div class="form-group">
@@ -81,7 +82,7 @@
 			<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 			<div class="row video-tags">
 				<div class="col-xs-12 text-left">
-					<review-tags-input review="review"></review-tags-input>
+					<review-tags-input review="review" exclude="skill-level"></review-tags-input>
 				</div>
 			</div>
 	  		<div class="row">

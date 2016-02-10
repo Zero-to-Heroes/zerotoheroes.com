@@ -45,6 +45,17 @@
 			"feature3Text": "Des coaches professionnels sont disponibles pour vous aider à identifier vos faiblesses et comment les combler. Demandez-leur ce que vous voulez, ils sont là pour vous aider :) (et si vous êtes un entraîneur professionnel et que vous être intéressé pour étendre votre activité sur Zero to Heroes, <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contactez-nous</a>!)",
 			"feature4Headline": "Contribuez et aidez la communauté",
 			"feature4Text": "Votre expérience est unique et bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
+		},
+		"classes": {
+			"druid": "Druide",
+			"hunter": "Chasseur",
+			"mage": "Mage",
+			"paladin": "Paladin",
+			"priest": "Prêtre",
+			"rogue": "Voleur",
+			"shaman": "Chaman",
+			"warlock": "Démoniste",
+			"warrior": "Guerrier"
 		}
 	},
 	"heroesofthestorm": {
@@ -202,8 +213,10 @@
 			"createAccountConfirm": "Créer mon compte maintenant"
 		},
 		"review": {
-			"player": {
-
+			"participants": {
+				"playerName": "Nom du joueur",
+				"opponentName": "Nom de l'adversaire",
+				"skillLevel": "Niveau de la partie"
 			},
 			"sequence": {
 				"headline": "Ajouter une comparaison",

@@ -9,7 +9,8 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 			templateUrl: 'templates/video/reviewTagsInput.html',
 			scope: {
 				review: '=',
-				reviewDisabled: '='
+				reviewDisabled: '=',
+				exclude: "@"
 			},
 			controller: function($scope) {
 
@@ -109,8 +110,13 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 					if (sport) {
 						Api.Tags.query({sport: sport}, 
 							function(data) {
-								$scope.allowedTags = data;
-								$log.log('loaded tags', $scope.allowedTags);
+								$scope.allowedTags = []
+								data.forEach(function(tag) {
+									if (!$scope.exclude || $scope.exclude != tag.type) {
+										$scope.allowedTags.push(tag)
+									}
+								})
+								// $log.log('loaded tags', $scope.allowedTags);
 
 								$scope.allowedTags.forEach(function(tag) {
 									tag.sport = sport.toLowerCase();
@@ -122,7 +128,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 				}
 				$scope.getMinTags = function() {
 					if (!$scope.allowedTags) return 0;
-					return Math.max(1, $scope.mandatoryTags ? $scope.mandatoryTags.length : 0);
+					return $scope.mandatoryTags ? $scope.mandatoryTags.length : 0;
 				}
 
 				$scope.$watch('review.editing', function (newVal, oldVal) {

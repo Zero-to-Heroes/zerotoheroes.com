@@ -44,10 +44,10 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 
 						var indexOfLastSpace = file.name.lastIndexOf(' ')
 						var indexOfLastDot = file.name.lastIndexOf('.')
-						if (indexOfLastDot != -1 && indexOfLastDot > indexOfLastSpace)
-							$scope.review.title = file.name.slice(0, indexOfLastDot - file.name.length)
-						else
-							$scope.review.title = file.name
+						// if (indexOfLastDot != -1 && indexOfLastDot > indexOfLastSpace)
+						// 	$scope.review.title = file.name.slice(0, indexOfLastDot - file.name.length)
+						// else
+						// 	$scope.review.title = file.name
 
 						$scope.review.videoFramerateRatio = MediaUploader.videoInfo.videoFramerateRatio
 						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKey
@@ -130,7 +130,14 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 								}
 								else {
 									$scope.sources = null
+									
+									data.title = $scope.review.title
+									data.text = $scope.review.text
+									data.tags = $scope.review.tags
+									data.author = $scope.review.author
+									data.playerInfo = $scope.review.playerInfo
 									$scope.review = data
+									
 									$scope.uploader.videoInfo.upload.postProcessed = true
 
 									$timeout(function() {
@@ -234,7 +241,8 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 						title: $scope.review.title,
 						tags: $scope.review.tags,
 						canvas: $scope.review.tempCanvas,
-						language: $scope.review.language
+						language: $scope.review.language,
+						participantDetails: $scope.review.participantDetails
 					}
 					Api.ReviewsPublish.save({reviewId: $scope.review.id}, newReview, 
 						function(data) {

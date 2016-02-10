@@ -14,7 +14,6 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 			link: function($scope, element, attrs) {
 			},
 			controller: function($scope) {
-
 				$scope.User = User
 				$scope.uploader = MediaUploader
 				$scope.publishPending = false
@@ -38,10 +37,10 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 
 						var indexOfLastSpace = file.name.lastIndexOf(' ')
 						var indexOfLastDot = file.name.lastIndexOf('.')
-						if (indexOfLastDot != -1 && indexOfLastDot > indexOfLastSpace)
-							$scope.review.title = file.name.slice(0, indexOfLastDot - file.name.length)
-						else
-							$scope.review.title = file.name
+						// if (indexOfLastDot != -1 && indexOfLastDot > indexOfLastSpace)
+						// 	$scope.review.title = file.name.slice(0, indexOfLastDot - file.name.length)
+						// else
+						// 	$scope.review.title = file.name
 
 						$scope.review.fileType = file.type || file.name.slice(indexOfLastDot + 1)
 
@@ -103,15 +102,12 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 								else {
 									$scope.sources = null
 
-									var title = $scope.review.title
-									var text = $scope.review.text
-									var tags = $scope.review.tags
-									var author = $scope.review.author
+									data.title = $scope.review.title
+									data.text = $scope.review.text
+									data.tags = $scope.review.tags
+									data.author = $scope.review.author
+									data.playerInfo = $scope.review.playerInfo
 									$scope.review = data
-									$scope.review.title = title
-									$scope.review.text = text
-									$scope.review.tags = tags
-									$scope.review.author = author
 
 									$scope.uploader.videoInfo.upload.postProcessed = true
 
@@ -149,18 +145,14 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 					// And now display something on the replay player
 					$log.debug('Need to display the replay', $scope.review)
 					if ($scope.review.replay) {
-						$scope.externalPlayer = true;
-						$log.debug('loading replay file');
+						$scope.externalPlayer = true
 						// Retrieve the XML replay file from s3
-						var replayUrl = ENV.videoStorageUrl + $scope.review.key;
-						$log.debug('Replay URL: ', replayUrl);
+						var replayUrl = ENV.videoStorageUrl + $scope.review.key
 						$.get(replayUrl, function(data) {
-							$scope.review.replayXml = data;
-							$log.debug('loaded xml', $scope.review.replayXml);
+							$scope.review.replayXml = data
 
 							// Init the external player
-							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review);
-							$log.debug('externalPlayer', $scope.review.replay, $scope.externalPlayer);
+							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review)
 						})
 					}
 				}
@@ -224,8 +216,10 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						sport: $scope.review.sport.key,
 						title: $scope.review.title,
 						tags: $scope.review.tags,
-						language: $scope.review.language
+						language: $scope.review.language,
+						participantDetails: $scope.review.participantDetails
 					}
+					$log.debug('publishing review', newReview)
 					Api.ReviewsPublish.save({reviewId: $scope.review.id}, newReview, 
 						function(data) {
 							var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s;

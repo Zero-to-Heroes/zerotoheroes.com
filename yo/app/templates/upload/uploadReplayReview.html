@@ -40,23 +40,25 @@
 						</ul>
 				</div>
 		  	</div>
+		  	<participants-details review="review" media-player="externalPlayer"></participants-details>
 	  		<div class="row">
 				<div class="col-sm-12">
 				  	<div class="form-group">
 						<toolbar player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true" config="config" media-type="'replay'" show-errors="{ showSuccess: true }" class="form-group">
 				    		<textarea name="text" class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholder' | translate }}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
 				    	</toolbar>
-				   </div>
-				</div>
-				<div class="inline-block float-right show-help-buttons">
-				  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
-					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
+				   	</div>
+				
+					<div class="inline-block float-right show-help-buttons">
+					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
+						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
+					</div>
 				</div>
 		  	</div>
 			<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 			<div class="row video-tags">
 				<div class="col-xs-12 text-left">
-					<review-tags-input review="review"></review-tags-input>
+					<review-tags-input review="review" exclude="skill-level"></review-tags-input>
 				</div>
 			</div>
 	  		<div class="row">

@@ -2051,121 +2051,37 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ActionParser.prototype.parseActions = function() {
-      var action, armor, batch, command, currentCommand, currentPlayer, currentTurnNumber, dmg, entity, entityTag, excluded, i, info, j, k, l, len, len1, len10, len11, len2, len3, len4, len5, len6, len7, len8, len9, m, meta, mulliganed, n, o, p, playedCard, playerIndex, players, publicSecret, q, r, ref, ref1, ref10, ref11, ref12, ref13, ref14, ref15, ref16, ref17, ref18, ref19, ref2, ref20, ref3, ref4, ref5, ref6, ref7, ref8, ref9, results, s, secret, sortedActions, t, tag, tagValue, target, tempTurnNumber, turnNumber, u, v;
-      players = [this.player, this.opponent];
-      playerIndex = 0;
-      turnNumber = 1;
-      currentPlayer = players[playerIndex];
+      var action, armor, batch, command, dmg, entity, entityTag, excluded, i, info, j, k, l, len, len1, len10, len2, len3, len4, len5, len6, len7, len8, len9, m, meta, n, o, p, playedCard, publicSecret, q, r, ref, ref1, ref10, ref11, ref12, ref13, ref14, ref15, ref16, ref17, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, results, s, secret, sortedActions, t, tag, tagValue, target, tempTurnNumber, u;
+      this.players = [this.player, this.opponent];
+      this.playerIndex = 0;
+      this.turnNumber = 1;
+      this.currentPlayer = this.players[this.playerIndex];
       ref = this.history;
       for (i = k = 0, len = ref.length; k < len; i = ++k) {
         batch = ref[i];
         ref1 = batch.commands;
         for (j = l = 0, len1 = ref1.length; l < len1; j = ++l) {
           command = ref1[j];
-          if (command[0] === 'receiveTagChange' && command[1][0].entity === 2 && command[1][0].tag === 'MULLIGAN_STATE' && command[1][0].value === 1) {
-            this.turns[turnNumber] = {
-              historyPosition: i,
-              turn: 'Mulligan',
-              playerMulligan: [],
-              opponentMulligan: [],
-              timestamp: batch.timestamp,
-              actions: []
-            };
-            this.turns.length++;
-            turnNumber++;
-            currentPlayer = players[++playerIndex % 2];
-          }
-          if (command[0] === 'receiveTagChange' && command[1].length > 0 && command[1][0].entity === 3 && command[1][0].tag === 'MULLIGAN_STATE' && command[1][0].value === 1) {
-            currentPlayer = players[++playerIndex % 2];
-          }
-          if (command[0] === 'receiveTagChange' && command[1].length > 0 && command[1][0].entity === 1 && command[1][0].tag === 'STEP' && command[1][0].value === 6) {
-            this.turns[turnNumber] = {
-              historyPosition: i,
-              turn: turnNumber - 1,
-              timestamp: batch.timestamp,
-              actions: [],
-              activePlayer: currentPlayer
-            };
-            this.turns.length++;
-            turnNumber++;
-            currentPlayer = players[++playerIndex % 2];
-          }
-          if (command[0] === 'receiveTagChange' && command[1][0].tag === 'ZONE' && command[1][0].value === 3) {
-            if (currentTurnNumber >= 2) {
-              currentCommand = command[1][0];
-              console.log('currentCommand', currentCommand);
-              while (currentCommand.parent && ((ref2 = currentCommand.entity) !== '2' && ref2 !== '3')) {
-                currentCommand = currentCommand.parent;
-              }
-              if (!currentCommand) {
-                console.warn('no one drew this card????', command[1][0]);
-              }
-              action = {
-                turn: currentTurnNumber,
-                timestamp: batch.timestamp,
-                actionType: 'card-draw',
-                type: ' draws ',
-                data: this.entities[command[1][0].entity],
-                owner: this.entities[currentCommand.attributes.entity],
-                initialCommand: command[1][0]
-              };
-              this.addAction(currentTurnNumber, action);
-            }
-          }
-          if (command[0] === 'receiveAction' && (command[1][0].type = '5' && command[1][0].showEntity)) {
-            if (currentTurnNumber >= 2) {
-              if (command[1][0].showEntity.tags.ZONE === 3) {
-                currentCommand = command[1][0];
-                while (currentCommand.parent && ((ref3 = currentCommand.entity) !== '2' && ref3 !== '3')) {
-                  currentCommand = currentCommand.parent;
-                }
-                if (!currentCommand) {
-                  console.warn('no one drew this card????', command[1][0]);
-                }
-                console.log('about to add draw card action', command[1][0], currentCommand);
-                action = {
-                  turn: currentTurnNumber,
-                  timestamp: batch.timestamp,
-                  actionType: 'card-draw',
-                  type: ' draws ',
-                  data: this.entities[command[1][0].showEntity.id],
-                  owner: this.entities[currentCommand.attributes.entity],
-                  initialCommand: command[1][0]
-                };
-                this.addAction(currentTurnNumber, action);
-              }
-            }
-          }
+          this.parseMulliganTurn(batch, command);
+          this.parseStartOfTurn(batch, command);
+          this.parseDrawCard(batch, command);
           if (command[0] === 'receiveAction') {
-            currentTurnNumber = turnNumber - 1;
-            if (this.turns[currentTurnNumber]) {
-              if (command[1][0].attributes.type === '5' && currentTurnNumber === 1 && command[1][0].hideEntities) {
-                this.turns[currentTurnNumber].playerMulligan = command[1][0].hideEntities;
-              }
-              if (command[1][0].attributes.type === '5' && currentTurnNumber === 1 && command[1][0].attributes.entity !== this.mainPlayerId) {
-                mulliganed = [];
-                ref4 = command[1][0].tags;
-                for (m = 0, len2 = ref4.length; m < len2; m++) {
-                  tag = ref4[m];
-                  if (tag.tag === 'ZONE' && tag.value === 2) {
-                    console.log('adding mulligan for oppoentn', tag, command[1][0]);
-                    this.turns[currentTurnNumber].opponentMulligan.push(tag.entity);
-                  }
-                }
-              }
+            this.currentTurnNumber = this.turnNumber - 1;
+            if (this.turns[this.currentTurnNumber]) {
+              this.parseMulliganCards(batch, command);
               if (command[1][0].tags && command[1][0].attributes.type !== '5') {
                 playedCard = -1;
                 excluded = false;
                 secret = false;
-                ref5 = command[1][0].tags;
-                for (n = 0, len3 = ref5.length; n < len3; n++) {
-                  tag = ref5[n];
-                  if (tag.tag === 'ZONE' && ((ref6 = tag.value) === 1 || ref6 === 7)) {
+                ref2 = command[1][0].tags;
+                for (m = 0, len2 = ref2.length; m < len2; m++) {
+                  tag = ref2[m];
+                  if (tag.tag === 'ZONE' && ((ref3 = tag.value) === 1 || ref3 === 7)) {
                     playedCard = tag.entity;
                   }
                   if (tag.tag === 'SECRET' && tag.value === 1) {
                     secret = true;
-                    publicSecret = command[1][0].attributes.type === '7' && this.turns[currentTurnNumber].activePlayer.id === this.mainPlayerId;
+                    publicSecret = command[1][0].attributes.type === '7' && this.turns[this.currentTurnNumber].activePlayer.id === this.mainPlayerId;
                   }
                   if (tag.tag === 'ATTACHED') {
                     excluded = true;
@@ -2173,17 +2089,17 @@ arguments[4][4][0].apply(exports,arguments)
                 }
                 if (playedCard > -1 && !excluded) {
                   action = {
-                    turn: currentTurnNumber - 1,
+                    turn: this.currentTurnNumber - 1,
                     timestamp: batch.timestamp,
                     type: ': ',
                     secret: secret,
                     publicSecret: publicSecret,
                     data: this.entities[playedCard],
-                    owner: this.turns[currentTurnNumber].activePlayer,
+                    owner: this.turns[this.currentTurnNumber].activePlayer,
                     initialCommand: command[1][0],
                     debugType: 'played card'
                   };
-                  this.addAction(currentTurnNumber, action);
+                  this.addAction(this.currentTurnNumber, action);
                 }
               }
               if (command[1][0].attributes.entity && command[1][0].attributes.type === '5') {
@@ -2191,30 +2107,30 @@ arguments[4][4][0].apply(exports,arguments)
                 if (entity.tags.SECRET === 1) {
                   console.log('\tyes', entity, command[1][0]);
                   action = {
-                    turn: currentTurnNumber - 1,
+                    turn: this.currentTurnNumber - 1,
                     timestamp: batch.timestamp + 0.01,
                     actionType: 'secret-revealed',
                     data: entity,
                     initialCommand: command[1][0]
                   };
-                  this.addAction(currentTurnNumber, action);
+                  this.addAction(this.currentTurnNumber, action);
                 }
               }
               if (command[1][0].showEntity && (command[1][0].attributes.type === '1' || (command[1][0].attributes.type !== '3' && (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)))) {
                 playedCard = -1;
                 if (command[1][0].showEntity.tags) {
-                  ref7 = command[1][0].showEntity.tags;
-                  for (entityTag in ref7) {
-                    tagValue = ref7[entityTag];
+                  ref4 = command[1][0].showEntity.tags;
+                  for (entityTag in ref4) {
+                    tagValue = ref4[entityTag];
                     if (entityTag === 'ZONE' && tagValue === 1) {
                       playedCard = command[1][0].showEntity.id;
                     }
                   }
                 }
                 if (command[1][0].tags) {
-                  ref8 = command[1][0].tags;
-                  for (o = 0, len4 = ref8.length; o < len4; o++) {
-                    tag = ref8[o];
+                  ref5 = command[1][0].tags;
+                  for (n = 0, len3 = ref5.length; n < len3; n++) {
+                    tag = ref5[n];
                     if (tag.tag === 'ZONE' && tag.value === 1) {
                       playedCard = tag.entity;
                     }
@@ -2222,17 +2138,17 @@ arguments[4][4][0].apply(exports,arguments)
                 }
                 if (playedCard > -1) {
                   action = {
-                    turn: currentTurnNumber - 1,
+                    turn: this.currentTurnNumber - 1,
                     timestamp: batch.timestamp,
                     type: ': ',
                     data: this.entities[command[1][0].showEntity.id] ? this.entities[command[1][0].showEntity.id] : command[1][0].showEntity,
-                    owner: this.turns[currentTurnNumber].activePlayer,
+                    owner: this.turns[this.currentTurnNumber].activePlayer,
                     debugType: 'showEntity',
                     debug: command[1][0].showEntity,
                     initialCommand: command[1][0]
                   };
                   if (action.data) {
-                    this.addAction(currentTurnNumber, action);
+                    this.addAction(this.currentTurnNumber, action);
                   }
                 }
               }
@@ -2240,10 +2156,10 @@ arguments[4][4][0].apply(exports,arguments)
                 playedCard = -1;
                 excluded = false;
                 secret = false;
-                ref9 = command[1][0].tags;
-                for (p = 0, len5 = ref9.length; p < len5; p++) {
-                  tag = ref9[p];
-                  if (tag.tag === 'ZONE' && ((ref10 = tag.value) === 1 || ref10 === 7)) {
+                ref6 = command[1][0].tags;
+                for (o = 0, len4 = ref6.length; o < len4; o++) {
+                  tag = ref6[o];
+                  if (tag.tag === 'ZONE' && ((ref7 = tag.value) === 1 || ref7 === 7)) {
                     playedCard = tag.entity;
                   }
                   if (tag.tag === 'SECRET' && tag.value === 1) {
@@ -2255,7 +2171,7 @@ arguments[4][4][0].apply(exports,arguments)
                 }
                 if (playedCard > -1 && !excluded) {
                   action = {
-                    turn: currentTurnNumber - 1,
+                    turn: this.currentTurnNumber - 1,
                     timestamp: batch.timestamp,
                     type: ': ',
                     secret: secret,
@@ -2264,19 +2180,19 @@ arguments[4][4][0].apply(exports,arguments)
                     initialCommand: command[1][0],
                     debugType: 'played card from tigger'
                   };
-                  this.addAction(currentTurnNumber, action);
+                  this.addAction(this.currentTurnNumber, action);
                 }
               }
-              if (command[1][0].tags && ((ref11 = command[1][0].attributes.type) === '3' || ref11 === '5') && ((ref12 = command[1][0].meta) != null ? ref12.length : void 0) > 0) {
-                ref13 = command[1][0].meta;
-                for (q = 0, len6 = ref13.length; q < len6; q++) {
-                  meta = ref13[q];
-                  ref14 = meta.info;
-                  for (r = 0, len7 = ref14.length; r < len7; r++) {
-                    info = ref14[r];
-                    if (meta.meta === 'TARGET' && ((ref15 = meta.info) != null ? ref15.length : void 0) > 0 && (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) !== info.entity)) {
+              if (command[1][0].tags && ((ref8 = command[1][0].attributes.type) === '3' || ref8 === '5') && ((ref9 = command[1][0].meta) != null ? ref9.length : void 0) > 0) {
+                ref10 = command[1][0].meta;
+                for (p = 0, len5 = ref10.length; p < len5; p++) {
+                  meta = ref10[p];
+                  ref11 = meta.info;
+                  for (q = 0, len6 = ref11.length; q < len6; q++) {
+                    info = ref11[q];
+                    if (meta.meta === 'TARGET' && ((ref12 = meta.info) != null ? ref12.length : void 0) > 0 && (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) !== info.entity)) {
                       action = {
-                        turn: currentTurnNumber - 1,
+                        turn: this.currentTurnNumber - 1,
                         timestamp: batch.timestamp,
                         target: info.entity,
                         type: ': trigger ',
@@ -2285,49 +2201,49 @@ arguments[4][4][0].apply(exports,arguments)
                         initialCommand: command[1][0],
                         debugType: 'trigger effect card'
                       };
-                      this.addAction(currentTurnNumber, action);
+                      this.addAction(this.currentTurnNumber, action);
                     }
                   }
                 }
               }
               if (command[1][0].tags && command[1][0].attributes.type === '6') {
-                ref16 = command[1][0].tags;
-                for (s = 0, len8 = ref16.length; s < len8; s++) {
-                  tag = ref16[s];
+                ref13 = command[1][0].tags;
+                for (r = 0, len7 = ref13.length; r < len7; r++) {
+                  tag = ref13[r];
                   if (tag.tag === 'ZONE' && tag.value === 4) {
                     action = {
-                      turn: currentTurnNumber - 1,
+                      turn: this.currentTurnNumber - 1,
                       timestamp: batch.timestamp,
                       type: ' died ',
                       owner: tag.entity,
                       initialCommand: command[1][0]
                     };
-                    this.addAction(currentTurnNumber, action);
+                    this.addAction(this.currentTurnNumber, action);
                   }
                 }
               }
               if (parseInt(command[1][0].attributes.target) > 0 && (command[1][0].attributes.type === '1' || !command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)) {
                 action = {
-                  turn: currentTurnNumber - 1,
+                  turn: this.currentTurnNumber - 1,
                   timestamp: batch.timestamp,
                   type: ': ',
                   actionType: 'attack',
                   data: this.entities[command[1][0].attributes.entity],
-                  owner: this.turns[currentTurnNumber].activePlayer,
+                  owner: this.turns[this.currentTurnNumber].activePlayer,
                   target: command[1][0].attributes.target,
                   initialCommand: command[1][0],
                   debugType: 'attack with complex conditions'
                 };
-                this.addAction(currentTurnNumber, action);
+                this.addAction(this.currentTurnNumber, action);
               }
-              if ((ref17 = command[1][0].attributes.type) === '3' || ref17 === '5') {
+              if ((ref14 = command[1][0].attributes.type) === '3' || ref14 === '5') {
                 if (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0) {
                   if (command[1][0].tags) {
                     dmg = 0;
                     target = void 0;
-                    ref18 = command[1][0].tags;
-                    for (t = 0, len9 = ref18.length; t < len9; t++) {
-                      tag = ref18[t];
+                    ref15 = command[1][0].tags;
+                    for (s = 0, len8 = ref15.length; s < len8; s++) {
+                      tag = ref15[s];
                       if (tag.tag === 'DAMAGE' && tag.value > 0) {
                         dmg = tag.value;
                         target = tag.entity;
@@ -2335,24 +2251,24 @@ arguments[4][4][0].apply(exports,arguments)
                     }
                     if (dmg > 0) {
                       action = {
-                        turn: currentTurnNumber - 1,
+                        turn: this.currentTurnNumber - 1,
                         timestamp: batch.timestamp,
                         prefix: '\t',
                         type: ': ',
                         data: this.entities[command[1][0].attributes.entity],
-                        owner: this.turns[currentTurnNumber].activePlayer,
+                        owner: this.turns[this.currentTurnNumber].activePlayer,
                         target: target,
                         initialCommand: command[1][0],
                         debugType: 'power 3 dmg'
                       };
-                      this.addAction(currentTurnNumber, action);
+                      this.addAction(this.currentTurnNumber, action);
                     }
                   }
                   if (command[1][0].fullEntity && command[1][0].fullEntity.tags.CARDTYPE !== 6) {
                     if (command[1][0].parent) {
-                      ref19 = command[1][0].parent.tags;
-                      for (u = 0, len10 = ref19.length; u < len10; u++) {
-                        tag = ref19[u];
+                      ref16 = command[1][0].parent.tags;
+                      for (t = 0, len9 = ref16.length; t < len9; t++) {
+                        tag = ref16[t];
                         if (tag.tag === 'HEROPOWER_ACTIVATIONS_THIS_TURN' && tag.value > 0) {
                           command[1][0].indent = command[1][0].indent > 1 ? command[1][0].indent - 1 : void 0;
                           command[1][0].fullEntity.indent = command[1][0].fullEntity.indent > 1 ? command[1][0].fullEntity.indent - 1 : void 0;
@@ -2360,18 +2276,18 @@ arguments[4][4][0].apply(exports,arguments)
                       }
                     }
                     action = {
-                      turn: currentTurnNumber - 1,
+                      turn: this.currentTurnNumber - 1,
                       timestamp: batch.timestamp,
                       prefix: '\t',
                       type: ': ',
                       data: this.entities[command[1][0].attributes.entity],
-                      owner: this.turns[currentTurnNumber].activePlayer,
+                      owner: this.turns[this.currentTurnNumber].activePlayer,
                       initialCommand: command[1][0],
                       debugType: 'power 3 root'
                     };
-                    this.addAction(currentTurnNumber, action);
+                    this.addAction(this.currentTurnNumber, action);
                     action = {
-                      turn: currentTurnNumber - 1,
+                      turn: this.currentTurnNumber - 1,
                       timestamp: batch.timestamp,
                       prefix: '\t',
                       creator: this.entities[command[1][0].attributes.entity],
@@ -2383,20 +2299,20 @@ arguments[4][4][0].apply(exports,arguments)
                       debugType: 'power 3',
                       debug: this.entities
                     };
-                    this.addAction(currentTurnNumber, action);
+                    this.addAction(this.currentTurnNumber, action);
                   }
                   if (command[1][0].tags) {
                     armor = 0;
-                    ref20 = command[1][0].tags;
-                    for (v = 0, len11 = ref20.length; v < len11; v++) {
-                      tag = ref20[v];
+                    ref17 = command[1][0].tags;
+                    for (u = 0, len10 = ref17.length; u < len10; u++) {
+                      tag = ref17[u];
                       if (tag.tag === 'ARMOR' && tag.value > 0) {
                         armor = tag.value;
                       }
                     }
                     if (armor > 0) {
                       action = {
-                        turn: currentTurnNumber - 1,
+                        turn: this.currentTurnNumber - 1,
                         timestamp: batch.timestamp,
                         prefix: '\t',
                         type: ': ',
@@ -2405,7 +2321,7 @@ arguments[4][4][0].apply(exports,arguments)
                         initialCommand: command[1][0],
                         debugType: 'armor'
                       };
-                      this.addAction(currentTurnNumber, action);
+                      this.addAction(this.currentTurnNumber, action);
                     }
                   }
                 }
@@ -2429,6 +2345,102 @@ arguments[4][4][0].apply(exports,arguments)
         action.timestamp += 0.01;
       }
       return this.turns[currentTurnNumber].actions.push(action);
+    };
+
+    ActionParser.prototype.parseMulliganTurn = function(batch, command) {
+      if (command[0] === 'receiveTagChange' && command[1][0].entity === 2 && command[1][0].tag === 'MULLIGAN_STATE' && command[1][0].value === 1) {
+        this.turns[this.turnNumber] = {
+          turn: 'Mulligan',
+          playerMulligan: [],
+          opponentMulligan: [],
+          timestamp: batch.timestamp,
+          actions: []
+        };
+        this.turns.length++;
+        this.turnNumber++;
+        this.currentPlayer = this.players[++this.playerIndex % 2];
+      }
+      if (command[0] === 'receiveTagChange' && command[1].length > 0 && command[1][0].entity === 3 && command[1][0].tag === 'MULLIGAN_STATE' && command[1][0].value === 1) {
+        return this.currentPlayer = this.players[++this.playerIndex % 2];
+      }
+    };
+
+    ActionParser.prototype.parseStartOfTurn = function(batch, command) {
+      if (command[0] === 'receiveTagChange' && command[1].length > 0 && command[1][0].entity === 1 && command[1][0].tag === 'STEP' && command[1][0].value === 6) {
+        this.turns[this.turnNumber] = {
+          turn: this.turnNumber - 1,
+          timestamp: batch.timestamp,
+          actions: [],
+          activePlayer: this.currentPlayer
+        };
+        this.turns.length++;
+        this.turnNumber++;
+        return this.currentPlayer = this.players[++this.playerIndex % 2];
+      }
+    };
+
+    ActionParser.prototype.parseDrawCard = function(batch, command) {
+      var action, currentCommand, entity, ref, ref1;
+      if (command[0] === 'receiveTagChange' && command[1][0].tag === 'ZONE' && command[1][0].value === 3) {
+        if (this.currentTurnNumber >= 2) {
+          currentCommand = command[1][0];
+          while (currentCommand.parent && ((ref = currentCommand.entity) !== '2' && ref !== '3')) {
+            currentCommand = currentCommand.parent;
+          }
+          action = {
+            turn: this.currentTurnNumber,
+            timestamp: batch.timestamp,
+            actionType: 'card-draw',
+            type: ' draws ',
+            data: this.entities[command[1][0].entity],
+            owner: this.entities[currentCommand.attributes.entity],
+            initialCommand: command[1][0]
+          };
+          this.addAction(this.currentTurnNumber, action);
+        }
+      }
+      if (command[0] === 'receiveAction' && (command[1][0].type = '5')) {
+        if (this.currentTurnNumber >= 2) {
+          entity = command[1][0].showEntity || command[1][0].fullEntity;
+          if (entity && entity.tags.ZONE === 3) {
+            currentCommand = command[1][0];
+            while (currentCommand.parent && ((ref1 = currentCommand.entity) !== '2' && ref1 !== '3')) {
+              currentCommand = currentCommand.parent;
+            }
+            action = {
+              turn: this.currentTurnNumber,
+              timestamp: batch.timestamp,
+              actionType: 'card-draw',
+              type: ' draws ',
+              data: this.entities[entity.id],
+              owner: this.entities[currentCommand.attributes.entity],
+              initialCommand: command[1][0]
+            };
+            return this.addAction(this.currentTurnNumber, action);
+          }
+        }
+      }
+    };
+
+    ActionParser.prototype.parseMulliganCards = function(batch, command) {
+      var k, len, mulliganed, ref, results, tag;
+      if (command[1][0].attributes.type === '5' && this.currentTurnNumber === 1 && command[1][0].hideEntities) {
+        this.turns[this.currentTurnNumber].playerMulligan = command[1][0].hideEntities;
+      }
+      if (command[1][0].attributes.type === '5' && this.currentTurnNumber === 1 && command[1][0].attributes.entity !== this.mainPlayerId) {
+        mulliganed = [];
+        ref = command[1][0].tags;
+        results = [];
+        for (k = 0, len = ref.length; k < len; k++) {
+          tag = ref[k];
+          if (tag.tag === 'ZONE' && tag.value === 2) {
+            results.push(this.turns[this.currentTurnNumber].opponentMulligan.push(tag.entity));
+          } else {
+            results.push(void 0);
+          }
+        }
+        return results;
+      }
     };
 
     return ActionParser;
@@ -3864,6 +3876,26 @@ arguments[4][4][0].apply(exports,arguments)
       return this.emit('new-log', log);
     };
 
+    ReplayPlayer.prototype.getPlayerInfo = function() {
+      var playerInfo;
+      playerInfo = {
+        player: {
+          'name': this.player.name,
+          'class': this.getClass(this.entities[this.player.tags.HERO_ENTITY].cardID)
+        },
+        opponent: {
+          'name': this.opponent.name,
+          'class': this.getClass(this.entities[this.opponent.tags.HERO_ENTITY].cardID)
+        }
+      };
+      return playerInfo;
+    };
+
+    ReplayPlayer.prototype.getClass = function(cardID) {
+      var ref, ref1;
+      return (ref = this.cardUtils.getCard(cardID)) != null ? (ref1 = ref.playerClass) != null ? ref1.toLowerCase() : void 0 : void 0;
+    };
+
     return ReplayPlayer;
 
   })(EventEmitter);
@@ -4012,6 +4044,9 @@ var joustjs = {
 		var secs = parseInt(timeComponents[0]) * 60 + parseInt(timeComponents[1]);
 		// console.log('going to timestamp', secs, timestamp)
 		window.replay.moveToTimestamp(secs);
+	},
+	getPlayerInfo: function() {
+		return window.replay.getPlayerInfo()
 	}
 
 }

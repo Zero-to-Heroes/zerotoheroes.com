@@ -84,45 +84,54 @@ public class TagRepository {
 
 		// Tags for HearthStone
 		List<Tag> hearthstone = new ArrayList<>();
-		hearthstone.add(new Tag("Class: Mage"));
-		hearthstone.add(new Tag("Class: Rogue"));
-		hearthstone.add(new Tag("Class: Warrior"));
-		hearthstone.add(new Tag("Class: Shaman"));
-		hearthstone.add(new Tag("Class: Warlock"));
-		hearthstone.add(new Tag("Class: Paladin"));
-		hearthstone.add(new Tag("Class: Druid"));
-		hearthstone.add(new Tag("Class: Priest"));
-		hearthstone.add(new Tag("Class: Hunter"));
-		hearthstone.add(new Tag("Rank 20-25"));
-		hearthstone.add(new Tag("Rank 15-19"));
-		hearthstone.add(new Tag("Rank 10-14"));
-		hearthstone.add(new Tag("Rank 1-9"));
-		hearthstone.add(new Tag("Legend"));
-		hearthstone.add(new Tag("Secret"));
-		hearthstone.add(new Tag("Oil"));
-		hearthstone.add(new Tag("Dragon"));
-		hearthstone.add(new Tag("Midrange"));
-		hearthstone.add(new Tag("Patron"));
-		hearthstone.add(new Tag("Mech"));
-		hearthstone.add(new Tag("Demon"));
-		hearthstone.add(new Tag("Aggro"));
-		hearthstone.add(new Tag("Tempo"));
-		hearthstone.add(new Tag("Face"));
-		hearthstone.add(new Tag("Beast"));
-		hearthstone.add(new Tag("Totem"));
-		hearthstone.add(new Tag("Control"));
-		hearthstone.add(new Tag("Pro"));
-		hearthstone.add(new Tag("Early game"));
-		hearthstone.add(new Tag("Endgame"));
-		hearthstone.add(new Tag("Arena"));
-		hearthstone.add(new Tag("Mill"));
-		hearthstone.add(new Tag("Deathrattle"));
-		hearthstone.add(new Tag("Draft"));
-		hearthstone.add(new Tag("Reno"));
+		// Ranks
+		hearthstone.add(new Tag("Rank 20-25", "skill-level"));
+		hearthstone.add(new Tag("Rank 15-19", "skill-level"));
+		hearthstone.add(new Tag("Rank 10-14", "skill-level"));
+		hearthstone.add(new Tag("Rank 1-9", "skill-level"));
+		hearthstone.add(new Tag("Legend", "skill-level"));
+		hearthstone.add(new Tag("Arena 1-3 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 4-6 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 7-8 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 9 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 10 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 11 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 12 wins", "skill-level"));
+		// Decks
+		hearthstone.add(new Tag("Face Hunter"));
+		hearthstone.add(new Tag("Hunter Beast"));
+		hearthstone.add(new Tag("Combo Druid"));
+		hearthstone.add(new Tag("Druid Ramp"));
+		hearthstone.add(new Tag("Egg Druid"));
+		hearthstone.add(new Tag("Palasecret"));
+		hearthstone.add(new Tag("Aggro Paladin"));
+		hearthstone.add(new Tag("Palamurloc"));
+		hearthstone.add(new Tag("Mage Mecha"));
+		hearthstone.add(new Tag("Tempo Mage"));
+		hearthstone.add(new Tag("Flamewalker Mage"));
+		hearthstone.add(new Tag("Freeze Mage"));
+		hearthstone.add(new Tag("Zoolock"));
+		hearthstone.add(new Tag("Demonlock"));
 		hearthstone.add(new Tag("Handlock"));
-		hearthstone.add(new Tag("Zoo"));
+		hearthstone.add(new Tag("Malylock"));
+		hearthstone.add(new Tag("Aggro Shaman"));
+		hearthstone.add(new Tag("Malygos Shaman"));
+		hearthstone.add(new Tag("Priest Control"));
+		hearthstone.add(new Tag("Dragon Priest"));
+		hearthstone.add(new Tag("Oil Rogue"));
+		hearthstone.add(new Tag("Malygos Rogue"));
+		hearthstone.add(new Tag("Control Warrior"));
+		hearthstone.add(new Tag("Patron Warrior"));
+		hearthstone.add(new Tag("OTK Warrior"));
+		// Category
+		hearthstone.add(new Tag("Aggro"));
+		hearthstone.add(new Tag("Midrange"));
+		hearthstone.add(new Tag("Control"));
+		// Other
+		hearthstone.add(new Tag("Reno"));
 		hearthstone.add(new Tag("OTK"));
-		hearthstone.add(new Tag("Combo"));
+		hearthstone.add(new Tag("Mech"));
+		hearthstone.add(new Tag("Murloc"));
 		tags.put(HearthStone, hearthstone);
 
 		// Tags for Heroes of the Storm

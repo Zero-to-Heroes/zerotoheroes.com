@@ -22,6 +22,11 @@
 			<td class="thumbnails vert-align text-center">
 				<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
 			</td>
+			<td class="specific-info">
+				<div ng-switch="sport">
+					<hearthstone-listing-details ng-switch-when="hearthstone" review="video"></hearthstone-listing-details>
+				</div>
+			</td>
 			<td class="vert-align info-column">
 				<div class="row review-title">
 					<div class="col-sm-12">

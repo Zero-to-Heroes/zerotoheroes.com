@@ -61,21 +61,29 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@Id
 	private String id;
+	// Various dates for review lifecycle
 	@CreatedDate
 	private Date creationDate;
 	private Date lastModifiedDate;
 	private Date sortingDate;
+	// Main information
+	private String title;
+	private String description = "", text = "";
+	// The sport - also includes the key as string for serialization purposes
+	// TOOD: not clean
+	private Sport sport;
+	private String strSport;
 	// The key of the associated video / file
 	private String key, temporaryKey;
 	// The replay file content (or key to where it is stored?)
 	private String replay;
+	// The image to display (if any)
 	private String thumbnail;
+	// The type of media that is linked to the video
 	private String fileType;
-	private Sport sport;
-	private String strSport;
 	private String language = "en";
-	private String title;
-	private String description = "", text = "";
+	// Participant details
+	private ParticipantDetails participantDetails;
 	@JsonIgnore
 	@TextIndexed
 	private String fullTextSearchField;
@@ -315,7 +323,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public void updateFullTextSearch() {
-		fullTextSearchField = title.toLowerCase() + " ";
+		fullTextSearchField = title == null ? "" : title.toLowerCase() + " ";
 		fullTextSearchField += description == null ? "" : description.toLowerCase();
 		for (Comment comment : getComments())
 			fullTextSearchField += " " + comment.getFullText();

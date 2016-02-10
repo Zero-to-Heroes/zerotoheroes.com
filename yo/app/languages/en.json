@@ -45,6 +45,17 @@
 			"feature3Text": "Professional coaches are available to help you identify your weaknesses and find out how you can improve on them. Ask them anything, they are here to help you out :) (and if you're a professionnal coach and interested in doing business on Zero to Heroes, feel free to <a href=\"mailto:contact@zerotoheroes.com\" target=\"_blank\">contact us</a>!)",
 			"feature4Headline": "Contribute and help the community",
 			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
+		},
+		"classes": {
+			"druid": "Druid",
+			"hunter": "Hunter",
+			"mage": "Mage",
+			"paladin": "Paladin",
+			"priest": "Priest",
+			"rogue": "Rogue",
+			"shaman": "Shaman",
+			"warlock": "Warlock",
+			"warrior": "Warrior"
 		}
 	},
 	"heroesofthestorm": {
@@ -200,8 +211,11 @@
 			"createAccountConfirm": "Create account now"
 		},
 		"review": {
-			"player": {
-
+			"participants": {
+				"playerName": "Player name",
+				"opponentName": "Opponent name",
+				"skillLevel": "Game level",
+				"selectClass": "Select class"
 			},
 			"sequence": {
 				"headline": "Adding a side-by-side comparison",

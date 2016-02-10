@@ -119,7 +119,7 @@ var parseCardsText = {
 					$('.tooltip.parse-cards-text').hide();
 				})
 				$(function () {
-					console.log('loading tooltips', $('[data-toggle="tooltip"]'));
+					// console.log('loading tooltips', $('[data-toggle="tooltip"]'));
 					$('[data-toggle="tooltip"]').tooltip()
 				})
 			},

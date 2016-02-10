@@ -151,12 +151,10 @@ public class ReviewApiHandler {
 		// SecurityContextHolder.getContext().getAuthentication().getName();
 		Review review = reviewRepo.findById(id);
 
-		if (review == null)
-			return new ResponseEntity<Review>(review, HttpStatus.NOT_FOUND);
+		if (review == null) return new ResponseEntity<Review>(review, HttpStatus.NOT_FOUND);
 
 		// Increase the view count
-		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport()))
-			review.incrementViewCount();
+		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) review.incrementViewCount();
 
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
@@ -220,7 +218,8 @@ public class ReviewApiHandler {
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
 		sportManager.addNewReviewActivity(review);
-		// log.debug("Saved review with ID: " + review.getId());
+		// We need to save here so that the transcoding process can retrieve it
+		updateReview(review);
 
 		// Start transcoding
 		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey()))
@@ -235,9 +234,8 @@ public class ReviewApiHandler {
 		else {
 			log.debug("No media attached");
 			review.setPublished(true);
+			updateReview(review);
 		}
-
-		updateReview(review);
 
 		// log.debug("Transcoding started, returning with created review: " +
 		// review);
@@ -391,6 +389,7 @@ public class ReviewApiHandler {
 		review.setSport(inputReview.getSport());
 		review.setTitle(inputReview.getTitle());
 		review.setTags(inputReview.getTags());
+		review.setParticipantDetails(inputReview.getParticipantDetails());
 
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(currentUser);
@@ -405,6 +404,7 @@ public class ReviewApiHandler {
 			subscriptionManager.notifyNewReview(review.getSport(), review);
 			slackNotifier.notifyNewReview(review);
 		}
+		log.debug("Published review is " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -549,8 +549,7 @@ public class ReviewApiHandler {
 		}
 
 		updateReview(review);
-		if (comment.isHelpful())
-			sportManager.addMarkedCommentHelpfulActivity(user, review, comment);
+		if (comment.isHelpful()) sportManager.addMarkedCommentHelpfulActivity(user, review, comment);
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}

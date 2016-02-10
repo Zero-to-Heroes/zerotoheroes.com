@@ -158,6 +158,10 @@
 	margin-left: 5px;
 }
 
+.video-listing .specific-info {
+    vertical-align: middle;
+}
+
 /* Don't show the name input if it appears on the navbar */
 @media screen and (min-width: 600px) {
 	.thumbnails {

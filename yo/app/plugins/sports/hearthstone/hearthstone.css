@@ -518,6 +518,11 @@
 	}
 	.hearthstone .video-listing .hearthstone-participants .player-details, .hearthstone .video-listing .hearthstone-participants .opponent-details {
 		width: 60px;
+		text-align: center;
+	}
+	.hearthstone .video-listing .hearthstone-participants .class-select span {
+		max-width: none;
+		margin: 0;
 	}
 	.hearthstone .video-listing .hearthstone-participants .separation {
 		padding-left: 15px;
@@ -525,6 +530,7 @@
 	}
 	.hearthstone .video-listing .hearthstone-participants .class-icon {
 		display: block;
+		margin: auto;
 	}
 	.hearthstone .video-listing .hearthstone-participants .level-details {
 		padding-left: 15px;

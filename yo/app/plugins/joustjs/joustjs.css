@@ -2149,6 +2149,9 @@
 .hearthstone #externalPlayer .turn-log .discovered-card::before {
   content: '...';
 }
+.hearthstone #externalPlayer .turn-log .list {
+  display: block;
+}
 .hearthstone #externalPlayer .secret-revealed {
   color: #FCBD0B;
   margin-right: 5px;

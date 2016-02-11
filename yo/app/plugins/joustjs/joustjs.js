@@ -856,7 +856,7 @@
       }, this.log, React.createElement("button", {
         "className": "btn btn-default",
         "onClick": this.props.onLogClick
-      }, React.createElement("span", null, "Show log")));
+      }, React.createElement("span", null, "Full log")));
     };
 
     return GameLog;
@@ -1720,7 +1720,8 @@ arguments[4][4][0].apply(exports,arguments)
       return React.createElement("div", {
         "className": "turn-log background-white"
       }, React.createElement("div", {
-        "className": "log-container"
+        "className": "log-container",
+        "id": "turnLog"
       }, this.logs));
     },
     buildActionLog: function(action) {
@@ -1731,12 +1732,18 @@ arguments[4][4][0].apply(exports,arguments)
         log = this.buildSecretRevealedLog(action);
       } else if (action.actionType === 'played-card-from-hand') {
         log = this.buildPlayedCardFromHandLog(action);
+      } else if (action.actionType === 'hero-power') {
+        log = this.buildHeroPowerLog(action);
       } else if (action.actionType === 'played-secret-from-hand') {
         log = this.buildPlayedSecretFromHandLog(action);
       } else if (action.actionType === 'power-damage') {
         log = this.buildPowerDamageLog(action);
       } else if (action.actionType === 'power-target') {
         log = this.buildPowerTargetLog(action);
+      } else if (action.actionType === 'trigger-fullentity') {
+        log = this.buildTriggerFullEntityLog(action);
+      } else if (action.actionType === 'summon-weapon') {
+        log = this.buildSummonWeaponLog(action);
       } else if (action.actionType === 'attack') {
         log = this.buildAttackLog(action);
       } else if (action.actionType === 'minion-death') {
@@ -1810,28 +1817,33 @@ arguments[4][4][0].apply(exports,arguments)
       return [log];
     },
     buildCardDrawLog: function(action) {
-      var card, cardLink, drawLog;
+      var card, cardLink, drawLog, indent;
       if (action.owner === this.replay.player) {
         card = (action != null ? action.data : void 0) ? action.data['cardID'] : '';
         cardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(card));
       } else {
         cardLink = '<span> 1 card </span>';
       }
+      if (action.mainAction) {
+        indent = React.createElement("span", {
+          "className": "indented-log"
+        }, "...and ");
+      } else {
+        indent = React.createElement(PlayerNameDisplayLog, {
+          "active": action.owner === this.replay.player,
+          "name": action.owner.name
+        });
+      }
       drawLog = React.createElement("p", {
         "key": ++this.logIndex
-      }, React.createElement(PlayerNameDisplayLog, {
-        "active": action.owner === this.replay.player,
-        "name": action.owner.name
-      }), React.createElement("span", null, " draws "), React.createElement("span", {
-        "dangerouslySetInnerHTML": {
-          __html: cardLink
-        }
+      }, indent, React.createElement("span", null, " draws "), React.createElement(SpanDisplayLog, {
+        "newLog": cardLink
       }));
       return drawLog;
     },
     buildPlayedCardFromHandLog: function(action) {
       var card, cardLink, log;
-      card = (action != null ? action.data : void 0) ? action.data['cardID'] : '';
+      card = action.data['cardID'];
       cardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(card));
       log = React.createElement("p", {
         "key": ++this.logIndex
@@ -1839,6 +1851,22 @@ arguments[4][4][0].apply(exports,arguments)
         "active": action.owner === this.replay.player,
         "name": action.owner.name
       }), React.createElement("span", null, " plays "), React.createElement("span", {
+        "dangerouslySetInnerHTML": {
+          __html: cardLink
+        }
+      }));
+      return log;
+    },
+    buildHeroPowerLog: function(action) {
+      var card, cardLink, log;
+      card = action.data['cardID'];
+      cardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(card));
+      log = React.createElement("p", {
+        "key": ++this.logIndex
+      }, React.createElement(PlayerNameDisplayLog, {
+        "active": action.owner === this.replay.player,
+        "name": action.owner.name
+      }), React.createElement("span", null, " uses "), React.createElement("span", {
         "dangerouslySetInnerHTML": {
           __html: cardLink
         }
@@ -1907,7 +1935,7 @@ arguments[4][4][0].apply(exports,arguments)
       if (action.mainAction) {
         indent = React.createElement("span", {
           "className": "indented-log"
-        }, "...and ");
+        }, "...which ");
       }
       target = this.replay.entities[action.target]['cardID'];
       targetLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(target));
@@ -1916,6 +1944,34 @@ arguments[4][4][0].apply(exports,arguments)
       }, indent, cardLog, React.createElement("span", null, " targets "), React.createElement(SpanDisplayLog, {
         "newLog": targetLink
       }));
+      return log;
+    },
+    buildTriggerFullEntityLog: function(action) {
+      var card, cardLink, creationLog, creations, entity, log, target, targetLink, _i, _len, _ref;
+      card = action.data['cardID'];
+      cardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(card));
+      console.log('building entity creation log', action);
+      creations = [];
+      _ref = action.newEntities;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        entity = _ref[_i];
+        target = entity['cardID'];
+        if (target) {
+          targetLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(target));
+          creationLog = React.createElement("span", {
+            "key": ++this.logIndex,
+            "className": "list"
+          }, React.createElement(SpanDisplayLog, {
+            "newLog": cardLink
+          }), React.createElement("span", null, " creates "), React.createElement(SpanDisplayLog, {
+            "newLog": targetLink
+          }));
+          creations.push(creationLog);
+        }
+      }
+      log = React.createElement("p", {
+        "key": ++this.logIndex
+      }, creations);
       return log;
     },
     buildAttackLog: function(action) {
@@ -2134,7 +2190,7 @@ arguments[4][4][0].apply(exports,arguments)
       var node;
       this.index = ++this.logIndex;
       node = ReactDOM.findDOMNode(this);
-      return $(node).parent().parent().scrollTo("max");
+      return $("#turnLog").scrollTo("max");
     },
     render: function() {
       var cls;
@@ -2258,7 +2314,7 @@ arguments[4][4][0].apply(exports,arguments)
 
 },{"./components/application":2,"./components/replay":3,"history/lib/createMemoryHistory":134,"react":346,"react-dom":154,"react-router":175}],28:[function(_dereq_,module,exports){
 (function() {
-  var ActionParser, Entity, EventEmitter, HistoryBatch, Player, _,
+  var ActionParser, Entity, EventEmitter, HistoryBatch, Player, _, tsToSeconds,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
@@ -2271,6 +2327,18 @@ arguments[4][4][0].apply(exports,arguments)
   _ = _dereq_('lodash');
 
   EventEmitter = _dereq_('events');
+
+  tsToSeconds = function(ts) {
+    var hours, minutes, parts, seconds;
+    parts = ts != null ? typeof ts.split === "function" ? ts.split(':') : void 0 : void 0;
+    if (!parts) {
+      return null;
+    }
+    hours = parseInt(parts[0]) * 60 * 60;
+    minutes = parseInt(parts[1]) * 60;
+    seconds = parseFloat(parts[2]);
+    return hours + minutes + seconds;
+  };
 
   ActionParser = (function(superClass) {
     extend(ActionParser, superClass);
@@ -2348,7 +2416,7 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ActionParser.prototype.parseActions = function() {
-      var action, armor, batch, command, dmg, entity, entityTag, excluded, i, info, j, k, l, len, len1, len2, len3, len4, len5, len6, len7, len8, m, meta, n, o, p, playedCard, publicSecret, q, r, ref, ref1, ref10, ref11, ref12, ref13, ref14, ref15, ref16, ref17, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, results, s, secret, sortedActions, tag, tagValue, target, tempTurnNumber;
+      var action, armor, batch, command, dmg, excluded, i, j, k, l, len, len1, len2, len3, len4, len5, m, n, o, p, playedCard, publicSecret, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, results, secret, sortedActions, tag, target, tempTurnNumber;
       this.players = [this.player, this.opponent];
       this.playerIndex = 0;
       this.turnNumber = 1;
@@ -2367,13 +2435,16 @@ arguments[4][4][0].apply(exports,arguments)
             if (this.turns[this.currentTurnNumber]) {
               this.parseMulliganCards(batch, command[1][0]);
               this.parseCardPlayedFromHand(batch, command[1][0]);
+              this.parseHeroPowerUsed(batch, command[1][0]);
               this.parseSecretPlayedFromHand(batch, command[1][0]);
-              this.parsePowerEffects(batch, command[1][0]);
               this.parseAttacks(batch, command[1][0]);
+              this.parsePowerEffects(batch, command[1][0]);
               this.parseDeaths(batch, command[1][0]);
               this.parseDiscovers(batch, command[1][0]);
               this.parseSummons(batch, command[1][0]);
               this.parseEquipEffect(batch, command[1][0]);
+              this.parseSecretRevealed(batch, command[1][0]);
+              this.parseTriggerEffects(batch, command[1][0]);
               if (command[1][0].tags && ((ref2 = command[1][0].attributes.type) !== '5' && ref2 !== '7')) {
                 playedCard = -1;
                 excluded = false;
@@ -2407,64 +2478,14 @@ arguments[4][4][0].apply(exports,arguments)
                   this.addAction(this.currentTurnNumber, action);
                 }
               }
-              if (command[1][0].attributes.entity && command[1][0].attributes.type === '5') {
-                entity = this.entities[command[1][0].attributes.entity];
-                if (entity.tags.SECRET === 1) {
-                  console.log('\tyes', entity, command[1][0]);
-                  action = {
-                    turn: this.currentTurnNumber - 1,
-                    timestamp: batch.timestamp + 0.01,
-                    actionType: 'secret-revealed',
-                    data: entity,
-                    initialCommand: command[1][0]
-                  };
-                  this.addAction(this.currentTurnNumber, action);
-                }
-              }
-              if (command[1][0].showEntity && (command[1][0].attributes.type === '1' || (((ref5 = command[1][0].attributes.type) !== '3' && ref5 !== '7') && (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0)))) {
-                playedCard = -1;
-                if (command[1][0].showEntity.tags) {
-                  ref6 = command[1][0].showEntity.tags;
-                  for (entityTag in ref6) {
-                    tagValue = ref6[entityTag];
-                    if (entityTag === 'ZONE' && tagValue === 1) {
-                      playedCard = command[1][0].showEntity.id;
-                    }
-                  }
-                }
-                if (command[1][0].tags) {
-                  ref7 = command[1][0].tags;
-                  for (n = 0, len3 = ref7.length; n < len3; n++) {
-                    tag = ref7[n];
-                    if (tag.tag === 'ZONE' && tag.value === 1) {
-                      playedCard = tag.entity;
-                    }
-                  }
-                }
-                if (playedCard > -1) {
-                  action = {
-                    turn: this.currentTurnNumber - 1,
-                    timestamp: batch.timestamp,
-                    type: ': ',
-                    data: this.entities[command[1][0].showEntity.id] ? this.entities[command[1][0].showEntity.id] : command[1][0].showEntity,
-                    owner: this.turns[this.currentTurnNumber].activePlayer,
-                    debugType: 'showEntity',
-                    debug: command[1][0].showEntity,
-                    initialCommand: command[1][0]
-                  };
-                  if (action.data) {
-                    this.addAction(this.currentTurnNumber, action);
-                  }
-                }
-              }
               if (command[1][0].tags && command[1][0].attributes.type === '5') {
                 playedCard = -1;
                 excluded = false;
                 secret = false;
-                ref8 = command[1][0].tags;
-                for (o = 0, len4 = ref8.length; o < len4; o++) {
-                  tag = ref8[o];
-                  if (tag.tag === 'ZONE' && ((ref9 = tag.value) === 1 || ref9 === 7)) {
+                ref5 = command[1][0].tags;
+                for (n = 0, len3 = ref5.length; n < len3; n++) {
+                  tag = ref5[n];
+                  if (tag.tag === 'ZONE' && ((ref6 = tag.value) === 1 || ref6 === 7)) {
                     playedCard = tag.entity;
                   }
                   if (tag.tag === 'SECRET' && tag.value === 1) {
@@ -2488,37 +2509,14 @@ arguments[4][4][0].apply(exports,arguments)
                   this.addAction(this.currentTurnNumber, action);
                 }
               }
-              if (command[1][0].tags && ((ref10 = command[1][0].attributes.type) === '5') && ((ref11 = command[1][0].meta) != null ? ref11.length : void 0) > 0) {
-                ref12 = command[1][0].meta;
-                for (p = 0, len5 = ref12.length; p < len5; p++) {
-                  meta = ref12[p];
-                  ref13 = meta.info;
-                  for (q = 0, len6 = ref13.length; q < len6; q++) {
-                    info = ref13[q];
-                    if (meta.meta === 'TARGET' && ((ref14 = meta.info) != null ? ref14.length : void 0) > 0 && (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) !== info.entity)) {
-                      action = {
-                        turn: this.currentTurnNumber - 1,
-                        timestamp: batch.timestamp,
-                        target: info.entity,
-                        type: ': trigger ',
-                        data: this.entities[command[1][0].attributes.entity],
-                        owner: this.getController(this.entities[command[1][0].attributes.entity].tags.CONTROLLER),
-                        initialCommand: command[1][0],
-                        debugType: 'trigger effect card'
-                      };
-                      this.addAction(this.currentTurnNumber, action);
-                    }
-                  }
-                }
-              }
-              if ((ref15 = command[1][0].attributes.type) === '3' || ref15 === '5') {
+              if ((ref7 = command[1][0].attributes.type) === '3' || ref7 === '5') {
                 if (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0) {
                   if (command[1][0].tags) {
                     dmg = 0;
                     target = void 0;
-                    ref16 = command[1][0].tags;
-                    for (r = 0, len7 = ref16.length; r < len7; r++) {
-                      tag = ref16[r];
+                    ref8 = command[1][0].tags;
+                    for (o = 0, len4 = ref8.length; o < len4; o++) {
+                      tag = ref8[o];
                       if (tag.tag === 'DAMAGE' && tag.value > 0) {
                         dmg = tag.value;
                         target = tag.entity;
@@ -2541,9 +2539,9 @@ arguments[4][4][0].apply(exports,arguments)
                   }
                   if (command[1][0].tags) {
                     armor = 0;
-                    ref17 = command[1][0].tags;
-                    for (s = 0, len8 = ref17.length; s < len8; s++) {
-                      tag = ref17[s];
+                    ref9 = command[1][0].tags;
+                    for (p = 0, len5 = ref9.length; p < len5; p++) {
+                      tag = ref9[p];
                       if (tag.tag === 'ARMOR' && tag.value > 0) {
                         armor = tag.value;
                       }
@@ -2579,9 +2577,6 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ActionParser.prototype.addAction = function(currentTurnNumber, action) {
-      if (action.initialCommand.parent && action.initialCommand.parent.timestamp === action.timestamp) {
-        action.timestamp += 0.01;
-      }
       return this.turns[currentTurnNumber].actions.push(action);
     };
 
@@ -2618,10 +2613,10 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ActionParser.prototype.parseDrawCard = function(batch, command) {
-      var action, currentCommand, entity, owner, ownerId, ref, ref1;
+      var action, currentCommand, entity, owner, ownerId, ref, ref1, ref2, ref3;
+      currentCommand = command[1][0];
       if (command[0] === 'receiveTagChange' && command[1][0].tag === 'ZONE' && command[1][0].value === 3) {
         if (this.currentTurnNumber >= 2) {
-          currentCommand = command[1][0];
           while (currentCommand.parent && ((ref = currentCommand.entity) !== '2' && ref !== '3')) {
             currentCommand = currentCommand.parent;
           }
@@ -2635,29 +2630,40 @@ arguments[4][4][0].apply(exports,arguments)
             turn: this.currentTurnNumber,
             timestamp: batch.timestamp,
             actionType: 'card-draw',
-            type: ' draws ',
+            type: 'from tag change',
             data: this.entities[command[1][0].entity],
+            mainAction: (ref1 = command[1][0].parent) != null ? ref1.parent : void 0,
             owner: owner,
             initialCommand: command[1][0]
           };
           this.addAction(this.currentTurnNumber, action);
         }
       }
-      if (command[0] === 'receiveAction' && (command[1][0].type = '5')) {
+      if (command[0] === 'receiveAction') {
         if (this.currentTurnNumber >= 2) {
+          while (currentCommand.parent && ((ref2 = currentCommand.entity) !== '2' && ref2 !== '3')) {
+            currentCommand = currentCommand.parent;
+          }
+          ownerId = currentCommand.attributes.entity;
+          if (ownerId !== '2' && ownerId !== '3') {
+            owner = this.getController(this.entities[ownerId].tags.CONTROLLER);
+          } else {
+            owner = this.entities[ownerId];
+          }
           entity = command[1][0].showEntity || command[1][0].fullEntity;
           if (entity && entity.tags.ZONE === 3) {
             currentCommand = command[1][0];
-            while (currentCommand.parent && ((ref1 = currentCommand.entity) !== '2' && ref1 !== '3')) {
+            while (currentCommand.parent && ((ref3 = currentCommand.entity) !== '2' && ref3 !== '3')) {
               currentCommand = currentCommand.parent;
             }
             action = {
               turn: this.currentTurnNumber,
               timestamp: batch.timestamp,
               actionType: 'card-draw',
-              type: ' draws ',
+              type: 'from action',
               data: this.entities[entity.id],
-              owner: this.entities[currentCommand.attributes.entity],
+              mainAction: command[1][0].parent,
+              owner: owner,
               initialCommand: command[1][0]
             };
             return this.addAction(this.currentTurnNumber, action);
@@ -2691,12 +2697,17 @@ arguments[4][4][0].apply(exports,arguments)
       var action, entity, k, len, playedCard, ref, tag;
       if (command.attributes.type === '7') {
         entity = this.entities[command.attributes.entity];
+        if (command.attributes.entity === '6') {
+          console.log('Play Dire Wold command', entity, command);
+        }
         playedCard = -1;
         ref = command.tags;
         for (k = 0, len = ref.length; k < len; k++) {
           tag = ref[k];
           if (tag.tag === 'ZONE' && tag.value === 1) {
-            playedCard = tag.entity;
+            if (this.entities[tag.entity].tags.CARDTYPE !== 6) {
+              playedCard = tag.entity;
+            }
           }
         }
         if (playedCard < 0 && command.showEntity) {
@@ -2707,10 +2718,28 @@ arguments[4][4][0].apply(exports,arguments)
         if (playedCard > -1) {
           action = {
             turn: this.currentTurnNumber - 1,
-            timestamp: batch.timestamp,
+            timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
             actionType: 'played-card-from-hand',
             data: this.entities[playedCard],
             owner: this.turns[this.currentTurnNumber].activePlayer,
+            initialCommand: command
+          };
+          return this.addAction(this.currentTurnNumber, action);
+        }
+      }
+    };
+
+    ActionParser.prototype.parseHeroPowerUsed = function(batch, command) {
+      var action, entity;
+      if (command.attributes.type === '7') {
+        entity = this.entities[command.attributes.entity];
+        if (entity.tags.CARDTYPE === 10) {
+          action = {
+            turn: this.currentTurnNumber - 1,
+            timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
+            actionType: 'hero-power',
+            data: entity,
+            owner: this.getController(entity.tags.CONTROLLER),
             initialCommand: command
           };
           return this.addAction(this.currentTurnNumber, action);
@@ -2737,7 +2766,7 @@ arguments[4][4][0].apply(exports,arguments)
         if (playedCard > -1 && secret) {
           action = {
             turn: this.currentTurnNumber - 1,
-            timestamp: batch.timestamp,
+            timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
             actionType: 'played-secret-from-hand',
             publicSecret: publicSecret,
             data: this.entities[playedCard],
@@ -2750,28 +2779,28 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ActionParser.prototype.parsePowerEffects = function(batch, command) {
-      var action, info, k, len, mainAction, meta, ref, ref1, ref2, ref3, results, sameOwnerAsParent;
-      if (command.attributes.type === '3' && ((ref = command.meta) != null ? ref.length : void 0) > 0) {
-        if (((ref1 = command.parent) != null ? (ref2 = ref1.attributes) != null ? ref2.entity : void 0 : void 0) === command.attributes.entity) {
+      var action, info, k, len, mainAction, meta, ref, ref1, ref2, ref3, ref4, results, sameOwnerAsParent;
+      if (((ref = command.attributes.type) === '3' || ref === '5') && ((ref1 = command.meta) != null ? ref1.length : void 0) > 0) {
+        if (((ref2 = command.parent) != null ? (ref3 = ref2.attributes) != null ? ref3.entity : void 0 : void 0) === command.attributes.entity) {
           sameOwnerAsParent = true;
         }
         if (command.parent) {
           mainAction = command.parent;
         }
-        ref3 = command.meta;
+        ref4 = command.meta;
         results = [];
-        for (k = 0, len = ref3.length; k < len; k++) {
-          meta = ref3[k];
+        for (k = 0, len = ref4.length; k < len; k++) {
+          meta = ref4[k];
           results.push((function() {
-            var l, len1, ref4, results1;
-            ref4 = meta.info;
+            var l, len1, ref5, results1;
+            ref5 = meta.info;
             results1 = [];
-            for (l = 0, len1 = ref4.length; l < len1; l++) {
-              info = ref4[l];
+            for (l = 0, len1 = ref5.length; l < len1; l++) {
+              info = ref5[l];
               if (meta.meta === 'DAMAGE') {
                 action = {
                   turn: this.currentTurnNumber - 1,
-                  timestamp: batch.timestamp,
+                  timestamp: meta.ts || tsToSeconds(command.attributes.ts) || batch.timestamp,
                   target: info.entity,
                   amount: meta.data,
                   mainAction: mainAction,
@@ -2786,7 +2815,7 @@ arguments[4][4][0].apply(exports,arguments)
               if (meta.meta === 'TARGET') {
                 action = {
                   turn: this.currentTurnNumber - 1,
-                  timestamp: batch.timestamp,
+                  timestamp: meta.ts || tsToSeconds(command.attributes.ts) || batch.timestamp,
                   target: info.entity,
                   mainAction: mainAction,
                   sameOwnerAsParent: sameOwnerAsParent,
@@ -2807,12 +2836,30 @@ arguments[4][4][0].apply(exports,arguments)
       }
     };
 
+    ActionParser.prototype.parseTriggerEffects = function(batch, command) {
+      var action, ref, ref1;
+      if ((ref = command.attributes.type) === '5') {
+        if (((ref1 = command.fullEntities) != null ? ref1.length : void 0) > 0) {
+          action = {
+            turn: this.currentTurnNumber - 1,
+            timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
+            actionType: 'trigger-fullentity',
+            data: this.entities[command.attributes.entity],
+            owner: this.getController(this.entities[command.attributes.entity].tags.CONTROLLER),
+            newEntities: command.fullEntities,
+            initialCommand: command
+          };
+          return this.addAction(this.currentTurnNumber, action);
+        }
+      }
+    };
+
     ActionParser.prototype.parseAttacks = function(batch, command) {
       var action;
       if (command.attributes.type === '1') {
         action = {
           turn: this.currentTurnNumber - 1,
-          timestamp: batch.timestamp,
+          timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
           actionType: 'attack',
           data: this.entities[command.attributes.entity],
           owner: this.turns[this.currentTurnNumber].activePlayer,
@@ -2833,7 +2880,7 @@ arguments[4][4][0].apply(exports,arguments)
           if (tag.tag === 'ZONE' && tag.value === 4) {
             action = {
               turn: this.currentTurnNumber - 1,
-              timestamp: batch.timestamp,
+              timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
               actionType: 'minion-death',
               data: tag.entity,
               initialCommand: command
@@ -2863,7 +2910,7 @@ arguments[4][4][0].apply(exports,arguments)
         if (isDiscover) {
           action = {
             turn: this.currentTurnNumber - 1,
-            timestamp: batch.timestamp,
+            timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
             actionType: 'discover',
             data: this.entities[command.attributes.entity],
             choices: choices,
@@ -2888,7 +2935,7 @@ arguments[4][4][0].apply(exports,arguments)
             }
             action = {
               turn: this.currentTurnNumber - 1,
-              timestamp: batch.timestamp,
+              timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
               actionType: 'summon-minion',
               data: entity,
               owner: this.getController(entity.tags.CONTROLLER),
@@ -2917,7 +2964,7 @@ arguments[4][4][0].apply(exports,arguments)
             }
             action = {
               turn: this.currentTurnNumber - 1,
-              timestamp: batch.timestamp,
+              timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
               actionType: 'summon-weapon',
               data: entity,
               owner: this.getController(entity.tags.CONTROLLER),
@@ -2930,6 +2977,23 @@ arguments[4][4][0].apply(exports,arguments)
           }
         }
         return results;
+      }
+    };
+
+    ActionParser.prototype.parseSecretRevealed = function(batch, command) {
+      var action, entity, ref;
+      if (command.attributes.type === '5') {
+        entity = this.entities[command.attributes.entity];
+        if ((entity != null ? (ref = entity.tags) != null ? ref.SECRET : void 0 : void 0) === 1) {
+          action = {
+            turn: this.currentTurnNumber - 1,
+            timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
+            actionType: 'secret-revealed',
+            data: entity,
+            initialCommand: command
+          };
+          return this.addAction(this.currentTurnNumber, action);
+        }
       }
     };
 
@@ -3609,7 +3673,7 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     HSReplayParser.prototype.actionState = function(node) {
-      var ref1, ref2, ref3, ref4, tag;
+      var ref1, ref2, ref3, ref4, tag, ts;
       switch (node.name) {
         case 'ShowEntity':
         case 'FullEntity':
@@ -3656,10 +3720,16 @@ arguments[4][4][0].apply(exports,arguments)
           this.replay.enqueue(null, 'receiveTagChange', tag);
           break;
         case 'MetaData':
+          if (node.attributes.ts) {
+            ts = tsToSeconds(node.attributes.ts);
+          } else {
+            ts = null;
+          }
           this.metaData = {
             meta: metaTagNames[node.attributes.meta],
             data: node.attributes.data,
-            parent: this.stack[this.stack.length - 2]
+            parent: this.stack[this.stack.length - 2],
+            ts: ts
           };
           if (!this.metaData.parent.meta) {
             this.metaData.parent.meta = [];

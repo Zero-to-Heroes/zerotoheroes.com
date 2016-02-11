@@ -1778,6 +1778,54 @@
   text-align: left;
   line-height: 0.8em;
 }
+.hearthstone #externalPlayer .discover-container {
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  top: -100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 25;
+}
+.hearthstone #externalPlayer .discover {
+  text-align: center;
+  top: 25%;
+  position: absolute;
+  width: 100%;
+  z-index: 25;
+}
+.hearthstone #externalPlayer .discover .game-card {
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+  transition: transform 0.25s, top 0.5s;
+  width: 200px;
+  height: 310px;
+  background-size: 100% auto;
+}
+.hearthstone #externalPlayer .discover .game-card:last-child {
+  margin-right: 0;
+}
+.hearthstone #externalPlayer .discover .card--unknown {
+  background-size: 75% auto;
+  margin-right: 0;
+}
+.hearthstone #externalPlayer .discover .discarded:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "X";
+  font-size: 10em;
+  color: red;
+  line-height: 1.1em;
+  text-align: center;
+  opacity: 0.5;
+}
+.hearthstone #externalPlayer .top .discover-container {
+  top: auto;
+  bottom: -100%;
+}
 .hearthstone #externalPlayer .board {
   text-align: center;
   position: relative;
@@ -2000,6 +2048,9 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.hearthstone #externalPlayer .game-log .discovered-card {
+  margin-right: 10px;
+}
 .hearthstone #externalPlayer .replay__controls .playback-speed {
   display: table-cell;
   width: 70px;
@@ -2088,6 +2139,15 @@
 }
 .hearthstone #externalPlayer .turn-log .log-container::-webkit-scrollbar {
   display: none;
+}
+.hearthstone #externalPlayer .turn-log .indented-log {
+  margin-left: 30px;
+}
+.hearthstone #externalPlayer .turn-log .discovered-card {
+  display: block;
+}
+.hearthstone #externalPlayer .turn-log .discovered-card::before {
+  content: '...';
 }
 .hearthstone #externalPlayer .secret-revealed {
   color: #FCBD0B;

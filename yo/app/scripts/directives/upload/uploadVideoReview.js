@@ -99,6 +99,9 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 				}
 
 				$scope.startTranscoding = function() {
+					$scope.review.beginning = $scope.uploader.videoInfo.beginning
+					$scope.review.ending = $scope.uploader.videoInfo.ending
+
 					$log.debug('startTranscoding in video', $scope.review)
 					Api.Reviews.save($scope.review, 
 						function(data) {
@@ -242,7 +245,9 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 						tags: $scope.review.tags,
 						canvas: $scope.review.tempCanvas,
 						language: $scope.review.language,
-						participantDetails: $scope.review.participantDetails
+						participantDetails: $scope.review.participantDetails,
+						beginning: $scope.uploader.videoInfo.beginning,
+						ending: $scope.uploader.videoInfo.ending
 					}
 					Api.ReviewsPublish.save({reviewId: $scope.review.id}, newReview, 
 						function(data) {

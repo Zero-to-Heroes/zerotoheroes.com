@@ -185,14 +185,9 @@ public class ReviewApiHandler {
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			// log.debug("Setting current user as review author " +
 			// currentUser);
-			addAuthorInformation(review.getSport(), review, currentUser);
 			User user = userRepo.findByUsername(currentUser);
-
-			// Updating user stats
-			if (commentParser.hasTimestamp(review.getText())) {
-				user.getStats().incrementTimestamps();
-				userRepo.save(user);
-			}
+			review.setAuthorId(user.getId());
+			review.setAuthor(currentUser);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else if (review.getAuthor() != null) {

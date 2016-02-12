@@ -247,7 +247,8 @@
       })), React.createElement(TurnLog, {
         "show": this.displayConf.showLog,
         "replay": replay,
-        "onTurnClick": this.onGoToTurnClick
+        "onTurnClick": this.onGoToTurnClick,
+        "onClose": this.onTurnClick
       }), React.createElement("form", {
         "className": "replay__controls padded"
       }, React.createElement(ButtonGroup, null, React.createElement(Button, {
@@ -290,7 +291,8 @@
         "onClick": this.onClickChangeSpeed.bind(this, 8)
       }, "8x")))))), React.createElement(GameLog, {
         "replay": replay,
-        "onLogClick": this.onTurnClick
+        "onLogClick": this.onTurnClick,
+        "logOpen": this.displayConf.showLog
       }));
     };
 
@@ -858,12 +860,17 @@
     };
 
     GameLog.prototype.render = function() {
+      var buttonText;
+      buttonText = React.createElement("span", null, "Full log");
+      if (this.props.logOpen) {
+        buttonText = React.createElement("span", null, "Hide log");
+      }
       return React.createElement("div", {
         "className": "game-log"
       }, this.log, React.createElement("button", {
         "className": "btn btn-default",
         "onClick": this.props.onLogClick
-      }, React.createElement("span", null, "Full log")));
+      }, buttonText));
     };
 
     return GameLog;
@@ -1727,6 +1734,9 @@ arguments[4][4][0].apply(exports,arguments)
       return React.createElement("div", {
         "className": "turn-log background-white"
       }, React.createElement("div", {
+        "className": "close",
+        "onClick": this.props.onClose
+      }), React.createElement("div", {
         "className": "log-container",
         "id": "turnLog"
       }, this.logs));

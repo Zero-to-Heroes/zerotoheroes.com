@@ -2156,6 +2156,16 @@
 .hearthstone #externalPlayer .turn-log .list {
   display: block;
 }
+.hearthstone #externalPlayer .turn-log .close {
+  right: 10px;
+  position: absolute;
+  top: 0px;
+  opacity: 0.5;
+  color: white;
+}
+.hearthstone #externalPlayer .turn-log .close::before {
+  content: "x";
+}
 .hearthstone #externalPlayer .new-hero-power {
   color: #7CF900;
 }

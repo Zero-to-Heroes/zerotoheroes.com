@@ -2152,6 +2152,9 @@
 .hearthstone #externalPlayer .turn-log .list {
   display: block;
 }
+.hearthstone #externalPlayer .new-hero-powser {
+  color: #7CF900;
+}
 .hearthstone #externalPlayer .secret-revealed {
   color: #FCBD0B;
   margin-right: 5px;

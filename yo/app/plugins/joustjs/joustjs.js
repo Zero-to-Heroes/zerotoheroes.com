@@ -1754,6 +1754,8 @@ arguments[4][4][0].apply(exports,arguments)
         log = this.buildSummonMinionLog(action);
       } else if (action.actionType === 'summon-weapon') {
         log = this.buildSummonWeaponLog(action);
+      } else if (action.actionType === 'trigger-secret-play') {
+        log = this.buildTriggerSecretPlayLog(action);
       } else {
         card = (action != null ? action.data : void 0) ? action.data['cardID'] : '';
         owner = action.owner.name;
@@ -1875,10 +1877,10 @@ arguments[4][4][0].apply(exports,arguments)
     },
     buildPlayedSecretFromHandLog: function(action) {
       var card, cardLink, link, log;
-      if ((typeof cardLink !== "undefined" && cardLink !== null ? cardLink.length : void 0) > 0 && action.publicSecret) {
-        card = (action != null ? action.data : void 0) ? action.data['cardID'] : '';
+      if (action.owner.id === this.replay.mainPlayerId) {
+        card = action.data['cardID'];
         cardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(card));
-        link = React.createElement("span", null, ": ");
+        link = React.createElement("span", null, "- ");
       } else {
 
       }
@@ -1894,6 +1896,41 @@ arguments[4][4][0].apply(exports,arguments)
           __html: cardLink
         }
       }));
+      return log;
+    },
+    buildTriggerSecretPlayLog: function(action) {
+      var card, cardLink, indent, log, secret, secretLog, secrets, _i, _len, _ref;
+      if (action.mainAction) {
+        indent = React.createElement("span", {
+          "className": "indented-log"
+        }, "...which puts a ", React.createElement("span", {
+          "className": "secret-revealed"
+        }, "Secret"), "in play");
+      }
+      secrets = [];
+      _ref = action.secrets;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        secret = _ref[_i];
+        card = secret['cardID'];
+        if (action.owner === this.replay.player) {
+          cardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(card));
+          secretLog = React.createElement("span", {
+            "className": "list"
+          }, indent, React.createElement("span", null, ": "), React.createElement(SpanDisplayLog, {
+            "newLog": cardLink
+          }));
+          secrets.push(secretLog);
+        } else {
+          secrets.push(React.createElement("span", {
+            "className": "list"
+          }, indent, React.createElement(SpanDisplayLog, {
+            "newLog": ''
+          })));
+        }
+      }
+      log = React.createElement("p", {
+        "key": ++this.logIndex
+      }, secrets);
       return log;
     },
     buildPowerDamageLog: function(action) {
@@ -1950,7 +1987,6 @@ arguments[4][4][0].apply(exports,arguments)
       var card, cardLink, creationLog, creations, entity, log, target, targetLink, _i, _len, _ref;
       card = action.data['cardID'];
       cardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(card));
-      console.log('building entity creation log', action);
       creations = [];
       _ref = action.newEntities;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -2003,24 +2039,27 @@ arguments[4][4][0].apply(exports,arguments)
     },
     buildDiscoverLog: function(action) {
       var card, cardLink, choice, choiceCard, choiceCardLink, choicesCards, log, _i, _len, _ref;
+      console.log('building discover log', action, this.replay.mainPlayerId);
       card = action.data['cardID'];
       cardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(card));
-      choicesCards = [];
-      _ref = action.choices;
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        choice = _ref[_i];
-        choiceCard = choice['cardID'];
-        choiceCardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(choiceCard));
-        choicesCards.push(React.createElement(SpanDisplayLog, {
-          "className": "discovered-card indented-log",
-          "newLog": choiceCardLink
-        }));
+      if (!action.owner || action.owner.id === this.replay.mainPlayerId) {
+        choicesCards = [];
+        _ref = action.choices;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          choice = _ref[_i];
+          choiceCard = choice['cardID'];
+          choiceCardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(choiceCard));
+          choicesCards.push(React.createElement(SpanDisplayLog, {
+            "className": "discovered-card indented-log",
+            "newLog": choiceCardLink
+          }));
+        }
       }
       log = React.createElement("p", {
         "key": ++this.logIndex
       }, React.createElement(SpanDisplayLog, {
         "newLog": cardLink
-      }), React.createElement("span", null, " discovers "), choicesCards, React.createElement("span", null));
+      }), React.createElement("span", null, " discovers "), choicesCards);
       return log;
     },
     buildSummonMinionLog: function(action) {
@@ -2117,11 +2156,8 @@ arguments[4][4][0].apply(exports,arguments)
 
   TurnDisplayLog = React.createClass({
     componentDidMount: function() {
-      var node;
       this.index = this.logIndex++;
-      node = ReactDOM.findDOMNode(this);
-      $(node).parent().parent().scrollTo("max");
-      return console.log('mounted TurnDisplayLog', node, $(node), $(node).parent());
+      return $("#turnLog").scrollTo("max");
     },
     render: function() {
       if (this.props.active) {
@@ -2144,10 +2180,8 @@ arguments[4][4][0].apply(exports,arguments)
 
   PlayerNameDisplayLog = React.createClass({
     componentDidMount: function() {
-      var node;
       this.index = this.logIndex++;
-      node = ReactDOM.findDOMNode(this);
-      return $(node).parent().parent().scrollTo("max");
+      return $("#turnLog").scrollTo("max");
     },
     render: function() {
       if (this.props.active) {
@@ -2166,10 +2200,8 @@ arguments[4][4][0].apply(exports,arguments)
 
   ActionDisplayLog = React.createClass({
     componentDidMount: function() {
-      var node;
       this.index = this.logIndex++;
-      node = ReactDOM.findDOMNode(this);
-      return $(node).parent().scrollTo("max");
+      return $("#turnLog").scrollTo("max");
     },
     render: function() {
       var cls;
@@ -2187,9 +2219,7 @@ arguments[4][4][0].apply(exports,arguments)
 
   SpanDisplayLog = React.createClass({
     componentDidMount: function() {
-      var node;
       this.index = ++this.logIndex;
-      node = ReactDOM.findDOMNode(this);
       return $("#turnLog").scrollTo("max");
     },
     render: function() {
@@ -2416,7 +2446,7 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ActionParser.prototype.parseActions = function() {
-      var action, armor, batch, command, dmg, excluded, i, j, k, l, len, len1, len2, len3, len4, len5, m, n, o, p, playedCard, publicSecret, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, results, secret, sortedActions, tag, target, tempTurnNumber;
+      var action, armor, batch, command, dmg, excluded, i, j, k, l, len, len1, len2, len3, len4, m, n, o, playedCard, ref, ref1, ref2, ref3, ref4, ref5, ref6, results, secret, sortedActions, tag, target, tempTurnNumber;
       this.players = [this.player, this.opponent];
       this.playerIndex = 0;
       this.turnNumber = 1;
@@ -2433,6 +2463,7 @@ arguments[4][4][0].apply(exports,arguments)
           if (command[0] === 'receiveAction') {
             this.currentTurnNumber = this.turnNumber - 1;
             if (this.turns[this.currentTurnNumber]) {
+              this.parseSecretRevealed(batch, command[1][0]);
               this.parseMulliganCards(batch, command[1][0]);
               this.parseCardPlayedFromHand(batch, command[1][0]);
               this.parseHeroPowerUsed(batch, command[1][0]);
@@ -2443,49 +2474,16 @@ arguments[4][4][0].apply(exports,arguments)
               this.parseDiscovers(batch, command[1][0]);
               this.parseSummons(batch, command[1][0]);
               this.parseEquipEffect(batch, command[1][0]);
-              this.parseSecretRevealed(batch, command[1][0]);
-              this.parseTriggerEffects(batch, command[1][0]);
-              if (command[1][0].tags && ((ref2 = command[1][0].attributes.type) !== '5' && ref2 !== '7')) {
-                playedCard = -1;
-                excluded = false;
-                secret = false;
-                ref3 = command[1][0].tags;
-                for (m = 0, len2 = ref3.length; m < len2; m++) {
-                  tag = ref3[m];
-                  if (tag.tag === 'ZONE' && ((ref4 = tag.value) === 1 || ref4 === 7)) {
-                    playedCard = tag.entity;
-                  }
-                  if (tag.tag === 'SECRET' && tag.value === 1) {
-                    secret = true;
-                    publicSecret = command[1][0].attributes.type === '7' && this.turns[this.currentTurnNumber].activePlayer.id === this.mainPlayerId;
-                  }
-                  if (tag.tag === 'ATTACHED') {
-                    excluded = true;
-                  }
-                }
-                if (playedCard > -1 && !excluded) {
-                  action = {
-                    turn: this.currentTurnNumber - 1,
-                    timestamp: batch.timestamp,
-                    type: ': ',
-                    secret: secret,
-                    publicSecret: publicSecret,
-                    data: this.entities[playedCard],
-                    owner: this.turns[this.currentTurnNumber].activePlayer,
-                    initialCommand: command[1][0],
-                    debugType: 'played card'
-                  };
-                  this.addAction(this.currentTurnNumber, action);
-                }
-              }
+              this.parseTriggerFullEntityCreation(batch, command[1][0]);
+              this.parseTriggerPutSecretInPlay(batch, command[1][0]);
               if (command[1][0].tags && command[1][0].attributes.type === '5') {
                 playedCard = -1;
                 excluded = false;
                 secret = false;
-                ref5 = command[1][0].tags;
-                for (n = 0, len3 = ref5.length; n < len3; n++) {
-                  tag = ref5[n];
-                  if (tag.tag === 'ZONE' && ((ref6 = tag.value) === 1 || ref6 === 7)) {
+                ref2 = command[1][0].tags;
+                for (m = 0, len2 = ref2.length; m < len2; m++) {
+                  tag = ref2[m];
+                  if (tag.tag === 'ZONE' && ((ref3 = tag.value) === 1 || ref3 === 7)) {
                     playedCard = tag.entity;
                   }
                   if (tag.tag === 'SECRET' && tag.value === 1) {
@@ -2509,14 +2507,14 @@ arguments[4][4][0].apply(exports,arguments)
                   this.addAction(this.currentTurnNumber, action);
                 }
               }
-              if ((ref7 = command[1][0].attributes.type) === '3' || ref7 === '5') {
+              if ((ref4 = command[1][0].attributes.type) === '3' || ref4 === '5') {
                 if (!command[1][0].parent || !command[1][0].parent.attributes.target || parseInt(command[1][0].parent.attributes.target) <= 0) {
                   if (command[1][0].tags) {
                     dmg = 0;
                     target = void 0;
-                    ref8 = command[1][0].tags;
-                    for (o = 0, len4 = ref8.length; o < len4; o++) {
-                      tag = ref8[o];
+                    ref5 = command[1][0].tags;
+                    for (n = 0, len3 = ref5.length; n < len3; n++) {
+                      tag = ref5[n];
                       if (tag.tag === 'DAMAGE' && tag.value > 0) {
                         dmg = tag.value;
                         target = tag.entity;
@@ -2539,9 +2537,9 @@ arguments[4][4][0].apply(exports,arguments)
                   }
                   if (command[1][0].tags) {
                     armor = 0;
-                    ref9 = command[1][0].tags;
-                    for (p = 0, len5 = ref9.length; p < len5; p++) {
-                      tag = ref9[p];
+                    ref6 = command[1][0].tags;
+                    for (o = 0, len4 = ref6.length; o < len4; o++) {
+                      tag = ref6[o];
                       if (tag.tag === 'ARMOR' && tag.value > 0) {
                         armor = tag.value;
                       }
@@ -2748,7 +2746,7 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ActionParser.prototype.parseSecretPlayedFromHand = function(batch, command) {
-      var action, k, len, playedCard, publicSecret, ref, secret, tag;
+      var action, entity, k, len, owner, playedCard, ref, secret, tag;
       if (command.attributes.type === '7') {
         playedCard = -1;
         secret = false;
@@ -2760,17 +2758,17 @@ arguments[4][4][0].apply(exports,arguments)
           }
           if (tag.tag === 'SECRET' && tag.value === 1) {
             secret = true;
-            publicSecret = this.turns[this.currentTurnNumber].activePlayer.id === this.mainPlayerId;
           }
         }
         if (playedCard > -1 && secret) {
+          entity = this.entities[playedCard];
+          owner = this.getController(entity.tags.CONTROLLER);
           action = {
             turn: this.currentTurnNumber - 1,
             timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
             actionType: 'played-secret-from-hand',
-            publicSecret: publicSecret,
-            data: this.entities[playedCard],
-            owner: this.turns[this.currentTurnNumber].activePlayer,
+            data: entity,
+            owner: owner,
             initialCommand: command
           };
           return this.addAction(this.currentTurnNumber, action);
@@ -2836,20 +2834,55 @@ arguments[4][4][0].apply(exports,arguments)
       }
     };
 
-    ActionParser.prototype.parseTriggerEffects = function(batch, command) {
-      var action, ref, ref1;
+    ActionParser.prototype.parseTriggerPutSecretInPlay = function(batch, command) {
+      var action, entity, k, len, ref, ref1, secretsPutInPlay, tag;
+      if ((ref = command.attributes.type) === '3' || ref === '5') {
+        secretsPutInPlay = [];
+        if (command.tags) {
+          ref1 = command.tags;
+          for (k = 0, len = ref1.length; k < len; k++) {
+            tag = ref1[k];
+            if (tag.tag === 'ZONE' && tag.value === 7) {
+              entity = this.entities[tag.entity];
+              secretsPutInPlay.push(entity);
+            }
+          }
+          if (secretsPutInPlay.length > 0) {
+            action = {
+              turn: this.currentTurnNumber - 1,
+              timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
+              secrets: secretsPutInPlay,
+              mainAction: command.parent,
+              actionType: 'trigger-secret-play',
+              data: this.entities[command.attributes.entity],
+              owner: this.getController(this.entities[command.attributes.entity].tags.CONTROLLER),
+              initialCommand: command
+            };
+            return this.addAction(this.currentTurnNumber, action);
+          }
+        }
+      }
+    };
+
+    ActionParser.prototype.parseTriggerFullEntityCreation = function(batch, command) {
+      var action, fullEntities, ref, ref1;
       if ((ref = command.attributes.type) === '5') {
         if (((ref1 = command.fullEntities) != null ? ref1.length : void 0) > 0) {
-          action = {
-            turn: this.currentTurnNumber - 1,
-            timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
-            actionType: 'trigger-fullentity',
-            data: this.entities[command.attributes.entity],
-            owner: this.getController(this.entities[command.attributes.entity].tags.CONTROLLER),
-            newEntities: command.fullEntities,
-            initialCommand: command
-          };
-          return this.addAction(this.currentTurnNumber, action);
+          fullEntities = _.filter(command.fullEntities, function(entity) {
+            return entity.tags.ZONE === 1;
+          });
+          if ((fullEntities != null ? fullEntities.length : void 0) > 0) {
+            action = {
+              turn: this.currentTurnNumber - 1,
+              timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
+              actionType: 'trigger-fullentity',
+              data: this.entities[command.attributes.entity],
+              owner: this.getController(this.entities[command.attributes.entity].tags.CONTROLLER),
+              newEntities: fullEntities,
+              initialCommand: command
+            };
+            return this.addAction(this.currentTurnNumber, action);
+          }
         }
       }
     };
@@ -2913,10 +2946,12 @@ arguments[4][4][0].apply(exports,arguments)
             timestamp: tsToSeconds(command.attributes.ts) || batch.timestamp,
             actionType: 'discover',
             data: this.entities[command.attributes.entity],
+            owner: this.getController(this.entities[command.attributes.entity].tags.CONTROLLER),
             choices: choices,
             initialCommand: command
           };
           command.isDiscover = true;
+          console.log('adding discover action', action);
           return this.addAction(this.currentTurnNumber, action);
         }
       }
@@ -4370,7 +4405,9 @@ arguments[4][4][0].apply(exports,arguments)
       var tempOpponent;
       tempOpponent = this.player;
       this.player = this.opponent;
-      return this.opponent = tempOpponent;
+      this.opponent = tempOpponent;
+      this.mainPlayerId = this.player.id;
+      return console.log('switched main player, new one is', this.mainPlayerId, this.player);
     };
 
     ReplayPlayer.prototype.getController = function(controllerId) {

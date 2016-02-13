@@ -510,14 +510,15 @@
 	** Specific Hearthstone info on video list
 	** =============*/
 	.hearthstone .video-listing .specific-info {
-		width: 310px;
+		width: 370px;
 	}
 	.hearthstone .video-listing .hearthstone-participants {
 		margin: 0;
 		margin-left: 10px;
 	}
 	.hearthstone .video-listing .hearthstone-participants .player-details, .hearthstone .video-listing .hearthstone-participants .opponent-details {
-		width: 60px;
+		width: 90px;
+		min-width: 90px;
 		text-align: center;
 	}
 	.hearthstone .video-listing .hearthstone-participants .class-select span {

@@ -159,7 +159,7 @@
 		},
 		"askPro": {
 			"headline": "Choisissez votre coach",
-			"tableCaption": "Vous pouvez demander à un entraîneur professionnel de vous donner des conseils sur cette vidéo. Chaque coach peut proposer des choses différentes, donc prenez le temps de lire les détails indiqués en laissant votre souris sur l'icône <spa n class=\"glyphicon glyphicon-info-sign\"></span> avant de faire votre choix",
+			"tableCaption": "Vous pouvez demander à un entraîneur professionnel de vous donner des conseils sur cette vidéo. Chaque coach peut proposer des choses différentes, donc prenez le temps de lire les détails indiqués en laissant votre souris sur l'icône <span class=\"glyphicon glyphicon-info-sign\"></span> avant de faire votre choix",
 			"name": "Nom",
 			"languages": "Langues",
 			"level": "Niveau",

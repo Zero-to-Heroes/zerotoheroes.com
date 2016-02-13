@@ -165,7 +165,7 @@
 			"requestButton": "Request review",
 			"closeButton": "Close",
 			"confirmRequestTitle": "Confirm Request",
-			"confirmInfo" : "To confirm the request to {{name}} for {{tariff}} to review your video, please enter your email address below.",
+			"confirmInfo" : "To confirm the request to {{name}} for {{tariff}} to review your video, please enter your email address below. What he said: \"{{conditions}}\"",
 			"confirmButton": "Confirm",
 			"closeButton": "Close"
 		},

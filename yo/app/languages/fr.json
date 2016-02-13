@@ -168,7 +168,7 @@
 			"requestButton": "Envoyer la requête",
 			"closeButton": "Fermer",
 			"confirmRequestTitle": "Confirmer la requête",
-			"confirmInfo" : "Pour confirmer la requête à {{name}} pour {{tariff}} pour analyser votre vidéo, veuillez entrer votre adresse mail ci-dessous.",
+			"confirmInfo" : "Pour confirmer la requête à {{name}} pour {{tariff}} pour analyser votre vidéo, veuillez entrer votre adresse mail ci-dessous. Ce qu'il a dit: \"{{conditions}}\"",",
 			"confirmButton": "Confirmer"
 		},
 		"forgotPassword": {

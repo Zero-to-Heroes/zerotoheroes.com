@@ -11,7 +11,6 @@ app.directive('hearthstoneListingDetails', ['$log', 'SportsConfig',
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
-				$log.debug('Video listing for review', $scope.review)
 			}
 		}
 	}

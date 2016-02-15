@@ -56,6 +56,9 @@
 			"shaman": "Shaman",
 			"warlock": "Warlock",
 			"warrior": "Warrior"
+		},
+		"user": {
+			"showOwnVideos": "My games"
 		}
 	},
 	"heroesofthestorm": {
@@ -190,6 +193,7 @@
 			"reputationExplanation": "Your total reputation. You can increase it by giving useful advice to others",
 			"signOut": "Sign out",
 			"signIn": "Sign in",
+			"showOwnVideos": "My videos",
 			"createAccount": "Create account",
 			"noAccount": "If you don't have an account yet, please ",
 			"signUp": "sign up",

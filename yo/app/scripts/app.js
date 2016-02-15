@@ -107,6 +107,11 @@ app.config(['$routeProvider', '$locationProvider',
 			// controller: 'VideoListingCtrl',
 			// reloadOnSearch: false
 	  // 	}).
+	  	when('/s/:sport/myVideos/:pageNumber?', {
+			templateUrl: 'views/videoListing.html',
+			controller: 'VideoListingCtrl',
+			ownVideos: true
+	  	}).
 	  	when('/s/:sport/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',

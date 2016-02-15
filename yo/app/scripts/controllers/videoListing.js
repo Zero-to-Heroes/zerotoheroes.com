@@ -11,14 +11,20 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			wantedTags: [],
 			unwantedTags: []
 		};
+			
+		$rootScope.$on('user.logged.in', function() {
+			$scope.relaunchSearch()
+		})
 
 		$scope.relaunchSearch = function () {
-			var hasCriteria = false;
+			var hasCriteria = false
 
-			var params = $scope.criteria;
+			var params = $scope.criteria
 
 			if ($scope.sport) 
-				params.sport = $scope.sport;
+				params.sport = $scope.sport
+
+			params.ownVideos = $scope.ownVideos
 
 			//$log.log('triggering search', $location);
 			if ($location.search().title) {
@@ -67,9 +73,6 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.retrieveVideos = function(shouldGetOnlyMine, pageNumber, criteria) {
 			var params = criteria ? criteria : {};
 			$log.log('search with criteria', criteria)
-			
-			if (shouldGetOnlyMine == 'true')
-				params.userName = User.getName();
 
 			if ($scope.sport) 
 				params.sport = $scope.sport;
@@ -141,26 +144,26 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 		$scope.upvoteReview = function(video) {
 			Api.Reputation.save({reviewId: video.id, action: 'Upvote'},
-  				function(data) {
-  					video.reputation = data.reputation;
-  				}, 
-  				function(error) {
-  					// Error handling
-  					$log.error(error);
-  				}
-  			);
+				function(data) {
+					video.reputation = data.reputation;
+				}, 
+				function(error) {
+					// Error handling
+					$log.error(error);
+				}
+			);
 		}
 
 		$scope.downvoteReview = function(video) {
 			Api.Reputation.save({reviewId: video.id, action: 'Downvote'},
-  				function(data) {
-  					video.reputation = data.reputation;
-  				}, 
-  				function(error) {
-  					// Error handling
-  					$log.error(error);
-  				}
-  			);
+				function(data) {
+					video.reputation = data.reputation;
+				}, 
+				function(error) {
+					// Error handling
+					$log.error(error);
+				}
+			);
 		}
 
 		$scope.signUp = function() {
@@ -178,43 +181,11 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			return url;
 		}
 
-		// $scope.countVideoComments = function(video) {
-		// 	//$log.log('counting comments for video', video);
-		// 	video.totalComments = 0;
-		// 	video.totalHelpful = 0;
-		// 	if (!video.comments) return;
-		// 	$scope.countComments(video, video.comments);
-		// }
-
-		// $scope.countComments = function(video, comments) {
-		// 	//$log.log('counting comments for comments', comments);
-		// 	if (!comments) return;
-
-		// 	angular.forEach(comments, function(comment) {
-		// 		video.totalComments++;
-		// 		if (comment.helpful) {
-		// 			video.totalHelpful++;
-		// 		}
-		// 		$scope.countComments(video, comment.comments);
-		// 	})
-		// }
-
-		// $scope.hasHelpfulComments = function(video) {
-		// 	//$log.log('counting comments for video', video);
-		// 	video.hasHelpfulComments = false;
-		// 	if (!video.comments) return;
-		// 	$scope.isHelpfulComment(video, video.comments);
-		// }
-
-		// $scope.isHelpfulComment = function(video, comments) {
-		// 	//$log.log('counting comments for comments', comments);
-		// 	if (!comments) return;
-
-		// 	angular.forEach(comments, function(comment) {
-		// 		video.hasHelpfulComments = video.hasHelpfulComments || comment.helpful;
-		// 		$scope.isHelpfulComment(video, comment.comments);
-		// 	})
-		// }
+		$scope.$on('$routeChangeSuccess', function(next, current) {
+			if (current.$$route) {
+				$scope.ownVideos = current.$$route.ownVideos
+			}
+		})
 
 		$scope.getRange = function() {
 			var pages = [];

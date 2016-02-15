@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', '$location', 'Localization', '$window', 
-	function(User, $log, Api, $modal, AuthenticationService, $rootScope, $location, Localization, $window) {
+app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', '$location', 'Localization', '$window', '$routeParams', 
+	function(User, $log, Api, $modal, AuthenticationService, $rootScope, $location, Localization, $window, $routeParams) {
 		
 	var linkFunction = function(scope, element, attributes) {
 		scope.showLogout = attributes['showLogout'];
@@ -19,23 +19,29 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 			
 			$scope.refresh = function() {
 				//$log.log('Refreshing user');
-				$scope.name = User.getName();
-				$scope.loggedIn = User.isLoggedIn();
-				$scope.User = User.getUser();
-				var testDate = moment('2015-10-25 10:00:00');
+				$scope.name = User.getName()
+				$scope.loggedIn = User.isLoggedIn()
+				$scope.User = User.getUser()
+				$scope.sport = $routeParams.sport
+
+				var testDate = moment('2015-10-25 10:00:00')
 				if (!User.getLastLoginDate() || moment(User.getLastLoginDate()).isBefore(testDate)) {
 					$log.log('Fundamental modifications have been made and you need to log in again');
-					AuthenticationService.clearCredentials();
-					$scope.name = User.getName();
-					$scope.loggedIn = User.isLoggedIn();
+					AuthenticationService.clearCredentials()
+					$scope.name = User.getName()
+					$scope.loggedIn = User.isLoggedIn()
 				}
-				//$log.log('user is ', $scope.User);
+
 			}
-			$scope.refresh();
+			$scope.refresh()
 			
 			$rootScope.$on('user.logged.in', function() {
-				$scope.refresh();
+				$scope.refresh()
 			});
+
+			$scope.$on('$routeChangeSuccess', function(next, current) { 
+				$scope.refresh()
+			})
 
 
 			$scope.signUp = function() {
@@ -50,6 +56,11 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 				AuthenticationService.clearCredentials();
 				$scope.name = User.getName();
 				$scope.loggedIn = User.isLoggedIn();
+			}
+
+			$scope.showOwnVideos = function() {
+				var path = '/s/' + $scope.sport + '/myVideos/'
+  	 			$location.path(path)
 			}
 
 			$scope.changeLanguage = function(languageCode) {

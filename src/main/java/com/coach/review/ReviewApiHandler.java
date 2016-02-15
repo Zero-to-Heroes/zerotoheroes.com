@@ -103,6 +103,9 @@ public class ReviewApiHandler {
 	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(@RequestBody ReviewSearchCriteria criteria) {
 		// log.debug("Retrieving all reviews with criteria " + criteria);
 
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = userRepo.findByUsername(currentUser);
+
 		int pageNumber = criteria.getPageNumber() != null && criteria.getPageNumber() > 0 ? criteria.getPageNumber() - 1
 				: 0;
 		String sport = criteria.getSport();
@@ -124,20 +127,20 @@ public class ReviewApiHandler {
 		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, newestFirst);
 		String sportCriteria = sportObj.getKey();
 
+		String author = criteria.isOwnVideos() && user != null ? user.getId() : null;
+
 		Page<Review> page = null;
 		if (criteria.getText() == null)
-			page = reviewRepo.listReviews(sportCriteria, criteria.getWantedTags(), criteria.getUnwantedTags(),
+			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
 					pageRequest);
 		else
-			page = reviewRepo.listReviewsWithText(criteria.getText(), sportCriteria, criteria.getWantedTags(),
+			page = reviewRepo.listReviewsWithText(criteria.getText(), author, sportCriteria, criteria.getWantedTags(),
 					criteria.getUnwantedTags(), pageRequest);
 
 		List<Review> reviews = page.getContent();
 		ListReviewResponse response = new ListReviewResponse(reviews);
 		response.setTotalPages(page.getTotalPages());
 
-		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
 		// tweak info about reputation
 		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);

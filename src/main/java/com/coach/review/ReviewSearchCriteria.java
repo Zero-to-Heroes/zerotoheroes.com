@@ -3,13 +3,13 @@ package com.coach.review;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.coach.tag.Tag;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-
-import com.coach.tag.Tag;
 
 @Getter
 @Setter
@@ -22,6 +22,7 @@ public class ReviewSearchCriteria {
 	private String title;
 	private List<Tag> wantedTags;
 	private List<Tag> unwantedTags;
+	private boolean ownVideos;
 
 	public List<Tag> getWantedTags() {
 		return wantedTags == null ? new ArrayList<Tag>() : wantedTags;
@@ -35,9 +36,8 @@ public class ReviewSearchCriteria {
 		if (title == null || title.isEmpty()) return null;
 
 		String text = "";
-		for (String word : title.split(" ")) {
+		for (String word : title.split(" "))
 			text += "\"" + word + "\" ";
-		}
 		log.debug("returning text search " + text);
 		return text;
 	}

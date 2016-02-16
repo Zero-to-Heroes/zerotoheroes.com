@@ -114,6 +114,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Demonlock"));
 		hearthstone.add(new Tag("Handlock"));
 		hearthstone.add(new Tag("Malylock"));
+		hearthstone.add(new Tag("Renolock"));
 		hearthstone.add(new Tag("Aggro Shaman"));
 		hearthstone.add(new Tag("Malygos Shaman"));
 		hearthstone.add(new Tag("Priest Control"));

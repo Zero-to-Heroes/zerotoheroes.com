@@ -1,12 +1,12 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 
+app.directive('uploadArenaDraftDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 
 	function(FileUploader, MediaUploader, $log, SportsConfig, $timeout, $parse, ENV) {
 		return {
 			restrict: 'E',
 			transclude: false,
-			templateUrl: 'templates/upload/uploadReplayDirective.html',
+			templateUrl: 'templates/upload/uploadArenaDraftDirective.html',
 			scope: {
 				videoInfo: '=',
 				sport: '=',
@@ -20,21 +20,16 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 
 				// We use it for nice out-of-the-box file features
 				$scope.buildUploader = function(sportsConfig) {
-					var supportedFileTypes = ['text/plain', 'text/xml']
-					var supportedExtensions = SportsConfig[$scope.sport].supportedExtensions
 
 		        	var uploader = new FileUploader({
 						filters: [{
 							name: 'videoTypesFilter',
 							fn: function(item) {
-								var type = item.type
-								if (supportedFileTypes.indexOf(type) == -1) {
-									var indexOfLastDot = item.name.lastIndexOf('.')
-									var extension = item.name.slice(indexOfLastDot + 1)
-									$log.debug('extension', extension)
-									if (supportedExtensions.indexOf(extension) == -1)
-										return false
-								}
+								var indexOfLastDot = item.name.lastIndexOf('.')
+								var extension = item.name.slice(indexOfLastDot + 1)
+								$log.debug('extension', extension)
+								if ('json' != extension)
+									return false
 								return true
 							}
 						}]

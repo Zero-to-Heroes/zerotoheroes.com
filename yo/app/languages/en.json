@@ -285,7 +285,9 @@
 				"hearthstone": {
 					"videoDescription": "Post a video of one of your games. You can find help on how to record HS games <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/\" target=\"_blank\">one our blog</a>",
 					"replay": "HS Replay",
-					"replayDescription": "Post a replay file. You can find help on how to get one <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/#new-on-pc-8211-replay-file\" target=\"_blank\">here</a> or on <a href=\"http://www.zerotoheroes.com/r/meta/568e2f13e4b0ae321c95b0cb/hearthstone-replay-using-log-files-beta\" target=\"_blank\">our forums</a>"
+					"replayDescription": "Post a replay file. You can find help on how to get one <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/#new-on-pc-8211-replay-file\" target=\"_blank\">here</a> or on <a href=\"http://www.zerotoheroes.com/r/meta/568e2f13e4b0ae321c95b0cb/hearthstone-replay-using-log-files-beta\" target=\"_blank\">our forums</a>",
+					"arenadraft": "Arena draft",
+					"arenadraftDescription": "Upload your Arena draft logged by the <a href=\"https://github.com/rembound/Arena-Helper\">Arena Helper</a> plugin for <a href=\"https://github.com/Epix37/Hearthstone-Deck-Tracker/releases\">Hearthstone Deck Tracker</a>"
 				}
 			},
 			"replay": {
@@ -304,6 +306,22 @@
 				"dontCloseWindowMessage": "Your replay is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
 				"finalizeVideoMessage": "Processing your file. It can take up to one minute. Then you'll be able to view your replay in the viewer on the left",
 				"transferCompleted": "Transfer completed. You can now publish your replay"
+			},
+			"arenadraft": {
+				"review": {
+					"headline": "Add information to your draft"
+				},
+				"pageTitle": "Upload an Arena draft",
+				"headline": "Upload an Arena draft",
+				"chooseFileButton": "Choose your draft",
+				"dropZone": "or drop it here",
+				"clearCurrentFile": "Clear current draft",
+				"selectedFile": "You're about to upload {{fileName}}. It needs to be processed before being a usable draft, and you'll be able to navigate in it at the next step",
+				"invalidFormatMessage": "We only support files created by the Arena Helper plugin for Hearthstone Deck Tracker for now. They should come as .json files. If you wish to use another file format, please let us know on the forums",
+				
+				"dontCloseWindowMessage": "Your draft is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
+				"finalizeVideoMessage": "Processing your file. It can take up to one minute. Then you'll be able to view your draft in the viewer on the left",
+				"transferCompleted": "Transfer completed. You can now publish your draft"
 			},
 			"video": {
 				"review": {

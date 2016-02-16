@@ -1,1 +1,3 @@
-<hearthstone-participants-details review="review" media-player="mediaPlayer" ng-show="review.strSport == 'hearthstone'"></hearthstone-participants-details>
+<div ng-switch="review.strSport">
+	<hearthstone-participants-details ng-switch-when="hearthstone" review="review" media-player="mediaPlayer"></hearthstone-participants-details>
+</div>

@@ -1,0 +1,78 @@
+<div class="background-white video-review-upload-title">
+
+	<h1>{{ 'global.upload.arenadraft.review.headline' | translate }}</h1>
+
+	<!-- Show the overall progress of the upload -->
+	<upload-progress sport="sport" type="'arenadraft'" active="active" publish="initPublishVideo" validation="isDataValid"></upload-progress>
+
+</div>
+
+<div class="background-white video-review-upload-video" ng-class="{'col-md-7': playerControls.wideMode, 'col-md-5': !playerControls.wideMode}">
+
+	<!-- Show the player the replay file -->
+	<div id="{{'externalPlayer' + (review.mediaType ? '-' + review.mediaType : '') }}" class="external-player" ng-class="pluginNames"></div>
+
+</div>
+
+
+<div class="video-review-upload-comments" ng-class="playerControls.wideMode ? 'col-md-5' : 'col-md-7'">
+	<div class="background-white">
+		<form class="container-fluid" name="uploadForm">
+			<div class="row" ng-hide="User.isLoggedIn()">
+				<div class="col-sm-12">
+					<div class="form-group" show-errors="{ showSuccess: true }">
+						<div class="alert alert-danger" role="alert" ng-show="uploadForm.author.$error.nameTaken"><span>{{ 'global.upload.nameTaken' | translate }}<a ng-click="signIn()">{{ 'global.upload.nameTakenLink' | translate }}</a>{{ 'global.upload.nameTaken2' | translate }}</span></div>
+						<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="{{ 'global.upload.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()" ng-readonly="transcoding">
+					</div>
+			  	</div>
+		  	</div>
+	  		<div class="row">
+				<div class="col-sm-11">
+		  			<div class="form-group" show-errors="{ showSuccess: true }">
+				    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="transcoding">
+				  	</div>
+			  	</div>
+			  	<div class="col-sm-1">
+					<a class="dropdown-toggle language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span  class="lang-sm" lang="{{review.language}}"></span><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a ng-click="editLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
+							<li><a ng-click="editLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
+						</ul>
+				</div>
+		  	</div>
+		  	<participants-details review="review" media-player="externalPlayer"></participants-details>
+	  		<div class="row">
+				<div class="col-sm-12">
+				  	<div class="form-group">
+						<toolbar player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true" config="config" media-type="'arenadraft'" show-errors="{ showSuccess: true }" class="form-group">
+				    		<textarea name="text" class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholder' | translate }}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
+				    	</toolbar>
+				   	</div>
+				
+					<div class="inline-block float-right show-help-buttons">
+					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
+						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
+					</div>
+				</div>
+		  	</div>
+			<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
+			<div class="row video-tags">
+				<div class="col-xs-12 text-left">
+					<review-tags-input review="review" exclude="skill-level"></review-tags-input>
+				</div>
+			</div>
+	  		<div class="row">
+				<div class="col-sm-12">
+		  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideo()" ng-show="review.transcodingDone && !publishPending" ng-disabled="!isDataValid()"><span>{{ 'global.upload.video.publishReviewButton' | translate }}</span></button>
+		  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideoWhenReady()" ng-show="(!review.transcodingDone && !publishPending)" ng-disabled="!isDataValid()"><span>{{ 'global.upload.video.publishReviewWhenReadyButton' | translate }}</span></button>
+		  			<button class="btn btn-primary btn-upload" ng-click="cancelPendingUpload()" ng-show="publishPending"><span>{{ 'global.upload.video.publishingPendingUpload' | translate }}</span></button>
+	  			</div>
+			</div>
+	  		<div class="row" ng-show="uploadConfirmed">
+				<div class="col-sm-12">		  			
+		  			<span>{{ 'global.upload.video.automatedUpload' | translate }}</span>
+	  			</div>
+			</div>
+		</form>
+	</div>
+</div>

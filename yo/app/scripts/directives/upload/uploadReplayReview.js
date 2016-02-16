@@ -5,7 +5,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 	function(MediaUploader, $log, SportsConfig, $timeout, User, Api, $location, $rootScope, Localization, $parse, ENV) {
 		return {
 			restrict: 'E',
-			transclude: true,
+			transclude: false,
 			templateUrl: 'templates/upload/uploadReplayReview.html',
 			scope: {
 				sport: '=',

@@ -114,4 +114,9 @@ public class HSReplay implements ReplayPlugin {
 
 		return fileContents.toString();
 	}
+
+	@Override
+	public String getMediaType() {
+		return null;
+	}
 }

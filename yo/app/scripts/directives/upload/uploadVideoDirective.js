@@ -5,7 +5,7 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 	function(FileUploader, MediaUploader, $log, SportsConfig, $sce, $timeout, $parse, ENV) {
 		return {
 			restrict: 'E',
-			transclude: true,
+			transclude: false,
 			templateUrl: 'templates/upload/uploadVideoDirective.html',
 			scope: {
 				videoInfo: '=',

@@ -225,6 +225,11 @@ public class ReviewApiHandler {
 				log.debug("Proessing replay");
 				replayProcessor.processReplayFile(review);
 			}
+			// More generic approach to handle videos
+			else if (review.getMediaType() != null && !review.getMediaType().equals("video")) {
+				log.debug("Proessing secondary media type " + review);
+				replayProcessor.processReplayFile(review);
+			}
 			else {
 				log.debug("Transcoding video");
 				transcoder.transcode(review.getId());

@@ -36,13 +36,14 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					recommendedVideo: '55e8101be4b051128109112e',
 					isSport: true,
 					allowDoubleSpeed: true,
-					allowedUploads:  ['video', 'replay'],
+					allowedUploads:  ['video', 'replay', 'arenadraft'],
 					supportedExtensions: ['hdtreplay'],
 					plugins: {
 						plugins: [
 							{name: 'parseCardsText', version: 2}, 
 							{name: 'parseDecks', version: 1}, 
-							{name: 'joustjs', player: true, format: ['text/plain', 'text/xml'], version: 13}
+							{name: 'joustjs', player: true, format: ['text/plain', 'text/xml'], version: 13},
+							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 1}
 						],
 						customCss: 'hearthstone.css'
 					},
@@ -51,6 +52,11 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						loop: true,
 						millis: true,
 						replay: {
+							timestamp: true,
+							drawing: true,
+							video: true
+						},
+						arenadraft: {
 							timestamp: true,
 							drawing: true,
 							video: true
@@ -121,7 +127,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			}
 
 		service.executePlugin = function(scope, review, plugin, target) {
-			// $log.debug('Executing lpugin', plugin, target);
+			// $log.debug('Executing lpugin', plugin, target, window['hsarenadraft']);
 			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].execute) return target;
 			// $log.debug('\tFound plugin to execute')
 
@@ -156,7 +162,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			var plugin = pluginObj.name;
 			var version = pluginObj.version ? '?' + pluginObj.version : '';
 			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js' + version).then(function() {
-				plugins.push(pluginObj);
+				plugins.push(pluginObj)
+				// $log.debug('loaded plugin', pluginObj, window[plugin])
 				// Load dependencies
 				// if (pluginObj.dependencies) {
 				// 	pluginObj.dependencies.forEach(function(dep) {
@@ -184,10 +191,15 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			// $log.debug('init player with config', config, review)
 			config.plugins.plugins.forEach(function(plugin) {
 				if (plugin.player) {
-					externalPlayer = window[plugin.name];
-					externalPlayer.init(plugin, review);
+					// $log.debug('init player?', plugin)
+					if ((!review.mediaType && !plugin.mediaType) || review.mediaType == plugin.mediaType) {
+						// $log.debug('\tyes, init player', plugin, review)
+						externalPlayer = window[plugin.name]
+						// $log.debug('\texternalPlayer is', externalPlayer)
+						externalPlayer.init(plugin, review)
+					}
 				}
-			});
+			})
 
 			return externalPlayer;
 		}

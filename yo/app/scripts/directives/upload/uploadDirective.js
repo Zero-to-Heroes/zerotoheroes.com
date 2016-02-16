@@ -5,7 +5,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 	function($routeParams, $sce, $timeout, $location, Api, FileUploader, ENV, User, $document, $log, $analytics, $rootScope, $parse, SportsConfig, Localization) {
 	return {
 			restrict: 'E',
-			transclude: true,
+			transclude: false,
 			templateUrl: 'templates/upload/uploadDirective.html',
 			link: function($scope, element, attrs) {
 				$scope.callback = $parse(attrs.callback);

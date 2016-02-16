@@ -1,14 +1,25 @@
 <view-title>Upload</view-title>
 
-<!-- forums -->
-<upload-directive ng-show="state.uploadType == 'post' && !state.step"  callback="onUploadComplete(review)" ></upload-directive>
+<div ng-switch="state.uploadType">
+
+	<!-- Video -->
+	<upload-video-directive ng-switch-when="video" video-info="videoInfo" sport="sport" active="state.uploadType == 'video' && !state.step" ng-show="state.uploadType == 'video' && !state.step"></upload-video-directive>
+	<upload-video-review ng-switch-when="video" sport="sport" type="state.uploadType" active="state.uploadType == 'video' && state.step == 'review'" ng-show="state.uploadType == 'video' && state.step == 'review'"></upload-video-review>
+
+	<!-- Replay -->
+	<upload-replay-directive ng-switch-when="replay" video-info="videoInfo" sport="sport" active="state.uploadType == 'replay' && !state.step" ng-show="state.uploadType == 'replay' && !state.step"></upload-replay-directive>
+	<upload-replay-review ng-switch-when="replay" sport="sport" type="state.uploadType" active="state.uploadType == 'replay' && state.step == 'review'" ng-show="state.uploadType == 'replay' && state.step == 'review'"></upload-replay-review>
+
+	<!-- Arena draft -->
+	<upload-arena-draft-directive ng-switch-when="arenadraft" video-info="videoInfo" sport="sport" active="state.uploadType == 'arenadraft' && !state.step" ng-show="state.uploadType == 'arenadraft' && !state.step"></upload-arena-draft-directive>
+	<upload-arena-draft-review ng-switch-when="arenadraft" sport="sport" type="state.uploadType" active="state.uploadType == 'arenadraft' && state.step == 'review'" ng-show="state.uploadType == 'arenadraft' && state.step == 'review'"></upload-arena-draft-review>
+
+	<!-- forums -->
+	<upload-directive ng-switch-when="post" ng-show="state.uploadType == 'post' && !state.step"  callback="onUploadComplete(review)" ></upload-directive>
+	
+</div>
 
 <upload-type-choice sport="sport" options="state" ng-show="!state.uploadType"></upload-type-choice>
 
-<!-- Video -->
-<upload-video-directive video-info="videoInfo" sport="sport" active="state.uploadType == 'video' && !state.step" ng-show="state.uploadType == 'video' && !state.step"></upload-video-directive>
-<upload-video-review sport="sport" type="state.uploadType" active="state.uploadType == 'video' && state.step == 'review'" ng-show="state.uploadType == 'video' && state.step == 'review'"></upload-video-review>
 
-<!-- Replay -->
-<upload-replay-directive video-info="videoInfo" sport="sport" active="state.uploadType == 'replay' && !state.step" ng-show="state.uploadType == 'replay' && !state.step"></upload-replay-directive>
-<upload-replay-review sport="sport" type="state.uploadType" active="state.uploadType == 'replay' && state.step == 'review'" ng-show="state.uploadType == 'replay' && state.step == 'review'"></upload-replay-review>
+

@@ -1,0 +1,11 @@
+<div class="hearthstone-participants arena-draft" ng-show="review.participantDetails.playerCategory" >
+	<!-- The player -->
+	<div class="player-details class-select">
+		<i class="class-icon {{review.participantDetails.playerCategory}}-icon" title=" {{ 'hearthstone.classes.' + review.participantDetails.playerCategory | translate }}"></i>
+		<span class="player-name">{{review.participantDetails.playerName}}</span>
+  	</div>
+  	<!-- The level of the game -->
+  	<div class="level-details">
+		<tags-input ng-model="review.participantDetails.skillLevel" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
+  	</div>
+</div>

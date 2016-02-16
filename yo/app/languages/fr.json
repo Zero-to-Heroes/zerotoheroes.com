@@ -283,7 +283,9 @@
 				"hearthstone": {
 					"videoDescription": "Postez une vidéo d'une de vos parties. Vous pouvez trouvez de l'aide sur comment faire <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/\" target=\"_blank\">sur notre blog</a>",
 					"replay": "HS Replay",
-					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/#nouveau-sur-un-ordinateur8211-fichier-replay\" target=\"_blank\">sur notre blog</a>"
+					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/#nouveau-sur-un-ordinateur8211-fichier-replay\" target=\"_blank\">sur notre blog</a>",
+					"arenadraft": "Draft d'Arène",
+					"arenadraftDescription": "Postez votre draft d'Arène enregistré par le plugin <a href=\"https://github.com/rembound/Arena-Helper\">Arena Helper</a> de <a href=\"https://github.com/Epix37/Hearthstone-Deck-Tracker/releases\">Hearthstone Deck Tracker</a>"
 				}
 			},
 			"replay": {
@@ -301,6 +303,22 @@
 				"dontCloseWindowMessage": "Votre replay est en train d'être mis en ligne sur nos serveurs. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
 				"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et vous pourrez ensuite le voir dans le lecteur à gauche",
 				"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier votre replay"
+			},
+			"replay": {
+				"review": {
+					"headline": "Ajoutez des informations à votre draft"
+				},
+				"pageTitle": "Publier un draft",
+				"headline": "Publier un draft",
+				"chooseFileButton": "Choisissez votre draft",
+				"dropZone": "ou déposez-le ici",
+				"clearCurrentFile": "Effacer le draft",
+				"selectedFile": "Vous êtes sur le point de mettre en ligne {{fileName}}. Nous devons le traiter avant qu'il soit utilisable, et vous pourrez le rejouer une fois cela fait à la prochaine étape",
+				"invalidFormatMessage": "Nous ne supportons que les fichiers de drafts enregistrés par le plugin Arena Helper pour Hearthstone Deck Tracker pour l'instant. C'est un fichier qui porte l'extension .json. Si vous souhaitez utiliser un autre format de fichier, merci de nous laisser un mot sur les forums",
+
+				"dontCloseWindowMessage": "Votre draft est en train d'être mis en ligne sur nos serveurs. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
+				"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et vous pourrez ensuite le voir dans le lecteur à gauche",
+				"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier votre draft"
 			},
 			"video": {
 				"review": {

@@ -7,7 +7,7 @@
 	</div>
 
 	<div class="background-white">
-		<div class="videogular-container multi-player" ng-show="review.key && !review.replay" >
+		<div class="videogular-container multi-player" ng-show="review.key && !externalPlayer" >
 			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
 				<div class="first-player-container">
 					<vg-media vg-src="sources" vg-preload="metadata" class="first-player" ng-class="playerControls.firstPlayerClass"></vg-media>
@@ -46,7 +46,7 @@
 			</videogular>
 		</div>
 		
-		<div ng-show="review.replay && externalPlayer" id="externalPlayer" class="external-player" ng-class="pluginNames"></div>
+		<div id="{{'externalPlayer' + (mediaType ? '-' + mediaType : '') }}" ng-show="externalPlayer" class="external-player" ng-class="pluginNames"></div>
 
 		<div ng-class="pluginNames">
 			<form class="container-fluid video-details" name="videoInformationForm">

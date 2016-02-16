@@ -89,7 +89,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.externalPlayer = undefined;
 					// $log.debug('Deciding whether we need to use another player', data);
 					$scope.pluginsReady = false;
-					if (data.replay) {
+					$scope.mediaType = data.mediaType
+					$log.debug('loaded review', data)
+					if (data.replay || (data.mediaType && data.mediaType != 'video')) {
 						$scope.externalPlayer = true;
 						// $timeout(function() {
 						// $log.debug('loading replay file');
@@ -104,7 +106,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 							// TODO: use an event system
 							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data);
 							$scope.pluginsReady = true;
-							// $log.debug('externalPlayer', data.replay, $scope.externalPlayer);
+							$log.debug('externalPlayer', data.replay, $scope.externalPlayer);
 						})
 						// });
 					}

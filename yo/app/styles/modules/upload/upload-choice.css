@@ -58,3 +58,7 @@
 .upload-choice .upload-type .replay:before {
 	content: "\e211";
 }
+
+.upload-choice .upload-type .arenadraft:before {
+    content: "\e185";
+}

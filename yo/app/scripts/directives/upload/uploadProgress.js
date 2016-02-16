@@ -5,7 +5,7 @@ app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
 	function(MediaUploader, $log, $parse) {
 		return {
 			restrict: 'E',
-			transclude: true,
+			transclude: false,
 			templateUrl: 'templates/upload/uploadProgress.html',
 			scope: {
 				sport: '=',

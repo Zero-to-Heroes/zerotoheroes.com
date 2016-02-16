@@ -5,7 +5,7 @@ app.directive('uploadTypeChoice', ['$log', '$location',
 	function($log, $location) {
 	return {
 			restrict: 'E',
-			transclude: true,
+			transclude: false,
 			templateUrl: 'templates/upload/uploadTypeChoice.html',
 			scope: {
 				sport: '=',

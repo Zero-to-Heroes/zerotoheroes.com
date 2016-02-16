@@ -6,4 +6,6 @@ public interface ReplayPlugin extends Plugin {
 
 	void transformReplayFile(Review review) throws Exception;
 
+	String getMediaType();
+
 }

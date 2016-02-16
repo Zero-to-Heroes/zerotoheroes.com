@@ -80,7 +80,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// The image to display (if any)
 	private String thumbnail;
 	// The type of media that is linked to the video
-	private String fileType;
+	private String fileType, mediaType;
 	private String language = "en";
 	// Participant details
 	private ParticipantDetails participantDetails;

@@ -118,7 +118,7 @@ module.exports = function (grunt) {
 					'/bower_components',
 					connect.static('./bower_components')
 				),
-				connect.static(appConfig.app)
+				connect.static(appConfig.dist)
 			];
 		  }
 		}
@@ -384,23 +384,7 @@ module.exports = function (grunt) {
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
 	if (target === 'dist') {
 	  	grunt.task.run([
-			'clean:dist',
-			'ngconstant:development',
-			'wiredep',
-			'useminPrepare',
-			'concurrent:dist',
-			'autoprefixer',
-			'concat',
-			'ngAnnotate',
-			'copy:dist',
-			'cdnify',
-			'uglify',
-			'cssmin',
-			'filerev',
-			'usemin',
-			'htmlmin',
-			'connect:dist:keepalive',
-		  	'watch'
+			'connect:dist:keepalive'
 	  	]);
 	}
 	else {
@@ -440,23 +424,6 @@ module.exports = function (grunt) {
 		'filerev',
 		'usemin',
 		'htmlmin'
-  	]);
-
-  	grunt.registerTask('dbg', [
-		'clean:dist',
-		'ngconstant:development',
-		'wiredep',
-		'useminPrepare',
-		'concurrent:dist',
-		'autoprefixer',
-		'concat',
-		'ngAnnotate',
-		'copy:dist',
-		'cdnify',
-		'filerev',
-		'usemin',
-		'htmlmin',
-		'connect:dist:keepalive'
   	]);
 
   grunt.registerTask('default', [

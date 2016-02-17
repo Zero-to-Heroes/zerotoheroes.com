@@ -24,6 +24,8 @@ public class NewsRepository {
 		List<News> news = new ArrayList<>();
 
 		// Features
+		news.add(new News(new DateTime("2016-02-17").toDate(), "own_video_1", News.Type.Feature));
+		news.add(new News(new DateTime("2016-02-17").toDate(), "hs_arena_1", News.Type.Feature));
 		news.add(new News(new DateTime("2016-02-05").toDate(), "hsplayer_ui_1", News.Type.Feature));
 		news.add(new News(new DateTime("2016-01-07").toDate(), "videowidemode", News.Type.Feature));
 		news.add(new News(new DateTime("2016-01-07").toDate(), "news7", News.Type.Feature));

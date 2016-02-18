@@ -34,7 +34,8 @@ public class ReplayProcessor {
 					// type attached to a review
 					log.debug("Trying to apply player plugin " + plugin);
 					if (review.getMediaType() == null && replayPlugin.getMediaType() == null
-							|| review.getMediaType().equals(replayPlugin.getMediaType())) {
+							|| review.getMediaType() != null
+									&& review.getMediaType().equals(replayPlugin.getMediaType())) {
 						log.debug("Applying plugin " + plugin);
 						replayPlugin.transformReplayFile(review);
 					}

@@ -110,6 +110,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Tempo Mage"));
 		hearthstone.add(new Tag("Flamewalker Mage"));
 		hearthstone.add(new Tag("Freeze Mage"));
+		hearthstone.add(new Tag("Echo Mage"));
 		hearthstone.add(new Tag("Zoolock"));
 		hearthstone.add(new Tag("Demonlock"));
 		hearthstone.add(new Tag("Handlock"));

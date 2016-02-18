@@ -153,6 +153,8 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 
 							// Init the external player
 							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review)
+							$log.debug('external player updated')
+							$scope.$apply()
 						})
 					}
 				}

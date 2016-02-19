@@ -1,1 +1,1691 @@
-.hearthstone #externalPlayer-arena-draft{height:500px;width:712px;margin:auto}.hearthstone #externalPlayer-arena-draft audio,.hearthstone #externalPlayer-arena-draft canvas,.hearthstone #externalPlayer-arena-draft progress,.hearthstone #externalPlayer-arena-draft sub,.hearthstone #externalPlayer-arena-draft sup,.hearthstone #externalPlayer-arena-draft video{vertical-align:baseline}.hearthstone #externalPlayer-arena-draft body,.hearthstone #externalPlayer-arena-draft html{height:100%}.hearthstone #externalPlayer-arena-draft hr,.hearthstone #externalPlayer-arena-draft html,.hearthstone #externalPlayer-arena-draft label{overflow:hidden}.hearthstone #externalPlayer-arena-draft .clearfix:after,.hearthstone #externalPlayer-arena-draft .toolbar-actions:after,.hearthstone #externalPlayer-arena-draft .toolbar:after{clear:both}.hearthstone #externalPlayer-arena-draft *,.hearthstone #externalPlayer-arena-draft img{-webkit-user-drag:text}.hearthstone #externalPlayer-arena-draft .list-group *,.hearthstone #externalPlayer-arena-draft .nav-group-item,.hearthstone #externalPlayer-arena-draft h1,.hearthstone #externalPlayer-arena-draft h2,.hearthstone #externalPlayer-arena-draft h3,.hearthstone #externalPlayer-arena-draft h4,.hearthstone #externalPlayer-arena-draft h5,.hearthstone #externalPlayer-arena-draft h6,.hearthstone #externalPlayer-arena-draft label,.hearthstone #externalPlayer-arena-draft td,.hearthstone #externalPlayer-arena-draft th{white-space:nowrap;text-overflow:ellipsis}.hearthstone #externalPlayer-arena-draft audio:not([controls]){display:none}.hearthstone #externalPlayer-arena-draft a:active,.hearthstone #externalPlayer-arena-draft a:hover{outline:0}.hearthstone #externalPlayer-arena-draft abbr[title]{border-bottom:1px dotted}.hearthstone #externalPlayer-arena-draft b,.hearthstone #externalPlayer-arena-draft strong{font-weight:700}.hearthstone #externalPlayer-arena-draft dfn{font-style:italic}.hearthstone #externalPlayer-arena-draft h1{margin:.67em 0;font-size:36px}.hearthstone #externalPlayer-arena-draft small{font-size:80%}.hearthstone #externalPlayer-arena-draft sub,.hearthstone #externalPlayer-arena-draft sup{font-size:75%;line-height:0;position:relative}.hearthstone #externalPlayer-arena-draft sup{top:-.5em}.hearthstone #externalPlayer-arena-draft .pane-group,.hearthstone #externalPlayer-arena-draft .window{top:0;left:0;right:0}.hearthstone #externalPlayer-arena-draft sub{bottom:-.25em}.hearthstone #externalPlayer-arena-draft pre{overflow:auto}.hearthstone #externalPlayer-arena-draft code,.hearthstone #externalPlayer-arena-draft kbd,.hearthstone #externalPlayer-arena-draft pre,.hearthstone #externalPlayer-arena-draft samp{font-family:monospace,monospace;font-size:1em}.hearthstone #externalPlayer-arena-draft input[type=number]::-webkit-inner-spin-button,.hearthstone #externalPlayer-arena-draft input[type=number]::-webkit-outer-spin-button{height:auto}.hearthstone #externalPlayer-arena-draft input[type=search]::-webkit-search-cancel-button,.hearthstone #externalPlayer-arena-draft input[type=search]::-webkit-search-decoration{-webkit-appearance:none}.hearthstone #externalPlayer-arena-draft fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}.hearthstone #externalPlayer-arena-draft legend{border:0;padding:0}.hearthstone #externalPlayer-arena-draft html{width:100%}.hearthstone #externalPlayer-arena-draft body{padding:0;margin:0;font-family:system,-apple-system,".SFNSDisplay-Regular","Helvetica Neue",Helvetica,"Segoe UI",sans-serif;font-size:13px;line-height:1.6;color:#333;background-color:transparent}.hearthstone #externalPlayer-arena-draft .btn-dropdown:after,.hearthstone #externalPlayer-arena-draft .icon:before{font-family:photon-entypo}.hearthstone #externalPlayer-arena-draft hr{margin:15px 0;background:0 0;border:0;border-bottom:1px solid #ddd}.hearthstone #externalPlayer-arena-draft h1,.hearthstone #externalPlayer-arena-draft h2,.hearthstone #externalPlayer-arena-draft h3,.hearthstone #externalPlayer-arena-draft h4,.hearthstone #externalPlayer-arena-draft h5,.hearthstone #externalPlayer-arena-draft h6{margin-top:20px;margin-bottom:10px;font-weight:500;overflow:hidden}.hearthstone #externalPlayer-arena-draft h2{font-size:30px}.hearthstone #externalPlayer-arena-draft h3{font-size:24px}.hearthstone #externalPlayer-arena-draft h4{font-size:18px}.hearthstone #externalPlayer-arena-draft h5{font-size:14px}.hearthstone #externalPlayer-arena-draft .window{position:absolute;bottom:0;display:flex;flex-direction:column;background-color:#fff}.hearthstone #externalPlayer-arena-draft .window-content{position:relative;overflow-y:auto;display:flex;flex:1}.hearthstone #externalPlayer-arena-draft .selectable-text{cursor:text;-webkit-user-select:text}.hearthstone #externalPlayer-arena-draft .text-center{text-align:center}.hearthstone #externalPlayer-arena-draft .text-right{text-align:right}.hearthstone #externalPlayer-arena-draft .text-left{text-align:left}.hearthstone #externalPlayer-arena-draft .pull-left{float:left}.hearthstone #externalPlayer-arena-draft .pull-right{float:right}.hearthstone #externalPlayer-arena-draft .padded{padding:10px}.hearthstone #externalPlayer-arena-draft .padded-less{padding:5px}.hearthstone #externalPlayer-arena-draft .padded-more{padding:20px}.hearthstone #externalPlayer-arena-draft .padded-vertically{padding-top:10px;padding-bottom:10px}.hearthstone #externalPlayer-arena-draft .padded-vertically-less{padding-top:5px;padding-bottom:5px}.hearthstone #externalPlayer-arena-draft .padded-vertically-more{padding-top:20px;padding-bottom:20px}.hearthstone #externalPlayer-arena-draft .padded-horizontally{padding-right:10px;padding-left:10px}.hearthstone #externalPlayer-arena-draft .padded-horizontally-less{padding-right:5px;padding-left:5px}.hearthstone #externalPlayer-arena-draft .padded-horizontally-more{padding-right:20px;padding-left:20px}.hearthstone #externalPlayer-arena-draft .padded-top{padding-top:10px}.hearthstone #externalPlayer-arena-draft .padded-top-less{padding-top:5px}.hearthstone #externalPlayer-arena-draft .padded-top-more{padding-top:20px}.hearthstone #externalPlayer-arena-draft .padded-bottom{padding-bottom:10px}.hearthstone #externalPlayer-arena-draft .padded-bottom-less{padding-bottom:5px}.hearthstone #externalPlayer-arena-draft .padded-bottom-more{padding-bottom:20px}.hearthstone #externalPlayer-arena-draft .sidebar{background-color:#f5f5f4}.hearthstone #externalPlayer-arena-draft .draggable{-webkit-app-region:drag}.hearthstone #externalPlayer-arena-draft .clearfix:after,.hearthstone #externalPlayer-arena-draft .clearfix:before,.hearthstone #externalPlayer-arena-draft .toolbar-actions:after,.hearthstone #externalPlayer-arena-draft .toolbar-actions:before,.hearthstone #externalPlayer-arena-draft .toolbar:after,.hearthstone #externalPlayer-arena-draft .toolbar:before{display:table;content:" "}.hearthstone #externalPlayer-arena-draft .toolbar{min-height:22px;box-shadow:inset 0 1px 0 #f5f4f5;background-color:#e8e6e8;background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#e8e6e8),color-stop(100%,#d1cfd1));background-image:-webkit-linear-gradient(top,#e8e6e8 0,#d1cfd1 100%);background-image:linear-gradient(to bottom,#e8e6e8 0,#d1cfd1 100%)}.hearthstone #externalPlayer-arena-draft .toolbar-header{border-bottom:1px solid #c2c0c2}.hearthstone #externalPlayer-arena-draft .toolbar-footer{border-top:1px solid #c2c0c2;-webkit-app-region:drag}.hearthstone #externalPlayer-arena-draft .title{margin:0;font-size:12px;font-weight:400;color:#555}.hearthstone #externalPlayer-arena-draft .toolbar-borderless{border-top:0;border-bottom:0}.hearthstone #externalPlayer-arena-draft .toolbar-actions{margin-top:4px;margin-bottom:3px;padding-right:3px;padding-left:3px;padding-bottom:3px;-webkit-app-region:drag}.hearthstone #externalPlayer-arena-draft .form-control,.hearthstone #externalPlayer-arena-draft label{display:inline-block;font-size:13px}.hearthstone #externalPlayer-arena-draft label{margin-bottom:5px}.hearthstone #externalPlayer-arena-draft input[type=search]{-webkit-appearance:textfield;box-sizing:border-box}.hearthstone #externalPlayer-arena-draft input[type=checkbox],.hearthstone #externalPlayer-arena-draft input[type=radio]{margin:4px 0 0;line-height:normal}.hearthstone #externalPlayer-arena-draft .checkbox,.hearthstone #externalPlayer-arena-draft .form-group,.hearthstone #externalPlayer-arena-draft .radio{margin-bottom:10px}.hearthstone #externalPlayer-arena-draft .form-control{width:100%;min-height:25px;padding:5px 10px;line-height:1.6;background-color:#fff;border:1px solid #ddd;border-radius:4px;outline:0}.hearthstone #externalPlayer-arena-draft .form-control:focus{border-color:#6db3fd;box-shadow:3px 3px 0 #6db3fd,-3px -3px 0 #6db3fd,-3px 3px 0 #6db3fd,3px -3px 0 #6db3fd}.hearthstone #externalPlayer-arena-draft textarea{height:auto}.hearthstone #externalPlayer-arena-draft .checkbox,.hearthstone #externalPlayer-arena-draft .radio{position:relative;display:block;margin-top:10px}.hearthstone #externalPlayer-arena-draft .checkbox label,.hearthstone #externalPlayer-arena-draft .radio label{padding-left:20px;margin-bottom:0;font-weight:400}.hearthstone #externalPlayer-arena-draft .checkbox input[type=checkbox],.hearthstone #externalPlayer-arena-draft .checkbox-inline input[type=checkbox],.hearthstone #externalPlayer-arena-draft .radio input[type=radio],.hearthstone #externalPlayer-arena-draft .radio-inline input[type=radio]{position:absolute;margin-left:-20px;margin-top:4px}.hearthstone #externalPlayer-arena-draft .pane-group{position:absolute;bottom:0;display:flex}.hearthstone #externalPlayer-arena-draft .icon:before,.hearthstone #externalPlayer-arena-draft .pane,.hearthstone #externalPlayer-arena-draft .tab-item{position:relative}.hearthstone #externalPlayer-arena-draft .pane{overflow-y:auto;flex:1;border-left:1px solid #ddd}.hearthstone #externalPlayer-arena-draft .list-group *,.hearthstone #externalPlayer-arena-draft .media-body,.hearthstone #externalPlayer-arena-draft .nav-group-item,.hearthstone #externalPlayer-arena-draft td,.hearthstone #externalPlayer-arena-draft th{overflow:hidden}.hearthstone #externalPlayer-arena-draft .pane:first-child{border-left:0}.hearthstone #externalPlayer-arena-draft .pane-sm{max-width:220px;min-width:150px}.hearthstone #externalPlayer-arena-draft .pane-mini{width:80px;flex:none}.hearthstone #externalPlayer-arena-draft .pane-one-fourth{width:25%;flex:none}.hearthstone #externalPlayer-arena-draft .pane-one-third{width:33.3%}.hearthstone #externalPlayer-arena-draft .img-circle{border-radius:50%}.hearthstone #externalPlayer-arena-draft .img-rounded{border-radius:4px}.hearthstone #externalPlayer-arena-draft .list-group{width:100%;list-style:none;margin:0;padding:0}.hearthstone #externalPlayer-arena-draft .list-group *{margin:0}.hearthstone #externalPlayer-arena-draft .list-group-item{padding:10px;font-size:12px;color:#414142;border-top:1px solid #ddd}.hearthstone #externalPlayer-arena-draft .list-group-item:first-child{border-top:0}.hearthstone #externalPlayer-arena-draft .list-group-item.active,.hearthstone #externalPlayer-arena-draft .list-group-item.selected{color:#fff;background-color:#116cd6}.hearthstone #externalPlayer-arena-draft .list-group-header{padding:10px}.hearthstone #externalPlayer-arena-draft .media-object{margin-top:3px}.hearthstone #externalPlayer-arena-draft .media-object.pull-left{margin-right:10px}.hearthstone #externalPlayer-arena-draft .media-object.pull-right{margin-left:10px}.hearthstone #externalPlayer-arena-draft .nav-group{font-size:14px}.hearthstone #externalPlayer-arena-draft .nav-group-item{padding:2px 10px 2px 25px;display:block;color:#333;text-decoration:none}.hearthstone #externalPlayer-arena-draft .nav-group-item.active,.hearthstone #externalPlayer-arena-draft .nav-group-item:active{background-color:#dcdfe1}.hearthstone #externalPlayer-arena-draft .nav-group-item .icon{width:19px;height:18px;float:left;color:#737475;margin-top:-3px;margin-right:7px;font-size:18px;text-align:center}.hearthstone #externalPlayer-arena-draft .nav-group-title{margin:0;padding:10px 10px 2px;font-size:12px;font-weight:500;color:#666}.hearthstone #externalPlayer-arena-draft .icon:before,.hearthstone #externalPlayer-arena-draft th{font-weight:400}@font-face{font-family:photon-entypo;src:url(fonts/photon-entypo.svg);src:url(fonts/photon-entypo.eot) format("eot"),url(fonts/photon-entypo.woff) format("woff"),url(fonts/photon-entypo.ttf) format("truetype");font-weight:400;font-style:normal}.hearthstone #externalPlayer-arena-draft .icon:before{display:inline-block;speak:none;font-size:100%;font-style:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.hearthstone #externalPlayer-arena-draft .icon-note:before{content:'\E800'}.hearthstone #externalPlayer-arena-draft .icon-note-beamed:before{content:'\E801'}.hearthstone #externalPlayer-arena-draft .icon-music:before{content:'\E802'}.hearthstone #externalPlayer-arena-draft .icon-search:before{content:'\E803'}.hearthstone #externalPlayer-arena-draft .icon-flashlight:before{content:'\E804'}.hearthstone #externalPlayer-arena-draft .icon-mail:before{content:'\E805'}.hearthstone #externalPlayer-arena-draft .icon-heart:before{content:'\E806'}.hearthstone #externalPlayer-arena-draft .icon-heart-empty:before{content:'\E807'}.hearthstone #externalPlayer-arena-draft .icon-star:before{content:'\E808'}.hearthstone #externalPlayer-arena-draft .icon-star-empty:before{content:'\E809'}.hearthstone #externalPlayer-arena-draft .icon-user:before{content:'\E80A'}.hearthstone #externalPlayer-arena-draft .icon-users:before{content:'\E80B'}.hearthstone #externalPlayer-arena-draft .icon-user-add:before{content:'\E80C'}.hearthstone #externalPlayer-arena-draft .icon-video:before{content:'\E80D'}.hearthstone #externalPlayer-arena-draft .icon-picture:before{content:'\E80E'}.hearthstone #externalPlayer-arena-draft .icon-camera:before{content:'\E80F'}.hearthstone #externalPlayer-arena-draft .icon-layout:before{content:'\E810'}.hearthstone #externalPlayer-arena-draft .icon-menu:before{content:'\E811'}.hearthstone #externalPlayer-arena-draft .icon-check:before{content:'\E812'}.hearthstone #externalPlayer-arena-draft .icon-cancel:before{content:'\E813'}.hearthstone #externalPlayer-arena-draft .icon-cancel-circled:before{content:'\E814'}.hearthstone #externalPlayer-arena-draft .icon-cancel-squared:before{content:'\E815'}.hearthstone #externalPlayer-arena-draft .icon-plus:before{content:'\E816'}.hearthstone #externalPlayer-arena-draft .icon-plus-circled:before{content:'\E817'}.hearthstone #externalPlayer-arena-draft .icon-plus-squared:before{content:'\E818'}.hearthstone #externalPlayer-arena-draft .icon-minus:before{content:'\E819'}.hearthstone #externalPlayer-arena-draft .icon-minus-circled:before{content:'\E81A'}.hearthstone #externalPlayer-arena-draft .icon-minus-squared:before{content:'\E81B'}.hearthstone #externalPlayer-arena-draft .icon-help:before{content:'\E81C'}.hearthstone #externalPlayer-arena-draft .icon-help-circled:before{content:'\E81D'}.hearthstone #externalPlayer-arena-draft .icon-info:before{content:'\E81E'}.hearthstone #externalPlayer-arena-draft .icon-info-circled:before{content:'\E81F'}.hearthstone #externalPlayer-arena-draft .icon-back:before{content:'\E820'}.hearthstone #externalPlayer-arena-draft .icon-home:before{content:'\E821'}.hearthstone #externalPlayer-arena-draft .icon-link:before{content:'\E822'}.hearthstone #externalPlayer-arena-draft .icon-attach:before{content:'\E823'}.hearthstone #externalPlayer-arena-draft .icon-lock:before{content:'\E824'}.hearthstone #externalPlayer-arena-draft .icon-lock-open:before{content:'\E825'}.hearthstone #externalPlayer-arena-draft .icon-eye:before{content:'\E826'}.hearthstone #externalPlayer-arena-draft .icon-tag:before{content:'\E827'}.hearthstone #externalPlayer-arena-draft .icon-bookmark:before{content:'\E828'}.hearthstone #externalPlayer-arena-draft .icon-bookmarks:before{content:'\E829'}.hearthstone #externalPlayer-arena-draft .icon-flag:before{content:'\E82A'}.hearthstone #externalPlayer-arena-draft .icon-thumbs-up:before{content:'\E82B'}.hearthstone #externalPlayer-arena-draft .icon-thumbs-down:before{content:'\E82C'}.hearthstone #externalPlayer-arena-draft .icon-download:before{content:'\E82D'}.hearthstone #externalPlayer-arena-draft .icon-upload:before{content:'\E82E'}.hearthstone #externalPlayer-arena-draft .icon-upload-cloud:before{content:'\E82F'}.hearthstone #externalPlayer-arena-draft .icon-reply:before{content:'\E830'}.hearthstone #externalPlayer-arena-draft .icon-reply-all:before{content:'\E831'}.hearthstone #externalPlayer-arena-draft .icon-forward:before{content:'\E832'}.hearthstone #externalPlayer-arena-draft .icon-quote:before{content:'\E833'}.hearthstone #externalPlayer-arena-draft .icon-code:before{content:'\E834'}.hearthstone #externalPlayer-arena-draft .icon-export:before{content:'\E835'}.hearthstone #externalPlayer-arena-draft .icon-pencil:before{content:'\E836'}.hearthstone #externalPlayer-arena-draft .icon-feather:before{content:'\E837'}.hearthstone #externalPlayer-arena-draft .icon-print:before{content:'\E838'}.hearthstone #externalPlayer-arena-draft .icon-retweet:before{content:'\E839'}.hearthstone #externalPlayer-arena-draft .icon-keyboard:before{content:'\E83A'}.hearthstone #externalPlayer-arena-draft .icon-comment:before{content:'\E83B'}.hearthstone #externalPlayer-arena-draft .icon-chat:before{content:'\E83C'}.hearthstone #externalPlayer-arena-draft .icon-bell:before{content:'\E83D'}.hearthstone #externalPlayer-arena-draft .icon-attention:before{content:'\E83E'}.hearthstone #externalPlayer-arena-draft .icon-alert:before{content:'\E83F'}.hearthstone #externalPlayer-arena-draft .icon-vcard:before{content:'\E840'}.hearthstone #externalPlayer-arena-draft .icon-address:before{content:'\E841'}.hearthstone #externalPlayer-arena-draft .icon-location:before{content:'\E842'}.hearthstone #externalPlayer-arena-draft .icon-map:before{content:'\E843'}.hearthstone #externalPlayer-arena-draft .icon-direction:before{content:'\E844'}.hearthstone #externalPlayer-arena-draft .icon-compass:before{content:'\E845'}.hearthstone #externalPlayer-arena-draft .icon-cup:before{content:'\E846'}.hearthstone #externalPlayer-arena-draft .icon-trash:before{content:'\E847'}.hearthstone #externalPlayer-arena-draft .icon-doc:before{content:'\E848'}.hearthstone #externalPlayer-arena-draft .icon-docs:before{content:'\E849'}.hearthstone #externalPlayer-arena-draft .icon-doc-landscape:before{content:'\E84A'}.hearthstone #externalPlayer-arena-draft .icon-doc-text:before{content:'\E84B'}.hearthstone #externalPlayer-arena-draft .icon-doc-text-inv:before{content:'\E84C'}.hearthstone #externalPlayer-arena-draft .icon-newspaper:before{content:'\E84D'}.hearthstone #externalPlayer-arena-draft .icon-book-open:before{content:'\E84E'}.hearthstone #externalPlayer-arena-draft .icon-book:before{content:'\E84F'}.hearthstone #externalPlayer-arena-draft .icon-folder:before{content:'\E850'}.hearthstone #externalPlayer-arena-draft .icon-archive:before{content:'\E851'}.hearthstone #externalPlayer-arena-draft .icon-box:before{content:'\E852'}.hearthstone #externalPlayer-arena-draft .icon-rss:before{content:'\E853'}.hearthstone #externalPlayer-arena-draft .icon-phone:before{content:'\E854'}.hearthstone #externalPlayer-arena-draft .icon-cog:before{content:'\E855'}.hearthstone #externalPlayer-arena-draft .icon-tools:before{content:'\E856'}.hearthstone #externalPlayer-arena-draft .icon-share:before{content:'\E857'}.hearthstone #externalPlayer-arena-draft .icon-shareable:before{content:'\E858'}.hearthstone #externalPlayer-arena-draft .icon-basket:before{content:'\E859'}.hearthstone #externalPlayer-arena-draft .icon-bag:before{content:'\E85A'}.hearthstone #externalPlayer-arena-draft .icon-calendar:before{content:'\E85B'}.hearthstone #externalPlayer-arena-draft .icon-login:before{content:'\E85C'}.hearthstone #externalPlayer-arena-draft .icon-logout:before{content:'\E85D'}.hearthstone #externalPlayer-arena-draft .icon-mic:before{content:'\E85E'}.hearthstone #externalPlayer-arena-draft .icon-mute:before{content:'\E85F'}.hearthstone #externalPlayer-arena-draft .icon-sound:before{content:'\E860'}.hearthstone #externalPlayer-arena-draft .icon-volume:before{content:'\E861'}.hearthstone #externalPlayer-arena-draft .icon-clock:before{content:'\E862'}.hearthstone #externalPlayer-arena-draft .icon-hourglass:before{content:'\E863'}.hearthstone #externalPlayer-arena-draft .icon-lamp:before{content:'\E864'}.hearthstone #externalPlayer-arena-draft .icon-light-down:before{content:'\E865'}.hearthstone #externalPlayer-arena-draft .icon-light-up:before{content:'\E866'}.hearthstone #externalPlayer-arena-draft .icon-adjust:before{content:'\E867'}.hearthstone #externalPlayer-arena-draft .icon-block:before{content:'\E868'}.hearthstone #externalPlayer-arena-draft .icon-resize-full:before{content:'\E869'}.hearthstone #externalPlayer-arena-draft .icon-resize-small:before{content:'\E86A'}.hearthstone #externalPlayer-arena-draft .icon-popup:before{content:'\E86B'}.hearthstone #externalPlayer-arena-draft .icon-publish:before{content:'\E86C'}.hearthstone #externalPlayer-arena-draft .icon-window:before{content:'\E86D'}.hearthstone #externalPlayer-arena-draft .icon-arrow-combo:before{content:'\E86E'}.hearthstone #externalPlayer-arena-draft .icon-down-circled:before{content:'\E86F'}.hearthstone #externalPlayer-arena-draft .icon-left-circled:before{content:'\E870'}.hearthstone #externalPlayer-arena-draft .icon-right-circled:before{content:'\E871'}.hearthstone #externalPlayer-arena-draft .icon-up-circled:before{content:'\E872'}.hearthstone #externalPlayer-arena-draft .icon-down-open:before{content:'\E873'}.hearthstone #externalPlayer-arena-draft .icon-left-open:before{content:'\E874'}.hearthstone #externalPlayer-arena-draft .icon-right-open:before{content:'\E875'}.hearthstone #externalPlayer-arena-draft .icon-up-open:before{content:'\E876'}.hearthstone #externalPlayer-arena-draft .icon-down-open-mini:before{content:'\E877'}.hearthstone #externalPlayer-arena-draft .icon-left-open-mini:before{content:'\E878'}.hearthstone #externalPlayer-arena-draft .icon-right-open-mini:before{content:'\E879'}.hearthstone #externalPlayer-arena-draft .icon-up-open-mini:before{content:'\E87A'}.hearthstone #externalPlayer-arena-draft .icon-down-open-big:before{content:'\E87B'}.hearthstone #externalPlayer-arena-draft .icon-left-open-big:before{content:'\E87C'}.hearthstone #externalPlayer-arena-draft .icon-right-open-big:before{content:'\E87D'}.hearthstone #externalPlayer-arena-draft .icon-up-open-big:before{content:'\E87E'}.hearthstone #externalPlayer-arena-draft .icon-down:before{content:'\E87F'}.hearthstone #externalPlayer-arena-draft .icon-left:before{content:'\E880'}.hearthstone #externalPlayer-arena-draft .icon-right:before{content:'\E881'}.hearthstone #externalPlayer-arena-draft .icon-up:before{content:'\E882'}.hearthstone #externalPlayer-arena-draft .icon-down-dir:before{content:'\E883'}.hearthstone #externalPlayer-arena-draft .icon-left-dir:before{content:'\E884'}.hearthstone #externalPlayer-arena-draft .icon-right-dir:before{content:'\E885'}.hearthstone #externalPlayer-arena-draft .icon-up-dir:before{content:'\E886'}.hearthstone #externalPlayer-arena-draft .icon-down-bold:before{content:'\E887'}.hearthstone #externalPlayer-arena-draft .icon-left-bold:before{content:'\E888'}.hearthstone #externalPlayer-arena-draft .icon-right-bold:before{content:'\E889'}.hearthstone #externalPlayer-arena-draft .icon-up-bold:before{content:'\E88A'}.hearthstone #externalPlayer-arena-draft .icon-down-thin:before{content:'\E88B'}.hearthstone #externalPlayer-arena-draft .icon-left-thin:before{content:'\E88C'}.hearthstone #externalPlayer-arena-draft .icon-right-thin:before{content:'\E88D'}.hearthstone #externalPlayer-arena-draft .icon-up-thin:before{content:'\E88E'}.hearthstone #externalPlayer-arena-draft .icon-ccw:before{content:'\E88F'}.hearthstone #externalPlayer-arena-draft .icon-cw:before{content:'\E890'}.hearthstone #externalPlayer-arena-draft .icon-arrows-ccw:before{content:'\E891'}.hearthstone #externalPlayer-arena-draft .icon-level-down:before{content:'\E892'}.hearthstone #externalPlayer-arena-draft .icon-level-up:before{content:'\E893'}.hearthstone #externalPlayer-arena-draft .icon-shuffle:before{content:'\E894'}.hearthstone #externalPlayer-arena-draft .icon-loop:before{content:'\E895'}.hearthstone #externalPlayer-arena-draft .icon-switch:before{content:'\E896'}.hearthstone #externalPlayer-arena-draft .icon-play:before{content:'\E897'}.hearthstone #externalPlayer-arena-draft .icon-stop:before{content:'\E898'}.hearthstone #externalPlayer-arena-draft .icon-pause:before{content:'\E899'}.hearthstone #externalPlayer-arena-draft .icon-record:before{content:'\E89A'}.hearthstone #externalPlayer-arena-draft .icon-to-end:before{content:'\E89B'}.hearthstone #externalPlayer-arena-draft .icon-to-start:before{content:'\E89C'}.hearthstone #externalPlayer-arena-draft .icon-fast-forward:before{content:'\E89D'}.hearthstone #externalPlayer-arena-draft .icon-fast-backward:before{content:'\E89E'}.hearthstone #externalPlayer-arena-draft .icon-progress-0:before{content:'\E89F'}.hearthstone #externalPlayer-arena-draft .icon-progress-1:before{content:'\E8A0'}.hearthstone #externalPlayer-arena-draft .icon-progress-2:before{content:'\E8A1'}.hearthstone #externalPlayer-arena-draft .icon-progress-3:before{content:'\E8A2'}.hearthstone #externalPlayer-arena-draft .icon-target:before{content:'\E8A3'}.hearthstone #externalPlayer-arena-draft .icon-palette:before{content:'\E8A4'}.hearthstone #externalPlayer-arena-draft .icon-list:before{content:'\E8A5'}.hearthstone #externalPlayer-arena-draft .icon-list-add:before{content:'\E8A6'}.hearthstone #externalPlayer-arena-draft .icon-signal:before{content:'\E8A7'}.hearthstone #externalPlayer-arena-draft .icon-trophy:before{content:'\E8A8'}.hearthstone #externalPlayer-arena-draft .icon-battery:before{content:'\E8A9'}.hearthstone #externalPlayer-arena-draft .icon-back-in-time:before{content:'\E8AA'}.hearthstone #externalPlayer-arena-draft .icon-monitor:before{content:'\E8AB'}.hearthstone #externalPlayer-arena-draft .icon-mobile:before{content:'\E8AC'}.hearthstone #externalPlayer-arena-draft .icon-network:before{content:'\E8AD'}.hearthstone #externalPlayer-arena-draft .icon-cd:before{content:'\E8AE'}.hearthstone #externalPlayer-arena-draft .icon-inbox:before{content:'\E8AF'}.hearthstone #externalPlayer-arena-draft .icon-install:before{content:'\E8B0'}.hearthstone #externalPlayer-arena-draft .icon-globe:before{content:'\E8B1'}.hearthstone #externalPlayer-arena-draft .icon-cloud:before{content:'\E8B2'}.hearthstone #externalPlayer-arena-draft .icon-cloud-thunder:before{content:'\E8B3'}.hearthstone #externalPlayer-arena-draft .icon-flash:before{content:'\E8B4'}.hearthstone #externalPlayer-arena-draft .icon-moon:before{content:'\E8B5'}.hearthstone #externalPlayer-arena-draft .icon-flight:before{content:'\E8B6'}.hearthstone #externalPlayer-arena-draft .icon-paper-plane:before{content:'\E8B7'}.hearthstone #externalPlayer-arena-draft .icon-leaf:before{content:'\E8B8'}.hearthstone #externalPlayer-arena-draft .icon-lifebuoy:before{content:'\E8B9'}.hearthstone #externalPlayer-arena-draft .icon-mouse:before{content:'\E8BA'}.hearthstone #externalPlayer-arena-draft .icon-briefcase:before{content:'\E8BB'}.hearthstone #externalPlayer-arena-draft .icon-suitcase:before{content:'\E8BC'}.hearthstone #externalPlayer-arena-draft .icon-dot:before{content:'\E8BD'}.hearthstone #externalPlayer-arena-draft .icon-dot-2:before{content:'\E8BE'}.hearthstone #externalPlayer-arena-draft .icon-dot-3:before{content:'\E8BF'}.hearthstone #externalPlayer-arena-draft .icon-brush:before{content:'\E8C0'}.hearthstone #externalPlayer-arena-draft .icon-magnet:before{content:'\E8C1'}.hearthstone #externalPlayer-arena-draft .icon-infinity:before{content:'\E8C2'}.hearthstone #externalPlayer-arena-draft .icon-erase:before{content:'\E8C3'}.hearthstone #externalPlayer-arena-draft .icon-chart-pie:before{content:'\E8C4'}.hearthstone #externalPlayer-arena-draft .icon-chart-line:before{content:'\E8C5'}.hearthstone #externalPlayer-arena-draft .icon-chart-bar:before{content:'\E8C6'}.hearthstone #externalPlayer-arena-draft .icon-chart-area:before{content:'\E8C7'}.hearthstone #externalPlayer-arena-draft .icon-tape:before{content:'\E8C8'}.hearthstone #externalPlayer-arena-draft .icon-graduation-cap:before{content:'\E8C9'}.hearthstone #externalPlayer-arena-draft .icon-language:before{content:'\E8CA'}.hearthstone #externalPlayer-arena-draft .icon-ticket:before{content:'\E8CB'}.hearthstone #externalPlayer-arena-draft .icon-water:before{content:'\E8CC'}.hearthstone #externalPlayer-arena-draft .icon-droplet:before{content:'\E8CD'}.hearthstone #externalPlayer-arena-draft .icon-air:before{content:'\E8CE'}.hearthstone #externalPlayer-arena-draft .icon-credit-card:before{content:'\E8CF'}.hearthstone #externalPlayer-arena-draft .icon-floppy:before{content:'\E8D0'}.hearthstone #externalPlayer-arena-draft .icon-clipboard:before{content:'\E8D1'}.hearthstone #externalPlayer-arena-draft .icon-megaphone:before{content:'\E8D2'}.hearthstone #externalPlayer-arena-draft .icon-database:before{content:'\E8D3'}.hearthstone #externalPlayer-arena-draft .icon-drive:before{content:'\E8D4'}.hearthstone #externalPlayer-arena-draft .icon-bucket:before{content:'\E8D5'}.hearthstone #externalPlayer-arena-draft .icon-thermometer:before{content:'\E8D6'}.hearthstone #externalPlayer-arena-draft .icon-key:before{content:'\E8D7'}.hearthstone #externalPlayer-arena-draft .icon-flow-cascade:before{content:'\E8D8'}.hearthstone #externalPlayer-arena-draft .icon-flow-branch:before{content:'\E8D9'}.hearthstone #externalPlayer-arena-draft .icon-flow-tree:before{content:'\E8DA'}.hearthstone #externalPlayer-arena-draft .icon-flow-line:before{content:'\E8DB'}.hearthstone #externalPlayer-arena-draft .icon-flow-parallel:before{content:'\E8DC'}.hearthstone #externalPlayer-arena-draft .icon-rocket:before{content:'\E8DD'}.hearthstone #externalPlayer-arena-draft .icon-gauge:before{content:'\E8DE'}.hearthstone #externalPlayer-arena-draft .icon-traffic-cone:before{content:'\E8DF'}.hearthstone #externalPlayer-arena-draft .icon-cc:before{content:'\E8E0'}.hearthstone #externalPlayer-arena-draft .icon-cc-by:before{content:'\E8E1'}.hearthstone #externalPlayer-arena-draft .icon-cc-nc:before{content:'\E8E2'}.hearthstone #externalPlayer-arena-draft .icon-cc-nc-eu:before{content:'\E8E3'}.hearthstone #externalPlayer-arena-draft .icon-cc-nc-jp:before{content:'\E8E4'}.hearthstone #externalPlayer-arena-draft .icon-cc-sa:before{content:'\E8E5'}.hearthstone #externalPlayer-arena-draft .icon-cc-nd:before{content:'\E8E6'}.hearthstone #externalPlayer-arena-draft .icon-cc-pd:before{content:'\E8E7'}.hearthstone #externalPlayer-arena-draft .icon-cc-zero:before{content:'\E8E8'}.hearthstone #externalPlayer-arena-draft .icon-cc-share:before{content:'\E8E9'}.hearthstone #externalPlayer-arena-draft .icon-cc-remix:before{content:'\E8EA'}.hearthstone #externalPlayer-arena-draft .icon-github:before{content:'\E8EB'}.hearthstone #externalPlayer-arena-draft .icon-github-circled:before{content:'\E8EC'}.hearthstone #externalPlayer-arena-draft .icon-flickr:before{content:'\E8ED'}.hearthstone #externalPlayer-arena-draft .icon-flickr-circled:before{content:'\E8EE'}.hearthstone #externalPlayer-arena-draft .icon-vimeo:before{content:'\E8EF'}.hearthstone #externalPlayer-arena-draft .icon-vimeo-circled:before{content:'\E8F0'}.hearthstone #externalPlayer-arena-draft .icon-twitter:before{content:'\E8F1'}.hearthstone #externalPlayer-arena-draft .icon-twitter-circled:before{content:'\E8F2'}.hearthstone #externalPlayer-arena-draft .icon-facebook:before{content:'\E8F3'}.hearthstone #externalPlayer-arena-draft .icon-facebook-circled:before{content:'\E8F4'}.hearthstone #externalPlayer-arena-draft .icon-facebook-squared:before{content:'\E8F5'}.hearthstone #externalPlayer-arena-draft .icon-gplus:before{content:'\E8F6'}.hearthstone #externalPlayer-arena-draft .icon-gplus-circled:before{content:'\E8F7'}.hearthstone #externalPlayer-arena-draft .icon-pinterest:before{content:'\E8F8'}.hearthstone #externalPlayer-arena-draft .icon-pinterest-circled:before{content:'\E8F9'}.hearthstone #externalPlayer-arena-draft .icon-tumblr:before{content:'\E8FA'}.hearthstone #externalPlayer-arena-draft .icon-tumblr-circled:before{content:'\E8FB'}.hearthstone #externalPlayer-arena-draft .icon-linkedin:before{content:'\E8FC'}.hearthstone #externalPlayer-arena-draft .icon-linkedin-circled:before{content:'\E8FD'}.hearthstone #externalPlayer-arena-draft .icon-dribbble:before{content:'\E8FE'}.hearthstone #externalPlayer-arena-draft .icon-dribbble-circled:before{content:'\E8FF'}.hearthstone #externalPlayer-arena-draft .icon-stumbleupon:before{content:'\E900'}.hearthstone #externalPlayer-arena-draft .icon-stumbleupon-circled:before{content:'\E901'}.hearthstone #externalPlayer-arena-draft .icon-lastfm:before{content:'\E902'}.hearthstone #externalPlayer-arena-draft .icon-lastfm-circled:before{content:'\E903'}.hearthstone #externalPlayer-arena-draft .icon-rdio:before{content:'\E904'}.hearthstone #externalPlayer-arena-draft .icon-rdio-circled:before{content:'\E905'}.hearthstone #externalPlayer-arena-draft .icon-spotify:before{content:'\E906'}.hearthstone #externalPlayer-arena-draft .icon-spotify-circled:before{content:'\E907'}.hearthstone #externalPlayer-arena-draft .icon-qq:before{content:'\E908'}.hearthstone #externalPlayer-arena-draft .icon-instagram:before{content:'\E909'}.hearthstone #externalPlayer-arena-draft .icon-dropbox:before{content:'\E90A'}.hearthstone #externalPlayer-arena-draft .icon-evernote:before{content:'\E90B'}.hearthstone #externalPlayer-arena-draft .icon-flattr:before{content:'\E90C'}.hearthstone #externalPlayer-arena-draft .icon-skype:before{content:'\E90D'}.hearthstone #externalPlayer-arena-draft .icon-skype-circled:before{content:'\E90E'}.hearthstone #externalPlayer-arena-draft .icon-renren:before{content:'\E90F'}.hearthstone #externalPlayer-arena-draft .icon-sina-weibo:before{content:'\E910'}.hearthstone #externalPlayer-arena-draft .icon-paypal:before{content:'\E911'}.hearthstone #externalPlayer-arena-draft .icon-picasa:before{content:'\E912'}.hearthstone #externalPlayer-arena-draft .icon-soundcloud:before{content:'\E913'}.hearthstone #externalPlayer-arena-draft .icon-mixi:before{content:'\E914'}.hearthstone #externalPlayer-arena-draft .icon-behance:before{content:'\E915'}.hearthstone #externalPlayer-arena-draft .icon-google-circles:before{content:'\E916'}.hearthstone #externalPlayer-arena-draft .icon-vkontakte:before{content:'\E917'}.hearthstone #externalPlayer-arena-draft .icon-smashing:before{content:'\E918'}.hearthstone #externalPlayer-arena-draft .icon-sweden:before{content:'\E919'}.hearthstone #externalPlayer-arena-draft .icon-db-shape:before{content:'\E91A'}.hearthstone #externalPlayer-arena-draft .icon-logo-db:before{content:'\E91B'}.hearthstone #externalPlayer-arena-draft table{border-spacing:0;width:100%;border:0;border-collapse:separate;font-size:12px;text-align:left}.hearthstone #externalPlayer-arena-draft .table-striped tr:nth-child(even),.hearthstone #externalPlayer-arena-draft thead{background-color:#f5f5f4}.hearthstone #externalPlayer-arena-draft tbody{background-color:#fff}.hearthstone #externalPlayer-arena-draft .table-striped tr:active:nth-child(even),.hearthstone #externalPlayer-arena-draft tr:active{color:#fff;background-color:#116cd6}.hearthstone #externalPlayer-arena-draft thead tr:active{color:#333;background-color:#f5f5f4}.hearthstone #externalPlayer-arena-draft th{border-right:1px solid #ddd;border-bottom:1px solid #ddd}.hearthstone #externalPlayer-arena-draft td,.hearthstone #externalPlayer-arena-draft th{padding:2px 15px}.hearthstone #externalPlayer-arena-draft td:last-child,.hearthstone #externalPlayer-arena-draft th:last-child{border-right:0}.hearthstone #externalPlayer-arena-draft .tab-group{margin-top:-1px;display:flex;border-top:1px solid #989698;border-bottom:1px solid #989698}.hearthstone #externalPlayer-arena-draft .tab-item{flex:1;padding:3px;font-size:12px;text-align:center;border-left:1px solid #989698;background-color:#b8b6b8;background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#b8b6b8),color-stop(100%,#b0aeb0));background-image:-webkit-linear-gradient(top,#b8b6b8 0,#b0aeb0 100%);background-image:linear-gradient(to bottom,#b8b6b8 0,#b0aeb0 100%)}.hearthstone #externalPlayer-arena-draft .tab-item:first-child{border-left:0}.hearthstone #externalPlayer-arena-draft .tab-item.active{background-color:#d4d2d4;background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#d4d2d4),color-stop(100%,#cccacc));background-image:-webkit-linear-gradient(top,#d4d2d4 0,#cccacc 100%);background-image:linear-gradient(to bottom,#d4d2d4 0,#cccacc 100%)}.hearthstone #externalPlayer-arena-draft .tab-item .icon-close-tab:hover,.hearthstone #externalPlayer-arena-draft .tab-item:after{background-color:rgba(0,0,0,.08)}.hearthstone #externalPlayer-arena-draft .tab-item .icon-close-tab{position:absolute;top:50%;left:5px;width:15px;height:15px;font-size:15px;line-height:15px;text-align:center;color:#666;opacity:0;transition:opacity .1s linear,background-color .1s linear;border-radius:3px;transform:translateY(-50%);z-index:10}.hearthstone #externalPlayer-arena-draft .tab-item:after{position:absolute;top:0;right:0;bottom:0;left:0;content:"";opacity:0;transition:opacity .1s linear;z-index:1}.hearthstone #externalPlayer-arena-draft .tab-item:hover .icon-close-tab,.hearthstone #externalPlayer-arena-draft .tab-item:hover:not(.active):after{opacity:1}.hearthstone #externalPlayer-arena-draft .tab-item-fixed{flex:none;padding:3px 10px}.hearthstone #externalPlayer-arena-draft a{text-decoration:none;cursor:default}.hearthstone #externalPlayer-arena-draft .fill{box-sizing:border-box;width:100%;height:100%}.hearthstone #externalPlayer-arena-draft .application{display:flex;flex-grow:1;min-height:0;min-width:0}.hearthstone #externalPlayer-arena-draft .arena-replay{display:flex;flex-direction:column;box-sizing:border-box;align-items:stretch;flex-grow:1;min-height:0;min-width:0;border:none;background-position:50% 50%;background-repeat:no-repeat;background-size:contain;background-color:#C3AA7D}.hearthstone #externalPlayer-arena-draft .arena-replay.hero-selection{background:url(images/hero-selection.jpg) top left no-repeat;background-size:100% 100%}.hearthstone #externalPlayer-arena-draft .arena-replay.pick-selection{background:url(images/pick-selection.jpg) top left no-repeat;background-size:100% 100%}.hearthstone #externalPlayer-arena-draft .controls{position:absolute;bottom:78px;width:150px;left:364px;display:table}.hearthstone #externalPlayer-arena-draft .controls .btn{display:table-cell}.hearthstone #externalPlayer-arena-draft .controls .pick-status{display:table-cell;color:#000}.hearthstone #externalPlayer-arena-draft .game-card{width:96px;height:143px;background:url(../../image/cardback.jpg) top left no-repeat;background-size:96px auto;display:block;line-height:95px;text-align:center;font-size:20px;position:relative;transform:translate(0)}.hearthstone #externalPlayer-arena-draft .card--chosen{opacity:.5}.hearthstone #externalPlayer-arena-draft .hero-card{text-align:center;position:absolute;border-radius:0;border-top-left-radius:60% 70%;border-top-right-radius:60% 70%;width:116px;height:127px;margin-right:20px;background-size:203% auto!important;background-position:-60px -47px!important;bottom:39px;left:52px}.hearthstone #externalPlayer-arena-draft .mana-curve{position:absolute;width:130px;height:87px;bottom:63px;left:213px}.hearthstone #externalPlayer-arena-draft .mana-curve .mana{position:absolute;bottom:0;top:auto;width:15px;background:url(images/mana-curve.jpg) top left no-repeat;background-size:100% 100%;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.hearthstone #externalPlayer-arena-draft .mana-curve .zero{left:0}.hearthstone #externalPlayer-arena-draft .mana-curve .one{left:17px}.hearthstone #externalPlayer-arena-draft .mana-curve .two{left:33px}.hearthstone #externalPlayer-arena-draft .mana-curve .three{left:49px}.hearthstone #externalPlayer-arena-draft .mana-curve .four{left:65px}.hearthstone #externalPlayer-arena-draft .mana-curve .five{left:81px}.hearthstone #externalPlayer-arena-draft .mana-curve .six{left:97px}.hearthstone #externalPlayer-arena-draft .mana-curve .seven{left:113px}.hearthstone #externalPlayer-arena-draft .pick-area{width:471px;height:287px;position:relative;top:40px;left:40px}.hearthstone #externalPlayer-arena-draft .pick{text-align:center;top:81px;left:27px;position:absolute;width:417px;z-index:25}.hearthstone #externalPlayer-arena-draft .pick .game-card{display:inline-block;position:relative;width:139px;height:200px;background-size:100% auto;bottom:36px;left:5px;margin-left:-4px}.hearthstone #externalPlayer-arena-draft .pick .game-card:last-child{margin-right:0}.hearthstone #externalPlayer-arena-draft .pick .picked{height:181px;width:129px;position:absolute;top:23px;color:green;opacity:.7;font-size:3em;line-height:3em;left:0}.hearthstone #externalPlayer-arena-draft .pick .hero-card{width:116px;height:127px;margin-right:20px;background-size:203% auto!important;background-position:-60px -47px!important;bottom:0;left:0}.hearthstone #externalPlayer-arena-draft .pick .hero-card .picked{width:116px;height:127px;top:0}.hearthstone #externalPlayer-arena-draft .card-tooltip{background-color:transparent;padding:0;opacity:1;margin-left:-40px;z-index:10000}.hearthstone #externalPlayer-arena-draft .card-tooltip:after{border:none}.hearthstone #externalPlayer-arena-draft .card-tooltip img{height:400px}.hearthstone #externalPlayer-arena-draft .decklist{position:absolute;width:146px;right:10px;top:34px;bottom:10px;overflow:auto}.hearthstone #externalPlayer-arena-draft .decklist::-webkit-scrollbar{display:none}.hearthstone #externalPlayer-arena-draft .decklist .decklist-card{height:24px;width:100%;margin-top:5px;background:#303030;border-radius:6px;box-shadow:0 1px 3px #000;position:relative}.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .cost{height:24px}.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .name{font-size:14px;height:24px;left:26px;line-height:24px;overflow:hidden;position:absolute;text-overflow:ellipsis;top:0;white-space:nowrap;z-index:2;display:block}.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .bg{background-position:-65px -100px;background-size:255px auto;width:108px;display:block;height:100%;position:absolute;right:0;top:0}.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .bg.number{right:19px}.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .bg div{background:linear-gradient(to right,#3d434f 0,rgba(61,67,79,.25) 50%,rgba(61,67,79,0) 100%);height:100%}.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .count{color:#ffe600;display:block;font-size:17px;font-weight:700;height:24px;line-height:24px;position:absolute;right:0;text-align:center;top:0;width:19px}
+.hearthstone #externalPlayer-arena-draft {
+  height: 500px;
+  width: 712px;
+  margin: auto;
+}
+.hearthstone #externalPlayer-arena-draft audio,
+.hearthstone #externalPlayer-arena-draft canvas,
+.hearthstone #externalPlayer-arena-draft progress,
+.hearthstone #externalPlayer-arena-draft sub,
+.hearthstone #externalPlayer-arena-draft sup,
+.hearthstone #externalPlayer-arena-draft video {
+  vertical-align: baseline;
+}
+.hearthstone #externalPlayer-arena-draft body,
+.hearthstone #externalPlayer-arena-draft html {
+  height: 100%;
+}
+.hearthstone #externalPlayer-arena-draft hr,
+.hearthstone #externalPlayer-arena-draft html,
+.hearthstone #externalPlayer-arena-draft label {
+  overflow: hidden;
+}
+.hearthstone #externalPlayer-arena-draft .clearfix:after,
+.hearthstone #externalPlayer-arena-draft .toolbar-actions:after,
+.hearthstone #externalPlayer-arena-draft .toolbar:after {
+  clear: both;
+}
+.hearthstone #externalPlayer-arena-draft *,
+.hearthstone #externalPlayer-arena-draft img {
+  -webkit-user-drag: text;
+}
+.hearthstone #externalPlayer-arena-draft .list-group *,
+.hearthstone #externalPlayer-arena-draft .nav-group-item,
+.hearthstone #externalPlayer-arena-draft h1,
+.hearthstone #externalPlayer-arena-draft h2,
+.hearthstone #externalPlayer-arena-draft h3,
+.hearthstone #externalPlayer-arena-draft h4,
+.hearthstone #externalPlayer-arena-draft h5,
+.hearthstone #externalPlayer-arena-draft h6,
+.hearthstone #externalPlayer-arena-draft label,
+.hearthstone #externalPlayer-arena-draft td,
+.hearthstone #externalPlayer-arena-draft th {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.hearthstone #externalPlayer-arena-draft audio:not([controls]) {
+  display: none;
+}
+.hearthstone #externalPlayer-arena-draft a:active,
+.hearthstone #externalPlayer-arena-draft a:hover {
+  outline: 0;
+}
+.hearthstone #externalPlayer-arena-draft abbr[title] {
+  border-bottom: 1px dotted;
+}
+.hearthstone #externalPlayer-arena-draft b,
+.hearthstone #externalPlayer-arena-draft strong {
+  font-weight: 700;
+}
+.hearthstone #externalPlayer-arena-draft dfn {
+  font-style: italic;
+}
+.hearthstone #externalPlayer-arena-draft h1 {
+  margin: .67em 0;
+  font-size: 36px;
+}
+.hearthstone #externalPlayer-arena-draft small {
+  font-size: 80%;
+}
+.hearthstone #externalPlayer-arena-draft sub,
+.hearthstone #externalPlayer-arena-draft sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+.hearthstone #externalPlayer-arena-draft sup {
+  top: -0.5em;
+}
+.hearthstone #externalPlayer-arena-draft .pane-group,
+.hearthstone #externalPlayer-arena-draft .window {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.hearthstone #externalPlayer-arena-draft sub {
+  bottom: -0.25em;
+}
+.hearthstone #externalPlayer-arena-draft pre {
+  overflow: auto;
+}
+.hearthstone #externalPlayer-arena-draft code,
+.hearthstone #externalPlayer-arena-draft kbd,
+.hearthstone #externalPlayer-arena-draft pre,
+.hearthstone #externalPlayer-arena-draft samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+.hearthstone #externalPlayer-arena-draft input[type=number]::-webkit-inner-spin-button,
+.hearthstone #externalPlayer-arena-draft input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+.hearthstone #externalPlayer-arena-draft input[type=search]::-webkit-search-cancel-button,
+.hearthstone #externalPlayer-arena-draft input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.hearthstone #externalPlayer-arena-draft fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+.hearthstone #externalPlayer-arena-draft legend {
+  border: 0;
+  padding: 0;
+}
+.hearthstone #externalPlayer-arena-draft html {
+  width: 100%;
+}
+.hearthstone #externalPlayer-arena-draft body {
+  padding: 0;
+  margin: 0;
+  font-family: system, -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", Helvetica, "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+  background-color: transparent;
+}
+.hearthstone #externalPlayer-arena-draft .btn-dropdown:after,
+.hearthstone #externalPlayer-arena-draft .icon:before {
+  font-family: photon-entypo;
+}
+.hearthstone #externalPlayer-arena-draft hr {
+  margin: 15px 0;
+  background: 0 0;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.hearthstone #externalPlayer-arena-draft h1,
+.hearthstone #externalPlayer-arena-draft h2,
+.hearthstone #externalPlayer-arena-draft h3,
+.hearthstone #externalPlayer-arena-draft h4,
+.hearthstone #externalPlayer-arena-draft h5,
+.hearthstone #externalPlayer-arena-draft h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  overflow: hidden;
+}
+.hearthstone #externalPlayer-arena-draft h2 {
+  font-size: 30px;
+}
+.hearthstone #externalPlayer-arena-draft h3 {
+  font-size: 24px;
+}
+.hearthstone #externalPlayer-arena-draft h4 {
+  font-size: 18px;
+}
+.hearthstone #externalPlayer-arena-draft h5 {
+  font-size: 14px;
+}
+.hearthstone #externalPlayer-arena-draft .window {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.hearthstone #externalPlayer-arena-draft .window-content {
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  flex: 1;
+}
+.hearthstone #externalPlayer-arena-draft .selectable-text {
+  cursor: text;
+  -webkit-user-select: text;
+}
+.hearthstone #externalPlayer-arena-draft .text-center {
+  text-align: center;
+}
+.hearthstone #externalPlayer-arena-draft .text-right {
+  text-align: right;
+}
+.hearthstone #externalPlayer-arena-draft .text-left {
+  text-align: left;
+}
+.hearthstone #externalPlayer-arena-draft .pull-left {
+  float: left;
+}
+.hearthstone #externalPlayer-arena-draft .pull-right {
+  float: right;
+}
+.hearthstone #externalPlayer-arena-draft .padded {
+  padding: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-less {
+  padding: 5px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-more {
+  padding: 20px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-vertically {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-vertically-less {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-vertically-more {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-horizontally {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-horizontally-less {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-horizontally-more {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-top {
+  padding-top: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-top-less {
+  padding-top: 5px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-top-more {
+  padding-top: 20px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-bottom {
+  padding-bottom: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-bottom-less {
+  padding-bottom: 5px;
+}
+.hearthstone #externalPlayer-arena-draft .padded-bottom-more {
+  padding-bottom: 20px;
+}
+.hearthstone #externalPlayer-arena-draft .sidebar {
+  background-color: #f5f5f4;
+}
+.hearthstone #externalPlayer-arena-draft .draggable {
+  -webkit-app-region: drag;
+}
+.hearthstone #externalPlayer-arena-draft .clearfix:after,
+.hearthstone #externalPlayer-arena-draft .clearfix:before {
+  display: table;
+  content: " ";
+}
+.hearthstone #externalPlayer-arena-draft .toolbar-actions:after,
+.hearthstone #externalPlayer-arena-draft .toolbar-actions:before,
+.hearthstone #externalPlayer-arena-draft .toolbar:after,
+.hearthstone #externalPlayer-arena-draft .toolbar:before {
+  display: table;
+  content: " ";
+}
+.hearthstone #externalPlayer-arena-draft .toolbar {
+  min-height: 22px;
+  box-shadow: inset 0 1px 0 #f5f4f5;
+  background-color: #e8e6e8;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8e6e8), color-stop(100%, #d1cfd1));
+  background-image: -webkit-linear-gradient(top, #e8e6e8 0, #d1cfd1 100%);
+  background-image: linear-gradient(to bottom, #e8e6e8 0, #d1cfd1 100%);
+}
+.hearthstone #externalPlayer-arena-draft .toolbar-header {
+  border-bottom: 1px solid #c2c0c2;
+}
+.hearthstone #externalPlayer-arena-draft .toolbar-footer {
+  border-top: 1px solid #c2c0c2;
+  -webkit-app-region: drag;
+}
+.hearthstone #externalPlayer-arena-draft .title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: #555;
+}
+.hearthstone #externalPlayer-arena-draft .toolbar-borderless {
+  border-top: 0;
+  border-bottom: 0;
+}
+.hearthstone #externalPlayer-arena-draft .toolbar-actions {
+  margin-top: 4px;
+  margin-bottom: 3px;
+  padding-right: 3px;
+  padding-left: 3px;
+  padding-bottom: 3px;
+  -webkit-app-region: drag;
+}
+.hearthstone #externalPlayer-arena-draft .form-control,
+.hearthstone #externalPlayer-arena-draft label {
+  display: inline-block;
+  font-size: 13px;
+}
+.hearthstone #externalPlayer-arena-draft label {
+  margin-bottom: 5px;
+}
+.hearthstone #externalPlayer-arena-draft input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: border-box;
+}
+.hearthstone #externalPlayer-arena-draft input[type=checkbox],
+.hearthstone #externalPlayer-arena-draft input[type=radio] {
+  margin: 4px 0 0;
+  line-height: normal;
+}
+.hearthstone #externalPlayer-arena-draft .checkbox,
+.hearthstone #externalPlayer-arena-draft .form-group,
+.hearthstone #externalPlayer-arena-draft .radio {
+  margin-bottom: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .form-control {
+  width: 100%;
+  min-height: 25px;
+  padding: 5px 10px;
+  line-height: 1.6;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: 0;
+}
+.hearthstone #externalPlayer-arena-draft .form-control:focus {
+  border-color: #6db3fd;
+  box-shadow: 3px 3px 0 #6db3fd, -3px -3px 0 #6db3fd, -3px 3px 0 #6db3fd, 3px -3px 0 #6db3fd;
+}
+.hearthstone #externalPlayer-arena-draft textarea {
+  height: auto;
+}
+.hearthstone #externalPlayer-arena-draft .checkbox,
+.hearthstone #externalPlayer-arena-draft .radio {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .checkbox label,
+.hearthstone #externalPlayer-arena-draft .radio label {
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+.hearthstone #externalPlayer-arena-draft .checkbox input[type=checkbox],
+.hearthstone #externalPlayer-arena-draft .checkbox-inline input[type=checkbox],
+.hearthstone #externalPlayer-arena-draft .radio input[type=radio],
+.hearthstone #externalPlayer-arena-draft .radio-inline input[type=radio] {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 4px;
+}
+.hearthstone #externalPlayer-arena-draft .pane-group {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+}
+.hearthstone #externalPlayer-arena-draft .icon:before,
+.hearthstone #externalPlayer-arena-draft .pane,
+.hearthstone #externalPlayer-arena-draft .tab-item {
+  position: relative;
+}
+.hearthstone #externalPlayer-arena-draft .pane {
+  overflow-y: auto;
+  flex: 1;
+  border-left: 1px solid #ddd;
+}
+.hearthstone #externalPlayer-arena-draft .list-group *,
+.hearthstone #externalPlayer-arena-draft .media-body,
+.hearthstone #externalPlayer-arena-draft .nav-group-item,
+.hearthstone #externalPlayer-arena-draft td,
+.hearthstone #externalPlayer-arena-draft th {
+  overflow: hidden;
+}
+.hearthstone #externalPlayer-arena-draft .pane:first-child {
+  border-left: 0;
+}
+.hearthstone #externalPlayer-arena-draft .pane-sm {
+  max-width: 220px;
+  min-width: 150px;
+}
+.hearthstone #externalPlayer-arena-draft .pane-mini {
+  width: 80px;
+  flex: none;
+}
+.hearthstone #externalPlayer-arena-draft .pane-one-fourth {
+  width: 25%;
+  flex: none;
+}
+.hearthstone #externalPlayer-arena-draft .pane-one-third {
+  width: 33.3%;
+}
+.hearthstone #externalPlayer-arena-draft .img-circle {
+  border-radius: 50%;
+}
+.hearthstone #externalPlayer-arena-draft .img-rounded {
+  border-radius: 4px;
+}
+.hearthstone #externalPlayer-arena-draft .list-group {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hearthstone #externalPlayer-arena-draft .list-group * {
+  margin: 0;
+}
+.hearthstone #externalPlayer-arena-draft .list-group-item {
+  padding: 10px;
+  font-size: 12px;
+  color: #414142;
+  border-top: 1px solid #ddd;
+}
+.hearthstone #externalPlayer-arena-draft .list-group-item:first-child {
+  border-top: 0;
+}
+.hearthstone #externalPlayer-arena-draft .list-group-item.active,
+.hearthstone #externalPlayer-arena-draft .list-group-item.selected {
+  color: #fff;
+  background-color: #116cd6;
+}
+.hearthstone #externalPlayer-arena-draft .list-group-header {
+  padding: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .media-object {
+  margin-top: 3px;
+}
+.hearthstone #externalPlayer-arena-draft .media-object.pull-left {
+  margin-right: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .media-object.pull-right {
+  margin-left: 10px;
+}
+.hearthstone #externalPlayer-arena-draft .nav-group {
+  font-size: 14px;
+}
+.hearthstone #externalPlayer-arena-draft .nav-group-item {
+  padding: 2px 10px 2px 25px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+.hearthstone #externalPlayer-arena-draft .nav-group-item.active,
+.hearthstone #externalPlayer-arena-draft .nav-group-item:active {
+  background-color: #dcdfe1;
+}
+.hearthstone #externalPlayer-arena-draft .nav-group-item .icon {
+  width: 19px;
+  height: 18px;
+  float: left;
+  color: #737475;
+  margin-top: -3px;
+  margin-right: 7px;
+  font-size: 18px;
+  text-align: center;
+}
+.hearthstone #externalPlayer-arena-draft .nav-group-title {
+  margin: 0;
+  padding: 10px 10px 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+}
+.hearthstone #externalPlayer-arena-draft .icon:before,
+.hearthstone #externalPlayer-arena-draft th {
+  font-weight: 400;
+}
+@font-face {
+  font-family: photon-entypo;
+  src: url("fonts/photon-entypo.svg");
+  src: url("fonts/photon-entypo.eot") format("eot"), url("fonts/photon-entypo.woff") format("woff"), url("fonts/photon-entypo.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+.hearthstone #externalPlayer-arena-draft .icon:before {
+  display: inline-block;
+  speak: none;
+  font-size: 100%;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hearthstone #externalPlayer-arena-draft .icon-note:before {
+  content: '\E800';
+}
+.hearthstone #externalPlayer-arena-draft .icon-note-beamed:before {
+  content: '\E801';
+}
+.hearthstone #externalPlayer-arena-draft .icon-music:before {
+  content: '\E802';
+}
+.hearthstone #externalPlayer-arena-draft .icon-search:before {
+  content: '\E803';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flashlight:before {
+  content: '\E804';
+}
+.hearthstone #externalPlayer-arena-draft .icon-mail:before {
+  content: '\E805';
+}
+.hearthstone #externalPlayer-arena-draft .icon-heart:before {
+  content: '\E806';
+}
+.hearthstone #externalPlayer-arena-draft .icon-heart-empty:before {
+  content: '\E807';
+}
+.hearthstone #externalPlayer-arena-draft .icon-star:before {
+  content: '\E808';
+}
+.hearthstone #externalPlayer-arena-draft .icon-star-empty:before {
+  content: '\E809';
+}
+.hearthstone #externalPlayer-arena-draft .icon-user:before {
+  content: '\E80A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-users:before {
+  content: '\E80B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-user-add:before {
+  content: '\E80C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-video:before {
+  content: '\E80D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-picture:before {
+  content: '\E80E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-camera:before {
+  content: '\E80F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-layout:before {
+  content: '\E810';
+}
+.hearthstone #externalPlayer-arena-draft .icon-menu:before {
+  content: '\E811';
+}
+.hearthstone #externalPlayer-arena-draft .icon-check:before {
+  content: '\E812';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cancel:before {
+  content: '\E813';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cancel-circled:before {
+  content: '\E814';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cancel-squared:before {
+  content: '\E815';
+}
+.hearthstone #externalPlayer-arena-draft .icon-plus:before {
+  content: '\E816';
+}
+.hearthstone #externalPlayer-arena-draft .icon-plus-circled:before {
+  content: '\E817';
+}
+.hearthstone #externalPlayer-arena-draft .icon-plus-squared:before {
+  content: '\E818';
+}
+.hearthstone #externalPlayer-arena-draft .icon-minus:before {
+  content: '\E819';
+}
+.hearthstone #externalPlayer-arena-draft .icon-minus-circled:before {
+  content: '\E81A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-minus-squared:before {
+  content: '\E81B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-help:before {
+  content: '\E81C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-help-circled:before {
+  content: '\E81D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-info:before {
+  content: '\E81E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-info-circled:before {
+  content: '\E81F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-back:before {
+  content: '\E820';
+}
+.hearthstone #externalPlayer-arena-draft .icon-home:before {
+  content: '\E821';
+}
+.hearthstone #externalPlayer-arena-draft .icon-link:before {
+  content: '\E822';
+}
+.hearthstone #externalPlayer-arena-draft .icon-attach:before {
+  content: '\E823';
+}
+.hearthstone #externalPlayer-arena-draft .icon-lock:before {
+  content: '\E824';
+}
+.hearthstone #externalPlayer-arena-draft .icon-lock-open:before {
+  content: '\E825';
+}
+.hearthstone #externalPlayer-arena-draft .icon-eye:before {
+  content: '\E826';
+}
+.hearthstone #externalPlayer-arena-draft .icon-tag:before {
+  content: '\E827';
+}
+.hearthstone #externalPlayer-arena-draft .icon-bookmark:before {
+  content: '\E828';
+}
+.hearthstone #externalPlayer-arena-draft .icon-bookmarks:before {
+  content: '\E829';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flag:before {
+  content: '\E82A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-thumbs-up:before {
+  content: '\E82B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-thumbs-down:before {
+  content: '\E82C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-download:before {
+  content: '\E82D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-upload:before {
+  content: '\E82E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-upload-cloud:before {
+  content: '\E82F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-reply:before {
+  content: '\E830';
+}
+.hearthstone #externalPlayer-arena-draft .icon-reply-all:before {
+  content: '\E831';
+}
+.hearthstone #externalPlayer-arena-draft .icon-forward:before {
+  content: '\E832';
+}
+.hearthstone #externalPlayer-arena-draft .icon-quote:before {
+  content: '\E833';
+}
+.hearthstone #externalPlayer-arena-draft .icon-code:before {
+  content: '\E834';
+}
+.hearthstone #externalPlayer-arena-draft .icon-export:before {
+  content: '\E835';
+}
+.hearthstone #externalPlayer-arena-draft .icon-pencil:before {
+  content: '\E836';
+}
+.hearthstone #externalPlayer-arena-draft .icon-feather:before {
+  content: '\E837';
+}
+.hearthstone #externalPlayer-arena-draft .icon-print:before {
+  content: '\E838';
+}
+.hearthstone #externalPlayer-arena-draft .icon-retweet:before {
+  content: '\E839';
+}
+.hearthstone #externalPlayer-arena-draft .icon-keyboard:before {
+  content: '\E83A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-comment:before {
+  content: '\E83B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-chat:before {
+  content: '\E83C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-bell:before {
+  content: '\E83D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-attention:before {
+  content: '\E83E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-alert:before {
+  content: '\E83F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-vcard:before {
+  content: '\E840';
+}
+.hearthstone #externalPlayer-arena-draft .icon-address:before {
+  content: '\E841';
+}
+.hearthstone #externalPlayer-arena-draft .icon-location:before {
+  content: '\E842';
+}
+.hearthstone #externalPlayer-arena-draft .icon-map:before {
+  content: '\E843';
+}
+.hearthstone #externalPlayer-arena-draft .icon-direction:before {
+  content: '\E844';
+}
+.hearthstone #externalPlayer-arena-draft .icon-compass:before {
+  content: '\E845';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cup:before {
+  content: '\E846';
+}
+.hearthstone #externalPlayer-arena-draft .icon-trash:before {
+  content: '\E847';
+}
+.hearthstone #externalPlayer-arena-draft .icon-doc:before {
+  content: '\E848';
+}
+.hearthstone #externalPlayer-arena-draft .icon-docs:before {
+  content: '\E849';
+}
+.hearthstone #externalPlayer-arena-draft .icon-doc-landscape:before {
+  content: '\E84A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-doc-text:before {
+  content: '\E84B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-doc-text-inv:before {
+  content: '\E84C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-newspaper:before {
+  content: '\E84D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-book-open:before {
+  content: '\E84E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-book:before {
+  content: '\E84F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-folder:before {
+  content: '\E850';
+}
+.hearthstone #externalPlayer-arena-draft .icon-archive:before {
+  content: '\E851';
+}
+.hearthstone #externalPlayer-arena-draft .icon-box:before {
+  content: '\E852';
+}
+.hearthstone #externalPlayer-arena-draft .icon-rss:before {
+  content: '\E853';
+}
+.hearthstone #externalPlayer-arena-draft .icon-phone:before {
+  content: '\E854';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cog:before {
+  content: '\E855';
+}
+.hearthstone #externalPlayer-arena-draft .icon-tools:before {
+  content: '\E856';
+}
+.hearthstone #externalPlayer-arena-draft .icon-share:before {
+  content: '\E857';
+}
+.hearthstone #externalPlayer-arena-draft .icon-shareable:before {
+  content: '\E858';
+}
+.hearthstone #externalPlayer-arena-draft .icon-basket:before {
+  content: '\E859';
+}
+.hearthstone #externalPlayer-arena-draft .icon-bag:before {
+  content: '\E85A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-calendar:before {
+  content: '\E85B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-login:before {
+  content: '\E85C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-logout:before {
+  content: '\E85D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-mic:before {
+  content: '\E85E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-mute:before {
+  content: '\E85F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-sound:before {
+  content: '\E860';
+}
+.hearthstone #externalPlayer-arena-draft .icon-volume:before {
+  content: '\E861';
+}
+.hearthstone #externalPlayer-arena-draft .icon-clock:before {
+  content: '\E862';
+}
+.hearthstone #externalPlayer-arena-draft .icon-hourglass:before {
+  content: '\E863';
+}
+.hearthstone #externalPlayer-arena-draft .icon-lamp:before {
+  content: '\E864';
+}
+.hearthstone #externalPlayer-arena-draft .icon-light-down:before {
+  content: '\E865';
+}
+.hearthstone #externalPlayer-arena-draft .icon-light-up:before {
+  content: '\E866';
+}
+.hearthstone #externalPlayer-arena-draft .icon-adjust:before {
+  content: '\E867';
+}
+.hearthstone #externalPlayer-arena-draft .icon-block:before {
+  content: '\E868';
+}
+.hearthstone #externalPlayer-arena-draft .icon-resize-full:before {
+  content: '\E869';
+}
+.hearthstone #externalPlayer-arena-draft .icon-resize-small:before {
+  content: '\E86A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-popup:before {
+  content: '\E86B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-publish:before {
+  content: '\E86C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-window:before {
+  content: '\E86D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-arrow-combo:before {
+  content: '\E86E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-down-circled:before {
+  content: '\E86F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-left-circled:before {
+  content: '\E870';
+}
+.hearthstone #externalPlayer-arena-draft .icon-right-circled:before {
+  content: '\E871';
+}
+.hearthstone #externalPlayer-arena-draft .icon-up-circled:before {
+  content: '\E872';
+}
+.hearthstone #externalPlayer-arena-draft .icon-down-open:before {
+  content: '\E873';
+}
+.hearthstone #externalPlayer-arena-draft .icon-left-open:before {
+  content: '\E874';
+}
+.hearthstone #externalPlayer-arena-draft .icon-right-open:before {
+  content: '\E875';
+}
+.hearthstone #externalPlayer-arena-draft .icon-up-open:before {
+  content: '\E876';
+}
+.hearthstone #externalPlayer-arena-draft .icon-down-open-mini:before {
+  content: '\E877';
+}
+.hearthstone #externalPlayer-arena-draft .icon-left-open-mini:before {
+  content: '\E878';
+}
+.hearthstone #externalPlayer-arena-draft .icon-right-open-mini:before {
+  content: '\E879';
+}
+.hearthstone #externalPlayer-arena-draft .icon-up-open-mini:before {
+  content: '\E87A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-down-open-big:before {
+  content: '\E87B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-left-open-big:before {
+  content: '\E87C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-right-open-big:before {
+  content: '\E87D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-up-open-big:before {
+  content: '\E87E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-down:before {
+  content: '\E87F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-left:before {
+  content: '\E880';
+}
+.hearthstone #externalPlayer-arena-draft .icon-right:before {
+  content: '\E881';
+}
+.hearthstone #externalPlayer-arena-draft .icon-up:before {
+  content: '\E882';
+}
+.hearthstone #externalPlayer-arena-draft .icon-down-dir:before {
+  content: '\E883';
+}
+.hearthstone #externalPlayer-arena-draft .icon-left-dir:before {
+  content: '\E884';
+}
+.hearthstone #externalPlayer-arena-draft .icon-right-dir:before {
+  content: '\E885';
+}
+.hearthstone #externalPlayer-arena-draft .icon-up-dir:before {
+  content: '\E886';
+}
+.hearthstone #externalPlayer-arena-draft .icon-down-bold:before {
+  content: '\E887';
+}
+.hearthstone #externalPlayer-arena-draft .icon-left-bold:before {
+  content: '\E888';
+}
+.hearthstone #externalPlayer-arena-draft .icon-right-bold:before {
+  content: '\E889';
+}
+.hearthstone #externalPlayer-arena-draft .icon-up-bold:before {
+  content: '\E88A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-down-thin:before {
+  content: '\E88B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-left-thin:before {
+  content: '\E88C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-right-thin:before {
+  content: '\E88D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-up-thin:before {
+  content: '\E88E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-ccw:before {
+  content: '\E88F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cw:before {
+  content: '\E890';
+}
+.hearthstone #externalPlayer-arena-draft .icon-arrows-ccw:before {
+  content: '\E891';
+}
+.hearthstone #externalPlayer-arena-draft .icon-level-down:before {
+  content: '\E892';
+}
+.hearthstone #externalPlayer-arena-draft .icon-level-up:before {
+  content: '\E893';
+}
+.hearthstone #externalPlayer-arena-draft .icon-shuffle:before {
+  content: '\E894';
+}
+.hearthstone #externalPlayer-arena-draft .icon-loop:before {
+  content: '\E895';
+}
+.hearthstone #externalPlayer-arena-draft .icon-switch:before {
+  content: '\E896';
+}
+.hearthstone #externalPlayer-arena-draft .icon-play:before {
+  content: '\E897';
+}
+.hearthstone #externalPlayer-arena-draft .icon-stop:before {
+  content: '\E898';
+}
+.hearthstone #externalPlayer-arena-draft .icon-pause:before {
+  content: '\E899';
+}
+.hearthstone #externalPlayer-arena-draft .icon-record:before {
+  content: '\E89A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-to-end:before {
+  content: '\E89B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-to-start:before {
+  content: '\E89C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-fast-forward:before {
+  content: '\E89D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-fast-backward:before {
+  content: '\E89E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-progress-0:before {
+  content: '\E89F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-progress-1:before {
+  content: '\E8A0';
+}
+.hearthstone #externalPlayer-arena-draft .icon-progress-2:before {
+  content: '\E8A1';
+}
+.hearthstone #externalPlayer-arena-draft .icon-progress-3:before {
+  content: '\E8A2';
+}
+.hearthstone #externalPlayer-arena-draft .icon-target:before {
+  content: '\E8A3';
+}
+.hearthstone #externalPlayer-arena-draft .icon-palette:before {
+  content: '\E8A4';
+}
+.hearthstone #externalPlayer-arena-draft .icon-list:before {
+  content: '\E8A5';
+}
+.hearthstone #externalPlayer-arena-draft .icon-list-add:before {
+  content: '\E8A6';
+}
+.hearthstone #externalPlayer-arena-draft .icon-signal:before {
+  content: '\E8A7';
+}
+.hearthstone #externalPlayer-arena-draft .icon-trophy:before {
+  content: '\E8A8';
+}
+.hearthstone #externalPlayer-arena-draft .icon-battery:before {
+  content: '\E8A9';
+}
+.hearthstone #externalPlayer-arena-draft .icon-back-in-time:before {
+  content: '\E8AA';
+}
+.hearthstone #externalPlayer-arena-draft .icon-monitor:before {
+  content: '\E8AB';
+}
+.hearthstone #externalPlayer-arena-draft .icon-mobile:before {
+  content: '\E8AC';
+}
+.hearthstone #externalPlayer-arena-draft .icon-network:before {
+  content: '\E8AD';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cd:before {
+  content: '\E8AE';
+}
+.hearthstone #externalPlayer-arena-draft .icon-inbox:before {
+  content: '\E8AF';
+}
+.hearthstone #externalPlayer-arena-draft .icon-install:before {
+  content: '\E8B0';
+}
+.hearthstone #externalPlayer-arena-draft .icon-globe:before {
+  content: '\E8B1';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cloud:before {
+  content: '\E8B2';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cloud-thunder:before {
+  content: '\E8B3';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flash:before {
+  content: '\E8B4';
+}
+.hearthstone #externalPlayer-arena-draft .icon-moon:before {
+  content: '\E8B5';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flight:before {
+  content: '\E8B6';
+}
+.hearthstone #externalPlayer-arena-draft .icon-paper-plane:before {
+  content: '\E8B7';
+}
+.hearthstone #externalPlayer-arena-draft .icon-leaf:before {
+  content: '\E8B8';
+}
+.hearthstone #externalPlayer-arena-draft .icon-lifebuoy:before {
+  content: '\E8B9';
+}
+.hearthstone #externalPlayer-arena-draft .icon-mouse:before {
+  content: '\E8BA';
+}
+.hearthstone #externalPlayer-arena-draft .icon-briefcase:before {
+  content: '\E8BB';
+}
+.hearthstone #externalPlayer-arena-draft .icon-suitcase:before {
+  content: '\E8BC';
+}
+.hearthstone #externalPlayer-arena-draft .icon-dot:before {
+  content: '\E8BD';
+}
+.hearthstone #externalPlayer-arena-draft .icon-dot-2:before {
+  content: '\E8BE';
+}
+.hearthstone #externalPlayer-arena-draft .icon-dot-3:before {
+  content: '\E8BF';
+}
+.hearthstone #externalPlayer-arena-draft .icon-brush:before {
+  content: '\E8C0';
+}
+.hearthstone #externalPlayer-arena-draft .icon-magnet:before {
+  content: '\E8C1';
+}
+.hearthstone #externalPlayer-arena-draft .icon-infinity:before {
+  content: '\E8C2';
+}
+.hearthstone #externalPlayer-arena-draft .icon-erase:before {
+  content: '\E8C3';
+}
+.hearthstone #externalPlayer-arena-draft .icon-chart-pie:before {
+  content: '\E8C4';
+}
+.hearthstone #externalPlayer-arena-draft .icon-chart-line:before {
+  content: '\E8C5';
+}
+.hearthstone #externalPlayer-arena-draft .icon-chart-bar:before {
+  content: '\E8C6';
+}
+.hearthstone #externalPlayer-arena-draft .icon-chart-area:before {
+  content: '\E8C7';
+}
+.hearthstone #externalPlayer-arena-draft .icon-tape:before {
+  content: '\E8C8';
+}
+.hearthstone #externalPlayer-arena-draft .icon-graduation-cap:before {
+  content: '\E8C9';
+}
+.hearthstone #externalPlayer-arena-draft .icon-language:before {
+  content: '\E8CA';
+}
+.hearthstone #externalPlayer-arena-draft .icon-ticket:before {
+  content: '\E8CB';
+}
+.hearthstone #externalPlayer-arena-draft .icon-water:before {
+  content: '\E8CC';
+}
+.hearthstone #externalPlayer-arena-draft .icon-droplet:before {
+  content: '\E8CD';
+}
+.hearthstone #externalPlayer-arena-draft .icon-air:before {
+  content: '\E8CE';
+}
+.hearthstone #externalPlayer-arena-draft .icon-credit-card:before {
+  content: '\E8CF';
+}
+.hearthstone #externalPlayer-arena-draft .icon-floppy:before {
+  content: '\E8D0';
+}
+.hearthstone #externalPlayer-arena-draft .icon-clipboard:before {
+  content: '\E8D1';
+}
+.hearthstone #externalPlayer-arena-draft .icon-megaphone:before {
+  content: '\E8D2';
+}
+.hearthstone #externalPlayer-arena-draft .icon-database:before {
+  content: '\E8D3';
+}
+.hearthstone #externalPlayer-arena-draft .icon-drive:before {
+  content: '\E8D4';
+}
+.hearthstone #externalPlayer-arena-draft .icon-bucket:before {
+  content: '\E8D5';
+}
+.hearthstone #externalPlayer-arena-draft .icon-thermometer:before {
+  content: '\E8D6';
+}
+.hearthstone #externalPlayer-arena-draft .icon-key:before {
+  content: '\E8D7';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flow-cascade:before {
+  content: '\E8D8';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flow-branch:before {
+  content: '\E8D9';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flow-tree:before {
+  content: '\E8DA';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flow-line:before {
+  content: '\E8DB';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flow-parallel:before {
+  content: '\E8DC';
+}
+.hearthstone #externalPlayer-arena-draft .icon-rocket:before {
+  content: '\E8DD';
+}
+.hearthstone #externalPlayer-arena-draft .icon-gauge:before {
+  content: '\E8DE';
+}
+.hearthstone #externalPlayer-arena-draft .icon-traffic-cone:before {
+  content: '\E8DF';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc:before {
+  content: '\E8E0';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-by:before {
+  content: '\E8E1';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-nc:before {
+  content: '\E8E2';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-nc-eu:before {
+  content: '\E8E3';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-nc-jp:before {
+  content: '\E8E4';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-sa:before {
+  content: '\E8E5';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-nd:before {
+  content: '\E8E6';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-pd:before {
+  content: '\E8E7';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-zero:before {
+  content: '\E8E8';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-share:before {
+  content: '\E8E9';
+}
+.hearthstone #externalPlayer-arena-draft .icon-cc-remix:before {
+  content: '\E8EA';
+}
+.hearthstone #externalPlayer-arena-draft .icon-github:before {
+  content: '\E8EB';
+}
+.hearthstone #externalPlayer-arena-draft .icon-github-circled:before {
+  content: '\E8EC';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flickr:before {
+  content: '\E8ED';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flickr-circled:before {
+  content: '\E8EE';
+}
+.hearthstone #externalPlayer-arena-draft .icon-vimeo:before {
+  content: '\E8EF';
+}
+.hearthstone #externalPlayer-arena-draft .icon-vimeo-circled:before {
+  content: '\E8F0';
+}
+.hearthstone #externalPlayer-arena-draft .icon-twitter:before {
+  content: '\E8F1';
+}
+.hearthstone #externalPlayer-arena-draft .icon-twitter-circled:before {
+  content: '\E8F2';
+}
+.hearthstone #externalPlayer-arena-draft .icon-facebook:before {
+  content: '\E8F3';
+}
+.hearthstone #externalPlayer-arena-draft .icon-facebook-circled:before {
+  content: '\E8F4';
+}
+.hearthstone #externalPlayer-arena-draft .icon-facebook-squared:before {
+  content: '\E8F5';
+}
+.hearthstone #externalPlayer-arena-draft .icon-gplus:before {
+  content: '\E8F6';
+}
+.hearthstone #externalPlayer-arena-draft .icon-gplus-circled:before {
+  content: '\E8F7';
+}
+.hearthstone #externalPlayer-arena-draft .icon-pinterest:before {
+  content: '\E8F8';
+}
+.hearthstone #externalPlayer-arena-draft .icon-pinterest-circled:before {
+  content: '\E8F9';
+}
+.hearthstone #externalPlayer-arena-draft .icon-tumblr:before {
+  content: '\E8FA';
+}
+.hearthstone #externalPlayer-arena-draft .icon-tumblr-circled:before {
+  content: '\E8FB';
+}
+.hearthstone #externalPlayer-arena-draft .icon-linkedin:before {
+  content: '\E8FC';
+}
+.hearthstone #externalPlayer-arena-draft .icon-linkedin-circled:before {
+  content: '\E8FD';
+}
+.hearthstone #externalPlayer-arena-draft .icon-dribbble:before {
+  content: '\E8FE';
+}
+.hearthstone #externalPlayer-arena-draft .icon-dribbble-circled:before {
+  content: '\E8FF';
+}
+.hearthstone #externalPlayer-arena-draft .icon-stumbleupon:before {
+  content: '\E900';
+}
+.hearthstone #externalPlayer-arena-draft .icon-stumbleupon-circled:before {
+  content: '\E901';
+}
+.hearthstone #externalPlayer-arena-draft .icon-lastfm:before {
+  content: '\E902';
+}
+.hearthstone #externalPlayer-arena-draft .icon-lastfm-circled:before {
+  content: '\E903';
+}
+.hearthstone #externalPlayer-arena-draft .icon-rdio:before {
+  content: '\E904';
+}
+.hearthstone #externalPlayer-arena-draft .icon-rdio-circled:before {
+  content: '\E905';
+}
+.hearthstone #externalPlayer-arena-draft .icon-spotify:before {
+  content: '\E906';
+}
+.hearthstone #externalPlayer-arena-draft .icon-spotify-circled:before {
+  content: '\E907';
+}
+.hearthstone #externalPlayer-arena-draft .icon-qq:before {
+  content: '\E908';
+}
+.hearthstone #externalPlayer-arena-draft .icon-instagram:before {
+  content: '\E909';
+}
+.hearthstone #externalPlayer-arena-draft .icon-dropbox:before {
+  content: '\E90A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-evernote:before {
+  content: '\E90B';
+}
+.hearthstone #externalPlayer-arena-draft .icon-flattr:before {
+  content: '\E90C';
+}
+.hearthstone #externalPlayer-arena-draft .icon-skype:before {
+  content: '\E90D';
+}
+.hearthstone #externalPlayer-arena-draft .icon-skype-circled:before {
+  content: '\E90E';
+}
+.hearthstone #externalPlayer-arena-draft .icon-renren:before {
+  content: '\E90F';
+}
+.hearthstone #externalPlayer-arena-draft .icon-sina-weibo:before {
+  content: '\E910';
+}
+.hearthstone #externalPlayer-arena-draft .icon-paypal:before {
+  content: '\E911';
+}
+.hearthstone #externalPlayer-arena-draft .icon-picasa:before {
+  content: '\E912';
+}
+.hearthstone #externalPlayer-arena-draft .icon-soundcloud:before {
+  content: '\E913';
+}
+.hearthstone #externalPlayer-arena-draft .icon-mixi:before {
+  content: '\E914';
+}
+.hearthstone #externalPlayer-arena-draft .icon-behance:before {
+  content: '\E915';
+}
+.hearthstone #externalPlayer-arena-draft .icon-google-circles:before {
+  content: '\E916';
+}
+.hearthstone #externalPlayer-arena-draft .icon-vkontakte:before {
+  content: '\E917';
+}
+.hearthstone #externalPlayer-arena-draft .icon-smashing:before {
+  content: '\E918';
+}
+.hearthstone #externalPlayer-arena-draft .icon-sweden:before {
+  content: '\E919';
+}
+.hearthstone #externalPlayer-arena-draft .icon-db-shape:before {
+  content: '\E91A';
+}
+.hearthstone #externalPlayer-arena-draft .icon-logo-db:before {
+  content: '\E91B';
+}
+.hearthstone #externalPlayer-arena-draft table {
+  border-spacing: 0;
+  width: 100%;
+  border: 0;
+  border-collapse: separate;
+  font-size: 12px;
+  text-align: left;
+}
+.hearthstone #externalPlayer-arena-draft .table-striped tr:nth-child(even),
+.hearthstone #externalPlayer-arena-draft thead {
+  background-color: #f5f5f4;
+}
+.hearthstone #externalPlayer-arena-draft tbody {
+  background-color: #fff;
+}
+.hearthstone #externalPlayer-arena-draft .table-striped tr:active:nth-child(even),
+.hearthstone #externalPlayer-arena-draft tr:active {
+  color: #fff;
+  background-color: #116cd6;
+}
+.hearthstone #externalPlayer-arena-draft thead tr:active {
+  color: #333;
+  background-color: #f5f5f4;
+}
+.hearthstone #externalPlayer-arena-draft th {
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.hearthstone #externalPlayer-arena-draft td,
+.hearthstone #externalPlayer-arena-draft th {
+  padding: 2px 15px;
+}
+.hearthstone #externalPlayer-arena-draft td:last-child,
+.hearthstone #externalPlayer-arena-draft th:last-child {
+  border-right: 0;
+}
+.hearthstone #externalPlayer-arena-draft .tab-group {
+  margin-top: -1px;
+  display: flex;
+  border-top: 1px solid #989698;
+  border-bottom: 1px solid #989698;
+}
+.hearthstone #externalPlayer-arena-draft .tab-item {
+  flex: 1;
+  padding: 3px;
+  font-size: 12px;
+  text-align: center;
+  border-left: 1px solid #989698;
+  background-color: #b8b6b8;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b8b6b8), color-stop(100%, #b0aeb0));
+  background-image: -webkit-linear-gradient(top, #b8b6b8 0, #b0aeb0 100%);
+  background-image: linear-gradient(to bottom, #b8b6b8 0, #b0aeb0 100%);
+}
+.hearthstone #externalPlayer-arena-draft .tab-item:first-child {
+  border-left: 0;
+}
+.hearthstone #externalPlayer-arena-draft .tab-item.active {
+  background-color: #d4d2d4;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d4d2d4), color-stop(100%, #cccacc));
+  background-image: -webkit-linear-gradient(top, #d4d2d4 0, #cccacc 100%);
+  background-image: linear-gradient(to bottom, #d4d2d4 0, #cccacc 100%);
+}
+.hearthstone #externalPlayer-arena-draft .tab-item .icon-close-tab:hover,
+.hearthstone #externalPlayer-arena-draft .tab-item:after {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.hearthstone #externalPlayer-arena-draft .tab-item .icon-close-tab {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  line-height: 15px;
+  text-align: center;
+  color: #666;
+  opacity: 0;
+  transition: opacity 0.1s linear, background-color 0.1s linear;
+  border-radius: 3px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.hearthstone #externalPlayer-arena-draft .tab-item:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  opacity: 0;
+  transition: opacity .1s linear;
+  z-index: 1;
+}
+.hearthstone #externalPlayer-arena-draft .tab-item:hover .icon-close-tab,
+.hearthstone #externalPlayer-arena-draft .tab-item:hover:not(.active):after {
+  opacity: 1;
+}
+.hearthstone #externalPlayer-arena-draft .tab-item-fixed {
+  flex: none;
+  padding: 3px 10px;
+}
+.hearthstone #externalPlayer-arena-draft a {
+  text-decoration: none;
+  cursor: default;
+}
+.hearthstone #externalPlayer-arena-draft .fill {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+.hearthstone #externalPlayer-arena-draft .application {
+  display: flex;
+  flex-grow: 1;
+  min-height: 0;
+  min-width: 0;
+}
+.hearthstone #externalPlayer-arena-draft .arena-replay {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: stretch;
+  flex-grow: 1;
+  min-height: 0;
+  min-width: 0;
+  border: none;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #C3AA7D;
+}
+.hearthstone #externalPlayer-arena-draft .arena-replay.hero-selection {
+  background: url(images/hero-selection.jpg) top left no-repeat;
+  background-size: 100% 100%;
+}
+.hearthstone #externalPlayer-arena-draft .arena-replay.pick-selection {
+  background: url(images/pick-selection.jpg) top left no-repeat;
+  background-size: 100% 100%;
+}
+.hearthstone #externalPlayer-arena-draft .controls {
+  position: absolute;
+  bottom: 78px;
+  width: 150px;
+  left: 364px;
+  display: table;
+}
+.hearthstone #externalPlayer-arena-draft .controls .btn {
+  display: table-cell;
+}
+.hearthstone #externalPlayer-arena-draft .controls .pick-status {
+  display: table-cell;
+  color: black;
+}
+.hearthstone #externalPlayer-arena-draft .game-card {
+  width: 96px;
+  height: 143px;
+  background: url(../../image/cardback.jpg) top left no-repeat;
+  background-size: 96px auto;
+  display: block;
+  line-height: 95px;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+  transform: translate(0);
+}
+.hearthstone #externalPlayer-arena-draft .card--chosen {
+  opacity: 0.5;
+}
+.hearthstone #externalPlayer-arena-draft .hero-card {
+  text-align: center;
+  position: absolute;
+  border-radius: 0;
+  border-top-left-radius: 60% 70%;
+  border-top-right-radius: 60% 70%;
+  width: 116px;
+  height: 127px;
+  margin-right: 20px;
+  background-size: 203% auto !important;
+  background-position: -60px -47px !important;
+  bottom: 39px;
+  left: 52px;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve {
+  position: absolute;
+  width: 130px;
+  height: 87px;
+  bottom: 63px;
+  left: 213px;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve .mana {
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  width: 15px;
+  background: url(images/mana-curve.jpg) top left no-repeat;
+  background-size: 100% 100%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve .zero {
+  left: 0;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve .one {
+  left: 17px;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve .two {
+  left: 33px;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve .three {
+  left: 49px;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve .four {
+  left: 65px;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve .five {
+  left: 81px;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve .six {
+  left: 97px;
+}
+.hearthstone #externalPlayer-arena-draft .mana-curve .seven {
+  left: 113px;
+}
+.hearthstone #externalPlayer-arena-draft .pick-area {
+  width: 471px;
+  height: 287px;
+  position: relative;
+  top: 40px;
+  left: 40px;
+}
+.hearthstone #externalPlayer-arena-draft .pick {
+  text-align: center;
+  top: 81px;
+  left: 27px;
+  position: absolute;
+  width: 417px;
+  z-index: 25;
+}
+.hearthstone #externalPlayer-arena-draft .pick .game-card {
+  display: inline-block;
+  position: relative;
+  width: 139px;
+  height: 200px;
+  background-size: 100% auto;
+  bottom: 36px;
+  left: 5px;
+  margin-left: -4px;
+}
+.hearthstone #externalPlayer-arena-draft .pick .game-card:last-child {
+  margin-right: 0;
+}
+.hearthstone #externalPlayer-arena-draft .pick .picked {
+  height: 181px;
+  width: 129px;
+  position: absolute;
+  top: 23px;
+  color: green;
+  opacity: 0.7;
+  font-size: 3em;
+  line-height: 3em;
+  left: 0;
+}
+.hearthstone #externalPlayer-arena-draft .pick .hero-card {
+  width: 116px;
+  height: 127px;
+  margin-right: 20px;
+  background-size: 203% auto !important;
+  background-position: -60px -47px !important;
+  bottom: 0;
+  left: 0;
+}
+.hearthstone #externalPlayer-arena-draft .pick .hero-card .picked {
+  width: 116px;
+  height: 127px;
+  top: 0;
+}
+.hearthstone #externalPlayer-arena-draft .card-tooltip {
+  background-color: transparent;
+  padding: 0;
+  opacity: 1;
+  margin-left: -40px;
+  z-index: 10000;
+}
+.hearthstone #externalPlayer-arena-draft .card-tooltip:after {
+  border: none;
+}
+.hearthstone #externalPlayer-arena-draft .card-tooltip img {
+  height: 400px;
+}
+.hearthstone #externalPlayer-arena-draft .decklist {
+  position: absolute;
+  width: 146px;
+  right: 10px;
+  top: 34px;
+  bottom: 10px;
+  overflow: auto;
+}
+.hearthstone #externalPlayer-arena-draft .decklist::-webkit-scrollbar {
+  display: none;
+}
+.hearthstone #externalPlayer-arena-draft .decklist .decklist-card {
+  height: 24px;
+  width: 100%;
+  margin-top: 5px;
+  background: #303030;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px #000;
+  position: relative;
+}
+.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .cost {
+  height: 24px;
+}
+.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .name {
+  font-size: 14px;
+  height: 24px;
+  left: 26px;
+  line-height: 24px;
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  top: 0;
+  white-space: nowrap;
+  z-index: 2;
+  display: block;
+}
+.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .bg {
+  background-position: -65px -100px;
+  background-size: 255px auto;
+  width: 108px;
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .bg.number {
+  right: 19px;
+}
+.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .bg div {
+  background: linear-gradient(to right, #3d434f 0, rgba(61, 67, 79, 0.25) 50%, rgba(61, 67, 79, 0) 100%);
+  height: 100%;
+}
+.hearthstone #externalPlayer-arena-draft .decklist .decklist-card .count {
+  color: #ffe600;
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  height: 24px;
+  line-height: 24px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 19px;
+}

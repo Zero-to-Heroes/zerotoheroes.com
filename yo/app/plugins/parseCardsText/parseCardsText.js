@@ -60,6 +60,14 @@ var parseCardsText = {
 		return link;
 	},
 
+	buildFullCardImageUrl: function(card, lang) {
+		if (!card) return ''
+
+		lang = lang || parseCardsText.getLang()
+		var localizedImage = parseCardsText.localizeImage(card, lang)
+		return 'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + localizedImage
+	},
+
 	getLang: function() {
 		var lang;
 		try {

@@ -3,8 +3,6 @@ package com.coach.coaches;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
@@ -15,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.coach.core.notification.SlackNotifier;
+import com.coach.core.security.User;
 import com.coach.review.Review;
 import com.coach.review.Review.Sport;
 import com.coach.review.ReviewRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/coaches")
@@ -30,28 +31,40 @@ public class CoachesApiHandler {
 	@Autowired
 	SlackNotifier slackNotifier;
 
+	@Autowired
+	CoachRepositoryDao dao;
+
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<List<Coach>> getCoachesForReview(@PathVariable("reviewId") final String id) {
+	public @ResponseBody ResponseEntity<List<CoachInformation>> getCoachesForReview(
+			@PathVariable("reviewId") final String id) {
 		// log.debug("Retrieving coaches");
 		Review review = reviewRepo.findById(id);
-		if (review == null) return new ResponseEntity<List<Coach>>((List<Coach>) null, HttpStatus.NOT_FOUND);
+		if (review == null) { return new ResponseEntity<List<CoachInformation>>((List<CoachInformation>) null,
+				HttpStatus.NOT_FOUND); }
 
 		// log.debug("For review id: " + id);
 		Sport sport = review.getSport();
 		// log.debug("And sport " + sport + ".");
-		List<Coach> coaches = getAllCoachesForSport(sport);
+		List<CoachInformation> coaches = getAllCoachesForSport(sport);
 		// log.debug("Giving full list of coaches " + coaches);
-		return new ResponseEntity<List<Coach>>(coaches, HttpStatus.OK);
+		return new ResponseEntity<List<CoachInformation>>(coaches, HttpStatus.OK);
 	}
 
-	private List<Coach> getAllCoachesForSport(Sport sport) {
+	private List<CoachInformation> getAllCoachesForSport(Sport sport) {
 		// sport = StringUtils.trim(sport);
 		// log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
-		List<Coach> ret = new ArrayList<Coach>();
-		for (Coach coach : CoachRepository.allCoaches) {
+		List<CoachInformation> ret = new ArrayList<>();
+		for (Coach coach : CoachRepositoryDao.allCoaches) {
 			if (coach.getSport().equals(sport)) {
-				ret.add(coach);
+				CoachInformation coachInformation = coach.toCoachInformation();
+				ret.add(coachInformation);
 			}
+		}
+		for (User user : dao.getAllCoaches(sport)) {
+			CoachInformation coachInformation = user.getCoachInformation();
+			coachInformation.setName(user.getUsername());
+			coachInformation.setEmail(user.getEmail());
+			ret.add(coachInformation);
 		}
 		return ret;
 	}

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.coach.coaches.Coach;
-import com.coach.coaches.CoachRepository;
+import com.coach.coaches.CoachRepositoryDao;
 import com.coach.core.notification.EmailMessage;
 import com.coach.core.notification.EmailSender;
 import com.coach.core.notification.SlackNotifier;
@@ -43,7 +43,7 @@ public class PaymentApiHandler {
 		log.debug("Requesting payment");
 		Review review = reviewRepo.findById(reviewId);
 
-		Coach coach = CoachRepository.findById(coachId);
+		Coach coach = CoachRepositoryDao.findById(coachId);
 
 		log.info("requesting payment for review " + review + " by coach " + coach + ", requested by " + requesterEmail);
 		log.debug("Sending an email");

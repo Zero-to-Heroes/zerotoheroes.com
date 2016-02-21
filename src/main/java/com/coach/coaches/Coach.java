@@ -1,18 +1,19 @@
 package com.coach.coaches;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Singular;
-import lombok.ToString;
 
 import org.springframework.data.annotation.Id;
 
 import com.coach.review.Review.Sport;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.Singular;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -46,5 +47,28 @@ public class Coach {
 	private String tariff;
 	private String tariffDescription;
 	private boolean verified;
+
+	public CoachInformation toCoachInformation() {
+		CoachInformation info = new CoachInformation();
+
+		info.setSport(sport.getKey());
+		info.setEmail(email);
+
+		List<String> languages = new ArrayList<>();
+		for (Language lang : languagesSpoken) {
+			languages.add(lang.code);
+		}
+
+		info.setName(name);
+		info.setLanguagesSpoken(languages);
+		info.setLevel(level);
+		info.setDescription(description);
+		info.setPicture(picture);
+		info.setTariff(tariff);
+		info.setTariffDescription(tariffDescription);
+		info.setVerified(verified);
+
+		return info;
+	}
 
 }

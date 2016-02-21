@@ -136,7 +136,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			);
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
 				$scope.coaches = [];
+				// $log.debug('coaches', data)
 				for (var i = 0; i < data.length; i++) {
+					// $log.debug('initial coach text', data[i].description)
+					// $log.debug('marked coach text', marked(data[i].description))
+					data[i].description = marked(data[i].description)
+					data[i].tariffDescription = marked(data[i].tariffDescription)
 					$scope.coaches.push(data[i]);
 				};
 			});

@@ -5,20 +5,21 @@ import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Set;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.coach.coaches.CoachInformation;
 import com.coach.reputation.UserReputation;
 import com.coach.review.Review.Sport;
 import com.coach.user.Stats;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @SuppressWarnings("serial")
 @Getter
@@ -65,6 +66,8 @@ public class User implements UserDetails {
 	private boolean canEdit;
 	private boolean betaTester;
 
+	private CoachInformation coachInformation;
+
 	@Override
 	@JsonIgnore
 	public String getPassword() {
@@ -85,31 +88,23 @@ public class User implements UserDetails {
 	// Use Roles as external API
 	public Set<UserRole> getRoles() {
 		Set<UserRole> roles = EnumSet.noneOf(UserRole.class);
-		if (authorities != null) {
-			for (UserAuthority authority : authorities) {
-				roles.add(UserRole.valueOf(authority));
-			}
-		}
+		if (authorities != null) for (UserAuthority authority : authorities)
+			roles.add(UserRole.valueOf(authority));
 		return roles;
 	}
 
 	public void setRoles(Set<UserRole> roles) {
-		for (UserRole role : roles) {
+		for (UserRole role : roles)
 			grantRole(role);
-		}
 	}
 
 	public void grantRole(UserRole role) {
-		if (authorities == null) {
-			authorities = new HashSet<UserAuthority>();
-		}
+		if (authorities == null) authorities = new HashSet<UserAuthority>();
 		authorities.add(role.asAuthorityFor(this));
 	}
 
 	public void revokeRole(UserRole role) {
-		if (authorities != null) {
-			authorities.remove(role.asAuthorityFor(this));
-		}
+		if (authorities != null) authorities.remove(role.asAuthorityFor(this));
 	}
 
 	public boolean hasRole(UserRole role) {

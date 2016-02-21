@@ -20,7 +20,7 @@
 					<tbody>
 						<tr ng-repeat="coach in coaches">
 							<td class="vert-align text-nowrap">
-								<span class="wide-span">{{coach.name}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="{{ 'global.askPro.verifiedInfo' | translate }}"></span>
+								<span class="wide-span">{{coach.name}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html" ng-hide="!coach.description"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="{{ 'global.askPro.verifiedInfo' | translate }}"></span>
 							</td>
 							<td class="vert-align">
 								<span ng-repeat="language in coach.languagesSpoken" class="lang-sm language" lang="{{language}}"></span>

@@ -11,16 +11,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 import org.springframework.data.annotation.Transient;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
 import com.coach.reputation.Reputation;
 import com.coach.review.Review.Sport;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -30,7 +30,7 @@ public class Comment implements HasText, HasReputation {
 	private String id;
 	private String author, authorId, text;
 	private int authorReputation;
-	private String authorFrame;
+	private String authorFrame, authorStatus;
 	private Date creationDate;
 	private boolean helpful;
 	private List<Comment> comments;
@@ -51,14 +51,16 @@ public class Comment implements HasText, HasReputation {
 	}
 
 	public void addComment(Comment reply) {
-		if (comments == null) comments = new ArrayList<>();
+		if (comments == null) {
+			comments = new ArrayList<>();
+		}
 		comments.add(reply);
 		sortComments();
 	}
 
 	public void sortComments() {
 		// For now, simply sort them by date
-		if (comments == null) return;
+		if (comments == null) { return; }
 
 		Collections.sort(comments, new Comparator<Comment>() {
 			@Override
@@ -81,12 +83,12 @@ public class Comment implements HasText, HasReputation {
 	}
 
 	public Comment getComment(int commentId) {
-		if (comments == null) return null;
+		if (comments == null) { return null; }
 
 		for (Comment comment : comments) {
 			if (comment.getId() != null && comment.getId().equals(String.valueOf(commentId))) { return comment; }
 			Comment found = comment.getComment(commentId);
-			if (found != null) return found;
+			if (found != null) { return found; }
 
 		}
 		return null;
@@ -130,7 +132,9 @@ public class Comment implements HasText, HasReputation {
 
 	public Collection<? extends String> getAuthorIds() {
 		Set<String> authorIds = new HashSet<>();
-		if (!StringUtils.isNullOrEmpty(authorId)) authorIds.add(authorId);
+		if (!StringUtils.isNullOrEmpty(authorId)) {
+			authorIds.add(authorId);
+		}
 		for (Comment comment : getComments()) {
 			authorIds.addAll(comment.getAuthorIds());
 		}
@@ -138,7 +142,9 @@ public class Comment implements HasText, HasReputation {
 	}
 
 	public List<Comment> getComments() {
-		if (comments == null) comments = new ArrayList<>();
+		if (comments == null) {
+			comments = new ArrayList<>();
+		}
 		return comments;
 	}
 
@@ -162,11 +168,13 @@ public class Comment implements HasText, HasReputation {
 	public void updateCommentsCount() {
 		totalComments = 0;
 		totalHelpfulComments = 0;
-		if (comments == null || comments.isEmpty()) return;
+		if (comments == null || comments.isEmpty()) { return; }
 
 		for (Comment comment : comments) {
 			totalComments++;
-			if (comment.isHelpful()) totalHelpfulComments++;
+			if (comment.isHelpful()) {
+				totalHelpfulComments++;
+			}
 
 			comment.updateCommentsCount();
 			totalComments += comment.getTotalComments();

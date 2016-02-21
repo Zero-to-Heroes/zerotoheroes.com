@@ -17,6 +17,17 @@
 
 .comment-author {
 	font-weight: bold;
+	margin-top: 37px;
+}
+
+.comment-author.coach:after {
+	content: "coach ✓";
+    font-weight: normal;
+    margin-left: 5px;
+    border: 1px solid grey;
+    padding: 2px 5px 2px 5px;
+    text-transform: uppercase;
+    font-size: 0.8em;
 }
 
 .author-information  .logged-author, .author-information  .logged-author:focus, .author-information  .logged-author:active {
@@ -42,10 +53,6 @@
 .reply-form {
 	margin-bottom: 15px;
 	padding-left: 0;
-}
-
-.comment-author {
-	margin-top: 37px;
 }
 
 .reputation {

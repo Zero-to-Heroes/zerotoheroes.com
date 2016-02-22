@@ -285,7 +285,7 @@
 					"replay": "HS Replay",
 					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/#nouveau-sur-un-ordinateur8211-fichier-replay\" target=\"_blank\">sur notre blog</a>",
 					"arenadraft": "Draft d'Arène",
-					"arenadraftDescription": "Postez votre draft d'Arène enregistré par le plugin <a href=\"https://github.com/rembound/Arena-Helper\">Arena Helper</a> de <a href=\"https://github.com/Epix37/Hearthstone-Deck-Tracker/releases\">Hearthstone Deck Tracker</a>"
+					"arenadraftDescription": "Postez votre draft d'Arène enregistré par le plugin <a href=\"https://github.com/rembound/Arena-Helper\">Arena Helper</a> de <a href=\"https://github.com/Epix37/Hearthstone-Deck-Tracker/releases\">Hearthstone Deck Tracker</a>. Tous les détails sur <a href=\"http://www.zerotoheroes.com/r/meta/56cb3580e4b01d5b988b6c24/hearthstone-posting-an-arena-draft\" target=\"_blank\">nos forums</a>."
 				}
 			},
 			"replay": {

@@ -3,7 +3,7 @@
 }
 
 .coach-description .tooltip-inner {
-  width: 400px;
+  	max-width: 300px;
 }
 
 .coach-description .media-object {

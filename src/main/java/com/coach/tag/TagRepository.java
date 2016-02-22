@@ -97,6 +97,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("Arena 10 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena 11 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena 12 wins", "skill-level"));
+		hearthstone.add(new Tag("Casual", "skill-level"));
+		hearthstone.add(new Tag("Brawl", "skill-level"));
 		// Decks
 		hearthstone.add(new Tag("Face Hunter"));
 		hearthstone.add(new Tag("Hunter Beast"));

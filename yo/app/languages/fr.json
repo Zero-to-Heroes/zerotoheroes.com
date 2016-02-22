@@ -416,7 +416,8 @@
 		"videowidemode": "Le lecteur vidéo peut être mis en \"mode large\" afin d'avoir une vidéo plus grande, en diminuant la place laissée aux commentaires",
 		"hsplayer_ui_1": "Le lecteur de replay de HearthStone a reçu quelques améliorations graphiques, et il est maintenant possible de voir le journal de l'activité de la partie en entier",
 		"own_video_1": "Vous pouvez voir la liste de tous les vidéos / replays que vous avez soumis",
-		"hs_arena_1": "Vous pouvez mettre en ligne le draft de votre Arène d'HearthStone pour recevoir des conseils sur vos picks!"
+		"hs_arena_1": "Vous pouvez mettre en ligne le draft de votre Arène d'HearthStone pour recevoir des conseils sur vos picks!",
+		"hsdecks_support": "Maintenant possible d'importer une decklist depuis hearthstone-decks.com"
 	},
 	"tags": {
 		"squash": {

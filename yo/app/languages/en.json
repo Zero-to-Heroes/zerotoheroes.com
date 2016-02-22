@@ -416,7 +416,8 @@
 		"videowidemode": "Video player can now be put in \"wide mode\", which increases the size of the video player and decreases the size of the comments column",
 		"hsplayer_ui_1": "HearthStone replay player has received a few graphical and gameplay improvements, and you can now access the full log of the game. Full details on the forums",
 		"own_video_1": "You can now see all the videos / replays you submitted",
-		"hs_arena_1": "Now possible to upload a HearthStone draft and have others advise you on your picks!"
+		"hs_arena_1": "Now possible to upload a HearthStone draft and have others advise you on your picks!",
+		"hsdecks_support": "Now possible import a decklist from hearthstone-decks.com"
 	},
 	"tags": {
 	},

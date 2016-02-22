@@ -1,14 +1,12 @@
 var parseDecks = {
 
 	decksRegex: /\[(http:\/\/www\.hearthpwn\.com\/decks\/).+?\]/gm,
+	hsDecksDecksRegex: /\[(http:\/\/www\.hearthstone-decks\.com\/deck\/voir\/).+?\]/gm,
 	
 	decks: {},
 
 	execute: function (review, text) {
 		var matches = text.match(parseDecks.decksRegex);
-		if (!matches) return text;
-		//console.log('parsing for decks', text);
-
 		var result = text;
 		//console.log('matches', matches);
 		if (matches) {
@@ -16,6 +14,30 @@ var parseDecks = {
 				//console.log('match', match);
 				var deckUrl = match.substring(1, match.length - 1);
 				var deckName = match.substring(32, match.length - 1);
+				//console.log('deck name', deckName);
+
+				var plugins = review.plugins.hearthstone;
+				if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
+					var strDeck = plugins.parseDecks[deckName];
+					var deck = JSON.parse(strDeck);
+					var htmlDeck = parseDecks.formatToHtml(deck);
+					// parseDecks.deck = htmlDeck;
+					//console.log('html deck is ', htmlDeck);
+					var deckNameForDisplay = deck.title;
+					parseDecks.decks[deckNameForDisplay] = htmlDeck;
+
+					result = result.replace(match, '<a class="deck-link" onclick="parseDecks.toggleDeck(\'' + deckNameForDisplay + '\')" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
+				}
+			})
+		}
+
+		matches = text.match(parseDecks.hsDecksDecksRegex);
+		//console.log('matches', matches);
+		if (matches) {
+			matches.forEach(function(match) {
+				//console.log('match', match);
+				var deckUrl = match.substring(1, match.length - 1);
+				var deckName = match.substring(44, match.length - 1);
 				//console.log('deck name', deckName);
 
 				var plugins = review.plugins.hearthstone;

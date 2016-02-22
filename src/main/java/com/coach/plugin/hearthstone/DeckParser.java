@@ -7,10 +7,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,13 +14,21 @@ import org.jsoup.select.Elements;
 
 import com.coach.plugin.Plugin;
 import com.coach.review.HasText;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class DeckParser implements Plugin {
 
-	private static final String DECK_ID_REGEX = "\\[(http:\\/\\/www\\.hearthpwn\\.com\\/decks\\/).+?\\]";
-	private static final String DECK_HOST_URL = "http://www.hearthpwn.com/decks/";
+	private static final String HPWN_DECK_ID_REGEX = "\\[(http:\\/\\/www\\.hearthpwn\\.com\\/decks\\/).+?\\]";
+	private static final String HPNW_DECK_HOST_URL = "http://www.hearthpwn.com/decks/";
+
+	private static final String HSDECKS_DECK_ID_REGEX = "\\[(http:\\/\\/www\\.hearthstone-decks\\.com\\/deck\\/voir/).+?\\]";
+	private static final String HSDECKS_DECK_HOST_URL = "http://www.hearthstone-decks.com/deck/voir/";
 
 	@Override
 	public String getName() {
@@ -33,18 +37,74 @@ public class DeckParser implements Plugin {
 
 	@Override
 	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws IOException {
-		// log.debug("Executing deckparser plugin");
+		log.debug("Executing deckparser plugin");
 
 		String initialText = textHolder.getText();
 
-		Pattern pattern = Pattern.compile(DECK_ID_REGEX, Pattern.MULTILINE);
+		parseHearthpwnDeck(pluginData, initialText);
+		parseHearthstoneDecksDeck(pluginData, initialText);
+		return initialText;
+	}
+
+	private void parseHearthstoneDecksDeck(Map<String, String> pluginData, String initialText)
+			throws IOException, JsonProcessingException {
+		Pattern pattern = Pattern.compile(HSDECKS_DECK_ID_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			String group = matcher.group();
+			log.debug("Found matching pattern: " + group);
+
+			String deckId = group.substring(44, group.length() - 1);
+			String deckUrl = HSDECKS_DECK_HOST_URL + deckId;
+			log.debug("Trying to scrape deck data for deck " + deckUrl);
+
+			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
+
+			Deck deck = new Deck();
+			deck.title = doc.select(".deck h1").text();
+
+			Elements classCards = doc.select("#liste_cartes #cartes_classe tbody tr");
+			Elements neutralCards = doc.select("#liste_cartes #cartes_neutre tbody tr");
+
+			for (Element element : classCards) {
+				// log.debug("Parsing class card " + element);
+				Elements qtyElement = element.select(".quantite");
+				// log.debug("\tQty " + qtyElement);
+				Elements cardElement = element.select(".zecha-popover a");
+				// log.debug("\tCard " + cardElement);
+				Card card = new Card(cardElement.attr("real_id"), qtyElement.text().trim());
+				// log.debug("\tBuilt card " + card);
+				deck.classCards.add(card);
+			}
+
+			for (Element element : neutralCards) {
+				// log.debug("Parsing class card " + element);
+				Elements qtyElement = element.select(".quantite");
+				// log.debug("\tQty " + qtyElement);
+				Elements cardElement = element.select(".zecha-popover a");
+				// log.debug("\tCard " + cardElement);
+				Card card = new Card(cardElement.attr("real_id"), qtyElement.text().trim());
+				// log.debug("\tBuilt card " + card);
+				deck.neutralCards.add(card);
+			}
+
+			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
+
+			log.debug("jsonDeck" + jsonDeck);
+			pluginData.put(deckId, jsonDeck);
+		}
+	}
+
+	private void parseHearthpwnDeck(Map<String, String> pluginData, String initialText)
+			throws IOException, JsonProcessingException {
+		Pattern pattern = Pattern.compile(HPWN_DECK_ID_REGEX, Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(initialText);
 		while (matcher.find()) {
 			String group = matcher.group();
 			// log.debug("Found matching pattern: " + group);
 
 			String deckId = group.substring(32, group.length() - 1);
-			String deckUrl = DECK_HOST_URL + deckId;
+			String deckUrl = HPNW_DECK_HOST_URL + deckId;
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
@@ -76,7 +136,6 @@ public class DeckParser implements Plugin {
 			log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
 		}
-		return initialText;
 	}
 
 	@Data

@@ -119,8 +119,7 @@
 			<div scrollable="{{useVideo}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">
 				
 				<div ng-show="selectedCoach">
-					<hr/>
-					<div class="alert alert-info">{{ 'global.review.comment.validateEdit' | translate:'{name: selectedCoach.name}' }}</div>
+					<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
 				</div>
 				<h3 class="comments-headline">{{ 'global.review.comment.commentsHeadline' | translate }}</h3>
 				<div class="comments-links">

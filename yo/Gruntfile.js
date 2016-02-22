@@ -400,17 +400,35 @@ module.exports = function (grunt) {
 	}
   });
 
-  grunt.registerTask('test', [
-	'clean:server',
-	'concurrent:test',
-	'autoprefixer',
-	'connect:test',
-	'karma'
-  ]);
+  	grunt.registerTask('test', [
+		'clean:server',
+		'concurrent:test',
+		'autoprefixer',
+		'connect:test',
+		'karma'
+  	]);
 
   	grunt.registerTask('build', [
 		'clean:dist',
 		'ngconstant:production',
+		'wiredep',
+		'useminPrepare',
+		'concurrent:dist',
+		'autoprefixer',
+		'concat',
+		'ngAnnotate',
+		'copy:dist',
+		'cdnify',
+		'uglify',
+		'cssmin',
+		'filerev',
+		'usemin',
+		'htmlmin'
+  	]);
+
+  	grunt.registerTask('build-dev', [
+		'clean:dist',
+		'ngconstant:development',
 		'wiredep',
 		'useminPrepare',
 		'concurrent:dist',

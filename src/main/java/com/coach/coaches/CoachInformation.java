@@ -1,5 +1,6 @@
 package com.coach.coaches;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,6 +15,7 @@ import lombok.ToString;
 @ToString
 public class CoachInformation {
 
+	private String id;
 	private String sport;
 	private String name;
 	@JsonIgnore
@@ -23,7 +25,7 @@ public class CoachInformation {
 	private String level;
 	private String description;
 	private String picture;
-	private String tariff;
-	private String tariffDescription;
+	private List<String> tariff = new ArrayList<>();
+	private List<String> tariffDescription = new ArrayList<>();
 	private boolean verified;
 }

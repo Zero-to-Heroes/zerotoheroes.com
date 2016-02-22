@@ -1,4 +1,4 @@
-<div class="modal" tabindex="-1" role="dialog">
+<div class="modal confirm-pro" tabindex="-1" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -6,8 +6,8 @@
 				<h4 class="modal-title">{{ 'global.askPro.confirmRequestTitle' | translate }}</h4>
 			</div>
 			<div class="modal-body">
-				<p translate="global.askPro.confirmInfo" translate-values="{name: '{{coach.name}}', tariff: '{{coach.tariff}}', conditions: '{{coach.tariffDescription}}' }"></p>
-				<form class="form-inline" ng-submit="selectCoach(coach, email); $hide();">
+				<p translate="global.askPro.confirmInfo" translate-values="{name: '{{coach.name}}', tariff: '{{coach.tariff[$index]}}', conditions: '{{coach.tariffDescription[$index]}}' }" class="recap-conditions"></p>
+				<form class="form-inline" ng-submit="selectCoach(coach, email, $index); $hide();">
 					<div class="form-group">
 				    	<div class="input-group">
 				      		<label class="sr-only" for="email">{{ 'global.general.email' | translate }}</label>

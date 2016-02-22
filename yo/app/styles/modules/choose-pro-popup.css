@@ -3,8 +3,7 @@
 }
 
 .coach-description .tooltip-inner {
-  min-width: 300px;
-  max-width: 600px;
+  width: 400px;
 }
 
 .coach-description .media-object {
@@ -26,4 +25,8 @@
 
 .modal-pro .language {
 	margin-right: 5px;
+}
+
+.confirm-pro .recap-conditions p {
+	margin-top: 20px;
 }

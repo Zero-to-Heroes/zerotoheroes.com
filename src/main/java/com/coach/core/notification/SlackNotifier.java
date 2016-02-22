@@ -3,23 +3,23 @@ package com.coach.core.notification;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 
-import lombok.extern.slf4j.Slf4j;
-import net.gpedro.integrations.slack.SlackApi;
-import net.gpedro.integrations.slack.SlackAttachment;
-import net.gpedro.integrations.slack.SlackMessage;
-
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.WebRequest;
 
-import com.coach.coaches.Coach;
+import com.coach.coaches.CoachInformation;
 import com.coach.core.security.User;
 import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.sequence.Sequence;
 import com.coach.subscription.HasSubscribers;
+
+import lombok.extern.slf4j.Slf4j;
+import net.gpedro.integrations.slack.SlackApi;
+import net.gpedro.integrations.slack.SlackAttachment;
+import net.gpedro.integrations.slack.SlackMessage;
 
 @Slf4j
 @Component
@@ -37,7 +37,7 @@ public class SlackNotifier {
 	}
 
 	public void notifyNewComment(final Review review, final Comment reply) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -61,7 +61,7 @@ public class SlackNotifier {
 	}
 
 	public void notifyNewReview(final Review review) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -86,7 +86,7 @@ public class SlackNotifier {
 	}
 
 	public void notifyCommentUpdate(final Review review, final Comment comment) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -110,7 +110,7 @@ public class SlackNotifier {
 	}
 
 	public void notifyReviewUpdatet(final Review review) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -134,7 +134,7 @@ public class SlackNotifier {
 	}
 
 	public void notifyNewUser(final User user) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -158,8 +158,9 @@ public class SlackNotifier {
 		});
 	}
 
-	public void notifyNewPaymentRequest(final Review review, final Coach coach, final String requesterEmail) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+	public void notifyNewPaymentRequest(final Review review, final CoachInformation coach, final String requesterEmail,
+			final int index) {
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -170,7 +171,8 @@ public class SlackNotifier {
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("good");
 				attach.setText(requesterEmail + " has requeted a review from " + coach.getName() + " for a tariff of "
-						+ coach.getTariff() + " with the following conditions " + coach.getTariffDescription());
+						+ coach.getTariff().get(index) + " with the following conditions "
+						+ coach.getTariffDescription().get(index));
 				attach.setFallback("placeholder fallback");
 
 				SlackMessage message = new SlackMessage();
@@ -184,7 +186,7 @@ public class SlackNotifier {
 	}
 
 	public void notifyNewSequence(final Sequence sequence) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -209,7 +211,7 @@ public class SlackNotifier {
 	}
 
 	public void notifyNewSubscriber(final HasSubscribers item, final User user) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -234,7 +236,7 @@ public class SlackNotifier {
 	}
 
 	public void notifyNewUnsubscriber(final HasSubscribers item, final User user) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -259,7 +261,7 @@ public class SlackNotifier {
 	}
 
 	public void notifyResetPassword(final User user) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override

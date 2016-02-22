@@ -168,9 +168,10 @@
 			"requestButton": "Request review",
 			"closeButton": "Close",
 			"confirmRequestTitle": "Confirm Request",
-			"confirmInfo" : "To confirm the request to {{name}} for {{tariff}} to review your video, please enter your email address below. What he said: \"{{conditions}}\"",
+			"confirmInfo" : "To confirm the request to {{name}} for {{tariff}} to review your video, please enter your email address below. What he said: \n\n {{conditions}}",
 			"confirmButton": "Confirm",
-			"closeButton": "Close"
+			"closeButton": "Close",
+			"proNotified": "{{name}} has been notified of your request. They will get back to you soon. Stay tuned!"
 		},
 		"forgotPassword": {
 			"headline": "Forgot your password?",
@@ -274,8 +275,7 @@
 				"replyButton": "Reply"
 			},
 			"askProButton": "Ask a Pro",
-			"askProTooltip": "Get professional advice on your video",
-			"proNotified": "{{name}} has been notified of your request. They will get back to you soon. Stay tuned!"
+			"askProTooltip": "Get professional advice on your video"
 		},
 		"upload": {
 			"choice": {

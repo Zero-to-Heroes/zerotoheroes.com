@@ -141,7 +141,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// $log.debug('initial coach text', data[i].description)
 					// $log.debug('marked coach text', marked(data[i].description))
 					data[i].description = marked(data[i].description)
-					data[i].tariffDescription = marked(data[i].tariffDescription)
+					$log.debug('handling coach info', data[i])
+					if (data[i].tariffDescription) {
+						for (var j = 0; j < data[i].tariffDescription.length; j++) {
+							data[i].tariffDescription[j] = marked(data[i].tariffDescription[j])
+						}
+					}
+					data[i].level = marked(data[i].level)
+					$log.debug('\tHandled', data[i])
 					$scope.coaches.push(data[i]);
 				};
 			});
@@ -606,10 +613,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Coach
 		//===============
-		$scope.selectCoach = function (coach, email) {
+		$scope.selectCoach = function (coach, email, selectedIndex) {
 			$scope.hideProModal();
 			//$log.log(email);
-			Api.Payment.save({reviewId: $routeParams.reviewId, coachId: coach.id, email: email}, function(data) {
+			var params = {reviewId: $routeParams.reviewId, coachId: coach.id, email: email, tariffId: selectedIndex}
+			Api.Payment.save(params, function(data) {
 				$scope.selectedCoach = coach;
 			});
 		};

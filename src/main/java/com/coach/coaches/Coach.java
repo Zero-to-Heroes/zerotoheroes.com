@@ -1,6 +1,7 @@
 package com.coach.coaches;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -51,6 +52,7 @@ public class Coach {
 	public CoachInformation toCoachInformation() {
 		CoachInformation info = new CoachInformation();
 
+		info.setId(id);
 		info.setSport(sport.getKey());
 		info.setEmail(email);
 
@@ -64,8 +66,8 @@ public class Coach {
 		info.setLevel(level);
 		info.setDescription(description);
 		info.setPicture(picture);
-		info.setTariff(tariff);
-		info.setTariffDescription(tariffDescription);
+		info.setTariff(Arrays.asList(tariff));
+		info.setTariffDescription(Arrays.asList(tariffDescription));
 		info.setVerified(verified);
 
 		return info;

@@ -53,7 +53,7 @@ public class CoachRepositoryDao {
 		coaches.add(coach);
 
 		// HearthStone
-		coaches.add(buildChris());
+		// coaches.add(buildChris());
 		// Heroes of the Storm
 		coaches.add(buildAndrew());
 
@@ -101,21 +101,36 @@ public class CoachRepositoryDao {
 				.verified(true).build();
 	}
 
-	private static Coach buildChris() {
-		return Coach.builder().id("2").description("6 time legend with 5 tournament top 8's")
-				.email("cshawver18@yahoo.com").languagesSpoken(Arrays.asList(new Language[] { English }))
-				.level("Legend").name("Chris Shawver").picture("default_coach_HS.jpg").sport(HearthStone).tariff("$5")
-				.tariffDescription("I will review in details the three biggest mistakes of the video").verified(true)
-				.build();
-	}
+	// private static Coach buildChris() {
+	// return Coach.builder().id("2").description("6 time legend with 5
+	// tournament top 8's")
+	// .email("cshawver18@yahoo.com").languagesSpoken(Arrays.asList(new
+	// Language[] { English }))
+	// .level("Legend").name("Chris
+	// Shawver").picture("default_coach_HS.jpg").sport(HearthStone).tariff("$5")
+	// .tariffDescription("I will review in details the three biggest mistakes
+	// of the video").verified(true)
+	// .build();
+	// }
 
-	public static Coach findById(String coachId) {
-		Coach ret = null;
+	public CoachInformation findById(String coachId) {
+		CoachInformation ret = null;
 		for (Coach coach : allCoaches) {
 			if (coach.getId().equals(coachId)) {
-				ret = coach;
+				ret = coach.toCoachInformation();
 				break;
 			}
+		}
+		if (ret == null) {
+			User coach = repo.findOne(coachId);
+			ret = coach.getCoachInformation();
+			if (ret.getName() == null) {
+				ret.setName(coach.getUsername());
+			}
+			if (ret.getEmail() == null) {
+				ret.setEmail(coach.getEmail());
+			}
+			ret.setId(coachId);
 		}
 		return ret;
 	}

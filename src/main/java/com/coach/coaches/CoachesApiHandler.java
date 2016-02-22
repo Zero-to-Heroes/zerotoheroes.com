@@ -62,8 +62,13 @@ public class CoachesApiHandler {
 		}
 		for (User user : dao.getAllCoaches(sport)) {
 			CoachInformation coachInformation = user.getCoachInformation();
-			coachInformation.setName(user.getUsername());
-			coachInformation.setEmail(user.getEmail());
+			if (coachInformation.getName() == null) {
+				coachInformation.setName(user.getUsername());
+			}
+			if (coachInformation.getEmail() == null) {
+				coachInformation.setEmail(user.getEmail());
+			}
+			coachInformation.setId(user.getId());
 			ret.add(coachInformation);
 		}
 		return ret;

@@ -201,6 +201,10 @@
 	z-index: 1;
 }
 
+.hearthstone .modal-dialog.modal-pro {
+	width: 800px;
+}
+
 .hearthstone .modal-header {
 	background: url(images/panel-header.jpg);
 	color: #fff;

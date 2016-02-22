@@ -168,8 +168,9 @@
 			"requestButton": "Envoyer la requête",
 			"closeButton": "Fermer",
 			"confirmRequestTitle": "Confirmer la requête",
-			"confirmInfo" : "Pour confirmer la requête à {{name}} pour {{tariff}} pour analyser votre vidéo, veuillez entrer votre adresse mail ci-dessous. Ce qu'il a dit: \"{{conditions}}\"",
-			"confirmButton": "Confirmer"
+			"confirmInfo" : "Pour confirmer la requête à {{name}} pour {{tariff}} pour analyser votre vidéo, veuillez entrer votre adresse mail ci-dessous. Ce qu'il a dit: \n\n {{conditions}}",
+			"confirmButton": "Confirmer",
+			"proNotified": "Nous avons notifié {{name}} de votre requête. Vous recevrez bientôt une confirmation par email :)"
 		},
 		"forgotPassword": {
 			"headline": "Vous avez oublié votre mot de passe ?", 
@@ -272,8 +273,7 @@
 				"replyButton": "Répondre"
 			},
 			"askProButton": "Demander à un Pro",
-			"askProTooltip": "Recevez l'avis d'un professionnel sur votre vidéo",
-			"proNotified": "Nous avons notifié {{name}} de votre requête. Vous recevrez bientôt une confirmation par email :)"
+			"askProTooltip": "Recevez l'avis d'un professionnel sur votre vidéo"
 		},
 		"upload": {
 			"choice": {

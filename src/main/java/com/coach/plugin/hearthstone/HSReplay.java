@@ -84,7 +84,9 @@ public class HSReplay implements ReplayPlugin {
 
 		}
 		// Simply store the temporary XML to the final destination
-		else if ("text/xml".equals(review.getFileType())) xml = s3utils.readFromS3(review.getTemporaryKey());
+		else if ("text/xml".equals(review.getFileType())) {
+			xml = s3utils.readFromS3(review.getTemporaryKey());
+		}
 		log.debug("XML created");
 
 		// Store the new file to S3 and update the review with the correct key
@@ -93,7 +95,7 @@ public class HSReplay implements ReplayPlugin {
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
 		log.debug("Review updated with proper key " + review);
-		review.setTemporaryKey(null);
+		// review.setTemporaryKey(null);
 		review.setTranscodingDone(true);
 		repo.save(review);
 	}
@@ -105,8 +107,9 @@ public class HSReplay implements ReplayPlugin {
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		try {
 			String line;
-			while ((line = reader.readLine()) != null)
+			while ((line = reader.readLine()) != null) {
 				fileContents.append(line + System.lineSeparator());
+			}
 		}
 		finally {
 			reader.close();

@@ -47,7 +47,7 @@ public class HSArenaDraft implements ReplayPlugin {
 		s3utils.putToS3(replayJson, review.getKey(), "application/json");
 
 		log.debug("Review updated with proper key " + review);
-		review.setTemporaryKey(null);
+		// review.setTemporaryKey(null);
 		review.setTranscodingDone(true);
 		repo.save(review);
 	}

@@ -107,6 +107,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data);
 							$scope.pluginsReady = true;
 							$log.debug('externalPlayer', data.replay, $scope.externalPlayer);
+						}).
+						fail(function(error) {
+							$log.error('Could not load external data', data)
+							$scope.pluginsReady = true;
 						})
 						// });
 					}
@@ -141,14 +145,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// $log.debug('initial coach text', data[i].description)
 					// $log.debug('marked coach text', marked(data[i].description))
 					data[i].description = marked(data[i].description)
-					$log.debug('handling coach info', data[i])
+					// $log.debug('handling coach info', data[i])
 					if (data[i].tariffDescription) {
 						for (var j = 0; j < data[i].tariffDescription.length; j++) {
 							data[i].tariffDescription[j] = marked(data[i].tariffDescription[j])
 						}
 					}
 					data[i].level = marked(data[i].level)
-					$log.debug('\tHandled', data[i])
+					// $log.debug('\tHandled', data[i])
 					$scope.coaches.push(data[i]);
 				};
 			});

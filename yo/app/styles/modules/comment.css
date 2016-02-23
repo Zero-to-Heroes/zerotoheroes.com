@@ -20,7 +20,7 @@
 	margin-top: 37px;
 }
 
-.comment-author.coach:after {
+.comment-author .coach:after {
 	content: "coach ✓";
     font-weight: normal;
     margin-left: 5px;

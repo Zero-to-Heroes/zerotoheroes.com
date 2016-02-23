@@ -2,8 +2,6 @@ package com.coach.user;
 
 import java.util.UUID;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +19,8 @@ import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserRole;
 import com.coach.review.EmailNotifier;
+
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping(value = "/api/users")
@@ -120,24 +120,34 @@ public class UserApiHandler {
 	}
 
 	@RequestMapping(value = "/{identifier}", method = RequestMethod.POST)
-	public ResponseEntity<User> updateUser(@RequestBody final User userInput) {
+	public ResponseEntity<User> updateUser(@PathVariable("identifier") String identifier,
+			@RequestBody final User userInput) {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		log.debug("Retrieving user by " + currentUser);
+		log.debug("Retrieving user by " + identifier);
 
 		User user = null;
-		if (StringUtils.isNullOrEmpty(currentUser)) {
+		if (StringUtils.isNullOrEmpty(identifier)) {
 			log.debug("No identifier provided, returning 406");
 			return new ResponseEntity<User>(user, HttpStatus.NOT_ACCEPTABLE);
 		}
 		if (currentUser.contains("@")) {
-			user = userRepository.findByEmail(currentUser);
+			user = userRepository.findByEmail(identifier);
 		}
 		else {
-			user = userRepository.findByUsername(currentUser);
+			user = userRepository.findByUsername(identifier);
 		}
 		log.debug("Loaded user " + user);
 
-		user.setPreferredLanguage(userInput.getPreferredLanguage());
+		// Make sure you're authorized
+		if (!currentUser.equals(user.getUsername())
+				&& !user.canEdit()) { return new ResponseEntity<User>((User) null, HttpStatus.UNAUTHORIZED); }
+
+		if (userInput.getPreferredLanguage() != null) {
+			user.setPreferredLanguage(userInput.getPreferredLanguage());
+		}
+		if (userInput.getCoachInformation() != null) {
+			user.setCoachInformation(userInput.getCoachInformation());
+		}
 
 		userRepository.save(user);
 		log.debug("Updated user: " + user);

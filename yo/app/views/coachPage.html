@@ -1,0 +1,32 @@
+<view-title>{{'Coach - ' + coach.username + ' - ' + sport}}</view-title>
+
+<div class="background-white coach-page">
+	<h1>Coach information - {{coach.username}} <a ng-click="startEditing()" class="link-minor" ng-show="canEdit() && !editing"> ({{ 'global.review.comment.edit' | translate }})</a></h1>
+	<div class="row summary-container">
+		<img class="avatar" src="images/coaches/{{coach.coachInformation.picture}}" />
+		<div class="coach-recap">
+			<h2>{{coach.username}}</h2>
+			<div class="vert-align">
+				<span class="language-label">{{ 'global.coach.languages' | translate }}</span>
+				<span ng-repeat="language in coach.coachInformation.languagesSpoken" class="lang-sm language" lang="{{language}}"></span>
+			</div>
+			<!-- Summary description -->
+			<div>
+				<span class="summary">{{ 'global.coach.summary' | translate }}</span>
+				<span compilecontent content="description" class="description" ng-hide="editing"></span>
+				<div ng-show="editing" class="description-editing">
+					<textarea class="form-control" ng-model="coach.coachInformation.description" auto-grow></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Full description -->
+	<div class="full-description" compilecontent content="fullDescription" ng-hide="editing"></div>
+	<div ng-show="editing" class="full-description-editing">
+		<textarea class="form-control" ng-model="coach.coachInformation.fullDescription" auto-grow></textarea>
+		<div class="text-left comment-reply-buttons">
+			<button ng-click="update()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
+			<button ng-click="cancelUpdate()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
+		</div>
+	</div>
+</div>

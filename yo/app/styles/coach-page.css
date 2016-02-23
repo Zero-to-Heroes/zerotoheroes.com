@@ -1,0 +1,65 @@
+.coach-page	{
+	padding-bottom: 50px;
+}
+
+.coach-page h1 {
+	text-align: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.coach-page .summary-container {
+    /*margin-bottom: 50px;*/
+}
+
+.coach-page .avatar {
+	width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.coach-page .coach-recap {
+	display: inline-block;
+    width: calc(100% - 550px);
+    vertical-align: top;
+}
+
+.coach-page .coach-recap h2 {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.coach-page .language {
+	margin-left: 10px;
+}
+
+.coach-page .summary {
+	font-weight: bold;
+	margin-top: 15px;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.coach-page .description-editing {
+	margin-top: 50px;
+	margin-left: 35px;
+	margin-right: 35px;
+}
+
+.coach-page .description {
+	display: inline-block;
+}
+
+.coach-page .full-description-editing {
+	margin-top: 50px;
+	margin-left: 35px;
+	margin-right: 35px;
+}
+
+.coach-page .full-description {
+	margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    padding-left: 35px;
+    padding-right: 35px;
+}

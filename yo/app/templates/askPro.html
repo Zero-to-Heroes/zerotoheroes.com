@@ -6,7 +6,6 @@
 				<h4 class="modal-title">{{ 'global.askPro.headline' | translate }}</h4>
 			</div>
 			<div class="modal-body .table-responsive">
-				
 				<table class="table coaches-table">
 					<caption translate="global.askPro.tableCaption"></caption>
 					<thead>
@@ -19,8 +18,10 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="coach in coaches">
-						²
-							<td class="vert-align text-nowrap">
+							<td class="vert-align text-nowrap" ng-show="coach.published">
+								<a class="wide-span" href="{{'/coach/' + coach.username + '/' + sport}}">{{coach.name}}</a><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html" ng-hide="!coach.description"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="{{ 'global.askPro.verifiedInfo' | translate }}"></span>
+							</td>
+							<td class="vert-align text-nowrap" ng-hide="coach.published">
 								<span class="wide-span">{{coach.name}}</span><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html" ng-hide="!coach.description"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="{{ 'global.askPro.verifiedInfo' | translate }}"></span>
 							</td>
 							<td class="vert-align">

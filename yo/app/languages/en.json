@@ -173,6 +173,10 @@
 			"closeButton": "Close",
 			"proNotified": "{{name}} has been notified of your request. They will get back to you soon. Stay tuned!"
 		},
+		"coach": {
+			"languages": "Languages spoken: ",
+			"summary": "Summary: "
+		},
 		"forgotPassword": {
 			"headline": "Forgot your password?",
 			"newPassword": "New password",
@@ -195,6 +199,7 @@
 			"signOut": "Sign out",
 			"signIn": "Sign in",
 			"showOwnVideos": "My videos",
+			"myCoach": "My Coach profile",
 			"createAccount": "Create account",
 			"noAccount": "If you don't have an account yet, please ",
 			"signUp": "sign up",

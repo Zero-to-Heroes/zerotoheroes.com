@@ -172,6 +172,10 @@
 			"confirmButton": "Confirmer",
 			"proNotified": "Nous avons notifié {{name}} de votre requête. Vous recevrez bientôt une confirmation par email :)"
 		},
+		"coach": {
+			"languages": "Langues parlées : ",
+			"summary": "Résumé: "
+		},
 		"forgotPassword": {
 			"headline": "Vous avez oublié votre mot de passe ?", 
 			"newPassword": "Nouveau mot de passe",
@@ -194,6 +198,7 @@
 			"signOut": "Déconnexion",
 			"signIn": "Connexion",
 			"showOwnVideos": "Mes vidéos",
+			"myCoach": "Mon profil de coach",
 			"createAccount": "Créer un compte",
 			"noAccount": "Si vous n'avez pas encore de compte, ",
 			"signUp": "créeez-en un",

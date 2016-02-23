@@ -68,6 +68,7 @@ public class CoachesApiHandler {
 			if (coachInformation.getEmail() == null) {
 				coachInformation.setEmail(user.getEmail());
 			}
+			coachInformation.setUsername(user.getUsername());
 			coachInformation.setId(user.getId());
 			ret.add(coachInformation);
 		}

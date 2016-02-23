@@ -122,6 +122,14 @@ app.config(['$routeProvider', '$locationProvider',
 			controller: 'VideoListingCtrl',
 			reloadOnSearch: false
 	  	}).
+	  	when('/c/:coachName/:sport', {
+			templateUrl: 'views/coachPage.html',
+			controller: 'CoachPageController'
+	  	}).
+	  	when('/coach/:coachName/:sport', {
+			templateUrl: 'views/coachPage.html',
+			controller: 'CoachPageController'
+	  	}).
 	  	otherwise({
 			redirectTo: '/'
 	  	});

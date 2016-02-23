@@ -18,14 +18,16 @@ public class CoachInformation {
 	private String id;
 	private String sport;
 	private String name;
+	private String username;
 	@JsonIgnore
 	private String email;
 	@Singular("languageSpoken")
 	private List<String> languagesSpoken;
 	private String level;
-	private String description;
+	private String description, fullDescription;
 	private String picture;
 	private List<String> tariff = new ArrayList<>();
 	private List<String> tariffDescription = new ArrayList<>();
 	private boolean verified;
+	private boolean published;
 }

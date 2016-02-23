@@ -24,6 +24,8 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 				$scope.User = User.getUser()
 				$scope.sport = $routeParams.sport
 
+				$log.debug('user', $scope.User)
+
 				var testDate = moment('2015-10-25 10:00:00')
 				if (!User.getLastLoginDate() || moment(User.getLastLoginDate()).isBefore(testDate)) {
 					$log.log('Fundamental modifications have been made and you need to log in again');
@@ -60,6 +62,11 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 
 			$scope.showOwnVideos = function() {
 				var path = '/s/' + $scope.sport + '/myVideos/'
+  	 			$location.path(path)
+			}
+
+			$scope.goToCoachProfile = function() {
+				var path = '/coach/' + $scope.User.username + '/' + $scope.sport
   	 			$location.path(path)
 			}
 

@@ -7,6 +7,7 @@
 			<li><a ng-click="changeLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
 			<li><a ng-click="changeLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
 			<li><a ng-click="showOwnVideos()" translate="{{ sport + '.user.showOwnVideos' }}" translate-default="{{ 'global.user.showOwnVideos' | translate }}"></a></li>
+			<li><a ng-click="goToCoachProfile()" translate="{{ sport + '.user.myCoach' }}" translate-default="{{ 'global.user.myCoach' | translate }}" ng-show="User.coachInformation"></a></li>
 		</ul>
 		<span bs-tooltip data-title="{{ 'global.user.reputationExplanation' | translate }}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation">{{User.reputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
 	</li>

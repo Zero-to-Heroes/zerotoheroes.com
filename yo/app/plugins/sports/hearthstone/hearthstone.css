@@ -588,6 +588,25 @@
 
 
 /* =============
+** Coach
+** =============*/
+
+.hearthstone .coach-page h1 {
+    color: white;
+}
+
+.hearthstone .coach-page .summary {
+	color: white;
+}
+
+.hearthstone .coach-page h1 .link-minor {
+	color: #888;
+	font-weight: normal;
+    font-size: 0.7em;
+}
+
+
+/* =============
 ** Smaller device
 ** =============*/
 

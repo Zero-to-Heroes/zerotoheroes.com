@@ -175,7 +175,8 @@
 		},
 		"coach": {
 			"languages": "Languages spoken: ",
-			"summary": "Summary: "
+			"summary": "Summary: ",
+			"goToPageTooltip": "Click to go to their Coach page"
 		},
 		"forgotPassword": {
 			"headline": "Forgot your password?",

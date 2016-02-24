@@ -3,7 +3,7 @@
 <div class="background-white coach-page">
 	<h1>Coach information - {{coach.username}} <a ng-click="startEditing()" class="link-minor" ng-show="canEdit() && !editing"> ({{ 'global.review.comment.edit' | translate }})</a></h1>
 	<div class="row summary-container">
-		<img class="avatar" src="images/coaches/{{coach.coachInformation.picture}}" />
+		<img class="avatar" src="https://s3.amazonaws.com/com.zerotoheroes/coach/{{coach.coachInformation.picture}}" />
 		<div class="coach-recap">
 			<h2>{{coach.username}}</h2>
 			<div class="vert-align">

@@ -138,9 +138,7 @@ public class CoachRepositoryDao {
 	public List<User> getAllCoaches(Sport sport) {
 
 		PageRequest pageRequest = new PageRequest(0, 50);
-		log.debug("Getting coaches  for " + sport.getKey());
 		Page<User> coaches = repo.listCoaches(sport.getKey().toLowerCase(), pageRequest);
-		log.debug("Coaches " + coaches.getContent());
 
 		return coaches.getContent();
 	}

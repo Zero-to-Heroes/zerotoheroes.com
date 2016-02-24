@@ -435,7 +435,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.showHelp = false;
 					$scope.newComment = {};
 					$scope.commentForm.$setPristine();
-					$scope.review.comments = data.comments;
+					$scope.review.comments = data.comments
 					$scope.review.reviewVideoMap = data.reviewVideoMap || {};
 		  			$scope.review.canvas = data.canvas;
 		  			$scope.review.subscribers = data.subscribers;

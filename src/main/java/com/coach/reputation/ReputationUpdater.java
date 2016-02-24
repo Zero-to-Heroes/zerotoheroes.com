@@ -45,38 +45,40 @@ public class ReputationUpdater {
 		if (action.equals(ReputationAction.Upvote)) {
 			if (isCurrentlyUpvoted) {
 				reputation.removeVote(ReputationAction.Upvote, userId);
-				changeAuthorReputation(sport, authorId, -1);
+				changeAuthorReputation(sport, authorId, userId, -1);
 			}
 			else if (isCurrentlyDownvoted) {
 				reputation.removeVote(ReputationAction.Downvote, userId);
-				changeAuthorReputation(sport, authorId, 1);
+				changeAuthorReputation(sport, authorId, userId, 1);
 			}
 			else {
 				reputation.addVote(action, userId);
-				changeAuthorReputation(sport, authorId, 1);
+				changeAuthorReputation(sport, authorId, userId, 1);
 			}
 		}
 		else if (action.equals(ReputationAction.Downvote)) {
 			if (isCurrentlyDownvoted) {
 				reputation.removeVote(ReputationAction.Downvote, userId);
-				changeAuthorReputation(sport, authorId, 1);
+				changeAuthorReputation(sport, authorId, userId, 1);
 			}
 			else if (isCurrentlyUpvoted) {
 				reputation.removeVote(ReputationAction.Upvote, userId);
-				changeAuthorReputation(sport, authorId, -1);
+				changeAuthorReputation(sport, authorId, userId, -1);
 			}
 			else {
 				reputation.addVote(action, userId);
-				changeAuthorReputation(sport, authorId, -1);
+				changeAuthorReputation(sport, authorId, userId, -1);
 			}
 		}
 	}
 
-	private void changeAuthorReputation(Sport sport, String authorId, int amount) {
-		User author = userRepo.findById(authorId);
-		if (author != null) {
-			author.modifyReputation(sport, amount);
-			mongoTemplate.save(author);
+	private void changeAuthorReputation(Sport sport, String authorId, String actionDoerId, int amount) {
+		if (!authorId.equals(actionDoerId)) {
+			User author = userRepo.findById(authorId);
+			if (author != null) {
+				author.modifyReputation(sport, amount);
+				mongoTemplate.save(author);
+			}
 		}
 	}
 

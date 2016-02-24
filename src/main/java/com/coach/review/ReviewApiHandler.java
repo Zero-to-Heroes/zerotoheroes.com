@@ -680,6 +680,6 @@ public class ReviewApiHandler {
 		// by default a poster likes his post
 		reputationUpdater.updateReputationAfterAction(sport, entity.getReputation(), ReputationAction.Upvote,
 				entity.getAuthorId(), user);
-		entity.setAuthorReputation(user.getReputation(sport) + 1);
+		entity.setAuthorReputation(user.getReputation(sport));
 	}
 }

@@ -51,12 +51,12 @@
 		<div ng-class="pluginNames">
 			<form class="container-fluid video-details" name="videoInformationForm">
 				<div class="row">
-					<div class="col-md-1 reputation">
+					<!--<div class="col-md-1 reputation">
 						<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': review.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="upvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.upvote' | translate }}"></span>
 						<span class="reputation-score glyphicon">{{review.reputation.nbVotes.Upvote - review.reputation.nbVotes.Downvote}}</span>
 						<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.downvote' | translate }}"></span>
-					</div>
-					<div class="col-md-11">
+					</div>-->
+					<div class="col-md-12">
 						<div class="row video-information-header">
 							<div class="col-md-11">
 								<h1 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h1>

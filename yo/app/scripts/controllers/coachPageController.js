@@ -41,6 +41,9 @@ angular.module('controllers').controller('CoachPageController', ['$scope', '$rou
 		}
 
 		$scope.updateCoachInfo = function(data) {
+			if (!data.coachInformation)
+				return
+			
 			$scope.coach = data
 
 			if (data.coachInformation.description)

@@ -1,13 +1,13 @@
 <table class="table table-comfy video-listing">
 	<tbody>
 		<tr ng-repeat="video in videos">
-			<td class="vert-align text-center reputation-cell">
+			<!--<td class="vert-align text-center reputation-cell">
 				<div class="reputation">
 					<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true" title="{{ 'global.listing.video.upvote' | translate }}"></span>
 					<span class="reputation-score glyphicon">{{video.reputation.nbVotes.Upvote - video.reputation.nbVotes.Downvote}}</span>
 					<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true" title="{{ 'global.listing.video.downvote' | translate }}"></span>
 				</div>
-			</td>
+			</td>-->
 			<td class="vert-align text-center video-info-details">
 				<div title="{{ 'global.listing.video.commentsTitle' | translate }}" class="icon-container">
 					<span><span class="stat-value">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment"></span></span>

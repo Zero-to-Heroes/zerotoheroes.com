@@ -53,8 +53,9 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		private String key, value;
 
 		public static Sport load(String sport) {
-			for (Sport temp : Review.Sport.values())
-				if (temp.getKey().equalsIgnoreCase(sport)) return temp;
+			for (Sport temp : Review.Sport.values()) {
+				if (temp.getKey().equalsIgnoreCase(sport)) { return temp; }
+			}
 			return null;
 		}
 	}
@@ -114,7 +115,9 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private Set<String> subscribers = new HashSet<>();
 
 	public void addComment(Comment comment) {
-		if (comments == null) comments = new ArrayList<>();
+		if (comments == null) {
+			comments = new ArrayList<>();
+		}
 		comment.setId(String.valueOf(++totalInsertedComments));
 		comments.add(comment);
 		sortComments();
@@ -122,7 +125,9 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@Override
 	public Reputation getReputation() {
-		if (reputation == null) reputation = new Reputation();
+		if (reputation == null) {
+			reputation = new Reputation();
+		}
 		return reputation;
 	}
 
@@ -146,19 +151,21 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public void setLanguage(String code) {
-		if (code != null && !code.isEmpty())
+		if (code != null && !code.isEmpty()) {
 			language = code;
-		else
+		}
+		else {
 			language = "en";
+		}
 	}
 
 	public Comment getComment(int commentId) {
-		if (comments == null) return null;
+		if (comments == null) { return null; }
 
 		for (Comment comment : comments) {
-			if (comment.getId() != null && comment.getId().equals(String.valueOf(commentId))) return comment;
+			if (comment.getId() != null && comment.getId().equals(String.valueOf(commentId))) { return comment; }
 			Comment found = comment.getComment(commentId);
-			if (found != null) return found;
+			if (found != null) { return found; }
 
 		}
 		return null;
@@ -166,26 +173,32 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	public void sortComments() {
 		// For now, simply sort them by date
-		if (comments == null) return;
+		if (comments == null) { return; }
 
 		Collections.sort(comments, new Comparator<Comment>() {
 			@Override
 			public int compare(Comment o1, Comment o2) {
-				if (o1.getReputation().getScore() != o2.getReputation().getScore())
+				if (o1.getReputation().getScore() != o2.getReputation().getScore()) {
 					return (int) (1000 * (o2.getReputation().getScore() - o1.getReputation().getScore()));
-				else if (o2.getCreationDate() == null)
+				}
+				else if (o2.getCreationDate() == null) {
 					return 1;
-				else
+				}
+				else {
 					return o2.getCreationDate().compareTo(o1.getCreationDate());
+				}
 			}
 		});
 
-		for (Comment comment : comments)
+		for (Comment comment : comments) {
 			comment.sortComments();
+		}
 	}
 
 	public void addExternalLink(String reviewId, String videoKey) {
-		if (reviewVideoMap == null) reviewVideoMap = new HashMap<>();
+		if (reviewVideoMap == null) {
+			reviewVideoMap = new HashMap<>();
+		}
 
 		reviewVideoMap.put(reviewId, videoKey);
 	}
@@ -193,8 +206,11 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public void prepareForDisplay(String userId) {
 		getReputation().modifyAccordingToUser(userId);
 		// comments
-		if (comments != null) for (Comment comment : comments)
-			comment.prepareForDisplay(userId);
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.prepareForDisplay(userId);
+			}
+		}
 	}
 
 	public void incrementViewCount() {
@@ -203,10 +219,15 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	public List<String> getAllAuthors() {
 		List<String> allAuthors = new ArrayList<>();
-		if (!StringUtils.isNullOrEmpty(authorId)) allAuthors.add(authorId);
+		if (!StringUtils.isNullOrEmpty(authorId)) {
+			allAuthors.add(authorId);
+		}
 
-		if (comments != null) for (Comment comment : comments)
-			comment.getAllAuthors(allAuthors);
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.getAllAuthors(allAuthors);
+			}
+		}
 
 		return allAuthors;
 	}
@@ -218,18 +239,25 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			authorFrame = author.getFrame();
 		}
 
-		if (comments != null) for (Comment comment : comments)
-			comment.normalizeUsers(sport, userMap);
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.normalizeUsers(sport, userMap);
+			}
+		}
 	}
 
 	public void addCanvas(String key, String newCanvas) {
-		if (canvas == null) canvas = new HashMap<>();
+		if (canvas == null) {
+			canvas = new HashMap<>();
+		}
 		canvas.put(key, newCanvas);
 		canvasId++;
 	}
 
 	public void removeCanvas(String canvasKey) {
-		if (canvas == null) canvas = new HashMap<>();
+		if (canvas == null) {
+			canvas = new HashMap<>();
+		}
 		canvas.remove(canvasKey);
 	}
 
@@ -261,14 +289,17 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		if (subscribers == null) {
 			subscribers = new HashSet<>();
 			addSubscriber(authorId);
-			for (Comment comment : getComments())
+			for (Comment comment : getComments()) {
 				subscribers.addAll(comment.getAuthorIds());
+			}
 		}
 		return subscribers;
 	}
 
 	public List<Comment> getComments() {
-		if (comments == null) comments = new ArrayList<>();
+		if (comments == null) {
+			comments = new ArrayList<>();
+		}
 		return comments;
 	}
 
@@ -283,12 +314,16 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@Override
 	public void addSubscriber(String subscriberId) {
-		if (!StringUtils.isNullOrEmpty(subscriberId)) getSubscribers().add(subscriberId);
+		if (!StringUtils.isNullOrEmpty(subscriberId)) {
+			getSubscribers().add(subscriberId);
+		}
 	}
 
 	@Override
 	public void removeSubscriber(String subscriberId) {
-		if (!StringUtils.isNullOrEmpty(subscriberId)) getSubscribers().remove(subscriberId);
+		if (!StringUtils.isNullOrEmpty(subscriberId)) {
+			getSubscribers().remove(subscriberId);
+		}
 	}
 
 	public String getUrl() {
@@ -325,15 +360,24 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public void updateFullTextSearch() {
 		fullTextSearchField = title == null ? "" : title.toLowerCase() + " ";
 		fullTextSearchField += description == null ? "" : description.toLowerCase();
-		for (Comment comment : getComments())
+		if (participantDetails != null) {
+			fullTextSearchField += " " + participantDetails.getPlayerName();
+			fullTextSearchField += " " + participantDetails.getPlayerCategory();
+			fullTextSearchField += " " + participantDetails.getOpponentName();
+			fullTextSearchField += " " + participantDetails.getOpponentName();
+		}
+
+		for (Comment comment : getComments()) {
 			fullTextSearchField += " " + comment.getFullText();
+		}
 	}
 
 	public boolean isSequence() {
-		if (tags == null || tags.isEmpty()) return false;
+		if (tags == null || tags.isEmpty()) { return false; }
 
-		for (Tag tag : tags)
-			if (tag.getText().equals("Sequence")) return true;
+		for (Tag tag : tags) {
+			if (tag.getText().equals("Sequence")) { return true; }
+		}
 
 		return false;
 	}
@@ -341,11 +385,13 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public void updateCommentsCount() {
 		totalComments = 0;
 		totalHelpfulComments = 0;
-		if (comments == null || comments.isEmpty()) return;
+		if (comments == null || comments.isEmpty()) { return; }
 
 		for (Comment comment : comments) {
 			totalComments++;
-			if (comment.isHelpful()) totalHelpfulComments++;
+			if (comment.isHelpful()) {
+				totalHelpfulComments++;
+			}
 
 			comment.updateCommentsCount();
 			totalComments += comment.getTotalComments();
@@ -355,7 +401,9 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public Sport getSport() {
-		if (sport == null) sport = Review.Sport.load(strSport);
+		if (sport == null) {
+			sport = Review.Sport.load(strSport);
+		}
 		return sport;
 	}
 }

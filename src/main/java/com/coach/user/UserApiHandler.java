@@ -42,11 +42,11 @@ public class UserApiHandler {
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<User> getLoggedInUser() {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		log.debug("Retrieving user by " + currentUser);
+		// log.debug("Retrieving user by " + currentUser);
 
 		User user = null;
 		if (StringUtils.isNullOrEmpty(currentUser)) {
-			log.debug("No identifier provided, returning 406");
+			// log.debug("No identifier provided, returning 406");
 			return new ResponseEntity<User>(user, HttpStatus.NOT_ACCEPTABLE);
 		}
 		if (currentUser.contains("@")) {
@@ -55,10 +55,10 @@ public class UserApiHandler {
 		else {
 			user = userRepository.findByUsername(currentUser);
 		}
-		log.debug("Loaded user " + user);
+		// log.debug("Loaded user " + user);
 
 		if (user == null) {
-			log.debug("Returning 404");
+			// log.debug("Returning 404");
 			return new ResponseEntity<User>(user, HttpStatus.NOT_FOUND);
 		}
 
@@ -67,7 +67,7 @@ public class UserApiHandler {
 
 	@RequestMapping(value = "/{identifier}", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<User> getUserByIdentifier(@PathVariable("identifier") String identifier) {
-		log.debug("Retrieving user by " + identifier);
+		// log.debug("Retrieving user by " + identifier);
 
 		User user = null;
 		if (StringUtils.isNullOrEmpty(identifier)) {
@@ -80,7 +80,7 @@ public class UserApiHandler {
 		else {
 			user = userRepository.findByUsername(identifier);
 		}
-		log.debug("Loaded user " + user);
+		// log.debug("Loaded user " + user);
 
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}

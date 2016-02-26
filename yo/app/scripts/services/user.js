@@ -10,6 +10,9 @@ services.factory('User', ['$window', '$log', 'Api', 'Localization', 'localStorag
 				var localUser = localStorage.getItem('user');
 				return (localUser && JSON.parse(localUser) ? JSON.parse(localUser) : {});
 			},
+			clear: function() {
+				localStorage.deleteItem('user')
+			},
 			getName: function () {
 				var localUser = localStorage.getItem('user');
 				return (localUser && JSON.parse(localUser).username ? JSON.parse(localUser).username : undefined);

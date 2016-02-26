@@ -19,20 +19,22 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 			
 			$scope.refresh = function() {
 
-				Api.Users.get( 
-					function(data) {
-						$log.debug('retrieved user', data)
-						User.setUser(data)
-					}
-				)
+				// Only refresh if we're logger in
+				$log.debug('refreshing', User, User.isLoggedIn())
+				if (User.isLoggedIn()) {
+					Api.Users.get( 
+						function(data) {
+							$log.debug('retrieved user', data)
+							User.setUser(data)
+						}
+					)
+				}
 
 				//$log.log('Refreshing user');
 				$scope.name = User.getName()
 				$scope.loggedIn = User.isLoggedIn()
 				$scope.User = User.getUser()
 				$scope.sport = $routeParams.sport
-
-				$log.debug('user', $scope.User)
 
 				var testDate = moment('2015-10-25 10:00:00')
 				if (!User.getLastLoginDate() || moment(User.getLastLoginDate()).isBefore(testDate)) {
@@ -64,6 +66,7 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 
 			$scope.signOut = function() {
 				AuthenticationService.clearCredentials();
+				User.clear()
 				$scope.name = User.getName();
 				$scope.loggedIn = User.isLoggedIn();
 			}

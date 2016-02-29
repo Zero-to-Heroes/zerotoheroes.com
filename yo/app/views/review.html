@@ -158,8 +158,8 @@
 									</div>
 								</div>
 							</div>
-							<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 						</div>
+						<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 					</div>
 				</form>
 				<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" timestamp-click-action="goToTimestamp" prepare-canvas-for-upload="prepareCanvasForUpload" clear-temporary-canvas="clearTemporaryCanvas" canvas-state="canvasState" plugins="plugins" config="config"></comment>

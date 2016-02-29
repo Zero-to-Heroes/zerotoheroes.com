@@ -1,16 +1,4 @@
-<div class="formatting-help">
-	<p translate="{{ 'global.formattingHelp.markdownText' }}"></p>
-	<div>
-		<p>{{ 'global.formattingHelp.advancedIntro' | translate }}
-			<ul>
-				<li ng-show="review.sport.key.toLowerCase() == 'hearthstone'" translate="{{ 'global.formattingHelp.hearthstoneCard' }}"></li>
-				<li ng-show="review.sport.key.toLowerCase() == 'hearthstone'" translate="{{ 'global.formattingHelp.hearthstoneDeck' }}"></li>
-				<li translate="{{ 'global.formattingHelp.timestamp' }}"></li>
-				<li translate="{{ 'global.formattingHelp.slow' }}"></li>
-				<li translate="{{ 'global.formattingHelp.loop' }}"></li>
-				<li translate="{{ 'global.formattingHelp.drawing' }}"></li>
-				<li translate="{{ 'global.formattingHelp.comparison' }}"></li>
-			</ul>
-		</p>
-	</div>
+<div ng-switch="review.sport.key.toLowerCase()" class="formatting-help">
+	<hearthstone-help ng-switch-when="hearthstone" review="review"></hearthstone-help>
+	<generic-help ng-switch-default review="review"></generic-help>
 </div>

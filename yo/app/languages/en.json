@@ -187,13 +187,15 @@
 		"formattingHelp": {
 			"markdownText": "You can use <a href=\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\" target=\"_blank\">Markdow syntax</a> to format your text (bold, italics, paragraphs, etc)",
 			"advancedIntro": "Additionally, you can:",
-			"hearthstoneCard": "Add a link to a card name using <code>[[The Card Name]]</code>. This will create a hyperlink that will display the card on hover",
-			"hearthstoneDeck": "Add a link to a deck hosted on HearthPwn.com using <code>[http://www.hearthpwn.com/decks/your_deck_id]</code>. This will create a hyperlink that will display the cards list on hover",
 			"timestamp": "Use the <strong>timestamp icon <span class=\"glyphicon glyphicon-time\"></span></strong> to create a link to a specific moment in the video. You can freely adjust the timestamp figures to match exactly what you need",
 			"slow": "Use the <strong>slow motion icon <span class=\"glyphicon glyphicon-play\"></span><span class=\"glyphicon glyphicon-pause\" style=\"margin-left: -5px\"></span></strong> to create a timestamp and make the video play in slow motion once the user clicks on it. You can change how much the video is slowed by changing the <code>0.5</code> figure after the <code>s</code> (the lower, the slower the video)",
 			"loop": "Use the <strong>loop icon <span class=\"glyphicon glyphicon-repeat\"></span></strong> to create a slow motion link, and make a one-second-long sequence that repeats endlessly. You can change the duration of the loop by changing the value after the <code>L</code> (<code>L1.5</code> would mean a 1.5s loop)",
 			"drawing": "Use the <strong>drawing icon <span class=\"glyphicon glyphicon-picture\"></span></strong> to create a timestamp with a drawing. Once you click on the icon, you will enter <i>drawing mode</i>. Simply click and hold on the white canvas on the video to draw anything you like, and click again on the icon to save. If you don't like what you just drew, simply erase the <code>[tmp0]</code> part in the comment, and start again!",
-			"comparison": "Use the <strong>side-by-side video icon <span class=\"glyphicon glyphicon-facetime-video\"></span></strong> to create a sequence with side-by-side videos, to compare two clips to show a difference. You can of course combine it with the other tools provided above (by default a sequence is created with loop and slow motion)"
+			"comparison": "Use the <strong>side-by-side video icon <span class=\"glyphicon glyphicon-facetime-video\"></span></strong> to create a sequence with side-by-side videos, to compare two clips to show a difference. You can of course combine it with the other tools provided above (by default a sequence is created with loop and slow motion)",
+			"hearthstone": {
+				"card": "Add a link to a card name using <code>[[The Card Name]]</code>. This will create a hyperlink that will display the card on hover",
+				"deck": "Add a link to a deck hosted on hearthpwn.com or hearthstone-decks.com using <code>[your_deck_url]</code>. This will create a hyperlink that will display the cards list on hover"
+			}
 		},
 		"user": {
 			"reputationExplanation": "Your total reputation. You can increase it by giving useful advice to others",

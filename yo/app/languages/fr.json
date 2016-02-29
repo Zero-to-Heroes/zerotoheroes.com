@@ -186,13 +186,15 @@
 		"formattingHelp": {
 			"markdownText": "Vous pouvez utiliser la <a href=\"https://letchap.github.io/downloads/memo_markdown_letchap.pdf\" target=\"_blank\">syntaxe Markdown</a> pour formatter votre texte (mettre en gras, en italiques, etc)",
 			"advancedIntro": "Vous pouvez également : ",
-			"hearthstoneCard": "Ajouter un lien vers une carte en utilisant <code>[[Le Nom De La Carte]]</code>. Cela déclenchera l'auto-complétion, et vous permettra d'ajouter un lien qui affichera la carte lorsque vous laissez la souris dessus",
-			"hearthstoneDeck": "Ajouter un lien vers un deck hébergé sur HearthPwn.com en utilisant <code>[http://www.hearthpwn.com/decks/id_du_deck]</code>. Cela créera un lien qui affichera la liste de cartes au passage de la souris (et si vous avez besoin de decks hébergés ailleurs, dites-le nous sur les forums)",
 			"timestamp": "Utiliser l'<strong>icône de timestamp <span class=\"glyphicon glyphicon-time\"></span></strong> pour créer un lien vers un instant précis dans la vidéo. Vous pouvez ensuite librement ajuster l'instant pour avoir exactement ce que vous voulez",
 			"slow": "Utiliser l'<strong>icône de ralenti <span class=\"glyphicon glyphicon-play\"></span><span class=\"glyphicon glyphicon-pause\" style=\"margin-left: -5px\"></span></strong> pour créer un lien vers un instant et automatiquement jouer la viédo au ralenti lorsque l'utilisateur clique dessus. Vous pouvez modifier la vitesse de la vidéo en changeant le <code>0.5</code> après le <code>s</code> (plus il est bas, plus lente sera la vidéo)",
 			"loop": "Utiliser l'<strong>icône de boucle <span class=\"glyphicon glyphicon-repeat\"></span></strong> pour créer un lien au ralenti et une séquence d'une seconde qui se répète en boucle indéfiniment. Vous pouvez changer la durée de la boucle en modifiant la valeur après le <code>L</code> (<code>L1.5</code> signifie une boucle de 1.5s)",
 			"drawing": "Utiliser l'<strong>icône de dessin <span class=\"glyphicon glyphicon-picture\"></span></strong> pour créer un lien avec un dessin. Une fois que vous cliquez sur l'icône, vous entrez en <i>mode dessin</i>. Dessinez alors sur le canvas blanc avec la souris, et cliquez de nouveau sur l'icône pour sauvegarder. Si vous n'aimez pas le résultat, effacez simplement le <code>[tmp0]</code> du commentaire, et recommencez !",
-			"comparison": "Utiliser l'<strong>icône de comparaison <span class=\"glyphicon glyphicon-facetime-video\"></span></strong> pour créer une séquence avec deux vidéos côte-à-côte et mettre en évidence les différences. Vous pouvez bien sûr le combiner avec n'importe quel autre outil ci-dessus (par défaut une séquence est créée avec une boucle et un ralenti)"
+			"comparison": "Utiliser l'<strong>icône de comparaison <span class=\"glyphicon glyphicon-facetime-video\"></span></strong> pour créer une séquence avec deux vidéos côte-à-côte et mettre en évidence les différences. Vous pouvez bien sûr le combiner avec n'importe quel autre outil ci-dessus (par défaut une séquence est créée avec une boucle et un ralenti)",
+			"hearthstone": {
+				"card": "Ajouter un lien vers une carte en utilisant <code>[[Le Nom De La Carte]]</code>. Cela déclenchera l'auto-complétion, et vous permettra d'ajouter un lien qui affichera la carte lorsque vous laissez la souris dessus",
+				"deck": "Ajouter un lien vers un deck hébergé sur hearthpwn.com ou hearthstone-decks.com en utilisant <code>[url_de_votre_deck]</code>. Cela créera un lien qui affichera la liste de cartes au passage de la souris (et si vous avez besoin de decks hébergés ailleurs, dites-le nous sur les forums)",
+			}
 		},
 		"user": {
 			"reputationExplanation": "Votre réputation totale. Vous pouvez l'augmenter en donnant des conseils utiles aux autres joueurs",

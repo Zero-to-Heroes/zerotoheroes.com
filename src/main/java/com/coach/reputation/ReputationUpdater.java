@@ -73,7 +73,7 @@ public class ReputationUpdater {
 	}
 
 	private void changeAuthorReputation(Sport sport, String authorId, String actionDoerId, int amount) {
-		if (!authorId.equals(actionDoerId)) {
+		if (authorId != null && !authorId.equals(actionDoerId)) {
 			User author = userRepo.findById(authorId);
 			if (author != null) {
 				author.modifyReputation(sport, amount);

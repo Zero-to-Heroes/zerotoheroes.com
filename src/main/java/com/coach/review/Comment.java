@@ -182,4 +182,9 @@ public class Comment implements HasText, HasReputation {
 
 		}
 	}
+
+	public void setHelpful(boolean helpful) {
+		this.helpful = helpful;
+		reputation.setHelpful(helpful);
+	}
 }

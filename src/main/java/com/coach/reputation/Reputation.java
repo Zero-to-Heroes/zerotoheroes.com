@@ -5,13 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 import org.springframework.data.annotation.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -26,6 +26,8 @@ public class Reputation {
 
 	@Transient
 	private Map<ReputationAction, Boolean> hasCurrentUserVoted;
+
+	private boolean isHelpful;
 
 	private float score = -1;
 
@@ -72,19 +74,31 @@ public class Reputation {
 		int ups = userIds.get(ReputationAction.Upvote) != null ? userIds.get(ReputationAction.Upvote).size() : 0;
 		int downs = userIds.get(ReputationAction.Downvote) != null ? userIds.get(ReputationAction.Downvote).size() : 0;
 
-		if (ups == 0) return -downs;
+		if (isHelpful) {
+			ups += 3;
+		}
+
+		if (ups == 0) { return -downs; }
 
 		int n = ups + downs;
+
 		float z = 1.64485f; // 1.0 = 85%, 1.6 = 95%
 		float phat = Float.valueOf(ups) / n;
 
-		float bottomEstimate = (float) ((phat + z * z / (2 * n) - z
-				* Math.sqrt((phat * (1 - phat) + z * z / (4 * n)) / n)) / (1 + z * z / n));
+		float bottomEstimate = (float) ((phat + z * z / (2 * n)
+				- z * Math.sqrt((phat * (1 - phat) + z * z / (4 * n)) / n)) / (1 + z * z / n));
 		return bottomEstimate;
 	}
 
 	public float getScore() {
-		if (score == -1) updateScore();
+		if (score == -1) {
+			updateScore();
+		}
 		return score;
+	}
+
+	public void setHelpful(boolean helpful) {
+		isHelpful = helpful;
+		updateScore();
 	}
 }

@@ -1,11 +1,11 @@
 package com.coach.core;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Configuration
 @Slf4j
@@ -19,11 +19,10 @@ public class AllResources extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry
-				.addResourceHandler("/fonts/**", "/images/**", "/scripts/**", "/styles/**", "/templates/**",
-						"/views/**")
-				.addResourceLocations("/fonts/", "/images/", "/scripts/", "/styles/", "/templates/", "/views/")
-				.setCachePeriod(31556926);
+		registry.addResourceHandler("/fonts/**", "/images/**", "/scripts/**", "/styles/**")
+				.addResourceLocations("/fonts/", "/images/", "/scripts/", "/styles/").setCachePeriod(31556926);
+
+		registry.addResourceHandler("/templates/**", "/views/**").addResourceLocations("/templates/", "/views/");
 	}
 
 }

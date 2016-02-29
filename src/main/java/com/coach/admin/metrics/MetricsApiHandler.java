@@ -6,8 +6,6 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,12 +22,15 @@ import com.coach.sport.SportRepository;
 import com.coach.user.ResetPasswordRepository;
 import com.coach.user.UserRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping(value = "/api/admin/metrics")
 @Slf4j
 public class MetricsApiHandler {
 
-	private static List<String> excludedUserNames = Arrays.asList(new String[] { "Seb", "2StepsFr0mHell", "Tom" });
+	private static List<String> excludedUserNames = Arrays
+			.asList(new String[] { "Seb", "2StepsFr0mHell", "Tom", "Daedin" });
 
 	@Autowired
 	UserRepository userRepository;
@@ -56,11 +57,13 @@ public class MetricsApiHandler {
 			Date creationDate = review.getCreationDate();
 			if (creationDate != null && excludedUserNames.indexOf(review.getAuthor()) == -1) {
 				metrics.get(creationDate).incrementReviews();
+				metrics.get(creationDate).addUniqueContentCreator(review.getAuthor());
 			}
 			for (Comment comment : review.getAllComments()) {
 				Date commCreation = comment.getCreationDate();
 				if (commCreation != null && excludedUserNames.indexOf(comment.getAuthor()) == -1) {
 					metrics.get(commCreation).incrementComments();
+					metrics.get(creationDate).addUniqueContentCreator(comment.getAuthor());
 				}
 			}
 		}
@@ -95,12 +98,13 @@ public class MetricsApiHandler {
 
 		String result = "";
 
-		String header = "Week,Total interactions,Total reputation,Total video views";
+		String header = "Week,Unique content creators,Total interactions,Total reputation,Total video views";
 		result += header + "\r\n";
 
 		for (Metric metric : metrics.getMetrics()) {
-			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + (metric.getComments() + metric.getReviews())
-					+ "," + metrics.getTotalReputation() + "," + metrics.getTotalVideoViews();
+			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + metric.getUniqueContentCreators().size()
+					+ "," + (metric.getComments() + metric.getReviews()) + "," + metrics.getTotalReputation() + ","
+					+ metrics.getTotalVideoViews();
 			result += "\r\n";
 		}
 		return result;

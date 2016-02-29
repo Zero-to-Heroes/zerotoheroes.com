@@ -193,7 +193,7 @@
 			"comparison": "Utiliser l'<strong>icône de comparaison <span class=\"glyphicon glyphicon-facetime-video\"></span></strong> pour créer une séquence avec deux vidéos côte-à-côte et mettre en évidence les différences. Vous pouvez bien sûr le combiner avec n'importe quel autre outil ci-dessus (par défaut une séquence est créée avec une boucle et un ralenti)",
 			"hearthstone": {
 				"card": "Ajouter un lien vers une carte en utilisant <code>[[Le Nom De La Carte]]</code>. Cela déclenchera l'auto-complétion, et vous permettra d'ajouter un lien qui affichera la carte lorsque vous laissez la souris dessus",
-				"deck": "Ajouter un lien vers un deck hébergé sur hearthpwn.com ou hearthstone-decks.com en utilisant <code>[url_de_votre_deck]</code>. Cela créera un lien qui affichera la liste de cartes au passage de la souris (et si vous avez besoin de decks hébergés ailleurs, dites-le nous sur les forums)",
+				"deck": "Ajouter un lien vers un deck hébergé sur hearthpwn.com ou hearthstone-decks.com en utilisant <code>[url_de_votre_deck]</code>. Cela créera un lien qui affichera la liste de cartes au passage de la souris (et si vous avez besoin de decks hébergés ailleurs, dites-le nous sur les forums)"
 			}
 		},
 		"user": {

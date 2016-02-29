@@ -30,6 +30,7 @@ angular.module('controllers').controller('CoachPageController', ['$scope', '$rou
 			var input = { 
 				coachInformation: $scope.coach.coachInformation
 			}
+			$log.debug('updating coach info', input)
 			Api.Users.save({identifier: $scope.coach.username}, input,
 				function(data) {
 					$log.debug('updated coach', data)
@@ -46,10 +47,8 @@ angular.module('controllers').controller('CoachPageController', ['$scope', '$rou
 			
 			$scope.coach = data
 
-			if (data.coachInformation.description)
-				$scope.description = marked(data.coachInformation.description)
-			if (data.coachInformation.fullDescription)
-				$scope.fullDescription = marked(data.coachInformation.fullDescription)
+			$scope.description = marked(data.coachInformation.description)
+			$scope.fullDescription = marked(data.coachInformation.fullDescription)
 		}
 	}
 ])

@@ -321,4 +321,59 @@ public class SlackNotifier {
 		});
 	}
 
+	public void notifyHelpfulComment(final Review review, final Comment comment) {
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.info("Helpful comment " + comment);
+			return;
+		}
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("good");
+				attach.setText("Helpful comment by " + comment.getAuthor() + " on review " + review.getUrl());
+				attach.setFallback("placeholder fallback");
+
+				SlackMessage message = new SlackMessage();
+				message.addAttachments(attach);
+				message.setText("Helpful comment by " + comment.getAuthor());
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
+	public void notifyUnhelpfulComment(final Review review, final Comment comment) {
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.info("Unhelpful comment " + comment);
+			return;
+		}
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("good");
+				attach.setText(
+						"Comment by " + comment.getAuthor() + " marked as unhelpful on review " + review.getUrl());
+				attach.setFallback("placeholder fallback");
+
+				SlackMessage message = new SlackMessage();
+				message.addAttachments(attach);
+				message.setText("Comment by " + comment.getAuthor() + " marked as unhelpful");
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
 }

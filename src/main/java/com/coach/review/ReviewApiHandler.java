@@ -566,6 +566,10 @@ public class ReviewApiHandler {
 		updateReview(review);
 		if (comment.isHelpful()) {
 			sportManager.addMarkedCommentHelpfulActivity(user, review, comment);
+			slackNotifier.notifyHelpfulComment(review, comment);
+		}
+		else {
+			slackNotifier.notifyUnhelpfulComment(review, comment);
 		}
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);

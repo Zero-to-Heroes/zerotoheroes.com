@@ -2,7 +2,8 @@
 	<div class="informationMessages">
 		<span ng-show="uploader.videoInfo.upload.progress < 100" translate="{{'global.upload.' + type + '.' + sport + '.dontCloseWindowMessage'}}" translate-default="{{'global.upload.' + type + '.dontCloseWindowMessage' | translate}}"></span>
 		<span ng-show="uploader.videoInfo.upload.progress == 100 && !uploader.videoInfo.upload.postProcessed" translate="{{'global.upload.' + type + '.' + sport + '.finalizeVideoMessage'}}" translate-default="{{'global.upload.' + type + '.finalizeVideoMessage' | translate}}"></span>
-		<span ng-show="uploader.videoInfo.upload.progress == 100 && uploader.videoInfo.upload.postProcessed" translate="{{'global.upload.' + type + '.' + sport + '.transferCompleted'}}" translate-default="{{'global.upload.' + type + '.transferCompleted' | translate}}"></span>
+		<span ng-show="uploader.videoInfo.upload.progress == 100 && uploader.videoInfo.upload.postProcessed && isFileValid()" translate="{{'global.upload.' + type + '.' + sport + '.transferCompleted'}}" translate-default="{{'global.upload.' + type + '.transferCompleted' | translate}}"></span>
+        <span ng-show="!isFileValid()" translate="{{'global.upload.' + type + '.' + sport + '.corruptedFile'}}" translate-default="{{'global.upload.' + type + '.corruptedFile' | translate}}"></span>
 	</div>
     <div class="progress" style="position: relative; left: 0; top: 0" ng-hide="uploader.videoInfo.upload.progress == 100 && uploader.videoInfo.upload.postProcessed">
         <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.videoInfo.upload.progress  + '%' }" style="position: relative; top: 0; left: 0; min-width: 2em;">
@@ -10,6 +11,6 @@
         </div>
     </div>
     <span ng-show="uploader.videoInfo.videoFramerateRatio == 2" translate="{{'global.upload.video.doubleSpeedReminder'}}"></span>
-    <button class="btn btn-primary btn-upload" ng-click="initPublish()" ng-show="uploader.videoInfo.upload.progress == 100 && uploader.videoInfo.upload.postProcessed" ng-disabled="!isDataValid()"><span>{{ 'global.upload.video.publishReviewButton' | translate }}</span></button>
+    <button class="btn btn-primary btn-upload" ng-click="initPublish()" ng-show="uploader.videoInfo.upload.progress == 100 && uploader.videoInfo.upload.postProcessed" ng-disabled="!isDataValid() || !isFileValid()"><span>{{ 'global.upload.video.publishReviewButton' | translate }}</span></button>
 
 </div>

@@ -12,6 +12,7 @@ app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
 				type: '=',
 				active: '=',
 				validation: '&',
+				fileValidation: '&',
 				publish: '&'
 			},
 			link: function($scope, element, attrs) {
@@ -20,6 +21,11 @@ app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
 				$scope.isDataValid = function() {
 					if ($scope.validation()) 
 						return $scope.validation()()
+				}
+
+				$scope.isFileValid = function() {
+					if ($scope.fileValidation()) 
+						return $scope.fileValidation()()
 				}
 
 				$scope.initPublish = function() {

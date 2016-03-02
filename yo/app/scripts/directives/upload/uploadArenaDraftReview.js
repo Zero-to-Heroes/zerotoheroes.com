@@ -129,10 +129,11 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 					return $scope.uploadForm.$valid
 				}
 
-				$scope.onTranscodingComplete = function() {
-					if ($scope.publishPending)
-						$scope.publishVideo()
-					
+				$scope.isFileValid = function() {
+					return $scope.fileValid
+				}
+
+				$scope.onTranscodingComplete = function() {					
 					// And now display something on the replay player
 					$log.debug('Need to display the draft', $scope.review)
 					if ($scope.review.mediaType && $scope.review.mediaType != 'video') {
@@ -144,7 +145,13 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 							// Init the external player
 							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review)
 							$scope.$apply()
-						})
+
+							// Check file validity
+							$scope.fileValid = $scope.externalPlayer.isValid()
+
+							if ($scope.fileValid && $scope.publishPending)
+								$scope.publishVideo()
+							})
 					}
 				}
 

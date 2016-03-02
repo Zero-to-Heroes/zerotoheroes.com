@@ -27,7 +27,7 @@ public class Reputation {
 	@Transient
 	private Map<ReputationAction, Boolean> hasCurrentUserVoted;
 
-	private boolean isHelpful;
+	private boolean helpful;
 
 	private float score = -1;
 
@@ -74,7 +74,7 @@ public class Reputation {
 		int ups = userIds.get(ReputationAction.Upvote) != null ? userIds.get(ReputationAction.Upvote).size() : 0;
 		int downs = userIds.get(ReputationAction.Downvote) != null ? userIds.get(ReputationAction.Downvote).size() : 0;
 
-		if (isHelpful) {
+		if (helpful) {
 			ups += 3;
 		}
 
@@ -98,7 +98,7 @@ public class Reputation {
 	}
 
 	public void setHelpful(boolean helpful) {
-		isHelpful = helpful;
+		this.helpful = helpful;
 		updateScore();
 	}
 }

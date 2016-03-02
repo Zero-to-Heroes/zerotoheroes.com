@@ -376,4 +376,33 @@ public class SlackNotifier {
 		});
 	}
 
+	public void notifyError(Exception e, final Object... params) {
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.info("Error! " + params);
+			return;
+		}
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackMessage message = new SlackMessage();
+				message.setText("Generic error with details");
+
+				for (Object param : params) {
+					SlackAttachment attach = new SlackAttachment();
+					attach.setColor("danger");
+					attach.setText(param != null ? param.toString() : "null");
+					attach.setFallback("placeholder fallback");
+					message.addAttachments(attach);
+				}
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
 }

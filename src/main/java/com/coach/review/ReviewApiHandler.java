@@ -130,13 +130,19 @@ public class ReviewApiHandler {
 		String author = criteria.isOwnVideos() && user != null ? user.getId() : null;
 
 		Page<Review> page = null;
-		if (criteria.getText() == null) {
-			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
-					pageRequest);
+		try {
+			if (criteria.getText() == null) {
+				page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(),
+						criteria.getUnwantedTags(), pageRequest);
+			}
+			else {
+				page = reviewRepo.listReviewsWithText(criteria.getText(), author, sportCriteria,
+						criteria.getWantedTags(), criteria.getUnwantedTags(), pageRequest);
+			}
 		}
-		else {
-			page = reviewRepo.listReviewsWithText(criteria.getText(), author, sportCriteria, criteria.getWantedTags(),
-					criteria.getUnwantedTags(), pageRequest);
+		catch (Exception e) {
+			slackNotifier.notifyError(e, sportCriteria, author, criteria, pageRequest);
+			throw e;
 		}
 
 		List<Review> reviews = page.getContent();

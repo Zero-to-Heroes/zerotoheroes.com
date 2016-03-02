@@ -1,11 +1,11 @@
 <view-title>{{'Coach - ' + coach.username + ' - ' + sport}}</view-title>
 
 <div class="background-white coach-page">
-	<h1>Coach information - {{coach.username}} <a ng-click="startEditing()" class="link-minor" ng-show="canEdit() && !editing"> ({{ 'global.review.comment.edit' | translate }})</a></h1>
+	<h1>Coach information - {{coach.coachInformation.name}} <a ng-click="startEditing()" class="link-minor" ng-show="canEdit() && !editing"> ({{ 'global.review.comment.edit' | translate }})</a></h1>
 	<div class="row summary-container">
 		<img class="avatar" src="https://s3.amazonaws.com/com.zerotoheroes/coach/{{coach.coachInformation.picture}}" />
 		<div class="coach-recap">
-			<h2>{{coach.username}}</h2>
+			<h2>{{coach.coachInformation.name}}</h2>
 			<div class="vert-align">
 				<span class="language-label">{{ 'global.coach.languages' | translate }}</span>
 				<span ng-repeat="language in coach.coachInformation.languagesSpoken" class="lang-sm language" lang="{{language}}"></span>

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.amazonaws.util.StringUtils;
+import com.coach.coaches.CoachInformation;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserRole;
@@ -79,6 +80,18 @@ public class UserApiHandler {
 		}
 		else {
 			user = userRepository.findByUsername(identifier);
+		}
+
+		if (user != null && user.getCoachInformation() != null) {
+			CoachInformation coachInformation = user.getCoachInformation();
+			if (coachInformation.getName() == null) {
+				coachInformation.setName(user.getUsername());
+			}
+			if (coachInformation.getEmail() == null) {
+				coachInformation.setEmail(user.getEmail());
+			}
+			coachInformation.setUsername(user.getUsername());
+			coachInformation.setId(user.getId());
 		}
 		// log.debug("Loaded user " + user);
 

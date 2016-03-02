@@ -650,3 +650,73 @@
 		width: 100%;
 	}
 }
+
+@media screen and (max-width: 1650px) {
+	.hearthstone .video-information {
+		width: 50%;
+	}
+
+	.hearthstone .video-comment {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 1380px) {
+	.hearthstone .video-information {
+		width: 58.33%;
+	}
+
+	.hearthstone .video-comment {
+		width: 41.66%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.hearthstone .video-information {
+		width: 65%;
+	}
+
+	.hearthstone .video-comment {
+		width: 100%;
+		padding-left: 15px;
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.hearthstone .video-information {
+		width: 100%;
+	}
+}
+
+
+/* =============
+** Specific for Arena
+** =============*/
+.hearthstone .video-information.arena-draft {
+	min-width: 740px;
+}
+
+@media screen and (max-width: 1556px) {
+	.hearthstone .video-comment.arena-draft {
+		width: 45%;
+	}
+}
+
+@media screen and (max-width: 1425px) {
+	.hearthstone .video-comment.arena-draft {
+		width: 40%;
+	}
+}
+
+@media screen and (max-width: 1310px) {
+	.hearthstone .video-information.arena-draft {
+		width: 100%;
+	}
+
+	.hearthstone .video-comment.arena-draft {
+		width: 100%;
+		padding-left: 15px;
+		margin-top: 20px;
+	}
+}

@@ -121,6 +121,11 @@
           return _this.callback;
         };
       })(this));
+      subscribe(this.state.replay, 'reset', (function(_this) {
+        return function() {
+          return _this.callback;
+        };
+      })(this));
       subscribe(this.state.replay, 'moved-timestamp', (function(_this) {
         return function() {
           return setTimeout(_this.callback, 500);
@@ -634,16 +639,27 @@
       var tagEvents;
       tagEvents = 'tag-changed:ATK tag-changed:HEALTH tag-changed:DAMAGE';
       if (!this.props["static"]) {
-        return this.sub = subscribe(this.props.entity, tagEvents, (function(_this) {
+        subscribe(this.props.entity, tagEvents, (function(_this) {
           return function() {
             return _this.forceUpdate();
           };
         })(this));
+        subscribe(this.props.entity, 'new-step', (function(_this) {
+          return function() {
+            return _this.cleanTemporaryState();
+          };
+        })(this));
+        subscribe(this.props.entity, 'reset', (function(_this) {
+          return function() {
+            return _this.reset();
+          };
+        })(this));
       }
+      return this.damageTaken = 0;
     };
 
     Card.prototype.render = function() {
-      var art, cls, healthClass, link, locale, overlay, stats, style;
+      var art, cls, damage, healthClass, link, locale, overlay, stats, style;
       locale = window.localStorage.language && window.localStorage.language !== 'en' ? '/' + window.localStorage.language : '';
       art = "https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards" + locale + "/" + this.props.entity.cardID + ".png";
       if (this.props.entity.cardID && !this.props.isHidden) {
@@ -697,6 +713,13 @@
           "className": healthClass
         }, this.props.entity.tags.HEALTH - (this.props.entity.tags.DAMAGE || 0)));
       }
+      console.log('card took damage?', this.props.entity.cardID, this.damageTaken);
+      if (this.props.entity.tags.DAMAGE - this.damageTaken > 0) {
+        console.log('\tyes, card took damage', this.props.entity.tags.DAMAGE - this.damageTaken);
+        damage = React.createElement("span", {
+          "className": "damage"
+        }, -(this.props.entity.tags.DAMAGE - this.damageTaken));
+      }
       if (this.props.entity.cardID && !this.props.isHidden) {
         link = '<img src="' + art + '">';
         return React.createElement("div", {
@@ -708,13 +731,22 @@
           "data-effect": "solid",
           "data-delay-show": "100",
           "data-class": "card-tooltip"
-        }, overlay, stats);
+        }, overlay, damage, stats);
       } else {
         return React.createElement("div", {
           "className": cls,
           "style": style
-        }, overlay, stats);
+        }, overlay, damage, stats);
       }
+    };
+
+    Card.prototype.cleanTemporaryState = function() {
+      return this.damageTaken = this.props.entity.tags.DAMAGE || 0;
+    };
+
+    Card.prototype.reset = function() {
+      console.log('resetting card');
+      return this.damageTaken = 0;
     };
 
     Card.prototype.componentDidUpdate = function() {
@@ -3289,6 +3321,14 @@ arguments[4][4][0].apply(exports,arguments)
       return this.lastZone;
     };
 
+    Entity.prototype.newStep = function() {
+      return this.emit('new-step');
+    };
+
+    Entity.prototype.reinit = function() {
+      return this.emit('reset');
+    };
+
     return Entity;
 
   })(EventEmitter);
@@ -4135,7 +4175,15 @@ arguments[4][4][0].apply(exports,arguments)
     }
 
     ReplayPlayer.prototype.init = function() {
+      var k, ref, v;
       console.log('starting init');
+      if (this.entities) {
+        ref = this.entities;
+        for (k in ref) {
+          v = ref[k];
+          v.reinit();
+        }
+      }
       this.entities = {};
       this.players = [];
       this.emit('reset');
@@ -4321,14 +4369,14 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ReplayPlayer.prototype.moveToTimestamp = function(timestamp) {
-      var action, i, j, k, l, ref, ref1, ref2, results, targetAction, targetTurn, turn;
+      var action, i, j, l, m, ref, ref1, ref2, results, targetAction, targetTurn, turn;
       this.pause();
       timestamp += this.startTimestamp;
       console.log('moving to timestamp', timestamp);
       this.newStep();
       targetTurn = -1;
       targetAction = -1;
-      for (i = k = 1, ref = this.turns.length; 1 <= ref ? k <= ref : k >= ref; i = 1 <= ref ? ++k : --k) {
+      for (i = l = 1, ref = this.turns.length; 1 <= ref ? l <= ref : l >= ref; i = 1 <= ref ? ++l : --l) {
         turn = this.turns[i];
         console.log('looking at timestamp', turn.timestamp, turn, turn.actions[1]);
         if (turn.timestamp > timestamp) {
@@ -4341,7 +4389,7 @@ arguments[4][4][0].apply(exports,arguments)
         targetTurn = i;
         if (turn.actions.length > 0) {
           targetAction = -1;
-          for (j = l = 0, ref2 = turn.actions.length - 1; 0 <= ref2 ? l <= ref2 : l >= ref2; j = 0 <= ref2 ? ++l : --l) {
+          for (j = m = 0, ref2 = turn.actions.length - 1; 0 <= ref2 ? m <= ref2 : m >= ref2; j = 0 <= ref2 ? ++m : --m) {
             action = turn.actions[j];
             console.log('\tlooking at action', action);
             if (!action || !action.timestamp || (action != null ? action.timestamp : void 0) > timestamp) {
@@ -4368,8 +4416,6 @@ arguments[4][4][0].apply(exports,arguments)
 
     ReplayPlayer.prototype.goToTimestamp = function(timestamp) {
       if (timestamp < this.currentReplayTime) {
-        console.log('going back in time, resetting', timestamp, this.currentReplayTime);
-        this.emit('reset');
         this.historyPosition = 0;
         this.init();
       }
@@ -4384,9 +4430,17 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ReplayPlayer.prototype.newStep = function() {
+      var k, ref, results, v;
       this.targetSource = void 0;
       this.targetDestination = void 0;
-      return this.discoverAction = void 0;
+      this.discoverAction = void 0;
+      ref = this.entities;
+      results = [];
+      for (k in ref) {
+        v = ref[k];
+        results.push(v.newStep());
+      }
+      return results;
     };
 
     ReplayPlayer.prototype.getTotalLength = function() {
@@ -4535,6 +4589,7 @@ arguments[4][4][0].apply(exports,arguments)
       results = [];
       while (this.historyPosition < this.history.length) {
         if (elapsed > this.history[this.historyPosition].timestamp - this.startTimestamp) {
+          console.log('\tprocessing', elapsed, this.history[this.historyPosition].timestamp - this.startTimestamp, this.history[this.historyPosition].timestamp, this.startTimestamp, this.history[this.historyPosition]);
           this.history[this.historyPosition].execute(this);
           results.push(this.historyPosition++);
         } else {

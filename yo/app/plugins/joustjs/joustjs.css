@@ -1875,6 +1875,16 @@
 .hearthstone #externalPlayer .board .game-card .overlay.stealth {
   background-color: gray;
 }
+.hearthstone #externalPlayer .board .game-card .damage {
+  position: absolute;
+  font-size: 1.5em;
+  z-index: 1;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  left: 29px;
+}
 .hearthstone #externalPlayer .top .board {
   top: 250px;
 }

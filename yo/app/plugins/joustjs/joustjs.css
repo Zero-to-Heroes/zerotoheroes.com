@@ -1707,6 +1707,15 @@
 .hearthstone #externalPlayer .hand .game-card:last-child {
   margin-right: 0;
 }
+.hearthstone #externalPlayer .hand .game-card.option-on::before {
+  content: "";
+  border: 3px solid #31C331;
+  position: absolute;
+  top: 13px;
+  bottom: 0;
+  left: 6px;
+  right: 6px;
+}
 .hearthstone #externalPlayer .bottom .hand {
   top: auto;
   bottom: -40px;
@@ -1854,7 +1863,7 @@
   border: 1px solid white;
   box-shadow: 0 0 3px 1px black;
 }
-.hearthstone #externalPlayer .board .game-card.can-attack::before {
+.hearthstone #externalPlayer .board .game-card.option-on::before {
   content: "";
   border: 3px solid #31C331;
   position: absolute;
@@ -1963,6 +1972,17 @@
   border-top-left-radius: 60% 70%;
   border-top-right-radius: 60% 70%;
   background-position: -50px -50px !important;
+}
+.hearthstone #externalPlayer .hero .avatar.option-on::before {
+  content: "";
+  border: 3px solid #31C331;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top-left-radius: 60% 70%;
+  border-top-right-radius: 60% 70%;
 }
 .hearthstone #externalPlayer .mana {
   background: url(../../image/mana.png) center center no-repeat;

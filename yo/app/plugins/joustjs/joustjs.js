@@ -713,9 +713,9 @@
           "className": healthClass
         }, this.props.entity.tags.HEALTH - (this.props.entity.tags.DAMAGE || 0)));
       }
-      console.log(this.props.entity.cardID, this.props.entity);
-      if (this.props.entity.tags.EXHAUSTED === 0) {
-        cls += " can-attack";
+      if (this.props.entity.highlighted) {
+        console.log('\thighlighting', this.props.entity.cardID, this.props.entity);
+        cls += " option-on";
       }
       if (this.props.entity.tags.EXHAUSTED === 1 && this.props.entity.tags.JUST_PLAYED === 1) {
         exhausted = React.createElement("div", {
@@ -748,12 +748,14 @@
     };
 
     Card.prototype.cleanTemporaryState = function() {
-      return this.damageTaken = this.props.entity.tags.DAMAGE || 0;
+      this.damageTaken = this.props.entity.tags.DAMAGE || 0;
+      return this.props.entity.highlighted = false;
     };
 
     Card.prototype.reset = function() {
       console.log('resetting card');
-      return this.damageTaken = 0;
+      this.damageTaken = 0;
+      return this.props.entity.highlighted = false;
     };
 
     Card.prototype.componentDidUpdate = function() {
@@ -1178,6 +1180,10 @@
           "className": "overlay frozen"
         });
       }
+      if (this.props.entity.highlighted) {
+        console.log('\thighlighting', this.props.entity.cardID, this.props.entity);
+        cls += " option-on";
+      }
       if (this.props.secrets) {
         show = this.props.showSecrets;
         secrets = this.props.secrets.map(function(entity) {
@@ -1188,7 +1194,6 @@
           });
         });
       }
-      console.log('rendering hero', this.props.entity.cardID, this.props.entity, this.damageTaken);
       if (this.props.entity.tags.DAMAGE - this.damageTaken > 0) {
         damage = React.createElement("span", {
           "className": "damage"
@@ -2047,7 +2052,6 @@ arguments[4][4][0].apply(exports,arguments)
     },
     buildPowerTargetLog: function(action) {
       var card, cardLink, cardLog, indentLog, log, target, targetLink;
-      console.log('buildPowerTargetLog', action);
       if (!action.sameOwnerAsParent) {
         card = action.data ? action.data['cardID'] : '';
         cardLink = this.replay.buildCardLink(this.replay.cardUtils.getCard(card));
@@ -2633,11 +2637,9 @@ arguments[4][4][0].apply(exports,arguments)
       tempTurnNumber = 1;
       results = [];
       while (this.turns[tempTurnNumber]) {
-        console.log('sorting actions for turn', tempTurnNumber);
         sortedActions = _.sortBy(this.turns[tempTurnNumber].actions, 'index');
         sortedActions = _.sortBy(sortedActions, 'timestamp');
         this.turns[tempTurnNumber].actions = sortedActions;
-        console.log('\tsorted', this.turns[tempTurnNumber].actions);
         results.push(tempTurnNumber++);
       }
       return results;
@@ -3086,7 +3088,6 @@ arguments[4][4][0].apply(exports,arguments)
             initialCommand: command
           };
           command.isDiscover = true;
-          console.log('adding discover action', action);
           return this.addAction(this.currentTurnNumber, action);
         }
       }
@@ -3798,6 +3799,25 @@ arguments[4][4][0].apply(exports,arguments)
       }
     };
 
+    HSReplayParser.prototype.optionsState = function(node) {
+      var option;
+      switch (node.name) {
+        case 'Option':
+          option = {
+            entity: parseInt(node.attributes.entity),
+            optionIndex: parseInt(node.attributes.index),
+            type: parseInt(node.attributes.type),
+            parent: this.stack[this.stack.length - 2],
+            index: this.index++
+          };
+          if (!option.parent.options) {
+            option.parent.options = [];
+          }
+          option.parent.options.push(option);
+          return console.log('\tparsed option', option);
+      }
+    };
+
     HSReplayParser.prototype.chosenEntitiesStateClose = function(node) {
       switch (node.name) {
         case 'ChosenEntities':
@@ -3810,6 +3830,8 @@ arguments[4][4][0].apply(exports,arguments)
       switch (node.name) {
         case 'Options':
           this.state.pop();
+          console.log('enqueueing options node', node);
+          node.debugTs = tsToSeconds(node.attributes.ts);
           return this.replay.enqueue(tsToSeconds(node.attributes.ts), 'receiveOptions', node);
       }
     };
@@ -3915,7 +3937,7 @@ arguments[4][4][0].apply(exports,arguments)
             ts = null;
           }
           this.metaData = {
-            meta: metaTagNames[node.attributes.meta],
+            meta: metaTagNames[node.attributes.meta || node.attributes.entity],
             data: node.attributes.data,
             parent: this.stack[this.stack.length - 2],
             ts: ts,
@@ -3958,7 +3980,7 @@ arguments[4][4][0].apply(exports,arguments)
       switch (node.name) {
         case 'Info':
           info = {
-            entity: parseInt(node.attributes.id),
+            entity: parseInt(node.attributes.id || node.attributes.entity),
             parent: this.metaData
           };
           if (!info.parent.info) {
@@ -4606,10 +4628,31 @@ arguments[4][4][0].apply(exports,arguments)
           this.history[this.historyPosition].execute(this);
           results.push(this.historyPosition++);
         } else {
+          this.updateOptions();
           break;
         }
       }
       return results;
+    };
+
+    ReplayPlayer.prototype.updateOptions = function() {
+      var command, currentCursor, l, len, ref;
+      if (this.getActivePlayer() === this.player) {
+        console.log('updating options', this.history.length, this.historyPosition);
+        currentCursor = this.historyPosition;
+        while (currentCursor < this.history.length) {
+          ref = this.history[currentCursor].commands;
+          for (l = 0, len = ref.length; l < len; l++) {
+            command = ref[l];
+            if (command[0] === 'receiveOptions') {
+              console.log('updating options?', command);
+              this.history[currentCursor].execute(this);
+              return;
+            }
+          }
+          currentCursor++;
+        }
+      }
     };
 
     ReplayPlayer.prototype.receiveGameEntity = function(definition) {
@@ -4697,7 +4740,22 @@ arguments[4][4][0].apply(exports,arguments)
       }
     };
 
-    ReplayPlayer.prototype.receiveOptions = function() {};
+    ReplayPlayer.prototype.receiveOptions = function(options) {
+      var k, l, len, option, ref, ref1, ref2, results, v;
+      console.log('receiving options', options);
+      ref = this.entities;
+      for (k in ref) {
+        v = ref[k];
+        v.highlighted = false;
+      }
+      ref1 = options.options;
+      results = [];
+      for (l = 0, len = ref1.length; l < len; l++) {
+        option = ref1[l];
+        results.push((ref2 = this.entities[option.entity]) != null ? ref2.highlighted = true : void 0);
+      }
+      return results;
+    };
 
     ReplayPlayer.prototype.receiveChoices = function(choices) {};
 

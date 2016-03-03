@@ -273,6 +273,10 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.editLanguage = function(lang) {
 					$scope.review.language = lang
 				}
+
+				$scope.isFileValid = function() {
+					return true
+				}
 			}
 		}
 	}

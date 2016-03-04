@@ -365,6 +365,12 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			fullTextSearchField += " " + participantDetails.getPlayerCategory();
 			fullTextSearchField += " " + participantDetails.getOpponentName();
 			fullTextSearchField += " " + participantDetails.getOpponentName();
+
+			if (participantDetails.getSkillLevel() != null) {
+				for (Tag tag : participantDetails.getSkillLevel()) {
+					fullTextSearchField += " " + tag.getText();
+				}
+			}
 		}
 
 		for (Comment comment : getComments()) {

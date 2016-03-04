@@ -61,9 +61,9 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ "published: true,"
 			+ "sport : ?1, "
 			+ "$and : ["
-			+ "		{ $or : [ { $where : '?1 == null' }, { authorId : ?1 } ] }, "
-			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $all : ?2 } } ] }, "
-			+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { tags : { $nin : ?3 } } ] }"
+			+ "		{ $or : [ { $where : '?2 == null' }, { authorId : ?2 } ] }, "
+			+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { tags : { $all : ?3 } } ] }, "
+			+ "		{ $or : [ { $where : '?4 == null' }, { $where : '?4.length == 0' }, { tags : { $nin : ?4 } } ] }"
 			+ "]"
 		+ "}",
 		fields =
@@ -89,7 +89,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 		+ 	"}"
 	)
 	//@formatter:on
-	Page<Review> listReviewsWithText(String text, String authorId, String sportCriteria, List<Tag> wantedTags,
+	Page<Review> listReviewsWithText(String text, String sportCriteria, String authorId, List<Tag> wantedTags,
 			List<Tag> unwantedTags, Pageable pageable);
 
 }

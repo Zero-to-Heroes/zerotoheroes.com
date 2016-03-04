@@ -331,7 +331,7 @@ public class SlackNotifier {
 			@Override
 			public String call() throws Exception {
 				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+						"https://hooks.slack.com/services/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");
 
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("good");
@@ -358,7 +358,7 @@ public class SlackNotifier {
 			@Override
 			public String call() throws Exception {
 				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+						"https://hooks.slack.com/services/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");
 
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("good");

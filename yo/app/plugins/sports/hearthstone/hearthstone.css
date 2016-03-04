@@ -260,14 +260,14 @@
 ** =============*/
 .hearthstone .navbar-default {
 	background-color: #0C051D;
-	background: url("images/nav-bg-left.png") 200px no-repeat, url("images/nav-bg-right.png") right no-repeat, url("images/nav-bg-center.png") repeat-x;
+	background: url("images/nav-bg-left.png") 260px no-repeat, url("images/nav-bg-right.png") right no-repeat, url("images/nav-bg-center.png") repeat-x;
 	padding-right: 60px;
 	height: 66px;
 	border: none;
 }
 
 .hearthstone .navbar-default .navbar-collapse { 
-	padding-left: 280px;
+	padding-left: 350px;
 }
 
 .hearthstone .navbar-default .navbar-nav > li > a {
@@ -282,6 +282,10 @@
 .hearthstone .navbar-default .navbar-nav > li > a:focus, .hearthstone .navbar-default .navbar-nav > li > a:active, .hearthstone .navbar-default .navbar-nav > li > a:hover {
 	color: #fcd144;
 	background: transparent url(images/nav-bg-center-active.png) repeat-x;
+}
+
+.hearthstone .navbar-default .navbar-nav > li.soon > a:focus, .hearthstone .navbar-default .navbar-nav > li.soon > a:active, .hearthstone .navbar-default .navbar-nav > li.soon > a:hover {
+	background: transparent;
 }
 
 .hearthstone .navbar-default span {
@@ -352,6 +356,52 @@
 .hearthstone .brand span {
 	display: none;
 }
+	
+	/* =============
+	** Lateral navigation
+	** =============*/
+	.hearthstone .sport-navigation-button {
+		top: 10px;
+		// border: 1px solid rgba(249,150,56,0.5);
+		border: none;
+	}
+	.hearthstone .sport-navigation {
+		background-color: rgba(58, 36, 15, 0.9);
+    	height: calc(100vh - 55px);
+    	top: 63px;
+	}
+	.hearthstone .sport-navigation:before {
+	    top: -8px;
+	    right: -8px;
+	    bottom: -8px;
+	    left: -8px;
+	    border: 8px solid #dec79b;
+	    border-width: 17px 20px;
+		border-image: url(images/border-image.png) 17 20 stretch;
+	    border-left-width: 0;
+	    border-top-width: 0;
+	    border-bottom-width: 0;
+	}
+	.hearthstone .sport-navigation li {
+	    border-bottom: 1px solid rgba(249,150,56,0.5);
+	}
+	.hearthstone .sport-navigation li:hover {
+	    background-color: rgba(117, 115, 114, 0.45);
+	}
+	.hearthstone .sport-navigation li a {
+	    background-color: transparent;
+	    line-height: 66px;
+	    text-shadow: 0 0 10px #000, 0 0 10px #000;
+	    color: #fcd144;
+	    padding: 0 30px;
+	}
+	.hearthstone .sport-navigation .active a, .hearthstone .sport-navigation .active a:hover, .hearthstone .sport-navigation .active a:focus {
+	    background-color: rgba(117, 115, 114, 0.45);
+	    color: #fff;
+	}
+	.hearthstone .sport-navigation .big-separator {
+	    border-bottom-width: 3px;	
+	}
 
 
 

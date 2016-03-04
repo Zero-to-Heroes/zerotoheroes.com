@@ -96,11 +96,17 @@ app.config(['$routeProvider', '$locationProvider',
 			upload: true,
 			hideSideBar: true
 	  	}).
+	  	when('/s/:sport/coaches', {
+			templateUrl: 'views/coachListing.html',
+			controller: 'CoachListingCtrl',
+			menuItem: 'coaches'
+	  	}).
 	  	when('/r/:sport/:reviewId/:reviewTitle?', {
 			templateUrl: 'views/review.html',
 			controller: 'ReviewCtrl',
 			hideSideBar: true,
-			reloadOnSearch: false
+			reloadOnSearch: false,
+			menuItem: 'reviews'
 	  	}).
 	  // 	when('/reviews/:pageNumber?', {
 			// templateUrl: 'views/videoListing.html',
@@ -110,25 +116,30 @@ app.config(['$routeProvider', '$locationProvider',
 	  	when('/s/:sport/myVideos/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
-			ownVideos: true
+			ownVideos: true,
+			menuItem: 'reviews'
 	  	}).
 	  	when('/s/:sport/myvideos/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
-			ownVideos: true
+			ownVideos: true,
+			menuItem: 'reviews'
 	  	}).
 	  	when('/s/:sport/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
-			reloadOnSearch: false
+			reloadOnSearch: false,
+			menuItem: 'reviews'
 	  	}).
 	  	when('/c/:coachName/:sport', {
 			templateUrl: 'views/coachPage.html',
-			controller: 'CoachPageController'
+			controller: 'CoachPageController',
+			menuItem: 'coaches'
 	  	}).
 	  	when('/coach/:coachName/:sport', {
 			templateUrl: 'views/coachPage.html',
-			controller: 'CoachPageController'
+			controller: 'CoachPageController',
+			menuItem: 'coaches'
 	  	}).
 	  	otherwise({
 			redirectTo: '/'

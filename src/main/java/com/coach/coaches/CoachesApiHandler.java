@@ -50,6 +50,17 @@ public class CoachesApiHandler {
 		return new ResponseEntity<List<CoachInformation>>(coaches, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/{sport}/all", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<List<CoachInformation>> getCoachesForSport(
+			@PathVariable("sport") final String sport) {
+		// log.debug("Retrieving coaches");
+		if (sport == null) { return new ResponseEntity<List<CoachInformation>>((List<CoachInformation>) null,
+				HttpStatus.NOT_FOUND); }
+
+		List<CoachInformation> coaches = getAllCoachesForSport(Sport.load(sport));
+		return new ResponseEntity<List<CoachInformation>>(coaches, HttpStatus.OK);
+	}
+
 	private List<CoachInformation> getAllCoachesForSport(Sport sport) {
 		// sport = StringUtils.trim(sport);
 		// log.debug("Initial list of coaches: " + CoachRepository.allCoaches);

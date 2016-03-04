@@ -9,7 +9,8 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 		replace: true,
 		templateUrl: 'templates/navigation.html',
 		controller: function($scope, User) {
-			$scope.name = User.getName();
+			$scope.name = User.getName()
+			$scope.showSportsNavigationPanel = false
 
 			$scope.changeName = function() {
 				$scope.name = undefined;
@@ -50,6 +51,10 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 			if ($location.search().resetpassword && !$scope.resetongoing) {
 					$log.log('reset in $location');
 				$scope.passwordReset($location.search().resetpassword);
+			}
+
+			$scope.toggleSportPanel = function() {
+				$scope.showSportsNavigationPanel = !$scope.showSportsNavigationPanel
 			}
 		}
 	};

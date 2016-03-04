@@ -117,7 +117,11 @@
 		"navigation": {
 			"postVideo": "Mettre en ligne",
 			"postFeedback": "Nouveau post",
-			"forum": "Forums",
+			"forum": "Forum (bientôt™)",
+			"globalForum": "Forum général",
+			"reviews": "Revues",
+			"search": "Recherche (bientôt™)",
+			"coaches": "Coaches",
 			"chooseSport": "Choisissez un sport",
 			"language": "Langue",
 			"otherSections": "Autres sections"

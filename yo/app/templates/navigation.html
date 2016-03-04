@@ -2,17 +2,17 @@
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#links" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
 			<a class="navbar-brand" href="/s/{{sport}}">
 				<div class="brand">
 					<span>Zero to Heroes</span>
 				</div>
 			</a>
+			<button type="button" class="sport-navigation-button collapsed" ng-click="toggleSportPanel()">
+				<span class="sr-only">Sport navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,47 +23,38 @@
 					<a href="/s{{sport ? '/' + sport : ''}}/upload" ng-hide="useVideo"><span>{{ 'global.navigation.postFeedback' | translate }}</span> <span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
-			<ul class="nav navbar-nav meta">
-				<li ng-class="{active: sport == 'meta' && !upload}"><a href="/s/meta">{{ 'global.navigation.forum' | translate }}</a></li>
+			<ul class="nav navbar-nav inside-navigation">
+				<!-- <li ng-class=""><a href="{{ '/s/' + sport + '/forums'}}">{{ 'global.navigation.forum' | translate }}</a></li>
+				<li ng-class=""><a href="{{ '/s/' + sport }}">{{ 'global.navigation.reviews' | translate }}</a></li>
+				<li ng-class=""><a href="{{ '/s/' + sport + '/search'}}">{{ 'global.navigation.search' | translate }}</a></li>
+				<li ng-class=""><a href="{{ '/s/' + sport + '/coaches'}}">{{ 'global.navigation.coaches' | translate }}</a></li> -->
+				<li ng-class="{active: menuItem == 'forum' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.forum' | translate }}</a></li>
+				<li ng-class="{active: menuItem == 'reviews' && !upload}" class=""><a href="{{ '/s/' + sport }}">{{ 'global.navigation.reviews' | translate }}</a></li>
+				<li ng-class="{active: menuItem == 'search' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.search' | translate }}</a></li>
+				<li ng-class="{active: menuItem == 'coaches' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.coaches' | translate }}</a></li>
 			</ul>
-			<ul class="nav navbar-nav expand-sports">
-				<li role="separator" class="divider-vertical"></li>
-				<li ng-class="{active: sport == 'badminton' && !upload}"><a href="/s/badminton">Badminton</a></li>
-				<li ng-class="{active: sport == 'hearthstone' && !upload}"><a href="/s/hearthstone">HearthStone</a></li>
-				<li ng-class="{active: sport == 'heroesofthestorm' && !upload}"><a href="/s/heroesofthestorm">Heroes of the Storm</a></li>
-				<li ng-class="{active: sport == 'squash' && !upload}"><a href="/s/squash">Squash</a></li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'global.navigation.otherSections' | translate }}<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li ng-class="{active: sport == 'duelyst' && !upload}"><a href="/s/duelyst">Duelyst</a></li>
-						<li ng-class="{active: sport == 'leagueoflegends' && !upload}"><a href="/s/leagueoflegends">League of Legends</a></li>
-						<li ng-class="{active: sport == 'other' && !upload}"><a href="/s/other">Other</a></li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav collapse-sports">
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'global.navigation.chooseSport' | translate }}<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li ng-class="{active: sport == 'badminton' && !upload}"><a href="/s/badminton">Badminton</a></li>
-						<li ng-class="{active: sport == 'hearthstone' && !upload}"><a href="/s/hearthstone">HearthStone</a></li>
-						<li ng-class="{active: sport == 'heroesofthestorm' && !upload}"><a href="/s/heroesofthestorm">Heroes of the Storm</a></li>
-						<li ng-class="{active: sport == 'leagueoflegends' && !upload}"><a href="/s/leagueoflegends">League of Legends</a></li>
-						<li ng-class="{active: sport == 'squash' && !upload}"><a href="/s/squash">Squash</a></li>
-						<li ng-class="{active: sport == 'duelyst' && !upload}"><a href="/s/duelyst">Duelyst</a></li>
-						<li ng-class="{active: sport == 'other' && !upload}"><a href="/s/other">Other</a></li>
-					</ul>
-				</li>
-			</ul>
+			
 			<ul zth-name-input show-logout="true" class="nav navbar-nav name-group"></ul>
-			<ul class="nav navbar-nav blog">
-				<li>
-					<a href="http://blog.zerotoheroes.com/" target="_blank">Blog</a>
-				</li>
-			</ul>
+
+			<!-- Non-UI components -->
 			<div account-management></div>
 			<div user-history></div>
 			<div help-popup-manager></div>
-		</div><!-- /.navbar-collapse -->
-	</div><!-- /.container-fluid -->
+		</div>
+	</div>
+
+	<div class="sport-navigation" ng-show="showSportsNavigationPanel">
+		<ul>
+			<li ng-class="{active: sport == 'meta' && !upload}"><a href="/s/meta">{{ 'global.navigation.globalForum' | translate }}</a></li>
+			<li><a href="http://blog.zerotoheroes.com/" target="_blank">Blog</a></li>
+			<li class="big-separator"></li>
+			<li ng-class="{active: sport == 'badminton' && !upload}"><a href="/s/badminton">Badminton</a></li>
+			<li ng-class="{active: sport == 'duelyst' && !upload}"><a href="/s/duelyst">Duelyst</a></li>
+			<li ng-class="{active: sport == 'hearthstone' && !upload}"><a href="/s/hearthstone">HearthStone</a></li>
+			<li ng-class="{active: sport == 'heroesofthestorm' && !upload}"><a href="/s/heroesofthestorm">Heroes of the Storm</a></li>
+			<li ng-class="{active: sport == 'leagueoflegends' && !upload}"><a href="/s/leagueoflegends">League of Legends</a></li>
+			<li ng-class="{active: sport == 'squash' && !upload}"><a href="/s/squash">Squash</a></li>
+			<li ng-class="{active: sport == 'other' && !upload}"><a href="/s/other">Other</a></li>
+		</ul>
+	</div>
 </nav>

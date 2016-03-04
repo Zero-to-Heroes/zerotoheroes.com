@@ -1,0 +1,24 @@
+<view-title>{{sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} coaches</view-title>
+
+<div class="background-white listing-view modal-pro">
+	<table class="table coaches-table">
+		<thead>
+			<tr>
+				<th>{{ 'global.askPro.name' | translate }}</th>
+				<th>{{ 'global.askPro.languages' | translate }}</th>
+				<th>{{ 'global.askPro.level' | translate }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="coach in coaches">
+				<td class="vert-align text-nowrap">
+					<a class="wide-span" ng-click="$hide()" href="{{'/coach/' + coach.username + '/' + sport}}">{{coach.name}}</a><span class="glyphicon glyphicon-info-sign" data-placement="right" bs-tooltip="tooltip" data-template="templates/coachDescription.html" ng-hide="!coach.description"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="{{ 'global.askPro.verifiedInfo' | translate }}"></span>
+				</td>
+				<td class="vert-align">
+					<span ng-repeat="language in coach.languagesSpoken" class="lang-sm language" lang="{{language}}"></span>
+				</td>
+				<td class="vert-align"><span ng-bind-html="coach.level"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

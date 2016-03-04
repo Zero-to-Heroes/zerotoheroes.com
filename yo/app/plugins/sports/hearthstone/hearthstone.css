@@ -537,7 +537,7 @@
 		padding-left: 15px;
 		padding-right: 15px;
 	}
-	.hearthstone .video-listing .hearthstone-participants .class-icon {
+	.hearthstone .hearthstone-participants .class-icon {
 		display: block;
 		margin: auto;
 	}
@@ -561,10 +561,41 @@
 .hearthstone .videogular {
 	background-color: #000;
 }
-
 .hearthstone .video-comment .comment-block {
 	margin-bottom: 15px;
 }
+.hearthstone .video-information h1 {
+	display: inline-block;
+}
+  
+	/* =============
+	** Specific Hearthstone info on video review participants
+	** =============*/
+	.hearthstone .video-information .participants-container {
+		display: inline-block;
+	}
+	.hearthstone .video-information .hearthstone-participants {
+		display: inline-block;
+	    margin: 0;
+	    height: auto;
+	    width: auto;
+	}
+	.hearthstone .video-information .hearthstone-participants .player-details {
+		display: none;
+	}
+	.hearthstone .video-information .hearthstone-participants .separation {
+		display: none;
+	}
+	.hearthstone .video-information .hearthstone-participants .opponent-details {
+		display: none;
+	}
+	.hearthstone .video-information .hearthstone-participants .level-details {
+		padding-left: 0;
+    	width: auto;
+	}
+	.hearthstone .video-information .hearthstone-participants tags-input {
+		min-width: 120px;
+	}
 
 
 /* =============

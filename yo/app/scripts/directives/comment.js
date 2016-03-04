@@ -104,7 +104,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					// Add timestamps
 					comment.compiledText = $scope.parseText(comment.text);
 					// Parse markdown
-					comment.markedText = marked(comment.compiledText);
+					comment.markedText = marked(comment.compiledText || '');
 		  			comment.editing = false;
 					comment.processed = true;
 				}

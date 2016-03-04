@@ -47,8 +47,8 @@ angular.module('controllers').controller('CoachPageController', ['$scope', '$rou
 			
 			$scope.coach = data
 
-			$scope.description = marked(data.coachInformation.description)
-			$scope.fullDescription = marked(data.coachInformation.fullDescription)
+			$scope.description = marked(data.coachInformation.description || '')
+			$scope.fullDescription = marked(data.coachInformation.fullDescription || '')
 		}
 	}
 ])

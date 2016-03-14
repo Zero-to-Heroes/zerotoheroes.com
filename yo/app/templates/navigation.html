@@ -33,7 +33,7 @@
 				<li ng-class=""><a href="{{ '/s/' + sport + '/coaches'}}">{{ 'global.navigation.coaches' | translate }}</a></li> -->
 				<li ng-class="{active: menuItem == 'reviews' && !upload}" class=""><a href="{{ '/s/' + sport }}">{{ 'global.navigation.reviews' | translate }}</a></li>
 				<li ng-class="{active: menuItem == 'search' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.search' | translate }}</a></li>
-				<li ng-class="{active: menuItem == 'coaches' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.coaches' | translate }}</a></li>
+				<li ng-class="{active: menuItem == 'coaches' && !upload}"><a href="{{ '/s/' + sport + '/coaches'}}">{{ 'global.navigation.coaches' | translate }}</a></li>
 				<li ng-class="{active: menuItem == 'forum' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.forum' | translate }}</a></li>
 			</ul>
 			

@@ -26,6 +26,8 @@ app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
 				$scope.isFileValid = function() {
 					if ($scope.fileValidation()) 
 						return $scope.fileValidation()()
+					else
+						return true
 				}
 
 				$scope.initPublish = function() {

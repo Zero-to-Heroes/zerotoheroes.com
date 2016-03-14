@@ -16,6 +16,8 @@ app.directive('uploadArenaDraftDirective', ['FileUploader', 'MediaUploader', '$l
 			},
 			controller: function($scope) {
 
+				var supportedExtensions = ['json', 'arenatracker']
+
 				$scope.sportsConfig = SportsConfig
 
 				// We use it for nice out-of-the-box file features
@@ -28,7 +30,7 @@ app.directive('uploadArenaDraftDirective', ['FileUploader', 'MediaUploader', '$l
 								var indexOfLastDot = item.name.lastIndexOf('.')
 								var extension = item.name.slice(indexOfLastDot + 1)
 								$log.debug('extension', extension)
-								if ('json' != extension)
+								if (supportedExtensions.indexOf(extension) == -1)
 									return false
 								return true
 							}

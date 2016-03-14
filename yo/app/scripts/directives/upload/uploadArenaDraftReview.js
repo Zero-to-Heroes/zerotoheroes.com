@@ -39,6 +39,7 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 						var indexOfLastDot = file.name.lastIndexOf('.')
 
 						$scope.review.fileType = file.type || file.name.slice(indexOfLastDot + 1)
+						$log.debug('file type', $scope.review.fileType)
 
 						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKey
 
@@ -130,6 +131,9 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 				}
 
 				$scope.isFileValid = function() {
+					if (!$scope.externalPlayer)
+						return true
+					$log.debug('is file really valid?', $scope.fileValid)
 					return $scope.fileValid
 				}
 
@@ -144,10 +148,11 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 
 							// Init the external player
 							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review)
-							$scope.$apply()
 
 							// Check file validity
 							$scope.fileValid = $scope.externalPlayer.isValid()
+							$log.debug('is file valid?', $scope.fileValid)
+							$scope.$apply()
 
 							if ($scope.fileValid && $scope.publishPending)
 								$scope.publishVideo()

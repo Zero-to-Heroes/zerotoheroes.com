@@ -45,10 +45,6 @@
 	border: 1px solid #e7e7e7;
 }
 
-.navbar .upload-link {
-  // margin-left: 30px;
-}
-
 .navbar .upload-link>li>a, .navbar .upload-link>li>a:focus, .navbar .upload-link>li>a:hover {
 	color: #fff;
 	background-color: #d9534f;

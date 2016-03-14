@@ -101,6 +101,11 @@ app.config(['$routeProvider', '$locationProvider',
 			controller: 'CoachListingCtrl',
 			menuItem: 'coaches'
 	  	}).
+	  	when('/s/:sport/search', {
+			templateUrl: 'views/search.html',
+			controller: 'SearchCtrl',
+			menuItem: 'search'
+	  	}).
 	  	when('/r/:sport/:reviewId/:reviewTitle?', {
 			templateUrl: 'views/review.html',
 			controller: 'ReviewCtrl',

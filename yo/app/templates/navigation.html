@@ -13,10 +13,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
+			<button type="button" class="navbar-toggle inside-navigation-button collapsed" data-toggle="collapse" data-target="#inside-navigation" aria-expanded="false">
+		        <span>Navigation</span>
+		    </button>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="links">
+		<div class="collapse navbar-collapse" id="inside-navigation">
 			<ul class="nav navbar-nav upload-link">
 				<li>
 					<a href="/s{{sport ? '/' + sport : ''}}/upload" ng-show="useVideo"><span>{{ 'global.navigation.postVideo' | translate }}</span> <span class="sr-only">(current)</span></a>
@@ -28,19 +31,19 @@
 				<li ng-class=""><a href="{{ '/s/' + sport }}">{{ 'global.navigation.reviews' | translate }}</a></li>
 				<li ng-class=""><a href="{{ '/s/' + sport + '/search'}}">{{ 'global.navigation.search' | translate }}</a></li>
 				<li ng-class=""><a href="{{ '/s/' + sport + '/coaches'}}">{{ 'global.navigation.coaches' | translate }}</a></li> -->
-				<li ng-class="{active: menuItem == 'forum' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.forum' | translate }}</a></li>
 				<li ng-class="{active: menuItem == 'reviews' && !upload}" class=""><a href="{{ '/s/' + sport }}">{{ 'global.navigation.reviews' | translate }}</a></li>
 				<li ng-class="{active: menuItem == 'search' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.search' | translate }}</a></li>
 				<li ng-class="{active: menuItem == 'coaches' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.coaches' | translate }}</a></li>
+				<li ng-class="{active: menuItem == 'forum' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.forum' | translate }}</a></li>
 			</ul>
 			
-			<ul zth-name-input show-logout="true" class="nav navbar-nav name-group"></ul>
-
-			<!-- Non-UI components -->
-			<div account-management></div>
-			<div user-history></div>
-			<div help-popup-manager></div>
+			<ul  zth-name-input show-logout="true" class="nav navbar-nav name-group"></ul>
 		</div>
+
+		<!-- Non-UI components -->
+		<div account-management></div>
+		<div user-history></div>
+		<div help-popup-manager></div>
 	</div>
 
 	<div class="sport-navigation" ng-show="showSportsNavigationPanel">

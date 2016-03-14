@@ -1,6 +1,6 @@
 .brand {
-  	margin-top: -8px;
-  	font-size: 20px;
+	margin-top: -8px;
+	font-size: 20px;
 }
 
 .brand span {
@@ -40,13 +40,13 @@
 }
 
 .navbar .divider-vertical {
-    height: 50px;
-  	margin: 0 9px;
-  	border: 1px solid #e7e7e7;
+	height: 50px;
+	margin: 0 9px;
+	border: 1px solid #e7e7e7;
 }
 
 .navbar .upload-link {
-  margin-left: 30px;
+  // margin-left: 30px;
 }
 
 .navbar .upload-link>li>a, .navbar .upload-link>li>a:focus, .navbar .upload-link>li>a:hover {
@@ -73,69 +73,93 @@ nav .alert {
 }
 
 .navbar .inside-navigation {
-    margin-left: 100px;
+	margin-left: 10px;
 }
 
-@media (max-width: 950px) {
-.navbar-collapse .nav > .divider-vertical {
-    display: none;
-  }
+.navbar .inside-navigation-button {
+  height: 40px;
+  width: 105px;
+  position: relative;
+  float: right;
+  top: 5px;
+  background-color: transparent;
+  border: none;
+  padding: 1px 8px;
 }
 
-@media (min-width: 1500px) {
-	.expand-sports {
-	    
-	}
-	.collapse-sports {
-		display: none;
-	}
+.navbar .inside-navigation-button:after {
+	content: "";
+	color: #fcd144;
+	position: absolute;
+	top: 13px;
+	right: 5px;
+	width: 0;
+	height: 0;
+	border-top: 4px dashed;
+	border-top: 4px solid;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
 }
 
-@media (min-width: 767px) and (max-width: 1500px) {
-	.expand-sports {
-	    display: none;
-	}
-	.collapse-sports {
-		display: inline-block;
-	}
+.navbar .inside-navigation-button:active, .navbar .inside-navigation-button:focus, .navbar .inside-navigation-button:hover {
+	background: transparent;
+}
+
+.navbar #inside-navigation.in {
+	padding-left: 60%;
+}
+.navbar #inside-navigation.in .upload-link {
+	margin-left: 10px;
+}
+.navbar #inside-navigation.in ul {
+	background-color: #920F08;
+} 
+.navbar #inside-navigation.in div[zth-name-input] {
+	background-color: #920F08;
+	margin-left: 10px;
+	margin-top: 0;
+	margin-right: 0;
+}
+.navbar #inside-navigation.in .upload-link > li > a {
+	margin-top: 0;
 }
 
 /* Override default navbar collapse point.
 cf http://stackoverflow.com/questions/19827605/change-bootstrap-navbar-collapse-breakpoint-without-using-less
 */
-@media (max-width: 900px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-fixed-top {
+@media (max-width: 1360px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-fixed-top {
 		top: 0;
 		border-width: 0 0 1px;
 	}
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
 		margin-top: 7.5px;
 	}
 	.navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in{
-  		display:block !important;
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
 	}
 }

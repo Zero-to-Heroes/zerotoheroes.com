@@ -284,6 +284,11 @@
 	background: transparent url(images/nav-bg-center-active.png) repeat-x;
 }
 
+.hearthstone .navbar #inside-navigation.in .navbar-nav > li > a:focus, .hearthstone .navbar #inside-navigation.in .navbar-nav > li > a:active, .hearthstone .navbar #inside-navigation.in .navbar-nav > li > a:hover {
+	background: transparent;
+	background-color: #BE3410;
+}
+
 .hearthstone .navbar-default .navbar-nav > li.soon > a:focus, .hearthstone .navbar-default .navbar-nav > li.soon > a:active, .hearthstone .navbar-default .navbar-nav > li.soon > a:hover {
 	background: transparent;
 }
@@ -690,7 +695,7 @@
 /* =============
 ** Smaller device
 ** =============*/
-
+/*
 @media (max-width: 1090px) {
 	.hearthstone .nav.navbar-nav.meta {
 		display: none;
@@ -730,7 +735,7 @@
 	.hearthstone .navbar-collapse.collapse.in ul {
 		width: 100%;
 	}
-}
+}*/
 
 @media screen and (max-width: 1650px) {
 	.hearthstone .video-information {

@@ -151,12 +151,14 @@ app.config(['$routeProvider', '$locationProvider',
 	  	});
   }]);
 
+// Actually don't use the wrapper in the code
 app.config(['markedProvider', function(markedProvider) {
-	markedProvider.setOptions({
-		gfm: false,
+	marked.setOptions({
+		gfm: true,
+		breaks: true,
 		sanitize: false
-	});
-}]);
+	})
+}])
 
 app.config(function (logEnhancerProvider) {
    logEnhancerProvider.datetimePattern = 'YYYY/MM/DD HH:mm:ss:SSS';

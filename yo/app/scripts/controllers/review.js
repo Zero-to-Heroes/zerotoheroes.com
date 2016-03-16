@@ -13,6 +13,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			drawingCanvas: false
 		};
 
+		// TODO: clean fix
+		marked.setOptions({
+			gfm: true,
+			breaks: true,
+			sanitize: false
+		})
+
 		$scope.newComment = {};
 		$scope.coaches = [];
 		$scope.selectedCoach;

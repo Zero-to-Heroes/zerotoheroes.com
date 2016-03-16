@@ -136,6 +136,7 @@ public class CoachRepositoryDao {
 	}
 
 	public List<User> getAllCoaches(Sport sport) {
+		if (sport == null) { return new ArrayList<User>(); }
 
 		PageRequest pageRequest = new PageRequest(0, 50);
 		Page<User> coaches = repo.listCoaches(sport.getKey().toLowerCase(), pageRequest);

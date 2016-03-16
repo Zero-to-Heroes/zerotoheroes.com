@@ -27,23 +27,19 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
 		$scope.config = SportsConfig[$scope.sport];
 
-		$scope.temp = $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
+		$scope.pluginsToLoad = SportsConfig.getPlugins($scope.sport)// $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
 		var definedPlugins = 0;
 		$scope.plugins = [];
 		$scope.pluginNames = [];
-		if ($scope.temp) {
-			definedPlugins = $scope.temp.length;
-			// $log.debug('Defined plugins', definedPlugins, $scope.temp);
-			angular.forEach($scope.temp, function(plugin) {
-				// $log.debug('prepaing to load plugin', plugin)
-				if (plugin.dependencies) definedPlugins += plugin.dependencies.length;
-				SportsConfig.loadPlugin($scope.plugins, plugin);
+		if ($scope.pluginsToLoad) {
+			definedPlugins = $scope.pluginsToLoad.length
+			angular.forEach($scope.pluginsToLoad, function(plugin) {
+				SportsConfig.loadPlugin($scope.plugins, plugin)
 			})
 		}
 
 		$scope.$watchCollection('plugins', function(newValue, oldValue) {
-			if (!$scope.temp || newValue.length == definedPlugins) {
-				//$log.log('all plugins loaded', newValue, $scope.temp);
+			if (!$scope.pluginsToLoad || newValue.length == definedPlugins) {
 				$scope.initReview();
 				$scope.plugins.forEach(function(plugin) {
 					if (plugin) {
@@ -101,7 +97,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					if (data.replay || (data.mediaType && data.mediaType != 'video')) {
 						$scope.externalPlayer = true;
 						// $timeout(function() {
-						// $log.debug('loading replay file');
+						$log.debug('loading replay file');
 						// Retrieve the XML replay file from s3
 						var replayUrl = ENV.videoStorageUrl + data.key;
 						// $log.debug('Replay URL: ', replayUrl);
@@ -111,9 +107,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 							// Init the external player
 							// TODO: use an event system
-							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data);
-							$scope.pluginsReady = true;
-							$log.debug('externalPlayer', data.replay, $scope.externalPlayer);
+							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
 						}).
 						fail(function(error) {
 							$log.error('Could not load external data', data)
@@ -123,6 +117,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					}
 					else {
 						$scope.pluginsReady = true;
+
 					}
 
 					// $log.log('review loaded ', $scope.review)
@@ -165,6 +160,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			});
 		}
 
+		$scope.setExternalPlayer = function(externalPlayer) {
+			$scope.pluginsReady = true
+			$scope.externalPlayer = externalPlayer
+			$log.debug('externalPlayer', $scope.externalPlayer)
+		}
 
 		//===============
 		// URL parameters

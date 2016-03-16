@@ -126,6 +126,19 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 				}
 			}
 
+		service.getPlugins = function(sport) {
+			var plugins = []
+			if (service[sport] && service[sport].plugins) {
+				service[sport].plugins.plugins.forEach(function(plugin) {
+					if (!plugin.player) {
+						plugins.push(plugin)
+					}
+				})
+			}
+			console.log('plugins for ' + sport + ' art ', plugins)
+			return plugins
+		}
+
 		service.executePlugin = function(scope, review, plugin, target) {
 			// $log.debug('Executing lpugin', plugin, target, window['hsarenadraft']);
 			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].execute) return target;
@@ -184,7 +197,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			});
 		}
 
-		service.initPlayer = function(config, review) {
+		service.initPlayer = function(config, review, activePlugins, pluginNames, callback) {
 			if (!config || !config.plugins || !config.plugins.plugins) return false;
 
 			var externalPlayer;
@@ -194,9 +207,25 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					// $log.debug('init player?', plugin)
 					if ((!review.mediaType && !plugin.mediaType) || review.mediaType == plugin.mediaType) {
 						// $log.debug('\tyes, init player', plugin, review)
-						externalPlayer = window[plugin.name]
-						// $log.debug('\texternalPlayer is', externalPlayer)
-						externalPlayer.init(plugin, review)
+						// Load the plugin
+						var version = plugin.version ? '?' + plugin.version : '';
+						angularLoad.loadScript('/plugins/' + plugin.name + '/' + plugin.name + '.js' + version).then(function() {
+							externalPlayer = window[plugin.name]
+							$log.debug('loaded externalPlayer is', externalPlayer)
+							externalPlayer.init(plugin, review)
+							activePlugins.push(plugin)
+							pluginNames.push(plugin.name)
+
+							if (callback) {
+								callback(externalPlayer)
+							}
+						}).catch(function() {
+							plugins.push(undefined)
+							$log.error('could not load plugin', plugin )
+						})
+						angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css').then(function() {
+							//console.log('loaded css', plugin);
+						});
 					}
 				}
 			})

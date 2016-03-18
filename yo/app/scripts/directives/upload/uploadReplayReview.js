@@ -152,11 +152,14 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 							$scope.review.replayXml = data
 
 							// Init the external player
-							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review)
-							$log.debug('external player updated')
-							$scope.$apply()
+							SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb)
 						})
 					}
+				}
+
+				$scope.externalPlayerLoadedCb = function(externalPlayer) {
+					$scope.externalPlayer = externalPlayer
+					// $scope.$apply()
 				}
 
 				$scope.initPublishVideoWhenReady = function() {

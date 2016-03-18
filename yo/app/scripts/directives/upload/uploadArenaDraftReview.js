@@ -147,17 +147,21 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 							$scope.review.replayXml = data
 
 							// Init the external player
-							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review)
-
-							// Check file validity
-							$scope.fileValid = $scope.externalPlayer.isValid()
-							$log.debug('is file valid?', $scope.fileValid)
-							$scope.$apply()
-
-							if ($scope.fileValid && $scope.publishPending)
-								$scope.publishVideo()
-							})
+							SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb)
+						})
 					}
+				}
+
+				$scope.externalPlayerLoadedCb = function(externalPlayer) {
+					$scope.externalPlayer = externalPlayer
+					// $scope.$apply()
+
+					$scope.fileValid = $scope.externalPlayer.isValid()
+					$log.debug('is file valid?', $scope.fileValid)
+
+					if ($scope.fileValid && $scope.publishPending)
+						$scope.publishVideo()
+
 				}
 
 				$scope.initPublishVideoWhenReady = function() {

@@ -1,0 +1,6 @@
+<div class="announcements" ng-show="announcement">
+	<div class="alert alert-warning announcement">
+		<button type="button" class="close" ng-click="dismissAnnouncement()"><span aria-hidden="true">&times;</span></button>
+		<span ng-bind-html="announcement.text"></span>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+.announcements {
+    margin-top: 70px;
+    margin-bottom: -50px;
+}
+
+.announcements .announcement {
+	max-width: 800px;
+    margin: auto;
+}

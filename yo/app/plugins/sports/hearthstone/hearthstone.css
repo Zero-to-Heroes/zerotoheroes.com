@@ -136,6 +136,14 @@
 	border: none;
 }
 
+.hearthstone .announcements {
+    margin-bottom: -70px;
+}
+
+.hearthstone .announcements a {
+	color: #3178FF;
+}
+
 
 
 /* =============

@@ -121,6 +121,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Renolock"));
 		hearthstone.add(new Tag("Aggro Shaman"));
 		hearthstone.add(new Tag("Malygos Shaman"));
+		hearthstone.add(new Tag("Reno Shaman"));
 		hearthstone.add(new Tag("Priest Control"));
 		hearthstone.add(new Tag("Dragon Priest"));
 		hearthstone.add(new Tag("Oil Rogue"));
@@ -137,6 +138,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("OTK"));
 		hearthstone.add(new Tag("Mech"));
 		hearthstone.add(new Tag("Murloc"));
+		hearthstone.add(new Tag("Mirror match"));
 		tags.put(HearthStone, hearthstone);
 
 		// Tags for Heroes of the Storm

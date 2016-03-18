@@ -213,15 +213,15 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 							externalPlayer = window[plugin.name]
 							$log.debug('loaded externalPlayer is', externalPlayer)
 							externalPlayer.init(plugin, review)
-							activePlugins.push(plugin)
-							pluginNames.push(plugin.name)
+							if (activePlugins) activePlugins.push(plugin)
+							if (pluginNames) pluginNames.push(plugin.name)
 
 							if (callback) {
 								callback(externalPlayer)
 							}
 						}).catch(function() {
-							activePlugins.push(undefined)
-							pluginNames.push(undefined)
+							if (activePlugins) activePlugins.push(undefined)
+							if (pluginNames) pluginNames.push(undefined)
 							$log.error('could not load plugin', plugin )
 						})
 						angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css').then(function() {

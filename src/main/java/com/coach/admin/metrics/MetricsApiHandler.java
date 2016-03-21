@@ -1,10 +1,13 @@
 package com.coach.admin.metrics;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,7 +33,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MetricsApiHandler {
 
 	private static List<String> excludedUserNames = Arrays
-			.asList(new String[] { "Seb", "2StepsFr0mHell", "Tom", "Daedin" });
+			.asList(new String[] { "Seb", "2StepsFr0mHell", "Tom", "Daedin", "Erwin" });
 
 	@Autowired
 	UserRepository userRepository;
@@ -86,6 +89,42 @@ public class MetricsApiHandler {
 		return new ResponseEntity<String>(csvMetrics, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/nocontrib", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<String> getNoContributions() {
+
+		List<User> findAll = userRepository.findAll();
+		Map<String, User> users = new HashMap<>();
+		for (User user : findAll) {
+			users.put(user.getId(), user);
+		}
+		List<Review> reviews = reviewRepository.findAll();
+		for (Review review : reviews) {
+			if (users.containsKey(review.getAuthorId())) {
+				users.remove(review.getAuthorId());
+			}
+			for (Comment comment : review.getComments()) {
+				if (users.containsKey(comment.getAuthorId())) {
+					users.remove(comment.getAuthorId());
+				}
+			}
+		}
+
+		String result = "";
+
+		String header = "registration date,id,username,email";
+		result += header + "\r\n";
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+
+		for (User user : users.values()) {
+			result += user.getCreationDate() != null ? format.format(user.getCreationDate())
+					: null + "," + user.getId() + "," + user.getUsername() + "," + user.getEmail();
+			result += "\r\n";
+		}
+
+		return new ResponseEntity<String>(result, HttpStatus.OK);
+	}
+
 	private String toCsv(Metrics metrics) {
 
 		Collections.sort(metrics.getMetrics(), new Comparator<Metric>() {
@@ -98,13 +137,13 @@ public class MetricsApiHandler {
 
 		String result = "";
 
-		String header = "Week,Unique content creators,Total interactions,Total reputation,Total video views";
+		String header = "Week,Unique content creators,Total interactions,Total reputation,Total video views,User details";
 		result += header + "\r\n";
 
 		for (Metric metric : metrics.getMetrics()) {
 			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + metric.getUniqueContentCreators().size()
 					+ "," + (metric.getComments() + metric.getReviews()) + "," + metrics.getTotalReputation() + ","
-					+ metrics.getTotalVideoViews();
+					+ metrics.getTotalVideoViews() + "," + metric.getUniqueContentCreators();
 			result += "\r\n";
 		}
 		return result;

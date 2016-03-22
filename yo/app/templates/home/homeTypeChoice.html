@@ -1,0 +1,9 @@
+<div class="main-panel background-white home-choice">
+	<h1>{{ 'global.home.choice.title' | translate }}</h1>
+	<div class="content">
+		<div ng-repeat="choice in options.choices" class="home-type">
+			<button class="btn btn-default btn-lg" ng-click="chooseType(choice)" ng-class="choice" translate="{{ 'global.home.choice.' + sport + '.' + choice}}" translate-default="{{ 'global.home.choice.' + choice | translate}}"></button>
+			<span class="description" translate="{{ 'global.home.choice.' + sport + '.' + choice + 'Description'}}" translate-default="{{ 'global.home.choice.' + choice + 'Description' | translate}}"></span>
+		</div>
+	</div>
+</div>

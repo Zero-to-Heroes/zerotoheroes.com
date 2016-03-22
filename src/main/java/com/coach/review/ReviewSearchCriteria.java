@@ -22,7 +22,9 @@ public class ReviewSearchCriteria {
 	private String title;
 	private List<Tag> wantedTags;
 	private List<Tag> unwantedTags;
-	private boolean ownVideos;
+	private Boolean ownVideos;
+	private Boolean onlyHelpful;
+	private ParticipantDetails participantDetails;
 
 	public List<Tag> getWantedTags() {
 		return wantedTags == null ? new ArrayList<Tag>() : wantedTags;
@@ -33,12 +35,20 @@ public class ReviewSearchCriteria {
 	}
 
 	public String getText() {
-		if (title == null || title.isEmpty()) return null;
+		if (title == null || title.isEmpty()) { return null; }
 
 		String text = "";
-		for (String word : title.split(" "))
+		for (String word : title.split(" ")) {
 			text += "\"" + word + "\" ";
+		}
 		log.debug("returning text search " + text);
 		return text;
+	}
+
+	public ParticipantDetails getParticipantDetails() {
+		if (participantDetails == null) {
+			participantDetails = new ParticipantDetails();
+		}
+		return participantDetails;
 	}
 }

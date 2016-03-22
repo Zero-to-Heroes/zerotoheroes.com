@@ -1,0 +1,16 @@
+.watch-and-learn .participants-search {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.watch-and-learn .search-section {
+	margin-bottom: 50px;
+}
+
+.watch-and-learn tags-input {
+	height: 65px;
+}
+
+.watch-and-learn .wanted-tags {
+	min-width: 200px;
+}

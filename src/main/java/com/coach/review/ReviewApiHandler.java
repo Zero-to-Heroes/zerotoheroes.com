@@ -101,7 +101,7 @@ public class ReviewApiHandler {
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(@RequestBody ReviewSearchCriteria criteria) {
-		// log.debug("Retrieving all reviews with criteria " + criteria);
+		log.debug("Retrieving all reviews with criteria " + criteria);
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
@@ -127,13 +127,20 @@ public class ReviewApiHandler {
 		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, newestFirst);
 		String sportCriteria = sportObj.getKey();
 
-		String author = criteria.isOwnVideos() && user != null ? user.getId() : null;
+		String author = criteria.getOwnVideos() != null && criteria.getOwnVideos() && user != null ? user.getId()
+				: null;
 
 		Page<Review> page = null;
 		try {
 			if (criteria.getText() == null) {
+				// page = reviewRepo.listReviews(sportCriteria, author,
+				// criteria.getWantedTags(),
+				// criteria.getUnwantedTags(), pageRequest);
 				page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(),
-						criteria.getUnwantedTags(), pageRequest);
+						criteria.getUnwantedTags(), criteria.getOnlyHelpful(), null,
+						criteria.getParticipantDetails().getPlayerCategory(),
+						criteria.getParticipantDetails().getOpponentCategory(),
+						criteria.getParticipantDetails().getSkillLevel(), pageRequest);
 			}
 			else {
 				page = reviewRepo.listReviewsWithText(criteria.getText(), author, sportCriteria,

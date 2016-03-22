@@ -137,7 +137,7 @@ public class ReviewApiHandler {
 				// criteria.getWantedTags(),
 				// criteria.getUnwantedTags(), pageRequest);
 				page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(),
-						criteria.getUnwantedTags(), criteria.getOnlyHelpful(), null,
+						criteria.getUnwantedTags(), criteria.getOnlyHelpful(), criteria.getNoHelpful(),
 						criteria.getParticipantDetails().getPlayerCategory(),
 						criteria.getParticipantDetails().getOpponentCategory(),
 						criteria.getParticipantDetails().getSkillLevel(), pageRequest);

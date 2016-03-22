@@ -148,6 +148,9 @@
 				"headline": "Watch and learn",
 				"wantedTags": "Tags / archetype",
 				"filterButton": "Filter"
+			},
+			"helpothers": {
+				"headline": "Help others"
 			}
 		},
 		"listing": {

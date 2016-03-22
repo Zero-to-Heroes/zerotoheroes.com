@@ -1,12 +1,12 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('watchAndLearn', ['$log', '$location', 'Api', '$routeParams', '$timeout',
+app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeout',
 	function($log, $location, Api, $routeParams, $timeout) {
 	return {
 			restrict: 'E',
 			transclude: false,
-			templateUrl: 'templates/home/watchAndLearn.html',
+			templateUrl: 'templates/home/helpOthers.html',
 			scope: {
 				sport: '=',
 				options: '='
@@ -15,7 +15,7 @@ app.directive('watchAndLearn', ['$log', '$location', 'Api', '$routeParams', '$ti
 				$scope.pageNumber = parseInt($routeParams.pageNumber) || 1
 				$scope.options.criteria = {
 					wantedTags: [],
-					onlyHelpful: true,
+					noHelpful: true,
 					participantDetails: {
 						playerCategory: 'any',
 						opponentCategory: 'any'

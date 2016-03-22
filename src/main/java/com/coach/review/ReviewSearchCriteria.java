@@ -23,7 +23,7 @@ public class ReviewSearchCriteria {
 	private List<Tag> wantedTags;
 	private List<Tag> unwantedTags;
 	private Boolean ownVideos;
-	private Boolean onlyHelpful;
+	private Boolean onlyHelpful, noHelpful;
 	private ParticipantDetails participantDetails;
 
 	public List<Tag> getWantedTags() {

@@ -146,6 +146,9 @@
 				"headline": "Regarder & apprendre",
 				"wantedTags": "Tags / archetype",
 				"filterButton": "Filtrer"
+			},
+			"helpothers": {
+				"headline": "Aider les autres"
 			}
 		},
 		"listing": {

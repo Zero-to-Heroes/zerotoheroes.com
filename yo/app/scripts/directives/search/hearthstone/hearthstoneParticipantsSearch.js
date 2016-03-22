@@ -28,13 +28,6 @@ app.directive('hearthstoneParticipantsSearch', ['$log', 'SportsConfig', 'Api', '
 					{ "value" : "warrior", "label" : "<i class=\"class-icon warrior-icon\" title=\"" + $translate.instant('hearthstone.classes.warrior') + "\"></i>" }
 				]
 
-				$scope.options.criteria.participantDetails = {
-					playerCategory: 'any',
-					opponentCategory: 'any'
-				}
-
-
-
 				$scope.loadTags = function() {
 					$log.debug('loading tags', $scope.sport)
 					Api.Tags.query({sport: $scope.sport}, 

@@ -93,15 +93,17 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 			// optional method
 			'responseError': function(rejection) {
 				var User = $injector.get('User');
-				if (!rejection.data) {
-					// notify('Http response error without data details', "rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
-				}
-				else {
-					var code = rejection.data.status;
-					// 401 Unauthorized is a functional error
-					if (code != 401) {
-						notify("Http response error: " + rejection.data.path + " " + rejection.config.method + " " + rejection.data.status + " " + rejection.data.error, 
-							"rejection: " + rejection.config.url, "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
+				if (rejection.config && rejection.config.url && rejection.config.url.indexOf('announcements') == -1) {
+					if (!rejection.data) {
+						notify('Http response error without data details - look in server logs for more info', "rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
+					}
+					else {
+						var code = rejection.data.status;
+						// 401 Unauthorized is a functional error
+						if (code != 401) {
+							notify("Http response error: " + rejection.data.path + " " + rejection.config.method + " " + rejection.data.status + " " + rejection.data.error, 
+								"rejection: " + rejection.config.url, "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
+						}
 					}
 				}
 				return $q.reject(rejection);

@@ -105,7 +105,7 @@ var parseCardsText = {
 	attach: function(element) {
 		// console.log('attaching to element', element);
 		element.textcomplete([{
-			match: /\[\[[a-zA-Z\-\s0-9\.\:]{3,}$/,
+			match: /\[\[[a-zA-Z\-\s0-9\.\:\']{3,}$/,
 			search: function (term, callback, match) {
 				callback($.map(parseCardsText.jsonDatabase, function(card) {
 					var localizeName = parseCardsText.localizeName(card);

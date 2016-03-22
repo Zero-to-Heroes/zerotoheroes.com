@@ -1,0 +1,28 @@
+<div class="hearthstone-participants">
+	<!-- The player -->
+	<div class="player-details class-select">
+		<div class="form-group">
+			<button type="button" class="btn btn-default btn-class-select form-control" ng-model="options.criteria.participantDetails.playerCategory" data-html="1" bs-options="icon.value as icon.label for icon in icons" placeholder="{{ 'global.review.participants.selectClass' | translate }}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" bs-select ng-required="true">
+			  	<span>Action</span>
+			</button>
+		</div>
+  	</div>
+  	<!-- The separation -->
+  	<div class="separation">
+  		<span>vs</span>
+  	</div>
+  	<!-- The opponent -->
+	<div class="opponent-details class-select">
+		<div class="form-group">
+			<button type="button" class="btn btn-default btn-class-select form-control" ng-model="options.criteria.participantDetails.opponentCategory" data-html="1" bs-options="icon.value as icon.label for icon in icons" placeholder="{{ 'global.review.participants.selectClass' | translate }}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" bs-select ng-required="true">
+			  	<span>Action</span>
+			</button>
+		</div>
+  	</div>
+  	<!-- The level of the game -->
+  	<div class="level-details form-group">
+		<tags-input name="level" ng-model="options.criteria.participantDetails.skillLevel" add-from-autocomplete-only="true" spellcheck="false" ng-required="true" replace-spaces-with-dashes="false" min-tags="1" max-tags="1" template="templates/video/tagsTemplate.html" class="form-control" placeholder="Game level"> 
+			<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20" template="templates/video/tagsTemplate.html"></auto-complete>
+		</tags-input>
+  	</div>
+</div>

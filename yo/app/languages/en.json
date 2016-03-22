@@ -129,6 +129,30 @@
 			"language": "Language",
 			"otherSections": "Other sections"
 		},
+		"home": {
+			"choice": {
+				"title": "What do you want to do?",
+				"watchlearn": "Watch & Learn",
+				"getadvice": "Get advice",
+				"helpothers": "Help others",
+				"watchlearnDescription": "Get better by watching other videos who received the best advice from the community. ",
+				"getadviceDescription": "Upload your own video to get advice from the community",
+				"helpothersDescription": "Give back to the community and help other players improve their game",
+				"hearthstone": {
+					"watchlearnDescription": "Learn more about your class or deck archetype by watching games played by others who received the best advice from the community. ",
+					"getadviceDescription": "Upload your own game or arena draft to get advice from the community",
+					"helpothersDescription": "Give back to the community and help other players improve their game"
+				}
+			},
+			"watchlearn": {
+				"headline": "Watch and learn",
+				"wantedTags": "Tags / archetype",
+				"filterButton": "Filter"
+			},
+			"helpothers": {
+				"headline": "Help others"
+			}
+		},
 		"listing": {
 			"allVideos": "All videos",
 			"unsubscribe": "Unsubscribe",

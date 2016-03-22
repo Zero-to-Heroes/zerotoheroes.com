@@ -183,6 +183,13 @@
 .warrior-icon {
 	background-position: -353px 0;
 }
+.any-class-icon {
+	height: 45px;
+	width: 45px;
+	background: url(images/classes/any-class.png) no-repeat;
+	display: inline-block;
+	background-size: auto 100%;
+}
 
 
 
@@ -557,6 +564,36 @@
 	width: 90px;
 }
 
+.hearthstone .watch-and-learn .hearthstone-participants {
+	margin-bottom: 0;
+	height: initial;
+}
+.hearthstone .watch-and-learn .hearthstone-participants .level-details {
+	padding-left: 0;
+	width: auto;
+}
+.hearthstone .watch-and-learn .hearthstone-participants .separation {
+	padding-left: 0;
+	padding-right: 0;
+}
+.hearthstone .watch-and-learn .hearthstone-participants .level-details .tag-item {
+	position: relative;
+}
+.hearthstone .help-others .hearthstone-participants {
+	margin-bottom: 0;
+	height: initial;
+}
+.hearthstone .help-others .hearthstone-participants .level-details {
+	padding-left: 0;
+	width: auto;
+}
+.hearthstone .help-others .hearthstone-participants .separation {
+	padding-left: 0;
+	padding-right: 0;
+}
+.hearthstone .help-others .hearthstone-participants .level-details .tag-item {
+	position: relative;
+}
 
 
 /* =============

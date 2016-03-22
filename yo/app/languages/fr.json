@@ -47,6 +47,7 @@
 			"feature4Text": "Votre expérience est unique et bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		},
 		"classes": {
+			"any": "Toutes",
 			"druid": "Druide",
 			"hunter": "Chasseur",
 			"mage": "Mage",
@@ -125,6 +126,30 @@
 			"chooseSport": "Choisissez un sport",
 			"language": "Langue",
 			"otherSections": "Autres sections"
+		},
+		"home": {
+			"choice": {
+				"title": "Que voulez-vous faire ?",
+				"watchlearn": "Regarder & apprendre",
+				"getadvice": "Recevoir des conseils",
+				"helpothers": "Aider les autres",
+				"watchlearnDescription": "Devenez meilleur en regardant des vidéos d'autres joueurs qui ont reçu les meilleurs conseils de la communauté",
+				"getadviceDescription": "Mettez en ligne votre vidéo pour recevoir des conseils de la communauté",
+				"helpothersDescription": "Redonnez à la communauté en aidant les autres à améliorer leur jeu",
+				"hearthstone": {
+					"watchlearnDescription": "Apprenez-en plus sur votre classe ou votre deck en regardant des parties jouées par d'autres qui ont reçu les meilleurs conseils de la communauté",
+					"getadviceDescription": "Mettez en ligne votre partie ou draft d'arène pour recevoir des conseils de la communauté",
+					"helpothersDescription": "Redonnez à la communauté en aidant les autres joueurs à améliorer leur jeu"
+				}
+			},
+			"watchlearn": {
+				"headline": "Regarder & apprendre",
+				"wantedTags": "Tags / archetype",
+				"filterButton": "Filtrer"
+			},
+			"helpothers": {
+				"headline": "Aider les autres"
+			}
 		},
 		"listing": {
 			"allVideos": "Toutes les vidéos",

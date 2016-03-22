@@ -118,6 +118,17 @@ app.config(['$routeProvider', '$locationProvider',
 			// controller: 'VideoListingCtrl',
 			// reloadOnSearch: false
 	  // 	}).
+	  	when('/s/:sport/home/getadvice', {
+			redirectTo: '/s/:sport/upload'
+	  	}).
+	  	when('/s/:sport/home/allreviews', {
+			redirectTo: '/s/:sport'
+	  	}).
+	  	when('/s/:sport/home/:choice?', {
+			templateUrl: 'views/sportHome.html',
+			controller: 'SportHomeCtrl',
+			menuItem: 'home'
+	  	}).
 	  	when('/s/:sport/myVideos/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',

@@ -1,0 +1,16 @@
+.help-others .participants-search {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.help-others .search-section {
+	margin-bottom: 50px;
+}
+
+.help-others tags-input {
+	height: 65px;
+}
+
+.help-others .wanted-tags {
+	min-width: 200px;
+}

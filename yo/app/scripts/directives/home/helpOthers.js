@@ -68,6 +68,13 @@ app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeo
 				}
 				$scope.search()
 
+				$scope.buildUrl = function(video) {
+					// Replace all special characters ex
+					// http://stackoverflow.com/questions/9705194/replace-special-characters-in-a-string-with
+					var url = '/r/' + video.sport.key.toLowerCase() + '/' + video.id + '/' + S(video.title).slugify().s;
+					return url;
+				}
+
 
 				//===============
 				// Search

@@ -41,10 +41,10 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					supportedExtensions: ['hdtreplay'],
 					plugins: {
 						plugins: [
-							{name: 'parseCardsText', version: 2}, 
-							{name: 'parseDecks', version: 1}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], version: 15},
-							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 2}
+							{name: 'parseCardsText', version: 3}, 
+							{name: 'parseDecks', version: 2}, 
+							{name: 'joustjs', player: true, format: ['text/xml'], version: 16},
+							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 3}
 						],
 						customCss: 'hearthstone.css'
 					},

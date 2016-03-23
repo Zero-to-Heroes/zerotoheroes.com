@@ -51,6 +51,10 @@
 	color: #BDB5B5;
 }
 
+.hearthstone .alert-warning {
+	background: url("images/button-bg-left.png") 0/contain no-repeat, url("images/button-bg-right.png") right/contain no-repeat, url("images/button-bg-center.png") 0/contain repeat-x;
+}
+
 .hearthstone .alert-info {
 	background-color: rgba(173, 99, 57, 0.55);
 	border: none;

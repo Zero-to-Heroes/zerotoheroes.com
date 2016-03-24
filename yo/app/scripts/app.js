@@ -118,16 +118,17 @@ app.config(['$routeProvider', '$locationProvider',
 			// controller: 'VideoListingCtrl',
 			// reloadOnSearch: false
 	  // 	}).
-	  	when('/s/:sport/home/getadvice', {
+	  	when('/s/:sport/reviews/:pageNumber?', {
+			templateUrl: 'views/videoListing.html',
+			controller: 'VideoListingCtrl',
+			reloadOnSearch: false,
+			menuItem: 'reviews'
+	  	}).
+	  	when('/s/:sport/getadvice', {
 			redirectTo: '/s/:sport/upload'
 	  	}).
-	  	when('/s/:sport/home/allreviews', {
-			redirectTo: '/s/:sport'
-	  	}).
-	  	when('/s/:sport/home/:choice?', {
-			templateUrl: 'views/sportHome.html',
-			controller: 'SportHomeCtrl',
-			menuItem: 'home'
+	  	when('/s/:sport/allreviews', {
+			redirectTo: '/s/:sport/reviews'
 	  	}).
 	  	when('/s/:sport/myVideos/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
@@ -141,11 +142,10 @@ app.config(['$routeProvider', '$locationProvider',
 			ownVideos: true,
 			menuItem: 'reviews'
 	  	}).
-	  	when('/s/:sport/:pageNumber?', {
-			templateUrl: 'views/videoListing.html',
-			controller: 'VideoListingCtrl',
-			reloadOnSearch: false,
-			menuItem: 'reviews'
+	  	when('/s/:sport/:choice?', {
+			templateUrl: 'views/sportHome.html',
+			controller: 'SportHomeCtrl',
+			menuItem: 'home'
 	  	}).
 	  	when('/c/:coachName/:sport', {
 			templateUrl: 'views/coachPage.html',

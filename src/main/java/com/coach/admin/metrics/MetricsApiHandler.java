@@ -33,7 +33,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MetricsApiHandler {
 
 	private static List<String> excludedUserNames = Arrays
-			.asList(new String[] { "Seb", "2StepsFr0mHell", "Tom", "Daedin", "Erwin" });
+			.asList(new String[] { "Seb", "2StepsFr0mHell", "Tom", "Daedin", "Erwin", "Thibaud" });
 
 	@Autowired
 	UserRepository userRepository;
@@ -58,13 +58,13 @@ public class MetricsApiHandler {
 		for (Review review : reviews) {
 			totalVideoViews += review.getViewCount();
 			Date creationDate = review.getCreationDate();
-			if (creationDate != null && excludedUserNames.indexOf(review.getAuthor()) == -1) {
+			if (creationDate != null && review.getAuthor() != null && excludedUserNames.indexOf(review.getAuthor()) == -1) {
 				metrics.get(creationDate).incrementReviews();
 				metrics.get(creationDate).addUniqueContentCreator(review.getAuthor());
 			}
 			for (Comment comment : review.getAllComments()) {
 				Date commCreation = comment.getCreationDate();
-				if (commCreation != null && excludedUserNames.indexOf(comment.getAuthor()) == -1) {
+				if (commCreation != null && comment.getAuthor() != null && excludedUserNames.indexOf(comment.getAuthor()) == -1) {
 					metrics.get(commCreation).incrementComments();
 					metrics.get(creationDate).addUniqueContentCreator(comment.getAuthor());
 				}

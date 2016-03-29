@@ -85,9 +85,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private String language = "en";
 	// Participant details
 	private ParticipantDetails participantDetails;
-	@JsonIgnore
-	@TextIndexed
-	private String fullTextSearchField;
 	private String author, lastModifiedBy;
 	private String authorId, lastModifiedById;
 	private int authorReputation;
@@ -104,6 +101,13 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private int viewCount;
 	private List<Tag> tags;
 	private Map<String, String> canvas = new HashMap<>();
+
+	// Search-specific stuff
+	@JsonIgnore
+	@TextIndexed
+	private String fullTextSearchField;
+	@JsonIgnore
+	private List<Tag> allTags = new ArrayList<>();
 
 	private int totalInsertedComments;
 	private int canvasId;
@@ -377,6 +381,15 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		for (Comment comment : getComments()) {
 			fullTextSearchField += " " + comment.getFullText();
 		}
+
+		// And update the tags for proper search
+		if (tags != null) {
+			allTags.addAll(tags);
+		}
+		if (participantDetails != null) {
+			allTags.addAll(participantDetails.getSkillLevel());
+		}
+
 	}
 
 	public boolean isSequence() {

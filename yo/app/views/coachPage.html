@@ -32,9 +32,9 @@
 
 
 	<!-- Videos showcased by the coach -->
-	<div class="videos-list" ng-show="videos">
+	<div class="videos-list" ng-show="config.videos && config.videos.length > 0">
 		<h2>{{ 'global.coach.allReviews' | translate }}</h2>
-		<div ng-include="'/templates/videoListingTable.html'"></div>
+		<video-search config="config" sport="sport"></video-search>
 	</div>
 
 </div>

@@ -132,9 +132,9 @@ public class ReviewApiHandler {
 
 		Page<Review> page = null;
 		try {
-			log.debug("tentative search with criteria " + criteria);
+			// log.debug("tentative search with criteria " + criteria);
 			String text = criteria.getText();
-			log.debug("\t " + text);
+			// log.debug("\t " + text);
 			if (text == null || text.isEmpty()) {
 				// page = reviewRepo.listReviews(sportCriteria, author,
 				// criteria.getWantedTags(),
@@ -146,7 +146,7 @@ public class ReviewApiHandler {
 						criteria.getParticipantDetails().getSkillLevel(), pageRequest);
 			}
 			else {
-				log.debug("searching with criteria " + criteria);
+				// log.debug("searching with criteria " + criteria);
 				page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(),
 						criteria.getUnwantedTags(), criteria.getOnlyHelpful(), criteria.getNoHelpful(),
 						criteria.getParticipantDetails().getPlayerCategory(),

@@ -24,8 +24,8 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ "published: true,"
 			+ "$and : ["
 			+ "		{ $or : [ { $where : '?1 == null' }, { authorId : ?1 } ] }, "
-			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $all : ?2 } } ] }, "
-			+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { tags : { $nin : ?3 } } ] }, "
+			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { allTags : { $all : ?2 } } ] }, "
+			+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { allTags : { $nin : ?3 } } ] }, "
 			+ "		{ $or : [ { $where : '?4 == null' }, { totalHelpfulComments : { $gt : 0 } } ] }, "
 			+ "		{ $or : [ { $where : '?5 == null' }, { totalHelpfulComments : { $eq : 0 } } ] }, "
 					// Any matchup
@@ -79,8 +79,8 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 				+ "$and : ["
 				+ "		{ $or : [ { $text : { $search : ?9 } } ] }, "
 				+ "		{ $or : [ { $where : '?1 == null' }, { authorId : ?1 } ] }, "
-				+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { tags : { $all : ?2 } } ] }, "
-				+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { tags : { $nin : ?3 } } ] }, "
+				+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { allTags : { $all : ?2 } } ] }, "
+				+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { allTags : { $nin : ?3 } } ] }, "
 				+ "		{ $or : [ { $where : '?4 == null' }, { totalHelpfulComments : { $gt : 0 } } ] }, "
 				+ "		{ $or : [ { $where : '?5 == null' }, { totalHelpfulComments : { $eq : 0 } } ] }, "
 						// Any matchup

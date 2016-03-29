@@ -12,8 +12,8 @@
 					<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
 				</tags-input>
 			</div>
-			<button type="submit" class="btn btn-default" ng-click="search()"><span>{{ 'global.home.watchlearn.filterButton' | translate }}</span></button>
+			<button type="submit" class="btn btn-default" ng-click="searchFromClick()"><span>{{ 'global.home.watchlearn.filterButton' | translate }}</span></button>
 		</form>
 	</section>
-	<div ng-include="'/templates/videoListingTable.html'"></div>
+	<video-search config="options.criteria" sport="sport"></video-search>
 </div>

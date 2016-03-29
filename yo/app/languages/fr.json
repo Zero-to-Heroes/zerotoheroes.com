@@ -129,7 +129,7 @@
 			"otherSections": "Autres sections"
 		},
 		"home": {
-			"description": "Bienvenue à Zero to Heroes ! Ce site est dédié à l'apprentissage et à la progression, et que vous soyiez un débutant à la recherche de conseils ou un vétéran voulant aider les autres, la communauté vous accueille les bras ouverts :) Si vous ne savez pas par où commencer, veuillez jeter un oeil aux options ci-dessous.",
+			"description": "Bienvenue à Zero to Heroes ! Ce site est dédié à l'apprentissage et à la progression, et que vous soyiez un débutant à la recherche de conseils ou un vétéran voulant aider les autres, la communauté vous accueille les bras ouverts :)",
 			"choice": {
 				"title": "Que voulez-vous faire ?",
 				"watchlearn": "Regarder & apprendre",

@@ -131,7 +131,7 @@
 			"otherSections": "Other sections"
 		},
 		"home": {
-			"description": "Welcome to Zero to Heroes! The site is dedicated to learning and improving, and whether you're a beginner looking for advice or a veteran wanting to help the other players, the community welcomes you warmly :) If unsure where to start, please have a look at the options below.",
+			"description": "Welcome to Zero to Heroes! The site is dedicated to learning and improving, and whether you're a beginner looking for advice or a veteran wanting to help the other players, the community welcomes you warmly :)",
 			"choice": {
 				"title": "What do you want to do?",
 				"watchlearn": "Watch & Learn",

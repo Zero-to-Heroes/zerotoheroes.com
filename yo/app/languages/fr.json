@@ -206,7 +206,8 @@
 		"coach": {
 			"languages": "Langues parlées : ",
 			"summary": "Résumé: ",
-			"goToPageTooltip": "Cliquez pour vous rendre sur sa page de Coach"
+			"goToPageTooltip": "Cliquez pour vous rendre sur sa page de Coach",
+			"allReviews": "Revues commentées"
 		},
 		"forgotPassword": {
 			"headline": "Vous avez oublié votre mot de passe ?", 

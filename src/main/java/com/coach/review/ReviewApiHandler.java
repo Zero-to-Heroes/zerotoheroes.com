@@ -132,7 +132,10 @@ public class ReviewApiHandler {
 
 		Page<Review> page = null;
 		try {
-			if (criteria.getText() == null) {
+			log.debug("tentative search with criteria " + criteria);
+			String text = criteria.getText();
+			log.debug("\t " + text);
+			if (text == null || text.isEmpty()) {
 				// page = reviewRepo.listReviews(sportCriteria, author,
 				// criteria.getWantedTags(),
 				// criteria.getUnwantedTags(), pageRequest);
@@ -143,8 +146,12 @@ public class ReviewApiHandler {
 						criteria.getParticipantDetails().getSkillLevel(), pageRequest);
 			}
 			else {
-				page = reviewRepo.listReviewsWithText(criteria.getText(), author, sportCriteria,
-						criteria.getWantedTags(), criteria.getUnwantedTags(), pageRequest);
+				log.debug("searching with criteria " + criteria);
+				page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(),
+						criteria.getUnwantedTags(), criteria.getOnlyHelpful(), criteria.getNoHelpful(),
+						criteria.getParticipantDetails().getPlayerCategory(),
+						criteria.getParticipantDetails().getOpponentCategory(),
+						criteria.getParticipantDetails().getSkillLevel(), text, pageRequest);
 			}
 		}
 		catch (Exception e) {

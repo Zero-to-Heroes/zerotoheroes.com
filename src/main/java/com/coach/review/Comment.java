@@ -159,6 +159,7 @@ public class Comment implements HasText, HasReputation {
 
 	public String getFullText() {
 		String fullText = text == null ? "" : text.toLowerCase();
+		fullText += author == null ? "" : " author:" + author.toLowerCase();
 		for (Comment comment : getComments()) {
 			fullText += " " + comment.getFullText();
 		}

@@ -29,4 +29,12 @@
 			<button ng-click="cancelUpdate()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
 		</div>
 	</div>
+
+
+	<!-- Videos showcased by the coach -->
+	<div class="videos-list" ng-show="videos">
+		<h2>{{ 'global.coach.allReviews' | translate }}</h2>
+		<div ng-include="'/templates/videoListingTable.html'"></div>
+	</div>
+
 </div>

@@ -38,8 +38,9 @@ public class AdminApiHandler {
 	@RequestMapping(value = "/updateAllReviews", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<Review> updateAllReviews() {
 		List<Review> reviews = reviewRepository.findAll();
-		for (Review review : reviews)
-			review.setPublished(true);
+		for (Review review : reviews) {
+			review.updateFullTextSearch();
+		}
 		reviewRepository.save(reviews);
 
 		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);

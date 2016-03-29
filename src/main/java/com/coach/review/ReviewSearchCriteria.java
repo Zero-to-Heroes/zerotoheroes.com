@@ -41,7 +41,6 @@ public class ReviewSearchCriteria {
 		for (String word : title.split(" ")) {
 			text += "\"" + word + "\" ";
 		}
-		log.debug("returning text search " + text);
 		return text;
 	}
 

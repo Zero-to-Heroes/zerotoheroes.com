@@ -359,7 +359,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	public void updateFullTextSearch() {
 		fullTextSearchField = title == null ? "" : title.toLowerCase() + " ";
-		fullTextSearchField += description == null ? "" : description.toLowerCase();
+		fullTextSearchField += description == null ? "" : " " + description.toLowerCase();
+		fullTextSearchField += author == null ? "" : " author:" + author.toLowerCase();
 		if (participantDetails != null) {
 			fullTextSearchField += " " + participantDetails.getPlayerName();
 			fullTextSearchField += " " + participantDetails.getPlayerCategory();

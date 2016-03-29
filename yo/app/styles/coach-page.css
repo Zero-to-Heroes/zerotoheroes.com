@@ -63,3 +63,12 @@
     padding-left: 35px;
     padding-right: 35px;
 }
+
+.coach-page .videos-list {
+	padding: 15px;
+}
+
+.coach-page .videos-list h2 {
+	text-align: center;
+}
+

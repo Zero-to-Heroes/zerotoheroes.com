@@ -7,7 +7,7 @@ app.directive('announcements', ['$log', 'Api', '$interval', 'localStorage', '$fi
 		 
 	return {
 		restrict: 'E',
-		replace: true,
+		replace: false,
 		templateUrl: 'templates/announcements.html',
 		scope: {},
 		link: function(scope, element, attributes) {

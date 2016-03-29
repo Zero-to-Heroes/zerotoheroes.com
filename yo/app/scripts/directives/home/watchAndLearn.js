@@ -51,7 +51,7 @@ app.directive('watchAndLearn', ['$log', '$location', 'Api', '$routeParams', '$ti
 							}
 
 						}
-						// $scope.range = $scope.getRange()
+						$scope.range = $scope.getRange()
 
 						// Update the URL
 						// $scope.updateUrl(params)
@@ -117,6 +117,60 @@ app.directive('watchAndLearn', ['$log', '$location', 'Api', '$routeParams', '$ti
 							return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
 						}
 					})
+				}
+
+
+
+				//===============
+				// Pagination
+				//===============
+				$scope.goToPage = function(page) {
+					//$log.log('going to page', page);
+					//$log.log('routeparams', $routeParams);
+					//$log.log('route is', $route);
+					$route.updateParams({'pageNumber': page});
+					//$scope.retrieveVideos($scope.tabs.activeTab, page);
+					//$location.path('pageNumber', page);
+				}
+
+				$scope.goToPreviousPage = function() {
+					$route.updateParams({'pageNumber': Math.max(1, $scope.pageNumber - 1)});
+				}
+
+				$scope.goToNextPage = function() {
+					$route.updateParams({'pageNumber': Math.min($scope.totalPages, $scope.pageNumber + 1)});
+				}
+				
+				$scope.getRange = function() {
+					var pages = [];
+					
+					for (var i = -2; i <= 2; i++) {
+						pages.push($scope.pageNumber + i);
+					}
+
+					//$log.log('first pages are', pages);
+					// No negative pages
+					if (pages[0] <= 0) {
+						var offset = pages[0];
+						for (var i = 0; i < pages.length; i++) {
+							pages[i] = pages[i] - offset;
+						}
+					}
+					else if (pages[pages.length - 1] > $scope.totalPages) {
+						var offset = pages[pages.length - 1] - $scope.totalPages;
+						for (var i = 0; i < pages.length; i++) {
+							pages[i] = pages[i] - offset;
+						}
+					}
+
+					//$log.log('pages are', pages);
+					// Remove pages if there are too many of them
+					while (pages[pages.length - 1] >= $scope.totalPages) {
+						pages.splice(pages.length - 1, 1);
+					}
+					//$log.log('finally, apges are', pages);
+
+					return pages;
 				}
 			}
 		}

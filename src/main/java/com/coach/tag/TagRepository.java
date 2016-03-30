@@ -130,6 +130,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));
 		hearthstone.add(new Tag("OTK Warrior"));
+		hearthstone.add(new Tag("Worgen OTK"));
 		// Category
 		hearthstone.add(new Tag("Aggro"));
 		hearthstone.add(new Tag("Midrange"));

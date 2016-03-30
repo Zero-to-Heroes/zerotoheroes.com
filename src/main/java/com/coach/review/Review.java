@@ -383,6 +383,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		}
 
 		// And update the tags for proper search
+		allTags = new ArrayList<>();
 		if (tags != null) {
 			allTags.addAll(tags);
 		}

@@ -413,6 +413,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Comments
 		//===============
+		$scope.triggerNewCommentEdition = function() {
+			$scope.addingComment = true
+			$timeout(function() {
+				$('#newCommentArea')[0].focus()
+			})
+		}
 		$scope.addComment = function() {
 			$scope.$broadcast('show-errors-check-validity');
 			if ($scope.commentForm.$valid) {

@@ -142,7 +142,7 @@
 				<div class="container-fluid comment-block main-block" ng-show="!addingComment">
 					<div class="row">
 						<div class="col-md-10 adding-comment">
-							<textarea ng-click="addingComment = true" placeholder="{{ 'global.review.comment.addCommentButton' | translate }}" class="form-control textarea-button " rows="1"></textarea>
+							<textarea ng-click="triggerNewCommentEdition()" placeholder="{{ 'global.review.comment.addCommentButton' | translate }}" class="form-control textarea-button " rows="1"></textarea>
 						</div>
 					</div>
 				</div>
@@ -156,7 +156,7 @@
 							</div>
 							<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 								<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" config="config" media-type="review.replay ? 'replay' : 'video'">
-									<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control text-editing-area" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
+									<textarea id="newCommentArea" placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control text-editing-area" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
 								<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
 								<div>

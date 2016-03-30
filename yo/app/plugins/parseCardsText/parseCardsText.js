@@ -60,6 +60,12 @@ var parseCardsText = {
 		return link;
 	},
 
+	refreshTooltips: function() {
+		setTimeout(function() {
+			$('[data-toggle="tooltip"]').tooltip()
+		}, 300)
+	},
+
 	buildFullCardImageUrl: function(card, lang) {
 		if (!card) return ''
 

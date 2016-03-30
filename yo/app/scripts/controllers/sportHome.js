@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('SportHomeCtrl', ['$scope', 'Api', '$log', 'SportsConfig', '$routeParams', 
-	function($scope, Api, $log, SportsConfig, $routeParams) {
+angular.module('controllers').controller('SportHomeCtrl', ['$scope', 'Api', '$log', 'SportsConfig', '$routeParams', '$location',
+	function($scope, Api, $log, SportsConfig, $routeParams, $location) {
 
 		$scope.state = {
 			choice: undefined,

@@ -117,7 +117,7 @@
 		},
 		"navigation": {
 			"postVideo": "Mettre en ligne",
-			"Home": "Accueil",
+			"home": "Accueil",
 			"postFeedback": "Nouveau post",
 			"forum": "Forum (bientôt™)",
 			"globalForum": "Forum général",

@@ -1,6 +1,7 @@
 var parseCardsText = {
 	cardRegex: /\[\[.+?\]\]/gm,
 	manaRegex: /\d-mana/gm,
+	isUpdatePending: false,
 
 	execute: function (review, text) {
 		var matches = text.match(parseCardsText.cardRegex);
@@ -53,17 +54,25 @@ var parseCardsText = {
 		var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + localizedImage + '\'>';
 		var link = '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-container="body" data-animation="false">' + localizedName + '</span>';
 
-		setTimeout(function() {
-			$('[data-toggle="tooltip"]').tooltip()
-		}, 300)
+		if (!parseCardsText.isUpdatePending) {
+			parseCardsText.isUpdatePending = true
+			setTimeout(function() {
+				$('[data-toggle="tooltip"]').tooltip()
+				parseCardsText.isUpdatePending = false
+			}, 300)
+		}
 
 		return link;
 	},
 
 	refreshTooltips: function() {
-		setTimeout(function() {
-			$('[data-toggle="tooltip"]').tooltip()
-		}, 300)
+		if (!parseCardsText.isUpdatePending) {
+			parseCardsText.isUpdatePending = true
+			setTimeout(function() {
+				$('[data-toggle="tooltip"]').tooltip()
+				parseCardsText.isUpdatePending = false
+			}, 300)
+		}
 	},
 
 	buildFullCardImageUrl: function(card, lang) {

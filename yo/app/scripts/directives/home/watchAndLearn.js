@@ -37,7 +37,14 @@ app.directive('watchAndLearn', ['$log', '$location', 'Api', '$routeParams', '$ti
 					// $scope.retrieveVideos($scope.pageNumber, $scope.options.criteria)
 				}
 				$timeout(function() {
-					$scope.search()
+					if (!$scope.options.criteria.search) {
+						$timeout(function() {
+							$scope.search()
+						}, 50)
+					}
+					else {
+						$scope.search()
+					}
 				})
 
 

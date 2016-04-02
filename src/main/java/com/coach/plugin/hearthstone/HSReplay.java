@@ -76,8 +76,9 @@ public class HSReplay implements ReplayPlugin {
 			tempFile.delete();
 			FileUtils.deleteDirectory(new File(destination));
 		}
-		else if ("text/plain".equals(review.getFileType())) {
+		else if ("text/plain".equals(review.getFileType()) || "arenatracker".equals(review.getFileType())) {
 			// Need to process the file
+			log.debug("Retrieving log file " + review.getTemporaryKey());
 			String logFile = s3utils.readFromS3(review.getTemporaryKey());
 			log.debug("Retrieved log file ");
 			xml = new ReplaySerializer().xmlFromLogs(logFile);

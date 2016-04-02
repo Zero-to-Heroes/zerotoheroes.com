@@ -1,6 +1,5 @@
 package com.coach.core.storage;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -24,7 +23,10 @@ import com.amazonaws.services.s3.model.Permission;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Component
+@Slf4j
 public class S3Utils {
 
 	private final AmazonS3 s3;
@@ -47,12 +49,13 @@ public class S3Utils {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()));
 		String line;
 		while ((line = reader.readLine()) != null) {
+			// log.debug("\treading line " + line);
 			fileContents += line + System.lineSeparator();
 		}
 
 		return fileContents;
 	}
-	
+
 	public void readFromS3ToFile(String key, File localFile) throws IOException {
 		s3.getObject(new GetObjectRequest(inputBucket, key), localFile);
 	}

@@ -88,23 +88,31 @@ public class User implements UserDetails {
 	// Use Roles as external API
 	public Set<UserRole> getRoles() {
 		Set<UserRole> roles = EnumSet.noneOf(UserRole.class);
-		if (authorities != null) for (UserAuthority authority : authorities)
-			roles.add(UserRole.valueOf(authority));
+		if (authorities != null) {
+			for (UserAuthority authority : authorities) {
+				roles.add(UserRole.valueOf(authority));
+			}
+		}
 		return roles;
 	}
 
 	public void setRoles(Set<UserRole> roles) {
-		for (UserRole role : roles)
+		for (UserRole role : roles) {
 			grantRole(role);
+		}
 	}
 
 	public void grantRole(UserRole role) {
-		if (authorities == null) authorities = new HashSet<UserAuthority>();
+		if (authorities == null) {
+			authorities = new HashSet<UserAuthority>();
+		}
 		authorities.add(role.asAuthorityFor(this));
 	}
 
 	public void revokeRole(UserRole role) {
-		if (authorities != null) authorities.remove(role.asAuthorityFor(this));
+		if (authorities != null) {
+			authorities.remove(role.asAuthorityFor(this));
+		}
 	}
 
 	public boolean hasRole(UserRole role) {
@@ -137,21 +145,39 @@ public class User implements UserDetails {
 
 	public void modifyReputation(Sport sport, int amount) {
 		reputation += amount;
-		if (explodedReputation == null) explodedReputation = new UserReputation();
+		if (explodedReputation == null) {
+			explodedReputation = new UserReputation();
+		}
 		explodedReputation.modifyReputation(sport, amount);
 	}
 
 	public int getReputation(Sport sport) {
-		if (explodedReputation == null) explodedReputation = new UserReputation();
+		if (explodedReputation == null) {
+			explodedReputation = new UserReputation();
+		}
 		return explodedReputation.getReputation(sport);
 	}
 
 	public Stats getStats() {
-		if (stats == null) stats = new Stats();
+		if (stats == null) {
+			stats = new Stats();
+		}
 		return stats;
 	}
 
 	public boolean canEdit() {
 		return canEdit;
+	}
+
+	public void addWatchedReview(String sport, String reviewId) {
+		stats.addWatchedReview(sport, reviewId);
+	}
+
+	public void addPostedReview(String sport, String reviewId) {
+		stats.addPostedReview(sport, reviewId);
+	}
+
+	public void addPostedComment(String sport, String reviewId) {
+		stats.addPostedComment(sport, reviewId);
 	}
 }

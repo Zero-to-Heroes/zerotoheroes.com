@@ -195,6 +195,11 @@ public class ReviewApiHandler {
 		String userId = user != null ? user.getId() : "";
 		review.prepareForDisplay(userId);
 		// log.debug("Returning review " + review);
+		// And add a video view to the user
+		if (user != null) {
+			user.addWatchedReview(review.getSport().getKey().toLowerCase(), review.getId());
+			userRepo.save(user);
+		}
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -243,6 +248,12 @@ public class ReviewApiHandler {
 		sportManager.addNewReviewActivity(review);
 		// We need to save here so that the transcoding process can retrieve it
 		updateReview(review);
+
+		User user = userRepo.findByUsername(currentUser);
+		if (user != null) {
+			user.addPostedReview(review.getSport().getKey().toLowerCase(), review.getId());
+			userRepo.save(user);
+		}
 
 		// Start transcoding
 		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())) {
@@ -329,6 +340,11 @@ public class ReviewApiHandler {
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
 		review.prepareForDisplay(userId);
+
+		if (user != null) {
+			user.addPostedComment(review.getSport().getKey().toLowerCase(), review.getId());
+			userRepo.save(user);
+		}
 
 		// Notifying the user who submitted the review (if he is registered)
 		slackNotifier.notifyNewComment(review, comment);

@@ -1,0 +1,21 @@
+.search-page .search-section{
+	text-align: left;
+}
+
+.search-page .search-block {
+	margin-bottom: 10px;
+	display: block;
+}
+
+.search-page .matchup-label {
+	vertical-align: middle;
+}
+
+.search-page .participants-search {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.search-page tags-input {
+	width: 350px;
+}

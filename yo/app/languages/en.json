@@ -123,8 +123,8 @@
 			"postFeedback": "Post feedback",
 			"forum": "Forum (soon™)",
 			"globalForum": "General forum",
-			"reviews": "All reviews",
-			"search": "Search (soon™)",
+			"reviews": "Latest reviews",
+			"search": "Search",
 			"coaches": "Coaches",
 			"chooseSport": "Choose a sport",
 			"language": "Language",
@@ -177,6 +177,20 @@
 				"submitted": "Submitted",
 				"modified": "Updated",
 				"by": "by"
+			}
+		},
+		"search": {
+			"headline": "Search reviews",
+			"matchupLabel": "I'm looking for reviews that oppose",
+			"wantedTagsLabel": "I want reviews about",
+			"unwantedTagsLabel": "I don't want to see reviews about",
+			"helpfulCommentLabel": "I want to see",
+			"searchButton": "Search",
+			"clearFilterButton": "Clear filters",
+			"helpful": {
+				"all": "all reviews that match",
+				"onlyHelpful": "only reviews with comments flagged as helpful",
+				"onlyNotHelpful": "only reviews without comments flagged as helpful"
 			}
 		},
 		"toolbar": {

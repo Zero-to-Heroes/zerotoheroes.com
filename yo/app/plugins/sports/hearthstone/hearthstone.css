@@ -602,6 +602,14 @@
 
 
 /* =============
+** Search page
+** =============*/
+.hearthstone .search-page .matchup-criteria .hearthstone-participants {
+	margin-bottom: 10px;
+}
+
+
+/* =============
 ** Video listing
 ** =============*/
 .hearthstone .video-listing a, .hearthstone .video-listing a:focus, .hearthstone .video-listing a:hover, .hearthstone .video-listing a:active, .hearthstone .video-listing a h3 {

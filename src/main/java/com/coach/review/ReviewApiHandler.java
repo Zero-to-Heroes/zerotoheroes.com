@@ -160,6 +160,7 @@ public class ReviewApiHandler {
 		}
 
 		List<Review> reviews = page.getContent();
+		log.debug("all reviews " + reviews);
 		ListReviewResponse response = new ListReviewResponse(reviews);
 		response.setTotalPages(page.getTotalPages());
 

@@ -177,6 +177,20 @@
 				"by": "par"
 			}
 		},
+		"search": {
+			"headline": "Recherche de revue",
+			"matchupLabel": "Je cherche des revues qui opposent",
+			"wantedTagsLabel": "Je veux des revues sur",
+			"unwantedTagsLabel": "Je ne veux pas voir de revues qui parlent de",
+			"helpfulCommentLabel": "Je veux voir",
+			"searchButton": "Recherche",
+			"clearFilterButton": "Effacer les filtres",
+			"helpful": {
+				"all": "toutes les revues qui correspondent",
+				"onlyHelpful": "uniquement les revues qui ont des commentaires marqués comme utiles",
+				"onlyNotHelpful": "uniquement des revues sans commentaire marqué comme utile"
+			}
+		},
 		"videoPlayer": {
 
 		},
@@ -300,7 +314,7 @@
 				"subscribeReview": "Inscription",
 				"subscribeReviewTooltip": "Cliquez pour être notifié lorsqu'un nouveau commentaire est ajouté",
 				"searchVideos": "Recherche",
-				"addCommentButton": "Ajouter un commentaire public", 
+				"addCommentButton": "Offrez votre aide ou posez une question", 
 				"authorNamePlaceholder": "Votre nom",
 				"addCommentTextPlaceholder": "Aidez {{name}}?",
 				"confirmCommentButton": "Poster",

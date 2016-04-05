@@ -1,6 +1,8 @@
-angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($provide, $httpProvider, ENV) {
+angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', function($provide, $httpProvider, ENV, version) {
 	// Use the `decorator` solution to substitute or attach behaviors to
 	// original service instance; @see angular-mocks for more examples....
+
+	console.log('site version is', version)
 
 	var notify = function(text) {
 		var shouldLog = true;
@@ -17,7 +19,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 		var payload = {
 			"channel": "#error-monitor",
 			"username": "annoy-o-tron",
-			"text": text,
+			"text": version + ' - ' + text,
 			"attachments": []
 		};
 
@@ -76,8 +78,6 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', function($prov
 			var User = $injector.get('User');
 			var $location = $injector.get('$location');
 			var $window = $injector.get('$window');
-
-
 
 			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
 		};

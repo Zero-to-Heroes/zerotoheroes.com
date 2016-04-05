@@ -346,29 +346,31 @@ module.exports = function (grunt) {
 	},
 
 	ngconstant: {
-	  // Options for all targets
-	  options: {
-		space: '  ',
-		wrap: '\'use strict\';\n\n {%= __ngModule %}',
-		name: 'config',
-	  },
-	  // Environment targets
-	  development: {
-		options: {
-		  dest: '<%= yeoman.app %>/scripts/config.js'
-		},
-		constants: {
-		  ENV: grunt.file.readJSON('app/conf/constants.dev.json')
-		}
-	  },
-	  production: {
-		options: {
-		  dest: '<%= yeoman.app %>/scripts/config.js'
-		},
-		constants: {
-		  ENV: grunt.file.readJSON('app/conf/constants.prod.json')
-		}
-	  }
+	  	// Options for all targets
+	  	options: {
+			space: '  ',
+			wrap: '\'use strict\';\n\n {%= __ngModule %}',
+			name: 'config',
+	  	},
+	  	// Environment targets
+	  	development: {
+			options: {
+		  		dest: '<%= yeoman.app %>/scripts/config.js'
+			},
+			constants: {
+		  		ENV: grunt.file.readJSON('app/conf/constants.dev.json'),
+	  			version: grunt.template.today('yyyyMMddHH')
+			}
+	  	},
+	  	production: {
+			options: {
+			  	dest: '<%= yeoman.app %>/scripts/config.js'
+			},
+			constants: {
+			  	ENV: grunt.file.readJSON('app/conf/constants.prod.json'),
+	  			version: grunt.template.today('yyyyMMddHH')
+			}
+	  	}
 	},
 
 	// Test settings

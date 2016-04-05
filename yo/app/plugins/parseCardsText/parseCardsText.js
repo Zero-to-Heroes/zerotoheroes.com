@@ -131,7 +131,7 @@ var parseCardsText = {
 					res = res || card.name.toLowerCase().indexOf(term.substring(2).toLowerCase()) === 0;
 					// if (debug) console.log('res2', term, localizeName, res);
 					// Keep only valid cards
-					res = res && card.cardImage && card.type != 'Hero';
+					res = res && card.cardImage && card.type != 'Hero' && card.type != 'Enchantment' 
 					// if (debug) console.log('res3', term, localizeName, res);
 					res = res ? card : null
 					// if (debug) console.log('res4', term, localizeName, res);

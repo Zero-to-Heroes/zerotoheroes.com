@@ -359,7 +359,7 @@ module.exports = function (grunt) {
 			},
 			constants: {
 		  		ENV: grunt.file.readJSON('app/conf/constants.dev.json'),
-	  			version: grunt.template.today('yyyymmddHH')
+	  			version: grunt.template.today('yyyymmdd-HH')
 			}
 	  	},
 	  	production: {
@@ -368,7 +368,7 @@ module.exports = function (grunt) {
 			},
 			constants: {
 			  	ENV: grunt.file.readJSON('app/conf/constants.prod.json'),
-	  			version: grunt.template.today('yyyyMMddHH')
+	  			version: grunt.template.today('yyyymmdd-HH')
 			}
 	  	}
 	},

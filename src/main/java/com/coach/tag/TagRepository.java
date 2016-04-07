@@ -112,7 +112,6 @@ public class TagRepository {
 		hearthstone.add(new Tag("Palamurloc"));
 		hearthstone.add(new Tag("Mage Mecha"));
 		hearthstone.add(new Tag("Tempo Mage"));
-		hearthstone.add(new Tag("Flamewalker Mage"));
 		hearthstone.add(new Tag("Freeze Mage"));
 		hearthstone.add(new Tag("Echo Mage"));
 		hearthstone.add(new Tag("Zoolock"));

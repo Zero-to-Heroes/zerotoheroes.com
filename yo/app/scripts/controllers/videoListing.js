@@ -52,7 +52,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				$scope.subscribers = data.subscribers
 			})
 
-			$scope.criteria.search(params)
+			$scope.criteria.search(params, true, null)
 		}
 
 		

@@ -48,7 +48,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 		$scope.search = function() {
 			$scope.options.criteria.sport = $scope.sport
 
-			$scope.options.criteria.search($scope.options.criteria, $scope.pageNumber, false)
+			$scope.options.criteria.search($scope.options.criteria, true, $scope.pageNumber)
 			$timeout(function() {
 				$scope.options.criteria.participantDetails.playerCategory = $scope.options.criteria.participantDetails.playerCategory || 'any'
 				$scope.options.criteria.participantDetails.opponentCategory = $scope.options.criteria.participantDetails.opponentCategory || 'any'

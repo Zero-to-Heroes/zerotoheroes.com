@@ -35,7 +35,7 @@ app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeo
 						$scope.options.criteria.participantDetails.opponentCategory = null
 					}
 
-					$scope.options.criteria.search($scope.options.criteria, $scope.pageNumber, false)
+					$scope.options.criteria.search($scope.options.criteria, false, $scope.pageNumber)
 					$timeout(function() {
 						$scope.options.criteria.participantDetails.playerCategory = $scope.options.criteria.participantDetails.playerCategory || 'any'
 						$scope.options.criteria.participantDetails.opponentCategory = $scope.options.criteria.participantDetails.opponentCategory || 'any'

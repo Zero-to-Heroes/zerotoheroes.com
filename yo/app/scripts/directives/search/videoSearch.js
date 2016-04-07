@@ -14,7 +14,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 			controller: function($scope) {
 				$scope.pageNumber = parseInt($routeParams.pageNumber) || 1
 
-				$scope.retrieveVideos = function(params, pageNumber, updateUrl, callback) {
+				$scope.retrieveVideos = function(params, updateUrl, pageNumber, callback) {
 
 					if ($scope.allowedTags)
 						$scope.performSearch(params, pageNumber, updateUrl, callback)

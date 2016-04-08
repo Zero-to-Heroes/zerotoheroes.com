@@ -62,6 +62,9 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if (params.participantDetails.opponentCategory == 'any') {
 						params.participantDetails.opponentCategory = null
 					}
+
+					$scope.latestParams = params
+					$scope.latestUpdateUrl = updateUrl
 					
 					Api.ReviewsQuery.save(params, function(data) {
 						$scope.videos = []
@@ -87,6 +90,10 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					})
 				}
 				$scope.config.search = $scope.retrieveVideos
+
+				$scope.searchAgain = function() {
+					$scope.performSearch($scope.latestParams, null, $scope.latestUpdateUrl)
+				}
 
 
 				//===============
@@ -134,6 +141,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					$location.search('')
 
 					if (params.userName) $location.search('username', params.userName)
+					if (params.pageNumber) $location.search('pageNumber', params.pageNumber)
 					if (params.reviewType) $location.search('reviewType', params.reviewType)
 					if (params.wantedTags && params.wantedTags.length > 0) $location.search('wantedTags', $scope.serializeTags(params.wantedTags))
 					if (params.unwantedTags && params.unwantedTags.length > 0) $location.search('unwantedTags', $scope.serializeTags(params.unwantedTags))
@@ -190,15 +198,21 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 				// Pagination
 				//===============
 				$scope.goToPage = function(page) {
-					$route.updateParams({'pageNumber': page});
+					$route.updateParams({'pageNumber': page})
+					$scope.latestParams.pageNumber = page
+					$scope.searchAgain()
 				}
 
 				$scope.goToPreviousPage = function() {
-					$route.updateParams({'pageNumber': Math.max(1, $scope.pageNumber - 1)});
+					$scope.goToPage( Math.max(1, $scope.pageNumber - 1) )
 				}
 
 				$scope.goToNextPage = function() {
-					$route.updateParams({'pageNumber': Math.min($scope.totalPages, $scope.pageNumber + 1)});
+					$scope.goToPage( Math.min($scope.totalPages, $scope.pageNumber + 1))
+				}
+
+				$scope.getPageNumber = function() {
+					return $location.search().pageNumber || $scope.latestParams.pageNumber || 1
 				}
 				
 				$scope.getRange = function() {

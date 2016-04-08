@@ -52,11 +52,11 @@
 
 <nav ng-show="range.length > 1">
 	<ul class="pagination">
-		<li ng-class="{'disabled': pageNumber == 1}" ng-show="range.length > 2"><a aria-label="First" ng-click="goToPage(1)"><span aria-hidden="true">&laquo;&laquo;</span></a></li>
-		<li ng-class="{'disabled': pageNumber == 1}"><a aria-label="Previous" ng-click="goToPreviousPage()"><span aria-hidden="true">&laquo;</span></a></li>
-		<li ng-repeat="n in range" ng-class="{'active': pageNumber == n + 1}">
+		<li ng-class="{'disabled': getPageNumber() == 1}" ng-show="range.length > 2"><a aria-label="First" ng-click="goToPage(1)"><span aria-hidden="true">&laquo;&laquo;</span></a></li>
+		<li ng-class="{'disabled': getPageNumber() == 1}"><a aria-label="Previous" ng-click="goToPreviousPage()"><span aria-hidden="true">&laquo;</span></a></li>
+		<li ng-repeat="n in range" ng-class="{'active': getPageNumber() == n + 1}">
 			<a ng-click="goToPage(n + 1)">{{n + 1}}</a></li>
-		<li ng-class="{'disabled': pageNumber == totalPages}"><a aria-label="Next" ng-click="goToNextPage()"><span aria-hidden="true">&raquo;</span></a></li>
-		<li ng-class="{'disabled': pageNumber == totalPages}" ng-show="range.length > 2"><a aria-label="Last" ng-click="goToPage(totalPages)"><span aria-hidden="true">&raquo;&raquo;</span></a></li>
+		<li ng-class="{'disabled': getPageNumber() == totalPages}"><a aria-label="Next" ng-click="goToNextPage()"><span aria-hidden="true">&raquo;</span></a></li>
+		<li ng-class="{'disabled': getPageNumber() == totalPages}" ng-show="range.length > 2"><a aria-label="Last" ng-click="goToPage(totalPages)"><span aria-hidden="true">&raquo;&raquo;</span></a></li>
 	</ul>
 </nav>

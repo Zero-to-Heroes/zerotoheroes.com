@@ -213,7 +213,10 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 				}
 
 				$scope.getPageNumber = function() {
-					return $location.search().pageNumber || $scope.latestParams.pageNumber || 1
+					var page = $location.search().pageNumber
+					if (!page && $scope.latestParams)
+						page = $scope.latestParams.pageNumber
+					return page || 1
 				}
 				
 				$scope.getRange = function() {

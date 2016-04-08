@@ -110,6 +110,7 @@ app.config(['$routeProvider', '$locationProvider',
 	  	when('/r/:sport/:reviewId/:reviewTitle?', {
 			templateUrl: 'views/review.html',
 			controller: 'ReviewCtrl',
+			reloadOnSearch: false,
 			hideSideBar: true,
 			useFullWidth: true,
 			menuItem: 'reviews'

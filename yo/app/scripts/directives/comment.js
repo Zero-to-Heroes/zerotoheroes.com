@@ -34,15 +34,11 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.review = $scope.$parent.review;
 				$scope.API = $scope.$parent.API;
 				$scope.reply = {};
-				$scope.indentationSize = 8;
 
 				$scope.$watch($scope.comment, function() {
 					$scope.setCommentText($scope.comment, $scope.comment.text);
 				});
 
-				$scope.$watch($scope.indentationLevel, function() {
-					$scope.indentation = (20 + $scope.indentationLevel * $scope.indentationSize) + 'px';
-				});
 
 				$scope.$watch($scope.$parent.API, function() {
 					$scope.API = $scope.$parent.API;

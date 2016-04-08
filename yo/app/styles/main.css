@@ -62,6 +62,9 @@ blockquote {
   min-width: 70%;
   max-width: calc(100% - 500px);
 }
+
+.main-panel-nolanding.full-width {
+  max-width: calc(100% - 20px);
 }
 
 .left-column {
@@ -178,6 +181,9 @@ textarea.form-control {
 	// }
 	.main-panel-nolanding {
 		max-width: calc(100% - 250px);
+	}
+	.main-panel-nolanding.full-width {
+	  	max-width: calc(100% - 20px);
 	}
 }
 

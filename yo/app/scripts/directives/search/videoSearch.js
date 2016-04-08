@@ -26,6 +26,8 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 
 				$scope.performSearch = function(params, pageNumber, updateUrl, callback) {
 
+					$scope.videos = []
+
 					$log.debug('searching videos', params, pageNumber, callback)
 
 					// Take input
@@ -67,7 +69,6 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					$scope.latestUpdateUrl = updateUrl
 					
 					Api.ReviewsQuery.save(params, function(data) {
-						$scope.videos = []
 						$scope.totalPages = data.totalPages
 
 						for (var i = 0; i < data.reviews.length; i++) {

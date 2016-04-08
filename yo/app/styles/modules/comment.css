@@ -2,6 +2,10 @@
 	margin-left: 20px;
 }
 
+.comment-block .comment-block {
+	margin-left: 40px;
+}
+
 .main-block {
 	margin-bottom: 25px;
 }
@@ -84,4 +88,14 @@
 
 .comment-reply-buttons {
 	margin-bottom: 10px;
+}
+
+
+
+
+
+@media screen and (max-width: 1400px) {
+	.comment-block .comment-block {
+		margin-left: 25px;
+	}
 }

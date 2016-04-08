@@ -847,11 +847,11 @@
 	}
 }
 
-@media screen and (max-width: 1425px) {
-	.hearthstone .video-comment.arena-draft {
-		width: 40%;
-	}
-}
+// @media screen and (max-width: 1425px) {
+// 	.hearthstone .video-comment.arena-draft {
+// 		width: 40%;
+// 	}
+// }
 
 @media screen and (max-width: 1310px) {
 	.hearthstone .video-information.arena-draft {

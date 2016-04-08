@@ -28,6 +28,7 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 			   	$scope.isFullPage = current.$$route.isFullPage
 			   	$scope.upload = current.$$route.upload
 			   	$scope.menuItem = current.$$route.menuItem
+			   	$scope.useFullWidth = current.$$route.useFullWidth
 		   	}
 
 			$scope.useVideo = true;

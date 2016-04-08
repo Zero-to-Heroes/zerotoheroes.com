@@ -111,6 +111,7 @@ app.config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/review.html',
 			controller: 'ReviewCtrl',
 			hideSideBar: true,
+			useFullWidth: true,
 			menuItem: 'reviews'
 	  	}).
 	  // 	when('/reviews/:pageNumber?', {

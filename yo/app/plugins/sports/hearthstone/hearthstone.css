@@ -381,6 +381,27 @@
 .hearthstone .brand span {
 	display: none;
 }
+
+
+	/* =============
+	** User items
+	** =============*/
+	.hearthstone .navbar-default div[zth-name-input] a:focus, .hearthstone .navbar-default div[zth-name-input] a:active, .hearthstone .navbar-default div[zth-name-input] a:hover {
+		color: #fcd144;
+		background: transparent;
+	}
+
+
+	/* =============
+	** Notifications
+	** =============*/
+	.hearthstone .user-notifications .badge {
+		background-color: transparent;
+	}
+	.hearthstone .user-notifications.unread, .hearthstone .user-notifications.unread span {
+		color: white !important;
+	}
+
 	
 	/* =============
 	** Lateral navigation

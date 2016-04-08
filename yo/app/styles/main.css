@@ -54,10 +54,10 @@ blockquote {
 }
 
 .main-panel-nolanding {
-  // display: table-cell;
+  /*display: table-cell;*/
   background-color: transparent;
-  // padding-left: 30px;
-  // padding-right: 30px;
+  /*padding-left: 30px;
+  padding-right: 30px;*/
   margin: auto;
   min-width: 70%;
   max-width: calc(100% - 500px);
@@ -141,44 +141,44 @@ textarea.form-control {
  -o-transition: 0.05s;
 }
 
-// @media screen and (max-width: 2200px) {
-//     .right-column {
-//         width: 300px;
-//     }
-// }
+/*@media screen and (max-width: 2200px) {
+    .right-column {
+        width: 300px;
+    }
+}
 
-// @media screen and (max-width: 2000px) {
-//     .right-column {
-//         width: 250px;
-//     }
-// }
+@media screen and (max-width: 2000px) {
+    .right-column {
+        width: 250px;
+    }
+}
 
-// @media screen and (max-width: 1700px) {
-//     .right-column {
-//         width: 200px;
-//     }
-// }
+@media screen and (max-width: 1700px) {
+    .right-column {
+        width: 200px;
+    }
+}
 
-// @media screen and (max-width: 1500px) {
-//     .right-column {
-//         width: 150px;
-//     }
-// }
+@media screen and (max-width: 1500px) {
+    .right-column {
+        width: 150px;
+    }
+}
 
-// @media screen and (max-width: 1200px) {
-//     .right-column {
-//         width: 100px;
-//     }
-// }
+@media screen and (max-width: 1200px) {
+    .right-column {
+        width: 100px;
+    }
+}*/
 
 @media screen and (max-width: 1360px) {
-	// .left-column {
-	//     display: none;
-	// }
+	/*.left-column {
+	    display: none;
+	}
 
-	// .right-column {
-	//     display: none;
-	// }
+	.right-column {
+	    display: none;
+	}*/
 	.main-panel-nolanding {
 		max-width: calc(100% - 250px);
 	}
@@ -188,21 +188,21 @@ textarea.form-control {
 }
 
 @media screen and (max-width: 1100px) {
-	// .left-column {
-	//     display: none;
-	// }
+	/*.left-column {
+	    display: none;
+	}
 
-	// .right-column {
-	//     display: none;
-	// }
+	.right-column {
+	    display: none;
+	}*/
 	.main-panel-nolanding {
 		max-width: calc(100% - 20px);
 	}
 }
 
-// @media screen and (max-width: 600px) {
-//   .main-panel-nolanding {
-// 	padding-left: 0;
-// 	padding-right: 0;
-//   }
-// }
+/*@media screen and (max-width: 600px) {
+  .main-panel-nolanding {
+	padding-left: 0;
+	padding-right: 0;
+  }
+}*/

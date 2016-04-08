@@ -189,6 +189,7 @@
 		},
 		"search": {
 			"headline": "Recherche avancée",
+			"lookingFor": "Je recherche des revuew qui sont publiques",
 			"textLabel": "... et qui contiennent les mots ",
 			"wantedTagsLabel": "... et qui sont taggées avec",
 			"unwantedTagsLabel": "... et qui ne sont pas taggées avec",

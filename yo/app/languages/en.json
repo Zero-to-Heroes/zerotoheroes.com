@@ -191,6 +191,7 @@
 		},
 		"search": {
 			"headline": "Advanced search",
+			"lookingFor": "I'm looking for reviews that are public",
 			"textLabel": "... and that contains the words ",
 			"wantedTagsLabel": "... and that are tagged with ",
 			"unwantedTagsLabel": "... and that aren't tagged with",

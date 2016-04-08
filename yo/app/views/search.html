@@ -16,6 +16,9 @@
 				<span translate="hearthstone.search.arenaClassLabel" ng-show="options.criteria.reviewType == 'arena-draft'"></span> 
 				<participants-search sport="sport" class="participants-search" options="options"></participants-search>
 			</div>
+			<div class="matchup-criteria" ng-show="sport != 'hearthstone'">
+				<span class="matchup-label" translate="global.search.lookingFor"></span> 
+			</div>
 			<div class="comments-criteria search-block">
 				<div class="form-group title-search">
 					<span translate="global.search.textLabel"></span>

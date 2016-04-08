@@ -20,6 +20,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.config = SportsConfig[$scope.sport]
 				$scope.review = {
 					canvas: {},
+					reviewType: 'game',
 					tags: [],
 					replay: true,
 					strSport: $scope.sport,

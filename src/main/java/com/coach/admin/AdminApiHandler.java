@@ -39,7 +39,14 @@ public class AdminApiHandler {
 	public @ResponseBody ResponseEntity<Review> updateAllReviews() {
 		List<Review> reviews = reviewRepository.findAll();
 		for (Review review : reviews) {
-			review.updateFullTextSearch();
+			if (review.getSport().getKey().toLowerCase().equals("hearthstone")) {
+				if ("arena-draft".equals(review.getMediaType())) {
+					review.setReviewType("arena-draft");
+				}
+				else {
+					review.setReviewType("game");
+				}
+			}
 		}
 		reviewRepository.save(reviews);
 

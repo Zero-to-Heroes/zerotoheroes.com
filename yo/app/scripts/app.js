@@ -104,13 +104,13 @@ app.config(['$routeProvider', '$locationProvider',
 	  	when('/s/:sport/search', {
 			templateUrl: 'views/search.html',
 			controller: 'SearchCtrl',
+			reloadOnSearch: false,
 			menuItem: 'search'
 	  	}).
 	  	when('/r/:sport/:reviewId/:reviewTitle?', {
 			templateUrl: 'views/review.html',
 			controller: 'ReviewCtrl',
 			hideSideBar: true,
-			reloadOnSearch: false,
 			menuItem: 'reviews'
 	  	}).
 	  // 	when('/reviews/:pageNumber?', {
@@ -145,6 +145,7 @@ app.config(['$routeProvider', '$locationProvider',
 	  	when('/s/:sport/:choice?', {
 			templateUrl: 'views/sportHome.html',
 			controller: 'SportHomeCtrl',
+			reloadOnSearch: false,
 			menuItem: 'home'
 	  	}).
 	  	when('/c/:coachName/:sport', {

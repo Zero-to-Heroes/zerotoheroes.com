@@ -6,9 +6,21 @@
 	</section>
 	<section class="search-section">
 		<form class="panel-body form-inline">
-			<div class="matchup-criteria">
-				<span class="matchup-label" translate="global.search.matchupLabel"></span> 
+			<!-- Need to figure out how matchups will work in other sports -->
+			<div class="matchup-criteria" ng-show="sport == 'hearthstone'">
+				<span class="matchup-label" translate="hearthstone.search.lookingFor"></span> 
+				<button type="button" class="btn btn-default btn-class-select form-control" data-trigger="click" ng-model="options.criteria.reviewType" data-html="1" bs-options="option.value as option.label for option in gameTypeOptions" placeholder="{{ 'hearthstone.search.gameType.all' | translate }}" bs-select ng-required="true">
+				  	<span>Action</span>
+				</button>
+				<span translate="hearthstone.search.matchupLabel" ng-show="options.criteria.reviewType != 'arena-draft'"></span> 
+				<span translate="hearthstone.search.arenaClassLabel" ng-show="options.criteria.reviewType == 'arena-draft'"></span> 
 				<participants-search sport="sport" class="participants-search" options="options"></participants-search>
+			</div>
+			<div class="comments-criteria search-block">
+				<div class="form-group title-search">
+					<span translate="global.search.textLabel"></span>
+				    <input type="text" class="form-control" id="title" ng-model="options.criteria.title">
+				</div>
 			</div>
 			<div class="tags-criteria">
 				<div class="search-block">
@@ -34,6 +46,7 @@
 				  	<span>Action</span>
 				</button>
 			</div>
+			
 			<div class="search-block">
 				<button type="submit" class="btn btn-default" ng-click="searchFromClick()"><span>{{ 'global.search.searchButton' | translate }}</span></button>
 				<button type="submit" class="btn btn-default" ng-click="clearFilters()"><span>{{ 'global.search.clearFilterButton' | translate }}</span></button>

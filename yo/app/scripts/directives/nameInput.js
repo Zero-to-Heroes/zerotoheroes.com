@@ -20,11 +20,11 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 			$scope.refresh = function() {
 
 				// Only refresh if we're logger in
-				$log.debug('refreshing', User, User.isLoggedIn())
+				// $log.debug('refreshing', User, User.isLoggedIn())
 				if (User.isLoggedIn()) {
 					Api.Users.get( 
 						function(data) {
-							$log.debug('retrieved user', data)
+							// $log.debug('retrieved user', data)
 							User.setUser(data)
 						}
 					)

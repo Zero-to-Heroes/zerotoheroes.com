@@ -143,7 +143,7 @@ public class ReviewApiHandler {
 						criteria.getUnwantedTags(), criteria.getOnlyHelpful(), criteria.getNoHelpful(),
 						criteria.getParticipantDetails().getPlayerCategory(),
 						criteria.getParticipantDetails().getOpponentCategory(),
-						criteria.getParticipantDetails().getSkillLevel(), pageRequest);
+						criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(), pageRequest);
 			}
 			else {
 				// log.debug("searching with criteria " + criteria);
@@ -151,7 +151,7 @@ public class ReviewApiHandler {
 						criteria.getUnwantedTags(), criteria.getOnlyHelpful(), criteria.getNoHelpful(),
 						criteria.getParticipantDetails().getPlayerCategory(),
 						criteria.getParticipantDetails().getOpponentCategory(),
-						criteria.getParticipantDetails().getSkillLevel(), text, pageRequest);
+						criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(), text, pageRequest);
 			}
 		}
 		catch (Exception e) {

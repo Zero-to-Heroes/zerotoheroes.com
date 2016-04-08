@@ -38,6 +38,9 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if ($location.search().title) {
 						params.title = $location.search().title
 					}
+					if ($location.search().reviewType) {
+						params.reviewType = $location.search().reviewType
+					}
 					if ($location.search().wantedTags) {
 						params.wantedTags = $scope.unserializeTags($location.search().wantedTags)
 					}
@@ -126,10 +129,12 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 				}
 
 				$scope.updateUrl = function(params) {
+					$log.debug('updating url', params)
 					// cleariung params
 					$location.search('')
 
 					if (params.userName) $location.search('username', params.userName)
+					if (params.reviewType) $location.search('reviewType', params.reviewType)
 					if (params.wantedTags && params.wantedTags.length > 0) $location.search('wantedTags', $scope.serializeTags(params.wantedTags))
 					if (params.unwantedTags && params.unwantedTags.length > 0) $location.search('unwantedTags', $scope.serializeTags(params.unwantedTags))
 					if (params.title) $location.search('title', params.title)

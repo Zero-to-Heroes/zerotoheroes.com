@@ -39,7 +39,8 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ "				{ $or : [ { $where : '?7 == null' }, { participantDetails.playerCategory : ?7 } ] } "
 			+ "			] } "
 			+ " 	] }, "
-			+ "		{ $or : [ { $where : '?8 == null' }, { $where : '?8.length == 0' }, { participantDetails.skillLevel : { $all : ?8 } } ] } "
+			+ "		{ $or : [ { $where : '?8 == null' }, { $where : '?8.length == 0' }, { participantDetails.skillLevel : { $all : ?8 } } ] }, "
+			+ "		{ $or : [ { $where : '?9 == null' }, { reviewType : ?9 } ] } "
 			+ "]"
 		+ "}",
 			fields =
@@ -70,14 +71,14 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 	// Pageable pageable);
 	Page<Review> listReviews(String sportCriteria, String authorId, List<Tag> wantedTags, List<Tag> unwantedTags,
 			Boolean onlyHelpful, Boolean noHelpful, String playerCategory, String opponentCategory,
-			List<Tag> skillLevel, Pageable pageable);
+			List<Tag> skillLevel, String reviewType, Pageable pageable);
 
 	//@formatter:off
 	@Query(	value =
 			"{ sport : ?0, "
 				+ "published: true,"
 				+ "$and : ["
-				+ "		{ $or : [ { $text : { $search : ?9 } } ] }, "
+				+ "		{ $or : [ { $text : { $search : ?10 } } ] }, "
 				+ "		{ $or : [ { $where : '?1 == null' }, { authorId : ?1 } ] }, "
 				+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { allTags : { $all : ?2 } } ] }, "
 				+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { allTags : { $nin : ?3 } } ] }, "
@@ -94,7 +95,8 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 				+ "				{ $or : [ { $where : '?7 == null' }, { participantDetails.playerCategory : ?7 } ] } "
 				+ "			] } "
 				+ " 	] }, "
-				+ "		{ $or : [ { $where : '?8 == null' }, { $where : '?8.length == 0' }, { participantDetails.skillLevel : { $all : ?8 } } ] } "
+				+ "		{ $or : [ { $where : '?8 == null' }, { $where : '?8.length == 0' }, { participantDetails.skillLevel : { $all : ?8 } } ] }, "
+				+ "		{ $or : [ { $where : '?9 == null' }, { reviewType : ?9 } ] } "
 				+ "]"
 			+ "}",
 				fields =
@@ -122,6 +124,6 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 		//@formatter:on
 	Page<Review> listReviews(String sportCriteria, String authorId, List<Tag> wantedTags, List<Tag> unwantedTags,
 			Boolean onlyHelpful, Boolean noHelpful, String playerCategory, String opponentCategory,
-			List<Tag> skillLevel, String text, Pageable pageable);
+			List<Tag> skillLevel, String reviewType, String text, Pageable pageable);
 
 }

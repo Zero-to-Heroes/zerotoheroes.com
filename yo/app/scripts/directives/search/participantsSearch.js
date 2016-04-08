@@ -12,6 +12,7 @@ app.directive('participantsSearch', ['$log', 'SportsConfig',
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
+				$log.debug('options', $scope.options)
 				$scope.config = SportsConfig
 			}
 		}

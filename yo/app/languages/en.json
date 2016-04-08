@@ -46,6 +46,16 @@
 			"feature4Headline": "Contribute and help the community",
 			"feature4Text": "Your own unique experience is much more valuable than you might think. You've just mastered some techniques, tactics or simply understood something that others are struggling with. Right now, whatever your level, there's someone who needs your help. Leave them a small piece of advice, they'll be thankful for it :)"
 		},
+		"search": {
+			"lookingFor": "I'm looking for",
+			"gameType": {
+				"all": "games and drafts",
+				"game": "games",
+				"draft": "drafts"
+			},
+			"matchupLabel": "that oppose",
+			"arenaClassLabel": "of"
+		},
 		"classes": {
 			"druid": "Druid",
 			"hunter": "Hunter",
@@ -124,7 +134,7 @@
 			"forum": "Forum (soon™)",
 			"globalForum": "General forum",
 			"reviews": "Latest reviews",
-			"search": "Search",
+			"search": "Advanced search",
 			"coaches": "Coaches",
 			"chooseSport": "Choose a sport",
 			"language": "Language",
@@ -180,12 +190,13 @@
 			}
 		},
 		"search": {
-			"headline": "Search reviews",
-			"matchupLabel": "I'm looking for reviews that oppose",
-			"wantedTagsLabel": "I want reviews about",
-			"unwantedTagsLabel": "I don't want to see reviews about",
+			"headline": "Advanced search",
+			"textLabel": "... and that contains the words ",
+			"wantedTagsLabel": "... and that are tagged with ",
+			"unwantedTagsLabel": "... and that aren't tagged with",
 			"helpfulCommentLabel": "I want to see",
 			"searchButton": "Search",
+			"skillLabel": "at skill level",
 			"clearFilterButton": "Clear filters",
 			"helpful": {
 				"all": "all reviews that match",
@@ -339,9 +350,9 @@
 				"hearthstone": {
 					"videoDescription": "Post a video of one of your games. You can find help on how to record HS games <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/\" target=\"_blank\">one our blog</a>",
 					"replay": "HS Replay",
-					"replayDescription": "Post a replay file. You can find help on how to get one <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/#new-on-pc-8211-replay-file\" target=\"_blank\">here</a> or on <a href=\"http://www.zerotoheroes.com/r/meta/568e2f13e4b0ae321c95b0cb/hearthstone-replay-using-log-files-beta\" target=\"_blank\">our forums</a>",
+					"replayDescription": "Post a replay file. You can find help on how to get one <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc\" target=\"_blank\">on our blog</a>",
 					"arenadraft": "Arena draft",
-					"arenadraftDescription": "Upload your Arena draft logged by the <a href=\"https://github.com/rembound/Arena-Helper\">Arena Helper</a> plugin for <a href=\"https://github.com/Epix37/Hearthstone-Deck-Tracker/releases\">Hearthstone Deck Tracker</a>. Full details on <a href=\"http://www.zerotoheroes.com/r/meta/56cb3580e4b01d5b988b6c24/hearthstone-posting-an-arena-draft\" target=\"_blank\">our forums</a>."
+					"arenadraftDescription": "Upload your Arena draft. Full details <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc\" target=\"_blank\">on our blog</a>"
 				}
 			},
 			"replay": {

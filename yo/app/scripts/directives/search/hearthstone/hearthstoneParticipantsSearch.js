@@ -29,7 +29,7 @@ app.directive('hearthstoneParticipantsSearch', ['$log', 'SportsConfig', 'Api', '
 				]
 
 				$scope.loadTags = function() {
-					$log.debug('loading tags', $scope.sport)
+					// $log.debug('loading tags', $scope.sport)
 					Api.Tags.query({sport: $scope.sport}, 
 						function(data) {
 							$scope.allowedTags = []

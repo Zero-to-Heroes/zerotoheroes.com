@@ -21,6 +21,7 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 				$scope.review = {
 					canvas: {},
 					tags: [],
+					reviewType: 'arena-draft',
 					mediaType: 'arena-draft',
 					strSport: $scope.sport,
 					transcodingDone: false,

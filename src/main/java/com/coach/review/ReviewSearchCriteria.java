@@ -20,6 +20,7 @@ public class ReviewSearchCriteria {
 	private String sport;
 	private Integer pageNumber;
 	private String title;
+	private String reviewType;
 	private List<Tag> wantedTags;
 	private List<Tag> unwantedTags;
 	private Boolean ownVideos;

@@ -46,6 +46,16 @@
 			"feature4Headline": "Contribuez et aidez la communauté",
 			"feature4Text": "Votre expérience est unique et bien plus précieuse que ce que vous pouvez penser. Vous venez de maîtriser certaines techniques, de comprendre une tactique particulière ou simplement venez de franchir un palier sur lesquels d'autres sont en train de buter. En ce moment précis, quel que soit votre niveau, il y a quelqu'un qui a besoin de votre aide. Donnez-leur quelques conseils, et ils progresseront grâce à vous :)"
 		},
+		"search": {
+			"lookingFor": "Je recherche des",
+			"gameType": {
+				"all": "parties et drafts",
+				"game": "parties",
+				"draft": "drafts"
+			},
+			"matchupLabel": "qui opposent",
+			"arenaClassLabel": "de"
+		},
 		"classes": {
 			"any": "Toutes",
 			"druid": "Druide",
@@ -122,7 +132,7 @@
 			"forum": "Forum (bientôt™)",
 			"globalForum": "Forum général",
 			"reviews": "Dernières revues",
-			"search": "Recherche",
+			"search": "Recherche avancée",
 			"coaches": "Coaches",
 			"chooseSport": "Choisissez un sport",
 			"language": "Langue",
@@ -178,21 +188,19 @@
 			}
 		},
 		"search": {
-			"headline": "Recherche de revue",
-			"matchupLabel": "Je cherche des revues qui opposent",
-			"wantedTagsLabel": "Je veux des revues sur",
-			"unwantedTagsLabel": "Je ne veux pas voir de revues qui parlent de",
+			"headline": "Recherche avancée",
+			"textLabel": "... et qui contiennent les mots ",
+			"wantedTagsLabel": "... et qui sont taggées avec",
+			"unwantedTagsLabel": "... et qui ne sont pas taggées avec",
 			"helpfulCommentLabel": "Je veux voir",
 			"searchButton": "Recherche",
 			"clearFilterButton": "Effacer les filtres",
+			"skillLabel": "au niveau de jeu",
 			"helpful": {
 				"all": "toutes les revues qui correspondent",
 				"onlyHelpful": "uniquement les revues qui ont des commentaires marqués comme utiles",
 				"onlyNotHelpful": "uniquement des revues sans commentaire marqué comme utile"
 			}
-		},
-		"videoPlayer": {
-
 		},
 		"toolbar": {
 			"timestamp": "Insérez l'instant en cours", 
@@ -338,9 +346,9 @@
 				"hearthstone": {
 					"videoDescription": "Postez une vidéo d'une de vos parties. Vous pouvez trouvez de l'aide sur comment faire <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/\" target=\"_blank\">sur notre blog</a>",
 					"replay": "HS Replay",
-					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/#nouveau-sur-un-ordinateur8211-fichier-replay\" target=\"_blank\">sur notre blog</a>",
+					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone\" target=\"_blank\">sur notre blog</a>",
 					"arenadraft": "Draft d'Arène",
-					"arenadraftDescription": "Postez votre draft d'Arène enregistré par le plugin <a href=\"https://github.com/rembound/Arena-Helper\">Arena Helper</a> de <a href=\"https://github.com/Epix37/Hearthstone-Deck-Tracker/releases\">Hearthstone Deck Tracker</a>. Tous les détails sur <a href=\"http://www.zerotoheroes.com/r/meta/56cb3580e4b01d5b988b6c24/hearthstone-posting-an-arena-draft\" target=\"_blank\">nos forums</a>."
+					"arenadraftDescription": "Postez votre draft d'Arène. Tous les détails <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone\" target=\"_blank\">sur notre blog</a>"
 				}
 			},
 			"replay": {

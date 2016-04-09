@@ -67,7 +67,7 @@ angular.module('controllers').controller('CoachPageController', ['$scope', '$rou
 			$scope.criteria.sport = $scope.sport
 
 			$timeout(function() {
-				$scope.config.search($scope.criteria, $scope.pageNumber, false)
+				$scope.config.search($scope.criteria, false, $scope.pageNumber)
 			})
 			
 		}

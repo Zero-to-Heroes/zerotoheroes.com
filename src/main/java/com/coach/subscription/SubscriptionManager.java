@@ -31,7 +31,8 @@ public class SubscriptionManager {
 		Iterable<User> subscribers = userRepo.findAll(review.getSubscribers());
 		for (User subscriber : subscribers) {
 			if (!subscriber.getId().equals(comment.getAuthorId())) {
-				log.debug("Notifying " + subscriber.getUsername() + " of a new comment");
+				// log.debug("Notifying " + subscriber.getUsername() + " of a
+				// new comment");
 				userNotifier.notifyNewComment(subscriber, comment, review);
 			}
 		}
@@ -39,14 +40,15 @@ public class SubscriptionManager {
 
 	public void notifyNewReview(Review.Sport sportInput, Review review) {
 		Sport sport = sportManager.findById(sportInput.getKey());
-		log.debug("Notifying new review for " + sportInput + " meaning " + sport);
+		// log.debug("Notifying new review for " + sportInput);
 
 		Iterable<User> subscribers = userRepo.findAll(sport.getSubscribers());
-		log.debug("Subscribers list is " + subscribers);
+		// log.debug("Subscribers list is " + subscribers);
 		for (User subscriber : subscribers) {
-			log.debug("going to " + subscriber);
+			// log.debug("going to " + subscriber);
 			if (!subscriber.getId().equals(review.getAuthorId())) {
-				log.debug("Notifying " + subscriber.getUsername() + " of a new review");
+				// log.debug("Notifying " + subscriber.getUsername() + " of a
+				// new review");
 				userNotifier.notifyNewReview(subscriber, review);
 			}
 		}
@@ -66,7 +68,8 @@ public class SubscriptionManager {
 
 	public void subscribe(com.coach.review.Review.Sport sportInput, String authorId) {
 		Sport sport = sportManager.findById(sportInput.getKey());
-		log.debug("Notifying new review for " + sportInput + " meaning " + sport);
+		// log.debug("Notifying new review for " + sportInput + " meaning " +
+		// sport);
 		subscribe(sport, authorId);
 	}
 

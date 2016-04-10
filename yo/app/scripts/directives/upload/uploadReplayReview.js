@@ -38,10 +38,6 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 
 						var indexOfLastSpace = file.name.lastIndexOf(' ')
 						var indexOfLastDot = file.name.lastIndexOf('.')
-						// if (indexOfLastDot != -1 && indexOfLastDot > indexOfLastSpace)
-						// 	$scope.review.title = file.name.slice(0, indexOfLastDot - file.name.length)
-						// else
-						// 	$scope.review.title = file.name
 
 						$scope.review.fileType = file.type || file.name.slice(indexOfLastDot + 1)
 
@@ -55,11 +51,6 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						$log.debug('reinit', newVal, $scope.review)
 						$scope.initReviewData()
 					}
-					// What's this purpose? Why do we want to init if it's not active?
-					// if (!newVal) {
-					// 	$log.debug('reinit', newVal, $scope.review)
-					// 	$scope.initReviewData()
-					// }
 				})
 					
 
@@ -90,10 +81,14 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 
 				$scope.retryCount = 5;
 				$scope.retrieveCompletionStatus = function() {
+					if ($scope.retryCount < 0)
+						return
+
 					try {
 						Api.Reviews.get({reviewId: $scope.review.id}, 
 							function(data) {
 								$scope.review.transcodingDone = data.transcodingDone
+								$log.debug('retrieving completion status')
 
 								if (!$scope.review.transcodingDone) {
 									$timeout(function() {
@@ -118,7 +113,8 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 								}
 							},
 							function(error) {
-								$log.error('Something went wrong!!', error)
+								$log.error('Something went wrong!!', error, $scope.review)
+								$scope.retryCount--
 								$timeout(function() {
 									$scope.retrieveCompletionStatus()
 								}, 5000)
@@ -126,7 +122,8 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						);
 					}
 					catch (e) {
-						$log.error('Something went wrong!! Retrying in 5s...', e)
+						$log.error('Something went wrong!! Retrying in 5s...', e, $scope.review)
+						$scope.retryCount--
 						$timeout(function() {
 							$scope.retrieveCompletionStatus()
 						}, 5000)

@@ -274,7 +274,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					// Configure The S3 Object 
 					AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
 					AWS.config.region = 'us-west-2';
-					AWS.config.httpOptions.timeout = 3600 * 1000;
+					AWS.config.httpOptions.timeout = 3600 * 1000 * 10;
 
 					// Setting file values
 					//$scope.review.author = User.getName();

@@ -88,20 +88,20 @@ public class ReviewApiHandler {
 	MongoOperations mongoOperations;
 
 	public ReviewApiHandler() throws Exception {
-		log.debug("Initializing Review Api Handler");
+		// log.debug("Initializing Review Api Handler");
 	}
 
 	@PostConstruct
 	public void init() {
 		DBCollection collection = mongoOperations.getCollection("review");
-		log.debug("retrieving collection " + collection);
+		// log.debug("retrieving collection " + collection);
 		collection.createIndex(new BasicDBObject("fullTextSearchField", "text"));
 		// collection.createIndex(new BasicDBObject("published", 1));
 	}
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(@RequestBody ReviewSearchCriteria criteria) {
-		log.debug("Retrieving all reviews with criteria " + criteria);
+		// log.debug("Retrieving all reviews with criteria " + criteria);
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
@@ -160,7 +160,7 @@ public class ReviewApiHandler {
 		}
 
 		List<Review> reviews = page.getContent();
-		log.debug("all reviews " + reviews);
+		// log.debug("all reviews " + reviews);
 		ListReviewResponse response = new ListReviewResponse(reviews);
 		response.setTotalPages(page.getTotalPages());
 
@@ -415,8 +415,8 @@ public class ReviewApiHandler {
 
 		Review review = reviewRepo.findById(id);
 
-		log.debug("Publishing review " + inputReview);
-		log.debug("Exisint draft in the system is " + review);
+		// log.debug("Publishing review " + inputReview);
+		// log.debug("Exisint draft in the system is " + review);
 
 		// Updating author information
 		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
@@ -434,7 +434,7 @@ public class ReviewApiHandler {
 		review.setText(inputReview.getText());
 		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
 		activatePlugins(currentUser, review, review);
-		log.debug("updated text is " + review.getText());
+		// log.debug("updated text is " + review.getText());
 
 		review.setSport(inputReview.getSport());
 		review.setTitle(inputReview.getTitle());
@@ -680,7 +680,7 @@ public class ReviewApiHandler {
 		String normalizedPrefix = prefix.replaceAll(" ", "");
 		// log.debug("Normalized prefix is " + normalizedPrefix);
 
-		log.debug("Temp canvas is " + tempCanvas);
+		// log.debug("Temp canvas is " + tempCanvas);
 		for (String canvasKey : tempCanvas.keySet()) {
 			if (review.getCanvas().containsKey(canvasKey)) {
 				review.getCanvas().put(canvasKey, tempCanvas.get(canvasKey));

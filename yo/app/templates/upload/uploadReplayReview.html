@@ -2,6 +2,8 @@
 
 	<h1>{{ 'global.upload.replay.review.headline' | translate }}</h1>
 
+	<span ng-show="retryCount <= 0">An error occured. Please email the dev at seb@zerotoheroes.com</span>
+
 	<!-- Show the overall progress of the upload -->
 	<upload-progress sport="sport" type="'replay'" active="active" publish="initPublishVideo" validation="isDataValid" file-validation="isFileValid"></upload-progress>
 

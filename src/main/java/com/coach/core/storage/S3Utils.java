@@ -44,16 +44,17 @@ public class S3Utils {
 
 	public String readFromS3(String key) throws IOException {
 		S3Object s3object = s3.getObject(new GetObjectRequest(inputBucket, key));
-		String fileContents = "";
+		StringBuilder fileContents = new StringBuilder();
 
 		BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()));
 		String line;
 		while ((line = reader.readLine()) != null) {
 			// log.debug("\treading line " + line);
-			fileContents += line + System.lineSeparator();
+			fileContents.append(line);
+			fileContents.append(System.lineSeparator());
 		}
 
-		return fileContents;
+		return fileContents.toString();
 	}
 
 	public void readFromS3ToFile(String key, File localFile) throws IOException {

@@ -9,6 +9,7 @@
 			<li><a ng-click="showOwnVideos()" translate="{{ sport + '.user.showOwnVideos' }}" translate-default="{{ 'global.user.showOwnVideos' | translate }}"></a></li>
 			<li><a ng-click="goToCoachProfile()" translate="{{ sport + '.user.myCoach' }}" translate-default="{{ 'global.user.myCoach' | translate }}" ng-show="User.coachInformation"></a></li>
 		</ul>
+		<notifications user="user" ng-show="false"></notifications>
 		<span bs-tooltip data-title="{{ 'global.user.reputationExplanation' | translate }}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation">{{User.reputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
 	</li>
 	<li ng-hide="loggedIn">

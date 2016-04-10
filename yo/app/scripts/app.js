@@ -94,6 +94,7 @@ app.config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/upload.html',
 			controller: 'UploadDetailsCtrl',
 			upload: true,
+			useFullWidth: true,
 			hideSideBar: true
 	  	}).
 	  	when('/s/:sport/coaches', {

@@ -39,7 +39,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			}
 		}
 
-		if (ENV.name == 'production' && !isIE() && !isBot() && !isPrerender()) 
+		if (ENV.name == 'production' && !isIE() && !isBot() && !isPrerender() && !isMobile()) 
 			$.post('https://hooks.slack.com/services/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', JSON.stringify(payload));
 		else {
 			console.error(payload);
@@ -57,6 +57,10 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 
 	function isPrerender() {
 		return (navigator.userAgent.indexOf('Prerender') !== -1);
+	}
+
+	function isMobile() {
+		return (navigator.userAgent.indexOf('Mobile') !== -1);
 	}
 
 	var loggingExceptions = [

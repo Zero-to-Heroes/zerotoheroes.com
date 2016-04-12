@@ -107,11 +107,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 							$.get(replayUrl, function(replayData) {
 								data.replayXml = replayData;
 								$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
-							}.
+							}).
 							fail(function(error2) {
 								$log.error('Could not load external data', data, error2)
 								$scope.pluginsReady = true;
-							}
+							})
 						})
 						// });
 					}

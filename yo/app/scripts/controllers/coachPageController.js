@@ -9,13 +9,15 @@ angular.module('controllers').controller('CoachPageController', ['$scope', '$rou
 		Api.Users.get({identifier: $routeParams.coachName}, 
 			function(data) {
 				$log.debug('loaded coach', data)
-				$scope.updateCoachInfo(data)
-				$scope.search()
+				if (data && data.coachInformation) {
+					$scope.updateCoachInfo(data)
+					$scope.search()
+				}
 			}
 		)
 
 		$scope.canEdit = function() {
-			return ($scope.coach && User.getName() == $scope.coach.username || User.getUser().canEdit)
+			return ($scope.coach && User.getName() == $scope.coach.username) || User.getUser().canEdit
 		}
 
 		$scope.startEditing = function() {

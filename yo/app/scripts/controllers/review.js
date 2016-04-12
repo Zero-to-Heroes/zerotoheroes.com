@@ -96,15 +96,22 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						// $log.debug('Replay URL: ', replayUrl);
 						$.get(replayUrl, function(replayData) {
 							data.replayXml = replayData;
-							// $log.debug('loaded xml', data.replayXml);
+							$log.debug('loaded xml', data.replayXml);
 
 							// Init the external player
 							// TODO: use an event system
 							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
 						}).
 						fail(function(error) {
-							$log.error('Could not load external data', data)
-							$scope.pluginsReady = true;
+							$log.log('failing to load external data at first try', data, error)
+							$.get(replayUrl, function(replayData) {
+								data.replayXml = replayData;
+								$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
+							}.
+							fail(function(error2) {
+								$log.error('Could not load external data', data, error2)
+								$scope.pluginsReady = true;
+							}
 						})
 						// });
 					}

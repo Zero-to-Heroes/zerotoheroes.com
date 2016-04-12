@@ -407,6 +407,9 @@
 	.hearthstone .profile-page .menu-bar a.active {
 		color: white;
 	}
+	.hearthstone .profile-page .unread .message-body {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
 
 	
 	/* =============

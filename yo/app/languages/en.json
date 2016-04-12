@@ -218,7 +218,8 @@
 				"from": "from",
 				"sent": "sent",
 				"empty": "You don't have any messages here",
-				"markUnreadButton": "mark unread"
+				"markUnreadButton": "mark unread",
+				"markReadButton": "mark read"
 			}
 		},
 		"toolbar": {

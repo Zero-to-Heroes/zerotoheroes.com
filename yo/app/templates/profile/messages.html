@@ -11,6 +11,7 @@
 			<div class="message-body-text" ng-bind-html="message.markedText"></div>
 			<div class="action-footer">
 				<a ng-click="markUnread(message)" translate="global.profile.messages.markUnreadButton" ng-show="message.readDate"></a>
+				<a ng-click="markRead(message)" translate="global.profile.messages.markReadButton" ng-hide="message.readDate"></a>
 			</div>
 		</div>
 	</li>

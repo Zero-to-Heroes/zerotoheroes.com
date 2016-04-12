@@ -216,6 +216,7 @@
 				"from": "de",
 				"sent": "il y a",
 				"empty": "Vous n'avez pas de message ici",
+				"markReadButton": "marquer comme lu",
 				"markUnreadButton": "marquer comme non lu"
 			}
 		},

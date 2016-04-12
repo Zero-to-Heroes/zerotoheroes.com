@@ -28,7 +28,6 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 			$scope.$broadcast('show-errors-check-validity');
   			if ($scope.resetForm.$valid) {
   				var location = $location.$$url;
-  				$log.log('identifier is ', $scope.account.username, $scope.account.password, $location);
 				Api.Passwords.save({username: $scope.account.username, password: $scope.account.password, registerLocation: $location.$$path}, 
 			        function(data) {
 			          	// Show message
@@ -78,14 +77,11 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		};
 
 		$scope.login = function() {
-			$log.debug('login', $scope.account.username, $scope.account.password)
 	  		AuthenticationService.login($scope.account.username, $scope.account.password, 
 				function(response, responseHeaders) {
-					$log.log('login with', response, responseHeaders);
 					AuthenticationService.setAuthentication(response.username, responseHeaders, 
 			  			function(authenticated) {
 							if (authenticated) {
-								$log.log('retrieving user info');
 								$scope.retrieveUserInfo();
 							}
 							else {
@@ -102,14 +98,9 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		};
 
 		$scope.retrieveUserInfo = function() {
-			$log.log('retrieving user info 2');
 			Api.Users.get( 
 				function(data) {
 					User.setUser(data);
-					//User.setName(data.username);
-					//User.setEmail(data.email);
-					//User.setLastLoginDate(data.lastLoginDate);
-					$log.log('lastlogindate', data.lastLoginDate);
 					$rootScope.$broadcast('user.logged.in');
 					$scope.endAccountCreation();
 				},
@@ -120,7 +111,6 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		}
 		
 		$scope.endAccountCreation = function() {
-			$log.log('ending account creation');
 			$rootScope.$broadcast('account.close');
 		};
 	}

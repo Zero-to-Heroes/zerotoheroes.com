@@ -380,13 +380,13 @@
 				"clearCurrentFile": "Effacer le replay",
 				"selectedFile": "Vous êtes sur le point de mettre en ligne {{fileName}}. Nous devons le traiter avant qu'il soit utilisable, et vous pourrez le rejouer une fois cela fait à la prochaine étape",
 				"invalidFormatMessage": "Nous ne supportons que les fichiers de log (.txt), les fichiers hsreplay (.xml) ou les fichiers de replay créés par Hearthstone Deck Tracker  (.hdtreplay) pour le moment. Si vous souhaitez utiliser un autre format de fichier, merci de nous laisser un mot sur les forums",
-				"corruptedFile": "Nous n'avons pas pu détecter vos picks - on dirait que le fichier est corrompu. Veuillez vous assurer que vous vous avez les dernières version de HDT et du plugin Arena Helper. Sinon, laissez-nous un message sur nos <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
+				"corruptedFile": "Nous n'avons pas pu détecter votre héro - on dirait que le fichier est corrompu. Veuillez vous assurer que vous vous avez la dernière version de votre tracker. Sinon, laissez-nous un message sur nos <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
 
 				"dontCloseWindowMessage": "Votre replay est en train d'être mis en ligne sur nos serveurs. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
 				"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et vous pourrez ensuite le voir dans le lecteur à gauche",
 				"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier votre replay"
 			},
-			"replay": {
+			"arenadraft": {
 				"review": {
 					"headline": "Ajoutez des informations à votre draft"
 				},
@@ -397,6 +397,7 @@
 				"clearCurrentFile": "Effacer le draft",
 				"selectedFile": "Vous êtes sur le point de mettre en ligne {{fileName}}. Nous devons le traiter avant qu'il soit utilisable, et vous pourrez le rejouer une fois cela fait à la prochaine étape",
 				"invalidFormatMessage": "Nous ne supportons que les fichiers de drafts enregistrés par le plugin Arena Helper pour Hearthstone Deck Tracker pour l'instant. C'est un fichier qui porte l'extension .json. Si vous souhaitez utiliser un autre format de fichier, merci de nous laisser un mot sur les forums",
+				"corruptedFile": "Nous n'avons pas pu détecter vos picks - on dirait que le fichier est corrompu. Veuillez vous assurer que vous vous avez la dernière version de votre tracker. Sinon, laissez-nous un message sur nos <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
 
 				"dontCloseWindowMessage": "Votre draft est en train d'être mis en ligne sur nos serveurs. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
 				"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et vous pourrez ensuite le voir dans le lecteur à gauche",

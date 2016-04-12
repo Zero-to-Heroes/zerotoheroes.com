@@ -384,6 +384,7 @@
 				"clearCurrentFile": "Clear current replay",
 				"selectedFile": "You're about to upload {{fileName}}. It needs to be processed before being a usable replay, and you'll be able to navigate in it at the next step",
 				"invalidFormatMessage": "We only support log files (.txt), hsreplay files (.xml) or Hearthstone Deck Tracker replay files (.hdtreplay) for now. If you wish to use another file format, please let us know on the forums",
+				"corruptedFile": "We couldn't detect the heroes from your replay - it looks like it is corrupted. Please make sure you have the latest versions of your tracker. Otherwise, let us know on the <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
 				
 
 				"dontCloseWindowMessage": "Your replay is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
@@ -401,7 +402,7 @@
 				"clearCurrentFile": "Clear current draft",
 				"selectedFile": "You're about to upload {{fileName}}. It needs to be processed before being a usable draft, and you'll be able to navigate in it at the next step",
 				"invalidFormatMessage": "We only support files created by the Arena Helper plugin for Hearthstone Deck Tracker for now. They should come as .json files. If you wish to use another file format, please let us know on the forums",
-				"corruptedFile": "We couldn't detect the picked cards from your file - it looks like it is corrupted. Please make sure you have the latest versions of HDT and Arena Helper plugin. Otherwise, let us know on the <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
+				"corruptedFile": "We couldn't detect the picked cards from your file - it looks like it is corrupted. Please make sure you have the latest versions of your tracker. Otherwise, let us know on the <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
 				
 				"dontCloseWindowMessage": "Your draft is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
 				"finalizeVideoMessage": "Processing your file. It can take up to one minute. Then you'll be able to view your draft in the viewer on the left",

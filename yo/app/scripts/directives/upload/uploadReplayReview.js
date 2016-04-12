@@ -158,6 +158,11 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.externalPlayerLoadedCb = function(externalPlayer) {
 					$scope.externalPlayer = externalPlayer
 					// $scope.$apply()
+					$scope.fileValid = $scope.externalPlayer.isValid()
+					$log.debug('is file valid?', $scope.fileValid)
+
+					if ($scope.fileValid && $scope.publishPending)
+						$scope.publishVideo()
 				}
 
 				$scope.initPublishVideoWhenReady = function() {
@@ -276,7 +281,10 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				}
 
 				$scope.isFileValid = function() {
-					return true
+					if (!$scope.externalPlayer)
+						return true
+					$log.debug('is file really valid?', $scope.fileValid)
+					return $scope.fileValid
 				}
 			}
 		}

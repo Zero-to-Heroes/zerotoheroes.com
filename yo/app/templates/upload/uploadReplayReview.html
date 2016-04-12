@@ -65,8 +65,8 @@
 			</div>
 	  		<div class="row">
 				<div class="col-sm-12">
-		  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideo()" ng-show="review.transcodingDone && !publishPending" ng-disabled="!isDataValid()"><span>{{ 'global.upload.video.publishReviewButton' | translate }}</span></button>
-		  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideoWhenReady()" ng-show="(!review.transcodingDone && !publishPending)" ng-disabled="!isDataValid()"><span>{{ 'global.upload.video.publishReviewWhenReadyButton' | translate }}</span></button>
+		  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideo()" ng-show="review.transcodingDone && !publishPending" ng-disabled="!isDataValid() || !isFileValid()"><span>{{ 'global.upload.video.publishReviewButton' | translate }}</span></button>
+		  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideoWhenReady()" ng-show="(!review.transcodingDone && !publishPending)" ng-disabled="!isDataValid() || !isFileValid()"><span>{{ 'global.upload.video.publishReviewWhenReadyButton' | translate }}</span></button>
 		  			<button class="btn btn-primary btn-upload" ng-click="cancelPendingUpload()" ng-show="publishPending"><span>{{ 'global.upload.video.publishingPendingUpload' | translate }}</span></button>
 	  			</div>
 			</div>

@@ -62,6 +62,8 @@ public class RouteController {
 			"/s/{sport}/myvideos/{pageNumber}",
 			"/c/{coach}/{sport}",
 			"/coach/{coach}/{sport}",
+			"/u/{username}/{menu}/{subMenu}",
+			"/user/{username}/{menu}/{subMenu}",
 			"/squash",
 			"/heroesofthestorm",
 			"/hearthstone",

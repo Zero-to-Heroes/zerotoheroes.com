@@ -283,7 +283,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.isFileValid = function() {
 					if (!$scope.externalPlayer)
 						return true
-					$log.debug('is file really valid?', $scope.fileValid)
+					$log.debug('is file really valid?', $scope.externalPlayer, $scope.fileValid)
 					return $scope.fileValid
 				}
 			}

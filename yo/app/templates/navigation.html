@@ -36,9 +36,10 @@
 				<li ng-class="{active: menuItem == 'search' && !upload}"><a href="{{ '/s/' + sport + '/search'}}">{{ 'global.navigation.search' | translate }}</a></li>
 				<li ng-class="{active: menuItem == 'coaches' && !upload}"><a href="{{ '/s/' + sport + '/coaches'}}">{{ 'global.navigation.coaches' | translate }}</a></li>
 				<li ng-class="{active: menuItem == 'forum' && !upload}" class="soon" ng-disabled="true"><a>{{ 'global.navigation.forum' | translate }}</a></li>
+				<li ng-class="{active: menuItem == 'myVideos' && !upload}"><a href="{{ '/s/' + sport + '/myVideos'}}" translate="{{ sport + '.user.showOwnVideos' }}" translate-default="{{ 'global.user.showOwnVideos' | translate }}"></a></li>
 			</ul>
 			
-			<ul  zth-name-input show-logout="true" class="nav navbar-nav name-group"></ul>
+			<ul zth-name-input show-logout="true" class="nav navbar-nav name-group" active="menuItem == 'profile'"></ul>
 		</div>
 
 		<!-- Non-UI components -->

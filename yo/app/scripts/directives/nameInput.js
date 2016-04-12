@@ -13,12 +13,13 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 		restrict: 'A',
 		replace: true,
 		templateUrl: 'templates/nameInput.html',
-		scope: {},
+		scope: {
+			active: '='
+		},
 		link: linkFunction,
 		controller: function($scope, User) {
 			
 			$scope.refresh = function() {
-
 				// Only refresh if we're logger in
 				// $log.debug('refreshing', User, User.isLoggedIn())
 				if (User.isLoggedIn()) {
@@ -69,11 +70,6 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 				User.clear()
 				$scope.name = User.getName();
 				$scope.loggedIn = User.isLoggedIn();
-			}
-
-			$scope.showOwnVideos = function() {
-				var path = '/s/' + $scope.sport + '/myVideos/'
-  	 			$location.path(path)
 			}
 
 			$scope.goToCoachProfile = function() {

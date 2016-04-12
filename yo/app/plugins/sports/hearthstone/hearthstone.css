@@ -357,6 +357,11 @@
 	color: #fff;
 }
 
+.hearthstone div[zth-name-input] a.active, .hearthstone div[zth-name-input] a:hover.active, .hearthstone div[zth-name-input] a:focus.active {
+	background-color: transparent;
+	color: #fff;
+}
+
 .hearthstone .navbar .name-group {
 	margin-right: 10px;
 }
@@ -386,10 +391,6 @@
 	/* =============
 	** User items
 	** =============*/
-	.hearthstone .navbar-default div[zth-name-input] a:focus, .hearthstone .navbar-default div[zth-name-input] a:active, .hearthstone .navbar-default div[zth-name-input] a:hover {
-		color: #fcd144;
-		background: transparent;
-	}
 
 
 	/* =============

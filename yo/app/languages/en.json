@@ -226,7 +226,7 @@
 			},
 			"preferences": {
 				"preferencesUpdated": "Your preferences have been updated",
-				"siteNotifications": "Receive notifications in your inbox?",
+				"siteNotifications": "Receive notifications in site?",
 				"emailNotifications": "Receive notifications as emails?",
 				"language": "What language do you want to see the site in?",
 				"save": "Update"

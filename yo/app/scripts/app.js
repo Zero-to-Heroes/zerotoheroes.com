@@ -137,7 +137,7 @@ app.config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
-			menuItem: 'reviews'
+			menuItem: 'myVideos'
 	  	}).
 	  	when('/s/:sport/myvideos/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
@@ -166,22 +166,22 @@ app.config(['$routeProvider', '$locationProvider',
 	  	when('/u/:sport/:userName/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
-			menuItem: 'profile'
+			menuItem: 'inbox'
 	  	}).
 	  	when('/u/:userName/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
-			menuItem: 'profile'
+			menuItem: 'inbox'
 	  	}).
 	  	when('/user/:sport/:userName/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
-			menuItem: 'profile'
+			menuItem: 'inbox'
 	  	}).
 	  	when('/user/:userName/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
-			menuItem: 'profile'
+			menuItem: 'inbox'
 	  	}).
 	  	// Users - profile
 	  	when('/u/:userName/:subMenu', {

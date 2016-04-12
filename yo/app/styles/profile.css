@@ -68,3 +68,36 @@
 	font-size: 12px;
 	margin-left: 15px;
 }
+
+/* ============
+* Preferences
+* =============*/
+.profile-page .preferences {
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 15px;
+}
+
+.profile-page .preferences .form-group {
+	margin-bottom: 10px;
+}
+
+.profile-page .preferences input[type="checkbox"] {
+	margin-left: 20px;
+}
+
+.profile-page .preferences label {
+	font-weight: normal;
+}
+
+.profile-page .preferences .language-group {
+	display: inline-block;
+	position: relative;
+	margin-top: -4px;
+}
+
+.profile-page .preferences .dropdown-menu {
+	left: inherit;
+	right: 0;
+}
+

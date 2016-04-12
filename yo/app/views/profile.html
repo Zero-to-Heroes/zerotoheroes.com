@@ -1,0 +1,12 @@
+<view-title>{{'User - ' + user.username}}</view-title>
+
+<div class="background-white profile-page">
+	
+	<ul class="menu-bar">
+		<li><a translate="global.profile.menu.preferences" ng-class="{ 'active': subMenu == 'all'}" ng-click="goTo('preferences')"></a></li>
+	</ul>
+
+	<div ng-switch="subMenu">
+		<profile-preferences ng-switch-when="preferences" sport="sport"></profile-preferences>
+	</div>
+</div>

@@ -162,7 +162,7 @@ app.config(['$routeProvider', '$locationProvider',
 			controller: 'CoachPageController',
 			menuItem: 'coaches'
 	  	}).
-	  	// Users
+	  	// Users - inbox
 	  	when('/u/:sport/:userName/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
@@ -181,6 +181,27 @@ app.config(['$routeProvider', '$locationProvider',
 	  	when('/user/:userName/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
+			menuItem: 'profile'
+	  	}).
+	  	// Users - profile
+	  	when('/u/:userName/:subMenu', {
+			templateUrl: 'views/profile.html',
+			controller: 'ProfileController',
+			menuItem: 'profile'
+	  	}).
+	  	when('/u/:sport/:userName/:subMenu', {
+			templateUrl: 'views/profile.html',
+			controller: 'ProfileController',
+			menuItem: 'profile'
+	  	}).
+	  	when('/user/:userName/:subMenu', {
+			templateUrl: 'views/profile.html',
+			controller: 'ProfileController',
+			menuItem: 'profile'
+	  	}).
+	  	when('/user/:sport/:userName/:subMenu', {
+			templateUrl: 'views/profile.html',
+			controller: 'ProfileController',
 			menuItem: 'profile'
 	  	}).
 	  	otherwise({

@@ -30,39 +30,48 @@ public class UserNotifier {
 	ProfileService profileService;
 
 	public void notifyNewComment(User subscriber, Comment comment, Review review) {
-		Notification notification = new Notification();
-		notification.setCreationDate(new Date());
-		notification.setSport(review.getSport().getKey().toLowerCase());
-		notification.setTextKey("newComment");
-		notification.setType("new-comment");
-		notification.setTitle(review.getTitle());
-		notification.addObject(review.getUrl());
-		notification.setTextDetail(comment.getText());
-		notification.setFrom(comment.getAuthor());
+		Profile profile = profileService.getProfile(subscriber.getId());
 
-		addNotification(subscriber, notification);
+		if (profile.getPreferences().isSiteNotifications()) {
+			Notification notification = new Notification();
+			notification.setCreationDate(new Date());
+			notification.setSport(review.getSport().getKey().toLowerCase());
+			notification.setTextKey("newComment");
+			notification.setType("new-comment");
+			notification.setTitle(review.getTitle());
+			notification.addObject(review.getUrl());
+			notification.setTextDetail(comment.getText());
+			notification.setFrom(comment.getAuthor());
+			addNotification(profile, notification);
+		}
 
-		emailNotifier.notifyNewComment(subscriber, comment, review);
+		if (profile.getPreferences().isEmailNotifications()) {
+			emailNotifier.notifyNewComment(subscriber, comment, review);
+		}
 	}
 
 	public void notifyNewReview(User subscriber, Review review) {
-		Notification notification = new Notification();
-		notification.setCreationDate(new Date());
-		notification.setSport(review.getSport().getKey().toLowerCase());
-		notification.setTextKey("newReview");
-		notification.setTitle(review.getTitle());
-		notification.setType("new-review");
-		notification.addObject(review.getUrl());
-		notification.setTextDetail(review.getText());
-		notification.setFrom(review.getAuthor());
+		Profile profile = profileService.getProfile(subscriber.getId());
 
-		addNotification(subscriber, notification);
+		if (profile.getPreferences().isSiteNotifications()) {
+			Notification notification = new Notification();
+			notification.setCreationDate(new Date());
+			notification.setSport(review.getSport().getKey().toLowerCase());
+			notification.setTextKey("newReview");
+			notification.setTitle(review.getTitle());
+			notification.setType("new-review");
+			notification.addObject(review.getUrl());
+			notification.setTextDetail(review.getText());
+			notification.setFrom(review.getAuthor());
+			addNotification(profile, notification);
+		}
 
-		emailNotifier.notifyNewReview(subscriber, review);
+		if (profile.getPreferences().isEmailNotifications()) {
+			emailNotifier.notifyNewReview(subscriber, review);
+		}
 	}
 
-	private Notifications addNotification(User subscriber, Notification notification) {
-		Profile profile = profileService.getProfile(subscriber.getId());
+	private Notifications addNotification(Profile profile, Notification notification) {
 		Notifications notifications = profile.getNotifications();
 		if (notifications == null) {
 			notifications = new Notifications();

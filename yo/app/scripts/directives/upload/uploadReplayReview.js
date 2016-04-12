@@ -152,6 +152,20 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 							// Init the external player
 							SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb)
 						})
+						.fail(function(error) {
+							if (error.status == 200) {
+								$scope.review.replayXml = error.responseText;
+
+								// Init the external player
+								// TODO: use an event system
+								SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb);
+								$log.debug('player init')
+							}
+							else {
+								$log.error('Could not load external data', data, error)
+								$scope.pluginsReady = true;
+							}
+						})
 					}
 				}
 

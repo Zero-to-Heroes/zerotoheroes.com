@@ -6,11 +6,9 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 		$scope.subMenu = $routeParams['subMenu']
 
 		$scope.retrieveMessages = function() {
-			console.log('retrieving messages', User.isLoggedIn())
 			if (User.isLoggedIn() && $routeParams.userName == User.getName()) {
 				Api.Notifications.get({type: $scope.subMenu},
 					function(data) {
-						$log.debug('retrieved', data)
 						$scope.updateMessages(data)
 					}
 				)
@@ -31,7 +29,6 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 
 		$scope.goTo = function(subMenu) {
 			var path = '/u/' + $routeParams['sport'] + '/' + $routeParams['userName'] + '/inbox/' + subMenu
-			$log.debug('going to', path)
 			$location.path(path)
 		}
 	}

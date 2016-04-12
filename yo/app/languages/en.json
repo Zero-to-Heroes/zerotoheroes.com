@@ -220,6 +220,16 @@
 				"empty": "You don't have any messages here",
 				"markUnreadButton": "mark unread",
 				"markReadButton": "mark read"
+			},
+			"menu": {
+				"preferences": "Preferences"
+			},
+			"preferences": {
+				"preferencesUpdated": "Your preferences have been updated",
+				"siteNotifications": "Receive notifications in your inbox?",
+				"emailNotifications": "Receive notifications as emails?",
+				"language": "What language do you want to see the site in?",
+				"save": "Update"
 			}
 		},
 		"toolbar": {

@@ -218,6 +218,16 @@
 				"empty": "Vous n'avez pas de message ici",
 				"markReadButton": "marquer comme lu",
 				"markUnreadButton": "marquer comme non lu"
+			},
+			"menu": {
+				"preferences": "Préférences"
+			},
+			"preferences": {
+				"preferencesUpdated": "Vos préférences ont été mises à jour",
+				"siteNotifications": "Recevoir les notifications dans votre boîte de réception ?",
+				"emailNotifications": "Recevoir les notifications comme e-mails ?",
+				"language": "Dans quel langue voulez-vous utiliser le site ?",
+				"save": "Sauver"
 			}
 		},
 		"toolbar": {

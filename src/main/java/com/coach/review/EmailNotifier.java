@@ -1,7 +1,5 @@
 package com.coach.review;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -10,6 +8,8 @@ import com.coach.core.notification.EmailMessage;
 import com.coach.core.notification.EmailSender;
 import com.coach.core.security.User;
 import com.coach.user.UserRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
@@ -30,7 +30,10 @@ public class EmailNotifier {
 	}
 
 	public void notifyNewComment(User subscriber, Comment comment, Review review) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.debug("Sending email to " + subscriber.getUsername());
+			return;
+		}
 
 		String recipient = subscriber.getEmail();
 
@@ -61,7 +64,10 @@ public class EmailNotifier {
 	}
 
 	public void notifyNewReview(User subscriber, Review review) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.debug("Sending email to " + subscriber.getUsername());
+			return;
+		}
 
 		String recipient = subscriber.getEmail();
 
@@ -114,7 +120,7 @@ public class EmailNotifier {
 	}
 
 	public void notifyNewUser(User user) {
-		if (!"prod".equalsIgnoreCase(environment)) return;
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		String recipient = user.getEmail();
 

@@ -203,6 +203,22 @@
 				"onlyNotHelpful": "uniquement des revues sans commentaire marqué comme utile"
 			}
 		},
+		"profile": {
+			"messages": {
+				"menu": {
+					"all": "tous",
+					"unread": "non lus"
+				},
+				"type": {
+					"newComment": "Nouveau commentaire",
+					"newReview": "Nouvelle revue"
+				},
+				"from": "de",
+				"sent": "il y a",
+				"empty": "Vous n'avez pas de message ici",
+				"markUnreadButton": "marquer comme non lu"
+			}
+		},
 		"toolbar": {
 			"timestamp": "Insérez l'instant en cours", 
 			"slow": "Insérez un ralenti",

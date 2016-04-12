@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.coach.core.security.User;
+import com.coach.profile.Profile;
+import com.coach.profile.ProfileRepository;
+import com.coach.profile.ProfileService;
 import com.coach.review.Comment;
 import com.coach.review.EmailNotifier;
 import com.coach.review.Review;
@@ -21,7 +24,10 @@ public class UserNotifier {
 	UserRepository userRepo;
 
 	@Autowired
-	NotificationsRepository notificationRepo;
+	ProfileRepository profileRepository;
+
+	@Autowired
+	ProfileService profileService;
 
 	public void notifyNewComment(User subscriber, Comment comment, Review review) {
 		Notification notification = new Notification();
@@ -29,12 +35,12 @@ public class UserNotifier {
 		notification.setSport(review.getSport().getKey().toLowerCase());
 		notification.setTextKey("newComment");
 		notification.setType("new-comment");
+		notification.setTitle(review.getTitle());
 		notification.addObject(review.getUrl());
 		notification.setTextDetail(comment.getText());
+		notification.setFrom(comment.getAuthor());
 
-		Notifications notifications = loadNotifications(subscriber);
-		notifications.addNotification(notification);
-		updateNotifications(notifications);
+		addNotification(subscriber, notification);
 
 		emailNotifier.notifyNewComment(subscriber, comment, review);
 	}
@@ -44,28 +50,25 @@ public class UserNotifier {
 		notification.setCreationDate(new Date());
 		notification.setSport(review.getSport().getKey().toLowerCase());
 		notification.setTextKey("newReview");
+		notification.setTitle(review.getTitle());
 		notification.setType("new-review");
 		notification.addObject(review.getUrl());
 		notification.setTextDetail(review.getText());
+		notification.setFrom(review.getAuthor());
 
-		Notifications notifications = loadNotifications(subscriber);
-		notifications.addNotification(notification);
-		updateNotifications(notifications);
+		addNotification(subscriber, notification);
 
 		emailNotifier.notifyNewReview(subscriber, review);
 	}
 
-	private Notifications loadNotifications(User subscriber) {
-		Notifications notifications = notificationRepo.findByUserId(subscriber.getId());
+	private Notifications addNotification(User subscriber, Notification notification) {
+		Profile profile = profileService.getProfile(subscriber.getId());
+		Notifications notifications = profile.getNotifications();
 		if (notifications == null) {
 			notifications = new Notifications();
-			notifications.setUserId(subscriber.getId());
 		}
+		notifications.addNotification(notification);
+		profileRepository.save(profile);
 		return notifications;
 	}
-
-	private void updateNotifications(Notifications notifications) {
-		notificationRepo.save(notifications);
-	}
-
 }

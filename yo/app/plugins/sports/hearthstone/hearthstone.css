@@ -395,11 +395,17 @@
 	/* =============
 	** Notifications
 	** =============*/
-	.hearthstone .user-notifications .badge {
-		background-color: transparent;
-	}
 	.hearthstone .user-notifications.unread, .hearthstone .user-notifications.unread span {
 		color: white !important;
+	}
+	.hearthstone .navbar-default .navbar-nav > li > a.user-notifications {
+		line-height: 62px;
+	}
+	.hearthstone .profile-page .menu-bar a {
+		color: rgba(255, 255, 255, 0.7);
+	}
+	.hearthstone .profile-page .menu-bar a.active {
+		color: white;
 	}
 
 	

@@ -11,14 +11,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			canvasIdIndex: 0,
 			canvasId: 'tmp0',
 			drawingCanvas: false
-		};
-
-		// TODO: clean fix
-		marked.setOptions({
-			gfm: true,
-			breaks: true,
-			sanitize: false
-		})
+		}
 
 		$scope.newComment = {};
 		$scope.coaches = [];

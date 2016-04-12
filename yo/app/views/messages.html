@@ -1,0 +1,11 @@
+<view-title>{{'User - ' + user.username}}</view-title>
+
+<div class="background-white profile-page">
+	
+	<ul class="menu-bar">
+		<li><a translate="global.profile.messages.menu.all" ng-class="{ 'active': subMenu == 'all'}" ng-click="goTo('all')"></a></li>
+		<li><a translate="global.profile.messages.menu.unread" ng-class="{ 'active': subMenu == 'unread'}" ng-click="goTo('unread')"></a></li>
+	</ul>
+
+	<messages source="messages"></messages>
+</div>

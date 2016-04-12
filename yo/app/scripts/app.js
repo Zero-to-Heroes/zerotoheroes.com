@@ -151,6 +151,7 @@ app.config(['$routeProvider', '$locationProvider',
 			reloadOnSearch: false,
 			menuItem: 'home'
 	  	}).
+	  	// Coaches
 	  	when('/c/:coachName/:sport', {
 			templateUrl: 'views/coachPage.html',
 			controller: 'CoachPageController',
@@ -160,6 +161,27 @@ app.config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/coachPage.html',
 			controller: 'CoachPageController',
 			menuItem: 'coaches'
+	  	}).
+	  	// Users
+	  	when('/u/:sport/:userName/inbox/:subMenu', {
+			templateUrl: 'views/messages.html',
+			controller: 'MessagesController',
+			menuItem: 'profile'
+	  	}).
+	  	when('/u/:userName/inbox/:subMenu', {
+			templateUrl: 'views/messages.html',
+			controller: 'MessagesController',
+			menuItem: 'profile'
+	  	}).
+	  	when('/user/:sport/:userName/inbox/:subMenu', {
+			templateUrl: 'views/messages.html',
+			controller: 'MessagesController',
+			menuItem: 'profile'
+	  	}).
+	  	when('/user/:userName/inbox/:subMenu', {
+			templateUrl: 'views/messages.html',
+			controller: 'MessagesController',
+			menuItem: 'profile'
 	  	}).
 	  	otherwise({
 			redirectTo: '/'

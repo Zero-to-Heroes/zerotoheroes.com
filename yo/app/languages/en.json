@@ -205,6 +205,22 @@
 				"onlyNotHelpful": "only reviews without comments flagged as helpful"
 			}
 		},
+		"profile": {
+			"messages": {
+				"menu": {
+					"all": "all",
+					"unread": "unread"
+				},
+				"type": {
+					"newComment": "New comment",
+					"newReview": "New review"
+				},
+				"from": "from",
+				"sent": "sent",
+				"empty": "You don't have any messages here",
+				"markUnreadButton": "mark unread"
+			}
+		},
 		"toolbar": {
 			"timestamp": "Insert current timestamp",
 			"slow": "Insert playing in slow motion",

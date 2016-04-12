@@ -6,15 +6,22 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 		$scope.sportsConfig = SportsConfig;
 		$scope.User = User;
 
+		// TODO: clean fix
+		marked.setOptions({
+			gfm: true,
+			breaks: true,
+			sanitize: false
+		})
+
 		$scope.$on('$routeChangeSuccess', function(next, current) { 
 
 			if ($rootScope) {
 				$rootScope.$broadcast('user.activity.visit');
 			}
 
-		   	$scope.sport = $routeParams.sport;
+		   	$scope.sport = $routeParams.sport || $scope.sport
 		   	if (!$scope.sport && current.$$route) {
-		   		$scope.sport = current.$$route.sport;
+		   		$scope.sport = current.$$route.sport
 		   	}
 
 		   	if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {
@@ -28,6 +35,7 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 			   	$scope.isFullPage = current.$$route.isFullPage
 			   	$scope.upload = current.$$route.upload
 			   	$scope.menuItem = current.$$route.menuItem
+			   	$scope.subMenu = current.$$route.subMenu
 			   	$scope.useFullWidth = current.$$route.useFullWidth
 		   	}
 

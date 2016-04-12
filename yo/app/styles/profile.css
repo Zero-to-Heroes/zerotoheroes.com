@@ -1,0 +1,70 @@
+/* ============
+*  Global 
+* =============*/
+.profile-page {
+	padding-bottom: 20px;
+}
+.profile-page .menu-bar {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+	margin-left: 50px;
+    margin-right: 50px;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.profile-page .menu-bar li {
+	display: inline-block;
+	padding-right: 10px;
+    border-right: 1px solid grey;
+    margin-right: 10px;
+}
+
+.profile-page .menu-bar li:last-child {
+    border-right: none;
+}
+
+.profile-page .menu-bar a.active {
+	color: orangered
+}
+
+/* ============
+* Messages
+* =============*/
+.profile-page .message {
+	display: block;
+	margin-left: 20px;
+	margin-bottom: 40px;
+}
+
+.profile-page .message .notification-type {
+	font-weight: bold;
+}
+.profile-page .message .notification-type:after {
+	content: "-";
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.profile-page .message-body {
+    margin-right: 50px;
+}
+
+.profile-page .message .message-body-text {
+	margin-left: 15px;
+	margin-top: 5px;
+}
+.profile-page .message .message-from-label, .profile-page .message .message-from, .profile-page .message .message-sent-date {
+	font-size: 10px;
+}
+
+.profile-page .unread .message-body {
+	padding: 15px;
+    padding-top: 5px;
+	background-color: rgba(174, 224, 239, 0.2)
+}
+
+.profile-page .action-footer {
+	font-size: 12px;
+	margin-left: 15px;
+}

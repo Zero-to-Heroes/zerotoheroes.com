@@ -20,7 +20,7 @@ var parseDecks = {
 				if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
 					var strDeck = plugins.parseDecks[deckName];
 					var deck = JSON.parse(strDeck);
-					var htmlDeck = parseDecks.formatToHtml(deck);
+					var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 					// parseDecks.deck = htmlDeck;
 					//console.log('html deck is ', htmlDeck);
 					var deckNameForDisplay = deck.title;
@@ -44,7 +44,7 @@ var parseDecks = {
 				if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
 					var strDeck = plugins.parseDecks[deckName];
 					var deck = JSON.parse(strDeck);
-					var htmlDeck = parseDecks.formatToHtml(deck);
+					var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 					// parseDecks.deck = htmlDeck;
 					//console.log('html deck is ', htmlDeck);
 					var deckNameForDisplay = deck.title;

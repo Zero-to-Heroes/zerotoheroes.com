@@ -53,7 +53,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 						params.participantDetails.playerCategory = $location.search().playerCategory
 					}
 					if ($location.search().opponentCategory) {
-						params.participantDetails.opponentCategory = $location.search().playerCategory
+						params.participantDetails.opponentCategory = $location.search().opponentCategory
 					}
 
 					// Useful for drop-downs, which sometimes have a different behaviour with no value 

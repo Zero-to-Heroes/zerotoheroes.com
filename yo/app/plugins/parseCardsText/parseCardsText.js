@@ -21,10 +21,6 @@ var parseCardsText = {
 				var card = parseCardsText.getCard(cardName);
 				if (card) {
 					var link = parseCardsText.buildCardLink(card, lang);
-					// var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
-					// var localizedName = parseCardsText.localizeName(card, lang);
-					// var localizedImage = parseCardsText.localizeImage(card, lang);
-					// result = result.replace(match, '<a class="card ' + cssClass + '" data-template-url="plugins/parseCardsText/template.html" data-title="' + localizedImage + '" data-placement="auto left" data-container="body" bs-tooltip>' + localizedName + '</a>');
 					result = result.replace(match, link);
 				}
 			})
@@ -125,14 +121,11 @@ var parseCardsText = {
 				callback($.map(parseCardsText.jsonDatabase, function(card) {
 					var localizeName = parseCardsText.localizeName(card);
 					var res = S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) === 0;
-					// var debug = false;
-					// if (res) debug = true;
 					// add search on english term
 					res = res || card.name.toLowerCase().indexOf(term.substring(2).toLowerCase()) === 0;
-					// if (debug) console.log('res2', term, localizeName, res);
 					// Keep only valid cards
 					res = res && card.cardImage && card.type != 'Hero' && card.type != 'Enchantment' 
-					// if (debug) console.log('res3', term, localizeName, res);
+					res = res && card.set != 'Hero_skins'
 					res = res ? card : null
 					// if (debug) console.log('res4', term, localizeName, res);
 					return res;
@@ -202,9 +195,13 @@ var parseCardsText = {
 				if (card.set == 'Basic') {
 					card.rarity = 'Free';
 				}
+				// Keep only valid cards
+				var res = card.type != 'Hero' && card.type != 'Enchantment' 
+				res = res && card.set != 'Hero_skins'
+				res = res && (card.id.toLowerCase() == card.id || card.id.toUpperCase() == card.id) && card.id.match(/.*\d$/)
 				// console.log('card id matches regex?', card.id, card.id.match(/.*\d$/));
 				// console.log('card type', card.type)
-				if (card.type != 'Hero' && (card.id.toLowerCase() == card.id || card.id.toUpperCase() == card.id) && card.id.match(/.*\d$/)) {
+				if (res) {
 					result = card;
 					if (result.cardImage) {
 						// console.log('returning card', result);

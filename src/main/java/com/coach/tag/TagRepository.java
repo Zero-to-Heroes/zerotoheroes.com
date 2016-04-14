@@ -104,7 +104,9 @@ public class TagRepository {
 		hearthstone.add(new Tag("Face Hunter"));
 		hearthstone.add(new Tag("Hunter Beast"));
 		hearthstone.add(new Tag("Camel Hunter"));
+		hearthstone.add(new Tag("Midrange Hunter"));
 		hearthstone.add(new Tag("Combo Druid"));
+		hearthstone.add(new Tag("Astral Druid"));
 		hearthstone.add(new Tag("Mill Druid"));
 		hearthstone.add(new Tag("Druid Ramp"));
 		hearthstone.add(new Tag("Egg Druid"));

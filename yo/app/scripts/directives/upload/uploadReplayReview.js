@@ -97,12 +97,13 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 								}
 								else {
 									$scope.sources = null
-
+									$log.debug('putting aside the important values', $scope.review)
 									data.title = $scope.review.title
 									data.text = $scope.review.text
 									data.tags = $scope.review.tags
 									data.author = $scope.review.author
 									data.playerInfo = $scope.review.playerInfo
+									data.participantDetails = $scope.review.participantDetails
 									$scope.review = data
 
 									$scope.uploader.videoInfo.upload.postProcessed = true
@@ -137,8 +138,10 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				}
 
 				$scope.onTranscodingComplete = function() {
-					if ($scope.publishPending)
+					if ($scope.publishPending) {
 						$scope.publishVideo()
+						return
+					}
 					
 					// And now display something on the replay player
 					$log.debug('Need to display the replay', $scope.review)

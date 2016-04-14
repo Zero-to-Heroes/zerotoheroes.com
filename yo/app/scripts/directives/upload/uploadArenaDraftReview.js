@@ -100,6 +100,7 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 									data.tags = $scope.review.tags
 									data.author = $scope.review.author
 									data.playerInfo = $scope.review.playerInfo
+									data.participantDetails = $scope.review.participantDetails
 									$scope.review = data
 
 									$scope.uploader.videoInfo.upload.postProcessed = true

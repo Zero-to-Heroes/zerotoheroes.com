@@ -162,17 +162,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.setExternalPlayer = function(externalPlayer) {
 			$scope.pluginsReady = true
+			$scope.player1ready = true
 			$scope.externalPlayer = externalPlayer
-			$log.debug('externalPlayer', $scope.externalPlayer)
+			// $log.debug('externalPlayer', $scope.externalPlayer)
 		}
 
 		//===============
 		// URL parameters
 		//===============
 		$scope.handleUrlParameters = function() {
+			// $log.debug('handling url params', $location.search())
 			if ($location.search().ts) {
 				var ts = decodeURIComponent($location.search().ts)
 				ts = ts.replace(new RegExp('%2E', 'g'), '.')
+				// $log.debug('replaced ts', ts)
 				if (!$scope.player1ready) {
 					// $log.debug('waiting for media player', $scope.player1ready)
 					$timeout(function() { $scope.handleUrlParameters()}, 100)
@@ -181,7 +184,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// $log.debug('ts parameter', ts)
 					$timeout(function() { 
 						// Default to wide mode, which is probably what we expect, since we link to a video directly
-						$scope.playerControls.wideMode = true
+						// Issue with replay player, need to handle this differently
+						// $scope.playerControls.wideMode = true
+						// $log.debug('going to timestamp')
 						$scope.goToTimestamp(ts) 
 					})
 				}

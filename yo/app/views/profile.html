@@ -3,10 +3,12 @@
 <div class="background-white profile-page">
 	
 	<ul class="menu-bar">
-		<li><a translate="global.profile.menu.preferences" ng-class="{ 'active': subMenu == 'all'}" ng-click="goTo('preferences')"></a></li>
+		<li><a translate="global.profile.menu.preferences" ng-class="{ 'active': subMenu == 'preferences'}" ng-click="goTo('preferences')"></a></li>
+		<li><a translate="global.profile.menu.subscriptions" ng-class="{ 'active': subMenu == 'subscriptions'}" ng-click="goTo('subscriptions')"></a></li>
 	</ul>
 
 	<div ng-switch="subMenu">
 		<profile-preferences ng-switch-when="preferences" sport="sport"></profile-preferences>
+		<profile-subscriptions ng-switch-when="subscriptions" sport="sport"></profile-subscriptions>
 	</div>
 </div>

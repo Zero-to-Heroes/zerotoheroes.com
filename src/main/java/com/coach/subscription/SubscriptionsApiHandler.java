@@ -2,8 +2,7 @@ package com.coach.subscription;
 
 import java.io.IOException;
 import java.util.Collection;
-
-import lombok.extern.slf4j.Slf4j;
+import java.util.Iterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -13,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,12 +21,17 @@ import com.amazonaws.util.StringUtils;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
+import com.coach.profile.Profile;
+import com.coach.profile.ProfileService;
 import com.coach.review.ReviewRepository;
+import com.coach.review.ReviewSearchCriteria;
 import com.coach.sport.SportManager;
 import com.coach.user.UserRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RepositoryRestController
-@RequestMapping(value = "/api/subscriptions")
+@RequestMapping(value = "/api")
 @Slf4j
 public class SubscriptionsApiHandler {
 
@@ -48,7 +53,80 @@ public class SubscriptionsApiHandler {
 	@Autowired
 	SubscriptionManager subscriptionManager;
 
-	@RequestMapping(value = "/{itemId}", method = RequestMethod.POST)
+	@Autowired
+	ProfileService profileService;
+
+	@Autowired
+	SavedSearchSubscriptionService subService;
+
+	@RequestMapping(value = "/savedSearch/{name}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> subscribeToSavedSearch(@PathVariable("name") final String name,
+			@RequestBody ReviewSearchCriteria searchCriteria) throws IOException {
+
+		return addSub(name, searchCriteria);
+	}
+
+	@RequestMapping(value = "/savedSearch", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> subscribeToSavedSearch(@RequestBody ReviewSearchCriteria searchCriteria)
+			throws IOException {
+		return addSub(null, searchCriteria);
+	}
+
+	@RequestMapping(value = "/savedSearch", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<ListSubscriptionsResponse> retrieveSubscriptions() throws IOException {
+		ListSubscriptionsResponse response = null;
+
+		Profile profile = profileService.getLoggedInProfile();
+		if (profile == null) { return new ResponseEntity<ListSubscriptionsResponse>(response, HttpStatus.FORBIDDEN); }
+
+		response = new ListSubscriptionsResponse();
+		response.setSubscriptions(profile.getSubscriptions().getSubscriptions());
+
+		return new ResponseEntity<ListSubscriptionsResponse>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/savedSearch/{name}", method = RequestMethod.DELETE)
+	public @ResponseBody ResponseEntity<String> deleteSubscription(@PathVariable("name") final String subscriptionId)
+			throws IOException {
+
+		Profile profile = profileService.getLoggedInProfile();
+		if (profile == null) { return new ResponseEntity<String>("not logged in", HttpStatus.FORBIDDEN); }
+
+		if (profile.getSubscriptions() == null || profile.getSubscriptions().getSubscriptions() == null
+				|| profile.getSubscriptions().getSubscriptions().isEmpty()) { return new ResponseEntity<String>(
+						"subscription doesn't exist, can't unsub", HttpStatus.NOT_FOUND); }
+
+		for (Iterator<SavedSearchSubscription> it = profile.getSubscriptions().getSubscriptions().iterator(); it
+				.hasNext();) {
+			SavedSearchSubscription sub = it.next();
+			if (sub.getId().equals(subscriptionId)) {
+				it.remove();
+				subService.delete(subscriptionId);
+				profileService.save(profile);
+				return new ResponseEntity<String>("unsubbed", HttpStatus.OK);
+			}
+		}
+
+		return new ResponseEntity<String>("subscription doesn't exist, can't unsub", HttpStatus.NOT_FOUND);
+	}
+
+	private ResponseEntity<String> addSub(final String name, ReviewSearchCriteria searchCriteria) {
+		Profile profile = profileService.getLoggedInProfile();
+		if (profile == null) { return new ResponseEntity<String>("not logged in", HttpStatus.FORBIDDEN); }
+
+		SavedSearchSubscription sub = new SavedSearchSubscription();
+		sub.setCriteria(searchCriteria);
+		sub.setUserId(profile.getUserId());
+		sub.setName(name);
+		profile.getSubscriptions().addSubscription(sub);
+
+		subService.save(sub);
+		profileService.save(profile);
+
+		return new ResponseEntity<String>("sub added", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/subscriptions/{itemId}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<HasSubscribers> subscribe(@PathVariable("itemId") final String itemId)
 			throws IOException {
 
@@ -81,7 +159,7 @@ public class SubscriptionsApiHandler {
 		return new ResponseEntity<HasSubscribers>(item, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/{itemId}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/subscriptions/{itemId}", method = RequestMethod.DELETE)
 	public @ResponseBody ResponseEntity<HasSubscribers> unsubscribe(@PathVariable("itemId") final String itemId)
 			throws IOException {
 

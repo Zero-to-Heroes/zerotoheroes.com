@@ -101,3 +101,33 @@
 	right: 0;
 }
 
+
+/* ============
+* Subscriptions
+* =============*/
+.profile-page .subscriptions li {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.profile-page .subscriptions .delete {
+	margin-left: 5px;
+	background: url(../images/button_cancel.png) no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    border: none;
+    vertical-align: middle;
+}
+
+.profile-page .subscriptions .status-message {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.profile-page .subscriptions .no-subscription {
+    display: inline-block;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 15px;
+}

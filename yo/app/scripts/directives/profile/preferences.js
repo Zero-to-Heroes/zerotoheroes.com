@@ -10,7 +10,6 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 			replace: false,
 			templateUrl: 'templates/profile/preferences.html',
 			scope: {
-				source: '='
 			},
 			link: function(scope, element, attributes) {
 			},

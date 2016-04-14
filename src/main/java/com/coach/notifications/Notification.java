@@ -19,6 +19,7 @@ public class Notification {
 	// URL of the comment / review,
 	private List<String> objects = new ArrayList<>();
 	private String title, from, textKey, textDetail;
+	private String aggregator;
 
 	public void addObject(String object) {
 		objects.add(object);

@@ -28,13 +28,15 @@ services.factory('Api', ['$resource', 'ENV',
 			Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport'),
 			Sequences: $resource(ENV.apiEndpoint + url + 'sequences/:sport/:sequenceId'),
 			SequencesQuery: $resource(ENV.apiEndpoint + url + 'sequences/query'),
-			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
 			Sports: $resource(ENV.apiEndpoint + url + 'sports/:sport', {sport: '@sport'}),
 
 			Notifications: $resource(ENV.apiEndpoint + url + 'notifications/:type', {type: '@type'}),
 			NotificationsRead: $resource(ENV.apiEndpoint + url + 'notifications/read', {id: '@id'}),
 			NotificationsUnread: $resource(ENV.apiEndpoint + url + 'notifications/unread', {id: '@id'}),
 			Preferences: $resource(ENV.apiEndpoint + url + 'preferences'),
+
+			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
+			SavedSearchSubscriptions: $resource(ENV.apiEndpoint + url + 'savedSearch/:name', {name: '@name'}),
 
 			Activities: $resource(ENV.apiEndpoint + url + 'activities/:sport', {sport: '@sport'}),
 			Announcements: $resource(ENV.apiEndpoint + url + 'announcements'),

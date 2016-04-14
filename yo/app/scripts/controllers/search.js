@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', 
-	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate) {
+angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', '$modal', 
+	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, $modal) {
 		$scope.clearFilters = function() {
 			$log.debug('clearing filters', $scope.options)
 			var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
@@ -114,6 +114,42 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
 				}
 			})
+		}
+
+
+		//===============
+		// Subscriptions to custom search
+		//===============
+		$scope.subscribe = function(searchName) {
+			$scope.options.criteria.udpateSearchParams($scope.options.criteria, 1)
+
+			Api.SavedSearchSubscriptions.save({'name': searchName}, $scope.options.criteria, function(data) {
+				$log.debug('subscribed', data)
+				subscribeModal.$promise.then(subscribeModal.hide)
+				$scope.updateStatus = 'ok'
+				$scope.settingName = false
+			})
+		}
+
+		var subscribeModal = $modal({
+			templateUrl: 'templates/search/subscribePopup.html', 
+			show: false, 
+			animation: 'am-fade-and-scale',
+			container: "#headline",
+			backdrop: false,
+			keyboard: true,
+			scope: $scope
+		})
+		$scope.showSubscriptionModal = function() {
+			$scope.settingName = true
+			subscribeModal.$promise.then(subscribeModal.toggle)
+		}
+		$scope.cancel = function() {
+			$scope.settingName = false
+			subscribeModal.$promise.then(subscribeModal.hide)
+		}
+		$scope.dismissMessage = function() {
+			$scope.updateStatus = undefined
 		}
 	}
 ]);

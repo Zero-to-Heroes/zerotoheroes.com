@@ -51,4 +51,43 @@ public class ReviewSearchCriteria {
 		}
 		return participantDetails;
 	}
+
+	public boolean matches(Review review) {
+		boolean matches = true;
+
+		matches &= sport == null || sport.equalsIgnoreCase(review.getSport().getKey());
+		matches &= title == null || review.getFullTextSearchField().contains(title);
+		matches &= reviewType == null || reviewType.equalsIgnoreCase(review.getReviewType());
+
+		if (wantedTags != null && !wantedTags.isEmpty()) {
+			for (Tag tag : wantedTags) {
+				matches &= review.getTags() != null && review.getTags().contains(tag);
+			}
+		}
+		if (unwantedTags != null && !unwantedTags.isEmpty()) {
+			for (Tag tag : unwantedTags) {
+				matches &= review.getTags() == null || !review.getTags().contains(tag);
+			}
+		}
+
+		matches &= onlyHelpful == null || !onlyHelpful || review.getTotalHelpfulComments() > 0;
+		matches &= noHelpful == null || !noHelpful || review.getTotalHelpfulComments() == 0;
+
+		if (participantDetails != null) {
+			matches &= participantDetails.getPlayerCategory() == null
+					|| participantDetails.getPlayerCategory().equals(review.getParticipantDetails().getPlayerCategory())
+					|| participantDetails.getPlayerCategory()
+							.equals(review.getParticipantDetails().getOpponentCategory());
+			matches &= participantDetails.getOpponentCategory() == null
+					|| participantDetails.getOpponentCategory()
+							.equals(review.getParticipantDetails().getPlayerCategory())
+					|| participantDetails.getOpponentCategory()
+							.equals(review.getParticipantDetails().getOpponentCategory());
+			matches &= participantDetails.getSkillLevel() == null || participantDetails.getSkillLevel().isEmpty()
+					|| review.getParticipantDetails().getSkillLevel() != null && review.getParticipantDetails()
+							.getSkillLevel().contains(participantDetails.getSkillLevel().get(0));
+		}
+
+		return matches;
+	}
 }

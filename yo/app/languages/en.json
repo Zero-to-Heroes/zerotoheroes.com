@@ -203,7 +203,13 @@
 				"all": "all reviews that match",
 				"onlyHelpful": "only reviews with comments flagged as helpful",
 				"onlyNotHelpful": "only reviews without comments flagged as helpful"
-			}
+			},
+			"subscribeConfirm": "Subscribe",
+			"subscribeCancel": "Cancel",
+			"subscribe": "Subscribe to search",
+			"subscribeTooltip": "Get notified every time a new review that match your search criteria is posted",
+			"subscribePlaceholder": "Name your search",
+			"subscriptionOk": "You have subscribed to the search results and will receive a notification each time a new review that match your criteria is posted. You can manage your subscription in your profile page"
 		},
 		"profile": {
 			"messages": {
@@ -222,7 +228,8 @@
 				"markReadButton": "mark read"
 			},
 			"menu": {
-				"preferences": "Preferences"
+				"preferences": "preferences",
+				"subscriptions": "subscriptions"
 			},
 			"preferences": {
 				"preferencesUpdated": "Your preferences have been updated",
@@ -230,6 +237,12 @@
 				"emailNotifications": "Receive notifications as emails?",
 				"language": "What language do you want to see the site in?",
 				"save": "Update"
+			},
+			"subscriptions": {
+				"unnamedSub": "Unnamed subscription",
+				"deleteTitle": "Remove subscription",
+				"subscriptionDeleted": "Your subscription has been removed. You won't receive any notification for it anymore",
+				"empty": "You don't have any subscription yet. <br/>You can add a subscription by doing a search and clicking on \"Subscribe\". You will then receive a notification every time a new review that match your criteria is posted."
 			}
 		},
 		"toolbar": {

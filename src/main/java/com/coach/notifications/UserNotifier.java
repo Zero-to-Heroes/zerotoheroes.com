@@ -50,7 +50,7 @@ public class UserNotifier {
 		}
 	}
 
-	public void notifyNewReview(User subscriber, Review review) {
+	public void notifyNewReview(User subscriber, Review review, String aggregator) {
 		Profile profile = profileService.getProfile(subscriber.getId());
 
 		if (profile.getPreferences().isSiteNotifications()) {
@@ -63,6 +63,7 @@ public class UserNotifier {
 			notification.addObject(review.getUrl());
 			notification.setTextDetail(review.getText());
 			notification.setFrom(review.getAuthor());
+			notification.setAggregator(aggregator);
 			addNotification(profile, notification);
 		}
 

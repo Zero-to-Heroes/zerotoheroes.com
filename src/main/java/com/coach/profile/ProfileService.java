@@ -41,4 +41,8 @@ public class ProfileService {
 		profile = getProfile(user.getId());
 		return profile;
 	}
+
+	public void save(Profile profile) {
+		profileRepository.save(profile);
+	}
 }

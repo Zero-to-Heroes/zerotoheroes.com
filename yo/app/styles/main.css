@@ -74,6 +74,7 @@ blockquote {
 }
 
 .center-column {
+  top: 20px;
 }
 
 .right-column {
@@ -83,7 +84,6 @@ blockquote {
 
 .background-white {
   background-color: white;
-  top: 25px;
   position: relative;
 }
 

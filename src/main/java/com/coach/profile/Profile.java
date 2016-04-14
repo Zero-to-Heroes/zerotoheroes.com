@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 
 import com.coach.notifications.Notifications;
 import com.coach.preferences.Preferences;
+import com.coach.subscription.Subscriptions;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,4 +23,5 @@ public class Profile {
 
 	private Notifications notifications = new Notifications();
 	private Preferences preferences = new Preferences();
+	private Subscriptions subscriptions = new Subscriptions();
 }

@@ -1,8 +1,14 @@
 <view-title>{{sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} Search reviews</view-title>
 
 <div class="background-white listing-view search-page">
+	<div class="alert alert-warning status-message" ng-show="updateStatus == 'ok'">
+		<button type="button" class="close" ng-click="dismissMessage()"><span aria-hidden="true">&times;</span></button>
+		<span translate="global.search.subscriptionOk"></span>
+	</div>
 	<section class="all-videos-header">
-		<h2 class="all-videos-headline">{{ 'global.search.headline' | translate }}</h2>
+		<h2 class="all-videos-headline" id="headline">{{ 'global.search.headline' | translate }}
+			<a class="link-minor link-nodeco" ng-click="showSubscriptionModal()" ng-hide="!sport || !User.isLoggedIn() || settingName" title="{{ 'global.search.subscribeTooltip' | translate }}"><small>({{ 'global.search.subscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
+		</h2>
 	</section>
 	<section class="search-section">
 		<form class="panel-body form-inline">

@@ -7,7 +7,7 @@
 			<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed() || !sport || !User.isLoggedIn()" title="{{ 'global.listing.subscribeTooltip' | translate }}"><small>({{ 'global.listing.subscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
 		</h2>
 	</section>
-	<section class="search-section" ng-show="sport && sport != 'meta'">
+	<!--<section class="search-section" ng-show="sport && sport != 'meta'">
 		<div class="panel panel-default search-panel" ng-class="{'expanded' : searchExpanded}">
 			<div class="panel-heading">
 				<h4 class="panel-title">
@@ -34,6 +34,6 @@
 				</form>
 			</div>
 		</div>
-	</section>
+	</section>-->
 	<video-search config="criteria" sport="sport"></video-search>
 </div>

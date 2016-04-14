@@ -1,3 +1,10 @@
+.search-page .status-message {
+	margin-left: 50px;
+    margin-right: 50px;
+    top: 20px;
+    position: relative;
+}
+
 .search-page .search-section{
 	text-align: left;
 }
@@ -18,4 +25,17 @@
 
 .search-page tags-input {
 	width: 350px;
+}
+
+.search-page .subscribe-popup {
+	display: inline-block !important;
+	font-size: 14px;
+	top: 0;
+	margin-left: 15px;
+    padding: 10px;
+}
+
+.search-page .subscribe-popup input {
+	height: 35px;
+    padding: 5px;
 }

@@ -24,12 +24,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 						})
 				}
 
-				$scope.performSearch = function(params, pageNumber, updateUrl, callback) {
-
-					$scope.videos = []
-
-					$log.debug('searching videos', params, pageNumber, callback)
-
+				$scope.udpateSearchParams = function(params, pageNumber) {
 					// Take input
 					params.pageNumber = params.pageNumber || pageNumber || $scope.pageNumber
 					params.sport = params.sport || $scope.sport || $routeParams.sport
@@ -64,6 +59,15 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if (params.participantDetails.opponentCategory == 'any') {
 						params.participantDetails.opponentCategory = null
 					}
+				}
+
+				$scope.performSearch = function(params, pageNumber, updateUrl, callback) {
+
+					$scope.videos = []
+
+					$log.debug('searching videos', params, pageNumber, callback)
+
+					$scope.udpateSearchParams(params, pageNumber)
 
 					$scope.latestParams = params
 					$scope.latestUpdateUrl = updateUrl
@@ -91,6 +95,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					})
 				}
 				$scope.config.search = $scope.retrieveVideos
+				$scope.config.udpateSearchParams = $scope.udpateSearchParams
 
 				$scope.searchAgain = function() {
 					$scope.performSearch($scope.latestParams, null, $scope.latestUpdateUrl)

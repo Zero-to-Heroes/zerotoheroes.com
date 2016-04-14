@@ -201,7 +201,13 @@
 				"all": "toutes les revues qui correspondent",
 				"onlyHelpful": "uniquement les revues qui ont des commentaires marqués comme utiles",
 				"onlyNotHelpful": "uniquement des revues sans commentaire marqué comme utile"
-			}
+			},
+			"subscribeConfirm": "S'abonner",
+			"subscribeCancel": "Annuler",
+			"subscribe": "S'abonner",
+			"subscribeTooltip": "Recevez une notification à chaque fois qu'une nouvelle revue qui correspond à vos critères est postée",
+			"subscribePlaceholder": "Donnez un nom",
+			"subscriptionOk": "Vous vous êtes abonné aux résultats de recherche et recevrez une notification à chaque fois qu'une nouvelle revue qui correspond à vos critères est postée. Vous pouvez gérer vos abonnements dans votre page profil"
 		},
 		"profile": {
 			"messages": {
@@ -228,6 +234,12 @@
 				"emailNotifications": "Recevoir les notifications comme e-mails ?",
 				"language": "Dans quel langue voulez-vous utiliser le site ?",
 				"save": "Sauver"
+			},
+			"subscriptions": {
+				"unnamedSub": "Abbonement sans nom",
+				"deleteTitle": "Se désabonner",
+				"subscriptionDeleted": "Vous avez été désabonné. Vous ne recevrez plus de notification pour cet abonnement.",
+				"empty": "Vous n'avez pas encore d'abonnement. <br/>Vous pouvez ajouter un abonnement en effectuant une recherche et en cliquand sur \"m'abonner\". Vous recevrez alors une notification à chaque fois quel quelqu'un poste une revue qui correspond à vos critères de recherche."
 			}
 		},
 		"toolbar": {

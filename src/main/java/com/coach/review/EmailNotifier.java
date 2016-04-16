@@ -71,7 +71,7 @@ public class EmailNotifier {
 
 		String recipient = subscriber.getEmail();
 
-		String sportUrl = "http://www.zerotoheroes.com/#/r/" + review.getSport().getKey();
+		String sportUrl = "http://www.zerotoheroes.com/s/" + review.getSport().getKey().toLowerCase();
 		//@formatter:off
 		String body = "Hey there!<br/>"
 				+ "<p>" + review.getAuthor() + " has just posted a new review \"" + review.getTitle() + "\". "

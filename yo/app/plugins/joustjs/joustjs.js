@@ -3220,7 +3220,7 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ActionParser.prototype.parseCardPlayedFromHand = function(item) {
-      var action, command, entity, i, len, playedCard, ref, tag;
+      var action, command, entity, i, len, playedCard, ref, ref1, ref2, tag;
       command = item.node;
       if (command.attributes.type === '7') {
         entity = this.entities[command.attributes.entity];
@@ -3228,14 +3228,14 @@ arguments[4][4][0].apply(exports,arguments)
         ref = command.tags;
         for (i = 0, len = ref.length; i < len; i++) {
           tag = ref[i];
-          if (tag.tag === 'ZONE' && tag.value === 1) {
+          if (tag.tag === 'ZONE' && ((ref1 = tag.value) === 1 || ref1 === 7)) {
             if (this.entities[tag.entity].tags.CARDTYPE !== 6) {
               playedCard = tag.entity;
             }
           }
         }
         if (playedCard < 0 && command.showEntity) {
-          if (command.showEntity.tags.ZONE === 1) {
+          if ((ref2 = command.showEntity.tags.ZONE) === 1 || ref2 === 7) {
             playedCard = command.showEntity.id;
           }
         }

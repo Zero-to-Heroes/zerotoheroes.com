@@ -2782,6 +2782,7 @@ arguments[4][4][0].apply(exports,arguments)
         cls += " sheathed";
         style = {};
       } else {
+        cls += " unsheathed";
         style = {
           background: "url(" + art + ") top left no-repeat",
           backgroundSize: '100% auto'

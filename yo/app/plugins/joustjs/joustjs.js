@@ -710,10 +710,10 @@
     };
 
     Card.prototype.render = function() {
-      var art, atkCls, cls, cost, costCls, damage, effect, exhausted, frameCls, healthClass, highlight, link, locale, originalAtk, originalCard, originalCost, overlay, stats, style, _ref;
+      var art, atkCls, cls, cost, costCls, damage, effect, exhausted, frameCls, healthClass, highlight, imageCls, legendaryCls, link, locale, originalAtk, originalCard, originalCost, overlay, stats, style, _ref;
       locale = window.localStorage.language && window.localStorage.language !== 'en' ? '/' + window.localStorage.language : '';
       art = "https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards" + locale + "/" + this.props.entity.cardID + ".png";
-      frameCls = "frame";
+      imageCls = "art";
       if (this.props.entity.cardID && !this.props.isHidden) {
         originalCard = (_ref = this.props.cardUtils) != null ? _ref.getCard(this.props.entity.cardID) : void 0;
         style = {
@@ -735,10 +735,15 @@
       } else {
         style = {};
         cls = "game-card";
-        frameCls += " card--unknown";
+        imageCls += " card--unknown";
+      }
+      frameCls = "frame minion";
+      legendaryCls = "";
+      if ((originalCard != null ? originalCard.rarity : void 0) === 'Legendary') {
+        legendaryCls = " legendary";
       }
       if (this.props.entity.tags.TAUNT) {
-        cls += " card--taunt";
+        frameCls += " card--taunt";
       }
       if (this.props.entity.tags.DEATHRATTLE) {
         effect = React.createElement("div", {
@@ -835,15 +840,23 @@
           "data-delay-show": "100",
           "data-class": "card-tooltip"
         }, React.createElement("div", {
-          "className": frameCls,
+          "className": imageCls,
           "style": style
+        }), React.createElement("div", {
+          "className": frameCls
+        }), React.createElement("div", {
+          "className": legendaryCls
         }), highlight, effect, overlay, damage, exhausted, stats, cost);
       } else {
         return React.createElement("div", {
           "className": cls
         }, React.createElement("div", {
-          "className": frameCls,
+          "className": imageCls,
           "style": style
+        }), React.createElement("div", {
+          "className": frameCls
+        }), React.createElement("div", {
+          "className": legendaryCls
         }), highlight, effect, overlay, damage, exhausted, stats);
       }
     };
@@ -1436,7 +1449,7 @@
         "className": "game-card",
         "style": style
       }), React.createElement("div", {
-        "className": "frame"
+        "className": "art"
       }), cost);
     };
 

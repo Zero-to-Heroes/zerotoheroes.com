@@ -1939,7 +1939,12 @@
 }
 .hearthstone #externalPlayer .board .game-card .legendary {
   background: url(images/minion_legendary.png) center center no-repeat;
+  width: 120%;
+  height: 120%;
   position: absolute;
+  top: -20%;
+  left: -5%;
+  background-size: contain;
 }
 .hearthstone #externalPlayer .board .game-card .frame.minion.card--taunt::before {
   background: url(images/minion-taunting.png) center center no-repeat;
@@ -1979,6 +1984,13 @@
 }
 .hearthstone #externalPlayer .board .game-card .overlay.frozen {
   background-color: #66A8CE;
+  background: url(images/minion_frozen.png) center center no-repeat;
+  background-size: contain;
+  height: 160%;
+  width: 160%;
+  position: absolute;
+  left: -27%;
+  top: -23%;
 }
 .hearthstone #externalPlayer .board .game-card .overlay.stealth {
   background-color: gray;

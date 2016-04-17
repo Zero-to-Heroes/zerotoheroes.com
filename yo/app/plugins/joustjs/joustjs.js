@@ -5121,17 +5121,20 @@ arguments[4][4][0].apply(exports,arguments)
     };
 
     ReplayPlayer.prototype.updateOptions = function() {
-      var currentCursor;
-      if (this.getActivePlayer() === this.player) {
+      var currentCursor, ref;
+      if (!this.history[this.historyPosition].parent && this.getActivePlayer() === this.player) {
+        console.log('updating options', this.history.length, this.historyPosition);
         currentCursor = this.historyPosition;
-        while (currentCursor < this.history.length) {
-          if (this.history[currentCursor].command === 'receiveOptions') {
+        while (currentCursor > 0) {
+          if (((ref = this.history[currentCursor]) != null ? ref.command : void 0) === 'receiveOptions') {
+            console.log('updating options?', this.history[currentCursor], this.history, currentCursor);
             this.history[currentCursor].execute(this);
             return;
           }
-          currentCursor++;
+          currentCursor--;
         }
       }
+      return console.log('stopped at history', this.history[this.historyPosition].timestamp);
     };
 
     ReplayPlayer.prototype.updateActiveSpell = function(action) {

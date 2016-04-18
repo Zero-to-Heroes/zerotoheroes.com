@@ -14,6 +14,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 					unwantedTags: [],
 					reviewType: null,
 					search: searchFn,
+					sort: 'updateDate',
 					participantDetails: {
 						playerCategory: 'any',
 						opponentCategory: 'any',
@@ -24,6 +25,11 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			}
 		}
 		$scope.clearFilters()
+
+		$scope.sortOptions = [
+			{ "value" : "creationDate", "label" : "<span>" + $translate.instant('global.search.sort.creationDate') + "</span>" },
+			{ "value" : "updateDate", "label" : "<span>" + $translate.instant('global.search.sort.updateDate') + "</span>" }
+		]
 
 		$scope.helpfulOptions = [
 			{ "value" : null, "label" : $translate.instant('global.search.helpful.all') },

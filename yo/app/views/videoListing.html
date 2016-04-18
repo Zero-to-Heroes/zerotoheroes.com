@@ -7,6 +7,10 @@
 			<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed() || !sport || !User.isLoggedIn()" title="{{ 'global.listing.subscribeTooltip' | translate }}"><small>({{ 'global.listing.subscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
 		</h2>
 	</section>
+	<span class="sort-label" translate="global.search.sortLabel"></span>
+	<button type="button" class="btn btn-default" data-trigger="click" ng-model="criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.search.sort' | translate }}" bs-select ng-required="true">
+	  	<span>Action</span>
+	</button>
 	<!--<section class="search-section" ng-show="sport && sport != 'meta'">
 		<div class="panel panel-default search-panel" ng-class="{'expanded' : searchExpanded}">
 			<div class="panel-heading">

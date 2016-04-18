@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', 
-	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout) {
+angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', 
+	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate) {
 		// $scope.videos = [];
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
@@ -10,8 +10,18 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 		$scope.criteria = {
 			wantedTags: [],
-			unwantedTags: []
-		};
+			unwantedTags: [],
+			sort: 'updateDate'
+		}
+		$scope.sortOptions = [
+			{ "value" : "creationDate", "label" : "<span>" + $translate.instant('global.search.sort.creationDate') + "</span>" },
+			{ "value" : "updateDate", "label" : "<span>" + $translate.instant('global.search.sort.updateDate') + "</span>" }
+		]
+		$scope.$watch('criteria.sort', function(newVal, oldVal) {
+			if (newVal != oldVal) {
+				$scope.searchFromClick()
+			}
+		})
 			
 		$rootScope.$on('user.logged.in', function() {
 			$scope.search()
@@ -21,6 +31,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			$location.search('')
 			$scope.search()
 		}
+
 
 		$scope.search = function () {
 			var params = $scope.criteria

@@ -25,6 +25,7 @@ public class ReviewSearchCriteria {
 	private List<Tag> unwantedTags;
 	private Boolean ownVideos;
 	private Boolean onlyHelpful, noHelpful;
+	private String sort;
 	private ParticipantDetails participantDetails;
 
 	public List<Tag> getWantedTags() {

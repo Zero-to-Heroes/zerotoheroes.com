@@ -70,6 +70,10 @@
 	width: 100%;
 }
 
+.listing-view .sort-label {
+	margin-left: 25px;
+}
+
 .video-listing {
 	/*max-width: 900px;*/
 	margin: auto;

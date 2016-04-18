@@ -202,6 +202,11 @@
 				"onlyHelpful": "uniquement les revues qui ont des commentaires marqués comme utiles",
 				"onlyNotHelpful": "uniquement des revues sans commentaire marqué comme utile"
 			},
+			"sortLabel": "Trier par",
+			"sort": {
+				"updateDate": "date de dernière modification",
+				"creationDate": "date de création"
+			},
 			"subscribeConfirm": "S'abonner",
 			"subscribeCancel": "Annuler",
 			"subscribe": "S'abonner",

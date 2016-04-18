@@ -39,3 +39,7 @@
 	height: 35px;
     padding: 5px;
 }
+
+.search-page .sort-label {
+	margin-left: 0;
+}

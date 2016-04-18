@@ -50,6 +50,9 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if ($location.search().opponentCategory) {
 						params.participantDetails.opponentCategory = $location.search().opponentCategory
 					}
+					if ($location.search().sort) {
+						params.sort = $location.search().sort
+					}
 
 					// Useful for drop-downs, which sometimes have a different behaviour with no value 
 					// and default value
@@ -154,6 +157,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if (params.title) $location.search('title', params.title)
 					if (params.participantDetails.playerCategory && params.participantDetails.playerCategory != 'any') $location.search('playerCategory', params.participantDetails.playerCategory)
 					if (params.participantDetails.opponentCategory && params.participantDetails.opponentCategory != 'any') $location.search('opponentCategory', params.participantDetails.opponentCategory)
+					if (params.sort) $location.search('sort', params.sort)
 				}
 
 				$scope.findAllowedTag = function(tagName) {

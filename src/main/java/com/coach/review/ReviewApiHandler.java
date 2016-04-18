@@ -119,12 +119,14 @@ public class ReviewApiHandler {
 		if (sportObj == null) { return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null,
 				HttpStatus.BAD_REQUEST); }
 
-		// Sorting in ascending order
-		Sort newestFirst = new Sort(Sort.Direction.DESC,
-				Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
+		// Sorting in ascending order of modification date first
+		Sort sort = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
+		if ("creationDate".equals(criteria.getSort())) {
+			sort = new Sort(Sort.Direction.DESC, Arrays.asList("creationDate"));
+		}
 
 		// Start pageing at 1 like normal people, not at 0 like nerds
-		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, newestFirst);
+		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, sort);
 		String sportCriteria = sportObj.getKey();
 
 		String author = criteria.getOwnVideos() != null && criteria.getOwnVideos() && user != null ? user.getId()

@@ -55,6 +55,12 @@
 				  	<span>Action</span>
 				</button>
 			</div>
+			<div class="sort-option search-block">
+				<span class="sort-label" translate="global.search.sortLabel"></span>
+				<button type="button" class="btn btn-default" data-trigger="click" ng-model="options.criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.search.sort' | translate }}" bs-select ng-required="true">
+				  	<span>Action</span>
+				</button>
+			</div>
 			
 			<div class="search-block">
 				<button type="submit" class="btn btn-default" ng-click="searchFromClick()"><span>{{ 'global.search.searchButton' | translate }}</span></button>

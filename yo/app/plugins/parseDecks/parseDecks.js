@@ -2,6 +2,8 @@ var parseDecks = {
 
 	decksRegex: /\[?(http:\/\/www\.hearthpwn\.com\/decks\/)([\d\-a-zA-Z]+)\]?/gm,
 	hsDecksDecksRegex: /\[?(http:\/\/www\.hearthstone-decks\.com\/deck\/voir\/)([\d\-a-zA-Z]+)\]?/gm,
+	zthDecksRegex: /\[?(http:\/\/www\.zerotoheroes\.com\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
+	// zthDecksRegex: /\[?(http:\/.*localhost.*\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
 	
 	decks: {},
 
@@ -10,6 +12,7 @@ var parseDecks = {
 
 		result = parseDecks.parse(review, result, text, parseDecks.decksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.hsDecksDecksRegex)
+		result = parseDecks.parse(review, result, text, parseDecks.zthDecksRegex)
 
 		return result;
 	},
@@ -68,7 +71,21 @@ var parseDecks = {
 	},
 
 	formatToHtml: function (deck, deckUrl) {
-	var htmlDeck = '<h3 class=\'deck-header\'><a href=\'' + deckUrl + '\' target=\'_blank\'>' + deck.title + '</a></h3>';
+
+		// First make sure all cards are well placed in class vs neutral
+		var realClassCards = []
+		deck.classCards.forEach(function(card) {
+			if (!parseCardsText.getCard(card.name).playerClass) {
+				deck.neutralCards.push(card)
+			}
+			else {
+				realClassCards.push(card)
+			}
+		})
+		deck.classCards = realClassCards
+
+
+		var htmlDeck = '<h3 class=\'deck-header\'><a href=\'' + deckUrl + '\' target=\'_blank\'>' + deck.title + '</a></h3>';
 		htmlDeck += '<div class=\'deck-body row\'>';
 			htmlDeck += '<div class=\'class-cards col-md-6\'>';
 				htmlDeck += '<h4 class=\'card-type-title\'>Class cards</h4>';

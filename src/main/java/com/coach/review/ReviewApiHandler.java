@@ -13,6 +13,7 @@ import java.util.Random;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -86,6 +87,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	MongoOperations mongoOperations;
+
+	@Autowired
+	AutowireCapableBeanFactory beanFactory;
 
 	public ReviewApiHandler() throws Exception {
 		// log.debug("Initializing Review Api Handler");
@@ -705,6 +709,7 @@ public class ReviewApiHandler {
 		for (String pluginClass : sportEntity.getPlugins()) {
 			try {
 				Plugin plugin = (Plugin) Class.forName(pluginClass).newInstance();
+				beanFactory.autowireBean(plugin);
 				String newText = plugin.execute(currentUser,
 						review.getPluginData(sportEntity.getId(), plugin.getName()), textHolder);
 				// log.debug("Plugin data " + review.getPlugins());

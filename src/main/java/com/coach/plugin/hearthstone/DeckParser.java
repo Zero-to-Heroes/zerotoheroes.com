@@ -8,13 +8,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.coach.core.storage.S3Utils;
 import com.coach.plugin.Plugin;
 import com.coach.review.HasText;
+import com.coach.review.Review;
+import com.coach.review.ReviewRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -28,8 +34,19 @@ public class DeckParser implements Plugin {
 	private static final String HPWN_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthpwn\\.com\\/decks\\/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HPNW_DECK_HOST_URL = "http://www.hearthpwn.com/decks/";
 
-	private static final String HSDECKS_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthstone-decks\\.com\\/deck\\/voir/)([\\d\\-a-zA-Z]+)\\]?";
+	private static final String HSDECKS_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthstone-decks\\.com\\/deck\\/voir\\/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HSDECKS_DECK_HOST_URL = "http://www.hearthstone-decks.com/deck/voir/";
+
+	private static final String ZTH_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.zerotoheroes\\.com\\/r\\/hearthstone\\/)([\\da-zA-Z]+)\\/.*\\]?";
+	// private static final String ZTH_DECK_ID_REGEX =
+	// "\\[?(http:\\/.*localhost.*\\/r\\/hearthstone\\/)([\\da-zA-Z]+)\\/.*\\]?";
+	private static final String ZTH_DECK_HOST_URL = "http://www.zerotoheroes.com/r/hearthstone/";
+
+	@Autowired
+	ReviewRepository repo;
+
+	@Autowired
+	S3Utils s3utils;
 
 	@Override
 	public String getName() {
@@ -43,15 +60,58 @@ public class DeckParser implements Plugin {
 		// First look at whether there is a deck attached to the review
 		String reviewDeck = pluginData.get("reviewDeck");
 		if (StringUtils.isNotEmpty(reviewDeck)) {
-			parseHearthpwnDeck(pluginData, reviewDeck);
-			parseHearthstoneDecksDeck(pluginData, reviewDeck);
+			parseDecks(pluginData, reviewDeck);
 		}
 
 		String initialText = textHolder.getText();
+		parseDecks(pluginData, initialText);
 
-		parseHearthpwnDeck(pluginData, initialText);
-		parseHearthstoneDecksDeck(pluginData, initialText);
 		return initialText;
+	}
+
+	private void parseDecks(Map<String, String> pluginData, String reviewDeck) throws IOException {
+		parseHearthpwnDeck(pluginData, reviewDeck);
+		parseHearthstoneDecksDeck(pluginData, reviewDeck);
+		parseZeroToHeroesDeck(pluginData, reviewDeck);
+	}
+
+	private void parseZeroToHeroesDeck(Map<String, String> pluginData, String initialText) throws IOException {
+		Pattern pattern = Pattern.compile(ZTH_DECK_ID_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			String deckId = matcher.group(2);
+			log.debug("Loading ztoh deck " + deckId);
+			Review review = repo.findById(deckId);
+			log.debug("loaded review " + review);
+			String stringDraft = s3utils.readFromS3(review.getKey());
+			log.debug("String draft " + stringDraft);
+			JSONObject draft = new JSONObject(stringDraft);
+			log.debug("json draft " + draft);
+
+			Deck deck = new Deck();
+			deck.title = review.getTitle();
+			JSONArray pickedCards = draft.getJSONArray("pickedcards");
+
+			for (Object cardId : pickedCards) {
+				Card card = null;
+				for (Card c : deck.classCards) {
+					if (c.getName().equals(cardId)) {
+						card = c;
+						card.amount = "" + (Integer.parseInt(card.amount) + 1);
+						break;
+					}
+				}
+				if (card == null) {
+					card = new Card((String) cardId, "1");
+					deck.classCards.add(card);
+				}
+			}
+
+			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
+
+			log.debug("jsonDeck" + jsonDeck);
+			pluginData.put(deckId, jsonDeck);
+		}
 	}
 
 	private void parseHearthstoneDecksDeck(Map<String, String> pluginData, String initialText)

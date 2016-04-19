@@ -85,7 +85,7 @@
 									  	<span class="link-minor" ng-show="!review.editing && canEdit(review)"> - </span>
 										<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && canEdit(review)"> {{ 'global.review.comment.edit' | translate }}</a>
 									</div>
-									<div class="decklist" ng-show="review.plugins.hearthstone.parseDecks.reviewDeck">
+									<div class="decklist-field" ng-show="review.plugins.hearthstone.parseDecks.reviewDeck">
 										<span translate="hearthstone.review.decklist"></span>
 										<span compilecontent content="review.plugins.hearthstone.parseDecks.markedReviewDeck"></span>
 									</div>

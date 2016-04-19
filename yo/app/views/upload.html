@@ -1,6 +1,6 @@
 <view-title>Upload</view-title>
 
-<div ng-switch="state.uploadType">
+<div ng-switch="state.uploadType" class="upload-page">
 
 	<!-- Video -->
 	<upload-video-directive ng-switch-when="video" video-info="videoInfo" sport="sport" active="state.uploadType == 'video' && !state.step" ng-show="state.uploadType == 'video' && !state.step"></upload-video-directive>

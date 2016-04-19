@@ -580,7 +580,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				title: $scope.review.title,
 				tags: $scope.review.tags,
 				canvas: $scope.review.tempCanvas,
-				language: $scope.review.language
+				language: $scope.review.language,
+				plugins: $scope.review.plugins
 			}
 			if ($scope.videoInformationForm.$valid) {
 				//$log.log('updating review to ', newReview);
@@ -614,6 +615,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.review.compiledText = $scope.parseText($scope.review.text);
 			// Parse markdown
 			$scope.review.markedText = marked($scope.review.compiledText || '');
+
+			// TODO: don't add plugin dependency here
+			if ($scope.review.plugins && $scope.review.plugins.hearthstone && $scope.review.plugins.hearthstone.parseDecks && $scope.review.plugins.hearthstone.parseDecks.reviewDeck) {
+				// $log.debug('parsing review deck', $scope.review.plugins.hearthstone.parseDecks.reviewDeck)
+				var compiledDeck = $scope.parseText($scope.review.plugins.hearthstone.parseDecks.reviewDeck)
+				// $log.debug('parsed', compiledDeck)
+				$scope.review.plugins.hearthstone.parseDecks.markedReviewDeck = marked(compiledDeck)
+			}
 
 			$scope.review.editing = false;
 			$scope.review.processed = true;

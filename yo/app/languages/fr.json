@@ -56,6 +56,9 @@
 			"matchupLabel": "qui opposent",
 			"arenaClassLabel": "de"
 		},
+		"review": {
+			"decklist": "Decklist"
+		},
 		"classes": {
 			"any": "Toutes",
 			"druid": "Druide",

@@ -53,7 +53,10 @@
 }
 
 .video-information .author-information {
-	margin-bottom: 20px;
+    width: 45%;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    display: inline-block;
 }
 
 .comments-headline {

@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -24,10 +25,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DeckParser implements Plugin {
 
-	private static final String HPWN_DECK_ID_REGEX = "\\[(http:\\/\\/www\\.hearthpwn\\.com\\/decks\\/).+?\\]";
+	private static final String HPWN_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthpwn\\.com\\/decks\\/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HPNW_DECK_HOST_URL = "http://www.hearthpwn.com/decks/";
 
-	private static final String HSDECKS_DECK_ID_REGEX = "\\[(http:\\/\\/www\\.hearthstone-decks\\.com\\/deck\\/voir/).+?\\]";
+	private static final String HSDECKS_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthstone-decks\\.com\\/deck\\/voir/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HSDECKS_DECK_HOST_URL = "http://www.hearthstone-decks.com/deck/voir/";
 
 	@Override
@@ -38,6 +39,13 @@ public class DeckParser implements Plugin {
 	@Override
 	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws IOException {
 		log.debug("Executing deckparser plugin");
+
+		// First look at whether there is a deck attached to the review
+		String reviewDeck = pluginData.get("reviewDeck");
+		if (StringUtils.isNotEmpty(reviewDeck)) {
+			parseHearthpwnDeck(pluginData, reviewDeck);
+			parseHearthstoneDecksDeck(pluginData, reviewDeck);
+		}
 
 		String initialText = textHolder.getText();
 
@@ -51,10 +59,13 @@ public class DeckParser implements Plugin {
 		Pattern pattern = Pattern.compile(HSDECKS_DECK_ID_REGEX, Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(initialText);
 		while (matcher.find()) {
-			String group = matcher.group();
-			log.debug("Found matching pattern: " + group);
+			String deckId = matcher.group(2);
 
-			String deckId = group.substring(44, group.length() - 1);
+			// Don't override existing decks
+			if (pluginData.get(deckId) != null) {
+				continue;
+			}
+
 			String deckUrl = HSDECKS_DECK_HOST_URL + deckId;
 			log.debug("Trying to scrape deck data for deck " + deckUrl);
 
@@ -100,10 +111,13 @@ public class DeckParser implements Plugin {
 		Pattern pattern = Pattern.compile(HPWN_DECK_ID_REGEX, Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(initialText);
 		while (matcher.find()) {
-			String group = matcher.group();
-			// log.debug("Found matching pattern: " + group);
+			String deckId = matcher.group(2);
 
-			String deckId = group.substring(32, group.length() - 1);
+			// Don't override existing decks
+			if (pluginData.get(deckId) != null) {
+				continue;
+			}
+
 			String deckUrl = HPNW_DECK_HOST_URL + deckId;
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 

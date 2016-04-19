@@ -1,60 +1,49 @@
 var parseDecks = {
 
-	decksRegex: /\[(http:\/\/www\.hearthpwn\.com\/decks\/).+?\]/gm,
-	hsDecksDecksRegex: /\[(http:\/\/www\.hearthstone-decks\.com\/deck\/voir\/).+?\]/gm,
+	decksRegex: /\[?(http:\/\/www\.hearthpwn\.com\/decks\/)([\d\-a-zA-Z]+)\]?/gm,
+	hsDecksDecksRegex: /\[?(http:\/\/www\.hearthstone-decks\.com\/deck\/voir\/)([\d\-a-zA-Z]+)\]?/gm,
 	
 	decks: {},
 
 	execute: function (review, text) {
-		var matches = text.match(parseDecks.decksRegex);
 		var result = text;
-		//console.log('matches', matches);
-		if (matches) {
-			matches.forEach(function(match) {
-				//console.log('match', match);
-				var deckUrl = match.substring(1, match.length - 1);
-				var deckName = match.substring(32, match.length - 1);
-				//console.log('deck name', deckName);
 
-				var plugins = review.plugins.hearthstone;
-				if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
-					var strDeck = plugins.parseDecks[deckName];
-					var deck = JSON.parse(strDeck);
-					var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
-					// parseDecks.deck = htmlDeck;
-					//console.log('html deck is ', htmlDeck);
-					var deckNameForDisplay = deck.title;
-					parseDecks.decks[deckNameForDisplay] = htmlDeck;
+		result = parseDecks.parse(review, result, text, parseDecks.decksRegex)
+		result = parseDecks.parse(review, result, text, parseDecks.hsDecksDecksRegex)
 
-					result = result.replace(match, '<a class="deck-link" onclick="parseDecks.toggleDeck(\'' + deckNameForDisplay + '\')" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
-				}
-			})
-		}
-
-		matches = text.match(parseDecks.hsDecksDecksRegex);
-		//console.log('matches', matches);
-		if (matches) {
-			matches.forEach(function(match) {
-				//console.log('match', match);
-				var deckUrl = match.substring(1, match.length - 1);
-				var deckName = match.substring(44, match.length - 1);
-				//console.log('deck name', deckName);
-
-				var plugins = review.plugins.hearthstone;
-				if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
-					var strDeck = plugins.parseDecks[deckName];
-					var deck = JSON.parse(strDeck);
-					var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
-					// parseDecks.deck = htmlDeck;
-					//console.log('html deck is ', htmlDeck);
-					var deckNameForDisplay = deck.title;
-					parseDecks.decks[deckNameForDisplay] = htmlDeck;
-
-					result = result.replace(match, '<a class="deck-link" onclick="parseDecks.toggleDeck(\'' + deckNameForDisplay + '\')" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
-				}
-			})
-		}
 		return result;
+	},
+
+	parse: function(review, result, text, regex) {
+		var match = regex.exec(text)
+		while (match) {
+			result = parseDecks.handleMatch(review, result, match)
+			match = regex.exec(text)
+		}
+		return result
+	},
+
+	handleMatch: function(review, result, match) {
+		// console.log('match', match);
+		var deckName = match[2]
+		var deckUrl = match[1] + deckName
+		// console.log('deck name', deckName, deckUrl);
+
+		var plugins = review.plugins.hearthstone;
+		// console.log('plugins', plugins)
+		if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
+			var strDeck = plugins.parseDecks[deckName];
+			var deck = JSON.parse(strDeck);
+			var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
+			// parseDecks.deck = htmlDeck;
+			// console.log('html deck is ', htmlDeck);
+			var deckNameForDisplay = deck.title;
+			parseDecks.decks[deckNameForDisplay] = htmlDeck;
+
+			result = result.replace(match[0], '<a class="deck-link" onclick="parseDecks.toggleDeck(\'' + deckNameForDisplay + '\')" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
+		}
+
+		return result
 	},
 
 	toggleDeck: function (deckNameForDisplay) {

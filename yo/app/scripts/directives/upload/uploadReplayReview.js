@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$timeout', 'User', 'Api', '$location', '$rootScope', 'Localization', '$parse', 'ENV', 
-	function(MediaUploader, $log, SportsConfig, $timeout, User, Api, $location, $rootScope, Localization, $parse, ENV) {
+app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$timeout', 'User', 'Api', '$location', '$rootScope', 'Localization', '$parse', 'ENV', '$translate', 
+	function(MediaUploader, $log, SportsConfig, $timeout, User, Api, $location, $rootScope, Localization, $parse, ENV, $translate) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -27,6 +27,8 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 					transcodingDone: false,
 					language: Localization.getLanguage()
 				}
+
+				$scope.textBoxPlaceholder = $translate.instant($scope.sport + '.upload.descriptionPlaceholder') || $translate.instant('global.upload.descriptionPlaceholder')
 				
 
 				//===============
@@ -104,6 +106,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 									data.author = $scope.review.author
 									data.playerInfo = $scope.review.playerInfo
 									data.participantDetails = $scope.review.participantDetails
+									data.plugins = $scope.review.plugins
 									$scope.review = data
 
 									$scope.uploader.videoInfo.upload.postProcessed = true
@@ -235,6 +238,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				}
 
 				$scope.publishVideo = function() {
+					$log.debug('publishing with actual review', $scope.review)
 					var newReview = {
 						author: $scope.review.author,
 						text: $scope.review.text,
@@ -242,7 +246,8 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						title: $scope.review.title,
 						tags: $scope.review.tags,
 						language: $scope.review.language,
-						participantDetails: $scope.review.participantDetails
+						participantDetails: $scope.review.participantDetails,
+						plugins: $scope.review.plugins
 					}
 					$log.debug('publishing review', newReview)
 					Api.ReviewsPublish.save({reviewId: $scope.review.id}, newReview, 
@@ -300,7 +305,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.isFileValid = function() {
 					if (!$scope.externalPlayer)
 						return true
-					$log.debug('is file really valid?', $scope.externalPlayer, $scope.fileValid)
+					// $log.debug('is file really valid?', $scope.externalPlayer, $scope.fileValid)
 					return $scope.fileValid
 				}
 			}

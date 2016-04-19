@@ -20,6 +20,7 @@
 <div class="video-review-upload-comments" ng-class="playerControls.wideMode ? 'col-md-5' : 'col-md-7'">
 	<div class="background-white">
 		<form class="container-fluid" name="uploadForm">
+		  	<participants-details review="review" media-player="externalPlayer"></participants-details>
 			<div class="row" ng-hide="User.isLoggedIn()">
 				<div class="col-sm-12">
 					<div class="form-group" show-errors="{ showSuccess: true }">
@@ -42,12 +43,12 @@
 						</ul>
 				</div>
 		  	</div>
-		  	<participants-details review="review" media-player="externalPlayer"></participants-details>
+		  	<hs-decklist-upload sport="sport" review="review"></hs-decklist-upload>
 	  		<div class="row">
 				<div class="col-sm-12">
 				  	<div class="form-group">
 						<toolbar player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true" config="config" media-type="'replay'" show-errors="{ showSuccess: true }" class="form-group">
-				    		<textarea name="text" class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholder' | translate }}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
+				    		<textarea name="text" class="form-control" rows="3" placeholder="{{textBoxPlaceholder}}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
 				    	</toolbar>
 				   	</div>
 				

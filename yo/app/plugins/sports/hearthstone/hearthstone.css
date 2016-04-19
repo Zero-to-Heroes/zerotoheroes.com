@@ -389,11 +389,6 @@
 
 
 	/* =============
-	** User items
-	** =============*/
-
-
-	/* =============
 	** Notifications
 	** =============*/
 	.hearthstone .user-notifications.unread, .hearthstone .user-notifications.unread span {
@@ -517,7 +512,7 @@
 
 
 /* =============
-** Review class select
+** Particpant module
 ** =============*/
 .hearthstone .hearthstone-participants {
 	display: table;
@@ -632,6 +627,48 @@
 	position: relative;
 }
 
+/* =============
+** Review upload 
+** =============*/
+
+	/* =============
+	** Participant details
+	** =============*/
+	.hearthstone upload-replay-review {
+	    margin-top: 55px;
+	    display: block;
+	}
+	.hearthstone upload-replay-review .hearthstone-participants button {
+    	height: 45px;
+    }
+	.hearthstone upload-replay-review .hearthstone-participants .class-icon {
+		display: inline-block;
+    	vertical-align: middle;
+	}
+	.hearthstone upload-replay-review .hearthstone-participants .caret {
+    	vertical-align: middle;
+	}
+	.hearthstone .upload-page participants-details {
+	    border: 2px solid #A55D2F;
+	}
+	.hearthstone .upload-page .hearthstone-participants {
+	    margin-bottom: 0;
+	}
+
+
+	/* =============
+	** Decklist
+	** =============*/
+	.hearthstone hs-decklist-upload {
+	    display: block;
+	    text-align: left;
+	    margin-bottom: 25px;
+	}
+	.hearthstone hs-decklist-upload input {
+		width: 250px;
+		padding: 3px 6px;
+	}
+
 
 /* =============
 ** Search page
@@ -740,6 +777,19 @@
 	}
 	.hearthstone .video-information .hearthstone-participants tags-input {
 		min-width: 120px;
+	}
+
+	/* =============
+	** And the decklist
+	** =============*/
+	.hearthstone .video-information .decklist {
+	    width: 50%;
+	    display: inline-block;
+	    text-align: right;
+   	 	padding-right: 50px;
+	}
+	.hearthstone .video-information .decklist p {
+	    display: inline-block;
 	}
 
 

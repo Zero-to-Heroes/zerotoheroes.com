@@ -381,6 +381,7 @@ public class ReviewApiHandler {
 		// log.debug("Upading review with " + inputReview);
 
 		review.setText(inputReview.getText());
+		review.setPlugins(inputReview.getPlugins());
 		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
 		activatePlugins(currentUser, review, review);
 		// log.debug("updated text is " + review.getText());
@@ -434,6 +435,7 @@ public class ReviewApiHandler {
 		}
 
 		review.setText(inputReview.getText());
+		review.setPlugins(inputReview.getPlugins());
 		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
 		activatePlugins(currentUser, review, review);
 		// log.debug("updated text is " + review.getText());

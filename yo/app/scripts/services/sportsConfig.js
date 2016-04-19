@@ -44,7 +44,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						plugins: [
 							{name: 'parseCardsText', version: 4}, 
 							{name: 'parseDecks', version: 2}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], version: 20},
+							{name: 'joustjs', player: true, format: ['text/xml'], version: 21},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 4}
 						],
 						customCss: 'hearthstone.css'

@@ -18,6 +18,7 @@
 
 .parseCardsText .card.common, .autocomplete.card.common {
 	color: #A6B3C6;
+	font-weight: lighter;
 }
 
 .parseCardsText .card.common:before, .autocomplete.card.common:before {
@@ -27,6 +28,7 @@
 
 .parseCardsText .card.rare, .autocomplete.card.rare {
 	color: #198EFF;
+	font-weight: lighter;
 }
 
 .parseCardsText .card.rare:before, .autocomplete.card.rare:before {
@@ -36,6 +38,7 @@
 
 .parseCardsText .card.epic, .autocomplete.card.epic {
 	color: #AB48EE;
+	font-weight: lighter;
 }
 
 .parseCardsText .card.epic:before, .autocomplete.card.epic:before {
@@ -45,6 +48,7 @@
 
 .parseCardsText .card.legendary, .autocomplete.card.legendary {
 	color: #F07000;
+	font-weight: lighter;
 }
 
 .parseCardsText .card.legendary:before, .autocomplete.card.legendary:before {

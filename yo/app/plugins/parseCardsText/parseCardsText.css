@@ -22,7 +22,7 @@
 }
 
 .parseCardsText .card.common:before, .autocomplete.card.common:before {
-	content: url('images/common.png');
+	// content: url('images/common.png');
 	margin-right: 4px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .parseCardsText .card.rare:before, .autocomplete.card.rare:before {
-	content: url('images/rare.png');
+	// content: url('images/rare.png');
 	margin-right: 4px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .parseCardsText .card.epic:before, .autocomplete.card.epic:before {
-	content: url('images/epic.png');
+	// content: url('images/epic.png');
 	margin-right: 4px;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .parseCardsText .card.legendary:before, .autocomplete.card.legendary:before {
-	content: url('images/legendary.png');
+	// content: url('images/legendary.png');
 	margin-right: 4px;
 }
 

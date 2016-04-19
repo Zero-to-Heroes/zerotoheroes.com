@@ -4,6 +4,7 @@ var parseDecks = {
 	hsDecksDecksRegex: /\[?(http:\/\/www\.hearthstone-decks\.com\/deck\/voir\/)([\d\-a-zA-Z]+)\]?/gm,
 	zthDecksRegex: /\[?(http:\/\/www\.zerotoheroes\.com\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
 	// zthDecksRegex: /\[?(http:\/.*localhost.*\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
+	hearthArenaDecksRegex: /\[?(http:\/\/www\.heartharena\.com\/arena-run\/)([\da-zA-Z]+)\]?/gm,
 	
 	decks: {},
 
@@ -13,6 +14,7 @@ var parseDecks = {
 		result = parseDecks.parse(review, result, text, parseDecks.decksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.hsDecksDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.zthDecksRegex)
+		result = parseDecks.parse(review, result, text, parseDecks.hearthArenaDecksRegex)
 
 		return result;
 	},
@@ -83,6 +85,7 @@ var parseDecks = {
 			}
 		})
 		deck.classCards = realClassCards
+		deck.title = deck.title || 'Unnamed draft'
 
 
 		var htmlDeck = '<h3 class=\'deck-header\'><a href=\'' + deckUrl + '\' target=\'_blank\'>' + deck.title + '</a></h3>';

@@ -40,7 +40,9 @@ public class DeckParser implements Plugin {
 	private static final String ZTH_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.zerotoheroes\\.com\\/r\\/hearthstone\\/)([\\da-zA-Z]+)\\/.*\\]?";
 	// private static final String ZTH_DECK_ID_REGEX =
 	// "\\[?(http:\\/.*localhost.*\\/r\\/hearthstone\\/)([\\da-zA-Z]+)\\/.*\\]?";
-	private static final String ZTH_DECK_HOST_URL = "http://www.zerotoheroes.com/r/hearthstone/";
+
+	private static final String HEARTHARENA_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.heartharena\\.com\\/arena-run\\/)([\\d\\-a-zA-Z]+)\\]?";
+	private static final String HEARTHARENA_DECK_HOST_URL = "http://www.heartharena.com/arena-run/";
 
 	@Autowired
 	ReviewRepository repo;
@@ -69,10 +71,11 @@ public class DeckParser implements Plugin {
 		return initialText;
 	}
 
-	private void parseDecks(Map<String, String> pluginData, String reviewDeck) throws IOException {
-		parseHearthpwnDeck(pluginData, reviewDeck);
-		parseHearthstoneDecksDeck(pluginData, reviewDeck);
-		parseZeroToHeroesDeck(pluginData, reviewDeck);
+	private void parseDecks(Map<String, String> pluginData, String initialText) throws IOException {
+		parseHearthpwnDeck(pluginData, initialText);
+		parseHearthstoneDecksDeck(pluginData, initialText);
+		parseZeroToHeroesDeck(pluginData, initialText);
+		parseHearthArenaDeck(pluginData, initialText);
 	}
 
 	private void parseZeroToHeroesDeck(Map<String, String> pluginData, String initialText) throws IOException {
@@ -80,13 +83,19 @@ public class DeckParser implements Plugin {
 		Matcher matcher = pattern.matcher(initialText);
 		while (matcher.find()) {
 			String deckId = matcher.group(2);
-			log.debug("Loading ztoh deck " + deckId);
+
+			// Don't override existing decks (performance)
+			if (pluginData.get(deckId) != null) {
+				continue;
+			}
+
+			// log.debug("Loading ztoh deck " + deckId);
 			Review review = repo.findById(deckId);
-			log.debug("loaded review " + review);
+			// log.debug("loaded review " + review);
 			String stringDraft = s3utils.readFromS3(review.getKey());
-			log.debug("String draft " + stringDraft);
+			// log.debug("String draft " + stringDraft);
 			JSONObject draft = new JSONObject(stringDraft);
-			log.debug("json draft " + draft);
+			// log.debug("json draft " + draft);
 
 			Deck deck = new Deck();
 			deck.title = review.getTitle();
@@ -114,6 +123,43 @@ public class DeckParser implements Plugin {
 		}
 	}
 
+	private void parseHearthArenaDeck(Map<String, String> pluginData, String initialText) throws IOException {
+		Pattern pattern = Pattern.compile(HEARTHARENA_DECK_ID_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			String deckId = matcher.group(2);
+
+			// Don't override existing decks
+			if (pluginData.get(deckId) != null) {
+				continue;
+			}
+
+			String deckUrl = HEARTHARENA_DECK_HOST_URL + deckId;
+			log.debug("Trying to scrape deck data for deck " + deckUrl);
+
+			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
+
+			Deck deck = new Deck();
+			Elements decklist = doc.select("#basics #deck-list .decklist");
+
+			Elements cards = decklist.select("li");
+
+			for (Element element : cards) {
+				// log.debug("Parsing class card " + element);
+				Elements qtyElement = element.select(".quantity");
+				// log.debug("\tCard " + cardElement);
+				Card card = new Card(element.attr("data-name"), qtyElement.text().trim());
+				// log.debug("\tBuilt card " + card);
+				deck.classCards.add(card);
+			}
+
+			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
+
+			log.debug("jsonDeck" + jsonDeck);
+			pluginData.put(deckId, jsonDeck);
+		}
+	}
+
 	private void parseHearthstoneDecksDeck(Map<String, String> pluginData, String initialText)
 			throws IOException, JsonProcessingException {
 		Pattern pattern = Pattern.compile(HSDECKS_DECK_ID_REGEX, Pattern.MULTILINE);
@@ -121,7 +167,7 @@ public class DeckParser implements Plugin {
 		while (matcher.find()) {
 			String deckId = matcher.group(2);
 
-			// Don't override existing decks
+			// Don't override existing decks (performance)
 			if (pluginData.get(deckId) != null) {
 				continue;
 			}

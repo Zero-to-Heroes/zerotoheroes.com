@@ -6,8 +6,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -87,6 +89,33 @@ public class MetricsApiHandler {
 		metrics.setTotalReputation(totalReputation);
 		metrics.setTotalVideoViews(totalVideoViews);
 
+		// Sort from oldest to newest - useful both for result presentation and
+		// to compute returning users
+		Collections.sort(metrics.getMetrics(), new Comparator<Metric>() {
+			@Override
+			public int compare(Metric o1, Metric o2) {
+				return o1.getStartDate().compareTo(o2.getStartDate());
+			}
+		});
+
+		for (int i = 1; i < metrics.getMetrics().size(); i++) {
+			// Build the list of unique content creators in the past 3 weeks
+			Set<String> contributors = new HashSet<>();
+			for (int j = Math.max(0, i - 3); j < i; j++) {
+				contributors.addAll(metrics.getMetrics().get(j).getUniqueContentCreators());
+			}
+
+			// And look how many of this week's contributors are returning users
+			int returning = 0;
+			for (String user : metrics.getMetrics().get(i).getUniqueContentCreators()) {
+				if (contributors.contains(user)) {
+					returning++;
+				}
+			}
+
+			metrics.getMetrics().get(i).setReturningContributors(returning);
+		}
+
 		log.debug("Formatting for CSV");
 		String csvMetrics = toCsv(metrics);
 		metrics.setCsv(csvMetrics);
@@ -132,21 +161,14 @@ public class MetricsApiHandler {
 
 	private String toCsv(Metrics metrics) {
 
-		Collections.sort(metrics.getMetrics(), new Comparator<Metric>() {
-
-			@Override
-			public int compare(Metric o1, Metric o2) {
-				return o1.getStartDate().compareTo(o2.getStartDate());
-			}
-		});
-
 		String result = "";
 
-		String header = "Week,Unique content creators,Total interactions,Total reputation,Total video views,User details";
+		String header = "Week,Unique content creators,Returning contributors,Total reviews,Total comments,Total interactions,Total reputation,Total video views,User details";
 		result += header + "\r\n";
 
 		for (Metric metric : metrics.getMetrics()) {
 			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + metric.getUniqueContentCreators().size()
+					+ "," + metric.getReturningContributors() + "," + metric.getReviews() + "," + metric.getComments()
 					+ "," + (metric.getComments() + metric.getReviews()) + "," + metrics.getTotalReputation() + ","
 					+ metrics.getTotalVideoViews() + "," + metric.getUniqueContentCreators();
 			result += "\r\n";

@@ -1,11 +1,11 @@
 package com.coach.admin.metrics;
 
-import lombok.Data;
-
 import java.util.HashSet;
 import java.util.Set;
 
 import org.joda.time.DateTime;
+
+import lombok.Data;
 
 @Data
 public class Metric {
@@ -14,6 +14,7 @@ public class Metric {
 	private int reviews;
 	private int comments;
 	private Set<String> uniqueContentCreators = new HashSet<>();
+	private int returningContributors;
 
 	public void incrementReviews() {
 		reviews++;

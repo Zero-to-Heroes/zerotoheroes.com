@@ -13,8 +13,10 @@ import com.coach.coaches.CoachInformation;
 import com.coach.core.security.User;
 import com.coach.review.Comment;
 import com.coach.review.Review;
+import com.coach.review.ReviewSearchCriteria;
 import com.coach.sequence.Sequence;
 import com.coach.subscription.HasSubscribers;
+import com.coach.subscription.SavedSearchSubscription;
 
 import lombok.extern.slf4j.Slf4j;
 import net.gpedro.integrations.slack.SlackApi;
@@ -109,29 +111,30 @@ public class SlackNotifier {
 		});
 	}
 
-	public void notifyReviewUpdatet(final Review review) {
-		if (!"prod".equalsIgnoreCase(environment)) { return; }
-
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws IOException {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
-
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText(review.getText());
-				attach.setFallback("placeholder fallback");
-
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("Review by " + review.getAuthor() + " updated at " + review.getUrl());
-
-				api.call(message);
-				return null;
-			}
-		});
-	}
+	// public void notifyReviewUpdatet(final Review review) {
+	// if (!"prod".equalsIgnoreCase(environment)) { return; }
+	//
+	// executorProvider.getExecutor().submit(new Callable<String>() {
+	// @Override
+	// public String call() throws IOException {
+	// SlackApi api = new SlackApi(
+	// "https://hooks.slack.com/services/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");
+	//
+	// SlackAttachment attach = new SlackAttachment();
+	// attach.setColor("good");
+	// attach.setText(review.getText());
+	// attach.setFallback("placeholder fallback");
+	//
+	// SlackMessage message = new SlackMessage();
+	// message.addAttachments(attach);
+	// message.setText("Review by " + review.getAuthor() + " updated at " +
+	// review.getUrl());
+	//
+	// api.call(message);
+	// return null;
+	// }
+	// });
+	// }
 
 	public void notifyNewUser(final User user) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
@@ -235,6 +238,30 @@ public class SlackNotifier {
 		});
 	}
 
+	public void notifyNewSavedSearchSubscriber(final ReviewSearchCriteria searchCriteria, final String name) {
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("good");
+				attach.setText("Search criteria is " + searchCriteria);
+				attach.setFallback("placeholder fallback");
+
+				SlackMessage message = new SlackMessage();
+				message.addAttachments(attach);
+				message.setText(name + " has subscribed to a saved search ");
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
 	public void notifyNewUnsubscriber(final HasSubscribers item, final User user) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
@@ -253,6 +280,30 @@ public class SlackNotifier {
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
 				message.setText(user.getUsername() + " has unsubscribed from " + item.getTitle());
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
+	public void notifyNewSavedSearchUnsubscriber(final SavedSearchSubscription sub, final String name) {
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("good");
+				attach.setText("Search criteria is " + sub);
+				attach.setFallback("placeholder fallback");
+
+				SlackMessage message = new SlackMessage();
+				message.addAttachments(attach);
+				message.setText(name + " has unsubscribed from a saved search ");
 
 				api.call(message);
 				return null;

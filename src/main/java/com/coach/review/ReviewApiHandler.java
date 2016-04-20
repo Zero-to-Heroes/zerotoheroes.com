@@ -504,7 +504,7 @@ public class ReviewApiHandler {
 		}
 
 		comment.setTempCanvas(review.getCanvas());
-		slackNotifier.notifyCommentUpdate(review, comment);
+		// slackNotifier.notifyCommentUpdate(review, comment);
 		sportManager.addCommentUpdatedActivity(user, review, comment);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

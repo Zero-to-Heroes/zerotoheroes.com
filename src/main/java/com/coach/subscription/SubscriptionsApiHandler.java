@@ -103,6 +103,8 @@ public class SubscriptionsApiHandler {
 				it.remove();
 				subService.delete(subscriptionId);
 				profileService.save(profile);
+				slackNotifier.notifyNewSavedSearchUnsubscriber(sub,
+						SecurityContextHolder.getContext().getAuthentication().getName());
 				return new ResponseEntity<String>("unsubbed", HttpStatus.OK);
 			}
 		}
@@ -122,6 +124,9 @@ public class SubscriptionsApiHandler {
 
 		subService.save(sub);
 		profileService.save(profile);
+
+		slackNotifier.notifyNewSavedSearchSubscriber(searchCriteria,
+				SecurityContextHolder.getContext().getAuthentication().getName());
 
 		return new ResponseEntity<String>("sub added", HttpStatus.OK);
 	}

@@ -11,5 +11,5 @@ import lombok.Setter;
 public class Rankings {
 
 	// Map of sport / Map for sport internal
-	private Map<String, Map<String, String>> rankings = new HashMap<>();
+	private Map<String, Map<String, Rank>> rankings = new HashMap<>();
 }

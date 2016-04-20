@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class Announcement {
-	private String serialId, text;
+	private String serialId, sport, text;
 }

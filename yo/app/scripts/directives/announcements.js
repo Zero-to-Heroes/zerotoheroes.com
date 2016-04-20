@@ -9,7 +9,9 @@ app.directive('announcements', ['$log', 'Api', '$interval', 'localStorage', '$fi
 		restrict: 'E',
 		replace: false,
 		templateUrl: 'templates/announcements.html',
-		scope: {},
+		scope: {
+			sport: '='
+		},
 		link: function(scope, element, attributes) {
 		},
 		controller: function($scope) {
@@ -26,7 +28,7 @@ app.directive('announcements', ['$log', 'Api', '$interval', 'localStorage', '$fi
 							// $log.debug('\tdismissed', dismissed)
 							var displayable = $filter('filter')(data.announcements, function(o) {
 								// $log.debug('\tis in?', o, dismissed)
-								return !dismissed || dismissed.indexOf(o.serialId) < 0
+								return (!o.sport || o.sport == $scope.sport) && (!dismissed || dismissed.indexOf(o.serialId) < 0)
 							})
 							if (displayable && displayable.length > 0) {
 								$scope.announcement = {

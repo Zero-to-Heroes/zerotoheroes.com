@@ -20,8 +20,8 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 			}
 
 		   	$scope.sport = $routeParams.sport || $scope.sport
-		   	if (!$scope.sport && current.$$route) {
-		   		$scope.sport = current.$$route.sport
+		   	if (current.$$route) {
+		   		$scope.sport = current.$$route.sport || $scope.sport
 		   	}
 
 		   	if ($scope.sportsConfig[$scope.sport] && $scope.sportsConfig[$scope.sport].isSport)  {

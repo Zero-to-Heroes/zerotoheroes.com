@@ -12,6 +12,10 @@
 			<label for="emailNotificationsCheckbox" translate="global.profile.preferences.emailNotifications"></label> 
 			<input type="checkbox" id="emailNotificationsCheckbox" ng-model="preferences.emailNotifications"> 
 		</div>
+		<div class="form-group">
+			<label for="emailContactCheckbox" translate="global.profile.preferences.emailContact"></label> 
+			<input type="checkbox" id="emailContactCheckbox" ng-model="preferences.emailContact"> 
+		</div>
 		<div class="form-group language-group">
 			<label for="language" translate="global.profile.preferences.language"></label> 
 			<button type="button" class="btn btn-default" data-trigger="click" ng-model="preferences.language" data-html="1" bs-options="option.value as option.label for option in languages" placeholder="{{ 'global.profile.preferences.language' | translate }}" bs-select ng-required="true">

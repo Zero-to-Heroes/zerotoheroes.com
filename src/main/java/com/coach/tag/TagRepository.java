@@ -130,6 +130,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Oil Rogue"));
 		hearthstone.add(new Tag("Malygos Rogue"));
 		hearthstone.add(new Tag("Miracle Rogue"));
+		hearthstone.add(new Tag("Mill Rogue"));
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));
 		hearthstone.add(new Tag("OTK Warrior"));

@@ -123,7 +123,7 @@ nav .alert {
 /* Override default navbar collapse point.
 cf http://stackoverflow.com/questions/19827605/change-bootstrap-navbar-collapse-breakpoint-without-using-less
 */
-@media (max-width: 1360px) {
+@media (max-width: 1600px) {
 	.navbar-header {
 		float: none;
 	}

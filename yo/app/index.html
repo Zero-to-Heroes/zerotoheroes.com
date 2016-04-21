@@ -86,6 +86,7 @@
 		<noscript>Please enable JavaScript to view this web page.</noscript>
 		<div zth-navigation ng-hide="isLandingPage"></div>
 		<announcements ng-hide="isLandingPage" sport="sport"></announcements>
+		<sport-tag></sport-tag>
 		<div ng-class="{'main-container-nolanding': !isLandingPage, 'main-container-landing': isLandingPage}">
 			<!--<div class="left-column" ng-hide="true || isLandingPage || hideSideBar">
 				<div welcome-pane></div>
@@ -207,6 +208,7 @@
 		<script src="scripts/directives/helpPopupManager.js"></script>
 		<script src="scripts/directives/compareTo.js"></script>	
 		<script src="scripts/directives/autoGrow.js"></script>
+		<script src="scripts/directives/sportTag.js"></script>
 		<script src="scripts/directives/userHistory.js"></script>	
 		<script src="scripts/directives/welcomePane.js"></script>
 
@@ -263,8 +265,9 @@
 		<script src="scripts/services/localization.js"></script>
 		<script src="scripts/services/localStorage.js"></script>
 		<script src="scripts/services/mediaUploader.js"></script>
-		<script src="scripts/services/user.js"></script>
 		<script src="scripts/services/sportsConfig.js"></script>
+		<script src="scripts/services/tagService.js"></script>
+		<script src="scripts/services/user.js"></script>
 
 		<script src="scripts/landing/owl.carousel.min.js"></script>
 		<script src="scripts/landing/tweetie.min.js"></script>

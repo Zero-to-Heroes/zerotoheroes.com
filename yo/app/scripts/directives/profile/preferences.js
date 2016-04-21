@@ -24,7 +24,6 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					if (User.isLoggedIn() && $routeParams.userName == User.getName()) {
 						Api.Preferences.get(
 							function(data) {
-								$log.debug('loaded preferences', data)
 								$scope.preferences = data
 								$scope.preferences.language = $scope.preferences.language || 'en'
 							}

@@ -63,6 +63,7 @@
 									<hearthstone-listing-details ng-switch-when="hearthstone" review="review"></hearthstone-listing-details>
 								</div>
 								<h1 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h1>
+								<button class="btn btn-default ask-pro" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</button>
 								<div class="row" ng-show="review.editing">
 									<div class="col-md-12">
 										<div class="form-group review-editing-title" show-errors="{ showSuccess: true }">

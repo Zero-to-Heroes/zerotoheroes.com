@@ -24,7 +24,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 				}, 50)
 				return
 			}
-			tags = inputTags || service.tags
+			var tags = inputTags || service.tags
 			var filtered = []
 			tags.forEach(function(tag) {
 				if (tag.type != string)

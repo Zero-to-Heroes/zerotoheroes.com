@@ -1,6 +1,10 @@
 package com.coach.plugin.hearthstone;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -44,6 +48,9 @@ public class DeckParser implements Plugin {
 	private static final String HEARTHARENA_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.heartharena\\.com\\/arena-run\\/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HEARTHARENA_DECK_HOST_URL = "http://www.heartharena.com/arena-run/";
 
+	private static final String ARENADRAFTS_DECK_ID_REGEX = "\\[?(http:\\/\\/(www\\.)?arenadrafts\\.com\\/Arena\\/View\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
+	private static final String ARENADRAFTS_DECK_HOST_URL = "http://arenadrafts.com/Arena/View/";
+
 	@Autowired
 	ReviewRepository repo;
 
@@ -76,6 +83,75 @@ public class DeckParser implements Plugin {
 		parseHearthstoneDecksDeck(pluginData, initialText);
 		parseZeroToHeroesDeck(pluginData, initialText);
 		parseHearthArenaDeck(pluginData, initialText);
+		parseArenaDraftsDeck(pluginData, initialText);
+	}
+
+	private void parseArenaDraftsDeck(Map<String, String> pluginData, String initialText) throws IOException {
+		Pattern pattern = Pattern.compile(ARENADRAFTS_DECK_ID_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			String deckId = matcher.group(3);
+			log.debug("matcher " + matcher);
+			log.debug("deck id " + deckId);
+
+			// Don't override existing decks
+			if (pluginData.get(deckId) != null) {
+				continue;
+			}
+
+			String deckUrl = ARENADRAFTS_DECK_HOST_URL + deckId + "?format=JSON";
+			log.debug("Trying to scrape deck data for deck " + deckUrl);
+
+			StringBuilder result = new StringBuilder();
+			URL url = new URL(deckUrl);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			String line;
+			while ((line = rd.readLine()) != null) {
+				result.append(line);
+			}
+			rd.close();
+			String stringDraft = result.toString();
+
+			JSONObject draft = new JSONArray(stringDraft).getJSONObject(0);
+			// log.debug("json draft " + draft);
+
+			int numberOfWins = 0;
+			JSONArray matches = draft.getJSONArray("Matches");
+			for (Object obj : matches) {
+				if (((JSONObject) obj).getBoolean("Win")) {
+					numberOfWins++;
+				}
+			}
+
+			Deck deck = new Deck();
+			deck.title = "ArenaDrafts - " + draft.getString("Hero") + " - " + numberOfWins + " wins";
+			JSONArray pickedCards = draft.getJSONArray("Picks");
+
+			for (Object obj : pickedCards) {
+				JSONObject cardObj = (JSONObject) obj;
+				int cardPickIndex = cardObj.getInt("CardPicked");
+				String cardId = cardObj.getString("Card" + cardPickIndex);
+				Card card = null;
+				for (Card c : deck.classCards) {
+					if (c.getName().equals(cardId)) {
+						card = c;
+						card.amount = "" + (Integer.parseInt(card.amount) + 1);
+						break;
+					}
+				}
+				if (card == null) {
+					card = new Card(cardId, "1");
+					deck.classCards.add(card);
+				}
+			}
+
+			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
+
+			log.debug("jsonDeck" + jsonDeck);
+			pluginData.put(deckId, jsonDeck);
+		}
 	}
 
 	private void parseZeroToHeroesDeck(Map<String, String> pluginData, String initialText) throws IOException {

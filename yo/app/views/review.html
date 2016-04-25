@@ -63,7 +63,7 @@
 									<hearthstone-listing-details ng-switch-when="hearthstone" review="review"></hearthstone-listing-details>
 								</div>
 								<h1 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h1>
-								<button class="btn btn-default ask-pro" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</button>
+								<!-- <button class="btn btn-default ask-pro" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</button> -->
 								<div class="row" ng-show="review.editing">
 									<div class="col-md-12">
 										<div class="form-group review-editing-title" show-errors="{ showSuccess: true }">
@@ -79,7 +79,7 @@
 								  	</div>
 							  	</div>
 							  	<hs-decklist-upload sport="sport" review="review" ng-show="review.editing"></hs-decklist-upload>
-							  	<div class="row" ng-hide="review.editing">
+							  	<div class="row" ng-hide="review.editing" class="author-row">
 								  	<div class="author-information">
 									  	<span class="link-minor">Submitted <span title="{{formatExactDate(review.creationDate)}}">{{formatDate(review.creationDate)}}</span> by <span author-name entity="review"></span></span>
 									  	<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="review.authorReputation">{{review.authorReputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>

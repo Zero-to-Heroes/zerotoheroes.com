@@ -5,6 +5,7 @@ var parseDecks = {
 	zthDecksRegex: /\[?(http:\/\/www\.zerotoheroes\.com\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
 	// zthDecksRegex: /\[?(http:\/.*localhost.*\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
 	hearthArenaDecksRegex: /\[?(http:\/\/www\.heartharena\.com\/arena-run\/)([\da-zA-Z]+)\]?/gm,
+	arenaDraftsDecksRegex: /\[?(http:\/\/(www\.)?arenadrafts\.com\/Arena\/View\/)([\da-zA-Z\-]+)\]?/gm,
 	
 	decks: {},
 
@@ -15,22 +16,24 @@ var parseDecks = {
 		result = parseDecks.parse(review, result, text, parseDecks.hsDecksDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.zthDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.hearthArenaDecksRegex)
+		result = parseDecks.parse(review, result, text, parseDecks.arenaDraftsDecksRegex, 3)
 
 		return result;
 	},
 
-	parse: function(review, result, text, regex) {
+	parse: function(review, result, text, regex, groupIndex) {
 		var match = regex.exec(text)
 		while (match) {
-			result = parseDecks.handleMatch(review, result, match)
+			result = parseDecks.handleMatch(review, result, match, groupIndex)
 			match = regex.exec(text)
 		}
 		return result
 	},
 
-	handleMatch: function(review, result, match) {
+	handleMatch: function(review, result, match, groupIndex) {
+		groupIndex = groupIndex || 2
 		// console.log('match', match);
-		var deckName = match[2]
+		var deckName = match[groupIndex]
 		var deckUrl = match[1] + deckName
 		// console.log('deck name', deckName, deckUrl);
 
@@ -86,6 +89,16 @@ var parseDecks = {
 		})
 		deck.classCards = realClassCards
 		deck.title = deck.title || 'Unnamed draft'
+
+		// Sort cards by cost
+		deck.neutralCards = _.sortBy(deck.neutralCards, function(card) {
+			var cardObject = parseCardsText.getCard(card.name)
+			return cardObject.cost
+		})
+		deck.classCards = _.sortBy(deck.classCards, function(card) {
+			var cardObject = parseCardsText.getCard(card.name)
+			return cardObject.cost
+		})
 
 
 		var htmlDeck = '<h3 class=\'deck-header\'><a href=\'' + deckUrl + '\' target=\'_blank\'>' + deck.title + '</a></h3>';

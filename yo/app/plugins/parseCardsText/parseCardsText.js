@@ -212,7 +212,7 @@ var parseCardsText = {
 				return true;
 			}
 			else if (card.name.toLowerCase() == cardName.toLowerCase()) {
-				console.log('getting card', cardName, card)
+				// console.log('getting card', cardName, card)
 				if (card.set == 'Basic') {
 					card.rarity = 'Free';
 				}
@@ -226,10 +226,10 @@ var parseCardsText = {
 				// console.log('card id matches regex?', card.id, card.id.match(/.*\d$/));
 				// console.log('card type', card.type)
 				if (res) {
-					console.log('\tconsidering', card)
+					// console.log('\tconsidering', card)
 					result = card;
 					if (result.cardImage) {
-						console.log('returning card', result);
+						// console.log('returning card', result);
 						return true;
 					}
 				}

@@ -98,6 +98,7 @@ public class MetricsApiHandler {
 			}
 		});
 
+		// Returning users
 		for (int i = 1; i < metrics.getMetrics().size(); i++) {
 			// Build the list of unique content creators in the past 3 weeks
 			Set<String> contributors = new HashSet<>();
@@ -114,6 +115,35 @@ public class MetricsApiHandler {
 			}
 
 			metrics.getMetrics().get(i).setReturningContributors(returning);
+		}
+
+		// Churn - how many people contributed in the past 3 months and didn't
+		// do anything in the past 3 weeks
+		for (int i = 1; i < metrics.getMetrics().size(); i++) {
+			// Build the list of unique content creators in the past 8 weeks
+			// We don't want to pick a too long period, otherwise the same user
+			// will count for churn over too many weeks.
+			Set<String> onceActive = new HashSet<>();
+			for (int j = Math.max(0, i - 8); j < i; j++) {
+				onceActive.addAll(metrics.getMetrics().get(j).getUniqueContentCreators());
+			}
+
+			// Build the list of unique content creators in the past 3 weeks
+			Set<String> recentlyActive = new HashSet<>();
+			for (int j = Math.max(0, i - 3); j < i; j++) {
+				recentlyActive.addAll(metrics.getMetrics().get(j).getUniqueContentCreators());
+			}
+
+			// Build the list of people who have been active in the past but not
+			// recently
+			Set<String> churn = new HashSet<>();
+			for (String user : onceActive) {
+				if (!recentlyActive.contains(user)) {
+					churn.add(user);
+				}
+			}
+
+			metrics.getMetrics().get(i).setChurn(churn);
 		}
 
 		log.debug("Formatting for CSV");
@@ -163,14 +193,16 @@ public class MetricsApiHandler {
 
 		String result = "";
 
-		String header = "Week,Unique content creators,Returning contributors,Total reviews,Total comments,Total interactions,Total reputation,Total video views,User details";
+		String header = "Week,Unique content creators,Returning contributors,Churn,Total reviews,Total comments,"
+				+ "Total interactions,Total reputation,Total video views,Contributors,Churn detail";
 		result += header + "\r\n";
 
 		for (Metric metric : metrics.getMetrics()) {
 			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + metric.getUniqueContentCreators().size()
-					+ "," + metric.getReturningContributors() + "," + metric.getReviews() + "," + metric.getComments()
-					+ "," + (metric.getComments() + metric.getReviews()) + "," + metrics.getTotalReputation() + ","
-					+ metrics.getTotalVideoViews() + "," + metric.getUniqueContentCreators();
+					+ "," + metric.getChurn().size() + "," + metric.getReturningContributors() + ","
+					+ metric.getReviews() + "," + metric.getComments() + ","
+					+ (metric.getComments() + metric.getReviews()) + "," + metrics.getTotalReputation() + ","
+					+ metrics.getTotalVideoViews() + "," + metric.getUniqueContentCreators() + "," + metric.getChurn();
 			result += "\r\n";
 		}
 		return result;

@@ -14,6 +14,7 @@ public class Metric {
 	private int reviews;
 	private int comments;
 	private Set<String> uniqueContentCreators = new HashSet<>();
+	private Set<String> churn = new HashSet<>();
 	private int returningContributors;
 
 	public void incrementReviews() {

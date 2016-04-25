@@ -16,7 +16,7 @@ app.directive('sportTag', ['TagService', '$routeParams', '$log',
 						if (sport) 
 							sport = sport.toLowerCase()
 
-						if (sport != $scope.sport || !TagService.tags) {
+						if (sport && (sport != $scope.sport || !TagService.tags)) {
 							$scope.sport = sport
 							TagService.refreshTags(sport)
 						}

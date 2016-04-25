@@ -209,7 +209,7 @@
 			}
 		},
 		"listing": {
-			"allVideos": "All videos",
+			"allVideos": "All reviews",
 			"unsubscribe": "Unsubscribe",
 			"unsubscribeTooltip": "Click to stop receiving notifications when a new review is posted",
 			"subscribe": "Subscribe",

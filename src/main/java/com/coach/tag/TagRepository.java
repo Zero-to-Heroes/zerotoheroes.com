@@ -84,6 +84,8 @@ public class TagRepository {
 
 		// Tags for HearthStone
 		List<Tag> hearthstone = new ArrayList<>();
+		hearthstone.add(new Tag("Wild"));
+		hearthstone.add(new Tag("Standard"));
 		// Ranks
 		hearthstone.add(new Tag("Rank 20-25", "skill-level"));
 		hearthstone.add(new Tag("Rank 15-19", "skill-level"));

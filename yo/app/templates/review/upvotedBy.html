@@ -1,0 +1,9 @@
+<span class="upvoted-by" ng-show="entity.noticeableVotes && entity.noticeableVotes.length > 0">
+<span translate="global.review.comment.upvotedBy"></span>
+<author-frame ng-repeat="voter in entity.noticeableVotes" frame="voter.rank" author="voter.username" sport="sport" class="voter"></author-frame>
+<span class="other-voters" translate="global.review.comment.otherVotes" translate-values="{number: '{{ entity.reputation.nbVotes.Upvote - entity.noticeableVotes.length }}' }" ng-show="entity.reputation.nbVotes.Upvote > entity.noticeableVotes.length + 1">
+</span>
+<span class="other-voters" translate="global.review.comment.otherVote" ng-show="entity.reputation.nbVotes.Upvote == entity.noticeableVotes.length + 1">
+</span>
+
+</span>

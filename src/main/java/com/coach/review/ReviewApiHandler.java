@@ -1,14 +1,11 @@
 package com.coach.review;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import javax.annotation.PostConstruct;
 
@@ -35,6 +32,7 @@ import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
 import com.coach.plugin.Plugin;
+import com.coach.profile.ProfileRepository;
 import com.coach.reputation.ReputationAction;
 import com.coach.reputation.ReputationUpdater;
 import com.coach.review.Review.Sport;
@@ -43,6 +41,7 @@ import com.coach.review.video.transcoding.Transcoder;
 import com.coach.sport.SportManager;
 import com.coach.subscription.SubscriptionManager;
 import com.coach.user.UserRepository;
+import com.coach.user.UserService;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 
@@ -59,7 +58,16 @@ public class ReviewApiHandler {
 	ReviewRepository reviewRepo;
 
 	@Autowired
+	ReviewService reviewService;
+
+	@Autowired
 	UserRepository userRepo;
+
+	@Autowired
+	UserService userService;
+
+	@Autowired
+	ProfileRepository profileRepo;
 
 	@Autowired
 	MongoTemplate mongoTemplate;
@@ -192,9 +200,10 @@ public class ReviewApiHandler {
 
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
-		review.sortComments();
-		denormalizeReputations(review);
-		updateReview(review);
+		// review.sortComments();
+		// denormalizeReputations(review);
+		// TODO: remove this
+		reviewService.updateAsync(review);
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
@@ -204,7 +213,7 @@ public class ReviewApiHandler {
 		// And add a video view to the user
 		if (user != null) {
 			user.addWatchedReview(review.getSport().getKey().toLowerCase(), review.getId());
-			userRepo.save(user);
+			userService.updateAsync(user);
 		}
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
@@ -253,12 +262,12 @@ public class ReviewApiHandler {
 		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
 		// sportManager.addNewReviewActivity(review);
 		// We need to save here so that the transcoding process can retrieve it
-		updateReview(review);
+		reviewRepo.save(review);
 
 		User user = userRepo.findByUsername(currentUser);
 		if (user != null) {
 			user.addPostedReview(review.getSport().getKey().toLowerCase(), review.getId());
-			userRepo.save(user);
+			userService.updateAsync(user);
 		}
 
 		// Start transcoding
@@ -280,7 +289,7 @@ public class ReviewApiHandler {
 		else {
 			log.debug("No media attached");
 			review.setPublished(true);
-			updateReview(review);
+			reviewRepo.save(review);
 		}
 
 		// log.debug("Transcoding started, returning with created review: " +
@@ -311,10 +320,10 @@ public class ReviewApiHandler {
 			User user = userRepo.findByUsername(currentUser);
 
 			// Updating user stats
-			if (commentParser.hasTimestamp(comment.getText())) {
-				user.getStats().incrementTimestamps();
-				userRepo.save(user);
-			}
+			// if (commentParser.hasTimestamp(comment.getText())) {
+			// user.getStats().incrementTimestamps();
+			// userRepo.save(user);
+			// }
 
 			// Add information on whether the comment has been made by a coach
 			if (user.getCoachInformation() != null) {
@@ -341,7 +350,7 @@ public class ReviewApiHandler {
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
 		subscriptionManager.subscribe(review, comment.getAuthorId());
-		updateReview(review);
+		reviewService.updateAsync(review);
 
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
@@ -349,12 +358,12 @@ public class ReviewApiHandler {
 
 		if (user != null) {
 			user.addPostedComment(review.getSport().getKey().toLowerCase(), review.getId());
-			userRepo.save(user);
+			userService.updateAsync(user);
 		}
 
 		// Notifying the user who submitted the review (if he is registered)
 		slackNotifier.notifyNewComment(review, comment);
-		sportManager.addNewCommentActivity(review, comment);
+		// sportManager.addNewCommentActivity(review, comment);
 
 		// log.debug("Created comment " + comment + " with id " +
 		// comment.getId());
@@ -398,13 +407,13 @@ public class ReviewApiHandler {
 		review.setLastModifiedBy(currentUser);
 		review.setLanguage(inputReview.getLanguage());
 
-		updateReview(review);
+		reviewService.updateAsync(review);
 
 		// Updating user stats
-		if (commentParser.hasTimestamp(review.getText())) {
-			user.getStats().incrementTimestamps();
-			userRepo.save(user);
-		}
+		// if (commentParser.hasTimestamp(review.getText())) {
+		// user.getStats().incrementTimestamps();
+		// userService.updateAsync(user);
+		// }
 
 		// slackNotifier.notifyReviewUpdatet(review);
 		// sportManager.addReviewUpdatedActivity(user, review);
@@ -454,7 +463,7 @@ public class ReviewApiHandler {
 		review.setLanguage(inputReview.getLanguage());
 		review.setPublished(true);
 
-		updateReview(review);
+		reviewService.updateAsync(review);
 
 		// Send notifications only if it's a real new video and
 		// not a video response
@@ -495,17 +504,18 @@ public class ReviewApiHandler {
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
-		updateReview(review);
+		review.sortComments();
+		reviewService.updateAsync(review);
 
 		// Updating user stats
-		if (commentParser.hasTimestamp(comment.getText())) {
-			user.getStats().incrementTimestamps();
-			userRepo.save(user);
-		}
+		// if (commentParser.hasTimestamp(comment.getText())) {
+		// user.getStats().incrementTimestamps();
+		// userService.saveAsync(user);
+		// }
 
 		comment.setTempCanvas(review.getCanvas());
 		// slackNotifier.notifyCommentUpdate(review, comment);
-		sportManager.addCommentUpdatedActivity(user, review, comment);
+		// sportManager.addCommentUpdatedActivity(user, review, comment);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -526,13 +536,13 @@ public class ReviewApiHandler {
 			// log.debug("Setting current user as review author " +
 			// currentUser);
 			addAuthorInformation(review.getSport(), reply, currentUser);
-			User user = userRepo.findByUsername(currentUser);
+			// User user = userRepo.findByUsername(currentUser);
 
 			// Updating user stats
-			if (commentParser.hasTimestamp(reply.getText())) {
-				user.getStats().incrementTimestamps();
-				userRepo.save(user);
-			}
+			// if (commentParser.hasTimestamp(reply.getText())) {
+			// user.getStats().incrementTimestamps();
+			// userRepo.save(user);
+			// }
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else {
@@ -562,7 +572,8 @@ public class ReviewApiHandler {
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, reply);
-		updateReview(review);
+		review.sortComments();
+		reviewService.updateAsync(review);
 
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
@@ -571,7 +582,7 @@ public class ReviewApiHandler {
 		// Notifying the user who submitted the review (if he is registered)
 		subscriptionManager.notifyNewComment(reply, review);
 		slackNotifier.notifyNewComment(review, reply);
-		sportManager.addNewCommentActivity(review, reply);
+		// sportManager.addNewCommentActivity(review, reply);
 
 		log.debug("Created reply " + reply + " with id " + reply.getId());
 
@@ -608,9 +619,10 @@ public class ReviewApiHandler {
 			reputationUpdater.updateReputation(review.getSport(), action, comment.getAuthorId());
 		}
 
-		updateReview(review);
+		reviewService.updateAsync(review);
 		if (comment.isHelpful()) {
-			sportManager.addMarkedCommentHelpfulActivity(user, review, comment);
+			// sportManager.addMarkedCommentHelpfulActivity(user, review,
+			// comment);
 			slackNotifier.notifyHelpfulComment(review, comment);
 		}
 		else {
@@ -620,67 +632,60 @@ public class ReviewApiHandler {
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/suggestion/comment/{sport}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<Review> getRecommendedReviewForComment(
-			@PathVariable("sport") final String sport) {
+	// @RequestMapping(value = "/suggestion/comment/{sport}", method =
+	// RequestMethod.GET)
+	// public @ResponseBody ResponseEntity<Review>
+	// getRecommendedReviewForComment(
+	// @PathVariable("sport") final String sport) {
+	//
+	// String currentUser =
+	// SecurityContextHolder.getContext().getAuthentication().getName();
+	//
+	// List<Review> reviews = null;
+	// // log.debug("Retrieving recommended review for " + sport);
+	//
+	// // Sorting in ascending order
+	// Sort oldestFirst = new Sort(Sort.Direction.ASC,
+	// Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
+	//
+	// PageRequest pageRequest = new PageRequest(0, PAGE_SIZE, oldestFirst);
+	// Review recommended = null;
+	// if (!"meta".equalsIgnoreCase(sport)) {
+	// reviews = reviewRepo.findPageableBySport(sport,
+	// pageRequest).getContent();
+	// // log.debug("All reviews " + reviews);
+	//
+	// // TODO: do that in the DB directly?
+	// List<Review> result = new ArrayList<>();
+	// for (Review review : reviews) {
+	// if (review.getAuthor() != null && !review.getAuthor().equals(currentUser)
+	// && (review.getComments() == null || review.getComments().isEmpty())) {
+	// result.add(review);
+	// }
+	// }
+	//
+	// // Take a random video
+	// if (!result.isEmpty()) {
+	// int index = new Random().nextInt(result.size());
+	// recommended = result.get(index);
+	// }
+	// }
+	// // log.debug("Recommended " + recommended);
+	//
+	// return new ResponseEntity<Review>(recommended, HttpStatus.OK);
+	// }
 
-		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+	// @RequestMapping(value = "/suggestion/comment", method =
+	// RequestMethod.GET)
+	// public @ResponseBody ResponseEntity<Review>
+	// getRecommendedReviewForComment() {
+	//
+	// return new ResponseEntity<Review>((Review) null, HttpStatus.OK);
+	// }
 
-		List<Review> reviews = null;
-		// log.debug("Retrieving recommended review for " + sport);
-
-		// Sorting in ascending order
-		Sort oldestFirst = new Sort(Sort.Direction.ASC,
-				Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
-
-		PageRequest pageRequest = new PageRequest(0, PAGE_SIZE, oldestFirst);
-		Review recommended = null;
-		if (!"meta".equalsIgnoreCase(sport)) {
-			reviews = reviewRepo.findPageableBySport(sport, pageRequest).getContent();
-			// log.debug("All reviews " + reviews);
-
-			// TODO: do that in the DB directly?
-			List<Review> result = new ArrayList<>();
-			for (Review review : reviews) {
-				if (review.getAuthor() != null && !review.getAuthor().equals(currentUser)
-						&& (review.getComments() == null || review.getComments().isEmpty())) {
-					result.add(review);
-				}
-			}
-
-			// Take a random video
-			if (!result.isEmpty()) {
-				int index = new Random().nextInt(result.size());
-				recommended = result.get(index);
-			}
-		}
-		// log.debug("Recommended " + recommended);
-
-		return new ResponseEntity<Review>(recommended, HttpStatus.OK);
-	}
-
-	@RequestMapping(value = "/suggestion/comment", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<Review> getRecommendedReviewForComment() {
-
-		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);
-	}
-
-	private void updateReview(Review review) {
-		review.updateFullTextSearch();
-		review.updateCommentsCount();
-		mongoTemplate.save(review);
-	}
-
-	private void denormalizeReputations(Review review) {
-		List<String> userIds = review.getAllAuthors();
-		Iterable<User> users = userRepo.findAll(userIds);
-
-		Map<String, User> userMap = new HashMap<>();
-		for (User user : users) {
-			userMap.put(user.getId(), user);
-		}
-		review.normalizeUsers(userMap);
-	}
+	// private void updateReview(Review review) {
+	//
+	// }
 
 	private void consolidateCanvas(String prefix, Review review, HasText textHolder, Map<String, String> tempCanvas) {
 		String text = textHolder.getText();

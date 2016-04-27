@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ExecutorProvider {
 
-	private final ExecutorService executor = Executors.newFixedThreadPool(5);
+	private final ExecutorService executor = Executors.newFixedThreadPool(10);
 
 	public ExecutorService getExecutor() {
 		return executor;

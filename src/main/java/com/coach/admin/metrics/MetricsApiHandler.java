@@ -56,7 +56,7 @@ public class MetricsApiHandler {
 
 		List<Review> reviews = reviewRepository.findAll();
 		int totalVideoViews = 0;
-		log.debug("Going through all reviews");
+		// log.debug("Going through all reviews");
 		for (Review review : reviews) {
 			if (!review.isPublished()) {
 				continue;
@@ -79,13 +79,13 @@ public class MetricsApiHandler {
 		}
 
 		int totalReputation = 0;
-		log.debug("Counting reputation");
+		// log.debug("Counting reputation");
 		List<User> users = userRepository.findAll();
 		for (User user : users) {
 			totalReputation += user.getReputation();
 		}
 
-		log.debug("Finalizing");
+		// log.debug("Finalizing");
 		metrics.setTotalReputation(totalReputation);
 		metrics.setTotalVideoViews(totalVideoViews);
 
@@ -146,9 +146,12 @@ public class MetricsApiHandler {
 			metrics.getMetrics().get(i).setChurn(churn);
 		}
 
-		log.debug("Formatting for CSV");
+		// log.debug("Formatting for CSV");
 		String csvMetrics = toCsv(metrics);
 		metrics.setCsv(csvMetrics);
+
+		String churnInfo = detailChurn(metrics);
+		csvMetrics += "<br/><br/>" + churnInfo;
 
 		return new ResponseEntity<String>(csvMetrics, HttpStatus.OK);
 	}
@@ -176,14 +179,14 @@ public class MetricsApiHandler {
 		String result = "";
 
 		String header = "registration date,id,username,email";
-		result += header + "\r\n";
+		result += header + "<br/>";
 
 		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 
 		for (User user : users.values()) {
 			result += user.getCreationDate() != null ? format.format(user.getCreationDate())
 					: null + "," + user.getId() + "," + user.getUsername() + "," + user.getEmail();
-			result += "\r\n";
+			result += "<br/>";
 		}
 
 		return new ResponseEntity<String>(result, HttpStatus.OK);
@@ -195,16 +198,63 @@ public class MetricsApiHandler {
 
 		String header = "Week,Unique content creators,Returning contributors,Churn,Total reviews,Total comments,"
 				+ "Total interactions,Total reputation,Total video views,Contributors,Churn detail";
-		result += header + "\r\n";
+		result += header + "<br/>";
 
 		for (Metric metric : metrics.getMetrics()) {
 			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + metric.getUniqueContentCreators().size()
-					+ "," + metric.getChurn().size() + "," + metric.getReturningContributors() + ","
+					+ "," + metric.getReturningContributors() + "," + metric.getChurn().size() + ","
 					+ metric.getReviews() + "," + metric.getComments() + ","
 					+ (metric.getComments() + metric.getReviews()) + "," + metrics.getTotalReputation() + ","
 					+ metrics.getTotalVideoViews() + "," + metric.getUniqueContentCreators() + "," + metric.getChurn();
-			result += "\r\n";
+			result += "<br/>";
 		}
+		return result;
+	}
+
+	private String detailChurn(Metrics metrics) {
+		Metric metric = metrics.getMetrics().get(metrics.getMetrics().size() - 1);
+
+		String result = "";
+
+		String header = "User,Reviews,Comments,Average comments on own review,Reputation";
+		result += header + "<br/>";
+
+		List<Review> reviews = reviewRepository.findAll();
+
+		for (String username : metric.getChurn()) {
+			// log.debug("Processing userId " + username);
+			User user = userRepository.findByUsername(username);
+			// log.debug("loaded user " + user);
+			if (user == null || username.equalsIgnoreCase("anon")) {
+				continue;
+			}
+
+			String userId = user.getId();
+			int nbReviews = 0;
+			int nbComments = 0;
+			int totalCommentsOnOwnReviews = 0;
+			int averageCommentsOnOwnReview = 0;
+			for (Review review : reviews) {
+				if (userId.equals(review.getAuthorId())) {
+					nbReviews++;
+				}
+				for (Comment comment : review.getComments()) {
+					if (userId.equals(comment.getAuthorId())) {
+						nbComments++;
+					}
+					if (userId.equals(review.getAuthorId()) && !userId.equals(comment.getAuthorId())) {
+						totalCommentsOnOwnReviews++;
+					}
+				}
+			}
+			if (nbReviews > 0) {
+				averageCommentsOnOwnReview = totalCommentsOnOwnReviews / nbReviews;
+			}
+			result += username + "," + nbReviews + "," + nbComments + "," + averageCommentsOnOwnReview + ","
+					+ user.getReputation();
+			result += "<br/>";
+		}
+
 		return result;
 	}
 }

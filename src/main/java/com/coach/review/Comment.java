@@ -15,16 +15,22 @@ import org.springframework.data.annotation.Transient;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
+import com.coach.profile.Profile;
+import com.coach.rankings.Rank;
 import com.coach.reputation.Reputation;
+import com.coach.reputation.ReputationAction;
 import com.coach.review.Review.Sport;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 @Getter
 @Setter
 @ToString(exclude = { "comments", "tempCanvas" })
+@Slf4j
 public class Comment implements HasText, HasReputation {
 
 	private String id;
@@ -36,6 +42,7 @@ public class Comment implements HasText, HasReputation {
 	private List<Comment> comments;
 	private int totalComments, totalHelpfulComments;
 	private Reputation reputation;
+	private List<Voter> noticeableVotes = new ArrayList<>();
 
 	// The canvas that have been drawn for this comment, and that need to be
 	// added to the review
@@ -104,9 +111,14 @@ public class Comment implements HasText, HasReputation {
 		}
 	}
 
-	public void getAllAuthors(List<String> allAuthors) {
+	public void getAllAuthors(Set<String> allAuthors) {
 		if (!StringUtils.isNullOrEmpty(authorId) && !allAuthors.contains(authorId)) {
 			allAuthors.add(authorId);
+		}
+		if (getReputation() != null) {
+			for (ReputationAction action : getReputation().getUserIds().keySet()) {
+				allAuthors.addAll(getReputation().getUserIds().get(action));
+			}
 		}
 
 		if (comments != null) {
@@ -116,16 +128,21 @@ public class Comment implements HasText, HasReputation {
 		}
 	}
 
-	public void normalizeUsers(Sport sport, Map<String, User> userMap) {
+	public void normalizeUsers(Sport sport, Map<String, User> userMap, Map<String, Profile> profileMap) {
 		User author = userMap.get(authorId);
 		if (author != null) {
 			authorReputation = author.getReputation(sport);
-			authorFrame = author.getFrame();
+			// authorFrame = author.getFrame();
+		}
+
+		Profile authorProfile = profileMap.get(authorId);
+		if (authorProfile != null) {
+			authorFrame = authorProfile.getFlair(sport, author.getFrame());
 		}
 
 		if (comments != null) {
 			for (Comment comment : comments) {
-				comment.normalizeUsers(sport, userMap);
+				comment.normalizeUsers(sport, userMap, profileMap);
 			}
 		}
 	}
@@ -190,5 +207,69 @@ public class Comment implements HasText, HasReputation {
 			reputation = new Reputation();
 		}
 		reputation.setHelpful(helpful);
+	}
+
+	public void highlightNoticeableVotes(final Sport sport, final Map<String, User> userMap,
+			final Map<String, Profile> profileMap) {
+		noticeableVotes = new ArrayList<>();
+
+		List<String> upvotes = reputation.getUserIds().get(ReputationAction.Upvote);
+
+		if (upvotes == null || upvotes.isEmpty()) { return; }
+
+		// log.debug("upvotes " + upvotes);
+		log.debug("profilemap " + profileMap);
+		// Create a list with all the users who voted
+		List<Voter> upvoters = new ArrayList<>();
+		for (String userId : upvotes) {
+			if (!userId.equals(authorId)) {
+				Voter voter = new Voter();
+				voter.username = userMap.get(userId).getUsername();
+				voter.userId = userId;
+				voter.score = buildScore(sport, voter, userMap.get(voter.userId), profileMap.get(voter.userId));
+				upvoters.add(voter);
+			}
+		}
+		log.debug("upvoters " + upvoters);
+
+		// Order the list based on rank + reputation
+		Collections.sort(upvoters, new Comparator<Voter>() {
+			@Override
+			public int compare(Voter o1, Voter o2) {
+				return (int) Math.signum(o2.score - o1.score);
+
+			}
+		});
+		// log.debug("sorted " + upvoters);
+
+		for (int i = 0; i < Math.min(upvoters.size(), 2); i++) {
+			noticeableVotes.add(upvoters.get(i));
+		}
+		log.debug("noticeable " + noticeableVotes);
+
+	}
+
+	private float buildScore(Sport sport, Voter o1, User u1, Profile p1) {
+		float score = 0;
+
+		if (p1.getRankings() != null && p1.getRankings().getRankings() != null
+				&& p1.getRankings().getRankings().get("hearthstone") != null
+				&& p1.getRankings().getRankings().get("hearthstone").get("ranked") != null) {
+			log.debug("Computing score for " + p1);
+			Rank rank = p1.getRankings().getRankings().get("hearthstone").get("ranked");
+			o1.rank = rank.getKey();
+			score += (25 - rank.getPriorityOrder()) * 20;
+		}
+		score += u1.getReputation(sport);
+		o1.reputation = u1.getReputation(sport);
+
+		return score;
+	}
+
+	@Data
+	public static class Voter {
+		String userId, username, rank;
+		int reputation;
+		float score;
 	}
 }

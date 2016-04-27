@@ -90,8 +90,15 @@
 	margin-bottom: 10px;
 }
 
+author-frame {
+	display: inline-block;
+}
 
-
+.comment-subheader {
+	font-size: 0.8em;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
 
 
 @media screen and (max-width: 1400px) {

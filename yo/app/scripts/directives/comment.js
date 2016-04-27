@@ -20,7 +20,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				prepareCanvasForUpload: '=',
 				clearTemporaryCanvas: '=',
 				plugins: '=',
-				config: '='
+				config: '=',
+				sport: '='
 			},
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {

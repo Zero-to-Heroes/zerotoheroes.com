@@ -5,7 +5,7 @@ var app = angular.module('app');
 
 app.directive('authorName', ['$routeParams', function($routeParams) {
 	return {
-		restrict: 'A',
+		restrict: 'AE',
 		replace: true,
 		templateUrl: 'templates/authorName.html',
 		scope: {

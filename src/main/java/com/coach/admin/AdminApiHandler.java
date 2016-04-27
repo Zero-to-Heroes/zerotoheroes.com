@@ -2,6 +2,7 @@ package com.coach.admin;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.coach.core.security.User;
+import com.coach.profile.Profile;
+import com.coach.profile.ProfileService;
+import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.sport.SportRepository;
@@ -27,6 +32,9 @@ public class AdminApiHandler {
 	UserRepository userRepository;
 
 	@Autowired
+	ProfileService profileService;
+
+	@Autowired
 	ReviewRepository reviewRepository;
 
 	@Autowired
@@ -38,17 +46,24 @@ public class AdminApiHandler {
 	@RequestMapping(value = "/updateAllReviews", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<Review> updateAllReviews() {
 		List<Review> reviews = reviewRepository.findAll();
+
 		for (Review review : reviews) {
-			if (review.getSport().getKey().toLowerCase().equals("hearthstone")) {
-				if ("arena-draft".equals(review.getMediaType())) {
-					review.setReviewType("arena-draft");
-				}
-				else {
-					review.setReviewType("game");
+			if (StringUtils.isNotEmpty(review.getAuthorId())) {
+				Profile profile = profileService.getProfile(review.getAuthorId());
+				User user = userRepository.findById(review.getAuthorId());
+				review.setAuthorFrame(profile.getFlair(review.getSport(), user.getFrame()));
+			}
+
+			for (Comment comment : review.getComments()) {
+				if (StringUtils.isNotEmpty(comment.getAuthorId())) {
+					Profile profile = profileService.getProfile(comment.getAuthorId());
+					User user = userRepository.findById(comment.getAuthorId());
+					comment.setAuthorFrame(profile.getFlair(review.getSport(), user.getFrame()));
 				}
 			}
 		}
 		reviewRepository.save(reviews);
+		log.debug("Reviews updated");
 
 		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);
 	}

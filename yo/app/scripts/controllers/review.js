@@ -3,6 +3,8 @@
 angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 
 	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig) { 
 
+		$scope.debugTimestamp = Date.now()
+		$log.debug('init review controller at ', $scope.debugTimestamp)
 		$scope.API = null;
 		$scope.API2 = null;
 		$scope.sources = null;
@@ -45,6 +47,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.initReview = function() {
 			//$log.debug('initializing review');
+			$log.debug('Loding review at ', (Date.now() - $scope.debugTimestamp))
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 
@@ -87,6 +90,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.pluginsReady = false;
 					$scope.mediaType = data.mediaType
 					$log.debug('loaded review', data)
+					$log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
 					if (data.replay || (data.mediaType && data.mediaType != 'video')) {
 						$scope.externalPlayer = true;
 						// $timeout(function() {
@@ -96,6 +100,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						// $log.debug('Replay URL: ', replayUrl);
 						$.get(replayUrl, function(replayData) {
 							data.replayXml = replayData;
+							$log.debug('external replay retrieved at ', (Date.now() - $scope.debugTimestamp))
 
 							// Init the external player
 							// TODO: use an event system
@@ -129,6 +134,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.sources2 = []
 
 					$scope.$watch('pluginsReady', function (newVal, oldVal) {
+						$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
 						// $log.debug('pluginsReady', newVal, oldVal);
 						if (newVal) {
 							$scope.review = data
@@ -627,6 +633,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.review.editing = false;
 			$scope.review.processed = true;
 			$scope.clearTemporaryCanvas();
+			$log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
 		}
 
 		$scope.insertModel = function(model, newValue) {

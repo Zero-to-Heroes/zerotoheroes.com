@@ -8,7 +8,7 @@
 		<div class="comment-header">
 			<span class="author-information">
 				<span class="comment-author" ng-hide="comment.authorId">{{comment.author}}</span>
-				<a author-name class="comment-author" entity="comment" ng-show="comment.authorId"></a>
+				<author-name class="comment-author" entity="comment" ng-show="comment.authorId"></author-name>
 				<span bs-tooltip data-title="{{comment.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="comment.authorId">{{comment.authorReputation ? comment.authorReputation : 0}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
 			</span>
 
@@ -20,6 +20,9 @@
 			<span ng-show="User.getName() == review.author && review.authorId"> - </span>
 			<a ng-click="toggleHelpful(comment)" class="validated" ng-show="comment.helpful"><span class="glyphicon glyphicon-ok"></span> {{ 'global.review.comment.helpedAuthor' | translate:'{name: review.author}' }} </a>
 			<a ng-click="toggleHelpful(comment)" class="link-minor" ng-show="!comment.helpful && User.getName() == review.author && review.authorId"><span class="glyphicon glyphicon-ok"></span> {{ 'global.review.comment.helpedMe' | translate }}</a>
+		</div>
+		<div class="comment-subheader">
+			<upvoted-by sport="sport" entity="comment"></upvoted-by>
 		</div>
 		<div class="comment-body">
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">

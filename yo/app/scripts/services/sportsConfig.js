@@ -181,18 +181,6 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 			var version = pluginObj.version ? '?' + pluginObj.version : '';
 			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js' + version).then(function() {
 				plugins.push(pluginObj)
-				// $log.debug('loaded plugin', pluginObj, window[plugin])
-				// Load dependencies
-				// if (pluginObj.dependencies) {
-				// 	pluginObj.dependencies.forEach(function(dep) {
-				// 		angularLoad.loadScript('/plugins/' + plugin + '/' + dep).then(function() {
-				// 			plugins.push(dep);
-				// 		}).catch(function() {
-				// 			plugins.push(undefined);
-				// 			$log.error('could not load dependency', dep);
-				// 		});
-				// 	})
-				// }
 			}).catch(function() {
 				plugins.push(undefined);
 				$log.error('could not load plugin', plugin );

@@ -427,7 +427,10 @@
 				"missTagLink": "Do you miss a tag?",
 				"helpedAuthor": "Helped {{name}}",
 				"helpedMe": "Mark as helpful to me",
-				"replyButton": "Reply"
+				"replyButton": "Reply",
+				"upvotedBy": "Upvoted by",
+				"otherVotes": "and {{number}} others",
+				"otherVote": "and one other"
 			},
 			"askProButton": "Ask a Pro",
 			"askProTooltip": "Get professional advice on your review"

@@ -3,8 +3,6 @@ package com.coach.reputation;
 import java.io.IOException;
 import java.util.Collection;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
@@ -23,7 +21,10 @@ import com.coach.core.security.UserAuthority;
 import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import com.coach.review.ReviewService;
 import com.coach.user.UserRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/reputation")
@@ -31,6 +32,9 @@ import com.coach.user.UserRepository;
 public class ReputationApiHandler {
 	@Autowired
 	ReviewRepository reviewRepo;
+
+	@Autowired
+	ReviewService reviewService;
 
 	@Autowired
 	UserRepository userRepo;
@@ -53,8 +57,8 @@ public class ReputationApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Comment>(
-				(Comment) null, HttpStatus.UNAUTHORIZED); }
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(
+				authorities)) { return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED); }
 		User user = userRepo.findByUsername(currentUser);
 		reputationUpdater.updateReputationAfterAction(review.getSport(), comment.getReputation(), action,
 				comment.getAuthorId(), user);
@@ -62,7 +66,7 @@ public class ReputationApiHandler {
 		// might be nice to update only the reputation, I think I read this is
 		// doable
 		log.debug("Comment updated " + comment);
-		mongoTemplate.save(review);
+		reviewService.updateAsync(review);
 		comment.prepareForDisplay(user.getId());
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}
@@ -78,14 +82,14 @@ public class ReputationApiHandler {
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// need to be logged
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Review>(
-				(Review) null, HttpStatus.UNAUTHORIZED); }
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(
+				authorities)) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
 		User user = userRepo.findByUsername(currentUser);
 		reputationUpdater.updateReputationAfterAction(review.getSport(), review.getReputation(), action,
 				review.getAuthorId(), user);
 		// might be nice to update only the reputation, I think I read this is
 		// doable
-		mongoTemplate.save(review);
+		reviewService.updateAsync(review);
 		review.prepareForDisplay(user.getId());
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}

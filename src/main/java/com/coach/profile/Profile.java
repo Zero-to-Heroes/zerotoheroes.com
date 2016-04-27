@@ -6,15 +6,18 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import com.coach.notifications.Notifications;
 import com.coach.preferences.Preferences;
 import com.coach.rankings.Rankings;
+import com.coach.review.Review.Sport;
 import com.coach.subscription.Subscriptions;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 // Should have done this from the start, but distinguishing now
 // between the User (security) and the Profile (business data)
 @Setter
 @Getter
+@ToString
 public class Profile {
 
 	@Id
@@ -26,4 +29,16 @@ public class Profile {
 	private Preferences preferences = new Preferences();
 	private Subscriptions subscriptions = new Subscriptions();
 	private Rankings rankings = new Rankings();
+
+	// Some hard-coding for now, later on will be easier when user will be able
+	// to set their own flair
+	public String getFlair(Sport sport, String frame) {
+		if (sport == null) { return frame; }
+
+		if (rankings.getRankings().get(sport.getKey().toLowerCase()) == null) { return frame; }
+
+		if (rankings.getRankings().get(sport.getKey().toLowerCase()).get("ranked") == null) { return frame; }
+
+		return rankings.getRankings().get(sport.getKey().toLowerCase()).get("ranked").getKey();
+	}
 }

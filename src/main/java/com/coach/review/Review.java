@@ -18,6 +18,7 @@ import org.springframework.data.mongodb.core.index.TextIndexed;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
+import com.coach.profile.Profile;
 import com.coach.reputation.Reputation;
 import com.coach.subscription.HasSubscribers;
 import com.coach.tag.Tag;
@@ -221,8 +222,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		viewCount++;
 	}
 
-	public List<String> getAllAuthors() {
-		List<String> allAuthors = new ArrayList<>();
+	public Set<String> getAllAuthors() {
+		Set<String> allAuthors = new HashSet<>();
 		if (!StringUtils.isNullOrEmpty(authorId)) {
 			allAuthors.add(authorId);
 		}
@@ -236,16 +237,21 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		return allAuthors;
 	}
 
-	public void normalizeUsers(Map<String, User> userMap) {
+	public void normalizeUsers(Map<String, User> userMap, Map<String, Profile> profileMap) {
 		User author = userMap.get(authorId);
 		if (author != null) {
 			authorReputation = author.getReputation(sport);
-			authorFrame = author.getFrame();
+			// authorFrame = author.getFrame();
+		}
+
+		Profile authorProfile = profileMap.get(authorId);
+		if (authorProfile != null) {
+			authorFrame = authorProfile.getFlair(sport, author.getFrame());
 		}
 
 		if (comments != null) {
 			for (Comment comment : comments) {
-				comment.normalizeUsers(sport, userMap);
+				comment.normalizeUsers(sport, userMap, profileMap);
 			}
 		}
 	}
@@ -426,5 +432,11 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			sport = Review.Sport.load(strSport);
 		}
 		return sport;
+	}
+
+	public void highlightNoticeableVotes(Map<String, User> userMap, Map<String, Profile> profileMap) {
+		for (Comment comment : getComments()) {
+			comment.highlightNoticeableVotes(sport, userMap, profileMap);
+		}
 	}
 }

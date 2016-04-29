@@ -12,6 +12,11 @@ app.directive('hearthstoneFrame', ['$log',
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
+				$scope.$watch('frame', function(newVal) {
+					if (newVal) {
+						$scope.rank = newVal.split('rank')[1]
+					}
+				})
 			}
 		}
 	}

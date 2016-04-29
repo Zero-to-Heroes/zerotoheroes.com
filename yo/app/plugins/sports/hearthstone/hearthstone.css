@@ -142,7 +142,7 @@
 }
 
 .hearthstone .announcements {
-    margin-bottom: -70px;
+	margin-bottom: -70px;
 }
 
 .hearthstone .announcements a {
@@ -418,40 +418,40 @@
 	}
 	.hearthstone .sport-navigation {
 		background-color: rgba(58, 36, 15, 0.9);
-    	height: calc(100vh - 55px);
-    	top: 63px;
+		height: calc(100vh - 55px);
+		top: 63px;
 	}
 	.hearthstone .sport-navigation:before {
-	    top: -8px;
-	    right: -8px;
-	    bottom: -8px;
-	    left: -8px;
-	    border: 8px solid #dec79b;
-	    border-width: 17px 20px;
+		top: -8px;
+		right: -8px;
+		bottom: -8px;
+		left: -8px;
+		border: 8px solid #dec79b;
+		border-width: 17px 20px;
 		border-image: url(images/border-image.png) 17 20 stretch;
-	    border-left-width: 0;
-	    border-top-width: 0;
-	    border-bottom-width: 0;
+		border-left-width: 0;
+		border-top-width: 0;
+		border-bottom-width: 0;
 	}
 	.hearthstone .sport-navigation li {
-	    border-bottom: 1px solid rgba(249,150,56,0.5);
+		border-bottom: 1px solid rgba(249,150,56,0.5);
 	}
 	.hearthstone .sport-navigation li:hover {
-	    background-color: rgba(117, 115, 114, 0.45);
+		background-color: rgba(117, 115, 114, 0.45);
 	}
 	.hearthstone .sport-navigation li a {
-	    background-color: transparent;
-	    line-height: 66px;
-	    text-shadow: 0 0 10px #000, 0 0 10px #000;
-	    color: #fcd144;
-	    padding: 0 30px;
+		background-color: transparent;
+		line-height: 66px;
+		text-shadow: 0 0 10px #000, 0 0 10px #000;
+		color: #fcd144;
+		padding: 0 30px;
 	}
 	.hearthstone .sport-navigation .active a, .hearthstone .sport-navigation .active a:hover, .hearthstone .sport-navigation .active a:focus {
-	    background-color: rgba(117, 115, 114, 0.45);
-	    color: #fff;
+		background-color: rgba(117, 115, 114, 0.45);
+		color: #fff;
 	}
 	.hearthstone .sport-navigation .big-separator {
-	    border-bottom-width: 3px;	
+		border-bottom-width: 3px;	
 	}
 
 
@@ -631,16 +631,18 @@
 /* =============
 ** Author frame / flair
 ** =============*/
-.hearthstone hearthstone-frame span:before {
+.hearthstone hearthstone-frame .frame:before {
 	content: "";
 	width: 24px;
 	height: 24px;
 	background-size: contain;
-    margin-right: 2px;
-    vertical-align: middle;
-    display: inline-block;
+	margin-right: 2px;
+	vertical-align: middle;
+	display: inline-block;
 }
-
+.hearthstone hearthstone-frame.hidden-frame:before {
+	display: none;
+}
 .hearthstone .upvoted-by hearthstone-frame span::after {
 	content: ",";
 	margin-right: 2px;
@@ -648,101 +650,230 @@
 .hearthstone .upvoted-by .voter:last-of-type hearthstone-frame span::after {
 	content: "";
 }
-
-.hearthstone hearthstone-frame .rank24:before {
+.hearthstone hearthstone-frame .frame.rank24:before {
 	background-image: url(images/ranks/rank24_small.png);
 }
-.hearthstone hearthstone-frame .rank23:before {
+.hearthstone hearthstone-frame .frame.rank23:before {
 	background-image: url(images/ranks/rank23_small.png);
 }
-.hearthstone hearthstone-frame .rank22:before {
+.hearthstone hearthstone-frame .frame.rank22:before {
 	background-image: url(images/ranks/rank22_small.png);
 }
-.hearthstone hearthstone-frame .rank21:before {
+.hearthstone hearthstone-frame .frame.rank21:before {
 	background-image: url(images/ranks/rank21_small.png);
 }
-.hearthstone hearthstone-frame .rank20:before {
+.hearthstone hearthstone-frame .frame.rank20:before {
 	background-image: url(images/ranks/rank20_small.png);
 }
-.hearthstone hearthstone-frame .rank19:before {
+.hearthstone hearthstone-frame .frame.rank19:before {
 	background-image: url(images/ranks/rank19_small.png);
 }
-.hearthstone hearthstone-frame .rank18:before {
+.hearthstone hearthstone-frame .frame.rank18:before {
 	background-image: url(images/ranks/rank18_small.png);
 }
-.hearthstone hearthstone-frame .rank17:before {
+.hearthstone hearthstone-frame .frame.rank17:before {
 	background-image: url(images/ranks/rank17_small.png);
 }
-.hearthstone hearthstone-frame .rank16:before {
+.hearthstone hearthstone-frame .frame.rank16:before {
 	background-image: url(images/ranks/rank16_small.png);
 }
-.hearthstone hearthstone-frame .rank15:before {
+.hearthstone hearthstone-frame .frame.rank15:before {
 	background-image: url(images/ranks/rank15_small.png);
 }
-.hearthstone hearthstone-frame .rank14:before {
+.hearthstone hearthstone-frame .frame.rank14:before {
 	background-image: url(images/ranks/rank14_small.png);
 }
-.hearthstone hearthstone-frame .rank13:before {
+.hearthstone hearthstone-frame .frame.rank13:before {
 	background-image: url(images/ranks/rank13_small.png);
 }
-.hearthstone hearthstone-frame .rank12:before {
+.hearthstone hearthstone-frame .frame.rank12:before {
 	background-image: url(images/ranks/rank12_small.png);
 }
-.hearthstone hearthstone-frame .rank11:before {
+.hearthstone hearthstone-frame .frame.rank11:before {
 	background-image: url(images/ranks/rank11_small.png);
 }
-.hearthstone hearthstone-frame .rank10:before {
+.hearthstone hearthstone-frame .frame.rank10:before {
 	background-image: url(images/ranks/rank10_small.png);
 }
-.hearthstone hearthstone-frame .rank9:before {
+.hearthstone hearthstone-frame .frame.rank9:before {
 	background-image: url(images/ranks/rank9_small.png);
 }
-.hearthstone hearthstone-frame .rank8:before {
+.hearthstone hearthstone-frame .frame.rank8:before {
 	background-image: url(images/ranks/rank8_small.png);
 }
-.hearthstone hearthstone-frame .rank7:before {
+.hearthstone hearthstone-frame .frame.rank7:before {
 	background-image: url(images/ranks/rank7_small.png);
 }
-.hearthstone hearthstone-frame .rank6:before {
+.hearthstone hearthstone-frame .frame.rank6:before {
 	background-image: url(images/ranks/rank6_small.png);
 }
-.hearthstone hearthstone-frame .rank5:before {
+.hearthstone hearthstone-frame .frame.rank5:before {
 	background-image: url(images/ranks/rank5_small.png);
 }
-.hearthstone hearthstone-frame .rank4:before {
+.hearthstone hearthstone-frame .frame.rank4:before {
 	background-image: url(images/ranks/rank4_small.png);
 }
-.hearthstone hearthstone-frame .rank3:before {
+.hearthstone hearthstone-frame .frame.rank3:before {
 	background-image: url(images/ranks/rank3_small.png);
 }
-.hearthstone hearthstone-frame .rank2:before {
+.hearthstone hearthstone-frame .frame.rank2:before {
 	background-image: url(images/ranks/rank2_small.png);
 }
-.hearthstone hearthstone-frame .rank1:before {
+.hearthstone hearthstone-frame .frame.rank1:before {
 	background-image: url(images/ranks/rank1_small.png);
 }
-.hearthstone hearthstone-frame .legend:before {
+.hearthstone hearthstone-frame .frame.legend:before {
 	background-image: url(images/ranks/legend_small.png);
 }
-.hearthstone hearthstone-frame .legend500:before {
+.hearthstone hearthstone-frame .frame.legend500:before {
 	background-image: url(images/ranks/legend_small.png);
 }
-.hearthstone hearthstone-frame .legend100:before {
+.hearthstone hearthstone-frame .frame.legend100:before {
 	background-image: url(images/ranks/legend_small.png);
 }
-.hearthstone hearthstone-frame .legend50:before {
+.hearthstone hearthstone-frame .frame.legend50:before {
 	background-image: url(images/ranks/legend_small.png);
 }
-.hearthstone hearthstone-frame .legend10:before {
+.hearthstone hearthstone-frame .frame.legend10:before {
 	background-image: url(images/ranks/legend_small.png);
 }
-.hearthstone hearthstone-frame .legend5:before {
+.hearthstone hearthstone-frame .frame.legend5:before {
 	background-image: url(images/ranks/legend_small.png);
 }
-.hearthstone hearthstone-frame .legend1:before {
+.hearthstone hearthstone-frame .frame.legend1:before {
 	background-image: url(images/ranks/legend_small.png);
 }
 
+.hearthstone hearthstone-frame.hidden-frame .tooltip {
+	display: none;
+}
+.hearthstone hearthstone-frame .tooltip {
+	margin-left: -20px;
+}
+.hearthstone hearthstone-frame .tooltip-inner {
+	width: 192px;
+	height: 192px;	
+	background: transparent;
+}
+.hearthstone hearthstone-frame .medal {
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+.hearthstone hearthstone-frame .rank_banner {
+	background-image: url(images/ranks/rank_banner.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	position: relative;
+	height: 50%;
+	width: 50%;
+	top: -70px;
+}
+.hearthstone hearthstone-frame .rank_banner span {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	cursor: default;
+	text-shadow: -1px -1px 0 #000, 0px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 0px 1px 0 #000, 1px 1px 0 #000;
+	font-size: 48px;
+	line-height: 2em;
+}
+.hearthstone hearthstone-frame .medal.rank24 {
+	background-image: url(images/ranks/rank24.png);
+}
+.hearthstone hearthstone-frame .medal.rank23 {
+	background-image: url(images/ranks/rank23.png);
+}
+.hearthstone hearthstone-frame .medal.rank22 {
+	background-image: url(images/ranks/rank22.png);
+}
+.hearthstone hearthstone-frame .medal.rank21 {
+	background-image: url(images/ranks/rank21.png);
+}
+.hearthstone hearthstone-frame .medal.rank20 {
+	background-image: url(images/ranks/rank20.png);
+}
+.hearthstone hearthstone-frame .medal.rank19 {
+	background-image: url(images/ranks/rank19.png);
+}
+.hearthstone hearthstone-frame .medal.rank18 {
+	background-image: url(images/ranks/rank18.png);
+}
+.hearthstone hearthstone-frame .medal.rank17 {
+	background-image: url(images/ranks/rank17.png);
+}
+.hearthstone hearthstone-frame .medal.rank16 {
+	background-image: url(images/ranks/rank16.png);
+}
+.hearthstone hearthstone-frame .medal.rank15 {
+	background-image: url(images/ranks/rank15.png);
+}
+.hearthstone hearthstone-frame .medal.rank14 {
+	background-image: url(images/ranks/rank14.png);
+}
+.hearthstone hearthstone-frame .medal.rank13 {
+	background-image: url(images/ranks/rank13.png);
+}
+.hearthstone hearthstone-frame .medal.rank12 {
+	background-image: url(images/ranks/rank12.png);
+}
+.hearthstone hearthstone-frame .medal.rank11 {
+	background-image: url(images/ranks/rank11.png);
+}
+.hearthstone hearthstone-frame .medal.rank10 {
+	background-image: url(images/ranks/rank10.png);
+}
+.hearthstone hearthstone-frame .medal.rank9 {
+	background-image: url(images/ranks/rank9.png);
+}
+.hearthstone hearthstone-frame .medal.rank8 {
+	background-image: url(images/ranks/rank8.png);
+}
+.hearthstone hearthstone-frame .medal.rank7 {
+	background-image: url(images/ranks/rank7.png);
+}
+.hearthstone hearthstone-frame .medal.rank6 {
+	background-image: url(images/ranks/rank6.png);
+}
+.hearthstone hearthstone-frame .medal.rank5 {
+	background-image: url(images/ranks/rank5.png);
+}
+.hearthstone hearthstone-frame .medal.rank4 {
+	background-image: url(images/ranks/rank4.png);
+}
+.hearthstone hearthstone-frame .medal.rank3 {
+	background-image: url(images/ranks/rank3.png);
+}
+.hearthstone hearthstone-frame .medal.rank2 {
+	background-image: url(images/ranks/rank2.png);
+}
+.hearthstone hearthstone-frame .medal.rank1 {
+	background-image: url(images/ranks/rank1.png);
+}
+.hearthstone hearthstone-frame .medal.legend {
+	background-image: url(images/ranks/legend.png);
+}
+.hearthstone hearthstone-frame .medal.legend500 {
+	background-image: url(images/ranks/legend.png);
+}
+.hearthstone hearthstone-frame .medal.legend100 {
+	background-image: url(images/ranks/legend.png);
+}
+.hearthstone hearthstone-frame .medal.legend50 {
+	background-image: url(images/ranks/legend.png);
+}
+.hearthstone hearthstone-frame .medal.legend10 {
+	background-image: url(images/ranks/legend.png);
+}
+.hearthstone hearthstone-frame .medal.legend5 {
+	background-image: url(images/ranks/legend.png);
+}
+.hearthstone hearthstone-frame .medal.legend1 {
+	background-image: url(images/ranks/legend.png);
+}
 
 /* =============
 ** Review upload 
@@ -752,24 +883,24 @@
 	** Participant details
 	** =============*/
 	.hearthstone upload-replay-review {
-	    margin-top: 55px;
-	    display: block;
+		margin-top: 55px;
+		display: block;
 	}
 	.hearthstone upload-replay-review .hearthstone-participants button {
-    	height: 45px;
-    }
+		height: 45px;
+	}
 	.hearthstone upload-replay-review .hearthstone-participants .class-icon {
 		display: inline-block;
-    	vertical-align: middle;
+		vertical-align: middle;
 	}
 	.hearthstone upload-replay-review .hearthstone-participants .caret {
-    	vertical-align: middle;
+		vertical-align: middle;
 	}
 	.hearthstone .upload-page participants-details {
-	    border: 2px solid #A55D2F;
+		border: 2px solid #A55D2F;
 	}
 	.hearthstone .upload-page .hearthstone-participants {
-	    margin-bottom: 0;
+		margin-bottom: 0;
 	}
 
 
@@ -777,9 +908,9 @@
 	** Decklist
 	** =============*/
 	.hearthstone hs-decklist-upload {
-	    display: block;
-	    text-align: left;
-	    margin-bottom: 25px;
+		display: block;
+		text-align: left;
+		margin-bottom: 25px;
 	}
 	.hearthstone hs-decklist-upload input {
 		width: 250px;
@@ -875,9 +1006,9 @@
 	}
 	.hearthstone .video-information .hearthstone-participants {
 		display: inline-block;
-	    margin: 0;
-	    height: auto;
-	    width: auto;
+		margin: 0;
+		height: auto;
+		width: auto;
 	}
 	.hearthstone .video-information .hearthstone-participants .player-details {
 		display: none;
@@ -890,7 +1021,7 @@
 	}
 	.hearthstone .video-information .hearthstone-participants .level-details {
 		padding-left: 0;
-    	width: auto;
+		width: auto;
 	}
 	.hearthstone .video-information .hearthstone-participants tags-input {
 		min-width: 120px;
@@ -900,13 +1031,13 @@
 	** And the decklist
 	** =============*/
 	.hearthstone .video-information .decklist-field {
-	    width: 50%;
-	    display: inline-block;
-	    text-align: right;
-   	 	padding-right: 50px;
+		width: 50%;
+		display: inline-block;
+		text-align: right;
+		padding-right: 50px;
 	}
 	.hearthstone .video-information .decklist-field p {
-	    display: inline-block;
+		display: inline-block;
 	}
 
 
@@ -935,7 +1066,7 @@
 ** =============*/
 
 .hearthstone .coach-page h1 {
-    color: white;
+	color: white;
 }
 
 .hearthstone .coach-page .summary {
@@ -945,7 +1076,7 @@
 .hearthstone .coach-page h1 .link-minor {
 	color: #888;
 	font-weight: normal;
-    font-size: 0.7em;
+	font-size: 0.7em;
 }
 
 

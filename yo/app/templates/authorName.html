@@ -1,6 +1,7 @@
 <span>
 	<span ng-class="{'logged-author': entity.authorId}" class="{{entity.authorStatus}}" ng-hide="entity.authorStatus == 'coach'">
-		<span ng-class="entity.authorFrame" title="{{entity.authorFrame}}">{{entity.author}}</span>
+		<author-frame frame="entity.authorFrame" author="entity.author" sport="sport"></author-frame>
+		<!-- <span ng-class="entity.authorFrame" title="{{entity.authorFrame}}">{{entity.author}}</span> -->
 	</span>
 	<a ng-class="{'logged-author': entity.authorId}" class="{{entity.authorStatus}}" ng-show="entity.authorStatus == 'coach'" href="{{'/coach/' + entity.author + '/' + sport}}" title="{{ 'global.coach.goToPageTooltip' | translate }}">
 		<author-frame frame="entity.authorFrame" author="entity.author" sport="sport"></author-frame>

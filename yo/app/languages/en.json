@@ -70,7 +70,7 @@
 		"upload": {
 			"descriptionPlaceholder": "To make the review more useful to you and more appealing to others (and so get more help), we advise you to review the replay once yourself, and point out the moments you were unsure or how you thought about what you did. It will give others specific points on which to help you, and will let them comment on your thought process as well as your actual decisions",
 			"decklistLabel": "Decklist",
-			"decklistTooltip": "Enter the URL of your deck. Supported providers today are arena drafts created here on Zero to Heroes, drafts from HearthArena, and decks from http://www.hearthpwn.com and www.hearthstone-decks.com",
+			"decklistTooltip": "Enter the URL of your deck. Supported providers today are arena drafts created here on Zero to Heroes, drafts from HearthArena or ArenaDrafts, and decks from HearthPwn and hearthstone-decks",
 			"decklistPlaceholder": "Decklist URL"
 		},
 		"review": {

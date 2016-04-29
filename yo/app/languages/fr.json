@@ -59,7 +59,7 @@
 		"upload": {
 			"descriptionPlaceholder": "Pour tirer le maximum d'une revue et pour la rendre plus attrayante aux autres (et donc recevoir plus facilement de l'aide), nous vous conseillons de faire une première revue vous-même, et de souligner les points sur lesquels vous doutez ou vous avez particulièrement besoin d'aide.",
 			"decklistLabel": "Decklist",
-			"decklistTooltip": "Entrez l'url de votre deck. Nous supportons aujourd'hui les drafts d'arène faits ici sur Zero to Heroes, ceux faits sur HearthArena, et les decks de http://www.hearthpwn.com et www.hearthstone-decks.com",
+			"decklistTooltip": "Entrez l'url de votre deck. Nous supportons aujourd'hui les drafts d'arène faits ici sur Zero to Heroes, ceux faits sur HearthArena et ArenaDrafts, et les decks de HearthPwn et Hearthstone-Decks",
 			"decklistPlaceholder": "Decklist URL"
 		},
 		"review": {

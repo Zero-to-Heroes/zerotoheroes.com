@@ -111,6 +111,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Astral Druid"));
 		hearthstone.add(new Tag("Mill Druid"));
 		hearthstone.add(new Tag("Druid Ramp"));
+		hearthstone.add(new Tag("C'Thun Druid"));
 		hearthstone.add(new Tag("Egg Druid"));
 		hearthstone.add(new Tag("Palasecret"));
 		hearthstone.add(new Tag("Aggro Paladin"));
@@ -130,6 +131,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Priest Control"));
 		hearthstone.add(new Tag("Dragon Priest"));
 		hearthstone.add(new Tag("Oil Rogue"));
+		hearthstone.add(new Tag("C'Thun Priest"));
 		hearthstone.add(new Tag("Malygos Rogue"));
 		hearthstone.add(new Tag("Miracle Rogue"));
 		hearthstone.add(new Tag("Mill Rogue"));
@@ -137,6 +139,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Patron Warrior"));
 		hearthstone.add(new Tag("OTK Warrior"));
 		hearthstone.add(new Tag("Worgen OTK"));
+		hearthstone.add(new Tag("C'Thun Warrior"));
 		// Category
 		hearthstone.add(new Tag("Aggro"));
 		hearthstone.add(new Tag("Midrange"));
@@ -146,6 +149,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("OTK"));
 		hearthstone.add(new Tag("Mech"));
 		hearthstone.add(new Tag("Murloc"));
+		hearthstone.add(new Tag("C'Thun"));
 		hearthstone.add(new Tag("Mirror match"));
 		tags.put(HearthStone, hearthstone);
 

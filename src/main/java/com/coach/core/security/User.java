@@ -62,7 +62,7 @@ public class User implements UserDetails {
 	private String frame;
 	private String preferredLanguage;
 	private UserReputation explodedReputation;
-	private Stats stats;
+	private Stats stats = new Stats();
 	private boolean canEdit;
 	private boolean betaTester;
 

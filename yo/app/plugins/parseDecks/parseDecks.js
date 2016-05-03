@@ -45,16 +45,17 @@ var parseDecks = {
 			var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 			// parseDecks.deck = htmlDeck;
 			// console.log('html deck is ', htmlDeck);
-			var deckNameForDisplay = deck.title;
+			var deckNameForDisplay = deck.title.replace(/'/g, '')
 			parseDecks.decks[deckNameForDisplay] = htmlDeck;
 
-			result = result.replace(match[0], '<a class="deck-link" onclick="parseDecks.toggleDeck(\'' + deckNameForDisplay + '\')" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deckNameForDisplay + '</a>');
+			result = result.replace(match[0], '<a class="deck-link" onclick="parseDecks.toggleDeck(\'' + deckNameForDisplay + '\')" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>');
 		}
 
 		return result
 	},
 
 	toggleDeck: function (deckNameForDisplay) {
+		console.log('toggle deck', deckNameForDisplay)
 		$(".contextual-information .content").addClass('deck');
 		$(".contextual-information .content").html(parseDecks.decks[deckNameForDisplay]);
 		$(".contextual-information").show();
@@ -67,7 +68,7 @@ var parseDecks = {
 		  		placement: 'auto left',
 		  		animation: false,
 		  		title: function(element) {
-		  			console.log('title', $(this));
+		  			// console.log('title', $(this));
 		  			var image = $(this).attr('data-title');
 		  			return '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + image + '\'>';
 		  		}
@@ -99,7 +100,6 @@ var parseDecks = {
 			var cardObject = parseCardsText.getCard(card.name)
 			return cardObject.cost
 		})
-
 
 		var htmlDeck = '<h3 class=\'deck-header\'><a href=\'' + deckUrl + '\' target=\'_blank\'>' + deck.title + '</a></h3>';
 		htmlDeck += '<div class=\'deck-body row\'>';

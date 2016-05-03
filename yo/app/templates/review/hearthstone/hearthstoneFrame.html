@@ -1,1 +1,1 @@
-<span class="frame {{frame}}" title="{{frame}}" data-placement="right" bs-tooltip="tooltip" data-template="templates/review/hearthstone/hearthstoneFramePopup.html">{{author}}</span>
+<span class="{{frame}}" ng-class="{'frame': frame}" title="{{frame}}" data-placement="right" bs-tooltip="tooltip" data-template="{{frame ? 'templates/review/hearthstone/hearthstoneFramePopup.html' : ''}}">{{author}}</span>

@@ -132,7 +132,7 @@ public class DeckParser implements Plugin {
 			for (Object obj : pickedCards) {
 				JSONObject cardObj = (JSONObject) obj;
 				int cardPickIndex = cardObj.getInt("CardPicked");
-				String cardId = cardObj.getString("Card" + cardPickIndex);
+				String cardId = cardObj.getJSONObject("Card" + cardPickIndex + "Info").getString("Id");
 				Card card = null;
 				for (Card c : deck.classCards) {
 					if (c.getName().equals(cardId)) {

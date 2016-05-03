@@ -59,7 +59,7 @@ app.directive('watchAndLearn', ['$log', '$location', 'Api', '$routeParams', '$ti
 				$scope.loadTags()
 
 				$scope.autocompleteTag = function($query) {
-					return TagService.autocompleteTag($query, $scope.allowedTags)
+					return TagService.autocompleteTag($query, $scope.allowedTags, $scope.sport)
 				}
 			}
 		}

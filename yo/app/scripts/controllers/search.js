@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', '$modal', 
-	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, $modal) {
+angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', '$modal', 'TagService',
+	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, $modal, TagService) {
 		$scope.clearFilters = function() {
 			$log.debug('clearing filters', $scope.options)
 			var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
@@ -82,44 +82,16 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 		//===============
 		// Search
 		//===============
-		$scope.loadTags = function() {
-			Api.Tags.query({sport: $scope.sport}, 
-				function(data) {
-					$scope.allowedTags = []
-					data.forEach(function(tag) {
-						if (tag.type != 'skill-level')
-							$scope.allowedTags.push(tag)
-					})
-
-					$scope.allowedTags.forEach(function(tag) {
-						tag.sport = $scope.sport.toLowerCase()
-					})
-				}
-			)
+		$scope.loadTags = function(callback) {
+			$log.debug('loading tags in search.js')
+			TagService.filterOut('skill-level', function(filtered) {
+				$scope.allowedTags = filtered
+			})
 		}
 		$scope.loadTags()
 
 		$scope.autocompleteTag = function($query) {
-			var validTags = $scope.allowedTags.filter(function (el) {
-				// http://sametmax.com/loperateur-not-bitwise-ou-tilde-en-javascript/
-				return ~el.text.toLowerCase().indexOf($query)
-			});
-			return validTags.sort(function(a, b) {
-				var tagA = a.text.toLowerCase()
-				var tagB = b.text.toLowerCase()
-				if (~tagA.indexOf(':')) {
-					if (~tagB.indexOf(':')) {
-						return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
-					}
-					return 1
-				}
-				else {
-					if (~tagB.indexOf(':')) {
-						return -1
-					}
-					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
-				}
-			})
+			return TagService.autocompleteTag($query, $scope.allowedTags, $scope.sport)
 		}
 
 

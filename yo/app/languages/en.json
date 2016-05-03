@@ -580,6 +580,12 @@
 		"hsdecks_support": "Now possible import a decklist from hearthstone-decks.com"
 	},
 	"tags": {
+		"hearthstone": {
+			"CThun Priest": "C'Thun Priest",
+			"CThun Warrior": "C'Thun Warrior",
+			"CThun Druid": "C'Thun Druid",
+			"CThun": "C'Thun"
+		}
 	},
 	"coaches": {
 		"leagueoflegends": {

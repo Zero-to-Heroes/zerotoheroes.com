@@ -618,7 +618,11 @@
 			"Arena": "Arène",
 			"Deck": "Deck",
 			"Mill": "Meule",
-			"Deathrattle": "Râle d'agônie"
+			"Deathrattle": "Râle d'agônie",
+			"CThun Priest": "C'Thun Priest",
+			"CThun Warrior": "C'Thun Warrior",
+			"CThun Druid": "C'Thun Druid",
+			"CThun": "C'Thun"
 		},
 		"heroesofthestorm": {
 			"Map: Infernal Shrines": "Champ de Bataille: Sanctuaires Infernaux",

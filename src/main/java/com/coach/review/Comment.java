@@ -218,7 +218,7 @@ public class Comment implements HasText, HasReputation {
 		if (upvotes == null || upvotes.isEmpty()) { return; }
 
 		// log.debug("upvotes " + upvotes);
-		log.debug("profilemap " + profileMap);
+//		log.debug("profilemap " + profileMap);
 		// Create a list with all the users who voted
 		List<Voter> upvoters = new ArrayList<>();
 		for (String userId : upvotes) {
@@ -230,7 +230,7 @@ public class Comment implements HasText, HasReputation {
 				upvoters.add(voter);
 			}
 		}
-		log.debug("upvoters " + upvoters);
+//		log.debug("upvoters " + upvoters);
 
 		// Order the list based on rank + reputation
 		Collections.sort(upvoters, new Comparator<Voter>() {
@@ -245,7 +245,7 @@ public class Comment implements HasText, HasReputation {
 		for (int i = 0; i < Math.min(upvoters.size(), 2); i++) {
 			noticeableVotes.add(upvoters.get(i));
 		}
-		log.debug("noticeable " + noticeableVotes);
+//		log.debug("noticeable " + noticeableVotes);
 
 	}
 

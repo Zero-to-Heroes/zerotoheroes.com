@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$timeout', '$route', 
-	function($log, $location, Api, $routeParams, $timeout, $route) {
+app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$timeout', '$route', 'TagService',
+	function($log, $location, Api, $routeParams, $timeout, $route, TagService) {
 	return {
 			restrict: 'E',
 			transclude: false,
@@ -170,22 +170,23 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					})
 					return result;
 				}
+
+				//===============
+				// Tags
+				//===============
 				$scope.loadTags = function(callback) {
-					Api.Tags.query({sport: $scope.sport}, 
-						function(data) {
-							$scope.allowedTags = data
-							if (callback)
-								callback()
-							// By default mask the Sequence videos
-							// var sequenceTag = $scope.findAllowedTag('sequence')
-							// if (sequenceTag) {
-							// 	$scope.criteria.unwantedTags.push(sequenceTag)
-							// }
-							// $scope.search()
-						}
-					)
+					$log.debug('loading tags in videosearch.js')
+					TagService.filterOut('undefined', function(filtered) {
+						$scope.allowedTags = filtered
+						if (callback)
+							callback()
+					})
 				}
 				$scope.loadTags()
+
+				$scope.autocompleteTag = function($query) {
+					return TagService.autocompleteTag($query, $scope.allowedTags, $scope.sport)
+				}
 
 				//===============
 				// Result presentation

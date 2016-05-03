@@ -20,7 +20,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 			// Wait until tags are refreshed
 			if (!service.tags) {
 				setTimeout(function() {
-					service.filterOut(string, inputTags)
+					service.filterOut(string, callback, inputTags)
 				}, 50)
 				return
 			}
@@ -33,8 +33,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 			callback(filtered)
 		}
 
-		service.autocompleteTag = function($query, inputTags) {
-			$log.debug('autocompleting', $query, inputTags)
+		service.autocompleteTag = function($query, inputTags, sport) {
 			if (!inputTags)
 				return []
 
@@ -42,7 +41,6 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 				// http://sametmax.com/loperateur-not-bitwise-ou-tilde-en-javascript/
 				return ~el.text.toLowerCase().indexOf($query)
 			})
-			$log.debug('valid tags', validTags)
 
 			var result = validTags.sort(function(a, b) {
 				var tagA = a.text.toLowerCase()
@@ -60,7 +58,12 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
 				}
 			})
-			$log.debug('result', result)
+
+			result.forEach(function(tag) {
+				var translationKey = 'tags.' + sport + '.' + tag.text
+				var translation = $translate.instant(translationKey)
+				tag.text = (translation == translationKey) ? tag.text : translation
+			})
 			return result
 		}
 

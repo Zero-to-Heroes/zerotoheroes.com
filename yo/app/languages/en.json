@@ -466,6 +466,11 @@
 				"finalizeVideoMessage": "Processing your file. It can take up to one minute. Then you'll be able to view your replay in the viewer on the left",
 				"transferCompleted": "Transfer completed. You can now publish your replay"
 			},
+			"fromurl": {
+				"headline": "Upload from URL",
+				"urlPlaceholder": "URL of the page with your game/draft",
+				"urlPlaceholderTooltip": "If you have a draft or a game stored on another site, you can import it on Zero to Heroes by pasting its URL here. Supported providers for now are arenadrafts.com"
+			},
 			"arenadraft": {
 				"review": {
 					"headline": "Add information to your draft"

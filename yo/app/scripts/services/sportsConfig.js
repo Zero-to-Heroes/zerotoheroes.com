@@ -37,7 +37,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 					recommendedVideo: '55e8101be4b051128109112e',
 					isSport: true,
 					allowDoubleSpeed: true,
-					allowedUploads:  ['video', 'replay', 'arenadraft'],
+					allowedUploads:  ['video', 'replay', 'arenadraft', 'fromurl'],
 					homeChoices:  ['watchlearn', 'getadvice', 'helpothers'],
 					supportedExtensions: ['hdtreplay', 'arenatracker'],
 					plugins: {

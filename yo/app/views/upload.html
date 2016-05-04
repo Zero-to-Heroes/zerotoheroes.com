@@ -14,6 +14,9 @@
 	<upload-arena-draft-directive ng-switch-when="arenadraft" video-info="videoInfo" sport="sport" active="state.uploadType == 'arenadraft' && !state.step" ng-show="state.uploadType == 'arenadraft' && !state.step"></upload-arena-draft-directive>
 	<upload-arena-draft-review ng-switch-when="arenadraft" sport="sport" type="state.uploadType" active="state.uploadType == 'arenadraft' && state.step == 'review'" ng-show="state.uploadType == 'arenadraft' && state.step == 'review'"></upload-arena-draft-review>
 
+	<!-- From URL -->
+	<upload-from-url ng-switch-when="fromurl" video-info="videoInfo" sport="sport" active="state.uploadType == 'fromurl'"></upload-from-url>
+
 	<!-- forums -->
 	<upload-directive ng-switch-when="post" ng-show="state.uploadType == 'post' && !state.step"  callback="onUploadComplete(review)" ></upload-directive>
 	

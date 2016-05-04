@@ -398,12 +398,14 @@
 				"title": "Que voulez-vous poster ?",
 				"video": "Vidéo",
 				"videoDescription": "Postez une vidéo de vous en train de jouer",
+				"fromurl": "Site externe",
 				"hearthstone": {
 					"videoDescription": "Postez une vidéo d'une de vos parties. Vous pouvez trouvez de l'aide sur comment faire <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/\" target=\"_blank\">sur notre blog</a>",
 					"replay": "HS Replay",
 					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone\" target=\"_blank\">sur notre blog</a>",
 					"arenadraft": "Draft d'Arène",
-					"arenadraftDescription": "Postez votre draft d'Arène. Tous les détails <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone\" target=\"_blank\">sur notre blog</a>"
+					"arenadraftDescription": "Postez votre draft d'Arène. Tous les détails <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone\" target=\"_blank\">sur notre blog</a>",
+					"fromurlDescription": "Vous avez déjà une partie ou un draft stocké quelque part ? Copiez simplement son URL pour l'importer"
 				}
 			},
 			"replay": {
@@ -422,6 +424,12 @@
 				"dontCloseWindowMessage": "Votre replay est en train d'être mis en ligne sur nos serveurs. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
 				"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et vous pourrez ensuite le voir dans le lecteur à gauche",
 				"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier votre replay"
+			},
+			"fromurl": {
+				"headline": "Import par URL",
+				"urlPlaceholder": "URL de la page avec votre game/draft",
+				"urlPlaceholderTooltip": "Si vous avez un draft ou une game stocké sur un autre site, vous pouvez l'importer dans Zero to Heroes en copiant son URL ici. Nous supportons pour l'instant l'import depuis arenadrafts.com",
+				"noUrl": "Veuillez fournir une URL"
 			},
 			"arenadraft": {
 				"review": {

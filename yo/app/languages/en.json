@@ -440,12 +440,14 @@
 				"title": "What do you want to upload?",
 				"video": "Video",
 				"videoDescription": "Post a video of yourself playing",
+				"fromurl": "External site",
 				"hearthstone": {
 					"videoDescription": "Post a video of one of your games. You can find help on how to record HS games <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/\" target=\"_blank\">one our blog</a>",
 					"replay": "HS Replay",
 					"replayDescription": "Post a replay file. You can find help on how to get one <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc\" target=\"_blank\">on our blog</a>",
 					"arenadraft": "Arena draft",
-					"arenadraftDescription": "Upload your Arena draft. Full details <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc\" target=\"_blank\">on our blog</a>"
+					"arenadraftDescription": "Upload your Arena draft. Full details <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc\" target=\"_blank\">on our blog</a>",
+					"fromurlDescription": "You already have a game or draft stored elsewhere? Just copy the URL to import the data"
 				}
 			},
 			"replay": {
@@ -469,7 +471,8 @@
 			"fromurl": {
 				"headline": "Upload from URL",
 				"urlPlaceholder": "URL of the page with your game/draft",
-				"urlPlaceholderTooltip": "If you have a draft or a game stored on another site, you can import it on Zero to Heroes by pasting its URL here. Supported providers for now are arenadrafts.com"
+				"urlPlaceholderTooltip": "If you have a draft or a game stored on another site, you can import it on Zero to Heroes by pasting its URL here. As of today, we support importing from arenadrafts.com",
+				"noUrl": "Please provide a URL"
 			},
 			"arenadraft": {
 				"review": {

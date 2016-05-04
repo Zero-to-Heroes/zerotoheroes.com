@@ -54,11 +54,12 @@
 .upload-choice .upload-type .video:before {
 	content: "\e072";
 }
-
 .upload-choice .upload-type .replay:before {
 	content: "\e211";
 }
-
 .upload-choice .upload-type .arenadraft:before {
     content: "\e185";
+}
+.upload-choice .upload-type .fromurl:before {
+    content: "\e135";
 }

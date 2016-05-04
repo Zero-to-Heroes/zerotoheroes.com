@@ -447,6 +447,9 @@ public class ReviewApiHandler {
 			review.setAuthor(inputReview.getAuthor());
 		}
 
+		if (review.getAuthorId() == null) {
+			review.setAuthor(inputReview.getAuthor());
+		}
 		review.setText(inputReview.getText());
 		review.setPlugins(inputReview.getPlugins());
 		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());

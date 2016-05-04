@@ -143,6 +143,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	public void setSport(Sport sport) {
 		this.sport = sport; // StringUtils.trim(sport);
+		strSport = sport == null ? null : sport.getKey().toLowerCase();
 	}
 
 	public void setCreationDate(Date creationDate) {

@@ -1,3 +1,5 @@
 .upload-from-url input {
 	width: 350px;
+	height: 34px;
+    padding: 6px 12px;
 }

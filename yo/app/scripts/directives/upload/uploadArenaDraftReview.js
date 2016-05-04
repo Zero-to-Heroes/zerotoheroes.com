@@ -33,7 +33,14 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 				// Init review data
 				//===============
 				$scope.initReviewData = function() {
-					if (MediaUploader.videoInfo) {
+					if (MediaUploader.review) {
+						$scope.review = MediaUploader.review
+						MediaUploader.review = undefined
+						$scope.review.transcodingDone = true
+						$scope.uploader.videoInfo.upload.postProcessed = true
+						$scope.retrieveCompletionStatus()
+					}
+					else if (MediaUploader.videoInfo) {
 						var file = MediaUploader.videoInfo.file
 
 						var indexOfLastSpace = file.name.lastIndexOf(' ')

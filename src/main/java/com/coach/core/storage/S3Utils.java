@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.AccessControlList;
@@ -62,6 +63,10 @@ public class S3Utils {
 	}
 
 	public void putToS3(String text, String fileName, String type) throws IOException {
+		putToS3(text, fileName, type, null);
+	}
+
+	public void putToS3(String text, String fileName, String type, ProgressListener listener) throws IOException {
 
 		byte[] textAsBytes = text.getBytes("UTF-8");
 		InputStream contentAsStream = new ByteArrayInputStream(textAsBytes);
@@ -73,7 +78,8 @@ public class S3Utils {
 		AccessControlList acl = new AccessControlList();
 		acl.grantPermission(GroupGrantee.AllUsers, Permission.Read);
 
-		s3.putObject(new PutObjectRequest(outputBucket, fileName, contentAsStream, metaData)
-				.withCannedAcl(CannedAccessControlList.PublicRead));
+		PutObjectRequest request = new PutObjectRequest(outputBucket, fileName, contentAsStream, metaData);
+		request.setGeneralProgressListener(listener);
+		s3.putObject(request.withCannedAcl(CannedAccessControlList.PublicRead));
 	}
 }

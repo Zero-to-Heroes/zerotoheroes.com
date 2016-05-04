@@ -9,10 +9,9 @@
 
     <!-- Let's go! -->
     <div class="upload-button">
-        <button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="!url || !User.isLoggedIn()"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
+        <button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="!url"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
     </div>
 
     <!-- error messages -->
     <div translate="global.upload.fromurl.noUrl" ng-show="!url"></div>
-    <div translate="global.upload.fromurl.noUser" ng-show="url && !User.isLoggedIn()"></div>
 </div>

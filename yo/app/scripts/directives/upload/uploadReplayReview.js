@@ -35,19 +35,25 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				// Init review data
 				//===============
 				$scope.initReviewData = function() {
-					if (MediaUploader.videoInfo) {
+					if (MediaUploader.review) {
+						$scope.review = MediaUploader.review
+						MediaUploader.review = undefined
+						$scope.review.transcodingDone = true
+						$scope.uploader.videoInfo.upload.postProcessed = true
+					}
+					else if (MediaUploader.videoInfo) {
 						var file = MediaUploader.videoInfo.file
 
 						var indexOfLastSpace = file.name.lastIndexOf(' ')
 						var indexOfLastDot = file.name.lastIndexOf('.')
-
 						$scope.review.fileType = file.type || file.name.slice(indexOfLastDot + 1)
-
+		
 						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKey
 
 						MediaUploader.addCallback('video-upload-complete', $scope.videoUploadCallback)
 					}
 				}
+
 				$scope.$watch('active', function(newVal) {
 					if (newVal && !$scope.review.title) {
 						$log.debug('reinit', newVal, $scope.review)

@@ -96,7 +96,8 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20150729</version>
+			<!--  Need to keep an older version for java 7 compatibility -->
+			<version>20140107</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>

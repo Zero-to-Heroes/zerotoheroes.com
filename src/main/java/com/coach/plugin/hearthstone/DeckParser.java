@@ -119,8 +119,8 @@ public class DeckParser implements Plugin {
 
 			int numberOfWins = 0;
 			JSONArray matches = draft.getJSONArray("Matches");
-			for (Object obj : matches) {
-				if (((JSONObject) obj).getBoolean("Win")) {
+			for (int i = 0; i < matches.length(); i++) {
+				if (matches.getJSONObject(i).getBoolean("Win")) {
 					numberOfWins++;
 				}
 			}
@@ -129,8 +129,8 @@ public class DeckParser implements Plugin {
 			deck.title = "ArenaDrafts - " + draft.getString("Hero") + " - " + numberOfWins + " wins";
 			JSONArray pickedCards = draft.getJSONArray("Picks");
 
-			for (Object obj : pickedCards) {
-				JSONObject cardObj = (JSONObject) obj;
+			for (int i = 0; i < pickedCards.length(); i++) {
+				JSONObject cardObj = pickedCards.getJSONObject(i);
 				int cardPickIndex = cardObj.getInt("CardPicked");
 				String cardId = cardObj.getJSONObject("Card" + cardPickIndex + "Info").getString("Id");
 				Card card = null;
@@ -177,7 +177,8 @@ public class DeckParser implements Plugin {
 			deck.title = review.getTitle();
 			JSONArray pickedCards = draft.getJSONArray("pickedcards");
 
-			for (Object cardId : pickedCards) {
+			for (int i = 0; i < pickedCards.length(); i++) {
+				String cardId = pickedCards.getString(i);
 				Card card = null;
 				for (Card c : deck.classCards) {
 					if (c.getName().equals(cardId)) {
@@ -187,7 +188,7 @@ public class DeckParser implements Plugin {
 					}
 				}
 				if (card == null) {
-					card = new Card((String) cardId, "1");
+					card = new Card(cardId, "1");
 					deck.classCards.add(card);
 				}
 			}

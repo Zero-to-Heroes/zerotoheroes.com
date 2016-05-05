@@ -102,8 +102,8 @@ public class ArenaDrafts implements IntegrationPlugin {
 
 		int numberOfWins = 0;
 		JSONArray matches = draft.getJSONArray("Matches");
-		for (Object obj : matches) {
-			if (((JSONObject) obj).getBoolean("Win")) {
+		for (int i = 0; i < matches.length(); i++) {
+			if (matches.getJSONObject(i).getBoolean("Win")) {
 				numberOfWins++;
 			}
 		}
@@ -113,8 +113,8 @@ public class ArenaDrafts implements IntegrationPlugin {
 		result.pickedhero = draft.getString("Hero");
 
 		JSONArray pickedCards = draft.getJSONArray("Picks");
-		for (Object obj : pickedCards) {
-			JSONObject cardObj = (JSONObject) obj;
+		for (int i = 0; i < pickedCards.length(); i++) {
+			JSONObject cardObj = pickedCards.getJSONObject(i);
 
 			Pick pick = new Pick();
 			pick.Item1 = cardObj.getJSONObject("Card1Info").getString("Id");

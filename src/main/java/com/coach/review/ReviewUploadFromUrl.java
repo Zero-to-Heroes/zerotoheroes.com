@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.amazonaws.util.StringUtils;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
 import com.coach.plugin.IntegrationPlugin;
@@ -59,6 +60,9 @@ public class ReviewUploadFromUrl {
 	@Autowired
 	SubscriptionManager subscriptionManager;
 
+	@Autowired
+	SlackNotifier slackNotifier;
+
 	@RequestMapping(value = "/{sport}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Review> importFromUrl(@PathVariable("sport") final String sport,
 			@RequestBody UrlInput url) throws IOException {
@@ -90,6 +94,10 @@ public class ReviewUploadFromUrl {
 
 		// Switch depending on the url integration
 		parseIntegrations(review, url.getUrl());
+
+		if (review.getMediaType() == null) {
+			slackNotifier.notifyUnsupportedUrlImport(url, userRepo.findByUsername(currentUser));
+		}
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());

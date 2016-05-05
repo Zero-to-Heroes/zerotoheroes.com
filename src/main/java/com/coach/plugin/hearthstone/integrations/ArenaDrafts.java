@@ -70,6 +70,8 @@ public class ArenaDrafts implements IntegrationPlugin {
 		String stringDraft = buildDraft(draftUrl);
 		Draft result = buildDraftObject(review, stringDraft);
 		String strResult = new ObjectMapper().writeValueAsString(result);
+		// Flag the review to show that we are handling it
+		review.setMediaType("arena-draft");
 		log.debug("strResult " + strResult);
 
 		// Then upload the file

@@ -14,6 +14,7 @@ import com.coach.core.security.User;
 import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewSearchCriteria;
+import com.coach.review.UrlInput;
 import com.coach.sequence.Sequence;
 import com.coach.subscription.HasSubscribers;
 import com.coach.subscription.SavedSearchSubscription;
@@ -449,6 +450,34 @@ public class SlackNotifier {
 					attach.setFallback("placeholder fallback");
 					message.addAttachments(attach);
 				}
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
+	public void notifyUnsupportedUrlImport(final UrlInput url, final User user) {
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.info("Unsupported url import " + url);
+			return;
+		}
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws Exception {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackMessage message = new SlackMessage();
+				message.setText("Unsupported URL import " + url);
+
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("warning");
+				attach.setText("User " + user.getUsername() + " (" + user.getEmail()
+						+ ") tried to import a game/draft from " + url);
+				attach.setFallback("placeholder fallback");
+				message.addAttachments(attach);
 
 				api.call(message);
 				return null;

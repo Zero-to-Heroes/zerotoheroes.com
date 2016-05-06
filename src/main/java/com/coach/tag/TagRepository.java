@@ -129,6 +129,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Malygos Shaman"));
 		hearthstone.add(new Tag("Reno Shaman"));
 		hearthstone.add(new Tag("Midrange Shaman"));
+		hearthstone.add(new Tag("Bloodlust Shaman"));
 		hearthstone.add(new Tag("Priest Control"));
 		hearthstone.add(new Tag("Dragon Priest"));
 		hearthstone.add(new Tag("Oil Rogue"));

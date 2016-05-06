@@ -57,6 +57,9 @@ public class DeckParser implements Plugin {
 	private static final String ICYVEINS_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.icy-veins\\.com\\/hearthstone\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
 	private static final String ICYVEINS_DECK_HOST_URL = "http://www.icy-veins.com/hearthstone/";
 
+	private static final String MANACRYSTALS_DECK_ID_REGEX = "\\[?(https:\\/\\/manacrystals\\.com\\/deck_guides\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
+	private static final String MANACRYSTALS_DECK_HOST_URL = "https://manacrystals.com/deck_guides/";
+
 	@Autowired
 	ReviewRepository repo;
 
@@ -92,6 +95,62 @@ public class DeckParser implements Plugin {
 		parseArenaDraftsDeck(pluginData, initialText);
 		parseHsTopDecksDeck(pluginData, initialText);
 		parseIcyVeinsDeck(pluginData, initialText);
+		parseManaCrystalsDeck(pluginData, initialText);
+	}
+
+	private void parseManaCrystalsDeck(Map<String, String> pluginData, String initialText) throws IOException {
+		Pattern pattern = Pattern.compile(MANACRYSTALS_DECK_ID_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			String deckId = matcher.group(2);
+
+			// Don't override existing decks (performance)
+			// if (pluginData.get(deckId) != null) {
+			// continue;
+			// }
+
+			String deckUrl = MANACRYSTALS_DECK_HOST_URL + deckId;
+			log.debug("Trying to scrape deck data for deck " + deckUrl);
+
+			Document doc = Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8", MANACRYSTALS_DECK_HOST_URL);
+
+			Deck deck = new Deck();
+			deck.title = doc.select(".guide article .decklist-meta-data").get(0).select("h2 a").text();
+
+			Elements classCards = doc.select(".guide article .decklist-meta-data").get(0).select(".cards").get(0)
+					.select("li");
+			Elements neutralCards = doc.select(".guide article .decklist-meta-data").get(0).select(".cards").get(1)
+					.select("li");
+
+			for (Element element : classCards) {
+				// log.debug("Parsing class card " + element);
+				// Elements qtyElement = element.text();
+				Elements qty = element.select(".quantity");
+				// log.debug("\tQty " + qty);
+				Elements cardElement = element.select(".card-name");
+				// log.debug("\tCard " + cardElement);
+				Card card = new Card(cardElement.text().trim(), qty.text().trim());
+				// log.debug("\tBuilt card " + card);
+				deck.classCards.add(card);
+			}
+
+			for (Element element : neutralCards) {
+				// log.debug("Parsing class card " + element);
+				// Elements qtyElement = element.text();
+				Elements qty = element.select(".quantity");
+				// log.debug("\tQty " + qty);
+				Elements cardElement = element.select(".card-name");
+				// log.debug("\tCard " + cardElement);
+				Card card = new Card(cardElement.text().trim(), qty.text().trim());
+				// log.debug("\tBuilt card " + card);
+				deck.neutralCards.add(card);
+			}
+
+			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
+
+			log.debug("jsonDeck" + jsonDeck);
+			pluginData.put(deckId, jsonDeck);
+		}
 	}
 
 	private void parseIcyVeinsDeck(Map<String, String> pluginData, String initialText) throws IOException {
@@ -139,7 +198,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.text().trim(), qty.trim());
 				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
+				deck.neutralCards.add(card);
 			}
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
@@ -192,7 +251,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.text().trim(), qtyElement.text().trim());
 				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
+				deck.neutralCards.add(card);
 			}
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);

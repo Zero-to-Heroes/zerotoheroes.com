@@ -6,6 +6,7 @@ var parseDecks = {
 	// zthDecksRegex: /\[?(http:\/.*localhost.*\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
 	hearthArenaDecksRegex: /\[?(http:\/\/www\.heartharena\.com\/arena-run\/)([\da-zA-Z]+)\]?/gm,
 	arenaDraftsDecksRegex: /\[?(http:\/\/(www\.)?arenadrafts\.com\/Arena\/View\/)([\da-zA-Z\-]+)\]?/gm,
+	hsTopDecksDecksRegex: /\[?(http:\/\/www\.hearthstonetopdecks\.com\/decks\/)([\da-zA-Z\-]+)\]?/gm,
 	
 	decks: {},
 
@@ -17,6 +18,7 @@ var parseDecks = {
 		result = parseDecks.parse(review, result, text, parseDecks.zthDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.hearthArenaDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.arenaDraftsDecksRegex, 3)
+		result = parseDecks.parse(review, result, text, parseDecks.hsTopDecksDecksRegex)
 
 		return result;
 	},

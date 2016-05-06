@@ -51,6 +51,9 @@ public class DeckParser implements Plugin {
 	private static final String ARENADRAFTS_DECK_ID_REGEX = "\\[?(http:\\/\\/(www\\.)?arenadrafts\\.com\\/Arena\\/View\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
 	private static final String ARENADRAFTS_DECK_HOST_URL = "http://arenadrafts.com/Arena/View/";
 
+	private static final String HSTOPDECKS_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthstonetopdecks\\.com\\/decks\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
+	private static final String HSTOPDECKS_DECK_HOST_URL = "http://www.hearthstonetopdecks.com/decks/";
+
 	@Autowired
 	ReviewRepository repo;
 
@@ -84,6 +87,60 @@ public class DeckParser implements Plugin {
 		parseZeroToHeroesDeck(pluginData, initialText);
 		parseHearthArenaDeck(pluginData, initialText);
 		parseArenaDraftsDeck(pluginData, initialText);
+		parseHsTopDecksDeck(pluginData, initialText);
+	}
+
+	private void parseHsTopDecksDeck(Map<String, String> pluginData, String initialText) throws IOException {
+		Pattern pattern = Pattern.compile(HSTOPDECKS_DECK_ID_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			String deckId = matcher.group(2);
+
+			// Don't override existing decks (performance)
+			if (pluginData.get(deckId) != null) {
+				continue;
+			}
+
+			String deckUrl = HSTOPDECKS_DECK_HOST_URL + deckId;
+			log.debug("Trying to scrape deck data for deck " + deckUrl);
+
+			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
+
+			Deck deck = new Deck();
+			deck.title = doc.select("header h1").text();
+
+			Elements cards = doc.select("ul.deck-class");
+
+			Elements classCards = cards.get(0).select("li");
+			Elements neutralCards = cards.get(1).select("li");
+
+			for (Element element : classCards) {
+				// log.debug("Parsing class card " + element);
+				Elements qtyElement = element.select(".card-count");
+				// log.debug("\tQty " + qtyElement);
+				Elements cardElement = element.select(".card-name");
+				// log.debug("\tCard " + cardElement);
+				Card card = new Card(cardElement.text().trim(), qtyElement.text().trim());
+				// log.debug("\tBuilt card " + card);
+				deck.classCards.add(card);
+			}
+
+			for (Element element : neutralCards) {
+				// log.debug("Parsing class card " + element);
+				Elements qtyElement = element.select(".card-count");
+				// log.debug("\tQty " + qtyElement);
+				Elements cardElement = element.select(".card-name");
+				// log.debug("\tCard " + cardElement);
+				Card card = new Card(cardElement.text().trim(), qtyElement.text().trim());
+				// log.debug("\tBuilt card " + card);
+				deck.classCards.add(card);
+			}
+
+			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
+
+			log.debug("jsonDeck" + jsonDeck);
+			pluginData.put(deckId, jsonDeck);
+		}
 	}
 
 	private void parseArenaDraftsDeck(Map<String, String> pluginData, String initialText) throws IOException {

@@ -98,9 +98,12 @@ public class ReviewUploadFromUrl {
 		if (review.getMediaType() == null) {
 			slackNotifier.notifyUnsupportedUrlImport(url, userRepo.findByUsername(currentUser));
 		}
+		else {
+			subscriptionManager.subscribe(review, review.getAuthorId());
+			subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
+		}
 
-		subscriptionManager.subscribe(review, review.getAuthorId());
-		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
+		log.debug("Returning review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}

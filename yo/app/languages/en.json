@@ -471,7 +471,7 @@
 			"fromurl": {
 				"headline": "Upload from URL",
 				"urlPlaceholder": "URL of the page with your game/draft",
-				"urlPlaceholderTooltip": "If you have a draft or a game stored on another site, you can import it on Zero to Heroes by pasting its URL here. As of today, we support importing from arenadrafts.com",
+				"urlPlaceholderTooltip": "If you have a draft or a game stored on another site, you can import it on Zero to Heroes by pasting its URL here. As of today, we support importing drafts from arenadrafts.com and heartharena.com",
 				"noUrl": "Please provide a URL"
 			},
 			"arenadraft": {

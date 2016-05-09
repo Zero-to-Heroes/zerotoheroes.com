@@ -44,7 +44,6 @@ app.directive('autoGrow', function() {
 
         var update = function() {
             if (!updating) {
-                console.debug('updating')
                 updating = true
                 if ($shadow === null)
                     createShadow();

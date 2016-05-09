@@ -14,7 +14,7 @@ app.directive('hearthstoneFrame', ['$log', '$translate',
 			controller: function($scope) {
 				$scope.$watch('frame', function(newVal) {
 					if (newVal) {
-						$log.debug('setting new rank', newVal)
+						// $log.debug('setting new rank', newVal)
 						$scope.rank = newVal.split('rank')[1]
 						$scope.titleFrame = $translate.instant('hearthstone.ranking.' + newVal)
 

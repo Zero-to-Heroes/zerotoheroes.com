@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService) { 
 
 		$scope.debugTimestamp = Date.now()
 		$log.debug('init review controller at ', $scope.debugTimestamp)
@@ -20,46 +20,61 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.selectedCoach;
 		$scope.User = User;
 		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
-		$scope.config = SportsConfig[$scope.sport];
+		$scope.config = SportsConfig[$scope.sport]
 
-		$scope.pluginsToLoad = SportsConfig.getPlugins($scope.sport)// $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
-		var definedPlugins = 0;
-		$scope.plugins = [];
-		$scope.pluginNames = [];
-		if ($scope.pluginsToLoad) {
-			definedPlugins = $scope.pluginsToLoad.length
-			angular.forEach($scope.pluginsToLoad, function(plugin) {
-				SportsConfig.loadPlugin($scope.plugins, plugin)
-			})
+		$scope.controlFlow = {
+			pluginsLoaded: false,
+			pluginsReady: false,
+			reviewLoaded: false
 		}
 
-		$scope.$watchCollection('plugins', function(newValue, oldValue) {
-			if (!$scope.pluginsToLoad || newValue.length == definedPlugins) {
-				$scope.initReview();
-				$scope.plugins.forEach(function(plugin) {
-					if (plugin) {
-						// console.log('adding style', plugin.name);
-						$scope.pluginNames.push(plugin.name);
-					}
+		// Load all plugins
+		$scope.loadPlugins = function() {
+			$scope.pluginsToLoad = SportsConfig.getPlugins($scope.sport)// $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
+			var definedPlugins = 0;
+			$scope.plugins = [];
+			$scope.pluginNames = [];
+			if ($scope.pluginsToLoad) {
+				definedPlugins = $scope.pluginsToLoad.length
+				angular.forEach($scope.pluginsToLoad, function(plugin) {
+					SportsConfig.loadPlugin($scope.plugins, plugin)
 				})
 			}
-		})
 
+			$scope.$watchCollection('plugins', function(newValue, oldValue) {
+				$log.debug('watching plugins', $scope.pluginsToLoad, $scope.plugins, newValue, oldValue)
+				if (!$scope.pluginsToLoad || (newValue && newValue.length == definedPlugins)) {
+					// $scope.initReview();
+					$scope.plugins.forEach(function(plugin) {
+						if (plugin) {
+							// console.log('adding style', plugin.name);
+							$scope.pluginNames.push(plugin.name);
+						}
+					})
+					$scope.controlFlow.pluginsLoaded = true
+				}
+			})
+		}
+		
+		// Load the review
 		$scope.initReview = function() {
 			//$log.debug('initializing review');
 			$log.debug('Loding review at ', (Date.now() - $scope.debugTimestamp))
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
-
+					$log.debug('Received review at ', (Date.now() - $scope.debugTimestamp))
 					// $scope.review = data;
-					$scope.useVideo = data.key ? true : false;
+					// $scope.useVideo = data.key ? true : false;
 					$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
 
-					Api.Tags.query({sport: data.sport.key}, 
-						function(data) {
-							$scope.allowedTags = data;
-						}
-					);
+					TagService.filterOut(undefined, function(data) {
+						$scope.allowedTags = data
+					})
+					// Api.Tags.query({sport: data.sport.key}, 
+					// 	function(data) {
+					// 		$scope.allowedTags = data;
+					// 	}
+					// );
 
 					// Update page description
 					if ($scope.config && $scope.config.isSport)  {
@@ -87,43 +102,48 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// Controls default to the ones defined in scope
 					$scope.externalPlayer = undefined;
 					// $log.debug('Deciding whether we need to use another player', data);
-					$scope.pluginsReady = false;
+					$scope.controlFlow.pluginsReady = false;
 					$scope.mediaType = data.mediaType
 					$log.debug('loaded review', data)
 					$log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
-					if (data.replay || (data.mediaType && data.mediaType != 'video')) {
-						$scope.externalPlayer = true;
-						// $timeout(function() {
-						$log.debug('loading replay file');
-						// Retrieve the XML replay file from s3
-						var replayUrl = ENV.videoStorageUrl + data.key;
-						// $log.debug('Replay URL: ', replayUrl);
-						$.get(replayUrl, function(replayData) {
-							data.replayXml = replayData;
-							$log.debug('external replay retrieved at ', (Date.now() - $scope.debugTimestamp))
+					$scope.review = data
+					// $scope.review = data
+					$scope.controlFlow.reviewLoaded = true
 
-							// Init the external player
-							// TODO: use an event system
-							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
-						}).
-						fail(function(error) {
-							if (error.status == 200) {
-								data.replayXml = error.responseText;
 
-								// Init the external player
-								// TODO: use an event system
-								$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
-							}
-							else {
-								$log.error('Could not load external data', data, error)
-								$scope.pluginsReady = true;
-							}
-						})
-						// });
-					}
-					else {
-						$scope.pluginsReady = true;
-					}
+					// if (data.replay || (data.mediaType && data.mediaType != 'video')) {
+					// 	$scope.externalPlayer = true;
+					// 	// $timeout(function() {
+					// 	$log.debug('loading replay file');
+					// 	// Retrieve the XML replay file from s3
+					// 	var replayUrl = ENV.videoStorageUrl + data.key;
+					// 	// $log.debug('Replay URL: ', replayUrl);
+					// 	$.get(replayUrl, function(replayData) {
+					// 		data.replayXml = replayData;
+					// 		$log.debug('external replay retrieved at ', (Date.now() - $scope.debugTimestamp))
+
+					// 		// Init the external player
+					// 		// TODO: use an event system
+					// 		$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
+					// 	}).
+					// 	fail(function(error) {
+					// 		if (error.status == 200) {
+					// 			data.replayXml = error.responseText;
+
+					// 			// Init the external player
+					// 			// TODO: use an event system
+					// 			$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
+					// 		}
+					// 		else {
+					// 			$log.error('Could not load external data', data, error)
+					// 			$scope.controlFlow.pluginsReady = true;
+					// 		}
+					// 	})
+					// 	// });
+					// }
+					// else {
+					// 	$scope.controlFlow.pluginsReady = true;
+					// }
 
 					// $log.log('review loaded ', $scope.review)
 					// wait for review to be properly applied to child components
@@ -133,19 +153,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
 					$scope.sources2 = []
 
-					$scope.$watch('pluginsReady', function (newVal, oldVal) {
-						$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
-						// $log.debug('pluginsReady', newVal, oldVal);
-						if (newVal) {
-							$scope.review = data
-							$timeout(function() {
-								$scope.updateVideoInformation(data)
-							})
-							$scope.handleUrlParameters()
-						}
-					})
+					// $scope.$watch('pluginsReady', function (newVal, oldVal) {
+					// 	// $log.debug('pluginsReady', newVal, oldVal);
+					// 	if (newVal) {
+					// 		$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
+					// 		$scope.review = data
+					// 		$timeout(function() {
+					// 			$scope.updateVideoInformation(data)
+					// 		})
+					// 		$scope.handleUrlParameters()
+					// 	}
+					// })
 				}
-			);
+			)
+
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
 				$scope.coaches = [];
 				$log.debug('coaches', data)
@@ -166,8 +187,81 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			});
 		}
 
+		// Init everything
+		$scope.init = function() {
+			// Load the plugins
+			$scope.loadPlugins()
+			// At the same time, start loading the review
+			$scope.initReview()
+		}
+		$scope.init()
+
+
+		$scope.$watch('controlFlow.pluginsLoaded', function(newVal, oldVal) {
+			if (newVal)
+				$log.debug('controlFlow.pluginsLoaded at ', Date.now() - $scope.debugTimestamp)
+			if (newVal && $scope.controlFlow.reviewLoaded) {
+				$scope.activatePlugins()
+			}
+		})
+		$scope.$watch('controlFlow.reviewLoaded', function(newVal, oldVal) {
+			if (newVal)
+				$log.debug('controlFlow.reviewLoaded at ', Date.now() - $scope.debugTimestamp)
+			if (newVal && $scope.controlFlow.pluginsLoaded) {
+				$scope.activatePlugins()
+			}
+		})
+		$scope.activatePlugins = function() {
+			$log.debug('activating plugins at ', Date.now() - $scope.debugTimestamp)
+			if ($scope.review.replay || ($scope.review.mediaType && $scope.review.mediaType != 'video')) {
+				$scope.externalPlayer = true;
+				// $timeout(function() {
+				$log.debug('loading replay file');
+				// Retrieve the XML replay file from s3
+				var replayUrl = ENV.videoStorageUrl + $scope.review.key;
+				// $log.debug('Replay URL: ', replayUrl);
+				$.get(replayUrl, function(replayData) {
+					$scope.review.replayXml = replayData;
+					$log.debug('external replay retrieved at ', (Date.now() - $scope.debugTimestamp))
+
+					// Init the external player
+					// TODO: use an event system
+					$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
+				}).
+				fail(function(error) {
+					if (error.status == 200) {
+						$scope.review.replayXml = error.responseText;
+
+						// Init the external player
+						// TODO: use an event system
+						$scope.externalPlayer = SportsConfig.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
+					}
+					else {
+						$log.error('Could not load external data', $scope.review, error)
+						$scope.controlFlow.pluginsReady = true;
+					}
+				})
+				// });
+			}
+			else {
+				$scope.controlFlow.pluginsReady = true;
+			}
+		}
+
+		$scope.$watch('controlFlow.pluginsReady', function (newVal, oldVal) {
+			// $log.debug('pluginsReady', newVal, oldVal);
+			if (newVal) {
+				$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
+				// $scope.review = $scope.review
+				$timeout(function() {
+					$scope.updateVideoInformation($scope.review)
+				})
+				$scope.handleUrlParameters()
+			}
+		})
+
 		$scope.setExternalPlayer = function(externalPlayer) {
-			$scope.pluginsReady = true
+			$scope.controlFlow.pluginsReady = true
 			$scope.player1ready = true
 			$scope.externalPlayer = externalPlayer
 			// $log.debug('externalPlayer', $scope.externalPlayer)

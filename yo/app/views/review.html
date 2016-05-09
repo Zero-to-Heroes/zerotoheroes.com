@@ -7,6 +7,9 @@
 	</div>
 
 	<div class="background-white">
+
+		<media-player review="review"></media-player>
+
 		<div class="videogular-container multi-player" ng-show="review.key && !externalPlayer" >
 			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
 				<div class="first-player-container">
@@ -130,7 +133,7 @@
 <div class="video-comment col-md-7 {{pluginNames.join(' ')}} {{review.mediaType}}" ng-class="playerControls.wideMode ? 'col-md-5' : 'col-md-7'">
 	<div class="background-white show-x">
 		<div class="background-container">
-			<div scrollable="{{useVideo}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">
+			<div scrollable="{{review.key}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">
 				
 				<div ng-show="selectedCoach">
 					<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
@@ -148,6 +151,7 @@
 						</div>
 					</div>
 				</div>
+							<textarea></textarea>
 				<form name="commentForm" ng-show="addingComment">
 					<div class="container-fluid comment-block main-block">
 						<div class="row">

@@ -40,30 +40,39 @@ app.directive('autoGrow', function() {
 
         }
 
+        var updating = false
+
         var update = function() {
-            if ($shadow === null)
-                createShadow();
-            if ($shadow === null)
-                return ;
-            var times = function(string, number) {
-                for (var i = 0, r = ''; i < number; i++) {
-                    r += string;
-                }
-                return r;
-            };
+            if (!updating) {
+                console.debug('updating')
+                updating = true
+                if ($shadow === null)
+                    createShadow();
+                if ($shadow === null)
+                    return ;
+                var times = function(string, number) {
+                    for (var i = 0, r = ''; i < number; i++) {
+                        r += string;
+                    }
+                    return r;
+                };
 
-            var val = element.val().replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/&/g, '&amp;')
-                .replace(/\n$/, '<br/>&nbsp;')
-                .replace(/\n/g, '<br/>')
-                .replace(/\s{2,}/g, function(space) { return times('&nbsp;', space.length - 1) + ' '; });
-            $shadow.html(val);
+                var val = element.val().replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/&/g, '&amp;')
+                    .replace(/\n$/, '<br/>&nbsp;')
+                    .replace(/\n/g, '<br/>')
+                    .replace(/\s{2,}/g, function(space) { return times('&nbsp;', space.length - 1) + ' '; });
+                $shadow.html(val);
 
-            element.css('height', Math.max($shadow[0].offsetHeight + 30, minHeight) + 'px');
+                element.css('height', Math.max($shadow[0].offsetHeight + 30, minHeight) + 'px');
+                setTimeout(function() {
+                    updating = false
+                }, 300)
+            }
         };
 
-        element.bind('keyup keydown keypress change focus', update);
+        // element.bind('keyup keydown keypress change focus', update);
         scope.$watch(attr.ngModel, update);
         scope.$watch(function(){ return element[0].style.display != 'none'; }, update);
     };

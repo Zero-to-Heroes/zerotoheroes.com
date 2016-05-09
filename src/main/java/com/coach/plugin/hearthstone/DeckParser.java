@@ -110,7 +110,7 @@ public class DeckParser implements Plugin {
 			// }
 
 			String deckUrl = MANACRYSTALS_DECK_HOST_URL + deckId;
-			log.debug("Trying to scrape deck data for deck " + deckUrl);
+			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 
 			Document doc = Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8", MANACRYSTALS_DECK_HOST_URL);
 
@@ -148,7 +148,7 @@ public class DeckParser implements Plugin {
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
 
-			log.debug("jsonDeck" + jsonDeck);
+			// log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
 		}
 	}
@@ -165,7 +165,7 @@ public class DeckParser implements Plugin {
 			}
 
 			String deckUrl = ICYVEINS_DECK_HOST_URL + deckId;
-			log.debug("Trying to scrape deck data for deck " + deckUrl);
+			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 
 			Document doc = Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8", ICYVEINS_DECK_HOST_URL);
 
@@ -203,7 +203,7 @@ public class DeckParser implements Plugin {
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
 
-			log.debug("jsonDeck" + jsonDeck);
+			// log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
 		}
 	}
@@ -220,7 +220,7 @@ public class DeckParser implements Plugin {
 			}
 
 			String deckUrl = HSTOPDECKS_DECK_HOST_URL + deckId;
-			log.debug("Trying to scrape deck data for deck " + deckUrl);
+			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
@@ -256,7 +256,7 @@ public class DeckParser implements Plugin {
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
 
-			log.debug("jsonDeck" + jsonDeck);
+			// log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
 		}
 	}
@@ -266,8 +266,8 @@ public class DeckParser implements Plugin {
 		Matcher matcher = pattern.matcher(initialText);
 		while (matcher.find()) {
 			String deckId = matcher.group(3);
-			log.debug("matcher " + matcher);
-			log.debug("deck id " + deckId);
+			// log.debug("matcher " + matcher);
+			// log.debug("deck id " + deckId);
 
 			// Don't override existing decks
 			if (pluginData.get(deckId) != null) {
@@ -275,7 +275,7 @@ public class DeckParser implements Plugin {
 			}
 
 			String deckUrl = ARENADRAFTS_DECK_HOST_URL + deckId + "?format=JSON";
-			log.debug("Trying to scrape deck data for deck " + deckUrl);
+			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 
 			StringBuilder result = new StringBuilder();
 			URL url = new URL(deckUrl);
@@ -324,7 +324,7 @@ public class DeckParser implements Plugin {
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
 
-			log.debug("jsonDeck" + jsonDeck);
+			// log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
 		}
 	}
@@ -370,7 +370,7 @@ public class DeckParser implements Plugin {
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
 
-			log.debug("jsonDeck" + jsonDeck);
+			// log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
 		}
 	}
@@ -387,7 +387,7 @@ public class DeckParser implements Plugin {
 			}
 
 			String deckUrl = HEARTHARENA_DECK_HOST_URL + deckId;
-			log.debug("Trying to scrape deck data for deck " + deckUrl);
+			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
@@ -407,7 +407,7 @@ public class DeckParser implements Plugin {
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
 
-			log.debug("jsonDeck" + jsonDeck);
+			// log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
 		}
 	}
@@ -425,7 +425,7 @@ public class DeckParser implements Plugin {
 			}
 
 			String deckUrl = HSDECKS_DECK_HOST_URL + deckId;
-			log.debug("Trying to scrape deck data for deck " + deckUrl);
+			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
@@ -459,7 +459,7 @@ public class DeckParser implements Plugin {
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
 
-			log.debug("jsonDeck" + jsonDeck);
+			// log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
 		}
 	}
@@ -505,7 +505,7 @@ public class DeckParser implements Plugin {
 
 			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
 
-			log.debug("jsonDeck" + jsonDeck);
+			// log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
 		}
 	}

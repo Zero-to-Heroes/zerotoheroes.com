@@ -8,7 +8,8 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 			transclude: true,
 			templateUrl: 'templates/video/toolbar.html',
 			scope: {
-				API: '=playerApi',
+				// API: '=playerApi',
+				mediaPlayer: '=',
 				insertModel: '=',
 				drawingCanvas: '=',
 				canvasId: '=',
@@ -38,7 +39,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 						return;
 					}
 					// Convert the numeral timestamp into the string we want to input
-					var timestamp = inputTimestamp || moment.duration($scope.API.currentTime).format('mm:ss:SSS', { trim: false });
+					var timestamp = inputTimestamp || moment.duration($scope.mediaPlayer.getCurrentTime()).format('mm:ss:SSS', { trim: false });
 					$scope.insert(timestamp);
 			  	}
 

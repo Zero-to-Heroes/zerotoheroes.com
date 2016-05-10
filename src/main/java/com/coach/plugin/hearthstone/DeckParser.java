@@ -105,9 +105,9 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2);
 
 			// Don't override existing decks (performance)
-			// if (pluginData.get(deckId) != null) {
-			// continue;
-			// }
+			if (pluginData.get(deckId) != null) {
+				continue;
+			}
 
 			String deckUrl = MANACRYSTALS_DECK_HOST_URL + deckId;
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);

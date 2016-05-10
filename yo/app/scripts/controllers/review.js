@@ -1,151 +1,151 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService) { 
 
 		$scope.debugTimestamp = Date.now()
 		$log.debug('init review controller at ', $scope.debugTimestamp)
-		$scope.API = null;
-		$scope.API2 = null;
-		$scope.sources = null;
-		$scope.sources2 = null;
-		$scope.canvasState = {
-			canvasIdIndex: 0,
-			canvasId: 'tmp0',
-			drawingCanvas: false
-		}
-
 		$scope.newComment = {};
-		$scope.coaches = [];
-		$scope.selectedCoach;
+		$scope.coaches = []
+		$scope.selectedCoach
+
 		$scope.User = User;
 		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
-		$scope.config = SportsConfig[$scope.sport];
+		$scope.config = SportsConfig[$scope.sport]
 
-		$scope.pluginsToLoad = SportsConfig.getPlugins($scope.sport)// $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
-		var definedPlugins = 0;
-		$scope.plugins = [];
-		$scope.pluginNames = [];
-		if ($scope.pluginsToLoad) {
-			definedPlugins = $scope.pluginsToLoad.length
-			angular.forEach($scope.pluginsToLoad, function(plugin) {
-				SportsConfig.loadPlugin($scope.plugins, plugin)
-			})
+		$scope.controlFlow = {
+			pluginsLoaded: false,
+			pluginsReady: false,
+			reviewLoaded: false
 		}
 
-		$scope.$watchCollection('plugins', function(newValue, oldValue) {
-			if (!$scope.pluginsToLoad || newValue.length == definedPlugins) {
-				$scope.initReview();
-				$scope.plugins.forEach(function(plugin) {
-					if (plugin) {
-						// console.log('adding style', plugin.name);
-						$scope.pluginNames.push(plugin.name);
-					}
+		$scope.mediaPlayer = {
+			playerType: 'replay'
+		}
+
+		// ================
+		// Load all plugins
+		// ================
+		$scope.loadPlugins = function() {
+			$log.debug('beginning plugin load at', (Date.now() - $scope.debugTimestamp))
+			$scope.pluginsToLoad = SportsConfig.getPlugins($scope.sport)// $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
+			var definedPlugins = 0;
+			$scope.plugins = [];
+			$scope.pluginNames = [];
+
+			$scope.$watchCollection('plugins', function(newValue, oldValue) {
+				$log.debug('watching plugins', $scope.pluginsToLoad, $scope.plugins, definedPlugins, newValue.length == definedPlugins, newValue, oldValue)
+				if (!$scope.pluginsToLoad || (newValue && newValue.length == definedPlugins)) {
+					// $scope.initReview();
+					$scope.plugins.forEach(function(plugin) {
+						if (plugin) {
+							$log.debug('\tadding plugin at', plugin.name, (Date.now() - $scope.debugTimestamp));
+							$scope.pluginNames.push(plugin.name);
+						}
+					})
+					$scope.controlFlow.pluginsLoaded = true
+				}
+			})
+			
+			if ($scope.pluginsToLoad) {
+				definedPlugins = $scope.pluginsToLoad.length
+				angular.forEach($scope.pluginsToLoad, function(plugin) {
+					$log.debug('\tloading plugin at', plugin, (Date.now() - $scope.debugTimestamp))
+					SportsConfig.loadPlugin($scope.plugins, plugin)
 				})
 			}
-		})
-
+		}
+		
+		// Load the review
 		$scope.initReview = function() {
 			//$log.debug('initializing review');
 			$log.debug('Loding review at ', (Date.now() - $scope.debugTimestamp))
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
+					$log.debug('Received review at ', (Date.now() - $scope.debugTimestamp))
+					$scope.review = data
+					// $scope.useVideo = data.key ? true : false;
+					// $rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
 
-					// $scope.review = data;
-					$scope.useVideo = data.key ? true : false;
-					$rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
-
-					Api.Tags.query({sport: data.sport.key}, 
-						function(data) {
-							$scope.allowedTags = data;
-						}
-					);
+					TagService.filterOut(undefined, function(data) {
+						$scope.allowedTags = data
+					})
 
 					// Update page description
-					if ($scope.config && $scope.config.isSport)  {
-						$rootScope.pageDescription = 'Get better at ' + $scope.config.displayName;
-						if (data.tags) {
-							data.tagValues = '';
-							$rootScope.pageDescription += '. ';
-							angular.forEach(data.tags, function(key) {
-								$rootScope.pageDescription += ' ' + key.text;
-								data.tagValues += ' ' + key.text;
-								key.sport = data.sport.key.toLowerCase();
-							})
-						}
-						$rootScope.pageDescription += '. ' + data.text;
-						//$log.log('pageDescription in review.js', $rootScope.pageDescription);
-					}
+					$scope.updateSeoInformation(data)
 
-					// Init the canvas
-					if (!data.canvas) {
-						data.canvas = {};
-					}
-
-					// Initialize the plugins to replay different formats. Could be done only if necessary though
-					// TODO: make it clearner to decide if the review is to be played by the standard player or a custom one
-					// Controls default to the ones defined in scope
-					$scope.externalPlayer = undefined;
-					// $log.debug('Deciding whether we need to use another player', data);
-					$scope.pluginsReady = false;
-					$scope.mediaType = data.mediaType
-					$log.debug('loaded review', data)
-					$log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
-					if (data.replay || (data.mediaType && data.mediaType != 'video')) {
-						$scope.externalPlayer = true;
-						// $timeout(function() {
-						$log.debug('loading replay file');
-						// Retrieve the XML replay file from s3
-						var replayUrl = ENV.videoStorageUrl + data.key;
-						// $log.debug('Replay URL: ', replayUrl);
-						$.get(replayUrl, function(replayData) {
-							data.replayXml = replayData;
-							$log.debug('external replay retrieved at ', (Date.now() - $scope.debugTimestamp))
-
-							// Init the external player
-							// TODO: use an event system
-							$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
-						}).
-						fail(function(error) {
-							if (error.status == 200) {
-								data.replayXml = error.responseText;
-
-								// Init the external player
-								// TODO: use an event system
-								$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
-							}
-							else {
-								$log.error('Could not load external data', data, error)
-								$scope.pluginsReady = true;
-							}
-						})
-						// });
+					
+					if ($scope.review.replay || ($scope.review.mediaType && $scope.review.mediaType != 'video')) {
+						$scope.mediaPlayer.playerType = 'replay'
 					}
 					else {
-						$scope.pluginsReady = true;
+						$scope.mediaPlayer.playerType = 'video'
 					}
+
+					$log.debug('mediaPlayer', $scope.mediaPlayer)
+					// Need to wait for the digest cycle so the proper directive (videoplayer vs externalplayer) is instanciated
+					$timeout(function() {
+						$scope.initPlayer(data)
+					})
+
+
+					// if (data.replay || (data.mediaType && data.mediaType != 'video')) {
+					// 	$scope.externalPlayer = true;
+					// 	// $timeout(function() {
+					// 	$log.debug('loading replay file');
+					// 	// Retrieve the XML replay file from s3
+					// 	var replayUrl = ENV.videoStorageUrl + data.key;
+					// 	// $log.debug('Replay URL: ', replayUrl);
+					// 	$.get(replayUrl, function(replayData) {
+					// 		data.replayXml = replayData;
+					// 		$log.debug('external replay retrieved at ', (Date.now() - $scope.debugTimestamp))
+
+					// 		// Init the external player
+					// 		// TODO: use an event system
+					// 		$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
+					// 	}).
+					// 	fail(function(error) {
+					// 		if (error.status == 200) {
+					// 			data.replayXml = error.responseText;
+
+					// 			// Init the external player
+					// 			// TODO: use an event system
+					// 			$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
+					// 		}
+					// 		else {
+					// 			$log.error('Could not load external data', data, error)
+					// 			$scope.controlFlow.pluginsReady = true;
+					// 		}
+					// 	})
+					// 	// });
+					// }
+					// else {
+					// 	$scope.controlFlow.pluginsReady = true;
+					// }
 
 					// $log.log('review loaded ', $scope.review)
 					// wait for review to be properly applied to child components
 					//$scope.review = data;
 
-					var fileLocation = ENV.videoStorageUrl + data.key;
-					$scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
-					$scope.sources2 = []
+					// var fileLocation = ENV.videoStorageUrl + data.key;
+					// $scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
+					// $scope.sources2 = []
 
-					$scope.$watch('pluginsReady', function (newVal, oldVal) {
-						$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
-						// $log.debug('pluginsReady', newVal, oldVal);
-						if (newVal) {
-							$scope.review = data
-							$timeout(function() {
-								$scope.updateVideoInformation(data)
-							})
-							$scope.handleUrlParameters()
-						}
-					})
+					// $scope.$watch('pluginsReady', function (newVal, oldVal) {
+					// 	// $log.debug('pluginsReady', newVal, oldVal);
+					// 	if (newVal) {
+					// 		$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
+					// 		$scope.review = data
+					// 		$timeout(function() {
+					// 			$scope.updateVideoInformation(data)
+					// 		})
+					// 		$scope.handleUrlParameters()
+					// 	}
+					// })
 				}
-			);
+			)
+
+			// TODO externalize that to a service like for the tags
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
 				$scope.coaches = [];
 				$log.debug('coaches', data)
@@ -166,238 +166,118 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			});
 		}
 
-		$scope.setExternalPlayer = function(externalPlayer) {
-			$scope.pluginsReady = true
-			$scope.player1ready = true
-			$scope.externalPlayer = externalPlayer
-			// $log.debug('externalPlayer', $scope.externalPlayer)
+		$scope.initPlayer = function(review) {
+			$log.debug('Player init? ', (Date.now() - $scope.debugTimestamp))
+			if (!$scope.mediaPlayer.initReview) {
+				$timeout(function() { $scope.initPlayer(review) }, 10)
+				return
+			}
+			$scope.mediaPlayer.onTimestampChanged = $scope.onTimestampChanged
+
+			$log.debug('Init player at ', (Date.now() - $scope.debugTimestamp))
+			$log.debug('mediaPlayer', $scope.mediaPlayer)
+			// Init player-specific information
+			$scope.mediaPlayer.initReview(review)
+
+			$log.debug('init review done at ', (Date.now() - $scope.debugTimestamp))
+
+			// Initialize the plugins to replay different formats. Could be done only if necessary though
+			// Controls default to the ones defined in scope
+			$scope.controlFlow.pluginsReady = false
+
+			// $scope.externalPlayer = undefined
+			// $scope.mediaType = data.mediaType
+			$log.debug('loaded review', review)
+			$log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
+			// $scope.review = data
+			$scope.controlFlow.reviewLoaded = true
 		}
+
+		// Init everything
+		$scope.init = function() {
+			// Load the plugins
+			$scope.loadPlugins()
+			// At the same time, start loading the review
+			$scope.initReview()
+		}
+		$scope.init()
+
+
+		$scope.$watch('controlFlow.pluginsLoaded', function(newVal, oldVal) {
+			if (newVal)
+				$log.debug('controlFlow.pluginsLoaded at ', Date.now() - $scope.debugTimestamp)
+			if (newVal && $scope.controlFlow.reviewLoaded) {
+				$scope.activatePlugins()
+			}
+		})
+		$scope.$watch('controlFlow.reviewLoaded', function(newVal, oldVal) {
+			if (newVal)
+				$log.debug('controlFlow.reviewLoaded at ', Date.now() - $scope.debugTimestamp)
+			if (newVal && $scope.controlFlow.pluginsLoaded) {
+				$scope.activatePlugins()
+			}
+		})
+		$scope.activatePlugins = function() {
+			$log.debug('activating plugins at ', Date.now() - $scope.debugTimestamp)
+			$scope.mediaPlayer.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, function() {
+				$scope.controlFlow.pluginsReady = true
+			})
+		}
+
+		$scope.$watch('controlFlow.pluginsReady', function (newVal, oldVal) {
+			// $log.debug('pluginsReady', newVal, oldVal);
+			if (newVal) {
+				$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
+				// $scope.review = $scope.review
+				$timeout(function() {
+					$scope.updateVideoInformation($scope.review)
+				})
+				$scope.handleUrlParameters()
+			}
+		})
+
+		// $scope.setExternalPlayer = function(externalPlayer) {
+		// 	$scope.controlFlow.pluginsReady = true
+		// 	// $scope.player1ready = true
+		// 	$scope.externalPlayer = externalPlayer
+		// 	// $log.debug('externalPlayer', $scope.externalPlayer)
+		// }
 
 		//===============
 		// URL parameters
 		//===============
+		$scope.onTimestampChanged = function(timeString) {
+			var encodedUrlTs = encodeURIComponent(timeString)
+			encodedUrlTs = encodedUrlTs.replace(new RegExp('\\.', 'g'), '%2E')
+			$location.search('ts', encodedUrlTs)
+		}
+
 		$scope.handleUrlParameters = function() {
 			// $log.debug('handling url params', $location.search())
 			if ($location.search().ts) {
 				var ts = decodeURIComponent($location.search().ts)
 				ts = ts.replace(new RegExp('%2E', 'g'), '.')
+				$scope.mediaPlayer.goToTimestamp(ts) 
+
 				// $log.debug('replaced ts', ts)
-				if (!$scope.player1ready) {
-					// $log.debug('waiting for media player', $scope.player1ready)
-					$timeout(function() { $scope.handleUrlParameters()}, 100)
-				}
-				else {
-					// $log.debug('ts parameter', ts)
-					$timeout(function() { 
-						// Default to wide mode, which is probably what we expect, since we link to a video directly
-						// Issue with replay player, need to handle this differently
-						// $scope.playerControls.wideMode = true
-						// $log.debug('going to timestamp')
-						$scope.goToTimestamp(ts) 
-					})
-				}
+				// if (!$scope.player1ready) {
+				// 	// $log.debug('waiting for media player', $scope.player1ready)
+				// 	$timeout(function() { $scope.handleUrlParameters()}, 100)
+				// }
+				// else {
+				// 	// $log.debug('ts parameter', ts)
+				// 	$timeout(function() { 
+				// 		// Default to wide mode, which is probably what we expect, since we link to a video directly
+				// 		// Issue with replay player, need to handle this differently
+				// 		// $scope.playerControls.wideMode = true
+				// 		// $log.debug('going to timestamp')
+				// 		$scope.mediaPlayer.goToTimestamp(ts) 
+				// 	})
+				// }
 			}
 		}
+	
 		
-
-		//===============
-		// Video player
-		//===============
-		$scope.onPlayerReady = function(API) {
-			// $log.log('on player ready');
-			$scope.API = API
-			$scope.API.setVolume(1)
-			// Load the video
-			$scope.API.mediaElement.on('canplay', function() {
-				// $log.debug('can play player1')
-				$scope.player1ready = true
-				$scope.$apply()
-			})
-			// For some reason, only Chrome keeps fire the canplay after a "seekTime" command.
-			// FireFox only sends the 'seeked' event
-			$scope.API.mediaElement.on('seeked', function() {
-				// $log.debug('seeked')
-				$scope.player1ready = true
-				$scope.$apply()
-			})
-
-			// And in case the event is already fired before we actually register the event
-			if ($scope.API.mediaElement.readyState > 3) {
-				// $log.debug('media ready, missed the event listener')
-				$scope.player1ready = true
-			}
-		}
-
-		$scope.onSecondPlayerReady = function($API) {
-			// $log.log('onSecondPlayerReady');
-			$scope.API2 = $API;
-			$scope.API2.setVolume(0);
-
-			$scope.API2.mediaElement.on('canplay', function() {
-				if ($scope.playerControls.mode == 2) {
-					// $log.log('can play player2')
-					$scope.player2ready = true
-					$scope.$apply()
-				}
-			})
-			$scope.API2.mediaElement.on('seeked', function() {
-				if ($scope.playerControls.mode == 2) {
-					// $log.log('can play player2')
-					$scope.player2ready = true
-					$scope.$apply()
-				}
-			})
-
-			// And in case the event is already fired before we actually register the event
-			if ($scope.API2.mediaElement.readyState > 3) {
-				// $log.debug('media ready, missed the event listener')
-				$scope.player1ready = true
-			}
-		}
-
-		$scope.playerControls = {
-			mode: 1,
-			loopStartTime: 0,
-			loop2StartTime: 0,
-			loopDuration: 0,
-			loopStatus: '',
-			playbackRate: 1,
-			firstPlayerClass: '',
-			secondPlayerClass: '',
-			previousVolume: 100,
-			canvasId: '',
-			canvasPlaying: false,
-			wideMode: false,
-			init: function() {
-				// $log.debug('Init: restoring players to default config')
-				$scope.API.setVolume(1);
-				$scope.API2.setVolume(0);
-			},
-			play: function() {
-				$rootScope.$broadcast('activity.play', {reviewId: $scope.review.id});
-				$scope.API.play();
-				if ($scope.playerControls.mode == 2) {
-					$scope.API2.play();
-				}
-			},
-			pause: function() {
-				$scope.API.pause();
-				if ($scope.playerControls.mode == 2) {
-					$scope.API2.pause();
-				}
-			},
-			seekTime: function(time, time2) {
-				//$log.log('seeking times', time, time2, $scope.API.currentTime, $scope.API.mediaElement);
-				if (time * 1000 == $scope.API.currentTime) {
-					//$log.log('staying at the same time, no action required');
-					$timeout(function() { $scope.player1ready = true; }, 0);					
-				}
-				else {
-					$scope.API.seekTime(time);
-				}
-				if ($scope.playerControls.mode == 2) {
-					if (time2 * 1000 == $scope.API2.currentTime) {
-						//$log.log('staying at the same time2, no action required');
-						$timeout(function() { $scope.player2ready = true; }, 0);					
-					}
-					else {
-						$scope.API2.seekTime(time2);
-					}
-				}
-			},
-			moveTime: function(amountInMilliseconds) {
-				var currentTime1 = $scope.API.currentTime;
-				var time1 = Math.min(Math.max(currentTime1 + amountInMilliseconds, 0), $scope.API.totalTime);
-				$scope.API.seekTime(time1 / 1000);
-				if ($scope.playerControls.mode == 2) {
-					var currentTime2 = $scope.API2.currentTime;
-					var time2 = Math.min(Math.max(currentTime2 + amountInMilliseconds, 0), $scope.API2.totalTime);
-					$scope.API2.seekTime(time2 / 1000);
-				}
-			},
-			setPlayback: function(rate) {
-				// $log.debug('Setting playback to', rate)
-				$scope.playerControls.playbackRate = rate;
-				$scope.API.setPlayback(rate);
-				// $log.debug('initial volume is', $scope.API.volume)
-				$scope.playerControls.previousVolume = $scope.API.volume;
-
-				if (rate == 1) $scope.API.setVolume($scope.playerControls.previousVolume);
-				else $scope.API.setVolume(0);
-				// $log.debug('Set API volume to', $scope.API.volume);
-				if ($scope.playerControls.mode == 2) {
-					$scope.API2.setPlayback(rate);
-				}
-			},
-			playPauseSecondPlayer: function() {
-				var playerState = $scope.API.currentState;
-				if (playerState == 'play') {
-					$scope.API2.play();
-				}
-				else {
-					$scope.API2.pause();
-				}
-			},
-			reloop: function() {
-				$scope.API.pause();
-				$scope.API2.pause();
-				$scope.relooping = true;
-				$timeout(function() {
-					//$log.log('seeking time in reloop');
-					$scope.playerControls.seekTime($scope.playerControls.loopStartTime, $scope.playerControls.loop2StartTime);
-					$scope.playSimultaneously();
-				}, 0);
-			},
-			resetPlayback: function() {
-				$scope.playerControls.setPlayback(1, 1);
-			},
-			stopLoop: function() {
-				$scope.playerControls.loopDuration = undefined;
-				$scope.playerControls.loopStatus = undefined;
-			},
-			unmuteSecondPlayer: function() {
-				//$log.debug('switching sound to second player')
-				$scope.API.setVolume(0);
-				$scope.API2.setVolume(1);
-			}
-		}
-
-		$scope.playSimultaneously = function() {
-			//$log.log('Stopped players, waiting for both to be ready to reloop');
-			$scope.player1ready = false;
-			$scope.player2ready = false;
-			$scope.allPlayersReady = false;
-
-			var unregister1 = $scope.$watch('player1ready', function (newVal, oldVal) {
-				if (!$scope.relooping) return;
-
-				if (!$scope.player2ready) return;
-
-				//$log.log('in player1ready, all player ready to play simultaneously');
-				$scope.allPlayersReady = true;
-			});
-
-			var unregister2 = $scope.$watch('player2ready', function (newVal, oldVal) {
-				if (!$scope.relooping) return;
-
-				if (!$scope.player1ready) return;
-				
-				//$log.log('in player2ready, all player ready to play simultaneously');
-				$scope.allPlayersReady = true;
-			});
-
-			var unregister = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
-				if ($scope.relooping && newVal) {
-					//$log.log('All players ready to play simultaneously?', oldVal, newVal);
-					$scope.API.play();
-					$scope.API2.play();
-					$scope.relooping = false;
-					unregister();
-					unregister1();
-					unregister2();
-				}
-			});
-		}
 
 		//===============
 		// Account management hooks
@@ -420,6 +300,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				$scope.downvoting = false;
 			}
 		});
+
+
 
 		//===============
 		// Comments
@@ -448,12 +330,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.newComment = {};
 			$scope.commentForm.$setPristine();
 			$scope.$broadcast('show-errors-reset');
-			$scope.cancelCanvasEdition();
+			$scope.mediaPlayer.onCancelEdition()
 			$scope.addingComment = false;
 		};
 
 		$scope.uploadComment = function() {
-			$scope.prepareCanvasForUpload($scope.review, $scope.newComment);
+			$scope.mediaPlayer.preUploadComment($scope.review, $scope.newComment)
 			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
 				function(data) {
 					$scope.showHelp = false;
@@ -490,6 +372,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			);
 		}
 
+
+		//===============
+		// Subscription
+		//===============
 		$scope.unsubscribe = function() {
 			Api.Subscriptions.delete({itemId: $scope.review.id}, function(data) {
 				$scope.review.subscribers = data.subscribers;
@@ -507,49 +393,50 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			return $scope.review && $scope.review.subscribers && User.getUser() && $scope.review.subscribers.indexOf(User.getUser().id) > -1;
 		}
 
+
 		//===============
 		// Reputation
 		//===============
-		$scope.upvoteReview = function() {
-			if (!User.isLoggedIn() && !scope.upvoting) {
-				$scope.upvoting = true;
-				$rootScope.$broadcast('account.signup.show');
-			}
-			// Otherwise directly proceed to the upload
-			else {
-				Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
-					function(data) {
-						$scope.review.reputation = data.reputation;
-					}, 
-					function(error) {
-						// Error handling
-						$log.error(error);
-					}
-				);
-			}
-		}
+		// $scope.upvoteReview = function() {
+		// 	if (!User.isLoggedIn() && !scope.upvoting) {
+		// 		$scope.upvoting = true;
+		// 		$rootScope.$broadcast('account.signup.show');
+		// 	}
+		// 	// Otherwise directly proceed to the upload
+		// 	else {
+		// 		Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
+		// 			function(data) {
+		// 				$scope.review.reputation = data.reputation;
+		// 			}, 
+		// 			function(error) {
+		// 				// Error handling
+		// 				$log.error(error);
+		// 			}
+		// 		);
+		// 	}
+		// }
 
-		$scope.downvoteReview = function() {
-			if (!User.isLoggedIn() && !$scope.downvoting) {
-				$scope.downvoting = true;
-				$rootScope.$broadcast('account.signup.show');
-			}
-			// Otherwise directly proceed to the upload
-			else {
-				Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
-					function(data) {
-						$scope.review.reputation = data.reputation;
-					}, 
-					function(error) {
-						// Error handling
-						$log.error(error);
-					}
-				);
-			}
-		}
+		// $scope.downvoteReview = function() {
+		// 	if (!User.isLoggedIn() && !$scope.downvoting) {
+		// 		$scope.downvoting = true;
+		// 		$rootScope.$broadcast('account.signup.show');
+		// 	}
+		// 	// Otherwise directly proceed to the upload
+		// 	else {
+		// 		Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
+		// 			function(data) {
+		// 				$scope.review.reputation = data.reputation;
+		// 			}, 
+		// 			function(error) {
+		// 				// Error handling
+		// 				$log.error(error);
+		// 			}
+		// 		);
+		// 	}
+		// }
 		
 		//===============
-		// Video information
+		// Review information
 		//===============
 		$scope.formatDate = function(date) {
 			return moment(date).fromNow();
@@ -575,7 +462,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//$scope.review.sportForDisplay = $scope.review.oldSportForDisplay;
 			$scope.review.tags = $scope.review.oldTags;
 			$scope.review.editing = false;
-			$scope.cancelCanvasEdition();
+			$scope.mediaPlayer.onCancelEdition()
 		}
 
 		$scope.updateDescription = function() {
@@ -632,8 +519,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			$scope.review.editing = false;
 			$scope.review.processed = true;
-			$scope.clearTemporaryCanvas();
+			$scope.mediaPlayer.onVideoInfoUpdated()
 			$log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
+
+			$scope.controlFlow.reviewDisplayed = true
 		}
 
 		$scope.insertModel = function(model, newValue) {
@@ -647,6 +536,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.editLanguage = function(lang) {
 			$scope.review.language = lang;
 		}
+
+
 
 		//===============
 		// Coach
@@ -672,6 +563,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			askProModel.$promise.then(askProModel.hide);
 		}
 
+
+
 		//===============
 		// Timestamp controls
 		//===============
@@ -696,7 +589,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}
 
 			// Replacing timestamps
-			var result = comment.replace(timestampRegex, '<a ng-click="goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
+			var result = comment.replace(timestampRegex, '<a ng-click="mediaPlayer.goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
 			var linksToPrettify = result.match(timestampRegexLink);
 			var prettyResult = result;
 			if (linksToPrettify) {
@@ -783,261 +676,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			return {link: prettyLink, tooltip: tooltip};
 		}
 
-		$scope.goToTimestamp = function(timeString) {
+		// $scope.goToTimestamp = function(timeString) {
 
-			var encodedUrlTs = encodeURIComponent(timeString)
-			encodedUrlTs = encodedUrlTs.replace(new RegExp('\\.', 'g'), '%2E')
-			$location.search('ts', encodedUrlTs)
+		// 	var encodedUrlTs = encodeURIComponent(timeString)
+		// 	encodedUrlTs = encodedUrlTs.replace(new RegExp('\\.', 'g'), '%2E')
+		// 	$location.search('ts', encodedUrlTs)
 
-			if ($scope.externalPlayer) {
-				$scope.externalPlayer.goToTimestamp(timeString);
-				return;
-			}
-
-			$scope.playerControls.init();
-
-			// $log.log('going to timestamp', timeString);
-			// Player1 already has a loaded source
-			$scope.player1ready = true;
-			$scope.player2ready = false;
-			$scope.allPlayersReady = false;
-			//$log.log('Finished initialized player ready variables');
-
-			//$log.log('going to timestamp');
-			$scope.playerControls.pause();
-			var split = timeString.split("+");
-
-			// The timestamp
-			var timestampInfo = split[0].split('|');
-
-			var videoOffset = timestampInfo[0].slice(-1);
-			$scope.playerControls.firstPlayerClass = 'show-left';
-			$scope.playerControls.secondPlayerClass = 'show-left';
-			
-			if (videoOffset == 'c') {
-				$scope.playerControls.firstPlayerClass = 'show-center';
-			} 
-			else if (videoOffset == 'r') {
-				$scope.playerControls.firstPlayerClass = 'show-right';
-			}
-			else if (videoOffset == 'h') {
-				$scope.playerControls.firstPlayerClass = '';
-				$scope.playerControls.secondPlayerContainerClass = 'show-full';
-				$scope.playerControls.firstPlayerControlsClass = 'show-hidden';
-				$scope.playerControls.secondPlayerClass = '';
-
-				// Mute first player and unmute second player
-				$scope.playerControls.unmuteSecondPlayer();
-			}
-
-			var timestampString = timestampInfo[0].match(timestampOnlyRegex)[0];
-			// First the timestamp (the first part is always the current video)
-			var convertedTime = $scope.extractTime(timestampString);
-
-			// Then check if we're trying to play videos in dual mode
-			var otherVideo = timestampInfo[1];
-			if (otherVideo) {
-				// Update the controls so that they affect both videos
-				$scope.playerControls.mode = 2;
-
-				// The URL of the video. For now, default to the same video
-				var key = $scope.review.key;
-				var dataType = $scope.review.fileType;
-
-				// A reviewID has been specified
-				var externalId = otherVideo.match(externalIdRegex);
-				if (externalId) {
-					var externalReviewId = externalId[0].substring(1, externalId[0].length - 1);
-					// $log.log('external review id', externalReviewId);
-					// $log.log('review map is ', $scope.review.reviewVideoMap);
-					key = $scope.review.reviewVideoMap[externalReviewId];
-					// $log.log('external video key is ', key);
-				}
-
-				var fileLocation2 = ENV.videoStorageUrl + key;
-				$scope.sources2 = [{src: $sce.trustAsResourceUrl(fileLocation2), type: dataType}];
-
-				// Now move the videos side-byside
-				var sideInfo = otherVideo.indexOf('(') > -1 ? otherVideo.split('(')[0] : otherVideo;
-
-				var video2offset = otherVideo.slice(-1);
-				if (video2offset == 'c') {
-					$scope.playerControls.secondPlayerClass = 'show-center';
-				} 
-				else if (video2offset == 'r') {
-					$scope.playerControls.secondPlayerClass = 'show-right';
-				}
-
-				/*if (otherVideo.indexOf('r') > -1) {
-					$scope.playerControls.firstPlayerClass = 'right-shift';
-					$scope.playerControls.secondPlayerClass = 'center-shift';
-					sideInfo = otherVideo.split('r')[0];
-				}
-				else {
-					$scope.playerControls.firstPlayerClass = '';
-					$scope.playerControls.secondPlayerClass = '';
-				}*/
-
-				var timestampString2 = otherVideo.match(timestampOnlyRegex)[0];
-				// First the timestamp (the first part is always the current video)
-				var convertedTime2 = $scope.extractTime(timestampString2);
-			}
-			else {
-				//$scope.player = true;
-				$scope.playerControls.mode = 1;
-				// Redondant with watching the "playerControls.mode"?
-				//$scope.playerControls.firstPlayerClass = '';
-				//$scope.playerControls.secondPlayerClass = '';
-				$scope.API2.stop();
-			}
-
-			// There are two additional steps
-			// 1- We need to wait until the source has been loaded to navigate in the video
-			var buffering = true;
-			var buffering2 = false;
-			$scope.$watch('player1ready', function (newVal, oldVal) {
-				// $log.debug('player1ready?', oldVal, newVal);
-				if (!$scope.player2ready && $scope.playerControls.mode == 2) return;
-
-				if (newVal && buffering) {
-					$scope.allPlayersReady = true;
-				}
-
-				if (newVal && buffering2) {
-					$scope.allPlayersReady = true;
-				}
-			});
-
-			$scope.$watch('player2ready', function (newVal, oldVal) {
-				// $log.debug('player2ready?', oldVal, newVal)
-				if (!$scope.player1ready || $scope.playerControls.mode != 2) return;
-
-				if (newVal && buffering) {
-					$scope.allPlayersReady = true;
-				}
-
-				if (newVal && buffering2) {
-					$scope.allPlayersReady = true;
-				}
-			});
-
-			var unregisterWatchPhase1 = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
-				// $log.debug('All players ready?', oldVal, newVal);
-				if (newVal && buffering) {
-					// $log.debug('ready for phase 2, seeking');
-					$scope.player1ready = false;
-					$scope.player2ready = false;
-					$scope.allPlayersReady = false;
-					// Cancel current playing mode
-					$scope.playerControls.pause();
-					$scope.playerControls.loopDuration = undefined;
-					$scope.playerControls.seekTime(convertedTime, convertedTime2);
-					buffering2 = true;
-					buffering = false;
-
-					unregisterWatchPhase1();
-				}
-			});
-
-			// We need to wait until both videos have finished seeking the proper time
-			// Actually, we always wait for the second one, as it seems the first one is always 
-			// conveniently processed first
-			var unregisterWatchPhase2 = $scope.$watch('allPlayersReady', function (newVal, oldVal) {
-				// $log.debug('All players ready bis?', oldVal, newVal);
-				if (newVal && newVal != oldVal && buffering2) {
-					// $log.log('ready for phase 3, playing');
-					// The attributes
-					var attributes = split[1];
-					if (attributes && attributes.indexOf('[') != -1) {
-						attributes = attributes.substring(0, attributes.indexOf('['));
-					}
-
-					// Should we slow down the video?
-					if (attributes && attributes.indexOf('s') !== -1) {
-						var indexOfLoop = attributes.indexOf('L');
-						var lastIndexForSpeed = indexOfLoop == -1 ? attributes.length : indexOfLoop;
-						var playbackSpeed = attributes.substring(attributes.indexOf('s') + 1, lastIndexForSpeed);
-						$scope.playerControls.setPlayback(playbackSpeed ? playbackSpeed : 0.5);
-						$scope.playerControls.play();
-					}
-					// Is playing?
-					else if (attributes && attributes.indexOf('p') !== -1) {
-						//$log.log('Starting playing both vids');
-						$scope.playerControls.resetPlayback();
-						$scope.playerControls.play();
-					}
-					else {
-						//$log.log('setting playback to 1');
-						$scope.playerControls.resetPlayback();
-					}
-
-					if (attributes && attributes.indexOf('L') !== -1) {
-						$scope.playerControls.loopStartTime = convertedTime;
-						$scope.playerControls.loop2StartTime = convertedTime2;
-
-						var duration = parseFloat(attributes.substring(attributes.indexOf('L') + 1));
-						$scope.playerControls.loopDuration = duration ? duration : 1;
-						$scope.playerControls.loopStatus = 'Exit loop';
-					}
-					else {
-						$scope.playerControls.stopLoop();
-					}
-
-					$scope.playerControls.canvasId = undefined;
-					$scope.playerControls.canvasPlaying = false;
-					//$log.log('looking for canvas attributes', timeString);
-					var canvas = timeString.match(canvasRegex);
-					//$log.log('matching canvas', canvas);
-					if (canvas) {
-						//$log.log('Setting canvas to be displayed');
-						$scope.playerControls.canvasId = canvas[0].substring(1, canvas[0].length - 1);
-						$scope.playerControls.canvasPlaying = true;
-						//$log.log('canvasId, canvasPlaying', $scope.playerControls.canvasId, $scope.playerControls.canvasPlaying);
-						var jsonCanvas = JSON.parse($scope.review.canvas[$scope.playerControls.canvasId]);
-						$scope.loadCanvas(jsonCanvas);
-					}
-					//$log.log('Finished parsing timestamp');
-					unregisterWatchPhase2();
-				}
-			});
-		}
-
-		$scope.$watch('playerControls.canvasPlaying', function (newVal, oldVal) {
-			if (newVal) {
-				$scope.showCanvas();
-			}
-			else {
-				$scope.hideCanvas();
-			}
-		});
-
-		$scope.$watch('playerControls.mode', function (newVal, oldVal) {
-			//$log.log('changing playerControls.mode', newVal, oldVal);
-			if (newVal == 1) {
-				//$log.log('stopping background video');
-				$scope.API2.stop();
-				$scope.playerControls.firstPlayerClass = '';
-				$scope.playerControls.secondPlayerClass = '';
-
-			}
-		});
-
-		$scope.extractTime = function(originalTime) {
-			var timestamp = originalTime.split(":");
-			var convertedTime = 60 * parseInt(timestamp[0]) + parseInt(timestamp[1]) + (parseInt(timestamp[2]) || 0)  / 1000;
-			return convertedTime;
-		}
-
-		$scope.onUpdateTime = function(currentTime, duration) {
-			if (!$scope.playerControls.loopDuration || $scope.relooping) return;
-			//$log.log('updating time');
-
-			var test = $scope.playerControls.loopStartTime + $scope.playerControls.loopDuration;
-			// Always reset both loops at the same time, so we're fine with dealing only with the main player
-			if (currentTime	> test) {
-				$scope.playerControls.reloop();
-			}
-		}
+		// 	$scope.mediaPlayer.goToTimestamp(timeString)
+		// }
 
 		$scope.canEdit = function(review) {
 			//$log.log('can edit review?', User.getUser());
@@ -1055,6 +701,21 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			});
 		}
 
-		
+		$scope.updateSeoInformation = function(data) {
+			if ($scope.config && $scope.config.isSport)  {
+				$rootScope.pageDescription = 'Get better at ' + $scope.config.displayName;
+				if (data.tags) {
+					data.tagValues = '';
+					$rootScope.pageDescription += '. ';
+					angular.forEach(data.tags, function(key) {
+						$rootScope.pageDescription += ' ' + key.text;
+						data.tagValues += ' ' + key.text;
+						key.sport = data.sport.key.toLowerCase();
+					})
+				}
+				$rootScope.pageDescription += '. ' + data.text;
+				//$log.log('pageDescription in review.js', $rootScope.pageDescription);
+			}
+		}
 	}
 ]);

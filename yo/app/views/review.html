@@ -7,55 +7,14 @@
 	</div>
 
 	<div class="background-white">
-		<div class="videogular-container multi-player" ng-show="review.key && !externalPlayer" >
-			<videogular vg-player-ready="onPlayerReady($API)" class="videogular" ng-class="{'videogular-fullscreen': API.isFullScreen, 'videogular-playing': (!review.editing && !canvasState.drawingCanvas)}" vg-update-time="onUpdateTime($currentTime, $duration)">
-				<div class="first-player-container">
-					<vg-media vg-src="sources" vg-preload="metadata" class="first-player" ng-class="playerControls.firstPlayerClass"></vg-media>
-				</div>
 
-				<vg-controls ng-class="{'controls-container-fullscreen': API.isFullScreen, '{{playerControls.firstPlayerControlsClass}}': true}">
-					<vg-play-pause-button ng-click="playerControls.playPauseSecondPlayer()"></vg-play-pause-button>
-					<vg-time-display>{{ currentTime | date: config.deactivateControls && config.deactivateControls.millis ? 'mm:ss' : 'mm:ss:sss' }}</vg-time-display>
-					<vg-scrub-bar video-fine-time-control>
-						<vg-scrub-bar-current-time help-popup help-popup-key="fineScrolling" help-popup-active="0" help-popup-position="top"></vg-scrub-bar-current-time>
-					</vg-scrub-bar>
-					<vg-time-display>{{ totalTime | date:'mm:ss' }}</vg-time-display>
-					<video-playback-button></video-playback-button>
-					<video-loop-button ng-show="playerControls.loopStatus"></video-loop-button>
-					<video-dual-mode-button ng-show="playerControls.mode == 2"></video-dual-mode-button>
-					<video-canvas-overlay-button ng-show="playerControls.canvasId"></video-canvas-overlay-button>
-					<vg-volume>
-						<vg-mute-button></vg-mute-button>
-						<vg-volume-bar></vg-volume-bar>
-					</vg-volume>
-					<vg-fullscreen-button></vg-fullscreen-button>
-					<video-wide-mode-button></video-wide-mode-button>
-				</vg-controls>
-
-				<div class="second-player-container"  ng-class="playerControls.secondPlayerContainerClass" ng-show="playerControls.mode == 2">
-					<div class="second-player">
-						<videogular vg-player-ready="onSecondPlayerReady($API)" class="videogular">
-							<vg-media vg-src="sources2" ng-class="playerControls.secondPlayerClass"></vg-media>
-						</videogular>
-					</div>
-				</div>
-
-				<canvas id="fabricCanvas" pw-canvas></canvas>
-
-				<vg-overlay-play ng-click="playerControls.playPauseSecondPlayer()" ng-show="!canvasState.drawingCanvas"></vg-overlay-play>
-			</videogular>
-		</div>
+		<!-- The media player -->
+		<media-player review="review" config="mediaPlayer" ng-class="pluginNames"></media-player>	
 		
-		<div id="{{'externalPlayer' + (mediaType ? '-' + mediaType : '') }}" ng-show="externalPlayer" class="external-player" ng-class="pluginNames"></div>
-
+		<!-- The video information -->
 		<div ng-class="pluginNames">
 			<form class="container-fluid video-details" name="videoInformationForm">
 				<div class="row">
-					<!--<div class="col-md-1 reputation">
-						<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': review.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="upvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.upvote' | translate }}"></span>
-						<span class="reputation-score glyphicon">{{review.reputation.nbVotes.Upvote - review.reputation.nbVotes.Downvote}}</span>
-						<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':review.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteReview(review)" aria-hidden="true" title="{{ 'global.review.comment.downvote' | translate }}"></span>
-					</div>-->
 					<div class="col-md-12">
 						<div class="row video-information-header">
 							<div class="col-md-12">
@@ -101,7 +60,7 @@
 								<div class="panel panel-default" ng-hide="review.editing">
 									<div compilecontent content="review.markedText" class="panel-body video-description"></div>
 								</div>
-								<toolbar ng-show="review.editing && review.key" player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" config="config" media-type="review.replay ? 'replay' : 'video'">
+								<toolbar ng-show="review.editing && review.key" media-player="mediaPlayer" insert-model="insertModel" config="config" media-type="review.replay ? 'replay' : 'video'">
 									<textarea class="form-control text-editing-area" ng-model="review.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
 								<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" comment-plugins="plugins" auto-grow></textarea>
@@ -127,10 +86,11 @@
 	</div>
 </div>
 
+<!-- The comments -->
 <div class="video-comment col-md-7 {{pluginNames.join(' ')}} {{review.mediaType}}" ng-class="playerControls.wideMode ? 'col-md-5' : 'col-md-7'">
 	<div class="background-white show-x">
 		<div class="background-container">
-			<div scrollable="{{useVideo}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">
+			<div scrollable="{{review.key}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">
 				
 				<div ng-show="selectedCoach">
 					<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
@@ -148,6 +108,7 @@
 						</div>
 					</div>
 				</div>
+
 				<form name="commentForm" ng-show="addingComment">
 					<div class="container-fluid comment-block main-block">
 						<div class="row">
@@ -157,7 +118,7 @@
 								</div>
 							</div>
 							<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-								<toolbar class="form-group" show-errors="{ showSuccess: true }" player-api="API" insert-model="insertModel" ng-show="review.key" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" config="config" media-type="review.replay ? 'replay' : 'video'">
+								<toolbar class="form-group" show-errors="{ showSuccess: true }" media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.replay ? 'replay' : 'video'">
 									<textarea id="newCommentArea" placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control text-editing-area" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
 								<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
@@ -176,7 +137,15 @@
 						<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 					</div>
 				</form>
-				<comment ng-repeat="comment in review.comments" comment="comment" indentation-level="0" comment-index="$index" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" timestamp-click-action="goToTimestamp" prepare-canvas-for-upload="prepareCanvasForUpload" clear-temporary-canvas="clearTemporaryCanvas" canvas-state="canvasState" plugins="plugins" config="config" sport="sport"></comment>
+
+				<div ng-if="!controlFlow.reviewDisplayed">
+					<div class="loading">{{ 'global.review.loadingComments' | translate }}</span></div>
+				</div>
+				<div ng-if="controlFlow.reviewDisplayed">
+					<comment ng-repeat="comment in review.comments" comment="comment" comment-index="$index" media-player="mediaPlayer" plugins="plugins" config="config" sport="sport"></comment>
+					<!-- <comment ng-repeat="comment in review.comments" comment="comment" comment-index="$index" media-player="mediaPlayer" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" canvas-state="canvasState" plugins="plugins" config="config" sport="sport"></comment> -->
+				</div>
+
 				<!-- Prevent scrolling center area if we're already at the bottom -->
 				<div id="padder"></div>
 				<div id="bottom"></div>
@@ -184,6 +153,3 @@
 		</div>
 	</div>
 </div>
-
-<canvas-control show-canvas="showCanvas" hide-canvas="hideCanvas" player-controls="playerControls" review="review" load-canvas="loadCanvas" serialize-canvas="serializeCanvas" clear-canvas="clearCanvas" canvas-state="canvasState" clear-temporary-canvas="clearTemporaryCanvas" prepare-canvas-for-upload="prepareCanvasForUpload" toggle-canvas="toggleCanvas" cancel-canvas-edition="cancelCanvasEdition"></canvas-control> 
-<sequence-controller sequence-sources="sources" local-review="review"></sequence-controller>

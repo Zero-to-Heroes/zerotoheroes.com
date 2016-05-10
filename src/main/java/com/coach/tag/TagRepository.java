@@ -115,10 +115,12 @@ public class TagRepository {
 		hearthstone.add(new Tag("Egg Druid"));
 		hearthstone.add(new Tag("Palasecret"));
 		hearthstone.add(new Tag("Aggro Paladin"));
+		hearthstone.add(new Tag("NZoth Paladin"));
 		hearthstone.add(new Tag("Palamurloc"));
 		hearthstone.add(new Tag("Mage Mecha"));
 		hearthstone.add(new Tag("Tempo Mage"));
 		hearthstone.add(new Tag("Freeze Mage"));
+		hearthstone.add(new Tag("CThun Mage"));
 		hearthstone.add(new Tag("Echo Mage"));
 		hearthstone.add(new Tag("Zoolock"));
 		hearthstone.add(new Tag("Demonlock"));

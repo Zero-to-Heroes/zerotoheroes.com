@@ -345,6 +345,45 @@ module.exports = function (grunt) {
 		}
 	},
 
+	ngtemplates:  {
+	  	app: {
+	  		cwd: '<%= yeoman.app %>',
+		    src: 'templates/**/*.html',
+	    	dest: '<%= yeoman.app %>/scripts/template.js',
+	    	options: {
+	    		htmlmin: {
+				  	collapseBooleanAttributes:      true,
+				  	collapseWhitespace:             true,
+				  	removeAttributeQuotes:          true,
+				  	removeComments:                 true, // Only if you don't use comment directives! 
+				  	removeEmptyAttributes:          true,
+				  	removeRedundantAttributes:      true,
+				  	removeScriptTypeAttributes:     true,
+				  	removeStyleLinkTypeAttributes:  true
+				}
+	    	}
+	  	},
+	  	dist: {
+		    cwd: '<%= yeoman.app %>',
+		    src: 'templates/**/*.html',
+	    	dest: '<%= yeoman.app %>/scripts/template.js',
+	    	options: {
+	    		module: 'app',
+		      	// usemin: '<%= yeoman.dist %>/vendors.js', // <~~ This came from the <!-- build:js --> block 
+		      	htmlmin: {
+				  	collapseBooleanAttributes:      true,
+				  	collapseWhitespace:             true,
+				  	removeAttributeQuotes:          true,
+				  	removeComments:                 true, // Only if you don't use comment directives! 
+				  	removeEmptyAttributes:          true,
+				  	removeRedundantAttributes:      true,
+				  	removeScriptTypeAttributes:     true,
+				  	removeStyleLinkTypeAttributes:  true
+				}
+		    }
+	  	}
+	},
+
 	ngconstant: {
 	  	// Options for all targets
 	  	options: {
@@ -394,6 +433,7 @@ module.exports = function (grunt) {
 		  'clean:server',
 		  'ngconstant:development',
 		  'wiredep',
+		  'ngtemplates:app',
 		  'concurrent:server',
 		  'autoprefixer',
 		  'connect:livereload',
@@ -414,6 +454,7 @@ module.exports = function (grunt) {
 		'clean:dist',
 		'ngconstant:production',
 		'wiredep',
+		'ngtemplates:dist',
 		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
@@ -435,6 +476,7 @@ module.exports = function (grunt) {
 		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
+		'ngtemplates:dist',
 		'concat',
 		'ngAnnotate',
 		'copy:dist',

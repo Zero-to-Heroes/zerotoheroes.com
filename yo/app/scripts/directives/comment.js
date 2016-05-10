@@ -10,15 +10,15 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 			restrict: 'E',
 			replace: true,
 			scope: {
-				comment:'=comment',
-				indentationLevel:'=',
+				comment:'=',
+				// indentationLevel:'=',
 				commentIndex:'=',
-				canvasState: '=',
+				// canvasState: '=',
 				//drawingCanvas: '=',
 				//canvasId: '=',
-				goToTimestamp: '=timestampClickAction',
-				prepareCanvasForUpload: '=',
-				clearTemporaryCanvas: '=',
+				mediaPlayer: '=',
+				// goToTimestamp: '=timestampClickAction',
+				// clearTemporaryCanvas: '=',
 				plugins: '=',
 				config: '=',
 				sport: '='
@@ -26,10 +26,11 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {
 
+				// $log.debug('init comment, mediaPlayer', $scope.mediaPlayer)
+
 				$scope.User = User;
 				//$scope.goToTimestamp = $scope.$parent.goToTimestamp;
 				$scope.parseText = $scope.$parent.parseText;
-				//$scope.prepareCanvasForUpload = $scope.$parent.prepareCanvasForUpload;
 				//$scope.clearTemporaryCanvas = $scope.$parent.clearTemporaryCanvas;
 
 				$scope.review = $scope.$parent.review;
@@ -73,7 +74,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.updateComment = function(comment) {
-					$scope.prepareCanvasForUpload($scope.review, $scope.comment);
+					$scope.mediaPlayer.preUploadComment($scope.review, $scope.comment);
 					//$log.log('updating comment', $scope.comment);
 					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
 		  				function(data) {
@@ -144,7 +145,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.postReply = function() {
 					$scope.$broadcast('show-errors-check-validity');
 					if ($scope.replyForm.$valid) {
-						$scope.prepareCanvasForUpload($scope.review, $scope.reply);
+						$log.debug('posting reply', $scope)
+						$scope.mediaPlayer.preUploadComment($scope.review, $scope.reply);
 						if (!User.isLoggedIn() && !$scope.onAddReply) {
 							$scope.onAddReply = true; 
 							$rootScope.$broadcast('account.signup.show', {identifier: $scope.reply.author});
@@ -268,9 +270,10 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				    });
 				}
 			},
+
 			compile: function(element) {
 	            return RecursionHelper.compile(element, function(scope, iElement, iAttrs, controller, transcludeFn) {
-	                // Define your normal link function here.
+	            	// Define your normal link function here.
 	                // Alternative: instead of passing a function,
 	                // you can also pass an object with 
 	                // a 'pre'- and 'post'-link function.

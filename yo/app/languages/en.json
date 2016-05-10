@@ -433,7 +433,8 @@
 				"otherVote": "and one other"
 			},
 			"askProButton": "Ask a Pro",
-			"askProTooltip": "Get professional advice on your review"
+			"askProTooltip": "Get professional advice on your review",
+			"loadingComments": "Loading comments"
 		},
 		"upload": {
 			"choice": {

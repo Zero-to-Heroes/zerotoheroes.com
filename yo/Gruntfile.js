@@ -345,6 +345,33 @@ module.exports = function (grunt) {
 		}
 	},
 
+	ngtemplates:  {
+	  	app: {
+	  		cwd: '<%= yeoman.app %>',
+		    src: 'templates/**/*.html',
+	    	dest: '<%= yeoman.app %>/scripts/template.js',
+	    	options: {
+	    		htmlmin: {
+				  	collapseBooleanAttributes:      true,
+				  	collapseWhitespace:             true,
+				  	removeAttributeQuotes:          true,
+				  	removeComments:                 true, // Only if you don't use comment directives! 
+				  	removeEmptyAttributes:          true,
+				  	removeRedundantAttributes:      true,
+				  	removeScriptTypeAttributes:     true,
+				  	removeStyleLinkTypeAttributes:  true
+				}
+	    	}
+	  	},
+	  	dist: {
+		    src: '<%= yeoman.app %>/templates/**/*.html',
+	    	dest: '<%= yeoman.app %>/scripts/template.js',
+	    	options: {
+		      	usemin: 'dist/vendors.js' // <~~ This came from the <!-- build:js --> block 
+		    }
+	  	}
+	},
+
 	ngconstant: {
 	  	// Options for all targets
 	  	options: {
@@ -394,6 +421,7 @@ module.exports = function (grunt) {
 		  'clean:server',
 		  'ngconstant:development',
 		  'wiredep',
+		  'ngtemplates:app',
 		  'concurrent:server',
 		  'autoprefixer',
 		  'connect:livereload',

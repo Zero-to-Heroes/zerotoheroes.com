@@ -1,6 +1,6 @@
 var services = angular.module('services');
-services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 
-	function ($log, angularLoad, $parse) {
+services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage', 
+	function ($log, angularLoad, $parse, localStorage) {
 		var service = {};
 
 		service =
@@ -44,8 +44,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						plugins: [
 							{name: 'parseCardsText', version: 6}, 
 							{name: 'parseDecks', version: 4}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], version: 23},
-							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 5}
+							{name: 'joustjs', player: true, format: ['text/xml'], version: 25},
+							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 7}
 						],
 						customCss: 'hearthstone.css'
 					},
@@ -177,21 +177,58 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 		}
 
 		service.loadPlugin = function(plugins, pluginObj) {
-			var plugin = pluginObj.name;
-			var version = pluginObj.version ? '?' + pluginObj.version : '';
-			angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js' + version).then(function() {
+			var plugin = pluginObj.name
+			var version = pluginObj.version ? '?' + pluginObj.version : ''
+
+			// Already loaded?
+			if (window[pluginObj.name]) {
 				plugins.push(pluginObj)
-			}).catch(function() {
-				plugins.push(undefined);
-				$log.error('could not load plugin', plugin );
-			});
-			angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
-				//console.log('loaded css', plugin);
-			});
+			}
+			else {
+				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js' + version }).then(function () {
+					plugins.push(pluginObj)
+				})
+				angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
+					//console.log('loaded css', plugin);
+				})
+			}
+			// Otherise, is in cache?
+			// else if (localStorage.getItem(plugin + '.js' + version)) {
+			// 	console.log('loading script from local storage')
+			// 	console.log(localStorage.getItem(plugin + '.js' + version).toString())
+			// 	// eval(localStorage.getItem(plugin + '.js' + version))
+			// 	var script = document.createElement('script')
+			// 	document.body.appendChild(script)
+			// }
+			// // Otherwise load it
+			// else {
+			// 	angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js' + version).then(function() {
+			// 		plugins.push(pluginObj)
+			// 		localStorage.setItem(plugin + '.js' + version, )
+			// 	}).catch(function() {
+			// 		plugins.push(undefined)
+			// 		$log.error('could not load plugin', plugin )
+			// 	})
+			// 	angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
+			// 		//console.log('loaded css', plugin);
+			// 	})
+			// }
 		}
 
 		service.initPlayer = function(config, review, activePlugins, pluginNames, callback) {
-			if (!config || !config.plugins || !config.plugins.plugins) return false;
+			if (!config || !config.plugins || !config.plugins.plugins) return false
+
+			var executePlugin = function(plugin) {
+				externalPlayer = window[plugin.name]
+				$log.debug('loaded externalPlayer is', externalPlayer)
+				externalPlayer.init(plugin, review)
+				if (activePlugins) activePlugins.push(plugin)
+				if (pluginNames) pluginNames.push(plugin.name)
+
+				if (callback) {
+					callback(externalPlayer)
+				}
+			}
 
 			var externalPlayer;
 			// $log.debug('init player with config', config, review)
@@ -202,24 +239,30 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse',
 						// $log.debug('\tyes, init player', plugin, review)
 						// Load the plugin
 						var version = plugin.version ? '?' + plugin.version : '';
-						angularLoad.loadScript('/plugins/' + plugin.name + '/' + plugin.name + '.js' + version).then(function() {
-							externalPlayer = window[plugin.name]
-							$log.debug('loaded externalPlayer is', externalPlayer)
-							externalPlayer.init(plugin, review)
-							if (activePlugins) activePlugins.push(plugin)
-							if (pluginNames) pluginNames.push(plugin.name)
+						if (window[plugin.name]) {
+							executePlugin(plugin)
+						}
+						else {
+							basket.require({ url: '/plugins/' + plugin.name + '/' + plugin.name + '.js' + version }).then(function () {
+								$log.debug('externalPlayer loaded')
+								executePlugin(plugin)
+								$log.debug('externalPlayer executed')
+							})
+							angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css').then(function() {
+								//console.log('loaded css', plugin);
+							})
 
-							if (callback) {
-								callback(externalPlayer)
-							}
-						}).catch(function() {
-							if (activePlugins) activePlugins.push(undefined)
-							if (pluginNames) pluginNames.push(undefined)
-							$log.error('could not load plugin', plugin )
-						})
-						angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css').then(function() {
-							//console.log('loaded css', plugin);
-						});
+							// angularLoad.loadScript('/plugins/' + plugin.name + '/' + plugin.name + '.js' + version).then(function() {
+							// 	executePlugin(plugin)
+							// }).catch(function() {
+							// 	if (activePlugins) activePlugins.push(undefined)
+							// 	if (pluginNames) pluginNames.push(undefined)
+							// 	$log.error('could not load plugin', plugin )
+							// })
+							// angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css').then(function() {
+							// 	//console.log('loaded css', plugin);
+							// });
+						}
 					}
 				}
 			})

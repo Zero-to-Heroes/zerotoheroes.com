@@ -466,7 +466,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.updateDescription = function() {
-			$scope.prepareCanvasForUpload($scope.review, $scope.review);
+			$scope.mediaPlayer.preUploadComment($scope.review, $scope.review)
+			
 			var newReview = {
 				text: $scope.review.text,
 				sport: $scope.review.sport.key,

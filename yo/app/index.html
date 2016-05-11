@@ -126,54 +126,6 @@
 
 		<!-- build:js(.) scripts/vendor.js -->
 		<!-- bower:js -->
-		<script src="bower_components/jquery/dist/jquery.js"></script>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-		<script src="bower_components/angular/angular.js"></script>
-		<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-		<script src="bower_components/angular-touch/angular-touch.js"></script>
-		<script src="bower_components/angular-route/angular-route.js"></script>
-		<script src="bower_components/angular-resource/angular-resource.js"></script>
-		<script src="bower_components/angular-mocks/angular-mocks.js"></script>
-		<script src="bower_components/videogular/videogular.js"></script>
-		<script src="bower_components/videogular-controls/vg-controls.js"></script>
-		<script src="bower_components/videogular-buffering/vg-buffering.js"></script>
-		<script src="bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
-		<script src="bower_components/videogular-poster/vg-poster.js"></script>
-		<script src="bower_components/videogular-ima-ads/vg-ima-ads.js"></script>
-		<script src="bower_components/SHA-1/sha1.js"></script>
-		<script src="bower_components/angulartics/src/angulartics.js"></script>
-		<script src="bower_components/videogular-angulartics/vg-analytics.js"></script>
-		<script src="bower_components/angular-rangeslider/angular.rangeSlider.js"></script>
-		<script src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
-		<script src="bower_components/angular-strap/dist/angular-strap.js"></script>
-		<script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
-		<script src="bower_components/angular-bootstrap-show-errors/src/showErrors.js"></script>
-		<script src="bower_components/moment/moment.js"></script>
-		<script src="bower_components/momentjs/moment.js"></script>
-		<script src="bower_components/angular-scroll/angular-scroll.js"></script>
-		<script src="bower_components/marked/lib/marked.js"></script>
-		<script src="bower_components/angular-marked/angular-marked.js"></script>
-		<script src="bower_components/sprintf/dist/sprintf.min.js"></script>
-		<script src="bower_components/sprintf/dist/angular-sprintf.min.js"></script>
-		<script src="bower_components/angular-logger/dist/angular-logger.min.js"></script>
-		<script src="bower_components/aws-sdk-js/dist/aws-sdk.js"></script>
-		<script src="bower_components/angular-recursion/angular-recursion.js"></script>
-		<script src="bower_components/moment-duration-format/lib/moment-duration-format.js"></script>
-		<script src="bower_components/wowjs/dist/wow.js"></script>
-		<script src="bower_components/jquery.stellar/jquery.stellar.js"></script>
-		<script src="bower_components/angularjs-viewhead/angularjs-viewhead.js"></script>
-		<script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
-		<script src="bower_components/fabric/dist/fabric.min.js"></script>
-		<script src="bower_components/string/dist/string.min.js"></script>
-		<script src="bower_components/angular-load/angular-load.js"></script>
-		<script src="bower_components/jquery-textcomplete/dist/jquery.textcomplete.js"></script>
-		<script src="bower_components/angular-translate/angular-translate.js"></script>
-		<script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
-		<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
-		<script src="bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js"></script>
-		<script src="bower_components/lodash/lodash.js"></script>
-		<script src="bower_components/rsvp/rsvp.js"></script>
-		<script src="bower_components/basket.js/dist/basket.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 
@@ -181,7 +133,9 @@
 		<!-- build:js({.tmp,app}) scripts/scripts.js -->
 		<script src="scripts/config.js"></script>
 		<script src="scripts/app.js"></script>
-		<script src="scripts/template.js"></script>
+		<!-- When calling the grunt task processhtml, the following scripts will automatically be included. This is for now used when doing local-only development -->
+		<!-- build:js scripts/template.js -->
+		<!-- /build -->
 		<script src="scripts/services.js"></script>
 
 		<script src="scripts/controllers/accountCreation.js"></script>
@@ -291,8 +245,6 @@
 		<script src="plugins/parseDecks/hsDecklistUpload.js"></script>
 		<!-- endbuild -->
 
-		<!-- When calling the grunt task processhtml, the following scripts will automatically be included. This is for now used when doing local-only development -->
-		<!-- build:js scripts/app-mockbackend.js -->
-		<!-- /build -->
+		
 	</body>
 </html>

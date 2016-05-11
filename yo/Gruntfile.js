@@ -59,6 +59,7 @@ module.exports = function (grunt) {
 		  livereload: '<%= connect.options.livereload %>'
 		},
 		files: [
+		  '.mpt/index.html',
 		  '<%= yeoman.app %>/**/*.html',
 		  '.tmp/styles/**/*.css',
 		  '<%= yeoman.app %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}'
@@ -157,50 +158,50 @@ module.exports = function (grunt) {
 
 	// Automatically inject Bower components into the app
 	wiredep: {
-	  app: {
-		src: ['<%= yeoman.app %>/index.html'],
-		ignorePath:  /\.\.\//
-	  }
+	  	app: {
+			src: ['.tmp/index.html'],
+			ignorePath:  /\.\.\//
+	  	}
 	},
 
 	// Renames files for browser caching purposes
 	filerev: {
-	  dist: {
-		src: [
-		  '<%= yeoman.dist %>/scripts/**/*.js',
-		  '<%= yeoman.dist %>/styles/**/*.css',
-		  //'<%= yeoman.dist %>/images/*.{png,jpg,jpeg,gif,webp,svg}',
-		  '<%= yeoman.dist %>/styles/fonts/*'
-		]
-	  }
+	  	dist: {
+			src: [
+		  		'<%= yeoman.dist %>/scripts/**/*.js',
+		  		'<%= yeoman.dist %>/styles/**/*.css',
+		  		//'<%= yeoman.dist %>/images/*.{png,jpg,jpeg,gif,webp,svg}',
+		  		'<%= yeoman.dist %>/styles/fonts/*'
+			]
+	  	}
 	},
 
 	// Reads HTML for usemin blocks to enable smart builds that automatically
 	// concat, minify and revision files. Creates configurations in memory so
 	// additional tasks can operate on them
 	useminPrepare: {
-	  html: '<%= yeoman.app %>/index.html',
-	  options: {
-		dest: '<%= yeoman.dist %>',
-		flow: {
-		  html: {
-			steps: {
-			  js: ['concat', 'uglify'],
-			  css: ['cssmin']
-			},
-			post: {}
-		  }
-		}
-	  }
+	  	html: '.tmp/index.html',
+	  	options: {
+			dest: '<%= yeoman.dist %>',
+			flow: {
+		  		html: {
+					steps: {
+			  			js: ['concat', 'uglify'],
+			  			css: ['cssmin']
+					},
+					post: {}
+		  		}
+			}
+	  	}
 	},
 
 	// Performs rewrites based on filerev and the useminPrepare configuration
 	usemin: {
-	  html: ['<%= yeoman.dist %>/**/*.html'],
-	  css: ['<%= yeoman.dist %>/styles/**/*.css'],
-	  options: {
-		assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
-	  }
+	  	html: ['.tmp/index.html', '<%= yeoman.dist %>/**/*.html'],
+	  	css: ['<%= yeoman.dist %>/styles/**/*.css'],
+	  	options: {
+			assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
+	  	}
 	},
 
 	// The following *-min tasks will produce minified files in the dist folder
@@ -240,21 +241,29 @@ module.exports = function (grunt) {
 	},
 
 	htmlmin: {
-	  dist: {
-		options: {
-		  collapseWhitespace: true,
-		  conservativeCollapse: true,
-		  collapseBooleanAttributes: true,
-		  removeCommentsFromCDATA: true,
-		  removeOptionalTags: true
-		},
-		files: [{
-		  expand: true,
-		  cwd: '<%= yeoman.dist %>',
-		  src: ['*.html', 'views/{,*/}*.html', 'templates/{,*/}*.html'],
-		  dest: '<%= yeoman.dist %>'
-		}]
-	  }
+	  	dist: {
+			options: {
+			  	collapseWhitespace: true,
+			  	conservativeCollapse: true,
+			  	collapseBooleanAttributes: true,
+			  	removeCommentsFromCDATA: true,
+			  	removeOptionalTags: true
+			},
+			files: [
+				{
+				  	expand: true,
+				  	cwd: '<%= yeoman.dist %>',
+				  	src: ['*.html', 'views/{,*/}*.html', 'templates/{,*/}*.html'],
+				  	dest: '<%= yeoman.dist %>'
+				},
+				{
+				  	expand: true,
+				  	cwd: '.tmp',
+				  	src: ['*.html'],
+				  	dest: '<%= yeoman.dist %>'
+				}
+			]
+	  	}
 	},
 
 	// ng-annotate tries to make the code safe for minification automatically
@@ -272,50 +281,66 @@ module.exports = function (grunt) {
 
 	// Replace Google CDN references
 	cdnify: {
-	  dist: {
-		html: ['<%= yeoman.dist %>/*.html']
-	  }
+	  	dist: {
+			html: ['.tmp/index.html', '<%= yeoman.dist %>/*.html']
+	  	}
 	},
 
 	// Copies remaining files to places other tasks can use
 	copy: {
-	  dist: {
-		files: [{
-		  expand: true,
-		  dot: true,
-		  cwd: '<%= yeoman.app %>',
-		  dest: '<%= yeoman.dist %>',
-		  src: [
-			'*.{ico,png,txt}',
-			'.htaccess',
-			'*.html',
-			'views/**/*.html',
-			'templates/**/*.html',
-			'images/**/*',
-			'fonts/**/*.*',
-			'sitemap.xml',
-			'plugins/**/*.*',
-			'languages/**/*.*',
-			'sports/**/*.*',
-		  ]
-		}, {
-		  expand: true,
-		  cwd: '.tmp/images',
-		  dest: '<%= yeoman.dist %>/images',
-		  src: ['generated/*']
-		}, {
-		  expand: true,
-		  cwd: 'bower_components/bootstrap/dist',
-		  src: 'fonts/*',
-		  dest: '<%= yeoman.dist %>'
-		}]
-	  },
-	  styles: {
-		expand: true,
-		cwd: '<%= yeoman.app %>/styles',
-		dest: '.tmp/styles/',
-		src: '**/*.css'
-	  }
+		index: {
+			files: [{
+				expand: true,
+				cwd: '<%= yeoman.app %>',
+				dest: '.tmp',
+				src: ['index.html']
+			}]
+		},
+		dist: {
+			files: [{
+				expand: true,
+				dot: true,
+				cwd: '<%= yeoman.app %>',
+				dest: '<%= yeoman.dist %>',
+				src: [
+					'*.{ico,png,txt}',
+					'.htaccess',
+					'404.html',
+					'views/**/*.html',
+					'templates/**/*.html',
+					'images/**/*',
+					'fonts/**/*.*',
+					'sitemap.xml',
+					'plugins/**/*.*',
+					'languages/**/*.*',
+					'sports/**/*.*',
+				]
+			},
+			{
+				expand: true,
+				cwd: '.tmp',
+				dest: '<%= yeoman.dist %>',
+				src: ['index.html']
+			}, 
+			{
+				expand: true,
+				cwd: '.tmp/images',
+				dest: '<%= yeoman.dist %>/images',
+				src: ['generated/*']
+			}, 
+			{
+				expand: true,
+				cwd: 'bower_components/bootstrap/dist',
+				src: 'fonts/*',
+				dest: '<%= yeoman.dist %>'
+			}]
+		},
+		styles: {
+			expand: true,
+			cwd: '<%= yeoman.app %>/styles',
+			dest: '.tmp/styles/',
+			src: '**/*.css'
+		}
 	},
 
 	// Run some tasks in parallel to speed up the build process
@@ -334,82 +359,82 @@ module.exports = function (grunt) {
 	},
 
 	processhtml: {
-		options: {
-			process: true
-		},
-		build: {
+		dist: {
+			options: {
+				process: true
+			},
 			files: {
 				// Target-specific file lists and/or options go here. 
-				'.tmp/index.html': ['app/index.html']
+				'.tmp/index.html': ['.tmp/index.html']
 			}
 		}
 	},
 
 	ngtemplates:  {
-	  	app: {
-	  		cwd: '<%= yeoman.app %>',
-		    src: 'templates/**/*.html',
-	    	dest: '<%= yeoman.app %>/scripts/template.js',
-	    	options: {
-	    		htmlmin: {
-				  	collapseBooleanAttributes:      true,
-				  	collapseWhitespace:             true,
-				  	removeAttributeQuotes:          true,
-				  	removeComments:                 true, // Only if you don't use comment directives! 
-				  	removeEmptyAttributes:          true,
-				  	removeRedundantAttributes:      true,
-				  	removeScriptTypeAttributes:     true,
-				  	removeStyleLinkTypeAttributes:  true
+		app: {
+			cwd: '<%= yeoman.app %>',
+			src: 'templates/**/*.html',
+			dest: '<%= yeoman.app %>/scripts/template.js',
+			options: {
+				htmlmin: {
+					collapseBooleanAttributes:      true,
+					collapseWhitespace:             true,
+					removeAttributeQuotes:          true,
+					removeComments:                 true, // Only if you don't use comment directives! 
+					removeEmptyAttributes:          true,
+					removeRedundantAttributes:      true,
+					removeScriptTypeAttributes:     true,
+					removeStyleLinkTypeAttributes:  true
 				}
-	    	}
-	  	},
-	  	dist: {
-		    cwd: '<%= yeoman.app %>',
-		    src: 'templates/**/*.html',
-	    	dest: '<%= yeoman.app %>/scripts/template.js',
-	    	options: {
-	    		module: 'app',
-		      	// usemin: '<%= yeoman.dist %>/vendors.js', // <~~ This came from the <!-- build:js --> block 
-		      	htmlmin: {
-				  	collapseBooleanAttributes:      true,
-				  	collapseWhitespace:             true,
-				  	removeAttributeQuotes:          true,
-				  	removeComments:                 true, // Only if you don't use comment directives! 
-				  	removeEmptyAttributes:          true,
-				  	removeRedundantAttributes:      true,
-				  	removeScriptTypeAttributes:     true,
-				  	removeStyleLinkTypeAttributes:  true
+			}
+		},
+		dist: {
+			cwd: '<%= yeoman.app %>',
+			src: 'templates/**/*.html',
+			dest: '<%= yeoman.app %>/scripts/template.js',
+			options: {
+				module: 'app',
+				// usemin: '<%= yeoman.dist %>/vendors.js', // <~~ This came from the <!-- build:js --> block 
+				htmlmin: {
+					collapseBooleanAttributes:      true,
+					collapseWhitespace:             true,
+					removeAttributeQuotes:          true,
+					removeComments:                 true, // Only if you don't use comment directives! 
+					removeEmptyAttributes:          true,
+					removeRedundantAttributes:      true,
+					removeScriptTypeAttributes:     true,
+					removeStyleLinkTypeAttributes:  true
 				}
-		    }
-	  	}
+			}
+		}
 	},
 
 	ngconstant: {
-	  	// Options for all targets
-	  	options: {
+		// Options for all targets
+		options: {
 			space: '  ',
 			wrap: '\'use strict\';\n\n {%= __ngModule %}',
 			name: 'config',
-	  	},
-	  	// Environment targets
-	  	development: {
+		},
+		// Environment targets
+		development: {
 			options: {
-		  		dest: '<%= yeoman.app %>/scripts/config.js'
+				dest: '<%= yeoman.app %>/scripts/config.js'
 			},
 			constants: {
-		  		ENV: grunt.file.readJSON('app/conf/constants.dev.json'),
-	  			version: grunt.template.today('yyyymmdd-HH')
+				ENV: grunt.file.readJSON('app/conf/constants.dev.json'),
+				version: grunt.template.today('yyyymmdd-HH')
 			}
-	  	},
-	  	production: {
+		},
+		production: {
 			options: {
-			  	dest: '<%= yeoman.app %>/scripts/config.js'
+				dest: '<%= yeoman.app %>/scripts/config.js'
 			},
 			constants: {
-			  	ENV: grunt.file.readJSON('app/conf/constants.prod.json'),
-	  			version: grunt.template.today('yyyymmdd-HH')
+				ENV: grunt.file.readJSON('app/conf/constants.prod.json'),
+				version: grunt.template.today('yyyymmdd-HH')
 			}
-	  	}
+		}
 	},
 
 	// Test settings
@@ -424,36 +449,39 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
 	if (target === 'dist') {
-	  	grunt.task.run([
+		grunt.task.run([
 			'connect:dist:keepalive'
-	  	]);
+		]);
 	}
 	else {
 		grunt.task.run([
-		  'clean:server',
-		  'ngconstant:development',
-		  'wiredep',
-		  'ngtemplates:app',
-		  'concurrent:server',
-		  'autoprefixer',
-		  'connect:livereload',
-		  'watch'
+		  	'clean:server',
+			'ngconstant:development',
+			'copy:index',
+		  	'wiredep',
+		  	// 'ngtemplates:app',
+		  	'concurrent:server',
+		  	'autoprefixer',
+		  	'connect:livereload',
+		  	'watch'
 		]);
 	}
   });
 
-  	grunt.registerTask('test', [
+	grunt.registerTask('test', [
 		'clean:server',
 		'concurrent:test',
 		'autoprefixer',
 		'connect:test',
 		'karma'
-  	]);
+	]);
 
-  	grunt.registerTask('build', [
+	grunt.registerTask('build', [
 		'clean:dist',
 		'ngconstant:production',
+		'copy:index',
 		'wiredep',
+		'processhtml:dist',
 		'ngtemplates:dist',
 		'useminPrepare',
 		'concurrent:dist',
@@ -467,12 +495,14 @@ module.exports = function (grunt) {
 		'filerev',
 		'usemin',
 		'htmlmin'
-  	]);
+	]);
 
-  	grunt.registerTask('build-dev', [
+	grunt.registerTask('build-dev', [
 		'clean:dist',
 		'ngconstant:development',
+		'copy:index',
 		'wiredep',
+		'processhtml:dist',
 		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
@@ -486,7 +516,7 @@ module.exports = function (grunt) {
 		'filerev',
 		'usemin',
 		'htmlmin'
-  	]);
+	]);
 
   grunt.registerTask('default', [
 	//'newer:jshint',

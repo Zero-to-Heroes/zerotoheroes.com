@@ -107,43 +107,59 @@ public class TagRepository {
 		hearthstone.add(new Tag("Hunter Beast"));
 		hearthstone.add(new Tag("Camel Hunter"));
 		hearthstone.add(new Tag("Midrange Hunter"));
+
 		hearthstone.add(new Tag("Combo Druid"));
 		hearthstone.add(new Tag("Astral Druid"));
 		hearthstone.add(new Tag("Mill Druid"));
 		hearthstone.add(new Tag("Druid Ramp"));
 		hearthstone.add(new Tag("CThun Druid"));
 		hearthstone.add(new Tag("Egg Druid"));
+		hearthstone.add(new Tag("Beast Druid"));
+
 		hearthstone.add(new Tag("Palasecret"));
 		hearthstone.add(new Tag("Aggro Paladin"));
 		hearthstone.add(new Tag("NZoth Paladin"));
+		hearthstone.add(new Tag("Divine Shield Paladin"));
 		hearthstone.add(new Tag("Palamurloc"));
+
 		hearthstone.add(new Tag("Mage Mecha"));
 		hearthstone.add(new Tag("Tempo Mage"));
 		hearthstone.add(new Tag("Freeze Mage"));
 		hearthstone.add(new Tag("CThun Mage"));
 		hearthstone.add(new Tag("Echo Mage"));
+		hearthstone.add(new Tag("Yogg Mage"));
+
 		hearthstone.add(new Tag("Zoolock"));
 		hearthstone.add(new Tag("Demonlock"));
 		hearthstone.add(new Tag("Handlock"));
 		hearthstone.add(new Tag("Malylock"));
 		hearthstone.add(new Tag("Renolock"));
+		hearthstone.add(new Tag("CThun Lock"));
+
 		hearthstone.add(new Tag("Aggro Shaman"));
 		hearthstone.add(new Tag("Malygos Shaman"));
 		hearthstone.add(new Tag("Reno Shaman"));
 		hearthstone.add(new Tag("Midrange Shaman"));
 		hearthstone.add(new Tag("Bloodlust Shaman"));
+		hearthstone.add(new Tag("Overload Shaman"));
+
 		hearthstone.add(new Tag("Priest Control"));
 		hearthstone.add(new Tag("Dragon Priest"));
-		hearthstone.add(new Tag("Oil Rogue"));
 		hearthstone.add(new Tag("CThun Priest"));
+		hearthstone.add(new Tag("NZoth Priest"));
+
+		hearthstone.add(new Tag("Oil Rogue"));
 		hearthstone.add(new Tag("Malygos Rogue"));
 		hearthstone.add(new Tag("Miracle Rogue"));
 		hearthstone.add(new Tag("Mill Rogue"));
+		hearthstone.add(new Tag("NZoth Rogue"));
+
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));
 		hearthstone.add(new Tag("OTK Warrior"));
 		hearthstone.add(new Tag("Worgen OTK"));
 		hearthstone.add(new Tag("CThun Warrior"));
+		hearthstone.add(new Tag("Pirate Warrior"));
 		// Category
 		hearthstone.add(new Tag("Aggro"));
 		hearthstone.add(new Tag("Midrange"));

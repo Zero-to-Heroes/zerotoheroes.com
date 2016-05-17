@@ -47,8 +47,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public enum Sport {
 		Badminton("Badminton", "Badminton"), Squash("Squash", "Squash"), LeagueOfLegends("LeagueOfLegends",
 				"League of Legends"), HearthStone("HearthStone", "HearthStone"), HeroesOfTheStorm("HeroesOfTheStorm",
-						"Heroes of the Storm"), Meta("Meta", "Meta"), Duelyst("Duelyst", "Duelyst"), Other("Other",
-								"Other");
+						"Heroes of the Storm"), Meta("Meta",
+								"Meta"), Duelyst("Duelyst", "Duelyst"), Other("Other", "Other");
 
 		@Getter
 		private String key, value;
@@ -85,7 +85,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private String fileType, mediaType, reviewType;
 	private String language = "en";
 	// Participant details
-	private ParticipantDetails participantDetails;
+	private ParticipantDetails participantDetails = new ParticipantDetails();
 	private String author, lastModifiedBy;
 	private String authorId, lastModifiedById;
 	private int authorReputation;

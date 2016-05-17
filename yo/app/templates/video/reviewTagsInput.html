@@ -1,5 +1,5 @@
 <div ng-show="allowedTags && allowedTags.length > 0" class="form-group" show-errors="{ showSuccess: true }">
-	<tags-input name="tags" display-property="displayText" ng-model="review.tags" placeholder="{{getTagsPlaceholder()}}" add-from-autocomplete-only="true" spellcheck="false" ng-required="mandatoryTags && mandatoryTags.length > 0" replace-spaces-with-dashes="false" min-tags="{{getMinTags()}}" ng-disabled="reviewDisabled" template="templates/video/tagsTemplate.html" class="form-control"> 
+	<tags-input name="tags" ng-model="review.tags" placeholder="{{getTagsPlaceholder()}}" add-from-autocomplete-only="true" spellcheck="false" ng-required="mandatoryTags && mandatoryTags.length > 0" replace-spaces-with-dashes="false" min-tags="{{getMinTags()}}" ng-disabled="reviewDisabled" template="templates/video/tagsTemplate.html" class="form-control"> 
 		<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20" template="templates/video/tagsTemplate.html"></auto-complete>
 	</tags-input>
 </div>

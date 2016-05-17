@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('videoPlayer', ['$log', 'ENV', '$sce', 
-	function($log, ENV, $sce) {
+app.directive('videoPlayer', ['$log', 'ENV', '$sce', '$rootScope', '$timeout', 
+	function($log, ENV, $sce, $rootScope, $timeout) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -197,7 +197,7 @@ app.directive('videoPlayer', ['$log', 'ENV', '$sce',
 						$scope.API2.pause();
 						$scope.relooping = true;
 						$timeout(function() {
-							//$log.log('seeking time in reloop');
+							$log.log('seeking time in reloop');
 							$scope.playerControls.seekTime($scope.playerControls.loopStartTime, $scope.playerControls.loop2StartTime);
 							$scope.playSimultaneously();
 						}, 0);
@@ -524,7 +524,7 @@ app.directive('videoPlayer', ['$log', 'ENV', '$sce',
 				$scope.config.onVideoInfoUpdated = $scope.onVideoInfoUpdated
 				$scope.config.preUploadComment = $scope.preUploadComment
 				$scope.config.getCurrentTime = $scope.getCurrentTime
-				
+
 				$scope.config.playerControls = $scope.playerControls
 			}
 		}

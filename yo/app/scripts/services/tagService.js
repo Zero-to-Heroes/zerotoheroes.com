@@ -15,7 +15,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 						if (!tag.displayText) {
 							var translation = $translate.instant(translationKey)
 							tag.displayText = (translation == translationKey) ? tag.text : translation
-							$log.debug('filtering tag', tag)
+							// $log.debug('filtering tag', tag)
 						}
 					})
 				}

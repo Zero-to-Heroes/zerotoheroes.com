@@ -524,6 +524,8 @@ app.directive('videoPlayer', ['$log', 'ENV', '$sce',
 				$scope.config.onVideoInfoUpdated = $scope.onVideoInfoUpdated
 				$scope.config.preUploadComment = $scope.preUploadComment
 				$scope.config.getCurrentTime = $scope.getCurrentTime
+				
+				$scope.config.playerControls = $scope.playerControls
 			}
 		}
 	}

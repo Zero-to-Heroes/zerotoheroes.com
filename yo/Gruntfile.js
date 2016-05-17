@@ -379,7 +379,6 @@ module.exports = function (grunt) {
 				htmlmin: {
 					collapseBooleanAttributes:      true,
 					collapseWhitespace:             true,
-					removeAttributeQuotes:          true,
 					removeComments:                 true, // Only if you don't use comment directives! 
 					removeEmptyAttributes:          true,
 					removeRedundantAttributes:      true,
@@ -398,7 +397,6 @@ module.exports = function (grunt) {
 				htmlmin: {
 					collapseBooleanAttributes:      true,
 					collapseWhitespace:             true,
-					removeAttributeQuotes:          true,
 					removeComments:                 true, // Only if you don't use comment directives! 
 					removeEmptyAttributes:          true,
 					removeRedundantAttributes:      true,

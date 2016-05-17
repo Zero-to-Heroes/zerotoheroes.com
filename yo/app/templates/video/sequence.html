@@ -132,7 +132,7 @@
 							<input name="createSequenceForm.title" type="text" class="form-control" id="sequenceTitle" ng-model="params.newSequenceTitle" placeholder="{{ 'global.review.sequence.addSequenceTitle' | translate }}" ng-required="true">
 						</div>
 						<div class="form-group sequence-tags col-md-6">
-							<tags-input ng-model="params.newSequenceTags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false">
+							<tags-input display-property="displayText" ng-model="params.newSequenceTags" placeholder="Add at least one tag" add-from-autocomplete-only="true" spellcheck="false" ng-required="allowedTags && allowedTags.length > 0" class="form-group" replace-spaces-with-dashes="false">
 								<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
 							</tags-input>
 						</div>

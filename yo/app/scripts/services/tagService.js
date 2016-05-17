@@ -11,6 +11,12 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 
 					service.tags.forEach(function(tag) {
 						tag.sport = sport.toLowerCase()
+						var translationKey = 'tags.' + sport + '.' + tag.text
+						if (!tag.displayText) {
+							var translation = $translate.instant(translationKey)
+							tag.displayText = (translation == translationKey) ? tag.text : translation
+							$log.debug('filtering tag', tag)
+						}
 					})
 				}
 			)
@@ -59,11 +65,6 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 				}
 			})
 
-			result.forEach(function(tag) {
-				var translationKey = 'tags.' + sport + '.' + tag.text
-				var translation = $translate.instant(translationKey)
-				tag.text = (translation == translationKey) ? tag.text : translation
-			})
 			return result
 		}
 

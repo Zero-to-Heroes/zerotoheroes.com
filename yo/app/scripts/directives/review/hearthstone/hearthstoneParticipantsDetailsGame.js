@@ -43,6 +43,8 @@ app.directive('hearthstoneParticipantsDetailsGame', ['$log', 'SportsConfig', 'Ap
 						$scope.review.participantDetails.playerCategory = player.getPlayerInfo().player.class
 						$scope.review.participantDetails.opponentName = player.getPlayerInfo().opponent.name
 						$scope.review.participantDetails.opponentCategory = player.getPlayerInfo().opponent.class
+
+						$scope.review.participantDetails.populated = true
 					}
 				})
 

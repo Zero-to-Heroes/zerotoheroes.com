@@ -147,38 +147,31 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				}
 
 				$scope.onTranscodingComplete = function() {
-					if ($scope.publishPending) {
-						$scope.publishVideo()
-						return
-					}
-					
 					// And now display something on the replay player
 					$log.debug('Need to display the replay', $scope.review)
-					if ($scope.review.replay) {
-						$scope.externalPlayer = true
-						// Retrieve the XML replay file from s3
-						var replayUrl = ENV.videoStorageUrl + $scope.review.key
-						$.get(replayUrl, function(data) {
-							$scope.review.replayXml = data
+					$scope.externalPlayer = true
+					// Retrieve the XML replay file from s3
+					var replayUrl = ENV.videoStorageUrl + $scope.review.key
+					$.get(replayUrl, function(data) {
+						$scope.review.replayXml = data
+
+						// Init the external player
+						SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb)
+					})
+					.fail(function(error) {
+						if (error.status == 200) {
+							$scope.review.replayXml = error.responseText;
 
 							// Init the external player
-							SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb)
-						})
-						.fail(function(error) {
-							if (error.status == 200) {
-								$scope.review.replayXml = error.responseText;
-
-								// Init the external player
-								// TODO: use an event system
-								SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb);
-								$log.debug('player init')
-							}
-							else {
-								$log.error('Could not load external data', data, error)
-								$scope.pluginsReady = true;
-							}
-						})
-					}
+							// TODO: use an event system
+							SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb);
+							$log.debug('player init')
+						}
+						else {
+							$log.error('Could not load external data', data, error)
+							$scope.pluginsReady = true;
+						}
+					})
 				}
 
 				$scope.externalPlayerLoadedCb = function(externalPlayer) {
@@ -187,8 +180,20 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 					$scope.fileValid = $scope.externalPlayer.isValid()
 					$log.debug('is file valid?', $scope.fileValid)
 
-					if ($scope.fileValid && $scope.publishPending)
-						$scope.publishVideo()
+					if ($scope.fileValid && $scope.publishPending) {
+						$scope.preparePublishing()
+					}
+				}
+
+				$scope.preparePublishing = function() {
+					if (!$scope.review.participantDetails.populated) {
+						$log.debug('aiting for population of participantDetails', $scope.review.participantDetails)
+						$timeout(function() {
+							$scope.preparePublishing()
+						}, 50)
+						return
+					}
+					$scope.publishVideo()
 				}
 
 				$scope.initPublishVideoWhenReady = function() {

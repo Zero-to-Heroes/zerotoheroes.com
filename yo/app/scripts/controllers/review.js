@@ -247,6 +247,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// URL parameters
 		//===============
 		$scope.onTimestampChanged = function(timeString) {
+			$log.debug('onTimestampChanged', timeString)
 			var encodedUrlTs = encodeURIComponent(timeString)
 			encodedUrlTs = encodedUrlTs.replace(new RegExp('\\.', 'g'), '%2E')
 			$location.search('ts', encodedUrlTs)

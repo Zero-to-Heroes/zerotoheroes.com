@@ -55,7 +55,9 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 				}
 
 				$scope.goToTimestamp = function(timeString) {
-					$scope.externalPlayer.goToTimestamp(timeString);
+					$scope.externalPlayer.goToTimestamp(timeString)
+					if ($scope.config.onTimestampChanged)
+						$scope.config.onTimestampChanged(timeString)
 				}
 
 				$scope.onVideoInfoUpdated = function() {

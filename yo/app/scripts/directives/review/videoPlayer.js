@@ -269,6 +269,9 @@ app.directive('videoPlayer', ['$log', 'ENV', '$sce', '$rootScope', '$timeout',
 				$scope.goToTimestamp = function(timeString) {
 					$scope.playerControls.init();
 
+					if ($scope.config.onTimestampChanged)
+						$scope.config.onTimestampChanged(timeString)
+
 					// $log.log('going to timestamp', timeString);
 					// Player1 already has a loaded source
 					$scope.player1ready = true;

@@ -111,7 +111,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Combo Druid"));
 		hearthstone.add(new Tag("Astral Druid"));
 		hearthstone.add(new Tag("Mill Druid"));
-		hearthstone.add(new Tag("Druid Ramp"));
+		hearthstone.add(new Tag("Ramp Druid"));
 		hearthstone.add(new Tag("CThun Druid"));
 		hearthstone.add(new Tag("Egg Druid"));
 		hearthstone.add(new Tag("Beast Druid"));
@@ -122,12 +122,13 @@ public class TagRepository {
 		hearthstone.add(new Tag("Divine Shield Paladin"));
 		hearthstone.add(new Tag("Palamurloc"));
 
-		hearthstone.add(new Tag("Mage Mecha"));
+		hearthstone.add(new Tag("Mech Mage"));
 		hearthstone.add(new Tag("Tempo Mage"));
 		hearthstone.add(new Tag("Freeze Mage"));
 		hearthstone.add(new Tag("CThun Mage"));
 		hearthstone.add(new Tag("Echo Mage"));
 		hearthstone.add(new Tag("Yogg Mage"));
+		hearthstone.add(new Tag("Reno Mage"));
 
 		hearthstone.add(new Tag("Zoolock"));
 		hearthstone.add(new Tag("Demonlock"));
@@ -143,7 +144,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Bloodlust Shaman"));
 		hearthstone.add(new Tag("Overload Shaman"));
 
-		hearthstone.add(new Tag("Priest Control"));
+		hearthstone.add(new Tag("Control Priest"));
 		hearthstone.add(new Tag("Dragon Priest"));
 		hearthstone.add(new Tag("CThun Priest"));
 		hearthstone.add(new Tag("NZoth Priest"));
@@ -156,10 +157,10 @@ public class TagRepository {
 
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));
-		hearthstone.add(new Tag("OTK Warrior"));
-		hearthstone.add(new Tag("Worgen OTK"));
+		hearthstone.add(new Tag("Worgen OTK Warrior"));
 		hearthstone.add(new Tag("CThun Warrior"));
 		hearthstone.add(new Tag("Pirate Warrior"));
+		hearthstone.add(new Tag("Tempo Warrior"));
 		// Category
 		hearthstone.add(new Tag("Aggro"));
 		hearthstone.add(new Tag("Midrange"));

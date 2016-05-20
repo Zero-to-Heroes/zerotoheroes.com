@@ -11,7 +11,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.criteria = {
 			wantedTags: [],
 			unwantedTags: [],
-			sort: 'updateDate'
+			sort: 'creationDate'
 		}
 		$scope.sortOptions = [
 			{ "value" : "creationDate", "label" : "<span>" + $translate.instant('global.search.sort.creationDate') + "</span>" },

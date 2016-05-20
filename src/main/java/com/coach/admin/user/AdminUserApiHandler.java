@@ -81,6 +81,9 @@ public class AdminUserApiHandler {
 		}
 
 		for (Review review : reviews) {
+			if (!review.isPublished()) {
+				continue;
+			}
 			log.debug("adding review " + review);
 			if (review.getAuthorId() != null) {
 				infos.get(review.getAuthorId()).addReview(review);

@@ -49,12 +49,15 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 
 				$scope.decorateCallback = function(callback) {
 					return function(externalPlayer) {
-						callback(externalPlayer)
+						// $log.debug('callback done in externalPlayer.js', externalPlayer)
 						$scope.externalPlayer = externalPlayer
+						callback(externalPlayer)
+						// $log.debug('ready to call externalPlayer functions', $scope.externalPlayer)
 					}
 				}
 
 				$scope.goToTimestamp = function(timeString) {
+					// $log.debug('calling externalPlayer goToTimestamp', $scope.externalPlayer)
 					$scope.externalPlayer.goToTimestamp(timeString)
 					if ($scope.config.onTimestampChanged)
 						$scope.config.onTimestampChanged(timeString)

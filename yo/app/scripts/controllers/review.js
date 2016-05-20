@@ -15,7 +15,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.controlFlow = {
 			pluginsLoaded: false,
-			pluginsReady: false,
+			// pluginsReady: false,
 			reviewLoaded: false
 		}
 
@@ -183,7 +183,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// Initialize the plugins to replay different formats. Could be done only if necessary though
 			// Controls default to the ones defined in scope
-			$scope.controlFlow.pluginsReady = false
+			// $scope.controlFlow.pluginsReady = false
 
 			// $scope.externalPlayer = undefined
 			// $scope.mediaType = data.mediaType
@@ -220,21 +220,25 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.activatePlugins = function() {
 			$log.debug('activating plugins at ', Date.now() - $scope.debugTimestamp)
 			$scope.mediaPlayer.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, function() {
-				$scope.controlFlow.pluginsReady = true
-			})
-		}
+				$log.debug('media player init activated at ', Date.now() - $scope.debugTimestamp)
+				// $scope.controlFlow.pluginsReady = true
 
-		$scope.$watch('controlFlow.pluginsReady', function (newVal, oldVal) {
-			// $log.debug('pluginsReady', newVal, oldVal);
-			if (newVal) {
-				$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
-				// $scope.review = $scope.review
 				$timeout(function() {
 					$scope.updateVideoInformation($scope.review)
 				})
 				$scope.handleUrlParameters()
-			}
-		})
+				// $log.debug('call to activate plugins completed')
+			})
+		}
+
+		// $scope.$watch('controlFlow.pluginsReady', function (newVal, oldVal) {
+		// 	$log.debug('pluginsReady?', newVal, oldVal);
+		// 	if (newVal) {
+		// 		$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
+		// 		// $scope.review = $scope.review
+				
+		// 	}
+		// })
 
 		// $scope.setExternalPlayer = function(externalPlayer) {
 		// 	$scope.controlFlow.pluginsReady = true
@@ -258,6 +262,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if ($location.search().ts) {
 				var ts = decodeURIComponent($location.search().ts)
 				ts = ts.replace(new RegExp('%2E', 'g'), '.')
+				// $log.debug('calling mediaplayer goToTimestamp')
 				$scope.mediaPlayer.goToTimestamp(ts) 
 
 				// $log.debug('replaced ts', ts)
@@ -501,6 +506,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.updateVideoInformation = function(data) {
+			$log.debug('updating video information')
 			$scope.review.title = data.title;
 			$scope.review.sport = data.sport;
 
@@ -513,14 +519,15 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// TODO: don't add plugin dependency here
 			if ($scope.review.plugins && $scope.review.plugins.hearthstone && $scope.review.plugins.hearthstone.parseDecks && $scope.review.plugins.hearthstone.parseDecks.reviewDeck) {
-				// $log.debug('parsing review deck', $scope.review.plugins.hearthstone.parseDecks.reviewDeck)
+				$log.debug('parsing review deck')
 				var compiledDeck = $scope.parseText($scope.review.plugins.hearthstone.parseDecks.reviewDeck)
-				// $log.debug('parsed', compiledDeck)
+				$log.debug('parsed')
 				$scope.review.plugins.hearthstone.parseDecks.markedReviewDeck = marked(compiledDeck)
 			}
 
 			$scope.review.editing = false;
 			$scope.review.processed = true;
+			$log.debug('calling onVideoInfoUpdated')
 			$scope.mediaPlayer.onVideoInfoUpdated()
 			$log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
 

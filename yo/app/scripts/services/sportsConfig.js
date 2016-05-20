@@ -44,7 +44,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 8}, 
 							{name: 'parseDecks', version: 6}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], version: 33},
+							{name: 'joustjs', player: true, format: ['text/xml'], version: 35},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 8}
 						],
 						customCss: 'hearthstone.css'
@@ -226,6 +226,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 				if (pluginNames) pluginNames.push(plugin.name)
 
 				if (callback) {
+					$log.debug('calling callback')
 					callback(externalPlayer)
 				}
 			}

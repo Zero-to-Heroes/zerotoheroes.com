@@ -20,7 +20,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.config = SportsConfig[$scope.sport]
 				$scope.review = {
 					canvas: {},
-					reviewType: 'game',
+					reviewType: 'game-replay',
 					tags: [],
 					replay: true,
 					strSport: $scope.sport,
@@ -40,6 +40,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						MediaUploader.review = undefined
 						$scope.review.transcodingDone = true
 						$scope.uploader.videoInfo.upload.postProcessed = true
+						$scope.retrieveCompletionStatus()
 					}
 					else if (MediaUploader.videoInfo) {
 						var file = MediaUploader.videoInfo.file
@@ -156,7 +157,9 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						$scope.review.replayXml = data
 
 						// Init the external player
+						$log.debug('init external player')
 						SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb)
+						$log.debug('init done')
 					})
 					.fail(function(error) {
 						if (error.status == 200) {

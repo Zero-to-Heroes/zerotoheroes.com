@@ -44,7 +44,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 8}, 
 							{name: 'parseDecks', version: 6}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], version: 35},
+							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 37},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 8}
 						],
 						customCss: 'hearthstone.css'
@@ -185,7 +185,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 				plugins.push(pluginObj)
 			}
 			else {
-				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js' + version }).then(function () {
+				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js' + version, skipCache: true, unique: 124 }).then(function () {
 					plugins.push(pluginObj)
 				})
 				angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
@@ -236,15 +236,16 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			config.plugins.plugins.forEach(function(plugin) {
 				if (plugin.player) {
 					// $log.debug('init player?', plugin)
-					if ((!review.mediaType && !plugin.mediaType) || review.mediaType == plugin.mediaType) {
+					if ((!review.mediaType && (!plugin.mediaType || plugin.mediaType == 'game-replay')) || review.mediaType == plugin.mediaType) {
 						// $log.debug('\tyes, init player', plugin, review)
 						// Load the plugin
 						var version = plugin.version ? '?' + plugin.version : '';
 						if (window[plugin.name]) {
+							$log.debug('executing plugin')
 							executePlugin(plugin)
 						}
 						else {
-							basket.require({ url: '/plugins/' + plugin.name + '/' + plugin.name + '.js' + version }).then(function () {
+							basket.require({ url: '/plugins/' + plugin.name + '/' + plugin.name + '.js' + version, skipCache: true, unique: 124 }).then(function () {
 								$log.debug('externalPlayer loaded')
 								executePlugin(plugin)
 								$log.debug('externalPlayer executed')

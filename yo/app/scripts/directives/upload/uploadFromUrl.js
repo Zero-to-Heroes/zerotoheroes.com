@@ -52,6 +52,8 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 								var uploadType = null
 								if (MediaUploader.review.reviewType == 'arena-draft')
 									uploadType = 'arenadraft'
+								else if (MediaUploader.review.reviewType == 'game-replay')
+									uploadType = 'replay'
 
 								if (uploadType) {
 									var url = '/s/' + $scope.sport + '/upload/' + uploadType + '/review'

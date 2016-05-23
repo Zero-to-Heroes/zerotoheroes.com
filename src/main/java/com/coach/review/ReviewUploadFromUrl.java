@@ -67,7 +67,7 @@ public class ReviewUploadFromUrl {
 	public @ResponseBody ResponseEntity<Review> importFromUrl(@PathVariable("sport") final String sport,
 			@RequestBody UrlInput url) throws IOException {
 
-		log.debug("Yeah yeah " + url);
+		log.debug("Import from" + url);
 		String authorId = null;
 		String author = null;
 

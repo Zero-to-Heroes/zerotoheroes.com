@@ -67,6 +67,7 @@ public class HearthArena implements IntegrationPlugin {
 		String strResult = new ObjectMapper().writeValueAsString(result);
 		// Flag the review to show that we are handling it
 		review.setMediaType("arena-draft");
+		review.setText("Imported from " + draftUrl);
 		log.debug("strResult " + strResult);
 
 		// Then upload the file

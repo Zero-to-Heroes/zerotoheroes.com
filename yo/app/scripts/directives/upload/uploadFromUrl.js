@@ -38,6 +38,7 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 				$scope.retrieveCompletionStatus = function() {
 					Api.Reviews.get({reviewId: MediaUploader.review.id}, 
 						function(data) {
+							$log.debug('retrieving data', data)
 							MediaUploader.review = data
 							$log.debug('retrieveCompletionStatus', data)
 

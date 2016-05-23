@@ -580,7 +580,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// (m)m:(s)s:(SSS) format
 		// then an optional + sign
 		// if present, needs at least either p, s or l
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(l|c|r|h)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?/gm;
+		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(l|c|r|h)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?(;[[:blank:]]|\s)/gm;
 		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(l|c|r|h)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?</gm;
 
 		$scope.parseText = function(comment) {
@@ -624,7 +624,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			return prettyResult;
 		};
 
-		var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
+		var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/;
 		var millisecondsRegex = /:\d\d\d/;
 		var slowRegex = /\+s(\d?\.?\d?\d?)?/;
 		var playRegex = /\+p/;

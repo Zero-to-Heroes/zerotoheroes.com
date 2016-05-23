@@ -459,7 +459,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 				//===============
 				// Timestamp manipulation
 				//===============
-				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/gm;
+				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/gm;
 				$scope.normalizeTimestamps = function() {
 					if (!$scope.review.text) return;
 

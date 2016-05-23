@@ -1,6 +1,7 @@
 var parseDecks = {
 
 	decksRegex: /\[?(http:\/\/www\.hearthpwn\.com\/decks\/)([\d\-a-zA-Z]+)\]?/gm,
+	hearthpwnTempDeckRegex: /\[?(http:\/\/www\.hearthpwn\.com\/deckbuilder\/)([\d\-a-zA-Z#\:\;]+)\]?/gm,
 	hsDecksDecksRegex: /\[?(http:\/\/www\.hearthstone-decks\.com\/deck\/voir\/)([\d\-a-zA-Z]+)\]?/gm,
 	zthDecksRegex: /\[?(http:\/\/www\.zerotoheroes\.com\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
 	// zthDecksRegex: /\[?(http:\/.*localhost.*\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
@@ -23,8 +24,20 @@ var parseDecks = {
 		result = parseDecks.parse(review, result, text, parseDecks.hsTopDecksDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.icyVeinsDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.manaCrystalsDecksRegex)
+		result = parseDecks.parse(review, result, text, parseDecks.manaCrystalsDecksRegex)
+
+		result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
 
 		return result;
+	},
+
+	parseTemporaryDeck: function(review, result, text, regex, groupIndex) {
+		var match = regex.exec(text)
+		while (match) {
+			result = parseDecks.handleMatchTemporary(review, result, match, groupIndex)
+			match = regex.exec(text)
+		}
+		return result
 	},
 
 	parse: function(review, result, text, regex, groupIndex) {
@@ -38,7 +51,7 @@ var parseDecks = {
 
 	handleMatch: function(review, result, match, groupIndex) {
 		groupIndex = groupIndex || 2
-		// console.log('match', match);
+		console.log('match', match, result);
 		var deckName = match[groupIndex]
 		var deckUrl = match[1] + deckName
 		// console.log('deck name', deckName, deckUrl);
@@ -56,6 +69,16 @@ var parseDecks = {
 
 			result = result.replace(match[0], '<a class="deck-link" onclick="parseDecks.toggleDeck(\'' + deckNameForDisplay + '\')" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>');
 		}
+
+		return result
+	},
+
+	handleMatchTemporary: function(review, result, match, groupIndex) {
+		groupIndex = groupIndex || 2
+		console.log('match', match, result);
+		var deckName = 'Deck link'
+
+		result = result.replace(match[0], '<a class="deck-link" href="' + match[0] + '" target="_blank">' +deckName + '</a>');
 
 		return result
 	},

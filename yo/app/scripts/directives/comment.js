@@ -46,7 +46,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					$scope.API = $scope.$parent.API;
 				});
 
-				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
+				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/;
 
 				//===============
 				// Basic comment fonctions

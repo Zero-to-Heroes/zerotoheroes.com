@@ -262,7 +262,7 @@ app.directive('videoPlayer', ['$log', 'ENV', '$sce', '$rootScope', '$timeout',
 					return $scope.API.currentTime
 				}
 
-				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/
+				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/
 				var externalIdRegex = /\([a-z0-9]+\)/
 				var canvasRegex = /\[.+?\]/
 

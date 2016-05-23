@@ -23,7 +23,7 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 			},
 			controller: function($scope) {
 
-				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/;
+				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/;
 				var slowRegex = /\d?\d:\d?\d(:\d\d\d)?\+s(\d?\.?\d?\d?)?/;
 				var loopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L(\d?\.?\d?\d?)?/;
 				var optionalLoopRegex = /\d?\d:\d?\d(:\d\d\d)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r|h)?)?(\+s)?(\d?\.?\d?\d?)?L?(\d?\.?\d?\d?)?/;

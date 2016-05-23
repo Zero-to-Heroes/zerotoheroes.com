@@ -267,7 +267,7 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 					$scope.review.ending = $scope.API.totalTime;
 				}
 
-				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?/gm;
+				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/gm;
 
 				$scope.normalizeTimestamps = function() {
 					if (!$scope.review.text) return

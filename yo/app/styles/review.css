@@ -52,10 +52,17 @@
 	padding-left: 40px;
 }
 
-.video-information .author-information {
-    width: 45%;
+.video-information .author-row {
+	max-width: calc(100% - 100px);
+    display: inline-block;
     margin-bottom: 20px;
     margin-left: 15px;
+}
+
+.video-information .author-information {
+    // width: 45%;
+    // margin-bottom: 20px;
+    // margin-left: 15px;
     display: inline-block;
 }
 
@@ -97,8 +104,9 @@
 
 .video-information .video-information-header .ask-pro {
 	float: right;
-    margin-top: 5px;
-    margin-right: 5px;
+    // margin-top: 5px;
+    // margin-right: 5px;
+    margin-right: 20px;
 }
 
 .video-comment .loading {

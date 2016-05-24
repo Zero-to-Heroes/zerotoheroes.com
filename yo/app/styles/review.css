@@ -52,10 +52,13 @@
 	padding-left: 40px;
 }
 
+.video-information .meta-info {
+    margin-bottom: 20px; 
+}
+
 .video-information .author-row {
 	max-width: calc(100% - 100px);
     display: inline-block;
-    margin-bottom: 20px;
     margin-left: 15px;
 }
 

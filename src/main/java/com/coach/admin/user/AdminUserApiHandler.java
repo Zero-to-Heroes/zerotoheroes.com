@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coach.core.security.User;
+import com.coach.profile.Profile;
+import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
 import com.coach.review.Comment;
 import com.coach.review.Review;
@@ -38,6 +41,8 @@ public class AdminUserApiHandler {
 
 	@Autowired
 	ProfileService profileService;
+	@Autowired
+	ProfileRepository profileRepository;
 
 	@Autowired
 	ReviewRepository reviewRepository;
@@ -66,17 +71,32 @@ public class AdminUserApiHandler {
 
 		List<Review> reviews = reviewRepository.findAll();
 		List<User> users = userRepository.findAll();
+		List<Profile> profiles = profileRepository.findAll();
 
 		Map<String, UserInfo> infos = new HashMap<>();
+		Map<String, Profile> profileMap = new HashMap<>();
+
+		for (Profile profile : profiles) {
+			profileMap.put(profile.getUserId(), profile);
+		}
 
 		for (User user : users) {
-			log.debug("adding user " + user);
+			// log.debug("adding user " + user);
 			UserInfo info = new UserInfo();
+			Profile profile = profileMap.get(user.getId());
+			if (profile == null) {
+				profile = new Profile();
+			}
 			info.setName(user.getUsername());
 			info.setEmail(user.getEmail());
+			if (user.getCreationDate() == null) {
+				log.error("No creation date for " + user);
+				user.setCreationDate(DateTimeFormat.forPattern("yyyy-MM-dd").parseDateTime("2015-09-01").toDate());
+			}
 			info.setRegistrationDate(new DateTime(user.getCreationDate()));
 			info.setReputation(user.getReputation());
 			info.setLastParticipationDate(new DateTime(user.getCreationDate()));
+			info.setCanContact(profile.getPreferences().isEmailContact());
 			infos.put(user.getId(), info);
 		}
 
@@ -84,7 +104,7 @@ public class AdminUserApiHandler {
 			if (!review.isPublished()) {
 				continue;
 			}
-			log.debug("adding review " + review);
+			// log.debug("adding review " + review);
 			if (review.getAuthorId() != null) {
 				infos.get(review.getAuthorId()).addReview(review);
 			}
@@ -96,7 +116,7 @@ public class AdminUserApiHandler {
 				}
 			}
 		}
-		log.debug("Built user info");
+		// log.debug("Built user info");
 
 		List<UserInfo> result = new ArrayList<>();
 		result.addAll(infos.values());
@@ -117,15 +137,15 @@ public class AdminUserApiHandler {
 	private String toCsv(List<UserInfo> list) {
 		String result = "";
 
-		String header = "Name,Email,Registration date,Reputation,Last participation,Reviews,Comments,List reviews,List comments";
+		String header = "Name,Email,Can contact,Registration date,Reputation,Last participation,Reviews,Comments,List reviews,List comments";
 		result += header + "\r\n";
 
 		for (UserInfo info : list) {
 			log.debug("Parsing info " + info);
-			result += info.getName() + "," + info.getEmail() + "," + info.getRegistrationDate().toString("yyyy/MM/dd")
-					+ "," + info.getReputation() + "," + info.getLastParticipationDate().toString("yyyy/MM/dd") + ","
-					+ info.getNumberOfReviews() + "," + info.getNumberOfComments() + ","
-					+ info.getReviews().toString().replaceAll(",", ";") + ","
+			result += info.getName() + "," + info.getEmail() + "," + info.isCanContact() + ","
+					+ info.getRegistrationDate().toString("yyyy/MM/dd") + "," + info.getReputation() + ","
+					+ info.getLastParticipationDate().toString("yyyy/MM/dd") + "," + info.getNumberOfReviews() + ","
+					+ info.getNumberOfComments() + "," + info.getReviews().toString().replaceAll(",", ";") + ","
 					+ info.getComments().toString().replaceAll(",", ";") + ",";
 			result += "\r\n";
 		}

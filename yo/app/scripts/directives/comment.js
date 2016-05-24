@@ -66,7 +66,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 
 				$scope.cancelUpdateComment = function(comment) {
 					//$log.log('cancelling comment update');
-					$scope.clearTemporaryCanvas();
+					$scope.mediaPlayer.onCommentUpdateCancel($scope.review, $scope.comment);
+					// $scope.clearTemporaryCanvas();
 					comment.text = comment.oldText;
 					comment.editing = false;
 					//$scope.canvasState.drawingCanvas = false;

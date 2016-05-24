@@ -148,6 +148,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Dragon Priest"));
 		hearthstone.add(new Tag("CThun Priest"));
 		hearthstone.add(new Tag("NZoth Priest"));
+		hearthstone.add(new Tag("OTK Priest"));
 
 		hearthstone.add(new Tag("Oil Rogue"));
 		hearthstone.add(new Tag("Malygos Rogue"));

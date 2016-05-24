@@ -519,6 +519,9 @@ app.directive('videoPlayer', ['$log', 'ENV', '$sce', '$rootScope', '$timeout',
 				$scope.onVideoInfoUpdated = function() {
 					$scope.clearTemporaryCanvas();
 				}
+				$scope.onCommentUpdateCancel = function() {
+					$scope.clearTemporaryCanvas();
+				}
 
 				// publish the interface
 				$scope.config.initReview = $scope.initReview
@@ -527,6 +530,7 @@ app.directive('videoPlayer', ['$log', 'ENV', '$sce', '$rootScope', '$timeout',
 				$scope.config.onVideoInfoUpdated = $scope.onVideoInfoUpdated
 				$scope.config.preUploadComment = $scope.preUploadComment
 				$scope.config.getCurrentTime = $scope.getCurrentTime
+				$scope.config.onCommentUpdateCancel = $scope.onCommentUpdateCancel
 
 				$scope.config.playerControls = $scope.playerControls
 			}

@@ -20,6 +20,7 @@ public class UserInfo {
 	private DateTime lastParticipationDate, registrationDate;
 	private int reputation;
 	private int numberOfReviews, numberOfComments;
+	private boolean canContact;
 
 	private Set<String> reviews = new HashSet<>();
 	private Set<String> comments = new HashSet<>();

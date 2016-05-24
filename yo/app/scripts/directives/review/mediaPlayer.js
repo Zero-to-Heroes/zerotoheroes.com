@@ -23,6 +23,9 @@ app.directive('mediaPlayer', ['$log',
 				$scope.config.getCurrentTime = function() {
 					// Do nothing by default
 				}
+				$scope.config.onCommentUpdateCancel = function(review, comment) {
+					// Do nothing by default
+				}
 			}
 		}
 	}

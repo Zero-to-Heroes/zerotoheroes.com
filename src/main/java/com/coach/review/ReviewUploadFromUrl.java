@@ -96,7 +96,7 @@ public class ReviewUploadFromUrl {
 		parseIntegrations(review, url.getUrl());
 
 		if (review.getMediaType() == null) {
-			slackNotifier.notifyUnsupportedUrlImport(url, userRepo.findByUsername(currentUser));
+			slackNotifier.notifyUnsupportedUrlImport(url, userRepo.findByUsername(currentUser), review);
 		}
 		else {
 			subscriptionManager.subscribe(review, review.getAuthorId());
@@ -124,70 +124,9 @@ public class ReviewUploadFromUrl {
 			}
 			catch (Exception e) {
 				log.warn("Incorrect plugin execution " + pluginClass, e);
+				slackNotifier.notifyError(e, "Exception during integration plugin execution", pluginClass, review, url);
 			}
 		}
 	}
-
-	// @RequestMapping(value = "/{reviewId}/publish", method =
-	// RequestMethod.POST)
-	// public @ResponseBody ResponseEntity<Review>
-	// publish(@PathVariable("reviewId") final String id,
-	// @RequestBody Review inputReview) throws IOException {
-	//
-	// String currentUser =
-	// SecurityContextHolder.getContext().getAuthentication().getName();
-	// Collection<? extends GrantedAuthority> authorities =
-	// SecurityContextHolder.getContext().getAuthentication()
-	// .getAuthorities();
-	//
-	// Review review = reviewRepo.findById(id);
-	//
-	// // log.debug("Publishing review " + inputReview);
-	// // log.debug("Exisint draft in the system is " + review);
-	//
-	// // Updating author information
-	// if (!StringUtils.isNullOrEmpty(currentUser) &&
-	// !UserAuthority.isAnonymous(authorities)) {
-	// addAuthorInformation(inputReview.getSport(), review, currentUser);
-	// }
-	// else {
-	// User user = userRepo.findByUsername(inputReview.getAuthor());
-	// if (user != null) {
-	// log.debug("Name not authorized: " + inputReview.getAuthor() + ". Found
-	// user: " + user);
-	// return new ResponseEntity<Review>((Review) null,
-	// HttpStatus.UNAUTHORIZED);
-	// }
-	// review.setAuthor(inputReview.getAuthor());
-	// }
-	//
-	// review.setText(inputReview.getText());
-	// review.setPlugins(inputReview.getPlugins());
-	// consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
-	// activatePlugins(currentUser, review, review);
-	// // log.debug("updated text is " + review.getText());
-	//
-	// review.setSport(inputReview.getSport());
-	// review.setTitle(inputReview.getTitle());
-	// review.setTags(inputReview.getTags());
-	// review.setParticipantDetails(inputReview.getParticipantDetails());
-	//
-	// review.setLastModifiedDate(new Date());
-	// review.setLastModifiedBy(currentUser);
-	// review.setLanguage(inputReview.getLanguage());
-	// review.setPublished(true);
-	//
-	// reviewService.updateAsync(review);
-	//
-	// // Send notifications only if it's a real new video and
-	// // not a video response
-	// if (!review.isSequence()) {
-	// subscriptionManager.notifyNewReview(review.getSport(), review);
-	// slackNotifier.notifyNewReview(review);
-	// }
-	// log.debug("Published review is " + review);
-	//
-	// return new ResponseEntity<Review>(review, HttpStatus.OK);
-	// }
 
 }

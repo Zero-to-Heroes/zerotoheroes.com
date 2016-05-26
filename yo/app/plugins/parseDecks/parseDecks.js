@@ -17,6 +17,7 @@ var parseDecks = {
 		var result = text;
 
 		result = parseDecks.parse(review, result, text, parseDecks.decksRegex)
+		result = parseDecks.parse(review, result, text, parseDecks.hearthpwnTempDeckRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.hsDecksDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.zthDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.hearthArenaDecksRegex)
@@ -26,19 +27,19 @@ var parseDecks = {
 		result = parseDecks.parse(review, result, text, parseDecks.manaCrystalsDecksRegex)
 		result = parseDecks.parse(review, result, text, parseDecks.manaCrystalsDecksRegex)
 
-		result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
+		// result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
 
 		return result;
 	},
 
-	parseTemporaryDeck: function(review, result, text, regex, groupIndex) {
-		var match = regex.exec(text)
-		while (match) {
-			result = parseDecks.handleMatchTemporary(review, result, match, groupIndex)
-			match = regex.exec(text)
-		}
-		return result
-	},
+	// parseTemporaryDeck: function(review, result, text, regex, groupIndex) {
+	// 	var match = regex.exec(text)
+	// 	while (match) {
+	// 		result = parseDecks.handleMatchTemporary(review, result, match, groupIndex)
+	// 		match = regex.exec(text)
+	// 	}
+	// 	return result
+	// },
 
 	parse: function(review, result, text, regex, groupIndex) {
 		var match = regex.exec(text)
@@ -54,13 +55,15 @@ var parseDecks = {
 		console.log('match', match, result);
 		var deckName = match[groupIndex]
 		var deckUrl = match[1] + deckName
-		// console.log('deck name', deckName, deckUrl);
+		console.log('deck name', deckName, deckUrl)
 
 		var plugins = review.plugins.hearthstone;
 		// console.log('plugins', plugins)
 		if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
 			var strDeck = plugins.parseDecks[deckName];
-			var deck = JSON.parse(strDeck);
+			console.log('strDeck', strDeck)
+			var deck = JSON.parse(strDeck)
+			console.log('jsDeck', deck)
 			var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 			// parseDecks.deck = htmlDeck;
 			// console.log('html deck is ', htmlDeck);

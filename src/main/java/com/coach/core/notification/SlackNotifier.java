@@ -457,7 +457,7 @@ public class SlackNotifier {
 		});
 	}
 
-	public void notifyUnsupportedUrlImport(final UrlInput url, final User user) {
+	public void notifyUnsupportedUrlImport(final UrlInput url, final User user, final Review review) {
 		if (!"prod".equalsIgnoreCase(environment)) {
 			log.info("Unsupported url import " + url);
 			return;
@@ -478,6 +478,12 @@ public class SlackNotifier {
 						+ ") tried to import a game/draft from " + url);
 				attach.setFallback("placeholder fallback");
 				message.addAttachments(attach);
+
+				SlackAttachment attachReview = new SlackAttachment();
+				attachReview.setColor("warning");
+				attachReview.setText("Review: " + review);
+				attachReview.setFallback("placeholder fallback");
+				message.addAttachments(attachReview);
 
 				api.call(message);
 				return null;

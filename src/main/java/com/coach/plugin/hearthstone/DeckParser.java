@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -37,6 +38,9 @@ public class DeckParser implements Plugin {
 
 	private static final String HPWN_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthpwn\\.com\\/decks\\/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HPNW_DECK_HOST_URL = "http://www.hearthpwn.com/decks/";
+
+	private static final String HPWN_TEMP_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthpwn\\.com\\/deckbuilder\\/)([a-zA-Z]+)#([\\d\\-a-zA-Z\\:\\;]+)\\]?";
+	private static final String HPNW_TEMP_DECK_HOST_URL = "http://www.hearthpwn.com/deckbuilder/";
 
 	private static final String HSDECKS_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthstone-decks\\.com\\/deck\\/voir\\/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HSDECKS_DECK_HOST_URL = "http://www.hearthstone-decks.com/deck/voir/";
@@ -89,6 +93,7 @@ public class DeckParser implements Plugin {
 
 	private void parseDecks(Map<String, String> pluginData, String initialText) throws IOException {
 		parseHearthpwnDeck(pluginData, initialText);
+		parseHearthpwnTempDeck(pluginData, initialText);
 		parseHearthstoneDecksDeck(pluginData, initialText);
 		parseZeroToHeroesDeck(pluginData, initialText);
 		parseHearthArenaDeck(pluginData, initialText);
@@ -507,6 +512,81 @@ public class DeckParser implements Plugin {
 
 			// log.debug("jsonDeck" + jsonDeck);
 			pluginData.put(deckId, jsonDeck);
+		}
+	}
+
+	private void parseHearthpwnTempDeck(Map<String, String> pluginData, String initialText)
+			throws IOException, JsonProcessingException {
+		Pattern pattern = Pattern.compile(HPWN_TEMP_DECK_ID_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			// log.debug("Matching regex");
+			String cardList = matcher.group(3);
+			String deckId = matcher.group(2) + "#" + cardList;
+
+			// Don't override existing decks
+			// if (pluginData.get(deckId) != null) {
+			// continue;
+			// }
+
+			// String deckUrl = HPNW_TEMP_DECK_HOST_URL + deckId;
+			// log.debug("Trying to scrape deck data for deck " + deckUrl);
+
+			// Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
+
+			Deck deck = new Deck();
+			deck.title = matcher.group(2) + " Hearthpwn Temp Deck";
+
+			// Retrieve cards
+			Map<String, String> cardsMap = new HashMap<>();
+
+			String cardsLink = "http://www.hearthpwn.com/cards?display=1&filter-premium=1&page=";
+			int pageNumber = 1;
+			Document doc = Jsoup.connect(cardsLink + pageNumber).userAgent("Mozilla").get();
+			int numberOfPages = Integer
+					.valueOf(doc.select(".b-pagination-list .dots").first().nextElementSibling().text());
+
+			for (; pageNumber <= numberOfPages; pageNumber++) {
+				if (pageNumber != 1) {
+					// log.debug("Connecting to " + cardsLink + pageNumber);
+					doc = Jsoup.connect(cardsLink + pageNumber).userAgent("Mozilla").get();
+				}
+
+				// Select all the cells with a card name on them
+				Elements cardNames = doc.select(".listing-body tbody tr td a.manual-data-link");
+
+				for (Element element : cardNames) {
+					String cardName = element.text();
+					String cardId = element.attr("href").split("/cards/")[1].split("-")[0];
+					cardsMap.put(cardId, cardName);
+				}
+			}
+
+			// log.debug("parsed " + cardsMap.size() + " cards");
+
+			String[] cards = cardList.split(";");
+			for (String card : cards) {
+				log.debug("processing card " + card);
+				if (card.length() == 0) {
+					continue;
+				}
+
+				String cardId = card.split(":")[0];
+				String quantity = card.split(":")[1];
+
+				// Now retrieve the card name
+				String cardName = cardsMap.get(cardId);
+
+				Card cardObj = new Card(cardName, quantity);
+				// log.debug("adding card " + cardObj);
+				deck.classCards.add(cardObj);
+			}
+
+			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
+
+			// log.debug("jsonDeck" + jsonDeck);
+			pluginData.put(deckId, jsonDeck);
+			// log.debug("" + pluginData);
 		}
 	}
 

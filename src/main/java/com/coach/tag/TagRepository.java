@@ -165,15 +165,15 @@ public class TagRepository {
 		hearthstone.add(new Tag("Dragon Warrior"));
 
 		// Category
-		hearthstone.add(new Tag("Aggro"));
-		hearthstone.add(new Tag("Midrange"));
-		hearthstone.add(new Tag("Control"));
+		// hearthstone.add(new Tag("Aggro"));
+		// hearthstone.add(new Tag("Midrange"));
+		// hearthstone.add(new Tag("Control"));
 		// Other
-		hearthstone.add(new Tag("Reno"));
-		hearthstone.add(new Tag("OTK"));
-		hearthstone.add(new Tag("Mech"));
-		hearthstone.add(new Tag("Murloc"));
-		hearthstone.add(new Tag("CThun"));
+		// hearthstone.add(new Tag("Reno"));
+		// hearthstone.add(new Tag("OTK"));
+		// hearthstone.add(new Tag("Mech"));
+		// hearthstone.add(new Tag("Murloc"));
+		// hearthstone.add(new Tag("CThun"));
 		hearthstone.add(new Tag("Mirror match"));
 		tags.put(HearthStone, hearthstone);
 

@@ -149,6 +149,21 @@
 	color: #3178FF;
 }
 
+.hearthstone .pagination {
+	margin-left: 50px;
+	background: transparent url(images/button-bg.png) no-repeat;
+    background-size: 100% 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.hearthstone .pagination li > a, .hearthstone .pagination li > a:active, .hearthstone .pagination li > a:focus, .hearthstone .pagination li > a:hover {
+	background: transparent !important;
+	border: none;
+	color: rgba(0, 0, 0, 0.7);
+}
+.hearthstone .pagination li.active a {
+	color: #fa5d26;
+}
 
 
 /* =============

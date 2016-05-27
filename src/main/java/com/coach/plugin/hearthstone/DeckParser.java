@@ -397,6 +397,11 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
+
+			// Build the deck title
+			deck.title = "HearthArena - " + doc.select("#arenaDeck main h1 > span").text();
+
+			// Build the deck itself
 			Elements decklist = doc.select("#basics #deck-list .decklist");
 
 			Elements cards = decklist.select("li");

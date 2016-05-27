@@ -67,7 +67,7 @@
 
 	<!-- Let's go! -->
 	<div class="upload-button">
-		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError || (clipDuration / 1000) > maximumAllowedDuration" analytics-on="click" analytics-category="upload.video" analytics-event="upload.video.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
+		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError || !file || (clipDuration / 1000) > maximumAllowedDuration" analytics-on="click" analytics-category="upload.video" analytics-event="upload.video.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
 	</div>
 
 </div>

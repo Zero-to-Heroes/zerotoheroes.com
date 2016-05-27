@@ -27,7 +27,7 @@
 
 	<!-- Let's go! -->
 	<div class="upload-button">
-		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
+		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError || !file"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
 	</div>
 
 </div>

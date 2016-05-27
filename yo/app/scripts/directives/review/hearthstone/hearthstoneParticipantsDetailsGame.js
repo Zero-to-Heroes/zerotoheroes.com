@@ -12,7 +12,6 @@ app.directive('hearthstoneParticipantsDetailsGame', ['$log', 'SportsConfig', 'Ap
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
-				$log.debug('review is', $scope.review)
 				$scope.config = SportsConfig
 
 				// Options for class selection
@@ -29,8 +28,8 @@ app.directive('hearthstoneParticipantsDetailsGame', ['$log', 'SportsConfig', 'Ap
 				]
 
 				$scope.review.participantDetails = $scope.review.participantDetails || {}
-				$scope.review.participantDetails.playerCategory = 'druid'
-				$scope.review.participantDetails.opponentCategory = 'druid'
+				$scope.review.participantDetails.playerCategory = $scope.review.participantDetails.playerCategory || 'druid'
+				$scope.review.participantDetails.opponentCategory = $scope.review.participantDetails.opponentCategory || 'druid'
 
 
 				$scope.$watch('mediaPlayer', function(player) {

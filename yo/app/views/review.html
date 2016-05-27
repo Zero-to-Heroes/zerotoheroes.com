@@ -13,14 +13,15 @@
 		
 		<!-- The video information -->
 		<div ng-class="pluginNames">
-			<form class="container-fluid video-details" name="videoInformationForm">
+			<form class="container-fluid video-details" name="videoInformationForm" ng-class="{'editing': review.editing}">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row video-information-header">
 							<div class="col-md-12">
-								<div ng-switch="sport" class="participants-container">
+								<div ng-switch="sport" class="participants-container" ng-hide="review.editing">
 									<hearthstone-listing-details ng-switch-when="hearthstone" review="review"></hearthstone-listing-details>
 								</div>
+		  						<participants-details review="review" ng-show="review.editing"></participants-details>
 								<h1 class="video-title" ng-show="!review.editing" ng-model="review.title">{{review.title}}</h1>
 								<div class="row" ng-show="review.editing">
 									<div class="col-md-12">

@@ -402,6 +402,7 @@ public class ReviewApiHandler {
 		review.setSport(inputReview.getSport());
 		review.setTitle(inputReview.getTitle());
 		review.setTags(inputReview.getTags());
+		review.setParticipantDetails(inputReview.getParticipantDetails());
 
 		// review.setLastModifiedDate(new Date());
 		// review.setLastModifiedBy(currentUser);

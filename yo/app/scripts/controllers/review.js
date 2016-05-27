@@ -481,7 +481,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				tags: $scope.review.tags,
 				canvas: $scope.review.tempCanvas,
 				language: $scope.review.language,
-				plugins: $scope.review.plugins
+				plugins: $scope.review.plugins,
+				participantDetails: $scope.review.participantDetails
 			}
 			if ($scope.videoInformationForm.$valid) {
 				//$log.log('updating review to ', newReview);

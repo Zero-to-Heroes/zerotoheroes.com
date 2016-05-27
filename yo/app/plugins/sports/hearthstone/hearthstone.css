@@ -1048,11 +1048,23 @@
 	.hearthstone .video-information .hearthstone-participants .player-details {
 		display: none;
 	}
+	.hearthstone .video-information .editing .hearthstone-participants {
+		margin-bottom: 30px;
+	}
+	.hearthstone .video-information .editing .hearthstone-participants .player-details {
+		display: table-cell;
+	}
 	.hearthstone .video-information .hearthstone-participants .separation {
 		display: none;
 	}
+	.hearthstone .video-information .editing .hearthstone-participants .separation {
+		display: table-cell;
+	}
 	.hearthstone .video-information .hearthstone-participants .opponent-details {
 		display: none;
+	}
+	.hearthstone .video-information .editing .hearthstone-participants .opponent-details {
+		display: table-cell;
 	}
 	.hearthstone .video-information .hearthstone-participants .level-details {
 		padding-left: 0;

@@ -403,8 +403,8 @@ public class ReviewApiHandler {
 		review.setTitle(inputReview.getTitle());
 		review.setTags(inputReview.getTags());
 
-		review.setLastModifiedDate(new Date());
-		review.setLastModifiedBy(currentUser);
+		// review.setLastModifiedDate(new Date());
+		// review.setLastModifiedBy(currentUser);
 		review.setLanguage(inputReview.getLanguage());
 
 		reviewService.updateAsync(review);
@@ -502,8 +502,8 @@ public class ReviewApiHandler {
 		activatePlugins(currentUser, review, newComment);
 		comment.setText(newComment.getText());
 
-		review.setLastModifiedDate(new Date());
-		review.setLastModifiedBy(currentUser);
+		// review.setLastModifiedDate(new Date());
+		// review.setLastModifiedBy(currentUser);
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);

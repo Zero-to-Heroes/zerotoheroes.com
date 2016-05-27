@@ -162,6 +162,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("CThun Warrior"));
 		hearthstone.add(new Tag("Pirate Warrior"));
 		hearthstone.add(new Tag("Tempo Warrior"));
+		hearthstone.add(new Tag("Dragon Warrior"));
+
 		// Category
 		hearthstone.add(new Tag("Aggro"));
 		hearthstone.add(new Tag("Midrange"));

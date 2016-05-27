@@ -9,7 +9,7 @@
 			<participants-search sport="sport" class="participants-search" options="options"></participants-search>
 			<div class="form-group wanted-tags">
 				<tags-input class="wanted-tags" display-property="displayText" ng-model="options.criteria.wantedTags" placeholder="{{ 'global.home.watchlearn.wantedTags' | translate }}" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
-					<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20"></auto-complete>
+					<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="100"></auto-complete>
 				</tags-input>
 			</div>
 			<button type="submit" class="btn btn-default" ng-click="searchFromClick()"><span>{{ 'global.home.watchlearn.filterButton' | translate }}</span></button>

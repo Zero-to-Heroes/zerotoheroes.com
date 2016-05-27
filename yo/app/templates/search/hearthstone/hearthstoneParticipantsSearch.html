@@ -26,7 +26,7 @@
   	<!-- The level of the game -->
   	<div class="level-details form-group" ng-hide="options.criteria.reviewType == 'arena-draft'">
 		<tags-input name="level" ng-model="options.criteria.participantDetails.skillLevel" add-from-autocomplete-only="true" spellcheck="false" ng-required="true" replace-spaces-with-dashes="false" min-tags="1" max-tags="1" template="templates/video/tagsTemplate.html" class="form-control" placeholder="Game level"> 
-			<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="20" template="templates/video/tagsTemplate.html"></auto-complete>
+			<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="100" template="templates/video/tagsTemplate.html"></auto-complete>
 		</tags-input>
   	</div>
 </div>

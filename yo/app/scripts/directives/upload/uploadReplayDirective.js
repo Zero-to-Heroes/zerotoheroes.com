@@ -20,7 +20,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 
 				// We use it for nice out-of-the-box file features
 				$scope.buildUploader = function(sportsConfig) {
-					var supportedFileTypes = ['text/xml', 'arenatracker']
+					var supportedFileTypes = ['text/xml', 'text/plain', 'arenatracker']
 					var supportedExtensions = SportsConfig[$scope.sport].supportedExtensions
 
 		        	var uploader = new FileUploader({
@@ -31,7 +31,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 								if (supportedFileTypes.indexOf(type) == -1) {
 									var indexOfLastDot = item.name.lastIndexOf('.')
 									var extension = item.name.slice(indexOfLastDot + 1)
-									$log.debug('extension', extension)
+									$log.debug('extension', extension, item)
 									if (supportedExtensions.indexOf(extension) == -1)
 										return false
 								}

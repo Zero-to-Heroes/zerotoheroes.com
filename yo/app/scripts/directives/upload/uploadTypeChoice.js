@@ -15,7 +15,8 @@ app.directive('uploadTypeChoice', ['$log', '$location',
 				$scope.chooseType = function(type) {
 					$log.debug('choosing', type, $location, $location.path())
 					var path = $location.path() + '/' + type
-					$location.path(path)
+					return path
+					// $location.path(path)
 				}
 			}
 		};

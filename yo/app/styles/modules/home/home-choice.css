@@ -33,7 +33,7 @@
 	padding: 15px;
 }
 
-.home-choice .home-type button {
+.home-choice .home-type .btn {
 	width: 200px;
 	height: 120px;
 	display: block;

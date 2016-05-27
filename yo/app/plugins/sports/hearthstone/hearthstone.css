@@ -18,6 +18,10 @@
 	color: #fff;
 	text-decoration: none;
 }
+.hearthstone a.btn {
+	color: #333;
+}
+
 
 .hearthstone input, .hearthstone textarea, .hearthstone select, .hearthstone tags-input .tags {
 	background: #f1d6a9;

@@ -25,7 +25,7 @@
 	padding: 15px;
 }
 
-.upload-choice .upload-type button {
+.upload-choice .upload-type .btn {
 	width: 200px;
 	height: 120px;
 	display: block;

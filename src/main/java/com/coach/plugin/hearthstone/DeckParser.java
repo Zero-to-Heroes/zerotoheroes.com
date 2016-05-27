@@ -530,9 +530,9 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2) + "#" + cardList;
 
 			// Don't override existing decks
-			// if (pluginData.get(deckId) != null) {
-			// continue;
-			// }
+			if (pluginData.get(deckId) != null) {
+				continue;
+			}
 
 			// String deckUrl = HPNW_TEMP_DECK_HOST_URL + deckId;
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);

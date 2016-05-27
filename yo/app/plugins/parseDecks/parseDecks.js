@@ -52,25 +52,25 @@ var parseDecks = {
 
 	handleMatch: function(review, result, match, groupIndex) {
 		groupIndex = groupIndex || 2
-		console.log('match', match, result);
+		// console.log('match', match, result);
 		var deckName = match[groupIndex]
 		var deckUrl = match[1] + deckName
-		console.log('deck name', deckName, deckUrl)
+		// console.log('deck name', deckName, deckUrl)
 
 		var plugins = review.plugins.hearthstone;
 		// console.log('plugins', plugins)
 		if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
 			var strDeck = plugins.parseDecks[deckName];
-			console.log('strDeck', strDeck)
+			// console.log('strDeck', strDeck)
 			var deck = JSON.parse(strDeck)
-			console.log('jsDeck', deck)
+			// console.log('jsDeck', deck)
 			var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 			// parseDecks.deck = htmlDeck;
 			// console.log('html deck is ', htmlDeck);
 			var deckNameForDisplay = deck.title.replace(/'/g, '')
 			parseDecks.decks[deckNameForDisplay] = htmlDeck;
 
-			result = result.replace(match[0], '<a class="deck-link" onclick="parseDecks.toggleDeck(\'' + deckNameForDisplay + '\')" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>');
+			result = result.replace(match[0], '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>');
 		}
 
 		return result
@@ -78,7 +78,7 @@ var parseDecks = {
 
 	handleMatchTemporary: function(review, result, match, groupIndex) {
 		groupIndex = groupIndex || 2
-		console.log('match', match, result);
+		// console.log('match', match, result);
 		var deckName = 'Deck link'
 
 		result = result.replace(match[0], '<a class="deck-link" href="' + match[0] + '" target="_blank">' +deckName + '</a>');
@@ -86,8 +86,16 @@ var parseDecks = {
 		return result
 	},
 
-	toggleDeck: function (deckNameForDisplay) {
-		console.log('toggle deck', deckNameForDisplay)
+	toggleDeck: function (deckUrl, deckNameForDisplay, event) {
+		// console.log('toggle deck', deckUrl, deckNameForDisplay, event)
+		// Middle click
+		if (event.button == 1 && deckUrl) {
+			event.preventDefault()
+			// console.log('opening deck in new window', deckUrl)
+			var win = window.open(deckUrl, '_blank')
+			return
+		}
+
 		$(".contextual-information .content").addClass('deck');
 		$(".contextual-information .content").html(parseDecks.decks[deckNameForDisplay]);
 		$(".contextual-information").show();

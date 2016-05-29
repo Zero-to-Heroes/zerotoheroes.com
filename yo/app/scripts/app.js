@@ -38,35 +38,36 @@ app.config(['$routeProvider', '$locationProvider',
 	$routeProvider.
 	  	// landing pages
 	  	when('/', {
-			templateUrl: 'views/landing/sport.html',
-			controller: 'SportPageCtrl',
-			isLandingPage: true,
-			isFullPage: true,
-			sport: 'all'
+			redirectTo: '/hearthstone'
+			// templateUrl: 'views/landing/sport.html',
+			// controller: 'SportPageCtrl',
+			// isLandingPage: true,
+			// isFullPage: true,
+			// sport: 'all'
 	  	}).
 	  	when('/squash', {
-			templateUrl: 'views/landing/sport.html',
+			templateUrl: 'views/landing/sportLegacy.html',
 			controller: 'SportPageCtrl',
 			isLandingPage: true,
 			isFullPage: true,
 			sport: 'squash'
 	  	}).
 	  	when('/heroesofthestorm', {
-			templateUrl: 'views/landing/sport.html',
+			templateUrl: 'views/landing/sportLegacy.html',
 			controller: 'SportPageCtrl',
 			isLandingPage: true,
 			isFullPage: true,
 			sport: 'heroesofthestorm'
 	  	}).
 	  	when('/leagueoflegends', {
-			templateUrl: 'views/landing/sport.html',
+			templateUrl: 'views/landing/sportLegacy.html',
 			controller: 'SportPageCtrl',
 			isLandingPage: true,
 			isFullPage: true,
 			sport: 'leagueoflegends'
 	  	}).
 	  	when('/badminton', {
-			templateUrl: 'views/landing/sport.html',
+			templateUrl: 'views/landing/sportLegacy.html',
 			controller: 'SportPageCtrl',
 			isLandingPage: true,
 			isFullPage: true,

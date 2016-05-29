@@ -18,7 +18,7 @@
 	color: #fff;
 	text-decoration: none;
 }
-.hearthstone a.btn {
+.hearthstone a.btn-default {
 	color: #333;
 }
 
@@ -1094,17 +1094,73 @@
 .hearthstone .landing-page {
 	color: rgb(46, 46, 46);
 }
-
-.hearthstone .landing-page .the-team a, .hearthstone .landing-page .feature-detail a {
-	color: #337ab7;
+.hearthstone .landing-page section {
+	background: transparent;
 }
-
-.hearthstone .landing-page h1 {
+.hearthstone .landing-page a {
 	color: #233a6e;
 }
+.hearthstone .landing-page a.btn-primary {
+	color: white;
+}
+.hearthstone .landing-page h1, .hearthstone .landing-page h2 {
+	color: #233a6e;
+	text-align: center;
+	text-transform: none;
+}
+.hearthstone .landing-page h1 {
+	font-size: 4vh;
+}
+.hearthstone .landing-page h2 {
+	font-size: 3vh;
+}
 
-.hearthstone .landing-page .intro-text h1 {
-	color: #fff;
+.hearthstone .landing-page .logo {
+	text-align: center;
+	display: flex;
+	margin-top: 2vh;
+}
+.hearthstone .landing-page .logo span {
+	height: 10vh;
+	font-size: 5vh;
+	margin: auto;
+}
+.hearthstone .landing-page .logo img {
+	content: url(images/landing/logo.png);
+	height: 100%;
+}
+
+.hearthstone .landing-page .overview {
+	height: 75vh;
+    text-align: center;
+}
+.hearthstone .landing-page .overview h1 {
+	margin-top: 6vh;
+    margin-bottom: 2vh;
+}
+.hearthstone .landing-page .overview h2 {
+	margin-top: 5vh;
+}
+
+.hearthstone .landing-page .illustrations {
+	height: 50vh;
+	overflow: hidden;
+}
+.hearthstone .landing-page .illustrations img {
+	margin-right: 50px;
+    max-width: 100%;
+    max-height: 100%;
+}
+.hearthstone .landing-page .main-illustration {
+    content: url(images/landing/mainIllustration.jpg);
+}
+.hearthstone .landing-page .main-illustration-comments {
+    content: url(images/landing/comments.jpg);
+}
+
+.hearthstone .landing-page .enter-btn {
+	margin-top: 20px;
+	display: inline-block;
 }
 
 

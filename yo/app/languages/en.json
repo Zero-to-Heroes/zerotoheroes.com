@@ -34,6 +34,7 @@
 	"hearthstone": {
 		"landing": {
 			"headline": "We help Hearthstone players improve together",
+			"headlineTag": "And it's 100% free",
 			"subHeadline": "Post a video of yourself playing and get advice from the Hearthstone community",
 			"communityIntro": "Climb to Legend with the best advice from the Hearthstone community. A reputation and voting system ensures top advice always come out at the top.",
 			"contributeIntro": "Help others become better gamers. Get recognition from the community by giving advice and voting on what looks important to you.",
@@ -152,6 +153,7 @@
 		"landing": {
 			"learnMore": "Learn more",
 			"getIn": "Get in for free",
+			"continueToSite": "Continue to site",
 			"reviewToolsHeadline": "Powerful review tools",
 			"reviewToolsIntro": "Identify and understand your flaws precisely. Watch any sequence in slow motion, in a loop, or even side-by-side with another sequence from a top player.",
 			"communityHeadline": "Community wisdom",

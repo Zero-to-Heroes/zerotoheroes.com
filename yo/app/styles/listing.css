@@ -1,3 +1,5 @@
+
+
 .all-videos-header {
 	padding: 10px 45px 25px 45px;
 }
@@ -77,6 +79,7 @@
 .video-listing {
 	/*max-width: 900px;*/
 	margin: auto;
+	margin-top: 50px;
 }
 
 .thumbnails {

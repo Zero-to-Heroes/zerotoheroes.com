@@ -1,54 +1,48 @@
-<table class="table table-comfy video-listing">
-	<tbody>
-		<tr ng-repeat="video in videos">
-			<!--<td class="vert-align text-center reputation-cell">
-				<div class="reputation">
-					<span class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': video.reputation.hasCurrentUserVoted.Upvote}" ng-click="upvoteReview(video)" aria-hidden="true" title="{{ 'global.listing.video.upvote' | translate }}"></span>
-					<span class="reputation-score glyphicon">{{video.reputation.nbVotes.Upvote - video.reputation.nbVotes.Downvote}}</span>
-					<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':video.reputation.hasCurrentUserVoted.Downvote}" ng-click="downvoteReview(video)" aria-hidden="true" title="{{ 'global.listing.video.downvote' | translate }}"></span>
+<ul class="video-listing">
+	<review-list-item ng-repeat="video in videos" video="video" sport="sport">
+
+		<!-- <td class="vert-align text-center video-info-details">
+			<div title="{{ 'global.listing.video.commentsTitle' | translate }}" class="icon-container">
+				<span><span class="stat-value">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment"></span></span>
+			</div>
+			<div title="{{ 'global.listing.video.usefulTitle' | translate }}" class="icon-container">
+				<span><span class="stat-value">{{video.totalHelpfulComments}}</span><span class="validated"><span class="glyphicon glyphicon-ok"></span></span></span>
+			</div>
+				<div title="{{ 'global.listing.video.viewsTitle' | translate }}" class="icon-container">
+				<span><span class="stat-value">{{video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open"></span></span>
+			</div>
+		</td>
+		<td class="thumbnails vert-align text-center">
+			<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
+		</td>
+		<td class="specific-info">
+			<div ng-switch="sport">
+				<hearthstone-listing-details ng-switch-when="hearthstone" review="video"></hearthstone-listing-details>
+			</div>
+		</td>
+		<td class="vert-align info-column">
+			<div class="row review-title">
+				<div class="col-sm-12">
+					<a href="{{buildUrl(video)}}"><h3>{{video.title}}<span class="lang-sm language" lang="{{video.language}}"></span></h3></a>
 				</div>
-			</td>-->
-			<td class="vert-align text-center video-info-details">
-				<div title="{{ 'global.listing.video.commentsTitle' | translate }}" class="icon-container">
-					<span><span class="stat-value">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment"></span></span>
-				</div>
-				<div title="{{ 'global.listing.video.usefulTitle' | translate }}" class="icon-container">
-					<span><span class="stat-value">{{video.totalHelpfulComments}}</span><span class="validated"><span class="glyphicon glyphicon-ok"></span></span></span>
-				</div>
-					<div title="{{ 'global.listing.video.viewsTitle' | translate }}" class="icon-container">
-					<span><span class="stat-value">{{video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open"></span></span>
-				</div>
-			</td>
-			<td class="thumbnails vert-align text-center">
-				<img ng-src="{{video.thumbnail ? ENV.videoStorageUrl + video.thumbnail : ''}}" ng-show="video.thumbnail">
-			</td>
-			<td class="specific-info">
-				<div ng-switch="sport">
-					<hearthstone-listing-details ng-switch-when="hearthstone" review="video"></hearthstone-listing-details>
-				</div>
-			</td>
-			<td class="vert-align info-column">
-				<div class="row review-title">
-					<div class="col-sm-12">
-						<a href="{{buildUrl(video)}}"><h3>{{video.title}}<span class="lang-sm language" lang="{{video.language}}"></span></h3></a>
+			</div>
+			<div class="row">
+				<div class="col-sm-8">
+					<div class="sport" ng-hide="sport">
+						<span class="label label-primary">{{video.sport.value}}</span>
 					</div>
+					<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
 				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<div class="sport" ng-hide="sport">
-							<span class="label label-primary">{{video.sport.value}}</span>
-						</div>
-						<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
-					</div>
-					<div class="col-sm-4 date-information">
-						<span title="{{formatExactDate(video.creationDate)}}"><small>{{ 'global.listing.video.submitted' | translate }} {{formatDate(video.creationDate)}} {{ 'global.listing.video.by' | translate }} {{video.author}}</small></span>
-						<span title="{{formatExactDate(video.lastModifiedDate)}}" ng-show="video.lastModifiedDate"><small>{{ 'global.listing.video.modified' | translate }} {{formatDate(video.lastModifiedDate)}}</small></span>
-					</div>
+				<div class="col-sm-4 date-information">
+					<span title="{{formatExactDate(video.creationDate)}}"><small>{{ 'global.listing.video.submitted' | translate }} {{formatDate(video.creationDate)}} {{ 'global.listing.video.by' | translate }} {{video.author}}</small></span>
+					<span title="{{formatExactDate(video.lastModifiedDate)}}" ng-show="video.lastModifiedDate"><small>{{ 'global.listing.video.modified' | translate }} {{formatDate(video.lastModifiedDate)}}</small></span>
 				</div>
-			</td>
-		</tr>
-	</tbody>
-</table>
+			</div>
+		</td> -->
+	</review-list-item>
+
+</ul>
+
 
 <nav ng-show="range.length > 1">
 	<ul class="pagination">

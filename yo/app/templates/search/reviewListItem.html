@@ -1,0 +1,30 @@
+<li class="review-list-item">
+	<a href="{{buildUrl(video)}}" class="review-link">
+		<h3 class="header">
+			<tags-input ng-model="video.participantDetails.skillLevel" ng-disabled="true" class="sport-tags ti-input-sm skill-level" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
+			<span class="title">{{video.title}}</span>
+			<small class="additional-info"><span title="{{formatExactDate(video.creationDate)}}">{{ 'global.listing.video.submitted' | translate }} {{formatDate(video.creationDate)}} {{ 'global.listing.video.by' | translate }} {{video.author}}</span></small>
+		</h3>
+		<div class="body">
+			<span class="text-center video-info-details">
+				<div title="{{ 'global.listing.video.commentsTitle' | translate }}" class="icon-container">
+					<span><span class="stat-value">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment"></span></span>
+				</div>
+				<div title="{{ 'global.listing.video.usefulTitle' | translate }}" class="icon-container">
+					<span><span class="stat-value">{{video.totalHelpfulComments}}</span><span class="validated"><span class="glyphicon glyphicon-ok"></span></span></span>
+				</div>
+				<div title="{{ 'global.listing.video.viewsTitle' | translate }}" class="icon-container">
+					<span><span class="stat-value">{{video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open"></span></span>
+				</div>
+			</span>
+			<span class="specific-info">
+				<div ng-switch="sport">
+					<hearthstone-listing-details ng-switch-when="hearthstone" review="video"></hearthstone-listing-details>
+				</div>
+			</span>
+			<span>
+				<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
+			</span>
+		</div>
+	</a>
+</li>

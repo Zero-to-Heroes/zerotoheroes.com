@@ -1,0 +1,66 @@
+.review-list-item {
+	display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+.video-listing .review-list-item .review-link, .video-listing .review-list-item > .review-link:focus, .video-listing .review-list-item > .review-link:hover, .video-listing .review-list-item > .review-link:active {
+	color: inherit;
+}
+
+.review-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.review-list-item .header {
+	display: flex;
+    margin-top: 0;
+}
+
+.review-list-item .skill-level {
+    margin-right: 15px;
+}
+.review-list-item tags-input {
+	height: 65px;
+}
+.review-list-item tags-input .tags {
+    display: flex;
+}
+.review-list-item tags-input .tag-list {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.review-list-item .title {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.review-list-item .additional-info {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 15px;
+    font-size: 55%;
+}
+
+.review-list-item .body {
+	display: flex;
+}
+
+.review-list-item .video-info-details {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.review-list-item .specific-info {
+    max-width: 280px;
+}
+
+.review-list-item .specific-info tags-input {
+    display: none;
+}

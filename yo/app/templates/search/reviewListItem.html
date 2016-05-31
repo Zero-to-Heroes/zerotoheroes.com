@@ -4,6 +4,16 @@
 			<tags-input ng-model="video.participantDetails.skillLevel" ng-disabled="true" class="sport-tags ti-input-sm skill-level" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
 			<span class="title">{{video.title}}</span>
 			<small class="additional-info"><span title="{{formatExactDate(video.creationDate)}}">{{ 'global.listing.video.submitted' | translate }} {{formatDate(video.creationDate)}} {{ 'global.listing.video.by' | translate }} {{video.author}}</span></small>
+			
+			<!-- For smallest display only -->
+			<span class="text-center mobile-video-info-details">
+				<div title="{{ 'global.listing.video.commentsTitle' | translate }}" class="icon-container">
+					<span><span class="stat-value">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment"></span></span>
+				</div>
+				<div title="{{ 'global.listing.video.usefulTitle' | translate }}" class="icon-container">
+					<span><span class="stat-value">{{video.totalHelpfulComments}}</span><span class="validated"><span class="glyphicon glyphicon-ok"></span></span></span>
+				</div>
+			</span>
 		</h3>
 		<div class="body">
 			<span class="text-center video-info-details">
@@ -22,7 +32,7 @@
 					<hearthstone-listing-details ng-switch-when="hearthstone" review="video"></hearthstone-listing-details>
 				</div>
 			</span>
-			<span>
+			<span class="complementary-info">
 				<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
 			</span>
 		</div>

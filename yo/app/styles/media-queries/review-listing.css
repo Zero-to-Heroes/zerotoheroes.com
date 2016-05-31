@@ -1,0 +1,28 @@
+@media (max-width: 750px) {
+	.review-list-item .additional-info {
+		display: none;
+	}
+}
+
+@media (max-width: 650px) {
+	.review-list-item .complementary-info {
+		display: none;
+	}
+}
+
+@media (max-width: 420px) {
+	.review-list-item .video-info-details {
+		display: none;
+	}
+
+	.review-list-item .title {
+		display: none;
+	}
+
+	.review-list-item .mobile-video-info-details {
+		display: inline-block;
+	}
+	.review-list-item .mobile-video-info-details div {
+		display: inline-block;
+	}
+}

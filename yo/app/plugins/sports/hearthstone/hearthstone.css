@@ -977,6 +977,10 @@
 	display: none;
 }
 
+.hearthstone .review-list-item .mobile-video-info-details {
+	color: rgba(255, 255, 255, 0.7);
+}
+
   
 	/* =============
 	** Specific Hearthstone info on video list

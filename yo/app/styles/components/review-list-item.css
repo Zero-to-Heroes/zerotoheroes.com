@@ -4,8 +4,7 @@
     margin-bottom: 50px;
     margin-right: 50px;
     background-color: rgba(255, 255, 255, 0.1);
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     border-radius: 15px;
 }
 
@@ -22,11 +21,24 @@
     margin-top: 0;
 }
 
+.review-list-item .mobile-video-info-details {
+	display: none;
+	font-size: 14px;
+	color: inherit;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.review-list-item .mobile-video-info-details span {
+	margin-right: 2px;
+}
+
 .review-list-item .skill-level {
     margin-right: 15px;
+    width: 120px;
+    min-width: 120px;
 }
 .review-list-item tags-input {
-	height: 65px;
+	height: 55px;
 }
 .review-list-item tags-input .tags {
     display: flex;
@@ -39,6 +51,8 @@
 .review-list-item .title {
     margin-top: auto;
     margin-bottom: auto;
+    max-height: 50px;
+    overflow: hidden;
 }
 
 .review-list-item .additional-info {

@@ -1,7 +1,7 @@
-<div class="main-panel background-white upload-choice">
+<div class="main-panel background-white upload-choice page-choices">
 	<h1>{{ 'global.upload.choice.title' | translate }}</h1>
 	<div class="content">
-		<div ng-repeat="uploadType in options.allowedUploads" class="upload-type">
+		<div ng-repeat="uploadType in options.allowedUploads" class="upload-type choice">
 			<a class="btn btn-default btn-lg" href="{{ chooseType(uploadType) }}" ng-class="uploadType" translate="{{ 'global.upload.choice.' + sport + '.' + uploadType}}" translate-default="{{ 'global.upload.choice.' + uploadType | translate}}"></a>
 			<span class="description" translate="{{ 'global.upload.choice.' + sport + '.' + uploadType + 'Description'}}" translate-default="{{ 'global.upload.choice.' + uploadType + 'Description' | translate}}"></span>
 		</div>

@@ -1,8 +1,8 @@
-<div class="main-panel background-white home-choice">
+<div class="main-panel background-white home-choice page-choices">
 	<h1>{{ 'global.home.choice.title' | translate }}</h1>
 	<span class="home-description" translate="{{ 'global.home.' + sport + '.' + 'description'}}" translate-default="{{ 'global.home.description' | translate}}"></span>
 	<div class="content">
-		<div ng-repeat="choice in options.choices" class="home-type">
+		<div ng-repeat="choice in options.choices" class="home-type choice">
 			<a class="btn btn-default btn-lg" href="{{ chooseType(choice) }}" ng-class="choice" translate="{{ 'global.home.choice.' + sport + '.' + choice}}" translate-default="{{ 'global.home.choice.' + choice | translate}}"></a>
 			<span class="description" translate="{{ 'global.home.choice.' + sport + '.' + choice + 'Description'}}" translate-default="{{ 'global.home.choice.' + choice + 'Description' | translate}}"></span>
 		</div>

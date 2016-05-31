@@ -259,7 +259,8 @@ public class ReviewApiHandler {
 		review.setLastModifiedBy(review.getAuthor());
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
-		subscriptionManager.subscribe(review.getSport(), review.getAuthorId());
+		// subscriptionManager.subscribe(review.getSport(),
+		// review.getAuthorId());
 		// sportManager.addNewReviewActivity(review);
 		// We need to save here so that the transcoding process can retrieve it
 		reviewRepo.save(review);

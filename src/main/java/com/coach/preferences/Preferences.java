@@ -8,7 +8,7 @@ import lombok.Setter;
 public class Preferences {
 
 	private boolean siteNotifications = true;
-	private boolean emailNotifications = true;
+	private boolean emailNotifications = false;
 	private boolean emailContact = true;
 	private String language;
 

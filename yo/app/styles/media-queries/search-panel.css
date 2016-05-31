@@ -1,0 +1,10 @@
+@media (max-width: 770px) {
+	.search-section {
+		width: 80%;
+		margin: auto;
+	}
+
+	.search-section .participants-search, .search-section .participants-search .level-details, .search-section .wanted-tags {
+		display: block;
+	}
+}

@@ -1190,7 +1190,9 @@
 }
 
 
-
+/* =============
+** Media queries
+** =============*/
 @media screen and (max-width: 1700px) {
 	.hearthstone .video-information {
 		width: 50%;
@@ -1226,6 +1228,30 @@
 @media screen and (max-width: 1080px) {
 	.hearthstone .video-information {
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.hearthstone .navbar-default {
+		background: url("images/nav-bg-center.png") repeat-x;
+		padding-right: 60px;
+	}
+	.hearthstone .navbar-default .inside-navigation {
+		float: right;
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 770px) {
+	.hearthstone .search-section .hearthstone-participants {
+		display: block;
+	}
+	.hearthstone .search-section .hearthstone-participants .player-details, .hearthstone .search-section .hearthstone-participants .separation, .hearthstone .search-section .hearthstone-participants .opponent-details {
+		display: inline-block;
+	}
+	.hearthstone .search-section .participants-search .level-details {
+		display: block;
+		margin-top: 20px;
 	}
 }
 

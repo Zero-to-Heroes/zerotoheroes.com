@@ -9,12 +9,12 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
@@ -65,6 +65,7 @@ public class EmailSender {
 			props.put("mail.smtp.auth", "true");
 			props.put("mail.smtp.starttls.enable", "true");
 			props.put("mail.smtp.starttls.required", "true");
+			props.put("mail.mime.charset", "UTF-8");
 
 			// Create a Session object to represent a mail session with the
 			// specified properties.
@@ -78,7 +79,7 @@ public class EmailSender {
 				for (String recipient : message.getRecipients()) {
 					msg.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
 				}
-				msg.setSubject(message.getSubject());
+				msg.setSubject(message.getSubject(), "UTF-8");
 				msg.setContent(message.getContent(), message.getType());
 
 				log.debug("Email created, attempting to send it");
@@ -98,11 +99,13 @@ public class EmailSender {
 				log.error("Could not send email", e);
 			}
 			finally {
-				if (transport != null) try {
-					transport.close();
-				}
-				catch (MessagingException e) {
-					log.error("Could not close transport!", e);
+				if (transport != null) {
+					try {
+						transport.close();
+					}
+					catch (MessagingException e) {
+						log.error("Could not close transport!", e);
+					}
 				}
 			}
 		}

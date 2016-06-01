@@ -59,7 +59,7 @@ public class EmailNotifier {
 		//@formatter:on
 
 		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient).subject(subject)
-				.content(body).type("text/html").build();
+				.content(body).type("text/html; charset=UTF-8").build();
 		emailSender.send(message);
 	}
 
@@ -92,7 +92,7 @@ public class EmailNotifier {
 		//@formatter:on
 
 		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient).subject(subject)
-				.content(body).type("text/html").build();
+				.content(body).type("text/html; charset=UTF-8").build();
 		emailSender.send(message);
 	}
 
@@ -115,7 +115,7 @@ public class EmailNotifier {
 		//@formatter:on
 
 		EmailMessage message = EmailMessage.builder().from("Zero to Heroes reset password <contact@zerotoheroes.com>")
-				.to(user.getEmail()).subject(subject).content(body).type("text/html").build();
+				.to(user.getEmail()).subject(subject).content(body).type("text/html; charset=UTF-8").build();
 		emailSender.send(message);
 	}
 
@@ -160,7 +160,7 @@ public class EmailNotifier {
 		//@formatter:on
 
 		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient).subject(subject)
-				.content(body).type("text/html").build();
+				.content(body).type("text/html; charset=UTF-8").build();
 		emailSender.send(message);
 	}
 }

@@ -19,7 +19,9 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 						playerCategory: 'any',
 						opponentCategory: 'any',
 						skillLevel: undefined
-					}
+					},
+					minComments: 0,
+					maxComments: undefined
 				},
 				showIntermediateText: true
 			}
@@ -49,6 +51,23 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			{ "value" : null, "label" : $translate.instant('hearthstone.search.gameType.all') },
 			{ "value" : "game", "label" : $translate.instant('hearthstone.search.gameType.game') },
 			{ "value" : "arena-draft", "label" : $translate.instant('hearthstone.search.gameType.draft') }
+		]
+
+		$scope.minCommentsOptions = [
+			{ "value" : 0, "label" : 0 },
+			{ "value" : 1, "label" : 1 },
+			{ "value" : 2, "label" : 2 },
+			{ "value" : 3, "label" : 3 },
+			{ "value" : 4, "label" : 4 },
+			{ "value" : 5, "label" : 5 }
+		]
+		$scope.maxCommentsOptions = [
+			{ "value" : 0, "label" : 0 },
+			{ "value" : 1, "label" : 1 },
+			{ "value" : 2, "label" : 2 },
+			{ "value" : 3, "label" : 3 },
+			{ "value" : 4, "label" : 4 },
+			{ "value" : null, "label" : $translate.instant('global.search.nbComments.unlimited')  }
 		]
 
 		$scope.searchFromClick = function() {

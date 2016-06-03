@@ -50,6 +50,19 @@
 				</div>
 			</div>
 			<div class="comments-criteria search-block">
+				<div class="form-group title-search">
+					<span translate="global.search.nbComments_pre"></span>
+				    <button type="button" class="btn btn-default form-control" data-trigger="click" ng-model="options.criteria.minComments" data-html="1" bs-options="option.value as option.label for option in minCommentsOptions" placeholder="0" bs-select ng-required="true">
+					  	<span>Action</span>
+					</button>
+					<span translate="global.search.nbComments_mid"></span>
+				    <button type="button" class="btn btn-default form-control" data-trigger="click" ng-model="options.criteria.maxComments" data-html="1" bs-options="option.value as option.label for option in maxCommentsOptions" placeholder="{{ 'global.search.nbComments.unlimited' | translate }}" bs-select ng-required="true">
+					  	<span>Action</span>
+					</button>
+					<span translate="global.search.nbComments_post"></span>
+				</div>
+			</div>
+			<div class="comments-criteria search-block">
 				<span translate="global.search.helpfulCommentLabel"></span>
 				<button type="button" class="btn btn-default btn-class-select form-control" data-trigger="click" ng-model="options.criteria.tempHelpfulComment" data-html="1" bs-options="option.value as option.label for option in helpfulOptions" placeholder="{{ 'global.search.helpful.all' | translate }}" bs-select ng-required="true">
 				  	<span>Action</span>

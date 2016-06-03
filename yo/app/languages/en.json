@@ -240,10 +240,16 @@
 			"textLabel": "... and that contains the words ",
 			"wantedTagsLabel": "... and that are tagged with ",
 			"unwantedTagsLabel": "... and that aren't tagged with",
+			"nbComments_pre": "... and that have between ",
+			"nbComments_mid": " and ",
+			"nbComments_post": " comments",
 			"helpfulCommentLabel": "I want to see",
 			"searchButton": "Search",
 			"skillLabel": "at skill level",
 			"clearFilterButton": "Clear filters",
+			"nbComments": {
+				"unlimited": "unlimited"
+			},
 			"helpful": {
 				"all": "all reviews that match",
 				"onlyHelpful": "only reviews with comments flagged as helpful",

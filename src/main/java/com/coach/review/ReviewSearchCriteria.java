@@ -27,6 +27,7 @@ public class ReviewSearchCriteria {
 	private Boolean onlyHelpful, noHelpful;
 	private String sort;
 	private ParticipantDetails participantDetails;
+	private Integer minComments, maxComments;
 
 	public List<Tag> getWantedTags() {
 		return wantedTags == null ? new ArrayList<Tag>() : wantedTags;

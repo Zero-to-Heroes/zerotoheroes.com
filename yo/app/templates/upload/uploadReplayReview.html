@@ -12,7 +12,10 @@
 <div class="background-white video-review-upload-video" ng-class="{'col-md-7': playerControls.wideMode, 'col-md-5': !playerControls.wideMode}">
 
 	<!-- Show the player the replay file -->
-	<div id="externalPlayer" class="external-player" ng-class="pluginNames"></div>
+	<div class="external-player-container">
+		<div id="dummy"></div>
+		<div id="externalPlayer" class="external-player joustjs" ng-class="pluginNames"></div>
+	</div>
 
 </div>
 

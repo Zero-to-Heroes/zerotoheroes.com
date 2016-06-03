@@ -3,7 +3,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 	function($log, ENV, SportsConfig) {
 		return {
 			restrict: 'E',
-			transclude: false,
+			replace: true,
 			templateUrl: 'templates/review/externalPlayer.html',
 			scope: {
 				review: '=',

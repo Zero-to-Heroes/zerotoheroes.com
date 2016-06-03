@@ -1,0 +1,18 @@
+.external-player-container {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.external-player {
+	background: black;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.external-player-container #dummy {
+    padding-top: 100%;
+}

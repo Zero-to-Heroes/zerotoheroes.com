@@ -1109,6 +1109,7 @@
 }
 .hearthstone .landing-page a.btn-primary {
 	color: white;
+	padding: 10px;
 }
 .hearthstone .landing-page h1, .hearthstone .landing-page h2 {
 	color: #233a6e;
@@ -1205,11 +1206,11 @@
 
 @media screen and (max-width: 1380px) {
 	.hearthstone .video-information {
-		width: 58.33%;
+		width: 45%;
 	}
 
 	.hearthstone .video-comment {
-		width: 41.66%;
+		width: 55%;
 	}
 }
 

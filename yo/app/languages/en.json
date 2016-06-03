@@ -436,7 +436,7 @@
 				"helpedAuthor": "Helped {{name}}",
 				"helpedMe": "Mark as helpful to me",
 				"replyButton": "Reply",
-				"upvotedBy": "Upvoted by",
+				"upvotedBy": "Upvoted by ",
 				"otherVotes": "and {{number}} others",
 				"otherVote": "and one other"
 			},

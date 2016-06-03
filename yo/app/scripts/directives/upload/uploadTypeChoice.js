@@ -13,7 +13,7 @@ app.directive('uploadTypeChoice', ['$log', '$location',
 			},
 			controller: function($scope) {
 				$scope.chooseType = function(type) {
-					$log.debug('choosing', type, $location, $location.path())
+					// $log.debug('choosing', type, $location, $location.path())
 					var path = $location.path() + '/' + type
 					return path
 					// $location.path(path)

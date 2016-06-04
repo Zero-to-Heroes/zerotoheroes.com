@@ -18,7 +18,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 					participantDetails: {
 						playerCategory: 'any',
 						opponentCategory: 'any',
-						skillLevel: undefined
+						skillLevel: []
 					},
 					minComments: 0,
 					maxComments: undefined
@@ -62,7 +62,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			{ "value" : 5, "label" : 5 }
 		]
 		$scope.maxCommentsOptions = [
-			{ "value" : 0, "label" : 0 },
+			{ "value" : 0, "label" : '0' },
 			{ "value" : 1, "label" : 1 },
 			{ "value" : 2, "label" : 2 },
 			{ "value" : 3, "label" : 3 },

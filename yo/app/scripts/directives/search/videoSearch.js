@@ -87,7 +87,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if (params.unwantedTags && params.unwantedTags.length > 0) $location.search('unwantedTags', $scope.serializeTags(params.unwantedTags))
 					if (params.title) $location.search('title', params.title)
 					if (params.minComments && params.minComments > 0) $location.search('minComments', params.minComments)
-					if (params.maxComments) $location.search('maxComments', params.maxComments)
+					if (params.maxComments == 0 || params.maxComments) $location.search('maxComments', params.maxComments)
 					if (params.noHelpful) $location.search('helpfulComments', 'no')
 					if (params.onlyHelpful) $location.search('helpfulComments', 'yes')
 					if (params.participantDetails.playerCategory && params.participantDetails.playerCategory != 'any') $location.search('playerCategory', params.participantDetails.playerCategory)

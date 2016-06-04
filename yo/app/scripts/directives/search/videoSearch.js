@@ -25,6 +25,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 				}
 
 				$scope.udpateSearchParams = function(params, pageNumber) {
+					$log.debug('udpateSearchParams', params, $location.search().minComments)
 					// Take input
 					params.pageNumber = params.pageNumber || pageNumber || $scope.pageNumber
 					params.sport = params.sport || $scope.sport || $routeParams.sport
@@ -47,9 +48,19 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if ($location.search().playerCategory) {
 						params.participantDetails.playerCategory = $location.search().playerCategory
 					}
-					if ($location.search().opponentCategory) {
-						params.participantDetails.opponentCategory = $location.search().opponentCategory
+					if ($location.search().minComments) {
+						params.minComments = parseInt($location.search().minComments)
 					}
+					if ($location.search().maxComments) {
+						params.maxComments = parseInt($location.search().maxComments)
+					}
+					if ($location.search().helpfulComments) {
+						if ($location.search().helpfulComments == 'no')
+							params.tempHelpfulComment = 'onlyNotHelpful'
+						else if ($location.search().helpfulComments == 'yes')
+							params.tempHelpfulComment = 'onlyHelpful'
+					}
+
 					if ($location.search().sort) {
 						params.sort = $location.search().sort
 					}
@@ -62,6 +73,26 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if (params.participantDetails.opponentCategory == 'any') {
 						params.participantDetails.opponentCategory = null
 					}
+				}
+
+				$scope.updateUrl = function(params) {
+					// $log.debug('updating url', params)
+					// cleariung params
+					$location.search('')
+
+					if (params.userName) $location.search('username', params.userName)
+					if (params.pageNumber && params.pageNumber > 1) $location.search('pageNumber', params.pageNumber)
+					if (params.reviewType) $location.search('reviewType', params.reviewType)
+					if (params.wantedTags && params.wantedTags.length > 0) $location.search('wantedTags', $scope.serializeTags(params.wantedTags))
+					if (params.unwantedTags && params.unwantedTags.length > 0) $location.search('unwantedTags', $scope.serializeTags(params.unwantedTags))
+					if (params.title) $location.search('title', params.title)
+					if (params.minComments && params.minComments > 0) $location.search('minComments', params.minComments)
+					if (params.maxComments) $location.search('maxComments', params.maxComments)
+					if (params.noHelpful) $location.search('helpfulComments', 'no')
+					if (params.onlyHelpful) $location.search('helpfulComments', 'yes')
+					if (params.participantDetails.playerCategory && params.participantDetails.playerCategory != 'any') $location.search('playerCategory', params.participantDetails.playerCategory)
+					if (params.participantDetails.opponentCategory && params.participantDetails.opponentCategory != 'any') $location.search('opponentCategory', params.participantDetails.opponentCategory)
+					if (params.sort) $location.search('sort', params.sort)
 				}
 
 				$scope.performSearch = function(params, pageNumber, updateUrl, callback) {
@@ -134,7 +165,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 				}
 
 				$scope.serializeTags = function(tags) {
-					$log.log('serializing tags', tags);
+					// $log.log('serializing tags', tags);
 					if (!tags) return '';
 
 					var result = [];
@@ -142,22 +173,6 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 						result.push(tag.text);
 					})
 					return result;
-				}
-
-				$scope.updateUrl = function(params) {
-					$log.debug('updating url', params)
-					// cleariung params
-					$location.search('')
-
-					if (params.userName) $location.search('username', params.userName)
-					if (params.pageNumber) $location.search('pageNumber', params.pageNumber)
-					if (params.reviewType) $location.search('reviewType', params.reviewType)
-					if (params.wantedTags && params.wantedTags.length > 0) $location.search('wantedTags', $scope.serializeTags(params.wantedTags))
-					if (params.unwantedTags && params.unwantedTags.length > 0) $location.search('unwantedTags', $scope.serializeTags(params.unwantedTags))
-					if (params.title) $location.search('title', params.title)
-					if (params.participantDetails.playerCategory && params.participantDetails.playerCategory != 'any') $location.search('playerCategory', params.participantDetails.playerCategory)
-					if (params.participantDetails.opponentCategory && params.participantDetails.opponentCategory != 'any') $location.search('opponentCategory', params.participantDetails.opponentCategory)
-					if (params.sort) $location.search('sort', params.sort)
 				}
 
 				$scope.findAllowedTag = function(tagName) {
@@ -175,7 +190,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 				// Tags
 				//===============
 				$scope.loadTags = function(callback) {
-					$log.debug('loading tags in videosearch.js')
+					// $log.debug('loading tags in videosearch.js')
 					TagService.filterOut('undefined', function(filtered) {
 						$scope.allowedTags = filtered
 						if (callback)

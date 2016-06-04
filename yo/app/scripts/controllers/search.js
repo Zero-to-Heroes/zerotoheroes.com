@@ -3,7 +3,7 @@
 angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', '$modal', 'TagService',
 	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, $modal, TagService) {
 		$scope.clearFilters = function() {
-			$log.debug('clearing filters', $scope.options)
+			// $log.debug('clearing filters', $scope.options)
 			var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
 
 			$scope.options = {
@@ -14,7 +14,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 					unwantedTags: [],
 					reviewType: null,
 					search: searchFn,
-					sort: 'updateDate',
+					sort: 'creationDate',
 					participantDetails: {
 						playerCategory: 'any',
 						opponentCategory: 'any',

@@ -175,6 +175,7 @@ public class TagRepository {
 		// hearthstone.add(new Tag("Murloc"));
 		// hearthstone.add(new Tag("CThun"));
 		hearthstone.add(new Tag("Mirror match"));
+		hearthstone.add(new Tag("RNG"));
 		tags.put(HearthStone, hearthstone);
 
 		// Tags for Heroes of the Storm

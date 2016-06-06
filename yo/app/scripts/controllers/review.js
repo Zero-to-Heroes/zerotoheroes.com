@@ -482,6 +482,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				canvas: $scope.review.tempCanvas,
 				language: $scope.review.language,
 				plugins: $scope.review.plugins,
+				visibility: $scope.review.visibility,
 				participantDetails: $scope.review.participantDetails
 			}
 			if ($scope.videoInformationForm.$valid) {

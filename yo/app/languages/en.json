@@ -385,6 +385,12 @@
 				"skillLevel": "Game level",
 				"selectClass": "Select class"
 			},
+			"visibility": {
+				"private": "Private",
+				"restricted": "Restricted",
+				"public": "Public",
+				"tooltip": "Visibility"
+			},
 			"sequence": {
 				"headline": "Adding a side-by-side comparison",
 				"choiceHeadline": "Use a sequence from:",

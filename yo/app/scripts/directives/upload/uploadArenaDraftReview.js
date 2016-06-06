@@ -108,6 +108,7 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 									data.author = $scope.review.author
 									data.playerInfo = $scope.review.playerInfo
 									data.participantDetails = $scope.review.participantDetails
+									data.visibility = $scope.review.visibility
 									$scope.review = data
 
 									$scope.uploader.videoInfo.upload.postProcessed = true
@@ -232,7 +233,8 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 						title: $scope.review.title,
 						tags: $scope.review.tags,
 						language: $scope.review.language,
-						participantDetails: $scope.review.participantDetails
+						participantDetails: $scope.review.participantDetails,
+						visibility: $scope.review.visibility
 					}
 					$log.debug('publishing review', newReview)
 					Api.ReviewsPublish.save({reviewId: $scope.review.id}, newReview, 

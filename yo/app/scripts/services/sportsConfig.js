@@ -2,7 +2,7 @@ var services = angular.module('services');
 services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage', 
 	function ($log, angularLoad, $parse, localStorage) {
 		var service = {};
-		var dev = false
+		var dev = true
 
 		service =
 			{
@@ -45,7 +45,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 8}, 
 							{name: 'parseDecks', version: 11, dev: dev}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 50, dev: dev},
+							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 51, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 10, dev: dev}
 						],
 						customCss: 'hearthstone.css'
@@ -184,36 +184,16 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			// Already loaded?
 			if (window[pluginObj.name]) {
 				plugins.push(pluginObj)
+				console.log('not reloading css', plugin);
 			}
 			else {
 				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js' + version, skipCache: pluginObj.dev }).then(function () {
 					plugins.push(pluginObj)
 				})
 				angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
-					//console.log('loaded css', plugin);
+					console.log('loaded css', plugin);
 				})
 			}
-			// Otherise, is in cache?
-			// else if (localStorage.getItem(plugin + '.js' + version)) {
-			// 	console.log('loading script from local storage')
-			// 	console.log(localStorage.getItem(plugin + '.js' + version).toString())
-			// 	// eval(localStorage.getItem(plugin + '.js' + version))
-			// 	var script = document.createElement('script')
-			// 	document.body.appendChild(script)
-			// }
-			// // Otherwise load it
-			// else {
-			// 	angularLoad.loadScript('/plugins/' + plugin + '/' + plugin + '.js' + version).then(function() {
-			// 		plugins.push(pluginObj)
-			// 		localStorage.setItem(plugin + '.js' + version, )
-			// 	}).catch(function() {
-			// 		plugins.push(undefined)
-			// 		$log.error('could not load plugin', plugin )
-			// 	})
-			// 	angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
-			// 		//console.log('loaded css', plugin);
-			// 	})
-			// }
 		}
 
 		service.initPlayer = function(config, review, activePlugins, pluginNames, callback) {

@@ -28,16 +28,23 @@
 										<div class="form-group review-editing-title" show-errors="{ showSuccess: true }">
 									    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.review.comment.reviewTitle' | translate }}" ng-required="true">
 									  	</div>
-									  	<div class="language">
+									  	<!-- <div class="language">
 										  	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="lang-sm language" lang="{{review.language}}"></span><span class="caret"></span></a>
 											<ul class="dropdown-menu">
 												<li><a ng-click="editLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
 												<li><a ng-click="editLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
 											</ul>
-										</div>
+										</div> -->
 								  	</div>
 							  	</div>
-							  	<hs-decklist-upload sport="sport" review="review" ng-show="review.editing"></hs-decklist-upload>
+							  	<div class="row" ng-show="review.editing">
+									<div class="col-sm-6">
+								  		<hs-decklist-upload sport="sport" review="review"></hs-decklist-upload>
+								  	</div>
+								  	<div class="col-sm-5">
+								  		<review-visibility review="review"></review-visibility>
+								  	</div>
+								</div>
 							  	<div class="row meta-info" ng-hide="review.editing">
 								  	<div class="author-row">
 									  	<div class="author-information">

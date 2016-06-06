@@ -158,7 +158,7 @@ public class ReviewApiHandler {
 						criteria.getParticipantDetails().getPlayerCategory(),
 						criteria.getParticipantDetails().getOpponentCategory(),
 						criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
-						criteria.getMinComments(), criteria.getMaxComments(), pageRequest);
+						criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(), pageRequest);
 			}
 			else {
 				// log.debug("searching with criteria " + criteria);
@@ -167,7 +167,8 @@ public class ReviewApiHandler {
 						criteria.getParticipantDetails().getPlayerCategory(),
 						criteria.getParticipantDetails().getOpponentCategory(),
 						criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
-						criteria.getMinComments(), criteria.getMaxComments(), text, pageRequest);
+						criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(), text,
+						pageRequest);
 			}
 		}
 		catch (Exception e) {
@@ -195,6 +196,12 @@ public class ReviewApiHandler {
 
 		if (review == null) { return new ResponseEntity<Review>(review, HttpStatus.NOT_FOUND); }
 
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = userRepo.findByUsername(currentUser);
+		// Check that access is allowed
+		if ("private".equalsIgnoreCase(review.getVisibility()) && review.getAuthorId() != null && !review.getAuthorId()
+				.equals(user.getId())) { return new ResponseEntity<Review>(review, HttpStatus.FORBIDDEN); }
+
 		// Increase the view count
 		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {
 			review.incrementViewCount();
@@ -207,8 +214,6 @@ public class ReviewApiHandler {
 		// TODO: remove this
 		reviewService.updateAsync(review);
 
-		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
 		review.prepareForDisplay(userId);
 		// log.debug("Returning review " + review);
@@ -410,6 +415,7 @@ public class ReviewApiHandler {
 		// review.setLastModifiedDate(new Date());
 		// review.setLastModifiedBy(currentUser);
 		review.setLanguage(inputReview.getLanguage());
+		review.setVisibility(inputReview.getVisibility());
 
 		reviewService.updateAsync(review);
 
@@ -469,6 +475,7 @@ public class ReviewApiHandler {
 		review.setLastModifiedBy(currentUser);
 		review.setLanguage(inputReview.getLanguage());
 		review.setPublished(true);
+		review.setVisibility(inputReview.getVisibility());
 
 		reviewService.updateAsync(review);
 

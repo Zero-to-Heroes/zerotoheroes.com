@@ -96,6 +96,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private boolean transcodingDone;
 	@Indexed
 	private boolean published;
+	@Indexed
+	private String visibility;
 	private float videoFramerateRatio;
 	private Map<String, String> reviewVideoMap = new HashMap<>();
 	private Reputation reputation;

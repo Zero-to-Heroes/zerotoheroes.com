@@ -114,6 +114,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 									data.playerInfo = $scope.review.playerInfo
 									data.participantDetails = $scope.review.participantDetails
 									data.plugins = $scope.review.plugins
+									data.visibility = $scope.review.visibility
 									$scope.review = data
 
 									$scope.uploader.videoInfo.upload.postProcessed = true
@@ -261,7 +262,8 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						tags: $scope.review.tags,
 						language: $scope.review.language,
 						participantDetails: $scope.review.participantDetails,
-						plugins: $scope.review.plugins
+						plugins: $scope.review.plugins,
+						visibility: $scope.review.visibility
 					}
 					$log.debug('publishing review', newReview)
 					Api.ReviewsPublish.save({reviewId: $scope.review.id}, newReview, 
@@ -280,7 +282,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.plugins = [];
 				if ($scope.tempPlugins) {
 					angular.forEach($scope.tempPlugins, function(plugin) {
-						// $log.debug('Prepating to load plugin in upload.js');
+						$log.debug('Prepating to load plugin in uploadReplayReview.js', plugin);
 						SportsConfig.loadPlugin($scope.plugins, plugin);
 					})
 				}

@@ -19,13 +19,18 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		]
 		$scope.$watch('criteria.sort', function(newVal, oldVal) {
 			if (newVal != oldVal) {
-				$scope.searchFromClick()
+				$scope.search()
 			}
 		})
 			
 		$rootScope.$on('user.logged.in', function() {
 			$scope.search()
 		})
+
+		$scope.toggleAllVideos = function() {
+			$scope.onlyShowPublic = !$scope.onlyShowPublic
+			$scope.search()
+		}
 
 		$scope.searchFromClick = function () {
 			$location.search('')
@@ -37,6 +42,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			var params = $scope.criteria
 			params.sport = $scope.sport
 			params.ownVideos = $scope.ownVideos
+			params.visibility = $scope.onlyShowPublic ? 'public' : null
 
 			Api.Sports.get({sport: $scope.sport}, function(data) {
 				$scope.subscribers = data.subscribers

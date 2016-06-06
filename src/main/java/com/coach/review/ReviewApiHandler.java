@@ -158,7 +158,8 @@ public class ReviewApiHandler {
 						criteria.getParticipantDetails().getPlayerCategory(),
 						criteria.getParticipantDetails().getOpponentCategory(),
 						criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
-						criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(), pageRequest);
+						criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
+						criteria.getVisibility(), pageRequest);
 			}
 			else {
 				// log.debug("searching with criteria " + criteria);
@@ -167,8 +168,8 @@ public class ReviewApiHandler {
 						criteria.getParticipantDetails().getPlayerCategory(),
 						criteria.getParticipantDetails().getOpponentCategory(),
 						criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
-						criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(), text,
-						pageRequest);
+						criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
+						criteria.getVisibility(), text, pageRequest);
 			}
 		}
 		catch (Exception e) {

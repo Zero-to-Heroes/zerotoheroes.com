@@ -23,7 +23,8 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 		"{ sport : ?0, "
 			+ "published: true,"
 			+ "$and : ["
-			+ "		{ $or : [ { $where : '?12 == true' }, { visibility: { $exists: false} }, { visibility: null }, { visibility : 'public' } ] },"
+			+ "		{ $or : [ { $where : '?12 == true' }, { visibility : 'public' } ] },"
+			+ "		{ $or : [ { $where : '?13 == null' }, { visibility : ?13 } ] },"
 			+ "		{ $or : [ { $where : '?1 == null' }, { authorId : ?1 } ] }, "
 			+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { allTags : { $all : ?2 } } ] }, "
 			+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { allTags : { $nin : ?3 } } ] }, "
@@ -75,15 +76,16 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 	Page<Review> listReviews(String sportCriteria, String authorId, List<Tag> wantedTags, List<Tag> unwantedTags,
 			Boolean onlyHelpful, Boolean noHelpful, String playerCategory, String opponentCategory,
 			List<Tag> skillLevel, String reviewType, Integer minComments, Integer maxComments, Boolean ownVideo,
-			Pageable pageable);
+			String visibility, Pageable pageable);
 
 	//@formatter:off
 	@Query(	value =
 			"{ sport : ?0, "
 				+ "published: true,"
 				+ "$and : ["
-				+ "		{ $or : [ { $where : '?12 == true' }, { visibility: { $exists: false} }, { visibility: null }, { visibility : 'public' } ] },"
-				+ "		{ $or : [ { $text : { $search : ?13 } } ] }, "
+				+ "		{ $or : [ { $where : '?12 == true' }, { visibility : 'public' } ] },"
+				+ "		{ $or : [ { $where : '?13 == null' }, { visibility : ?13 } ] },"
+				+ "		{ $or : [ { $text : { $search : ?14 } } ] }, "
 				+ "		{ $or : [ { $where : '?1 == null' }, { authorId : ?1 } ] }, "
 				+ "		{ $or : [ { $where : '?2 == null' }, { $where : '?2.length == 0' }, { allTags : { $all : ?2 } } ] }, "
 				+ "		{ $or : [ { $where : '?3 == null' }, { $where : '?3.length == 0' }, { allTags : { $nin : ?3 } } ] }, "
@@ -132,6 +134,6 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 	Page<Review> listReviews(String sportCriteria, String authorId, List<Tag> wantedTags, List<Tag> unwantedTags,
 			Boolean onlyHelpful, Boolean noHelpful, String playerCategory, String opponentCategory,
 			List<Tag> skillLevel, String reviewType, Integer minComments, Integer maxComments, Boolean ownVideo,
-			String text, Pageable pageable);
+			String visibility, String text, Pageable pageable);
 
 }

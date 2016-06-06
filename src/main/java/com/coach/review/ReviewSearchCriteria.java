@@ -28,6 +28,7 @@ public class ReviewSearchCriteria {
 	private String sort;
 	private ParticipantDetails participantDetails;
 	private Integer minComments, maxComments;
+	private String visibility;
 
 	public List<Tag> getWantedTags() {
 		return wantedTags == null ? new ArrayList<Tag>() : wantedTags;

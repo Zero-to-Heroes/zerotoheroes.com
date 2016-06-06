@@ -11,6 +11,10 @@
 	<button type="button" class="btn btn-default" data-trigger="click" ng-model="criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.search.sort' | translate }}" bs-select ng-required="true">
 	  	<span>Action</span>
 	</button>
+
+	<button type="submit" class="btn btn-default" ng-click="toggleAllVideos()" ng-show="ownVideos && onlyShowPublic"><span>{{ 'global.search.ownReviews.showAll' | translate }}</span></button>
+	<button type="submit" class="btn btn-default" ng-click="toggleAllVideos()" ng-show="ownVideos && !onlyShowPublic"><span>{{ 'global.search.ownReviews.showOnlyPublic' | translate }}</span></button>
+
 	
 	<video-search config="criteria" sport="sport"></video-search>
 </div>

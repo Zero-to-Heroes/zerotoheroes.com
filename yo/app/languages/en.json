@@ -261,6 +261,10 @@
 				"updateDate": "last modification date",
 				"creationDate": "creation date"
 			},
+			"ownReviews": {
+				"showAll": "Show all reviews",
+				"showOnlyPublic": "Show only public reviews"
+			},
 			"subscribeConfirm": "Subscribe",
 			"subscribeCancel": "Cancel",
 			"subscribe": "Subscribe to search",

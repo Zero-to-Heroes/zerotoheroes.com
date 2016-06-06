@@ -247,6 +247,7 @@
 			"searchButton": "Search",
 			"skillLabel": "at skill level",
 			"clearFilterButton": "Clear filters",
+			"ownVideos": "... and limit the search to my own reviews",
 			"nbComments": {
 				"unlimited": "unlimited"
 			},

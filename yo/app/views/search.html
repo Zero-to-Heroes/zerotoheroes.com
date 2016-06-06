@@ -74,6 +74,11 @@
 				  	<span>Action</span>
 				</button>
 			</div>
+			<div class="comments-criteria search-block">
+				<label>
+					<span translate="global.search.ownVideos"></span> <input type="checkbox" ng-model="options.criteria.ownVideos">
+				</label>
+			</div>
 			
 			<div class="search-block">
 				<button type="submit" class="btn btn-default" ng-click="searchFromClick()"><span>{{ 'global.search.searchButton' | translate }}</span></button>

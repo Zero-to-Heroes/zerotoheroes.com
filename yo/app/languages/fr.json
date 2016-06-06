@@ -344,6 +344,12 @@
 				"opponentName": "Nom de l'adversaire",
 				"skillLevel": "Niveau de la partie"
 			},
+			"visibility": {
+				"private": "Privée",
+				"restricted": "Restreinte",
+				"public": "Publique",
+				"tooltip": "Visibilité"
+			},
 			"sequence": {
 				"headline": "Ajouter une comparaison",
 				"choiceHeadline": "Utiliser une séquence de :",

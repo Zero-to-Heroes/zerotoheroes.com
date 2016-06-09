@@ -30,6 +30,8 @@ public class UserNotifier {
 	ProfileService profileService;
 
 	public void notifyNewComment(User subscriber, Comment comment, Review review) {
+		if ("private".equalsIgnoreCase(review.getVisibility())) { return; }
+
 		Profile profile = profileService.getProfile(subscriber.getId());
 
 		if (profile.getPreferences().isSiteNotifications()) {
@@ -51,6 +53,9 @@ public class UserNotifier {
 	}
 
 	public void notifyNewReview(User subscriber, Review review, String aggregator) {
+		if ("private".equalsIgnoreCase(review.getVisibility())) { return; }
+		if ("restricted".equalsIgnoreCase(review.getVisibility())) { return; }
+
 		Profile profile = profileService.getProfile(subscriber.getId());
 
 		if (profile.getPreferences().isSiteNotifications()) {

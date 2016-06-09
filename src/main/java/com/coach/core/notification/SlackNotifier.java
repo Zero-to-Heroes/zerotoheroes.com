@@ -80,7 +80,8 @@ public class SlackNotifier {
 
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
-				message.setText("New review created by " + review.getAuthor() + " at " + review.getUrl());
+				message.setText("New " + review.getVisibility() + " review created by " + review.getAuthor() + " at "
+						+ review.getUrl());
 
 				api.call(message);
 				return null;

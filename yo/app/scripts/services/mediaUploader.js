@@ -27,7 +27,7 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 					var type = file.type
 					if (!type) {
 						var indexOfLastDot = file.name.lastIndexOf('.')
-						extension = file.name.slice(indexOfLastDot + 1)
+						var extension = file.name.slice(indexOfLastDot + 1)
 						if (['log', 'txt'].indexOf(extension) > -1)
 							type = 'text/plain'
 						else if (['xml'].indexOf(extension) > -1)

@@ -2,7 +2,7 @@ var services = angular.module('services');
 services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage', 
 	function ($log, angularLoad, $parse, localStorage) {
 		var service = {};
-		var dev = true
+		var dev = false
 
 		service =
 			{
@@ -45,7 +45,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 8}, 
 							{name: 'parseDecks', version: 11, dev: dev}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 52, dev: dev},
+							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 53, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 10, dev: dev}
 						],
 						customCss: 'hearthstone.css'

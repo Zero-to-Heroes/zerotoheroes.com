@@ -88,60 +88,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						$scope.initPlayer(data)
 					})
 
-
-					// if (data.replay || (data.mediaType && data.mediaType != 'video')) {
-					// 	$scope.externalPlayer = true;
-					// 	// $timeout(function() {
-					// 	$log.debug('loading replay file');
-					// 	// Retrieve the XML replay file from s3
-					// 	var replayUrl = ENV.videoStorageUrl + data.key;
-					// 	// $log.debug('Replay URL: ', replayUrl);
-					// 	$.get(replayUrl, function(replayData) {
-					// 		data.replayXml = replayData;
-					// 		$log.debug('external replay retrieved at ', (Date.now() - $scope.debugTimestamp))
-
-					// 		// Init the external player
-					// 		// TODO: use an event system
-					// 		$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
-					// 	}).
-					// 	fail(function(error) {
-					// 		if (error.status == 200) {
-					// 			data.replayXml = error.responseText;
-
-					// 			// Init the external player
-					// 			// TODO: use an event system
-					// 			$scope.externalPlayer = SportsConfig.initPlayer($scope.config, data, $scope.plugins, $scope.pluginNames, $scope.setExternalPlayer);
-					// 		}
-					// 		else {
-					// 			$log.error('Could not load external data', data, error)
-					// 			$scope.controlFlow.pluginsReady = true;
-					// 		}
-					// 	})
-					// 	// });
-					// }
-					// else {
-					// 	$scope.controlFlow.pluginsReady = true;
-					// }
-
-					// $log.log('review loaded ', $scope.review)
-					// wait for review to be properly applied to child components
-					//$scope.review = data;
-
-					// var fileLocation = ENV.videoStorageUrl + data.key;
-					// $scope.sources = [{src: $sce.trustAsResourceUrl(fileLocation), type: data.fileType}];
-					// $scope.sources2 = []
-
-					// $scope.$watch('pluginsReady', function (newVal, oldVal) {
-					// 	// $log.debug('pluginsReady', newVal, oldVal);
-					// 	if (newVal) {
-					// 		$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
-					// 		$scope.review = data
-					// 		$timeout(function() {
-					// 			$scope.updateVideoInformation(data)
-					// 		})
-					// 		$scope.handleUrlParameters()
-					// 	}
-					// })
 				}
 			)
 

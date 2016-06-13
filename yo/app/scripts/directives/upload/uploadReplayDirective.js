@@ -63,11 +63,22 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		            $scope.hasUnsupportedFormatError = true
 		        }
 
+		        var gameRegex = /GameState.DebugPrintPower\(\) - CREATE_GAME/gm
 		        $scope.uploader.onAfterAddingFile = function(fileItem) {
 		            console.info('onAfterAddingFile', fileItem)
 		            $scope.hasUnsupportedFormatError = false
 		            $scope.file = fileItem._file
 		            $log.debug('added file', $scope.file)
+
+		            var r = new FileReader()
+				    r.onload = function(e) { 
+						var contents = e.target.result
+				        $scope.numberOfGames = (contents.match(gameRegex) || []).length
+				      	console.log('numberOfGames', $scope.numberOfGames)
+				    }
+				    r.readAsText($scope.file)
+		            // Increase number of files
+		            // $scope.processNumberItems(fileItem)
 		            // var objectURL = window.URL.createObjectURL($scope.file)
 		        }
 
@@ -82,6 +93,9 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 					// And signal that our job here is done - let's give the control to the next step
 					$scope.videoInfo.upload = {}
 					$scope.videoInfo.upload.ongoing = true
+					$scope.videoInfo.files = [$scope.file]
+					$scope.videoInfo.numberOfReviews = $scope.numberOfGames
+					$log.debug('init upload', $scope.videoInfo)
 
 					MediaUploader.upload($scope.file, fileKey, $scope.videoInfo)
 				}

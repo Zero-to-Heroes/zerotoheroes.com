@@ -58,6 +58,13 @@ public class S3Utils {
 		return fileContents.toString();
 	}
 
+	public BufferedReader readerFromS3(String key) throws IOException {
+		S3Object s3object = s3.getObject(new GetObjectRequest(inputBucket, key));
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()));
+		return reader;
+	}
+
 	public void readFromS3ToFile(String key, File localFile) throws IOException {
 		s3.getObject(new GetObjectRequest(inputBucket, key), localFile);
 	}

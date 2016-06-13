@@ -36,7 +36,12 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', 
 
 		$scope.$watch('videoInfo.upload.ongoing', function(newVal, oldVal) {
 			if (newVal) {
-				var url = $location.path() + '/review'
+				if ($scope.videoInfo.numberOfReviews > 1) {
+					var url = $location.path() + '/multi'
+				}
+				else {
+					var url = $location.path() + '/review'
+				}
 				$location.path(url)
 			}
 		})

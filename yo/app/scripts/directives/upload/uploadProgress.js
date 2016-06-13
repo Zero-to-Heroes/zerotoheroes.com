@@ -13,7 +13,8 @@ app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
 				active: '=',
 				validation: '&',
 				fileValidation: '&',
-				publish: '&'
+				publish: '&',
+				numberOfFiles: '='
 			},
 			link: function($scope, element, attrs) {
 

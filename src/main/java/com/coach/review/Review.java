@@ -37,7 +37,7 @@ import lombok.extern.slf4j.Slf4j;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString(exclude = { "comments", "canvas" })
+@ToString(exclude = { "comments", "canvas", "temporaryReplay" })
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Slf4j
 public class Review implements HasText, HasReputation, HasSubscribers {
@@ -78,7 +78,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// The key of the associated video / file
 	private String key, temporaryKey;
 	// The replay file content (or key to where it is stored?)
-	private String replay;
+	private String temporaryReplay, replay;
 	// The image to display (if any)
 	private String thumbnail;
 	// The type of media that is linked to the video
@@ -108,7 +108,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// Search-specific stuff
 	@JsonIgnore
 	@TextIndexed
-	private String fullTextSearchField;
+	private String fullTextSearchField = "";
 	@JsonIgnore
 	private List<Tag> allTags = new ArrayList<>();
 

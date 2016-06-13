@@ -1,0 +1,28 @@
+@media (max-width: 780px) {
+	.upload-page .multi-upload .hearthstone-participants .level-details {
+    	margin-top: 30px;
+    	margin-left: 50px;
+	}
+}
+
+@media (max-width: 600px) {
+	.upload-page .multi-upload .review .hearthstone-participants {
+	    display: block;
+	    height: 100%;
+    	width: 50%;
+    	margin-left: 0;
+	}
+	.upload-page .multi-upload .hearthstone-participants .separation {
+	    display: none;
+	}
+	.upload-page .multi-upload .hearthstone-participants .player-name {
+		order: 2;
+	}
+	.upload-page .multi-upload .hearthstone-participants .opponent-details {
+		display: block;
+		margin-top: 30px;
+	}
+	.upload-page .multi-upload .hearthstone-participants .class-select .caret {
+		display: none;
+	}
+}

@@ -439,7 +439,13 @@
 
 				"dontCloseWindowMessage": "Votre replay est en train d'être mis en ligne sur nos serveurs. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
 				"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et vous pourrez ensuite le voir dans le lecteur à gauche",
-				"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier votre replay"
+				"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier votre replay",
+
+				"multi": {
+					"dontCloseWindowMessage": "Vos replays sont en train d'être mis en ligne sur nos serveurs. Les informations seront mises à jour une fois le fichier traité. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
+					"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et les informations sur les parties seront ensuite automatiquement mises à jour",
+					"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier vos replays"
+				}
 			},
 			"fromurl": {
 				"headline": "Import par URL",

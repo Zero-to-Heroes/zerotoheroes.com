@@ -4,11 +4,15 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.ReplayPlugin;
@@ -21,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.core.ZipFile;
 
 @Slf4j
+@Component
 public class HSReplay implements ReplayPlugin {
 
 	@Autowired
@@ -44,7 +49,17 @@ public class HSReplay implements ReplayPlugin {
 		log.debug("Processing replay file for review " + review);
 
 		String xml = null;
-		if ("hdtreplay".equals(review.getFileType())) {
+		if (review.getTemporaryReplay() != null) {
+			if ("text/plain".equals(review.getFileType())) {
+				xml = new ReplaySerializer().xmlFromLogs(review.getTemporaryReplay());
+
+			}
+			// Simply store the temporary XML to the final destination
+			else if ("text/xml".equals(review.getFileType())) {
+				xml = review.getTemporaryReplay();
+			}
+		}
+		else if ("hdtreplay".equals(review.getFileType())) {
 			// Creating temp file to use the zip API
 			File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
 			// log.debug("Created temp file " + tempFile);
@@ -91,7 +106,7 @@ public class HSReplay implements ReplayPlugin {
 		log.debug("XML created");
 
 		// Store the new file to S3 and update the review with the correct key
-		review.setKey(review.getTemporaryKey());
+		review.setKey(review.getTemporaryKey() == null ? UUID.randomUUID().toString() : review.getTemporaryKey());
 		review.setReplay(String.valueOf(true));
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
@@ -122,5 +137,36 @@ public class HSReplay implements ReplayPlugin {
 	@Override
 	public String getMediaType() {
 		return null;
+	}
+
+	public List<String> extractGames(String key, String fileType) throws IOException {
+		log.debug("Extracting games with " + key + ", " + fileType);
+		List<String> games = new ArrayList<>();
+
+		BufferedReader reader = s3utils.readerFromS3(key);
+		StringBuilder currentGame = new StringBuilder();
+		if ("text/plain".equals(fileType)) {
+			log.debug("processing file");
+			String line;
+			while ((line = reader.readLine()) != null) {
+				if (line.contains("GameState.DebugPrintPower() - CREATE_GAME")) {
+					if (currentGame.length() > 10000) {
+						log.debug("Added a new game");
+						games.add(currentGame.toString());
+					}
+					currentGame.setLength(0);
+				}
+				// log.debug("\treading line " + line);
+				currentGame.append(line);
+				currentGame.append(System.lineSeparator());
+			}
+			if (currentGame.length() > 0) {
+				log.debug("Added a new game");
+				games.add(currentGame.toString());
+			}
+		}
+
+		return games;
+
 	}
 }

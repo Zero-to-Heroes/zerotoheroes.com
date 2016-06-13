@@ -1,6 +1,6 @@
 <div class="hearthstone-participants">
 	<!-- The player -->
-	<div class="player-details class-select">
+	<div class="player-details class-select participant-details">
 		<div class="form-group" show-errors="{ showSuccess: true }">
 			<button type="button" class="btn btn-default btn-class-select form-control" ng-model="review.participantDetails.playerCategory" data-html="1" bs-options="icon.value as icon.label for icon in icons" placeholder="{{ 'global.review.participants.selectClass' | translate }}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" bs-select ng-required="true">
 			  	<span>Action</span>
@@ -13,7 +13,7 @@
   		<span>vs</span>
   	</div>
   	<!-- The opponent -->
-	<div class="opponent-details class-select">
+	<div class="opponent-details class-select participant-details">
 		<div class="form-group" show-errors="{ showSuccess: true }">
 			<input type="text" name="opponentName" class="form-control player-name" ng-model="review.participantDetails.opponentName" placeholder="{{ 'global.review.participants.playerName' | translate }}">
 			<button type="button" class="btn btn-default btn-class-select form-control" ng-model="review.participantDetails.opponentCategory" data-html="1" bs-options="icon.value as icon.label for icon in icons" placeholder="{{ 'global.review.participants.selectClass' | translate }}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" bs-select ng-required="true">

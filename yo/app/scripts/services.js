@@ -9,6 +9,7 @@ services.factory('Api', ['$resource', 'ENV',
 	function($resource, ENV) {
 		return {
 			Reviews: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
+			ReviewsAll: $resource(ENV.apiEndpoint + url + 'reviews/multi'),
 			ReviewsQuery: $resource(ENV.apiEndpoint + url + 'reviews/query'),
 			ReviewsUpdate: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/information', {reviewId: '@reviewId'}),
 			ReviewsUpdateFromUrl: $resource(ENV.apiEndpoint + url + 'fromurl/:sport', {sport: '@sport'}),
@@ -30,6 +31,8 @@ services.factory('Api', ['$resource', 'ENV',
 			Sequences: $resource(ENV.apiEndpoint + url + 'sequences/:sport/:sequenceId'),
 			SequencesQuery: $resource(ENV.apiEndpoint + url + 'sequences/query'),
 			Sports: $resource(ENV.apiEndpoint + url + 'sports/:sport', {sport: '@sport'}),
+
+			Replays: $resource(ENV.apiEndpoint + url + 'replays'),
 
 			Notifications: $resource(ENV.apiEndpoint + url + 'notifications/:type', {type: '@type'}),
 			NotificationsRead: $resource(ENV.apiEndpoint + url + 'notifications/read', {id: '@id'}),

@@ -1,6 +1,7 @@
 package com.coach.review;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amazonaws.util.StringUtils;
@@ -227,6 +229,37 @@ public class ReviewApiHandler {
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/multi", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<ListReviewResponse> getReviews(
+			@RequestParam(value = "reviewIds") final List<String> ids) {
+		// String currentUser =
+		// SecurityContextHolder.getContext().getAuthentication().getName();
+		Iterable<Review> reviews = reviewRepo.findAll(ids);
+
+		List<Review> results = new ArrayList<>();
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = userRepo.findByUsername(currentUser);
+		String userId = user != null ? user.getId() : "";
+		// Check that access is allowed
+		for (Review review : reviews) {
+			if ("private".equalsIgnoreCase(review.getVisibility()) && review.getAuthorId() != null
+					&& !review.getAuthorId().equals(user.getId())) {
+				continue;
+			}
+			review.prepareForDisplay(userId);
+			results.add(review);
+		}
+
+		ListReviewResponse response = null;
+
+		if (results.isEmpty()) { return new ResponseEntity<ListReviewResponse>(response, HttpStatus.NOT_FOUND); }
+
+		response = new ListReviewResponse(results);
+
+		return new ResponseEntity<ListReviewResponse>(response, HttpStatus.OK);
+	}
+
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Review> createReview(@RequestBody Review review) throws IOException {
 
@@ -280,7 +313,8 @@ public class ReviewApiHandler {
 		}
 
 		// Start transcoding
-		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())) {
+		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())
+				|| !StringUtils.isNullOrEmpty(review.getTemporaryReplay())) {
 			if (!StringUtils.isNullOrEmpty(review.getReplay())) {
 				log.debug("Proessing replay");
 				replayProcessor.processReplayFile(review);
@@ -491,6 +525,18 @@ public class ReviewApiHandler {
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/multi", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Review> publish(@RequestBody MultiReviewRequest reviews) throws IOException {
+
+		log.debug("publishing reviews " + reviews);
+
+		for (Review review : reviews.getReviews()) {
+			publish(review.getId(), review);
+		}
+
+		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Review> updateComment(@PathVariable("reviewId") final String reviewId,
 			@PathVariable("commentId") final int commentId, @RequestBody Comment newComment) throws IOException {
@@ -635,14 +681,12 @@ public class ReviewApiHandler {
 		}
 
 		reviewService.updateAsync(review);
-		if (comment.isHelpful()) {
-			// sportManager.addMarkedCommentHelpfulActivity(user, review,
-			// comment);
-			slackNotifier.notifyHelpfulComment(review, comment);
-		}
-		else {
-			slackNotifier.notifyUnhelpfulComment(review, comment);
-		}
+		// if (comment.isHelpful()) {
+		// slackNotifier.notifyHelpfulComment(review, comment);
+		// }
+		// else {
+		// slackNotifier.notifyUnhelpfulComment(review, comment);
+		// }
 
 		return new ResponseEntity<Comment>(comment, HttpStatus.OK);
 	}

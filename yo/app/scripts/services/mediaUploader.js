@@ -20,6 +20,22 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 			service.videoInfo = videoInfo
 			service.videoInfo.file = file
 			service.videoInfo.fileKey = fileKey
+			service.videoInfo.fileKeys = [fileKey]
+			service.videoInfo.fileTypes = []
+			if (service.videoInfo.files) {
+				service.videoInfo.files.forEach(function(file) {
+					var type = file.type
+					if (!type) {
+						var indexOfLastDot = file.name.lastIndexOf('.')
+						extension = file.name.slice(indexOfLastDot + 1)
+						if (['log', 'txt'].indexOf(extension) > -1)
+							type = 'text/plain'
+						else if (['xml'].indexOf(extension) > -1)
+							type = 'text/xml'
+					}
+					service.videoInfo.fileTypes.push(type)
+				})
+			}
 
 			$log.debug('starting upload', file, fileKey, videoInfo, service)
 

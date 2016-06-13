@@ -1261,7 +1261,7 @@
 ** Specific for Arena
 ** =============*/
 .hearthstone .video-information.arena-draft {
-	min-width: 740px;
+	// min-width: 740px;
 }
 
 @media screen and (max-width: 1556px) {

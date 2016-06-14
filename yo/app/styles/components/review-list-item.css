@@ -78,3 +78,17 @@
 .review-list-item .specific-info tags-input {
     display: none;
 }
+
+.review-list-item .visibility {
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 0.7em;
+    margin-right: 5px;
+}
+.review-list-item .visibility.private {
+    color: #972011;
+}
+.review-list-item .visibility.restricted {
+    // color: orange;
+}

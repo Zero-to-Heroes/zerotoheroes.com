@@ -394,7 +394,10 @@
 				"private": "Private",
 				"restricted": "Restricted",
 				"public": "Public",
-				"tooltip": "Visibility"
+				"tooltip": "Visibility",
+				"privateTooltip": "Private - doesn't show up in search result, and only you can see this review",
+				"restrictedTooltip": "Restricted - doesn't show up in search result, and anyone with the link can see this review",
+				"publicTooltip": "Public - shows up in search, anyone can see this review"
 			},
 			"sequence": {
 				"headline": "Adding a side-by-side comparison",

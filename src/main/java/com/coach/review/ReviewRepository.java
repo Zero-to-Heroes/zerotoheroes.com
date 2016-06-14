@@ -66,6 +66,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ 		"'mediaType' : 1,"
 			+ 		"'beginning' : 1,"
 			+ 		"'ending' : 1,"
+			+ 		"'visibility' : 1,"
 			+ 		"'lastModifiedDate' : 1"
 			+ 	"}"
 	)
@@ -127,6 +128,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 				+ 		"'mediaType' : 1,"
 				+ 		"'beginning' : 1,"
 				+ 		"'ending' : 1,"
+				+ 		"'visibility' : 1,"
 				+ 		"'lastModifiedDate' : 1"
 				+ 	"}"
 		)

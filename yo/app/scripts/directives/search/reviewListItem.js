@@ -7,7 +7,8 @@ app.directive('reviewListItem', ['$log',
 			templateUrl: 'templates/search/reviewListItem.html',
 			scope: {
 				video: '=',
-				sport: '='
+				sport: '=',
+				showVisibility: '='
 			},
 			link: function ($scope, element, attrs) {
 			},

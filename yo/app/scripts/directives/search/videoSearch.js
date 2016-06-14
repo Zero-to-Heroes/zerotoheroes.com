@@ -9,7 +9,8 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 			templateUrl: 'templates/search/videoSearch.html',
 			scope: {
 				config: '=',
-				sport: '='
+				sport: '=',
+				showVisibility: '='
 			},
 			controller: function($scope) {
 				$scope.pageNumber = parseInt($routeParams.pageNumber) || 1

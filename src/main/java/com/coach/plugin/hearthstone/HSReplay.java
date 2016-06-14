@@ -50,6 +50,7 @@ public class HSReplay implements ReplayPlugin {
 
 		String xml = null;
 		if (review.getTemporaryReplay() != null) {
+			log.debug("temporary replay");
 			if ("text/plain".equals(review.getFileType())) {
 				xml = new ReplaySerializer().xmlFromLogs(review.getTemporaryReplay());
 
@@ -60,6 +61,7 @@ public class HSReplay implements ReplayPlugin {
 			}
 		}
 		else if ("hdtreplay".equals(review.getFileType())) {
+			log.debug("hdtreplay replay");
 			// Creating temp file to use the zip API
 			File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
 			// log.debug("Created temp file " + tempFile);
@@ -92,6 +94,7 @@ public class HSReplay implements ReplayPlugin {
 			FileUtils.deleteDirectory(new File(destination));
 		}
 		else if ("text/plain".equals(review.getFileType()) || "arenatracker".equals(review.getFileType())) {
+			log.debug("plaintext replay");
 			// Need to process the file
 			log.debug("Retrieving log file " + review.getTemporaryKey());
 			String logFile = s3utils.readFromS3(review.getTemporaryKey());
@@ -101,6 +104,7 @@ public class HSReplay implements ReplayPlugin {
 		}
 		// Simply store the temporary XML to the final destination
 		else if ("text/xml".equals(review.getFileType())) {
+			log.debug("hdtxmlreplay replay");
 			xml = s3utils.readFromS3(review.getTemporaryKey());
 		}
 		log.debug("XML created");

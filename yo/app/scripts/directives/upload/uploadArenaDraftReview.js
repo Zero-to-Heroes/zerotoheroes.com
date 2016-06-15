@@ -25,7 +25,8 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 					mediaType: 'arena-draft',
 					strSport: $scope.sport,
 					transcodingDone: false,
-					language: Localization.getLanguage()
+					language: Localization.getLanguage(),
+					visibility: User.isLoggedIn() ? 'private' : 'public'
 				}
 				
 

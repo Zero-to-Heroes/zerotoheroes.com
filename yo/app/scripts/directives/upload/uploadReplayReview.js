@@ -25,7 +25,8 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 					replay: true,
 					strSport: $scope.sport,
 					transcodingDone: false,
-					language: Localization.getLanguage()
+					language: Localization.getLanguage(),
+					visibility: User.isLoggedIn() ? 'private' : 'public'
 				}
 
 				$scope.textBoxPlaceholder = $translate.instant($scope.sport + '.upload.descriptionPlaceholder') || $translate.instant('global.upload.descriptionPlaceholder')

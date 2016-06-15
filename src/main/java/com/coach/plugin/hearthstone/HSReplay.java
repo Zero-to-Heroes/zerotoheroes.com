@@ -93,7 +93,7 @@ public class HSReplay implements ReplayPlugin {
 			tempFile.delete();
 			FileUtils.deleteDirectory(new File(destination));
 		}
-		else if ("text/plain".equals(review.getFileType()) || "arenatracker".equals(review.getFileType())) {
+		else if ("text/plain".equals(review.getFileType()) || "log".equals(review.getFileType()) || "arenatracker".equals(review.getFileType())) {
 			log.debug("plaintext replay");
 			// Need to process the file
 			log.debug("Retrieving log file " + review.getTemporaryKey());

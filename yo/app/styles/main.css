@@ -38,7 +38,7 @@ blockquote {
 }
 
 .main-container-nolanding {
-  margin-top: 50px;
+  margin-top: 66px;
   /*display: table;
   table-layout: fixed;*/
   width: 100%;
@@ -74,7 +74,8 @@ blockquote {
 }
 
 .center-column {
-  top: 20px;
+    position: relative;
+    top: 80px;
 }
 
 .right-column {

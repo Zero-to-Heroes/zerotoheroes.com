@@ -155,7 +155,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				// Used only for compatibility
 				//===============
 				$scope.isDataValid = function() {
-					// $scope.uploadForm.author.$setValidity('nameTaken', true)
+					$scope.uploadForm.author.$setValidity('nameTaken', true)
 					$scope.$broadcast('show-errors-check-validity')
 					return $scope.uploadForm.$valid
 				}
@@ -209,7 +209,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 					// If user is not registered, offer them to create an account
 					if (!User.isLoggedIn()) {
 						// Validate that the name is free
-						Api.Users.get({identifier: $scope.review.author}, 
+						Api.Users.get({identifier: $scope.author}, 
 							function(data) {
 								// User exists
 								if (data.username) {
@@ -217,7 +217,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 								}
 								else {
 									$scope.onPublish = true
-									$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author})
+									$rootScope.$broadcast('account.signup.show', {identifier: $scope.author})
 								}
 							}
 						)
@@ -229,6 +229,9 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 
 				$scope.publishVideo = function() {
 					$log.debug('publishing reviews', $scope.reviews)
+					$scope.reviews.forEach(function(review) {
+						review.author = $scope.author
+					})
 					Api.ReviewsAll.save({reviews: $scope.reviews}, 
 						function(data) {
 							var url = '/s/' + $routeParams['sport'] + '/myVideos'
@@ -253,19 +256,19 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 
 
 
-				// //===============
-				// // Account management hooks
-				// //===============
-				// $rootScope.$on('account.close', function() {
-				// 	if ($scope.onPublish) {
-				// 		$scope.onPublish = false
-				// 		$scope.publishVideo()
-				// 	}
-				// 	else if ($scope.onPublishWhenReady) {
-				// 		$scope.onPublishWhenReady = false
-				// 		$scope.publishVideoWhenReady()
-				// 	}
-				// })
+				//===============
+				// Account management hooks
+				//===============
+				$rootScope.$on('account.close', function() {
+					if ($scope.onPublish) {
+						$scope.onPublish = false
+						$scope.publishVideo()
+					}
+					else if ($scope.onPublishWhenReady) {
+						$scope.onPublishWhenReady = false
+						$scope.publishVideoWhenReady()
+					}
+				})
 			}
 		}
 	}

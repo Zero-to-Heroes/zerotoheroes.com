@@ -132,6 +132,19 @@ public class ReviewApiHandler {
 		// during normal site usage
 		if (sportObj == null) { return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null,
 				HttpStatus.BAD_REQUEST); }
+		
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+		// log.info("authorities are " + authorities);
+		
+		// If user is anonymous, can only show public videos
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+			if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) {
+				return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null,
+						HttpStatus.FORBIDDEN);
+			}
+			criteria.setVisibility("public");
+		}
 
 		// Sorting in ascending order of modification date first
 		Sort sort = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
@@ -202,8 +215,8 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
 		// Check that access is allowed
-		if ("private".equalsIgnoreCase(review.getVisibility()) && review.getAuthorId() != null && !review.getAuthorId()
-				.equals(user.getId())) { return new ResponseEntity<Review>(review, HttpStatus.FORBIDDEN); }
+		if (user == null || user.getId() == null || ("private".equalsIgnoreCase(review.getVisibility()) && review.getAuthorId() != null && !review.getAuthorId()
+				.equals(user.getId()))) { return new ResponseEntity<Review>(review, HttpStatus.FORBIDDEN); }
 
 		// Increase the view count
 		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {

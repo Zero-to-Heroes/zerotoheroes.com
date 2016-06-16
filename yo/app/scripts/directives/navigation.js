@@ -10,6 +10,7 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 		templateUrl: 'templates/navigation.html',
 		controller: function($scope, User) {
 			$scope.name = User.getName()
+			$scope.User = User;
 			$scope.showSportsNavigationPanel = false
 
 			$scope.changeName = function() {

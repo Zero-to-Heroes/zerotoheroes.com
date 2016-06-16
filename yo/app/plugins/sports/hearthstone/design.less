@@ -1,23 +1,144 @@
+// ====================
+// Overrides
+// ====================
+.btn-default:active:hover, .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+    background-color: transparent;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+	outline: none;
+}
+
+
+
+// ====================
+// Components
+// ====================
+.btn-default {
+	background: @default-btn-bg-color;
+}
+
+.btn-default:active, .btn-default:hover {
+	background-color: @default-btn-bg-color-hover;
+}
+
+.btn-select {
+	background: transparent url(images/new/select-box.png) center center no-repeat;
+	background-size: contain;
+    padding: 15px 30px;
+    margin-left: 10px;
+    color: @default-btn-color;
+
+	.caret {
+		display: none;
+	}
+
+	&:active, &:hover {
+		background-color: transparent;
+	}
+}
+
+tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
+	background: @primary-btn-bg-color;
+	// box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
+	// color: white;
+	// text-decoration: none;
+}
+
+
+// ====================
+// Specific elements
+// ====================
 .brand:before {
-	content:url('images/new/logo.png');
+	content: url('images/new/logo.png');
 	// width: 9em;
 }
 
 .navbar {
 
+	.ffBasic();
 	text-transform: uppercase;
-	.ffTitle();
-	font-weight: bold;
+	font-weight: 600;
 
 	&.navbar-default {
 		background: url("images/new/nav-bg-left.png") 250px top no-repeat, url("images/new/nav-bg-right.png") top right no-repeat, url("images/new/nav-bg-center.png") top repeat-x;
+
+		span {  
+			color: #fcd144;
+		}
+
+		.navbar-nav > li > a:focus, .navbar-nav > li > a:active, .navbar-nav > li > a:hover {
+			background: url(images/new/nav-bg-center-hover.png) repeat-x;
+		}
+
+		.navbar-nav li.upload-link > a { 
+			background: @primary-btn-bg-color;
+			color: white;
+			text-decoration: none;
+		}
+
+		.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+			color: #fcd144;
+		}
+
+		.navbar-nav li.upload-link > a:hover span {
+			background: @primary-btn-bg-color-hover;
+		}
+
 	}	
+
 }
 
-.btn-default {
-	background: transparent url(images/button-bg.png) no-repeat;
+.review-list-item {
+	background: url("images/new/border-top.png") no-repeat top center;
+	background-size: 100%;
+	padding: 0;
+
+	& > a {
+	    background-color: @review-block;
+	    padding: 10px;
+	    padding-top: 25px;
+	    margin-top: 4px;
+	    margin-left: 12px;
+	    margin-right: 12px;
+	}
+
+	& > a:hover {
+		background-color: @review-block-hover;
+	}
+
+	.title {
+		.ffTitle();
+		color: @link-text;
+	}
+
+	.tag-item {
+		.ffBasic();
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+
+	.stat-icon {
+		height: 30px;
+		width: 30px;
+	    background-size: contain;
+	    background-repeat: no-repeat;
+	    margin-top: 5px;
+
+	    &:before {
+	    	content: "";
+	    }
+	}
+	.stat-comment .stat-icon {
+		background-image: url(images/new/picto-nb-comment.png);
+	}
+	.stat-helpful .stat-icon {
+		background-image: url(images/new/picto-check.png);
+	}
+	.stat-view .stat-icon {
+		background-image: url(images/new/picto-nb-view.png);
+	}
 }
 
-.btn-default:active, .btn-default:hover {
-	background: transparent url(images/button-bg-active.png) no-repeat;
-}
+
+

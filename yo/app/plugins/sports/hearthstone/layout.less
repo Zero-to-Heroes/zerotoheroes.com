@@ -1,32 +1,8 @@
-/* =============
-** General overrides
-** =============*/
-// @font-face {
-// 	font-family: myriadPro;
-// 	src: url(myriadpro-regular.woff);
-// }
-// @font-face {
-// 	font-family: Raleway;
-// 	src: url(https://www.google.com/fonts#UsePlace:use/Collection:Raleway:400,500,700);
-// }
-
-
-
-/* =============
-** Variables
-** =============*/
-
-
-/* =============
-** General overrides
-** =============*/
-
-
 a {
-	// color: #fff;
-	color: #f7cf44;
+	color: @link-text;
 	text-decoration: none;
 }
+
 a.btn-default {
 	color: #333;
 }
@@ -134,7 +110,7 @@ tags-input[disabled] .tags {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
-	text-shadow: 0 0 4px #000, 0 0 8px #000;
+	// text-shadow: 0 0 4px #000, 0 0 8px #000;
 }
 
 .btn-primary:focus span, .btn-primary:hover span {
@@ -149,10 +125,10 @@ tags-input[disabled] .tags {
 	padding: 10px 15px;
 }
 
-.btn-default:active, .btn-default:hover {
-	// background: transparent url(images/button-bg-active.png) no-repeat;
-	background-size: 100% 100%;
-}
+// .btn-default:active, .btn-default:hover {
+// 	// background: transparent url(images/button-bg-active.png) no-repeat;
+// 	background-size: 100% 100%;
+// }
 
 .ngrs-range-slider {
 	background: transparent;
@@ -198,28 +174,28 @@ tags-input[disabled] .tags {
 	background-position: 0 0;
 }
 .hunter-icon {
-	background-position: -44px 0;
+	background-position: 12.5% 0;
 }
 .mage-icon {
-	background-position: -88px 0;
+	background-position: 25% 0;
 }
 .paladin-icon {
-	background-position: -132px 0;
+	background-position: 37.5% 0;
 }
 .priest-icon {
-	background-position: -176px 0;
+	background-position: 50% 0;
 }
 .rogue-icon {
-	background-position: -221px 0;
+	background-position: 62.5% 0;
 }
 .shaman-icon {
-	background-position: -264px 0;
+	background-position: 75% 0;
 }
 .warlock-icon {
-	background-position: -308px 0;
+	background-position: 87.5% 0;
 }
 .warrior-icon {
-	background-position: -353px 0;
+	background-position: 100% 0;
 }
 .any-class-icon {
 	height: 45px;
@@ -287,12 +263,12 @@ tags-input[disabled] .tags {
 ** General functional overrides
 ** =============*/
 tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
-	background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
-	background: rgba(115, 5, 174, 1);
-	box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
-	color: white;
-	text-decoration: none;
-	text-shadow: black 1px 1px;
+	// background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
+	// background: rgba(115, 5, 174, 1);
+	// box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
+	// color: white;
+	// text-decoration: none;
+	// text-shadow: black 1px 1px;
 	text-align: center;
 	padding: 2px 10px;
 	border: none;
@@ -332,10 +308,10 @@ tags-input[disabled] .tags .tag-item {
 	padding: 0 15px;
 }
 
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:hover {
-	color: #fcd144;
-	background: transparent url(images/nav-bg-center-active.png) repeat-x;
-}
+// .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:hover {
+// 	color: #fcd144;
+// 	background: transparent url(images/nav-bg-center-active.png) repeat-x;
+// }
 
 .navbar #inside-navigation.in .navbar-nav > li > a:focus, .navbar #inside-navigation.in .navbar-nav > li > a:active, .navbar #inside-navigation.in .navbar-nav > li > a:hover {
 	background: transparent;
@@ -346,19 +322,16 @@ tags-input[disabled] .tags .tag-item {
 	background: transparent;
 }
 
-.navbar-default span {
-	text-shadow: 0 0 10px #000, 0 0 10px #000;    
-	color: #fcd144;
-}
+
 
 .navbar-default .navbar-nav li.upload-link>a {    
 	margin-top: 10px;
     height: 38px;
 	// background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
-	background: @primary-btn-bg-color;
+	// background: @primary-btn-bg-color;
 	// box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
-	color: white;
-	text-decoration: none;
+	// color: white;
+	// text-decoration: none;
 	// text-shadow: black 1px 1px;
 	letter-spacing: 1px;
 	text-align: center;
@@ -378,12 +351,14 @@ tags-input[disabled] .tags .tag-item {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
+    height: 100%;
+    line-height: 38px;
 	// text-shadow: 0 0 4px #000, 0 0 8px #000;
 }
 
-.navbar-default .navbar-nav li.upload-link>a:focus span, .navbar-default .navbar-nav li.upload-link>a:hover span {
-	// background: radial-gradient(circle, #e235ee 22%, #981cb4);
-}
+// .navbar-default .navbar-nav li.upload-link>a:focus span, .navbar-default .navbar-nav li.upload-link>a:hover span {
+// 	// background: radial-gradient(circle, #e235ee 22%, #981cb4);
+// }
 
 .navbar .divider-vertical {
 	border: none;
@@ -542,7 +517,7 @@ h2 {
 	color: @secondary-title-color;
 	// font-weight: 400;
 	// color: #fff;
-	// text-transform: uppercase;
+	text-transform: uppercase;
 	line-height: 1.2;
 }
 
@@ -988,7 +963,7 @@ hearthstone-frame .medal.legend:before {
 ** =============*/
 .video-listing a, .video-listing a:focus, .video-listing a:hover, .video-listing a:active, .video-listing a h3 {
 	font-weight: 400;
-	color: #fa5d26;
+	// color: #fa5d26;
 	text-decoration: none;
 }
 
@@ -996,8 +971,22 @@ hearthstone-frame .medal.legend:before {
 	display: none;
 }
 
-.review-list-item .mobile-video-info-details {
-	color: rgba(255, 255, 255, 0.7);
+.review-list-item {
+	border-radius: 0;
+
+	.additional-info {
+		color: #edd6aa;
+	}
+
+	.mobile-video-info-details {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.hearthstone-participants .class-icon {
+	    height: 75px;
+	    width: 75px;
+	    margin-bottom: 5px;
+	}
 }
 
   

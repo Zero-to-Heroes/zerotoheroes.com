@@ -258,8 +258,8 @@
 			},
 			"sortLabel": "Sort by",
 			"sort": {
-				"updateDate": "last modification date",
-				"creationDate": "creation date"
+				"updateDate": "Last modification date",
+				"creationDate": "Creation date"
 			},
 			"ownReviews": {
 				"showAll": "Show all reviews",

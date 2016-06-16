@@ -114,7 +114,7 @@ nav .alert {
 
 .navbar .name-input {
 	position: absolute;
-	right: 70px;
+	right: 85px;
 }
 
 .navbar .more-menu {
@@ -141,9 +141,6 @@ nav .alert {
 }
 
 
-.more-menu .upload-link {
-	margin-bottom: 10px;
-}
 .more-menu .name-input {
 	height: 30px;
     left: 0;

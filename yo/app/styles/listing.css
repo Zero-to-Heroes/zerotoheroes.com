@@ -75,7 +75,7 @@
 }
 
 .listing-view .sort-label {
-	margin-left: 25px;
+	margin-left: 45px;
 }
 
 .video-listing {
@@ -143,10 +143,10 @@
 	width: 120px;
 }
 
-.video-info-details .icon-container {
+/*.video-info-details .icon-container {
 	display: inline-block;
 	width: 25px;
-}
+}*/
 
 .video-info-details .stat-value {
 	display: block;
@@ -182,16 +182,19 @@
 	.video-listing .video-info-details {
 		padding-left: 0;
 		width: 70px;
+		flex-direction: column;
 	}
 
 	.video-info-details .icon-container {
-		display: block;
 		width: 55px;
+    	flex-direction: row;
 	}
 
 	.video-info-details .stat-value {
 		display: inline-block;
 		margin-right: 5px;
+	    margin-top: auto;
+	    margin-bottom: auto;
 	}
 
 	.video-listing .reputation {

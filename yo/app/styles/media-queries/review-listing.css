@@ -15,14 +15,16 @@
 		display: none;
 	}
 
-	.review-list-item .title {
+	.review-list-item .title-container {
 		display: none;
 	}
 
 	.review-list-item .mobile-video-info-details {
-		display: inline-block;
+		display: inline-flex;
+    	width: 200px;
 	}
-	.review-list-item .mobile-video-info-details div {
-		display: inline-block;
+
+	.review-list-item .skill-level {
+		margin-right: 0;
 	}
 }

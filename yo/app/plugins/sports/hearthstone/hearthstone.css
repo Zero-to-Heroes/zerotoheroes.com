@@ -92,8 +92,9 @@
   content: url('images/new/logo.png');
 }
 .hearthstone .navbar {
-  text-transform: uppercase;
   font-family: 'Ubuntu', Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
   font-weight: bold;
 }
 .hearthstone .navbar.navbar-default {
@@ -156,7 +157,7 @@
   left: -8px;
   border: 8px solid #dec79b;
   border-width: 17px 20px;
-  border-image: url(images/border-image.png) 17 20 stretch;
+  border-image: url(images/new/border-image.png) 20 20 stretch;
   z-index: -1;
 }
 .hearthstone .panel {
@@ -286,7 +287,7 @@
   left: -8px;
   border: 8px solid #dec79b;
   border-width: 17px 20px;
-  border-image: url(images/border-image.png) 17 20 stretch;
+  border-image: url(images/new/border-image.png) 20 20 stretch;
   z-index: -1;
 }
 .hearthstone .modal-dialog {
@@ -455,8 +456,8 @@
   bottom: -8px;
   left: -8px;
   border: 8px solid #dec79b;
-  border-width: 17px 20px;
-  border-image: url(images/border-image.png) 17 20 stretch;
+  border-width: 20px 20px;
+  border-image: url(images/new/border-image.png) 20 20 stretch;
   z-index: -1;
 }
 .hearthstone .background-white {
@@ -465,9 +466,10 @@
   top: 0;
 }
 .hearthstone h2 {
-  font-weight: 400;
-  color: #fff;
+  font-family: 'Ubuntu', Arial, sans-serif;
   text-transform: uppercase;
+  font-weight: 400;
+  color: #f9f1e1;
   line-height: 1.2;
 }
 .hearthstone .table > thead > tr > th,

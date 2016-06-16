@@ -88,7 +88,7 @@ tags-input[disabled] .tags {
 	left: -8px;
 	border: 8px solid #dec79b;
 	border-width: 17px 20px;
-	// border-image: url(images/border-image.png) 17 20 stretch;
+	border-image: url(images/new/border-image.png) 20 20 stretch;
 	z-index: -1;
 }
 
@@ -142,7 +142,7 @@ tags-input[disabled] .tags {
 }
 
 .btn-default {
-	background: transparent url(images/button-bg.png) no-repeat;
+	// background: transparent url(images/button-bg.png) no-repeat;
 	background-size: 100% 100%;
 	position: relative;
 	border: none;
@@ -150,7 +150,7 @@ tags-input[disabled] .tags {
 }
 
 .btn-default:active, .btn-default:hover {
-	background: transparent url(images/button-bg-active.png) no-repeat;
+	// background: transparent url(images/button-bg-active.png) no-repeat;
 	background-size: 100% 100%;
 }
 
@@ -243,7 +243,7 @@ tags-input[disabled] .tags {
 	left: -8px;
 	border: 8px solid #dec79b;
 	border-width: 17px 20px;
-	// border-image: url(images/border-image.png) 17 20 stretch;
+	border-image: url(images/new/border-image.png) 20 20 stretch;
 	z-index: -1;
 }
 
@@ -525,21 +525,24 @@ tags-input[disabled] .tags .tag-item {
 	bottom: -8px;
 	left: -8px;
 	border: 8px solid #dec79b;
-	border-width: 17px 20px;
-	// border-image: url(images/border-image.png) 17 20 stretch;
+	border-width: 20px 20px;
+	border-image: url(images/new/border-image.png) 20 20 stretch;
 	z-index: -1;
 }
 
 .background-white {
 	position: relative;
 	background-color: #3A240F;
+	// background: transparent;
 	top: 0;
 }
 
 h2 {
-	font-weight: 400;
-	color: #fff;
-	text-transform: uppercase;
+	.ffTitle();
+	color: @secondary-title-color;
+	// font-weight: 400;
+	// color: #fff;
+	// text-transform: uppercase;
 	line-height: 1.2;
 }
 

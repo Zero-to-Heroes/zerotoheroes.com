@@ -28,13 +28,6 @@
 										<div class="form-group review-editing-title" show-errors="{ showSuccess: true }">
 									    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.review.comment.reviewTitle' | translate }}" ng-required="true">
 									  	</div>
-									  	<!-- <div class="language">
-										  	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="lang-sm language" lang="{{review.language}}"></span><span class="caret"></span></a>
-											<ul class="dropdown-menu">
-												<li><a ng-click="editLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
-												<li><a ng-click="editLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
-											</ul>
-										</div> -->
 								  	</div>
 							  	</div>
 							  	<div class="row" ng-show="review.editing">
@@ -48,14 +41,14 @@
 							  	<div class="row meta-info" ng-hide="review.editing">
 								  	<div class="author-row">
 									  	<div class="author-information">
-										  	<span class="link-minor">Submitted <span title="{{formatExactDate(review.creationDate)}}">{{formatDate(review.creationDate)}}</span> by </span>
+										  	<span>Submitted <span title="{{formatExactDate(review.creationDate)}}">{{formatDate(review.creationDate)}}</span> by </span>
 										  	<span class="comment-author" ng-hide="review.authorId">{{review.author}}</span>
 											<author-name class="comment-author" entity="review" ng-show="review.authorId"></author-name>
 										  	<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="review.authorReputation">{{review.authorReputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
-										  	<span class="link-minor" ng-show="!review.editing && canEdit(review)"> - </span>
+										  	<span ng-show="!review.editing && canEdit(review)"> - </span>
 											<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && canEdit(review)"> {{ 'global.review.comment.edit' | translate }}</a>
 										</div>
-										<div class="decklist-field link-minor" ng-show="review.plugins.hearthstone.parseDecks.reviewDeck">
+										<div class="decklist-field" ng-show="review.plugins.hearthstone.parseDecks.reviewDeck">
 											<span translate="hearthstone.review.decklist"></span>
 											<span compilecontent content="review.plugins.hearthstone.parseDecks.markedReviewDeck"></span>
 										</div>

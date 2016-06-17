@@ -98,7 +98,7 @@ tags-input[disabled] .tags {
 	display: table-cell;
 	width: 100%;
 	padding: 0 24px;
-	background: radial-gradient(circle, #bc22c7 25%, #7c1693 75%, #5c1096);
+	// background: radial-gradient(circle, #bc22c7 25%, #7c1693 75%, #5c1096);
 	vertical-align: middle;
 	color: #fff;
 	text-transform: uppercase;
@@ -139,9 +139,9 @@ tags-input[disabled] .tags {
 .pagination {
 	margin-left: 50px;
 	background: transparent url(images/button-bg.png) no-repeat;
-    background-size: 100% 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+	background-size: 100% 100%;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .pagination li > a, .pagination li > a:active, .pagination li > a:focus, .pagination li > a:hover {
 	background: transparent !important;
@@ -203,24 +203,25 @@ tags-input[disabled] .tags {
 /* =============
 ** Modals
 ** =============*/
-.modal-dialog:before {
-	content: "";
-	position: absolute;
-	top: -8px;
-	right: -8px;
-	bottom: -8px;
-	left: -8px;
-	border: 8px solid #dec79b;
-	border-width: 17px 20px;
-	border-image: url(images/new/border-image.png) 20 20 stretch;
-	z-index: -1;
-}
+.background-white, .modal-dialog {
 
-.modal-dialog {
-	background-color: #3A240F;
 	position: relative;
-	border: none;
-	z-index: 1;
+	background-color: #3A240F;
+	// background: transparent;
+	top: 0;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: -8px;
+		right: -8px;
+		bottom: -8px;
+		left: -8px;
+		border: 8px solid #dec79b;
+		border-width: 20px 20px;
+		border-image: url(images/new/border-image.png) 20 20 stretch;
+		z-index: -1;
+	}
 }
 
 .modal-dialog.modal-pro {
@@ -228,12 +229,19 @@ tags-input[disabled] .tags {
 }
 
 .modal-header {
-	background: url(images/panel-header.jpg);
+	// background: url(images/panel-header.jpg);
+	.ffTitle();
 	color: #fff;
 	text-transform: uppercase;
 	text-align: center;
 	border: none;
-	background-size: cover;
+	// background-size: cover;
+
+	.close {
+		margin-top: -14px;
+		color: white;
+		font-size: 2.5em;
+	}
 }
 
 .panel .modal-footer {
@@ -319,7 +327,7 @@ tags-input[disabled] .tags .tag-item {
 
 .navbar-default .navbar-nav li.upload-link>a {    
 	margin-top: 10px;
-    height: 38px;
+	height: 38px;
 	// background: linear-gradient(rgb(247, 86, 254), rgb(200, 75, 214) 5%, rgb(115, 5, 174) 59%, rgb(102, 31, 145));
 	// background: @primary-btn-bg-color;
 	// box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
@@ -344,8 +352,8 @@ tags-input[disabled] .tags .tag-item {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
-    height: 100%;
-    line-height: 38px;
+	height: 100%;
+	line-height: 38px;
 	// text-shadow: 0 0 4px #000, 0 0 8px #000;
 }
 
@@ -380,9 +388,9 @@ tags-input[disabled] .tags .tag-item {
 }
 
 .brand:before {
-    width: 11em;
-    margin-top: 7px;
-    display: inline-block;
+	width: 11em;
+	margin-top: 7px;
+	display: inline-block;
 }
 
 .brand img {
@@ -485,25 +493,6 @@ tags-input[disabled] .tags .tag-item {
 /* =============
 ** Central panel
 ** =============*/
-.background-white:before {
-	content: "";
-	position: absolute;
-	top: -8px;
-	right: -8px;
-	bottom: -8px;
-	left: -8px;
-	border: 8px solid #dec79b;
-	border-width: 20px 20px;
-	border-image: url(images/new/border-image.png) 20 20 stretch;
-	z-index: -1;
-}
-
-.background-white {
-	position: relative;
-	background-color: #3A240F;
-	// background: transparent;
-	top: 0;
-}
 
 h1 {
 	.ffTitle();
@@ -511,6 +500,10 @@ h1 {
 	text-transform: uppercase;
 	line-height: 1.2;
 	font-size: 40px;
+}
+
+.upload-page h1 {
+	color: #fff;
 }
 
 h2 {
@@ -569,13 +562,13 @@ h2 {
 
 .hearthstone-participants .player-name {
 	display: inline-block;
-	max-width: calc(100% - 110px);
+	max-width: ~"calc(100% - 110px)";
 	margin-right: 10px;
 }
 
 .hearthstone-participants .opponent-name {
 	display: inline-block;
-	max-width: calc(100% - 110px);
+	max-width: ~"calc(100% - 110px)";
 }
 
 .hearthstone-participants .separation {
@@ -590,6 +583,32 @@ h2 {
 	vertical-align: middle;
 	padding-left: 45px;
 	width: 230px;
+}
+
+.participants-container .hearthstone-participants .level-details {
+
+	tags-input {
+		height: 55px;
+	
+		.tags {
+			display: flex;
+		}
+	  
+		.tag-list {
+			margin-top: auto;
+			margin-bottom: auto;
+			height: 100%;
+		}
+		
+		.tag-list .tag-item {
+			height: 100%;
+			display: flex;
+		}
+	  
+		ti-tag-item {
+			margin: auto;
+		}
+	}
 }
 
 .hearthstone-participants .level-details tags-input {
@@ -895,12 +914,12 @@ hearthstone-frame .medal.legend:before {
 	color: #F5DF8C;
 	text-shadow: -1px -1px 0 #000, 0px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 0px 1px 0 #000, 1px 1px 0 #000;
 	font-size: 3em;
-    vertical-align: middle;
-    display: block;
-    height: 100%;
-    vertical-align: middle;
-    line-height: 165px;
-    font-family: myriadPro,Arial,sans-serif;
+	vertical-align: middle;
+	display: block;
+	height: 100%;
+	vertical-align: middle;
+	line-height: 165px;
+	font-family: myriadPro,Arial,sans-serif;
 }
 
 /* =============
@@ -979,9 +998,9 @@ hearthstone-frame .medal.legend:before {
 	}
 
 	.hearthstone-participants .class-icon {
-	    height: 75px;
-	    width: 75px;
-	    margin-bottom: 5px;
+		height: 75px;
+		width: 75px;
+		margin-bottom: 5px;
 	}
 }
 
@@ -1042,6 +1061,7 @@ hearthstone-frame .medal.legend:before {
 }
 .video-information h1 {
 	display: inline-block;
+	color: #fff;
 }
   
 	/* =============
@@ -1144,11 +1164,11 @@ hearthstone-frame .medal.legend:before {
 
 .landing-page .overview {
 	height: 75vh;
-    text-align: center;
+	text-align: center;
 }
 .landing-page .overview h1 {
 	margin-top: 6vh;
-    margin-bottom: 2vh;
+	margin-bottom: 2vh;
 }
 .landing-page .overview h2 {
 	margin-top: 5vh;
@@ -1160,14 +1180,14 @@ hearthstone-frame .medal.legend:before {
 }
 .landing-page .illustrations img {
 	margin-right: 50px;
-    max-width: 100%;
-    max-height: 100%;
+	max-width: 100%;
+	max-height: 100%;
 }
 .landing-page .main-illustration {
-    content: url(images/landing/mainIllustration.jpg);
+	content: url(images/landing/mainIllustration.jpg);
 }
 .landing-page .main-illustration-comments {
-    content: url(images/landing/comments.jpg);
+	content: url(images/landing/comments.jpg);
 }
 
 .landing-page .enter-btn {
@@ -1231,9 +1251,9 @@ hearthstone-frame .medal.legend:before {
 		top: 0;
 
 		a {
-		    width: 100%;
-		    height: auto;
-		    background: transparent;
+			width: 100%;
+			height: auto;
+			background: transparent;
 		}
 
 		a:before {

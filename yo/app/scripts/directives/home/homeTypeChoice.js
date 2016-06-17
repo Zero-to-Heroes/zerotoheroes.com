@@ -13,8 +13,9 @@ app.directive('homeTypeChoice', ['$log', '$location',
 			},
 			controller: function($scope) {
 				$scope.chooseType = function(type) {
-					// $log.debug('choosing', type, $location, $location.path())
 					var path = $location.path() + '/' + type
+					path = path.replace('//', '/')
+					$log.debug('choosing', path, type, $location, $location.path())
 					return path
 					// $location.path(path)
 				}

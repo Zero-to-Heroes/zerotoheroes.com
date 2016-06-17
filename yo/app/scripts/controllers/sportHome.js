@@ -11,6 +11,9 @@ angular.module('controllers').controller('SportHomeCtrl', ['$scope', 'Api', '$lo
 		// Now handle the various upload types
 		$scope.state.choice = $routeParams['choice']
 		// $scope.state.step = $routeParams['step']
+		if (!$scope.state.choice) {
+			$scope.useFullWidth = true
+		}
 
 		// Take care of the defaults - if the sport has no special configuration, we go to the video upload by default
 		if (!$scope.state.choices && !$routeParams['choice']) {

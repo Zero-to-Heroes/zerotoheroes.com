@@ -161,7 +161,6 @@
   display: table-cell;
   width: 100%;
   padding: 0 24px;
-  background: radial-gradient(circle, #bc22c7 25%, #7c1693 75%, #5c1096);
   vertical-align: middle;
   color: #fff;
   text-transform: uppercase;
@@ -242,6 +241,13 @@
   display: inline-block;
   background-size: auto 100%;
 }
+.hearthstone .background-white,
+.hearthstone .modal-dialog {
+  position: relative;
+  background-color: #3A240F;
+  top: 0;
+}
+.hearthstone .background-white:before,
 .hearthstone .modal-dialog:before {
   content: "";
   position: absolute;
@@ -250,26 +256,24 @@
   bottom: -8px;
   left: -8px;
   border: 8px solid #dec79b;
-  border-width: 17px 20px;
+  border-width: 20px 20px;
   border-image: url(images/new/border-image.png) 20 20 stretch;
   z-index: -1;
-}
-.hearthstone .modal-dialog {
-  background-color: #3A240F;
-  position: relative;
-  border: none;
-  z-index: 1;
 }
 .hearthstone .modal-dialog.modal-pro {
   width: 800px;
 }
 .hearthstone .modal-header {
-  background: url(images/panel-header.jpg);
+  font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
   color: #fff;
   text-transform: uppercase;
   text-align: center;
   border: none;
-  background-size: cover;
+}
+.hearthstone .modal-header .close {
+  margin-top: -14px;
+  color: white;
+  font-size: 2.5em;
 }
 .hearthstone .panel .modal-footer {
   background: transparent;
@@ -395,29 +399,15 @@
 .hearthstone .search-section .panel-heading a:after {
   color: #fff;
 }
-.hearthstone .background-white:before {
-  content: "";
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  bottom: -8px;
-  left: -8px;
-  border: 8px solid #dec79b;
-  border-width: 20px 20px;
-  border-image: url(images/new/border-image.png) 20 20 stretch;
-  z-index: -1;
-}
-.hearthstone .background-white {
-  position: relative;
-  background-color: #3A240F;
-  top: 0;
-}
 .hearthstone h1 {
   font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
   color: #a33b32;
   text-transform: uppercase;
   line-height: 1.2;
   font-size: 40px;
+}
+.hearthstone .upload-page h1 {
+  color: #fff;
 }
 .hearthstone h2 {
   font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
@@ -470,12 +460,12 @@
 }
 .hearthstone .hearthstone-participants .player-name {
   display: inline-block;
-  max-width: calc(-10%);
+  max-width: calc(100% - 110px);
   margin-right: 10px;
 }
 .hearthstone .hearthstone-participants .opponent-name {
   display: inline-block;
-  max-width: calc(-10%);
+  max-width: calc(100% - 110px);
 }
 .hearthstone .hearthstone-participants .separation {
   display: table-cell;
@@ -488,6 +478,24 @@
   vertical-align: middle;
   padding-left: 45px;
   width: 230px;
+}
+.hearthstone .participants-container .hearthstone-participants .level-details tags-input {
+  height: 55px;
+}
+.hearthstone .participants-container .hearthstone-participants .level-details tags-input .tags {
+  display: flex;
+}
+.hearthstone .participants-container .hearthstone-participants .level-details tags-input .tag-list {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 100%;
+}
+.hearthstone .participants-container .hearthstone-participants .level-details tags-input .tag-list .tag-item {
+  height: 100%;
+  display: flex;
+}
+.hearthstone .participants-container .hearthstone-participants .level-details tags-input ti-tag-item {
+  margin: auto;
 }
 .hearthstone .hearthstone-participants .level-details tags-input {
   min-width: 150px;
@@ -894,6 +902,7 @@
 }
 .hearthstone .video-information h1 {
   display: inline-block;
+  color: #fff;
 }
 .hearthstone .video-information .participants-container {
   display: inline-block;

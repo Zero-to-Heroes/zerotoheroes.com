@@ -146,10 +146,13 @@ public class ReviewApiHandler {
 			criteria.setVisibility("public");
 		}
 
-		// Sorting in ascending order of modification date first
-		Sort sort = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
+		// Sorting in ascending order of creation date first
+		Sort sort = new Sort(Sort.Direction.DESC, Arrays.asList("creationDate"));
 		if ("creationDate".equals(criteria.getSort())) {
 			sort = new Sort(Sort.Direction.DESC, Arrays.asList("creationDate"));
+		}
+		else if ("updateDate".equals(criteria.getSort())) {
+			sort = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
 		}
 
 		// Start pageing at 1 like normal people, not at 0 like nerds

@@ -115,7 +115,7 @@ public class ReviewApiHandler {
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(@RequestBody ReviewSearchCriteria criteria) {
-		log.debug("Retrieving all reviews with criteria " + criteria);
+//		log.debug("Retrieving all reviews with criteria " + criteria);
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);

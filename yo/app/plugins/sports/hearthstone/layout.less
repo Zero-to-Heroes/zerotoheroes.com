@@ -11,13 +11,6 @@ a.btn-default {
 	border-radius: 2px;
 }
 
-
-input, textarea, select, tags-input .tags {
-	background: #f1d6a9;
-	border: 2px solid #867249;
-	color: #2e2e2e;
-}
-
 tags-input[disabled] .tags {
 	background: transparent;
 	border: none;
@@ -512,11 +505,17 @@ tags-input[disabled] .tags .tag-item {
 	top: 0;
 }
 
+h1 {
+	.ffTitle();
+	color: @main-title-color;
+	text-transform: uppercase;
+	line-height: 1.2;
+	font-size: 40px;
+}
+
 h2 {
 	.ffTitle();
 	color: @secondary-title-color;
-	// font-weight: 400;
-	// color: #fff;
 	text-transform: uppercase;
 	line-height: 1.2;
 }
@@ -542,27 +541,24 @@ h2 {
 	margin-bottom: 0;
 }
 
-.hearthstone-participants .class-select ul {
-	padding: 15px 0 0 15px;
-	max-width: 200px;
-}
-
-.hearthstone-participants .class-select ul {
-	background: rgba(0, 0, 0, 0.9);
-}
-
-.hearthstone-participants .class-select li,
-.hearthstone-participants .class-select a {
-	background: transparent;
-}
-
-.hearthstone-participants .class-select li,
-.hearthstone-participants .class-select a,
-.hearthstone-participants .class-select span {
-	display: inline-block;
-	padding: 0;
-	margin-right: 5px;
-	margin-bottom: 5px;
+.hearthstone-participants .class-select {
+	ul {
+		padding: 15px 0 0 15px;
+		max-width: 200px;
+		background: rgba(0, 0, 0, 0.9);
+	}
+	li, a {
+		background: transparent;
+	}
+	li, a, span {
+		display: inline-block;
+		padding: 0;
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
+	.caret {
+		display: none;
+	}
 }
 
 
@@ -1197,6 +1193,59 @@ hearthstone-frame .medal.legend:before {
 	font-weight: normal;
 	font-size: 0.7em;
 }
+
+
+.page-choices {
+
+	background-color: transparent;
+
+	&:before {
+		content: none;
+	}
+
+	h1 {
+		color: @main-title-color;
+	}
+
+	.intro-text {
+		color: @dark-text;
+		font-size: 18px;
+	}
+
+	.choice:before {
+		content: "";
+		position: absolute;
+		top: -8px;
+		right: -8px;
+		bottom: -8px;
+		left: -8px;
+		border: 8px solid #dec79b;
+		border-width: 20px 20px;
+		border-image: url(images/new/border-image.png) 20 20 stretch;
+		z-index: -1;
+	}
+
+	.choice {
+		position: relative;
+		background-color: #3A240F;
+		top: 0;
+
+		a {
+		    width: 100%;
+		    height: auto;
+		    background: transparent;
+		}
+
+		a:before {
+			content: none;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
 
 
 /* =============

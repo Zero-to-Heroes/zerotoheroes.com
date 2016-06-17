@@ -9,24 +9,36 @@
 	outline: none;
 }
 
+input, textarea, select, tags-input .tags {
+	background: @default-btn-bg-color;
+	// border: 2px solid #867249;
+	color: @dark-text;
+}
+
 
 
 // ====================
 // Components
 // ====================
+.btn {
+	border-radius: 2px;
+	text-transform: uppercase;
+}
 .btn-default {
 	background: @default-btn-bg-color;
 }
 
-.btn-default:active, .btn-default:hover {
+.btn-default:hover {
 	background-color: @default-btn-bg-color-hover;
 }
 
 .btn-select {
 	background: transparent url(images/new/select-box.png) center center no-repeat;
-	background-size: contain;
-    padding: 15px 30px;
+	text-transform: none;
+	background-size: 100% 100%;
+    padding: 6px 30px;
     margin-left: 10px;
+    margin-right: 10px;
     color: @default-btn-color;
 
 	.caret {
@@ -67,7 +79,7 @@ tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
 			color: #fcd144;
 		}
 
-		.navbar-nav > li > a:focus, .navbar-nav > li > a:active, .navbar-nav > li > a:hover {
+		.navbar-nav > li > a:hover {
 			background: url(images/new/nav-bg-center-hover.png) repeat-x;
 		}
 
@@ -142,3 +154,18 @@ tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
 
 
 
+.page-choices {
+
+	.choice {
+
+		.watchlearn img {
+			content: url(images/new/picto-watch-and-learn.png);
+		}
+		.getadvice img {
+			content: url(images/new/picto-get-advices.png);
+		}
+		.helpothers img {
+			content: url(images/new/picto-help-people.png);
+		}
+	}
+}

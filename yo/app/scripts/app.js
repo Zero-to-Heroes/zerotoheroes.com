@@ -150,7 +150,8 @@ app.config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/sportHome.html',
 			controller: 'SportHomeCtrl',
 			reloadOnSearch: false,
-			menuItem: 'home'
+			menuItem: 'home',
+			useFullWidth: true
 	  	}).
 	  	// Coaches
 	  	when('/c/:coachName/:sport', {

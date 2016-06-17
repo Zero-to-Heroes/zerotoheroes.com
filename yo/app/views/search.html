@@ -15,7 +15,7 @@
 			<!-- Need to figure out how matchups will work in other sports -->
 			<div class="matchup-criteria" ng-show="sport == 'hearthstone'">
 				<span class="matchup-label" translate="hearthstone.search.lookingFor"></span> 
-				<button type="button" class="btn btn-default btn-class-select form-control" data-trigger="click" ng-model="options.criteria.reviewType" data-html="1" bs-options="option.value as option.label for option in gameTypeOptions" placeholder="{{ 'hearthstone.search.gameType.all' | translate }}" bs-select ng-required="true">
+				<button type="button" class="btn btn-default btn-select btn-class-select" data-trigger="click" ng-model="options.criteria.reviewType" data-html="1" bs-options="option.value as option.label for option in gameTypeOptions" placeholder="{{ 'hearthstone.search.gameType.all' | translate }}" bs-select ng-required="true">
 				  	<span>Action</span>
 				</button>
 				<span translate="hearthstone.search.matchupLabel" ng-show="options.criteria.reviewType != 'arena-draft'"></span> 
@@ -52,11 +52,11 @@
 			<div class="comments-criteria search-block">
 				<div class="form-group title-search">
 					<span translate="global.search.nbComments_pre"></span>
-				    <button type="button" class="btn btn-default form-control" data-trigger="click" ng-model="options.criteria.minComments" data-html="1" bs-options="option.value as option.label for option in minCommentsOptions" placeholder="0" bs-select ng-required="true">
+				    <button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="options.criteria.minComments" data-html="1" bs-options="option.value as option.label for option in minCommentsOptions" placeholder="0" bs-select ng-required="true">
 					  	<span>Action</span>
 					</button>
 					<span translate="global.search.nbComments_mid"></span>
-				    <button type="button" class="btn btn-default form-control" data-trigger="click" ng-model="options.criteria.maxComments" data-html="1" bs-options="option.value as option.label for option in maxCommentsOptions" placeholder="{{ 'global.search.nbComments.unlimited' | translate }}" bs-select ng-required="true">
+				    <button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="options.criteria.maxComments" data-html="1" bs-options="option.value as option.label for option in maxCommentsOptions" placeholder="{{ 'global.search.nbComments.unlimited' | translate }}" bs-select ng-required="true">
 					  	<span>Action</span>
 					</button>
 					<span translate="global.search.nbComments_post"></span>
@@ -64,13 +64,13 @@
 			</div>
 			<div class="comments-criteria search-block">
 				<span translate="global.search.helpfulCommentLabel"></span>
-				<button type="button" class="btn btn-default btn-class-select form-control" data-trigger="click" ng-model="options.criteria.tempHelpfulComment" data-html="1" bs-options="option.value as option.label for option in helpfulOptions" placeholder="{{ 'global.search.helpful.all' | translate }}" bs-select ng-required="true">
+				<button type="button" class="btn btn-default btn-select btn-class-select" data-trigger="click" ng-model="options.criteria.tempHelpfulComment" data-html="1" bs-options="option.value as option.label for option in helpfulOptions" placeholder="{{ 'global.search.helpful.all' | translate }}" bs-select ng-required="true">
 				  	<span>Action</span>
 				</button>
 			</div>
 			<div class="sort-option search-block">
 				<span class="sort-label" translate="global.search.sortLabel"></span>
-				<button type="button" class="btn btn-default" data-trigger="click" ng-model="options.criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.search.sort' | translate }}" bs-select ng-required="true">
+				<button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="options.criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.search.sort' | translate }}" bs-select ng-required="true">
 				  	<span>Action</span>
 				</button>
 			</div>

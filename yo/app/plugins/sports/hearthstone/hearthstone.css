@@ -275,6 +275,9 @@
   color: white;
   font-size: 2.5em;
 }
+.hearthstone .modal-footer {
+  border: none;
+}
 .hearthstone .panel .modal-footer {
   background: transparent;
   border: none;
@@ -1170,6 +1173,9 @@
 }
 .hearthstone .btn-default:hover {
   background-color: #ead5aa;
+}
+.hearthstone .btn-primary:hover {
+  background: #4f1464;
 }
 .hearthstone .btn-select {
   background: transparent url(images/new/select-box.png) center center no-repeat;

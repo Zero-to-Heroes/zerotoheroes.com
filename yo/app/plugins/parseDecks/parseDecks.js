@@ -121,7 +121,10 @@ var parseDecks = {
 		// First make sure all cards are well placed in class vs neutral
 		var realClassCards = []
 		deck.classCards.forEach(function(card) {
-			if (!parseCardsText.getCard(card.name).playerClass) {
+			if (!parseCardsText.getCard(card.name)) {
+				console.log('error parsing card', card, deck, deckUrl)
+			}
+			else if (!parseCardsText.getCard(card.name).playerClass) {
 				deck.neutralCards.push(card)
 			}
 			else {

@@ -40,11 +40,11 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					allowDoubleSpeed: true,
 					allowedUploads:  ['video', 'replay', 'arenadraft', 'fromurl'],
 					homeChoices:  ['watchlearn', 'getadvice', 'helpothers'],
-					supportedExtensions: ['hdtreplay', 'arenatracker', 'log']
-,					plugins: {
+					supportedExtensions: ['hdtreplay', 'arenatracker', 'log'],
+					plugins: {
 						plugins: [
-							{name: 'parseCardsText', version: 8}, 
-							{name: 'parseDecks', version: 13, dev: dev}, 
+							{name: 'parseCardsText', version: 11, dev: dev}, 
+							{name: 'parseDecks', version: 14, dev: dev}, 
 							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 55, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 12, dev: dev}
 						],

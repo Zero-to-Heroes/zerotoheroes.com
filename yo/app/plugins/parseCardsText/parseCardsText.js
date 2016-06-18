@@ -198,13 +198,18 @@ var parseCardsText = {
 	},
 
 	getCard: function(cardName) {
-		if (!cardName)
+		// console.log('GO!! parsing card', cardName)
+		if (!cardName) {
+			// console.log('no cardName', cardName)
 			return null
+		}
+		cardName = cardName.replace(new RegExp('’', 'g'), '\'')
 		
 		var result;
 		var possibleResult;
 
 		// cf http://stackoverflow.com/questions/2641347/how-to-short-circuit-array-foreach-like-calling-break
+		// console.log('preparing', cardName)
 		parseCardsText.jsonDatabase.some(function(card) {
 			// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
 			if (card.id == cardName) {

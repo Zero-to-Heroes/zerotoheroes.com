@@ -4,7 +4,9 @@ angular.module('controllers').controller('CoachListingCtrl', ['$scope', '$routeP
 	function($scope, $routeParams, Api, $log) {
 
 		$scope.retrieveCoaches = function() {
+			$log.debug('loading coaches')
 			Api.CoachesAll.query({sport: $scope.sport}, function(data) {
+				$log.debug('loaded', data)
 				$scope.coaches = []
 				for (var i = 0; i < data.length; i++) {
 					data[i].description = marked(data[i].description || '')

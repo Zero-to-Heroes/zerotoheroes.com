@@ -1,0 +1,196 @@
+// ====================
+// Overrides
+// ====================
+.btn-default:active:hover, .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+    background-color: transparent;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+	outline: none;
+}
+
+input, textarea, select, tags-input .tags {
+	background: @default-btn-bg-color;
+	// border: 2px solid #867249;
+	color: @dark-text;
+}
+
+
+
+// ====================
+// Components
+// ====================
+.btn {
+	border-radius: 2px;
+	text-transform: uppercase;
+}
+.btn-default {
+	background: @default-btn-bg-color;
+}
+
+.btn-default:hover {
+	background-color: @default-btn-bg-color-hover;
+}
+
+.btn-primary:hover {
+	background: @primary-btn-bg-color-hover;
+}
+
+.btn-select {
+	background: transparent url(images/new/select-box.png) center center no-repeat;
+	text-transform: none;
+	background-size: 100% 100%;
+    padding: 6px 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: @default-btn-color;
+
+	.caret {
+		display: none;
+	}
+
+	&:active, &:hover {
+		background-color: transparent;
+	}
+}
+
+tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
+	background: @primary-btn-bg-color;
+	// box-shadow: rgb(51, 30, 11) 0px 2px 6px 0px;
+	// color: white;
+	// text-decoration: none;
+}
+
+
+
+// .modal-dialog:before {
+// 	content: "";
+// 	position: absolute;
+// 	top: -8px;
+// 	right: -8px;
+// 	bottom: -8px;
+// 	left: -8px;
+// 	border: 8px solid #dec79b;
+// 	border-width: 17px 20px;
+// 	border-image: url(images/new/border-image.png) 20 20 stretch;
+// 	z-index: -1;
+// }
+
+// .modal-dialog {
+// 	background-color: #3A240F;
+// 	position: relative;
+// 	border: none;
+// 	z-index: 1;
+// }
+
+// ====================
+// Specific elements
+// ====================
+.brand:before {
+	content: url('images/new/logo.png');
+	// width: 9em;
+}
+
+.navbar {
+
+	.ffBasic();
+	text-transform: uppercase;
+	font-weight: 600;
+
+	&.navbar-default {
+		background: url("images/new/nav-bg-left.png") 250px top no-repeat, url("images/new/nav-bg-right.png") top right no-repeat, url("images/new/nav-bg-center.png") top repeat-x;
+
+		span {  
+			color: #fcd144;
+		}
+
+		.navbar-nav > li > a:hover {
+			background: url(images/new/nav-bg-center-hover.png) repeat-x;
+		}
+
+		.navbar-nav li.upload-link > a { 
+			background: @primary-btn-bg-color;
+			color: white;
+			text-decoration: none;
+		}
+
+		.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+			color: #fcd144;
+		}
+
+		.navbar-nav li.upload-link > a:hover span {
+			background: @primary-btn-bg-color-hover;
+		}
+
+	}	
+
+}
+
+.review-list-item {
+	background: url("images/new/border-top.png") no-repeat top center;
+	background-size: 100%;
+	padding: 0;
+
+	& > a {
+	    background-color: @review-block;
+	    padding: 10px;
+	    padding-top: 25px;
+	    margin-top: 4px;
+	    margin-left: 12px;
+	    margin-right: 12px;
+	}
+
+	& > a:hover {
+		background-color: @review-block-hover;
+	}
+
+	.title {
+		.ffTitle();
+		color: @link-text;
+	}
+
+	.tag-item {
+		.ffBasic();
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+
+	.stat-icon {
+		height: 30px;
+		width: 30px;
+	    background-size: contain;
+	    background-repeat: no-repeat;
+	    margin-top: 5px;
+
+	    &:before {
+	    	content: "";
+	    }
+	}
+	.stat-comment .stat-icon {
+		background-image: url(images/new/picto-nb-comment.png);
+	}
+	.stat-helpful .stat-icon {
+		background-image: url(images/new/picto-check.png);
+	}
+	.stat-view .stat-icon {
+		background-image: url(images/new/picto-nb-view.png);
+	}
+}
+
+
+
+.page-choices {
+
+	.choice {
+
+		.watchlearn img {
+			content: url(images/new/picto-watch-and-learn.png);
+		}
+		.getadvice img {
+			content: url(images/new/picto-get-advices.png);
+		}
+		.helpothers img {
+			content: url(images/new/picto-help-people.png);
+		}
+	}
+}

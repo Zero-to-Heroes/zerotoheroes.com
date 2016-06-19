@@ -5,6 +5,7 @@
     margin-right: 50px;
     background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
+    padding-top: 25px;
     border-radius: 15px;
 }
 
@@ -19,23 +20,13 @@
 .review-list-item .header {
 	display: flex;
     margin-top: 0;
-}
-
-.review-list-item .mobile-video-info-details {
-	display: none;
-	font-size: 14px;
-	color: inherit;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-.review-list-item .mobile-video-info-details span {
-	margin-right: 2px;
+    margin-bottom: 25px;
 }
 
 .review-list-item .skill-level {
-    margin-right: 15px;
-    width: 120px;
-    min-width: 120px;
+    margin-right: 25px;
+    width: 140px;
+    min-width: 140px;
 }
 .review-list-item tags-input {
 	height: 55px;
@@ -46,19 +37,37 @@
 .review-list-item tags-input .tag-list {
     margin-top: auto;
     margin-bottom: auto;
+    height: 100%;
+}
+.review-list-item tags-input .tag-list .tag-item {
+    height: 100%;
+    display: flex;
+}
+.review-list-item tags-input ti-tag-item {
+    margin: auto;
+}
+
+.review-list-item .title-container {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    /* http://stackoverflow.com/questions/12022288/how-to-keep-a-flex-item-from-overflowing-due-to-its-text*/
+    min-width: 1px;
 }
 
 .review-list-item .title {
     margin-top: auto;
     margin-bottom: auto;
-    max-height: 50px;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
 }
 
 .review-list-item .additional-info {
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 15px;
     font-size: 55%;
 }
 
@@ -66,9 +75,30 @@
 	display: flex;
 }
 
+.review-list-item .mobile-video-info-details {
+    display: none;
+    font-size: 14px;
+    color: inherit;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: space-around;
+}
+.review-list-item .mobile-video-info-details span {
+    margin-right: 2px;
+}
+
 .review-list-item .video-info-details {
     margin-top: auto;
     margin-bottom: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 15px;
+}
+
+.review-list-item .icon-container {
+    display: flex;
+    flex-direction: column;
+    width: 25px;
 }
 
 .review-list-item .specific-info {

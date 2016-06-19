@@ -164,6 +164,14 @@ module.exports = function (grunt) {
 	  	}
 	},
 
+	less: {
+		development: {
+			files: {
+				"<%= yeoman.app %>/plugins/sports/hearthstone/hearthstone.css": '<%= yeoman.app %>/plugins/sports/hearthstone/styles.less'
+			}
+		}
+	},
+
 	// Renames files for browser caching purposes
 	filerev: {
 	  	dist: {
@@ -455,6 +463,7 @@ module.exports = function (grunt) {
 		grunt.task.run([
 		  	'clean:server',
 			'ngconstant:development',
+			'less',
 			'copy:index',
 		  	'wiredep',
 		  	// 'ngtemplates:app',
@@ -477,6 +486,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'ngconstant:production',
+		'less',
 		'copy:index',
 		'wiredep',
 		'processhtml:dist',
@@ -498,6 +508,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build-dev', [
 		'clean:dist',
 		'ngconstant:development',
+		'less',
 		'copy:index',
 		'wiredep',
 		'processhtml:dist',

@@ -5,7 +5,7 @@
 	<!-- The controls to add a file -->
 	<span class="btn btn-default btn-file" ng-show="!file">
 		<span>{{ 'global.upload.replay.chooseFileButton' | translate }}</span> 
-		<input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" file></input>
+		<input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" file multiple></input>
 	</span>
 	<div class="well drop-zone" nv-file-over uploader="uploader" ng-show="!file">
         {{ 'global.upload.replay.dropZone' | translate }}

@@ -11,7 +11,7 @@ import lombok.Data;
 public class Metric {
 
 	private DateTime startDate, endDate;
-	private int reviews;
+	private int reviews, privateReviews;
 	private int comments;
 	private Set<String> uniqueContentCreators = new HashSet<>();
 	private Set<String> churn = new HashSet<>();
@@ -19,6 +19,10 @@ public class Metric {
 
 	public void incrementReviews() {
 		reviews++;
+	}
+
+	public void incrementPrivateReviews() {
+		privateReviews++;
 	}
 
 	public void incrementComments() {

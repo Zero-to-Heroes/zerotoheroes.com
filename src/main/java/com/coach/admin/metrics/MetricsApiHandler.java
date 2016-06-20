@@ -61,8 +61,16 @@ public class MetricsApiHandler {
 			if (!review.isPublished()) {
 				continue;
 			}
-			totalVideoViews += review.getViewCount();
+
 			Date creationDate = review.getCreationDate();
+			if (creationDate != null && review.getAuthor() != null
+					&& excludedUserNames.indexOf(review.getAuthor()) == -1
+					&& ("private".equalsIgnoreCase(review.getVisibility())
+							|| "restricted".equalsIgnoreCase(review.getVisibility()))) {
+				metrics.get(creationDate).incrementPrivateReviews();
+				continue;
+			}
+			totalVideoViews += review.getViewCount();
 			if (creationDate != null && review.getAuthor() != null
 					&& excludedUserNames.indexOf(review.getAuthor()) == -1) {
 				metrics.get(creationDate).incrementReviews();
@@ -197,15 +205,16 @@ public class MetricsApiHandler {
 		String result = "";
 
 		String header = "Week,Unique content creators,Returning contributors,Churn,Total reviews,Total comments,"
-				+ "Total interactions,Total reputation,Total video views,Contributors,Churn detail";
+				+ "Total interactions,Total private review,Total reputation,Total video views,Contributors,Churn detail";
 		result += header + "<br/>";
 
 		for (Metric metric : metrics.getMetrics()) {
 			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + metric.getUniqueContentCreators().size()
 					+ "," + metric.getReturningContributors() + "," + metric.getChurn().size() + ","
 					+ metric.getReviews() + "," + metric.getComments() + ","
-					+ (metric.getComments() + metric.getReviews()) + "," + metrics.getTotalReputation() + ","
-					+ metrics.getTotalVideoViews() + "," + metric.getUniqueContentCreators() + "," + metric.getChurn();
+					+ (metric.getComments() + metric.getReviews()) + "," + metric.getPrivateReviews() + ","
+					+ metrics.getTotalReputation() + "," + metrics.getTotalVideoViews() + ","
+					+ metric.getUniqueContentCreators() + "," + metric.getChurn();
 			result += "<br/>";
 		}
 		return result;

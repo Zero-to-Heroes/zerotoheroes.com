@@ -88,7 +88,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 				//===============
 				$scope.initUpload = function() {
 					// Start the upload
-					var fileKey = ENV.folder + '/' + $scope.guid()
+					var fileKey = ENV.folder + '/' + $scope.guid() + '-' + $scope.file.name
 
 					// And signal that our job here is done - let's give the control to the next step
 					$scope.videoInfo.upload = {}

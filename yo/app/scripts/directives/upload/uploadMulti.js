@@ -17,6 +17,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				$scope.uploader = MediaUploader
 				$scope.publishPending = false
 				$scope.config = SportsConfig[$scope.sport]
+				$scope.User = User
 
 				$scope.reviews = []
 				$scope.$watch('active', function(newVal) {

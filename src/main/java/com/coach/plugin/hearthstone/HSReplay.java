@@ -93,7 +93,8 @@ public class HSReplay implements ReplayPlugin {
 			tempFile.delete();
 			FileUtils.deleteDirectory(new File(destination));
 		}
-		else if ("text/plain".equals(review.getFileType()) || "log".equals(review.getFileType()) || "arenatracker".equals(review.getFileType())) {
+		else if ("text/plain".equals(review.getFileType()) || "log".equals(review.getFileType())
+				|| "arenatracker".equals(review.getFileType())) {
 			log.debug("plaintext replay");
 			// Need to process the file
 			log.debug("Retrieving log file " + review.getTemporaryKey());
@@ -148,24 +149,32 @@ public class HSReplay implements ReplayPlugin {
 		List<String> games = new ArrayList<>();
 
 		BufferedReader reader = s3utils.readerFromS3(key);
-		StringBuilder currentGame = new StringBuilder();
+		StringBuilder currentGame = null;
+		new StringBuilder();
 		if ("text/plain".equals(fileType)) {
 			log.debug("processing file");
 			String line;
 			while ((line = reader.readLine()) != null) {
 				if (line.contains("GameState.DebugPrintPower() - CREATE_GAME")) {
-					if (currentGame.length() > 10000) {
-						log.debug("Added a new game");
+					if (currentGame != null) {
+						log.debug("Added a new game, " + line);
+						// log.debug(currentGame.toString());
 						games.add(currentGame.toString());
+						currentGame.setLength(0);
 					}
-					currentGame.setLength(0);
+					else {
+						currentGame = new StringBuilder();
+					}
 				}
 				// log.debug("\treading line " + line);
-				currentGame.append(line);
-				currentGame.append(System.lineSeparator());
+				if (currentGame != null) {
+					currentGame.append(line);
+					currentGame.append(System.lineSeparator());
+				}
 			}
 			if (currentGame.length() > 0) {
 				log.debug("Added a new game");
+				// log.debug(currentGame.toString());
 				games.add(currentGame.toString());
 			}
 		}

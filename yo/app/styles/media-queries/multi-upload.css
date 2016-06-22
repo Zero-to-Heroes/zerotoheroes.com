@@ -1,7 +1,14 @@
 @media (max-width: 780px) {
+	.upload-page .multi-upload .review participants-details {
+		width: 100%;
+	}
+	.multi-upload .review .hearthstone-participants {
+    	flex-wrap: wrap;
+	}
 	.upload-page .multi-upload .hearthstone-participants .level-details {
     	margin-top: 30px;
     	margin-left: 50px;
+    	margin-right: 15px;
 	}
 }
 

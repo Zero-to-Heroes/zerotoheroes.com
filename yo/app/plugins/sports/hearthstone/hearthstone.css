@@ -1174,6 +1174,13 @@
 .hearthstone .btn-default:hover {
   background-color: #ead5aa;
 }
+.hearthstone .btn-control {
+  background: #68471f;
+  color: #fff;
+}
+.hearthstone .btn-control:hover {
+  background-color: #8b6029;
+}
 .hearthstone .btn-primary:hover {
   background: #4f1464;
 }
@@ -1271,6 +1278,19 @@
 .hearthstone .review-list-item .stat-view .stat-icon {
   background-image: url(images/new/picto-nb-view.png);
 }
+.hearthstone .multi-upload .review {
+  background: url("images/new/border-top.png") no-repeat top center;
+  background-size: 100%;
+  padding: 0;
+}
+.hearthstone .multi-upload .review .review-container {
+  background-color: #503218;
+  padding: 10px;
+  padding-top: 25px;
+  margin-top: 4px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
 .hearthstone .page-choices .choice .watchlearn img {
   content: url(images/new/picto-watch-and-learn.png);
 }
@@ -1279,6 +1299,13 @@
 }
 .hearthstone .page-choices .choice .helpothers img {
   content: url(images/new/picto-help-people.png);
+}
+.hearthstone .external-player .replay__controls {
+  background-image: url(images/new/border-top.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+  background-position-y: 10px;
 }
 @media screen and (max-width: 500px) {
   .hearthstone .navbar.navbar-default {

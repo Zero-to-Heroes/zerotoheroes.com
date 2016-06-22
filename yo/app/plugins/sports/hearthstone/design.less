@@ -27,9 +27,16 @@ input, textarea, select, tags-input .tags {
 .btn-default {
 	background: @default-btn-bg-color;
 }
-
 .btn-default:hover {
 	background-color: @default-btn-bg-color-hover;
+}
+
+.btn-control {
+	background: @control-btn-bg-color;
+	color: @control-btn-color;
+}
+.btn-control:hover {
+	background-color: @control-btn-bg-color-hover;
 }
 
 .btn-primary:hover {
@@ -177,6 +184,24 @@ tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
 	}
 }
 
+.multi-upload {
+
+	.review {
+		background: url("images/new/border-top.png") no-repeat top center;
+		background-size: 100%;
+		padding: 0;
+
+		.review-container {
+		    background-color: @review-block;
+		    padding: 10px;
+		    padding-top: 25px;
+		    margin-top: 4px;
+		    margin-left: 12px;
+		    margin-right: 12px;
+    		width: 100%;
+		}
+	}
+}
 
 
 .page-choices {
@@ -193,4 +218,16 @@ tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
 			content: url(images/new/picto-help-people.png);
 		}
 	}
+}
+
+.external-player {
+
+	.replay__controls {
+		background-image: url(images/new/border-top.png);
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: 100%;
+    	background-position-y: 10px;
+	}
+
 }

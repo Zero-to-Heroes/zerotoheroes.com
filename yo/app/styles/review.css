@@ -28,13 +28,17 @@
   padding: 0 8px;
 }
 
+.video-details {
+	margin-top: 10px;
+}
+
 .video-details .reputation {
 	width: auto;
 	font-size: 1.3em;
 }
 
 .video-details .review-editing-title {
-	width: calc(100% - 70px);
+	width: 100%;
     display: inline-block;
 }
 
@@ -105,7 +109,7 @@
 
 .video-information .video-information-header .ask-pro {
 	float: right;
-    margin-right: 20px;
+    margin-right: 8px;
 }
 
 .video-comment .loading {

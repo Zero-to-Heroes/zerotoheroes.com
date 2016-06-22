@@ -23,11 +23,13 @@
 
 	<ul class="multi-upload">
 		<li ng-repeat="review in reviews" class="review">
-			<div class="title-container">
-				<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="transcoding">
+			<div class="review-container">
+				<div class="title-container">
+					<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="transcoding">
+				</div>
+				<participants-details review="review"></participants-details>
+				<review-visibility review="review"></review-visibility>
 			</div>
-			<participants-details review="review"></participants-details>
-			<review-visibility review="review"></review-visibility>
 		</li>
 	</ul>
 

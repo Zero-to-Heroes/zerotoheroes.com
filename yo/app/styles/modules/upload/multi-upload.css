@@ -16,14 +16,17 @@
 }
 
 .multi-upload .review {
-	display: flex;
-    flex-direction: row;
     margin: auto;
     margin-bottom: 50px;
     background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
-    border-radius: 15px;
-    max-width: 800px;
+    max-width: 830px;
+    display: flex;
+}
+
+.multi-upload .review-container {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 

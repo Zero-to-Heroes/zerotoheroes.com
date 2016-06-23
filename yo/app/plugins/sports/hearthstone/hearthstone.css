@@ -1279,6 +1279,15 @@
 .hearthstone .review-list-item .stat-view .stat-icon {
   background-image: url(images/new/picto-nb-view.png);
 }
+.hearthstone .review-list-item .visibility {
+  width: 45px;
+}
+.hearthstone .review-list-item .visibility.private {
+  content: url(images/new/picto-video-privee.png);
+}
+.hearthstone .review-list-item .visibility.restricted {
+  content: url(images/new/picto-video-restreint.png);
+}
 .hearthstone .multi-upload .review {
   background: url("images/new/border-top.png") no-repeat top center;
   background-size: 100%;
@@ -1301,6 +1310,27 @@
 }
 .hearthstone .page-choices .choice .helpothers img {
   content: url(images/new/picto-help-people.png);
+}
+.hearthstone .page-choices .choice .video {
+  width: 50%;
+}
+.hearthstone .page-choices .choice .video img {
+  content: url(images/new/picto-upload-video.png);
+}
+.hearthstone .page-choices .choice .replay {
+  width: 50%;
+}
+.hearthstone .page-choices .choice .replay img {
+  content: url(images/new/picto-hs-replay.png);
+}
+.hearthstone .page-choices .choice .arenadraft {
+  width: 50%;
+}
+.hearthstone .page-choices .choice .arenadraft img {
+  content: url(images/new/picto-draft-arene.png);
+}
+.hearthstone .page-choices .choice .fromurl img {
+  content: url(images/new/picto-external-site.png);
 }
 .hearthstone .external-player .replay__controls {
   background-image: url(images/new/border-top.png);

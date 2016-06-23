@@ -146,7 +146,14 @@ app.config(['$routeProvider', '$locationProvider',
 			ownVideos: true,
 			menuItem: 'reviews'
 	  	}).
-	  	when('/s/:sport/:choice?', {
+	  	when('/s/:sport/', {
+			templateUrl: 'views/sportHome.html',
+			controller: 'SportHomeCtrl',
+			reloadOnSearch: false,
+			useFullWidth: true,
+			menuItem: 'home'
+	  	}).
+	  	when('/s/:sport/:choice', {
 			templateUrl: 'views/sportHome.html',
 			controller: 'SportHomeCtrl',
 			reloadOnSearch: false,

@@ -182,6 +182,17 @@ tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
 	.stat-view .stat-icon {
 		background-image: url(images/new/picto-nb-view.png);
 	}
+
+	.visibility {
+		width: 45px;
+		
+		&.private {
+			content: url(images/new/picto-video-privee.png);
+		}
+		&.restricted {
+			content: url(images/new/picto-video-restreint.png);
+		}
+	}
 }
 
 .multi-upload {
@@ -216,6 +227,28 @@ tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
 		}
 		.helpothers img {
 			content: url(images/new/picto-help-people.png);
+		}
+
+		.video {
+			width: 50%;
+			img {
+				content: url(images/new/picto-upload-video.png);
+			}
+		}
+		.replay {
+			width: 50%;
+			img {
+				content: url(images/new/picto-hs-replay.png);
+			}
+		}
+		.arenadraft {
+			width: 50%;
+			img {
+				content: url(images/new/picto-draft-arene.png);
+			}
+		}
+		.fromurl img {
+			content: url(images/new/picto-external-site.png);
 		}
 	}
 }

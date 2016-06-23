@@ -1,7 +1,7 @@
 <li class="review-list-item">
 	<a href="{{buildUrl(video)}}" class="review-link">
 		<h3 class="header">
-			<span class="visibility glyphicon glyphicon-lock" ng-class="video.visibility" ng-show="showVisibility && video.visibility && video.visibility != 'public'" title="{{ 'global.review.visibility.' + video.visibility + 'Tooltip' | translate }}"></span>
+			<img class="visibility" ng-class="video.visibility" ng-show="showVisibility && video.visibility && video.visibility != 'public'" title="{{ 'global.review.visibility.' + video.visibility + 'Tooltip' | translate }}"></img>
 			<tags-input ng-model="video.participantDetails.skillLevel" ng-disabled="true" class="sport-tags ti-input-sm skill-level" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
 			<div class="title-container">
 				<span class="title">{{video.title}}</span>

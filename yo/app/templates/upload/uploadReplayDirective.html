@@ -3,16 +3,29 @@
 	<h1>{{ 'global.upload.replay.headline' | translate }}</h1>
 
 	<!-- The controls to add a file -->
-	<span class="btn btn-default btn-file" ng-show="!file">
-		<span>{{ 'global.upload.replay.chooseFileButton' | translate }}</span> 
-		<input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" file multiple></input>
-	</span>
-	<div class="well drop-zone" nv-file-over uploader="uploader" ng-show="!file">
-        {{ 'global.upload.replay.dropZone' | translate }}
+	<div class="button-container">
+		<span class="btn btn-default btn-file">
+			<span>{{ 'global.upload.replay.chooseFileButton' | translate }}</span> 
+			<input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" file multiple></input>
+		</span>
+	    <span class="btn btn-default btn-file" ng-show="files.length > 0" ng-click="clearFiles()">
+	    	{{ 'global.upload.replay.clearCurrentFile' | translate }}
+	    </span>
+	</div>
+
+	<div class="well drop-zone" nv-file-over uploader="uploader">
+		<span>{{ 'global.upload.replay.dropZone' | translate }}</span>
     </div>
-    <span class="btn btn-default btn-file" ng-show="file" ng-click="clearFile()">
-    	{{ 'global.upload.replay.clearCurrentFile' | translate }}
-    </span>
+    <div class="well" ng-show="files.length > 0">
+		<span>{{ 'global.upload.replay.multi.filesAdded' | translate }}</span>
+		<span>{{scope.numberOfGames + ' in ' + $scope.files.length + ' files'}}
+		<ul>
+			<li ng-repeat="file in files">
+				<span>{{file.name}}</span>
+				<a>X</a>
+			</li>
+		</ul>
+    </div>
 
     <!-- The error message if an invalid file format is added. We can't show it during the drag and drop, because we don't know what's the file type being dragged -->
     <div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
@@ -20,14 +33,14 @@
 	</div>
 
 	<!-- Since we have no video preview (we may have when we support upload of xml files directly), we need to at least show the file has been selected -->
-	<div class="alert alert-info selected-file" role="alert" ng-show="file">
+	<!-- <div class="alert alert-info selected-file" role="alert" ng-show="file">
 		<span translate="global.upload.replay.selectedFile" translate-value-file-name="{{file.name}}"></span>
-	</div>
+	</div> -->
 
 
 	<!-- Let's go! -->
 	<div class="upload-button">
-		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError || !file"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
+		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError || files.length == 0"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
 	</div>
 
 </div>

@@ -18,6 +18,12 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 
 				$scope.sportsConfig = SportsConfig
 
+				$scope.clearFiles = function() {
+					$scope.files = []
+					$scope.numberOfGames = 0
+				}
+				$scope.clearFiles()
+
 				// We use it for nice out-of-the-box file features
 				$scope.buildUploader = function(sportsConfig) {
 					var supportedFileTypes = ['text/xml', 'text/plain', 'arenatracker']
@@ -44,9 +50,6 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        }
 				$scope.uploader = $scope.buildUploader(SportsConfig)
 
-				$scope.clearFile = function() {
-					$scope.file = null
-				}
 
 				//===============
 				// File Uploader
@@ -67,16 +70,16 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        $scope.uploader.onAfterAddingFile = function(fileItem) {
 		            console.info('onAfterAddingFile', fileItem)
 		            $scope.hasUnsupportedFormatError = false
-		            $scope.file = fileItem._file
-		            $log.debug('added file', $scope.file)
+		            $scope.files.push(fileItem._file)
+		            $log.debug('added file', fileItem._file, $scope.files)
 
 		            var r = new FileReader()
 				    r.onload = function(e) { 
 						var contents = e.target.result
-				        $scope.numberOfGames = (contents.match(gameRegex) || []).length
+				        $scope.numberOfGames += (contents.match(gameRegex) || []).length || 1
 				      	console.log('numberOfGames', $scope.numberOfGames)
 				    }
-				    r.readAsText($scope.file)
+				    r.readAsText(fileItem._file)
 		            // Increase number of files
 		            // $scope.processNumberItems(fileItem)
 		            // var objectURL = window.URL.createObjectURL($scope.file)

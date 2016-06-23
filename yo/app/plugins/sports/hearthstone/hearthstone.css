@@ -1235,6 +1235,10 @@
 .hearthstone .navbar.navbar-default .navbar-nav li.upload-link > a:hover span {
   background: #4f1464;
 }
+.hearthstone .navbar .user-notifications img {
+  content: url(images/new/picto-email.png);
+  width: 25px;
+}
 .hearthstone .review-list-item {
   background: url("images/new/border-top.png") no-repeat top center;
   background-size: 100%;

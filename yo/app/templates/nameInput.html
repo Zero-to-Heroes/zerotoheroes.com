@@ -1,7 +1,7 @@
 <ul>
 	<li><a class="link-minor" ng-show="!loggedIn" ng-click="signIn()">{{ 'global.user.signIn' | translate }}</a></li>
 	<li><a class="link-minor" ng-show="!loggedIn" ng-click="signUp()">{{ 'global.user.createAccount' | translate }}</a></li>
-	<li ng-show="loggedIn">
+	<li ng-show="loggedIn" class="user-info">
 		<a href="{{ '/u/' + sport + '/' + name + '/preferences'}}" class="profile-menu" ng-class="{active: active}">{{name}} <span bs-tooltip data-title="{{ 'global.user.reputationExplanation' | translate }}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation">{{User.reputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span></a>
 		<notifications user="User" sport="sport"></notifications>
 		

@@ -9,7 +9,7 @@
 }
 
 .navbar .brand:before {
-  content: url("/images/logo_small.png");
+	content: url("/images/logo_small.png");
 }
 
 .navbar-nav .nameInput {
@@ -17,14 +17,14 @@
 }
 
 .upload {
-  margin-bottom: 20px;
-  width: 50%;
-  display: table-cell;
+	margin-bottom: 20px;
+	width: 50%;
+	display: table-cell;
 }
 
 .controls {
-  display: table-cell;
-  text-align: right;
+	display: table-cell;
+	text-align: right;
 }
 
 .navigation {
@@ -48,16 +48,19 @@
 }
 
 .navbar .name-group {
-  float: right;
+	float: right;
+}
+.navbar .name-group .user-info {
+	display: flex;
 }
 
 .navbar .profile-menu {
-  display: inline-block;
+	display: inline-block;
 }
 
 nav .alert {
-  position: absolute;
-  right: 0;
+	position: absolute;
+	right: 0;
 }
 
 .navbar .inside-navigation {
@@ -65,14 +68,14 @@ nav .alert {
 }
 
 .navbar .inside-navigation-button {
-  height: 40px;
-  width: 105px;
-  position: relative;
-  float: right;
-  top: 5px;
-  background-color: transparent;
-  border: none;
-  padding: 1px 8px;
+	height: 40px;
+	width: 105px;
+	position: relative;
+	float: right;
+	top: 5px;
+	background-color: transparent;
+	border: none;
+	padding: 1px 8px;
 }
 
 .navbar .inside-navigation-button:after {
@@ -124,58 +127,58 @@ nav .alert {
 	display: none;
 }
 .navbar-nav > li, .navbar-header, .navbar-nav {
-    float: left;
+		float: left;
 }
 .navbar-nav  {
 	margin: 0;
 }
 .navbar-nav .open .dropdown-menu {
-     position: absolute; 
-     float: left; 
-     width: auto; 
-     margin-top: 0; 
-     background-color: white; 
-     border: 1px solid rgba(0, 0, 0, .15);     
-     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+		 position: absolute; 
+		 float: left; 
+		 width: auto; 
+		 margin-top: 0; 
+		 background-color: white; 
+		 border: 1px solid rgba(0, 0, 0, .15);     
+		 -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+		 box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
 
 .more-menu .name-input {
 	height: 30px;
-    left: 0;
-    position: relative;
+		left: 0;
+		position: relative;
 }
 .navbar-default .navbar-nav .more-menu ul > li > a, .navbar-default .navbar-nav .more-menu ul > li > a.user-notifications {
 	font-size: inherit;
-    text-shadow: inherit;
-    display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: normal;
-    line-height: 1.42857143;
-    color: #333;
-    white-space: nowrap;
+		text-shadow: inherit;
+		display: block;
+		padding: 3px 20px;
+		clear: both;
+		font-weight: normal;
+		line-height: 1.42857143;
+		color: #333;
+		white-space: nowrap;
 }
 .navbar-default .navbar-nav .more-menu ul > li > a.user-notifications, .navbar-default .navbar-nav .more-menu ul > li > a.user-notifications.unread span {
-    color: #333 !important;
+		color: #333 !important;
 }
 .navbar .more-menu .user-notifications {
-    margin-left: 0;
-    margin-right: 0;
-    display: block;
-    float: left;
+		margin-left: 0;
+		margin-right: 0;
+		display: block;
+		float: left;
 }
 .navbar-default .navbar-nav .more-menu ul > li span {
 	font-size: inherit;
-    text-shadow: inherit;
-    clear: both;
-    font-weight: normal;
-    line-height: 1.42857143;
-    color: #333;
-    white-space: nowrap;
+		text-shadow: inherit;
+		clear: both;
+		font-weight: normal;
+		line-height: 1.42857143;
+		color: #333;
+		white-space: nowrap;
 }
 .navbar-default .navbar-nav .more-menu ul > li > a:hover, .navbar-default .navbar-nav .more-menu ul > li > a:active, .navbar-default .navbar-nav .more-menu ul > li > a:focus {
 	background: rgba(0, 0, 0, 0.1);
-    color: #333;
+		color: #333;
 }

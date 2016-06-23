@@ -1,1 +1,4 @@
-<a class="glyphicon glyphicon-envelope pointer user-notifications" ng-class="{'unread': unread > 0}" href="/u/{{sport}}/{{user.username}}/inbox/{{unread > 0 ? 'unread' : 'all'}}"><span class="badge" ng-show="unread > 0">{{unread}}</span></a>
+<a class="pointer user-notifications" ng-class="{'unread': unread > 0}" href="/u/{{sport}}/{{user.username}}/inbox/{{unread > 0 ? 'unread' : 'all'}}">
+	<img />
+	<span class="badge" ng-show="unread > 0">{{unread}}</span>
+</a>

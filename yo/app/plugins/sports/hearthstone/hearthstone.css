@@ -949,7 +949,7 @@
   display: inline-block;
 }
 .hearthstone .landing-page {
-  color: #2e2e2e;
+  color: #3a240f;
 }
 .hearthstone .landing-page section {
   background: transparent;
@@ -963,9 +963,9 @@
 }
 .hearthstone .landing-page h1,
 .hearthstone .landing-page h2 {
-  color: #233a6e;
   text-align: center;
   text-transform: none;
+  color: #a33b32;
 }
 .hearthstone .landing-page h1 {
   font-size: 4vh;

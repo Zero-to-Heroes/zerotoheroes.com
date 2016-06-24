@@ -976,16 +976,19 @@
 .hearthstone .landing-page .logo {
   text-align: center;
   display: flex;
-  margin-top: 2vh;
+  margin-top: 0;
 }
 .hearthstone .landing-page .logo span {
-  height: 10vh;
+  height: 13vh;
   font-size: 5vh;
   margin: auto;
 }
 .hearthstone .landing-page .logo img {
-  content: url(images/landing/logo.png);
+  content: url(images/new/logo_zth_hearthstone.png);
   height: 100%;
+}
+.hearthstone .landing-page .logo .site-name {
+  display: none;
 }
 .hearthstone .landing-page .overview {
   height: 75vh;
@@ -993,7 +996,7 @@
 }
 .hearthstone .landing-page .overview h1 {
   margin-top: 6vh;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
 }
 .hearthstone .landing-page .overview h2 {
   margin-top: 5vh;

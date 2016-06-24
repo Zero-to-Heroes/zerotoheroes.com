@@ -136,6 +136,10 @@ tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
 			content: url(images/new/picto-email.png);
 			width: 25px;
 		}
+
+		&.unread img {
+			content: url(images/new/picto-new-email.png);
+		}
 	}
 
 }
@@ -143,6 +147,7 @@ tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
 .reputation-icon {
 	content: url(images/new/picto-popularity.png);
 	width: 20px;
+	margin-left: -3px;
 }
 
 .comment-block .reputation-icon {
@@ -264,8 +269,11 @@ tags-input .tags .tag-item, tags-input[disabled] .tags .tag-item {
 				content: url(images/new/picto-draft-arene.png);
 			}
 		}
-		.fromurl img {
-			content: url(images/new/picto-external-site.png);
+		.fromurl  {
+			width: 50%;
+			img {
+				content: url(images/new/picto-external-site.png);
+			}
 		}
 	}
 }

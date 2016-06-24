@@ -1239,9 +1239,13 @@
   content: url(images/new/picto-email.png);
   width: 25px;
 }
+.hearthstone .navbar .user-notifications.unread img {
+  content: url(images/new/picto-new-email.png);
+}
 .hearthstone .reputation-icon {
   content: url(images/new/picto-popularity.png);
   width: 20px;
+  margin-left: -3px;
 }
 .hearthstone .comment-block .reputation-icon {
   width: 15px;
@@ -1339,6 +1343,9 @@
 }
 .hearthstone .page-choices .choice .arenadraft img {
   content: url(images/new/picto-draft-arene.png);
+}
+.hearthstone .page-choices .choice .fromurl {
+  width: 50%;
 }
 .hearthstone .page-choices .choice .fromurl img {
   content: url(images/new/picto-external-site.png);

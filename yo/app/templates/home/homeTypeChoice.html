@@ -3,9 +3,9 @@
 	<span class="intro-text" translate="{{ 'global.home.' + sport + '.' + 'description'}}" translate-default="{{ 'global.home.description' | translate}}"></span>
 	<div class="content">
 		<div ng-repeat="choice in options.choices" class="home-type choice">
-			<a class="btn btn-default btn-lg" href="{{ chooseType(choice) }}" ng-class="choice" ><img /></a>
-			<h2 translate="{{ 'global.home.choice.' + sport + '.' + choice}}" translate-default="{{ 'global.home.choice.' + choice | translate}}"></h2>
-			<span class="description" translate="{{ 'global.home.choice.' + sport + '.' + choice + 'Description'}}" translate-default="{{ 'global.home.choice.' + choice + 'Description' | translate}}"></span>
+			<a class="btn btn-default btn-lg" href="{{ chooseType(choice.id) }}" ng-class="choice.id" ><img src="{{choice.image}}"/></a>
+			<h2 translate="{{ 'global.home.choice.' + sport + '.' + choice.id}}" translate-default="{{ 'global.home.choice.' + choice.id | translate}}"></h2>
+			<span class="description" translate="{{ 'global.home.choice.' + sport + '.' + choice.id + 'Description'}}" translate-default="{{ 'global.home.choice.' + choice.id + 'Description' | translate}}"></span>
 		</div>
 	</div>
 </div>

@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('reviewListItem', ['$log', 
-	function($log) {
+app.directive('reviewListItem', ['$log', 'SportsConfig', 
+	function($log, SportsConfig) {
 		return {
 			restrict: 'E',
 			replace: true,
@@ -13,6 +13,9 @@ app.directive('reviewListItem', ['$log',
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
+
+				$scope.config = SportsConfig[$scope.sport]
+				// $log.debug('set config in reviewListItem', $scope.config)
 
 				$scope.buildUrl = function(video) {
 					// Replace all special characters ex

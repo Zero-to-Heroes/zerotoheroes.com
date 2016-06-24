@@ -9,7 +9,7 @@
 			<span class="author-information">
 				<span class="comment-author" ng-hide="::comment.authorId">{{::comment.author}}</span>
 				<author-name class="comment-author" entity="::comment" ng-show="::comment.authorId"></author-name>
-				<span bs-tooltip data-title="{{::comment.author}}'s total reputation on {{::review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="::comment.authorId">{{comment.authorReputation ? comment.authorReputation : 0}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
+				<span bs-tooltip data-title="{{::comment.author}}'s total reputation on {{::review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="::comment.authorId">{{comment.authorReputation ? comment.authorReputation : 0}}<img class="reputation-icon" src="{{ config.images.reputation }}"></img></span>
 			</span>
 
 			<span title="{{::formatExactDate(comment)}}"><small>{{::formatDate(comment)}}</small></span>

@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 
-	function($log, Api, User, $rootScope) {
+app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConfig', 
+	function($log, Api, User, $rootScope, SportsConfig) {
 		return {
 			restrict: 'E',
 			replace: true,
@@ -12,6 +12,7 @@ app.directive('notifications', ['$log', 'Api', 'User', '$rootScope',
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
+				$scope.config = SportsConfig[$scope.sport]
 				$scope.refresh = function() {
 					if (User.isLoggedIn()) {
 						Api.Profile.get( 

@@ -5,7 +5,7 @@
 		<a href="{{ '/u/' + sport + '/' + name + '/preferences'}}" class="profile-menu" ng-class="{active: active}">
 			{{name}} 
 			<span bs-tooltip data-title="{{ 'global.user.reputationExplanation' | translate }}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation">{{User.reputation}}
-				<span><img class="reputation-icon"></img></span>
+				<span><img class="reputation-icon" src="{{ config.images.reputation }}"></img></span>
 			</span>
 		</a>
 		<notifications user="User" sport="sport"></notifications>

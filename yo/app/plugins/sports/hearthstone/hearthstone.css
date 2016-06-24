@@ -1239,19 +1239,15 @@
   background: #4f1464;
 }
 .hearthstone .navbar .user-notifications img {
-  content: url(images/new/picto-email.png);
   width: 25px;
 }
-.hearthstone .navbar .user-notifications.unread img {
-  content: url(images/new/picto-new-email.png);
-}
 .hearthstone .reputation-icon {
-  content: url(images/new/picto-popularity.png);
   width: 20px;
-  margin-left: -3px;
+  margin-left: 0;
 }
 .hearthstone .comment-block .reputation-icon {
   width: 15px;
+  margin-left: 0;
 }
 .hearthstone .review-list-item {
   background: url("images/new/border-top.png") no-repeat top center;
@@ -1300,12 +1296,6 @@
 .hearthstone .review-list-item .visibility {
   width: 45px;
 }
-.hearthstone .review-list-item .visibility.private {
-  content: url(images/new/picto-video-privee.png);
-}
-.hearthstone .review-list-item .visibility.restricted {
-  content: url(images/new/picto-video-restreint.png);
-}
 .hearthstone .multi-upload .review {
   background: url("images/new/border-top.png") no-repeat top center;
   background-size: 100%;
@@ -1320,38 +1310,17 @@
   margin-right: 12px;
   width: 100%;
 }
-.hearthstone .page-choices .choice .watchlearn img {
-  content: url(images/new/picto-watch-and-learn.png);
-}
-.hearthstone .page-choices .choice .getadvice img {
-  content: url(images/new/picto-get-advices.png);
-}
-.hearthstone .page-choices .choice .helpothers img {
-  content: url(images/new/picto-help-people.png);
-}
 .hearthstone .page-choices .choice .video {
   width: 50%;
-}
-.hearthstone .page-choices .choice .video img {
-  content: url(images/new/picto-upload-video.png);
 }
 .hearthstone .page-choices .choice .replay {
   width: 50%;
 }
-.hearthstone .page-choices .choice .replay img {
-  content: url(images/new/picto-hs-replay.png);
-}
 .hearthstone .page-choices .choice .arenadraft {
   width: 50%;
 }
-.hearthstone .page-choices .choice .arenadraft img {
-  content: url(images/new/picto-draft-arene.png);
-}
 .hearthstone .page-choices .choice .fromurl {
   width: 50%;
-}
-.hearthstone .page-choices .choice .fromurl img {
-  content: url(images/new/picto-external-site.png);
 }
 .hearthstone .external-player .replay__controls {
   background-image: url(images/new/border-top.png);

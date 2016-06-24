@@ -44,7 +44,7 @@
 										  	<span>Submitted <span title="{{formatExactDate(review.creationDate)}}">{{formatDate(review.creationDate)}}</span> by </span>
 										  	<span class="comment-author" ng-hide="review.authorId">{{review.author}}</span>
 											<author-name class="comment-author" entity="review" ng-show="review.authorId"></author-name>
-										  	<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="review.authorReputation">{{review.authorReputation}}<span><i class="ion-bookmark reputation-icon"></i></span></span>
+										  	<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="review.authorReputation">{{review.authorReputation}}<img class="reputation-icon" src="{{ config.images.reputation }}"></img></span>
 										  	<span ng-show="!review.editing && canEdit(review)"> - </span>
 											<a ng-click="startEditingInformation()" class="link-minor" ng-show="!review.editing && canEdit(review)"> {{ 'global.review.comment.edit' | translate }}</a>
 										</div>

@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', '$location', 'Localization', '$window', '$routeParams', 
-	function(User, $log, Api, $modal, AuthenticationService, $rootScope, $location, Localization, $window, $routeParams) {
+app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', '$location', 'Localization', '$window', '$routeParams', 'SportsConfig', 
+	function(User, $log, Api, $modal, AuthenticationService, $rootScope, $location, Localization, $window, $routeParams, SportsConfig) {
 		
 	var linkFunction = function(scope, element, attributes) {
 		scope.showLogout = attributes['showLogout'];
@@ -36,6 +36,7 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 				$scope.loggedIn = User.isLoggedIn()
 				$scope.User = User.getUser()
 				$scope.sport = $routeParams.sport
+				$scope.config = SportsConfig[$scope.sport]
 
 				var testDate = moment('2015-10-25 10:00:00')
 				if (!User.getLastLoginDate() || moment(User.getLastLoginDate()).isBefore(testDate)) {

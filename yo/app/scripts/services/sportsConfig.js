@@ -38,8 +38,25 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					recommendedVideo: '55e8101be4b051128109112e',
 					isSport: true,
 					allowDoubleSpeed: true,
-					allowedUploads:  ['video', 'replay', 'arenadraft', 'fromurl'],
-					homeChoices:  ['watchlearn', 'getadvice', 'helpothers'],
+					allowedUploads:  [
+						{id: 'video', image: 'plugins/sports/hearthstone/images/new/picto-upload-video.png' }, 
+						{id: 'replay', image: 'plugins/sports/hearthstone/images/new/picto-hs-replay.png' }, 
+						{id: 'arenadraft', image: 'plugins/sports/hearthstone/images/new/picto-draft-arene.png' }, 
+						{id: 'fromurl', image: 'plugins/sports/hearthstone/images/new/picto-external-site.png' }
+					],
+					homeChoices:  [ 
+						{id: 'watchlearn', image: 'plugins/sports/hearthstone/images/new/picto-watch-and-learn.png' }, 
+						{id: 'getadvice', image: 'plugins/sports/hearthstone/images/new/picto-get-advices.png' }, 
+						{id: 'helpothers', image: 'plugins/sports/hearthstone/images/new/picto-get-advices.png' }
+					],
+					images: {
+						mail: 'plugins/sports/hearthstone/images/new/picto-email.png',
+						mailUnread: 'plugins/sports/hearthstone/images/new/picto-new-email.png',
+						reputation: 'plugins/sports/hearthstone/images/new/picto-popularity.png',
+						visibilityprivate: 'plugins/sports/hearthstone/images/new/picto-video-privee.png',
+						visibilityrestricted: 'plugins/sports/hearthstone/images/new/picto-video-restreint.png',
+
+					},
 					supportedExtensions: ['hdtreplay', 'arenatracker', 'log'],
 					plugins: {
 						plugins: [

@@ -984,7 +984,6 @@
   margin: auto;
 }
 .hearthstone .landing-page .logo img {
-  content: url(images/new/logo_zth_hearthstone.png);
   height: 100%;
 }
 .hearthstone .landing-page .logo .site-name {
@@ -1009,12 +1008,6 @@
   margin-right: 50px;
   max-width: 100%;
   max-height: 100%;
-}
-.hearthstone .landing-page .main-illustration {
-  content: url(images/landing/mainIllustration.jpg);
-}
-.hearthstone .landing-page .main-illustration-comments {
-  content: url(images/landing/comments.jpg);
 }
 .hearthstone .landing-page .enter-btn {
   margin-top: 20px;

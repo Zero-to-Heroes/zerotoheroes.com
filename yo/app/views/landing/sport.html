@@ -1,15 +1,15 @@
 <view-title>{{sportsConfig[sport].landing.displayName}}</view-title>
 
 <section class="logo">
-	<span><img /><span class="site-name">Zero to Heroes</span></span>
+	<span><img src="{{ (sportsConfig[sport].root || '') + '/images/logo_big.png'}}"/><span class="site-name">Zero to Heroes</span></span>
 </section>
 
 <section class="overview">
 	<h1>{{ sport + '.landing.headline' | translate }}</h1>
 
 	<div class="illustrations">
-		<img class="main-illustration" />
-		<img class="main-illustration-comments" />
+		<img class="main-illustration" src="{{ (sportsConfig[sport].root || '') + '/images/landing/mainIllustration.jpg'}}" />
+		<img class="main-illustration-comments" src="{{ (sportsConfig[sport].root || '') + '/images/landing/comments.jpg'}}" />
 	</div>
 
 	<h2>{{ sport + '.landing.headlineTag' | translate }}</h2>

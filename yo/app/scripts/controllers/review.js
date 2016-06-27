@@ -460,7 +460,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			var text = data.text;
 			$scope.review.text = escapeHtml(text);
-			// Add timestamps
+			// Add timestamps - if do it in the other order, turns are not properly parsed. Haven't looked why
 			$scope.review.compiledText = $scope.parseText($scope.review.text);
 			// Parse markdown
 			$scope.review.markedText = marked($scope.review.compiledText || '');

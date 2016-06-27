@@ -43,7 +43,7 @@ var parseDecks = {
 
 	parse: function(review, result, text, regex, groupIndex) {
 		regex = new RegExp('(?!.*\\))' + regex.source, 'gm')
-		console.log('matching', text, regex)
+		// console.log('matching', text, regex)
 		var match = regex.exec(text)
 		while (match) {
 			result = parseDecks.handleMatch(review, result, match, groupIndex)

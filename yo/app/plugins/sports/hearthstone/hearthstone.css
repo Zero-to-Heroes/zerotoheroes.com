@@ -1304,16 +1304,16 @@
   width: 100%;
 }
 .hearthstone .page-choices .choice .video {
-  width: 50%;
+  width: 75%;
 }
 .hearthstone .page-choices .choice .replay {
-  width: 50%;
+  width: 75%;
 }
 .hearthstone .page-choices .choice .arenadraft {
-  width: 50%;
+  width: 75%;
 }
 .hearthstone .page-choices .choice .fromurl {
-  width: 50%;
+  width: 75%;
 }
 .hearthstone .external-player .replay__controls {
   background-image: url(images/new/border-top.png);

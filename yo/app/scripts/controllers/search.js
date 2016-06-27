@@ -49,7 +49,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 
 		$scope.gameTypeOptions = [
 			{ "value" : null, "label" : $translate.instant('hearthstone.search.gameType.all') },
-			{ "value" : "game", "label" : $translate.instant('hearthstone.search.gameType.game') },
+			{ "value" : "game-replay", "label" : $translate.instant('hearthstone.search.gameType.game') },
 			{ "value" : "arena-draft", "label" : $translate.instant('hearthstone.search.gameType.draft') }
 		]
 

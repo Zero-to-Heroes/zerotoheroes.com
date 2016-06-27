@@ -442,4 +442,13 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			comment.highlightNoticeableVotes(sport, userMap, profileMap);
 		}
 	}
+
+	public void setVisibility(String visibility) {
+		if (StringUtils.isNullOrEmpty(visibility)) {
+			this.visibility = "public";
+		}
+		else {
+			this.visibility = visibility;
+		}
+	}
 }

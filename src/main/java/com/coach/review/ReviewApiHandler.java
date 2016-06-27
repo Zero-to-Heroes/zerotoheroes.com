@@ -115,7 +115,7 @@ public class ReviewApiHandler {
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(@RequestBody ReviewSearchCriteria criteria) {
-//		log.debug("Retrieving all reviews with criteria " + criteria);
+		// log.debug("Retrieving all reviews with criteria " + criteria);
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
@@ -132,17 +132,16 @@ public class ReviewApiHandler {
 		// during normal site usage
 		if (sportObj == null) { return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null,
 				HttpStatus.BAD_REQUEST); }
-		
+
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// log.info("authorities are " + authorities);
-		
+
 		// If user is anonymous, can only show public videos
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
-			if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) {
-				return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null,
-						HttpStatus.FORBIDDEN);
-			}
+			if (criteria.getOwnVideos() != null
+					&& criteria.getOwnVideos()) { return new ResponseEntity<ListReviewResponse>(
+							(ListReviewResponse) null, HttpStatus.FORBIDDEN); }
 			criteria.setVisibility("public");
 		}
 

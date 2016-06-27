@@ -121,6 +121,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("NZoth Paladin"));
 		hearthstone.add(new Tag("Divine Shield Paladin"));
 		hearthstone.add(new Tag("Palamurloc"));
+		hearthstone.add(new Tag("Midrange Paladin"));
 
 		hearthstone.add(new Tag("Mech Mage"));
 		hearthstone.add(new Tag("Tempo Mage"));
@@ -177,6 +178,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("Mirror match"));
 		hearthstone.add(new Tag("RNG"));
 		hearthstone.add(new Tag("Entertainment"));
+		hearthstone.add(new Tag("Basic"));
+		hearthstone.add(new Tag("Beginner"));
 		tags.put(HearthStone, hearthstone);
 
 		// Tags for Heroes of the Storm

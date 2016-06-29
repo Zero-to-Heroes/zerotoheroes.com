@@ -23,6 +23,7 @@ import com.coach.review.ReviewRepository;
 import info.hearthsim.hsreplay.ReplaySerializer;
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.core.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
 
 @Slf4j
 @Component
@@ -51,13 +52,12 @@ public class HSReplay implements ReplayPlugin {
 		String xml = null;
 		if (review.getTemporaryReplay() != null) {
 			log.debug("temporary replay");
-			if ("text/plain".equals(review.getFileType())) {
-				xml = new ReplaySerializer().xmlFromLogs(review.getTemporaryReplay());
-
-			}
 			// Simply store the temporary XML to the final destination
-			else if ("text/xml".equals(review.getFileType())) {
+			if ("text/xml".equals(review.getFileType())) {
 				xml = review.getTemporaryReplay();
+			}
+			else {
+				xml = new ReplaySerializer().xmlFromLogs(review.getTemporaryReplay());
 			}
 		}
 		else if ("hdtreplay".equals(review.getFileType())) {
@@ -111,7 +111,7 @@ public class HSReplay implements ReplayPlugin {
 		log.debug("XML created");
 
 		// Store the new file to S3 and update the review with the correct key
-		review.setKey(review.getTemporaryKey() == null ? UUID.randomUUID().toString() : review.getTemporaryKey());
+		review.setKey(UUID.randomUUID().toString());
 		review.setReplay(String.valueOf(true));
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
@@ -144,7 +144,7 @@ public class HSReplay implements ReplayPlugin {
 		return null;
 	}
 
-	public List<String> extractGames(String key, String fileType) throws IOException {
+	public List<String> extractGames(String key, String fileType) throws IOException, ZipException {
 		log.debug("Extracting games with " + key + ", " + fileType);
 		List<String> games = new ArrayList<>();
 
@@ -177,6 +177,24 @@ public class HSReplay implements ReplayPlugin {
 				// log.debug(currentGame.toString());
 				games.add(currentGame.toString());
 			}
+		}
+		else if ("hdtreplay".equals(fileType)) {
+			File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
+			s3utils.readFromS3ToFile(key, tempFile);
+
+			// Unzipping
+			ZipFile zipFile = new ZipFile(tempFile);
+			String tempDir = System.getProperty("java.io.tmpdir");
+			String destination = tempDir + "/" + new Date().getTime() + "-" + key;
+			zipFile.extractFile("output_log.txt", destination);
+
+			// Retrieving the unzipped file
+			String logFile = readFile(destination + "/output_log.txt");
+			games.add(logFile);
+
+			// Delete temp file
+			tempFile.delete();
+			FileUtils.deleteDirectory(new File(destination));
 		}
 
 		return games;

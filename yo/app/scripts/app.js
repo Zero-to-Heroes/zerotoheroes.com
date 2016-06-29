@@ -232,7 +232,7 @@ app.config(['$analyticsProvider', function ($analyticsProvider) {
 
 app.config(function (tagsInputConfigProvider) {
 	tagsInputConfigProvider.setDefaults('tagsInput', { placeholder: '' });
-	tagsInputConfigProvider.setActiveInterpolation('tagsInput', { placeholder: true });
+	tagsInputConfigProvider.setActiveInterpolation('tagsInput', { placeholder: true, minTags: true, ngRequired: true });
 });
 
 app.config(['$translateProvider', '$windowProvider', function($translateProvider, $windowProvider) {

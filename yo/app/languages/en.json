@@ -394,10 +394,12 @@
 				"private": "Private",
 				"restricted": "Restricted",
 				"public": "Public",
+				"skip": "Skip",
 				"tooltip": "Visibility",
 				"privateTooltip": "Private - doesn't show up in search result, and only you can see this review",
 				"restrictedTooltip": "Restricted - doesn't show up in search result, and anyone with the link can see this review",
-				"publicTooltip": "Public - shows up in search, anyone can see this review"
+				"publicTooltip": "Public - shows up in search, anyone can see this review",
+				"skipTooltip": "Skip - don't upload the game"
 			},
 			"sequence": {
 				"headline": "Adding a side-by-side comparison",
@@ -479,9 +481,9 @@
 				},
 				"pageTitle": "Upload a replay",
 				"headline": "Upload a replay",
-				"chooseFileButton": "Choose your replay",
+				"chooseFileButton": "Add a game",
 				"dropZone": "or drop it here",
-				"clearCurrentFile": "Clear current replay",
+				"clearCurrentFile": "Clear all games",
 				"selectedFile": "You're about to upload {{fileName}}. It needs to be processed before being a usable replay, and you'll be able to navigate in it at the next step",
 				"invalidFormatMessage": "We only support log files (.txt), hsreplay files (.xml) or Hearthstone Deck Tracker replay files (.hdtreplay) for now. If you wish to use another file format, please let us know on the forums",
 				"corruptedFile": "We couldn't detect the heroes from your replay - it looks like it is corrupted. Please make sure you have the latest versions of your tracker. Otherwise, let us know on the <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
@@ -492,9 +494,12 @@
 				"transferCompleted": "Transfer completed. You can now publish your replay",
 				"multi": {
 					"dontCloseWindowMessage": "Your replay files are being uploaded to our servers. The game information will be automatically updated once the files have been converted into usable replays. Please don't close the window or you'll have to start all over again :(",
-					"finalizeVideoMessage": "Processing your file. It can take up to one minute, maybe more if you have many games. Then the info will be automatically filled for you",
+					"finalizeVideoMessage": "Processing your files. It can take up to one minute, maybe more if you have many games. Then the info will be automatically filled for you",
 					"transferCompleted": "Transfer completed. You can now publish your replays",
-					"genericTitle" : "Replay game #{{index}}"
+					"genericTitle" : "Replay game #{{index}}",
+					"filesAdded": "You're about to upload {{games}} games in {{files}} files:",
+					"removeFileTooltip": "Remove this file",
+					"canUploadMore": "You can add more files by dropping them here, or remove them by clicking on the delete icon. "
 				}
 			},
 			"fromurl": {

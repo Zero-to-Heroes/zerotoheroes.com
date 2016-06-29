@@ -8,24 +8,25 @@
 			<span>{{ 'global.upload.replay.chooseFileButton' | translate }}</span> 
 			<input type="file" name="file" class="upload-file-button" nv-file-select uploader="uploader" file multiple></input>
 		</span>
-	    <span class="btn btn-default btn-file" ng-show="files.length > 0" ng-click="clearFiles()">
+	    <span class="btn btn-default btn-file clear-btn" ng-show="files.length > 0" ng-click="clearFiles()">
 	    	{{ 'global.upload.replay.clearCurrentFile' | translate }}
 	    </span>
 	</div>
 
 	<div class="well drop-zone" nv-file-over uploader="uploader">
-		<span>{{ 'global.upload.replay.dropZone' | translate }}</span>
+		<span ng-hide="files.length > 0">{{ 'global.upload.replay.dropZone' | translate }}</span>
+		<div class="file-list" ng-show="files.length > 0">
+			<span>{{ 'global.upload.replay.multi.filesAdded' | translate: translationData }}</span>
+			<ul>
+				<li ng-repeat="file in files">
+					<span>{{file._file.name}}</span>
+					<a title="{{ 'global.upload.replay.multi.removeFileTooltip' | translate }}" ng-click="removeFile(file)">X</a>
+				</li>
+			</ul>
+			<span>{{ 'global.upload.replay.multi.canUploadMore' | translate }}</span>
+	    </div>
     </div>
-    <div class="well" ng-show="files.length > 0">
-		<span>{{ 'global.upload.replay.multi.filesAdded' | translate }}</span>
-		<span>{{scope.numberOfGames + ' in ' + $scope.files.length + ' files'}}
-		<ul>
-			<li ng-repeat="file in files">
-				<span>{{file.name}}</span>
-				<a>X</a>
-			</li>
-		</ul>
-    </div>
+    
 
     <!-- The error message if an invalid file format is added. We can't show it during the drag and drop, because we don't know what's the file type being dragged -->
     <div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">

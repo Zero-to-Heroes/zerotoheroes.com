@@ -16,28 +16,31 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 			service.callbacks[name] = cb
 		}
 
-		service.upload = function(file, fileKey, videoInfo) {
+		service.upload = function(files, fileKeys, videoInfo) {
 			service.videoInfo = videoInfo
-			service.videoInfo.file = file
-			service.videoInfo.fileKey = fileKey
-			service.videoInfo.fileKeys = [fileKey]
+			// service.videoInfo.file = file
+			// service.videoInfo.fileKey = fileKey
+			service.videoInfo.fileKeys = fileKeys
 			service.videoInfo.fileTypes = []
-			if (service.videoInfo.files) {
-				service.videoInfo.files.forEach(function(file) {
-					var type = file.type
-					if (!type) {
-						var indexOfLastDot = file.name.lastIndexOf('.')
-						var extension = file.name.slice(indexOfLastDot + 1)
-						if (['log', 'txt'].indexOf(extension) > -1)
-							type = 'text/plain'
-						else if (['xml'].indexOf(extension) > -1)
-							type = 'text/xml'
-					}
-					service.videoInfo.fileTypes.push(type)
-				})
-			}
+			
+			files.forEach(function(file) {
+				var type = file.type
+				if (!type) {
+					var indexOfLastDot = file.name.lastIndexOf('.')
+					var extension = file.name.slice(indexOfLastDot + 1)
+					if (['log', 'txt'].indexOf(extension) > -1)
+						type = 'text/plain'
+					else if (['xml'].indexOf(extension) > -1)
+						type = 'text/xml'
+					else if (['hdtreplay'].indexOf(extension) > -1)
+						type = 'hdtreplay'
+				}
+				service.videoInfo.fileTypes.push(type)
+				file.fileType = type
+			})
+			
 
-			$log.debug('starting upload', file, fileKey, videoInfo, service)
+			$log.debug('starting upload', files, fileKeys, videoInfo, service)
 
 			$log.debug('Setting S3 config')
 			$analytics.eventTrack('upload.start', {
@@ -50,35 +53,55 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 			AWS.config.httpOptions.timeout = 3600 * 1000
 
 			var upload = new AWS.S3({ params: { Bucket: creds.bucket } })
-			var params = { Key: fileKey, ContentType: file.type, Body: file }
 
-			upload.upload(params, function(err, data) {
-				// There Was An Error With Your S3 Config
-				if (err) {
-					$log.error('An error during upload', err)
-				}
-				else {
-					// Success!
-					$log.debug('upload done!')
-					videoInfo.upload.done = true
-					if (service.callbacks) {
-						for (var cb in service.callbacks) {
-							if (service.callbacks.hasOwnProperty(cb)) {
-								service.callbacks[cb]()
+			files.forEach(function(file, index) {
+
+				var params = { Key: fileKeys[index], ContentType: file.type, Body: file }
+				upload.upload(params, function(err, data) {
+					// There Was An Error With Your S3 Config
+					if (err) {
+						$log.error('An error during upload', err)
+					}
+					else {
+						// Success!
+						// $log.debug('upload done!')
+						videoInfo.upload.done = true
+						file.uploaded = true
+						if (service.callbacks) {
+							for (var cb in service.callbacks) {
+								if (service.callbacks.hasOwnProperty(cb)) {
+									service.callbacks[cb](file)
+								}
 							}
 						}
 					}
-				}
-			})
-			.on('httpUploadProgress', function(progress) {
-				service.videoInfo.upload.progress = progress.loaded / progress.total * 100
-				if (service.callbacks) {
-					for (var cb in service.callbacks) {
-						if (service.callbacks.hasOwnProperty(cb)) {
-							service.callbacks[cb]()
+				})
+				.on('httpUploadProgress', function(progress) {
+					// service.videoInfo.upload.progressLoaded += progress.loaded
+					file.size = progress.total
+					file.current = progress.loaded
+					var totalLoaded = 0
+					var totalProgress = 0
+					files.forEach(function(temp) {
+						totalLoaded += temp.current
+						totalProgress += temp.size
+					})
+					service.videoInfo.upload.progress = totalLoaded / totalProgress * 100
+					// $log.debug('uploading', service.videoInfo.upload.progress)
+					if (service.callbacks) {
+						// $log.debug('calling service callbacks', service.callbacks)
+						for (var cb in service.callbacks) {
+							// $log.debug('    calling?', cb)
+							if (service.callbacks.hasOwnProperty(cb)) {
+								// $log.debug('            yes calling', cb)
+								try {
+									service.callbacks[cb](file)
+								}
+								catch(e) {}
+							}
 						}
 					}
-				}
+				})
 			})
 		}
 

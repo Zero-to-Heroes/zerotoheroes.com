@@ -111,8 +111,9 @@
   color: #BDB5B5;
 }
 .hearthstone .alert-warning {
-  background: url("images/button-bg-left.png") 0 / contain no-repeat, url("images/button-bg-right.png") right / contain no-repeat, url("images/button-bg-center.png") 0 / contain repeat-x;
   border: none;
+  background: #f9f1e1;
+  padding-top: 20px;
 }
 .hearthstone .alert-info {
   background-color: rgba(173, 99, 57, 0.55);
@@ -1290,6 +1291,7 @@
   margin-top: 4px;
   margin-left: 12px;
   margin-right: 12px;
+  width: 100%;
 }
 .hearthstone .page-choices .choice .watchlearn img {
   content: url(images/new/picto-watch-and-learn.png);

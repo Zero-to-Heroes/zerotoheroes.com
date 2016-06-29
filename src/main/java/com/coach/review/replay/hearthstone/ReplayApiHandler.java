@@ -1,6 +1,5 @@
 package com.coach.review.replay.hearthstone;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class ReplayApiHandler {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<ListReviewResponse> init(@RequestBody ReplayFilesRequest request)
-			throws IOException {
+			throws Exception {
 
 		log.debug("Handling replay file " + request);
 		List<String> originalFileKeys = request.getKeys();

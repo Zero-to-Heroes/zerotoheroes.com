@@ -22,6 +22,18 @@
     padding: 10px;
     max-width: 830px;
     display: flex;
+    position: relative;
+}
+
+.multi-upload .review.skip:after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);  
+    pointer-events: none;
 }
 
 .multi-upload .review-container {

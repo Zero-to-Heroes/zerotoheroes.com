@@ -99,3 +99,18 @@
 .video-review-upload-video .videogular {
 	margin-bottom: 50px; 
 }
+
+
+.video-upload .file-list {
+	text-align: left;
+	margin-left: 50px;
+}
+
+.video-upload .file-list span:last-child {
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.video-upload .clear-btn {
+	margin-left: 20px;
+}

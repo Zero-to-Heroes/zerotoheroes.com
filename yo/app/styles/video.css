@@ -2,11 +2,14 @@
 	padding-top: 10px;
 }
 
+.button-container {
+	text-align: left;
+}
+
 .btn-file {
-		position: relative;
-		overflow: hidden;
-		display: block;
-		margin-bottom: 20px;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
 }
 
 .btn-file input[type=file] {

@@ -22,13 +22,15 @@
   	</div>
 
 	<ul class="multi-upload">
-		<li ng-repeat="review in reviews" class="review">
+		<li ng-repeat="review in reviews" class="review {{review.visibility}}">
 			<div class="review-container">
-				<div class="title-container">
-					<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="transcoding">
+				<!-- {{review.id}} -->
+				<div class="title-container form-group" show-errors="{ showSuccess: true }">
+					<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="review.visibility != 'skip' ? true : false" ng-readonly="transcoding">
 				</div>
 				<participants-details review="review"></participants-details>
-				<review-visibility review="review"></review-visibility>
+				<review-visibility review="review" multi-upload="true"></review-visibility>
+				<!-- {{review}} -->
 			</div>
 		</li>
 	</ul>

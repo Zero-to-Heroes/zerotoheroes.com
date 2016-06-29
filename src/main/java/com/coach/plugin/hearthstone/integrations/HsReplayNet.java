@@ -64,7 +64,7 @@ public class HsReplayNet implements IntegrationPlugin {
 		log.debug("strResult " + stringXml);
 
 		// Then upload the file
-		final String guid = UUID.randomUUID().toString();
+		final String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/replay");
 		ProgressListener listener = new ProgressListener() {
 
 			@Override
@@ -72,7 +72,7 @@ public class HsReplayNet implements IntegrationPlugin {
 				log.debug("progress2 " + progressEvent.getEventType());
 				if (progressEvent.getEventType().equals(ProgressEventType.TRANSFER_COMPLETED_EVENT)) {
 					// And finally update the review with all the necessary data
-					review.setKey(guid);
+					review.setKey(key);
 					review.setFileType("json");
 					review.setMediaType("game-replay");
 					review.setReviewType("game-replay");
@@ -82,7 +82,7 @@ public class HsReplayNet implements IntegrationPlugin {
 				}
 			}
 		};
-		s3utils.putToS3(stringXml, guid, "text/xml", listener);
+		s3utils.putToS3(stringXml, key, "text/xml", listener);
 
 	}
 

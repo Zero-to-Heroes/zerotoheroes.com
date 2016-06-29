@@ -1,6 +1,7 @@
 package com.coach.plugin.hearthstone;
 
 import java.util.Map;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -58,7 +59,8 @@ public class HSArenaDraft implements ReplayPlugin {
 		}
 		// Store the new file to S3 and update the review with the correct
 		// key
-		review.setKey(review.getTemporaryKey());
+		String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/draft");
+		review.setKey(key);
 		s3utils.putToS3(replayJson, review.getKey(), "application/json");
 
 		log.debug("Review updated with proper key " + review);

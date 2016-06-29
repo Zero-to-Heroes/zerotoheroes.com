@@ -1,5 +1,5 @@
 <div class="review-visibility" title="{{ 'global.review.visibility.tooltip' | translate }}">
-	<button type="button" class="btn btn-default btn-select form-control" data-trigger="click" ng-model="review.visibility" data-html="1" bs-options="option.value as option.label for option in visibilityOptions" placeholder="0" bs-select ng-required="true">
+	<button type="button" class="btn btn-default btn-select form-control" data-trigger="click" ng-model="review.visibility" data-html="1" bs-options="option.value as option.label for option in visibilityOptions" placeholder="0" bs-select ng-required="true" template="templates/review/visibilityTemplate.html">
 	  	<span>Action</span>
 	</button>
 </div>

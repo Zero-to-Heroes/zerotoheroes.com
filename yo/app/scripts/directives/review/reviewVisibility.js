@@ -6,16 +6,21 @@ app.directive('reviewVisibility', ['$log', '$translate',
 			replace: true,
 			templateUrl: 'templates/review/reviewVisibility.html',
 			scope: {
-				review: '='
+				review: '=',
+				multiUpload: '='
 			},
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
 				$scope.visibilityOptions = [
-					{ "value" : "private", "label" : $translate.instant('global.review.visibility.private') },
+					{ "value" : "private", "label" : $translate.instant('global.review.visibility.private')  },
 					{ "value" : "restricted", "label" : $translate.instant('global.review.visibility.restricted') },
 					{ "value" : "public", "label" : $translate.instant('global.review.visibility.public') }
 				]
+
+				if ($scope.multiUpload) {
+					$scope.visibilityOptions.push({ "value" : "skip", "label" : $translate.instant('global.review.visibility.skip') })
+				}
 
 				$scope.$watch('review', function(newVal, oldVal) {
 					if (newVal)

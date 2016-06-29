@@ -2,6 +2,7 @@ package com.coach.review;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -450,5 +451,15 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		else {
 			this.visibility = visibility;
 		}
+	}
+	public String buildKey(String name, String type) {
+		Calendar calendar = Calendar.getInstance();
+		String prefix = "";
+		if (!StringUtils.isNullOrEmpty(type)) {
+			prefix = type + "/";
+		}
+		String newKey = prefix + calendar.get(Calendar.YEAR) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/"
+				+ calendar.get(Calendar.DATE) + "/" + name;
+		return newKey;
 	}
 }

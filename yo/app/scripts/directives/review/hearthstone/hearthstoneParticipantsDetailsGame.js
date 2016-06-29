@@ -47,6 +47,10 @@ app.directive('hearthstoneParticipantsDetailsGame', ['$log', 'SportsConfig', 'Ap
 					}
 				})
 
+				$scope.getMinTags = function(review) {
+					return review.visibility != 'skip' ? 1 : 0
+				}
+
 				$scope.autocompleteTag = function($query) {
 					if ($scope.review.participantDetails && $scope.review.participantDetails.skillLevel && $scope.review.participantDetails.skillLevel.length > 0)
 						return []

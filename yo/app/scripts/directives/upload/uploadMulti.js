@@ -20,6 +20,8 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				$scope.User = User
 
 				$scope.reviews = []
+				$scope.currentIndex = 0
+
 				$scope.$watch('active', function(newVal) {
 					if (newVal)
 						$scope.initPage()
@@ -43,19 +45,30 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 					MediaUploader.addCallback('video-upload-complete', $scope.onFileUploaded)
 				}
 
-				$scope.onFileUploaded = function() {
-					if ($scope.uploader.videoInfo.upload.done) {
-						$log.debug('upload done, splitting files', MediaUploader, MediaUploader.videoInfo.fileKeys)
+				$scope.onFileUploaded = function(file) {
+					if (file.uploaded) {
+						$log.debug('upload done, splitting files', file, MediaUploader, MediaUploader.videoInfo.fileKeys)
 
 						// Call the server with the file key(s) to get n processed replay files
-						Api.Replays.save({keys: MediaUploader.videoInfo.fileKeys, sport: $scope.sport, fileTypes:  MediaUploader.videoInfo.fileTypes}, function(data) {
+						Api.Replays.save({keys: [file.fileKey], sport: $scope.sport, fileTypes: [file.fileType]}, function(data) {
 							$log.debug('saved replays', data, $scope.reviews)
 							var replays = data.reviews
-							$scope.reviews.forEach(function(review, index) {
-								review.id = review.id || replays[index].id
-								// review.title = review.title || replays[index].title || $translate.instant('global.upload.replay.multi.genericTitle', {index: index})
+
+							replays.forEach(function(replay) {
+								$log.debug('updating review', $scope.currentIndex, $scope.reviews, replay)
+								var review = $scope.reviews[$scope.currentIndex++]
+								review.id = review.id || replay.id
 							})
-							$scope.retrieveCompletionStatus()
+							
+							// $scope.reviews.forEach(function(review, index) {
+							// 	review.id = review.id || replays[index].id
+							// 	// review.title = review.title || replays[index].title || $translate.instant('global.upload.replay.multi.genericTitle', {index: index})
+							// })
+							// Only proceed if all reviews have been handled
+							if (_.every($scope.reviews, 'id')) {
+								$log.debug('all upload completed, lets go')
+								$scope.retrieveCompletionStatus()
+							}
 						})
 					}
 				}
@@ -63,7 +76,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				$scope.retrieveCompletionStatus = function() {
 					var reviewIds = []
 					$scope.reviews.forEach(function(review) {
-						reviewIds.push(review.id)
+						reviewIds.push(review.id)	
 					})
 					Api.ReviewsAll.get({reviewIds: reviewIds}, function(data) {
 						$log.debug('retrieved reviews', data)
@@ -88,7 +101,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 							var currentReview = $scope.reviews[index]
 
 							review.author = currentReview.author || review.author
-							review.visibility = review.visibility || currentReview.visibility
+							review.visibility = currentReview.visibility || review.visibility
 							$scope.reviews[index] = review
 
 							var replayUrl = ENV.videoStorageUrl + review.key
@@ -100,18 +113,17 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 								var playerInfo = HsReplayParser.getPlayerInfo(data)
 
 								$log.debug('getting player info', playerInfo, review)
-								review.participantDetails = review.participantDetails || {}
-
-								review.participantDetails.playerName = playerInfo.player.name
-								review.participantDetails.playerCategory = playerInfo.player.class
-								review.participantDetails.opponentName = playerInfo.opponent.name
-								review.participantDetails.opponentCategory = playerInfo.opponent.class
+								review.participantDetails = {
+									playerName: playerInfo.player.name,
+									playerCategory: playerInfo.player.class,
+									opponentName: playerInfo.opponent.name,
+									opponentCategory: playerInfo.opponent.class
+								}
 
 								review.participantDetails.populated = true
 
-								var defaultTitle = moment().format('YYYY-MM-DD') + ' - ' + $translate.instant('global.upload.replay.multi.genericTitle', {index: index + 1}) + ' - ' + review.participantDetails.playerName + '(' + review.participantDetails.playerCategory + ') vs ' + 
-									review.participantDetails.opponentName + '(' + review.participantDetails.opponentCategory + ')'
-								review.title = currentReview.title || review.title || defaultTitle
+								var defaultTitle = moment().format('YYYY-MM-DD') + ' - ' + $translate.instant('global.upload.replay.multi.genericTitle', {index: index + 1}) + ' - ' + review.participantDetails.playerName + '(' + review.participantDetails.playerCategory + ') vs ' + review.participantDetails.opponentName + '(' + review.participantDetails.opponentCategory + ')'
+								review.title = defaultTitle
 
 								review.temporaryReplay = undefined
 								review.sport = undefined
@@ -233,10 +245,16 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 					$scope.reviews.forEach(function(review) {
 						review.author = $scope.author
 					})
-					Api.ReviewsAll.save({reviews: $scope.reviews}, 
+					var reviewsToUpload = []
+					$scope.reviews.forEach(function(review) {
+						if (review.visibility != 'skip') {
+							reviewsToUpload.push(review)
+						}
+					})
+					Api.ReviewsAll.save({reviews: reviewsToUpload}, 
 						function(data) {
 							var url = '/s/' + $routeParams['sport'] + '/myVideos'
-							$log.debug('all good, going to', url)
+							// $log.debug('all good, going to', url)
 							$location.path(url)
 						}
 					)

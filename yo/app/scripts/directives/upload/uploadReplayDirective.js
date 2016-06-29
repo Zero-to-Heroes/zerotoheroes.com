@@ -18,6 +18,13 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 
 				$scope.sportsConfig = SportsConfig
 
+				$scope.clearFiles = function() {
+					$scope.files = []
+					$scope.numberOfGames = 0
+					if ($scope.uploader) $scope.uploader.clearQueue()
+				}
+				$scope.clearFiles()
+
 				// We use it for nice out-of-the-box file features
 				$scope.buildUploader = function(sportsConfig) {
 					var supportedFileTypes = ['text/xml', 'text/plain', 'arenatracker']
@@ -44,9 +51,19 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        }
 				$scope.uploader = $scope.buildUploader(SportsConfig)
 
-				$scope.clearFile = function() {
-					$scope.file = null
+				$scope.removeFile = function(file) {
+					var fileIndex = $scope.files.indexOf(file)
+					$log.debug('removing file', file, fileIndex)
+					if (fileIndex > -1) {
+						$scope.files.splice(fileIndex, 1)
+						$scope.uploader.removeFromQueue(fileIndex)
+						$scope.numberOfGames -= file.numberOfGames
+						$scope.updateTranslationData()
+					}
 				}
+
+				
+
 
 				//===============
 				// File Uploader
@@ -67,20 +84,36 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        $scope.uploader.onAfterAddingFile = function(fileItem) {
 		            console.info('onAfterAddingFile', fileItem)
 		            $scope.hasUnsupportedFormatError = false
-		            $scope.file = fileItem._file
-		            $log.debug('added file', $scope.file)
+		            $scope.files.push(fileItem)
+		            $log.debug('added file', fileItem._file, $scope.files)
 
 		            var r = new FileReader()
 				    r.onload = function(e) { 
 						var contents = e.target.result
-				        $scope.numberOfGames = (contents.match(gameRegex) || []).length
+						var replayGames = (contents.match(gameRegex) || []).length || 1
+				        $scope.numberOfGames += replayGames
 				      	console.log('numberOfGames', $scope.numberOfGames)
+				      	fileItem.numberOfGames = replayGames
+				      	$scope.$apply()
 				    }
-				    r.readAsText($scope.file)
+				    r.readAsText(fileItem._file)
 		            // Increase number of files
 		            // $scope.processNumberItems(fileItem)
 		            // var objectURL = window.URL.createObjectURL($scope.file)
+		            $scope.updateTranslationData()
 		        }
+
+		        $scope.updateTranslationData = function() {
+		        	$scope.translationData = {
+		        		games: $scope.numberOfGames, 
+		        		files: $scope.files.length
+		        	}
+		        	// $log.debug('uploaded translation data', $scope.translationData, $scope.files, $scope.uploader.queue)
+		        }
+		        $scope.$watch('numberOfGames', function(newVal, oldVal) {
+		        	// $log.debug('change in numberOfGames', newVal, oldVal)
+		        	if (newVal != oldVal) $scope.updateTranslationData()
+		        })
 
 
 				//===============
@@ -88,16 +121,25 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 				//===============
 				$scope.initUpload = function() {
 					// Start the upload
-					var fileKey = ENV.folder + '/' + $scope.guid() + '-' + $scope.file.name
+					// var fileKey = ENV.folder + '/' + $scope.guid() + '-' + $scope.file.name
 
 					// And signal that our job here is done - let's give the control to the next step
 					$scope.videoInfo.upload = {}
 					$scope.videoInfo.upload.ongoing = true
-					$scope.videoInfo.files = [$scope.file]
+					var fileContents = []
+					var fileKeys = []
+					$scope.files.forEach(function(file) {
+						fileContents.push(file._file)
+						var fileKey = 'hearthstone/replay/' + moment().get('year') + '/' + (parseInt(moment().get('month')) + 1) + '/' + moment().get('date') + '/' + S(file._file.name).replaceAll(' ', '-').s
+						fileKeys.push(fileKey)
+						file._file.fileKey = fileKey
+						$log.debug('fileKey is ', file, fileKey)
+					})
+					$scope.videoInfo.files = fileContents
 					$scope.videoInfo.numberOfReviews = $scope.numberOfGames
 					$log.debug('init upload', $scope.videoInfo)
 
-					MediaUploader.upload($scope.file, fileKey, $scope.videoInfo)
+					MediaUploader.upload(fileContents, fileKeys, $scope.videoInfo)
 				}
 
 				$scope.guid = function() {

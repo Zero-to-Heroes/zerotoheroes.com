@@ -44,13 +44,13 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						$scope.retrieveCompletionStatus()
 					}
 					else if (MediaUploader.videoInfo) {
-						var file = MediaUploader.videoInfo.file
+						var file = MediaUploader.videoInfo.files[0]
 
 						var indexOfLastSpace = file.name.lastIndexOf(' ')
 						var indexOfLastDot = file.name.lastIndexOf('.')
 						$scope.review.fileType = file.type || file.name.slice(indexOfLastDot + 1)
 		
-						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKey
+						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKeys[0]
 
 						MediaUploader.addCallback('video-upload-complete', $scope.videoUploadCallback)
 					}

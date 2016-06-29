@@ -36,7 +36,7 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 					$scope.API.setVolume(1)
 
 					if (MediaUploader.videoInfo) {
-						var file = MediaUploader.videoInfo.file
+						var file = MediaUploader.videoInfo.files[0]
 						var objectURL = window.URL.createObjectURL(file)
 			            $scope.sources =  [
 							{src: $sce.trustAsResourceUrl(objectURL), type: file.type}
@@ -50,7 +50,7 @@ app.directive('uploadVideoReview', ['MediaUploader', '$log', 'SportsConfig', '$s
 						// 	$scope.review.title = file.name
 
 						$scope.review.videoFramerateRatio = MediaUploader.videoInfo.videoFramerateRatio
-						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKey
+						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKeys[0]
 
 						$timeout(function() {
 							$scope.playerControls.setPlayback($scope.review.videoFramerateRatio)

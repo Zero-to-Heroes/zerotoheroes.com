@@ -71,7 +71,7 @@ public class HearthArena implements IntegrationPlugin {
 		log.debug("strResult " + strResult);
 
 		// Then upload the file
-		final String guid = UUID.randomUUID().toString();
+		final String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/draft");
 		ProgressListener listener = new ProgressListener() {
 
 			@Override
@@ -79,7 +79,7 @@ public class HearthArena implements IntegrationPlugin {
 				log.debug("progress2 " + progressEvent.getEventType());
 				if (progressEvent.getEventType().equals(ProgressEventType.TRANSFER_COMPLETED_EVENT)) {
 					// And finally update the review with all the necessary data
-					review.setKey(guid);
+					review.setKey(key);
 					review.setFileType("json");
 					review.setMediaType("arena-draft");
 					review.setReviewType("arena-draft");
@@ -89,7 +89,7 @@ public class HearthArena implements IntegrationPlugin {
 				}
 			}
 		};
-		s3utils.putToS3(strResult, guid, "text/json", listener);
+		s3utils.putToS3(strResult, key, "text/json", listener);
 
 	}
 

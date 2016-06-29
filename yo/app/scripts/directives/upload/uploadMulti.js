@@ -122,8 +122,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 
 								review.participantDetails.populated = true
 
-								var defaultTitle = moment().format('YYYY-MM-DD') + ' - ' + $translate.instant('global.upload.replay.multi.genericTitle', {index: index + 1}) + ' - ' + review.participantDetails.playerName + '(' + review.participantDetails.playerCategory + ') vs ' + 
-									review.participantDetails.opponentName + '(' + review.participantDetails.opponentCategory + ')'
+								var defaultTitle = moment().format('YYYY-MM-DD') + ' - ' + $translate.instant('global.upload.replay.multi.genericTitle', {index: index + 1}) + ' - ' + review.participantDetails.playerName + '(' + review.participantDetails.playerCategory + ') vs ' + review.participantDetails.opponentName + '(' + review.participantDetails.opponentCategory + ')'
 								review.title = defaultTitle
 
 								review.temporaryReplay = undefined

@@ -2,8 +2,6 @@ package com.coach.review.video.transcoding;
 
 import java.util.UUID;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -20,6 +18,8 @@ import com.amazonaws.services.elastictranscoder.model.JobInput;
 import com.amazonaws.services.elastictranscoder.model.TimeSpan;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
@@ -69,13 +69,14 @@ public class Transcoder {
 		}
 
 		UUID randomUUID = UUID.randomUUID();
-		String keyName = VIDEO_FOLDER_NAME + SUFFIX + randomUUID + ".mp4";
+		String keyName = review.buildKey(randomUUID + ".mp4", review.getSport().getKey().toLowerCase() + "/video");
 		log.debug("Assigning final key: " + keyName);
 		review.setKey(keyName);
 		review.setFileType("video/mp4");
-		String thumbnailKey = THUMBNAIL_FOLDER_NAME + SUFFIX + randomUUID + "_";
-		String thumbnailName = thumbnailKey + "00001.png";
-		review.setThumbnail(thumbnailName);
+		// String thumbnailKey = THUMBNAIL_FOLDER_NAME + SUFFIX + randomUUID +
+		// "_";
+		// String thumbnailName = thumbnailKey + "00001.png";
+		// review.setThumbnail(thumbnailName);
 		mongoTemplate.save(review);
 		log.debug("Updated review " + review);
 
@@ -85,8 +86,7 @@ public class Transcoder {
 		log.debug("Detected input properties are " + input.getDetectedProperties());
 
 		// Output configuration
-		CreateJobOutput output = new CreateJobOutput().withKey(keyName).withPresetId(GENERIC_480p_16_9_PRESET_ID)
-				.withThumbnailPattern(thumbnailKey + "{count}");
+		CreateJobOutput output = new CreateJobOutput().withKey(keyName).withPresetId(GENERIC_480p_16_9_PRESET_ID);
 
 		// Hotfix for unsupported formats that you can't play when uploading
 		log.debug("Review ending is " + review.getEnding());

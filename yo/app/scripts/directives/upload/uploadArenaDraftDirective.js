@@ -74,13 +74,15 @@ app.directive('uploadArenaDraftDirective', ['FileUploader', 'MediaUploader', '$l
 				//===============
 				$scope.initUpload = function() {
 					// Start the upload
-					var fileKey = ENV.folder + '/' + $scope.guid() + '-' + $scope.file.name
+					var fileKey = 'hearthstone/draft/' + moment().get('year') + '/' + (parseInt(moment().get('month')) + 1) + '/' + moment().get('date') + '/' + S($scope.file.name).slugify().s
 
 					// And signal that our job here is done - let's give the control to the next step
 					$scope.videoInfo.upload = {}
 					$scope.videoInfo.upload.ongoing = true
+					$scope.videoInfo.files = [$scope.file]
+					$scope.videoInfo.numberOfReviews = 1
 
-					MediaUploader.upload($scope.file, fileKey, $scope.videoInfo)
+					MediaUploader.upload([$scope.file], [fileKey], $scope.videoInfo)
 				}
 
 				$scope.guid = function() {

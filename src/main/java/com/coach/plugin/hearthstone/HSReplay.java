@@ -111,7 +111,9 @@ public class HSReplay implements ReplayPlugin {
 		log.debug("XML created");
 
 		// Store the new file to S3 and update the review with the correct key
-		review.setKey(UUID.randomUUID().toString());
+		String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/replay");
+		log.debug("created key " + key);
+		review.setKey(key);
 		review.setReplay(String.valueOf(true));
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 

@@ -444,10 +444,14 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		}
 	}
 
-	public void setKey(String key) {
+	public String buildKey(String name, String type) {
 		Calendar calendar = Calendar.getInstance();
-		String newKey = calendar.get(Calendar.YEAR) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/"
-				+ calendar.get(Calendar.DATE) + "/" + key;
-		this.key = newKey;
+		String prefix = "";
+		if (!StringUtils.isNullOrEmpty(type)) {
+			prefix = type + "/";
+		}
+		String newKey = prefix + calendar.get(Calendar.YEAR) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/"
+				+ calendar.get(Calendar.DATE) + "/" + name;
+		return newKey;
 	}
 }

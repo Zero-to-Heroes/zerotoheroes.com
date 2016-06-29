@@ -130,7 +130,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 					var fileKeys = []
 					$scope.files.forEach(function(file) {
 						fileContents.push(file._file)
-						var fileKey = ENV.folder + '/' + moment().get('year') + '/' + (parseInt(moment().get('month')) + 1) + '/' + moment().get('date') + '/' + S(file._file.name).slugify().s
+						var fileKey = 'hearthstone/replay/' + moment().get('year') + '/' + (parseInt(moment().get('month')) + 1) + '/' + moment().get('date') + '/' + S(file._file.name).replaceAll(' ', '-').s
 						fileKeys.push(fileKey)
 						file._file.fileKey = fileKey
 						$log.debug('fileKey is ', file, fileKey)

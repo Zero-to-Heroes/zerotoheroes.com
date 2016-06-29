@@ -348,10 +348,12 @@
 				"private": "Privée",
 				"restricted": "Restreinte",
 				"public": "Publique",
+				"skip": "Ignorer",
 				"tooltip": "Visibilité",
 				"privateTooltip": "Privée - n'apparaît pas dans les résultats de recherche, et seul vous pouvez voir cette revue",
 				"restrictedTooltip": "Restreinte - n'apparaît pas dans les résultats de recherche, et n'importe qui avec le lien peut voir cette revue",
-				"publicTooltip": "Publique - apparaît dans les résultats de recherche, et n'importe qui peut voir cette revue"
+				"publicTooltip": "Publique - apparaît dans les résultats de recherche, et n'importe qui peut voir cette revue",
+				"skipTooltip": "Ignorer - ne pas mettre en ligne cette revue"
 			},
 			"sequence": {
 				"headline": "Ajouter une comparaison",

@@ -34,15 +34,17 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 				// Init review data
 				//===============
 				$scope.initReviewData = function() {
+					$log.debug('initReviewData', MediaUploader)
 					if (MediaUploader.review) {
 						$scope.review = MediaUploader.review
+						$log.debug('review', $scope.review)
 						MediaUploader.review = undefined
 						$scope.review.transcodingDone = true
 						$scope.uploader.videoInfo.upload.postProcessed = true
 						$scope.retrieveCompletionStatus()
 					}
 					else if (MediaUploader.videoInfo) {
-						var file = MediaUploader.videoInfo.file
+						var file = MediaUploader.videoInfo.files[0]
 
 						var indexOfLastSpace = file.name.lastIndexOf(' ')
 						var indexOfLastDot = file.name.lastIndexOf('.')
@@ -50,7 +52,7 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 						$scope.review.fileType = file.type || file.name.slice(indexOfLastDot + 1)
 						$log.debug('file type', $scope.review.fileType)
 
-						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKey
+						$scope.review.temporaryKey = MediaUploader.videoInfo.fileKeys[0]
 
 						MediaUploader.addCallback('video-upload-complete', $scope.videoUploadCallback)
 					}

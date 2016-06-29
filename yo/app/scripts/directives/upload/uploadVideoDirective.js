@@ -139,14 +139,16 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 				//===============
 				$scope.initUpload = function() {
 					// Start the upload
-					var fileKey = ENV.folder + '/' + $scope.guid() + '-' + $scope.file.name
+					var fileKey = $scope.sport + '/video/' + moment().get('year') + '/' + (parseInt(moment().get('month')) + 1) + '/' + moment().get('date') + '/' + S($scope.file.name).slugify().s
 
 					// And signal that our job here is done - let's give the control to the next step
 					$scope.videoInfo.upload = {}
 					$scope.videoInfo.upload.ongoing = true
 					$scope.videoInfo.beginning = Math.max(1, $scope.videoInfo.beginning)
+					$scope.videoInfo.files = [$scope.file]
+					$scope.videoInfo.numberOfReviews = 1
 
-					MediaUploader.upload($scope.file, fileKey, $scope.videoInfo)
+					MediaUploader.upload([$scope.file], [fileKey], $scope.videoInfo)
 				}
 
 				$scope.guid = function() {

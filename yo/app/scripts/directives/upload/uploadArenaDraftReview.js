@@ -152,16 +152,14 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 				$scope.onTranscodingComplete = function() {					
 					// And now display something on the replay player
 					$log.debug('Need to display the draft', $scope.review)
-					if ($scope.review.mediaType && $scope.review.mediaType != 'video') {
-						// Retrieve the XML replay file from s3
-						var replayUrl = ENV.videoStorageUrl + $scope.review.key
-						$.get(replayUrl, function(data) {
-							$scope.review.replayXml = data
+					// Retrieve the XML replay file from s3
+					var replayUrl = ENV.videoStorageUrl + $scope.review.key
+					$.get(replayUrl, function(data) {
+						$scope.review.replayXml = data
 
-							// Init the external player
-							SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb)
-						})
-					}
+						// Init the external player
+						SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb)
+					})
 				}
 
 				$scope.externalPlayerLoadedCb = function(externalPlayer) {

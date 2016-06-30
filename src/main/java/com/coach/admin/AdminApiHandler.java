@@ -2,10 +2,10 @@ package com.coach.admin;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,8 +45,12 @@ public class AdminApiHandler {
 		List<Review> reviews = reviewRepository.findAll();
 
 		for (Review review : reviews) {
-			if (review.isPublished() && StringUtils.isEmpty(review.getVisibility())) {
-				review.setVisibility("public");
+			// if (review.isPublished() &&
+			// StringUtils.isEmpty(review.getVisibility())) {
+			// review.setVisibility("public");
+			// }
+			if (StringUtils.isEmpty(review.getReviewType())) {
+				review.setReviewType(review.getMediaType());
 			}
 		}
 		reviewRepository.save(reviews);

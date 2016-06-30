@@ -17,7 +17,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 				$scope.initReview = function(review) {
 					$log.debug('init review in externalPlayer', review)
 					// Nothing to do in this case
-					$scope.mediaType = review.mediaType == 'game-replay' ? '' : review.mediaType
+					$scope.mediaType = (review.mediaType == 'game-replay' || review.reviewType == 'game-replay') ? '' : (review.mediaType || review.reviewType)
 				}
 
 				$scope.initPlayer = function(config, review, plugins, pluginNames, callback) {

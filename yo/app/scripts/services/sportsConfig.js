@@ -234,7 +234,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			config.plugins.plugins.forEach(function(plugin) {
 				if (plugin.player) {
 					// $log.debug('init player?', plugin)
-					if ((!review.mediaType && (!plugin.mediaType || plugin.mediaType == 'game-replay')) || review.mediaType == plugin.mediaType) {
+					if ((!review.mediaType && !review.reviewType && (!plugin.mediaType || plugin.mediaType == 'game-replay')) || review.mediaType == plugin.mediaType || review.reviewType == plugin.mediaType) {
 						// $log.debug('\tyes, init player', plugin, review)
 						// Load the plugin
 						var version = plugin.version ? '?' + plugin.version : '';

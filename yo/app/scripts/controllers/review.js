@@ -75,7 +75,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$scope.updateSeoInformation(data)
 
 					
-					if ($scope.review.replay || ($scope.review.mediaType && $scope.review.mediaType != 'video')) {
+					if ($scope.review.replay || ($scope.review.mediaType && $scope.review.mediaType != 'video') || ($scope.review.reviewType && $scope.review.reviewType != 'video')) {
 						$scope.mediaPlayer.playerType = 'replay'
 					}
 					else {

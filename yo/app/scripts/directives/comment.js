@@ -86,10 +86,10 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 		  					$scope.review.plugins = data.plugins;
 		  					$scope.setCommentText(comment, newComment.text);
 		  					$log.log('updating plugins', $scope.review.plugins);
-		  					if (data.text.match(timestampOnlyRegex)) {
-								$log.log('incrementing timestamps after comment upload');
-								User.incrementTimestamps();
-							}
+		  			// 		if (data.text.match(timestampOnlyRegex)) {
+							// 	$log.log('incrementing timestamps after comment upload');
+							// 	User.incrementTimestamps();
+							// }
 		  				}, 
 		  				function(error) {
 		  					// Error handling
@@ -99,6 +99,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.setCommentText = function(comment, text) {
+					$log.debug('setting comment text', comment, text)
 					comment.text = escapeHtml(text);
 					// Add timestamps
 					comment.compiledText = $scope.parseText(comment.text);

@@ -9,8 +9,8 @@
 		</div>
   	</div>
   	<!-- The level of the game -->
-  	<div class="level-details form-group">
-		<tags-input name="level" ng-model="review.participantDetails.skillLevel" add-from-autocomplete-only="true" spellcheck="false" ng-required="true" replace-spaces-with-dashes="false" min-tags="1" max-tags="1" template="templates/video/tagsTemplate.html" class="form-control" placeholder="{{ '' }}" ng-disabled="true"> 
+  	<div class="level-details form-group" show-errors="{ showSuccess: true }">
+		<tags-input name="level" ng-model="review.participantDetails.skillLevel" add-from-autocomplete-only="true" spellcheck="false" ng-required="review.visibility != 'skip' ? true : false" replace-spaces-with-dashes="false" min-tags="{{ review.visibility != 'skip' ? 1 : 0 }}" max-tags="1" template="templates/video/tagsTemplate.html" class="form-control" placeholder="{{ '' }}" ng-disabled="true"> 
 		</tags-input>
   	</div>
 </div>

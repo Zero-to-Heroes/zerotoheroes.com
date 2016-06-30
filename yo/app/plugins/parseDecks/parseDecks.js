@@ -11,6 +11,7 @@ var parseDecks = {
 	icyVeinsDecksRegex: /\[?(http:\/\/www\.icy-veins\.com\/hearthstone\/)([\da-zA-Z\-]+)\]?/gm,
 	manaCrystalsDecksRegex: /\[?(https:\/\/manacrystals\.com\/deck_guides\/)([\da-zA-Z\-]+)\]?/gm,
 	hearthstatsShortDecksRegex: /\[?(http:\/\/hss\.io\/d\/)([\d\w\-]+)\]?/gm,
+	hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
 	
 	decks: {},
 
@@ -28,6 +29,7 @@ var parseDecks = {
 		text = parseDecks.parse(review, text, parseDecks.icyVeinsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.manaCrystalsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthstatsShortDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.hearthstatsFullDecksRegex)
 
 		// result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
 

@@ -345,6 +345,7 @@
 		},
 		"formattingHelp": {
 			"markdownText": "You can use <a href=\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\" target=\"_blank\">Markdow syntax</a> to format your text (bold, italics, paragraphs, etc)",
+			"markdownImage": "You can add inline images using <code>![img-small](your_img_link)</code>. For medium and bigger images, use <code>img-medium</code> or <code>img-big</code> instead. Using any other text (like <code>![cool image](your_img_link)</code>) will try to display the image in its original size",
 			"advancedIntro": "Additionally, you can:",
 			"timestamp": "Use the <strong>timestamp icon <span class=\"glyphicon glyphicon-time\"></span></strong> to create a link to a specific moment in the video. You can freely adjust the timestamp figures to match exactly what you need",
 			"slow": "Use the <strong>slow motion icon <span class=\"glyphicon glyphicon-play\"></span><span class=\"glyphicon glyphicon-pause\" style=\"margin-left: -5px\"></span></strong> to create a timestamp and make the video play in slow motion once the user clicks on it. You can change how much the video is slowed by changing the <code>0.5</code> figure after the <code>s</code> (the lower, the slower the video)",

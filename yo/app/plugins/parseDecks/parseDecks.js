@@ -44,7 +44,7 @@ var parseDecks = {
 
 	parse: function(review, text, regex, groupIndex) {
 		// Lookbehind - http://www.regular-expressions.info/lookaround.html
-		// https://regex101.com/r/qT1vF8/5
+		// https://regex101.com/r/qT1vF8/9 for a pure regex-based solution
 		regex = new RegExp('(.{0,2})' + regex.source, 'gm')
 		// console.log('matching', text, regex)
 		var match = regex.exec(text)

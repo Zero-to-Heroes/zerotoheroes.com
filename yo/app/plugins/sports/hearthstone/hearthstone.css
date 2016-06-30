@@ -185,10 +185,7 @@
 }
 .hearthstone .pagination {
   margin-left: 50px;
-  background: transparent url(images/button-bg.png) no-repeat;
   background-size: 100% 100%;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .hearthstone .pagination li > a,
 .hearthstone .pagination li > a:active,
@@ -196,10 +193,6 @@
 .hearthstone .pagination li > a:hover {
   background: transparent !important;
   border: none;
-  color: rgba(0, 0, 0, 0.7);
-}
-.hearthstone .pagination li.active a {
-  color: #fa5d26;
 }
 .hearthstone .class-icon {
   height: 45px;
@@ -1200,6 +1193,19 @@
 .hearthstone tags-input .tags .tag-item,
 .hearthstone tags-input[disabled] .tags .tag-item {
   background: #721494;
+}
+.hearthstone .pagination {
+  background: #f9f1e1;
+}
+.hearthstone .pagination li > a,
+.hearthstone .pagination li > a:active,
+.hearthstone .pagination li > a:focus,
+.hearthstone .pagination .li > a:hover {
+  color: #3a240f;
+}
+.hearthstone .pagination li.active a {
+  color: #a33b32;
+  font-weight: bold;
 }
 .hearthstone .brand:before {
   content: url('images/new/logo.png');

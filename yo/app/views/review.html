@@ -64,7 +64,7 @@
 								<div class="panel panel-default" ng-hide="review.editing">
 									<div compilecontent content="review.markedText" class="panel-body video-description"></div>
 								</div>
-								<toolbar ng-show="review.editing && review.key" media-player="mediaPlayer" insert-model="insertModel" config="config" media-type="review.replay ? 'replay' : 'video'">
+								<toolbar ng-show="review.editing && review.key" media-player="mediaPlayer" insert-model="insertModel" config="config" media-type="review.reviewType">
 									<textarea class="form-control text-editing-area" ng-model="review.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
 								<textarea class="form-control" ng-model="review.text" ng-show="review.editing && !review.key" comment-plugins="plugins" auto-grow></textarea>
@@ -122,7 +122,7 @@
 								</div>
 							</div>
 							<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-								<toolbar class="form-group" show-errors="{ showSuccess: true }" media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.replay ? 'replay' : 'video'">
+								<toolbar class="form-group" show-errors="{ showSuccess: true }" media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.reviewType">
 									<textarea id="newCommentArea" placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control text-editing-area" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
 								<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>

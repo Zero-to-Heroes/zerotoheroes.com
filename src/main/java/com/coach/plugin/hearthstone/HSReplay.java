@@ -115,6 +115,7 @@ public class HSReplay implements ReplayPlugin {
 		log.debug("created key " + key);
 		review.setKey(key);
 		review.setReplay(String.valueOf(true));
+		review.setMediaType("game-replay");
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
 		log.debug("Review updated with proper key " + review);

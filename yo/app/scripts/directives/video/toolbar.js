@@ -23,6 +23,22 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 			},
 			controller: function($scope) {
 
+				$scope.getConfig = function() {
+					return $scope.config.deactivateControls
+				}
+				$scope.getMediaConfig = function() {
+					// $log.debug('getting media type', $scope.mediaType, $scope.config)
+					if ($scope.mediaType == 'arena-draft') {
+						// $log.debug('\treturning', $scope.config.deactivateControls, $scope.config.deactivateControls['arenadraft'])
+						return $scope.config.deactivateControls['arenadraft']
+					} 
+					else if ($scope.mediaType == 'game-replay') {
+						return $scope.config.deactivateControls.replay
+					} 
+					else
+						return {}
+				}
+
 				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/;
 				var slowRegex = /\d?\d:\d?\d(:\d\d\d)?\+s(\d?\.?\d?\d?)?/;
 				var loopRegex = /\d?\d:\d?\d(:\d\d\d)?(\+s)?(\d?\.?\d?\d?)?L(\d?\.?\d?\d?)?/;

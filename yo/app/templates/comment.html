@@ -28,7 +28,7 @@
 			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
 			</div>
 			<div ng-show="comment.editing">
-				<toolbar media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.replay ? 'replay' : 'video'">
+				<toolbar media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.reviewType">
 					<textarea class="form-control text-editing-area" ng-model="comment.text" comment-plugins="::plugins" auto-grow toolbar-target></textarea>
 				</toolbar>
 				<textarea class="form-control" ng-model="comment.text" comment-plugins="::plugins" auto-grow ng-hide="review.key"></textarea>
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-				<toolbar class="form-group" show-errors="{ showSuccess: true }" media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.replay ? 'replay' : 'video'">
+				<toolbar class="form-group" show-errors="{ showSuccess: true }" media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.reviewType">
 					<textarea class="form-control text-editing-area" ng-model="reply.text" name="replyText" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 				</toolbar>
 				<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" comment-plugins="plugins" auto-grow ng-hide="review.key"></textarea>

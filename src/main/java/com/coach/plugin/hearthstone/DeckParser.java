@@ -492,7 +492,7 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
-			deck.title = doc.select(".deck-title").text();
+			deck.title = doc.select(".deck-title").first().text();
 
 			Elements classCards = doc.select(".t-deck-details-card-list.class-listing td");
 			Elements neutralCards = doc.select(".t-deck-details-card-list.neutral-listing td");

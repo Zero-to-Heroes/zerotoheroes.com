@@ -14,22 +14,23 @@ var parseDecks = {
 	decks: {},
 
 	execute: function (review, text) {
-		var result = text;
+		// console.log('executing parseDecks plugin')
+		// var result = text;
 
-		result = parseDecks.parse(review, result, text, parseDecks.decksRegex)
-		result = parseDecks.parse(review, result, text, parseDecks.hearthpwnTempDeckRegex)
-		result = parseDecks.parse(review, result, text, parseDecks.hsDecksDecksRegex)
-		result = parseDecks.parse(review, result, text, parseDecks.zthDecksRegex)
-		result = parseDecks.parse(review, result, text, parseDecks.hearthArenaDecksRegex)
-		result = parseDecks.parse(review, result, text, parseDecks.arenaDraftsDecksRegex, 3)
-		result = parseDecks.parse(review, result, text, parseDecks.hsTopDecksDecksRegex)
-		result = parseDecks.parse(review, result, text, parseDecks.icyVeinsDecksRegex)
-		result = parseDecks.parse(review, result, text, parseDecks.manaCrystalsDecksRegex)
-		result = parseDecks.parse(review, result, text, parseDecks.manaCrystalsDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.decksRegex)
+		text = parseDecks.parse(review, text, parseDecks.hearthpwnTempDeckRegex)
+		text = parseDecks.parse(review, text, parseDecks.hsDecksDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.zthDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.hearthArenaDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.arenaDraftsDecksRegex, 4)
+		text = parseDecks.parse(review, text, parseDecks.hsTopDecksDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.icyVeinsDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.manaCrystalsDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.manaCrystalsDecksRegex)
 
 		// result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
 
-		return result;
+		return text;
 	},
 
 	// parseTemporaryDeck: function(review, result, text, regex, groupIndex) {
@@ -41,52 +42,66 @@ var parseDecks = {
 	// 	return result
 	// },
 
-	parse: function(review, result, text, regex, groupIndex) {
-		regex = new RegExp('(?!.*\\))' + regex.source, 'gm')
+	parse: function(review, text, regex, groupIndex) {
+		// Lookbehind - http://www.regular-expressions.info/lookaround.html
+		// https://regex101.com/r/qT1vF8/5
+		regex = new RegExp('(.{0,2})' + regex.source, 'gm')
 		// console.log('matching', text, regex)
 		var match = regex.exec(text)
 		while (match) {
-			result = parseDecks.handleMatch(review, result, match, groupIndex)
+			if (match[1] != '](' && match[1] != '=\'' && match[1] != '(\'') {
+				// console.log('\tmatched!!!', match[1], match)
+				// console.log('replaced substring', text.substring(match.index, match.index + match[0].length))
+				text = parseDecks.handleMatch(review, text, match, groupIndex)
+				// console.log('new text', text)
+			}
 			match = regex.exec(text)
 		}
-		return result
+		return text
 	},
 
-	handleMatch: function(review, result, match, groupIndex) {
-		groupIndex = groupIndex || 2
-		// console.log('match', match, result);
+	handleMatch: function(review, text, match, groupIndex) {
+		groupIndex = groupIndex || 3
+		// console.log('\tmatch', match, result);
 		var deckName = match[groupIndex]
-		var deckUrl = match[1] + deckName
-		// console.log('deck name', deckName, deckUrl)
+		var deckUrl = match[2] + deckName
+		// console.log('\tdeck name', deckName, deckUrl)
 
 		var plugins = review.plugins.hearthstone;
-		// console.log('plugins', plugins)
+		// console.log('\tplugins', plugins)
 		if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
 			var strDeck = plugins.parseDecks[deckName];
-			// console.log('strDeck', strDeck)
+			// console.log('\tstrDeck', strDeck)
 			var deck = JSON.parse(strDeck)
-			// console.log('jsDeck', deck)
+			// console.log('\tjsDeck', deck)
 			var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 			// parseDecks.deck = htmlDeck;
-			// console.log('html deck is ', htmlDeck);
+			// console.log('\thtml deck is ', htmlDeck);
 			var deckNameForDisplay = deck.title.replace(/'/g, '')
 			parseDecks.decks[deckNameForDisplay] = htmlDeck;
 
-			result = result.replace(match[0], '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>');
+			var toMatch = match[0].replace(match[1], '')
+			// console.log('\ttoMatch', toMatch, match[0])
+
+			var newText = text.substring(0, match.index + match[1].length) + '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>' + text.substring(match.index + match[0].length)
+			text = newText			
+
+
+			// text = text.replace(toMatch, '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>');
 		}
 
-		return result
+		return text
 	},
 
-	handleMatchTemporary: function(review, result, match, groupIndex) {
-		groupIndex = groupIndex || 2
-		// console.log('match', match, result);
-		var deckName = 'Deck link'
+	// handleMatchTemporary: function(review, result, match, groupIndex) {
+	// 	groupIndex = groupIndex || 2
+	// 	// console.log('match', match, result);
+	// 	var deckName = 'Deck link'
 
-		result = result.replace(match[0], '<a class="deck-link" href="' + match[0] + '" target="_blank">' +deckName + '</a>');
+	// 	result = result.replace(match[0], '<a class="deck-link" href="' + match[0] + '" target="_blank">' +deckName + '</a>');
 
-		return result
-	},
+	// 	return result
+	// },
 
 	toggleDeck: function (deckUrl, deckNameForDisplay, event) {
 		// console.log('toggle deck', deckUrl, deckNameForDisplay, event)

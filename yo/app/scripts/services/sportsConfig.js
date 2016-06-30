@@ -61,7 +61,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					plugins: {
 						plugins: [
 							{name: 'parseCardsText', version: 12, dev: dev}, 
-							{name: 'parseDecks', version: 17, dev: dev}, 
+							{name: 'parseDecks', version: 19, dev: dev}, 
 							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 60, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 14, dev: dev}
 						],
@@ -165,7 +165,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 		service.executePlugin = function(scope, review, plugin, target) {
 			// $log.debug('Executing lpugin', plugin, target, window['hsarenadraft']);
 			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].execute) return target;
-			// $log.debug('\tFound plugin to execute')
+			// $log.debug('\tFound plugin to execute', window[plugin.name].execute)
 
 			return window[plugin.name].execute(review, target);
 		}

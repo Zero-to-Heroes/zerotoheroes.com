@@ -99,7 +99,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.setCommentText = function(comment, text) {
-					$log.debug('setting comment text', comment, text)
+					// $log.debug('setting comment text', comment, text)
 					comment.text = escapeHtml(text);
 					// Add timestamps
 					comment.compiledText = $scope.parseText(comment.text);

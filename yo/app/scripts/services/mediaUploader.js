@@ -22,6 +22,7 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 			// service.videoInfo.fileKey = fileKey
 			service.videoInfo.fileKeys = fileKeys
 			service.videoInfo.fileTypes = []
+			service.videoInfo.upload = service.videoInfo.upload || {}
 			
 			files.forEach(function(file) {
 				var type = file.type
@@ -64,7 +65,7 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 					}
 					else {
 						// Success!
-						// $log.debug('upload done!')
+						$log.debug('upload done!')
 						videoInfo.upload.done = true
 						file.uploaded = true
 						if (service.callbacks) {
@@ -77,14 +78,13 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 					}
 				})
 				.on('httpUploadProgress', function(progress) {
-					// service.videoInfo.upload.progressLoaded += progress.loaded
-					file.size = progress.total
+					file.uploadSize = progress.total
 					file.current = progress.loaded
 					var totalLoaded = 0
 					var totalProgress = 0
 					files.forEach(function(temp) {
 						totalLoaded += temp.current
-						totalProgress += temp.size
+						totalProgress += temp.uploadSize
 					})
 					service.videoInfo.upload.progress = totalLoaded / totalProgress * 100
 					// $log.debug('uploading', service.videoInfo.upload.progress)

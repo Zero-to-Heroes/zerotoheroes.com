@@ -27,22 +27,24 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 						$scope.initPage()
 				})
 				$scope.initPage = function() {
-					$log.debug('init page', $scope.uploader)
-					for (var i = 0; i < $scope.uploader.videoInfo.numberOfReviews; i++) {
-						var review = {
-							canvas: {},
-							reviewType: 'game-replay',
-							tags: [],
-							replay: true,
-							strSport: $scope.sport,
-							transcodingDone: false,
-							language: Localization.getLanguage(),
-							visibility: User.isLoggedIn() ? 'private' : 'public'
+					$log.debug('init page', $scope.uploader, $scope.active)
+					if ($scope.uploader.videoInfo) {
+						for (var i = 0; i < $scope.uploader.videoInfo.numberOfReviews; i++) {
+							var review = {
+								canvas: {},
+								reviewType: 'game-replay',
+								tags: [],
+								replay: true,
+								strSport: $scope.sport,
+								transcodingDone: false,
+								language: Localization.getLanguage(),
+								visibility: User.isLoggedIn() ? 'private' : 'public'
+							}
+							$log.debug('\tadding review', review)
+							$scope.reviews.push(review)
 						}
-						$log.debug('\tadding review', review)
-						$scope.reviews.push(review)
+						MediaUploader.addCallback('video-upload-complete', $scope.onFileUploaded)
 					}
-					MediaUploader.addCallback('video-upload-complete', $scope.onFileUploaded)
 				}
 
 				$scope.onFileUploaded = function(file) {

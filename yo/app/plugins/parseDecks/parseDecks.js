@@ -16,7 +16,7 @@ var parseDecks = {
 	decks: {},
 
 	execute: function (review, text) {
-		// console.log('executing parseDecks plugin')
+		console.log('executing parseDecks plugin')
 		// var result = text;
 
 		text = parseDecks.parse(review, text, parseDecks.decksRegex)
@@ -30,6 +30,7 @@ var parseDecks = {
 		text = parseDecks.parse(review, text, parseDecks.manaCrystalsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthstatsShortDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthstatsFullDecksRegex)
+		console.log('parsed decks')
 
 		// result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
 
@@ -52,18 +53,25 @@ var parseDecks = {
 		// console.log('matching', text, regex)
 		var match = regex.exec(text)
 		while (match) {
+			// console.log('considering match', match.index, regex.lastIndex, match, regex)
+			// if (match.index === regex.lastIndex) {
+   //   			regex.lastIndex++
+			// }
+
 			if (match[1] != '](' && match[1] != '=\'' && match[1] != '(\'') {
 				// console.log('\tmatched!!!', match[1], match)
 				// console.log('replaced substring', text.substring(match.index, match.index + match[0].length))
-				text = parseDecks.handleMatch(review, text, match, groupIndex)
+				text = parseDecks.handleMatch(review, text, match, groupIndex, regex)
 				// console.log('new text', text)
+
 			}
 			match = regex.exec(text)
 		}
+		// console.log('parsed regex', regex)
 		return text
 	},
 
-	handleMatch: function(review, text, match, groupIndex) {
+	handleMatch: function(review, text, match, groupIndex, regex) {
 		groupIndex = groupIndex || 3
 		// console.log('\tmatch', match, result);
 		var deckName = match[groupIndex]
@@ -86,10 +94,12 @@ var parseDecks = {
 			var toMatch = match[0].replace(match[1], '')
 			// console.log('\ttoMatch', toMatch, match[0])
 
-			var newText = text.substring(0, match.index + match[1].length) + '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>' + text.substring(match.index + match[0].length)
+			var replaceString = '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>'
+
+			var newText = text.substring(0, match.index + match[1].length) + replaceString + text.substring(match.index + match[0].length)
 			text = newText			
 
-
+			regex.lastIndex += replaceString.length - 1
 			// text = text.replace(toMatch, '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>');
 		}
 

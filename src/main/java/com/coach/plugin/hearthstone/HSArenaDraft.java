@@ -71,6 +71,7 @@ public class HSArenaDraft implements ReplayPlugin {
 
 	private String convertToJson(String atFile) throws Exception {
 		Pattern heroPickRegex = Pattern.compile(".* - GameWatcher\\(\\d+\\): New arena\\. Heroe: (\\d+).*");
+		Pattern heroPickRegex2 = Pattern.compile(".* - DraftHandler: Begin draft. Heroe: (\\d+).*");
 		Pattern choiceRegex = Pattern.compile(".* - DraftHandler: \\(\\d+\\) (\\w+)\\/(\\w+)\\/(\\w+).*");
 		Pattern pickRegex = Pattern.compile(".* - GameWatcher\\(\\d+\\): Pick card: (\\w+).*");
 
@@ -95,6 +96,9 @@ public class HSArenaDraft implements ReplayPlugin {
 					}
 
 					matcher = heroPickRegex.matcher(line);
+					if (!matcher.matches())
+						matcher = heroPickRegex2.matcher(line);
+					
 					if (matcher.matches()) {
 						String heroCode = matcher.group(1);
 						String hero = null;

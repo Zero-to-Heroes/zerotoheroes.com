@@ -56,7 +56,7 @@ public class MetricsApiHandler {
 
 		List<Review> reviews = reviewRepository.findAll();
 		int totalVideoViews = 0;
-		// log.debug("Going through all reviews");
+		log.debug("Going through all reviews");
 		for (Review review : reviews) {
 			if (!review.isPublished()) {
 				continue;
@@ -68,6 +68,7 @@ public class MetricsApiHandler {
 					&& ("private".equalsIgnoreCase(review.getVisibility())
 							|| "restricted".equalsIgnoreCase(review.getVisibility()))) {
 				metrics.get(creationDate).incrementPrivateReviews();
+				metrics.get(creationDate).addUniqueContentCreator(review.getAuthor());
 				continue;
 			}
 			totalVideoViews += review.getViewCount();
@@ -87,13 +88,13 @@ public class MetricsApiHandler {
 		}
 
 		int totalReputation = 0;
-		// log.debug("Counting reputation");
+		log.debug("Counting reputation");
 		List<User> users = userRepository.findAll();
 		for (User user : users) {
 			totalReputation += user.getReputation();
 		}
 
-		// log.debug("Finalizing");
+		log.debug("Finalizing");
 		metrics.setTotalReputation(totalReputation);
 		metrics.setTotalVideoViews(totalVideoViews);
 
@@ -107,6 +108,7 @@ public class MetricsApiHandler {
 		});
 
 		// Returning users
+		log.debug("handling contributors");
 		for (int i = 1; i < metrics.getMetrics().size(); i++) {
 			// Build the list of unique content creators in the past 3 weeks
 			Set<String> contributors = new HashSet<>();
@@ -127,6 +129,7 @@ public class MetricsApiHandler {
 
 		// Churn - how many people contributed in the past 3 months and didn't
 		// do anything in the past 3 weeks
+		log.debug("handling churn");
 		for (int i = 1; i < metrics.getMetrics().size(); i++) {
 			// Build the list of unique content creators in the past 8 weeks
 			// We don't want to pick a too long period, otherwise the same user
@@ -154,7 +157,7 @@ public class MetricsApiHandler {
 			metrics.getMetrics().get(i).setChurn(churn);
 		}
 
-		// log.debug("Formatting for CSV");
+		log.debug("Formatting for CSV");
 		String csvMetrics = toCsv(metrics);
 		metrics.setCsv(csvMetrics);
 

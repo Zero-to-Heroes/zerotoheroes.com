@@ -63,20 +63,22 @@ public class MetricsApiHandler {
 			}
 
 			Date creationDate = review.getCreationDate();
-			if (creationDate != null && review.getAuthor() != null
-					&& excludedUserNames.indexOf(review.getAuthor()) == -1
-					&& ("private".equalsIgnoreCase(review.getVisibility())
-							|| "restricted".equalsIgnoreCase(review.getVisibility()))) {
+			if (creationDate == null || review.getAuthor() == null
+					|| excludedUserNames.indexOf(review.getAuthor()) != -1) {
+				continue;
+			}
+
+			if ("private".equalsIgnoreCase(review.getVisibility())
+					|| "restricted".equalsIgnoreCase(review.getVisibility())) {
 				metrics.get(creationDate).incrementPrivateReviews();
 				metrics.get(creationDate).addUniqueContentCreator(review.getAuthor());
 				continue;
 			}
+
 			totalVideoViews += review.getViewCount();
-			if (creationDate != null && review.getAuthor() != null
-					&& excludedUserNames.indexOf(review.getAuthor()) == -1) {
-				metrics.get(creationDate).incrementReviews();
-				metrics.get(creationDate).addUniqueContentCreator(review.getAuthor());
-			}
+			metrics.get(creationDate).incrementReviews();
+			metrics.get(creationDate).addUniqueContentCreator(review.getAuthor());
+
 			for (Comment comment : review.getAllComments()) {
 				Date commCreation = comment.getCreationDate();
 				if (commCreation != null && comment.getAuthor() != null

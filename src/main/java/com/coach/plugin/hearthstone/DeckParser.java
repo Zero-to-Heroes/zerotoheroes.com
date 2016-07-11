@@ -122,9 +122,9 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2);
 
 			// Don't override existing decks (performance)
-			// if (pluginData.get(deckId) != null) {
-			// continue;
-			// }
+			if (pluginData.get(deckId) != null) {
+				continue;
+			}
 
 			String deckUrl = HEARTHHEAD_DECK_HOST_URL + deckId;
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);
@@ -134,16 +134,19 @@ public class DeckParser implements Plugin {
 			Deck deck = new Deck();
 			deck.title = doc.select("#deckguide-name").text();
 
-			Elements cards = doc.select(".deckguide-cards .deckguide-cards-type li");
+			Elements cards = doc.select(".main .deckguide-cards .deckguide-cards-type li");
 
 			for (Element element : cards) {
 				// log.debug("Parsing class card " + element);
 				// Elements qtyElement = element.text();
-				Elements qty = element.select(".count");
-				// log.debug("\tQty " + qty);
-				Elements cardElement = element.select(".name span");
-				// log.debug("\tCard " + cardElement);
-				Card card = new Card(cardElement.text().trim(), qty.text().trim());
+				String cardName = element.select("a.card").text();
+				String quantityText = element.text().split(cardName).length == 0 ? ""
+						: element.text().split(cardName)[1];
+				String quantity = "1";
+				if (StringUtils.isNotEmpty(quantityText)) {
+					quantity = quantityText.split("x")[1];
+				}
+				Card card = new Card(cardName, quantity);
 				// log.debug("\tBuilt card " + card);
 				deck.classCards.add(card);
 			}

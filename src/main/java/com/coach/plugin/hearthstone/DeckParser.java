@@ -70,6 +70,9 @@ public class DeckParser implements Plugin {
 	private static final String HEARTHSTATS_FULL_DECK_ID_REGEX = "\\[?(http:\\/\\/hearthstats\\.net\\/d\\/)([\\d\\w\\-]+)\\]?";
 	private static final String HEARTHSTATS_FULL_DECK_HOST_URL = "http://hearthstats.net/d/";
 
+	private static final String HEARTHHEAD_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthhead\\.com\\/deck=)([\\d\\w\\-]+)\\/?([\\d\\w\\-]+)?\\]?";
+	private static final String HEARTHHEAD_DECK_HOST_URL = "http://www.hearthhead.com/deck=";
+
 	@Autowired
 	ReviewRepository repo;
 
@@ -109,6 +112,47 @@ public class DeckParser implements Plugin {
 		parseManaCrystalsDeck(pluginData, initialText);
 		parseHearthStatsDeckShort(pluginData, initialText);
 		parseHearthStatsDeckFull(pluginData, initialText);
+		parseHearthHeadDeck(pluginData, initialText);
+	}
+
+	private void parseHearthHeadDeck(Map<String, String> pluginData, String initialText) throws IOException {
+		Pattern pattern = Pattern.compile(HEARTHHEAD_DECK_ID_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			String deckId = matcher.group(2);
+
+			// Don't override existing decks (performance)
+			// if (pluginData.get(deckId) != null) {
+			// continue;
+			// }
+
+			String deckUrl = HEARTHHEAD_DECK_HOST_URL + deckId;
+			// log.debug("Trying to scrape deck data for deck " + deckUrl);
+
+			Document doc = Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8", HEARTHHEAD_DECK_HOST_URL);
+
+			Deck deck = new Deck();
+			deck.title = doc.select("#deckguide-name").text();
+
+			Elements cards = doc.select(".deckguide-cards .deckguide-cards-type li");
+
+			for (Element element : cards) {
+				// log.debug("Parsing class card " + element);
+				// Elements qtyElement = element.text();
+				Elements qty = element.select(".count");
+				// log.debug("\tQty " + qty);
+				Elements cardElement = element.select(".name span");
+				// log.debug("\tCard " + cardElement);
+				Card card = new Card(cardElement.text().trim(), qty.text().trim());
+				// log.debug("\tBuilt card " + card);
+				deck.classCards.add(card);
+			}
+
+			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
+
+			// log.debug("jsonDeck" + jsonDeck);
+			pluginData.put(deckId, jsonDeck);
+		}
 	}
 
 	private void parseHearthStatsDeckShort(Map<String, String> pluginData, String initialText) throws IOException {

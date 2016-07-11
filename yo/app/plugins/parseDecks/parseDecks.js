@@ -12,6 +12,7 @@ var parseDecks = {
 	manaCrystalsDecksRegex: /\[?(https:\/\/manacrystals\.com\/deck_guides\/)([\da-zA-Z\-]+)\]?/gm,
 	hearthstatsShortDecksRegex: /\[?(http:\/\/hss\.io\/d\/)([\d\w\-]+)\]?/gm,
 	hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
+	hearthheadDecksRegex: /\[?(http:\/\/www\.hearthhead\.com\/deck=)([\d\w\-]+)\/?([\d\w\-]+)?\]?/gm,
 	
 	decks: {},
 
@@ -30,6 +31,7 @@ var parseDecks = {
 		text = parseDecks.parse(review, text, parseDecks.manaCrystalsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthstatsShortDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthstatsFullDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.hearthheadDecksRegex)
 
 		// result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
 

@@ -429,7 +429,7 @@ public class SlackNotifier {
 		});
 	}
 
-	public void notifyError(Exception e, final Object... params) {
+	public void notifyError(final Exception e, final Object... params) {
 		if (!"prod".equalsIgnoreCase(environment)) {
 			log.info("Error! " + params);
 			return;
@@ -443,6 +443,13 @@ public class SlackNotifier {
 
 				SlackMessage message = new SlackMessage();
 				message.setText("Generic error with details");
+
+				SlackAttachment exAttach = new SlackAttachment();
+				exAttach.setColor("danger");
+				exAttach.setTitle("StackTrace for exception: ");
+				exAttach.setText(ExceptionUtils.getFullStackTrace(e));
+				exAttach.setFallback("placeholder fallback");
+				message.addAttachments(exAttach);
 
 				for (Object param : params) {
 					SlackAttachment attach = new SlackAttachment();

@@ -47,22 +47,26 @@ public class S3Utils {
 		S3Object s3object = s3.getObject(new GetObjectRequest(inputBucket, key));
 		StringBuilder fileContents = new StringBuilder();
 
-		BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()));
-		String line;
-		while ((line = reader.readLine()) != null) {
-			// log.debug("\treading line " + line);
-			fileContents.append(line);
-			fileContents.append(System.lineSeparator());
+		try {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				// log.debug("\treading line " + line);
+				fileContents.append(line);
+				fileContents.append(System.lineSeparator());
+			}
+		}
+		finally {
+			s3object.close();
 		}
 
 		return fileContents.toString();
 	}
 
-	public BufferedReader readerFromS3(String key) throws IOException {
+	public S3Object readerFromS3(String key) throws IOException {
 		S3Object s3object = s3.getObject(new GetObjectRequest(inputBucket, key));
 
-		BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()));
-		return reader;
+		return s3object;
 	}
 
 	public void readFromS3ToFile(String key, File localFile) throws IOException {

@@ -487,7 +487,7 @@
 				"clearCurrentFile": "Clear all games",
 				"selectedFile": "You're about to upload {{fileName}}. It needs to be processed before being a usable replay, and you'll be able to navigate in it at the next step",
 				"invalidFormatMessage": "We only support log files (.txt), hsreplay files (.xml) or Hearthstone Deck Tracker replay files (.hdtreplay) for now. If you wish to use another file format, please let us know on the forums",
-				"someInvalidFilesMessage": "Some of the files you are trying to upload don't contain any games. Don't worry, we'll ignore them, but it may indicate you're not uploading what you wanted. This mainly happens on mobile: the \"hearthstone_2016_xx_xx_xx_xx_xx.log\" files don't contain actual game data, and you should instead upload the Power.log file (and please refer to <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/#log-files-recommended\" target=\"blank\">this post</a> if you need help)",
+				"someInvalidFilesMessage": "Some of the files you are trying to upload don't contain any games. Don't worry, we'll ignore them, but it may indicate you're not uploading what you wanted. This mainly happens on mobile: the \"hearthstone_2016_xx_xx_xx_xx_xx.log\" files don't always contain actual game data, (the Power.log always does contain the data from your latest sesssion)",
 				"corruptedFile": "We couldn't detect the heroes from your replay - it looks like it is corrupted. Please make sure you have the latest versions of your tracker. Otherwise, let us know on the <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
 				
 

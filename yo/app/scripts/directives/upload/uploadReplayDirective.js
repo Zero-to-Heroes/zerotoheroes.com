@@ -85,11 +85,11 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        $scope.uploader.onAfterAddingFile = function(fileItem) {
 		            console.info('onAfterAddingFile', fileItem)
 		            $scope.hasUnsupportedFormatError = false
-		            $scope.files.push(fileItem)
 		            $log.debug('added file', fileItem._file, $scope.files)
 
 		            var r = new FileReader()
 				    r.onload = function(e) { 
+		            	$scope.files.push(fileItem)
 						var contents = e.target.result
 
 						var replayGames = (contents.match(gameRegex) || []).length
@@ -137,7 +137,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 					var fileKeys = []
 					$scope.files.forEach(function(file) {
 						fileContents.push(file._file)
-						var fileKey = 'hearthstone/replay/' + moment().get('year') + '/' + (parseInt(moment().get('month')) + 1) + '/' + moment().get('date') + '/' + S(file._file.name).replaceAll(' ', '-').s
+						var fileKey = 'hearthstone/replay/' + moment().get('year') + '/' + (parseInt(moment().get('month')) + 1) + '/' + moment().get('date') + '/' + Date.now() + '-' + S(file._file.name).replaceAll(' ', '-').s
 						fileKeys.push(fileKey)
 						file._file.fileKey = fileKey
 						$log.debug('fileKey is ', file, fileKey)

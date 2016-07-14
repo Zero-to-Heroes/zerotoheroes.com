@@ -35,13 +35,14 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 							name: 'videoTypesFilter',
 							fn: function(item) {
 								var type = item.type
+								var indexOfLastDot = item.name.lastIndexOf('.')
+								var extension = item.name.slice(indexOfLastDot + 1)
+								$log.debug('extension', extension, item)
 								if (supportedFileTypes.indexOf(type) == -1) {
-									var indexOfLastDot = item.name.lastIndexOf('.')
-									var extension = item.name.slice(indexOfLastDot + 1)
-									$log.debug('extension', extension, item)
 									if (supportedExtensions.indexOf(extension) == -1)
 										return false
 								}
+								item.extension = extension
 								return true
 							}
 						}]
@@ -90,7 +91,13 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		            var r = new FileReader()
 				    r.onload = function(e) { 
 						var contents = e.target.result
-						var replayGames = (contents.match(gameRegex) || []).length || 1
+
+						var replayGames = (contents.match(gameRegex) || []).length
+						var indexOfLastDot = fileItem._file.name.lastIndexOf('.')
+						var extension = fileItem._file.name.slice(indexOfLastDot + 1)
+						if ('hdtreplay' == extension || 'xml' == extension)
+							replayGames = replayGames || 1
+
 				        $scope.numberOfGames += replayGames
 				      	console.log('numberOfGames', $scope.numberOfGames)
 				      	fileItem.numberOfGames = replayGames

@@ -180,7 +180,7 @@ public class HSReplay implements ReplayPlugin {
 						currentGame.append(System.lineSeparator());
 					}
 				}
-				if (currentGame.length() > 0) {
+				if (currentGame != null && currentGame.length() > 0) {
 					log.debug("Added a new game");
 					// log.debug(currentGame.toString());
 					games.add(currentGame.toString());

@@ -338,7 +338,7 @@ public class SlackNotifier {
 		});
 	}
 
-	public void notifyException(final WebRequest request, final Throwable ex) {
+	public void notifyException(final String currentUser, final WebRequest request, final Throwable ex) {
 		log.info("Sending exception to Slack " + ex);
 		if (!"prod".equalsIgnoreCase(environment)) {
 			log.error("Exception! " + request + " " + ex);
@@ -366,7 +366,7 @@ public class SlackNotifier {
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(requestAttach);
 				message.addAttachments(exAttach);
-				message.setText("Server exception: " + ex.getClass());
+				message.setText("Server exception for " + currentUser + ": " + ex.getClass());
 
 				api.call(message);
 				return null;

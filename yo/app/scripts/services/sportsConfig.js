@@ -182,14 +182,14 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			// console.log('trying to attach plugin', plugin, element);
 			// console.log(window[plugin]);
 			// console.log(window[plugin + '_attach']);
-			if (plugin && plugin.name && window[plugin.name].attach) {
+			if (plugin && plugin.name && window[plugin.name] && window[plugin.name].attach) {
 				window[plugin.name].attach(element);
 			}
 		}
 
 		service.detachPlugin = function(scope, plugin, element) {
 			// console.log('trying to detach plugin', plugin, element);
-			if (plugin && plugin.name && window[plugin.name].detach) {
+			if (plugin && plugin.name && window[plugin.name] && window[plugin.name].detach) {
 				window[plugin.name].detach(element);
 			}
 		}
@@ -218,6 +218,9 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 
 			var executePlugin = function(plugin) {
 				externalPlayer = window[plugin.name]
+				if (!window[plugin.name]) {
+					$log.error('external player not loaded on window', plugin)
+				}
 				$log.debug('loaded externalPlayer is', externalPlayer)
 				externalPlayer.init(plugin, review)
 				if (activePlugins) activePlugins.push(plugin)

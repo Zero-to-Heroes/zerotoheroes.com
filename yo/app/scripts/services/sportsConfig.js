@@ -62,7 +62,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 13, dev: dev}, 
 							{name: 'parseDecks', version: 28, dev: dev}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 66, dev: dev},
+							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 68, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 16, dev: dev}
 						],
 						customCss: 'hearthstone.css?2'
@@ -222,7 +222,12 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					$log.error('external player not loaded on window', plugin)
 				}
 				$log.debug('loaded externalPlayer is', externalPlayer)
-				externalPlayer.init(plugin, review)
+				try {
+					externalPlayer.init(plugin, review)
+				}
+				catch (e) {
+					$log.error('exception externalPlayer init', e)
+				}
 				if (activePlugins) activePlugins.push(plugin)
 				if (pluginNames) pluginNames.push(plugin.name)
 

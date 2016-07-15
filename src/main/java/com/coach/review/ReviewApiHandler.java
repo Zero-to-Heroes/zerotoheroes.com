@@ -217,8 +217,9 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
 		// Check that access is allowed
-		if ("private".equalsIgnoreCase(review.getVisibility()) && review.getAuthorId() != null && !review.getAuthorId()
-				.equals(user.getId())) { return new ResponseEntity<Review>(review, HttpStatus.FORBIDDEN); }
+		if ("private".equalsIgnoreCase(review.getVisibility()) && review.getAuthorId() != null
+				&& (user == null || !review.getAuthorId().equals(user.getId()))) { return new ResponseEntity<Review>(
+						review, HttpStatus.FORBIDDEN); }
 
 		// Increase the view count
 		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {

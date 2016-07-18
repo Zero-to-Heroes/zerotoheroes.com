@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,8 +50,19 @@ public class MetricsApiHandler {
 	@Autowired
 	SportRepository sportRepository;
 
+	private final String environment;
+
+	@Autowired
+	public MetricsApiHandler(@Value("${environment}") String environment) {
+		super();
+		this.environment = environment;
+	}
+
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> getMetrics() {
+
+		if ("prod".equalsIgnoreCase(
+				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
 
 		Metrics metrics = new Metrics();
 

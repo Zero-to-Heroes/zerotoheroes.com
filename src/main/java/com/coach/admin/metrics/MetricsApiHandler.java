@@ -177,6 +177,9 @@ public class MetricsApiHandler {
 
 		String churnInfo = detailChurn(metrics);
 		csvMetrics += "<br/><br/>" + churnInfo;
+		
+		log.debug("result");
+		log.debug(csvMetrics);
 
 		return new ResponseEntity<String>(csvMetrics, HttpStatus.OK);
 	}
@@ -226,6 +229,7 @@ public class MetricsApiHandler {
 		result += header + "<br/>";
 
 		for (Metric metric : metrics.getMetrics()) {
+			log.debug("\tformatting metric " + metric);
 			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + metric.getUniqueContentCreators().size()
 					+ "," + metric.getReturningContributors() + "," + metric.getChurn().size() + ","
 					+ metric.getReviews() + "," + metric.getComments() + ","
@@ -234,6 +238,7 @@ public class MetricsApiHandler {
 					+ metric.getUniqueContentCreators() + "," + metric.getChurn();
 			result += "<br/>";
 		}
+		log.debug("all metrics formatted");
 		return result;
 	}
 

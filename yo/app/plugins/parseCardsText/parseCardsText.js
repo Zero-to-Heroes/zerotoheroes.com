@@ -2696,7 +2696,7 @@ var parseCardsText = {
 			"type": "Minion"
 		},
 		{
-			"cardImage": "CS2_049_H1.png",
+			"cardImage": "CS2_049.png",
 			"cost": 2,
 			"fr": {
 				"name": "Appel totémique"
@@ -29564,7 +29564,7 @@ var parseCardsText = {
 			"type": "Spell"
 		},
 		{
-			"cardImage": "HERO_02a.png",
+			"cardImage": "HERO_02.png",
 			"collectible": true,
 			"fr": {
 				"name": "Morgl l’Oracle"

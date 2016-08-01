@@ -34,6 +34,7 @@
 	"hearthstone": {
 		"landing": {
 			"headline": "Nous aidons les joueurs de HearthStone à progresser ensemble",
+			"headlineTag": "Et c'est 100% gratuit",
 			"subHeadline": "Postez une vidéo de vous en train de jouer et recevez des conseils de la communauté HearthStone",
 			"communityIntro": "Devenez une Légende grâce aux meilleurs conseils de la communauté. Un système de vote et de réputation assure que les meilleurs commentaires apparaîtront en premier.",
 			"contributeIntro": "Aidez les autres à devenir de meilleurs joueurs. Gagnez la reconnaissance de la communauté en donnant des conseils et en votant pour ceux qui vous paraissent les plus importants.",
@@ -116,6 +117,7 @@
 		"landing": {
 			"learnMore": "En savoir plus",
 			"getIn": "Entrer",
+			"continueToSite": "Continuer vers le site",
 			"reviewToolsHeadline": "De puissants outils d'analyse",
 			"reviewToolsIntro": "Identifiez et comprenez précisément vos erreurs. Regardez n'importe quelle séquence au ralenti, en boucle, ou même côte-à-côte avec une autre séquence d'un joueur de haut niveau.",
 			"communityHeadline": "La sagesse populaire",

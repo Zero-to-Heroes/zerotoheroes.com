@@ -1,6 +1,6 @@
 var parseCardsText = {
 	cardRegex: /\[\[.+?\]\]/gm,
-	manaRegex: /\d-mana/gm,
+	manaRegex: /\d(\d)?-mana/gm,
 	isUpdatePending: false,
 
 	execute: function (review, text) {

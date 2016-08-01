@@ -39,7 +39,7 @@ public class Comment implements HasText, HasReputation {
 	private String authorFrame, authorStatus;
 	private Date creationDate;
 	private boolean helpful;
-	private List<Comment> comments;
+	private List<Comment> comments = new ArrayList<>();
 	private int totalComments, totalHelpfulComments;
 	private Reputation reputation;
 	private List<Voter> noticeableVotes = new ArrayList<>();
@@ -214,11 +214,11 @@ public class Comment implements HasText, HasReputation {
 		noticeableVotes = new ArrayList<>();
 
 		List<String> upvotes = reputation.getUserIds().get(ReputationAction.Upvote);
+		log.debug("upvotes for " + text + ": " + upvotes);
 
 		if (upvotes == null || upvotes.isEmpty()) { return; }
 
-		// log.debug("upvotes " + upvotes);
-//		log.debug("profilemap " + profileMap);
+		// log.debug("profilemap " + profileMap);
 		// Create a list with all the users who voted
 		List<Voter> upvoters = new ArrayList<>();
 		for (String userId : upvotes) {
@@ -230,7 +230,7 @@ public class Comment implements HasText, HasReputation {
 				upvoters.add(voter);
 			}
 		}
-//		log.debug("upvoters " + upvoters);
+		log.debug("\tupvoters " + upvoters);
 
 		// Order the list based on rank + reputation
 		Collections.sort(upvoters, new Comparator<Voter>() {
@@ -240,13 +240,18 @@ public class Comment implements HasText, HasReputation {
 
 			}
 		});
-		// log.debug("sorted " + upvoters);
+		log.debug("\tsorted " + upvoters);
 
 		for (int i = 0; i < Math.min(upvoters.size(), 2); i++) {
 			noticeableVotes.add(upvoters.get(i));
 		}
-//		log.debug("noticeable " + noticeableVotes);
+		log.debug("\tnoticeable " + noticeableVotes);
 
+		if (comments != null) {
+			for (Comment comment : comments) {
+				comment.highlightNoticeableVotes(sport, userMap, profileMap);
+			}
+		}
 	}
 
 	private float buildScore(Sport sport, Voter o1, User u1, Profile p1) {
@@ -255,7 +260,7 @@ public class Comment implements HasText, HasReputation {
 		if (p1.getRankings() != null && p1.getRankings().getRankings() != null
 				&& p1.getRankings().getRankings().get("hearthstone") != null
 				&& p1.getRankings().getRankings().get("hearthstone").get("ranked") != null) {
-			log.debug("Computing score for " + p1);
+			// log.debug("Computing score for " + p1);
 			Rank rank = p1.getRankings().getRankings().get("hearthstone").get("ranked");
 			o1.rank = rank.getKey();
 			score += (25 - rank.getPriorityOrder()) * 20;

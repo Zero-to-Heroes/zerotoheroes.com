@@ -64,11 +64,14 @@ public class DeckParser implements Plugin {
 	private static final String MANACRYSTALS_DECK_ID_REGEX = "\\[?(https:\\/\\/manacrystals\\.com\\/deck_guides\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
 	private static final String MANACRYSTALS_DECK_HOST_URL = "https://manacrystals.com/deck_guides/";
 
-	private static final String HEARTHSTATS_SHORT_DECK_ID_REGEX = "\\[?(http:\\/\\/hss\\.io\\/d\\/)([\\d\\w\\-]+)\\]?";
-	private static final String HEARTHSTATS_SHORT_DECK_HOST_URL = "http://hss.io/d/";
+	// https://regex101.com/r/kW4oW3/1
+	private static final String HEARTHSTATS_DECK_ID_REGEX = "\\[?(http:\\/\\/(?:hss|hearthstats)\\.(?:io|net)\\/d(?:ecks)?\\/)([\\d\\w\\-]+)(\\??\\S*)\\]?";
+	private static final String HEARTHSTATS_DECK_HOST_URL = "http://hearthstats.net/decks/";
 
-	private static final String HEARTHSTATS_FULL_DECK_ID_REGEX = "\\[?(http:\\/\\/hearthstats\\.net\\/d\\/)([\\d\\w\\-]+)\\]?";
-	private static final String HEARTHSTATS_FULL_DECK_HOST_URL = "http://hearthstats.net/d/";
+	// private static final String HEARTHSTATS_FULL_DECK_ID_REGEX =
+	// "\\[?(http:\\/\\/hearthstats\\.net\\/d\\/)([\\d\\w\\-]+)\\]?";
+	// private static final String HEARTHSTATS_FULL_DECK_HOST_URL =
+	// "http://hearthstats.net/d/";
 
 	private static final String HEARTHHEAD_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthhead\\.com\\/deck=)([\\d\\w\\-]+)\\/?([\\d\\w\\-]+)?\\]?";
 	private static final String HEARTHHEAD_DECK_HOST_URL = "http://www.hearthhead.com/deck=";
@@ -110,8 +113,8 @@ public class DeckParser implements Plugin {
 		parseHsTopDecksDeck(pluginData, initialText);
 		parseIcyVeinsDeck(pluginData, initialText);
 		parseManaCrystalsDeck(pluginData, initialText);
-		parseHearthStatsDeckShort(pluginData, initialText);
-		parseHearthStatsDeckFull(pluginData, initialText);
+		parseHearthStatsDeck(pluginData, initialText);
+		// parseHearthStatsDeckFull(pluginData, initialText);
 		parseHearthHeadDeck(pluginData, initialText);
 	}
 
@@ -133,6 +136,7 @@ public class DeckParser implements Plugin {
 
 			Deck deck = new Deck();
 			deck.title = doc.select("#deckguide-name").text();
+			deck.url = deckUrl;
 
 			Elements cards = doc.select(".main .deckguide-cards .deckguide-cards-type li");
 
@@ -158,68 +162,25 @@ public class DeckParser implements Plugin {
 		}
 	}
 
-	private void parseHearthStatsDeckShort(Map<String, String> pluginData, String initialText) throws IOException {
-		Pattern pattern = Pattern.compile(HEARTHSTATS_SHORT_DECK_ID_REGEX, Pattern.MULTILINE);
+	private void parseHearthStatsDeck(Map<String, String> pluginData, String initialText) throws IOException {
+		Pattern pattern = Pattern.compile(HEARTHSTATS_DECK_ID_REGEX, Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(initialText);
 		while (matcher.find()) {
-			String deckId = matcher.group(2);
+			String deckId = matcher.group(2) + matcher.group(3);
 
 			// Don't override existing decks (performance)
 			if (pluginData.get(deckId) != null) {
 				continue;
 			}
 
-			String deckUrl = HEARTHSTATS_SHORT_DECK_HOST_URL + deckId;
+			String deckUrl = HEARTHSTATS_DECK_HOST_URL + deckId;
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
-			// Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8",
-			// HEARTHSTATS_SHORT_DECK_HOST_URL);
 
 			Deck deck = new Deck();
 			deck.title = doc.select(".page-title").text();
-
-			Elements classCards = doc.select(".deckBuilderCardsWrapper .card");
-
-			for (Element element : classCards) {
-				// log.debug("Parsing class card " + element);
-				// Elements qtyElement = element.text();
-				String qty = element.select(".qty").text().trim();
-				// log.debug("\tQty " + qty);
-				String name = element.select(".name").text().trim();
-				// log.debug("\tCard " + cardElement);
-				Card card = new Card(name, qty);
-				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
-			}
-
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
-		}
-	}
-
-	private void parseHearthStatsDeckFull(Map<String, String> pluginData, String initialText) throws IOException {
-		Pattern pattern = Pattern.compile(HEARTHSTATS_FULL_DECK_ID_REGEX, Pattern.MULTILINE);
-		Matcher matcher = pattern.matcher(initialText);
-		while (matcher.find()) {
-			String deckId = matcher.group(2);
-
-			// Don't override existing decks (performance)
-			if (pluginData.get(deckId) != null) {
-				continue;
-			}
-
-			String deckUrl = HEARTHSTATS_FULL_DECK_HOST_URL + deckId;
-			// log.debug("Trying to scrape deck data for deck " + deckUrl);
-
-			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
-			// Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8",
-			// HEARTHSTATS_SHORT_DECK_HOST_URL);
-
-			Deck deck = new Deck();
-			deck.title = doc.select(".page-title").text();
+			deck.url = deckUrl;
 
 			Elements classCards = doc.select(".deckBuilderCardsWrapper .card");
 
@@ -736,7 +697,7 @@ public class DeckParser implements Plugin {
 
 	@Data
 	private static class Deck {
-		private String title;
+		private String title, url;
 		private final List<Card> classCards = new ArrayList<>();
 		private final List<Card> neutralCards = new ArrayList<>();
 	}

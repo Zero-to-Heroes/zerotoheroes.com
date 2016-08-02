@@ -366,7 +366,7 @@ public class ReviewApiHandler {
 				.getAuthorities();
 
 		// Adding the comment
-		log.debug("Adding comment " + comment + " to review " + id);
+		// log.debug("Adding comment " + comment + " to review " + id);
 
 		Review review = reviewRepo.findById(id);
 

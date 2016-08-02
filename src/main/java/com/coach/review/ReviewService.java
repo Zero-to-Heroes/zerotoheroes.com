@@ -13,8 +13,10 @@ import com.coach.profile.ProfileRepository;
 import com.coach.user.UserRepository;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Component
+@Slf4j
 public class ReviewService {
 
 	@Autowired
@@ -40,10 +42,18 @@ public class ReviewService {
 
 		@Override
 		public void run() {
-			review.updateFullTextSearch();
-			review.updateCommentsCount();
-			denormalizeReputations(review);
-			reviewRepo.save(review);
+			try {
+				review.updateFullTextSearch();
+				review.updateCommentsCount();
+				denormalizeReputations(review);
+				// log.debug("updating review");
+				reviewRepo.save(review);
+				// log.debug("updated refiew", review);
+			}
+			catch (Exception e) {
+				log.error("Exception updating the review", e);
+				throw e;
+			}
 		}
 	}
 

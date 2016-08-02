@@ -61,7 +61,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					plugins: {
 						plugins: [
 							{name: 'parseCardsText', version: 16, dev: dev}, 
-							{name: 'parseDecks', version: 30, dev: dev}, 
+							{name: 'parseDecks', version: 31, dev: dev}, 
 							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 72, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 17, dev: dev}
 						],

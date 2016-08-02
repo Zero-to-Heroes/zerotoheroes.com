@@ -6,18 +6,19 @@ var parseDecks = {
 	zthDecksRegex: /\[?(http:\/\/www\.zerotoheroes\.com\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
 	// zthDecksRegex: /\[?(http:\/.*localhost.*\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
 	hearthArenaDecksRegex: /\[?(http:\/\/www\.heartharena\.com\/arena-run\/)([\da-zA-Z]+)\]?/gm,
-	arenaDraftsDecksRegex: /\[?(http:\/\/(www\.)?arenadrafts\.com\/Arena\/View\/)([\da-zA-Z\-]+)\]?/gm,
+	arenaDraftsDecksRegex: /\[?(http:\/\/(?:www\.)?arenadrafts\.com\/Arena\/View\/)([\da-zA-Z\-]+)\]?/gm,
 	hsTopDecksDecksRegex: /\[?(http:\/\/www\.hearthstonetopdecks\.com\/decks\/)([\da-zA-Z\-]+)\]?/gm,
 	icyVeinsDecksRegex: /\[?(http:\/\/www\.icy-veins\.com\/hearthstone\/)([\da-zA-Z\-]+)\]?/gm,
 	manaCrystalsDecksRegex: /\[?(https:\/\/manacrystals\.com\/deck_guides\/)([\da-zA-Z\-]+)\]?/gm,
-	hearthstatsShortDecksRegex: /\[?(http:\/\/hss\.io\/d\/)([\d\w\-]+)\]?/gm,
-	hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
+	// https://regex101.com/r/kW4oW3/1
+	hearthstatsDecksRegex: /\[?(http:\/\/(?:hss|hearthstats)\.(?:io|net)\/d(?:ecks)?\/)([\d\w\-]+)(\??\S*)\]?/gm,
+	// hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
 	hearthheadDecksRegex: /\[?(http:\/\/www\.hearthhead\.com\/deck=)([\d\w\-]+)\/?([\d\w\-]+)?\]?/gm,
 	
 	decks: {},
 
 	execute: function (review, text) {
-		console.log('executing parseDecks plugin')
+		console.log('executing parseDecks plugin', text)
 		// var result = text;
 
 		text = parseDecks.parse(review, text, parseDecks.decksRegex)
@@ -25,12 +26,12 @@ var parseDecks = {
 		text = parseDecks.parse(review, text, parseDecks.hsDecksDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.zthDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthArenaDecksRegex)
-		text = parseDecks.parse(review, text, parseDecks.arenaDraftsDecksRegex, 4)
+		text = parseDecks.parse(review, text, parseDecks.arenaDraftsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hsTopDecksDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.icyVeinsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.manaCrystalsDecksRegex)
-		text = parseDecks.parse(review, text, parseDecks.hearthstatsShortDecksRegex)
-		text = parseDecks.parse(review, text, parseDecks.hearthstatsFullDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.hearthstatsDecksRegex)
+		// text = parseDecks.parse(review, text, parseDecks.hearthstatsFullDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthheadDecksRegex)
 
 		// result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
@@ -64,7 +65,6 @@ var parseDecks = {
 				// console.log('replaced substring', text.substring(match.index, match.index + match[0].length))
 				text = parseDecks.handleMatch(review, text, match, groupIndex, regex)
 				// console.log('new text', text)
-
 			}
 			match = regex.exec(text)
 		}
@@ -74,8 +74,10 @@ var parseDecks = {
 
 	handleMatch: function(review, text, match, groupIndex, regex) {
 		groupIndex = groupIndex || 3
-		// console.log('\tmatch', match, result);
+		// console.log('\tmatch', match, review.plugins.hearthstone.parseDecks);
 		var deckName = match[groupIndex]
+		if (match.length > 4)
+			deckName += match[4]
 		var deckUrl = match[2] + deckName
 		// console.log('\tdeck name', deckName, deckUrl)
 
@@ -85,6 +87,7 @@ var parseDecks = {
 			var strDeck = plugins.parseDecks[deckName];
 			// console.log('\tstrDeck', strDeck)
 			var deck = JSON.parse(strDeck)
+			deckUrl = deck.url || deckUrl
 			// console.log('\tjsDeck', deck)
 			var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 			// parseDecks.deck = htmlDeck;
@@ -100,8 +103,10 @@ var parseDecks = {
 			var newText = text.substring(0, match.index + match[1].length) + replaceString + text.substring(match.index + match[0].length)
 			text = newText			
 
-			regex.lastIndex += replaceString.length - 1
-			// text = text.replace(toMatch, '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>');
+			// regex.lastIndex += replaceString.length - 1
+			// Offset to make sure we don't process the same URL twice. It's a magic number, works with this value and 
+			// it's not so big to skip the next one completely
+			regex.lastIndex += 399
 		}
 
 		return text

@@ -459,7 +459,8 @@
 			},
 			"askProButton": "Ask a Pro",
 			"askProTooltip": "Get professional advice on your review",
-			"loadingComments": "Loading comments"
+			"loadingComments": "Loading comments",
+			"restrictedAccess": "The author of the review has restricted its access, and only they can see it"
 		},
 		"upload": {
 			"choice": {

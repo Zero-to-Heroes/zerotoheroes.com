@@ -58,6 +58,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		
 		// Load the review
 		$scope.initReview = function() {
+			$scope.restrictedAccess = false
 			//$log.debug('initializing review');
 			$log.debug('Loding review at ', (Date.now() - $scope.debugTimestamp))
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
@@ -87,7 +88,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$timeout(function() {
 						$scope.initPlayer(data)
 					})
-
+				},
+				function(error) {
+					$log.warn('could not load review', error)
+					if (error.status == 403) {
+						$scope.restrictedAccess = true
+					}
 				}
 			)
 

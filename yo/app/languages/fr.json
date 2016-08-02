@@ -456,7 +456,9 @@
 					"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et les informations sur les parties seront ensuite automatiquement mises à jour",
 					"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier vos replays",
 					"filesAdded": "Vous êtes sur le point d'envoyer {{games}} parties dans {{files}} fichiers",
-					"removeFileTooltip": "Enlever ce fichier"
+					"removeFileTooltip": "Enlever ce fichier",
+					"applyAll": "Remplir les champs",
+					"applyAllTooltip": "Il y a des champs que nous ne pouvons pas encore remplir automatiquement à partir du fichier de replay et que vous devez saisir manuellement. Cliquer sur son bouton utiisera les valeurs des champs de la première revue pour automatiquemenet remplir ceux des autres revues."
 				}
 			},
 			"fromurl": {

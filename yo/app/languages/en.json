@@ -502,7 +502,9 @@
 					"genericTitle" : "Replay game #{{index}}",
 					"filesAdded": "You're about to upload {{games}} games in {{files}} files:",
 					"removeFileTooltip": "Remove this file",
-					"canUploadMore": "You can add more files by dropping them here (just be reasonable - we know it crashes with 600 files, and works with 10), or remove them by clicking on the delete icon. "
+					"canUploadMore": "You can add more files by dropping them here (just be reasonable - we know it crashes with 600 files, and works with 10), or remove them by clicking on the delete icon. ",
+					"applyAll": "Populate reviews from first",
+					"applyAllTooltip": "There are some fields we can't yet populate automatically from the replay file, and that you have to enter manually. Clicking on this button will use the first review's fields values to populate all the other reviews"
 				}
 			},
 			"fromurl": {

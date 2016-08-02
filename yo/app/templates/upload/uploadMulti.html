@@ -21,6 +21,10 @@
 	  	</div>
   	</div>
 
+  	<div class="populate-all-reviews">
+		<button class="btn btn-default" ng-click="applyToAll()" translate="global.upload.replay.multi.applyAll" title="{{ 'global.upload.replay.multi.applyAllTooltip' | translate }}"></button>
+	</div>
+
 	<ul class="multi-upload">
 		<li ng-repeat="review in reviews" class="review {{review.visibility}}">
 			<div class="review-container">
@@ -29,6 +33,7 @@
 					<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="review.visibility != 'skip' ? true : false" ng-readonly="transcoding">
 				</div>
 				<participants-details review="review"></participants-details>
+				<hs-decklist-upload sport="sport" review="review"></hs-decklist-upload>
 				<review-visibility review="review" multi-upload="true"></review-visibility>
 				<!-- {{review}} -->
 			</div>

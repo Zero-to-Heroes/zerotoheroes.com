@@ -1,6 +1,7 @@
 .multi-form {
     max-width: 1000px;
     margin: auto;
+    max-width: 1200px;
 }
 
 .multi-upload {
@@ -21,8 +22,30 @@
     background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
     max-width: 830px;
+    max-width: 1030px;
     display: flex;
     position: relative;
+}
+
+.multi-upload .review hs-decklist-upload {
+    margin-bottom: 0;
+    display: flex;
+}
+.multi-upload hs-decklist-upload .deck-list {
+    margin: auto;
+    display: flex;
+}
+.multi-upload hs-decklist-upload .deck-list input {
+    width: 200px;
+}
+.multi-upload hs-decklist-upload .deck-list > span {
+    margin: auto;
+    margin-left: 5px;
+}
+
+.multi-form .populate-all-reviews {
+    padding: 20px;
+    text-align: center;
 }
 
 .multi-upload .review.skip:after {

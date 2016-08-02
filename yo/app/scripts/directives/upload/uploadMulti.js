@@ -104,6 +104,8 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 
 							review.author = currentReview.author || review.author
 							review.visibility = currentReview.visibility || review.visibility
+							review.participantDetails = currentReview.participantDetails || review.participantDetails || {}
+							review.plugins = currentReview.plugins || review.plugins
 							$scope.reviews[index] = review
 
 							var replayUrl = ENV.videoStorageUrl + review.key
@@ -115,12 +117,10 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 								var playerInfo = HsReplayParser.getPlayerInfo(data)
 
 								$log.debug('getting player info', playerInfo, review)
-								review.participantDetails = {
-									playerName: playerInfo.player.name,
-									playerCategory: playerInfo.player.class,
-									opponentName: playerInfo.opponent.name,
-									opponentCategory: playerInfo.opponent.class
-								}
+								review.participantDetails.playerName = playerInfo.player.name
+								review.participantDetails.playerCategory = playerInfo.player.class
+								review.participantDetails.opponentName = playerInfo.opponent.name
+								review.participantDetails.opponentCategory = playerInfo.opponent.class
 
 								review.participantDetails.populated = true
 
@@ -164,6 +164,14 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 					})
 				}
 
+				$scope.applyToAll = function(review) {
+					review = review || $scope.reviews[0]
+					$scope.reviews.forEach(function(rev) {
+						rev.participantDetails.skillLevel = review.participantDetails.skillLevel
+						rev.plugins.hearthstone.parseDecks = rev.plugins.hearthstone.parseDecks || {}
+						rev.plugins.hearthstone.parseDecks.reviewDeck = review.plugins.hearthstone.parseDecks.reviewDeck
+					})
+				}
 
 
 				//===============

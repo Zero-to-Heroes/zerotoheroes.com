@@ -654,7 +654,7 @@ public class DeckParser implements Plugin {
 			for (; pageNumber <= numberOfPages; pageNumber++) {
 				if (pageNumber != 1) {
 					// log.debug("Connecting to " + cardsLink + pageNumber);
-					doc = Jsoup.connect(cardsLink + pageNumber).userAgent("Mozilla").get();
+					doc = Jsoup.connect(cardsLink + pageNumber).userAgent("curl/7.47.1").get();
 				}
 
 				// Select all the cells with a card name on them
@@ -671,7 +671,7 @@ public class DeckParser implements Plugin {
 
 			String[] cards = cardList.split(";");
 			for (String card : cards) {
-				log.debug("processing card " + card);
+				// log.debug("processing card " + card);
 				if (card.length() == 0) {
 					continue;
 				}

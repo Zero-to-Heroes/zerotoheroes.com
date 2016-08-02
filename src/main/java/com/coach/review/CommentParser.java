@@ -3,10 +3,10 @@ package com.coach.review;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
@@ -24,11 +24,13 @@ public class CommentParser {
 		Matcher matcher = pattern.matcher(comment.getText());
 		while (matcher.find()) {
 			String group = matcher.group();
-			log.debug("Found matching pattern: " + group);
+			// log.debug("Found matching pattern: " + group);
 			String reviewId = extractReviewId(group);
 			if (reviewId != null) {
 				Review refReview = reviewRepo.findById(reviewId);
-				if (refReview != null) review.addExternalLink(reviewId, refReview.getKey());
+				if (refReview != null) {
+					review.addExternalLink(reviewId, refReview.getKey());
+				}
 			}
 		}
 	}

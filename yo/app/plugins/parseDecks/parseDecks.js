@@ -18,7 +18,7 @@ var parseDecks = {
 	decks: {},
 
 	execute: function (review, text) {
-		console.log('executing parseDecks plugin', text)
+		// console.log('executing parseDecks plugin', text)
 		// var result = text;
 
 		text = parseDecks.parse(review, text, parseDecks.decksRegex)

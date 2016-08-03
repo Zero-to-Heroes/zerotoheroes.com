@@ -155,10 +155,7 @@ public class DeckParser implements Plugin {
 				deck.classCards.add(card);
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -196,10 +193,7 @@ public class DeckParser implements Plugin {
 				deck.classCards.add(card);
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -251,10 +245,7 @@ public class DeckParser implements Plugin {
 				deck.neutralCards.add(card);
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -306,10 +297,7 @@ public class DeckParser implements Plugin {
 				deck.neutralCards.add(card);
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -359,10 +347,7 @@ public class DeckParser implements Plugin {
 				deck.neutralCards.add(card);
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -427,10 +412,7 @@ public class DeckParser implements Plugin {
 				}
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -473,10 +455,7 @@ public class DeckParser implements Plugin {
 				}
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -515,10 +494,7 @@ public class DeckParser implements Plugin {
 				deck.classCards.add(card);
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -567,10 +543,7 @@ public class DeckParser implements Plugin {
 				deck.neutralCards.add(card);
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -613,10 +586,7 @@ public class DeckParser implements Plugin {
 				}
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
+			saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -687,12 +657,18 @@ public class DeckParser implements Plugin {
 				deck.classCards.add(cardObj);
 			}
 
-			String jsonDeck = new ObjectMapper().writeValueAsString(deck);
-
-			// log.debug("jsonDeck" + jsonDeck);
-			pluginData.put(deckId, jsonDeck);
-			// log.debug("" + pluginData);
+			saveDeck(pluginData, deckId, deck);
 		}
+	}
+
+	private void saveDeck(Map<String, String> pluginData, String deckId, Deck deck) throws JsonProcessingException {
+		// Post-process deck
+		if (StringUtils.isNotEmpty(deck.title)) {
+			deck.title = deck.title.replaceAll("\"", "");
+		}
+
+		String jsonDeck = new ObjectMapper().writeValueAsString(deck);
+		pluginData.put(deckId, jsonDeck);
 	}
 
 	@Data

@@ -16,7 +16,6 @@ import com.coach.plugin.hearthstone.HSReplay;
 import com.coach.review.ListReviewResponse;
 import com.coach.review.Review;
 import com.coach.review.ReviewApiHandler;
-import com.coach.review.ReviewRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,9 +23,6 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "/api/replays")
 @Slf4j
 public class ReplayApiHandler {
-
-	@Autowired
-	ReviewRepository reviewRepo;
 
 	@Autowired
 	ReviewApiHandler reviewApi;

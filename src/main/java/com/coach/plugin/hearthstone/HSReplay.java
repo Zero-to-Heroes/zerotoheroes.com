@@ -157,53 +157,7 @@ public class HSReplay implements ReplayPlugin {
 		S3Object s3object = s3utils.readerFromS3(key);
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()));
-			StringBuilder currentGame = null;
-			new StringBuilder();
-			if ("text/plain".equals(fileType)) {
-				log.debug("processing file");
-				String line;
-				while ((line = reader.readLine()) != null) {
-					if (line.contains("GameState.DebugPrintPower() - CREATE_GAME")) {
-						if (currentGame != null) {
-							log.debug("Added a new game, " + line);
-							// log.debug(currentGame.toString());
-							games.add(currentGame.toString());
-							currentGame.setLength(0);
-						}
-						else {
-							currentGame = new StringBuilder();
-						}
-					}
-					// log.debug("\treading line " + line);
-					if (currentGame != null) {
-						currentGame.append(line);
-						currentGame.append(System.lineSeparator());
-					}
-				}
-				if (currentGame != null && currentGame.length() > 0) {
-					log.debug("Added a new game");
-					// log.debug(currentGame.toString());
-					games.add(currentGame.toString());
-				}
-			}
-			else if ("hdtreplay".equals(fileType)) {
-				File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
-				s3utils.readFromS3ToFile(key, tempFile);
-
-				// Unzipping
-				ZipFile zipFile = new ZipFile(tempFile);
-				String tempDir = System.getProperty("java.io.tmpdir");
-				String destination = tempDir + "/" + new Date().getTime() + "-" + key;
-				zipFile.extractFile("output_log.txt", destination);
-
-				// Retrieving the unzipped file
-				String logFile = readFile(destination + "/output_log.txt");
-				games.add(logFile);
-
-				// Delete temp file
-				tempFile.delete();
-				FileUtils.deleteDirectory(new File(destination));
-			}
+			games = extractGames(key, fileType, reader);
 		}
 		finally {
 			s3object.close();
@@ -211,5 +165,57 @@ public class HSReplay implements ReplayPlugin {
 
 		return games;
 
+	}
+
+	public List<String> extractGames(String key, String fileType, BufferedReader reader)
+			throws IOException, ZipException {
+		List<String> games = new ArrayList<>();
+		StringBuilder currentGame = null;
+		if ("text/plain".equals(fileType)) {
+			log.debug("processing file");
+			String line;
+			while ((line = reader.readLine()) != null) {
+				if (line.contains("GameState.DebugPrintPower() - CREATE_GAME")) {
+					if (currentGame != null) {
+						log.debug("Added a new game, " + line);
+						// log.debug(currentGame.toString());
+						games.add(currentGame.toString());
+						currentGame.setLength(0);
+					}
+					else {
+						currentGame = new StringBuilder();
+					}
+				}
+				// log.debug("\treading line " + line);
+				if (currentGame != null) {
+					currentGame.append(line);
+					currentGame.append(System.lineSeparator());
+				}
+			}
+			if (currentGame != null && currentGame.length() > 0) {
+				log.debug("Added a new game");
+				// log.debug(currentGame.toString());
+				games.add(currentGame.toString());
+			}
+		}
+		else if ("hdtreplay".equals(fileType)) {
+			File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
+			s3utils.readFromS3ToFile(key, tempFile);
+
+			// Unzipping
+			ZipFile zipFile = new ZipFile(tempFile);
+			String tempDir = System.getProperty("java.io.tmpdir");
+			String destination = tempDir + "/" + new Date().getTime() + "-" + key;
+			zipFile.extractFile("output_log.txt", destination);
+
+			// Retrieving the unzipped file
+			String logFile = readFile(destination + "/output_log.txt");
+			games.add(logFile);
+
+			// Delete temp file
+			tempFile.delete();
+			FileUtils.deleteDirectory(new File(destination));
+		}
+		return games;
 	}
 }

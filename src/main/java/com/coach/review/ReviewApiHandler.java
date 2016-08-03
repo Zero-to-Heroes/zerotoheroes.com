@@ -482,6 +482,58 @@ public class ReviewApiHandler {
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
+	public @ResponseBody ResponseEntity<Review> updateAndKeepNullInfo(@PathVariable("reviewId") final String id,
+			@RequestBody Review inputReview) throws IOException {
+
+		Review review = reviewRepo.findById(id);
+
+		// Security
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+		User user = userRepo.findByUsername(currentUser);
+
+		// Disallow anonymous edits
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
+		}
+		else if (!currentUser.equals(review.getAuthor())
+				&& !user.canEdit()) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
+
+		// log.debug("Upading review with " + inputReview);
+
+		if (inputReview.getText() != null) {
+			review.setText(inputReview.getText());
+		}
+
+		activatePlugins(currentUser, review, review);
+		// log.debug("updated text is " + review.getText());
+
+		if (inputReview.getSport() != null) {
+			review.setSport(inputReview.getSport());
+		}
+
+		if (inputReview.getTitle() != null) {
+			review.setTitle(inputReview.getTitle());
+		}
+
+		if (inputReview.getTags() != null) {
+			review.setTags(inputReview.getTags());
+		}
+
+		if (inputReview.getParticipantDetails() != null) {
+			review.setParticipantDetails(inputReview.getParticipantDetails());
+		}
+
+		if (inputReview.getVisibility() != null) {
+			review.setVisibility(inputReview.getVisibility());
+		}
+
+		reviewService.updateAsync(review);
+
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/{reviewId}/publish", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Review> publish(@PathVariable("reviewId") final String id,
 			@RequestBody Review inputReview) throws IOException {

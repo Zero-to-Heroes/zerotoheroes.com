@@ -79,7 +79,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// The key of the associated video / file
 	private String key, temporaryKey;
 	// The replay file content (or key to where it is stored?)
-	private String temporaryReplay, replay;
+	private String replay;
+	// Don't send the info to the UI, it doesn't need it
+	@JsonIgnore
+	private String temporaryReplay;
 	// The image to display (if any)
 	private String thumbnail;
 	// The type of media that is linked to the video
@@ -452,6 +455,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			this.visibility = visibility;
 		}
 	}
+
 	public String buildKey(String name, String type) {
 		Calendar calendar = Calendar.getInstance();
 		String prefix = "";

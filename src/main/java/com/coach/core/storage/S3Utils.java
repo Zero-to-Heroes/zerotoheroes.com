@@ -82,14 +82,32 @@ public class S3Utils {
 		byte[] textAsBytes = text.getBytes("UTF-8");
 		InputStream contentAsStream = new ByteArrayInputStream(textAsBytes);
 
+		putToS3(contentAsStream, textAsBytes.length, fileName, type, listener);
+
+		// ObjectMetadata metaData = new ObjectMetadata();
+		// metaData.setContentLength(textAsBytes.length);
+		// metaData.setContentType(type);
+		//
+		// AccessControlList acl = new AccessControlList();
+		// acl.grantPermission(GroupGrantee.AllUsers, Permission.Read);
+		//
+		// PutObjectRequest request = new PutObjectRequest(outputBucket,
+		// fileName, contentAsStream, metaData);
+		// request.setGeneralProgressListener(listener);
+		// s3.putObject(request.withCannedAcl(CannedAccessControlList.PublicRead));
+	}
+
+	public void putToS3(InputStream input, int contentLength, String fileName, String type, ProgressListener listener)
+			throws IOException {
+
 		ObjectMetadata metaData = new ObjectMetadata();
-		metaData.setContentLength(textAsBytes.length);
+		metaData.setContentLength(contentLength);
 		metaData.setContentType(type);
 
 		AccessControlList acl = new AccessControlList();
 		acl.grantPermission(GroupGrantee.AllUsers, Permission.Read);
 
-		PutObjectRequest request = new PutObjectRequest(outputBucket, fileName, contentAsStream, metaData);
+		PutObjectRequest request = new PutObjectRequest(outputBucket, fileName, input, metaData);
 		request.setGeneralProgressListener(listener);
 		s3.putObject(request.withCannedAcl(CannedAccessControlList.PublicRead));
 	}

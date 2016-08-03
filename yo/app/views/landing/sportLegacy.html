@@ -1,6 +1,6 @@
 <view-title>{{sportsConfig[sport].landing.displayName}}</view-title>
 
-<section id="home" data-stellar-background-ratio="0.5" dynamic-style style="background-image: url({{backgroundImage}})">
+<section id="home" dynamic-style style="background-image: url({{backgroundImage}})">
 	<div class="parallax-overlay" ng-class="{'parallax-overlay-full': sportsConfig['{{sport}}'].landing.displayAllSports}"></div> 
 	<div class="home-content">
 		<div class="container">
@@ -215,7 +215,7 @@
 	</div>
 </section>
 
-<div class="newsletter" data-stellar-background-ratio="0.5" style="background-position: 50% 3345px;" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
+<div class="newsletter" style="background-position: 50% 3345px;" ng-hide="sportsConfig['{{sport}}'].landing.displayAllSports">
 	<div class="container">
 		<div class="col-sm-8 col-sm-offset-2 text-center">
 			<h3>{{ 'global.landing.newsLetterHeadline' | translate }}</h3>

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.stereotype.Component;
 
 import com.coach.core.notification.ExecutorProvider;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.plugin.Plugin;
 import com.coach.plugin.ReplayPlugin;
 import com.coach.review.Review;
@@ -24,10 +25,13 @@ public class ReplayProcessor {
 	AutowireCapableBeanFactory beanFactory;
 
 	@Autowired
+	SlackNotifier slackNotifier;
+
+	@Autowired
 	private ExecutorProvider executorProvider;
 
 	public void processReplayFile(final Review review) {
-		Runnable runnable = new ReplayProcessorRunnable(review);
+		Runnable runnable = new ReplayProcessorRunnable(review, slackNotifier);
 		executorProvider.getExecutor().submit(runnable);
 	}
 
@@ -35,6 +39,7 @@ public class ReplayProcessor {
 	private class ReplayProcessorRunnable implements Runnable {
 
 		private final Review review;
+		private final SlackNotifier slackNotifier;
 
 		@Override
 		public void run() {
@@ -59,6 +64,7 @@ public class ReplayProcessor {
 				}
 				catch (Exception e) {
 					log.warn("Incorrect plugin execution " + pluginClass, e);
+					slackNotifier.notifyError(e, "Exception during plugin execution", pluginClass, review);
 				}
 			}
 		};

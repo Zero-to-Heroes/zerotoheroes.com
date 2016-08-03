@@ -797,6 +797,7 @@ public class ReviewApiHandler {
 			}
 			catch (Exception e) {
 				log.warn("Incorrect plugin execution " + pluginClass, e);
+				slackNotifier.notifyError(e, "Exception during plugin execution", pluginClass, review);
 			}
 		}
 	}

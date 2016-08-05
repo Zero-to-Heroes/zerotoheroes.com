@@ -17,6 +17,8 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 
 	List<Review> findBySport(String sport);
 
+	List<Review> findByAuthor(String authorName);
+
 	//@formatter:off
 	//@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
 	@Query(	value =

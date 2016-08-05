@@ -54,6 +54,7 @@ public class ReplayApiHandler {
 				review.setSport(Review.Sport.load(request.getSport()));
 				review.setTemporaryReplay(game);
 				review.setReplay("true");
+				review.setVisibility("private");
 				// review.setTemporaryKey(tempKey);
 
 				reviewApi.createReview(review);

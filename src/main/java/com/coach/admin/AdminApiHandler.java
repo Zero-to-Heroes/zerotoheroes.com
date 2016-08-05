@@ -1,9 +1,10 @@
 package com.coach.admin;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.coach.core.security.User;
 import com.coach.profile.ProfileService;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
@@ -40,22 +42,39 @@ public class AdminApiHandler {
 	@Autowired
 	SportRepository sportRepository;
 
-	@RequestMapping(value = "/updateAllReviews", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<Review> updateAllReviews() {
-		List<Review> reviews = reviewRepository.findAll();
+	private final String environment;
 
+	@Autowired
+	public AdminApiHandler(@Value("${environment}") String environment) {
+		super();
+		this.environment = environment;
+	}
+
+	@RequestMapping(value = "/updateAllReviews", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<String> updateAllReviews() {
+
+		if ("prod".equalsIgnoreCase(
+				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
+
+		log.debug("loading reviews");
+		List<Review> reviews = reviewRepository.findByAuthor("Zeezi");
+		log.debug("loaded all reviews " + reviews.size());
+
+		User author = userRepository.findByUsername("Zlatomir");
+
+		List<Review> modified = new ArrayList<>();
 		for (Review review : reviews) {
-			// if (review.isPublished() &&
-			// StringUtils.isEmpty(review.getVisibility())) {
-			// review.setVisibility("public");
-			// }
-			if (StringUtils.isEmpty(review.getReviewType())) {
-				review.setReviewType(review.getMediaType());
+			if ("Zeezi".equals(review.getAuthor())) {
+				// log.debug("found! " + review);
+				review.setAuthor(author.getUsername());
+				review.setAuthorId(author.getId());
+				modified.add(review);
 			}
 		}
-		reviewRepository.save(reviews);
-		log.debug("Reviews updated");
+		log.debug("saving modified reviews " + modified.size());
+		reviewRepository.save(modified);
+		log.debug("job's done!");
 
-		return new ResponseEntity<Review>((Review) null, HttpStatus.OK);
+		return new ResponseEntity<String>((String) null, HttpStatus.OK);
 	}
 }

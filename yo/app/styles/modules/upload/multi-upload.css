@@ -114,3 +114,10 @@
     text-align: center;
     padding-bottom: 20px;
 }
+
+.multi-form .multi-upload-error {
+    display: block;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 20px;
+}

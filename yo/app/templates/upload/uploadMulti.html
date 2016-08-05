@@ -12,6 +12,7 @@
 <!-- <div id="externalPlayer" ng-hide></div> -->
 
 <form class="background-white joustjs multi-form" name="uploadForm">
+  			
 	<div class="row username" ng-hide="User.isLoggedIn()">
 		<div class="col-sm-12">
 			<div class="form-group" show-errors="{ showSuccess: true }">
@@ -42,9 +43,10 @@
 
 	<div class="row publish-buttons">
 		<div class="col-sm-12">
-  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideo()" ng-show="transcodingDone && !publishPending" ng-disabled="!isDataValid()"><span>{{ 'global.upload.video.publishReviewButton' | translate }}</span></button>
-  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideoWhenReady()" ng-show="(!transcodingDone && !publishPending)" ng-disabled="!isDataValid()"><span>{{ 'global.upload.video.publishReviewWhenReadyButton' | translate }}</span></button>
-  			<button class="btn btn-primary btn-upload" ng-click="cancelPendingUpload()" ng-show="publishPending"><span>{{ 'global.upload.video.publishingPendingUpload' | translate }}</span></button>
+			<span class="multi-upload-error" ng-show="isMultiAnonymous()" ng-bind-html="'global.upload.replay.multi.multiAnonymousErrorMessage' | translate"></span>
+  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideo()" ng-show="transcodingDone && !publishPending" ng-disabled="!isDataValid() || isMultiAnonymous()"><span>{{ 'global.upload.video.publishReviewButton' | translate }}</span></button>
+  			<button class="btn btn-primary btn-upload" ng-click="initPublishVideoWhenReady()" ng-show="(!transcodingDone && !publishPending)" ng-disabled="!isDataValid() || isMultiAnonymous()"><span>{{ 'global.upload.video.publishReviewWhenReadyButton' | translate }}</span></button>
+  			<button class="btn btn-primary btn-upload" ng-click="cancelPendingUpload()" ng-show="publishPending" ng-disabled="isMultiAnonymous()"><span>{{ 'global.upload.video.publishingPendingUpload' | translate }}</span></button>
 			</div>
 	</div>
 </form>

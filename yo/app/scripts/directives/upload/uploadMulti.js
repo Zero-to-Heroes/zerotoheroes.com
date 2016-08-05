@@ -38,7 +38,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 								strSport: $scope.sport,
 								transcodingDone: false,
 								language: Localization.getLanguage(),
-								visibility: User.isLoggedIn() ? 'private' : 'public'
+								visibility: User.isLoggedIn() ? 'private' : 'restricted'
 							}
 							$log.debug('\tadding review', review)
 							$scope.reviews.push(review)
@@ -185,48 +185,12 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				$scope.isFileValid = function() {
 					return true
 				}
+				$scope.isMultiAnonymous = function() {
+					var publishedReviews = _.filter($scope.reviews, function(o) { return o.visibility != 'skip'})
+					$log.debug('isMultiAnonymous?', !$scope.User.isLoggedIn() && publishedReviews.length > 1, publishedReviews, $scope.User.isLoggedIn())
+					return !$scope.User.isLoggedIn() && publishedReviews.length > 1
+				}
 
-
-				// $scope.preparePublishing = function() {
-				// 	if (!$scope.review.participantDetails.populated) {
-				// 		$log.debug('aiting for population of participantDetails', $scope.review.participantDetails)
-				// 		$timeout(function() {
-				// 			$scope.preparePublishing()
-				// 		}, 50)
-				// 		return
-				// 	}
-				// 	$scope.publishVideo()
-				// }
-
-				// $scope.initPublishVideoWhenReady = function() {
-				// 	// If user is not registered, offer them to create an account
-				// 	if (!User.isLoggedIn()) {
-				// 		// Validate that the name is free
-				// 		Api.Users.get({identifier: $scope.review.author}, 
-				// 			function(data) {
-				// 				// User exists
-				// 				if (data.username) {
-				// 					$scope.uploadForm.author.$setValidity('nameTaken', false)
-				// 				}
-				// 				else {
-				// 					$scope.onPublishWhenReady = true
-				// 					$rootScope.$broadcast('account.signup.show', {identifier: $scope.review.author})
-				// 				}
-				// 			}
-				// 		)
-				// 	}
-				// 	else {
-				// 		$scope.publishVideoWhenReady()
-				// 	}
-				// }
-
-				// $scope.publishVideoWhenReady = function() {
-				// 	$scope.publishPending = true
-				// }
-
-				// $scope.cancelPendingUpload = function() {
-				// 	$scope.publishPending = false
-				// }
 
 				$scope.initPublishVideo = function() {
 					// If user is not registered, offer them to create an account
@@ -263,9 +227,16 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 					})
 					Api.ReviewsAll.save({reviews: reviewsToUpload}, 
 						function(data) {
-							var url = '/s/' + $routeParams['sport'] + '/myVideos'
-							// $log.debug('all good, going to', url)
-							$location.path(url)
+							if (User.isLoggedIn()) {
+								var url = '/s/' + $routeParams['sport'] + '/myVideos'
+								// $log.debug('all good, going to', url)
+								$location.path(url)
+							}
+							else {
+								var url = '/r/' + $routeParams['sport'] + '/' + reviewsToUpload[0].id + '/' + S(reviewsToUpload[0].title).slugify().s
+								// $log.debug('all good, going to', url)
+								$location.path(url)
+							}
 						}
 					)
 				}

@@ -14,17 +14,19 @@ app.directive('reviewVisibility', ['$log', '$translate',
 			controller: function($scope) {
 				$scope.visibilityOptions = [
 					{ "value" : "private", "label" : $translate.instant('global.review.visibility.private')  },
-					{ "value" : "restricted", "label" : $translate.instant('global.review.visibility.restricted') },
-					{ "value" : "public", "label" : $translate.instant('global.review.visibility.public') }
+					{ "value" : "restricted", "label" : $translate.instant('global.review.visibility.restricted') }
 				]
 
 				if ($scope.multiUpload) {
 					$scope.visibilityOptions.push({ "value" : "skip", "label" : $translate.instant('global.review.visibility.skip') })
 				}
+				else {
+					$scope.visibilityOptions.push({ "value" : "public", "label" : $translate.instant('global.review.visibility.public') })		
+				}
 
 				$scope.$watch('review', function(newVal, oldVal) {
 					if (newVal)
-						$scope.review.visibility = $scope.review.visibility || 'public'
+						$scope.review.visibility = $scope.review.visibility || 'restricted'
 				})
 
 			}

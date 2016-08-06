@@ -187,7 +187,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				}
 				$scope.isMultiAnonymous = function() {
 					var publishedReviews = _.filter($scope.reviews, function(o) { return o.visibility != 'skip'})
-					$log.debug('isMultiAnonymous?', !$scope.User.isLoggedIn() && publishedReviews.length > 1, publishedReviews, $scope.User.isLoggedIn())
+					// $log.debug('isMultiAnonymous?', !$scope.User.isLoggedIn() && publishedReviews.length > 1, publishedReviews, $scope.User.isLoggedIn())
 					return !$scope.User.isLoggedIn() && publishedReviews.length > 1
 				}
 

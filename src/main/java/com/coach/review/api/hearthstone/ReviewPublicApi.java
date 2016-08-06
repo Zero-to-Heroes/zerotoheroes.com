@@ -21,9 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
-import com.coach.core.security.UserAuthority;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.hearthstone.HSReplay;
 import com.coach.review.Review;
@@ -63,20 +61,26 @@ public class ReviewPublicApi {
 				.getAuthorities();
 
 		// Disallow anonymous access for now
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
-			response = new FileUploadResponse(null,
-					"Anonymous access is not yet supported. You need to create an account (on the site itself for now), "
-							+ "then first login in with a request to /api/login with your credentials (doc to come), then pass the X-Auth-Token you'll receive"
-							+ "in the header of the request");
-			return new ResponseEntity<FileUploadResponse>(response, HttpStatus.FORBIDDEN);
-		}
-
+		// if (StringUtils.isNullOrEmpty(currentUser) ||
+		// UserAuthority.isAnonymous(authorities)) {
+		// response = new FileUploadResponse(null,
+		// "Anonymous access is not yet supported. You need to create an account
+		// (on the site itself for now), "
+		// + "then first login in with a request to /api/login with your
+		// credentials (doc to come), then pass the X-Auth-Token you'll receive"
+		// + "in the header of the request");
+		// return new ResponseEntity<FileUploadResponse>(response,
+		// HttpStatus.FORBIDDEN);
+		// }
+		//
 		User user = userRepo.findByUsername(currentUser);
-		if (user == null) {
-			response = new FileUploadResponse(null,
-					"No user has been found that match the token you sent in input. Please relogin and try again");
-			return new ResponseEntity<FileUploadResponse>(response, HttpStatus.NOT_FOUND);
-		}
+		// if (user == null) {
+		// response = new FileUploadResponse(null,
+		// "No user has been found that match the token you sent in input.
+		// Please relogin and try again");
+		// return new ResponseEntity<FileUploadResponse>(response,
+		// HttpStatus.NOT_FOUND);
+		// }
 
 		// log.debug("current user " +
 		// SecurityContextHolder.getContext().getAuthentication().getName());
@@ -101,9 +105,11 @@ public class ReviewPublicApi {
 			review.setSport(Review.Sport.load("hearthstone"));
 			review.setTemporaryReplay(game);
 			review.setReplay("true");
-			review.setAuthorId(user.getId());
-			review.setAuthor(user.getUsername());
-			review.setVisibility("private");
+			if (user != null) {
+				review.setAuthorId(user.getId());
+				review.setAuthor(user.getUsername());
+			}
+			review.setVisibility("restricted");
 			// review.setTemporaryKey(tempKey);
 
 			reviewApi.createReview(review);

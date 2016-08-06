@@ -54,6 +54,21 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 
 						MediaUploader.addCallback('video-upload-complete', $scope.videoUploadCallback)
 					}
+					else if ($location.search().key) {
+						$log.debug('retrieved key', $location.search().key)
+						var replayUrl = ENV.videoStorageUrl + $location.search().key
+						$.get(replayUrl, function(replayData) {
+							$log.debug('retrieved data', replayData)
+							$scope.review.id = $location.search().id
+							$scope.review.key = replayUrl
+							$scope.review.transcodingDone = true
+							$scope.uploader.videoInfo = {}
+							$scope.uploader.videoInfo.upload = {}
+							$scope.uploader.videoInfo.upload.progress = 100
+							$scope.uploader.videoInfo.upload.postProcessed = true
+							$scope.retrieveCompletionStatus()
+						})
+					}
 				}
 
 				$scope.$watch('active', function(newVal) {

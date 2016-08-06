@@ -16,7 +16,7 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', 
 		$scope.state.step = $routeParams['step']
 
 		// If no upload is ongoing, don't use the step
-		if ($scope.state.step && (!MediaUploader.review && (!MediaUploader.videoInfo || !MediaUploader.videoInfo.upload || !MediaUploader.videoInfo.upload.ongoing))) {
+		if ($scope.state.step && (!MediaUploader.review && (!MediaUploader.videoInfo || !MediaUploader.videoInfo.upload || !MediaUploader.videoInfo.upload.ongoing)) && !$location.search().key) {
 			var path = '/s/' + $routeParams['sport'] + '/upload/' + $routeParams['uploadType']
 			$location.path(path)
 		}

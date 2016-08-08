@@ -143,8 +143,8 @@ public class AdminUserApiHandler {
 		for (UserInfo info : list) {
 			log.debug("Parsing info " + info);
 			result += info.getName() + "," + info.getEmail() + "," + info.isCanContact() + ","
-					+ info.getRegistrationDate().toString("yyyy/MM/dd") + "," + info.getReputation() + ","
-					+ info.getLastParticipationDate().toString("yyyy/MM/dd") + "," + info.getNumberOfReviews() + ","
+					+ info.getRegistrationDate().toString("dd/MM/yyyy") + "," + info.getReputation() + ","
+					+ info.getLastParticipationDate().toString("dd/MM/yyyy") + "," + info.getNumberOfReviews() + ","
 					+ info.getNumberOfComments() + "," + info.getReviews().toString().replaceAll(",", ";") + ","
 					+ info.getComments().toString().replaceAll(",", ";") + ",";
 			result += "\r\n";

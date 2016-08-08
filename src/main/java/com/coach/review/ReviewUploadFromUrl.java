@@ -97,6 +97,7 @@ public class ReviewUploadFromUrl {
 
 		if (review.getMediaType() == null) {
 			slackNotifier.notifyUnsupportedUrlImport(url, userRepo.findByUsername(currentUser), review);
+			return new ResponseEntity<Review>(review, HttpStatus.NOT_IMPLEMENTED);
 		}
 		else {
 			subscriptionManager.subscribe(review, review.getAuthorId());

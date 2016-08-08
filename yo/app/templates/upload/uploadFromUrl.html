@@ -2,6 +2,8 @@
 
     <h1>{{ 'global.upload.fromurl.headline' | translate }}</h1>
 
+    <div ng-bind-html="'global.upload.fromurl.unsupportedProvider' | translate" ng-show="unsupportedProvider" class="error-message"></div>
+
     <div class="url-input">
         <input ng-model="url" placeholder="{{ 'global.upload.fromurl.urlPlaceholder' | translate }}"></input>
         <span title="{{ 'global.upload.fromurl.urlPlaceholderTooltip' | translate }}"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span>

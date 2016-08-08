@@ -67,8 +67,14 @@ public class MetricsApiHandler {
 		Metrics metrics = new Metrics();
 
 		List<Review> reviews = reviewRepository.findAll();
+		// DateTime now = DateTime.now();
+		// log.debug("now is " + now);
+		// DateTime fromSearch = now.minusWeeks(6);
+		// log.debug("Loading reviews from " + fromSearch);
+		// List<Review> reviews =
+		// reviewRepository.findByCreationDateGreaterThan(fromSearch.toDate());
 		int totalVideoViews = 0;
-		log.debug("Going through all reviews");
+		log.debug("Going through all reviews " + reviews.size());
 		for (Review review : reviews) {
 			if (!review.isPublished()) {
 				continue;
@@ -175,9 +181,10 @@ public class MetricsApiHandler {
 		String csvMetrics = toCsv(metrics);
 		metrics.setCsv(csvMetrics);
 
-		String churnInfo = detailChurn(metrics);
-		csvMetrics += "<br/><br/>" + churnInfo;
-		
+		// log.debug("Detailing churn");
+		// String churnInfo = detailChurn(metrics);
+		// csvMetrics += "<br/><br/>" + churnInfo;
+
 		log.debug("result");
 		log.debug(csvMetrics);
 

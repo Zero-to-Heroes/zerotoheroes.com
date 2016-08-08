@@ -1,5 +1,6 @@
 package com.coach.review;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -139,5 +140,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			Boolean onlyHelpful, Boolean noHelpful, String playerCategory, String opponentCategory,
 			List<Tag> skillLevel, String reviewType, Integer minComments, Integer maxComments, Boolean ownVideo,
 			String visibility, String text, Pageable pageable);
+
+	List<Review> findByCreationDateGreaterThan(Date date);
 
 }

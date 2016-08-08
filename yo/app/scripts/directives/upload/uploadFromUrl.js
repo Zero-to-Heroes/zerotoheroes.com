@@ -18,6 +18,7 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 				$scope.User = User
 
 				$scope.initUpload = function() {
+					$scope.unsupportedProvider = false
 					var url = {url: $scope.url}
 					$log.debug('saving', url)
 					Api.ReviewsUpdateFromUrl.save({sport: $scope.sport}, url, 
@@ -31,6 +32,11 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 								},
 							}
 							$scope.retrieveCompletionStatus()
+						},
+						function(error) {
+							$log.error('unsupported', error)
+							if (error.status == 501)
+								$scope.unsupportedProvider = true
 						}
 					)
 				}

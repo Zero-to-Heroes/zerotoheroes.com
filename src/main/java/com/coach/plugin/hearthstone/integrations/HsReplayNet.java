@@ -1,17 +1,16 @@
 package com.coach.plugin.hearthstone.integrations;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
-import java.net.URL;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.amazonaws.event.ProgressEvent;
@@ -28,8 +27,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HsReplayNet implements IntegrationPlugin {
 
-	private static final String URL_PATTERN = "(http:\\/\\/(www\\.)?hsreplay\\.net\\/games\\/replay\\/)([\\d\\-a-zA-Z]+)";
-	private static final String URL = "http://hsreplay.net/api/v1/replay/";
+	private static final String URL_PATTERN = "(http(?:s)?:\\/\\/(?:www\\.)?hsreplay\\.net\\/replay\\/)([\\d\\-a-zA-Z]+)";
+	private static final String URL = "https://hsreplay.net/api/v1/replay/";
 
 	@Autowired
 	ReviewRepository repo;
@@ -91,20 +90,42 @@ public class HsReplayNet implements IntegrationPlugin {
 		Matcher matcher = pattern.matcher(gameUrl);
 		log.debug(matcher.toString());
 		matcher.matches();
-		String replayId = matcher.group(3);
 
 		StringBuilder result = new StringBuilder();
-		URL url = new URL(URL + replayId);
-		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		conn.setRequestMethod("GET");
-		BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-		String line;
-		while ((line = rd.readLine()) != null) {
-			result.append(line);
-		}
-		rd.close();
-		String stringXml = result.toString();
-		log.debug("Build xml\n " + stringXml);
+		// URL url = new URL(gameUrl);
+
+		Document doc = Jsoup.connect(gameUrl).userAgent("Mozilla").get();
+		Elements linkCandidates = doc.select("#replay-details div div div div ul li a");
+
+		String downloadLink = linkCandidates.get(0).attr("href").replace("https", "http");
+
+		log.debug(linkCandidates.toString());
+
+		// URL url = new URL(downloadLink);
+		// HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		// conn.setRequestMethod("GET");
+		// BufferedReader rd = new BufferedReader(new
+		// InputStreamReader(conn.getInputStream()));
+		// String line;
+		// while ((line = rd.readLine()) != null) {
+		// result.append(line);
+		// }
+		// rd.close();
+		String stringXml = Jsoup.connect(downloadLink).userAgent("Mozilla").get().select("hsreplay").toString();
+
+		// Capitalize what needs to be capitalize
+		stringXml = stringXml.replaceAll("<(/)?hsreplay", "<$1HSReplay").replaceAll("<(/)?gameentity", "<$1GameEntity")
+				.replaceAll("<(/)?game", "<$1Game").replaceAll("<(/)?tagchange", "<$1TagChange")
+				.replaceAll("<(/)?tag", "<$1Tag").replaceAll("<(/)?player", "<$1Player")
+				.replaceAll("accounthi", "accountHi").replaceAll("accountlo", "accountLo")
+				.replaceAll("playerid", "playerID").replaceAll("cardid", "cardID").replaceAll("<(/)?deck", "<$1Deck")
+				.replaceAll("<(/)?card", "<$1Card").replaceAll("<(/)?fullentity", "<$1FullEntity")
+				.replaceAll("<(/)?action", "<$1Action").replaceAll("<(/)?block", "<$1Block")
+				.replaceAll("<(/)?showentity", "<$1ShowEntity").replaceAll("<(/)?chosenentities", "<$1ChosenEntities")
+				.replaceAll("<(/)?choice", "<$1Choice").replaceAll("<(/)?option", "<$1Option")
+				.replaceAll("<(/)?hideentity", "<$1HideEntity").replaceAll("<(/)?metadata", "<$1MetaData")
+				.replaceAll("<(/)?info", "<$1Info");
+		// log.debug("Build xml\n " + stringXml);
 		return stringXml;
 	}
 }

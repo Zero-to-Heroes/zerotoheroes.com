@@ -465,8 +465,9 @@
 			"fromurl": {
 				"headline": "Import par URL",
 				"urlPlaceholder": "URL de la page avec votre game/draft",
-				"urlPlaceholderTooltip": "Si vous avez un draft ou une game stocké sur un autre site, vous pouvez l'importer dans Zero to Heroes en copiant son URL ici. Nous supportons pour l'instant l'import de draft depuis arenadrafts.com ou heartharena.com",
-				"noUrl": "Veuillez fournir une URL"
+				"urlPlaceholderTooltip": "Si vous avez un draft ou une game stocké sur un autre site, vous pouvez l'importer dans Zero to Heroes en copiant son URL ici. Nous supportons pour l'instant l'import de draft depuis arenadrafts.com ou heartharena.com et des parties depuis hsreplay.net",
+				"noUrl": "Veuillez fournir une URL",
+				"unsupportedProvider": "Ce fournisseur c'est pas encore supporté. Veuillez laisser un message sur nos <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a> si vous souhaitez que nous supportions ce site."
 			},
 			"arenadraft": {
 				"review": {

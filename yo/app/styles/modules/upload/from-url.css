@@ -3,3 +3,7 @@
 	height: 34px;
     padding: 6px 12px;
 }
+
+.upload-from-url .error-message {
+	margin-bottom: 10px;
+}

@@ -58,7 +58,7 @@
 			"arenaClassLabel": "de"
 		},
 		"upload": {
-			"descriptionPlaceholder": "Pour tirer le maximum d'une revue et pour la rendre plus attrayante aux autres (et donc recevoir plus facilement de l'aide), nous vous conseillons de faire une première revue vous-même, et de souligner les points sur lesquels vous doutez ou vous avez particulièrement besoin d'aide.",
+			"descriptionPlaceholder": "Si vous ne souhaitez pas de conseils, veuillez utiliser le tag 'Entertainment'. Autrement, pour tirer le maximum d'une revue et pour la rendre plus attrayante aux autres (et donc recevoir plus facilement de l'aide), nous vous conseillons de faire une première revue vous-même, et de souligner les points sur lesquels vous doutez ou vous avez particulièrement besoin d'aide.",
 			"decklistLabel": "Decklist",
 			"decklistTooltip": "Fournisseurs supportés: drafts Zero to Heroes, drafts HearthArena, drafts ArenaDrafts, HearthStats, HearthPwn, HearthPwn temp decks (l'importation peut durer jusqu'à une minute), et hearthstone-decks decks",
 			"decklistPlaceholder": "Decklist URL"

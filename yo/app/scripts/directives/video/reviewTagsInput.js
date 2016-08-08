@@ -139,7 +139,7 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 					}
 					// if not edit mode and there are no tags
 					else if ($scope.review && (!$scope.review.tags || $scope.review.tags.length == 0)) {
-						$scope.tagsPlaceholder = 'No tags defined';
+						$scope.tagsPlaceholder = 'No tags defined. If no review requested, please add Entertainment tag';
 					}
 					// Fallback to default empty value
 					else {

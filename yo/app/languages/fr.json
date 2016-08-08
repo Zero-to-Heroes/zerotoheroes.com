@@ -384,10 +384,10 @@
 				"cancelButton": "Annuler"
 			},
 			"comment": {
-				"upvote": "Upvote cette vidéo (faites-le si vous trouvez que cette vidéo peut apporter des choses aux autres joueurs)",
-				"downvote": "Downvote cette vidéo (faites-le si vous trouvez que cette vidéo n'apporte rien, ou si elle est difficile à comprendre ou à regarder)",
-				"upvoteComment": "Upvote ce commentaire (faites-le si vous trouvez qu'il peut aider les autres à progresser)",
-				"downvoteComment": "Downvote ce commentaire (faites-le si vous trouvez qu'il n'aide pas les autres à progresser)",
+				"upvote": "Upvotez cette revue (faites-le si vous trouvez que cette revue peut apporter des choses aux autres joueurs)",
+				"downvote": "Downvotez cette revue (faites-le si vous trouvez que cette revue n'apporte rien, ou si elle est difficile à comprendre ou à regarder)",
+				"upvoteComment": "Upvote ce commentaire (faites-le si vous trouvez qu'il peut aider les autres à progresser). Vous pourrez apparaître dans la liste des utilisateurs ayant upvote",
+				"downvoteComment": "Downvote ce commentaire (faites-le si vous trouvez qu'il n'aide pas les autres à progresser). Les downvotes sont totalement anonymes",
 				"reviewTitle": "Titre de votre revue vidéo",
 				"edit": "Modifier",
 				"cancelEdit": "Annuler",

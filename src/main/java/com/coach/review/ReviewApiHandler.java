@@ -226,6 +226,20 @@ public class ReviewApiHandler {
 			review.incrementViewCount();
 		}
 
+		// Fix bogus review/mediaType (legacy)
+		if ("game".equals(review.getReviewType())) {
+			review.setReviewType("game-replay");
+		}
+		if ("game".equals(review.getMediaType())) {
+			review.setMediaType("game-replay");
+		}
+		if (review.getMediaType() == null) {
+			review.setMediaType(review.getReviewType());
+		}
+		if (review.getReviewType() == null) {
+			review.setReviewType(review.getMediaType());
+		}
+
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
 		// review.sortComments();

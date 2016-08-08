@@ -251,10 +251,13 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							executePlugin(plugin)
 						}
 						else {
+							$log.debug('plugin not loaded, loading', plugin)
 							basket.require({ url: '/plugins/' + plugin.name + '/' + plugin.name + '.js' + version, skipCache: plugin.dev }).then(function () {
 								$log.debug('externalPlayer loaded')
 								executePlugin(plugin)
 								$log.debug('externalPlayer executed')
+							}, function(error) {
+								$log.error('error while loading externalPlayer', plugin, error)
 							})
 							angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css').then(function() {
 								//console.log('loaded css', plugin);

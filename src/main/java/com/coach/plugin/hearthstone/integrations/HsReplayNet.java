@@ -91,7 +91,7 @@ public class HsReplayNet implements IntegrationPlugin {
 		log.debug(matcher.toString());
 		matcher.matches();
 
-		StringBuilder result = new StringBuilder();
+		// StringBuilder result = new StringBuilder();
 		// URL url = new URL(gameUrl);
 
 		Document doc = Jsoup.connect(gameUrl).userAgent("Mozilla").get();
@@ -99,7 +99,7 @@ public class HsReplayNet implements IntegrationPlugin {
 
 		String downloadLink = linkCandidates.get(0).attr("href").replace("https", "http");
 
-		log.debug(linkCandidates.toString());
+		// log.debug(linkCandidates.toString());
 
 		// URL url = new URL(downloadLink);
 		// HttpURLConnection conn = (HttpURLConnection) url.openConnection();

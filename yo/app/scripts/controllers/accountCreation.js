@@ -100,7 +100,9 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		$scope.retrieveUserInfo = function() {
 			Api.Users.get( 
 				function(data) {
+					$log.debug('setting user', data)
 					User.setUser(data);
+					$log.debug('retrieved user', User.getUser())
 					$rootScope.$broadcast('user.logged.in');
 					$scope.endAccountCreation();
 				},

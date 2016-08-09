@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.coach.coaches.CoachInformation;
+import com.coach.profile.Superpowers;
 import com.coach.reputation.UserReputation;
 import com.coach.review.Review.Sport;
 import com.coach.user.Stats;
@@ -67,6 +68,7 @@ public class User implements UserDetails {
 	private boolean betaTester;
 
 	private CoachInformation coachInformation;
+	private Superpowers powers = new Superpowers();
 
 	@Override
 	@JsonIgnore

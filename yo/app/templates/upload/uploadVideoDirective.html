@@ -60,16 +60,16 @@
 	</div>
 
 	<!-- The messages that appear if the video is too long -->
-	<div class="alert alert-danger video-time-limit" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && !sportsConfig[sport.toLowerCase()].allowDoubleSpeed">
+	<div class="alert alert-danger video-time-limit" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && !sportsConfig[sport.toLowerCase()].allowDoubleSpeed && !User.getUser().powers.trustedUploader">
 		<span>{{ 'global.upload.video.videoTooLong1' | translate }} <span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.video.whyLimit' | translate }}" data-trigger="click" bs-tooltip></span></span>
 	</div>
-	<div class="alert alert-danger video-time-limit" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[sport.toLowerCase()].allowDoubleSpeed">
+	<div class="alert alert-danger video-time-limit" role="alert" ng-show="(clipDuration / 1000) > maximumAllowedDuration && sportsConfig[sport.toLowerCase()].allowDoubleSpeed && !User.getUser().powers.trustedUploader">
 		<span>{{ 'global.upload.video.videoTooLong2' | translate }} <span class="ion-help-circled pointer" aria-hidden="true" title="{{ 'global.upload.video.whyLimit' | translate }}" data-trigger="click" bs-tooltip></span></span>
 	</div>
 
 	<!-- Let's go! -->
 	<div class="upload-button">
-		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError || !file || (clipDuration / 1000) > maximumAllowedDuration" analytics-on="click" analytics-category="upload.video" analytics-event="upload.video.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
+		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="(hasUnsupportedFormatError || !file || (clipDuration / 1000) > maximumAllowedDuration) && !User.getUser().powers.trustedUploader" analytics-on="click" analytics-category="upload.video" analytics-event="upload.video.request"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
 	</div>
 
 </div>

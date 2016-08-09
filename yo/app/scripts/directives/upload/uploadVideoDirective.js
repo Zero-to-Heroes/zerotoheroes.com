@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$sce', '$timeout', '$parse', 'ENV', 
-	function(FileUploader, MediaUploader, $log, SportsConfig, $sce, $timeout, $parse, ENV) {
+app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$sce', '$timeout', '$parse', 'ENV', 'User', 
+	function(FileUploader, MediaUploader, $log, SportsConfig, $sce, $timeout, $parse, ENV, User) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -16,8 +16,12 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 			},
 			controller: function($scope) {
 
+				$scope.videoInfo = $scope.videoInfo || {}
+				$log.debug('videoInfo', $scope.videoInfo)
+
 				$scope.maximumAllowedDuration = 5 * 60 + 1
 				$scope.sportsConfig = SportsConfig
+				$scope.User = User
 
 				// We use it for nice out-of-the-box file features
 				$scope.buildUploader = function(sportsConfig) {
@@ -44,6 +48,7 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 					return uploader
 		        }
 				$scope.uploader = $scope.buildUploader(SportsConfig)
+				$log.debug('uploader', $scope.uploader)
 
 
 				//===============
@@ -55,6 +60,7 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 				}
 
 		        $scope.updateMarkers = function() {
+		        	$log.debug('updating markers and video info')
 					$scope.videoInfo.beginning = 0
 					$scope.videoInfo.ending = $scope.API.totalTime
 					$scope.sliderMax = $scope.API.totalTime
@@ -69,7 +75,12 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 
 				$scope.onSourceChanged = function(sources) {
 					$timeout(function() { 
-						$scope.updateMarkers()
+						try {
+							$scope.updateMarkers()
+						}
+						catch (e) {
+							$log.error('error while updating markers on video upload', sources, $scope.videoInfo, $scope.API)
+						}
 					}, 333)
 				}
 
@@ -120,17 +131,19 @@ app.directive('uploadVideoDirective', ['FileUploader', 'MediaUploader', '$log', 
 		        }
 
 				$scope.uploader.onWhenAddingFileFailed = function(item /*{File|FileLikeObject}*/, filter, options) {
-		            console.info('onWhenAddingFileFailed', item, filter, options)
+		            $log.debug('onWhenAddingFileFailed', item, filter, options)
 		            $scope.hasUnsupportedFormatError = true
 		        }
 
 		        $scope.uploader.onAfterAddingFile = function(fileItem) {
+		        	$log.debug('adding file', fileItem)
 		            $scope.hasUnsupportedFormatError = false
 		            $scope.file = fileItem._file
 		            var objectURL = window.URL.createObjectURL($scope.file)
 		            $scope.sources =  [
 						{src: $sce.trustAsResourceUrl(objectURL), type: $scope.file.type}
 					]
+					$log.debug('added file', $scope.file, objectURL, $scope.sources)
 		        }
 
 

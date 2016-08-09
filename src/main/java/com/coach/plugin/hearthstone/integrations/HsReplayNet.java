@@ -55,6 +55,7 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	@Override
 	public void integrateRemoteData(String gameUrl, final Review review) throws Exception {
+		gameUrl = gameUrl.replaceAll("https", "http");
 		// First - create a file that contains the draft info to upload to s3
 		String stringXml = buildReplay(gameUrl);
 		// Flag the review to show that we are handling it

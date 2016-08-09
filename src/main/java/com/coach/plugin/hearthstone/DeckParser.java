@@ -68,11 +68,6 @@ public class DeckParser implements Plugin {
 	private static final String HEARTHSTATS_DECK_ID_REGEX = "\\[?(http:\\/\\/(?:hss|hearthstats)\\.(?:io|net)\\/d(?:ecks)?\\/)([\\d\\w\\-]+)(\\??\\S*)\\]?";
 	private static final String HEARTHSTATS_DECK_HOST_URL = "http://hearthstats.net/decks/";
 
-	// private static final String HEARTHSTATS_FULL_DECK_ID_REGEX =
-	// "\\[?(http:\\/\\/hearthstats\\.net\\/d\\/)([\\d\\w\\-]+)\\]?";
-	// private static final String HEARTHSTATS_FULL_DECK_HOST_URL =
-	// "http://hearthstats.net/d/";
-
 	private static final String HEARTHHEAD_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthhead\\.com\\/deck=)([\\d\\w\\-]+)\\/?([\\d\\w\\-]+)?\\]?";
 	private static final String HEARTHHEAD_DECK_HOST_URL = "http://www.hearthhead.com/deck=";
 

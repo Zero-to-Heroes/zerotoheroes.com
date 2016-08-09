@@ -20,6 +20,7 @@
 					<div class="col-md-12">
 						<div class="row video-information-header">
 							<div class="col-md-12">
+								<img class="visibility" ng-class="review.visibility" ng-show="review.visibility && review.visibility != 'public' && !review.editing" title="{{ 'global.review.visibility.' + review.visibility + 'Tooltip' | translate }}" src="{{ config.images['visibility' + review.visibility] }}" />
 								<div ng-switch="sport" class="participants-container" ng-hide="review.editing">
 									<hearthstone-listing-details ng-switch-when="hearthstone" review="review"></hearthstone-listing-details>
 								</div>

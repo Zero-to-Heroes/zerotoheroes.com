@@ -127,6 +127,12 @@
     text-align: center;
 }
 
+.video-information .video-information-header .visibility {
+    position: relative;
+    bottom: 22px;
+    margin-bottom: -20px;
+}
+
 @keyframes dots {
   0%, 20% {
     color: rgba(0,0,0,0);

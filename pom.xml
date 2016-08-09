@@ -96,7 +96,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<!--  Need to keep an older version for java 7 compatibility -->
+			<!-- Need to keep an older version for java 7 compatibility -->
 			<version>20140107</version>
 		</dependency>
 		<dependency>
@@ -146,6 +146,8 @@
 			<artifactId>jsoup</artifactId>
 			<version>1.7.2</version>
 		</dependency>
+
+
 		<dependency>
 			<groupId>net.lingala.zip4j</groupId>
 			<artifactId>zip4j</artifactId>

@@ -3,7 +3,14 @@
 }
 
 .all-videos-header {
-	padding: 10px 45px 25px 45px;
+	padding: 25px 45px 25px 45px;
+	display: flex;
+    align-items: center;
+}
+
+.all-videos-header h1, .all-videos-header h2 {
+	margin: 0;
+	margin-right: 5px;
 }
 
 .all-videos-headline {

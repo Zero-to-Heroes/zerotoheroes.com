@@ -203,11 +203,13 @@
 			},
 			"watchlearn": {
 				"headline": "Watch and learn",
+				"explicitCriteria": "The reviews you see here all contain at least one comment marked as helpful. You can refine your criteria by going to the Advanced Search tab",
 				"wantedTags": "Tags / archetype",
 				"filterButton": "Filter"
 			},
 			"helpothers": {
-				"headline": "Help others"
+				"headline": "Help others",
+				"explicitCriteria": "The reviews you see here all have no comments marked as helpful. You can refine your criteria by going to the Advanced Search tab"
 			}
 		},
 		"listing": {

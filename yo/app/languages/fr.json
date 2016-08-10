@@ -167,11 +167,13 @@
 			},
 			"watchlearn": {
 				"headline": "Regarder & apprendre",
+				"explicitCriteria": "Les revues que vous voyez là ont toutes un commentaire marqué comme utile. Vous pouvez raffiner vos critères en allant sur l'onglet Recherche Avancée",
 				"wantedTags": "Tags / archetype",
 				"filterButton": "Filtrer"
 			},
 			"helpothers": {
-				"headline": "Aider les autres"
+				"headline": "Aider les autres",
+				"explicitCriteria": "Aucune des revues que vous voyez là n'a de commentaire marqué comme utile. Vous pouvez raffiner vos critères en allant sur l'onglet Recherche Avancée"
 			}
 		},
 		"listing": {

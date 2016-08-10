@@ -338,7 +338,8 @@ public class SlackNotifier {
 		});
 	}
 
-	public void notifyException(final String currentUser, final WebRequest request, final Throwable ex) {
+	public void notifyException(final String currentUser, final WebRequest request, final Throwable ex,
+			final Object... params) {
 		log.info("Sending exception to Slack " + ex);
 		if (!"prod".equalsIgnoreCase(environment)) {
 			log.error("Exception! " + request + " " + ex);
@@ -351,11 +352,16 @@ public class SlackNotifier {
 				SlackApi api = new SlackApi(
 						"https://hooks.slack.com/services/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");
 
-				SlackAttachment requestAttach = new SlackAttachment();
-				requestAttach.setColor("danger");
-				requestAttach.setText("Initial request was " + request.getDescription(true)
-						+ " and triggered the exception: " + ex.getMessage());
-				requestAttach.setFallback("placeholder fallback");
+				SlackMessage message = new SlackMessage();
+
+				if (request != null) {
+					SlackAttachment requestAttach = new SlackAttachment();
+					requestAttach.setColor("danger");
+					requestAttach.setText("Initial request was " + request.getDescription(true)
+							+ " and triggered the exception: " + ex.getMessage());
+					requestAttach.setFallback("placeholder fallback");
+					message.addAttachments(requestAttach);
+				}
 
 				SlackAttachment exAttach = new SlackAttachment();
 				exAttach.setColor("danger");
@@ -363,10 +369,19 @@ public class SlackNotifier {
 				exAttach.setText(ExceptionUtils.getFullStackTrace(ex));
 				exAttach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(requestAttach);
 				message.addAttachments(exAttach);
-				message.setText("Server exception for " + currentUser + ": " + ex.getClass());
+				message.setText("Server exception for user " + currentUser + ": " + ex.getClass());
+
+				if (params != null) {
+					for (Object param : params) {
+						SlackAttachment paramAttach = new SlackAttachment();
+						exAttach.setColor("danger");
+						exAttach.setTitle("Other params info");
+						exAttach.setText(param.toString());
+						exAttach.setFallback("placeholder fallback");
+						message.addAttachments(paramAttach);
+					}
+				}
 
 				api.call(message);
 				return null;

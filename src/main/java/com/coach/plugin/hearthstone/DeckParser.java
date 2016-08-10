@@ -21,6 +21,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.coach.core.notification.SlackNotifier;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.Plugin;
 import com.coach.review.HasText;
@@ -76,6 +77,9 @@ public class DeckParser implements Plugin {
 
 	@Autowired
 	S3Utils s3utils;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	@Override
 	public String getName() {
@@ -425,32 +429,37 @@ public class DeckParser implements Plugin {
 			// log.debug("Loading ztoh deck " + deckId);
 			Review review = repo.findById(deckId);
 			// log.debug("loaded review " + review);
-			String stringDraft = s3utils.readFromS3(review.getKey());
-			// log.debug("String draft " + stringDraft);
-			JSONObject draft = new JSONObject(stringDraft);
-			// log.debug("json draft " + draft);
+			try {
+				String stringDraft = s3utils.readFromS3(review.getKey());
+				// log.debug("String draft " + stringDraft);
+				JSONObject draft = new JSONObject(stringDraft);
+				// log.debug("json draft " + draft);
 
-			Deck deck = new Deck();
-			deck.title = review.getTitle();
-			JSONArray pickedCards = draft.getJSONArray("pickedcards");
+				Deck deck = new Deck();
+				deck.title = review.getTitle();
+				JSONArray pickedCards = draft.getJSONArray("pickedcards");
 
-			for (int i = 0; i < pickedCards.length(); i++) {
-				String cardId = pickedCards.getString(i);
-				Card card = null;
-				for (Card c : deck.classCards) {
-					if (c.getName().equals(cardId)) {
-						card = c;
-						card.amount = "" + (Integer.parseInt(card.amount) + 1);
-						break;
+				for (int i = 0; i < pickedCards.length(); i++) {
+					String cardId = pickedCards.getString(i);
+					Card card = null;
+					for (Card c : deck.classCards) {
+						if (c.getName().equals(cardId)) {
+							card = c;
+							card.amount = "" + (Integer.parseInt(card.amount) + 1);
+							break;
+						}
+					}
+					if (card == null) {
+						card = new Card(cardId, "1");
+						deck.classCards.add(card);
 					}
 				}
-				if (card == null) {
-					card = new Card(cardId, "1");
-					deck.classCards.add(card);
-				}
-			}
 
-			saveDeck(pluginData, deckId, deck);
+				saveDeck(pluginData, deckId, deck);
+			}
+			catch (IOException e) {
+				slackNotifier.notifyException(null, null, e, review.getId(), review.getKey(), review);
+			}
 		}
 	}
 

@@ -257,7 +257,7 @@ public class Comment implements HasText, HasReputation {
 	private float buildScore(Sport sport, Voter o1, User u1, Profile p1) {
 		float score = 0;
 
-		if (p1.getRankings() != null && p1.getRankings().getRankings() != null
+		if (p1 != null && p1.getRankings() != null && p1.getRankings().getRankings() != null
 				&& p1.getRankings().getRankings().get("hearthstone") != null
 				&& p1.getRankings().getRankings().get("hearthstone").get("ranked") != null) {
 			// log.debug("Computing score for " + p1);

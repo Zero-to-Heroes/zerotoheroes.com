@@ -30,6 +30,13 @@ public class Profile {
 	private Subscriptions subscriptions = new Subscriptions();
 	private Rankings rankings = new Rankings();
 
+	public Rankings getRankings() {
+		if (rankings == null) {
+			rankings = new Rankings();
+		}
+		return rankings;
+	}
+
 	// Some hard-coding for now, later on will be easier when user will be able
 	// to set their own flair
 	public String getFlair(Sport sport, String frame) {

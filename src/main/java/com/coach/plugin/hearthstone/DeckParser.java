@@ -41,7 +41,8 @@ public class DeckParser implements Plugin {
 	private static final String HPNW_DECK_HOST_URL = "http://www.hearthpwn.com/decks/";
 
 	private static final String HPWN_TEMP_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthpwn\\.com\\/deckbuilder\\/)([a-zA-Z]+)#([\\d\\-a-zA-Z\\:\\;]+)\\]?";
-	private static final String HPNW_TEMP_DECK_HOST_URL = "http://www.hearthpwn.com/deckbuilder/";
+	// private static final String HPNW_TEMP_DECK_HOST_URL =
+	// "http://www.hearthpwn.com/deckbuilder/";
 
 	private static final String HSDECKS_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthstone-decks\\.com\\/deck\\/voir\\/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HSDECKS_DECK_HOST_URL = "http://www.hearthstone-decks.com/deck/voir/";

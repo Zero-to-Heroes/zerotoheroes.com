@@ -1154,6 +1154,10 @@
   background: #f9f1e1;
   color: #3a240f;
 }
+.hearthstone code {
+  background-color: #865328;
+  color: #edd6aa;
+}
 .hearthstone .btn {
   border-radius: 2px;
   text-transform: uppercase;

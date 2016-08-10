@@ -17,6 +17,8 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 
 				$scope.retrieveVideos = function(params, updateUrl, pageNumber, callback) {
 
+					$log.debug('retrieveVideos', params, updateUrl, pageNumber, callback)
+
 					if ($scope.allowedTags)
 						$scope.performSearch(params, pageNumber, updateUrl, callback)
 					else 
@@ -34,35 +36,35 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					params.participantDetails = params.participantDetails || {}					
 
 					// Make sure URL takes priority
-					if ($location.search().title) {
+					if ($location.search().title && !params.title) {
 						params.title = $location.search().title
 					}
-					if ($location.search().reviewType) {
+					if ($location.search().reviewType && !params.reviewType) {
 						params.reviewType = $location.search().reviewType
 					}
-					if ($location.search().wantedTags) {
+					if ($location.search().wantedTags && (!params.wantedTags || params.wantedTags.length == 0)) {
 						params.wantedTags = $scope.unserializeTags($location.search().wantedTags)
 					}
-					if ($location.search().unwantedTags) {
+					if ($location.search().unwantedTags && (!params.unwantedTags || params.unwantedTags.length == 0)) {
 						params.unwantedTags = $scope.unserializeTags($location.search().unwantedTags)
 					}
-					if ($location.search().playerCategory) {
+					if ($location.search().playerCategory && !params.participantDetails.playerCategory) {
 						params.participantDetails.playerCategory = $location.search().playerCategory
 					}
-					if ($location.search().minComments) {
+					if ($location.search().minComments && !params.minComments) {
 						params.minComments = parseInt($location.search().minComments)
 					}
-					if ($location.search().maxComments) {
+					if ($location.search().maxComments && !params.maxComments) {
 						params.maxComments = parseInt($location.search().maxComments)
 					}
-					if ($location.search().helpfulComments) {
+					if ($location.search().helpfulComments && !params.tempHelpfulComment) {
 						if ($location.search().helpfulComments == 'no')
 							params.tempHelpfulComment = 'onlyNotHelpful'
 						else if ($location.search().helpfulComments == 'yes')
 							params.tempHelpfulComment = 'onlyHelpful'
 					}
 
-					if ($location.search().sort) {
+					if ($location.search().sort && !params.sort) {
 						params.sort = $location.search().sort
 					}
 

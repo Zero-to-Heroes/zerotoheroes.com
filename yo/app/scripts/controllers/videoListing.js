@@ -18,6 +18,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			{ "value" : "updateDate", "label" : "<span>" + $translate.instant('global.search.sort.updateDate') + "</span>" }
 		]
 		$scope.$watch('criteria.sort', function(newVal, oldVal) {
+			$log.debug('criteria updated', newVal, oldVal, $scope.criteria)
 			if (newVal != oldVal) {
 				$scope.search()
 			}
@@ -25,6 +26,10 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			
 		$rootScope.$on('user.logged.in', function() {
 			$scope.search()
+		})
+		
+		Api.Sports.get({sport: $scope.sport}, function(data) {
+			$scope.subscribers = data.subscribers
 		})
 
 		$scope.toggleAllVideos = function() {
@@ -40,13 +45,10 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 		$scope.search = function () {
 			var params = $scope.criteria
+			$log.debug('init search', $scope.criteria.sort, $scope.criteria, params)
 			params.sport = $scope.sport
 			params.ownVideos = $scope.ownVideos
 			params.visibility = $scope.onlyShowPublic ? 'public' : null
-
-			Api.Sports.get({sport: $scope.sport}, function(data) {
-				$scope.subscribers = data.subscribers
-			})
 
 			$scope.criteria.search(params, true, null)
 		}

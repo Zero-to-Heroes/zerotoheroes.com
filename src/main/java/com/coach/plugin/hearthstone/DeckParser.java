@@ -46,7 +46,7 @@ public class DeckParser implements Plugin {
 	private static final String HSDECKS_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthstone-decks\\.com\\/deck\\/voir\\/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HSDECKS_DECK_HOST_URL = "http://www.hearthstone-decks.com/deck/voir/";
 
-	private static final String ZTH_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.zerotoheroes\\.com\\/r\\/hearthstone\\/)([\\da-zA-Z]+)\\/.*\\]?";
+	private static final String ZTH_DECK_ID_REGEX = "\\[(http:\\/\\/www\\.zerotoheroes\\.com\\/r\\/hearthstone\\/)([\\da-zA-Z]+)\\/.*\\]";
 	// private static final String ZTH_DECK_ID_REGEX =
 	// "\\[?(http:\\/.*localhost.*\\/r\\/hearthstone\\/)([\\da-zA-Z]+)\\/.*\\]?";
 

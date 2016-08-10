@@ -3,7 +3,7 @@ var parseDecks = {
 	decksRegex: /\[?(http:\/\/www\.hearthpwn\.com\/decks\/)([\d\-a-zA-Z]+)\]?/gm,
 	hearthpwnTempDeckRegex: /\[?(http:\/\/www\.hearthpwn\.com\/deckbuilder\/)([\d\-a-zA-Z#\:\;]+)\]?/gm,
 	hsDecksDecksRegex: /\[?(http:\/\/www\.hearthstone-decks\.com\/deck\/voir\/)([\d\-a-zA-Z]+)\]?/gm,
-	zthDecksRegex: /\[?(http:\/\/www\.zerotoheroes\.com\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
+	zthDecksRegex: /\[(http:\/\/www\.zerotoheroes\.com\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]/gm,
 	// zthDecksRegex: /\[?(http:\/.*localhost.*\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
 	hearthArenaDecksRegex: /\[?(http:\/\/www\.heartharena\.com\/arena-run\/)([\da-zA-Z]+)\]?/gm,
 	arenaDraftsDecksRegex: /\[?(http:\/\/(?:www\.)?arenadrafts\.com\/Arena\/View\/)([\da-zA-Z\-]+)\]?/gm,

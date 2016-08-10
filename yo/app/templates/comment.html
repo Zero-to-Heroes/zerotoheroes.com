@@ -33,8 +33,8 @@
 				</toolbar>
 				<textarea class="form-control" ng-model="comment.text" comment-plugins="::plugins" auto-grow ng-hide="review.key"></textarea>
 				<div class="text-left comment-reply-buttons">
-					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
-					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
+					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
+					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
 				</div>
 				<div class="inline-block float-right">
 					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
@@ -64,8 +64,8 @@
 			<div class="col-md-2" ng-show="!User.isLoggedIn()"></div>
 			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 				<div class="inline-block">
-					<button ng-click="postReply()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.replyButton' | translate }}</span></button>
-					<button ng-click="cancelReply()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
+					<button ng-click="postReply()" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.replyButton' | translate }}</span></button>
+					<button ng-click="cancelReply()" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
 				</div>
 				<div class="inline-block float-right">
 					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>

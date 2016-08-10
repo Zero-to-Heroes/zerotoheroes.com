@@ -131,8 +131,8 @@
 								<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholder' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComment.text" class="form-control" ng-required="true" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
 								<div>
 									<div class="inline-block">
-										<button ng-click="addComment()" class="btn btn-default text-right"><span>{{ 'global.review.comment.confirmCommentButton' | translate }}</span></button>
-										<button ng-click="cancelComment()" class="btn btn-default text-right"><span>{{ 'global.review.comment.cancelCommentButton' | translate }}</span></button>
+										<button ng-click="addComment()" class="btn btn-default text-right" tabindex="-1"><span>{{ 'global.review.comment.confirmCommentButton' | translate }}</span></button>
+										<button ng-click="cancelComment()" class="btn btn-default text-right" tabindex="-1"><span>{{ 'global.review.comment.cancelCommentButton' | translate }}</span></button>
 									</div>
 									<div class="inline-block float-right">
 										<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>

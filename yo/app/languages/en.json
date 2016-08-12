@@ -356,6 +356,7 @@
 			"comparison": "Use the <strong>side-by-side video icon <span class=\"glyphicon glyphicon-facetime-video\"></span></strong> to create a sequence with side-by-side videos, to compare two clips to show a difference. You can of course combine it with the other tools provided above (by default a sequence is created with loop and slow motion)",
 			"hearthstone": {
 				"card": "Add a link to a card name using <code>[[The Card Name]]</code>. This will create a hyperlink that will display the card on hover",
+				"turn": "Add a link to a specific turn using <code>tN</code> for your turns or <code>tNo</code> (lowercase 'O') for your opponent's turn (eg t2, t3 or t5o). <code>Mulligan</code> is also a keyword",
 				"deck": "Add a link to a deck hosted on hearthpwn.com or hearthstone-decks.com using <code>[your_deck_url]</code>. This will create a hyperlink that will display the cards list on hover",
 				"mana": "Show the mana symbol using the -mana keyword, eg <code>2-mana</code> to show the 2 mana symbol"
 			}

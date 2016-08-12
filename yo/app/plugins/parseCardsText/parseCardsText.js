@@ -99,6 +99,15 @@ var parseCardsText = {
 		return card[lang].name;
 	},
 
+	localizeText: function(card, lang) {
+		if (!card) return ''
+			
+		lang = lang || parseCardsText.getLang()
+		if (!lang) return card.text
+		if (!card[lang]) return card.text
+		return card[lang].text
+	},
+
 	localizeImage: function(card) {
 		var lang;
 		try {
@@ -248,12 +257,14 @@ var parseCardsText = {
 			"cardImage": "TBA01_6.png",
 			"cost": 2,
 			"fr": {
-				"name": "Rage du magma"
+				"name": "Rage du magma",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un enragé du magma 5/1."
 			},
 			"id": "TBA01_6",
 			"name": "Molten Rage",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nSummon a 5/1 Magma Rager.",
 			"type": "Hero_power"
 		},
 		{
@@ -275,7 +286,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Comédien pompeux"
+				"name": "Comédien pompeux",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "KAR_011",
@@ -283,19 +295,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_005.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy"
+				"name": "Destroy",
+				"text": "Destroy a minion or hero."
 			},
 			"id": "XXX_005",
 			"name": "Destroy",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Destroy a minion or hero.",
 			"type": "Spell"
 		},
 		{
@@ -303,13 +318,15 @@ var parseCardsText = {
 			"cardImage": "LOEA15_3.png",
 			"cost": 3,
 			"fr": {
-				"name": "Raptor d’os"
+				"name": "Raptor d’os",
+				"text": "<b>Cri de guerre :</b> prend le contrôle de l’arme de votre adversaire."
 			},
 			"health": 2,
 			"id": "LOEA15_3",
 			"name": "Boneraptor",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b>Take control of your opponent's weapon.",
 			"type": "Minion"
 		},
 		{
@@ -319,7 +336,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Horreur cyclopéenne"
+				"name": "Horreur cyclopéenne",
+				"text": "<b>Provocation</b>. <b>Cri de guerre :</b> gagne +1 PV pour\nchaque serviteur adverse."
 			},
 			"health": 3,
 			"id": "OG_337",
@@ -327,6 +345,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Taunt</b>. <b>Battlecry:</b> Gain      +1 Health for each enemy minion.",
 			"type": "Minion"
 		},
 		{
@@ -335,13 +354,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Casse-tête"
+				"name": "Casse-tête",
+				"text": "Inflige $2 |4(point,points) de dégâts au héros adverse. <b>Combo :</b> renvoie cette carte dans votre main au tour suivant."
 			},
 			"id": "EX1_137",
 			"name": "Headcrack",
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Deal $2 damage to the enemy hero. <b>Combo:</b> Return this to your hand next turn.",
 			"type": "Spell"
 		},
 		{
@@ -351,7 +372,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Prince marchand Gallywix"
+				"name": "Prince marchand Gallywix",
+				"text": "Chaque fois que votre adversaire lance un sort, il obtient une Pièce et vous gagnez une copie du sort."
 			},
 			"health": 8,
 			"id": "GVG_028",
@@ -359,63 +381,74 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "Whenever your opponent casts a spell, gain a copy of it and give them a Coin.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOE_113e.png",
 			"fr": {
-				"name": "Mrglllroaarrrglrur !"
+				"name": "Mrglllroaarrrglrur !",
+				"text": "+2/+2."
 			},
 			"id": "LOE_113e",
 			"name": "Mrglllraawrrrglrur!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "DS1h_292_H1_AT_132.png",
 			"cost": 2,
 			"fr": {
-				"name": "Tir de baliste"
+				"name": "Tir de baliste",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $3 points de dégâts au héros adverse."
 			},
 			"id": "DS1h_292_H1_AT_132",
 			"name": "Ballista Shot",
 			"playerClass": "Hunter",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nDeal $3 damage to the enemy hero.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "NAX15_04H.png",
 			"cost": 8,
 			"fr": {
-				"name": "Chaînes"
+				"name": "Chaînes",
+				"text": "<b>Pouvoir héroïque</b>\nPrend le contrôle d’un serviteur adverse aléatoire."
 			},
 			"id": "NAX15_04H",
 			"name": "Chains",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nTake control of a random enemy minion.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "AT_014e.png",
 			"fr": {
-				"name": "Effet d’ombrefiel"
+				"name": "Effet d’ombrefiel",
+				"text": "Coûte (1) |4(cristal,cristaux) de moins."
 			},
 			"id": "AT_014e",
 			"name": "Shadowfiended",
 			"playerClass": "Priest",
 			"set": "Tgt",
+			"text": "Costs (1) less.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_094e.png",
 			"fr": {
-				"name": "Tentacules"
+				"name": "Tentacules",
+				"text": "+2/+6"
 			},
 			"id": "OG_094e",
 			"name": "Tentacles",
 			"playerClass": "Priest",
 			"set": "Og",
+			"text": "+2/+6",
 			"type": "Enchantment"
 		},
 		{
@@ -435,7 +468,8 @@ var parseCardsText = {
 			"cardImage": "BRMC_99.png",
 			"cost": 5,
 			"fr": {
-				"name": "Garr"
+				"name": "Garr",
+				"text": "Invoque un élémentaire 2/3 avec <b>Provocation</b> chaque fois que ce serviteur subit des dégâts."
 			},
 			"health": 8,
 			"id": "BRMC_99",
@@ -443,30 +477,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Whenever this minion takes damage, summon a 2/3 Elemental with <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_132_PRIEST.png",
 			"cost": 2,
 			"fr": {
-				"name": "Soins"
+				"name": "Soins",
+				"text": "<b>Pouvoir héroïque</b>\nRend #4 PV."
 			},
 			"id": "AT_132_PRIEST",
 			"name": "Heal",
 			"playerClass": "Priest",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nRestore #4 Health.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "BRMA12_5.png",
 			"cost": 1,
 			"fr": {
-				"name": "Affliction de l’espèce : bleu"
+				"name": "Affliction de l’espèce : bleu",
+				"text": "Les sorts de Chromaggus coûtent (1) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 			},
 			"id": "BRMA12_5",
 			"name": "Brood Affliction: Blue",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, Chromaggus' spells cost (1) less.",
 			"type": "Spell"
 		},
 		{
@@ -477,37 +516,43 @@ var parseCardsText = {
 			"cost": 4,
 			"durability": 3,
 			"fr": {
-				"name": "Lame empoisonnée"
+				"name": "Lame empoisonnée",
+				"text": "Votre pouvoir héroïque donne à cette arme\n+1 ATQ au lieu de la remplacer."
 			},
 			"id": "AT_034",
 			"name": "Poisoned Blade",
 			"playerClass": "Rogue",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Your Hero Power gives this weapon +1 Attack instead of replacing it.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "BRMA16_2.png",
 			"cost": 1,
 			"fr": {
-				"name": "Écholocation"
+				"name": "Écholocation",
+				"text": "<b>Pouvoir héroïque</b>\nS’équipe d’une arme qui croît à mesure que l’adversaire joue des cartes."
 			},
 			"id": "BRMA16_2",
 			"name": "Echolocate",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nEquip a weapon that grows as your opponent plays cards.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "BRMA01_4.png",
 			"cost": 3,
 			"fr": {
-				"name": "Chopez-les !"
+				"name": "Chopez-les !",
+				"text": "Invoque quatre nains 1/1 avec <b>Provocation</b>."
 			},
 			"id": "BRMA01_4",
 			"name": "Get 'em!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Summon four 1/1 Dwarves with <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -515,13 +560,15 @@ var parseCardsText = {
 			"cardImage": "TB_SPT_Minion1.png",
 			"cost": 2,
 			"fr": {
-				"name": "Porte-pavois"
+				"name": "Porte-pavois",
+				"text": "<b>Provocation</b>.\n<b>Cri de guerre_:</b> gagne un nombre de PV équivalent à l’attaque de Hurlevent."
 			},
 			"health": 1,
 			"id": "TB_SPT_Minion1",
 			"name": "Shieldsman",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Taunt</b>\n<b>Battlecry:</b> Gain Health equal to Stormwind's Attack.",
 			"type": "Minion"
 		},
 		{
@@ -574,7 +621,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Chevalier mécanique"
+				"name": "Chevalier mécanique",
+				"text": "<b>Cri de guerre :</b> donne +1/+1 à un Méca allié."
 			},
 			"health": 5,
 			"id": "AT_096",
@@ -582,6 +630,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Give a friendly Mech +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -590,13 +639,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Rage intérieure"
+				"name": "Rage intérieure",
+				"text": "Inflige $1 |4(point,points) de dégâts à un serviteur et lui confère +2 ATQ."
 			},
 			"id": "EX1_607",
 			"name": "Inner Rage",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Deal $1 damage to a minion and give it +2 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -619,13 +670,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_02.png",
 			"cost": 1,
 			"fr": {
-				"name": "Pion blanc"
+				"name": "Pion blanc",
+				"text": "<b>Attaque automatique_:</b> inflige 1 point de dégâts aux adversaires en face de ce serviteur."
 			},
 			"health": 6,
 			"id": "KAR_A10_02",
 			"name": "White Pawn",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Auto-Attack:</b> Deal 1 damage to the enemies opposite this minion.",
 			"type": "Minion"
 		},
 		{
@@ -635,7 +688,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Baron Vaillefendre"
+				"name": "Baron Vaillefendre",
+				"text": "Vos serviteurs déclenchent deux fois leur <b>Râle d’agonie</b>."
 			},
 			"health": 7,
 			"id": "FP1_031",
@@ -643,18 +697,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "Your minions trigger their <b>Deathrattles</b> twice.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_PickYourFate_8rand.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin : Armure"
+				"name": "Destin : Armure",
+				"text": "Chaque joueur gagne +2 Armure au début de son tour."
 			},
 			"id": "TB_PickYourFate_8rand",
 			"name": "Fate: Armor",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Each player gains 2 Armor on the start of their turn.",
 			"type": "Spell"
 		},
 		{
@@ -672,37 +729,43 @@ var parseCardsText = {
 			"cardImage": "KARA_08_04.png",
 			"cost": 2,
 			"fr": {
-				"name": "Renforcement"
+				"name": "Renforcement",
+				"text": "Donne +8 ATQ à votre héros pendant ce tour."
 			},
 			"id": "KARA_08_04",
 			"name": "Empowerment",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Give your hero +8 Attack this turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA07_21.png",
 			"cost": 1,
 			"fr": {
-				"name": "Foncer en avant"
+				"name": "Foncer en avant",
+				"text": "Vous rapproche d’un tour de la sortie !"
 			},
 			"id": "LOEA07_21",
 			"name": "Barrel Forward",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Get 1 turn closer to the Exit!",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_103.png",
 			"cost": 0,
 			"fr": {
-				"name": "Add 2 to Health"
+				"name": "Add 2 to Health",
+				"text": "Adds 2 health to a damaged character. Does NOT heal."
 			},
 			"id": "XXX_103",
 			"name": "Add 2 to Health",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Adds 2 health to a damaged character. Does NOT heal.",
 			"type": "Spell"
 		},
 		{
@@ -712,7 +775,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Ragnaros, seigneur du feu"
+				"name": "Ragnaros, seigneur du feu",
+				"text": "Ne peut pas attaquer. À la fin de votre tour, inflige 8 points de dégâts à un adversaire aléatoire."
 			},
 			"health": 8,
 			"id": "EX1_298",
@@ -720,63 +784,74 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "Can't attack. At the end of your turn, deal 8 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA06_2H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Le chambellan"
+				"name": "Le chambellan",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un acolyte attise-flammes 3/3."
 			},
 			"id": "BRMA06_2H",
 			"name": "The Majordomo",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon a 3/3 Flamewaker Acolyte.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "CS2_104e.png",
 			"fr": {
-				"name": "Saccager"
+				"name": "Saccager",
+				"text": "+3/+3."
 			},
 			"id": "CS2_104e",
 			"name": "Rampage",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "+3/+3.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_315e.png",
 			"fr": {
-				"name": "Reforgé"
+				"name": "Reforgé",
+				"text": "+1/+1."
 			},
 			"id": "OG_315e",
 			"name": "Reforged",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_312e.png",
 			"fr": {
-				"name": "Amélioration"
+				"name": "Amélioration",
+				"text": "Durabilité augmentée."
 			},
 			"id": "OG_312e",
 			"name": "Upgraded",
 			"playerClass": "Warrior",
 			"set": "Og",
+			"text": "Increased Durability.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NEW1_008b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Secrets anciens"
+				"name": "Secrets anciens",
+				"text": "Rend 5 points de vie."
 			},
 			"id": "NEW1_008b",
 			"name": "Ancient Secrets",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Restore 5 Health.",
 			"type": "Spell"
 		},
 		{
@@ -785,13 +860,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Larcin"
+				"name": "Larcin",
+				"text": "Ajoute 2 cartes de classe aléatoires dans votre main <i>(de la classe de votre adversaire)</i>."
 			},
 			"id": "AT_033",
 			"name": "Burgle",
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Add 2 random class cards to your hand <i>(from your opponent's class)</i>.",
 			"type": "Spell"
 		},
 		{
@@ -801,7 +878,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Mange-secrets"
+				"name": "Mange-secrets",
+				"text": "<b>Cri de guerre :</b> détruit tous les <b>secrets</b> adverses. Gagne +1/+1 par secret détruit."
 			},
 			"health": 4,
 			"id": "OG_254",
@@ -809,29 +887,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Destroy all enemy <b>Secrets</b>. Gain +1/+1 for each.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMC_98e.png",
 			"fr": {
-				"name": "Soif de dragon"
+				"name": "Soif de dragon",
+				"text": "+3 ATQ."
 			},
 			"id": "BRMC_98e",
 			"name": "Dragonlust",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "EX1_164a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Nourrir"
+				"name": "Nourrir",
+				"text": "Vous gagnez 2 cristaux de mana."
 			},
 			"id": "EX1_164a",
 			"name": "Nourish",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Gain 2 Mana Crystals.",
 			"type": "Spell"
 		},
 		{
@@ -839,7 +922,8 @@ var parseCardsText = {
 			"cardImage": "CS2_mirror.png",
 			"cost": 0,
 			"fr": {
-				"name": "Image miroir"
+				"name": "Image miroir",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "CS2_mirror",
@@ -847,6 +931,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -876,12 +961,14 @@ var parseCardsText = {
 		{
 			"cardImage": "PART_007e.png",
 			"fr": {
-				"name": "Lames tourbillonnantes"
+				"name": "Lames tourbillonnantes",
+				"text": "+1 ATQ."
 			},
 			"id": "PART_007e",
 			"name": "Whirling Blades",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "+1 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -889,26 +976,30 @@ var parseCardsText = {
 			"cardImage": "KARA_13_23.png",
 			"cost": 5,
 			"fr": {
-				"name": "Romulo"
+				"name": "Romulo",
+				"text": "À la fin de votre tour, rend 5_PV à votre héros."
 			},
 			"health": 4,
 			"id": "KARA_13_23",
 			"name": "Romulo",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "At the end of your turn, restore 5 health to your hero.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_008.png",
 			"cost": 0,
 			"fr": {
-				"name": "Freeze"
+				"name": "Freeze",
+				"text": "<b>Freeze</b> a character."
 			},
 			"id": "XXX_008",
 			"name": "Freeze",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "<b>Freeze</b> a character.",
 			"type": "Spell"
 		},
 		{
@@ -918,7 +1009,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Gardienne d’Uldaman"
+				"name": "Gardienne d’Uldaman",
+				"text": "<b>Cri de guerre :</b> fait passer l’Attaque et la Vie d’un serviteur à 3."
 			},
 			"health": 4,
 			"id": "LOE_017",
@@ -926,19 +1018,22 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> Set a minion's Attack and Health to 3.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_111.png",
 			"cost": 0,
 			"fr": {
-				"name": "AI Buddy - All Charge, All Windfury!"
+				"name": "AI Buddy - All Charge, All Windfury!",
+				"text": "Play this card to give all minions <b>Charge</b> and <b>Windfury</b>."
 			},
 			"id": "XXX_111",
 			"name": "AI Buddy - All Charge, All Windfury!",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Play this card to give all minions <b>Charge</b> and <b>Windfury</b>.",
 			"type": "Spell"
 		},
 		{
@@ -946,25 +1041,29 @@ var parseCardsText = {
 			"cardImage": "LOEA09_7H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Chaudron"
+				"name": "Chaudron",
+				"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> libère Sir Finley !"
 			},
 			"health": 10,
 			"id": "LOEA09_7H",
 			"name": "Cauldron",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Save Sir Finley!",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA12_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Perle des marées"
+				"name": "Perle des marées",
+				"text": "À la fin de votre tour, remplace tous les serviteurs par de nouveaux. Les vôtres coûtent (1) |4(cristal,cristaux) de plus."
 			},
 			"id": "LOEA12_2H",
 			"name": "Pearl of the Tides",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "At the end of your turn, replace all minions with new ones. Yours cost (1) more.",
 			"type": "Hero_power"
 		},
 		{
@@ -974,7 +1073,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Méchante sorcière"
+				"name": "Méchante sorcière",
+				"text": "Chaque fois que vous lancez un sort, invoque un totem basique aléatoire."
 			},
 			"health": 4,
 			"id": "KAR_021",
@@ -982,29 +1082,34 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Whenever you cast a spell, summon a random basic_Totem.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA12_4H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Affliction de l’espèce : vert"
+				"name": "Affliction de l’espèce : vert",
+				"text": "Rend 6 PV à votre adversaire au début de votre tour tant que vous avez cette carte dans votre main."
 			},
 			"id": "BRMA12_4H",
 			"name": "Brood Affliction: Green",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, restore 6 health to your opponent at the start of your turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_017o.png",
 			"fr": {
-				"name": "Griffes"
+				"name": "Griffes",
+				"text": "Votre héros a +1 ATQ pendant ce tour."
 			},
 			"id": "CS2_017o",
 			"name": "Claws",
 			"playerClass": "Druid",
 			"set": "Core",
+			"text": "Your hero has +1 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -1014,7 +1119,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Mécano-amplificateur"
+				"name": "Mécano-amplificateur",
+				"text": "<b>Cri de guerre :</b> donne à vos autres serviteurs <b>Furie des vents</b>, <b>Provocation</b> ou <b>Bouclier divin</b>. <i>(Au hasard)</i>"
 			},
 			"health": 2,
 			"id": "GVG_107",
@@ -1022,19 +1128,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Give your other minions <b>Windfury</b>, <b>Taunt</b>, or <b>Divine Shield</b>.\n<i>(at random)</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_017.png",
 			"cost": 0,
 			"fr": {
-				"name": "Draw 3 Cards"
+				"name": "Draw 3 Cards",
+				"text": "Draw 3 cards."
 			},
 			"id": "XXX_017",
 			"name": "Draw 3 Cards",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Draw 3 cards.",
 			"type": "Spell"
 		},
 		{
@@ -1055,118 +1164,138 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Marque du fauve"
+				"name": "Marque du fauve",
+				"text": "Confère <b>Provocation</b> et +2/+2 à un serviteur.<i> (+2 ATQ/+2 PV)</i>"
 			},
 			"id": "CS2_009",
 			"name": "Mark of the Wild",
 			"playerClass": "Druid",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give a minion <b>Taunt</b> and +2/+2.<i> (+2 Attack/+2 Health)</i>",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_102.png",
 			"cost": 0,
 			"fr": {
-				"name": "Add 1 to Health."
+				"name": "Add 1 to Health.",
+				"text": "Adds 1 health to a damaged character. Does NOT heal."
 			},
 			"id": "XXX_102",
 			"name": "Add 1 to Health.",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Adds 1 health to a damaged character. Does NOT heal.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRM_027pH.png",
 			"cost": 2,
 			"fr": {
-				"name": "MOUREZ, INSECTES !"
+				"name": "MOUREZ, INSECTES !",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $8 points de dégâts à un adversaire aléatoire. DEUX FOIS."
 			},
 			"id": "BRM_027pH",
 			"name": "DIE, INSECTS!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nDeal $8 damage to a random enemy. TWICE.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "DREAM_05e.png",
 			"fr": {
-				"name": "Cauchemar"
+				"name": "Cauchemar",
+				"text": "Ce serviteur a +5/+5, mais il sera bientôt détruit."
 			},
 			"id": "DREAM_05e",
 			"name": "Nightmare",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "This minion has +5/+5, but will be destroyed soon.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA16_5e.png",
 			"fr": {
-				"name": "Je vous entends…"
+				"name": "Je vous entends…",
+				"text": "Attaque augmentée."
 			},
 			"id": "BRMA16_5e",
 			"name": "I hear you...",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_188e.png",
 			"fr": {
-				"name": "Carapace d’ambre"
+				"name": "Carapace d’ambre",
+				"text": "+5 PV."
 			},
 			"id": "OG_188e",
 			"name": "Amber Carapace",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+5 Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NAX11_04.png",
 			"cost": 3,
 			"fr": {
-				"name": "Injection mutante"
+				"name": "Injection mutante",
+				"text": "Confère à un serviteur +4/+4 et <b>Provocation</b>."
 			},
 			"id": "NAX11_04",
 			"name": "Mutating Injection",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Give a minion +4/+4 and <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX8_02H_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Moisson"
+				"name": "Moisson",
+				"text": "<b>Pouvoir héroïque</b>\nVous piochez une carte et gagnez un cristal de mana."
 			},
 			"id": "NAX8_02H_TB",
 			"name": "Harvest",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nDraw a card. Gain a Mana Crystal.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "BRMC_97e.png",
 			"fr": {
-				"name": "Montée d’adrénaline"
+				"name": "Montée d’adrénaline",
+				"text": "Coûte (2) cristaux de moins."
 			},
 			"id": "BRMC_97e",
 			"name": "Burning Adrenaline",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Costs (2) less.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KARA_07_08heroic.png",
 			"cost": 5,
 			"fr": {
-				"name": "Évasion de dragon !"
+				"name": "Évasion de dragon !",
+				"text": "Invoque un Dragon aléatoire."
 			},
 			"id": "KARA_07_08heroic",
 			"name": "Dragons Free!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon a random Dragon.",
 			"type": "Spell"
 		},
 		{
@@ -1175,25 +1304,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Âme de la forêt"
+				"name": "Âme de la forêt",
+				"text": "Confère à vos serviteurs « <b>Râle d’agonie :</b> invoque un tréant 2/2. »"
 			},
 			"id": "EX1_158",
 			"name": "Soul of the Forest",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Give your minions \"<b>Deathrattle:</b> Summon a 2/2 Treant.\"",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_KTRAF_HP_RAF3.png",
 			"cost": 2,
 			"fr": {
-				"name": "Premier morceau du bâton"
+				"name": "Premier morceau du bâton",
+				"text": "Ajoute une carte rare aléatoire dans votre main. Elle coûte (2) cristaux de moins."
 			},
 			"id": "TB_KTRAF_HP_RAF3",
 			"name": "Staff, First Piece",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Add a random rare card to your hand. It costs (2) less.",
 			"type": "Hero_power"
 		},
 		{
@@ -1215,7 +1348,8 @@ var parseCardsText = {
 			"cardImage": "CRED_43.png",
 			"cost": 5,
 			"fr": {
-				"name": "Jon Bankard"
+				"name": "Jon Bankard",
+				"text": "50% de chances d’avoir raison à 100%."
 			},
 			"health": 5,
 			"id": "CRED_43",
@@ -1223,17 +1357,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "50% chance to be 100% right.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_PickYourFate_Confused.png",
 			"fr": {
-				"name": "Destin"
+				"name": "Destin",
+				"text": "Attaque et Vie échangées à la fin de chaque tour."
 			},
 			"id": "TB_PickYourFate_Confused",
 			"name": "Fate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Attack and Health swap at end of each turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -1241,7 +1378,8 @@ var parseCardsText = {
 			"cardImage": "CRED_29.png",
 			"cost": 5,
 			"fr": {
-				"name": "Jason MacAllister"
+				"name": "Jason MacAllister",
+				"text": "<i>C’est un gars vraiment fiable.</i>"
 			},
 			"health": 5,
 			"id": "CRED_29",
@@ -1249,6 +1387,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<i>He's a real stand-up guy.</i>",
 			"type": "Minion"
 		},
 		{
@@ -1258,7 +1397,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Championne d’Alexstrasza"
+				"name": "Championne d’Alexstrasza",
+				"text": "<b>Cri de guerre :</b> gagne\n+1 ATQ et <b>Charge</b> si vous avez un Dragon en main."
 			},
 			"health": 3,
 			"id": "AT_071",
@@ -1266,19 +1406,22 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +1 Attack and <b>Charge</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_112.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fill Deck"
+				"name": "Fill Deck",
+				"text": "Fill target hero's deck with random cards."
 			},
 			"id": "XXX_112",
 			"name": "Fill Deck",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Fill target hero's deck with random cards.",
 			"type": "Spell"
 		},
 		{
@@ -1288,7 +1431,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Agent du SI:7"
+				"name": "Agent du SI:7",
+				"text": "<b>Combo :</b> inflige 2 points de dégâts."
 			},
 			"health": 3,
 			"id": "EX1_134",
@@ -1296,6 +1440,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Combo:</b> Deal 2 damage.",
 			"type": "Minion"
 		},
 		{
@@ -1304,36 +1449,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Esprit combatif"
+				"name": "Esprit combatif",
+				"text": "<b>Secret :</b> donne +1/+1 à vos serviteurs quand votre tour commence."
 			},
 			"id": "AT_073",
 			"name": "Competitive Spirit",
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Secret:</b> When your turn starts, give your minions +1/+1.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_006.png",
 			"cost": 1,
 			"fr": {
-				"name": "Grande banane"
+				"name": "Grande banane",
+				"text": "Confère +2/+2 à un serviteur."
 			},
 			"id": "TB_006",
 			"name": "Big Banana",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Give a minion +2/+2.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA16_3e.png",
 			"fr": {
-				"name": "Lanterne de puissance"
+				"name": "Lanterne de puissance",
+				"text": "+10/+10."
 			},
 			"id": "LOEA16_3e",
 			"name": "Lantern of Power",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "+10/+10.",
 			"type": "Enchantment"
 		},
 		{
@@ -1356,12 +1507,14 @@ var parseCardsText = {
 			"cardImage": "NAX12_02H_2_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Décimer"
+				"name": "Décimer",
+				"text": "<b>Pouvoir héroïque</b>\nFait passer les points de vie des serviteurs adverses à 1."
 			},
 			"id": "NAX12_02H_2_TB",
 			"name": "Decimate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nChange the Health of enemy minions to 1.",
 			"type": "Hero_power"
 		},
 		{
@@ -1370,25 +1523,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Entrée dans le Colisée"
+				"name": "Entrée dans le Colisée",
+				"text": "Détruit tous les serviteurs excepté le serviteur ayant l’Attaque la plus élevée pour chaque joueur."
 			},
 			"id": "AT_078",
 			"name": "Enter the Coliseum",
 			"playerClass": "Paladin",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Destroy all minions except each player's highest Attack minion.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRM_030t.png",
 			"cost": 4,
 			"fr": {
-				"name": "Balayage de queue"
+				"name": "Balayage de queue",
+				"text": "Inflige $4 |4(point,points) de dégâts."
 			},
 			"id": "BRM_030t",
 			"name": "Tail Swipe",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Deal $4 damage.",
 			"type": "Spell"
 		},
 		{
@@ -1398,7 +1555,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Chevaucheur pandashan"
+				"name": "Chevaucheur pandashan",
+				"text": "<b>Combo :</b> gagne +3 ATQ."
 			},
 			"health": 7,
 			"id": "AT_028",
@@ -1406,18 +1564,21 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Combo:</b> Gain +3 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX4_04H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Réanimation morbide"
+				"name": "Réanimation morbide",
+				"text": "<b>Pouvoir héroïque passif</b>\nChaque fois qu’un adversaire meurt, un squelette 5/5 se lève."
 			},
 			"id": "NAX4_04H",
 			"name": "Raise Dead",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Passive Hero Power</b>\nWhenever an enemy dies, raise a 5/5 Skeleton.",
 			"type": "Hero_power"
 		},
 		{
@@ -1426,25 +1587,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Kriss"
+				"name": "Kriss",
+				"text": "Inflige $1 |4(point,points) de dégâts. Vous piochez une carte."
 			},
 			"id": "EX1_278",
 			"name": "Shiv",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $1 damage. Draw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA16_15.png",
 			"cost": 0,
 			"fr": {
-				"name": "Larme d’Ysera"
+				"name": "Larme d’Ysera",
+				"text": "Gagne 4 cristaux de mana pendant ce tour uniquement."
 			},
 			"id": "LOEA16_15",
 			"name": "Ysera's Tear",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Gain 4 Mana Crystals this turn only.",
 			"type": "Spell"
 		},
 		{
@@ -1453,35 +1618,41 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_08.png",
 			"cost": 4,
 			"fr": {
-				"name": "Cavalier blanc"
+				"name": "Cavalier blanc",
+				"text": "<b>Charge</b>.\nNe peut pas attaquer les héros."
 			},
 			"health": 3,
 			"id": "KAR_A10_08",
 			"name": "White Knight",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Charge</b>.\nCan't Attack Heroes.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_014a.png",
 			"fr": {
-				"name": "Dissimulé"
+				"name": "Dissimulé",
+				"text": "La Vie a été échangée."
 			},
 			"id": "GVG_014a",
 			"name": "Shadowed",
 			"playerClass": "Priest",
 			"set": "Gvg",
+			"text": "Health was swapped.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NEW1_033o.png",
 			"fr": {
-				"name": "Œil céleste"
+				"name": "Œil céleste",
+				"text": "Leokk confère +1 ATQ à ce serviteur."
 			},
 			"id": "NEW1_033o",
 			"name": "Eye In The Sky",
 			"playerClass": "Hunter",
 			"set": "Core",
+			"text": "Leokk is granting this minion +1 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -1490,13 +1661,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Dissimuler"
+				"name": "Dissimuler",
+				"text": "Confère <b>Camouflage</b> à vos serviteurs jusqu’à votre prochain tour."
 			},
 			"id": "EX1_128",
 			"name": "Conceal",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Give your minions <b>Stealth</b> until your next turn.",
 			"type": "Spell"
 		},
 		{
@@ -1506,7 +1679,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Sorcier draconien"
+				"name": "Sorcier draconien",
+				"text": "Gagne +1/+1 chaque fois que <b>vous</b> ciblez ce serviteur avec un sort."
 			},
 			"health": 5,
 			"id": "BRM_020",
@@ -1514,17 +1688,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Whenever <b>you</b> target this minion with a spell, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_623e.png",
 			"fr": {
-				"name": "Infusion"
+				"name": "Infusion",
+				"text": "+3 PV."
 			},
 			"id": "EX1_623e",
 			"name": "Infusion",
 			"playerClass": "Priest",
 			"set": "Expert1",
+			"text": "+3 Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -1532,13 +1709,15 @@ var parseCardsText = {
 			"cardImage": "BRMA17_7.png",
 			"cost": 2,
 			"fr": {
-				"name": "Prototype chromatique"
+				"name": "Prototype chromatique",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "BRMA17_7",
 			"name": "Chromatic Prototype",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -1548,7 +1727,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Mande-flots murloc"
+				"name": "Mande-flots murloc",
+				"text": "Chaque fois qu’un murloc est invoqué, gagne\n+1 ATQ."
 			},
 			"health": 2,
 			"id": "EX1_509",
@@ -1556,30 +1736,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever a Murloc is summoned, gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_008.png",
 			"cost": 1,
 			"fr": {
-				"name": "Banane pourrie"
+				"name": "Banane pourrie",
+				"text": "Inflige $1 |4(point,points) de dégâts."
 			},
 			"id": "TB_008",
 			"name": "Rotten Banana",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal $1 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_006.png",
 			"cost": 0,
 			"fr": {
-				"name": "Éruption élémentaire"
+				"name": "Éruption élémentaire",
+				"text": "Inflige 4 à 6 points de dégâts à tous les autres serviteurs."
 			},
 			"id": "TB_CoOpv3_006",
 			"name": "Elemental Eruption",
 			"playerClass": "Shaman",
 			"set": "Tb",
+			"text": "Deal 4-6 damage to all other minions.",
 			"type": "Spell"
 		},
 		{
@@ -1628,7 +1813,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Hemet Nesingwary"
+				"name": "Hemet Nesingwary",
+				"text": "<b>Cri de guerre :</b> détruit une Bête."
 			},
 			"health": 3,
 			"id": "GVG_120",
@@ -1636,6 +1822,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Destroy a Beast.",
 			"type": "Minion"
 		},
 		{
@@ -1644,13 +1831,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Exécution"
+				"name": "Exécution",
+				"text": "Détruit un serviteur adverse blessé."
 			},
 			"id": "CS2_108",
 			"name": "Execute",
 			"playerClass": "Warrior",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Destroy a damaged enemy minion.",
 			"type": "Spell"
 		},
 		{
@@ -1672,7 +1861,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Mousse de la Voile sanglante"
+				"name": "Mousse de la Voile sanglante",
+				"text": "<b>Cri de guerre :</b> gagne des points d’Attaque d’un montant équivalent à ceux de votre arme."
 			},
 			"health": 3,
 			"id": "NEW1_018",
@@ -1680,6 +1870,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Gain Attack equal to the Attack of your weapon.",
 			"type": "Minion"
 		},
 		{
@@ -1687,7 +1878,8 @@ var parseCardsText = {
 			"cardImage": "skele11.png",
 			"cost": 1,
 			"fr": {
-				"name": "Squelette"
+				"name": "Squelette",
+				"text": "<b></b>"
 			},
 			"health": 1,
 			"id": "skele11",
@@ -1695,17 +1887,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b></b> ",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_113e.png",
 			"fr": {
-				"name": "Puissance du peuple"
+				"name": "Puissance du peuple",
+				"text": "Attaque augmentée."
 			},
 			"id": "OG_113e",
 			"name": "Power of the People",
 			"playerClass": "Warlock",
 			"set": "Og",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -1727,12 +1922,14 @@ var parseCardsText = {
 			"cardImage": "NAX5_02H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Éruption"
+				"name": "Éruption",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts au serviteur adverse tout à gauche."
 			},
 			"id": "NAX5_02H",
 			"name": "Eruption",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 3 damage to the left-most enemy minion.",
 			"type": "Hero_power"
 		},
 		{
@@ -1741,36 +1938,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Réincarnation"
+				"name": "Réincarnation",
+				"text": "Détruit un serviteur, puis le ramène à la vie avec tous ses PV."
 			},
 			"id": "FP1_025",
 			"name": "Reincarnate",
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "Destroy a minion, then return it to life with full Health.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX5_03.png",
 			"cost": 2,
 			"fr": {
-				"name": "Cervocalypse"
+				"name": "Cervocalypse",
+				"text": "Les deux joueurs piochent 2 cartes et gagnent un cristal de mana."
 			},
 			"id": "NAX5_03",
 			"name": "Mindpocalypse",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Both players draw 2 cards and gain a Mana Crystal.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_KTRAF_10e.png",
 			"fr": {
-				"name": "Sombre puissance"
+				"name": "Sombre puissance",
+				"text": "A reçu de la puissance de Noth."
 			},
 			"id": "TB_KTRAF_10e",
 			"name": "Dark Power",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Granted power from Noth",
 			"type": "Enchantment"
 		},
 		{
@@ -1791,12 +1994,14 @@ var parseCardsText = {
 			"cardImage": "TB_CoOpv3_012.png",
 			"cost": 0,
 			"fr": {
-				"name": "Immolation"
+				"name": "Immolation",
+				"text": "Inflige 4 points de dégâts à chaque héros."
 			},
 			"id": "TB_CoOpv3_012",
 			"name": "Immolate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal 4 damage to each hero.",
 			"type": "Spell"
 		},
 		{
@@ -1806,7 +2011,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Engin de siège"
+				"name": "Engin de siège",
+				"text": "Chaque fois que vous gagnez de l’Armure, donne +1 ATQ à ce serviteur."
 			},
 			"health": 5,
 			"id": "GVG_086",
@@ -1814,6 +2020,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Whenever you gain Armor, give this minion +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -1836,7 +2043,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Âme gémissante"
+				"name": "Âme gémissante",
+				"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> vos autres serviteurs."
 			},
 			"health": 5,
 			"id": "FP1_016",
@@ -1844,17 +2052,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Naxx",
+			"text": "<b>Battlecry: Silence</b> your other minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_584e.png",
 			"fr": {
-				"name": "Enseignements du Kirin Tor"
+				"name": "Enseignements du Kirin Tor",
+				"text": "<b>Dégâts des sorts : +1</b>"
 			},
 			"id": "EX1_584e",
 			"name": "Teachings of the Kirin Tor",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "<b>Spell Damage +1</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -1863,24 +2074,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Torche oubliée"
+				"name": "Torche oubliée",
+				"text": "Inflige $3 |4(point,points) de dégâts. Place une carte Torche enflammée dans votre deck qui inflige 6 points de dégâts."
 			},
 			"id": "LOE_002",
 			"name": "Forgotten Torch",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "Deal $3 damage. Shuffle a 'Roaring Torch' into your deck that deals 6 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "GVG_060e.png",
 			"fr": {
-				"name": "Bien équipé"
+				"name": "Bien équipé",
+				"text": "+2/+2."
 			},
 			"id": "GVG_060e",
 			"name": "Well Equipped",
 			"playerClass": "Paladin",
 			"set": "Gvg",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -1890,7 +2105,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Tentacule de N’Zoth"
+				"name": "Tentacule de N’Zoth",
+				"text": "<b>Râle d’agonie :</b> inflige\n1 point de dégâts à tous les serviteurs."
 			},
 			"health": 1,
 			"id": "OG_151",
@@ -1898,6 +2114,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Deal 1 damage to all minions.",
 			"type": "Minion"
 		},
 		{
@@ -1916,12 +2133,14 @@ var parseCardsText = {
 			"cardImage": "XXX_027.png",
 			"cost": 0,
 			"fr": {
-				"name": "Server Crash"
+				"name": "Server Crash",
+				"text": "Crash the Server.  DON'T BE A FOOL."
 			},
 			"id": "XXX_027",
 			"name": "Server Crash",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Crash the Server.  DON'T BE A FOOL.",
 			"type": "Spell"
 		},
 		{
@@ -1931,7 +2150,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Écraseur du Vide"
+				"name": "Écraseur du Vide",
+				"text": "<b>Exaltation :</b> détruit aléatoirement un serviteur de chaque joueur."
 			},
 			"health": 4,
 			"id": "AT_023",
@@ -1939,6 +2159,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Destroy a random minion for each player.",
 			"type": "Minion"
 		},
 		{
@@ -1947,35 +2168,41 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Tir réflexe"
+				"name": "Tir réflexe",
+				"text": "Inflige $3 |4(point,points) de dégâts.\nVous piochez une carte si votre main est vide."
 			},
 			"id": "BRM_013",
 			"name": "Quick Shot",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Deal $3 damage.\nIf your hand is empty, draw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX15_04a.png",
 			"fr": {
-				"name": "Esclave de Kel’Thuzad"
+				"name": "Esclave de Kel’Thuzad",
+				"text": "À MOI !"
 			},
 			"id": "NAX15_04a",
 			"name": "Slave of Kel'Thuzad",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "MINE!",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA10_6e.png",
 			"fr": {
-				"name": "Rage aveugle"
+				"name": "Rage aveugle",
+				"text": "Attaque augmentée."
 			},
 			"id": "BRMA10_6e",
 			"name": "Blind With Rage",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -1985,7 +2212,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Brave archère"
+				"name": "Brave archère",
+				"text": "<b>Exaltation :</b> inflige 2 points de dégâts au héros adverse si votre main est vide."
 			},
 			"health": 1,
 			"id": "AT_059",
@@ -1993,6 +2221,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> If your hand is empty, deal 2 damage to the enemy hero.",
 			"type": "Minion"
 		},
 		{
@@ -2018,7 +2247,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Gardienne des secrets"
+				"name": "Gardienne des secrets",
+				"text": "Chaque fois qu’un <b>Secret</b> est joué, gagne +1/+1."
 			},
 			"health": 2,
 			"id": "EX1_080",
@@ -2026,6 +2256,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever a <b>Secret</b> is played, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -2033,13 +2264,15 @@ var parseCardsText = {
 			"cardImage": "OG_047b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Production d’écailles"
+				"name": "Production d’écailles",
+				"text": "Confère +8 points d’armure."
 			},
 			"id": "OG_047b",
 			"name": "Evolve Scales",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Gain 8 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -2050,7 +2283,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Contrôleur mental"
+				"name": "Contrôleur mental",
+				"text": "<b>Cri de guerre :</b> si l’adversaire a 4 serviteurs ou plus, prend le contrôle de l’un d’eux au hasard."
 			},
 			"health": 3,
 			"id": "EX1_085",
@@ -2058,6 +2292,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> If your opponent has 4 or more minions, take control of one at random.",
 			"type": "Minion"
 		},
 		{
@@ -2066,12 +2301,14 @@ var parseCardsText = {
 			"cost": 1,
 			"durability": 2,
 			"fr": {
-				"name": "Lance rare"
+				"name": "Lance rare",
+				"text": "Gagne +1/+1 chaque fois que votre adversaire joue une carte rare."
 			},
 			"id": "LOEA09_4",
 			"name": "Rare Spear",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Whenever your opponent plays a Rare card, gain +1/+1.",
 			"type": "Weapon"
 		},
 		{
@@ -2079,13 +2316,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_06H.png",
 			"cost": 4,
 			"fr": {
-				"name": "Pichet"
+				"name": "Pichet",
+				"text": "<b>Cri de guerre_:</b> donne +3/+3 à un serviteur."
 			},
 			"health": 5,
 			"id": "KAR_A02_06H",
 			"name": "Pitcher",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Give a minion +3/+3.",
 			"type": "Minion"
 		},
 		{
@@ -2094,13 +2333,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Colère"
+				"name": "Colère",
+				"text": "<b>Choix des armes :</b> inflige $3 |4(point,points) de dégâts à un serviteur ; ou inflige $1 |4(point,points) de dégâts à un serviteur et vous piochez une carte."
 			},
 			"id": "EX1_154",
 			"name": "Wrath",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Choose One</b> - Deal $3 damage to a minion; or $1 damage and draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -2110,7 +2351,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Kobold évolué"
+				"name": "Kobold évolué",
+				"text": "<b>Dégâts des sorts : +2</b>"
 			},
 			"health": 2,
 			"id": "OG_082",
@@ -2119,6 +2361,7 @@ var parseCardsText = {
 			"rarity": "Common",
 			"set": "Og",
 			"spellDamage": 2,
+			"text": "<b>Spell Damage +2</b>",
 			"type": "Minion"
 		},
 		{
@@ -2126,34 +2369,40 @@ var parseCardsText = {
 			"cardImage": "KARA_00_10.png",
 			"cost": 3,
 			"fr": {
-				"name": "Rune mystérieuse"
+				"name": "Rune mystérieuse",
+				"text": "Joue 5_<b>Secrets</b> aléatoires de mage."
 			},
 			"id": "KARA_00_10",
 			"name": "Mysterious Rune",
 			"playerClass": "Mage",
 			"set": "Kara",
+			"text": "Put 5 random Mage <b>Secrets</b> into play.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_069e.png",
 			"fr": {
-				"name": "Entraînement terminé"
+				"name": "Entraînement terminé",
+				"text": "<b>Provocation</b>"
 			},
 			"id": "AT_069e",
 			"name": "Training Complete",
 			"playerClass": "Warrior",
 			"set": "Tgt",
+			"text": "<b>Taunt</b>",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "EX1_570e.png",
 			"fr": {
-				"name": "Morsure"
+				"name": "Morsure",
+				"text": "+4 ATQ pendant ce tour."
 			},
 			"id": "EX1_570e",
 			"name": "Bite",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+4 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -2161,13 +2410,15 @@ var parseCardsText = {
 			"cardImage": "BRMA01_4t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Écluseur"
+				"name": "Écluseur",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 1,
 			"id": "BRMA01_4t",
 			"name": "Guzzler",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -2189,7 +2440,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Cobra empereur"
+				"name": "Cobra empereur",
+				"text": "Détruit tout serviteur blessé par ce serviteur."
 			},
 			"health": 3,
 			"id": "EX1_170",
@@ -2197,6 +2449,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Destroy any minion damaged by this minion.",
 			"type": "Minion"
 		},
 		{
@@ -2206,7 +2459,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Mini-robot blindé"
+				"name": "Mini-robot blindé",
+				"text": "<b>Bouclier divin</b>"
 			},
 			"health": 2,
 			"id": "GVG_058",
@@ -2214,6 +2468,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -2223,7 +2478,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Druidesse du Sabre"
+				"name": "Druidesse du Sabre",
+				"text": "<b>Choix des armes :</b> se transforme pour obtenir <b>Charge</b> ou gagne +1/+1 et <b>Camouflage</b>."
 			},
 			"health": 1,
 			"id": "AT_042",
@@ -2231,6 +2487,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Choose One -</b> Transform to gain <b>Charge</b>; or +1/+1 and <b>Stealth</b>.",
 			"type": "Minion"
 		},
 		{
@@ -2240,7 +2497,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Capitaine Vertepeau"
+				"name": "Capitaine Vertepeau",
+				"text": "<b>Cri de guerre :</b> confère +1/+1 à votre arme."
 			},
 			"health": 4,
 			"id": "NEW1_024",
@@ -2248,6 +2506,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give your weapon +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -2255,13 +2514,15 @@ var parseCardsText = {
 			"cardImage": "BRMC_88.png",
 			"cost": 6,
 			"fr": {
-				"name": "Pourfendeur drakônide"
+				"name": "Pourfendeur drakônide",
+				"text": "Inflige également des dégâts aux serviteurs à côté de celui qu’il attaque."
 			},
 			"health": 6,
 			"id": "BRMC_88",
 			"name": "Drakonid Slayer",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Also damages the minions next to whomever he attacks.",
 			"type": "Minion"
 		},
 		{
@@ -2271,7 +2532,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Sombre arakkoa"
+				"name": "Sombre arakkoa",
+				"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> donne\n+3/+3 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 7,
 			"id": "OG_293",
@@ -2279,17 +2541,20 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Give your C'Thun\n+3/+3 <i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NEW1_018e.png",
 			"fr": {
-				"name": "Obnubilé par les trésors"
+				"name": "Obnubilé par les trésors",
+				"text": "Attaque augmentée."
 			},
 			"id": "NEW1_018e",
 			"name": "Treasure Crazed",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -2298,13 +2563,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Flammes sacrées"
+				"name": "Flammes sacrées",
+				"text": "Inflige $5 points de dégâts. Rend #5 PV à votre héros."
 			},
 			"id": "EX1_624",
 			"name": "Holy Fire",
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Deal $5 damage. Restore #5 Health to your hero.",
 			"type": "Spell"
 		},
 		{
@@ -2312,12 +2579,14 @@ var parseCardsText = {
 			"cardImage": "KARA_07_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Protection de la galerie"
+				"name": "Protection de la galerie",
+				"text": "<b>Pouvoir héroïque passif</b>\nVotre héros a <b>Provocation</b>."
 			},
 			"id": "KARA_07_02",
 			"name": "Gallery Protection",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Passive Hero Power</b>\nYour hero has <b>Taunt</b>.",
 			"type": "Hero_power"
 		},
 		{
@@ -2338,7 +2607,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Archimage Antonidas"
+				"name": "Archimage Antonidas",
+				"text": "Chaque fois que vous lancez un sort, ajoute un sort « boule de feu » dans votre main."
 			},
 			"health": 7,
 			"id": "EX1_559",
@@ -2346,6 +2616,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "Whenever you cast a spell, add a 'Fireball' spell to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -2355,7 +2626,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Capitaine des mers du Sud"
+				"name": "Capitaine des mers du Sud",
+				"text": "Vos autres pirates\nont +1/+1."
 			},
 			"health": 3,
 			"id": "NEW1_027",
@@ -2363,6 +2635,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Your other Pirates have +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -2372,7 +2645,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Rampant des marais"
+				"name": "Rampant des marais",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 8,
 			"id": "OG_153",
@@ -2380,18 +2654,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_ClassRandom_Priest.png",
 			"cost": 0,
 			"fr": {
-				"name": "Deuxième classe : prêtre"
+				"name": "Deuxième classe : prêtre",
+				"text": "Ajoute des cartes de prêtre dans votre deck."
 			},
 			"id": "TB_ClassRandom_Priest",
 			"name": "Second Class: Priest",
 			"playerClass": "Priest",
 			"set": "Tb",
+			"text": "Add Priest cards to your deck.",
 			"type": "Spell"
 		},
 		{
@@ -2414,7 +2691,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Eydis Plaie-sombre"
+				"name": "Eydis Plaie-sombre",
+				"text": "Chaque fois que <b>vous</b> ciblez ce serviteur avec un sort, inflige\n3 points de dégâts à un adversaire aléatoire."
 			},
 			"health": 4,
 			"id": "AT_131",
@@ -2422,17 +2700,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "Whenever <b>you</b> target this minion with a spell, deal 3 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TBST_006.png",
 			"fr": {
-				"name": "Forcer une carte commune"
+				"name": "Forcer une carte commune",
+				"text": "Place une carte commune dans la main du joueur."
 			},
 			"id": "TBST_006",
 			"name": "OLDTBST Push Common Card",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "push a common card into player's hand",
 			"type": "Enchantment"
 		},
 		{
@@ -2440,7 +2721,8 @@ var parseCardsText = {
 			"cardImage": "TB_CoOp_Mechazod.png",
 			"cost": 10,
 			"fr": {
-				"name": "Maître des rouages Mécazod"
+				"name": "Maître des rouages Mécazod",
+				"text": "<b>Boss</b>\nMécazod gagne s’il bat l’un de vous !"
 			},
 			"health": 95,
 			"id": "TB_CoOp_Mechazod",
@@ -2448,6 +2730,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "<b>Boss</b>\nMechazod wins if he defeats either of you!",
 			"type": "Minion"
 		},
 		{
@@ -2456,13 +2739,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Cri de commandement"
+				"name": "Cri de commandement",
+				"text": "Les points de vie de vos serviteurs ne peuvent pas passer en dessous de 1 ce tour-ci. Vous piochez une carte."
 			},
 			"id": "NEW1_036",
 			"name": "Commanding Shout",
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Your minions can't be reduced below 1 Health this turn. Draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -2472,7 +2757,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Sylvanas Coursevent"
+				"name": "Sylvanas Coursevent",
+				"text": "<b>Râle d’agonie :</b> prend le contrôle d’un serviteur adverse aléatoire."
 			},
 			"health": 5,
 			"id": "EX1_016",
@@ -2480,18 +2766,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Deathrattle:</b> Take control of a random enemy minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_11.png",
 			"cost": 0,
 			"fr": {
-				"name": "Couronne de Kael’thas"
+				"name": "Couronne de Kael’thas",
+				"text": "Inflige $10 |4(point,points) de dégâts répartis de façon aléatoire entre TOUS les personnages."
 			},
 			"id": "LOEA16_11",
 			"name": "Crown of Kael'thas",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Deal $10 damage randomly split among ALL characters.",
 			"type": "Spell"
 		},
 		{
@@ -2516,13 +2805,15 @@ var parseCardsText = {
 			"cardImage": "BRMA10_4H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Œuf corrompu"
+				"name": "Œuf corrompu",
+				"text": "Éclot quand il a 5 PV ou plus."
 			},
 			"health": 3,
 			"id": "BRMA10_4H",
 			"name": "Corrupted Egg",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "When this minion has 5 or more Health, it hatches.",
 			"type": "Minion"
 		},
 		{
@@ -2531,48 +2822,56 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Ressusciter"
+				"name": "Ressusciter",
+				"text": "Invoque un serviteur allié aléatoire mort pendant la partie."
 			},
 			"id": "BRM_017",
 			"name": "Resurrect",
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "Summon a random friendly minion that died this game.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA12_6.png",
 			"cost": 1,
 			"fr": {
-				"name": "Affliction de l’espèce : noir"
+				"name": "Affliction de l’espèce : noir",
+				"text": "Chaque fois que Chromaggus pioche une carte, il en obtient une copie tant que vous avez celle-ci dans votre main."
 			},
 			"id": "BRMA12_6",
 			"name": "Brood Affliction: Black",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, whenever Chromaggus draws a card, he gets another copy of it.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_050t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Décharge de foudre"
+				"name": "Décharge de foudre",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts."
 			},
 			"id": "AT_050t",
 			"name": "Lightning Jolt",
 			"playerClass": "Shaman",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nDeal $2 damage.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "OG_293e.png",
 			"fr": {
-				"name": "Dévotion de l'arakkoa"
+				"name": "Dévotion de l'arakkoa",
+				"text": "+5/+5."
 			},
 			"id": "OG_293e",
 			"name": "Arrakoa Devotion",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+5/+5.",
 			"type": "Enchantment"
 		},
 		{
@@ -2583,7 +2882,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Patriarche dos-argenté"
+				"name": "Patriarche dos-argenté",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "CS2_127",
@@ -2591,6 +2891,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -2600,7 +2901,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Soigneuse du Crépuscule"
+				"name": "Soigneuse du Crépuscule",
+				"text": "<b>Cri de guerre :</b> rend 10 PV\nà votre héros si votre\nC’Thun a au moins\n10 Attaque."
 			},
 			"health": 5,
 			"id": "OG_096",
@@ -2608,6 +2910,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> If your C'Thun  has at least 10 Attack, restore 10 Health to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -2617,7 +2920,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Illidan Hurlorage"
+				"name": "Illidan Hurlorage",
+				"text": "Quand vous jouez une carte, invoque une Flamme d’Azzinoth 2/1."
 			},
 			"health": 5,
 			"id": "EX1_614",
@@ -2625,6 +2929,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "Whenever you play a card, summon a 2/1 Flame of Azzinoth.",
 			"type": "Minion"
 		},
 		{
@@ -2634,7 +2939,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Furtif sombrefer"
+				"name": "Furtif sombrefer",
+				"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts à tous les serviteurs adverses qui ne sont pas blessés."
 			},
 			"health": 3,
 			"id": "BRM_008",
@@ -2642,6 +2948,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> Deal 2 damage to all undamaged enemy minions.",
 			"type": "Minion"
 		},
 		{
@@ -2666,7 +2973,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Glace-Hurlante"
+				"name": "Glace-Hurlante",
+				"text": "<b>Charge</b>\nNe peut pas attaquer les héros."
 			},
 			"health": 10,
 			"id": "AT_125",
@@ -2674,6 +2982,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Charge</b>\nCan't attack heroes.",
 			"type": "Minion"
 		},
 		{
@@ -2681,7 +2990,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_11.png",
 			"cost": 5,
 			"fr": {
-				"name": "Saphiron"
+				"name": "Saphiron",
+				"text": "Au début de votre tour, <b>gèle</b> un serviteur adverse aléatoire."
 			},
 			"health": 6,
 			"id": "TB_KTRAF_11",
@@ -2689,6 +2999,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "At the start of your turn, <b>Freeze</b> a random enemy minion.",
 			"type": "Minion"
 		},
 		{
@@ -2696,7 +3007,8 @@ var parseCardsText = {
 			"cardImage": "NAX9_03H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Thane Korth’azz"
+				"name": "Thane Korth’azz",
+				"text": "Votre héros est <b>Insensible</b>."
 			},
 			"health": 7,
 			"id": "NAX9_03H",
@@ -2704,18 +3016,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "Your hero is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA04_28a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Boire à grands traits"
+				"name": "Boire à grands traits",
+				"text": "Vous piochez une carte."
 			},
 			"id": "LOEA04_28a",
 			"name": "Drink Deeply",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -2725,7 +3040,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Baron Geddon"
+				"name": "Baron Geddon",
+				"text": "À la fin de votre tour, inflige 2 points de dégâts à TOUS les autres personnages."
 			},
 			"health": 5,
 			"id": "EX1_249",
@@ -2733,6 +3049,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "At the end of your turn, deal 2 damage to ALL other characters.",
 			"type": "Minion"
 		},
 		{
@@ -2758,13 +3075,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Esprit ancestral"
+				"name": "Esprit ancestral",
+				"text": "Confère à un serviteur « <b>Râle d’agonie :</b> réinvoque ce serviteur. »"
 			},
 			"id": "CS2_038",
 			"name": "Ancestral Spirit",
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Give a minion \"<b>Deathrattle:</b> Resummon this minion.\"",
 			"type": "Spell"
 		},
 		{
@@ -2774,7 +3093,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Léviathan des flammes"
+				"name": "Léviathan des flammes",
+				"text": "Quand vous piochez cette carte, inflige 2 points de dégâts à tous les personnages."
 			},
 			"health": 7,
 			"id": "GVG_007",
@@ -2782,6 +3102,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "When you draw this, deal 2 damage to all characters.",
 			"type": "Minion"
 		},
 		{
@@ -2800,49 +3121,57 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_102e.png",
 			"fr": {
-				"name": "Transfert de puissance"
+				"name": "Transfert de puissance",
+				"text": "Caractéristiques échangées."
 			},
 			"id": "OG_102e",
 			"name": "Power Transfer",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Swapped stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_034_H1_AT_132.png",
 			"cost": 2,
 			"fr": {
-				"name": "Explosion de feu rang 2"
+				"name": "Explosion de feu rang 2",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts."
 			},
 			"id": "CS2_034_H1_AT_132",
 			"name": "Fireblast Rank 2",
 			"playerClass": "Mage",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nDeal $2 damage.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "LOEA06_04.png",
 			"cost": 2,
 			"fr": {
-				"name": "Pulsion destructrice"
+				"name": "Pulsion destructrice",
+				"text": "Détruit toutes les statues. Inflige 1_point de dégâts pour chaque statue détruite."
 			},
 			"id": "LOEA06_04",
 			"name": "Shattering Spree",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Destroy all Statues. For each destroyed, deal 1 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_011.png",
 			"cost": 0,
 			"fr": {
-				"name": "Summon a random Secret"
+				"name": "Summon a random Secret",
+				"text": "Summon a secret from your deck."
 			},
 			"id": "XXX_011",
 			"name": "Summon a random Secret",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Summon a secret from your deck.",
 			"type": "Spell"
 		},
 		{
@@ -2850,7 +3179,8 @@ var parseCardsText = {
 			"cardImage": "BRMA14_7H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Électron"
+				"name": "Électron",
+				"text": "Tous les sorts coûtent (3) |4(cristal,cristaux) de moins."
 			},
 			"health": 6,
 			"id": "BRMA14_7H",
@@ -2858,6 +3188,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "All spells cost (3) less.",
 			"type": "Minion"
 		},
 		{
@@ -2865,7 +3196,8 @@ var parseCardsText = {
 			"cardImage": "CRED_06.png",
 			"cost": 1,
 			"fr": {
-				"name": "Derek Sakamoto"
+				"name": "Derek Sakamoto",
+				"text": "<i>Le célèbre tapeur des pieds.</i>"
 			},
 			"health": 1,
 			"id": "CRED_06",
@@ -2873,19 +3205,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<i>The notorious Footclapper.</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_KaraPortal_002.png",
 			"cost": 2,
 			"fr": {
-				"name": "Invocation de Mediva"
+				"name": "Invocation de Mediva",
+				"text": "Invoque une Mediva aléatoire."
 			},
 			"id": "TB_KaraPortal_002",
 			"name": "Call Mediva",
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Tb",
+			"text": "Summon a random Mediva",
 			"type": "Spell"
 		},
 		{
@@ -2895,7 +3230,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Drake de minuit"
+				"name": "Drake de minuit",
+				"text": "<b>Cri de guerre :</b> gagne +1 ATQ pour chaque autre carte dans votre main."
 			},
 			"health": 4,
 			"id": "OG_320",
@@ -2903,6 +3239,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Gain +1 Attack for each other card\nin your hand.",
 			"type": "Minion"
 		},
 		{
@@ -2925,7 +3262,8 @@ var parseCardsText = {
 			"cost": 6,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Marche-soleil"
+				"name": "Marche-soleil",
+				"text": "<b>Provocation</b>\n<b>Bouclier divin</b>"
 			},
 			"health": 5,
 			"id": "EX1_032",
@@ -2933,29 +3271,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>\n<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_154a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Colère"
+				"name": "Colère",
+				"text": "Inflige $3 |4(point,points) de dégâts à un serviteur."
 			},
 			"id": "EX1_154a",
 			"name": "Wrath",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Deal $3 damage to a minion.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_004e.png",
 			"fr": {
-				"name": "Grâce d’Élune"
+				"name": "Grâce d’Élune",
+				"text": "Vie augmentée."
 			},
 			"id": "EX1_004e",
 			"name": "Elune's Grace",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -2965,7 +3308,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Seigneur Aile de mort"
+				"name": "Seigneur Aile de mort",
+				"text": "<b>Râle d’agonie :</b> place tous les dragons de votre main sur le champ de bataille."
 			},
 			"health": 12,
 			"id": "OG_317",
@@ -2973,6 +3317,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Put all Dragons from your hand into the battlefield.",
 			"type": "Minion"
 		},
 		{
@@ -2994,7 +3339,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Valet de Medivh"
+				"name": "Valet de Medivh",
+				"text": "<b>Cri de guerre_:</b> si vous contrôlez un <b>Secret</b>, inflige 3_points de dégâts."
 			},
 			"health": 3,
 			"id": "KAR_092",
@@ -3002,17 +3348,20 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> If you control a <b>Secret</b>, deal 3 damage.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KAR_077e.png",
 			"fr": {
-				"name": "Puissance d’Argent"
+				"name": "Puissance d’Argent",
+				"text": "+2/+2."
 			},
 			"id": "KAR_077e",
 			"name": "Silver Might",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -3021,13 +3370,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Horion de givre"
+				"name": "Horion de givre",
+				"text": "Inflige $1 |4(point,points) de dégâts à un personnage adverse, et le <b>gèle</b>."
 			},
 			"id": "CS2_037",
 			"name": "Frost Shock",
 			"playerClass": "Shaman",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $1 damage to an enemy character and <b>Freeze</b> it.",
 			"type": "Spell"
 		},
 		{
@@ -3037,7 +3388,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Tisse-ambre klaxxi"
+				"name": "Tisse-ambre klaxxi",
+				"text": "<b>Cri de guerre :</b> gagne\n+5 PV si votre C’Thun a au moins 10 Attaque."
 			},
 			"health": 5,
 			"id": "OG_188",
@@ -3045,29 +3397,34 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> If your C'Thun has at least 10 Attack, gain +5 Health.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA07_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "MOI TOUT CASSER"
+				"name": "MOI TOUT CASSER",
+				"text": "<b>Pouvoir héroïque</b>\nDétruit un serviteur adverse aléatoire."
 			},
 			"id": "BRMA07_2H",
 			"name": "ME SMASH",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nDestroy a random enemy minion.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "AT_034e.png",
 			"fr": {
-				"name": "Enduit perfide"
+				"name": "Enduit perfide",
+				"text": "Attaque augmentée."
 			},
 			"id": "AT_034e",
 			"name": "Laced",
 			"playerClass": "Rogue",
 			"set": "Tgt",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -3077,7 +3434,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Trogg des tunnels"
+				"name": "Trogg des tunnels",
+				"text": "Gagne +1 ATQ par cristal de mana verrouillé chaque fois que vous êtes en  <b>Surcharge</b>."
 			},
 			"health": 3,
 			"id": "LOE_018",
@@ -3085,17 +3443,20 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "Whenever you <b>Overload</b>, gain +1 Attack per locked Mana Crystal.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_226e.png",
 			"fr": {
-				"name": "Bannière loup-de-givre"
+				"name": "Bannière loup-de-givre",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "CS2_226e",
 			"name": "Frostwolf Banner",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -3105,7 +3466,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Géant des mers"
+				"name": "Géant des mers",
+				"text": "Coûte (1) cristal de moins pour chaque autre serviteur sur le champ de bataille."
 			},
 			"health": 8,
 			"id": "EX1_586",
@@ -3113,6 +3475,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Costs (1) less for each other minion on the battlefield.",
 			"type": "Minion"
 		},
 		{
@@ -3120,7 +3483,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_5.png",
 			"cost": 4,
 			"fr": {
-				"name": "Grande veuve Faerlina"
+				"name": "Grande veuve Faerlina",
+				"text": "Obtient +1 ATQ pour chaque carte dans la main de votre adversaire."
 			},
 			"health": 5,
 			"id": "TB_KTRAF_5",
@@ -3128,30 +3492,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Has +1 Attack for each card in your opponent's hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_064.png",
 			"cost": 0,
 			"fr": {
-				"name": "The Song That Ends the World"
+				"name": "The Song That Ends the World",
+				"text": "Crash the game server.  No, really."
 			},
 			"id": "XXX_064",
 			"name": "The Song That Ends the World",
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Cheat",
+			"text": "Crash the game server.  No, really.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_074e2.png",
 			"fr": {
-				"name": "Sceau des champions"
+				"name": "Sceau des champions",
+				"text": "+3 ATQ et <b>Bouclier divin</b>."
 			},
 			"id": "AT_074e2",
 			"name": "Seal of Champions",
 			"playerClass": "Paladin",
 			"set": "Tgt",
+			"text": "+3 Attack and <b>Divine Shield</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -3159,26 +3528,30 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_10.png",
 			"cost": 7,
 			"fr": {
-				"name": "Reine noire"
+				"name": "Reine noire",
+				"text": "<b>Attaque automatique_:</b> inflige 4 points de dégâts aux adversaires en face de ce serviteur."
 			},
 			"health": 6,
 			"id": "KAR_A10_10",
 			"name": "Black Queen",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Auto-Attack:</b> Deal 4 damage to the enemies opposite this minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_06_03hpheroic.png",
 			"cost": 0,
 			"fr": {
-				"name": "Amour véritable"
+				"name": "Amour véritable",
+				"text": "<b>Pouvoir héroïque</b>\nSi vous n’avez pas Romulo, l’invoque."
 			},
 			"id": "KARA_06_03hpheroic",
 			"name": "True Love",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nIf you don't have Romulo, summon him.",
 			"type": "Hero_power"
 		},
 		{
@@ -3188,7 +3561,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Empereur jumeau Vek’lor"
+				"name": "Empereur jumeau Vek’lor",
+				"text": "<b>Provocation</b>. <b>Cri de guerre :</b> invoque un autre empereur si votre C’Thun a au moins 10 Attaque."
 			},
 			"health": 6,
 			"id": "OG_131",
@@ -3196,6 +3570,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "[x]<b><b>Taunt</b>\nBattlecry:</b> If your C'Thun has\nat least 10 Attack, summon\nanother Emperor.",
 			"type": "Minion"
 		},
 		{
@@ -3205,7 +3580,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Grizzly Ferpoil"
+				"name": "Grizzly Ferpoil",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 3,
 			"id": "CS2_125",
@@ -3213,6 +3589,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -3220,13 +3597,15 @@ var parseCardsText = {
 			"cardImage": "BRMA09_3Ht.png",
 			"cost": 1,
 			"fr": {
-				"name": "Orc de l’ancienne Horde"
+				"name": "Orc de l’ancienne Horde",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "BRMA09_3Ht",
 			"name": "Old Horde Orc",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -3250,24 +3629,28 @@ var parseCardsText = {
 			"cardImage": "LOEA02_02h.png",
 			"cost": 0,
 			"fr": {
-				"name": "Intuition de djinn"
+				"name": "Intuition de djinn",
+				"text": "Vous piochez une carte. Gagne un cristal de mana. Accorde un Vœu à votre adversaire."
 			},
 			"id": "LOEA02_02h",
 			"name": "Djinn’s Intuition",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Draw a card. Gain a Mana Crystal. Give your opponent a Wish.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "KARA_09_07heroic.png",
 			"cost": 4,
 			"fr": {
-				"name": "Vol de vie"
+				"name": "Vol de vie",
+				"text": "Inflige 5_points de dégâts. Rend 5_PV à votre héros."
 			},
 			"id": "KARA_09_07heroic",
 			"name": "Steal Life",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Deal 5 damage. Restore 5 Health to your hero.",
 			"type": "Spell"
 		},
 		{
@@ -3277,7 +3660,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Dragon féerique"
+				"name": "Dragon féerique",
+				"text": "Ne peut pas être la cible de sorts ou de pouvoirs héroïques."
 			},
 			"health": 2,
 			"id": "NEW1_023",
@@ -3285,6 +3669,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Can't be targeted by spells or Hero Powers.",
 			"type": "Minion"
 		},
 		{
@@ -3295,7 +3680,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Soldat de Comté-de-l’Or"
+				"name": "Soldat de Comté-de-l’Or",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "CS1_042",
@@ -3303,6 +3689,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -3339,7 +3726,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_6.png",
 			"cost": 5,
 			"fr": {
-				"name": "Grobbulus"
+				"name": "Grobbulus",
+				"text": "Chaque fois qu’il détruit un serviteur, invoque une gelée empoisonnée 2/2. "
 			},
 			"health": 7,
 			"id": "TB_KTRAF_6",
@@ -3347,6 +3735,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Whenever this kills a minion, summon a poisonous 2/2 Slime.",
 			"type": "Minion"
 		},
 		{
@@ -3354,13 +3743,15 @@ var parseCardsText = {
 			"cardImage": "AT_132_SHAMANa.png",
 			"cost": 0,
 			"fr": {
-				"name": "Totem de soins"
+				"name": "Totem de soins",
+				"text": "À la fin de votre tour, rend 1 point de vie à tous vos serviteurs."
 			},
 			"health": 2,
 			"id": "AT_132_SHAMANa",
 			"name": "Healing Totem",
 			"playerClass": "Shaman",
 			"set": "Tgt",
+			"text": "At the end of your turn, restore 1 Health to all friendly minions.",
 			"type": "Minion"
 		},
 		{
@@ -3382,13 +3773,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Recrutement"
+				"name": "Recrutement",
+				"text": "Choisissez un serviteur. En place 3 copies dans votre deck."
 			},
 			"id": "BRM_007",
 			"name": "Gang Up",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Choose a minion. Shuffle 3 copies of it into your deck.",
 			"type": "Spell"
 		},
 		{
@@ -3399,7 +3792,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Sergent grossier"
+				"name": "Sergent grossier",
+				"text": "<b>Cri de guerre :</b> confère +2 ATQ à un serviteur pendant ce tour."
 			},
 			"health": 1,
 			"id": "CS2_188",
@@ -3407,6 +3801,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give a minion +2 Attack this turn.",
 			"type": "Minion"
 		},
 		{
@@ -3414,7 +3809,8 @@ var parseCardsText = {
 			"cardImage": "NAX9_04H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Sire Zeliek"
+				"name": "Sire Zeliek",
+				"text": "Votre héros est <b>Insensible</b>."
 			},
 			"health": 7,
 			"id": "NAX9_04H",
@@ -3422,17 +3818,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "Your hero is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_284e.png",
 			"fr": {
-				"name": "Géomancie"
+				"name": "Géomancie",
+				"text": "A <b>Provocation</b>."
 			},
 			"id": "OG_284e",
 			"name": "Geomancy",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Has <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -3440,7 +3839,8 @@ var parseCardsText = {
 			"cardImage": "CRED_05.png",
 			"cost": 3,
 			"fr": {
-				"name": "Kyle Harrison"
+				"name": "Kyle Harrison",
+				"text": "<i>3 cristaux pour un 5/4 ? Ça c’est une affaire !</i>"
 			},
 			"health": 4,
 			"id": "CRED_05",
@@ -3448,18 +3848,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<i>3 for a 5/4? That's a good deal!</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA13_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Puissance des anciens"
+				"name": "Puissance des anciens",
+				"text": "<b>Pouvoir héroïque</b>\nDonne une carte aléatoire à chaque joueur. Elle coûte (0) |4(cristal,cristaux) de mana."
 			},
 			"id": "LOEA13_2",
 			"name": "Ancient Power",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nGive each player a random card. It costs (0).",
 			"type": "Hero_power"
 		},
 		{
@@ -3468,24 +3871,28 @@ var parseCardsText = {
 			"cardImage": "KARA_09_03a.png",
 			"cost": 1,
 			"fr": {
-				"name": "Diablotin dégoûtant"
+				"name": "Diablotin dégoûtant",
+				"text": "<b>Râle d’agonie_:</b> réinvoque ce serviteur et Malsabot perd 2_PV."
 			},
 			"health": 1,
 			"id": "KARA_09_03a",
 			"name": "Icky Imp",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Deathrattle:</b> Resummon this minion and Illhoof loses 2 Health.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KAR_A02_06He.png",
 			"fr": {
-				"name": "Rempli"
+				"name": "Rempli",
+				"text": "+3/+3."
 			},
 			"id": "KAR_A02_06He",
 			"name": "Filled Up",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+3/+3.",
 			"type": "Enchantment"
 		},
 		{
@@ -3518,13 +3925,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Portail de Forgefer"
+				"name": "Portail de Forgefer",
+				"text": "Gagne 4 points d’Armure. Invoque un serviteur aléatoire coûtant 4_cristaux de mana."
 			},
 			"id": "KAR_091",
 			"name": "Ironforge Portal",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Gain 4 Armor.\nSummon a random\n4-Cost minion.",
 			"type": "Spell"
 		},
 		{
@@ -3535,7 +3944,8 @@ var parseCardsText = {
 			"cost": 2,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Minuscule invocatrice"
+				"name": "Minuscule invocatrice",
+				"text": "Le premier serviteur que vous jouez à chaque tour coûte (1) cristal de moins."
 			},
 			"health": 2,
 			"id": "EX1_076",
@@ -3543,6 +3953,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "The first minion you play each turn costs (1) less.",
 			"type": "Minion"
 		},
 		{
@@ -3550,7 +3961,8 @@ var parseCardsText = {
 			"cardImage": "TU4c_007.png",
 			"cost": 6,
 			"fr": {
-				"name": "Grand frère de Mukla"
+				"name": "Grand frère de Mukla",
+				"text": "Il est si fort, et pour seulement 6 cristaux de mana ?!"
 			},
 			"health": 10,
 			"id": "TU4c_007",
@@ -3558,6 +3970,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "So strong! And only 6 Mana?!",
 			"type": "Minion"
 		},
 		{
@@ -3565,7 +3978,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_26H.png",
 			"cost": 10,
 			"fr": {
-				"name": "Squeletosaurus Hex"
+				"name": "Squeletosaurus Hex",
+				"text": "À la fin de votre tour, place une carte aléatoire dans votre main. Elle coûte (0) |4(cristal,cristaux) de mana."
 			},
 			"health": 10,
 			"id": "LOEA16_26H",
@@ -3573,6 +3987,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, put a random card in your hand. It costs (0).",
 			"type": "Minion"
 		},
 		{
@@ -3594,7 +4009,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Face de poulpe"
+				"name": "Face de poulpe",
+				"text": "<b>Râle d’agonie :</b> donne\n+2 ATQ à votre arme."
 			},
 			"health": 4,
 			"id": "OG_267",
@@ -3602,6 +4018,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Give your weapon +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -3611,7 +4028,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Onyxia"
+				"name": "Onyxia",
+				"text": "<b>Cri de guerre :</b> invoque des dragonnets 1/1 jusqu’à remplir votre côté du champ de bataille."
 			},
 			"health": 8,
 			"id": "EX1_562",
@@ -3619,6 +4037,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Summon 1/1 Whelps until your side of the battlefield is full.",
 			"type": "Minion"
 		},
 		{
@@ -3644,7 +4063,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Chevalier de sang"
+				"name": "Chevalier de sang",
+				"text": "<b>Cri de guerre :</b> tous les serviteurs perdent <b>Bouclier divin</b>. Gagne +3/+3 pour chaque bouclier perdu."
 			},
 			"health": 3,
 			"id": "EX1_590",
@@ -3652,6 +4072,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> All minions lose <b>Divine Shield</b>. Gain +3/+3 for each Shield lost.",
 			"type": "Minion"
 		},
 		{
@@ -3659,49 +4080,57 @@ var parseCardsText = {
 			"cardImage": "BRMA13_5.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fils de la Flamme"
+				"name": "Fils de la Flamme",
+				"text": "<b>Cri de guerre :</b> inflige 6 points de dégâts."
 			},
 			"health": 3,
 			"id": "BRMA13_5",
 			"name": "Son of the Flame",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> Deal 6 damage.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA04_29b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Examiner les runes"
+				"name": "Examiner les runes",
+				"text": "Vous piochez 2 cartes."
 			},
 			"id": "LOEA04_29b",
 			"name": "Investigate the Runes",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Draw 2 cards.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_ClassRandom_Warlock.png",
 			"cost": 0,
 			"fr": {
-				"name": "Deuxième classe : démoniste"
+				"name": "Deuxième classe : démoniste",
+				"text": "Ajoute des cartes de démoniste dans votre deck."
 			},
 			"id": "TB_ClassRandom_Warlock",
 			"name": "Second Class: Warlock",
 			"playerClass": "Warlock",
 			"set": "Tb",
+			"text": "Add Warlock cards to your deck.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpBossSpell_3.png",
 			"cost": 0,
 			"fr": {
-				"name": "Liquide de refroidissement"
+				"name": "Liquide de refroidissement",
+				"text": "Gèle et inflige les dégâts de l’attaque à tous les serviteurs.\nGagne 2 ATQ."
 			},
 			"id": "TB_CoOpBossSpell_3",
 			"name": "Release Coolant",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Freeze and deal Attack damage to all minions.\nGain 2 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -3711,7 +4140,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Marchand douteux"
+				"name": "Marchand douteux",
+				"text": "<b>Cri de guerre :</b> si vous avez un pirate, gagne +1/+1."
 			},
 			"health": 3,
 			"id": "AT_032",
@@ -3719,6 +4149,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> If you have a Pirate, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -3738,7 +4169,8 @@ var parseCardsText = {
 			"cardImage": "EX1_165t2.png",
 			"cost": 5,
 			"fr": {
-				"name": "Druide de la Griffe"
+				"name": "Druide de la Griffe",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 6,
 			"id": "EX1_165t2",
@@ -3746,6 +4178,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -3753,7 +4186,8 @@ var parseCardsText = {
 			"cardImage": "EX1_317t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Diablotin sans valeur"
+				"name": "Diablotin sans valeur",
+				"text": "<i>Vous n’avez plus de démons_! Heureusement, il y a toujours des diablotins...</i>"
 			},
 			"health": 1,
 			"id": "EX1_317t",
@@ -3761,6 +4195,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<i>You are out of demons! At least there are always imps...</i>",
 			"type": "Minion"
 		},
 		{
@@ -3780,13 +4215,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_04.png",
 			"cost": 3,
 			"fr": {
-				"name": "Couteau"
+				"name": "Couteau",
+				"text": "Les assiettes ont <b>Provocation</b>."
 			},
 			"health": 1,
 			"id": "KAR_A02_04",
 			"name": "Knife",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Plates have <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -3795,13 +4232,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Feu de l’âme"
+				"name": "Feu de l’âme",
+				"text": "Inflige $4 |4(point,points) de dégâts. Vous défausse d’une carte aléatoire."
 			},
 			"id": "EX1_308",
 			"name": "Soulfire",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $4 damage. Discard a random card.",
 			"type": "Spell"
 		},
 		{
@@ -3810,25 +4249,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Dupliquer"
+				"name": "Dupliquer",
+				"text": "<b>Secret :</b> quand un serviteur allié meurt, en place 2 copies dans votre main."
 			},
 			"id": "FP1_018",
 			"name": "Duplicate",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Secret:</b> When a friendly minion dies, put 2 copies of it into your hand.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_022e.png",
 			"fr": {
-				"name": "Métamorphose"
+				"name": "Métamorphose",
+				"text": "Ce serviteur a été transformé en mouton 1/1."
 			},
 			"id": "CS2_022e",
 			"name": "Polymorph",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "This minion has been transformed into a 1/1 Sheep.",
 			"type": "Enchantment"
 		},
 		{
@@ -3849,13 +4292,15 @@ var parseCardsText = {
 			"cardImage": "NAXM_001.png",
 			"cost": 4,
 			"fr": {
-				"name": "Nécro-chevalier"
+				"name": "Nécro-chevalier",
+				"text": "<b>Râle d’agonie :</b> détruit les serviteurs adjacents."
 			},
 			"health": 6,
 			"id": "NAXM_001",
 			"name": "Necroknight",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Destroy the minions next to this one as well.",
 			"type": "Minion"
 		},
 		{
@@ -3865,7 +4310,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Crapaud énorme"
+				"name": "Crapaud énorme",
+				"text": "<b>Râle d’agonie :</b> inflige\n1 point de dégâts à un adversaire aléatoire."
 			},
 			"health": 2,
 			"id": "LOE_046",
@@ -3873,6 +4319,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Deathrattle:</b> Deal 1 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -3881,7 +4328,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Explosion de lave"
+				"name": "Explosion de lave",
+				"text": "Inflige $5 |4(point,points) de dégâts.\n<b>Surcharge :</b> (2)"
 			},
 			"id": "EX1_241",
 			"name": "Lava Burst",
@@ -3889,30 +4337,35 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Deal $5 damage. <b>Overload:</b> (2)",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOE_008.png",
 			"cost": 1,
 			"fr": {
-				"name": "Œil d’Hakkar"
+				"name": "Œil d’Hakkar",
+				"text": "Pioche un secret dans le deck de votre adversaire et le place sur le champ de bataille."
 			},
 			"id": "LOE_008",
 			"name": "Eye of Hakkar",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Take a secret from your opponent's deck and put it into the battlefield.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA09_3d.png",
 			"cost": 0,
 			"fr": {
-				"name": "Faim"
+				"name": "Faim",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un naga affamé 5/1."
 			},
 			"id": "LOEA09_3d",
 			"name": "Getting Hungry",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nSummon a 5/1 Hungry Naga.",
 			"type": "Hero_power"
 		},
 		{
@@ -3921,13 +4374,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Étreindre l’ombre"
+				"name": "Étreindre l’ombre",
+				"text": "Durant ce tour, vos effets de soin infligent des dégâts à la place."
 			},
 			"id": "OG_104",
 			"name": "Embrace the Shadow",
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "This turn, your healing effects deal damage instead.",
 			"type": "Spell"
 		},
 		{
@@ -3935,7 +4390,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_25H.png",
 			"cost": 10,
 			"fr": {
-				"name": "Dame Naz’jar"
+				"name": "Dame Naz’jar",
+				"text": "À la fin de votre tour, remplace tous les autres serviteurs par de nouveaux de même coût."
 			},
 			"health": 10,
 			"id": "LOEA16_25H",
@@ -3943,18 +4399,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, replace all other minions with new ones of the same Cost.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA_01H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Présence menaçante"
+				"name": "Présence menaçante",
+				"text": "Vous piochez 3 cartes. Gagne +6 points d’armure."
 			},
 			"id": "LOEA_01H",
 			"name": "Looming Presence",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Draw 3 cards. Gain 6 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -3977,7 +4436,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Cavalier en ivoire"
+				"name": "Cavalier en ivoire",
+				"text": "<b>Cri de guerre_:</b> <b>découvre</b> un sort. Rend un montant de PV équivalent à son coût à votre héros."
 			},
 			"health": 4,
 			"id": "KAR_057",
@@ -3985,6 +4445,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "[x]<b>Battlecry:</b> <b>Discover</b> a spell.\nRestore Health to your hero\nequal to its Cost.",
 			"type": "Minion"
 		},
 		{
@@ -3994,7 +4455,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Forban de la Voile sanglante"
+				"name": "Forban de la Voile sanglante",
+				"text": "<b>Cri de guerre :</b> ôte 1 Durabilité à l’arme de votre adversaire."
 			},
 			"health": 2,
 			"id": "NEW1_025",
@@ -4002,19 +4464,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Remove 1 Durability from your opponent's weapon.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_BlingBrawl_Hero1p.png",
 			"cost": 2,
 			"fr": {
-				"name": "Affûtage"
+				"name": "Affûtage",
+				"text": "<b>Pouvoir héroïque</b>\nAugmente l’attaque de votre arme de 1."
 			},
 			"id": "TB_BlingBrawl_Hero1p",
 			"name": "Sharpen",
 			"playerClass": "Rogue",
 			"rarity": "Free",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nIncrease your weapon's attack by 1",
 			"type": "Hero_power"
 		},
 		{
@@ -4024,7 +4489,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Gruul"
+				"name": "Gruul",
+				"text": "À la fin de chaque tour, gagne +1/+1."
 			},
 			"health": 7,
 			"id": "NEW1_038",
@@ -4032,29 +4498,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "At the end of each turn, gain +1/+1 .",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_046e.png",
 			"fr": {
-				"name": "Acier trempé"
+				"name": "Acier trempé",
+				"text": "+2 ATQ pendant ce tour."
 			},
 			"id": "EX1_046e",
 			"name": "Tempered",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+2 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NAX3_03.png",
 			"cost": 2,
 			"fr": {
-				"name": "Poison nécrotique"
+				"name": "Poison nécrotique",
+				"text": "Détruit un serviteur."
 			},
 			"id": "NAX3_03",
 			"name": "Necrotic Poison",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Destroy a minion.",
 			"type": "Spell"
 		},
 		{
@@ -4064,7 +4535,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Modeste écuyer"
+				"name": "Modeste écuyer",
+				"text": "<b>Exaltation :</b> gagne +1 ATQ."
 			},
 			"health": 2,
 			"id": "AT_082",
@@ -4072,6 +4544,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -4080,12 +4553,14 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 2,
 			"fr": {
-				"name": "Lame runique massive"
+				"name": "Lame runique massive",
+				"text": "Inflige des dégâts doublés aux héros."
 			},
 			"id": "TB_KTRAF_08w",
 			"name": "Massive Runeblade",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deals double damage to heroes.",
 			"type": "Weapon"
 		},
 		{
@@ -4095,7 +4570,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Seigneur Jaraxxus"
+				"name": "Seigneur Jaraxxus",
+				"text": "<b>Cri de guerre :</b> le seigneur Jaraxxus détruit votre héros et prend sa place."
 			},
 			"health": 15,
 			"id": "EX1_323",
@@ -4103,29 +4579,34 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Destroy your hero and replace it with Lord Jaraxxus.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_4.png",
 			"cost": 10,
 			"fr": {
-				"name": "Horloge de l’horreur"
+				"name": "Horloge de l’horreur",
+				"text": "Inflige $10 |4(point,points) de dégâts répartis de façon aléatoire entre tous les adversaires."
 			},
 			"id": "LOEA16_4",
 			"name": "Timepiece of Horror",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Deal $10 damage randomly split among all enemies.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "OG_302e.png",
 			"fr": {
-				"name": "Puissance de l’âme"
+				"name": "Puissance de l’âme",
+				"text": "Attaque augmentée."
 			},
 			"id": "OG_302e",
 			"name": "Soul Power",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -4135,7 +4616,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Maître des écuries"
+				"name": "Maître des écuries",
+				"text": "<b>Cri de guerre :</b> une Bête alliée devient <b>Insensible</b> pendant ce tour."
 			},
 			"health": 2,
 			"id": "AT_057",
@@ -4143,6 +4625,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Give a friendly Beast <b>Immune</b> this turn.",
 			"type": "Minion"
 		},
 		{
@@ -4163,7 +4646,8 @@ var parseCardsText = {
 			"cardImage": "BRMC_86.png",
 			"cost": 4,
 			"fr": {
-				"name": "Atramédès"
+				"name": "Atramédès",
+				"text": "Gagne +2 ATQ chaque fois que votre adversaire joue une carte."
 			},
 			"health": 8,
 			"id": "BRMC_86",
@@ -4171,6 +4655,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Whenever your opponent plays a card, gain +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -4180,7 +4665,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Marcheur du Vide"
+				"name": "Marcheur du Vide",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 3,
 			"id": "CS2_065",
@@ -4188,6 +4674,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -4196,13 +4683,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Huile d’affûtage de Bricoleur"
+				"name": "Huile d’affûtage de Bricoleur",
+				"text": "Confère à votre arme +3 ATQ. <b>Combo :</b> donne à un serviteur allié aléatoire +3 ATQ."
 			},
 			"id": "GVG_022",
 			"name": "Tinker's Sharpsword Oil",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Give your weapon +3 Attack. <b>Combo:</b> Give a random friendly minion +3 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -4211,13 +4700,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Métamorphose : sanglier"
+				"name": "Métamorphose : sanglier",
+				"text": "Transforme un serviteur en sanglier 4/2 avec <b>Charge</b>."
 			},
 			"id": "AT_005",
 			"name": "Polymorph: Boar",
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Transform a minion into a 4/2 Boar with <b>Charge</b>.",
 			"type": "Spell"
 		},
 		{
@@ -4226,13 +4717,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Arme croque-roc"
+				"name": "Arme croque-roc",
+				"text": "Confère à un personnage allié +3 ATQ pendant ce tour."
 			},
 			"id": "CS2_045",
 			"name": "Rockbiter Weapon",
 			"playerClass": "Shaman",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give a friendly character +3 Attack this turn.",
 			"type": "Spell"
 		},
 		{
@@ -4241,13 +4734,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Déflagration des Arcanes"
+				"name": "Déflagration des Arcanes",
+				"text": "Inflige $2 |4(point,points) de dégâts à un serviteur. Le bonus aux <b>Dégâts des sorts</b> est doublé pour ce sort."
 			},
 			"id": "AT_004",
 			"name": "Arcane Blast",
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Deal $2 damage to a minion. This spell gets double bonus from <b>Spell Damage</b>.",
 			"type": "Spell"
 		},
 		{
@@ -4269,12 +4764,14 @@ var parseCardsText = {
 			"cardImage": "BRMA02_2.png",
 			"cost": 1,
 			"fr": {
-				"name": "Foule moqueuse"
+				"name": "Foule moqueuse",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un spectateur 1/1 avec <b>Provocation</b>."
 			},
 			"id": "BRMA02_2",
 			"name": "Jeering Crowd",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon a 1/1 Spectator with <b>Taunt</b>.",
 			"type": "Hero_power"
 		},
 		{
@@ -4282,12 +4779,14 @@ var parseCardsText = {
 			"cardImage": "KARA_00_05.png",
 			"cost": 3,
 			"fr": {
-				"name": "Perspicacité d’archimage"
+				"name": "Perspicacité d’archimage",
+				"text": "Vos sorts coûtent (0)_|4(cristal,cristaux) pendant ce tour."
 			},
 			"id": "KARA_00_05",
 			"name": "Archmage's Insight",
 			"playerClass": "Mage",
 			"set": "Kara",
+			"text": "Your spells cost (0) this turn.",
 			"type": "Spell"
 		},
 		{
@@ -4295,7 +4794,8 @@ var parseCardsText = {
 			"cardImage": "PlaceholderCard.png",
 			"cost": 9,
 			"fr": {
-				"name": "Placeholder Card"
+				"name": "Placeholder Card",
+				"text": "Battlecry: Someone remembers to publish this card."
 			},
 			"health": 8,
 			"id": "PlaceholderCard",
@@ -4303,6 +4803,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "None",
+			"text": "Battlecry: Someone remembers to publish this card.",
 			"type": "Minion"
 		},
 		{
@@ -4312,7 +4813,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Conseiller de Sombre-Comté"
+				"name": "Conseiller de Sombre-Comté",
+				"text": "Gagne +1 ATQ après que vous avez invoqué un serviteur."
 			},
 			"health": 5,
 			"id": "OG_113",
@@ -4320,6 +4822,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "After you summon a minion, gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -4328,13 +4831,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Effigie"
+				"name": "Effigie",
+				"text": "<b>Secret :</b> quand un serviteur allié meurt, invoque un serviteur aléatoire de même coût."
 			},
 			"id": "AT_002",
 			"name": "Effigy",
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Secret:</b> When a friendly minion dies, summon a random minion with the same Cost.",
 			"type": "Spell"
 		},
 		{
@@ -4356,7 +4861,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Tempête de foudre"
+				"name": "Tempête de foudre",
+				"text": "Inflige $2 à $3 points de dégâts à tous les serviteurs adverses. <b>Surcharge :</b> (2)"
 			},
 			"id": "EX1_259",
 			"name": "Lightning Storm",
@@ -4364,17 +4870,20 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Deal $2-$3 damage to all enemy minions. <b>Overload:</b> (2)",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "GVG_102e.png",
 			"fr": {
-				"name": "Puissance de Brikabrok"
+				"name": "Puissance de Brikabrok",
+				"text": "+1/+1."
 			},
 			"id": "GVG_102e",
 			"name": "Might of Tinkertown",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -4392,24 +4901,28 @@ var parseCardsText = {
 		{
 			"cardImage": "LOE_030e.png",
 			"fr": {
-				"name": "Trompeur"
+				"name": "Trompeur",
+				"text": "Caractéristiques copiées."
 			},
 			"id": "LOE_030e",
 			"name": "Hollow",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Stats copied.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA09_2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Enragé !"
+				"name": "Enragé !",
+				"text": "Donne +2 ATQ à votre héros pendant ce tour."
 			},
 			"id": "LOEA09_2",
 			"name": "Enraged!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Give your hero +2 attack this turn.",
 			"type": "Hero_power"
 		},
 		{
@@ -4418,25 +4931,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Renforcement"
+				"name": "Renforcement",
+				"text": "Confère +2/+2 à vos serviteurs avec <b>Provocation</b>."
 			},
 			"id": "AT_068",
 			"name": "Bolster",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Give your <b>Taunt</b> minions +2/+2.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA06_02.png",
 			"cost": 1,
 			"fr": {
-				"name": "Sculpture sur pierre"
+				"name": "Sculpture sur pierre",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque une statue 0/2 pour chaque joueur."
 			},
 			"id": "LOEA06_02",
 			"name": "Stonesculpting",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\n Summon a 0/2 Statue for both players.",
 			"type": "Hero_power"
 		},
 		{
@@ -4444,24 +4961,28 @@ var parseCardsText = {
 			"cardImage": "KARA_11_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Tempête de mana"
+				"name": "Tempête de mana",
+				"text": "<b>Pouvoir héroïque passif</b>\nLes joueurs commencent la partie avec 10_cristaux de mana."
 			},
 			"id": "KARA_11_02",
 			"name": "Manastorm",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Passive Hero Power</b>\nPlayers start with 10 Mana Crystals.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "OG_047e.png",
 			"fr": {
-				"name": "Aiguillons"
+				"name": "Aiguillons",
+				"text": "+4 ATQ pendant ce tour."
 			},
 			"id": "OG_047e",
 			"name": "Spines",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "+4 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -4470,35 +4991,41 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Balayage"
+				"name": "Balayage",
+				"text": "Inflige $4 |4(point,points) de dégâts à un adversaire et $1 |4(point,points) de dégâts à tous les autres adversaires."
 			},
 			"id": "CS2_012",
 			"name": "Swipe",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $4 damage to an enemy and $1 damage to all other enemies.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOE_118e.png",
 			"fr": {
-				"name": "Lame maudite"
+				"name": "Lame maudite",
+				"text": "Double tous les dégâts subis par votre héros."
 			},
 			"id": "LOE_118e",
 			"name": "Cursed Blade",
 			"playerClass": "Warrior",
 			"set": "Loe",
+			"text": "Double all damage dealt to your hero.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOE_105e.png",
 			"fr": {
-				"name": "Chapeau d’explorateur"
+				"name": "Chapeau d’explorateur",
+				"text": "+1/+1.<b>Râle d’agonie :</b> ajoute un Chapeau d’explorateur dans votre main."
 			},
 			"id": "LOE_105e",
 			"name": "Explorer's Hat",
 			"playerClass": "Hunter",
 			"set": "Loe",
+			"text": "+1/+1. <b>Deathrattle:</b> Add an Explorer's Hat to your hand.",
 			"type": "Enchantment"
 		},
 		{
@@ -4506,7 +5033,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_10.png",
 			"cost": 9,
 			"fr": {
-				"name": "Noth le Porte-Peste"
+				"name": "Noth le Porte-Peste",
+				"text": "Chaque fois qu’un serviteur adverse meurt, invoque un squelette 1/1 et donne +1/+1 à vos autres serviteurs."
 			},
 			"health": 5,
 			"id": "TB_KTRAF_10",
@@ -4514,19 +5042,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Whenever an enemy minion dies, summon a 1/1 Skeleton and give your other minions +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_101_H1_AT_132.png",
 			"cost": 2,
 			"fr": {
-				"name": "La Main d’argent"
+				"name": "La Main d’argent",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux recrues 1/1."
 			},
 			"id": "CS2_101_H1_AT_132",
 			"name": "The Silver Hand",
 			"playerClass": "Paladin",
 			"rarity": "Free",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
 			"type": "Hero_power"
 		},
 		{
@@ -4534,13 +5065,15 @@ var parseCardsText = {
 			"cardImage": "KARA_13_19.png",
 			"cost": 5,
 			"fr": {
-				"name": "Chaperon Rouge"
+				"name": "Chaperon Rouge",
+				"text": "<b>Provocation. Râle d’agonie_:</b> les adversaires ne peuvent pas attaquer pendant ce tour."
 			},
 			"health": 2,
 			"id": "KARA_13_19",
 			"name": "Red Riding Hood",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Taunt. Deathrattle:</b> Enemies can't attack this turn.",
 			"type": "Minion"
 		},
 		{
@@ -4564,7 +5097,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Lardeur, Perte d’Elwynn"
+				"name": "Lardeur, Perte d’Elwynn",
+				"text": "Chaque fois que ce serviteur subit des dégâts, invoque un gnoll 2/2 avec <b>Provocation</b>."
 			},
 			"health": 6,
 			"id": "OG_318",
@@ -4572,6 +5106,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "Whenever this minion takes damage, summon a 2/2 Gnoll with <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -4579,25 +5114,29 @@ var parseCardsText = {
 			"cardImage": "OG_195a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Feux follets à foison"
+				"name": "Feux follets à foison",
+				"text": "Invoque sept feux follets 1/1."
 			},
 			"id": "OG_195a",
 			"name": "Many Wisps",
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Summon seven 1/1 Wisps.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX14_04.png",
 			"cost": 5,
 			"fr": {
-				"name": "Froid absolu"
+				"name": "Froid absolu",
+				"text": "Inflige $8 |4(point,points) de dégâts au héros adverse, et le <b>gèle</b>."
 			},
 			"id": "NAX14_04",
 			"name": "Pure Cold",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Deal $8 damage to the enemy hero, and <b>Freeze</b> it.",
 			"type": "Spell"
 		},
 		{
@@ -4607,7 +5146,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Abomination"
+				"name": "Abomination",
+				"text": "<b>Provocation</b>.\n<b>Râle d’agonie :</b> inflige 2 points de dégâts à TOUS les personnages."
 			},
 			"health": 4,
 			"id": "EX1_097",
@@ -4615,29 +5155,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>. <b>Deathrattle:</b> Deal 2 damage to ALL characters.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_09_06heroic.png",
 			"cost": 4,
 			"fr": {
-				"name": "Salve d’Ombre"
+				"name": "Salve d’Ombre",
+				"text": "Inflige 3_points de dégâts à tous les serviteurs qui ne sont pas des démons."
 			},
 			"id": "KARA_09_06heroic",
 			"name": "Shadow Volley",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Deal 3 damage to all non-Demon minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "GVG_055e.png",
 			"fr": {
-				"name": "Ferraille tordue"
+				"name": "Ferraille tordue",
+				"text": "+2/+2."
 			},
 			"id": "GVG_055e",
 			"name": "Screwy Jank",
 			"playerClass": "Warrior",
 			"set": "Gvg",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -4647,7 +5192,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Marcheuse sauvage"
+				"name": "Marcheuse sauvage",
+				"text": "<b>Cri de guerre :</b> donne\n+3 PV à une Bête alliée."
 			},
 			"health": 4,
 			"id": "AT_040",
@@ -4655,29 +5201,34 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Give a friendly Beast +3 Health.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX4_05.png",
 			"cost": 6,
 			"fr": {
-				"name": "Peste"
+				"name": "Peste",
+				"text": "Détruit tous les serviteurs sauf les squelettes."
 			},
 			"id": "NAX4_05",
 			"name": "Plague",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Destroy all non-Skeleton minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_075e.png",
 			"fr": {
-				"name": "Puissance du valet d’écurie"
+				"name": "Puissance du valet d’écurie",
+				"text": "Le maître des chevaux de guerre confère +1 ATQ à ce serviteur."
 			},
 			"id": "AT_075e",
 			"name": "Might of the Hostler",
 			"playerClass": "Paladin",
 			"set": "Tgt",
+			"text": "Warhorse Trainer is granting this minion +1 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -4686,13 +5237,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Rugissement sauvage"
+				"name": "Rugissement sauvage",
+				"text": "Confère +2 ATQ à vos personnages pendant ce tour."
 			},
 			"id": "CS2_011",
 			"name": "Savage Roar",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Give your characters +2 Attack this turn.",
 			"type": "Spell"
 		},
 		{
@@ -4701,24 +5254,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Tout est vraiment génial"
+				"name": "Tout est vraiment génial",
+				"text": "Donne +2/+2 à vos serviteurs. Coûte\n (1) |4(cristal,cristaux) de mana de moins pour chaque murloc contrôlé."
 			},
 			"id": "LOE_113",
 			"name": "Everyfin is Awesome",
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "Give your minions +2/+2.\nCosts (1) less for each Murloc you control.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_132_DRUIDe.png",
 			"fr": {
-				"name": "Griffes sinistres"
+				"name": "Griffes sinistres",
+				"text": "+2 ATQ pendant ce tour."
 			},
 			"id": "AT_132_DRUIDe",
 			"name": "Dire Claws",
 			"playerClass": "Druid",
 			"set": "Tgt",
+			"text": "+2 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -4727,37 +5284,43 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Nourrir"
+				"name": "Nourrir",
+				"text": "<b>Choix des armes :</b> vous gagnez 2 cristaux de mana ou vous piochez 3 cartes."
 			},
 			"id": "EX1_164",
 			"name": "Nourish",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Choose One</b> - Gain 2 Mana Crystals; or Draw 3 cards.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "DREAM_05.png",
 			"cost": 0,
 			"fr": {
-				"name": "Cauchemar"
+				"name": "Cauchemar",
+				"text": "Confère +5/+5 à un serviteur. Au début de votre prochain tour, le détruit."
 			},
 			"id": "DREAM_05",
 			"name": "Nightmare",
 			"playerClass": "Dream",
 			"set": "Expert1",
+			"text": "Give a minion +5/+5. At the start of your next turn, destroy it.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA02_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Foule moqueuse"
+				"name": "Foule moqueuse",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un spectateur 1/1 avec <b>Provocation</b>."
 			},
 			"id": "BRMA02_2H",
 			"name": "Jeering Crowd",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon a 1/1 Spectator with <b>Taunt</b>.",
 			"type": "Hero_power"
 		},
 		{
@@ -4768,7 +5331,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Suprétincelle"
+				"name": "Suprétincelle",
+				"text": "<b>Cri de guerre :</b> transforme un autre serviteur aléatoire soit en diablosaure 5/5, soit en écureuil 1/1 ."
 			},
 			"health": 3,
 			"id": "EX1_083",
@@ -4776,6 +5340,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Transform another random minion into a 5/5 Devilsaur or a 1/1 Squirrel.",
 			"type": "Minion"
 		},
 		{
@@ -4784,13 +5349,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Horion de lave"
+				"name": "Horion de lave",
+				"text": "Inflige $2 |4(point,points) de dégâts. Débloque vos cristaux de mana en <b>Surcharge</b>."
 			},
 			"id": "BRM_011",
 			"name": "Lava Shock",
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "Deal $2 damage.\nUnlock your <b>Overloaded</b> Mana Crystals.",
 			"type": "Spell"
 		},
 		{
@@ -4811,7 +5378,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Héraut Volazj"
+				"name": "Héraut Volazj",
+				"text": "<b>Cri de guerre :</b> invoque une copie 1/1 de chacun de vos autres serviteurs."
 			},
 			"health": 5,
 			"id": "OG_316",
@@ -4819,6 +5387,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Summon a 1/1 copy of each of your other minions.",
 			"type": "Minion"
 		},
 		{
@@ -4827,13 +5396,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Feindre la mort"
+				"name": "Feindre la mort",
+				"text": "Déclenche tous les <b>Râles d’agonie</b> de vos serviteurs."
 			},
 			"id": "GVG_026",
 			"name": "Feign Death",
 			"playerClass": "Hunter",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Trigger all <b>Deathrattles</b> on your minions.",
 			"type": "Spell"
 		},
 		{
@@ -4843,7 +5414,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Protecteur Écorcefer"
+				"name": "Protecteur Écorcefer",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 8,
 			"id": "CS2_232",
@@ -4851,18 +5423,21 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_030a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Mode Attaque"
+				"name": "Mode Attaque",
+				"text": "+1 ATQ."
 			},
 			"id": "GVG_030a",
 			"name": "Attack Mode",
 			"playerClass": "Druid",
 			"set": "Gvg",
+			"text": "+1 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -4872,7 +5447,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Brann Barbe-de-Bronze"
+				"name": "Brann Barbe-de-Bronze",
+				"text": "Vos <b>Cris de guerre</b> se déclenchent deux fois."
 			},
 			"health": 4,
 			"id": "LOE_077",
@@ -4880,6 +5456,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "Your <b>Battlecries</b> trigger twice.",
 			"type": "Minion"
 		},
 		{
@@ -4888,13 +5465,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Piège de fléchettes"
+				"name": "Piège de fléchettes",
+				"text": "<b>Secret :</b> inflige\n$5 |4(point,points) de dégâts à un adversaire aléatoire après qu’un <b>pouvoir héroïque</b> adverse est utilisé."
 			},
 			"id": "LOE_021",
 			"name": "Dart Trap",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Secret:</b> After an opposing <b>Hero Power</b> is used, deal $5 damage to a random enemy.",
 			"type": "Spell"
 		},
 		{
@@ -4904,7 +5483,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Busard affamé"
+				"name": "Busard affamé",
+				"text": "Vous piochez une carte chaque fois que vous invoquez une bête."
 			},
 			"health": 2,
 			"id": "CS2_237",
@@ -4912,6 +5492,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Whenever you summon a Beast, draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -4933,7 +5514,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Marche-esprit aileron vaseux"
+				"name": "Marche-esprit aileron vaseux",
+				"text": "Chaque fois qu’un autre murloc allié meurt, vous piochez une carte.\n<b>Surcharge_:</b>_(1)"
 			},
 			"health": 5,
 			"id": "GVG_040",
@@ -4942,6 +5524,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Whenever another friendly Murloc dies, draw a card. <b><b>Overload</b>:</b> (1)",
 			"type": "Minion"
 		},
 		{
@@ -4963,7 +5546,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Cap’taine céleste Kragg"
+				"name": "Cap’taine céleste Kragg",
+				"text": "<b>Charrrrrge</b>\nCoûte (1) |4(cristal,cristaux) de moins pour chaque pirate allié."
 			},
 			"health": 6,
 			"id": "AT_070",
@@ -4971,6 +5555,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Charrrrrge</b>\nCosts (1) less for each friendly Pirate.",
 			"type": "Minion"
 		},
 		{
@@ -4980,7 +5565,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Jouteuse de Gadgetzan"
+				"name": "Jouteuse de Gadgetzan",
+				"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne +1/+1."
 			},
 			"health": 2,
 			"id": "AT_133",
@@ -4988,6 +5574,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -5010,7 +5597,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Panthère de la jungle"
+				"name": "Panthère de la jungle",
+				"text": "<b>Camouflage</b>"
 			},
 			"health": 2,
 			"id": "EX1_017",
@@ -5018,6 +5606,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Stealth</b>",
 			"type": "Minion"
 		},
 		{
@@ -5027,7 +5616,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Robot barbier gobelin"
+				"name": "Robot barbier gobelin",
+				"text": "<b>Cri de guerre_:</b> confère à votre arme +1_ATQ."
 			},
 			"health": 2,
 			"id": "GVG_023",
@@ -5035,6 +5625,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Give your weapon +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -5042,7 +5633,8 @@ var parseCardsText = {
 			"cardImage": "CRED_17.png",
 			"cost": 9,
 			"fr": {
-				"name": "Rob Pardo"
+				"name": "Rob Pardo",
+				"text": "Vous ne pouvez pas commencer de partie sans ce serviteur dans votre deck."
 			},
 			"health": 9,
 			"id": "CRED_17",
@@ -5050,6 +5642,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "You can't start a game without this minion in your deck.",
 			"type": "Minion"
 		},
 		{
@@ -5058,13 +5651,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Mot de pouvoir : Tentacules"
+				"name": "Mot de pouvoir : Tentacules",
+				"text": "Donne +2/+6 à un serviteur."
 			},
 			"id": "OG_094",
 			"name": "Power Word: Tentacles",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Give a minion +2/+6.",
 			"type": "Spell"
 		},
 		{
@@ -5088,13 +5683,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Évolution"
+				"name": "Évolution",
+				"text": "Transforme vos serviteurs en serviteurs aléatoires qui coûtent (1) |4(cristal,cristaux) de plus."
 			},
 			"id": "OG_027",
 			"name": "Evolve",
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Transform your minions into random minions that cost (1) more.",
 			"type": "Spell"
 		},
 		{
@@ -5118,7 +5715,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Sombre sectateur"
+				"name": "Sombre sectateur",
+				"text": "<b>Râle d’agonie :</b> confère\n+3 PV à un serviteur allié aléatoire."
 			},
 			"health": 4,
 			"id": "FP1_023",
@@ -5126,18 +5724,21 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Give a random friendly minion +3 Health.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA05_3H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Bombe vivante"
+				"name": "Bombe vivante",
+				"text": "Choisissez un serviteur adverse. Inflige $10 |4(point,points) de dégâts à tous les adversaires s’il survit jusqu’à votre prochain tour."
 			},
 			"id": "BRMA05_3H",
 			"name": "Living Bomb",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Choose an enemy minion. If it lives until your next turn, deal $10 damage to all enemies.",
 			"type": "Spell"
 		},
 		{
@@ -5146,13 +5747,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Folie galopante"
+				"name": "Folie galopante",
+				"text": "Inflige $9 |4(point,points) de dégâts répartis de façon aléatoire entre TOUS les personnages."
 			},
 			"id": "OG_116",
 			"name": "Spreading Madness",
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Deal $9 damage randomly split among ALL characters.",
 			"type": "Spell"
 		},
 		{
@@ -5171,49 +5774,57 @@ var parseCardsText = {
 			"cardImage": "TB_GiftExchange_Treasure.png",
 			"cost": 0,
 			"fr": {
-				"name": "Cadeau du Voile d’hiver"
+				"name": "Cadeau du Voile d’hiver",
+				"text": "<b>Râle d’agonie_:</b> donne un cadeau volé au joueur dont c’est le tour."
 			},
 			"health": 4,
 			"id": "TB_GiftExchange_Treasure",
 			"name": "Winter's Veil Gift",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> Give current player a Stolen Gift.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_048.png",
 			"cost": 0,
 			"fr": {
-				"name": "-1 Durability"
+				"name": "-1 Durability",
+				"text": "Give a player's weapon -1 Durability."
 			},
 			"id": "XXX_048",
 			"name": "-1 Durability",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Give a player's weapon -1 Durability.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA09_2e.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+2 ATQ."
 			},
 			"id": "LOEA09_2e",
 			"name": "Enraged",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "+2 Attack",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NAX6_04.png",
 			"cost": 1,
 			"fr": {
-				"name": "Explosion de spores"
+				"name": "Explosion de spores",
+				"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses. Invoque une spore."
 			},
 			"id": "NAX6_04",
 			"name": "Sporeburst",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Deal $1 damage to all enemy minions. Summon a Spore.",
 			"type": "Spell"
 		},
 		{
@@ -5221,12 +5832,14 @@ var parseCardsText = {
 			"cardImage": "KARA_09_07.png",
 			"cost": 6,
 			"fr": {
-				"name": "Vol de vie"
+				"name": "Vol de vie",
+				"text": "Inflige 5_points de dégâts. Rend 5_PV à votre héros."
 			},
 			"id": "KARA_09_07",
 			"name": "Steal Life",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Deal 5 damage. Restore 5 Health to your hero.",
 			"type": "Spell"
 		},
 		{
@@ -5235,13 +5848,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Croissance sauvage"
+				"name": "Croissance sauvage",
+				"text": "Confère un cristal de mana vide."
 			},
 			"id": "CS2_013",
 			"name": "Wild Growth",
 			"playerClass": "Druid",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Gain an empty Mana Crystal.",
 			"type": "Spell"
 		},
 		{
@@ -5251,7 +5866,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Ninja ogre"
+				"name": "Ninja ogre",
+				"text": "<b>Camouflage</b>\n50% de chance d’attaquer le mauvais adversaire."
 			},
 			"health": 6,
 			"id": "GVG_088",
@@ -5259,6 +5875,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Stealth</b>\n50% chance to attack the wrong enemy.",
 			"type": "Minion"
 		},
 		{
@@ -5268,7 +5885,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Berserker aberrant"
+				"name": "Berserker aberrant",
+				"text": "<b>Accès de rage :</b> +2 ATQ."
 			},
 			"health": 5,
 			"id": "OG_150",
@@ -5276,6 +5894,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Enrage:</b> +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -5296,12 +5915,14 @@ var parseCardsText = {
 			"cardImage": "BRMA14_8H.png",
 			"cost": 6,
 			"fr": {
-				"name": "Activer Magmatron"
+				"name": "Activer Magmatron",
+				"text": "<b>Pouvoir héroïque</b>\nActive Magmatron !"
 			},
 			"id": "BRMA14_8H",
 			"name": "Activate Magmatron",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate Magmatron!",
 			"type": "Hero_power"
 		},
 		{
@@ -5321,7 +5942,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_21.png",
 			"cost": 5,
 			"fr": {
-				"name": "Chef Scarvash"
+				"name": "Chef Scarvash",
+				"text": "Les cartes adverses coûtent (1) |4(cristal,cristaux) de plus."
 			},
 			"health": 5,
 			"id": "LOEA16_21",
@@ -5329,6 +5951,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "Enemy cards cost (1) more.",
 			"type": "Minion"
 		},
 		{
@@ -5338,7 +5961,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Auspice funeste confirmé"
+				"name": "Auspice funeste confirmé",
+				"text": "Au début de votre tour, porte l’Attaque de ce serviteur à 7."
 			},
 			"health": 7,
 			"id": "OG_200",
@@ -5346,6 +5970,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "At the start of your turn, set this minion's Attack to 7.",
 			"type": "Minion"
 		},
 		{
@@ -5353,13 +5978,15 @@ var parseCardsText = {
 			"cardImage": "BRMC_91.png",
 			"cost": 3,
 			"fr": {
-				"name": "Fils de la Flamme"
+				"name": "Fils de la Flamme",
+				"text": "<b>Cri de guerre :</b> inflige 6 points de dégâts."
 			},
 			"health": 3,
 			"id": "BRMC_91",
 			"name": "Son of the Flame",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Battlecry:</b> Deal 6 damage.",
 			"type": "Minion"
 		},
 		{
@@ -5368,50 +5995,58 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Noble sacrifice"
+				"name": "Noble sacrifice",
+				"text": "<b>Secret :</b> invoque un défenseur 2/1 qui devient la cible de l’adversaire sur le point d’attaquer."
 			},
 			"id": "EX1_130",
 			"name": "Noble Sacrifice",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When an enemy attacks, summon a 2/1 Defender as the new target.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX11_02.png",
 			"cost": 2,
 			"fr": {
-				"name": "Nuage empoisonné"
+				"name": "Nuage empoisonné",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 1 point de dégâts à\n tous les serviteurs. Invoque une gelée si l’un d’eux meurt."
 			},
 			"id": "NAX11_02",
 			"name": "Poison Cloud",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 1 damage to all minions. If any die, summon a slime.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "KARA_13_02H.png",
 			"cost": 2,
 			"fr": {
-				"name": "La Horde"
+				"name": "La Horde",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque une orque_3/3 avec <b>Charge</b>."
 			},
 			"id": "KARA_13_02H",
 			"name": "The Horde",
 			"playerClass": "Warrior",
 			"set": "Kara",
+			"text": "[x]<b>Hero Power</b>\nSummon a 3/3 Orc\nwith <b>Charge</b>.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "BRM_010a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Forme de félin-de-feu"
+				"name": "Forme de félin-de-feu",
+				"text": "Se transforme en un serviteur 5/2."
 			},
 			"id": "BRM_010a",
 			"name": "Firecat Form",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Transform into a 5/2 minion.",
 			"type": "Spell"
 		},
 		{
@@ -5419,24 +6054,28 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_33.png",
 			"cost": 2,
 			"fr": {
-				"name": "Triche"
+				"name": "Triche",
+				"text": "<b>Pouvoir héroïque</b>\nDétruit le serviteur adverse le plus à gauche."
 			},
 			"id": "KAR_A10_33",
 			"name": "Cheat",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nDestroy the left-most enemy minion.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "LOEA06_03.png",
 			"cost": 2,
 			"fr": {
-				"name": "Terrestre animé"
+				"name": "Terrestre animé",
+				"text": "Donne +1/+1 et <b>Provocation</b> à vos serviteurs."
 			},
 			"id": "LOEA06_03",
 			"name": "Animate Earthen",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Give your minions +1/+1 and <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -5457,12 +6096,14 @@ var parseCardsText = {
 			"cardImage": "BRMA17_4.png",
 			"cost": 2,
 			"fr": {
-				"name": "LAVE !"
+				"name": "LAVE !",
+				"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs."
 			},
 			"id": "BRMA17_4",
 			"name": "LAVA!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Deal $2 damage to all minions.",
 			"type": "Spell"
 		},
 		{
@@ -5472,7 +6113,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Worgen corrompu"
+				"name": "Worgen corrompu",
+				"text": "<b>Camouflage</b>"
 			},
 			"health": 1,
 			"id": "OG_247",
@@ -5480,6 +6122,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Stealth</b>",
 			"type": "Minion"
 		},
 		{
@@ -5488,25 +6131,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Vague de soins"
+				"name": "Vague de soins",
+				"text": "Rend #7 PV. Révèle un serviteur de chaque deck. Si le vôtre coûte plus cher, rend\n#14 PV à la place."
 			},
 			"id": "AT_048",
 			"name": "Healing Wave",
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Restore #7 Health. Reveal a minion in each deck. If yours costs more, Restore #14 instead.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX5_02.png",
 			"cost": 1,
 			"fr": {
-				"name": "Éruption"
+				"name": "Éruption",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 2 points de dégâts au serviteur adverse tout à gauche."
 			},
 			"id": "NAX5_02",
 			"name": "Eruption",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 2 damage to the left-most enemy minion.",
 			"type": "Hero_power"
 		},
 		{
@@ -5515,13 +6162,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Bénédiction du champion"
+				"name": "Bénédiction du champion",
+				"text": "Double l’Attaque d’un serviteur."
 			},
 			"id": "EX1_355",
 			"name": "Blessed Champion",
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Double a minion's Attack.",
 			"type": "Spell"
 		},
 		{
@@ -5531,7 +6180,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Soldat d’élite kor’kron"
+				"name": "Soldat d’élite kor’kron",
+				"text": "<b>Charge</b>"
 			},
 			"health": 3,
 			"id": "NEW1_011",
@@ -5539,6 +6189,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -5546,13 +6197,15 @@ var parseCardsText = {
 			"cardImage": "AT_005t.png",
 			"cost": 3,
 			"fr": {
-				"name": "Sanglier"
+				"name": "Sanglier",
+				"text": "<b>Charge</b>"
 			},
 			"health": 2,
 			"id": "AT_005t",
 			"name": "Boar",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -5579,7 +6232,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Apprentie du sorcier"
+				"name": "Apprentie du sorcier",
+				"text": "Vos sorts coûtent (1) cristal de moins."
 			},
 			"health": 2,
 			"id": "EX1_608",
@@ -5587,17 +6241,20 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Your spells cost (1) less.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_222e.png",
 			"fr": {
-				"name": "Ralliement"
+				"name": "Ralliement",
+				"text": "+1/+1."
 			},
 			"id": "OG_222e",
 			"name": "Rally",
 			"playerClass": "Paladin",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -5606,13 +6263,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Malédiction de Rafaam"
+				"name": "Malédiction de Rafaam",
+				"text": "Donne une carte Maudit ! à votre adversaire.\nTant qu’elle est dans sa main, il subit 2 points de dégâts au début de son tour."
 			},
 			"id": "LOE_007",
 			"name": "Curse of Rafaam",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "Give your opponent a 'Cursed!' card.\nWhile they hold it, they take 2 damage on their turn.",
 			"type": "Spell"
 		},
 		{
@@ -5650,7 +6309,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Mystique de Kezan"
+				"name": "Mystique de Kezan",
+				"text": "<b>Cri de guerre :</b> prend le contrôle d’un <b>Secret</b> adverse aléatoire."
 			},
 			"health": 3,
 			"id": "GVG_074",
@@ -5658,6 +6318,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Take control of a random enemy <b>Secret</b>.",
 			"type": "Minion"
 		},
 		{
@@ -5665,13 +6326,15 @@ var parseCardsText = {
 			"cardImage": "TB_MechWar_Minion1.png",
 			"cost": 2,
 			"fr": {
-				"name": "Fan de méca"
+				"name": "Fan de méca",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 1,
 			"id": "TB_MechWar_Minion1",
 			"name": "Mech Fan",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -5681,7 +6344,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Wilfred Flopboum"
+				"name": "Wilfred Flopboum",
+				"text": "Les cartes que vous piochez avec votre pouvoir héroïque coûtent (0) |4(cristal,cristaux)."
 			},
 			"health": 4,
 			"id": "AT_027",
@@ -5689,6 +6353,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "Cards you draw from your Hero Power cost (0).",
 			"type": "Minion"
 		},
 		{
@@ -5697,25 +6362,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Tir du cobra"
+				"name": "Tir du cobra",
+				"text": "Inflige $3 |4(point,points) de dégâts à un serviteur et au héros adverse."
 			},
 			"id": "GVG_073",
 			"name": "Cobra Shot",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Deal $3 damage to a minion and the enemy hero.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX1h_04.png",
 			"cost": 2,
 			"fr": {
-				"name": "Grouillement"
+				"name": "Grouillement",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un nérubien 4/4."
 			},
 			"id": "NAX1h_04",
 			"name": "Skitter",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nSummon a 4/4 Nerubian.",
 			"type": "Hero_power"
 		},
 		{
@@ -5724,13 +6393,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Convertir"
+				"name": "Convertir",
+				"text": "Place une copie d’un serviteur adverse dans votre main."
 			},
 			"id": "AT_015",
 			"name": "Convert",
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Put a copy of an enemy minion into your hand.",
 			"type": "Spell"
 		},
 		{
@@ -5740,7 +6411,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Golem d’argenterie"
+				"name": "Golem d’argenterie",
+				"text": "Si vous vous défaussez de ce serviteur, l’invoque."
 			},
 			"health": 3,
 			"id": "KAR_205",
@@ -5748,6 +6420,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "If you discard this minion, summon it.",
 			"type": "Minion"
 		},
 		{
@@ -5755,7 +6428,8 @@ var parseCardsText = {
 			"cardImage": "BRMC_98.png",
 			"cost": 6,
 			"fr": {
-				"name": "Tranchetripe"
+				"name": "Tranchetripe",
+				"text": "Confère +3 ATQ à vos serviteurs au début de votre tour."
 			},
 			"health": 12,
 			"id": "BRMC_98",
@@ -5763,6 +6437,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "At the start of your turn, give your minions +3 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -5770,23 +6445,27 @@ var parseCardsText = {
 			"cardImage": "PART_004.png",
 			"cost": 1,
 			"fr": {
-				"name": "Champ de camouflage"
+				"name": "Champ de camouflage",
+				"text": "Confère <b>Camouflage</b> à un serviteur allié jusqu’à votre prochain tour."
 			},
 			"id": "PART_004",
 			"name": "Finicky Cloakfield",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Give a friendly minion <b>Stealth</b> until your next turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA05_3He.png",
 			"fr": {
-				"name": "Bombe vivante"
+				"name": "Bombe vivante",
+				"text": "Pendant le tour de Geddon, inflige 10 points de dégâts à votre héros et vos serviteurs."
 			},
 			"id": "BRMA05_3He",
 			"name": "Living Bomb",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "On Geddon's turn, deal 10 damage to all of your stuff.",
 			"type": "Enchantment"
 		},
 		{
@@ -5804,12 +6483,14 @@ var parseCardsText = {
 			"cardImage": "XXX_016.png",
 			"cost": 0,
 			"fr": {
-				"name": "Snake Ball"
+				"name": "Snake Ball",
+				"text": "Summon five 1/1 snakes."
 			},
 			"id": "XXX_016",
 			"name": "Snake Ball",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Summon five 1/1 snakes.",
 			"type": "Spell"
 		},
 		{
@@ -5817,25 +6498,29 @@ var parseCardsText = {
 			"cardImage": "GVG_056t.png",
 			"cost": 0,
 			"fr": {
-				"name": "Mine enfouie"
+				"name": "Mine enfouie",
+				"text": "Quand vous la piochez, elle explose, vous infligeant 10 points de dégâts. Vous piochez une carte."
 			},
 			"id": "GVG_056t",
 			"name": "Burrowing Mine",
 			"playerClass": "Warrior",
 			"set": "Gvg",
+			"text": "When you draw this, it explodes. You take 10 damage and draw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_Murgstone_001.png",
 			"cost": 0,
 			"fr": {
-				"name": "La pièce de quête"
+				"name": "La pièce de quête",
+				"text": "Gagne un cristal de mana vide. Vous ne pouvez jouer qu’une carte de ce type par tour."
 			},
 			"id": "TB_Murgstone_001",
 			"name": "Quest Coin",
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Tb",
+			"text": "Gain an empty Mana Crystal. Can only play one of these per turn.",
 			"type": "Spell"
 		},
 		{
@@ -5853,12 +6538,14 @@ var parseCardsText = {
 		{
 			"cardImage": "KARA_13_19e.png",
 			"fr": {
-				"name": "Triste"
+				"name": "Triste",
+				"text": "Ne peut pas attaquer pendant ce tour."
 			},
 			"id": "KARA_13_19e",
 			"name": "Saddened",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Can't attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -5866,24 +6553,28 @@ var parseCardsText = {
 			"cardImage": "XXX_096.png",
 			"cost": 0,
 			"fr": {
-				"name": "AI Buddy - Damage Own Hero 5"
+				"name": "AI Buddy - Damage Own Hero 5",
+				"text": "Spawn into play to smack your own hero for 5."
 			},
 			"health": 1,
 			"id": "XXX_096",
 			"name": "AI Buddy - Damage Own Hero 5",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Spawn into play to smack your own hero for 5.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_390e.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+3 ATQ."
 			},
 			"id": "EX1_390e",
 			"name": "Enraged",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -5891,13 +6582,15 @@ var parseCardsText = {
 			"cardImage": "KARA_04_05h.png",
 			"cost": 3,
 			"fr": {
-				"name": "Singe volant"
+				"name": "Singe volant",
+				"text": "<b>Charge</b>"
 			},
 			"health": 2,
 			"id": "KARA_04_05h",
 			"name": "Flying Monkey",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -5907,7 +6600,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Maître fabricant d’épées"
+				"name": "Maître fabricant d’épées",
+				"text": "À la fin de votre tour, donne +1 ATQ à un autre serviteur allié aléatoire."
 			},
 			"health": 3,
 			"id": "NEW1_037",
@@ -5915,31 +6609,36 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "At the end of your turn, give another random friendly minion +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX6_03.png",
 			"cost": 4,
 			"fr": {
-				"name": "Mortelle floraison"
+				"name": "Mortelle floraison",
+				"text": "Inflige $5 |4(point,points) de dégâts à un serviteur. Invoque une spore."
 			},
 			"id": "NAX6_03",
 			"name": "Deathbloom",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Deal $5 damage to a minion. Summon a Spore.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_034.png",
 			"cost": 2,
 			"fr": {
-				"name": "Explosion de feu"
+				"name": "Explosion de feu",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $1 point de dégâts."
 			},
 			"id": "CS2_034",
 			"name": "Fireblast",
 			"playerClass": "Mage",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Hero Power</b>\nDeal $1 damage.",
 			"type": "Hero_power"
 		},
 		{
@@ -5948,35 +6647,41 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Marque du chasseur"
+				"name": "Marque du chasseur",
+				"text": "Fait tomber les points de vie d’un serviteur\nà 1."
 			},
 			"id": "CS2_084",
 			"name": "Hunter's Mark",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Change a minion's Health to 1.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "OG_291e.png",
 			"fr": {
-				"name": "Ténèbres vacillantes"
+				"name": "Ténèbres vacillantes",
+				"text": "L’exhalombre a créé ce serviteur 1/1."
 			},
 			"id": "OG_291e",
 			"name": "Flickering Darkness",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Shadowcaster made this 1/1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KARA_08_06e2.png",
 			"fr": {
-				"name": "Rayon bleu"
+				"name": "Rayon bleu",
+				"text": "Ne subit que 1_point de dégâts à la fois."
 			},
 			"id": "KARA_08_06e2",
 			"name": "Blue Beam",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Only take 1 damage at a time.",
 			"type": "Enchantment"
 		},
 		{
@@ -5986,7 +6691,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Vol’jin"
+				"name": "Vol’jin",
+				"text": "<b>Cri de guerre :</b> échange sa Vie avec un autre serviteur."
 			},
 			"health": 2,
 			"id": "GVG_014",
@@ -5994,6 +6700,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Swap Health with another minion.",
 			"type": "Minion"
 		},
 		{
@@ -6002,36 +6709,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Force divine"
+				"name": "Force divine",
+				"text": "Donne +1/+2 à un serviteur."
 			},
 			"id": "OG_223",
 			"name": "Divine Strength",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Give a minion +1/+2.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_379e.png",
 			"fr": {
-				"name": "Repentir"
+				"name": "Repentir",
+				"text": "Points de vie réduits à 1."
 			},
 			"id": "EX1_379e",
 			"name": "Repentance",
 			"playerClass": "Paladin",
 			"set": "Expert1",
+			"text": "Health reduced to 1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_045a.png",
 			"fr": {
-				"name": "Spores nérubiennes"
+				"name": "Spores nérubiennes",
+				"text": "Vous obtenez une Bête quand ce serviteur meurt."
 			},
 			"id": "OG_045a",
 			"name": "Nerubian Spores",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Get a Beast when this dies.",
 			"type": "Enchantment"
 		},
 		{
@@ -6039,13 +6752,15 @@ var parseCardsText = {
 			"cardImage": "BRMA13_6.png",
 			"cost": 0,
 			"fr": {
-				"name": "Lave vivante"
+				"name": "Lave vivante",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 6,
 			"id": "BRMA13_6",
 			"name": "Living Lava",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -6068,7 +6783,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_21H.png",
 			"cost": 10,
 			"fr": {
-				"name": "Chef Scarvash"
+				"name": "Chef Scarvash",
+				"text": "Les cartes adverses coûtent (2) |4(cristal,cristaux) de plus."
 			},
 			"health": 10,
 			"id": "LOEA16_21H",
@@ -6076,6 +6792,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "Enemy cards cost (2) more.",
 			"type": "Minion"
 		},
 		{
@@ -6085,7 +6802,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Singe féroce"
+				"name": "Singe féroce",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "LOE_022",
@@ -6093,18 +6811,21 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Bâton de l’Origine"
+				"name": "Bâton de l’Origine",
+				"text": "<b>Pouvoir héroïque passif</b>\nVotre héros est <b>Insensible</b>."
 			},
 			"id": "LOEA16_2H",
 			"name": "Staff of Origination",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\nYour hero is <b>Immune</b>.",
 			"type": "Hero_power"
 		},
 		{
@@ -6136,12 +6857,14 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_017e.png",
 			"fr": {
-				"name": "Étreinte du Crépuscule"
+				"name": "Étreinte du Crépuscule",
+				"text": "+1 ATQ et <b>Provocation</b>."
 			},
 			"id": "AT_017e",
 			"name": "Twilight's Embrace",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+1 Attack and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -6149,12 +6872,14 @@ var parseCardsText = {
 			"cardImage": "KARA_09_03.png",
 			"cost": 2,
 			"fr": {
-				"name": "Des diablotins !"
+				"name": "Des diablotins !",
+				"text": "Invoque 2 diablotins dégoûtants."
 			},
 			"id": "KARA_09_03",
 			"name": "Many Imps!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon 2 Icky Imps.",
 			"type": "Spell"
 		},
 		{
@@ -6163,13 +6888,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Piège à serpents"
+				"name": "Piège à serpents",
+				"text": "<b>Secret :</b> quand un de vos serviteurs est attaqué, invoque trois serpents 1/1."
 			},
 			"id": "EX1_554",
 			"name": "Snake Trap",
 			"playerClass": "Hunter",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When one of your minions is attacked, summon three 1/1 Snakes.",
 			"type": "Spell"
 		},
 		{
@@ -6179,7 +6906,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Meneur défias"
+				"name": "Meneur défias",
+				"text": "<b>Combo :</b> invoque un bandit défias 2/1."
 			},
 			"health": 2,
 			"id": "EX1_131",
@@ -6187,6 +6915,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Combo:</b> Summon a 2/1 Defias Bandit.",
 			"type": "Minion"
 		},
 		{
@@ -6196,7 +6925,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Adorateur fanatisé"
+				"name": "Adorateur fanatisé",
+				"text": "<b>Provocation</b>. Chaque fois que ce serviteur subit des dégâts, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 6,
 			"id": "OG_321",
@@ -6204,29 +6934,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Taunt.</b> Whenever this minion takes damage, give your C'Thun +1/+1 <i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_027e.png",
 			"fr": {
-				"name": "Bien armé"
+				"name": "Bien armé",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "GVG_027e",
 			"name": "Ironed Out",
 			"playerClass": "Rogue",
 			"set": "Gvg",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "GVG_032a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Don de mana"
+				"name": "Don de mana",
+				"text": "Donne à chaque joueur un cristal de mana."
 			},
 			"id": "GVG_032a",
 			"name": "Gift of Mana",
 			"playerClass": "Druid",
 			"set": "Gvg",
+			"text": "Give each player a Mana Crystal.",
 			"type": "Spell"
 		},
 		{
@@ -6237,7 +6972,8 @@ var parseCardsText = {
 			"cost": 5,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Rampant des tourbières"
+				"name": "Rampant des tourbières",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 6,
 			"id": "CS1_069",
@@ -6245,6 +6981,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -6267,13 +7004,15 @@ var parseCardsText = {
 			"cost": 7,
 			"durability": 2,
 			"fr": {
-				"name": "Arc long du gladiateur"
+				"name": "Arc long du gladiateur",
+				"text": "Votre héros est <b>Insensible</b> quand il attaque."
 			},
 			"id": "DS1_188",
 			"name": "Gladiator's Longbow",
 			"playerClass": "Hunter",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Your hero is <b>Immune</b> while attacking.",
 			"type": "Weapon"
 		},
 		{
@@ -6307,7 +7046,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Mastodonte de fer"
+				"name": "Mastodonte de fer",
+				"text": "<b>Cri de guerre :</b> place une mine dans le deck de votre adversaire. Quand elle est piochée, elle explose et inflige 10 points de dégâts."
 			},
 			"health": 5,
 			"id": "GVG_056",
@@ -6315,17 +7055,20 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Shuffle a Mine into your opponent's deck. When drawn, it explodes for 10 damage.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_041e.png",
 			"fr": {
-				"name": "Infusion ancestrale"
+				"name": "Infusion ancestrale",
+				"text": "Provocation."
 			},
 			"id": "CS2_041e",
 			"name": "Ancestral Infusion",
 			"playerClass": "Shaman",
 			"set": "Core",
+			"text": "Taunt.",
 			"type": "Enchantment"
 		},
 		{
@@ -6335,7 +7078,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Adversaire mystérieux"
+				"name": "Adversaire mystérieux",
+				"text": "<b>Cri de guerre :</b> place un <b>Secret</b> de chaque type de votre deck sur le champ de bataille."
 			},
 			"health": 6,
 			"id": "AT_079",
@@ -6343,6 +7087,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Put one of each <b>Secret</b> from your deck into the battlefield.",
 			"type": "Minion"
 		},
 		{
@@ -6351,13 +7096,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Trait de l’ombre"
+				"name": "Trait de l’ombre",
+				"text": "Inflige $4 |4(point,points) de dégâts à un serviteur."
 			},
 			"id": "CS2_057",
 			"name": "Shadow Bolt",
 			"playerClass": "Warlock",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $4 damage to a minion.",
 			"type": "Spell"
 		},
 		{
@@ -6367,7 +7114,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Brik-à-bot"
+				"name": "Brik-à-bot",
+				"text": "Chaque fois qu’un Méca allié meurt, gagne +2/+2."
 			},
 			"health": 5,
 			"id": "GVG_106",
@@ -6375,6 +7123,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Whenever a friendly Mech dies, gain +2/+2.",
 			"type": "Minion"
 		},
 		{
@@ -6384,7 +7133,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Diablosaure fossilisé"
+				"name": "Diablosaure fossilisé",
+				"text": "<b>Cri de guerre :</b> gagne <b>Provocation</b> si vous contrôlez une Bête."
 			},
 			"health": 8,
 			"id": "LOE_073",
@@ -6392,6 +7142,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> If you control a Beast, gain <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -6401,7 +7152,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Limon résonnant"
+				"name": "Limon résonnant",
+				"text": "<b>Cri de guerre :</b> invoque une copie conforme de ce serviteur à la fin du tour."
 			},
 			"health": 2,
 			"id": "FP1_003",
@@ -6409,6 +7161,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Naxx",
+			"text": "<b>Battlecry:</b> Summon an exact copy of this minion at the end of the turn.",
 			"type": "Minion"
 		},
 		{
@@ -6429,7 +7182,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Commandant d’Argent"
+				"name": "Commandant d’Argent",
+				"text": "<b>Charge</b>\n<b>Bouclier divin</b>"
 			},
 			"health": 2,
 			"id": "EX1_067",
@@ -6437,18 +7191,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Charge</b>\n<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA12_6H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Affliction de l’espèce : noir"
+				"name": "Affliction de l’espèce : noir",
+				"text": "Chaque fois que Chromaggus pioche une carte, il en obtient une copie tant que vous avez celle-ci dans votre main."
 			},
 			"id": "BRMA12_6H",
 			"name": "Brood Affliction: Black",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, whenever Chromaggus draws a card, he gets another copy of it.",
 			"type": "Spell"
 		},
 		{
@@ -6483,7 +7240,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_8.png",
 			"cost": 8,
 			"fr": {
-				"name": "Instructeur Razuvious"
+				"name": "Instructeur Razuvious",
+				"text": "<b>Cri de guerre :</b> vous équipe d’une Lame runique massive 5/2."
 			},
 			"health": 3,
 			"id": "TB_KTRAF_8",
@@ -6491,18 +7249,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "<b>Battlecry:</b> Equip a 5/2 Massive Runeblade.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_13_11.png",
 			"cost": 3,
 			"fr": {
-				"name": "Salve de traits de l’ombre"
+				"name": "Salve de traits de l’ombre",
+				"text": "Inflige $4_|4(point,points) de dégâts à trois adversaires aléatoires."
 			},
 			"id": "KARA_13_11",
 			"name": "Shadow Bolt Volley",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Deal $4 damage to three random enemies.",
 			"type": "Spell"
 		},
 		{
@@ -6511,25 +7272,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Poing de Jaraxxus"
+				"name": "Poing de Jaraxxus",
+				"text": "Quand vous jouez ou que vous vous défaussez de cette carte, inflige $4 |4(point,points) de dégâts à un adversaire aléatoire."
 			},
 			"id": "AT_022",
 			"name": "Fist of Jaraxxus",
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "When you play or discard this, deal $4 damage to a random enemy.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA16_3.png",
 			"cost": 10,
 			"fr": {
-				"name": "Lanterne de puissance"
+				"name": "Lanterne de puissance",
+				"text": "Donne +10/+10 à un serviteur."
 			},
 			"id": "LOEA16_3",
 			"name": "Lantern of Power",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Give a minion +10/+10.",
 			"type": "Spell"
 		},
 		{
@@ -6540,7 +7305,8 @@ var parseCardsText = {
 			"cost": 6,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Missilière téméraire"
+				"name": "Missilière téméraire",
+				"text": "<b>Charge</b>"
 			},
 			"health": 2,
 			"id": "CS2_213",
@@ -6548,17 +7314,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_080de.png",
 			"fr": {
-				"name": "Pâlerette"
+				"name": "Pâlerette",
+				"text": "Camouflé jusqu’à votre prochain tour."
 			},
 			"id": "OG_080de",
 			"name": "Fadeleaf",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Stealthed until your next turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -6568,7 +7337,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Guerrier tauren"
+				"name": "Guerrier tauren",
+				"text": "<b>Provocation</b>.\n<b>Accès de rage :</b> +3 ATQ"
 			},
 			"health": 3,
 			"id": "EX1_390",
@@ -6576,6 +7346,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>. <b>Enrage:</b> +3 Attack",
 			"type": "Minion"
 		},
 		{
@@ -6584,13 +7355,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Fusion primordiale"
+				"name": "Fusion primordiale",
+				"text": "Confère +1/+1 à un serviteur pour chacun de vos totems."
 			},
 			"id": "OG_023",
 			"name": "Primal Fusion",
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Give a minion +1/+1 for each of your Totems.",
 			"type": "Spell"
 		},
 		{
@@ -6610,12 +7383,14 @@ var parseCardsText = {
 			"cardImage": "KARA_13_02.png",
 			"cost": 2,
 			"fr": {
-				"name": "La Horde"
+				"name": "La Horde",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque une orque_3/2."
 			},
 			"id": "KARA_13_02",
 			"name": "The Horde",
 			"playerClass": "Warrior",
 			"set": "Kara",
+			"text": "[x]<b>Hero Power</b>\nSummon a 3/2 Orc.",
 			"type": "Hero_power"
 		},
 		{
@@ -6624,7 +7399,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Fourche d’éclairs"
+				"name": "Fourche d’éclairs",
+				"text": "Inflige $2 |4(point,points) de dégâts à 2 serviteurs adverses aléatoires. <b>Surcharge :</b> (2)"
 			},
 			"id": "EX1_251",
 			"name": "Forked Lightning",
@@ -6632,6 +7408,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Deal $2 damage to 2 random enemy minions. <b>Overload:</b> (2)",
 			"type": "Spell"
 		},
 		{
@@ -6640,25 +7417,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Mot de l’ombre : Horreur"
+				"name": "Mot de l’ombre : Horreur",
+				"text": "Détruit tous les serviteurs avec\n2 Attaque ou moins."
 			},
 			"id": "OG_100",
 			"name": "Shadow Word: Horror",
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Destroy all minions with 2 or less Attack.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_008.png",
 			"cost": 0,
 			"fr": {
-				"name": "Projectiles enflammés"
+				"name": "Projectiles enflammés",
+				"text": "Inflige 10 points de dégâts répartis de façon aléatoire entre tous les autres personnages."
 			},
 			"id": "TB_CoOpv3_008",
 			"name": "Flame Missiles",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal 10 damage randomly split among all other characters.",
 			"type": "Spell"
 		},
 		{
@@ -6666,12 +7447,14 @@ var parseCardsText = {
 			"cardImage": "KARA_00_02.png",
 			"cost": 2,
 			"fr": {
-				"name": "Légion"
+				"name": "Légion",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un abyssal_6/6."
 			},
 			"id": "KARA_00_02",
 			"name": "Legion",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nSummon a 6/6 Abyssal.",
 			"type": "Hero_power"
 		},
 		{
@@ -6680,13 +7463,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Tir meurtrier"
+				"name": "Tir meurtrier",
+				"text": "Détruit un serviteur adverse aléatoire."
 			},
 			"id": "EX1_617",
 			"name": "Deadly Shot",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Destroy a random enemy minion.",
 			"type": "Spell"
 		},
 		{
@@ -6696,7 +7481,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Micro-machine"
+				"name": "Micro-machine",
+				"text": "Gagne +1 ATQ au début de chaque tour."
 			},
 			"health": 2,
 			"id": "GVG_103",
@@ -6704,17 +7490,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "At the start of each turn, gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_046e.png",
 			"fr": {
-				"name": "Furie sanguinaire"
+				"name": "Furie sanguinaire",
+				"text": "+3 ATQ pendant ce tour."
 			},
 			"id": "CS2_046e",
 			"name": "Bloodlust",
 			"playerClass": "Shaman",
 			"set": "Core",
+			"text": "+3 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -6724,7 +7513,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Gardien aviaire"
+				"name": "Gardien aviaire",
+				"text": "<b>Cri de guerre_:</b> si vous contrôlez un <b>Secret</b>, gagne_+1/+1 et <b>Provocation</b>."
 			},
 			"health": 6,
 			"id": "KAR_037",
@@ -6732,30 +7522,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> If you control a <b>Secret</b>, gain +1/+1\nand <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_007.png",
 			"cost": 0,
 			"fr": {
-				"name": "Enable for Attack"
+				"name": "Enable for Attack",
+				"text": "Give a character Charge and make him able to attack!"
 			},
 			"id": "XXX_007",
 			"name": "Enable for Attack",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Give a character Charge and make him able to attack!",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_KaraPortal_003.png",
 			"fr": {
-				"name": "Enchantement de héros triste"
+				"name": "Enchantement de héros triste",
+				"text": "Donne «_Ne peut pas attaquer pendant ce tour_» aux serviteurs adverses."
 			},
 			"id": "TB_KaraPortal_003",
 			"name": "Saddened Hero Enchant",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Give can't attack this turn to enemy minions.",
 			"type": "Enchantment"
 		},
 		{
@@ -6763,13 +7558,15 @@ var parseCardsText = {
 			"cardImage": "LOEA09_7.png",
 			"cost": 0,
 			"fr": {
-				"name": "Chaudron"
+				"name": "Chaudron",
+				"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> libère Sir Finley et arrête l’attaque naga !"
 			},
 			"health": 5,
 			"id": "LOEA09_7",
 			"name": "Cauldron",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Save Sir Finley and stop the Naga onslaught!",
 			"type": "Minion"
 		},
 		{
@@ -6778,13 +7575,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Piège explosif"
+				"name": "Piège explosif",
+				"text": "<b>Secret :</b> quand votre héros est attaqué, inflige $2 |4(point,points) de dégâts à tous les adversaires."
 			},
 			"id": "EX1_610",
 			"name": "Explosive Trap",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When your hero is attacked, deal $2 damage to all enemies.",
 			"type": "Spell"
 		},
 		{
@@ -6802,12 +7601,14 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_603e.png",
 			"fr": {
-				"name": "Coup de fouet motivant"
+				"name": "Coup de fouet motivant",
+				"text": "+2 ATQ."
 			},
 			"id": "EX1_603e",
 			"name": "Whipped Into Shape",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "+2 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -6817,7 +7618,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Murloc aileron-bilieux"
+				"name": "Murloc aileron-bilieux",
+				"text": "<b>Cri de guerre :</b> invoque un limon 1/1 avec <b>Provocation</b>."
 			},
 			"health": 1,
 			"id": "OG_156",
@@ -6825,6 +7627,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Summon a 1/1 Ooze with <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -6832,7 +7635,8 @@ var parseCardsText = {
 			"cardImage": "KARA_13_15.png",
 			"cost": 2,
 			"fr": {
-				"name": "Wanda Super-Sabots"
+				"name": "Wanda Super-Sabots",
+				"text": "Les portails coûtent (1)_|4(cristal,cristaux) de moins.\n<i>Ne compte pas comme un serviteur.</i>"
 			},
 			"health": 2,
 			"id": "KARA_13_15",
@@ -6840,6 +7644,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Portals cost (1) less. \n<i>Does not count as a minion.</i>",
 			"type": "Minion"
 		},
 		{
@@ -6849,7 +7654,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Second de N’Zoth"
+				"name": "Second de N’Zoth",
+				"text": "<b>Cri de guerre :</b> vous équipe d’un Crochet rouillé 1/3."
 			},
 			"health": 1,
 			"id": "OG_312",
@@ -6857,6 +7663,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Equip a 1/3 Rusty Hook.",
 			"type": "Minion"
 		},
 		{
@@ -6866,7 +7673,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Mouton explosif"
+				"name": "Mouton explosif",
+				"text": "<b>Râle d’agonie :</b> inflige 2 points de dégâts à tous les serviteurs."
 			},
 			"health": 1,
 			"id": "GVG_076",
@@ -6874,18 +7682,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Deathrattle:</b> Deal 2 damage to all minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX9_07.png",
 			"cost": 5,
 			"fr": {
-				"name": "Marque des cavaliers"
+				"name": "Marque des cavaliers",
+				"text": "Confère +1/+1 à vos serviteurs et à votre arme."
 			},
 			"id": "NAX9_07",
 			"name": "Mark of the Horsemen",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Give your minions and your weapon +1/+1.",
 			"type": "Spell"
 		},
 		{
@@ -6893,38 +7704,44 @@ var parseCardsText = {
 			"cardImage": "OG_047a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Production d’aiguillons"
+				"name": "Production d’aiguillons",
+				"text": "Donne +4 ATQ à votre héros pendant ce tour."
 			},
 			"id": "OG_047a",
 			"name": "Evolve Spines",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Give your hero +4 Attack this turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA04_29.png",
 			"cost": 0,
 			"fr": {
-				"name": "L’Œil"
+				"name": "L’Œil",
+				"text": "<b>Choisissez un chemin !</b>"
 			},
 			"id": "LOEA04_29",
 			"name": "The Eye",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Choose Your Path!</b>",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA10_5H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Mrgl mrgl niah niah !"
+				"name": "Mrgl mrgl niah niah !",
+				"text": "Invoque 5 murlocs détruits pendant cette partie."
 			},
 			"id": "LOEA10_5H",
 			"name": "Mrgl Mrgl Nyah Nyah",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "Summon 5 Murlocs that died this game.",
 			"type": "Spell"
 		},
 		{
@@ -6932,25 +7749,29 @@ var parseCardsText = {
 			"cardImage": "FP1_012t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Gelée"
+				"name": "Gelée",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "FP1_012t",
 			"name": "Slime",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_16.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fouilles"
+				"name": "Fouilles",
+				"text": "Trouve un artéfact."
 			},
 			"id": "LOEA16_16",
 			"name": "Rummage",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Find an artifact.",
 			"type": "Hero_power"
 		},
 		{
@@ -6972,12 +7793,14 @@ var parseCardsText = {
 			"cardImage": "EX1_160b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Chef de la meute"
+				"name": "Chef de la meute",
+				"text": "Donne à vos serviteurs +1/+1."
 			},
 			"id": "EX1_160b",
 			"name": "Leader of the Pack",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Give your minions +1/+1.",
 			"type": "Spell"
 		},
 		{
@@ -6987,7 +7810,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Tentacule remuant"
+				"name": "Tentacule remuant",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "OG_327",
@@ -6995,6 +7819,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -7016,23 +7841,27 @@ var parseCardsText = {
 			"cardImage": "PART_001.png",
 			"cost": 1,
 			"fr": {
-				"name": "Plaque d’armure"
+				"name": "Plaque d’armure",
+				"text": "Donne +1 PV à un serviteur."
 			},
 			"id": "PART_001",
 			"name": "Armor Plating",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Give a minion +1 Health.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_103e2.png",
 			"fr": {
-				"name": "Charge"
+				"name": "Charge",
+				"text": "+2 ATQ et <b>Charge</b>."
 			},
 			"id": "CS2_103e2",
 			"name": "Charge",
 			"playerClass": "Warrior",
 			"set": "Core",
+			"text": "+2 Attack and <b>Charge</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -7050,12 +7879,14 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_016e.png",
 			"fr": {
-				"name": "Confus"
+				"name": "Confus",
+				"text": "Attaque et Vie échangées."
 			},
 			"id": "AT_016e",
 			"name": "Confused",
 			"playerClass": "Priest",
 			"set": "Tgt",
+			"text": "Swapped Attack and Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -7066,13 +7897,15 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 3,
 			"fr": {
-				"name": "Rouage-marteau"
+				"name": "Rouage-marteau",
+				"text": "<b>Cri de guerre :</b> donne <b>Bouclier divin</b> et <b>Provocation</b> à un serviteur allié aléatoire."
 			},
 			"id": "GVG_059",
 			"name": "Coghammer",
 			"playerClass": "Paladin",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Give a random friendly minion <b>Divine Shield</b> and <b>Taunt</b>.",
 			"type": "Weapon"
 		},
 		{
@@ -7097,7 +7930,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Mekgénieur Thermojoncteur"
+				"name": "Mekgénieur Thermojoncteur",
+				"text": "Chaque fois qu’un serviteur adverse meurt, invoque un gnome lépreux."
 			},
 			"health": 7,
 			"id": "GVG_116",
@@ -7105,6 +7939,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "Whenever an enemy minion dies, summon a Leper Gnome.",
 			"type": "Minion"
 		},
 		{
@@ -7114,7 +7949,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Jeeves"
+				"name": "Jeeves",
+				"text": "À la fin du tour d’un joueur, ce dernier pioche jusqu’à avoir 3 cartes."
 			},
 			"health": 4,
 			"id": "GVG_094",
@@ -7122,6 +7958,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "At the end of each player's turn, that player draws until they have 3 cards.",
 			"type": "Minion"
 		},
 		{
@@ -7130,12 +7967,14 @@ var parseCardsText = {
 			"cost": 1,
 			"durability": 5,
 			"fr": {
-				"name": "Griffes de Tranchetripe"
+				"name": "Griffes de Tranchetripe",
+				"text": "Gagne +1 ATQ chaque fois qu’un œuf corrompu est détruit."
 			},
 			"id": "BRMA10_6",
 			"name": "Razorgore's Claws",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Whenever a Corrupted Egg dies, gain +1 Attack.",
 			"type": "Weapon"
 		},
 		{
@@ -7145,7 +7984,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Fieffé forban"
+				"name": "Fieffé forban",
+				"text": "<b>Cri de guerre_:</b> ajoute une carte de classe aléatoire dans votre main <i>(de la classe de votre adversaire).</i>"
 			},
 			"health": 1,
 			"id": "KAR_069",
@@ -7153,6 +7993,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Add a random class card to your hand <i>(from your opponent's class).</i>",
 			"type": "Minion"
 		},
 		{
@@ -7162,7 +8003,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Worgen déchaîné"
+				"name": "Worgen déchaîné",
+				"text": "<b>Accès de rage :</b> <b>Furie des vents</b> et +1 ATQ"
 			},
 			"health": 3,
 			"id": "EX1_412",
@@ -7170,6 +8012,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Enrage:</b> <b>Windfury</b> and +1 Attack",
 			"type": "Minion"
 		},
 		{
@@ -7178,13 +8021,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Forme d’Ombre"
+				"name": "Forme d’Ombre",
+				"text": "Transforme votre pouvoir héroïque, qui inflige 2 points de dégâts. Si la forme d’Ombre est déjà adoptée : 3 points de dégâts."
 			},
 			"id": "EX1_625",
 			"name": "Shadowform",
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Your Hero Power becomes 'Deal 2 damage'. If already in Shadowform: 3 damage.",
 			"type": "Spell"
 		},
 		{
@@ -7192,13 +8037,15 @@ var parseCardsText = {
 			"cardImage": "NAX15_03t.png",
 			"cost": 4,
 			"fr": {
-				"name": "Garde de la Couronne de glace"
+				"name": "Garde de la Couronne de glace",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 5,
 			"id": "NAX15_03t",
 			"name": "Guardian of Icecrown",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -7207,7 +8054,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Robot réparateur"
+				"name": "Robot réparateur",
+				"text": "À la fin de votre tour, rend 6 PV à un personnage blessé."
 			},
 			"health": 3,
 			"id": "Mekka2",
@@ -7215,18 +8063,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Promo",
+			"text": "At the end of your turn, restore 6 Health to a damaged character.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA01_02h.png",
 			"cost": 0,
 			"fr": {
-				"name": "Bénédictions du soleil"
+				"name": "Bénédictions du soleil",
+				"text": "<b>Pouvoir héroïque passif</b>\nPhaerix est <b>Insensible</b> tant qu’il contrôle la baguette du Soleil."
 			},
 			"id": "LOEA01_02h",
 			"name": "Blessings of the Sun",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\n Phaerix is <b>Immune</b> while he controls the Rod of the Sun.",
 			"type": "Hero_power"
 		},
 		{
@@ -7236,7 +8087,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Aspirant d’Orgrimmar"
+				"name": "Aspirant d’Orgrimmar",
+				"text": "<b>Exaltation :</b> confère +1 ATQ à votre arme."
 			},
 			"health": 3,
 			"id": "AT_066",
@@ -7244,31 +8096,36 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Give your weapon +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_003.png",
 			"cost": 0,
 			"fr": {
-				"name": "Restore 1"
+				"name": "Restore 1",
+				"text": "Restore 1 Health to a character."
 			},
 			"id": "XXX_003",
 			"name": "Restore 1",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Restore 1 Health to a character.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA14_2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Activer Arcanotron"
+				"name": "Activer Arcanotron",
+				"text": "<b>Pouvoir héroïque</b>\nActive Arcanotron !"
 			},
 			"id": "BRMA14_2",
 			"name": "Activate Arcanotron",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate Arcanotron!",
 			"type": "Hero_power"
 		},
 		{
@@ -7285,12 +8142,14 @@ var parseCardsText = {
 		{
 			"cardImage": "GVG_063a.png",
 			"fr": {
-				"name": "Vindicte"
+				"name": "Vindicte",
+				"text": "Attaque augmentée."
 			},
 			"id": "GVG_063a",
 			"name": "Retribution",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Increased Attack",
 			"type": "Enchantment"
 		},
 		{
@@ -7298,12 +8157,14 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_13.png",
 			"cost": 0,
 			"fr": {
-				"name": "Vous êtes notre invité"
+				"name": "Vous êtes notre invité",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque une assiette 1/1."
 			},
 			"id": "KAR_A02_13",
 			"name": "Be Our Guest",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nSummon a 1/1 Plate.",
 			"type": "Hero_power"
 		},
 		{
@@ -7354,7 +8215,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Fabricante d’armures"
+				"name": "Fabricante d’armures",
+				"text": "Chaque fois qu’un serviteur allié subit des dégâts, vous gagnez 1 point d’armure."
 			},
 			"health": 4,
 			"id": "EX1_402",
@@ -7362,6 +8224,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever a friendly minion takes damage, gain 1 Armor.",
 			"type": "Minion"
 		},
 		{
@@ -7372,7 +8235,8 @@ var parseCardsText = {
 			"cost": 4,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Inventrice gnome"
+				"name": "Inventrice gnome",
+				"text": "<b>Cri de guerre :</b> vous piochez une carte."
 			},
 			"health": 4,
 			"id": "CS2_147",
@@ -7380,6 +8244,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -7388,13 +8253,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Embusqué"
+				"name": "Embusqué",
+				"text": "Place 3 cartes Embuscade ! dans le deck de votre adversaire. À chaque fois qu’il en pioche une, vous invoquez un nérubien 4/4."
 			},
 			"id": "AT_035",
 			"name": "Beneath the Grounds",
 			"playerClass": "Rogue",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Shuffle 3 Ambushes into your opponent's deck. When drawn, you summon a 4/4 Nerubian.",
 			"type": "Spell"
 		},
 		{
@@ -7404,7 +8271,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Écumeur kvaldir"
+				"name": "Écumeur kvaldir",
+				"text": "<b>Exaltation :</b> gagne +2/+2."
 			},
 			"health": 4,
 			"id": "AT_119",
@@ -7412,6 +8280,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Gain +2/+2.",
 			"type": "Minion"
 		},
 		{
@@ -7432,7 +8301,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Cho’gall"
+				"name": "Cho’gall",
+				"text": "<b>Cri de guerre :</b> le prochain sort que vous lancez ce tour coûte des points de vie plutôt que des cristaux de mana."
 			},
 			"health": 7,
 			"id": "OG_121",
@@ -7440,6 +8310,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> The next spell you cast this turn costs Health instead of Mana.",
 			"type": "Minion"
 		},
 		{
@@ -7449,7 +8320,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Medivh, le Gardien"
+				"name": "Medivh, le Gardien",
+				"text": "<b>Cri de guerre_:</b> vous équipe d’Atiesh, grand bâton du Gardien."
 			},
 			"health": 7,
 			"id": "KAR_097",
@@ -7457,17 +8329,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Equip Atiesh, Greatstaff of the Guardian.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NEW1_036e.png",
 			"fr": {
-				"name": "Cri de commandement"
+				"name": "Cri de commandement",
+				"text": "Ne peut pas avoir moins de 1 PV pendant ce tour."
 			},
 			"id": "NEW1_036e",
 			"name": "Commanding Shout",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "Can't be reduced below 1 Health this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -7493,7 +8368,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Attise-flammes"
+				"name": "Attise-flammes",
+				"text": "Après que vous avez lancé un sort, inflige 2 points de dégâts répartis de façon aléatoire entre tous les adversaires."
 			},
 			"health": 4,
 			"id": "BRM_002",
@@ -7501,6 +8377,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "After you cast a spell, deal 2 damage randomly split among all enemies.",
 			"type": "Minion"
 		},
 		{
@@ -7524,7 +8401,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Ancien héraut"
+				"name": "Ancien héraut",
+				"text": "Au début de votre tour, place un serviteur coûtant 10 cristaux de mana de votre deck dans votre main."
 			},
 			"health": 6,
 			"id": "OG_290",
@@ -7532,29 +8410,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "At the start of your turn, put a 10-Cost minion from your deck into your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA07_2_2_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "MOI TOUT CASSER"
+				"name": "MOI TOUT CASSER",
+				"text": "<b>Pouvoir héroïque</b>\nDétruit un serviteur adverse aléatoire."
 			},
 			"id": "BRMA07_2_2_TB",
 			"name": "ME SMASH",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nDestroy a random enemy minion.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_607e.png",
 			"fr": {
-				"name": "Rage intérieure"
+				"name": "Rage intérieure",
+				"text": "+2 Attaque."
 			},
 			"id": "EX1_607e",
 			"name": "Inner Rage",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "+2 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -7577,13 +8460,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Entité miroir"
+				"name": "Entité miroir",
+				"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, en invoque une copie."
 			},
 			"id": "EX1_294",
 			"name": "Mirror Entity",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> After your opponent plays a minion, summon a copy of it.",
 			"type": "Spell"
 		},
 		{
@@ -7594,13 +8479,15 @@ var parseCardsText = {
 			"cost": 2,
 			"durability": 2,
 			"fr": {
-				"name": "Glaivezooka"
+				"name": "Glaivezooka",
+				"text": "<b>Cri de guerre :</b> donne +1 ATQ à un serviteur allié aléatoire."
 			},
 			"id": "GVG_043",
 			"name": "Glaivezooka",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Give a random friendly minion +1 Attack.",
 			"type": "Weapon"
 		},
 		{
@@ -7620,13 +8507,15 @@ var parseCardsText = {
 			"cardImage": "BRMA03_3H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Moira Barbe-de-Bronze"
+				"name": "Moira Barbe-de-Bronze",
+				"text": "Thaurissan ne peut pas utiliser son pouvoir héroïque.\nN’attaque jamais de serviteurs à moins qu’ils n’aient <b>Provocation</b>."
 			},
 			"health": 1,
 			"id": "BRMA03_3H",
 			"name": "Moira Bronzebeard",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Thaurissan's Hero Power can't be used.\nNever attacks minions unless they have <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -7650,12 +8539,14 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_080ee.png",
 			"fr": {
-				"name": "Églantine"
+				"name": "Églantine",
+				"text": "+3 ATQ."
 			},
 			"id": "OG_080ee",
 			"name": "Briarthorn",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -7665,7 +8556,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Oracle sinistrécaille"
+				"name": "Oracle sinistrécaille",
+				"text": "TOUS les autres murlocs ont +1 ATQ."
 			},
 			"health": 1,
 			"id": "EX1_508",
@@ -7673,6 +8565,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "ALL other Murlocs have +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -7681,24 +8574,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Barrière de glace"
+				"name": "Barrière de glace",
+				"text": "<b>Secret :</b> quand votre héros est attaqué, il gagne 8 points d’armure."
 			},
 			"id": "EX1_289",
 			"name": "Ice Barrier",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When your hero is attacked, gain 8 Armor.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_032e.png",
 			"fr": {
-				"name": "Marché douteux"
+				"name": "Marché douteux",
+				"text": "+1/+1."
 			},
 			"id": "AT_032e",
 			"name": "Shady Deals",
 			"playerClass": "Rogue",
 			"set": "Tgt",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -7708,7 +8605,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Grizzly perturbé"
+				"name": "Grizzly perturbé",
+				"text": "Après que vous avez invoqué un serviteur, lui donne +1/+1."
 			},
 			"health": 2,
 			"id": "OG_313",
@@ -7716,19 +8614,22 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "After you summon a minion, give it +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_KaraPortal_001.png",
 			"cost": 3,
 			"fr": {
-				"name": "Portail de fête !"
+				"name": "Portail de fête !",
+				"text": "Invoque un fêtard aléatoire."
 			},
 			"id": "TB_KaraPortal_001",
 			"name": "Party Portal!",
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Tb",
+			"text": "Summon a random Partygoer.",
 			"type": "Spell"
 		},
 		{
@@ -7737,24 +8638,28 @@ var parseCardsText = {
 			"cardImage": "OG_318t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Gnoll"
+				"name": "Gnoll",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "OG_318t",
 			"name": "Gnoll",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_PickYourFate_7_EnchMinion.png",
 			"fr": {
-				"name": "Destin"
+				"name": "Destin",
+				"text": "<b>Râle d’agonie_:</b> vous obtenez une carte La pièce."
 			},
 			"id": "TB_PickYourFate_7_EnchMinion",
 			"name": "Fate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> Your owner gets a coin.",
 			"type": "Enchantment"
 		},
 		{
@@ -7762,7 +8667,8 @@ var parseCardsText = {
 			"cardImage": "AT_042t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Lion dent-de-sabre"
+				"name": "Lion dent-de-sabre",
+				"text": "<b>Charge</b>"
 			},
 			"health": 1,
 			"id": "AT_042t",
@@ -7770,6 +8676,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -7779,7 +8686,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Invocateur sans-visage"
+				"name": "Invocateur sans-visage",
+				"text": "<b>Cri de guerre :</b> invoque un serviteur aléatoire coûtant 3 cristaux."
 			},
 			"health": 5,
 			"id": "OG_207",
@@ -7787,6 +8695,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Summon a random 3-Cost minion.",
 			"type": "Minion"
 		},
 		{
@@ -7810,61 +8719,71 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Heurtoir"
+				"name": "Heurtoir",
+				"text": "Inflige $2 |4(point,points) de dégâts à un serviteur. Vous piochez une carte s’il survit."
 			},
 			"id": "EX1_391",
 			"name": "Slam",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Deal $2 damage to a minion. If it survives, draw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_101_H1.png",
 			"cost": 2,
 			"fr": {
-				"name": "Renfort"
+				"name": "Renfort",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque une recrue de la Main d’argent 1/1."
 			},
 			"id": "CS2_101_H1",
 			"name": "Reinforce",
 			"playerClass": "Paladin",
 			"rarity": "Free",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "LOEA09_3b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Faim"
+				"name": "Faim",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un naga affamé 1/1."
 			},
 			"id": "LOEA09_3b",
 			"name": "Getting Hungry",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nSummon a 1/1 Hungry Naga.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "BRMA08_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Regard intense"
+				"name": "Regard intense",
+				"text": "<b>Pouvoir héroïque passif</b>\nToutes les cartes coûtent (1) |4(cristal,cristaux) de mana. Vous êtes limité à 2 cristaux et l’adversaire à 1."
 			},
 			"id": "BRMA08_2H",
 			"name": "Intense Gaze",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Passive Hero Power</b>\nAll cards cost (1). You are capped at 2 Mana Crystals, and opponent at 1.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "Mekka4e.png",
 			"fr": {
-				"name": "Transformé"
+				"name": "Transformé",
+				"text": "A été transformé en poulet !"
 			},
 			"id": "Mekka4e",
 			"name": "Transformed",
 			"playerClass": "Neutral",
 			"set": "Promo",
+			"text": "Has been transformed into a chicken!",
 			"type": "Enchantment"
 		},
 		{
@@ -7873,13 +8792,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Revanche"
+				"name": "Revanche",
+				"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs. Si vous avez 12 PV ou moins, inflige $3 |4(point,points) de dégâts à la place."
 			},
 			"id": "BRM_015",
 			"name": "Revenge",
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "Deal $1 damage to all minions. If you have 12 or less Health, deal $3 damage instead.",
 			"type": "Spell"
 		},
 		{
@@ -7889,7 +8810,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Chromaggus"
+				"name": "Chromaggus",
+				"text": "Chaque fois que vous piochez une carte, en place une copie dans votre main."
 			},
 			"health": 8,
 			"id": "BRM_031",
@@ -7897,6 +8819,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "Whenever you draw a card, put another copy into your hand.",
 			"type": "Minion"
 		},
 		{
@@ -7915,12 +8838,14 @@ var parseCardsText = {
 			"cardImage": "KARA_08_03.png",
 			"cost": 4,
 			"fr": {
-				"name": "Souffle du Néant"
+				"name": "Souffle du Néant",
+				"text": "Fait passer la Vie de tous les serviteurs adverses à_1."
 			},
 			"id": "KARA_08_03",
 			"name": "Nether Breath",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "[x]Change the Health of\nall enemy minions to 1.",
 			"type": "Spell"
 		},
 		{
@@ -7930,7 +8855,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Armure animée"
+				"name": "Armure animée",
+				"text": "Votre héros ne peut pas subir plus de 1 point de dégâts à la fois."
 			},
 			"health": 4,
 			"id": "LOE_119",
@@ -7938,41 +8864,48 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "Your hero can only take 1 damage at a time.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_065e.png",
 			"fr": {
-				"name": "Défenseur du roi"
+				"name": "Défenseur du roi",
+				"text": "+1 Durabilité."
 			},
 			"id": "AT_065e",
 			"name": "King's Defender",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+1 Durability.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_300e.png",
 			"fr": {
-				"name": "Délicieux !"
+				"name": "Délicieux !",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "OG_300e",
 			"name": "Tasty!",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_034_H1.png",
 			"cost": 2,
 			"fr": {
-				"name": "Explosion de feu"
+				"name": "Explosion de feu",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $1 point de dégâts."
 			},
 			"id": "CS2_034_H1",
 			"name": "Fireblast",
 			"playerClass": "Mage",
 			"rarity": "Free",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nDeal $1 damage.",
 			"type": "Hero_power"
 		},
 		{
@@ -7980,7 +8913,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_23H.png",
 			"cost": 10,
 			"fr": {
-				"name": "Seigneur Ondulance"
+				"name": "Seigneur Ondulance",
+				"text": "À la fin de votre tour, invoque un Naga affamé 1/1 pour chaque serviteur adverse."
 			},
 			"health": 10,
 			"id": "LOEA16_23H",
@@ -7988,6 +8922,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, summon 1/1 Hungry Naga for each enemy minion.",
 			"type": "Minion"
 		},
 		{
@@ -7996,7 +8931,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Destruction élémentaire"
+				"name": "Destruction élémentaire",
+				"text": "Inflige $4 à $5 points\nde dégâts à tous les serviteurs.\n<b>Surcharge :</b> (5)"
 			},
 			"id": "AT_051",
 			"name": "Elemental Destruction",
@@ -8004,6 +8940,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Deal $4-$5 damage to all minions. <b>Overload:</b> (5),",
 			"type": "Spell"
 		},
 		{
@@ -8013,7 +8950,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Xaril l’Esprit empoisonné"
+				"name": "Xaril l’Esprit empoisonné",
+				"text": "<b>Cri de guerre et Râle d’agonie :</b> ajoute une carte Toxine aléatoire dans votre main."
 			},
 			"health": 2,
 			"id": "OG_080",
@@ -8021,17 +8959,20 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry and Deathrattle:</b> Add a random Toxin card to your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_090e.png",
 			"fr": {
-				"name": "Puissance du singe"
+				"name": "Puissance du singe",
+				"text": "+1/+1."
 			},
 			"id": "AT_090e",
 			"name": "Might of the Monkey",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -8064,13 +9005,15 @@ var parseCardsText = {
 			"cardImage": "TU4c_006.png",
 			"cost": 1,
 			"fr": {
-				"name": "Banane"
+				"name": "Banane",
+				"text": "Confère +1/+1 à un serviteur allié. <i>(+1 ATQ / +1 PV)</i>"
 			},
 			"id": "TU4c_006",
 			"name": "Bananas",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Give a friendly minion +1/+1. <i>(+1 Attack/+1 Health)</i>",
 			"type": "Spell"
 		},
 		{
@@ -8080,7 +9023,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Canon du navire"
+				"name": "Canon du navire",
+				"text": "Après avoir invoqué un pirate, inflige 2 points de dégâts à un adversaire aléatoire."
 			},
 			"health": 3,
 			"id": "GVG_075",
@@ -8088,6 +9032,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "After you summon a Pirate, deal 2 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -8097,7 +9042,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Passeuse d’âmes"
+				"name": "Passeuse d’âmes",
+				"text": "Chaque fois qu’un serviteur allié meurt, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 6,
 			"id": "OG_302",
@@ -8105,28 +9051,33 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Whenever a friendly minion dies, give your C'Thun +1/+1\n<i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_08_02eH.png",
 			"fr": {
-				"name": "Rage du Néant"
+				"name": "Rage du Néant",
+				"text": "+8 ATQ."
 			},
 			"id": "KARA_08_02eH",
 			"name": "Nether Rage",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+8 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_PickYourFate_10_EnchMinion.png",
 			"fr": {
-				"name": "Bonus"
+				"name": "Bonus",
+				"text": "Vos serviteurs avec <b>Cri de guerre</b> ont +1/+1."
 			},
 			"id": "TB_PickYourFate_10_EnchMinion",
 			"name": "Bonus",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Your <b>Battlecry</b> minions have +1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -8136,7 +9087,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Gardien du bourbier"
+				"name": "Gardien du bourbier",
+				"text": "<b>Choix des armes :</b> invoque une gelée 2/2 ou confère un cristal de mana vide."
 			},
 			"health": 3,
 			"id": "OG_202",
@@ -8144,41 +9096,48 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "[x]<b>Choose One -</b>Summon a\n2/2 Slime; or Gain an\nempty Mana Crystal.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRM_014e.png",
 			"fr": {
-				"name": "Rage puissante"
+				"name": "Rage puissante",
+				"text": "+3/+3."
 			},
 			"id": "BRM_014e",
 			"name": "Power Rager",
 			"playerClass": "Hunter",
 			"set": "Brm",
+			"text": "+3/+3",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KARA_12_03H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Couronne de flammes"
+				"name": "Couronne de flammes",
+				"text": "<b>Secret_:</b> quand un adversaire attaque, inflige 10_points de dégâts à tous les autres ennemis."
 			},
 			"id": "KARA_12_03H",
 			"name": "Flame Wreath",
 			"playerClass": "Mage",
 			"set": "Kara",
+			"text": "<b>Secret:</b> When an enemy attacks, deal 10 damage to all other enemies.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_034_H2_AT_132.png",
 			"cost": 2,
 			"fr": {
-				"name": "Explosion de feu rang 2"
+				"name": "Explosion de feu rang 2",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts."
 			},
 			"id": "CS2_034_H2_AT_132",
 			"name": "Fireblast Rank 2",
 			"playerClass": "Mage",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nDeal $2 damage.",
 			"type": "Hero_power"
 		},
 		{
@@ -8187,13 +9146,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Puissance accablante"
+				"name": "Puissance accablante",
+				"text": "Confère +4/+4 à un serviteur allié jusqu’à la fin du tour. Puis il meurt. De façon horrible."
 			},
 			"id": "EX1_316",
 			"name": "Power Overwhelming",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Give a friendly minion +4/+4 until end of turn. Then, it dies. Horribly.",
 			"type": "Spell"
 		},
 		{
@@ -8218,7 +9179,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Maître-chien"
+				"name": "Maître-chien",
+				"text": "<b>Cri de guerre :</b> confère +2/+2 et <b>Provocation</b> à une Bête alliée."
 			},
 			"health": 3,
 			"id": "DS1_070",
@@ -8226,6 +9188,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Give a friendly Beast +2/+2 and <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -8235,7 +9198,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Forge-Arcanes"
+				"name": "Forge-Arcanes",
+				"text": "<b>Cri de guerre_:</b> invoque un serviteur 0/5 avec <b>Provocation</b>."
 			},
 			"health": 2,
 			"id": "KAR_710",
@@ -8243,6 +9207,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Summon a 0/5 minion with <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -8252,7 +9217,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Elekk du roi"
+				"name": "Elekk du roi",
+				"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, vous le piochez."
 			},
 			"health": 2,
 			"id": "AT_058",
@@ -8260,6 +9226,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, draw it.",
 			"type": "Minion"
 		},
 		{
@@ -8268,13 +9235,15 @@ var parseCardsText = {
 			"cardImage": "KAR_710m.png",
 			"cost": 2,
 			"fr": {
-				"name": "Bouclier animé"
+				"name": "Bouclier animé",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 5,
 			"id": "KAR_710m",
 			"name": "Animated Shield",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -8295,47 +9264,55 @@ var parseCardsText = {
 		{
 			"cardImage": "CS2_236e.png",
 			"fr": {
-				"name": "Esprit divin"
+				"name": "Esprit divin",
+				"text": "Les points de vie de ce serviteur sont doublés."
 			},
 			"id": "CS2_236e",
 			"name": "Divine Spirit",
 			"playerClass": "Priest",
 			"set": "Core",
+			"text": "This minion has double Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA14_6H.png",
 			"cost": 4,
 			"fr": {
-				"name": "Activer Électron"
+				"name": "Activer Électron",
+				"text": "<b>Pouvoir héroïque</b>\nActive Électron !"
 			},
 			"id": "BRMA14_6H",
 			"name": "Activate Electron",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate Electron!",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "BRMA_01.png",
 			"cost": 3,
 			"fr": {
-				"name": "Cœur-de-flammes"
+				"name": "Cœur-de-flammes",
+				"text": "Vous piochez 2 cartes.\nVous confère 4 points d’armure."
 			},
 			"id": "BRMA_01",
 			"name": "Flameheart",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Draw 2 cards.\nGain 4 Armor.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_246e.png",
 			"fr": {
-				"name": "Maléficié"
+				"name": "Maléficié",
+				"text": "Ce serviteur a été transformé !"
 			},
 			"id": "EX1_246e",
 			"name": "Hexxed",
 			"playerClass": "Shaman",
 			"set": "Core",
+			"text": "This minion has been transformed!",
 			"type": "Enchantment"
 		},
 		{
@@ -8356,13 +9333,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Attaque sournoise"
+				"name": "Attaque sournoise",
+				"text": "Inflige $2 |4(point,points) de dégâts à un serviteur indemne."
 			},
 			"id": "CS2_072",
 			"name": "Backstab",
 			"playerClass": "Rogue",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $2 damage to an undamaged minion.",
 			"type": "Spell"
 		},
 		{
@@ -8373,7 +9352,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Fusilier de Forgefer"
+				"name": "Fusilier de Forgefer",
+				"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 			},
 			"health": 2,
 			"id": "CS2_141",
@@ -8381,6 +9361,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Deal 1 damage.",
 			"type": "Minion"
 		},
 		{
@@ -8390,7 +9371,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Gormok l’Empaleur"
+				"name": "Gormok l’Empaleur",
+				"text": "<b>Cri de guerre :</b> inflige\n4 points de dégâts si vous avez au moins\n4 autres serviteurs."
 			},
 			"health": 4,
 			"id": "AT_122",
@@ -8398,17 +9380,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> If you have at least 4 other minions, deal 4 damage.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "FP1_005e.png",
 			"fr": {
-				"name": "Consumer"
+				"name": "Consumer",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "FP1_005e",
 			"name": "Consume",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -8417,13 +9402,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Saccager"
+				"name": "Saccager",
+				"text": "Confère +3/+3 à un serviteur blessé."
 			},
 			"id": "CS2_104",
 			"name": "Rampage",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Give a damaged minion +3/+3.",
 			"type": "Spell"
 		},
 		{
@@ -8445,7 +9432,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Élue de C’Thun"
+				"name": "Élue de C’Thun",
+				"text": "<b>Bouclier divin</b>. <b>Cri de\nguerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 2,
 			"id": "OG_283",
@@ -8453,6 +9441,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "[x]<b>Divine Shield</b>\n<b>Battlecry:</b> Give your C'Thun\n+2/+2 <i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
@@ -8475,7 +9464,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Vieux Troublœil"
+				"name": "Vieux Troublœil",
+				"text": "<b>Charge</b>. A +1 ATQ pour chaque autre murloc sur le champ de bataille."
 			},
 			"health": 4,
 			"id": "EX1_062",
@@ -8483,6 +9473,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Reward",
+			"text": "<b>Charge</b>. Has +1 Attack for each other Murloc on the battlefield.",
 			"type": "Minion"
 		},
 		{
@@ -8492,7 +9483,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Annulateur d’Arcane X-21"
+				"name": "Annulateur d’Arcane X-21",
+				"text": "<b>Provocation</b>\nNe peut pas être la cible de sorts ou de pouvoirs héroïques."
 			},
 			"health": 5,
 			"id": "GVG_091",
@@ -8500,41 +9492,48 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Taunt</b>\nCan't be targeted by spells or Hero Powers.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRM_020e.png",
 			"fr": {
-				"name": "Puissance draconique"
+				"name": "Puissance draconique",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "BRM_020e",
 			"name": "Draconic Power",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMC_93.png",
 			"cost": 3,
 			"fr": {
-				"name": "Système de défense Omnitron"
+				"name": "Système de défense Omnitron",
+				"text": "Active un Tron aléatoire."
 			},
 			"id": "BRMC_93",
 			"name": "Omnotron Defense System",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Summon a random Tron.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA06_2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Le chambellan"
+				"name": "Le chambellan",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un acolyte attise-flammes 1/3."
 			},
 			"id": "BRMA06_2",
 			"name": "The Majordomo",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon a 1/3 Flamewaker Acolyte.",
 			"type": "Hero_power"
 		},
 		{
@@ -8544,7 +9543,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Diablotin des flammes"
+				"name": "Diablotin des flammes",
+				"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts à votre héros."
 			},
 			"health": 2,
 			"id": "EX1_319",
@@ -8552,18 +9552,21 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Deal 3 damage to your hero.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA10_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Mrglmrgl MRGL !"
+				"name": "Mrglmrgl MRGL !",
+				"text": "<b>Pouvoir héroïque</b>\nPioche deux cartes."
 			},
 			"id": "LOEA10_2H",
 			"name": "Mrglmrgl MRGL!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nDraw 2 cards.",
 			"type": "Hero_power"
 		},
 		{
@@ -8573,7 +9576,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Combattant sauvage"
+				"name": "Combattant sauvage",
+				"text": "<b>Exaltation :</b> donne +2 ATQ\nà votre héros pendant ce tour."
 			},
 			"health": 4,
 			"id": "AT_039",
@@ -8581,18 +9585,21 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Give your hero\n+2 Attack this turn.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA09_5H.png",
 			"cost": 4,
 			"fr": {
-				"name": "Pied à terre"
+				"name": "Pied à terre",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque Gyth. Change de pouvoir héroïque."
 			},
 			"id": "BRMA09_5H",
 			"name": "Dismount",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon Gyth. Get a new Hero Power.",
 			"type": "Hero_power"
 		},
 		{
@@ -8602,7 +9609,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Bombardier cinglé"
+				"name": "Bombardier cinglé",
+				"text": "<b>Cri de guerre :</b> inflige 6 points de dégâts répartis de façon aléatoire entre tous les autres personnages."
 			},
 			"health": 4,
 			"id": "GVG_090",
@@ -8610,6 +9618,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Deal 6 damage randomly split between all other characters.",
 			"type": "Minion"
 		},
 		{
@@ -8620,7 +9629,8 @@ var parseCardsText = {
 			"cost": 2,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Protectrice solfurie"
+				"name": "Protectrice solfurie",
+				"text": "<b>Cri de guerre :</b> confère <b>Provocation</b> aux serviteurs adjacents."
 			},
 			"health": 3,
 			"id": "EX1_058",
@@ -8628,18 +9638,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give adjacent minions <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX6_02.png",
 			"cost": 2,
 			"fr": {
-				"name": "Aura nécrotique"
+				"name": "Aura nécrotique",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts au héros adverse."
 			},
 			"id": "NAX6_02",
 			"name": "Necrotic Aura",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 3 damage to the enemy hero.",
 			"type": "Hero_power"
 		},
 		{
@@ -8648,13 +9661,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Innervation"
+				"name": "Innervation",
+				"text": "Vous gagnez 2 cristaux de mana pour ce tour uniquement."
 			},
 			"id": "EX1_169",
 			"name": "Innervate",
 			"playerClass": "Druid",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Gain 2 Mana Crystals this turn only.",
 			"type": "Spell"
 		},
 		{
@@ -8663,13 +9678,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Cône de froid"
+				"name": "Cône de froid",
+				"text": "<b>Gèle</b> et inflige $1 |4(point,points) de dégâts à un serviteur et ceux à côté de lui."
 			},
 			"id": "EX1_275",
 			"name": "Cone of Cold",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Freeze</b> a minion and the minions next to it, and deal $1 damage to them.",
 			"type": "Spell"
 		},
 		{
@@ -8680,13 +9697,15 @@ var parseCardsText = {
 			"cost": 4,
 			"durability": 2,
 			"fr": {
-				"name": "Morsure de la mort"
+				"name": "Morsure de la mort",
+				"text": "<b>Râle d’agonie :</b> inflige 1 point de dégâts à tous les serviteurs."
 			},
 			"id": "FP1_021",
 			"name": "Death's Bite",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Deal 1 damage to all minions.",
 			"type": "Weapon"
 		},
 		{
@@ -8706,12 +9725,14 @@ var parseCardsText = {
 		{
 			"cardImage": "CS2_092e.png",
 			"fr": {
-				"name": "Bénédiction des rois"
+				"name": "Bénédiction des rois",
+				"text": "+4/+4."
 			},
 			"id": "CS2_092e",
 			"name": "Blessing of Kings",
 			"playerClass": "Paladin",
 			"set": "Core",
+			"text": "+4/+4.",
 			"type": "Enchantment"
 		},
 		{
@@ -8730,24 +9751,28 @@ var parseCardsText = {
 			"cardImage": "DREAM_04.png",
 			"cost": 0,
 			"fr": {
-				"name": "Rêve"
+				"name": "Rêve",
+				"text": "Renvoie un serviteur dans la main de son propriétaire."
 			},
 			"id": "DREAM_04",
 			"name": "Dream",
 			"playerClass": "Dream",
 			"set": "Expert1",
+			"text": "Return a minion to its owner's hand.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_057.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy Target Secrets"
+				"name": "Destroy Target Secrets",
+				"text": "Choose a hero. Destroy all <b>Secrets</b> controlled by that hero."
 			},
 			"id": "XXX_057",
 			"name": "Destroy Target Secrets",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Choose a hero. Destroy all <b>Secrets</b> controlled by that hero.",
 			"type": "Spell"
 		},
 		{
@@ -8758,7 +9783,8 @@ var parseCardsText = {
 			"cost": 5,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Commando foudrepique"
+				"name": "Commando foudrepique",
+				"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts."
 			},
 			"health": 2,
 			"id": "CS2_150",
@@ -8766,6 +9792,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Deal 2 damage.",
 			"type": "Minion"
 		},
 		{
@@ -8775,7 +9802,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Invocateur du Crépuscule"
+				"name": "Invocateur du Crépuscule",
+				"text": "<b>Râle d’agonie :</b> invoque un destructeur\nsans-visage 5/5."
 			},
 			"health": 1,
 			"id": "OG_272",
@@ -8783,6 +9811,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Summon a 5/5 Faceless Destroyer.",
 			"type": "Minion"
 		},
 		{
@@ -8791,26 +9820,30 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Surprise du chef"
+				"name": "Surprise du chef",
+				"text": "<b>Secret_:</b> après que votre adversaire a lancé un sort, invoque une panthère 4/2_avec <b>Camouflage</b>."
 			},
 			"id": "KAR_004",
 			"name": "Cat Trick",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "<b>Secret:</b> After your opponent casts a spell, summon a 4/2 Panther with <b>Stealth</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_021.png",
 			"cost": 0,
 			"fr": {
-				"name": "Restore All Health"
+				"name": "Restore All Health",
+				"text": "Restore all Health to a character."
 			},
 			"id": "XXX_021",
 			"name": "Restore All Health",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Restore all Health to a character.",
 			"type": "Spell"
 		},
 		{
@@ -8835,7 +9868,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Maître des diablotins"
+				"name": "Maître des diablotins",
+				"text": "À la fin de votre tour, ce serviteur subit 1 point de dégâts et invoque un diablotin 1/1."
 			},
 			"health": 5,
 			"id": "EX1_597",
@@ -8843,29 +9877,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "At the end of your turn, deal 1 damage to this minion and summon a 1/1 Imp.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_FactionWar_Boss_Rag.png",
 			"cost": 2,
 			"fr": {
-				"name": "MEURS, INSECTE !"
+				"name": "MEURS, INSECTE !",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $8 points de dégâts à un adversaire aléatoire."
 			},
 			"id": "TB_FactionWar_Boss_Rag",
 			"name": "DIE, INSECT!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nDeal $8 damage to random enemy.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_155ae.png",
 			"fr": {
-				"name": "Marque de la nature"
+				"name": "Marque de la nature",
+				"text": "Ce serviteur a +4 ATQ."
 			},
 			"id": "EX1_155ae",
 			"name": "Mark of Nature",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "This minion has +4 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -8895,12 +9934,14 @@ var parseCardsText = {
 			"cardImage": "TB_FactionWar_Boss_RagFirst.png",
 			"cost": 2,
 			"fr": {
-				"name": "Le chambellan"
+				"name": "Le chambellan",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un acolyte attise-flammes 1/3."
 			},
 			"id": "TB_FactionWar_Boss_RagFirst",
 			"name": "The Majordomo",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nSummon a 1/3 Flamewaker Acolyte.",
 			"type": "Hero_power"
 		},
 		{
@@ -8910,7 +9951,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Saboteur"
+				"name": "Saboteur",
+				"text": "<b>Cri de guerre :</b> le pouvoir héroïque de votre adversaire coûte (5) cristaux de plus au tour suivant."
 			},
 			"health": 3,
 			"id": "AT_086",
@@ -8918,6 +9960,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Your opponent's Hero Power costs (5) more next turn.",
 			"type": "Minion"
 		},
 		{
@@ -8927,7 +9970,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Destructeur garde du feu"
+				"name": "Destructeur garde du feu",
+				"text": "<b>Cri de guerre :</b> gagne 1 à 4 points d’Attaque. <b>Surcharge :</b> (1)"
 			},
 			"health": 6,
 			"id": "BRM_012",
@@ -8936,6 +9980,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> Gain 1-4 Attack. <b>Overload:</b> (1)",
 			"type": "Minion"
 		},
 		{
@@ -8946,7 +9991,8 @@ var parseCardsText = {
 			"cost": 5,
 			"durability": 8,
 			"fr": {
-				"name": "Marteau-du-Destin"
+				"name": "Marteau-du-Destin",
+				"text": "<b>Furie des vents\nSurcharge :</b> (2)"
 			},
 			"id": "EX1_567",
 			"name": "Doomhammer",
@@ -8954,6 +10000,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Windfury, Overload:</b> (2)",
 			"type": "Weapon"
 		},
 		{
@@ -8971,12 +10018,14 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_043e.png",
 			"fr": {
-				"name": "Heure du Crépuscule"
+				"name": "Heure du Crépuscule",
+				"text": "Vie augmentée."
 			},
 			"id": "EX1_043e",
 			"name": "Hour of Twilight",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -9024,12 +10073,14 @@ var parseCardsText = {
 		{
 			"cardImage": "GVG_101e.png",
 			"fr": {
-				"name": "Pur"
+				"name": "Pur",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "GVG_101e",
 			"name": "Pure",
 			"playerClass": "Paladin",
 			"set": "Gvg",
+			"text": "Increased Stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -9038,12 +10089,14 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 3,
 			"fr": {
-				"name": "Lame runique"
+				"name": "Lame runique",
+				"text": "A +6 ATQ si les autres cavaliers sont morts."
 			},
 			"id": "NAX9_05H",
 			"name": "Runeblade",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Has +6 Attack if the other Horsemen are dead.",
 			"type": "Weapon"
 		},
 		{
@@ -9052,13 +10105,15 @@ var parseCardsText = {
 			"cardImage": "KARA_00_08.png",
 			"cost": 2,
 			"fr": {
-				"name": "Apprenti de l’archimage"
+				"name": "Apprenti de l’archimage",
+				"text": "Chaque fois que vous lancez un sort, en place une copie dans votre deck."
 			},
 			"health": 4,
 			"id": "KARA_00_08",
 			"name": "Archmage's Apprentice",
 			"playerClass": "Mage",
 			"set": "Kara",
+			"text": "Whenever you cast a spell, shuffle a copy of it into your deck.",
 			"type": "Minion"
 		},
 		{
@@ -9068,7 +10123,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Inquisiteur Aileron noir"
+				"name": "Inquisiteur Aileron noir",
+				"text": "<b>Cri de guerre :</b> votre pouvoir héroïque devient « Invoque un murloc 1/1 »."
 			},
 			"health": 3,
 			"id": "OG_006",
@@ -9076,18 +10132,21 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Your Hero Power becomes 'Summon a   1/1 Murloc.'",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA02_2_2c_TB.png",
 			"cost": 0,
 			"fr": {
-				"name": "Foule moqueuse"
+				"name": "Foule moqueuse",
+				"text": "Invoque un spectateur 1/1 avec <b>Provocation</b>."
 			},
 			"id": "BRMA02_2_2c_TB",
 			"name": "Jeering Crowd",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Summon a 1/1 Spectator with <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -9097,7 +10156,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Déphaseur Zerus"
+				"name": "Déphaseur Zerus",
+				"text": "Chaque tour où cette carte est dans votre main, la transforme en un serviteur aléatoire."
 			},
 			"health": 1,
 			"id": "OG_123",
@@ -9105,6 +10165,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "Each turn this is in your hand, transform it into a random minion.",
 			"type": "Minion"
 		},
 		{
@@ -9113,25 +10174,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Projectiles des Arcanes"
+				"name": "Projectiles des Arcanes",
+				"text": "Inflige $3 |4(point,points) de dégâts répartis de façon aléatoire entre tous les adversaires."
 			},
 			"id": "EX1_277",
 			"name": "Arcane Missiles",
 			"playerClass": "Mage",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $3 damage randomly split among all enemies.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRM_027p.png",
 			"cost": 2,
 			"fr": {
-				"name": "MEURS, INSECTE !"
+				"name": "MEURS, INSECTE !",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $8 points de dégâts à un adversaire aléatoire."
 			},
 			"id": "BRM_027p",
 			"name": "DIE, INSECT!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nDeal $8 damage to a random enemy.",
 			"type": "Hero_power"
 		},
 		{
@@ -9142,7 +10207,8 @@ var parseCardsText = {
 			"cost": 6,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Cairne Sabot-de-Sang"
+				"name": "Cairne Sabot-de-Sang",
+				"text": "<b>Râle d’agonie :</b> invoque Baine Sabot-de-Sang avec 4/5."
 			},
 			"health": 5,
 			"id": "EX1_110",
@@ -9150,6 +10216,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Deathrattle:</b> Summon a 4/5 Baine Bloodhoof.",
 			"type": "Minion"
 		},
 		{
@@ -9159,7 +10226,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Crache-vase"
+				"name": "Crache-vase",
+				"text": "<b>Provocation.\nRâle d’agonie :</b> invoque une gelée 1/2 avec <b>Provocation</b>."
 			},
 			"health": 5,
 			"id": "FP1_012",
@@ -9167,18 +10235,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Naxx",
+			"text": "<b>Taunt\nDeathrattle:</b> Summon a 1/2 Slime with <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA04_06a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Franchir d’un bond"
+				"name": "Franchir d’un bond",
+				"text": "Subit aléatoirement 10 points de dégâts ou aucun."
 			},
 			"id": "LOEA04_06a",
 			"name": "Swing Across",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Take 10 damage or no damage, at random.",
 			"type": "Spell"
 		},
 		{
@@ -9186,13 +10257,15 @@ var parseCardsText = {
 			"cardImage": "TBST_003.png",
 			"cost": 1,
 			"fr": {
-				"name": "Soigneur débutant"
+				"name": "Soigneur débutant",
+				"text": "À la fin de votre tour, rend 2 PV aux serviteurs adjacents."
 			},
 			"health": 1,
 			"id": "TBST_003",
 			"name": "OLDN3wb Healer",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "At the end of your turn, heal 2 damage from adjacent minions.",
 			"type": "Minion"
 		},
 		{
@@ -9200,12 +10273,14 @@ var parseCardsText = {
 			"cardImage": "OG_006b.png",
 			"cost": 2,
 			"fr": {
-				"name": "La marée d’argent"
+				"name": "La marée d’argent",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un murloc de la Main d’argent 1/1."
 			},
 			"id": "OG_006b",
 			"name": "The Tidal Hand",
 			"playerClass": "Paladin",
 			"set": "Og",
+			"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Murloc.",
 			"type": "Hero_power"
 		},
 		{
@@ -9215,7 +10290,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Vaillant des Pitons-du-Tonnerre"
+				"name": "Vaillant des Pitons-du-Tonnerre",
+				"text": "<b>Exaltation :</b> donne +2 ATQ à vos totems."
 			},
 			"health": 6,
 			"id": "AT_049",
@@ -9223,17 +10299,20 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Give your Totems +2 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_158e.png",
 			"fr": {
-				"name": "Âme de la forêt"
+				"name": "Âme de la forêt",
+				"text": "Râle d’agonie : invoque un tréant 2/2."
 			},
 			"id": "EX1_158e",
 			"name": "Soul of the Forest",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Deathrattle: Summon a 2/2 Treant.",
 			"type": "Enchantment"
 		},
 		{
@@ -9242,35 +10321,41 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Racines vivantes"
+				"name": "Racines vivantes",
+				"text": "<b>Choix des armes :</b> Inflige $2 |4(point,points) de dégâts ou invoque deux arbrisseaux 1/1."
 			},
 			"id": "AT_037",
 			"name": "Living Roots",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Choose One</b> - Deal $2 damage; or Summon two 1/1 Saplings.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_068e.png",
 			"fr": {
-				"name": "Renforcé"
+				"name": "Renforcé",
+				"text": "+2/+2."
 			},
 			"id": "AT_068e",
 			"name": "Bolstered",
 			"playerClass": "Warrior",
 			"set": "Tgt",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_311e.png",
 			"fr": {
-				"name": "Signal d’espoir"
+				"name": "Signal d’espoir",
+				"text": "+1/+1."
 			},
 			"id": "OG_311e",
 			"name": "Beacon of Hope",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -9280,7 +10365,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Justicière Cœur-Vrai"
+				"name": "Justicière Cœur-Vrai",
+				"text": "<b>Cri de guerre :</b> remplace votre pouvoir héroïque de départ en l’améliorant."
 			},
 			"health": 3,
 			"id": "AT_132",
@@ -9288,17 +10374,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Replace your starting Hero Power with a better one.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "tt_004o.png",
 			"fr": {
-				"name": "Cannibalisme"
+				"name": "Cannibalisme",
+				"text": "Attaque augmentée."
 			},
 			"id": "tt_004o",
 			"name": "Cannibalize",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -9307,13 +10396,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Chapeau d’explorateur"
+				"name": "Chapeau d’explorateur",
+				"text": "Donne à un serviteur +1/+1 et « <b>Râle d’agonie :</b> ajoute une carte Chapeau d’explorateur dans\nvotre main. »"
 			},
 			"id": "LOE_105",
 			"name": "Explorer's Hat",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "Give a minion +1/+1 and \"<b>Deathrattle:</b> Add an Explorer's Hat to your hand.\"",
 			"type": "Spell"
 		},
 		{
@@ -9336,7 +10427,8 @@ var parseCardsText = {
 			"cardImage": "OG_044c.png",
 			"cost": 2,
 			"fr": {
-				"name": "Tigre dent-de-sabre"
+				"name": "Tigre dent-de-sabre",
+				"text": "<b>Charge, Camouflage</b>"
 			},
 			"health": 2,
 			"id": "OG_044c",
@@ -9344,6 +10436,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Charge, Stealth</b>",
 			"type": "Minion"
 		},
 		{
@@ -9380,25 +10473,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Griffe"
+				"name": "Griffe",
+				"text": "Confère à votre héros +2 ATQ pendant ce tour et +2 Armure."
 			},
 			"id": "CS2_005",
 			"name": "Claw",
 			"playerClass": "Druid",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give your hero +2 Attack this turn and 2 Armor.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpBossSpell_1.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fixer des priorités"
+				"name": "Fixer des priorités",
+				"text": "Inflige les dégâts de l’attaque au serviteur le plus puissant."
 			},
 			"id": "TB_CoOpBossSpell_1",
 			"name": "Prioritize",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal Attack damage to biggest minion.",
 			"type": "Spell"
 		},
 		{
@@ -9435,13 +10532,15 @@ var parseCardsText = {
 			"cardImage": "LOE_019t2.png",
 			"cost": 4,
 			"fr": {
-				"name": "Singe doré"
+				"name": "Singe doré",
+				"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> remplace votre main et votre deck par des serviteurs <b>légendaires</b>."
 			},
 			"health": 6,
 			"id": "LOE_019t2",
 			"name": "Golden Monkey",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Taunt</b>\n<b>Battlecry:</b> Replace your hand and deck with <b>Legendary</b> minions.",
 			"type": "Minion"
 		},
 		{
@@ -9449,13 +10548,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_05H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Tasse"
+				"name": "Tasse",
+				"text": "Les assiettes ont +3_ATQ."
 			},
 			"health": 2,
 			"id": "KAR_A02_05H",
 			"name": "Cup",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Plates have +3 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -9475,12 +10576,14 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_321e.png",
 			"fr": {
-				"name": "Puissance de la foi"
+				"name": "Puissance de la foi",
+				"text": "+1/+1."
 			},
 			"id": "OG_321e",
 			"name": "Power of Faith",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -9490,7 +10593,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Rhino de la toundra"
+				"name": "Rhino de la toundra",
+				"text": "Vos Bêtes ont <b>Charge</b>."
 			},
 			"health": 5,
 			"id": "DS1_178",
@@ -9498,6 +10602,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Your Beasts have <b>Charge</b>.",
 			"type": "Minion"
 		},
 		{
@@ -9527,12 +10632,14 @@ var parseCardsText = {
 		{
 			"cardImage": "TB_AllMinionsTauntCharge.png",
 			"fr": {
-				"name": "Confère Provocation et Charge"
+				"name": "Confère Provocation et Charge",
+				"text": "Ce serviteur a obtenu <b>Provocation</b> et <b>Charge</b>."
 			},
 			"id": "TB_AllMinionsTauntCharge",
 			"name": "Give Taunt and Charge",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "This minion is granted <b>Taunt</b> and <b>Charge</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -9541,13 +10648,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Œil pour œil"
+				"name": "Œil pour œil",
+				"text": "<b>Secret :</b> inflige au héros adverse autant de dégâts que ceux subis par votre héros."
 			},
 			"id": "EX1_132",
 			"name": "Eye for an Eye",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When your hero takes damage, deal that much damage to the enemy hero.",
 			"type": "Spell"
 		},
 		{
@@ -9556,24 +10665,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Épreuve sacrée"
+				"name": "Épreuve sacrée",
+				"text": "<b>Secret :</b> si votre adversaire possède au moins 3 serviteurs et qu’il en joue un autre, le détruit."
 			},
 			"id": "LOE_027",
 			"name": "Sacred Trial",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Secret:</b> After your opponent has at least 3 minions and plays another, destroy it.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_613e.png",
 			"fr": {
-				"name": "Vengeance de VanCleef"
+				"name": "Vengeance de VanCleef",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "EX1_613e",
 			"name": "VanCleef's Vengeance",
 			"playerClass": "Rogue",
 			"set": "Expert1",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -9582,25 +10695,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Lumière des naaru"
+				"name": "Lumière des naaru",
+				"text": "Rend #3 |4(point,points) de vie. Si la cible est toujours blessée, invoque un Gardelumière."
 			},
 			"id": "GVG_012",
 			"name": "Light of the Naaru",
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Restore #3 Health. If the target is still damaged, summon a Lightwarden.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA16_16H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Fouilles"
+				"name": "Fouilles",
+				"text": "Trouve un artéfact."
 			},
 			"id": "LOEA16_16H",
 			"name": "Rummage",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Find an artifact.",
 			"type": "Hero_power"
 		},
 		{
@@ -9609,13 +10726,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Sang froid"
+				"name": "Sang froid",
+				"text": "Confère +2 ATQ à un serviteur. <b>Combo :</b> +4 ATQ à la place."
 			},
 			"id": "CS2_073",
 			"name": "Cold Blood",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Give a minion +2 Attack. <b>Combo:</b> +4 Attack instead.",
 			"type": "Spell"
 		},
 		{
@@ -9633,35 +10752,41 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_412e.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+1 ATQ et <b>Furie des vents</b>."
 			},
 			"id": "EX1_412e",
 			"name": "Enraged",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+1 Attack and <b>Windfury</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_PickYourFate_4_EnchMinion.png",
 			"fr": {
-				"name": "Destin"
+				"name": "Destin",
+				"text": "<b>Râle d’agonie_:</b> vous piochez une carte."
 			},
 			"id": "TB_PickYourFate_4_EnchMinion",
 			"name": "Fate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> Draw a card.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA16_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Bâton de l’Origine"
+				"name": "Bâton de l’Origine",
+				"text": "<b>Pouvoir héroïque passif</b>\nVotre héros est <b>Insensible</b> tant que le bâton se charge."
 			},
 			"id": "LOEA16_2",
 			"name": "Staff of Origination",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\nYour hero is <b>Immune</b> while the staff charges.",
 			"type": "Hero_power"
 		},
 		{
@@ -9671,7 +10796,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Avortons tremblants"
+				"name": "Avortons tremblants",
+				"text": "<b>Râle d’agonie :</b> invoque trois avortons 2/2."
 			},
 			"health": 6,
 			"id": "LOE_089",
@@ -9679,6 +10805,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "<b>Deathrattle:</b> Summon three 2/2 Runts.",
 			"type": "Minion"
 		},
 		{
@@ -9687,13 +10814,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Vol d’esprit"
+				"name": "Vol d’esprit",
+				"text": "Copie 2 cartes du jeu de votre adversaire et les place dans votre main."
 			},
 			"id": "EX1_339",
 			"name": "Thoughtsteal",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Copy 2 cards from your opponent's deck and put them into your hand.",
 			"type": "Spell"
 		},
 		{
@@ -9703,7 +10832,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Loup contaminé"
+				"name": "Loup contaminé",
+				"text": "<b>Râle d’agonie :</b> invoque deux araignées 1/1."
 			},
 			"health": 3,
 			"id": "OG_216",
@@ -9711,18 +10841,21 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Summon two 1/1 Spiders.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA06_2H_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Le chambellan"
+				"name": "Le chambellan",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un acolyte attise-flammes 3/3."
 			},
 			"id": "BRMA06_2H_TB",
 			"name": "The Majordomo",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nSummon a 3/3 Flamewaker Acolyte.",
 			"type": "Hero_power"
 		},
 		{
@@ -9730,13 +10863,15 @@ var parseCardsText = {
 			"cardImage": "XXX_098.png",
 			"cost": 0,
 			"fr": {
-				"name": "AI Buddy - No Deck/Hand"
+				"name": "AI Buddy - No Deck/Hand",
+				"text": "Spawn into play to destroy the AI's Hand and Deck."
 			},
 			"health": 1,
 			"id": "XXX_098",
 			"name": "AI Buddy - No Deck/Hand",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Spawn into play to destroy the AI's Hand and Deck.",
 			"type": "Minion"
 		},
 		{
@@ -9769,12 +10904,14 @@ var parseCardsText = {
 			"cardImage": "BRMA13_2H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Forme véritable"
+				"name": "Forme véritable",
+				"text": "<b>Pouvoir héroïque</b>\nQue le combat commence !"
 			},
 			"id": "BRMA13_2H",
 			"name": "True Form",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nLet the games begin!",
 			"type": "Hero_power"
 		},
 		{
@@ -9784,7 +10921,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Guetteur flottant"
+				"name": "Guetteur flottant",
+				"text": "Chaque fois que votre héros subit des dégâts pendant votre tour,\ngagne +2/+2."
 			},
 			"health": 4,
 			"id": "GVG_100",
@@ -9792,42 +10930,49 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Whenever your hero takes damage on your turn, gain +2/+2.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_041b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Sombres feux follets"
+				"name": "Sombres feux follets",
+				"text": "Invoque 5 feux follets."
 			},
 			"id": "GVG_041b",
 			"name": "Dark Wispers",
 			"playerClass": "Druid",
 			"set": "Gvg",
+			"text": "Summon 5 Wisps.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TBA01_5.png",
 			"cost": 2,
 			"fr": {
-				"name": "Magie sauvage"
+				"name": "Magie sauvage",
+				"text": "<b>Pouvoir héroïque</b>\nPlace un sort aléatoire de n’importe quelle classe dans votre main. Il coûte (0) cristal."
 			},
 			"id": "TBA01_5",
 			"name": "Wild Magic",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nAdd a random spell from any class to your hand. It costs (0).",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "BRMA07_2.png",
 			"cost": 1,
 			"fr": {
-				"name": "MOI TOUT CASSER"
+				"name": "MOI TOUT CASSER",
+				"text": "<b>Pouvoir héroïque</b>\nDétruit un serviteur adverse blessé aléatoire."
 			},
 			"id": "BRMA07_2",
 			"name": "ME SMASH",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nDestroy a random damaged enemy minion.",
 			"type": "Hero_power"
 		},
 		{
@@ -9844,12 +10989,14 @@ var parseCardsText = {
 		{
 			"cardImage": "GVG_021e.png",
 			"fr": {
-				"name": "Étreinte de Mal’Ganis"
+				"name": "Étreinte de Mal’Ganis",
+				"text": "Mal’Ganis confère +2/+2."
 			},
 			"id": "GVG_021e",
 			"name": "Grasp of Mal'Ganis",
 			"playerClass": "Warlock",
 			"set": "Gvg",
+			"text": "Mal'Ganis is granting +2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -9860,7 +11007,8 @@ var parseCardsText = {
 			"cost": 4,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Brise-sort"
+				"name": "Brise-sort",
+				"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur."
 			},
 			"health": 3,
 			"id": "EX1_048",
@@ -9868,6 +11016,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> <b>Silence</b> a minion.",
 			"type": "Minion"
 		},
 		{
@@ -9875,12 +11024,14 @@ var parseCardsText = {
 			"cardImage": "PART_005.png",
 			"cost": 1,
 			"fr": {
-				"name": "Liquide de refroidissement"
+				"name": "Liquide de refroidissement",
+				"text": "<b>Gèle</b> un serviteur."
 			},
 			"id": "PART_005",
 			"name": "Emergency Coolant",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "<b>Freeze</b> a minion.",
 			"type": "Spell"
 		},
 		{
@@ -9890,7 +11041,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Sorcière des mers naga"
+				"name": "Sorcière des mers naga",
+				"text": "Vos cartes coûtent\n(5) |4(cristal,cristaux) de mana."
 			},
 			"health": 5,
 			"id": "LOE_038",
@@ -9898,6 +11050,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Loe",
+			"text": "Your cards cost (5).",
 			"type": "Minion"
 		},
 		{
@@ -9907,7 +11060,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Grimoire bavard"
+				"name": "Grimoire bavard",
+				"text": "<b>Cri de guerre_:</b> ajoute un sort de mage aléatoire dans votre main."
 			},
 			"health": 1,
 			"id": "KAR_009",
@@ -9915,6 +11069,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Add a random Mage spell to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -9923,25 +11078,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Drain de vie"
+				"name": "Drain de vie",
+				"text": "Inflige $2 |4(point,points) de dégâts. Rend #2 |4(point,points) de vie à votre héros."
 			},
 			"id": "CS2_061",
 			"name": "Drain Life",
 			"playerClass": "Warlock",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $2 damage. Restore #2 Health to your hero.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_132_HUNTER.png",
 			"cost": 2,
 			"fr": {
-				"name": "Tir de baliste"
+				"name": "Tir de baliste",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $3 points de dégâts au héros adverse."
 			},
 			"id": "AT_132_HUNTER",
 			"name": "Ballista Shot",
 			"playerClass": "Hunter",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nDeal $3 damage to the enemy hero.",
 			"type": "Hero_power"
 		},
 		{
@@ -9951,7 +11110,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Gardien mogu’shan"
+				"name": "Gardien mogu’shan",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 7,
 			"id": "EX1_396",
@@ -9959,18 +11119,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA16_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Écholocation"
+				"name": "Écholocation",
+				"text": "<b>Pouvoir héroïque</b>\nS’équipe d’une arme qui croît à mesure que l’adversaire joue des cartes."
 			},
 			"id": "BRMA16_2H",
 			"name": "Echolocate",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nEquip a weapon that grows as your opponent plays cards.",
 			"type": "Hero_power"
 		},
 		{
@@ -9980,7 +11143,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Commandant du fief"
+				"name": "Commandant du fief",
+				"text": "Vous pouvez utiliser votre pouvoir héroïque deux fois par tour."
 			},
 			"health": 3,
 			"id": "AT_080",
@@ -9988,6 +11152,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "You can use your Hero Power twice a turn.",
 			"type": "Minion"
 		},
 		{
@@ -10005,26 +11170,30 @@ var parseCardsText = {
 			"cardImage": "XXX_010.png",
 			"cost": 0,
 			"fr": {
-				"name": "Silence - debug"
+				"name": "Silence - debug",
+				"text": "Remove all enchantments and powers from a minion."
 			},
 			"id": "XXX_010",
 			"name": "Silence - debug",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Remove all enchantments and powers from a minion.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA04_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fuyez !"
+				"name": "Fuyez !",
+				"text": "Affrontez de nouveaux obstacles !"
 			},
 			"id": "LOEA04_02",
 			"name": "Escape!",
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Loe",
+			"text": "Encounter new obstacles!",
 			"type": "Hero_power"
 		},
 		{
@@ -10045,7 +11214,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Kodo déchaîné"
+				"name": "Kodo déchaîné",
+				"text": "<b>Cri de guerre :</b> détruit un serviteur adverse aléatoire avec 2 en Attaque ou moins."
 			},
 			"health": 5,
 			"id": "NEW1_041",
@@ -10053,18 +11223,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Destroy a random enemy minion with 2 or less Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX1_05.png",
 			"cost": 7,
 			"fr": {
-				"name": "Nuée de sauterelles"
+				"name": "Nuée de sauterelles",
+				"text": "Inflige $3 |4(point,points) de dégâts à tous les serviteurs adverses. Rend #3 |4(point,points) de vie à votre héros."
 			},
 			"id": "NAX1_05",
 			"name": "Locust Swarm",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Deal $3 damage to all enemy minions. Restore #3 Health to your hero.",
 			"type": "Spell"
 		},
 		{
@@ -10074,7 +11247,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Sectateur de la Lame"
+				"name": "Sectateur de la Lame",
+				"text": "<b>Combo_:</b> gagne +1/+1."
 			},
 			"health": 2,
 			"id": "OG_070",
@@ -10082,18 +11256,21 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Combo:</b> Gain +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA01_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Jeu forcé !"
+				"name": "Jeu forcé !",
+				"text": "<b>Pouvoir héroïque</b>\nPlace un serviteur de chaque deck sur le champ de bataille."
 			},
 			"id": "BRMA01_2",
 			"name": "Pile On!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nPut a minion from each deck into the battlefield.",
 			"type": "Hero_power"
 		},
 		{
@@ -10101,25 +11278,29 @@ var parseCardsText = {
 			"cardImage": "KARA_05_01hp.png",
 			"cost": 0,
 			"fr": {
-				"name": "Apeuré"
+				"name": "Apeuré",
+				"text": "<b>Pouvoir héroïque passif</b>\nLes serviteurs adverses ont_1/1 et coûtent (1)_cristal."
 			},
 			"id": "KARA_05_01hp",
 			"name": "Trembling",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Passive Hero Power</b> Enemy minions are 1/1 and cost (1).",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "KAR_A02_09H.png",
 			"cost": 4,
 			"fr": {
-				"name": "Mettre la table"
+				"name": "Mettre la table",
+				"text": "Donne +2/+2 à vos assiettes."
 			},
 			"id": "KAR_A02_09H",
 			"name": "Set the Table",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Give your Plates +2/+2.",
 			"type": "Spell"
 		},
 		{
@@ -10128,25 +11309,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Marque d’Y’Shaarj"
+				"name": "Marque d’Y’Shaarj",
+				"text": "Donne +2/+2 à un serviteur. Si c'est une Bête, vous piochez une carte."
 			},
 			"id": "OG_048",
 			"name": "Mark of Y'Shaarj",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Give a minion +2/+2.\nIf it's a Beast, draw\na card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KAR_A01_02H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Reflets"
+				"name": "Reflets",
+				"text": "<b>Pouvoir héroïque passif</b>\nChaque fois qu’un serviteur est joué, Miroir magique en invoque une copie_1/1."
 			},
 			"id": "KAR_A01_02H",
 			"name": "Reflections",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Passive Hero Power</b>\nWhenever a minion is played, Magic Mirror summons a 1/1 copy of it.",
 			"type": "Hero_power"
 		},
 		{
@@ -10178,12 +11363,14 @@ var parseCardsText = {
 		{
 			"cardImage": "TB_006e.png",
 			"fr": {
-				"name": "Grande banane"
+				"name": "Grande banane",
+				"text": "A +2/+2."
 			},
 			"id": "TB_006e",
 			"name": "Big Banana",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Has +2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -10193,7 +11380,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Disciple de C’Thun"
+				"name": "Disciple de C’Thun",
+				"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts. Donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 1,
 			"id": "OG_162",
@@ -10201,6 +11389,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Deal 2 damage. Give your C'Thun +2/+2 <i>(wherever it is)</i>.",
 			"type": "Minion"
 		},
 		{
@@ -10211,13 +11400,15 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 2,
 			"fr": {
-				"name": "Arc cornedaigle"
+				"name": "Arc cornedaigle",
+				"text": "Chaque fois qu’un <b>Secret</b> allié est révélé, gagne +1 Durabilité."
 			},
 			"id": "EX1_536",
 			"name": "Eaglehorn Bow",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever a friendly <b>Secret</b> is revealed, gain +1 Durability.",
 			"type": "Weapon"
 		},
 		{
@@ -10239,7 +11430,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Magicien de la Ménagerie"
+				"name": "Magicien de la Ménagerie",
+				"text": "<b>Cri de guerre_:</b> donne +2/+2 à une Bête, un Dragon et un Murloc alliés aléatoires."
 			},
 			"health": 4,
 			"id": "KAR_702",
@@ -10247,6 +11439,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Give a random friendly Beast, Dragon, and Murloc +2/+2.",
 			"type": "Minion"
 		},
 		{
@@ -10256,7 +11449,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Hyène charognarde"
+				"name": "Hyène charognarde",
+				"text": "Chaque fois qu’une bête alliée meurt, gagne +2/+1."
 			},
 			"health": 2,
 			"id": "EX1_531",
@@ -10264,6 +11458,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Whenever a friendly Beast dies, gain +2/+1.",
 			"type": "Minion"
 		},
 		{
@@ -10273,7 +11468,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Aile de mort"
+				"name": "Aile de mort",
+				"text": "<b>Cri de guerre :</b> détruit tous les autres serviteurs et vous défausse de votre main."
 			},
 			"health": 12,
 			"id": "NEW1_030",
@@ -10281,18 +11477,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Destroy all other minions and discard your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA04_28.png",
 			"cost": 0,
 			"fr": {
-				"name": "Un bassin luminescent"
+				"name": "Un bassin luminescent",
+				"text": "<b>Boire ?</b>"
 			},
 			"id": "LOEA04_28",
 			"name": "A Glowing Pool",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Drink?</b>",
 			"type": "Spell"
 		},
 		{
@@ -10302,7 +11501,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Malygos"
+				"name": "Malygos",
+				"text": "<b>Dégâts des sorts : +5</b>"
 			},
 			"health": 12,
 			"id": "EX1_563",
@@ -10311,30 +11511,35 @@ var parseCardsText = {
 			"rarity": "Legendary",
 			"set": "Expert1",
 			"spellDamage": 5,
+			"text": "<b>Spell Damage +5</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_009e.png",
 			"fr": {
-				"name": "Empty Enchant"
+				"name": "Empty Enchant",
+				"text": "This enchantment does nothing."
 			},
 			"id": "XXX_009e",
 			"name": "Empty Enchant",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "This enchantment does nothing.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NAX10_03.png",
 			"cost": 4,
 			"fr": {
-				"name": "Frappe haineuse"
+				"name": "Frappe haineuse",
+				"text": "<b>Pouvoir héroïque</b>\nDétruit un serviteur."
 			},
 			"id": "NAX10_03",
 			"name": "Hateful Strike",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDestroy a minion.",
 			"type": "Hero_power"
 		},
 		{
@@ -10342,12 +11547,14 @@ var parseCardsText = {
 			"cardImage": "KARA_00_06.png",
 			"cost": 2,
 			"fr": {
-				"name": "Pouvoir des Arcanes"
+				"name": "Pouvoir des Arcanes",
+				"text": "Vous avez <b>+5_aux dégâts des sorts</b> pendant ce tour."
 			},
 			"id": "KARA_00_06",
 			"name": "Arcane Power",
 			"playerClass": "Mage",
 			"set": "Kara",
+			"text": "You have <b>Spell Damage</b> +5 this turn.",
 			"type": "Spell"
 		},
 		{
@@ -10355,7 +11562,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_26.png",
 			"cost": 5,
 			"fr": {
-				"name": "Squeletosaurus Hex"
+				"name": "Squeletosaurus Hex",
+				"text": "Donne une carte aléatoire à chaque joueur à la fin de votre tour. Elle coûte (0) |4(cristal,cristaux) de mana."
 			},
 			"health": 5,
 			"id": "LOEA16_26",
@@ -10363,6 +11571,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, give each player a random card. It costs (0).",
 			"type": "Minion"
 		},
 		{
@@ -10370,13 +11579,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_22H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Roque"
+				"name": "Roque",
+				"text": "<b>Pouvoir héroïque</b>\nDéplace un serviteur allié à gauche. Peut être répété."
 			},
 			"id": "KAR_A10_22H",
 			"name": "Castle",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nMove a friendly minion left. Repeatable.",
 			"type": "Hero_power"
 		},
 		{
@@ -10401,25 +11612,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Recyclage"
+				"name": "Recyclage",
+				"text": "Replace un serviteur adverse dans le deck de votre adversaire."
 			},
 			"id": "GVG_031",
 			"name": "Recycle",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Shuffle an enemy minion into your opponent's deck.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA17_5_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Séides des os"
+				"name": "Séides des os",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux assemblages d’os 2/1."
 			},
 			"id": "BRMA17_5_TB",
 			"name": "Bone Minions",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nSummon two 2/1 Bone Constructs.",
 			"type": "Hero_power"
 		},
 		{
@@ -10429,7 +11644,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Goule ravageuse"
+				"name": "Goule ravageuse",
+				"text": "<b>Cri de guerre :</b> inflige\n1 point de dégâts à tous les autres serviteurs."
 			},
 			"health": 3,
 			"id": "OG_149",
@@ -10437,6 +11653,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Deal 1 damage to all other minions.",
 			"type": "Minion"
 		},
 		{
@@ -10446,7 +11663,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Bolf Bélier-Frondeur"
+				"name": "Bolf Bélier-Frondeur",
+				"text": "Chaque fois que votre héros subit des dégâts, les inflige à ce serviteur à la place."
 			},
 			"health": 9,
 			"id": "AT_124",
@@ -10454,6 +11672,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "Whenever your hero takes damage, this minion takes it instead.",
 			"type": "Minion"
 		},
 		{
@@ -10462,13 +11681,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Sabotage"
+				"name": "Sabotage",
+				"text": "Détruit un serviteur adverse aléatoire. <b>Combo_:</b> détruit aussi l’arme de votre adversaire."
 			},
 			"id": "GVG_047",
 			"name": "Sabotage",
 			"playerClass": "Rogue",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Destroy a random enemy minion. <b>Combo:</b> And your opponent's weapon.",
 			"type": "Spell"
 		},
 		{
@@ -10477,13 +11698,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Déluge de lames"
+				"name": "Déluge de lames",
+				"text": "Détruit votre arme, dont les dégâts sont infligés à tous les serviteurs adverses."
 			},
 			"id": "CS2_233",
 			"name": "Blade Flurry",
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Destroy your weapon and deal its damage to all enemy minions.",
 			"type": "Spell"
 		},
 		{
@@ -10506,7 +11729,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Régente de la Main d’argent"
+				"name": "Régente de la Main d’argent",
+				"text": "<b>Exaltation :</b> invoque une recrue de la Main\nd’argent 1/1."
 			},
 			"health": 3,
 			"id": "AT_100",
@@ -10514,6 +11738,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Summon a 1/1 Silver Hand Recruit.",
 			"type": "Minion"
 		},
 		{
@@ -10523,7 +11748,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Anomalie arcanique"
+				"name": "Anomalie arcanique",
+				"text": "Chaque fois que vous lancez un sort, donne +1_PV à ce serviteur."
 			},
 			"health": 1,
 			"id": "KAR_036",
@@ -10531,6 +11757,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Whenever you cast a spell, give this minion\n+1 Health.",
 			"type": "Minion"
 		},
 		{
@@ -10540,7 +11767,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Adjurateur éthérien"
+				"name": "Adjurateur éthérien",
+				"text": "<b>Cri de guerre : découvre</b>\nun sort."
 			},
 			"health": 3,
 			"id": "LOE_003",
@@ -10548,6 +11776,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Battlecry: Discover</b> a spell.",
 			"type": "Minion"
 		},
 		{
@@ -10555,7 +11784,8 @@ var parseCardsText = {
 			"cardImage": "CRED_45.png",
 			"cost": 6,
 			"fr": {
-				"name": "Jonas Laster"
+				"name": "Jonas Laster",
+				"text": "Chaque fois qu’un serviteur <b>réduit au silence</b> meurt, gagne +1/+1."
 			},
 			"health": 6,
 			"id": "CRED_45",
@@ -10563,6 +11793,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "Whenever a <b>Silenced</b> minion dies, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -10572,7 +11803,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Robot d’alarme"
+				"name": "Robot d’alarme",
+				"text": "Au début de votre tour, échange ce serviteur avec un autre choisi au hasard dans votre main."
 			},
 			"health": 3,
 			"id": "EX1_006",
@@ -10580,6 +11812,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "At the start of your turn, swap this minion with a random one in your hand.",
 			"type": "Minion"
 		},
 		{
@@ -10589,7 +11822,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Boucanier"
+				"name": "Boucanier",
+				"text": "Chaque fois que vous vous équipez d’une arme, lui confère +1 ATQ."
 			},
 			"health": 1,
 			"id": "AT_029",
@@ -10597,17 +11831,20 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Whenever you equip a weapon, give it +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_561e.png",
 			"fr": {
-				"name": "Feu d’Alexstrasza"
+				"name": "Feu d’Alexstrasza",
+				"text": "Les PV passent à 15."
 			},
 			"id": "EX1_561e",
 			"name": "Alexstrasza's Fire",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Health set to 15.",
 			"type": "Enchantment"
 		},
 		{
@@ -10616,13 +11853,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_09.png",
 			"cost": 7,
 			"fr": {
-				"name": "Reine blanche"
+				"name": "Reine blanche",
+				"text": "<b>Attaque automatique_:</b> inflige 4 points de dégâts aux adversaires en face de ce serviteur."
 			},
 			"health": 6,
 			"id": "KAR_A10_09",
 			"name": "White Queen",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Auto-Attack:</b> Deal 4 damage to the enemies opposite this minion.",
 			"type": "Minion"
 		},
 		{
@@ -10630,7 +11869,8 @@ var parseCardsText = {
 			"cardImage": "GAME_002.png",
 			"cost": 0,
 			"fr": {
-				"name": "Avatar de la pièce"
+				"name": "Avatar de la pièce",
+				"text": "<i>Vous avez peut-être perdu à pile ou face, mais vous avez gagné un ami.</i>"
 			},
 			"health": 1,
 			"id": "GAME_002",
@@ -10638,42 +11878,49 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<i>You lost the coin flip, but gained a friend.</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_PickYourFate_9.png",
 			"cost": 0,
 			"fr": {
-				"name": "Bonus : Râle d’agonie"
+				"name": "Bonus : Râle d’agonie",
+				"text": "Vos serviteurs avec <b>Râle d’agonie</b> ont +1/+1."
 			},
 			"id": "TB_PickYourFate_9",
 			"name": "Deathrattle Bonus",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Your <b>Deathrattle</b> minions have +1/+1.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_022.png",
 			"cost": 0,
 			"fr": {
-				"name": "Free Cards"
+				"name": "Free Cards",
+				"text": "Your cards cost (0) for the rest of the game."
 			},
 			"id": "XXX_022",
 			"name": "Free Cards",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Your cards cost (0) for the rest of the game.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "PART_004e.png",
 			"fr": {
-				"name": "Camouflé"
+				"name": "Camouflé",
+				"text": "Camouflé jusqu’à votre prochain tour."
 			},
 			"id": "PART_004e",
 			"name": "Cloaked",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Stealthed until your next turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -10697,7 +11944,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Araignée des tombes"
+				"name": "Araignée des tombes",
+				"text": "<b>Cri de guerre : découvre</b> une Bête."
 			},
 			"health": 3,
 			"id": "LOE_047",
@@ -10705,6 +11953,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Battlecry: Discover</b> a Beast.",
 			"type": "Minion"
 		},
 		{
@@ -10714,7 +11963,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Rohart totémique"
+				"name": "Rohart totémique",
+				"text": "<b>Cri de guerre :</b> invoque N’IMPORTE QUEL totem aléatoire."
 			},
 			"health": 2,
 			"id": "AT_046",
@@ -10722,6 +11972,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Summon ANY random Totem.",
 			"type": "Minion"
 		},
 		{
@@ -10731,7 +11982,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Œuf de dragon"
+				"name": "Œuf de dragon",
+				"text": "Invoque un dragonnet 2/1 chaque fois que ce serviteur subit des dégâts."
 			},
 			"health": 2,
 			"id": "BRM_022",
@@ -10739,6 +11991,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "Whenever this minion takes damage, summon a 2/1 Whelp.",
 			"type": "Minion"
 		},
 		{
@@ -10747,24 +12000,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Parjurer les ténèbres"
+				"name": "Parjurer les ténèbres",
+				"text": "Remplace votre pouvoir héroïque et vos cartes de démoniste par ceux d’une autre classe. Les cartes coûtent (1) |4(cristal,cristaux) de moins."
 			},
 			"id": "OG_118",
 			"name": "Renounce Darkness",
 			"playerClass": "Warlock",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Replace your Hero Power and Warlock cards with another class's. The cards cost (1) less.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KARA_00_06e.png",
 			"fr": {
-				"name": "Arcaniquement puissant"
+				"name": "Arcaniquement puissant",
+				"text": "<b>+5 aux dégâts des sorts</b>."
 			},
 			"id": "KARA_00_06e",
 			"name": "Arcanely Powerful",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+5 Spell Damage.",
 			"type": "Enchantment"
 		},
 		{
@@ -10774,7 +12031,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Jouteur rohart"
+				"name": "Jouteur rohart",
+				"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, rend 7 PV à votre héros."
 			},
 			"health": 5,
 			"id": "AT_104",
@@ -10782,6 +12040,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, restore 7 Health to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -10791,7 +12050,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Robo-baston"
+				"name": "Robo-baston",
+				"text": "<b>Accès de rage :</b> +1 ATQ."
 			},
 			"health": 3,
 			"id": "GVG_051",
@@ -10799,41 +12059,48 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Enrage:</b> +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_00_04H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Génie"
+				"name": "Génie",
+				"text": "<b>Pouvoir héroïque</b>\nVous piochez 3 cartes."
 			},
 			"id": "KARA_00_04H",
 			"name": "Brilliance",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nDraw 3 cards.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "BRMA10_3e.png",
 			"fr": {
-				"name": "Incubation"
+				"name": "Incubation",
+				"text": "Vie augmentée."
 			},
 			"id": "BRMA10_3e",
 			"name": "Incubation",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Increased Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_CoOpBossSpell_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Salve de bombes"
+				"name": "Salve de bombes",
+				"text": "Inflige les dégâts de l’attaque à 3 cibles aléatoires au maximum."
 			},
 			"id": "TB_CoOpBossSpell_2",
 			"name": "Bomb Salvo",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal Attack damage to up to 3 random targets.",
 			"type": "Spell"
 		},
 		{
@@ -10843,7 +12110,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Druide de la Griffe"
+				"name": "Druide de la Griffe",
+				"text": "<b>Choix des armes :</b> <b>Charge</b> ou confère +2 PV et <b>Provocation</b>."
 			},
 			"health": 4,
 			"id": "EX1_165",
@@ -10851,6 +12119,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Choose One -</b> <b>Charge</b>; or +2 Health and <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -10860,7 +12129,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Maître d’escrime"
+				"name": "Maître d’escrime",
+				"text": "<b>Cri de guerre :</b> la prochaine fois que vous utilisez votre pouvoir héroïque, il coûte\n(2) cristaux de moins."
 			},
 			"health": 2,
 			"id": "AT_115",
@@ -10868,18 +12138,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> The next time you use your Hero Power, it costs (2) less.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA06_03h.png",
 			"cost": 2,
 			"fr": {
-				"name": "Terrestre animé"
+				"name": "Terrestre animé",
+				"text": "Donne +3/+3 et <b>Provocation</b> à vos serviteurs."
 			},
 			"id": "LOEA06_03h",
 			"name": "Animate Earthen",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Give your minions +3/+3 and <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -10888,24 +12161,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Tous les murlocs de ta vie"
+				"name": "Tous les murlocs de ta vie",
+				"text": "Invoque 7 murlocs détruits pendant cette partie."
 			},
 			"id": "LOE_026",
 			"name": "Anyfin Can Happen",
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "Summon 7 Murlocs that died this game.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_073e.png",
 			"fr": {
-				"name": "Sang froid"
+				"name": "Sang froid",
+				"text": "+2 ATQ."
 			},
 			"id": "CS2_073e",
 			"name": "Cold Blood",
 			"playerClass": "Rogue",
 			"set": "Expert1",
+			"text": "+2 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -10915,7 +12192,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Malorne"
+				"name": "Malorne",
+				"text": "<b>Râle d’agonie :</b> replace ce serviteur dans votre deck."
 			},
 			"health": 7,
 			"id": "GVG_035",
@@ -10923,6 +12201,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Deathrattle:</b> Shuffle this minion into your deck.",
 			"type": "Minion"
 		},
 		{
@@ -10930,7 +12209,8 @@ var parseCardsText = {
 			"cardImage": "BRMA14_9H.png",
 			"cost": 5,
 			"fr": {
-				"name": "Magmatron"
+				"name": "Magmatron",
+				"text": "Chaque fois qu’un joueur joue une carte, lui inflige 2 points de dégâts."
 			},
 			"health": 8,
 			"id": "BRMA14_9H",
@@ -10938,29 +12218,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "Whenever a player plays a card, Magmatron deals 2 damage to them.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_363e.png",
 			"fr": {
-				"name": "Bénédiction de sagesse"
+				"name": "Bénédiction de sagesse",
+				"text": "Quand ce serviteur attaque, le joueur qui l’a béni pioche une carte."
 			},
 			"id": "EX1_363e",
 			"name": "Blessing of Wisdom",
 			"playerClass": "Paladin",
 			"set": "Expert1",
+			"text": "When this minion attacks, the player who blessed it draws a card.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_ClassRandom_Paladin.png",
 			"cost": 0,
 			"fr": {
-				"name": "Deuxième classe : paladin"
+				"name": "Deuxième classe : paladin",
+				"text": "Ajoute des cartes de paladin dans votre deck."
 			},
 			"id": "TB_ClassRandom_Paladin",
 			"name": "Second Class: Paladin",
 			"playerClass": "Paladin",
 			"set": "Tb",
+			"text": "Add Paladin cards to your deck.",
 			"type": "Spell"
 		},
 		{
@@ -10968,13 +12253,15 @@ var parseCardsText = {
 			"cardImage": "GVG_110t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Ro’Boum"
+				"name": "Ro’Boum",
+				"text": "<b>Râle d’agonie_:</b> inflige 1_à_4_points de dégâts à un adversaire aléatoire."
 			},
 			"health": 1,
 			"id": "GVG_110t",
 			"name": "Boom Bot",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "<b>Deathrattle:</b> Deal 1-4 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -10984,7 +12271,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Ombre mouvante"
+				"name": "Ombre mouvante",
+				"text": "<b>Râle d’agonie :</b> copie une carte du deck de votre adversaire et la place dans votre main."
 			},
 			"health": 3,
 			"id": "OG_335",
@@ -10992,6 +12280,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Copy a card from your opponent's deck and add it to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -10999,13 +12288,15 @@ var parseCardsText = {
 			"cardImage": "TB_Coopv3_105.png",
 			"cost": 4,
 			"fr": {
-				"name": "Soigneuse de raid"
+				"name": "Soigneuse de raid",
+				"text": "Chaque fois que votre héros est soigné, soigne d’autant votre équipier."
 			},
 			"health": 7,
 			"id": "TB_Coopv3_105",
 			"name": "Raid Healer",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Whenever your hero is healed, also heal your teammate for that much.",
 			"type": "Minion"
 		},
 		{
@@ -11013,34 +12304,40 @@ var parseCardsText = {
 			"cardImage": "KARA_07_08.png",
 			"cost": 6,
 			"fr": {
-				"name": "Évasion de dragon !"
+				"name": "Évasion de dragon !",
+				"text": "Invoque un Dragon aléatoire."
 			},
 			"id": "KARA_07_08",
 			"name": "Dragons Free!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon a random Dragon.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_BOSS2e.png",
 			"fr": {
-				"name": "Se met en colère…"
+				"name": "Se met en colère…",
+				"text": "Maintenant, il est en colère…"
 			},
 			"id": "TB_CoOpv3_BOSS2e",
 			"name": "Getting Angry....",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Now he's mad....",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "GVG_019e.png",
 			"fr": {
-				"name": "Cœur de démon"
+				"name": "Cœur de démon",
+				"text": "+5/+5."
 			},
 			"id": "GVG_019e",
 			"name": "Demonheart",
 			"playerClass": "Warlock",
 			"set": "Gvg",
+			"text": "+5/+5.",
 			"type": "Enchantment"
 		},
 		{
@@ -11062,7 +12359,8 @@ var parseCardsText = {
 			"cardImage": "BRMA14_7.png",
 			"cost": 3,
 			"fr": {
-				"name": "Électron"
+				"name": "Électron",
+				"text": "Tous les sorts coûtent (3) |4(cristal,cristaux) de moins."
 			},
 			"health": 5,
 			"id": "BRMA14_7",
@@ -11070,6 +12368,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "All spells cost (3) less.",
 			"type": "Minion"
 		},
 		{
@@ -11079,7 +12378,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Épées dansantes"
+				"name": "Épées dansantes",
+				"text": "<b>Râle d’agonie :</b> votre adversaire pioche une carte."
 			},
 			"health": 4,
 			"id": "FP1_029",
@@ -11087,18 +12387,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Your opponent draws a card.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_055.png",
 			"cost": 0,
 			"fr": {
-				"name": "1000 Stats"
+				"name": "1000 Stats",
+				"text": "Give a Minion +1000/+1000"
 			},
 			"id": "XXX_055",
 			"name": "1000 Stats",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Give a Minion +1000/+1000",
 			"type": "Spell"
 		},
 		{
@@ -11107,13 +12410,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Courbe-sort"
+				"name": "Courbe-sort",
+				"text": "<b>Secret :</b> quand votre adversaire lance un sort sur un serviteur, invoque un 1/3 qui devient la nouvelle cible."
 			},
 			"id": "tt_010",
 			"name": "Spellbender",
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When an enemy casts a spell on a minion, summon a 1/3 as the new target.",
 			"type": "Spell"
 		},
 		{
@@ -11123,7 +12428,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Harrison Jones"
+				"name": "Harrison Jones",
+				"text": "<b>Cri de guerre :</b> détruit l’arme de votre adversaire. Vous piochez le nombre de cartes équivalent à sa durabilité."
 			},
 			"health": 4,
 			"id": "EX1_558",
@@ -11131,6 +12437,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Destroy your opponent's weapon and draw cards equal to its Durability.",
 			"type": "Minion"
 		},
 		{
@@ -11138,7 +12445,8 @@ var parseCardsText = {
 			"cardImage": "CRED_24.png",
 			"cost": 7,
 			"fr": {
-				"name": "Dean Ayala"
+				"name": "Dean Ayala",
+				"text": "Vous ne pouvez pas perdre d’étoiles tant que vous avez cette carte dans votre deck."
 			},
 			"health": 5,
 			"id": "CRED_24",
@@ -11146,6 +12454,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "You can't lose stars while this is in your deck.",
 			"type": "Minion"
 		},
 		{
@@ -11155,7 +12464,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Poulet furieux"
+				"name": "Poulet furieux",
+				"text": "<b>Accès de rage :</b> +5 ATQ."
 			},
 			"health": 1,
 			"id": "EX1_009",
@@ -11163,6 +12473,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Enrage:</b> +5 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -11172,7 +12483,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Traqueur gloubelin"
+				"name": "Traqueur gloubelin",
+				"text": "<b>Camouflage</b>"
 			},
 			"health": 3,
 			"id": "GVG_081",
@@ -11180,18 +12492,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Stealth</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_8.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fiole de Putrescin"
+				"name": "Fiole de Putrescin",
+				"text": "Détruit un serviteur adverse aléatoire."
 			},
 			"id": "LOEA16_8",
 			"name": "Putress' Vial",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Destroy a random enemy minion.",
 			"type": "Spell"
 		},
 		{
@@ -11201,7 +12516,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Démolisseur"
+				"name": "Démolisseur",
+				"text": "Au début de votre tour, inflige 2 points de dégâts à un adversaire aléatoire."
 			},
 			"health": 4,
 			"id": "EX1_102",
@@ -11209,18 +12525,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "At the start of your turn, deal 2 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_08_03H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Souffle du Néant"
+				"name": "Souffle du Néant",
+				"text": "Fait passer la Vie de tous les serviteurs adverses à_1."
 			},
 			"id": "KARA_08_03H",
 			"name": "Nether Breath",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "[x]Change the Health of\nall enemy minions to 1.",
 			"type": "Spell"
 		},
 		{
@@ -11240,13 +12559,15 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_596e.png",
 			"fr": {
-				"name": "Feu démoniaque"
+				"name": "Feu démoniaque",
+				"text": "Ce démon a +2/+2."
 			},
 			"id": "EX1_596e",
 			"name": "Demonfire",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "This Demon has +2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -11257,7 +12578,8 @@ var parseCardsText = {
 			"cost": 5,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Chef de guerre loup-de-givre"
+				"name": "Chef de guerre loup-de-givre",
+				"text": "<b>Cri de guerre :</b> gagne +1/+1 pour chaque autre serviteur allié sur le champ de bataille."
 			},
 			"health": 4,
 			"id": "CS2_226",
@@ -11265,6 +12587,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Gain +1/+1 for each other friendly minion on the battlefield.",
 			"type": "Minion"
 		},
 		{
@@ -11274,7 +12597,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Spectateur du tournoi"
+				"name": "Spectateur du tournoi",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 1,
 			"id": "AT_097",
@@ -11282,6 +12606,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -11290,25 +12615,29 @@ var parseCardsText = {
 			"cardImage": "KARA_04_01.png",
 			"cost": 4,
 			"fr": {
-				"name": "Dorothée"
+				"name": "Dorothée",
+				"text": "Les serviteurs à gauche ont <b>Charge</b>. Les serviteurs à droite_ont_<b>Provocation</b>."
 			},
 			"health": 10,
 			"id": "KARA_04_01",
 			"name": "Dorothee",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Minions to the left have <b>Charge</b>. Minions to the right have <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_CoOpv3_010.png",
 			"cost": 0,
 			"fr": {
-				"name": "Runes explosives"
+				"name": "Runes explosives",
+				"text": "Invoque deux «_runes explosives_»."
 			},
 			"id": "TB_CoOpv3_010",
 			"name": "Explosive Runes",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Summon two 'Explosive Runes.'",
 			"type": "Spell"
 		},
 		{
@@ -11316,13 +12645,15 @@ var parseCardsText = {
 			"cardImage": "BRMA01_3.png",
 			"cost": 6,
 			"fr": {
-				"name": "Videur sombrefer"
+				"name": "Videur sombrefer",
+				"text": "Gagne toujours à la baston."
 			},
 			"health": 8,
 			"id": "BRMA01_3",
 			"name": "Dark Iron Bouncer",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Always wins Brawls.",
 			"type": "Minion"
 		},
 		{
@@ -11341,7 +12672,8 @@ var parseCardsText = {
 			"cardImage": "BRMA14_9.png",
 			"cost": 5,
 			"fr": {
-				"name": "Magmatron"
+				"name": "Magmatron",
+				"text": "Chaque fois qu’un joueur joue une carte, lui inflige 2 points de dégâts."
 			},
 			"health": 7,
 			"id": "BRMA14_9",
@@ -11349,6 +12681,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "Whenever a player plays a card, Magmatron deals 2 damage to them.",
 			"type": "Minion"
 		},
 		{
@@ -11357,12 +12690,14 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 8,
 			"fr": {
-				"name": "Crochet"
+				"name": "Crochet",
+				"text": "<b>Râle d’agonie :</b> place cette arme dans votre main."
 			},
 			"id": "NAX10_02",
 			"name": "Hook",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Put this weapon into your hand.",
 			"type": "Weapon"
 		},
 		{
@@ -11372,7 +12707,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Tauren contaminé"
+				"name": "Tauren contaminé",
+				"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> invoque une gelée 2/2."
 			},
 			"health": 3,
 			"id": "OG_249",
@@ -11380,6 +12716,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Summon a 2/2 Slime.",
 			"type": "Minion"
 		},
 		{
@@ -11390,13 +12727,15 @@ var parseCardsText = {
 			"cost": 5,
 			"durability": 2,
 			"fr": {
-				"name": "Tentacules brachiaux"
+				"name": "Tentacules brachiaux",
+				"text": "<b>Râle d’agonie :</b> replace cette carte dans votre main."
 			},
 			"id": "OG_033",
 			"name": "Tentacles for Arms",
 			"playerClass": "Warrior",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Return this to your hand.",
 			"type": "Weapon"
 		},
 		{
@@ -11406,7 +12745,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Maître des chevaux de guerre"
+				"name": "Maître des chevaux de guerre",
+				"text": "Vos recrues de la Main d’argent ont +1 ATQ."
 			},
 			"health": 4,
 			"id": "AT_075",
@@ -11414,6 +12754,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Your Silver Hand Recruits have +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -11423,7 +12764,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Gueule-d’acide"
+				"name": "Gueule-d’acide",
+				"text": "Chaque fois qu’un autre serviteur subit des dégâts, le détruit."
 			},
 			"health": 2,
 			"id": "AT_063",
@@ -11431,40 +12773,47 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "Whenever another minion takes damage, destroy it.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KAR_A10_22.png",
 			"cost": 2,
 			"fr": {
-				"name": "Roque"
+				"name": "Roque",
+				"text": "<b>Pouvoir héroïque</b>\n<b>Découvre</b> une pièce d’échiquier."
 			},
 			"id": "KAR_A10_22",
 			"name": "Castle",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\n<b>Discover</b> a chess piece.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "OG_282e.png",
 			"fr": {
-				"name": "Dévotion de la lame"
+				"name": "Dévotion de la lame",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "OG_282e",
 			"name": "Devotion of the Blade",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_121e.png",
 			"fr": {
-				"name": "Sombre puissance"
+				"name": "Sombre puissance",
+				"text": "Votre prochain sort coûte de la Vie au lieu de cristaux de mana."
 			},
 			"id": "OG_121e",
 			"name": "Dark Power",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Your next spell costs Health instead of Mana.",
 			"type": "Enchantment"
 		},
 		{
@@ -11474,7 +12823,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Champion du Nexus Saraad"
+				"name": "Champion du Nexus Saraad",
+				"text": "<b>Exaltation :</b> ajoute un sort aléatoire dans votre main."
 			},
 			"health": 5,
 			"id": "AT_127",
@@ -11482,17 +12832,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Add a random spell to your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_106e.png",
 			"fr": {
-				"name": "Bricolé à fond"
+				"name": "Bricolé à fond",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "GVG_106e",
 			"name": "Junked Up",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -11501,13 +12854,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Portail des terres de Feu"
+				"name": "Portail des terres de Feu",
+				"text": "Inflige $5 |4(point,points) de dégâts. Invoque un serviteur aléatoire coûtant 5_cristaux."
 			},
 			"id": "KAR_076",
 			"name": "Firelands Portal",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Deal $5 damage. Summon a random\n5-Cost minion.",
 			"type": "Spell"
 		},
 		{
@@ -11515,25 +12870,29 @@ var parseCardsText = {
 			"cardImage": "LOEA04_25.png",
 			"cost": 8,
 			"fr": {
-				"name": "Statue vengeresse"
+				"name": "Statue vengeresse",
+				"text": "Inflige 2 points de dégâts à tous les adversaires à la fin de votre tour."
 			},
 			"health": 9,
 			"id": "LOEA04_25",
 			"name": "Seething Statue",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "At the end of your turn, deal 2 damage to all enemies.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA07_3.png",
 			"cost": 4,
 			"fr": {
-				"name": "CASSE-TÊTE"
+				"name": "CASSE-TÊTE",
+				"text": "Inflige $5 |4(point,points) de dégâts à un adversaire aléatoire. Gagne 5 points d’armure."
 			},
 			"id": "BRMA07_3",
 			"name": "TIME FOR SMASH",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Deal $5 damage to a random enemy. Gain 5 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -11542,24 +12901,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Châtiment sacré"
+				"name": "Châtiment sacré",
+				"text": "Inflige $2 |4(point,points) de dégâts."
 			},
 			"id": "CS1_130",
 			"name": "Holy Smite",
 			"playerClass": "Priest",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $2 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KAR_095e.png",
 			"fr": {
-				"name": "Bien nourri"
+				"name": "Bien nourri",
+				"text": "+1/+1."
 			},
 			"id": "KAR_095e",
 			"name": "Well Fed",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -11567,13 +12930,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_03.png",
 			"cost": 3,
 			"fr": {
-				"name": "Tour noire"
+				"name": "Tour noire",
+				"text": "<b>Attaque automatique_:</b> inflige 2 points de dégâts aux adversaires en face de ce serviteur."
 			},
 			"health": 6,
 			"id": "KAR_A10_03",
 			"name": "Black Rook",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Auto-Attack:</b> Deal 2 damage to the enemies opposite this minion.",
 			"type": "Minion"
 		},
 		{
@@ -11582,13 +12947,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Repentir"
+				"name": "Repentir",
+				"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, ses points de vie sont réduits à 1."
 			},
 			"id": "EX1_379",
 			"name": "Repentance",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> After your opponent plays a minion, reduce its Health to 1.",
 			"type": "Spell"
 		},
 		{
@@ -11598,7 +12965,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Zap-o-matic tournoyant"
+				"name": "Zap-o-matic tournoyant",
+				"text": "<b>Furie des vents</b>"
 			},
 			"health": 2,
 			"id": "GVG_037",
@@ -11606,53 +12974,62 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Windfury</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA07_03.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fuir la mine !"
+				"name": "Fuir la mine !",
+				"text": "Échappez aux troggs !"
 			},
 			"id": "LOEA07_03",
 			"name": "Flee the Mine!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Escape the Troggs!",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "TB_GiftExchange_Treasure_Spell.png",
 			"cost": 1,
 			"fr": {
-				"name": "Cadeau du Voile d’hiver volé"
+				"name": "Cadeau du Voile d’hiver volé",
+				"text": "<b>Découvre</b> un trésor aléatoire. Son coût est réduit."
 			},
 			"id": "TB_GiftExchange_Treasure_Spell",
 			"name": "Stolen Winter's Veil Gift",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Discover</b> a random Treasure. Its cost is reduced.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_222o.png",
 			"fr": {
-				"name": "Puissance de Hurlevent"
+				"name": "Puissance de Hurlevent",
+				"text": "A +1/+1."
 			},
 			"id": "CS2_222o",
 			"name": "Might of Stormwind",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "Has +1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_MechWar_Boss2_HeroPower.png",
 			"cost": 2,
 			"fr": {
-				"name": "Ro’Boum junior"
+				"name": "Ro’Boum junior",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 2 points de dégâts répartis de façon aléatoire entre tous les adversaires."
 			},
 			"id": "TB_MechWar_Boss2_HeroPower",
 			"name": "Boom Bot Jr.",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nDeal 2 damage randomly split among all enemies.",
 			"type": "Hero_power"
 		},
 		{
@@ -11662,7 +13039,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Cliquetteur perce-vrille"
+				"name": "Cliquetteur perce-vrille",
+				"text": "<b>Cri de guerre_:</b> donne +2/+2 à un Méca allié."
 			},
 			"health": 5,
 			"id": "GVG_055",
@@ -11670,6 +13048,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Give a friendly Mech +2/+2.",
 			"type": "Minion"
 		},
 		{
@@ -11679,7 +13058,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Golem totémique"
+				"name": "Golem totémique",
+				"text": "<b>Surcharge :</b> (1)"
 			},
 			"health": 4,
 			"id": "AT_052",
@@ -11688,19 +13068,22 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Overload:</b> (1).",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_023.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy All Heroes"
+				"name": "Destroy All Heroes",
+				"text": "Destroy all heroes."
 			},
 			"id": "XXX_023",
 			"name": "Destroy All Heroes",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Destroy all heroes.",
 			"type": "Spell"
 		},
 		{
@@ -11710,7 +13093,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Dromadaire du désert"
+				"name": "Dromadaire du désert",
+				"text": "<b>Cri de guerre :</b> place un serviteur à 1 cristal de mana de chaque deck sur le champ de bataille."
 			},
 			"health": 4,
 			"id": "LOE_020",
@@ -11718,19 +13102,22 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> Put a 1-Cost minion from each deck into the battlefield.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_049.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy all Mana"
+				"name": "Destroy all Mana",
+				"text": "Destroy all of a player's Mana Crystals."
 			},
 			"id": "XXX_049",
 			"name": "Destroy all Mana",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Destroy all of a player's Mana Crystals.",
 			"type": "Spell"
 		},
 		{
@@ -11739,7 +13126,8 @@ var parseCardsText = {
 			"cardImage": "OG_319.png",
 			"cost": 7,
 			"fr": {
-				"name": "Empereur jumeau Vek’nilash"
+				"name": "Empereur jumeau Vek’nilash",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 6,
 			"id": "OG_319",
@@ -11747,6 +13135,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -11756,7 +13145,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Bondisseur dent-de-métal"
+				"name": "Bondisseur dent-de-métal",
+				"text": "<b>Cri de guerre_:</b> donne +2_ATQ à vos autres Méca."
 			},
 			"health": 3,
 			"id": "GVG_048",
@@ -11764,6 +13154,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Give your other Mechs +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -11783,12 +13174,14 @@ var parseCardsText = {
 		{
 			"cardImage": "TB_CoOpv3_BOSSe.png",
 			"fr": {
-				"name": "POURQUOI VOUS NE MOUREZ PAS ?"
+				"name": "POURQUOI VOUS NE MOUREZ PAS ?",
+				"text": "Maintenant, il est VRAIMENT en colère…"
 			},
 			"id": "TB_CoOpv3_BOSSe",
 			"name": "WHY WON'T YOU DIE!?",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Now he's REALLY mad....",
 			"type": "Enchantment"
 		},
 		{
@@ -11807,23 +13200,27 @@ var parseCardsText = {
 			"cardImage": "LOEA09_9.png",
 			"cost": 1,
 			"fr": {
-				"name": "Répulsif à nagas"
+				"name": "Répulsif à nagas",
+				"text": "Détruit tous les nagas affamés."
 			},
 			"id": "LOEA09_9",
 			"name": "Naga Repellent",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Destroy all Hungry Naga.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA01_11he.png",
 			"fr": {
-				"name": "Mode héroïque"
+				"name": "Mode héroïque",
+				"text": "+3/+3 si Phaerix contrôle la baguette !"
 			},
 			"id": "LOEA01_11he",
 			"name": "Heroic Mode",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "+3/+3 if Phaerix controls the Rod.",
 			"type": "Enchantment"
 		},
 		{
@@ -11833,7 +13230,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Jongleur de flammes"
+				"name": "Jongleur de flammes",
+				"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à un adversaire aléatoire."
 			},
 			"health": 3,
 			"id": "AT_094",
@@ -11841,19 +13239,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Deal 1 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_049.png",
 			"cost": 2,
 			"fr": {
-				"name": "Appel totémique"
+				"name": "Appel totémique",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un totem aléatoire."
 			},
 			"id": "CS2_049",
 			"name": "Totemic Call",
 			"playerClass": "Shaman",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Hero Power</b>\nSummon a random Totem.",
 			"type": "Hero_power"
 		},
 		{
@@ -11877,7 +13278,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Robot de soins antique"
+				"name": "Robot de soins antique",
+				"text": "<b>Cri de guerre :</b> rend 8 PV à votre héros."
 			},
 			"health": 3,
 			"id": "GVG_069",
@@ -11885,6 +13287,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Restore 8 Health to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -11894,7 +13297,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Ombre de Naxxramas"
+				"name": "Ombre de Naxxramas",
+				"text": "<b>Camouflage</b>\nGagne +1/+1 au début de votre tour."
 			},
 			"health": 2,
 			"id": "FP1_005",
@@ -11902,6 +13306,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Naxx",
+			"text": "<b>Stealth.</b> At the start of your turn, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -11920,12 +13325,14 @@ var parseCardsText = {
 			"cardImage": "EX1_573b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Leçon de Shan’do"
+				"name": "Leçon de Shan’do",
+				"text": "Invoque deux tréants 2/2 avec <b>Provocation</b>."
 			},
 			"id": "EX1_573b",
 			"name": "Shan'do's Lesson",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Summon two 2/2 Treants with <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -11933,13 +13340,15 @@ var parseCardsText = {
 			"cardImage": "TB_FactionWar_Herald.png",
 			"cost": 1,
 			"fr": {
-				"name": "Hérold"
+				"name": "Hérold",
+				"text": "<b>Râle d’agonie_:</b> inflige 1_à_4_points de dégâts à un adversaire aléatoire."
 			},
 			"health": 1,
 			"id": "TB_FactionWar_Herald",
 			"name": "Herold",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> Deal 1-4 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -11947,13 +13356,15 @@ var parseCardsText = {
 			"cardImage": "LOEA07_24.png",
 			"cost": 1,
 			"fr": {
-				"name": "Leurre à pointes"
+				"name": "Leurre à pointes",
+				"text": "<b>Provocation</b>\nNe peut pas attaquer."
 			},
 			"health": 6,
 			"id": "LOEA07_24",
 			"name": "Spiked Decoy",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Taunt</b>\nCan't attack.",
 			"type": "Minion"
 		},
 		{
@@ -11963,7 +13374,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Crabe affamé"
+				"name": "Crabe affamé",
+				"text": "<b>Cri de guerre :</b> détruit un murloc et gagne +2/+2."
 			},
 			"health": 2,
 			"id": "NEW1_017",
@@ -11971,6 +13383,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Destroy a Murloc and gain +2/+2.",
 			"type": "Minion"
 		},
 		{
@@ -11980,7 +13393,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Yéti mécanique"
+				"name": "Yéti mécanique",
+				"text": "<b>Râle d’agonie :</b> donne une <b>Pièce détachée</b> à chaque joueur."
 			},
 			"health": 5,
 			"id": "GVG_078",
@@ -11988,18 +13402,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Deathrattle:</b> Give each player a <b>Spare Part.</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA10_3H.png",
 			"cost": 0,
 			"fr": {
-				"name": "La colonie"
+				"name": "La colonie",
+				"text": "<b>Pouvoir héroïque</b>\nConfère +1 PV à tous les œufs corrompus, puis en invoque un."
 			},
 			"id": "BRMA10_3H",
 			"name": "The Rookery",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nGive all Corrupted Eggs +1 Health, then summon one.",
 			"type": "Hero_power"
 		},
 		{
@@ -12031,12 +13448,14 @@ var parseCardsText = {
 			"cardImage": "LOEA04_02h.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fuyez !"
+				"name": "Fuyez !",
+				"text": "Affrontez de nouveaux obstacles !"
 			},
 			"id": "LOEA04_02h",
 			"name": "Escape!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Encounter new obstacles!",
 			"type": "Hero_power"
 		},
 		{
@@ -12044,7 +13463,8 @@ var parseCardsText = {
 			"cardImage": "CRED_21.png",
 			"cost": 1,
 			"fr": {
-				"name": "Bryan Chang"
+				"name": "Bryan Chang",
+				"text": "<b>Gourmet :</b> rend tous les serviteurs comestibles."
 			},
 			"health": 3,
 			"id": "CRED_21",
@@ -12052,29 +13472,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Foodie:</b> Make all minions edible.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KAR_A02_13H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Vous êtes notre invité"
+				"name": "Vous êtes notre invité",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux assiettes 1/1."
 			},
 			"id": "KAR_A02_13H",
 			"name": "Be Our Guest",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nSummon two 1/1 Plates.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "FP1_023e.png",
 			"fr": {
-				"name": "Puissance de la ziggourat"
+				"name": "Puissance de la ziggourat",
+				"text": "+3 PV."
 			},
 			"id": "FP1_023e",
 			"name": "Power of the Ziggurat",
 			"playerClass": "Priest",
 			"set": "Naxx",
+			"text": "+3 Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -12082,13 +13507,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_03H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Fourchette"
+				"name": "Fourchette",
+				"text": "Les assiettes ont <b>Charge</b>."
 			},
 			"health": 3,
 			"id": "KAR_A02_03H",
 			"name": "Fork",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Plates have <b>Charge</b>.",
 			"type": "Minion"
 		},
 		{
@@ -12096,13 +13523,15 @@ var parseCardsText = {
 			"cardImage": "BRMA02_2t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Spectateur sombrefer"
+				"name": "Spectateur sombrefer",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 1,
 			"id": "BRMA02_2t",
 			"name": "Dark Iron Spectator",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -12111,7 +13540,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Encourageur 3000"
+				"name": "Encourageur 3000",
+				"text": "À la fin de votre tour, confère +1/+1 à un serviteur aléatoire."
 			},
 			"health": 4,
 			"id": "Mekka3",
@@ -12119,18 +13549,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Promo",
+			"text": "At the end of your turn, give a random minion +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_14.png",
 			"cost": 0,
 			"fr": {
-				"name": "Pipe de Khadgar"
+				"name": "Pipe de Khadgar",
+				"text": "Place un sort aléatoire dans la main de chaque joueur. Le vôtre coûte (0) |4(cristal,cristaux) de mana."
 			},
 			"id": "LOEA16_14",
 			"name": "Khadgar's Pipe",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Put a random spell into each player's hand.  Yours costs (0).",
 			"type": "Spell"
 		},
 		{
@@ -12138,7 +13571,8 @@ var parseCardsText = {
 			"cardImage": "CRED_32.png",
 			"cost": 2,
 			"fr": {
-				"name": "Jerry Mascho"
+				"name": "Jerry Mascho",
+				"text": "Inflige 1 point de dégâts au début de votre tour. Si cette carte est dorée, inflige à la place 1 point de dégâts à la fin de votre tour. BLAGUE HAN SOLO."
 			},
 			"health": 2,
 			"id": "CRED_32",
@@ -12146,6 +13580,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "At the start of your turn, deal 1 damage. If this card is golden, deal 1 damage at the end of your turn instead. THIS IS A HAN SOLO JOKE.",
 			"type": "Minion"
 		},
 		{
@@ -12167,13 +13602,15 @@ var parseCardsText = {
 			"cardImage": "TB_SPT_Minion2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Étendard de bataille"
+				"name": "Étendard de bataille",
+				"text": "Les serviteurs adjacents ont +2 ATQ."
 			},
 			"health": 2,
 			"id": "TB_SPT_Minion2",
 			"name": "Battle Standard",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Adjacent minions have +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -12181,7 +13618,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_12.png",
 			"cost": 8,
 			"fr": {
-				"name": "Le Recousu"
+				"name": "Le Recousu",
+				"text": "<b>Cri de guerre :</b> détruit un serviteur adverse aléatoire."
 			},
 			"health": 8,
 			"id": "TB_KTRAF_12",
@@ -12189,6 +13627,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "<b>Battlecry:</b> Destroy a random enemy minion.",
 			"type": "Minion"
 		},
 		{
@@ -12196,13 +13635,15 @@ var parseCardsText = {
 			"cardImage": "LOE_016t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Rocher"
+				"name": "Rocher",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 6,
 			"id": "LOE_016t",
 			"name": "Rock",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -12220,12 +13661,14 @@ var parseCardsText = {
 			"cardImage": "NAX14_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Souffle de givre"
+				"name": "Souffle de givre",
+				"text": "<b>Pouvoir héroïque</b>\nDétruit tous les serviteurs\n adverses qui ne sont pas <b>gelés</b>."
 			},
 			"id": "NAX14_02",
 			"name": "Frost Breath",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDestroy all enemy minions that aren't <b>Frozen</b>.",
 			"type": "Hero_power"
 		},
 		{
@@ -12247,12 +13690,14 @@ var parseCardsText = {
 			"cardImage": "BRMA13_4H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Magie sauvage"
+				"name": "Magie sauvage",
+				"text": "<b>Pouvoir héroïque</b>\nPlace un sort aléatoire de la classe de votre adversaire dans votre main."
 			},
 			"id": "BRMA13_4H",
 			"name": "Wild Magic",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand.",
 			"type": "Hero_power"
 		},
 		{
@@ -12260,7 +13705,8 @@ var parseCardsText = {
 			"cardImage": "NEW1_009.png",
 			"cost": 1,
 			"fr": {
-				"name": "Totem de soins"
+				"name": "Totem de soins",
+				"text": "À la fin de votre tour, rend 1 point de vie à tous vos serviteurs."
 			},
 			"health": 2,
 			"id": "NEW1_009",
@@ -12268,18 +13714,21 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "At the end of your turn, restore 1 Health to all friendly minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_102_H1_AT_132.png",
 			"cost": 2,
 			"fr": {
-				"name": "Défense stoïque"
+				"name": "Défense stoïque",
+				"text": "<b>Pouvoir héroïque</b>\nGagne 4 points d’armure."
 			},
 			"id": "CS2_102_H1_AT_132",
 			"name": "Tank Up!",
 			"playerClass": "Warrior",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nGain 4 Armor.",
 			"type": "Hero_power"
 		},
 		{
@@ -12289,7 +13738,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Ysera"
+				"name": "Ysera",
+				"text": "À la fin de votre tour, ajoute une carte Rêve dans votre main."
 			},
 			"health": 12,
 			"id": "EX1_572",
@@ -12297,6 +13747,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "At the end of your turn, add a Dream Card to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -12306,7 +13757,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Pilleur de tombes"
+				"name": "Pilleur de tombes",
+				"text": "<b>Râle d’agonie :</b> ajoute une carte La pièce dans votre main."
 			},
 			"health": 4,
 			"id": "LOE_012",
@@ -12314,6 +13766,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Deathrattle:</b> Add a Coin to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -12323,7 +13776,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Magnataure alpha"
+				"name": "Magnataure alpha",
+				"text": "Inflige également des dégâts aux serviteurs adjacents de celui qu’il attaque."
 			},
 			"health": 3,
 			"id": "AT_067",
@@ -12331,28 +13785,33 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Also damages the minions next to whomever\nhe attacks.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "PART_006a.png",
 			"fr": {
-				"name": "Inversion"
+				"name": "Inversion",
+				"text": "L’Attaque et la Vie ont été échangées par l’inverseur."
 			},
 			"id": "PART_006a",
 			"name": "Switched",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Attack and Health have been swapped by Reversing Switch.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "AT_045e.png",
 			"fr": {
-				"name": "Brume surpuissante"
+				"name": "Brume surpuissante",
+				"text": "+1/+1."
 			},
 			"id": "AT_045e",
 			"name": "Empowering Mist",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -12362,7 +13821,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Hallazèle l’Élevé"
+				"name": "Hallazèle l’Élevé",
+				"text": "Chaque fois que vos sorts infligent des dégâts, rend l’équivalent sous forme de PV à votre héros."
 			},
 			"health": 6,
 			"id": "OG_209",
@@ -12370,18 +13830,21 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "Whenever your spells deal damage, restore that much Health to your hero.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_09_05heroic.png",
 			"cost": 4,
 			"fr": {
-				"name": "Invocation de Kil’rek"
+				"name": "Invocation de Kil’rek",
+				"text": "Invoque Kil’rek."
 			},
 			"id": "KARA_09_05heroic",
 			"name": "Summon Kil'rek",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon Kil'rek.",
 			"type": "Spell"
 		},
 		{
@@ -12403,7 +13866,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 12,
 			"fr": {
-				"name": "Géant arcanique"
+				"name": "Géant arcanique",
+				"text": "Coûte (1) |4(cristal,cristaux) de moins pour chaque sort que vous lancez pendant cette partie."
 			},
 			"health": 8,
 			"id": "KAR_711",
@@ -12411,29 +13875,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Kara",
+			"text": "[x]Costs (1) less for each spell\nyou've cast this game.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA09_3c.png",
 			"cost": 0,
 			"fr": {
-				"name": "Faim"
+				"name": "Faim",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un naga affamé 2/1."
 			},
 			"id": "LOEA09_3c",
 			"name": "Getting Hungry",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nSummon a 2/1 Hungry Naga.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "NAX13_03e.png",
 			"fr": {
-				"name": "État de supercharge"
+				"name": "État de supercharge",
+				"text": "+2 PV."
 			},
 			"id": "NAX13_03e",
 			"name": "Supercharged",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "+2 Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -12443,7 +13912,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Client sinistre"
+				"name": "Client sinistre",
+				"text": "Invoque un autre client sinistre chaque fois que ce serviteur survit aux dégâts qu’il subit."
 			},
 			"health": 3,
 			"id": "BRM_019",
@@ -12451,6 +13921,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "Whenever this minion survives damage, summon another Grim Patron.",
 			"type": "Minion"
 		},
 		{
@@ -12460,7 +13931,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Élémentaire grondant"
+				"name": "Élémentaire grondant",
+				"text": "Après avoir joué un serviteur avec <b>Cri de guerre</b>, inflige\n2 points de dégâts à un adversaire aléatoire."
 			},
 			"health": 6,
 			"id": "LOE_016",
@@ -12468,6 +13940,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "After you play a <b>Battlecry</b> minion, deal 2 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -12477,7 +13950,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Drake azur"
+				"name": "Drake azur",
+				"text": "<b>Dégâts des sorts : +1</b>.\n<b>Cri de guerre :</b> vous piochez une carte."
 			},
 			"health": 4,
 			"id": "EX1_284",
@@ -12486,18 +13960,21 @@ var parseCardsText = {
 			"rarity": "Rare",
 			"set": "Expert1",
 			"spellDamage": 1,
+			"text": "<b>Spell Damage +1</b>. <b>Battlecry:</b> Draw a card.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA11_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Essence des Rouges"
+				"name": "Essence des Rouges",
+				"text": "<b>Pouvoir héroïque</b>\nChaque joueur pioche 2 cartes."
 			},
 			"id": "BRMA11_2",
 			"name": "Essence of the Red",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nEach player draws 2 cards.",
 			"type": "Hero_power"
 		},
 		{
@@ -12518,23 +13995,27 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_HP_RAF4.png",
 			"cost": 2,
 			"fr": {
-				"name": "Deuxième morceau du bâton"
+				"name": "Deuxième morceau du bâton",
+				"text": "Ajoute une carte épique aléatoire dans votre main. Elle coûte (3) cristaux de moins."
 			},
 			"id": "TB_KTRAF_HP_RAF4",
 			"name": "Staff, Two Pieces",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Add a random epic card to your hand. It costs (3) less.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "NEW1_012o.png",
 			"fr": {
-				"name": "Gorgé de mana"
+				"name": "Gorgé de mana",
+				"text": "Attaque augmentée."
 			},
 			"id": "NEW1_012o",
 			"name": "Mana Gorged",
 			"playerClass": "Mage",
 			"set": "Expert1",
+			"text": "Increased attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -12555,12 +14036,14 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 3,
 			"fr": {
-				"name": "Lame runique"
+				"name": "Lame runique",
+				"text": "A +3 ATQ si les autres cavaliers sont morts."
 			},
 			"id": "NAX9_05",
 			"name": "Runeblade",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Has +3 Attack if the other Horsemen are dead.",
 			"type": "Weapon"
 		},
 		{
@@ -12582,7 +14065,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Prêtresse d’Élune"
+				"name": "Prêtresse d’Élune",
+				"text": "<b>Cri de guerre :</b> rend 4 points de vie à votre héros."
 			},
 			"health": 4,
 			"id": "EX1_583",
@@ -12590,19 +14074,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Restore 4 Health to your hero.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TU4c_004.png",
 			"cost": 2,
 			"fr": {
-				"name": "Piétinement"
+				"name": "Piétinement",
+				"text": "Inflige 2 points de dégâts à tous les adversaires."
 			},
 			"id": "TU4c_004",
 			"name": "Stomp",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Deal 2 damage to all enemies.",
 			"type": "Spell"
 		},
 		{
@@ -12611,13 +14098,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Sombre marché"
+				"name": "Sombre marché",
+				"text": "Détruit 2 serviteurs adverses aléatoires. Vous vous défaussez de\n2 cartes aléatoires."
 			},
 			"id": "AT_025",
 			"name": "Dark Bargain",
 			"playerClass": "Warlock",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Destroy 2 random enemy minions. Discard 2 random cards.",
 			"type": "Spell"
 		},
 		{
@@ -12644,7 +14133,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Maîtresse de Douleur"
+				"name": "Maîtresse de Douleur",
+				"text": "Chaque fois que ce serviteur inflige des dégâts, rend l’équivalent sous forme de PV à votre héros."
 			},
 			"health": 4,
 			"id": "GVG_018",
@@ -12652,6 +14142,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Whenever this minion deals damage, restore that much Health to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -12661,7 +14152,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Méca-téléporteur"
+				"name": "Méca-téléporteur",
+				"text": "Vos Méca coûtent (1) |4(cristal,cristaux) de moins."
 			},
 			"health": 3,
 			"id": "GVG_006",
@@ -12669,40 +14161,47 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Your Mechs cost (1) less.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_145o.png",
 			"fr": {
-				"name": "Préparation"
+				"name": "Préparation",
+				"text": "Le prochain sort que vous lancez pendant ce tour coûte (3) cristaux de moins."
 			},
 			"id": "EX1_145o",
 			"name": "Preparation",
 			"playerClass": "Rogue",
 			"set": "Expert1",
+			"text": "The next spell you cast this turn costs (3) less.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_PickYourFate_5.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin : sorts"
+				"name": "Destin : sorts",
+				"text": "Les sorts coûtent (1) |4(cristal,cristaux) de moins."
 			},
 			"id": "TB_PickYourFate_5",
 			"name": "Fate: Spells",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Spells cost (1) less.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NEW1_036e2.png",
 			"fr": {
-				"name": "Cri de commandement"
+				"name": "Cri de commandement",
+				"text": "Les points de vie de vos serviteurs ne peuvent pas passer en dessous de 1 ce tour-ci."
 			},
 			"id": "NEW1_036e2",
 			"name": "Commanding Shout",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "Your minions can't be reduced below 1 Health this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -12711,35 +14210,41 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Force de la nature"
+				"name": "Force de la nature",
+				"text": "Invoque trois tréants 2/2."
 			},
 			"id": "EX1_571",
 			"name": "Force of Nature",
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Summon three 2/2 Treants.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_019e.png",
 			"fr": {
-				"name": "Bénédiction du clerc"
+				"name": "Bénédiction du clerc",
+				"text": "+1/+1."
 			},
 			"id": "EX1_019e",
 			"name": "Cleric's Blessing",
 			"playerClass": "Priest",
 			"set": "Core",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "AT_040e.png",
 			"fr": {
-				"name": "Âme sœur"
+				"name": "Âme sœur",
+				"text": "+3 PV."
 			},
 			"id": "AT_040e",
 			"name": "Kindred Spirit",
 			"playerClass": "Druid",
 			"set": "Tgt",
+			"text": "+3 Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -12758,12 +14263,14 @@ var parseCardsText = {
 			"cardImage": "OG_080d.png",
 			"cost": 1,
 			"fr": {
-				"name": "Toxine d’églantine"
+				"name": "Toxine d’églantine",
+				"text": "Confère +3 ATQ à un serviteur."
 			},
 			"id": "OG_080d",
 			"name": "Briarthorn Toxin",
 			"playerClass": "Rogue",
 			"set": "Og",
+			"text": "Give a minion +3 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -12771,13 +14278,15 @@ var parseCardsText = {
 			"cardImage": "KARA_13_20.png",
 			"cost": 3,
 			"fr": {
-				"name": "Élémentaire de fête"
+				"name": "Élémentaire de fête",
+				"text": "<b>Provocation.</b>\nSe déplace toujours en groupe_!"
 			},
 			"health": 2,
 			"id": "KARA_13_20",
 			"name": "Party Elemental",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Taunt.\n</b> Comes with a party!",
 			"type": "Minion"
 		},
 		{
@@ -12787,7 +14296,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Régisseur du Colisée"
+				"name": "Régisseur du Colisée",
+				"text": "<b>Exaltation :</b> renvoie ce serviteur dans votre main."
 			},
 			"health": 5,
 			"id": "AT_110",
@@ -12795,6 +14305,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Return this minion to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -12804,7 +14315,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Drake du Crépuscule"
+				"name": "Drake du Crépuscule",
+				"text": "<b>Cri de guerre :</b> gagne +1 PV pour chaque carte dans votre main."
 			},
 			"health": 1,
 			"id": "EX1_043",
@@ -12812,6 +14324,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Gain +1 Health for each card in your hand.",
 			"type": "Minion"
 		},
 		{
@@ -12836,7 +14349,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Le Chevalier noir"
+				"name": "Le Chevalier noir",
+				"text": "<b>Cri de guerre :</b> détruit un serviteur adverse avec <b>Provocation</b>."
 			},
 			"health": 5,
 			"id": "EX1_002",
@@ -12844,6 +14358,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Destroy an enemy minion with <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -12853,7 +14368,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Gorillobot A-3"
+				"name": "Gorillobot A-3",
+				"text": "<b>Cri de guerre :</b> si vous contrôlez un autre Méca, <b>découvre</b> un nouveau Méca."
 			},
 			"health": 4,
 			"id": "LOE_039",
@@ -12861,18 +14377,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> If you control another Mech, <b>Discover</b> a Mech.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA14_4H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Activer Toxitron"
+				"name": "Activer Toxitron",
+				"text": "<b>Pouvoir héroïque</b>\nActive Toxitron !"
 			},
 			"id": "BRMA14_4H",
 			"name": "Activate Toxitron",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate Toxitron!",
 			"type": "Hero_power"
 		},
 		{
@@ -12880,24 +14399,28 @@ var parseCardsText = {
 			"cardImage": "NAX6_03t.png",
 			"cost": 0,
 			"fr": {
-				"name": "Spore"
+				"name": "Spore",
+				"text": "<b>Râle d’agonie :</b> donne +8 ATQ à tous les serviteurs adverses."
 			},
 			"health": 1,
 			"id": "NAX6_03t",
 			"name": "Spore",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Give all enemy minions +8 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_GP_01e_v2.png",
 			"fr": {
-				"name": "Camouflage de la tour des Ombres"
+				"name": "Camouflage de la tour des Ombres",
+				"text": "<b>Camouflage</b>."
 			},
 			"id": "TB_GP_01e_v2",
 			"name": "Shadow Tower Stealth",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Stealth</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -12921,7 +14444,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Assassin patient"
+				"name": "Assassin patient",
+				"text": "<b>Camouflage</b>. Détruit tout serviteur blessé par ce serviteur."
 			},
 			"health": 1,
 			"id": "EX1_522",
@@ -12929,6 +14453,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Stealth</b>. Destroy any minion damaged by this minion.",
 			"type": "Minion"
 		},
 		{
@@ -12938,7 +14463,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Rampante hantée"
+				"name": "Rampante hantée",
+				"text": "<b>Râle d’agonie :</b> invoque deux araignées spectrales 1/1."
 			},
 			"health": 2,
 			"id": "FP1_002",
@@ -12946,6 +14472,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Summon two 1/1 Spectral Spiders.",
 			"type": "Minion"
 		},
 		{
@@ -12955,7 +14482,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Tête de Mimiron"
+				"name": "Tête de Mimiron",
+				"text": "Au début de votre tour, si vous avez au moins 3 Méca, les détruit tous pour former V-07-TR-0N."
 			},
 			"health": 5,
 			"id": "GVG_111",
@@ -12963,19 +14491,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "At the start of your turn, if you have at least 3 Mechs, destroy them all and form V-07-TR-0N.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_102.png",
 			"cost": 2,
 			"fr": {
-				"name": "Gain d’armure !"
+				"name": "Gain d’armure !",
+				"text": "<b>Pouvoir héroïque</b>\nConfère 2 points d’armure."
 			},
 			"id": "CS2_102",
 			"name": "Armor Up!",
 			"playerClass": "Warrior",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Hero Power</b>\nGain 2 Armor.",
 			"type": "Hero_power"
 		},
 		{
@@ -12986,7 +14517,8 @@ var parseCardsText = {
 			"cost": 6,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Harpie Furie-des-vents"
+				"name": "Harpie Furie-des-vents",
+				"text": "<b>Furie des vents</b>"
 			},
 			"health": 5,
 			"id": "EX1_033",
@@ -12994,6 +14526,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Windfury</b>",
 			"type": "Minion"
 		},
 		{
@@ -13003,7 +14536,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Aviana"
+				"name": "Aviana",
+				"text": "Vos serviteurs coûtent\n(1) |4(cristal,cristaux)."
 			},
 			"health": 5,
 			"id": "AT_045",
@@ -13011,17 +14545,20 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "Your minions cost (1).",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_254e.png",
 			"fr": {
-				"name": "Rassasié de secrets"
+				"name": "Rassasié de secrets",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "OG_254e",
 			"name": "Secretly Sated",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -13031,7 +14568,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Grunt loup-de-givre"
+				"name": "Grunt loup-de-givre",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "CS2_121",
@@ -13039,30 +14577,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_104e.png",
 			"fr": {
-				"name": "Ombre étreinte"
+				"name": "Ombre étreinte",
+				"text": "Vos effets de soins infligent des dégâts."
 			},
 			"id": "OG_104e",
 			"name": "Embracing the Shadow",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Your healing effects are dealing damage.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TU4c_008.png",
 			"cost": 3,
 			"fr": {
-				"name": "Volonté de Mukla"
+				"name": "Volonté de Mukla",
+				"text": "Rend 8 points de vie."
 			},
 			"id": "TU4c_008",
 			"name": "Will of Mukla",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Restore 8 Health.",
 			"type": "Spell"
 		},
 		{
@@ -13072,7 +14615,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Héros défunt"
+				"name": "Héros défunt",
+				"text": "Votre pouvoir héroïque inflige 1 point de dégâts supplémentaire."
 			},
 			"health": 2,
 			"id": "AT_003",
@@ -13080,6 +14624,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Your Hero Power deals 1 extra damage.",
 			"type": "Minion"
 		},
 		{
@@ -13088,13 +14633,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Tir puissant"
+				"name": "Tir puissant",
+				"text": "Inflige $2 |4(point,points) de dégâts à un serviteur et aux serviteurs adjacents."
 			},
 			"id": "AT_056",
 			"name": "Powershot",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Deal $2 damage to a minion and the minions next to it.",
 			"type": "Spell"
 		},
 		{
@@ -13103,13 +14650,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Heurt de bouclier"
+				"name": "Heurt de bouclier",
+				"text": "Inflige 1 point de dégâts à un serviteur pour chaque point d’Armure que vous avez."
 			},
 			"id": "EX1_410",
 			"name": "Shield Slam",
 			"playerClass": "Warrior",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Deal 1 damage to a minion for each Armor you have.",
 			"type": "Spell"
 		},
 		{
@@ -13119,7 +14668,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Gardien de cobalt"
+				"name": "Gardien de cobalt",
+				"text": "Chaque fois que vous invoquez un Méca, gagne <b>Bouclier divin</b>."
 			},
 			"health": 3,
 			"id": "GVG_062",
@@ -13127,6 +14677,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Whenever you summon a Mech, gain <b>Divine Shield</b>.",
 			"type": "Minion"
 		},
 		{
@@ -13146,13 +14697,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Colère divine"
+				"name": "Colère divine",
+				"text": "Vous piochez une carte et infligez des dégâts d’un montant égal à son coût."
 			},
 			"id": "EX1_365",
 			"name": "Holy Wrath",
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Draw a card and deal damage equal to its cost.",
 			"type": "Spell"
 		},
 		{
@@ -13162,7 +14715,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Ancien frappé d’interdit"
+				"name": "Ancien frappé d’interdit",
+				"text": "<b>Cri de guerre :</b> dépense tous vos cristaux de mana. Gagne +1/+1 pour chaque cristal dépensé."
 			},
 			"health": 1,
 			"id": "OG_051",
@@ -13170,6 +14724,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Spend all your Mana. Gain +1/+1 for each mana spent.",
 			"type": "Minion"
 		},
 		{
@@ -13204,7 +14759,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Moroes"
+				"name": "Moroes",
+				"text": "<b>Camouflage</b>\nÀ la fin de votre tour, invoque un serveur_1/1."
 			},
 			"health": 1,
 			"id": "KAR_044",
@@ -13212,6 +14768,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Kara",
+			"text": "<b>Stealth</b>\nAt the end of your turn, summon a 1/1 Steward.",
 			"type": "Minion"
 		},
 		{
@@ -13221,7 +14778,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Cavalier d’Argent"
+				"name": "Cavalier d’Argent",
+				"text": "<b>Charge</b>\n<b>Bouclier divin</b>"
 			},
 			"health": 1,
 			"id": "AT_087",
@@ -13229,6 +14787,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Charge</b>\n<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -13238,7 +14797,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Prince voleur Rafaam"
+				"name": "Prince voleur Rafaam",
+				"text": "<b>Cri de guerre : découvre</b>\nun puissant artéfact."
 			},
 			"health": 8,
 			"id": "LOE_092",
@@ -13246,6 +14806,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "<b>Battlecry: Discover</b> a powerful Artifact.",
 			"type": "Minion"
 		},
 		{
@@ -13253,48 +14814,56 @@ var parseCardsText = {
 			"cardImage": "PART_007.png",
 			"cost": 1,
 			"fr": {
-				"name": "Lames tourbillonnantes"
+				"name": "Lames tourbillonnantes",
+				"text": "Donne +1 ATQ à un serviteur."
 			},
 			"id": "PART_007",
 			"name": "Whirling Blades",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Give a minion +1 Attack.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA02_06.png",
 			"cost": 0,
 			"fr": {
-				"name": "Vœu : plus de Vœux"
+				"name": "Vœu : plus de Vœux",
+				"text": "Gagne 2 Vœux."
 			},
 			"id": "LOEA02_06",
 			"name": "Wish for More Wishes",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Gain 2 Wishes.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS1h_001.png",
 			"cost": 2,
 			"fr": {
-				"name": "Soins inférieurs"
+				"name": "Soins inférieurs",
+				"text": "<b>Pouvoir héroïque</b>\nRend #2 PV."
 			},
 			"id": "CS1h_001",
 			"name": "Lesser Heal",
 			"playerClass": "Priest",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Hero Power</b>\nRestore #2 Health.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "OG_080ae.png",
 			"fr": {
-				"name": "Chardon sanglant"
+				"name": "Chardon sanglant",
+				"text": "Coûte (2) cristaux de moins."
 			},
 			"id": "OG_080ae",
 			"name": "Bloodthistle",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Costs (2) less.",
 			"type": "Enchantment"
 		},
 		{
@@ -13318,7 +14887,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Aspirant de Dalaran"
+				"name": "Aspirant de Dalaran",
+				"text": "<b>Exaltation :</b> vous gagnez <b>+1 aux dégâts des sorts</b>."
 			},
 			"health": 5,
 			"id": "AT_006",
@@ -13326,30 +14896,35 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Gain <b>Spell Damage +1</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOE_008H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Œil d’Hakkar"
+				"name": "Œil d’Hakkar",
+				"text": "Pioche un secret dans le deck de votre adversaire et le place sur le champ de bataille."
 			},
 			"id": "LOE_008H",
 			"name": "Eye of Hakkar",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Take a secret from your opponent's deck and put it into the battlefield.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_056.png",
 			"cost": 0,
 			"fr": {
-				"name": "Silence and Destroy All Minions"
+				"name": "Silence and Destroy All Minions",
+				"text": "Destroy all minions without triggering deathrattles."
 			},
 			"id": "XXX_056",
 			"name": "Silence and Destroy All Minions",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Destroy all minions without triggering deathrattles.",
 			"type": "Spell"
 		},
 		{
@@ -13357,12 +14932,14 @@ var parseCardsText = {
 			"cardImage": "PART_006.png",
 			"cost": 1,
 			"fr": {
-				"name": "Inverseur"
+				"name": "Inverseur",
+				"text": "Inverse l’Attaque et la Vie d’un serviteur."
 			},
 			"id": "PART_006",
 			"name": "Reversing Switch",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Swap a minion's Attack and Health.",
 			"type": "Spell"
 		},
 		{
@@ -13371,13 +14948,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Pacte sacrificiel"
+				"name": "Pacte sacrificiel",
+				"text": "Détruit un démon. Rend #5 PV à votre héros."
 			},
 			"id": "NEW1_003",
 			"name": "Sacrificial Pact",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Destroy a Demon. Restore #5 Health to your hero.",
 			"type": "Spell"
 		},
 		{
@@ -13398,7 +14977,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Colporteur éthérien"
+				"name": "Colporteur éthérien",
+				"text": "<b>Cri de guerre_:</b> réduit de (2) cristaux le coût des cartes d’autres classes dans votre main."
 			},
 			"health": 6,
 			"id": "KAR_070",
@@ -13406,6 +14986,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "[x]<b>Battlecry:</b> Reduce the Cost\nof cards in your hand from\nother classes by (2).",
 			"type": "Minion"
 		},
 		{
@@ -13428,12 +15009,14 @@ var parseCardsText = {
 			"cardImage": "KARA_00_04.png",
 			"cost": 2,
 			"fr": {
-				"name": "Génie"
+				"name": "Génie",
+				"text": "<b>Pouvoir héroïque</b>\nVous piochez 3 cartes."
 			},
 			"id": "KARA_00_04",
 			"name": "Brilliance",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nDraw 3 cards.",
 			"type": "Hero_power"
 		},
 		{
@@ -13452,13 +15035,15 @@ var parseCardsText = {
 			"cardImage": "BRM_010b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Forme de faucon-de-feu"
+				"name": "Forme de faucon-de-feu",
+				"text": "Se transforme en un serviteur 2/5."
 			},
 			"id": "BRM_010b",
 			"name": "Fire Hawk Form",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Transform into a 2/5 minion.",
 			"type": "Spell"
 		},
 		{
@@ -13468,7 +15053,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Araignée du garde-manger"
+				"name": "Araignée du garde-manger",
+				"text": "<b>Cri de guerre_:</b> invoque une araignée 1/3."
 			},
 			"health": 3,
 			"id": "KAR_030a",
@@ -13476,6 +15062,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Summon a\n1/3 Spider.",
 			"type": "Minion"
 		},
 		{
@@ -13499,7 +15086,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Portail d’invocation"
+				"name": "Portail d’invocation",
+				"text": "Vos serviteurs coûtent (2) cristaux de moins, mais jamais moins\nde (1)."
 			},
 			"health": 4,
 			"id": "EX1_315",
@@ -13507,18 +15095,21 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Your minions cost (2) less, but not less than (1).",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NEW1_008a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Connaissances anciennes"
+				"name": "Connaissances anciennes",
+				"text": "Vous piochez une carte."
 			},
 			"id": "NEW1_008a",
 			"name": "Ancient Teachings",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -13541,7 +15132,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Grouillant silithide"
+				"name": "Grouillant silithide",
+				"text": "Ne peut attaquer que si votre héros a attaqué pendant ce tour."
 			},
 			"health": 5,
 			"id": "OG_034",
@@ -13549,6 +15141,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Can only attack if your hero attacked this turn.",
 			"type": "Minion"
 		},
 		{
@@ -13574,13 +15167,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Feux follets funestes"
+				"name": "Feux follets funestes",
+				"text": "<b>Choix des armes :</b> invoque sept feux follets 1/1 ou donne +2/+2 à vos serviteurs."
 			},
 			"id": "OG_195",
 			"name": "Wisps of the Old Gods",
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Choose One -</b> Summon seven 1/1 Wisps; or Give your minions +2/+2.",
 			"type": "Spell"
 		},
 		{
@@ -13590,7 +15185,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Al’Akir, seigneur des Vents"
+				"name": "Al’Akir, seigneur des Vents",
+				"text": "<b>Furie des vents, Charge, Bouclier divin, Provocation</b>"
 			},
 			"health": 5,
 			"id": "NEW1_010",
@@ -13598,6 +15194,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Windfury, Charge, Divine Shield, Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -13621,7 +15218,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Savoir ancestral"
+				"name": "Savoir ancestral",
+				"text": "Vous piochez 2 cartes. <b>Surcharge :</b> (2)"
 			},
 			"id": "AT_053",
 			"name": "Ancestral Knowledge",
@@ -13629,17 +15227,20 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Draw 2 cards. <b>Overload:</b> (2).",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KAR_037t.png",
 			"fr": {
-				"name": "Secrets de Karazhan"
+				"name": "Secrets de Karazhan",
+				"text": "+1/+1 et <b>Provocation</b>."
 			},
 			"id": "KAR_037t",
 			"name": "Secrets of Karazhan",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+1/+1 and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -13650,7 +15251,8 @@ var parseCardsText = {
 			"cost": 5,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Forgeron malveillant"
+				"name": "Forgeron malveillant",
+				"text": "<b>Accès de rage :</b> votre arme a +2 ATQ."
 			},
 			"health": 6,
 			"id": "CS2_221",
@@ -13658,6 +15260,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Enrage:</b> Your weapon has +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -13666,13 +15269,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Pistage"
+				"name": "Pistage",
+				"text": "Affiche les trois cartes du dessus du deck. Vous en piochez une et vous vous défaussez des autres."
 			},
 			"id": "DS1_184",
 			"name": "Tracking",
 			"playerClass": "Hunter",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Look at the top three cards of your deck. Draw one and discard the others.",
 			"type": "Spell"
 		},
 		{
@@ -13681,25 +15286,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Explosion des Arcanes"
+				"name": "Explosion des Arcanes",
+				"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses."
 			},
 			"id": "CS2_025",
 			"name": "Arcane Explosion",
 			"playerClass": "Mage",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $1 damage to all enemy minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA02_04.png",
 			"cost": 0,
 			"fr": {
-				"name": "Vœu : vaillance"
+				"name": "Vœu : vaillance",
+				"text": "<b>Découvre</b> une carte à (4) |4(cristal,cristaux) de mana."
 			},
 			"id": "LOEA02_04",
 			"name": "Wish for Valor",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Discover</b> a (4)-Cost card.",
 			"type": "Spell"
 		},
 		{
@@ -13709,7 +15318,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Tirion Fordring"
+				"name": "Tirion Fordring",
+				"text": "<b>Bouclier divin</b>. <b>Provocation</b>. <b>Râle d’agonie :</b> vous équipe de Porte-cendres 5/3."
 			},
 			"health": 6,
 			"id": "EX1_383",
@@ -13717,6 +15327,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Divine Shield</b>. <b>Taunt</b>. <b>Deathrattle:</b> Equip a 5/3 Ashbringer.",
 			"type": "Minion"
 		},
 		{
@@ -13724,25 +15335,29 @@ var parseCardsText = {
 			"cardImage": "TBST_002.png",
 			"cost": 1,
 			"fr": {
-				"name": "Mage débutant"
+				"name": "Mage débutant",
+				"text": "À la fin de votre tour, inflige 1 point de dégâts à un serviteur adverse aléatoire."
 			},
 			"health": 1,
 			"id": "TBST_002",
 			"name": "OLDN3wb Mage",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "At the end of your turn, deal 1 damage to random enemy minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_625t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Pointe mentale"
+				"name": "Pointe mentale",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts."
 			},
 			"id": "EX1_625t",
 			"name": "Mind Spike",
 			"playerClass": "Priest",
 			"set": "Expert1",
+			"text": "<b>Hero Power</b>\nDeal $2 damage.",
 			"type": "Hero_power"
 		},
 		{
@@ -13751,13 +15366,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Baston"
+				"name": "Baston",
+				"text": "Détruit tous les serviteurs sauf un <i>(choisi au hasard)</i>."
 			},
 			"id": "EX1_407",
 			"name": "Brawl",
 			"playerClass": "Warrior",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Destroy all minions except one. <i>(chosen randomly)</i>",
 			"type": "Spell"
 		},
 		{
@@ -13767,7 +15384,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Fjola Plaie-lumineuse"
+				"name": "Fjola Plaie-lumineuse",
+				"text": "Chaque fois que <b>vous</b> ciblez ce serviteur avec un sort, gagne <b>Bouclier divin</b>."
 			},
 			"health": 4,
 			"id": "AT_129",
@@ -13775,6 +15393,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "Whenever <b>you</b> target this minion with a spell, gain <b>Divine Shield.</b>",
 			"type": "Minion"
 		},
 		{
@@ -13795,13 +15414,15 @@ var parseCardsText = {
 			"cardImage": "XXX_043.png",
 			"cost": 0,
 			"fr": {
-				"name": "Mill 30"
+				"name": "Mill 30",
+				"text": "Put 30 cards from a hero's deck into his graveyard."
 			},
 			"id": "XXX_043",
 			"name": "Mill 30",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Put 30 cards from a hero's deck into his graveyard.",
 			"type": "Spell"
 		},
 		{
@@ -13811,7 +15432,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Maîtresse du déguisement"
+				"name": "Maîtresse du déguisement",
+				"text": "<b>Cri de guerre :</b> confère <b>Camouflage</b> à un serviteur allié jusqu’à votre prochain tour."
 			},
 			"health": 4,
 			"id": "NEW1_014",
@@ -13819,18 +15441,21 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give a friendly minion <b>Stealth</b> until your next turn.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA05_3.png",
 			"cost": 4,
 			"fr": {
-				"name": "Bombe vivante"
+				"name": "Bombe vivante",
+				"text": "Choisissez un serviteur adverse. Inflige $5 |4(point,points) de dégâts à tous les adversaires s’il survit jusqu’à votre prochain tour."
 			},
 			"id": "BRMA05_3",
 			"name": "Living Bomb",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Choose an enemy minion. If it lives until your next turn, deal $5 damage to all enemies.",
 			"type": "Spell"
 		},
 		{
@@ -13841,7 +15466,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Long-voyant de Thrallmar"
+				"name": "Long-voyant de Thrallmar",
+				"text": "<b>Furie des vents</b>"
 			},
 			"health": 3,
 			"id": "EX1_021",
@@ -13849,6 +15475,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Windfury</b>",
 			"type": "Minion"
 		},
 		{
@@ -13858,7 +15485,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Maexxna"
+				"name": "Maexxna",
+				"text": "Détruit tout serviteur blessé par ce serviteur."
 			},
 			"health": 8,
 			"id": "FP1_010",
@@ -13866,17 +15494,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "Destroy any minion damaged by this minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_073e2.png",
 			"fr": {
-				"name": "Sang froid"
+				"name": "Sang froid",
+				"text": "+4 ATQ."
 			},
 			"id": "CS2_073e2",
 			"name": "Cold Blood",
 			"playerClass": "Rogue",
 			"set": "Expert1",
+			"text": "+4 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -13884,7 +15515,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_24.png",
 			"cost": 5,
 			"fr": {
-				"name": "Aileron-Géant"
+				"name": "Aileron-Géant",
+				"text": "À la fin de votre tour, vous piochez jusqu’à avoir autant de cartes que votre adversaire."
 			},
 			"health": 5,
 			"id": "LOEA16_24",
@@ -13892,6 +15524,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, draw until you have as many cards as your opponent.",
 			"type": "Minion"
 		},
 		{
@@ -13900,25 +15533,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Fusion démoniaque"
+				"name": "Fusion démoniaque",
+				"text": "Confère +3/+3 à un démon et un cristal de mana à votre adversaire."
 			},
 			"id": "AT_024",
 			"name": "Demonfuse",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Give a Demon +3/+3. Give your opponent a Mana Crystal.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_003.png",
 			"cost": 0,
 			"fr": {
-				"name": "Chambardement"
+				"name": "Chambardement",
+				"text": "Échange les mains des joueurs."
 			},
 			"id": "TB_CoOpv3_003",
 			"name": "Bamboozle",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Swap player's hands.",
 			"type": "Spell"
 		},
 		{
@@ -13937,12 +15574,14 @@ var parseCardsText = {
 			"cardImage": "LOEA07_29.png",
 			"cost": 1,
 			"fr": {
-				"name": "Lancer des rochers"
+				"name": "Lancer des rochers",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts à un serviteur adverse aléatoire."
 			},
 			"id": "LOEA07_29",
 			"name": "Throw Rocks",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\n Deal 3 damage to a random enemy minion.",
 			"type": "Hero_power"
 		},
 		{
@@ -13952,7 +15591,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Technicien de Brikabrok"
+				"name": "Technicien de Brikabrok",
+				"text": "<b>Cri de guerre :</b> si vous avez un Méca, gagne +1/+1 et ajoute une <b>Pièce détachée</b> dans votre main."
 			},
 			"health": 3,
 			"id": "GVG_102",
@@ -13960,6 +15600,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> If you have a Mech, gain +1/+1 and add a <b>Spare Part</b> to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -13967,13 +15608,15 @@ var parseCardsText = {
 			"cardImage": "TBST_001.png",
 			"cost": 1,
 			"fr": {
-				"name": "Tank débutant"
+				"name": "Tank débutant",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "TBST_001",
 			"name": "OLDN3wb Tank",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -13984,7 +15627,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Écuyère d’Argent"
+				"name": "Écuyère d’Argent",
+				"text": "<b>Bouclier divin</b>"
 			},
 			"health": 1,
 			"id": "EX1_008",
@@ -13992,6 +15636,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -14016,7 +15661,8 @@ var parseCardsText = {
 			"cardImage": "CRED_26.png",
 			"cost": 3,
 			"fr": {
-				"name": "Eric Del Priore"
+				"name": "Eric Del Priore",
+				"text": "A <b>Provocation</b> s’il est 3 heures du matin."
 			},
 			"health": 6,
 			"id": "CRED_26",
@@ -14024,6 +15670,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "Has <b>Taunt</b> if it's 3 AM.",
 			"type": "Minion"
 		},
 		{
@@ -14031,7 +15678,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_4.png",
 			"cost": 4,
 			"fr": {
-				"name": "Gothik le Moissonneur"
+				"name": "Gothik le Moissonneur",
+				"text": "<b>Râle d’agonie :</b> invoque un Gothik spectral pour votre adversaire."
 			},
 			"health": 4,
 			"id": "TB_KTRAF_4",
@@ -14039,17 +15687,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> Summon a Spectral Gothik for your opponent.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_223e.png",
 			"fr": {
-				"name": "Optimisme"
+				"name": "Optimisme",
+				"text": "+1/+2."
 			},
 			"id": "OG_223e",
 			"name": "Optimism",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -14059,7 +15710,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Initié zélé"
+				"name": "Initié zélé",
+				"text": "<b>Râle d’agonie :</b> confère +1/+1 à un serviteur allié aléatoire."
 			},
 			"health": 1,
 			"id": "OG_158",
@@ -14067,18 +15719,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Give a random friendly minion +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA09_2H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Enragé !"
+				"name": "Enragé !",
+				"text": "Donne +5 ATQ à votre héros pendant ce tour."
 			},
 			"id": "LOEA09_2H",
 			"name": "Enraged!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Give your hero +5 attack this turn.",
 			"type": "Hero_power"
 		},
 		{
@@ -14088,7 +15743,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Prêtresse de la Cabale"
+				"name": "Prêtresse de la Cabale",
+				"text": "<b>Cri de guerre :</b> prend le contrôle d’un serviteur adverse avec 2 en Attaque ou moins."
 			},
 			"health": 5,
 			"id": "EX1_091",
@@ -14096,6 +15752,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Take control of an enemy minion that has 2 or less Attack.",
 			"type": "Minion"
 		},
 		{
@@ -14104,24 +15761,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Guérison interdite"
+				"name": "Guérison interdite",
+				"text": "Dépense tout votre mana pour en rendre le double en points de vie."
 			},
 			"id": "OG_198",
 			"name": "Forbidden Healing",
 			"playerClass": "Paladin",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Spend all your Mana. Restore twice that much Health.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_103e.png",
 			"fr": {
-				"name": "Mrghlglhal"
+				"name": "Mrghlglhal",
+				"text": "+2 PV."
 			},
 			"id": "EX1_103e",
 			"name": "Mrghlglhal",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+2 Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -14131,7 +15792,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Le mandebrume"
+				"name": "Le mandebrume",
+				"text": "<b>Cri de guerre :</b> donne\n+1/+1 à tous les serviteurs dans votre main et votre deck."
 			},
 			"health": 4,
 			"id": "AT_054",
@@ -14139,6 +15801,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Give all minions in your hand and deck +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -14148,7 +15811,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Feugen"
+				"name": "Feugen",
+				"text": "<b>Râle d’agonie :</b> si Stalagg est aussi mort pendant cette partie, invoque Thaddius."
 			},
 			"health": 7,
 			"id": "FP1_015",
@@ -14156,6 +15820,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> If Stalagg also died this game, summon Thaddius.",
 			"type": "Minion"
 		},
 		{
@@ -14165,7 +15830,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Frissegueule"
+				"name": "Frissegueule",
+				"text": "<b>Provocation</b>. <b>Râle d’agonie_:</b> inflige 3_points de dégâts à tous les serviteurs si vous avez un Dragon en main."
 			},
 			"health": 6,
 			"id": "AT_123",
@@ -14173,6 +15839,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> If you're holding\na Dragon, deal 3 damage\nto all minions.",
 			"type": "Minion"
 		},
 		{
@@ -14180,24 +15847,28 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_05.png",
 			"cost": 3,
 			"fr": {
-				"name": "Fou blanc"
+				"name": "Fou blanc",
+				"text": "<b>Attaque automatique_:</b> rend 2_PV aux serviteurs adjacents."
 			},
 			"health": 6,
 			"id": "KAR_A10_05",
 			"name": "White Bishop",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Auto-Attack:</b> Restore 2 Health to adjacent minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRM_011t.png",
 			"fr": {
-				"name": "Horion de lave"
+				"name": "Horion de lave",
+				"text": "Les cartes que vous jouez pendant ce tour n’entraînent pas de <b>Surcharge</b>."
 			},
 			"id": "BRM_011t",
 			"name": "Lava Shock",
 			"playerClass": "Shaman",
 			"set": "Brm",
+			"text": "Cards you play this turn don't cause <b>Overload</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -14205,13 +15876,15 @@ var parseCardsText = {
 			"cardImage": "EX1_573t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Tréant"
+				"name": "Tréant",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "EX1_573t",
 			"name": "Treant",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -14221,7 +15894,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Rejeton des Ombres"
+				"name": "Rejeton des Ombres",
+				"text": "<b>Exaltation :</b> inflige 4 points de dégâts à chaque héros."
 			},
 			"health": 4,
 			"id": "AT_012",
@@ -14229,6 +15903,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Deal 4 damage to each hero.",
 			"type": "Minion"
 		},
 		{
@@ -14237,13 +15912,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Guerriers de sang"
+				"name": "Guerriers de sang",
+				"text": "Place une copie de chaque serviteur allié blessé dans votre main."
 			},
 			"id": "OG_276",
 			"name": "Blood Warriors",
 			"playerClass": "Warrior",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Add a copy of each damaged friendly minion to your hand.",
 			"type": "Spell"
 		},
 		{
@@ -14254,7 +15931,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Docteur vaudou"
+				"name": "Docteur vaudou",
+				"text": "<b>Cri de guerre :</b> rend 2 points de vie."
 			},
 			"health": 1,
 			"id": "EX1_011",
@@ -14262,6 +15940,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Restore 2 Health.",
 			"type": "Minion"
 		},
 		{
@@ -14271,7 +15950,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Clerc du Soleil brisé"
+				"name": "Clerc du Soleil brisé",
+				"text": "<b>Cri de guerre :</b> confère +1/+1 à un serviteur allié."
 			},
 			"health": 2,
 			"id": "EX1_019",
@@ -14279,6 +15959,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Give a friendly minion +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -14288,7 +15969,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Druidesse de la Flamme"
+				"name": "Druidesse de la Flamme",
+				"text": "<b>Choix des armes :</b> se transforme en un serviteur 5/2 ou en un serviteur 2/5."
 			},
 			"health": 2,
 			"id": "BRM_010",
@@ -14296,40 +15978,47 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "<b>Choose One</b> - Transform into a 5/2 minion; or a 2/5 minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_366e.png",
 			"fr": {
-				"name": "Justice rendue"
+				"name": "Justice rendue",
+				"text": "A +1/+1."
 			},
 			"id": "EX1_366e",
 			"name": "Justice Served",
 			"playerClass": "Paladin",
 			"set": "Expert1",
+			"text": "Has +1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "GVG_104a.png",
 			"fr": {
-				"name": "CADEAU BONUS"
+				"name": "CADEAU BONUS",
+				"text": "+2/+2."
 			},
 			"id": "GVG_104a",
 			"name": "HERE, TAKE BUFF.",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_ClassRandom_Warrior.png",
 			"cost": 0,
 			"fr": {
-				"name": "Deuxième classe : guerrier"
+				"name": "Deuxième classe : guerrier",
+				"text": "Ajoute des cartes de guerrier dans votre deck."
 			},
 			"id": "TB_ClassRandom_Warrior",
 			"name": "Second Class: Warrior",
 			"playerClass": "Warrior",
 			"set": "Tb",
+			"text": "Add Warrior cards to your deck.",
 			"type": "Spell"
 		},
 		{
@@ -14338,13 +16027,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Choix de Velen"
+				"name": "Choix de Velen",
+				"text": "Confère à un serviteur +2/+4 et <b>+1 aux dégâts des sorts</b>."
 			},
 			"id": "GVG_010",
 			"name": "Velen's Chosen",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Give a minion +2/+4 and <b>Spell Damage +1</b>.",
 			"type": "Spell"
 		},
 		{
@@ -14363,60 +16054,70 @@ var parseCardsText = {
 			"cardImage": "TB_Coopv3_102a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Secrets de l’ombre"
+				"name": "Secrets de l’ombre",
+				"text": "Chaque joueur pioche 2 cartes."
 			},
 			"id": "TB_Coopv3_102a",
 			"name": "Secrets of Shadow",
 			"playerClass": "Priest",
 			"set": "Tb",
+			"text": "Each player draws 2 cards.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_030.png",
 			"cost": 0,
 			"fr": {
-				"name": "Opponent Disconnect"
+				"name": "Opponent Disconnect",
+				"text": "Force your opponnet to disconnect."
 			},
 			"id": "XXX_030",
 			"name": "Opponent Disconnect",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Force your opponnet to disconnect.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_074e.png",
 			"fr": {
-				"name": "Poison mortel"
+				"name": "Poison mortel",
+				"text": "+2 ATQ."
 			},
 			"id": "CS2_074e",
 			"name": "Deadly Poison",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "+2 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA05_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Mana enflammé"
+				"name": "Mana enflammé",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 5 points de dégâts au héros adverse s’il lui reste des cristaux de mana inutilisés."
 			},
 			"id": "BRMA05_2",
 			"name": "Ignite Mana",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nDeal 5 damage to the enemy hero if they have any unspent Mana.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_178b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Déraciner"
+				"name": "Déraciner",
+				"text": "+5 ATQ."
 			},
 			"id": "EX1_178b",
 			"name": "Uproot",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "+5 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -14424,13 +16125,15 @@ var parseCardsText = {
 			"cardImage": "TBST_005.png",
 			"cost": 3,
 			"fr": {
-				"name": "Voleur JcJ"
+				"name": "Voleur JcJ",
+				"text": "<b>Camouflage</b>\nRécupère <b>Camouflage</b> quand le voleur JcJ détruit un serviteur."
 			},
 			"health": 6,
 			"id": "TBST_005",
 			"name": "OLDPvP Rogue",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Stealth</b>\nRegain <b>Stealth</b> when PvP Rogue kills a minion.",
 			"type": "Minion"
 		},
 		{
@@ -14438,7 +16141,8 @@ var parseCardsText = {
 			"cardImage": "CRED_36.png",
 			"cost": 6,
 			"fr": {
-				"name": "Mike Donais"
+				"name": "Mike Donais",
+				"text": "<b>Cri de guerre :</b> remplace tous les serviteurs sur le champ de bataille, dans les mains et les decks des deux joueurs par des serviteurs aléatoires."
 			},
 			"health": 8,
 			"id": "CRED_36",
@@ -14446,6 +16150,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Replace all minions in the battlefield, in both hands, and in both decks with random minions.",
 			"type": "Minion"
 		},
 		{
@@ -14453,47 +16158,55 @@ var parseCardsText = {
 			"cardImage": "KARA_08_02.png",
 			"cost": 2,
 			"fr": {
-				"name": "Rage du Néant"
+				"name": "Rage du Néant",
+				"text": "<b>Pouvoir héroïque</b>\nDonne +3 ATQ à votre héros pendant ce tour."
 			},
 			"id": "KARA_08_02",
 			"name": "Nether Rage",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nGive your hero +3 Attack this turn.",
 			"type": "Hero_power"
 		},
 		{
 			"artist": "Lars Grant-West",
 			"cardImage": "CS2_053e.png",
 			"fr": {
-				"name": "Double vue"
+				"name": "Double vue",
+				"text": "Une de vos cartes coûte (3) cristaux de moins."
 			},
 			"id": "CS2_053e",
 			"name": "Far Sight",
 			"playerClass": "Shaman",
 			"set": "Expert1",
+			"text": "One of your cards costs (3) less.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KARA_12_02H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Lignes telluriques"
+				"name": "Lignes telluriques",
+				"text": "<b>Pouvoir héroïque passif</b>\nLes deux héros ont <b>+5_aux Dégâts des sorts</b>."
 			},
 			"id": "KARA_12_02H",
 			"name": "Ley Lines",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "[x]<b>Passive Hero Power</b>\nBoth players have\n<b>Spell Damage +5</b>.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "AT_077e.png",
 			"fr": {
-				"name": "Pique supplémentaire"
+				"name": "Pique supplémentaire",
+				"text": "+1 Durabilité."
 			},
 			"id": "AT_077e",
 			"name": "Extra Poke",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+1 Durability.",
 			"type": "Enchantment"
 		},
 		{
@@ -14512,13 +16225,15 @@ var parseCardsText = {
 			"cardImage": "AT_132_SHAMANc.png",
 			"cost": 0,
 			"fr": {
-				"name": "Totem de griffes de pierre"
+				"name": "Totem de griffes de pierre",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "AT_132_SHAMANc",
 			"name": "Stoneclaw Totem",
 			"playerClass": "Shaman",
 			"set": "Tgt",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -14529,7 +16244,8 @@ var parseCardsText = {
 			"cost": 2,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Jeune maître brasseur"
+				"name": "Jeune maître brasseur",
+				"text": "<b>Cri de guerre :</b> renvoie un serviteur allié du champ de bataille et le place dans votre main."
 			},
 			"health": 2,
 			"id": "EX1_049",
@@ -14537,6 +16253,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Return a friendly minion from the battlefield to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -14557,24 +16274,28 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_409e.png",
 			"fr": {
-				"name": "Améliorée"
+				"name": "Améliorée",
+				"text": "+1 ATQ et +1 Durabilité."
 			},
 			"id": "EX1_409e",
 			"name": "Upgraded",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "+1 Attack and +1 Durability.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_PickYourFate_7.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin : La pièce"
+				"name": "Destin : La pièce",
+				"text": "Quand un serviteur meurt, son propriétaire obtient une carte La pièce."
 			},
 			"id": "TB_PickYourFate_7",
 			"name": "Fate: Coin",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "When a minion dies, its owner gets a Coin.",
 			"type": "Spell"
 		},
 		{
@@ -14583,24 +16304,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Furie des vents"
+				"name": "Furie des vents",
+				"text": "Confère <b>Furie des vents</b> à un serviteur."
 			},
 			"id": "CS2_039",
 			"name": "Windfury",
 			"playerClass": "Shaman",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give a minion <b>Windfury</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "FP1_020e.png",
 			"fr": {
-				"name": "Vengeance"
+				"name": "Vengeance",
+				"text": "+3/+2."
 			},
 			"id": "FP1_020e",
 			"name": "Vengeance",
 			"playerClass": "Paladin",
 			"set": "Naxx",
+			"text": "+3/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -14609,24 +16334,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Nova de givre"
+				"name": "Nova de givre",
+				"text": "<b>Gèle</b> tous les serviteurs adverses."
 			},
 			"id": "CS2_026",
 			"name": "Frost Nova",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Freeze</b> all enemy minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "OG_051e.png",
 			"fr": {
-				"name": "Pouvoir interdit"
+				"name": "Pouvoir interdit",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "OG_051e",
 			"name": "Forbidden Power",
 			"playerClass": "Druid",
 			"set": "Og",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -14635,13 +16364,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Voile de mort"
+				"name": "Voile de mort",
+				"text": "Inflige $1 |4(point,points) de dégâts à un serviteur. Vous piochez une carte si ce serviteur est tué."
 			},
 			"id": "EX1_302",
 			"name": "Mortal Coil",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $1 damage to a minion. If that kills it, draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -14650,13 +16381,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Cercle de soins"
+				"name": "Cercle de soins",
+				"text": "Rend #4 |4(point,points) de vie à TOUS les serviteurs."
 			},
 			"id": "EX1_621",
 			"name": "Circle of Healing",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Restore #4 Health to ALL minions.",
 			"type": "Spell"
 		},
 		{
@@ -14666,7 +16399,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Recombobulateur"
+				"name": "Recombobulateur",
+				"text": "<b>Cri de guerre :</b> transforme un serviteur allié en un serviteur aléatoire de même coût."
 			},
 			"health": 2,
 			"id": "GVG_108",
@@ -14674,6 +16408,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Transform a friendly minion into a random minion with the same Cost.",
 			"type": "Minion"
 		},
 		{
@@ -14682,13 +16417,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Ensevelir"
+				"name": "Ensevelir",
+				"text": "Choisit un serviteur adverse.\nLe place dans votre deck."
 			},
 			"id": "LOE_104",
 			"name": "Entomb",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "Choose an enemy minion.\nShuffle it into your deck.",
 			"type": "Spell"
 		},
 		{
@@ -14696,7 +16433,8 @@ var parseCardsText = {
 			"cardImage": "BRMA14_5.png",
 			"cost": 1,
 			"fr": {
-				"name": "Toxitron"
+				"name": "Toxitron",
+				"text": "Inflige 1 point de dégâts à tous les autres serviteurs au début de votre tour."
 			},
 			"health": 3,
 			"id": "BRMA14_5",
@@ -14704,6 +16442,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "At the start of your turn, deal 1 damage to all other minions.",
 			"type": "Minion"
 		},
 		{
@@ -14713,7 +16452,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Y’Shaarj, la rage déchaînée"
+				"name": "Y’Shaarj, la rage déchaînée",
+				"text": "À la fin de votre tour, place un serviteur de votre deck sur le champ de bataille."
 			},
 			"health": 10,
 			"id": "OG_042",
@@ -14721,6 +16461,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "At the end of your turn, put a minion from your deck into the battlefield.",
 			"type": "Minion"
 		},
 		{
@@ -14758,7 +16499,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Golem d’anima"
+				"name": "Golem d’anima",
+				"text": "À la fin de chaque tour, détruit ce serviteur si c’est le seul que vous avez."
 			},
 			"health": 9,
 			"id": "GVG_077",
@@ -14766,30 +16508,35 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "At the end of each turn, destroy this minion if it's your only one.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA12_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Affliction de l’espèce"
+				"name": "Affliction de l’espèce",
+				"text": "<b>Pouvoir héroïque</b>\nAjoute une carte Affliction de l’espèce dans la main de votre adversaire à la fin de votre tour."
 			},
 			"id": "BRMA12_2H",
 			"name": "Brood Affliction",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nAt the end of your turn, add a Brood Affliction card to your opponent's hand.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "TB_PickYourFate_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin : bananes"
+				"name": "Destin : bananes",
+				"text": "Quand un serviteur meurt, son propriétaire obtient une carte Banane à (1) |4(cristal,cristaux) de mana."
 			},
 			"id": "TB_PickYourFate_2",
 			"name": "Fate: Bananas",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "When a minion dies, its owner gets a (1) mana Banana.",
 			"type": "Spell"
 		},
 		{
@@ -14811,13 +16558,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Écraser"
+				"name": "Écraser",
+				"text": "Détruit un serviteur. Si vous avez un serviteur blessé, cette carte coûte (4) cristaux de moins."
 			},
 			"id": "GVG_052",
 			"name": "Crush",
 			"playerClass": "Warrior",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Destroy a minion. If you have a damaged minion, this costs (4) less.",
 			"type": "Spell"
 		},
 		{
@@ -14826,24 +16575,28 @@ var parseCardsText = {
 			"cost": 1,
 			"durability": 6,
 			"fr": {
-				"name": "Dent-de-Dragon"
+				"name": "Dent-de-Dragon",
+				"text": "Gagne +1 ATQ chaque fois que votre adversaire joue une carte."
 			},
 			"id": "BRMA16_5",
 			"name": "Dragonteeth",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Whenever your opponent plays a card, gain +1 Attack.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "AT_132_ROGUE.png",
 			"cost": 2,
 			"fr": {
-				"name": "Dagues empoisonnées"
+				"name": "Dagues empoisonnées",
+				"text": "<b>Pouvoir héroïque</b>\nÉquipe d’une arme 2/2."
 			},
 			"id": "AT_132_ROGUE",
 			"name": "Poisoned Daggers",
 			"playerClass": "Rogue",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nEquip a 2/2 Weapon.",
 			"type": "Hero_power"
 		},
 		{
@@ -14852,59 +16605,69 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Marque de la nature"
+				"name": "Marque de la nature",
+				"text": "<b>Choix des armes :</b> donne +4 ATQ à un serviteur ou +4 PV et <b>Provocation</b>."
 			},
 			"id": "EX1_155",
 			"name": "Mark of Nature",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Choose One</b> - Give a minion +4 Attack; or +4 Health and <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_004e.png",
 			"fr": {
-				"name": "Mot de pouvoir : Bouclier"
+				"name": "Mot de pouvoir : Bouclier",
+				"text": "+2 PV."
 			},
 			"id": "CS2_004e",
 			"name": "Power Word: Shield",
 			"playerClass": "Priest",
 			"set": "Core",
+			"text": "+2 Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA16_7.png",
 			"cost": 0,
 			"fr": {
-				"name": "Esquille de bénédiction"
+				"name": "Esquille de bénédiction",
+				"text": "Rend #10 PV à TOUS les personnages."
 			},
 			"id": "LOEA16_7",
 			"name": "Benediction Splinter",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Restore #10 Health to ALL characters.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA15_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "L’alchimiste"
+				"name": "L’alchimiste",
+				"text": "<b>Pouvoir héroïque passif</b>\nChaque fois qu’un serviteur est invoqué, échange son Attaque et sa Vie."
 			},
 			"id": "BRMA15_2",
 			"name": "The Alchemist",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Passive Hero Power</b>\nWhenever a minion is summoned, swap its Attack and Health.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_604o.png",
 			"fr": {
-				"name": "Berserk"
+				"name": "Berserk",
+				"text": "Attaque augmentée."
 			},
 			"id": "EX1_604o",
 			"name": "Berserk",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -14914,7 +16677,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Lamenuit"
+				"name": "Lamenuit",
+				"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts au héros adverse."
 			},
 			"health": 4,
 			"id": "EX1_593",
@@ -14922,6 +16686,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Battlecry: </b>Deal 3 damage to the enemy hero.",
 			"type": "Minion"
 		},
 		{
@@ -14930,13 +16695,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Assassiner"
+				"name": "Assassiner",
+				"text": "Détruit un serviteur adverse."
 			},
 			"id": "CS2_076",
 			"name": "Assassinate",
 			"playerClass": "Rogue",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Destroy an enemy minion.",
 			"type": "Spell"
 		},
 		{
@@ -14945,13 +16712,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Maléfice"
+				"name": "Maléfice",
+				"text": "Transforme un serviteur en grenouille 0/1 avec <b>Provocation</b>."
 			},
 			"id": "EX1_246",
 			"name": "Hex",
 			"playerClass": "Shaman",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Transform a minion into a 0/1 Frog with <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -14959,7 +16728,8 @@ var parseCardsText = {
 			"cardImage": "CRED_13.png",
 			"cost": 10,
 			"fr": {
-				"name": "Brian Schwab"
+				"name": "Brian Schwab",
+				"text": "À la fin de votre tour, confère +1 Attaque à un serviteur aléatoire."
 			},
 			"health": 10,
 			"id": "CRED_13",
@@ -14967,6 +16737,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "At the end of your turn, give a random minion +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -14974,12 +16745,14 @@ var parseCardsText = {
 			"cardImage": "LOE_007t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Maudit !"
+				"name": "Maudit !",
+				"text": "Vous subissez 2 points de dégâts au début de votre tour tant que vous avez cette carte dans votre main."
 			},
 			"id": "LOE_007t",
 			"name": "Cursed!",
 			"playerClass": "Warlock",
 			"set": "Loe",
+			"text": "While this is in your hand, take 2 damage at the start of your turn.",
 			"type": "Spell"
 		},
 		{
@@ -14987,7 +16760,8 @@ var parseCardsText = {
 			"cardImage": "CRED_08.png",
 			"cost": 3,
 			"fr": {
-				"name": "Ben Brode"
+				"name": "Ben Brode",
+				"text": "Vous ne pouvez pas baisser le volume en dessous du maximum."
 			},
 			"health": 1,
 			"id": "CRED_08",
@@ -14995,6 +16769,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "Your volume can't be reduced below maximum.",
 			"type": "Minion"
 		},
 		{
@@ -15017,7 +16792,8 @@ var parseCardsText = {
 			"cost": 2,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Accro au mana"
+				"name": "Accro au mana",
+				"text": "Chaque fois que vous lancez un sort, gagne +2 ATQ pendant ce tour."
 			},
 			"health": 3,
 			"id": "EX1_055",
@@ -15025,6 +16801,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever you cast a spell, gain +2 Attack this turn.",
 			"type": "Minion"
 		},
 		{
@@ -15032,7 +16809,8 @@ var parseCardsText = {
 			"cardImage": "CRED_19.png",
 			"cost": 4,
 			"fr": {
-				"name": "Beomki Hong"
+				"name": "Beomki Hong",
+				"text": "<b>Provocation</b>. Les serviteurs alliés ne peuvent pas être <b>gelés</b>."
 			},
 			"health": 3,
 			"id": "CRED_19",
@@ -15040,17 +16818,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Taunt.</b> Friendly minions can’t be <b>Frozen.</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NEW1_017e.png",
 			"fr": {
-				"name": "Ventre plein"
+				"name": "Ventre plein",
+				"text": "+2/+2. Rassasié."
 			},
 			"id": "NEW1_017e",
 			"name": "Full Belly",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+2/+2.  Full of Murloc.",
 			"type": "Enchantment"
 		},
 		{
@@ -15085,12 +16866,14 @@ var parseCardsText = {
 		{
 			"cardImage": "DS1_178e.png",
 			"fr": {
-				"name": "Charge"
+				"name": "Charge",
+				"text": "Le rhino de la toundra confère <b>Charge</b>."
 			},
 			"id": "DS1_178e",
 			"name": "Charge",
 			"playerClass": "Hunter",
 			"set": "Core",
+			"text": "Tundra Rhino grants <b>Charge</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -15100,7 +16883,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Gardien du bosquet"
+				"name": "Gardien du bosquet",
+				"text": "<b>Choix des armes :</b> inflige 2 points de dégâts ou réduit au <b>Silence</b> un serviteur."
 			},
 			"health": 2,
 			"id": "EX1_166",
@@ -15108,18 +16892,21 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Choose One</b> - Deal 2 damage; or <b>Silence</b> a minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA04_29a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Toucher"
+				"name": "Toucher",
+				"text": "Rend 10 PV à votre héros."
 			},
 			"id": "LOEA04_29a",
 			"name": "Touch It",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Restore 10 Health to your hero.",
 			"type": "Spell"
 		},
 		{
@@ -15129,7 +16916,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Boxeur de l’ombre"
+				"name": "Boxeur de l’ombre",
+				"text": "Chaque fois qu’un personnage est soigné, inflige 1 point de dégâts à un adversaire aléatoire."
 			},
 			"health": 3,
 			"id": "GVG_072",
@@ -15137,6 +16925,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Whenever a character is healed, deal 1 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -15146,7 +16935,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Neptulon"
+				"name": "Neptulon",
+				"text": "<b>Cri de guerre :</b> ajoute 4 murlocs aléatoires dans votre main.\n<b>Surcharge :</b> (3)"
 			},
 			"health": 7,
 			"id": "GVG_042",
@@ -15155,18 +16945,21 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Add 4 random Murlocs to your hand. <b>Overload:</b> (3)",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_09_05.png",
 			"cost": 4,
 			"fr": {
-				"name": "Invocation de Kil’rek"
+				"name": "Invocation de Kil’rek",
+				"text": "Invoque Kil’rek."
 			},
 			"id": "KARA_09_05",
 			"name": "Summon Kil'rek",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon Kil'rek.",
 			"type": "Spell"
 		},
 		{
@@ -15176,7 +16969,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Le conservateur"
+				"name": "Le conservateur",
+				"text": "<b>Provocation</b>. <b>Cri de guerre_:</b> vous piochez une Bête, un Dragon et un Murloc dans votre deck."
 			},
 			"health": 6,
 			"id": "KAR_061",
@@ -15184,18 +16978,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Kara",
+			"text": "<b>Taunt</b>\n<b>Battlecry:</b> Draw a Beast, Dragon, and Murloc from your deck.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA04_06b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Traverser avec précaution"
+				"name": "Traverser avec précaution",
+				"text": "Subit 5 points de dégâts."
 			},
 			"id": "LOEA04_06b",
 			"name": "Walk Across Gingerly",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Take 5 damage.",
 			"type": "Spell"
 		},
 		{
@@ -15204,7 +17001,8 @@ var parseCardsText = {
 			"cardImage": "GVG_111t.png",
 			"cost": 8,
 			"fr": {
-				"name": "V-07-TR-0N"
+				"name": "V-07-TR-0N",
+				"text": "<b>Charge</b>\n<b>Méga furie des vents</b>\n<i>(Peut attaquer quatre fois par tour.)</i>"
 			},
 			"health": 8,
 			"id": "GVG_111t",
@@ -15212,6 +17010,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Charge</b>\n<b>Mega-Windfury</b> <i>(Can attack four times a turn.)</i>",
 			"type": "Minion"
 		},
 		{
@@ -15221,7 +17020,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Biographe de Dédain-du-Néant"
+				"name": "Biographe de Dédain-du-Néant",
+				"text": "<b>Cri de guerre_:</b> <b>découvre</b> un Dragon si vous en avez déjà un en main."
 			},
 			"health": 3,
 			"id": "KAR_062",
@@ -15229,6 +17029,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, <b>Discover</b>\na Dragon.",
 			"type": "Minion"
 		},
 		{
@@ -15251,47 +17052,55 @@ var parseCardsText = {
 			"cardImage": "LOEA09_6.png",
 			"cost": 2,
 			"fr": {
-				"name": "Archer ondulant"
+				"name": "Archer ondulant",
+				"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 			},
 			"health": 2,
 			"id": "LOEA09_6",
 			"name": "Slithering Archer",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> Deal 1 damage.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_109e.png",
 			"fr": {
-				"name": "Exalté"
+				"name": "Exalté",
+				"text": "Peut attaquer pendant ce tour."
 			},
 			"id": "AT_109e",
 			"name": "Inspired",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "Can attack this turn.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_023t.png",
 			"fr": {
-				"name": "Fusion primordiale"
+				"name": "Fusion primordiale",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "OG_023t",
 			"name": "Primally Infused",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA04_06.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fosse remplie de pointes"
+				"name": "Fosse remplie de pointes",
+				"text": "<b>Choisissez un chemin !</b>"
 			},
 			"id": "LOEA04_06",
 			"name": "Pit of Spikes",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Choose Your Path!</b>",
 			"type": "Spell"
 		},
 		{
@@ -15300,24 +17109,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Fracasser"
+				"name": "Fracasser",
+				"text": "Détruit un serviteur <b>gelé</b>."
 			},
 			"id": "OG_081",
 			"name": "Shatter",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Destroy a <b>Frozen</b> minion.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_101e.png",
 			"fr": {
-				"name": "Enchantement de joueur d’équipe"
+				"name": "Enchantement de joueur d’équipe",
+				"text": "<b>Insensible</b> pendant qu’il attaque."
 			},
 			"id": "TB_CoOpv3_101e",
 			"name": "Team Player Enchantment",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Immune</b> ahile attacking",
 			"type": "Enchantment"
 		},
 		{
@@ -15327,7 +17140,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Barnes"
+				"name": "Barnes",
+				"text": "<b>Cri de guerre_:</b> invoque une copie 1/1 d’un serviteur aléatoire dans votre deck."
 			},
 			"health": 4,
 			"id": "KAR_114",
@@ -15335,17 +17149,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Summon a 1/1 copy of a random minion in your deck.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_178be.png",
 			"fr": {
-				"name": "Déraciné"
+				"name": "Déraciné",
+				"text": "+5 Attaque."
 			},
 			"id": "EX1_178be",
 			"name": "Uprooted",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "+5 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -15353,12 +17170,14 @@ var parseCardsText = {
 			"cardImage": "LOE_019t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Carte du singe doré"
+				"name": "Carte du singe doré",
+				"text": "Place la carte Singe doré dans votre deck. Vous piochez une carte."
 			},
 			"id": "LOE_019t",
 			"name": "Map to the Golden Monkey",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Shuffle the Golden Monkey into your deck. Draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -15367,13 +17186,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Mal déterré"
+				"name": "Mal déterré",
+				"text": "Inflige $3 |4(point,points) de dégâts à tous les serviteurs.\nPlace cette carte dans le deck de votre adversaire."
 			},
 			"id": "LOE_111",
 			"name": "Excavated Evil",
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "Deal $3 damage to all minions.\nShuffle this card into your opponent's deck.",
 			"type": "Spell"
 		},
 		{
@@ -15381,7 +17202,8 @@ var parseCardsText = {
 			"cardImage": "BRMC_95.png",
 			"cost": 50,
 			"fr": {
-				"name": "Golemagg"
+				"name": "Golemagg",
+				"text": "Coûte (1) cristal de moins pour chaque point de dégâts subi par votre héros."
 			},
 			"health": 20,
 			"id": "BRMC_95",
@@ -15389,18 +17211,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Costs (1) less for each damage your hero has taken.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_5.png",
 			"cost": 10,
 			"fr": {
-				"name": "Miroir du destin"
+				"name": "Miroir du destin",
+				"text": "Remplit votre plateau de momies zombies 3/3."
 			},
 			"id": "LOEA16_5",
 			"name": "Mirror of Doom",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Fill your board with 3/3 Mummy Zombies.",
 			"type": "Spell"
 		},
 		{
@@ -15408,13 +17233,15 @@ var parseCardsText = {
 			"cardImage": "XXX_097.png",
 			"cost": 0,
 			"fr": {
-				"name": "AI Buddy - Destroy Minions"
+				"name": "AI Buddy - Destroy Minions",
+				"text": "Spawn into play to destroy all minions."
 			},
 			"health": 1,
 			"id": "XXX_097",
 			"name": "AI Buddy - Destroy Minions",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Spawn into play to destroy all minions.",
 			"type": "Minion"
 		},
 		{
@@ -15423,25 +17250,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Courroux démoniaque"
+				"name": "Courroux démoniaque",
+				"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs qui ne sont pas des démons."
 			},
 			"id": "BRM_005",
 			"name": "Demonwrath",
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "Deal $2 damage to all non-Demon minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX3_02.png",
 			"cost": 3,
 			"fr": {
-				"name": "Entoilage"
+				"name": "Entoilage",
+				"text": "<b>Pouvoir héroïque</b>\nRenvoie un serviteur adverse aléatoire dans la main de votre adversaire."
 			},
 			"id": "NAX3_02",
 			"name": "Web Wrap",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nReturn a random enemy minion to your opponent's hand.",
 			"type": "Hero_power"
 		},
 		{
@@ -15451,7 +17282,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Embusqué anub’ar"
+				"name": "Embusqué anub’ar",
+				"text": "<b>Râle d’agonie :</b> renvoie un serviteur allié aléatoire dans votre main."
 			},
 			"health": 5,
 			"id": "FP1_026",
@@ -15459,6 +17291,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Return a random friendly minion to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -15468,7 +17301,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Fourchette mortelle"
+				"name": "Fourchette mortelle",
+				"text": "<b>Râle d’agonie_:</b> ajoute une arme 3/2 dans votre main."
 			},
 			"health": 2,
 			"id": "KAR_094",
@@ -15476,6 +17310,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Deathrattle:</b> Add a 3/2 weapon to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -15485,7 +17320,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Fossoyeur"
+				"name": "Fossoyeur",
+				"text": "Gagne +1 ATQ chaque fois que vous invoquez un serviteur avec <b>Râle d’agonie</b>."
 			},
 			"health": 2,
 			"id": "FP1_028",
@@ -15493,6 +17329,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "Whenever you summon a minion with <b>Deathrattle</b>, gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -15502,7 +17339,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Sentinelle Anubisath"
+				"name": "Sentinelle Anubisath",
+				"text": "<b>Râle d’agonie :</b> donne +3/+3 à un serviteur allié aléatoire."
 			},
 			"health": 4,
 			"id": "LOE_061",
@@ -15510,6 +17348,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Deathrattle:</b> Give a random friendly minion +3/+3.",
 			"type": "Minion"
 		},
 		{
@@ -15518,13 +17357,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Feu stellaire"
+				"name": "Feu stellaire",
+				"text": "Inflige $5 |4(point,points) de dégâts.\nVous piochez une carte."
 			},
 			"id": "EX1_173",
 			"name": "Starfire",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $5 damage.\nDraw a card.",
 			"type": "Spell"
 		},
 		{
@@ -15532,7 +17373,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_18.png",
 			"cost": 5,
 			"fr": {
-				"name": "Zinaar"
+				"name": "Zinaar",
+				"text": "Vous gagnez un Vœu à la fin de votre tour."
 			},
 			"health": 5,
 			"id": "LOEA16_18",
@@ -15540,6 +17382,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, gain a wish.",
 			"type": "Minion"
 		},
 		{
@@ -15547,7 +17390,8 @@ var parseCardsText = {
 			"cardImage": "CRED_35.png",
 			"cost": 4,
 			"fr": {
-				"name": "Max McCall"
+				"name": "Max McCall",
+				"text": "Vos emotes n’ont pas de temps de recharge et ne peuvent être coupées."
 			},
 			"health": 2,
 			"id": "CRED_35",
@@ -15555,6 +17399,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "Your emotes have no cooldown and can't be squelched.",
 			"type": "Minion"
 		},
 		{
@@ -15564,7 +17409,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Sectateur Skeram"
+				"name": "Sectateur Skeram",
+				"text": "<b>Cri de guerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 6,
 			"id": "OG_339",
@@ -15572,39 +17418,46 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Give your C'Thun +2/+2 <i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_Superfriends002e.png",
 			"fr": {
-				"name": "Pioche Jeu offensif"
+				"name": "Pioche Jeu offensif",
+				"text": "Pioche Jeu offensif au premier tour"
 			},
 			"id": "TB_Superfriends002e",
 			"name": "Draw Offensive Play",
 			"playerClass": "Rogue",
 			"set": "Tb",
+			"text": "Draw Offensive Play on first turn",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "PART_001e.png",
 			"fr": {
-				"name": "Plaque d’armure"
+				"name": "Plaque d’armure",
+				"text": "+1 PV."
 			},
 			"id": "PART_001e",
 			"name": "Armor Plating",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "+1 Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "AT_073e.png",
 			"fr": {
-				"name": "Esprit combatif"
+				"name": "Esprit combatif",
+				"text": "+1/+1."
 			},
 			"id": "AT_073e",
 			"name": "Competitive Spirit",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -15613,13 +17466,15 @@ var parseCardsText = {
 			"cardImage": "LOE_024t.png",
 			"cost": 4,
 			"fr": {
-				"name": "Rocher roulant"
+				"name": "Rocher roulant",
+				"text": "Détruit le serviteur à gauche à la fin de votre tour."
 			},
 			"health": 4,
 			"id": "LOE_024t",
 			"name": "Rolling Boulder",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "At the end of your turn, destroy the minion to the left.",
 			"type": "Minion"
 		},
 		{
@@ -15638,13 +17493,15 @@ var parseCardsText = {
 			"cardImage": "TU4a_004.png",
 			"cost": 3,
 			"fr": {
-				"name": "Lardeur TOUT CASSER !"
+				"name": "Lardeur TOUT CASSER !",
+				"text": "Inflige 4 points de dégâts."
 			},
 			"id": "TU4a_004",
 			"name": "Hogger SMASH!",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Deal 4 damage.",
 			"type": "Spell"
 		},
 		{
@@ -15653,24 +17510,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Arbre de vie"
+				"name": "Arbre de vie",
+				"text": "Rend à tous les personnages tous leurs points de vie."
 			},
 			"id": "GVG_033",
 			"name": "Tree of Life",
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Restore all characters to full Health.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_316e.png",
 			"fr": {
-				"name": "Puissance accablante"
+				"name": "Puissance accablante",
+				"text": "Ce serviteur a +4/+4 mais il mourra de façon horrible à la fin du tour."
 			},
 			"id": "EX1_316e",
 			"name": "Power Overwhelming",
 			"playerClass": "Warlock",
 			"set": "Expert1",
+			"text": "This minion has +4/+4, but will die a horrible death at the end of the turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -15681,13 +17542,15 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 2,
 			"fr": {
-				"name": "Cogneguerre ogre"
+				"name": "Cogneguerre ogre",
+				"text": "50% de chance d’attaquer le mauvais adversaire."
 			},
 			"id": "GVG_054",
 			"name": "Ogre Warmaul",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "50% chance to attack the wrong enemy.",
 			"type": "Weapon"
 		},
 		{
@@ -15696,26 +17559,30 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Purification"
+				"name": "Purification",
+				"text": "Réduit au <b>Silence</b> un serviteur allié. Vous piochez une carte."
 			},
 			"id": "KAR_013",
 			"name": "Purify",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Silence</b> a friendly minion. Draw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_026.png",
 			"cost": 0,
 			"fr": {
-				"name": "Enable Emotes"
+				"name": "Enable Emotes",
+				"text": "Enable emotes for your VS.AI game. (not in tutorials, though)"
 			},
 			"id": "XXX_026",
 			"name": "Enable Emotes",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Enable emotes for your VS.AI game. (not in tutorials, though)",
 			"type": "Spell"
 		},
 		{
@@ -15725,7 +17592,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Conservateur du musée"
+				"name": "Conservateur du musée",
+				"text": "<b>Cri de guerre : découvre</b> une carte avec <b>Râle d’agonie</b>."
 			},
 			"health": 2,
 			"id": "LOE_006",
@@ -15733,6 +17601,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Battlecry: Discover</b> a <b>Deathrattle</b> card.",
 			"type": "Minion"
 		},
 		{
@@ -15753,48 +17622,56 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_337e.png",
 			"fr": {
-				"name": "Prémices de destruction"
+				"name": "Prémices de destruction",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "OG_337e",
 			"name": "Eve of Destruction",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Stats increased.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "GVG_049e.png",
 			"fr": {
-				"name": "Puissance de Zul’Farrak"
+				"name": "Puissance de Zul’Farrak",
+				"text": "Multiple l’Attaque."
 			},
 			"id": "GVG_049e",
 			"name": "Might of Zul'Farrak",
 			"playerClass": "Hunter",
 			"set": "Gvg",
+			"text": "Multiplying Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA08_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Regard intense"
+				"name": "Regard intense",
+				"text": "<b>Pouvoir héroïque passif</b>\nToutes les cartes coûtent (1) |4(cristal,cristaux) de mana. Les joueurs sont limités à 1 cristal."
 			},
 			"id": "BRMA08_2",
 			"name": "Intense Gaze",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Passive Hero Power</b>\nAll cards cost (1). Players are capped at 1 Mana Crystal.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "XXX_015.png",
 			"cost": 0,
 			"fr": {
-				"name": "Crash"
+				"name": "Crash",
+				"text": "Crash the game."
 			},
 			"id": "XXX_015",
 			"name": "Crash",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Crash the game.",
 			"type": "Spell"
 		},
 		{
@@ -15804,7 +17681,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Totem de vitalité"
+				"name": "Totem de vitalité",
+				"text": "À la fin de votre tour, rend 4 PV à votre héros."
 			},
 			"health": 3,
 			"id": "GVG_039",
@@ -15812,6 +17690,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "At the end of your turn, restore 4 Health to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -15819,12 +17698,14 @@ var parseCardsText = {
 			"cardImage": "KARA_07_05.png",
 			"cost": 3,
 			"fr": {
-				"name": "Bête déchaînée !"
+				"name": "Bête déchaînée !",
+				"text": "Invoque une Bête aléatoire."
 			},
 			"id": "KARA_07_05",
 			"name": "Stampeding Beast!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon a random Beast.",
 			"type": "Spell"
 		},
 		{
@@ -15833,13 +17714,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Bombe de matière noire"
+				"name": "Bombe de matière noire",
+				"text": "Inflige $3 |4(point,points) de dégâts."
 			},
 			"id": "GVG_015",
 			"name": "Darkbomb",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Deal $3 damage.",
 			"type": "Spell"
 		},
 		{
@@ -15849,7 +17732,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Prince Malchezaar"
+				"name": "Prince Malchezaar",
+				"text": "Quand la partie commence, ajoute 5 serviteurs <b>légendaires</b> dans votre deck."
 			},
 			"health": 6,
 			"id": "KAR_096",
@@ -15857,39 +17741,46 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Kara",
+			"text": "[x]When the game starts,\nadd 5 extra <b>Legendary</b>\nminions to your deck.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX12_04e.png",
 			"fr": {
-				"name": "Accès de rage"
+				"name": "Accès de rage",
+				"text": "+6 ATQ pendant ce tour."
 			},
 			"id": "NAX12_04e",
 			"name": "Enrage",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "+6 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMC_86e.png",
 			"fr": {
-				"name": "Je vous entends…"
+				"name": "Je vous entends…",
+				"text": "Attaque augmentée."
 			},
 			"id": "BRMC_86e",
 			"name": "I Hear You...",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "GVG_100e.png",
 			"fr": {
-				"name": "Sourcils froncés"
+				"name": "Sourcils froncés",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "GVG_100e",
 			"name": "Brow Furrow",
 			"playerClass": "Warlock",
 			"set": "Gvg",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -15899,7 +17790,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Chevalier murloc"
+				"name": "Chevalier murloc",
+				"text": "<b>Exaltation :</b> invoque un murloc aléatoire."
 			},
 			"health": 4,
 			"id": "AT_076",
@@ -15907,6 +17799,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Summon a random Murloc.",
 			"type": "Minion"
 		},
 		{
@@ -15914,24 +17807,28 @@ var parseCardsText = {
 			"cardImage": "LOE_110t.png",
 			"cost": 0,
 			"fr": {
-				"name": "Malédiction ancestrale"
+				"name": "Malédiction ancestrale",
+				"text": "Quand vous piochez cette carte, vous subissez 7 points de dégâts et vous piochez une carte."
 			},
 			"id": "LOE_110t",
 			"name": "Ancient Curse",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "When you draw this, take 7 damage and draw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_PickYourFate_1.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin cruel : Provocation, Charge"
+				"name": "Destin cruel : Provocation, Charge",
+				"text": "Tous les serviteurs ont <b>Provocation</b> et <b>Charge</b>."
 			},
 			"id": "TB_PickYourFate_1",
 			"name": "Dire Fate: Taunt and Charge",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "All minions have <b>Taunt</b> and <b>Charge</b>.",
 			"type": "Spell"
 		},
 		{
@@ -15939,7 +17836,8 @@ var parseCardsText = {
 			"cardImage": "XXX_109.png",
 			"cost": 0,
 			"fr": {
-				"name": "Illidan Stormrage Cheat"
+				"name": "Illidan Stormrage Cheat",
+				"text": "Whenever you play a card, deal 1 damage to all minions."
 			},
 			"health": 5,
 			"id": "XXX_109",
@@ -15947,6 +17845,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Whenever you play a card, deal 1 damage to all minions.",
 			"type": "Minion"
 		},
 		{
@@ -15968,7 +17867,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Garde-courroux"
+				"name": "Garde-courroux",
+				"text": "Chaque fois que ce serviteur subit des dégâts, inflige le même montant de dégâts à votre héros."
 			},
 			"health": 3,
 			"id": "AT_026",
@@ -15976,6 +17876,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Whenever this minion takes damage, also deal that amount to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -15997,12 +17898,14 @@ var parseCardsText = {
 			"cardImage": "BRMA09_2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Ouvrir les portes"
+				"name": "Ouvrir les portes",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque trois dragonnets 1/1. Change de pouvoir héroïque."
 			},
 			"id": "BRMA09_2",
 			"name": "Open the Gates",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon three 1/1 Whelps. Get a new Hero Power.",
 			"type": "Hero_power"
 		},
 		{
@@ -16012,7 +17915,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Champion de Mukla"
+				"name": "Champion de Mukla",
+				"text": "<b>Exaltation :</b> donne +1/+1 à vos autres serviteurs."
 			},
 			"health": 3,
 			"id": "AT_090",
@@ -16020,6 +17924,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Give your other minions +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -16043,13 +17948,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Puissance totémique"
+				"name": "Puissance totémique",
+				"text": "Confère +2 PV à vos totems."
 			},
 			"id": "EX1_244",
 			"name": "Totemic Might",
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Give your Totems +2 Health.",
 			"type": "Spell"
 		},
 		{
@@ -16057,7 +17964,8 @@ var parseCardsText = {
 			"cardImage": "NAX9_03.png",
 			"cost": 3,
 			"fr": {
-				"name": "Thane Korth’azz"
+				"name": "Thane Korth’azz",
+				"text": "Votre héros est <b>Insensible</b>."
 			},
 			"health": 7,
 			"id": "NAX9_03",
@@ -16065,6 +17973,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "Your hero is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
@@ -16074,7 +17983,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Succube"
+				"name": "Succube",
+				"text": "<b>Cri de guerre :</b> vous défausse d’une carte aléatoire."
 			},
 			"health": 3,
 			"id": "EX1_306",
@@ -16082,6 +17992,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Discard a random card.",
 			"type": "Minion"
 		},
 		{
@@ -16091,7 +18002,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Mage de Dalaran"
+				"name": "Mage de Dalaran",
+				"text": "<b>Dégâts des sorts : +1</b>"
 			},
 			"health": 4,
 			"id": "EX1_582",
@@ -16100,6 +18012,7 @@ var parseCardsText = {
 			"rarity": "Common",
 			"set": "Core",
 			"spellDamage": 1,
+			"text": "<b>Spell Damage +1</b>",
 			"type": "Minion"
 		},
 		{
@@ -16109,7 +18022,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Mage ancien"
+				"name": "Mage ancien",
+				"text": "<b>Cri de guerre :</b> donne aux serviteurs adjacents <b>+1 aux dégâts des sorts</b>."
 			},
 			"health": 5,
 			"id": "EX1_584",
@@ -16117,6 +18031,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give adjacent minions <b>Spell Damage +1</b>.",
 			"type": "Minion"
 		},
 		{
@@ -16136,12 +18051,14 @@ var parseCardsText = {
 		{
 			"cardImage": "CS2_122e.png",
 			"fr": {
-				"name": "Amélioration"
+				"name": "Amélioration",
+				"text": "Le chef de raid confère +1 ATQ à ce serviteur."
 			},
 			"id": "CS2_122e",
 			"name": "Enhanced",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "Raid Leader is granting this minion +1 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -16151,7 +18068,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Colporteur de Fossoyeuse"
+				"name": "Colporteur de Fossoyeuse",
+				"text": "<b>Râle d’agonie :</b> ajoute une carte aléatoire dans votre main <i>(de la classe de votre adversaire)</i>."
 			},
 			"health": 2,
 			"id": "OG_330",
@@ -16159,42 +18077,49 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Add a random class card to your hand <i>(from your opponent's class)</i>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_611e.png",
 			"fr": {
-				"name": "Pris au piège"
+				"name": "Pris au piège",
+				"text": "Sera <b>Gelé</b> à nouveau au début du tour suivant."
 			},
 			"id": "EX1_611e",
 			"name": "Trapped",
 			"playerClass": "Hunter",
 			"set": "Expert1",
+			"text": "Will be <b>Frozen</b> again at the start of the next turn.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "GVG_032b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Don de carte"
+				"name": "Don de carte",
+				"text": "Chaque joueur pioche une carte."
 			},
 			"id": "GVG_032b",
 			"name": "Gift of Cards",
 			"playerClass": "Druid",
 			"set": "Gvg",
+			"text": "Each player draws a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_165b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Forme d’ours"
+				"name": "Forme d’ours",
+				"text": "+2 PV et <b>Provocation</b>."
 			},
 			"id": "EX1_165b",
 			"name": "Bear Form",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "+2 Health and <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -16204,7 +18129,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Anub’arak"
+				"name": "Anub’arak",
+				"text": "<b>Râle d’agonie :</b> le renvoie dans votre main et invoque un nérubien 4/4."
 			},
 			"health": 4,
 			"id": "AT_036",
@@ -16212,6 +18138,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Deathrattle:</b> Return this to your hand and summon a 4/4 Nerubian.",
 			"type": "Minion"
 		},
 		{
@@ -16232,7 +18159,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Chevaucheur de faucon-dragon"
+				"name": "Chevaucheur de faucon-dragon",
+				"text": "<b>Exaltation :</b> gagne <b>Furie des vents</b> pendant ce tour."
 			},
 			"health": 3,
 			"id": "AT_083",
@@ -16240,6 +18168,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Gain <b>Windfury</b>\nthis turn.",
 			"type": "Minion"
 		},
 		{
@@ -16248,13 +18177,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Attaque pernicieuse"
+				"name": "Attaque pernicieuse",
+				"text": "Inflige $3 |4(point,points) de dégâts au héros adverse."
 			},
 			"id": "CS2_075",
 			"name": "Sinister Strike",
 			"playerClass": "Rogue",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $3 damage to the enemy hero.",
 			"type": "Spell"
 		},
 		{
@@ -16264,7 +18195,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Diable de poussière"
+				"name": "Diable de poussière",
+				"text": "<b>Furie des vents</b>\n<b>Surcharge :</b> (2)"
 			},
 			"health": 1,
 			"id": "EX1_243",
@@ -16273,30 +18205,35 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Windfury</b>. <b>Overload:</b> (2)",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_132_DRUID.png",
 			"cost": 2,
 			"fr": {
-				"name": "Changeforme sinistre"
+				"name": "Changeforme sinistre",
+				"text": "<b>Pouvoir héroïque</b>\nGagne 2 points d’armure et +2 ATQ pendant ce tour."
 			},
 			"id": "AT_132_DRUID",
 			"name": "Dire Shapeshift",
 			"playerClass": "Druid",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nGain 2 Armor and +2 Attack this turn.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "TB_ClassRandom_Shaman.png",
 			"cost": 0,
 			"fr": {
-				"name": "Deuxième classe : chaman"
+				"name": "Deuxième classe : chaman",
+				"text": "Ajoute des cartes de chaman dans votre deck."
 			},
 			"id": "TB_ClassRandom_Shaman",
 			"name": "Second Class: Shaman",
 			"playerClass": "Shaman",
 			"set": "Tb",
+			"text": "Add Shaman cards to your deck.",
 			"type": "Spell"
 		},
 		{
@@ -16304,7 +18241,8 @@ var parseCardsText = {
 			"cardImage": "CRED_37.png",
 			"cost": 4,
 			"fr": {
-				"name": "Ricardo Robaina"
+				"name": "Ricardo Robaina",
+				"text": "<b>Cri de guerre :</b> invoque trois chinchillas 1/1."
 			},
 			"health": 4,
 			"id": "CRED_37",
@@ -16312,51 +18250,60 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Summon three 1/1 Chinchillas.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_08_04e.png",
 			"fr": {
-				"name": "Renforcé"
+				"name": "Renforcé",
+				"text": "+8 ATQ pendant ce tour."
 			},
 			"id": "KARA_08_04e",
 			"name": "Empowered",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+8 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NAX8_02H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Moisson"
+				"name": "Moisson",
+				"text": "<b>Pouvoir héroïque</b>\nVous piochez une carte et gagnez un cristal de mana."
 			},
 			"id": "NAX8_02H",
 			"name": "Harvest",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDraw a card. Gain a Mana Crystal.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "XXX_111e.png",
 			"fr": {
-				"name": "All Charge, All Windfury, All The Time"
+				"name": "All Charge, All Windfury, All The Time",
+				"text": "Your minions always have <b>Charge</b> and <b>Windfury</b>"
 			},
 			"id": "XXX_111e",
 			"name": "All Charge, All Windfury, All The Time",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Your minions always have <b>Charge</b> and <b>Windfury</b>",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_292e.png",
 			"fr": {
-				"name": "Dévotion de la nuit"
+				"name": "Dévotion de la nuit",
+				"text": "+1/+1."
 			},
 			"id": "OG_292e",
 			"name": "Night's Devotion",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -16364,13 +18311,15 @@ var parseCardsText = {
 			"cardImage": "LOEA04_27.png",
 			"cost": 1,
 			"fr": {
-				"name": "Statue animée"
+				"name": "Statue animée",
+				"text": "Vous avez dérangé cette ancienne statue…"
 			},
 			"health": 10,
 			"id": "LOEA04_27",
 			"name": "Animated Statue",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "You've disturbed the ancient statue...",
 			"type": "Minion"
 		},
 		{
@@ -16379,13 +18328,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Acclimatation"
+				"name": "Acclimatation",
+				"text": "Détruit un serviteur. Votre adversaire pioche 2 cartes."
 			},
 			"id": "EX1_161",
 			"name": "Naturalize",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Destroy a minion. Your opponent draws 2 cards.",
 			"type": "Spell"
 		},
 		{
@@ -16405,7 +18356,8 @@ var parseCardsText = {
 			"cardImage": "CRED_16.png",
 			"cost": 7,
 			"fr": {
-				"name": "Hamilton Chu"
+				"name": "Hamilton Chu",
+				"text": "<i>Ne fait PAS partie du problème... la plupart du temps.</i>"
 			},
 			"health": 5,
 			"id": "CRED_16",
@@ -16413,6 +18365,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<i>Was successfully NOT part of the problem! ...most of the time.</i>",
 			"type": "Minion"
 		},
 		{
@@ -16437,7 +18390,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Totem Langue de feu"
+				"name": "Totem Langue de feu",
+				"text": "Les serviteurs adjacents ont +2 ATQ."
 			},
 			"health": 3,
 			"id": "EX1_565",
@@ -16445,17 +18399,20 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Adjacent minions have +2 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_508o.png",
 			"fr": {
-				"name": "Mlarggragllabl !"
+				"name": "Mlarggragllabl !",
+				"text": "Ce murloc a +1 ATQ."
 			},
 			"id": "EX1_508o",
 			"name": "Mlarggragllabl!",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "This Murloc has +1 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -16465,7 +18422,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Élémentaire de terre"
+				"name": "Élémentaire de terre",
+				"text": "<b>Provocation</b>\n<b>Surcharge :</b> (3)"
 			},
 			"health": 8,
 			"id": "EX1_250",
@@ -16474,17 +18432,20 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>. <b>Overload:</b> (3)",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_PickYourFate_2_EnchMinion.png",
 			"fr": {
-				"name": "Destin"
+				"name": "Destin",
+				"text": "<b>Râle d’agonie_:</b> vous obtenez une banane."
 			},
 			"id": "TB_PickYourFate_2_EnchMinion",
 			"name": "Fate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> Your owner gets a banana.",
 			"type": "Enchantment"
 		},
 		{
@@ -16492,7 +18453,8 @@ var parseCardsText = {
 			"cardImage": "BRMA14_12.png",
 			"cost": 5,
 			"fr": {
-				"name": "Magmagueule"
+				"name": "Magmagueule",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "BRMA14_12",
@@ -16500,18 +18462,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GAME_006.png",
 			"cost": 2,
 			"fr": {
-				"name": "NOOOOOOOOOOOON !"
+				"name": "NOOOOOOOOOOOON !",
+				"text": "Bizarrement, la carte que vous possédiez AVANT a été effacée. Allez, prenez celle-là à la place !"
 			},
 			"id": "GAME_006",
 			"name": "NOOOOOOOOOOOO",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "Somehow, the card you USED to have has been deleted.  Here, have this one instead!",
 			"type": "Spell"
 		},
 		{
@@ -16521,7 +18486,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Croq’zombie"
+				"name": "Croq’zombie",
+				"text": "<b>Râle d’agonie :</b> rend 5 PV au héros adverse."
 			},
 			"health": 3,
 			"id": "FP1_001",
@@ -16529,6 +18495,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Restore 5 Health to the enemy hero.",
 			"type": "Minion"
 		},
 		{
@@ -16539,24 +18506,28 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 2,
 			"fr": {
-				"name": "Lame de la perdition"
+				"name": "Lame de la perdition",
+				"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts. <b>Combo :</b> inflige 2 points de dégâts à la place."
 			},
 			"id": "EX1_133",
 			"name": "Perdition's Blade",
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Deal 1 damage. <b>Combo:</b> Deal 2 instead.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "BRM_012e.png",
 			"fr": {
-				"name": "En feu !"
+				"name": "En feu !",
+				"text": "Attaque augmentée."
 			},
 			"id": "BRM_012e",
 			"name": "On Fire!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -16578,12 +18549,14 @@ var parseCardsText = {
 			"cardImage": "TB_PickYourFate_8.png",
 			"cost": 0,
 			"fr": {
-				"name": "Bonus : sorts"
+				"name": "Bonus : sorts",
+				"text": "Chaque fois que vous lancez un sort, vous gagnez 3 points d’armure."
 			},
 			"id": "TB_PickYourFate_8",
 			"name": "Spell Bonus",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Whenever you cast a spell, gain 3 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -16593,7 +18566,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Oracle froide-lumière"
+				"name": "Oracle froide-lumière",
+				"text": "<b>Cri de guerre :</b> chaque joueur pioche 2 cartes."
 			},
 			"health": 2,
 			"id": "EX1_050",
@@ -16601,6 +18575,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Each player draws 2 cards.",
 			"type": "Minion"
 		},
 		{
@@ -16608,7 +18583,8 @@ var parseCardsText = {
 			"cardImage": "BRMC_96.png",
 			"cost": 3,
 			"fr": {
-				"name": "Juge Supérieur Mornepierre"
+				"name": "Juge Supérieur Mornepierre",
+				"text": "Au début de votre tour, invoque un serviteur <b>légendaire</b>."
 			},
 			"health": 5,
 			"id": "BRMC_96",
@@ -16616,6 +18592,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "At the start of your turn, summon a <b>Legendary</b> minion.",
 			"type": "Minion"
 		},
 		{
@@ -16623,25 +18600,29 @@ var parseCardsText = {
 			"cardImage": "BRMC_95he.png",
 			"cost": 3,
 			"fr": {
-				"name": "Chiot du magma"
+				"name": "Chiot du magma",
+				"text": "À la fin de chaque tour, invoque tous les chiots du magma qui sont morts pendant ce tour."
 			},
 			"health": 4,
 			"id": "BRMC_95he",
 			"name": "Core Hound Pup",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "At the end of each turn, summon all Core Hound Pups that died this turn.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "PRO_001a.png",
 			"cost": 4,
 			"fr": {
-				"name": "Je suis murloc"
+				"name": "Je suis murloc",
+				"text": "Invoque trois, quatre ou cinq murlocs 1/1."
 			},
 			"id": "PRO_001a",
 			"name": "I Am Murloc",
 			"playerClass": "Neutral",
 			"set": "Promo",
+			"text": "Summon three, four, or five 1/1 Murlocs.",
 			"type": "Spell"
 		},
 		{
@@ -16649,7 +18630,8 @@ var parseCardsText = {
 			"cardImage": "CRED_03.png",
 			"cost": 3,
 			"fr": {
-				"name": "Bob Fitch"
+				"name": "Bob Fitch",
+				"text": "<b>Super provocation</b> <i>(TOUS les personnages doivent attaquer ce serviteur.)</i>"
 			},
 			"health": 4,
 			"id": "CRED_03",
@@ -16657,6 +18639,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Super Taunt</b> <i>(EVERY character must attack this minion.)</i>",
 			"type": "Minion"
 		},
 		{
@@ -16664,13 +18647,15 @@ var parseCardsText = {
 			"cardImage": "OG_202b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Magie de Yogg-Saron"
+				"name": "Magie de Yogg-Saron",
+				"text": "Confère un cristal de mana vide."
 			},
 			"id": "OG_202b",
 			"name": "Yogg-Saron's Magic",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Gain an empty Mana Crystal.",
 			"type": "Spell"
 		},
 		{
@@ -16680,7 +18665,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Nat le sombre pêcheur"
+				"name": "Nat le sombre pêcheur",
+				"text": "Au début de son tour, votre adversaire a 50% de chances de piocher une carte supplémentaire."
 			},
 			"health": 4,
 			"id": "OG_338",
@@ -16688,6 +18674,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "At the start of your opponent's turn, they have a 50% chance to draw an extra card.",
 			"type": "Minion"
 		},
 		{
@@ -16697,7 +18684,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Yogg-Saron, la fin de l’espoir"
+				"name": "Yogg-Saron, la fin de l’espoir",
+				"text": "<b>Cri de guerre :</b> lance un sort aléatoire pour chaque sort que vous avez lancé pendant cette partie <i>(cibles choisies au hasard)</i>."
 			},
 			"health": 5,
 			"id": "OG_134",
@@ -16705,43 +18693,50 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Cast a random spell for each spell you've cast this game <i>(targets chosen randomly)</i>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_105.png",
 			"cost": 0,
 			"fr": {
-				"name": "Add 8 to Health."
+				"name": "Add 8 to Health.",
+				"text": "Adds 8 health to a damaged character. Does NOT heal."
 			},
 			"id": "XXX_105",
 			"name": "Add 8 to Health.",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Adds 8 health to a damaged character. Does NOT heal.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA17_5H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Séides des os"
+				"name": "Séides des os",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux assemblages d’os 4/2."
 			},
 			"id": "BRMA17_5H",
 			"name": "Bone Minions",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon two 4/2 Bone Constructs.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_166b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Dissipation"
+				"name": "Dissipation",
+				"text": "Réduit au <b>Silence</b> un serviteur."
 			},
 			"id": "EX1_166b",
 			"name": "Dispel",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "<b>Silence</b> a minion.",
 			"type": "Spell"
 		},
 		{
@@ -16749,13 +18744,15 @@ var parseCardsText = {
 			"cardImage": "NAX8_04t.png",
 			"cost": 3,
 			"fr": {
-				"name": "Guerrier spectral"
+				"name": "Guerrier spectral",
+				"text": "Au début de votre tour, inflige 1 point de dégâts à votre héros."
 			},
 			"health": 4,
 			"id": "NAX8_04t",
 			"name": "Spectral Warrior",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "At the start of your turn, deal 1 damage to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -16765,7 +18762,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Millhouse Tempête-de-Mana"
+				"name": "Millhouse Tempête-de-Mana",
+				"text": "<b>Cri de guerre :</b> les sorts adverses coûtent (0) au prochain tour."
 			},
 			"health": 4,
 			"id": "NEW1_029",
@@ -16773,6 +18771,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Enemy spells cost (0) next turn.",
 			"type": "Minion"
 		},
 		{
@@ -16781,7 +18780,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Éclair"
+				"name": "Éclair",
+				"text": "Inflige $3 |4(point,points) de dégâts.\n<b>Surcharge :</b> (1)"
 			},
 			"id": "EX1_238",
 			"name": "Lightning Bolt",
@@ -16789,18 +18789,21 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Deal $3 damage. <b>Overload:</b> (1)",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA16_20.png",
 			"cost": 1,
 			"fr": {
-				"name": "Bénédiction du soleil"
+				"name": "Bénédiction du soleil",
+				"text": "Confère <b>Insensible</b> à un serviteur pendant ce tour."
 			},
 			"id": "LOEA16_20",
 			"name": "Blessing of the Sun",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Give a minion <b>Immune</b> this turn.",
 			"type": "Spell"
 		},
 		{
@@ -16809,13 +18812,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Courroux bestial"
+				"name": "Courroux bestial",
+				"text": "Confère +2 ATQ et l’effet <b>Insensible</b> à une Bête alliée pendant ce tour."
 			},
 			"id": "EX1_549",
 			"name": "Bestial Wrath",
 			"playerClass": "Hunter",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Give a friendly Beast +2 Attack and <b>Immune</b> this turn.",
 			"type": "Spell"
 		},
 		{
@@ -16839,7 +18844,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Chef du gang des diablotins"
+				"name": "Chef du gang des diablotins",
+				"text": "Invoque un diablotin 1/1 chaque fois que ce serviteur subit des dégâts."
 			},
 			"health": 4,
 			"id": "BRM_006",
@@ -16847,29 +18853,34 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Whenever this minion takes damage, summon a 1/1 Imp.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_162o.png",
 			"fr": {
-				"name": "Force de la meute"
+				"name": "Force de la meute",
+				"text": "Le loup alpha redoutable confère +1 ATQ à ce serviteur."
 			},
 			"id": "EX1_162o",
 			"name": "Strength of the Pack",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Dire Wolf Alpha is granting +1 Attack to this minion.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA16_4.png",
 			"cost": 1,
 			"fr": {
-				"name": "Gong réverbérant"
+				"name": "Gong réverbérant",
+				"text": "Détruit l’arme de votre adversaire."
 			},
 			"id": "BRMA16_4",
 			"name": "Reverberating Gong",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Destroy your opponent's weapon.",
 			"type": "Spell"
 		},
 		{
@@ -16887,12 +18898,14 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_218e.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+3 ATQ."
 			},
 			"id": "OG_218e",
 			"name": "Enraged",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -16915,7 +18928,8 @@ var parseCardsText = {
 			"cardImage": "TB_CoOp_Mechazod2.png",
 			"cost": 10,
 			"fr": {
-				"name": "Mécazod surchargé"
+				"name": "Mécazod surchargé",
+				"text": "<b>Boss</b>\nAu début de chaque tour, Mécazod frappe !"
 			},
 			"health": 80,
 			"id": "TB_CoOp_Mechazod2",
@@ -16923,6 +18937,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "<b>Boss</b>\nAt the beginning of each turn, Mechazod strikes!",
 			"type": "Minion"
 		},
 		{
@@ -16944,7 +18959,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Chaman cognedune"
+				"name": "Chaman cognedune",
+				"text": "<b>Furie des vents.</b>\n50% de chance d’attaquer le mauvais adversaire. \n<b>Surcharge :</b> (1)"
 			},
 			"health": 4,
 			"id": "GVG_066",
@@ -16953,6 +18969,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Windfury, Overload: (1)</b>\n50% chance to attack the wrong enemy.",
 			"type": "Minion"
 		},
 		{
@@ -16961,24 +18978,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Vaporisation"
+				"name": "Vaporisation",
+				"text": "<b>Secret :</b> quand un serviteur attaque votre héros, le détruit."
 			},
 			"id": "EX1_594",
 			"name": "Vaporize",
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When a minion attacks your hero, destroy it.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_160be.png",
 			"fr": {
-				"name": "Chef de la meute"
+				"name": "Chef de la meute",
+				"text": "+1/+1."
 			},
 			"id": "EX1_160be",
 			"name": "Leader of the Pack",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -17002,7 +19023,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Grande crinière des savanes"
+				"name": "Grande crinière des savanes",
+				"text": "<b>Râle d’agonie :</b> invoque deux hyènes 2/2."
 			},
 			"health": 5,
 			"id": "EX1_534",
@@ -17010,19 +19032,22 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Deathrattle:</b> Summon two 2/2 Hyenas.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_047.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy Deck"
+				"name": "Destroy Deck",
+				"text": "Delete an opponent's deck"
 			},
 			"id": "XXX_047",
 			"name": "Destroy Deck",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Delete an opponent's deck",
 			"type": "Spell"
 		},
 		{
@@ -17030,7 +19055,8 @@ var parseCardsText = {
 			"cardImage": "NEW1_032.png",
 			"cost": 3,
 			"fr": {
-				"name": "Misha"
+				"name": "Misha",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "NEW1_032",
@@ -17038,17 +19064,20 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_001e.png",
 			"fr": {
-				"name": "Garde rapprochée"
+				"name": "Garde rapprochée",
+				"text": "Attaque augmentée."
 			},
 			"id": "EX1_001e",
 			"name": "Warded",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -17058,7 +19087,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Implorateur du Vide"
+				"name": "Implorateur du Vide",
+				"text": "<b>Râle d’agonie :</b> place un démon aléatoire de votre main sur le champ de bataille."
 			},
 			"health": 4,
 			"id": "FP1_022",
@@ -17066,6 +19096,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Put a random Demon from your hand into the battlefield.",
 			"type": "Minion"
 		},
 		{
@@ -17084,12 +19115,14 @@ var parseCardsText = {
 			"cardImage": "XXX_061.png",
 			"cost": 0,
 			"fr": {
-				"name": "Armor 1"
+				"name": "Armor 1",
+				"text": "Give target Hero +1 Armor"
 			},
 			"id": "XXX_061",
 			"name": "Armor 1",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Give target Hero +1 Armor",
 			"type": "Spell"
 		},
 		{
@@ -17115,25 +19148,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Mot de l’ombre : Douleur"
+				"name": "Mot de l’ombre : Douleur",
+				"text": "Détruit un serviteur avec 3 Attaque ou moins."
 			},
 			"id": "CS2_234",
 			"name": "Shadow Word: Pain",
 			"playerClass": "Priest",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Destroy a minion with 3 or less Attack.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA14_10.png",
 			"cost": 4,
 			"fr": {
-				"name": "Activation !"
+				"name": "Activation !",
+				"text": "<b>Pouvoir héroïque</b>\nActive un Tron aléatoire."
 			},
 			"id": "BRMA14_10",
 			"name": "Activate!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate a random Tron.",
 			"type": "Hero_power"
 		},
 		{
@@ -17157,7 +19194,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Méca chat-ours"
+				"name": "Méca chat-ours",
+				"text": "Chaque fois que ce serviteur subit des dégâts, place une carte <b>Pièce détachée</b> dans votre main."
 			},
 			"health": 6,
 			"id": "GVG_034",
@@ -17165,17 +19203,20 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Whenever this minion takes damage, add a <b>Spare Part</b> card to your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_08_03e.png",
 			"fr": {
-				"name": "Souffle du Néant"
+				"name": "Souffle du Néant",
+				"text": "Les points de vie sont passés à 1."
 			},
 			"id": "KARA_08_03e",
 			"name": "Nether Breath",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Health changed to 1.",
 			"type": "Enchantment"
 		},
 		{
@@ -17197,13 +19238,15 @@ var parseCardsText = {
 			"cardImage": "TB_Coopv3_104.png",
 			"cost": 4,
 			"fr": {
-				"name": "Tank principal"
+				"name": "Tank principal",
+				"text": "<b>Cri de guerre_:</b> donne +2/+2 à tous les serviteurs, sauf au <b>boss</b>."
 			},
 			"health": 4,
 			"id": "TB_Coopv3_104",
 			"name": "Main Tank",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Battlecry:</b> Give all other minions +2/+2, except the <b>Boss</b>.",
 			"type": "Minion"
 		},
 		{
@@ -17211,7 +19254,8 @@ var parseCardsText = {
 			"cardImage": "CRED_22.png",
 			"cost": 3,
 			"fr": {
-				"name": "Cameron Chrisman"
+				"name": "Cameron Chrisman",
+				"text": "Les cartes dorées coûtent (1) cristal de moins tant que vous avez cette carte dans votre main."
 			},
 			"health": 3,
 			"id": "CRED_22",
@@ -17219,6 +19263,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "While this is in your hand, Golden cards cost (1) less.",
 			"type": "Minion"
 		},
 		{
@@ -17229,13 +19274,15 @@ var parseCardsText = {
 			"cost": 4,
 			"durability": 4,
 			"fr": {
-				"name": "Marteau chargé"
+				"name": "Marteau chargé",
+				"text": "<b>Râle d’agonie :</b> votre pouvoir héroïque devient « Inflige 2 points de dégâts »."
 			},
 			"id": "AT_050",
 			"name": "Charged Hammer",
 			"playerClass": "Shaman",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Deathrattle:</b> Your Hero Power becomes 'Deal 2 damage.'",
 			"type": "Weapon"
 		},
 		{
@@ -17243,7 +19290,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_24H.png",
 			"cost": 10,
 			"fr": {
-				"name": "Aileron-Géant"
+				"name": "Aileron-Géant",
+				"text": "À la fin de votre tour, vous piochez 2 cartes."
 			},
 			"health": 10,
 			"id": "LOEA16_24H",
@@ -17251,18 +19299,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, draw 2 cards.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_037b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Racines vivantes"
+				"name": "Racines vivantes",
+				"text": "Invoque deux arbrisseaux 1/1."
 			},
 			"id": "AT_037b",
 			"name": "Living Roots",
 			"playerClass": "Druid",
 			"set": "Tgt",
+			"text": "Summon two 1/1 Saplings.",
 			"type": "Spell"
 		},
 		{
@@ -17272,7 +19323,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Guetteur d’Argent"
+				"name": "Guetteur d’Argent",
+				"text": "Ne peut pas attaquer.\n<b>Exaltation :</b> peut attaquer normalement pendant ce tour."
 			},
 			"health": 4,
 			"id": "AT_109",
@@ -17280,6 +19332,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Can't attack.\n<b>Inspire:</b> Can attack as normal this turn.",
 			"type": "Minion"
 		},
 		{
@@ -17289,7 +19342,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Roi des bêtes"
+				"name": "Roi des bêtes",
+				"text": "<b>Provocation</b>. <b>Cri de guerre :</b> gagne +1 ATQ pour chacune de vos autres Bêtes."
 			},
 			"health": 6,
 			"id": "GVG_046",
@@ -17297,6 +19351,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Taunt</b>. <b>Battlecry:</b> Gain +1 Attack for each other Beast you have.",
 			"type": "Minion"
 		},
 		{
@@ -17306,7 +19361,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Mini exorciste"
+				"name": "Mini exorciste",
+				"text": "<b>Provocation</b>. <b>Cri de guerre :</b> gagne +1/+1 pour chaque serviteur adverse avec <b>Râle d’agonie</b>."
 			},
 			"health": 3,
 			"id": "GVG_097",
@@ -17314,6 +19370,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Taunt</b>\n<b>Battlecry:</b> Gain +1/+1 for each enemy <b>Deathrattle</b> minion.",
 			"type": "Minion"
 		},
 		{
@@ -17339,7 +19396,8 @@ var parseCardsText = {
 			"cost": 6,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Archimage"
+				"name": "Archimage",
+				"text": "<b>Dégâts des sorts : +1</b>"
 			},
 			"health": 7,
 			"id": "CS2_155",
@@ -17348,30 +19406,35 @@ var parseCardsText = {
 			"rarity": "Common",
 			"set": "Core",
 			"spellDamage": 1,
+			"text": "<b>Spell Damage +1</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA11_3.png",
 			"cost": 0,
 			"fr": {
-				"name": "Montée d’adrénaline"
+				"name": "Montée d’adrénaline",
+				"text": "Inflige $2 |4(point,points) de dégâts au héros adverse."
 			},
 			"id": "BRMA11_3",
 			"name": "Burning Adrenaline",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Deal $2 damage to the enemy hero.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMC_83.png",
 			"cost": 8,
 			"fr": {
-				"name": "Ouvrir les portes"
+				"name": "Ouvrir les portes",
+				"text": "Remplit le plateau de dragonnets 2/2."
 			},
 			"id": "BRMC_83",
 			"name": "Open the Gates",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Fill your board with 2/2 Whelps.",
 			"type": "Spell"
 		},
 		{
@@ -17381,7 +19444,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Intendant"
+				"name": "Intendant",
+				"text": "<b>Cri de guerre :</b> donne +2/+2 à vos recrues de la Main d’argent."
 			},
 			"health": 5,
 			"id": "GVG_060",
@@ -17389,6 +19453,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Give your Silver Hand Recruits +2/+2.",
 			"type": "Minion"
 		},
 		{
@@ -17398,7 +19463,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Fandral Forteramure"
+				"name": "Fandral Forteramure",
+				"text": "Vos cartes avec <b>Choix des armes</b> combinent les deux effets."
 			},
 			"health": 5,
 			"id": "OG_044",
@@ -17406,6 +19472,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "Your <b>Choose One</b> cards have both effects combined.",
 			"type": "Minion"
 		},
 		{
@@ -17415,7 +19482,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Rejeton de lumière"
+				"name": "Rejeton de lumière",
+				"text": "L’Attaque de ce serviteur est toujours égale à sa Vie."
 			},
 			"health": 5,
 			"id": "EX1_335",
@@ -17423,6 +19491,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "This minion's Attack is always equal to its Health.",
 			"type": "Minion"
 		},
 		{
@@ -17431,13 +19500,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Sceau des champions"
+				"name": "Sceau des champions",
+				"text": "Confère +3 ATQ et <b>Bouclier divin</b> à un serviteur."
 			},
 			"id": "AT_074",
 			"name": "Seal of Champions",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Give a minion\n+3 Attack and <b>Divine Shield</b>.",
 			"type": "Spell"
 		},
 		{
@@ -17447,7 +19518,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Char de force MAX"
+				"name": "Char de force MAX",
+				"text": "<b>Bouclier divin</b>"
 			},
 			"health": 7,
 			"id": "GVG_079",
@@ -17455,6 +19527,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -17464,7 +19537,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Garde-paix de l’Aldor"
+				"name": "Garde-paix de l’Aldor",
+				"text": "<b>Cri de guerre :</b> l’Attaque d’un serviteur adverse passe à 1."
 			},
 			"health": 3,
 			"id": "EX1_382",
@@ -17472,6 +19546,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Change an enemy minion's Attack to 1.",
 			"type": "Minion"
 		},
 		{
@@ -17480,12 +19555,14 @@ var parseCardsText = {
 			"cost": 2,
 			"durability": 6,
 			"fr": {
-				"name": "Sulfuras"
+				"name": "Sulfuras",
+				"text": "<b>Râle d’agonie :</b> transforme votre pouvoir héroïque, qui inflige 8 points de dégâts à un adversaire aléatoire."
 			},
 			"id": "BRMC_94",
 			"name": "Sulfuras",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> Your Hero Power becomes 'Deal 8 damage to a random enemy'.",
 			"type": "Weapon"
 		},
 		{
@@ -17493,7 +19570,8 @@ var parseCardsText = {
 			"cardImage": "CRED_14.png",
 			"cost": 5,
 			"fr": {
-				"name": "Yong Woo"
+				"name": "Yong Woo",
+				"text": "Vos autres serviteurs ont +3 Attaque et <b>Charge</b>."
 			},
 			"health": 2,
 			"id": "CRED_14",
@@ -17501,6 +19579,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "Your other minions have +3 Attack and <b>Charge</b>.",
 			"type": "Minion"
 		},
 		{
@@ -17509,37 +19588,43 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Jeux d’esprit"
+				"name": "Jeux d’esprit",
+				"text": "Place une copie d’un serviteur aléatoire du jeu de votre adversaire sur le champ de bataille."
 			},
 			"id": "EX1_345",
 			"name": "Mindgames",
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Put a copy of a random minion from your opponent's deck into the battlefield.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_164b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Nourrir"
+				"name": "Nourrir",
+				"text": "Vous piochez 3 cartes."
 			},
 			"id": "EX1_164b",
 			"name": "Nourish",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Draw 3 cards.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_Coopv3_102.png",
 			"cost": 2,
 			"fr": {
-				"name": "L’Ombre ou la Lumière ?"
+				"name": "L’Ombre ou la Lumière ?",
+				"text": "<b>Choix des armes_:</b> chaque joueur pioche 2 cartes, ou rend 8 PV à chaque héros."
 			},
 			"id": "TB_Coopv3_102",
 			"name": "Shadow or Light?",
 			"playerClass": "Priest",
 			"set": "Tb",
+			"text": "<b>Choose One -</b> Each player draws 2 cards; or Restore 8 Health to each hero.",
 			"type": "Spell"
 		},
 		{
@@ -17560,12 +19645,14 @@ var parseCardsText = {
 			"cardImage": "TB_PickYourFate_4.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin cruel : carte"
+				"name": "Destin cruel : carte",
+				"text": "Quand un serviteur meurt, son propriétaire pioche une carte."
 			},
 			"id": "TB_PickYourFate_4",
 			"name": "Dire Fate: Card",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "When a minion dies, its owner draws a card.",
 			"type": "Spell"
 		},
 		{
@@ -17575,7 +19662,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Jeune prêtresse"
+				"name": "Jeune prêtresse",
+				"text": "À la fin de votre tour, donne +1 PV à un autre serviteur allié aléatoire."
 			},
 			"health": 1,
 			"id": "EX1_004",
@@ -17583,18 +19671,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "At the end of your turn, give another random friendly minion +1 Health.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX15_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Trait de givre"
+				"name": "Trait de givre",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 2 points de dégâts au héros adverse et le <b>gèle</b>."
 			},
 			"id": "NAX15_02",
 			"name": "Frost Blast",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 2 damage to the enemy hero and <b>Freeze</b> it.",
 			"type": "Hero_power"
 		},
 		{
@@ -17604,7 +19695,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Seigneur de la toile nérub’ar"
+				"name": "Seigneur de la toile nérub’ar",
+				"text": "Les serviteurs avec <b>Cri de guerre</b> coûtent (2) cristaux de plus."
 			},
 			"health": 4,
 			"id": "FP1_017",
@@ -17612,17 +19704,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "Minions with <b>Battlecry</b> cost (2) more.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOE_061e.png",
 			"fr": {
-				"name": "Puissance des titans"
+				"name": "Puissance des titans",
+				"text": "+3/+3."
 			},
 			"id": "LOE_061e",
 			"name": "Power of the Titans",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "+3/+3.",
 			"type": "Enchantment"
 		},
 		{
@@ -17630,7 +19725,8 @@ var parseCardsText = {
 			"cardImage": "CRED_07.png",
 			"cost": 2,
 			"fr": {
-				"name": "Zwick"
+				"name": "Zwick",
+				"text": "<b>Cri de guerre :</b> se plaint du prix du bacon."
 			},
 			"health": 2,
 			"id": "CRED_07",
@@ -17638,6 +19734,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Complain about bacon prices.",
 			"type": "Minion"
 		},
 		{
@@ -17647,7 +19744,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Prophète nérubien"
+				"name": "Prophète nérubien",
+				"text": "Au début de votre tour, réduit le coût en mana de cette carte de\n(1) |4(cristal,cristaux)."
 			},
 			"health": 4,
 			"id": "OG_138",
@@ -17655,17 +19753,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "At the start of your turn, reduce this card's\nCost by (1).",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_010b.png",
 			"fr": {
-				"name": "Choix de Velen"
+				"name": "Choix de Velen",
+				"text": "+2/+4 et <b>dégâts des sorts :+1</b>."
 			},
 			"id": "GVG_010b",
 			"name": "Velen's Chosen",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "+2/+4 and <b>Spell Damage +1</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -17683,25 +19784,29 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_155be.png",
 			"fr": {
-				"name": "Marque de la nature"
+				"name": "Marque de la nature",
+				"text": "Ce serviteur a +4 PV et <b>Provocation</b>."
 			},
 			"id": "EX1_155be",
 			"name": "Mark of Nature",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "This minion has +4 Health and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA04_4H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Déchaînement"
+				"name": "Déchaînement",
+				"text": "Invoque 3 liges du feu. <b>Surcharge :</b> (2)"
 			},
 			"id": "BRMA04_4H",
 			"name": "Rock Out",
 			"overload": 2,
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Summon 3 Firesworn. <b>Overload:</b> (2)",
 			"type": "Spell"
 		},
 		{
@@ -17709,38 +19814,44 @@ var parseCardsText = {
 			"cardImage": "EX1_538t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Chien"
+				"name": "Chien",
+				"text": "<b>Charge</b>"
 			},
 			"health": 1,
 			"id": "EX1_538t",
 			"name": "Hound",
 			"playerClass": "Hunter",
 			"set": "Expert1",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA12_8.png",
 			"cost": 2,
 			"fr": {
-				"name": "Mutation chromatique"
+				"name": "Mutation chromatique",
+				"text": "Transforme un serviteur en draconien chromatique 2/2."
 			},
 			"id": "BRMA12_8",
 			"name": "Chromatic Mutation",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Transform a minion into a 2/2 Chromatic Dragonkin.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_104.png",
 			"cost": 0,
 			"fr": {
-				"name": "Add 4 to Health."
+				"name": "Add 4 to Health.",
+				"text": "Adds 4 health to a damaged character. Does NOT heal."
 			},
 			"id": "XXX_104",
 			"name": "Add 4 to Health.",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Adds 4 health to a damaged character. Does NOT heal.",
 			"type": "Spell"
 		},
 		{
@@ -17748,13 +19859,15 @@ var parseCardsText = {
 			"cardImage": "KARA_13_03H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Guerrière orque"
+				"name": "Guerrière orque",
+				"text": "<b>Charge</b>"
 			},
 			"health": 3,
 			"id": "KARA_13_03H",
 			"name": "Orc Warrior",
 			"playerClass": "Warrior",
 			"set": "Kara",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -17764,7 +19877,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Ennuy-o-tron"
+				"name": "Ennuy-o-tron",
+				"text": "<b>Provocation</b>\n<b>Bouclier divin</b>"
 			},
 			"health": 2,
 			"id": "GVG_085",
@@ -17772,6 +19886,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Taunt</b>\n<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -17780,37 +19895,43 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Protégez le roi !"
+				"name": "Protégez le roi !",
+				"text": "Invoque un pion 1/1 avec <b>Provocation</b> pour chaque serviteur adverse."
 			},
 			"id": "KAR_026",
 			"name": "Protect the King!",
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "For each enemy minion, summon a 1/1 Pawn with <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NEW1_025e.png",
 			"fr": {
-				"name": "Renforcement"
+				"name": "Renforcement",
+				"text": "Vie augmentée."
 			},
 			"id": "NEW1_025e",
 			"name": "Bolstered",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "XXX_050.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy a Mana Crystal"
+				"name": "Destroy a Mana Crystal",
+				"text": "Pick a player and destroy one of his Mana Crystals."
 			},
 			"id": "XXX_050",
 			"name": "Destroy a Mana Crystal",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Pick a player and destroy one of his Mana Crystals.",
 			"type": "Spell"
 		},
 		{
@@ -17818,37 +19939,43 @@ var parseCardsText = {
 			"cardImage": "OG_202a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Force d’Y’Shaarj"
+				"name": "Force d’Y’Shaarj",
+				"text": "Invoque une gelée 2/2."
 			},
 			"id": "OG_202a",
 			"name": "Y'Shaarj's Strength",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Summon a 2/2 Slime.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_PickYourFate_3.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin cruel : Furie des vents"
+				"name": "Destin cruel : Furie des vents",
+				"text": "Tous les serviteurs ont <b>Furie des vents</b>."
 			},
 			"id": "TB_PickYourFate_3",
 			"name": "Dire Fate: Windfury",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "All minions have <b>Windfury</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA05_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Trogg détester serviteurs !"
+				"name": "Trogg détester serviteurs !",
+				"text": "<b>Pouvoir héroïque passif</b> Les serviteurs adverses coûtent (2) |4(cristal,cristaux) de plus. Le pouvoir change au début de votre tour."
 			},
 			"id": "LOEA05_02",
 			"name": "Trogg Hate Minions!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\n Enemy minions cost (2) more. Swap at the start of your turn.",
 			"type": "Hero_power"
 		},
 		{
@@ -17857,13 +19984,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Appel du familier"
+				"name": "Appel du familier",
+				"text": "Vous piochez une carte. Si c’est une Bête, elle coûte (4) cristaux de moins."
 			},
 			"id": "GVG_017",
 			"name": "Call Pet",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Draw a card.\nIf it's a Beast, it costs (4) less.",
 			"type": "Spell"
 		},
 		{
@@ -17886,13 +20015,15 @@ var parseCardsText = {
 			"cardImage": "BRMA15_4.png",
 			"cost": 1,
 			"fr": {
-				"name": "Aberration"
+				"name": "Aberration",
+				"text": "<b>Charge</b>"
 			},
 			"health": 1,
 			"id": "BRMA15_4",
 			"name": "Aberration",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -17902,7 +20033,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Réducteur fou"
+				"name": "Réducteur fou",
+				"text": "<b>Cri de guerre :</b> donne à un serviteur -2 ATQ pendant ce tour."
 			},
 			"health": 2,
 			"id": "GVG_011",
@@ -17910,17 +20042,20 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Give a minion -2 Attack this turn.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_MP_02e.png",
 			"fr": {
-				"name": "Reconverti"
+				"name": "Reconverti",
+				"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 			},
 			"id": "TB_MP_02e",
 			"name": "Repurposed",
 			"playerClass": "Dream",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> Draw a card.",
 			"type": "Enchantment"
 		},
 		{
@@ -17938,23 +20073,27 @@ var parseCardsText = {
 			"cardImage": "BRMA05_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Mana enflammé"
+				"name": "Mana enflammé",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 10 points de dégâts au héros adverse s’il lui reste des cristaux de mana inutilisés."
 			},
 			"id": "BRMA05_2H",
 			"name": "Ignite Mana",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nDeal 10 damage to the enemy hero if they have any unspent Mana.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "NAX11_04e.png",
 			"fr": {
-				"name": "Injection mutante"
+				"name": "Injection mutante",
+				"text": "+4/+4 et <b>Provocation</b>."
 			},
 			"id": "NAX11_04e",
 			"name": "Mutating Injection",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "+4/+4 and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -17964,7 +20103,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Vide-gousset"
+				"name": "Vide-gousset",
+				"text": "Chaque fois que ce serviteur attaque un héros, ajoute une carte La pièce dans votre main."
 			},
 			"health": 2,
 			"id": "AT_031",
@@ -17972,6 +20112,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Whenever this minion attacks a hero, add the Coin to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -17980,13 +20121,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Venger"
+				"name": "Venger",
+				"text": "<b>Secret :</b> quand l’un de vos serviteurs meurt, donne +3/+2 à un serviteur allié aléatoire."
 			},
 			"id": "FP1_020",
 			"name": "Avenge",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Secret:</b> When one of your minions dies, give a random friendly minion +3/+2.",
 			"type": "Spell"
 		},
 		{
@@ -17996,7 +20139,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Dr Boum"
+				"name": "Dr Boum",
+				"text": "<b>Cri de guerre_:</b> invoque deux Ro’Boum_1/1. <i>ATTENTION_: les Ro’Boum peuvent exploser.</i>"
 			},
 			"health": 7,
 			"id": "GVG_110",
@@ -18004,29 +20148,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Summon two 1/1 Boom Bots. <i>WARNING: Bots may explode.</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX11_02H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Nuage empoisonné"
+				"name": "Nuage empoisonné",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 2 points de dégâts à\n tous les adversaires. Invoque une gelée si l’un d’eux meurt."
 			},
 			"id": "NAX11_02H",
 			"name": "Poison Cloud",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 2 damage to all enemies. If any die, summon a slime.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "NAX9_07e.png",
 			"fr": {
-				"name": "Marque des cavaliers"
+				"name": "Marque des cavaliers",
+				"text": "+1/+1."
 			},
 			"id": "NAX9_07e",
 			"name": "Mark of the Horsemen",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -18035,36 +20184,42 @@ var parseCardsText = {
 			"cost": 1,
 			"durability": 5,
 			"fr": {
-				"name": "Mâchoires"
+				"name": "Mâchoires",
+				"text": "Gagne +2 ATQ chaque fois qu’un serviteur avec <b>Râle d’agonie</b> meurt."
 			},
 			"id": "NAX12_03H",
 			"name": "Jaws",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Whenever a minion with <b>Deathrattle</b> dies, gain +2 Attack.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "LOEA_01.png",
 			"cost": 3,
 			"fr": {
-				"name": "Présence menaçante"
+				"name": "Présence menaçante",
+				"text": "Vous piochez 2 cartes. Gagne +4 points d’armure."
 			},
 			"id": "LOEA_01",
 			"name": "Looming Presence",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Draw 2 cards. Gain 4 Armor.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA01_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Bénédictions du soleil"
+				"name": "Bénédictions du soleil",
+				"text": "<b>Pouvoir héroïque passif</b>\nLa personne qui contrôle la baguette du Soleil est <b>Insensible</b>."
 			},
 			"id": "LOEA01_02",
 			"name": "Blessings of the Sun",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\nWhoever controls the Rod of the Sun is <b>Immune.</b>",
 			"type": "Hero_power"
 		},
 		{
@@ -18073,13 +20228,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Contrôle mental"
+				"name": "Contrôle mental",
+				"text": "Prend le contrôle d’un serviteur adverse."
 			},
 			"id": "CS1_113",
 			"name": "Mind Control",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Take control of an enemy minion.",
 			"type": "Spell"
 		},
 		{
@@ -18104,13 +20261,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Sprint"
+				"name": "Sprint",
+				"text": "Vous piochez 4 cartes."
 			},
 			"id": "CS2_077",
 			"name": "Sprint",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Draw 4 cards.",
 			"type": "Spell"
 		},
 		{
@@ -18118,12 +20277,14 @@ var parseCardsText = {
 			"cardImage": "KARA_08_05.png",
 			"cost": 3,
 			"fr": {
-				"name": "Rugissement terrifiant"
+				"name": "Rugissement terrifiant",
+				"text": "Renvoie un serviteur adverse dans la main de votre adversaire."
 			},
 			"id": "KARA_08_05",
 			"name": "Terrifying Roar",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Return an enemy minion to your opponent's hand.",
 			"type": "Spell"
 		},
 		{
@@ -18148,7 +20309,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Druide du Croc"
+				"name": "Druide du Croc",
+				"text": "<b>Cri de guerre :</b> si vous avez une Bête, transforme ce serviteur en une carte 7/7."
 			},
 			"health": 4,
 			"id": "GVG_080",
@@ -18156,51 +20318,60 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> If you have a Beast, transform this minion into a 7/7.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRM_033e.png",
 			"fr": {
-				"name": "Sang de dragon"
+				"name": "Sang de dragon",
+				"text": "+1/+1"
 			},
 			"id": "BRM_033e",
 			"name": "Dragon Blood",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "+1/+1",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_PickYourFate_Windfury.png",
 			"fr": {
-				"name": "Destin"
+				"name": "Destin",
+				"text": "Ce serviteur a <b>Furie des vents</b>."
 			},
 			"id": "TB_PickYourFate_Windfury",
 			"name": "Fate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "This minion has <b>Windfury</b>",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "EX1_166a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Éclat lunaire"
+				"name": "Éclat lunaire",
+				"text": "Inflige 2 points de dégâts."
 			},
 			"id": "EX1_166a",
 			"name": "Moonfire",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Deal 2 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KARA_13_11e.png",
 			"fr": {
-				"name": "Affaiblir"
+				"name": "Affaiblir",
+				"text": "Les points de vie sont passés à 1."
 			},
 			"id": "KARA_13_11e",
 			"name": "Enfeeble",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Health changed to 1.",
 			"type": "Enchantment"
 		},
 		{
@@ -18235,7 +20406,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Partenaire d’entraînement"
+				"name": "Partenaire d’entraînement",
+				"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> confère <b>Provocation</b> à un serviteur."
 			},
 			"health": 2,
 			"id": "AT_069",
@@ -18243,6 +20415,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Taunt</b>\n<b>Battlecry:</b> Give a\nminion <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -18251,13 +20424,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Portail de Reflet-de-Lune"
+				"name": "Portail de Reflet-de-Lune",
+				"text": "Rend 6 PV. Invoque un serviteur aléatoire coûtant 6_cristaux."
 			},
 			"id": "KAR_075",
 			"name": "Moonglade Portal",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "Restore 6 Health. Summon a random\n6-Cost minion.",
 			"type": "Spell"
 		},
 		{
@@ -18281,7 +20456,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Kidnappeur"
+				"name": "Kidnappeur",
+				"text": "<b>Combo :</b> renvoie un serviteur dans la main de son propriétaire."
 			},
 			"health": 3,
 			"id": "NEW1_005",
@@ -18289,6 +20465,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Combo:</b> Return a minion to its owner's hand.",
 			"type": "Minion"
 		},
 		{
@@ -18298,7 +20475,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Acolyte capuchonnée"
+				"name": "Acolyte capuchonnée",
+				"text": "Chaque fois qu’un personnage est soigné, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 6,
 			"id": "OG_334",
@@ -18306,6 +20484,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Whenever a character is healed, give your\nC'Thun +1/+1 <i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
@@ -18314,13 +20493,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Bénédiction de sagesse"
+				"name": "Bénédiction de sagesse",
+				"text": "Choisissez un serviteur. Chaque fois qu’il attaque, vous piochez une carte."
 			},
 			"id": "EX1_363",
 			"name": "Blessing of Wisdom",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Choose a minion. Whenever it attacks, draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -18351,24 +20532,28 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_01.png",
 			"cost": 1,
 			"fr": {
-				"name": "Pion noir"
+				"name": "Pion noir",
+				"text": "<b>Attaque automatique_:</b> inflige 1 point de dégâts aux adversaires en face de ce serviteur."
 			},
 			"health": 6,
 			"id": "KAR_A10_01",
 			"name": "Black Pawn",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Auto-Attack:</b> Deal 1 damage to the enemies opposite this minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_068a.png",
 			"fr": {
-				"name": "Magie métabolisée"
+				"name": "Magie métabolisée",
+				"text": "Attaque augmentée."
 			},
 			"id": "GVG_068a",
 			"name": "Metabolized Magic",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -18378,7 +20563,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Cheval de guerre cuirassé"
+				"name": "Cheval de guerre cuirassé",
+				"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne <b>Charge</b>."
 			},
 			"health": 3,
 			"id": "AT_108",
@@ -18386,17 +20572,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, gain <b>Charge</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KAR_A01_02e.png",
 			"fr": {
-				"name": "Reflet"
+				"name": "Reflet",
+				"text": "1/1."
 			},
 			"id": "KAR_A01_02e",
 			"name": "Reflection",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "1/1.",
 			"type": "Enchantment"
 		},
 		{
@@ -18405,13 +20594,15 @@ var parseCardsText = {
 			"cardImage": "KARA_08_08.png",
 			"cost": 11,
 			"fr": {
-				"name": "Portail rouge"
+				"name": "Portail rouge",
+				"text": "Le personnage dans le rayon rouge a <b>Furie des vents</b>."
 			},
 			"health": 1,
 			"id": "KARA_08_08",
 			"name": "Red Portal",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "The character in the red beam has <b>Windfury</b>.",
 			"type": "Minion"
 		},
 		{
@@ -18421,7 +20612,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Diablotin de Malchezaar"
+				"name": "Diablotin de Malchezaar",
+				"text": "Chaque fois que vous vous défaussez d’une carte, vous en piochez une."
 			},
 			"health": 3,
 			"id": "KAR_089",
@@ -18429,30 +20621,35 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Whenever you discard a card, draw a card.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_13_13.png",
 			"cost": 2,
 			"fr": {
-				"name": "Légion"
+				"name": "Légion",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un abyssal_6/6."
 			},
 			"id": "KARA_13_13",
 			"name": "Legion",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nSummon a 6/6 Abyssal.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "TB_FactionWar_Rag1.png",
 			"cost": 4,
 			"fr": {
-				"name": "MEURS, INSECTE !"
+				"name": "MEURS, INSECTE !",
+				"text": "Votre pouvoir héroïque devient « Inflige $8 points de dégâts à un adversaire aléatoire »."
 			},
 			"id": "TB_FactionWar_Rag1",
 			"name": "DIE, INSECT!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Your hero power becomes \"Deal $8 damage to random enemy.\"",
 			"type": "Spell"
 		},
 		{
@@ -18462,7 +20659,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Mangesort prodigieuse"
+				"name": "Mangesort prodigieuse",
+				"text": "<b>Cri de guerre :</b> copie le pouvoir héroïque de votre adversaire."
 			},
 			"health": 5,
 			"id": "AT_098",
@@ -18470,6 +20668,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Copy your opponent's Hero Power.",
 			"type": "Minion"
 		},
 		{
@@ -18479,7 +20678,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Ourson robot anodisé"
+				"name": "Ourson robot anodisé",
+				"text": "<b>Provocation</b>.\n<b>Choix des armes :</b>\n+1 ATQ ou +1 PV."
 			},
 			"health": 2,
 			"id": "GVG_030",
@@ -18487,6 +20687,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Taunt</b>. <b>Choose One -</b>\n+1 Attack; or +1 Health.",
 			"type": "Minion"
 		},
 		{
@@ -18497,7 +20698,8 @@ var parseCardsText = {
 			"cost": 4,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Mécano de petit dragon"
+				"name": "Mécano de petit dragon",
+				"text": "<b>Cri de guerre :</b> invoque un petit dragon mécanique 2/1."
 			},
 			"health": 4,
 			"id": "EX1_025",
@@ -18505,6 +20707,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Summon a 2/1 Mechanical Dragonling.",
 			"type": "Minion"
 		},
 		{
@@ -18524,13 +20727,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Feu démoniaque"
+				"name": "Feu démoniaque",
+				"text": "Inflige $2 |4(point,points) de dégâts à un serviteur. Si la cible est un de vos démons, lui donne +2/+2 à la place."
 			},
 			"id": "EX1_596",
 			"name": "Demonfire",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Deal $2 damage to a minion. If it’s a friendly Demon, give it +2/+2 instead.",
 			"type": "Spell"
 		},
 		{
@@ -18549,36 +20754,42 @@ var parseCardsText = {
 			"cardImage": "LOEA04_30.png",
 			"cost": 0,
 			"fr": {
-				"name": "Les ténèbres"
+				"name": "Les ténèbres",
+				"text": "<b>Prendre le raccourci ?</b>"
 			},
 			"id": "LOEA04_30",
 			"name": "The Darkness",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Take the Shortcut?</b>",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA15_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "L’alchimiste"
+				"name": "L’alchimiste",
+				"text": "<b>Pouvoir héroïque passif</b>\nL’Attaque et la Vie des serviteurs sont échangées.\nVos serviteurs ont +2/+2."
 			},
 			"id": "BRMA15_2H",
 			"name": "The Alchemist",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Passive Hero Power</b>\nMinions' Attack and Health are swapped.\nYour minions have +2/+2.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "TB_ClassRandom_Mage.png",
 			"cost": 0,
 			"fr": {
-				"name": "Deuxième classe : mage"
+				"name": "Deuxième classe : mage",
+				"text": "Ajoute des cartes de mage dans votre deck."
 			},
 			"id": "TB_ClassRandom_Mage",
 			"name": "Second Class: Mage",
 			"playerClass": "Mage",
 			"set": "Tb",
+			"text": "Add Mage cards to your deck.",
 			"type": "Spell"
 		},
 		{
@@ -18587,12 +20798,14 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 3,
 			"fr": {
-				"name": "Atiesh"
+				"name": "Atiesh",
+				"text": "Après que vous avez lancé un sort, invoque un serviteur aléatoire de même coût. Perd 1_point de durabilité."
 			},
 			"id": "KARA_13_26",
 			"name": "Atiesh",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "[x]After you cast a spell,\nsummon a random\nminion of that Cost.\nLose 1 Durability.",
 			"type": "Weapon"
 		},
 		{
@@ -18611,13 +20824,15 @@ var parseCardsText = {
 			"cardImage": "XXX_009.png",
 			"cost": 0,
 			"fr": {
-				"name": "Enchant"
+				"name": "Enchant",
+				"text": "Enchant a minion with an empty enchant."
 			},
 			"id": "XXX_009",
 			"name": "Enchant",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Enchant a minion with an empty enchant.",
 			"type": "Spell"
 		},
 		{
@@ -18627,7 +20842,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Cauchemar écailleux"
+				"name": "Cauchemar écailleux",
+				"text": "Au début de votre tour, double l’Attaque de ce serviteur."
 			},
 			"health": 8,
 			"id": "OG_271",
@@ -18635,6 +20851,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "At the start of your turn, double this minion's Attack.",
 			"type": "Minion"
 		},
 		{
@@ -18644,7 +20861,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Chercheuse du Reliquaire"
+				"name": "Chercheuse du Reliquaire",
+				"text": "<b>Cri de guerre :</b> gagne +4/+4 si vous avez\n6 autres serviteurs."
 			},
 			"health": 1,
 			"id": "LOE_116",
@@ -18652,6 +20870,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> If you have 6 other minions, gain +4/+4.",
 			"type": "Minion"
 		},
 		{
@@ -18659,12 +20878,14 @@ var parseCardsText = {
 			"cardImage": "KAR_A01_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Reflets"
+				"name": "Reflets",
+				"text": "<b>Pouvoir héroïque passif</b>\nChaque fois qu’un serviteur est joué, en invoque une copie_1/1."
 			},
 			"id": "KAR_A01_02",
 			"name": "Reflections",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Passive Hero Power</b>\nWhenever a minion is played, summon a 1/1 copy of it.",
 			"type": "Hero_power"
 		},
 		{
@@ -18674,7 +20895,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Zoobot"
+				"name": "Zoobot",
+				"text": "<b>Cri de guerre_:</b> donne +1/+1 à une Bête, un Dragon et un Murloc alliés aléatoires."
 			},
 			"health": 3,
 			"id": "KAR_095",
@@ -18682,6 +20904,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Give a random friendly Beast, Dragon, and Murloc +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -18689,13 +20912,15 @@ var parseCardsText = {
 			"cardImage": "NAX8_03t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Jeune recrue spectrale"
+				"name": "Jeune recrue spectrale",
+				"text": "Au début de votre tour, inflige 1 point de dégâts à votre héros."
 			},
 			"health": 2,
 			"id": "NAX8_03t",
 			"name": "Spectral Trainee",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "At the start of your turn, deal 1 damage to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -18714,12 +20939,14 @@ var parseCardsText = {
 			"cardImage": "KARA_00_02H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Légion"
+				"name": "Légion",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un abyssal_6/6."
 			},
 			"id": "KARA_00_02H",
 			"name": "Legion",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nSummon a 6/6 Abyssal.",
 			"type": "Hero_power"
 		},
 		{
@@ -18729,7 +20956,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Goule mangeuse de chair"
+				"name": "Goule mangeuse de chair",
+				"text": "Chaque fois qu’un serviteur meurt, gagne +1 ATQ."
 			},
 			"health": 3,
 			"id": "tt_004",
@@ -18737,6 +20965,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Whenever a minion dies, gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -18746,7 +20975,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Grande croisée"
+				"name": "Grande croisée",
+				"text": "<b>Cri de guerre :</b> ajoute une carte paladin aléatoire dans votre main."
 			},
 			"health": 5,
 			"id": "AT_118",
@@ -18754,6 +20984,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Add a random Paladin card to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -18763,7 +20994,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Mande-flamme du Crépuscule"
+				"name": "Mande-flamme du Crépuscule",
+				"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à tous les serviteurs adverses."
 			},
 			"health": 2,
 			"id": "OG_083",
@@ -18771,6 +21003,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Deal 1 damage to all enemy minions.",
 			"type": "Minion"
 		},
 		{
@@ -18780,7 +21013,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Sang de l’Ancien"
+				"name": "Sang de l’Ancien",
+				"text": "Si vous contrôlez deux de ces serviteurs à la fin de votre tour, les fusionne en « l’Ancien »."
 			},
 			"health": 9,
 			"id": "OG_173",
@@ -18788,6 +21022,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "If you control two of these\nat the end of your turn, merge them into 'The Ancient One'.",
 			"type": "Minion"
 		},
 		{
@@ -18796,49 +21031,57 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Double vue"
+				"name": "Double vue",
+				"text": "Vous piochez une carte. Elle coûte (3) cristaux de moins."
 			},
 			"id": "CS2_053",
 			"name": "Far Sight",
 			"playerClass": "Shaman",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Draw a card. That card costs (3) less.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_573a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Faveur du demi-dieu"
+				"name": "Faveur du demi-dieu",
+				"text": "Confère +2/+2 à vos autres serviteurs."
 			},
 			"id": "EX1_573a",
 			"name": "Demigod's Favor",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Give your other minions +2/+2.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_160a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Invocation de panthère"
+				"name": "Invocation de panthère",
+				"text": "Invoque une panthère 3/2."
 			},
 			"id": "EX1_160a",
 			"name": "Summon a Panther",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Summon a 3/2 Panther.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpBossSpell_5.png",
 			"cost": 0,
 			"fr": {
-				"name": "Double zap"
+				"name": "Double zap",
+				"text": "Inflige les dégâts de l’attaque aux deux joueurs."
 			},
 			"id": "TB_CoOpBossSpell_5",
 			"name": "Double Zap",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal Attack damage to both players.",
 			"type": "Spell"
 		},
 		{
@@ -18848,7 +21091,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Héroïne altruiste"
+				"name": "Héroïne altruiste",
+				"text": "<b>Râle d’agonie :</b> confère <b>Bouclier divin</b> à un serviteur allié aléatoire."
 			},
 			"health": 1,
 			"id": "OG_221",
@@ -18856,6 +21100,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Give a random friendly minion <b>Divine Shield</b>.",
 			"type": "Minion"
 		},
 		{
@@ -18866,7 +21111,8 @@ var parseCardsText = {
 			"cost": 4,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Ancien maître brasseur"
+				"name": "Ancien maître brasseur",
+				"text": "<b>Cri de guerre :</b> renvoie un serviteur allié du champ de bataille et le place dans votre main."
 			},
 			"health": 4,
 			"id": "EX1_057",
@@ -18874,6 +21120,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Return a friendly minion from the battlefield to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -18895,7 +21142,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Kraken de la mer Boréale"
+				"name": "Kraken de la mer Boréale",
+				"text": "<b>Cri de guerre :</b> inflige\n4 points de dégâts."
 			},
 			"health": 7,
 			"id": "AT_103",
@@ -18903,6 +21151,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Deal 4 damage.",
 			"type": "Minion"
 		},
 		{
@@ -18913,13 +21162,15 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 3,
 			"fr": {
-				"name": "Clé de maître des rouages"
+				"name": "Clé de maître des rouages",
+				"text": "A +2 ATQ tant que vous avez un Méca."
 			},
 			"id": "GVG_024",
 			"name": "Cogmaster's Wrench",
 			"playerClass": "Rogue",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Has +2 Attack while you have a Mech.",
 			"type": "Weapon"
 		},
 		{
@@ -18929,7 +21180,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Gazleu"
+				"name": "Gazleu",
+				"text": "Chaque fois que vous lancez un sort à 1 cristal, ajoute un Méca aléatoire dans votre main."
 			},
 			"health": 6,
 			"id": "GVG_117",
@@ -18937,6 +21189,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "Whenever you cast a 1-mana spell, add a random Mech to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -18945,13 +21198,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Imposition des mains"
+				"name": "Imposition des mains",
+				"text": "Rend #8 |4(point,points) de vie. Vous piochez 3 cartes."
 			},
 			"id": "EX1_354",
 			"name": "Lay on Hands",
 			"playerClass": "Paladin",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Restore #8 Health. Draw 3 cards.",
 			"type": "Spell"
 		},
 		{
@@ -18960,13 +21215,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Lance de flammes"
+				"name": "Lance de flammes",
+				"text": "Inflige $8 |4(point,points) de dégâts à un serviteur."
 			},
 			"id": "AT_001",
 			"name": "Flame Lance",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Deal $8 damage to a minion.",
 			"type": "Spell"
 		},
 		{
@@ -18996,12 +21253,14 @@ var parseCardsText = {
 		{
 			"cardImage": "LOEA06_03e.png",
 			"fr": {
-				"name": "Animé"
+				"name": "Animé",
+				"text": "+1/+1 et <b>Provocation</b>."
 			},
 			"id": "LOEA06_03e",
 			"name": "Animated",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "+1/+1 and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -19009,13 +21268,15 @@ var parseCardsText = {
 			"cardImage": "LOEA04_25h.png",
 			"cost": 8,
 			"fr": {
-				"name": "Statue vengeresse"
+				"name": "Statue vengeresse",
+				"text": "Inflige 5 points de dégâts à tous les adversaires à la fin de votre tour."
 			},
 			"health": 9,
 			"id": "LOEA04_25h",
 			"name": "Seething Statue",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "At the end of your turn, deal 5 damage to all enemies.",
 			"type": "Minion"
 		},
 		{
@@ -19024,24 +21285,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Maîtrise du blocage"
+				"name": "Maîtrise du blocage",
+				"text": "Vous gagnez 5 points d’armure.\nVous piochez une carte."
 			},
 			"id": "EX1_606",
 			"name": "Shield Block",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Gain 5 Armor.\nDraw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_BlingBrawl_Blade1e.png",
 			"fr": {
-				"name": "Lame de Bling-o-tron"
+				"name": "Lame de Bling-o-tron",
+				"text": "Quand elle casse, invoque une nouvelle arme aléatoire."
 			},
 			"id": "TB_BlingBrawl_Blade1e",
 			"name": "Blingtron's Blade",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "When this breaks, randomly summon a new weapon.",
 			"type": "Enchantment"
 		},
 		{
@@ -19065,7 +21330,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Soigneuse sombrécaille"
+				"name": "Soigneuse sombrécaille",
+				"text": "<b>Cri de guerre :</b> rend 2 points de vie à tous les personnages alliés."
 			},
 			"health": 5,
 			"id": "DS1_055",
@@ -19073,6 +21339,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Restore 2 Health to all friendly characters.",
 			"type": "Minion"
 		},
 		{
@@ -19082,7 +21349,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Ombrefiel"
+				"name": "Ombrefiel",
+				"text": "Chaque fois que vous piochez une carte, réduit son coût de\n(1) |4(cristal,cristaux)."
 			},
 			"health": 3,
 			"id": "AT_014",
@@ -19090,17 +21358,20 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Whenever you draw a card, reduce its Cost by (1).",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_274e.png",
 			"fr": {
-				"name": "Puissance brute !"
+				"name": "Puissance brute !",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "EX1_274e",
 			"name": "Raw Power!",
 			"playerClass": "Mage",
 			"set": "Expert1",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -19109,13 +21380,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Bénédiction des rois"
+				"name": "Bénédiction des rois",
+				"text": "Confère à un serviteur +4/+4. <i>(+4 ATQ/+4 PV)</i>"
 			},
 			"id": "CS2_092",
 			"name": "Blessing of Kings",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Give a minion +4/+4. <i>(+4 Attack/+4 Health)</i>",
 			"type": "Spell"
 		},
 		{
@@ -19138,7 +21411,8 @@ var parseCardsText = {
 			"cardImage": "AT_042t2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Panthère dent-de-sabre"
+				"name": "Panthère dent-de-sabre",
+				"text": "<b>Camouflage</b>"
 			},
 			"health": 2,
 			"id": "AT_042t2",
@@ -19146,17 +21420,20 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Stealth</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_CoOpv3_009e.png",
 			"fr": {
-				"name": "Transformation en nova"
+				"name": "Transformation en nova",
+				"text": "Ça va exploser_!"
 			},
 			"id": "TB_CoOpv3_009e",
 			"name": "Going Nova",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "It's about to blow!",
 			"type": "Enchantment"
 		},
 		{
@@ -19165,13 +21442,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Éclat lunaire"
+				"name": "Éclat lunaire",
+				"text": "Inflige $1 |4(point,points) de dégâts."
 			},
 			"id": "CS2_008",
 			"name": "Moonfire",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $1 damage.",
 			"type": "Spell"
 		},
 		{
@@ -19180,35 +21459,41 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Amélioration !"
+				"name": "Amélioration !",
+				"text": "Si vous avez une arme, lui donne +1/+1. Sinon, vous équipe d’une arme 1/3."
 			},
 			"id": "EX1_409",
 			"name": "Upgrade!",
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "If you have a weapon, give it +1/+1. Otherwise equip a 1/3 weapon.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KARA_08_02e.png",
 			"fr": {
-				"name": "Rage du Néant"
+				"name": "Rage du Néant",
+				"text": "+3 ATQ."
 			},
 			"id": "KARA_08_02e",
 			"name": "Nether Rage",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_059o.png",
 			"fr": {
-				"name": "Pacte de sang"
+				"name": "Pacte de sang",
+				"text": "Vie augmentée."
 			},
 			"id": "CS2_059o",
 			"name": "Blood Pact",
 			"playerClass": "Warlock",
 			"set": "Expert1",
+			"text": "Increased Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -19216,24 +21501,28 @@ var parseCardsText = {
 			"cardImage": "LOEA02_10c.png",
 			"cost": 0,
 			"fr": {
-				"name": "Misha"
+				"name": "Misha",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "LOEA02_10c",
 			"name": "Misha",
 			"playerClass": "Hunter",
 			"set": "Loe",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NEW1_014e.png",
 			"fr": {
-				"name": "Déguisé"
+				"name": "Déguisé",
+				"text": "Camouflé jusqu’à votre prochain tour."
 			},
 			"id": "NEW1_014e",
 			"name": "Disguised",
 			"playerClass": "Rogue",
 			"set": "Expert1",
+			"text": "Stealthed until your next turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -19243,7 +21532,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Saccageur gangrené"
+				"name": "Saccageur gangrené",
+				"text": "Chaque fois que votre adversaire joue une carte, retire les 3 cartes du dessus de votre deck."
 			},
 			"health": 8,
 			"id": "GVG_016",
@@ -19251,6 +21541,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Whenever your opponent plays a card, remove the top 3 cards of your deck.",
 			"type": "Minion"
 		},
 		{
@@ -19269,24 +21560,28 @@ var parseCardsText = {
 			"cardImage": "TB_PickYourFate_10.png",
 			"cost": 0,
 			"fr": {
-				"name": "Bonus : Cri de guerre"
+				"name": "Bonus : Cri de guerre",
+				"text": "Vos serviteurs avec <b>Cri de guerre</b> ont +1/+1."
 			},
 			"id": "TB_PickYourFate_10",
 			"name": "Battlecry Bonus",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Your <b>Battlecry</b> minions have +1/+1.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_037a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Racines vivantes"
+				"name": "Racines vivantes",
+				"text": "Inflige $2 |4(point,points) de dégâts."
 			},
 			"id": "AT_037a",
 			"name": "Living Roots",
 			"playerClass": "Druid",
 			"set": "Tgt",
+			"text": "Deal $2 damage.",
 			"type": "Spell"
 		},
 		{
@@ -19295,26 +21590,30 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Marteau de courroux"
+				"name": "Marteau de courroux",
+				"text": "Inflige $3 |4(point,points) de dégâts. Vous piochez une carte."
 			},
 			"id": "CS2_094",
 			"name": "Hammer of Wrath",
 			"playerClass": "Paladin",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $3 damage.\nDraw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_042a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Forme de lion"
+				"name": "Forme de lion",
+				"text": "<b>Charge</b>"
 			},
 			"id": "AT_042a",
 			"name": "Lion Form",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Charge</b>",
 			"type": "Spell"
 		},
 		{
@@ -19323,13 +21622,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Lame rebondissante"
+				"name": "Lame rebondissante",
+				"text": "Inflige $1 |4(point,points) de dégâts à un serviteur aléatoire. Recommence jusqu’à ce qu’un serviteur meure."
 			},
 			"id": "GVG_050",
 			"name": "Bouncing Blade",
 			"playerClass": "Warrior",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Deal $1 damage to a random minion. Repeat until a minion dies.",
 			"type": "Spell"
 		},
 		{
@@ -19337,7 +21638,8 @@ var parseCardsText = {
 			"cardImage": "TU4e_003.png",
 			"cost": 1,
 			"fr": {
-				"name": "Myrmidon naga"
+				"name": "Myrmidon naga",
+				"text": "<b></b>"
 			},
 			"health": 1,
 			"id": "TU4e_003",
@@ -19345,6 +21647,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "<b></b> ",
 			"type": "Minion"
 		},
 		{
@@ -19352,7 +21655,8 @@ var parseCardsText = {
 			"cardImage": "EX1_tk11.png",
 			"cost": 2,
 			"fr": {
-				"name": "Esprit du loup"
+				"name": "Esprit du loup",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 3,
 			"id": "EX1_tk11",
@@ -19360,6 +21664,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -19367,7 +21672,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_22H.png",
 			"cost": 10,
 			"fr": {
-				"name": "Archaedas"
+				"name": "Archaedas",
+				"text": "Transforme un serviteur adverse aléatoire en statue 0/2 à la fin de votre tour."
 			},
 			"health": 10,
 			"id": "LOEA16_22H",
@@ -19375,6 +21681,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, turn a random enemy minion into a 0/2 Statue.",
 			"type": "Minion"
 		},
 		{
@@ -19382,13 +21689,15 @@ var parseCardsText = {
 			"cardImage": "BRMA03_3.png",
 			"cost": 2,
 			"fr": {
-				"name": "Moira Barbe-de-Bronze"
+				"name": "Moira Barbe-de-Bronze",
+				"text": "Thaurissan ne peut pas utiliser son pouvoir héroïque.\nN’attaque jamais de serviteurs à moins qu’ils n’aient <b>Provocation</b>."
 			},
 			"health": 3,
 			"id": "BRMA03_3",
 			"name": "Moira Bronzebeard",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Thaurissan's Hero Power can't be used.\nNever attacks minions unless they have <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -19398,7 +21707,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Amasseur de butin"
+				"name": "Amasseur de butin",
+				"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 			},
 			"health": 1,
 			"id": "EX1_096",
@@ -19406,6 +21716,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Deathrattle:</b> Draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -19414,13 +21725,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Attaque mentale"
+				"name": "Attaque mentale",
+				"text": "Inflige $5 |4(point,points) de dégâts au héros adverse."
 			},
 			"id": "DS1_233",
 			"name": "Mind Blast",
 			"playerClass": "Priest",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $5 damage to the enemy hero.",
 			"type": "Spell"
 		},
 		{
@@ -19428,7 +21741,8 @@ var parseCardsText = {
 			"cardImage": "CRED_09.png",
 			"cost": 6,
 			"fr": {
-				"name": "Ben Thompson"
+				"name": "Ben Thompson",
+				"text": "<b>Cri de guerre :</b> dessine ses propres cartes."
 			},
 			"health": 7,
 			"id": "CRED_09",
@@ -19436,6 +21750,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Draw some cards. With a pen.",
 			"type": "Minion"
 		},
 		{
@@ -19443,7 +21758,8 @@ var parseCardsText = {
 			"cardImage": "XXX_044.png",
 			"cost": 0,
 			"fr": {
-				"name": "Hand Swapper Minion"
+				"name": "Hand Swapper Minion",
+				"text": "<b>Battlecry:</b> Discard 3 cards, then draw 3 cards."
 			},
 			"health": 5,
 			"id": "XXX_044",
@@ -19451,6 +21767,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "<b>Battlecry:</b> Discard 3 cards, then draw 3 cards.",
 			"type": "Minion"
 		},
 		{
@@ -19467,12 +21784,14 @@ var parseCardsText = {
 		{
 			"cardImage": "KAR_702e.png",
 			"fr": {
-				"name": "Un tour simple"
+				"name": "Un tour simple",
+				"text": "+2/+2."
 			},
 			"id": "KAR_702e",
 			"name": "A Simple Trick",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -19482,7 +21801,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Pyromancien sauvage"
+				"name": "Pyromancien sauvage",
+				"text": "Après que vous avez lancé un sort, inflige 1 point de dégâts à TOUS les serviteurs."
 			},
 			"health": 2,
 			"id": "NEW1_020",
@@ -19490,17 +21810,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "After you cast a spell, deal 1 damage to ALL minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_055o.png",
 			"fr": {
-				"name": "Surpuissant"
+				"name": "Surpuissant",
+				"text": "L’Attaque de l’accro au mana est augmentée."
 			},
 			"id": "EX1_055o",
 			"name": "Empowered",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Mana Addict has increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -19524,7 +21847,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Gardien du Crépuscule"
+				"name": "Gardien du Crépuscule",
+				"text": "<b>Cri de guerre :</b> gagne\n+1 ATQ et <b>Provocation</b> si vous avez un Dragon en main."
 			},
 			"health": 6,
 			"id": "AT_017",
@@ -19532,6 +21856,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +1 Attack and <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -19541,7 +21866,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Prophète Velen"
+				"name": "Prophète Velen",
+				"text": "Double les dégâts et les soins de vos sorts et de votre pouvoir héroïque."
 			},
 			"health": 7,
 			"id": "EX1_350",
@@ -19549,18 +21875,21 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "Double the damage and healing of your spells and Hero Power.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA09_3.png",
 			"cost": 2,
 			"fr": {
-				"name": "Ancienne Horde"
+				"name": "Ancienne Horde",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux orcs 1/1 avec <b>Provocation</b>. Change de pouvoir héroïque."
 			},
 			"id": "BRMA09_3",
 			"name": "Old Horde",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon two 1/1 Orcs with <b>Taunt</b>. Get a new Hero Power.",
 			"type": "Hero_power"
 		},
 		{
@@ -19568,7 +21897,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_22.png",
 			"cost": 5,
 			"fr": {
-				"name": "Archaedas"
+				"name": "Archaedas",
+				"text": "Transforme un serviteur adverse aléatoire en statue 0/2 à la fin de votre tour."
 			},
 			"health": 5,
 			"id": "LOEA16_22",
@@ -19576,6 +21906,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, turn a random enemy minion into a 0/2 Statue.",
 			"type": "Minion"
 		},
 		{
@@ -19583,13 +21914,15 @@ var parseCardsText = {
 			"cardImage": "LOEA04_13bth.png",
 			"cost": 4,
 			"fr": {
-				"name": "Garde d’Orsis"
+				"name": "Garde d’Orsis",
+				"text": "<b>Bouclier divin</b>"
 			},
 			"health": 8,
 			"id": "LOEA04_13bth",
 			"name": "Orsis Guard",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -19599,7 +21932,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Gangregarde"
+				"name": "Gangregarde",
+				"text": "<b>Provocation</b>. <b>Cri de guerre_:</b> détruit un de vos cristaux de mana."
 			},
 			"health": 5,
 			"id": "EX1_301",
@@ -19607,6 +21941,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>. <b>Battlecry:</b> Destroy one of your Mana Crystals.",
 			"type": "Minion"
 		},
 		{
@@ -19627,13 +21962,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Appel de la nature"
+				"name": "Appel de la nature",
+				"text": "Invoque les trois compagnons animaux."
 			},
 			"id": "OG_211",
 			"name": "Call of the Wild",
 			"playerClass": "Hunter",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Summon all three Animal Companions.",
 			"type": "Spell"
 		},
 		{
@@ -19641,13 +21978,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_07.png",
 			"cost": 4,
 			"fr": {
-				"name": "Cavalier noir"
+				"name": "Cavalier noir",
+				"text": "<b>Charge</b>.\nNe peut pas attaquer les héros."
 			},
 			"health": 3,
 			"id": "KAR_A10_07",
 			"name": "Black Knight",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Charge</b>.\nCan't Attack Heroes.",
 			"type": "Minion"
 		},
 		{
@@ -19657,7 +21996,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Lieutenant de la garde d’os"
+				"name": "Lieutenant de la garde d’os",
+				"text": "<b>Exaltation :</b> gagne +1 PV."
 			},
 			"health": 2,
 			"id": "AT_089",
@@ -19665,6 +22005,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Gain +1 Health.",
 			"type": "Minion"
 		},
 		{
@@ -19672,13 +22013,15 @@ var parseCardsText = {
 			"cardImage": "LOEA09_8.png",
 			"cost": 5,
 			"fr": {
-				"name": "Garde ondulant"
+				"name": "Garde ondulant",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 6,
 			"id": "LOEA09_8",
 			"name": "Slithering Guard",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -19687,13 +22030,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_05.png",
 			"cost": 2,
 			"fr": {
-				"name": "Tasse"
+				"name": "Tasse",
+				"text": "Les assiettes ont +1_ATQ."
 			},
 			"health": 1,
 			"id": "KAR_A02_05",
 			"name": "Cup",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Plates have +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -19703,7 +22048,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Robot réparateur amélioré"
+				"name": "Robot réparateur amélioré",
+				"text": "<b>Cri de guerre :</b> donne +4 PV à un Méca allié."
 			},
 			"health": 5,
 			"id": "GVG_083",
@@ -19711,6 +22057,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Give a friendly Mech +4 Health.",
 			"type": "Minion"
 		},
 		{
@@ -19731,7 +22078,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Chevalier spectral"
+				"name": "Chevalier spectral",
+				"text": "Ne peut pas être la cible de sorts ou de pouvoirs héroïques."
 			},
 			"health": 6,
 			"id": "FP1_008",
@@ -19739,6 +22087,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "Can't be targeted by spells or Hero Powers.",
 			"type": "Minion"
 		},
 		{
@@ -19748,7 +22097,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Goule instable"
+				"name": "Goule instable",
+				"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> inflige 1 point de dégâts à tous les serviteurs."
 			},
 			"health": 3,
 			"id": "FP1_024",
@@ -19756,6 +22106,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Taunt</b>. <b>Deathrattle:</b> Deal 1 damage to all minions.",
 			"type": "Minion"
 		},
 		{
@@ -19765,7 +22116,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Grommash Hurlenfer"
+				"name": "Grommash Hurlenfer",
+				"text": "<b>Charge</b>.\n<b>Accès de rage :</b> +6 ATQ"
 			},
 			"health": 9,
 			"id": "EX1_414",
@@ -19773,6 +22125,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Charge</b>\n<b>Enrage:</b> +6 Attack",
 			"type": "Minion"
 		},
 		{
@@ -19782,7 +22135,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Favori de la foule"
+				"name": "Favori de la foule",
+				"text": "Chaque fois que vous jouez une carte avec <b>Cri de guerre</b>,\nconfère +1/+1."
 			},
 			"health": 4,
 			"id": "AT_121",
@@ -19790,18 +22144,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Whenever you play a card with <b>Battlecry</b>, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_FactionWar_AnnoySpell1.png",
 			"cost": 4,
 			"fr": {
-				"name": "Fan-club d’Ennuy-o-tron"
+				"name": "Fan-club d’Ennuy-o-tron",
+				"text": "Invoque 3 Ennuy-o-trons."
 			},
 			"id": "TB_FactionWar_AnnoySpell1",
 			"name": "Annoy-o-Tron Fanclub",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Summon 3 Annoy-o-Trons",
 			"type": "Spell"
 		},
 		{
@@ -19809,37 +22166,43 @@ var parseCardsText = {
 			"cardImage": "BRMA09_3t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Orc de l’ancienne Horde"
+				"name": "Orc de l’ancienne Horde",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 1,
 			"id": "BRMA09_3t",
 			"name": "Old Horde Orc",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA04_28b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Traverser à pied"
+				"name": "Traverser à pied",
+				"text": "Gagne un cristal de mana."
 			},
 			"id": "LOEA04_28b",
 			"name": "Wade Through",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Gain a Mana Crystal",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA13_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Puissance des anciens"
+				"name": "Puissance des anciens",
+				"text": "<b>Pouvoir héroïque</b>\nAjoute une carte aléatoire dans votre main. Elle coûte (0) |4(cristal,cristaux) de mana."
 			},
 			"id": "LOEA13_2H",
 			"name": "Ancient Power",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nAdd a random card to your hand. It costs (0).",
 			"type": "Hero_power"
 		},
 		{
@@ -19849,7 +22212,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Lanceur de hache"
+				"name": "Lanceur de hache",
+				"text": "Inflige 2 points de dégâts au héros adverse chaque fois que ce serviteur subit des dégâts."
 			},
 			"health": 5,
 			"id": "BRM_016",
@@ -19857,6 +22221,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Whenever this minion takes damage, deal 2 damage to the enemy hero.",
 			"type": "Minion"
 		},
 		{
@@ -19867,7 +22232,8 @@ var parseCardsText = {
 			"cost": 2,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Guetteur ancien"
+				"name": "Guetteur ancien",
+				"text": "Ne peut pas attaquer."
 			},
 			"health": 5,
 			"id": "EX1_045",
@@ -19875,18 +22241,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Can't attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA17_8.png",
 			"cost": 0,
 			"fr": {
-				"name": "Frappe de Nefarian"
+				"name": "Frappe de Nefarian",
+				"text": "<b>Pouvoir héroïque</b>\nNefarian fait pleuvoir le feu depuis les cieux !"
 			},
 			"id": "BRMA17_8",
 			"name": "Nefarian Strikes!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nNefarian rains fire from above!",
 			"type": "Hero_power"
 		},
 		{
@@ -19894,7 +22263,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_3.png",
 			"cost": 4,
 			"fr": {
-				"name": "Gluth"
+				"name": "Gluth",
+				"text": "À la fin de votre tour, invoque un mort-vivant aléatoire."
 			},
 			"health": 4,
 			"id": "TB_KTRAF_3",
@@ -19902,30 +22272,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "At the end of your turn, summon a random Undead.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA13_4.png",
 			"cost": 1,
 			"fr": {
-				"name": "Magie sauvage"
+				"name": "Magie sauvage",
+				"text": "<b>Pouvoir héroïque</b>\nPlace un sort aléatoire de la classe de votre adversaire dans votre main."
 			},
 			"id": "BRMA13_4",
 			"name": "Wild Magic",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "TB_CoOpBossSpell_6.png",
 			"cost": 0,
 			"fr": {
-				"name": "Détruire le chroniqueur"
+				"name": "Détruire le chroniqueur",
+				"text": "Détruit le chroniqueur Cho."
 			},
 			"id": "TB_CoOpBossSpell_6",
 			"name": "Kill the Lorewalker",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Destroy Lorewalker Cho.",
 			"type": "Spell"
 		},
 		{
@@ -19963,13 +22338,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_06.png",
 			"cost": 4,
 			"fr": {
-				"name": "Pichet"
+				"name": "Pichet",
+				"text": "<b>Cri de guerre_:</b> donne +2/+2 à un serviteur."
 			},
 			"health": 3,
 			"id": "KAR_A02_06",
 			"name": "Pitcher",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Give a minion +2/+2.",
 			"type": "Minion"
 		},
 		{
@@ -19978,13 +22355,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Trahison"
+				"name": "Trahison",
+				"text": "Force un serviteur adverse à infliger ses dégâts aux serviteurs à côté de lui."
 			},
 			"id": "EX1_126",
 			"name": "Betrayal",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Force an enemy minion to deal its damage to the minions next to it.",
 			"type": "Spell"
 		},
 		{
@@ -19992,25 +22371,29 @@ var parseCardsText = {
 			"cardImage": "LOEA01_11h.png",
 			"cost": 0,
 			"fr": {
-				"name": "Baguette du Soleil"
+				"name": "Baguette du Soleil",
+				"text": "<b>Râle d’agonie :</b> remet cette carte à votre adversaire."
 			},
 			"health": 5,
 			"id": "LOEA01_11h",
 			"name": "Rod of the Sun",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Deathrattle:</b> Surrender this to your opponent.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA14_10H_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Activation !"
+				"name": "Activation !",
+				"text": "<b>Pouvoir héroïque</b>\nActive un Tron aléatoire."
 			},
 			"id": "BRMA14_10H_TB",
 			"name": "Activate!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nActivate a random Tron.",
 			"type": "Hero_power"
 		},
 		{
@@ -20020,7 +22403,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Mogor l’ogre"
+				"name": "Mogor l’ogre",
+				"text": "Tous les serviteurs ont 50% de chance d’attaquer le mauvais adversaire."
 			},
 			"health": 6,
 			"id": "GVG_112",
@@ -20028,6 +22412,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "All minions have a 50% chance to attack the wrong enemy.",
 			"type": "Minion"
 		},
 		{
@@ -20037,7 +22422,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Amasseur vicié"
+				"name": "Amasseur vicié",
+				"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 			},
 			"health": 2,
 			"id": "OG_323",
@@ -20045,6 +22431,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -20054,7 +22441,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Empereur Thaurissan"
+				"name": "Empereur Thaurissan",
+				"text": "À la fin de votre tour, réduit de (1) |4(cristal,cristaux) le coût des cartes dans votre main."
 			},
 			"health": 5,
 			"id": "BRM_028",
@@ -20062,18 +22450,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "At the end of your turn, reduce the Cost of cards in your hand by (1).",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_123e.png",
 			"fr": {
-				"name": "Remonté"
+				"name": "Remonté",
+				"text": "+2 aux dégâts des sorts."
 			},
 			"id": "GVG_123e",
 			"name": "Overclocked",
 			"playerClass": "Mage",
 			"set": "Gvg",
 			"spellDamage": 2,
+			"text": "Spell Damage +2.",
 			"type": "Enchantment"
 		},
 		{
@@ -20096,24 +22487,28 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_047e.png",
 			"fr": {
-				"name": "Expérimenté"
+				"name": "Expérimenté",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "AT_047e",
 			"name": "Experienced",
 			"playerClass": "Shaman",
 			"set": "Tgt",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_PickYourFate_11rand.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin cruel : murlocs"
+				"name": "Destin cruel : murlocs",
+				"text": "Transforme chaque serviteur en jeu en murloc 1/1."
 			},
 			"id": "TB_PickYourFate_11rand",
 			"name": "Dire Fate: Murlocs",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Turn each minion in play into a 1/1 Murloc.",
 			"type": "Spell"
 		},
 		{
@@ -20123,7 +22518,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Gentille grand-mère"
+				"name": "Gentille grand-mère",
+				"text": "<b>Râle d’agonie_:</b> invoque un\nGrand Méchant Loup_3/2."
 			},
 			"health": 1,
 			"id": "KAR_005",
@@ -20131,6 +22527,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Deathrattle:</b> Summon a 3/2 Big Bad Wolf.",
 			"type": "Minion"
 		},
 		{
@@ -20139,13 +22536,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Flammes infernales"
+				"name": "Flammes infernales",
+				"text": "Inflige $3 |4(point,points) de dégâts à TOUS les personnages."
 			},
 			"id": "CS2_062",
 			"name": "Hellfire",
 			"playerClass": "Warlock",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $3 damage to ALL characters.",
 			"type": "Spell"
 		},
 		{
@@ -20155,7 +22554,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "La Bête"
+				"name": "La Bête",
+				"text": "<b>Râle d’agonie :</b> invoque Finkle Einhorn 3/3 pour votre adversaire."
 			},
 			"health": 7,
 			"id": "EX1_577",
@@ -20163,6 +22563,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Deathrattle:</b> Summon a 3/3 Finkle Einhorn for your opponent.",
 			"type": "Minion"
 		},
 		{
@@ -20171,26 +22572,30 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Furie sanguinaire"
+				"name": "Furie sanguinaire",
+				"text": "Confère +3 ATQ à vos serviteurs pendant ce tour."
 			},
 			"id": "CS2_046",
 			"name": "Bloodlust",
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Give your minions +3 Attack this turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_019.png",
 			"cost": 0,
 			"fr": {
-				"name": "Molasses"
+				"name": "Molasses",
+				"text": "You can take as long as you want on your turn."
 			},
 			"id": "XXX_019",
 			"name": "Molasses",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "You can take as long as you want on your turn.",
 			"type": "Spell"
 		},
 		{
@@ -20198,7 +22603,8 @@ var parseCardsText = {
 			"cardImage": "CRED_11.png",
 			"cost": 4,
 			"fr": {
-				"name": "Jay Baxter"
+				"name": "Jay Baxter",
+				"text": "<b>Cri de guerre :</b> invoque CINQ inventions aléatoires."
 			},
 			"health": 4,
 			"id": "CRED_11",
@@ -20206,6 +22612,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Summon FIVE random Inventions.",
 			"type": "Minion"
 		},
 		{
@@ -20213,13 +22620,15 @@ var parseCardsText = {
 			"cardImage": "KARA_13_22.png",
 			"cost": 3,
 			"fr": {
-				"name": "Mime"
+				"name": "Mime",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 6,
 			"id": "KARA_13_22",
 			"name": "Mime",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -20228,37 +22637,43 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Pas de l’ombre"
+				"name": "Pas de l’ombre",
+				"text": "Renvoie un serviteur allié dans votre main. Il coûte (2) cristaux de moins."
 			},
 			"id": "EX1_144",
 			"name": "Shadowstep",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Return a friendly minion to your hand. It costs (2) less.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA07_28.png",
 			"cost": 1,
 			"fr": {
-				"name": "Réparations"
+				"name": "Réparations",
+				"text": "Rend 10 PV."
 			},
 			"id": "LOEA07_28",
 			"name": "Repairs",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Restore 10 Health.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "OG_070e.png",
 			"fr": {
-				"name": "Lames assoiffées"
+				"name": "Lames assoiffées",
+				"text": "+1/+1."
 			},
 			"id": "OG_070e",
 			"name": "Thirsty Blades",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -20281,7 +22696,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Croisée écarlate"
+				"name": "Croisée écarlate",
+				"text": "<b>Bouclier divin</b>"
 			},
 			"health": 1,
 			"id": "EX1_020",
@@ -20289,6 +22705,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -20296,7 +22713,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_18H.png",
 			"cost": 10,
 			"fr": {
-				"name": "Zinaar"
+				"name": "Zinaar",
+				"text": "Vous gagnez un Vœu à la fin de votre tour."
 			},
 			"health": 10,
 			"id": "LOEA16_18H",
@@ -20304,6 +22722,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, gain a wish.",
 			"type": "Minion"
 		},
 		{
@@ -20313,7 +22732,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Toshley"
+				"name": "Toshley",
+				"text": "<b>Cri de guerre et Râle d’agonie :</b> ajoute une carte <b>Pièce détachée</b> dans votre main."
 			},
 			"health": 7,
 			"id": "GVG_115",
@@ -20321,17 +22741,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Battlecry and Deathrattle:</b> Add a <b>Spare Part</b> card to your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_138e.png",
 			"fr": {
-				"name": "Volonté du vizir"
+				"name": "Volonté du vizir",
+				"text": "Coût réduit."
 			},
 			"id": "OG_138e",
 			"name": "Will of the Vizier",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Reduced Cost.",
 			"type": "Enchantment"
 		},
 		{
@@ -20353,13 +22776,15 @@ var parseCardsText = {
 			"cardImage": "LOEA07_11.png",
 			"cost": 1,
 			"fr": {
-				"name": "Débris"
+				"name": "Débris",
+				"text": "<b>Provocation</b>."
 			},
 			"health": 3,
 			"id": "LOEA07_11",
 			"name": "Debris",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Taunt.</b>",
 			"type": "Minion"
 		},
 		{
@@ -20369,7 +22794,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Elite Tauren Chieftain"
+				"name": "Elite Tauren Chieftain",
+				"text": "<b>Cri de guerre :</b> confère aux deux joueurs la puissance du ROCK ! (grâce à une carte au riff dément !)"
 			},
 			"health": 5,
 			"id": "PRO_001",
@@ -20377,40 +22803,47 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Promo",
+			"text": "<b>Battlecry:</b> Give both players the power to ROCK! (with a Power Chord card)",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "PRO_001b.png",
 			"cost": 4,
 			"fr": {
-				"name": "Les voleurs, ça vous prend..."
+				"name": "Les voleurs, ça vous prend...",
+				"text": "Inflige $4 |4(point,points) de dégâts. Vous piochez une carte."
 			},
 			"id": "PRO_001b",
 			"name": "Rogues Do It...",
 			"playerClass": "Neutral",
 			"set": "Promo",
+			"text": "Deal $4 damage. Draw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_021e.png",
 			"fr": {
-				"name": "Gangrerage"
+				"name": "Gangrerage",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "AT_021e",
 			"name": "Felrage",
 			"playerClass": "Warlock",
 			"set": "Tgt",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_007e.png",
 			"fr": {
-				"name": "Inversion déviante"
+				"name": "Inversion déviante",
+				"text": "L’Attaque et la Vie ont été échangées par Banane déviante."
 			},
 			"id": "TB_007e",
 			"name": "Deviate Switch",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Attack and Health have been swapped by Deviate Banana.",
 			"type": "Enchantment"
 		},
 		{
@@ -20418,13 +22851,15 @@ var parseCardsText = {
 			"cardImage": "OG_195b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Feux follets furieux"
+				"name": "Feux follets furieux",
+				"text": "Donne +2/+2 à vos serviteurs."
 			},
 			"id": "OG_195b",
 			"name": "Big Wisps",
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Give your minions +2/+2.",
 			"type": "Spell"
 		},
 		{
@@ -20434,7 +22869,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Loup alpha redoutable"
+				"name": "Loup alpha redoutable",
+				"text": "Les serviteurs adjacents ont +1 ATQ."
 			},
 			"health": 2,
 			"id": "EX1_162",
@@ -20442,6 +22878,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Adjacent minions have +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -20450,12 +22887,14 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 2,
 			"fr": {
-				"name": "Lame runique massive"
+				"name": "Lame runique massive",
+				"text": "Inflige des dégâts doublés aux héros."
 			},
 			"id": "NAX7_04H",
 			"name": "Massive Runeblade",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Deals double damage to heroes.",
 			"type": "Weapon"
 		},
 		{
@@ -20472,24 +22911,28 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_244e.png",
 			"fr": {
-				"name": "Puissance totémique"
+				"name": "Puissance totémique",
+				"text": "+2 PV."
 			},
 			"id": "EX1_244e",
 			"name": "Totemic Might",
 			"playerClass": "Shaman",
 			"set": "Core",
+			"text": "+2 Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA16_3.png",
 			"cost": 4,
 			"fr": {
-				"name": "Souffle sonique"
+				"name": "Souffle sonique",
+				"text": "Inflige $3 |4(point,points) de dégâts à un serviteur. Confère +3 ATQ à votre arme."
 			},
 			"id": "BRMA16_3",
 			"name": "Sonic Breath",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Deal $3 damage to a minion. Give your weapon +3 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -20498,7 +22941,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Coup de tonnerre"
+				"name": "Coup de tonnerre",
+				"text": "Inflige $4 |4(point,points) de dégâts à un serviteur. <b>Surcharge :</b> (1)"
 			},
 			"id": "OG_206",
 			"name": "Stormcrack",
@@ -20506,6 +22950,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Deal $4 damage to a minion. <b>Overload:</b> (1)",
 			"type": "Spell"
 		},
 		{
@@ -20514,13 +22959,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Boule d’araignées"
+				"name": "Boule d’araignées",
+				"text": "Invoque trois\ntisseuses 1/1."
 			},
 			"id": "AT_062",
 			"name": "Ball of Spiders",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Summon three 1/1 Webspinners.",
 			"type": "Spell"
 		},
 		{
@@ -20529,12 +22976,14 @@ var parseCardsText = {
 			"cost": 1,
 			"durability": 1,
 			"fr": {
-				"name": "Armurerie"
+				"name": "Armurerie",
+				"text": "L’Attaque augmente sur la durée."
 			},
 			"id": "TB_SPT_BossWeapon",
 			"name": "Armory",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Attack increases over time.",
 			"type": "Weapon"
 		},
 		{
@@ -20568,7 +23017,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Mande-givre dément"
+				"name": "Mande-givre dément",
+				"text": "Après que vous avez lancé un sort, <b>gèle</b> un adversaire aléatoire."
 			},
 			"health": 4,
 			"id": "OG_085",
@@ -20576,6 +23026,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "After you cast a spell, <b>Freeze</b> a random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -20596,7 +23047,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Protecteur d’Argent"
+				"name": "Protecteur d’Argent",
+				"text": "<b>Cri de guerre :</b> confère <b>Bouclier divin</b> à un serviteur allié."
 			},
 			"health": 2,
 			"id": "EX1_362",
@@ -20604,6 +23056,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give a friendly minion <b>Divine Shield</b>.",
 			"type": "Minion"
 		},
 		{
@@ -20611,7 +23064,8 @@ var parseCardsText = {
 			"cardImage": "CRED_27.png",
 			"cost": 3,
 			"fr": {
-				"name": "Henry Ho"
+				"name": "Henry Ho",
+				"text": "<b>Cri de guerre :</b> regarde la main de votre adversaire."
 			},
 			"health": 4,
 			"id": "CRED_27",
@@ -20619,6 +23073,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Spectate your opponent's hand.",
 			"type": "Minion"
 		},
 		{
@@ -20628,7 +23083,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Porte-lance"
+				"name": "Porte-lance",
+				"text": "<b>Cri de guerre :</b> donne\n+2 ATQ à un serviteur allié."
 			},
 			"health": 2,
 			"id": "AT_084",
@@ -20636,6 +23092,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Give a friendly minion +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -20646,7 +23103,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Matelot des mers du Sud"
+				"name": "Matelot des mers du Sud",
+				"text": "A <b>Charge</b> tant que vous êtes équipé d’une arme."
 			},
 			"health": 1,
 			"id": "CS2_146",
@@ -20654,6 +23112,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Has <b>Charge</b> while you have a weapon equipped.",
 			"type": "Minion"
 		},
 		{
@@ -20662,13 +23121,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Bénédiction de puissance"
+				"name": "Bénédiction de puissance",
+				"text": "Confère +3 ATQ à un serviteur."
 			},
 			"id": "CS2_087",
 			"name": "Blessing of Might",
 			"playerClass": "Paladin",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give a minion +3 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -20678,7 +23139,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Écaille-d’effroi"
+				"name": "Écaille-d’effroi",
+				"text": "Inflige 1 point de dégâts à tous les autres serviteurs à la fin de votre tour."
 			},
 			"health": 2,
 			"id": "AT_063t",
@@ -20686,17 +23148,20 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "At the end of your turn, deal 1 damage to all other minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_045e.png",
 			"fr": {
-				"name": "Arme croque-roc"
+				"name": "Arme croque-roc",
+				"text": "Ce personnage a +3 ATQ pendant ce tour."
 			},
 			"id": "CS2_045e",
 			"name": "Rockbiter Weapon",
 			"playerClass": "Shaman",
 			"set": "Core",
+			"text": "This character has +3 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -20704,7 +23169,8 @@ var parseCardsText = {
 			"cardImage": "CRED_01.png",
 			"cost": 6,
 			"fr": {
-				"name": "Jason Chayes"
+				"name": "Jason Chayes",
+				"text": "<b>Accès de rage :</b> non, on blague ! Il ne s’énerve jamais."
 			},
 			"health": 6,
 			"id": "CRED_01",
@@ -20712,17 +23178,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Enrage:</b> Just kidding! He never Enrages.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_057o.png",
 			"fr": {
-				"name": "Étrillé"
+				"name": "Étrillé",
+				"text": "<b>Insensible</b> pendant ce tour"
 			},
 			"id": "AT_057o",
 			"name": "Groomed",
 			"playerClass": "Hunter",
 			"set": "Tgt",
+			"text": "<b>Immune</b> this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -20732,7 +23201,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Recruteur"
+				"name": "Recruteur",
+				"text": "<b>Exaltation :</b> ajoute un écuyer 2/2 dans votre main."
 			},
 			"health": 4,
 			"id": "AT_113",
@@ -20740,6 +23210,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Add a 2/2 Squire to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -20747,7 +23218,8 @@ var parseCardsText = {
 			"cardImage": "HRW02_1.png",
 			"cost": 10,
 			"fr": {
-				"name": "Maître des rouages Mécazod"
+				"name": "Maître des rouages Mécazod",
+				"text": "<b>Boss</b>\nAu début de chaque tour, Mécazod frappe !"
 			},
 			"health": 80,
 			"id": "HRW02_1",
@@ -20755,6 +23227,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "<b>Boss</b>\nAt the beginning of each turn, Mechazod strikes!",
 			"type": "Minion"
 		},
 		{
@@ -20764,7 +23237,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Golem arcanique"
+				"name": "Golem arcanique",
+				"text": "<b>Cri de guerre :</b> donne à votre adversaire un cristal de mana."
 			},
 			"health": 4,
 			"id": "EX1_089",
@@ -20772,6 +23246,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give your opponent a Mana Crystal.",
 			"type": "Minion"
 		},
 		{
@@ -20780,12 +23255,14 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 8,
 			"fr": {
-				"name": "Crochet"
+				"name": "Crochet",
+				"text": "<b>Furie des vents</b>\n<b>Râle d’agonie :</b> place cette arme dans votre main."
 			},
 			"id": "NAX10_02H",
 			"name": "Hook",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Windfury</b>\n<b>Deathrattle:</b> Put this weapon into your hand.",
 			"type": "Weapon"
 		},
 		{
@@ -20794,13 +23271,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Rage farouche"
+				"name": "Rage farouche",
+				"text": "<b>Choix des armes :</b> donne +4 ATQ à votre héros pendant ce tour ou lui confère 8 points d’armure."
 			},
 			"id": "OG_047",
 			"name": "Feral Rage",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Choose One</b> - Give your hero +4 Attack this turn; or Gain 8 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -20810,7 +23289,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Purificateur écarlate"
+				"name": "Purificateur écarlate",
+				"text": "<b>Cri de guerre_:</b> inflige 2_points de dégâts à tous les serviteurs avec <b>Râle d’agonie</b>."
 			},
 			"health": 3,
 			"id": "GVG_101",
@@ -20818,31 +23298,36 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Deal 2 damage to all minions with <b>Deathrattle</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA12_3H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Affliction de l’espèce : rouge"
+				"name": "Affliction de l’espèce : rouge",
+				"text": "Vous subissez 3 points de dégâts au début de votre tour tant que vous avez cette carte dans votre main."
 			},
 			"id": "BRMA12_3H",
 			"name": "Brood Affliction: Red",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, take 3 damage at the start of your turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_020.png",
 			"cost": 0,
 			"fr": {
-				"name": "Damage all but 1"
+				"name": "Damage all but 1",
+				"text": "Set the Health of a character to 1."
 			},
 			"id": "XXX_020",
 			"name": "Damage all but 1",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Set the Health of a character to 1.",
 			"type": "Spell"
 		},
 		{
@@ -20864,35 +23349,41 @@ var parseCardsText = {
 			"cardImage": "TB_CoOpv3_013.png",
 			"cost": 0,
 			"fr": {
-				"name": "Immolation"
+				"name": "Immolation",
+				"text": "Inflige 7 points de dégâts à chaque héros."
 			},
 			"id": "TB_CoOpv3_013",
 			"name": "Immolate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal 7 damage to each hero.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA16_9.png",
 			"cost": 0,
 			"fr": {
-				"name": "Grèves abandonnées de Lothar"
+				"name": "Grèves abandonnées de Lothar",
+				"text": "Inflige 3 points de dégâts à tous les adversaires."
 			},
 			"id": "LOEA16_9",
 			"name": "Lothar's Left Greave",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Deal 3 damage to all enemies.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KARA_08_08e2.png",
 			"fr": {
-				"name": "Rayon rouge"
+				"name": "Rayon rouge",
+				"text": "A <b>Furie des vents</b>."
 			},
 			"id": "KARA_08_08e2",
 			"name": "Red Beam",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Has <b>Windfury</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -20928,25 +23419,29 @@ var parseCardsText = {
 			"cardImage": "LOEA15_3H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Raptor d’os"
+				"name": "Raptor d’os",
+				"text": "<b>Cri de guerre :</b> prend le contrôle de l’arme de votre adversaire."
 			},
 			"health": 2,
 			"id": "LOEA15_3H",
 			"name": "Boneraptor",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b>Take control of your opponent's weapon.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_KTRAF_HP_KT_3.png",
 			"cost": 2,
 			"fr": {
-				"name": "Nécromancie"
+				"name": "Nécromancie",
+				"text": "Ressuscite un serviteur allié aléatoire mort pendant cette partie."
 			},
 			"id": "TB_KTRAF_HP_KT_3",
 			"name": "Necromancy",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Resurrect a random friendly minion that died this game.",
 			"type": "Hero_power"
 		},
 		{
@@ -20956,7 +23451,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Maître de culte"
+				"name": "Maître de culte",
+				"text": "Vous piochez une carte quand un de vos autres serviteurs meurt."
 			},
 			"health": 2,
 			"id": "EX1_595",
@@ -20964,6 +23460,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Whenever one of your other minions dies, draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -20973,7 +23470,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Écraseur drakônide"
+				"name": "Écraseur drakônide",
+				"text": "<b>Cri de guerre :</b> gagne +3/+3 si votre adversaire a 15 PV ou moins."
 			},
 			"health": 6,
 			"id": "BRM_024",
@@ -20981,6 +23479,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> If your opponent has 15 or less Health, gain +3/+3.",
 			"type": "Minion"
 		},
 		{
@@ -20989,25 +23488,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Nova sacrée"
+				"name": "Nova sacrée",
+				"text": "Inflige $2 |4(point,points) de dégâts à tous les adversaires. Rend #2 |4(point,points) de vie à tous les personnages alliés."
 			},
 			"id": "CS1_112",
 			"name": "Holy Nova",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $2 damage to all enemies. Restore #2 Health to all friendly characters.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_155b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Marque de la nature"
+				"name": "Marque de la nature",
+				"text": "+4 PV et <b>Provocation</b>."
 			},
 			"id": "EX1_155b",
 			"name": "Mark of Nature",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "+4 Health and <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -21017,7 +23520,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Alexstrasza"
+				"name": "Alexstrasza",
+				"text": "<b>Cri de guerre :</b> fixe les points de vie restants d’un héros à 15."
 			},
 			"health": 8,
 			"id": "EX1_561",
@@ -21025,17 +23529,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Set a hero's remaining Health to 15.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_290e.png",
 			"fr": {
-				"name": "Dévotion de l’implorateur"
+				"name": "Dévotion de l’implorateur",
+				"text": "+1/+1."
 			},
 			"id": "OG_290e",
 			"name": "Caller Devotion",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -21043,23 +23550,27 @@ var parseCardsText = {
 			"cardImage": "KARA_07_06.png",
 			"cost": 4,
 			"fr": {
-				"name": "Démon en liberté !"
+				"name": "Démon en liberté !",
+				"text": "Invoque un Démon aléatoire."
 			},
 			"id": "KARA_07_06",
 			"name": "Demons Loose!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon a random Demon.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_009e.png",
 			"fr": {
-				"name": "Marque du fauve"
+				"name": "Marque du fauve",
+				"text": "Ce serviteur a +2/+2 et <b>Provocation</b>."
 			},
 			"id": "CS2_009e",
 			"name": "Mark of the Wild",
 			"playerClass": "Druid",
 			"set": "Core",
+			"text": "This minion has +2/+2 and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -21069,7 +23580,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Traînard sans-visage"
+				"name": "Traînard sans-visage",
+				"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> copie l’Attaque et la Vie d’un serviteur allié."
 			},
 			"health": 1,
 			"id": "OG_174",
@@ -21077,6 +23589,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Taunt</b>\n<b>Battlecry:</b> Copy a friendly minion's Attack and Health.",
 			"type": "Minion"
 		},
 		{
@@ -21086,7 +23599,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Gnome lépreux"
+				"name": "Gnome lépreux",
+				"text": "<b>Râle d’agonie :</b> inflige 2 points de dégâts au héros adverse."
 			},
 			"health": 1,
 			"id": "EX1_029",
@@ -21094,6 +23608,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Deathrattle:</b> Deal 2 damage to the enemy hero.",
 			"type": "Minion"
 		},
 		{
@@ -21114,26 +23629,30 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Main de protection"
+				"name": "Main de protection",
+				"text": "Confère <b>Bouclier divin</b> à un serviteur."
 			},
 			"id": "EX1_371",
 			"name": "Hand of Protection",
 			"playerClass": "Paladin",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give a minion <b>Divine Shield</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_025.png",
 			"cost": 0,
 			"fr": {
-				"name": "Do Nothing"
+				"name": "Do Nothing",
+				"text": "This does nothing."
 			},
 			"id": "XXX_025",
 			"name": "Do Nothing",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "This does nothing.",
 			"type": "Spell"
 		},
 		{
@@ -21143,7 +23662,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Sous-chef cruel"
+				"name": "Sous-chef cruel",
+				"text": "<b>Cri de guerre :</b> inflige\n1 point de dégâts à\nun serviteur et lui\ndonne +2 ATQ."
 			},
 			"health": 2,
 			"id": "EX1_603",
@@ -21151,6 +23671,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Deal 1 damage to a minion and give it +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -21159,13 +23680,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Bombe de lumière"
+				"name": "Bombe de lumière",
+				"text": "Inflige à chaque serviteur des dégâts équivalents à leur ATQ."
 			},
 			"id": "GVG_008",
 			"name": "Lightbomb",
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Deal damage to each minion equal to its Attack.",
 			"type": "Spell"
 		},
 		{
@@ -21174,13 +23697,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Égalité"
+				"name": "Égalité",
+				"text": "Les points de vie de TOUS les serviteurs passent à 1."
 			},
 			"id": "EX1_619",
 			"name": "Equality",
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Change the Health of ALL minions to 1.",
 			"type": "Spell"
 		},
 		{
@@ -21189,13 +23714,15 @@ var parseCardsText = {
 			"cardImage": "LOE_009t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Scarabée"
+				"name": "Scarabée",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 1,
 			"id": "LOE_009t",
 			"name": "Scarab",
 			"playerClass": "Warrior",
 			"set": "Loe",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -21205,7 +23732,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Berserker gurubashi"
+				"name": "Berserker gurubashi",
+				"text": "Chaque fois que ce serviteur subit des dégâts, il gagne +3 ATQ."
 			},
 			"health": 7,
 			"id": "EX1_399",
@@ -21213,17 +23741,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Whenever this minion takes damage, gain +3 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX12_02e.png",
 			"fr": {
-				"name": "Décimer"
+				"name": "Décimer",
+				"text": "Les points de vie sont passés à 1."
 			},
 			"id": "NAX12_02e",
 			"name": "Decimate",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Health changed to 1.",
 			"type": "Enchantment"
 		},
 		{
@@ -21242,12 +23773,14 @@ var parseCardsText = {
 			"cardImage": "NAX2_03.png",
 			"cost": 2,
 			"fr": {
-				"name": "Pluie de feu"
+				"name": "Pluie de feu",
+				"text": "<b>Pouvoir héroïque</b>\nTire un missile pour chaque\n carte dans la main de votre adversaire."
 			},
 			"id": "NAX2_03",
 			"name": "Rain of Fire",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nFire a missile for each card in your opponent's hand.",
 			"type": "Hero_power"
 		},
 		{
@@ -21269,7 +23802,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Damoiselle du Lac"
+				"name": "Damoiselle du Lac",
+				"text": "Votre pouvoir héroïque coûte (1) |4(cristal,cristaux)."
 			},
 			"health": 6,
 			"id": "AT_085",
@@ -21277,18 +23811,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Your Hero Power costs (1).",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_132_WARRIOR.png",
 			"cost": 2,
 			"fr": {
-				"name": "Défense stoïque"
+				"name": "Défense stoïque",
+				"text": "<b>Pouvoir héroïque</b>\nGagne 4 points d’armure."
 			},
 			"id": "AT_132_WARRIOR",
 			"name": "Tank Up!",
 			"playerClass": "Warrior",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nGain 4 Armor.",
 			"type": "Hero_power"
 		},
 		{
@@ -21298,7 +23835,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "L’Épouvantueur"
+				"name": "L’Épouvantueur",
+				"text": "Quand il attaque un serviteur et le tue,\ngagne +2/+2."
 			},
 			"health": 7,
 			"id": "OG_300",
@@ -21306,42 +23844,49 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "Whenever this attacks and kills a minion, gain +2/+2.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_07_06heroic.png",
 			"cost": 3,
 			"fr": {
-				"name": "Démon en liberté !"
+				"name": "Démon en liberté !",
+				"text": "Invoque un Démon aléatoire."
 			},
 			"id": "KARA_07_06heroic",
 			"name": "Demons Loose!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon a random Demon.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA07_20.png",
 			"cost": 1,
 			"fr": {
-				"name": "Boum !"
+				"name": "Boum !",
+				"text": "Inflige 3 points de dégâts à tous les serviteurs adverses."
 			},
 			"id": "LOEA07_20",
 			"name": "Boom!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Deal 3 damage to all enemy minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA05_02h.png",
 			"cost": 0,
 			"fr": {
-				"name": "Trogg détester serviteurs !"
+				"name": "Trogg détester serviteurs !",
+				"text": "<b>Pouvoir héroïque passif</b> Les serviteurs adverses coûtent (11) |4(cristal,cristaux) de mana. Le pouvoir change au début de votre tour."
 			},
 			"id": "LOEA05_02h",
 			"name": "Trogg Hate Minions!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\n Enemy minions cost (11). Swap at the start of your turn.",
 			"type": "Hero_power"
 		},
 		{
@@ -21351,7 +23896,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "C’Thun"
+				"name": "C’Thun",
+				"text": "<b>Cri de guerre :</b> inflige des dégâts égaux à l’Attaque de ce serviteur répartis aléatoirement entre tous les adversaires."
 			},
 			"health": 6,
 			"id": "OG_280",
@@ -21359,6 +23905,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Deal damage equal to this minion's Attack randomly split among all enemies.",
 			"type": "Minion"
 		},
 		{
@@ -21368,7 +23915,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Souffle-neige"
+				"name": "Souffle-neige",
+				"text": "<b>Gèle</b> tout personnage blessé par ce serviteur."
 			},
 			"health": 3,
 			"id": "GVG_002",
@@ -21376,6 +23924,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Freeze</b> any character damaged by this minion.",
 			"type": "Minion"
 		},
 		{
@@ -21385,7 +23934,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 12,
 			"fr": {
-				"name": "Géant des montagnes"
+				"name": "Géant des montagnes",
+				"text": "Coûte (1) cristal de moins pour chaque autre carte dans votre main."
 			},
 			"health": 8,
 			"id": "EX1_105",
@@ -21393,6 +23943,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Costs (1) less for each other card in your hand.",
 			"type": "Minion"
 		},
 		{
@@ -21403,7 +23954,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Chevaucheur de loup"
+				"name": "Chevaucheur de loup",
+				"text": "<b>Charge</b>"
 			},
 			"health": 1,
 			"id": "CS2_124",
@@ -21411,6 +23963,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -21420,7 +23973,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Brave Sabot-de-Sang"
+				"name": "Brave Sabot-de-Sang",
+				"text": "<b>Provocation</b>\n<b>Accès de rage :</b> +3 ATQ."
 			},
 			"health": 6,
 			"id": "OG_218",
@@ -21428,17 +23982,20 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Taunt</b>\n<b>Enrage:</b> +3 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA05_3e.png",
 			"fr": {
-				"name": "Bombe vivante"
+				"name": "Bombe vivante",
+				"text": "Pendant le tour de Geddon, inflige 5 points de dégâts à votre héros et vos serviteurs."
 			},
 			"id": "BRMA05_3e",
 			"name": "Living Bomb",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "On Geddon's turn, deal 5 damage to all of your stuff.",
 			"type": "Enchantment"
 		},
 		{
@@ -21447,13 +24004,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Rage du combat"
+				"name": "Rage du combat",
+				"text": "Vous piochez une carte pour chaque personnage allié blessé."
 			},
 			"id": "EX1_392",
 			"name": "Battle Rage",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Draw a card for each damaged friendly character.",
 			"type": "Spell"
 		},
 		{
@@ -21462,13 +24021,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Sceau de Lumière"
+				"name": "Sceau de Lumière",
+				"text": "Rend #4 |4(point,points) de vie à votre héros et lui confère +2 ATQ pendant ce tour."
 			},
 			"id": "GVG_057",
 			"name": "Seal of Light",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Restore #4 Health to your hero and gain +2 Attack this turn.",
 			"type": "Spell"
 		},
 		{
@@ -21477,36 +24038,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Mot de pouvoir : Gloire"
+				"name": "Mot de pouvoir : Gloire",
+				"text": "Choisissez un serviteur. Chaque fois qu’il attaque, rend 4 PV à votre héros."
 			},
 			"id": "AT_013",
 			"name": "Power Word: Glory",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Choose a minion. Whenever it attacks, restore 4 Health to\nyour hero.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA06_03eh.png",
 			"fr": {
-				"name": "Animé"
+				"name": "Animé",
+				"text": "+3/+3 et <b>Provocation</b>."
 			},
 			"id": "LOEA06_03eh",
 			"name": "Animated",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "+3/+3 and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NAX8_02.png",
 			"cost": 2,
 			"fr": {
-				"name": "Moisson"
+				"name": "Moisson",
+				"text": "<b>Pouvoir héroïque</b>\nPioche une carte."
 			},
 			"id": "NAX8_02",
 			"name": "Harvest",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDraw a card.",
 			"type": "Hero_power"
 		},
 		{
@@ -21526,7 +24093,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_4m.png",
 			"cost": 3,
 			"fr": {
-				"name": "Gothik spectral"
+				"name": "Gothik spectral",
+				"text": "Au début de votre tour, inflige 4 points de dégâts à votre héros."
 			},
 			"health": 3,
 			"id": "TB_KTRAF_4m",
@@ -21534,6 +24102,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "At the start of your turn, deal 4 damage to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -21541,7 +24110,8 @@ var parseCardsText = {
 			"cardImage": "CRED_15.png",
 			"cost": 1,
 			"fr": {
-				"name": "Andy Brock"
+				"name": "Andy Brock",
+				"text": "Ne peut être <b>réduit au silence. Bouclier divin. Camouflage.</b>"
 			},
 			"health": 3,
 			"id": "CRED_15",
@@ -21549,19 +24119,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "Can't be <b>Silenced. Divine Shield, Stealth.</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_065.png",
 			"cost": 0,
 			"fr": {
-				"name": "Remove All Immune"
+				"name": "Remove All Immune",
+				"text": "Remove <b>Immune</b> from ALL characters."
 			},
 			"id": "XXX_065",
 			"name": "Remove All Immune",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Remove <b>Immune</b> from ALL characters.",
 			"type": "Spell"
 		},
 		{
@@ -21571,7 +24144,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Sniper de Gentepression"
+				"name": "Sniper de Gentepression",
+				"text": "Votre pouvoir héroïque peut viser les serviteurs."
 			},
 			"health": 3,
 			"id": "GVG_087",
@@ -21579,6 +24153,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Your Hero Power can target minions.",
 			"type": "Minion"
 		},
 		{
@@ -21588,7 +24163,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Maître jouteur"
+				"name": "Maître jouteur",
+				"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne <b>Provocation</b> et <b>Bouclier divin</b>."
 			},
 			"health": 6,
 			"id": "AT_112",
@@ -21596,6 +24172,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, gain <b>Taunt</b> and <b>Divine Shield</b>.",
 			"type": "Minion"
 		},
 		{
@@ -21641,12 +24218,14 @@ var parseCardsText = {
 			"cardImage": "BRMA09_5.png",
 			"cost": 4,
 			"fr": {
-				"name": "Pied à terre"
+				"name": "Pied à terre",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque Gyth. Change de pouvoir héroïque."
 			},
 			"id": "BRMA09_5",
 			"name": "Dismount",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon Gyth. Get a new Hero Power.",
 			"type": "Hero_power"
 		},
 		{
@@ -21656,7 +24235,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Templier Plaie-de-nuit"
+				"name": "Templier Plaie-de-nuit",
+				"text": "<b>Cri de guerre_:</b> si vous avez un Dragon en main,\ninvoque deux dragonnets 1/1."
 			},
 			"health": 3,
 			"id": "KAR_010",
@@ -21664,6 +24244,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, summon two 1/1 Whelps.",
 			"type": "Minion"
 		},
 		{
@@ -21684,12 +24265,14 @@ var parseCardsText = {
 			"cardImage": "BRMA12_4.png",
 			"cost": 1,
 			"fr": {
-				"name": "Affliction de l’espèce : vert"
+				"name": "Affliction de l’espèce : vert",
+				"text": "Rend 2 PV à votre adversaire au début de votre tour tant que vous avez cette carte dans votre main."
 			},
 			"id": "BRMA12_4",
 			"name": "Brood Affliction: Green",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, restore 2 health to your opponent at the start of your turn.",
 			"type": "Spell"
 		},
 		{
@@ -21700,7 +24283,8 @@ var parseCardsText = {
 			"cost": 2,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Ingénieur novice"
+				"name": "Ingénieur novice",
+				"text": "<b>Cri de guerre :</b> vous piochez une carte."
 			},
 			"health": 1,
 			"id": "EX1_015",
@@ -21708,6 +24292,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -21715,7 +24300,8 @@ var parseCardsText = {
 			"cardImage": "CRED_31.png",
 			"cost": 4,
 			"fr": {
-				"name": "Jeremy Cranford"
+				"name": "Jeremy Cranford",
+				"text": "Quand la partie commence, cette carte se place en début de deck."
 			},
 			"health": 4,
 			"id": "CRED_31",
@@ -21723,19 +24309,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "When the game starts, this card climbs to the top of the deck.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_004.png",
 			"cost": 0,
 			"fr": {
-				"name": "Restore 5"
+				"name": "Restore 5",
+				"text": "Restore 5 Health to a character."
 			},
 			"id": "XXX_004",
 			"name": "Restore 5",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Restore 5 Health to a character.",
 			"type": "Spell"
 		},
 		{
@@ -21756,13 +24345,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Du sang à l’ichor"
+				"name": "Du sang à l’ichor",
+				"text": "Inflige $1 |4(point,points) de dégâts à un serviteur.\nS’il survit, invoque une gelée 2/2."
 			},
 			"id": "OG_314",
 			"name": "Blood To Ichor",
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Deal $1 damage to a minion. If it survives, summon a 2/2 Slime.",
 			"type": "Spell"
 		},
 		{
@@ -21770,13 +24361,15 @@ var parseCardsText = {
 			"cardImage": "DREAM_01.png",
 			"cost": 3,
 			"fr": {
-				"name": "Sœur rieuse"
+				"name": "Sœur rieuse",
+				"text": "Ne peut pas être la cible de sorts ou de pouvoirs héroïques."
 			},
 			"health": 5,
 			"id": "DREAM_01",
 			"name": "Laughing Sister",
 			"playerClass": "Dream",
 			"set": "Expert1",
+			"text": "Can't be targeted by spells or Hero Powers.",
 			"type": "Minion"
 		},
 		{
@@ -21786,7 +24379,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Gardelumière"
+				"name": "Gardelumière",
+				"text": "Chaque fois qu’un personnage est soigné, gagne +2 ATQ."
 			},
 			"health": 2,
 			"id": "EX1_001",
@@ -21794,18 +24388,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever a character is healed, gain +2 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_CoOpv3_001.png",
 			"cost": 0,
 			"fr": {
-				"name": "Glorieuse finale"
+				"name": "Glorieuse finale",
+				"text": "Le véritable combat commence…"
 			},
 			"id": "TB_CoOpv3_001",
 			"name": "Glorious Finale",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "The true battle begins....",
 			"type": "Spell"
 		},
 		{
@@ -21815,7 +24412,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Jette-sorts"
+				"name": "Jette-sorts",
+				"text": "<b>Cri de guerre :</b> ajoute un sort aléatoire dans la main de chaque joueur."
 			},
 			"health": 4,
 			"id": "AT_007",
@@ -21823,6 +24421,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Add a random spell to each player's hand.",
 			"type": "Minion"
 		},
 		{
@@ -21864,7 +24463,8 @@ var parseCardsText = {
 			"cost": 5,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Nervi de la KapitalRisk"
+				"name": "Nervi de la KapitalRisk",
+				"text": "Vos serviteurs coûtent (3) cristaux de plus."
 			},
 			"health": 6,
 			"id": "CS2_227",
@@ -21872,18 +24472,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Your minions cost (3) more.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_011.png",
 			"cost": 0,
 			"fr": {
-				"name": "Pièce ternie"
+				"name": "Pièce ternie",
+				"text": "Confère 1 cristal de mana pendant ce tour uniquement."
 			},
 			"id": "TB_011",
 			"name": "Tarnished Coin",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Gain 1 Mana Crystal this turn only.",
 			"type": "Spell"
 		},
 		{
@@ -21894,7 +24497,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Aventurier en pleine quête"
+				"name": "Aventurier en pleine quête",
+				"text": "Chaque fois que vous jouez une carte,\ngagne +1/+1."
 			},
 			"health": 2,
 			"id": "EX1_044",
@@ -21902,6 +24506,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever you play a card, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -21910,26 +24515,30 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Métamorphose"
+				"name": "Métamorphose",
+				"text": "Transforme un serviteur en mouton 1/1."
 			},
 			"id": "CS2_022",
 			"name": "Polymorph",
 			"playerClass": "Mage",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Transform a minion into a 1/1 Sheep.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_018.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy All Minions"
+				"name": "Destroy All Minions",
+				"text": "Destroy all minions."
 			},
 			"id": "XXX_018",
 			"name": "Destroy All Minions",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Destroy all minions.",
 			"type": "Spell"
 		},
 		{
@@ -21939,7 +24548,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Varian Wrynn"
+				"name": "Varian Wrynn",
+				"text": "<b>Cri de guerre :</b> vous piochez\n3 cartes. Place tout serviteur pioché directement sur le champ de bataille."
 			},
 			"health": 7,
 			"id": "AT_072",
@@ -21947,52 +24557,61 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Draw 3 cards.\nPut any minions you drew directly into the battlefield.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_011e.png",
 			"fr": {
-				"name": "Bénédiction par la Lumière"
+				"name": "Bénédiction par la Lumière",
+				"text": "Attaque augmentée."
 			},
 			"id": "AT_011e",
 			"name": "Light's Blessing",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_014.png",
 			"cost": 0,
 			"fr": {
-				"name": "Choisir une nouvelle carte !"
+				"name": "Choisir une nouvelle carte !",
+				"text": "Affiche 3 cartes aléatoires. Choisissez-en une à placer dans votre main."
 			},
 			"id": "TB_014",
 			"name": "Choose a New Card!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Look at 3 random cards. Choose one and put it into your hand.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_PickYourFate_7_2nd.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin cruel : explosion de mana"
+				"name": "Destin cruel : explosion de mana",
+				"text": "Les serviteurs obtiennent «_<b>Râle d’agonie_:</b> une carte aléatoire de votre main coûte (0)_|4(cristal,cristaux) de mana._»."
 			},
 			"id": "TB_PickYourFate_7_2nd",
 			"name": "Dire Fate: Manaburst",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Minions gain <b>Deathrattle:</b> Random card in owner's hand costs (0).",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "GVG_069a.png",
 			"fr": {
-				"name": "Réparations !"
+				"name": "Réparations !",
+				"text": "+4 PV."
 			},
 			"id": "GVG_069a",
 			"name": "Repairs!",
 			"playerClass": "Priest",
 			"set": "Gvg",
+			"text": "+4 Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -22003,7 +24622,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Maître-lame blessé"
+				"name": "Maître-lame blessé",
+				"text": "<b>Cri de guerre :</b> s’inflige 4 points de dégâts."
 			},
 			"health": 7,
 			"id": "CS2_181",
@@ -22011,6 +24631,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Deal 4 damage to HIMSELF.",
 			"type": "Minion"
 		},
 		{
@@ -22020,7 +24641,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 25,
 			"fr": {
-				"name": "Géant de lave"
+				"name": "Géant de lave",
+				"text": "Coûte (1) cristal de moins pour chaque point de dégâts subi par votre héros."
 			},
 			"health": 8,
 			"id": "EX1_620",
@@ -22028,17 +24650,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Costs (1) less for each damage your hero has taken.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA16_3e.png",
 			"fr": {
-				"name": "Souffle sonique"
+				"name": "Souffle sonique",
+				"text": "+3 ATQ."
 			},
 			"id": "BRMA16_3e",
 			"name": "Sonic Breath",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -22049,7 +24674,8 @@ var parseCardsText = {
 			"cost": 7,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Assassin de Ravenholdt"
+				"name": "Assassin de Ravenholdt",
+				"text": "<b>Camouflage</b>"
 			},
 			"health": 5,
 			"id": "CS2_161",
@@ -22057,6 +24683,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Stealth</b>",
 			"type": "Minion"
 		},
 		{
@@ -22066,7 +24693,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Championne sacrée"
+				"name": "Championne sacrée",
+				"text": "Chaque fois qu’un personnage est soigné, gagne +2 ATQ."
 			},
 			"health": 5,
 			"id": "AT_011",
@@ -22074,6 +24702,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Whenever a character is healed, gain +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -22093,7 +24722,8 @@ var parseCardsText = {
 			"cardImage": "OG_156a.png",
 			"cost": 1,
 			"fr": {
-				"name": "Limon"
+				"name": "Limon",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 1,
 			"id": "OG_156a",
@@ -22101,6 +24731,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -22110,7 +24741,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Infernal de l’effroi"
+				"name": "Infernal de l’effroi",
+				"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à TOUS les autres personnages."
 			},
 			"health": 6,
 			"id": "CS2_064",
@@ -22118,18 +24750,21 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Deal 1 damage to ALL other characters.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_13.png",
 			"cost": 0,
 			"fr": {
-				"name": "Œil d’Orsis"
+				"name": "Œil d’Orsis",
+				"text": "<b>Découvre</b> un serviteur. Vous en gagnez 3 copies."
 			},
 			"id": "LOEA16_13",
 			"name": "Eye of Orsis",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Discover</b> a minion and gain 3 copies of it.",
 			"type": "Spell"
 		},
 		{
@@ -22149,12 +24784,14 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_128e.png",
 			"fr": {
-				"name": "Dissimulé"
+				"name": "Dissimulé",
+				"text": "Camouflé jusqu’à votre prochain tour."
 			},
 			"id": "EX1_128e",
 			"name": "Concealed",
 			"playerClass": "Rogue",
 			"set": "Expert1",
+			"text": "Stealthed until your next turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -22164,7 +24801,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Rend Main-Noire"
+				"name": "Rend Main-Noire",
+				"text": "<b>Cri de guerre :</b> détruit un serviteur <b>légendaire</b> si vous avez un Dragon en main."
 			},
 			"health": 4,
 			"id": "BRM_029",
@@ -22172,6 +24810,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, destroy a <b>Legendary</b> minion.",
 			"type": "Minion"
 		},
 		{
@@ -22180,13 +24819,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Souffle du dragon"
+				"name": "Souffle du dragon",
+				"text": "Inflige $4 points de dégâts. Coûte (1) |4(cristal,cristaux) de mana de moins pour chaque serviteur mort pendant ce tour."
 			},
 			"id": "BRM_003",
 			"name": "Dragon's Breath",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Deal $4 damage. Costs (1) less for each minion that died this turn.",
 			"type": "Spell"
 		},
 		{
@@ -22196,7 +24837,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Loup des bois"
+				"name": "Loup des bois",
+				"text": "Vos autres Bêtes ont\n+1 ATQ."
 			},
 			"health": 1,
 			"id": "DS1_175",
@@ -22204,6 +24846,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Your other Beasts have +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -22254,7 +24897,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Illuminatrice"
+				"name": "Illuminatrice",
+				"text": "Si vous contrôlez un <b>Secret</b> à la fin de votre tour, rend 4 PV à votre héros."
 			},
 			"health": 4,
 			"id": "GVG_089",
@@ -22262,19 +24906,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "If you control a <b>Secret</b> at the end of your turn, restore 4 Health to your hero.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_102_H1.png",
 			"cost": 2,
 			"fr": {
-				"name": "Gain d’armure !"
+				"name": "Gain d’armure !",
+				"text": "<b>Pouvoir héroïque</b>\nConfère 2 points d’armure."
 			},
 			"id": "CS2_102_H1",
 			"name": "Armor Up!",
 			"playerClass": "Warrior",
 			"rarity": "Free",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nGain 2 Armor.",
 			"type": "Hero_power"
 		},
 		{
@@ -22296,24 +24943,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Toucher guérisseur"
+				"name": "Toucher guérisseur",
+				"text": "Rend #8 |4(point,points) de vie."
 			},
 			"id": "CS2_007",
 			"name": "Healing Touch",
 			"playerClass": "Druid",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Restore #8 Health.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_399e.png",
 			"fr": {
-				"name": "Berserker"
+				"name": "Berserker",
+				"text": "L’Attaque de ce serviteur est augmentée."
 			},
 			"id": "EX1_399e",
 			"name": "Berserking",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "This minion has increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -22324,7 +24975,8 @@ var parseCardsText = {
 			"cost": 4,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Chevalier de Hurlevent"
+				"name": "Chevalier de Hurlevent",
+				"text": "<b>Charge</b>"
 			},
 			"health": 5,
 			"id": "CS2_131",
@@ -22332,29 +24984,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GAME_004.png",
 			"fr": {
-				"name": "ABS"
+				"name": "ABS",
+				"text": "Vos tours sont plus courts."
 			},
 			"id": "GAME_004",
 			"name": "AFK",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "Your turns are shorter.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "GVG_030b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Mode Char"
+				"name": "Mode Char",
+				"text": "+1 PV."
 			},
 			"id": "GVG_030b",
 			"name": "Tank Mode",
 			"playerClass": "Druid",
 			"set": "Gvg",
+			"text": "+1 Health.",
 			"type": "Spell"
 		},
 		{
@@ -22365,24 +25022,28 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 5,
 			"fr": {
-				"name": "Épée de justice"
+				"name": "Épée de justice",
+				"text": "Après avoir invoqué un serviteur, lui donne +1/+1 et perd 1 Durabilité."
 			},
 			"id": "EX1_366",
 			"name": "Sword of Justice",
 			"playerClass": "Paladin",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "After you summon a minion, give it +1/+1 and this loses 1 Durability.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "EX1_411e2.png",
 			"fr": {
-				"name": "Affûtage nécessaire"
+				"name": "Affûtage nécessaire",
+				"text": "ATQ réduite."
 			},
 			"id": "EX1_411e2",
 			"name": "Needs Sharpening",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "Decreased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -22392,7 +25053,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Illusioniste pourpre"
+				"name": "Illusioniste pourpre",
+				"text": "Pendant votre tour, votre héros est <b>Insensible</b>."
 			},
 			"health": 3,
 			"id": "KAR_712",
@@ -22400,18 +25062,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "During your turn, your hero is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_053.png",
 			"cost": 0,
 			"fr": {
-				"name": "Armor 100"
+				"name": "Armor 100",
+				"text": "Give target Hero +100 Armor"
 			},
 			"id": "XXX_053",
 			"name": "Armor 100",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Give target Hero +100 Armor",
 			"type": "Spell"
 		},
 		{
@@ -22419,12 +25084,14 @@ var parseCardsText = {
 			"cardImage": "KARA_13_12.png",
 			"cost": 3,
 			"fr": {
-				"name": "Présence démoniaque"
+				"name": "Présence démoniaque",
+				"text": "Vous piochez 2_cartes.\nGagne 10_points d’armure."
 			},
 			"id": "KARA_13_12",
 			"name": "Demonic Presence",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Draw 2 cards.\nGain 10 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -22435,7 +25102,8 @@ var parseCardsText = {
 			"cost": 4,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Défenseur d’Argus"
+				"name": "Défenseur d’Argus",
+				"text": "<b>Cri de guerre :</b> donne aux serviteurs adjacents +1/+1 et <b>Provocation</b>."
 			},
 			"health": 3,
 			"id": "EX1_093",
@@ -22443,18 +25111,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give adjacent minions +1/+1 and <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA08_3.png",
 			"cost": 1,
 			"fr": {
-				"name": "Ordres de Drakkisath"
+				"name": "Ordres de Drakkisath",
+				"text": "Détruit un serviteur. Gagne 10 points d’armure."
 			},
 			"id": "BRMA08_3",
 			"name": "Drakkisath's Command",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Destroy a minion. Gain 10 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -22464,7 +25135,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Géomancienne du Crépuscule"
+				"name": "Géomancienne du Crépuscule",
+				"text": "<b>Provocation</b>. <b>Cri de guerre_:</b> donne <b>Provocation</b> à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 4,
 			"id": "OG_284",
@@ -22472,6 +25144,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Give your C'Thun\n<b>Taunt</b> <i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
@@ -22479,12 +25152,14 @@ var parseCardsText = {
 			"cardImage": "KARA_09_04.png",
 			"cost": 0,
 			"fr": {
-				"name": "Sombre pacte"
+				"name": "Sombre pacte",
+				"text": "<b>Pouvoir héroïque passif</b>\nSeuls les diablotins dégoûtants peuvent infliger des dégâts à Malsabot_!"
 			},
 			"id": "KARA_09_04",
 			"name": "Dark Pact",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Passive Hero Power</b>\nOnly Icky Imps can damage Illhoof!",
 			"type": "Hero_power"
 		},
 		{
@@ -22492,13 +25167,15 @@ var parseCardsText = {
 			"cardImage": "NAX15_03n.png",
 			"cost": 4,
 			"fr": {
-				"name": "Garde de la Couronne de glace"
+				"name": "Garde de la Couronne de glace",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 3,
 			"id": "NAX15_03n",
 			"name": "Guardian of Icecrown",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -22520,7 +25197,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_27.png",
 			"cost": 5,
 			"fr": {
-				"name": "La sentinelle d’acier"
+				"name": "La sentinelle d’acier",
+				"text": "Ce serviteur ne peut pas subir plus de 1 point de dégâts à la fois."
 			},
 			"health": 5,
 			"id": "LOEA16_27",
@@ -22528,6 +25206,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "This minion can only take 1 damage at a time.",
 			"type": "Minion"
 		},
 		{
@@ -22537,7 +25216,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Ombre ancienne"
+				"name": "Ombre ancienne",
+				"text": "<b>Cri de guerre :</b> place une carte Malédiction ancestrale dans votre deck qui vous inflige 7 points de dégâts quand vous la piochez."
 			},
 			"health": 4,
 			"id": "LOE_110",
@@ -22545,30 +25225,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> Shuffle an 'Ancient Curse' into your deck that deals 7 damage to you when drawn.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_178a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Enraciner"
+				"name": "Enraciner",
+				"text": "+5 PV et <b>Provocation</b>."
 			},
 			"id": "EX1_178a",
 			"name": "Rooted",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "+5 Health and <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_ClassRandom_Druid.png",
 			"cost": 0,
 			"fr": {
-				"name": "Deuxième classe : druide"
+				"name": "Deuxième classe : druide",
+				"text": "Ajoute des cartes de druide dans votre deck."
 			},
 			"id": "TB_ClassRandom_Druid",
 			"name": "Second Class: Druid",
 			"playerClass": "Druid",
 			"set": "Tb",
+			"text": "Add Druid cards to your deck.",
 			"type": "Spell"
 		},
 		{
@@ -22576,7 +25261,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_23.png",
 			"cost": 5,
 			"fr": {
-				"name": "Seigneur Ondulance"
+				"name": "Seigneur Ondulance",
+				"text": "À la fin de votre tour, invoque un Naga affamé 1/1 pour chaque serviteur adverse."
 			},
 			"health": 5,
 			"id": "LOEA16_23",
@@ -22584,30 +25270,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, summon 1/1 Hungry Naga for each enemy minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA13_8.png",
 			"cost": 0,
 			"fr": {
-				"name": "MEURS, INSECTE !"
+				"name": "MEURS, INSECTE !",
+				"text": "Inflige $8 |4(point,points) de dégâts à un adversaire aléatoire."
 			},
 			"id": "BRMA13_8",
 			"name": "DIE, INSECT!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Deal $8 damage to a random enemy.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KARA_13_13H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Légion"
+				"name": "Légion",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux abyssaux_6/6."
 			},
 			"id": "KARA_13_13H",
 			"name": "Legion",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nSummon two 6/6 Abyssals.",
 			"type": "Hero_power"
 		},
 		{
@@ -22617,7 +25308,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Faucheur 4000"
+				"name": "Faucheur 4000",
+				"text": "Inflige également des dégâts aux serviteurs à côté de celui qu’il attaque."
 			},
 			"health": 9,
 			"id": "GVG_113",
@@ -22625,6 +25317,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "Also damages the minions next to whomever he attacks.",
 			"type": "Minion"
 		},
 		{
@@ -22633,13 +25326,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Néant distordu"
+				"name": "Néant distordu",
+				"text": "Détruit tous les serviteurs."
 			},
 			"id": "EX1_312",
 			"name": "Twisting Nether",
 			"playerClass": "Warlock",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Destroy all minions.",
 			"type": "Spell"
 		},
 		{
@@ -22660,12 +25355,14 @@ var parseCardsText = {
 			"cardImage": "BRMA14_6.png",
 			"cost": 6,
 			"fr": {
-				"name": "Activer Électron"
+				"name": "Activer Électron",
+				"text": "<b>Pouvoir héroïque</b>\nActive Électron !"
 			},
 			"id": "BRMA14_6",
 			"name": "Activate Electron",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate Electron!",
 			"type": "Hero_power"
 		},
 		{
@@ -22674,24 +25371,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Consécration"
+				"name": "Consécration",
+				"text": "Inflige $2 |4(point,points) de dégâts à tous les adversaires."
 			},
 			"id": "CS2_093",
 			"name": "Consecration",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $2 damage to all enemies.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_PickYourFate_7_EnchMiniom2nd.png",
 			"fr": {
-				"name": "Destin"
+				"name": "Destin",
+				"text": "<b>Râle d’agonie_:</b> une carte aléatoire de votre main coûte (0)_|4(cristal,cristaux) de mana."
 			},
 			"id": "TB_PickYourFate_7_EnchMiniom2nd",
 			"name": "Fate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> random card in owner's hand costs (0).",
 			"type": "Enchantment"
 		},
 		{
@@ -22701,7 +25402,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Voyant corrompu"
+				"name": "Voyant corrompu",
+				"text": "<b>Cri de guerre :</b> inflige\n2 points de dégâts à tous les serviteurs non murlocs."
 			},
 			"health": 3,
 			"id": "OG_161",
@@ -22709,30 +25411,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Deal 2 damage to all non-Murloc minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_101.png",
 			"cost": 2,
 			"fr": {
-				"name": "Renfort"
+				"name": "Renfort",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque une recrue de la Main d’argent 1/1."
 			},
 			"id": "CS2_101",
 			"name": "Reinforce",
 			"playerClass": "Paladin",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_612o.png",
 			"fr": {
-				"name": "Puissance du Kirin Tor"
+				"name": "Puissance du Kirin Tor",
+				"text": "Votre prochain Secret coûte (0)."
 			},
 			"id": "EX1_612o",
 			"name": "Power of the Kirin Tor",
 			"playerClass": "Mage",
 			"set": "Expert1",
+			"text": "Your next Secret costs (0).",
 			"type": "Enchantment"
 		},
 		{
@@ -22741,13 +25448,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Lâcher les chiens"
+				"name": "Lâcher les chiens",
+				"text": "Invoque un chien 1/1 avec <b>Charge</b> pour chaque serviteur adverse."
 			},
 			"id": "EX1_538",
 			"name": "Unleash the Hounds",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "For each enemy minion, summon a 1/1 Hound with <b>Charge</b>.",
 			"type": "Spell"
 		},
 		{
@@ -22758,7 +25467,8 @@ var parseCardsText = {
 			"cost": 6,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Gelbin Mekkanivelle"
+				"name": "Gelbin Mekkanivelle",
+				"text": "<b>Cri de guerre :</b> invoque une invention GÉNIALE."
 			},
 			"health": 6,
 			"id": "EX1_112",
@@ -22766,6 +25476,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Promo",
+			"text": "<b>Battlecry:</b> Summon an AWESOME invention.",
 			"type": "Minion"
 		},
 		{
@@ -22774,13 +25485,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Sonner"
+				"name": "Sonner",
+				"text": "Inflige $3 |4(point,points) de dégâts. Confère\n3 points d’armure."
 			},
 			"id": "AT_064",
 			"name": "Bash",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Deal $3 damage.\nGain 3 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -22790,7 +25503,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Malkorok"
+				"name": "Malkorok",
+				"text": "<b>Cri de guerre :</b> vous équipe d’une arme aléatoire."
 			},
 			"health": 5,
 			"id": "OG_220",
@@ -22798,6 +25512,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Equip a random weapon.",
 			"type": "Minion"
 		},
 		{
@@ -22807,7 +25522,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Guerrier branchie-bleue"
+				"name": "Guerrier branchie-bleue",
+				"text": "<b>Charge</b>"
 			},
 			"health": 1,
 			"id": "CS2_173",
@@ -22815,6 +25531,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -22824,7 +25541,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Parlevent"
+				"name": "Parlevent",
+				"text": "<b>Cri de guerre :</b> confère <b>Furie des vents</b> à un serviteur allié."
 			},
 			"health": 3,
 			"id": "EX1_587",
@@ -22832,40 +25550,47 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Give a friendly minion <b>Windfury</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_281e.png",
 			"fr": {
-				"name": "Dévotion du fanatique"
+				"name": "Dévotion du fanatique",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "OG_281e",
 			"name": "Fanatic Devotion",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Increased Stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_063e.png",
 			"fr": {
-				"name": "Corruption"
+				"name": "Corruption",
+				"text": "Au début du tour du joueur utilisant Corruption, détruit ce serviteur."
 			},
 			"id": "CS2_063e",
 			"name": "Corruption",
 			"playerClass": "Warlock",
 			"set": "Core",
+			"text": "At the start of the corrupting player's turn, destroy this minion.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_PickYourFate_11b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Bonus : murloc"
+				"name": "Bonus : murloc",
+				"text": "À la fin de votre tour, invoque un murloc 1/1."
 			},
 			"id": "TB_PickYourFate_11b",
 			"name": "Murloc Bonus",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Summon a 1/1 Murloc at the end of your turn.",
 			"type": "Spell"
 		},
 		{
@@ -22873,12 +25598,14 @@ var parseCardsText = {
 			"cardImage": "KARA_12_03.png",
 			"cost": 3,
 			"fr": {
-				"name": "Couronne de flammes"
+				"name": "Couronne de flammes",
+				"text": "<b>Secret_:</b> quand un adversaire attaque, inflige 5_points de dégâts à tous les autres ennemis."
 			},
 			"id": "KARA_12_03",
 			"name": "Flame Wreath",
 			"playerClass": "Mage",
 			"set": "Kara",
+			"text": "<b>Secret:</b> When an enemy attacks, deal 5 damage to all other enemies.",
 			"type": "Spell"
 		},
 		{
@@ -22888,7 +25615,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Kel’Thuzad"
+				"name": "Kel’Thuzad",
+				"text": "À la fin de chaque tour, invoque tous les serviteurs alliés qui sont morts pendant ce tour."
 			},
 			"health": 8,
 			"id": "FP1_013",
@@ -22896,6 +25624,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "At the end of each turn, summon all friendly minions that died this turn.",
 			"type": "Minion"
 		},
 		{
@@ -22905,7 +25634,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 12,
 			"fr": {
-				"name": "Géant mécanique"
+				"name": "Géant mécanique",
+				"text": "Coûte (1) |4(cristal,cristaux) de moins pour chaque carte dans la main de votre adversaire."
 			},
 			"health": 8,
 			"id": "GVG_121",
@@ -22913,18 +25643,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Costs (1) less for each card in your opponent's hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA14_10H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Activation !"
+				"name": "Activation !",
+				"text": "<b>Pouvoir héroïque</b>\nActive un Tron aléatoire."
 			},
 			"id": "BRMA14_10H",
 			"name": "Activate!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate a random Tron.",
 			"type": "Hero_power"
 		},
 		{
@@ -22933,7 +25666,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Pouletisateur"
+				"name": "Pouletisateur",
+				"text": "Au début de votre tour, transforme un serviteur aléatoire en poulet 1/1."
 			},
 			"health": 3,
 			"id": "Mekka4",
@@ -22941,6 +25675,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Promo",
+			"text": "At the start of your turn, transform a random minion into a 1/1 Chicken.",
 			"type": "Minion"
 		},
 		{
@@ -22976,12 +25711,14 @@ var parseCardsText = {
 			"cardImage": "NAX3_02_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Entoilage"
+				"name": "Entoilage",
+				"text": "<b>Pouvoir héroïque</b>\nRenvoie un serviteur adverse aléatoire dans la main de votre adversaire."
 			},
 			"id": "NAX3_02_TB",
 			"name": "Web Wrap",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nReturn a random enemy minion to your opponent's hand.",
 			"type": "Hero_power"
 		},
 		{
@@ -22989,12 +25726,14 @@ var parseCardsText = {
 			"cardImage": "OG_080f.png",
 			"cost": 1,
 			"fr": {
-				"name": "Toxine de fleur de feu"
+				"name": "Toxine de fleur de feu",
+				"text": "Inflige $2 |4(point,points) de dégâts."
 			},
 			"id": "OG_080f",
 			"name": "Firebloom Toxin",
 			"playerClass": "Rogue",
 			"set": "Og",
+			"text": "Deal $2 damage.",
 			"type": "Spell"
 		},
 		{
@@ -23002,36 +25741,42 @@ var parseCardsText = {
 			"cardImage": "TBST_004.png",
 			"cost": 3,
 			"fr": {
-				"name": "Soigneur honnête"
+				"name": "Soigneur honnête",
+				"text": "À la fin de votre tour, invoque un serviteur allié aléatoire mort pendant ce tour."
 			},
 			"health": 2,
 			"id": "TBST_004",
 			"name": "OLDLegit Healer",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "At the end of your turn, summon a random friendly minion that died this turn.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_022b.png",
 			"fr": {
-				"name": "Huile d’affûtage de Bricoleur"
+				"name": "Huile d’affûtage de Bricoleur",
+				"text": "+3 ATQ."
 			},
 			"id": "GVG_022b",
 			"name": "Tinker's Sharpsword Oil",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA09_2H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Ouvrir les portes"
+				"name": "Ouvrir les portes",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque trois dragonnets 2/2. Change de pouvoir héroïque."
 			},
 			"id": "BRMA09_2H",
 			"name": "Open the Gates",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon three 2/2 Whelps. Get a new Hero Power.",
 			"type": "Hero_power"
 		},
 		{
@@ -23040,25 +25785,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Horion de terre"
+				"name": "Horion de terre",
+				"text": "Réduit un serviteur au <b>Silence</b>, puis lui inflige $1 |4(point,points) de dégâts."
 			},
 			"id": "EX1_245",
 			"name": "Earth Shock",
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Silence</b> a minion, then deal $1 damage to it.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX3_02H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Entoilage"
+				"name": "Entoilage",
+				"text": "<b>Pouvoir héroïque</b>\nRenvoie 2 serviteurs adverses aléatoires dans la main de votre adversaire."
 			},
 			"id": "NAX3_02H",
 			"name": "Web Wrap",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nReturn 2 random enemy minions to your opponent's hand.",
 			"type": "Hero_power"
 		},
 		{
@@ -23068,7 +25817,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Ancienne porte-bouclier"
+				"name": "Ancienne porte-bouclier",
+				"text": "<b>Cri de guerre :</b> gagne\n10 points d’armure si votre C’Thun a au moins 10 Attaque."
 			},
 			"health": 6,
 			"id": "OG_301",
@@ -23076,18 +25826,21 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> If your C'Thun has at least 10 Attack, gain 10 Armor.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA13_4_2_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Magie sauvage"
+				"name": "Magie sauvage",
+				"text": "<b>Pouvoir héroïque</b>\nPlace un sort aléatoire de la classe de votre adversaire dans votre main."
 			},
 			"id": "BRMA13_4_2_TB",
 			"name": "Wild Magic",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand.",
 			"type": "Hero_power"
 		},
 		{
@@ -23107,12 +25860,14 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_334e.png",
 			"fr": {
-				"name": "Folie de l’ombre"
+				"name": "Folie de l’ombre",
+				"text": "Les commandes de ce serviteur sont échangées pour ce tour."
 			},
 			"id": "EX1_334e",
 			"name": "Shadow Madness",
 			"playerClass": "Priest",
 			"set": "Expert1",
+			"text": "This minion has switched controllers this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -23123,13 +25878,15 @@ var parseCardsText = {
 			"cost": 7,
 			"durability": 1,
 			"fr": {
-				"name": "Hurlesang"
+				"name": "Hurlesang",
+				"text": "Attaquer un serviteur coûte 1 ATQ au lieu de 1 Durabilité."
 			},
 			"id": "EX1_411",
 			"name": "Gorehowl",
 			"playerClass": "Warrior",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Attacking a minion costs 1 Attack instead of 1 Durability.",
 			"type": "Weapon"
 		},
 		{
@@ -23150,13 +25907,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Idole corbeau"
+				"name": "Idole corbeau",
+				"text": "<b>Choix des armes :</b>\n<b>découvre</b> un serviteur ou un sort."
 			},
 			"id": "LOE_115",
 			"name": "Raven Idol",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Choose One -</b>\n<b>Discover</b> a minion; or <b>Discover</b> a spell.",
 			"type": "Spell"
 		},
 		{
@@ -23164,24 +25923,28 @@ var parseCardsText = {
 			"cardImage": "KARA_06_03hp.png",
 			"cost": 4,
 			"fr": {
-				"name": "Amour véritable"
+				"name": "Amour véritable",
+				"text": "<b>Pouvoir héroïque</b>\nSi vous n’avez pas Romulo, l’invoque."
 			},
 			"id": "KARA_06_03hp",
 			"name": "True Love",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nIf you don't have Romulo, summon him.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "OG_195e.png",
 			"fr": {
-				"name": "Furieux"
+				"name": "Furieux",
+				"text": "+2/+2."
 			},
 			"id": "OG_195e",
 			"name": "Enormous",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -23191,7 +25954,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Eadric le Pur"
+				"name": "Eadric le Pur",
+				"text": "<b>Cri de guerre :</b> l’Attaque de tous les serviteurs adverses passe à 1."
 			},
 			"health": 7,
 			"id": "AT_081",
@@ -23199,31 +25963,36 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Change all enemy minions'\nAttack to 1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TU4e_005.png",
 			"cost": 3,
 			"fr": {
-				"name": "Explosion de flammes"
+				"name": "Explosion de flammes",
+				"text": "Lance 5 missiles infligeant chacun $1 |4(point,points) de dégâts à des adversaires aléatoires."
 			},
 			"id": "TU4e_005",
 			"name": "Flame Burst",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Shoot 5 missiles at random enemies for $1 damage each.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_014t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Banane"
+				"name": "Banane",
+				"text": "Confère +1/+1 à un serviteur."
 			},
 			"id": "EX1_014t",
 			"name": "Bananas",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Give a minion +1/+1.",
 			"type": "Spell"
 		},
 		{
@@ -23232,25 +26001,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Rédemption"
+				"name": "Rédemption",
+				"text": "<b>Secret :</b> quand un de vos serviteurs meurt, il est ressuscité avec\n1 PV."
 			},
 			"id": "EX1_136",
 			"name": "Redemption",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When one of your minions dies, return it to life with 1 Health.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA07_03h.png",
 			"cost": 0,
 			"fr": {
-				"name": "Fuir la mine !"
+				"name": "Fuir la mine !",
+				"text": "Échappez aux troggs !"
 			},
 			"id": "LOEA07_03h",
 			"name": "Flee the Mine!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Escape the Troggs!",
 			"type": "Hero_power"
 		},
 		{
@@ -23270,58 +26043,68 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_096e.png",
 			"fr": {
-				"name": "Remonté"
+				"name": "Remonté",
+				"text": "+1/+1."
 			},
 			"id": "AT_096e",
 			"name": "Wound Up",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KARA_05_01hpheroic.png",
 			"cost": 0,
 			"fr": {
-				"name": "Apeuré"
+				"name": "Apeuré",
+				"text": "<b>Pouvoir héroïque passif</b>\nLes serviteurs coûtent (1)_cristal. Les serviteurs adverses ont_1/1."
 			},
 			"id": "KARA_05_01hpheroic",
 			"name": "Trembling",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Passive Hero Power</b> Minions cost (1). Enemy minions are 1/1.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_080o.png",
 			"fr": {
-				"name": "Garde des secrets"
+				"name": "Garde des secrets",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "EX1_080o",
 			"name": "Keeping Secrets",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRM_024e.png",
 			"fr": {
-				"name": "Grandes griffes"
+				"name": "Grandes griffes",
+				"text": "+3/+3."
 			},
 			"id": "BRM_024e",
 			"name": "Large Talons",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "+3/+3.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "AT_039e.png",
 			"fr": {
-				"name": "Sauvage"
+				"name": "Sauvage",
+				"text": "+2 ATQ pendant ce tour."
 			},
 			"id": "AT_039e",
 			"name": "Savage",
 			"playerClass": "Druid",
 			"set": "Tgt",
+			"text": "+2 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -23331,7 +26114,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Wyrm de bibliothèque"
+				"name": "Wyrm de bibliothèque",
+				"text": "<b>Cri de guerre_:</b> détruit un serviteur adverse avec 3_ATQ ou moins si vous avez un Dragon en main."
 			},
 			"health": 6,
 			"id": "KAR_033",
@@ -23339,17 +26123,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, destroy an enemy minion with 3 or less Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_046e.png",
 			"fr": {
-				"name": "Le roi"
+				"name": "Le roi",
+				"text": "Attaque augmentée."
 			},
 			"id": "GVG_046e",
 			"name": "The King",
 			"playerClass": "Hunter",
 			"set": "Gvg",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -23359,7 +26146,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Chauve-souris embrasée"
+				"name": "Chauve-souris embrasée",
+				"text": "<b>Râle d’agonie :</b> inflige\n1 point de dégâts à un adversaire aléatoire."
 			},
 			"health": 1,
 			"id": "OG_179",
@@ -23367,6 +26155,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Deal 1 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -23377,13 +26166,15 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 2,
 			"fr": {
-				"name": "Masse de puissance"
+				"name": "Masse de puissance",
+				"text": "<b>Râle d’agonie_:</b> donne à un Méca allié aléatoire_+2/+2."
 			},
 			"id": "GVG_036",
 			"name": "Powermace",
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Deathrattle:</b> Give a random friendly Mech +2/+2.",
 			"type": "Weapon"
 		},
 		{
@@ -23391,24 +26182,28 @@ var parseCardsText = {
 			"cardImage": "LOEA09_8H.png",
 			"cost": 5,
 			"fr": {
-				"name": "Garde ondulant"
+				"name": "Garde ondulant",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 7,
 			"id": "LOEA09_8H",
 			"name": "Slithering Guard",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_022e.png",
 			"fr": {
-				"name": "Free Cards"
+				"name": "Free Cards",
+				"text": "Your cards cost (0) for the rest of the game."
 			},
 			"id": "XXX_022e",
 			"name": "Free Cards",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Your cards cost (0) for the rest of the game.",
 			"type": "Enchantment"
 		},
 		{
@@ -23416,7 +26211,8 @@ var parseCardsText = {
 			"cardImage": "OG_279.png",
 			"cost": 10,
 			"fr": {
-				"name": "C’Thun"
+				"name": "C’Thun",
+				"text": "<b>Cri de guerre :</b> inflige des dégâts égaux à l’Attaque de ce serviteur répartis aléatoirement entre tous les adversaires."
 			},
 			"health": 6,
 			"id": "OG_279",
@@ -23424,18 +26220,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Deal damage equal to this minion's Attack randomly split among all enemies.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_012.png",
 			"cost": 0,
 			"fr": {
-				"name": "Choisir une nouvelle carte !"
+				"name": "Choisir une nouvelle carte !",
+				"text": "Affiche 3 cartes aléatoires. Choisissez-en une à placer dans votre deck."
 			},
 			"id": "TB_012",
 			"name": "Choose a New Card!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Look at 3 random cards. Choose one and shuffle it into your deck.",
 			"type": "Spell"
 		},
 		{
@@ -23445,7 +26244,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Nat Pagle"
+				"name": "Nat Pagle",
+				"text": "Au début de votre tour, vous avez 50% de chances de piocher une carte supplémentaire."
 			},
 			"health": 4,
 			"id": "EX1_557",
@@ -23453,40 +26253,47 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "At the start of your turn, you have a 50% chance to draw an extra card.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_411e.png",
 			"fr": {
-				"name": "Rage sanguinaire"
+				"name": "Rage sanguinaire",
+				"text": "Aucune perte de durabilité."
 			},
 			"id": "EX1_411e",
 			"name": "Bloodrage",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "No durability loss.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_PickYourFate_9_EnchMinion.png",
 			"fr": {
-				"name": "Bonus"
+				"name": "Bonus",
+				"text": "Vos serviteurs avec <b>Râle d’agonie</b> ont +1/+1."
 			},
 			"id": "TB_PickYourFate_9_EnchMinion",
 			"name": "Bonus",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Your <b>Deathrattle</b> minions have +1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TU4e_002.png",
 			"cost": 2,
 			"fr": {
-				"name": "Flammes d’Azzinoth"
+				"name": "Flammes d’Azzinoth",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux serviteurs 2/1."
 			},
 			"id": "TU4e_002",
 			"name": "Flames of Azzinoth",
 			"playerClass": "Neutral",
 			"set": "Missions",
+			"text": "<b>Hero Power</b>\nSummon two 2/1 minions.",
 			"type": "Hero_power"
 		},
 		{
@@ -23496,7 +26303,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Hobgobelin"
+				"name": "Hobgobelin",
+				"text": "Chaque fois que vous jouez un serviteur avec 1 ATQ, lui donne +2/+2."
 			},
 			"health": 3,
 			"id": "GVG_104",
@@ -23504,6 +26312,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Whenever you play a 1-Attack minion, give it +2/+2.",
 			"type": "Minion"
 		},
 		{
@@ -23526,12 +26335,14 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_066e.png",
 			"fr": {
-				"name": "Forges d’Orgrimmar"
+				"name": "Forges d’Orgrimmar",
+				"text": "Attaque augmentée."
 			},
 			"id": "AT_066e",
 			"name": "Forges of Orgrimmar",
 			"playerClass": "Warrior",
 			"set": "Tgt",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -23539,7 +26350,8 @@ var parseCardsText = {
 			"cardImage": "CRED_44.png",
 			"cost": 4,
 			"fr": {
-				"name": "Walter Kong"
+				"name": "Walter Kong",
+				"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à deux cibles stratégiques."
 			},
 			"health": 2,
 			"id": "CRED_44",
@@ -23547,6 +26359,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Deal 1 damage to each of 2 strategic targets.",
 			"type": "Minion"
 		},
 		{
@@ -23554,7 +26367,8 @@ var parseCardsText = {
 			"cardImage": "XXX_108.png",
 			"cost": 0,
 			"fr": {
-				"name": "Set all minions to 1 health"
+				"name": "Set all minions to 1 health",
+				"text": "Set every minion's health to 1, and then explode in nothingness."
 			},
 			"health": 0,
 			"id": "XXX_108",
@@ -23562,6 +26376,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Set every minion's health to 1, and then explode in nothingness.",
 			"type": "Minion"
 		},
 		{
@@ -23586,7 +26401,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Destructeur d’obsidienne"
+				"name": "Destructeur d’obsidienne",
+				"text": "À la fin de votre tour, invoque un scarabée 1/1 avec <b>Provocation</b>."
 			},
 			"health": 7,
 			"id": "LOE_009",
@@ -23594,18 +26410,21 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "At the end of your turn, summon a 1/1 Scarab with <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_048e.png",
 			"fr": {
-				"name": "Marque d’Y’Shaarj"
+				"name": "Marque d’Y’Shaarj",
+				"text": "+2/+2."
 			},
 			"id": "OG_048e",
 			"name": "Mark of Y'Shaarj",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -23613,24 +26432,28 @@ var parseCardsText = {
 			"cardImage": "LOEA09_6H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Archer ondulant"
+				"name": "Archer ondulant",
+				"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts à tous les serviteurs adverses."
 			},
 			"health": 2,
 			"id": "LOEA09_6H",
 			"name": "Slithering Archer",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> Deal 2 damage to all enemy minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_030be.png",
 			"fr": {
-				"name": "Mode Char"
+				"name": "Mode Char",
+				"text": "+1 PV."
 			},
 			"id": "GVG_030be",
 			"name": "Tank Mode",
 			"playerClass": "Druid",
 			"set": "Gvg",
+			"text": "+1 Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -23638,7 +26461,8 @@ var parseCardsText = {
 			"cardImage": "BRMC_87.png",
 			"cost": 3,
 			"fr": {
-				"name": "Moira Barbe-de-Bronze"
+				"name": "Moira Barbe-de-Bronze",
+				"text": "<b>Râle d’agonie :</b> invoque l’empereur Thaurissan."
 			},
 			"health": 3,
 			"id": "BRMC_87",
@@ -23646,6 +26470,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "<b>Deathrattle:</b> Summon Emperor Thaurissan.",
 			"type": "Minion"
 		},
 		{
@@ -23655,7 +26480,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Ancien de la guerre"
+				"name": "Ancien de la guerre",
+				"text": "<b>Choix des armes :</b> \n+5 ATQ ou +5 PV et <b>Provocation</b>."
 			},
 			"health": 5,
 			"id": "EX1_178",
@@ -23663,6 +26489,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Choose One</b> -\n+5 Attack; or +5 Health and <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -23686,7 +26513,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Chambellan Executus"
+				"name": "Chambellan Executus",
+				"text": "<b>Râle d’agonie :</b> remplace votre héros par Ragnaros, le seigneur du feu."
 			},
 			"health": 7,
 			"id": "BRM_027",
@@ -23694,6 +26522,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "<b>Deathrattle:</b> Replace your hero with Ragnaros, the Firelord.",
 			"type": "Minion"
 		},
 		{
@@ -23701,7 +26530,8 @@ var parseCardsText = {
 			"cardImage": "EX1_165t1.png",
 			"cost": 5,
 			"fr": {
-				"name": "Druide de la Griffe"
+				"name": "Druide de la Griffe",
+				"text": "<b>Charge</b>"
 			},
 			"health": 4,
 			"id": "EX1_165t1",
@@ -23709,6 +26539,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -23716,60 +26547,70 @@ var parseCardsText = {
 			"cardImage": "AT_132_SHAMANd.png",
 			"cost": 0,
 			"fr": {
-				"name": "Totem de courroux de l’air"
+				"name": "Totem de courroux de l’air",
+				"text": "<b>Dégâts des sorts : +1</b>"
 			},
 			"health": 2,
 			"id": "AT_132_SHAMANd",
 			"name": "Wrath of Air Totem",
 			"playerClass": "Shaman",
 			"set": "Tgt",
+			"text": "<b>Spell Damage +1</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_028e.png",
 			"fr": {
-				"name": "Lance de chi"
+				"name": "Lance de chi",
+				"text": "+3 ATQ."
 			},
 			"id": "AT_028e",
 			"name": "Chi Lance",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_034_H2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Explosion de feu"
+				"name": "Explosion de feu",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $1 point de dégâts."
 			},
 			"id": "CS2_034_H2",
 			"name": "Fireblast",
 			"playerClass": "Mage",
 			"rarity": "Free",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nDeal $1 damage.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "LOE_009e.png",
 			"fr": {
-				"name": "Puissance sinistre"
+				"name": "Puissance sinistre",
+				"text": "+4/+4."
 			},
 			"id": "LOE_009e",
 			"name": "Sinister Power",
 			"playerClass": "Warlock",
 			"set": "Loe",
+			"text": "+4/+4.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA06_02h.png",
 			"cost": 1,
 			"fr": {
-				"name": "Sculpture sur pierre"
+				"name": "Sculpture sur pierre",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque une statue pour chaque joueur."
 			},
 			"id": "LOEA06_02h",
 			"name": "Stonesculpting",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\n Summon a Statue for both players.",
 			"type": "Hero_power"
 		},
 		{
@@ -23778,13 +26619,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Ombreflamme"
+				"name": "Ombreflamme",
+				"text": "Détruit un serviteur allié et inflige des dégâts équivalents à ses points d’attaque à tous les serviteurs adverses."
 			},
 			"id": "EX1_303",
 			"name": "Shadowflame",
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Destroy a friendly minion and deal its Attack damage to all enemy minions.",
 			"type": "Spell"
 		},
 		{
@@ -23794,7 +26637,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Lardeur"
+				"name": "Lardeur",
+				"text": "À la fin de votre tour, invoque un gnoll 2/2 avec <b>Provocation</b>."
 			},
 			"health": 4,
 			"id": "NEW1_040",
@@ -23802,6 +26646,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "At the end of your turn, summon a 2/2 Gnoll with <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -23811,7 +26656,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Vaillant de Fossoyeuse"
+				"name": "Vaillant de Fossoyeuse",
+				"text": "<b>Combo :</b> inflige 1 point de dégâts."
 			},
 			"health": 2,
 			"id": "AT_030",
@@ -23819,17 +26665,20 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Combo:</b> Deal 1 damage.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_071e.png",
 			"fr": {
-				"name": "Aubaine d’Alexstrasza"
+				"name": "Aubaine d’Alexstrasza",
+				"text": "+1 ATQ et <b>Charge</b>."
 			},
 			"id": "AT_071e",
 			"name": "Alexstrasza's Boon",
 			"playerClass": "Warrior",
 			"set": "Tgt",
+			"text": "+1 Attack and <b>Charge</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -23839,7 +26688,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Raptor déterré"
+				"name": "Raptor déterré",
+				"text": "<b>Cri de guerre :</b> choisit un serviteur allié. Gagne une copie de son <b>Râle d’agonie</b>."
 			},
 			"health": 4,
 			"id": "LOE_019",
@@ -23847,6 +26697,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> Choose a friendly minion. Gain a copy of its <b>Deathrattle</b> effect.",
 			"type": "Minion"
 		},
 		{
@@ -23857,13 +26708,15 @@ var parseCardsText = {
 			"cost": 1,
 			"durability": 3,
 			"fr": {
-				"name": "Lame maudite"
+				"name": "Lame maudite",
+				"text": "Double tous les dégâts subis par votre héros."
 			},
 			"id": "LOE_118",
 			"name": "Cursed Blade",
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "Double all damage dealt to your hero.",
 			"type": "Weapon"
 		},
 		{
@@ -23872,25 +26725,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Flèches multiples"
+				"name": "Flèches multiples",
+				"text": "Inflige $3 |4(point,points) de dégâts à deux serviteurs adverses aléatoires."
 			},
 			"id": "DS1_183",
 			"name": "Multi-Shot",
 			"playerClass": "Hunter",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $3 damage to two random enemy minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA12_5H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Affliction de l’espèce : bleu"
+				"name": "Affliction de l’espèce : bleu",
+				"text": "Les sorts de Chromaggus coûtent (3) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 			},
 			"id": "BRMA12_5H",
 			"name": "Brood Affliction: Blue",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, Chromaggus' spells cost (3) less.",
 			"type": "Spell"
 		},
 		{
@@ -23911,7 +26768,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Massacreur du temple"
+				"name": "Massacreur du temple",
+				"text": "<b>Cri de guerre :</b> donne +3 PV à un serviteur allié."
 			},
 			"health": 6,
 			"id": "EX1_623",
@@ -23919,28 +26777,33 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give a friendly minion +3 Health.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX13_02e.png",
 			"fr": {
-				"name": "Polarité"
+				"name": "Polarité",
+				"text": "Attaque et vie inversées."
 			},
 			"id": "NAX13_02e",
 			"name": "Polarity",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Attack and Health swapped.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "EX1_044e.png",
 			"fr": {
-				"name": "Gain de niveau !"
+				"name": "Gain de niveau !",
+				"text": "Attaque et Vie augmentées."
 			},
 			"id": "EX1_044e",
 			"name": "Level Up!",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased Attack and Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -23959,23 +26822,27 @@ var parseCardsText = {
 			"cardImage": "LOEA07_18.png",
 			"cost": 1,
 			"fr": {
-				"name": "Dynamite"
+				"name": "Dynamite",
+				"text": "Inflige $10 |4(point,points) de dégâts."
 			},
 			"id": "LOEA07_18",
 			"name": "Dynamite",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Deal $10 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_059e.png",
 			"fr": {
-				"name": "Des expériences !"
+				"name": "Des expériences !",
+				"text": "L’Attaque et la Vie ont été échangées par l’alchimiste dément."
 			},
 			"id": "EX1_059e",
 			"name": "Experiments!",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Attack and Health have been swapped by Crazed Alchemist.",
 			"type": "Enchantment"
 		},
 		{
@@ -23985,7 +26852,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Cracheur de suie"
+				"name": "Cracheur de suie",
+				"text": "<b>Dégâts des sorts : +1</b>"
 			},
 			"health": 3,
 			"id": "GVG_123",
@@ -23994,6 +26862,7 @@ var parseCardsText = {
 			"rarity": "Rare",
 			"set": "Gvg",
 			"spellDamage": 1,
+			"text": "<b>Spell Damage +1</b>",
 			"type": "Minion"
 		},
 		{
@@ -24004,24 +26873,28 @@ var parseCardsText = {
 			"cost": 5,
 			"durability": 2,
 			"fr": {
-				"name": "Marteau du crépuscule"
+				"name": "Marteau du crépuscule",
+				"text": "<b>Râle d’agonie :</b> invoque un élémentaire 4/2."
 			},
 			"id": "OG_031",
 			"name": "Hammer of Twilight",
 			"playerClass": "Shaman",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Summon a 4/2 Elemental.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "OG_293f.png",
 			"fr": {
-				"name": "Sombre gardien"
+				"name": "Sombre gardien",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "OG_293f",
 			"name": "Dark Guardian",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Increased Stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -24032,7 +26905,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Jeune faucon-dragon"
+				"name": "Jeune faucon-dragon",
+				"text": "<b>Furie des vents</b>"
 			},
 			"health": 1,
 			"id": "CS2_169",
@@ -24040,6 +26914,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Windfury</b>",
 			"type": "Minion"
 		},
 		{
@@ -24062,13 +26937,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Portail de Lune-d’Argent"
+				"name": "Portail de Lune-d’Argent",
+				"text": "Donne +2/+2 à un serviteur. Invoque un serviteur aléatoire coûtant 2_cristaux."
 			},
 			"id": "KAR_077",
 			"name": "Silvermoon Portal",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Give a minion +2/+2. Summon a random\n2-Cost minion.",
 			"type": "Spell"
 		},
 		{
@@ -24089,25 +26966,29 @@ var parseCardsText = {
 		{
 			"cardImage": "BRM_003e.png",
 			"fr": {
-				"name": "Puissance du dragon"
+				"name": "Puissance du dragon",
+				"text": "Coûte (3) cristaux de moins pendant ce tour."
 			},
 			"id": "BRM_003e",
 			"name": "Dragon's Might",
 			"playerClass": "Mage",
 			"set": "Brm",
+			"text": "Costs (3) less this turn.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TU4c_002.png",
 			"cost": 1,
 			"fr": {
-				"name": "Lancer de tonneau"
+				"name": "Lancer de tonneau",
+				"text": "Inflige 2 points de dégâts."
 			},
 			"id": "TU4c_002",
 			"name": "Barrel Toss",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Deal 2 damage.",
 			"type": "Spell"
 		},
 		{
@@ -24154,13 +27035,15 @@ var parseCardsText = {
 			"cardImage": "NAX2_05H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Adorateur"
+				"name": "Adorateur",
+				"text": "Votre héros a +3 ATQ pendant votre tour."
 			},
 			"health": 4,
 			"id": "NAX2_05H",
 			"name": "Worshipper",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Your hero has +3 Attack on your turn.",
 			"type": "Minion"
 		},
 		{
@@ -24170,7 +27053,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Adepte de la Voile sanglante"
+				"name": "Adepte de la Voile sanglante",
+				"text": "<b>Cri de guerre :</b> donne +1/+1 à votre arme si vous contrôlez un autre Pirate."
 			},
 			"health": 4,
 			"id": "OG_315",
@@ -24178,6 +27062,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> If you control another Pirate, give your weapon +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -24185,24 +27070,28 @@ var parseCardsText = {
 			"cardImage": "XXX_095.png",
 			"cost": 0,
 			"fr": {
-				"name": "AI Buddy - All Charge!"
+				"name": "AI Buddy - All Charge!",
+				"text": "Spawn into play to give all minions <b>Charge</b>."
 			},
 			"health": 1,
 			"id": "XXX_095",
 			"name": "AI Buddy - All Charge!",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Spawn into play to give all minions <b>Charge</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_20e.png",
 			"fr": {
-				"name": "Béni"
+				"name": "Béni",
+				"text": "<b>Insensible</b> pendant ce tour."
 			},
 			"id": "LOEA16_20e",
 			"name": "Blessed",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": " <b>Immune</b> this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -24212,7 +27101,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Perroquet du capitaine"
+				"name": "Perroquet du capitaine",
+				"text": "<b>Cri de guerre :</b> place un pirate aléatoire de votre deck dans votre main."
 			},
 			"health": 1,
 			"id": "NEW1_016",
@@ -24220,6 +27110,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Reward",
+			"text": "<b>Battlecry:</b> Put a random Pirate from your deck into your hand.",
 			"type": "Minion"
 		},
 		{
@@ -24229,7 +27120,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Reno Jackson"
+				"name": "Reno Jackson",
+				"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, rend tous ses points de vie à votre héros."
 			},
 			"health": 6,
 			"id": "LOE_011",
@@ -24237,6 +27129,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> If your deck contains no more than 1 of any card, fully heal your hero.",
 			"type": "Minion"
 		},
 		{
@@ -24245,35 +27138,41 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Lumière dans les ténèbres"
+				"name": "Lumière dans les ténèbres",
+				"text": "<b>Découvre</b> un serviteur.\nLui donne +1/+1."
 			},
 			"id": "OG_311",
 			"name": "A Light in the Darkness",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Discover</b> a minion.\nGive it +1/+1.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_116e.png",
 			"fr": {
-				"name": "Venez vous battre !"
+				"name": "Venez vous battre !",
+				"text": "+1 ATQ et <b>Provocation</b>."
 			},
 			"id": "AT_116e",
 			"name": "Bring it on!",
 			"playerClass": "Priest",
 			"set": "Tgt",
+			"text": "+1 Attack and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_GiftExchange_Enchantment.png",
 			"fr": {
-				"name": "Cadeau nul"
+				"name": "Cadeau nul",
+				"text": "Le coût de cette carte est réduit."
 			},
 			"id": "TB_GiftExchange_Enchantment",
 			"name": "Cheap Gift",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "This card's cost is reduced.",
 			"type": "Enchantment"
 		},
 		{
@@ -24282,13 +27181,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Détournement"
+				"name": "Détournement",
+				"text": "<b>Secret :</b> quand un personnage attaque votre héros, il attaque un autre personnage aléatoire à la place."
 			},
 			"id": "EX1_533",
 			"name": "Misdirection",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When a character attacks your hero, instead he attacks another random character.",
 			"type": "Spell"
 		},
 		{
@@ -24298,7 +27199,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Cénarius"
+				"name": "Cénarius",
+				"text": "<b>Choix des armes :</b> confère +2/+2 à vos autres serviteurs ou invoque deux tréants 2/2 avec <b>Provocation</b>."
 			},
 			"health": 8,
 			"id": "EX1_573",
@@ -24306,6 +27208,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Choose One</b> - Give your other minions +2/+2; or Summon two 2/2 Treants with <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -24313,24 +27216,28 @@ var parseCardsText = {
 			"cardImage": "LOEA02_10a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Leokk"
+				"name": "Leokk",
+				"text": "Vos serviteurs ont +1 ATQ."
 			},
 			"health": 4,
 			"id": "LOEA02_10a",
 			"name": "Leokk",
 			"playerClass": "Hunter",
 			"set": "Loe",
+			"text": "Your minions have +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_363e2.png",
 			"fr": {
-				"name": "Bénédiction de sagesse"
+				"name": "Bénédiction de sagesse",
+				"text": "Quand ce serviteur attaque, le joueur adverse pioche une carte."
 			},
 			"id": "EX1_363e2",
 			"name": "Blessing of Wisdom",
 			"playerClass": "Paladin",
 			"set": "Expert1",
+			"text": "When this minion attacks, the enemy player draws a card.",
 			"type": "Enchantment"
 		},
 		{
@@ -24339,25 +27246,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Piège à ours"
+				"name": "Piège à ours",
+				"text": "<b>Secret :</b> invoque un ours 3/3 avec <b>Provocation</b> une fois que votre héros a été attaqué."
 			},
 			"id": "AT_060",
 			"name": "Bear Trap",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Secret:</b> After your hero is attacked, summon a 3/3 Bear with <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA14_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Armure de plates"
+				"name": "Armure de plates",
+				"text": "<b>Pouvoir héroïque passif</b>\nVotre héros ne peut pas subir plus de 1 point de dégâts à la fois."
 			},
 			"id": "LOEA14_2",
 			"name": "Platemail Armor",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\nYour Hero can only take 1 damage at a time.",
 			"type": "Hero_power"
 		},
 		{
@@ -24368,7 +27279,8 @@ var parseCardsText = {
 			"cost": 5,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Champion de la Main d’argent"
+				"name": "Champion de la Main d’argent",
+				"text": "<b>Cri de guerre :</b> invoque un écuyer 2/2."
 			},
 			"health": 4,
 			"id": "CS2_151",
@@ -24376,19 +27288,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Summon a 2/2 Squire.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_042b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Forme de panthère"
+				"name": "Forme de panthère",
+				"text": "+1/+1 et <b>Camouflage</b>."
 			},
 			"id": "AT_042b",
 			"name": "Panther Form",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "+1/+1 and <b>Stealth</b>",
 			"type": "Spell"
 		},
 		{
@@ -24397,13 +27312,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Kara Kazham !"
+				"name": "Kara Kazham !",
+				"text": "Invoque une bougie 1/1, un balai 2/2 et une théière 3/3."
 			},
 			"id": "KAR_025",
 			"name": "Kara Kazham!",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Summon a 1/1 Candle, 2/2 Broom, and 3/3 Teapot.",
 			"type": "Spell"
 		},
 		{
@@ -24414,7 +27331,8 @@ var parseCardsText = {
 			"cost": 2,
 			"durability": 3,
 			"fr": {
-				"name": "Hache de Forge-foudre"
+				"name": "Hache de Forge-foudre",
+				"text": "<b>Surcharge :</b> (1)"
 			},
 			"id": "EX1_247",
 			"name": "Stormforged Axe",
@@ -24422,30 +27340,35 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Overload:</b> (1)",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "OG_200e.png",
 			"fr": {
-				"name": "Destin funeste évité"
+				"name": "Destin funeste évité",
+				"text": "Attaque portée à 7."
 			},
 			"id": "OG_200e",
 			"name": "Doom Free",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Attack set to 7.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "XXX_058.png",
 			"cost": 0,
 			"fr": {
-				"name": "Weapon Nerf"
+				"name": "Weapon Nerf",
+				"text": "Give a weapon a negative enchantment."
 			},
 			"id": "XXX_058",
 			"name": "Weapon Nerf",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Give a weapon a negative enchantment.",
 			"type": "Spell"
 		},
 		{
@@ -24454,13 +27377,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Corruption"
+				"name": "Corruption",
+				"text": "Choisissez un serviteur adverse. Au début de votre tour, il est détruit."
 			},
 			"id": "CS2_063",
 			"name": "Corruption",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Choose an enemy minion. At the start of your turn, destroy it.",
 			"type": "Spell"
 		},
 		{
@@ -24469,13 +27394,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Soins rapides"
+				"name": "Soins rapides",
+				"text": "Rend #5 PV."
 			},
 			"id": "AT_055",
 			"name": "Flash Heal",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "Restore #5 Health.",
 			"type": "Spell"
 		},
 		{
@@ -24484,13 +27411,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "En chasse"
+				"name": "En chasse",
+				"text": "Inflige $1 |4(point,points) de dégâts. Invoque un mastiff 1/1."
 			},
 			"id": "OG_061",
 			"name": "On the Hunt",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Deal $1 damage.\nSummon a 1/1 Mastiff.",
 			"type": "Spell"
 		},
 		{
@@ -24500,7 +27429,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Kvaldir blessé"
+				"name": "Kvaldir blessé",
+				"text": "<b>Cri de guerre :</b> inflige\n3 points de dégâts à ce serviteur."
 			},
 			"health": 4,
 			"id": "AT_105",
@@ -24508,6 +27438,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Deal 3 damage to this minion.",
 			"type": "Minion"
 		},
 		{
@@ -24517,7 +27448,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Acolyte de la souffrance"
+				"name": "Acolyte de la souffrance",
+				"text": "Vous piochez une carte chaque fois que ce serviteur subit des dégâts."
 			},
 			"health": 3,
 			"id": "EX1_007",
@@ -24525,6 +27457,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Whenever this minion takes damage, draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -24534,7 +27467,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Fabricante d’armes"
+				"name": "Fabricante d’armes",
+				"text": "<b>Cri de guerre :</b> vous équipe d’une arme 2/2."
 			},
 			"health": 3,
 			"id": "EX1_398",
@@ -24542,6 +27476,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Equip a 2/2 weapon.",
 			"type": "Minion"
 		},
 		{
@@ -24561,13 +27496,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Bloc de glace"
+				"name": "Bloc de glace",
+				"text": "<b>Secret :</b> protège votre héros des dégâts mortels, et le rend <b>Insensible</b> pendant ce tour."
 			},
 			"id": "EX1_295",
 			"name": "Ice Block",
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When your hero takes fatal damage, prevent it and become <b>Immune</b> this turn.",
 			"type": "Spell"
 		},
 		{
@@ -24576,13 +27513,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Détection des démons"
+				"name": "Détection des démons",
+				"text": "Place dans votre main 2 démons aléatoires de votre jeu."
 			},
 			"id": "EX1_317",
 			"name": "Sense Demons",
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Put 2 random Demons from your deck into your hand.",
 			"type": "Spell"
 		},
 		{
@@ -24592,7 +27531,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Nefarian"
+				"name": "Nefarian",
+				"text": "<b>Cri de guerre :</b> ajoute 2 sorts aléatoires dans votre main <i>(de la classe de votre adversaire)</i>."
 			},
 			"health": 8,
 			"id": "BRM_030",
@@ -24600,43 +27540,50 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> Add 2 random spells to your hand <i>(from your opponent's class)</i>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_013t.png",
 			"cost": 0,
 			"fr": {
-				"name": "Excès de mana"
+				"name": "Excès de mana",
+				"text": "Vous piochez une carte. <i>(Vous ne pouvez avoir que 10 cristaux de mana en réserve.)</i>"
 			},
 			"id": "CS2_013t",
 			"name": "Excess Mana",
 			"playerClass": "Druid",
 			"set": "Core",
+			"text": "Draw a card. <i>(You can only have 10 Mana in your tray.)</i>",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_165a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Forme de félin"
+				"name": "Forme de félin",
+				"text": "<b>Charge</b>"
 			},
 			"id": "EX1_165a",
 			"name": "Cat Form",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Charge</b>",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA12_7.png",
 			"cost": 1,
 			"fr": {
-				"name": "Affliction de l’espèce : bronze"
+				"name": "Affliction de l’espèce : bronze",
+				"text": "Les serviteurs de Chromaggus coûtent (1) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 			},
 			"id": "BRMA12_7",
 			"name": "Brood Affliction: Bronze",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, Chromaggus' minions cost (1) less.",
 			"type": "Spell"
 		},
 		{
@@ -24646,7 +27593,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Enseignante pourpre"
+				"name": "Enseignante pourpre",
+				"text": "Chaque fois que vous lancez un sort, invoque un apprenti pourpre 1/1."
 			},
 			"health": 5,
 			"id": "NEW1_026",
@@ -24654,6 +27602,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever you cast a spell, summon a 1/1 Violet Apprentice.",
 			"type": "Minion"
 		},
 		{
@@ -24672,12 +27621,14 @@ var parseCardsText = {
 			"cardImage": "NAX4_04.png",
 			"cost": 0,
 			"fr": {
-				"name": "Réanimation morbide"
+				"name": "Réanimation morbide",
+				"text": "<b>Pouvoir héroïque passif</b>\nChaque fois qu’un adversaire meurt, un squelette 1/1 se lève."
 			},
 			"id": "NAX4_04",
 			"name": "Raise Dead",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Passive Hero Power</b>\nWhenever an enemy dies, raise a 1/1 Skeleton.",
 			"type": "Hero_power"
 		},
 		{
@@ -24685,7 +27636,8 @@ var parseCardsText = {
 			"cardImage": "BRMC_85.png",
 			"cost": 4,
 			"fr": {
-				"name": "Lucifron"
+				"name": "Lucifron",
+				"text": "<b>Cri de guerre :</b> lance Corruption sur tous les autres serviteurs."
 			},
 			"health": 7,
 			"id": "BRMC_85",
@@ -24693,6 +27645,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "<b>Battlecry:</b> Cast Corruption on all other minions.",
 			"type": "Minion"
 		},
 		{
@@ -24700,13 +27653,15 @@ var parseCardsText = {
 			"cardImage": "LOEA04_13bt.png",
 			"cost": 4,
 			"fr": {
-				"name": "Garde d’Orsis"
+				"name": "Garde d’Orsis",
+				"text": "<b>Bouclier divin</b>"
 			},
 			"health": 5,
 			"id": "LOEA04_13bt",
 			"name": "Orsis Guard",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -24737,13 +27692,15 @@ var parseCardsText = {
 			"cardImage": "XXX_013.png",
 			"cost": 0,
 			"fr": {
-				"name": "Discard"
+				"name": "Discard",
+				"text": "Choose a hero.  That hero's controller discards his hand."
 			},
 			"id": "XXX_013",
 			"name": "Discard",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Choose a hero.  That hero's controller discards his hand.",
 			"type": "Spell"
 		},
 		{
@@ -24752,13 +27709,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Blizzard"
+				"name": "Blizzard",
+				"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs adverses et les <b>gèle</b>."
 			},
 			"id": "CS2_028",
 			"name": "Blizzard",
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Deal $2 damage to all enemy minions and <b>Freeze</b> them.",
 			"type": "Spell"
 		},
 		{
@@ -24767,25 +27726,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Choc de flammes"
+				"name": "Choc de flammes",
+				"text": "Inflige $4 |4(point,points) de dégâts à tous les serviteurs adverses."
 			},
 			"id": "CS2_032",
 			"name": "Flamestrike",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $4 damage to all enemy minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA01_2H_2_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Pioche forcée !"
+				"name": "Pioche forcée !",
+				"text": "<b>Pouvoir héroïque</b>\nPlace un serviteur de chaque deck sur le champ de bataille."
 			},
 			"id": "BRMA01_2H_2_TB",
 			"name": "Pile On!!!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nPut a minion from each deck into the battlefield.",
 			"type": "Hero_power"
 		},
 		{
@@ -24804,24 +27767,28 @@ var parseCardsText = {
 			"cardImage": "LOEA04_31b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Pas question !"
+				"name": "Pas question !",
+				"text": "Vous ne faites rien."
 			},
 			"id": "LOEA04_31b",
 			"name": "No Way!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Do nothing.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_FactionWar_Boss_Rag_0.png",
 			"cost": 2,
 			"fr": {
-				"name": "Tapette à mouches"
+				"name": "Tapette à mouches",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $3 points de dégâts à un adversaire aléatoire. Pour le moment…"
 			},
 			"id": "TB_FactionWar_Boss_Rag_0",
 			"name": "Swat Fly",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nDeal $3 damage to random enemy, for now...",
 			"type": "Hero_power"
 		},
 		{
@@ -24829,7 +27796,8 @@ var parseCardsText = {
 			"cardImage": "CRED_38.png",
 			"cost": 4,
 			"fr": {
-				"name": "Robin Fredericksen"
+				"name": "Robin Fredericksen",
+				"text": "<b>Cri de guerre :</b> si vous n’avez pas d’autre Eric sur le champ de bataille, renomme cette carte « Eric »."
 			},
 			"health": 4,
 			"id": "CRED_38",
@@ -24837,6 +27805,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> If you have no other Erics on the battlefield, rename this card to \"Eric\".",
 			"type": "Minion"
 		},
 		{
@@ -24856,12 +27825,14 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_009e.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+5 ATQ."
 			},
 			"id": "EX1_009e",
 			"name": "Enraged",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+5 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -24871,7 +27842,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Élémentaire d’eau"
+				"name": "Élémentaire d’eau",
+				"text": "<b>Gèle</b> tout personnage blessé par ce serviteur."
 			},
 			"health": 6,
 			"id": "CS2_033",
@@ -24879,6 +27851,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Freeze</b> any character damaged by this minion.",
 			"type": "Minion"
 		},
 		{
@@ -24888,7 +27861,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Porte-bouclier"
+				"name": "Porte-bouclier",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "EX1_405",
@@ -24896,31 +27870,36 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX7_03H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Frappe déséquilibrante"
+				"name": "Frappe déséquilibrante",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 4 points de dégâts."
 			},
 			"id": "NAX7_03H",
 			"name": "Unbalancing Strike",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 4 damage.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "XXX_041.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy Hero Power"
+				"name": "Destroy Hero Power",
+				"text": "Destroy a player's Hero Power."
 			},
 			"id": "XXX_041",
 			"name": "Destroy Hero Power",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Destroy a player's Hero Power.",
 			"type": "Spell"
 		},
 		{
@@ -24928,7 +27907,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_7.png",
 			"cost": 3,
 			"fr": {
-				"name": "Heigan l’Impur"
+				"name": "Heigan l’Impur",
+				"text": "À la fin de votre tour, inflige 4 points de dégâts à un adversaire aléatoire."
 			},
 			"health": 5,
 			"id": "TB_KTRAF_7",
@@ -24936,6 +27916,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "At the end of your turn, deal 4 damage to a  random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -24943,7 +27924,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_25.png",
 			"cost": 5,
 			"fr": {
-				"name": "Dame Naz’jar"
+				"name": "Dame Naz’jar",
+				"text": "À la fin de votre tour, remplace tous les autres serviteurs par de nouveaux de même coût."
 			},
 			"health": 5,
 			"id": "LOEA16_25",
@@ -24951,6 +27933,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, replace all other minions with new ones of the same Cost.",
 			"type": "Minion"
 		},
 		{
@@ -24960,7 +27943,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Soggoth le Rampant"
+				"name": "Soggoth le Rampant",
+				"text": "<b>Provocation</b>\nNe peut pas être la cible de sorts ou de pouvoirs héroïques."
 			},
 			"health": 9,
 			"id": "OG_340",
@@ -24968,29 +27952,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Taunt</b>\nCan't be targeted by spells or Hero Powers.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_076a.png",
 			"fr": {
-				"name": "Pistons"
+				"name": "Pistons",
+				"text": "Attaque augmentée."
 			},
 			"id": "GVG_076a",
 			"name": "Pistons",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA09_3H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Ancienne Horde"
+				"name": "Ancienne Horde",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux orcs 2/2 avec <b>Provocation</b>. Change de pouvoir héroïque."
 			},
 			"id": "BRMA09_3H",
 			"name": "Old Horde",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon two 2/2 Orcs with <b>Taunt</b>. Get a new Hero Power.",
 			"type": "Hero_power"
 		},
 		{
@@ -25000,7 +27989,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Totem de vague de mana"
+				"name": "Totem de vague de mana",
+				"text": "Vous piochez une carte à la fin de votre tour."
 			},
 			"health": 3,
 			"id": "EX1_575",
@@ -25008,6 +27998,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "At the end of your turn, draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -25031,13 +28022,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Enchaînement"
+				"name": "Enchaînement",
+				"text": "Inflige $2 |4(point,points) de dégâts à deux serviteurs adverses aléatoires."
 			},
 			"id": "CS2_114",
 			"name": "Cleave",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $2 damage to two random enemy minions.",
 			"type": "Spell"
 		},
 		{
@@ -25046,13 +28039,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Tir de précision"
+				"name": "Tir de précision",
+				"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, ce dernier subit $4 |4(point,points) de dégâts."
 			},
 			"id": "EX1_609",
 			"name": "Snipe",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> After your opponent plays a minion, deal $4 damage to it.",
 			"type": "Spell"
 		},
 		{
@@ -25060,25 +28055,29 @@ var parseCardsText = {
 			"cardImage": "BRMA04_3H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Lige du feu"
+				"name": "Lige du feu",
+				"text": "<b>Râle d’agonie :</b> inflige 3 points de dégâts au héros adverse pour chaque lige du feu mort pendant ce tour."
 			},
 			"health": 5,
 			"id": "BRMA04_3H",
 			"name": "Firesworn",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Deathrattle:</b> Deal 3 damage to the enemy hero for each Firesworn that died this turn.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA02_05.png",
 			"cost": 0,
 			"fr": {
-				"name": "Vœu : gloire"
+				"name": "Vœu : gloire",
+				"text": "<b>Découvre</b> un serviteur."
 			},
 			"id": "LOEA02_05",
 			"name": "Wish for Glory",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Discover</b> a minion.",
 			"type": "Spell"
 		},
 		{
@@ -25098,26 +28097,30 @@ var parseCardsText = {
 			"cardImage": "NAX8_04.png",
 			"cost": 3,
 			"fr": {
-				"name": "Guerrier tenace"
+				"name": "Guerrier tenace",
+				"text": "<b>Râle d’agonie :</b> invoque un guerrier spectral pour votre adversaire."
 			},
 			"health": 4,
 			"id": "NAX8_04",
 			"name": "Unrelenting Warrior",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Summon a Spectral Warrior for your opponent.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KAR_003a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Drink the Moonlight"
+				"name": "Drink the Moonlight",
+				"text": "Restore 20 Health."
 			},
 			"id": "KAR_003a",
 			"name": "Drink the Moonlight",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Kara_reserve",
+			"text": "Restore 20 Health.",
 			"type": "Spell"
 		},
 		{
@@ -25127,7 +28130,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Corrupteur de l’Aile noire"
+				"name": "Corrupteur de l’Aile noire",
+				"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts si vous avez un Dragon en main."
 			},
 			"health": 4,
 			"id": "BRM_034",
@@ -25135,6 +28139,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, deal 3 damage.",
 			"type": "Minion"
 		},
 		{
@@ -25143,13 +28148,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Poison mortel"
+				"name": "Poison mortel",
+				"text": "Confère +2 ATQ à votre arme."
 			},
 			"id": "CS2_074",
 			"name": "Deadly Poison",
 			"playerClass": "Rogue",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give your weapon +2 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -25159,7 +28166,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Chose venue d’en bas"
+				"name": "Chose venue d’en bas",
+				"text": "<b>Provocation</b>\nCoûte (1) |4(cristal,cristaux) de moins pour chaque totem invoqué par vous dans cette partie."
 			},
 			"health": 5,
 			"id": "OG_028",
@@ -25167,6 +28175,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "[x]<b>Taunt</b>\nCosts (1) less for each\nTotem you've summoned\nthis game.",
 			"type": "Minion"
 		},
 		{
@@ -25176,7 +28185,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Rôdeur des douves"
+				"name": "Rôdeur des douves",
+				"text": "<b>Cri de guerre_:</b> détruit un serviteur. <b>Râle d’agonie_:</b> réinvoque ce serviteur."
 			},
 			"health": 3,
 			"id": "KAR_041",
@@ -25184,6 +28194,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Destroy a minion. <b>Deathrattle:</b> Resummon it.",
 			"type": "Minion"
 		},
 		{
@@ -25193,7 +28204,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Implorateur funeste"
+				"name": "Implorateur funeste",
+				"text": "<b>Cri de guerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>. S’il est mort, le place dans votre deck."
 			},
 			"health": 9,
 			"id": "OG_255",
@@ -25201,40 +28213,47 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Give your C'Thun +2/+2 <i>(wherever it is).</i> If it's dead, shuffle it into your deck.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_006e.png",
 			"fr": {
-				"name": "Puissance de Dalaran"
+				"name": "Puissance de Dalaran",
+				"text": "Dégâts des sorts augmentés."
 			},
 			"id": "AT_006e",
 			"name": "Power of Dalaran",
 			"playerClass": "Mage",
 			"set": "Tgt",
+			"text": "Increased Spell Damage.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_313e.png",
 			"fr": {
-				"name": "Perturbé"
+				"name": "Perturbé",
+				"text": "+1/+1."
 			},
 			"id": "OG_313e",
 			"name": "Addled",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NAX12_02H_2c_TB.png",
 			"cost": 1,
 			"fr": {
-				"name": "Décimer"
+				"name": "Décimer",
+				"text": "Fait passer les points de vie des serviteurs adverses à 1."
 			},
 			"id": "NAX12_02H_2c_TB",
 			"name": "Decimate",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Change the Health of enemy minions to 1.",
 			"type": "Spell"
 		},
 		{
@@ -25242,7 +28261,8 @@ var parseCardsText = {
 			"cardImage": "BRMC_92.png",
 			"cost": 4,
 			"fr": {
-				"name": "Coren Navrebière"
+				"name": "Coren Navrebière",
+				"text": "Gagne toujours à la baston.\n<b>Cri de guerre :</b> ajoute une carte Baston dans votre main."
 			},
 			"health": 8,
 			"id": "BRMC_92",
@@ -25250,18 +28270,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Always wins Brawls.\n <b>Battlecry:</b> Add a Brawl to your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA02_03.png",
 			"cost": 0,
 			"fr": {
-				"name": "Vœu : puissance"
+				"name": "Vœu : puissance",
+				"text": "<b>Découvre</b> un sort."
 			},
 			"id": "LOEA02_03",
 			"name": "Wish for Power",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Discover</b> a spell.",
 			"type": "Spell"
 		},
 		{
@@ -25271,7 +28294,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Mini-mage"
+				"name": "Mini-mage",
+				"text": "<b>Camouflage</b>\n<b>Dégâts des sorts : +1</b>"
 			},
 			"health": 1,
 			"id": "GVG_109",
@@ -25280,6 +28304,7 @@ var parseCardsText = {
 			"rarity": "Epic",
 			"set": "Gvg",
 			"spellDamage": 1,
+			"text": "<b>Stealth</b>\n<b>Spell Damage +1</b>",
 			"type": "Minion"
 		},
 		{
@@ -25296,24 +28321,28 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_590e.png",
 			"fr": {
-				"name": "Ombres de M’uru"
+				"name": "Ombres de M’uru",
+				"text": "Ce serviteur a consumé les Boucliers divins, et ses points d’Attaque et de Vie sont augmentés."
 			},
 			"id": "EX1_590e",
 			"name": "Shadows of M'uru",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "This minion has consumed Divine Shields and has increased Attack and Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_087e.png",
 			"fr": {
-				"name": "Bénédiction de puissance"
+				"name": "Bénédiction de puissance",
+				"text": "+3 ATQ."
 			},
 			"id": "CS2_087e",
 			"name": "Blessing of Might",
 			"playerClass": "Paladin",
 			"set": "Core",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -25336,7 +28365,8 @@ var parseCardsText = {
 			"cardImage": "CRED_23.png",
 			"cost": 4,
 			"fr": {
-				"name": "Christopher Yim"
+				"name": "Christopher Yim",
+				"text": "<b>Cri de guerre :</b> vos emotes sont désormais prononcées avec une voix radiophonique."
 			},
 			"health": 5,
 			"id": "CRED_23",
@@ -25344,17 +28374,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Your emotes are now spoken in \"Radio Voice.\"",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TU4f_004o.png",
 			"fr": {
-				"name": "Héritage de l’Empereur"
+				"name": "Héritage de l’Empereur",
+				"text": "A +2/+2. <i>(+2 ATQ / +2 PV)</i>"
 			},
 			"id": "TU4f_004o",
 			"name": "Legacy of the Emperor",
 			"playerClass": "Neutral",
 			"set": "Missions",
+			"text": "Has +2/+2. <i>(+2 Attack/+2 Health)</i>",
 			"type": "Enchantment"
 		},
 		{
@@ -25372,12 +28405,14 @@ var parseCardsText = {
 			"cardImage": "BRMA09_6.png",
 			"cost": 1,
 			"fr": {
-				"name": "Véritable chef de guerre"
+				"name": "Véritable chef de guerre",
+				"text": "Détruit un serviteur légendaire."
 			},
 			"id": "BRMA09_6",
 			"name": "The True Warchief",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Destroy a Legendary minion.",
 			"type": "Spell"
 		},
 		{
@@ -25387,7 +28422,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Exhalombre"
+				"name": "Exhalombre",
+				"text": "<b>Cri de guerre :</b> choisit un serviteur allié et en place une copie 1/1 coûtant (1) |4(cristal,cristaux) de mana dans votre main."
 			},
 			"health": 4,
 			"id": "OG_291",
@@ -25395,6 +28431,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Choose a friendly minion. Add a 1/1 copy     to your hand that costs (1).",
 			"type": "Minion"
 		},
 		{
@@ -25402,7 +28439,8 @@ var parseCardsText = {
 			"cardImage": "CRED_20.png",
 			"cost": 3,
 			"fr": {
-				"name": "Brian Birmingham"
+				"name": "Brian Birmingham",
+				"text": "<b>Choix des armes :</b> rend tous ses PV à un Méca ou confère <b>Furie des vents</b> à un concepteur."
 			},
 			"health": 2,
 			"id": "CRED_20",
@@ -25410,6 +28448,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Choose One</b> - Restore a Mech to full Health; or Give a Designer <b>Windfury.</b>",
 			"type": "Minion"
 		},
 		{
@@ -25417,48 +28456,56 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_10.png",
 			"cost": 3,
 			"fr": {
-				"name": "C’est ma tournée"
+				"name": "C’est ma tournée",
+				"text": "Vous piochez une carte pour chacune de vos assiettes."
 			},
 			"id": "KAR_A02_10",
 			"name": "Pour a Round",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Draw a card for each of your Plates.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TU4f_004.png",
 			"cost": 3,
 			"fr": {
-				"name": "Héritage de l’Empereur"
+				"name": "Héritage de l’Empereur",
+				"text": "Confère à vos serviteurs +2/+2. <i>(+2 ATQ / +2 PV)</i>"
 			},
 			"id": "TU4f_004",
 			"name": "Legacy of the Emperor",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Give your minions +2/+2. <i>(+2 Attack/+2 Health)</i>",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_081e.png",
 			"fr": {
-				"name": "Purifié"
+				"name": "Purifié",
+				"text": "L’Attaque est passée à 1."
 			},
 			"id": "AT_081e",
 			"name": "Purified",
 			"playerClass": "Paladin",
 			"set": "Tgt",
+			"text": "Attack changed to 1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_PickYourFate_6.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin : portails"
+				"name": "Destin : portails",
+				"text": "Place 10 cartes Portail instable dans le deck de chaque joueur."
 			},
 			"id": "TB_PickYourFate_6",
 			"name": "Fate: Portals",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Shuffle 10 Unstable Portals into each player's deck.",
 			"type": "Spell"
 		},
 		{
@@ -25483,7 +28530,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Golem céleste piloté"
+				"name": "Golem céleste piloté",
+				"text": "<b>Râle d’agonie :</b> invoque un serviteur aléatoire coûtant 4 cristaux."
 			},
 			"health": 4,
 			"id": "GVG_105",
@@ -25491,6 +28539,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "<b>Deathrattle:</b> Summon a random 4-Cost minion.",
 			"type": "Minion"
 		},
 		{
@@ -25500,7 +28549,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Manipulateur sans-visage"
+				"name": "Manipulateur sans-visage",
+				"text": "<b>Cri de guerre :</b> choisit un serviteur et en devient la copie conforme."
 			},
 			"health": 3,
 			"id": "EX1_564",
@@ -25508,18 +28558,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Choose a minion and become a copy of it.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA12_10.png",
 			"cost": 1,
 			"fr": {
-				"name": "Mutation"
+				"name": "Mutation",
+				"text": "<b>Pouvoir héroïque</b>\nVous défausse d’une carte aléatoire."
 			},
 			"id": "BRMA12_10",
 			"name": "Mutation",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nDiscard a random card.",
 			"type": "Hero_power"
 		},
 		{
@@ -25527,24 +28580,28 @@ var parseCardsText = {
 			"cardImage": "BRMA10_4.png",
 			"cost": 1,
 			"fr": {
-				"name": "Œuf corrompu"
+				"name": "Œuf corrompu",
+				"text": "Éclot quand il a 4 PV ou plus."
 			},
 			"health": 1,
 			"id": "BRMA10_4",
 			"name": "Corrupted Egg",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "When this minion has 4 or more Health, it hatches.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_05_01e.png",
 			"fr": {
-				"name": "Peur du loup"
+				"name": "Peur du loup",
+				"text": "Passe à 1/1."
 			},
 			"id": "KARA_05_01e",
 			"name": "Trembling Before the Wolf",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Shrunk to a 1/1.",
 			"type": "Enchantment"
 		},
 		{
@@ -25562,12 +28619,14 @@ var parseCardsText = {
 		{
 			"cardImage": "CS1_129e.png",
 			"fr": {
-				"name": "Feu intérieur"
+				"name": "Feu intérieur",
+				"text": "L’Attaque de ce serviteur est égale à ses PV."
 			},
 			"id": "CS1_129e",
 			"name": "Inner Fire",
 			"playerClass": "Priest",
 			"set": "Expert1",
+			"text": "This minion's Attack is equal to its Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -25576,13 +28635,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Thé de chardon"
+				"name": "Thé de chardon",
+				"text": "Vous piochez une carte. En place 2 copies supplémentaires dans votre main."
 			},
 			"id": "OG_073",
 			"name": "Thistle Tea",
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Draw a card. Add 2 extra copies of it to your hand.",
 			"type": "Spell"
 		},
 		{
@@ -25592,7 +28653,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Sinistre colporteur"
+				"name": "Sinistre colporteur",
+				"text": "<b>Cri de guerre : découvre</b> une carte à 1 cristal de mana."
 			},
 			"health": 2,
 			"id": "LOE_023",
@@ -25600,18 +28662,21 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Battlecry: Discover</b> a\n1-Cost card.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_13_12H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Présence démoniaque"
+				"name": "Présence démoniaque",
+				"text": "Vous piochez 3_cartes.\nGagne 10_points d’armure."
 			},
 			"id": "KARA_13_12H",
 			"name": "Demonic Presence",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Draw 3 cards.\nGain 10 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -25665,7 +28730,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Chevaucheuse de kodo"
+				"name": "Chevaucheuse de kodo",
+				"text": "<b>Exaltation : </b> invoque un kodo de guerre 3/5."
 			},
 			"health": 5,
 			"id": "AT_099",
@@ -25673,6 +28739,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Summon a 3/5 War Kodo.",
 			"type": "Minion"
 		},
 		{
@@ -25680,7 +28747,8 @@ var parseCardsText = {
 			"cardImage": "CRED_10.png",
 			"cost": 2,
 			"fr": {
-				"name": "Michael Schweitzer"
+				"name": "Michael Schweitzer",
+				"text": "<b>C-C-C-COMBO :</b> détruit un serviteur."
 			},
 			"health": 2,
 			"id": "CRED_10",
@@ -25688,53 +28756,62 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>C-C-C-COMBO:</b> Destroy a minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_001.png",
 			"cost": 0,
 			"fr": {
-				"name": "Damage 1"
+				"name": "Damage 1",
+				"text": "Deal 1 damage."
 			},
 			"id": "XXX_001",
 			"name": "Damage 1",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Deal 1 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOE_073e.png",
 			"fr": {
-				"name": "Fossilisé"
+				"name": "Fossilisé",
+				"text": "A <b>Provocation</b>."
 			},
 			"id": "LOE_073e",
 			"name": "Fossilized",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Has <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA02_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Intuition de djinn"
+				"name": "Intuition de djinn",
+				"text": "Vous piochez une carte.\nAccorde un Vœu à votre adversaire."
 			},
 			"id": "LOEA02_02",
 			"name": "Djinn’s Intuition",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Draw a card.\nGive your opponent a Wish.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_258e.png",
 			"fr": {
-				"name": "Surcharge"
+				"name": "Surcharge",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "EX1_258e",
 			"name": "Overloading",
 			"playerClass": "Shaman",
 			"set": "Expert1",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -25742,13 +28819,15 @@ var parseCardsText = {
 			"cardImage": "FP1_006.png",
 			"cost": 1,
 			"fr": {
-				"name": "Destrier de la mort"
+				"name": "Destrier de la mort",
+				"text": "<b>Charge. Râle d’agonie :</b> inflige 3 points de dégâts à votre héros."
 			},
 			"health": 3,
 			"id": "FP1_006",
 			"name": "Deathcharger",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Charge. Deathrattle:</b> Deal 3 damage to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -25756,13 +28835,15 @@ var parseCardsText = {
 			"cardImage": "BRMA04_3.png",
 			"cost": 0,
 			"fr": {
-				"name": "Lige du feu"
+				"name": "Lige du feu",
+				"text": "<b>Râle d’agonie :</b> inflige 1 point de dégâts au héros adverse pour chaque lige du feu mort pendant ce tour."
 			},
 			"health": 5,
 			"id": "BRMA04_3",
 			"name": "Firesworn",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Deathrattle:</b> Deal 1 damage to the enemy hero for each Firesworn that died this turn.",
 			"type": "Minion"
 		},
 		{
@@ -25770,12 +28851,14 @@ var parseCardsText = {
 			"cardImage": "PART_003.png",
 			"cost": 1,
 			"fr": {
-				"name": "Klaxon rouillé"
+				"name": "Klaxon rouillé",
+				"text": "Confère <b>Provocation</b> à un serviteur."
 			},
 			"id": "PART_003",
 			"name": "Rusty Horn",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Give a minion <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -25796,24 +28879,28 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_041e.png",
 			"fr": {
-				"name": "Appel des étendues sauvages"
+				"name": "Appel des étendues sauvages",
+				"text": "Coût réduit."
 			},
 			"id": "AT_041e",
 			"name": "Call of the Wild",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "Cost reduced.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_KTRAF_104.png",
 			"cost": 2,
 			"fr": {
-				"name": "Découvrir un morceau du bâton"
+				"name": "Découvrir un morceau du bâton",
+				"text": "Amplifie votre pouvoir héroïque."
 			},
 			"id": "TB_KTRAF_104",
 			"name": "Uncover Staff Piece",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Add another piece to your Hero Power.",
 			"type": "Spell"
 		},
 		{
@@ -25834,12 +28921,14 @@ var parseCardsText = {
 			"cardImage": "LOEA15_2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Portail instable"
+				"name": "Portail instable",
+				"text": "<b>Pouvoir héroïque</b>\nAjoute un serviteur aléatoire dans votre main. Il coûte (3) |4(cristal,cristaux) de moins."
 			},
 			"id": "LOEA15_2",
 			"name": "Unstable Portal",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nAdd a random minion to your hand. It costs (3) less.",
 			"type": "Hero_power"
 		},
 		{
@@ -25847,13 +28936,15 @@ var parseCardsText = {
 			"cardImage": "TB_Coopv3_101.png",
 			"cost": 5,
 			"fr": {
-				"name": "Furtif insoumis"
+				"name": "Furtif insoumis",
+				"text": "À la fin de votre tour, change de camp."
 			},
 			"health": 6,
 			"id": "TB_Coopv3_101",
 			"name": "Freewheeling Skulker",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "At the end of your turn, switch sides.",
 			"type": "Minion"
 		},
 		{
@@ -25875,7 +28966,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Machine volante"
+				"name": "Machine volante",
+				"text": "<b>Furie des vents</b>"
 			},
 			"health": 4,
 			"id": "GVG_084",
@@ -25883,6 +28975,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Windfury</b>",
 			"type": "Minion"
 		},
 		{
@@ -25893,7 +28986,8 @@ var parseCardsText = {
 			"cost": 2,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Bombardier fou"
+				"name": "Bombardier fou",
+				"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts répartis de façon aléatoire entre tous les autres personnages."
 			},
 			"health": 2,
 			"id": "EX1_082",
@@ -25901,6 +28995,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Deal 3 damage randomly split between all other characters.",
 			"type": "Minion"
 		},
 		{
@@ -25910,7 +29005,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Archiviste de Sombre-Comté"
+				"name": "Archiviste de Sombre-Comté",
+				"text": "<b>Cri de guerre :</b> vous défausse d’une carte aléatoire. <b>Râle d’agonie :</b> vous piochez une carte."
 			},
 			"health": 2,
 			"id": "OG_109",
@@ -25918,6 +29014,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b>\nDiscard a random card. <b>Deathrattle:</b>\nDraw a card.",
 			"type": "Minion"
 		},
 		{
@@ -25927,7 +29024,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Puits de lumière"
+				"name": "Puits de lumière",
+				"text": "Au début de votre tour, rend 3 PV à un personnage allié blessé."
 			},
 			"health": 5,
 			"id": "EX1_341",
@@ -25935,29 +29033,34 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "At the start of your turn, restore 3 Health to a damaged friendly character.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_Pilot1.png",
 			"fr": {
-				"name": "Pilote mystère"
+				"name": "Pilote mystère",
+				"text": "Qui ça peut bien être ?"
 			},
 			"id": "TB_Pilot1",
 			"name": "Mystery Pilot",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Who could it be?!",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KARA_07_05heroic.png",
 			"cost": 2,
 			"fr": {
-				"name": "Bête déchaînée !"
+				"name": "Bête déchaînée !",
+				"text": "Invoque une Bête aléatoire."
 			},
 			"id": "KARA_07_05heroic",
 			"name": "Stampeding Beast!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon a random Beast.",
 			"type": "Spell"
 		},
 		{
@@ -25983,13 +29086,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Lumière sacrée"
+				"name": "Lumière sacrée",
+				"text": "Rend #6 |4(point,points) de vie."
 			},
 			"id": "CS2_089",
 			"name": "Holy Light",
 			"playerClass": "Paladin",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Restore #6 Health.",
 			"type": "Spell"
 		},
 		{
@@ -25999,7 +29104,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Sentinelle éternelle"
+				"name": "Sentinelle éternelle",
+				"text": "<b>Cri de guerre :</b> débloque vos cristaux de mana en <b>Surcharge</b>."
 			},
 			"health": 2,
 			"id": "OG_026",
@@ -26007,6 +29113,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Unlock your <b>Overloaded</b> Mana Crystals.",
 			"type": "Minion"
 		},
 		{
@@ -26027,36 +29134,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Portail instable"
+				"name": "Portail instable",
+				"text": "Place un serviteur aléatoire dans votre main. Il coûte (3) cristaux de moins."
 			},
 			"id": "GVG_003",
 			"name": "Unstable Portal",
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Add a random minion to your hand. It costs (3) less.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_SPT_Minion2e.png",
 			"fr": {
-				"name": "Encouragé"
+				"name": "Encouragé",
+				"text": "Le porte-étendard confère +2 ATQ à ce serviteur."
 			},
 			"id": "TB_SPT_Minion2e",
 			"name": "Emboldened",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Standard Bearer is granting +2 Attack to this minion.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "XXX_062.png",
 			"cost": 0,
 			"fr": {
-				"name": "Armor 5"
+				"name": "Armor 5",
+				"text": "Give target Hero +5 Armor"
 			},
 			"id": "XXX_062",
 			"name": "Armor 5",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Give target Hero +5 Armor",
 			"type": "Spell"
 		},
 		{
@@ -26066,7 +29179,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Géant du givre"
+				"name": "Géant du givre",
+				"text": "Coûte (1) |4(cristal,cristaux) de moins chaque fois que vous utilisez votre pouvoir héroïque pendant cette partie."
 			},
 			"health": 8,
 			"id": "AT_120",
@@ -26074,6 +29188,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Costs (1) less for each time you used your Hero Power this game.",
 			"type": "Minion"
 		},
 		{
@@ -26082,13 +29197,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "MALÉDICTION !"
+				"name": "MALÉDICTION !",
+				"text": "Détruit tous les serviteurs. Pioche une carte pour chaque serviteur détruit."
 			},
 			"id": "OG_239",
 			"name": "DOOM!",
 			"playerClass": "Warlock",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Destroy all minions. Draw a card for each.",
 			"type": "Spell"
 		},
 		{
@@ -26098,7 +29215,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Déchiqueteur piloté"
+				"name": "Déchiqueteur piloté",
+				"text": "<b>Râle d’agonie :</b> invoque un serviteur aléatoire coûtant 2 cristaux."
 			},
 			"health": 3,
 			"id": "GVG_096",
@@ -26106,28 +29224,33 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Deathrattle:</b> Summon a random 2-Cost minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRM_018e.png",
 			"fr": {
-				"name": "Libéré !"
+				"name": "Libéré !",
+				"text": "Votre prochain Dragon coûte (2) cristaux de moins."
 			},
 			"id": "BRM_018e",
 			"name": "Unchained!",
 			"playerClass": "Paladin",
 			"set": "Brm",
+			"text": "Your next Dragon costs (2) less.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_105e.png",
 			"fr": {
-				"name": "Frappe héroïque"
+				"name": "Frappe héroïque",
+				"text": "+4 ATQ pendant ce tour."
 			},
 			"id": "CS2_105e",
 			"name": "Heroic Strike",
 			"playerClass": "Warrior",
 			"set": "Core",
+			"text": "+4 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -26137,7 +29260,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Chef de guerre murloc"
+				"name": "Chef de guerre murloc",
+				"text": "TOUS les autres murlocs ont +2/+1."
 			},
 			"health": 3,
 			"id": "EX1_507",
@@ -26145,6 +29269,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "ALL other Murlocs have +2/+1.",
 			"type": "Minion"
 		},
 		{
@@ -26154,7 +29279,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Nozdormu"
+				"name": "Nozdormu",
+				"text": "Les joueurs n’ont que 15 secondes pour jouer leur tour."
 			},
 			"health": 8,
 			"id": "EX1_560",
@@ -26162,6 +29288,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "Players only have 15 seconds to take their turns.",
 			"type": "Minion"
 		},
 		{
@@ -26169,7 +29296,8 @@ var parseCardsText = {
 			"cardImage": "CRED_02.png",
 			"cost": 6,
 			"fr": {
-				"name": "Eric Dodds"
+				"name": "Eric Dodds",
+				"text": "<b>Cri de guerre :</b> invoque un pirate 2/2 et détruit tous les ninjas."
 			},
 			"health": 5,
 			"id": "CRED_02",
@@ -26177,55 +29305,64 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Summon a 2/2 Pirate and destroy all Ninjas.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_PickYourFate_12.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin : confusion"
+				"name": "Destin : confusion",
+				"text": "À la fin de chaque tour, échange l’Attaque et la Vie de tous les serviteurs."
 			},
 			"id": "TB_PickYourFate_12",
 			"name": "Fate: Confusion",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "At the end of each turn, swap all minions' Attack and Health.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA05_02a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Trogg détester serviteurs !"
+				"name": "Trogg détester serviteurs !",
+				"text": "<b>Pouvoir héroïque passif</b> Les serviteurs adverses coûtent (2) |4(cristal,cristaux) de plus. Le pouvoir change au début de votre tour."
 			},
 			"id": "LOEA05_02a",
 			"name": "Trogg Hate Minions!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\n Enemy minions cost (2) more. Swap at the start of your turn.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "XXX_002.png",
 			"cost": 0,
 			"fr": {
-				"name": "Damage 5"
+				"name": "Damage 5",
+				"text": "Deal 5 damage."
 			},
 			"id": "XXX_002",
 			"name": "Damage 5",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Deal 5 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX7_05.png",
 			"cost": 1,
 			"fr": {
-				"name": "Cristal de contrôle mental"
+				"name": "Cristal de contrôle mental",
+				"text": "Active le cristal pour prendre le contrôle des doublures !"
 			},
 			"id": "NAX7_05",
 			"name": "Mind Control Crystal",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Activate the Crystal to control the Understudies!",
 			"type": "Spell"
 		},
 		{
@@ -26236,7 +29373,8 @@ var parseCardsText = {
 			"cost": 5,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Tigre de Strangleronce"
+				"name": "Tigre de Strangleronce",
+				"text": "<b>Camouflage</b>"
 			},
 			"health": 5,
 			"id": "EX1_028",
@@ -26244,6 +29382,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Stealth</b>",
 			"type": "Minion"
 		},
 		{
@@ -26253,7 +29392,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Lourdaud volcanique"
+				"name": "Lourdaud volcanique",
+				"text": "<b>Provocation</b>.\n Coûte (1) |4(cristal,cristaux) de moins pour chaque serviteur mort pendant ce tour."
 			},
 			"health": 8,
 			"id": "BRM_009",
@@ -26261,17 +29401,20 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "<b>Taunt</b>\nCosts (1) less for each minion that died this turn.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_20H.png",
 			"fr": {
-				"name": "Bénédiction du soleil"
+				"name": "Bénédiction du soleil",
+				"text": "<b>Insensible</b>."
 			},
 			"id": "LOEA16_20H",
 			"name": "Blessing of the Sun",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Immune</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -26295,13 +29438,15 @@ var parseCardsText = {
 			"cardImage": "XXX_042.png",
 			"cost": 0,
 			"fr": {
-				"name": "Hand to Deck"
+				"name": "Hand to Deck",
+				"text": "Shuffle a player's hand into his deck."
 			},
 			"id": "XXX_042",
 			"name": "Hand to Deck",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Shuffle a player's hand into his deck.",
 			"type": "Spell"
 		},
 		{
@@ -26309,26 +29454,30 @@ var parseCardsText = {
 			"cardImage": "BRMC_90.png",
 			"cost": 2,
 			"fr": {
-				"name": "Lave vivante"
+				"name": "Lave vivante",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 6,
 			"id": "BRMC_90",
 			"name": "Living Lava",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_017.png",
 			"cost": 2,
 			"fr": {
-				"name": "Changeforme"
+				"name": "Changeforme",
+				"text": "<b>Pouvoir héroïque</b>\n+1 ATQ pendant ce tour.    +1 Armure."
 			},
 			"id": "CS2_017",
 			"name": "Shapeshift",
 			"playerClass": "Druid",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Hero Power</b>\n+1 Attack this turn.    +1 Armor.",
 			"type": "Hero_power"
 		},
 		{
@@ -26337,13 +29486,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Rituel interdit"
+				"name": "Rituel interdit",
+				"text": "Dépense tous vos cristaux de mana. Invoque un nombre équivalent de tentacules 1/1."
 			},
 			"id": "OG_114",
 			"name": "Forbidden Ritual",
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Spend all your Mana. Summon that many 1/1 Tentacles.",
 			"type": "Spell"
 		},
 		{
@@ -26352,13 +29503,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Compagnon animal"
+				"name": "Compagnon animal",
+				"text": "Invoque un compagnon animal aléatoire."
 			},
 			"id": "NEW1_031",
 			"name": "Animal Companion",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Summon a random Beast Companion.",
 			"type": "Spell"
 		},
 		{
@@ -26378,12 +29531,14 @@ var parseCardsText = {
 			"cardImage": "DREAM_02.png",
 			"cost": 2,
 			"fr": {
-				"name": "Réveil d’Ysera"
+				"name": "Réveil d’Ysera",
+				"text": "Inflige $5 |4(point,points) de dégâts à tous les personnages sauf Ysera."
 			},
 			"id": "DREAM_02",
 			"name": "Ysera Awakens",
 			"playerClass": "Dream",
 			"set": "Expert1",
+			"text": "Deal $5 damage to all characters except Ysera.",
 			"type": "Spell"
 		},
 		{
@@ -26392,13 +29547,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Courroux vengeur"
+				"name": "Courroux vengeur",
+				"text": "Inflige $8 |4(point,points) de dégâts répartis de façon aléatoire entre tous les adversaires."
 			},
 			"id": "EX1_384",
 			"name": "Avenging Wrath",
 			"playerClass": "Paladin",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Deal $8 damage randomly split among all enemies.",
 			"type": "Spell"
 		},
 		{
@@ -26416,13 +29573,15 @@ var parseCardsText = {
 			"cardImage": "DS1h_292.png",
 			"cost": 2,
 			"fr": {
-				"name": "Tir assuré"
+				"name": "Tir assuré",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts au héros adverse."
 			},
 			"id": "DS1h_292",
 			"name": "Steady Shot",
 			"playerClass": "Hunter",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Hero Power</b>\nDeal $2 damage to the enemy hero.",
 			"type": "Hero_power"
 		},
 		{
@@ -26430,7 +29589,8 @@ var parseCardsText = {
 			"cardImage": "CS2_052.png",
 			"cost": 1,
 			"fr": {
-				"name": "Totem de courroux de l’air"
+				"name": "Totem de courroux de l’air",
+				"text": "<b>Dégâts des sorts : +1</b>"
 			},
 			"health": 2,
 			"id": "CS2_052",
@@ -26439,17 +29599,20 @@ var parseCardsText = {
 			"rarity": "Free",
 			"set": "Core",
 			"spellDamage": 1,
+			"text": "<b>Spell Damage +1</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "FP1_030e.png",
 			"fr": {
-				"name": "Aura nécrotique"
+				"name": "Aura nécrotique",
+				"text": "Vos sorts coûtent (5) cristaux de plus au prochain tour."
 			},
 			"id": "FP1_030e",
 			"name": "Necrotic Aura",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Your spells cost (5) more this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -26459,7 +29622,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Sapeur gobelin"
+				"name": "Sapeur gobelin",
+				"text": "A +4 ATQ tant que votre adversaire a 6 cartes ou plus dans sa main."
 			},
 			"health": 4,
 			"id": "GVG_095",
@@ -26467,6 +29631,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Has +4 Attack while your opponent has 6 or more cards in hand.",
 			"type": "Minion"
 		},
 		{
@@ -26487,23 +29652,27 @@ var parseCardsText = {
 			"cardImage": "NAX9_06.png",
 			"cost": 5,
 			"fr": {
-				"name": "Ombre impie"
+				"name": "Ombre impie",
+				"text": "<b>Pouvoir héroïque</b>\nPioche deux cartes."
 			},
 			"id": "NAX9_06",
 			"name": "Unholy Shadow",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDraw 2 cards.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "OG_339e.png",
 			"fr": {
-				"name": "Soumission du vassal"
+				"name": "Soumission du vassal",
+				"text": "+2/+2."
 			},
 			"id": "OG_339e",
 			"name": "Vassal's Subservience",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -26527,7 +29696,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Fou en onyx"
+				"name": "Fou en onyx",
+				"text": "<b>Cri de guerre_:</b> invoque un serviteur aléatoire mort pendant cette partie."
 			},
 			"health": 4,
 			"id": "KAR_204",
@@ -26535,18 +29705,21 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Summon a friendly minion that died this game.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_132_SHAMAN.png",
 			"cost": 2,
 			"fr": {
-				"name": "Heurt totémique"
+				"name": "Heurt totémique",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un totem de votre choix."
 			},
 			"id": "AT_132_SHAMAN",
 			"name": "Totemic Slam",
 			"playerClass": "Shaman",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nSummon a Totem of your choice.",
 			"type": "Hero_power"
 		},
 		{
@@ -26555,13 +29728,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Frappe héroïque"
+				"name": "Frappe héroïque",
+				"text": "Confère +4 ATQ à votre héros pendant ce tour."
 			},
 			"id": "CS2_105",
 			"name": "Heroic Strike",
 			"playerClass": "Warrior",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give your hero +4 Attack this turn.",
 			"type": "Spell"
 		},
 		{
@@ -26569,7 +29744,8 @@ var parseCardsText = {
 			"cardImage": "NAX9_04.png",
 			"cost": 3,
 			"fr": {
-				"name": "Sire Zeliek"
+				"name": "Sire Zeliek",
+				"text": "Votre héros est <b>Insensible</b>."
 			},
 			"health": 7,
 			"id": "NAX9_04",
@@ -26577,6 +29753,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "Your hero is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
@@ -26601,7 +29778,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Dompteur de béliers"
+				"name": "Dompteur de béliers",
+				"text": "<b>Cri de guerre :</b> si vous avez une Bête, invoque une Bête aléatoire."
 			},
 			"health": 3,
 			"id": "AT_010",
@@ -26609,18 +29787,21 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> If you have a Beast, summon a\nrandom Beast.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX12_02H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Décimer"
+				"name": "Décimer",
+				"text": "<b>Pouvoir héroïque</b>\nFait passer les points de vie des serviteurs adverses à 1."
 			},
 			"id": "NAX12_02H",
 			"name": "Decimate",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nChange the Health of enemy minions to 1.",
 			"type": "Hero_power"
 		},
 		{
@@ -26638,12 +29819,14 @@ var parseCardsText = {
 		{
 			"cardImage": "TB_BlingBrawl_Hero1e.png",
 			"fr": {
-				"name": "Affûtée"
+				"name": "Affûtée",
+				"text": "+1 ATQ."
 			},
 			"id": "TB_BlingBrawl_Hero1e",
 			"name": "Sharpened",
 			"playerClass": "Rogue",
 			"set": "Tb",
+			"text": "+1 Attack",
 			"type": "Enchantment"
 		},
 		{
@@ -26651,7 +29834,8 @@ var parseCardsText = {
 			"cardImage": "CRED_46.png",
 			"cost": 2,
 			"fr": {
-				"name": "Keith Landes"
+				"name": "Keith Landes",
+				"text": "Au début de votre tour, la faim inflige 2 points de dégâts à votre héros."
 			},
 			"health": 6,
 			"id": "CRED_46",
@@ -26659,6 +29843,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "At the start of your turn, get -2 Health due to hunger.",
 			"type": "Minion"
 		},
 		{
@@ -26667,13 +29852,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Éclair de givre"
+				"name": "Éclair de givre",
+				"text": "Inflige $3 |4(point,points) de dégâts à un personnage et le <b>gèle</b>."
 			},
 			"id": "CS2_024",
 			"name": "Frostbolt",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $3 damage to a character and <b>Freeze</b> it.",
 			"type": "Spell"
 		},
 		{
@@ -26681,7 +29868,8 @@ var parseCardsText = {
 			"cardImage": "CRED_33.png",
 			"cost": 6,
 			"fr": {
-				"name": "Jomaro Kindred"
+				"name": "Jomaro Kindred",
+				"text": "<b>Cri de guerre :</b> PREND n’importe quelle carte de la main de votre adversaire dont il ne veut pas."
 			},
 			"health": 6,
 			"id": "CRED_33",
@@ -26689,6 +29877,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> TAKE any cards from your opponent's hand that they don't want.",
 			"type": "Minion"
 		},
 		{
@@ -26698,7 +29887,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Cible leurre"
+				"name": "Cible leurre",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "GVG_093",
@@ -26706,6 +29896,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -26713,35 +29904,41 @@ var parseCardsText = {
 			"cardImage": "OG_080b.png",
 			"cost": 1,
 			"fr": {
-				"name": "Toxine de sang-royal"
+				"name": "Toxine de sang-royal",
+				"text": "Vous piochez une carte."
 			},
 			"id": "OG_080b",
 			"name": "Kingsblood Toxin",
 			"playerClass": "Rogue",
 			"set": "Og",
+			"text": "Draw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NEW1_007a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Météores"
+				"name": "Météores",
+				"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs adverses."
 			},
 			"id": "NEW1_007a",
 			"name": "Starfall",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Deal $2 damage to all enemy minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX12_03e.png",
 			"fr": {
-				"name": "Double rangée de dents"
+				"name": "Double rangée de dents",
+				"text": "Attaque augmentée."
 			},
 			"id": "NAX12_03e",
 			"name": "Extra Teeth",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -26749,7 +29946,8 @@ var parseCardsText = {
 			"cardImage": "EX1_345t.png",
 			"cost": 0,
 			"fr": {
-				"name": "Ombre du néant"
+				"name": "Ombre du néant",
+				"text": "Comment ça « Votre adversaire n’a plus de serviteurs » ?"
 			},
 			"health": 1,
 			"id": "EX1_345t",
@@ -26757,6 +29955,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Mindgames whiffed! Your opponent had no minions!",
 			"type": "Minion"
 		},
 		{
@@ -26778,7 +29977,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Sans-visage nimbé de flammes"
+				"name": "Sans-visage nimbé de flammes",
+				"text": "<b>Surcharge :</b> (2)"
 			},
 			"health": 7,
 			"id": "OG_024",
@@ -26787,6 +29987,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Overload:</b> (2)",
 			"type": "Minion"
 		},
 		{
@@ -26805,12 +30006,14 @@ var parseCardsText = {
 			"cardImage": "LOEA09_3.png",
 			"cost": 0,
 			"fr": {
-				"name": "Faim"
+				"name": "Faim",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un naga affamé."
 			},
 			"id": "LOEA09_3",
 			"name": "Getting Hungry",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nSummon a Hungry Naga.",
 			"type": "Hero_power"
 		},
 		{
@@ -26831,12 +30034,14 @@ var parseCardsText = {
 			"cardImage": "BRMC_95h.png",
 			"cost": 3,
 			"fr": {
-				"name": "Chiots du magma"
+				"name": "Chiots du magma",
+				"text": "Invoque deux chiots du magma 2/4."
 			},
 			"id": "BRMC_95h",
 			"name": "Core Hound Puppies",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Summon two 2/4 Core Hound Pups.",
 			"type": "Spell"
 		},
 		{
@@ -26860,13 +30065,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Image miroir"
+				"name": "Image miroir",
+				"text": "Invoque deux serviteurs 0/2 avec <b>Provocation</b>."
 			},
 			"id": "CS2_027",
 			"name": "Mirror Image",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Summon two 0/2 minions with <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -26891,7 +30098,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Terreur du Vide"
+				"name": "Terreur du Vide",
+				"text": "<b>Cri de guerre :</b> détruit les serviteurs adjacents et gagne leurs points d’Attaque et de Vie."
 			},
 			"health": 3,
 			"id": "EX1_304",
@@ -26899,6 +30107,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Destroy the minions on either side of this minion and gain their Attack and Health.",
 			"type": "Minion"
 		},
 		{
@@ -26909,13 +30118,15 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 2,
 			"fr": {
-				"name": "Défenseur du roi"
+				"name": "Défenseur du roi",
+				"text": "<b>Cri de guerre :</b> gagne\n+1 Durabilité si vous avez un serviteur avec <b>Provocation</b>."
 			},
 			"id": "AT_065",
 			"name": "King's Defender",
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> If you have a minion with <b>Taunt</b>,  gain +1 Durability.",
 			"type": "Weapon"
 		},
 		{
@@ -26934,12 +30145,14 @@ var parseCardsText = {
 			"cardImage": "LOEA09_3H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Faim sans fin"
+				"name": "Faim sans fin",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un naga affamé."
 			},
 			"id": "LOEA09_3H",
 			"name": "Endless Hunger",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nSummon a Hungry Naga.",
 			"type": "Hero_power"
 		},
 		{
@@ -26950,7 +30163,8 @@ var parseCardsText = {
 			"cost": 5,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Garde de Baie-du-Butin"
+				"name": "Garde de Baie-du-Butin",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "CS2_187",
@@ -26958,6 +30172,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -26965,13 +30180,15 @@ var parseCardsText = {
 			"cardImage": "NAX14_03.png",
 			"cost": 5,
 			"fr": {
-				"name": "Champion gelé"
+				"name": "Champion gelé",
+				"text": "Gelé pour toute la partie. Les serviteurs adjacents sont immunisés contre Souffle de givre."
 			},
 			"health": 10,
 			"id": "NAX14_03",
 			"name": "Frozen Champion",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Permanently Frozen.  Adjacent minions are Immune to Frost Breath.",
 			"type": "Minion"
 		},
 		{
@@ -26981,7 +30198,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Rhonin"
+				"name": "Rhonin",
+				"text": "<b>Râle d’agonie :</b> ajoute\n3 copies de Projectiles des Arcanes dans votre main."
 			},
 			"health": 7,
 			"id": "AT_009",
@@ -26989,6 +30207,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Deathrattle:</b> Add 3 copies of Arcane Missiles to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -27010,7 +30229,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Vendeur de rafraîchissements"
+				"name": "Vendeur de rafraîchissements",
+				"text": "<b>Cri de guerre :</b> rend 4 PV à chaque héros."
 			},
 			"health": 5,
 			"id": "AT_111",
@@ -27018,29 +30238,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Restore 4 Health to each hero.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA01_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Jeu forcé !"
+				"name": "Jeu forcé !",
+				"text": "<b>Pouvoir héroïque</b>\nPlace deux serviteurs de votre deck et un de votre adversaire sur le champ de bataille."
 			},
 			"id": "BRMA01_2H",
 			"name": "Pile On!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nPut two minions from your deck and one from your opponent's into the battlefield.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "LOE_018e.png",
 			"fr": {
-				"name": "Trogg pas stupide"
+				"name": "Trogg pas stupide",
+				"text": "Attaque augmentée."
 			},
 			"id": "LOE_018e",
 			"name": "Trogg No Stupid",
 			"playerClass": "Shaman",
 			"set": "Loe",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -27049,23 +30274,27 @@ var parseCardsText = {
 			"cost": 1,
 			"durability": 5,
 			"fr": {
-				"name": "Mâchoires"
+				"name": "Mâchoires",
+				"text": "Gagne +2 ATQ chaque fois qu’un serviteur avec <b>Râle d’agonie</b> meurt."
 			},
 			"id": "NAX12_03",
 			"name": "Jaws",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Whenever a minion with <b>Deathrattle</b> dies, gain +2 Attack.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "OG_320e.png",
 			"fr": {
-				"name": "Heure de la corruption"
+				"name": "Heure de la corruption",
+				"text": "Attaque augmentée."
 			},
 			"id": "OG_320e",
 			"name": "Hour of Corruption",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -27074,24 +30303,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Canon lance-flammes"
+				"name": "Canon lance-flammes",
+				"text": "Inflige $4 |4(point,points) de dégâts à un serviteur adverse aléatoire."
 			},
 			"id": "GVG_001",
 			"name": "Flamecannon",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Deal $4 damage to a random enemy minion.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NEW1_037e.png",
 			"fr": {
-				"name": "Équipé"
+				"name": "Équipé",
+				"text": "Attaque augmentée."
 			},
 			"id": "NEW1_037e",
 			"name": "Equipped",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -27102,7 +30335,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Infiltrateur worgen"
+				"name": "Infiltrateur worgen",
+				"text": "<b>Camouflage</b>"
 			},
 			"health": 1,
 			"id": "EX1_010",
@@ -27110,6 +30344,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Stealth</b>",
 			"type": "Minion"
 		},
 		{
@@ -27131,7 +30366,8 @@ var parseCardsText = {
 			"cost": 4,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Maître-bouclier de Sen’jin"
+				"name": "Maître-bouclier de Sen’jin",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 5,
 			"id": "CS2_179",
@@ -27139,17 +30375,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_536e.png",
 			"fr": {
-				"name": "Amélioration"
+				"name": "Amélioration",
+				"text": "Durabilité augmentée."
 			},
 			"id": "EX1_536e",
 			"name": "Upgraded",
 			"playerClass": "Hunter",
 			"set": "Expert1",
+			"text": "Increased Durability.",
 			"type": "Enchantment"
 		},
 		{
@@ -27158,7 +30397,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Crépitement"
+				"name": "Crépitement",
+				"text": "Inflige $3 à $6 points de dégâts. <b>Surcharge :</b> (1)"
 			},
 			"id": "GVG_038",
 			"name": "Crackle",
@@ -27166,6 +30406,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Deal $3-$6 damage. <b>Overload:</b> (1)",
 			"type": "Spell"
 		},
 		{
@@ -27173,13 +30414,15 @@ var parseCardsText = {
 			"cardImage": "TB_Coopv3_103.png",
 			"cost": 5,
 			"fr": {
-				"name": "Traqueuse de dragon intrépide"
+				"name": "Traqueuse de dragon intrépide",
+				"text": "Chaque fois qu’un joueur pioche une carte, gagne +1/+1."
 			},
 			"health": 3,
 			"id": "TB_Coopv3_103",
 			"name": "Intrepid Dragonstalker",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Whenever ANY player plays a card, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -27189,7 +30432,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Confesseur d’argent Paletress"
+				"name": "Confesseur d’argent Paletress",
+				"text": "<b>Exaltation :</b> invoque un serviteur <b>légendaire</b> aléatoire."
 			},
 			"health": 4,
 			"id": "AT_018",
@@ -27197,6 +30441,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Summon a random <b>Legendary</b> minion.",
 			"type": "Minion"
 		},
 		{
@@ -27204,13 +30449,15 @@ var parseCardsText = {
 			"cardImage": "LOE_115b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Idole corbeau"
+				"name": "Idole corbeau",
+				"text": "<b>Découvre</b> un sort."
 			},
 			"id": "LOE_115b",
 			"name": "Raven Idol",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Discover</b> a spell.",
 			"type": "Spell"
 		},
 		{
@@ -27218,13 +30465,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_04H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Couteau"
+				"name": "Couteau",
+				"text": "Les assiettes ont <b>Provocation</b>."
 			},
 			"health": 5,
 			"id": "KAR_A02_04H",
 			"name": "Knife",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Plates have <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -27233,37 +30482,43 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Guérison ancestrale"
+				"name": "Guérison ancestrale",
+				"text": "Rend tous ses points de vie à un serviteur et lui confère <b>Provocation</b>."
 			},
 			"id": "CS2_041",
 			"name": "Ancestral Healing",
 			"playerClass": "Shaman",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Restore a minion to full Health and give it <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_SPT_BossHeroPower.png",
 			"cost": 2,
 			"fr": {
-				"name": "Caserne"
+				"name": "Caserne",
+				"text": "<b>Pouvoir héroïque</b>\nJoue un soldat de Hurlevent aléatoire."
 			},
 			"id": "TB_SPT_BossHeroPower",
 			"name": "Barracks",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nPlay a random Stormwind Soldier.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "TB_PickYourFate_6_2nd.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destin cruel : portails instables"
+				"name": "Destin cruel : portails instables",
+				"text": "Place 3 cartes Portail instable dans la main de chaque joueur."
 			},
 			"id": "TB_PickYourFate_6_2nd",
 			"name": "Dire Fate: Unstable Portals",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Place 3 Unstable Portals in each player's hand.",
 			"type": "Spell"
 		},
 		{
@@ -27272,13 +30527,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Météores"
+				"name": "Météores",
+				"text": "<b>Choix des armes :</b> inflige $5 |4(point,points) de dégâts à un serviteur ; ou $2 |4(point,points) de dégâts à tous les serviteurs adverses."
 			},
 			"id": "NEW1_007",
 			"name": "Starfall",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Choose One -</b> Deal $5 damage to a minion; or $2 damage to all enemy minions.",
 			"type": "Spell"
 		},
 		{
@@ -27300,34 +30557,40 @@ var parseCardsText = {
 			"cardImage": "BRMA02_2_2_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Foule moqueuse"
+				"name": "Foule moqueuse",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un spectateur 1/1 avec <b>Provocation</b>."
 			},
 			"id": "BRMA02_2_2_TB",
 			"name": "Jeering Crowd",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nSummon a 1/1 Spectator with <b>Taunt</b>.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_084e.png",
 			"fr": {
-				"name": "Charge"
+				"name": "Charge",
+				"text": "Officier chanteguerre confère +1 ATQ à ce serviteur."
 			},
 			"id": "EX1_084e",
 			"name": "Charge",
 			"playerClass": "Warrior",
 			"set": "Core",
+			"text": "Warsong Commander is granting this minion +1 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "EX1_304e.png",
 			"fr": {
-				"name": "Consumer"
+				"name": "Consumer",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "EX1_304e",
 			"name": "Consume",
 			"playerClass": "Warlock",
 			"set": "Expert1",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -27349,7 +30612,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Gardien des rois"
+				"name": "Gardien des rois",
+				"text": "<b>Cri de guerre :</b> rend 6 points de vie à votre héros."
 			},
 			"health": 6,
 			"id": "CS2_088",
@@ -27357,6 +30621,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Restore 6 Health to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -27364,7 +30629,8 @@ var parseCardsText = {
 			"cardImage": "TB_CoOpv3_Boss.png",
 			"cost": 10,
 			"fr": {
-				"name": "Nefarian"
+				"name": "Nefarian",
+				"text": "Ne peut pas être\nla cible de sorts.\n<b>Boss_:</b> Nefarian gagne s’il bat l’un de vous_!"
 			},
 			"health": 200,
 			"id": "TB_CoOpv3_Boss",
@@ -27372,6 +30638,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Can't be targeted by spells.\n<b>Boss: </b>Nefarian wins if he defeats either of you!",
 			"type": "Minion"
 		},
 		{
@@ -27392,12 +30659,14 @@ var parseCardsText = {
 			"cardImage": "NAX15_02H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Trait de givre"
+				"name": "Trait de givre",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts au héros adverse et le <b>gèle</b>."
 			},
 			"id": "NAX15_02H",
 			"name": "Frost Blast",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 3 damage to the enemy hero and <b>Freeze</b> it.",
 			"type": "Hero_power"
 		},
 		{
@@ -27407,7 +30676,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Gardienne de la Ménagerie"
+				"name": "Gardienne de la Ménagerie",
+				"text": "<b>Cri de guerre_:</b> choisit une Bête alliée et en invoque une copie."
 			},
 			"health": 5,
 			"id": "KAR_065",
@@ -27415,18 +30685,21 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Battlecry:</b> Choose a friendly Beast. Summon a_copy of it.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_ClassRandom_Hunter.png",
 			"cost": 0,
 			"fr": {
-				"name": "Deuxième classe : chasseur"
+				"name": "Deuxième classe : chasseur",
+				"text": "Ajoute des cartes de chasseur dans votre deck."
 			},
 			"id": "TB_ClassRandom_Hunter",
 			"name": "Second Class: Hunter",
 			"playerClass": "Hunter",
 			"set": "Tb",
+			"text": "Add Hunter cards to your deck.",
 			"type": "Spell"
 		},
 		{
@@ -27436,7 +30709,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Diablotin de sang"
+				"name": "Diablotin de sang",
+				"text": "<b>Camouflage</b>. À la fin de votre tour, donne +1 PV à un autre serviteur allié aléatoire."
 			},
 			"health": 1,
 			"id": "CS2_059",
@@ -27444,18 +30718,21 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Stealth</b>. At the end of your turn, give another random friendly minion +1 Health.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_625t2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Briser l’esprit"
+				"name": "Briser l’esprit",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $3 points de dégâts."
 			},
 			"id": "EX1_625t2",
 			"name": "Mind Shatter",
 			"playerClass": "Priest",
 			"set": "Expert1",
+			"text": "<b>Hero Power</b>\nDeal $3 damage.",
 			"type": "Hero_power"
 		},
 		{
@@ -27465,7 +30742,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Corsaire de l’effroi"
+				"name": "Corsaire de l’effroi",
+				"text": "<b>Provocation</b>. Coûte (1) cristal de moins par Attaque de votre arme."
 			},
 			"health": 3,
 			"id": "NEW1_022",
@@ -27473,6 +30751,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Taunt.</b> Costs (1) less per Attack of your weapon.",
 			"type": "Minion"
 		},
 		{
@@ -27494,24 +30773,28 @@ var parseCardsText = {
 			"cardImage": "TB_SPT_Minion3.png",
 			"cost": 3,
 			"fr": {
-				"name": "Épéiste"
+				"name": "Épéiste",
+				"text": "<b>Cri de guerre_:</b> gagne un nombre de points d’ATQ et de PV équivalent à l’Attaque de Hurlevent."
 			},
 			"health": 1,
 			"id": "TB_SPT_Minion3",
 			"name": "Swordsman",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Battlecry:</b> Gain Attack and Health equal to Stormwind's Attack",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA09_3a.png",
 			"fr": {
-				"name": "Mort de faim"
+				"name": "Mort de faim",
+				"text": "A vraiment faim."
 			},
 			"id": "LOEA09_3a",
 			"name": "Famished",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Quite Hungry.",
 			"type": "Enchantment"
 		},
 		{
@@ -27521,7 +30804,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Statue sinistre"
+				"name": "Statue sinistre",
+				"text": "Ne peut pas attaquer à moins d’être le seul serviteur sur le champ de bataille."
 			},
 			"health": 7,
 			"id": "LOE_107",
@@ -27529,18 +30813,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "Can’t attack unless it’s the only minion in the battlefield.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_132_WARLOCK.png",
 			"cost": 2,
 			"fr": {
-				"name": "Connexion d’âme"
+				"name": "Connexion d’âme",
+				"text": "<b>Pouvoir héroïque</b>\nPioche une carte."
 			},
 			"id": "AT_132_WARLOCK",
 			"name": "Soul Tap",
 			"playerClass": "Warlock",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nDraw a card.",
 			"type": "Hero_power"
 		},
 		{
@@ -27548,24 +30835,28 @@ var parseCardsText = {
 			"cardImage": "KARA_09_06.png",
 			"cost": 6,
 			"fr": {
-				"name": "Salve d’Ombre"
+				"name": "Salve d’Ombre",
+				"text": "Inflige 3_points de dégâts à tous les serviteurs qui ne sont pas des démons."
 			},
 			"id": "KARA_09_06",
 			"name": "Shadow Volley",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Deal 3 damage to all non-Demon minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_011.png",
 			"cost": 0,
 			"fr": {
-				"name": "Ne me poussez pas !"
+				"name": "Ne me poussez pas !",
+				"text": "Il se met en colère…"
 			},
 			"id": "TB_CoOpv3_011",
 			"name": "Don't Push Me!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "He's getting angry....",
 			"type": "Spell"
 		},
 		{
@@ -27573,12 +30864,14 @@ var parseCardsText = {
 			"cardImage": "PART_002.png",
 			"cost": 1,
 			"fr": {
-				"name": "Remontoir"
+				"name": "Remontoir",
+				"text": "Renvoie un serviteur allié dans votre main."
 			},
 			"id": "PART_002",
 			"name": "Time Rewinder",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Return a friendly minion to your hand.",
 			"type": "Spell"
 		},
 		{
@@ -27588,7 +30881,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Grave-totem draeneï"
+				"name": "Grave-totem draeneï",
+				"text": "<b>Cri de guerre :</b> gagne +1/+1 pour chaque totem allié."
 			},
 			"health": 4,
 			"id": "AT_047",
@@ -27596,6 +30890,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Gain +1/+1 for each friendly Totem.",
 			"type": "Minion"
 		},
 		{
@@ -27605,7 +30900,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Âme en peine de mana"
+				"name": "Âme en peine de mana",
+				"text": "TOUS les serviteurs coûtent (1) cristal de plus."
 			},
 			"health": 2,
 			"id": "EX1_616",
@@ -27613,6 +30909,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "ALL minions cost (1) more.",
 			"type": "Minion"
 		},
 		{
@@ -27631,23 +30928,27 @@ var parseCardsText = {
 			"cardImage": "BRMA14_4.png",
 			"cost": 4,
 			"fr": {
-				"name": "Activer Toxitron"
+				"name": "Activer Toxitron",
+				"text": "<b>Pouvoir héroïque</b>\nActive Toxitron !"
 			},
 			"id": "BRMA14_4",
 			"name": "Activate Toxitron",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate Toxitron!",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "KARA_00_05e.png",
 			"fr": {
-				"name": "Perspicace"
+				"name": "Perspicace",
+				"text": "Vos sorts coûtent (0)_|4(cristal,cristaux)."
 			},
 			"id": "KARA_00_05e",
 			"name": "Insightful",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Your spells cost (0).",
 			"type": "Enchantment"
 		},
 		{
@@ -27657,7 +30958,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Frigbold algide"
+				"name": "Frigbold algide",
+				"text": "<b>Dégâts des sorts : +1</b>"
 			},
 			"health": 6,
 			"id": "AT_093",
@@ -27666,42 +30968,49 @@ var parseCardsText = {
 			"rarity": "Common",
 			"set": "Tgt",
 			"spellDamage": 1,
+			"text": "<b>Spell Damage +1</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_155a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Marque de la nature"
+				"name": "Marque de la nature",
+				"text": "+4 ATQ."
 			},
 			"id": "EX1_155a",
 			"name": "Mark of Nature",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "+4 Attack.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA03_2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Puissance de Ragnaros"
+				"name": "Puissance de Ragnaros",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 30 points de dégâts."
 			},
 			"id": "BRMA03_2",
 			"name": "Power of the Firelord",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nDeal 30 damage.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "NAX12_02.png",
 			"cost": 2,
 			"fr": {
-				"name": "Décimer"
+				"name": "Décimer",
+				"text": "<b>Pouvoir héroïque</b>\nFait passer les points de vie de tous les serviteurs à 1."
 			},
 			"id": "NAX12_02",
 			"name": "Decimate",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nChange the Health of all minions to 1.",
 			"type": "Hero_power"
 		},
 		{
@@ -27710,13 +31019,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Mot de pouvoir : Bouclier"
+				"name": "Mot de pouvoir : Bouclier",
+				"text": "Confère +2 PV à un serviteur.\nVous piochez une carte."
 			},
 			"id": "CS2_004",
 			"name": "Power Word: Shield",
 			"playerClass": "Priest",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give a minion +2 Health.\nDraw a card.",
 			"type": "Spell"
 		},
 		{
@@ -27726,7 +31037,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Gnome mécanique"
+				"name": "Gnome mécanique",
+				"text": "<b>Râle d’agonie :</b> ajoute une carte <b>Pièce détachée</b> dans votre main."
 			},
 			"health": 1,
 			"id": "GVG_082",
@@ -27734,17 +31046,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Deathrattle:</b> Add a <b>Spare Part</b> card to your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_083e.png",
 			"fr": {
-				"name": "Volerie de faucons-dragons"
+				"name": "Volerie de faucons-dragons",
+				"text": "A <b>Furie des vents</b> pendant ce tour."
 			},
 			"id": "AT_083e",
 			"name": "Dragonhawkery",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "<b>Windfury</b> this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -27754,7 +31069,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Bolvar Fordragon"
+				"name": "Bolvar Fordragon",
+				"text": "Chaque fois qu’un serviteur allié meurt quand vous avez cette carte en main, elle gagne +1 ATQ."
 			},
 			"health": 7,
 			"id": "GVG_063",
@@ -27762,18 +31078,21 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "Whenever a friendly minion dies while this is in your hand, gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA09_9H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Répulsif à nagas"
+				"name": "Répulsif à nagas",
+				"text": "Fait passer l’Attaque de tous les nagas affamés à 1."
 			},
 			"id": "LOEA09_9H",
 			"name": "Naga Repellent",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Change the Attack of all Hungry Naga to 1.",
 			"type": "Spell"
 		},
 		{
@@ -27782,36 +31101,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Infester"
+				"name": "Infester",
+				"text": "Confère à vos serviteurs « <b>Râle d’agonie :</b> ajoute une carte Bête aléatoire dans votre main. »"
 			},
 			"id": "OG_045",
 			"name": "Infest",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Give your minions \"<b>Deathrattle:</b> Add a random Beast to your hand.\"",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "DS1_070o.png",
 			"fr": {
-				"name": "Présence du maître"
+				"name": "Présence du maître",
+				"text": "+2/+2 et <b>Provocation</b>."
 			},
 			"id": "DS1_070o",
 			"name": "Master's Presence",
 			"playerClass": "Hunter",
 			"set": "Core",
+			"text": "+2/+2 and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA14_8.png",
 			"cost": 8,
 			"fr": {
-				"name": "Activer Magmatron"
+				"name": "Activer Magmatron",
+				"text": "<b>Pouvoir héroïque</b>\nActive Magmatron !"
 			},
 			"id": "BRMA14_8",
 			"name": "Activate Magmatron",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate Magmatron!",
 			"type": "Hero_power"
 		},
 		{
@@ -27832,12 +31157,14 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_119e.png",
 			"fr": {
-				"name": "Exalté"
+				"name": "Exalté",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "AT_119e",
 			"name": "Inspired",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -27846,13 +31173,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Silence"
+				"name": "Silence",
+				"text": "Réduit au <b>Silence</b> un serviteur."
 			},
 			"id": "EX1_332",
 			"name": "Silence",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Silence</b> a minion.",
 			"type": "Spell"
 		},
 		{
@@ -27862,7 +31191,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Chasseur de gros gibier"
+				"name": "Chasseur de gros gibier",
+				"text": "<b>Cri de guerre :</b> détruit un serviteur avec 7 Attaque ou plus."
 			},
 			"health": 2,
 			"id": "EX1_005",
@@ -27870,18 +31200,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Destroy a minion with an Attack of 7 or more.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_MechWar_Boss1_HeroPower.png",
 			"cost": 2,
 			"fr": {
-				"name": "Bonjour ! Bonjour ! Bonjour !"
+				"name": "Bonjour ! Bonjour ! Bonjour !",
+				"text": "<b>Pouvoir héroïque</b>\nConfère <b>Bouclier divin</b> et <b>Provocation</b> à votre serviteur ayant la plus faible attaque."
 			},
 			"id": "TB_MechWar_Boss1_HeroPower",
 			"name": "Hello! Hello! Hello!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nGive your lowest attack minion <b>Divine Shield</b> and <b>Taunt</b>.",
 			"type": "Hero_power"
 		},
 		{
@@ -27892,13 +31225,15 @@ var parseCardsText = {
 			"cost": 4,
 			"durability": 2,
 			"fr": {
-				"name": "Championne en vrai-argent"
+				"name": "Championne en vrai-argent",
+				"text": "Chaque fois que votre héros attaque, lui rend 2 PV."
 			},
 			"id": "CS2_097",
 			"name": "Truesilver Champion",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Whenever your hero attacks, restore 2 Health to it.",
 			"type": "Weapon"
 		},
 		{
@@ -27908,7 +31243,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Élémentaire de feu"
+				"name": "Élémentaire de feu",
+				"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts."
 			},
 			"health": 5,
 			"id": "CS2_042",
@@ -27916,6 +31252,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Deal 3 damage.",
 			"type": "Minion"
 		},
 		{
@@ -27924,13 +31261,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Humilité"
+				"name": "Humilité",
+				"text": "L’Attaque d’un serviteur passe à 1."
 			},
 			"id": "EX1_360",
 			"name": "Humility",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Change a minion's Attack to 1.",
 			"type": "Spell"
 		},
 		{
@@ -27938,13 +31277,15 @@ var parseCardsText = {
 			"cardImage": "LOE_115a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Idole corbeau"
+				"name": "Idole corbeau",
+				"text": "<b>Découvre</b> un serviteur."
 			},
 			"id": "LOE_115a",
 			"name": "Raven Idol",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Discover</b> a minion.",
 			"type": "Spell"
 		},
 		{
@@ -27953,24 +31294,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Folie de l’ombre"
+				"name": "Folie de l’ombre",
+				"text": "Prend le contrôle d’un serviteur adverse avec 3 ATQ ou moins jusqu’à la fin du tour."
 			},
 			"id": "EX1_334",
 			"name": "Shadow Madness",
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Gain control of an enemy minion with 3 or less Attack until end of turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_084e.png",
 			"fr": {
-				"name": "Équipé"
+				"name": "Équipé",
+				"text": "+2 ATQ."
 			},
 			"id": "AT_084e",
 			"name": "Equipped",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+2 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -27990,7 +31335,8 @@ var parseCardsText = {
 			"cardImage": "XXX_100.png",
 			"cost": 0,
 			"fr": {
-				"name": "Yogg-Saron Test (Manual)"
+				"name": "Yogg-Saron Test (Manual)",
+				"text": "<b>Battlecry:</b> Cast each spell you've cast this game <i>(targets chosen randomly)</i>."
 			},
 			"health": 5,
 			"id": "XXX_100",
@@ -27998,6 +31344,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Cheat",
+			"text": "<b>Battlecry:</b> Cast each spell you've cast this game <i>(targets chosen randomly)</i>.",
 			"type": "Minion"
 		},
 		{
@@ -28006,25 +31353,29 @@ var parseCardsText = {
 			"cardImage": "KARA_04_05.png",
 			"cost": 3,
 			"fr": {
-				"name": "Singe volant"
+				"name": "Singe volant",
+				"text": "<b>Charge</b>"
 			},
 			"health": 2,
 			"id": "KARA_04_05",
 			"name": "Flying Monkey",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA15_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Portail instable"
+				"name": "Portail instable",
+				"text": "<b>Pouvoir héroïque</b>\nAjoute un serviteur aléatoire dans votre main. Il coûte (3) |4(cristal,cristaux) de moins."
 			},
 			"id": "LOEA15_2H",
 			"name": "Unstable Portal",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nAdd a random minion to your hand. It costs (3) less.",
 			"type": "Hero_power"
 		},
 		{
@@ -28033,36 +31384,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Ordre de tuer"
+				"name": "Ordre de tuer",
+				"text": "Inflige $3 |4(point,points) de dégâts. Si vous avez une bête, inflige $5 |4(point,points) de dégâts à la place."
 			},
 			"id": "EX1_539",
 			"name": "Kill Command",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $3 damage. If you have a Beast, deal $5 damage instead.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_002.png",
 			"cost": 0,
 			"fr": {
-				"name": "Lumière corrompue"
+				"name": "Lumière corrompue",
+				"text": "Rend 30 PV à Nefarian. Inflige 30 points de dégâts à tous les autres serviteurs."
 			},
 			"id": "TB_CoOpv3_002",
 			"name": "Twisted Light",
 			"playerClass": "Priest",
 			"set": "Tb",
+			"text": "Restore 30 health to Nefarian. Deal 30 damage to all other minions.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_549o.png",
 			"fr": {
-				"name": "Courroux bestial"
+				"name": "Courroux bestial",
+				"text": "+2 ATQ et <b>Insensible</b> pendant ce tour."
 			},
 			"id": "EX1_549o",
 			"name": "Bestial Wrath",
 			"playerClass": "Hunter",
 			"set": "Expert1",
+			"text": "+2 Attack and <b>Immune</b> this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -28072,7 +31429,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Champion de la Lumière"
+				"name": "Champion de la Lumière",
+				"text": "<b>Cri de guerre :</b> <b>réduit au silence</b> un démon."
 			},
 			"health": 3,
 			"id": "AT_106",
@@ -28080,6 +31438,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> <b>Silence</b> a Demon.",
 			"type": "Minion"
 		},
 		{
@@ -28087,7 +31446,8 @@ var parseCardsText = {
 			"cardImage": "CRED_42.png",
 			"cost": 4,
 			"fr": {
-				"name": "Tim Erskine"
+				"name": "Tim Erskine",
+				"text": "Vous piochez une carte chaque fois que ce serviteur en détruit un autre."
 			},
 			"health": 5,
 			"id": "CRED_42",
@@ -28095,6 +31455,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "Whenever this minion destroys another minion, draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -28118,7 +31479,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Alchimiste de Sombre-Comté"
+				"name": "Alchimiste de Sombre-Comté",
+				"text": "<b>Cri de guerre :</b> rend 5 PV."
 			},
 			"health": 5,
 			"id": "OG_234",
@@ -28126,17 +31488,20 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Restore 5 Health.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_316k.png",
 			"fr": {
-				"name": "Ténébreux"
+				"name": "Ténébreux",
+				"text": "1/1."
 			},
 			"id": "OG_316k",
 			"name": "Shadowy",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "1/1.",
 			"type": "Enchantment"
 		},
 		{
@@ -28146,7 +31511,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Brute ogre"
+				"name": "Brute ogre",
+				"text": "50% de chance d’attaquer le mauvais adversaire."
 			},
 			"health": 4,
 			"id": "GVG_065",
@@ -28154,6 +31520,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "50% chance to attack the wrong enemy.",
 			"type": "Minion"
 		},
 		{
@@ -28163,7 +31530,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Œuf de nérubien"
+				"name": "Œuf de nérubien",
+				"text": "<b>Râle d’agonie :</b> invoque un nérubien 4/4."
 			},
 			"health": 2,
 			"id": "FP1_007",
@@ -28171,28 +31539,33 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Summon a 4/4 Nerubian.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_014te.png",
 			"fr": {
-				"name": "Banane"
+				"name": "Banane",
+				"text": "A +1/+1."
 			},
 			"id": "EX1_014te",
 			"name": "Bananas",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Has +1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_084e.png",
 			"fr": {
-				"name": "Marque du chasseur"
+				"name": "Marque du chasseur",
+				"text": "Ce serviteur a 1 PV."
 			},
 			"id": "CS2_084e",
 			"name": "Hunter's Mark",
 			"playerClass": "Hunter",
 			"set": "Core",
+			"text": "This minion has 1 Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -28200,7 +31573,8 @@ var parseCardsText = {
 			"cardImage": "CRED_41.png",
 			"cost": 5,
 			"fr": {
-				"name": "Seyil Yoon"
+				"name": "Seyil Yoon",
+				"text": "<b>Cri de guerre :</b> ajoute 3 Sprint et un Marathon dans votre main."
 			},
 			"health": 9,
 			"id": "CRED_41",
@@ -28208,6 +31582,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Add 3 Sprints and a Marathon to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -28226,35 +31601,41 @@ var parseCardsText = {
 			"cardImage": "TB_CoOpv3_007.png",
 			"cost": 0,
 			"fr": {
-				"name": "Projectiles enflammés"
+				"name": "Projectiles enflammés",
+				"text": "Inflige 5 points de dégâts répartis de façon aléatoire entre tous les autres personnages."
 			},
 			"id": "TB_CoOpv3_007",
 			"name": "Flame Missiles",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal 5 damage randomly split among all other characters.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_178ae.png",
 			"fr": {
-				"name": "Enraciné"
+				"name": "Enraciné",
+				"text": "+5 PV et <b>Provocation</b>."
 			},
 			"id": "EX1_178ae",
 			"name": "Rooted",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "+5 Health and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA07_2_2c_TB.png",
 			"cost": 0,
 			"fr": {
-				"name": "MOI TOUT CASSER"
+				"name": "MOI TOUT CASSER",
+				"text": "Détruit un serviteur adverse aléatoire."
 			},
 			"id": "BRMA07_2_2c_TB",
 			"name": "ME SMASH",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Destroy a random enemy minion.",
 			"type": "Spell"
 		},
 		{
@@ -28265,7 +31646,8 @@ var parseCardsText = {
 			"cost": 5,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Leeroy Jenkins"
+				"name": "Leeroy Jenkins",
+				"text": "<b>Charge</b>. <b>Cri de guerre :</b> invoque deux dragonnets 1/1 pour votre adversaire."
 			},
 			"health": 2,
 			"id": "EX1_116",
@@ -28273,6 +31655,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Charge</b>. <b>Battlecry:</b> Summon two 1/1 Whelps for your opponent.",
 			"type": "Minion"
 		},
 		{
@@ -28281,13 +31664,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Vision télépathique"
+				"name": "Vision télépathique",
+				"text": "Place une copie d’une carte aléatoire de la main de l’adversaire dans la vôtre."
 			},
 			"id": "CS2_003",
 			"name": "Mind Vision",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Put a copy of a random card in your opponent's hand into your hand.",
 			"type": "Spell"
 		},
 		{
@@ -28308,58 +31693,68 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_267e.png",
 			"fr": {
-				"name": "Éclat d’huile de poulpe"
+				"name": "Éclat d’huile de poulpe",
+				"text": "+2 ATQ."
 			},
 			"id": "OG_267e",
 			"name": "Squid Oil Sheen",
 			"playerClass": "Rogue",
 			"set": "Og",
+			"text": "+2 Attack",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "EX1_355e.png",
 			"fr": {
-				"name": "Bénédiction du champion"
+				"name": "Bénédiction du champion",
+				"text": "L’Attaque de ce serviteur a été doublée."
 			},
 			"id": "EX1_355e",
 			"name": "Blessed Champion",
 			"playerClass": "Paladin",
 			"set": "Expert1",
+			"text": "This minion's Attack has been doubled.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NEW1_038o.png",
 			"fr": {
-				"name": "Croissance"
+				"name": "Croissance",
+				"text": "Gruul est en train de grandir..."
 			},
 			"id": "NEW1_038o",
 			"name": "Growth",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Gruul is growing...",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "AT_132_PALADIN.png",
 			"cost": 2,
 			"fr": {
-				"name": "La Main d’argent"
+				"name": "La Main d’argent",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux recrues 1/1."
 			},
 			"id": "AT_132_PALADIN",
 			"name": "The Silver Hand",
 			"playerClass": "Paladin",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "NAX2_03H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Pluie de feu"
+				"name": "Pluie de feu",
+				"text": "<b>Pouvoir héroïque</b>\nTire un missile pour chaque\n carte dans la main de votre adversaire."
 			},
 			"id": "NAX2_03H",
 			"name": "Rain of Fire",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nFire a missile for each card in your opponent's hand.",
 			"type": "Hero_power"
 		},
 		{
@@ -28368,7 +31763,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Esprit farouche"
+				"name": "Esprit farouche",
+				"text": "Invoque deux esprits du loup 2/3 avec <b>Provocation</b>.\n<b>Surcharge_:</b>_(2)"
 			},
 			"id": "EX1_248",
 			"name": "Feral Spirit",
@@ -28376,6 +31772,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Summon two 2/3 Spirit Wolves with <b>Taunt</b>. <b>Overload:</b> (2)",
 			"type": "Spell"
 		},
 		{
@@ -28397,7 +31794,8 @@ var parseCardsText = {
 			"cardImage": "hexfrog.png",
 			"cost": 0,
 			"fr": {
-				"name": "Grenouille"
+				"name": "Grenouille",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 1,
 			"id": "hexfrog",
@@ -28405,6 +31803,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -28414,7 +31813,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Drake de Frimarra"
+				"name": "Drake de Frimarra",
+				"text": "Vous pouvez utiliser votre pouvoir héroïque autant de fois que vous voulez."
 			},
 			"health": 6,
 			"id": "AT_008",
@@ -28422,29 +31822,34 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "You can use your Hero Power any number of times.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_029.png",
 			"cost": 0,
 			"fr": {
-				"name": "Opponent Concede"
+				"name": "Opponent Concede",
+				"text": "Force your opponent to concede."
 			},
 			"id": "XXX_029",
 			"name": "Opponent Concede",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Force your opponent to concede.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_Superfriends001e.png",
 			"fr": {
-				"name": "Facilité"
+				"name": "Facilité",
+				"text": "La prochaine carte légendaire que vous jouez pendant ce tour coûte (3) cristaux de moins."
 			},
 			"id": "TB_Superfriends001e",
 			"name": "Facilitated",
 			"playerClass": "Rogue",
 			"set": "Tb",
+			"text": "The next legend you cast this turn costs (3) less.",
 			"type": "Enchantment"
 		},
 		{
@@ -28454,7 +31859,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Pierre d’invocation"
+				"name": "Pierre d’invocation",
+				"text": "Chaque fois que vous lancez un sort, invoque un serviteur aléatoire de même coût."
 			},
 			"health": 6,
 			"id": "LOE_086",
@@ -28462,6 +31868,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Loe",
+			"text": "Whenever you cast a spell, summon a random minion of the same Cost.",
 			"type": "Minion"
 		},
 		{
@@ -28482,7 +31889,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Ancien du savoir"
+				"name": "Ancien du savoir",
+				"text": "<b>Choix des armes :</b> rend 5 points de vie ou vous piochez une carte."
 			},
 			"health": 5,
 			"id": "NEW1_008",
@@ -28490,52 +31898,61 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Choose One -</b> Draw a card; or Restore 5 Health.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX15_04.png",
 			"cost": 8,
 			"fr": {
-				"name": "Chaînes"
+				"name": "Chaînes",
+				"text": "<b>Pouvoir héroïque</b>\nPrend le contrôle d’un serviteur adverse aléatoire jusqu’à la fin du tour."
 			},
 			"id": "NAX15_04",
 			"name": "Chains",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nTake control of a random enemy minion until end of turn.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "AT_029e.png",
 			"fr": {
-				"name": "Lame effilée"
+				"name": "Lame effilée",
+				"text": "+1 ATQ."
 			},
 			"id": "AT_029e",
 			"name": "Extra Stabby",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+1 Attack",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_Mini_1e.png",
 			"fr": {
-				"name": "Miniature"
+				"name": "Miniature",
+				"text": "Miniaturisé, 1/1."
 			},
 			"id": "TB_Mini_1e",
 			"name": "Miniature",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Mini-sized, set to 1/1",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_GiftExchange_Snowball.png",
 			"cost": 0,
 			"fr": {
-				"name": "Boules de neige durcie"
+				"name": "Boules de neige durcie",
+				"text": "Renvoie 3 serviteurs adverses aléatoires dans la main de votre adversaire."
 			},
 			"id": "TB_GiftExchange_Snowball",
 			"name": "Hardpacked Snowballs",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Return 3 random enemy minions to your opponent's hand.",
 			"type": "Spell"
 		},
 		{
@@ -28545,7 +31962,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Lame de C’Thun"
+				"name": "Lame de C’Thun",
+				"text": "<b>Cri de guerre_:</b> détruit un serviteur. Ajoute son Attaque et sa Vie à celles de votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 4,
 			"id": "OG_282",
@@ -28553,6 +31971,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Destroy a minion. Add its Attack and Health to_your C'Thun's <i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
@@ -28591,24 +32010,28 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 2,
 			"fr": {
-				"name": "Lame de ralliement"
+				"name": "Lame de ralliement",
+				"text": "<b>Cri de guerre :</b> donne +1/+1 à vos serviteurs avec <b>Bouclier divin</b>."
 			},
 			"id": "OG_222",
 			"name": "Rallying Blade",
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Give +1/+1 to your minions with <b>Divine Shield</b>.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "TB_Face_Ench1.png",
 			"fr": {
-				"name": "À l’abri"
+				"name": "À l’abri",
+				"text": "Ce serviteur est protégé des attaques et ne peut pas avoir Provocation."
 			},
 			"id": "TB_Face_Ench1",
 			"name": "Safe",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "This minion is safe from attacks and cannot have taunt.",
 			"type": "Enchantment"
 		},
 		{
@@ -28630,7 +32053,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Archère elfe"
+				"name": "Archère elfe",
+				"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 			},
 			"health": 1,
 			"id": "CS2_189",
@@ -28638,6 +32062,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Deal 1 damage.",
 			"type": "Minion"
 		},
 		{
@@ -28647,7 +32072,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Gahz’rilla"
+				"name": "Gahz’rilla",
+				"text": "Chaque fois que ce serviteur subit des dégâts, double son Attaque."
 			},
 			"health": 9,
 			"id": "GVG_049",
@@ -28655,6 +32081,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "Whenever this minion takes damage, double its Attack.",
 			"type": "Minion"
 		},
 		{
@@ -28663,24 +32090,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Graines de poison"
+				"name": "Graines de poison",
+				"text": "Détruit tous les serviteurs et les remplace par des tréants 2/2."
 			},
 			"id": "FP1_019",
 			"name": "Poison Seeds",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "Destroy all minions and summon 2/2 Treants to replace them.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_083e.png",
 			"fr": {
-				"name": "Aiguisé"
+				"name": "Aiguisé",
+				"text": "+1 ATQ pendant ce tour."
 			},
 			"id": "CS2_083e",
 			"name": "Sharpened",
 			"playerClass": "Rogue",
 			"set": "Core",
+			"text": "+1 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -28690,7 +32121,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Sombre orateur"
+				"name": "Sombre orateur",
+				"text": "<b>Cri de guerre_:</b> échange ses caractéristiques avec celles d’un serviteur allié."
 			},
 			"health": 6,
 			"id": "OG_102",
@@ -28698,6 +32130,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Swap stats with a friendly minion.",
 			"type": "Minion"
 		},
 		{
@@ -28718,47 +32151,55 @@ var parseCardsText = {
 			"cardImage": "NEW1_007b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Météores"
+				"name": "Météores",
+				"text": "Inflige $5 |4(point,points) de dégâts à un serviteur."
 			},
 			"id": "NEW1_007b",
 			"name": "Starfall",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Deal $5 damage to a minion.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_SPT_Minion3e.png",
 			"fr": {
-				"name": "Force de Hurlevent"
+				"name": "Force de Hurlevent",
+				"text": "Hurlevent confère de l’Attaque et de la Vie à cette carte."
 			},
 			"id": "TB_SPT_Minion3e",
 			"name": "Strength of Stormwind",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Stormwind is granting this card Attack and Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA04_2.png",
 			"cost": 1,
 			"fr": {
-				"name": "Impulsion de magma"
+				"name": "Impulsion de magma",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 1 point de dégâts à tous les serviteurs."
 			},
 			"id": "BRMA04_2",
 			"name": "Magma Pulse",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nDeal 1 damage to all minions.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "KARA_08_02H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Rage du Néant"
+				"name": "Rage du Néant",
+				"text": "<b>Pouvoir héroïque</b>\nDonne +8 ATQ à votre héros pendant ce tour."
 			},
 			"id": "KARA_08_02H",
 			"name": "Nether Rage",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nGive your hero +8 Attack this turn.",
 			"type": "Hero_power"
 		},
 		{
@@ -28768,7 +32209,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Dragon affamé"
+				"name": "Dragon affamé",
+				"text": "<b>Cri de guerre :</b> invoque un serviteur aléatoire à 1 cristal pour votre adversaire."
 			},
 			"health": 6,
 			"id": "BRM_026",
@@ -28776,6 +32218,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> Summon a random 1-Cost minion for your opponent.",
 			"type": "Minion"
 		},
 		{
@@ -28783,34 +32226,40 @@ var parseCardsText = {
 			"cardImage": "LOE_002t.png",
 			"cost": 3,
 			"fr": {
-				"name": "Torche enflammée"
+				"name": "Torche enflammée",
+				"text": "Inflige $6 |4(point,points) de dégâts."
 			},
 			"id": "LOE_002t",
 			"name": "Roaring Torch",
 			"playerClass": "Mage",
 			"set": "Loe",
+			"text": "Deal $6 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA15_2He.png",
 			"fr": {
-				"name": "Potion de puissance"
+				"name": "Potion de puissance",
+				"text": "+2/+2."
 			},
 			"id": "BRMA15_2He",
 			"name": "Potion of Might",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "AT_089e.png",
 			"fr": {
-				"name": "Garde d’os"
+				"name": "Garde d’os",
+				"text": "Vie augmentée."
 			},
 			"id": "AT_089e",
 			"name": "Boneguarded",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "Increased Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -28837,7 +32286,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Bombardière d’ombre"
+				"name": "Bombardière d’ombre",
+				"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts aux héros."
 			},
 			"health": 1,
 			"id": "GVG_009",
@@ -28845,6 +32295,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Deal 3 damage to each hero.",
 			"type": "Minion"
 		},
 		{
@@ -28854,7 +32305,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Officier chanteguerre"
+				"name": "Officier chanteguerre",
+				"text": "Vos serviteurs avec <b>Charge</b> ont +1 ATQ."
 			},
 			"health": 3,
 			"id": "EX1_084",
@@ -28862,29 +32314,34 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Your <b>Charge</b> minions have +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_tk33.png",
 			"cost": 2,
 			"fr": {
-				"name": "FEU D’ENFER !"
+				"name": "FEU D’ENFER !",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un infernal 6/6."
 			},
 			"id": "EX1_tk33",
 			"name": "INFERNO!",
 			"playerClass": "Warlock",
 			"set": "Expert1",
+			"text": "<b>Hero Power</b>\nSummon a 6/6 Infernal.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "TBUD_1.png",
 			"fr": {
-				"name": "Invocation précoce de serviteur"
+				"name": "Invocation précoce de serviteur",
+				"text": "Invoque un serviteur gratuit à chaque tour, si vous avez moins de PV que votre adversaire."
 			},
 			"id": "TBUD_1",
 			"name": "TBUD Summon Early Minion",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Each turn, if you have less health then a your opponent, summon a free minion",
 			"type": "Enchantment"
 		},
 		{
@@ -28894,7 +32351,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Lobe-Bombe"
+				"name": "Lobe-Bombe",
+				"text": "<b>Cri de guerre :</b> inflige 4 points de dégâts à un serviteur adverse aléatoire."
 			},
 			"health": 3,
 			"id": "GVG_099",
@@ -28902,6 +32360,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Deal 4 damage to a random enemy minion.",
 			"type": "Minion"
 		},
 		{
@@ -28923,12 +32382,14 @@ var parseCardsText = {
 		{
 			"cardImage": "TB_EndlessMinions01.png",
 			"fr": {
-				"name": "Enchantement sans fin"
+				"name": "Enchantement sans fin",
+				"text": "+2/+2."
 			},
 			"id": "TB_EndlessMinions01",
 			"name": "Endless Enchantment",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -28937,13 +32398,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Plaie funeste"
+				"name": "Plaie funeste",
+				"text": "Inflige $2 |4(point,points) de dégâts à un personnage. S’il est tué, invoque un démon aléatoire."
 			},
 			"id": "EX1_320",
 			"name": "Bane of Doom",
 			"playerClass": "Warlock",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Deal $2 damage to a character. If that kills it, summon a random Demon.",
 			"type": "Spell"
 		},
 		{
@@ -28951,47 +32414,55 @@ var parseCardsText = {
 			"cardImage": "KAR_026t.png",
 			"cost": 1,
 			"fr": {
-				"name": "Pion"
+				"name": "Pion",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 1,
 			"id": "KAR_026t",
 			"name": "Pawn",
 			"playerClass": "Warrior",
 			"set": "Kara",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_011o.png",
 			"fr": {
-				"name": "Rugissement sauvage"
+				"name": "Rugissement sauvage",
+				"text": "+2 ATQ pendant ce tour."
 			},
 			"id": "CS2_011o",
 			"name": "Savage Roar",
 			"playerClass": "Druid",
 			"set": "Core",
+			"text": "+2 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "EX1_507e.png",
 			"fr": {
-				"name": "Mrgglaargl !"
+				"name": "Mrgglaargl !",
+				"text": "Le chef de guerre murloc confère +2/+1."
 			},
 			"id": "EX1_507e",
 			"name": "Mrgglaargl!",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Murloc Warleader is granting +2/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA12_7H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Affliction de l’espèce : bronze"
+				"name": "Affliction de l’espèce : bronze",
+				"text": "Les serviteurs de Chromaggus coûtent (3) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 			},
 			"id": "BRMA12_7H",
 			"name": "Brood Affliction: Bronze",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, Chromaggus' minions cost (3) less.",
 			"type": "Spell"
 		},
 		{
@@ -29012,24 +32483,28 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_049e.png",
 			"fr": {
-				"name": "Puissance des Pitons"
+				"name": "Puissance des Pitons",
+				"text": "Attaque augmentée."
 			},
 			"id": "AT_049e",
 			"name": "Power of the Bluff",
 			"playerClass": "Shaman",
 			"set": "Tgt",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA14_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Armure de plates"
+				"name": "Armure de plates",
+				"text": "<b>Pouvoir héroïque passif</b>\nVotre héros et vos serviteurs ne peuvent pas subir plus de 1 point de dégâts à la fois."
 			},
 			"id": "LOEA14_2H",
 			"name": "Platemail Armor",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\nYour Hero and your minions can only take 1 damage at a time.",
 			"type": "Hero_power"
 		},
 		{
@@ -29039,7 +32514,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Berserker écumant"
+				"name": "Berserker écumant",
+				"text": "Chaque fois qu’un serviteur subit des dégâts, gagne +1 ATQ."
 			},
 			"health": 4,
 			"id": "EX1_604",
@@ -29047,6 +32523,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever a minion takes damage, gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -29068,7 +32545,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Vieux déchiqueteur de Sneed"
+				"name": "Vieux déchiqueteur de Sneed",
+				"text": "<b>Râle d’agonie :</b> invoque un serviteur <b>Légendaire</b> aléatoire."
 			},
 			"health": 7,
 			"id": "GVG_114",
@@ -29076,6 +32554,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Deathrattle:</b> Summon a random <b>Legendary</b> minion.",
 			"type": "Minion"
 		},
 		{
@@ -29083,13 +32562,15 @@ var parseCardsText = {
 			"cardImage": "NAXM_002.png",
 			"cost": 3,
 			"fr": {
-				"name": "Forgeron squelettique"
+				"name": "Forgeron squelettique",
+				"text": "<b>Râle d’agonie :</b> détruit l’arme de votre adversaire."
 			},
 			"health": 3,
 			"id": "NAXM_002",
 			"name": "Skeletal Smith",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Destroy your opponent's weapon.",
 			"type": "Minion"
 		},
 		{
@@ -29098,13 +32579,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Cœur de démon"
+				"name": "Cœur de démon",
+				"text": "Inflige $5 |4(point,points) de dégâts à un serviteur. Si c’est un démon allié, lui donne +5/+5 à la place."
 			},
 			"id": "GVG_019",
 			"name": "Demonheart",
 			"playerClass": "Warlock",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Deal $5 damage to a minion.  If it's a friendly Demon, give it +5/+5 instead.",
 			"type": "Spell"
 		},
 		{
@@ -29125,13 +32608,15 @@ var parseCardsText = {
 		{
 			"cardImage": "NEW1_029t.png",
 			"fr": {
-				"name": "Tuez Millhouse !"
+				"name": "Tuez Millhouse !",
+				"text": "Les sorts coûtent (0) pendant ce tour !"
 			},
 			"id": "NEW1_029t",
 			"name": "Kill Millhouse!",
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "Spells cost (0) this turn!",
 			"type": "Enchantment"
 		},
 		{
@@ -29165,35 +32650,41 @@ var parseCardsText = {
 			"cardImage": "TB_OG_027.png",
 			"cost": 1,
 			"fr": {
-				"name": "Évolution"
+				"name": "Évolution",
+				"text": "Transforme vos serviteurs en serviteurs aléatoires qui coûtent (1) |4(cristal,cristaux) de plus."
 			},
 			"id": "TB_OG_027",
 			"name": "Evolve",
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Transform your minions into random minions that cost (1) more.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_133e.png",
 			"fr": {
-				"name": "Victoire !"
+				"name": "Victoire !",
+				"text": "+1/+1."
 			},
 			"id": "AT_133e",
 			"name": "Victory!",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA12_8te.png",
 			"fr": {
-				"name": "Lignée draconique"
+				"name": "Lignée draconique",
+				"text": "+2/+2."
 			},
 			"id": "BRMA12_8te",
 			"name": "Draconic Lineage",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "+2/+2",
 			"type": "Enchantment"
 		},
 		{
@@ -29214,23 +32705,27 @@ var parseCardsText = {
 			"cardImage": "TB_ClassRandom_Rogue.png",
 			"cost": 0,
 			"fr": {
-				"name": "Deuxième classe : voleur"
+				"name": "Deuxième classe : voleur",
+				"text": "Ajoute des cartes de voleur dans votre deck."
 			},
 			"id": "TB_ClassRandom_Rogue",
 			"name": "Second Class: Rogue",
 			"playerClass": "Rogue",
 			"set": "Tb",
+			"text": "Add Rogue cards to your deck.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX6_03te.png",
 			"fr": {
-				"name": "Croissance fongique"
+				"name": "Croissance fongique",
+				"text": "Attaque augmentée."
 			},
 			"id": "NAX6_03te",
 			"name": "Fungal Growth",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -29240,7 +32735,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Savant fou"
+				"name": "Savant fou",
+				"text": "<b>Râle d’agonie :</b> place un <b>Secret</b> de votre deck sur le champ de bataille."
 			},
 			"health": 2,
 			"id": "FP1_004",
@@ -29248,6 +32744,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Put a <b>Secret</b> from your deck into the battlefield.",
 			"type": "Minion"
 		},
 		{
@@ -29255,7 +32752,8 @@ var parseCardsText = {
 			"cardImage": "KARA_13_16.png",
 			"cost": 2,
 			"fr": {
-				"name": "Susie Grésichant"
+				"name": "Susie Grésichant",
+				"text": "Les portails coûtent (1)_|4(cristal,cristaux) de moins.\n<i>Ne compte pas comme un serviteur.</i>"
 			},
 			"health": 2,
 			"id": "KARA_13_16",
@@ -29263,6 +32761,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Portals cost (1) less. \n<i>Does not count as a minion.</i>",
 			"type": "Minion"
 		},
 		{
@@ -29270,7 +32769,8 @@ var parseCardsText = {
 			"cardImage": "TU4c_005.png",
 			"cost": 2,
 			"fr": {
-				"name": "Gnome caché"
+				"name": "Gnome caché",
+				"text": "Il se cachait dans un tonneau !"
 			},
 			"health": 3,
 			"id": "TU4c_005",
@@ -29278,42 +32778,49 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Was hiding in a barrel!",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_12.png",
 			"cost": 0,
 			"fr": {
-				"name": "Médaillon de Medivh"
+				"name": "Médaillon de Medivh",
+				"text": "Remplace votre main par des cartes Portail instable."
 			},
 			"id": "LOEA16_12",
 			"name": "Medivh's Locket",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Replace your hand with Unstable Portals.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_004.png",
 			"cost": 0,
 			"fr": {
-				"name": "Enchaînement"
+				"name": "Enchaînement",
+				"text": "Inflige 7 points de dégâts à un serviteur et à son propriétaire."
 			},
 			"id": "TB_CoOpv3_004",
 			"name": "Cleave",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal 7 damage to a minion and its owner.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA11_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Essence des Rouges"
+				"name": "Essence des Rouges",
+				"text": "<b>Pouvoir héroïque</b>\nChaque joueur pioche 3 cartes. Vous gagnez un cristal de mana."
 			},
 			"id": "BRMA11_2H",
 			"name": "Essence of the Red",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nEach player draws 3 cards. Gain a Mana Crystal.",
 			"type": "Hero_power"
 		},
 		{
@@ -29323,7 +32830,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Explomage gobelin"
+				"name": "Explomage gobelin",
+				"text": "<b>Cri de guerre :</b> si vous possédez un Méca, inflige 4 points de dégâts répartis de façon aléatoire entre tous les adversaires."
 			},
 			"health": 4,
 			"id": "GVG_004",
@@ -29331,6 +32839,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> If you have a Mech, deal 4 damage randomly split among all enemies.",
 			"type": "Minion"
 		},
 		{
@@ -29338,23 +32847,27 @@ var parseCardsText = {
 			"cardImage": "KARA_00_09.png",
 			"cost": 1,
 			"fr": {
-				"name": "Armure de mage"
+				"name": "Armure de mage",
+				"text": "Gagne 10_points d’armure."
 			},
 			"id": "KARA_00_09",
 			"name": "Mage Armor",
 			"playerClass": "Mage",
 			"set": "Kara",
+			"text": "Gain 10 Armor.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "GVG_051e.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+1 ATQ."
 			},
 			"id": "GVG_051e",
 			"name": "Enraged",
 			"playerClass": "Warrior",
 			"set": "Gvg",
+			"text": "+1 Attack",
 			"type": "Enchantment"
 		},
 		{
@@ -29374,12 +32887,14 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_118f.png",
 			"fr": {
-				"name": "Nouvelle vocation"
+				"name": "Nouvelle vocation",
+				"text": "Coût réduit."
 			},
 			"id": "OG_118f",
 			"name": "New Calling",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Cost reduced.",
 			"type": "Enchantment"
 		},
 		{
@@ -29387,7 +32902,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_2.png",
 			"cost": 4,
 			"fr": {
-				"name": "Dame Blaumeux"
+				"name": "Dame Blaumeux",
+				"text": "<b>Cri de guerre :</b> invoque un cavalier."
 			},
 			"health": 7,
 			"id": "TB_KTRAF_2",
@@ -29395,6 +32911,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "<b>Battlecry:</b> Summon a fellow Horseman.",
 			"type": "Minion"
 		},
 		{
@@ -29414,12 +32931,14 @@ var parseCardsText = {
 		{
 			"cardImage": "TU4c_006e.png",
 			"fr": {
-				"name": "Banane"
+				"name": "Banane",
+				"text": "Ce serviteur a +1/+1. <i>(+1 ATQ / +1 PV)</i>"
 			},
 			"id": "TU4c_006e",
 			"name": "Bananas",
 			"playerClass": "Neutral",
 			"set": "Missions",
+			"text": "This minion has +1/+1. <i>(+1 Attack/+1 Health)</i>",
 			"type": "Enchantment"
 		},
 		{
@@ -29429,7 +32948,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Horreb"
+				"name": "Horreb",
+				"text": "<b>Cri de guerre :</b> les sorts adverses coûtent (5) cristaux de plus au prochain tour."
 			},
 			"health": 5,
 			"id": "FP1_030",
@@ -29437,6 +32957,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "<b>Battlecry:</b> Enemy spells cost (5) more next turn.",
 			"type": "Minion"
 		},
 		{
@@ -29445,13 +32966,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Feu intérieur"
+				"name": "Feu intérieur",
+				"text": "Change l’Attaque d’un serviteur pour qu’elle soit égale à ses PV."
 			},
 			"id": "CS1_129",
 			"name": "Inner Fire",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Change a minion's Attack to be equal to its Health.",
 			"type": "Spell"
 		},
 		{
@@ -29469,12 +32992,14 @@ var parseCardsText = {
 		{
 			"cardImage": "TB_GP_01e_copy1.png",
 			"fr": {
-				"name": "Tour des Ombres donne Camouflage à mes serviteurs."
+				"name": "Tour des Ombres donne Camouflage à mes serviteurs.",
+				"text": "Ne peut pas attaquer.\n<b>Camouflage</b>."
 			},
 			"id": "TB_GP_01e_copy1",
 			"name": "Shadow Tower Give My minions Stealth",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Can't Attack.\n<b>Stealth</b>.",
 			"type": "Enchantment"
 		},
 		{
@@ -29484,7 +33009,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Edwin VanCleef"
+				"name": "Edwin VanCleef",
+				"text": "<b>Combo :</b> gagne +2/+2 pour chaque carte jouée auparavant pendant ce tour."
 			},
 			"health": 2,
 			"id": "EX1_613",
@@ -29492,6 +33018,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Combo:</b> Gain +2/+2 for each card played earlier this turn.",
 			"type": "Minion"
 		},
 		{
@@ -29501,7 +33028,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Élémentaire de givre"
+				"name": "Élémentaire de givre",
+				"text": "<b>Cri de guerre :</b> <b>gèle</b> un personnage."
 			},
 			"health": 5,
 			"id": "EX1_283",
@@ -29509,17 +33037,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> <b>Freeze</b> a character.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_013e.png",
 			"fr": {
-				"name": "Mot de pouvoir : Gloire"
+				"name": "Mot de pouvoir : Gloire",
+				"text": "Quand il attaque, rend 4 PV au héros du joueur l’ayant amélioré."
 			},
 			"id": "AT_013e",
 			"name": "Power Word: Glory",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "When this attacks, restore 4 Health to the hero of the player who buffed it.",
 			"type": "Enchantment"
 		},
 		{
@@ -29528,13 +33059,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Esprit divin"
+				"name": "Esprit divin",
+				"text": "Double les points de vie d’un serviteur."
 			},
 			"id": "CS2_236",
 			"name": "Divine Spirit",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Double a minion's Health.",
 			"type": "Spell"
 		},
 		{
@@ -29542,13 +33075,15 @@ var parseCardsText = {
 			"cardImage": "BRMC_99e.png",
 			"cost": 2,
 			"fr": {
-				"name": "Élémentaire de roche"
+				"name": "Élémentaire de roche",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 3,
 			"id": "BRMC_99e",
 			"name": "Rock Elemental",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -29570,7 +33105,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Pirate des flots noirs"
+				"name": "Pirate des flots noirs",
+				"text": "Vos armes coûtent (2) cristaux de moins."
 			},
 			"health": 5,
 			"id": "OG_322",
@@ -29578,6 +33114,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Your weapons cost (2) less.",
 			"type": "Minion"
 		},
 		{
@@ -29587,7 +33124,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Technicienne de l’Aile noire"
+				"name": "Technicienne de l’Aile noire",
+				"text": "<b>Cri de guerre :</b> gagne +1/+1 si vous avez un Dragon en main."
 			},
 			"health": 4,
 			"id": "BRM_033",
@@ -29595,6 +33133,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +1/+1. ",
 			"type": "Minion"
 		},
 		{
@@ -29602,7 +33141,8 @@ var parseCardsText = {
 			"cardImage": "CRED_40.png",
 			"cost": 4,
 			"fr": {
-				"name": "Ryan Masterson"
+				"name": "Ryan Masterson",
+				"text": "<b>Cri de guerre :</b> lance des copies d’Attaque sournoise, Sang froid et Éviscération. <i>(cibles choisies au hasard).</i>"
 			},
 			"health": 2,
 			"id": "CRED_40",
@@ -29610,6 +33150,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Cast copies of Backstab, Cold Blood, and Eviscerate. <i>(targets chosen randomly).</i>",
 			"type": "Minion"
 		},
 		{
@@ -29619,13 +33160,15 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Félin surprise"
+				"name": "Félin surprise",
+				"text": "<b>Camouflage</b>"
 			},
 			"health": 2,
 			"id": "KAR_004a",
 			"name": "Cat in a Hat",
 			"playerClass": "Hunter",
 			"set": "Kara",
+			"text": "<b>Stealth</b>",
 			"type": "Minion"
 		},
 		{
@@ -29657,7 +33200,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Serpent de la fosse"
+				"name": "Serpent de la fosse",
+				"text": "Détruit tout serviteur blessé par ce serviteur."
 			},
 			"health": 1,
 			"id": "LOE_010",
@@ -29665,6 +33209,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "Destroy any minion damaged by this minion.",
 			"type": "Minion"
 		},
 		{
@@ -29672,7 +33217,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_2s.png",
 			"cost": 4,
 			"fr": {
-				"name": "Sire Zeliek"
+				"name": "Sire Zeliek",
+				"text": "Dame Blaumeux est <b>Insensible</b>."
 			},
 			"health": 5,
 			"id": "TB_KTRAF_2s",
@@ -29680,6 +33226,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Lady Blaumeux is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
@@ -29687,12 +33234,14 @@ var parseCardsText = {
 			"cardImage": "KARA_00_11.png",
 			"cost": 0,
 			"fr": {
-				"name": "Évocation"
+				"name": "Évocation",
+				"text": "Gagne 5_cristaux de mana pendant ce tour uniquement."
 			},
 			"id": "KARA_00_11",
 			"name": "Evocation",
 			"playerClass": "Mage",
 			"set": "Kara",
+			"text": "Gain 5 Mana Crystals this turn only.",
 			"type": "Spell"
 		},
 		{
@@ -29702,7 +33251,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Prêtre du festin"
+				"name": "Prêtre du festin",
+				"text": "Chaque fois que vous lancez un sort, rend 3_PV à votre héros."
 			},
 			"health": 6,
 			"id": "KAR_035",
@@ -29710,6 +33260,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Whenever you cast a spell, restore 3 Health to\nyour hero.",
 			"type": "Minion"
 		},
 		{
@@ -29733,13 +33284,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Contresort"
+				"name": "Contresort",
+				"text": "<b>Secret :</b> quand votre adversaire lance un sort, le <b>contre</b>."
 			},
 			"id": "EX1_287",
 			"name": "Counterspell",
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When your opponent casts a spell, <b>Counter</b> it.",
 			"type": "Spell"
 		},
 		{
@@ -29757,12 +33310,14 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_123e.png",
 			"fr": {
-				"name": "Déphasé"
+				"name": "Déphasé",
+				"text": "Se transforme en serviteurs aléatoires."
 			},
 			"id": "OG_123e",
 			"name": "Shifting",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Transforming into random minions.",
 			"type": "Enchantment"
 		},
 		{
@@ -29772,7 +33327,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Arcaniste éthérien"
+				"name": "Arcaniste éthérien",
+				"text": "Si vous contrôlez un <b>Secret</b> à la fin de votre tour, gagne +2/+2."
 			},
 			"health": 3,
 			"id": "EX1_274",
@@ -29780,18 +33336,21 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "If you control a <b>Secret</b> at the end of your turn, gain +2/+2.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA13_2.png",
 			"cost": 1,
 			"fr": {
-				"name": "Forme véritable"
+				"name": "Forme véritable",
+				"text": "<b>Pouvoir héroïque</b>\nQue le combat commence !"
 			},
 			"id": "BRMA13_2",
 			"name": "True Form",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nLet the games begin!",
 			"type": "Hero_power"
 		},
 		{
@@ -29815,26 +33374,30 @@ var parseCardsText = {
 			"cardImage": "NAX2_05.png",
 			"cost": 3,
 			"fr": {
-				"name": "Adorateur"
+				"name": "Adorateur",
+				"text": "Votre héros a +1 ATQ pendant votre tour."
 			},
 			"health": 4,
 			"id": "NAX2_05",
 			"name": "Worshipper",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Your hero has +1 Attack on your turn.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA04_4.png",
 			"cost": 3,
 			"fr": {
-				"name": "Déchaînement"
+				"name": "Déchaînement",
+				"text": "Invoque 3 liges du feu. <b>Surcharge :</b> (2)"
 			},
 			"id": "BRMA04_4",
 			"name": "Rock Out",
 			"overload": 2,
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Summon 3 Firesworn. <b>Overload:</b> (2)",
 			"type": "Spell"
 		},
 		{
@@ -29918,7 +33481,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Serviteur de Yogg-Saron"
+				"name": "Serviteur de Yogg-Saron",
+				"text": "<b>Cri de guerre :</b> lance un sort aléatoire coûtant au maximum\n(5) cristaux de mana <i>(cibles choisies au hasard).</i>"
 			},
 			"health": 4,
 			"id": "OG_087",
@@ -29926,18 +33490,21 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Cast a random spell that costs (5) or less <i>(targets chosen randomly)</i>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA17_5.png",
 			"cost": 2,
 			"fr": {
-				"name": "Séides des os"
+				"name": "Séides des os",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque deux assemblages d’os 2/1."
 			},
 			"id": "BRMA17_5",
 			"name": "Bone Minions",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon two 2/1 Bone Constructs.",
 			"type": "Hero_power"
 		},
 		{
@@ -29947,7 +33514,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Dragon consort"
+				"name": "Dragon consort",
+				"text": "<b>Cri de guerre :</b> le prochain Dragon que vous jouez coûte (2) cristaux de moins."
 			},
 			"health": 5,
 			"id": "BRM_018",
@@ -29955,6 +33523,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> The next Dragon you play costs (2) less.",
 			"type": "Minion"
 		},
 		{
@@ -29964,7 +33533,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Œuf runique"
+				"name": "Œuf runique",
+				"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 			},
 			"health": 2,
 			"id": "KAR_029",
@@ -29972,18 +33542,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Deathrattle:</b> Draw a card.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_154b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Colère"
+				"name": "Colère",
+				"text": "Inflige $1 |4(point,points) de dégâts à un serviteur. Vous piochez une carte."
 			},
 			"id": "EX1_154b",
 			"name": "Wrath",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "Deal $1 damage to a minion. Draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -29991,7 +33564,8 @@ var parseCardsText = {
 			"cardImage": "OG_044a.png",
 			"cost": 5,
 			"fr": {
-				"name": "Druide de la Griffe"
+				"name": "Druide de la Griffe",
+				"text": "<b>Charge, Provocation</b>"
 			},
 			"health": 6,
 			"id": "OG_044a",
@@ -29999,17 +33573,20 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Charge</b>\n<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRM_028e.png",
 			"fr": {
-				"name": "Faveur impériale"
+				"name": "Faveur impériale",
+				"text": "Coûte (1) |4(cristal,cristaux) de moins."
 			},
 			"id": "BRM_028e",
 			"name": "Imperial Favor",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Costs (1) less.",
 			"type": "Enchantment"
 		},
 		{
@@ -30017,7 +33594,8 @@ var parseCardsText = {
 			"cardImage": "CRED_25.png",
 			"cost": 4,
 			"fr": {
-				"name": "Elizabeth Cho"
+				"name": "Elizabeth Cho",
+				"text": "<b>Cri de guerre :</b> ajoute Écho de Medivh et Limon résonnant dans votre main."
 			},
 			"health": 4,
 			"id": "CRED_25",
@@ -30025,19 +33603,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Add Echo of Medivh and Echoing Ooze to your hand. ",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_049_H1.png",
 			"cost": 2,
 			"fr": {
-				"name": "Appel totémique"
+				"name": "Appel totémique",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un totem aléatoire."
 			},
 			"id": "CS2_049_H1",
 			"name": "Totemic Call",
 			"playerClass": "Shaman",
 			"rarity": "Free",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nSummon a random Totem.",
 			"type": "Hero_power"
 		},
 		{
@@ -30047,7 +33628,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Ver des sables géant"
+				"name": "Ver des sables géant",
+				"text": "Quand ce serviteur en tue un autre, il peut attaquer de nouveau."
 			},
 			"health": 8,
 			"id": "OG_308",
@@ -30055,18 +33637,21 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Whenever this attacks and kills a minion, it may attack again.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_039.png",
 			"cost": 0,
 			"fr": {
-				"name": "Become Hogger"
+				"name": "Become Hogger",
+				"text": "Become Hogger for Video Recording."
 			},
 			"id": "XXX_039",
 			"name": "Become Hogger",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Become Hogger for Video Recording.",
 			"type": "Spell"
 		},
 		{
@@ -30089,13 +33674,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Frappe mortelle"
+				"name": "Frappe mortelle",
+				"text": "Inflige $4 |4(point,points) de dégâts. Si votre héros a 12 PV ou moins, inflige $6 |4(point,points) de dégâts à la place."
 			},
 			"id": "EX1_408",
 			"name": "Mortal Strike",
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Deal $4 damage. If you have 12 or less Health, deal $6 instead.",
 			"type": "Spell"
 		},
 		{
@@ -30105,7 +33692,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Apothicaire du culte"
+				"name": "Apothicaire du culte",
+				"text": "<b>Cri de guerre :</b> rend 2 PV à votre héros pour chaque serviteur adverse."
 			},
 			"health": 4,
 			"id": "OG_295",
@@ -30113,6 +33701,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> For each enemy minion, restore 2 Health to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -30131,23 +33720,27 @@ var parseCardsText = {
 			"cardImage": "CS2_049_H1_AT_132.png",
 			"cost": 2,
 			"fr": {
-				"name": "Heurt totémique"
+				"name": "Heurt totémique",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un totem de votre choix."
 			},
 			"id": "CS2_049_H1_AT_132",
 			"name": "Totemic Slam",
 			"playerClass": "Shaman",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nSummon a Totem of your choice.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "GVG_036e.png",
 			"fr": {
-				"name": "Puissance acquise"
+				"name": "Puissance acquise",
+				"text": "+2/+2."
 			},
 			"id": "GVG_036e",
 			"name": "Powered",
 			"playerClass": "Shaman",
 			"set": "Gvg",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -30156,25 +33749,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Sauvagerie"
+				"name": "Sauvagerie",
+				"text": "Inflige des dégâts d’un montant équivalent à l’Attaque de votre héros à un serviteur."
 			},
 			"id": "EX1_578",
 			"name": "Savagery",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Deal damage equal to your hero's Attack to a minion.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_007.png",
 			"cost": 1,
 			"fr": {
-				"name": "Banane déviante"
+				"name": "Banane déviante",
+				"text": "Inverse l’Attaque et la Vie d’un serviteur."
 			},
 			"id": "TB_007",
 			"name": "Deviate Banana",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Swap a minion's Attack and Health.",
 			"type": "Spell"
 		},
 		{
@@ -30184,7 +33781,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Ensorceleuse du culte"
+				"name": "Ensorceleuse du culte",
+				"text": "<b>Dégâts des sorts : +1</b>\nAprès que vous avez lancé un sort, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 2,
 			"id": "OG_303",
@@ -30193,6 +33791,7 @@ var parseCardsText = {
 			"rarity": "Rare",
 			"set": "Og",
 			"spellDamage": 1,
+			"text": "[x]<b><b>Spell Damage</b> +1</b>\nAfter you cast a spell,\ngive your C'Thun +1/+1\n<i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
@@ -30203,25 +33802,29 @@ var parseCardsText = {
 			"cost": 1,
 			"durability": 3,
 			"fr": {
-				"name": "Griffes spectrales"
+				"name": "Griffes spectrales",
+				"text": "A +2 ATQ tant que vous avez <b>Dégâts des sorts</b>."
 			},
 			"id": "KAR_063",
 			"name": "Spirit Claws",
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "[x]Has +2 Attack while you\nhave <b>Spell Damage</b>.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "LOEA07_26.png",
 			"cost": 1,
 			"fr": {
-				"name": "Consulter Brann"
+				"name": "Consulter Brann",
+				"text": "Vous piochez 3 cartes."
 			},
 			"id": "LOEA07_26",
 			"name": "Consult Brann",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Draw 3 cards.",
 			"type": "Spell"
 		},
 		{
@@ -30231,7 +33834,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Sélénien de la jungle"
+				"name": "Sélénien de la jungle",
+				"text": "Chaque joueur a\n<b>+2 aux dégâts des sorts</b>."
 			},
 			"health": 4,
 			"id": "LOE_051",
@@ -30240,6 +33844,7 @@ var parseCardsText = {
 			"rarity": "Rare",
 			"set": "Loe",
 			"spellDamage": 2,
+			"text": "Both players have\n<b>Spell Damage +2</b>.",
 			"type": "Minion"
 		},
 		{
@@ -30248,25 +33853,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Périple dans les abîmes"
+				"name": "Périple dans les abîmes",
+				"text": "<b>Découvre</b> une carte avec <b>Râle d’agonie</b>."
 			},
 			"id": "OG_072",
 			"name": "Journey Below",
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Discover</b> a <b>Deathrattle</b> card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_Superfriends001.png",
 			"cost": 0,
 			"fr": {
-				"name": "Jeu offensif"
+				"name": "Jeu offensif",
+				"text": "Le prochain serviteur légendaire que vous jouez et toutes ses copies coûtent (3) cristaux de moins."
 			},
 			"id": "TB_Superfriends001",
 			"name": "Offensive Play",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "The next Legendary minion you play and all your other copies cost (3) less.",
 			"type": "Spell"
 		},
 		{
@@ -30276,7 +33885,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Berserker amani"
+				"name": "Berserker amani",
+				"text": "<b>Accès de rage :</b> +3 ATQ."
 			},
 			"health": 3,
 			"id": "EX1_393",
@@ -30284,6 +33894,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Enrage:</b> +3 Attack",
 			"type": "Minion"
 		},
 		{
@@ -30292,13 +33903,15 @@ var parseCardsText = {
 			"cardImage": "KARA_09_08.png",
 			"cost": 4,
 			"fr": {
-				"name": "Kil’rek"
+				"name": "Kil’rek",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 6,
 			"id": "KARA_09_08",
 			"name": "Kil'rek",
 			"playerClass": "Warlock",
 			"set": "Kara",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -30307,13 +33920,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Éventail de couteaux"
+				"name": "Éventail de couteaux",
+				"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses. Vous piochez une carte."
 			},
 			"id": "EX1_129",
 			"name": "Fan of Knives",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $1 damage to all enemy minions. Draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -30321,25 +33936,29 @@ var parseCardsText = {
 			"cardImage": "BRMA12_8t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Draconien chromatique"
+				"name": "Draconien chromatique",
+				"text": "Gagne +2/+2 chaque fois que votre adversaire lance un sort."
 			},
 			"health": 3,
 			"id": "BRMA12_8t",
 			"name": "Chromatic Dragonkin",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Whenever your opponent casts a spell, gain +2/+2.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA09_2_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Ouvrir les portes"
+				"name": "Ouvrir les portes",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque trois dragonnets 1/1."
 			},
 			"id": "BRMA09_2_TB",
 			"name": "Open the Gates",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nSummon three 1/1 Whelps.",
 			"type": "Hero_power"
 		},
 		{
@@ -30350,7 +33969,8 @@ var parseCardsText = {
 			"cost": 7,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Champion de Hurlevent"
+				"name": "Champion de Hurlevent",
+				"text": "Vos autres serviteurs\nont +1/+1."
 			},
 			"health": 6,
 			"id": "CS2_222",
@@ -30358,17 +33978,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Your other minions have +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_057a.png",
 			"fr": {
-				"name": "Sceau de Lumière"
+				"name": "Sceau de Lumière",
+				"text": "+2 ATQ pendant ce tour."
 			},
 			"id": "GVG_057a",
 			"name": "Seal of Light",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "+2 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -30376,7 +33999,8 @@ var parseCardsText = {
 			"cardImage": "XXX_110.png",
 			"cost": 0,
 			"fr": {
-				"name": "Yogg-Saron Test (Auto)"
+				"name": "Yogg-Saron Test (Auto)",
+				"text": "<b>Battlecry:</b> Cast 30 random spells <i>(targets chosen randomly)</i>."
 			},
 			"health": 5,
 			"id": "XXX_110",
@@ -30384,6 +34008,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Cheat",
+			"text": "<b>Battlecry:</b> Cast 30 random spells <i>(targets chosen randomly)</i>.",
 			"type": "Minion"
 		},
 		{
@@ -30391,7 +34016,8 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_1.png",
 			"cost": 4,
 			"fr": {
-				"name": "Anub’Rekhan"
+				"name": "Anub’Rekhan",
+				"text": "À la fin de votre tour, invoque un nérubien 3/1."
 			},
 			"health": 5,
 			"id": "TB_KTRAF_1",
@@ -30399,17 +34025,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "At the end of your turn, summon a 3/1 Nerubian.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "Mekka3e.png",
 			"fr": {
-				"name": "Encouragé !"
+				"name": "Encouragé !",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "Mekka3e",
 			"name": "Emboldened!",
 			"playerClass": "Neutral",
 			"set": "Promo",
+			"text": "Increased Stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -30419,7 +34048,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Princesse Huhuran"
+				"name": "Princesse Huhuran",
+				"text": "<b>Cri de guerre :</b> déclenche le <b>Râle d’agonie</b> d’un serviteur allié."
 			},
 			"health": 5,
 			"id": "OG_309",
@@ -30427,17 +34057,20 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Trigger a friendly minion's <b>Deathrattle</b> effect.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_CoOpv3_104e.png",
 			"fr": {
-				"name": "Unité"
+				"name": "Unité",
+				"text": "+2/+2."
 			},
 			"id": "TB_CoOpv3_104e",
 			"name": "Unity",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "+2/+2",
 			"type": "Enchantment"
 		},
 		{
@@ -30457,7 +34090,8 @@ var parseCardsText = {
 			"cardImage": "CRED_18.png",
 			"cost": 2,
 			"fr": {
-				"name": "Becca Abel"
+				"name": "Becca Abel",
+				"text": "Chaque fois que vous piochez une carte, la transforme en carte dorée."
 			},
 			"health": 2,
 			"id": "CRED_18",
@@ -30465,31 +34099,36 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "Whenever you draw a card, make it Golden.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TU4f_006.png",
 			"cost": 1,
 			"fr": {
-				"name": "Transcendance"
+				"name": "Transcendance",
+				"text": "Cho ne peut pas être attaqué tant qu’il a des serviteurs."
 			},
 			"id": "TU4f_006",
 			"name": "Transcendence",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Until you kill Cho's minions, he can't be attacked.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA12_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Perle des marées"
+				"name": "Perle des marées",
+				"text": "À la fin de votre tour, remplace tous les serviteurs par de nouveaux coûtant (1) |4(cristal,cristaux) de plus."
 			},
 			"id": "LOEA12_2",
 			"name": "Pearl of the Tides",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "At the end of your turn, replace all minions with new ones that cost (1) more.",
 			"type": "Hero_power"
 		},
 		{
@@ -30499,7 +34138,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Chevalier silencieux"
+				"name": "Chevalier silencieux",
+				"text": "<b>Camouflage</b>\n<b>Bouclier divin</b>"
 			},
 			"health": 2,
 			"id": "AT_095",
@@ -30507,30 +34147,35 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Stealth</b>\n<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA12_3.png",
 			"cost": 1,
 			"fr": {
-				"name": "Affliction de l’espèce : rouge"
+				"name": "Affliction de l’espèce : rouge",
+				"text": "Vous subissez 1 point de dégâts au début de votre tour tant que vous avez cette carte dans votre main."
 			},
 			"id": "BRMA12_3",
 			"name": "Brood Affliction: Red",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "While this is in your hand, take 1 damage at the start of your turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "OG_202ae.png",
 			"fr": {
-				"name": "Force d’Y’Shaarj"
+				"name": "Force d’Y’Shaarj",
+				"text": "+3/+3."
 			},
 			"id": "OG_202ae",
 			"name": "Y'Shaarj's Strength",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "+3/+3.",
 			"type": "Enchantment"
 		},
 		{
@@ -30539,25 +34184,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Portail du Maelström"
+				"name": "Portail du Maelström",
+				"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses. Invoque un serviteur aléatoire coûtant 1_cristal."
 			},
 			"id": "KAR_073",
 			"name": "Maelstrom Portal",
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Kara",
+			"text": "Deal_$1_damage to_all_enemy_minions. Summon_a_random\n1-Cost minion.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA05_03h.png",
 			"cost": 0,
 			"fr": {
-				"name": "Trogg détester sorts !"
+				"name": "Trogg détester sorts !",
+				"text": "<b>Pouvoir héroïque passif</b> Les sorts adverses coûtent (11) |4(cristal,cristaux) de mana. Le pouvoir change au début de votre tour."
 			},
 			"id": "LOEA05_03h",
 			"name": "Trogg Hate Spells!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\n Enemy spells cost (11). Swap at the start of your turn.",
 			"type": "Hero_power"
 		},
 		{
@@ -30565,48 +34214,56 @@ var parseCardsText = {
 			"cardImage": "NAX8_05.png",
 			"cost": 6,
 			"fr": {
-				"name": "Cavalier tenace"
+				"name": "Cavalier tenace",
+				"text": "<b>Râle d’agonie :</b> invoque un cavalier spectral pour votre adversaire."
 			},
 			"health": 6,
 			"id": "NAX8_05",
 			"name": "Unrelenting Rider",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Summon a Spectral Rider for your opponent.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA16_6.png",
 			"cost": 0,
 			"fr": {
-				"name": "Éclat de Sulfuras"
+				"name": "Éclat de Sulfuras",
+				"text": "Inflige $5 |4(point,points) de dégâts à TOUS les personnages."
 			},
 			"id": "LOEA16_6",
 			"name": "Shard of Sulfuras",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Deal $5 damage to ALL characters.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_LevelUp_001.png",
 			"cost": 2,
 			"fr": {
-				"name": "Gain de niveau !"
+				"name": "Gain de niveau !",
+				"text": "Tous les sorts dans votre main et votre deck gagne un niveau."
 			},
 			"id": "TB_LevelUp_001",
 			"name": "Level Up!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Level up all the spells in your hand and deck.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "FP1_028e.png",
 			"fr": {
-				"name": "Appel des ténèbres"
+				"name": "Appel des ténèbres",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "FP1_028e",
 			"name": "Darkness Calls",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -30630,7 +34287,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Chroniqueur Cho"
+				"name": "Chroniqueur Cho",
+				"text": "Quand un joueur lance un sort, en place une copie dans la main de son adversaire."
 			},
 			"health": 4,
 			"id": "EX1_100",
@@ -30638,6 +34296,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "Whenever a player casts a spell, put a copy into the other player’s hand.",
 			"type": "Minion"
 		},
 		{
@@ -30646,36 +34305,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Puissance du fauve"
+				"name": "Puissance du fauve",
+				"text": "<b>Choix des armes :</b>\ndonne à vos serviteurs +1/+1 ou invoque une panthère 3/2."
 			},
 			"id": "EX1_160",
 			"name": "Power of the Wild",
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Choose One</b> - Give your minions +1/+1; or Summon a 3/2 Panther.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "AT_082e.png",
 			"fr": {
-				"name": "Entraînement"
+				"name": "Entraînement",
+				"text": "Attaque augmentée."
 			},
 			"id": "AT_082e",
 			"name": "Training",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "AT_035t.png",
 			"cost": 0,
 			"fr": {
-				"name": "Embuscade !"
+				"name": "Embuscade !",
+				"text": "Quand vous piochez cette carte, invoque un nérubien 4/4 pour votre adversaire. Vous piochez une carte."
 			},
 			"id": "AT_035t",
 			"name": "Ambush!",
 			"playerClass": "Rogue",
 			"set": "Tgt",
+			"text": "When you draw this, summon a 4/4 Nerubian for your opponent. Draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -30684,48 +34349,56 @@ var parseCardsText = {
 			"cardImage": "KARA_08_06.png",
 			"cost": 1,
 			"fr": {
-				"name": "Portail bleu"
+				"name": "Portail bleu",
+				"text": "Le personnage dans le rayon bleu ne subit que 1_point de dégâts à la fois."
 			},
 			"health": 1,
 			"id": "KARA_08_06",
 			"name": "Blue Portal",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "The character in the blue beam only takes 1 damage at a time.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA10_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Mrglmrgl MRGL !"
+				"name": "Mrglmrgl MRGL !",
+				"text": "<b>Pouvoir héroïque</b>\nVous piochez des cartes jusqu’à en avoir autant en main que votre adversaire."
 			},
 			"id": "LOEA10_2",
 			"name": "Mrglmrgl MRGL!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Hero Power</b>\nDraw cards until you have as many in hand as your opponent.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "CS2_005o.png",
 			"fr": {
-				"name": "Griffe"
+				"name": "Griffe",
+				"text": "+2 ATQ pendant ce tour."
 			},
 			"id": "CS2_005o",
 			"name": "Claw",
 			"playerClass": "Druid",
 			"set": "Core",
+			"text": "+2 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA02_10.png",
 			"cost": 0,
 			"fr": {
-				"name": "Vœu : compagnon"
+				"name": "Vœu : compagnon",
+				"text": "<b>Découvre</b> un compagnon."
 			},
 			"id": "LOEA02_10",
 			"name": "Wish for Companionship",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Discover</b> a Companion.",
 			"type": "Spell"
 		},
 		{
@@ -30733,25 +34406,29 @@ var parseCardsText = {
 			"cardImage": "LOEA01_11.png",
 			"cost": 0,
 			"fr": {
-				"name": "Baguette du Soleil"
+				"name": "Baguette du Soleil",
+				"text": "<b>Râle d’agonie :</b> remet cette carte à votre adversaire."
 			},
 			"health": 5,
 			"id": "LOEA01_11",
 			"name": "Rod of the Sun",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Deathrattle:</b> Surrender this to your opponent.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_041a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Sombres feux follets"
+				"name": "Sombres feux follets",
+				"text": "+5/+5 et <b>Provocation</b>."
 			},
 			"id": "GVG_041a",
 			"name": "Dark Wispers",
 			"playerClass": "Druid",
 			"set": "Gvg",
+			"text": "+5/+5 and <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -30761,7 +34438,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Champion de Mogor"
+				"name": "Champion de Mogor",
+				"text": "50% de chance d’attaquer le mauvais adversaire."
 			},
 			"health": 5,
 			"id": "AT_088",
@@ -30769,29 +34447,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "50% chance to attack the wrong enemy.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GAME_001.png",
 			"fr": {
-				"name": "Chance de la pièce"
+				"name": "Chance de la pièce",
+				"text": "Passer en second augmente vos points de vie."
 			},
 			"id": "GAME_001",
 			"name": "Luck of the Coin",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "Going second grants you increased Health.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA16_10.png",
 			"cost": 0,
 			"fr": {
-				"name": "Coupe de sang hakkari"
+				"name": "Coupe de sang hakkari",
+				"text": "Transforme un serviteur en un serpent de la fosse 2/1."
 			},
 			"id": "LOEA16_10",
 			"name": "Hakkari Blood Goblet",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Transform a minion into a 2/1 Pit Snake.",
 			"type": "Spell"
 		},
 		{
@@ -30801,7 +34484,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Robot de soins corrompu"
+				"name": "Robot de soins corrompu",
+				"text": "<b>Râle d’agonie :</b> rend 8 PV au héros adverse."
 			},
 			"health": 6,
 			"id": "OG_147",
@@ -30809,6 +34493,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Restore 8 Health to the enemy hero.",
 			"type": "Minion"
 		},
 		{
@@ -30816,7 +34501,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_27H.png",
 			"cost": 10,
 			"fr": {
-				"name": "La sentinelle d’acier"
+				"name": "La sentinelle d’acier",
+				"text": "Ce serviteur ne peut pas subir plus de 1 point de dégâts à la fois."
 			},
 			"health": 10,
 			"id": "LOEA16_27H",
@@ -30824,6 +34510,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "This minion can only take 1 damage at a time.",
 			"type": "Minion"
 		},
 		{
@@ -30832,13 +34519,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Tourbillon"
+				"name": "Tourbillon",
+				"text": "Inflige $1 |4(point,points) de dégâts à TOUS les serviteurs."
 			},
 			"id": "EX1_400",
 			"name": "Whirlwind",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Deal $1 damage to ALL minions.",
 			"type": "Spell"
 		},
 		{
@@ -30848,7 +34537,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Annonciatrice du mal"
+				"name": "Annonciatrice du mal",
+				"text": "<b>Cri de guerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 3,
 			"id": "OG_281",
@@ -30856,19 +34546,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Give your C'Thun +2/+2 <i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_012.png",
 			"cost": 0,
 			"fr": {
-				"name": "Bounce"
+				"name": "Bounce",
+				"text": "Return a minion to its owner's hand."
 			},
 			"id": "XXX_012",
 			"name": "Bounce",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Return a minion to its owner's hand.",
 			"type": "Spell"
 		},
 		{
@@ -30885,12 +34578,14 @@ var parseCardsText = {
 		{
 			"cardImage": "NEW1_024o.png",
 			"fr": {
-				"name": "Ordres de Vertepeau"
+				"name": "Ordres de Vertepeau",
+				"text": "+1/+1."
 			},
 			"id": "NEW1_024o",
 			"name": "Greenskin's Command",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -30910,13 +34605,15 @@ var parseCardsText = {
 			"cardImage": "NAX8_03.png",
 			"cost": 1,
 			"fr": {
-				"name": "Jeune recrue tenace"
+				"name": "Jeune recrue tenace",
+				"text": "<b>Râle d’agonie :</b> invoque une jeune recrue spectrale pour votre adversaire."
 			},
 			"health": 2,
 			"id": "NAX8_03",
 			"name": "Unrelenting Trainee",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Summon a Spectral Trainee for your opponent.",
 			"type": "Minion"
 		},
 		{
@@ -30924,7 +34621,8 @@ var parseCardsText = {
 			"cardImage": "NAX9_02.png",
 			"cost": 3,
 			"fr": {
-				"name": "Dame Blaumeux"
+				"name": "Dame Blaumeux",
+				"text": "Votre héros est <b>Insensible</b>."
 			},
 			"health": 7,
 			"id": "NAX9_02",
@@ -30932,6 +34630,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "Your hero is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
@@ -30941,7 +34640,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "N’Zoth le corrupteur"
+				"name": "N’Zoth le corrupteur",
+				"text": "<b>Cri de guerre :</b> invoque vos serviteurs avec <b>Râle d’agonie</b> morts pendant cette partie."
 			},
 			"health": 7,
 			"id": "OG_133",
@@ -30949,6 +34649,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Summon your <b>Deathrattle</b> minions that died this game.",
 			"type": "Minion"
 		},
 		{
@@ -30958,7 +34659,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Roi Krush"
+				"name": "Roi Krush",
+				"text": "<b>Charge</b>"
 			},
 			"health": 8,
 			"id": "EX1_543",
@@ -30966,30 +34668,35 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA09_4H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Aile noire"
+				"name": "Aile noire",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un draconien 5/4. Change de pouvoir héroïque."
 			},
 			"id": "BRMA09_4H",
 			"name": "Blackwing",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon a 5/4 Dragonkin. Get a new Hero Power.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "AT_132_MAGE.png",
 			"cost": 2,
 			"fr": {
-				"name": "Explosion de feu rang 2"
+				"name": "Explosion de feu rang 2",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts."
 			},
 			"id": "AT_132_MAGE",
 			"name": "Fireblast Rank 2",
 			"playerClass": "Mage",
 			"set": "Tgt",
+			"text": "<b>Hero Power</b>\nDeal $2 damage.",
 			"type": "Hero_power"
 		},
 		{
@@ -31007,12 +34714,14 @@ var parseCardsText = {
 		{
 			"cardImage": "EX1_509e.png",
 			"fr": {
-				"name": "Blarghghl"
+				"name": "Blarghghl",
+				"text": "Attaque augmentée."
 			},
 			"id": "EX1_509e",
 			"name": "Blarghghl",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -31037,7 +34746,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_19.png",
 			"cost": 5,
 			"fr": {
-				"name": "Écumeur du soleil Phaerix"
+				"name": "Écumeur du soleil Phaerix",
+				"text": "Ajoute une carte Bénédiction du soleil dans votre main à la fin de votre tour."
 			},
 			"health": 5,
 			"id": "LOEA16_19",
@@ -31045,29 +34755,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "At the end of your turn, add a Blessing of the Sun to your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX12_04.png",
 			"cost": 3,
 			"fr": {
-				"name": "Accès de rage"
+				"name": "Accès de rage",
+				"text": "Confère +6 ATQ à votre héros pendant ce tour."
 			},
 			"id": "NAX12_04",
 			"name": "Enrage",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Give your hero +6 Attack this turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_058e.png",
 			"fr": {
-				"name": "Weapon Nerf Enchant"
+				"name": "Weapon Nerf Enchant",
+				"text": "Red Sparkles!"
 			},
 			"id": "XXX_058e",
 			"name": "Weapon Nerf Enchant",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Red Sparkles!",
 			"type": "Enchantment"
 		},
 		{
@@ -31075,13 +34790,15 @@ var parseCardsText = {
 			"cardImage": "KARA_09_03a_heroic.png",
 			"cost": 1,
 			"fr": {
-				"name": "Diablotin dégoûtant"
+				"name": "Diablotin dégoûtant",
+				"text": "<b>Râle d’agonie_:</b> réinvoque ce serviteur et Malsabot perd 2_PV."
 			},
 			"health": 2,
 			"id": "KARA_09_03a_heroic",
 			"name": "Icky Imp",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Deathrattle:</b> Resummon this minion and Illhoof loses 2 Health.",
 			"type": "Minion"
 		},
 		{
@@ -31091,7 +34808,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Clerc de Comté-du-Nord"
+				"name": "Clerc de Comté-du-Nord",
+				"text": "Vous piochez une carte chaque fois qu’un serviteur est soigné."
 			},
 			"health": 3,
 			"id": "CS2_235",
@@ -31099,6 +34817,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Whenever a minion is healed, draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -31117,12 +34836,14 @@ var parseCardsText = {
 			"cardImage": "BRMA10_3.png",
 			"cost": 1,
 			"fr": {
-				"name": "La colonie"
+				"name": "La colonie",
+				"text": "<b>Pouvoir héroïque</b>\nConfère +1 PV à tous les œufs corrompus, puis en invoque un."
 			},
 			"id": "BRMA10_3",
 			"name": "The Rookery",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nGive all Corrupted Eggs +1 Health, then summon one.",
 			"type": "Hero_power"
 		},
 		{
@@ -31130,7 +34851,8 @@ var parseCardsText = {
 			"cardImage": "KARA_13_17.png",
 			"cost": 2,
 			"fr": {
-				"name": "Mark Marchelune"
+				"name": "Mark Marchelune",
+				"text": "Les portails coûtent (1)_|4(cristal,cristaux) de moins.\n<i>Ne compte pas comme un serviteur.</i>"
 			},
 			"health": 2,
 			"id": "KARA_13_17",
@@ -31138,6 +34860,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Portals cost (1) less. \n<i>Does not count as a minion.</i>",
 			"type": "Minion"
 		},
 		{
@@ -31157,12 +34880,14 @@ var parseCardsText = {
 		{
 			"cardImage": "BRM_004e.png",
 			"fr": {
-				"name": "Endurance du Crépuscule"
+				"name": "Endurance du Crépuscule",
+				"text": "Vie augmentée."
 			},
 			"id": "BRM_004e",
 			"name": "Twilight Endurance",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Increased Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -31171,13 +34896,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Javelot de glace"
+				"name": "Javelot de glace",
+				"text": "<b>Gèle</b> un personnage. S’il est déjà <b>gelé</b>, inflige $4 |4(point,points) de dégâts à la place."
 			},
 			"id": "CS2_031",
 			"name": "Ice Lance",
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Freeze</b> a character. If it was already <b>Frozen</b>, deal $4 damage instead.",
 			"type": "Spell"
 		},
 		{
@@ -31186,26 +34913,30 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Résister aux ténèbres"
+				"name": "Résister aux ténèbres",
+				"text": "Invoque cinq recrues de la Main\nd’argent 1/1."
 			},
 			"id": "OG_273",
 			"name": "Stand Against Darkness",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Summon five 1/1 Silver Hand Recruits.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "CS2_056.png",
 			"cost": 2,
 			"fr": {
-				"name": "Connexion"
+				"name": "Connexion",
+				"text": "<b>Pouvoir héroïque</b>\nSubit $2 points de dégâts. Vous piochez une carte."
 			},
 			"id": "CS2_056",
 			"name": "Life Tap",
 			"playerClass": "Warlock",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Hero Power</b>\nDraw a card and take $2 damage.",
 			"type": "Hero_power"
 		},
 		{
@@ -31214,36 +34945,42 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 2,
 			"fr": {
-				"name": "Lame runique massive"
+				"name": "Lame runique massive",
+				"text": "Inflige des dégâts doublés aux héros."
 			},
 			"id": "NAX7_04",
 			"name": "Massive Runeblade",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Deals double damage to heroes.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "NAX10_03H.png",
 			"cost": 4,
 			"fr": {
-				"name": "Frappe haineuse"
+				"name": "Frappe haineuse",
+				"text": "<b>Pouvoir héroïque</b>\nDétruit un serviteur."
 			},
 			"id": "NAX10_03H",
 			"name": "Hateful Strike",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDestroy a minion.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "NAX11_02H_2_TB.png",
 			"cost": 2,
 			"fr": {
-				"name": "Nuage empoisonné"
+				"name": "Nuage empoisonné",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 1 point de dégâts à\n tous les serviteurs adverses. Invoque une gelée si l’un d’eux meurt."
 			},
 			"id": "NAX11_02H_2_TB",
 			"name": "Poison Cloud",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Hero Power</b>\nDeal 1 damage to all enemy minions. If any die, summon a slime.",
 			"type": "Hero_power"
 		},
 		{
@@ -31253,7 +34990,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Traqueur lugubre"
+				"name": "Traqueur lugubre",
+				"text": "<b>Cri de guerre :</b> donne +1/+1 à tous les serviteurs avec <b>Râle d’agonie</b> dans votre main."
 			},
 			"health": 2,
 			"id": "OG_292",
@@ -31261,28 +34999,33 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Give all <b>Deathrattle</b> minions in your hand +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_573ae.png",
 			"fr": {
-				"name": "Faveur du demi-dieu"
+				"name": "Faveur du demi-dieu",
+				"text": "+2/+2."
 			},
 			"id": "EX1_573ae",
 			"name": "Demigod's Favor",
 			"playerClass": "Druid",
 			"set": "Expert1",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_188o.png",
 			"fr": {
-				"name": "« Inspiré »"
+				"name": "« Inspiré »",
+				"text": "Ce serviteur a +2 ATQ pendant ce tour."
 			},
 			"id": "CS2_188o",
 			"name": "'Inspired'",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "This minion has +2 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -31292,7 +35035,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Maître des rouages"
+				"name": "Maître des rouages",
+				"text": "A +2 ATQ tant que vous avez un Méca."
 			},
 			"health": 2,
 			"id": "GVG_013",
@@ -31300,6 +35044,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Has +2 Attack while you have a Mech.",
 			"type": "Minion"
 		},
 		{
@@ -31307,7 +35052,8 @@ var parseCardsText = {
 			"cardImage": "CRED_28.png",
 			"cost": 4,
 			"fr": {
-				"name": "He-Rim Woo"
+				"name": "He-Rim Woo",
+				"text": "<b>Choix des armes :</b> donne un coup dans le bras, offre une friandise ou fait un gros câlin."
 			},
 			"health": 3,
 			"id": "CRED_28",
@@ -31315,6 +35061,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Choose One</b> - Punch an arm; Offer a treat; or Give a big hug.",
 			"type": "Minion"
 		},
 		{
@@ -31335,34 +35082,40 @@ var parseCardsText = {
 			"cardImage": "NAX13_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Changement de polarité"
+				"name": "Changement de polarité",
+				"text": "<b>Pouvoir héroïque</b>\nÉchange l’Attaque et la Vie de tous les serviteurs."
 			},
 			"id": "NAX13_02",
 			"name": "Polarity Shift",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nSwap the Attack and Health of all minions.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "KAR_A02_09eH.png",
 			"fr": {
-				"name": "Table mise"
+				"name": "Table mise",
+				"text": "+2/+2."
 			},
 			"id": "KAR_A02_09eH",
 			"name": "Table Set",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "EX1_393e.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+3 ATQ."
 			},
 			"id": "EX1_393e",
 			"name": "Enraged",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -31370,23 +35123,27 @@ var parseCardsText = {
 			"cardImage": "OG_080c.png",
 			"cost": 1,
 			"fr": {
-				"name": "Toxine de chardon sanglant"
+				"name": "Toxine de chardon sanglant",
+				"text": "Renvoie un serviteur allié dans votre main.\nIl coûte (2) |4(cristal,cristaux) de moins."
 			},
 			"id": "OG_080c",
 			"name": "Bloodthistle Toxin",
 			"playerClass": "Rogue",
 			"set": "Og",
+			"text": "Return a friendly minion to your hand.\nIt costs (2) less.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KAR_A02_09e.png",
 			"fr": {
-				"name": "Table mise"
+				"name": "Table mise",
+				"text": "+1/+1."
 			},
 			"id": "KAR_A02_09e",
 			"name": "Table Set",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -31395,46 +35152,54 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Siphonner l’âme"
+				"name": "Siphonner l’âme",
+				"text": "Détruit un serviteur. Rend #3 PV à votre héros."
 			},
 			"id": "EX1_309",
 			"name": "Siphon Soul",
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Destroy a minion. Restore #3 Health to your hero.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "GVG_030ae.png",
 			"fr": {
-				"name": "Mode Attaque"
+				"name": "Mode Attaque",
+				"text": "+1 ATQ."
 			},
 			"id": "GVG_030ae",
 			"name": "Attack Mode",
 			"playerClass": "Druid",
 			"set": "Gvg",
+			"text": "+1 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "EX1_414e.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+6 ATQ."
 			},
 			"id": "EX1_414e",
 			"name": "Enraged",
 			"playerClass": "Warrior",
 			"set": "Expert1",
+			"text": "+6 Attack",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "AT_121e.png",
 			"fr": {
-				"name": "Ego énorme"
+				"name": "Ego énorme",
+				"text": "Caractéristiques augmentées."
 			},
 			"id": "AT_121e",
 			"name": "Huge Ego",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "Increased stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -31442,24 +35207,28 @@ var parseCardsText = {
 			"cardImage": "KARA_04_02hp.png",
 			"cost": 0,
 			"fr": {
-				"name": "Tornade"
+				"name": "Tornade",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 100 points de dégâts. Ne peut pas être utilisé si Dorothée est en vie."
 			},
 			"id": "KARA_04_02hp",
 			"name": "Twister",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "<b>Hero Power</b>\nDeal 100 damage. Can't be used if Dorothee is alive.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "DS1_175o.png",
 			"fr": {
-				"name": "Hurlement furieux"
+				"name": "Hurlement furieux",
+				"text": "Le loup des bois confère +1 ATQ à cette Bête."
 			},
 			"id": "DS1_175o",
 			"name": "Furious Howl",
 			"playerClass": "Hunter",
 			"set": "Core",
+			"text": "This Beast has +1 Attack from Timber Wolf.",
 			"type": "Enchantment"
 		},
 		{
@@ -31491,7 +35260,8 @@ var parseCardsText = {
 			"cardImage": "BRMA14_3.png",
 			"cost": 0,
 			"fr": {
-				"name": "Arcanotron"
+				"name": "Arcanotron",
+				"text": "Chaque joueur a <b>+2 aux dégâts des sorts</b>."
 			},
 			"health": 2,
 			"id": "BRMA14_3",
@@ -31500,6 +35270,7 @@ var parseCardsText = {
 			"rarity": "Legendary",
 			"set": "Brm",
 			"spellDamage": 2,
+			"text": "Both players have <b>Spell Damage +2</b>.",
 			"type": "Minion"
 		},
 		{
@@ -31507,23 +35278,27 @@ var parseCardsText = {
 			"cardImage": "KARA_07_07.png",
 			"cost": 3,
 			"fr": {
-				"name": "Méca détraqué !"
+				"name": "Méca détraqué !",
+				"text": "Invoque un Méca aléatoire."
 			},
 			"id": "KARA_07_07",
 			"name": "Haywire Mech!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon a random Mech.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NEW1_027e.png",
 			"fr": {
-				"name": "Yarrr !"
+				"name": "Yarrr !",
+				"text": "Capitaine des mers du Sud confère +1/+1."
 			},
 			"id": "NEW1_027e",
 			"name": "Yarrr!",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "Southsea Captain is granting +1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -31541,12 +35316,14 @@ var parseCardsText = {
 		{
 			"cardImage": "LOE_017e.png",
 			"fr": {
-				"name": "Observé"
+				"name": "Observé",
+				"text": "Caractéristiques changées en 3/3."
 			},
 			"id": "LOE_017e",
 			"name": "Watched",
 			"playerClass": "Paladin",
 			"set": "Loe",
+			"text": "Stats changed to 3/3.",
 			"type": "Enchantment"
 		},
 		{
@@ -31557,7 +35334,8 @@ var parseCardsText = {
 			"cost": 4,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Garde de Lune-d’argent"
+				"name": "Garde de Lune-d’argent",
+				"text": "<b>Bouclier divin</b>"
 			},
 			"health": 3,
 			"id": "EX1_023",
@@ -31565,6 +35343,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -31574,7 +35353,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Expérimentateur gnome"
+				"name": "Expérimentateur gnome",
+				"text": "<b>Cri de guerre :</b> vous piochez une carte. Si c’est un serviteur, le transforme en poulet."
 			},
 			"health": 2,
 			"id": "GVG_092",
@@ -31582,6 +35362,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Draw a card. If it's a minion, transform it into a Chicken.",
 			"type": "Minion"
 		},
 		{
@@ -31591,7 +35372,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Seigneur de la mort"
+				"name": "Seigneur de la mort",
+				"text": "<b>Provocation. Râle d’agonie :</b> votre adversaire place un serviteur de son deck sur le champ de bataille."
 			},
 			"health": 8,
 			"id": "FP1_009",
@@ -31599,6 +35381,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Naxx",
+			"text": "<b>Taunt. Deathrattle:</b> Your opponent puts a minion from their deck into the battlefield.",
 			"type": "Minion"
 		},
 		{
@@ -31607,13 +35390,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Sombres feux follets"
+				"name": "Sombres feux follets",
+				"text": "<b>Choix des armes :</b> invoque 5 feux follets ou donne +5/+5 et <b>Provocation</b> à un serviteur."
 			},
 			"id": "GVG_041",
 			"name": "Dark Wispers",
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "<b>Choose One -</b> Summon 5 Wisps; or Give a minion +5/+5 and <b>Taunt</b>.",
 			"type": "Spell"
 		},
 		{
@@ -31623,7 +35408,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Élise Cherchétoile"
+				"name": "Élise Cherchétoile",
+				"text": "<b>Cri de guerre :</b> place Carte du singe doré dans votre deck."
 			},
 			"health": 5,
 			"id": "LOE_079",
@@ -31631,18 +35417,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "<b>Battlecry:</b> Shuffle the 'Map to the Golden Monkey'   into your deck.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA09_4.png",
 			"cost": 1,
 			"fr": {
-				"name": "Aile noire"
+				"name": "Aile noire",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un draconien 3/1. Change de pouvoir héroïque."
 			},
 			"id": "BRMA09_4",
 			"name": "Blackwing",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nSummon a 3/1 Dragonkin. Get a new Hero Power.",
 			"type": "Hero_power"
 		},
 		{
@@ -31651,13 +35440,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Intelligence des Arcanes"
+				"name": "Intelligence des Arcanes",
+				"text": "Vous piochez 2 cartes."
 			},
 			"id": "CS2_023",
 			"name": "Arcane Intellect",
 			"playerClass": "Mage",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Draw 2 cards.",
 			"type": "Spell"
 		},
 		{
@@ -31666,13 +35457,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Communion astrale"
+				"name": "Communion astrale",
+				"text": "Gagne 10 cristaux de mana. Vous défausse de votre main."
 			},
 			"id": "AT_043",
 			"name": "Astral Communion",
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Gain 10 Mana Crystals. Discard your hand.",
 			"type": "Spell"
 		},
 		{
@@ -31680,13 +35473,15 @@ var parseCardsText = {
 			"cardImage": "BRMC_89.png",
 			"cost": 2,
 			"fr": {
-				"name": "Cendres tourbillonnantes"
+				"name": "Cendres tourbillonnantes",
+				"text": "<b>Furie des vents</b>"
 			},
 			"health": 5,
 			"id": "BRMC_89",
 			"name": "Whirling Ash",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Windfury</b>",
 			"type": "Minion"
 		},
 		{
@@ -31696,7 +35491,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 9,
 			"fr": {
-				"name": "Mal’Ganis"
+				"name": "Mal’Ganis",
+				"text": "Vos autres démons ont +2/+2. Votre héros est <b>Insensible</b>."
 			},
 			"health": 7,
 			"id": "GVG_021",
@@ -31704,17 +35500,20 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "Your other Demons have +2/+2.\nYour hero is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_565o.png",
 			"fr": {
-				"name": "Langue de feu"
+				"name": "Langue de feu",
+				"text": "Le totem Langue de feu confère +2 ATQ."
 			},
 			"id": "EX1_565o",
 			"name": "Flametongue",
 			"playerClass": "Shaman",
 			"set": "Core",
+			"text": "+2 Attack from Flametongue Totem.",
 			"type": "Enchantment"
 		},
 		{
@@ -31724,7 +35523,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Seigneur des abîmes"
+				"name": "Seigneur des abîmes",
+				"text": "<b>Cri de guerre :</b> inflige 5 points de dégâts à votre héros."
 			},
 			"health": 6,
 			"id": "EX1_313",
@@ -31732,17 +35532,20 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Deal 5 damage to your hero.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA09_2eH.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+5 ATQ."
 			},
 			"id": "LOEA09_2eH",
 			"name": "Enraged",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "+5 Attack",
 			"type": "Enchantment"
 		},
 		{
@@ -31750,13 +35553,15 @@ var parseCardsText = {
 			"cardImage": "LOEA01_12h.png",
 			"cost": 3,
 			"fr": {
-				"name": "Hoplite tol’vir"
+				"name": "Hoplite tol’vir",
+				"text": "<b>Râle d’agonie :</b> inflige 5 points de dégâts aux deux héros."
 			},
 			"health": 5,
 			"id": "LOEA01_12h",
 			"name": "Tol'vir Hoplite",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Deathrattle:</b> Deal 5 damage to both heroes.",
 			"type": "Minion"
 		},
 		{
@@ -31779,12 +35584,14 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_086e.png",
 			"fr": {
-				"name": "Vilenie"
+				"name": "Vilenie",
+				"text": "Votre pouvoir héroïque coûte (5) cristaux de plus pendant ce tour."
 			},
 			"id": "AT_086e",
 			"name": "Villainy",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "Your Hero Power costs (5) more this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -31793,7 +35600,8 @@ var parseCardsText = {
 			"cost": 1,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Poulet à tête chercheuse"
+				"name": "Poulet à tête chercheuse",
+				"text": "Au début de votre tour, ce serviteur est détruit et vous piochez 3 cartes."
 			},
 			"health": 1,
 			"id": "Mekka1",
@@ -31801,6 +35609,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Promo",
+			"text": "At the start of your turn, destroy this minion and draw 3 cards.",
 			"type": "Minion"
 		},
 		{
@@ -31810,7 +35619,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Trogg mâcheroc mastoc"
+				"name": "Trogg mâcheroc mastoc",
+				"text": "Chaque fois que votre adversaire lance un sort, gagne +2 ATQ."
 			},
 			"health": 5,
 			"id": "GVG_068",
@@ -31818,6 +35628,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Whenever your opponent casts a spell, gain +2 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -31836,24 +35647,28 @@ var parseCardsText = {
 			"cardImage": "XXX_045.png",
 			"cost": 0,
 			"fr": {
-				"name": "Steal Card"
+				"name": "Steal Card",
+				"text": "Steal a random card from your opponent."
 			},
 			"id": "XXX_045",
 			"name": "Steal Card",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Steal a random card from your opponent.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_531e.png",
 			"fr": {
-				"name": "Bien nourri"
+				"name": "Bien nourri",
+				"text": "Les points d’Attaque et de Vie sont augmentés."
 			},
 			"id": "EX1_531e",
 			"name": "Well Fed",
 			"playerClass": "Hunter",
 			"set": "Expert1",
+			"text": "Increased Attack and Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -31861,7 +35676,8 @@ var parseCardsText = {
 			"cardImage": "CRED_04.png",
 			"cost": 1,
 			"fr": {
-				"name": "Steven Gabriel"
+				"name": "Steven Gabriel",
+				"text": "<b>Cri de guerre :</b> invoque une boisson à mousse."
 			},
 			"health": 3,
 			"id": "CRED_04",
@@ -31869,6 +35685,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Summon a frothy beverage.",
 			"type": "Minion"
 		},
 		{
@@ -31876,7 +35693,8 @@ var parseCardsText = {
 			"cardImage": "NEW1_034.png",
 			"cost": 3,
 			"fr": {
-				"name": "Souffleur"
+				"name": "Souffleur",
+				"text": "<b>Charge</b>"
 			},
 			"health": 2,
 			"id": "NEW1_034",
@@ -31884,6 +35702,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -31905,13 +35724,15 @@ var parseCardsText = {
 			"cardImage": "TB_Coopv3_100.png",
 			"cost": 3,
 			"fr": {
-				"name": "Guerrier écaille-de-dragon"
+				"name": "Guerrier écaille-de-dragon",
+				"text": "Chaque fois qu’un joueur cible ce serviteur avec un sort, ce joueur pioche une carte."
 			},
 			"health": 4,
 			"id": "TB_Coopv3_100",
 			"name": "Dragonscale Warrior",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Whenever any player targets this minion with a spell, that player draws a card.",
 			"type": "Minion"
 		},
 		{
@@ -31921,7 +35742,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Mini stoppe-sort"
+				"name": "Mini stoppe-sort",
+				"text": "Les serviteurs adjacents ne peuvent pas être la cible de sorts ou de pouvoirs héroïques."
 			},
 			"health": 5,
 			"id": "GVG_122",
@@ -31929,6 +35751,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Adjacent minions can't be targeted by spells or Hero Powers.",
 			"type": "Minion"
 		},
 		{
@@ -31938,7 +35761,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Sylvenier du Bosquet"
+				"name": "Sylvenier du Bosquet",
+				"text": "<b>Choix des armes :</b> donne à chaque joueur un cristal de mana ou chaque joueur pioche une carte."
 			},
 			"health": 4,
 			"id": "GVG_032",
@@ -31946,18 +35770,21 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Choose One -</b> Give each player a Mana Crystal; or Each player draws a card.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_KTRAF_101.png",
 			"cost": 8,
 			"fr": {
-				"name": "Appel des ténèbres"
+				"name": "Appel des ténèbres",
+				"text": "Invoque deux boss aléatoires de Naxxramas et déclenche leur <b>Cri de guerre</b>."
 			},
 			"id": "TB_KTRAF_101",
 			"name": "Darkness Calls",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Summon two random Naxxramas bosses and trigger their <b>Battlecries</b>.",
 			"type": "Spell"
 		},
 		{
@@ -31967,7 +35794,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Sir Finley Mrrgglton"
+				"name": "Sir Finley Mrrgglton",
+				"text": "<b>Cri de guerre : découvre</b> un nouveau pouvoir héroïque de base."
 			},
 			"health": 3,
 			"id": "LOE_076",
@@ -31975,6 +35803,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "<b>Battlecry: Discover</b> a new basic Hero Power.",
 			"type": "Minion"
 		},
 		{
@@ -31982,7 +35811,8 @@ var parseCardsText = {
 			"cardImage": "NEW1_033.png",
 			"cost": 3,
 			"fr": {
-				"name": "Leokk"
+				"name": "Leokk",
+				"text": "Vos autres serviteurs ont +1 ATQ."
 			},
 			"health": 4,
 			"id": "NEW1_033",
@@ -31990,17 +35820,20 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Your other minions have +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "OG_303e.png",
 			"fr": {
-				"name": "Dévotion de l’ensorceleur"
+				"name": "Dévotion de l’ensorceleur",
+				"text": "+1/+1."
 			},
 			"id": "OG_303e",
 			"name": "Sorcerous Devotion",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -32010,7 +35843,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Sanglier brocheroc"
+				"name": "Sanglier brocheroc",
+				"text": "<b>Charge</b>"
 			},
 			"health": 1,
 			"id": "CS2_171",
@@ -32018,6 +35852,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Charge</b>",
 			"type": "Minion"
 		},
 		{
@@ -32028,7 +35863,8 @@ var parseCardsText = {
 			"cost": 4,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Nain sombrefer"
+				"name": "Nain sombrefer",
+				"text": "<b>Cri de guerre :</b> donne +2 ATQ à un serviteur pendant ce tour."
 			},
 			"health": 4,
 			"id": "EX1_046",
@@ -32036,6 +35872,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give a minion +2 Attack this turn.",
 			"type": "Minion"
 		},
 		{
@@ -32055,7 +35892,8 @@ var parseCardsText = {
 			"cardImage": "BRMC_97.png",
 			"cost": 6,
 			"fr": {
-				"name": "Vaelastrasz"
+				"name": "Vaelastrasz",
+				"text": "Vos cartes coûtent (3) |4(cristal,cristaux) de moins."
 			},
 			"health": 7,
 			"id": "BRMC_97",
@@ -32063,6 +35901,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tb",
+			"text": "Your cards cost (3) less.",
 			"type": "Minion"
 		},
 		{
@@ -32080,12 +35919,14 @@ var parseCardsText = {
 			"cardImage": "LOEA05_03.png",
 			"cost": 0,
 			"fr": {
-				"name": "Trogg détester sorts !"
+				"name": "Trogg détester sorts !",
+				"text": "<b>Pouvoir héroïque passif</b> Les sorts adverses coûtent (2) |4(cristal,cristaux) de plus. Le pouvoir change au début de votre tour."
 			},
 			"id": "LOEA05_03",
 			"name": "Trogg Hate Spells!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\n Enemy spells cost (2) more. Swap at the start of your turn.",
 			"type": "Hero_power"
 		},
 		{
@@ -32117,13 +35958,15 @@ var parseCardsText = {
 			"cardImage": "XXX_051.png",
 			"cost": 0,
 			"fr": {
-				"name": "Make Immune"
+				"name": "Make Immune",
+				"text": "Permanently make a character <b>Immune</b>."
 			},
 			"id": "XXX_051",
 			"name": "Make Immune",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Permanently make a character <b>Immune</b>.",
 			"type": "Spell"
 		},
 		{
@@ -32132,13 +35975,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Dissipation de masse"
+				"name": "Dissipation de masse",
+				"text": "Réduit au <b>Silence</b> tous les serviteurs adverses. Vous piochez une carte."
 			},
 			"id": "EX1_626",
 			"name": "Mass Dispel",
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Silence</b> all enemy minions. Draw a card.",
 			"type": "Spell"
 		},
 		{
@@ -32146,13 +35991,15 @@ var parseCardsText = {
 			"cardImage": "TB_KaraPortals_003.png",
 			"cost": 3,
 			"fr": {
-				"name": "Élémentaire de fête"
+				"name": "Élémentaire de fête",
+				"text": "<b>Provocation.</b>\nSe déplace toujours en groupe_!"
 			},
 			"health": 2,
 			"id": "TB_KaraPortals_003",
 			"name": "Party Elemental",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Taunt.\n</b> Comes with a party!",
 			"type": "Minion"
 		},
 		{
@@ -32161,13 +36008,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 10,
 			"fr": {
-				"name": "Explosion pyrotechnique"
+				"name": "Explosion pyrotechnique",
+				"text": "Inflige $10 |4(point,points) de dégâts."
 			},
 			"id": "EX1_279",
 			"name": "Pyroblast",
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "Deal $10 damage.",
 			"type": "Spell"
 		},
 		{
@@ -32176,12 +36025,14 @@ var parseCardsText = {
 			"cost": 3,
 			"durability": 3,
 			"fr": {
-				"name": "Atiesh"
+				"name": "Atiesh",
+				"text": "Après que vous avez lancé un sort, invoque un serviteur aléatoire de même coût. Perd 1_point de durabilité."
 			},
 			"id": "KAR_097t",
 			"name": "Atiesh",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "[x]After you cast a spell,\nsummon a random\nminion of that Cost.\nLose 1 Durability.",
 			"type": "Weapon"
 		},
 		{
@@ -32189,13 +36040,15 @@ var parseCardsText = {
 			"cardImage": "TB_Coopv3_009t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Rune explosive"
+				"name": "Rune explosive",
+				"text": "Au début de votre tour, explose et inflige 9 points de dégâts à votre héros."
 			},
 			"health": 3,
 			"id": "TB_Coopv3_009t",
 			"name": "Explosive Rune",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "At the start of your turn, this explodes, dealing 9 damage to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -32218,7 +36071,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Maître de l’évolution"
+				"name": "Maître de l’évolution",
+				"text": "<b>Cri de guerre :</b> transforme un serviteur allié en un serviteur aléatoire coûtant\n(1) |4(cristal,cristaux) de plus."
 			},
 			"health": 5,
 			"id": "OG_328",
@@ -32226,6 +36080,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Transform a friendly minion into a random one that costs (1) more.",
 			"type": "Minion"
 		},
 		{
@@ -32234,24 +36089,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Tir des Arcanes"
+				"name": "Tir des Arcanes",
+				"text": "Inflige $2 |4(point,points) de dégâts."
 			},
 			"id": "DS1_185",
 			"name": "Arcane Shot",
 			"playerClass": "Hunter",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $2 damage.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_MP_01e.png",
 			"fr": {
-				"name": "Chargez !"
+				"name": "Chargez !",
+				"text": "A <b>Charge</b>."
 			},
 			"id": "TB_MP_01e",
 			"name": "Charge!",
 			"playerClass": "Warrior",
 			"set": "Tb",
+			"text": "Has <b>Charge</b>",
 			"type": "Enchantment"
 		},
 		{
@@ -32261,7 +36120,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Rejeton de N’Zoth"
+				"name": "Rejeton de N’Zoth",
+				"text": "<b>Râle d’agonie :</b> donne +1/+1 à vos serviteurs."
 			},
 			"health": 2,
 			"id": "OG_256",
@@ -32269,17 +36129,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Give your minions +1/+1.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMC_100e.png",
 			"fr": {
-				"name": "Bombe vivante"
+				"name": "Bombe vivante",
+				"text": "Inflige 5 points de dégâts de ce côté du plateau pendant le tour de Ragnaros."
 			},
 			"id": "BRMC_100e",
 			"name": "Living Bomb",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "On Ragnaros' turn, deal 5 damage to this side of the board.",
 			"type": "Enchantment"
 		},
 		{
@@ -32289,7 +36152,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Rageur du Magma"
+				"name": "Rageur du Magma",
+				"text": "<b>Cri de guerre :</b> gagne +3/+3 si votre main est vide."
 			},
 			"health": 4,
 			"id": "BRM_014",
@@ -32297,6 +36161,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> If your hand is empty, gain +3/+3.",
 			"type": "Minion"
 		},
 		{
@@ -32306,7 +36171,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Villageois possédé"
+				"name": "Villageois possédé",
+				"text": "<b>Râle d’agonie :</b> invoque une ombrebête 1/1."
 			},
 			"health": 1,
 			"id": "OG_241",
@@ -32314,17 +36180,20 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Summon a 1/1 Shadowbeast.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_027e.png",
 			"fr": {
-				"name": "Maître invocateur"
+				"name": "Maître invocateur",
+				"text": "Coûte (0) |4(cristal,cristaux)."
 			},
 			"id": "AT_027e",
 			"name": "Master Summoner",
 			"playerClass": "Warlock",
 			"set": "Tgt",
+			"text": "Costs (0).",
 			"type": "Enchantment"
 		},
 		{
@@ -32333,13 +36202,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_04.png",
 			"cost": 3,
 			"fr": {
-				"name": "Tour blanche"
+				"name": "Tour blanche",
+				"text": "<b>Attaque automatique_:</b> inflige 2 points de dégâts aux adversaires en face de ce serviteur."
 			},
 			"health": 6,
 			"id": "KAR_A10_04",
 			"name": "White Rook",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Auto-Attack:</b> Deal 2 damage to the enemies opposite this minion.",
 			"type": "Minion"
 		},
 		{
@@ -32349,7 +36220,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Garde funeste"
+				"name": "Garde funeste",
+				"text": "<b>Charge</b>. <b>Cri de guerre :</b> vous défausse de deux cartes aléatoires."
 			},
 			"health": 7,
 			"id": "EX1_310",
@@ -32357,6 +36229,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Charge</b>. <b>Battlecry:</b> Discard two random cards.",
 			"type": "Minion"
 		},
 		{
@@ -32376,36 +36249,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Veille solennelle"
+				"name": "Veille solennelle",
+				"text": "Vous piochez 2 cartes. Coûte (1) |4(cristal,cristaux) de mana de moins pour chaque serviteur mort pendant ce tour."
 			},
 			"id": "BRM_001",
 			"name": "Solemn Vigil",
 			"playerClass": "Paladin",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Draw 2 cards. Costs (1) less for each minion that died this turn.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "OG_271e.png",
 			"fr": {
-				"name": "Visage terrifiant"
+				"name": "Visage terrifiant",
+				"text": "Attaque augmentée."
 			},
 			"id": "OG_271e",
 			"name": "Terrifying Visage",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Attack increased.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KARA_08_05H.png",
 			"cost": 2,
 			"fr": {
-				"name": "Rugissement terrifiant"
+				"name": "Rugissement terrifiant",
+				"text": "Renvoie un serviteur adverse dans la main de votre adversaire."
 			},
 			"id": "KARA_08_05H",
 			"name": "Terrifying Roar",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Return an enemy minion to your opponent's hand.",
 			"type": "Spell"
 		},
 		{
@@ -32413,12 +36292,14 @@ var parseCardsText = {
 			"cardImage": "KARA_12_02.png",
 			"cost": 0,
 			"fr": {
-				"name": "Lignes telluriques"
+				"name": "Lignes telluriques",
+				"text": "<b>Pouvoir héroïque passif</b>\nLes deux héros ont <b>+3_aux Dégâts des sorts</b>."
 			},
 			"id": "KARA_12_02",
 			"name": "Ley Lines",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "[x]<b>Passive Hero Power</b>\nBoth players have\n<b>Spell Damage +3</b>.",
 			"type": "Hero_power"
 		},
 		{
@@ -32449,23 +36330,27 @@ var parseCardsText = {
 			"cardImage": "KARA_00_07.png",
 			"cost": 1,
 			"fr": {
-				"name": "Portail astral"
+				"name": "Portail astral",
+				"text": "Invoque un serviteur <b>légendaire</b> aléatoire."
 			},
 			"id": "KARA_00_07",
 			"name": "Astral Portal",
 			"playerClass": "Mage",
 			"set": "Kara",
+			"text": "Summon a random <b>Legendary</b> minion.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_295o.png",
 			"fr": {
-				"name": "Bloc de glace"
+				"name": "Bloc de glace",
+				"text": "Votre héros est <b>Insensible</b> pour ce tour."
 			},
 			"id": "EX1_295o",
 			"name": "Ice Block",
 			"playerClass": "Mage",
 			"set": "Expert1",
+			"text": "Your hero is <b>Immune</b> this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -32473,7 +36358,8 @@ var parseCardsText = {
 			"cardImage": "NAX15_05.png",
 			"cost": 0,
 			"fr": {
-				"name": "M. Bigglesworth"
+				"name": "M. Bigglesworth",
+				"text": "<i>Le chat-chat adoré de Kel’Thuzad.</i>"
 			},
 			"health": 1,
 			"id": "NAX15_05",
@@ -32481,18 +36367,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "<i>This is Kel'Thuzad's kitty.</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_CoOpv3_009.png",
 			"cost": 0,
 			"fr": {
-				"name": "Rune explosive"
+				"name": "Rune explosive",
+				"text": "Invoque une «_rune explosive_»."
 			},
 			"id": "TB_CoOpv3_009",
 			"name": "Explosive Rune",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Summon an 'Explosive Rune.'",
 			"type": "Spell"
 		},
 		{
@@ -32500,7 +36389,8 @@ var parseCardsText = {
 			"cardImage": "XXX_024.png",
 			"cost": 0,
 			"fr": {
-				"name": "Damage Reflector"
+				"name": "Damage Reflector",
+				"text": "Whenever this minion takes damage, deal 1 damage to ALL other characters."
 			},
 			"health": 10,
 			"id": "XXX_024",
@@ -32508,18 +36398,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Whenever this minion takes damage, deal 1 damage to ALL other characters.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_KTRAF_HP_RAF5.png",
 			"cost": 2,
 			"fr": {
-				"name": "Bâton de l’Origine"
+				"name": "Bâton de l’Origine",
+				"text": "Ajoute un serviteur légendaire aléatoire dans votre main. Il coûte (4) cristaux de moins."
 			},
 			"id": "TB_KTRAF_HP_RAF5",
 			"name": "Staff of Origination",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Add a random legendary minion to your hand. It costs (4) less.",
 			"type": "Hero_power"
 		},
 		{
@@ -32527,7 +36420,8 @@ var parseCardsText = {
 			"cardImage": "CRED_12.png",
 			"cost": 2,
 			"fr": {
-				"name": "Rachelle Davis"
+				"name": "Rachelle Davis",
+				"text": "<b>Cri de guerre :</b> pioche DEUX cartes. <i>Ce n’est pas un ingénieur novice.</i>"
 			},
 			"health": 2,
 			"id": "CRED_12",
@@ -32535,6 +36429,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Draw TWO cards. <i>She's not a novice engineer.</i>",
 			"type": "Minion"
 		},
 		{
@@ -32543,24 +36438,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Grimoire de cabaliste"
+				"name": "Grimoire de cabaliste",
+				"text": "Place 3 sorts de mage aléatoires dans votre main."
 			},
 			"id": "OG_090",
 			"name": "Cabalist's Tome",
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Add 3 random Mage spells to your hand.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_BOSS3e.png",
 			"fr": {
-				"name": "Assez !"
+				"name": "Assez !",
+				"text": "Nefarian est <b>Insensible</b> pendant ce tour."
 			},
 			"id": "TB_CoOpv3_BOSS3e",
 			"name": "Enough!",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Nefarian is <b>Immune</b> this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -32581,23 +36480,27 @@ var parseCardsText = {
 			"cardImage": "BRMA17_8H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Frappe de Nefarian"
+				"name": "Frappe de Nefarian",
+				"text": "<b>Pouvoir héroïque</b>\nNefarian fait pleuvoir le feu depuis les cieux !"
 			},
 			"id": "BRMA17_8H",
 			"name": "Nefarian Strikes!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nNefarian rains fire from above!",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "EX1_360e.png",
 			"fr": {
-				"name": "Humilité"
+				"name": "Humilité",
+				"text": "L’Attaque est passée à 1."
 			},
 			"id": "EX1_360e",
 			"name": "Humility",
 			"playerClass": "Paladin",
 			"set": "Core",
+			"text": "Attack has been changed to 1.",
 			"type": "Enchantment"
 		},
 		{
@@ -32607,7 +36510,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Senseï de fer"
+				"name": "Senseï de fer",
+				"text": "À la fin de votre tour, donne +2/+2 à un autre Méca allié."
 			},
 			"health": 2,
 			"id": "GVG_027",
@@ -32615,6 +36519,7 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "At the end of your turn, give another friendly Mech +2/+2.",
 			"type": "Minion"
 		},
 		{
@@ -32623,13 +36528,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Morsure"
+				"name": "Morsure",
+				"text": "Confère +4 ATQ au héros pendant ce tour et +4 Armure."
 			},
 			"id": "EX1_570",
 			"name": "Bite",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Give your hero +4 Attack this turn and 4 Armor.",
 			"type": "Spell"
 		},
 		{
@@ -32649,12 +36556,14 @@ var parseCardsText = {
 		{
 			"cardImage": "KAR_036e.png",
 			"fr": {
-				"name": "En train de manger"
+				"name": "En train de manger",
+				"text": "Vie augmentée."
 			},
 			"id": "KAR_036e",
 			"name": "Eating",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Increased Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -32673,23 +36582,27 @@ var parseCardsText = {
 			"cardImage": "XXX_054.png",
 			"cost": 0,
 			"fr": {
-				"name": "Weapon Buff"
+				"name": "Weapon Buff",
+				"text": "Give your Weapon +100/+100"
 			},
 			"id": "XXX_054",
 			"name": "Weapon Buff",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Give your Weapon +100/+100",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA16_8a.png",
 			"fr": {
-				"name": "Putréfié"
+				"name": "Putréfié",
+				"text": "Attaque et vie inversées."
 			},
 			"id": "LOEA16_8a",
 			"name": "Putressed",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Attack and Health swapped.",
 			"type": "Enchantment"
 		},
 		{
@@ -32698,13 +36611,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Faveur divine"
+				"name": "Faveur divine",
+				"text": "Vous piochez des cartes jusqu’à en avoir autant en main que votre adversaire."
 			},
 			"id": "EX1_349",
 			"name": "Divine Favor",
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Draw cards until you have as many in hand as your opponent.",
 			"type": "Spell"
 		},
 		{
@@ -32714,7 +36629,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Anomalus"
+				"name": "Anomalus",
+				"text": "<b>Râle d’agonie :</b> inflige\n8 points de dégâts à tous les serviteurs."
 			},
 			"health": 6,
 			"id": "OG_120",
@@ -32722,6 +36638,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Deathrattle:</b> Deal 8 damage to all minions.",
 			"type": "Minion"
 		},
 		{
@@ -32731,7 +36648,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Médecin du tournoi"
+				"name": "Médecin du tournoi",
+				"text": "<b>Exaltation :</b> rend 2 PV à votre héros."
 			},
 			"health": 8,
 			"id": "AT_091",
@@ -32739,6 +36657,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Inspire:</b> Restore 2 Health to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -32746,13 +36665,15 @@ var parseCardsText = {
 			"cardImage": "BRMC_84.png",
 			"cost": 5,
 			"fr": {
-				"name": "Lanceur de sorts draconien"
+				"name": "Lanceur de sorts draconien",
+				"text": "<b>Cri de guerre :</b> invoque deux dragonnets 2/2."
 			},
 			"health": 6,
 			"id": "BRMC_84",
 			"name": "Dragonkin Spellcaster",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "<b>Battlecry:</b> Summon two 2/2 Whelps.",
 			"type": "Minion"
 		},
 		{
@@ -32774,12 +36695,14 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_174e.png",
 			"fr": {
-				"name": "Sans-visage"
+				"name": "Sans-visage",
+				"text": "Copie des caractéristiques."
 			},
 			"id": "OG_174e",
 			"name": "Faceless",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "Copying stats.",
 			"type": "Enchantment"
 		},
 		{
@@ -32789,7 +36712,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Gargouille peau-de-pierre"
+				"name": "Gargouille peau-de-pierre",
+				"text": "Au début de votre tour, rend tous ses points de vie à ce serviteur."
 			},
 			"health": 4,
 			"id": "FP1_027",
@@ -32797,6 +36721,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "At the start of your turn, restore this minion to full Health.",
 			"type": "Minion"
 		},
 		{
@@ -32805,13 +36730,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Mot de l’ombre : Mort"
+				"name": "Mot de l’ombre : Mort",
+				"text": "Détruit un serviteur avec 5 Attaque ou plus."
 			},
 			"id": "EX1_622",
 			"name": "Shadow Word: Death",
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Destroy a minion with an Attack of 5 or more.",
 			"type": "Spell"
 		},
 		{
@@ -32821,7 +36748,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Gangrecanon"
+				"name": "Gangrecanon",
+				"text": "À la fin de votre tour, inflige 2 points de dégâts à un serviteur non Méca."
 			},
 			"health": 5,
 			"id": "GVG_020",
@@ -32829,6 +36757,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "At the end of your turn, deal 2 damage to a non-Mech minion.",
 			"type": "Minion"
 		},
 		{
@@ -32847,25 +36776,29 @@ var parseCardsText = {
 			"cardImage": "CS2_083b.png",
 			"cost": 2,
 			"fr": {
-				"name": "Maîtrise des dagues"
+				"name": "Maîtrise des dagues",
+				"text": "<b>Pouvoir héroïque</b>\nVous équipe d’une dague 1/2."
 			},
 			"id": "CS2_083b",
 			"name": "Dagger Mastery",
 			"playerClass": "Rogue",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Hero Power</b>\nEquip a 1/2 Dagger.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "BRMA12_2.png",
 			"cost": 0,
 			"fr": {
-				"name": "Affliction de l’espèce"
+				"name": "Affliction de l’espèce",
+				"text": "<b>Pouvoir héroïque</b>\nAjoute une carte Affliction de l’espèce dans la main de votre adversaire à la fin de votre tour."
 			},
 			"id": "BRMA12_2",
 			"name": "Brood Affliction",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nAt the end of your turn, add a Brood Affliction card to your opponent's hand.",
 			"type": "Hero_power"
 		},
 		{
@@ -32901,13 +36834,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Charpie"
+				"name": "Charpie",
+				"text": "Détruit un serviteur.\nAjoute un serviteur aléatoire dans la main de votre adversaire."
 			},
 			"id": "AT_044",
 			"name": "Mulch",
 			"playerClass": "Druid",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Destroy a minion.\nAdd a random minion to your opponent's hand.",
 			"type": "Spell"
 		},
 		{
@@ -32925,12 +36860,14 @@ var parseCardsText = {
 		{
 			"cardImage": "CS2_221e.png",
 			"fr": {
-				"name": "Ça pique !"
+				"name": "Ça pique !",
+				"text": "Le forgeron malveillant confère +2 ATQ."
 			},
 			"id": "CS2_221e",
 			"name": "Sharp!",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+2 Attack from Spiteful Smith.",
 			"type": "Enchantment"
 		},
 		{
@@ -32955,7 +36892,8 @@ var parseCardsText = {
 			"cardImage": "CS2_051.png",
 			"cost": 1,
 			"fr": {
-				"name": "Totem de griffes de pierre"
+				"name": "Totem de griffes de pierre",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "CS2_051",
@@ -32963,40 +36901,47 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_028t.png",
 			"cost": 0,
 			"fr": {
-				"name": "Pièce de Gallywix"
+				"name": "Pièce de Gallywix",
+				"text": "Gagne 1 cristal de mana pendant ce tour seulement. <i>(Ne déclenche pas le pouvoir de Gallywix.)</i>"
 			},
 			"id": "GVG_028t",
 			"name": "Gallywix's Coin",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Gain 1 Mana Crystal this turn only.\n<i>(Won't trigger Gallywix.)</i>",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TB_CoOpv3_BOSS4e.png",
 			"fr": {
-				"name": "Intimidé"
+				"name": "Intimidé",
+				"text": "Ne peut pas attaquer pendant ce tour."
 			},
 			"id": "TB_CoOpv3_BOSS4e",
 			"name": "Cowed",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Can't attack this turn.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA09_3aH.png",
 			"fr": {
-				"name": "Mort de faim"
+				"name": "Mort de faim",
+				"text": "A vraiment faim."
 			},
 			"id": "LOEA09_3aH",
 			"name": "Famished",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Quite Hungry.",
 			"type": "Enchantment"
 		},
 		{
@@ -33005,13 +36950,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Attaque d’ombre"
+				"name": "Attaque d’ombre",
+				"text": "Inflige $5 points de dégâts à un personnage indemne."
 			},
 			"id": "OG_176",
 			"name": "Shadow Strike",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "Deal $5 damage to an undamaged character.",
 			"type": "Spell"
 		},
 		{
@@ -33019,13 +36966,15 @@ var parseCardsText = {
 			"cardImage": "NEW1_040t.png",
 			"cost": 2,
 			"fr": {
-				"name": "Gnoll"
+				"name": "Gnoll",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 2,
 			"id": "NEW1_040t",
 			"name": "Gnoll",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -33033,7 +36982,8 @@ var parseCardsText = {
 			"cardImage": "CRED_39.png",
 			"cost": 2,
 			"fr": {
-				"name": "Ryan Chew"
+				"name": "Ryan Chew",
+				"text": "<b>Chew des armes :</b> chante au karaoké ou part à l’heure et en informe tout le monde."
 			},
 			"health": 3,
 			"id": "CRED_39",
@@ -33041,42 +36991,49 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Chews One</b> - Sing karaoke; or Leave on time and tell everyone about it.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GVG_043e.png",
 			"fr": {
-				"name": "Glaivezooka"
+				"name": "Glaivezooka",
+				"text": "+1 ATQ."
 			},
 			"id": "GVG_043e",
 			"name": "Glaivezooka",
 			"playerClass": "Hunter",
 			"set": "Gvg",
+			"text": "+1 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KAR_003b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Coalesce the Moonlight"
+				"name": "Coalesce the Moonlight",
+				"text": "Summon a 10/10 Lunar Elemental."
 			},
 			"id": "KAR_003b",
 			"name": "Coalesce the Moonlight",
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Kara_reserve",
+			"text": "Summon a 10/10 Lunar Elemental.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "LOEA06_04h.png",
 			"cost": 2,
 			"fr": {
-				"name": "Pulsion destructrice"
+				"name": "Pulsion destructrice",
+				"text": "Détruit toutes les statues. Inflige 3_points de dégâts pour chaque statue détruite."
 			},
 			"id": "LOEA06_04h",
 			"name": "Shattering Spree",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Destroy all Statues. For each destroyed, deal 3 damage.",
 			"type": "Spell"
 		},
 		{
@@ -33085,13 +37042,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Éviscération"
+				"name": "Éviscération",
+				"text": "Inflige $2 |4(point,points) de dégâts. <b>Combo :</b> inflige $4 |4(point,points) de dégâts à la place."
 			},
 			"id": "EX1_124",
 			"name": "Eviscerate",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Deal $2 damage. <b>Combo:</b> Deal $4 damage instead.",
 			"type": "Spell"
 		},
 		{
@@ -33115,36 +37074,42 @@ var parseCardsText = {
 		{
 			"cardImage": "GVG_048e.png",
 			"fr": {
-				"name": "Dents de métal"
+				"name": "Dents de métal",
+				"text": "+2 ATQ."
 			},
 			"id": "GVG_048e",
 			"name": "Metal Teeth",
 			"playerClass": "Hunter",
 			"set": "Gvg",
+			"text": "+2 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KARA_07_03heroic.png",
 			"cost": 1,
 			"fr": {
-				"name": "Murlocs en fuite !"
+				"name": "Murlocs en fuite !",
+				"text": "Invoque deux murlocs aléatoires."
 			},
 			"id": "KARA_07_03heroic",
 			"name": "Murlocs Escaping!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon two random Murlocs.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMA14_2H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Activer Arcanotron"
+				"name": "Activer Arcanotron",
+				"text": "<b>Pouvoir héroïque</b>\nActive Arcanotron !"
 			},
 			"id": "BRMA14_2H",
 			"name": "Activate Arcanotron",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Hero Power</b>\nActivate Arcanotron!",
 			"type": "Hero_power"
 		},
 		{
@@ -33152,13 +37117,15 @@ var parseCardsText = {
 			"cardImage": "XXX_099.png",
 			"cost": 0,
 			"fr": {
-				"name": "AI Helper Buddy"
+				"name": "AI Helper Buddy",
+				"text": "Get the AI ready for testing."
 			},
 			"health": 1,
 			"id": "XXX_099",
 			"name": "AI Helper Buddy",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Get the AI ready for testing.",
 			"type": "Minion"
 		},
 		{
@@ -33168,7 +37135,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Dragonnet du Crépuscule"
+				"name": "Dragonnet du Crépuscule",
+				"text": "<b>Cri de guerre :</b> gagne +2 PV si vous avez un Dragon en main."
 			},
 			"health": 1,
 			"id": "BRM_004",
@@ -33176,6 +37144,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +2 Health.",
 			"type": "Minion"
 		},
 		{
@@ -33184,13 +37153,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Régiment de bataille"
+				"name": "Régiment de bataille",
+				"text": "Invoque trois recrues de la Main d’argent 1/1. Équipe une arme 1/4."
 			},
 			"id": "GVG_061",
 			"name": "Muster for Battle",
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Summon three 1/1 Silver Hand Recruits. Equip a 1/4 Weapon.",
 			"type": "Spell"
 		},
 		{
@@ -33198,7 +37169,8 @@ var parseCardsText = {
 			"cardImage": "LOEA16_19H.png",
 			"cost": 10,
 			"fr": {
-				"name": "Écumeur du soleil Phaerix"
+				"name": "Écumeur du soleil Phaerix",
+				"text": "Vos autres serviteurs sont <b>Insensibles</b>."
 			},
 			"health": 10,
 			"id": "LOEA16_19H",
@@ -33206,6 +37178,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Loe",
+			"text": "Your other minions are <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
@@ -33213,35 +37186,41 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_09.png",
 			"cost": 4,
 			"fr": {
-				"name": "Mettre la table"
+				"name": "Mettre la table",
+				"text": "Donne +1/+1 à vos assiettes."
 			},
 			"id": "KAR_A02_09",
 			"name": "Set the Table",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Give your Plates +1/+1.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "GVG_022a.png",
 			"fr": {
-				"name": "Huile d’affûtage de Bricoleur"
+				"name": "Huile d’affûtage de Bricoleur",
+				"text": "+3 ATQ."
 			},
 			"id": "GVG_022a",
 			"name": "Tinker's Sharpsword Oil",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "+3 Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "NAX13_03.png",
 			"cost": 2,
 			"fr": {
-				"name": "Supercharge"
+				"name": "Supercharge",
+				"text": "Confère +2 PV à vos serviteurs."
 			},
 			"id": "NAX13_03",
 			"name": "Supercharge",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "Give your minions +2 Health.",
 			"type": "Spell"
 		},
 		{
@@ -33251,7 +37230,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 8,
 			"fr": {
-				"name": "Ragnaros, porteur de Lumière"
+				"name": "Ragnaros, porteur de Lumière",
+				"text": "À la fin de votre tour, rend 8 PV à un personnage allié blessé."
 			},
 			"health": 8,
 			"id": "OG_229",
@@ -33259,6 +37239,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "At the end of your turn, restore 8 Health to a damaged friendly character.",
 			"type": "Minion"
 		},
 		{
@@ -33268,7 +37249,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Raptor de monte"
+				"name": "Raptor de monte",
+				"text": "<b>Râle d’agonie :</b> invoque un serviteur aléatoire coûtant 1 cristal."
 			},
 			"health": 2,
 			"id": "LOE_050",
@@ -33276,19 +37258,22 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Deathrattle:</b> Summon a random 1-Cost minion.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "DS1h_292_H1.png",
 			"cost": 2,
 			"fr": {
-				"name": "Tir assuré"
+				"name": "Tir assuré",
+				"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts au héros adverse."
 			},
 			"id": "DS1h_292_H1",
 			"name": "Steady Shot",
 			"playerClass": "Hunter",
 			"rarity": "Free",
 			"set": "Hero_skins",
+			"text": "<b>Hero Power</b>\nDeal $2 damage to the enemy hero.",
 			"type": "Hero_power"
 		},
 		{
@@ -33298,7 +37283,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Trogg brisepierre"
+				"name": "Trogg brisepierre",
+				"text": "Chaque fois que votre adversaire lance un sort, gagne +1 ATQ."
 			},
 			"health": 3,
 			"id": "GVG_067",
@@ -33306,18 +37292,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "Whenever your opponent casts a spell, gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_059.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy Hero's Stuff"
+				"name": "Destroy Hero's Stuff",
+				"text": "Destroy target hero's hero power, weapon, deck, hand, minions, and secrets."
 			},
 			"id": "XXX_059",
 			"name": "Destroy Hero's Stuff",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Destroy target hero's hero power, weapon, deck, hand, minions, and secrets.",
 			"type": "Spell"
 		},
 		{
@@ -33340,23 +37329,27 @@ var parseCardsText = {
 		{
 			"cardImage": "GVG_041c.png",
 			"fr": {
-				"name": "Sombres feux follets"
+				"name": "Sombres feux follets",
+				"text": "+5/+5 et <b>Provocation</b>."
 			},
 			"id": "GVG_041c",
 			"name": "Dark Wispers",
 			"playerClass": "Druid",
 			"set": "Gvg",
+			"text": "+5/+5 and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TU4c_008e.png",
 			"fr": {
-				"name": "Puissance de Mukla"
+				"name": "Puissance de Mukla",
+				"text": "Le roi Mukla a +8 en Attaque pendant ce tour."
 			},
 			"id": "TU4c_008e",
 			"name": "Might of Mukla",
 			"playerClass": "Neutral",
 			"set": "Missions",
+			"text": "King Mukla has +8 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -33366,7 +37359,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Chasse-marée murloc"
+				"name": "Chasse-marée murloc",
+				"text": "<b>Cri de guerre :</b> invoque un éclaireur murloc 1/1."
 			},
 			"health": 1,
 			"id": "EX1_506",
@@ -33374,6 +37368,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Summon a 1/1 Murloc Scout.",
 			"type": "Minion"
 		},
 		{
@@ -33383,7 +37378,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Bling-o-tron 3000"
+				"name": "Bling-o-tron 3000",
+				"text": "<b>Cri de guerre :</b> équipe chaque joueur d’une arme aléatoire."
 			},
 			"health": 4,
 			"id": "GVG_119",
@@ -33391,6 +37387,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Equip a random weapon for each player.",
 			"type": "Minion"
 		},
 		{
@@ -33398,13 +37395,15 @@ var parseCardsText = {
 			"cardImage": "XXX_094.png",
 			"cost": 0,
 			"fr": {
-				"name": "AI Buddy - Blank Slate"
+				"name": "AI Buddy - Blank Slate",
+				"text": "Spawn into play to clear the entire board, both hands, both decks, all mana and all secrets."
 			},
 			"health": 1,
 			"id": "XXX_094",
 			"name": "AI Buddy - Blank Slate",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Spawn into play to clear the entire board, both hands, both decks, all mana and all secrets.",
 			"type": "Minion"
 		},
 		{
@@ -33412,23 +37411,27 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_11.png",
 			"cost": 5,
 			"fr": {
-				"name": "Lancer d’assiettes"
+				"name": "Lancer d’assiettes",
+				"text": "Invoque cinq assiettes_1/1."
 			},
 			"id": "KAR_A02_11",
 			"name": "Tossing Plates",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon five 1/1 Plates.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "OG_150e.png",
 			"fr": {
-				"name": "Enragé"
+				"name": "Enragé",
+				"text": "+2 ATQ."
 			},
 			"id": "OG_150e",
 			"name": "Enraged",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+2 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -33438,7 +37441,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Scarabée orné de joyaux"
+				"name": "Scarabée orné de joyaux",
+				"text": "<b>Cri de guerre : découvre</b>\nune carte à 3 cristaux de mana."
 			},
 			"health": 1,
 			"id": "LOE_029",
@@ -33446,6 +37450,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "<b>Battlecry: Discover</b> a\n3-Cost card.",
 			"type": "Minion"
 		},
 		{
@@ -33455,7 +37460,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Mage du Kirin Tor"
+				"name": "Mage du Kirin Tor",
+				"text": "<b>Cri de guerre :</b> le prochain <b>Secret</b> que vous jouez ce tour-ci coûte (0)."
 			},
 			"health": 3,
 			"id": "EX1_612",
@@ -33463,6 +37469,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> The next <b>Secret</b> you play this turn costs (0).",
 			"type": "Minion"
 		},
 		{
@@ -33472,7 +37479,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Voyant froide-lumière"
+				"name": "Voyant froide-lumière",
+				"text": "<b>Cri de guerre :</b> donne +2 PV à TOUS les autres murlocs."
 			},
 			"health": 3,
 			"id": "EX1_103",
@@ -33480,6 +37488,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give ALL other Murlocs +2 Health.",
 			"type": "Minion"
 		},
 		{
@@ -33489,7 +37498,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Wyrm de mana"
+				"name": "Wyrm de mana",
+				"text": "Chaque fois que vous lancez un sort, gagne +1 ATQ."
 			},
 			"health": 3,
 			"id": "NEW1_012",
@@ -33497,6 +37507,7 @@ var parseCardsText = {
 			"playerClass": "Mage",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Whenever you cast a spell, gain +1 Attack.",
 			"type": "Minion"
 		},
 		{
@@ -33506,7 +37517,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Aspirante de Darnassus"
+				"name": "Aspirante de Darnassus",
+				"text": "<b>Cri de guerre :</b> gagne un cristal de mana vide.\n<b>Râle d’agonie :</b> perd un cristal de mana."
 			},
 			"health": 3,
 			"id": "AT_038",
@@ -33514,18 +37526,21 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Gain an empty Mana Crystal.\n<b>Deathrattle:</b> Lose a Mana Crystal.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "NAX6_02H.png",
 			"cost": 0,
 			"fr": {
-				"name": "Aura nécrotique"
+				"name": "Aura nécrotique",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts au héros adverse."
 			},
 			"id": "NAX6_02H",
 			"name": "Necrotic Aura",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 3 damage to the enemy hero.",
 			"type": "Hero_power"
 		},
 		{
@@ -33535,7 +37550,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Roi Mukla"
+				"name": "Roi Mukla",
+				"text": "<b>Cri de guerre :</b> donne 2 bananes à votre adversaire."
 			},
 			"health": 5,
 			"id": "EX1_014",
@@ -33543,6 +37559,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Give your opponent 2 Bananas.",
 			"type": "Minion"
 		},
 		{
@@ -33552,7 +37569,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 1,
 			"fr": {
-				"name": "Tisseuse"
+				"name": "Tisseuse",
+				"text": "<b>Râle d’agonie :</b> ajoute une carte Bête aléatoire dans votre main."
 			},
 			"health": 1,
 			"id": "FP1_011",
@@ -33560,40 +37578,47 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> Add a random Beast card to your hand.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "PRO_001c.png",
 			"cost": 4,
 			"fr": {
-				"name": "Puissance de la Horde"
+				"name": "Puissance de la Horde",
+				"text": "Invoque un guerrier de la Horde aléatoire."
 			},
 			"id": "PRO_001c",
 			"name": "Power of the Horde",
 			"playerClass": "Neutral",
 			"set": "Promo",
+			"text": "Summon a random Horde Warrior.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_382e.png",
 			"fr": {
-				"name": "Du calme !"
+				"name": "Du calme !",
+				"text": "L’Attaque est passée à 1."
 			},
 			"id": "EX1_382e",
 			"name": "Stand Down!",
 			"playerClass": "Paladin",
 			"set": "Expert1",
+			"text": "Attack changed to 1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "CS2_181e.png",
 			"fr": {
-				"name": "En pleine forme"
+				"name": "En pleine forme",
+				"text": "Ce serviteur a +2 ATQ."
 			},
 			"id": "CS2_181e",
 			"name": "Full Strength",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "This minion has +2 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -33603,7 +37628,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Destrier de l’effroi"
+				"name": "Destrier de l’effroi",
+				"text": "<b>Râle d’agonie :</b> invoque un destrier de l’effroi."
 			},
 			"health": 1,
 			"id": "AT_019",
@@ -33611,6 +37637,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Deathrattle:</b> Summon a Dreadsteed.",
 			"type": "Minion"
 		},
 		{
@@ -33619,37 +37646,43 @@ var parseCardsText = {
 			"cardImage": "KAR_A10_06.png",
 			"cost": 3,
 			"fr": {
-				"name": "Fou noir"
+				"name": "Fou noir",
+				"text": "<b>Attaque automatique_:</b> rend 2_PV aux serviteurs adjacents."
 			},
 			"health": 6,
 			"id": "KAR_A10_06",
 			"name": "Black Bishop",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "<b>Auto-Attack:</b> Restore 2 Health to adjacent minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TU4d_003.png",
 			"cost": 2,
 			"fr": {
-				"name": "Coup de fusil"
+				"name": "Coup de fusil",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 1 point de dégâts."
 			},
 			"id": "TU4d_003",
 			"name": "Shotgun Blast",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "<b>Hero Power</b>\nDeal 1 damage.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "GAME_003.png",
 			"fr": {
-				"name": "Vengeance de la pièce"
+				"name": "Vengeance de la pièce",
+				"text": "Passer en second renforce votre premier serviteur."
 			},
 			"id": "GAME_003",
 			"name": "Coin's Vengeance",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "Going second makes your first minion stronger.",
 			"type": "Enchantment"
 		},
 		{
@@ -33657,7 +37690,8 @@ var parseCardsText = {
 			"cardImage": "TU4f_007.png",
 			"cost": 1,
 			"fr": {
-				"name": "Singe cinglé"
+				"name": "Singe cinglé",
+				"text": "<b>Cri de guerre :</b> lance des bananes."
 			},
 			"health": 2,
 			"id": "TU4f_007",
@@ -33665,19 +37699,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "<b>Battlecry:</b> Throw Bananas.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_052.png",
 			"cost": 0,
 			"fr": {
-				"name": "Grant Mega-Windfury"
+				"name": "Grant Mega-Windfury",
+				"text": "Give a minion <b>Mega-Windfury</b>."
 			},
 			"id": "XXX_052",
 			"name": "Grant Mega-Windfury",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Give a minion <b>Mega-Windfury</b>.",
 			"type": "Spell"
 		},
 		{
@@ -33687,7 +37724,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Prophète du Cercle terrestre"
+				"name": "Prophète du Cercle terrestre",
+				"text": "<b>Cri de guerre :</b> rend 3 points de vie."
 			},
 			"health": 3,
 			"id": "CS2_117",
@@ -33695,6 +37733,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Restore 3 Health.",
 			"type": "Minion"
 		},
 		{
@@ -33716,13 +37755,15 @@ var parseCardsText = {
 			"cardImage": "XXX_107.png",
 			"cost": 0,
 			"fr": {
-				"name": "Set Health to 1"
+				"name": "Set Health to 1",
+				"text": "Set a character's health to 1, and remove all armour."
 			},
 			"id": "XXX_107",
 			"name": "Set Health to 1",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Set a character's health to 1, and remove all armour.",
 			"type": "Spell"
 		},
 		{
@@ -33731,13 +37772,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Flamme interdite"
+				"name": "Flamme interdite",
+				"text": "Dépense tous vos cristaux de mana. Inflige l’équivalent sous forme de dégâts à un serviteur."
 			},
 			"id": "OG_086",
 			"name": "Forbidden Flame",
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Spend all your Mana. Deal that much damage to a minion.",
 			"type": "Spell"
 		},
 		{
@@ -33747,7 +37790,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Troggzor le Terreminator"
+				"name": "Troggzor le Terreminator",
+				"text": "Chaque fois que votre adversaire lance un sort, invoque un trogg mâcheroc mastoc."
 			},
 			"health": 6,
 			"id": "GVG_118",
@@ -33755,40 +37799,47 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Gvg",
+			"text": "Whenever your opponent casts a spell, summon a Burly Rockjaw Trogg.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_117e.png",
 			"fr": {
-				"name": "Cérémonie"
+				"name": "Cérémonie",
+				"text": "+2/+2."
 			},
 			"id": "AT_117e",
 			"name": "Ceremony",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "KAR_114e.png",
 			"fr": {
-				"name": "Impression incroyable"
+				"name": "Impression incroyable",
+				"text": "Attaque et Vie portées à 1."
 			},
 			"id": "KAR_114e",
 			"name": "Incredible Impression",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Attack and Health set to 1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_CoOpBossSpell_4.png",
 			"cost": 0,
 			"fr": {
-				"name": "Suralimenter"
+				"name": "Suralimenter",
+				"text": "Gagne 2 ATQ."
 			},
 			"id": "TB_CoOpBossSpell_4",
 			"name": "Overclock",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Gain 2 Attack.",
 			"type": "Spell"
 		},
 		{
@@ -33798,7 +37849,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Psych-o-tron"
+				"name": "Psych-o-tron",
+				"text": "<b>Provocation</b>\n<b>Bouclier divin</b>"
 			},
 			"health": 4,
 			"id": "OG_145",
@@ -33806,6 +37858,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Taunt</b>\n<b>Divine Shield</b>",
 			"type": "Minion"
 		},
 		{
@@ -33828,7 +37881,8 @@ var parseCardsText = {
 			"cardImage": "TU4c_003.png",
 			"cost": 0,
 			"fr": {
-				"name": "Tonneau"
+				"name": "Tonneau",
+				"text": "Il y a quelque chose dans ce tonneau ?"
 			},
 			"health": 2,
 			"id": "TU4c_003",
@@ -33836,6 +37890,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Missions",
+			"text": "Is something in this barrel?",
 			"type": "Minion"
 		},
 		{
@@ -33845,7 +37900,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Chevalier des étendues sauvages"
+				"name": "Chevalier des étendues sauvages",
+				"text": "Chaque fois que vous invoquez une Bête, réduit le coût de cette carte de (1) |4(cristal,cristaux)."
 			},
 			"health": 6,
 			"id": "AT_041",
@@ -33853,6 +37909,7 @@ var parseCardsText = {
 			"playerClass": "Druid",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Whenever you summon a Beast, reduce the Cost of this card by (1).",
 			"type": "Minion"
 		},
 		{
@@ -33873,23 +37930,27 @@ var parseCardsText = {
 			"cost": 1,
 			"durability": 2,
 			"fr": {
-				"name": "Lance rare"
+				"name": "Lance rare",
+				"text": "Gagne +1/+1 chaque fois que votre adversaire joue une carte rare."
 			},
 			"id": "LOEA09_4H",
 			"name": "Rare Spear",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Whenever your opponent plays a Rare card, gain +1/+1.",
 			"type": "Weapon"
 		},
 		{
 			"cardImage": "GVG_011a.png",
 			"fr": {
-				"name": "Rayon réducteur"
+				"name": "Rayon réducteur",
+				"text": "-2 ATQ pendant ce tour."
 			},
 			"id": "GVG_011a",
 			"name": "Shrink Ray",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "-2 Attack this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -33899,7 +37960,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Djinn des zéphirs"
+				"name": "Djinn des zéphirs",
+				"text": "Lorsque vous lancez un sort sur un autre serviteur allié, en lance une copie sur le djinn."
 			},
 			"health": 6,
 			"id": "LOE_053",
@@ -33907,6 +37969,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Loe",
+			"text": "After you cast a spell on another friendly minion, cast a copy of it on this one.",
 			"type": "Minion"
 		},
 		{
@@ -33930,13 +37993,15 @@ var parseCardsText = {
 			"cardImage": "XXX_999_Crash.png",
 			"cost": 0,
 			"fr": {
-				"name": "Crash the server"
+				"name": "Crash the server",
+				"text": "Crash the server"
 			},
 			"id": "XXX_999_Crash",
 			"name": "Crash the server",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Crash the server",
 			"type": "Spell"
 		},
 		{
@@ -33947,7 +38012,8 @@ var parseCardsText = {
 			"cost": 2,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Géomancien kobold"
+				"name": "Géomancien kobold",
+				"text": "<b>Dégâts des sorts : +1</b>"
 			},
 			"health": 2,
 			"id": "CS2_142",
@@ -33956,6 +38022,7 @@ var parseCardsText = {
 			"rarity": "Common",
 			"set": "Core",
 			"spellDamage": 1,
+			"text": "<b>Spell Damage +1</b>",
 			"type": "Minion"
 		},
 		{
@@ -33965,7 +38032,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Tricheur borgne"
+				"name": "Tricheur borgne",
+				"text": "Chaque fois que vous jouez un pirate, gagne <b>Camouflage</b>."
 			},
 			"health": 1,
 			"id": "GVG_025",
@@ -33973,17 +38041,20 @@ var parseCardsText = {
 			"playerClass": "Rogue",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Whenever you summon a Pirate, gain <b>Stealth</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KAR_A02_06e2.png",
 			"fr": {
-				"name": "Rempli"
+				"name": "Rempli",
+				"text": "+2/+2."
 			},
 			"id": "KAR_A02_06e2",
 			"name": "Filled Up",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "+2/+2.",
 			"type": "Enchantment"
 		},
 		{
@@ -33991,7 +38062,8 @@ var parseCardsText = {
 			"cardImage": "NAX9_02H.png",
 			"cost": 3,
 			"fr": {
-				"name": "Dame Blaumeux"
+				"name": "Dame Blaumeux",
+				"text": "Votre héros est <b>Insensible</b>."
 			},
 			"health": 7,
 			"id": "NAX9_02H",
@@ -33999,6 +38071,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "Your hero is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
@@ -34008,7 +38081,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Alchimiste dément"
+				"name": "Alchimiste dément",
+				"text": "<b>Cri de guerre :</b> échange l’Attaque et la Vie d’un serviteur."
 			},
 			"health": 2,
 			"id": "EX1_059",
@@ -34016,6 +38090,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> Swap the Attack and Health of a minion.",
 			"type": "Minion"
 		},
 		{
@@ -34023,25 +38098,29 @@ var parseCardsText = {
 			"cardImage": "KARA_06_01heroic.png",
 			"cost": 3,
 			"fr": {
-				"name": "Romulo"
+				"name": "Romulo",
+				"text": "Julianne est <b>Insensible</b>."
 			},
 			"health": 2,
 			"id": "KARA_06_01heroic",
 			"name": "Romulo",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Julianne is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TB_CoOpv3_005.png",
 			"cost": 0,
 			"fr": {
-				"name": "Enchaînement"
+				"name": "Enchaînement",
+				"text": "Inflige 4 points de dégâts à un serviteur et à son propriétaire."
 			},
 			"id": "TB_CoOpv3_005",
 			"name": "Cleave",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Deal 4 damage to a minion and its owner.",
 			"type": "Spell"
 		},
 		{
@@ -34050,36 +38129,42 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Appel des ancêtres"
+				"name": "Appel des ancêtres",
+				"text": "Prend un serviteur aléatoire dans la main de chaque joueur et les pose sur le champ de bataille."
 			},
 			"id": "GVG_029",
 			"name": "Ancestor's Call",
 			"playerClass": "Shaman",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Put a random minion from each player's hand into the battlefield.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "EX1_093e.png",
 			"fr": {
-				"name": "Main d’Argus"
+				"name": "Main d’Argus",
+				"text": "+1/+1 et <b>Provocation</b>."
 			},
 			"id": "EX1_093e",
 			"name": "Hand of Argus",
 			"playerClass": "Neutral",
 			"set": "Expert1",
+			"text": "+1/+1 and <b>Taunt</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "XXX_063.png",
 			"cost": 0,
 			"fr": {
-				"name": "Destroy ALL Secrets"
+				"name": "Destroy ALL Secrets",
+				"text": "Destroy all <b>Secrets:</b>."
 			},
 			"id": "XXX_063",
 			"name": "Destroy ALL Secrets",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Destroy all <b>Secrets:</b>.",
 			"type": "Spell"
 		},
 		{
@@ -34088,24 +38173,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Fusée éclairante"
+				"name": "Fusée éclairante",
+				"text": "Tous les serviteurs perdent le <b>Camouflage</b>. Détruit tous les <b>Secrets</b> adverses. Vous piochez une carte."
 			},
 			"id": "EX1_544",
 			"name": "Flare",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "All minions lose <b>Stealth</b>. Destroy all enemy <b>Secrets</b>. Draw a card.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRM_001e.png",
 			"fr": {
-				"name": "Fondre"
+				"name": "Fondre",
+				"text": "L’Attaque passe à 0 pendant ce tour."
 			},
 			"id": "BRM_001e",
 			"name": "Melt",
 			"playerClass": "Priest",
 			"set": "Brm",
+			"text": "Attack changed to 0 this turn.",
 			"type": "Enchantment"
 		},
 		{
@@ -34113,7 +38202,8 @@ var parseCardsText = {
 			"cardImage": "BRMA14_5H.png",
 			"cost": 1,
 			"fr": {
-				"name": "Toxitron"
+				"name": "Toxitron",
+				"text": "Inflige 1 point de dégâts à tous les autres serviteurs au début de votre tour."
 			},
 			"health": 4,
 			"id": "BRMA14_5H",
@@ -34121,19 +38211,22 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Brm",
+			"text": "At the start of your turn, deal 1 damage to all other minions.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "LOEA10_5.png",
 			"cost": 5,
 			"fr": {
-				"name": "Mrgl mrgl niah niah !"
+				"name": "Mrgl mrgl niah niah !",
+				"text": "Invoque 3 murlocs détruits pendant cette partie."
 			},
 			"id": "LOEA10_5",
 			"name": "Mrgl Mrgl Nyah Nyah",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Loe",
+			"text": "Summon 3 Murlocs that died this game.",
 			"type": "Spell"
 		},
 		{
@@ -34143,7 +38236,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Infanterie de Gnomeregan"
+				"name": "Infanterie de Gnomeregan",
+				"text": "<b>Charge</b>\n<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "GVG_098",
@@ -34151,6 +38245,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Gvg",
+			"text": "<b>Charge</b>\n<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -34159,13 +38254,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Boule de feu"
+				"name": "Boule de feu",
+				"text": "Inflige $6 |4(point,points) de dégâts."
 			},
 			"id": "CS2_029",
 			"name": "Fireball",
 			"playerClass": "Mage",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Deal $6 damage.",
 			"type": "Spell"
 		},
 		{
@@ -34176,7 +38273,8 @@ var parseCardsText = {
 			"cost": 6,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Seigneur de l’arène"
+				"name": "Seigneur de l’arène",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 5,
 			"id": "CS2_162",
@@ -34184,6 +38282,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -34191,13 +38290,15 @@ var parseCardsText = {
 			"cardImage": "Mekka4t.png",
 			"cost": 0,
 			"fr": {
-				"name": "Poulet"
+				"name": "Poulet",
+				"text": "<i>Viens mon poulet !</i>"
 			},
 			"health": 1,
 			"id": "Mekka4t",
 			"name": "Chicken",
 			"playerClass": "Neutral",
 			"set": "Promo",
+			"text": "<i>Hey Chicken!</i>",
 			"type": "Minion"
 		},
 		{
@@ -34207,7 +38308,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 7,
 			"fr": {
-				"name": "Faucon-dragon difforme"
+				"name": "Faucon-dragon difforme",
+				"text": "<b>Furie des vents</b>"
 			},
 			"health": 5,
 			"id": "OG_152",
@@ -34215,6 +38317,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "<b>Windfury</b>",
 			"type": "Minion"
 		},
 		{
@@ -34224,7 +38327,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Régisseuse de Sombre-Comté"
+				"name": "Régisseuse de Sombre-Comté",
+				"text": "Quand vous invoquez un serviteur à 1 PV, lui donne <b>Bouclier divin</b>."
 			},
 			"health": 3,
 			"id": "OG_310",
@@ -34232,6 +38336,7 @@ var parseCardsText = {
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Og",
+			"text": "Whenever you summon a 1-Health minion, give it <b>Divine Shield</b>.",
 			"type": "Minion"
 		},
 		{
@@ -34251,12 +38356,14 @@ var parseCardsText = {
 		{
 			"cardImage": "OG_256e.png",
 			"fr": {
-				"name": "Poisseux"
+				"name": "Poisseux",
+				"text": "+1/+1."
 			},
 			"id": "OG_256e",
 			"name": "Slimed",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
@@ -34266,7 +38373,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Golem des moissons"
+				"name": "Golem des moissons",
+				"text": "<b>Râle d’agonie :</b> invoque un golem endommagé 2/1."
 			},
 			"health": 3,
 			"id": "EX1_556",
@@ -34274,6 +38382,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Deathrattle:</b> Summon a 2/1 Damaged Golem.",
 			"type": "Minion"
 		},
 		{
@@ -34283,7 +38392,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Agent du Repos du ver"
+				"name": "Agent du Repos du ver",
+				"text": "<b>Cri de guerre :</b> gagne\n+1 ATQ et <b>Provocation</b> si vous avez un Dragon en main."
 			},
 			"health": 4,
 			"id": "AT_116",
@@ -34291,6 +38401,7 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +1 Attack and <b>Taunt</b>.",
 			"type": "Minion"
 		},
 		{
@@ -34299,25 +38410,29 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Mutation interdite"
+				"name": "Mutation interdite",
+				"text": "Dépense tous vos cristaux de mana. Invoque un serviteur aléatoire de même coût."
 			},
 			"id": "OG_101",
 			"name": "Forbidden Shaping",
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Og",
+			"text": "Spend all your Mana. Summon a random minion that costs that much.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "KARA_09_03heroic.png",
 			"cost": 2,
 			"fr": {
-				"name": "Des diablotins !"
+				"name": "Des diablotins !",
+				"text": "Invoque 2 diablotins dégoûtants."
 			},
 			"id": "KARA_09_03heroic",
 			"name": "Many Imps!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon 2 Icky Imps.",
 			"type": "Spell"
 		},
 		{
@@ -34328,7 +38443,8 @@ var parseCardsText = {
 			"cost": 2,
 			"faction": "ALLIANCE",
 			"fr": {
-				"name": "Limon des marais acide"
+				"name": "Limon des marais acide",
+				"text": "<b>Cri de guerre :</b> détruit l’arme de votre adversaire."
 			},
 			"health": 2,
 			"id": "EX1_066",
@@ -34336,6 +38452,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Destroy your opponent's weapon.",
 			"type": "Minion"
 		},
 		{
@@ -34355,36 +38472,42 @@ var parseCardsText = {
 		{
 			"cardImage": "AT_024e.png",
 			"fr": {
-				"name": "Sombre fusion"
+				"name": "Sombre fusion",
+				"text": "+3/+3."
 			},
 			"id": "AT_024e",
 			"name": "Dark Fusion",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "+3/+3.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "BRMA15_3.png",
 			"cost": 2,
 			"fr": {
-				"name": "Libérer les aberrations"
+				"name": "Libérer les aberrations",
+				"text": "Invoque 3 aberrations."
 			},
 			"id": "BRMA15_3",
 			"name": "Release the Aberrations!",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Summon 3 Aberrations.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "BRMC_100.png",
 			"cost": 3,
 			"fr": {
-				"name": "Bombe vivante"
+				"name": "Bombe vivante",
+				"text": "Choisissez un serviteur adverse. Inflige 5 points de dégâts à tous les adversaires s’il survit jusqu’à votre prochain tour."
 			},
 			"id": "BRMC_100",
 			"name": "Living Bomb",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Choose an enemy minion. If it lives until your next turn, deal 5 damage to all enemies.",
 			"type": "Spell"
 		},
 		{
@@ -34393,24 +38516,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Piège givrant"
+				"name": "Piège givrant",
+				"text": "<b>Secret :</b> quand un serviteur adverse attaque, le renvoie dans la main de son propriétaire et il coûte désormais (2) cristaux de plus."
 			},
 			"id": "EX1_611",
 			"name": "Freezing Trap",
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Secret:</b> When an enemy minion attacks, return it to its owner's hand and it costs (2) more.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "GVG_023a.png",
 			"fr": {
-				"name": "Lame affûtée"
+				"name": "Lame affûtée",
+				"text": "+1 ATQ."
 			},
 			"id": "GVG_023a",
 			"name": "Extra Sharp",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "+1 Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -34420,7 +38547,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Prêtresse auchenaï"
+				"name": "Prêtresse auchenaï",
+				"text": "Vos cartes et pouvoirs rendant de la Vie infligent désormais des dégâts à la place."
 			},
 			"health": 5,
 			"id": "EX1_591",
@@ -34428,18 +38556,21 @@ var parseCardsText = {
 			"playerClass": "Priest",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Your cards and powers that restore Health now deal damage instead.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "TP_Bling_HP2.png",
 			"cost": 2,
 			"fr": {
-				"name": "Encaissement"
+				"name": "Encaissement",
+				"text": "Détruit votre arme et vous en donne une nouvelle au hasard."
 			},
 			"id": "TP_Bling_HP2",
 			"name": "Cash In",
 			"playerClass": "Rogue",
 			"set": "Tb",
+			"text": "Destroy your weapon, gaining a random one.",
 			"type": "Hero_power"
 		},
 		{
@@ -34448,24 +38579,28 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 0,
 			"fr": {
-				"name": "Préparation"
+				"name": "Préparation",
+				"text": "Le prochain sort que vous lancez pendant ce tour coûte (3) cristaux de moins."
 			},
 			"id": "EX1_145",
 			"name": "Preparation",
 			"playerClass": "Rogue",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "The next spell you cast this turn costs (3) less.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "TU4f_006o.png",
 			"fr": {
-				"name": "Transcendance"
+				"name": "Transcendance",
+				"text": "Cho ne peut pas être attaqué tant qu’il a des serviteurs."
 			},
 			"id": "TU4f_006o",
 			"name": "Transcendence",
 			"playerClass": "Neutral",
 			"set": "Missions",
+			"text": "Until you kill Cho's minions, he can't be attacked.",
 			"type": "Enchantment"
 		},
 		{
@@ -34485,12 +38620,14 @@ var parseCardsText = {
 			"cardImage": "NAX7_03.png",
 			"cost": 2,
 			"fr": {
-				"name": "Frappe déséquilibrante"
+				"name": "Frappe déséquilibrante",
+				"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts."
 			},
 			"id": "NAX7_03",
 			"name": "Unbalancing Strike",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nDeal 3 damage.",
 			"type": "Hero_power"
 		},
 		{
@@ -34498,13 +38635,15 @@ var parseCardsText = {
 			"cardImage": "BRMA13_7.png",
 			"cost": 0,
 			"fr": {
-				"name": "Cendres tourbillonnantes"
+				"name": "Cendres tourbillonnantes",
+				"text": "<b>Furie des vents</b>"
 			},
 			"health": 5,
 			"id": "BRMA13_7",
 			"name": "Whirling Ash",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "<b>Windfury</b>",
 			"type": "Minion"
 		},
 		{
@@ -34515,13 +38654,15 @@ var parseCardsText = {
 			"cost": 2,
 			"durability": 2,
 			"fr": {
-				"name": "Lance d’Argent"
+				"name": "Lance d’Argent",
+				"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne +1 Durabilité."
 			},
 			"id": "AT_077",
 			"name": "Argent Lance",
 			"playerClass": "Paladin",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, +1 Durability.",
 			"type": "Weapon"
 		},
 		{
@@ -34530,26 +38671,30 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Prêt à tirer"
+				"name": "Prêt à tirer",
+				"text": "Chaque fois que vous lancez un sort pendant ce tour, ajoute une carte chasseur aléatoire dans votre main."
 			},
 			"id": "AT_061",
 			"name": "Lock and Load",
 			"playerClass": "Hunter",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Each time you cast a spell this turn, add a random Hunter card to your hand.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_101.png",
 			"cost": 0,
 			"fr": {
-				"name": "Set health to full"
+				"name": "Set health to full",
+				"text": "Set a character's health to full, and removes armour."
 			},
 			"id": "XXX_101",
 			"name": "Set health to full",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Set a character's health to full, and removes armour.",
 			"type": "Spell"
 		},
 		{
@@ -34559,7 +38704,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Ogre-magi"
+				"name": "Ogre-magi",
+				"text": "<b>Dégâts des sorts : +1</b>"
 			},
 			"health": 4,
 			"id": "CS2_197",
@@ -34568,6 +38714,7 @@ var parseCardsText = {
 			"rarity": "Common",
 			"set": "Core",
 			"spellDamage": 1,
+			"text": "<b>Spell Damage +1</b>",
 			"type": "Minion"
 		},
 		{
@@ -34578,7 +38725,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Chasseuse de Tranchebauge"
+				"name": "Chasseuse de Tranchebauge",
+				"text": "<b>Cri de guerre :</b> invoque un sanglier 1/1."
 			},
 			"health": 3,
 			"id": "CS2_196",
@@ -34586,6 +38734,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "<b>Battlecry:</b> Summon a 1/1 Boar.",
 			"type": "Minion"
 		},
 		{
@@ -34593,13 +38742,15 @@ var parseCardsText = {
 			"cardImage": "NAX8_05t.png",
 			"cost": 5,
 			"fr": {
-				"name": "Cavalier spectral"
+				"name": "Cavalier spectral",
+				"text": "Au début de votre tour, inflige 1 point de dégâts à votre héros."
 			},
 			"health": 6,
 			"id": "NAX8_05t",
 			"name": "Spectral Rider",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "At the start of your turn, deal 1 damage to your hero.",
 			"type": "Minion"
 		},
 		{
@@ -34608,13 +38759,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Assommer"
+				"name": "Assommer",
+				"text": "Renvoie un serviteur adverse dans la main de votre adversaire."
 			},
 			"id": "EX1_581",
 			"name": "Sap",
 			"playerClass": "Rogue",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Return an enemy minion to your opponent's hand.",
 			"type": "Spell"
 		},
 		{
@@ -34622,12 +38775,14 @@ var parseCardsText = {
 			"cardImage": "OG_080e.png",
 			"cost": 1,
 			"fr": {
-				"name": "Toxine de pâlerette"
+				"name": "Toxine de pâlerette",
+				"text": "Confère <b>Camouflage</b> à un serviteur allié jusqu’à votre prochain tour."
 			},
 			"id": "OG_080e",
 			"name": "Fadeleaf Toxin",
 			"playerClass": "Rogue",
 			"set": "Og",
+			"text": "Give a friendly minion <b>Stealth</b> until your next turn.",
 			"type": "Spell"
 		},
 		{
@@ -34637,7 +38792,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Auspice funeste"
+				"name": "Auspice funeste",
+				"text": "Au début de votre tour, détruit TOUS les serviteurs."
 			},
 			"health": 7,
 			"id": "NEW1_021",
@@ -34645,6 +38801,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Expert1",
+			"text": "At the start of your turn, destroy ALL minions.",
 			"type": "Minion"
 		},
 		{
@@ -34654,7 +38811,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Élémentaire délié"
+				"name": "Élémentaire délié",
+				"text": "Chaque fois que vous jouez une carte avec <b>Surcharge</b>, gagne +1/+1."
 			},
 			"health": 4,
 			"id": "EX1_258",
@@ -34662,6 +38820,7 @@ var parseCardsText = {
 			"playerClass": "Shaman",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "Whenever you play a card with <b>Overload</b>, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -34682,13 +38841,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Éruption de diablotins"
+				"name": "Éruption de diablotins",
+				"text": "Inflige $2 à $4 points de dégâts à un serviteur. Invoque un diablotin 1/1 pour chaque point de dégâts infligé."
 			},
 			"id": "GVG_045",
 			"name": "Imp-losion",
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "Deal $2-$4 damage to a minion. Summon a 1/1 Imp for each damage dealt.",
 			"type": "Spell"
 		},
 		{
@@ -34698,7 +38859,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Vierge guerrière"
+				"name": "Vierge guerrière",
+				"text": "<b>Cri de guerre :</b> gagne 5 points d’armure."
 			},
 			"health": 5,
 			"id": "GVG_053",
@@ -34706,6 +38868,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Rare",
 			"set": "Gvg",
+			"text": "<b>Battlecry:</b> Gain 5 Armor.",
 			"type": "Minion"
 		},
 		{
@@ -34728,13 +38891,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Écho de Medivh"
+				"name": "Écho de Medivh",
+				"text": "Place une copie de chaque serviteur allié dans votre main."
 			},
 			"id": "GVG_005",
 			"name": "Echo of Medivh",
 			"playerClass": "Mage",
 			"rarity": "Epic",
 			"set": "Gvg",
+			"text": "Put a copy of each friendly minion into your hand.",
 			"type": "Spell"
 		},
 		{
@@ -34744,7 +38909,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Ancien du Crépuscule"
+				"name": "Ancien du Crépuscule",
+				"text": "À la fin de votre tour, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 			},
 			"health": 4,
 			"id": "OG_286",
@@ -34752,18 +38918,21 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Og",
+			"text": "At the end of your turn, give your C'Thun +1/+1 <i>(wherever it is).</i>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "BRMA14_11.png",
 			"cost": 0,
 			"fr": {
-				"name": "Recharge"
+				"name": "Recharge",
+				"text": "Remplit tous les cristaux de mana vides."
 			},
 			"id": "BRMA14_11",
 			"name": "Recharge",
 			"playerClass": "Neutral",
 			"set": "Brm",
+			"text": "Fill all empty Mana Crystals.",
 			"type": "Spell"
 		},
 		{
@@ -34774,7 +38943,8 @@ var parseCardsText = {
 			"cost": 3,
 			"faction": "HORDE",
 			"fr": {
-				"name": "Chouette bec-de-fer"
+				"name": "Chouette bec-de-fer",
+				"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur."
 			},
 			"health": 1,
 			"id": "CS2_203",
@@ -34782,6 +38952,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Expert1",
+			"text": "<b>Battlecry:</b> <b>Silence</b> a minion.",
 			"type": "Minion"
 		},
 		{
@@ -34791,7 +38962,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Mage de sang Thalnos"
+				"name": "Mage de sang Thalnos",
+				"text": "<b>Dégâts des sorts : +1</b>.\n<b>Râle d’agonie :</b> vous piochez une carte."
 			},
 			"health": 1,
 			"id": "EX1_012",
@@ -34800,18 +38972,21 @@ var parseCardsText = {
 			"rarity": "Legendary",
 			"set": "Expert1",
 			"spellDamage": 1,
+			"text": "<b>Spell Damage +1</b>. <b>Deathrattle:</b> Draw a card.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "XXX_060.png",
 			"cost": 0,
 			"fr": {
-				"name": "Damage All"
+				"name": "Damage All",
+				"text": "Set the Health of a character to 0."
 			},
 			"id": "XXX_060",
 			"name": "Damage All",
 			"playerClass": "Neutral",
 			"set": "Cheat",
+			"text": "Set the Health of a character to 0.",
 			"type": "Spell"
 		},
 		{
@@ -34820,13 +38995,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Tir explosif"
+				"name": "Tir explosif",
+				"text": "Inflige $5 |4(point,points) de dégâts à un serviteur et $2 |4(point,points) de dégâts aux serviteurs adjacents."
 			},
 			"id": "EX1_537",
 			"name": "Explosive Shot",
 			"playerClass": "Hunter",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Deal $5 damage to a minion and $2 damage to adjacent ones.",
 			"type": "Spell"
 		},
 		{
@@ -34848,7 +39025,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Maîtresse de cérémonie"
+				"name": "Maîtresse de cérémonie",
+				"text": "<b>Cri de guerre :</b> gagne\n+2/+2 si vous avez un serviteur avec <b>Dégâts des sorts</b>."
 			},
 			"health": 2,
 			"id": "AT_117",
@@ -34856,17 +39034,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "<b>Battlecry:</b> If you have a minion with <b>Spell Damage</b>, gain +2/+2.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "EX1_619e.png",
 			"fr": {
-				"name": "Égalité"
+				"name": "Égalité",
+				"text": "Les points de vie sont passés à 1."
 			},
 			"id": "EX1_619e",
 			"name": "Equality",
 			"playerClass": "Paladin",
 			"set": "Expert1",
+			"text": "Health changed to 1.",
 			"type": "Enchantment"
 		},
 		{
@@ -34884,24 +39065,28 @@ var parseCardsText = {
 		{
 			"cardImage": "GVG_086e.png",
 			"fr": {
-				"name": "Armure en plaques"
+				"name": "Armure en plaques",
+				"text": "Attaque augmentée."
 			},
 			"id": "GVG_086e",
 			"name": "Armor Plated",
 			"playerClass": "Warrior",
 			"set": "Gvg",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "GAME_005.png",
 			"cost": 0,
 			"fr": {
-				"name": "La pièce"
+				"name": "La pièce",
+				"text": "Confère 1 cristal de mana pendant ce tour uniquement."
 			},
 			"id": "GAME_005",
 			"name": "The Coin",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "Gain 1 Mana Crystal this turn only.",
 			"type": "Spell"
 		},
 		{
@@ -34910,47 +39095,55 @@ var parseCardsText = {
 			"cardImage": "KARA_06_01.png",
 			"cost": 4,
 			"fr": {
-				"name": "Romulo"
+				"name": "Romulo",
+				"text": "Julianne est <b>Insensible</b>."
 			},
 			"health": 2,
 			"id": "KARA_06_01",
 			"name": "Romulo",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Julianne is <b>Immune</b>.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_07_07heroic.png",
 			"cost": 3,
 			"fr": {
-				"name": "Méca détraqué !"
+				"name": "Méca détraqué !",
+				"text": "Invoque un Méca aléatoire."
 			},
 			"id": "KARA_07_07heroic",
 			"name": "Haywire Mech!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon a random Mech.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "GVG_067a.png",
 			"fr": {
-				"name": "Magie métabolisée"
+				"name": "Magie métabolisée",
+				"text": "Attaque augmentée."
 			},
 			"id": "GVG_067a",
 			"name": "Metabolized Magic",
 			"playerClass": "Neutral",
 			"set": "Gvg",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_SPT_Minion1e.png",
 			"fr": {
-				"name": "Volonté de Hurlevent"
+				"name": "Volonté de Hurlevent",
+				"text": "Hurlevent donne de la Vie à cette carte."
 			},
 			"id": "TB_SPT_Minion1e",
 			"name": "Will of Stormwind",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Stormwind is granting this card Health.",
 			"type": "Enchantment"
 		},
 		{
@@ -34959,13 +39152,15 @@ var parseCardsText = {
 			"cardImage": "KAR_A02_03.png",
 			"cost": 3,
 			"fr": {
-				"name": "Fourchette"
+				"name": "Fourchette",
+				"text": "Les assiettes ont <b>Charge</b>."
 			},
 			"health": 1,
 			"id": "KAR_A02_03",
 			"name": "Fork",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Plates have <b>Charge</b>.",
 			"type": "Minion"
 		},
 		{
@@ -34973,25 +39168,29 @@ var parseCardsText = {
 			"cardImage": "KARA_07_03.png",
 			"cost": 1,
 			"fr": {
-				"name": "Murloc en fuite !"
+				"name": "Murloc en fuite !",
+				"text": "Invoque un Murloc aléatoire."
 			},
 			"id": "KARA_07_03",
 			"name": "Murloc Escaping!",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Summon a random Murloc.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "XXX_014.png",
 			"cost": 0,
 			"fr": {
-				"name": "Mill 10"
+				"name": "Mill 10",
+				"text": "Put 10 cards from a hero's deck into his graveyard."
 			},
 			"id": "XXX_014",
 			"name": "Mill 10",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Put 10 cards from a hero's deck into his graveyard.",
 			"type": "Spell"
 		},
 		{
@@ -35001,7 +39200,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Chef de raid"
+				"name": "Chef de raid",
+				"text": "Vos autres serviteurs ont +1 ATQ."
 			},
 			"health": 2,
 			"id": "CS2_122",
@@ -35009,29 +39209,34 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Your other minions have +1 Attack.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "KARA_06_01e.png",
 			"fr": {
-				"name": "Un amour fatal"
+				"name": "Un amour fatal",
+				"text": "Julianne est <b>Insensible</b>."
 			},
 			"id": "KARA_06_01e",
 			"name": "Death-Marked Love",
 			"playerClass": "Neutral",
 			"set": "Kara",
+			"text": "Julianne is <b>immune</b>.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "LOEA04_30a.png",
 			"cost": 0,
 			"fr": {
-				"name": "Prendre le raccourci"
+				"name": "Prendre le raccourci",
+				"text": "Vous vous rapprochez d’un tour de la sortie ! Vous rencontrez un golem de guerre 7/7."
 			},
 			"id": "LOEA04_30a",
 			"name": "Take the Shortcut",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "Get 1 turn closer to the Exit! Encounter a 7/7 War Golem.",
 			"type": "Spell"
 		},
 		{
@@ -35039,13 +39244,15 @@ var parseCardsText = {
 			"cardImage": "KARA_09_08_heroic.png",
 			"cost": 4,
 			"fr": {
-				"name": "Kil’rek"
+				"name": "Kil’rek",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 8,
 			"id": "KARA_09_08_heroic",
 			"name": "Kil'rek",
 			"playerClass": "Warlock",
 			"set": "Kara",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
@@ -35053,13 +39260,15 @@ var parseCardsText = {
 			"cardImage": "TB_KTRAF_6m.png",
 			"cost": 1,
 			"fr": {
-				"name": "Gelée polluée"
+				"name": "Gelée polluée",
+				"text": "Détruit tout serviteur blessé par ce serviteur."
 			},
 			"health": 2,
 			"id": "TB_KTRAF_6m",
 			"name": "Fallout Slime",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Destroy any minion damaged by this minion.",
 			"type": "Minion"
 		},
 		{
@@ -35070,13 +39279,15 @@ var parseCardsText = {
 			"cost": 5,
 			"durability": 4,
 			"fr": {
-				"name": "Écrase-patate"
+				"name": "Écrase-patate",
+				"text": "Pas de limite d’attaques par tour. Ne peut pas attaquer les héros."
 			},
 			"id": "KAR_028",
 			"name": "Fool's Bane",
 			"playerClass": "Warrior",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Unlimited attacks each turn. Can't attack heroes.",
 			"type": "Weapon"
 		},
 		{
@@ -35086,7 +39297,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 5,
 			"fr": {
-				"name": "Stalagg"
+				"name": "Stalagg",
+				"text": "<b>Râle d’agonie :</b> si Feugen est aussi mort pendant cette partie, invoque Thaddius."
 			},
 			"health": 4,
 			"id": "FP1_014",
@@ -35094,6 +39306,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Naxx",
+			"text": "<b>Deathrattle:</b> If Feugen also died this game, summon Thaddius.",
 			"type": "Minion"
 		},
 		{
@@ -35103,7 +39316,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Le chevalier squelette"
+				"name": "Le chevalier squelette",
+				"text": "<b>Râle d’agonie :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, renvoie le chevalier dans votre main."
 			},
 			"health": 4,
 			"id": "AT_128",
@@ -35111,6 +39325,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Tgt",
+			"text": "<b>Deathrattle:</b> Reveal a minion in each deck. If yours costs more, return this to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -35119,13 +39334,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Charge"
+				"name": "Charge",
+				"text": "Confère +2 ATQ et <b>Charge</b> à un serviteur allié."
 			},
 			"id": "CS2_103",
 			"name": "Charge",
 			"playerClass": "Warrior",
 			"rarity": "Free",
 			"set": "Core",
+			"text": "Give a friendly minion +2 Attack and <b>Charge</b>.",
 			"type": "Spell"
 		},
 		{
@@ -35135,7 +39352,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Commissaire-priseur"
+				"name": "Commissaire-priseur",
+				"text": "Vous piochez une carte chaque fois que vous lancez un sort."
 			},
 			"health": 4,
 			"id": "EX1_095",
@@ -35143,6 +39361,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "Whenever you cast a spell, draw a card.",
 			"type": "Minion"
 		},
 		{
@@ -35152,7 +39371,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Minuscule chevalier maléfique"
+				"name": "Minuscule chevalier maléfique",
+				"text": "Chaque fois que vous vous défaussez d’une carte, gagne +1/+1."
 			},
 			"health": 2,
 			"id": "AT_021",
@@ -35160,6 +39380,7 @@ var parseCardsText = {
 			"playerClass": "Warlock",
 			"rarity": "Rare",
 			"set": "Tgt",
+			"text": "Whenever you discard a card, gain +1/+1.",
 			"type": "Minion"
 		},
 		{
@@ -35180,12 +39401,14 @@ var parseCardsText = {
 			"cardImage": "HRW02_1e.png",
 			"cost": 1,
 			"fr": {
-				"name": "Puissance des rouages"
+				"name": "Puissance des rouages",
+				"text": "Attaque augmentée."
 			},
 			"id": "HRW02_1e",
 			"name": "Overclock",
 			"playerClass": "Neutral",
 			"set": "Tb",
+			"text": "Increased Attack.",
 			"type": "Enchantment"
 		},
 		{
@@ -35194,13 +39417,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Confusion"
+				"name": "Confusion",
+				"text": "Échange l’Attaque et la Vie de tous les serviteurs."
 			},
 			"id": "AT_016",
 			"name": "Confuse",
 			"playerClass": "Priest",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "Swap the Attack and Health of all minions.",
 			"type": "Spell"
 		},
 		{
@@ -35209,13 +39434,15 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Disparition"
+				"name": "Disparition",
+				"text": "Renvoie tous les serviteurs dans la main de leur propriétaire."
 			},
 			"id": "NEW1_004",
 			"name": "Vanish",
 			"playerClass": "Rogue",
 			"rarity": "Common",
 			"set": "Core",
+			"text": "Return all minions to their owner's hand.",
 			"type": "Spell"
 		},
 		{
@@ -35225,7 +39452,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Drake volcanique"
+				"name": "Drake volcanique",
+				"text": "Coûte (1) |4(cristal,cristaux) de moins pour chaque serviteur mort pendant ce tour."
 			},
 			"health": 4,
 			"id": "BRM_025",
@@ -35233,6 +39461,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Brm",
+			"text": "Costs (1) less for each minion that died this turn.",
 			"type": "Minion"
 		},
 		{
@@ -35250,37 +39479,43 @@ var parseCardsText = {
 			"cardImage": "XXX_006.png",
 			"cost": 0,
 			"fr": {
-				"name": "Break Weapon"
+				"name": "Break Weapon",
+				"text": "Destroy a hero's weapon."
 			},
 			"id": "XXX_006",
 			"name": "Break Weapon",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Destroy a hero's weapon.",
 			"type": "Spell"
 		},
 		{
 			"cardImage": "NAX1_04.png",
 			"cost": 2,
 			"fr": {
-				"name": "Grouillement"
+				"name": "Grouillement",
+				"text": "<b>Pouvoir héroïque</b>\nInvoque un nérubien 3/1."
 			},
 			"id": "NAX1_04",
 			"name": "Skitter",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Hero Power</b>\nSummon a 3/1 Nerubian.",
 			"type": "Hero_power"
 		},
 		{
 			"cardImage": "LOEA05_02ha.png",
 			"cost": 0,
 			"fr": {
-				"name": "Trogg détester serviteurs !"
+				"name": "Trogg détester serviteurs !",
+				"text": "<b>Pouvoir héroïque passif</b> Les serviteurs adverses coûtent (11) |4(cristal,cristaux) de mana. Le pouvoir change au début de votre tour."
 			},
 			"id": "LOEA05_02ha",
 			"name": "Trogg Hate Minions!",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Passive Hero Power</b>\n Enemy minions cost (11). Swap at the start of your turn.",
 			"type": "Hero_power"
 		},
 		{
@@ -35288,36 +39523,42 @@ var parseCardsText = {
 			"cardImage": "NAX7_02.png",
 			"cost": 2,
 			"fr": {
-				"name": "Doublure"
+				"name": "Doublure",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 7,
 			"id": "NAX7_02",
 			"name": "Understudy",
 			"playerClass": "Neutral",
 			"set": "Naxx",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "CS2_038e.png",
 			"fr": {
-				"name": "Esprit ancestral"
+				"name": "Esprit ancestral",
+				"text": "<b>Râle d’agonie :</b> réinvoque ce serviteur."
 			},
 			"id": "CS2_038e",
 			"name": "Ancestral Spirit",
 			"playerClass": "Shaman",
 			"set": "Expert1",
+			"text": "<b>Deathrattle:</b> Resummon this minion.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "TB_Coopv3_102b.png",
 			"cost": 0,
 			"fr": {
-				"name": "Aumône de Lumière"
+				"name": "Aumône de Lumière",
+				"text": "Rend 8 PV à chaque héros."
 			},
 			"id": "TB_Coopv3_102b",
 			"name": "Alms of Light",
 			"playerClass": "Priest",
 			"set": "Tb",
+			"text": "Restore 8 Health to each hero.",
 			"type": "Spell"
 		},
 		{
@@ -35327,7 +39568,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 4,
 			"fr": {
-				"name": "Provocateur maléfique"
+				"name": "Provocateur maléfique",
+				"text": "<b>Provocation</b>"
 			},
 			"health": 4,
 			"id": "AT_114",
@@ -35335,17 +39577,20 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Tgt",
+			"text": "<b>Taunt</b>",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "GAME_003e.png",
 			"fr": {
-				"name": "Vengeance de la pièce"
+				"name": "Vengeance de la pièce",
+				"text": "Passer en second renforce votre premier serviteur."
 			},
 			"id": "GAME_003e",
 			"name": "Coin's Vengence",
 			"playerClass": "Neutral",
 			"set": "Core",
+			"text": "Going second makes your first minion stronger.",
 			"type": "Enchantment"
 		},
 		{
@@ -35353,7 +39598,8 @@ var parseCardsText = {
 			"cardImage": "CRED_30.png",
 			"cost": 7,
 			"fr": {
-				"name": "JC Park"
+				"name": "JC Park",
+				"text": "<b>Cri de guerre :</b> ajoute une nouvelle plateforme pour Hearthstone."
 			},
 			"health": 4,
 			"id": "CRED_30",
@@ -35361,6 +39607,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "<b>Battlecry:</b> Add a new platform for Hearthstone.",
 			"type": "Minion"
 		},
 		{
@@ -35380,7 +39627,8 @@ var parseCardsText = {
 			"cardImage": "CRED_34.png",
 			"cost": 3,
 			"fr": {
-				"name": "Max Ma"
+				"name": "Max Ma",
+				"text": "Peut uniquement être joué sur un mobile."
 			},
 			"health": 3,
 			"id": "CRED_34",
@@ -35388,6 +39636,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Credits",
+			"text": "Can only be played on a mobile device.",
 			"type": "Minion"
 		},
 		{
@@ -35397,7 +39646,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 3,
 			"fr": {
-				"name": "Chasseresse capuchonnée"
+				"name": "Chasseresse capuchonnée",
+				"text": "Vos <b>Secrets</b> coûtent (0) |4(cristal,cristaux)."
 			},
 			"health": 4,
 			"id": "KAR_006",
@@ -35405,6 +39655,7 @@ var parseCardsText = {
 			"playerClass": "Hunter",
 			"rarity": "Common",
 			"set": "Kara",
+			"text": "Your <b>Secrets</b> cost (0).",
 			"type": "Minion"
 		},
 		{
@@ -35414,7 +39665,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Mukla, tyran du val"
+				"name": "Mukla, tyran du val",
+				"text": "<b>Cri de guerre :</b> place\n2 bananes dans votre main."
 			},
 			"health": 5,
 			"id": "OG_122",
@@ -35422,6 +39674,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Legendary",
 			"set": "Og",
+			"text": "<b>Battlecry:</b> Add 2 Bananas to your hand.",
 			"type": "Minion"
 		},
 		{
@@ -35431,7 +39684,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 2,
 			"fr": {
-				"name": "Jongleur de couteaux"
+				"name": "Jongleur de couteaux",
+				"text": "Inflige 1 point de dégâts à un adversaire aléatoire après que vous avez invoqué un serviteur."
 			},
 			"health": 2,
 			"id": "NEW1_019",
@@ -35439,6 +39693,7 @@ var parseCardsText = {
 			"playerClass": "Neutral",
 			"rarity": "Rare",
 			"set": "Expert1",
+			"text": "After you summon a minion, deal 1 damage to a random enemy.",
 			"type": "Minion"
 		},
 		{
@@ -35448,7 +39703,8 @@ var parseCardsText = {
 			"collectible": true,
 			"cost": 6,
 			"fr": {
-				"name": "Saccageur des mers"
+				"name": "Saccageur des mers",
+				"text": "Quand vous piochez cette carte, inflige 1 point de dégâts à vos serviteurs."
 			},
 			"health": 7,
 			"id": "AT_130",
@@ -35456,6 +39712,7 @@ var parseCardsText = {
 			"playerClass": "Warrior",
 			"rarity": "Epic",
 			"set": "Tgt",
+			"text": "When you draw this, deal 1 damage to your minions.",
 			"type": "Minion"
 		},
 		{
@@ -35474,48 +39731,56 @@ var parseCardsText = {
 			"cardImage": "LOEA01_12.png",
 			"cost": 3,
 			"fr": {
-				"name": "Hoplite tol’vir"
+				"name": "Hoplite tol’vir",
+				"text": "<b>Râle d’agonie :</b> inflige 5 points de dégâts aux deux héros."
 			},
 			"health": 2,
 			"id": "LOEA01_12",
 			"name": "Tol'vir Hoplite",
 			"playerClass": "Neutral",
 			"set": "Loe",
+			"text": "<b>Deathrattle:</b> Deal 5 damage to both heroes.",
 			"type": "Minion"
 		},
 		{
 			"cardImage": "AT_115e.png",
 			"fr": {
-				"name": "Entraînement à l’escrime"
+				"name": "Entraînement à l’escrime",
+				"text": "Votre pouvoir héroïque coûte (2) cristaux de moins."
 			},
 			"id": "AT_115e",
 			"name": "Fencing Practice",
 			"playerClass": "Neutral",
 			"set": "Tgt",
+			"text": "Your Hero Power costs (2) less.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "OG_158e.png",
 			"fr": {
-				"name": "Secrets du culte"
+				"name": "Secrets du culte",
+				"text": "+1/+1."
 			},
 			"id": "OG_158e",
 			"name": "Secrets of the Cult",
 			"playerClass": "Neutral",
 			"set": "Og",
+			"text": "+1/+1.",
 			"type": "Enchantment"
 		},
 		{
 			"cardImage": "XXX_046.png",
 			"cost": 0,
 			"fr": {
-				"name": "Force AI to Use Hero Power"
+				"name": "Force AI to Use Hero Power",
+				"text": "Force the AI to use their Hero Power every turn from now on."
 			},
 			"id": "XXX_046",
 			"name": "Force AI to Use Hero Power",
 			"playerClass": "Neutral",
 			"rarity": "Common",
 			"set": "Cheat",
+			"text": "Force the AI to use their Hero Power every turn from now on.",
 			"type": "Spell"
 		}
 	]

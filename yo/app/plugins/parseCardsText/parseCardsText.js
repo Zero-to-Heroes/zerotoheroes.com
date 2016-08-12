@@ -122,6 +122,16 @@ var parseCardsText = {
 		return lang + '/' + card.cardImage;
 	},
 
+	localizeKeyword: function(key, lang) {
+		var keyword = parseCardsText.keywords[key]
+		if (!key || !keyword) return ''
+			
+		lang = lang || parseCardsText.getLang()
+		if (!lang) return keyword['en']
+		if (!keyword[lang]) return keyword['en']
+		return keyword[lang]
+	},
+
 	attach: function(element) {
 		// console.log('attaching to element', element);
 		element.textcomplete([{
@@ -39783,5 +39793,228 @@ var parseCardsText = {
 			"text": "Force the AI to use their Hero Power every turn from now on.",
 			"type": "Spell"
 		}
-	]
+	],
+
+	keywords: {
+		"GLOBAL_KEYWORD_AUTOATTACK": {
+			"en": "Auto-Attack",
+			"fr": "Attaque automatique"
+		},
+		"GLOBAL_KEYWORD_AUTOATTACK_TEXT": {
+			"en": "Can't attack, but does something at the end of your turn.",
+			"fr": "Ne peut pas attaquer, mais fait quelque chose à la fin de votre tour."
+		},
+		"GLOBAL_KEYWORD_AUTOCAST": {
+			"en": "Auto-cast",
+			"fr": "Lancement auto."
+		},
+		"GLOBAL_KEYWORD_AUTOCAST_TEXT": {
+			"en": "This Hero Power MUST be used every turn.",
+			"fr": "Ce pouvoir héroïque DOIT être utilisé à chaque tour."
+		},
+		"GLOBAL_KEYWORD_BATTLECRY": {
+			"en": "Battlecry",
+			"fr": "Cri de guerre"
+		},
+		"GLOBAL_KEYWORD_BATTLECRY_TEXT": {
+			"en": "Does something when you play it from your hand.",
+			"fr": "Fait quelque chose quand vous jouez cette carte depuis votre main."
+		},
+		"GLOBAL_KEYWORD_CHARGE": {
+			"en": "Charge",
+			"fr": "Charge"
+		},
+		"GLOBAL_KEYWORD_CHARGE_TEXT": {
+			"en": "Can attack immediately.",
+			"fr": "Peut attaquer immédiatement."
+		},
+		"GLOBAL_KEYWORD_COMBO": {
+			"en": "Combo",
+			"fr": "Combo"
+		},
+		"GLOBAL_KEYWORD_COMBO_TEXT": {
+			"en": "A bonus if you already played a card this turn.",
+			"fr": "Un bonus si vous avez déjà joué une carte pendant ce tour."
+		},
+		"GLOBAL_KEYWORD_COUNTER": {
+			"en": "Counter",
+			"fr": "Contre"
+		},
+		"GLOBAL_KEYWORD_COUNTER_TEXT": {
+			"en": "A card that is Countered has no effect.",
+			"fr": "Une carte contrée n’a aucun effet."
+		},
+		"GLOBAL_KEYWORD_CTHUN": {
+			"en": "C'Thun, Old God",
+			"fr": "C’Thun, Dieu très ancien"
+		},
+		"GLOBAL_KEYWORD_CTHUN_TEXT": {
+			"en": "C'Thun receives buffs no matter where it is, even in your deck!",
+			"fr": "C’Thun reçoit les améliorations où qu’il soit, même dans votre deck !"
+		},
+		"GLOBAL_KEYWORD_DEATHRATTLE": {
+			"en": "Deathrattle",
+			"fr": "Râle d’agonie"
+		},
+		"GLOBAL_KEYWORD_DEATHRATTLE_TEXT": {
+			"en": "Does something when it dies.",
+			"fr": "Fait quelque chose à sa mort."
+		},
+		"GLOBAL_KEYWORD_DISCOVER": {
+			"en": "Discover",
+			"fr": "Découverte"
+		},
+		"GLOBAL_KEYWORD_DISCOVER_TEXT": {
+			"en": "Choose one of three cards to add to your hand.",
+			"fr": "Choisissez l’une des trois cartes et ajoutez-la à votre main."
+		},
+		"GLOBAL_KEYWORD_DIVINE_SHIELD": {
+			"en": "Divine Shield",
+			"fr": "Bouclier divin"
+		},
+		"GLOBAL_KEYWORD_DIVINE_SHIELD_REF_TEXT": {
+			"en": "The first time a Shielded minion takes damage, ignore it.",
+			"fr": "La première fois qu’un serviteur protégé subit des dégâts, il les ignore."
+		},
+		"GLOBAL_KEYWORD_DIVINE_SHIELD_TEXT": {
+			"en": "The first time this minion takes damage, ignore it.",
+			"fr": "La première fois que ce serviteur subit des dégâts, il les ignore."
+		},
+		"GLOBAL_KEYWORD_ENRAGED": {
+			"en": "Enrage",
+			"fr": "Accès de rage"
+		},
+		"GLOBAL_KEYWORD_ENRAGED_TEXT": {
+			"en": "While damaged, this minion has a new power.",
+			"fr": "Quand il subit des dégâts, ce serviteur dispose d’un nouveau pouvoir."
+		},
+		"GLOBAL_KEYWORD_FREEZE": {
+			"en": "Freeze",
+			"fr": "Gel"
+		},
+		"GLOBAL_KEYWORD_FREEZE_TEXT": {
+			"en": "Frozen characters lose their next attack.",
+			"fr": "Les personnages gelés perdent leur prochaine attaque."
+		},
+		"GLOBAL_KEYWORD_FROZEN": {
+			"en": "Frozen",
+			"fr": "Gelé"
+		},
+		"GLOBAL_KEYWORD_FROZEN_TEXT": {
+			"en": "Misses its next attack.",
+			"fr": "Rate sa prochaine attaque."
+		},
+		"GLOBAL_KEYWORD_IMMUNE": {
+			"en": "Immune",
+			"fr": "Insensible"
+		},
+		"GLOBAL_KEYWORD_IMMUNE_REF_TEXT": {
+			"en": "Immune characters can't be damaged.",
+			"fr": "Les personnages insensibles ne peuvent pas être blessés."
+		},
+		"GLOBAL_KEYWORD_IMMUNE_TEXT": {
+			"en": "Can't be damaged.",
+			"fr": "Ne peut pas subir de dégâts."
+		},
+		"GLOBAL_KEYWORD_INSPIRE": {
+			"en": "Inspire",
+			"fr": "Exaltation"
+		},
+		"GLOBAL_KEYWORD_INSPIRE_TEXT": {
+			"en": "Does something after you use your Hero Power.",
+			"fr": "Fait quelque chose quand vous utilisez votre pouvoir héroïque."
+		},
+		"GLOBAL_KEYWORD_MINION_TYPE_REFERENCE": {
+			"en": "Minion Type",
+			"fr": "Type de serviteur"
+		},
+		"GLOBAL_KEYWORD_MINION_TYPE_REFERENCE_TEXT": {
+			"en": "Beast, Demon, Dragon, Mech, Murloc, Pirate, and Totem.",
+			"fr": "Bête, démon, dragon, méca, murloc, pirate et totem."
+		},
+		"GLOBAL_KEYWORD_OVERLOAD": {
+			"en": "Overload: X",
+			"fr": "Surcharge : X"
+		},
+		"GLOBAL_KEYWORD_OVERLOAD_TEXT": {
+			"en": "You have X less mana next turn.",
+			"fr": "Vous aurez X cristaux de mana en moins au prochain tour."
+		},
+		"GLOBAL_KEYWORD_SECRET": {
+			"en": "Secret",
+			"fr": "Secret"
+		},
+		"GLOBAL_KEYWORD_SECRET_TEXT": {
+			"en": "Hidden until a specific action occurs on your opponent's turn.",
+			"fr": "Inconnu jusqu’à ce qu’une action spécifique se produise pendant le tour de votre adversaire."
+		},
+		"GLOBAL_KEYWORD_SHIFTING": {
+			"en": "Shifter Zerus",
+			"fr": "Déphaseur Zerus"
+		},
+		"GLOBAL_KEYWORD_SHIFTING_TEXT": {
+			"en": "Transforms into a new minion at the start of your turn.",
+			"fr": "Se transforme en un nouveau serviteur au début de votre tour."
+		},
+		"GLOBAL_KEYWORD_SILENCE": {
+			"en": "Silence",
+			"fr": "Silence"
+		},
+		"GLOBAL_KEYWORD_SILENCE_TEXT": {
+			"en": "Removes all card text and enchantments.",
+			"fr": "Supprime le texte et les enchantements de la carte."
+		},
+		"GLOBAL_KEYWORD_SPAREPART": {
+			"en": "Spare Parts",
+			"fr": "Pièces détachées"
+		},
+		"GLOBAL_KEYWORD_SPAREPART_TEXT": {
+			"en": "Spare Parts are 1-cost spells with minor effects.",
+			"fr": "Les Pièces détachées sont des sorts à faibles effets coûtant 1 cristal de mana."
+		},
+		"GLOBAL_KEYWORD_SPELLPOWER": {
+			"en": "Spell Damage",
+			"fr": "Dégâts des sorts"
+		},
+		"GLOBAL_KEYWORD_SPELLPOWER_REF_TEXT": {
+			"en": "Your spells deal extra damage.",
+			"fr": "Vos sorts infligent des dégâts supplémentaires."
+		},
+		"GLOBAL_KEYWORD_SPELLPOWER_TEXT": {
+			"en": "Your spell cards deal {0} extra damage.",
+			"fr": "Vos cartes de sort infligent {0} |4(point,points) de dégâts supplémentaires."
+		},
+		"GLOBAL_KEYWORD_STEALTH": {
+			"en": "Stealth",
+			"fr": "Camouflage"
+		},
+		"GLOBAL_KEYWORD_STEALTH_REF_TEXT": {
+			"en": "Can't be attacked or targeted until it deals damage.",
+			"fr": "Ne peut pas être attaqué ou visé jusqu’à ce qu’il inflige des dégâts."
+		},
+		"GLOBAL_KEYWORD_STEALTH_TEXT": {
+			"en": "Can't be attacked or targeted until it deals damage.",
+			"fr": "Ne peut pas être attaqué ou visé jusqu’à ce qu’il inflige des dégâts."
+		},
+		"GLOBAL_KEYWORD_TAUNT": {
+			"en": "Taunt",
+			"fr": "Provocation"
+		},
+		"GLOBAL_KEYWORD_TAUNT_REF_TEXT": {
+			"en": "Enemies must attack minions that have Taunt.",
+			"fr": "Les adversaires doivent attaquer les serviteurs ayant Provocation."
+		},
+		"GLOBAL_KEYWORD_TAUNT_TEXT": {
+			"en": "Enemies must attack this minion.",
+			"fr": "Les adversaires doivent attaquer ce serviteur."
+		},
+		"GLOBAL_KEYWORD_WINDFURY": {
+			"en": "Windfury",
+			"fr": "Furie des vents"
+		},
+		"GLOBAL_KEYWORD_WINDFURY_TEXT": {
+			"en": "Can attack twice each turn.",
+			"fr": "Peut attaquer deux fois par tour."
+		}
+	}
 }

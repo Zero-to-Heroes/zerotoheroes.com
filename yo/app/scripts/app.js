@@ -109,6 +109,21 @@ app.config(['$routeProvider', '$locationProvider',
 			reloadOnSearch: false,
 			menuItem: 'search'
 	  	}).
+	  	when('/r/badminton/:reviewId/:reviewTitle?', {
+	  		redirectTo: '/'
+	  	}.
+	  	when('/r/squash/:reviewId/:reviewTitle?', {
+	  		redirectTo: '/'
+	  	}.
+	  	when('/r/heroesofthestorm/:reviewId/:reviewTitle?', {
+	  		redirectTo: '/'
+	  	}.
+	  	when('/r/leagueoflegends/:reviewId/:reviewTitle?', {
+	  		redirectTo: '/'
+	  	}.
+	  	when('/r/other/:reviewId/:reviewTitle?', {
+	  		redirectTo: '/'
+	  	}.
 	  	when('/r/:sport/:reviewId/:reviewTitle?', {
 			templateUrl: 'views/review.html',
 			controller: 'ReviewCtrl',

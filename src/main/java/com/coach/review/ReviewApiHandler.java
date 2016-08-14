@@ -480,6 +480,10 @@ public class ReviewApiHandler {
 		// review.setLastModifiedDate(new Date());
 		// review.setLastModifiedBy(currentUser);
 		review.setLanguage(inputReview.getLanguage());
+		if ("public".equalsIgnoreCase(inputReview.getVisibility()) && !"public".equalsIgnoreCase(review.getVisibility())) {
+			subscriptionManager.notifyNewReview(review.getSport(), review);
+			slackNotifier.notifyNewReview(review);
+		}
 		review.setVisibility(inputReview.getVisibility());
 
 		reviewService.updateAsync(review);

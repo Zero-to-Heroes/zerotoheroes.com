@@ -1,16 +1,19 @@
 package com.coach.plugin.hearthstone.integrations;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.json.JSONObject;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.amazonaws.event.ProgressEvent;
@@ -92,27 +95,16 @@ public class HsReplayNet implements IntegrationPlugin {
 		log.debug(matcher.toString());
 		matcher.matches();
 
-		// StringBuilder result = new StringBuilder();
-		// URL url = new URL(gameUrl);
+		String gameId = matcher.group(2);
 
-		Document doc = Jsoup.connect(gameUrl).userAgent("Mozilla").get();
-		Elements linkCandidates = doc.select("#replay-details div div div div ul li a");
+		String apiUrl = "http://hsreplay.net/api/v1/games/" + gameId + "/";
+		String resultString = restGetCall(apiUrl);
 
-		String downloadLink = linkCandidates.get(0).attr("href").replace("https", "http");
+		JSONObject api = new JSONObject(resultString);
+		String downloadLink = api.getString("replay_xml");
 
-		// log.debug(linkCandidates.toString());
-
-		// URL url = new URL(downloadLink);
-		// HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		// conn.setRequestMethod("GET");
-		// BufferedReader rd = new BufferedReader(new
-		// InputStreamReader(conn.getInputStream()));
-		// String line;
-		// while ((line = rd.readLine()) != null) {
-		// result.append(line);
-		// }
-		// rd.close();
 		String stringXml = Jsoup.connect(downloadLink).userAgent("Mozilla").get().select("hsreplay").toString();
+		downloadLink = downloadLink.replace("https", "http");
 
 		// Capitalize what needs to be capitalize
 		stringXml = stringXml.replaceAll("<(/)?hsreplay", "<$1HSReplay").replaceAll("<(/)?gameentity", "<$1GameEntity")
@@ -128,5 +120,26 @@ public class HsReplayNet implements IntegrationPlugin {
 				.replaceAll("<(/)?info", "<$1Info");
 		// log.debug("Build xml\n " + stringXml);
 		return stringXml;
+	}
+
+	private String restGetCall(String apiUrl) throws MalformedURLException, IOException {
+		URL url = new URL(apiUrl);
+		URLConnection connection = url.openConnection();
+		connection.setDoOutput(true);
+		connection.setConnectTimeout(5000);
+		connection.setReadTimeout(5000);
+		connection.setRequestProperty("User-Agent",
+				"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
+		connection.setRequestProperty("Content-Type", "application/json");
+		connection.setRequestProperty("Accept", "*/*");
+		BufferedReader rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+		String line;
+		StringBuilder result = new StringBuilder();
+		while ((line = rd.readLine()) != null) {
+			result.append(line);
+		}
+		rd.close();
+		String resultString = result.toString();
+		return resultString;
 	}
 }

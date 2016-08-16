@@ -79,13 +79,13 @@ var parseDecks = {
 		if (match.length > 4)
 			deckName += match[4]
 		var deckUrl = match[2] + deckName
-		// console.log('\tdeck name', deckName, deckUrl)
+		console.log('\tdeck name', deckName, deckUrl)
 
 		var plugins = review.plugins.hearthstone;
 		// console.log('\tplugins', plugins)
 		if (plugins && plugins.parseDecks && plugins.parseDecks[deckName]) {
 			var strDeck = plugins.parseDecks[deckName];
-			// console.log('\tstrDeck', strDeck)
+			console.log('\tstrDeck', strDeck)
 			var deck = JSON.parse(strDeck)
 			deckUrl = deck.url || deckUrl
 			// console.log('\tjsDeck', deck)

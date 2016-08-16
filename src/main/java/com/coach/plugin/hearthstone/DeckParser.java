@@ -122,7 +122,7 @@ public class DeckParser implements Plugin {
 		Pattern pattern = Pattern.compile(HEARTHHEAD_DECK_ID_REGEX, Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(initialText);
 		while (matcher.find()) {
-			String deckId = matcher.group(2);
+			String deckId = matcher.group(2) + matcher.group(3);
 
 			// Don't override existing decks (performance)
 			if (pluginData.get(deckId) != null) {

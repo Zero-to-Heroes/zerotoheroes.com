@@ -3,7 +3,7 @@
 }
 
 .comment-block .comment-block {
-	margin-left: 40px;
+	margin-left: 7px;
 }
 
 .main-block {
@@ -103,6 +103,6 @@ author-frame {
 
 @media screen and (max-width: 1400px) {
 	.comment-block .comment-block {
-		margin-left: 25px;
+		margin-left: 0;
 	}
 }

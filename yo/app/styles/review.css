@@ -130,7 +130,9 @@
 .video-information .video-information-header .visibility {
     position: relative;
     bottom: 22px;
-    margin-bottom: -20px;
+    float: right;
+    margin-top: 26px;
+    margin-right: -8px;
 }
 
 @keyframes dots {

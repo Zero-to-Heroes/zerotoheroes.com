@@ -1027,14 +1027,14 @@
   opacity: 0.5;
   border-radius: 50%;
   position: absolute;
-  background-size: contain;
 }
 .hearthstone .joustjs #externalPlayer .hero .overlay.frozen {
   background: url(images/hero_frozen.png) center center no-repeat;
-  height: 150%;
-  width: 160%;
-  left: -35%;
-  top: -26%;
+  height: 163%;
+  width: 180%;
+  left: -39%;
+  top: -35%;
+  background-size: contain;
 }
 .hearthstone .joustjs #externalPlayer .hero .overlay.heavily-armored {
   background: url(images/hero_heavily_armored.png) center center no-repeat;

@@ -5284,7 +5284,8 @@ arguments[4][4][0].apply(exports,arguments)
           this.goPreviousAction();
         }
       }
-      return this.seeking = false;
+      this.seeking = false;
+      return this.emit('moved-timestamp');
     };
 
     ReplayPlayer.prototype.getCurrentTimestamp = function() {
@@ -5602,11 +5603,11 @@ arguments[4][4][0].apply(exports,arguments)
 
     ReplayPlayer.prototype.replaceKeywordsWithTimestamp = function(text) {
       var longOpponentTurnRegex, longTurnRegex, matches, mulliganRegex, opoonentTurnRegex, that, turnRegex;
-      turnRegex = /(\s|^)(t|T)\d?\d(:|\s|,|\.|\?)/gm;
-      opoonentTurnRegex = /(\s|^)(t|T)\d?\do(:|\s|,|\.|\?)/gm;
-      longTurnRegex = /(\s|^)(turn|Turn)\s?\d?\d(:|\s|,|\.|\?)/gm;
-      longOpponentTurnRegex = /(\s|^)(turn|Turn)\s?\d?\do(:|\s|,|\.|\?)/gm;
-      mulliganRegex = /(\s|^)(m|M)ulligan(:|\s|\?)/gm;
+      turnRegex = /(\s|^)(t|T)\d?\d(:|\s|,|\.|\?|$)/gm;
+      opoonentTurnRegex = /(\s|^)(t|T)\d?\do(:|\s|,|\.|\?|$)/gm;
+      longTurnRegex = /(\s|^)(turn|Turn)\s?\d?\d(:|\s|,|\.|\?|$)/gm;
+      longOpponentTurnRegex = /(\s|^)(turn|Turn)\s?\d?\do(:|\s|,|\.|\?|$)/gm;
+      mulliganRegex = /(\s|^)(m|M)ulligan(:|\s|\?|$)/gm;
       that = this;
       matches = text.match(turnRegex);
       if (matches && matches.length > 0) {

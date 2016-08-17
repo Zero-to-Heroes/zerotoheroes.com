@@ -116,6 +116,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Egg Druid"));
 		hearthstone.add(new Tag("Beast Druid"));
 		hearthstone.add(new Tag("Midrange Druid"));
+		hearthstone.add(new Tag("Yogg Token Druid"));
 
 		hearthstone.add(new Tag("Palasecret"));
 		hearthstone.add(new Tag("Aggro Paladin"));

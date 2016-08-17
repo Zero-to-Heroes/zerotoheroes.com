@@ -2,6 +2,7 @@ package com.coach.profile;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.coach.notifications.Notifications;
 import com.coach.preferences.Preferences;
@@ -18,6 +19,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
+@Document
 public class Profile {
 
 	@Id

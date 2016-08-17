@@ -16,6 +16,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
@@ -41,6 +42,7 @@ import lombok.extern.slf4j.Slf4j;
 @ToString(exclude = { "comments", "canvas", "temporaryReplay" })
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Slf4j
+@Document
 public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
@@ -68,12 +70,14 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	@CreatedDate
 	private Date creationDate;
 	private Date lastModifiedDate;
+	@Indexed
 	private Date sortingDate;
 	// Main information
 	private String title;
 	private String description = "", text = "";
 	// The sport - also includes the key as string for serialization purposes
 	// TOOD: not clean
+	@Indexed
 	private Sport sport;
 	private String strSport;
 	// The key of the associated video / file
@@ -86,16 +90,22 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// The image to display (if any)
 	private String thumbnail;
 	// The type of media that is linked to the video
-	private String fileType, mediaType, reviewType;
+	private String fileType, mediaType;
+	@Indexed
+	private String reviewType;
 	private String language = "en";
 	// Participant details
+	@Indexed
 	private ParticipantDetails participantDetails = new ParticipantDetails();
 	private String author, lastModifiedBy;
-	private String authorId, lastModifiedById;
+	@Indexed
+	private String authorId;
+	private String lastModifiedById;
 	private int authorReputation;
 	private String authorFrame;
 	private int beginning, ending;
 	private List<Comment> comments;
+	@Indexed
 	private int totalComments, totalHelpfulComments;
 	private boolean transcodingDone;
 	@Indexed

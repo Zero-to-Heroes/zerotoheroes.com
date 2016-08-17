@@ -16,7 +16,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,8 +43,6 @@ import com.coach.sport.SportManager;
 import com.coach.subscription.SubscriptionManager;
 import com.coach.user.UserRepository;
 import com.coach.user.UserService;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCollection;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -71,8 +68,8 @@ public class ReviewApiHandler {
 	@Autowired
 	ProfileRepository profileRepo;
 
-	@Autowired
-	MongoTemplate mongoTemplate;
+	// @Autowired
+	// MongoTemplate mongoTemplate;
 
 	@Autowired
 	CommentParser commentParser;
@@ -107,9 +104,11 @@ public class ReviewApiHandler {
 
 	@PostConstruct
 	public void init() {
-		DBCollection collection = mongoOperations.getCollection("review");
+		// DBCollection collection = mongoOperations.getCollection("review");
+		// collection.createIndex(keys);
 		// log.debug("retrieving collection " + collection);
-		collection.createIndex(new BasicDBObject("fullTextSearchField", "text"));
+		// collection.createIndex(new BasicDBObject("fullTextSearchField",
+		// "text"));
 		// collection.createIndex(new BasicDBObject("published", 1));
 	}
 
@@ -480,7 +479,8 @@ public class ReviewApiHandler {
 		// review.setLastModifiedDate(new Date());
 		// review.setLastModifiedBy(currentUser);
 		review.setLanguage(inputReview.getLanguage());
-		if ("public".equalsIgnoreCase(inputReview.getVisibility()) && !"public".equalsIgnoreCase(review.getVisibility())) {
+		if ("public".equalsIgnoreCase(inputReview.getVisibility())
+				&& !"public".equalsIgnoreCase(review.getVisibility())) {
 			subscriptionManager.notifyNewReview(review.getSport(), review);
 			slackNotifier.notifyNewReview(review);
 		}

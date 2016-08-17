@@ -252,7 +252,10 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						}
 						else {
 							$log.debug('plugin not loaded, loading', plugin)
-							basket.require({ url: '/plugins/' + plugin.name + '/' + plugin.name + '.js' + version, skipCache: plugin.dev }).then(function () {
+							// Clearing the cache, not sure it's really helpful
+							basket.clear(true)
+							// Expires after 10 days (usually new versions are more frequent than this)
+							basket.require({ url: '/plugins/' + plugin.name + '/' + plugin.name + '.js' + version, skipCache: plugin.dev, expire: 24 * 10 }).then(function () {
 								$log.debug('externalPlayer loaded')
 								executePlugin(plugin)
 								$log.debug('externalPlayer executed')

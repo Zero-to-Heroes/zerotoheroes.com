@@ -62,7 +62,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 19, dev: dev}, 
 							{name: 'parseDecks', version: 34, dev: dev}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 89, dev: dev},
+							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 90, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 18, dev: dev}
 						],
 						customCss: 'hearthstone.css?2'
@@ -196,19 +196,21 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 
 		service.loadPlugin = function(plugins, pluginObj) {
 			var plugin = pluginObj.name
-			var version = pluginObj.version ? '?' + pluginObj.version : ''
+			var version = pluginObj.version ? '?v=' + pluginObj.version : ''
 
 			// Already loaded?
 			if (window[pluginObj.name]) {
 				plugins.push(pluginObj)
-				console.log('not reloading css', plugin);
+				$log.debug('not reloading css', plugin);
 			}
 			else {
 				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js' + version, skipCache: pluginObj.dev }).then(function () {
 					plugins.push(pluginObj)
 				})
-				angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css').then(function() {
-					console.log('loaded css', plugin);
+				angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css' + version).then(function() {
+					$log.debug('loaded css', plugin, '/plugins/' + plugin + '/' + plugin + '.css' + version);
+				}).catch(function() {
+					$log.error('could not load css')
 				})
 			}
 		}
@@ -245,7 +247,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					if ((!review.mediaType && !review.reviewType && (!plugin.mediaType || plugin.mediaType == 'game-replay')) || review.mediaType == plugin.mediaType || review.reviewType == plugin.mediaType) {
 						// $log.debug('\tyes, init player', plugin, review)
 						// Load the plugin
-						var version = plugin.version ? '?' + plugin.version : '';
+						var version = plugin.version ? '?v=' + plugin.version : '';
 						if (window[plugin.name]) {
 							$log.debug('executing plugin')
 							executePlugin(plugin)
@@ -262,7 +264,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							}, function(error) {
 								$log.error('error while loading externalPlayer', plugin, error)
 							})
-							angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css').then(function() {
+							angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css' + version).then(function() {
 								//console.log('loaded css', plugin);
 							})
 

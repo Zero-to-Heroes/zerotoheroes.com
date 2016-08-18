@@ -35,7 +35,7 @@ app.directive('hearthstoneParticipantsDetailsArena', ['$log', 'SportsConfig', 'A
 
 
 				$scope.$watch('mediaPlayer', function(player) {
-					$log.debug('setting media player', player, $scope.mediaPlayer)
+					// $log.debug('setting media player', player, $scope.mediaPlayer)
 					if (player && player.getPlayerInfo) {
 						$scope.review.participantDetails = $scope.review.participantDetails || {}
 						$scope.review.participantDetails.playerCategory = player.getPlayerInfo().player.class

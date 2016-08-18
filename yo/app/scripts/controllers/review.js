@@ -4,7 +4,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService) { 
 
 		$scope.debugTimestamp = Date.now()
-		$log.debug('init review controller at ', $scope.debugTimestamp)
+		// $log.debug('init review controller at ', $scope.debugTimestamp)
 		$scope.newComment = {};
 		$scope.coaches = []
 		$scope.selectedCoach
@@ -27,19 +27,19 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// Load all plugins
 		// ================
 		$scope.loadPlugins = function() {
-			$log.debug('beginning plugin load at', (Date.now() - $scope.debugTimestamp))
+			// $log.debug('beginning plugin load at', (Date.now() - $scope.debugTimestamp))
 			$scope.pluginsToLoad = SportsConfig.getPlugins($scope.sport)// $scope.config && $scope.config.plugins ? $scope.config.plugins.plugins : undefined;
 			var definedPlugins = 0;
 			$scope.plugins = [];
 			$scope.pluginNames = [];
 
 			$scope.$watchCollection('plugins', function(newValue, oldValue) {
-				$log.debug('watching plugins', $scope.pluginsToLoad, $scope.plugins, definedPlugins, newValue.length == definedPlugins, newValue, oldValue)
+				// $log.debug('watching plugins', $scope.pluginsToLoad, $scope.plugins, definedPlugins, newValue.length == definedPlugins, newValue, oldValue)
 				if (!$scope.pluginsToLoad || (newValue && newValue.length == definedPlugins)) {
 					// $scope.initReview();
 					$scope.plugins.forEach(function(plugin) {
 						if (plugin) {
-							$log.debug('\tadding plugin at', plugin.name, (Date.now() - $scope.debugTimestamp));
+							// $log.debug('\tadding plugin at', plugin.name, (Date.now() - $scope.debugTimestamp));
 							$scope.pluginNames.push(plugin.name);
 						}
 					})
@@ -50,7 +50,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if ($scope.pluginsToLoad) {
 				definedPlugins = $scope.pluginsToLoad.length
 				angular.forEach($scope.pluginsToLoad, function(plugin) {
-					$log.debug('\tloading plugin at', plugin, (Date.now() - $scope.debugTimestamp))
+					// $log.debug('\tloading plugin at', plugin, (Date.now() - $scope.debugTimestamp))
 					SportsConfig.loadPlugin($scope.plugins, plugin)
 				})
 			}
@@ -60,10 +60,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.initReview = function() {
 			$scope.restrictedAccess = false
 			//$log.debug('initializing review');
-			$log.debug('Loding review at ', (Date.now() - $scope.debugTimestamp))
+			// $log.debug('Loding review at ', (Date.now() - $scope.debugTimestamp))
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
-					$log.debug('Received review at ', (Date.now() - $scope.debugTimestamp))
+					// $log.debug('Received review at ', (Date.now() - $scope.debugTimestamp))
 					$scope.review = data
 					// $scope.useVideo = data.key ? true : false;
 					// $rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
@@ -83,7 +83,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						$scope.mediaPlayer.playerType = 'video'
 					}
 
-					$log.debug('mediaPlayer', $scope.mediaPlayer)
+					// $log.debug('mediaPlayer', $scope.mediaPlayer)
 					// Need to wait for the digest cycle so the proper directive (videoplayer vs externalplayer) is instanciated
 					$timeout(function() {
 						$scope.initPlayer(data)
@@ -100,7 +100,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// TODO externalize that to a service like for the tags
 			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
 				$scope.coaches = [];
-				$log.debug('coaches', data)
+				// $log.debug('coaches', data)
 				for (var i = 0; i < data.length; i++) {
 					// $log.debug('initial coach text', data[i].description)
 					// $log.debug('marked coach text', marked(data[i].description))
@@ -119,19 +119,19 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.initPlayer = function(review) {
-			$log.debug('Player init? ', (Date.now() - $scope.debugTimestamp))
+			// $log.debug('Player init? ', (Date.now() - $scope.debugTimestamp))
 			if (!$scope.mediaPlayer.initReview) {
 				$timeout(function() { $scope.initPlayer(review) }, 10)
 				return
 			}
 			$scope.mediaPlayer.onTimestampChanged = $scope.onTimestampChanged
 
-			$log.debug('Init player at ', (Date.now() - $scope.debugTimestamp))
-			$log.debug('mediaPlayer', $scope.mediaPlayer)
+			// $log.debug('Init player at ', (Date.now() - $scope.debugTimestamp))
+			// $log.debug('mediaPlayer', $scope.mediaPlayer)
 			// Init player-specific information
 			$scope.mediaPlayer.initReview(review)
 
-			$log.debug('init review done at ', (Date.now() - $scope.debugTimestamp))
+			// $log.debug('init review done at ', (Date.now() - $scope.debugTimestamp))
 
 			// Initialize the plugins to replay different formats. Could be done only if necessary though
 			// Controls default to the ones defined in scope
@@ -139,8 +139,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// $scope.externalPlayer = undefined
 			// $scope.mediaType = data.mediaType
-			$log.debug('loaded review', review)
-			$log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
+			// $log.debug('loaded review', review)
+			// $log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
 			// $scope.review = data
 			$scope.controlFlow.reviewLoaded = true
 		}
@@ -157,22 +157,22 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.$watch('controlFlow.pluginsLoaded', function(newVal, oldVal) {
 			if (newVal)
-				$log.debug('controlFlow.pluginsLoaded at ', Date.now() - $scope.debugTimestamp)
+				// $log.debug('controlFlow.pluginsLoaded at ', Date.now() - $scope.debugTimestamp)
 			if (newVal && $scope.controlFlow.reviewLoaded) {
 				$scope.activatePlugins()
 			}
 		})
 		$scope.$watch('controlFlow.reviewLoaded', function(newVal, oldVal) {
 			if (newVal)
-				$log.debug('controlFlow.reviewLoaded at ', Date.now() - $scope.debugTimestamp)
+				// $log.debug('controlFlow.reviewLoaded at ', Date.now() - $scope.debugTimestamp)
 			if (newVal && $scope.controlFlow.pluginsLoaded) {
 				$scope.activatePlugins()
 			}
 		})
 		$scope.activatePlugins = function() {
-			$log.debug('activating plugins at ', Date.now() - $scope.debugTimestamp)
+			// $log.debug('activating plugins at ', Date.now() - $scope.debugTimestamp)
 			$scope.mediaPlayer.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, function() {
-				$log.debug('media player init activated at ', Date.now() - $scope.debugTimestamp)
+				// $log.debug('media player init activated at ', Date.now() - $scope.debugTimestamp)
 				// $scope.controlFlow.pluginsReady = true
 
 				$timeout(function() {
@@ -184,9 +184,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		// $scope.$watch('controlFlow.pluginsReady', function (newVal, oldVal) {
-		// 	$log.debug('pluginsReady?', newVal, oldVal);
+		// 	// $log.debug('pluginsReady?', newVal, oldVal);
 		// 	if (newVal) {
-		// 		$log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
+		// 		// $log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
 		// 		// $scope.review = $scope.review
 				
 		// 	}
@@ -203,7 +203,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// URL parameters
 		//===============
 		$scope.onTimestampChanged = function(timeString) {
-			$log.debug('onTimestampChanged', timeString)
+			// $log.debug('onTimestampChanged', timeString)
 			var encodedUrlTs = encodeURIComponent(timeString)
 			encodedUrlTs = encodedUrlTs.replace(new RegExp('\\.', 'g'), '%2E')
 			$location.search('ts', encodedUrlTs)
@@ -460,7 +460,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.updateVideoInformation = function(data) {
-			$log.debug('updating video information')
+			// $log.debug('updating video information')
 			$scope.review.title = data.title;
 			$scope.review.sport = data.sport;
 
@@ -473,17 +473,17 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// TODO: don't add plugin dependency here
 			if ($scope.review.plugins && $scope.review.plugins.hearthstone && $scope.review.plugins.hearthstone.parseDecks && $scope.review.plugins.hearthstone.parseDecks.reviewDeck) {
-				$log.debug('parsing review deck')
+				// $log.debug('parsing review deck')
 				var compiledDeck = $scope.parseText($scope.review.plugins.hearthstone.parseDecks.reviewDeck)
-				$log.debug('parsed')
+				// $log.debug('parsed')
 				$scope.review.plugins.hearthstone.parseDecks.markedReviewDeck = marked(compiledDeck)
 			}
 
 			$scope.review.editing = false;
 			$scope.review.processed = true;
-			$log.debug('calling onVideoInfoUpdated')
+			// $log.debug('calling onVideoInfoUpdated')
 			$scope.mediaPlayer.onVideoInfoUpdated()
-			$log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
+			// $log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
 
 			$scope.controlFlow.reviewDisplayed = true
 		}

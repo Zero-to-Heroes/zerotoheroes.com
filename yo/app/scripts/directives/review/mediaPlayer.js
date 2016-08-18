@@ -12,7 +12,7 @@ app.directive('mediaPlayer', ['$log',
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
-				$log.debug('config', $scope.config)
+				// $log.debug('config', $scope.config)
 
 				$scope.config.preUploadComment = function(review, comment) {
 					// Do nothing by default

@@ -62,7 +62,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 21, dev: dev}, 
 							{name: 'parseDecks', version: 35, dev: dev}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 91, dev: dev},
+							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 92, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 18, dev: dev}
 						],
 						customCss: 'hearthstone.css?2'
@@ -158,7 +158,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					}
 				})
 			}
-			console.log('plugins for ' + sport + ' art ', plugins)
+			// console.log('plugins for ' + sport + ' art ', plugins)
 			return plugins
 		}
 
@@ -201,14 +201,14 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			// Already loaded?
 			if (window[pluginObj.name]) {
 				plugins.push(pluginObj)
-				$log.debug('not reloading css', plugin);
+				// $log.debug('not reloading css', plugin);
 			}
 			else {
 				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js' + version, skipCache: pluginObj.dev }).then(function () {
 					plugins.push(pluginObj)
 				})
 				angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css' + version).then(function() {
-					$log.debug('loaded css', plugin, '/plugins/' + plugin + '/' + plugin + '.css' + version);
+					// $log.debug('loaded css', plugin, '/plugins/' + plugin + '/' + plugin + '.css' + version);
 				}).catch(function() {
 					$log.error('could not load css')
 				})
@@ -223,7 +223,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 				if (!window[plugin.name]) {
 					$log.error('external player not loaded on window', plugin)
 				}
-				$log.debug('loaded externalPlayer is', externalPlayer)
+				// $log.debug('loaded externalPlayer is', externalPlayer)
 				try {
 					externalPlayer.init(plugin, review)
 				}
@@ -234,7 +234,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 				if (pluginNames) pluginNames.push(plugin.name)
 
 				if (callback) {
-					$log.debug('calling callback')
+					// $log.debug('calling callback')
 					callback(externalPlayer)
 				}
 			}
@@ -249,18 +249,18 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						// Load the plugin
 						var version = plugin.version ? '?v=' + plugin.version : '';
 						if (window[plugin.name]) {
-							$log.debug('executing plugin')
+							// $log.debug('executing plugin')
 							executePlugin(plugin)
 						}
 						else {
-							$log.debug('plugin not loaded, loading', plugin)
+							// $log.debug('plugin not loaded, loading', plugin)
 							// Clearing the cache, not sure it's really helpful
 							basket.clear(true)
 							// Expires after 10 days (usually new versions are more frequent than this)
 							basket.require({ url: '/plugins/' + plugin.name + '/' + plugin.name + '.js' + version, skipCache: plugin.dev, expire: 24 * 10 }).then(function () {
-								$log.debug('externalPlayer loaded')
+								// $log.debug('externalPlayer loaded')
 								executePlugin(plugin)
-								$log.debug('externalPlayer executed')
+								// $log.debug('externalPlayer executed')
 							}, function(error) {
 								$log.error('error while loading externalPlayer', plugin, error)
 							})
@@ -288,7 +288,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 
 		service.getAdditionalSupportedTypes = function(sport) {
 			var supportedTypes = [];
-			$log.debug('Getting supported types for ', sport, this[sport]);
+			// $log.debug('Getting supported types for ', sport, this[sport]);
 			if (sport && this[sport] && this[sport].plugins && this[sport].plugins.plugins) {
 				this[sport].plugins.plugins.forEach(function(plugin) {
 					if (plugin.format) {
@@ -298,7 +298,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					}
 				})
 			}
-			$log.debug('Supported types are ', supportedTypes);
+			// $log.debug('Supported types are ', supportedTypes);
 
 			return supportedTypes;
 		}

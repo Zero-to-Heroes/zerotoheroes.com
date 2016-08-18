@@ -67,8 +67,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	@Id
 	private String id;
 	// Various dates for review lifecycle
+	@Indexed
 	@CreatedDate
 	private Date creationDate;
+	@Indexed
 	private Date lastModifiedDate;
 	@Indexed
 	private Date sortingDate;

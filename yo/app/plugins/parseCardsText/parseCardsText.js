@@ -39820,6 +39820,18 @@ var parseCardsText = {
 			"en": "Does something when you play it from your hand.",
 			"fr": "Fait quelque chose quand vous jouez cette carte depuis votre main."
 		},
+		"GLOBAL_KEYWORD_CANT_BE_DAMAGED": {
+			"en": "Immune",
+			"fr": "Insensible"
+		},
+		"GLOBAL_KEYWORD_CANT_BE_DAMAGED_REF_TEXT": {
+			"en": "Immune characters can't be damaged.",
+			"fr": "Les personnages insensibles ne peuvent pas être blessés."
+		},
+		"GLOBAL_KEYWORD_CANT_BE_DAMAGED_TEXT": {
+			"en": "Can't be damaged.",
+			"fr": "Ne peut pas subir de dégâts."
+		},
 		"GLOBAL_KEYWORD_CHARGE": {
 			"en": "Charge",
 			"fr": "Charge"
@@ -39903,18 +39915,6 @@ var parseCardsText = {
 		"GLOBAL_KEYWORD_FROZEN_TEXT": {
 			"en": "Misses its next attack.",
 			"fr": "Rate sa prochaine attaque."
-		},
-		"GLOBAL_KEYWORD_IMMUNE": {
-			"en": "Immune",
-			"fr": "Insensible"
-		},
-		"GLOBAL_KEYWORD_IMMUNE_REF_TEXT": {
-			"en": "Immune characters can't be damaged.",
-			"fr": "Les personnages insensibles ne peuvent pas être blessés."
-		},
-		"GLOBAL_KEYWORD_IMMUNE_TEXT": {
-			"en": "Can't be damaged.",
-			"fr": "Ne peut pas subir de dégâts."
 		},
 		"GLOBAL_KEYWORD_INSPIRE": {
 			"en": "Inspire",
@@ -40016,5 +40016,5 @@ var parseCardsText = {
 			"en": "Can attack twice each turn.",
 			"fr": "Peut attaquer deux fois par tour."
 		}
-	}
+}
 }

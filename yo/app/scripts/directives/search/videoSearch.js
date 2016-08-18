@@ -123,7 +123,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 						}
 						$scope.range = $scope.getRange()
 
-						$log.debug('\tloaded reviews', $scope.videos)
+						// $log.debug('\tloaded reviews', $scope.videos)
 						$scope.config.videos = $scope.videos
 
 						// Update the URL

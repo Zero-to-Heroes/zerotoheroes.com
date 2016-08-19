@@ -481,6 +481,7 @@ public class ReviewApiHandler {
 		review.setLanguage(inputReview.getLanguage());
 		if ("public".equalsIgnoreCase(inputReview.getVisibility())
 				&& !"public".equalsIgnoreCase(review.getVisibility())) {
+			review.setVisibility(inputReview.getVisibility());
 			subscriptionManager.notifyNewReview(review.getSport(), review);
 			slackNotifier.notifyNewReview(review);
 		}

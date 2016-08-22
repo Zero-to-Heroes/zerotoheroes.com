@@ -101,6 +101,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 				$scope.performSearch = function(params, pageNumber, updateUrl, callback) {
 
 					$scope.videos = []
+					delete $scope.config.videos
 
 					$log.debug('searching videos', params, pageNumber, callback)
 

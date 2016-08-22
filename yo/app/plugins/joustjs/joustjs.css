@@ -1407,12 +1407,12 @@
 @media screen and (max-width: 600px) {
   .hearthstone .joustjs #externalPlayer .additional-controls {
     left: 0;
-    bottom: 30px;
+    bottom: 18px;
   }
 }
 @media screen and (max-width: 400px) {
   .hearthstone .joustjs #externalPlayer .additional-controls {
-    bottom: 20px;
+    bottom: 12px;
   }
 }
 .hearthstone .joustjs #externalPlayer .target {

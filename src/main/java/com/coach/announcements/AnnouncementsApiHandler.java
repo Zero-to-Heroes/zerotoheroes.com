@@ -20,6 +20,21 @@ public class AnnouncementsApiHandler {
 	@Autowired
 	AnnouncementsRepository repo;
 
+	private Announcements announcements;
+
+	@RequestMapping(value = "/refresh", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<Announcements> refresh() {
+		log.info("debug - calling refresh announcements");
+		List<Announcements> findAll = repo.findAll();
+		if (findAll == null || findAll.size() == 0) {
+			Announcements fake = new Announcements();
+			repo.save(fake);
+			return new ResponseEntity<Announcements>((Announcements) null, HttpStatus.OK);
+		}
+		announcements = findAll.get(0);
+		return new ResponseEntity<Announcements>(announcements, HttpStatus.OK);
+	}
+
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<Announcements> get() {
 		List<Announcements> findAll = repo.findAll();

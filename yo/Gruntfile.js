@@ -381,7 +381,7 @@ module.exports = function (grunt) {
 	ngtemplates:  {
 		app: {
 			cwd: '<%= yeoman.app %>',
-			src: 'templates/**/*.html',
+			src: ['templates/**/*.html', 'views/**/*.html'],
 			dest: '<%= yeoman.app %>/scripts/template.js',
 			options: {
 				htmlmin: {
@@ -397,7 +397,7 @@ module.exports = function (grunt) {
 		},
 		dist: {
 			cwd: '<%= yeoman.app %>',
-			src: 'templates/**/*.html',
+			src: ['templates/**/*.html', 'views/**/*.html'],
 			dest: '<%= yeoman.app %>/scripts/template.js',
 			options: {
 				module: 'app',

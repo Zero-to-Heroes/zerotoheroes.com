@@ -14,7 +14,8 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 		replace: true,
 		templateUrl: 'templates/nameInput.html',
 		scope: {
-			active: '='
+			active: '=',
+			profile: '='
 		},
 		link: linkFunction,
 		controller: function($scope, User) {

@@ -39,6 +39,11 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 							User.setUser(data)
 						}
 					)
+					Api.Profile.get( 
+						function(data) {
+							$scope.profile = data
+						}
+					)
 				}
 			}
 			$scope.refresh()

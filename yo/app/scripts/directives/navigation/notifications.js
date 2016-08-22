@@ -6,7 +6,7 @@ app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConf
 			replace: true,
 			templateUrl: 'templates/navigation/notifications.html',
 			scope: {
-				user: '='
+				profile: '='
 			},
 			link: function ($scope, element, attrs) {
 			},
@@ -14,22 +14,32 @@ app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConf
 				$scope.sport = $routeParams.sport
 				$scope.config = SportsConfig[$scope.sport]
 
-				$scope.refresh = function() {
-					if (User.isLoggedIn()) {
-						Api.Profile.get( 
-							function(data) {
-								$scope.notifications = data.notifications
-								$scope.unread = 0
-								$scope.notifications.notifications.forEach(function(notif) {
-									if (!notif.readDate) {
-										$scope.unread++
-									}
-								})
-							}
-						)
-					}
-				}
-				$scope.refresh()
+				$scope.$watch('profile', function(newVal) {
+					$scope.notifications = $scope.profile.notifications
+					$scope.unread = 0
+					$scope.notifications.notifications.forEach(function(notif) {
+						if (!notif.readDate) {
+							$scope.unread++
+						}
+					})
+				})
+
+				// $scope.refresh = function() {
+				// 	if (User.isLoggedIn()) {
+				// 		Api.Profile.get( 
+				// 			function(data) {
+				// 				$scope.notifications = data.notifications
+				// 				$scope.unread = 0
+				// 				$scope.notifications.notifications.forEach(function(notif) {
+				// 					if (!notif.readDate) {
+				// 						$scope.unread++
+				// 					}
+				// 				})
+				// 			}
+				// 		)
+				// 	}
+				// }
+				// $scope.refresh()
 
 				$scope.$on('$routeChangeSuccess', function(next, current) { 
 				   	$scope.sport = $routeParams.sport || $scope.sport

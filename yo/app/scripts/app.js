@@ -153,13 +153,15 @@ app.config(['$routeProvider', '$locationProvider',
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
+			reloadOnSearch: false,
 			menuItem: 'myVideos'
 	  	}).
 	  	when('/s/:sport/myvideos/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
-			menuItem: 'reviews'
+			reloadOnSearch: false,
+			menuItem: 'myVideos'
 	  	}).
 	  	when('/s/:sport/', {
 			templateUrl: 'views/sportHome.html',

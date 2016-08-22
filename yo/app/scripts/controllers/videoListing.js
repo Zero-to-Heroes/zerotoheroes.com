@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', 
-	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate) {
+angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', 'TagService', 
+	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, TagService) {
 		// $scope.videos = [];
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
@@ -23,15 +23,11 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				$scope.search()
 			}
 		})
-			
-		$rootScope.$on('user.logged.in', function() {
-			$scope.search()
-		})
-		
-		Api.Sports.get({sport: $scope.sport}, function(data) {
-			$scope.subscribers = data.subscribers
-		})
 
+
+		//===============
+		// Search
+		//===============
 		$scope.toggleAllVideos = function() {
 			$scope.onlyShowPublic = !$scope.onlyShowPublic
 			$scope.search()
@@ -50,9 +46,13 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			params.ownVideos = $scope.ownVideos
 			params.visibility = $scope.onlyShowPublic ? 'public' : null
 
-			$scope.criteria.search(params, true, null)
+			$scope.criteria.search(params, true, $scope.pageNumber)
 		}
 
+
+		//===============
+		// Accoutn stuff
+		//===============
 		$scope.signUp = function() {
 			$rootScope.$broadcast('account.signup.show');
 		}
@@ -65,6 +65,17 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			if (current.$$route) {
 				$scope.ownVideos = current.$$route.ownVideos
 			}
+		})
+		$rootScope.$on('user.logged.in', function() {
+			$scope.search()
+		})
+
+		
+		//===============
+		// Subscribers
+		//===============
+		Api.Sports.get({sport: $scope.sport}, function(data) {
+			$scope.subscribers = data.subscribers
 		})
 
 		$scope.unsubscribe = function() {
@@ -87,75 +98,25 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 
 		//===============
-		// Search
+		// Tags
 		//===============
-		$scope.findAllowedTag = function(tagName) {
-			//$log.log('finding', tagName);
-			var result;
-			$scope.allowedTags.some(function(tag) {
-				//$log.log('comparing', tag, tagName);
-				if (tag.text.toLowerCase() == tagName.toLowerCase()) {
-					//$log.log('found a match', tag);
-					result = tag;
-					return true;
-				}
-			})
-			return result;
-		}
-
 		$scope.loadTags = function() {
-			Api.Tags.query({sport: $scope.sport}, 
-				function(data) {
-					$scope.allowedTags = data;
-					//$log.log('allowedTags set to', $scope.allowedTags);
-					
-					// By default mask the Sequence videos
-					var sequenceTag = $scope.findAllowedTag('sequence');
-					if (sequenceTag) {
-						$scope.criteria.unwantedTags.push(sequenceTag);
-					}
+			TagService.filterOut(null, function(filtered) {
+				$scope.allowedTags = filtered
+				if (!$scope.criteria.search) {
 					$timeout(function() {
-						if (!$scope.criteria.search) {
-							$timeout(function() {
-								$scope.search()
-							}, 50)
-						}
-						else {
-							$scope.search()
-						}
-					})
-
-				}
-			);
-		}
-
-		$scope.loadTags();
-
-		$scope.autocompleteTag = function($query) {
-			var validTags = $scope.allowedTags.filter(function (el) {
-				// http://sametmax.com/loperateur-not-bitwise-ou-tilde-en-javascript/
-				return ~el.text.toLowerCase().indexOf($query);
-			});
-			return validTags.sort(function(a, b) {
-				var tagA = a.text.toLowerCase();
-				var tagB = b.text.toLowerCase();
-				if (~tagA.indexOf(':')) {
-					if (~tagB.indexOf(':')) {
-						return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
-					}
-					return 1;
+						$scope.search()
+					}, 50)
 				}
 				else {
-					if (~tagB.indexOf(':')) {
-						return -1;
-					}
-					return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
+					$scope.search()
 				}
-			});;
+			})
 		}
+		$scope.loadTags()
 
-		// $scope.search = function() {
-		// 	$scope.retrieveVideos('false', $scope.pageNumber, $scope.criteria);
-		// }
+		$scope.autocompleteTag = function($query) {
+			return TagService.autocompleteTag($query, $scope.allowedTags, $scope.sport)
+		}
 	}
 ]);

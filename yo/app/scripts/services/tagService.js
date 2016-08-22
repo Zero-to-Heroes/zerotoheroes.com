@@ -22,6 +22,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 			)
 		}
 
+		// get all tags and exclude the ones with the "strong" type
 		service.filterOut = function(string, callback, inputTags) {
 			// Wait until tags are refreshed
 			if (!service.tags) {
@@ -33,7 +34,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 			var tags = inputTags || service.tags
 			var filtered = []
 			tags.forEach(function(tag) {
-				if (tag.type != string)
+				if (!string || tag.type != string)
 					filtered.push(tag)
 			})
 			callback(filtered)

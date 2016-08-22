@@ -132,6 +132,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Echo Mage"));
 		hearthstone.add(new Tag("Yogg Mage"));
 		hearthstone.add(new Tag("Reno Mage"));
+		hearthstone.add(new Tag("Dragon Mage"));
 
 		hearthstone.add(new Tag("Zoolock"));
 		hearthstone.add(new Tag("Demonlock"));
@@ -139,6 +140,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Malylock"));
 		hearthstone.add(new Tag("Renolock"));
 		hearthstone.add(new Tag("CThun Lock"));
+		hearthstone.add(new Tag("Discolock"));
 
 		hearthstone.add(new Tag("Aggro Shaman"));
 		hearthstone.add(new Tag("Malygos Shaman"));
@@ -146,12 +148,14 @@ public class TagRepository {
 		hearthstone.add(new Tag("Midrange Shaman"));
 		hearthstone.add(new Tag("Bloodlust Shaman"));
 		hearthstone.add(new Tag("Overload Shaman"));
+		hearthstone.add(new Tag("Evolve Shaman"));
 
 		hearthstone.add(new Tag("Control Priest"));
 		hearthstone.add(new Tag("Dragon Priest"));
 		hearthstone.add(new Tag("CThun Priest"));
 		hearthstone.add(new Tag("NZoth Priest"));
 		hearthstone.add(new Tag("OTK Priest"));
+		hearthstone.add(new Tag("Resurrect Priest"));
 
 		hearthstone.add(new Tag("Oil Rogue"));
 		hearthstone.add(new Tag("Malygos Rogue"));

@@ -13,6 +13,10 @@
 	overflow: visible;
 }
 
+.upload-page .link-minor {
+	margin-left: 20px;
+}
+
 .progress-group {
 	padding: 15px;
 }

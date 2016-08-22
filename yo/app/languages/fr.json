@@ -545,7 +545,8 @@
 			"timestampTranslationInfo": "On dirait que vous utilisez des timestamps et avez changé le moment du début de la vidéo. Ne vous inquiétez pas, nous nous chargeons de faire en sorte que les timestamps soient correctement modifiés pour correspondre au nouveau début de la vidéo :)",
 			"uploadButton": "Mettre en ligne",
 			"dontCloseWindowMessage": "Votre vidéo est en train d'être mise en ligne sur nos serveurs. Merci de ne pas fermer la fenêtre, ou vous devrez tout recommencer :(",
-			"finalizeVideoMessage": "Nous sommes en train de finaliser votre vidéo. En fonction de sa taille, cela peut prendre jusque 5 minutes."
+			"finalizeVideoMessage": "Nous sommes en train de finaliser votre vidéo. En fonction de sa taille, cela peut prendre jusque 5 minutes.",
+			"showGuide": "Tirer le maximum de sa revue (anglais)"
 		},
 		"welcome": {
 			"headlineLogged": "Ravis de vous revoir {{name}}!",

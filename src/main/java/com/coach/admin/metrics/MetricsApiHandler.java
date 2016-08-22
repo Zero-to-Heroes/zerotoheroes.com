@@ -149,33 +149,33 @@ public class MetricsApiHandler {
 
 		// Churn - how many people contributed in the past 3 months and didn't
 		// do anything in the past 3 weeks
-		log.debug("handling churn");
-		for (int i = 1; i < metrics.getMetrics().size(); i++) {
-			// Build the list of unique content creators in the past 8 weeks
-			// We don't want to pick a too long period, otherwise the same user
-			// will count for churn over too many weeks.
-			Set<String> onceActive = new HashSet<>();
-			for (int j = Math.max(0, i - 8); j < i; j++) {
-				onceActive.addAll(metrics.getMetrics().get(j).getUniqueContentCreators());
-			}
-
-			// Build the list of unique content creators in the past 3 weeks
-			Set<String> recentlyActive = new HashSet<>();
-			for (int j = Math.max(0, i - 3); j < i; j++) {
-				recentlyActive.addAll(metrics.getMetrics().get(j).getUniqueContentCreators());
-			}
-
-			// Build the list of people who have been active in the past but not
-			// recently
-			Set<String> churn = new HashSet<>();
-			for (String user : onceActive) {
-				if (!recentlyActive.contains(user)) {
-					churn.add(user);
-				}
-			}
-
-			metrics.getMetrics().get(i).setChurn(churn);
-		}
+		// log.debug("handling churn");
+		// for (int i = 1; i < metrics.getMetrics().size(); i++) {
+		// // Build the list of unique content creators in the past 8 weeks
+		// // We don't want to pick a too long period, otherwise the same user
+		// // will count for churn over too many weeks.
+		// Set<String> onceActive = new HashSet<>();
+		// for (int j = Math.max(0, i - 8); j < i; j++) {
+		// onceActive.addAll(metrics.getMetrics().get(j).getUniqueContentCreators());
+		// }
+		//
+		// // Build the list of unique content creators in the past 3 weeks
+		// Set<String> recentlyActive = new HashSet<>();
+		// for (int j = Math.max(0, i - 3); j < i; j++) {
+		// recentlyActive.addAll(metrics.getMetrics().get(j).getUniqueContentCreators());
+		// }
+		//
+		// // Build the list of people who have been active in the past but not
+		// // recently
+		// Set<String> churn = new HashSet<>();
+		// for (String user : onceActive) {
+		// if (!recentlyActive.contains(user)) {
+		// churn.add(user);
+		// }
+		// }
+		//
+		// metrics.getMetrics().get(i).setChurn(churn);
+		// }
 
 		log.debug("Formatting for CSV");
 		String csvMetrics = toCsv(metrics);
@@ -231,68 +231,72 @@ public class MetricsApiHandler {
 
 		String result = "";
 
-		String header = "Week,Unique content creators,Returning contributors,Churn,Total reviews,Total comments,"
-				+ "Total interactions,Total private review,Total reputation,Total video views,Contributors,Churn detail";
+		String header = "Week,Unique content creators,Returning contributors,Total reviews,Total comments,"
+				+ "Total interactions,Total private review,Total reputation,Total video views";
 		result += header + "<br/>";
 
 		for (Metric metric : metrics.getMetrics()) {
 			log.debug("\tformatting metric " + metric);
 			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + metric.getUniqueContentCreators().size()
-					+ "," + metric.getReturningContributors() + "," + metric.getChurn().size() + ","
-					+ metric.getReviews() + "," + metric.getComments() + ","
-					+ (metric.getComments() + metric.getReviews()) + "," + metric.getPrivateReviews() + ","
-					+ metrics.getTotalReputation() + "," + metrics.getTotalVideoViews() + ","
-					+ metric.getUniqueContentCreators() + "," + metric.getChurn();
+					+ "," + metric.getReturningContributors() + "," + +metric.getReviews() + "," + metric.getComments()
+					+ "," + (metric.getComments() + metric.getReviews()) + "," + metric.getPrivateReviews() + ","
+					+ metrics.getTotalReputation() + "," + metrics.getTotalVideoViews();
+			// + "," + metric.getUniqueContentCreators() + "," +
+			// metric.getChurn();
 			result += "<br/>";
 		}
 		log.debug("all metrics formatted");
 		return result;
 	}
 
-	private String detailChurn(Metrics metrics) {
-		Metric metric = metrics.getMetrics().get(metrics.getMetrics().size() - 1);
-
-		String result = "";
-
-		String header = "User,Reviews,Comments,Average comments on own review,Reputation";
-		result += header + "<br/>";
-
-		List<Review> reviews = reviewRepository.findAll();
-
-		for (String username : metric.getChurn()) {
-			// log.debug("Processing userId " + username);
-			User user = userRepository.findByUsername(username);
-			// log.debug("loaded user " + user);
-			if (user == null || username.equalsIgnoreCase("anon")) {
-				continue;
-			}
-
-			String userId = user.getId();
-			int nbReviews = 0;
-			int nbComments = 0;
-			int totalCommentsOnOwnReviews = 0;
-			int averageCommentsOnOwnReview = 0;
-			for (Review review : reviews) {
-				if (userId.equals(review.getAuthorId())) {
-					nbReviews++;
-				}
-				for (Comment comment : review.getComments()) {
-					if (userId.equals(comment.getAuthorId())) {
-						nbComments++;
-					}
-					if (userId.equals(review.getAuthorId()) && !userId.equals(comment.getAuthorId())) {
-						totalCommentsOnOwnReviews++;
-					}
-				}
-			}
-			if (nbReviews > 0) {
-				averageCommentsOnOwnReview = totalCommentsOnOwnReviews / nbReviews;
-			}
-			result += username + "," + nbReviews + "," + nbComments + "," + averageCommentsOnOwnReview + ","
-					+ user.getReputation();
-			result += "<br/>";
-		}
-
-		return result;
-	}
+	// private String detailChurn(Metrics metrics) {
+	// Metric metric = metrics.getMetrics().get(metrics.getMetrics().size() -
+	// 1);
+	//
+	// String result = "";
+	//
+	// String header = "User,Reviews,Comments,Average comments on own
+	// review,Reputation";
+	// result += header + "<br/>";
+	//
+	// List<Review> reviews = reviewRepository.findAll();
+	//
+	// for (String username : metric.getChurn()) {
+	// // log.debug("Processing userId " + username);
+	// User user = userRepository.findByUsername(username);
+	// // log.debug("loaded user " + user);
+	// if (user == null || username.equalsIgnoreCase("anon")) {
+	// continue;
+	// }
+	//
+	// String userId = user.getId();
+	// int nbReviews = 0;
+	// int nbComments = 0;
+	// int totalCommentsOnOwnReviews = 0;
+	// int averageCommentsOnOwnReview = 0;
+	// for (Review review : reviews) {
+	// if (userId.equals(review.getAuthorId())) {
+	// nbReviews++;
+	// }
+	// for (Comment comment : review.getComments()) {
+	// if (userId.equals(comment.getAuthorId())) {
+	// nbComments++;
+	// }
+	// if (userId.equals(review.getAuthorId()) &&
+	// !userId.equals(comment.getAuthorId())) {
+	// totalCommentsOnOwnReviews++;
+	// }
+	// }
+	// }
+	// if (nbReviews > 0) {
+	// averageCommentsOnOwnReview = totalCommentsOnOwnReviews / nbReviews;
+	// }
+	// result += username + "," + nbReviews + "," + nbComments + "," +
+	// averageCommentsOnOwnReview + ","
+	// + user.getReputation();
+	// result += "<br/>";
+	// }
+	//
+	// return result;
+	// }
 }

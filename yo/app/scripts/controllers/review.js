@@ -139,7 +139,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// $scope.externalPlayer = undefined
 			// $scope.mediaType = data.mediaType
-			// $log.debug('loaded review', review)
+			$log.debug('loaded review', review)
 			// $log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
 			// $scope.review = data
 			$scope.controlFlow.reviewLoaded = true

@@ -98,11 +98,12 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		};
 
 		$scope.retrieveUserInfo = function() {
+			$log.debug('retrieveUserInfo in accountCreation')
 			Api.Users.get( 
 				function(data) {
-					$log.debug('setting user', data)
+					// $log.debug('setting user', data)
 					User.setUser(data);
-					$log.debug('retrieved user', User.getUser())
+					// $log.debug('retrieved user', User.getUser())
 					$rootScope.$broadcast('user.logged.in');
 					$scope.endAccountCreation();
 				},

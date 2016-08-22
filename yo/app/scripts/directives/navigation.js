@@ -30,6 +30,19 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 				}
 			});
 
+			$scope.refresh = function() {
+				$log.debug('refreshing in navigation', User, User.isLoggedIn())
+				if (User.isLoggedIn()) {
+					Api.Users.get( 
+						function(data) {
+							// $log.debug('retrieved user', data)
+							User.setUser(data)
+						}
+					)
+				}
+			}
+			$scope.refresh()
+
 			$scope.passwordReset = function(key) {
 				$scope.resetongoing = true;
 				$log.log('validating change password with key', key);

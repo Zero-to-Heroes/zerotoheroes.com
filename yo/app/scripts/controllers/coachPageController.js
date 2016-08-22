@@ -8,6 +8,7 @@ angular.module('controllers').controller('CoachPageController', ['$scope', '$rou
 
 		Api.Users.get({identifier: $routeParams.coachName}, 
 			function(data) {
+				$log.debug('retrieveUserInfo in CoachPageController')
 				$log.debug('loaded coach', data)
 				if (data && data.coachInformation) {
 					$scope.updateCoachInfo(data)

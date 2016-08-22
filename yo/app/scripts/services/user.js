@@ -54,19 +54,19 @@ services.factory('User', ['$window', '$log', 'Api', 'Localization', 'localStorag
 			},
 			incrementTimestamps: function() {
 				//$log.log('incrementing number of timestamps');
-				if (!localStorage.getItem('user')) {
-					this.incrementLocalTimestamp();
-				}
-				else {
-					$log.log('incrementing remote timestamps')
-					var that = this;
-					Api.Users.get({identifier: that.getUser().username}, function(data) {
-						//$log.log('retrieved user', data);
-						that.setUser(data);
-						//$log.log('local user', that.getUser());
-						//$log.log('new timestamps', that.getNumberOfTimestamps());
-					});
-				}
+				// if (!localStorage.getItem('user')) {
+				// 	this.incrementLocalTimestamp();
+				// }
+				// else {
+				// 	$log.log('incrementing remote timestamps')
+				// 	var that = this;
+				// 	Api.Users.get({identifier: that.getUser().username}, function(data) {
+				// 		//$log.log('retrieved user', data);
+				// 		that.setUser(data);
+				// 		//$log.log('local user', that.getUser());
+				// 		//$log.log('new timestamps', that.getNumberOfTimestamps());
+				// 	});
+				// }
 			},
 			changeLanguage: function(lang) {
 				$log.log('changing language to ', lang);

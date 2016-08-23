@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('hearthstoneParticipantsSearch', ['$log', 'SportsConfig', 'Api', '$translate', '$timeout', 
-	function($log, SportsConfig, Api, $translate, $timeout) {
+app.directive('hearthstoneParticipantsSearch', ['$log', 'SportsConfig', 'Api', '$translate', '$timeout', 'TagService',
+	function($log, SportsConfig, Api, $translate, $timeout, TagService) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -29,44 +29,14 @@ app.directive('hearthstoneParticipantsSearch', ['$log', 'SportsConfig', 'Api', '
 				]
 
 				$scope.loadTags = function() {
-					// $log.debug('loading tags', $scope.sport)
-					Api.Tags.query({sport: $scope.sport}, 
-						function(data) {
-							$scope.allowedTags = []
-							data.forEach(function(tag) {
-								if (tag.type == 'skill-level')
-									$scope.allowedTags.push(tag)
-							})
-
-							$scope.allowedTags.forEach(function(tag) {
-								tag.sport = $scope.sport.toLowerCase()
-							})
-						}
-					)
+					TagService.filterIn('skill-level', function(filtered) {
+						$scope.allowedTags = filtered
+					})
 				}
 				$scope.loadTags()
 
 				$scope.autocompleteTag = function($query) {
-					var validTags = $scope.allowedTags.filter(function (el) {
-						var localName = $translate.instant('tags.' + el.sport + "." + el.text)
-						return ~S(localName.toLowerCase()).latinise().s.indexOf(S($query.toLowerCase()).latinise().s)
-					})
-					return validTags.sort(function(a, b) {
-						var tagA = a.text.toLowerCase()
-						var tagB = b.text.toLowerCase()
-						if (~tagA.indexOf(':')) {
-							if (~tagB.indexOf(':')) {
-								return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
-							}
-							return 1
-						}
-						else {
-							if (~tagB.indexOf(':')) {
-								return -1
-							}
-							return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
-						}
-					})
+					return TagService.autocompleteTag($query, $scope.allowedTags, $scope.sport)
 				}
 			}
 		}

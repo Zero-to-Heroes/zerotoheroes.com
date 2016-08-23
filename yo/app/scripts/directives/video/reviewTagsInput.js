@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate', 
-	function($log, SportsConfig, Api, $translate) {
+app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate', 'TagService', 
+	function($log, SportsConfig, Api, $translate, TagService) {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -108,21 +108,35 @@ app.directive('reviewTagsInput', ['$log', 'SportsConfig', 'Api', '$translate',
 					}
 					// $log.log('getting the new tags for sport ', sport);
 					if (sport) {
-						Api.Tags.query({sport: sport}, 
-							function(data) {
-								$scope.allowedTags = []
-								data.forEach(function(tag) {
-									if (!$scope.exclude || $scope.exclude != tag.type) {
-										$scope.allowedTags.push(tag)
-									}
-								})
-								// $log.log('loaded tags', $scope.allowedTags);
+						TagService.filterOut('skill-level', function(data) {
+							$scope.allowedTags = []
+							data.forEach(function(tag) {
+								if (!$scope.exclude || $scope.exclude != tag.type) {
+									$scope.allowedTags.push(tag)
+								}
+							})
+							// $log.log('loaded tags', $scope.allowedTags);
 
-								$scope.allowedTags.forEach(function(tag) {
-									tag.sport = sport.toLowerCase();
-								})
-							}
-						);
+							$scope.allowedTags.forEach(function(tag) {
+								tag.sport = sport.toLowerCase();
+							})
+						})
+
+						// Api.Tags.query({sport: sport}, 
+						// 	function(data) {
+						// 		$scope.allowedTags = []
+						// 		data.forEach(function(tag) {
+						// 			if (!$scope.exclude || $scope.exclude != tag.type) {
+						// 				$scope.allowedTags.push(tag)
+						// 			}
+						// 		})
+						// 		// $log.log('loaded tags', $scope.allowedTags);
+
+						// 		$scope.allowedTags.forEach(function(tag) {
+						// 			tag.sport = sport.toLowerCase();
+						// 		})
+						// 	}
+						// );
 						$scope.mandatoryTags = SportsConfig[sport.toLowerCase()] ? SportsConfig[sport.toLowerCase()].mandatoryTags : [];
 					}
 				}

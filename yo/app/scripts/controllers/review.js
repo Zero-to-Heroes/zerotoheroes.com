@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 'CoachService', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService, CoachService) { 
 
 		$scope.debugTimestamp = Date.now()
 		// $log.debug('init review controller at ', $scope.debugTimestamp)
@@ -98,24 +98,27 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			)
 
 			// TODO externalize that to a service like for the tags
-			Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
-				$scope.coaches = [];
-				// $log.debug('coaches', data)
-				for (var i = 0; i < data.length; i++) {
-					// $log.debug('initial coach text', data[i].description)
-					// $log.debug('marked coach text', marked(data[i].description))
-					data[i].description = marked(data[i].description || '')
-					// $log.debug('handling coach info', data[i])
-					if (data[i].tariffDescription) {
-						for (var j = 0; j < data[i].tariffDescription.length; j++) {
-							data[i].tariffDescription[j] = marked(data[i].tariffDescription[j] || '')
-						}
-					}
-					data[i].level = marked(data[i].level || '')
-					// $log.debug('\tHandled', data[i])
-					$scope.coaches.push(data[i]);
-				};
-			});
+			CoachService.getCoaches(function(coaches) {
+				$scope.coaches = coaches
+			})
+			// Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
+			// 	$scope.coaches = [];
+			// 	// $log.debug('coaches', data)
+			// 	for (var i = 0; i < data.length; i++) {
+			// 		// $log.debug('initial coach text', data[i].description)
+			// 		// $log.debug('marked coach text', marked(data[i].description))
+			// 		data[i].description = marked(data[i].description || '')
+			// 		// $log.debug('handling coach info', data[i])
+			// 		if (data[i].tariffDescription) {
+			// 			for (var j = 0; j < data[i].tariffDescription.length; j++) {
+			// 				data[i].tariffDescription[j] = marked(data[i].tariffDescription[j] || '')
+			// 			}
+			// 		}
+			// 		data[i].level = marked(data[i].level || '')
+			// 		// $log.debug('\tHandled', data[i])
+			// 		$scope.coaches.push(data[i]);
+			// 	};
+			// });
 		}
 
 		$scope.initPlayer = function(review) {

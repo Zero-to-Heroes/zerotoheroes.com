@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('hearthstoneParticipantsDetailsGame', ['$log', 'SportsConfig', 'Api', '$translate', '$timeout', 
-	function($log, SportsConfig, Api, $translate, $timeout) {
+app.directive('hearthstoneParticipantsDetailsGame', ['$log', 'SportsConfig', 'Api', '$translate', '$timeout', 'TagService', 
+	function($log, SportsConfig, Api, $translate, $timeout, TagService) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -55,95 +55,13 @@ app.directive('hearthstoneParticipantsDetailsGame', ['$log', 'SportsConfig', 'Ap
 					if ($scope.review.participantDetails && $scope.review.participantDetails.skillLevel && $scope.review.participantDetails.skillLevel.length > 0)
 						return []
 
-					var validTags = $scope.allowedTags.filter(function (el) {
-						var localName = $translate.instant('tags.' + el.sport + "." + el.text)
-						return ~S(localName.toLowerCase()).latinise().s.indexOf(S($query.toLowerCase()).latinise().s)
-					})
-					return validTags.sort(function(a, b) {
-						var tagA = a.text.toLowerCase()
-						var tagB = b.text.toLowerCase()
-						if (~tagA.indexOf(':')) {
-							if (~tagB.indexOf(':')) {
-								return $scope.naturalCompare(tagA, tagB) // (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
-							}
-							return 1
-						}
-						else {
-							if (~tagB.indexOf(':')) {
-								return -1
-							}
-							return $scope.naturalCompare(tagA, tagB) // (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
-						}
-					})
-				}
-				$scope.naturalCompare = function(a, b) {
-				    var ax = [], bx = [];
-
-				    a.replace(/(\d+)|(\D+)/g, function(_, $1, $2) { ax.push([$1 || Infinity, $2 || ""]) });
-				    b.replace(/(\d+)|(\D+)/g, function(_, $1, $2) { bx.push([$1 || Infinity, $2 || ""]) });
-				    
-				    while(ax.length && bx.length) {
-				        var an = ax.shift();
-				        var bn = bx.shift();
-				        var nn = (an[0] - bn[0]) || an[1].localeCompare(bn[1]);
-				        if(nn) return nn;
-				    }
-
-				    return ax.length - bx.length;
-				}
-
-				$scope.getMissingTagType = function(reviewTags, mandatoryTags) {
-					if (!mandatoryTags) return undefined;
-					//$log.log('mandatoryTags present, looking for missing type', reviewTags, mandatoryTags);
-
-					var missingTag;
-					mandatoryTags.some(function(tagType) {
-						if (!$scope.containsTagType(reviewTags, tagType)) {
-							//$log.log('tagtype not present', tagType, reviewTags, mandatoryTags);
-							missingTag = tagType;
-							return true;
-						}
-					});
-					//$log.log('returning for missing type', missingTag);
-					return missingTag;
-				};
-
-				$scope.containsTagType = function(reviewTags, tagType) {
-					if (!reviewTags) return false;
-
-					//$log.log('containsTagType', reviewTags, tagType);
-					var contains = false;
-					reviewTags.some(function(tag) {
-						if (tag.type == tagType) {
-							contains = true;
-							return true;
-						}
-					})
-					return contains;
+					return TagService.autocompleteTag($query, $scope.allowedTags)
 				}
 
 				$scope.loadTags = function() {
-					if ($scope.review) {
-						if ($scope.review.sport)
-							var sport = $scope.review.sport.key ? $scope.review.sport.key : $scope.review.sport
-						else if ($scope.review.strSport)
-							var sport = $scope.review.strSport
-					}
-					if (sport) {
-						Api.Tags.query({sport: sport}, 
-							function(data) {
-								$scope.allowedTags = []
-								data.forEach(function(tag) {
-									if (tag.type == 'skill-level')
-										$scope.allowedTags.push(tag)
-								})
-
-								$scope.allowedTags.forEach(function(tag) {
-									tag.sport = sport.toLowerCase()
-								})
-							}
-						)
-					}
+					TagService.filterIn('skill-level', function(filtered) {
+						$scope.allowedTags = filtered
+					})
 				}
 				$scope.loadTags()
 

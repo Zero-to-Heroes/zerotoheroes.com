@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('sportTag', ['TagService', '$routeParams', '$log', 
-	function(TagService, $routeParams, $log) {
+app.directive('sportTag', ['TagService', '$routeParams', '$log', 'CoachService', 
+	function(TagService, $routeParams, $log, CoachService) {
 		return {
 			restrict: 'E',
 			replace: true,
@@ -19,6 +19,7 @@ app.directive('sportTag', ['TagService', '$routeParams', '$log',
 						if (sport && (sport != $scope.sport || !TagService.tags)) {
 							$scope.sport = sport
 							TagService.refreshTags(sport)
+							CoachService.refreshCoaches(sport)
 						}
 					}
 				})

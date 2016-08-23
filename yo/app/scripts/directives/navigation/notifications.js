@@ -15,13 +15,17 @@ app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConf
 				$scope.config = SportsConfig[$scope.sport]
 
 				$scope.$watch('profile', function(newVal) {
-					$scope.notifications = $scope.profile.notifications
-					$scope.unread = 0
-					$scope.notifications.notifications.forEach(function(notif) {
-						if (!notif.readDate) {
-							$scope.unread++
+					if ($scope.profile) {
+						$scope.notifications = $scope.profile.notifications
+						$scope.unread = 0
+						if ($scope.notifications && $scope.notifications.notifications) {
+							$scope.notifications.notifications.forEach(function(notif) {
+								if (!notif.readDate) {
+									$scope.unread++
+								}
+							})
 						}
-					})
+					}
 				})
 
 				// $scope.refresh = function() {

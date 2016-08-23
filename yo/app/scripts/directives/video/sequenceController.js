@@ -272,35 +272,16 @@ app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV
 					$scope.API2.seekTime(time1 / 1000);
 				}
 				
+
 				$scope.loadTags = function() {
-					Api.Tags.query({sport: $scope.localReview.sport.key}, 
-						function(data) {
-							$scope.allowedTags = data;
-							$log.log('allowedTags set to', $scope.allowedTags);
-						}
-					);
+					TagService.filterOut(null, function(filtered) {
+						$scope.allowedTags = filtered
+					})
 				}
+				$scope.loadTags()
 
 				$scope.autocompleteTag = function($query) {
-					var validTags = $scope.allowedTags.filter(function (el) {
-						return ~el.text.toLowerCase().indexOf($query);
-					});
-					return validTags.sort(function(a, b) {
-						var tagA = a.text.toLowerCase();
-						var tagB = b.text.toLowerCase();
-						if (~tagA.indexOf(':')) {
-							if (~tagB.indexOf(':')) {
-								return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
-							}
-							return 1;
-						}
-						else {
-							if (~tagB.indexOf(':')) {
-								return -1;
-							}
-							return (tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0;
-						}
-					});;
+					return TagService.autocompleteTag($query, $scope.allowedTags, $scope.sport)
 				}
 
 				$scope.initTags = function(review) {

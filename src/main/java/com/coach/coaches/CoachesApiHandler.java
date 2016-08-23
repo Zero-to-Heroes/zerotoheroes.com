@@ -62,7 +62,7 @@ public class CoachesApiHandler {
 	}
 
 	private List<CoachInformation> getAllCoachesForSport(Sport sport) {
-		log.debug("loading all coaches for " + sport);
+		// log.debug("loading all coaches for " + sport);
 		// sport = StringUtils.trim(sport);
 		// log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
 		List<CoachInformation> ret = new ArrayList<>();

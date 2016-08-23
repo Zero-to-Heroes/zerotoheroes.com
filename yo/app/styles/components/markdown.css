@@ -1,9 +1,23 @@
 img[alt="img-small"] {
-	max-width: 200px;
+	width: 200px;
+	max-width: 100%;
+	display: block;
+    margin: auto;
 }
 img[alt="img-medium"] {
-	max-width: 400px;
+	width: 400px;
+	max-width: 100%;
+	display: block;
+    margin: auto;
 }
 img[alt="img-big"] {
-	max-width: 600px;
+	width: 600px;
+	max-width: 100%;
+	display: block;
+    margin: auto;
+}
+img[alt="img-scale"] {
+	max-width: 100%;
+	display: block;
+    margin: auto;
 }

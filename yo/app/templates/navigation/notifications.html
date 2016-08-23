@@ -1,4 +1,4 @@
-<a class="pointer user-notifications" ng-class="{'unread': unread > 0}" href="/u/{{sport}}/{{user.username}}/inbox/{{unread > 0 ? 'unread' : 'all'}}">
+<a class="pointer user-notifications" ng-class="{'unread': unread > 0}" href="/u/{{user.getName()}}/{{sport}}/inbox/{{unread > 0 ? 'unread' : 'all'}}">
 	<img src="{{ config.images.mailUnread }}" ng-show="unread > 0" /> 
 	<img src="{{ config.images.mail }}" ng-hide="unread > 0" />
 	<span class="badge" ng-show="unread > 0">{{unread}}</span>

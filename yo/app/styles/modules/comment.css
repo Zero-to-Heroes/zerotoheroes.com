@@ -1,5 +1,11 @@
+
 .comment-block {
 	margin-left: 20px;
+}
+
+.comment-block.highlighted {
+	background-color: rgb(97, 80, 63);
+    padding-top: 5px;
 }
 
 .comment-block .comment-block {

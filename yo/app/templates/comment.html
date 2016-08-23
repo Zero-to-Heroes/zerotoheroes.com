@@ -1,4 +1,4 @@
-<div class="container-fluid comment-block">
+<div class="container-fluid comment-block {{highlightedClass}}" ng-click="markRead()">
 	<div class="reputation">
 		<span id="upvote{{::commentIndex}}" class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': comment.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="::upvoteComment(comment)" aria-hidden="true" title="{{ 'global.review.comment.upvoteComment' | translate }}"></span>
 		<span class="reputation-score glyphicon">{{comment.reputation.nbVotes.Upvote - comment.reputation.nbVotes.Downvote}}</span>

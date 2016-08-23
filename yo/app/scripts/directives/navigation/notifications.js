@@ -13,6 +13,7 @@ app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConf
 			controller: function($scope) {
 				$scope.sport = $routeParams.sport
 				$scope.config = SportsConfig[$scope.sport]
+				$scope.user = User
 
 				$scope.$watch('profile', function(newVal) {
 					if ($scope.profile) {

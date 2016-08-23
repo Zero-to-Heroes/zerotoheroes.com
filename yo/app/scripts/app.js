@@ -188,7 +188,7 @@ app.config(['$routeProvider', '$locationProvider',
 			menuItem: 'coaches'
 	  	}).
 	  	// Users - inbox
-	  	when('/u/:sport/:userName/inbox/:subMenu', {
+	  	when('/u/:userName/:sport/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
 			menuItem: 'inbox'
@@ -198,7 +198,7 @@ app.config(['$routeProvider', '$locationProvider',
 			controller: 'MessagesController',
 			menuItem: 'inbox'
 	  	}).
-	  	when('/user/:sport/:userName/inbox/:subMenu', {
+	  	when('/user/:userName/:sport/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
 			menuItem: 'inbox'

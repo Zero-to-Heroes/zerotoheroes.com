@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', 
-	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse) {
+app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', '$location', 
+	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse, $location) {
 
 		return {
 			restrict: 'E',
@@ -27,6 +27,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 			controller: function($scope, User) {
 
 				// $log.debug('init comment, mediaPlayer', $scope.mediaPlayer)
+				// $log.debug('location', $location, $location.search().highlighted, $scope.comment)
 
 				$scope.User = User;
 				//$scope.goToTimestamp = $scope.$parent.goToTimestamp;
@@ -43,8 +44,10 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 
 
 				$scope.$watch($scope.$parent.API, function() {
-					$scope.API = $scope.$parent.API;
-				});
+					$scope.API = $scope.$parent.API
+				})
+
+
 
 				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/;
 
@@ -126,7 +129,72 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 		  					// Error handling
 		  					$log.error(error);
 		  				}
-		  			);
+		  			)
+				}
+
+				$scope.highlightUnread = function() {
+					var highlighted = $location.search().highlighted
+					// $log.debug('highlighted', highlighted)
+					$scope.highlightedClass = ''
+					if (highlighted) {
+						var ids = highlighted.split(';')
+						ids.forEach(function(id) {
+							var idComponents = id.split('_')
+							var targetComment = idComponents[0]
+							if (targetComment == $scope.comment.id) {
+								// $log.debug('highlighting', idComponents, ids)
+								$scope.highlightedClass = 'highlighted'
+								if (idComponents.length > 1) {
+									$scope.highlightedNotif = idComponents[1]
+								}
+							}
+						})
+						// if (ids.indexOf($scope.comment.id) != -1) {
+						// 	$scope.highlightedClass = 'highlighted'
+						// }
+					}
+				}
+				$scope.highlightUnread()
+
+				$scope.markRead = function() {
+					if ($scope.highlightedClass) {
+						// $log.debug('marking read', $scope.highlightedNotif)
+						if ($scope.highlightedNotif) {
+							Api.NotificationsRead.save($scope.highlightedNotif, 
+								function(data) {
+									// $log.debug('marked read', data)
+									$scope.highlightedClass = undefined
+
+									// Remove marked comment from URL
+									var highlighted = $location.search().highlighted
+									var newHighlights = ''
+									var ids = highlighted.split(';')
+									if (ids.length > 1) {
+										newHighlights += 'highlighted='
+										ids.forEach(function(id) {
+											var idComponents = id.split('_')
+											var targetComment = idComponents[0]
+											if (targetComment && targetComment != $scope.comment.id) {
+												newHighlights += targetComment
+												if (idComponents.length > 1) {
+													newHighlights += '_' + idComponents[1]
+												}
+												newHighlights += ';'
+											}
+										})
+										newHighlights = newHighlights.slice(0, -1)
+									}
+									$location.search(newHighlights)
+									// if (ids.indexOf($scope.comment.id) != -1) {
+									// 	$scope.highlightedClass = 'highlighted'
+									// }
+								}
+							)
+						}
+						else {
+							$scope.highlightedClass = undefined
+						}
+					}
 				}
 
 				//===============

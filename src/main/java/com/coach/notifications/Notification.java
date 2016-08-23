@@ -18,6 +18,7 @@ public class Notification {
 	private String sport;
 	// URL of the comment / review,
 	private List<String> objects = new ArrayList<>();
+	private String linkId;
 	private String title, from, textKey, textDetail;
 	private String aggregator;
 

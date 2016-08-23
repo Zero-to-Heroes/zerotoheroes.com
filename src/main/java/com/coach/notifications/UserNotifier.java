@@ -41,7 +41,9 @@ public class UserNotifier {
 			notification.setTextKey("newComment");
 			notification.setType("new-comment");
 			notification.setTitle(review.getTitle());
+			notification.setLinkId("" + comment.getId());
 			notification.addObject(review.getUrl());
+			notification.addObject(review.getId());
 			notification.setTextDetail(comment.getText());
 			notification.setFrom(comment.getAuthor());
 			addNotification(profile, notification);

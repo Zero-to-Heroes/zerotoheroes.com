@@ -39,7 +39,7 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 				// }
 
 			}
-			$log.debug('refreshing nameInput')
+			// $log.debug('refreshing nameInput')
 			$scope.refresh()
 			
 			$rootScope.$on('user.logged.in', function() {

@@ -31,7 +31,7 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 			});
 
 			$scope.refresh = function() {
-				$log.debug('refreshing in navigation', User, User.isLoggedIn())
+				// $log.debug('refreshing in navigation', User, User.isLoggedIn())
 				if (User.isLoggedIn()) {
 					Api.Users.get( 
 						function(data) {

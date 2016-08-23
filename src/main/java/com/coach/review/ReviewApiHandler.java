@@ -409,7 +409,6 @@ public class ReviewApiHandler {
 		}
 
 		comment.setCreationDate(new Date());
-		subscriptionManager.notifyNewComment(comment, review);
 
 		review.addComment(comment);
 		review.sortComments();
@@ -421,6 +420,8 @@ public class ReviewApiHandler {
 
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
+
+		subscriptionManager.notifyNewComment(comment, review);
 		subscriptionManager.subscribe(review, comment.getAuthorId());
 		reviewService.updateAsync(review);
 

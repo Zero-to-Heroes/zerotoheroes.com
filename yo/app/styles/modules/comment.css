@@ -3,13 +3,13 @@
 	margin-left: 20px;
 }
 
-.comment-block.highlighted {
+.comment-block.highlighted > .comment-main > .comment-body {
 	background-color: rgb(97, 80, 63);
-    padding-top: 5px;
 }
 
 .comment-block .comment-block {
 	margin-left: 7px;
+	padding-right: 0;
 }
 
 .main-block {

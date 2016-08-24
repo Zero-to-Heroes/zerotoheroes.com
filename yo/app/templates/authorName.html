@@ -1,5 +1,9 @@
 <span>
-	<a ng-class="{'logged-author': entity.authorId}" class="{{entity.authorStatus}}" ng-hide="entity.authorStatus == 'coach'">
+	<a class="logged-author {{entity.authorStatus}}" ng-hide="entity.authorStatus == 'coach' && entity.authorId" href="/u/{{entity.author}}/{{sport}}/profile" target="_blank">
+		<author-frame frame="entity.authorFrame" author="entity.author" sport="sport"></author-frame>
+		<!-- <span ng-class="entity.authorFrame" title="{{entity.authorFrame}}">{{entity.author}}</span> -->
+	</a>
+	<a class="{{entity.authorStatus}}" ng-show="entity.authorStatus != 'coach' && !entity.authorId">
 		<author-frame frame="entity.authorFrame" author="entity.author" sport="sport"></author-frame>
 		<!-- <span ng-class="entity.authorFrame" title="{{entity.authorFrame}}">{{entity.author}}</span> -->
 	</a>

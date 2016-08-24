@@ -29,7 +29,6 @@ public class Notifications {
 			if (new DateTime(notif.getCreationDate()).isBefore(earliestDate) && notif.getReadDate() != null) {
 				iterator.remove();
 			}
-
 		}
 	}
 

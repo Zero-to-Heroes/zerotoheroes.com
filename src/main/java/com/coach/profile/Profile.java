@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.coach.notifications.Notifications;
 import com.coach.preferences.Preferences;
+import com.coach.profile.profileinfo.ProfileInfo;
 import com.coach.rankings.Rankings;
 import com.coach.review.Review.Sport;
 import com.coach.subscription.Subscriptions;
@@ -31,7 +32,9 @@ public class Profile {
 	private Preferences preferences = new Preferences();
 	private Subscriptions subscriptions = new Subscriptions();
 	private Rankings rankings = new Rankings();
+	private ProfileInfo profileInfo = new ProfileInfo();
 
+	@Deprecated
 	public Rankings getRankings() {
 		if (rankings == null) {
 			rankings = new Rankings();
@@ -41,6 +44,7 @@ public class Profile {
 
 	// Some hard-coding for now, later on will be easier when user will be able
 	// to set their own flair
+	@Deprecated
 	public String getFlair(Sport sport, String frame) {
 		if (sport == null) { return frame; }
 

@@ -22,6 +22,8 @@ import com.coach.core.security.User;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
+import com.coach.profile.profileinfo.SportProfileInfo;
+import com.coach.rankings.Rank;
 import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
@@ -151,5 +153,55 @@ public class AdminUserApiHandler {
 		}
 
 		return result;
+	}
+
+	@SuppressWarnings("deprecation")
+	@RequestMapping(value = "/updateAllUsers", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<String> updateAllUsers() {
+
+		if ("prod".equalsIgnoreCase(
+				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
+
+		log.debug("Retrieving user info");
+		List<User> users = userRepository.findAll();
+		List<Profile> profiles = profileRepository.findAll();
+
+		Map<String, Profile> profileMap = new HashMap<>();
+
+		for (Profile profile : profiles) {
+			profileMap.put(profile.getUserId(), profile);
+		}
+
+		List<Profile> modified = new ArrayList<>();
+
+		for (User user : users) {
+			log.debug("handling user " + user);
+			Profile profile = profileMap.get(user.getId());
+			if (profile == null) {
+				profile = new Profile();
+			}
+			if (profile.getRankings() == null || profile.getRankings().getRankings().isEmpty()) {
+				continue;
+			}
+
+			boolean dirty = false;
+
+			for (String sport : profile.getRankings().getRankings().keySet()) {
+				Map<String, Rank> ranking = profile.getRankings().getRankings().get(sport);
+				SportProfileInfo sportProfileInfo = profile.getProfileInfo().getSportInfo(sport);
+				if (sportProfileInfo.getRankings() == null || sportProfileInfo.getRankings().isEmpty()) {
+					sportProfileInfo.setRankings(ranking);
+					dirty = true;
+				}
+			}
+
+			if (dirty) {
+				modified.add(profile);
+			}
+		}
+
+		profileRepository.save(modified);
+
+		return new ResponseEntity<String>("", HttpStatus.OK);
 	}
 }

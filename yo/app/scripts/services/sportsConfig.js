@@ -10,7 +10,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					background: 'badminton.jpg',
 					displayName: 'Badminton',
 					useVideo: true,
-					recommendedVideo: "5616d523e4b0a456c4a54192",
+					recommendedVideo: '5616d523e4b0a456c4a54192',
 					homeChoices:  ['getadvice', 'helpothers'],
 					isSport: true,
 					allowDoubleSpeed: false,
@@ -85,7 +85,36 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					landing: {
 						displayName: 'HearthStone',
 						hideVideoReview: true
-					}
+					},
+					ranks: [
+						{key: 'hidden'},
+						{key: 'rank25'},
+						{key: 'rank24'},
+						{key: 'rank23'},
+						{key: 'rank22'},
+						{key: 'rank21'},
+						{key: 'rank20'},
+						{key: 'rank19'},
+						{key: 'rank18'},
+						{key: 'rank17'},
+						{key: 'rank16'},
+						{key: 'rank15'},
+						{key: 'rank14'},
+						{key: 'rank13'},
+						{key: 'rank12'},
+						{key: 'rank11'},
+						{key: 'rank10'},
+						{key: 'rank9'},
+						{key: 'rank8'},
+						{key: 'rank7'},
+						{key: 'rank6'},
+						{key: 'rank5'},
+						{key: 'rank4'},
+						{key: 'rank3'},
+						{key: 'rank2'},
+						{key: 'rank1'},
+						{key: 'legend'}
+					]
 				},
 				heroesofthestorm: {
 					background: 'hots.jpg',

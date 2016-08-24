@@ -20,14 +20,21 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 				]
 				$scope.preferences = { language: 'en' }
 
+				$scope.isOwnProfile = function() {
+					return User.isLoggedIn() && $routeParams.userName == User.getName()
+				}
+				
 				$scope.retrievePreferences = function() {
-					if (User.isLoggedIn() && $routeParams.userName == User.getName()) {
+					if ($scope.isOwnProfile()) {
 						Api.Preferences.get(
 							function(data) {
 								$scope.preferences = data
 								$scope.preferences.language = $scope.preferences.language || 'en'
 							}
 						)
+					}
+					else {
+						$scope.updateStatus = 'forbidden'
 					}
 				}
 				$scope.retrievePreferences()
@@ -49,6 +56,7 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 				$scope.dismissMessage = function() {
 					$scope.updateStatus = undefined
 				}
+
 			}
 		}
 	}

@@ -56,9 +56,9 @@ app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConf
 				// 	return $scope.config.images.mailUnread
 				// }
 
-				$rootScope.$on('user.logged.in', function() {
-					$scope.refresh()
-				})
+				// $rootScope.$on('user.logged.in', function() {
+				// 	$scope.refresh()
+				// })
 			}
 		}
 	}

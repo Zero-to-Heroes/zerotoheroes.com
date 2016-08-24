@@ -214,7 +214,7 @@ app.config(['$routeProvider', '$locationProvider',
 			controller: 'ProfileController',
 			menuItem: 'profile'
 	  	}).
-	  	when('/u/:sport/:userName/:subMenu', {
+	  	when('/u/:userName/:sport/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
 			menuItem: 'profile'
@@ -224,7 +224,7 @@ app.config(['$routeProvider', '$locationProvider',
 			controller: 'ProfileController',
 			menuItem: 'profile'
 	  	}).
-	  	when('/user/:sport/:userName/:subMenu', {
+	  	when('/user/:userName/:sport/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
 			menuItem: 'profile'

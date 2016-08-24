@@ -16,6 +16,10 @@ app.directive('messages', ['$log', 'Api',
 			link: function(scope, element, attributes) {
 			},
 			controller: function($scope) {
+				$scope.isOwnProfile = function() {
+					return User.isLoggedIn() && $routeParams.userName == User.getName()
+				}
+				
 				$scope.formatDate = function(date) {
 					return moment(date).fromNow();
 				}

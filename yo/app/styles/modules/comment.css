@@ -44,6 +44,7 @@
 	/*color: #8B4513;*/
 	color: #333;
 	text-decoration: none;
+	display: inline-block;
 }
 
 .author-information  .total-reputation {

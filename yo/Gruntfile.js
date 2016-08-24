@@ -167,7 +167,8 @@ module.exports = function (grunt) {
 	less: {
 		development: {
 			files: {
-				"<%= yeoman.app %>/plugins/sports/hearthstone/hearthstone.css": '<%= yeoman.app %>/plugins/sports/hearthstone/styles.less'
+				"<%= yeoman.app %>/plugins/sports/hearthstone/hearthstone.css": '<%= yeoman.app %>/plugins/sports/hearthstone/styles.less',
+				"<%= yeoman.app %>/styles/less/application.css": '<%= yeoman.app %>/styles/less/styles.less'
 			}
 		}
 	},

@@ -3,7 +3,11 @@
 		<button type="button" class="close" ng-click="dismissMessage()"><span aria-hidden="true">&times;</span></button>
 		<span translate="global.profile.preferences.preferencesUpdated"></span>
 	</div>
-	<form>
+	<div class="alert alert-warning status-message" ng-show="updateStatus == 'forbidden'">
+		<span translate="global.profile.messages.restrictedAccess"></span>
+	</div>
+
+	<form ng-show="isOwnProfile()">
 		<div class="form-group">
 			<label for="siteNotificationsCheckbox" translate="global.profile.preferences.siteNotifications"></label> 
 			<input type="checkbox" id="siteNotificationsCheckbox" ng-model="preferences.siteNotifications">

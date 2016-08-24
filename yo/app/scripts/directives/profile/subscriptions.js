@@ -14,8 +14,12 @@ app.directive('profileSubscriptions', ['$log', 'Api', '$routeParams', 'User', 'L
 			link: function(scope, element, attributes) {
 			},
 			controller: function($scope) {
+				$scope.isOwnProfile = function() {
+					return User.isLoggedIn() && $routeParams.userName == User.getName()
+				}
+
 				$scope.retrieveSubscriptions = function() {
-					if (User.isLoggedIn() && $routeParams.userName == User.getName()) {
+					if ($scope.isOwnProfile()) {
 						Api.SavedSearchSubscriptions.get(
 							function(data) {
 								$log.debug('loaded subs', data)

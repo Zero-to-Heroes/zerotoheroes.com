@@ -1,0 +1,17 @@
+<form class="profile-info" ng-class="{'editing': editing}">
+	<h2>
+		<button type="button" class="btn btn-default btn-select frame-input" data-trigger="click" ng-model="profile.flair" bs-options="option.value as option.label for option in rankOptions" bs-select ng-show="editing">
+		  	<span>Action</span>
+		</button>
+		<author-frame frame="profile.flair" author="username" sport="sport"></author-frame>
+		<span class="game-identifier" ng-show="profile.gameIdentifier && !editing">
+			<span ng-bind="profile.gameIdentifier"></span>
+		</span>
+		<input type="text" name="gameIdentifier" class="form-control identifier-input" ng-model="profile.gameIdentifier" placeholder="{{ sport + '.gameIdentifierPlaceholder' | translate }}" ng-show="editing">
+	</h2>
+
+	<div ng-show="editing" class="buttons-container">
+		<button type="button" ng-click="cancelUpdate()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
+		<button type="submit" ng-click="update()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
+	</div>
+</form>

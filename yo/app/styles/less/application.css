@@ -1,0 +1,55 @@
+.profile-page {
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.profile-page .menu-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  display: flex;
+}
+.profile-page .menu-bar ul {
+  padding: 0;
+  flex-grow: 1;
+}
+.profile-page .menu-bar li {
+  display: inline-block;
+  padding-right: 10px;
+  border-right: 1px solid grey;
+  margin-right: 10px;
+}
+.profile-page .menu-bar li:last-child {
+  border-right: none;
+}
+.profile-page .menu-bar a.active {
+  color: orangered;
+}
+.profile-page .profile-info h2 {
+  text-align: center;
+}
+.profile-page .profile-info .game-identifier {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7em;
+  position: relative;
+  top: -3px;
+}
+.profile-page .profile-info .game-identifier:before {
+  content: "(";
+}
+.profile-page .profile-info .game-identifier:after {
+  content: ")";
+}
+.profile-page .profile-info .buttons-container {
+  text-align: right;
+  margin-top: 50px;
+}
+.profile-page .profile-info .frame-input,
+.profile-page .profile-info .identifier-input {
+  width: auto;
+  display: inline-block;
+}
+.profile-page .profile-info.editing .frame:before {
+  width: 0;
+}

@@ -294,12 +294,14 @@
 				"restrictedAccess": "Sorry, access to this info is restricted to the profile owner"
 			},
 			"menu": {
-				"info": "profile",
-				"preferences": "preferences",
-				"subscriptions": "subscriptions"
+				"info": "Profile",
+				"preferences": "Preferences",
+				"subscriptions": "Subscriptions"
 			},
 			"info": {
-				"editButtonLabel": "edit"
+				"editButtonLabel": "edit",
+				"reputationTooltip": "Total reputation points. You earn reputation points when others upvote your comments or flag them as helpful. Reputation points reflect your contributions to the community, and will probably tie in into systems in the future :)",
+				"dailyGamesPlayed": "Daily games played"
 			},
 			"preferences": {
 				"preferencesUpdated": "Your preferences have been updated",

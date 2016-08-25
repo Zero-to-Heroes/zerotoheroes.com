@@ -250,7 +250,14 @@
 				"markUnreadButton": "marquer comme non lu"
 			},
 			"menu": {
-				"preferences": "Préférences"
+				"info": "Profil",
+				"preferences": "Préférences",
+				"subscriptions": "Abonnements"
+			},
+			"info": {
+				"editButtonLabel": "Editer",
+				"reputationTooltip": "Total de points de réputation. Vous gagnez des points de réputation lorsque d'autres votent pour vos commentaires ou les marquent comme ayant aidé. Vos points de réputation reflètent votre contribution à la communauté, et seront probablement liés à d'autres systèmes dans le futur :)",
+				"dailyGamesPlayed": "Parties jouées par jour"
 			},
 			"preferences": {
 				"preferencesUpdated": "Vos préférences ont été mises à jour",
@@ -261,7 +268,7 @@
 				"save": "Sauver"
 			},
 			"subscriptions": {
-				"unnamedSub": "Abbonement sans nom",
+				"unnamedSub": "Abonnement sans nom",
 				"deleteTitle": "Se désabonner",
 				"subscriptionDeleted": "Vous avez été désabonné. Vous ne recevrez plus de notification pour cet abonnement.",
 				"empty": "Vous n'avez pas encore d'abonnement. <br/>Vous pouvez ajouter un abonnement en effectuant une recherche et en cliquand sur \"m'abonner\". Vous recevrez alors une notification à chaque fois quel quelqu'un poste une revue qui correspond à vos critères de recherche."

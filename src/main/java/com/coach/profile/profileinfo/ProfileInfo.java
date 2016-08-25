@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.data.annotation.Transient;
 
+import com.coach.core.security.User;
 import com.coach.review.Review.Sport;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -28,19 +29,32 @@ public class ProfileInfo {
 	@Transient
 	private String gameIdentifier;
 
-	public void populateForSport(String sport) {
+	@Transient
+	private Map<Long, Integer> dailyPlays = new HashMap<>();
+
+	@Transient
+	private int reputation;
+
+	public void populateForSport(User user, String sport) {
 		// Setting the flair to display (depends on the current sport)
 		Sport sportObj = Sport.load(sport);
-		populateForSport(sportObj);
+		populateForSport(user, sportObj);
 	}
 
-	public void populateForSport(Sport sport) {
-		String flair = fetchFlair(sport, "unframed");
-		setFlair(flair);
+	public void populateForSport(User user, Sport sport) {
+		flair = fetchFlair(sport, "unframed");
+		gameIdentifier = fetchGameIdentifier(sport);
+		dailyPlays = fetchDailyPlays(sport);
+		reputation = user.getReputation(sport);
+	}
 
-		// Setting the game identifier (eg BTag)
-		String gameIdentifier = fetchGameIdentifier(sport);
-		setGameIdentifier(gameIdentifier);
+	private Map<Long, Integer> fetchDailyPlays(Sport sport) {
+		if (sport == null) { return null; }
+
+		SportProfileInfo sportInfo = sportInfos.get(sport.getKey().toLowerCase());
+		if (sportInfo == null) { return null; }
+
+		return sportInfo.getDailyPlays();
 	}
 
 	public String fetchFlair(Sport sport, String frame) {

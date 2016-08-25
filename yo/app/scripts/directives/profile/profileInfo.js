@@ -20,6 +20,7 @@ app.directive('profileInfo', ['$log', 'Api', '$routeParams', 'User', 'Localizati
 				$scope.username = $routeParams.userName
 				$scope.sport = $routeParams['sport']
 				$scope.sportsConfig = SportsConfig
+				$scope.config = SportsConfig[$scope.sport]
 
 				$scope.config.editButtonLabelKey = 'global.profile.info.editButtonLabel'
 
@@ -40,10 +41,36 @@ app.directive('profileInfo', ['$log', 'Api', '$routeParams', 'User', 'Localizati
 						function(data) {
 							$scope.profile = data
 							$log.debug('loaded profileinfo', $scope.profile)
+							$scope.initCalendars($scope.profile)
 						}
 					)
 				}
 				$scope.retrieveInfo()
+
+				$scope.initCalendars = function(profile) {
+					// Start date is one year in the past
+					var startDate = new Date()
+					startDate.setDate(startDate.getDate() - 330)
+					// Init the daily games
+					var cal = new CalHeatMap()
+					cal.init(
+						{ 
+							itemSelector: '#daily-games-heatmap',
+							domain: 'month',
+							subDomain: 'day',
+							range: 12,
+							domainGutter: 5,
+							tooltip: true,
+							start: startDate,
+							maxDate: new Date(),
+							data: profile.dailyPlays,
+							considerMissingDataAsZero: true,
+							legend: [1, 5, 10, 20],
+							itemName: ['game uploaded', 'games uploaded'],
+							itemNamespace: 'daily-games-heatmap'
+						}
+					)
+				}
 
 				$scope.activateEdit = function() {
 					$scope.editing = true

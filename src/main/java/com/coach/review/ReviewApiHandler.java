@@ -8,8 +8,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.data.domain.Page;
@@ -97,20 +95,6 @@ public class ReviewApiHandler {
 
 	@Autowired
 	AutowireCapableBeanFactory beanFactory;
-
-	public ReviewApiHandler() throws Exception {
-		// log.debug("Initializing Review Api Handler");
-	}
-
-	@PostConstruct
-	public void init() {
-		// DBCollection collection = mongoOperations.getCollection("review");
-		// collection.createIndex(keys);
-		// log.debug("retrieving collection " + collection);
-		// collection.createIndex(new BasicDBObject("fullTextSearchField",
-		// "text"));
-		// collection.createIndex(new BasicDBObject("published", 1));
-	}
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(@RequestBody ReviewSearchCriteria criteria) {
@@ -601,6 +585,7 @@ public class ReviewApiHandler {
 		review.setVisibility(inputReview.getVisibility());
 
 		reviewService.updateAsync(review);
+		reviewService.triggerReviewCreationJobs(review);
 
 		// Send notifications only if it's a real new video and
 		// not a video response

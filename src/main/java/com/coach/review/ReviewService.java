@@ -10,6 +10,8 @@ import com.coach.core.notification.ExecutorProvider;
 import com.coach.core.security.User;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
+import com.coach.review.journal.ReviewJournal;
+import com.coach.review.journal.ReviewJournalRepository;
 import com.coach.user.UserRepository;
 
 import lombok.AllArgsConstructor;
@@ -27,6 +29,9 @@ public class ReviewService {
 
 	@Autowired
 	ProfileRepository profileRepo;
+
+	@Autowired
+	ReviewJournalRepository journalRepo;
 
 	@Autowired
 	private ExecutorProvider executorProvider;
@@ -73,5 +78,13 @@ public class ReviewService {
 		}
 		review.normalizeUsers(userMap, profileMap);
 		review.highlightNoticeableVotes(userMap, profileMap);
+	}
+
+	public void triggerReviewCreationJobs(Review review) {
+		if (review.getAuthorId() != null && review.getSport() != null) {
+			ReviewJournal journal = new ReviewJournal(review.getId(), review.getAuthorId(),
+					review.getSport().getKey().toLowerCase(), review.getCreationDate());
+			journalRepo.save(journal);
+		}
 	}
 }

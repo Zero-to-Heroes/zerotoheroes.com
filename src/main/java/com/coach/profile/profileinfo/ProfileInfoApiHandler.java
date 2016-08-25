@@ -44,11 +44,13 @@ public class ProfileInfoApiHandler {
 		ProfileInfo response = null;
 
 		Profile profile = null;
+		User userObj = null;
 		if (StringUtils.isEmpty(user)) {
+			userObj = userService.getLoggedInUser();
 			profile = profileService.getLoggedInProfile();
 		}
 		else {
-			User userObj = userRepo.findByUsername(user);
+			userObj = userRepo.findByUsername(user);
 			if (userObj != null) {
 				profile = profileService.getProfile(userObj.getId());
 			}
@@ -57,7 +59,7 @@ public class ProfileInfoApiHandler {
 		if (profile == null) { return new ResponseEntity<ProfileInfo>(response, HttpStatus.NOT_FOUND); }
 
 		response = profile.getProfileInfo();
-		response.populateForSport(sport);
+		response.populateForSport(userObj, sport);
 
 		return new ResponseEntity<ProfileInfo>(response, HttpStatus.OK);
 	}
@@ -86,7 +88,7 @@ public class ProfileInfoApiHandler {
 				: null;
 		sportInfo.setRanking("ranked", flair);
 
-		profileInfo.populateForSport(sport);
+		profileInfo.populateForSport(user, sport);
 		profileRepo.save(profile);
 
 		return new ResponseEntity<ProfileInfo>(profileInfo, HttpStatus.OK);

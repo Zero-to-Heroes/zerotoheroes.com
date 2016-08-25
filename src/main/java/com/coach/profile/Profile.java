@@ -11,6 +11,7 @@ import com.coach.rankings.Rankings;
 import com.coach.review.Review.Sport;
 import com.coach.subscription.Subscriptions;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,6 +22,7 @@ import lombok.ToString;
 @Getter
 @ToString
 @Document
+@EqualsAndHashCode(of = "id")
 public class Profile {
 
 	@Id

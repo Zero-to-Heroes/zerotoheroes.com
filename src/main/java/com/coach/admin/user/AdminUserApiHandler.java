@@ -22,8 +22,6 @@ import com.coach.core.security.User;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
-import com.coach.profile.profileinfo.SportProfileInfo;
-import com.coach.rankings.Rank;
 import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
@@ -180,28 +178,35 @@ public class AdminUserApiHandler {
 			if (profile == null) {
 				profile = new Profile();
 			}
-			if (profile.getRankings() == null || profile.getRankings().getRankings().isEmpty()) {
-				continue;
-			}
+			// if (profile.getRankings() == null ||
+			// profile.getRankings().getRankings().isEmpty()) {
+			// continue;
+			// }
+			//
+			// boolean dirty = false;
+			//
+			// for (String sport : profile.getRankings().getRankings().keySet())
+			// {
+			// Map<String, Rank> ranking =
+			// profile.getRankings().getRankings().get(sport);
+			// SportProfileInfo sportProfileInfo =
+			// profile.getProfileInfo().getSportInfo(sport);
+			// if (sportProfileInfo.getRankings() == null ||
+			// sportProfileInfo.getRankings().isEmpty()) {
+			// sportProfileInfo.setRankings(ranking);
+			// dirty = true;
+			// }
+			// }
 
-			boolean dirty = false;
-
-			for (String sport : profile.getRankings().getRankings().keySet()) {
-				Map<String, Rank> ranking = profile.getRankings().getRankings().get(sport);
-				SportProfileInfo sportProfileInfo = profile.getProfileInfo().getSportInfo(sport);
-				if (sportProfileInfo.getRankings() == null || sportProfileInfo.getRankings().isEmpty()) {
-					sportProfileInfo.setRankings(ranking);
-					dirty = true;
-				}
-			}
-
-			if (dirty) {
-				modified.add(profile);
-			}
+			// if (dirty) {
+			// modified.add(profile);
+			// }
 		}
 
+		log.debug("saving " + modified.size() + " users");
 		profileRepository.save(modified);
+		log.debug("done");
 
-		return new ResponseEntity<String>("", HttpStatus.OK);
+		return new ResponseEntity<String>("ok", HttpStatus.OK);
 	}
 }

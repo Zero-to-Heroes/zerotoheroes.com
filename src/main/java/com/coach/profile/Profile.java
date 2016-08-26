@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.coach.notifications.Notifications;
 import com.coach.preferences.Preferences;
 import com.coach.profile.profileinfo.ProfileInfo;
-import com.coach.rankings.Rankings;
 import com.coach.review.Review.Sport;
 import com.coach.subscription.Subscriptions;
 
@@ -33,27 +32,32 @@ public class Profile {
 	private Notifications notifications = new Notifications();
 	private Preferences preferences = new Preferences();
 	private Subscriptions subscriptions = new Subscriptions();
-	private Rankings rankings = new Rankings();
+	// private Rankings rankings = new Rankings();
 	private ProfileInfo profileInfo = new ProfileInfo();
 
-	@Deprecated
-	public Rankings getRankings() {
-		if (rankings == null) {
-			rankings = new Rankings();
-		}
-		return rankings;
-	}
+	// @Deprecated
+	// public Rankings getRankings() {
+	// if (rankings == null) {
+	// rankings = new Rankings();
+	// }
+	// return rankings;
+	// }
 
 	// Some hard-coding for now, later on will be easier when user will be able
 	// to set their own flair
 	@Deprecated
 	public String getFlair(Sport sport, String frame) {
-		if (sport == null) { return frame; }
-
-		if (rankings.getRankings().get(sport.getKey().toLowerCase()) == null) { return frame; }
-
-		if (rankings.getRankings().get(sport.getKey().toLowerCase()).get("ranked") == null) { return frame; }
-
-		return rankings.getRankings().get(sport.getKey().toLowerCase()).get("ranked").getKey();
+		return profileInfo.fetchFlair(sport, frame);
+		// if (sport == null) { return frame; }
+		//
+		// if (rankings.getRankings().get(sport.getKey().toLowerCase()) == null)
+		// { return frame; }
+		//
+		// if
+		// (rankings.getRankings().get(sport.getKey().toLowerCase()).get("ranked")
+		// == null) { return frame; }
+		//
+		// return
+		// rankings.getRankings().get(sport.getKey().toLowerCase()).get("ranked").getKey();
 	}
 }

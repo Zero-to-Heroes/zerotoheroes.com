@@ -257,7 +257,10 @@
 			"info": {
 				"editButtonLabel": "Editer",
 				"reputationTooltip": "Total de points de réputation. Vous gagnez des points de réputation lorsque d'autres votent pour vos commentaires ou les marquent comme ayant aidé. Vos points de réputation reflètent votre contribution à la communauté, et seront probablement liés à d'autres systèmes dans le futur :)",
-				"dailyGamesPlayed": "Parties jouées par jour"
+				"dailyGamesPlayed": "Parties jouées par jour",
+				"dailyGamesPostedTotal": "{{total}} depuis le début",
+				"dailyCommentsPosted": "Commentaires postés par jour",
+				"dailyCommentsPostedTotal": "{{total}} depuis le début"
 			},
 			"preferences": {
 				"preferencesUpdated": "Vos préférences ont été mises à jour",

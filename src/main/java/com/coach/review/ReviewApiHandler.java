@@ -418,6 +418,8 @@ public class ReviewApiHandler {
 			userService.updateAsync(user);
 		}
 
+		reviewService.triggerCommentCreationJobs(review, comment);
+
 		// Notifying the user who submitted the review (if he is registered)
 		slackNotifier.notifyNewComment(review, comment);
 		// sportManager.addNewCommentActivity(review, comment);
@@ -713,6 +715,8 @@ public class ReviewApiHandler {
 		String userId = user != null ? user.getId() : "";
 		review.prepareForDisplay(userId);
 
+		reviewService.triggerCommentCreationJobs(review, comment);
+
 		// Notifying the user who submitted the review (if he is registered)
 		subscriptionManager.notifyNewComment(reply, review);
 		slackNotifier.notifyNewComment(review, reply);
@@ -750,7 +754,8 @@ public class ReviewApiHandler {
 		// are different to avoid self-boosting
 		if (!StringUtils.isNullOrEmpty(comment.getAuthorId()) && !comment.getAuthorId().equals(review.getAuthorId())) {
 			ReputationAction action = comment.isHelpful() ? ReputationAction.Helpful : ReputationAction.LostHelpful;
-			reputationUpdater.updateReputation(review.getSport(), action, comment.getAuthorId());
+			int changeAmount = reputationUpdater.updateReputation(review.getSport(), action, comment.getAuthorId());
+			reviewService.triggerReputationChangeJobs(review, comment, changeAmount);
 		}
 
 		reviewService.updateAsync(review);

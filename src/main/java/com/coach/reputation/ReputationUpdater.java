@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.coach.core.security.User;
 import com.coach.review.Review;
 import com.coach.review.Review.Sport;
+import com.coach.review.ReviewService;
 import com.coach.user.UserRepository;
 
 /**
@@ -25,6 +26,9 @@ public class ReputationUpdater {
 	@Autowired
 	MongoTemplate mongoTemplate;
 
+	@Autowired
+	ReviewService reviewService;
+
 	/**
 	 * update reputation after an action by the current user
 	 *
@@ -35,51 +39,61 @@ public class ReputationUpdater {
 	 * @param userId
 	 *            , id of the current user
 	 */
-	public void updateReputationAfterAction(Sport sport, Reputation reputation, ReputationAction action,
-			String authorId, User user) {
+	public int updateReputationAfterAction(Sport sport, Reputation reputation, ReputationAction action, String authorId,
+			User user) {
 		String userId = user.getId();
 		boolean isCurrentlyUpvoted = reputation.getUserIds().get(ReputationAction.Upvote).contains(userId);
 		boolean isCurrentlyDownvoted = reputation.getUserIds().get(ReputationAction.Downvote).contains(userId);
+		int changeAmount = 0;
 		// similar reddit/youtube way, though an upvote on a downvoted element
 		// reinit all to 0, same for a downvote on an upvote element
 		if (action.equals(ReputationAction.Upvote)) {
 			if (isCurrentlyUpvoted) {
 				reputation.removeVote(ReputationAction.Upvote, userId);
-				changeAuthorReputation(sport, authorId, userId, -1);
+				changeAmount = -1;
+				changeAmount = changeAuthorReputation(sport, authorId, userId, changeAmount);
 			}
 			else if (isCurrentlyDownvoted) {
 				reputation.removeVote(ReputationAction.Downvote, userId);
-				changeAuthorReputation(sport, authorId, userId, 1);
+				changeAmount = 1;
+				changeAmount = changeAuthorReputation(sport, authorId, userId, changeAmount);
 			}
 			else {
 				reputation.addVote(action, userId);
-				changeAuthorReputation(sport, authorId, userId, 1);
+				changeAmount = 1;
+				changeAmount = changeAuthorReputation(sport, authorId, userId, changeAmount);
 			}
 		}
 		else if (action.equals(ReputationAction.Downvote)) {
 			if (isCurrentlyDownvoted) {
 				reputation.removeVote(ReputationAction.Downvote, userId);
-				changeAuthorReputation(sport, authorId, userId, 1);
+				changeAmount = 1;
+				changeAmount = changeAuthorReputation(sport, authorId, userId, changeAmount);
 			}
 			else if (isCurrentlyUpvoted) {
 				reputation.removeVote(ReputationAction.Upvote, userId);
-				changeAuthorReputation(sport, authorId, userId, -1);
+				changeAmount = -1;
+				changeAmount = changeAuthorReputation(sport, authorId, userId, changeAmount);
 			}
 			else {
 				reputation.addVote(action, userId);
-				changeAuthorReputation(sport, authorId, userId, -1);
+				changeAmount = -1;
+				changeAmount = changeAuthorReputation(sport, authorId, userId, changeAmount);
 			}
 		}
+		return changeAmount;
 	}
 
-	private void changeAuthorReputation(Sport sport, String authorId, String actionDoerId, int amount) {
+	private int changeAuthorReputation(Sport sport, String authorId, String actionDoerId, int amount) {
 		if (authorId != null && !authorId.equals(actionDoerId)) {
 			User author = userRepo.findById(authorId);
 			if (author != null) {
 				author.modifyReputation(sport, amount);
 				mongoTemplate.save(author);
+				return amount;
 			}
 		}
+		return 0;
 	}
 
 	/**
@@ -100,16 +114,18 @@ public class ReputationUpdater {
 	/**
 	 * Update reputation when a review author marks a comment as "helpful"
 	 */
-	public void updateReputation(Sport sport, ReputationAction action, String authorId) {
+	public int updateReputation(Sport sport, ReputationAction action, String authorId) {
+		int changeAmount = 0;
 		if (ReputationAction.Helpful.equals(action)) {
 			User author = userRepo.findById(authorId);
-			author.modifyReputation(sport, 3);
+			changeAmount = author.modifyReputation(sport, 3);
 			mongoTemplate.save(author);
 		}
 		else if (ReputationAction.LostHelpful.equals(action)) {
 			User author = userRepo.findById(authorId);
-			author.modifyReputation(sport, -3);
+			changeAmount = author.modifyReputation(sport, -3);
 			mongoTemplate.save(author);
 		}
+		return changeAmount;
 	}
 }

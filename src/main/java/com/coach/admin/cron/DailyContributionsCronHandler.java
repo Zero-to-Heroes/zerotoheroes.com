@@ -22,8 +22,13 @@ import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
 import com.coach.profile.profileinfo.SportProfileInfo;
+import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import com.coach.review.journal.CommentJournal;
+import com.coach.review.journal.CommentJournalRepository;
+import com.coach.review.journal.ReputationJournal;
+import com.coach.review.journal.ReputationJournalRepository;
 import com.coach.review.journal.ReviewJournal;
 import com.coach.review.journal.ReviewJournalRepository;
 import com.coach.user.UserRepository;
@@ -52,7 +57,13 @@ public class DailyContributionsCronHandler {
 	ReviewRepository reviewRepository;
 
 	@Autowired
-	ReviewJournalRepository journalRepo;
+	ReviewJournalRepository reviewJournalRepo;
+
+	@Autowired
+	CommentJournalRepository commentJournalRepo;
+
+	@Autowired
+	ReputationJournalRepository reputationJournalRepo;
 
 	private final String environment;
 
@@ -62,11 +73,11 @@ public class DailyContributionsCronHandler {
 		this.environment = environment;
 	}
 
-	@RequestMapping(value = "/games", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<String> update() {
+	@RequestMapping(value = "/game", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> processGames() {
 
 		// Load all the unprocessed reviews
-		List<ReviewJournal> logs = journalRepo.findAll();
+		List<ReviewJournal> logs = reviewJournalRepo.findAll();
 		log.debug("loaded " + logs.size() + " logs");
 
 		List<ReviewJournal> processed = new ArrayList<>();
@@ -92,20 +103,87 @@ public class DailyContributionsCronHandler {
 		log.debug("modified " + modified.size() + " profiles");
 
 		profileRepository.save(modified);
-		journalRepo.delete(processed);
+		reviewJournalRepo.delete(processed);
 
-		return new ResponseEntity<String>("processed " + processed.size() + " logs", HttpStatus.OK);
+		return new ResponseEntity<String>("processed " + processed.size() + " game logs", HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/initGames", method = RequestMethod.GET)
+	@RequestMapping(value = "/comment", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> processComments() {
+
+		// Load all the unprocessed reviews
+		List<CommentJournal> logs = commentJournalRepo.findAll();
+		log.debug("loaded " + logs.size() + " logs");
+
+		List<CommentJournal> processed = new ArrayList<>();
+		Set<Profile> modified = new HashSet<>();
+		Map<String, Profile> profileMap = new HashMap<>();
+
+		for (CommentJournal log : logs) {
+			Date creationDate = log.getCommentCreationDate();
+			String authorId = log.getAuthorId();
+			String sport = log.getSport();
+
+			Profile profile = profileMap.get(authorId);
+			if (profile == null) {
+				profile = profileRepository.findByUserId(authorId);
+				profileMap.put(authorId, profile);
+			}
+			profile.getProfileInfo().getSportInfo(sport).addDailyComment(creationDate);
+			modified.add(profile);
+			processed.add(log);
+		}
+
+		log.debug("processed " + processed.size() + " logs");
+		log.debug("modified " + modified.size() + " profiles");
+
+		profileRepository.save(modified);
+		commentJournalRepo.delete(processed);
+
+		return new ResponseEntity<String>("processed " + processed.size() + " comment logs", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/reputation", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> processReputation() {
+
+		// Load all the unprocessed reviews
+		List<ReputationJournal> logs = reputationJournalRepo.findAll();
+		log.debug("loaded " + logs.size() + " logs");
+
+		List<ReputationJournal> processed = new ArrayList<>();
+		Set<Profile> modified = new HashSet<>();
+		Map<String, Profile> profileMap = new HashMap<>();
+
+		for (ReputationJournal log : logs) {
+			Date creationDate = log.getReputationChangeDate();
+			String authorId = log.getUserId();
+			String sport = log.getSport();
+			int changeValue = log.getChangeValue();
+
+			Profile profile = profileMap.get(authorId);
+			if (profile == null) {
+				profile = profileRepository.findByUserId(authorId);
+				profileMap.put(authorId, profile);
+			}
+			profile.getProfileInfo().getSportInfo(sport).addDailyReputationChange(creationDate, changeValue);
+			modified.add(profile);
+			processed.add(log);
+		}
+
+		log.debug("processed " + processed.size() + " logs");
+		log.debug("modified " + modified.size() + " profiles");
+
+		profileRepository.save(modified);
+		reputationJournalRepo.delete(processed);
+
+		return new ResponseEntity<String>("processed " + processed.size() + " reputation logs", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/init", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> init() {
 
 		if ("prod".equalsIgnoreCase(
 				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
-
-		// don't process the journal entries twice (once during init, once
-		// during journal cron)
-		journalRepo.deleteAll();
 
 		// Build the map of users
 		log.debug("Retrieving user info");
@@ -125,6 +203,10 @@ public class DailyContributionsCronHandler {
 			profileMap.put(profile.getUserId(), profile);
 		}
 
+		// don't process the journal entries twice (once during init, once
+		// during journal cron)
+		reviewJournalRepo.deleteAll();
+
 		// Load all the reviews
 		log.debug("loading reviews");
 		List<Review> reviews = reviewRepository.findAll();
@@ -134,25 +216,43 @@ public class DailyContributionsCronHandler {
 
 		// Process each review to add the info to the user's profile
 		for (Review review : reviews) {
-			// Interested only in game creation for now
-			if (review.getAuthorId() == null) {
-				continue;
-			}
 
 			if (review.getSport() == null) {
 				continue;
 			}
 
-			Profile profile = profileMap.get(review.getAuthorId());
-			if (profile == null) {
-				profile = new Profile();
-				profile.setUserId(review.getAuthorId());
+			if (review.getAuthorId() != null) {
+				Profile profile = profileMap.get(review.getAuthorId());
+				if (profile == null) {
+					profile = new Profile();
+					profile.setUserId(review.getAuthorId());
+				}
+
+				SportProfileInfo sportInfo = profile.getProfileInfo()
+						.getSportInfo(review.getSport().getKey().toLowerCase());
+				sportInfo.addDailyGame(review.getCreationDate());
+				modified.add(profile);
 			}
 
-			SportProfileInfo sportInfo = profile.getProfileInfo()
-					.getSportInfo(review.getSport().getKey().toLowerCase());
-			sportInfo.addDailyGame(review.getCreationDate());
-			modified.add(profile);
+			if (review.getAllComments() != null && !review.getAllComments().isEmpty()) {
+				for (Comment comment : review.getAllComments()) {
+					if (comment.getAuthorId() == null) {
+						continue;
+					}
+
+					Profile profile = profileMap.get(comment.getAuthorId());
+					if (profile == null) {
+						profile = new Profile();
+						profile.setUserId(comment.getAuthorId());
+					}
+
+					SportProfileInfo sportInfo = profile.getProfileInfo()
+							.getSportInfo(review.getSport().getKey().toLowerCase());
+					sportInfo.addDailyComment(comment.getCreationDate());
+					modified.add(profile);
+				}
+			}
+
 		}
 		log.debug("modified " + modified.size() + " profiles");
 

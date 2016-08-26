@@ -33,6 +33,12 @@ public class ProfileInfo {
 	private Map<Long, Integer> dailyPlays = new HashMap<>();
 
 	@Transient
+	private Map<Long, Integer> dailyComments = new HashMap<>();
+
+	@Transient
+	private Map<Long, Integer> dailyReputationChanges = new HashMap<>();
+
+	@Transient
 	private int reputation;
 
 	public void populateForSport(User user, String sport) {
@@ -45,6 +51,8 @@ public class ProfileInfo {
 		flair = fetchFlair(sport, "unframed");
 		gameIdentifier = fetchGameIdentifier(sport);
 		dailyPlays = fetchDailyPlays(sport);
+		dailyComments = fetchDailyComments(sport);
+		dailyReputationChanges = fetchDailyReputationChanges(sport);
 		reputation = user.getReputation(sport);
 	}
 
@@ -55,6 +63,24 @@ public class ProfileInfo {
 		if (sportInfo == null) { return null; }
 
 		return sportInfo.getDailyPlays();
+	}
+
+	private Map<Long, Integer> fetchDailyComments(Sport sport) {
+		if (sport == null) { return null; }
+
+		SportProfileInfo sportInfo = sportInfos.get(sport.getKey().toLowerCase());
+		if (sportInfo == null) { return null; }
+
+		return sportInfo.getDailyComments();
+	}
+
+	private Map<Long, Integer> fetchDailyReputationChanges(Sport sport) {
+		if (sport == null) { return null; }
+
+		SportProfileInfo sportInfo = sportInfos.get(sport.getKey().toLowerCase());
+		if (sportInfo == null) { return null; }
+
+		return sportInfo.getDailyReputationChanges();
 	}
 
 	public String fetchFlair(Sport sport, String frame) {

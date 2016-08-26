@@ -1,5 +1,6 @@
 package com.coach.review;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +11,10 @@ import com.coach.core.notification.ExecutorProvider;
 import com.coach.core.security.User;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
+import com.coach.review.journal.CommentJournal;
+import com.coach.review.journal.CommentJournalRepository;
+import com.coach.review.journal.ReputationJournal;
+import com.coach.review.journal.ReputationJournalRepository;
 import com.coach.review.journal.ReviewJournal;
 import com.coach.review.journal.ReviewJournalRepository;
 import com.coach.user.UserRepository;
@@ -31,7 +36,13 @@ public class ReviewService {
 	ProfileRepository profileRepo;
 
 	@Autowired
-	ReviewJournalRepository journalRepo;
+	ReviewJournalRepository reviewJournalRepo;
+
+	@Autowired
+	CommentJournalRepository commentJournalRepo;
+
+	@Autowired
+	ReputationJournalRepository reputationJournalRepo;
 
 	@Autowired
 	private ExecutorProvider executorProvider;
@@ -84,7 +95,23 @@ public class ReviewService {
 		if (review.getAuthorId() != null && review.getSport() != null) {
 			ReviewJournal journal = new ReviewJournal(review.getId(), review.getAuthorId(),
 					review.getSport().getKey().toLowerCase(), review.getCreationDate());
-			journalRepo.save(journal);
+			reviewJournalRepo.save(journal);
+		}
+	}
+
+	public void triggerCommentCreationJobs(Review review, Comment comment) {
+		if (comment.getAuthorId() != null && review.getSport() != null) {
+			CommentJournal journal = new CommentJournal(comment.getId(), comment.getAuthorId(),
+					review.getSport().getKey().toLowerCase(), comment.getCreationDate());
+			commentJournalRepo.save(journal);
+		}
+	}
+
+	public void triggerReputationChangeJobs(Review review, HasReputation item, int changeValue) {
+		if (item.getAuthorId() != null && review.getSport() != null) {
+			ReputationJournal journal = new ReputationJournal(review.getId(), item.getAuthorId(),
+					review.getSport().getKey().toLowerCase(), new Date(), changeValue);
+			reputationJournalRepo.save(journal);
 		}
 	}
 }

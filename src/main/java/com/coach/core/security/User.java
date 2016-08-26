@@ -147,12 +147,13 @@ public class User implements UserDetails {
 		return accountEnabled;
 	}
 
-	public void modifyReputation(Sport sport, int amount) {
+	public int modifyReputation(Sport sport, int amount) {
 		reputation += amount;
 		if (explodedReputation == null) {
 			explodedReputation = new UserReputation();
 		}
 		explodedReputation.modifyReputation(sport, amount);
+		return amount;
 	}
 
 	public int getReputation(Sport sport) {

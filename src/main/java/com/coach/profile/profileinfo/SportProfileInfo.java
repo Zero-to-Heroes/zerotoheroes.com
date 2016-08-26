@@ -1,6 +1,5 @@
 package com.coach.profile.profileinfo;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,11 +16,12 @@ import lombok.ToString;
 // The info for a specific sport
 public class SportProfileInfo {
 
-	private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
 	private Map<String, Rank> rankings = new HashMap<>();
 	private String gameIdentifier;
+
 	private Map<Long, Integer> dailyPlays = new HashMap<>();
+	private Map<Long, Integer> dailyComments = new HashMap<>();
+	private Map<Long, Integer> dailyReputationChanges = new HashMap<>();
 
 	public Rank getRankings(String key) {
 		return rankings.get(key);
@@ -34,7 +34,6 @@ public class SportProfileInfo {
 	}
 
 	public void addDailyGame(Date creationDate) {
-		// String date = formatter.format(creationDate);
 		Long timestamp = creationDate.getTime() / (1000 * 60 * 60 * 24);
 		timestamp = timestamp * 60 * 60 * 24;
 		Integer plays = dailyPlays.get(timestamp);
@@ -42,5 +41,25 @@ public class SportProfileInfo {
 			plays = 0;
 		}
 		dailyPlays.put(timestamp, plays + 1);
+	}
+
+	public void addDailyComment(Date creationDate) {
+		Long timestamp = creationDate.getTime() / (1000 * 60 * 60 * 24);
+		timestamp = timestamp * 60 * 60 * 24;
+		Integer plays = dailyComments.get(timestamp);
+		if (plays == null) {
+			plays = 0;
+		}
+		dailyComments.put(timestamp, plays + 1);
+	}
+
+	public void addDailyReputationChange(Date creationDate, int changeValue) {
+		Long timestamp = creationDate.getTime() / (1000 * 60 * 60 * 24);
+		timestamp = timestamp * 60 * 60 * 24;
+		Integer plays = dailyReputationChanges.get(timestamp);
+		if (plays == null) {
+			plays = 0;
+		}
+		dailyReputationChanges.put(timestamp, plays + changeValue);
 	}
 }

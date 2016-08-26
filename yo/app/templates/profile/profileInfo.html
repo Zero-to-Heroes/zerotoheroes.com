@@ -11,8 +11,20 @@
 		<span bs-tooltip data-title="{{ 'global.profile.info.reputationTooltip' | translate }}" data-placement="right" data-animation="am-fade-and-scale" class="total-reputation">{{profile.reputation}}<img class="reputation-icon" src="{{ config.images.reputation }}"></img></span>
 	</h2>
 
-	<h3>{{ 'global.profile.info.dailyGamesPlayed' | translate }}</h3>
-	<div id="daily-games-heatmap"></div>
+	<section class="calendars">
+		<h3>
+			<span class="headline">{{ 'global.profile.info.dailyCommentsPosted' | translate }}</span>
+			<span class="number" translate="global.profile.info.dailyCommentsPostedTotal" translate-values="{ total: '{{totalComments}}' }" ></span>
+		</h3>
+		<div id="daily-comments-heatmap" class="heatmap"></div>
+
+		<h3>
+			<span class="headline">{{ 'global.profile.info.dailyGamesPlayed' | translate }}</span>
+			<span class="number" translate="global.profile.info.dailyGamesPostedTotal" translate-values="{ total: '{{totalGames}}' }" ></span>
+		</h3>
+		<div id="daily-games-heatmap" class="heatmap"></div>
+
+	</section>
 
 	<div ng-show="editing" class="buttons-container">
 		<button type="button" ng-click="cancelUpdate()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>

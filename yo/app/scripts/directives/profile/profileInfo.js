@@ -42,6 +42,7 @@ app.directive('profileInfo', ['$log', 'Api', '$routeParams', 'User', 'Localizati
 							$scope.profile = data
 							$log.debug('loaded profileinfo', $scope.profile)
 							$scope.initCalendars($scope.profile)
+							$scope.initTotalContribs($scope.profile);
 						}
 					)
 				}
@@ -52,8 +53,8 @@ app.directive('profileInfo', ['$log', 'Api', '$routeParams', 'User', 'Localizati
 					var startDate = new Date()
 					startDate.setDate(startDate.getDate() - 330)
 					// Init the daily games
-					var cal = new CalHeatMap()
-					cal.init(
+					var gameCal = new CalHeatMap()
+					gameCal.init(
 						{ 
 							itemSelector: '#daily-games-heatmap',
 							domain: 'month',
@@ -68,6 +69,46 @@ app.directive('profileInfo', ['$log', 'Api', '$routeParams', 'User', 'Localizati
 							legend: [1, 5, 10, 20],
 							itemName: ['game uploaded', 'games uploaded'],
 							itemNamespace: 'daily-games-heatmap'
+						}
+					)
+
+					$scope.initTotalContribs = function(profile) {
+						$scope.totalComments = 0
+						if (profile.dailyComments) {
+							for (var entry in profile.dailyComments) {
+								if (profile.dailyComments.hasOwnProperty(entry)) {
+							        $scope.totalComments += profile.dailyComments[entry]
+							    }
+							}
+						}
+
+						$scope.totalGames = 0
+						if (profile.dailyPlays) {
+							for (var entry in profile.dailyPlays) {
+								if (profile.dailyPlays.hasOwnProperty(entry)) {
+							        $scope.totalGames += profile.dailyPlays[entry]
+							    }
+							}
+						}
+					}
+
+					// Init the daily games
+					var commentsCal = new CalHeatMap()
+					commentsCal.init(
+						{ 
+							itemSelector: '#daily-comments-heatmap',
+							domain: 'month',
+							subDomain: 'day',
+							range: 12,
+							domainGutter: 5,
+							tooltip: true,
+							start: startDate,
+							maxDate: new Date(),
+							data: profile.dailyComments,
+							considerMissingDataAsZero: true,
+							legend: [1, 2, 4, 6],
+							itemName: ['comment posted', 'comments posted'],
+							itemNamespace: 'daily-comments-heatmap'
 						}
 					)
 				}

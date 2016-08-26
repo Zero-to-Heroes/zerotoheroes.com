@@ -301,7 +301,10 @@
 			"info": {
 				"editButtonLabel": "edit",
 				"reputationTooltip": "Total reputation points. You earn reputation points when others upvote your comments or flag them as helpful. Reputation points reflect your contributions to the community, and will probably tie in into systems in the future :)",
-				"dailyGamesPlayed": "Daily games played"
+				"dailyGamesPlayed": "Daily games played",
+				"dailyGamesPostedTotal": "{{total}} since the beginning",
+				"dailyCommentsPosted": "Daily comments posted",
+				"dailyCommentsPostedTotal": "{{total}} since the beginning"
 			},
 			"preferences": {
 				"preferencesUpdated": "Your preferences have been updated",

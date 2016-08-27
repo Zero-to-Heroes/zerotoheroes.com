@@ -19,9 +19,11 @@ public class AllResources extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/fonts/**", "/images/**", "/scripts/**", "/styles/**", "/templates/**",
-				"/views/**")
-				.addResourceLocations("/fonts/", "/images/", "/scripts/", "/styles/", "/templates/", "/views/");
+		registry.addResourceHandler("/scripts/**", "/styles/**", "/templates/**", "/views/**")
+				.addResourceLocations("/scripts/", "/styles/", "/templates/", "/views/");
+		registry.addResourceHandler("/fonts/**", "/images/**").addResourceLocations("/fonts/", "/images/")
+				.setCachePeriod(3600 * 24 * 28);
+		registry.addResourceHandler("/plugins/**").addResourceLocations("/plugins/").setCachePeriod(3600 * 24 * 28);
 	}
 
 }

@@ -35,6 +35,13 @@ public class Profile {
 	// private Rankings rankings = new Rankings();
 	private ProfileInfo profileInfo = new ProfileInfo();
 
+	public ProfileInfo getProfileInfo() {
+		if (profileInfo == null) {
+			profileInfo = new ProfileInfo();
+		}
+		return profileInfo;
+	}
+
 	// @Deprecated
 	// public Rankings getRankings() {
 	// if (rankings == null) {

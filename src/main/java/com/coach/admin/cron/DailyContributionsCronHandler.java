@@ -209,8 +209,13 @@ public class DailyContributionsCronHandler {
 
 		// Load all the reviews
 		log.debug("loading reviews");
+		// Sort sort = new Sort(Sort.Direction.DESC,
+		// Arrays.asList("creationDate"));
+		// PageRequest pageRequest = new PageRequest(1, 10, sort);
+		// List<Review> reviews =
+		// reviewRepository.findAll(pageRequest).getContent();
 		List<Review> reviews = reviewRepository.findAll();
-		log.debug("reviews loaded");
+		log.debug("reviews loaded " + reviews.size());
 
 		Set<Profile> modified = new HashSet<>(profiles);
 
@@ -231,6 +236,7 @@ public class DailyContributionsCronHandler {
 				SportProfileInfo sportInfo = profile.getProfileInfo()
 						.getSportInfo(review.getSport().getKey().toLowerCase());
 				sportInfo.addDailyGame(review.getCreationDate());
+				log.debug("adding daily game to " + userMap.get(review.getAuthorId()).getUsername() + ": " + profile);
 				modified.add(profile);
 			}
 
@@ -249,14 +255,17 @@ public class DailyContributionsCronHandler {
 					SportProfileInfo sportInfo = profile.getProfileInfo()
 							.getSportInfo(review.getSport().getKey().toLowerCase());
 					sportInfo.addDailyComment(comment.getCreationDate());
+					log.debug("adding daily comment to " + userMap.get(comment.getAuthorId()).getUsername() + ": "
+							+ profile);
 					modified.add(profile);
 				}
 			}
 
 		}
-		log.debug("modified " + modified.size() + " profiles");
 
+		log.debug("starting save of modified profiles");
 		profileRepository.save(modified);
+		log.debug("modified " + modified.size() + " profiles");
 
 		return new ResponseEntity<String>("ok", HttpStatus.OK);
 	}

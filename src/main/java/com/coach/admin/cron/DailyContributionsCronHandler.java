@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
@@ -64,6 +65,9 @@ public class DailyContributionsCronHandler {
 
 	@Autowired
 	ReputationJournalRepository reputationJournalRepo;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	private final String environment;
 
@@ -124,9 +128,16 @@ public class DailyContributionsCronHandler {
 			String authorId = log.getAuthorId();
 			String sport = log.getSport();
 
+			if (creationDate == null || authorId == null || sport == null) {
+				slackNotifier.notifyError(new NullPointerException("missing parameter when processing comment"),
+						creationDate, authorId, sport, log);
+				continue;
+			}
+
 			Profile profile = profileMap.get(authorId);
 			if (profile == null) {
-				profile = profileRepository.findByUserId(authorId);
+				profile = profileService.getProfile(authorId);
+				// profile = profileRepository.findByUserId(authorId);
 				profileMap.put(authorId, profile);
 			}
 			profile.getProfileInfo().getSportInfo(sport).addDailyComment(creationDate);

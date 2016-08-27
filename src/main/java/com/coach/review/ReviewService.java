@@ -101,7 +101,7 @@ public class ReviewService {
 
 	public void triggerCommentCreationJobs(Review review, Comment comment) {
 		if (comment.getAuthorId() != null && review.getSport() != null) {
-			CommentJournal journal = new CommentJournal(comment.getId(), comment.getAuthorId(),
+			CommentJournal journal = new CommentJournal(review.getId(), comment.getAuthorId(),
 					review.getSport().getKey().toLowerCase(), comment.getCreationDate());
 			commentJournalRepo.save(journal);
 		}

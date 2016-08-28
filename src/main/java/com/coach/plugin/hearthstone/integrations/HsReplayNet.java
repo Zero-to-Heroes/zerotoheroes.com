@@ -166,7 +166,7 @@ public class HsReplayNet implements IntegrationPlugin {
 			@Override
 			protected void prepareSocket(SSLSocket socket) throws IOException {
 				try {
-					System.out.println("************ setting socket HOST property *************");
+					log.debug("************ setting socket HOST property *************");
 					PropertyUtils.setProperty(socket, "host", "hsreplay.net");
 				}
 				catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {

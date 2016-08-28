@@ -168,6 +168,8 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 					review = review || $scope.reviews[0]
 					$scope.reviews.forEach(function(rev) {
 						rev.participantDetails.skillLevel = review.participantDetails.skillLevel
+						rev.plugins = rev.plugins || {}
+						rev.plugins.hearthstone = rev.plugins.hearthstone || {}
 						rev.plugins.hearthstone.parseDecks = rev.plugins.hearthstone.parseDecks || {}
 						rev.plugins.hearthstone.parseDecks.reviewDeck = review.plugins.hearthstone.parseDecks.reviewDeck
 					})

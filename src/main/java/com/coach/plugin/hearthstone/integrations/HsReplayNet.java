@@ -3,19 +3,23 @@ package com.coach.plugin.hearthstone.integrations;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.net.ssl.SNIHostName;
+import javax.net.ssl.SNIServerName;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLContextBuilder;
 import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
@@ -107,6 +111,7 @@ public class HsReplayNet implements IntegrationPlugin {
 	// public static void main(String[] args) throws Exception {
 	// // System.setProperty("javax.net.debug", "ALL");
 	// // System.setProperty("https.protocols", "SSLv3");
+	// // System.setProperty("jsse.enableSNIExtension", "false");
 	// HsReplayNet hsReplayNet = new HsReplayNet();
 	// hsReplayNet.sslTools = new SSLTools();
 	// String buildReplay =
@@ -153,7 +158,18 @@ public class HsReplayNet implements IntegrationPlugin {
 		SSLContextBuilder builder = new SSLContextBuilder();
 		builder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
 		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(builder.build(),
-				SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+				SSLConnectionSocketFactory.getDefaultHostnameVerifier()) {
+
+			@Override
+			protected void prepareSocket(javax.net.ssl.SSLSocket socket) throws IOException {
+				super.prepareSocket(socket);
+				SNIServerName sni = new SNIHostName("hsreplay.net");
+				socket.getSSLParameters().setServerNames(Arrays.asList(sni));
+			}
+		};
+		// SSLConnectionSocketFactory sslsf = new
+		// SSLConnectionSocketFactory(builder.build(),
+		// SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
 		CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
 
 		HttpGet httpGet = new HttpGet(apiUrl);
@@ -180,7 +196,8 @@ public class HsReplayNet implements IntegrationPlugin {
 		// URL url = new URL(apiUrl);
 		// HttpsURLConnection connection = (HttpsURLConnection)
 		// url.openConnection();
-		// connection.setDoOutput(true);
+		// connection.getSSLSocketFactory().createSocket("",
+		// 443).connection.setDoOutput(true);
 		// connection.setConnectTimeout(5000);
 		// connection.setUseCaches(false);
 		// connection.setReadTimeout(5000);

@@ -259,7 +259,7 @@ public class Comment implements HasText, HasReputation {
 
 		if (sport == null) { return score; }
 
-		Rank rank = p1.getProfileInfo().getSportInfo(sport.getKey().toLowerCase()).getRankings().get("ranked");
+		Rank rank = p1.getProfileInfo().getSportInfo(sport.getKey().toLowerCase()).getRankings("ranked");
 		if (rank != null) {
 			// log.debug("Computing score for " + p1);
 			o1.rank = rank.getKey();

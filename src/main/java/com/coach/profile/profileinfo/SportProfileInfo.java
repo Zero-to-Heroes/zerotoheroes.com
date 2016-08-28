@@ -24,6 +24,9 @@ public class SportProfileInfo {
 	private Map<Long, Integer> dailyReputationChanges = new HashMap<>();
 
 	public Rank getRankings(String key) {
+		if (rankings == null) {
+			rankings = new HashMap<>();
+		}
 		return rankings.get(key);
 	}
 

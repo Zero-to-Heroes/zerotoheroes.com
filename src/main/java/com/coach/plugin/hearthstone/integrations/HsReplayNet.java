@@ -66,9 +66,12 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	@Override
 	public void integrateRemoteData(String gameUrl, final Review review) throws Exception {
+		log.debug("integrating remote data " + gameUrl);
+		log.debug("with review " + review);
 		gameUrl = gameUrl.replaceAll("https", "http");
 		// First - create a file that contains the draft info to upload to s3
 		String stringXml = buildReplay(gameUrl);
+		log.debug("built xml " + stringXml);
 		// Flag the review to show that we are handling it
 		review.setMediaType("game-replay");
 		review.setText("Imported from " + gameUrl);
@@ -112,7 +115,9 @@ public class HsReplayNet implements IntegrationPlugin {
 		String gameId = matcher.group(2);
 
 		String apiUrl = "https://hsreplay.net/api/v1/games/" + gameId + "/";
+		log.debug("calling rest api");
 		String resultString = restGetCall(apiUrl);
+		log.debug("called rest aip " + resultString);
 
 		JSONObject api = new JSONObject(resultString);
 		String downloadLink = api.getString("replay_xml");
@@ -138,6 +143,7 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	private String restGetCall(String apiUrl) throws MalformedURLException, IOException {
 
+		log.debug("opening connection");
 		URL url = new URL(apiUrl);
 		HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 		sslTools.disableCertificateValidation(connection);

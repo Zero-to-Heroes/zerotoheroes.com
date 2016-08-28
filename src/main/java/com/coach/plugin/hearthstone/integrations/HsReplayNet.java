@@ -3,23 +3,23 @@ package com.coach.plugin.hearthstone.integrations;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.net.ssl.SNIHostName;
-import javax.net.ssl.SNIServerName;
+import javax.net.ssl.SSLSocket;
 
+import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLContextBuilder;
 import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
@@ -28,6 +28,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListener;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.SSLTools;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.IntegrationPlugin;
@@ -50,6 +51,9 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	@Autowired
 	SSLTools sslTools;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	public HsReplayNet() {
 		System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
@@ -158,18 +162,21 @@ public class HsReplayNet implements IntegrationPlugin {
 		SSLContextBuilder builder = new SSLContextBuilder();
 		builder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
 		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(builder.build(),
-				SSLConnectionSocketFactory.getDefaultHostnameVerifier()) {
-
+				SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER) {
 			@Override
-			protected void prepareSocket(javax.net.ssl.SSLSocket socket) throws IOException {
+			protected void prepareSocket(SSLSocket socket) throws IOException {
+				try {
+					System.out.println("************ setting socket HOST property *************");
+					PropertyUtils.setProperty(socket, "host", "hsreplay.net");
+				}
+				catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
+					log.error(ex.getMessage());
+					slackNotifier.notifyError(ex);
+				}
 				super.prepareSocket(socket);
-				SNIServerName sni = new SNIHostName("hsreplay.net");
-				socket.getSSLParameters().setServerNames(Arrays.asList(sni));
 			}
+
 		};
-		// SSLConnectionSocketFactory sslsf = new
-		// SSLConnectionSocketFactory(builder.build(),
-		// SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
 		CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
 
 		HttpGet httpGet = new HttpGet(apiUrl);

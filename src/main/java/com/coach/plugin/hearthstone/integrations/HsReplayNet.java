@@ -100,11 +100,13 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	}
 
-	// public static void main(String[] args) throws Exception {
-	// String buildReplay = new
-	// HsReplayNet().buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
-	// System.out.println(buildReplay);
-	// }
+	public static void main(String[] args) throws Exception {
+		System.setProperty("javax.net.debug", "ALL");
+		HsReplayNet hsReplayNet = new HsReplayNet();
+		hsReplayNet.sslTools = new SSLTools();
+		String buildReplay = hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
+		System.out.println(buildReplay);
+	}
 
 	private String buildReplay(String gameUrl) throws MalformedURLException, IOException, ProtocolException {
 		Pattern pattern = Pattern.compile(URL_PATTERN, Pattern.MULTILINE);
@@ -149,7 +151,7 @@ public class HsReplayNet implements IntegrationPlugin {
 		sslTools.disableCertificateValidation(connection);
 		connection.setDoOutput(true);
 		connection.setConnectTimeout(5000);
-		// connection.setUseCaches(false);
+		connection.setUseCaches(false);
 		connection.setReadTimeout(5000);
 		connection.setRequestProperty("User-Agent",
 				"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");

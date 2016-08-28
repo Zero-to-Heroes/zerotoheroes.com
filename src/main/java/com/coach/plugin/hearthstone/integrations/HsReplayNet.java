@@ -6,11 +6,12 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
@@ -97,7 +98,7 @@ public class HsReplayNet implements IntegrationPlugin {
 
 		String gameId = matcher.group(2);
 
-		String apiUrl = "http://hsreplay.net/api/v1/games/" + gameId + "/";
+		String apiUrl = "https://hsreplay.net/api/v1/games/" + gameId + "/";
 		String resultString = restGetCall(apiUrl);
 
 		JSONObject api = new JSONObject(resultString);
@@ -124,7 +125,7 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	private String restGetCall(String apiUrl) throws MalformedURLException, IOException {
 		URL url = new URL(apiUrl);
-		URLConnection connection = url.openConnection();
+		HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 		connection.setDoOutput(true);
 		connection.setConnectTimeout(5000);
 		connection.setReadTimeout(5000);

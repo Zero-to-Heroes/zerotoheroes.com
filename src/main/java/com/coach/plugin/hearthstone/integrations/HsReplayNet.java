@@ -46,9 +46,9 @@ public class HsReplayNet implements IntegrationPlugin {
 	@Autowired
 	SSLTools sslTools;
 
-	// public HsReplayNet() {
-	// System.setProperty("https.protocols", "TLSv1.2");
-	// }
+	public HsReplayNet() {
+		System.setProperty("https.protocols", "TLSv1.1,TLSv1.2");
+	}
 
 	@Override
 	public String getName() {

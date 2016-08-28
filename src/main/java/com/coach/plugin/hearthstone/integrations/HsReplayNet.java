@@ -104,14 +104,15 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	}
 
-	public static void main(String[] args) throws Exception {
-		// System.setProperty("javax.net.debug", "ALL");
-		// System.setProperty("https.protocols", "SSLv3");
-		HsReplayNet hsReplayNet = new HsReplayNet();
-		hsReplayNet.sslTools = new SSLTools();
-		String buildReplay = hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
-		System.out.println(buildReplay);
-	}
+	// public static void main(String[] args) throws Exception {
+	// // System.setProperty("javax.net.debug", "ALL");
+	// // System.setProperty("https.protocols", "SSLv3");
+	// HsReplayNet hsReplayNet = new HsReplayNet();
+	// hsReplayNet.sslTools = new SSLTools();
+	// String buildReplay =
+	// hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
+	// System.out.println(buildReplay);
+	// }
 
 	private String buildReplay(String gameUrl) throws Exception {
 		Pattern pattern = Pattern.compile(URL_PATTERN, Pattern.MULTILINE);

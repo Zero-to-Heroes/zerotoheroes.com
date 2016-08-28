@@ -4,9 +4,11 @@ angular.module('controllers').controller('SportHomeCtrl', ['$scope', 'Api', '$lo
 	function($scope, Api, $log, SportsConfig, $routeParams, $location) {
 
 		$scope.sport = $routeParams.sport || $scope.sport
-	   	if (current.$$route) {
-	   		$scope.sport = current.$$route.sport || $scope.sport
-	   	}
+		// $scope.$on('$routeChangeSuccess', function(next, current) { 
+		//    	if (current.$$route) {
+		//    		$scope.sport = current.$$route.sport || $scope.sport
+		//    	}
+		// }
 
 		$scope.state = {
 			choice: undefined,

@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListener;
+import com.coach.core.security.SSLTools;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.IntegrationPlugin;
 import com.coach.review.HasText;
@@ -32,13 +33,19 @@ import lombok.extern.slf4j.Slf4j;
 public class HsReplayNet implements IntegrationPlugin {
 
 	private static final String URL_PATTERN = "(http(?:s)?:\\/\\/(?:www\\.)?hsreplay\\.net\\/replay\\/)([\\d\\-a-zA-Z]+)";
-	private static final String URL = "https://hsreplay.net/api/v1/replay/";
 
 	@Autowired
 	ReviewRepository repo;
 
 	@Autowired
 	S3Utils s3utils;
+
+	@Autowired
+	SSLTools sslTools;
+
+	// public HsReplayNet() {
+	// System.setProperty("https.protocols", "TLSv1.2");
+	// }
 
 	@Override
 	public String getName() {
@@ -90,6 +97,12 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	}
 
+	// public static void main(String[] args) throws Exception {
+	// String buildReplay = new
+	// HsReplayNet().buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
+	// System.out.println(buildReplay);
+	// }
+
 	private String buildReplay(String gameUrl) throws MalformedURLException, IOException, ProtocolException {
 		Pattern pattern = Pattern.compile(URL_PATTERN, Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(gameUrl);
@@ -124,15 +137,20 @@ public class HsReplayNet implements IntegrationPlugin {
 	}
 
 	private String restGetCall(String apiUrl) throws MalformedURLException, IOException {
+
 		URL url = new URL(apiUrl);
 		HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+		sslTools.disableCertificateValidation(connection);
 		connection.setDoOutput(true);
 		connection.setConnectTimeout(5000);
+		// connection.setUseCaches(false);
 		connection.setReadTimeout(5000);
 		connection.setRequestProperty("User-Agent",
 				"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
 		connection.setRequestProperty("Content-Type", "application/json");
 		connection.setRequestProperty("Accept", "*/*");
+		log.debug("built connection object");
+
 		BufferedReader rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 		String line;
 		StringBuilder result = new StringBuilder();

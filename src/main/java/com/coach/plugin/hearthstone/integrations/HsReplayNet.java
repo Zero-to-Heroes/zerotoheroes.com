@@ -5,14 +5,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
-import java.net.URL;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.net.ssl.HttpsURLConnection;
-
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,15 +103,14 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	}
 
-	// public static void main(String[] args) throws Exception {
-	// // System.setProperty("javax.net.debug", "ALL");
-	// // System.setProperty("https.protocols", "SSLv3");
-	// HsReplayNet hsReplayNet = new HsReplayNet();
-	// hsReplayNet.sslTools = new SSLTools();
-	// String buildReplay =
-	// hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
-	// System.out.println(buildReplay);
-	// }
+	public static void main(String[] args) throws Exception {
+		// System.setProperty("javax.net.debug", "ALL");
+		// System.setProperty("https.protocols", "SSLv3");
+		HsReplayNet hsReplayNet = new HsReplayNet();
+		hsReplayNet.sslTools = new SSLTools();
+		String buildReplay = hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
+		System.out.println(buildReplay);
+	}
 
 	private String buildReplay(String gameUrl) throws MalformedURLException, IOException, ProtocolException {
 		Pattern pattern = Pattern.compile(URL_PATTERN, Pattern.MULTILINE);
@@ -146,29 +148,51 @@ public class HsReplayNet implements IntegrationPlugin {
 	}
 
 	private String restGetCall(String apiUrl) throws MalformedURLException, IOException {
-		sslTools.disableCertificateValidation(null);
-
-		System.out.println("opening connection " + System.getProperty("https.protocols"));
-		URL url = new URL(apiUrl);
-		HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-		connection.setDoOutput(true);
-		connection.setConnectTimeout(5000);
-		connection.setUseCaches(false);
-		connection.setReadTimeout(5000);
-		connection.setRequestProperty("User-Agent",
-				"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
-		connection.setRequestProperty("Content-Type", "application/json");
-		connection.setRequestProperty("Accept", "*/*");
-		log.debug("built connection object");
-
-		BufferedReader rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-		String line;
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpGet httpGet = new HttpGet(apiUrl);
+		CloseableHttpResponse response1 = httpClient.execute(httpGet);
 		StringBuilder result = new StringBuilder();
-		while ((line = rd.readLine()) != null) {
-			result.append(line);
+		try {
+			System.out.println(response1.getStatusLine());
+			HttpEntity entity1 = response1.getEntity();
+			BufferedReader rd = new BufferedReader(new InputStreamReader(entity1.getContent()));
+			String line;
+			while ((line = rd.readLine()) != null) {
+				result.append(line);
+			}
+			// do something useful with the response body
+			// and ensure it is fully consumed
+			EntityUtils.consume(entity1);
 		}
-		rd.close();
-		connection.disconnect();
+		finally {
+			response1.close();
+		}
+
+		// System.out.println("opening connection " +
+		// System.getProperty("https.protocols"));
+		// URL url = new URL(apiUrl);
+		// HttpsURLConnection connection = (HttpsURLConnection)
+		// url.openConnection();
+		// connection.setDoOutput(true);
+		// connection.setConnectTimeout(5000);
+		// connection.setUseCaches(false);
+		// connection.setReadTimeout(5000);
+		// connection.setRequestProperty("User-Agent",
+		// "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like
+		// Gecko) Chrome/23.0.1271.95 Safari/537.11");
+		// connection.setRequestProperty("Content-Type", "application/json");
+		// connection.setRequestProperty("Accept", "*/*");
+		// log.debug("built connection object");
+		//
+		// BufferedReader rd = new BufferedReader(new
+		// InputStreamReader(connection.getInputStream()));
+		// String line;
+		// StringBuilder result = new StringBuilder();
+		// while ((line = rd.readLine()) != null) {
+		// result.append(line);
+		// }
+		// rd.close();
+		// connection.disconnect();
 		String resultString = result.toString();
 		return resultString;
 	}

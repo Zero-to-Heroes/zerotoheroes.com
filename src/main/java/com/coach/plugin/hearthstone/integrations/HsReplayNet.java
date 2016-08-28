@@ -3,8 +3,6 @@ package com.coach.plugin.hearthstone.integrations;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -13,6 +11,9 @@ import java.util.regex.Pattern;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLContextBuilder;
+import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -47,7 +48,7 @@ public class HsReplayNet implements IntegrationPlugin {
 	SSLTools sslTools;
 
 	public HsReplayNet() {
-		System.setProperty("https.protocols", "TLSv1.1,TLSv1.2");
+		System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
 	}
 
 	@Override
@@ -103,17 +104,16 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	}
 
-	// public static void main(String[] args) throws Exception {
-	// // System.setProperty("javax.net.debug", "ALL");
-	// // System.setProperty("https.protocols", "SSLv3");
-	// HsReplayNet hsReplayNet = new HsReplayNet();
-	// hsReplayNet.sslTools = new SSLTools();
-	// String buildReplay =
-	// hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
-	// System.out.println(buildReplay);
-	// }
+	public static void main(String[] args) throws Exception {
+		// System.setProperty("javax.net.debug", "ALL");
+		// System.setProperty("https.protocols", "SSLv3");
+		HsReplayNet hsReplayNet = new HsReplayNet();
+		hsReplayNet.sslTools = new SSLTools();
+		String buildReplay = hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
+		System.out.println(buildReplay);
+	}
 
-	private String buildReplay(String gameUrl) throws MalformedURLException, IOException, ProtocolException {
+	private String buildReplay(String gameUrl) throws Exception {
 		Pattern pattern = Pattern.compile(URL_PATTERN, Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(gameUrl);
 		log.debug(matcher.toString());
@@ -148,8 +148,13 @@ public class HsReplayNet implements IntegrationPlugin {
 		return stringXml;
 	}
 
-	private String restGetCall(String apiUrl) throws MalformedURLException, IOException {
-		CloseableHttpClient httpClient = HttpClients.createDefault();
+	private String restGetCall(String apiUrl) throws Exception {
+		SSLContextBuilder builder = new SSLContextBuilder();
+		builder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
+		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(builder.build(),
+				SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+		CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
+
 		HttpGet httpGet = new HttpGet(apiUrl);
 		CloseableHttpResponse response1 = httpClient.execute(httpGet);
 		StringBuilder result = new StringBuilder();

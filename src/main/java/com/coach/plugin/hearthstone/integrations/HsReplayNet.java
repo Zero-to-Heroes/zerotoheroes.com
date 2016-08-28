@@ -71,11 +71,11 @@ public class HsReplayNet implements IntegrationPlugin {
 		gameUrl = gameUrl.replaceAll("https", "http");
 		// First - create a file that contains the draft info to upload to s3
 		String stringXml = buildReplay(gameUrl);
-		log.debug("built xml " + stringXml);
+		log.debug("built xml ");
 		// Flag the review to show that we are handling it
 		review.setMediaType("game-replay");
 		review.setText("Imported from " + gameUrl);
-		log.debug("strResult " + stringXml);
+		log.debug("strResult ");
 
 		// Then upload the file
 		final String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/replay");
@@ -101,7 +101,8 @@ public class HsReplayNet implements IntegrationPlugin {
 	}
 
 	public static void main(String[] args) throws Exception {
-		System.setProperty("javax.net.debug", "ALL");
+		// System.setProperty("javax.net.debug", "ALL");
+		// System.setProperty("https.protocols", "SSLv3");
 		HsReplayNet hsReplayNet = new HsReplayNet();
 		hsReplayNet.sslTools = new SSLTools();
 		String buildReplay = hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
@@ -119,7 +120,7 @@ public class HsReplayNet implements IntegrationPlugin {
 		String apiUrl = "https://hsreplay.net/api/v1/games/" + gameId + "/";
 		log.debug("calling rest api");
 		String resultString = restGetCall(apiUrl);
-		log.debug("called rest aip " + resultString);
+		log.debug("called rest aip ");
 
 		JSONObject api = new JSONObject(resultString);
 		String downloadLink = api.getString("replay_xml");
@@ -144,11 +145,11 @@ public class HsReplayNet implements IntegrationPlugin {
 	}
 
 	private String restGetCall(String apiUrl) throws MalformedURLException, IOException {
+		sslTools.disableCertificateValidation(null);
 
-		log.debug("opening connection");
+		System.out.println("opening connection " + System.getProperty("https.protocols"));
 		URL url = new URL(apiUrl);
 		HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-		sslTools.disableCertificateValidation(connection);
 		connection.setDoOutput(true);
 		connection.setConnectTimeout(5000);
 		connection.setUseCaches(false);
@@ -166,6 +167,7 @@ public class HsReplayNet implements IntegrationPlugin {
 			result.append(line);
 		}
 		rd.close();
+		connection.disconnect();
 		String resultString = result.toString();
 		return resultString;
 	}

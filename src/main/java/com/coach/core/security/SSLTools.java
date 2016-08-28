@@ -49,11 +49,11 @@ public class SSLTools {
 		try {
 			SSLContext sc = SSLContext.getInstance("SSL");
 			sc.init(null, trustAllCerts, new SecureRandom());
-			// HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-			connection.setSSLSocketFactory(sc.getSocketFactory());
+			HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+			// connection.setSSLSocketFactory(sc.getSocketFactory());
 			// Setting this parameter creates an internal_error response
 			// connection.setHostnameVerifier(allHostsValid);
-			// HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
+			HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
 		}
 		catch (Exception e) {
 		}

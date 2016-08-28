@@ -3,6 +3,11 @@
 angular.module('controllers').controller('SportHomeCtrl', ['$scope', 'Api', '$log', 'SportsConfig', '$routeParams', '$location',
 	function($scope, Api, $log, SportsConfig, $routeParams, $location) {
 
+		$scope.sport = $routeParams.sport || $scope.sport
+	   	if (current.$$route) {
+	   		$scope.sport = current.$$route.sport || $scope.sport
+	   	}
+
 		$scope.state = {
 			choice: undefined,
 			choices: SportsConfig[$scope.sport].homeChoices

@@ -113,7 +113,7 @@ public class HsReplayNet implements IntegrationPlugin {
 	}
 
 	// public static void main(String[] args) throws Exception {
-	// // System.setProperty("javax.net.debug", "ALL");
+	// //
 	// // System.setProperty("https.protocols", "SSLv3");
 	// // System.setProperty("jsse.enableSNIExtension", "false");
 	// HsReplayNet hsReplayNet = new HsReplayNet();
@@ -159,6 +159,8 @@ public class HsReplayNet implements IntegrationPlugin {
 	}
 
 	private String restGetCall(String apiUrl) throws Exception {
+		System.out.println("===============STARTING, SHOULD BE IN CATALINA.OUT============");
+		System.setProperty("javax.net.debug", "ALL");
 		SSLContextBuilder builder = new SSLContextBuilder();
 		builder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
 		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(builder.build(),
@@ -168,6 +170,7 @@ public class HsReplayNet implements IntegrationPlugin {
 				try {
 					log.debug("************ setting socket HOST property *************");
 					PropertyUtils.setProperty(socket, "host", "hsreplay.net");
+					socket.setEnabledProtocols(new String[] { "SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2" });
 				}
 				catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
 					log.error(ex.getMessage());

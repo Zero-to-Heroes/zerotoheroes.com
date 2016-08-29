@@ -257,7 +257,7 @@ public class Comment implements HasText, HasReputation {
 	private float buildScore(Sport sport, Voter o1, User u1, Profile p1) {
 		float score = 0;
 
-		if (sport == null) { return score; }
+		if (p1 == null || sport == null) { return score; }
 
 		Rank rank = p1.getProfileInfo().getSportInfo(sport.getKey().toLowerCase()).getRankings("ranked");
 		if (rank != null) {

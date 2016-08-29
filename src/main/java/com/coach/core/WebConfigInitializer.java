@@ -1,8 +1,5 @@
 package com.coach.core;
 
-import java.io.OutputStream;
-import java.io.PrintStream;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
@@ -31,9 +28,6 @@ public class WebConfigInitializer implements ServletContextInitializer {
 		 * filter.setInitParameter("crawlerUserAgents", "YahooSeeker");
 		 * filter.addMappingForUrlPatterns(null, true, "/*");
 		 */
-		OutputStream os = new LogOutputStream();
-		PrintStream ps = new PrintStream(os);
-		System.setOut(ps);
 	}
 
 	@Bean

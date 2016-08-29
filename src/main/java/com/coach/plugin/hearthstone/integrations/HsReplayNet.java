@@ -119,18 +119,19 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	}
 
-	public static void main(String[] args) throws Exception {
-		//
-		// System.setProperty("https.protocols", "SSLv3");
-		// System.setProperty("jsse.enableSNIExtension", "false");
-		OutputStream os = new LogOutputStream();
-		PrintStream ps = new PrintStream(os);
-		System.setOut(ps);
-		HsReplayNet hsReplayNet = new HsReplayNet();
-		hsReplayNet.sslTools = new SSLTools();
-		String buildReplay = hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
-		System.out.println(buildReplay);
-	}
+	// public static void main(String[] args) throws Exception {
+	// //
+	// // System.setProperty("https.protocols", "SSLv3");
+	// // System.setProperty("jsse.enableSNIExtension", "false");
+	// // OutputStream os = new LogOutputStream();
+	// // PrintStream ps = new PrintStream(os);
+	// // System.setOut(ps);
+	// HsReplayNet hsReplayNet = new HsReplayNet();
+	// hsReplayNet.sslTools = new SSLTools();
+	// String buildReplay =
+	// hsReplayNet.buildReplay("http://hsreplay.net/replay/jdUbSjsEcBL5rCT7dgMXRn");
+	// System.out.println(buildReplay);
+	// }
 
 	private String buildReplay(String gameUrl) throws Exception {
 		Pattern pattern = Pattern.compile(URL_PATTERN, Pattern.MULTILINE);
@@ -170,6 +171,9 @@ public class HsReplayNet implements IntegrationPlugin {
 	// apiUrl looks like
 	// https://hsreplay.net/api/v1/games/jdUbSjsEcBL5rCT7dgMXRn
 	private String restGetCall(String apiUrl) throws Exception {
+		OutputStream os = new LogOutputStream();
+		PrintStream ps = new PrintStream(os);
+		System.setOut(ps);
 		System.setProperty("javax.net.debug", "ALL");
 		SSLContextBuilder builder = new SSLContextBuilder();
 		builder.loadTrustMaterial(null, new TrustSelfSignedStrategy());

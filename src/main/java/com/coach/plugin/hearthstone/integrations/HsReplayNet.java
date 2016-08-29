@@ -120,6 +120,9 @@ public class HsReplayNet implements IntegrationPlugin {
 	// //
 	// // System.setProperty("https.protocols", "SSLv3");
 	// // System.setProperty("jsse.enableSNIExtension", "false");
+	// OutputStream os = new LogOutputStream();
+	// PrintStream ps = new PrintStream(os);
+	// System.setOut(ps);
 	// HsReplayNet hsReplayNet = new HsReplayNet();
 	// hsReplayNet.sslTools = new SSLTools();
 	// String buildReplay =

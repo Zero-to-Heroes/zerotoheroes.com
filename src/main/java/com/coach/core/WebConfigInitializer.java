@@ -1,9 +1,10 @@
 package com.coach.core;
 
+import java.io.OutputStream;
+import java.io.PrintStream;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-
-import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletContextInitializer;
@@ -11,6 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.coach.core.prerender.PreRenderSEOFilter;
+
+import lombok.extern.slf4j.Slf4j;
 
 //@Component
 @Slf4j
@@ -28,6 +31,9 @@ public class WebConfigInitializer implements ServletContextInitializer {
 		 * filter.setInitParameter("crawlerUserAgents", "YahooSeeker");
 		 * filter.addMappingForUrlPatterns(null, true, "/*");
 		 */
+		OutputStream os = new LogOutputStream();
+		PrintStream ps = new PrintStream(os);
+		System.setOut(ps);
 	}
 
 	@Bean

@@ -186,25 +186,42 @@ public class HsReplayNet implements IntegrationPlugin {
 					PropertyUtils.setProperty(socket, "host", "hsreplay.net");
 					socket.setEnabledProtocols(new String[] { "SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2" });
 					log.info("enabled ciphers: " + StringUtils.join(socket.getEnabledCipherSuites(), ","));
+					log.info("supported ciphers: " + StringUtils.join(socket.getSupportedCipherSuites(), ","));
 					log.info("enabled protocols: " + StringUtils.join(socket.getEnabledProtocols(), ","));
 					log.info("SSL Parameters: " + beanToString(socket.getSSLParameters()));
-					socket.setEnabledCipherSuites(
-							new String[] { "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA", "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
-									"TLS_RSA_WITH_AES_256_CBC_SHA", "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA",
-									"TLS_ECDH_RSA_WITH_AES_256_CBC_SHA", "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
-									"TLS_DHE_DSS_WITH_AES_256_CBC_SHA", "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
-									"TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA", "TLS_RSA_WITH_AES_128_CBC_SHA",
-									"TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA", "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA",
-									"TLS_DHE_RSA_WITH_AES_128_CBC_SHA", "TLS_DHE_DSS_WITH_AES_128_CBC_SHA",
-									"TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA", "TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
-									"SSL_RSA_WITH_3DES_EDE_CBC_SHA", "TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA",
-									"TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA", "SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA",
-									"SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA", "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
-									"TLS_ECDHE_RSA_WITH_RC4_128_SHA", "SSL_RSA_WITH_RC4_128_SHA",
-									"TLS_ECDH_ECDSA_WITH_RC4_128_SHA", "TLS_ECDH_RSA_WITH_RC4_128_SHA",
-									"SSL_RSA_WITH_RC4_128_MD5", "TLS_EMPTY_RENEGOTIATION_INFO_SCSV" });
-					log.info("enabled ciphers now: " + StringUtils.join(socket.getEnabledCipherSuites(), ","));
-					log.info("SSL Parameters now: " + beanToString(socket.getSSLParameters()));
+					// socket.setEnabledCipherSuites(
+					// new String[] { "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+					// "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+					// "TLS_RSA_WITH_AES_256_CBC_SHA",
+					// "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA",
+					// "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA",
+					// "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
+					// "TLS_DHE_DSS_WITH_AES_256_CBC_SHA",
+					// "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+					// "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+					// "TLS_RSA_WITH_AES_128_CBC_SHA",
+					// "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA",
+					// "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA",
+					// "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
+					// "TLS_DHE_DSS_WITH_AES_128_CBC_SHA",
+					// "TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA",
+					// "TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
+					// "SSL_RSA_WITH_3DES_EDE_CBC_SHA",
+					// "TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA",
+					// "TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA",
+					// "SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA",
+					// "SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA",
+					// "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
+					// "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
+					// "SSL_RSA_WITH_RC4_128_SHA",
+					// "TLS_ECDH_ECDSA_WITH_RC4_128_SHA",
+					// "TLS_ECDH_RSA_WITH_RC4_128_SHA",
+					// "SSL_RSA_WITH_RC4_128_MD5",
+					// "TLS_EMPTY_RENEGOTIATION_INFO_SCSV" });
+					// log.info("enabled ciphers now: " +
+					// StringUtils.join(socket.getEnabledCipherSuites(), ","));
+					// log.info("SSL Parameters now: " +
+					// beanToString(socket.getSSLParameters()));
 				}
 				catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
 					log.error(ex.getMessage());

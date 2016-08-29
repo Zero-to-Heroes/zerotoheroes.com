@@ -3,6 +3,7 @@ package com.coach.plugin.hearthstone.integrations;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.UUID;
@@ -12,6 +13,7 @@ import java.util.regex.Pattern;
 import javax.net.ssl.SSLSocket;
 
 import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -35,6 +37,8 @@ import com.coach.plugin.IntegrationPlugin;
 import com.coach.review.HasText;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -132,9 +136,9 @@ public class HsReplayNet implements IntegrationPlugin {
 		String gameId = matcher.group(2);
 
 		String apiUrl = "https://hsreplay.net/api/v1/games/" + gameId + "/";
-		log.debug("calling rest api");
+		log.info("calling rest api");
 		String resultString = restGetCall(apiUrl);
-		log.debug("called rest aip ");
+		log.info("called rest aip ");
 
 		JSONObject api = new JSONObject(resultString);
 		String downloadLink = api.getString("replay_xml");
@@ -158,8 +162,9 @@ public class HsReplayNet implements IntegrationPlugin {
 		return stringXml;
 	}
 
+	// apiUrl looks like
+	// https://hsreplay.net/api/v1/games/jdUbSjsEcBL5rCT7dgMXRn
 	private String restGetCall(String apiUrl) throws Exception {
-		System.out.println("===============STARTING, SHOULD BE IN CATALINA.OUT============");
 		System.setProperty("javax.net.debug", "ALL");
 		SSLContextBuilder builder = new SSLContextBuilder();
 		builder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
@@ -168,9 +173,12 @@ public class HsReplayNet implements IntegrationPlugin {
 			@Override
 			protected void prepareSocket(SSLSocket socket) throws IOException {
 				try {
-					log.debug("************ setting socket HOST property *************");
+					log.info("************ setting socket HOST property *************");
 					PropertyUtils.setProperty(socket, "host", "hsreplay.net");
 					socket.setEnabledProtocols(new String[] { "SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2" });
+					log.info("enabled ciphers: " + StringUtils.join(socket.getEnabledCipherSuites()));
+					log.info("enabled protocols: " + StringUtils.join(socket.getEnabledProtocols()));
+					log.info("SSL Parameters: " + beanToString(socket.getSSLParameters()));
 				}
 				catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
 					log.error(ex.getMessage());
@@ -229,5 +237,14 @@ public class HsReplayNet implements IntegrationPlugin {
 		// connection.disconnect();
 		String resultString = result.toString();
 		return resultString;
+	}
+
+	public static String beanToString(Object object) throws IOException {
+
+		ObjectMapper objectMapper = new ObjectMapper();
+		StringWriter stringEmp = new StringWriter();
+		objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+		objectMapper.writeValue(stringEmp, object);
+		return stringEmp.toString();
 	}
 }

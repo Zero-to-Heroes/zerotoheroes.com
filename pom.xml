@@ -12,13 +12,10 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.5.RELEASE</version>
+		<version>1.4.0.RELEASE</version>
 	</parent>
 
 	<properties>
-		<spring.boot.version>1.2.5.RELEASE</spring.boot.version>
-		<!-- <spring.version>4.2.0.RELEASE</spring.version> <spring.security.version>4.0.2.RELEASE</spring.security.version> 
-			<cloudy.version>0.0.4</cloudy.version> -->
 		<environment.properties>dev</environment.properties>
 		<java.version>1.7</java.version>
 	</properties>
@@ -52,6 +49,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
+
 		<!-- Provided (for embedded war support) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -106,7 +104,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.6</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -143,6 +140,13 @@
 			<artifactId>slugify</artifactId>
 			<version>2.1.4</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>19.0</version>
+		</dependency>
+
+
 
 
 		<!-- Plugins -->

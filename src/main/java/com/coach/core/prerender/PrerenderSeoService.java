@@ -1,6 +1,6 @@
 package com.coach.core.prerender;
 
-import static com.google.common.collect.FluentIterable.*;
+import static com.google.common.collect.FluentIterable.*; 
 import static org.apache.http.HttpHeaders.*;
 
 import java.io.Closeable;

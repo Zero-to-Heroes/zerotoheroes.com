@@ -13,10 +13,10 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 public class MongoConfig {
 
 	@Autowired
-	private MongoDbFactory mongoFactory;
+	private MongoMappingContext mongoMappingContext;
 
 	@Autowired
-	private MongoMappingContext mongoMappingContext;
+	private MongoDbFactory mongoFactory;
 
 	@Bean
 	public MappingMongoConverter mongoConverter() throws Exception {

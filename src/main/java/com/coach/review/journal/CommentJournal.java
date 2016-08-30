@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Document
-public class CommentJournal {
+public class CommentJournal extends Journal {
 
 	@Id
 	private String id;

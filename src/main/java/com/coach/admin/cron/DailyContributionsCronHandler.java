@@ -26,6 +26,8 @@ import com.coach.profile.profileinfo.SportProfileInfo;
 import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import com.coach.review.journal.ArchiveJournal;
+import com.coach.review.journal.ArchiveJournalRepository;
 import com.coach.review.journal.CommentJournal;
 import com.coach.review.journal.CommentJournalRepository;
 import com.coach.review.journal.ReputationJournal;
@@ -67,6 +69,9 @@ public class DailyContributionsCronHandler {
 	ReputationJournalRepository reputationJournalRepo;
 
 	@Autowired
+	ArchiveJournalRepository archiveJournalRepo;
+
+	@Autowired
 	SlackNotifier slackNotifier;
 
 	private final String environment;
@@ -85,6 +90,7 @@ public class DailyContributionsCronHandler {
 		log.debug("loaded " + logs.size() + " logs");
 
 		List<ReviewJournal> processed = new ArrayList<>();
+		List<ArchiveJournal> archives = new ArrayList<>();
 		Set<Profile> modified = new HashSet<>();
 		Map<String, Profile> profileMap = new HashMap<>();
 
@@ -101,12 +107,17 @@ public class DailyContributionsCronHandler {
 			profile.getProfileInfo().getSportInfo(sport).addDailyGame(creationDate);
 			modified.add(profile);
 			processed.add(log);
+
+			// Add archives (for future processing)
+			ArchiveJournal archive = new ArchiveJournal(log);
+			archives.add(archive);
 		}
 
 		log.debug("processed " + processed.size() + " logs");
 		log.debug("modified " + modified.size() + " profiles");
 
 		profileRepository.save(modified);
+		archiveJournalRepo.save(archives);
 		reviewJournalRepo.delete(processed);
 
 		return new ResponseEntity<String>("processed " + processed.size() + " game logs", HttpStatus.OK);
@@ -120,6 +131,7 @@ public class DailyContributionsCronHandler {
 		log.debug("loaded " + logs.size() + " logs");
 
 		List<CommentJournal> processed = new ArrayList<>();
+		List<ArchiveJournal> archives = new ArrayList<>();
 		Set<Profile> modified = new HashSet<>();
 		Map<String, Profile> profileMap = new HashMap<>();
 
@@ -143,12 +155,17 @@ public class DailyContributionsCronHandler {
 			profile.getProfileInfo().getSportInfo(sport).addDailyComment(creationDate);
 			modified.add(profile);
 			processed.add(log);
+
+			// Add archives (for future processing)
+			ArchiveJournal archive = new ArchiveJournal(log);
+			archives.add(archive);
 		}
 
 		log.debug("processed " + processed.size() + " logs");
 		log.debug("modified " + modified.size() + " profiles");
 
 		profileRepository.save(modified);
+		archiveJournalRepo.save(archives);
 		commentJournalRepo.delete(processed);
 
 		return new ResponseEntity<String>("processed " + processed.size() + " comment logs", HttpStatus.OK);
@@ -162,6 +179,7 @@ public class DailyContributionsCronHandler {
 		log.debug("loaded " + logs.size() + " logs");
 
 		List<ReputationJournal> processed = new ArrayList<>();
+		List<ArchiveJournal> archives = new ArrayList<>();
 		Set<Profile> modified = new HashSet<>();
 		Map<String, Profile> profileMap = new HashMap<>();
 
@@ -179,12 +197,17 @@ public class DailyContributionsCronHandler {
 			profile.getProfileInfo().getSportInfo(sport).addDailyReputationChange(creationDate, changeValue);
 			modified.add(profile);
 			processed.add(log);
+
+			// Add archives (for future processing)
+			ArchiveJournal archive = new ArchiveJournal(log);
+			archives.add(archive);
 		}
 
 		log.debug("processed " + processed.size() + " logs");
 		log.debug("modified " + modified.size() + " profiles");
 
 		profileRepository.save(modified);
+		archiveJournalRepo.save(archives);
 		reputationJournalRepo.delete(processed);
 
 		return new ResponseEntity<String>("processed " + processed.size() + " reputation logs", HttpStatus.OK);

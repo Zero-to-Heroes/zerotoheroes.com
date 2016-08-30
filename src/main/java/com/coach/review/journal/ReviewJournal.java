@@ -7,9 +7,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
-@Data
 @Document
-public class ReviewJournal {
+@Data
+public class ReviewJournal extends Journal {
 
 	@Id
 	private String id;

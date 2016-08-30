@@ -1,14 +1,11 @@
 package com.coach.admin.metrics;
 
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +63,7 @@ public class MetricsApiHandler {
 
 		Metrics metrics = new Metrics();
 
+		log.debug("Loading reviews");
 		List<Review> reviews = reviewRepository.findAll();
 		// DateTime now = DateTime.now();
 		// log.debug("now is " + now);
@@ -77,12 +75,14 @@ public class MetricsApiHandler {
 		log.debug("Going through all reviews " + reviews.size());
 		for (Review review : reviews) {
 			if (!review.isPublished()) {
+				log.debug("continuing on " + review);
 				continue;
 			}
 
 			Date creationDate = review.getCreationDate();
 			if (creationDate == null || review.getAuthor() == null
 					|| excludedUserNames.indexOf(review.getAuthor()) != -1) {
+				log.debug("continuing on " + review);
 				continue;
 			}
 
@@ -90,9 +90,11 @@ public class MetricsApiHandler {
 					|| "restricted".equalsIgnoreCase(review.getVisibility())) {
 				metrics.get(creationDate).incrementPrivateReviews();
 				metrics.get(creationDate).addUniqueContentCreator(review.getAuthor());
+				log.debug("private review " + review);
 				continue;
 			}
 
+			log.debug("handling " + review);
 			totalVideoViews += review.getViewCount();
 			metrics.get(creationDate).incrementReviews();
 			metrics.get(creationDate).addUniqueContentCreator(review.getAuthor());
@@ -177,7 +179,7 @@ public class MetricsApiHandler {
 		// metrics.getMetrics().get(i).setChurn(churn);
 		// }
 
-		log.debug("Formatting for CSV");
+		log.debug("Formatting for CSV " + metrics);
 		String csvMetrics = toCsv(metrics);
 		metrics.setCsv(csvMetrics);
 
@@ -191,41 +193,43 @@ public class MetricsApiHandler {
 		return new ResponseEntity<String>(csvMetrics, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/nocontrib", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<String> getNoContributions() {
-
-		List<User> findAll = userRepository.findAll();
-		Map<String, User> users = new HashMap<>();
-		for (User user : findAll) {
-			users.put(user.getId(), user);
-		}
-		List<Review> reviews = reviewRepository.findAll();
-		for (Review review : reviews) {
-			if (users.containsKey(review.getAuthorId())) {
-				users.remove(review.getAuthorId());
-			}
-			for (Comment comment : review.getComments()) {
-				if (users.containsKey(comment.getAuthorId())) {
-					users.remove(comment.getAuthorId());
-				}
-			}
-		}
-
-		String result = "";
-
-		String header = "registration date,id,username,email";
-		result += header + "<br/>";
-
-		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-
-		for (User user : users.values()) {
-			result += user.getCreationDate() != null ? format.format(user.getCreationDate())
-					: null + "," + user.getId() + "," + user.getUsername() + "," + user.getEmail();
-			result += "<br/>";
-		}
-
-		return new ResponseEntity<String>(result, HttpStatus.OK);
-	}
+	// @RequestMapping(value = "/nocontrib", method = RequestMethod.GET)
+	// public @ResponseBody ResponseEntity<String> getNoContributions() {
+	//
+	// List<User> findAll = userRepository.findAll();
+	// Map<String, User> users = new HashMap<>();
+	// for (User user : findAll) {
+	// users.put(user.getId(), user);
+	// }
+	// List<Review> reviews = reviewRepository.findAll();
+	// for (Review review : reviews) {
+	// if (users.containsKey(review.getAuthorId())) {
+	// users.remove(review.getAuthorId());
+	// }
+	// for (Comment comment : review.getComments()) {
+	// if (users.containsKey(comment.getAuthorId())) {
+	// users.remove(comment.getAuthorId());
+	// }
+	// }
+	// }
+	//
+	// String result = "";
+	//
+	// String header = "registration date,id,username,email";
+	// result += header + "<br/>";
+	//
+	// SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+	//
+	// for (User user : users.values()) {
+	// result += user.getCreationDate() != null ?
+	// format.format(user.getCreationDate())
+	// : null + "," + user.getId() + "," + user.getUsername() + "," +
+	// user.getEmail();
+	// result += "<br/>";
+	// }
+	//
+	// return new ResponseEntity<String>(result, HttpStatus.OK);
+	// }
 
 	private String toCsv(Metrics metrics) {
 
@@ -238,7 +242,7 @@ public class MetricsApiHandler {
 		for (Metric metric : metrics.getMetrics()) {
 			log.debug("\tformatting metric " + metric);
 			result += metric.getStartDate().toString("yyyy/MM/dd") + "," + metric.getUniqueContentCreators().size()
-					+ "," + metric.getReturningContributors() + "," + +metric.getReviews() + "," + metric.getComments()
+					+ "," + metric.getReturningContributors() + "," + metric.getReviews() + "," + metric.getComments()
 					+ "," + (metric.getComments() + metric.getReviews()) + "," + metric.getPrivateReviews() + ","
 					+ metrics.getTotalReputation() + "," + metrics.getTotalVideoViews();
 			// + "," + metric.getUniqueContentCreators() + "," +

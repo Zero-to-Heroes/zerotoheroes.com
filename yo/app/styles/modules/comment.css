@@ -5,6 +5,10 @@
 
 .comment-block.highlighted > .comment-main > .comment-body {
 	background-color: rgb(97, 80, 63);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 0px;
 }
 
 .comment-block .comment-block {

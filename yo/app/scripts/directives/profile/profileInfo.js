@@ -163,6 +163,10 @@ app.directive('profileInfo', ['$log', 'Api', '$routeParams', 'User', 'Localizati
 				$scope.dismissMessage = function() {
 					$scope.updateStatus = undefined
 				}
+				
+				$scope.isOwnProfile = function() {
+					return User.isLoggedIn() && $routeParams['userName'] == User.getName()
+				}
 			}
 		}
 	}

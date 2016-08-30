@@ -30,7 +30,7 @@
 		<button type="button" ng-click="cancelUpdate()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
 		<button type="submit" ng-click="update()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
 	</div>
-	<div ng-show="!editing" class="buttons-container">
+	<div ng-show="!editing && isOwnProfile()" class="buttons-container">
 		<button type="button" ng-click="activateEdit()" class="btn btn-default btn-xs"><span>{{ 'global.profile.info.editButtonLabel' | translate }}</span></button>
 	</div>
 </form>

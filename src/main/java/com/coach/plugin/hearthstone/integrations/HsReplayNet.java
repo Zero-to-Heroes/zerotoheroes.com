@@ -3,8 +3,6 @@ package com.coach.plugin.hearthstone.integrations;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
@@ -15,7 +13,6 @@ import java.util.regex.Pattern;
 import javax.net.ssl.SSLSocket;
 
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -32,7 +29,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListener;
-import com.coach.core.LogOutputStream;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.SSLTools;
 import com.coach.core.storage.S3Utils;
@@ -142,9 +138,9 @@ public class HsReplayNet implements IntegrationPlugin {
 		String gameId = matcher.group(2);
 
 		String apiUrl = "https://hsreplay.net/api/v1/games/" + gameId + "/";
-		log.info("calling rest api");
+		// log.info("calling rest api");
 		String resultString = restGetCall(apiUrl);
-		log.info("called rest aip ");
+		// log.info("called rest aip ");
 
 		JSONObject api = new JSONObject(resultString);
 		String downloadLink = api.getString("replay_xml");
@@ -171,10 +167,10 @@ public class HsReplayNet implements IntegrationPlugin {
 	// apiUrl looks like
 	// https://hsreplay.net/api/v1/games/jdUbSjsEcBL5rCT7dgMXRn
 	private String restGetCall(String apiUrl) throws Exception {
-		OutputStream os = new LogOutputStream();
-		PrintStream ps = new PrintStream(os);
-		System.setOut(ps);
-		System.setProperty("javax.net.debug", "ALL");
+		// OutputStream os = new LogOutputStream();
+		// PrintStream ps = new PrintStream(os);
+		// System.setOut(ps);
+		// System.setProperty("javax.net.debug", "ALL");
 		SSLContextBuilder builder = new SSLContextBuilder();
 		builder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
 		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(builder.build(),
@@ -182,13 +178,19 @@ public class HsReplayNet implements IntegrationPlugin {
 			@Override
 			protected void prepareSocket(SSLSocket socket) throws IOException {
 				try {
-					log.info("************ setting socket HOST property *************");
+					// log.info("************ setting socket HOST property
+					// *************");
 					PropertyUtils.setProperty(socket, "host", "hsreplay.net");
 					socket.setEnabledProtocols(new String[] { "SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2" });
-					log.info("enabled ciphers: " + StringUtils.join(socket.getEnabledCipherSuites(), ","));
-					log.info("supported ciphers: " + StringUtils.join(socket.getSupportedCipherSuites(), ","));
-					log.info("enabled protocols: " + StringUtils.join(socket.getEnabledProtocols(), ","));
-					log.info("SSL Parameters: " + beanToString(socket.getSSLParameters()));
+					// log.info("enabled ciphers: " +
+					// StringUtils.join(socket.getEnabledCipherSuites(), ","));
+					// log.info("supported ciphers: " +
+					// StringUtils.join(socket.getSupportedCipherSuites(),
+					// ","));
+					// log.info("enabled protocols: " +
+					// StringUtils.join(socket.getEnabledProtocols(), ","));
+					// log.info("SSL Parameters: " +
+					// beanToString(socket.getSSLParameters()));
 					// socket.setEnabledCipherSuites(
 					// new String[] { "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
 					// "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",

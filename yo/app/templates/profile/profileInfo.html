@@ -8,7 +8,7 @@
 			<span ng-bind="profile.gameIdentifier"></span>
 		</span>
 		<input type="text" name="gameIdentifier" class="form-control identifier-input" ng-model="profile.gameIdentifier" placeholder="{{ sport + '.gameIdentifierPlaceholder' | translate }}" ng-show="editing">
-		<span bs-tooltip data-title="{{ 'global.profile.info.reputationTooltip' | translate }}" data-placement="right" data-animation="am-fade-and-scale" class="total-reputation">{{profile.reputation}}<img class="reputation-icon" src="{{ config.images.reputation }}"></img></span>
+		<span bs-tooltip data-title="{{ 'global.profile.info.reputationTooltip' | translate }}" data-placement="right" data-animation="am-fade-and-scale" class="total-reputation">{{profile.reputation}}<img class="reputation-icon" src="{{ sportConfig.images.reputation }}"></img></span>
 	</h2>
 
 	<section class="calendars">
@@ -29,5 +29,8 @@
 	<div ng-show="editing" class="buttons-container">
 		<button type="button" ng-click="cancelUpdate()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
 		<button type="submit" ng-click="update()" class="btn btn-default btn-xs"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
+	</div>
+	<div ng-show="!editing" class="buttons-container">
+		<button type="button" ng-click="activateEdit()" class="btn btn-default btn-xs"><span>{{ 'global.profile.info.editButtonLabel' | translate }}</span></button>
 	</div>
 </form>

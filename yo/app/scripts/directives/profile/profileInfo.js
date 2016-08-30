@@ -20,7 +20,7 @@ app.directive('profileInfo', ['$log', 'Api', '$routeParams', 'User', 'Localizati
 				$scope.username = $routeParams.userName
 				$scope.sport = $routeParams['sport']
 				$scope.sportsConfig = SportsConfig
-				$scope.config = SportsConfig[$scope.sport]
+				$scope.sportConfig = SportsConfig[$scope.sport]
 
 				$scope.config.editButtonLabelKey = 'global.profile.info.editButtonLabel'
 

@@ -101,7 +101,7 @@ public class DailyContributionsCronHandler {
 
 			Profile profile = profileMap.get(authorId);
 			if (profile == null) {
-				profile = profileRepository.findByUserId(authorId);
+				profile = profileService.getProfile(authorId);
 				profileMap.put(authorId, profile);
 			}
 			profile.getProfileInfo().getSportInfo(sport).addDailyGame(creationDate);
@@ -191,7 +191,7 @@ public class DailyContributionsCronHandler {
 
 			Profile profile = profileMap.get(authorId);
 			if (profile == null) {
-				profile = profileRepository.findByUserId(authorId);
+				profile = profileService.getProfile(authorId);
 				profileMap.put(authorId, profile);
 			}
 			profile.getProfileInfo().getSportInfo(sport).addDailyReputationChange(creationDate, changeValue);

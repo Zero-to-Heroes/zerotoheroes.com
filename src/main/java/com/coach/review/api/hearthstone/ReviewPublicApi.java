@@ -1,11 +1,14 @@
 package com.coach.review.api.hearthstone;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.zip.GZIPInputStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
@@ -51,8 +54,71 @@ public class ReviewPublicApi {
 	@Autowired
 	HSReplay hsReplay;
 
-	@RequestMapping(value = "/upload", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<FileUploadResponse> uploadFile(@RequestParam("file") MultipartFile file)
+	@RequestMapping(value = "/progressive/init", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> initReview() throws Exception {
+		FileUploadResponse response = null;
+		Review review = new Review();
+		review.setFileType("text/plain");
+		review.setSport(Review.Sport.load("hearthstone"));
+		review.setReplay("true");
+		review.setVisibility("restricted");
+		review.setTemporaryReplay("");
+		// review.setTemporaryKey(tempKey);
+
+		reviewRepo.save(review);
+		List<String> ids = new ArrayList<>();
+		ids.add(review.getId());
+		log.debug("Created review " + review);
+
+		response = new FileUploadResponse(ids, null);
+		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/progressive/append/gzip/{reviewId}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> appendGameLog(@PathVariable("reviewId") final String id,
+			@RequestParam("data") MultipartFile data) throws Exception {
+		log.debug("Appending to " + id);
+		FileUploadResponse response = null;
+
+		// Are there several games in the single file?
+		byte[] logInfo = getLogInfo(data);
+		String logToAppend = new String(logInfo, "UTF-8");
+		// log.debug(logToAppend);
+		log.debug("appending " + logToAppend.split("\n").length + " lines");
+
+		Review review = reviewRepo.findById(id);
+		String newOngoingReplay = review.getTemporaryReplay();
+		review.setTemporaryReplay(newOngoingReplay + logToAppend + "\n");
+
+		reviewRepo.save(review);
+
+		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/progressive/finalize/{reviewId}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> finalize(@PathVariable("reviewId") final String id)
+			throws Exception {
+		log.debug("Finalizing " + id);
+		FileUploadResponse response = null;
+
+		Review review = reviewRepo.findById(id);
+		review.setPublished(true);
+		reviewApi.createReview(review);
+
+		List<String> ids = new ArrayList<>();
+		ids.add(review.getId());
+		log.debug("Finalized review " + review);
+		// log.debug(review.getTemporaryReplay());
+
+		response = new FileUploadResponse(ids, null);
+
+		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
+	}
+
+	// End progressive
+
+	@RequestMapping(value = "/upload/gzip", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> uploadFile(@RequestParam("data") MultipartFile data)
 			throws Exception {
 		FileUploadResponse response = null;
 
@@ -82,20 +148,13 @@ public class ReviewPublicApi {
 		// HttpStatus.NOT_FOUND);
 		// }
 
-		// log.debug("current user " +
-		// SecurityContextHolder.getContext().getAuthentication().getName());
-		// log.debug("Received file " + file);
-		// log.debug("" + file.isEmpty());
-		// log.debug(file.getContentType());
-		// log.debug(file.getOriginalFilename());
-		// log.debug("" + file.getSize());
-
 		List<Review> reviews = new ArrayList<>();
 
 		// Are there several games in the single file?
-		BufferedReader reader = new BufferedReader(new InputStreamReader(file.getInputStream()));
+		byte[] logInfo = getLogInfo(data);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
 		List<String> games = hsReplay.extractGames(null, "text/plain", reader);
-		// log.debug("\tbuilt " + games.size() + " games");
+		log.debug("\tbuilt " + games.size() + " games");
 
 		// Process file
 		List<String> ids = new ArrayList<>();
@@ -115,11 +174,17 @@ public class ReviewPublicApi {
 			reviewApi.createReview(review);
 			reviews.add(review);
 			ids.add(review.getId());
-			// log.debug("Created review " + review);
+			log.debug("Created review " + review);
 		}
 
 		response = new FileUploadResponse(ids, null);
 		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/review/publish/{reviewId}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Review> publishReview2(@PathVariable("reviewId") final String id)
+			throws IOException {
+		return publishReview(id);
 	}
 
 	@RequestMapping(value = "/review/{reviewId}", method = RequestMethod.PUT)
@@ -141,5 +206,24 @@ public class ReviewPublicApi {
 		log.debug("Publishing " + id);
 		Review review = reviewRepo.findById(id);
 		return reviewApi.publish(id, review);
+	}
+
+	private byte[] getLogInfo(MultipartFile data) throws Exception {
+		byte[] bytes = data.getBytes();
+
+		ByteArrayInputStream bytein = new ByteArrayInputStream(bytes);
+		GZIPInputStream gzin = new GZIPInputStream(bytein);
+		ByteArrayOutputStream byteout = new ByteArrayOutputStream();
+
+		int res = 0;
+		byte buf[] = new byte[1024];
+		while (res >= 0) {
+			res = gzin.read(buf, 0, buf.length);
+			if (res > 0) {
+				byteout.write(buf, 0, res);
+			}
+		}
+		byte uncompressed[] = byteout.toByteArray();
+		return uncompressed;
 	}
 }

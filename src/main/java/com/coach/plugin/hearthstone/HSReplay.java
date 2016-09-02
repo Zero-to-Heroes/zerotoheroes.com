@@ -59,6 +59,8 @@ public class HSReplay implements ReplayPlugin {
 				xml = review.getTemporaryReplay();
 			}
 			else {
+				// log.debug("to xml");
+				// log.debug(review.getTemporaryReplay());
 				xml = new ReplaySerializer().xmlFromLogs(review.getTemporaryReplay());
 			}
 		}
@@ -111,6 +113,7 @@ public class HSReplay implements ReplayPlugin {
 			xml = s3utils.readFromS3(review.getTemporaryKey());
 		}
 		log.debug("XML created");
+		// log.debug(xml);
 
 		// Store the new file to S3 and update the review with the correct key
 		String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/replay");
@@ -175,6 +178,7 @@ public class HSReplay implements ReplayPlugin {
 			log.debug("processing file");
 			String line;
 			while ((line = reader.readLine()) != null) {
+				log.debug("Processing log line " + line);
 				if (line.contains("GameState.DebugPrintPower() - CREATE_GAME")) {
 					if (currentGame != null) {
 						log.debug("Added a new game, " + line);

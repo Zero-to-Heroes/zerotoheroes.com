@@ -109,7 +109,7 @@ public class ReviewService {
 
 	public void triggerReputationChangeJobs(Review review, HasReputation item, int changeValue) {
 		if (item.getAuthorId() != null && review.getSport() != null) {
-			ReputationJournal journal = new ReputationJournal(review.getId(), item.getAuthorId(),
+			ReputationJournal journal = new ReputationJournal(review.getId(), item.getId(), item.getAuthorId(),
 					review.getSport().getKey().toLowerCase(), new Date(), changeValue);
 			reputationJournalRepo.save(journal);
 		}

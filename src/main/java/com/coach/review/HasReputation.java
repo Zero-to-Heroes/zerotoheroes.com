@@ -4,6 +4,8 @@ import com.coach.reputation.Reputation;
 
 public interface HasReputation {
 
+	String getId();
+
 	void setAuthor(String author);
 
 	void setAuthorId(String authorId);

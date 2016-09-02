@@ -13,7 +13,7 @@ public class ReputationJournal extends Journal {
 
 	@Id
 	private String id;
-	private final String reviewId, userId, sport;
+	private final String reviewId, subjectId, userId, sport;
 	private final Date reputationChangeDate;
 	private final int changeValue;
 }

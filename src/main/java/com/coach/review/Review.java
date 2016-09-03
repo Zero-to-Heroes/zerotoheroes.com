@@ -30,6 +30,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.github.slugify.Slugify;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -43,6 +44,7 @@ import lombok.extern.slf4j.Slf4j;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Slf4j
 @Document
+@EqualsAndHashCode(of = "id")
 public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@JsonFormat(shape = JsonFormat.Shape.OBJECT)

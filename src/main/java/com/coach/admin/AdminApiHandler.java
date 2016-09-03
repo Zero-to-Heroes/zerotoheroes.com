@@ -1,7 +1,8 @@
 package com.coach.admin;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.coach.core.security.User;
 import com.coach.profile.ProfileService;
+import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.sport.SportRepository;
@@ -56,19 +58,30 @@ public class AdminApiHandler {
 		if ("prod".equalsIgnoreCase(
 				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
 
+		User author = userRepository.findByUsername("OfMurlocsAndMen");
+		if (author == null) {
+			log.warn("User doesnt exist");
+		}
+
 		log.debug("loading reviews");
-		List<Review> reviews = reviewRepository.findByAuthor("Zeezi");
+		List<Review> reviews = reviewRepository.findAll();
 		log.debug("loaded all reviews " + reviews.size());
 
-		User author = userRepository.findByUsername("Zlatomir");
-
-		List<Review> modified = new ArrayList<>();
+		Set<Review> modified = new HashSet<>();
 		for (Review review : reviews) {
-			if ("Zeezi".equals(review.getAuthor())) {
+			if ("TheFruitBat".equals(review.getAuthor())) {
 				// log.debug("found! " + review);
 				review.setAuthor(author.getUsername());
 				review.setAuthorId(author.getId());
 				modified.add(review);
+			}
+			for (Comment comment : review.getAllComments()) {
+				if ("TheFruitBat".equals(comment.getAuthor())) {
+					// log.debug("found! " + review);
+					comment.setAuthor(author.getUsername());
+					comment.setAuthorId(author.getId());
+					modified.add(review);
+				}
 			}
 		}
 		log.debug("saving modified reviews " + modified.size());

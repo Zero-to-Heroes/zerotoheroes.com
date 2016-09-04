@@ -1,10 +1,12 @@
 package com.coach.plugin.hearthstone;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,8 +23,11 @@ import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import com.zerotoheroes.hsgameparser.ReplayConverter;
+import com.zerotoheroes.hsgameparser.replaydata.HearthstoneReplay;
+import com.zerotoheroes.hsgameparser.xmlparser.GameMetaData;
+import com.zerotoheroes.hsgameparser.xmlparser.GameParser;
 
-import info.hearthsim.hsreplay.ReplaySerializer;
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
@@ -61,7 +66,7 @@ public class HSReplay implements ReplayPlugin {
 			else {
 				// log.debug("to xml");
 				// log.debug(review.getTemporaryReplay());
-				xml = new ReplaySerializer().xmlFromLogs(review.getTemporaryReplay());
+				xml = new ReplayConverter().xmlFromLogs(review.getTemporaryReplay());
 			}
 		}
 		else if ("hdtreplay".equals(review.getFileType())) {
@@ -90,7 +95,7 @@ public class HSReplay implements ReplayPlugin {
 			String logFile = readFile(destination + "/output_log.txt");
 			// All logs are correct at that point
 			// log.debug("Reading logs " + logFile);
-			xml = new ReplaySerializer().xmlFromLogs(logFile);
+			xml = new ReplayConverter().xmlFromLogs(logFile);
 			// log.debug("XML file " + xml);
 
 			// Delete temp file
@@ -104,7 +109,7 @@ public class HSReplay implements ReplayPlugin {
 			log.debug("Retrieving log file " + review.getTemporaryKey());
 			String logFile = s3utils.readFromS3(review.getTemporaryKey());
 			log.debug("Retrieved log file ");
-			xml = new ReplaySerializer().xmlFromLogs(logFile);
+			xml = new ReplayConverter().xmlFromLogs(logFile);
 
 		}
 		// Simply store the temporary XML to the final destination
@@ -122,6 +127,8 @@ public class HSReplay implements ReplayPlugin {
 		review.setReplay(String.valueOf(true));
 		review.setMediaType("game-replay");
 		review.setReviewType("game-replay");
+		review.setTemporaryReplay(xml);
+		addMetaData(review);
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
 		log.debug("Review updated with proper key " + review);
@@ -151,6 +158,18 @@ public class HSReplay implements ReplayPlugin {
 	@Override
 	public String getMediaType() {
 		return null;
+	}
+
+	private void addMetaData(Review review) throws Exception {
+		String replay = review.getTemporaryReplay();
+		HearthstoneReplay game = new ReplayConverter()
+				.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
+
+		GameMetaData meta = new GameParser().getMetaData(game);
+		review.getParticipantDetails().setPlayerName(meta.getPlayerName());
+		review.getParticipantDetails().setOpponentName(meta.getOpponentName());
+		review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
+		review.getParticipantDetails().setOpponentCategory(meta.getOpponentClass());
 	}
 
 	public List<String> extractGames(String key, String fileType) throws IOException, ZipException {

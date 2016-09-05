@@ -186,6 +186,7 @@ public class HSReplay implements ReplayPlugin {
 						+ review.getParticipantDetails().getOpponentCategory() + ")";
 				review.setTitle(title);
 			}
+			log.info("done adding meta " + review);
 		}
 		catch (Exception e) {
 			log.error("Could not add metata to review " + review, e);

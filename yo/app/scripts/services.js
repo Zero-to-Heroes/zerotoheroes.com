@@ -36,6 +36,7 @@ services.factory('Api', ['$resource', 'ENV',
 
 			Notifications: $resource(ENV.apiEndpoint + url + 'notifications/:type', {type: '@type'}),
 			NotificationsRead: $resource(ENV.apiEndpoint + url + 'notifications/read', {id: '@id'}),
+			AllNotificationsRead: $resource(ENV.apiEndpoint + url + 'notifications/allread'),
 			NotificationsUnread: $resource(ENV.apiEndpoint + url + 'notifications/unread', {id: '@id'}),
 			Preferences: $resource(ENV.apiEndpoint + url + 'preferences'),
 			ProfileInfo: $resource(ENV.apiEndpoint + url + 'profileinfo/:user/:sport', {user: '@user', sport: '@sport'}),

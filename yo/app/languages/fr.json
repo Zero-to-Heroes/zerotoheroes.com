@@ -247,6 +247,7 @@
 				"sent": "il y a",
 				"empty": "Vous n'avez pas de message ici",
 				"markReadButton": "marquer comme lu",
+				"markAllReadButton": "marquer tous comme lus",
 				"markUnreadButton": "marquer comme non lu"
 			},
 			"menu": {

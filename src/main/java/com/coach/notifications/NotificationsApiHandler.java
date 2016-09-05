@@ -76,6 +76,24 @@ public class NotificationsApiHandler {
 		return new ResponseEntity<Notification>(notif, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/allread", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Notification> markAllRead() {
+		// log.debug("Marking notif as read", messageId);
+		Profile profile = profileService.getLoggedInProfile();
+		if (profile == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.FORBIDDEN); }
+
+		List<Notification> unread = profile.getNotifications().filter("unread");
+		if (unread.size() > 0) {
+			for (Notification notif : unread) {
+				notif.setReadDate(new Date());
+			}
+
+			profileRepo.save(profile);
+		}
+
+		return new ResponseEntity<Notification>((Notification) null, HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/unread", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Notification> markUnread(@RequestBody int messageId) {
 

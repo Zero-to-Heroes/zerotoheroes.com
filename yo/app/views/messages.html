@@ -1,11 +1,18 @@
 <view-title>{{'User - ' + user.username}} inbox</view-title>
 
-<div class="background-white profile-page">
+<div class="background-white profile-page messages">
 	
-	<ul class="menu-bar">
-		<li><a translate="global.profile.messages.menu.all" ng-class="{ 'active': subMenu == 'all'}" ng-click="goTo('all')"></a></li>
-		<li><a translate="global.profile.messages.menu.unread" ng-class="{ 'active': subMenu == 'unread'}" ng-click="goTo('unread')"></a></li>
-	</ul>
+	<div class="menu-bar">
+		<ul>
+			<li><a translate="global.profile.messages.menu.all" ng-class="{ 'active': subMenu == 'all'}" ng-click="goTo('all')"></a></li>
+			<li><a translate="global.profile.messages.menu.unread" ng-class="{ 'active': subMenu == 'unread'}" ng-click="goTo('unread')"></a></li>
+		</ul>
+
+		<div class="mark-read-button">
+			<a translate="global.profile.messages.markAllReadButton" ng-click="markAllRead()" ng-show="subMenu == 'unread' && messages.length > 0"></a>
+		</div>
+	</div>
+
 
 	<messages source="messages"></messages>
 </div>

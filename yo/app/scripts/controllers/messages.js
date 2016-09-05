@@ -66,6 +66,17 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 			return baseUrl
 		}
 
+		$scope.markAllRead = function() {
+			Api.AllNotificationsRead.save(
+				function(data) {
+					$log.debug('marked all read')
+					$scope.messages.forEach(function(message) {
+						message.readDate = new Date()
+					})
+				}
+			)
+		}
+
 		$scope.goTo = function(subMenu) {
 			var path = '/u/' + $routeParams['userName'] + '/' + $routeParams['sport'] + '/inbox/' + subMenu
 			$location.path(path)

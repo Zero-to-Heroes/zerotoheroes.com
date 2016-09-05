@@ -291,6 +291,7 @@
 				"empty": "You don't have any messages here",
 				"markUnreadButton": "mark unread",
 				"markReadButton": "mark read",
+				"markAllReadButton": "mark all read",
 				"restrictedAccess": "Sorry, access to this info is restricted to the profile owner"
 			},
 			"menu": {

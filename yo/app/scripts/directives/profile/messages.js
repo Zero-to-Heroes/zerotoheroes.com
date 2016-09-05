@@ -37,6 +37,7 @@ app.directive('messages', ['$log', 'Api',
 						)
 					}
 				}
+
 				$scope.markUnread = function(message) {
 					if (message.readDate) {
 						Api.NotificationsUnread.save(message.notifId, 

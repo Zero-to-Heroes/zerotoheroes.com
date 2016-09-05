@@ -28,7 +28,6 @@ import com.coach.review.ReviewRepository;
 import com.zerotoheroes.hsgameparser.ReplayConverter;
 import com.zerotoheroes.hsgameparser.replaydata.HearthstoneReplay;
 import com.zerotoheroes.hsgameparser.xmlparser.GameMetaData;
-import com.zerotoheroes.hsgameparser.xmlparser.GameParser;
 
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.core.ZipFile;
@@ -44,18 +43,8 @@ public class HSReplay implements ReplayPlugin {
 	@Autowired
 	ReviewRepository repo;
 
-	private GameParser gameParser;
-
-	public HSReplay() {
-		try {
-			log.debug("building cards list");
-			gameParser = new GameParser();
-			log.debug("built cards list");
-		}
-		catch (Exception e) {
-			log.error("Could not instanciate game parser", e);
-		}
-	}
+	@Autowired
+	GameParserProvider gameParser;
 
 	@Override
 	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws Exception {
@@ -176,7 +165,7 @@ public class HSReplay implements ReplayPlugin {
 	}
 
 	private void addMetaData(Review review) {
-		if (gameParser == null) {
+		if (gameParser == null || gameParser.getGameParser() == null) {
 			log.error("Game parser not initialized properly");
 			return;
 		}
@@ -189,7 +178,7 @@ public class HSReplay implements ReplayPlugin {
 					.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
 			log.debug("game is ");
 
-			GameMetaData meta = gameParser.getMetaData(game);
+			GameMetaData meta = gameParser.getGameParser().getMetaData(game);
 			log.debug("built meta data " + meta);
 			review.getParticipantDetails().setPlayerName(meta.getPlayerName());
 			review.getParticipantDetails().setOpponentName(meta.getOpponentName());

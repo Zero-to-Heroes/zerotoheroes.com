@@ -30,6 +30,7 @@ import com.coach.plugin.hearthstone.HSReplay;
 import com.coach.review.Review;
 import com.coach.review.ReviewApiHandler;
 import com.coach.review.ReviewRepository;
+import com.coach.review.ReviewService;
 import com.coach.user.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -50,6 +51,9 @@ public class ReviewPublicApi {
 
 	@Autowired
 	ReviewApiHandler reviewApi;
+
+	@Autowired
+	ReviewService reviewService;
 
 	@Autowired
 	HSReplay hsReplay;
@@ -104,6 +108,8 @@ public class ReviewPublicApi {
 		Review review = reviewRepo.findById(id);
 		review.setPublished(true);
 		reviewApi.createReview(review);
+
+		reviewService.triggerReviewCreationJobs(review);
 
 		List<String> ids = new ArrayList<>();
 		ids.add(review.getId());

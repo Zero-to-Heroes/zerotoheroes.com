@@ -163,11 +163,13 @@ public class HSReplay implements ReplayPlugin {
 	}
 
 	private void addMetaData(Review review) throws Exception {
+		log.debug("Adding meta data to " + review);
 		String replay = review.getTemporaryReplay();
 		HearthstoneReplay game = new ReplayConverter()
 				.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
 
 		GameMetaData meta = new GameParser().getMetaData(game);
+		log.debug("built meta data " + meta);
 		review.getParticipantDetails().setPlayerName(meta.getPlayerName());
 		review.getParticipantDetails().setOpponentName(meta.getOpponentName());
 		review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());

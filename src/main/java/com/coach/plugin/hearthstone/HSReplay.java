@@ -68,7 +68,7 @@ public class HSReplay implements ReplayPlugin {
 				xml = review.getTemporaryReplay();
 			}
 			else {
-				// log.debug("to xml");
+				log.debug("to xml");
 				// log.debug(review.getTemporaryReplay());
 				xml = new ReplayConverter().xmlFromLogs(review.getTemporaryReplay());
 			}
@@ -185,6 +185,7 @@ public class HSReplay implements ReplayPlugin {
 			review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
 			review.getParticipantDetails().setOpponentCategory(meta.getOpponentClass());
 
+			log.debug("adding title?");
 			if (StringUtils.isEmpty(review.getTitle())) {
 				String title = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " - "
 						+ review.getParticipantDetails().getPlayerName() + "("
@@ -195,7 +196,9 @@ public class HSReplay implements ReplayPlugin {
 			}
 			log.debug("done adding meta " + review);
 		}
-		catch (Exception e) {
+		catch (Throwable e) {
+			log.info("Could not add metata to review " + review);
+			log.error("", e);
 			log.error("Could not add metata to review " + review, e);
 		}
 	}

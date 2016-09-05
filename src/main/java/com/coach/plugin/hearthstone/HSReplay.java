@@ -166,8 +166,10 @@ public class HSReplay implements ReplayPlugin {
 		try {
 			log.info("Adding meta data to " + review);
 			String replay = review.getTemporaryReplay();
+			log.info("temp replay is " + replay);
 			HearthstoneReplay game = new ReplayConverter()
 					.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
+			log.info("game is " + game);
 
 			GameMetaData meta = new GameParser().getMetaData(game);
 			log.info("built meta data " + meta);

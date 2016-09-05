@@ -250,6 +250,14 @@
 				"markAllReadButton": "marquer tous comme lus",
 				"markUnreadButton": "marquer comme non lu"
 			},
+			"feed": {
+				"newReview": "vous aves posté une revue intitulée \"{{title}}\"",
+				"newUntitledReview": "vous avez posté une revue sans titre",
+				"newComment": "vous avez ajouté un commentaire sur \"{{title}}\"",
+				"newCommentOnUntitledReview": "vous avez ajouté un commentaire sur une review sans titre",
+				"upvote": "quelqu'un a upvoté votre commentaire sur \"{{title}}\". Bien joué !",
+				"helpful": "quelqu'un a marqué votre commentaire sur \"{{title}}\" comme l'ayant aidé ! Vous êtes super !"
+			},
 			"menu": {
 				"info": "Profil",
 				"feed": "Flux d'activités",

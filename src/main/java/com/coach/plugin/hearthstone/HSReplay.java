@@ -56,17 +56,17 @@ public class HSReplay implements ReplayPlugin {
 
 	@Override
 	public void transformReplayFile(Review review) throws Exception {
-		log.debug("Processing replay file for review " + review);
+		log.info("Processing replay file for review " + review);
 
 		String xml = null;
 		if (review.getTemporaryReplay() != null) {
-			log.debug("temporary replay");
+			log.info("temporary replay");
 			// Simply store the temporary XML to the final destination
 			if ("text/xml".equals(review.getFileType())) {
 				xml = review.getTemporaryReplay();
 			}
 			else {
-				// log.debug("to xml");
+				log.info("to xml");
 				// log.debug(review.getTemporaryReplay());
 				xml = new ReplayConverter().xmlFromLogs(review.getTemporaryReplay());
 			}
@@ -119,12 +119,12 @@ public class HSReplay implements ReplayPlugin {
 			log.debug("hdtxmlreplay replay");
 			xml = s3utils.readFromS3(review.getTemporaryKey());
 		}
-		log.debug("XML created");
+		log.info("XML created");
 		// log.debug(xml);
 
 		// Store the new file to S3 and update the review with the correct key
 		String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/replay");
-		log.debug("created key " + key);
+		log.info("created key " + key);
 		review.setKey(key);
 		review.setReplay(String.valueOf(true));
 		review.setMediaType("game-replay");
@@ -133,7 +133,7 @@ public class HSReplay implements ReplayPlugin {
 		addMetaData(review);
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
-		log.debug("Review updated with proper key " + review);
+		log.info("Review updated with proper key " + review);
 		// review.setTemporaryKey(null);
 		review.setTranscodingDone(true);
 		repo.save(review);
@@ -163,13 +163,13 @@ public class HSReplay implements ReplayPlugin {
 	}
 
 	private void addMetaData(Review review) throws Exception {
-		log.debug("Adding meta data to " + review);
+		log.info("Adding meta data to " + review);
 		String replay = review.getTemporaryReplay();
 		HearthstoneReplay game = new ReplayConverter()
 				.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
 
 		GameMetaData meta = new GameParser().getMetaData(game);
-		log.debug("built meta data " + meta);
+		log.info("built meta data " + meta);
 		review.getParticipantDetails().setPlayerName(meta.getPlayerName());
 		review.getParticipantDetails().setOpponentName(meta.getOpponentName());
 		review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());

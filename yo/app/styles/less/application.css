@@ -68,6 +68,8 @@
 .profile-page .activity-feed .helpful .change-amount:after {
   content: "";
   background-size: contain;
+  width: 20px;
+  height: 20px;
 }
 .profile-page .profile-info h2 {
   text-align: center;

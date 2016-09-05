@@ -87,7 +87,7 @@ public class DailyContributionsCronHandler {
 
 		// Load all the unprocessed reviews
 		List<ReviewJournal> logs = reviewJournalRepo.findAll();
-		log.debug("loaded " + logs.size() + " logs");
+		// log.debug("loaded " + logs.size() + " logs");
 
 		List<ReviewJournal> processed = new ArrayList<>();
 		List<ArchiveJournal> archives = new ArrayList<>();
@@ -113,8 +113,8 @@ public class DailyContributionsCronHandler {
 			archives.add(archive);
 		}
 
-		log.debug("processed " + processed.size() + " logs");
-		log.debug("modified " + modified.size() + " profiles");
+		// log.debug("processed " + processed.size() + " logs");
+		// log.debug("modified " + modified.size() + " profiles");
 
 		profileRepository.save(modified);
 		archiveJournalRepo.save(archives);
@@ -128,7 +128,7 @@ public class DailyContributionsCronHandler {
 
 		// Load all the unprocessed reviews
 		List<CommentJournal> logs = commentJournalRepo.findAll();
-		log.debug("loaded " + logs.size() + " logs");
+		// log.debug("loaded " + logs.size() + " logs");
 
 		List<CommentJournal> processed = new ArrayList<>();
 		List<ArchiveJournal> archives = new ArrayList<>();
@@ -161,8 +161,8 @@ public class DailyContributionsCronHandler {
 			archives.add(archive);
 		}
 
-		log.debug("processed " + processed.size() + " logs");
-		log.debug("modified " + modified.size() + " profiles");
+		// log.debug("processed " + processed.size() + " logs");
+		// log.debug("modified " + modified.size() + " profiles");
 
 		profileRepository.save(modified);
 		archiveJournalRepo.save(archives);
@@ -176,7 +176,7 @@ public class DailyContributionsCronHandler {
 
 		// Load all the unprocessed reviews
 		List<ReputationJournal> logs = reputationJournalRepo.findAll();
-		log.debug("loaded " + logs.size() + " logs");
+		// log.debug("loaded " + logs.size() + " logs");
 
 		List<ReputationJournal> processed = new ArrayList<>();
 		List<ArchiveJournal> archives = new ArrayList<>();
@@ -203,8 +203,8 @@ public class DailyContributionsCronHandler {
 			archives.add(archive);
 		}
 
-		log.debug("processed " + processed.size() + " logs");
-		log.debug("modified " + modified.size() + " profiles");
+		// log.debug("processed " + processed.size() + " logs");
+		// log.debug("modified " + modified.size() + " profiles");
 
 		profileRepository.save(modified);
 		archiveJournalRepo.save(archives);

@@ -162,26 +162,31 @@ public class HSReplay implements ReplayPlugin {
 		return null;
 	}
 
-	private void addMetaData(Review review) throws Exception {
-		log.info("Adding meta data to " + review);
-		String replay = review.getTemporaryReplay();
-		HearthstoneReplay game = new ReplayConverter()
-				.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
+	private void addMetaData(Review review) {
+		try {
+			log.info("Adding meta data to " + review);
+			String replay = review.getTemporaryReplay();
+			HearthstoneReplay game = new ReplayConverter()
+					.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
 
-		GameMetaData meta = new GameParser().getMetaData(game);
-		log.info("built meta data " + meta);
-		review.getParticipantDetails().setPlayerName(meta.getPlayerName());
-		review.getParticipantDetails().setOpponentName(meta.getOpponentName());
-		review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
-		review.getParticipantDetails().setOpponentCategory(meta.getOpponentClass());
+			GameMetaData meta = new GameParser().getMetaData(game);
+			log.info("built meta data " + meta);
+			review.getParticipantDetails().setPlayerName(meta.getPlayerName());
+			review.getParticipantDetails().setOpponentName(meta.getOpponentName());
+			review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
+			review.getParticipantDetails().setOpponentCategory(meta.getOpponentClass());
 
-		if (StringUtils.isEmpty(review.getTitle())) {
-			String title = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " - "
-					+ review.getParticipantDetails().getPlayerName() + "("
-					+ review.getParticipantDetails().getPlayerCategory() + ") vs "
-					+ review.getParticipantDetails().getOpponentName() + "("
-					+ review.getParticipantDetails().getOpponentCategory() + ")";
-			review.setTitle(title);
+			if (StringUtils.isEmpty(review.getTitle())) {
+				String title = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " - "
+						+ review.getParticipantDetails().getPlayerName() + "("
+						+ review.getParticipantDetails().getPlayerCategory() + ") vs "
+						+ review.getParticipantDetails().getOpponentName() + "("
+						+ review.getParticipantDetails().getOpponentCategory() + ")";
+				review.setTitle(title);
+			}
+		}
+		catch (Exception e) {
+			log.error("Could not add metata to review " + review, e);
 		}
 	}
 

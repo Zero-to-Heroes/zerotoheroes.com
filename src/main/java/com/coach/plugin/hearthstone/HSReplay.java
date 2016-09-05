@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.UUID;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import com.amazonaws.services.s3.model.S3Object;
 import com.coach.core.storage.S3Utils;
@@ -170,6 +172,15 @@ public class HSReplay implements ReplayPlugin {
 		review.getParticipantDetails().setOpponentName(meta.getOpponentName());
 		review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
 		review.getParticipantDetails().setOpponentCategory(meta.getOpponentClass());
+
+		if (StringUtils.isEmpty(review.getTitle())) {
+			String title = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " - "
+					+ review.getParticipantDetails().getPlayerName() + "("
+					+ review.getParticipantDetails().getPlayerCategory() + ") vs "
+					+ review.getParticipantDetails().getOpponentName() + "("
+					+ review.getParticipantDetails().getOpponentCategory() + ")";
+			review.setTitle(title);
+		}
 	}
 
 	public List<String> extractGames(String key, String fileType) throws IOException, ZipException {

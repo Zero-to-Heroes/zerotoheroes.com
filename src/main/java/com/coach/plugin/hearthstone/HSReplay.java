@@ -44,6 +44,19 @@ public class HSReplay implements ReplayPlugin {
 	@Autowired
 	ReviewRepository repo;
 
+	private GameParser gameParser;
+
+	public HSReplay() {
+		try {
+			log.debug("building cards list");
+			gameParser = new GameParser();
+			log.debug("built cards list");
+		}
+		catch (Exception e) {
+			log.error("Could not instanciate game parser", e);
+		}
+	}
+
 	@Override
 	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws Exception {
 		return textHolder.getText();
@@ -56,17 +69,17 @@ public class HSReplay implements ReplayPlugin {
 
 	@Override
 	public void transformReplayFile(Review review) throws Exception {
-		log.info("Processing replay file for review " + review);
+		log.debug("Processing replay file for review " + review);
 
 		String xml = null;
 		if (review.getTemporaryReplay() != null) {
-			log.info("temporary replay");
+			log.debug("temporary replay");
 			// Simply store the temporary XML to the final destination
 			if ("text/xml".equals(review.getFileType())) {
 				xml = review.getTemporaryReplay();
 			}
 			else {
-				log.info("to xml");
+				// log.debug("to xml");
 				// log.debug(review.getTemporaryReplay());
 				xml = new ReplayConverter().xmlFromLogs(review.getTemporaryReplay());
 			}
@@ -119,12 +132,12 @@ public class HSReplay implements ReplayPlugin {
 			log.debug("hdtxmlreplay replay");
 			xml = s3utils.readFromS3(review.getTemporaryKey());
 		}
-		log.info("XML created");
+		log.debug("XML created");
 		// log.debug(xml);
 
 		// Store the new file to S3 and update the review with the correct key
 		String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/replay");
-		log.info("created key " + key);
+		log.debug("created key " + key);
 		review.setKey(key);
 		review.setReplay(String.valueOf(true));
 		review.setMediaType("game-replay");
@@ -133,7 +146,7 @@ public class HSReplay implements ReplayPlugin {
 		addMetaData(review);
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
-		log.info("Review updated with proper key " + review);
+		log.debug("Review updated with proper key " + review);
 		// review.setTemporaryKey(null);
 		review.setTranscodingDone(true);
 		repo.save(review);
@@ -163,16 +176,21 @@ public class HSReplay implements ReplayPlugin {
 	}
 
 	private void addMetaData(Review review) {
+		if (gameParser == null) {
+			log.error("Game parser not initialized properly");
+			return;
+		}
+
 		try {
-			log.info("Adding meta data to " + review);
+			log.debug("Adding meta data to " + review);
 			String replay = review.getTemporaryReplay();
-			log.info("temp replay is " + replay);
+			log.debug("temp replay is ");
 			HearthstoneReplay game = new ReplayConverter()
 					.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
-			log.info("game is " + game);
+			log.debug("game is ");
 
-			GameMetaData meta = new GameParser().getMetaData(game);
-			log.info("built meta data " + meta);
+			GameMetaData meta = gameParser.getMetaData(game);
+			log.debug("built meta data " + meta);
 			review.getParticipantDetails().setPlayerName(meta.getPlayerName());
 			review.getParticipantDetails().setOpponentName(meta.getOpponentName());
 			review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
@@ -186,7 +204,7 @@ public class HSReplay implements ReplayPlugin {
 						+ review.getParticipantDetails().getOpponentCategory() + ")";
 				review.setTitle(title);
 			}
-			log.info("done adding meta " + review);
+			log.debug("done adding meta " + review);
 		}
 		catch (Exception e) {
 			log.error("Could not add metata to review " + review, e);

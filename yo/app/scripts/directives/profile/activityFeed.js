@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('activityFeed', ['$log', 'Api', '$routeParams', 
-	function($log, Api, $routeParams) {
+app.directive('activityFeed', ['$log', 'Api', '$routeParams', 'User', 
+	function($log, Api, $routeParams, User) {
 		 
 		return {
 			restrict: 'E',
@@ -18,13 +18,22 @@ app.directive('activityFeed', ['$log', 'Api', '$routeParams',
 
 				$scope.sport = $routeParams['sport']
 
+				$scope.isOwnProfile = function() {
+					return User.isLoggedIn() && $routeParams.userName == User.getName()
+				}
+
 				$scope.retrieveInfo = function() {
-					Api.ActivityFeed.get({sport: $scope.sport},
-						function(data) {
-							$scope.feed = data.activities
-							$log.debug('loaded activities', data)
-						}
-					)
+					if ($scope.isOwnProfile()) {
+						Api.ActivityFeed.get({sport: $scope.sport},
+							function(data) {
+								$scope.feed = data.activities
+								$log.debug('loaded activities', data)
+							}
+						)
+					}
+					else {
+						$scope.updateStatus = 'forbidden'
+					}
 				}
 				$scope.retrieveInfo()
 			}

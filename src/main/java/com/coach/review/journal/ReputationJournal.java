@@ -16,4 +16,5 @@ public class ReputationJournal extends Journal {
 	private final String reviewId, subjectId, userId, sport;
 	private final Date reputationChangeDate;
 	private final int changeValue;
+	private final String changeReason;
 }

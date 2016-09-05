@@ -27,9 +27,9 @@ app.directive('welcomePane', ['User', 'Api', '$rootScope', '$log', '$modal', '$t
 				$scope.getLatestActivities = function() {
 					if (!$scope.sport) return;
 					
-					Api.Activities.query({sport: $scope.sport, quantity: 4}, function(data) {
-						$scope.lastActivities = data;
-					});
+					// Api.Activities.query({sport: $scope.sport, quantity: 4}, function(data) {
+					// 	$scope.lastActivities = data;
+					// });
 				}
 
 				$scope.recommendVideo = function() {

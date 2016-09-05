@@ -755,7 +755,8 @@ public class ReviewApiHandler {
 		if (!StringUtils.isNullOrEmpty(comment.getAuthorId()) && !comment.getAuthorId().equals(review.getAuthorId())) {
 			ReputationAction action = comment.isHelpful() ? ReputationAction.Helpful : ReputationAction.LostHelpful;
 			int changeAmount = reputationUpdater.updateReputation(review.getSport(), action, comment.getAuthorId());
-			reviewService.triggerReputationChangeJobs(review, comment, changeAmount);
+			reviewService.triggerReputationChangeJobs(review, comment, changeAmount,
+					changeAmount > 0 ? ReputationAction.Helpful : ReputationAction.LostHelpful);
 		}
 
 		reviewService.updateAsync(review);

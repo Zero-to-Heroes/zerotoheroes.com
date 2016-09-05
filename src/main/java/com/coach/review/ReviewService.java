@@ -11,6 +11,7 @@ import com.coach.core.notification.ExecutorProvider;
 import com.coach.core.security.User;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
+import com.coach.reputation.ReputationAction;
 import com.coach.review.journal.CommentJournal;
 import com.coach.review.journal.CommentJournalRepository;
 import com.coach.review.journal.ReputationJournal;
@@ -107,10 +108,11 @@ public class ReviewService {
 		}
 	}
 
-	public void triggerReputationChangeJobs(Review review, HasReputation item, int changeValue) {
+	public void triggerReputationChangeJobs(Review review, HasReputation item, int changeValue,
+			ReputationAction reason) {
 		if (item.getAuthorId() != null && review.getSport() != null) {
 			ReputationJournal journal = new ReputationJournal(review.getId(), item.getId(), item.getAuthorId(),
-					review.getSport().getKey().toLowerCase(), new Date(), changeValue);
+					review.getSport().getKey().toLowerCase(), new Date(), changeValue, reason.toString().toLowerCase());
 			reputationJournalRepo.save(journal);
 		}
 	}

@@ -2,27 +2,27 @@ package com.coach.activities;
 
 import java.util.Date;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Getter
-@Setter
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
+import lombok.Data;
+
+@Data
+@Document
 public class Activity {
 
-	public enum Type {
-		NEW_REVIEW, NEW_COMMENT, UPDATE_REVIEW, UPDATE_COMMENT, HELPFUL_COMMENT
+	@Id
+	private String id;
 
-	}
+	@Indexed
+	private String userId;
 
-	private Date date;
-	private Type type;
-	private String userName;
-	private String reviewUrl;
-	private String reviewTitle;
+	@Indexed
+	private Date creationDate;
+
+	@Indexed
+	private String sport;
+
+	private ActivityData data;
 }

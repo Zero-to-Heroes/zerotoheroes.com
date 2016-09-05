@@ -252,6 +252,7 @@
 			},
 			"menu": {
 				"info": "Profil",
+				"feed": "Flux d'activités",
 				"preferences": "Préférences",
 				"subscriptions": "Abonnements"
 			},

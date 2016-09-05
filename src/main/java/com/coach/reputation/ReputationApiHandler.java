@@ -63,7 +63,8 @@ public class ReputationApiHandler {
 
 		int changeAmount = reputationUpdater.updateReputationAfterAction(review.getSport(), comment.getReputation(),
 				action, comment.getAuthorId(), user);
-		reviewService.triggerReputationChangeJobs(review, comment, changeAmount);
+		reviewService.triggerReputationChangeJobs(review, comment, changeAmount,
+				changeAmount > 0 ? ReputationAction.Upvote : ReputationAction.Downvote);
 
 		// might be nice to update only the reputation, I think I read this is
 		// doable
@@ -90,7 +91,8 @@ public class ReputationApiHandler {
 
 		int changeAmount = reputationUpdater.updateReputationAfterAction(review.getSport(), review.getReputation(),
 				action, review.getAuthorId(), user);
-		reviewService.triggerReputationChangeJobs(review, review, changeAmount);
+		reviewService.triggerReputationChangeJobs(review, review, changeAmount,
+				changeAmount > 0 ? ReputationAction.Upvote : ReputationAction.Downvote);
 
 		// might be nice to update only the reputation, I think I read this is
 		// doable

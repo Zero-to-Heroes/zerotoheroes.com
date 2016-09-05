@@ -1333,6 +1333,28 @@
   background-size: 100%;
   background-position-y: 10px;
 }
+.hearthstone .profile-page .activity-feed .new-review .icon {
+  background-image: url(images/new/icon-new-review.png);
+}
+.hearthstone .profile-page .activity-feed .new-comment .icon {
+  background-image: url(images/new/picto-nb-comment.png);
+}
+.hearthstone .profile-page .activity-feed .reputation-change .icon.helpful {
+  background-image: url(images/new/picto-check.png);
+}
+.hearthstone .profile-page .activity-feed .reputation-change .icon.upvote {
+  background-image: url(images/new/picto-popularity.png);
+}
+.hearthstone .profile-page .activity-feed .helpful {
+  left: 13px;
+}
+.hearthstone .profile-page .activity-feed .helpful .change-amount {
+  left: -33px;
+  width: 40px;
+}
+.hearthstone .profile-page .activity-feed .helpful .change-amount:after {
+  background-image: url(images/new/picto-popularity.png);
+}
 @media screen and (max-width: 500px) {
   .hearthstone .navbar.navbar-default {
     background: url("images/new/nav-bg-center.png") top repeat-x;

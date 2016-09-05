@@ -1,0 +1,54 @@
+.profile-page .activity-feed {
+
+	ul {
+		list-style-type: none;
+	}
+
+	.activity {
+		display: flex;
+		margin-top: 15px;
+
+		.icon {
+			background-size: contain;
+		    background-repeat: no-repeat;
+		    background-position: center center;
+		    width: 20px;
+		    height: 20px;
+		    margin-right: 15px;
+		}
+
+		.date {
+			margin-left: 20px;
+			font-size: 0.8em;
+		    margin-top: auto;
+		}
+	}
+
+	.helpful {
+		position: relative;
+	}
+
+	.upvote .change-amount {
+		position: relative;
+		left: -12px;
+
+		&:before {
+    		content: "+";
+		}
+	}
+
+	.helpful .change-amount {
+		position: relative;
+	    display: flex;
+
+		&:before {
+    		content: "+";
+		}
+
+		&:after {
+    		content: "";
+    		background-size: contain;
+		}
+
+	}
+}

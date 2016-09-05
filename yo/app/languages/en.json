@@ -294,8 +294,17 @@
 				"markAllReadButton": "mark all read",
 				"restrictedAccess": "Sorry, access to this info is restricted to the profile owner"
 			},
+			"feed": {
+				"newReview": "you posted a review titled \"{{title}}\"",
+				"newUntitledReview": "you posted an untitled review",
+				"newComment": "you added a comment on \"{{title}}\"",
+				"newCommentOnUntitledReview": "you added a comment on an untitled review",
+				"upvote": "someone upvoted your comment on \"{{title}}\". Well done!",
+				"helpful": "someone marked your comment on \"{{title}}\" as helpful! You're awesome!"
+			},
 			"menu": {
 				"info": "Profile",
+				"feed": "Activity feed",
 				"preferences": "Preferences",
 				"subscriptions": "Subscriptions"
 			},

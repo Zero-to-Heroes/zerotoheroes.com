@@ -5,6 +5,7 @@
 	<div class="menu-bar">
 		<ul>
 			<li><a translate="global.profile.menu.info" ng-class="{ 'active': subMenu == 'profile'}" ng-click="goTo('profile')"></a></li>
+			<li><a translate="global.profile.menu.feed" ng-class="{ 'active': subMenu == 'feed'}" ng-click="goTo('feed')" ng-show="isOwnProfile()"></a></li>
 			<li><a translate="global.profile.menu.preferences" ng-class="{ 'active': subMenu == 'preferences'}" ng-click="goTo('preferences')" ng-show="isOwnProfile()"></a></li>
 			<li><a translate="global.profile.menu.subscriptions" ng-class="{ 'active': subMenu == 'subscriptions'}" ng-click="goTo('subscriptions')" ng-show="isOwnProfile()"></a></li>
 		</ul>
@@ -16,6 +17,7 @@
 
 	<div ng-switch="subMenu">
 		<profile-info ng-switch-when="profile" sport="sport" config="subMenuConfig"></profile-info>
+		<activity-feed ng-switch-when="feed" sport="sport" config="subMenuConfig"></activity-feed>
 		<profile-preferences ng-switch-when="preferences" sport="sport" config="subMenuConfig"></profile-preferences>
 		<profile-subscriptions ng-switch-when="subscriptions" sport="sport" config="subMenuConfig"></profile-subscriptions>
 	</div>

@@ -44,7 +44,7 @@ services.factory('Api', ['$resource', 'ENV',
 			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
 			SavedSearchSubscriptions: $resource(ENV.apiEndpoint + url + 'savedSearch/:name', {name: '@name'}),
 
-			Activities: $resource(ENV.apiEndpoint + url + 'activities/:sport', {sport: '@sport'}),
+			ActivityFeed: $resource(ENV.apiEndpoint + url + 'activities/:sport', {sport: '@sport'}),
 			Announcements: $resource(ENV.apiEndpoint + url + 'announcements'),
 
 			Slack: $resource('https://hooks.slack.com/services/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', {})

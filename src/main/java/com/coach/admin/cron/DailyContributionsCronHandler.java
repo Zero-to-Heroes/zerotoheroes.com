@@ -74,6 +74,9 @@ public class DailyContributionsCronHandler {
 	@Autowired
 	SlackNotifier slackNotifier;
 
+	@Autowired
+	ActivityHandler activityHandler;
+
 	private final String environment;
 
 	@Autowired
@@ -105,6 +108,9 @@ public class DailyContributionsCronHandler {
 				profileMap.put(authorId, profile);
 			}
 			profile.getProfileInfo().getSportInfo(sport).addDailyGame(creationDate);
+
+			activityHandler.handleNewGame(log);
+
 			modified.add(profile);
 			processed.add(log);
 
@@ -153,6 +159,9 @@ public class DailyContributionsCronHandler {
 				profileMap.put(authorId, profile);
 			}
 			profile.getProfileInfo().getSportInfo(sport).addDailyComment(creationDate);
+
+			activityHandler.handleNewComment(log);
+
 			modified.add(profile);
 			processed.add(log);
 
@@ -195,6 +204,9 @@ public class DailyContributionsCronHandler {
 				profileMap.put(authorId, profile);
 			}
 			profile.getProfileInfo().getSportInfo(sport).addDailyReputationChange(creationDate, changeValue);
+
+			activityHandler.handleNewVote(log);
+
 			modified.add(profile);
 			processed.add(log);
 

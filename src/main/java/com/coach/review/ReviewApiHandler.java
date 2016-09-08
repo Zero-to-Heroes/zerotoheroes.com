@@ -234,10 +234,11 @@ public class ReviewApiHandler {
 		review.prepareForDisplay(userId);
 		// log.debug("Returning review " + review);
 		// And add a video view to the user
-		if (user != null) {
-			user.addWatchedReview(review.getSport().getKey().toLowerCase(), review.getId());
-			userService.updateAsync(user);
-		}
+		// if (user != null) {
+		// user.addWatchedReview(review.getSport().getKey().toLowerCase(),
+		// review.getId());
+		// userService.updateAsync(user);
+		// }
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -311,6 +312,7 @@ public class ReviewApiHandler {
 		// Create the entry on the database
 		review.setCreationDate(new Date());
 		review.setLastModifiedBy(review.getAuthor());
+		review.setUseV2comments(true);
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		// subscriptionManager.subscribe(review.getSport(),
@@ -319,11 +321,12 @@ public class ReviewApiHandler {
 		// We need to save here so that the transcoding process can retrieve it
 		reviewRepo.save(review);
 
-		User user = userRepo.findByUsername(currentUser);
-		if (user != null) {
-			user.addPostedReview(review.getSport().getKey().toLowerCase(), review.getId());
-			userService.updateAsync(user);
-		}
+		// User user = userRepo.findByUsername(currentUser);
+		// if (user != null) {
+		// user.addPostedReview(review.getSport().getKey().toLowerCase(),
+		// review.getId());
+		// userService.updateAsync(user);
+		// }
 
 		// Start transcoding
 		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())
@@ -413,10 +416,11 @@ public class ReviewApiHandler {
 		String userId = user != null ? user.getId() : "";
 		review.prepareForDisplay(userId);
 
-		if (user != null) {
-			user.addPostedComment(review.getSport().getKey().toLowerCase(), review.getId());
-			userService.updateAsync(user);
-		}
+		// if (user != null) {
+		// user.addPostedComment(review.getSport().getKey().toLowerCase(),
+		// review.getId());
+		// userService.updateAsync(user);
+		// }
 
 		reviewService.triggerCommentCreationJobs(review, comment);
 
@@ -429,6 +433,63 @@ public class ReviewApiHandler {
 		// log.debug("Updated review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/multi/{reviewId}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Review> addMultiComment(@PathVariable("reviewId") final String id,
+			@RequestBody Map<String, Comment> multiComment) throws IOException {
+
+		log.debug("adding multi comment " + multiComment);
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+
+		Review review = reviewRepo.findById(id);
+		User user = userRepo.findByUsername(currentUser);
+
+		for (String turn : multiComment.keySet()) {
+			Comment comment = multiComment.get(turn);
+			comment.setTimestamp(turn);
+
+			log.debug("\tadding comment " + multiComment);
+
+			if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+				user = userRepo.findByUsername(comment.getAuthor());
+				if (user != null) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
+			}
+
+			addCommentToReview(review, comment, user);
+		}
+
+		review.sortComments();
+
+		reviewService.updateAsync(review);
+
+		String userId = user != null ? user.getId() : "";
+		review.prepareForDisplay(userId);
+
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
+	}
+
+	private void addCommentToReview(Review review, Comment comment, User user) {
+		addAuthorInformation(review.getSport(), comment, user.getUsername());
+		comment.setCreationDate(new Date());
+		review.addComment(comment);
+
+		review.setLastModifiedDate(new Date());
+		review.setLastModifiedBy(comment.getAuthor());
+
+		consolidateCanvas(user.getUsername(), review, comment, comment.getTempCanvas());
+		activatePlugins(user.getUsername(), review, comment);
+
+		// See if there are external references to videos in the comment
+		commentParser.parseComment(review, comment);
+
+		subscriptionManager.notifyNewComment(comment, review);
+		subscriptionManager.subscribe(review, comment.getAuthorId());
+		reviewService.triggerCommentCreationJobs(review, comment);
+		slackNotifier.notifyNewComment(review, comment);
 	}
 
 	@RequestMapping(value = "/{reviewId}/information", method = RequestMethod.POST)

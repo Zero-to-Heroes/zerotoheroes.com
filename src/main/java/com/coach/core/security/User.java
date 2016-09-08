@@ -15,8 +15,8 @@ import com.coach.coaches.CoachInformation;
 import com.coach.profile.Superpowers;
 import com.coach.reputation.UserReputation;
 import com.coach.review.Review.Sport;
-import com.coach.user.Stats;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
@@ -28,6 +28,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Document
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements UserDetails {
 
 	public User() {
@@ -65,7 +66,7 @@ public class User implements UserDetails {
 	private String frame;
 	private String preferredLanguage;
 	private UserReputation explodedReputation;
-	private Stats stats = new Stats();
+	// private Stats stats = new Stats();
 	private boolean canEdit;
 	private boolean betaTester;
 
@@ -163,26 +164,26 @@ public class User implements UserDetails {
 		return explodedReputation.getReputation(sport);
 	}
 
-	public Stats getStats() {
-		if (stats == null) {
-			stats = new Stats();
-		}
-		return stats;
-	}
+	// public Stats getStats() {
+	// if (stats == null) {
+	// stats = new Stats();
+	// }
+	// return stats;
+	// }
 
 	public boolean canEdit() {
 		return canEdit;
 	}
 
-	public void addWatchedReview(String sport, String reviewId) {
-		stats.addWatchedReview(sport, reviewId);
-	}
-
-	public void addPostedReview(String sport, String reviewId) {
-		stats.addPostedReview(sport, reviewId);
-	}
-
-	public void addPostedComment(String sport, String reviewId) {
-		stats.addPostedComment(sport, reviewId);
-	}
+	// public void addWatchedReview(String sport, String reviewId) {
+	// stats.addWatchedReview(sport, reviewId);
+	// }
+	//
+	// public void addPostedReview(String sport, String reviewId) {
+	// stats.addPostedReview(sport, reviewId);
+	// }
+	//
+	// public void addPostedComment(String sport, String reviewId) {
+	// stats.addPostedComment(sport, reviewId);
+	// }
 }

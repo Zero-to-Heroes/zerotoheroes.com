@@ -146,3 +146,22 @@
 .profile-page .profile-info .cal-heatmap-container .q0 {
   fill: #655a44;
 }
+.video-comment.multi-comment .comments-recap a:after {
+  content: ",";
+  margin-right: 5px;
+}
+.video-comment.multi-comment .comments-recap a:last-of-type:before {
+  content: " and ";
+  margin-right: 5px;
+}
+.video-comment.multi-comment .comments-recap a:first-of-type:before {
+  content: "";
+  margin-right: 0;
+}
+.video-comment.multi-comment .comments-recap a:last-of-type:after {
+  content: "";
+  margin-right: 0;
+}
+.video-comment.multi-comment .comments-recap .explanation-second-part {
+  display: block;
+}

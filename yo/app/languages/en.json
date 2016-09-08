@@ -480,7 +480,12 @@
 				"replyButton": "Reply",
 				"upvotedBy": "Upvoted by ",
 				"otherVotes": "and {{number}} others",
-				"otherVote": "and one other"
+				"otherVote": "and one other",
+
+				"addCommentTextPlaceholderTimemarked": "Help {{name}}? You are now testing the new comment system - more info on the forums, I will provide a link with the full description once it gets out of beta",
+				"timemarkedCommentExplanation": "You have comments waiting to be published on ",
+				"timemarkedCommentExplanation2": "They will all be published once you hit the \"add comment\" button",
+				"commentMarked": "turn {{turn}}"
 			},
 			"askProButton": "Ask a Pro",
 			"askProTooltip": "Get professional advice on your review",

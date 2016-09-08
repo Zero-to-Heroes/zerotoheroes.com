@@ -57,10 +57,14 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 				}
 
 				$scope.goToTimestamp = function(timeString) {
-					// $log.debug('calling externalPlayer goToTimestamp', $scope.externalPlayer)
+					$log.debug('calling externalPlayer goToTimestamp', $scope.externalPlayer, timeString)
 					$scope.externalPlayer.goToTimestamp(timeString)
 					if ($scope.config.onTimestampChanged)
 						$scope.config.onTimestampChanged(timeString)
+				}
+
+				$scope.getCurrentTimestamp = function(timeString) {
+					return $scope.externalPlayer.getCurrentTimestamp()
 				}
 
 				$scope.onVideoInfoUpdated = function() {
@@ -71,6 +75,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 				$scope.config.initPlayer = $scope.initPlayer
 				$scope.config.goToTimestamp = $scope.goToTimestamp
 				$scope.config.onVideoInfoUpdated = $scope.onVideoInfoUpdated
+				$scope.config.getCurrentTimestamp = $scope.getCurrentTimestamp
 			}
 		}
 	}

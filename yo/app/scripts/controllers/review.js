@@ -5,13 +5,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.debugTimestamp = Date.now()
 		// $log.debug('init review controller at ', $scope.debugTimestamp)
-		$scope.newComment = {};
 		$scope.coaches = []
 		$scope.selectedCoach
 
 		$scope.User = User;
 		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
 		$scope.config = SportsConfig[$scope.sport]
+		$scope.commentController = {}
 
 		$scope.controlFlow = {
 			pluginsLoaded: false,
@@ -174,33 +174,24 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		})
 		$scope.activatePlugins = function() {
 			// $log.debug('activating plugins at ', Date.now() - $scope.debugTimestamp)
-			$scope.mediaPlayer.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, function() {
+			$scope.mediaPlayer.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, function(player) {
 				// $log.debug('media player init activated at ', Date.now() - $scope.debugTimestamp)
 				// $scope.controlFlow.pluginsReady = true
+				player.onTurnChanged(function(turn) {
+					$log.debug('turn changed', turn)
+					if ($scope.commentController.onTurnChanged) {
+						$scope.commentController.onTurnChanged(turn)
+					}
+				})
 
 				$timeout(function() {
 					$scope.updateVideoInformation($scope.review)
 				})
 				$scope.handleUrlParameters()
 				// $log.debug('call to activate plugins completed')
+
 			})
 		}
-
-		// $scope.$watch('controlFlow.pluginsReady', function (newVal, oldVal) {
-		// 	// $log.debug('pluginsReady?', newVal, oldVal);
-		// 	if (newVal) {
-		// 		// $log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
-		// 		// $scope.review = $scope.review
-				
-		// 	}
-		// })
-
-		// $scope.setExternalPlayer = function(externalPlayer) {
-		// 	$scope.controlFlow.pluginsReady = true
-		// 	// $scope.player1ready = true
-		// 	$scope.externalPlayer = externalPlayer
-		// 	// $log.debug('externalPlayer', $scope.externalPlayer)
-		// }
 
 		//===============
 		// URL parameters
@@ -217,24 +208,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if ($location.search().ts) {
 				var ts = decodeURIComponent($location.search().ts)
 				ts = ts.replace(new RegExp('%2E', 'g'), '.')
-				// $log.debug('calling mediaplayer goToTimestamp')
+				$log.debug('calling mediaplayer goToTimestamp', ts, $location.search().ts)
 				$scope.mediaPlayer.goToTimestamp(ts) 
-
-				// $log.debug('replaced ts', ts)
-				// if (!$scope.player1ready) {
-				// 	// $log.debug('waiting for media player', $scope.player1ready)
-				// 	$timeout(function() { $scope.handleUrlParameters()}, 100)
-				// }
-				// else {
-				// 	// $log.debug('ts parameter', ts)
-				// 	$timeout(function() { 
-				// 		// Default to wide mode, which is probably what we expect, since we link to a video directly
-				// 		// Issue with replay player, need to handle this differently
-				// 		// $scope.playerControls.wideMode = true
-				// 		// $log.debug('going to timestamp')
-				// 		$scope.mediaPlayer.goToTimestamp(ts) 
-				// 	})
-				// }
 			}
 		}
 	
@@ -267,72 +242,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Comments
 		//===============
-		$scope.triggerNewCommentEdition = function() {
-			$scope.addingComment = true
-			$timeout(function() {
-				$('#newCommentArea')[0].focus()
-			})
-		}
-		$scope.addComment = function() {
-			$scope.$broadcast('show-errors-check-validity');
-			if ($scope.commentForm.$valid) {
-				if (!User.isLoggedIn()) {
-					$scope.onAddComment = true;
-					$rootScope.$broadcast('account.signup.show', {identifier: $scope.newComment.author});
-				}
-				// Otherwise directly proceed to the upload
-				else {
-					$scope.uploadComment();
-				}
-			}
-		};
-
-		$scope.cancelComment = function() {
-			$scope.newComment = {};
-			$scope.commentForm.$setPristine();
-			$scope.$broadcast('show-errors-reset');
-			$scope.mediaPlayer.onCancelEdition()
-			$scope.addingComment = false;
-		};
-
-		$scope.uploadComment = function() {
-			$scope.mediaPlayer.preUploadComment($scope.review, $scope.newComment)
-			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
-				function(data) {
-					$scope.showHelp = false;
-					$scope.newComment = {};
-					$scope.commentForm.$setPristine();
-					$scope.review.comments = data.comments
-					$scope.review.reviewVideoMap = data.reviewVideoMap || {};
-		  			$scope.review.canvas = data.canvas;
-		  			$scope.review.subscribers = data.subscribers;
-		  			$scope.review.plugins = data.plugins;
-		  			if ($scope.review.canvas) {
-						angular.forEach($scope.review.canvas, function(value, key) {
-							//$log.log('review canvas include', key);
-						});
-					}
-					if (data.tempCanvas) {
-						angular.forEach(data.tempCanvas, function(value, key) {
-							//$log.log('adding new canvas to the review', key, value);
-							$scope.review.canvas[key] = value;
-						});
-						//$log.log('review canvas are now', $scope.review.canvas);
-					}
-					$scope.$broadcast('show-errors-reset');
-					$scope.addingComment = false;
-					if (data.text.match(timestampOnlyRegex)) {
-						//$log.log('incrementing timestamps after comment upload');
-						User.incrementTimestamps();
-					}
-				}, 
-				function(error) {
-					// Error handling
-					$log.error(error);
-				}
-			);
-		}
-
 
 		//===============
 		// Subscription

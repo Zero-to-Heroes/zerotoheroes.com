@@ -49,6 +49,10 @@ public class Comment implements HasText, HasReputation {
 	@Transient
 	private Map<String, String> tempCanvas = new HashMap<>();
 
+	// The time marker of the comment. Can be a timestamp (videos) or a turn
+	// number (replay)
+	private String timestamp;
+
 	@Override
 	public Reputation getReputation() {
 		if (reputation == null) {

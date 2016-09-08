@@ -102,6 +102,7 @@
 				<div ng-show="selectedCoach">
 					<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
 				</div>
+
 				<h3 class="comments-headline">{{ 'global.review.comment.commentsHeadline' | translate }}</h3>
 				<div class="comments-links">
 					<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed() && User.isLoggedIn()" title="{{ 'global.review.comment.unsubscribeReviewTooltip' | translate }}">{{ 'global.review.comment.unsubscribeReview' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
@@ -109,15 +110,14 @@
 					<a class="link-minor link-nodeco" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</a>
 				</div>
 
-
 				<comment-editor review="review" media-player="mediaPlayer" config="config" plugins="plugins" controller="commentController"></comment-editor>
 
 				<div ng-if="!controlFlow.reviewDisplayed">
 					<div class="loading">{{ 'global.review.loadingComments' | translate }}</span></div>
 				</div>
+
 				<div ng-if="controlFlow.reviewDisplayed">
-					<comment ng-repeat="comment in review.comments" comment="comment" comment-index="$index" media-player="mediaPlayer" plugins="plugins" config="config" sport="sport"></comment>
-					<!-- <comment ng-repeat="comment in review.comments" comment="comment" comment-index="$index" media-player="mediaPlayer" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" canvas-state="canvasState" plugins="plugins" config="config" sport="sport"></comment> -->
+					<comment-display review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport"></comment-display>
 				</div>
 
 				<!-- Prevent scrolling center area if we're already at the bottom -->

@@ -2,7 +2,7 @@ var services = angular.module('services');
 services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage', 
 	function ($log, angularLoad, $parse, localStorage) {
 		var service = {};
-		var dev = true
+		var dev = false
 
 		service =
 			{
@@ -191,7 +191,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			return plugins
 		}
 
-		service.executePlugin = function(scope, review, plugin, target) {
+		service.executePlugin = function(review, plugin, target) {
 			// $log.debug('Executing lpugin', plugin, target, window['hsarenadraft']);
 			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].execute) return target;
 			// $log.debug('\tFound plugin to execute', window[plugin.name].execute)
@@ -199,7 +199,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			return window[plugin.name].execute(review, target);
 		}
 
-		service.preProcessPlugin = function(scope, review, plugin, target) {
+		service.preProcessPlugin = function(review, plugin, target) {
 			// $log.debug('Executing lpugin', plugin, target);
 			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].preProcess) return target;
 			// $log.debug('\tFound plugin to execute')

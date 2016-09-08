@@ -151,8 +151,8 @@
   margin-right: 5px;
 }
 .video-comment.multi-comment .comments-recap a:last-of-type:before {
-  content: " and ";
-  margin-right: 5px;
+  content: "and ";
+  margin-right: 0;
 }
 .video-comment.multi-comment .comments-recap a:first-of-type:before {
   content: "";

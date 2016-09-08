@@ -1,0 +1,4 @@
+<div ng-switch="review.useV2comments">
+	<comment-display-timemarked ng-switch-when="unused" review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport"></comment-display-timemarked>
+	<comment-display-legacy ng-switch-default review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport"></comment-display-legacy>
+</div>

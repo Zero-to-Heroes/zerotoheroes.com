@@ -234,7 +234,10 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			}
 			else {
 				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js' + version, skipCache: pluginObj.dev }).then(function () {
+					$log.debug('loaded plugin', pluginObj)
 					plugins.push(pluginObj)
+				}, function(error) {
+					$log.error('error while loading plugin from loadPlugin', pluginObj, error)
 				})
 				angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css' + version).then(function() {
 					// $log.debug('loaded css', plugin, '/plugins/' + plugin + '/' + plugin + '.css' + version);
@@ -250,7 +253,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			var executePlugin = function(plugin) {
 				externalPlayer = window[plugin.name]
 				if (!window[plugin.name]) {
-					$log.error('external player not loaded on window', plugin)
+					$log.error('external player not loaded on window, retrying load', plugin)
+					service.loadPlugin([], plugin)
 				}
 				// $log.debug('loaded externalPlayer is', externalPlayer)
 				try {
@@ -314,6 +318,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 
 			return externalPlayer;
 		}
+
 
 		service.getAdditionalSupportedTypes = function(sport) {
 			var supportedTypes = [];

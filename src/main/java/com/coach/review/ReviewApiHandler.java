@@ -312,7 +312,7 @@ public class ReviewApiHandler {
 		// Create the entry on the database
 		review.setCreationDate(new Date());
 		review.setLastModifiedBy(review.getAuthor());
-		review.setUseV2comments(true);
+		// review.setUseV2comments(true);
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		// subscriptionManager.subscribe(review.getSport(),
@@ -450,7 +450,14 @@ public class ReviewApiHandler {
 
 		for (String turn : multiComment.keySet()) {
 			Comment comment = multiComment.get(turn);
-			comment.setTimestamp(turn);
+			// TODO: unhardcode this - we want the timestamps to be easily
+			// sortable
+			if ("mulligan".equalsIgnoreCase(turn)) {
+				comment.setTimestamp("00" + turn);
+			}
+			else {
+				comment.setTimestamp(turn);
+			}
 
 			log.debug("\tadding comment " + multiComment);
 
@@ -473,6 +480,8 @@ public class ReviewApiHandler {
 	}
 
 	private void addCommentToReview(Review review, Comment comment, User user) {
+		if (StringUtils.isNullOrEmpty(comment.getText())) { return; }
+
 		addAuthorInformation(review.getSport(), comment, user.getUsername());
 		comment.setCreationDate(new Date());
 		review.addComment(comment);

@@ -10,7 +10,8 @@ app.directive('commentDisplay', ['$log', 'User', 'Api', '$parse', '$rootScope', 
 				config: '=',
 				mediaPlayer: '=',
 				plugins: '=',
-				sport: '='
+				sport: '=',
+				controller: '='
 			},
 			link: function ($scope, element, attrs) {
 			},

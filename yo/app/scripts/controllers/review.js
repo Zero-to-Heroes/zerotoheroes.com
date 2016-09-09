@@ -11,7 +11,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.User = User;
 		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
 		$scope.config = SportsConfig[$scope.sport]
-		$scope.commentController = {}
+		$scope.commentEditorController = {}
+		$scope.commentDisplayController = {}
 
 		$scope.controlFlow = {
 			pluginsLoaded: false,
@@ -59,14 +60,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// Load the review
 		$scope.initReview = function() {
 			$scope.restrictedAccess = false
-			//$log.debug('initializing review');
-			// $log.debug('Loding review at ', (Date.now() - $scope.debugTimestamp))
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
-					// $log.debug('Received review at ', (Date.now() - $scope.debugTimestamp))
 					$scope.review = data
-					// $scope.useVideo = data.key ? true : false;
-					// $rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
+
+					// default sorting of comments
+					if ($scope.review.useV2comments)
+						$scope.review.commentSortCriteria = 'chronological'
 
 					TagService.filterOut(undefined, function(data) {
 						$scope.allowedTags = data
@@ -179,8 +179,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				// $scope.controlFlow.pluginsReady = true
 				player.onTurnChanged(function(turn) {
 					$log.debug('turn changed', turn)
-					if ($scope.commentController.onTurnChanged) {
-						$scope.commentController.onTurnChanged(turn)
+					if ($scope.commentEditorController.onTurnChanged) {
+						$scope.commentEditorController.onTurnChanged(turn)
+					}
+					if ($scope.commentDisplayController.onTurnChanged) {
+						$scope.commentDisplayController.onTurnChanged(turn)
 					}
 				})
 

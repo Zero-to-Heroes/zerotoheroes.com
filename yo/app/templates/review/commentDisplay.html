@@ -1,4 +1,10 @@
-<div ng-switch="review.useV2comments">
-	<comment-display-timemarked ng-switch-when="unused" review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport"></comment-display-timemarked>
-	<comment-display-legacy ng-switch-default review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport"></comment-display-legacy>
+<!-- Dropdown to sort the criteria. Don't show if in the old comment system -->
+<div ng-show="revieww.useV2comments">
+TODO: Choose your sorting order best/chronological
+</div>
+
+
+<div ng-switch="review.commentSortCriteria">
+	<comment-display-timemarked ng-switch-when="chronological" review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport" controller="controller"></comment-display-timemarked>
+	<comment-display-legacy ng-switch-default review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport" controller="controller"></comment-display-legacy>
 </div>

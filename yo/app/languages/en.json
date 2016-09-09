@@ -617,7 +617,7 @@
 			"descriptionPlaceholderNoVideo": "Any additional information?",
 			"timestampTranslationInfo": "It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)",
 			"uploadButton": "Start upload",
-			"showGuide": "Getting the most out of your review"
+			"showGuide": "How to get the most out of your review"
 		},
 		"welcome": {
 			"headlineLogged": "Welcome back {{name}}!",

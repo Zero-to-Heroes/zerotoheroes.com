@@ -110,14 +110,14 @@
 					<a class="link-minor link-nodeco" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</a>
 				</div>
 
-				<comment-editor review="review" media-player="mediaPlayer" config="config" plugins="plugins" controller="commentController"></comment-editor>
+				<comment-editor review="review" media-player="mediaPlayer" config="config" plugins="plugins" controller="commentEditorController"></comment-editor>
 
 				<div ng-if="!controlFlow.reviewDisplayed">
 					<div class="loading">{{ 'global.review.loadingComments' | translate }}</span></div>
 				</div>
 
 				<div ng-if="controlFlow.reviewDisplayed">
-					<comment-display review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport"></comment-display>
+					<comment-display review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport" controller="commentDisplayController"></comment-display>
 				</div>
 
 				<!-- Prevent scrolling center area if we're already at the bottom -->

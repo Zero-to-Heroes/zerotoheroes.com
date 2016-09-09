@@ -233,8 +233,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 				// $log.debug('not reloading css', plugin);
 			}
 			else {
-				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js' + version, skipCache: pluginObj.dev }).then(function () {
-					$log.debug('loaded plugin', pluginObj, window[pluginObj.name])
+				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js', unique: version, skipCache: pluginObj.dev }).then(function () {
+					$log.debug('loaded plugin', pluginObj, window[pluginObj.name], window)
 					plugins.push(pluginObj)
 					if (callback)
 						callback()
@@ -262,7 +262,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							initPlayer(config, review, activePlugins, pluginNames, callback)
 						}
 						else {
-							$log.debug('plugin loaded, but still not on window')
+							$log.debug('plugin loaded, but still not on window', window)
 						}
 					})
 				}
@@ -300,7 +300,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							// Clearing the cache, not sure it's really helpful
 							basket.clear(true)
 							// Expires after 10 days (usually new versions are more frequent than this)
-							basket.require({ url: '/plugins/' + plugin.name + '/' + plugin.name + '.js' + version, skipCache: plugin.dev, expire: 24 * 10 }).then(function () {
+							basket.require({ url: '/plugins/' + plugin.name + '/' + plugin.name + '.js',  unique: version, skipCache: plugin.dev, expire: 24 * 10 }).then(function () {
 								// $log.debug('externalPlayer loaded')
 								executePlugin(plugin)
 								// $log.debug('externalPlayer executed')

@@ -223,7 +223,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			}
 		}
 
-		service.loadPlugin = function(plugins, pluginObj) {
+		service.loadPlugin = function(plugins, pluginObj, callback) {
 			var plugin = pluginObj.name
 			var version = pluginObj.version ? '?v=' + pluginObj.version : ''
 
@@ -234,8 +234,10 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			}
 			else {
 				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js' + version, skipCache: pluginObj.dev }).then(function () {
-					$log.debug('loaded plugin', pluginObj)
+					$log.debug('loaded plugin', pluginObj, window[pluginObj.name])
 					plugins.push(pluginObj)
+					if (callback)
+						callback()
 				}, function(error) {
 					$log.error('error while loading plugin from loadPlugin', pluginObj, error)
 				})
@@ -254,7 +256,15 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 				externalPlayer = window[plugin.name]
 				if (!window[plugin.name]) {
 					$log.error('external player not loaded on window, retrying load', plugin)
-					service.loadPlugin([], plugin)
+					service.loadPlugin([], plugin, function() {
+						if (window[plugin.name]) {
+							$log.debug('plugin loaded, retrying player init')
+							initPlayer(config, review, activePlugins, pluginNames, callback)
+						}
+						else {
+							$log.debug('plugin loaded, but still not on window')
+						}
+					})
 				}
 				// $log.debug('loaded externalPlayer is', externalPlayer)
 				try {

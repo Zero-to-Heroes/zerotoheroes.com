@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', '$location', 
-	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse, $location) {
+app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', '$location', 'TextParserService', 
+	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse, $location, TextParserService) {
 
 		return {
 			restrict: 'E',
@@ -21,7 +21,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				// clearTemporaryCanvas: '=',
 				plugins: '=',
 				config: '=',
-				sport: '='
+				sport: '=',
+				review: '='
 			},
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {
@@ -31,11 +32,10 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 
 				$scope.User = User;
 				//$scope.goToTimestamp = $scope.$parent.goToTimestamp;
-				$scope.parseText = $scope.$parent.parseText;
 				//$scope.clearTemporaryCanvas = $scope.$parent.clearTemporaryCanvas;
 
-				$scope.review = $scope.$parent.review;
-				$scope.API = $scope.$parent.API;
+				// $scope.review = $scope.$parent.review;
+				// $scope.API = $scope.$parent.API;
 				$scope.reply = {};
 
 				$scope.$watch($scope.comment, function() {
@@ -43,9 +43,9 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				});
 
 
-				$scope.$watch($scope.$parent.API, function() {
-					$scope.API = $scope.$parent.API
-				})
+				// $scope.$watch($scope.$parent.API, function() {
+				// 	$scope.API = $scope.$parent.API
+				// })
 
 
 
@@ -89,10 +89,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 		  					$scope.review.plugins = data.plugins;
 		  					$scope.setCommentText(comment, newComment.text);
 		  					$log.log('updating plugins', $scope.review.plugins);
-		  			// 		if (data.text.match(timestampOnlyRegex)) {
-							// 	$log.log('incrementing timestamps after comment upload');
-							// 	User.incrementTimestamps();
-							// }
 		  				}, 
 		  				function(error) {
 		  					// Error handling
@@ -102,10 +98,9 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.setCommentText = function(comment, text) {
-					// $log.debug('setting comment text', comment, text)
-					comment.text = escapeHtml(text);
+					comment.text = escapeHtml(text)
 					// Add timestamps
-					comment.compiledText = $scope.parseText(comment.text);
+					comment.compiledText = TextParserService.parseText($scope.review, comment.text, $scope.plugins)
 					// Parse markdown
 					comment.markedText = marked(comment.compiledText || '');
 		  			comment.editing = false;

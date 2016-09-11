@@ -1,0 +1,7 @@
+<div ng-repeat="turn in getCommentTurns()" ng-class="{'inactive': turn.timestamp != getCurrentTurn()}">
+
+	<h2 ng-bind-html="getTurnLabel(turn)"></h2>
+
+	<comment ng-repeat="comment in getTurnComments(turn)" review="review" comment="comment" comment-index="$index" media-player="mediaPlayer" plugins="plugins" config="config" sport="sport"></comment>
+</div>
+

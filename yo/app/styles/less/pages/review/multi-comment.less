@@ -1,0 +1,29 @@
+.video-comment.multi-comment {
+
+	.comments-recap {
+		a:after {
+			content: ",";
+			margin-right: 5px;
+		}
+
+		a:last-of-type:before {
+			content: "and ";
+			margin-right: 0;
+		}
+
+		a:first-of-type:before {
+			content: "";
+			margin-right: 0;
+		}
+
+		a:last-of-type:after {
+			content: "";
+			margin-right: 0;
+		}
+
+		.explanation-second-part {
+			display: block;
+		}
+	}
+	
+}

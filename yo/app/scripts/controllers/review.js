@@ -1,17 +1,18 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 'CoachService', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService, CoachService) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 'CoachService', 'TextParserService', 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService, CoachService, TextParserService) { 
 
 		$scope.debugTimestamp = Date.now()
 		// $log.debug('init review controller at ', $scope.debugTimestamp)
-		$scope.newComment = {};
 		$scope.coaches = []
 		$scope.selectedCoach
 
 		$scope.User = User;
 		$scope.sport = $routeParams.sport ? $routeParams.sport.toLowerCase() : $routeParams.sport;
 		$scope.config = SportsConfig[$scope.sport]
+		$scope.commentEditorController = {}
+		$scope.commentDisplayController = {}
 
 		$scope.controlFlow = {
 			pluginsLoaded: false,
@@ -59,14 +60,13 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// Load the review
 		$scope.initReview = function() {
 			$scope.restrictedAccess = false
-			//$log.debug('initializing review');
-			// $log.debug('Loding review at ', (Date.now() - $scope.debugTimestamp))
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
-					// $log.debug('Received review at ', (Date.now() - $scope.debugTimestamp))
 					$scope.review = data
-					// $scope.useVideo = data.key ? true : false;
-					// $rootScope.$broadcast('user.activity.view', {reviewId: $routeParams.reviewId});
+
+					// default sorting of comments
+					if ($scope.review.useV2comments)
+						$scope.review.commentSortCriteria = 'chronological'
 
 					TagService.filterOut(undefined, function(data) {
 						$scope.allowedTags = data
@@ -174,33 +174,27 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		})
 		$scope.activatePlugins = function() {
 			// $log.debug('activating plugins at ', Date.now() - $scope.debugTimestamp)
-			$scope.mediaPlayer.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, function() {
+			$scope.mediaPlayer.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, function(player) {
 				// $log.debug('media player init activated at ', Date.now() - $scope.debugTimestamp)
 				// $scope.controlFlow.pluginsReady = true
+				player.onTurnChanged(function(turn) {
+					$log.debug('turn changed', turn)
+					if ($scope.commentEditorController.onTurnChanged) {
+						$scope.commentEditorController.onTurnChanged(turn)
+					}
+					if ($scope.commentDisplayController.onTurnChanged) {
+						$scope.commentDisplayController.onTurnChanged(turn)
+					}
+				})
 
 				$timeout(function() {
 					$scope.updateVideoInformation($scope.review)
 				})
 				$scope.handleUrlParameters()
 				// $log.debug('call to activate plugins completed')
+
 			})
 		}
-
-		// $scope.$watch('controlFlow.pluginsReady', function (newVal, oldVal) {
-		// 	// $log.debug('pluginsReady?', newVal, oldVal);
-		// 	if (newVal) {
-		// 		// $log.debug('plugins ready at ', (Date.now() - $scope.debugTimestamp))
-		// 		// $scope.review = $scope.review
-				
-		// 	}
-		// })
-
-		// $scope.setExternalPlayer = function(externalPlayer) {
-		// 	$scope.controlFlow.pluginsReady = true
-		// 	// $scope.player1ready = true
-		// 	$scope.externalPlayer = externalPlayer
-		// 	// $log.debug('externalPlayer', $scope.externalPlayer)
-		// }
 
 		//===============
 		// URL parameters
@@ -217,24 +211,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if ($location.search().ts) {
 				var ts = decodeURIComponent($location.search().ts)
 				ts = ts.replace(new RegExp('%2E', 'g'), '.')
-				// $log.debug('calling mediaplayer goToTimestamp')
+				$log.debug('calling mediaplayer goToTimestamp', ts, $location.search().ts)
 				$scope.mediaPlayer.goToTimestamp(ts) 
-
-				// $log.debug('replaced ts', ts)
-				// if (!$scope.player1ready) {
-				// 	// $log.debug('waiting for media player', $scope.player1ready)
-				// 	$timeout(function() { $scope.handleUrlParameters()}, 100)
-				// }
-				// else {
-				// 	// $log.debug('ts parameter', ts)
-				// 	$timeout(function() { 
-				// 		// Default to wide mode, which is probably what we expect, since we link to a video directly
-				// 		// Issue with replay player, need to handle this differently
-				// 		// $scope.playerControls.wideMode = true
-				// 		// $log.debug('going to timestamp')
-				// 		$scope.mediaPlayer.goToTimestamp(ts) 
-				// 	})
-				// }
 			}
 		}
 	
@@ -267,72 +245,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Comments
 		//===============
-		$scope.triggerNewCommentEdition = function() {
-			$scope.addingComment = true
-			$timeout(function() {
-				$('#newCommentArea')[0].focus()
-			})
-		}
-		$scope.addComment = function() {
-			$scope.$broadcast('show-errors-check-validity');
-			if ($scope.commentForm.$valid) {
-				if (!User.isLoggedIn()) {
-					$scope.onAddComment = true;
-					$rootScope.$broadcast('account.signup.show', {identifier: $scope.newComment.author});
-				}
-				// Otherwise directly proceed to the upload
-				else {
-					$scope.uploadComment();
-				}
-			}
-		};
-
-		$scope.cancelComment = function() {
-			$scope.newComment = {};
-			$scope.commentForm.$setPristine();
-			$scope.$broadcast('show-errors-reset');
-			$scope.mediaPlayer.onCancelEdition()
-			$scope.addingComment = false;
-		};
-
-		$scope.uploadComment = function() {
-			$scope.mediaPlayer.preUploadComment($scope.review, $scope.newComment)
-			Api.Reviews.save({reviewId: $scope.review.id}, $scope.newComment, 
-				function(data) {
-					$scope.showHelp = false;
-					$scope.newComment = {};
-					$scope.commentForm.$setPristine();
-					$scope.review.comments = data.comments
-					$scope.review.reviewVideoMap = data.reviewVideoMap || {};
-		  			$scope.review.canvas = data.canvas;
-		  			$scope.review.subscribers = data.subscribers;
-		  			$scope.review.plugins = data.plugins;
-		  			if ($scope.review.canvas) {
-						angular.forEach($scope.review.canvas, function(value, key) {
-							//$log.log('review canvas include', key);
-						});
-					}
-					if (data.tempCanvas) {
-						angular.forEach(data.tempCanvas, function(value, key) {
-							//$log.log('adding new canvas to the review', key, value);
-							$scope.review.canvas[key] = value;
-						});
-						//$log.log('review canvas are now', $scope.review.canvas);
-					}
-					$scope.$broadcast('show-errors-reset');
-					$scope.addingComment = false;
-					if (data.text.match(timestampOnlyRegex)) {
-						//$log.log('incrementing timestamps after comment upload');
-						User.incrementTimestamps();
-					}
-				}, 
-				function(error) {
-					// Error handling
-					$log.error(error);
-				}
-			);
-		}
-
 
 		//===============
 		// Subscription
@@ -449,7 +361,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		  				$scope.review.plugins = data.plugins;
 		  				//$log.log('plugins', $scope.review.plugins);
 						$scope.updateVideoInformation(data);
-		  				if (data.text.match(timestampOnlyRegex)) {
+		  				if (data.text.match(TextParserService.timestampOnlyRegex)) {
 							// $log.log('incrementing timestamps after comment upload');
 							User.incrementTimestamps();
 						}
@@ -470,14 +382,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			var text = data.text;
 			$scope.review.text = escapeHtml(text);
 			// Add timestamps - if do it in the other order, turns are not properly parsed. Haven't looked why
-			$scope.review.compiledText = $scope.parseText($scope.review.text);
+			$scope.review.compiledText = TextParserService.parseText($scope.review, $scope.review.text, $scope.plugins);
 			// Parse markdown
 			$scope.review.markedText = marked($scope.review.compiledText || '');
 
 			// TODO: don't add plugin dependency here
 			if ($scope.review.plugins && $scope.review.plugins.hearthstone && $scope.review.plugins.hearthstone.parseDecks && $scope.review.plugins.hearthstone.parseDecks.reviewDeck) {
 				// $log.debug('parsing review deck')
-				var compiledDeck = $scope.parseText($scope.review.plugins.hearthstone.parseDecks.reviewDeck)
+				var compiledDeck = TextParserService.parseText($scope.review, $scope.review.plugins.hearthstone.parseDecks.reviewDeck, $scope.plugins)
 				// $log.debug('parsed')
 				$scope.review.plugins.hearthstone.parseDecks.markedReviewDeck = marked(compiledDeck)
 			}
@@ -534,122 +446,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Timestamp controls
 		//===============
-		// (m)m:(s)s:(SSS) format
-		// then an optional + sign
-		// if present, needs at least either p, s or l
-		var timestampRegex = /\d?\d:\d?\d(:\d\d\d)?(l|c|r|h)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?(;[[:blank:]]|\s)/gm;
-		var timestampRegexLink = />\d?\d:\d?\d(:\d\d\d)?(l|c|r|h)?(\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?(l|c|r)?)?(\+)?(p)?(s(\d?\.?\d?\d?)?)?(L(\d?\.?\d?\d?)?)?(\[.+?\])?</gm;
-
-		$scope.parseText = function(comment) {
-			if (!comment) return '';
-
-			// Triggering the various plugins
-			if ($scope.plugins) {
-				// $log.debug('parsing text with plugins', $scope.plugins);
-				angular.forEach($scope.plugins, function(plugin) {
-					if (plugin) {
-						// $log.debug('executing plugin for text', plugin, prettyResult);
-						comment = SportsConfig.preProcessPlugin($scope, $scope.review, plugin, comment);
-					}
-				})
-			}
-
-			// Replacing timestamps
-			var result = comment.replace(timestampRegex, '<a ng-click="mediaPlayer.goToTimestamp(\'$&\')" class="ng-scope">$&</a>');
-			var linksToPrettify = result.match(timestampRegexLink);
-			var prettyResult = result;
-			if (linksToPrettify) {
-				//$log.log('linksToPrettify', linksToPrettify);
-				for (var i = 0; i < linksToPrettify.length; i++) {
-					var linkToPrettify = linksToPrettify[i];
-					var pretty = $scope.prettifyLink(linkToPrettify.substring(1, linkToPrettify.length - 1));
-					prettyResult = prettyResult.replace(linkToPrettify, 'title="' + pretty.tooltip + '">' + pretty.link + '<');
-				}
-			}
-
-			// Triggering the various plugins
-			if ($scope.plugins) {
-				// $log.debug('parsing text with plugins', $scope.plugins);
-				angular.forEach($scope.plugins, function(plugin) {
-					if (plugin) {
-						// $log.debug('executing plugin for text', plugin, prettyResult);
-						prettyResult = SportsConfig.executePlugin($scope, $scope.review, plugin, prettyResult);
-					}
-				})
-			}
-
-			return prettyResult;
-		};
-
-		var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/;
-		var millisecondsRegex = /:\d\d\d/;
-		var slowRegex = /\+s(\d?\.?\d?\d?)?/;
-		var playRegex = /\+p/;
-		var loopRegex = /L(\d?\.?\d?\d?)?/;
-		var externalRegex = /\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?/;
-		var externalIdRegex = /\([a-z0-9]+\)/;
-		var canvasRegex = /\[.+?\]/;
-		$scope.prettifyLink = function(timestamp) {
-			//$log.log('Prettifying', timestamp);
-			// Always keep the timestamp part
-			var prettyLink = '';
-			var tooltip = 'Go to ' + timestamp.match(timestampOnlyRegex)[0] + ' on the video';
-
-			// Put the timestamp
-			var time = timestamp.match(timestampOnlyRegex)[0];
-			// Remove the milliseconds (if any)
-			time = time.replace(millisecondsRegex, '');
-			prettyLink = prettyLink + time;
-
-			// Add icon for slow
-			var slow = timestamp.match(slowRegex);
-			if (slow) {
-				prettyLink = prettyLink + '<span class="glyphicon glyphicon-play inline-icon"></span><span class="glyphicon glyphicon-pause inline-icon" style="margin-left: -7px" title="Automatically plays video at timestamp and adds slow motion"></span>';
-			}
-
-			// Icon for play
-			var play = timestamp.match(playRegex);
-			if (play) {
-				prettyLink = prettyLink + '<span class="glyphicon glyphicon-play inline-icon" title="Automatically play video at timestamp"></span>';
-			}
-
-			// Icon for loop
-			var loop = timestamp.match(loopRegex);
-			if (loop) {
-				prettyLink = prettyLink + '<span class="glyphicon glyphicon-repeat inline-icon" title="Video will loop"></span>';
-			}
-
-			// Icon for canvas
-			var canvas = timestamp.match(canvasRegex);
-			if (canvas) {
-				prettyLink = prettyLink + '<span class="glyphicon glyphicon-picture inline-icon" title="There is a video drawing attached"></span>';
-			}
-
-			// Text for linked video
-			var externalVideo = timestamp.match(externalRegex);
-			if (externalVideo) {
-				var command = externalVideo[0].substring(1, externalVideo[0].length);
-				var externalTimestamp = command.match(timestampOnlyRegex)[0];
-				var externalId = command.match(externalIdRegex);
-				var externalIdText = externalId ? '. The linked video is /r/' + externalId[0].substring(1, externalId[0].length - 1) : '';
-				//$log.log('external video', command, externalTimestamp, externalId);
-				prettyLink = prettyLink + '<span class="glyphicon glyphicon-facetime-video inline-icon" title="Link to another video, starting at ' + externalTimestamp + externalIdText + '"></span>';
-			}
-
-			// Remove any residual '+' sign
-			//prettyLink = prettyLink.replace(/\+/, '');
-
-			return {link: prettyLink, tooltip: tooltip};
-		}
-
-		// $scope.goToTimestamp = function(timeString) {
-
-		// 	var encodedUrlTs = encodeURIComponent(timeString)
-		// 	encodedUrlTs = encodedUrlTs.replace(new RegExp('\\.', 'g'), '%2E')
-		// 	$location.search('ts', encodedUrlTs)
-
-		// 	$scope.mediaPlayer.goToTimestamp(timeString)
-		// }
+		
 
 		$scope.canEdit = function(review) {
 			//$log.log('can edit review?', User.getUser());

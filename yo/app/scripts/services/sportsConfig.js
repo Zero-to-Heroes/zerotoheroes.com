@@ -62,7 +62,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 21, dev: dev}, 
 							{name: 'parseDecks', version: 35, dev: dev}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 97, dev: dev},
+							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 98, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 18, dev: dev}
 						],
 						customCss: 'hearthstone.css?2'
@@ -191,7 +191,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			return plugins
 		}
 
-		service.executePlugin = function(scope, review, plugin, target) {
+		service.executePlugin = function(review, plugin, target) {
 			// $log.debug('Executing lpugin', plugin, target, window['hsarenadraft']);
 			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].execute) return target;
 			// $log.debug('\tFound plugin to execute', window[plugin.name].execute)
@@ -199,7 +199,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			return window[plugin.name].execute(review, target);
 		}
 
-		service.preProcessPlugin = function(scope, review, plugin, target) {
+		service.preProcessPlugin = function(review, plugin, target) {
 			// $log.debug('Executing lpugin', plugin, target);
 			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].preProcess) return target;
 			// $log.debug('\tFound plugin to execute')
@@ -235,6 +235,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			else {
 				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js', unique: version, skipCache: pluginObj.dev }).then(function () {
 					$log.debug('loaded plugin', pluginObj, window[pluginObj.name], window)
+					$log.debug('loaded plugin', pluginObj)
 					plugins.push(pluginObj)
 					if (callback)
 						callback()

@@ -480,7 +480,12 @@
 				"replyButton": "Reply",
 				"upvotedBy": "Upvoted by ",
 				"otherVotes": "and {{number}} others",
-				"otherVote": "and one other"
+				"otherVote": "and one other",
+
+				"addCommentTextPlaceholderTimemarked": "Help {{name}}? You are now testing the new comment system - more info on the forums, I will provide a link with the full description once it gets out of beta",
+				"timemarkedCommentExplanation": "You have comments waiting to be published on ",
+				"timemarkedCommentExplanation2": "They will all be published once you hit the \"add comment\" button",
+				"commentMarked": "turn {{turn}}"
 			},
 			"askProButton": "Ask a Pro",
 			"askProTooltip": "Get professional advice on your review",
@@ -612,7 +617,7 @@
 			"descriptionPlaceholderNoVideo": "Any additional information?",
 			"timestampTranslationInfo": "It looks like you are using timestamps and have changed the beginning time of your video. Don't worry that the timestamps text still reflects the original time of the video. We're making sure everything will be fine in the end :)",
 			"uploadButton": "Start upload",
-			"showGuide": "Getting the most out of your review"
+			"showGuide": "How to get the most out of your review"
 		},
 		"welcome": {
 			"headlineLogged": "Welcome back {{name}}!",

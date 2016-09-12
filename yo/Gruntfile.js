@@ -444,6 +444,23 @@ module.exports = function (grunt) {
 		}
 	},
 
+	replace: {
+        defaultI18n: {
+            options: {
+                patterns: [{
+                    match: 'content',
+                    replacement: '<%= JSON.stringify(grunt.file.readJSON(\'./app/languages/en.json\')) %>'
+                }]
+            },
+            files: [{
+                expand: true,
+                flatten: true,
+                src: ['<%= yeoman.app %>/conf/defaultI18n.js'],
+                dest: '<%= yeoman.app %>/scripts/services/'
+            }]
+        }
+    },
+
 	// Test settings
 	karma: {
 	  unit: {
@@ -464,6 +481,7 @@ module.exports = function (grunt) {
 		grunt.task.run([
 		  	'clean:server',
 			'ngconstant:development',
+			'replace:defaultI18n',
 			'less',
 			'copy:index',
 		  	'wiredep',
@@ -478,6 +496,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', [
 		'clean:server',
+		'replace:defaultI18n',
 		'concurrent:test',
 		'autoprefixer',
 		'connect:test',
@@ -487,6 +506,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'ngconstant:production',
+		'replace:defaultI18n',
 		'less',
 		'copy:index',
 		'wiredep',
@@ -509,6 +529,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build-dev', [
 		'clean:dist',
 		'ngconstant:development',
+		'replace:defaultI18n',
 		'less',
 		'copy:index',
 		'wiredep',

@@ -3,248 +3,249 @@
 /* App Module */
 
 var app = angular.module('app', [
-  'ngSanitize',
-  'angularFileUpload',
-  "com.2fdevs.videogular",
-  "com.2fdevs.videogular.plugins.controls",
-  "com.2fdevs.videogular.plugins.overlayplay",
-  "com.2fdevs.videogular.plugins.poster",
-  'ngRoute',
-  'controllers',
-  'services',
-  //'ui.bootstrap',
-  'ui-rangeSlider',
-  'ui.bootstrap.showErrors',
-  'mgcrea.ngStrap',
-  'duScroll',
-  'hc.marked',
-  'angular-logger',
-  'sprintf',
-  'RecursionHelper',
-  'viewhead',
-  'ngTagsInput',
-  'angularLoad',
-  'pascalprecht.translate',
-  'angulartics', 
-  'angulartics.google.analytics'
+	'ngSanitize',
+	'angularFileUpload',
+	"com.2fdevs.videogular",
+	"com.2fdevs.videogular.plugins.controls",
+	"com.2fdevs.videogular.plugins.overlayplay",
+	"com.2fdevs.videogular.plugins.poster",
+	'ngRoute',
+	'controllers',
+	'services',
+	//'ui.bootstrap',
+	'ui-rangeSlider',
+	'ui.bootstrap.showErrors',
+	'mgcrea.ngStrap',
+	'duScroll',
+	'hc.marked',
+	'angular-logger',
+	'sprintf',
+	'RecursionHelper',
+	'viewhead',
+	'ngTagsInput',
+	'angularLoad',
+	'pascalprecht.translate',
+	'angulartics', 
+	'angulartics.google.analytics',
+	'services.defaultI18n'
 ]);
 
 app.config(['$routeProvider', '$locationProvider',
-  function($routeProvider, $locationProvider) {
+	function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
 	$locationProvider.hashPrefix('!');
 
 	// If you modify this, don't forget to modify the RouteController.java
 	$routeProvider.
-	  	// landing pages
-	  	when('/', {
+		// landing pages
+		when('/', {
 			redirectTo: '/hearthstone'
 			// templateUrl: 'views/landing/sport.html',
 			// controller: 'SportPageCtrl',
 			// isLandingPage: true,
 			// isFullPage: true,
 			// sport: 'all'
-	  	}).
-	  	when('/squash', {
+		}).
+		when('/squash', {
 			templateUrl: 'views/landing/sportLegacy.html',
 			controller: 'SportPageCtrl',
 			isLandingPage: true,
 			isFullPage: true,
 			sport: 'squash'
-	  	}).
-	  	when('/heroesofthestorm', {
+		}).
+		when('/heroesofthestorm', {
 			templateUrl: 'views/landing/sportLegacy.html',
 			controller: 'SportPageCtrl',
 			isLandingPage: true,
 			isFullPage: true,
 			sport: 'heroesofthestorm'
-	  	}).
-	  	when('/leagueoflegends', {
+		}).
+		when('/leagueoflegends', {
 			templateUrl: 'views/landing/sportLegacy.html',
 			controller: 'SportPageCtrl',
 			isLandingPage: true,
 			isFullPage: true,
 			sport: 'leagueoflegends'
-	  	}).
-	  	when('/badminton', {
+		}).
+		when('/badminton', {
 			templateUrl: 'views/landing/sportLegacy.html',
 			controller: 'SportPageCtrl',
 			isLandingPage: true,
 			isFullPage: true,
 			sport: 'badminton'
-	  	}).
-	  	when('/hearthstone', {
+		}).
+		when('/hearthstone', {
 			templateUrl: 'views/landing/sport.html',
 			controller: 'SportPageCtrl',
 			isLandingPage: true,
 			isFullPage: true,
 			sport: 'hearthstone'
-	  	}).
-	  	// Specific popular pages to redirect
-	  	when('/r/meta/568e2f13e4b0ae321c95b0cb/:title?', {
-	  		redirectTo: function() {
-		        window.location = 'http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/'
-		    }
-			// redirectTo: 'http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/'
-			// templateUrl: 'views/landing/sport.html',
-			// controller: 'SportPageCtrl',
-			// isLandingPage: true,
-			// isFullPage: true,
-			// sport: 'all'
-	  	}).
-	  	// site pages
-	 	// when('/upload', {
+		}).
+		// Specific popular pages to redirect
+		when('/r/meta/568e2f13e4b0ae321c95b0cb/:title?', {
+			redirectTo: function() {
+					window.location = 'http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/'
+			}
+		// redirectTo: 'http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/'
+		// templateUrl: 'views/landing/sport.html',
+		// controller: 'SportPageCtrl',
+		// isLandingPage: true,
+		// isFullPage: true,
+		// sport: 'all'
+		}).
+			// site pages
+		// when('/upload', {
 			// templateUrl: 'views/upload.html',
 			// controller: 'UploadDetailsCtrl',
 			// upload: true
-	  // 	}).
-	  // 	when('/s/upload', {
+		// 	}).
+		// 	when('/s/upload', {
 			// templateUrl: 'views/upload.html',
 			// controller: 'UploadDetailsCtrl',
 			// upload: true
-	  // 	}).
-	  	when('/s/:sport/upload/:uploadType?/:step?', {
+		// 	}).
+		when('/s/:sport/upload/:uploadType?/:step?', {
 			templateUrl: 'views/upload.html',
 			controller: 'UploadDetailsCtrl',
 			upload: true,
 			useFullWidth: true,
 			hideSideBar: true
-	  	}).
-	  	when('/s/:sport/coaches', {
+		}).
+		when('/s/:sport/coaches', {
 			templateUrl: 'views/coachListing.html',
 			controller: 'CoachListingCtrl',
 			menuItem: 'coaches'
-	  	}).
-	  	when('/s/:sport/search', {
+		}).
+		when('/s/:sport/search', {
 			templateUrl: 'views/search.html',
 			controller: 'SearchCtrl',
 			reloadOnSearch: false,
 			menuItem: 'search'
-	  	}).
-	  	when('/r/badminton/:reviewId/:reviewTitle?', {
-	  		redirectTo: '/'
-	  	}).
-	  	when('/r/squash/:reviewId/:reviewTitle?', {
-	  		redirectTo: '/'
-	  	}).
-	  	when('/r/heroesofthestorm/:reviewId/:reviewTitle?', {
-	  		redirectTo: '/'
-	  	}).
-	  	when('/r/leagueoflegends/:reviewId/:reviewTitle?', {
-	  		redirectTo: '/'
-	  	}).
-	  	when('/r/other/:reviewId/:reviewTitle?', {
-	  		redirectTo: '/'
-	  	}).
-	  	when('/r/:sport/:reviewId/:reviewTitle?', {
+		}).
+		when('/r/badminton/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+		when('/r/squash/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+		when('/r/heroesofthestorm/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+		when('/r/leagueoflegends/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+		when('/r/other/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+		when('/r/:sport/:reviewId/:reviewTitle?', {
 			templateUrl: 'views/review.html',
 			controller: 'ReviewCtrl',
 			reloadOnSearch: false,
 			hideSideBar: true,
 			useFullWidth: true,
 			menuItem: 'reviews'
-	  	}).
-	  // 	when('/reviews/:pageNumber?', {
+		}).
+		// 	when('/reviews/:pageNumber?', {
 			// templateUrl: 'views/videoListing.html',
 			// controller: 'VideoListingCtrl',
 			// reloadOnSearch: false
-	  // 	}).
-	  	when('/s/:sport/reviews/:pageNumber?', {
+		// 	}).
+		when('/s/:sport/reviews/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
 			reloadOnSearch: false,
 			menuItem: 'reviews'
-	  	}).
-	  	when('/s/:sport/getadvice', {
+		}).
+		when('/s/:sport/getadvice', {
 			redirectTo: '/s/:sport/upload'
-	  	}).
-	  	when('/s/:sport/allreviews', {
+		}).
+		when('/s/:sport/allreviews', {
 			redirectTo: '/s/:sport/reviews'
-	  	}).
-	  	when('/s/:sport/myVideos/:pageNumber?', {
+		}).
+		when('/s/:sport/myVideos/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
 			reloadOnSearch: false,
 			menuItem: 'myVideos'
-	  	}).
-	  	when('/s/:sport/myvideos/:pageNumber?', {
+		}).
+		when('/s/:sport/myvideos/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
 			reloadOnSearch: false,
 			menuItem: 'myVideos'
-	  	}).
-	  	when('/s/:sport/', {
+		}).
+		when('/s/:sport/', {
 			templateUrl: 'views/sportHome.html',
 			controller: 'SportHomeCtrl',
 			reloadOnSearch: false,
 			useFullWidth: true,
 			menuItem: 'home'
-	  	}).
-	  	when('/s/:sport/:choice', {
+		}).
+		when('/s/:sport/:choice', {
 			templateUrl: 'views/sportHome.html',
 			controller: 'SportHomeCtrl',
 			reloadOnSearch: false,
 			menuItem: 'home'
-	  	}).
-	  	// Coaches
-	  	when('/c/:coachName/:sport', {
+		}).
+		// Coaches
+		when('/c/:coachName/:sport', {
 			templateUrl: 'views/coachPage.html',
 			controller: 'CoachPageController',
 			menuItem: 'coaches'
-	  	}).
-	  	when('/coach/:coachName/:sport', {
+		}).
+		when('/coach/:coachName/:sport', {
 			templateUrl: 'views/coachPage.html',
 			controller: 'CoachPageController',
 			menuItem: 'coaches'
-	  	}).
-	  	// Users - inbox
-	  	when('/u/:userName/:sport/inbox/:subMenu', {
+		}).
+		// Users - inbox
+		when('/u/:userName/:sport/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
 			menuItem: 'inbox'
-	  	}).
-	  	when('/u/:userName/inbox/:subMenu', {
+		}).
+		when('/u/:userName/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
 			menuItem: 'inbox'
-	  	}).
-	  	when('/user/:userName/:sport/inbox/:subMenu', {
+		}).
+		when('/user/:userName/:sport/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
 			menuItem: 'inbox'
-	  	}).
-	  	when('/user/:userName/inbox/:subMenu', {
+		}).
+		when('/user/:userName/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',
 			controller: 'MessagesController',
 			menuItem: 'inbox'
-	  	}).
-	  	// Users - profile
-	  	when('/u/:userName/:subMenu', {
+		}).
+		// Users - profile
+		when('/u/:userName/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
 			menuItem: 'profile'
-	  	}).
-	  	when('/u/:userName/:sport/:subMenu', {
+		}).
+		when('/u/:userName/:sport/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
 			menuItem: 'profile'
-	  	}).
-	  	when('/user/:userName/:subMenu', {
+		}).
+		when('/user/:userName/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
 			menuItem: 'profile'
-	  	}).
-	  	when('/user/:userName/:sport/:subMenu', {
+		}).
+		when('/user/:userName/:sport/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
 			menuItem: 'profile'
-	  	}).
-	  	otherwise({
+		}).
+		otherwise({
 			redirectTo: '/'
-	  	});
-  }]);
+		});
+	}]);
 
 // Actually don't use the wrapper in the code
 // app.config(['markedProvider', function(markedProvider) {
@@ -256,7 +257,7 @@ app.config(['$routeProvider', '$locationProvider',
 // }])
 
 app.config(function (logEnhancerProvider) {
-   logEnhancerProvider.datetimePattern = 'YYYY/MM/DD HH:mm:ss:SSS';
+	 logEnhancerProvider.datetimePattern = 'YYYY/MM/DD HH:mm:ss:SSS';
 });
 
 app.config(['$analyticsProvider', function ($analyticsProvider) {
@@ -271,91 +272,105 @@ app.config(function (tagsInputConfigProvider) {
 	tagsInputConfigProvider.setActiveInterpolation('tagsInput', { placeholder: true, minTags: true, ngRequired: true });
 });
 
-app.config(['$translateProvider', '$windowProvider', function($translateProvider, $windowProvider) {
-	console.log('$windowProvider', $windowProvider, $translateProvider);
-	$translateProvider.useStaticFilesLoader({
-	  	prefix: '/languages/',
-	  	suffix: '.json'
-	});
-	$translateProvider.determinePreferredLanguage(function () {
-	  	// define a function to determine the language
-	  	// and return a language key
-	  	try {
-			if (!$windowProvider.$get().localStorage.language) {
-				var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
-				console.log('language is ', lang);
-				if (lang && lang.slice(0, 2) == 'fr') {
-					console.log('browser language is ', lang);
-					$windowProvider.$get().localStorage.language = 'fr';
-					return 'fr';
+app.config(['$translateProvider', '$windowProvider', 'defaultI18n', 
+	function($translateProvider, $windowProvider, defaultI18n) {
+		console.log('$windowProvider', $windowProvider, $translateProvider);
+
+		// Prevent FUOC pre loading english translations
+		// https://github.com/angular-translate/angular-translate/issues/921
+		$translateProvider.translations('en', defaultI18n.en);
+
+	    // Configure angular-translate to load static JSON files for each language
+		$translateProvider.useStaticFilesLoader({
+			prefix: '/languages/',
+			suffix: '.json'
+		})
+
+		$translateProvider.determinePreferredLanguage(function () {
+			// define a function to determine the language
+			// and return a language key
+			try {
+				if (!$windowProvider.$get().localStorage.language) {
+					var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
+					console.log('language is ', lang);
+					if (lang && lang.slice(0, 2) == 'fr') {
+						console.log('browser language is ', lang);
+						$windowProvider.$get().localStorage.language = 'fr';
+						return 'fr';
+					}
 				}
 			}
-		}
-		catch (e) {
-		}
-	  	return 'en';
-	});
-}]);
+			catch (e) {
+			}
+				return 'en';
+		})
+		$translateProvider.useLoaderCache(true)
+		$translateProvider.forceAsyncReload(true)
+
+		// Tells angular-translate to use the English language if translations are not available in current selected language
+	    $translateProvider.fallbackLanguage('en');
+	}
+]);
 
 app.config(function() {
 	// Configuring French locale
 	moment.locale('fr', {
-	    months : "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
-	    monthsShort : "janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.".split("_"),
-	    weekdays : "dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi".split("_"),
-	    weekdaysShort : "dim._lun._mar._mer._jeu._ven._sam.".split("_"),
-	    weekdaysMin : "Di_Lu_Ma_Me_Je_Ve_Sa".split("_"),
-	    longDateFormat : {
-	        LT : "HH:mm",
-	        LTS : "HH:mm:ss",
-	        L : "DD/MM/YYYY",
-	        LL : "D MMMM YYYY",
-	        LLL : "D MMMM YYYY LT",
-	        LLLL : "dddd D MMMM YYYY LT"
-	    },
-	    calendar : {
-	        sameDay: "[Aujourd'hui à] LT",
-	        nextDay: '[Demain à] LT',
-	        nextWeek: 'dddd [à] LT',
-	        lastDay: '[Hier à] LT',
-	        lastWeek: 'dddd [dernier à] LT',
-	        sameElse: 'L'
-	    },
-	    relativeTime : {
-	        future : "dans %s",
-	        past : "il y a %s",
-	        s : "quelques secondes",
-	        m : "une minute",
-	        mm : "%d minutes",
-	        h : "une heure",
-	        hh : "%d heures",
-	        d : "un jour",
-	        dd : "%d jours",
-	        M : "un mois",
-	        MM : "%d mois",
-	        y : "une année",
-	        yy : "%d années"
-	    },
-	    ordinalParse : /\d{1,2}(er|ème)/,
-	    ordinal : function (number) {
-	        return number + (number === 1 ? 'er' : 'ème');
-	    },
-	    meridiemParse: /PD|MD/,
-	    isPM: function (input) {
-	        return input.charAt(0) === 'M';
-	    },
-	    // in case the meridiem units are not separated around 12, then implement
-	    // this function (look at locale/id.js for an example)
-	    // meridiemHour : function (hour, meridiem) {
-	    //     return /* 0-23 hour, given meridiem token and hour 1-12 */
-	    // },
-	    meridiem : function (hours, minutes, isLower) {
-	        return hours < 12 ? 'PD' : 'MD';
-	    },
-	    week : {
-	        dow : 1, // Monday is the first day of the week.
-	        doy : 4  // The week that contains Jan 4th is the first week of the year.
-	    }
+		months : "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
+		monthsShort : "janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.".split("_"),
+		weekdays : "dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi".split("_"),
+		weekdaysShort : "dim._lun._mar._mer._jeu._ven._sam.".split("_"),
+		weekdaysMin : "Di_Lu_Ma_Me_Je_Ve_Sa".split("_"),
+		longDateFormat : {
+				LT : "HH:mm",
+				LTS : "HH:mm:ss",
+				L : "DD/MM/YYYY",
+				LL : "D MMMM YYYY",
+				LLL : "D MMMM YYYY LT",
+				LLLL : "dddd D MMMM YYYY LT"
+		},
+		calendar : {
+				sameDay: "[Aujourd'hui à] LT",
+				nextDay: '[Demain à] LT',
+				nextWeek: 'dddd [à] LT',
+				lastDay: '[Hier à] LT',
+				lastWeek: 'dddd [dernier à] LT',
+				sameElse: 'L'
+		},
+		relativeTime : {
+				future : "dans %s",
+				past : "il y a %s",
+				s : "quelques secondes",
+				m : "une minute",
+				mm : "%d minutes",
+				h : "une heure",
+				hh : "%d heures",
+				d : "un jour",
+				dd : "%d jours",
+				M : "un mois",
+				MM : "%d mois",
+				y : "une année",
+				yy : "%d années"
+		},
+		ordinalParse : /\d{1,2}(er|ème)/,
+		ordinal : function (number) {
+				return number + (number === 1 ? 'er' : 'ème');
+		},
+		meridiemParse: /PD|MD/,
+		isPM: function (input) {
+				return input.charAt(0) === 'M';
+		},
+		// in case the meridiem units are not separated around 12, then implement
+		// this function (look at locale/id.js for an example)
+		// meridiemHour : function (hour, meridiem) {
+		//     return /* 0-23 hour, given meridiem token and hour 1-12 */
+		// },
+		meridiem : function (hours, minutes, isLower) {
+				return hours < 12 ? 'PD' : 'MD';
+		},
+		week : {
+				dow : 1, // Monday is the first day of the week.
+				doy : 4  // The week that contains Jan 4th is the first week of the year.
+		}
 	});
 	moment.locale('en');
 })
@@ -412,7 +427,7 @@ app.directive('scrollable',  function ($window, $document, $log) {
 	return {
 		restrict: 'A',
 		link: function (scope, element, attrs) {
-		  if (attrs['scrollable'] != 'false') {
+			if (attrs['scrollable'] != 'false') {
 			// FF doesn't recognize mousewheel event, cf http://stackoverflow.com/questions/16788995/mousewheel-event-is-not-triggering-in-firefox-browser
 			element.on('mousewheel DOMMouseScroll', function (evt) {
 				var e = window.event || evt
@@ -460,7 +475,7 @@ app.directive('scrollable',  function ($window, $document, $log) {
 				newMarginTop = Math.min(0, newMarginTop);
 				element.css('marginTop', newMarginTop + 'px'); 
 			});
-		  }
+			}
 		}
 	};
 });
@@ -468,10 +483,10 @@ app.directive('scrollable',  function ($window, $document, $log) {
 
 var guid = function() {
 	function s4() {
-	  return Math.floor((1 + Math.random()) * 0x10000)
+		return Math.floor((1 + Math.random()) * 0x10000)
 		.toString(16)
 		.substring(1);
 	}
 	return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-	  s4() + '-' + s4() + s4() + s4();
-  }
+		s4() + '-' + s4() + s4() + s4();
+	}

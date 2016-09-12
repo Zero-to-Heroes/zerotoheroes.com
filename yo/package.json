@@ -37,6 +37,7 @@
     "grunt-ng-annotate": "^1.0.1",
     "grunt-ng-constant": "*",
     "grunt-processhtml": "^0.3.7",
+    "grunt-replace": "^1.0.1",
     "grunt-svgmin": "^2.0.1",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",

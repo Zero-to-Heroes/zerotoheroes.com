@@ -482,7 +482,7 @@
 				"otherVotes": "and {{number}} others",
 				"otherVote": "and one other",
 
-				"addCommentTextPlaceholderTimemarked": "Help {{name}}? You are now testing the new comment system - more info on the forums, I will provide a link with the full description once it gets out of beta",
+				"addCommentTextPlaceholderTimemarked": "Help {{name}}? You are now testing the new comment system - more info on the forums",
 				"timemarkedCommentExplanation": "You have comments waiting to be published on ",
 				"timemarkedCommentExplanation2": "They will all be published once you hit the \"add comment\" button",
 				"commentMarked": "turn {{turn}}",
@@ -498,7 +498,7 @@
 				"timemarked": {
 					"turns": {
 						"mulligan": "Mulligan and matchup",
-						"turn": "Turn"
+						"turn": "Turn "
 					}
 				}
 			},

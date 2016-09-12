@@ -54,6 +54,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				$scope.getTurnLabel = function(turn) {
 					$log.debug('parsing turn title', turn)
 					var text = TextParserService.parseText($scope.review, turn, $scope.plugins)
+					text = text.replace('>t', '>' + $translate.instant('global.review.comment.timemarked.turns.turn'))
 					$log.debug('parsed', text)
 					// if (turn == '00mulligan' || turn == 'mulligan')
 					// 	text = $translate.instant('global.review.comment.timemarked.turns.mulligan')

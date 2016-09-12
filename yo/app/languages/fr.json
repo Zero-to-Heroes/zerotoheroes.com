@@ -434,7 +434,27 @@
 				"replyButton": "Répondre",
 				"upvotedBy": "Upvoté par ",
 				"otherVotes": "et {{number}} autres",
-				"otherVote": "et un(e) autre"
+				"otherVote": "et un(e) autre",
+
+				"addCommentTextPlaceholderTimemarked": "Aidez {{name}}? Vous êtes en train de tester le nouveau système de commentaires. Plus d'infos sur les forums",
+				"timemarkedCommentExplanation": "Vous avez des commentaires en attente de publication sur ",
+				"timemarkedCommentExplanation2": "Ils seront tous publiés lorsque vous validerez avec le bouton \"ajouter commentaire \"",
+				"commentMarked": "tour {{turn}}",
+
+				"sort": {
+					"sortedbyLabel": "trier les commentaires par: ",
+					"best": "meilleurs",
+					"byturn": "tour par tour",
+					"dampenOutOfTurnComments": "Diminuer les commentaires ",
+					"dampenOutOfTurnCommentsTitle": "Rend les commentaires qui ne sont pas en rapport avec le tour actuellement affiché sur la partie moins visibles"
+				},
+
+				"timemarked": {
+					"turns": {
+						"mulligan": "Mulligan et matchup",
+						"turn": "Tour"
+					}
+				}
 			},
 			"askProButton": "Demander à un Pro",
 			"askProTooltip": "Recevez l'avis d'un professionnel sur votre vidéo",

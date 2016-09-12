@@ -265,48 +265,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//$log.log('usbscribed', $scope.review.subscribers, User.getUser().id);
 			return $scope.review && $scope.review.subscribers && User.getUser() && $scope.review.subscribers.indexOf(User.getUser().id) > -1;
 		}
-
-
-		//===============
-		// Reputation
-		//===============
-		// $scope.upvoteReview = function() {
-		// 	if (!User.isLoggedIn() && !scope.upvoting) {
-		// 		$scope.upvoting = true;
-		// 		$rootScope.$broadcast('account.signup.show');
-		// 	}
-		// 	// Otherwise directly proceed to the upload
-		// 	else {
-		// 		Api.Reputation.save({reviewId: $scope.review.id, action: 'Upvote'},
-		// 			function(data) {
-		// 				$scope.review.reputation = data.reputation;
-		// 			}, 
-		// 			function(error) {
-		// 				// Error handling
-		// 				$log.error(error);
-		// 			}
-		// 		);
-		// 	}
-		// }
-
-		// $scope.downvoteReview = function() {
-		// 	if (!User.isLoggedIn() && !$scope.downvoting) {
-		// 		$scope.downvoting = true;
-		// 		$rootScope.$broadcast('account.signup.show');
-		// 	}
-		// 	// Otherwise directly proceed to the upload
-		// 	else {
-		// 		Api.Reputation.save({reviewId: $scope.review.id, action: 'Downvote'},
-		// 			function(data) {
-		// 				$scope.review.reputation = data.reputation;
-		// 			}, 
-		// 			function(error) {
-		// 				// Error handling
-		// 				$log.error(error);
-		// 			}
-		// 		);
-		// 	}
-		// }
 		
 		//===============
 		// Review information

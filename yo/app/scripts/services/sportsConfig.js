@@ -62,7 +62,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 21, dev: dev}, 
 							{name: 'parseDecks', version: 35, dev: dev}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 98, dev: dev},
+							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 99, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 18, dev: dev}
 						],
 						customCss: 'hearthstone.css?2'
@@ -234,7 +234,6 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			}
 			else {
 				basket.require({ url: '/plugins/' + plugin + '/' + plugin + '.js', unique: version, skipCache: pluginObj.dev }).then(function () {
-					$log.debug('loaded plugin', pluginObj, window[pluginObj.name], window)
 					$log.debug('loaded plugin', pluginObj)
 					plugins.push(pluginObj)
 					if (callback)

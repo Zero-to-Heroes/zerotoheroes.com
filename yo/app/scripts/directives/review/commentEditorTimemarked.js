@@ -29,10 +29,10 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 					$timeout(function() {
 						$scope.$apply()
 						$scope.currentTurn = turn
-						$log.debug('on turn changed in commentEditorTimemarked', $scope.currentTurn)
+						// $log.debug('on turn changed in commentEditorTimemarked', $scope.currentTurn)
 						// $scope.newComments = $scope.newComments || {}
 						$scope.newComments[$scope.currentTurn] = $scope.newComments[$scope.currentTurn] || {}
-						$log.debug('surfacing current comment', $scope.newComments[$scope.currentTurn], $scope.newComments)
+						// $log.debug('surfacing current comment', $scope.newComments[$scope.currentTurn], $scope.newComments)
 					})
 				}
 
@@ -41,7 +41,7 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 					$scope.addingComment = true
 					$scope.currentTurn = $scope.mediaPlayer.getCurrentTimestamp()
 					$scope.newComments[$scope.currentTurn] = $scope.newComments[$scope.currentTurn] || {}
-					$log.debug('current turn', $scope.currentTurn)
+					// $log.debug('current turn', $scope.currentTurn)
 					$timeout(function() {
 						$('#newCommentArea')[0].focus()
 					})
@@ -70,7 +70,7 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 				}
 
 				$scope.uploadComments = function() {
-					$log.debug('uploading comments', $scope.newComments)
+					// $log.debug('uploading comments', $scope.newComments)
 					$scope.mediaPlayer.preUploadComment($scope.review, $scope.newComments)
 					Api.ReviewsMulti.save({reviewId: $scope.review.id}, $scope.newComments, 
 						function(data) {

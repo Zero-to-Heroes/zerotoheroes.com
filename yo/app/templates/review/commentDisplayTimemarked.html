@@ -1,4 +1,4 @@
-<div ng-repeat="turn in getCommentTurns()" ng-class="{'inactive': turn != getCurrentTurn()}">
+<div ng-repeat="turn in getCommentTurns()" ng-class="{'inactive': turn != getCurrentTurn(), 'turn-active': turn == getCurrentTurn()}">
 
 	<h2 class="turn-label" ng-bind-html="getTurnLabel(turn)"></h2>
 

@@ -124,7 +124,7 @@
 			<comment-editor review="review" media-player="mediaPlayer" config="config" plugins="plugins" controller="commentEditorController"></comment-editor>
 
 			<div class="background-container">
-				<div scrollable="{{review.key}}">
+				<div id="comments-scrollable" scrollable="{{review.key}}">
 
 					<div ng-if="!controlFlow.reviewDisplayed">
 						<div class="loading">{{ 'global.review.loadingComments' | translate }}</span></div>

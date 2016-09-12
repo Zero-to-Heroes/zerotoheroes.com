@@ -178,7 +178,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				// $log.debug('media player init activated at ', Date.now() - $scope.debugTimestamp)
 				// $scope.controlFlow.pluginsReady = true
 				player.onTurnChanged(function(turn) {
-					$log.debug('turn changed', turn)
+					// $log.debug('turn changed', turn)
 					if ($scope.commentEditorController.onTurnChanged) {
 						$scope.commentEditorController.onTurnChanged(turn)
 					}

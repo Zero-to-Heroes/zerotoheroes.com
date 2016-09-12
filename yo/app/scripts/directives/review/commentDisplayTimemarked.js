@@ -22,6 +22,28 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					$timeout(function() {
 						$scope.$apply()
 						$scope.currentTurn = turn
+
+						$timeout(function() {
+							// Find the turn label that is about the current turn
+							var activeTurn = $('.turn-active')
+							if (!activeTurn || !activeTurn[0])
+								return
+
+							var top = activeTurn[0].getBoundingClientRect().top
+
+							// $log.debug('current turn element', top, $('.turn-active'))
+
+							var scrollableElement = $('#comments-scrollable')
+							var scrollableTop = scrollableElement[0].getBoundingClientRect().top
+
+							var scrollableNewMarginTop = scrollableTop - top + 20 // offset to avoid masking completely the comments above
+
+							// $log.debug('top scrollable turn element', scrollableTop, scrollableNewMarginTop, $('#comments-scrollable'))
+
+							scrollableElement.css('marginTop', scrollableNewMarginTop + 'px');
+
+						})
+
 					})
 				}
 
@@ -30,7 +52,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				}
 
 				$scope.getCommentTurns = function() {
-					$log.debug('getting comment turns', $scope.review)
+					// $log.debug('getting comment turns', $scope.review)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
 						if (comment.timestamp == '00mulligan')

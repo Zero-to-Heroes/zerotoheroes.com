@@ -146,6 +146,9 @@
 .profile-page .profile-info .cal-heatmap-container .q0 {
   fill: #655a44;
 }
+.video-comment.multi-comment #comments-scrollable {
+  transition: margin-top 0.4s;
+}
 .video-comment.multi-comment .comment-sort-options {
   font-size: 0.8em;
 }

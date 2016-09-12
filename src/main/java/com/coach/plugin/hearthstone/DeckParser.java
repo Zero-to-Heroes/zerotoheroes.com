@@ -422,19 +422,26 @@ public class DeckParser implements Plugin {
 		while (matcher.find()) {
 			String deckId = matcher.group(2);
 
+			log.debug("parsing ZetoH deck " + deckId);
 			// Don't override existing decks (performance)
 			if (pluginData.get(deckId) != null) {
+				log.debug("continuing");
 				continue;
 			}
 
-			// log.debug("Loading ztoh deck " + deckId);
+			log.debug("Loading ztoh deck " + deckId);
 			Review review = repo.findById(deckId);
-			// log.debug("loaded review " + review);
+			log.debug("loaded review " + review);
+			if (review == null) {
+				log.info("Could not load review " + deckId);
+				return;
+			}
+
 			try {
 				String stringDraft = s3utils.readFromS3(review.getKey());
-				// log.debug("String draft " + stringDraft);
+				log.debug("String draft " + stringDraft);
 				JSONObject draft = new JSONObject(stringDraft);
-				// log.debug("json draft " + draft);
+				log.debug("json draft " + draft);
 
 				Deck deck = new Deck();
 				deck.title = review.getTitle();
@@ -456,6 +463,7 @@ public class DeckParser implements Plugin {
 					}
 				}
 
+				log.debug("Saving deck " + deck);
 				saveDeck(pluginData, deckId, deck);
 			}
 			catch (IOException e) {

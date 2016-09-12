@@ -52,10 +52,10 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				}
 
 				$scope.getTurnLabel = function(turn) {
-					$log.debug('parsing turn title', turn)
+					// $log.debug('parsing turn title', turn)
 					var text = TextParserService.parseText($scope.review, turn, $scope.plugins)
 					text = text.replace('>t', '>' + $translate.instant('global.review.comment.timemarked.turns.turn'))
-					$log.debug('parsed', text)
+					// $log.debug('parsed', text)
 					// if (turn == '00mulligan' || turn == 'mulligan')
 					// 	text = $translate.instant('global.review.comment.timemarked.turns.mulligan')
 					// else 
@@ -64,7 +64,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				}
 
 				$scope.getCommentTurns = function() {
-					$log.debug('getting comment turns', $scope.review)
+					// $log.debug('getting comment turns', $scope.review)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
 						if (comment.timestamp == '00mulligan')
@@ -82,7 +82,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 						fullCommentTurns.push(fullTurn)
 					})
 					$scope.fullCommentTurns = fullCommentTurns
-					$log.debug('returning full turns', $scope.fullCommentTurns)
+					// $log.debug('returning full turns', $scope.fullCommentTurns)
 				}
 				$scope.getCommentTurns()
 

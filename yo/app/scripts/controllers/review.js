@@ -310,13 +310,24 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				visibility: $scope.review.visibility,
 				participantDetails: $scope.review.participantDetails
 			}
+			// $log.debug('preparing review', newReview)
+			if (newReview.plugins && newReview.plugins.hearthstone && newReview.plugins.hearthstone.parseDecks && newReview.plugins.hearthstone.parseDecks.reviewDeck) {
+				// $log.debug('updating review deck', newReview.plugins.hearthstone.parseDecks.reviewDeck, newReview)
+				newReview.plugins.hearthstone.parseDecks.reviewDeck = newReview.plugins.hearthstone.parseDecks.reviewDeck.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '')
+				newReview.plugins.hearthstone.parseDecks.reviewDeck = '[' + newReview.plugins.hearthstone.parseDecks.reviewDeck + ']'	
+			}
 			if ($scope.videoInformationForm.$valid) {
 				//$log.log('updating review to ', newReview);
 				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview, 
 					function(data) {
 						$scope.showHelp = false;
 		  				$scope.review.canvas = data.canvas;
+
+		  				if (data.plugins && data.plugins.hearthstone && data.plugins.hearthstone.parseDecks && data.plugins.hearthstone.parseDecks.reviewDeck) {
+							data.plugins.hearthstone.parseDecks.reviewDeck = data.plugins.hearthstone.parseDecks.reviewDeck.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '')
+						}
 		  				$scope.review.plugins = data.plugins;
+
 		  				//$log.log('plugins', $scope.review.plugins);
 						$scope.updateVideoInformation(data);
 		  				if (data.text.match(TextParserService.timestampOnlyRegex)) {

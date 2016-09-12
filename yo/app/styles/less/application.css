@@ -146,6 +146,16 @@
 .profile-page .profile-info .cal-heatmap-container .q0 {
   fill: #655a44;
 }
+.video-comment.multi-comment .comment-sort-options {
+  font-size: 0.8em;
+}
+.video-comment.multi-comment .comment-sort-options label {
+  font-weight: normal;
+}
+.video-comment.multi-comment .comment-sort-options .btn-select {
+  font-size: 0.8em;
+  padding: 4px 20px;
+}
 .video-comment.multi-comment .comments-recap a:after {
   content: ",";
   margin-right: 5px;
@@ -164,4 +174,13 @@
 }
 .video-comment.multi-comment .comments-recap .explanation-second-part {
   display: block;
+}
+.video-comment.multi-comment .turn-label {
+  font-size: 24px;
+}
+.video-comment.multi-comment .comment-footer {
+  margin-bottom: 0;
+}
+.video-comment.multi-comment .dampen .inactive {
+  filter: brightness(50%);
 }

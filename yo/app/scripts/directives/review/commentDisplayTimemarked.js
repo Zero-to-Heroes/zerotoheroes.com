@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$rootScope', '$timeout', 
-	function($log, User, Api, $parse, $rootScope, $timeout) {
+app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$rootScope', '$timeout', '$translate', 
+	function($log, User, Api, $parse, $rootScope, $timeout, $translate) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -33,6 +33,8 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					$log.debug('getting comment turns', $scope.review)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
+						if (comment.timestamp == '00mulligan')
+							comment.timestamp = 'mulligan'
 						if (commentTurns.indexOf(comment.timestamp) == -1) 
 							commentTurns.push(comment.timestamp)
 					})
@@ -41,7 +43,10 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				}
 				
 				$scope.getTurnLabel = function(turn) {
-					return "Turn " + turn
+					if (turn == '00mulligan' || turn == 'mulligan')
+						return $translate.instant('global.review.comment.timemarked.turns.mulligan')
+					else 
+						return $translate.instant('global.review.comment.timemarked.turns.turn') + ' ' + turn
 				}
 
 				$scope.getTurnComments = function(turn) {

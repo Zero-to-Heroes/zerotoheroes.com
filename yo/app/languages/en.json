@@ -490,7 +490,16 @@
 				"sort": {
 					"sortedbyLabel": "sort comments by: ",
 					"best": "best",
-					"byturn": "by turn"
+					"byturn": "by turn",
+					"dampenOutOfTurnComments": "Fade comments from other turns",
+					"dampenOutOfTurnCommentsTitle": "Make comments that are not about the current turn less visible"
+				},
+
+				"timemarked": {
+					"turns": {
+						"mulligan": "Mulligan and matchup",
+						"turn": "Turn"
+					}
 				}
 			},
 			"askProButton": "Ask a Pro",

@@ -97,32 +97,47 @@
 <div class="video-comment {{pluginNames.join(' ')}} {{review.mediaType}} {{mediaPlayer.playerControls.wideMode ? 'col-md-5' : 'col-md-7'}}" ng-class="{ 'multi-comment' : review.useV2comments }" ng-hide="restrictedAccess">
 	<div class="background-white show-x">
 		<div class="background-container">
-			<div scrollable="{{review.key}}" help-popup help-popup-key="doubleScroll" help-popup-active="0">
 				
-				<div ng-show="selectedCoach">
-					<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
+			<div ng-show="selectedCoach">
+				<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
+			</div>
+
+			<h3 class="comments-headline">{{ 'global.review.comment.commentsHeadline' | translate }}</h3>
+			<div class="comments-links">
+				<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed() && User.isLoggedIn()" title="{{ 'global.review.comment.unsubscribeReviewTooltip' | translate }}">{{ 'global.review.comment.unsubscribeReview' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+				<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed() || !User.isLoggedIn()" title="{{ 'global.review.comment.subscribeReviewTooltip' | translate }}">{{ 'global.review.comment.subscribeReview' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+				<a class="link-minor link-nodeco" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</a>
+			</div>
+
+			<!-- Dropdown to sort the criteria. Don't show if in the old comment system -->
+			<div ng-show="review.useV2comments" class="comment-sort-options">
+				<span translate="global.review.comment.sort.sortedbyLabel"></span>
+				<button type="button" class="btn btn-default btn-select" data-trigger="click" data-html="1" ng-model="review.commentSortCriteria" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.review.comment.sort.best' | translate }}" bs-select ng-required="true">
+				  	<span>Action</span>
+				</button>
+
+				<label>
+					<span translate="global.review.comment.sort.dampenOutOfTurnComments" title="{{ 'global.review.comment.sort.dampenOutOfTurnCommentsTitle' | translate }}"></span> <input type="checkbox" ng-model="review.dampenOutOfTurnComments">
+				</label>
+			</div>
+
+			<comment-editor review="review" media-player="mediaPlayer" config="config" plugins="plugins" controller="commentEditorController"></comment-editor>
+
+			<div class="background-container">
+				<div scrollable="{{review.key}}">
+
+					<div ng-if="!controlFlow.reviewDisplayed">
+						<div class="loading">{{ 'global.review.loadingComments' | translate }}</span></div>
+					</div>
+
+					<div ng-if="controlFlow.reviewDisplayed">
+						<comment-display review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport" controller="commentDisplayController"></comment-display>
+					</div>
+
+					<!-- Prevent scrolling center area if we're already at the bottom -->
+					<div id="padder"></div>
+					<div id="bottom"></div>
 				</div>
-
-				<h3 class="comments-headline">{{ 'global.review.comment.commentsHeadline' | translate }}</h3>
-				<div class="comments-links">
-					<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed() && User.isLoggedIn()" title="{{ 'global.review.comment.unsubscribeReviewTooltip' | translate }}">{{ 'global.review.comment.unsubscribeReview' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-					<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed() || !User.isLoggedIn()" title="{{ 'global.review.comment.subscribeReviewTooltip' | translate }}">{{ 'global.review.comment.subscribeReview' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-					<a class="link-minor link-nodeco" ng-click="showProModal()" ng-show="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</a>
-				</div>
-
-				<comment-editor review="review" media-player="mediaPlayer" config="config" plugins="plugins" controller="commentEditorController"></comment-editor>
-
-				<div ng-if="!controlFlow.reviewDisplayed">
-					<div class="loading">{{ 'global.review.loadingComments' | translate }}</span></div>
-				</div>
-
-				<div ng-if="controlFlow.reviewDisplayed">
-					<comment-display review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport" controller="commentDisplayController"></comment-display>
-				</div>
-
-				<!-- Prevent scrolling center area if we're already at the bottom -->
-				<div id="padder"></div>
-				<div id="bottom"></div>
 			</div>
 		</div>
 	</div>

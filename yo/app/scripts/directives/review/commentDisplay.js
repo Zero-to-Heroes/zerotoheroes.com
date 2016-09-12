@@ -21,6 +21,8 @@ app.directive('commentDisplay', ['$log', 'User', 'Api', '$parse', '$rootScope', 
 					{ "value" : "best", "label" : "<span>" + $translate.instant('global.review.comment.sort.best') + "</span>" }
 				]
 				$scope.review.commentSortCriteria = 'byturn'
+
+				$scope.review.dampenOutOfTurnComments = true
 			}
 		}
 	}

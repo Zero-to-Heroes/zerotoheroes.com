@@ -239,6 +239,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 				comment.prepareForDisplay(userId);
 			}
 		}
+		sortComments();
 	}
 
 	public void incrementViewCount() {

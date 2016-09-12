@@ -1,10 +1,13 @@
 <!-- Dropdown to sort the criteria. Don't show if in the old comment system -->
-<div ng-show="revieww.useV2comments">
-TODO: Choose your sorting order best/chronological
+<div ng-show="review.useV2comments">
+	<span translate="global.review.comment.sort.sortedbyLabel"></span>
+	<button type="button" class="btn btn-default btn-select" data-trigger="click" data-html="1" ng-model="review.commentSortCriteria" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.review.comment.sort.best' | translate }}" bs-select ng-required="true">
+	  	<span>Action</span>
+	</button>
 </div>
 
 
 <div ng-switch="review.commentSortCriteria">
-	<comment-display-timemarked ng-switch-when="chronological" review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport" controller="controller"></comment-display-timemarked>
+	<comment-display-timemarked ng-switch-when="byturn" review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport" controller="controller"></comment-display-timemarked>
 	<comment-display-legacy ng-switch-default review="review" media-player="mediaPlayer" config="config" plugins="plugins" sport="sport" controller="controller"></comment-display-legacy>
 </div>

@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV', '$sce', '$timeout', 
-	function($log, Api, $modal, $rootScope, ENV, $sce, $timeout) { 
+app.directive('sequenceController', ['$log', 'Api', '$modal', '$rootScope', 'ENV', '$sce', '$timeout', 'TagService', 
+	function($log, Api, $modal, $rootScope, ENV, $sce, $timeout, TagService) { 
 
 		return {
 			restrict: 'E',

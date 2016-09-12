@@ -80,6 +80,18 @@ app.config(['$routeProvider', '$locationProvider',
 			isFullPage: true,
 			sport: 'hearthstone'
 	  	}).
+	  	// Specific popular pages to redirect
+	  	when('/r/meta/568e2f13e4b0ae321c95b0cb/:title?', {
+	  		redirectTo: function() {
+		        window.location = 'http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/'
+		    }
+			// redirectTo: 'http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/'
+			// templateUrl: 'views/landing/sport.html',
+			// controller: 'SportPageCtrl',
+			// isLandingPage: true,
+			// isFullPage: true,
+			// sport: 'all'
+	  	}).
 	  	// site pages
 	 	// when('/upload', {
 			// templateUrl: 'views/upload.html',

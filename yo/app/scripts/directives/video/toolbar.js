@@ -27,6 +27,9 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 					return $scope.config.deactivateControls
 				}
 				$scope.getMediaConfig = function() {
+					if (!$scope.config.deactivateControls)
+						return {}
+					
 					// $log.debug('getting media type', $scope.mediaType, $scope.config)
 					if ($scope.mediaType == 'arena-draft') {
 						// $log.debug('\treturning', $scope.config.deactivateControls, $scope.config.deactivateControls['arenadraft'])

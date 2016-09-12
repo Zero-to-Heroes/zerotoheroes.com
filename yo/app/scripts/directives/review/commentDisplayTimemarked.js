@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$rootScope', '$timeout', '$translate', 
-	function($log, User, Api, $parse, $rootScope, $timeout, $translate) {
+app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$rootScope', '$timeout', '$translate', 'TextParserService', 
+	function($log, User, Api, $parse, $rootScope, $timeout, $translate, TextParserService) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -51,8 +51,19 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					return $scope.currentTurn || $scope.mediaPlayer.getCurrentTimestamp()
 				}
 
+				$scope.getTurnLabel = function(turn) {
+					$log.debug('parsing turn title', turn)
+					var text = TextParserService.parseText($scope.review, turn, $scope.plugins)
+					$log.debug('parsed', text)
+					// if (turn == '00mulligan' || turn == 'mulligan')
+					// 	text = $translate.instant('global.review.comment.timemarked.turns.mulligan')
+					// else 
+					// 	text = $translate.instant('global.review.comment.timemarked.turns.turn') + ' ' + turn
+					return text
+				}
+
 				$scope.getCommentTurns = function() {
-					// $log.debug('getting comment turns', $scope.review)
+					$log.debug('getting comment turns', $scope.review)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
 						if (comment.timestamp == '00mulligan')
@@ -61,15 +72,18 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 							commentTurns.push(comment.timestamp)
 					})
 					var orderedCommentTurns = _.sortBy(commentTurns)
-					return orderedCommentTurns
+					var fullCommentTurns = []
+					orderedCommentTurns.forEach(function(turn) {
+						var fullTurn = {
+							turn: turn,
+							label: $scope.getTurnLabel(turn)
+						}
+						fullCommentTurns.push(fullTurn)
+					})
+					$scope.fullCommentTurns = fullCommentTurns
+					$log.debug('returning full turns', $scope.fullCommentTurns)
 				}
-				
-				$scope.getTurnLabel = function(turn) {
-					if (turn == '00mulligan' || turn == 'mulligan')
-						return $translate.instant('global.review.comment.timemarked.turns.mulligan')
-					else 
-						return $translate.instant('global.review.comment.timemarked.turns.turn') + ' ' + turn
-				}
+				$scope.getCommentTurns()
 
 				$scope.getTurnComments = function(turn) {
 					var comments = []

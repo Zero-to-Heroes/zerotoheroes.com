@@ -10,8 +10,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,6 +21,8 @@ import org.springframework.security.web.authentication.AbstractAuthenticationPro
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter {
@@ -55,8 +55,8 @@ class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter {
 	}
 
 	@Override
-	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
-			FilterChain chain, Authentication authentication) throws IOException, ServletException {
+	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
+			Authentication authentication) throws IOException, ServletException {
 
 		// Lookup the complete User object from the database and create an
 		// Authentication for it
@@ -75,10 +75,19 @@ class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter {
 	}
 
 	@Override
-	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException,
-			ServletException {
+	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+			throws IOException, ServletException {
 		log.debug("doFilter", req, res);
 		HttpServletRequest request = (HttpServletRequest) req;
+
+		// TODO: for some unknown reason, the SimpleCORSFilter isn't applied to
+		// the /api/login request
+		HttpServletResponse response = (HttpServletResponse) res;
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+		response.setHeader("Access-Control-Max-Age", "3600");
+		response.setHeader("Access-Control-Allow-Headers", "content-type,X-Auth-Token");
+		response.setHeader("Access-Control-Expose-Headers", "X-Auth-Token");
 
 		// Ignore the first "OPTIONS" request. Not clean, but no better solution
 		// at the moment. Cf

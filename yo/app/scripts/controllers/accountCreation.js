@@ -79,8 +79,10 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		$scope.login = function() {
 	  		AuthenticationService.login($scope.account.username, $scope.account.password, 
 				function(response, responseHeaders) {
+					// $log.debug('logged in')
 					AuthenticationService.setAuthentication(response.username, responseHeaders, 
 			  			function(authenticated) {
+			  				// $log.debug('setting authentication', authenticated)
 							if (authenticated) {
 								$scope.retrieveUserInfo();
 							}

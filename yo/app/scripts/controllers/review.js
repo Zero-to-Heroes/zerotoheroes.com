@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 'CoachService', 'TextParserService', 
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService, CoachService, TextParserService) { 
+angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 'CoachService', 'TextParserService', '$translate',
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService, CoachService, TextParserService, $translate) { 
 
 		$scope.debugTimestamp = Date.now()
 		// $log.debug('init review controller at ', $scope.debugTimestamp)
@@ -23,6 +23,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.mediaPlayer = {
 			playerType: 'replay'
 		}
+
+
+		$scope.sortOptions = [
+			{ "value" : "byturn", "label" : "<span>" + $translate.instant('global.review.comment.sort.byturn') + "</span>" },
+			{ "value" : "best", "label" : "<span>" + $translate.instant('global.review.comment.sort.best') + "</span>" }
+		]
 
 		// ================
 		// Load all plugins

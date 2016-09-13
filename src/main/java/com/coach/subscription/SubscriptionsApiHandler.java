@@ -157,7 +157,7 @@ public class SubscriptionsApiHandler {
 		subscriptionManager.subscribe(item, user.getId());
 
 		mongoTemplate.save(item);
-		slackNotifier.notifyNewSubscriber(item, user);
+		// slackNotifier.notifyNewSubscriber(item, user);
 
 		log.debug("Subscribed user " + user + " to " + item);
 
@@ -190,7 +190,7 @@ public class SubscriptionsApiHandler {
 		subscriptionManager.unsubscribe(item, user.getId());
 
 		mongoTemplate.save(item);
-		slackNotifier.notifyNewUnsubscriber(item, user);
+		// slackNotifier.notifyNewUnsubscriber(item, user);
 
 		log.debug("Unsubscribed user " + user + " to " + item);
 

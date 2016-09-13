@@ -2,7 +2,6 @@ package com.coach.core;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
@@ -22,8 +21,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(Exception.class)
 	protected final ResponseEntity<Object> handleControllerException(Exception ex, WebRequest request) {
 		log.warn("Handling exception", ex);
-		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		slackNotifier.notifyException(currentUser, request, ex);
+		// String currentUser =
+		// SecurityContextHolder.getContext().getAuthentication().getName();
+		slackNotifier.notifyException(request, ex);
 		return super.handleException(ex, request);
 	}
 }

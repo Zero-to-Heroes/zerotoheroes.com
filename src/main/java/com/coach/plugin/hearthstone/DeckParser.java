@@ -431,9 +431,9 @@ public class DeckParser implements Plugin {
 
 			// log.debug("Loading ztoh deck " + deckId);
 			Review review = repo.findById(deckId);
-			// log.debug("loaded review " + review);
+			log.debug("loaded review " + review);
 			if (review == null) {
-				// log.info("Could not load review " + deckId);
+				log.info("Could not load review " + deckId);
 				return;
 			}
 
@@ -466,8 +466,8 @@ public class DeckParser implements Plugin {
 				// log.debug("Saving deck " + deck);
 				saveDeck(pluginData, deckId, deck);
 			}
-			catch (IOException e) {
-				slackNotifier.notifyException(null, null, e, review.getId(), review.getKey(), review);
+			catch (Exception e) {
+				slackNotifier.notifyException(null, e, review.getId(), review.getKey(), review);
 			}
 		}
 	}

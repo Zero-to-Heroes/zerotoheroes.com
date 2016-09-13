@@ -6,6 +6,7 @@ import java.util.concurrent.Callable;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.WebRequest;
 
@@ -338,13 +339,14 @@ public class SlackNotifier {
 		});
 	}
 
-	public void notifyException(final String currentUser, final WebRequest request, final Throwable ex,
-			final Object... params) {
+	public void notifyException(final WebRequest request, final Throwable ex, final Object... params) {
 		log.info("Sending exception to Slack " + ex);
 		if (!"prod".equalsIgnoreCase(environment)) {
 			log.error("Exception! " + request + " " + ex);
 			return;
 		}
+
+		final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
@@ -450,6 +452,8 @@ public class SlackNotifier {
 			return;
 		}
 
+		final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
 			public String call() throws Exception {
@@ -457,7 +461,7 @@ public class SlackNotifier {
 						"https://hooks.slack.com/services/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");
 
 				SlackMessage message = new SlackMessage();
-				message.setText("Generic error with details");
+				message.setText("Generic error with details for user " + currentUser);
 
 				SlackAttachment exAttach = new SlackAttachment();
 				exAttach.setColor("danger");

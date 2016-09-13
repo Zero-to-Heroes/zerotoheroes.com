@@ -316,7 +316,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				visibility: $scope.review.visibility,
 				participantDetails: $scope.review.participantDetails
 			}
-			// $log.debug('preparing review', newReview)
+			$log.debug('preparing review', newReview)
 			if (newReview.plugins && newReview.plugins.hearthstone && newReview.plugins.hearthstone.parseDecks && newReview.plugins.hearthstone.parseDecks.reviewDeck) {
 				// $log.debug('updating review deck', newReview.plugins.hearthstone.parseDecks.reviewDeck, newReview)
 				newReview.plugins.hearthstone.parseDecks.reviewDeck = newReview.plugins.hearthstone.parseDecks.reviewDeck.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '')

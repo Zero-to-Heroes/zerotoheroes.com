@@ -31,14 +31,14 @@ public class RouteController {
 	//@formatter:on
 	public String reviewHandler(@PathVariable("reviewId") String reviewId) throws IOException {
 
-		log.debug("In reviewHandler for id " + reviewId);
+		// log.debug("In reviewHandler for id " + reviewId);
 
 		if (reviewRepo.findById(reviewId) == null) {
-			log.debug("forwarding to 404");
+			// log.debug("forwarding to 404");
 			return "forward:/404.html";
 		}
 
-		log.debug("Forwarding to index.html");
+		// log.debug("Forwarding to index.html");
 		return "forward:/index.html";
 	}
 
@@ -73,7 +73,7 @@ public class RouteController {
 	})
 	//@formatter:on
 	public String index(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		log.debug("Forwarding to index.html");
+		// log.debug("Forwarding to index.html");
 		return "forward:/index.html";
 	}
 
@@ -85,8 +85,9 @@ public class RouteController {
 	// The post on the forums about replay from logs, which for some reason
 	// ranks pretty high on "hearthstone replay"
 	public void permanentRedirect(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		log.warn("redirect");
+		// log.warn("redirect");
 		String newUrl = "http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/";
+		log.debug("permanent redirect of 568e2f13e4b0ae321c95b0cb to " + newUrl);
 		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 		response.setHeader("Location", newUrl);
 		response.setHeader("Connection", "close");

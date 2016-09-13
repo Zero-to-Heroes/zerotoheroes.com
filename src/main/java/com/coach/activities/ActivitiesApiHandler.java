@@ -2,6 +2,7 @@ package com.coach.activities;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
+import com.coach.profile.Profile;
+import com.coach.profile.ProfileService;
 import com.coach.user.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -38,11 +41,14 @@ public class ActivitiesApiHandler {
 	@Autowired
 	ActivityRepository activityRepo;
 
+	@Autowired
+	ProfileService profileService;
+
 	@RequestMapping(value = "/{sport}", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<ListActivityResponse> getLatestActivities(
 			@PathVariable("sport") final String sport) {
 
-		log.debug("Retrieving activities for " + sport);
+		// log.debug("Retrieving activities for " + sport);
 
 		// No sport in input
 		if (StringUtils
@@ -72,6 +78,14 @@ public class ActivitiesApiHandler {
 		List<Activity> activities = page.getContent();
 		ListActivityResponse response = new ListActivityResponse(activities);
 		response.setTotalPages(page.getTotalPages());
+
+		// Used to mark read / unread
+		Profile profile = profileService.getLoggedInProfile();
+		response.setLastConsultationDate(profile.getActivitiesStats().getLastActivitiesConsultationDate());
+
+		profile.getActivitiesStats().setLastActivitiesConsultationDate(new Date());
+		profile.getActivitiesStats().setUnreadNotifs(0);
+		profileService.save(profile);
 
 		return new ResponseEntity<ListActivityResponse>(response, HttpStatus.OK);
 	}

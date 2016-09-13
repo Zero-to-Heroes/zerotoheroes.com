@@ -34,6 +34,7 @@ public class Profile {
 	private Subscriptions subscriptions = new Subscriptions();
 	// private Rankings rankings = new Rankings();
 	private ProfileInfo profileInfo = new ProfileInfo();
+	private ActivitiesStats activitiesStats = new ActivitiesStats();
 
 	public ProfileInfo getProfileInfo() {
 		if (profileInfo == null) {

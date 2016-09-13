@@ -27,25 +27,12 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {
 
-				// $log.debug('init comment, mediaPlayer', $scope.mediaPlayer)
-				// $log.debug('location', $location, $location.search().highlighted, $scope.comment)
-
 				$scope.User = User;
-				//$scope.goToTimestamp = $scope.$parent.goToTimestamp;
-				//$scope.clearTemporaryCanvas = $scope.$parent.clearTemporaryCanvas;
-
-				// $scope.review = $scope.$parent.review;
-				// $scope.API = $scope.$parent.API;
 				$scope.reply = {};
 
 				$scope.$watch($scope.comment, function() {
 					$scope.setCommentText($scope.comment, $scope.comment.text);
 				});
-
-
-				// $scope.$watch($scope.$parent.API, function() {
-				// 	$scope.API = $scope.$parent.API
-				// })
 
 
 
@@ -70,10 +57,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.cancelUpdateComment = function(comment) {
 					//$log.log('cancelling comment update');
 					$scope.mediaPlayer.onCommentUpdateCancel($scope.review, $scope.comment);
-					// $scope.clearTemporaryCanvas();
 					comment.text = comment.oldText;
 					comment.editing = false;
-					//$scope.canvasState.drawingCanvas = false;
 					$rootScope.$broadcast('editcanvas.cancel');
 				}
 
@@ -81,29 +66,29 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					$scope.mediaPlayer.preUploadComment($scope.review, $scope.comment);
 					//$log.log('updating comment', $scope.comment);
 					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
-		  				function(data) {
-		  					$scope.showHelp = false;
-		  					$log.log('Review', data);
-		  					var newComment = $scope.findComment(data.comments, comment.id);
-		  					$scope.review.canvas = newComment.tempCanvas;
-		  					$scope.review.plugins = data.plugins;
-		  					$scope.setCommentText(comment, newComment.text);
-		  					$log.log('updating plugins', $scope.review.plugins);
-		  				}, 
-		  				function(error) {
-		  					// Error handling
-		  					$log.error(error);
-		  				}
-		  			);
+						function(data) {
+							$scope.showHelp = false;
+							// $log.log('Review', data);
+							var newComment = $scope.findComment(data.comments, comment.id);
+							$scope.review.canvas = newComment.tempCanvas;
+							$scope.review.plugins = data.plugins;
+							$scope.setCommentText(comment, newComment.text);
+							// $log.log('updating plugins', $scope.review.plugins);
+						}, 
+						function(error) {
+							// Error handling
+							$log.error(error);
+						}
+					);
 				}
 
 				$scope.setCommentText = function(comment, text) {
 					comment.text = escapeHtml(text)
-					// Add timestamps
+					// // Add timestamps
 					comment.compiledText = TextParserService.parseText($scope.review, comment.text, $scope.plugins)
-					// Parse markdown
+					// // Parse markdown
 					comment.markedText = marked(comment.compiledText || '');
-		  			comment.editing = false;
+					comment.editing = false;
 					comment.processed = true;
 				}
 
@@ -116,15 +101,15 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				//===============
 				$scope.toggleHelpful = function(comment) {
 					Api.CommentValidation.save({reviewId: $scope.review.id, commentId: comment.id}, 
-		  				function(data) {
-		  					//$log.log('response data', data);
-		  					comment.helpful = data.helpful;
-		  				}, 
-		  				function(error) {
-		  					// Error handling
-		  					$log.error(error);
-		  				}
-		  			)
+						function(data) {
+							//$log.log('response data', data);
+							comment.helpful = data.helpful;
+						}, 
+						function(error) {
+							// Error handling
+							$log.error(error);
+						}
+					)
 				}
 
 				$scope.highlightUnread = function() {
@@ -144,9 +129,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 								}
 							}
 						})
-						// if (ids.indexOf($scope.comment.id) != -1) {
-						// 	$scope.highlightedClass = 'highlighted'
-						// }
 					}
 				}
 				$scope.highlightUnread()
@@ -180,9 +162,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 										newHighlights = newHighlights.slice(0, -1)
 									}
 									$location.search(newHighlights)
-									// if (ids.indexOf($scope.comment.id) != -1) {
-									// 	$scope.highlightedClass = 'highlighted'
-									// }
 								}
 							)
 						}
@@ -218,25 +197,25 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 						}
 						else {
 							Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply, 
-				  				function(data) {
-				  					$scope.showHelp = false;
-				  					$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
-		  							$scope.review.canvas = data.canvas;
-		  							$scope.review.subscribers = data.subscribers;
-		  							$scope.review.reviewVideoMap = data.reviewVideoMap || {};
-		  							$scope.review.plugins = data.plugins;
-				  					$scope.reply = {};
-				  					if (data.text.match(timestampOnlyRegex)) {
+								function(data) {
+									$scope.showHelp = false;
+									$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
+									$scope.review.canvas = data.canvas;
+									$scope.review.subscribers = data.subscribers;
+									$scope.review.reviewVideoMap = data.reviewVideoMap || {};
+									$scope.review.plugins = data.plugins;
+									$scope.reply = {};
+									if (data.text.match(timestampOnlyRegex)) {
 										//$log.log('incrementing timestamps after comment upload');
 										User.incrementTimestamps();
 									}
-				  				}, 
-				  				function(error) {
-				  					// Error handling
-				  					$log.error(error);
-				  					$scope.reply = {};
-				  				}
-				  			);
+								}, 
+								function(error) {
+									// Error handling
+									$log.error(error);
+									$scope.reply = {};
+								}
+							);
 						}
 					}
 				}
@@ -247,40 +226,40 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.upvoteComment = function(comment) {
 					if (!User.isLoggedIn() && !$scope.upvotingComment) {
 						$scope.upvotingComment = comment;
-	  					$rootScope.$broadcast('account.signup.show');
-	  				}
-	  				// Otherwise directly proceed to the upload
-	  				else {
+						$rootScope.$broadcast('account.signup.show');
+					}
+					// Otherwise directly proceed to the upload
+					else {
 						Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
-			  				function(data) {
-			  					comment.reputation = data.reputation;
-			  				}, 
-			  				function(error) {
-			  					// Error handling
-			  					$log.error(error);
-			  					$scope.upvotingComment = null;
-			  				}
-			  			);
+							function(data) {
+								comment.reputation = data.reputation;
+							}, 
+							function(error) {
+								// Error handling
+								$log.error(error);
+								$scope.upvotingComment = null;
+							}
+						);
 					}
 				}
 
 				$scope.downvoteComment = function(comment) {
 					if (!User.isLoggedIn() && !$scope.downvotingComment) {
 						$scope.downvotingComment = comment;
-	  					$rootScope.$broadcast('account.signup.show');
-	  				}
-	  				// Otherwise directly proceed to the upload
-	  				else {
+						$rootScope.$broadcast('account.signup.show');
+					}
+					// Otherwise directly proceed to the upload
+					else {
 						Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Downvote'},
-			  				function(data) {
-			  					comment.reputation = data.reputation;
-			  				}, 
-			  				function(error) {
-			  					// Error handling
-			  					$log.error(error);
-			  					$scope.downvotingComment = null;
-			  				}
-			  			);
+							function(data) {
+								comment.reputation = data.reputation;
+							}, 
+							function(error) {
+								// Error handling
+								$log.error(error);
+								$scope.downvotingComment = null;
+							}
+						);
 					}
 				}
 
@@ -297,7 +276,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					else if ($scope.upvotingComment) {
 						//$log.log('in upvotingComment');
 						$scope.upvoteComment($scope.upvotingComment);
-	  					$scope.upvotingComment = null;
+						$scope.upvotingComment = null;
 					}
 					else if ($scope.downvotingComment) {
 						//$log.log('in downvotingComment');
@@ -325,25 +304,25 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				var entityMap = {
-				    "<": "&lt;",
-				    ">": "&gt;"
+					"<": "&lt;",
+					">": "&gt;"
 				};
 
 				function escapeHtml(string) {
-				    return String(string).replace(/[<]/g, function (s) {
-				      	return entityMap[s];
-				    });
+					return String(string).replace(/[<]/g, function (s) {
+						return entityMap[s];
+					});
 				}
 			},
 
 			compile: function(element) {
-	            return RecursionHelper.compile(element, function(scope, iElement, iAttrs, controller, transcludeFn) {
-	            	// Define your normal link function here.
-	                // Alternative: instead of passing a function,
-	                // you can also pass an object with 
-	                // a 'pre'- and 'post'-link function.
-	            });
-	        }
+				return RecursionHelper.compile(element, function(scope, iElement, iAttrs, controller, transcludeFn) {
+					// Define your normal link function here.
+					// Alternative: instead of passing a function,
+					// you can also pass an object with 
+					// a 'pre'- and 'post'-link function.
+				});
+			}
 		};
 	}
 ]);

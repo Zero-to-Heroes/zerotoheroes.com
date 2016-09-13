@@ -29,6 +29,8 @@ public class ProfileApiHandler {
 		Profile profile = profileService.getLoggedInProfile();
 		if (profile == null) { return new ResponseEntity<Profile>(profile, HttpStatus.FORBIDDEN); }
 
+		// log.debug("retrieved profile " + profile);
+
 		return new ResponseEntity<Profile>(profile, HttpStatus.OK);
 	}
 }

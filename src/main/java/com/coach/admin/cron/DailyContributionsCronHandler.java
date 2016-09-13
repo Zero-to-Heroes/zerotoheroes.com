@@ -109,7 +109,7 @@ public class DailyContributionsCronHandler {
 			}
 			profile.getProfileInfo().getSportInfo(sport).addDailyGame(creationDate);
 
-			activityHandler.handleNewGame(log);
+			activityHandler.handleNewGame(log, profile);
 
 			modified.add(profile);
 			processed.add(log);
@@ -160,7 +160,7 @@ public class DailyContributionsCronHandler {
 			}
 			profile.getProfileInfo().getSportInfo(sport).addDailyComment(creationDate);
 
-			activityHandler.handleNewComment(log);
+			activityHandler.handleNewComment(log, profile);
 
 			modified.add(profile);
 			processed.add(log);
@@ -205,7 +205,7 @@ public class DailyContributionsCronHandler {
 			}
 			profile.getProfileInfo().getSportInfo(sport).addDailyReputationChange(creationDate, changeValue);
 
-			activityHandler.handleNewVote(log);
+			activityHandler.handleNewVote(log, profile);
 
 			modified.add(profile);
 			processed.add(log);

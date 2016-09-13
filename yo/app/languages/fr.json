@@ -362,7 +362,9 @@
 			"email": "Email",
 			"confirmPassword": "Confirmez votre mot de passe",
 			"createAccountCancel": "Non merci, je créerai mon compte plus tard",
-			"createAccountConfirm": "Créer mon compte maintenant"
+			"createAccountConfirm": "Créer mon compte maintenant",
+
+			"unreadNotifTooltip": "Vous avez des notifications non lues !"
 		},
 		"review": {
 			"participants": {

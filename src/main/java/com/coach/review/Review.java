@@ -408,7 +408,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			}
 		}
 
-		for (Comment comment : getComments()) {
+		List<Comment> comments2 = getComments();
+		for (Comment comment : comments2) {
 			fullTextSearchField += " " + comment.getFullText();
 		}
 

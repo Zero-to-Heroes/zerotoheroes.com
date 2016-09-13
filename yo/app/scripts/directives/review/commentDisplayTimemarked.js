@@ -63,8 +63,17 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					return text
 				}
 
+				$scope.$watch('review.comments', function(newVal, oldVal) {
+					$log.debug('updated review comments', newVal, oldVal)
+					var shouldUpdate = !oldVal
+					shouldUpdate |= !$scope.fullCommentTurns
+					shouldUpdate |= (newVal && newVal.length != oldVal.length)
+					if (shouldUpdate)
+						$scope.getCommentTurns()
+				})
+
 				$scope.getCommentTurns = function() {
-					// $log.debug('getting comment turns', $scope.review)
+					$log.debug('getting comment turns', $scope.review)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
 						if (comment.timestamp == '00mulligan')
@@ -77,24 +86,32 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					orderedCommentTurns.forEach(function(turn) {
 						var fullTurn = {
 							turn: turn,
-							label: $scope.getTurnLabel(turn)
+							label: $scope.getTurnLabel(turn),
+							comments: []
 						}
+						$scope.review.comments.forEach(function(comment) {
+							if (comment.timestamp == turn) {
+								fullTurn.comments.push(comment)
+							}
+						})
 						fullCommentTurns.push(fullTurn)
 					})
 					$scope.fullCommentTurns = fullCommentTurns
-					// $log.debug('returning full turns', $scope.fullCommentTurns)
-				}
-				$scope.getCommentTurns()
+					$log.debug('returning full turns', $scope.fullCommentTurns)
 
-				$scope.getTurnComments = function(turn) {
-					var comments = []
-					$scope.review.comments.forEach(function(comment) {
-						if (comment.timestamp == turn) {
-							comments.push(comment)
-						}
-					})
-					return comments
+
 				}
+				// $scope.getCommentTurns()
+
+				// $scope.getTurnComments = function(turn) {
+				// 	var comments = []
+				// 	$scope.review.comments.forEach(function(comment) {
+				// 		if (comment.timestamp == turn) {
+				// 			comments.push(comment)
+				// 		}
+				// 	})
+				// 	return comments
+				// }
 			}
 		}
 	}

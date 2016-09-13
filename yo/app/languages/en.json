@@ -407,7 +407,9 @@
 			"email": "Email",
 			"confirmPassword": "Confirm your password",
 			"createAccountCancel": "No thanks, I'll create my account later",
-			"createAccountConfirm": "Create account now"
+			"createAccountConfirm": "Create account now",
+
+			"unreadNotifTooltip": "You have unread notifications!"
 		},
 		"review": {
 			"participants": {

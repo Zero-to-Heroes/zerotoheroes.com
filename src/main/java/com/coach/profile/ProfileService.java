@@ -12,7 +12,10 @@ import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
 import com.coach.user.UserRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Component
+@Slf4j
 public class ProfileService {
 
 	@Autowired
@@ -27,6 +30,7 @@ public class ProfileService {
 			profile.setUserId(userId);
 			profileRepository.save(profile);
 		}
+		// log.debug("retrieved profile " + profile);
 		return profile;
 	}
 
@@ -39,10 +43,12 @@ public class ProfileService {
 
 		User user = userRepo.findByUsername(currentUser);
 		profile = getProfile(user.getId());
+		// log.debug("retrieved logged in profile " + profile);
 		return profile;
 	}
 
 	public void save(Profile profile) {
+		// log.debug("saving profile " + profile);
 		profileRepository.save(profile);
 	}
 }

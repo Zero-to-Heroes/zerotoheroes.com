@@ -1,3 +1,23 @@
+.navbar .name-input .profile-menu .unread-notifs {
+  display: flex;
+  margin-right: 6px;
+}
+.navbar .name-input .profile-menu .unread-notifs:before {
+  content: "";
+  background-color: #edd6aa;
+  width: 20px;
+  height: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 75px;
+  position: absolute;
+  top: 19px;
+}
+.navbar .name-input .profile-menu .unread-notifs .badge-value {
+  z-index: 5;
+  margin-left: 6px;
+  color: #860412;
+}
 .profile-page {
   padding-bottom: 20px;
   padding-left: 50px;
@@ -147,7 +167,7 @@
   fill: #655a44;
 }
 .video-comment.multi-comment #comments-scrollable {
-  transition: margin-top 0.4s;
+  transition: margin-top 0.2s;
 }
 .video-comment.multi-comment .comment-sort-options {
   font-size: 0.8em;

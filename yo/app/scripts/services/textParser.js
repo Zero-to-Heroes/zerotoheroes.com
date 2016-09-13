@@ -14,6 +14,7 @@ services.factory('TextParserService', ['$log', 'Api', '$translate', 'SportsConfi
 
 
 		service.parseText = function(review, text, plugins) {
+			// $log.debug('parsing text', text)
 			if (!text) return '';
 
 			// Triggering the various plugins
@@ -41,10 +42,12 @@ services.factory('TextParserService', ['$log', 'Api', '$translate', 'SportsConfi
 			if (plugins) {
 				angular.forEach(plugins, function(plugin) {
 					if (plugin) {
+						// $log.debug('\tparsing using plugin', plugin)
 						prettyResult = SportsConfig.executePlugin(review, plugin, prettyResult);
 					}
 				})
 			}
+			// $log.debug('parsed')
 
 			return prettyResult;
 		}

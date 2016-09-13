@@ -55,7 +55,7 @@
 }
 
 .navbar .profile-menu {
-	display: inline-block;
+	display: inline-flex;
 }
 
 nav .alert {

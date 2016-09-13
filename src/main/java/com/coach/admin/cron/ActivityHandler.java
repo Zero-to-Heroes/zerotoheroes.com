@@ -10,13 +10,18 @@ import com.coach.activities.ActivityRepository;
 import com.coach.activities.NewCommentData;
 import com.coach.activities.NewReviewData;
 import com.coach.activities.ReputationChangeData;
+import com.coach.profile.Profile;
+import com.coach.profile.ProfileService;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.review.journal.CommentJournal;
 import com.coach.review.journal.ReputationJournal;
 import com.coach.review.journal.ReviewJournal;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Component
+@Slf4j
 public class ActivityHandler {
 
 	@Autowired
@@ -25,10 +30,14 @@ public class ActivityHandler {
 	@Autowired
 	ReviewRepository reviewRepository;
 
-	public void handleNewGame(ReviewJournal log) {
+	@Autowired
+	ProfileService profileService;
+
+	public void handleNewGame(ReviewJournal log, Profile profile) {
 		Activity activity = new Activity();
 		activity.setCreationDate(new Date());
 		activity.setUserId(log.getAuthorId());
+		// updateUnreadNotifsCount(log.getAuthorId());
 
 		Review review = reviewRepository.findById(log.getReviewId());
 		activity.setSport(review.getSport().getKey().toLowerCase());
@@ -41,10 +50,11 @@ public class ActivityHandler {
 		activityReposistory.save(activity);
 	}
 
-	public void handleNewComment(CommentJournal log) {
+	public void handleNewComment(CommentJournal log, Profile profile) {
 		Activity activity = new Activity();
 		activity.setCreationDate(new Date());
 		activity.setUserId(log.getAuthorId());
+		// updateUnreadNotifsCount(profile);
 
 		Review review = reviewRepository.findById(log.getReviewId());
 		activity.setSport(review.getSport().getKey().toLowerCase());
@@ -57,10 +67,11 @@ public class ActivityHandler {
 		activityReposistory.save(activity);
 	}
 
-	public void handleNewVote(ReputationJournal log) {
+	public void handleNewVote(ReputationJournal log, Profile profile) {
 		Activity activity = new Activity();
 		activity.setCreationDate(new Date());
 		activity.setUserId(log.getUserId());
+		updateUnreadNotifsCount(profile);
 
 		Review review = reviewRepository.findById(log.getReviewId());
 		activity.setSport(review.getSport().getKey().toLowerCase());
@@ -73,6 +84,10 @@ public class ActivityHandler {
 		activity.setData(data);
 
 		activityReposistory.save(activity);
+	}
+
+	private void updateUnreadNotifsCount(Profile profile) {
+		profile.getActivitiesStats().incrementUnread();
 	}
 
 }

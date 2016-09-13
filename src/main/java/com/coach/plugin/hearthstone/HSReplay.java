@@ -138,6 +138,7 @@ public class HSReplay implements ReplayPlugin {
 		log.debug("Review updated with proper key " + review);
 		// review.setTemporaryKey(null);
 		review.setTranscodingDone(true);
+		review.setTemporaryReplay(null);
 		repo.save(review);
 	}
 

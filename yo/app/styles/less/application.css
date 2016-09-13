@@ -204,6 +204,12 @@
 .video-comment.multi-comment .comment-footer {
   margin-bottom: 0;
 }
-.video-comment.multi-comment .dampen .inactive {
+.video-comment.multi-comment .dampen .inactive .turn-label,
+.video-comment.multi-comment .dampen .inactive .reputation,
+.video-comment.multi-comment .dampen .inactive .comment-main {
   filter: brightness(50%);
+}
+.video-comment.multi-comment .dampen .inactive .turn-label:hover,
+.video-comment.multi-comment .dampen .inactive .comment-main:hover {
+  filter: none;
 }

@@ -53,7 +53,13 @@
 	}
 
 	.dampen .inactive {
-		filter: brightness(50%);
+		.turn-label, .reputation, .comment-main {
+			filter: brightness(50%);
+		}
+
+		.turn-label:hover, .comment-main:hover {
+			filter: none;
+		}
 	}
 	
 }

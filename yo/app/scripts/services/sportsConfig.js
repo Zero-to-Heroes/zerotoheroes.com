@@ -62,8 +62,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 21, dev: dev}, 
 							{name: 'parseDecks', version: 35, dev: dev}, 
-							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 102, dev: dev},
-							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 19, dev: dev}
+							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 103, dev: dev},
+							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 20, dev: dev}
 						],
 						customCss: 'hearthstone.css?2'
 					},

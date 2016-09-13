@@ -40,6 +40,12 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 
 
 		$scope.search = function () {
+			if (!$scope.criteria.search) {
+				$timeout(function() {
+					$scope.search()
+				}, 50)
+				return
+			}
 			var params = $scope.criteria
 			$log.debug('init search', $scope.criteria.sort, $scope.criteria, params)
 			params.sport = $scope.sport

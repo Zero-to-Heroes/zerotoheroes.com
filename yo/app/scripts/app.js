@@ -432,8 +432,8 @@ app.directive('scrollable',  function ($window, $document, $log) {
 			element.on('mousewheel DOMMouseScroll', function (evt) {
 				var e = window.event || evt
 				var scrollSpeed = 1;
-				//console.log('scrolling event', e);
-				var srcElement = e.srcElement;
+				// console.log('scrolling event', e);
+				var srcElement = e.srcElement || e.currentTarget
 				// If there is a scrollbar, don't do anything
 				if (srcElement.clientHeight < srcElement.scrollHeight) {
 					return;

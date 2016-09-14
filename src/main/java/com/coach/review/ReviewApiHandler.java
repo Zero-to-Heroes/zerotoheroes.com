@@ -328,6 +328,12 @@ public class ReviewApiHandler {
 		// userService.updateAsync(user);
 		// }
 
+		// Setup v2 comments for game replays only (not drafts nor videos)
+		if ("game-replay".equalsIgnoreCase(review.getReviewType())
+				|| "game-replay".equalsIgnoreCase(review.getMediaType())) {
+			review.setUseV2comments(true);
+		}
+
 		// Start transcoding
 		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())
 				|| !StringUtils.isNullOrEmpty(review.getTemporaryReplay())) {
@@ -656,6 +662,10 @@ public class ReviewApiHandler {
 		review.setPublished(true);
 		review.setVisibility(inputReview.getVisibility());
 
+		// Setup v2 comments for game replays only (not drafts nor videos)
+		if ("game-replay".equalsIgnoreCase(review.getReviewType())) {
+			review.setUseV2comments(true);
+		}
 		reviewService.updateAsync(review);
 		reviewService.triggerReviewCreationJobs(review);
 

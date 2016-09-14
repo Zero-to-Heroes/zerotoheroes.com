@@ -44,7 +44,15 @@ public class S3Utils {
 	}
 
 	public String readFromS3(String key) throws IOException {
-		S3Object s3object = s3.getObject(new GetObjectRequest(inputBucket, key));
+		return readFromS3(key, inputBucket);
+	}
+
+	public String readFromS3Output(String key) throws IOException {
+		return readFromS3(key, outputBucket);
+	}
+
+	private String readFromS3(String key, String bucket) throws IOException {
+		S3Object s3object = s3.getObject(new GetObjectRequest(bucket, key));
 		StringBuilder fileContents = new StringBuilder();
 
 		try {

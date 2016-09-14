@@ -438,7 +438,7 @@ public class DeckParser implements Plugin {
 			}
 
 			try {
-				String stringDraft = s3utils.readFromS3(review.getKey());
+				String stringDraft = s3utils.readFromS3Output(review.getKey());
 				// log.debug("String draft " + stringDraft);
 				JSONObject draft = new JSONObject(stringDraft);
 				// log.debug("json draft " + draft);
@@ -467,6 +467,7 @@ public class DeckParser implements Plugin {
 				saveDeck(pluginData, deckId, deck);
 			}
 			catch (Exception e) {
+				log.error("Couldn't read key " + review.getKey() + " on review " + review);
 				slackNotifier.notifyException(null, e, review.getId(), review.getKey(), review);
 			}
 		}

@@ -101,6 +101,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// Participant details
 	@Indexed
 	private ParticipantDetails participantDetails = new ParticipantDetails();
+	@Indexed
+	private MetaData metaData;
 	private String author, lastModifiedBy;
 	@Indexed
 	private String authorId;

@@ -23,6 +23,7 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
+import com.coach.review.MetaData;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.zerotoheroes.hsgameconverter.ReplayConverter;
@@ -195,6 +196,17 @@ public class HSReplay implements ReplayPlugin {
 						+ review.getParticipantDetails().getOpponentCategory() + ")";
 				review.setTitle(title);
 			}
+
+			MetaData metaData = review.getMetaData();
+			if (metaData == null || !(metaData instanceof HearthstoneMetaData)) {
+				metaData = new HearthstoneMetaData();
+				review.setMetaData(metaData);
+			}
+			HearthstoneMetaData hsMeta = (HearthstoneMetaData) metaData;
+			hsMeta.setDurationInSeconds(meta.getDurationInSeconds());
+			hsMeta.setNumberOfTurns(meta.getNumberOfTurns());
+			hsMeta.setWinStatus(meta.getWinStatus());
+
 			log.debug("done adding meta " + review);
 		}
 		catch (Throwable e) {

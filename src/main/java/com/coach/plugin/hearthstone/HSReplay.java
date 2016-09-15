@@ -25,9 +25,9 @@ import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
-import com.zerotoheroes.hsgameparser.ReplayConverter;
-import com.zerotoheroes.hsgameparser.replaydata.HearthstoneReplay;
-import com.zerotoheroes.hsgameparser.xmlparser.GameMetaData;
+import com.zerotoheroes.hsgameconverter.ReplayConverter;
+import com.zerotoheroes.hsgameentities.replaydata.HearthstoneReplay;
+import com.zerotoheroes.hsgameparser.metadata.GameMetaData;
 
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.core.ZipFile;

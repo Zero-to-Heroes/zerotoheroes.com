@@ -206,13 +206,13 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				}
 
 				$scope.preparePublishing = function() {
-					if (!$scope.review.participantDetails.populated) {
-						$log.debug('aiting for population of participantDetails', $scope.review.participantDetails)
-						$timeout(function() {
-							$scope.preparePublishing()
-						}, 50)
-						return
-					}
+					// if (!$scope.review.participantDetails.populated) {
+					// 	$log.debug('aiting for population of participantDetails', $scope.review.participantDetails)
+					// 	$timeout(function() {
+					// 		$scope.preparePublishing()
+					// 	}, 50)
+					// 	return
+					// }
 					$scope.publishVideo()
 				}
 

@@ -1,17 +1,23 @@
 package com.coach.review.replay.hearthstone;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.coach.core.notification.ExecutorProvider;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.plugin.hearthstone.HSReplay;
 import com.coach.review.ListReviewResponse;
 import com.coach.review.Review;
@@ -23,6 +29,12 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "/api/replays")
 @Slf4j
 public class ReplayApiHandler {
+
+	@Autowired
+	ExecutorProvider executorProvider;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	@Autowired
 	ReviewApiHandler reviewApi;
@@ -37,33 +49,54 @@ public class ReplayApiHandler {
 		log.debug("Handling replay file " + request);
 		List<String> originalFileKeys = request.getKeys();
 
-		List<Review> reviews = new ArrayList<>();
+		// List<Review> reviews = new ArrayList<>();
 
-		for (int i = 0; i < originalFileKeys.size(); i++) {
-			String key = originalFileKeys.get(i);
-			log.debug("\tprocessing key " + key);
+		// Need to propagate the security context
+		// http://stackoverflow.com/questions/5246428/spring-security-and-async
+		final Authentication a = SecurityContextHolder.getContext().getAuthentication();
 
-			// Are there several games in the single file?
-			List<String> games = hsReplay.extractGames(key, request.getFileTypes().get(i));
-			log.debug("\tbuilt " + games.size() + " games");
+		// Make this non-blocking
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws IOException, Exception {
+				try {
+					SecurityContext ctx = SecurityContextHolder.createEmptyContext();
+					ctx.setAuthentication(a);
+					SecurityContextHolder.setContext(ctx);
+					for (int i = 0; i < originalFileKeys.size(); i++) {
+						String key = originalFileKeys.get(i);
+						log.debug("\tprocessing key " + key);
 
-			// Process file
-			for (String game : games) {
-				Review review = new Review();
-				review.setFileType(request.getFileTypes().get(i));
-				review.setSport(Review.Sport.load(request.getSport()));
-				review.setTemporaryReplay(game);
-				review.setReplay("true");
-				review.setVisibility("private");
-				// review.setTemporaryKey(tempKey);
+						// Are there several games in the single file?
+						List<String> games = hsReplay.extractGames(key, request.getFileTypes().get(i));
+						log.debug("\tbuilt " + games.size() + " games");
 
-				reviewApi.createReview(review);
-				reviews.add(review);
-				log.debug("Created review " + review);
+						// Process file
+						for (String game : games) {
+							Review review = new Review();
+							review.setFileType(request.getFileTypes().get(i));
+							review.setSport(Review.Sport.load(request.getSport()));
+							review.setTemporaryReplay(game);
+							review.setReplay("true");
+							review.setVisibility("private");
+							// review.setTemporaryKey(tempKey);
+
+							review.setPublished(true);
+							reviewApi.createReview(review);
+							// reviews.add(review);
+							log.debug("Created review " + review);
+						}
+					}
+				}
+				catch (Exception e) {
+					log.error("Could not process all reviews " + request, e);
+					slackNotifier.notifyException(null, e, request);
+				}
+				return null;
 			}
-		}
+		});
 
-		ListReviewResponse response = new ListReviewResponse(reviews);
+		ListReviewResponse response = new ListReviewResponse(null);
 		return new ResponseEntity<ListReviewResponse>(response, HttpStatus.OK);
 	}
 }

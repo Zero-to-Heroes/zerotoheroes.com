@@ -28,6 +28,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				})
 				$scope.initPage = function() {
 					$log.debug('init page', $scope.uploader, $scope.active)
+					$scope.uploadDone = false
 					if ($scope.uploader.videoInfo) {
 						for (var i = 0; i < $scope.uploader.videoInfo.numberOfReviews; i++) {
 							var review = {
@@ -53,116 +54,122 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 
 						// Call the server with the file key(s) to get n processed replay files
 						Api.Replays.save({keys: [file.fileKey], sport: $scope.sport, fileTypes: [file.fileType]}, function(data) {
-							$log.debug('saved replays', data, $scope.reviews)
-							var replays = data.reviews
+							$scope.uploadDone = true
+							$scope.uploader.videoInfo.upload.postProcessed = true
 
-							replays.forEach(function(replay) {
-								$log.debug('updating review', $scope.currentIndex, $scope.reviews, replay)
-								var review = $scope.reviews[$scope.currentIndex++]
-								review.id = review.id || replay.id
-							})
-							
-							// $scope.reviews.forEach(function(review, index) {
-							// 	review.id = review.id || replays[index].id
-							// 	// review.title = review.title || replays[index].title || $translate.instant('global.upload.replay.multi.genericTitle', {index: index})
+							// $log.debug('saved replays', data, $scope.reviews)
+							// var replays = data.reviews
+
+							// replays.forEach(function(replay) {
+							// 	$log.debug('updating review', $scope.currentIndex, $scope.reviews, replay)
+							// 	var review = $scope.reviews[$scope.currentIndex++]
+							// 	review.id = review.id || replay.id
 							// })
-							// Only proceed if all reviews have been handled
-							if (_.every($scope.reviews, 'id')) {
-								$log.debug('all upload completed, lets go')
-								$scope.retrieveCompletionStatus()
-							}
+							
+							// // $scope.reviews.forEach(function(review, index) {
+							// // 	review.id = review.id || replays[index].id
+							// // 	// review.title = review.title || replays[index].title || $translate.instant('global.upload.replay.multi.genericTitle', {index: index})
+							// // })
+							// // Only proceed if all reviews have been handled
+							// if (_.every($scope.reviews, 'id')) {
+							// 	$log.debug('all upload completed, lets go')
+							// 	$scope.retrieveCompletionStatus()
+							// }
+						},
+						function(error) {
+							$log.error('could not complete the split file request', error, {keys: [file.fileKey], sport: $scope.sport, fileTypes: [file.fileType]}, MediaUploader)
 						})
 					}
 				}
 
-				$scope.retrieveCompletionStatus = function() {
-					var reviewIds = []
-					$scope.reviews.forEach(function(review) {
-						reviewIds.push(review.id)	
-					})
-					Api.ReviewsAll.get({reviewIds: reviewIds}, function(data) {
-						$log.debug('retrieved reviews', data)
+				// $scope.retrieveCompletionStatus = function() {
+				// 	var reviewIds = []
+				// 	$scope.reviews.forEach(function(review) {
+				// 		reviewIds.push(review.id)	
+				// 	})
+				// 	Api.ReviewsAll.get({reviewIds: reviewIds}, function(data) {
+				// 		$log.debug('retrieved reviews', data)
 
-						var done = true
-						data.reviews.forEach(function(review) {
-							done = done && review.transcodingDone
-						})
+				// 		var done = true
+				// 		data.reviews.forEach(function(review) {
+				// 			done = done && review.transcodingDone
+				// 		})
 
-						if (!done) {
-							$timeout(function() {
-								$scope.retrieveCompletionStatus()
-							}, 1000)
-							return
-						}
+				// 		if (!done) {
+				// 			$timeout(function() {
+				// 				$scope.retrieveCompletionStatus()
+				// 			}, 1000)
+				// 			return
+				// 		}
 
-						$log.debug('all reviews have been transcoded, now look at each file')
+				// 		$log.debug('all reviews have been transcoded, now look at each file')
 
-						// var externalPlayerLoadedCb = function(externalPlayer) {
-						// $log.debug('in callback', externalPlayer.reload)
-						data.reviews.forEach(function(review, index) {
-							var currentReview = $scope.reviews[index]
+				// 		// var externalPlayerLoadedCb = function(externalPlayer) {
+				// 		// $log.debug('in callback', externalPlayer.reload)
+				// 		data.reviews.forEach(function(review, index) {
+				// 			var currentReview = $scope.reviews[index]
 
-							review.author = currentReview.author || review.author
-							review.visibility = currentReview.visibility || review.visibility
-							review.participantDetails = currentReview.participantDetails || review.participantDetails || {}
-							review.plugins = currentReview.plugins || review.plugins
-							$scope.reviews[index] = review
+				// 			review.author = currentReview.author || review.author
+				// 			review.visibility = currentReview.visibility || review.visibility
+				// 			review.participantDetails = currentReview.participantDetails || review.participantDetails || {}
+				// 			review.plugins = currentReview.plugins || review.plugins
+				// 			$scope.reviews[index] = review
 
-							var replayUrl = ENV.videoStorageUrl + review.key
-							$log.debug('retrieving external replay', replayUrl, review)
-							$.get(replayUrl, function(data) {
-								$log.debug('retrieved xml file for review', review)
+				// 			// var replayUrl = ENV.videoStorageUrl + review.key
+				// 			// $log.debug('retrieving external replay', replayUrl, review)
+				// 			// $.get(replayUrl, function(data) {
+				// 			// 	$log.debug('retrieved xml file for review', review)
 
-								// Init the external player
-								var playerInfo = HsReplayParser.getPlayerInfo(data)
+				// 			// 	// Init the external player
+				// 			// 	var playerInfo = HsReplayParser.getPlayerInfo(data)
 
-								$log.debug('getting player info', playerInfo, review)
-								review.participantDetails.playerName = playerInfo.player.name
-								review.participantDetails.playerCategory = playerInfo.player.class
-								review.participantDetails.opponentName = playerInfo.opponent.name
-								review.participantDetails.opponentCategory = playerInfo.opponent.class
+				// 			// 	$log.debug('getting player info', playerInfo, review)
+				// 			// 	review.participantDetails.playerName = playerInfo.player.name
+				// 			// 	review.participantDetails.playerCategory = playerInfo.player.class
+				// 			// 	review.participantDetails.opponentName = playerInfo.opponent.name
+				// 			// 	review.participantDetails.opponentCategory = playerInfo.opponent.class
 
-								review.participantDetails.populated = true
+				// 			// 	review.participantDetails.populated = true
 
-								var defaultTitle = moment().format('YYYY-MM-DD') + ' - ' + $translate.instant('global.upload.replay.multi.genericTitle', {index: index + 1}) + ' - ' + review.participantDetails.playerName + '(' + review.participantDetails.playerCategory + ') vs ' + review.participantDetails.opponentName + '(' + review.participantDetails.opponentCategory + ')'
-								review.title = defaultTitle
+				// 			// 	var defaultTitle = moment().format('YYYY-MM-DD') + ' - ' + $translate.instant('global.upload.replay.multi.genericTitle', {index: index + 1}) + ' - ' + review.participantDetails.playerName + '(' + review.participantDetails.playerCategory + ') vs ' + review.participantDetails.opponentName + '(' + review.participantDetails.opponentCategory + ')'
+				// 			// 	review.title = defaultTitle
 
-								review.temporaryReplay = undefined
-								review.sport = undefined
+				// 			// 	review.temporaryReplay = undefined
+				// 			// 	review.sport = undefined
 
-								// SportsConfig.initPlayer($scope.config, review, null, null, externalPlayerLoadedCb)
-								$log.debug('init done', review.participantDetails)
-								$scope.$apply()
-							})
-							.fail(function(error) {
-								// $log.error('Could not load external data', data, error)
-								// if (error.status == 200) {
-								// 	review.replayXml = error.responseText;
+				// 			// 	// SportsConfig.initPlayer($scope.config, review, null, null, externalPlayerLoadedCb)
+				// 			// 	$log.debug('init done', review.participantDetails)
+				// 			// 	$scope.$apply()
+				// 			// })
+				// 			// .fail(function(error) {
+				// 			// 	// $log.error('Could not load external data', data, error)
+				// 			// 	// if (error.status == 200) {
+				// 			// 	// 	review.replayXml = error.responseText;
 
-								// 	$log.debug('getting player info', playerInfo, review)
-								// 	review.participantDetails = review.participantDetails || {}
+				// 			// 	// 	$log.debug('getting player info', playerInfo, review)
+				// 			// 	// 	review.participantDetails = review.participantDetails || {}
 
-								// 	review.participantDetails.playerName = playerInfo.player.name
-								// 	review.participantDetails.playerCategory = playerInfo.player.class
-								// 	review.participantDetails.opponentName = playerInfo.opponent.name
-								// 	review.participantDetails.opponentCategory = playerInfo.opponent.class
+				// 			// 	// 	review.participantDetails.playerName = playerInfo.player.name
+				// 			// 	// 	review.participantDetails.playerCategory = playerInfo.player.class
+				// 			// 	// 	review.participantDetails.opponentName = playerInfo.opponent.name
+				// 			// 	// 	review.participantDetails.opponentCategory = playerInfo.opponent.class
 
-								// 	review.participantDetails.populated = true
-								// 	$log.debug('player init')
-								// }
-								// else {
-									$log.error('Could not load external data', data, error)
-								// 	$scope.pluginsReady = true;
-								// }
-							})
-						})
-						$scope.uploader.videoInfo.upload.postProcessed = true
-						$scope.transcodingDone = true
-						$log.debug('processed replays')
-						// }
-						// SportsConfig.initPlayer($scope.config, $scope.reviews[0], null, null, externalPlayerLoadedCb)
-					})
-				}
+				// 			// 	// 	review.participantDetails.populated = true
+				// 			// 	// 	$log.debug('player init')
+				// 			// 	// }
+				// 			// 	// else {
+				// 			// 		$log.error('Could not load external data', data, error)
+				// 			// 	// 	$scope.pluginsReady = true;
+				// 			// 	// }
+				// 			// })
+				// 		})
+				// 		$scope.uploader.videoInfo.upload.postProcessed = true
+				// 		$scope.transcodingDone = true
+				// 		$log.debug('processed replays')
+				// 		// }
+				// 		// SportsConfig.initPlayer($scope.config, $scope.reviews[0], null, null, externalPlayerLoadedCb)
+				// 	})
+				// }
 
 				$scope.applyToAll = function(review) {
 					review = review || $scope.reviews[0]
@@ -180,9 +187,10 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				// Used only for compatibility
 				//===============
 				$scope.isDataValid = function() {
-					$scope.uploadForm.author.$setValidity('nameTaken', true)
-					$scope.$broadcast('show-errors-check-validity')
-					return $scope.uploadForm.$valid
+					return true
+					// $scope.uploadForm.author.$setValidity('nameTaken', true)
+					// $scope.$broadcast('show-errors-check-validity')
+					// return $scope.uploadForm.$valid
 				}
 				$scope.isFileValid = function() {
 					return true
@@ -194,54 +202,54 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				}
 
 
-				$scope.initPublishVideo = function() {
-					// If user is not registered, offer them to create an account
-					if (!User.isLoggedIn()) {
-						// Validate that the name is free
-						Api.Users.get({identifier: $scope.author}, 
-							function(data) {
-								// User exists
-								if (data.username) {
-									$scope.uploadForm.author.$setValidity('nameTaken', false)
-								}
-								else {
-									$scope.onPublish = true
-									$rootScope.$broadcast('account.signup.show', {identifier: $scope.author})
-								}
-							}
-						)
-					}
-					else {
-						$scope.publishVideo()
-					}
-				}
+				// $scope.initPublishVideo = function() {
+				// 	// If user is not registered, offer them to create an account
+				// 	if (!User.isLoggedIn()) {
+				// 		// Validate that the name is free
+				// 		Api.Users.get({identifier: $scope.author}, 
+				// 			function(data) {
+				// 				// User exists
+				// 				if (data.username) {
+				// 					$scope.uploadForm.author.$setValidity('nameTaken', false)
+				// 				}
+				// 				else {
+				// 					$scope.onPublish = true
+				// 					$rootScope.$broadcast('account.signup.show', {identifier: $scope.author})
+				// 				}
+				// 			}
+				// 		)
+				// 	}
+				// 	else {
+				// 		$scope.publishVideo()
+				// 	}
+				// }
 
-				$scope.publishVideo = function() {
-					$log.debug('publishing reviews', $scope.reviews)
-					$scope.reviews.forEach(function(review) {
-						review.author = $scope.author
-					})
-					var reviewsToUpload = []
-					$scope.reviews.forEach(function(review) {
-						if (review.visibility != 'skip') {
-							reviewsToUpload.push(review)
-						}
-					})
-					Api.ReviewsAll.save({reviews: reviewsToUpload}, 
-						function(data) {
-							if (User.isLoggedIn()) {
-								var url = '/s/' + $routeParams['sport'] + '/myVideos'
-								// $log.debug('all good, going to', url)
-								$location.path(url)
-							}
-							else {
-								var url = '/r/' + $routeParams['sport'] + '/' + reviewsToUpload[0].id + '/' + S(reviewsToUpload[0].title).slugify().s
-								// $log.debug('all good, going to', url)
-								$location.path(url)
-							}
-						}
-					)
-				}
+				// $scope.publishVideo = function() {
+				// 	$log.debug('publishing reviews', $scope.reviews)
+				// 	$scope.reviews.forEach(function(review) {
+				// 		review.author = $scope.author
+				// 	})
+				// 	var reviewsToUpload = []
+				// 	$scope.reviews.forEach(function(review) {
+				// 		if (review.visibility != 'skip') {
+				// 			reviewsToUpload.push(review)
+				// 		}
+				// 	})
+				// 	Api.ReviewsAll.save({reviews: reviewsToUpload}, 
+				// 		function(data) {
+				// 			if (User.isLoggedIn()) {
+				// 				var url = '/s/' + $routeParams['sport'] + '/myVideos'
+				// 				// $log.debug('all good, going to', url)
+				// 				$location.path(url)
+				// 			}
+				// 			else {
+				// 				var url = '/r/' + $routeParams['sport'] + '/' + reviewsToUpload[0].id + '/' + S(reviewsToUpload[0].title).slugify().s
+				// 				// $log.debug('all good, going to', url)
+				// 				$location.path(url)
+				// 			}
+				// 		}
+				// 	)
+				// }
 
 
 				// //===============

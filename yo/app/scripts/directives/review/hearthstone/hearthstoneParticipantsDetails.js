@@ -7,7 +7,8 @@ app.directive('hearthstoneParticipantsDetails', ['$log', 'SportsConfig', 'Api', 
 			templateUrl: 'templates/review/hearthstone/hearthstoneParticipantsDetails.html',
 			scope: {
 				review: '=',
-				mediaPlayer: '='
+				mediaPlayer: '=',
+				hideParticipants: '='
 			},
 			link: function ($scope, element, attrs) {
 			},

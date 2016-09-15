@@ -2,7 +2,7 @@ package com.coach.plugin.hearthstone;
 
 import org.springframework.stereotype.Component;
 
-import com.zerotoheroes.hsgameparser.xmlparser.GameParser;
+import com.zerotoheroes.hsgameparser.metadata.GameParser;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

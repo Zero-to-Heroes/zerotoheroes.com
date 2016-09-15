@@ -12,8 +12,15 @@
 <!-- <div id="externalPlayer" ng-hide></div> -->
 
 <form class="background-white joustjs multi-form" name="uploadForm">
+
+	<div class="alert status-message" ng-show="uploadDone">
+		<span translate="global.upload.replay.multi.fileUploadDone"></span>
+	</div>
+	<div class="alert status-message" ng-hide="uploadDone">
+		<span translate="global.upload.replay.multi.fileUploadOngoing"></span>
+	</div>
   			
-	<div class="row username" ng-hide="User.isLoggedIn()">
+	<!-- <div class="row username" ng-hide="User.isLoggedIn()">
 		<div class="col-sm-12">
 			<div class="form-group" show-errors="{ showSuccess: true }">
 				<div class="alert alert-danger" role="alert" ng-show="uploadForm.author.$error.nameTaken"><span>{{ 'global.upload.nameTaken' | translate }}<a ng-click="signIn()">{{ 'global.upload.nameTakenLink' | translate }}</a>{{ 'global.upload.nameTaken2' | translate }}</span></div>
@@ -29,14 +36,12 @@
 	<ul class="multi-upload">
 		<li ng-repeat="review in reviews" class="review {{review.visibility}}">
 			<div class="review-container">
-				<!-- {{review.id}} -->
 				<div class="title-container form-group" show-errors="{ showSuccess: true }">
 					<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="review.visibility != 'skip' ? true : false" ng-readonly="transcoding">
 				</div>
-				<participants-details review="review"></participants-details>
+				<participants-details review="review" hide-participants="true"></participants-details>
 				<hs-decklist-upload sport="sport" review="review"></hs-decklist-upload>
 				<review-visibility review="review" multi-upload="true"></review-visibility>
-				<!-- {{review}} -->
 			</div>
 		</li>
 	</ul>
@@ -48,5 +53,5 @@
   			<button class="btn btn-primary btn-upload" ng-click="initPublishVideoWhenReady()" ng-show="(!transcodingDone && !publishPending)" ng-disabled="!isDataValid() || isMultiAnonymous()"><span>{{ 'global.upload.video.publishReviewWhenReadyButton' | translate }}</span></button>
   			<button class="btn btn-primary btn-upload" ng-click="cancelPendingUpload()" ng-show="publishPending" ng-disabled="isMultiAnonymous()"><span>{{ 'global.upload.video.publishingPendingUpload' | translate }}</span></button>
 			</div>
-	</div>
+	</div> -->
 </form>

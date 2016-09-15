@@ -35,6 +35,9 @@
 	<div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="numberOfGames < files.length">
 		<span ng-bind-html="'global.upload.replay.someInvalidFilesMessage' | translate"></span>
 	</div>
+	<div class="alert alert-danger unsupported-multi-anonymous-upload" role="alert" ng-show="numberOfGames > 1 && !User.isLoggedIn()">
+		<span ng-bind-html="'global.upload.replay.disabledAnonymousMultiUpload' | translate"></span>
+	</div>
 
 	<!-- Since we have no video preview (we may have when we support upload of xml files directly), we need to at least show the file has been selected -->
 	<!-- <div class="alert alert-info selected-file" role="alert" ng-show="file">
@@ -44,7 +47,7 @@
 
 	<!-- Let's go! -->
 	<div class="upload-button">
-		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError || numberOfGames == 0"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
+		<button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="hasUnsupportedFormatError || numberOfGames == 0 || (numberOfGames > 1 && !User.isLoggedIn())"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
 	</div>
 
 </div>

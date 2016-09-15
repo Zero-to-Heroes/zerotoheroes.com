@@ -23,7 +23,7 @@
 <div class="video-review-upload-comments" ng-class="playerControls.wideMode ? 'col-md-5' : 'col-md-7'">
 	<div class="background-white">
 		<form class="container-fluid" name="uploadForm">
-		  	<participants-details review="review" media-player="externalPlayer"></participants-details>
+		  	<participants-details review="review" media-player="externalPlayer" hide-participants="true"></participants-details>
 			<div class="row" ng-hide="User.isLoggedIn()">
 				<div class="col-sm-12">
 					<div class="form-group" show-errors="{ showSuccess: true }">

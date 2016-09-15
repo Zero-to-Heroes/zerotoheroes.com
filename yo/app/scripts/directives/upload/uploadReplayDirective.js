@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 
-	function(FileUploader, MediaUploader, $log, SportsConfig, $timeout, $parse, ENV) {
+app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 'User', 
+	function(FileUploader, MediaUploader, $log, SportsConfig, $timeout, $parse, ENV, User) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -17,6 +17,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 			controller: function($scope) {
 
 				$scope.sportsConfig = SportsConfig
+				$scope.User = User
 
 				$scope.clearFiles = function() {
 					$scope.files = []

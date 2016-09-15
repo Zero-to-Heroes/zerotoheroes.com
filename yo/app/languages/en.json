@@ -552,7 +552,9 @@
 					"canUploadMore": "You can add more files by dropping them here (just be reasonable - we know it crashes with 600 files, and works with 10), or remove them by clicking on the delete icon. ",
 					"applyAll": "Populate reviews from first",
 					"multiAnonymousErrorMessage": "Unregistered users can only upload one game at a time. Please login or register to upload all your games at once (more info on why we do this <a href=\"https://www.reddit.com/r/zerotoheroes/comments/4w4qyx/prevent_limit_the_number_of_public_reviews_in/\" target=\"blank\">here</a>), or mark the games you don't want as \"Skip\" with the dropdown",
-					"applyAllTooltip": "There are some fields we can't yet populate automatically from the replay file, and that you have to enter manually. Clicking on this button will use the first review's fields values to populate all the other reviews"
+					"applyAllTooltip": "There are some fields we can't yet populate automatically from the replay file, and that you have to enter manually. Clicking on this button will use the first review's fields values to populate all the other reviews",
+					"fileUploadDone": "Your files have been uploaded to our servers, and will be processed shortly. Depending on the number of files and games, it might take a while, but you're free to leave the page now. When done, your games will appear in \"My Games\" (and in the future you'll even send you a message)",
+					"fileUploadOngoing": "Your games are being uploaded. Waiting is boring, but we're here with you. Hang in there!"
 				}
 			},
 			"fromurl": {

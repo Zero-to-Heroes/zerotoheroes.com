@@ -7,7 +7,8 @@ app.directive('participantsDetails', ['$log', 'SportsConfig',
 			templateUrl: 'templates/review/participantsDetails.html',
 			scope: {
 				review: '=',
-				mediaPlayer: '='
+				mediaPlayer: '=',
+				hideParticipants: '='
 			},
 			link: function ($scope, element, attrs) {
 			},

@@ -187,16 +187,6 @@ public class HSReplay implements ReplayPlugin {
 			review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
 			review.getParticipantDetails().setOpponentCategory(meta.getOpponentClass());
 
-			log.debug("adding title?");
-			if (StringUtils.isEmpty(review.getTitle())) {
-				String title = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " - "
-						+ review.getParticipantDetails().getPlayerName() + "("
-						+ review.getParticipantDetails().getPlayerCategory() + ") vs "
-						+ review.getParticipantDetails().getOpponentName() + "("
-						+ review.getParticipantDetails().getOpponentCategory() + ")";
-				review.setTitle(title);
-			}
-
 			MetaData metaData = review.getMetaData();
 			if (metaData == null || !(metaData instanceof HearthstoneMetaData)) {
 				metaData = new HearthstoneMetaData();
@@ -206,6 +196,17 @@ public class HSReplay implements ReplayPlugin {
 			hsMeta.setDurationInSeconds(meta.getDurationInSeconds());
 			hsMeta.setNumberOfTurns(meta.getNumberOfTurns());
 			hsMeta.setWinStatus(meta.getWinStatus());
+
+			log.debug("adding title?");
+			if (StringUtils.isEmpty(review.getTitle())) {
+				String title = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " - "
+						+ review.getParticipantDetails().getPlayerName() + "("
+						+ review.getParticipantDetails().getPlayerCategory() + ") vs "
+						+ review.getParticipantDetails().getOpponentName() + "("
+						+ review.getParticipantDetails().getOpponentCategory() + ")";
+				title += " - " + hsMeta.getWinStatus();
+				review.setTitle(title);
+			}
 
 			log.debug("done adding meta " + review);
 		}

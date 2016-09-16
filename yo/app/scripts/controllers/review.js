@@ -327,11 +327,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview, 
 					function(data) {
 						$scope.showHelp = false;
-		  				$scope.review.canvas = data.canvas;
-
-		  				if (data.plugins && data.plugins.hearthstone && data.plugins.hearthstone.parseDecks && data.plugins.hearthstone.parseDecks.reviewDeck) {
-							data.plugins.hearthstone.parseDecks.reviewDeck = data.plugins.hearthstone.parseDecks.reviewDeck.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '')
-						}
+		  				$scope.review.canvas = data.canvas
 		  				$scope.review.plugins = data.plugins;
 
 		  				//$log.log('plugins', $scope.review.plugins);

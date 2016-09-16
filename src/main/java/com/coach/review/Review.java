@@ -40,7 +40,7 @@ import lombok.extern.slf4j.Slf4j;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString(exclude = { "comments", "canvas", "temporaryReplay" })
+@ToString(exclude = { "comments", "canvas", "temporaryReplay", "description" })
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Slf4j
 @Document

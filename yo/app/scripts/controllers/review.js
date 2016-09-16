@@ -341,7 +341,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						// Error handling
 						$log.error(error);
 					}
-				);
+				)
 			}
 		}
 

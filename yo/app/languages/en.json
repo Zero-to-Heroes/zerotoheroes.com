@@ -555,7 +555,8 @@
 					"applyAllTooltip": "There are some fields we can't yet populate automatically from the replay file, and that you have to enter manually. Clicking on this button will use the first review's fields values to populate all the other reviews",
 					"fileUploadDone": "Your files have been uploaded to our servers, and will be processed shortly. Depending on the number of files and games, it might take a while, but you're free to leave the page now. When done, your games will appear in \"My Games\" (and in the future you'll even send you a message)",
 					"fileUploadOngoing": "Your games are being uploaded. Waiting is boring, but we're here with you. Hang in there!"
-				}
+				},
+				"disabledAnonymousMultiUpload": "Uploading multiple games as an anonymous user is not supported for now. Please log in or create an account first. Thanks!"
 			},
 			"fromurl": {
 				"headline": "Upload from URL",

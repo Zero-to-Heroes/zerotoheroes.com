@@ -59,6 +59,7 @@ public class ReplayProcessor {
 										&& review.getMediaType().equals(replayPlugin.getMediaType())) {
 							log.debug("Applying plugin " + plugin);
 							replayPlugin.transformReplayFile(review);
+							log.debug("Plugin applied");
 						}
 					}
 				}

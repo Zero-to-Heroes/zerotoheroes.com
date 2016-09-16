@@ -35,6 +35,8 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 						type = 'text/xml'
 					else if (['hdtreplay'].indexOf(extension) > -1)
 						type = 'hdtreplay'
+					else if (['arenatracker'].indexOf(extension) > -1)
+						type = 'text/plain'
 				}
 				service.videoInfo.fileTypes.push(type)
 				file.fileType = type

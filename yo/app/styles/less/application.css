@@ -213,3 +213,34 @@
 .video-comment.multi-comment .dampen .inactive .comment-main:hover {
   filter: none;
 }
+.video-information .video-information-header .review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.video-information .video-information-header .review-header.editing {
+  flex-wrap: wrap;
+}
+.video-information .video-information-header .review-header.editing .metadata {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.video-information .video-information-header .review-header.editing .title {
+  flex-basis: 100%;
+}
+.video-information .video-information-header .review-header.editing hs-decklist-upload {
+  margin-bottom: 0;
+}
+.video-information .video-information-header .review-header.editing hs-decklist-upload .deck-list {
+  display: flex;
+  align-items: center;
+}
+.video-information .video-information-header .review-header.editing .review-visibility {
+  width: inherit;
+  margin-left: 0;
+  margin-right: 0;
+}
+.video-information .video-information-header .review-header.editing .review-visibility .btn-select {
+  margin-left: 0;
+}

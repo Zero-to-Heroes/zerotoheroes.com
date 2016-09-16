@@ -6,7 +6,8 @@ app.directive('hearthstoneListingDetailsGame', ['$log', 'SportsConfig',
 			transclude: false,
 			templateUrl: 'templates/search/hearthstoneListingDetailsGame.html',
 			scope: {
-				review: '='
+				review: '=',
+				 hideParticipants: '='
 			},
 			link: function ($scope, element, attrs) {
 			},

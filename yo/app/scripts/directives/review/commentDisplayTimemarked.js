@@ -81,7 +81,11 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 						if (commentTurns.indexOf(comment.timestamp) == -1) 
 							commentTurns.push(comment.timestamp)
 					})
-					var orderedCommentTurns = _.sortBy(commentTurns)
+
+					var orderedCommentTurns = commentTurns.sort(function(a, b) {
+						return $scope.naturalCompare(a, b)
+					})
+
 					var fullCommentTurns = []
 					orderedCommentTurns.forEach(function(turn) {
 						var fullTurn = {
@@ -101,17 +105,22 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 
 
 				}
-				// $scope.getCommentTurns()
+				
+				$scope.naturalCompare = function(a, b) {
+				    var ax = [], bx = [];
 
-				// $scope.getTurnComments = function(turn) {
-				// 	var comments = []
-				// 	$scope.review.comments.forEach(function(comment) {
-				// 		if (comment.timestamp == turn) {
-				// 			comments.push(comment)
-				// 		}
-				// 	})
-				// 	return comments
-				// }
+				    a.replace(/(\d+)|(\D+)/g, function(_, $1, $2) { ax.push([$1 || Infinity, $2 || ""]) });
+				    b.replace(/(\d+)|(\D+)/g, function(_, $1, $2) { bx.push([$1 || Infinity, $2 || ""]) });
+				    
+				    while(ax.length && bx.length) {
+				        var an = ax.shift();
+				        var bn = bx.shift();
+				        var nn = (an[0] - bn[0]) || an[1].localeCompare(bn[1]);
+				        if(nn) return nn;
+				    }
+
+				    return ax.length - bx.length;
+				}
 			}
 		}
 	}

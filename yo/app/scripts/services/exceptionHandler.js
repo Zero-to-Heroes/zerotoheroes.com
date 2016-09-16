@@ -52,7 +52,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 	}
 
 	function isBot () {
-	  	return (navigator.userAgent.indexOf('Googlebot') !== -1 && navigator.userAgent.indexOf('YandexBot') !== -1);
+	  	return (navigator.userAgent.indexOf('Googlebot') !== -1 || navigator.userAgent.indexOf('YandexBot') !== -1);
 	}
 
 	function isPrerender() {

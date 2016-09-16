@@ -30,13 +30,13 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 					var indexOfLastDot = file.name.lastIndexOf('.')
 					var extension = file.name.slice(indexOfLastDot + 1)
 					if (['log', 'txt'].indexOf(extension) > -1)
-						type = 'text/plain'
+						type = 'text/plain; charset=utf-8'
 					else if (['xml'].indexOf(extension) > -1)
-						type = 'text/xml'
+						type = 'text/xml; charset=utf-8'
 					else if (['hdtreplay'].indexOf(extension) > -1)
 						type = 'hdtreplay'
 					else if (['arenatracker'].indexOf(extension) > -1)
-						type = 'text/plain'
+						type = 'text/plain; charset=utf-8'
 				}
 				service.videoInfo.fileTypes.push(type)
 				file.fileType = type
@@ -59,7 +59,8 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 
 			files.forEach(function(file, index) {
 
-				var params = { Key: fileKeys[index], ContentType: file.type, Body: file }
+				var params = { Key: fileKeys[index], ContentType: service.videoInfo.fileTypes[index], Body: file }
+				$log.debug('uploading with params', params)
 				upload.upload(params, function(err, data) {
 					// There Was An Error With Your S3 Config
 					if (err) {

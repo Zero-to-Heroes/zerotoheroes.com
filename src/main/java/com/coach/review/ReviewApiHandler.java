@@ -453,8 +453,6 @@ public class ReviewApiHandler {
 	public @ResponseBody ResponseEntity<Review> addMultiComment(@PathVariable("reviewId") final String id,
 			@RequestBody Map<String, Comment> multiComment) throws IOException {
 
-		log.debug("adding multi comment " + multiComment);
-
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
@@ -464,6 +462,10 @@ public class ReviewApiHandler {
 
 		for (String turn : multiComment.keySet()) {
 			Comment comment = multiComment.get(turn);
+
+			if (StringUtils.isNullOrEmpty(comment.getText())) {
+				continue;
+			}
 			// TODO: unhardcode this - we want the timestamps to be easily
 			// sortable
 			if ("mulligan".equalsIgnoreCase(turn)) {

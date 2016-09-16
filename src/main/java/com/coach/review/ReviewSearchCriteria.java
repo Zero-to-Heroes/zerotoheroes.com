@@ -3,6 +3,9 @@ package com.coach.review;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
+import org.springframework.util.StringUtils;
+
 import com.coach.tag.Tag;
 
 import lombok.Getter;
@@ -92,5 +95,23 @@ public class ReviewSearchCriteria {
 		}
 
 		return matches;
+	}
+
+	// Default values for almost everything -> we return the latest reviews
+	public boolean isLatest() {
+		return StringUtils.isEmpty(title) && StringUtils.isEmpty(reviewType) && CollectionUtils.isEmpty(wantedTags)
+				&& CollectionUtils.isEmpty(unwantedTags) && (ownVideos == null || ownVideos == false)
+				&& (onlyHelpful == null || onlyHelpful == false) && (noHelpful == null || noHelpful == false)
+				&& (participantDetails == null || participantDetails.isEmpty())
+				&& (minComments == null || minComments == 0) && maxComments == null
+				&& (StringUtils.isEmpty(visibility) || visibility.equalsIgnoreCase("public"));
+	}
+
+	public boolean isMyLatest() {
+		return StringUtils.isEmpty(title) && StringUtils.isEmpty(reviewType) && CollectionUtils.isEmpty(wantedTags)
+				&& CollectionUtils.isEmpty(unwantedTags) && ownVideos != null && ownVideos
+				&& (onlyHelpful == null || onlyHelpful == false) && (noHelpful == null || noHelpful == false)
+				&& (participantDetails == null || participantDetails.isEmpty())
+				&& (minComments == null || minComments == 0) && maxComments == null;
 	}
 }

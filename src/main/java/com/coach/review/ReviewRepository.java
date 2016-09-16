@@ -21,7 +21,6 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 	List<Review> findByAuthor(String authorName);
 
 	//@formatter:off
-	//@Query("{  $or : [ { $where : '?0 == null' }, { fullTextSearchField : { $regex : '?0', $options: 'ix' } } ],"
 	@Query(	value =
 		"{ sport : ?0, "
 			+ "published: true,"
@@ -59,28 +58,106 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ 		"'totalComments' : 1,"
 			+ 		"'totalHelpfulComments' : 1,"
 			+ 		"'viewCount' : 1,"
-//			+ 		"'thumbnail' : 1,"
-//			+ 		"'language' : 1,"
 			+ 		"'tags' : 1,"
 			+ 		"'creationDate' : 1,"
 			+ 		"'sport' : 1,"
 			+ 		"'participantDetails' : 1,"
-			+ 		"'key' : 1,"
-			+ 		"'mediaType' : 1,"
-			+ 		"'beginning' : 1,"
-			+ 		"'ending' : 1,"
+			+ 		"'metaData' : 1,"
+//			+ 		"'key' : 1,"
+//			+ 		"'mediaType' : 1,"
+//			+ 		"'beginning' : 1,"
+//			+ 		"'ending' : 1,"
 			+ 		"'visibility' : 1,"
 			+ 		"'lastModifiedDate' : 1"
 			+ 	"}"
 	)
 	//@formatter:on
-	// Page<Review> listReviews(String sportCriteria, String authorId, List<Tag>
-	// wantedTags, List<Tag> unwantedTags,
-	// Pageable pageable);
 	Page<Review> listReviews(String sportCriteria, String authorId, List<Tag> wantedTags, List<Tag> unwantedTags,
 			Boolean onlyHelpful, Boolean noHelpful, String playerCategory, String opponentCategory,
 			List<Tag> skillLevel, String reviewType, Integer minComments, Integer maxComments, Boolean ownVideo,
 			String visibility, Pageable pageable);
+
+	//@formatter:off
+	@Query(	value =
+		"{ sport : ?0, "
+			+ "published: true,"
+			+ "visibility : 'public'"
+		+ "}",
+			fields =
+				"{"
+			+ 		"'id' : 1,"
+			+ 		"'title' : 1,"
+			+ 		"'author' : 1,"
+			+ 		"'reputation' : 1,"
+			+ 		"'totalComments' : 1,"
+			+ 		"'totalHelpfulComments' : 1,"
+			+ 		"'viewCount' : 1,"
+			+ 		"'tags' : 1,"
+			+ 		"'creationDate' : 1,"
+			+ 		"'sport' : 1,"
+			+ 		"'participantDetails' : 1,"
+			+ 		"'metaData' : 1,"
+			+ 		"'visibility' : 1,"
+			+ 		"'lastModifiedDate' : 1"
+			+ 	"}"
+	)
+	//@formatter:on
+	Page<Review> listLatestReviews(String sportCriteria, Pageable pageable);
+
+	//@formatter:off
+	@Query(	value =
+		"{ sport : ?0, "
+			+ "published: true,"
+			+ "authorId: ?1,"
+			+ "visibility : ?2"
+		+ "}",
+			fields =
+				"{"
+			+ 		"'id' : 1,"
+			+ 		"'title' : 1,"
+			+ 		"'author' : 1,"
+			+ 		"'reputation' : 1,"
+			+ 		"'totalComments' : 1,"
+			+ 		"'totalHelpfulComments' : 1,"
+			+ 		"'viewCount' : 1,"
+			+ 		"'tags' : 1,"
+			+ 		"'creationDate' : 1,"
+			+ 		"'sport' : 1,"
+			+ 		"'participantDetails' : 1,"
+			+ 		"'metaData' : 1,"
+			+ 		"'visibility' : 1,"
+			+ 		"'lastModifiedDate' : 1"
+			+ 	"}"
+	)
+	//@formatter:on
+	Page<Review> listMyReviews(String sportCriteria, String authorId, String visibility, Pageable pageable);
+
+	//@formatter:off
+		@Query(	value =
+			"{ sport : ?0, "
+				+ "published: true,"
+				+ "authorId: ?1"
+			+ "}",
+				fields =
+					"{"
+				+ 		"'id' : 1,"
+				+ 		"'title' : 1,"
+				+ 		"'author' : 1,"
+				+ 		"'reputation' : 1,"
+				+ 		"'totalComments' : 1,"
+				+ 		"'totalHelpfulComments' : 1,"
+				+ 		"'viewCount' : 1,"
+				+ 		"'tags' : 1,"
+				+ 		"'creationDate' : 1,"
+				+ 		"'sport' : 1,"
+				+ 		"'participantDetails' : 1,"
+				+ 		"'metaData' : 1,"
+				+ 		"'visibility' : 1,"
+				+ 		"'lastModifiedDate' : 1"
+				+ 	"}"
+		)
+		//@formatter:on
+	Page<Review> listAllMyReviews(String sportCriteria, String authorId, Pageable pageable);
 
 	//@formatter:off
 	@Query(	value =
@@ -121,16 +198,15 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 				+ 		"'totalComments' : 1,"
 				+ 		"'totalHelpfulComments' : 1,"
 				+ 		"'viewCount' : 1,"
-//				+ 		"'thumbnail' : 1,"
-//				+ 		"'language' : 1,"
 				+ 		"'tags' : 1,"
 				+ 		"'creationDate' : 1,"
 				+ 		"'sport' : 1,"
 				+ 		"'participantDetails' : 1,"
-				+ 		"'key' : 1,"
-				+ 		"'mediaType' : 1,"
-				+ 		"'beginning' : 1,"
-				+ 		"'ending' : 1,"
+				+ 		"'metaData' : 1,"
+//				+ 		"'key' : 1,"
+//				+ 		"'mediaType' : 1,"
+//				+ 		"'beginning' : 1,"
+//				+ 		"'ending' : 1,"
 				+ 		"'visibility' : 1,"
 				+ 		"'lastModifiedDate' : 1"
 				+ 	"}"

@@ -129,6 +129,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	@JsonIgnore
 	@TextIndexed
 	private String fullTextSearchField = "";
+	@Indexed
 	@JsonIgnore
 	private List<Tag> allTags = new ArrayList<>();
 

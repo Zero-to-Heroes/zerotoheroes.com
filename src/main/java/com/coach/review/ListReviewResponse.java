@@ -42,6 +42,7 @@ public class ListReviewResponse {
 		private Reputation reputation;
 		private int viewCount;
 		private List<Tag> tags;
+		private String visibility;
 
 		public static ResponseReview from(Review review) {
 			if (review == null) { return null; }
@@ -62,6 +63,7 @@ public class ListReviewResponse {
 			result.viewCount = review.getViewCount();
 			result.tags = review.getTags();
 			result.sport = review.getSport();
+			result.visibility = review.getVisibility();
 			return result;
 		}
 	}

@@ -49,7 +49,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ReviewApiHandler {
 
-	private static final int PAGE_SIZE = 15;
+	private static final int PAGE_SIZE = 50;
 
 	@Autowired
 	ReviewRepository reviewRepo;
@@ -97,7 +97,8 @@ public class ReviewApiHandler {
 	AutowireCapableBeanFactory beanFactory;
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<ListReviewResponse> listAllReviews(@RequestBody ReviewSearchCriteria criteria) {
+	public @ResponseBody ResponseEntity<ListReviewResponse> searchAllReviews(
+			@RequestBody ReviewSearchCriteria criteria) {
 		// log.debug("Retrieving all reviews with criteria " + criteria);
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -130,10 +131,7 @@ public class ReviewApiHandler {
 
 		// Sorting in ascending order of creation date first
 		Sort sort = new Sort(Sort.Direction.DESC, Arrays.asList("creationDate"));
-		if ("creationDate".equals(criteria.getSort())) {
-			sort = new Sort(Sort.Direction.DESC, Arrays.asList("creationDate"));
-		}
-		else if ("updateDate".equals(criteria.getSort())) {
+		if ("updateDate".equals(criteria.getSort())) {
 			sort = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
 		}
 
@@ -145,43 +143,53 @@ public class ReviewApiHandler {
 				: null;
 
 		Page<Review> page = null;
-		try {
-			// log.debug("tentative search with criteria " + criteria);
-			String text = criteria.getText();
-			// log.debug("\t " + text);
-			if (text == null || text.isEmpty()) {
-				// page = reviewRepo.listReviews(sportCriteria, author,
-				// criteria.getWantedTags(),
-				// criteria.getUnwantedTags(), pageRequest);
-				page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(),
-						criteria.getUnwantedTags(), criteria.getOnlyHelpful(), criteria.getNoHelpful(),
-						criteria.getParticipantDetails().getPlayerCategory(),
-						criteria.getParticipantDetails().getOpponentCategory(),
-						criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
-						criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
-						criteria.getVisibility(), pageRequest);
+		long queryStart = System.currentTimeMillis();
+		// log.debug("tentative search with criteria " + criteria);
+		String text = criteria.getText();
+		// Simple search to the latest reviews - remove the burden from mongo to
+		// speed up the queries by removing parameters
+		if (criteria.isLatest()) {
+			log.debug("getting latest reviews");
+			page = reviewRepo.listLatestReviews(sportCriteria, pageRequest);
+		}
+		else if (criteria.isMyLatest()) {
+			log.debug("getting my latest reviews");
+			if (StringUtils.isNullOrEmpty(criteria.getVisibility())) {
+				page = reviewRepo.listAllMyReviews(sportCriteria, user.getId(), pageRequest);
 			}
 			else {
-				// log.debug("searching with criteria " + criteria);
-				page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(),
-						criteria.getUnwantedTags(), criteria.getOnlyHelpful(), criteria.getNoHelpful(),
-						criteria.getParticipantDetails().getPlayerCategory(),
-						criteria.getParticipantDetails().getOpponentCategory(),
-						criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
-						criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
-						criteria.getVisibility(), text, pageRequest);
+				page = reviewRepo.listMyReviews(sportCriteria, user.getId(), criteria.getVisibility(), pageRequest);
 			}
 		}
-		catch (Exception e) {
-			slackNotifier.notifyError(e, sportCriteria, author, criteria, pageRequest);
-			throw e;
+		else if (text == null || text.isEmpty()) {
+			// page = reviewRepo.listReviews(sportCriteria, author,
+			// criteria.getWantedTags(),
+			// criteria.getUnwantedTags(), pageRequest);
+			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
+					criteria.getOnlyHelpful(), criteria.getNoHelpful(),
+					criteria.getParticipantDetails().getPlayerCategory(),
+					criteria.getParticipantDetails().getOpponentCategory(),
+					criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
+					criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
+					criteria.getVisibility(), pageRequest);
+		}
+		else {
+			// log.debug("searching with criteria " + criteria);
+			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
+					criteria.getOnlyHelpful(), criteria.getNoHelpful(),
+					criteria.getParticipantDetails().getPlayerCategory(),
+					criteria.getParticipantDetails().getOpponentCategory(),
+					criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
+					criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
+					criteria.getVisibility(), text, pageRequest);
 		}
 
+		log.debug("query returned");
 		List<Review> reviews = page.getContent();
 		// log.debug("all reviews " + reviews);
 		ListReviewResponse response = new ListReviewResponse(reviews);
 		response.setTotalPages(page.getTotalPages());
-
+		response.setQueryDuration(System.currentTimeMillis() - queryStart);
 		String userId = user != null ? user.getId() : "";
 		// tweak info about reputation
 		reputationUpdater.modifyReviewsAccordingToUser(reviews, userId);

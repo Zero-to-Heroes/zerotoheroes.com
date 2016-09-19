@@ -99,7 +99,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 				var User = $injector.get('User');
 				if (rejection.config && rejection.config.url && rejection.config.url.indexOf('announcements') == -1) {
 					if (!rejection.data) {
-						// notify('Http response error without data details - look in server logs for more info', "rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
+						notify('Http response error without data details - look in server logs for more info', "rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
 					}
 					else {
 						var code = rejection.data.status;

@@ -13,4 +13,5 @@ public class HearthstoneMetaData extends MetaData {
 	private int durationInSeconds;
 	private int numberOfTurns;
 	private String winStatus;
+	private String gameMode;
 }

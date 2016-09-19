@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.zip.GZIPInputStream;
@@ -27,10 +28,12 @@ import org.springframework.web.multipart.MultipartFile;
 import com.coach.core.security.User;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.hearthstone.HSReplay;
+import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.review.Review;
 import com.coach.review.ReviewApiHandler;
 import com.coach.review.ReviewRepository;
 import com.coach.review.ReviewService;
+import com.coach.tag.Tag;
 import com.coach.user.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -59,7 +62,9 @@ public class ReviewPublicApi {
 	HSReplay hsReplay;
 
 	@RequestMapping(value = "/progressive/init", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<FileUploadResponse> initReview() throws Exception {
+	public @ResponseBody ResponseEntity<FileUploadResponse> initReview(@RequestBody ReviewCreationParams data)
+			throws Exception {
+		log.debug("creating review with params " + data);
 		FileUploadResponse response = null;
 		Review review = new Review();
 		review.setFileType("text/plain");
@@ -69,7 +74,8 @@ public class ReviewPublicApi {
 		review.setTemporaryReplay("");
 		review.setReviewType("game-replay");
 		review.setUseV2comments(true);
-		// review.setTemporaryKey(tempKey);
+
+		addMetaData(data, review);
 
 		reviewRepo.save(review);
 		List<String> ids = new ArrayList<>();
@@ -78,6 +84,24 @@ public class ReviewPublicApi {
 
 		response = new FileUploadResponse(ids, null);
 		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
+	}
+
+	private void addMetaData(ReviewCreationParams data, Review review) {
+		HearthstoneMetaData meta = new HearthstoneMetaData();
+		meta.setGameMode(data.getGameMode());
+		review.setMetaData(meta);
+
+		String rank = null;
+		if (data.getRank() != 0) {
+			rank = "rank" + data.getRank();
+		}
+		else if (data.getLegendRank() != 0) {
+			rank = "legend";
+		}
+		if (rank != null) {
+			review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag(rank)));
+			// review.setTemporaryKey(tempKey);
+		}
 	}
 
 	@RequestMapping(value = "/progressive/append/gzip/{reviewId}", method = RequestMethod.POST)
@@ -102,13 +126,16 @@ public class ReviewPublicApi {
 	}
 
 	@RequestMapping(value = "/progressive/finalize/{reviewId}", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<FileUploadResponse> finalize(@PathVariable("reviewId") final String id)
-			throws Exception {
+	public @ResponseBody ResponseEntity<FileUploadResponse> finalize(@PathVariable("reviewId") final String id,
+			@RequestBody ReviewCreationParams data) throws Exception {
 		log.debug("Finalizing " + id);
 		FileUploadResponse response = null;
 
 		Review review = reviewRepo.findById(id);
 		review.setPublished(true);
+
+		addMetaData(data, review);
+
 		reviewApi.createReview(review);
 
 		reviewService.triggerReviewCreationJobs(review);

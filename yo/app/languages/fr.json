@@ -342,7 +342,7 @@
 			"reputationExplanation": "Votre réputation totale. Vous pouvez l'augmenter en donnant des conseils utiles aux autres joueurs",
 			"signOut": "Déconnexion",
 			"signIn": "Connexion",
-			"showOwnVideos": "Mes vidéos",
+			"showOwnVideos": "Mes parties",
 			"myCoach": "Mon profil de coach",
 			"createAccount": "Créer un compte",
 			"noAccount": "Si vous n'avez pas encore de compte, ",
@@ -499,12 +499,14 @@
 				"multi": {
 					"dontCloseWindowMessage": "Vos replays sont en train d'être mis en ligne sur nos serveurs. Les informations seront mises à jour une fois le fichier traité. Veuillez ne pas fermer la fenêtre tant que le transfert n'est pas fini",
 					"finalizeVideoMessage": "Nous sommes en train de traiter votre fichier. Cela peut prendre jusqu'à une minute, et les informations sur les parties seront ensuite automatiquement mises à jour",
-					"transferCompleted": "Le transfert est terminé ! Vous pouvez à présent publier vos replays",
+					"transferCompleted": "Le transfert est terminé ! Vos replays apparaîtront automatiquement dans Vos Parties lorsque le transfert sera terminé",
 					"filesAdded": "Vous êtes sur le point d'envoyer {{games}} parties dans {{files}} fichiers",
 					"removeFileTooltip": "Enlever ce fichier",
 					"applyAll": "Remplir les champs",
 					"multiAnonymousErrorMessage": "Les utilisateurs anonymes peuvent seulement uploader une partie à la fois. Veuillez vous enregistrer pour uploader toutes vos parties en une seule fois (plus d'infos sur pourquoi nous faisons ça <a href=\"https://www.reddit.com/r/zerotoheroes/comments/4w4qyx/prevent_limit_the_number_of_public_reviews_in/\" target=\"blank\">ici</a>), ou marquez les parties que vous ne voulez pas uploader comme \"Ignorer\" à l'aide du menu déroulant",
-					"applyAllTooltip": "Il y a des champs que nous ne pouvons pas encore remplir automatiquement à partir du fichier de replay et que vous devez saisir manuellement. Cliquer sur son bouton utiisera les valeurs des champs de la première revue pour automatiquemenet remplir ceux des autres revues."
+					"applyAllTooltip": "Il y a des champs que nous ne pouvons pas encore remplir automatiquement à partir du fichier de replay et que vous devez saisir manuellement. Cliquer sur son bouton utiisera les valeurs des champs de la première revue pour automatiquemenet remplir ceux des autres revues.",
+					"fileUploadDone": "Vos fichiers ont été transférés sur nos serveurs, et vont être traités. Selon le nombre de fichiers et de parties, cela peut prendre quelques minutes, mais vous pouvez quitter la page dès à présent. Lorsque le traitement sera fini, vos fichiers apparaîtront dans \"Mes parties\" (et dans le futur nous vous enverrons même un message)",
+					"fileUploadOngoing": "Vos parties sont en train d'être envoyées vers nos serveurs. Attendre est ennuyeux, mais nous sommes là avec vous. Tenez bon!"
 				}
 			},
 			"fromurl": {

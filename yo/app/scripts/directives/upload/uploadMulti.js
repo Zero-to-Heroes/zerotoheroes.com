@@ -29,6 +29,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 				$scope.initPage = function() {
 					$log.debug('init page', $scope.uploader, $scope.active)
 					$scope.uploadDone = false
+					$scope.uploader.hidePublish = true
 					if ($scope.uploader.videoInfo) {
 						for (var i = 0; i < $scope.uploader.videoInfo.numberOfReviews; i++) {
 							var review = {

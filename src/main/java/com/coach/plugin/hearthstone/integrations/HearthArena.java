@@ -68,7 +68,7 @@ public class HearthArena implements IntegrationPlugin {
 		// Flag the review to show that we are handling it
 		review.setMediaType("arena-draft");
 		review.setText("Imported from " + draftUrl);
-		log.debug("strResult " + strResult);
+		// log.debug("strResult " + strResult);
 
 		// Then upload the file
 		final String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/draft");
@@ -85,7 +85,7 @@ public class HearthArena implements IntegrationPlugin {
 					review.setReviewType("arena-draft");
 					review.setTranscodingDone(true);
 					repo.save(review);
-					log.debug("review " + review);
+					// log.debug("review " + review);
 				}
 			}
 		};
@@ -105,8 +105,8 @@ public class HearthArena implements IntegrationPlugin {
 
 		Elements picks = doc.select("#choices .choiceList li[data-pick]");
 		for (Element pickEl : picks) {
-			log.debug("picked el " + pickEl);
-			log.debug("picked el li " + pickEl.select("ul li"));
+			// log.debug("picked el " + pickEl);
+			// log.debug("picked el li " + pickEl.select("ul li"));
 			Pick pick = new Pick();
 			pick.Item1 = pickEl.select("ul li").get(0).select(".card .name").text();
 			pick.Item2 = pickEl.select("ul li").get(1).select(".card .name").text();

@@ -21,6 +21,10 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				$scope.controller.onTurnChanged = function(turn) {
 					$timeout(function() {
 						$scope.$apply()
+						if (turn == 'mulligan')
+							turn = '00mulligan'
+						if (turn == 'endgame')
+							turn = 'ZZendgame'
 						$scope.currentTurn = turn
 
 						$timeout(function() {
@@ -48,10 +52,19 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				}
 
 				$scope.getCurrentTurn = function() {
-					return $scope.currentTurn || $scope.mediaPlayer.getCurrentTimestamp()
+					var turn = $scope.currentTurn || $scope.mediaPlayer.getCurrentTimestamp()
+					if (turn == 'mulligan')
+						turn = '00mulligan'
+					if (turn == 'endgame')
+						turn = 'ZZendgame'
+					return turn
 				}
 
 				$scope.getTurnLabel = function(turn) {
+					if (turn == '00mulligan')
+						turn = 'mulligan'
+					if (turn == 'ZZendgame')
+						turn = 'endgame'
 					// $log.debug('parsing turn title', turn)
 					var text = TextParserService.parseText($scope.review, turn, $scope.plugins)
 					text = text.replace('>t', '>' + $translate.instant('global.review.comment.timemarked.turns.turn'))
@@ -76,8 +89,6 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					$log.debug('getting comment turns', $scope.review)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
-						if (comment.timestamp == '00mulligan')
-							comment.timestamp = 'mulligan'
 						if (commentTurns.indexOf(comment.timestamp) == -1) 
 							commentTurns.push(comment.timestamp)
 					})

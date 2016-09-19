@@ -476,6 +476,9 @@ public class ReviewApiHandler {
 			if ("mulligan".equalsIgnoreCase(turn)) {
 				comment.setTimestamp("00" + turn);
 			}
+			else if ("endgame".equalsIgnoreCase(turn)) {
+				comment.setTimestamp("ZZ" + turn);
+			}
 			else {
 				comment.setTimestamp(turn);
 			}

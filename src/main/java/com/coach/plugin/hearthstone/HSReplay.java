@@ -107,7 +107,8 @@ public class HSReplay implements ReplayPlugin {
 			tempFile.delete();
 			FileUtils.deleteDirectory(new File(destination));
 		}
-		else if ("text/plain".equals(review.getFileType()) || "log".equals(review.getFileType())
+		else if (!StringUtils.isEmpty(review.getFileType())
+				&& (review.getFileType().startsWith("text/plain") || "log".equals(review.getFileType()))
 				|| "arenatracker".equals(review.getFileType())) {
 			log.debug("plaintext replay");
 			// Need to process the file
@@ -238,7 +239,9 @@ public class HSReplay implements ReplayPlugin {
 			throws IOException, ZipException {
 		List<String> games = new ArrayList<>();
 		StringBuilder currentGame = null;
-		if ("text/plain".equals(fileType)) {
+		if (StringUtils.isEmpty(fileType)) { return games; }
+
+		if (fileType.startsWith("text/plain")) {
 			log.debug("processing file");
 			String line;
 			while ((line = reader.readLine()) != null) {

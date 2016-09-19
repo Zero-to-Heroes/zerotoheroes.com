@@ -325,12 +325,18 @@ public class ReviewApiHandler {
 		// Create the entry on the database
 		review.setCreationDate(new Date());
 		review.setLastModifiedBy(review.getAuthor());
-		// review.setUseV2comments(true);
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 		// subscriptionManager.subscribe(review.getSport(),
 		// review.getAuthorId());
 		// sportManager.addNewReviewActivity(review);
+
+		// Setup v2 comments for game replays only (not drafts nor videos)
+		if ("game-replay".equalsIgnoreCase(review.getReviewType())
+				|| "game-replay".equalsIgnoreCase(review.getMediaType())) {
+			review.setUseV2comments(true);
+		}
+
 		// We need to save here so that the transcoding process can retrieve it
 		reviewRepo.save(review);
 
@@ -340,12 +346,6 @@ public class ReviewApiHandler {
 		// review.getId());
 		// userService.updateAsync(user);
 		// }
-
-		// Setup v2 comments for game replays only (not drafts nor videos)
-		if ("game-replay".equalsIgnoreCase(review.getReviewType())
-				|| "game-replay".equalsIgnoreCase(review.getMediaType())) {
-			review.setUseV2comments(true);
-		}
 
 		// Start transcoding
 		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())
@@ -684,6 +684,7 @@ public class ReviewApiHandler {
 		if ("game-replay".equalsIgnoreCase(review.getReviewType())) {
 			review.setUseV2comments(true);
 		}
+
 		reviewService.updateAsync(review);
 		reviewService.triggerReviewCreationJobs(review);
 

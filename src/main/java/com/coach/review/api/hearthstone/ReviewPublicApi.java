@@ -67,6 +67,8 @@ public class ReviewPublicApi {
 		review.setReplay("true");
 		review.setVisibility("restricted");
 		review.setTemporaryReplay("");
+		review.setReviewType("game-replay");
+		review.setUseV2comments(true);
 		// review.setTemporaryKey(tempKey);
 
 		reviewRepo.save(review);

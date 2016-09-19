@@ -23,7 +23,13 @@
 <div class="video-review-upload-comments" ng-class="playerControls.wideMode ? 'col-md-5' : 'col-md-7'">
 	<div class="background-white">
 		<form class="container-fluid" name="uploadForm">
-		  	<participants-details review="review" media-player="externalPlayer" hide-participants="true"></participants-details>
+
+			<div class="metadata">
+				<participants-details review="review" hide-participants="true" media-player="externalPlayer"></participants-details>
+				<hs-decklist-upload sport="sport" review="review"></hs-decklist-upload>
+				<review-visibility review="review"></review-visibility>
+			</div>
+
 			<div class="row" ng-hide="User.isLoggedIn()">
 				<div class="col-sm-12">
 					<div class="form-group" show-errors="{ showSuccess: true }">
@@ -46,31 +52,13 @@
 						</ul>
 				</div> -->
 		  	</div>
-		  	<div class="row">
-				<div class="col-sm-6">
-			  		<hs-decklist-upload sport="sport" review="review"></hs-decklist-upload>
-			  	</div>
-			  	<div class="col-sm-6">
-			  		<review-visibility review="review"></review-visibility>
-			  	</div>
-			</div>
 
 	  		<div class="row">
 				<div class="col-sm-12">
-				  	<div class="form-group">
-						<toolbar player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true" config="config" media-type="'game-replay'" show-errors="{ showSuccess: true }" class="form-group">
-				    		<textarea name="text" class="form-control" rows="3" placeholder="{{textBoxPlaceholder}}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
-				    	</toolbar>
-				   	</div>
-				
-					<div class="inline-block float-right show-help-buttons">
-						<a class="link-minor" href="http://blog.zerotoheroes.com/en/2016/08/16/how-to-get-the-most-out-of-your-game-review/" target="_blank">{{ 'global.upload.showGuide' | translate }}</a>
-					  	<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
-						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
-					</div>
+					<span class="no-more-review-description-text" ng-bind-html="'global.upload.replay.noMoreDescriptionText' | translate"></span>
 				</div>
 		  	</div>
-			<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
+		  	
 			<div class="row video-tags">
 				<div class="col-xs-12 text-left">
 					<review-tags-input review="review" exclude="skill-level"></review-tags-input>

@@ -810,7 +810,7 @@
 .hearthstone upload-replay-review .hearthstone-participants .caret {
   vertical-align: middle;
 }
-.hearthstone .upload-page participants-details {
+.hearthstone .upload-page .metadata {
   border: 2px solid #A55D2F;
 }
 .hearthstone .upload-page .hearthstone-participants {

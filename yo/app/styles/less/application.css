@@ -244,3 +244,35 @@
 .video-information .video-information-header .review-header.editing .review-visibility .btn-select {
   margin-left: 0;
 }
+.no-more-review-description-text {
+  display: block;
+  padding: 20px;
+}
+upload-replay-review .metadata {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid grey;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+upload-replay-review .metadata hs-decklist-upload {
+  margin-bottom: 0;
+}
+upload-replay-review .metadata hs-decklist-upload .deck-list {
+  display: flex;
+  align-items: center;
+}
+upload-replay-review .review-visibility {
+  width: inherit;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+}
+upload-replay-review .review-visibility .btn-select {
+  margin-left: 0;
+}
+upload-replay-review .no-more-review-description-text {
+  padding-top: 0;
+}

@@ -40,7 +40,7 @@ app.directive('uploadMulti', ['MediaUploader', '$log', 'SportsConfig', '$timeout
 								strSport: $scope.sport,
 								transcodingDone: false,
 								language: Localization.getLanguage(),
-								visibility: User.isLoggedIn() ? 'private' : 'restricted'
+								visibility: 'restricted'
 							}
 							$log.debug('\tadding review', review)
 							$scope.reviews.push(review)

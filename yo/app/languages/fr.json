@@ -373,13 +373,13 @@
 				"skillLevel": "Niveau de la partie"
 			},
 			"visibility": {
-				"private": "Privée",
-				"restricted": "Restreinte",
+				"private": "Masquée",
+				"restricted": "Masquée et indexable",
 				"public": "Publique",
 				"skip": "Ignorer",
 				"tooltip": "Visibilité",
-				"privateTooltip": "Privée - n'apparaît pas dans les résultats de recherche, et seul vous pouvez voir cette revue",
-				"restrictedTooltip": "Restreinte - n'apparaît pas dans les résultats de recherche, et n'importe qui avec le lien peut voir cette revue",
+				"privateTooltip": "Masquée - n'apparaît pas dans les résultats de recherche, et n'importe qui avec le lien peut voir cette revue",
+				"restrictedTooltip": "Masquée et indexable - n'apparaît pas dans les résultats publics (comme la page des Dernières Revues), mais pourra être retournée par des Recherches Avancées (ceci n'est pas encore implémenté). C'est la visibilité par défaut, et vous pourrez changer ça dans vos préférences",
 				"publicTooltip": "Publique - apparaît dans les résultats de recherche, et n'importe qui peut voir cette revue",
 				"skipTooltip": "Ignorer - ne pas mettre en ligne cette revue"
 			},

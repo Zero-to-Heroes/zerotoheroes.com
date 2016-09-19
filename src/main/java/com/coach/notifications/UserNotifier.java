@@ -30,7 +30,7 @@ public class UserNotifier {
 	ProfileService profileService;
 
 	public void notifyNewComment(User subscriber, Comment comment, Review review) {
-		if ("private".equalsIgnoreCase(review.getVisibility())) { return; }
+		// if ("private".equalsIgnoreCase(review.getVisibility())) { return; }
 
 		Profile profile = profileService.getProfile(subscriber.getId());
 

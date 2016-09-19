@@ -419,13 +419,13 @@
 				"selectClass": "Select class"
 			},
 			"visibility": {
-				"private": "Private",
-				"restricted": "Restricted",
+				"private": "Unlisted",
+				"restricted": "Unlisted and searchable",
 				"public": "Public",
 				"skip": "Skip",
 				"tooltip": "Visibility",
-				"privateTooltip": "Private - doesn't show up in search result, and only you can see this review",
-				"restrictedTooltip": "Restricted - doesn't show up in search result, and anyone with the link can see this review",
+				"privateTooltip": "Unlisted - doesn't show up in search result, but people with the link can see it",
+				"restrictedTooltip": "Unlisted and searchable - doesn't show up in public listings (like the home page), but will appear when using the Advanced Search feature (not implemented yet). This is the default, and we'll let you change this preference in your profile",
 				"publicTooltip": "Public - shows up in search, anyone can see this review",
 				"skipTooltip": "Skip - don't upload the game"
 			},

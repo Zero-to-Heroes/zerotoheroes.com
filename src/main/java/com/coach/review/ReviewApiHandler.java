@@ -207,10 +207,13 @@ public class ReviewApiHandler {
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
-		// Check that access is allowed
-		if ("private".equalsIgnoreCase(review.getVisibility()) && review.getAuthorId() != null
-				&& (user == null || !review.getAuthorId().equals(user.getId()))) { return new ResponseEntity<Review>(
-						review, HttpStatus.FORBIDDEN); }
+		// Check that access is allowed - DEPRECATED: now all reviews can be
+		// accessed
+		// if ("private".equalsIgnoreCase(review.getVisibility()) &&
+		// review.getAuthorId() != null
+		// && (user == null || !review.getAuthorId().equals(user.getId()))) {
+		// return new ResponseEntity<Review>(
+		// review, HttpStatus.FORBIDDEN); }
 
 		// Increase the view count
 		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {
@@ -263,12 +266,14 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
-		// Check that access is allowed
+		// Check that access is allowed - DEPRECATED: now all reviews can be
+		// accessed
 		for (Review review : reviews) {
-			if ("private".equalsIgnoreCase(review.getVisibility()) && review.getAuthorId() != null
-					&& !review.getAuthorId().equals(user.getId())) {
-				continue;
-			}
+			// if ("private".equalsIgnoreCase(review.getVisibility()) &&
+			// review.getAuthorId() != null
+			// && !review.getAuthorId().equals(user.getId())) {
+			// continue;
+			// }
 			review.prepareForDisplay(userId);
 			results.add(review);
 		}

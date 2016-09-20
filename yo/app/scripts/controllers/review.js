@@ -3,6 +3,11 @@
 angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 'CoachService', 'TextParserService', '$translate',
 	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService, CoachService, TextParserService, $translate) { 
 
+
+		$scope.translations = {
+			//restrictedAccess = $translate.instant('global.review.restrictedAccess')
+
+		}
 		$scope.debugTimestamp = Date.now()
 		// $log.debug('init review controller at ', $scope.debugTimestamp)
 		$scope.coaches = []
@@ -51,6 +56,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						}
 					})
 					$scope.controlFlow.pluginsLoaded = true
+					$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 				}
 			})
 			
@@ -65,7 +71,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		
 		// Load the review
 		$scope.initReview = function() {
-			$scope.restrictedAccess = false
+			// $scope.restrictedAccess = false
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data
@@ -93,13 +99,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// Need to wait for the digest cycle so the proper directive (videoplayer vs externalplayer) is instanciated
 					$timeout(function() {
 						$scope.initPlayer(data)
+						$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 					})
 				},
 				function(error) {
 					$log.warn('could not load review', error)
-					if (error.status == 403) {
-						$scope.restrictedAccess = true
-					}
+					// if (error.status == 403) {
+					// 	$scope.restrictedAccess = true
+					// }
 				}
 			)
 
@@ -210,6 +217,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			var encodedUrlTs = encodeURIComponent(timeString)
 			encodedUrlTs = encodedUrlTs.replace(new RegExp('\\.', 'g'), '%2E')
 			$location.search('ts', encodedUrlTs)
+			$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 		}
 
 		$scope.handleUrlParameters = function() {
@@ -219,6 +227,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				ts = ts.replace(new RegExp('%2E', 'g'), '.')
 				$log.debug('calling mediaplayer goToTimestamp', ts, $location.search().ts)
 				$scope.mediaPlayer.goToTimestamp(ts) 
+				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 			}
 		}
 	
@@ -233,16 +242,19 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				//$log.log('in onAddComment');
 				$scope.uploadComment();
 				$scope.onAddComment = false;
+				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 			}
 			else if ($scope.upvoting) {
 				//$log.log('in upvoting');
 				$scope.upvoteReview();
 				$scope.upvoting = false;
+				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 			}
 			else if ($scope.downvoting) {
 				//$log.log('in downvoting');
 				$scope.downvoteReview();
 				$scope.downvoting = false;
+				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 			}
 		});
 
@@ -258,12 +270,14 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.unsubscribe = function() {
 			Api.Subscriptions.delete({itemId: $scope.review.id}, function(data) {
 				$scope.review.subscribers = data.subscribers;
+				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 			});
 		}
 
 		$scope.subscribe = function() {
 			Api.Subscriptions.save({itemId: $scope.review.id}, function(data) {
 				$scope.review.subscribers = data.subscribers;
+				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 			});
 		}
 
@@ -290,6 +304,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//$scope.review.oldSportForDisplay = $scope.review.sportForDisplay;
 			$scope.review.oldTags = $scope.review.tags;
 			$scope.review.editing = true;
+			$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 		}
 
 		$scope.cancelUpdateDescription = function() {
@@ -300,6 +315,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.review.tags = $scope.review.oldTags;
 			$scope.review.editing = false;
 			$scope.mediaPlayer.onCancelEdition()
+			$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 		}
 
 		$scope.updateDescription = function() {
@@ -332,10 +348,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		  				//$log.log('plugins', $scope.review.plugins);
 						$scope.updateVideoInformation(data);
-		  				if (data.text.match(TextParserService.timestampOnlyRegex)) {
-							// $log.log('incrementing timestamps after comment upload');
-							User.incrementTimestamps();
-						}
+		  		// 		if (data.text.match(TextParserService.timestampOnlyRegex)) {
+						// 	// $log.log('incrementing timestamps after comment upload');
+						// 	User.incrementTimestamps();
+						// }
 					}, 
 					function(error) {
 						// Error handling
@@ -372,6 +388,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			// $log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
 
 			$scope.controlFlow.reviewDisplayed = true
+			$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 		}
 
 		$scope.insertModel = function(model, newValue) {
@@ -380,11 +397,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.hideContextualInfo = function() {
 			$(".contextual-information").hide();
+			$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 		}
 
-		$scope.editLanguage = function(lang) {
-			$scope.review.language = lang;
-		}
+		// $scope.editLanguage = function(lang) {
+		// 	$scope.review.language = lang;
+		// }
 
 
 

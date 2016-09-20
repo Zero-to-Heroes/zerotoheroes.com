@@ -96,14 +96,16 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 				}
 
 				$scope.insertModel = function(model, newValue) {
+					console.log('insertModel')
 					$parse(model).assign($scope, newValue);
 				}
 
-				$scope.getTurnLabel = function(turn) {
-					// if (turn == 0) 
-					// 	return 'Mulligan'
-					return turn
-				}
+				// $scope.getTurnLabel = function(turn) {
+				// 	// if (turn == 0) 
+				// 	// 	return 'Mulligan'
+				// 	console.log
+				// 	return turn
+				// }
 
 				$scope.showCommentsRecap = function() {
 					var turnsData = Object.getOwnPropertyNames($scope.newComments)

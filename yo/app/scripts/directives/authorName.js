@@ -9,7 +9,7 @@ app.directive('authorName', ['$routeParams', function($routeParams) {
 		replace: true,
 		templateUrl: 'templates/authorName.html',
 		scope: {
-			entity: '='
+			entity: '<'
 		},
 		controller: function($scope) {
 			$scope.sport = $routeParams.sport

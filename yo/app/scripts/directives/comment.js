@@ -3,29 +3,37 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', '$location', 'TextParserService', 
-	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse, $location, TextParserService) {
+app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', '$location', 'TextParserService', '$translate', 
+	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse, $location, TextParserService, $translate) {
 
 		return {
 			restrict: 'E',
 			replace: true,
 			scope: {
-				comment:'=',
-				// indentationLevel:'=',
-				commentIndex:'=',
-				// canvasState: '=',
-				//drawingCanvas: '=',
-				//canvasId: '=',
-				mediaPlayer: '=',
-				// goToTimestamp: '=timestampClickAction',
-				// clearTemporaryCanvas: '=',
-				plugins: '=',
-				config: '=',
-				sport: '=',
-				review: '='
+				comment:'<',
+				commentIndex:'<',
+				mediaPlayer: '<',
+				plugins: '<',
+				config: '<',
+				sport: '<',
+				review: '<'
 			},
 			templateUrl: 'templates/comment.html',
 			controller: function($scope, User) {
+
+				//Define static translations to avoid bloating the $watch list
+				$scope.translations = {
+					upvote: $translate.instant('global.review.comment.upvoteComment'),
+					downvote: $translate.instant('global.review.comment.upvoteComment'),
+					edit: $translate.instant('global.review.comment.edit'),
+					validateEdit: $translate.instant('global.review.comment.validateEdit'),
+					cancelEdit: $translate.instant('global.review.comment.cancelEdit'),
+					replyButton: $translate.instant('global.review.comment.replyButton'),
+					showFormattingHelpButton: $translate.instant('global.review.comment.showFormattingHelpButton'),
+					hideFormattingHelpButton: $translate.instant('global.review.comment.hideFormattingHelpButton'),
+					helpedAuthor: $translate.instant('global.review.comment.helpedAuthor', {name: $scope.review.author}),
+					helpedMe: $translate.instant('global.review.comment.helpedMe')
+				}
 
 				$scope.User = User;
 				$scope.reply = {};
@@ -33,8 +41,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.$watch($scope.comment, function() {
 					$scope.setCommentText($scope.comment, $scope.comment.text);
 				});
-
-
 
 				var timestampOnlyRegex = /\d?\d:\d?\d(:\d\d\d)?(;[[:blank:]]|\s)/;
 
@@ -52,6 +58,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.startEditing = function(comment) {
 					comment.editing = true;
 					comment.oldText = comment.text;
+					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 
 				$scope.cancelUpdateComment = function(comment) {
@@ -60,6 +67,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					comment.text = comment.oldText;
 					comment.editing = false;
 					$rootScope.$broadcast('editcanvas.cancel');
+					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 
 				$scope.updateComment = function(comment) {
@@ -90,6 +98,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					comment.markedText = marked(comment.compiledText || '');
 					comment.editing = false;
 					comment.processed = true;
+					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 
 				$scope.insertModel = function(model, newValue) {
@@ -103,13 +112,19 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					Api.CommentValidation.save({reviewId: $scope.review.id, commentId: comment.id}, 
 						function(data) {
 							//$log.log('response data', data);
-							comment.helpful = data.helpful;
+							comment.helpful = data.helpful
+							$scope.$broadcast('$$rebind::' + 'commentRefresh')
 						}, 
 						function(error) {
 							// Error handling
 							$log.error(error);
 						}
 					)
+				}
+
+				$scope.toggleShowHelp = function() {
+					$scope.showHelp = !$scope.showHelp
+					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 
 				$scope.highlightUnread = function() {
@@ -130,6 +145,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 							}
 						})
 					}
+					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 				$scope.highlightUnread()
 
@@ -162,6 +178,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 										newHighlights = newHighlights.slice(0, -1)
 									}
 									$location.search(newHighlights)
+									$scope.$broadcast('$$rebind::' + 'commentRefresh')
 								}
 							)
 						}
@@ -169,21 +186,24 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 							$scope.highlightedClass = undefined
 						}
 					}
+					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 
 				//===============
 				// Replying to comments
 				//===============
 				$scope.startReply = function() {
-					$scope.reply.replying = true;
+					$scope.reply.replying = true
+					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 
 				$scope.cancelReply = function() {
-					$scope.reply = {};
-					$scope.replyForm.$setPristine();
+					// $scope.replyForm.$setPristine()
+					$scope.reply = {}
 					//$scope.drawingCanvas = false;
-					$scope.$broadcast('show-errors-reset');
-					$rootScope.$broadcast('editcanvas.cancel');
+					$scope.$broadcast('show-errors-reset')
+					$rootScope.$broadcast('editcanvas.cancel')
+					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 
 				$scope.postReply = function() {
@@ -233,6 +253,8 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 						Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Upvote'},
 							function(data) {
 								comment.reputation = data.reputation;
+								// For bindonce refresh-on
+								$scope.$broadcast('$$rebind::' + 'commentRefresh')
 							}, 
 							function(error) {
 								// Error handling
@@ -253,6 +275,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 						Api.Reputation.save({reviewId: $scope.review.id, commentId: comment.id, action: 'Downvote'},
 							function(data) {
 								comment.reputation = data.reputation;
+								$scope.$broadcast('$$rebind::' + 'commentRefresh')
 							}, 
 							function(error) {
 								// Error handling
@@ -272,16 +295,19 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 						//$log.log('in onAddReply');
 						$scope.postReply();
 						$scope.onAddReply = false;
+						$scope.$broadcast('$$rebind::' + 'commentRefresh')
 					}
 					else if ($scope.upvotingComment) {
 						//$log.log('in upvotingComment');
 						$scope.upvoteComment($scope.upvotingComment);
 						$scope.upvotingComment = null;
+						$scope.$broadcast('$$rebind::' + 'commentRefresh')
 					}
 					else if ($scope.downvotingComment) {
 						//$log.log('in downvotingComment');
 						$scope.downvoteComment($scope.downvotingComment);
 						$scope.downvotingComment = null;
+						$scope.$broadcast('$$rebind::' + 'commentRefresh')
 					}
 				});
 

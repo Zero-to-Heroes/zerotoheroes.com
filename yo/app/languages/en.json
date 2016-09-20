@@ -457,8 +457,8 @@
 			"comment": {
 				"upvote": "Upvote this review (you should do this if you feel the review is valuable)",
 				"downvote": "Downvote this review (you should do this if you feel the review is illegible, poorly formatted or doesn't bring anything to the discussion)",
-				"upvoteComment": "Upvote this comment (you should do this if you feel the review is valuable). You may appear in the list of people who upvoted the comment",
-				"downvoteComment": "Downvote this comment (you should do this if you feel the review is illegible, poorly formatted or doesn't bring anything to the discussion). Downvotes are totally anonymous",
+				"upvoteComment": "Upvote the comment (if you feel the review is valuable). You may appear in the list of people who upvoted the comment",
+				"downvoteComment": "Downvote the comment (if you feel the review is illegible, poorly formatted or doesn't bring anything to the discussion). Downvotes are totally anonymous",
 				"reviewTitle": "Title of your video review",
 				"edit": "Edit",
 				"cancelEdit": "Cancel",

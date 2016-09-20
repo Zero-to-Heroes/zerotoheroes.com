@@ -1,52 +1,60 @@
-<div class="container-fluid comment-block {{highlightedClass}}" ng-click="markRead()">
+<div class="container-fluid comment-block {{:commentRefresh:highlightedClass}}" ng-click="markRead()">
+
 	<div class="reputation">
-		<span id="upvote{{::commentIndex}}" class="glyphicon glyphicon-chevron-up pointer" ng-class="{'upvote': comment.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn()}" ng-click="::upvoteComment(comment)" aria-hidden="true" title="{{ 'global.review.comment.upvoteComment' | translate }}"></span>
-		<span class="reputation-score glyphicon">{{comment.reputation.nbVotes.Upvote - comment.reputation.nbVotes.Downvote}}</span>
-		<span class="glyphicon glyphicon-chevron-down pointer" ng-class="{'downvote':comment.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="::downvoteComment(comment)" aria-hidden="true" title="{{ 'global.review.comment.downvoteComment' | translate }}"></span>
+		<span id="upvote{{::commentIndex}}" class="glyphicon glyphicon-chevron-up pointer " ng-class=":commentRefresh:{'upvote': comment.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn() }" ng-click="upvoteComment(comment)" title="{{::translations.upvote}}" ></span>
+		<span class="reputation-score glyphicon"> {{:commentRefresh:(comment.reputation.nbVotes.Upvote - comment.reputation.nbVotes.Downvote) }}</span>
+		<span class="glyphicon glyphicon-chevron-down pointer" ng-class=":commentRefresh:{'downvote':comment.reputation.hasCurrentUserVoted.Downvote && User.isLoggedIn()}" ng-click="downvoteComment(comment)" aria-hidden="true" title="{{::translations.downvote}}"></span>
 	</div>
+
 	<div class="comment-main">
+
 		<div class="comment-header">
 			<span class="author-information">
-				<span class="comment-author" ng-hide="::comment.authorId">{{::comment.author}}</span>
-				<author-name class="comment-author" entity="::comment" ng-show="::comment.authorId"></author-name>
-				<span bs-tooltip data-title="{{::comment.author}}'s total reputation on {{::review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-show="::comment.authorId">{{comment.authorReputation ? comment.authorReputation : 0}}<img class="reputation-icon" src="{{ config.images.reputation }}"></img></span>
+				<span class="comment-author" ng-if="::!comment.authorId">{{::comment.author}}</span>
+				<author-name class="comment-author" entity="::comment" ng-if="::comment.authorId"></author-name>
+				<span bs-tooltip data-title="{{::comment.author}}'s total reputation on {{::review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-if="::comment.authorId">{{::comment.authorReputation ? comment.authorReputation : 0}}<img class="reputation-icon" src="{{::config.images.reputation }}"></img></span>
 			</span>
 
 			<span title="{{::formatExactDate(comment)}}"><small>{{::formatDate(comment)}}</small></span>
 
-			<span ng-show="comment.id && canEdit(comment) && !comment.editing"> - </span>
-			<a ng-click="startEditing(comment)" class="link-minor" ng-show="comment.id && canEdit(comment) && !comment.editing">{{ 'global.review.comment.edit' | translate }}</a>
+			<span ng-if=":commentRefresh:(comment.id && canEdit(comment) && !comment.editing)"> - </span>
+			<a ng-click="startEditing(comment)" class="link-minor" ng-if=":commentRefresh:(comment.id && canEdit(comment) && !comment.editing)">{{::translations.edit}}</a>
 			
-			<span ng-show="User.getName() == review.author && review.authorId"> - </span>
-			<a ng-click="toggleHelpful(comment)" class="validated" ng-show="comment.helpful"><span class="glyphicon glyphicon-ok"></span> {{ 'global.review.comment.helpedAuthor' | translate:'{name: review.author}' }} </a>
-			<a ng-click="toggleHelpful(comment)" class="link-minor" ng-show="!comment.helpful && User.getName() == review.author && review.authorId"><span class="glyphicon glyphicon-ok"></span> {{ 'global.review.comment.helpedMe' | translate }}</a>
+			<span ng-if=":commentRefresh:(User.getName() == review.author && review.authorId)"> - </span>
+			<a ng-click="toggleHelpful(comment)" class="validated" ng-if=":commentRefresh:(comment.helpful)"><span class="glyphicon glyphicon-ok"></span>{{::translations.helpedAuthor}}</a>
+			<a ng-click="toggleHelpful(comment)" class="link-minor" ng-if=":commentRefresh:(!comment.helpful && User.getName() == review.author && review.authorId)"><span class="glyphicon glyphicon-ok"></span>{{::translations.helpedMe}}</a>
 		</div>
+
 		<div class="comment-subheader">
 			<upvoted-by sport="::sport" entity="::comment"></upvoted-by>
 		</div>
+
 		<div class="comment-body">
-			<div compilecontent content="comment.markedText" ng-hide="comment.editing">
-			</div>
-			<div ng-show="comment.editing">
-				<toolbar media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.reviewType">
+			<div compilecontent content="comment.markedText" ng-if=":commentRefresh:!comment.editing"></div>
+			<div ng-if=":commentRefresh:comment.editing">
+				<toolbar media-player="::mediaPlayer" insert-model="insertModel" ng-if="::review.key" config="::config" media-type="::review.reviewType">
 					<textarea class="form-control text-editing-area" ng-model="comment.text" comment-plugins="::plugins" auto-grow toolbar-target></textarea>
 				</toolbar>
-				<textarea class="form-control" ng-model="comment.text" comment-plugins="::plugins" auto-grow ng-hide="review.key"></textarea>
+				<textarea class="form-control" ng-model="comment.text" comment-plugins="::plugins" auto-grow ng-if="::!review.key"></textarea>
 				<div class="text-left comment-reply-buttons">
-					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.validateEdit' | translate }}</span></button>
-					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
+					<button ng-click="updateComment(comment)" class="btn btn-default btn-xs" tabindex="-1"><span>{{::translations.validateEdit}}</span></button>
+					<button ng-click="cancelUpdateComment(comment)" class="btn btn-default btn-xs" tabindex="-1"><span>{{::translations.cancelEdit}}</span></button>
 				</div>
 				<div class="inline-block float-right">
-					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
-					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
+					<a class="link-minor" ng-click="toggleShowHelp()" ng-if="!showHelp">{{::translations.showFormattingHelpButton}}</a>
+					<a class="link-minor" ng-click="toggleShowHelp()" ng-if="showHelp">{{::translations.hideFormattingHelpButton}}</a>
 				</div>
 			</div>
 		</div>
+
 		<div class="comment-footer">
-			<a ng-click="startReply()" class="link-minor" ng-hide="reply.replying">{{ 'global.review.comment.replyButton' | translate }}</a>
+			<a ng-click="startReply()" class="link-minor" ng-if=":commentRefresh:!reply.replying">{{::translations.replyButton}}</a>
 		</div>
+
 	</div>
-	<form ng-show="reply.replying" class="container-fluid reply-form" name="replyForm">
+
+	<!-- Haven't optimized one-time bindings because it isn't in a repeat instruction. To do for later -->
+	<form ng-if="reply.replying" class="container-fluid reply-form" name="replyForm">
 		<div class="row">
 			<div class="col-md-2" ng-show="!User.isLoggedIn()">
 				<div class="form-group" show-errors="{ showSuccess: true }">
@@ -74,7 +82,8 @@
 			</div>
 		</div>
 	</form>
-	<div ng-show="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
 
-	<comment ng-repeat="replyComment in comment.comments" review="review" comment="replyComment" sport="sport" media-player="mediaPlayer" plugins="plugins" config="config" sport="sport"></comment>
+	<div ng-if="showHelp" ng-include="'/templates/formattingHelp.html'"></div>
+
+	<comment ng-repeat="replyComment in comment.comments track by replyComment.id" review="::review" comment="::replyComment" sport="::sport" media-player="::mediaPlayer" plugins="::plugins" config="::config" sport="::sport"></comment>
 </div>

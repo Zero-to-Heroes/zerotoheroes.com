@@ -6,12 +6,12 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 			transclude: false,
 			templateUrl: 'templates/review/commentDisplayTimemarked.html',
 			scope: {
-				review: '=',
-				config: '=',
-				mediaPlayer: '=',
-				plugins: '=',
-				sport: '=',
-				controller: '='
+				review: '<',
+				config: '<',
+				mediaPlayer: '<',
+				plugins: '<',
+				sport: '<',
+				controller: '<'
 			},
 			link: function ($scope, element, attrs) {
 			},
@@ -26,6 +26,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 						if (turn == 'endgame')
 							turn = 'ZZendgame'
 						$scope.currentTurn = turn
+						$scope.$broadcast('$$rebind::' + 'turnRefresh')
 
 						$timeout(function() {
 							// Find the turn label that is about the current turn
@@ -77,16 +78,17 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				}
 
 				$scope.$watch('review.comments', function(newVal, oldVal) {
-					$log.debug('updated review comments', newVal, oldVal)
+					// $log.debug('updated review comments', newVal, oldVal)
 					var shouldUpdate = !oldVal
 					shouldUpdate |= !$scope.fullCommentTurns
 					shouldUpdate |= (newVal && newVal.length != oldVal.length)
 					if (shouldUpdate)
 						$scope.getCommentTurns()
+						$scope.$broadcast('$$rebind::' + 'turnRefresh')
 				})
 
 				$scope.getCommentTurns = function() {
-					$log.debug('getting comment turns', $scope.review)
+					// $log.debug('getting comment turns', $scope.review)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
 						if (commentTurns.indexOf(comment.timestamp) == -1) 
@@ -112,9 +114,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 						fullCommentTurns.push(fullTurn)
 					})
 					$scope.fullCommentTurns = fullCommentTurns
-					$log.debug('returning full turns', $scope.fullCommentTurns)
-
-
+					// $log.debug('returning full turns', $scope.fullCommentTurns)
 				}
 				
 				$scope.naturalCompare = function(a, b) {

@@ -2,8 +2,8 @@
 
  angular.module('config', [])
 
-.constant('ENV', {name:'production',apiEndpoint:'http://www.zerotoheroes.com',bucket:'com.zerotoheroes.input',folder:'videos',videoStorageUrl:'https://s3-us-west-2.amazonaws.com/com.zerotoheroes.output/'})
+.constant('ENV', {name:'development',apiEndpoint:'http://localhost:8080',bucket:'com.zerotoheroes.test.input',folder:'videos',videoStorageUrl:'https://s3-us-west-2.amazonaws.com/com.zerotoheroes.test.output/'})
 
-.constant('version', '20160920-09')
+.constant('version', '20160920-15')
 
 ;

@@ -27,7 +27,9 @@ var app = angular.module('app', [
 	'pascalprecht.translate',
 	'angulartics', 
 	'angulartics.google.analytics',
-	'services.defaultI18n'
+	'services.defaultI18n',
+	// https://github.com/Pasvaz/bindonce
+	'angular.bind.notifier'
 ]);
 
 app.config(['$routeProvider', '$locationProvider',

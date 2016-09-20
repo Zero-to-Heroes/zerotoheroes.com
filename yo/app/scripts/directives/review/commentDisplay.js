@@ -6,12 +6,12 @@ app.directive('commentDisplay', ['$log', 'User', 'Api', '$parse', '$rootScope', 
 			transclude: false,
 			templateUrl: 'templates/review/commentDisplay.html',
 			scope: {
-				review: '=',
-				config: '=',
-				mediaPlayer: '=',
-				plugins: '=',
-				sport: '=',
-				controller: '='
+				review: '<',
+				config: '<',
+				mediaPlayer: '<',
+				plugins: '<',
+				sport: '<',
+				controller: '<'
 			},
 			link: function ($scope, element, attrs) {
 			},

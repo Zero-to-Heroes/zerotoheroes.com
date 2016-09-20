@@ -6,8 +6,8 @@ app.directive('hearthstoneFrame', ['$log', '$translate',
 			transclude: false,
 			templateUrl: 'templates/review/hearthstone/hearthstoneFrame.html',
 			scope: {
-				frame: '=',
-				author: '='
+				frame: '<',
+				author: '<'
 			},
 			link: function ($scope, element, attrs) {
 			},

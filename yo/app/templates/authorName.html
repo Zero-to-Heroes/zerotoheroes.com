@@ -1,13 +1,14 @@
 <span>
-	<a class="logged-author {{entity.authorStatus}}" ng-hide="entity.authorStatus == 'coach' && entity.authorId" href="/u/{{entity.author}}/{{sport}}/profile" target="_blank">
-		<author-frame frame="entity.authorFrame" author="entity.author" sport="sport"></author-frame>
-		<!-- <span ng-class="entity.authorFrame" title="{{entity.authorFrame}}">{{entity.author}}</span> -->
+	<!-- logged in -->
+	<a class="logged-author {{::entity.authorStatus}}" ng-if="::!(entity.authorStatus == 'coach' && entity.authorId)" href="/u/{{::entity.author}}/{{::sport}}/profile" target="_blank">
+		<author-frame frame="::entity.authorFrame" author="::entity.author" sport="::sport"></author-frame>
 	</a>
-	<a class="{{entity.authorStatus}}" ng-show="entity.authorStatus != 'coach' && !entity.authorId">
-		<author-frame frame="entity.authorFrame" author="entity.author" sport="sport"></author-frame>
-		<!-- <span ng-class="entity.authorFrame" title="{{entity.authorFrame}}">{{entity.author}}</span> -->
+	<!-- guest -->
+	<a class="{{::entity.authorStatus}}" ng-if="::entity.authorStatus != 'coach' && !entity.authorId">
+		<author-frame frame="::entity.authorFrame" author="::entity.author" sport="::sport"></author-frame>
 	</a>
-	<a ng-class="{'logged-author': entity.authorId}" class="{{entity.authorStatus}}" ng-show="entity.authorStatus == 'coach'" href="{{'/coach/' + entity.author + '/' + sport}}" target="_blank" title="{{ 'global.coach.goToPageTooltip' | translate }}">
-		<author-frame frame="entity.authorFrame" author="entity.author" sport="sport"></author-frame>
+	<!-- coach -->
+	<a ng-class="::{'logged-author': entity.authorId}" class="{{::entity.authorStatus}}" ng-if="::entity.authorStatus == 'coach'" href="{{::'/coach/' + entity.author + '/' + sport}}" target="_blank" title="{{ 'global.coach.goToPageTooltip' | translate }}">
+		<author-frame frame="::entity.authorFrame" author="::entity.author" sport="::sport"></author-frame>
 	</a>
 </span>

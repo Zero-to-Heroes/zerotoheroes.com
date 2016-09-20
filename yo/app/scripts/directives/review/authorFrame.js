@@ -6,9 +6,9 @@ app.directive('authorFrame', ['$log',
 			transclude: false,
 			templateUrl: 'templates/review/authorFrame.html',
 			scope: {
-				frame: '=',
-				author: '=',
-				sport: '='
+				frame: '<',
+				author: '<',
+				sport: '<'
 			},
 			link: function ($scope, element, attrs) {
 			},

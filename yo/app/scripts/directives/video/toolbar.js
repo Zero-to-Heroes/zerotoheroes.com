@@ -9,13 +9,13 @@ app.directive('toolbar', ['$log', '$parse', '$rootScope',
 			templateUrl: 'templates/video/toolbar.html',
 			scope: {
 				// API: '=playerApi',
-				mediaPlayer: '=',
-				insertModel: '=',
-				drawingCanvas: '=',
-				canvasId: '=',
-				hideComparison: '=',
-				config: '=',
-				mediaType: '='
+				mediaPlayer: '<',
+				insertModel: '<',
+				drawingCanvas: '<',
+				canvasId: '<',
+				hideComparison: '<',
+				config: '<',
+				mediaType: '<'
 			},
 			link: function ($scope, element, attrs) {
 				$scope.element = element;

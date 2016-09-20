@@ -93,10 +93,10 @@ public class ReviewPublicApi {
 
 		String rank = null;
 		if (data.getRank() != 0) {
-			rank = "rank" + data.getRank();
+			rank = "Rank " + data.getRank();
 		}
 		else if (data.getLegendRank() != 0) {
-			rank = "legend";
+			rank = "Legend";
 		}
 		if (rank != null) {
 			review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag(rank)));

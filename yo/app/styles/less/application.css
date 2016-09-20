@@ -258,6 +258,7 @@ upload-replay-review .metadata {
 }
 upload-replay-review .metadata hs-decklist-upload {
   margin-bottom: 0;
+  display: flex;
 }
 upload-replay-review .metadata hs-decklist-upload .deck-list {
   display: flex;

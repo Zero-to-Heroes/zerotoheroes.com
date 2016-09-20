@@ -41,7 +41,12 @@ public class HSArenaDraft implements ReplayPlugin {
 	}
 
 	@Override
-	public void transformReplayFile(Review review) throws Exception {
+	public String getPhase() {
+		return "init";
+	}
+
+	@Override
+	public boolean transformReplayFile(Review review) throws Exception {
 		log.debug("Processing arena draft file for review " + review);
 
 		String replayJson = null;
@@ -66,7 +71,7 @@ public class HSArenaDraft implements ReplayPlugin {
 		log.debug("Review updated with proper key " + review);
 		// review.setTemporaryKey(null);
 		review.setTranscodingDone(true);
-		repo.save(review);
+		return true;
 	}
 
 	private String convertToJson(String atFile) throws Exception {
@@ -96,9 +101,10 @@ public class HSArenaDraft implements ReplayPlugin {
 					}
 
 					matcher = heroPickRegex.matcher(line);
-					if (!matcher.matches())
+					if (!matcher.matches()) {
 						matcher = heroPickRegex2.matcher(line);
-					
+					}
+
 					if (matcher.matches()) {
 						String heroCode = matcher.group(1);
 						String hero = null;

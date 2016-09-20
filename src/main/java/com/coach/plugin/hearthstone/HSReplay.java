@@ -58,7 +58,12 @@ public class HSReplay implements ReplayPlugin {
 	}
 
 	@Override
-	public void transformReplayFile(Review review) throws Exception {
+	public String getPhase() {
+		return "init";
+	}
+
+	@Override
+	public boolean transformReplayFile(Review review) throws Exception {
 		log.debug("Processing replay file for review " + review);
 
 		String xml = null;
@@ -141,7 +146,7 @@ public class HSReplay implements ReplayPlugin {
 		// review.setTemporaryKey(null);
 		review.setTranscodingDone(true);
 		review.setTemporaryReplay(null);
-		repo.save(review);
+		return true;
 	}
 
 	static String readFile(String path) throws IOException {
@@ -182,7 +187,7 @@ public class HSReplay implements ReplayPlugin {
 			log.debug("game is ");
 
 			GameMetaData meta = gameParser.getGameParser().getMetaData(game);
-			log.debug("built meta data " + meta);
+			log.info("built meta data " + meta);
 			review.getParticipantDetails().setPlayerName(meta.getPlayerName());
 			review.getParticipantDetails().setOpponentName(meta.getOpponentName());
 			review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
@@ -245,7 +250,7 @@ public class HSReplay implements ReplayPlugin {
 			log.debug("processing file");
 			String line;
 			while ((line = reader.readLine()) != null) {
-				log.debug("Processing log line " + line);
+				// log.debug("Processing log line " + line);
 				if (line.contains("GameState.DebugPrintPower() - CREATE_GAME")) {
 					if (currentGame != null) {
 						log.debug("Added a new game, " + line);

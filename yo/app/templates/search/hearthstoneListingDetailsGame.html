@@ -1,4 +1,4 @@
-<div class="hearthstone-participants" ng-show="review.participantDetails.playerCategory" >
+<div class="hearthstone-participants" ng-show="review.participantDetails.skillLevel" >
 	<!-- The player -->
 	<div class="player-details class-select" ng-if="!hideParticipants">
 		<i class="class-icon {{review.participantDetails.playerCategory}}-icon" title=" {{ 'hearthstone.classes.' + review.participantDetails.playerCategory | translate }}"></i>
@@ -15,6 +15,6 @@
 	</div>
 	<!-- The level of the game -->
 	<div class="level-details">
-		<tags-input ng-model="review.participantDetails.skillLevel"min-tags="0"  ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
+		<tags-input ng-model="review.participantDetails.skillLevel" min-tags="0"  ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
 	</div>
 </div>

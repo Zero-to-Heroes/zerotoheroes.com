@@ -352,12 +352,12 @@ public class ReviewApiHandler {
 				|| !StringUtils.isNullOrEmpty(review.getTemporaryReplay())) {
 			if (!StringUtils.isNullOrEmpty(review.getReplay())) {
 				log.debug("Proessing replay");
-				replayProcessor.processReplayFile(review);
+				replayProcessor.processReplayFile(review, "init");
 			}
 			// More generic approach to handle videos
 			else if (review.getMediaType() != null && !review.getMediaType().equals("video")) {
 				log.debug("Proessing secondary media type " + review);
-				replayProcessor.processReplayFile(review);
+				replayProcessor.processReplayFile(review, "init");
 			}
 			else {
 				log.debug("Transcoding video");
@@ -370,8 +370,7 @@ public class ReviewApiHandler {
 			reviewRepo.save(review);
 		}
 
-		// log.debug("Transcoding started, returning with created review: " +
-		// review);
+		log.debug("Transcoding started, returning with created review: " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -555,7 +554,9 @@ public class ReviewApiHandler {
 		review.setSport(inputReview.getSport());
 		review.setTitle(inputReview.getTitle());
 		review.setTags(inputReview.getTags());
-		review.setParticipantDetails(inputReview.getParticipantDetails());
+		if (inputReview.getParticipantDetails() != null) {
+			review.setParticipantDetails(inputReview.getParticipantDetails());
+		}
 
 		// review.setLastModifiedDate(new Date());
 		// review.setLastModifiedBy(currentUser);
@@ -567,6 +568,9 @@ public class ReviewApiHandler {
 			slackNotifier.notifyNewReview(review);
 		}
 		review.setVisibility(inputReview.getVisibility());
+
+		log.debug("Triggering plugins? " + review);
+		replayProcessor.processReplayFile(review, "update");
 
 		reviewService.updateAsync(review);
 
@@ -644,7 +648,7 @@ public class ReviewApiHandler {
 
 		Review review = reviewRepo.findById(id);
 
-		// log.debug("Publishing review " + inputReview);
+		log.debug("Publishing review " + inputReview);
 		// log.debug("Exisint draft in the system is " + review);
 
 		// Updating author information
@@ -672,7 +676,9 @@ public class ReviewApiHandler {
 		review.setSport(inputReview.getSport());
 		review.setTitle(inputReview.getTitle());
 		review.setTags(inputReview.getTags());
-		review.setParticipantDetails(inputReview.getParticipantDetails());
+		if (review.getParticipantDetails().getSkillLevel().isEmpty()) {
+			review.getParticipantDetails().setSkillLevel(inputReview.getParticipantDetails().getSkillLevel());
+		}
 
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(currentUser);

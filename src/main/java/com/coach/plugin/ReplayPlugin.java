@@ -4,8 +4,10 @@ import com.coach.review.Review;
 
 public interface ReplayPlugin extends Plugin {
 
-	void transformReplayFile(Review review) throws Exception;
+	boolean transformReplayFile(Review review) throws Exception;
 
 	String getMediaType();
+
+	String getPhase();
 
 }

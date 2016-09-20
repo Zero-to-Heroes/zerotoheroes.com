@@ -64,7 +64,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ 		"'participantDetails' : 1,"
 			+ 		"'metaData' : 1,"
 //			+ 		"'key' : 1,"
-//			+ 		"'mediaType' : 1,"
+			+ 		"'mediaType' : 1,"
 //			+ 		"'beginning' : 1,"
 //			+ 		"'ending' : 1,"
 			+ 		"'visibility' : 1,"
@@ -98,6 +98,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ 		"'participantDetails' : 1,"
 			+ 		"'metaData' : 1,"
 			+ 		"'visibility' : 1,"
+			+ 		"'mediaType' : 1,"
 			+ 		"'lastModifiedDate' : 1"
 			+ 	"}"
 	)
@@ -126,6 +127,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ 		"'participantDetails' : 1,"
 			+ 		"'metaData' : 1,"
 			+ 		"'visibility' : 1,"
+			+ 		"'mediaType' : 1,"
 			+ 		"'lastModifiedDate' : 1"
 			+ 	"}"
 	)
@@ -153,6 +155,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 				+ 		"'participantDetails' : 1,"
 				+ 		"'metaData' : 1,"
 				+ 		"'visibility' : 1,"
+				+ 		"'mediaType' : 1,"
 				+ 		"'lastModifiedDate' : 1"
 				+ 	"}"
 		)
@@ -204,7 +207,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 				+ 		"'participantDetails' : 1,"
 				+ 		"'metaData' : 1,"
 //				+ 		"'key' : 1,"
-//				+ 		"'mediaType' : 1,"
+				+ 		"'mediaType' : 1,"
 //				+ 		"'beginning' : 1,"
 //				+ 		"'ending' : 1,"
 				+ 		"'visibility' : 1,"

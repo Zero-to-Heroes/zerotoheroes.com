@@ -43,6 +43,8 @@ public class ListReviewResponse {
 		private int viewCount;
 		private List<Tag> tags;
 		private String visibility;
+		// Needed to display either the "draft" or the "game" participants
+		private String mediaType;
 
 		public static ResponseReview from(Review review) {
 			if (review == null) { return null; }
@@ -64,6 +66,7 @@ public class ListReviewResponse {
 			result.tags = review.getTags();
 			result.sport = review.getSport();
 			result.visibility = review.getVisibility();
+			result.mediaType = review.getMediaType();
 			return result;
 		}
 	}

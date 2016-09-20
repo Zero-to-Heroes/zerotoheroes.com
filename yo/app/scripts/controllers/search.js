@@ -76,7 +76,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.search = function() {
-			$log.debug('searching')
+			// $log.debug('searching')
 			$scope.options.criteria.sport = $scope.sport
 
 			$scope.options.criteria.search($scope.options.criteria, true, $scope.pageNumber)
@@ -102,7 +102,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 		// Search
 		//===============
 		$scope.loadTags = function(callback) {
-			$log.debug('loading tags in search.js')
+			// $log.debug('loading tags in search.js')
 			TagService.filterOut('skill-level', function(filtered) {
 				$scope.allowedTags = filtered
 			})
@@ -121,7 +121,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			$scope.options.criteria.udpateSearchParams($scope.options.criteria, 1)
 
 			Api.SavedSearchSubscriptions.save({'name': searchName}, $scope.options.criteria, function(data) {
-				$log.debug('subscribed', data)
+				// $log.debug('subscribed', data)
 				subscribeModal.$promise.then(subscribeModal.hide)
 				$scope.updateStatus = 'ok'
 				$scope.settingName = false

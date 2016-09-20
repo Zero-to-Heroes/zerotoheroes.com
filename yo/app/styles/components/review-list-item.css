@@ -23,11 +23,6 @@
     margin-bottom: 25px;
 }
 
-.review-list-item .skill-level {
-    margin-right: 25px;
-    width: 140px;
-    min-width: 140px;
-}
 .review-list-item tags-input {
 	height: 55px;
 }
@@ -45,30 +40,6 @@
 }
 .review-list-item tags-input ti-tag-item {
     margin: auto;
-}
-
-.review-list-item .title-container {
-    flex-grow: 1;
-    flex-shrink: 1;
-    display: flex;
-    flex-direction: column;
-    /* http://stackoverflow.com/questions/12022288/how-to-keep-a-flex-item-from-overflowing-due-to-its-text*/
-    min-width: 1px;
-}
-
-.review-list-item .title {
-    margin-top: auto;
-    margin-bottom: auto;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    display: block;
-}
-
-.review-list-item .additional-info {
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 55%;
 }
 
 .review-list-item .body {

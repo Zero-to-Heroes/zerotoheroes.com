@@ -1,19 +1,19 @@
-<view-title>{{sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} All videos</view-title>
+<view-title>{{::sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} All videos</view-title>
 
 <div class="background-white listing-view">
 	<section class="all-videos-header">
-		<h2 class="all-videos-headline">{{ 'global.listing.allVideos' | translate }}
-			<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-show="subscribed() && sport && User.isLoggedIn()"><small title="{{ 'global.listing.unsubscribeTooltip' | translate }}">({{ 'global.listing.unsubscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true">)</span></small></a>
-			<a class="link-minor link-nodeco" ng-click="subscribe()" ng-hide="subscribed() || !sport || !User.isLoggedIn()" title="{{ 'global.listing.subscribeTooltip' | translate }}"><small>({{ 'global.listing.subscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
+		<h2 class="all-videos-headline">{{::translations.allVideos}}
+			<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-if="subscribed() && sport && User.isLoggedIn()"><small title="{{::translations.unsubscribeTooltip}}">({{::translations.unsubscribe}}<span class="glyphicon glyphicon-info-sign">)</span></small></a>
+			<a class="link-minor link-nodeco" ng-click="subscribe()" ng-if="!(subscribed() || !sport || !User.isLoggedIn())" title="{{::translations.subscribeTooltip}}"><small>({{::translations.subscribe}}<span class="glyphicon glyphicon-info-sign"></span>)</small></a>
 		</h2>
 	</section>
-	<span class="sort-label" translate="global.search.sortLabel"></span>
-	<button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.search.sort' | translate }}" bs-select ng-required="true">
+	<span class="sort-label">{{::translations.sortLabel}}</span>
+	<button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{::translations.sort}}" bs-select ng-required="true">
 	  	<span>Action</span>
 	</button>
 
-	<a type="submit" class="btn" ng-click="toggleAllVideos()" ng-show="ownVideos && onlyShowPublic"><span>{{ 'global.search.ownReviews.showAll' | translate }}</span></a>
-	<a type="submit" class="btn" ng-click="toggleAllVideos()" ng-show="ownVideos && !onlyShowPublic"><span>{{ 'global.search.ownReviews.showOnlyPublic' | translate }}</span></a>
+	<a type="submit" class="btn" ng-click="toggleAllVideos()" ng-if="ownVideos && onlyShowPublic"><span>{{::translations.showAll}}</span></a>
+	<a type="submit" class="btn" ng-click="toggleAllVideos()" ng-if="ownVideos && !onlyShowPublic"><span>{{::translations.showOnlyPublic}}</span></a>
 
-	<video-search config="criteria" sport="sport" show-visibility="ownVideos"></video-search>
+	<video-search config="::criteria" sport="::sport" show-visibility="::ownVideos"></video-search>
 </div>

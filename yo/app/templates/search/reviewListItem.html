@@ -1,42 +1,44 @@
 <li class="review-list-item">
-	<a href="{{buildUrl(video)}}" class="review-link">
+	<a href="{{::buildUrl(video)}}" class="review-link">
 		<h3 class="header">
-			<img class="visibility" ng-class="video.visibility" ng-show="showVisibility && video.visibility && video.visibility != 'public'" title="{{ 'global.review.visibility.' + video.visibility + 'Tooltip' | translate }}" src="{{ config.images['visibility' + video.visibility] }}" />
-			<tags-input ng-model="video.participantDetails.skillLevel" ng-disabled="true" class="sport-tags ti-input-sm skill-level" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
+			<img class="visibility" ng-class="::video.visibility" ng-if="::showVisibility && video.visibility && video.visibility != 'public'" title="{{::getVisibilityTitle(video) }}" src="{{::config.images['visibility' + video.visibility] }}" />
+			<span class="skill-level">
+				<img class="skill-level-icon" src="{{::getSkillLevelSource(video)}}" title="{{::getSkillLevelLabel(video)}}">
+			</span>
 			<div class="title-container">
-				<span class="title">{{video.title}}</span>
-				<small class="additional-info"><span title="{{formatExactDate(video.creationDate)}}">{{ 'global.listing.video.submitted' | translate }} {{formatDate(video.creationDate)}} {{ 'global.listing.video.by' | translate }} {{video.author}}</span></small>
+				<span class="title">{{::video.title}}</span>
+				<small class="additional-info"><span title="{{::formatExactDate(video.creationDate)}}">{{::translations.submitted}} {{::formatDate(video.creationDate)}} {{::translations.by}} {{::video.author}}</span></small>
 			</div>
 			
 			<!-- For smallest display only -->
 			<span class="text-center mobile-video-info-details">
-				<div title="{{ 'global.listing.video.commentsTitle' | translate }}" class="icon-container stat-comment">
-					<span class="stat-value">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
+				<div title="{{::translations.commentsTitle}}" class="icon-container stat-comment">
+					<span class="stat-value">{{::video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
 				</div>
-				<div title="{{ 'global.listing.video.usefulTitle' | translate }}" class="icon-container stat-helpful">
-					<span class="stat-value">{{video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
+				<div title="{{::translations.usefulTitle}}" class="icon-container stat-helpful">
+					<span class="stat-value">{{::video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
 				</div>
 			</span>
 		</h3>
 		<div class="body">
 			<span class="text-center video-info-details">
-				<div title="{{ 'global.listing.video.commentsTitle' | translate }}" class="icon-container stat-comment">
-					<span class="stat-value">{{video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
+				<div title="{{::translations.commentsTitle}}" class="icon-container stat-comment">
+					<span class="stat-value">{{::video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
 				</div>
-				<div title="{{ 'global.listing.video.usefulTitle' | translate }}" class="icon-container stat-helpful">
-					<span class="stat-value">{{video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
+				<div title="{{::translations.usefulTitle}}" class="icon-container stat-helpful">
+					<span class="stat-value">{{::video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
 				</div>
-				<div title="{{ 'global.listing.video.viewsTitle' | translate }}" class="icon-container stat-view">
-					<span class="stat-value">{{video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open stat-icon"></span>
+				<div title="{{::translations.viewsTitle}" class="icon-container stat-view">
+					<span class="stat-value">{{::video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open stat-icon"></span>
 				</div>
 			</span>
 			<span class="specific-info">
 				<div ng-switch="sport">
-					<hearthstone-listing-details ng-switch-when="hearthstone" review="video"></hearthstone-listing-details>
+					<hearthstone-listing-details ng-switch-when="hearthstone" review="::video" hide-skill-level="true"></hearthstone-listing-details>
 				</div>
 			</span>
 			<span class="complementary-info">
-				<tags-input ng-model="video.tags" ng-disabled="true" class="sport-tags ti-input-sm" replace-spaces-with-dashes="false" template="templates/video/tagsTemplate.html"></tags-input>
+				<read-only-tags tags="video.tags" class="sport-tags"></read-only-tags>
 			</span>
 		</div>
 	</a>

@@ -55,7 +55,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						mailUnread: 'plugins/sports/hearthstone/images/new/picto-new-email.png',
 						reputation: 'plugins/sports/hearthstone/images/new/picto-popularity.png',
 						visibilityprivate: 'plugins/sports/hearthstone/images/new/picto-video-privee.png',
-						visibilityrestricted: 'plugins/sports/hearthstone/images/new/picto-video-restreint.png'
+						visibilityrestricted: 'plugins/sports/hearthstone/images/new/picto-video-restreint.png',
+						rankImagesRoot: 'plugins/sports/hearthstone/images/ranks'
 					},
 					supportedExtensions: ['hdtreplay', 'arenatracker', 'log'],
 					plugins: {

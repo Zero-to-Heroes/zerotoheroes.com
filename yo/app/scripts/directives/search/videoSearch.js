@@ -17,7 +17,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 
 				$scope.retrieveVideos = function(params, updateUrl, pageNumber, callback) {
 
-					$log.debug('retrieveVideos', params, updateUrl, pageNumber, callback)
+					// $log.debug('retrieveVideos', params, updateUrl, pageNumber, callback)
 
 					if ($scope.allowedTags)
 						$scope.performSearch(params, pageNumber, updateUrl, callback)
@@ -28,7 +28,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 				}
 
 				$scope.udpateSearchParams = function(params, pageNumber) {
-					$log.debug('udpateSearchParams', params, $location.search().minComments)
+					// $log.debug('udpateSearchParams', params, $location.search().minComments)
 					// Take input
 					params.pageNumber = params.pageNumber || pageNumber || $scope.pageNumber
 					params.sport = params.sport || $scope.sport || $routeParams.sport
@@ -103,7 +103,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					$scope.videos = []
 					delete $scope.config.videos
 
-					$log.debug('searching videos', params, pageNumber, callback)
+					// $log.debug('searching videos', params, pageNumber, callback)
 
 					$scope.udpateSearchParams(params, pageNumber)
 
@@ -124,7 +124,8 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 						}
 						$scope.range = $scope.getRange()
 
-						$log.debug('\tloaded reviews', $scope.videos)
+						// $log.debug('\tloaded reviews', $scope.videos)
+						$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 						$scope.config.videos = $scope.videos
 
 						// Update the URL

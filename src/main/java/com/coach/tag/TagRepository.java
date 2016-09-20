@@ -113,9 +113,15 @@ public class TagRepository {
 		hearthstone.add(new Tag("Rank 2", "skill-level"));
 		hearthstone.add(new Tag("Rank 1", "skill-level"));
 		hearthstone.add(new Tag("Legend", "skill-level"));
-		hearthstone.add(new Tag("Arena 1-3 wins", "skill-level"));
-		hearthstone.add(new Tag("Arena 4-6 wins", "skill-level"));
-		hearthstone.add(new Tag("Arena 7-8 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 0 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 1 win", "skill-level"));
+		hearthstone.add(new Tag("Arena 2 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 3 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 4 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 5 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 6 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 7 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena 8 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena 9 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena 10 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena 11 wins", "skill-level"));

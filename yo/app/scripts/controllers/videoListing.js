@@ -2,6 +2,20 @@
 
 angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', 'TagService', 
 	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, TagService) {
+
+		$scope.translations = {
+			allVideos: $translate.instant('global.listing.allVideos'),
+			subscribe: $translate.instant('global.listing.subscribe'),
+			subscribeTooltip: $translate.instant('global.listing.subscribeTooltip'),
+			unsubscribe: $translate.instant('global.listing.unsubscribe'),
+			unsubscribeTooltip: $translate.instant('global.listing.unsubscribeTooltip'),
+
+			showAll: $translate.instant('global.search.showAll'),
+			showOnlyPublic: $translate.instant('global.search.showOnlyPublic'),
+			sort: $translate.instant('global.search.sort'),
+			sortLabel: $translate.instant('global.search.sortLabel')
+		}
+
 		// $scope.videos = [];
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
@@ -18,7 +32,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			{ "value" : "updateDate", "label" : "<span>" + $translate.instant('global.search.sort.updateDate') + "</span>" }
 		]
 		$scope.$watch('criteria.sort', function(newVal, oldVal) {
-			$log.debug('criteria updated', newVal, oldVal, $scope.criteria)
+			// $log.debug('criteria updated', newVal, oldVal, $scope.criteria)
 			if (newVal != oldVal) {
 				$scope.search()
 			}
@@ -47,7 +61,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				return
 			}
 			var params = $scope.criteria
-			$log.debug('init search', $scope.criteria.sort, $scope.criteria, params)
+			// $log.debug('init search', $scope.criteria.sort, $scope.criteria, params)
 			params.sport = $scope.sport
 			params.ownVideos = $scope.ownVideos
 			params.visibility = $scope.onlyShowPublic ? 'public' : null

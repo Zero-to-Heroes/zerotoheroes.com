@@ -113,7 +113,29 @@
 			"legend50": "Legend top 50",
 			"legend10": "Legend top 10",
 			"legend5": "Legend top 5",
-			"legend1": "Legend top 1"
+			"legend1": "Legend top 1",
+
+			"arena0wins": "Arena 0 wins",
+			"arena1win": "Arena 1 win",
+			"arena1-3wins": "Arena 1-3 wins",
+			"arena2wins": "Arena 2 wins",
+			"arena3wins": "Arena 3 wins",
+			"arena4wins": "Arena 4 wins",
+			"arena4-6wins": "Arena 4-6 wins",
+			"arena5wins": "Arena 5 wins",
+			"arena6wins": "Arena 6 wins",
+			"arena7wins": "Arena 7 wins",
+			"arena7-8wins": "Arena 7-8 wins",
+			"arena8wins": "Arena 8 wins",
+			"arena9wins": "Arena 9 wins",
+			"arena10wins": "Arena 10 wins",
+			"arena11wins": "Arena 11 wins",
+			"arena12wins": "Arena 12 wins",
+			"arena13wins": "Arena 13 wins",
+
+			"tavernbrawl": "Tavern Brawl",
+			"arenadraft": "Arena Draft",
+			"tournament": "Tournament"
 		},
 		"gameIdentifierPlaceholder": "What's your Battle Tag?"
 	},

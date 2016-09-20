@@ -25,7 +25,7 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 				$scope.info = undefined;
 				if (current.params && current.params.resetpassword && !$scope.resetongoing) {
 					var key = current.params.resetpassword;
-					$log.log('reset in routeChangeSuccess');
+					// $log.log('reset in routeChangeSuccess');
 					$scope.passwordReset(key);
 				}
 			});
@@ -42,7 +42,7 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 					Api.Profile.get( 
 						function(data) {
 							$scope.profile = data
-							$log.debug('loaded profile', data)
+							// $log.debug('loaded profile', data)
 						}
 					)
 				}
@@ -51,7 +51,7 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 
 			$scope.passwordReset = function(key) {
 				$scope.resetongoing = true;
-				$log.log('validating change password with key', key);
+				// $log.log('validating change password with key', key);
 				Api.Passwords.save({'key': key}, function(data) {
 					$location.search('resetpassword', null);
 					$scope.info = 'Your password has been changed';
@@ -69,7 +69,7 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 			}
 
 			if ($location.search().resetpassword && !$scope.resetongoing) {
-					$log.log('reset in $location');
+					// $log.log('reset in $location');
 				$scope.passwordReset($location.search().resetpassword);
 			}
 

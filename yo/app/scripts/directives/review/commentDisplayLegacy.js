@@ -6,11 +6,11 @@ app.directive('commentDisplayLegacy', ['$log', 'User', 'Api', '$parse', '$rootSc
 			transclude: false,
 			templateUrl: 'templates/review/commentDisplayLegacy.html',
 			scope: {
-				review: '=',
-				config: '=',
-				mediaPlayer: '=',
-				plugins: '=',
-				sport: '='
+				review: '<',
+				config: '<',
+				mediaPlayer: '<',
+				plugins: '<',
+				sport: '<'
 			},
 			link: function ($scope, element, attrs) {
 			},

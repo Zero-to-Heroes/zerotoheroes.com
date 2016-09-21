@@ -487,8 +487,6 @@ module.exports = function (grunt) {
 			'less',
 			'copy:index',
 		  	'wiredep',
-			'processhtml:dist',
-		  	'ngtemplates:dist',
 		  	'concurrent:server',
 		  	'autoprefixer',
 		  	'connect:livereload',

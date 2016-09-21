@@ -196,7 +196,7 @@ module.exports = function (grunt) {
 			flow: {
 		  		html: {
 					steps: {
-			  			js: ['concat'],
+			  			js: ['concat', 'uglify'],
 			  			css: ['cssmin']
 					},
 					post: {}
@@ -513,7 +513,7 @@ module.exports = function (grunt) {
 		'wiredep',
 		'processhtml:dist',
 		'ngtemplates:dist',
-		'useminPrepare:dev',
+		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
 		'concat',

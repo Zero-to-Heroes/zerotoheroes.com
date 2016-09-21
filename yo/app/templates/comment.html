@@ -54,30 +54,32 @@
 	</div>
 
 	<!-- Haven't optimized one-time bindings because it isn't in a repeat instruction. To do for later -->
-	<form ng-if="reply.replying" class="container-fluid reply-form" name="replyForm">
-		<div class="row">
-			<div class="col-md-2" ng-show="!User.isLoggedIn()">
-				<div class="form-group" show-errors="{ showSuccess: true }">
-					<input type="text" name="author" class="form-control comment-author" ng-model="reply.author" placeholder="{{ 'global.review.comment.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()">
+	<form class="container-fluid reply-form" name="replyForm">
+		<div ng-if="reply.replying" >
+			<div class="row" >
+				<div class="col-md-2" ng-show="!User.isLoggedIn()">
+					<div class="form-group" show-errors="{ showSuccess: true }">
+						<input type="text" name="author" class="form-control comment-author" ng-model="reply.author" placeholder="{{ 'global.review.comment.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()">
+					</div>
+				</div>
+				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
+					<toolbar class="form-group" show-errors="{ showSuccess: true }" media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.reviewType">
+						<textarea class="form-control text-editing-area" ng-model="reply.text" name="replyText" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
+					</toolbar>
+					<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" comment-plugins="plugins" auto-grow ng-hide="review.key"></textarea>
 				</div>
 			</div>
-			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-				<toolbar class="form-group" show-errors="{ showSuccess: true }" media-player="mediaPlayer" insert-model="insertModel" ng-show="review.key" config="config" media-type="review.reviewType">
-					<textarea class="form-control text-editing-area" ng-model="reply.text" name="replyText" ng-required="true" comment-plugins="plugins" auto-grow toolbar-target></textarea>
-				</toolbar>
-				<textarea class="form-control" ng-model="reply.text" name="replyText" ng-required="true" comment-plugins="plugins" auto-grow ng-hide="review.key"></textarea>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2" ng-show="!User.isLoggedIn()"></div>
-			<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
-				<div class="inline-block">
-					<button ng-click="postReply()" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.replyButton' | translate }}</span></button>
-					<button ng-click="cancelReply()" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
-				</div>
-				<div class="inline-block float-right">
-					<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
-					<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
+			<div class="row">
+				<div class="col-md-2" ng-show="!User.isLoggedIn()"></div>
+				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
+					<div class="inline-block">
+						<button ng-click="postReply()" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.replyButton' | translate }}</span></button>
+						<button ng-click="cancelReply()" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
+					</div>
+					<div class="inline-block float-right">
+						<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>
+						<a class="link-minor" ng-click="showHelp = false" ng-show="showHelp">{{ 'global.review.comment.hideFormattingHelpButton' | translate }}</a>
+					</div>
 				</div>
 			</div>
 		</div>

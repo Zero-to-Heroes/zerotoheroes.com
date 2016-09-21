@@ -20,6 +20,7 @@ import com.coach.rankings.Rank;
 import com.coach.reputation.Reputation;
 import com.coach.reputation.ReputationAction;
 import com.coach.review.Review.Sport;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 import lombok.Getter;
@@ -115,6 +116,7 @@ public class Comment implements HasText, HasReputation {
 		}
 	}
 
+	@JsonIgnore
 	public void getAllAuthors(Set<String> allAuthors) {
 		if (!StringUtils.isNullOrEmpty(authorId) && !allAuthors.contains(authorId)) {
 			allAuthors.add(authorId);
@@ -169,6 +171,7 @@ public class Comment implements HasText, HasReputation {
 		return comments;
 	}
 
+	@JsonIgnore
 	public List<Comment> getAllComments() {
 		List<Comment> allComments = new ArrayList<>();
 		for (Comment comment : getComments()) {

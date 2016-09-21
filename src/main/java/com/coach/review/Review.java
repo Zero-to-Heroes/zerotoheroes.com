@@ -190,6 +190,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		}
 	}
 
+	@JsonIgnore
 	public Comment getComment(int commentId) {
 		if (comments == null) { return null; }
 
@@ -249,6 +250,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		viewCount++;
 	}
 
+	@JsonIgnore
 	public Set<String> getAllAuthors() {
 		Set<String> allAuthors = new HashSet<>();
 		if (!StringUtils.isNullOrEmpty(authorId)) {
@@ -322,6 +324,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		canvas = new HashMap<>();
 	}
 
+	@JsonIgnore
 	public Set<String> getSubscribers() {
 		if (subscribers == null) {
 			subscribers = new HashSet<>();
@@ -340,6 +343,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		return comments;
 	}
 
+	@JsonIgnore
 	public List<Comment> getAllComments() {
 		List<Comment> allComments = new ArrayList<>();
 		for (Comment comment : getComments()) {

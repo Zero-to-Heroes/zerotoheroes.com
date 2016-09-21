@@ -9,13 +9,14 @@
 
 module.exports = function (grunt) {
 
-  // Load grunt tasks automatically
-  require('load-grunt-tasks')(grunt);
+  	// Load grunt tasks automatically
+	require('load-grunt-tasks')(grunt);
 
-  // Time how long tasks take. Can help when optimizing build times
-  require('time-grunt')(grunt);
+  	// Time how long tasks take. Can help when optimizing build times
+  	require('time-grunt')(grunt);
 
-  var modRewrite = require('connect-modrewrite');
+  	var modRewrite = require('connect-modrewrite')
+	var serveStatic = require('serve-static')
   
   // Configurable paths for the application
   var appConfig = {
@@ -81,12 +82,12 @@ module.exports = function (grunt) {
 		  middleware: function (connect) {
 			return [
 				modRewrite(['^[^\\.]*$ /index.html [L]']),
-				connect.static('.tmp'),
+				serveStatic('.tmp'),
 				connect().use(
 					'/bower_components',
-					connect.static('./bower_components')
+					serveStatic('./bower_components')
 				),
-				connect.static(appConfig.app)
+				serveStatic(appConfig.app)
 			];
 		  }
 		}
@@ -96,13 +97,13 @@ module.exports = function (grunt) {
 		  port: 9991,
 		  middleware: function (connect) {
 			return [
-			  connect.static('.tmp'),
-			  connect.static('test'),
+			  serveStatic('.tmp'),
+			  serveStatic('test'),
 			  connect().use(
 				'/bower_components',
-				connect.static('./bower_components')
+				serveStatic('./bower_components')
 			  ),
-			  connect.static(appConfig.app)
+			  serveStatic(appConfig.app)
 			];
 		  }
 		}
@@ -114,12 +115,12 @@ module.exports = function (grunt) {
 		  middleware: function (connect) {
 			return [
 				modRewrite(['^[^\\.]*$ /index.html [L]']),
-				connect.static('.tmp'),
+				serveStatic('.tmp'),
 				connect().use(
 					'/bower_components',
-					connect.static('./bower_components')
+					serveStatic('./bower_components')
 				),
-				connect.static(appConfig.dist)
+				serveStatic(appConfig.dist)
 			];
 		  }
 		}
@@ -195,7 +196,7 @@ module.exports = function (grunt) {
 			flow: {
 		  		html: {
 					steps: {
-			  			js: ['concat', 'uglify'],
+			  			js: ['concat'],
 			  			css: ['cssmin']
 					},
 					post: {}
@@ -385,6 +386,7 @@ module.exports = function (grunt) {
 			src: ['templates/**/*.html', 'views/**/*.html'],
 			dest: '<%= yeoman.app %>/scripts/template.js',
 			options: {
+				module: 'app',
 				htmlmin: {
 					collapseBooleanAttributes:      true,
 					collapseWhitespace:             true,
@@ -485,7 +487,8 @@ module.exports = function (grunt) {
 			'less',
 			'copy:index',
 		  	'wiredep',
-		  	// 'ngtemplates:app',
+			'processhtml:dist',
+		  	'ngtemplates:dist',
 		  	'concurrent:server',
 		  	'autoprefixer',
 		  	'connect:livereload',
@@ -512,7 +515,7 @@ module.exports = function (grunt) {
 		'wiredep',
 		'processhtml:dist',
 		'ngtemplates:dist',
-		'useminPrepare',
+		'useminPrepare:dev',
 		'concurrent:dist',
 		'autoprefixer',
 		'concat',
@@ -534,19 +537,20 @@ module.exports = function (grunt) {
 		'copy:index',
 		'wiredep',
 		'processhtml:dist',
+		'ngtemplates:dist',
 		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
-		'ngtemplates:dist',
 		'concat',
 		'ngAnnotate',
 		'copy:dist',
 		'cdnify',
-		'uglify',
+		// 'uglify',
 		'cssmin',
 		'filerev',
 		'usemin',
-		'htmlmin'
+		'htmlmin',
+			'connect:dist:keepalive'
 	]);
 
   grunt.registerTask('default', [

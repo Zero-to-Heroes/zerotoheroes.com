@@ -32,8 +32,12 @@ var app = angular.module('app', [
 	'angular.bind.notifier'
 ]);
 
-app.config(['$routeProvider', '$locationProvider',
-	function($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider', 
+	function($routeProvider, $locationProvider, $rootScopeProvider) {
+
+		// Because angular doesn't handle well recursive directives for now, see https://github.com/angular/angular.js/issues/6440
+		$rootScopeProvider. digestTtl(200);
+
 	$locationProvider.html5Mode(true);
 	$locationProvider.hashPrefix('!');
 

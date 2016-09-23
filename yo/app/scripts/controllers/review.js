@@ -110,54 +110,22 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				}
 			)
 
-			// TODO externalize that to a service like for the tags
 			CoachService.getCoaches(function(coaches) {
 				$scope.coaches = coaches
 			})
-			// Api.Coaches.query({reviewId: $routeParams.reviewId}, function(data) {
-			// 	$scope.coaches = [];
-			// 	// $log.debug('coaches', data)
-			// 	for (var i = 0; i < data.length; i++) {
-			// 		// $log.debug('initial coach text', data[i].description)
-			// 		// $log.debug('marked coach text', marked(data[i].description))
-			// 		data[i].description = marked(data[i].description || '')
-			// 		// $log.debug('handling coach info', data[i])
-			// 		if (data[i].tariffDescription) {
-			// 			for (var j = 0; j < data[i].tariffDescription.length; j++) {
-			// 				data[i].tariffDescription[j] = marked(data[i].tariffDescription[j] || '')
-			// 			}
-			// 		}
-			// 		data[i].level = marked(data[i].level || '')
-			// 		// $log.debug('\tHandled', data[i])
-			// 		$scope.coaches.push(data[i]);
-			// 	};
-			// });
 		}
 
 		$scope.initPlayer = function(review) {
-			// $log.debug('Player init? ', (Date.now() - $scope.debugTimestamp))
 			if (!$scope.mediaPlayer.initReview) {
 				$timeout(function() { $scope.initPlayer(review) }, 10)
 				return
 			}
 			$scope.mediaPlayer.onTimestampChanged = $scope.onTimestampChanged
 
-			// $log.debug('Init player at ', (Date.now() - $scope.debugTimestamp))
-			// $log.debug('mediaPlayer', $scope.mediaPlayer)
 			// Init player-specific information
 			$scope.mediaPlayer.initReview(review)
 
-			// $log.debug('init review done at ', (Date.now() - $scope.debugTimestamp))
-
-			// Initialize the plugins to replay different formats. Could be done only if necessary though
-			// Controls default to the ones defined in scope
-			// $scope.controlFlow.pluginsReady = false
-
-			// $scope.externalPlayer = undefined
-			// $scope.mediaType = data.mediaType
 			$log.debug('loaded review', review)
-			// $log.debug('review loaded at ', (Date.now() - $scope.debugTimestamp))
-			// $scope.review = data
 			$scope.controlFlow.reviewLoaded = true
 		}
 
@@ -190,15 +158,17 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.mediaPlayer.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, function(player) {
 				// $log.debug('media player init activated at ', Date.now() - $scope.debugTimestamp)
 				// $scope.controlFlow.pluginsReady = true
-				player.onTurnChanged(function(turn) {
-					// $log.debug('turn changed', turn)
-					if ($scope.commentEditorController.onTurnChanged) {
-						$scope.commentEditorController.onTurnChanged(turn)
-					}
-					if ($scope.commentDisplayController.onTurnChanged) {
-						$scope.commentDisplayController.onTurnChanged(turn)
-					}
-				})
+				if (player) {
+					player.onTurnChanged(function(turn) {
+						// $log.debug('turn changed', turn)
+						if ($scope.commentEditorController.onTurnChanged) {
+							$scope.commentEditorController.onTurnChanged(turn)
+						}
+						if ($scope.commentDisplayController.onTurnChanged) {
+							$scope.commentDisplayController.onTurnChanged(turn)
+						}
+					})
+				}
 
 				$timeout(function() {
 					$scope.updateVideoInformation($scope.review)
@@ -259,10 +229,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		});
 
 
-
-		//===============
-		// Comments
-		//===============
 
 		//===============
 		// Subscription
@@ -404,6 +370,25 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		// 	$scope.review.language = lang;
 		// }
 
+		$scope.getSkillLevelSource = function(review) {
+			if (!review || !$scope.config || !$scope.config.images)
+				return null
+
+			var base = $scope.config.images.rankImagesRoot
+
+			if (!base || !review.participantDetails.skillLevel || review.participantDetails.skillLevel.length == 0)
+				return null
+
+			var src = base + '/' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/, 'g'), '') + '.png'
+			return src
+		}
+
+		$scope.getSkillLevelLabel = function(review) {
+			if (!review || !review.participantDetails.skillLevel || review.participantDetails.skillLevel.length == 0)
+				return null
+
+			return $translate.instant($scope.sport + '.ranking.' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/, 'g'), ''))
+		}
 
 
 		//===============

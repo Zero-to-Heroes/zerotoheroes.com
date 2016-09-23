@@ -1,5 +1,10 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
 .main-panel-nolanding {
   margin-top: 140px;
+  min-height: calc(100% - 255px);
 }
 .center-column {
   top: 0;
@@ -8,6 +13,7 @@
 }
 .center-column > div {
   float: none;
+  flex-grow: 1;
 }
 .footer {
   margin-top: 70px;
@@ -15,6 +21,7 @@
   background-color: #3A240F;
   min-height: 80px;
   padding-top: 10px;
+  flex-grow: 1;
 }
 .footer ul {
   display: flex;
@@ -256,6 +263,19 @@
 .video-comment.multi-comment .dampen .inactive .turn-label:hover,
 .video-comment.multi-comment .dampen .inactive .comment-main:hover {
   filter: none;
+}
+.video-information .video-information-header .skill-level {
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  margin-right: 25px;
+  align-items: center;
+}
+.video-information .video-information-header .skill-level .skill-level-icon {
+  width: 90px;
+}
+.video-information .video-information-header .skill-level .skill-level-label {
+  font-size: 0.8em;
 }
 .video-information .video-information-header .review-header {
   display: flex;

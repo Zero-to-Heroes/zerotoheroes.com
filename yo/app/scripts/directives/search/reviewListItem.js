@@ -44,6 +44,9 @@ app.directive('reviewListItem', ['$log', 'SportsConfig', '$translate',
 				}
 
 				$scope.getSkillLevelSource = function(review) {
+					if (!$scope.config || !$scope.config.images)
+						return ''
+
 					var base = $scope.config.images.rankImagesRoot
 
 					if (!base || !review.participantDetails.skillLevel || review.participantDetails.skillLevel.length == 0)

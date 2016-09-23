@@ -1,3 +1,36 @@
+.footer {
+  margin-top: 70px;
+  font-size: 14px;
+  background-color: #3A240F;
+  min-height: 80px;
+  padding-top: 10px;
+}
+.footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.footer li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.footer li:after {
+  content: "-";
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.footer li:last-child:after {
+  content: "";
+  margin-left: 5px;
+}
+.footer .paypal .button-image {
+  background: transparent;
+}
+.footer a {
+  color: white;
+}
 .navbar .name-input .profile-menu .unread-notifs {
   display: flex;
   margin-right: 6px;
@@ -281,6 +314,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   display: block;
+  margin-bottom: 8px;
 }
 .review-list-item .title-container .additional-info {
   font-size: 55%;

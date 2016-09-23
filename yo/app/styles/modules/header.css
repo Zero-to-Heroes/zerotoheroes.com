@@ -30,7 +30,7 @@ header .logo {
 }
 
 @media screen and (min-width: 500px) {
-  	.email {
+  	header .email {
   		display: inline-block;
     	width: 250px;
   	}

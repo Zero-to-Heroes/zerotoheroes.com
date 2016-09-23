@@ -612,6 +612,13 @@
 			}
 		}
 	},
+	"footer": {
+		"email": "Ecrivez-nous",
+		"reddit": "Forums",
+		"twitter": "Twitter",
+		"discord": "Discord",
+		"patreon": "Soutenez-nous sur Patreon"
+	},
 	"help": {
 		"title": "Le saviez-vous ?",
 		"commentVote": "Vous pouvez utiliser les flèches pour récompenser un commentaire que vous avez trouvé utile. Les commentaires avec le plus de votes apparaîtront au sommet de la liste, et seront vus en premiers par les autres utilisateurs",

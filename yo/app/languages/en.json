@@ -682,6 +682,13 @@
 			}
 		}
 	},
+	"footer": {
+		"email": "Email us",
+		"reddit": "Forums",
+		"twitter": "Twitter",
+		"discord": "Discord",
+		"patreon": "Support us on Patreon"
+	},
 	"help": {
 		"title": "Did you know?",
 		"commentVote": "You can use the up and down arrows to reward a comment you have found useful. Comments with the most upvotes will naturally emerge at the top of the list",

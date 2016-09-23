@@ -1355,6 +1355,9 @@
 .hearthstone .profile-page .activity-feed .helpful .change-amount:after {
   background-image: url(images/new/picto-popularity.png);
 }
+.hearthstone .footer a {
+  color: white;
+}
 @media screen and (max-width: 500px) {
   .hearthstone .navbar.navbar-default {
     background: url("images/new/nav-bg-center.png") top repeat-x;

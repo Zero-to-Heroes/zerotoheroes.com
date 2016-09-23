@@ -10,8 +10,8 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			unsubscribe: $translate.instant('global.listing.unsubscribe'),
 			unsubscribeTooltip: $translate.instant('global.listing.unsubscribeTooltip'),
 
-			showAll: $translate.instant('global.search.showAll'),
-			showOnlyPublic: $translate.instant('global.search.showOnlyPublic'),
+			showAll: $translate.instant('global.search.ownReviews.showAll'),
+			showOnlyPublic: $translate.instant('global.search.ownReviews.showOnlyPublic'),
 			sort: $translate.instant('global.search.sort'),
 			sortLabel: $translate.instant('global.search.sortLabel')
 		}

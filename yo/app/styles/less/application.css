@@ -1,3 +1,14 @@
+.main-panel-nolanding {
+  margin-top: 140px;
+}
+.center-column {
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+.center-column > div {
+  float: none;
+}
 .footer {
   margin-top: 70px;
   font-size: 14px;

@@ -66,12 +66,12 @@ public class CoachesApiHandler {
 		// sport = StringUtils.trim(sport);
 		// log.debug("Initial list of coaches: " + CoachRepository.allCoaches);
 		List<CoachInformation> ret = new ArrayList<>();
-		for (Coach coach : CoachRepositoryDao.allCoaches) {
-			if (coach.getSport().equals(sport)) {
-				CoachInformation coachInformation = coach.toCoachInformation();
-				ret.add(coachInformation);
-			}
-		}
+//		for (Coach coach : CoachRepositoryDao.allCoaches) {
+//			if (coach.getSport().equals(sport)) {
+//				CoachInformation coachInformation = coach.toCoachInformation();
+//				ret.add(coachInformation);
+//			}
+//		}
 		for (User user : dao.getAllCoaches(sport)) {
 			CoachInformation coachInformation = user.getCoachInformation();
 			if (coachInformation.getName() == null) {

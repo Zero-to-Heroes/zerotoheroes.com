@@ -69,7 +69,7 @@
 			"warrior": "Warrior"
 		},
 		"upload": {
-			"descriptionPlaceholder": "If you don't want any advice, don't forget to add the 'Entertainment' tag below. Otherwise, to make the review more useful to you and more appealing to others (and so get more help), we advise you to review the replay once yourself, and point out the moments you were unsure or how you thought about what you did. It will give others specific points on which to help you, and will let them comment on your thought process as well as your actual decisions",
+			"descriptionPlaceholder": "If you don't want any advice, don't forget to add the 'Entertainment' tag below. Otherwise, please add information about the context or general observations on the game. You can also add some generic points you'd like advice on. For turn-by-turn comments, please use the comment system instead",
 			"decklistLabel": "Decklist",
 			"decklistTooltip": "Supported providers: Zero to Heroes drafts, HearthArena drafts, ArenaDrafts drafts, HearthStats, HearthPwn, HearthPwn temporary decks (import can take up to one minute the first time), and hearthstone-decks decks",
 			"decklistPlaceholder": "Decklist URL"

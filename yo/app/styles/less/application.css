@@ -3,7 +3,7 @@ body {
   flex-direction: column;
 }
 .main-panel-nolanding {
-  margin-top: 140px;
+  margin-top: 80px;
   min-height: calc(100% - 255px);
 }
 .center-column {

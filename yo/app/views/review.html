@@ -102,16 +102,16 @@
 				<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
 			</div>
 
-			<h3 class="comments-headline">{{ 'global.review.comment.commentsHeadline' | translate }}</h3>
+			<h3 class="comments-headline">{{::translations.commentsHeadline}}</h3>
 			<div class="comments-links">
-				<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-if="subscribed() && User.isLoggedIn()" title="{{ 'global.review.comment.unsubscribeReviewTooltip' | translate }}">{{ 'global.review.comment.unsubscribeReview' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-				<a class="link-minor link-nodeco" ng-click="subscribe()" ng-if="!(subscribed() || !User.isLoggedIn())" title="{{ 'global.review.comment.subscribeReviewTooltip' | translate }}">{{ 'global.review.comment.subscribeReview' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
-				<a class="link-minor link-nodeco" ng-click="showProModal()" ng-if="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</a>
+				<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-if=":reviewRefresh:(subscribed() && User.isLoggedIn())" title="{{::translations.unsubscribeReviewTooltip}}">{{::translations.unsubscribeReview}}<span class="glyphicon glyphicon-info-sign"></span></a>
+				<a class="link-minor link-nodeco" ng-click="subscribe()" ng-if=":reviewRefresh:(!subscribed() && User.isLoggedIn())" title="{{::translations.subscribeReviewTooltip}}">{{::translations.subscribeReview}}<span class="glyphicon glyphicon-info-sign"></span></a>
+				<a class="link-minor link-nodeco" ng-click="showProModal()" ng-if=":reviewRefresh:(!!coaches.length && !review.editing)" title="{{::translations.askProTooltip}}">{{::translations.askProButton}}</a>
 			</div>
 
 			<!-- Dropdown to sort the criteria. Don't show if in the old comment system -->
 			<div ng-if="review.useV2comments" class="comment-sort-options">
-				<span translate="global.review.comment.sort.sortedbyLabel"></span>
+				<span>{{::translations.sortedbyLabel}}</span>
 				<button type="button" class="btn btn-default btn-select" data-trigger="click" data-html="1" ng-model="review.commentSortCriteria" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.review.comment.sort.best' | translate }}" bs-select ng-required="true">
 					<span>Action</span>
 				</button>

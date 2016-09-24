@@ -324,7 +324,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		canvas = new HashMap<>();
 	}
 
-	@JsonIgnore
 	public Set<String> getSubscribers() {
 		if (subscribers == null) {
 			subscribers = new HashSet<>();

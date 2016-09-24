@@ -6,7 +6,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.translations = {
 			//restrictedAccess = $translate.instant('global.review.restrictedAccess')
+			askProTooltip: $translate.instant('global.review.askProTooltip'),
+			askProButton: $translate.instant('global.review.askProButton'),
 
+			commentsHeadline: $translate.instant('global.review.comment.commentsHeadline'),
+			unsubscribeReview: $translate.instant('global.review.comment.unsubscribeReview'),
+			unsubscribeReviewTooltip: $translate.instant('global.review.comment.unsubscribeReviewTooltip'),
+			subscribeReview: $translate.instant('global.review.comment.subscribeReview'),
+			subscribeReviewTooltip: $translate.instant('global.review.comment.subscribeReviewTooltip'),
+
+			sortedbyLabel: $translate.instant('global.review.comment.sort.sortedbyLabel')
 		}
 		$scope.debugTimestamp = Date.now()
 		// $log.debug('init review controller at ', $scope.debugTimestamp)

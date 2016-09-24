@@ -49,7 +49,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ReviewApiHandler {
 
-	private static final int PAGE_SIZE = 50;
+	private static final int PAGE_SIZE = 100;
 
 	@Autowired
 	ReviewRepository reviewRepo;

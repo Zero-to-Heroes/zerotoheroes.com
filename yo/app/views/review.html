@@ -68,7 +68,7 @@
 								<div class="panel panel-default" ng-if="!review.editing" ng-if="review.text">
 									<div compilecontent content="review.markedText" class="panel-body video-description"></div>
 								</div>
-								<toolbar ng-if="review.editing && review.key && review.reviewType != 'game-replay'" media-player="mediaPlayer" insert-model="insertModel" config="config" media-type="review.reviewType">
+								<toolbar ng-if="review.editing && review.key" media-player="mediaPlayer" insert-model="insertModel" config="config" media-type="review.reviewType">
 									<textarea class="form-control text-editing-area" ng-model="review.text" comment-plugins="plugins" auto-grow toolbar-target></textarea>
 								</toolbar>
 							</div>

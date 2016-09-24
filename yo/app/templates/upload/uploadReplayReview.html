@@ -44,18 +44,13 @@
 				    	<input type="text" name="title" class="form-control" ng-model="review.title" placeholder="{{ 'global.upload.titlePlaceholder' | translate }}" ng-required="true" ng-readonly="transcoding">
 				  	</div>
 			  	</div>
-			  	<!-- <div class="col-sm-1">
-					<a class="dropdown-toggle language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span  class="lang-sm" lang="{{review.language}}"></span><span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a ng-click="editLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
-							<li><a ng-click="editLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
-						</ul>
-				</div> -->
 		  	</div>
 
 	  		<div class="row">
 				<div class="col-sm-12">
-					<span class="no-more-review-description-text" ng-bind-html="'global.upload.replay.noMoreDescriptionText' | translate"></span>
+					<toolbar player-api="API" insert-model="insertModel" drawing-canvas="canvasState.drawingCanvas" canvas-id="canvasState.canvasId" hide-comparison="true" config="config" media-type="'arena-draft'" show-errors="{ showSuccess: true }" class="form-group">
+			    		<textarea name="text" class="form-control" rows="3" placeholder="{{ 'global.upload.descriptionPlaceholder' | translate }}" ng-model="review.text" ng-readonly="transcoding" comment-plugins="plugins" auto-grow toolbar-target ng-required="true"></textarea>
+			    	</toolbar>
 				</div>
 		  	</div>
 		  	

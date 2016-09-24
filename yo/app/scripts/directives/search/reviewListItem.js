@@ -52,7 +52,7 @@ app.directive('reviewListItem', ['$log', 'SportsConfig', '$translate',
 					if (!base || !review.participantDetails.skillLevel || review.participantDetails.skillLevel.length == 0)
 						return ''
 
-					var src = base + '/' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/, 'g'), '') + '.png'
+					var src = base + '/' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/g), '') + '.png'
 					return src
 				}
 
@@ -60,7 +60,7 @@ app.directive('reviewListItem', ['$log', 'SportsConfig', '$translate',
 					if (!review.participantDetails.skillLevel || review.participantDetails.skillLevel.length == 0)
 						return ''
 
-					return $translate.instant($scope.sport + '.ranking.' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/, 'g'), ''))
+					return $translate.instant($scope.sport + '.ranking.' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/g), ''))
 				}
 
 				// $scope.getMode = function(review) {

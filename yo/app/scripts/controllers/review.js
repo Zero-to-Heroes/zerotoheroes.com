@@ -388,7 +388,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if (!base || !review.participantDetails.skillLevel || review.participantDetails.skillLevel.length == 0)
 				return null
 
-			var src = base + '/' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/, 'g'), '') + '.png'
+			var src = base + '/' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/g), '') + '.png'
 			return src
 		}
 
@@ -396,7 +396,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			if (!review || !review.participantDetails.skillLevel || review.participantDetails.skillLevel.length == 0)
 				return null
 
-			return $translate.instant($scope.sport + '.ranking.' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/, 'g'), ''))
+			return $translate.instant($scope.sport + '.ranking.' + review.participantDetails.skillLevel[0].text.toLowerCase().replace(new RegExp(/\s/g), ''))
 		}
 
 

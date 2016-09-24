@@ -98,7 +98,10 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			'responseError': function(rejection) {
 				var User = $injector.get('User');
 				if (rejection.config && rejection.config.url && rejection.config.url.indexOf('announcements') == -1) {
-					if (!rejection.data) {
+					if (rejection.status == 401 || rejection.status == 403 || rejection.status == 404 ) {
+						// Do nothing, these are functional errors
+					}
+					else if (!rejection.data) {
 						notify('Http response error without data details - look in server logs for more info', "rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
 					}
 					else {

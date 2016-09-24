@@ -23,7 +23,7 @@
 
 							<div class="col-md-12 review-header" ng-if="!review.editing">
 								<span class="skill-level">
-									<img class="skill-level-icon" src="{{::getSkillLevelSource(review)}}" title="{{::getSkillLevelLabel(review)}}">
+									<img class="skill-level-icon" src="{{:reviewRefresh:getSkillLevelSource(review)}}" title="{{:reviewRefresh:getSkillLevelLabel(review)}}">
 								</span>
 								<h1 class="video-title" ng-model="review.title">{{:reviewRefresh:review.title}}</h1>
 								<img class="visibility" ng-class=":reviewRefresh:review.visibility" ng-if=":reviewRefresh:(review.visibility && review.visibility != 'public')" title="{{ 'global.review.visibility.' + review.visibility + 'Tooltip' | translate }}" src="{{ config.images['visibility' + review.visibility] }}" />

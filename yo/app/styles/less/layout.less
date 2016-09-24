@@ -1,0 +1,20 @@
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.main-panel-nolanding {
+	margin-top: 140px;
+    min-height: ~"calc(100% - 255px)";
+}
+
+.center-column {
+	top: 0;
+	display: flex;
+    justify-content: center;
+
+	& > div {
+		float: none;
+    	flex-grow: 1;
+	}
+}

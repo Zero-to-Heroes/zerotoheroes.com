@@ -470,11 +470,11 @@
 				"videoDescription": "Postez une vidéo de vous en train de jouer",
 				"fromurl": "Site externe",
 				"hearthstone": {
-					"videoDescription": "Postez une vidéo d'une de vos parties. Vous pouvez trouvez de l'aide sur comment faire <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone/\" target=\"_blank\">sur notre blog</a>",
+					"videoDescription": "Postez une vidéo d'une de vos parties. Vous pouvez trouvez de l'aide sur comment faire <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/\" target=\"_blank\">sur notre blog</a>",
 					"replay": "HS Replay",
-					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone\" target=\"_blank\">sur notre blog</a>",
+					"replayDescription": "Postez un fichier de replay. Vous pouvez trouver de l'aide sur comment en enregistrer un <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/\" target=\"_blank\">sur notre blog</a>",
 					"arenadraft": "Draft d'Arène",
-					"arenadraftDescription": "Postez votre draft d'Arène. Tous les détails <a href=\"http://blog.zerotoheroes.com/fr/2015/11/27/comment-enregistrer-ses-parties-de-hearthstone\" target=\"_blank\">sur notre blog</a>",
+					"arenadraftDescription": "Postez votre draft d'Arène. Tous les détails <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/\" target=\"_blank\">sur notre blog</a>",
 					"fromurlDescription": "Vous avez déjà une partie ou un draft stocké quelque part ? Copiez simplement son URL pour l'importer"
 				}
 			},

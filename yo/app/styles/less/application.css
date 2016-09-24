@@ -4,7 +4,7 @@ body {
 }
 .main-panel-nolanding {
   margin-top: 80px;
-  min-height: calc(100% - 255px);
+  min-height: 75%;
 }
 .center-column {
   top: 0;
@@ -14,6 +14,9 @@ body {
 .center-column > div {
   float: none;
   flex-grow: 1;
+}
+.main-panel-landing .center-column {
+  display: block;
 }
 .footer {
   margin-top: 70px;

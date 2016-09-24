@@ -2,7 +2,7 @@
 	<a href="{{::buildUrl(video)}}" class="review-link">
 		<h3 class="header">
 			<img class="visibility" ng-class="::video.visibility" ng-if="::showVisibility && video.visibility && video.visibility != 'public'" title="{{::getVisibilityTitle(video) }}" src="{{::config.images['visibility' + video.visibility] }}" />
-			<span class="skill-level">
+			<span class="skill-level" ng-if="{{::getSkillLevelSource(video)}}">
 				<img class="skill-level-icon" src="{{::getSkillLevelSource(video)}}" title="{{::getSkillLevelLabel(video)}}">
 			</span>
 			<div class="title-container">

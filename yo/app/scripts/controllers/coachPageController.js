@@ -66,7 +66,7 @@ angular.module('controllers').controller('CoachPageController', ['$scope', '$rou
 		}
 
 		$scope.search = function() {
-			$scope.criteria.title = 'author:' + $scope.coach.username
+			$scope.criteria.authorId = $scope.coach.id
 			$scope.criteria.sport = $scope.sport
 
 			$timeout(function() {

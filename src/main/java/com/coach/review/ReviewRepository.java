@@ -132,7 +132,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 			+ 	"}"
 	)
 	//@formatter:on
-	Page<Review> listMyReviews(String sportCriteria, String authorId, String visibility, Pageable pageable);
+	Page<Review> listAuthorReviews(String sportCriteria, String authorId, String visibility, Pageable pageable);
 
 	//@formatter:off
 		@Query(	value =
@@ -160,7 +160,7 @@ public interface ReviewRepository extends MongoRepository<Review, String> {
 				+ 	"}"
 		)
 		//@formatter:on
-	Page<Review> listAllMyReviews(String sportCriteria, String authorId, Pageable pageable);
+	Page<Review> listAllAuthorReviews(String sportCriteria, String authorId, Pageable pageable);
 
 	//@formatter:off
 	@Query(	value =

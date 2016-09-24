@@ -32,6 +32,7 @@ public class ReviewSearchCriteria {
 	private ParticipantDetails participantDetails;
 	private Integer minComments, maxComments;
 	private String visibility;
+	private String authorId;
 
 	public List<Tag> getWantedTags() {
 		return wantedTags == null ? new ArrayList<Tag>() : wantedTags;
@@ -64,6 +65,7 @@ public class ReviewSearchCriteria {
 		matches &= sport == null || sport.equalsIgnoreCase(review.getSport().getKey());
 		matches &= title == null || review.getFullTextSearchField().contains(title);
 		matches &= reviewType == null || reviewType.equalsIgnoreCase(review.getReviewType());
+		matches &= authorId == null || authorId.equalsIgnoreCase(review.getAuthorId());
 
 		if (wantedTags != null && !wantedTags.isEmpty()) {
 			for (Tag tag : wantedTags) {
@@ -81,17 +83,20 @@ public class ReviewSearchCriteria {
 
 		if (participantDetails != null) {
 			matches &= participantDetails.getPlayerCategory() == null
-					|| participantDetails.getPlayerCategory().equals(review.getParticipantDetails().getPlayerCategory())
 					|| participantDetails.getPlayerCategory()
-							.equals(review.getParticipantDetails().getOpponentCategory());
-			matches &= participantDetails.getOpponentCategory() == null
-					|| participantDetails.getOpponentCategory()
 							.equals(review.getParticipantDetails().getPlayerCategory())
-					|| participantDetails.getOpponentCategory()
-							.equals(review.getParticipantDetails().getOpponentCategory());
-			matches &= participantDetails.getSkillLevel() == null || participantDetails.getSkillLevel().isEmpty()
-					|| review.getParticipantDetails().getSkillLevel() != null && review.getParticipantDetails()
-							.getSkillLevel().contains(participantDetails.getSkillLevel().get(0));
+					|| participantDetails.getPlayerCategory().equals(
+							review.getParticipantDetails().getOpponentCategory());
+			matches &= participantDetails.getOpponentCategory() == null
+					|| participantDetails.getOpponentCategory().equals(
+							review.getParticipantDetails().getPlayerCategory())
+					|| participantDetails.getOpponentCategory().equals(
+							review.getParticipantDetails().getOpponentCategory());
+			matches &= participantDetails.getSkillLevel() == null
+					|| participantDetails.getSkillLevel().isEmpty()
+					|| review.getParticipantDetails().getSkillLevel() != null
+					&& review.getParticipantDetails().getSkillLevel()
+							.contains(participantDetails.getSkillLevel().get(0));
 		}
 
 		return matches;
@@ -99,19 +104,31 @@ public class ReviewSearchCriteria {
 
 	// Default values for almost everything -> we return the latest reviews
 	public boolean isLatest() {
-		return StringUtils.isEmpty(title) && StringUtils.isEmpty(reviewType) && CollectionUtils.isEmpty(wantedTags)
-				&& CollectionUtils.isEmpty(unwantedTags) && (ownVideos == null || ownVideos == false)
-				&& (onlyHelpful == null || onlyHelpful == false) && (noHelpful == null || noHelpful == false)
+		return StringUtils.isEmpty(title) && StringUtils.isEmpty(authorId) && StringUtils.isEmpty(reviewType)
+				&& CollectionUtils.isEmpty(wantedTags) && CollectionUtils.isEmpty(unwantedTags)
+				&& (ownVideos == null || ownVideos == false) && (onlyHelpful == null || onlyHelpful == false)
+				&& (noHelpful == null || noHelpful == false)
 				&& (participantDetails == null || participantDetails.isEmpty())
 				&& (minComments == null || minComments == 0) && maxComments == null
 				&& (StringUtils.isEmpty(visibility) || visibility.equalsIgnoreCase("public"));
 	}
 
 	public boolean isMyLatest() {
-		return StringUtils.isEmpty(title) && StringUtils.isEmpty(reviewType) && CollectionUtils.isEmpty(wantedTags)
-				&& CollectionUtils.isEmpty(unwantedTags) && ownVideos != null && ownVideos
-				&& (onlyHelpful == null || onlyHelpful == false) && (noHelpful == null || noHelpful == false)
+		return StringUtils.isEmpty(title) && StringUtils.isEmpty(authorId) && StringUtils.isEmpty(reviewType)
+				&& CollectionUtils.isEmpty(wantedTags) && CollectionUtils.isEmpty(unwantedTags) && ownVideos != null
+				&& ownVideos && (onlyHelpful == null || onlyHelpful == false)
+				&& (noHelpful == null || noHelpful == false)
 				&& (participantDetails == null || participantDetails.isEmpty())
 				&& (minComments == null || minComments == 0) && maxComments == null;
+	}
+
+	public boolean isAuthorLatest() {
+		return StringUtils.isEmpty(title) && StringUtils.isEmpty(reviewType) && CollectionUtils.isEmpty(wantedTags)
+				&& CollectionUtils.isEmpty(unwantedTags) && ownVideos != null
+				&& (ownVideos == null || ownVideos == false) && (onlyHelpful == null || onlyHelpful == false)
+				&& (noHelpful == null || noHelpful == false)
+				&& (participantDetails == null || participantDetails.isEmpty())
+				&& (minComments == null || minComments == 0) && maxComments == null
+				&& (StringUtils.isEmpty(visibility) || visibility.equalsIgnoreCase("public"));
 	}
 }

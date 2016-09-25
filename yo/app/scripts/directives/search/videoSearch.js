@@ -111,6 +111,10 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					$scope.latestUpdateUrl = updateUrl
 					
 					Api.ReviewsQuery.save(params, function(data) {
+						
+						if (data.queryDuration > 8000)
+							$log.notifySlack('Long seach query', params)
+
 						$scope.totalPages = data.totalPages
 
 						for (var i = 0; i < data.reviews.length; i++) {

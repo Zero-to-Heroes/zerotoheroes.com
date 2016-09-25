@@ -86,6 +86,15 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
 		};
 
+		$delegate.notifySlack = function( )
+		{
+			var User = $injector.get('User');
+			var $location = $injector.get('$location');
+			var $window = $injector.get('$window');
+
+			notify('Javascript notification: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
+		};
+
 
 		return $delegate;
 	}]);

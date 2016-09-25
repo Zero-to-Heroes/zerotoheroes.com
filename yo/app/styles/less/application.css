@@ -395,3 +395,16 @@ upload-replay-review .review-visibility .btn-select {
 upload-replay-review .no-more-review-description-text {
   padding-top: 0;
 }
+@media screen and (max-width: 750px) {
+  .video-listing .complementary-info {
+    display: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .video-listing {
+    padding: 0;
+  }
+  .video-listing li {
+    margin-right: 0;
+  }
+}

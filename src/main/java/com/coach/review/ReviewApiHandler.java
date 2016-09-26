@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amazonaws.util.StringUtils;
+import com.coach.core.notification.DiscordNotifier;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
@@ -85,6 +86,9 @@ public class ReviewApiHandler {
 	SlackNotifier slackNotifier;
 
 	@Autowired
+	DiscordNotifier discordNotifier;
+
+	@Autowired
 	SubscriptionManager subscriptionManager;
 
 	@Autowired
@@ -97,7 +101,8 @@ public class ReviewApiHandler {
 	AutowireCapableBeanFactory beanFactory;
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<ListReviewResponse> searchAllReviews(@RequestBody ReviewSearchCriteria criteria) {
+	public @ResponseBody ResponseEntity<ListReviewResponse> searchAllReviews(
+			@RequestBody ReviewSearchCriteria criteria) {
 		// log.debug("Retrieving all reviews with criteria " + criteria);
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -107,8 +112,8 @@ public class ReviewApiHandler {
 				: 0;
 		String sport = criteria.getSport();
 
-		if (StringUtils.isNullOrEmpty(sport)) { return new ResponseEntity<ListReviewResponse>(
-				(ListReviewResponse) null, HttpStatus.BAD_REQUEST); }
+		if (StringUtils.isNullOrEmpty(sport)) { return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null,
+				HttpStatus.BAD_REQUEST); }
 
 		Sport sportObj = Sport.load(sport);
 		// The case when input query contains invalid data, should not arrive
@@ -122,8 +127,9 @@ public class ReviewApiHandler {
 
 		// If user is anonymous, can only show public videos
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
-			if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) { return new ResponseEntity<ListReviewResponse>(
-					(ListReviewResponse) null, HttpStatus.FORBIDDEN); }
+			if (criteria.getOwnVideos() != null
+					&& criteria.getOwnVideos()) { return new ResponseEntity<ListReviewResponse>(
+							(ListReviewResponse) null, HttpStatus.FORBIDDEN); }
 			criteria.setVisibility("public");
 		}
 
@@ -168,20 +174,22 @@ public class ReviewApiHandler {
 			// criteria.getWantedTags(),
 			// criteria.getUnwantedTags(), pageRequest);
 			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
-					criteria.getOnlyHelpful(), criteria.getNoHelpful(), criteria.getParticipantDetails()
-							.getPlayerCategory(), criteria.getParticipantDetails().getOpponentCategory(), criteria
-							.getParticipantDetails().getSkillLevel(), criteria.getReviewType(), criteria
-							.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(), criteria
-							.getVisibility(), pageRequest);
+					criteria.getOnlyHelpful(), criteria.getNoHelpful(),
+					criteria.getParticipantDetails().getPlayerCategory(),
+					criteria.getParticipantDetails().getOpponentCategory(),
+					criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
+					criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
+					criteria.getVisibility(), pageRequest);
 		}
 		else {
 			// log.debug("searching with criteria " + criteria);
 			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
-					criteria.getOnlyHelpful(), criteria.getNoHelpful(), criteria.getParticipantDetails()
-							.getPlayerCategory(), criteria.getParticipantDetails().getOpponentCategory(), criteria
-							.getParticipantDetails().getSkillLevel(), criteria.getReviewType(), criteria
-							.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(), criteria
-							.getVisibility(), text, pageRequest);
+					criteria.getOnlyHelpful(), criteria.getNoHelpful(),
+					criteria.getParticipantDetails().getPlayerCategory(),
+					criteria.getParticipantDetails().getOpponentCategory(),
+					criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
+					criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
+					criteria.getVisibility(), text, pageRequest);
 		}
 
 		log.debug("query returned");
@@ -540,8 +548,8 @@ public class ReviewApiHandler {
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
-		else if (!currentUser.equals(review.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Review>(
-				(Review) null, HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(review.getAuthor())
+				&& !user.canEdit()) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
 
 		// log.debug("Upading review with " + inputReview);
 
@@ -566,6 +574,7 @@ public class ReviewApiHandler {
 			review.setVisibility(inputReview.getVisibility());
 			subscriptionManager.notifyNewReview(review.getSport(), review);
 			slackNotifier.notifyNewReview(review);
+			discordNotifier.notifyNewReview(review);
 		}
 		review.setVisibility(inputReview.getVisibility());
 
@@ -601,8 +610,8 @@ public class ReviewApiHandler {
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
-		else if (!currentUser.equals(review.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Review>(
-				(Review) null, HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(review.getAuthor())
+				&& !user.canEdit()) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
 
 		// log.debug("Upading review with " + inputReview);
 
@@ -699,6 +708,7 @@ public class ReviewApiHandler {
 		if (!review.isSequence()) {
 			subscriptionManager.notifyNewReview(review.getSport(), review);
 			slackNotifier.notifyNewReview(review);
+			discordNotifier.notifyNewReview(review);
 		}
 		log.debug("Published review is " + review);
 
@@ -733,8 +743,8 @@ public class ReviewApiHandler {
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
-		else if (!currentUser.equals(comment.getAuthor()) && !user.canEdit()) { return new ResponseEntity<Review>(
-				(Review) null, HttpStatus.UNAUTHORIZED); }
+		else if (!currentUser.equals(comment.getAuthor())
+				&& !user.canEdit()) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
 
 		consolidateCanvas(currentUser, review, newComment, newComment.getTempCanvas());
 		activatePlugins(currentUser, review, newComment);
@@ -845,13 +855,13 @@ public class ReviewApiHandler {
 				.getAuthorities();
 
 		// No anonymous access
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return new ResponseEntity<Comment>(
-				(Comment) null, HttpStatus.UNAUTHORIZED); }
+		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(
+				authorities)) { return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED); }
 
 		// log.debug("Validating that the logged in user is the review author");
 		User user = userRepo.findByUsername(currentUser);
-		if (!user.getId().equals(review.getAuthorId())) { return new ResponseEntity<Comment>((Comment) null,
-				HttpStatus.UNAUTHORIZED); }
+		if (!user.getId().equals(
+				review.getAuthorId())) { return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED); }
 
 		comment.setHelpful(!comment.isHelpful());
 

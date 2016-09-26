@@ -17,37 +17,55 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 			},
 			controller: function($scope) {
 
+				$scope.bouncing = false
+
 				// External API
 				$scope.controller.onTurnChanged = function(turn) {
-					$timeout(function() {
-						$scope.$apply()
-						if (turn == 'mulligan')
-							turn = '00mulligan'
-						if (turn == 'endgame')
-							turn = 'ZZendgame'
-						$scope.currentTurn = turn
-						$scope.$broadcast('$$rebind::' + 'turnRefresh')
+					$scope.latestTurnRequest = turn
+					$log.debug('onTurnChanged', turn)
 
+					if (!$scope.bouncing) {
+						$scope.bouncing = true
 						$timeout(function() {
-							// Find the turn label that is about the current turn
-							var activeTurn = $('.turn-active')
-							if (!activeTurn || !activeTurn[0])
-								return
+							$scope.processTurnChanged()
+						}, 50)
+					}
+				}
 
-							var top = activeTurn[0].getBoundingClientRect().top
+				$scope.processTurnChanged = function() {
+					$log.debug('processing turn changed', $scope.latestTurnRequest)
+					$scope.bouncing = false
 
-							// $log.debug('current turn element', top, $('.turn-active'))
+					$scope.$apply()
 
-							var scrollableElement = $('#comments-scrollable')
-							var scrollableTop = scrollableElement[0].getBoundingClientRect().top
+					var turn = $scope.latestTurnRequest
 
-							var scrollableNewMarginTop = scrollableTop - top + 20 // offset to avoid masking completely the comments above
+					if (turn == 'mulligan')
+						turn = '00mulligan'
+					if (turn == 'endgame')
+						turn = 'ZZendgame'
 
-							// $log.debug('top scrollable turn element', scrollableTop, scrollableNewMarginTop, $('#comments-scrollable'))
+					$scope.currentTurn = turn
+					$scope.$broadcast('$$rebind::' + 'turnRefresh')
 
-							scrollableElement.css('marginTop', scrollableNewMarginTop + 'px');
+					$timeout(function() {
+						// Find the turn label that is about the current turn
+						var activeTurn = $('.turn-active')
+						if (!activeTurn || !activeTurn[0])
+							return
 
-						})
+						var top = activeTurn[0].getBoundingClientRect().top
+
+						// $log.debug('current turn element', top, $('.turn-active'))
+
+						var scrollableElement = $('#comments-scrollable')
+						var scrollableTop = scrollableElement[0].getBoundingClientRect().top
+
+						var scrollableNewMarginTop = scrollableTop - top + 20 // offset to avoid masking completely the comments above
+
+						// $log.debug('top scrollable turn element', scrollableTop, scrollableNewMarginTop, $('#comments-scrollable'))
+
+						scrollableElement.css('marginTop', scrollableNewMarginTop + 'px');
 
 					})
 				}

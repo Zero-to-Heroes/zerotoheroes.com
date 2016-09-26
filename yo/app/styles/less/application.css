@@ -15,7 +15,7 @@ body {
   float: none;
   flex-grow: 1;
 }
-.main-panel-landing .center-column {
+.main-container-landing .center-column {
   display: block;
 }
 .footer {
@@ -254,6 +254,7 @@ body {
 }
 .video-comment.multi-comment .turn-label {
   font-size: 24px;
+  text-transform: none;
 }
 .video-comment.multi-comment .comment-footer {
   margin-bottom: 0;

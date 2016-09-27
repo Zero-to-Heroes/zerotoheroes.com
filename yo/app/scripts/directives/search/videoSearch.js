@@ -113,7 +113,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					Api.ReviewsQuery.save(params, function(data) {
 						
 						if (data.queryDuration > 8000)
-							$log.notifySlack('Long seach query', params)
+							$log.notifySlack('Long seach query', data.queryDuration, params)
 
 						$scope.totalPages = data.totalPages
 

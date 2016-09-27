@@ -169,10 +169,15 @@ public class ReviewApiHandler {
 			log.debug("getting author's " + criteria.getAuthorId() + " latest reviews");
 			page = reviewRepo.listAllAuthorReviews(sportCriteria, criteria.getAuthorId(), pageRequest);
 		}
+		else if (criteria.isContributorLatest()) {
+			log.debug("getting author's " + criteria.getAuthorId() + " latest reviews");
+			page = reviewRepo.listAllContributorReviews(sportCriteria, criteria.getContributorId(), pageRequest);
+		}
 		else if (text == null || text.isEmpty()) {
 			// page = reviewRepo.listReviews(sportCriteria, author,
 			// criteria.getWantedTags(),
 			// criteria.getUnwantedTags(), pageRequest);
+			log.debug("searching with criteria " + criteria);
 			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
 					criteria.getOnlyHelpful(), criteria.getNoHelpful(),
 					criteria.getParticipantDetails().getPlayerCategory(),
@@ -180,9 +185,10 @@ public class ReviewApiHandler {
 					criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
 					criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
 					criteria.getVisibility(), pageRequest);
+			log.debug("query returned");
 		}
 		else {
-			// log.debug("searching with criteria " + criteria);
+			log.debug("searching with text criteria " + criteria);
 			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
 					criteria.getOnlyHelpful(), criteria.getNoHelpful(),
 					criteria.getParticipantDetails().getPlayerCategory(),
@@ -190,9 +196,9 @@ public class ReviewApiHandler {
 					criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
 					criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
 					criteria.getVisibility(), text, pageRequest);
+			log.debug("query returned");
 		}
 
-		log.debug("query returned");
 		List<Review> reviews = page.getContent();
 		// log.debug("all reviews " + reviews);
 		ListReviewResponse response = new ListReviewResponse(reviews);
@@ -301,8 +307,8 @@ public class ReviewApiHandler {
 		// TOOD: checks
 		// Add current logged in user as the author of the review
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		log.info("Current user is " + currentUser);
-		log.info("Input review is " + review);
+		// log.info("Current user is " + currentUser);
+		// log.info("Input review is " + review);
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// log.info("authorities are " + authorities);
@@ -574,7 +580,7 @@ public class ReviewApiHandler {
 			review.setVisibility(inputReview.getVisibility());
 			subscriptionManager.notifyNewReview(review.getSport(), review);
 			slackNotifier.notifyNewReview(review);
-			discordNotifier.notifyNewReview(review);
+			// discordNotifier.notifyNewReview(review);
 		}
 		review.setVisibility(inputReview.getVisibility());
 
@@ -708,7 +714,7 @@ public class ReviewApiHandler {
 		if (!review.isSequence()) {
 			subscriptionManager.notifyNewReview(review.getSport(), review);
 			slackNotifier.notifyNewReview(review);
-			discordNotifier.notifyNewReview(review);
+			// discordNotifier.notifyNewReview(review);
 		}
 		log.debug("Published review is " + review);
 

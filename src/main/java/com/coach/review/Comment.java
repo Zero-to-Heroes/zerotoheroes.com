@@ -116,8 +116,7 @@ public class Comment implements HasText, HasReputation {
 		}
 	}
 
-	@JsonIgnore
-	public void getAllAuthors(Set<String> allAuthors) {
+	public void addAllAuthors(Set<String> allAuthors) {
 		if (!StringUtils.isNullOrEmpty(authorId) && !allAuthors.contains(authorId)) {
 			allAuthors.add(authorId);
 		}
@@ -129,7 +128,7 @@ public class Comment implements HasText, HasReputation {
 
 		if (comments != null) {
 			for (Comment comment : comments) {
-				comment.getAllAuthors(allAuthors);
+				comment.addAllAuthors(allAuthors);
 			}
 		}
 	}

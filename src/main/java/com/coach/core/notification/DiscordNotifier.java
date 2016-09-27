@@ -41,11 +41,13 @@ public class DiscordNotifier {
 		executorProvider.getExecutor().submit(new Callable<String>() {
 			@Override
 			public String call() throws IOException {
+				String endpoint = "http://" + discordbotUrl + ":" + discordbotPort;
+				log.debug("Sending request to " + endpoint);
 				String strReivew = new ObjectMapper().writeValueAsString(review);
 
 				// Step2: Now pass JSON File Data to REST Service
 				try {
-					URL url = new URL("http://" + discordbotUrl + ":" + discordbotPort);
+					URL url = new URL(endpoint);
 					URLConnection connection = url.openConnection();
 					connection.setDoOutput(true);
 					connection.setRequestProperty("Content-Type", "application/json");
@@ -62,7 +64,8 @@ public class DiscordNotifier {
 					in.close();
 				}
 				catch (Exception e) {
-					slackNotifier.notifyException(null, e, review);
+					slackNotifier.notifyError(e, review);
+					log.error("Could not notify discord bot at " + endpoint, e);
 				}
 
 				return null;

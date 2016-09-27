@@ -153,11 +153,11 @@ public class ReviewApiHandler {
 		// Simple search to the latest reviews - remove the burden from mongo to
 		// speed up the queries by removing parameters
 		if (criteria.isLatest()) {
-			log.debug("getting latest reviews");
+			// log.debug("getting latest reviews");
 			page = reviewRepo.listLatestReviews(sportCriteria, pageRequest);
 		}
 		else if (criteria.isMyLatest()) {
-			log.debug("getting my latest reviews");
+			// log.debug("getting my latest reviews");
 			if (StringUtils.isNullOrEmpty(criteria.getVisibility())) {
 				page = reviewRepo.listAllAuthorReviews(sportCriteria, user.getId(), pageRequest);
 			}
@@ -166,11 +166,13 @@ public class ReviewApiHandler {
 			}
 		}
 		else if (criteria.isAuthorLatest()) {
-			log.debug("getting author's " + criteria.getAuthorId() + " latest reviews");
+			// log.debug("getting author's " + criteria.getAuthorId() + " latest
+			// reviews");
 			page = reviewRepo.listAllAuthorReviews(sportCriteria, criteria.getAuthorId(), pageRequest);
 		}
 		else if (criteria.isContributorLatest()) {
-			log.debug("getting author's " + criteria.getAuthorId() + " latest reviews");
+			// log.debug("getting author's " + criteria.getAuthorId() + " latest
+			// reviews");
 			page = reviewRepo.listAllContributorReviews(sportCriteria, criteria.getContributorId(), pageRequest);
 		}
 		else if (text == null || text.isEmpty()) {
@@ -520,6 +522,11 @@ public class ReviewApiHandler {
 		if (StringUtils.isNullOrEmpty(comment.getText())) { return; }
 
 		addAuthorInformation(review.getSport(), comment, user.getUsername());
+
+		if (user.getCoachInformation() != null) {
+			comment.setAuthorStatus("coach");
+		}
+
 		comment.setCreationDate(new Date());
 		review.addComment(comment);
 
@@ -793,7 +800,11 @@ public class ReviewApiHandler {
 			// log.debug("Setting current user as review author " +
 			// currentUser);
 			addAuthorInformation(review.getSport(), reply, currentUser);
-			// User user = userRepo.findByUsername(currentUser);
+			User user = userRepo.findByUsername(currentUser);
+
+			if (user.getCoachInformation() != null) {
+				comment.setAuthorStatus("coach");
+			}
 
 			// Updating user stats
 			// if (commentParser.hasTimestamp(reply.getText())) {

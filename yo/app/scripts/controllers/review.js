@@ -365,11 +365,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// TODO: don't add plugin dependency here
 			if ($scope.review.plugins && $scope.review.plugins.hearthstone && $scope.review.plugins.hearthstone.parseDecks && $scope.review.plugins.hearthstone.parseDecks.reviewDeck) {
-				$log.debug('parsing review deck', $scope.review.plugins.hearthstone.parseDecks.reviewDeck)
+				// $log.debug('parsing review deck', $scope.review.plugins.hearthstone.parseDecks.reviewDeck)
 				var compiledDeck = TextParserService.parseText($scope.review, $scope.review.plugins.hearthstone.parseDecks.reviewDeck, $scope.plugins)
-				$log.debug('parsed', compiledDeck)
+				// $log.debug('parsed', compiledDeck)
 				$scope.review.plugins.hearthstone.parseDecks.markedReviewDeck = marked(compiledDeck)
-				$log.debug('marked', $scope.review.plugins.hearthstone.parseDecks.markedReviewDeck)
+				// $log.debug('marked', $scope.review.plugins.hearthstone.parseDecks.markedReviewDeck)
 			}
 
 			$scope.review.editing = false;

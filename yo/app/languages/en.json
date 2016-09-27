@@ -526,7 +526,8 @@
 				"timemarked": {
 					"turns": {
 						"mulligan": "Mulligan and matchup",
-						"turn": "Turn "
+						"turn": "Turn ",
+						"endgame": "Endgame"
 					}
 				}
 			},

@@ -92,7 +92,7 @@ var parseDecks = {
 			var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 			// parseDecks.deck = htmlDeck;
 			// console.log('\thtml deck is ', htmlDeck);
-			var deckNameForDisplay = deck.title.replace(/'/g, '')
+			var deckNameForDisplay = deck.title.replace(/'/g, '').replace(/\[/g, '').replace(/\]/g, '').replace(/\\/g, '')
 			parseDecks.decks[deckNameForDisplay] = htmlDeck;
 
 			var toMatch = match[0].replace(match[1], '')
@@ -124,6 +124,7 @@ var parseDecks = {
 
 	toggleDeck: function (deckUrl, deckNameForDisplay, event) {
 		// console.log('toggle deck', deckUrl, deckNameForDisplay, event)
+		// console.log('full deck', parseDecks, parseDecks.decks[deckNameForDisplay])
 		// Middle click
 		if (event.button == 1 && deckUrl) {
 			event.preventDefault()

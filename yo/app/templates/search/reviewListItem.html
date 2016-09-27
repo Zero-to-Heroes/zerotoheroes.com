@@ -18,6 +18,9 @@
 				<div title="{{::translations.usefulTitle}}" class="icon-container stat-helpful">
 					<span class="stat-value">{{::video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
 				</div>
+				<div title="{{::translations.viewsTitle}" class="icon-container stat-view">
+					<span class="stat-value">{{::video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open stat-icon"></span>
+				</div>
 			</span>
 		</h3>
 		<div class="body">

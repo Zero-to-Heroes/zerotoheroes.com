@@ -10,6 +10,7 @@ body {
   top: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .center-column > div {
   float: none;
@@ -31,6 +32,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 0;
+  flex-wrap: wrap;
 }
 .footer li {
   list-style: none;
@@ -396,6 +398,11 @@ upload-replay-review .review-visibility .btn-select {
 upload-replay-review .no-more-review-description-text {
   padding-top: 0;
 }
+@media screen and (max-width: 550px) {
+  .main-panel-nolanding {
+    margin-top: 10px;
+  }
+}
 @media screen and (max-width: 750px) {
   .video-listing .complementary-info {
     display: none;
@@ -407,5 +414,40 @@ upload-replay-review .no-more-review-description-text {
   }
   .video-listing li {
     margin-right: 0;
+  }
+}
+@media (max-width: 420px) {
+  .video-comment .comment-block {
+    margin-left: 0;
+  }
+  .video-comment .comment-block .adding-comment {
+    padding-left: 0;
+  }
+  .video-comment .comment-block button {
+    padding: 10px 10px;
+  }
+}
+@media (max-width: 420px) {
+  .review-list-item .header {
+    flex-wrap: wrap;
+  }
+  .review-list-item .title-container {
+    order: -1;
+    flex-basis: 100%;
+  }
+  .review-list-item .skill-level {
+    min-width: auto;
+    margin-right: 0;
+  }
+  .review-list-item .skill-level .skill-level-icon {
+    width: 70px;
+  }
+  .review-list-item .mobile-video-info-details {
+    display: inline-flex;
+    width: 200px;
+    margin-top: 0;
+  }
+  .review-list-item .video-info-details {
+    display: none;
   }
 }

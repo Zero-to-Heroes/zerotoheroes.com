@@ -9,22 +9,3 @@
 		display: none;
 	}
 }
-
-@media (max-width: 420px) {
-	.review-list-item .video-info-details {
-		display: none;
-	}
-
-	.review-list-item .title-container {
-		display: none;
-	}
-
-	.review-list-item .mobile-video-info-details {
-		display: inline-flex;
-    	width: 200px;
-	}
-
-	.review-list-item .skill-level {
-		margin-right: 0;
-	}
-}

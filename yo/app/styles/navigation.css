@@ -133,14 +133,14 @@ nav .alert {
 	margin: 0;
 }
 .navbar-nav .open .dropdown-menu {
-		 position: absolute; 
-		 float: left; 
-		 width: auto; 
-		 margin-top: 0; 
-		 background-color: white; 
-		 border: 1px solid rgba(0, 0, 0, .15);     
-		 -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-		 box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	position: absolute; 
+	right: 0;
+	left: auto;
+	margin-top: 0; 
+	background-color: white; 
+	border: 1px solid rgba(0, 0, 0, .15);     
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
 

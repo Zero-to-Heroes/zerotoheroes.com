@@ -65,7 +65,7 @@
 
 						<div class="row">
 							<div class="col-md-12">
-								<div class="panel panel-default" ng-if="!review.editing" ng-if="review.text">
+								<div class="panel panel-default" ng-if="!review.editing && review.text">
 									<div compilecontent content="review.markedText" class="panel-body video-description"></div>
 								</div>
 								<toolbar ng-if="review.editing && review.key" media-player="mediaPlayer" insert-model="insertModel" config="config" media-type="review.reviewType">

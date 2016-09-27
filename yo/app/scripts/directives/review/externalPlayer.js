@@ -64,7 +64,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 				}
 
 				$scope.getCurrentTimestamp = function(timeString) {
-					return $scope.externalPlayer.getCurrentTimestamp()
+					return $scope.externalPlayer ? $scope.externalPlayer.getCurrentTimestamp() : ''
 				}
 
 				$scope.onVideoInfoUpdated = function() {

@@ -3,37 +3,45 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" ng-click="$hide()">&times;</button>
-				<h4 class="modal-title">{{ 'global.askPro.headline' | translate }}</h4>
+				<h4 class="modal-title">{{::translations.headline}}</h4>
 			</div>
 			<div class="modal-body .table-responsive">
 				<table class="table coaches-table">
-					<caption translate="global.askPro.tableCaption"></caption>
+					<caption ng-bind-html="::translations.tableCaption"></caption>
 					<thead>
 						<tr>
-							<th>{{ 'global.askPro.name' | translate }}</th>
-							<th>{{ 'global.askPro.languages' | translate }}</th>
-							<th>{{ 'global.askPro.level' | translate }}</th>
-							<th>{{ 'global.askPro.price' | translate }}</th>
+							<th>{{::translations.name}}</th>
+							<th>{{::translations.reputation}}</th>
+							<th>{{::translations.level}}</th>
+							<th>{{::translations.languages}}</th>
+							<th>{{::translations.price}}</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="coach in coaches">
+						<tr ng-repeat="coach in ::coaches">
 							<td class="vert-align text-nowrap">
-								<a class="wide-span" ng-click="$hide()" href="{{'/coach/' + coach.username + '/' + sport}}">{{coach.name}}</a><span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html" ng-hide="!coach.description"></span><span class="glyphicon glyphicon-ok" ng-show="coach.verified" bs-tooltip="tooltip" title="{{ 'global.askPro.verifiedInfo' | translate }}"></span>
+								<a class="wide-span" ng-click="$hide()" href="{{::'/coach/' + coach.username + '/' + sport}}">{{::coach.name}}</a>
+								<span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html" ng-if="::coach.description"></span>
+								<span class="glyphicon glyphicon-ok" bs-tooltip="tooltip" title="{{::translations.verifiedInfo}}"></span>
 							</td>
 							<td class="vert-align">
-								<span ng-repeat="language in coach.languagesSpoken" class="lang-sm language" lang="{{language}}"></span>
+								<span bs-tooltip data-title="{{::translations.reputationExplanation}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation">{{::coach.reputation}}
+									<span><img class="reputation-icon" src="{{::config.images.reputation }}"></img></span>
+								</span>
 							</td>
-							<td class="vert-align"><span ng-bind-html="coach.level"></span></td>
+							<td class="vert-align"><span ng-bind-html="::coach.level"></span></td>
 							<td class="vert-align">
-								<div ng-repeat="tariffDescription in coach.tariffDescription">
-									<span class="wide-span">{{coach.tariff[$index]}}</span>
+								<span ng-repeat="language in ::coach.languagesSpoken" class="lang-sm language" lang="{{::language}}"></span>
+							</td>
+							<td class="vert-align">
+								<div ng-repeat="tariffDescription in ::coach.tariffDescription">
+									<span class="wide-span">{{::coach.tariff[$index]}}</span>
 									<span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/tariffDescription.html"></span>
 								</div>
 							</td>
 							<td class="vert-align">
-								<div ng-repeat="tariffDescription in coach.tariffDescription">
-									<button type="button" class="btn btn-primary" data-animation="am-fade-and-scale" data-template-url="templates/confirmPro.html" bs-modal="modal" data-placement="center"><span>{{ 'global.askPro.requestButton' | translate }}</span></button>
+								<div ng-repeat="tariffDescription in ::coach.tariffDescription">
+									<button type="button" class="btn btn-primary" data-animation="am-fade-and-scale" data-template-url="templates/confirmPro.html" bs-modal="modal" data-placement="center"><span>{{::translations.requestButton}}</span></button>
 								</div>
 							</td>
 						</tr>
@@ -41,7 +49,7 @@
 				</table>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" ng-click="$hide()"><span>{{ 'global.askPro.closeButton' | translate }}</span></button>
+				<button type="button" class="btn btn-default" ng-click="$hide()"><span>{{::translations.closeButton}}</span></button>
 			</div>
 		</div>
 	</div>

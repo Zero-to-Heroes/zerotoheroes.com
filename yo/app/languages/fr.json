@@ -114,6 +114,9 @@
 		}
 	},
 	"global": {
+		"reputation": "Réputation",
+		"reputationExplanation": "Les points de réputation reflètent la contribution de l'utilisateur à la communauté",
+
 		"landing": {
 			"learnMore": "En savoir plus",
 			"getIn": "Entrer",

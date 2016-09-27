@@ -30,4 +30,5 @@ public class CoachInformation {
 	private List<String> tariffDescription = new ArrayList<>();
 	private boolean verified;
 	private boolean published;
+	private int reputation;
 }

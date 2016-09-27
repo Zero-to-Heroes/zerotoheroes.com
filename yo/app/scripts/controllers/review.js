@@ -8,6 +8,18 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//restrictedAccess = $translate.instant('global.review.restrictedAccess')
 			askProTooltip: $translate.instant('global.review.askProTooltip'),
 			askProButton: $translate.instant('global.review.askProButton'),
+			
+			headline: $translate.instant('global.askPro.headline'),
+			tableCaption: $translate.instant('global.askPro.tableCaption'),
+			name: $translate.instant('global.askPro.name'),
+			reputation: $translate.instant('global.reputation'),
+			level: $translate.instant('global.askPro.level'),
+			languages: $translate.instant('global.askPro.languages'),
+			price: $translate.instant('global.askPro.price'),
+			verifiedInfo: $translate.instant('global.askPro.verifiedInfo'),
+			requestButton: $translate.instant('global.askPro.requestButton'),
+			closeButton: $translate.instant('global.askPro.closeButton'),
+			reputationExplanation: $translate.instant('global.reputationExplanation'),
 
 			commentsHeadline: $translate.instant('global.review.comment.commentsHeadline'),
 			unsubscribeReview: $translate.instant('global.review.comment.unsubscribeReview'),

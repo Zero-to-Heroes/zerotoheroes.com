@@ -4,7 +4,9 @@ body {
 }
 .main-panel-nolanding {
   margin-top: 80px;
-  min-height: 75%;
+}
+.main-container-nolanding {
+  flex-basis: 75%;
 }
 .center-column {
   top: 0;

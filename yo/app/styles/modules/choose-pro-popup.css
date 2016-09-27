@@ -1,9 +1,11 @@
 .coaches-table {
   text-align: center;
+  max-width: 800px;
+  margin: auto;
 }
 
 .coach-description .tooltip-inner {
-  	max-width: 400px;
+  	max-width: 600px;
 }
 
 .coach-description .media-object {

@@ -23,6 +23,7 @@ services.factory('CoachService', ['$log', 'Api', '$translate',
 					// $log.debug('\tHandled', data[i])
 					service.coaches.push(data[i])
 				}
+				service.coaches = _.sortBy(service.coaches, 'reputation').reverse()
 			})
 		}
 

@@ -174,6 +174,9 @@
 		}
 	},
 	"global": {
+		"reputation": "Reputation",
+		"reputationExplanation": "Reputation points measure how much the user has contributed to the community",
+
 		"landing": {
 			"learnMore": "Learn more",
 			"getIn": "Get in for free",

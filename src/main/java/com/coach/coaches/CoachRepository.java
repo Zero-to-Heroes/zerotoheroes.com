@@ -15,6 +15,7 @@ public interface CoachRepository extends MongoRepository<User, String> {
 			fields =
 				"{"
 			+ 		"'username' : 1,"
+			+ 		"'explodedReputation' : 1,"
 			+ 		"'coachInformation' : 1"
 			+ 	"}"
 	)

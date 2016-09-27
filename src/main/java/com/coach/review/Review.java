@@ -148,6 +148,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	private boolean useV2comments = false;
 
+	private Map<String, Date> visitDates = new HashMap<>();
+
 	public void addComment(Comment comment) {
 		if (comments == null) {
 			comments = new ArrayList<>();

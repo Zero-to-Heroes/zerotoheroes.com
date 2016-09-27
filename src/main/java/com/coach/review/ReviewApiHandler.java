@@ -250,6 +250,9 @@ public class ReviewApiHandler {
 			review.setReviewType(review.getMediaType());
 		}
 
+		String userId = user != null ? user.getId() : "";
+		review.getVisitDates().put(userId, new Date());
+
 		// Sort the comments. We'll probably need this for a rather long time,
 		// as our sorting algorithm will evolve
 		// review.sortComments();
@@ -257,7 +260,6 @@ public class ReviewApiHandler {
 		// TODO: remove this
 		reviewService.updateAsync(review);
 
-		String userId = user != null ? user.getId() : "";
 		review.prepareForDisplay(userId);
 		// log.debug("Returning review " + review);
 		// And add a video view to the user

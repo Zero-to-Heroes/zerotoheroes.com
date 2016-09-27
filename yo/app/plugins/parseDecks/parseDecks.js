@@ -51,7 +51,7 @@ var parseDecks = {
 	parse: function(review, text, regex, groupIndex) {
 		// Lookbehind - http://www.regular-expressions.info/lookaround.html
 		// https://regex101.com/r/qT1vF8/9 for a pure regex-based solution
-		regex = new RegExp('(.{0,2})' + regex.source, 'gm')
+		// regex = new RegExp('(.{0,2})' + regex.source, 'gm')
 		// console.log('matching', text, regex)
 		var match = regex.exec(text)
 		while (match) {
@@ -60,12 +60,12 @@ var parseDecks = {
    //   			regex.lastIndex++
 			// }
 
-			if (match[1] != '](' && match[1] != '=\'' && match[1] != '(\'') {
+			// if (match[1] != '](' && match[1] != '=\'' && match[1] != '(\'') {
 				// console.log('\tmatched!!!', match[1], match)
 				// console.log('replaced substring', text.substring(match.index, match.index + match[0].length))
 				text = parseDecks.handleMatch(review, text, match, groupIndex, regex)
 				// console.log('new text', text)
-			}
+			// }
 			match = regex.exec(text)
 		}
 		// console.log('parsed regex', regex)
@@ -73,12 +73,12 @@ var parseDecks = {
 	},
 
 	handleMatch: function(review, text, match, groupIndex, regex) {
-		groupIndex = groupIndex || 3
+		groupIndex = groupIndex || 2
 		// console.log('\tmatch', match, review.plugins.hearthstone.parseDecks);
 		var deckName = match[groupIndex]
-		if (match.length > 4)
-			deckName += match[4]
-		var deckUrl = match[2] + deckName
+		if (match.length > 3)
+			deckName += match[3]
+		var deckUrl = match[1] + deckName
 		// console.log('\tdeck name', deckName, deckUrl)
 
 		var plugins = review.plugins.hearthstone;
@@ -95,12 +95,13 @@ var parseDecks = {
 			var deckNameForDisplay = deck.title.replace(/'/g, '').replace(/\[/g, '').replace(/\]/g, '').replace(/\\/g, '')
 			parseDecks.decks[deckNameForDisplay] = htmlDeck;
 
-			var toMatch = match[0].replace(match[1], '')
+			// var toMatch = match[0].replace(match[1], '')
 			// console.log('\ttoMatch', toMatch, match[0])
 
 			var replaceString = '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>'
 
-			var newText = text.substring(0, match.index + match[1].length) + replaceString + text.substring(match.index + match[0].length)
+			// console.log('keeping starting string', match[1], text.substring(0, match.index + match[1].length), match[1].length)
+			var newText = text.substring(0, match.index) + replaceString + text.substring(match.index + match[0].length)
 			text = newText			
 
 			// regex.lastIndex += replaceString.length - 1

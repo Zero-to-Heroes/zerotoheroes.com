@@ -66,7 +66,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.plugins = [];
 			$scope.pluginNames = [];
 
-			$scope.$watchCollection('plugins', function(newValue, oldValue) {
+			var pluginWatchers = $scope.$watchCollection('plugins', function(newValue, oldValue) {
 				// $log.debug('watching plugins', $scope.pluginsToLoad, $scope.plugins, definedPlugins, newValue.length == definedPlugins, newValue, oldValue)
 				if (!$scope.pluginsToLoad || (newValue && newValue.length == definedPlugins)) {
 					// $scope.initReview();
@@ -78,6 +78,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					})
 					$scope.controlFlow.pluginsLoaded = true
 					$scope.$broadcast('$$rebind::' + 'reviewRefresh')
+					pluginWatchers()
 				}
 			})
 			
@@ -160,18 +161,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.init()
 
 
-		$scope.$watch('controlFlow.pluginsLoaded', function(newVal, oldVal) {
+		var pluginsLoadedWatcher = $scope.$watch('controlFlow.pluginsLoaded', function(newVal, oldVal) {
 			if (newVal)
 				// $log.debug('controlFlow.pluginsLoaded at ', Date.now() - $scope.debugTimestamp)
 			if (newVal && $scope.controlFlow.reviewLoaded) {
 				$scope.activatePlugins()
+				pluginsLoadedWatcher()
 			}
 		})
-		$scope.$watch('controlFlow.reviewLoaded', function(newVal, oldVal) {
-			if (newVal)
+		var reviewLoadedWatcher = $scope.$watch('controlFlow.reviewLoaded', function(newVal, oldVal) {
+			// if (newVal)
 				// $log.debug('controlFlow.reviewLoaded at ', Date.now() - $scope.debugTimestamp)
 			if (newVal && $scope.controlFlow.pluginsLoaded) {
 				$scope.activatePlugins()
+				reviewLoadedWatcher()
 			}
 		})
 		$scope.activatePlugins = function() {
@@ -362,10 +365,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 			// TODO: don't add plugin dependency here
 			if ($scope.review.plugins && $scope.review.plugins.hearthstone && $scope.review.plugins.hearthstone.parseDecks && $scope.review.plugins.hearthstone.parseDecks.reviewDeck) {
-				// $log.debug('parsing review deck')
+				$log.debug('parsing review deck', $scope.review.plugins.hearthstone.parseDecks.reviewDeck)
 				var compiledDeck = TextParserService.parseText($scope.review, $scope.review.plugins.hearthstone.parseDecks.reviewDeck, $scope.plugins)
-				// $log.debug('parsed')
+				$log.debug('parsed', compiledDeck)
 				$scope.review.plugins.hearthstone.parseDecks.markedReviewDeck = marked(compiledDeck)
+				$log.debug('marked', $scope.review.plugins.hearthstone.parseDecks.markedReviewDeck)
 			}
 
 			$scope.review.editing = false;

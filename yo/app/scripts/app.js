@@ -196,16 +196,16 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			menuItem: 'home'
 		}).
 		// Coaches
-		when('/c/:coachName/:sport', {
-			templateUrl: 'views/coachPage.html',
-			controller: 'CoachPageController',
-			menuItem: 'coaches'
-		}).
-		when('/coach/:coachName/:sport', {
-			templateUrl: 'views/coachPage.html',
-			controller: 'CoachPageController',
-			menuItem: 'coaches'
-		}).
+		// when('/c/:coachName/:sport', {
+		// 	templateUrl: 'views/coachPage.html',
+		// 	controller: 'CoachPageController',
+		// 	menuItem: 'coaches'
+		// }).
+		// when('/coach/:coachName/:sport', {
+		// 	templateUrl: 'views/coachPage.html',
+		// 	controller: 'CoachPageController',
+		// 	menuItem: 'coaches'
+		// }).
 		// Users - inbox
 		when('/u/:userName/:sport/inbox/:subMenu', {
 			templateUrl: 'views/messages.html',

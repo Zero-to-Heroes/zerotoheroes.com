@@ -8,7 +8,7 @@
 		<author-frame frame="::entity.authorFrame" author="::entity.author" sport="::sport"></author-frame>
 	</a>
 	<!-- coach -->
-	<a ng-class="::{'logged-author': entity.authorId}" class="{{::entity.authorStatus}}" ng-if="::entity.authorStatus == 'coach'" href="{{::'/coach/' + entity.author + '/' + sport}}" target="_blank" title="{{ 'global.coach.goToPageTooltip' | translate }}">
+	<a ng-class="::{'logged-author': entity.authorId}" class="{{::entity.authorStatus}}" ng-if="::entity.authorStatus == 'coach'" href="/u/{{::entity.author}}/{{::sport}}/coach" target="_blank" title="{{ 'global.coach.goToPageTooltip' | translate }}">
 		<author-frame frame="::entity.authorFrame" author="::entity.author" sport="::sport"></author-frame>
 	</a>
 </span>

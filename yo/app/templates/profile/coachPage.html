@@ -1,0 +1,41 @@
+<div class="background-white coach-page" ng-if="::coachInformation">
+
+	<h1>Coach information - {{::coachInformation.name}} <a ng-click="startEditing()" class="link-minor" ng-if="::canEdit() && !editing"> ({{::translations.edit}})</a></h1>
+
+	<div class="row summary-container">
+		<img class="avatar" src="https://s3.amazonaws.com/com.zerotoheroes/coach/{{::coachInformation.picture}}" />
+		<div class="coach-recap">
+			<h2>{{::coachInformation.name}}</h2>
+			<div class="vert-align">
+				<span class="language-label">{{::translations.languages}}</span>
+				<span ng-repeat="language in ::coachInformation.languagesSpoken" class="lang-sm language" lang="{{::language}}"></span>
+			</div>
+			<!-- Summary description -->
+			<div>
+				<span class="summary">{{::translations.summary}}</span>
+				<span compilecontent content="description" class="description" ng-if="!editing"></span>
+				<div ng-if="editing" class="description-editing">
+					<textarea class="form-control" ng-model="coachInformation.description" auto-grow></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Full description -->
+	<div class="full-description" compilecontent content="fullDescription" ng-if="!editing"></div>
+	<div ng-if="editing" class="full-description-editing">
+		<textarea class="form-control" ng-model="coachInformation.fullDescription" auto-grow></textarea>
+		<div class="text-left comment-reply-buttons">
+			<button ng-click="update()" class="btn btn-default btn-xs"><span>{{::translations.validateEdit}}</span></button>
+			<button ng-click="cancelUpdate()" class="btn btn-default btn-xs"><span>{{::translations.cancelEdit}}</span></button>
+		</div>
+	</div>
+
+
+	<!-- Videos showcased by the coach -->
+	<div class="videos-list" ng-show="::config.searchConfig.videos && config.searchConfig.videos.length > 0">
+		<h2>{{::translations.allReviews}}</h2>
+		<video-search config="::config.searchConfig" sport="::sport"></video-search>
+	</div>
+
+</div>

@@ -22,4 +22,17 @@ public interface CoachRepository extends MongoRepository<User, String> {
 	//@formatter:on
 	Page<User> listCoaches(String sport, Pageable pageable);
 
+	//@formatter:off
+	@Query(	value =
+		"{ username : ?0, }",
+			fields =
+				"{"
+			+ 		"'username' : 1,"
+			+ 		"'explodedReputation' : 1,"
+			+ 		"'coachInformation' : 1"
+			+ 	"}"
+	)
+	//@formatter:on
+	User findByUsername(String identifier);
+
 }

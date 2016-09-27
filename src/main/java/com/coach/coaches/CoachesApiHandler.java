@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
-import com.coach.review.Review;
 import com.coach.review.Review.Sport;
 import com.coach.review.ReviewRepository;
 
@@ -34,20 +33,13 @@ public class CoachesApiHandler {
 	@Autowired
 	CoachRepositoryDao dao;
 
-	@RequestMapping(value = "/{reviewId}", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<List<CoachInformation>> getCoachesForReview(
-			@PathVariable("reviewId") final String id) {
-		// log.debug("Retrieving coaches");
-		Review review = reviewRepo.findById(id);
-		if (review == null) { return new ResponseEntity<List<CoachInformation>>((List<CoachInformation>) null,
-				HttpStatus.NOT_FOUND); }
+	@RequestMapping(value = "/{identifier}", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<CoachInformation> getCoachesInfo(
+			@PathVariable("identifier") final String identifier) {
 
-		// log.debug("For review id: " + id);
-		Sport sport = review.getSport();
-		// log.debug("And sport " + sport + ".");
-		List<CoachInformation> coaches = getAllCoachesForSport(sport);
-		// log.debug("Giving full list of coaches " + coaches);
-		return new ResponseEntity<List<CoachInformation>>(coaches, HttpStatus.OK);
+		CoachInformation coach = dao.findByIdentifier(identifier);
+
+		return new ResponseEntity<CoachInformation>(coach, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{sport}/all", method = RequestMethod.GET)
@@ -73,7 +65,6 @@ public class CoachesApiHandler {
 		// }
 		// }
 		for (User user : dao.getAllCoaches(sport)) {
-			log.debug("Coach: " + user);
 			CoachInformation coachInformation = user.getCoachInformation();
 			if (coachInformation.getName() == null) {
 				coachInformation.setName(user.getUsername());

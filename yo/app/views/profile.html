@@ -1,13 +1,14 @@
-<view-title>{{'User - ' + user.username}}</view-title>
+<view-title>{{'User - ' + user}}</view-title>
 
 <div class="background-white profile-page">
 	
 	<div class="menu-bar">
 		<ul>
-			<li><a translate="global.profile.menu.info" ng-class="{ 'active': subMenu == 'profile'}" ng-click="goTo('profile')"></a></li>
-			<li><a translate="global.profile.menu.feed" ng-class="{ 'active': subMenu == 'feed'}" ng-click="goTo('feed')" ng-show="isOwnProfile()"></a></li>
-			<li><a translate="global.profile.menu.preferences" ng-class="{ 'active': subMenu == 'preferences'}" ng-click="goTo('preferences')" ng-show="isOwnProfile()"></a></li>
-			<li><a translate="global.profile.menu.subscriptions" ng-class="{ 'active': subMenu == 'subscriptions'}" ng-click="goTo('subscriptions')" ng-show="isOwnProfile()"></a></li>
+			<li><a ng-class="{ 'active': subMenu == 'profile'}" ng-click="goTo('profile')">{{::translations.info}}</a></li>
+			<li ng-if="::isOwnProfile()"><a ng-class="{ 'active': subMenu == 'feed'}" ng-click="goTo('feed')">{{::translations.feed}}</a></li>
+			<li ng-if="::isOwnProfile()"><a ng-class="{ 'active': subMenu == 'preferences'}" ng-click="goTo('preferences')">{{::translations.preferences}}</a></li>
+			<li ng-if="::isOwnProfile()"><a ng-class="{ 'active': subMenu == 'subscriptions'}" ng-click="goTo('subscriptions')">{{::translations.subscriptions}}</a></li>
+			<li ng-if="::coachInformation"><a ng-class="{ 'active': subMenu == 'coach'}" ng-click="goTo('coach')">{{::translations.coach}}</a></li>
 		</ul>
 
 		<div ng-switch="subMenu" class="edit-button">
@@ -16,9 +17,10 @@
 	</div>
 
 	<div ng-switch="subMenu">
-		<profile-info ng-switch-when="profile" sport="sport" config="subMenuConfig"></profile-info>
-		<activity-feed ng-switch-when="feed" sport="sport" config="subMenuConfig"></activity-feed>
-		<profile-preferences ng-switch-when="preferences" sport="sport" config="subMenuConfig"></profile-preferences>
-		<profile-subscriptions ng-switch-when="subscriptions" sport="sport" config="subMenuConfig"></profile-subscriptions>
+		<profile-info ng-switch-when="profile" sport="::sport" config="::subMenuConfig"></profile-info>
+		<activity-feed ng-switch-when="feed" sport="::sport" config="::subMenuConfig"></activity-feed>
+		<profile-preferences ng-switch-when="preferences" sport="::sport" config="::subMenuConfig"></profile-preferences>
+		<profile-subscriptions ng-switch-when="subscriptions" sport="::sport" config="::subMenuConfig"></profile-subscriptions>
+		<coach-page ng-switch-when="coach" sport="::sport" config="::subMenuConfig" coach-information="::coachInformation"></coach-page>
 	</div>
 </div>

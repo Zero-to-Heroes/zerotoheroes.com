@@ -331,7 +331,8 @@
 				"info": "Profile",
 				"feed": "Activity feed",
 				"preferences": "Preferences",
-				"subscriptions": "Subscriptions"
+				"subscriptions": "Subscriptions",
+				"coach": "Coach info"
 			},
 			"info": {
 				"editButtonLabel": "edit",

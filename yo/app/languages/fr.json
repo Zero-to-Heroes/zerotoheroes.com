@@ -265,7 +265,8 @@
 				"info": "Profil",
 				"feed": "Flux d'activités",
 				"preferences": "Préférences",
-				"subscriptions": "Abonnements"
+				"subscriptions": "Abonnements",
+				"coach": "Infos du coach"
 			},
 			"info": {
 				"editButtonLabel": "Editer",

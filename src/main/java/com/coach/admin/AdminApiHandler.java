@@ -13,13 +13,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.coach.core.security.User;
 import com.coach.profile.ProfileService;
-import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
-import com.coach.sport.SportRepository;
-import com.coach.user.ResetPasswordRepository;
+import com.coach.review.journal.ArchiveJournal;
+import com.coach.review.journal.ArchiveJournalRepository;
+import com.coach.review.journal.CommentJournal;
+import com.coach.review.journal.Journal;
+import com.coach.review.journal.ReputationJournal;
+import com.coach.review.journal.ReviewJournal;
 import com.coach.user.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -39,10 +41,7 @@ public class AdminApiHandler {
 	ReviewRepository reviewRepository;
 
 	@Autowired
-	ResetPasswordRepository resetPasswordRepository;
-
-	@Autowired
-	SportRepository sportRepository;
+	ArchiveJournalRepository journalRepository;
 
 	private final String environment;
 
@@ -58,35 +57,34 @@ public class AdminApiHandler {
 		if ("prod".equalsIgnoreCase(
 				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
 
-		User author = userRepository.findByUsername("OfMurlocsAndMen");
-		if (author == null) {
-			log.warn("User doesnt exist");
+		log.debug("loading journal entries");
+		List<ArchiveJournal> journals = journalRepository.findAll();
+		log.debug("loaded " + journals.size() + " entries");
+
+		Set<String> recentReviews = new HashSet<>();
+
+		for (ArchiveJournal archiveJournal : journals) {
+			Journal journal = archiveJournal.getJournal();
+			if (journal instanceof ReviewJournal) {
+				recentReviews.add(((ReviewJournal) journal).getReviewId());
+			}
+			if (journal instanceof CommentJournal) {
+				recentReviews.add(((CommentJournal) journal).getReviewId());
+			}
+			if (journal instanceof ReputationJournal) {
+				recentReviews.add(((ReputationJournal) journal).getReviewId());
+			}
 		}
 
-		log.debug("loading reviews");
-		List<Review> reviews = reviewRepository.findAll();
-		log.debug("loaded all reviews " + reviews.size());
-
-		Set<Review> modified = new HashSet<>();
+		log.debug("loading " + recentReviews.size() + " reviews");
+		Iterable<Review> reviews = reviewRepository.findAll(recentReviews);
+		log.debug("loaded reviews");
 		for (Review review : reviews) {
-			if ("TheFruitBat".equals(review.getAuthor())) {
-				// log.debug("found! " + review);
-				review.setAuthor(author.getUsername());
-				review.setAuthorId(author.getId());
-				modified.add(review);
-			}
-			for (Comment comment : review.getAllComments()) {
-				if ("TheFruitBat".equals(comment.getAuthor())) {
-					// log.debug("found! " + review);
-					comment.setAuthor(author.getUsername());
-					comment.setAuthorId(author.getId());
-					modified.add(review);
-				}
-			}
+			review.buildAllAuthors();
 		}
-		log.debug("saving modified reviews " + modified.size());
-		reviewRepository.save(modified);
-		log.debug("job's done!");
+		log.debug("updating review");
+		reviewRepository.save(reviews);
+		log.debug("updated reviews");
 
 		return new ResponseEntity<String>((String) null, HttpStatus.OK);
 	}

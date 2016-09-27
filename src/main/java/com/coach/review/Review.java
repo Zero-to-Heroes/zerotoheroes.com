@@ -255,6 +255,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public Set<String> buildAllAuthors() {
+		allAuthors = new HashSet<>();
 		if (!StringUtils.isNullOrEmpty(authorId)) {
 			allAuthors.add(authorId);
 		}

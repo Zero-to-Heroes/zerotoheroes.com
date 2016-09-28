@@ -1,19 +1,21 @@
 <ul class="message-listing">
-	<li ng-repeat="message in source" class="message" ng-class="{ 'unread': !message.readDate }">
+	<li ng-repeat="message in ::source" class="message" ng-class=":readMessage:{ 'unread': !message.readDate }">
 		<div>
-			<span class="notification-type" translate="{{ 'global.profile.messages.type.' + message.textKey }}"></span>
-			<a class="notification-title" href="{{message.targetUrl}}" target="_blank" ng-click="markRead(message)">{{message.title}}</a>
+			<span class="notification-type">{{::translations[message.data.textKey]}}</span>
+			<a class="notification-title" href="{{::message.targetUrl}}" target="_blank" ng-click="markFullRead(message)">{{::message.title}}</a>
 		</div>
-		<div class="message-body" ng-click="markRead(message)">
-			<span class="message-from-label" translate="global.profile.messages.from"></span>
-			<span class="message-from">{{message.from}}</span>
-			<span class="message-sent-date" title="{{formatExactDate(video.creationDate)}}">{{ 'global.profile.messages.sent' | translate }} {{formatDate(message.creationDate)}}</span>
-			<div class="message-body-text" ng-bind-html="message.markedText"></div>
+		<div class="message-body">
+			<div ng-click="markRead(message)">
+				<span class="message-from-label">{{::translations.from}}</span>
+				<span class="message-from">{{message.from}}</span>
+				<span class="message-sent-date" title="{{::formatExactDate(video.creationDate)}}">{{::translations.sent}} {{::formatDate(message.creationDate)}}</span>
+				<div class="message-body-text" ng-bind-html="::message.markedText"></div>
+			</div>
 			<div class="action-footer">
-				<a ng-click="markUnread(message)" translate="global.profile.messages.markUnreadButton" ng-show="message.readDate"></a>
-				<a ng-click="markRead(message)" translate="global.profile.messages.markReadButton" ng-hide="message.readDate"></a>
+				<a ng-click="markUnread(message)" ng-if=":readMessage:message.readDate">{{::translations.markUnreadButton}}</a>
+				<a ng-click="markRead(message)" ng-if=":readMessage:!message.readDate">{{::translations.markReadButton}}</a>
 			</div>
 		</div>
 	</li>
-	<span translate="global.profile.messages.empty" ng-show="source.length == 0"></span>
+	<span ng-if="::source.length == 0">{{::translations.empty}}</span>
 </ul>

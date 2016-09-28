@@ -1,28 +1,45 @@
 package com.coach.notifications;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Document
 public class Notification {
 
-	private int notifId;
-	private Date creationDate;
+	@Id
+	private String id;
+
+	@Indexed
+	private NotificationData data;
+
+	@Indexed
+	private String userId;
+
+	@Indexed
 	private Date readDate;
-	private String type;
+
+	@Indexed
+	@CreatedDate
+	private Date creationDate;
+
+	@Indexed
 	private String sport;
-	// URL of the comment / review,
-	private List<String> objects = new ArrayList<>();
-	private String linkId;
-	private String title, from, textKey, textDetail;
+
+	private String title, from, textDetail;
+
+	// Like saved search
 	private String aggregator;
 
-	public void addObject(String object) {
-		objects.add(object);
-	}
+	// private int notifId;
+	// private String type;
+	// private String linkId;
 }

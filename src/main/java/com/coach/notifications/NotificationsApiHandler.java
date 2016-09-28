@@ -1,13 +1,16 @@
 package com.coach.notifications;
 
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.coach.profile.Profile;
+import com.coach.core.security.User;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
 import com.coach.user.UserRepository;
+import com.coach.user.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,10 +31,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class NotificationsApiHandler {
 
-	private static final int PAGE_SIZE = 20;
+	private static final int PAGE_SIZE = 100;
 
 	@Autowired
 	UserRepository userRepo;
+
+	@Autowired
+	UserService userService;
 
 	@Autowired
 	ProfileService profileService;
@@ -38,22 +45,29 @@ public class NotificationsApiHandler {
 	@Autowired
 	ProfileRepository profileRepo;
 
+	@Autowired
+	NotificationDao notificationDao;
+
 	@RequestMapping(value = "/{type}", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<ListNotificationsResponse> getNotificationsByType(
 			@PathVariable("type") final String type) {
 
 		ListNotificationsResponse response = null;
 
-		Profile profile = profileService.getLoggedInProfile();
-		if (profile == null) { return new ResponseEntity<ListNotificationsResponse>(response, HttpStatus.FORBIDDEN); }
+		User user = userService.getLoggedInUser();
+		if (user == null) { return new ResponseEntity<ListNotificationsResponse>((ListNotificationsResponse) null,
+				HttpStatus.FORBIDDEN); }
 
-		List<Notification> notifs = profile.getNotifications().filter(type);
-		Collections.sort(notifs, new Comparator<Notification>() {
-			@Override
-			public int compare(Notification o1, Notification o2) {
-				return o2.getCreationDate().compareTo(o1.getCreationDate());
-			}
-		});
+		Sort sort = new Sort(Sort.Direction.DESC, Arrays.asList("creationDate"));
+		PageRequest pageRequest = new PageRequest(0, PAGE_SIZE, sort);
+
+		List<Notification> notifs = new ArrayList<>();
+		if ("unread".equals(type)) {
+			notifs = notificationDao.findAllUnread(user.getId(), pageRequest);
+		}
+		else {
+			notifs = notificationDao.findAll(user.getId(), pageRequest);
+		}
 
 		response = new ListNotificationsResponse(notifs);
 
@@ -61,51 +75,54 @@ public class NotificationsApiHandler {
 	}
 
 	@RequestMapping(value = "/read", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Notification> markRead(@RequestBody int messageId) {
-		// log.debug("Marking notif as read", messageId);
-		Profile profile = profileService.getLoggedInProfile();
-		if (profile == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.FORBIDDEN); }
+	public @ResponseBody ResponseEntity<Notification> markRead(@RequestBody List<String> messageIds) {
 
-		Notification notif = profile.getNotifications().getNotification(messageId);
-		if (notif == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.NOT_FOUND); }
+		// log.debug("Marking as read " + messageIds);
+		User user = userService.getLoggedInUser();
+		if (user == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.FORBIDDEN); }
 
-		notif.setReadDate(new Date());
+		for (String messageId : messageIds) {
+			if (!StringUtils.isEmpty(messageId)) {
+				Notification notif = notificationDao.findById(messageId);
+				notif.setReadDate(new Date());
+				notificationDao.save(notif);
+			}
+		}
 
-		profileRepo.save(profile);
-
-		return new ResponseEntity<Notification>(notif, HttpStatus.OK);
+		return new ResponseEntity<Notification>((Notification) null, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/allread", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Notification> markAllRead() {
-		// log.debug("Marking notif as read", messageId);
-		Profile profile = profileService.getLoggedInProfile();
-		if (profile == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.FORBIDDEN); }
 
-		List<Notification> unread = profile.getNotifications().filter("unread");
-		if (unread.size() > 0) {
-			for (Notification notif : unread) {
+		User user = userService.getLoggedInUser();
+		if (user == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.FORBIDDEN); }
+
+		List<Notification> notifs = notificationDao.findAllUnread(user.getId());
+
+		if (notifs != null && notifs.size() > 0) {
+			for (Notification notif : notifs) {
 				notif.setReadDate(new Date());
 			}
-
-			profileRepo.save(profile);
+			notificationDao.save(notifs);
 		}
 
 		return new ResponseEntity<Notification>((Notification) null, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/unread", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Notification> markUnread(@RequestBody int messageId) {
+	public @ResponseBody ResponseEntity<Notification> markUnread(@RequestBody String messageId) {
 
-		Profile profile = profileService.getLoggedInProfile();
-		if (profile == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.FORBIDDEN); }
+		// log.debug("Marking as unread " + messageId);
+		User user = userService.getLoggedInUser();
+		if (user == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.FORBIDDEN); }
 
-		Notification notif = profile.getNotifications().getNotification(messageId);
+		Notification notif = notificationDao.findById(messageId);
 		if (notif == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.NOT_FOUND); }
 
 		notif.setReadDate(null);
 
-		profileRepo.save(profile);
+		notificationDao.save(notif);
 
 		return new ResponseEntity<Notification>(notif, HttpStatus.OK);
 	}

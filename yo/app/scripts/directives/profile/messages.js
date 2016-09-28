@@ -3,19 +3,32 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('messages', ['$log', 'Api', 
-	function($log, Api) {
+app.directive('messages', ['$log', 'Api', '$translate', 
+	function($log, Api, $translate) {
 		 
 		return {
 			restrict: 'E',
 			replace: false,
 			templateUrl: 'templates/profile/messages.html',
 			scope: {
-				source: '='
+				source: '<',
+				fullRead: '&'
 			},
 			link: function(scope, element, attributes) {
 			},
 			controller: function($scope) {
+
+				$scope.translations = {
+					newComment: $translate.instant('global.profile.messages.type.newComment'),
+					newReview: $translate.instant('global.profile.messages.type.newReview'),
+					from: $translate.instant('global.profile.messages.from'),
+					sent: $translate.instant('global.profile.messages.sent'),
+					markUnreadButton: $translate.instant('global.profile.messages.markUnreadButton'),
+					markReadButton: $translate.instant('global.profile.messages.markReadButton'),
+					empty: $translate.instant('global.profile.messages.empty')
+				}
+		
+
 				$scope.isOwnProfile = function() {
 					return User.isLoggedIn() && $routeParams.userName == User.getName()
 				}
@@ -29,10 +42,12 @@ app.directive('messages', ['$log', 'Api',
 
 				$scope.markRead = function(message) {
 					if (!message.readDate) {
-						Api.NotificationsRead.save(message.notifId, 
+						$log.debug('marking as read', message)
+						Api.NotificationsRead.save([message.id], 
 							function(data) {
 								$log.debug('marked read', data)
-								message.readDate = data.readDate
+								message.readDate = new Date()
+								$scope.$broadcast('$$rebind::' + 'readMessage')
 							}
 						)
 					}
@@ -40,12 +55,18 @@ app.directive('messages', ['$log', 'Api',
 
 				$scope.markUnread = function(message) {
 					if (message.readDate) {
-						Api.NotificationsUnread.save(message.notifId, 
+						// $log.debug('marking as unread', message)
+						Api.NotificationsUnread.save(message.id, 
 							function(data) {
 								message.readDate = undefined
+								$scope.$broadcast('$$rebind::' + 'readMessage')
 							}
 						)
 					}
+				}
+
+				$scope.markFullRead = function(message) {
+					$scope.fullRead()(message)
 				}
 			}
 		}

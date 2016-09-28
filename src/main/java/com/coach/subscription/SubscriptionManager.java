@@ -44,7 +44,7 @@ public class SubscriptionManager {
 
 	public void notifyNewReview(Review.Sport sportInput, Review review) {
 		Sport sport = sportManager.findById(sportInput.getKey());
-		 log.debug("Notifying new review for " + sportInput);
+		log.debug("Notifying new review for " + sportInput);
 
 		// Notify everyone who has subscribed to a sport
 		Iterable<User> subscribers = userRepo.findAll(sport.getSubscribers());

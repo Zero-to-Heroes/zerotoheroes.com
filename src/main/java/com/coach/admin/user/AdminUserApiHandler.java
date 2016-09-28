@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -19,6 +21,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coach.core.security.User;
+import com.coach.notifications.Notification;
+import com.coach.notifications.NotificationCommentData;
+import com.coach.notifications.NotificationDao;
+import com.coach.notifications.NotificationReviewData;
+import com.coach.profile.Notifications;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
@@ -52,6 +59,9 @@ public class AdminUserApiHandler {
 
 	@Autowired
 	SportRepository sportRepository;
+
+	@Autowired
+	NotificationDao notificationDao;
 
 	private final String environment;
 
@@ -153,59 +163,87 @@ public class AdminUserApiHandler {
 		return result;
 	}
 
-	@SuppressWarnings("deprecation")
 	@RequestMapping(value = "/updateAllUsers", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> updateAllUsers() {
 
 		if ("prod".equalsIgnoreCase(
 				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
 
-		log.debug("Retrieving user info");
+		log.debug("Retrieving users");
 		List<User> users = userRepository.findAll();
+		log.debug("Retrieving profiles");
 		List<Profile> profiles = profileRepository.findAll();
 
+		log.debug("Building map");
+		Map<String, UserInfo> infos = new HashMap<>();
 		Map<String, Profile> profileMap = new HashMap<>();
 
 		for (Profile profile : profiles) {
 			profileMap.put(profile.getUserId(), profile);
 		}
 
-		List<Profile> modified = new ArrayList<>();
+		log.debug("Clearing existing notifs");
+		notificationDao.clearAll();
+
+		List<Notification> newNotifs = new ArrayList<>();
+		Set<Profile> modifiedProfiles = new HashSet<>();
 
 		for (User user : users) {
-			log.debug("handling user " + user);
-			Profile profile = profileMap.get(user.getId());
-			if (profile == null) {
-				profile = new Profile();
-			}
-			// if (profile.getRankings() == null ||
-			// profile.getRankings().getRankings().isEmpty()) {
-			// continue;
-			// }
-			//
-			// boolean dirty = false;
-			//
-			// for (String sport : profile.getRankings().getRankings().keySet())
-			// {
-			// Map<String, Rank> ranking =
-			// profile.getRankings().getRankings().get(sport);
-			// SportProfileInfo sportProfileInfo =
-			// profile.getProfileInfo().getSportInfo(sport);
-			// if (sportProfileInfo.getRankings() == null ||
-			// sportProfileInfo.getRankings().isEmpty()) {
-			// sportProfileInfo.setRankings(ranking);
-			// dirty = true;
-			// }
-			// }
+			log.debug("\tProcessing user " + user.getUsername());
 
-			// if (dirty) {
-			// modified.add(profile);
-			// }
+			Profile profile = profileMap.get(user.getId());
+			if (profile == null || profile.getNotifications() == null
+					|| profile.getNotifications().getNotifications() == null
+					|| profile.getNotifications().getNotifications().isEmpty()) {
+				continue;
+			}
+			profile.getNotifications().setUnreadNotifs(0);
+
+			log.debug("\t\tConverting " + profile.getNotifications().getNotifications().size() + " notifs");
+			for (Notifications.Notification oldNotif : profile.getNotifications().getNotifications()) {
+
+				Notification newNotif = new Notification();
+				newNotif.setAggregator(oldNotif.getAggregator());
+				newNotif.setCreationDate(oldNotif.getCreationDate());
+				newNotif.setFrom(oldNotif.getFrom());
+				newNotif.setReadDate(oldNotif.getReadDate());
+				newNotif.setSport(oldNotif.getSport());
+				newNotif.setTextDetail(oldNotif.getTextDetail());
+				newNotif.setTitle(oldNotif.getTitle());
+				newNotif.setUserId(user.getId());
+
+				if ("newComment".equals(oldNotif.getTextKey())) {
+					log.debug("\t\t\tOld notif " + oldNotif);
+					NotificationCommentData data = new NotificationCommentData();
+					newNotif.setData(data);
+					data.setLinkId(oldNotif.getLinkId());
+					data.setReviewUrl(oldNotif.getObjects().get(0));
+					if (oldNotif.getObjects().size() > 1) {
+						data.setReviewId(oldNotif.getObjects().get(1));
+					}
+				}
+				else if ("newReview".equals(oldNotif.getTextKey())) {
+					NotificationReviewData data = new NotificationReviewData();
+					newNotif.setData(data);
+					data.setReviewUrl(oldNotif.getObjects().get(0));
+					if (oldNotif.getObjects().size() > 1) {
+						data.setReviewId(oldNotif.getObjects().get(1));
+					}
+				}
+
+				if (oldNotif.getReadDate() == null) {
+					profile.getNotifications().incrementUnread();
+				}
+				newNotifs.add(newNotif);
+			}
+			modifiedProfiles.add(profile);
 		}
 
-		log.debug("saving " + modified.size() + " users");
-		profileRepository.save(modified);
-		log.debug("done");
+		log.debug("Saving " + newNotifs.size() + " new notifs");
+		notificationDao.save(newNotifs);
+		log.debug("Saving " + modifiedProfiles.size() + " modified profiles");
+		profileRepository.save(modifiedProfiles);
+		log.debug("Job's done!");
 
 		return new ResponseEntity<String>("ok", HttpStatus.OK);
 	}

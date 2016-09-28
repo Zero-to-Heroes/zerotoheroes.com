@@ -1,15 +1,25 @@
 'use strict';
 
-angular.module('controllers').controller('MessagesController', ['$scope', '$routeParams', 'Api', '$log', 'User', '$route', '$timeout', '$location', '$rootScope',
-	function($scope, $routeParams, Api, $log, User, $route, $timeout, $location, $rootScope) {
+angular.module('controllers').controller('MessagesController', ['$scope', '$routeParams', 'Api', '$log', 'User', '$route', '$timeout', '$location', '$rootScope', '$translate', 
+	function($scope, $routeParams, Api, $log, User, $route, $timeout, $location, $rootScope, $translate) {
+
+		$scope.translations = {
+			all: $translate.instant('global.profile.messages.menu.all'),
+			unread: $translate.instant('global.profile.messages.menu.unread'),
+			markAllReadButton: $translate.instant('global.profile.messages.markAllReadButton')
+		}
 		
 		$scope.subMenu = $routeParams['subMenu']
+
+		$scope.user = User.getName()
 
 		$scope.retrieveMessages = function() {
 			if (User.isLoggedIn()) {
 				Api.Notifications.get({type: $scope.subMenu},
 					function(data) {
+						// $log.debug('retrieved messages', data)
 						$scope.updateMessages(data)
+						$log.debug('updated messages', $scope.messages)
 					}
 				)
 			}
@@ -28,29 +38,29 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 			$scope.messages.forEach(function(message) {
 				// New notifs only, need to have the link
 				// Also, this doesn't concern the messages that have been read
-				if (message.readDate || !message.linkId || !message.objects[1])
+				if (message.readDate || !message.data.linkId || !message.data.reviewId)
 					return
 				
-				var notifs = reviewMessageMap[message.objects[1]]
+				var notifs = reviewMessageMap[message.data.reviewId]
 				if (!notifs) {
 					notifs = []
-					reviewMessageMap[message.objects[1]] = notifs
+					reviewMessageMap[message.data.reviewId] = notifs
 				}
-				notifs.push(message.linkId + '_' + message.notifId)
+				notifs.push(message.data.linkId + '_' + message.id)
 			})
 
 			$scope.messages.forEach(function(message) {
 				message.markedText = marked(message.textDetail || '')
-				message.notifs = reviewMessageMap[message.objects[1]]
+				message.notifs = reviewMessageMap[message.data.reviewId]
 				message.targetUrl = $scope.getTargetUrl(message)
 			})
 
-			$log.debug('displaying messages', $scope.messages)
+			// $log.debug('displaying messages', $scope.messages)
 		}
 
 		$scope.getTargetUrl = function(message) {
 			// $log.debug('build')
-			var baseUrl = message.objects[0]
+			var baseUrl = message.data.reviewUrl
 			// $log.error('dev!!!!!!!!!!!')
 			// baseUrl = baseUrl.replace('www.zerotoheroes.com', 'localhost:9000')
 			var notifs = message.notifs
@@ -73,6 +83,33 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 					$scope.messages.forEach(function(message) {
 						message.readDate = new Date()
 					})
+					$scope.$broadcast('$$rebind::' + 'changeMenu')
+				}
+			)
+		}
+
+
+
+		$scope.markFullRead = function(message) {
+			$log.debug('marking all related messages as read', message, message.notifs)
+
+			var messageIds = []
+			message.notifs.forEach(function(notif) {
+				if (!notif.readDate)
+					messageIds.push(notif.split('_')[1])
+			})
+
+			$log.debug('marking as read', messageIds)
+
+			Api.NotificationsRead.save([messageIds], 
+				function(data) {
+					$log.debug('marked read', data)
+					$scope.messages.forEach(function(message) {
+						if (messageIds.indexOf(message.id) != -1) {
+							message.readDate = new Date()
+						}
+					})
+					$scope.$broadcast('$$rebind::' + 'readMessage')
 				}
 			)
 		}
@@ -80,6 +117,7 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 		$scope.goTo = function(subMenu) {
 			var path = '/u/' + $routeParams['userName'] + '/' + $routeParams['sport'] + '/inbox/' + subMenu
 			$location.path(path)
+			$scope.$broadcast('$$rebind::' + 'changeMenu')
 		}
 	}
 ])

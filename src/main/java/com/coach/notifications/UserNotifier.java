@@ -1,11 +1,10 @@
 package com.coach.notifications;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.coach.core.security.User;
+import com.coach.profile.Notifications;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
@@ -27,6 +26,9 @@ public class UserNotifier {
 	ProfileRepository profileRepository;
 
 	@Autowired
+	NotificationDao NotificationDao;
+
+	@Autowired
 	ProfileService profileService;
 
 	public void notifyNewComment(User subscriber, Comment comment, Review review) {
@@ -36,16 +38,19 @@ public class UserNotifier {
 
 		if (profile.getPreferences().isSiteNotifications()) {
 			Notification notification = new Notification();
-			notification.setCreationDate(new Date());
+			// notification.setCreationDate(new Date());
 			notification.setSport(review.getSport().getKey().toLowerCase());
-			notification.setTextKey("newComment");
-			notification.setType("new-comment");
 			notification.setTitle(review.getTitle());
-			notification.setLinkId("" + comment.getId());
-			notification.addObject(review.getUrl());
-			notification.addObject(review.getId());
 			notification.setTextDetail(comment.getText());
 			notification.setFrom(comment.getAuthor());
+			notification.setUserId(subscriber.getId());
+
+			NotificationCommentData data = new NotificationCommentData();
+			data.setLinkId("" + comment.getId());
+			data.setReviewId(review.getId());
+			data.setReviewUrl(review.getUrl());
+			notification.setData(data);
+
 			addNotification(profile, notification);
 		}
 
@@ -62,15 +67,19 @@ public class UserNotifier {
 
 		if (profile.getPreferences().isSiteNotifications()) {
 			Notification notification = new Notification();
-			notification.setCreationDate(new Date());
+			// notification.setCreationDate(new Date());
 			notification.setSport(review.getSport().getKey().toLowerCase());
-			notification.setTextKey("newReview");
 			notification.setTitle(review.getTitle());
-			notification.setType("new-review");
-			notification.addObject(review.getUrl());
 			notification.setTextDetail(review.getText());
 			notification.setFrom(review.getAuthor());
 			notification.setAggregator(aggregator);
+			notification.setUserId(subscriber.getId());
+
+			NotificationReviewData data = new NotificationReviewData();
+			data.setReviewId(review.getId());
+			data.setReviewUrl(review.getUrl());
+			notification.setData(data);
+
 			addNotification(profile, notification);
 		}
 
@@ -83,9 +92,12 @@ public class UserNotifier {
 		Notifications notifications = profile.getNotifications();
 		if (notifications == null) {
 			notifications = new Notifications();
+			profile.setNotifications(notifications);
 		}
-		notifications.addNotification(notification);
+		notifications.incrementUnread();
 		profileRepository.save(profile);
+
+		NotificationDao.save(notification);
 		return notifications;
 	}
 }

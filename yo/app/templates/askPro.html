@@ -20,7 +20,7 @@
 					<tbody>
 						<tr ng-repeat="coach in ::coaches">
 							<td class="vert-align text-nowrap">
-								<a class="wide-span" ng-click="$hide()" href="{{::'/u/' + coach.username + '/' + sport + '/' + coach}}">{{::coach.name}}</a>
+								<a class="wide-span" ng-click="$hide()" href="{{::'/u/' + coach.username + '/' + sport + '/coach'}}">{{::coach.name}}</a>
 								<span class="glyphicon glyphicon-info-sign" bs-tooltip="tooltip" data-template="templates/coachDescription.html" ng-if="::coach.description"></span>
 								<span class="glyphicon glyphicon-ok" bs-tooltip="tooltip" title="{{::translations.verifiedInfo}}"></span>
 							</td>

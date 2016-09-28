@@ -20,6 +20,7 @@ app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConf
 						$log.debug('loaded profile', $scope.profile)
 						$scope.notifications = $scope.profile.notifications
 						$scope.unread = $scope.profile.notifications.unreadNotifs
+						$scope.$broadcast('$$rebind::' + 'profileLoad')
 						// if ($scope.notifications && $scope.notifications.notifications) {
 						// 	$scope.notifications.notifications.forEach(function(notif) {
 						// 		if (!notif.readDate) {

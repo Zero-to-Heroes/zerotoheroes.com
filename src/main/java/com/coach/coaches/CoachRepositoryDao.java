@@ -52,6 +52,8 @@ public class CoachRepositoryDao {
 
 	private CoachInformation populateCoachInfo(User user) {
 		CoachInformation ret = user.getCoachInformation();
+		if (ret == null) { return null; }
+
 		if (ret.getName() == null) {
 			ret.setName(user.getUsername());
 		}

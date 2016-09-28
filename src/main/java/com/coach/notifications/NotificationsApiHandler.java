@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coach.core.security.User;
+import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
 import com.coach.user.UserRepository;
@@ -81,13 +82,19 @@ public class NotificationsApiHandler {
 		User user = userService.getLoggedInUser();
 		if (user == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.FORBIDDEN); }
 
+		Profile profile = profileService.getLoggedInProfile();
+
 		for (String messageId : messageIds) {
 			if (!StringUtils.isEmpty(messageId)) {
+				log.debug("handling message " + messageId);
 				Notification notif = notificationDao.findById(messageId);
 				notif.setReadDate(new Date());
 				notificationDao.save(notif);
+				profile.getNotifications().decrementUnread();
 			}
 		}
+
+		profileService.save(profile);
 
 		return new ResponseEntity<Notification>((Notification) null, HttpStatus.OK);
 	}
@@ -107,6 +114,10 @@ public class NotificationsApiHandler {
 			notificationDao.save(notifs);
 		}
 
+		Profile profile = profileService.getLoggedInProfile();
+		profile.getNotifications().setUnreadNotifs(0);
+		profileService.save(profile);
+
 		return new ResponseEntity<Notification>((Notification) null, HttpStatus.OK);
 	}
 
@@ -121,6 +132,10 @@ public class NotificationsApiHandler {
 		if (notif == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.NOT_FOUND); }
 
 		notif.setReadDate(null);
+
+		Profile profile = profileService.getLoggedInProfile();
+		profile.getNotifications().incrementUnread();
+		profileService.save(profile);
 
 		notificationDao.save(notif);
 

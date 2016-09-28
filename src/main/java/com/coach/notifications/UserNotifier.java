@@ -46,7 +46,7 @@ public class UserNotifier {
 			notification.setUserId(subscriber.getId());
 
 			NotificationCommentData data = new NotificationCommentData();
-			data.setLinkId("" + comment.getId());
+			data.setLinkId(comment.getId());
 			data.setReviewId(review.getId());
 			data.setReviewUrl(review.getUrl());
 			notification.setData(data);

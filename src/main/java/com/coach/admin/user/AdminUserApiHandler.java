@@ -213,7 +213,7 @@ public class AdminUserApiHandler {
 				newNotif.setUserId(user.getId());
 
 				if ("newComment".equals(oldNotif.getTextKey())) {
-					log.debug("\t\t\tOld notif " + oldNotif);
+					log.debug("\t\t\tOld notif " + oldNotif.getObjects());
 					NotificationCommentData data = new NotificationCommentData();
 					newNotif.setData(data);
 					data.setLinkId(oldNotif.getLinkId());

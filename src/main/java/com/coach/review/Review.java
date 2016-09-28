@@ -20,6 +20,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
+import com.coach.notifications.Notification;
 import com.coach.profile.Profile;
 import com.coach.reputation.Reputation;
 import com.coach.subscription.HasSubscribers;
@@ -148,6 +149,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	private boolean useV2comments = false;
 
+	@JsonIgnore
 	private Map<String, Date> visitDates = new HashMap<>();
 
 	public void addComment(Comment comment) {
@@ -242,6 +244,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public void prepareForDisplay(String userId) {
+		Date lastVisit = null;
+		if (visitDates != null) {
+			lastVisit = visitDates.get(userId);
+		}
 		getReputation().modifyAccordingToUser(userId);
 		// comments
 		if (comments != null) {
@@ -494,5 +500,11 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		String newKey = prefix + calendar.get(Calendar.YEAR) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/"
 				+ calendar.get(Calendar.DATE) + "/" + name;
 		return newKey;
+	}
+
+	public void highlightUnreadNotifs(List<Notification> unreadNotifs) {
+		for (Comment comment : getComments()) {
+			comment.highlightUnreadNotifs(unreadNotifs);
+		}
 	}
 }

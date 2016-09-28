@@ -10,11 +10,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.data.annotation.Transient;
 
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
+import com.coach.notifications.Notification;
+import com.coach.notifications.NotificationCommentData;
 import com.coach.profile.Profile;
 import com.coach.rankings.Rank;
 import com.coach.reputation.Reputation;
@@ -53,6 +56,9 @@ public class Comment implements HasText, HasReputation {
 	// The time marker of the comment. Can be a timestamp (videos) or a turn
 	// number (replay)
 	private String timestamp;
+
+	@Transient
+	private List<Notification> linkedNotifs = new ArrayList<>();
 
 	@Override
 	public Reputation getReputation() {
@@ -275,6 +281,16 @@ public class Comment implements HasText, HasReputation {
 		o1.reputation = u1.getReputation(sport);
 
 		return score;
+	}
+
+	public void highlightUnreadNotifs(List<Notification> unreadNotifs) {
+		linkedNotifs = unreadNotifs.stream().filter(n -> n.getData() instanceof NotificationCommentData)
+				.filter(n -> id.equals(((NotificationCommentData) n.getData()).getLinkId()))
+				.collect(Collectors.toList());
+
+		for (Comment comment : getComments()) {
+			comment.highlightUnreadNotifs(unreadNotifs);
+		}
 	}
 
 	@Data

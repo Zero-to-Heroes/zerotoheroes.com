@@ -26,6 +26,10 @@ public class Notifications {
 		unreadNotifs = unreadNotifs + 1;
 	}
 
+	public void decrementUnread() {
+		unreadNotifs = unreadNotifs - 1;
+	}
+
 	public void addNotification(Notification notification) {
 		notification.setNotifId(notificationId++);
 		notifications.add(notification);

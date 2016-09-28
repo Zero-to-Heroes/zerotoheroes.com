@@ -20,6 +20,8 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 						// $log.debug('retrieved messages', data)
 						$scope.updateMessages(data)
 						$log.debug('updated messages', $scope.messages)
+						$scope.$broadcast('$$rebind::' + 'changeMenu')
+						$scope.$broadcast('$$rebind::' + 'readMessage')
 					}
 				)
 			}
@@ -52,29 +54,30 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 			$scope.messages.forEach(function(message) {
 				message.markedText = marked(message.textDetail || '')
 				message.notifs = reviewMessageMap[message.data.reviewId]
-				message.targetUrl = $scope.getTargetUrl(message)
+				// When getting the review as a logged in user you now also get the list of unread comments since last visit
+				message.targetUrl = message.data.reviewUrl //$scope.getTargetUrl(message)
 			})
 
 			// $log.debug('displaying messages', $scope.messages)
 		}
 
-		$scope.getTargetUrl = function(message) {
-			// $log.debug('build')
-			var baseUrl = message.data.reviewUrl
-			// $log.error('dev!!!!!!!!!!!')
-			// baseUrl = baseUrl.replace('www.zerotoheroes.com', 'localhost:9000')
-			var notifs = message.notifs
-			if (notifs && notifs.length > 0) {
-				var urlExpansion = '?highlighted='
-				notifs.forEach(function(notif) {
-					urlExpansion += notif + ';'
-				})
-				urlExpansion = urlExpansion.slice(0, -1)
-				baseUrl += urlExpansion
-			}
-			// $log.debug('built review url', baseUrl)
-			return baseUrl
-		}
+		// $scope.getTargetUrl = function(message) {
+		// 	// $log.debug('build')
+		// 	var baseUrl = message.data.reviewUrl
+		// 	// $log.error('dev!!!!!!!!!!!')
+		// 	// baseUrl = baseUrl.replace('www.zerotoheroes.com', 'localhost:9000')
+		// 	var notifs = message.notifs
+		// 	if (notifs && notifs.length > 0) {
+		// 		var urlExpansion = '?highlighted='
+		// 		notifs.forEach(function(notif) {
+		// 			urlExpansion += notif + ';'
+		// 		})
+		// 		urlExpansion = urlExpansion.slice(0, -1)
+		// 		baseUrl += urlExpansion
+		// 	}
+		// 	// $log.debug('built review url', baseUrl)
+		// 	return baseUrl
+		// }
 
 		$scope.markAllRead = function() {
 			Api.AllNotificationsRead.save(
@@ -83,36 +86,36 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 					$scope.messages.forEach(function(message) {
 						message.readDate = new Date()
 					})
-					$scope.$broadcast('$$rebind::' + 'changeMenu')
-				}
-			)
-		}
-
-
-
-		$scope.markFullRead = function(message) {
-			$log.debug('marking all related messages as read', message, message.notifs)
-
-			var messageIds = []
-			message.notifs.forEach(function(notif) {
-				if (!notif.readDate)
-					messageIds.push(notif.split('_')[1])
-			})
-
-			$log.debug('marking as read', messageIds)
-
-			Api.NotificationsRead.save([messageIds], 
-				function(data) {
-					$log.debug('marked read', data)
-					$scope.messages.forEach(function(message) {
-						if (messageIds.indexOf(message.id) != -1) {
-							message.readDate = new Date()
-						}
-					})
 					$scope.$broadcast('$$rebind::' + 'readMessage')
 				}
 			)
 		}
+
+
+
+		// $scope.markFullRead = function(message) {
+		// 	$log.debug('marking all related messages as read', message, message.notifs)
+
+		// 	var messageIds = []
+		// 	message.notifs.forEach(function(notif) {
+		// 		if (!notif.readDate)
+		// 			messageIds.push(notif.split('_')[1])
+		// 	})
+
+		// 	$log.debug('marking as read', messageIds)
+
+		// 	Api.NotificationsRead.save([messageIds], 
+		// 		function(data) {
+		// 			$log.debug('marked read', data)
+		// 			$scope.messages.forEach(function(message) {
+		// 				if (messageIds.indexOf(message.id) != -1) {
+		// 					message.readDate = new Date()
+		// 				}
+		// 			})
+		// 			$scope.$broadcast('$$rebind::' + 'readMessage')
+		// 		}
+		// 	)
+		// }
 
 		$scope.goTo = function(subMenu) {
 			var path = '/u/' + $routeParams['userName'] + '/' + $routeParams['sport'] + '/inbox/' + subMenu

@@ -128,66 +128,81 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.highlightUnread = function() {
-					var highlighted = $location.search().highlighted
-					// $log.debug('highlighted', highlighted)
-					$scope.highlightedClass = ''
-					if (highlighted) {
-						var ids = highlighted.split(';')
-						ids.forEach(function(id) {
-							var idComponents = id.split('_')
-							var targetComment = idComponents[0]
-							if (targetComment == $scope.comment.id) {
-								// $log.debug('highlighting', idComponents, ids)
-								$scope.highlightedClass = 'highlighted'
-								if (idComponents.length > 1) {
-									$scope.highlightedNotif = idComponents[1]
-								}
-							}
-						})
+					if ($scope.comment.linkedNotifs && $scope.comment.linkedNotifs.length > 0) {
+						$scope.highlightedClass = 'highlighted'
+						$scope.$broadcast('$$rebind::' + 'commentRefresh')
 					}
-					$scope.$broadcast('$$rebind::' + 'commentRefresh')
+					// var highlighted = $location.search().highlighted
+					// // $log.debug('highlighted', highlighted)
+					// $scope.highlightedClass = ''
+					// if (highlighted) {
+					// 	var ids = highlighted.split(';')
+					// 	ids.forEach(function(id) {
+					// 		var idComponents = id.split('_')
+					// 		var targetComment = idComponents[0]
+					// 		if (targetComment == $scope.comment.id) {
+					// 			// $log.debug('highlighting', idComponents, ids)
+					// 			$scope.highlightedClass = 'highlighted'
+					// 			if (idComponents.length > 1) {
+					// 				$scope.highlightedNotif = idComponents[1]
+					// 			}
+					// 		}
+					// 	})
+					// }
 				}
 				$scope.highlightUnread()
 
 				$scope.markRead = function() {
 					if ($scope.highlightedClass) {
-						// $log.debug('marking read', $scope.highlightedNotif)
-						if ($scope.highlightedNotif) {
-							Api.NotificationsRead.save($scope.highlightedNotif, 
-								function(data) {
-									// $log.debug('marked read', data)
-									$scope.highlightedClass = undefined
-
-									// Remove marked comment from URL
-									var highlighted = $location.search().highlighted
-									var newHighlights = ''
-									var ids = highlighted.split(';')
-									if (ids.length > 1) {
-										newHighlights += 'highlighted='
-										ids.forEach(function(id) {
-											var idComponents = id.split('_')
-											var targetComment = idComponents[0]
-											if (targetComment && targetComment != $scope.comment.id) {
-												newHighlights += targetComment
-												if (idComponents.length > 1) {
-													newHighlights += '_' + idComponents[1]
-												}
-												newHighlights += ';'
-											}
-										})
-										newHighlights = newHighlights.slice(0, -1)
-									}
-									$location.search(newHighlights)
-									$scope.$broadcast('$$rebind::' + 'commentRefresh')
-								}
-							)
-						}
-						else {
-							$scope.highlightedClass = undefined
-						}
+						var notifIds = _.map($scope.comment.linkedNotifs, 'id')
+						$log.debug('marking as read', notifIds)
+						Api.NotificationsRead.save(notifIds, 
+							function(data) {
+								$scope.highlightedClass = undefined
+								$scope.comment.linkedNotifs = undefined
+								$scope.$broadcast('$$rebind::' + 'commentRefresh')
+							}
+						)
 					}
-					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
+
+				// 		// $log.debug('marking read', $scope.highlightedNotif)
+				// 		if ($scope.highlightedNotif) {
+				// 			Api.NotificationsRead.save($scope.highlightedNotif, 
+				// 				function(data) {
+				// 					// $log.debug('marked read', data)
+				// 					$scope.highlightedClass = undefined
+
+				// 					// Remove marked comment from URL
+				// 					var highlighted = $location.search().highlighted
+				// 					var newHighlights = ''
+				// 					var ids = highlighted.split(';')
+				// 					if (ids.length > 1) {
+				// 						newHighlights += 'highlighted='
+				// 						ids.forEach(function(id) {
+				// 							var idComponents = id.split('_')
+				// 							var targetComment = idComponents[0]
+				// 							if (targetComment && targetComment != $scope.comment.id) {
+				// 								newHighlights += targetComment
+				// 								if (idComponents.length > 1) {
+				// 									newHighlights += '_' + idComponents[1]
+				// 								}
+				// 								newHighlights += ';'
+				// 							}
+				// 						})
+				// 						newHighlights = newHighlights.slice(0, -1)
+				// 					}
+				// 					$location.search(newHighlights)
+				// 					$scope.$broadcast('$$rebind::' + 'commentRefresh')
+				// 				}
+				// 			)
+				// 		}
+				// 		else {
+				// 			$scope.highlightedClass = undefined
+				// 		}
+				// 	}
+				// 	$scope.$broadcast('$$rebind::' + 'commentRefresh')
+				// }
 
 				//===============
 				// Replying to comments

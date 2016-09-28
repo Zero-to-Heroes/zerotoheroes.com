@@ -1,5 +1,5 @@
-<a class="pointer user-notifications" ng-class="{'unread': unread > 0}" href="/u/{{::user.getName()}}/{{::sport}}/inbox/{{::unread > 0 ? 'unread' : 'all'}}">
-	<img src="{{::config.images.mailUnread }}" ng-if="unread > 0" /> 
-	<img src="{{::config.images.mail }}" ng-if="unread == 0" />
+<a class="pointer user-notifications" ng-class="::{'unread': unread > 0}" href="/u/{{::user.getName()}}/{{::sport}}/inbox/{{::unread > 0 ? 'unread' : 'all'}}">
+	<img src="{{::config.images.mailUnread }}" ng-if="::unread > 0" /> 
+	<img src="{{::config.images.mail }}" ng-if="::unread == 0" />
 	<span class="badge" ng-if="::unread > 0">{{::unread}}</span>
 </a>

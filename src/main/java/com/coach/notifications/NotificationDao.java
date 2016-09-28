@@ -31,6 +31,10 @@ public class NotificationDao {
 		return notifs.getContent();
 	}
 
+	public List<Notification> findAllUnread(String userId, String reviewId) {
+		return notificationRepository.findByUserIdAndReviewIdAndReadDateNull(userId, reviewId);
+	}
+
 	public Notification findById(String messageId) {
 		return notificationRepository.findOne(messageId);
 	}

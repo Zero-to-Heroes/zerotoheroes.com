@@ -7,11 +7,11 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.ToString;
 
-@Getter
-@Setter
+@Data
+@ToString(exclude = "textDetail")
 @Document
 public class Notification {
 

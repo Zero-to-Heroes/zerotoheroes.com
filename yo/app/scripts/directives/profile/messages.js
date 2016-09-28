@@ -11,8 +11,7 @@ app.directive('messages', ['$log', 'Api', '$translate',
 			replace: false,
 			templateUrl: 'templates/profile/messages.html',
 			scope: {
-				source: '<',
-				fullRead: '&'
+				source: '<'
 			},
 			link: function(scope, element, attributes) {
 			},
@@ -65,9 +64,9 @@ app.directive('messages', ['$log', 'Api', '$translate',
 					}
 				}
 
-				$scope.markFullRead = function(message) {
-					$scope.fullRead()(message)
-				}
+				// $scope.markFullRead = function(message) {
+				// 	$scope.fullRead()(message)
+				// }
 			}
 		}
 	}

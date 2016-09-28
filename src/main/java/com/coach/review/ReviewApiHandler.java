@@ -31,6 +31,8 @@ import com.coach.core.notification.DiscordNotifier;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.core.security.UserAuthority;
+import com.coach.notifications.Notification;
+import com.coach.notifications.NotificationDao;
 import com.coach.plugin.Plugin;
 import com.coach.profile.ProfileRepository;
 import com.coach.reputation.ReputationAction;
@@ -66,6 +68,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	ProfileRepository profileRepo;
+
+	@Autowired
+	NotificationDao notificationDao;
 
 	// @Autowired
 	// MongoTemplate mongoTemplate;
@@ -250,24 +255,16 @@ public class ReviewApiHandler {
 			review.setReviewType(review.getMediaType());
 		}
 
-		String userId = user != null ? user.getId() : "";
-		review.getVisitDates().put(userId, new Date());
-
-		// Sort the comments. We'll probably need this for a rather long time,
-		// as our sorting algorithm will evolve
-		// review.sortComments();
-		// denormalizeReputations(review);
-		// TODO: remove this
 		reviewService.updateAsync(review);
 
+		// Now load all the unread notifs for this user and this review
+		String userId = user != null ? user.getId() : null;
+		if (userId != null) {
+			List<Notification> unreadNotifs = notificationDao.findAllUnread(userId, review.getId());
+			review.highlightUnreadNotifs(unreadNotifs);
+		}
+
 		review.prepareForDisplay(userId);
-		// log.debug("Returning review " + review);
-		// And add a video view to the user
-		// if (user != null) {
-		// user.addWatchedReview(review.getSport().getKey().toLowerCase(),
-		// review.getId());
-		// userService.updateAsync(user);
-		// }
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}

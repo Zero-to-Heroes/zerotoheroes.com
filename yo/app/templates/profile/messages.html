@@ -2,7 +2,7 @@
 	<li ng-repeat="message in ::source" class="message" ng-class=":readMessage:{ 'unread': !message.readDate }">
 		<div>
 			<span class="notification-type">{{::translations[message.data.textKey]}}</span>
-			<a class="notification-title" href="{{::message.targetUrl}}" target="_blank" ng-click="markFullRead(message)">{{::message.title}}</a>
+			<a class="notification-title" href="{{::message.targetUrl}}" target="_blank">{{::message.title}}</a>
 		</div>
 		<div class="message-body">
 			<div ng-click="markRead(message)">

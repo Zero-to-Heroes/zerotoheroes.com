@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$rootScope', '$timeout', '$translate', 'TextParserService', 
-	function($log, User, Api, $parse, $rootScope, $timeout, $translate, TextParserService) {
+app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$rootScope', '$timeout', '$translate', 'TextParserService', '$location', 
+	function($log, User, Api, $parse, $rootScope, $timeout, $translate, TextParserService, $location) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -19,10 +19,20 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 
 				$scope.bouncing = false
 
+				// Jump to the comment already
+				$log.debug('location', $location)
+				if ($location.$$hash) {
+					$timeout(function() {
+						// Find the turn label that is about the current turn
+						var element = $('div[data-comment-id="' + $location.$$hash + '"]')
+						$scope.scrollTo(element)
+					}, 500)
+				}
+
 				// External API
 				$scope.controller.onTurnChanged = function(turn) {
 					$scope.latestTurnRequest = turn
-					$log.debug('onTurnChanged', turn)
+					// $log.debug('onTurnChanged', turn)
 
 					if (!$scope.bouncing) {
 						$scope.bouncing = true
@@ -33,7 +43,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				}
 
 				$scope.processTurnChanged = function() {
-					$log.debug('processing turn changed', $scope.latestTurnRequest)
+					// $log.debug('processing turn changed', $scope.latestTurnRequest)
 					$scope.bouncing = false
 
 					$scope.$apply()
@@ -51,23 +61,26 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					$timeout(function() {
 						// Find the turn label that is about the current turn
 						var activeTurn = $('.turn-active')
-						if (!activeTurn || !activeTurn[0])
-							return
-
-						var top = activeTurn[0].getBoundingClientRect().top
-
-						// $log.debug('current turn element', top, $('.turn-active'))
-
-						var scrollableElement = $('#comments-scrollable')
-						var scrollableTop = scrollableElement[0].getBoundingClientRect().top
-
-						var scrollableNewMarginTop = scrollableTop - top + 20 // offset to avoid masking completely the comments above
-
-						// $log.debug('top scrollable turn element', scrollableTop, scrollableNewMarginTop, $('#comments-scrollable'))
-
-						scrollableElement.css('marginTop', scrollableNewMarginTop + 'px');
-
+						$scope.scrollTo(activeTurn)
 					})
+				}
+
+				$scope.scrollTo = function(element) {
+					if (!element || !element[0])
+						return
+
+					var top = element[0].getBoundingClientRect().top
+
+					// $log.debug('current turn element', top, $('.turn-active'))
+
+					var scrollableElement = $('#comments-scrollable')
+					var scrollableTop = scrollableElement[0].getBoundingClientRect().top
+
+					var scrollableNewMarginTop = scrollableTop - top + 20 // offset to avoid masking completely the comments above
+
+					// $log.debug('top scrollable turn element', scrollableTop, scrollableNewMarginTop, $('#comments-scrollable'))
+
+					scrollableElement.css('marginTop', scrollableNewMarginTop + 'px');
 				}
 
 				$scope.getCurrentTurn = function() {

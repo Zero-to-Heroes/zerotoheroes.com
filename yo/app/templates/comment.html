@@ -1,4 +1,4 @@
-<div class="container-fluid comment-block {{:commentRefresh:highlightedClass}}" ng-click="markRead()">
+<div class="container-fluid comment-block {{:commentRefresh:highlightedClass}}" ng-click="markRead()" data-comment-id="{{::comment.id}}">
 
 	<div class="reputation">
 		<span id="upvote{{::commentIndex}}" class="glyphicon glyphicon-chevron-up pointer " ng-class=":commentRefresh:{'upvote': comment.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn() }" ng-click="upvoteComment(comment)" title="{{::translations.upvote}}" ></span>

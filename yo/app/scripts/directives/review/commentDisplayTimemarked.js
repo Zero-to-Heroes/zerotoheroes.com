@@ -26,7 +26,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 						// Find the turn label that is about the current turn
 						var element = $('div[data-comment-id="' + $location.$$hash + '"]')
 						$scope.scrollTo(element)
-					}, 500)
+					}, 100)
 				}
 
 				// External API

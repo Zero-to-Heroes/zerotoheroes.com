@@ -40,7 +40,7 @@ public class EmailNotifier {
 		//@formatter:off
 		String body = "Hey there!<br/>"
 				+ "<p>" + comment.getAuthor() + " has just added a comment on review " + review.getTitle() + ". "
-						+ "Click <a href=\"" + review.getUrl() + "\">here</a> to see what they said.</p>"
+						+ "Click <a href=\"" + review.getUrl() +  "#" + comment.getId() + "\">here</a> to see what they said.</p>"
 			    + "<p><small>And if you wish to stop receiving notifications on this review, just hit \"unsubsribe\" from the url above</small></p>";
 		String subject = "New comment on review " + review.getTitle() + " at ZeroToHeroes";
 
@@ -50,7 +50,7 @@ public class EmailNotifier {
 					+ comment.getAuthor()
 					+ " vient d'ajouter un commentaire sur la vidéo " + review.getTitle() + ". "
 					+ "Cliquez <a href=\""
-					+ review.getUrl()
+					+ review.getUrl() + "#" + comment.getId()
 					+ "\">ici</a> pour voir le commentaire.</p>"
 					+ "<p><small>Et si vous ne voulez plus recevoir de notifications sur cette vidéo, cliquez simplement sur "
 					+ "\"désinscription\" depuis la page ci-dessus</small></p>";

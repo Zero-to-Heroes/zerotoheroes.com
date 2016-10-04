@@ -263,13 +263,31 @@ body {
 .video-comment.multi-comment .comment-footer {
   margin-bottom: 0;
 }
+.video-comment.multi-comment .comment-block.highlighted > .comment-main > .comment-body {
+  background-color: #61503f;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
 .video-comment.multi-comment .dampen .inactive .turn-label,
 .video-comment.multi-comment .dampen .inactive .reputation,
-.video-comment.multi-comment .dampen .inactive .comment-main {
+.video-comment.multi-comment .dampen .inactive .comment-header,
+.video-comment.multi-comment .dampen .inactive .comment-subheader,
+.video-comment.multi-comment .dampen .inactive .comment-body,
+.video-comment.multi-comment .dampen .inactive .comment-footer {
   filter: brightness(50%);
 }
-.video-comment.multi-comment .dampen .inactive .turn-label:hover,
-.video-comment.multi-comment .dampen .inactive .comment-main:hover {
+.video-comment.multi-comment .dampen .inactive .comment-block.highlighted .comment-body {
+  filter: brightness(80%);
+}
+.video-comment.multi-comment .dampen .inactive .turn-label:hover {
+  filter: none;
+}
+.video-comment.multi-comment .dampen .inactive .comment-main:hover .comment-header,
+.video-comment.multi-comment .dampen .inactive .comment-main:hover .comment-subheader,
+.video-comment.multi-comment .dampen .inactive .comment-main:hover .comment-body,
+.video-comment.multi-comment .dampen .inactive .comment-main:hover .comment-footer {
   filter: none;
 }
 .video-information .video-information-header .skill-level {

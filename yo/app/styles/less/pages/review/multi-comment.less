@@ -53,13 +53,31 @@
 		margin-bottom: 0;
 	}
 
+
+	.comment-block.highlighted > .comment-main > .comment-body {
+		background-color: rgb(97, 80, 63);
+	    padding-left: 5px;
+	    padding-right: 5px;
+	    padding-top: 5px;
+	    padding-bottom: 0px;
+	}
+
 	.dampen .inactive {
-		.turn-label, .reputation, .comment-main {
+		.turn-label, .reputation, .comment-header, .comment-subheader, .comment-body, .comment-footer {
 			filter: brightness(50%);
 		}
 
-		.turn-label:hover, .comment-main:hover {
+		.comment-block.highlighted .comment-body {
+			filter: brightness(80%);
+		}
+
+		.turn-label:hover {
 			filter: none;
+		}
+		.comment-main:hover {
+			.comment-header, .comment-subheader, .comment-body, .comment-footer {
+				filter: none;
+			}
 		}
 	}
 	

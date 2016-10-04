@@ -133,8 +133,7 @@ public class EmailNotifier {
 				+ "<p>If you wouldn't mind, I'd love it if you answered one quick question: why did you sign up on Zero to Heroes?</p>"
 				+ "<p>I'm asking because knowing what made you sign up is really helpful for us in making sure we're delivering what our "
 				+ "users want. Just hit \"reply\" and let me know.</p>"
-			    + "<p>And by the way, feel free to contact me if you have any question, suggestion or complaint, "
-			    + "and I'll be happy to help you :)</p>"
+			    + "<p>And by the way, feel free to join us on our <a href=\"https://discord.gg/uEh9gvJ\" target=\"_blank\">Discord server</a> to meet us !</p>"
 				+ "<p>Thanks,</p>"
 				+ "<p>Seb</p>"
 				+ "<p>Zero to Heroes</p>";
@@ -150,8 +149,7 @@ public class EmailNotifier {
 					+ "pourquoi vous êtes-vous inscrit sur Zero to Heroes ?<p>"
 					+ "<p>Je vous demande ça parce que savoir ces raisons nous est très utile pour être sûrs de fournir ce dont nos utilisateurs "
 					+ "ont besoin. Cliquez simplement sur \"répondre\" et laissez-moi un message.</p>"
-				    + "<p>Et au fait, n'hésitez pas à me contacter si vous avez la moindre question, suggestion ou réclamation, "
-				    + "et je vous aiderai avec plaisir :)</p>"
+				    + "<p>Et au fait, n'hésitez pas à venir sur notre <a href=\"https://discord.gg/uEh9gvJ\" target=\"_blank\">serveur Discord</a> pour nous rencontrer !</p>"
 					+ "<p>Merci,</p>"
 					+ "<p>Seb</p>"
 					+ "<p>Zero to Heroes</p>";

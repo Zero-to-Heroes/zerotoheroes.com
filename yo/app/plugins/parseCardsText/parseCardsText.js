@@ -144,7 +144,7 @@ var parseCardsText = {
 					res = res || card.name.toLowerCase().indexOf(term.substring(2).toLowerCase()) === 0;
 					// Keep only valid cards
 					res = res && card.cardImage && card.type != 'Hero' && card.type != 'Enchantment' 
-					res = res && card.set != 'Hero_skins'
+					res = res && card.set != 'Hero_skins' && card.set != 'Cheat'
 					res = res ? card : null
 					// if (debug) console.log('res4', term, localizeName, res);
 					return res;
@@ -242,7 +242,7 @@ var parseCardsText = {
 				}
 				// Keep only valid cards
 				var res = card.type != 'Hero' && card.type != 'Enchantment' 
-				res = res && card.set != 'Hero_skins'
+				res = res && card.set != 'Hero_skins' && card.set != 'Cheat'
 				if (res) {
 					possibleResult = card
 				}

@@ -83,7 +83,16 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			var $location = $injector.get('$location');
 			var $window = $injector.get('$window');
 
-			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
+			var stacktrace = undefined
+			console.log(arguments)
+			for (var idx in arguments) {
+				var arg = arguments[idx]
+				if (arg.stack) {
+					stacktrace = arg.stack
+				}
+			}
+
+			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser().username + ':' + User.getUser().email), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(arguments));
 		};
 
 		$delegate.notifySlack = function( )
@@ -91,8 +100,18 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			var User = $injector.get('User');
 			var $location = $injector.get('$location');
 			var $window = $injector.get('$window');
+			
 
-			notify('Javascript notification: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser()), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + arguments[0].stack, 'initial args: ' + JSON.stringify(arguments));
+			var stacktrace = undefined
+			console.log(arguments)
+			for (var idx in arguments) {
+				var arg = arguments[idx]
+				if (arg.stack) {
+					stacktrace = arg.stack
+				}
+			}
+
+			notify('Javascript notification: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser().username + ':' + User.getUser().email), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(arguments));
 		};
 
 

@@ -47,7 +47,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.mediaPlayer = {
-			playerType: 'replay'
+			// playerType: 'replay'
 		}
 
 
@@ -109,12 +109,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// Update page description
 					$scope.updateSeoInformation(data)
 
-					
-					if ($scope.review.replay || ($scope.review.mediaType && $scope.review.mediaType != 'video') || ($scope.review.reviewType && $scope.review.reviewType != 'video')) {
-						$scope.mediaPlayer.playerType = 'replay'
+					if ($scope.review.mediaType == 'video' || $scope.review.reviewType == 'video' || $scope.review.key.indexOf('/video/') != -1) {
+						// $log.debug('setting video playerType')
+						$scope.mediaPlayer.playerType = 'video'
 					}
 					else {
-						$scope.mediaPlayer.playerType = 'video'
+						$scope.mediaPlayer.playerType = 'replay'
 					}
 
 					// $log.debug('mediaPlayer', $scope.mediaPlayer)

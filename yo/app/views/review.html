@@ -1,7 +1,7 @@
 <view-title>{{::review.title}} - {{::review.tagValues}}</view-title>
 
 
-<div class="video-information {{pluginNames.join(' ')}} {{::review.mediaType}}" ng-class="{'col-md-7': mediaPlayer.playerControls.wideMode, 'col-md-5': !mediaPlayer.playerControls.wideMode}">
+<div class="video-information {{pluginNames.join(' ')}} {{::review.mediaType}} {{mediaPlayer.playerControls.wideMode ? 'col-md-7' : 'col-md-5'}}">
 
 	<div class="background-white contextual-information">
 		<span class="close" ng-click="hideContextualInfo()">&times;</span>

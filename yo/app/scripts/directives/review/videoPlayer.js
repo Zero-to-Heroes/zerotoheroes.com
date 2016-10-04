@@ -6,8 +6,8 @@ app.directive('videoPlayer', ['$log', 'ENV', '$sce', '$rootScope', '$timeout',
 			transclude: false,
 			templateUrl: 'templates/review/videoPlayer.html',
 			scope: {
-				review: '=',
-				config: '='
+				review: '<',
+				config: '<'
 			},
 			link: function ($scope, element, attrs) {
 			},
@@ -30,7 +30,6 @@ app.directive('videoPlayer', ['$log', 'ENV', '$sce', '$rootScope', '$timeout',
 				// Init methods
 				// =================
 				$scope.initReview = function(review) {
-					$log.debug('init review in videoPlayer')
 					// if (!review.canvas) {
 					// 	review.canvas = {}
 					// }

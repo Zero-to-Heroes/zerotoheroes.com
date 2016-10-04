@@ -39,7 +39,8 @@ app.directive('messages', ['$log', 'Api', '$translate',
 					return moment(date).format("YYYY-MM-DD HH:mm:ss");;
 				}
 
-				$scope.markRead = function(message) {
+				$scope.markRead = function(message, $event) {
+					$event.stopPropagation()
 					if (!message.readDate) {
 						$log.debug('marking as read', message)
 						Api.NotificationsRead.save([message.id], 
@@ -52,7 +53,8 @@ app.directive('messages', ['$log', 'Api', '$translate',
 					}
 				}
 
-				$scope.markUnread = function(message) {
+				$scope.markUnread = function(message, $event) {
+					$event.stopPropagation()
 					if (message.readDate) {
 						// $log.debug('marking as unread', message)
 						Api.NotificationsUnread.save(message.id, 

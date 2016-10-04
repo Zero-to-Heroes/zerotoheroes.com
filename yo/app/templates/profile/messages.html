@@ -4,16 +4,16 @@
 			<span class="notification-type">{{::translations[message.data.textKey]}}</span>
 			<a class="notification-title" href="{{::message.targetUrl}}" target="_blank">{{::message.title}}</a>
 		</div>
-		<div class="message-body">
-			<div ng-click="markRead(message)">
+		<div class="message-body" ng-click="markRead(message, $event)">
+			<div>
 				<span class="message-from-label">{{::translations.from}}</span>
 				<span class="message-from">{{message.from}}</span>
 				<span class="message-sent-date" title="{{::formatExactDate(video.creationDate)}}">{{::translations.sent}} {{::formatDate(message.creationDate)}}</span>
 				<div class="message-body-text" ng-bind-html="::message.markedText"></div>
 			</div>
 			<div class="action-footer">
-				<a ng-click="markUnread(message)" ng-if=":readMessage:message.readDate">{{::translations.markUnreadButton}}</a>
-				<a ng-click="markRead(message)" ng-if=":readMessage:!message.readDate">{{::translations.markReadButton}}</a>
+				<a ng-click="markUnread(message, $event)" ng-if=":readMessage:message.readDate">{{::translations.markUnreadButton}}</a>
+				<a ng-click="markRead(message, $event)" ng-if=":readMessage:!message.readDate">{{::translations.markReadButton}}</a>
 			</div>
 		</div>
 	</li>

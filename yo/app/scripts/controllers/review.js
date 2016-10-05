@@ -109,7 +109,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// Update page description
 					$scope.updateSeoInformation(data)
 
-					if ($scope.review.mediaType == 'video' || $scope.review.reviewType == 'video' || $scope.review.key.indexOf('/video/') != -1) {
+					if ($scope.review.mediaType == 'video' || $scope.review.reviewType == 'video' || $scope.review.key.indexOf('/video/') != -1 || $scope.review.key.indexOf('videos/') != -1) {
 						// $log.debug('setting video playerType')
 						$scope.mediaPlayer.playerType = 'video'
 					}

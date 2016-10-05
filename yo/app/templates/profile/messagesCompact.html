@@ -1,0 +1,39 @@
+<ul class="message-listing compact">
+	
+	<li ng-repeat="(reviewId, message) in ::compact" class="message" ng-class=":readMessage:{ 'unread': !message.readDate && message.data.textKey != 'aggregatedReview' }">
+		<div>
+			<span class="notification-type">{{::translations[message.data.textKey]}}</span>
+			<a class="notification-title" href="{{::message.targetUrl}}" target="_blank">{{::message.title}}</a>
+			<a ng-click="markAllRead(message)" class="mark-read-button" ng-if="::message.comments">{{::translations.markAllReadButton}}</a>
+		</div>
+		<div class="message-body" ng-click="markRead(message, $event)">
+			<div ng-if="::message.markedText">
+				<span class="message-from-label">{{::translations.from}}</span>
+				<span class="message-from">{{message.from}}</span>
+				<span class="message-sent-date" title="{{::formatExactDate(message.creationDate)}}">{{::translations.sent}} {{::formatDate(message.creationDate)}}</span>
+				<div class="message-body-text" ng-bind-html="::message.markedText"></div>
+			</div>
+			<ul ng-if="::message.comments" class="review-comments">
+				<li ng-repeat="comment in ::message.comments" ng-class=":readMessage:{ 'unread': !comment.readDate }">
+					<div class="message-body">
+						<div>
+							<span class="message-from-label">{{::translations.from}}</span>
+							<span class="message-from">{{comment.from}}</span>
+							<span class="message-sent-date" title="{{::formatExactDate(comment.creationDate)}}">{{::translations.sent}} {{::formatDate(comment.creationDate)}}</span>
+							<div class="message-body-text" ng-bind-html="::comment.markedText"></div>
+						</div>
+						<div class="action-footer">
+							<a ng-click="markUnread(comment, $event)" ng-if=":readMessage:comment.readDate">{{::translations.markUnreadButton}}</a>
+							<a ng-click="markRead(comment, $event)" ng-if=":readMessage:!comment.readDate">{{::translations.markReadButton}}</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="action-footer" ng-if="::message.markedText">
+				<a ng-click="markUnread(message, $event)" ng-if=":readMessage:message.readDate">{{::translations.markUnreadButton}}</a>
+				<a ng-click="markRead(message, $event)" ng-if=":readMessage:!message.readDate">{{::translations.markReadButton}}</a>
+			</div>
+		</div>
+	</li>
+	<span ng-if="::source.length == 0">{{::translations.empty}}</span>
+</ul>

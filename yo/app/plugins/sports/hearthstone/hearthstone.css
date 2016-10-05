@@ -83,6 +83,9 @@
   color: #f7cf44;
   text-decoration: none;
 }
+.hearthstone a:hover {
+  color: #f7cf44;
+}
 .hearthstone a.btn-default {
   color: #333;
 }

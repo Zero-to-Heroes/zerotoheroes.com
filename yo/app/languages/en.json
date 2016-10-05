@@ -309,7 +309,8 @@
 				},
 				"type": {
 					"newComment": "New comment",
-					"newReview": "New review"
+					"newReview": "New review",
+					"aggregatedReview": "New comments on review"
 				},
 				"from": "from",
 				"sent": "sent",
@@ -317,7 +318,9 @@
 				"markUnreadButton": "mark unread",
 				"markReadButton": "mark read",
 				"markAllReadButton": "mark all read",
-				"restrictedAccess": "Sorry, access to this info is restricted to the profile owner"
+				"restrictedAccess": "Sorry, access to this info is restricted to the profile owner",
+				"useExplodedView": "use chronological view",
+				"useCompactView": "use compact view"
 			},
 			"feed": {
 				"newReview": "you posted a review titled \"{{title}}\"",

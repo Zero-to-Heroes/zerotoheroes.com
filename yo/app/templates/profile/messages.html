@@ -1,4 +1,5 @@
 <ul class="message-listing">
+	
 	<li ng-repeat="message in ::source" class="message" ng-class=":readMessage:{ 'unread': !message.readDate }">
 		<div>
 			<span class="notification-type">{{::translations[message.data.textKey]}}</span>

@@ -1,3 +1,4 @@
+
 <view-title>{{::'User - ' + user}} inbox</view-title>
 
 <div class="background-white profile-page messages">
@@ -8,11 +9,21 @@
 			<li><a ng-class=":changeMenu:{ 'active': subMenu == 'unread'}" ng-click="goTo('unread')">{{::translations.unread}}</a></li>
 		</ul>
 
-		<div class="mark-read-button">
-			<a ng-click="markAllRead()" ng-if=":changeMenu:subMenu == 'unread' && messages.length > 0">{{::translations.markAllReadButton}}</a>
+		<div class="mark-read-button" ng-if=":changeMenu:subMenu == 'unread'">
+			<a ng-click="toggleCompactView()" class="switch-view" ng-if=":changeMenu:!compactView"><span>{{::translations.useCompactView}}</span></a>
+			<a ng-click="toggleCompactView()" class="switch-view" ng-if=":changeMenu:compactView"><span>{{::translations.useExplodedView}}</span></a>
+			<a ng-click="markAllRead()" ng-if=":changeMenu:messages.length > 0">{{::translations.markAllReadButton}}</a>
 		</div>
 	</div>
 
 
-	<messages source="::messages"></messages>
+	<!-- The standard, exploded view -->
+	<div ng-if=":changeMenu:messages && (!compactView || subMenu == 'all')">
+		<messages source="::messages"></messages>
+	</div>
+
+	<!-- The new compact view - only for new notifications for now -->
+	<div ng-if=":changeMenu:messages && compactView && subMenu != 'all'">
+		<messages-compact source="::messages"></messages-compact>
+	</div>
 </div>

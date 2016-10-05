@@ -6,8 +6,13 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 		$scope.translations = {
 			all: $translate.instant('global.profile.messages.menu.all'),
 			unread: $translate.instant('global.profile.messages.menu.unread'),
-			markAllReadButton: $translate.instant('global.profile.messages.markAllReadButton')
+			markAllReadButton: $translate.instant('global.profile.messages.markAllReadButton'),
+
+			useCompactView: $translate.instant('global.profile.messages.useCompactView'),
+			useExplodedView: $translate.instant('global.profile.messages.useExplodedView')
 		}
+
+		$scope.compactView = true	
 		
 		$scope.subMenu = $routeParams['subMenu']
 
@@ -61,24 +66,6 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 			// $log.debug('displaying messages', $scope.messages)
 		}
 
-		// $scope.getTargetUrl = function(message) {
-		// 	// $log.debug('build')
-		// 	var baseUrl = message.data.reviewUrl
-		// 	// $log.error('dev!!!!!!!!!!!')
-		// 	// baseUrl = baseUrl.replace('www.zerotoheroes.com', 'localhost:9000')
-		// 	var notifs = message.notifs
-		// 	if (notifs && notifs.length > 0) {
-		// 		var urlExpansion = '?highlighted='
-		// 		notifs.forEach(function(notif) {
-		// 			urlExpansion += notif + ';'
-		// 		})
-		// 		urlExpansion = urlExpansion.slice(0, -1)
-		// 		baseUrl += urlExpansion
-		// 	}
-		// 	// $log.debug('built review url', baseUrl)
-		// 	return baseUrl
-		// }
-
 		$scope.markAllRead = function() {
 			Api.AllNotificationsRead.save(
 				function(data) {
@@ -91,31 +78,10 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 			)
 		}
 
-
-
-		// $scope.markFullRead = function(message) {
-		// 	$log.debug('marking all related messages as read', message, message.notifs)
-
-		// 	var messageIds = []
-		// 	message.notifs.forEach(function(notif) {
-		// 		if (!notif.readDate)
-		// 			messageIds.push(notif.split('_')[1])
-		// 	})
-
-		// 	$log.debug('marking as read', messageIds)
-
-		// 	Api.NotificationsRead.save([messageIds], 
-		// 		function(data) {
-		// 			$log.debug('marked read', data)
-		// 			$scope.messages.forEach(function(message) {
-		// 				if (messageIds.indexOf(message.id) != -1) {
-		// 					message.readDate = new Date()
-		// 				}
-		// 			})
-		// 			$scope.$broadcast('$$rebind::' + 'readMessage')
-		// 		}
-		// 	)
-		// }
+		$scope.toggleCompactView = function() {
+			$scope.compactView = !$scope.compactView
+			$scope.$broadcast('$$rebind::' + 'changeMenu')
+		}
 
 		$scope.goTo = function(subMenu) {
 			var path = '/u/' + $routeParams['userName'] + '/' + $routeParams['sport'] + '/inbox/' + subMenu

@@ -3,13 +3,13 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('messages', ['$log', 'Api', '$translate', 
+app.directive('messagesCompact', ['$log', 'Api', '$translate', 
 	function($log, Api, $translate) {
 		 
 		return {
 			restrict: 'E',
 			replace: false,
-			templateUrl: 'templates/profile/messages.html',
+			templateUrl: 'templates/profile/messagesCompact.html',
 			scope: {
 				source: '<'
 			},
@@ -20,16 +20,50 @@ app.directive('messages', ['$log', 'Api', '$translate',
 				$scope.translations = {
 					newComment: $translate.instant('global.profile.messages.type.newComment'),
 					newReview: $translate.instant('global.profile.messages.type.newReview'),
+					aggregatedReview: $translate.instant('global.profile.messages.type.aggregatedReview'),
+
 					from: $translate.instant('global.profile.messages.from'),
 					sent: $translate.instant('global.profile.messages.sent'),
 					markUnreadButton: $translate.instant('global.profile.messages.markUnreadButton'),
 					markReadButton: $translate.instant('global.profile.messages.markReadButton'),
+					markAllReadButton: $translate.instant('global.profile.messages.markAllReadButton'),
 					empty: $translate.instant('global.profile.messages.empty')
 				}	
 
-				$scope.isOwnProfile = function() {
-					return User.isLoggedIn() && $routeParams.userName == User.getName()
+				$scope.compactMessages = function() {
+					var compact = $scope.compact = {}
+
+					// First build the new reviews (it can happen to have a new review + new comments)
+					$scope.source.forEach(function(message) {
+						if (message.data.textKey == 'newReview') {
+							$log.debug('considering', message)
+							compact[message.data.reviewId] = message
+							message.comments = []
+						}
+					})
+
+					// Build one entry for each type - for now, only review, will be PMs later on?
+					$scope.source.forEach(function(message) {
+						if (message.data.textKey == 'newComment') {
+							$log.debug('considering', message)
+							if (!compact[message.data.reviewId]) {
+								compact[message.data.reviewId] = {
+									title: message.title,
+									targetUrl: message.data.reviewUrl,
+									data: {
+										textKey: 'aggregatedReview'
+									},
+									comments: []
+								}
+							}
+							compact[message.data.reviewId].comments.push(message)
+						}
+					})
+
+					$log.debug('compact messages', compact)
 				}
+				$scope.compactMessages()
+
 				
 				$scope.formatDate = function(date) {
 					return moment(date).fromNow();
@@ -63,6 +97,21 @@ app.directive('messages', ['$log', 'Api', '$translate',
 							}
 						)
 					}
+				}
+
+				$scope.markAllRead = function(message) {
+					var toRead = _.map(message.comments, 'id')
+					$log.debug("marking read", toRead, message.comments, message)
+
+					Api.NotificationsRead.save(toRead, 
+						function(data) {
+							$log.debug('marked all read')
+							message.comments.forEach(function(comment) {
+								comment.readDate = new Date()
+							})
+							$scope.$broadcast('$$rebind::' + 'readMessage')
+						}
+					)
 				}
 			}
 		}

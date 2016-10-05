@@ -1,5 +1,38 @@
 .profile-page.messages {
 
-    .mark-read-button {
+    .switch-view {
+    	&:after {
+    		content: "-";
+    		margin-right: 5px;
+			margin-left: 5px;
+    	}
     }
+
+    .message-listing {
+	    padding-left: 0;
+	}
+
+	.message {
+		.mark-read-button {
+
+			color: rgba(255, 255, 255, 0.7);
+
+			&:before {
+				content: "-";
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.review-comments {
+		list-style: none;
+
+		li {
+			margin-bottom: 3px;
+
+			.message-body {
+    			border-radius: 10px;
+    		}
+		}
+	}
 }

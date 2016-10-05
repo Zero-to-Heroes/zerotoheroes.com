@@ -224,6 +224,30 @@ body {
 .profile-page .profile-info .cal-heatmap-container .q0 {
   fill: #655a44;
 }
+.profile-page.messages .switch-view:after {
+  content: "-";
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.profile-page.messages .message-listing {
+  padding-left: 0;
+}
+.profile-page.messages .message .mark-read-button {
+  color: rgba(255, 255, 255, 0.7);
+}
+.profile-page.messages .message .mark-read-button:before {
+  content: "-";
+  margin-right: 5px;
+}
+.profile-page.messages .review-comments {
+  list-style: none;
+}
+.profile-page.messages .review-comments li {
+  margin-bottom: 3px;
+}
+.profile-page.messages .review-comments li .message-body {
+  border-radius: 10px;
+}
 .video-comment.multi-comment #comments-scrollable {
   transition: margin-top 0.2s;
 }

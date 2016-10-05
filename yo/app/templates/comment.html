@@ -1,4 +1,4 @@
-<div class="container-fluid comment-block {{:commentRefresh:highlightedClass}}" ng-click="markRead()" data-comment-id="{{::comment.id}}">
+<div class="container-fluid comment-block {{:commentRefresh:highlightedClass}}" ng-click="markRead($event)" data-comment-id="{{::comment.id}}">
 
 	<div class="reputation">
 		<span id="upvote{{::commentIndex}}" class="glyphicon glyphicon-chevron-up pointer " ng-class=":commentRefresh:{'upvote': comment.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn() }" ng-click="upvoteComment(comment)" title="{{::translations.upvote}}" ></span>
@@ -49,6 +49,8 @@
 
 		<div class="comment-footer">
 			<a ng-click="startReply()" class="link-minor" ng-if=":commentRefresh:!reply.replying">{{::translations.replyButton}}</a>
+			<a ng-click="markRead($event)" class="link-minor" ng-if=":commentRefresh:!reply.replying && highlightedClass">{{::translations.markReadButton}}</a>
+			<a ng-click="markUnread()" class="link-minor" ng-if=":commentRefresh:!reply.replying && !highlightedClass && comment.historicalLinkedNotifs">{{::translations.markUnreadButton}}</a>
 		</div>
 
 	</div>

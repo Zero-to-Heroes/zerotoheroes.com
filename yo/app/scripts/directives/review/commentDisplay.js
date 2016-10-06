@@ -16,9 +16,14 @@ app.directive('commentDisplay', ['$log', 'User', 'Api', '$parse', '$rootScope', 
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
-				$scope.review.commentSortCriteria = 'byturn'
-
-				$scope.review.dampenOutOfTurnComments = true
+				if (!$scope.review.useV2comments) {
+					$scope.review.commentSortCriteria = 'best'
+				}
+				else {
+					$scope.review.commentSortCriteria = 'byturn'
+					$scope.review.dampenOutOfTurnComments = true
+				}
+				// $log.debug('sort', $scope.review)
 			}
 		}
 	}

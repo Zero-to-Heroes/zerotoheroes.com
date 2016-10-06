@@ -73,8 +73,8 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 				}
 
 				$scope.markRead = function(message, $event) {
-					$event.stopPropagation()
 					if (!message.readDate) {
+						$event.stopPropagation()
 						$log.debug('marking as read', message)
 						Api.NotificationsRead.save([message.id], 
 							function(data) {

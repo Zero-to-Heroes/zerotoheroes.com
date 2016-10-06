@@ -6,7 +6,7 @@
 			<a class="notification-title" href="{{::message.targetUrl}}" target="_blank">{{::message.title}}</a>
 			<a ng-click="markAllRead(message)" class="mark-read-button" ng-if="::message.comments">{{::translations.markAllReadButton}}</a>
 		</div>
-		<div class="message-body" ng-click="markRead(message, $event)">
+		<div class="message-body">
 			<div ng-if="::message.markedText">
 				<span class="message-from-label">{{::translations.from}}</span>
 				<span class="message-from">{{message.from}}</span>
@@ -15,7 +15,7 @@
 			</div>
 			<ul ng-if="::message.comments" class="review-comments">
 				<li ng-repeat="comment in ::message.comments" ng-class=":readMessage:{ 'unread': !comment.readDate }">
-					<div class="message-body">
+					<div class="message-body" ng-click="markRead(comment, $event)">
 						<div>
 							<span class="message-from-label">{{::translations.from}}</span>
 							<span class="message-from">{{comment.from}}</span>

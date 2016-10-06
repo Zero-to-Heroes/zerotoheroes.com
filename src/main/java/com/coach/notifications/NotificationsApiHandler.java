@@ -78,7 +78,7 @@ public class NotificationsApiHandler {
 	@RequestMapping(value = "/read", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<Notification> markRead(@RequestBody List<String> messageIds) {
 
-		// log.debug("Marking as read " + messageIds);
+		log.debug("Marking as read " + messageIds);
 		User user = userService.getLoggedInUser();
 		if (user == null) { return new ResponseEntity<Notification>((Notification) null, HttpStatus.FORBIDDEN); }
 

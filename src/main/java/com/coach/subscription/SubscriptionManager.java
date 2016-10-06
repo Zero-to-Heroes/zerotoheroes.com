@@ -1,5 +1,7 @@
 package com.coach.subscription;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +33,8 @@ public class SubscriptionManager {
 	@Autowired
 	SavedSearchSubscriptionService subService;
 
+	// TODO make all this async
+
 	public void notifyNewComment(Comment comment, Review review) {
 		Iterable<User> subscribers = userRepo.findAll(review.getSubscribers());
 		for (User subscriber : subscribers) {
@@ -38,6 +42,18 @@ public class SubscriptionManager {
 				// log.debug("Notifying " + subscriber.getUsername() + " of a
 				// new comment");
 				userNotifier.notifyNewComment(subscriber, comment, review);
+			}
+		}
+	}
+
+	public void notifyNewMultiComment(Review review, Collection<Comment> comments) {
+		Iterable<User> subscribers = userRepo.findAll(review.getSubscribers());
+		String authorId = comments.iterator().next().getAuthorId();
+		for (User subscriber : subscribers) {
+			if (!subscriber.getId().equals(authorId)) {
+				// log.debug("Notifying " + subscriber.getUsername() + " of a
+				// new comment");
+				userNotifier.notifyNewMultiComment(subscriber, review, comments);
 			}
 		}
 	}

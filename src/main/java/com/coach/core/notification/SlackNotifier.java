@@ -1,6 +1,7 @@
 package com.coach.core.notification;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.concurrent.Callable;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -57,6 +58,25 @@ public class SlackNotifier {
 				SlackMessage message = new SlackMessage();
 				message.addAttachments(attach);
 				message.setText("New comment by " + reply.getAuthor() + " at " + review.getUrl());
+
+				api.call(message);
+				return null;
+			}
+		});
+	}
+
+	public void notifyNewMultiComment(Review review, Collection<Comment> comments) {
+		if (!"prod".equalsIgnoreCase(environment)) { return; }
+
+		executorProvider.getExecutor().submit(new Callable<String>() {
+			@Override
+			public String call() throws IOException {
+				SlackApi api = new SlackApi(
+						"https://hooks.slack.com/services/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");
+
+				SlackMessage message = new SlackMessage();
+				message.setText(
+						"New mutli comment by " + comments.iterator().next().getAuthor() + " at " + review.getUrl());
 
 				api.call(message);
 				return null;

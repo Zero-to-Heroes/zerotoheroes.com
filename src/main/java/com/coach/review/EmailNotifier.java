@@ -1,5 +1,7 @@
 package com.coach.review;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -52,6 +54,41 @@ public class EmailNotifier {
 					+ "Cliquez <a href=\""
 					+ review.getUrl() + "#" + comment.getId()
 					+ "\">ici</a> pour voir le commentaire.</p>"
+					+ "<p><small>Et si vous ne voulez plus recevoir de notifications sur cette vidéo, cliquez simplement sur "
+					+ "\"désinscription\" depuis la page ci-dessus</small></p>";
+			subject = "Nouveau commentaire sur la revue " + review.getTitle() + " sur Zero to Heroes";
+		}
+		//@formatter:on
+
+		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient).subject(subject)
+				.content(body).type("text/html; charset=UTF-8").build();
+		emailSender.send(message);
+	}
+
+	public void notifyNewMultiComment(User subscriber, Collection<Comment> comments, Review review) {
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.debug("Sending email to " + subscriber.getUsername());
+			return;
+		}
+
+		String recipient = subscriber.getEmail();
+		String author = comments.iterator().next().getAuthor();
+
+		//@formatter:off
+		String body = "Hey there!<br/>"
+				+ "<p>" + author + " has just added multiple comments on review " + review.getTitle() + ". "
+						+ "Click <a href=\"" + review.getUrl() + "\">here</a> to see what they said.</p>"
+			    + "<p><small>And if you wish to stop receiving notifications on this review, just hit \"unsubsribe\" from the url above</small></p>";
+		String subject = "New multiple comments on review " + review.getTitle() + " at ZeroToHeroes";
+
+		if ("fr".equalsIgnoreCase(subscriber.getPreferredLanguage())) {
+			body = "Bonjour!<br/>"
+					+ "<p>"
+					+ author
+					+ " vient d'ajouter un commentaire multiple sur la vidéo " + review.getTitle() + ". "
+					+ "Cliquez <a href=\""
+					+ review.getUrl()
+					+ "\">ici</a> pour voir les commentaires.</p>"
 					+ "<p><small>Et si vous ne voulez plus recevoir de notifications sur cette vidéo, cliquez simplement sur "
 					+ "\"désinscription\" depuis la page ci-dessus</small></p>";
 			subject = "Nouveau commentaire sur la revue " + review.getTitle() + " sur Zero to Heroes";

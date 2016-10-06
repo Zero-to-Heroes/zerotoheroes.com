@@ -1,5 +1,7 @@
 package com.coach.notifications;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -56,6 +58,34 @@ public class UserNotifier {
 
 		if (profile.getPreferences().isEmailNotifications()) {
 			emailNotifier.notifyNewComment(subscriber, comment, review);
+		}
+	}
+
+	public void notifyNewMultiComment(User subscriber, Review review, Collection<Comment> comments) {
+		Profile profile = profileService.getProfile(subscriber.getId());
+
+		if (profile.getPreferences().isSiteNotifications()) {
+			for (Comment comment : comments) {
+				Notification notification = new Notification();
+				// notification.setCreationDate(new Date());
+				notification.setSport(review.getSport().getKey().toLowerCase());
+				notification.setTitle(review.getTitle());
+				notification.setTextDetail(comment.getText());
+				notification.setFrom(comment.getAuthor());
+				notification.setUserId(subscriber.getId());
+
+				NotificationCommentData data = new NotificationCommentData();
+				data.setLinkId(comment.getId());
+				data.setReviewId(review.getId());
+				data.setReviewUrl(review.getUrl());
+				notification.setData(data);
+
+				addNotification(profile, notification);
+			}
+		}
+
+		if (profile.getPreferences().isEmailNotifications()) {
+			emailNotifier.notifyNewMultiComment(subscriber, comments, review);
 		}
 	}
 

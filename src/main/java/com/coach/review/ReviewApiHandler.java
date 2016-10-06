@@ -479,6 +479,7 @@ public class ReviewApiHandler {
 		Review review = reviewRepo.findById(id);
 		User user = userRepo.findByUsername(currentUser);
 
+		List<Comment> orderedComments = new ArrayList<>();
 		for (String turn : multiComment.keySet()) {
 			Comment comment = multiComment.get(turn);
 
@@ -504,9 +505,12 @@ public class ReviewApiHandler {
 				if (user != null) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
 			}
 
-			addCommentToReview(review, comment, user);
+			orderedComments.add(comment);
+			addCommentToReview(review, comment, user, currentUser);
 		}
 
+		subscriptionManager.notifyNewMultiComment(review, orderedComments);
+		slackNotifier.notifyNewMultiComment(review, orderedComments);
 		review.sortComments();
 
 		reviewService.updateAsync(review);
@@ -517,8 +521,12 @@ public class ReviewApiHandler {
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 
-	private void addCommentToReview(Review review, Comment comment, User user) {
+	private void addCommentToReview(Review review, Comment comment, User user, String currentUser) {
 		if (StringUtils.isNullOrEmpty(comment.getText())) { return; }
+		if (user == null) {
+			user = new User();
+			user.setUsername(currentUser);
+		}
 
 		addAuthorInformation(review.getSport(), comment, user.getUsername());
 
@@ -538,10 +546,8 @@ public class ReviewApiHandler {
 		// See if there are external references to videos in the comment
 		commentParser.parseComment(review, comment);
 
-		subscriptionManager.notifyNewComment(comment, review);
 		subscriptionManager.subscribe(review, comment.getAuthorId());
 		reviewService.triggerCommentCreationJobs(review, comment);
-		slackNotifier.notifyNewComment(review, comment);
 	}
 
 	@RequestMapping(value = "/{reviewId}/information", method = RequestMethod.POST)

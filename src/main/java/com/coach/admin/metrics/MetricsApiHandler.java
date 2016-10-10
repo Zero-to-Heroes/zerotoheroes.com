@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -74,7 +75,7 @@ public class MetricsApiHandler {
 		int totalVideoViews = 0;
 		log.debug("Going through all reviews " + reviews.size());
 		for (Review review : reviews) {
-			if (!review.isPublished()) {
+			if (!review.isPublished() || StringUtils.isEmpty(review.getKey())) {
 				log.debug("continuing on " + review);
 				continue;
 			}
@@ -82,7 +83,7 @@ public class MetricsApiHandler {
 			Date creationDate = review.getCreationDate();
 			if (creationDate == null || review.getAuthor() == null
 					|| excludedUserNames.indexOf(review.getAuthor()) != -1) {
-				log.debug("continuing on " + review);
+				// log.debug("continuing on " + review);
 				continue;
 			}
 

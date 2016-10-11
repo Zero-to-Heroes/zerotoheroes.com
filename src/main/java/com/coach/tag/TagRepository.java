@@ -154,6 +154,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Divine Shield Paladin"));
 		hearthstone.add(new Tag("Palamurloc"));
 		hearthstone.add(new Tag("Midrange Paladin"));
+		hearthstone.add(new Tag("Dragon Paladin"));
 
 		hearthstone.add(new Tag("Mech Mage"));
 		hearthstone.add(new Tag("Tempo Mage"));

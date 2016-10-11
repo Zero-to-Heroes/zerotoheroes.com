@@ -11,7 +11,7 @@ var parseDecks = {
 	icyVeinsDecksRegex: /\[?(http:\/\/www\.icy-veins\.com\/hearthstone\/)([\da-zA-Z\-]+)\]?/gm,
 	manaCrystalsDecksRegex: /\[?(https:\/\/manacrystals\.com\/deck_guides\/)([\da-zA-Z\-]+)\]?/gm,
 	// https://regex101.com/r/kW4oW3/1
-	hearthstatsDecksRegex: /\[?(http(?:s)?:\/\/(?:hss|hearthstats)\.(?:io|net)\/d(?:ecks)?\/)([\d\w\-]+)(\??\S*)\]?/gm,
+	hearthstatsDecksRegex: /\[?(http(?:s)?:\/\/(?:hss|hearthstats)\.(?:io|net)\/d(?:ecks)?\/)([\d\w\-]+)(\?[\d\w\-\=\&\.]*)?\]?/gm,
 	// hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
 	hearthheadDecksRegex: /\[?(http:\/\/www\.hearthhead\.com\/deck=)([\d\w\-]+)\/?([\d\w\-]+)?\]?/gm,
 	

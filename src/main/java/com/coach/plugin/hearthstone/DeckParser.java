@@ -67,7 +67,7 @@ public class DeckParser implements Plugin {
 	private static final String MANACRYSTALS_DECK_HOST_URL = "https://manacrystals.com/deck_guides/";
 
 	// https://regex101.com/r/kW4oW3/1
-	private static final String HEARTHSTATS_DECK_ID_REGEX = "\\[?(http(?:s)?:\\/\\/(?:hss|hearthstats)\\.(?:io|net)\\/d(?:ecks)?\\/)([\\d\\w\\-]+)(\\??\\S*)\\]?";
+	private static final String HEARTHSTATS_DECK_ID_REGEX = "\\[?(?:http(?:s)?:\\/\\/(?:hss|hearthstats)\\.(?:io|net)\\/d(?:ecks)?\\/)([\\d\\w\\-]+)(\\?[\\d\\w\\-\\=\\&\\.]*)?\\]?";
 	private static final String HEARTHSTATS_DECK_HOST_URL = "http://hearthstats.net/decks/";
 
 	private static final String HEARTHHEAD_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthhead\\.com\\/deck=)([\\d\\w\\-]+)\\/?([\\d\\w\\-]+)?\\]?";
@@ -163,7 +163,7 @@ public class DeckParser implements Plugin {
 		Pattern pattern = Pattern.compile(HEARTHSTATS_DECK_ID_REGEX, Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(initialText);
 		while (matcher.find()) {
-			String deckId = matcher.group(2) + matcher.group(3);
+			String deckId = matcher.group(1) + matcher.group(2);
 
 			// Don't override existing decks (performance)
 			if (pluginData.get(deckId) != null) {

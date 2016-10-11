@@ -16,7 +16,13 @@ app.directive('commentDisplayLegacy', ['$log', 'User', 'Api', '$parse', '$rootSc
 			},
 			controller: function($scope) {
 				
-
+				$scope.$watch('review.comments', function(newVal, oldVal) {
+					$log.debug('updated review comments', newVal, oldVal)
+					var shouldUpdate = !oldVal
+					shouldUpdate |= (newVal && newVal.length != oldVal.length)
+					if (shouldUpdate)
+						$scope.$broadcast('$$rebind::' + 'turnRefresh')
+				})
 			}
 		}
 	}

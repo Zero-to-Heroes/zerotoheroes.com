@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.ReplayPlugin;
@@ -56,6 +57,9 @@ public class HSArenaDraft implements ReplayPlugin {
 			log.debug("Converting arena tracker file");
 			String atFile = s3utils.readFromS3(review.getTemporaryKey());
 			replayJson = convertToJson(atFile);
+		}
+		else if (!StringUtils.isEmpty(review.getTemporaryReplay())) {
+			replayJson = review.getTemporaryReplay();
 		}
 		// Default
 		else {

@@ -37,6 +37,7 @@ import com.coach.tag.Tag;
 import com.coach.user.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
+import net.lingala.zip4j.exception.ZipException;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/hearthstone")
@@ -111,7 +112,7 @@ public class ReviewPublicApi {
 		FileUploadResponse response = null;
 
 		// Are there several games in the single file?
-		byte[] logInfo = getLogInfo(data);
+		byte[] logInfo = getGzipLogInfo(data);
 		String logToAppend = new String(logInfo, "UTF-8");
 		// log.debug(logToAppend);
 		log.debug("appending " + logToAppend.split("\n").length + " lines");
@@ -152,8 +153,102 @@ public class ReviewPublicApi {
 
 	// End progressive
 
-	@RequestMapping(value = "/upload/gzip", method = RequestMethod.POST)
+	@RequestMapping(value = "/upload/draft", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> uploadDraft(@RequestParam("data") MultipartFile data)
+			throws Exception {
+		FileUploadResponse response = null;
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		log.debug("Starting draft upload for " + currentUser);
+		User user = userRepo.findByUsername(currentUser);
+
+		// Are there several games in the single file?
+		byte[] logInfo = data.getBytes();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
+
+		StringBuilder draft = new StringBuilder();
+		String line;
+		while ((line = reader.readLine()) != null) {
+			draft.append(line);
+		}
+		log.debug("\tbuilt draft");
+
+		// Process file
+		Review review = new Review();
+		review.setMediaType("arena-draft");
+		review.setReviewType("arena-draft");
+		review.setFileType("json");
+		review.setSport(Review.Sport.load("hearthstone"));
+		review.setTemporaryReplay(draft.toString());
+		review.setReplay("true");
+		if (user != null) {
+			review.setAuthorId(user.getId());
+			review.setAuthor(user.getUsername());
+		}
+		review.setVisibility("restricted");
+		review.setPublished(true);
+
+		reviewApi.createReview(review);
+		reviewService.triggerReviewCreationJobs(review);
+		log.debug("Created review " + review);
+
+		List<String> ids = new ArrayList<>();
+		ids.add(review.getId());
+		response = new FileUploadResponse(ids, null);
+		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/upload/review", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> uploadFile(@RequestParam("data") MultipartFile data)
+			throws Exception {
+		FileUploadResponse response = null;
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
+				.getAuthorities();
+		User user = userRepo.findByUsername(currentUser);
+
+		List<Review> reviews = new ArrayList<>();
+
+		// Are there several games in the single file?
+		byte[] logInfo = data.getBytes();
+		return processReviewLogs(user, reviews, logInfo);
+	}
+
+	private ResponseEntity<FileUploadResponse> processReviewLogs(User user, List<Review> reviews, byte[] logInfo)
+			throws IOException, ZipException {
+		FileUploadResponse response;
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
+		List<String> games = hsReplay.extractGames(null, "text/plain", reader);
+		log.debug("\tbuilt " + games.size() + " games");
+
+		// Process file
+		List<String> ids = new ArrayList<>();
+		for (String game : games) {
+			Review review = new Review();
+			review.setFileType("text/plain");
+			review.setSport(Review.Sport.load("hearthstone"));
+			review.setTemporaryReplay(game);
+			review.setReplay("true");
+			if (user != null) {
+				review.setAuthorId(user.getId());
+				review.setAuthor(user.getUsername());
+			}
+			review.setVisibility("restricted");
+			// review.setTemporaryKey(tempKey);
+
+			reviewApi.createReview(review);
+			reviews.add(review);
+			ids.add(review.getId());
+			log.debug("Created review " + review);
+		}
+
+		response = new FileUploadResponse(ids, null);
+		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/upload/review/gzip", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> uploadGzipFile(@RequestParam("data") MultipartFile data)
 			throws Exception {
 		FileUploadResponse response = null;
 
@@ -186,34 +281,8 @@ public class ReviewPublicApi {
 		List<Review> reviews = new ArrayList<>();
 
 		// Are there several games in the single file?
-		byte[] logInfo = getLogInfo(data);
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
-		List<String> games = hsReplay.extractGames(null, "text/plain", reader);
-		log.debug("\tbuilt " + games.size() + " games");
-
-		// Process file
-		List<String> ids = new ArrayList<>();
-		for (String game : games) {
-			Review review = new Review();
-			review.setFileType("text/plain");
-			review.setSport(Review.Sport.load("hearthstone"));
-			review.setTemporaryReplay(game);
-			review.setReplay("true");
-			if (user != null) {
-				review.setAuthorId(user.getId());
-				review.setAuthor(user.getUsername());
-			}
-			review.setVisibility("restricted");
-			// review.setTemporaryKey(tempKey);
-
-			reviewApi.createReview(review);
-			reviews.add(review);
-			ids.add(review.getId());
-			log.debug("Created review " + review);
-		}
-
-		response = new FileUploadResponse(ids, null);
-		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
+		byte[] logInfo = getGzipLogInfo(data);
+		return processReviewLogs(user, reviews, logInfo);
 	}
 
 	@RequestMapping(value = "/review/publish/{reviewId}", method = RequestMethod.POST)
@@ -243,7 +312,7 @@ public class ReviewPublicApi {
 		return reviewApi.publish(id, review);
 	}
 
-	private byte[] getLogInfo(MultipartFile data) throws Exception {
+	private byte[] getGzipLogInfo(MultipartFile data) throws Exception {
 		byte[] bytes = data.getBytes();
 
 		ByteArrayInputStream bytein = new ByteArrayInputStream(bytes);

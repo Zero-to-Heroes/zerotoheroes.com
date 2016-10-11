@@ -250,9 +250,9 @@
 				"from": "de",
 				"sent": "il y a",
 				"empty": "Vous n'avez pas de message ici",
-				"markReadButton": "marquer comme lu",
-				"markAllReadButton": "marquer tous comme lus",
-				"markUnreadButton": "marquer comme non lu",
+				"markReadButton": "Marquer comme lu",
+				"markAllReadButton": "Marquer tous comme lus",
+				"markUnreadButton": "Marquer comme non lu",
 				"restrictedAccess": "Désolé, l'accès à cette information est réservé au propriétaire du profil",
 				"useExplodedView": "passer en vue chronologique",
 				"useCompactView": "passer en vue compacte"

@@ -248,6 +248,16 @@ body {
 .profile-page.messages .review-comments li .message-body {
   border-radius: 10px;
 }
+.comment-block.highlighted > .comment-main > .comment-body {
+  background-color: #61503f;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+.comment-block .comment-footer .link-minor {
+  margin-right: 10px;
+}
 .video-comment.multi-comment #comments-scrollable {
   transition: margin-top 0.2s;
 }
@@ -286,13 +296,6 @@ body {
 }
 .video-comment.multi-comment .comment-footer {
   margin-bottom: 0;
-}
-.video-comment.multi-comment .comment-block.highlighted > .comment-main > .comment-body {
-  background-color: #61503f;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 0px;
 }
 .video-comment.multi-comment .dampen .inactive .turn-label,
 .video-comment.multi-comment .dampen .inactive .reputation,

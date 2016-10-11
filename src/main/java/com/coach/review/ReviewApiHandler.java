@@ -10,7 +10,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -59,6 +58,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	ReviewService reviewService;
+
+	@Autowired
+	ReviewDao reviewDao;
 
 	@Autowired
 	UserRepository userRepo;
@@ -146,70 +148,13 @@ public class ReviewApiHandler {
 
 		// Start pageing at 1 like normal people, not at 0 like nerds
 		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, sort);
-		String sportCriteria = sportObj.getKey();
-
 		String author = criteria.getOwnVideos() != null && criteria.getOwnVideos() && user != null ? user.getId()
 				: null;
 
-		Page<Review> page = null;
 		long queryStart = System.currentTimeMillis();
-		// log.debug("tentative search with criteria " + criteria);
-		String text = criteria.getText();
-		// Simple search to the latest reviews - remove the burden from mongo to
-		// speed up the queries by removing parameters
-		if (criteria.isLatest()) {
-			// log.debug("getting latest reviews");
-			page = reviewRepo.listLatestReviews(sportCriteria, pageRequest);
-		}
-		else if (criteria.isMyLatest()) {
-			// log.debug("getting my latest reviews");
-			if (StringUtils.isNullOrEmpty(criteria.getVisibility())) {
-				page = reviewRepo.listAllAuthorReviews(sportCriteria, user.getId(), pageRequest);
-			}
-			else {
-				page = reviewRepo.listAuthorReviews(sportCriteria, user.getId(), criteria.getVisibility(), pageRequest);
-			}
-		}
-		else if (criteria.isAuthorLatest()) {
-			// log.debug("getting author's " + criteria.getAuthorId() + " latest
-			// reviews");
-			page = reviewRepo.listAllAuthorReviews(sportCriteria, criteria.getAuthorId(), pageRequest);
-		}
-		else if (criteria.isContributorLatest()) {
-			// log.debug("getting author's " + criteria.getAuthorId() + " latest
-			// reviews");
-			page = reviewRepo.listAllContributorReviews(sportCriteria, criteria.getContributorId(), pageRequest);
-		}
-		else if (text == null || text.isEmpty()) {
-			// page = reviewRepo.listReviews(sportCriteria, author,
-			// criteria.getWantedTags(),
-			// criteria.getUnwantedTags(), pageRequest);
-			log.debug("searching with criteria " + criteria);
-			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
-					criteria.getOnlyHelpful(), criteria.getNoHelpful(),
-					criteria.getParticipantDetails().getPlayerCategory(),
-					criteria.getParticipantDetails().getOpponentCategory(),
-					criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
-					criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
-					criteria.getVisibility(), pageRequest);
-			log.debug("query returned");
-		}
-		else {
-			log.debug("searching with text criteria " + criteria);
-			page = reviewRepo.listReviews(sportCriteria, author, criteria.getWantedTags(), criteria.getUnwantedTags(),
-					criteria.getOnlyHelpful(), criteria.getNoHelpful(),
-					criteria.getParticipantDetails().getPlayerCategory(),
-					criteria.getParticipantDetails().getOpponentCategory(),
-					criteria.getParticipantDetails().getSkillLevel(), criteria.getReviewType(),
-					criteria.getMinComments(), criteria.getMaxComments(), criteria.getOwnVideos(),
-					criteria.getVisibility(), text, pageRequest);
-			log.debug("query returned");
-		}
+		List<Review> reviews = reviewDao.search(criteria, author, pageRequest);
 
-		List<Review> reviews = page.getContent();
-		// log.debug("all reviews " + reviews);
 		ListReviewResponse response = new ListReviewResponse(reviews);
-		response.setTotalPages(page.getTotalPages());
 		response.setQueryDuration(System.currentTimeMillis() - queryStart);
 		String userId = user != null ? user.getId() : "";
 		// tweak info about reputation

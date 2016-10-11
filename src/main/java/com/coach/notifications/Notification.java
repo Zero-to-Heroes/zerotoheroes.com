@@ -34,6 +34,10 @@ public class Notification {
 	@Indexed
 	private String sport;
 
+	// Used to easily get the notifications we need to send grouped by email
+	@Indexed
+	private boolean bundled;
+
 	private String title, from, textDetail;
 
 	// Like saved search

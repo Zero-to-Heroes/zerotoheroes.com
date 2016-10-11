@@ -25,4 +25,6 @@ public interface NotificationRepository extends MongoRepository<Notification, St
 	//@formatter:on
 	List<Notification> findByUserIdAndReviewIdAndReadDateNull(String userId, String reviewId);
 
+	List<Notification> findByBundledTrue();
+
 }

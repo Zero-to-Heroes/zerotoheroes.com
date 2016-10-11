@@ -1,5 +1,7 @@
 package com.coach.profile;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -34,6 +36,8 @@ public class Profile {
 	// private Rankings rankings = new Rankings();
 	private ProfileInfo profileInfo = new ProfileInfo();
 	private ActivitiesStats activitiesStats = new ActivitiesStats();
+
+	private Date lastEmailRecapDate;
 
 	public ProfileInfo getProfileInfo() {
 		if (profileInfo == null) {

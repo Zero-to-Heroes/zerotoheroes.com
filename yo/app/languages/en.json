@@ -349,6 +349,8 @@
 				"preferencesUpdated": "Your preferences have been updated",
 				"siteNotifications": "Receive notifications in site?",
 				"emailNotifications": "Receive notifications as emails?",
+				"emailRecapNotifs": "Receive them as periodic recaps rather than one by one?",
+				"emailRecapFrequency": "At which frequency (in hours)?",
 				"emailContact": "Allow me to send you an email from time to time (I promise not to spam)?",
 				"language": "What language do you want to see the site in?",
 				"save": "Update"

@@ -149,6 +149,18 @@ body {
   width: 20px;
   height: 20px;
 }
+.profile-page .preferences .included {
+  margin-top: 10px;
+}
+.profile-page .preferences .indented {
+  margin-left: 30px;
+}
+.profile-page .preferences .dropdown-menu {
+  max-width: 100px;
+}
+.profile-page .preferences .disabled {
+  filter: brightness(50%);
+}
 .profile-page .profile-info h2 {
   text-align: center;
   margin-bottom: 40px;

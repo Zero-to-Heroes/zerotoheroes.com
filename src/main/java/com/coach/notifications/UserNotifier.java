@@ -37,6 +37,7 @@ public class UserNotifier {
 		// if ("private".equalsIgnoreCase(review.getVisibility())) { return; }
 
 		Profile profile = profileService.getProfile(subscriber.getId());
+		boolean isBundled = profile.getPreferences().isUseEmailRecap();
 
 		if (profile.getPreferences().isSiteNotifications()) {
 			Notification notification = new Notification();
@@ -46,6 +47,7 @@ public class UserNotifier {
 			notification.setTextDetail(comment.getText());
 			notification.setFrom(comment.getAuthor());
 			notification.setUserId(subscriber.getId());
+			notification.setBundled(isBundled);
 
 			NotificationCommentData data = new NotificationCommentData();
 			data.setLinkId(comment.getId());
@@ -56,13 +58,14 @@ public class UserNotifier {
 			addNotification(profile, notification);
 		}
 
-		if (profile.getPreferences().isEmailNotifications()) {
+		if (profile.getPreferences().isEmailNotifications() && !isBundled) {
 			emailNotifier.notifyNewComment(subscriber, comment, review);
 		}
 	}
 
 	public void notifyNewMultiComment(User subscriber, Review review, Collection<Comment> comments) {
 		Profile profile = profileService.getProfile(subscriber.getId());
+		boolean isBundled = profile.getPreferences().isUseEmailRecap();
 
 		if (profile.getPreferences().isSiteNotifications()) {
 			for (Comment comment : comments) {
@@ -73,6 +76,7 @@ public class UserNotifier {
 				notification.setTextDetail(comment.getText());
 				notification.setFrom(comment.getAuthor());
 				notification.setUserId(subscriber.getId());
+				notification.setBundled(isBundled);
 
 				NotificationCommentData data = new NotificationCommentData();
 				data.setLinkId(comment.getId());
@@ -84,7 +88,7 @@ public class UserNotifier {
 			}
 		}
 
-		if (profile.getPreferences().isEmailNotifications()) {
+		if (profile.getPreferences().isEmailNotifications() && !isBundled) {
 			emailNotifier.notifyNewMultiComment(subscriber, comments, review);
 		}
 	}
@@ -94,6 +98,7 @@ public class UserNotifier {
 		if ("restricted".equalsIgnoreCase(review.getVisibility())) { return; }
 
 		Profile profile = profileService.getProfile(subscriber.getId());
+		boolean isBundled = profile.getPreferences().isUseEmailRecap();
 
 		if (profile.getPreferences().isSiteNotifications()) {
 			Notification notification = new Notification();
@@ -104,6 +109,7 @@ public class UserNotifier {
 			notification.setFrom(review.getAuthor());
 			notification.setAggregator(aggregator);
 			notification.setUserId(subscriber.getId());
+			notification.setBundled(isBundled);
 
 			NotificationReviewData data = new NotificationReviewData();
 			data.setReviewId(review.getId());
@@ -113,7 +119,7 @@ public class UserNotifier {
 			addNotification(profile, notification);
 		}
 
-		if (profile.getPreferences().isEmailNotifications()) {
+		if (profile.getPreferences().isEmailNotifications() && !isBundled) {
 			emailNotifier.notifyNewReview(subscriber, review);
 		}
 	}

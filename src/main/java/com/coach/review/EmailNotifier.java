@@ -1,6 +1,7 @@
 package com.coach.review;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,7 +9,10 @@ import org.springframework.stereotype.Component;
 
 import com.coach.core.notification.EmailMessage;
 import com.coach.core.notification.EmailSender;
+import com.coach.core.notification.ExecutorProvider;
 import com.coach.core.security.User;
+import com.coach.notifications.Notification;
+import com.coach.profile.Profile;
 import com.coach.user.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +26,9 @@ public class EmailNotifier {
 
 	@Autowired
 	UserRepository userRepo;
+
+	@Autowired
+	private ExecutorProvider executorProvider;
 
 	String environment;
 
@@ -131,6 +138,36 @@ public class EmailNotifier {
 		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient).subject(subject)
 				.content(body).type("text/html; charset=UTF-8").build();
 		emailSender.send(message);
+	}
+
+	public void sendNotificationRecap(List<Notification> notifs, Profile profile, User subscriber) {
+		if (!"prod".equalsIgnoreCase(environment)) {
+			log.debug("Sending email to " + subscriber.getUsername());
+			return;
+		}
+
+		Runnable runnable = new Runnable() {
+
+			@Override
+			public void run() {
+				String recipient = subscriber.getEmail();
+
+				//@formatter:off
+				String body = "Hey " + subscriber.getUsername() + "<br/>"
+						+ "<p>You got " + notifs.size() + " new notifications waiting for you <a href=\"http://www.zerotoheroes.com/u/" + subscriber.getUsername()
+						+ "/hearthstone/inbox/unread\">in your inbox</a> (we'll send the details of the notifications in a future version - "
+						+ "if that's something you really need soon, please <a href=\"https://github.com/Zero-to-Heroes/zerotoheroes.com/issues\">open an issue</a>)";
+				//@formatter:on
+				log.debug("Sending notification recap email " + body);
+
+				String subject = "New notifications at ZeroToHeroes";
+
+				EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
+						.subject(subject).content(body).type("text/html; charset=UTF-8").build();
+				emailSender.send(message);
+			}
+		};
+		executorProvider.getExecutor().submit(runnable);
 	}
 
 	public void sendResetPasswordLink(User user, String url) {

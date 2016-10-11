@@ -2,8 +2,8 @@
 
 var app = angular.module('app');
 
-app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Localization', '$rootScope', 
-	function($log, Api, $routeParams, User, Localization, $rootScope) {
+app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Localization', '$rootScope', '$translate', 
+	function($log, Api, $routeParams, User, Localization, $rootScope, $translate) {
 		 
 		return {
 			restrict: 'E',
@@ -14,6 +14,16 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 			link: function(scope, element, attributes) {
 			},
 			controller: function($scope) {
+				$scope.translations = {
+					siteNotifications: $translate.instant('global.profile.preferences.siteNotifications'),
+					emailNotifications: $translate.instant('global.profile.preferences.emailNotifications'),
+					emailRecapNotifs: $translate.instant('global.profile.preferences.emailRecapNotifs'),
+					emailRecapFrequency: $translate.instant('global.profile.preferences.emailRecapFrequency'),
+					emailContact: $translate.instant('global.profile.preferences.emailContact'),
+					language: $translate.instant('global.profile.preferences.language'),
+					save: $translate.instant('global.profile.preferences.save')
+				}
+
 				$scope.languages = [
 					{ "value" : "en", "label" : "<span class=\"lang-sm\" lang=\"en\"></span>" },
 					{ "value" : "fr", "label" : "<span class=\"lang-sm\" lang=\"fr\"></span>" }

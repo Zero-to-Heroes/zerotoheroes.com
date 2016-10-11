@@ -9,25 +9,37 @@
 
 	<form ng-show="isOwnProfile()">
 		<div class="form-group">
-			<label for="siteNotificationsCheckbox" translate="global.profile.preferences.siteNotifications"></label> 
+			<label for="siteNotificationsCheckbox">{{::translations.siteNotifications}}</label> 
 			<input type="checkbox" id="siteNotificationsCheckbox" ng-model="preferences.siteNotifications">
 		</div>
 		<div class="form-group">
-			<label for="emailNotificationsCheckbox" translate="global.profile.preferences.emailNotifications"></label> 
+			<label for="emailNotificationsCheckbox">{{::translations.emailNotifications}}</label> 
 			<input type="checkbox" id="emailNotificationsCheckbox" ng-model="preferences.emailNotifications"> 
+
+			<div class="form-group included indented">
+				<label for="emailRecapCheckbox" ng-class="{'disabled': !preferences.emailNotifications}">{{::translations.emailRecapNotifs}}</label> 
+				<input type="checkbox" id="emailRecapCheckbox" ng-model="preferences.useEmailRecap" ng-disabled="!preferences.emailNotifications" ng-class="{'disabled': !preferences.emailNotifications}"> 
+
+				<div class="form-group included indented">
+					<label for="emailRecapFrequency" ng-class="{'disabled': !preferences.useEmailRecap}">{{::translations.emailRecapFrequency}}</label> 
+					<button type="button" class="btn btn-default" id="emailRecapFrequency" data-trigger="click" ng-model="preferences.emailRecapFrequency" bs-options="n for n in [] | range:6:24:6" placeholder="{{preferences.emailRecapFrequency || 24}}" bs-select ng-disabled="!preferences.useEmailRecap" ng-class="{'disabled': !preferences.useEmailRecap}">
+					  	<span>Action</span>
+					</button>
+				</div>
+			</div>
 		</div>
 		<div class="form-group">
-			<label for="emailContactCheckbox" translate="global.profile.preferences.emailContact"></label> 
+			<label for="emailContactCheckbox">{{::translations.emailContact}}</label> 
 			<input type="checkbox" id="emailContactCheckbox" ng-model="preferences.emailContact"> 
 		</div>
 		<div class="form-group language-group">
-			<label for="language" translate="global.profile.preferences.language"></label> 
-			<button type="button" class="btn btn-default" data-trigger="click" ng-model="preferences.language" data-html="1" bs-options="option.value as option.label for option in languages" placeholder="{{ 'global.profile.preferences.language' | translate }}" bs-select ng-required="true">
+			<label for="language">{{::translations.language}}</label> 
+			<button type="button" class="btn btn-default" data-trigger="click" ng-model="preferences.language" data-html="1" bs-options="option.value as option.label for option in languages" placeholder="{{::translations.language}}" bs-select ng-required="true">
 			  	<span>Action</span>
 			</button>
 		</div>
 		<div>
-			<button type="submit" class="btn btn-default" ng-click="updatePreferences()"><span translate="global.profile.preferences.save"></span></button>
+			<button type="submit" class="btn btn-default" ng-click="updatePreferences()"><span>{{::translations.save}}</span></button>
 		</div>
 
 	</form>

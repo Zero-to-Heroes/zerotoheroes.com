@@ -1,6 +1,7 @@
 package com.coach.profile;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -50,5 +51,10 @@ public class ProfileService {
 	public void save(Profile profile) {
 		// log.debug("saving profile " + profile);
 		profileRepository.save(profile);
+	}
+
+	public List<Profile> loadAllDailyRecaps() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

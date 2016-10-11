@@ -22,10 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.coach.core.security.User;
 import com.coach.notifications.Notification;
-import com.coach.notifications.NotificationCommentData;
 import com.coach.notifications.NotificationDao;
-import com.coach.notifications.NotificationReviewData;
-import com.coach.profile.Notifications;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
@@ -192,50 +189,8 @@ public class AdminUserApiHandler {
 			log.debug("\tProcessing user " + user.getUsername());
 
 			Profile profile = profileMap.get(user.getId());
-			if (profile == null || profile.getNotifications() == null
-					|| profile.getNotifications().getNotifications() == null
-					|| profile.getNotifications().getNotifications().isEmpty()) {
-				continue;
-			}
 			profile.getNotifications().setUnreadNotifs(0);
 
-			log.debug("\t\tConverting " + profile.getNotifications().getNotifications().size() + " notifs");
-			for (Notifications.Notification oldNotif : profile.getNotifications().getNotifications()) {
-
-				Notification newNotif = new Notification();
-				newNotif.setAggregator(oldNotif.getAggregator());
-				newNotif.setCreationDate(oldNotif.getCreationDate());
-				newNotif.setFrom(oldNotif.getFrom());
-				newNotif.setReadDate(oldNotif.getReadDate());
-				newNotif.setSport(oldNotif.getSport());
-				newNotif.setTextDetail(oldNotif.getTextDetail());
-				newNotif.setTitle(oldNotif.getTitle());
-				newNotif.setUserId(user.getId());
-
-				if ("newComment".equals(oldNotif.getTextKey())) {
-					log.debug("\t\t\tOld notif " + oldNotif.getObjects());
-					NotificationCommentData data = new NotificationCommentData();
-					newNotif.setData(data);
-					data.setLinkId(oldNotif.getLinkId());
-					data.setReviewUrl(oldNotif.getObjects().get(0));
-					if (oldNotif.getObjects().size() > 1) {
-						data.setReviewId(oldNotif.getObjects().get(1));
-					}
-				}
-				else if ("newReview".equals(oldNotif.getTextKey())) {
-					NotificationReviewData data = new NotificationReviewData();
-					newNotif.setData(data);
-					data.setReviewUrl(oldNotif.getObjects().get(0));
-					if (oldNotif.getObjects().size() > 1) {
-						data.setReviewId(oldNotif.getObjects().get(1));
-					}
-				}
-
-				if (oldNotif.getReadDate() == null) {
-					profile.getNotifications().incrementUnread();
-				}
-				newNotifs.add(newNotif);
-			}
 			modifiedProfiles.add(profile);
 		}
 

@@ -135,6 +135,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Camel Hunter"));
 		hearthstone.add(new Tag("Midrange Hunter"));
 		hearthstone.add(new Tag("NZoth Hunter"));
+		hearthstone.add(new Tag("Secret Hunter"));
 
 		hearthstone.add(new Tag("Combo Druid"));
 		hearthstone.add(new Tag("Astral Druid"));

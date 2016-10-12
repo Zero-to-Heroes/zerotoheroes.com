@@ -76,7 +76,7 @@ var parseDecks = {
 		groupIndex = groupIndex || 2
 		// console.log('\tmatch', match, review.plugins.hearthstone.parseDecks);
 		var deckName = match[groupIndex]
-		if (match.length > 3)
+		if (match.length > 3 && match[3])
 			deckName += match[3]
 		var deckUrl = match[1] + deckName
 		// console.log('\tdeck name', deckName, deckUrl)

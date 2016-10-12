@@ -14,6 +14,7 @@ var parseDecks = {
 	hearthstatsDecksRegex: /\[?(http(?:s)?:\/\/(?:hss|hearthstats)\.(?:io|net)\/d(?:ecks)?\/)([\d\w\-]+)(\?[\d\w\-\=\&\.]*)?\]?/gm,
 	// hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
 	hearthheadDecksRegex: /\[?(http:\/\/www\.hearthhead\.com\/deck=)([\d\w\-]+)\/?([\d\w\-]+)?\]?/gm,
+	inlineDecksRegex: /\[?((([\w_]+)(?::)(\d)(?:;)?)+)\]?/gm,
 	
 	decks: {},
 
@@ -33,6 +34,7 @@ var parseDecks = {
 		text = parseDecks.parse(review, text, parseDecks.hearthstatsDecksRegex)
 		// text = parseDecks.parse(review, text, parseDecks.hearthstatsFullDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthheadDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.inlineDecksRegex, true)
 
 		// result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
 
@@ -48,13 +50,13 @@ var parseDecks = {
 	// 	return result
 	// },
 
-	parse: function(review, text, regex, groupIndex) {
+	parse: function(review, text, regex, useHashAsName) {
 		// Lookbehind - http://www.regular-expressions.info/lookaround.html
 		// https://regex101.com/r/qT1vF8/9 for a pure regex-based solution
 		// regex = new RegExp('(.{0,2})' + regex.source, 'gm')
-		// console.log('matching', text, regex)
 		var match = regex.exec(text)
 		while (match) {
+			// console.log('matching', text, regex)
 			// console.log('considering match', match.index, regex.lastIndex, match, regex)
 			// if (match.index === regex.lastIndex) {
    //   			regex.lastIndex++
@@ -63,7 +65,7 @@ var parseDecks = {
 			// if (match[1] != '](' && match[1] != '=\'' && match[1] != '(\'') {
 				// console.log('\tmatched!!!', match[1], match)
 				// console.log('replaced substring', text.substring(match.index, match.index + match[0].length))
-				text = parseDecks.handleMatch(review, text, match, groupIndex, regex)
+				text = parseDecks.handleMatch(review, text, match, regex, useHashAsName)
 				// console.log('new text', text)
 			// }
 			match = regex.exec(text)
@@ -72,13 +74,13 @@ var parseDecks = {
 		return text
 	},
 
-	handleMatch: function(review, text, match, groupIndex, regex) {
-		groupIndex = groupIndex || 2
+	handleMatch: function(review, text, match, regex, useHashAsName) {
 		// console.log('\tmatch', match, review.plugins.hearthstone.parseDecks);
-		var deckName = match[groupIndex]
-		if (match.length > 3 && match[3])
+		// console.log('\thash', match[1], match[1].hashCode())
+		var deckName = useHashAsName ? match[1].hashCode() : match[2]
+		if (match.length > 3 && match[3] && !useHashAsName)
 			deckName += match[3]
-		var deckUrl = match[1] + deckName
+		// var deckUrl = match[1] + deckName
 		// console.log('\tdeck name', deckName, deckUrl)
 
 		var plugins = review.plugins.hearthstone;
@@ -87,7 +89,7 @@ var parseDecks = {
 			var strDeck = plugins.parseDecks[deckName];
 			// console.log('\tstrDeck', strDeck)
 			var deck = JSON.parse(strDeck)
-			deckUrl = deck.url || deckUrl
+			deckUrl = deck.url
 			// console.log('\tjsDeck', deck)
 			var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 			// parseDecks.deck = htmlDeck;

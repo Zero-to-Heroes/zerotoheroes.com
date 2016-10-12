@@ -73,6 +73,9 @@ public class DeckParser implements Plugin {
 	private static final String HEARTHHEAD_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthhead\\.com\\/deck=)([\\d\\w\\-]+)\\/?([\\d\\w\\-]+)?\\]?";
 	private static final String HEARTHHEAD_DECK_HOST_URL = "http://www.hearthhead.com/deck=";
 
+	private static final String INLINE_DECK_CONTENTS_REGEX = "(([\\w_]+)(?::)(\\d)(?:;)?)";
+	private static final String INLINE_DECK_REGEX = "(" + INLINE_DECK_CONTENTS_REGEX + "+)";
+
 	@Autowired
 	ReviewRepository repo;
 
@@ -116,6 +119,41 @@ public class DeckParser implements Plugin {
 		parseHearthStatsDeck(pluginData, initialText);
 		// parseHearthStatsDeckFull(pluginData, initialText);
 		parseHearthHeadDeck(pluginData, initialText);
+		parseInlineDeck(pluginData, initialText);
+	}
+
+	private void parseInlineDeck(Map<String, String> pluginData, String initialText) throws IOException {
+		Pattern pattern = Pattern.compile(INLINE_DECK_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			log.debug("matcher " + matcher.toString());
+
+			String deckId = String.valueOf(matcher.group().hashCode());
+
+			// We have a deck, now build the contents
+			Pattern pattern2 = Pattern.compile(INLINE_DECK_CONTENTS_REGEX, Pattern.MULTILINE);
+			Matcher matcher2 = pattern2.matcher(matcher.group());
+
+			Deck deck = new Deck();
+			deck.title = "Unnamed deck";
+
+			while (matcher2.find()) {
+				String cardId = matcher2.group(2);
+				String quantity = matcher2.group(3);
+
+				Card card = new Card(cardId, quantity);
+				deck.classCards.add(card);
+			}
+
+			saveDeck(pluginData, deckId, deck);
+
+			// Don't override existing decks (performance)
+			// if (pluginData.get(deckId) != null) {
+			// continue;
+			// }
+
+			// saveDeck(pluginData, deckId, deck);
+		}
 	}
 
 	private void parseHearthHeadDeck(Map<String, String> pluginData, String initialText) throws IOException {

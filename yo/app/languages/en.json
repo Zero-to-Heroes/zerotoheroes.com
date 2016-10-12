@@ -71,7 +71,7 @@
 		"upload": {
 			"descriptionPlaceholder": "If you don't want any advice, don't forget to add the 'Entertainment' tag below. Otherwise, please add information about the context or general observations on the game. You can also add some generic points you'd like advice on. For turn-by-turn comments, please use the comment system instead",
 			"decklistLabel": "Decklist",
-			"decklistTooltip": "Supported providers: Zero to Heroes drafts, HearthArena drafts, ArenaDrafts drafts, HearthStats, HearthPwn, HearthPwn temporary decks (import can take up to one minute the first time), and hearthstone-decks decks",
+			"decklistTooltip": "Supported providers: Zero to Heroes drafts, HearthArena drafts, ArenaDrafts drafts, HearthStats, HearthPwn, HearthPwn temporary decks (import can take up to one minute the first time), HDT temporary decks (copy/paste the decklist from HDT) and hearthstone-decks decks",
 			"decklistPlaceholder": "Decklist URL"
 		},
 		"review": {

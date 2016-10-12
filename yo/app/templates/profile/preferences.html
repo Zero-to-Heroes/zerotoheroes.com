@@ -22,7 +22,7 @@
 
 				<div class="form-group included indented">
 					<label for="emailRecapFrequency" ng-class="{'disabled': !preferences.useEmailRecap}">{{::translations.emailRecapFrequency}}</label> 
-					<button type="button" class="btn btn-default" id="emailRecapFrequency" data-trigger="click" ng-model="preferences.emailRecapFrequency" bs-options="n for n in [] | range:6:24:6" placeholder="{{preferences.emailRecapFrequency || 24}}" bs-select ng-disabled="!preferences.useEmailRecap" ng-class="{'disabled': !preferences.useEmailRecap}">
+					<button type="button" class="btn btn-default" id="emailRecapFrequency" data-trigger="click" ng-model="preferences.emailRecapFrequency" bs-options="n for n in [] | range:6:24:2" placeholder="{{preferences.emailRecapFrequency || 24}}" bs-select ng-disabled="!preferences.useEmailRecap" ng-class="{'disabled': !preferences.useEmailRecap}">
 					  	<span>Action</span>
 					</button>
 				</div>

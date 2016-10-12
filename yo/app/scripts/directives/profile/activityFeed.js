@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('activityFeed', ['$log', 'Api', '$routeParams', 'User', 
-	function($log, Api, $routeParams, User) {
+app.directive('activityFeed', ['$log', 'Api', '$routeParams', 'User', '$translate', 
+	function($log, Api, $routeParams, User, $translate) {
 		 
 		return {
 			restrict: 'E',
@@ -15,6 +15,10 @@ app.directive('activityFeed', ['$log', 'Api', '$routeParams', 'User',
 			link: function(scope, element, attributes) {
 			},
 			controller: function($scope) {
+
+				$scope.translations = {
+					restrictedAccess: $translate.instant('global.profile.messages.restrictedAccess')
+				}
 
 				$scope.sport = $routeParams['sport']
 

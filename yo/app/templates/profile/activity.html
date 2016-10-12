@@ -1,19 +1,19 @@
-<div class="activity {{activity.data.type}}">
-	<span class="icon {{activity.data.reason}}">
-		<span class="change-amount" ng-show="activity.data.amount > 0">{{activity.data.amount}}</span>
+<div class="activity {{::activity.data.type}}">
+	<span class="icon {{::activity.data.reason}}">
+		<span class="change-amount" ng-if="::activity.data.amount > 0">{{::activity.data.amount}}</span>
 	</span>
-	<span ng-switch="activity.data.type">
+	<span ng-switch="::activity.data.type">
 		<!-- New review -->
-		<span ng-switch-when="new-review" class="text" translate="global.profile.feed.newReview" translate-values="{ title: '{{activity.data.reviewTitle}}' }" ng-show="activity.data.reviewTitle"></span>
-		<span ng-switch-when="new-review" class="text" translate="global.profile.feed.newUntitledReview" ng-hide="activity.data.reviewTitle"></span>
+		<span ng-switch-when="new-review" class="text" ng-if="::activity.data.reviewTitle">{{::translations.newReview}}</span>
+		<span ng-switch-when="new-review" class="text" ng-if="::!activity.data.reviewTitle">{{::translations.newUntitledReview}}</span>
 
 		<!-- New comment -->
-		<span ng-switch-when="new-comment" class="text" translate="global.profile.feed.newComment" translate-values="{ title: '{{activity.data.reviewTitle}}' }" ng-show="activity.data.reviewTitle"></span>
-		<span ng-switch-when="new-comment" class="text" translate="global.profile.feed.newCommentOnUntitledReview" ng-hide="activity.data.reviewTitle"></span>
+		<span ng-switch-when="new-comment" class="text" ng-if="::activity.data.reviewTitle">{{::translations.newComment}}</span>
+		<span ng-switch-when="new-comment" class="text" ng-if="::!activity.data.reviewTitle">{{::translations.newCommentOnUntitledReview}}</span>
 
 		<!-- Upvotes -->
-		<span ng-switch-when="reputation-change" class="text" translate="global.profile.feed.upvote" translate-values="{ title: '{{activity.data.reviewTitle}}' }" ng-show="activity.data.reason == 'upvote'"></span>
-		<span ng-switch-when="reputation-change" class="text" translate="global.profile.feed.helpful" translate-values="{ title: '{{activity.data.reviewTitle}}' }" ng-show="activity.data.reason == 'helpful'"></span>
+		<span ng-switch-when="reputation-change" class="text" ng-if="::activity.data.reason == 'upvote'">{{::translations.upvote}}</span>
+		<span ng-switch-when="reputation-change" class="text" ng-if="::activity.data.reason == 'helpful'">{{::translations.helpful}}</span>
 	</span>
-	<span class="date" title="{{formatExactDate(activity.creationDate)}}">{{formatDate(activity.creationDate)}}</span>
+	<span class="date" title="{{::formatExactDate(activity.creationDate)}}">{{::formatDate(activity.creationDate)}}</span>
 </div>

@@ -36,7 +36,7 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 					// First build the new reviews (it can happen to have a new review + new comments)
 					$scope.source.forEach(function(message) {
 						if (message.data.textKey == 'newReview') {
-							$log.debug('considering', message)
+							// $log.debug('considering', message)
 							compact[message.data.reviewId] = message
 							message.comments = []
 						}
@@ -45,7 +45,7 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 					// Build one entry for each type - for now, only review, will be PMs later on?
 					$scope.source.forEach(function(message) {
 						if (message.data.textKey == 'newComment') {
-							$log.debug('considering', message)
+							// $log.debug('considering', message)
 							if (!compact[message.data.reviewId]) {
 								compact[message.data.reviewId] = {
 									title: message.title,
@@ -60,7 +60,7 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 						}
 					})
 
-					$log.debug('compact messages', compact)
+					// $log.debug('compact messages', compact)
 				}
 				$scope.compactMessages()
 

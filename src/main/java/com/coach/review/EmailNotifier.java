@@ -12,6 +12,8 @@ import com.coach.core.notification.EmailSender;
 import com.coach.core.notification.ExecutorProvider;
 import com.coach.core.security.User;
 import com.coach.notifications.Notification;
+import com.coach.notifications.NotificationCommentData;
+import com.coach.notifications.NotificationReviewData;
 import com.coach.profile.Profile;
 import com.coach.user.UserRepository;
 
@@ -157,6 +159,32 @@ public class EmailNotifier {
 						+ "<p>You got " + notifs.size() + " new notifications waiting for you <a href=\"http://www.zerotoheroes.com/u/" + subscriber.getUsername()
 						+ "/hearthstone/inbox/unread\">in your inbox</a> (we'll send the details of the notifications in a future version - "
 						+ "if that's something you really need soon, please <a href=\"https://github.com/Zero-to-Heroes/zerotoheroes.com/issues\">open an issue</a>)";
+
+				// Add a small recap for each notif
+				body += "<ul>";
+				for (Notification notif : notifs) {
+
+					String strNotif = "<li>";
+
+					if (notif.getData() != null) {
+						if (notif.getData() instanceof NotificationCommentData) {
+							NotificationCommentData data = (NotificationCommentData) notif.getData();
+							strNotif += "<b>New comment</b>";
+							strNotif += " by " + notif.getFrom() + " on <a href=\"" + data.getReviewUrl() + "#" +
+									data.getLinkId() + "\">" + notif.getTitle() + "</a>";
+						}
+						else if (notif.getData() instanceof NotificationReviewData) {
+							NotificationReviewData data = (NotificationReviewData) notif.getData();
+							strNotif += "<b>New review</b>";
+							strNotif += " by " + notif.getFrom() + " at <a href=\"" + data.getReviewUrl() + "\">" + notif.getTitle() + "</a>";
+						}
+					}
+
+					strNotif +="</li>";
+					body += strNotif;
+				}
+				body += "</ul>";
+
 				//@formatter:on
 				log.debug("Sending notification recap email " + body);
 

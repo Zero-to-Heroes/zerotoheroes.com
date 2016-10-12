@@ -68,8 +68,14 @@ public class ReviewService {
 				// log.debug("updated refiew", review);
 			}
 			catch (Exception e) {
-				log.error("Exception updating the review", e);
-				throw e;
+				log.warn("Exception updating the review, retrying", e);
+				try {
+					reviewRepo.save(review);
+				}
+				catch (Exception e2) {
+					log.error("Exception updating the review", e2);
+					throw e;
+				}
 			}
 		}
 	}

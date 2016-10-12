@@ -753,7 +753,7 @@ public class ReviewApiHandler {
 			User user = userRepo.findByUsername(currentUser);
 
 			if (user.getCoachInformation() != null) {
-				comment.setAuthorStatus("coach");
+				reply.setAuthorStatus("coach");
 			}
 
 			// Updating user stats

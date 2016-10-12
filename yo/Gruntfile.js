@@ -543,12 +543,12 @@ module.exports = function (grunt) {
 		'ngAnnotate',
 		'copy:dist',
 		'cdnify',
-		// 'uglify',
+		'uglify',
 		'cssmin',
 		'filerev',
 		'usemin',
 		'htmlmin',
-			'connect:dist:keepalive'
+		'connect:dist:keepalive'
 	]);
 
   grunt.registerTask('default', [

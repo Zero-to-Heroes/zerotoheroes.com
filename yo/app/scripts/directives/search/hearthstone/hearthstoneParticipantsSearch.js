@@ -29,7 +29,9 @@ app.directive('hearthstoneParticipantsSearch', ['$log', 'SportsConfig', 'Api', '
 				]
 
 				$scope.loadTags = function() {
+					// $log.debug('loading tags')
 					TagService.filterIn('skill-level', function(filtered) {
+						// $log.debug('filtered tags', filtered)
 						$scope.allowedTags = filtered
 					})
 				}

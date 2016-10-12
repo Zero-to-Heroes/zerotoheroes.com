@@ -7,6 +7,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 		service.refreshTags = function(sport) {
 			Api.Tags.query({sport: sport}, 
 				function(data) {
+					// $log.debug('retrieved tags from server', data)
 					service.tags = data
 
 					service.tags.forEach(function(tag) {
@@ -42,16 +43,19 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 
 		// Keep only the tags with a specific type
 		service.filterIn = function(string, callback, inputTags) {
+			// $log.debug('filtering tags in', string, callback, inputTags)
 			// Wait until tags are refreshed
 			if (!service.tags) {
 				setTimeout(function() {
-					service.filterOut(string, callback, inputTags)
+					service.filterIn(string, callback, inputTags)
 				}, 50)
 				return
 			}
 			var tags = inputTags || service.tags
+			// $log.debug('tags loaded', tags)
 			var filtered = []
 			tags.forEach(function(tag) {
+				// $log.debug('\tconsidering', tag, string, tag.type == string)
 				if (tag.type == string)
 					filtered.push(tag)
 			})
@@ -62,6 +66,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 			if (!inputTags)
 				return []
 
+			// $log.debug('autocompleting tags', $query, inputTags, sport)
 			var validTags = inputTags.filter(function (el) {
 				var key = 'tags.' + el.sport + "." + el.text
 				var localName = $translate.instant(key) 
@@ -71,6 +76,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 				return ~S(localName.toLowerCase()).latinise().s.indexOf(S($query.toLowerCase()).latinise().s)
 			})
 
+			// $log.debug('valid auto tags', validTags)
 			var result = validTags.sort(function(a, b) {
 				var tagA = a.text.toLowerCase()
 				var tagB = b.text.toLowerCase()
@@ -87,6 +93,7 @@ services.factory('TagService', ['$log', 'Api', '$translate',
 					return service.naturalCompare(tagA, tagB) //(tagA < tagB) ? -1 : (tagA > tagB) ? 1 : 0
 				}
 			})
+			// $log.debug('result auto tags', result)
 
 			return result
 		}

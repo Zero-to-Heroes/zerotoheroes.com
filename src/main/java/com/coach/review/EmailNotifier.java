@@ -157,8 +157,7 @@ public class EmailNotifier {
 				//@formatter:off
 				String body = "Hey " + subscriber.getUsername() + "<br/>"
 						+ "<p>You got " + notifs.size() + " new notifications waiting for you <a href=\"http://www.zerotoheroes.com/u/" + subscriber.getUsername()
-						+ "/hearthstone/inbox/unread\">in your inbox</a> (we'll send the details of the notifications in a future version - "
-						+ "if that's something you really need soon, please <a href=\"https://github.com/Zero-to-Heroes/zerotoheroes.com/issues\">open an issue</a>)";
+						+ "/hearthstone/inbox/unread\">in your inbox</a>:";
 
 				// Add a small recap for each notif
 				body += "<ul>";

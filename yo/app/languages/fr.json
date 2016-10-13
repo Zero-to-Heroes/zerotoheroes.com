@@ -374,6 +374,9 @@
 			"createAccountCancel": "Non merci, je créerai mon compte plus tard",
 			"createAccountConfirm": "Créer mon compte maintenant",
 
+			"accountClaimText": "Cette revue a été créée par une application externe (le plus souvent un deck tracker) et est associée à un compte temporaire. Réclamez ce compte pour associer toutes ces revues à votre compte Zero to Heroes!",
+			"accountClaimButton": "Réclamer ce compte",
+
 			"unreadNotifTooltip": "Vous avez des notifications non lues !"
 		},
 		"review": {

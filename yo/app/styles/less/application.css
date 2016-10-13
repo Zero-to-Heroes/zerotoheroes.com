@@ -21,6 +21,16 @@ body {
 .main-container-landing .center-column {
   display: block;
 }
+.account-claim {
+  display: flex;
+  padding: 10px;
+}
+.account-claim .text {
+  margin-left: 20px;
+}
+.account-claim .confirmation-message {
+  padding: 10px;
+}
 .footer {
   margin-top: 70px;
   font-size: 14px;

@@ -97,6 +97,8 @@
 <div class="video-comment {{pluginNames.join(' ')}} {{review.mediaType}} {{mediaPlayer.playerControls.wideMode ? 'col-md-5' : 'col-md-7'}}" ng-class="{ 'multi-comment' : review.useV2comments }" ng-if="!restrictedAccess">
 	<div class="background-white show-x">
 		<div class="background-container">
+
+			<account-claim review="::review"></account-claim>
 				
 			<div ng-if="selectedCoach">
 				<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>

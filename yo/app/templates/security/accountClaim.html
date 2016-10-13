@@ -1,0 +1,5 @@
+<div class="account-claim" ng-if="::review.claimableAccount && User.isLoggedIn()">
+	<button class="btn btn-default" ng-click="claimAccount()" ng-if=":accountClaim:review.claimableAccount">{{::translations.accountClaimButton}}</button>
+	<span class="text" ng-if=":accountClaim:review.claimableAccount">{{::translations.accountClaimText}}</span>
+	<span class="confirmation-message" ng-if=":accountClaim:!review.claimableAccount">{{::translations.accountClaimConfirmation}}</span>
+</div>

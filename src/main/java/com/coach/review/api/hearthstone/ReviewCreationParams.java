@@ -8,4 +8,6 @@ public class ReviewCreationParams {
 	private String gameMode;
 	private int legendRank;
 	private int rank;
+
+	private String uploaderApplicationKey, uploaderToken;
 }

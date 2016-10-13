@@ -21,19 +21,13 @@ services.factory('Api', ['$resource', 'ENV',
 			Coaches: $resource(ENV.apiEndpoint + url + 'coaches/:identifier', {identifier: '@identifier'}),
 			CoachesAll: $resource(ENV.apiEndpoint + url + 'coaches/:sport/all', {sport: '@sport'}),
 			Payment: $resource(ENV.apiEndpoint + url + 'payment/:reviewId/:coachId/:email/:tariffId', {reviewId: '@reviewId', coachId: '@coachId', email:'@email', tariffId: '@tariffId'}),
+			
 			Users: $resource(ENV.apiEndpoint + url + 'users/:identifier', {identifier: '@identifier'}),
 			Profile: $resource(ENV.apiEndpoint + url + 'profile'),					
 			Passwords: $resource(ENV.apiEndpoint + url + 'users/password/:key', {key: '@key'}),
 			Login: $resource(ENV.apiEndpoint + url + 'login', {}),
+			ClaimAccount: $resource(ENV.apiEndpoint + url + 'claimAccount/:reviewId', {reviewId: '@reviewId'}),
 			Reputation: $resource(ENV.apiEndpoint + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'}),
-			Features: $resource(ENV.apiEndpoint + url + 'news/features'),
-			BugFixes: $resource(ENV.apiEndpoint + url + 'news/bugfixes'),
-			Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport'),
-			Sequences: $resource(ENV.apiEndpoint + url + 'sequences/:sport/:sequenceId'),
-			SequencesQuery: $resource(ENV.apiEndpoint + url + 'sequences/query'),
-			Sports: $resource(ENV.apiEndpoint + url + 'sports/:sport', {sport: '@sport'}),
-
-			Replays: $resource(ENV.apiEndpoint + url + 'replays'),
 
 			Notifications: $resource(ENV.apiEndpoint + url + 'notifications/:type', {type: '@type'}),
 			NotificationsRead: $resource(ENV.apiEndpoint + url + 'notifications/read', {id: '@id'}),
@@ -47,6 +41,15 @@ services.factory('Api', ['$resource', 'ENV',
 
 			ActivityFeed: $resource(ENV.apiEndpoint + url + 'activities/:sport', {sport: '@sport'}),
 			Announcements: $resource(ENV.apiEndpoint + url + 'announcements'),
+
+			Features: $resource(ENV.apiEndpoint + url + 'news/features'),
+			BugFixes: $resource(ENV.apiEndpoint + url + 'news/bugfixes'),
+			Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport'),
+			Sequences: $resource(ENV.apiEndpoint + url + 'sequences/:sport/:sequenceId'),
+			SequencesQuery: $resource(ENV.apiEndpoint + url + 'sequences/query'),
+			Sports: $resource(ENV.apiEndpoint + url + 'sports/:sport', {sport: '@sport'}),
+
+			Replays: $resource(ENV.apiEndpoint + url + 'replays'),
 
 			Slack: $resource('https://hooks.slack.com/services/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', {})
 		};

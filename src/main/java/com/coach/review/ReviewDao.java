@@ -2,6 +2,7 @@ package com.coach.review;
 
 import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
+import static org.springframework.data.mongodb.core.query.Update.*;
 
 import java.util.List;
 
@@ -13,9 +14,12 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Field;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.TextCriteria;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import com.coach.core.notification.ExecutorProvider;
+import com.coach.core.security.User;
 import com.coach.review.Review.Sport;
 
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +33,9 @@ public class ReviewDao {
 
 	@Autowired
 	MongoTemplate mongoTemplate;
+
+	@Autowired
+	private ExecutorProvider executorProvider;
 
 	public List<Review> search(ReviewSearchCriteria criteria, String author, PageRequest pageRequest) {
 
@@ -118,6 +125,28 @@ public class ReviewDao {
 
 		List<Review> find = mongoTemplate.find(query, Review.class);
 		return find;
+	}
+
+	public void claimAccount(User user, String applicationKey, String userToken) {
+
+		Runnable runnable = new Runnable() {
+
+			@Override
+			public void run() {
+				// Select all the reviews that have the third party
+				// authentication info
+				Criteria crit = where("uploaderApplicationKey").is(applicationKey);
+				crit.and("uploaderToken").is(userToken);
+				Query query = query(crit);
+
+				Update update = update("authorId", user.getId());
+				update.set("author", user.getUsername());
+
+				mongoTemplate.updateMulti(query, update, Review.class);
+				log.debug("Account claimed");
+			}
+		};
+		executorProvider.getExecutor().submit(runnable);
 	}
 
 }

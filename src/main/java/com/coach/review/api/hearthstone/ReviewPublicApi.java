@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.zip.GZIPInputStream;
 
@@ -15,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -75,6 +73,8 @@ public class ReviewPublicApi {
 		review.setTemporaryReplay("");
 		review.setReviewType("game-replay");
 		review.setUseV2comments(true);
+		review.setUploaderApplicationKey(data.getUploaderApplicationKey());
+		review.setUploaderToken(data.getUploaderToken());
 
 		addMetaData(data, review);
 
@@ -134,6 +134,8 @@ public class ReviewPublicApi {
 
 		Review review = reviewRepo.findById(id);
 		review.setPublished(true);
+		review.setUploaderApplicationKey(data.getUploaderApplicationKey());
+		review.setUploaderToken(data.getUploaderToken());
 
 		addMetaData(data, review);
 
@@ -156,10 +158,17 @@ public class ReviewPublicApi {
 	@RequestMapping(value = "/upload/draft", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> uploadDraft(@RequestParam("data") MultipartFile data)
 			throws Exception {
+		return uploadDraftWithToken(data, null, null);
+	}
+
+	@RequestMapping(value = "/upload/draft/{applicationKey}/{userToken}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> uploadDraftWithToken(
+			@RequestParam("data") MultipartFile data, @PathVariable(value = "applicationKey") String applicationKey,
+			@PathVariable(value = "userToken") String userToken) throws Exception {
 		FileUploadResponse response = null;
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		log.debug("Starting draft upload for " + currentUser);
+		log.debug("Starting draft upload for " + currentUser + " " + applicationKey + " " + userToken);
 		User user = userRepo.findByUsername(currentUser);
 
 		// Are there several games in the single file?
@@ -181,6 +190,9 @@ public class ReviewPublicApi {
 		review.setSport(Review.Sport.load("hearthstone"));
 		review.setTemporaryReplay(draft.toString());
 		review.setReplay("true");
+		review.setUploaderApplicationKey(applicationKey);
+		review.setUploaderToken(userToken);
+
 		if (user != null) {
 			review.setAuthorId(user.getId());
 			review.setAuthor(user.getUsername());
@@ -201,11 +213,7 @@ public class ReviewPublicApi {
 	@RequestMapping(value = "/upload/review", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> uploadFile(@RequestParam("data") MultipartFile data)
 			throws Exception {
-		FileUploadResponse response = null;
-
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
-				.getAuthorities();
 		User user = userRepo.findByUsername(currentUser);
 
 		List<Review> reviews = new ArrayList<>();
@@ -250,34 +258,9 @@ public class ReviewPublicApi {
 	@RequestMapping(value = "/upload/review/gzip", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> uploadGzipFile(@RequestParam("data") MultipartFile data)
 			throws Exception {
-		FileUploadResponse response = null;
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
-				.getAuthorities();
-
-		// Disallow anonymous access for now
-		// if (StringUtils.isNullOrEmpty(currentUser) ||
-		// UserAuthority.isAnonymous(authorities)) {
-		// response = new FileUploadResponse(null,
-		// "Anonymous access is not yet supported. You need to create an account
-		// (on the site itself for now), "
-		// + "then first login in with a request to /api/login with your
-		// credentials (doc to come), then pass the X-Auth-Token you'll receive"
-		// + "in the header of the request");
-		// return new ResponseEntity<FileUploadResponse>(response,
-		// HttpStatus.FORBIDDEN);
-		// }
-		//
 		User user = userRepo.findByUsername(currentUser);
-		// if (user == null) {
-		// response = new FileUploadResponse(null,
-		// "No user has been found that match the token you sent in input.
-		// Please relogin and try again");
-		// return new ResponseEntity<FileUploadResponse>(response,
-		// HttpStatus.NOT_FOUND);
-		// }
-
 		List<Review> reviews = new ArrayList<>();
 
 		// Are there several games in the single file?

@@ -440,6 +440,10 @@
 			"createAccountCancel": "No thanks, I'll create my account later",
 			"createAccountConfirm": "Create account now",
 
+			"accountClaimText": "This review has been created by an external tool (usually a deck tracker) and is associated with a temporary account. Claim this account now to link all these reviews to your main Zero to Heroes account!",
+			"accountClaimButton": "Claim account",
+			"accountClaimConfirmation": "Your account has been claimed! It can take a few minutes until all your reviews are associated with your account. Refresh this page to know when it's done!",
+
 			"unreadNotifTooltip": "You have unread notifications!"
 		},
 		"review": {

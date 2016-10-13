@@ -14,6 +14,7 @@ import java.util.Set;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -107,6 +108,15 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private String author, lastModifiedBy;
 	@Indexed
 	private String authorId;
+
+	// A way to allow anonymous uploads
+	@JsonIgnore
+	@Indexed
+	private String uploaderApplicationKey, uploaderToken;
+
+	@Transient
+	private boolean claimableAccount;
+
 	@Indexed
 	@JsonIgnore
 	private Set<String> allAuthors = new HashSet<>();
@@ -256,6 +266,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			}
 		}
 		sortComments();
+
+		claimableAccount = StringUtils.isNullOrEmpty(authorId) && !StringUtils.isNullOrEmpty(uploaderApplicationKey)
+				&& !StringUtils.isNullOrEmpty(uploaderToken);
+
 	}
 
 	public void incrementViewCount() {

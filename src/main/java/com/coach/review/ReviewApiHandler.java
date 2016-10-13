@@ -41,6 +41,7 @@ import com.coach.review.replay.ReplayProcessor;
 import com.coach.review.video.transcoding.Transcoder;
 import com.coach.sport.SportManager;
 import com.coach.subscription.SubscriptionManager;
+import com.coach.thirdprtyintegration.ExternalApplicationAuthenticationService;
 import com.coach.user.UserRepository;
 import com.coach.user.UserService;
 
@@ -106,6 +107,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	AutowireCapableBeanFactory beanFactory;
+
+	@Autowired
+	ExternalApplicationAuthenticationService externalApplicationAuthenticationService;
 
 	@RequestMapping(value = "/query", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<ListReviewResponse> searchAllReviews(
@@ -273,6 +277,17 @@ public class ReviewApiHandler {
 			if (user != null) {
 				log.debug("Name not allowed: " + review.getAuthor() + ". Found user " + user);
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
+			}
+		}
+		else if (!StringUtils.isNullOrEmpty(review.getUploaderApplicationKey())
+				&& !StringUtils.isNullOrEmpty(review.getUploaderToken())) {
+			// Get user from token
+			User user = externalApplicationAuthenticationService.loadUser(review.getUploaderApplicationKey(),
+					review.getUploaderToken());
+			if (user != null) {
+				review.setAuthorId(user.getId());
+				review.setAuthor(user.getUsername());
+				currentUser = user.getUsername();
 			}
 		}
 

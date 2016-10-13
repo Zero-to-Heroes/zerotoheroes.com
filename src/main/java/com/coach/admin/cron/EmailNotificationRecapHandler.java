@@ -72,7 +72,8 @@ public class EmailNotificationRecapHandler {
 		// Then for each profile, check if we should process the notifs
 		for (Profile profile : profiles) {
 
-			boolean shouldNotif = profile.getPreferences().isUseEmailRecap()
+			boolean shouldNotif = profile.getPreferences().isEmailNotifications()
+					&& profile.getPreferences().isUseEmailRecap()
 					&& profile.getPreferences().getEmailRecapFrequency() > 0;
 
 			Calendar calendar = Calendar.getInstance();

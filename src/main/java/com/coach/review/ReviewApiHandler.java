@@ -724,7 +724,8 @@ public class ReviewApiHandler {
 		else if (!currentUser.equals(comment.getAuthor())
 				&& !user.canEdit()) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
 
-		consolidateCanvas(currentUser, review, newComment, newComment.getTempCanvas());
+		// consolidateCanvas(currentUser, review, newComment,
+		// newComment.getTempCanvas());
 		activatePlugins(currentUser, review, newComment);
 		comment.setText(newComment.getText());
 

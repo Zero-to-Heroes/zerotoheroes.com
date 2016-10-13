@@ -3,7 +3,9 @@ package com.coach.admin.cron;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.coach.notifications.ILinkedToReview;
 import com.coach.notifications.Notification;
 import com.coach.notifications.NotificationRepository;
 import com.coach.profile.Profile;
@@ -86,8 +89,31 @@ public class EmailNotificationRecapHandler {
 				List<Notification> notifs = notifications.stream()
 						.filter(n -> profile.getUserId().equals(n.getUserId())).collect(Collectors.toList());
 
-				// Send an email that recaps all the notifs
-				emailNotifier.sendNotificationRecap(notifs, profile, userRepository.findById(profile.getUserId()));
+				if (profile.getPreferences().isEmailRecapSplit()) {
+					// Get all the unique game Ids
+					Set<String> uniqueGameIds = new HashSet<>();
+					for (Notification notif : notifs) {
+						if (notif.getData() instanceof ILinkedToReview) {
+							uniqueGameIds.add(((ILinkedToReview) notif.getData()).getReviewId());
+						}
+					}
+
+					for (String id : uniqueGameIds) {
+						List<Notification> gameNotifs = notifs.stream()
+								.filter(n -> n.getData() instanceof ILinkedToReview)
+								.filter(n -> ((ILinkedToReview) n.getData()).getReviewId().equals(id))
+								.filter(n -> profile.getUserId().equals(n.getUserId())).collect(Collectors.toList());
+
+						// Send an email that recaps all the notifs
+						emailNotifier.sendNotificationRecap(gameNotifs, profile,
+								userRepository.findById(profile.getUserId()), gameNotifs.get(0).getTitle());
+					}
+				}
+				else {
+					emailNotifier.sendNotificationRecap(notifs, profile, userRepository.findById(profile.getUserId()),
+							null);
+
+				}
 
 				// Mark all notifs as handled
 				profile.setLastEmailRecapDate(new Date());

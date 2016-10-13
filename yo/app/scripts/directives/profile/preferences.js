@@ -1,3 +1,4 @@
+
 'use strict';
 
 var app = angular.module('app');
@@ -18,6 +19,7 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					siteNotifications: $translate.instant('global.profile.preferences.siteNotifications'),
 					emailNotifications: $translate.instant('global.profile.preferences.emailNotifications'),
 					emailRecapNotifs: $translate.instant('global.profile.preferences.emailRecapNotifs'),
+					emailRecapSplit: $translate.instant('global.profile.preferences.emailRecapSplit'),
 					emailRecapFrequency: $translate.instant('global.profile.preferences.emailRecapFrequency'),
 					emailContact: $translate.instant('global.profile.preferences.emailContact'),
 					language: $translate.instant('global.profile.preferences.language'),

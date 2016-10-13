@@ -142,7 +142,8 @@ public class EmailNotifier {
 		emailSender.send(message);
 	}
 
-	public void sendNotificationRecap(List<Notification> notifs, Profile profile, User subscriber) {
+	public void sendNotificationRecap(List<Notification> notifs, Profile profile, User subscriber,
+			String linkedReview) {
 		if (!"prod".equalsIgnoreCase(environment)) {
 			log.debug("Sending email to " + subscriber.getUsername());
 			return;
@@ -187,7 +188,10 @@ public class EmailNotifier {
 				//@formatter:on
 				log.debug("Sending notification recap email " + body);
 
-				String subject = "New notifications at ZeroToHeroes";
+				String subject = "New notifications on Zero to Heroes";
+				if (linkedReview != null) {
+					subject = "New notifications for review: " + notifs.get(0).getTitle();
+				}
 
 				EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient)
 						.subject(subject).content(body).type("text/html; charset=UTF-8").build();

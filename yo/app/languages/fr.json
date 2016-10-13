@@ -285,6 +285,7 @@
 				"siteNotifications": "Recevoir les notifications sur le site ?",
 				"emailNotifications": "Recevoir les notifications comme e-mails ?",
 				"emailRecapNotifs": "Les recevoir groupées périodiquement plutôt qu'une par une ?",
+				"emailRecapSplit": "Recevoir un email par revue?",
 				"emailRecapFrequency": "A quelle fréquence (in hours)?",
 				"emailContact": "M'autoriser à vous envoyer un email de temps à autre (je promets de ne pas spammer)?",
 				"language": "Dans quel langue voulez-vous utiliser le site ?",

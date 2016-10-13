@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import lombok.Data;
 
 @Data
-public class NotificationReviewData extends NotificationData {
+public class NotificationReviewData extends NotificationData implements ILinkedToReview {
 
 	@Indexed
 	private String reviewId;

@@ -75,7 +75,11 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.updateComment = function(comment) {
 					$scope.mediaPlayer.preUploadComment($scope.review, $scope.comment);
 					//$log.log('updating comment', $scope.comment);
-					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, comment, 
+					var newComment = {
+						text: $scope.comment.text
+
+					}
+					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, newComment, 
 						function(data) {
 							$scope.showHelp = false;
 							// $log.log('Review', data);

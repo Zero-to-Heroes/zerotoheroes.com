@@ -350,6 +350,12 @@
 				"preferencesUpdated": "Your preferences have been updated",
 				"siteNotifications": "Receive notifications in site?",
 				"emailNotifications": "Receive notifications as emails?",
+				"emailNotification": {
+					"none": "Nope, thanks",
+					"onebyone": "One at a time",
+					"gamerecap": "Regular recaps bundled by review",
+					"globalrecap": "Regular recaps with everything"
+				},
 				"emailRecapNotifs": "Receive them as periodic recaps rather than one by one?",
 				"emailRecapSplit": "Receive one email per review?",
 				"emailRecapFrequency": "At which frequency (in hours)?",

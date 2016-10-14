@@ -1,5 +1,6 @@
 package com.coach.notifications;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,8 @@ public class UserNotifier {
 		// if ("private".equalsIgnoreCase(review.getVisibility())) { return; }
 
 		Profile profile = profileService.getProfile(subscriber.getId());
-		boolean isBundled = profile.getPreferences().isUseEmailRecap();
+		boolean isBundled = Arrays.asList("gamerecap", "globalrecap")
+				.indexOf(profile.getPreferences().getEmailNotificationsType()) > 0;
 
 		if (profile.getPreferences().isSiteNotifications()) {
 			Notification notification = new Notification();
@@ -58,14 +60,15 @@ public class UserNotifier {
 			addNotification(profile, notification);
 		}
 
-		if (profile.getPreferences().isEmailNotifications() && !isBundled) {
+		if ("onebyone".equals(profile.getPreferences().getEmailNotificationsType())) {
 			emailNotifier.notifyNewComment(subscriber, comment, review);
 		}
 	}
 
 	public void notifyNewMultiComment(User subscriber, Review review, Collection<Comment> comments) {
 		Profile profile = profileService.getProfile(subscriber.getId());
-		boolean isBundled = profile.getPreferences().isUseEmailRecap();
+		boolean isBundled = Arrays.asList("gamerecap", "globalrecap")
+				.indexOf(profile.getPreferences().getEmailNotificationsType()) > 0;
 
 		if (profile.getPreferences().isSiteNotifications()) {
 			for (Comment comment : comments) {
@@ -88,7 +91,7 @@ public class UserNotifier {
 			}
 		}
 
-		if (profile.getPreferences().isEmailNotifications() && !isBundled) {
+		if ("onebyone".equals(profile.getPreferences().getEmailNotificationsType())) {
 			emailNotifier.notifyNewMultiComment(subscriber, comments, review);
 		}
 	}
@@ -98,7 +101,8 @@ public class UserNotifier {
 		if ("restricted".equalsIgnoreCase(review.getVisibility())) { return; }
 
 		Profile profile = profileService.getProfile(subscriber.getId());
-		boolean isBundled = profile.getPreferences().isUseEmailRecap();
+		boolean isBundled = Arrays.asList("gamerecap", "globalrecap")
+				.indexOf(profile.getPreferences().getEmailNotificationsType()) > 0;
 
 		if (profile.getPreferences().isSiteNotifications()) {
 			Notification notification = new Notification();
@@ -119,7 +123,7 @@ public class UserNotifier {
 			addNotification(profile, notification);
 		}
 
-		if (profile.getPreferences().isEmailNotifications() && !isBundled) {
+		if ("onebyone".equals(profile.getPreferences().getEmailNotificationsType())) {
 			emailNotifier.notifyNewReview(subscriber, review);
 		}
 	}

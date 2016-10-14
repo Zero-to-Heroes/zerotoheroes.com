@@ -46,6 +46,14 @@ public class Profile {
 		return profileInfo;
 	}
 
+	public Preferences getPreferences() {
+		// Legacy purpose
+		if (preferences.isEmailNotifications() && preferences.getEmailNotificationsType() == null) {
+			preferences.setEmailNotificationsType("gamerecap");
+		}
+		return preferences;
+	}
+
 	// @Deprecated
 	// public Rankings getRankings() {
 	// if (rankings == null) {

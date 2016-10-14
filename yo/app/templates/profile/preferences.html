@@ -13,24 +13,16 @@
 			<input type="checkbox" id="siteNotificationsCheckbox" ng-model="preferences.siteNotifications">
 		</div>
 		<div class="form-group">
-			<label for="emailNotificationsCheckbox">{{::translations.emailNotifications}}</label> 
-			<input type="checkbox" id="emailNotificationsCheckbox" ng-model="preferences.emailNotifications"> 
+			<label for="emailNotificationsType">{{::translations.emailNotifications}}</label> 
+			<button type="button" class="btn btn-default email-notification-type" id="emailNotificationsType" data-trigger="click" ng-model="preferences.emailNotificationsType" bs-options="option.value as option.label for option in emailNotificationsType" placeholder="{{preferences.emailNotificationsType || emailNotificationsType[0].label}}" bs-select>
+			  	<span>Action</span>
+			</button>
 
 			<div class="form-group included indented">
-				<label for="emailRecapCheckbox" ng-class="{'disabled': !preferences.emailNotifications}">{{::translations.emailRecapNotifs}}</label> 
-				<input type="checkbox" id="emailRecapCheckbox" ng-model="preferences.useEmailRecap" ng-disabled="!preferences.emailNotifications" ng-class="{'disabled': !preferences.emailNotifications}"> 
-
-				<div class="form-group included indented">
-					<label for="emailRecapSplit" ng-class="{'disabled': !preferences.useEmailRecap}">{{::translations.emailRecapSplit}}</label> 
-					<input type="checkbox" id="emailRecapSplit" ng-model="preferences.emailRecapSplit" ng-disabled="!preferences.useEmailRecap" ng-class="{'disabled': !preferences.useEmailRecap}"> 
-				</div>
-
-				<div class="form-group included indented">
-					<label for="emailRecapFrequency" ng-class="{'disabled': !preferences.useEmailRecap}">{{::translations.emailRecapFrequency}}</label> 
-					<button type="button" class="btn btn-default" id="emailRecapFrequency" data-trigger="click" ng-model="preferences.emailRecapFrequency" bs-options="n for n in [] | range:6:24:2" placeholder="{{preferences.emailRecapFrequency || 24}}" bs-select ng-disabled="!preferences.useEmailRecap" ng-class="{'disabled': !preferences.useEmailRecap}">
-					  	<span>Action</span>
-					</button>
-				</div>
+				<label for="emailRecapFrequency" ng-class="{'disabled': preferences.emailNotificationsType != 'gamerecap' && preferences.emailNotificationsType != 'globalrecap'}">{{::translations.emailRecapFrequency}}</label> 
+				<button type="button" class="btn btn-default" id="emailRecapFrequency" data-trigger="click" ng-model="preferences.emailRecapFrequency" bs-options="n for n in [] | range:6:24:2" placeholder="{{preferences.emailRecapFrequency || 24}}" bs-select ng-disabled="preferences.emailNotificationsType != 'gamerecap' && preferences.emailNotificationsType != 'globalrecap'" ng-class="{'disabled': preferences.emailNotificationsType != 'gamerecap' && preferences.emailNotificationsType != 'globalrecap'}">
+				  	<span>Action</span>
+				</button>
 			</div>
 		</div>
 		<div class="form-group">

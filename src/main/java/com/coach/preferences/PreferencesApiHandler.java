@@ -59,6 +59,9 @@ public class PreferencesApiHandler {
 		user.setPreferredLanguage(inputPrefs.getLanguage());
 		userRepo.save(user);
 
+		if (inputPrefs.getEmailNotificationsType() == null) {
+			inputPrefs.setEmailNotifications(false);
+		}
 		profile.setPreferences(inputPrefs);
 		profileRepo.save(profile);
 

@@ -30,6 +30,12 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					{ "value" : "en", "label" : "<span class=\"lang-sm\" lang=\"en\"></span>" },
 					{ "value" : "fr", "label" : "<span class=\"lang-sm\" lang=\"fr\"></span>" }
 				]
+				$scope.emailNotificationsType = [
+					{ "value" : null, "label" : $translate.instant('global.profile.preferences.emailNotification.none') },
+					{ "value" : "onebyone", "label" : $translate.instant('global.profile.preferences.emailNotification.onebyone') },
+					{ "value" : "gamerecap", "label" : $translate.instant('global.profile.preferences.emailNotification.gamerecap') },
+					{ "value" : "globalrecap", "label" : $translate.instant('global.profile.preferences.emailNotification.globalrecap') }
+				]
 				$scope.preferences = { language: 'en' }
 
 				$scope.isOwnProfile = function() {

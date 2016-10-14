@@ -1,6 +1,7 @@
 package com.coach.admin.cron;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
@@ -75,8 +76,8 @@ public class EmailNotificationRecapHandler {
 		// Then for each profile, check if we should process the notifs
 		for (Profile profile : profiles) {
 
-			boolean shouldNotif = profile.getPreferences().isEmailNotifications()
-					&& profile.getPreferences().isUseEmailRecap()
+			boolean shouldNotif = Arrays.asList("gamerecap", "globalrecap")
+					.indexOf(profile.getPreferences().getEmailNotificationsType()) > 0
 					&& profile.getPreferences().getEmailRecapFrequency() > 0;
 
 			Calendar calendar = Calendar.getInstance();
@@ -89,7 +90,7 @@ public class EmailNotificationRecapHandler {
 				List<Notification> notifs = notifications.stream()
 						.filter(n -> profile.getUserId().equals(n.getUserId())).collect(Collectors.toList());
 
-				if (profile.getPreferences().isEmailRecapSplit()) {
+				if (profile.getPreferences().getEmailNotificationsType().equals("gamerecap")) {
 					// Get all the unique game Ids
 					Set<String> uniqueGameIds = new HashSet<>();
 					for (Notification notif : notifs) {

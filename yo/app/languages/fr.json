@@ -284,6 +284,12 @@
 				"preferencesUpdated": "Vos préférences ont été mises à jour",
 				"siteNotifications": "Recevoir les notifications sur le site ?",
 				"emailNotifications": "Recevoir les notifications comme e-mails ?",
+				"emailNotification": {
+					"none": "Non merci",
+					"onebyone": "Une par une",
+					"gamerecap": "Des récaps groupés par revue",
+					"globalrecap": "Des recaps tout en un"
+				},
 				"emailRecapNotifs": "Les recevoir groupées périodiquement plutôt qu'une par une ?",
 				"emailRecapSplit": "Recevoir un email par revue?",
 				"emailRecapFrequency": "A quelle fréquence (in hours)?",

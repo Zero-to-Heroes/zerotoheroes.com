@@ -36,6 +36,8 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 			   	$scope.upload = current.$$route.upload
 			   	$scope.menuItem = current.$$route.menuItem
 			   	$scope.subMenu = current.$$route.subMenu
+			   	$scope.className = current.$$route.className
+			   	$log.debug('setting className', $scope.className)
 			   	$scope.useFullWidth = current.$$route.useFullWidth
 		   	}
 

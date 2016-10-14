@@ -544,23 +544,40 @@ h2 {
 	margin-bottom: 0;
 }
 
-.hearthstone-participants .class-select {
+.class-select {
 	ul {
-		padding: 15px 0 0 15px;
+		padding: 0 0 0 15px;
 		max-width: 200px;
 		background: rgba(0, 0, 0, 0.9);
 	}
-	li, a {
+	li {
 		background: transparent;
-	}
-	li, a, span {
 		display: inline-block;
 		padding: 0;
 		margin-right: 5px;
 		margin-bottom: 5px;
 	}
+	a {
+		background: transparent;
+		display: flex;
+		padding: 0;
+	}
+	li > a:focus, li > a:hover {
+		background-color: transparent;
+	}
 	.caret {
 		display: none;
+	}
+	.all-classes {
+	    display: flex;
+	    height: 47px;
+	    align-items: center;
+	    justify-content: center;
+	    a {
+		    color: @light-text;
+		    margin: 0;
+		    font-size: 16px;
+		}
 	}
 }
 
@@ -629,12 +646,12 @@ h2 {
 	position: absolute;
 }
 
-.hearthstone-participants .btn-class-select, .hearthstone-participants .btn-class-select:hover, .hearthstone-participants .btn-class-select:active {
-	display: inline-block;
-	background: transparent;
+.class-select .btn-class-select, .class-select .btn-class-select:hover, .class-select .btn-class-select:active {
+	display: flex;
+	// background: transparent;
 	padding: 0;
-	color: rgba(255, 255, 255, 0.7);
-	width: 90px;
+	// color: rgba(255, 255, 255, 0.7);
+	height: 100%;
 }
 
 .watch-and-learn .hearthstone-participants {
@@ -1035,7 +1052,7 @@ hearthstone-frame .medal.legend:before {
 	.video-listing .hearthstone-participants.arena-draft .player-details {
 		width: 220px;
 	}
-	.video-listing .hearthstone-participants .class-select span {
+	.video-listing .class-select span {
 		max-width: none;
 		margin: 0;
 	}

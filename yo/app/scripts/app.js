@@ -52,34 +52,6 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			// isFullPage: true,
 			// sport: 'all'
 		}).
-		when('/squash', {
-			templateUrl: 'views/landing/sportLegacy.html',
-			controller: 'SportPageCtrl',
-			isLandingPage: true,
-			isFullPage: true,
-			sport: 'squash'
-		}).
-		when('/heroesofthestorm', {
-			templateUrl: 'views/landing/sportLegacy.html',
-			controller: 'SportPageCtrl',
-			isLandingPage: true,
-			isFullPage: true,
-			sport: 'heroesofthestorm'
-		}).
-		when('/leagueoflegends', {
-			templateUrl: 'views/landing/sportLegacy.html',
-			controller: 'SportPageCtrl',
-			isLandingPage: true,
-			isFullPage: true,
-			sport: 'leagueoflegends'
-		}).
-		when('/badminton', {
-			templateUrl: 'views/landing/sportLegacy.html',
-			controller: 'SportPageCtrl',
-			isLandingPage: true,
-			isFullPage: true,
-			sport: 'badminton'
-		}).
 		when('/hearthstone', {
 			templateUrl: 'views/landing/sport.html',
 			controller: 'SportPageCtrl',
@@ -92,24 +64,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			redirectTo: function() {
 					window.location = 'http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/'
 			}
-		// redirectTo: 'http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/'
-		// templateUrl: 'views/landing/sport.html',
-		// controller: 'SportPageCtrl',
-		// isLandingPage: true,
-		// isFullPage: true,
-		// sport: 'all'
 		}).
-			// site pages
-		// when('/upload', {
-			// templateUrl: 'views/upload.html',
-			// controller: 'UploadDetailsCtrl',
-			// upload: true
-		// 	}).
-		// 	when('/s/upload', {
-			// templateUrl: 'views/upload.html',
-			// controller: 'UploadDetailsCtrl',
-			// upload: true
-		// 	}).
 		when('/s/:sport/upload/:uploadType?/:step?', {
 			templateUrl: 'views/upload.html',
 			controller: 'UploadDetailsCtrl',
@@ -125,23 +80,9 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 		when('/s/:sport/search', {
 			templateUrl: 'views/search.html',
 			controller: 'SearchCtrl',
+			className: 'search-page-global',
 			reloadOnSearch: false,
 			menuItem: 'search'
-		}).
-		when('/r/badminton/:reviewId/:reviewTitle?', {
-			redirectTo: '/'
-		}).
-		when('/r/squash/:reviewId/:reviewTitle?', {
-			redirectTo: '/'
-		}).
-		when('/r/heroesofthestorm/:reviewId/:reviewTitle?', {
-			redirectTo: '/'
-		}).
-		when('/r/leagueoflegends/:reviewId/:reviewTitle?', {
-			redirectTo: '/'
-		}).
-		when('/r/other/:reviewId/:reviewTitle?', {
-			redirectTo: '/'
 		}).
 		when('/r/:sport/:reviewId/:reviewTitle?', {
 			templateUrl: 'views/review.html',
@@ -151,14 +92,10 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			useFullWidth: true,
 			menuItem: 'reviews'
 		}).
-		// 	when('/reviews/:pageNumber?', {
-			// templateUrl: 'views/videoListing.html',
-			// controller: 'VideoListingCtrl',
-			// reloadOnSearch: false
-		// 	}).
 		when('/s/:sport/reviews/:pageNumber?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
+			className: 'search-page-global',
 			reloadOnSearch: false,
 			menuItem: 'reviews'
 		}).
@@ -173,6 +110,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
 			reloadOnSearch: false,
+			className: 'search-page-global',
 			menuItem: 'myVideos'
 		}).
 		when('/s/:sport/myvideos/:pageNumber?', {
@@ -180,6 +118,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
 			reloadOnSearch: false,
+			className: 'search-page-global',
 			menuItem: 'myVideos'
 		}).
 		when('/s/:sport/', {
@@ -248,6 +187,52 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			controller: 'ProfileController',
 			menuItem: 'profile'
 		}).
+
+		// Older sections
+		when('/squash', {
+			templateUrl: 'views/landing/sportLegacy.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'squash'
+		}).
+		when('/heroesofthestorm', {
+			templateUrl: 'views/landing/sportLegacy.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'heroesofthestorm'
+		}).
+		when('/leagueoflegends', {
+			templateUrl: 'views/landing/sportLegacy.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'leagueoflegends'
+		}).
+		when('/badminton', {
+			templateUrl: 'views/landing/sportLegacy.html',
+			controller: 'SportPageCtrl',
+			isLandingPage: true,
+			isFullPage: true,
+			sport: 'badminton'
+		}).
+		when('/r/badminton/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+		when('/r/squash/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+		when('/r/heroesofthestorm/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+		when('/r/leagueoflegends/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+		when('/r/other/:reviewId/:reviewTitle?', {
+			redirectTo: '/'
+		}).
+
 		otherwise({
 			redirectTo: '/'
 		});

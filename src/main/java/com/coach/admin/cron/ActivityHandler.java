@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component;
 
 import com.coach.activities.Activity;
 import com.coach.activities.ActivityRepository;
-import com.coach.activities.NewCommentData;
-import com.coach.activities.NewReviewData;
 import com.coach.activities.ReputationChangeData;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileService;
@@ -34,37 +32,37 @@ public class ActivityHandler {
 	ProfileService profileService;
 
 	public void handleNewGame(ReviewJournal log, Profile profile) {
-		Activity activity = new Activity();
-		activity.setCreationDate(new Date());
-		activity.setUserId(log.getAuthorId());
-		// updateUnreadNotifsCount(log.getAuthorId());
-
-		Review review = reviewRepository.findById(log.getReviewId());
-		activity.setSport(review.getSport().getKey().toLowerCase());
-
-		NewReviewData data = new NewReviewData();
-		data.setReviewId(log.getReviewId());
-		data.setReviewTitle(review.getTitle());
-		activity.setData(data);
-
-		activityReposistory.save(activity);
+		// Activity activity = new Activity();
+		// activity.setCreationDate(new Date());
+		// activity.setUserId(log.getAuthorId());
+		// // updateUnreadNotifsCount(log.getAuthorId());
+		//
+		// Review review = reviewRepository.findById(log.getReviewId());
+		// activity.setSport(review.getSport().getKey().toLowerCase());
+		//
+		// NewReviewData data = new NewReviewData();
+		// data.setReviewId(log.getReviewId());
+		// data.setReviewTitle(review.getTitle());
+		// activity.setData(data);
+		//
+		// activityReposistory.save(activity);
 	}
 
 	public void handleNewComment(CommentJournal log, Profile profile) {
-		Activity activity = new Activity();
-		activity.setCreationDate(new Date());
-		activity.setUserId(log.getAuthorId());
-		// updateUnreadNotifsCount(profile);
-
-		Review review = reviewRepository.findById(log.getReviewId());
-		activity.setSport(review.getSport().getKey().toLowerCase());
-
-		NewCommentData data = new NewCommentData();
-		data.setReviewId(log.getReviewId());
-		data.setReviewTitle(review.getTitle());
-		activity.setData(data);
-
-		activityReposistory.save(activity);
+		// Activity activity = new Activity();
+		// activity.setCreationDate(new Date());
+		// activity.setUserId(log.getAuthorId());
+		// // updateUnreadNotifsCount(profile);
+		//
+		// Review review = reviewRepository.findById(log.getReviewId());
+		// activity.setSport(review.getSport().getKey().toLowerCase());
+		//
+		// NewCommentData data = new NewCommentData();
+		// data.setReviewId(log.getReviewId());
+		// data.setReviewTitle(review.getTitle());
+		// activity.setData(data);
+		//
+		// activityReposistory.save(activity);
 	}
 
 	public void handleNewVote(ReputationJournal log, Profile profile) {

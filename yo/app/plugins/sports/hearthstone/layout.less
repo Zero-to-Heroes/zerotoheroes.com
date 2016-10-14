@@ -544,23 +544,56 @@ h2 {
 	margin-bottom: 0;
 }
 
-.hearthstone-participants .class-select {
+.class-select {
 	ul {
-		padding: 15px 0 0 15px;
+		padding: 0;
 		max-width: 200px;
 		background: rgba(0, 0, 0, 0.9);
+		display: flex !important;
+		flex-wrap: wrap;
+    	justify-content: space-around;
 	}
-	li, a {
+	li {
 		background: transparent;
-	}
-	li, a, span {
-		display: inline-block;
+		display: flex;
+		align-items: center;
 		padding: 0;
-		margin-right: 5px;
-		margin-bottom: 5px;
+    	margin: 2.5px;
+    	padding: 2.5px;
+	}
+	li:hover, li:focus {
+    	border-radius: 5px;
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+	li.active {
+    	border-radius: 5px;
+		background-color: rgb(223, 171, 46);
+	}
+	a {
+		background: transparent;
+		display: flex;
+		padding: 0;
+	}
+	li span {
+		display: flex;
+	}
+	li > a:focus, li > a:hover {
+		background-color: transparent;
 	}
 	.caret {
 		display: none;
+	}
+	.all-classes {
+		flex-basis: 100%;
+	    display: flex;
+	    height: 47px;
+	    align-items: center;
+	    justify-content: center;
+	    a {
+		    color: @light-text;
+		    margin: 0;
+		    font-size: 16px;
+		}
 	}
 }
 
@@ -629,12 +662,14 @@ h2 {
 	position: absolute;
 }
 
-.hearthstone-participants .btn-class-select, .hearthstone-participants .btn-class-select:hover, .hearthstone-participants .btn-class-select:active {
-	display: inline-block;
-	background: transparent;
+.class-select .btn-class-select, .class-select .btn-class-select:hover, .class-select .btn-class-select:active {
+	display: flex;
+    justify-content: center;
+	// background: transparent;
 	padding: 0;
-	color: rgba(255, 255, 255, 0.7);
-	width: 90px;
+	// color: rgba(255, 255, 255, 0.7);
+	height: 100%;
+    border-radius: 5px;
 }
 
 .watch-and-learn .hearthstone-participants {
@@ -1035,7 +1070,7 @@ hearthstone-frame .medal.legend:before {
 	.video-listing .hearthstone-participants.arena-draft .player-details {
 		width: 220px;
 	}
-	.video-listing .hearthstone-participants .class-select span {
+	.video-listing .class-select span {
 		max-width: none;
 		margin: 0;
 	}

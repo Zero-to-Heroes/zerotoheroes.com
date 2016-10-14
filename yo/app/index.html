@@ -99,12 +99,12 @@
 		  document.createElement('video');document.createElement('audio');document.createElement('track');
 		</script>
 	</head>
-	<body ng-controller="LayoutCtrl" background="{{background}}" data-spy="scroll" data-offset="80" class="{{customClass}}">
+	<body ng-controller="LayoutCtrl" class="{{customClass}}">
 		<noscript>Please enable JavaScript to view this web page.</noscript>
 		<div zth-navigation ng-if="!isLandingPage"></div>
 		<announcements ng-if="!isLandingPage" sport="sport"></announcements>
 		<sport-tag></sport-tag>
-		<div ng-class="{'main-container-nolanding': !isLandingPage, 'main-container-landing': isLandingPage}">
+		<div ng-class="{'main-container-nolanding': !isLandingPage, 'main-container-landing': isLandingPage}" class="{{className}}">
 			<!--<div class="left-column" ng-hide="true || isLandingPage || hideSideBar">
 				<div welcome-pane></div>
 			</div>-->

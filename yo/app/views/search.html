@@ -1,6 +1,43 @@
-<view-title>{{sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} Search reviews</view-title>
+<view-title>{{::sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} Search reviews</view-title>
 
 <div class="background-white listing-view search-page">
+
+	<!-- That whole panel will be game-specific later on, no need to externalize part of it in a direction -->
+	<section class="search-section">
+
+		<!-- This is now Constructed, Arena game, Arena draft, etc. -->
+		<button type="button" class="btn btn-default btn-select btn-class-select" data-trigger="click" ng-model="options.criteria.reviewType" data-html="1" bs-options="::option.value as option.label for option in gameTypeOptions" placeholder="{{::gameTypeOptions[0].label}}" bs-select ng-required="true">
+		  	<span>Action</span>
+		</button>
+
+		<!-- Choose the Hero -->
+		<div class="player-details class-select">
+			<button type="button" class="btn btn-default form-control" ng-class="{'btn-select': !options.criteria.participantDetails.playerCategory, 'btn-class-select': options.criteria.participantDetails.playerCategory}" ng-model="options.criteria.participantDetails.playerCategory" data-html="1" data-multiple="1" bs-options="::icon.value as icon.label for icon in classIcons" placeholder="{{::translations.allHeroes}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select ng-required="true" data-all-none-buttons="true" data-none-text="{{::translations.allHeroes}}">
+			  	<span>Action</span>
+			</button>
+		</div>
+
+		<!-- Choose the Opponent -->
+		<div class="player-details class-select" ng-show="options.criteria.reviewType != 'arena-draft'">
+			<button type="button" class="btn btn-default form-control" ng-class="{'btn-select': !options.criteria.participantDetails.opponentCategory, 'btn-class-select': options.criteria.participantDetails.opponentCategory}" ng-model="options.criteria.participantDetails.opponentCategory" data-html="1" data-multiple="1" bs-options="::icon.value as icon.label for icon in classIcons" placeholder="{{::translations.allOpponents}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select ng-required="true" data-all-none-buttons="true" data-none-text="{{::translations.allOpponents}}">
+			  	<span>Action</span>
+			</button>
+		</div>
+
+		<!-- Choose the Result (except for drafts) -->
+		<div class="player-details class-select" ng-show="options.criteria.reviewType != 'arena-draft'">
+			<button type="button" class="btn btn-default form-control" ng-model="options.criteria.result" data-html="1" data-multiple="1" bs-options="::option.value as option.label for option in gameTypeOptions" placeholder="{{::translations.allOpponents}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select ng-required="true" data-all-none-buttons="true" data-none-text="{{::translations.allOpponents}}">
+			  	<span>Action</span>
+			</button>
+		</div>
+
+
+
+
+
+	</section>
+
+
 	<div class="alert alert-warning status-message" ng-show="updateStatus == 'ok'">
 		<button type="button" class="close" ng-click="dismissMessage()"><span aria-hidden="true">&times;</span></button>
 		<span translate="global.search.subscriptionOk"></span>
@@ -20,7 +57,6 @@
 				</button>
 				<span translate="hearthstone.search.matchupLabel" ng-show="options.criteria.reviewType != 'arena-draft'"></span> 
 				<span translate="hearthstone.search.arenaClassLabel" ng-show="options.criteria.reviewType == 'arena-draft'"></span> 
-				<participants-search sport="sport" class="participants-search" options="options"></participants-search>
 			</div>
 			<div class="matchup-criteria" ng-show="sport != 'hearthstone'">
 				<span class="matchup-label" translate="global.search.lookingFor"></span> 

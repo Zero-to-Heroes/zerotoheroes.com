@@ -51,14 +51,21 @@
 		"search": {
 			"lookingFor": "I'm looking for",
 			"gameType": {
-				"all": "games and drafts",
-				"game": "games",
-				"draft": "drafts"
+				"all": "All modes",
+				"ranked": "Ranked",
+				"arenaGame": "Arena games",
+				"arenaDraft": "Arena drafts",
+				"casual": "Casual",
+				"friendly": "Friendly",
+				"tavernBrawl": "Tavern Brawl",
+				"adventure": "Adventure"
 			},
 			"matchupLabel": "that oppose",
 			"arenaClassLabel": "of"
 		},
 		"classes": {
+			"anyHero": "All Heroes",
+			"anyOpponent": "All Opponents",
 			"druid": "Druid",
 			"hunter": "Hunter",
 			"mage": "Mage",

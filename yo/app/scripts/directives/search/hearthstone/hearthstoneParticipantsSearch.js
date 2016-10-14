@@ -6,8 +6,8 @@ app.directive('hearthstoneParticipantsSearch', ['$log', 'SportsConfig', 'Api', '
 			transclude: false,
 			templateUrl: 'templates/search/hearthstone/hearthstoneParticipantsSearch.html',
 			scope: {
-				sport: '=',
-				options: '='
+				sport: '<',
+				options: '<'
 			},
 			link: function ($scope, element, attrs) {
 			},

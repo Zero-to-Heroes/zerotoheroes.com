@@ -2,6 +2,37 @@
 
 angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', '$modal', 'TagService',
 	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, $modal, TagService) {
+
+		$scope.translations = {
+			allHeroes: $translate.instant('hearthstone.classes.anyHero'),
+			allOpponents: $translate.instant('hearthstone.classes.anyOpponent')
+		}
+
+		$scope.gameTypeOptions = [
+			{ "value" : null, "label" : $translate.instant('hearthstone.search.gameType.all') },
+			{ "value" : "ranked", "label" : $translate.instant('hearthstone.search.gameType.ranked') },
+			{ "value" : "arena-game", "label" : $translate.instant('hearthstone.search.gameType.arenaGame') },
+			{ "value" : "arena-draft", "label" : $translate.instant('hearthstone.search.gameType.arenaDraft') },
+			{ "value" : "casual", "label" : $translate.instant('hearthstone.search.gameType.casual') },
+			{ "value" : "friendly", "label" : $translate.instant('hearthstone.search.gameType.friendly') },
+			{ "value" : "tavern-brawl", "label" : $translate.instant('hearthstone.search.gameType.tavernBrawl') },
+			{ "value" : "adventure", "label" : $translate.instant('hearthstone.search.gameType.adventure') }
+		]
+
+		// Options for class selection
+		$scope.classIcons = [
+			{ "value" : "druid", "label" : "<i class=\"class-icon druid-icon\" title=\"" + $translate.instant('hearthstone.classes.druid') + "\"></i>" },
+			{ "value" : "hunter", "label" : "<i class=\"class-icon hunter-icon\" title=\"" + $translate.instant('hearthstone.classes.hunter') + "\"></i>" },
+			{ "value" : "mage", "label" : "<i class=\"class-icon mage-icon\" title=\"" + $translate.instant('hearthstone.classes.mage') + "\"></i>" },
+			{ "value" : "paladin", "label" : "<i class=\"class-icon paladin-icon\" title=\"" + $translate.instant('hearthstone.classes.paladin') + "\"></i>" },
+			{ "value" : "priest", "label" : "<i class=\"class-icon priest-icon\" title=\"" + $translate.instant('hearthstone.classes.priest') + "\"></i>" },
+			{ "value" : "rogue", "label" : "<i class=\"class-icon rogue-icon\" title=\"" + $translate.instant('hearthstone.classes.rogue') + "\"></i>" },
+			{ "value" : "shaman", "label" : "<i class=\"class-icon shaman-icon\" title=\"" + $translate.instant('hearthstone.classes.shaman') + "\"></i>" },
+			{ "value" : "warlock", "label" : "<i class=\"class-icon warlock-icon\" title=\"" + $translate.instant('hearthstone.classes.warlock') + "\"></i>" },
+			{ "value" : "warrior", "label" : "<i class=\"class-icon warrior-icon\" title=\"" + $translate.instant('hearthstone.classes.warrior') + "\"></i>" }
+		]
+
+
 		$scope.clearFilters = function() {
 			// $log.debug('clearing filters', $scope.options)
 			var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
@@ -16,8 +47,8 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 					search: searchFn,
 					sort: 'creationDate',
 					participantDetails: {
-						playerCategory: 'any',
-						opponentCategory: 'any',
+						playerCategory: null,
+						opponentCategory: null,
 						skillLevel: []
 					},
 					minComments: 0,
@@ -47,11 +78,6 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 				$scope.options.criteria.noHelpful = true
 		})
 
-		$scope.gameTypeOptions = [
-			{ "value" : null, "label" : $translate.instant('hearthstone.search.gameType.all') },
-			{ "value" : "game-replay", "label" : $translate.instant('hearthstone.search.gameType.game') },
-			{ "value" : "arena-draft", "label" : $translate.instant('hearthstone.search.gameType.draft') }
-		]
 
 		$scope.minCommentsOptions = [
 			{ "value" : 0, "label" : 0 },
@@ -80,10 +106,10 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			$scope.options.criteria.sport = $scope.sport
 
 			$scope.options.criteria.search($scope.options.criteria, true, $scope.pageNumber)
-			$timeout(function() {
-				$scope.options.criteria.participantDetails.playerCategory = $scope.options.criteria.participantDetails.playerCategory || 'any'
-				$scope.options.criteria.participantDetails.opponentCategory = $scope.options.criteria.participantDetails.opponentCategory || 'any'
-			})
+			// $timeout(function() {
+			// 	$scope.options.criteria.participantDetails.playerCategory = $scope.options.criteria.participantDetails.playerCategory || 'any'
+			// 	$scope.options.criteria.participantDetails.opponentCategory = $scope.options.criteria.participantDetails.opponentCategory || 'any'
+			// })
 		}
 		$scope.firstSearch = function() {
 			if (!$scope.options.criteria.search) {

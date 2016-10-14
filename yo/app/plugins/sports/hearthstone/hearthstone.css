@@ -433,25 +433,57 @@
 .hearthstone .hearthstone-participants .form-group {
   margin-bottom: 0;
 }
-.hearthstone .hearthstone-participants .class-select ul {
-  padding: 15px 0 0 15px;
+.hearthstone .class-select ul {
+  padding: 0;
   max-width: 200px;
   background: rgba(0, 0, 0, 0.9);
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-.hearthstone .hearthstone-participants .class-select li,
-.hearthstone .hearthstone-participants .class-select a {
+.hearthstone .class-select li {
   background: transparent;
-}
-.hearthstone .hearthstone-participants .class-select li,
-.hearthstone .hearthstone-participants .class-select a,
-.hearthstone .hearthstone-participants .class-select span {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 0;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin: 2.5px;
+  padding: 2.5px;
 }
-.hearthstone .hearthstone-participants .class-select .caret {
+.hearthstone .class-select li:hover,
+.hearthstone .class-select li:focus {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.hearthstone .class-select li.active {
+  border-radius: 5px;
+  background-color: #dfab2e;
+}
+.hearthstone .class-select a {
+  background: transparent;
+  display: flex;
+  padding: 0;
+}
+.hearthstone .class-select li span {
+  display: flex;
+}
+.hearthstone .class-select li > a:focus,
+.hearthstone .class-select li > a:hover {
+  background-color: transparent;
+}
+.hearthstone .class-select .caret {
   display: none;
+}
+.hearthstone .class-select .all-classes {
+  flex-basis: 100%;
+  display: flex;
+  height: 47px;
+  align-items: center;
+  justify-content: center;
+}
+.hearthstone .class-select .all-classes a {
+  color: #edd6aa;
+  margin: 0;
+  font-size: 16px;
 }
 .hearthstone .hearthstone-participants .player-details,
 .hearthstone .hearthstone-participants .opponent-details {
@@ -503,14 +535,14 @@
 .hearthstone .hearthstone-participants .level-details .tag-item {
   position: absolute;
 }
-.hearthstone .hearthstone-participants .btn-class-select,
-.hearthstone .hearthstone-participants .btn-class-select:hover,
-.hearthstone .hearthstone-participants .btn-class-select:active {
-  display: inline-block;
-  background: transparent;
+.hearthstone .class-select .btn-class-select,
+.hearthstone .class-select .btn-class-select:hover,
+.hearthstone .class-select .btn-class-select:active {
+  display: flex;
+  justify-content: center;
   padding: 0;
-  color: rgba(255, 255, 255, 0.7);
-  width: 90px;
+  height: 100%;
+  border-radius: 5px;
 }
 .hearthstone .watch-and-learn .hearthstone-participants {
   margin-bottom: 0;
@@ -872,7 +904,7 @@
 .hearthstone .video-listing .hearthstone-participants.arena-draft .player-details {
   width: 220px;
 }
-.hearthstone .video-listing .hearthstone-participants .class-select span {
+.hearthstone .video-listing .class-select span {
   max-width: none;
   margin: 0;
 }

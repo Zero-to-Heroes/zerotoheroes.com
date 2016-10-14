@@ -485,7 +485,7 @@ public class DeckParser implements Plugin {
 				// log.debug("json draft " + draft);
 
 				Deck deck = new Deck();
-				deck.title = review.getTitle();
+				deck.title = "Zero to Heroes - " + review.getTitle();
 				JSONArray pickedCards = draft.getJSONArray("pickedcards");
 
 				for (int i = 0; i < pickedCards.length(); i++) {

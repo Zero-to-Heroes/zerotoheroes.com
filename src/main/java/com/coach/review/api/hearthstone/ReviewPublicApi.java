@@ -197,6 +197,11 @@ public class ReviewPublicApi {
 		review.setUploaderApplicationKey(applicationKey);
 		review.setUploaderToken(userToken);
 		
+		// TODO: hard-code
+		if ("arenatracker".equals(review.getUploaderApplicationKey())) {
+			review.setFileType("arenatracker");
+		}
+		
 		hsArenaDraft.transformReplayFile(review);
 
 		if (user != null) {

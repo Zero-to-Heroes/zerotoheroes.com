@@ -198,7 +198,7 @@ public class ReviewPublicApi {
 		review.setUploaderToken(userToken);
 		
 		// TODO: hard-code
-		if ("arenatracker".equals(review.getUploaderApplicationKey())) {
+		if ("ArenaTracker".equals(review.getUploaderApplicationKey())) {
 			review.setFileType("arenatracker");
 		}
 		

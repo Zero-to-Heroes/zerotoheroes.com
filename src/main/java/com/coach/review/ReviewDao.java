@@ -89,7 +89,7 @@ public class ReviewDao {
 		if (!StringUtils.isEmpty(criteria.getReviewType())) {
 			crit.and("reviewType").is(criteria.getReviewType());
 		}
-		if (criteria.getMinComments() != null) {
+		if (criteria.getMinComments() != null && criteria.getMinComments() > 0) {
 			crit.and("totalComments").gte(criteria.getMinComments());
 		}
 		if (criteria.getMaxComments() != null) {

@@ -55,7 +55,12 @@ public class HSArenaDraft implements ReplayPlugin {
 		String replayJson = null;
 
 		// Try to parse the .json file
-		if ("arenatracker".equals(review.getFileType())) {
+		if ("arenatracker".equals(review.getFileType()) && !StringUtils.isEmpty(review.getTemporaryReplay())) {
+			log.debug("Converting arena tracker file");
+			String atFile = review.getTemporaryReplay();
+			replayJson = convertToJson(atFile);
+		}
+		else if ("arenatracker".equals(review.getFileType())) {
 			log.debug("Converting arena tracker file");
 			String atFile = s3utils.readFromS3(review.getTemporaryKey());
 			replayJson = convertToJson(atFile);

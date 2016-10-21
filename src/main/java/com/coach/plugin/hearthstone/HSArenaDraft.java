@@ -85,7 +85,7 @@ public class HSArenaDraft implements ReplayPlugin {
 		return true;
 	}
 
-	private String convertToJson(String atFile) throws Exception {
+	public String convertToJson(String atFile) throws Exception {
 		Pattern heroPickRegex = Pattern.compile(".* - GameWatcher\\(\\d+\\): New arena\\. Heroe: (\\d+).*");
 		Pattern heroPickRegex2 = Pattern.compile(".* - DraftHandler: Begin draft. Heroe: (\\d+).*");
 		Pattern choiceRegex = Pattern.compile(".* - DraftHandler: \\(\\d+\\) (\\w+)\\/(\\w+)\\/(\\w+).*");
@@ -94,7 +94,7 @@ public class HSArenaDraft implements ReplayPlugin {
 		String draftJson = null;
 
 		if (atFile != null) {
-			String[] lines = atFile.split(System.lineSeparator());
+			String[] lines = atFile.split("\n");
 			if (lines != null) {
 				Draft draft = new Draft();
 				int pickIndex = 0;

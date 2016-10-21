@@ -182,7 +182,7 @@ public class ReviewPublicApi {
 		StringBuilder draft = new StringBuilder();
 		String line;
 		while ((line = reader.readLine()) != null) {
-			draft.append(line);
+			draft.append(line + "\n");
 		}
 		log.debug("\tbuilt draft");
 		

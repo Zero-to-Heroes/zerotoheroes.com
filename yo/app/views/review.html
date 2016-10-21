@@ -103,12 +103,17 @@
 			<div ng-if="selectedCoach">
 				<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
 			</div>
+			<div ng-if="deletionMessage">
+				<div class="alert alert-info">{{::translations.deletionDone}}</div>
+			</div>
 
 			<h3 class="comments-headline">{{::translations.commentsHeadline}}</h3>
 			<div class="comments-links">
 				<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-if=":reviewRefresh:(subscribed() && User.isLoggedIn())" title="{{::translations.unsubscribeReviewTooltip}}">{{::translations.unsubscribeReview}}<span class="glyphicon glyphicon-info-sign"></span></a>
 				<a class="link-minor link-nodeco" ng-click="subscribe()" ng-if=":reviewRefresh:(!subscribed() && User.isLoggedIn())" title="{{::translations.subscribeReviewTooltip}}">{{::translations.subscribeReview}}<span class="glyphicon glyphicon-info-sign"></span></a>
 				<a class="link-minor link-nodeco" ng-click="showProModal()" ng-if=":reviewRefresh:(!!coaches.length && !review.editing)" title="{{::translations.askProTooltip}}">{{::translations.askProButton}}</a>
+				<a class="link-minor link-delete" ng-click="showConfirmDeleteButton()" ng-if=":delete:review.authorId == User.getUser().id && !showDelete" title="{{::translations.deleteButtonTooltip}}">{{::translations.deleteButton}}</a>
+				<a class="link-minor link-delete" ng-click="deleteReview()" ng-if=":delete:review.authorId == User.getUser().id && showDelete" title="{{::translations.confirmDeleteButtonTooltip}}">{{::translations.confirmDeleteButton}}</a>
 			</div>
 
 			<!-- Dropdown to sort the criteria. Don't show if in the old comment system -->

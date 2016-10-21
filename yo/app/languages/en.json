@@ -542,6 +542,12 @@
 					}
 				}
 			},
+			"deleteButtonTooltip": "Deleting a review can't be undone. Are you SURE you want to delete it?",
+			"deleteButton": "Delete review",
+			"confirmDeleteButtonTooltip": "Deleting a review can't be undone. Are you REALLY SURE you want to delete it?",
+			"confirmDeleteButton": "Yes, delete it",
+			"deletionDone": "Review successfully deleted",
+			
 			"askProButton": "Ask a Pro",
 			"askProTooltip": "Get professional advice on your review",
 			"loadingComments": "Loading comments",

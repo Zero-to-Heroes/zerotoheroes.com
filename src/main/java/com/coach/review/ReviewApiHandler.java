@@ -217,6 +217,30 @@ public class ReviewApiHandler {
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/{reviewId}", method = RequestMethod.DELETE)
+	public @ResponseBody ResponseEntity<String> deleteReview(@PathVariable("reviewId") final String id) {
+		// String currentUser =
+		// SecurityContextHolder.getContext().getAuthentication().getName();
+		Review review = reviewRepo.findById(id);
+
+		if (review == null) { return new ResponseEntity<String>("", HttpStatus.NOT_FOUND); }
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = userRepo.findByUsername(currentUser);
+
+		if (user == null) {
+			return new ResponseEntity<String>("Unknown user ", HttpStatus.FORBIDDEN);
+		}
+		
+		if (!user.getId().equals(review.getAuthorId())) {
+			return new ResponseEntity<String>("You can only delete your own reviews", HttpStatus.FORBIDDEN);
+		}
+		
+		reviewRepo.delete(review);
+
+		return new ResponseEntity<String>("Deleted review", HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/multi", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<ListReviewResponse> getReviews(

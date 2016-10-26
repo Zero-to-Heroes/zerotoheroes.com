@@ -6,121 +6,164 @@
 	<section class="search-section">
 
 		<!-- This is now Constructed, Arena game, Arena draft, etc. -->
-		<button type="button" class="btn btn-default btn-select btn-class-select" data-trigger="click" ng-model="options.criteria.reviewType" data-html="1" bs-options="::option.value as option.label for option in gameTypeOptions" placeholder="{{::gameTypeOptions[0].label}}" bs-select ng-required="true">
+		<button type="button" class="btn btn-default btn-select btn-class-select search-group" ng-model="options.criteria.gameMode" data-html="1" bs-options="::option.value as option.label for option in gameTypeOptions" placeholder="{{::gameTypeOptions[0].label}}" ng-change="clearRanks(); filterReviews()" bs-select>
 		  	<span>Action</span>
 		</button>
 
 		<!-- Choose the Hero -->
-		<div class="player-details class-select">
-			<button type="button" class="btn btn-default form-control" ng-class="{'btn-select': !options.criteria.participantDetails.playerCategory, 'btn-class-select': options.criteria.participantDetails.playerCategory}" ng-model="options.criteria.participantDetails.playerCategory" data-html="1" data-multiple="1" bs-options="::icon.value as icon.label for icon in classIcons" placeholder="{{::translations.allHeroes}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select ng-required="true" data-all-none-buttons="true" data-none-text="{{::translations.allHeroes}}">
+		<div class="player-details class-select search-group">
+			<button type="button" class="btn btn-default form-control" ng-class="{'btn-select': !options.criteria.playerCategory || options.criteria.playerCategory.length == 0, 'btn-class-select': options.criteria.playerCategory}" ng-model="options.criteria.playerCategory" data-html="1" data-multiple="1" bs-options="::icon.value as icon.label for icon in classIcons" placeholder="{{::translations.allHeroes}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select data-all-none-buttons="true" data-none-text="{{::translations.allHeroes}}" ng-change="filterReviews()">
 			  	<span>Action</span>
 			</button>
 		</div>
 
 		<!-- Choose the Opponent -->
-		<div class="player-details class-select" ng-show="options.criteria.reviewType != 'arena-draft'">
-			<button type="button" class="btn btn-default form-control" ng-class="{'btn-select': !options.criteria.participantDetails.opponentCategory, 'btn-class-select': options.criteria.participantDetails.opponentCategory}" ng-model="options.criteria.participantDetails.opponentCategory" data-html="1" data-multiple="1" bs-options="::icon.value as icon.label for icon in classIcons" placeholder="{{::translations.allOpponents}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select ng-required="true" data-all-none-buttons="true" data-none-text="{{::translations.allOpponents}}">
+		<div class="player-details class-select search-group" ng-show="options.criteria.gameMode != 'arena-draft'">
+			<button type="button" class="btn btn-default btn-class form-control" ng-class="{'btn-select': !options.criteria.opponentCategory || options.criteria.opponentCategory.length == 0, 'btn-class-select': options.criteria.opponentCategory}" ng-model="options.criteria.opponentCategory" data-html="1" data-multiple="1" bs-options="::icon.value as icon.label for icon in classIcons" placeholder="{{::translations.allOpponents}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select data-all-none-buttons="true" data-none-text="{{::translations.allOpponents}}" ng-change="filterReviews()">
 			  	<span>Action</span>
 			</button>
 		</div>
 
 		<!-- Choose the Result (except for drafts) -->
-		<div class="player-details class-select" ng-show="options.criteria.reviewType != 'arena-draft'">
-			<button type="button" class="btn btn-default form-control" ng-model="options.criteria.result" data-html="1" data-multiple="1" bs-options="::option.value as option.label for option in gameTypeOptions" placeholder="{{::translations.allOpponents}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select ng-required="true" data-all-none-buttons="true" data-none-text="{{::translations.allOpponents}}">
+		<button type="button" class="btn btn-default btn-select search-group" ng-model="options.criteria.result" data-html="1" bs-options="::option.value as option.label for option in resultOptions" placeholder="{{::resultOptions[0].label}}" bs-select ng-show="options.criteria.gameMode != 'arena-draft'" ng-change="filterReviews()">
+		  	<span>Action</span>
+		</button>
+
+		<!-- Choose the Coin/NoCoin (except for drafts) -->
+		<button type="button" class="btn btn-default btn-select search-group" ng-model="options.criteria.playCoin" data-html="1" bs-options="::option.value as option.label for option in playCoinOptions" placeholder="{{::playCoinOptions[0].label}}" bs-select ng-show="options.criteria.gameMode != 'arena-draft'" ng-change="filterReviews()">
+		  	<span>Action</span>
+		</button>
+
+		<!-- Sorting option -->
+		<div class="sort-option search-group">
+			<button type="button" class="btn btn-default btn-select sort-button" ng-model="options.criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{::translations.sort}}" bs-select ng-change="updateSort()">
 			  	<span>Action</span>
 			</button>
 		</div>
 
+		<div class="line-break"></div>
 
+		<!-- Skill level -->
+		<div class="skill-select ranked search-group" ng-show="options.criteria.gameMode == 'ranked'">
+			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.skillRangeFrom" data-html="1" bs-options="::option.value as option.label for option in getRankedSkillFromOptions()" placeholder="{{::rankOptions[0].label}}" bs-select ng-change="filterReviews()">
+			  	<span>Action</span>
+			</button>
+			<span>{{::translations.skillRankedTo}}</span>
+			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.skillRangeTo" data-html="1" bs-options="::option.value as option.label for option in getRankedSkillToOptions()" placeholder="{{::rankOptions[rankOptions.length - 1].label}}" bs-select ng-change="filterReviews()">
+			  	<span>Action</span>
+			</button>
+		</div>
+		<div class="skill-select arena search-group" ng-show="options.criteria.gameMode == 'arena-game'">
+			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.skillRangeFrom" data-html="1" bs-options="::option.value as option.label for option in getArenaSkillFromOptions()" placeholder="{{::arenaOptions[0].label}}" bs-select ng-change="filterReviews()">
+			  	<span>Action</span>
+			</button>
+			<span>{{::translations.skillRankedTo}}</span>
+			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.skillRangeTo" data-html="1" bs-options="::option.value as option.label for option in getArenaSkillToOptions()" placeholder="{{::arenaOptions[arenaOptions.length - 1].label}}" bs-select ng-change="filterReviews()">
+			  	<span>Action</span>
+			</button>
+		</div>
 
+		<div class="line-break"></div>
 
+		<a ng-click="toggleAdvancedOptions()" class="show-advanced-button" ng-if=":advanced:!advancedOptions">{{::translations.showAdvancedOptions}}</a>
+		<a ng-click="toggleAdvancedOptions()" ng-if=":advanced:advancedOptions">{{::translations.hideAdvancedOptions}}</a>
 
-	</section>
+		<div class="advanced-options" ng-if=":advanced:advancedOptions">
 
-
-	<div class="alert alert-warning status-message" ng-show="updateStatus == 'ok'">
-		<button type="button" class="close" ng-click="dismissMessage()"><span aria-hidden="true">&times;</span></button>
-		<span translate="global.search.subscriptionOk"></span>
-	</div>
-	<section class="all-videos-header">
-		<h2 class="all-videos-headline" id="headline">{{ 'global.search.headline' | translate }}
-			<a class="link-minor link-nodeco" ng-click="showSubscriptionModal()" ng-hide="!sport || !User.isLoggedIn() || settingName" title="{{ 'global.search.subscribeTooltip' | translate }}"><small>({{ 'global.search.subscribe' | translate }} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>)</small></a>
-		</h2>
-	</section>
-	<section class="search-section">
-		<form class="panel-body form-inline">
-			<!-- Need to figure out how matchups will work in other sports -->
-			<div class="matchup-criteria" ng-show="sport == 'hearthstone'">
-				<span class="matchup-label" translate="hearthstone.search.lookingFor"></span> 
-				<button type="button" class="btn btn-default btn-select btn-class-select" data-trigger="click" ng-model="options.criteria.reviewType" data-html="1" bs-options="option.value as option.label for option in gameTypeOptions" placeholder="{{ 'hearthstone.search.gameType.all' | translate }}" bs-select ng-required="true">
-				  	<span>Action</span>
-				</button>
-				<span translate="hearthstone.search.matchupLabel" ng-show="options.criteria.reviewType != 'arena-draft'"></span> 
-				<span translate="hearthstone.search.arenaClassLabel" ng-show="options.criteria.reviewType == 'arena-draft'"></span> 
+			<!-- Search by author -->
+			<div class="author-search search-group">
+			    <input type="text" class="form-control" ng-model="options.criteria.author" ng-model-options="{ debounce: 300 }" placeholder="{{::translations.authorSearchPlaceholder}}" ng-change="filterReviews()">
 			</div>
-			<div class="matchup-criteria" ng-show="sport != 'hearthstone'">
-				<span class="matchup-label" translate="global.search.lookingFor"></span> 
+
+			<!-- Search by comentator  -->
+			<div class="contributor-search search-group">
+			    <input type="text" class="form-control" ng-model="options.criteria.contributor" ng-model-options="{ debounce: 300 }" placeholder="{{::translations.contributorSearchPlaceholder}}" ng-change="filterReviews()">
 			</div>
-			<div class="comments-criteria search-block">
-				<div class="form-group title-search">
-					<span translate="global.search.textLabel"></span>
-				    <input type="text" class="form-control" id="title" ng-model="options.criteria.title">
-				</div>
+
+			<div class="line-break"></div>
+
+			<!-- Full-text search -->
+			<div class="title-search search-group">
+			    <input type="text" class="form-control" ng-model="options.criteria.title" placeholder="{{::translations.textSearchPlaceholder}}" ng-change="notifySearchRelaunchNeeded(options.criteria.title)">
 			</div>
-			<div class="tags-criteria">
-				<div class="search-block">
-					<span translate="global.search.wantedTagsLabel"></span>
-					<div class="form-group wanted-tags">
-						<tags-input ng-model="options.criteria.wantedTags" display-property="displayText" placeholder="{{ 'global.listing.search.wantedTags' | translate }}" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
-							<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="100"></auto-complete>
-						</tags-input>
-					</div>
-				</div>
-				<div class="search-block">
-					<span translate="global.search.unwantedTagsLabel"></span>
-					<div class="form-group unwanted-tags">
-						<tags-input ng-model="options.criteria.unwantedTags" display-property="displayText" placeholder="{{ 'global.listing.search.unwantedTags' | translate }}" add-from-autocomplete-only="true" spellcheck="false" class="form-group" replace-spaces-with-dashes="false">
-							<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="100"></auto-complete>
-						</tags-input>
-					</div>
-				</div>
+
+			<!-- Tag search -->
+			<div class="tag-search wanted-tags search-group">
+				<tags-input ng-model="options.criteria.wantedTags" display-property="displayText" placeholder="{{::translations.wantedTags}}" add-from-autocomplete-only="true" spellcheck="false" replace-spaces-with-dashes="false" on-tag-added="filterReviews()" on-tag-removed="filterReviews()">
+					<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="100"></auto-complete>
+				</tags-input>
 			</div>
-			<div class="comments-criteria search-block">
-				<div class="form-group title-search">
-					<span translate="global.search.nbComments_pre"></span>
-				    <button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="options.criteria.minComments" data-html="1" bs-options="option.value as option.label for option in minCommentsOptions" placeholder="0" bs-select ng-required="true">
+			<div class="tag-search unwanted-tags search-group">
+				<tags-input ng-model="options.criteria.unwantedTags" display-property="displayText" placeholder="{{::translations.unwantedTags}}" add-from-autocomplete-only="true" spellcheck="false" replace-spaces-with-dashes="false" on-tag-added="filterReviews()" on-tag-removed="filterReviews()">
+					<auto-complete source="autocompleteTag($query.toLowerCase())" min-length="1" load-on-empty="true" load-on-focus="true" max-results-to-show="100"></auto-complete>
+				</tags-input>
+			</div>
+
+			<div class="line-break"></div>
+
+			<!-- Comments -->
+			<div class="comment-select">
+				<div class="comment-group search-group">
+					<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.contributorsComparator" data-html="1" bs-options="::option.value as option.label for option in contributorsComparatorOptions" placeholder="{{::contributorsComparatorOptions[0].label}}" bs-select ng-change="filterReviews()">
 					  	<span>Action</span>
 					</button>
-					<span translate="global.search.nbComments_mid"></span>
-				    <button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="options.criteria.maxComments" data-html="1" bs-options="option.value as option.label for option in maxCommentsOptions" placeholder="{{ 'global.search.nbComments.unlimited' | translate }}" bs-select ng-required="true">
+				</div>
+				<div class="comment-group search-group option-group">
+					<button type="button" class="btn btn-default btn-select digit-only" ng-model="options.criteria.contributorsValue" bs-options="n for n in [] | range:0:10" placeholder="{{options.criteria.contributorsValue || 0}}" bs-select ng-change="filterReviews()">
 					  	<span>Action</span>
 					</button>
-					<span translate="global.search.nbComments_post"></span>
+					<span>{{::translations.contributors}}</span>
+				</div>
+				<div class="comment-group search-group option-group">
+					<span class="and">{{::translations.and}}</span>
+					<button type="button" class="btn btn-default btn-select digit-only" ng-model="options.criteria.helpfulCommentsValue" bs-options="n for n in [] | range:0:10" placeholder="{{options.criteria.helpfulCommentsValue || 0}}" bs-select ng-change="filterReviews()">
+					  	<span>Action</span>
+					</button>
+					<span>{{::translations.helpfulComments}}</span>
 				</div>
 			</div>
-			<div class="comments-criteria search-block">
-				<span translate="global.search.helpfulCommentLabel"></span>
-				<button type="button" class="btn btn-default btn-select btn-class-select" data-trigger="click" ng-model="options.criteria.tempHelpfulComment" data-html="1" bs-options="option.value as option.label for option in helpfulOptions" placeholder="{{ 'global.search.helpful.all' | translate }}" bs-select ng-required="true">
-				  	<span>Action</span>
-				</button>
-			</div>
-			<div class="sort-option search-block">
-				<span class="sort-label" translate="global.search.sortLabel"></span>
-				<button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="options.criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{ 'global.search.sort' | translate }}" bs-select ng-required="true">
-				  	<span>Action</span>
-				</button>
-			</div>
-			<div class="comments-criteria search-block">
+
+			<!--<div class="line-break"></div>-->
+
+			<!-- <span>TODO: date filters</span> -->
+
+			<!-- TODO: deck filter -->
+
+			<div class="line-break"></div>
+
+			<!-- Only my own reviews -->
+			<div class="search-group own-reviews">
 				<label>
-					<span translate="global.search.ownVideos"></span> <input type="checkbox" ng-model="options.criteria.ownVideos">
+					<span>{{::translations.ownVideos}}</span> <input type="checkbox" ng-model="options.criteria.ownVideos" ng-change="filterReviews()">
 				</label>
 			</div>
-			
-			<div class="search-block">
-				<button type="submit" class="btn btn-default" ng-click="searchFromClick()"><span>{{ 'global.search.searchButton' | translate }}</span></button>
-				<button type="submit" class="btn btn-default" ng-click="clearFilters()"><span>{{ 'global.search.clearFilterButton' | translate }}</span></button>
+
+		</div>
+
+		<div class="line-break"></div>
+
+		<div class="search-block buttons-group">
+			<button type="submit" class="btn btn-default" ng-click="searchFromClick()"><span>{{::translations.searchButton}}</span></button>
+			<button type="submit" class="btn btn-default" ng-click="clearFilters()"><span>{{::translations.clearFilterButton}}</span></button>
+			<button class="btn btn-default" ng-click="showSubscriptionModal()" ng-hide="!sport || !User.isLoggedIn() || settingName" title="{{::translations.subscribeTooltip}}">{{::translations.subscribe}} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+			<div class="display-mode">
+				<button class="btn btn-default" ng-click="displayStyle = 'grid'" ng-class="{'selected': displayStyle == 'grid', 'inactive': displayStyle != 'grid'}"><span class="glyphicon glyphicon-th-large"></span></button>
+				<button class="btn btn-default" ng-click="displayStyle = 'list'" ng-class="{'selected': displayStyle == 'list', 'inactive': displayStyle != 'list'}"><span class="glyphicon glyphicon-th-list"></span></button>
 			</div>
-		</form>
+		</div>
+
 	</section>
-	<video-search config="options.criteria" sport="sport"></video-search>
+
+
+	<video-search config="::options.criteria" sport="sport"></video-search>
+
+	<div class="alert alert-warning status-message" ng-show="searchRelaunchNeeded">
+		<button type="button" class="close" ng-click="dismissMessage()"><span aria-hidden="true">&times;</span></button>
+		<span>{{::translations.needNewSearch}}</span>
+	</div>
+
+	<ul class="video-listing {{displayStyle}}">
+		<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true track by review.id" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut"></review-list-item>
+	</ul>
 </div>

@@ -70,86 +70,82 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@Id
 	private String id;
-	// Various dates for review lifecycle
+
 	@Indexed
 	@CreatedDate
 	private Date creationDate;
+
 	@Indexed
 	private Date lastModifiedDate;
+
+	// The date at which the review has first been set to public
 	@Indexed
-	private Date sortingDate;
-	// Main information
+	private Date publicationDate;
+
+	// @Indexed
+	// private Date sortingDate;
+
 	private String title;
-	private String description = "", text = "";
+
+	private String text = "";
+
 	// The sport - also includes the key as string for serialization purposes
-	// TOOD: not clean
 	@Indexed
 	private Sport sport;
 	private String strSport;
+
 	// The key of the associated video / file
 	private String key, temporaryKey;
-	// The replay file content (or key to where it is stored?)
+
+	// The replay file content (or key to where it is stored?) TODO: we can
+	// probably remove this, it's covered by temporaryReplay and reviewType
 	private String replay;
-	// Don't send the info to the UI, it doesn't need it
-	@JsonIgnore
-	private String temporaryReplay;
-	// The image to display (if any)
-	private String thumbnail;
-	// The type of media that is linked to the video
+
+	// The type of media that is linked to the video. TODO: simplify that, both
+	// server the same purpose, maybe even with reviewType
 	private String fileType, mediaType;
+
 	@Indexed
 	private String reviewType;
-	private String language = "en";
+
 	// Participant details
+	// TODO: move everything to MetaData
 	@Indexed
 	private ParticipantDetails participantDetails = new ParticipantDetails();
 	@Indexed
 	private MetaData metaData;
+
 	private String author, lastModifiedBy;
+
 	@Indexed
 	private String authorId;
 
-	// A way to allow anonymous uploads
-	@JsonIgnore
-	@Indexed
-	private String uploaderApplicationKey, uploaderToken;
-
-	@Transient
-	private boolean claimableAccount;
-
-	@Indexed
-	@JsonIgnore
-	private Set<String> allAuthors = new HashSet<>();
-
 	private String lastModifiedById;
+
 	private int authorReputation;
+
 	private String authorFrame;
-	private int beginning, ending;
+
 	private List<Comment> comments;
+
 	@Indexed
 	private int totalComments, totalHelpfulComments;
+
 	private boolean transcodingDone;
+
 	@Indexed
 	private boolean published;
+
 	@Indexed
 	private String visibility;
-	private float videoFramerateRatio;
-	private Map<String, String> reviewVideoMap = new HashMap<>();
-	private Reputation reputation;
-	private int viewCount;
-	private List<Tag> tags;
-	private Map<String, String> canvas = new HashMap<>();
 
-	// Search-specific stuff
-	@JsonIgnore
-	@TextIndexed
-	private String fullTextSearchField = "";
-	@Indexed
-	@JsonIgnore
-	private List<Tag> allTags = new ArrayList<>();
+	private Reputation reputation;
+
+	private int viewCount;
+
+	private List<Tag> tags;
 
 	private int totalInsertedComments;
-	private int canvasId;
 
 	// The plugin data for this review
 	private Map<String, Map<String, Map<String, String>>> plugins = new HashMap<>();
@@ -159,8 +155,67 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	private boolean useV2comments = false;
 
+	// =================
+	// Deprecated fields (mainly legacy from the video time)
+	// =================
+	@Deprecated
+	private String description = "";
+	@Deprecated
+	private String language = "en";
+	@Deprecated
+	private String thumbnail;
+	@Deprecated
+	private int beginning, ending;
+	@Deprecated
+	private float videoFramerateRatio;
+	@Deprecated
+	private Map<String, String> reviewVideoMap = new HashMap<>();
+	@Deprecated
+	private Map<String, String> canvas = new HashMap<>();
+	@Deprecated
+	private int canvasId;
+
+	// =================
+	// Data that is for internal processing only, not seen by the UI
+	// =================
+	// Search-specific stuff
+	@JsonIgnore
+	@TextIndexed
+	private String fullTextSearchField = "";
+
+	@Indexed
+	@JsonIgnore
+	private List<Tag> allTags = new ArrayList<>();
+
+	// A way to allow anonymous uploads
+	@JsonIgnore
+	@Indexed
+	private String uploaderApplicationKey, uploaderToken;
+
+	@Indexed
+	@JsonIgnore
+	private Set<String> allAuthors = new HashSet<>();
+
+	// Don't send the info to the UI, it doesn't need it
+	@JsonIgnore
+	private String temporaryReplay;
+
 	@JsonIgnore
 	private Map<String, Date> visitDates = new HashMap<>();
+
+	// Used to flag games that are corrupt
+	@JsonIgnore
+	private boolean invalidGame;
+
+	// The last time we tried to parse the review for meta data
+	@JsonIgnore
+	private Date lastMetaDataParsingDate;
+
+	// =================
+	// Transient fields, that are simply used to send data to the UI
+	// =================
+	@Transient
+	private boolean claimableAccount;
 
 	public void addComment(Comment comment) {
 		if (comments == null) {
@@ -191,12 +246,13 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
-		setSortingDate(this.creationDate);
+		lastModifiedDate = creationDate;
+		// setSortingDate(this.creationDate);
 	}
 
 	public void setLastModifiedDate(Date modifiedDate) {
 		lastModifiedDate = modifiedDate;
-		setSortingDate(lastModifiedDate);
+		// setSortingDate(lastModifiedDate);
 	}
 
 	public void setLanguage(String code) {
@@ -257,10 +313,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public void prepareForDisplay(String userId) {
-		Date lastVisit = null;
-		if (visitDates != null) {
-			lastVisit = visitDates.get(userId);
-		}
+		// Date lastVisit = null;
+		// if (visitDates != null) {
+		// lastVisit = visitDates.get(userId);
+		// }
 		getReputation().modifyAccordingToUser(userId);
 		// comments
 		if (comments != null) {
@@ -281,8 +337,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	public Set<String> buildAllAuthors() {
 		allAuthors = new HashSet<>();
-		if (!StringUtils.isNullOrEmpty(authorId)) {
-			allAuthors.add(authorId);
+		if (!StringUtils.isNullOrEmpty(author)) {
+			allAuthors.add(author);
 		}
 
 		if (comments != null) {
@@ -500,8 +556,12 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public void setVisibility(String visibility) {
+		if ("public".equals(visibility) && publicationDate == null) {
+			publicationDate = new Date();
+		}
+
 		if (StringUtils.isNullOrEmpty(visibility)) {
-			this.visibility = "public";
+			this.visibility = "restricted";
 		}
 		else {
 			this.visibility = visibility;

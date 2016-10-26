@@ -60,10 +60,39 @@
 				"tavernBrawl": "Tavern Brawl",
 				"adventure": "Adventure"
 			},
+			"result": {
+				"all": "All results",
+				"win": "Won",
+				"loss": "Lost",
+				"tie": "Tied"
+			},
+			"playCoin": {
+				"all": "Play and Coin",
+				"play": "Play",
+				"coin": "Coin"
+			},
+			"skill": {
+				"rankedFrom": "From",
+				"rankedTo": "to"
+			},
+			"contributorOptions": {
+				"gte": "At least",
+				"lte": "At most"
+			},
+			"showAdvancedOptions": "Show advanced options",
+			"hideAdvancedOptions": "Hide advanced options",
+			"contributors": "contributors",
+			"and": " and",
+			"helpfulComments": "comments marked as helpful",
+			"textSearchPlaceholder": "Search for any text",
+			"authorSearchPlaceholder": "Author name / Player name",
+			"contributorSearchPlaceholder": "Contributor name",
+			"textSearchPlaceholder": "Search for any text",
 			"matchupLabel": "that oppose",
 			"arenaClassLabel": "of"
 		},
 		"classes": {
+			"allClasses": "All Classes",
 			"anyHero": "All Heroes",
 			"anyOpponent": "All Opponents",
 			"druid": "Druid",
@@ -123,23 +152,24 @@
 			"legend5": "Legend top 5",
 			"legend1": "Legend top 1",
 
-			"arena0wins": "Arena 0 wins",
-			"arena1win": "Arena 1 win",
-			"arena1-3wins": "Arena 1-3 wins",
-			"arena2wins": "Arena 2 wins",
-			"arena3wins": "Arena 3 wins",
-			"arena4wins": "Arena 4 wins",
-			"arena4-6wins": "Arena 4-6 wins",
-			"arena5wins": "Arena 5 wins",
-			"arena6wins": "Arena 6 wins",
-			"arena7wins": "Arena 7 wins",
-			"arena7-8wins": "Arena 7-8 wins",
-			"arena8wins": "Arena 8 wins",
-			"arena9wins": "Arena 9 wins",
-			"arena10wins": "Arena 10 wins",
-			"arena11wins": "Arena 11 wins",
-			"arena12wins": "Arena 12 wins",
-			"arena13wins": "Arena 13 wins",
+			"arena0wins": "0 wins",
+			"arena1win": "1 win",
+			"arena1wins": "1 win",
+			"arena1-3wins": "1-3 wins",
+			"arena2wins": "2 wins",
+			"arena3wins": "3 wins",
+			"arena4wins": "4 wins",
+			"arena4-6wins": "4-6 wins",
+			"arena5wins": "5 wins",
+			"arena6wins": "6 wins",
+			"arena7wins": "7 wins",
+			"arena7-8wins": "7-8 wins",
+			"arena8wins": "8 wins",
+			"arena9wins": "9 wins",
+			"arena10wins": "10 wins",
+			"arena11wins": "11 wins",
+			"arena12wins": "12 wins",
+			"arena13wins": "13 wins",
 
 			"tavernbrawl": "Tavern Brawl",
 			"arenadraft": "Arena Draft",
@@ -284,7 +314,7 @@
 			"searchButton": "Search",
 			"skillLabel": "at skill level",
 			"clearFilterButton": "Clear filters",
-			"ownVideos": "... and limit the search to my own reviews",
+			"ownVideos": "Limit the search to my own reviews",
 			"nbComments": {
 				"unlimited": "unlimited"
 			},
@@ -295,8 +325,9 @@
 			},
 			"sortLabel": "Sort by",
 			"sort": {
-				"updateDate": "Last modification date",
-				"creationDate": "Creation date"
+				"publicationDate": "Sort by publication date",
+				"updateDate": "Sort by last modification date",
+				"creationDate": "Sort by creation date"
 			},
 			"ownReviews": {
 				"showAll": "Show all reviews",
@@ -307,7 +338,8 @@
 			"subscribe": "Subscribe to search",
 			"subscribeTooltip": "Get notified every time a new review that match your search criteria is posted",
 			"subscribePlaceholder": "Name your search",
-			"subscriptionOk": "You have subscribed to the search results and will receive a notification each time a new review that match your criteria is posted. You can manage your subscription in your profile page"
+			"subscriptionOk": "You have subscribed to the search results and will receive a notification each time a new review that match your criteria is posted. You can manage your subscription in your profile page",
+			"needNewSearch": "You've just modified a complex criteria, please use the \"Search\" button to do the search on the server"
 		},
 		"profile": {
 			"messages": {
@@ -469,13 +501,13 @@
 				"selectClass": "Select class"
 			},
 			"visibility": {
-				"private": "Unlisted",
-				"restricted": "Unlisted and searchable",
+				"private": "Private",
+				"restricted": "Unlisted",
 				"public": "Public",
 				"skip": "Skip",
 				"tooltip": "Visibility",
-				"privateTooltip": "Unlisted - doesn't show up in search result, but people with the link can see it",
-				"restrictedTooltip": "Unlisted and searchable - doesn't show up in public listings (like the home page), but will appear when using the Advanced Search feature (not implemented yet). This is the default, and we'll let you change this preference in your profile",
+				"privateTooltip": "Private - doesn't show up in search result, but people with the link can see it",
+				"restrictedTooltip": "Unlisted - doesn't show up in public listings (like the home page), but anyone with the link can see it",
 				"publicTooltip": "Public - shows up in search, anyone can see this review",
 				"skipTooltip": "Skip - don't upload the game"
 			},

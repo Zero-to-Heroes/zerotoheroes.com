@@ -123,14 +123,15 @@ public class Comment implements HasText, HasReputation {
 	}
 
 	public void addAllAuthors(Set<String> allAuthors) {
-		if (!StringUtils.isNullOrEmpty(authorId) && !allAuthors.contains(authorId)) {
-			allAuthors.add(authorId);
+		if (!StringUtils.isNullOrEmpty(author) && !allAuthors.contains(author)) {
+			allAuthors.add(author);
 		}
-		if (getReputation() != null) {
-			for (ReputationAction action : getReputation().getUserIds().keySet()) {
-				allAuthors.addAll(getReputation().getUserIds().get(action));
-			}
-		}
+		// if (getReputation() != null) {
+		// for (ReputationAction action : getReputation().getUserIds().keySet())
+		// {
+		// allAuthors.addAll(getReputation().getUserIds().get(action));
+		// }
+		// }
 
 		if (comments != null) {
 			for (Comment comment : comments) {

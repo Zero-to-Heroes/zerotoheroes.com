@@ -8,11 +8,28 @@
 
 	.search-section {
 		display: flex;
+		flex-wrap: wrap;
+		padding: 15px;
+
+		.advanced-options {
+    		padding: 20px 0 0 50px;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.line-break {
+			flex-basis: 100%;
+		}
 
 		// Align with icons for classes
 		.btn-select {
-			min-height: 50px;
 			width: 175px;
+			height: 100%;
+		}
+
+		.search-group {
+			margin-bottom: 30px;    
+			min-height: 50px;
 		}
 
 		.class-select {
@@ -21,6 +38,88 @@
     		width: 200px;
     		padding-left: 5px;
     		padding-right: 5px;
+		}
+
+		.skill-select {
+			// flex-basis: 100%;
+			display: flex;
+			align-items: center;
+			button {
+    			width: 140px;
+			}
+		}
+
+		.comment-select {
+			display: flex;
+			flex-wrap: wrap;
+			.digit-only {
+				width: 148px;
+			}
+		}
+
+		input {
+			height: 100%;
+		}
+		label input {
+			height: auto;
+		}
+
+		.title-search, .tag-search, .author-search, .contributor-search {
+		    margin-left: 10px;
+		    margin-right: 10px;
+
+			tags-input {
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		.tag-search {
+			width: 375px;
+			max-width: 90%;
+		}
+
+		.sort-button {
+			width: 225px;
+		}
+
+		.own-reviews label {
+			font-weight: normal;
+		}
+
+		.show-advanced-button {
+			margin-bottom: 30px;
+			margin-left: 10px;
+		}
+
+		.comment-group {
+			display: flex;
+			align-items: center;
+		}
+
+		.option-group {
+			margin-right: 5px;
+		}
+
+		.buttons-group {
+			margin-left: 10px;
+			flex-basis: 100%;
+			display: flex;
+			flex-wrap: wrap;
+
+			button {
+				margin-right: 10px;
+			}
+
+			.display-mode {
+				flex-grow: 1;
+				display: flex;
+    			justify-content: flex-end;
+
+    			.inactive {
+    				filter: brightness(80%);
+    			}
+			}
 		}
 	}
 }

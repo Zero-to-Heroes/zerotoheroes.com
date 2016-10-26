@@ -2,6 +2,7 @@ package com.coach.review;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.coach.reputation.Reputation;
@@ -45,6 +46,7 @@ public class ListReviewResponse {
 		private String visibility;
 		// Needed to display either the "draft" or the "game" participants
 		private String mediaType;
+		private Set<String> allAuthors;
 
 		public static ResponseReview from(Review review) {
 			if (review == null) { return null; }
@@ -67,6 +69,7 @@ public class ListReviewResponse {
 			result.sport = review.getSport();
 			result.visibility = review.getVisibility();
 			result.mediaType = review.getMediaType();
+			result.allAuthors = review.getAllAuthors();
 			return result;
 		}
 	}

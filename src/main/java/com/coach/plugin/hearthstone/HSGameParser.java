@@ -3,7 +3,6 @@ package com.coach.plugin.hearthstone;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
@@ -59,7 +58,7 @@ public class HSGameParser implements ReplayPlugin {
 		return "game-replay";
 	}
 
-	private void addMetaData(Review review) {
+	public void addMetaData(Review review) throws Exception {
 		if (gameParser == null || gameParser.getGameParser() == null) {
 			log.error("Game parser not initialized properly");
 			return;
@@ -89,11 +88,18 @@ public class HSGameParser implements ReplayPlugin {
 			hsMeta.setDurationInSeconds(meta.getDurationInSeconds());
 			hsMeta.setNumberOfTurns(meta.getNumberOfTurns());
 			hsMeta.setWinStatus(meta.getWinStatus());
+			hsMeta.setOpponentClass(meta.getOpponentClass());
+			hsMeta.setOpponentName(meta.getOpponentName());
+			hsMeta.setPlayerName(meta.getPlayerName());
+			hsMeta.setPlayerClass(meta.getPlayerClass());
+			hsMeta.setPlayCoin(meta.getPlayCoin());
+			// hsMeta.setGameMode(meta.getGameMode());
+			hsMeta.extractGameMode(review.getReviewType());
+			hsMeta.extractSkillLevel(review.getParticipantDetails().getSkillLevel());
 
 			log.debug("adding title?");
 			if (StringUtils.isEmpty(review.getTitle())) {
-				String title = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " - "
-						+ review.getParticipantDetails().getPlayerName() + "("
+				String title = review.getParticipantDetails().getPlayerName() + "("
 						+ review.getParticipantDetails().getPlayerCategory() + ") vs "
 						+ review.getParticipantDetails().getOpponentName() + "("
 						+ review.getParticipantDetails().getOpponentCategory() + ")";
@@ -101,12 +107,13 @@ public class HSGameParser implements ReplayPlugin {
 				review.setTitle(title);
 			}
 
+			review.setLastMetaDataParsingDate(new Date());
 			log.debug("done adding meta " + review);
 		}
-		catch (Throwable e) {
-			log.info("Could not add metata to review " + review);
-			log.error("", e);
-			log.error("Could not add metata to review " + review, e);
+		catch (Exception e) {
+			// log.error("Could not add metata to review " + review, e);
+			review.setInvalidGame(true);
+			throw e;
 		}
 	}
 

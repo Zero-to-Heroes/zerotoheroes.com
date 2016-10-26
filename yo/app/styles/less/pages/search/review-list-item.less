@@ -1,22 +1,45 @@
 .review-list-item {
 
-    width: 460px;
+    // width: 460px;
+    width: 380px;
+    max-width: 100%;
 
-	.header {
-		margin-bottom: 5px;
-	}
+    & > a {
+    	display: flex;
+    	flex-wrap: wrap;
+    }
+
 
 	.body {
 		flex-wrap: wrap;
 	}
 
+	.video-info-details {
+		order: 1;
+		width: 120px;
+	}
+
 	.complementary-info {
 		margin-top: 15px;
-		width: 100%;
-		height: 70px;
+		height: 30px;
+		order: -1;
+		flex-grow: 1;
+    	// flex-basis: 100%;
+    	width: 150px;
+    	align-self: stretch;
+	    padding-left: 5px;
+	    padding-right: 5px;
+	}
+
+	.specific-info {
+		order: -1;
+	    max-width: none;
+	    flex-grow: 1;
+	    margin-bottom: 0;
 	}
 
 	.title-container {
+		// width: 150px;
 	    flex-grow: 1;
 	    flex-shrink: 1;
 	    display: flex;
@@ -24,6 +47,7 @@
 	    /* http://stackoverflow.com/questions/12022288/how-to-keep-a-flex-item-from-overflowing-due-to-its-text*/
 	    min-width: 1px;
 	    justify-content: center;
+	    flex-basis: 100%;
 
 	     .title {
 		    overflow: hidden;
@@ -42,9 +66,11 @@
 	.skill-level {
 		display: flex;
 		flex-direction: column;
-	    min-width: 140px;
-	    margin-right: 25px;
+	    min-width: 111px;
+	    // margin-right: 25px;
     	align-items: center;
+    	flex-grow: 1;
+    	order: 4;
 
 		.skill-level-icon {
 			width: 90px;
@@ -52,6 +78,96 @@
 
 		.skill-level-label {
 			font-size: 0.8em;
+		}
+	}
+
+	.stat-view {
+		display: none;
+	}
+
+	.sport-tags {
+	    align-items: baseline;
+	    // flex-wrap: wrap;
+	    height: 100%;
+    	justify-content: space-around;
+	}
+
+	.read-only-tag {
+		width: 40%;
+    	justify-content: space-around;
+		padding: 4px 8px;
+		margin-right: 0;
+	}
+
+	.bottom {
+		// order: 10;
+	}
+}
+
+.list .review-list-item {
+	width: 100%;
+	margin-bottom: 15px;
+
+	.review-link {
+		align-items: center;
+		height: 120px;
+		overflow: hidden;
+	}
+
+	.skill-level {
+		order: -4;
+		flex-grow: 0;
+	}
+
+	.video-info-details {
+		order: -3;
+		margin: 0;
+	}
+
+	.specific-info {
+    	width: 250px;
+		max-width: 250px;
+		margin-right: 15px;
+		order: -2;
+
+		.player-details {
+			display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    		align-items: center;
+    		width: auto;
+
+			i {
+				margin: 0;
+			}
+		}
+	}
+
+	.title-container {
+		order: -1;
+		flex-basis: inherit;
+		margin: 0;
+		width: 350px;
+	}
+
+	.complementary-info {
+		width: auto;
+	    height: auto;
+	    margin: 0;
+	    flex-grow: 0;
+	    margin-top: 20px;
+	    margin-bottom: 20px;
+
+		.sport-tags {
+			align-items: center;
+
+			.read-only-tag {
+				padding: 10px 10px;
+				width: 100px;
+    			height: 55px;
+				justify-content: center;
+				margin-right: 10px;
+			}
 		}
 	}
 }

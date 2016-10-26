@@ -139,15 +139,6 @@
 	font-weight: normal;
 }
 
-
-.video-listing .video-author {
-	
-}
-
-.video-info-details {
-	width: 120px;
-}
-
 /*.video-info-details .icon-container {
 	display: inline-block;
 	width: 25px;
@@ -176,19 +167,7 @@
     vertical-align: middle;
 }
 
-/* Don't show the name input if it appears on the navbar */
-@media screen and (min-width: 600px) {
-	.thumbnails {
-		display: table-cell;
-	}
-}
-
 @media screen and (max-width: 600px) {
-	.video-listing .video-info-details {
-		padding-left: 0;
-		width: 70px;
-		flex-direction: column;
-	}
 
 	.video-info-details .icon-container {
 		width: 55px;

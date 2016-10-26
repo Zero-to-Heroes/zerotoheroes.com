@@ -6,7 +6,8 @@ app.directive('readOnlyTags', ['$log',
 			transclude: false,
 			templateUrl: 'templates/review/readOnlyTags.html',
 			scope: {
-				tags: '<'
+				tags: '<',
+				maxTags: '<'
 			},
 			link: function ($scope, element, attrs) {
 			},

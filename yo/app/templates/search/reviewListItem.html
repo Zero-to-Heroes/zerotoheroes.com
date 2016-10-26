@@ -1,48 +1,44 @@
 <li class="review-list-item">
 	<a href="{{::buildUrl(video)}}" class="review-link">
-		<h3 class="header">
-			<img class="visibility" ng-class="::video.visibility" ng-if="::showVisibility && video.visibility && video.visibility != 'public'" title="{{::getVisibilityTitle(video) }}" src="{{::config.images['visibility' + video.visibility] }}" />
-			<span class="skill-level" ng-if="::getSkillLevelSource(video)">
-				<img class="skill-level-icon" src="{{::getSkillLevelSource(video)}}" title="{{::getSkillLevelLabel(video)}}">
-			</span>
-			<div class="title-container">
-				<span class="title">{{::video.title}}</span>
-				<small class="additional-info"><span title="{{::formatExactDate(video.creationDate)}}">{{::translations.submitted}} {{::formatDate(video.creationDate)}} {{::translations.by}} {{::video.author}}</span></small>
-			</div>
-			
-			<!-- For smallest display only -->
-			<span class="text-center mobile-video-info-details">
-				<div title="{{::translations.commentsTitle}}" class="icon-container stat-comment">
-					<span class="stat-value">{{::video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
-				</div>
-				<div title="{{::translations.usefulTitle}}" class="icon-container stat-helpful">
-					<span class="stat-value">{{::video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
-				</div>
-				<div title="{{::translations.viewsTitle}" class="icon-container stat-view">
-					<span class="stat-value">{{::video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open stat-icon"></span>
-				</div>
-			</span>
+		<img class="visibility" ng-class="::video.visibility" ng-if="::showVisibility && video.visibility && video.visibility != 'public'" title="{{::getVisibilityTitle(video) }}" src="{{::config.images['visibility' + video.visibility] }}" />
+		<span class="skill-level" ng-if="::getSkillLevelSource(video)">
+			<img class="skill-level-icon" src="{{::getSkillLevelSource(video)}}" title="{{::getSkillLevelLabel(video)}}">
+		</span>
+		<h3 class="title-container">
+			<span class="title">{{::video.title}}</span>
+			<small class="additional-info"><span title="{{::formatExactDate(video.creationDate)}}">{{::translations.submitted}} {{::formatDate(video.creationDate)}} {{::translations.by}} {{::video.author}}</span></small>
 		</h3>
-		<div class="body">
-			<span class="text-center video-info-details">
-				<div title="{{::translations.commentsTitle}}" class="icon-container stat-comment">
-					<span class="stat-value">{{::video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
-				</div>
-				<div title="{{::translations.usefulTitle}}" class="icon-container stat-helpful">
-					<span class="stat-value">{{::video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
-				</div>
-				<div title="{{::translations.viewsTitle}" class="icon-container stat-view">
-					<span class="stat-value">{{::video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open stat-icon"></span>
-				</div>
-			</span>
-			<span class="specific-info">
-				<div ng-switch="sport">
-					<hearthstone-listing-details ng-switch-when="hearthstone" review="::video" hide-skill-level="true"></hearthstone-listing-details>
-				</div>
-			</span>
-			<span class="complementary-info">
-				<read-only-tags tags="::video.tags" class="sport-tags" ng-if="::video.tags"></read-only-tags>
-			</span>
-		</div>
+		
+		<!-- For smallest display only 
+		<span class="text-center mobile-video-info-details">
+			<div title="{{::translations.commentsTitle}}" class="icon-container stat-comment">
+				<span class="stat-value">{{::video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
+			</div>
+			<div title="{{::translations.usefulTitle}}" class="icon-container stat-helpful">
+				<span class="stat-value">{{::video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
+			</div>
+			<div title="{{::translations.viewsTitle}" class="icon-container stat-view">
+				<span class="stat-value">{{::video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open stat-icon"></span>
+			</div>
+		</span>-->
+		<span class="text-center video-info-details">
+			<div title="{{::translations.commentsTitle}}" class="icon-container stat-comment">
+				<span class="stat-value">{{::video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
+			</div>
+			<div title="{{::translations.usefulTitle}}" class="icon-container stat-helpful">
+				<span class="stat-value">{{::video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
+			</div>
+			<div title="{{::translations.viewsTitle}" class="icon-container stat-view">
+				<span class="stat-value">{{::video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open stat-icon"></span>
+			</div>
+		</span>
+		<span class="specific-info">
+			<div ng-switch="sport">
+				<hearthstone-listing-details ng-switch-when="hearthstone" review="::video" hide-skill-level="true"></hearthstone-listing-details>
+			</div>
+		</span>
+		<span class="complementary-info" ng-class="::{'bottom': !video.tags || video.tags.length == 0}">
+			<read-only-tags tags="::video.tags" class="sport-tags" ng-if="::video.tags" max-tags="2"></read-only-tags>
+		</span>
 	</a>
 </li>

@@ -33,7 +33,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					params.pageNumber = params.pageNumber || pageNumber || $scope.pageNumber
 					params.sport = params.sport || $scope.sport || $routeParams.sport
 
-					params.participantDetails = params.participantDetails || {}					
+					// params.participantDetails = params.participantDetails || {}					
 
 					// Make sure URL takes priority
 					if ($location.search().title && !params.title) {
@@ -48,8 +48,8 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if ($location.search().unwantedTags && (!params.unwantedTags || params.unwantedTags.length == 0)) {
 						params.unwantedTags = $scope.unserializeTags($location.search().unwantedTags)
 					}
-					if ($location.search().playerCategory && !params.participantDetails.playerCategory) {
-						params.participantDetails.playerCategory = $location.search().playerCategory
+					if ($location.search().playerCategory && !params.playerCategory) {
+						params.playerCategory = $location.search().playerCategory
 					}
 					if ($location.search().minComments && !params.minComments) {
 						params.minComments = parseInt($location.search().minComments)
@@ -70,11 +70,11 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 
 					// Useful for drop-downs, which sometimes have a different behaviour with no value 
 					// and default value
-					if (params.participantDetails.playerCategory == 'any') {
-						params.participantDetails.playerCategory = null
+					if (params.playerCategory == 'any') {
+						params.playerCategory = null
 					}
-					if (params.participantDetails.opponentCategory == 'any') {
-						params.participantDetails.opponentCategory = null
+					if (params.opponentCategory == 'any') {
+						params.opponentCategory = null
 					}
 				}
 
@@ -93,8 +93,8 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if (params.maxComments == 0 || params.maxComments) $location.search('maxComments', params.maxComments)
 					if (params.noHelpful) $location.search('helpfulComments', 'no')
 					if (params.onlyHelpful) $location.search('helpfulComments', 'yes')
-					if (params.participantDetails.playerCategory && params.participantDetails.playerCategory != 'any') $location.search('playerCategory', params.participantDetails.playerCategory)
-					if (params.participantDetails.opponentCategory && params.participantDetails.opponentCategory != 'any') $location.search('opponentCategory', params.participantDetails.opponentCategory)
+					if (params.playerCategory && params.playerCategory != 'any') $location.search('playerCategory', params.playerCategory)
+					if (params.opponentCategory && params.opponentCategory != 'any') $location.search('opponentCategory', params.opponentCategory)
 					if (params.sort) $location.search('sort', params.sort)
 				}
 
@@ -131,6 +131,9 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 						// $log.debug('\tloaded reviews', $scope.videos)
 						$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 						$scope.config.videos = $scope.videos
+
+						if (callback)
+							callback($scope.videos)
 
 						// Update the URL
 						if (updateUrl)

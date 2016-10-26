@@ -180,9 +180,6 @@
   background: transparent;
   border: none;
 }
-.hearthstone .announcements {
-  margin-bottom: -70px;
-}
 .hearthstone .announcements a {
   color: #3178FF;
 }
@@ -424,11 +421,24 @@
   border: none;
 }
 .hearthstone .hearthstone-participants {
-  display: table;
-  table-layout: fixed;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
-  height: 52px;
+  min-height: 52px;
+}
+.hearthstone .hearthstone-participants .player-details button {
+  background: transparent;
+  width: 50px;
+  margin-right: 10px;
+}
+.hearthstone .hearthstone-participants .form-group {
+  display: flex;
+  margin-bottom: 0;
+}
+.hearthstone .hearthstone-participants .player-details button {
+  background: transparent;
+  width: 50px;
 }
 .hearthstone .hearthstone-participants .form-group {
   margin-bottom: 0;
@@ -485,6 +495,9 @@
   margin: 0;
   font-size: 16px;
 }
+.hearthstone hearthstone-participants-details-arena .hearthstone-participants .level-details {
+  display: none;
+}
 .hearthstone .hearthstone-participants .player-details,
 .hearthstone .hearthstone-participants .opponent-details {
   display: table-cell;
@@ -504,12 +517,6 @@
   vertical-align: middle;
   padding-left: 5px;
   padding-right: 25px;
-}
-.hearthstone .hearthstone-participants .level-details {
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 45px;
-  width: 230px;
 }
 .hearthstone .participants-container .hearthstone-participants .level-details tags-input {
   height: 55px;
@@ -888,9 +895,6 @@
   width: 75px;
   margin-bottom: 5px;
 }
-.hearthstone .video-listing .specific-info {
-  width: 400px;
-}
 .hearthstone .video-listing .hearthstone-participants {
   margin: 0;
   margin-left: 10px;
@@ -1201,7 +1205,8 @@
 .hearthstone .btn-default {
   background: #f9f1e1;
 }
-.hearthstone .btn-default:hover {
+.hearthstone .btn-default:hover,
+.hearthstone .btn-default.selected {
   background-color: #ead5aa;
 }
 .hearthstone .btn-control {

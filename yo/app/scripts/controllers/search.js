@@ -4,9 +4,37 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, $modal, TagService) {
 
 		$scope.translations = {
+			allClasses: $translate.instant('hearthstone.classes.allClasses'),
 			allHeroes: $translate.instant('hearthstone.classes.anyHero'),
-			allOpponents: $translate.instant('hearthstone.classes.anyOpponent')
+			allOpponents: $translate.instant('hearthstone.classes.anyOpponent'),
+			skillRankedFrom: $translate.instant('hearthstone.search.skill.rankedFrom'),
+			skillRankedTo: $translate.instant('hearthstone.search.skill.rankedTo'),
+			showAdvancedOptions: $translate.instant('hearthstone.search.showAdvancedOptions'),
+			hideAdvancedOptions: $translate.instant('hearthstone.search.hideAdvancedOptions'),
+			authorSearchPlaceholder: $translate.instant('hearthstone.search.authorSearchPlaceholder'),
+			contributorSearchPlaceholder: $translate.instant('hearthstone.search.contributorSearchPlaceholder'),
+			textSearchPlaceholder: $translate.instant('hearthstone.search.textSearchPlaceholder'),
+			wantedTags: $translate.instant('global.listing.search.wantedTags'),
+			unwantedTags: $translate.instant('global.listing.search.unwantedTags'),
+			contributors: $translate.instant('hearthstone.search.contributors'),
+			and: $translate.instant('hearthstone.search.and'),
+			helpfulComments: $translate.instant('hearthstone.search.helpfulComments'),
+			sort: $translate.instant('global.search.sort'),
+			ownVideos: $translate.instant('global.search.ownVideos'),
+			searchButton: $translate.instant('global.search.searchButton'),
+			clearFilterButton: $translate.instant('global.search.clearFilterButton'),
+			subscribe: $translate.instant('global.search.subscribe'),			
+			subscribeTooltip: $translate.instant('global.search.subscribeTooltip'),
+			needNewSearch: $translate.instant('global.search.needNewSearch')
 		}
+
+		$scope.displayStyle = 'grid'
+
+
+
+		//=======================
+		// Search criteria
+		//=======================
 
 		$scope.gameTypeOptions = [
 			{ "value" : null, "label" : $translate.instant('hearthstone.search.gameType.all') },
@@ -17,6 +45,24 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			{ "value" : "friendly", "label" : $translate.instant('hearthstone.search.gameType.friendly') },
 			{ "value" : "tavern-brawl", "label" : $translate.instant('hearthstone.search.gameType.tavernBrawl') },
 			{ "value" : "adventure", "label" : $translate.instant('hearthstone.search.gameType.adventure') }
+		]
+
+		$scope.resultOptions = [
+			{ "value" : null, "label" : $translate.instant('hearthstone.search.result.all') },
+			{ "value" : "won", "label" : $translate.instant('hearthstone.search.result.win') },
+			{ "value" : "tied", "label" : $translate.instant('hearthstone.search.result.tie') },
+			{ "value" : "lost", "label" : $translate.instant('hearthstone.search.result.loss') }
+		]
+
+		$scope.playCoinOptions = [
+			{ "value" : null, "label" : $translate.instant('hearthstone.search.playCoin.all') },
+			{ "value" : "play", "label" : $translate.instant('hearthstone.search.playCoin.play') },
+			{ "value" : "coin", "label" : $translate.instant('hearthstone.search.playCoin.coin') }
+		]
+
+		$scope.contributorsComparatorOptions = [
+			{ "value" : "gte", "label" : $translate.instant('hearthstone.search.contributorOptions.gte') },
+			{ "value" : "lte", "label" : $translate.instant('hearthstone.search.contributorOptions.lte') }
 		]
 
 		// Options for class selection
@@ -32,6 +78,79 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			{ "value" : "warrior", "label" : "<i class=\"class-icon warrior-icon\" title=\"" + $translate.instant('hearthstone.classes.warrior') + "\"></i>" }
 		]
 
+		// Options for sorting the reviews
+		$scope.sortOptions = [
+			{ "value" : "publicationDate", "label" : $translate.instant('global.search.sort.publicationDate') },
+			{ "value" : "creationDate", "label" : $translate.instant('global.search.sort.creationDate') },
+			{ "value" : "updateDate", "label" : $translate.instant('global.search.sort.updateDate') }
+		]
+
+		// Options for ranked play skill selection
+		$scope.rankOptions = []
+		for (var i = 25; i > 0; i--) {
+			$scope.rankOptions.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.rank' + i) })
+		}
+		$scope.rankOptions.push({ "value" : "legend", "label" : $translate.instant('hearthstone.ranking.legend') })
+
+		$scope.getRankedSkillFromOptions = function() {
+			if ($scope.options.criteria.skillRangeTo && $scope.options.criteria.skillRangeTo != 'legend') {
+				var options = []
+				for (var i = 25; i >= $scope.options.criteria.skillRangeTo; i--) {
+					options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.rank' + i) })
+				}
+				return options
+			}
+			return $scope.rankOptions
+		}
+		$scope.getRankedSkillToOptions = function() {
+			if ($scope.options.criteria.skillRangeFrom && $scope.options.criteria.skillRangeFrom != 25) {
+				var options = []
+				for (var i = $scope.options.criteria.skillRangeFrom; i > 0; i--) {
+					options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.rank' + i) })
+				}
+				options.push({ "value" : "legend", "label" : $translate.instant('hearthstone.ranking.legend') })
+				return options
+			}
+			return $scope.rankOptions
+		}
+
+		// Options for Arena games skill selection
+		$scope.arenaOptions = []
+		for (var i = 0; i <= 12; i++) {
+			$scope.arenaOptions.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.arena' + i + 'wins') })
+		}
+
+		$scope.getArenaSkillFromOptions = function() {
+			if ($scope.options.criteria.skillRangeTo && $scope.options.criteria.skillRangeTo != 12) {
+				var options = []
+				for (var i = 0; i <= $scope.options.criteria.skillRangeTo; i++) {
+					options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.arena' + i + 'wins') })
+				}
+				return options
+			}
+			return $scope.arenaOptions
+		}
+		$scope.getArenaSkillToOptions = function() {
+			if ($scope.options.criteria.skillRangeFrom && $scope.options.criteria.skillRangeFrom != 0) {
+				var options = []
+				for (var i = $scope.options.criteria.skillRangeFrom; i <= 12; i++) {
+					options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.arena' + i + 'wins') })
+				}
+				return options
+			}
+			return $scope.arenaOptions
+		}
+
+		$scope.toggleAdvancedOptions = function() {
+			$scope.advancedOptions = !$scope.advancedOptions
+			$scope.$broadcast('$$rebind::' + 'advanced')
+		}
+
+		$scope.clearRanks = function() {
+			// $log.debug('clearing ranks')
+			$scope.options.criteria.skillRangeFrom = undefined
+			$scope.options.criteria.skillRangeTo = undefined
+		}
 
 		$scope.clearFilters = function() {
 			// $log.debug('clearing filters', $scope.options)
@@ -39,62 +158,38 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 
 			$scope.options = {
 				criteria: {
-					onlyHelpful: undefined,
-					noHelpful: undefined,
+					gameMode: null,
+					playerCategory: [],
+					opponentCategory: [],
+					result: null,
+					playCoin: null,
+					sort: 'publicationDate',
+
+					skillRangeFrom: null,
+					skillRangeTo: null,
+
+					author: null,
+					contributor: null,
+					title: null,
 					wantedTags: [],
 					unwantedTags: [],
-					reviewType: null,
-					search: searchFn,
-					sort: 'creationDate',
-					participantDetails: {
-						playerCategory: null,
-						opponentCategory: null,
-						skillLevel: []
-					},
-					minComments: 0,
-					maxComments: undefined
+					contributorsComparator: null,
+					contributorsValue: 0,
+					helpfulCommentsValue: 0,
+					ownVideos: null,
+					
+					search: searchFn
 				},
 				showIntermediateText: true
 			}
 		}
 		$scope.clearFilters()
 
-		$scope.sortOptions = [
-			{ "value" : "creationDate", "label" : "<span>" + $translate.instant('global.search.sort.creationDate') + "</span>" },
-			{ "value" : "updateDate", "label" : "<span>" + $translate.instant('global.search.sort.updateDate') + "</span>" }
-		]
-
-		$scope.helpfulOptions = [
-			{ "value" : null, "label" : $translate.instant('global.search.helpful.all') },
-			{ "value" : "onlyHelpful", "label" : $translate.instant('global.search.helpful.onlyHelpful') },
-			{ "value" : "onlyNotHelpful", "label" : $translate.instant('global.search.helpful.onlyNotHelpful') }
-		]
-		$scope.$watch('options.criteria.tempHelpfulComment', function(newVal, oldVal) {
-			$scope.options.criteria.onlyHelpful = undefined
-			$scope.options.criteria.noHelpful = undefined
-			if (newVal == 'onlyHelpful')
-				$scope.options.criteria.onlyHelpful = true
-			else if (newVal == 'onlyNotHelpful')
-				$scope.options.criteria.noHelpful = true
-		})
 
 
-		$scope.minCommentsOptions = [
-			{ "value" : 0, "label" : 0 },
-			{ "value" : 1, "label" : 1 },
-			{ "value" : 2, "label" : 2 },
-			{ "value" : 3, "label" : 3 },
-			{ "value" : 4, "label" : 4 },
-			{ "value" : 5, "label" : 5 }
-		]
-		$scope.maxCommentsOptions = [
-			{ "value" : 0, "label" : '0' },
-			{ "value" : 1, "label" : 1 },
-			{ "value" : 2, "label" : 2 },
-			{ "value" : 3, "label" : 3 },
-			{ "value" : 4, "label" : 4 },
-			{ "value" : null, "label" : $translate.instant('global.search.nbComments.unlimited')  }
-		]
+		//=======================
+		// Real search functions
+		//=======================
 
 		$scope.searchFromClick = function() {
 			$location.search('')
@@ -102,15 +197,10 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.search = function() {
-			// $log.debug('searching')
 			$scope.options.criteria.sport = $scope.sport
-
-			$scope.options.criteria.search($scope.options.criteria, true, $scope.pageNumber)
-			// $timeout(function() {
-			// 	$scope.options.criteria.participantDetails.playerCategory = $scope.options.criteria.participantDetails.playerCategory || 'any'
-			// 	$scope.options.criteria.participantDetails.opponentCategory = $scope.options.criteria.participantDetails.opponentCategory || 'any'
-			// })
+			$scope.options.criteria.search($scope.options.criteria, true, $scope.pageNumber, $scope.onVideosLoaded)
 		}
+
 		$scope.firstSearch = function() {
 			if (!$scope.options.criteria.search) {
 				$timeout(function() {
@@ -122,6 +212,13 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			}
 		}
 		$scope.firstSearch()
+
+		$scope.onVideosLoaded = function(reviews) {
+			$log.debug('loaded reviews', reviews)
+			$scope.reviews = reviews
+			// $scope.referenceReviews = reviews
+			$scope.$broadcast('$$rebind::' + 'resultsRefresh')
+		}
 
 
 		//===============
@@ -137,6 +234,209 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 
 		$scope.autocompleteTag = function($query) {
 			return TagService.autocompleteTag($query, $scope.allowedTags, $scope.sport)
+		}
+
+
+
+		//===============
+		// Dynamic search
+		//===============
+		$scope.filterReviews = function() {
+			$log.debug('filtering reviews', $scope.options.criteria)
+			var now = new Date()
+
+			// Remove reviews that don't match the criteria
+			$scope.reviews.forEach(function(review) {
+				review.filteredOut = !$scope.match(review, $scope.options.criteria)
+			})
+
+			$scope.$broadcast('$$rebind::' + 'resultsRefresh')
+			$log.debug('filtering done after', (new Date() - now))
+		}
+
+		$scope.updateSort = function() {
+			if ($scope.options.criteria.sort == 'publicationDate') {
+				$scope.options.sort = 'publicationDate'
+			}
+			else if ($scope.options.criteria.sort == 'creationDate') {
+				$scope.options.sort = 'creationDate'
+			}
+			else if ($scope.options.criteria.sort == 'updateDate') {
+				$scope.options.sort = 'lastModifiedDate'
+			}
+			// $log.debug('updated sort', $scope.reviews)
+			$scope.$broadcast('$$rebind::' + 'resultsRefresh')
+		}
+
+		$scope.dynamicOrder = function(review) {
+			return review[$scope.options.sort] || review.creationDate
+		}
+
+		$scope.match = function(review, criteria) {
+			// var match = true
+
+			if (!review.metaData)
+				return false
+
+			// Matchup
+			if (criteria.playerCategory && criteria.playerCategory.length > 0) {
+				if (!review.metaData.playerCategory)
+					return false
+
+				if (criteria.playerCategory.indexOf(review.metaData.playerCategory) == -1)
+					return false
+			}
+			if (criteria.opponentCategory && criteria.opponentCategory.length > 0) {
+				if (!review.metaData.opponentCategory)
+					return false
+
+				if (criteria.opponentCategory.indexOf(review.metaData.opponentCategory) == -1)
+					return false
+			}
+
+			// result
+			if (criteria.result && review.metaData.winStatus != criteria.result)
+				return false
+
+			// Play & coin
+			if (criteria.playCoin && review.metaData.playCoin != criteria.playCoin)
+				return false
+
+			// Game mode
+			if (criteria.gameMode && criteria.gameMode != review.metaData.gameMode)
+				return false
+
+			// Skill range
+			if (criteria.gameMode == 'ranked') {
+				if (criteria.skillRangeFrom && (!review.metaData.skillLevel || criteria.skillRangeFrom < parseInt(review.metaData.skillLevel)))
+					return false
+
+				if (criteria.skillRangeTo && (!review.metaData.skillLevel || criteria.skillRangeTo > parseInt(review.metaData.skillLevel)))
+					return false
+			}
+			else if (criteria.gameMode == 'arena-game') {
+				if (criteria.skillRangeFrom && (!review.metaData.skillLevel || criteria.skillRangeFrom > parseInt(review.metaData.skillLevel)))
+					return false
+
+				if (criteria.skillRangeTo && (!review.metaData.skillLevel || criteria.skillRangeTo < parseInt(review.metaData.skillLevel)))
+					return false
+			}
+
+			// Author
+			if (criteria.author) {
+				// It's not the author, maybe it's one of hte players?
+				if (review.author.indexOf(criteria.author) == -1) {
+
+					if (!review.metaData.playerName || review.metaData.playerName.indexOf(criteria.author) == -1) {
+
+						if (!review.metaData.opponentName ||review.metaData.opponentName.indexOf(criteria.author) == -1) {
+							return false
+						}
+					}
+				}
+			}
+
+			// Contributors
+			if (criteria.contributor) {
+				$log.debug('looking at all contributors', criteria.contributor, review.allAuthors)
+				if (!review.allAuthors)
+					return false
+
+				var found = false
+				review.allAuthors.forEach(function(author) {
+					if (author.indexOf(criteria.contributor) != -1) {
+						$log.debug('\tFound contributor', author, criteria.contributor)
+						found = true
+					}
+				})
+
+				if (!found)
+					return false
+			}
+
+			// wanted tags
+			if (criteria.wantedTags && criteria.wantedTags.length > 0) {
+				if (!review.tags || review.tags.length == 0)
+					return false
+
+				var allFound = true
+				criteria.wantedTags.forEach(function(wantedTag) {
+					var found = false
+					review.tags.forEach(function(tag) {
+						if (!found && tag.text == wantedTag.text) {
+							found = true
+						}
+					})
+					allFound &= found
+				})
+
+				if (!allFound)
+					return false
+			}
+
+			// Unwanted tags
+			if (criteria.unwantedTags && criteria.unwantedTags.length > 0) {
+				if (!review.tags || review.tags.length == 0)
+					return true
+
+				var anyFound = false
+				criteria.unwantedTags.forEach(function(unwantedTag) {
+					var found = false
+					review.tags.forEach(function(tag) {
+						if (!found && tag.text == unwantedTag.text) {
+							found = true
+						}
+					})
+					anyFound |= found
+				})
+
+				if (anyFound)
+					return false
+			}
+
+			if (criteria.contributorsComparator) {
+
+				// Different contributors
+				if (criteria.contributorsComparator == 'gte' && criteria.contributorsValue > 0) {
+					// The author is counted in the allAuthors, while we're only interested in contributors
+					if (!review.allAuthors || review.allAuthors.length <= criteria.contributorsValue) 
+						return false
+				}
+
+				if (criteria.contributorsComparator == 'lte') {
+					// $log.debug('looking for at most', criteria.contributorsValue, review.allAuthors.length)
+					// The author is counted in the allAuthors, while we're only interested in contributors
+					if (review.allAuthors && review.allAuthors.length - 1 > criteria.contributorsValue) 
+						return false
+				}
+
+				// Helpful comments
+				if (criteria.contributorsComparator == 'gte' && review.totalHelpfulComments < criteria.helpfulCommentsValue)
+					return false
+
+
+				if (criteria.contributorsComparator == 'lte' && review.totalHelpfulComments > criteria.helpfulCommentsValue)
+					return false
+			}
+
+			if (criteria.ownVideos) {
+				if (review.author != User.getName())
+					return false
+			}
+
+
+			return true
+		}
+
+		$scope.notifySearchRelaunchNeeded = function(field) {
+			if (!field)
+				$scope.searchRelaunchNeeded = false
+			else 
+				$scope.searchRelaunchNeeded = true
+		}
+
+		$scope.dismissMessage = function() {
+			$scope.searchRelaunchNeeded = undefined
 		}
 
 

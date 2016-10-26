@@ -1,6 +1,6 @@
 <ul tabindex="-1" class="select dropdown-menu" ng-show="$isVisible()" role="select">
 	<li ng-if="$showAllNoneButtons" class="all-classes">
-		<a type="button" ng-click="$selectNone()">All Heroes</a>
+		<a type="button" ng-click="$selectNone()">{{::translations.allClasses}}</a>
 	</li>
 	<li role="presentation" ng-repeat="match in $matches" ng-class="{active: $isActive($index)}">
 		<a style="cursor: default;" role="menuitem" tabindex="-1" ng-click="$select($index, $event)">

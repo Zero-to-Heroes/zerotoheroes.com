@@ -1,11 +1,13 @@
 package com.coach.plugin.hearthstone;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import com.coach.core.storage.S3Utils;
@@ -23,6 +25,7 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+@Component
 public class HSArenaDraft implements ReplayPlugin {
 
 	@Autowired
@@ -72,10 +75,34 @@ public class HSArenaDraft implements ReplayPlugin {
 		review.setKey(key);
 		s3utils.putToS3(replayJson, review.getKey(), "application/json");
 
+		review.setTemporaryReplay(replayJson);
+		addMetaData(review);
+		review.setTemporaryReplay(null);
+
 		log.debug("Review updated with proper key " + review);
 		// review.setTemporaryKey(null);
 		review.setTranscodingDone(true);
 		return true;
+	}
+
+	public void addMetaData(Review review) throws IOException {
+		// String draft = getDraft(review);
+		HearthstoneMetaData metaData = new HearthstoneMetaData();
+		if (review.getParticipantDetails() != null) {
+			metaData.setPlayerName(review.getParticipantDetails().getPlayerName());
+			metaData.setPlayerClass(review.getParticipantDetails().getPlayerCategory());
+		}
+		metaData.setGameMode("arena-draft");
+
+		review.setMetaData(metaData);
+	}
+
+	private String getDraft(Review review) throws IOException {
+		String replay = review.getTemporaryReplay();
+		if (replay == null) {
+			replay = s3utils.readFromS3Output(review.getKey());
+		}
+		return replay;
 	}
 
 	private String convertToJson(String atFile) throws Exception {

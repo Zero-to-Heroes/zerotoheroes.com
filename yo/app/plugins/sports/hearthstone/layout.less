@@ -136,7 +136,7 @@ tags-input[disabled] .tags {
 }
 
 .announcements {
-	margin-bottom: -70px;
+	// margin-bottom: -70px;
 }
 
 .announcements a {
@@ -533,15 +533,31 @@ h2 {
 ** Particpant module
 ** =============*/
 .hearthstone-participants {
-	display: table;
-	table-layout: fixed;
-	margin: auto;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 	margin-bottom: 30px;
-	height: 52px;
-}
+	min-height: 52px;
 
-.hearthstone-participants .form-group {
-	margin-bottom: 0;
+	.player-details button {
+		background: transparent;
+		width: 50px;
+		margin-right: 10px;
+	}
+
+	.form-group {
+		display: flex;
+		margin-bottom: 0;
+	}
+	
+	.player-details button {
+		background: transparent;
+		width: 50px;
+	}
+
+	.form-group {
+		margin-bottom: 0;
+	}
 }
 
 .class-select {
@@ -597,6 +613,13 @@ h2 {
 	}
 }
 
+hearthstone-participants-details-arena {
+	.hearthstone-participants {
+		.level-details {
+			display: none;
+		}
+	}
+}
 
 .hearthstone-participants .player-details, .hearthstone-participants .opponent-details {
 	display: table-cell;
@@ -619,13 +642,6 @@ h2 {
 	vertical-align: middle;
 	padding-left: 5px;
 	padding-right: 25px;
-}
-
-.hearthstone-participants .level-details {
-	display: table-cell;
-	vertical-align: middle;
-	padding-left: 45px;
-	width: 230px;
 }
 
 .participants-container .hearthstone-participants .level-details {
@@ -1055,7 +1071,7 @@ hearthstone-frame .medal.legend:before {
 	** Specific Hearthstone info on video list
 	** =============*/
 	.video-listing .specific-info {
-		width: 400px;
+		// width: 400px;
 	}
 	.video-listing .hearthstone-participants {
 		margin: 0;

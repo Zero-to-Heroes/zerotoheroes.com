@@ -1,13 +1,10 @@
 package com.coach.plugin.hearthstone;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -23,12 +20,9 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
-import com.coach.review.MetaData;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.zerotoheroes.hsgameconverter.ReplayConverter;
-import com.zerotoheroes.hsgameentities.replaydata.HearthstoneReplay;
-import com.zerotoheroes.hsgameparser.metadata.GameMetaData;
 
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.core.ZipFile;
@@ -46,6 +40,9 @@ public class HSReplay implements ReplayPlugin {
 
 	@Autowired
 	GameParserProvider gameParser;
+
+	@Autowired
+	HSGameParser hsParser;
 
 	@Override
 	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws Exception {
@@ -139,7 +136,7 @@ public class HSReplay implements ReplayPlugin {
 		review.setMediaType("game-replay");
 		review.setReviewType("game-replay");
 		review.setTemporaryReplay(xml);
-		addMetaData(review);
+		hsParser.addMetaData(review);
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
 		log.debug("Review updated with proper key " + review);
@@ -170,57 +167,6 @@ public class HSReplay implements ReplayPlugin {
 	@Override
 	public String getMediaType() {
 		return null;
-	}
-
-	private void addMetaData(Review review) {
-		if (gameParser == null || gameParser.getGameParser() == null) {
-			log.error("Game parser not initialized properly");
-			return;
-		}
-
-		try {
-			log.debug("Adding meta data to " + review);
-			String replay = review.getTemporaryReplay();
-			log.debug("temp replay is ");
-			HearthstoneReplay game = new ReplayConverter()
-					.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
-			log.debug("game is ");
-
-			GameMetaData meta = gameParser.getGameParser().getMetaData(game);
-			log.info("built meta data " + meta);
-			review.getParticipantDetails().setPlayerName(meta.getPlayerName());
-			review.getParticipantDetails().setOpponentName(meta.getOpponentName());
-			review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
-			review.getParticipantDetails().setOpponentCategory(meta.getOpponentClass());
-
-			MetaData metaData = review.getMetaData();
-			if (metaData == null || !(metaData instanceof HearthstoneMetaData)) {
-				metaData = new HearthstoneMetaData();
-				review.setMetaData(metaData);
-			}
-			HearthstoneMetaData hsMeta = (HearthstoneMetaData) metaData;
-			hsMeta.setDurationInSeconds(meta.getDurationInSeconds());
-			hsMeta.setNumberOfTurns(meta.getNumberOfTurns());
-			hsMeta.setWinStatus(meta.getWinStatus());
-
-			log.debug("adding title?");
-			if (StringUtils.isEmpty(review.getTitle())) {
-				String title = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + " - "
-						+ review.getParticipantDetails().getPlayerName() + "("
-						+ review.getParticipantDetails().getPlayerCategory() + ") vs "
-						+ review.getParticipantDetails().getOpponentName() + "("
-						+ review.getParticipantDetails().getOpponentCategory() + ")";
-				title += " - " + hsMeta.getWinStatus();
-				review.setTitle(title);
-			}
-
-			log.debug("done adding meta " + review);
-		}
-		catch (Throwable e) {
-			log.info("Could not add metata to review " + review);
-			log.error("", e);
-			log.error("Could not add metata to review " + review, e);
-		}
 	}
 
 	public List<String> extractGames(String key, String fileType) throws IOException, ZipException {

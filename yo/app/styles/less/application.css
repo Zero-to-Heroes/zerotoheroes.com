@@ -3,7 +3,7 @@ body {
   flex-direction: column;
 }
 .main-panel-nolanding {
-  margin-top: 80px;
+  margin-top: 10px;
 }
 .main-container-nolanding {
   flex-basis: 75%;
@@ -416,20 +416,38 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 0;
 }
 .review-list-item {
-  width: 460px;
+  width: 380px;
+  max-width: 100%;
 }
-.review-list-item .header {
-  margin-bottom: 5px;
+.review-list-item > a {
+  display: flex;
+  flex-wrap: wrap;
 }
 .review-list-item .body {
   flex-wrap: wrap;
 }
+.review-list-item .video-info-details {
+  order: 1;
+  width: 120px;
+}
 .review-list-item .complementary-info {
   margin-top: 15px;
-  width: 100%;
-  height: 70px;
+  height: 30px;
+  order: -1;
+  flex-grow: 1;
+  width: 150px;
+  align-self: stretch;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.review-list-item .specific-info {
+  order: -1;
+  max-width: none;
+  flex-grow: 1;
+  margin-bottom: 0;
 }
 .review-list-item .title-container {
   flex-grow: 1;
@@ -439,6 +457,7 @@ body {
   /* http://stackoverflow.com/questions/12022288/how-to-keep-a-flex-item-from-overflowing-due-to-its-text*/
   min-width: 1px;
   justify-content: center;
+  flex-basis: 100%;
 }
 .review-list-item .title-container .title {
   overflow: hidden;
@@ -453,15 +472,87 @@ body {
 .review-list-item .skill-level {
   display: flex;
   flex-direction: column;
-  min-width: 140px;
-  margin-right: 25px;
+  min-width: 111px;
   align-items: center;
+  flex-grow: 1;
+  order: 4;
 }
 .review-list-item .skill-level .skill-level-icon {
   width: 90px;
 }
 .review-list-item .skill-level .skill-level-label {
   font-size: 0.8em;
+}
+.review-list-item .stat-view {
+  display: none;
+}
+.review-list-item .sport-tags {
+  align-items: baseline;
+  height: 100%;
+  justify-content: space-around;
+}
+.review-list-item .read-only-tag {
+  width: 40%;
+  justify-content: space-around;
+  padding: 4px 8px;
+  margin-right: 0;
+}
+.list .review-list-item {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.list .review-list-item .review-link {
+  align-items: center;
+  height: 120px;
+  overflow: hidden;
+}
+.list .review-list-item .skill-level {
+  order: -4;
+  flex-grow: 0;
+}
+.list .review-list-item .video-info-details {
+  order: -3;
+  margin: 0;
+}
+.list .review-list-item .specific-info {
+  width: 250px;
+  max-width: 250px;
+  margin-right: 15px;
+  order: -2;
+}
+.list .review-list-item .specific-info .player-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+.list .review-list-item .specific-info .player-details i {
+  margin: 0;
+}
+.list .review-list-item .title-container {
+  order: -1;
+  flex-basis: inherit;
+  margin: 0;
+  width: 350px;
+}
+.list .review-list-item .complementary-info {
+  width: auto;
+  height: auto;
+  margin: 0;
+  flex-grow: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.list .review-list-item .complementary-info .sport-tags {
+  align-items: center;
+}
+.list .review-list-item .complementary-info .sport-tags .read-only-tag {
+  padding: 10px 10px;
+  width: 100px;
+  height: 55px;
+  justify-content: center;
+  margin-right: 10px;
 }
 .search-page-global .main-panel {
   width: calc(100% - 45px);
@@ -470,8 +561,23 @@ body {
 }
 .search-page-global .search-section {
   display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+.search-page-global .search-section .advanced-options {
+  padding: 20px 0 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-page-global .search-section .line-break {
+  flex-basis: 100%;
 }
 .search-page-global .search-section .btn-select {
+  width: 175px;
+  height: 100%;
+}
+.search-page-global .search-section .search-group {
+  margin-bottom: 30px;
   min-height: 50px;
 }
 .search-page-global .search-section .class-select {
@@ -480,6 +586,78 @@ body {
   width: 200px;
   padding-left: 5px;
   padding-right: 5px;
+}
+.search-page-global .search-section .skill-select {
+  display: flex;
+  align-items: center;
+}
+.search-page-global .search-section .skill-select button {
+  width: 140px;
+}
+.search-page-global .search-section .comment-select {
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-page-global .search-section .comment-select .digit-only {
+  width: 148px;
+}
+.search-page-global .search-section input {
+  height: 100%;
+}
+.search-page-global .search-section label input {
+  height: auto;
+}
+.search-page-global .search-section .title-search,
+.search-page-global .search-section .tag-search,
+.search-page-global .search-section .author-search,
+.search-page-global .search-section .contributor-search {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.search-page-global .search-section .title-search tags-input,
+.search-page-global .search-section .tag-search tags-input,
+.search-page-global .search-section .author-search tags-input,
+.search-page-global .search-section .contributor-search tags-input {
+  height: 100%;
+  width: 100%;
+}
+.search-page-global .search-section .tag-search {
+  width: 375px;
+  max-width: 90%;
+}
+.search-page-global .search-section .sort-button {
+  width: 225px;
+}
+.search-page-global .search-section .own-reviews label {
+  font-weight: normal;
+}
+.search-page-global .search-section .show-advanced-button {
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+.search-page-global .search-section .comment-group {
+  display: flex;
+  align-items: center;
+}
+.search-page-global .search-section .option-group {
+  margin-right: 5px;
+}
+.search-page-global .search-section .buttons-group {
+  margin-left: 10px;
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-page-global .search-section .buttons-group button {
+  margin-right: 10px;
+}
+.search-page-global .search-section .buttons-group .display-mode {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.search-page-global .search-section .buttons-group .display-mode .inactive {
+  filter: brightness(80%);
 }
 upload-replay-review .metadata {
   flex-basis: 100%;
@@ -515,9 +693,27 @@ upload-replay-review .no-more-review-description-text {
     margin-top: 10px;
   }
 }
+@media screen and (max-width: 800px) {
+  .search-page-global .search-section {
+    margin: 0;
+    width: 100%;
+  }
+}
 @media screen and (max-width: 750px) {
   .video-listing .complementary-info {
     display: none;
+  }
+  .video-listing .advanced-options {
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .search-page-global .search-section .display-mode {
+    flex-basis: 100%;
+    margin-top: 20px;
+  }
+  .search-page-global .video-listing {
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 650px) {
@@ -526,6 +722,32 @@ upload-replay-review .no-more-review-description-text {
   }
   .video-listing li {
     margin-right: 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  .search-page-global .search-section .option-group {
+    margin-left: 40px;
+  }
+  .search-page-global .search-section .and {
+    display: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  .search-page-global .search-section .search-group,
+  .search-page-global .search-section .show-advanced-button {
+    margin-bottom: 15px;
+    padding-left: 20px;
+  }
+  .search-page-global .search-section .buttons-group button {
+    margin-top: 15px;
+  }
+  .search-page-global .search-section .skill-select > span {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  .search-page-global .search-section .tag-search {
+    width: 80%;
   }
 }
 @media (max-width: 420px) {
@@ -539,27 +761,41 @@ upload-replay-review .no-more-review-description-text {
     padding: 10px 10px;
   }
 }
-@media (max-width: 420px) {
-  .review-list-item .header {
+@media screen and (max-width: 1100px) {
+  .list .review-list-item .title-container {
+    width: 250px;
+  }
+  .list .review-list-item .complementary-info {
+    display: none;
+  }
+}
+@media screen and (max-width: 999px) {
+  .list .review-list-item .video-info-details {
+    display: none;
+  }
+}
+@media screen and (max-width: 750px) {
+  .list .review-list-item .review-link {
     flex-wrap: wrap;
+    height: 200px;
+    justify-content: center;
   }
-  .review-list-item .title-container {
-    order: -1;
-    flex-basis: 100%;
+  .list .review-list-item .title-container {
+    width: 100%;
+    order: -5;
   }
+}
+@media screen and (max-width: 475px) {
+  .list .review-list-item .skill-level {
+    display: none;
+  }
+}
+@media (max-width: 420px) {
   .review-list-item .skill-level {
     min-width: auto;
     margin-right: 0;
   }
   .review-list-item .skill-level .skill-level-icon {
     width: 70px;
-  }
-  .review-list-item .mobile-video-info-details {
-    display: inline-flex;
-    width: 200px;
-    margin-top: 0;
-  }
-  .review-list-item .video-info-details {
-    display: none;
   }
 }

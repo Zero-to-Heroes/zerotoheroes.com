@@ -122,6 +122,7 @@ public class ReviewDao {
 		fields.include("mediaType");
 		fields.include("visibility");
 		fields.include("lastModifiedDate");
+		fields.include("allAuthors");
 
 		List<Review> find = mongoTemplate.find(query, Review.class);
 		return find;

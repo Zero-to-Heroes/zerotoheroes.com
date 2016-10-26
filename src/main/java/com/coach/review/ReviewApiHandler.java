@@ -145,9 +145,12 @@ public class ReviewApiHandler {
 		}
 
 		// Sorting in ascending order of creation date first
-		Sort sort = new Sort(Sort.Direction.DESC, Arrays.asList("creationDate"));
+		Sort sort = new Sort(Sort.Direction.DESC, Arrays.asList("publicationDate"));
 		if ("updateDate".equals(criteria.getSort())) {
-			sort = new Sort(Sort.Direction.DESC, Arrays.asList("sortingDate", "creationDate", "lastModifiedDate"));
+			sort = new Sort(Sort.Direction.DESC, Arrays.asList("lastModifiedDate"));
+		}
+		else if ("creationDate".equals(criteria.getSort())) {
+			sort = new Sort(Sort.Direction.DESC, Arrays.asList("creationDate"));
 		}
 
 		// Start pageing at 1 like normal people, not at 0 like nerds
@@ -156,6 +159,7 @@ public class ReviewApiHandler {
 				: null;
 
 		long queryStart = System.currentTimeMillis();
+		log.debug("Searching with criteria " + criteria);
 		List<Review> reviews = reviewDao.search(criteria, author, pageRequest);
 
 		ListReviewResponse response = new ListReviewResponse(reviews);
@@ -546,7 +550,7 @@ public class ReviewApiHandler {
 
 		// review.setLastModifiedDate(new Date());
 		// review.setLastModifiedBy(currentUser);
-		review.setLanguage(inputReview.getLanguage());
+		// review.setLanguage(inputReview.getLanguage());
 		if ("public".equalsIgnoreCase(inputReview.getVisibility())
 				&& !"public".equalsIgnoreCase(review.getVisibility())) {
 			review.setVisibility(inputReview.getVisibility());

@@ -22,7 +22,7 @@
 						<div class="row video-information-header">
 
 							<div class="col-md-12 review-header" ng-if="!review.editing">
-								<span class="skill-level">
+								<span class="skill-level" ng-if=":reviewRefresh:review.participantDetails.skillLevel">
 									<img class="skill-level-icon" src="{{:reviewRefresh:getSkillLevelSource(review)}}" title="{{:reviewRefresh:getSkillLevelLabel(review)}}">
 								</span>
 								<h1 class="video-title" ng-model="review.title">{{:reviewRefresh:review.title}}</h1>

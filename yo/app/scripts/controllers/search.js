@@ -25,7 +25,9 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			clearFilterButton: $translate.instant('global.search.clearFilterButton'),
 			subscribe: $translate.instant('global.search.subscribe'),			
 			subscribeTooltip: $translate.instant('global.search.subscribeTooltip'),
-			needNewSearch: $translate.instant('global.search.needNewSearch')
+
+			needNewSearch: $translate.instant('global.search.needNewSearch'),
+			authorCriteriaTooShort: $translate.instant('global.search.authorCriteriaTooShort')
 		}
 
 		$scope.displayStyle = 'grid'
@@ -90,10 +92,10 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 		for (var i = 25; i > 0; i--) {
 			$scope.rankOptions.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.rank' + i) })
 		}
-		$scope.rankOptions.push({ "value" : "legend", "label" : $translate.instant('hearthstone.ranking.legend') })
+		$scope.rankOptions.push({ "value" : 0, "label" : $translate.instant('hearthstone.ranking.legend') })
 
 		$scope.getRankedSkillFromOptions = function() {
-			if ($scope.options.criteria.skillRangeTo && $scope.options.criteria.skillRangeTo != 'legend') {
+			if ($scope.options.criteria.skillRangeTo && $scope.options.criteria.skillRangeTo != 0) {
 				var options = []
 				for (var i = 25; i >= $scope.options.criteria.skillRangeTo; i--) {
 					options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.rank' + i) })
@@ -108,7 +110,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 				for (var i = $scope.options.criteria.skillRangeFrom; i > 0; i--) {
 					options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.rank' + i) })
 				}
-				options.push({ "value" : "legend", "label" : $translate.instant('hearthstone.ranking.legend') })
+				options.push({ "value" : 0, "label" : $translate.instant('hearthstone.ranking.legend') })
 				return options
 			}
 			return $scope.rankOptions
@@ -190,6 +192,16 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 		//=======================
 		// Real search functions
 		//=======================
+		$scope.initMessages = function() {
+			var criteria =  $scope.options.criteria
+
+			$scope.authorCriteriaTooShort = false
+
+			if (criteria.author && criteria.author.length <= 2 ||
+				criteria.contributor && criteria.contributor.length <= 2) {
+				$scope.authorCriteriaTooShort = true
+			}
+		}
 
 		$scope.searchFromClick = function() {
 			$location.search('')
@@ -197,6 +209,9 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.search = function() {
+			$scope.initMessages()
+			$scope.reviews = []
+			$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 			$scope.options.criteria.sport = $scope.sport
 			$scope.options.criteria.search($scope.options.criteria, true, $scope.pageNumber, $scope.onVideosLoaded)
 		}
@@ -273,9 +288,10 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.match = function(review, criteria) {
-			// var match = true
+			// Dev - disable live filtering to test search function
+			// return true
 
-			if (!review.metaData)
+			if (!review.metaData) 
 				return false
 
 			// Matchup
@@ -308,28 +324,29 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 
 			// Skill range
 			if (criteria.gameMode == 'ranked') {
-				if (criteria.skillRangeFrom && (!review.metaData.skillLevel || criteria.skillRangeFrom < parseInt(review.metaData.skillLevel)))
+
+				if (criteria.skillRangeFrom && (!review.metaData.skillLevel || criteria.skillRangeFrom < review.metaData.skillLevel))
 					return false
 
-				if (criteria.skillRangeTo && (!review.metaData.skillLevel || criteria.skillRangeTo > parseInt(review.metaData.skillLevel)))
+				if (criteria.skillRangeTo && (!review.metaData.skillLevel || criteria.skillRangeTo > review.metaData.skillLevel))
 					return false
 			}
 			else if (criteria.gameMode == 'arena-game') {
-				if (criteria.skillRangeFrom && (!review.metaData.skillLevel || criteria.skillRangeFrom > parseInt(review.metaData.skillLevel)))
+				if (criteria.skillRangeFrom && (!review.metaData.skillLevel || criteria.skillRangeFrom > review.metaData.skillLevel))
 					return false
 
-				if (criteria.skillRangeTo && (!review.metaData.skillLevel || criteria.skillRangeTo < parseInt(review.metaData.skillLevel)))
+				if (criteria.skillRangeTo && (!review.metaData.skillLevel || criteria.skillRangeTo < review.metaData.skillLevel))
 					return false
 			}
 
 			// Author
-			if (criteria.author) {
+			if (criteria.author && criteria.author.length > 2) {
 				// It's not the author, maybe it's one of hte players?
-				if (review.author.indexOf(criteria.author) == -1) {
+				if (!review.author || review.author.toLowerCase().indexOf(criteria.author.toLowerCase()) == -1) {
 
-					if (!review.metaData.playerName || review.metaData.playerName.indexOf(criteria.author) == -1) {
+					if (!review.metaData.playerName || review.metaData.playerName.toLowerCase().indexOf(criteria.author.toLowerCase()) == -1) {
 
-						if (!review.metaData.opponentName ||review.metaData.opponentName.indexOf(criteria.author) == -1) {
+						if (!review.metaData.opponentName ||review.metaData.opponentName.toLowerCase().indexOf(criteria.author.toLowerCase()) == -1) {
 							return false
 						}
 					}
@@ -337,7 +354,7 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			}
 
 			// Contributors
-			if (criteria.contributor) {
+			if (criteria.contributor && criteria.contributor.length > 2) {
 				$log.debug('looking at all contributors', criteria.contributor, review.allAuthors)
 				if (!review.allAuthors)
 					return false
@@ -376,22 +393,21 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 
 			// Unwanted tags
 			if (criteria.unwantedTags && criteria.unwantedTags.length > 0) {
-				if (!review.tags || review.tags.length == 0)
-					return true
-
-				var anyFound = false
-				criteria.unwantedTags.forEach(function(unwantedTag) {
-					var found = false
-					review.tags.forEach(function(tag) {
-						if (!found && tag.text == unwantedTag.text) {
-							found = true
-						}
+				if (review.tags && review.tags.length > 0) {
+					var anyFound = false
+					criteria.unwantedTags.forEach(function(unwantedTag) {
+						var found = false
+						review.tags.forEach(function(tag) {
+							if (!found && tag.text == unwantedTag.text) {
+								found = true
+							}
+						})
+						anyFound |= found
 					})
-					anyFound |= found
-				})
 
-				if (anyFound)
-					return false
+					if (anyFound)
+						return false
+				}
 			}
 
 			if (criteria.contributorsComparator) {
@@ -435,8 +451,10 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 				$scope.searchRelaunchNeeded = true
 		}
 
-		$scope.dismissMessage = function() {
-			$scope.searchRelaunchNeeded = undefined
+		$scope.closeMessage = function(message) {
+			$scope[message] = undefined
+			$log.debug('dismissing message', message)
+			// $scope[message] = undefined
 		}
 
 

@@ -196,6 +196,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	@JsonIgnore
 	private Set<String> allAuthors = new HashSet<>();
 
+	@Indexed
+	@JsonIgnore
+	private int authorCount = 0;
+
 	// Don't send the info to the UI, it doesn't need it
 	@JsonIgnore
 	private String temporaryReplay;
@@ -346,6 +350,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 				comment.addAllAuthors(allAuthors);
 			}
 		}
+
+		authorCount = allAuthors.size();
 
 		return allAuthors;
 	}

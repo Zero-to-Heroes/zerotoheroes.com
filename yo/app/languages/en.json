@@ -339,7 +339,8 @@
 			"subscribeTooltip": "Get notified every time a new review that match your search criteria is posted",
 			"subscribePlaceholder": "Name your search",
 			"subscriptionOk": "You have subscribed to the search results and will receive a notification each time a new review that match your criteria is posted. You can manage your subscription in your profile page",
-			"needNewSearch": "You've just modified a complex criteria, please use the \"Search\" button to do the search on the server"
+			"needNewSearch": "You've just modified a complex criteria, please use the \"Search\" button to do the search on the server",
+			"authorCriteriaTooShort": "Please specify at least 3 characters when looking for a player / contributor"
 		},
 		"profile": {
 			"messages": {

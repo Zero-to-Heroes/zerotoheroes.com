@@ -4,7 +4,10 @@ import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
 import static org.springframework.data.mongodb.core.query.Update.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,54 +56,119 @@ public class ReviewDao {
 			crit.and("visibility").is("public");
 		}
 
+		// Look for the videos of the specified author
 		if (!StringUtils.isEmpty(author)) {
 			crit.and("authorId").is(author);
 		}
 
+		// This is a user-specified criteria, could be either an ID or a
+		// username
+		if (!StringUtils.isEmpty(criteria.getAuthor()) && criteria.getAuthor().length() > 2) {
+			Criteria authorIdCriteria = where("authorId").is(criteria.getAuthor());
+			Criteria authorCriteria = where("author").regex(".*" + criteria.getAuthor() + ".*", "i");
+			crit.orOperator(authorCriteria, authorIdCriteria);
+		}
+
+		if (!StringUtils.isEmpty(criteria.getGameMode())) {
+			crit.and("metaData.gameMode").is(criteria.getGameMode());
+		}
+
+		// Matchup
+		if (!CollectionUtils.isEmpty(criteria.getPlayerCategory())) {
+			crit.and("metaData.playerClass").in(criteria.getPlayerCategory());
+		}
+		if (!CollectionUtils.isEmpty(criteria.getOpponentCategory())) {
+			crit.and("metaData.opponentClass").in(criteria.getOpponentCategory());
+		}
+
+		// Result
+		if (!StringUtils.isEmpty(criteria.getResult())) {
+			crit.and("metaData.winStatus").is(criteria.getResult());
+		}
+
+		// Plan & Coin
+		if (!StringUtils.isEmpty(criteria.getPlayCoin())) {
+			crit.and("metaData.playCoin").is(criteria.getPlayCoin());
+		}
+
+		// Skill range
+		if ("ranked".equals(criteria.getGameMode())) {
+			Criteria fromSkill = null;
+			Criteria toSkill = null;
+			List<Criteria> criteriaList = new ArrayList<>();
+
+			if (criteria.getSkillRangeFrom() != null) {
+				fromSkill = where("metaData.skillLevel").lte(criteria.getSkillRangeFrom());
+				criteriaList.add(fromSkill);
+			}
+			if (criteria.getSkillRangeTo() != null) {
+				toSkill = where("metaData.skillLevel").gte(criteria.getSkillRangeTo());
+				criteriaList.add(toSkill);
+			}
+
+			if (!criteriaList.isEmpty()) {
+				crit.andOperator(criteriaList.toArray(new Criteria[criteriaList.size()]));
+			}
+		}
+		else if ("arena-game".equals(criteria.getGameMode())) {
+			Criteria fromSkill = null;
+			Criteria toSkill = null;
+			List<Criteria> criteriaList = new ArrayList<>();
+
+			if (criteria.getSkillRangeFrom() != null) {
+				fromSkill = where("metaData.skillLevel").gte(criteria.getSkillRangeFrom());
+				criteriaList.add(fromSkill);
+			}
+			if (criteria.getSkillRangeTo() != null) {
+				toSkill = where("metaData.skillLevel").lte(criteria.getSkillRangeTo());
+				criteriaList.add(toSkill);
+			}
+
+			if (!criteriaList.isEmpty()) {
+				crit.andOperator(criteriaList.toArray(new Criteria[criteriaList.size()]));
+			}
+		}
+
+		// Contributors, this will be trickier
+		if (!StringUtils.isEmpty(criteria.getContributor()) && criteria.getContributor().length() > 2) {
+			// https://docs.mongodb.com/manual/reference/operator/query/in/
+			// http://stackoverflow.com/questions/38785349/spring-data-mongodb-criteria-with-in-and-list-of-regexes
+			List<Pattern> regexList = Arrays
+					.asList(Pattern.compile(".*" + criteria.getContributor() + ".*", Pattern.CASE_INSENSITIVE));
+			crit.and("allAuthors").in(regexList);
+		}
+
+		// Tags
 		if (!CollectionUtils.isEmpty(criteria.getWantedTags())) {
 			crit.and("allTags").all(criteria.getWantedTags());
 		}
 		if (!CollectionUtils.isEmpty(criteria.getUnwantedTags())) {
 			crit.and("allTags").nin(criteria.getUnwantedTags());
 		}
-		if (criteria.getOnlyHelpful() != null && criteria.getOnlyHelpful()) {
-			crit.and("totalHelpfulComments").gt(0);
-		}
-		if (criteria.getNoHelpful() != null && criteria.getNoHelpful()) {
-			crit.and("totalHelpfulComments").is(0);
-		}
 
-		if (criteria.getParticipantDetails() != null) {
-			ParticipantDetails details = criteria.getParticipantDetails();
-
-			// Any matchups
-			if (!StringUtils.isEmpty(details.getPlayerCategory())) {
-				crit.and("participantDetails.playerCategory").is(details.getPlayerCategory());
+		// Contributions
+		if (criteria.getContributorsComparator() == null || "gte".equals(criteria.getContributorsComparator())) {
+			if (criteria.getContributorsValue() > 0) {
+				crit.and("authorCount").gt(criteria.getContributorsValue());
 			}
-			if (!StringUtils.isEmpty(details.getOpponentCategory())) {
-				crit.and("participantDetails.opponentCategory").is(details.getOpponentCategory());
-			}
-
-			if (!CollectionUtils.isEmpty(details.getSkillLevel())) {
-				crit.and("participantDetails.skillLevel").all(details.getSkillLevel());
+			if (criteria.getHelpfulCommentsValue() > 0) {
+				crit.and("totalHelpfulComments").gte(criteria.getHelpfulCommentsValue());
 			}
 		}
-
-		if (!StringUtils.isEmpty(criteria.getReviewType())) {
-			crit.and("reviewType").is(criteria.getReviewType());
-		}
-		if (criteria.getMinComments() != null) {
-			crit.and("totalComments").gte(criteria.getMinComments());
-		}
-		if (criteria.getMaxComments() != null) {
-			crit.and("totalComments").lte(criteria.getMaxComments());
+		else if ("lte".equals(criteria.getContributorsComparator())) {
+			// The author is counted in the allAuthors, while we're only
+			// interested in contributors
+			crit.and("authorCount").lte(criteria.getContributorsValue() + 1);
+			if (criteria.getHelpfulCommentsValue() > 0) {
+				crit.and("totalHelpfulComments").lte(criteria.getHelpfulCommentsValue());
+			}
 		}
 
 		Query query = query(crit);
 
 		// Full-text search
-		if (!StringUtils.isEmpty(criteria.getText())) {
-			TextCriteria textCrit = new TextCriteria().matching(criteria.getText());
+		if (!StringUtils.isEmpty(criteria.getTitle())) {
+			TextCriteria textCrit = new TextCriteria().matching(criteria.getTitle());
 			query.addCriteria(textCrit);
 		}
 

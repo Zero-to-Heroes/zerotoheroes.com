@@ -102,10 +102,12 @@ public class ReviewCleanupHandler {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.HOUR, -2);
 
-		Criteria crit = where("lastMetaDataParsingDate").is(null).and("creationDate").lt(calendar.getTime());
+		// Criteria crit =
+		// where("lastMetaDataParsingDate").is(null).and("creationDate").lt(calendar.getTime());
+		Criteria crit = where("creationDate").lt(calendar.getTime());
 		Query query = query(crit);
 
-		PageRequest pageRequest = new PageRequest(0, 15);
+		PageRequest pageRequest = new PageRequest(0, 500);
 
 		query.with(pageRequest);
 

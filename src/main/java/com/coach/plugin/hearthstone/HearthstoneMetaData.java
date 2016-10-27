@@ -31,18 +31,18 @@ public class HearthstoneMetaData extends MetaData {
 	private String winStatus;
 	private String gameMode;
 	private String playCoin;
-	private String skillLevel;
+	private Float skillLevel;
 
 	public void extractSkillLevel(List<Tag> skillLevel) {
 		if (!CollectionUtils.isEmpty(skillLevel)) {
 			String skillTag = skillLevel.get(0).getText();
 			if (skillTag.contains("legend") || skillTag.contains("Legend")) {
-				this.skillLevel = "legend";
+				this.skillLevel = 0f;
 			}
 			else {
 				Matcher matcher = RANKED_PATTERN.matcher(skillTag);
 				while (matcher.find()) {
-					this.skillLevel = matcher.group(1);
+					this.skillLevel = Float.parseFloat(matcher.group(1));
 					if (gameMode == null) {
 						gameMode = "ranked";
 					}
@@ -52,7 +52,7 @@ public class HearthstoneMetaData extends MetaData {
 				if (this.skillLevel == null) {
 					matcher = ARENA_PATTERN.matcher(skillTag);
 					while (matcher.find()) {
-						this.skillLevel = matcher.group(1);
+						this.skillLevel = Float.parseFloat(matcher.group(1));
 						if (gameMode == null) {
 							gameMode = "arena-game";
 						}
@@ -60,9 +60,6 @@ public class HearthstoneMetaData extends MetaData {
 								+ gameMode);
 					}
 				}
-			}
-			if (this.skillLevel == null) {
-				this.skillLevel = skillLevel.get(0).getText();
 			}
 		}
 	}

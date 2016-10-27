@@ -103,12 +103,12 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					$scope.videos = []
 					delete $scope.config.videos
 
-					// $log.debug('searching videos', params, pageNumber, callback)
-
 					$scope.udpateSearchParams(params, pageNumber)
 
 					$scope.latestParams = params
 					$scope.latestUpdateUrl = updateUrl
+					
+					$log.debug('searching videos', params)
 					
 					Api.ReviewsQuery.save(params, function(data) {
 						

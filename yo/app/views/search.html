@@ -159,8 +159,12 @@
 	<video-search config="::options.criteria" sport="sport"></video-search>
 
 	<div class="alert alert-warning status-message" ng-show="searchRelaunchNeeded">
-		<button type="button" class="close" ng-click="dismissMessage()"><span aria-hidden="true">&times;</span></button>
+		<button type="button" class="close" ng-click="closeMessage('searchRelaunchNeeded')">&times;</button>
 		<span>{{::translations.needNewSearch}}</span>
+	</div>
+	<div class="alert alert-warning status-message" ng-show="authorCriteriaTooShort">
+		<button type="button" class="close" ng-click="closeMessage('authorCriteriaTooShort')">&times;</button>
+		<span>{{::translations.authorCriteriaTooShort}}</span>
 	</div>
 
 	<ul class="video-listing {{displayStyle}}">

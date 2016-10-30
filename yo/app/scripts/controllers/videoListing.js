@@ -16,14 +16,9 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			sortLabel: $translate.instant('global.search.sortLabel')
 		}
 
-		// $scope.videos = [];
 		$scope.ENV = ENV;
 		$scope.sport = $routeParams.sport;
-		// $scope.pageNumber = parseInt($routeParams.pageNumber) || 1;
 		$scope.User = User
-
-		// $scope.onlyShowPublic = true
-
 
 		$scope.initCriteria = function() {
 			var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
@@ -38,7 +33,6 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				},
 				onlyShowPublic: true
 			}
-			// $scope.options = {}
 			ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 		}
 		$scope.initCriteria()
@@ -47,56 +41,6 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			$scope.options.criteria.ownVideos = $scope.ownVideos
 		})
 
-
-		// $scope.sortOptions = [
-		// 	{ "value" : "publicationDate", "label" : $translate.instant('global.search.sort.publicationDate') },
-		// 	{ "value" : "creationDate", "label" : $translate.instant('global.search.sort.creationDate') },
-		// 	{ "value" : "updateDate", "label" : $translate.instant('global.search.sort.updateDate') }
-		// ]
-		// $scope.$watch('criteria.sort', function(newVal, oldVal) {
-		// 	// $log.debug('criteria updated', newVal, oldVal, $scope.options.criteria)
-		// 	if (newVal != oldVal) {
-		// 		$scope.search()
-		// 	}
-		// })
-
-
-		//===============
-		// Search
-		//===============
-		// $scope.toggleAllVideos = function() {
-		// 	$scope.onlyShowPublic = !$scope.onlyShowPublic
-		// 	$scope.search()
-		// }
-
-		// $scope.searchFromClick = function () {
-		// 	$location.search('')
-		// 	$scope.search()
-		// }
-
-
-		// $scope.search = function () {
-		// 	if (!$scope.options.criteria.search) {
-		// 		$timeout(function() {
-		// 			$scope.search()
-		// 		}, 50)
-		// 		return
-		// 	}
-		// 	var params = $scope.options.criteria
-		// 	// $log.debug('init search', $scope.options.criteria.sort, $scope.options.criteria, params)
-		// 	params.sport = $scope.sport
-		// 	params.ownVideos = $scope.ownVideos
-		// 	params.visibility = $scope.onlyShowPublic ? 'public' : null
-
-		// 	$scope.options.criteria.search(params, true, $scope.pageNumber, $scope.onVideosLoaded)
-		// }
-
-		// $scope.onVideosLoaded = function(reviews) {
-		// 	$log.debug('loaded reviews', reviews)
-		// 	$scope.reviews = reviews
-		// 	// $scope.referenceReviews = reviews
-		// 	$scope.$broadcast('$$rebind::' + 'resultsRefresh')
-		// }
 
 		//===============
 		// Accoutn stuff
@@ -144,27 +88,5 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			return $scope.subscribers && User.getUser() && $scope.subscribers.indexOf(User.getUser().id) > -1;
 		}
 
-
-		//===============
-		// Tags
-		//===============
-		// $scope.loadTags = function() {
-		// 	TagService.filterOut(null, function(filtered) {
-		// 		$scope.allowedTags = filtered
-		// 		if (!$scope.options.criteria.search) {
-		// 			$timeout(function() {
-		// 				$scope.search()
-		// 			}, 50)
-		// 		}
-		// 		else {
-		// 			$scope.search()
-		// 		}
-		// 	})
-		// }
-		// $scope.loadTags()
-
-		// $scope.autocompleteTag = function($query) {
-		// 	return TagService.autocompleteTag($query, $scope.allowedTags, $scope.sport)
-		// }
 	}
 ]);

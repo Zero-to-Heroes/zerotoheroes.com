@@ -12,56 +12,24 @@ app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeo
 				options: '='
 			},
 			controller: function($scope) {
-				$scope.options.criteria = {
-					wantedTags: [],
-					noHelpful: true,
-					participantDetails: {
-						playerCategory: null,
-						opponentCategory: null
+
+				$scope.initCriteria = function() {
+					var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
+					$scope.options = {	
+						criteria: {
+							wantedTags: [],
+							unwantedTags: [],
+							sort: 'publicationDate',
+							contributorsComparator: 'lte',
+							helpfulCommentsValue: '0',
+								
+							search: searchFn
+						},
+						onlyShowPublic: true
 					}
+					ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 				}
-				ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
-
-				$scope.searchFromClick = function () {
-					$location.search('')
-					$scope.search()
-				}
-
-				$scope.search = function() {
-					$scope.options.criteria.sport = $scope.sport
-					$scope.options.criteria.search($scope.options.criteria, false, $scope.pageNumber, $scope.onVideosLoaded)
-				}
-				$timeout(function() {
-					if (!$scope.options.criteria.search) {
-						$timeout(function() {
-							$scope.search()
-						}, 50)
-					}
-					else {
-						$scope.search()
-					}
-				})
-
-				$scope.onVideosLoaded = function(reviews) {
-					$log.debug('loaded reviews', reviews)
-					$scope.reviews = reviews
-					// $scope.referenceReviews = reviews
-					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
-				}
-
-				//===============
-				// Search
-				//===============
-				$scope.loadTags = function() {
-					TagService.filterOut('skill-level', function(filtered) {
-						$scope.allowedTags = filtered
-					})
-				}
-				$scope.loadTags()
-
-				$scope.autocompleteTag = function($query) {
-					return TagService.autocompleteTag($query, $scope.allowedTags, $scope.sport)
-				}
+				$scope.initCriteria()
 			}
 		}
 	}

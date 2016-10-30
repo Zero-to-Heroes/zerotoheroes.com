@@ -133,6 +133,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			templateUrl: 'views/sportHome.html',
 			controller: 'SportHomeCtrl',
 			reloadOnSearch: false,
+			className: 'search-page-global',
 			menuItem: 'home'
 		}).
 		// Coaches

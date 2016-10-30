@@ -433,6 +433,9 @@ body {
   order: 1;
   width: 120px;
 }
+.review-list-item .visibility {
+  order: -10;
+}
 .review-list-item .complementary-info {
   margin-top: 15px;
   height: 30px;

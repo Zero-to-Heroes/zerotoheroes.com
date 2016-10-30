@@ -126,6 +126,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			controller: 'SportHomeCtrl',
 			reloadOnSearch: false,
 			useFullWidth: true,
+			className: 'home-page-global',
 			menuItem: 'home'
 		}).
 		when('/s/:sport/:choice', {

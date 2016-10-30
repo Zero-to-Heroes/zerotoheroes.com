@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', 'TagService', 
-	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, TagService) {
+angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', 'TagService', 'ProfileService', 
+	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, TagService, ProfileService) {
 
 		$scope.translations = {
 			allVideos: $translate.instant('global.listing.allVideos'),
@@ -21,15 +21,21 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.sport = $routeParams.sport;
 		// $scope.pageNumber = parseInt($routeParams.pageNumber) || 1;
 		$scope.User = User
+		$scope.onlyShowPublic = true
 
 		$scope.criteria = {
 			wantedTags: [],
 			unwantedTags: [],
-			sort: 'creationDate'
+			sort: 'publicationDate'
 		}
+		$scope.options = {}
+		ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
+
+
 		$scope.sortOptions = [
-			{ "value" : "creationDate", "label" : "<span>" + $translate.instant('global.search.sort.creationDate') + "</span>" },
-			{ "value" : "updateDate", "label" : "<span>" + $translate.instant('global.search.sort.updateDate') + "</span>" }
+			{ "value" : "publicationDate", "label" : $translate.instant('global.search.sort.publicationDate') },
+			{ "value" : "creationDate", "label" : $translate.instant('global.search.sort.creationDate') },
+			{ "value" : "updateDate", "label" : $translate.instant('global.search.sort.updateDate') }
 		]
 		$scope.$watch('criteria.sort', function(newVal, oldVal) {
 			// $log.debug('criteria updated', newVal, oldVal, $scope.criteria)
@@ -66,9 +72,15 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			params.ownVideos = $scope.ownVideos
 			params.visibility = $scope.onlyShowPublic ? 'public' : null
 
-			$scope.criteria.search(params, true, $scope.pageNumber)
+			$scope.criteria.search(params, true, $scope.pageNumber, $scope.onVideosLoaded)
 		}
 
+		$scope.onVideosLoaded = function(reviews) {
+			$log.debug('loaded reviews', reviews)
+			$scope.reviews = reviews
+			// $scope.referenceReviews = reviews
+			$scope.$broadcast('$$rebind::' + 'resultsRefresh')
+		}
 
 		//===============
 		// Accoutn stuff

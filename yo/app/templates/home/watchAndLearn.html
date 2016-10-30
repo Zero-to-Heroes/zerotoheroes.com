@@ -1,10 +1,12 @@
 <view-title>{{sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} Watch and learn</view-title>
 
 <div class="background-white listing-view watch-and-learn">
+
 	<section class="all-videos-header">
 		<h2 class="all-videos-headline">{{ 'global.home.watchlearn.headline' | translate }}</h2>
 		<span title="{{ 'global.home.watchlearn.explicitCriteria' | translate }}"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span>
 	</section>
+
 	<section class="search-section">
 		<form class="panel-body form-inline">
 			<participants-search sport="sport" class="participants-search" options="options"></participants-search>
@@ -15,6 +17,14 @@
 			</div>
 			<button type="submit" class="btn btn-default" ng-click="searchFromClick()"><span>{{ 'global.home.watchlearn.filterButton' | translate }}</span></button>
 		</form>
+
+		<review-list-display-mode options="options"></review-list-display-mode> 
+
 	</section>
+
 	<video-search config="options.criteria" sport="sport"></video-search>
+
+	<ul class="video-listing {{options.displayMode}}">
+		<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true track by review.id" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut"></review-list-item>
+	</ul>
 </div>

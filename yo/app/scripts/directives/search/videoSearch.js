@@ -67,15 +67,6 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if ($location.search().sort && !params.sort) {
 						params.sort = $location.search().sort
 					}
-
-					// Useful for drop-downs, which sometimes have a different behaviour with no value 
-					// and default value
-					if (params.playerCategory == 'any') {
-						params.playerCategory = null
-					}
-					if (params.opponentCategory == 'any') {
-						params.opponentCategory = null
-					}
 				}
 
 				$scope.updateUrl = function(params) {
@@ -93,8 +84,8 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					if (params.maxComments == 0 || params.maxComments) $location.search('maxComments', params.maxComments)
 					if (params.noHelpful) $location.search('helpfulComments', 'no')
 					if (params.onlyHelpful) $location.search('helpfulComments', 'yes')
-					if (params.playerCategory && params.playerCategory != 'any') $location.search('playerCategory', params.playerCategory)
-					if (params.opponentCategory && params.opponentCategory != 'any') $location.search('opponentCategory', params.opponentCategory)
+					if (params.playerCategory) $location.search('playerCategory', params.playerCategory)
+					if (params.opponentCategory) $location.search('opponentCategory', params.opponentCategory)
 					if (params.sort) $location.search('sort', params.sort)
 				}
 

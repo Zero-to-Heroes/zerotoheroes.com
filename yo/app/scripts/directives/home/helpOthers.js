@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeout', '$route', 'TagService', 
-	function($log, $location, Api, $routeParams, $timeout, $route, TagService) {
+app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeout', '$route', 'TagService', 'ProfileService', 
+	function($log, $location, Api, $routeParams, $timeout, $route, TagService, ProfileService) {
 	return {
 			restrict: 'E',
 			transclude: false,
@@ -16,10 +16,11 @@ app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeo
 					wantedTags: [],
 					noHelpful: true,
 					participantDetails: {
-						playerCategory: 'any',
-						opponentCategory: 'any'
+						playerCategory: null,
+						opponentCategory: null
 					}
 				}
+				ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 
 				$scope.searchFromClick = function () {
 					$location.search('')
@@ -28,22 +29,25 @@ app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeo
 
 				$scope.search = function() {
 					$scope.options.criteria.sport = $scope.sport
-					if ($scope.options.criteria.participantDetails.playerCategory == 'any') {
-						$scope.options.criteria.participantDetails.playerCategory = null
-					}
-					if ($scope.options.criteria.participantDetails.opponentCategory == 'any') {
-						$scope.options.criteria.participantDetails.opponentCategory = null
-					}
-
-					$scope.options.criteria.search($scope.options.criteria, false, $scope.pageNumber)
-					$timeout(function() {
-						$scope.options.criteria.participantDetails.playerCategory = $scope.options.criteria.participantDetails.playerCategory || 'any'
-						$scope.options.criteria.participantDetails.opponentCategory = $scope.options.criteria.participantDetails.opponentCategory || 'any'
-					})
+					$scope.options.criteria.search($scope.options.criteria, false, $scope.pageNumber, $scope.onVideosLoaded)
 				}
 				$timeout(function() {
-					$scope.search()
+					if (!$scope.options.criteria.search) {
+						$timeout(function() {
+							$scope.search()
+						}, 50)
+					}
+					else {
+						$scope.search()
+					}
 				})
+
+				$scope.onVideosLoaded = function(reviews) {
+					$log.debug('loaded reviews', reviews)
+					$scope.reviews = reviews
+					// $scope.referenceReviews = reviews
+					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
+				}
 
 				//===============
 				// Search

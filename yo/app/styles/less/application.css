@@ -559,6 +559,17 @@ body {
   max-width: none;
   margin-top: 15px;
 }
+.search-page-global .filters {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.search-page-global .filters .display-mode {
+  flex-grow: 1;
+  justify-content: flex-end;
+  display: flex;
+  margin-right: 50px;
+}
 .search-page-global .search-section {
   display: flex;
   flex-wrap: wrap;
@@ -692,6 +703,9 @@ upload-replay-review .no-more-review-description-text {
   .main-panel-nolanding {
     margin-top: 10px;
   }
+}
+.home-page-global .center-column {
+  margin-top: 60px;
 }
 @media screen and (max-width: 800px) {
   .search-page-global .search-section {

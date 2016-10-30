@@ -1,12 +1,11 @@
 var app = angular.module('app');
-app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConfig', '$routeParams', 
-	function($log, Api, User, $rootScope, SportsConfig, $routeParams) {
+app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConfig', '$routeParams', 'ProfileService', 
+	function($log, Api, User, $rootScope, SportsConfig, $routeParams, ProfileService) {
 		return {
 			restrict: 'E',
 			replace: true,
 			templateUrl: 'templates/navigation/notifications.html',
 			scope: {
-				profile: '='
 			},
 			link: function ($scope, element, attrs) {
 			},
@@ -15,52 +14,16 @@ app.directive('notifications', ['$log', 'Api', 'User', '$rootScope', 'SportsConf
 				$scope.config = SportsConfig[$scope.sport]
 				$scope.user = User
 
-				$scope.$watch('profile', function(newVal) {
-					if ($scope.profile) {
-						$log.debug('loaded profile', $scope.profile)
-						$scope.notifications = $scope.profile.notifications
-						$scope.unread = $scope.profile.notifications.unreadNotifs
-						$scope.$broadcast('$$rebind::' + 'profileLoad')
-						// if ($scope.notifications && $scope.notifications.notifications) {
-						// 	$scope.notifications.notifications.forEach(function(notif) {
-						// 		if (!notif.readDate) {
-						// 			$scope.unread++
-						// 		}
-						// 	})
-						// }
-					}
+				ProfileService.getProfile(function(profile) {
+					$scope.notifications = profile.notifications
+					$scope.unread = profile.notifications.unreadNotifs
+					$scope.$broadcast('$$rebind::' + 'profileLoad')
 				})
-
-				// $scope.refresh = function() {
-				// 	if (User.isLoggedIn()) {
-				// 		Api.Profile.get( 
-				// 			function(data) {
-				// 				$scope.notifications = data.notifications
-				// 				$scope.unread = 0
-				// 				$scope.notifications.notifications.forEach(function(notif) {
-				// 					if (!notif.readDate) {
-				// 						$scope.unread++
-				// 					}
-				// 				})
-				// 			}
-				// 		)
-				// 	}
-				// }
-				// $scope.refresh()
 
 				$scope.$on('$routeChangeSuccess', function(next, current) { 
 				   	$scope.sport = $routeParams.sport || $scope.sport
 					$scope.config = SportsConfig[$scope.sport]
 				})
-
-				// $scope.getUnreadImage = function() {
-				// 	$log.debug('getting images from confg', SportsConfig, $scope.sport, $scope.config)
-				// 	return $scope.config.images.mailUnread
-				// }
-
-				// $rootScope.$on('user.logged.in', function() {
-				// 	$scope.refresh()
-				// })
 			}
 		}
 	}

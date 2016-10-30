@@ -57,15 +57,15 @@ public class ReviewSearchCriteria {
 		return unwantedTags == null ? new ArrayList<Tag>() : unwantedTags;
 	}
 
-	public String getText() {
-		if (title == null || title.isEmpty()) { return null; }
-
-		String text = "";
-		for (String word : title.split(" ")) {
-			text += "\"" + word + "\" ";
-		}
-		return text;
-	}
+	// public String getText() {
+	// if (title == null || title.isEmpty()) { return null; }
+	//
+	// String text = "";
+	// for (String word : title.split(" ")) {
+	// text += "\"" + word + "\" ";
+	// }
+	// return text;
+	// }
 
 	public boolean matches(Review review) {
 		if (review.getMetaData() == null) { return false; }

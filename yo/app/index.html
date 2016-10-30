@@ -101,9 +101,16 @@
 	</head>
 	<body ng-controller="LayoutCtrl" class="{{customClass}}">
 		<noscript>Please enable JavaScript to view this web page.</noscript>
+
 		<div zth-navigation ng-if="!isLandingPage"></div>
 		<announcements ng-if="!isLandingPage" sport="sport"></announcements>
+
+		<!-- Non-UI components -->
+		<div account-management></div>
+		<div user-history></div>
+		<div help-popup-manager></div>
 		<sport-tag></sport-tag>
+
 		<div ng-class="{'main-container-nolanding': !isLandingPage, 'main-container-landing': isLandingPage}" class="{{className}}">
 			<!--<div class="left-column" ng-hide="true || isLandingPage || hideSideBar">
 				<div welcome-pane></div>
@@ -230,6 +237,7 @@
 		<script src="scripts/directives/search/hearthstoneListingDetailsArena.js"></script>
 		<script src="scripts/directives/search/hearthstoneListingDetailsGame.js"></script>
 		<script src="scripts/directives/search/participantsSearch.js"></script>
+		<script src="scripts/directives/search/reviewListDisplayMode.js"></script>
 		<script src="scripts/directives/search/reviewListItem.js"></script>
 		<script src="scripts/directives/search/videoSearch.js"></script>
 		<script src="scripts/directives/search/hearthstone/hearthstoneParticipantsSearch.js"></script>
@@ -268,6 +276,7 @@
 		<script src="scripts/services/localization.js"></script>
 		<script src="scripts/services/localStorage.js"></script>
 		<script src="scripts/services/mediaUploader.js"></script>
+		<script src="scripts/services/profileService.js"></script>
 		<script src="scripts/services/sportsConfig.js"></script>
 		<script src="scripts/services/tagService.js"></script>
 		<script src="scripts/services/textParser.js"></script>

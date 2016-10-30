@@ -1,19 +1,29 @@
 <view-title>{{::sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} All videos</view-title>
 
 <div class="background-white listing-view">
-	<section class="all-videos-header">
+	<section class="all-videos-header" ng-if="!ownVideos">
 		<h2 class="all-videos-headline">{{::translations.allVideos}}
 			<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-if="subscribed() && sport && User.isLoggedIn()"><small title="{{::translations.unsubscribeTooltip}}">({{::translations.unsubscribe}}<span class="glyphicon glyphicon-info-sign">)</span></small></a>
 			<a class="link-minor link-nodeco" ng-click="subscribe()" ng-if="!(subscribed() || !sport || !User.isLoggedIn())" title="{{::translations.subscribeTooltip}}"><small>({{::translations.subscribe}}<span class="glyphicon glyphicon-info-sign"></span>)</small></a>
 		</h2>
 	</section>
-	<span class="sort-label">{{::translations.sortLabel}}</span>
-	<button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{::translations.sort}}" bs-select ng-required="true">
-	  	<span>Action</span>
-	</button>
 
-	<a type="submit" class="btn" ng-click="toggleAllVideos()" ng-if="ownVideos && onlyShowPublic"><span>{{::translations.showAll}}</span></a>
-	<a type="submit" class="btn" ng-click="toggleAllVideos()" ng-if="ownVideos && !onlyShowPublic"><span>{{::translations.showOnlyPublic}}</span></a>
+	<section class="filters">
+		<span class="sort-label">{{::translations.sortLabel}}</span>
+		<button type="button" class="btn btn-default btn-select" data-trigger="click" ng-model="criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{::translations.sort}}" bs-select ng-required="true">
+		  	<span>Action</span>
+		</button>
 
+		<a type="submit" class="btn" ng-click="toggleAllVideos()" ng-if="ownVideos && onlyShowPublic"><span>{{::translations.showAll}}</span></a>
+		<a type="submit" class="btn" ng-click="toggleAllVideos()" ng-if="ownVideos && !onlyShowPublic"><span>{{::translations.showOnlyPublic}}</span></a>
+
+		<review-list-display-mode options="options"></review-list-display-mode> 
+		
+	</section>
+		
 	<video-search config="::criteria" sport="::sport" show-visibility="::ownVideos"></video-search>
+
+	<ul class="video-listing {{options.displayMode}}">
+		<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true track by review.id" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut"></review-list-item>
+	</ul>
 </div>

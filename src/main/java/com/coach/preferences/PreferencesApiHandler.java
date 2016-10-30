@@ -67,4 +67,19 @@ public class PreferencesApiHandler {
 
 		return new ResponseEntity<Preferences>(inputPrefs, HttpStatus.OK);
 	}
+
+	@RequestMapping(method = RequestMethod.PATCH)
+	public @ResponseBody ResponseEntity<Preferences> updatePartialPreferences(@RequestBody Preferences inputPrefs) {
+
+		log.debug("Updating prefs " + inputPrefs);
+		Profile profile = profileService.getLoggedInProfile();
+		if (profile == null) { return new ResponseEntity<Preferences>((Preferences) null, HttpStatus.FORBIDDEN); }
+
+		if (inputPrefs.getDisplayMode() != null) {
+			profile.getPreferences().setDisplayMode(inputPrefs.getDisplayMode());
+		}
+		profileRepo.save(profile);
+
+		return new ResponseEntity<Preferences>(profile.getPreferences(), HttpStatus.OK);
+	}
 }

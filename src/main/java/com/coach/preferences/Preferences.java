@@ -14,5 +14,6 @@ public class Preferences {
 	private int emailRecapFrequency = 24;
 	private boolean emailContact = true;
 	private String language;
+	private String displayMode = "grid";
 
 }

@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', '$location', 'Localization', '$window', '$routeParams', 'SportsConfig', 
-	function(User, $log, Api, $modal, AuthenticationService, $rootScope, $location, Localization, $window, $routeParams, SportsConfig) {
+app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationService', '$rootScope', '$location', 'Localization', '$window', '$routeParams', 'SportsConfig', 'ProfileService', 
+	function(User, $log, Api, $modal, AuthenticationService, $rootScope, $location, Localization, $window, $routeParams, SportsConfig, ProfileService) {
 		
 	var linkFunction = function(scope, element, attributes) {
 		scope.showLogout = attributes['showLogout'];
@@ -14,11 +14,16 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 		replace: true,
 		templateUrl: 'templates/nameInput.html',
 		scope: {
-			active: '=',
-			profile: '='
+			active: '='
 		},
 		link: linkFunction,
 		controller: function($scope, User) {
+
+			$scope.getProfile = function() {
+				ProfileService.getProfile(function(profile) {
+					$scope.profile = profile
+				})
+			}
 			
 			$scope.refresh = function() {
 				// Only refresh if we're logger in

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', '$modal', 'TagService',
-	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, $modal, TagService) {
+angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', '$modal', 'TagService', 'ProfileService', 
+	function($scope, $routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, $modal, TagService, ProfileService) {
 
 		$scope.translations = {
 			allClasses: $translate.instant('hearthstone.classes.allClasses'),
@@ -29,8 +29,6 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 			needNewSearch: $translate.instant('global.search.needNewSearch'),
 			authorCriteriaTooShort: $translate.instant('global.search.authorCriteriaTooShort')
 		}
-
-		$scope.displayStyle = 'grid'
 
 
 
@@ -182,8 +180,11 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', '$routeParams'
 					
 					search: searchFn
 				},
+				displayMode: 'grid',
 				showIntermediateText: true
 			}
+
+			ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 		}
 		$scope.clearFilters()
 

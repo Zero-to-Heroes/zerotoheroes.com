@@ -147,10 +147,7 @@
 			<button type="submit" class="btn btn-default" ng-click="clearFilters()"><span>{{::translations.clearFilterButton}}</span></button>
 			<button class="btn btn-default" ng-click="showSubscriptionModal()" ng-hide="!sport || !User.isLoggedIn() || settingName" title="{{::translations.subscribeTooltip}}">{{::translations.subscribe}} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-			<div class="display-mode">
-				<button class="btn btn-default" ng-click="displayStyle = 'grid'" ng-class="{'selected': displayStyle == 'grid', 'inactive': displayStyle != 'grid'}"><span class="glyphicon glyphicon-th-large"></span></button>
-				<button class="btn btn-default" ng-click="displayStyle = 'list'" ng-class="{'selected': displayStyle == 'list', 'inactive': displayStyle != 'list'}"><span class="glyphicon glyphicon-th-list"></span></button>
-			</div>
+			<review-list-display-mode options="options"></review-list-display-mode> 
 		</div>
 
 	</section>
@@ -167,7 +164,7 @@
 		<span>{{::translations.authorCriteriaTooShort}}</span>
 	</div>
 
-	<ul class="video-listing {{displayStyle}}">
+	<ul class="video-listing {{options.displayMode}}">
 		<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true track by review.id" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut"></review-list-item>
 	</ul>
 </div>

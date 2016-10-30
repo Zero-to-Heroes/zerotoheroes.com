@@ -75,6 +75,7 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					$scope.updateStatus = undefined
 				}
 
+
 			}
 		}
 	}

@@ -33,7 +33,9 @@ services.factory('Api', ['$resource', 'ENV',
 			NotificationsRead: $resource(ENV.apiEndpoint + url + 'notifications/read', {id: '@id'}),
 			AllNotificationsRead: $resource(ENV.apiEndpoint + url + 'notifications/allread'),
 			NotificationsUnread: $resource(ENV.apiEndpoint + url + 'notifications/unread', {id: '@id'}),
-			Preferences: $resource(ENV.apiEndpoint + url + 'preferences'),
+			Preferences: $resource(ENV.apiEndpoint + url + 'preferences', null, {
+				'update': { method: 'PATCH'}
+			}),
 			ProfileInfo: $resource(ENV.apiEndpoint + url + 'profileinfo/:user/:sport', {user: '@user', sport: '@sport'}),
 
 			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),

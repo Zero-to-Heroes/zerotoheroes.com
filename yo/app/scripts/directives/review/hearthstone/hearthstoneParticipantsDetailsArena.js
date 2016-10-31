@@ -16,6 +16,7 @@ app.directive('hearthstoneParticipantsDetailsArena', ['$log', 'SportsConfig', 'A
 
 				// Options for class selection
 				$scope.icons = [
+					{ "value" : null, "label" : "<i class=\"class-icon unknown-icon\"></i>" },
 					{ "value" : "druid", "label" : "<i class=\"class-icon druid-icon\" title=\"" + $translate.instant('hearthstone.classes.druid') + "\"></i>" },
 					{ "value" : "hunter", "label" : "<i class=\"class-icon hunter-icon\" title=\"" + $translate.instant('hearthstone.classes.hunter') + "\"></i>" },
 					{ "value" : "mage", "label" : "<i class=\"class-icon mage-icon\" title=\"" + $translate.instant('hearthstone.classes.mage') + "\"></i>" },
@@ -28,7 +29,7 @@ app.directive('hearthstoneParticipantsDetailsArena', ['$log', 'SportsConfig', 'A
 				]
 
 				$scope.review.participantDetails = $scope.review.participantDetails || {}
-				$scope.review.participantDetails.playerCategory = 'druid'
+				$scope.review.participantDetails.playerCategory = null
 				$scope.review.participantDetails.skillLevel = [{
 					text: 'Arena draft'
 				}]

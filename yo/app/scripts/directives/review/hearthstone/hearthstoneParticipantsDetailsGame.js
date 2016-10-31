@@ -30,27 +30,6 @@ app.directive('hearthstoneParticipantsDetailsGame', ['$log', 'SportsConfig', 'Ap
 					{ "value" : "warrior", "label" : "<i class=\"class-icon warrior-icon\" title=\"" + $translate.instant('hearthstone.classes.warrior') + "\"></i>" }
 				]
 
-				// This is now done fully server-side
-				// 	$scope.review.participantDetails = $scope.review.participantDetails || {}
-				// 	$scope.review.participantDetails.playerCategory = $scope.review.participantDetails.playerCategory || 'druid'
-				// 	$scope.review.participantDetails.opponentCategory = $scope.review.participantDetails.opponentCategory || 'druid'
-
-
-				// $scope.$watch('mediaPlayer', function(player) {
-				// 	// $log.debug('setting media player', player, $scope.mediaPlayer)
-				// 	if (player && player.getPlayerInfo) {
-				// 		$log.debug('populating participants info')
-				// 		$scope.review.participantDetails = $scope.review.participantDetails || {}
-
-				// 		$scope.review.participantDetails.playerName = player.getPlayerInfo().player.name
-				// 		$scope.review.participantDetails.playerCategory = player.getPlayerInfo().player.class
-				// 		$scope.review.participantDetails.opponentName = player.getPlayerInfo().opponent.name
-				// 		$scope.review.participantDetails.opponentCategory = player.getPlayerInfo().opponent.class
-
-				// 		$scope.review.participantDetails.populated = true
-				// 	}
-				// })
-
 				$scope.getMinTags = function(review) {
 					return review.visibility != 'skip' ? 1 : 0
 				}

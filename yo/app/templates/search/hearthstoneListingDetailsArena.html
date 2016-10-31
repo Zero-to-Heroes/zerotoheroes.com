@@ -1,7 +1,7 @@
-<div class="hearthstone-participants arena-draft" ng-if="::review.metaData.playerClass" >
+<div class="hearthstone-participants arena-draft" >
 	<!-- The player -->
 	<div class="player-details class-select">
-		<i class="class-icon {{::review.metaData.playerClass}}-icon" title="{{::getClassTooltip(review.metaData.playerClass)}}"></i>
+		<i class="class-icon {{::review.metaData.playerClass || 'unknown'}}-icon" title="{{::getClassTooltip(review.metaData.playerClass)}}"></i>
 		<span class="player-name">{{::review.metaData.playerName}}</span>
   	</div>
   	<!-- The level of the game -->

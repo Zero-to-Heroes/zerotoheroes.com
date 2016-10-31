@@ -288,17 +288,17 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 
 					// Matchup
 					if (criteria.playerCategory && criteria.playerCategory.length > 0) {
-						if (!review.metaData.playerCategory)
+						if (!review.metaData.playerClass)
 							return false
 
-						if (criteria.playerCategory.indexOf(review.metaData.playerCategory) == -1)
+						if (criteria.playerCategory.indexOf(review.metaData.playerClass) == -1)
 							return false
 					}
 					if (criteria.opponentCategory && criteria.opponentCategory.length > 0) {
-						if (!review.metaData.opponentCategory)
+						if (!review.metaData.opponentClass)
 							return false
 
-						if (criteria.opponentCategory.indexOf(review.metaData.opponentCategory) == -1)
+						if (criteria.opponentCategory.indexOf(review.metaData.opponentClass) == -1)
 							return false
 					}
 

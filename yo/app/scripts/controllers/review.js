@@ -21,6 +21,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			closeButton: $translate.instant('global.askPro.closeButton'),
 			reputationExplanation: $translate.instant('global.reputationExplanation'),
 
+			deleteButtonTooltip: $translate.instant('global.review.deleteButtonTooltip'),
+			deleteButton: $translate.instant('global.review.deleteButton'),
+			confirmDeleteButtonTooltip: $translate.instant('global.review.confirmDeleteButtonTooltip'),
+			confirmDeleteButton: $translate.instant('global.review.confirmDeleteButton'),
+			deletionDone: $translate.instant('global.review.deletionDone'),
+
 			commentsHeadline: $translate.instant('global.review.comment.commentsHeadline'),
 			unsubscribeReview: $translate.instant('global.review.comment.unsubscribeReview'),
 			unsubscribeReviewTooltip: $translate.instant('global.review.comment.unsubscribeReviewTooltip'),
@@ -122,6 +128,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$timeout(function() {
 						$scope.initPlayer(data)
 						$scope.$broadcast('$$rebind::' + 'reviewRefresh')
+						$scope.$broadcast('$$rebind::' + 'delete')
 					})
 				},
 				function(error) {
@@ -438,6 +445,33 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 		$scope.hideProModal = function() {
 			askProModel.$promise.then(askProModel.hide);
+		}
+
+
+
+		//===============
+		// Deletion
+		//===============
+		$scope.showConfirmDeleteButton = function() {
+			$scope.showDelete = true
+			$scope.$broadcast('$$rebind::' + 'delete')
+			$timeout(function() {
+				$scope.showDelete = false
+				$scope.$broadcast('$$rebind::' + 'delete')
+			}, 10000)
+		}
+
+		$scope.deleteReview = function() {
+			Api.Reviews.delete({reviewId: $routeParams.reviewId}, 
+				function(data) {
+					$scope.deletionMessage = true
+					$scope.showDelete = false
+					$scope.$broadcast('$$rebind::' + 'delete')
+				},
+				function(error) {
+					$log.warn('could not delete review', error)
+				}
+			)
 		}
 
 

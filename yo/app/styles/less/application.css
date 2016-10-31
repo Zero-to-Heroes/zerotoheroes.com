@@ -386,6 +386,10 @@ body {
 .video-information .video-information-header .review-header.editing .review-visibility .btn-select {
   margin-left: 0;
 }
+.video-comment .link-delete,
+.video-comment .link-delete:hover {
+  color: red;
+}
 .no-more-review-description-text {
   display: block;
   padding: 20px;

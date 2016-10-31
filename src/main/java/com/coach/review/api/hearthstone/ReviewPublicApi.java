@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.coach.core.security.User;
 import com.coach.core.storage.S3Utils;
+import com.coach.plugin.hearthstone.HSArenaDraft;
 import com.coach.plugin.hearthstone.HSReplay;
 import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.review.Review;
@@ -59,6 +60,9 @@ public class ReviewPublicApi {
 
 	@Autowired
 	HSReplay hsReplay;
+	
+	@Autowired
+	HSArenaDraft hsArenaDraft;
 
 	@RequestMapping(value = "/progressive/init", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> initReview(@RequestBody ReviewCreationParams data)
@@ -178,10 +182,10 @@ public class ReviewPublicApi {
 		StringBuilder draft = new StringBuilder();
 		String line;
 		while ((line = reader.readLine()) != null) {
-			draft.append(line);
+			draft.append(line + "\n");
 		}
 		log.debug("\tbuilt draft");
-
+		
 		// Process file
 		Review review = new Review();
 		review.setMediaType("arena-draft");
@@ -192,6 +196,13 @@ public class ReviewPublicApi {
 		review.setReplay("true");
 		review.setUploaderApplicationKey(applicationKey);
 		review.setUploaderToken(userToken);
+		
+		// TODO: hard-code
+		if ("ArenaTracker".equals(review.getUploaderApplicationKey())) {
+			review.setFileType("arenatracker");
+		}
+		
+		hsArenaDraft.transformReplayFile(review);
 
 		if (user != null) {
 			review.setAuthorId(user.getId());

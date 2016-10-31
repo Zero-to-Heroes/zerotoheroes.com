@@ -58,7 +58,12 @@ public class HSArenaDraft implements ReplayPlugin {
 		String replayJson = null;
 
 		// Try to parse the .json file
-		if ("arenatracker".equals(review.getFileType())) {
+		if ("arenatracker".equals(review.getFileType()) && !StringUtils.isEmpty(review.getTemporaryReplay())) {
+			log.debug("Converting arena tracker file");
+			String atFile = review.getTemporaryReplay();
+			replayJson = convertToJson(atFile);
+		}
+		else if ("arenatracker".equals(review.getFileType())) {
 			log.debug("Converting arena tracker file");
 			String atFile = s3utils.readFromS3(review.getTemporaryKey());
 			replayJson = convertToJson(atFile);
@@ -86,6 +91,7 @@ public class HSArenaDraft implements ReplayPlugin {
 		review.setTranscodingDone(true);
 		return true;
 	}
+
 
 	public void addMetaData(Review review) throws IOException {
 		// String draft = getDraft(review);
@@ -127,7 +133,8 @@ public class HSArenaDraft implements ReplayPlugin {
 		String draftJson = null;
 
 		if (atFile != null) {
-			String[] lines = atFile.split(System.lineSeparator());
+
+			String[] lines = atFile.split("\n");
 			if (lines != null) {
 				Draft draft = new Draft();
 				int pickIndex = 0;
@@ -201,6 +208,7 @@ public class HSArenaDraft implements ReplayPlugin {
 	}
 
 	@Data
+
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	private static class Draft {
 		private String[] detectedheroes = new String[3];
@@ -209,8 +217,10 @@ public class HSArenaDraft implements ReplayPlugin {
 		private String[] pickedcards = new String[30];
 	}
 
+
 	@NoArgsConstructor
 	@Setter
+
 	private static class Pick {
 		@JsonProperty("Item1")
 		private String Item1;

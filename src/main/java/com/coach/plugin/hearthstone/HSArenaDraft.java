@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.assertj.core.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -15,10 +16,11 @@ import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -93,6 +95,17 @@ public class HSArenaDraft implements ReplayPlugin {
 			metaData.setPlayerClass(review.getParticipantDetails().getPlayerCategory());
 		}
 		metaData.setGameMode("arena-draft");
+
+		String jsonDraft = getDraft(review);
+		Draft draft = new ObjectMapper().readValue(jsonDraft, Draft.class);
+		if (Arrays.isNullOrEmpty(draft.detectedcards) || Arrays.isNullOrEmpty(draft.pickedcards)) {
+			review.setInvalidGame(true);
+		}
+		else {
+			if (!StringUtils.isEmpty(draft.pickedhero)) {
+				metaData.setPlayerClass(draft.pickedhero.toLowerCase());
+			}
+		}
 
 		review.setMetaData(metaData);
 	}
@@ -188,17 +201,17 @@ public class HSArenaDraft implements ReplayPlugin {
 	}
 
 	@Data
-	private class Draft {
+	@JsonIgnoreProperties(ignoreUnknown = true)
+	private static class Draft {
 		private String[] detectedheroes = new String[3];
 		private String pickedhero;
 		private Pick[] detectedcards = new Pick[30];
 		private String[] pickedcards = new String[30];
 	}
 
-	@AllArgsConstructor
 	@NoArgsConstructor
 	@Setter
-	private class Pick {
+	private static class Pick {
 		@JsonProperty("Item1")
 		private String Item1;
 
@@ -207,5 +220,15 @@ public class HSArenaDraft implements ReplayPlugin {
 
 		@JsonProperty("Item3")
 		private String Item3;
+
+		@JsonCreator
+		public Pick(@JsonProperty("Item1") String item1, @JsonProperty("Item2") String item2,
+				@JsonProperty("Item3") String item3) {
+			super();
+			Item1 = item1;
+			Item2 = item2;
+			Item3 = item3;
+		}
+
 	}
 }

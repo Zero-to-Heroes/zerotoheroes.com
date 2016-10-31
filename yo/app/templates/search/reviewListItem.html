@@ -8,19 +8,6 @@
 			<span class="title">{{::video.title}}</span>
 			<small class="additional-info"><span title="{{::formatExactDate(video.creationDate)}}">{{::translations.submitted}} {{::formatDate(video.creationDate)}} {{::translations.by}} {{::video.author}}</span></small>
 		</h3>
-		
-		<!-- For smallest display only 
-		<span class="text-center mobile-video-info-details">
-			<div title="{{::translations.commentsTitle}}" class="icon-container stat-comment">
-				<span class="stat-value">{{::video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
-			</div>
-			<div title="{{::translations.usefulTitle}}" class="icon-container stat-helpful">
-				<span class="stat-value">{{::video.totalHelpfulComments}}</span><span class="glyphicon glyphicon-ok stat-icon"></span>
-			</div>
-			<div title="{{::translations.viewsTitle}" class="icon-container stat-view">
-				<span class="stat-value">{{::video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open stat-icon"></span>
-			</div>
-		</span>-->
 		<span class="text-center video-info-details">
 			<div title="{{::translations.commentsTitle}}" class="icon-container stat-comment">
 				<span class="stat-value">{{::video.totalComments}}</span><span class="glyphicon glyphicon-comment stat-icon"></span>
@@ -31,6 +18,10 @@
 			<div title="{{::translations.viewsTitle}" class="icon-container stat-view">
 				<span class="stat-value">{{::video.viewCount ? video.viewCount : '0'}}</span><span class="glyphicon glyphicon-eye-open stat-icon"></span>
 			</div>
+		</span>
+		<span class="more-meta-data">
+			<span class="result {{::video.metaData.winStatus}}" title="{{::translations[video.metaData.winStatus]}}"></span>
+			<span class="play-coin {{::video.metaData.playCoin}}" title="{{::translations[video.metaData.playCoin]}}"></span>
 		</span>
 		<span class="specific-info">
 			<div ng-switch="sport">

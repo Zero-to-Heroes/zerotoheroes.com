@@ -299,7 +299,11 @@
 				"submitted": "Submitted",
 				"modified": "Updated",
 				"by": "by"
-			}
+			},
+			"wonTooltip": "The main player won",
+			"lostTooltip": "The main player lost",
+			"playTooltip": "The main player was on the play",
+			"coinTooltip": "The main player was on the coin"
 		},
 		"search": {
 			"headline": "Advanced search",

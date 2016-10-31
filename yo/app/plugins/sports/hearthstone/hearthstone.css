@@ -1338,6 +1338,18 @@
 .hearthstone .review-list-item .stat-view .stat-icon {
   background-image: url(images/new/picto-nb-view.png);
 }
+.hearthstone .review-list-item .won {
+  background-image: url(images/victory.png);
+}
+.hearthstone .review-list-item .lost {
+  background-image: url(images/defeat.png);
+}
+.hearthstone .review-list-item .play-coin.play {
+  background-image: url(images/playcoin-play.png);
+}
+.hearthstone .review-list-item .play-coin.coin {
+  background-image: url(images/playcoin-coin.png);
+}
 .hearthstone .review-list-item .visibility {
   width: 45px;
 }

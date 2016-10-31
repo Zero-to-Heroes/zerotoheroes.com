@@ -452,6 +452,29 @@ body {
   flex-grow: 1;
   margin-bottom: 0;
 }
+.review-list-item .more-meta-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  order: 2;
+  margin-left: 45px;
+}
+.review-list-item .more-meta-data .result {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 40px;
+  width: 100%;
+}
+.review-list-item .more-meta-data .play-coin {
+  height: 40px;
+  width: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 .review-list-item .title-container {
   flex-grow: 1;
   flex-shrink: 1;
@@ -473,6 +496,7 @@ body {
   font-size: 55%;
 }
 .review-list-item .skill-level {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 111px;
@@ -534,7 +558,7 @@ body {
   margin: 0;
 }
 .list .review-list-item .title-container {
-  order: -1;
+  order: 0;
   flex-basis: inherit;
   margin: 0;
   width: 350px;
@@ -546,6 +570,7 @@ body {
   flex-grow: 0;
   margin-top: 20px;
   margin-bottom: 20px;
+  order: 1;
 }
 .list .review-list-item .complementary-info .sport-tags {
   align-items: center;
@@ -556,6 +581,11 @@ body {
   height: 55px;
   justify-content: center;
   margin-right: 10px;
+}
+.list .review-list-item .more-meta-data {
+  width: 100px;
+  margin-right: 15px;
+  order: -1;
 }
 .search-page-global .main-panel {
   width: calc(100% - 45px);

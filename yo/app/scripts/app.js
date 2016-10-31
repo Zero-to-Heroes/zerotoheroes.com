@@ -70,6 +70,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			controller: 'UploadDetailsCtrl',
 			upload: true,
 			useFullWidth: true,
+			className: 'home-page-global',
 			hideSideBar: true
 		}).
 		when('/s/:sport/coaches', {

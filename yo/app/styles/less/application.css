@@ -711,6 +711,13 @@ body {
 }
 .search-page-global .search-section .buttons-group .subscribe-popup {
   order: 2;
+  margin-left: 20px;
+}
+.search-page-global .search-section .buttons-group .subscribe-popup input {
+  padding: 10px;
+}
+.search-page-global .search-section .buttons-group .subscribe-popup button {
+  margin-right: 0;
 }
 upload-replay-review .metadata {
   flex-basis: 100%;

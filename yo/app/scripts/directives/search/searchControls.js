@@ -173,7 +173,17 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.clearFilters = function() {
-					$scope.options = $scope.referenceOptions
+					$scope.options = $scope.options || {}
+					$scope.options.criteria = $scope.options.criteria || {}
+
+					for (var key in $scope.referenceOptions.criteria) {
+					  	if ($scope.referenceOptions.criteria.hasOwnProperty(key)) {
+					  		// $log.debug('iterating', key, $scope.referenceOptions.criteria[key], $scope.options.criteria[key])
+					    	$scope.options.criteria[key] = $scope.referenceOptions.criteria[key]
+					  	}
+					}
+
+					// angular.copy($scope.referenceOptions.criteria, $scope.options.criteria)
 					$log.debug('clearing fitlers', $scope.options, $scope.referenceOptions)
 				}
 				$scope.clearFilters()

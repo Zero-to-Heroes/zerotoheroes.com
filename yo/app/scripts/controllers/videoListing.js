@@ -21,15 +21,15 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.User = User
 
 		$scope.initCriteria = function() {
-			var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
+			// var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
 			$scope.options = {	
 				criteria: {
 					wantedTags: [],
 					unwantedTags: [],
-					sort: 'publicationDate',
+					sort: 'publicationDate'
 					
 						
-					search: searchFn
+					// search: searchFn
 				},
 				onlyShowPublic: true
 			}

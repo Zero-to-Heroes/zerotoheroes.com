@@ -27,9 +27,9 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', 'ProfileServic
 					contributorsComparator: null,
 					contributorsValue: 0,
 					helpfulCommentsValue: 0,
-					ownVideos: null,
+					ownVideos: null
 					
-					search: searchFn
+					// search: searchFn
 				},
 				displayMode: 'grid',
 				showIntermediateText: true

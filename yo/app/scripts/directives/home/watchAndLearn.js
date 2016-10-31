@@ -13,16 +13,16 @@ app.directive('watchAndLearn', ['$log', '$location', 'Api', '$routeParams', '$ti
 			},
 			controller: function($scope) {
 				$scope.initCriteria = function() {
-					var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
+					// var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
 					$scope.options = {	
 						criteria: {
 							wantedTags: [],
 							unwantedTags: [],
 							sort: 'publicationDate',
 							contributorsComparator: 'gte',
-							helpfulCommentsValue: '1',
+							helpfulCommentsValue: '1'
 								
-							search: searchFn
+							// search: searchFn
 						},
 						onlyShowPublic: true
 					}

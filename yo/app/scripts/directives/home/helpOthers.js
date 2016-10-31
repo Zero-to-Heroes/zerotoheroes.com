@@ -14,16 +14,16 @@ app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeo
 			controller: function($scope) {
 
 				$scope.initCriteria = function() {
-					var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
+					// var searchFn = $scope.options && $scope.options.criteria && $scope.options.criteria.search || undefined
 					$scope.options = {	
 						criteria: {
 							wantedTags: [],
 							unwantedTags: [],
 							sort: 'publicationDate',
 							contributorsComparator: 'lte',
-							helpfulCommentsValue: '0',
+							helpfulCommentsValue: '0'
 								
-							search: searchFn
+							// search: searchFn
 						},
 						onlyShowPublic: true
 					}

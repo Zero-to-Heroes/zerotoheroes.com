@@ -31,41 +31,32 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					// $log.debug('udpateSearchParams', params, $location.search().minComments)
 					// Take input
 					params.pageNumber = params.pageNumber || pageNumber || $scope.pageNumber
-					params.sport = params.sport || $scope.sport || $routeParams.sport
+					params.sport = params.sport || $scope.sport || $routeParams.sport			
 
-					// params.participantDetails = params.participantDetails || {}					
 
 					// Make sure URL takes priority
-					if ($location.search().title && !params.title) {
-						params.title = $location.search().title
-					}
-					if ($location.search().reviewType && !params.reviewType) {
-						params.reviewType = $location.search().reviewType
-					}
+					$scope.updateParamsFromUrl(params, 'gameMode')
+					$log.debug('looking at playerCategory', $location.search().playerCategory, params.playerCategory)
+					$scope.updateParamsArrayFromUrl(params, 'playerCategory')
+					$scope.updateParamsArrayFromUrl(params, 'opponentCategory')
+					$scope.updateParamsFromUrl(params, 'result')
+					$scope.updateParamsFromUrl(params, 'playCoin')
+					$scope.updateParamsFromUrl(params, 'sort')
+					$scope.updateParamsFromUrl(params, 'skillRangeFrom', true)
+					$scope.updateParamsFromUrl(params, 'skillRangeTo', true)
+					$scope.updateParamsFromUrl(params, 'author')
+					$scope.updateParamsFromUrl(params, 'contributor')
+					$scope.updateParamsFromUrl(params, 'title')
+					$scope.updateParamsFromUrl(params, 'contributorsComparator')
+					$scope.updateParamsFromUrl(params, 'contributorsValue')
+					$scope.updateParamsFromUrl(params, 'helpfulCommentsValue')
+					$scope.updateParamsFromUrl(params, 'ownVideos')
+
 					if ($location.search().wantedTags && (!params.wantedTags || params.wantedTags.length == 0)) {
 						params.wantedTags = $scope.unserializeTags($location.search().wantedTags)
 					}
 					if ($location.search().unwantedTags && (!params.unwantedTags || params.unwantedTags.length == 0)) {
 						params.unwantedTags = $scope.unserializeTags($location.search().unwantedTags)
-					}
-					if ($location.search().playerCategory && !params.playerCategory) {
-						params.playerCategory = $location.search().playerCategory
-					}
-					if ($location.search().minComments && !params.minComments) {
-						params.minComments = parseInt($location.search().minComments)
-					}
-					if ($location.search().maxComments && !params.maxComments) {
-						params.maxComments = parseInt($location.search().maxComments)
-					}
-					if ($location.search().helpfulComments && !params.tempHelpfulComment) {
-						if ($location.search().helpfulComments == 'no')
-							params.tempHelpfulComment = 'onlyNotHelpful'
-						else if ($location.search().helpfulComments == 'yes')
-							params.tempHelpfulComment = 'onlyHelpful'
-					}
-
-					if ($location.search().sort && !params.sort) {
-						params.sort = $location.search().sort
 					}
 				}
 
@@ -74,19 +65,53 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					// cleariung params
 					$location.search('')
 
-					if (params.userName) $location.search('username', params.userName)
-					if (params.pageNumber && params.pageNumber > 1) $location.search('pageNumber', params.pageNumber)
-					if (params.reviewType) $location.search('reviewType', params.reviewType)
+					$scope.updateUrlFromParam(params, 'gameMode')
+					$scope.updateUrlFromParam(params, 'result')
+					$scope.updateUrlFromParam(params, 'playCoin')
+					$scope.updateUrlFromParam(params, 'sort')
+					$scope.updateUrlFromParam(params, 'skillRangeFrom')
+					$scope.updateUrlFromParam(params, 'skillRangeTo')
+					$scope.updateUrlFromParam(params, 'author')
+					$scope.updateUrlFromParam(params, 'contributor')
+					$scope.updateUrlFromParam(params, 'title')
+					$scope.updateUrlFromParam(params, 'contributorsComparator')
+					$scope.updateUrlFromParam(params, 'contributorsValue')
+					$scope.updateUrlFromParam(params, 'helpfulCommentsValue')
+					$scope.updateUrlFromParam(params, 'ownVideos')
+					$scope.updateUrlFromParam(params, 'pageNumber')
+
 					if (params.wantedTags && params.wantedTags.length > 0) $location.search('wantedTags', $scope.serializeTags(params.wantedTags))
 					if (params.unwantedTags && params.unwantedTags.length > 0) $location.search('unwantedTags', $scope.serializeTags(params.unwantedTags))
-					if (params.title) $location.search('title', params.title)
-					if (params.minComments && params.minComments > 0) $location.search('minComments', params.minComments)
-					if (params.maxComments == 0 || params.maxComments) $location.search('maxComments', params.maxComments)
-					if (params.noHelpful) $location.search('helpfulComments', 'no')
-					if (params.onlyHelpful) $location.search('helpfulComments', 'yes')
-					if (params.playerCategory) $location.search('playerCategory', params.playerCategory)
-					if (params.opponentCategory) $location.search('opponentCategory', params.opponentCategory)
-					if (params.sort) $location.search('sort', params.sort)
+					if (params.playerCategory && params.playerCategory.length > 0) $location.search('playerCategory', params.playerCategory)
+					if (params.opponentCategory && params.opponentCategory.length > 0) $location.search('opponentCategory', params.opponentCategory)
+				}
+
+				$scope.updateParamsFromUrl = function(params, paramName, isInt) {
+					if ($location.search()[paramName] && !params[paramName]) {
+						if (isInt)
+							params[paramName] = parseInt($location.search()[paramName])
+						else
+							params[paramName] = $location.search()[paramName]
+					}
+				}
+				$scope.updateParamsArrayFromUrl = function(params, paramName) {
+					if ($location.search()[paramName] && (!params[paramName] || params[paramName].length == 0)) {
+						params[paramName] = []
+
+						if ($location.search()[paramName].constructor === Array) {
+							$location.search()[paramName].forEach(function(value) {
+								params[paramName].push(value)
+							})
+						}
+						else {
+							params[paramName].push($location.search()[paramName])
+						}
+					}
+				}
+				$scope.updateUrlFromParam = function(params, paramName) {
+					if (params[paramName]) {
+						$location.search(paramName, params[paramName])
+					}
 				}
 
 				$scope.performSearch = function(params, pageNumber, updateUrl, callback) {
@@ -145,7 +170,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 				$scope.unserializeTags = function(tags) {
 					var result = []
 					if (!tags) return result;
-					//$log.log('unserializing', tags);
+					// $log.log('unserializing', tags);
 
 					if (tags.constructor === Array) {
 						tags.forEach(function(value) {

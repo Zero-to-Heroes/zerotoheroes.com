@@ -87,10 +87,10 @@ public class ReviewSearchCriteria {
 		if (!StringUtils.isEmpty(result) && !result.equals(data.getWinStatus())) { return false; }
 
 		// Play / Coin
-		if (!StringUtils.isEmpty(playCoin) && !result.equals(data.getPlayCoin())) { return false; }
+		if (!StringUtils.isEmpty(playCoin) && !playCoin.equals(data.getPlayCoin())) { return false; }
 
 		// Game mode
-		if (!StringUtils.isEmpty(gameMode) && !result.equals(data.getGameMode())) { return false; }
+		if (!StringUtils.isEmpty(gameMode) && !gameMode.equals(data.getGameMode())) { return false; }
 
 		// Skill range
 		if ("ranked".equals(gameMode)) {

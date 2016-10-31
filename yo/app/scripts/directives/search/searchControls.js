@@ -18,6 +18,8 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 			},
 			controller: function($scope) {
 
+				$scope.User = User
+
 				$scope.translations = {
 					allClasses: $translate.instant('hearthstone.classes.allClasses'),
 					allHeroes: $translate.instant('hearthstone.classes.anyHero'),
@@ -44,6 +46,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					showOnlyPublic: $translate.instant('global.search.ownReviews.showOnlyPublic'),
 
 					needNewSearch: $translate.instant('global.search.needNewSearch'),
+					subscribedToSearch: $translate.instant('global.search.subscriptionOk'),
 					authorCriteriaTooShort: $translate.instant('global.search.authorCriteriaTooShort')
 				}
 
@@ -463,7 +466,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					Api.SavedSearchSubscriptions.save({'name': searchName}, $scope.options.criteria, function(data) {
 						// $log.debug('subscribed', data)
 						subscribeModal.$promise.then(subscribeModal.hide)
-						$scope.updateStatus = 'ok'
+						$scope.subscribedToSearch = 'ok'
 						$scope.settingName = false
 					})
 				}
@@ -472,7 +475,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					templateUrl: 'templates/search/subscribePopup.html', 
 					show: false, 
 					animation: 'am-fade-and-scale',
-					container: "#headline",
+					container: ".buttons-group",
 					backdrop: false,
 					keyboard: true,
 					scope: $scope
@@ -484,9 +487,6 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				$scope.cancel = function() {
 					$scope.settingName = false
 					subscribeModal.$promise.then(subscribeModal.hide)
-				}
-				$scope.dismissMessage = function() {
-					$scope.updateStatus = undefined
 				}
 				
 			}

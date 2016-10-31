@@ -122,16 +122,31 @@
 
 			button {
 				margin-right: 10px;
+				order: 1;
 			}
 
 			.display-mode {
 				flex-grow: 1;
 				display: flex;
     			justify-content: flex-end;
+    			order: 3;
 
     			.inactive {
     				filter: brightness(80%);
     			}
+			}
+
+			.subscribe-popup {
+				order: 2;
+				margin-left: 20px;
+
+				input {
+					padding: 10px;
+				}
+
+				button {
+					margin-right: 0;
+				}
 			}
 		}
 	}

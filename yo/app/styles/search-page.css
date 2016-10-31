@@ -27,19 +27,6 @@
 	width: 350px;
 }
 
-.search-page .subscribe-popup {
-	display: inline-block !important;
-	font-size: 14px;
-	top: 0;
-	margin-left: 15px;
-    padding: 10px;
-}
-
-.search-page .subscribe-popup input {
-	height: 35px;
-    padding: 5px;
-}
-
 .search-page .sort-label {
 	margin-left: 0;
 }

@@ -694,14 +694,19 @@ body {
 }
 .search-page-global .search-section .buttons-group button {
   margin-right: 10px;
+  order: 1;
 }
 .search-page-global .search-section .buttons-group .display-mode {
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
+  order: 3;
 }
 .search-page-global .search-section .buttons-group .display-mode .inactive {
   filter: brightness(80%);
+}
+.search-page-global .search-section .buttons-group .subscribe-popup {
+  order: 2;
 }
 upload-replay-review .metadata {
   flex-basis: 100%;

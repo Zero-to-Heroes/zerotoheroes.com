@@ -122,9 +122,12 @@ public class Comment implements HasText, HasReputation {
 		}
 	}
 
-	public void addAllAuthors(Set<String> allAuthors) {
-		if (!StringUtils.isNullOrEmpty(author) && !allAuthors.contains(author)) {
+	public void addAllAuthors(Set<String> allAuthors, Set<String> allAuthorIds) {
+		if (!StringUtils.isNullOrEmpty(author)) {
 			allAuthors.add(author);
+		}
+		if (!StringUtils.isNullOrEmpty(authorId)) {
+			allAuthorIds.add(authorId);
 		}
 		// if (getReputation() != null) {
 		// for (ReputationAction action : getReputation().getUserIds().keySet())
@@ -135,7 +138,7 @@ public class Comment implements HasText, HasReputation {
 
 		if (comments != null) {
 			for (Comment comment : comments) {
-				comment.addAllAuthors(allAuthors);
+				comment.addAllAuthors(allAuthors, allAuthorIds);
 			}
 		}
 	}

@@ -2,45 +2,45 @@
 <section class="search-section">
 
 	<!-- This is now Constructed, Arena game, Arena draft, etc. -->
-	<button type="button" class="btn btn-default btn-select btn-class-select search-group" ng-model="options.criteria.gameMode" data-html="1" bs-options="::option.value as option.label for option in gameTypeOptions" placeholder="{{::gameTypeOptions[0].label}}" ng-change="clearRanks(); filterReviews()" bs-select>
+	<button type="button" class="btn btn-default btn-select btn-class-select search-group" ng-model="options.criteria.gameMode" data-html="1" bs-options="::option.value as option.label for option in gameTypeOptions" placeholder="{{::gameTypeOptions[0].label}}" ng-change="clearRanks(); filterReviews()" bs-select ng-if="!hideAllFilters">
 	  	<span>Action</span>
 	</button>
 
 	<!-- Choose the Hero -->
-	<div class="player-details class-select search-group">
+	<div class="player-details class-select search-group" ng-if="!hideAllFilters">
 		<button type="button" class="btn btn-default form-control" ng-class="{'btn-select': !options.criteria.playerCategory || options.criteria.playerCategory.length == 0, 'btn-class-select': options.criteria.playerCategory}" ng-model="options.criteria.playerCategory" data-html="1" data-multiple="1" bs-options="::icon.value as icon.label for icon in classIcons" placeholder="{{::translations.allHeroes}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select data-all-none-buttons="true" data-none-text="{{::translations.allHeroes}}" ng-change="filterReviews()">
 		  	<span>Action</span>
 		</button>
 	</div>
 
 	<!-- Choose the Opponent -->
-	<div class="player-details class-select search-group" ng-show="options.criteria.gameMode != 'arena-draft'">
+	<div class="player-details class-select search-group" ng-show="options.criteria.gameMode != 'arena-draft'" ng-if="!hideAllFilters">
 		<button type="button" class="btn btn-default btn-class form-control" ng-class="{'btn-select': !options.criteria.opponentCategory || options.criteria.opponentCategory.length == 0, 'btn-class-select': options.criteria.opponentCategory}" ng-model="options.criteria.opponentCategory" data-html="1" data-multiple="1" bs-options="::icon.value as icon.label for icon in classIcons" placeholder="{{::translations.allOpponents}}" data-template="templates/review/hearthstone/classIconSelectTemplate.html" data-max-length="4" bs-select data-all-none-buttons="true" data-none-text="{{::translations.allOpponents}}" ng-change="filterReviews()">
 		  	<span>Action</span>
 		</button>
 	</div>
 
 	<!-- Choose the Result (except for drafts) -->
-	<button type="button" class="btn btn-default btn-select search-group" ng-model="options.criteria.result" data-html="1" bs-options="::option.value as option.label for option in resultOptions" placeholder="{{::resultOptions[0].label}}" bs-select ng-show="options.criteria.gameMode != 'arena-draft'" ng-change="filterReviews()">
+	<button type="button" class="btn btn-default btn-select search-group" ng-model="options.criteria.result" data-html="1" bs-options="::option.value as option.label for option in resultOptions" placeholder="{{::resultOptions[0].label}}" bs-select ng-show="options.criteria.gameMode != 'arena-draft'" ng-change="filterReviews()" ng-if="!hideAllFilters">
 	  	<span>Action</span>
 	</button>
 
 	<!-- Choose the Coin/NoCoin (except for drafts) -->
-	<button type="button" class="btn btn-default btn-select search-group" ng-model="options.criteria.playCoin" data-html="1" bs-options="::option.value as option.label for option in playCoinOptions" placeholder="{{::playCoinOptions[0].label}}" bs-select ng-show="options.criteria.gameMode != 'arena-draft'" ng-change="filterReviews()">
+	<button type="button" class="btn btn-default btn-select search-group" ng-model="options.criteria.playCoin" data-html="1" bs-options="::option.value as option.label for option in playCoinOptions" placeholder="{{::playCoinOptions[0].label}}" bs-select ng-show="options.criteria.gameMode != 'arena-draft'" ng-change="filterReviews()" ng-if="!hideAllFilters">
 	  	<span>Action</span>
 	</button>
 
 	<!-- Sorting option -->
-	<div class="sort-option search-group">
+	<div class="sort-option search-group" ng-if="!hideAllFilters">
 		<button type="button" class="btn btn-default btn-select sort-button" ng-model="options.criteria.sort" data-html="1" bs-options="option.value as option.label for option in sortOptions" placeholder="{{::translations.sort}}" bs-select ng-change="updateSort()">
 		  	<span>Action</span>
 		</button>
 	</div>
 
-	<div class="line-break"></div>
+	<div class="line-break" ng-if="!hideAllFilters"></div>
 
 	<!-- Skill level -->
-	<div class="skill-select ranked search-group" ng-show="options.criteria.gameMode == 'ranked'">
+	<div class="skill-select ranked search-group" ng-show="options.criteria.gameMode == 'ranked'" ng-if="!hideAllFilters">
 		<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.skillRangeFrom" data-html="1" bs-options="::option.value as option.label for option in getRankedSkillFromOptions()" placeholder="{{::rankOptions[0].label}}" bs-select ng-change="filterReviews()">
 		  	<span>Action</span>
 		</button>
@@ -49,7 +49,7 @@
 		  	<span>Action</span>
 		</button>
 	</div>
-	<div class="skill-select arena search-group" ng-show="options.criteria.gameMode == 'arena-game'">
+	<div class="skill-select arena search-group" ng-show="options.criteria.gameMode == 'arena-game'" ng-if="!hideAllFilters">
 		<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.skillRangeFrom" data-html="1" bs-options="::option.value as option.label for option in getArenaSkillFromOptions()" placeholder="{{::arenaOptions[0].label}}" bs-select ng-change="filterReviews()">
 		  	<span>Action</span>
 		</button>
@@ -59,17 +59,17 @@
 		</button>
 	</div>
 	
-	<a class="btn" ng-click="toggleAllVideos()" ng-if="showVisibilityToggle && options.onlyShowPublic"><span>{{::translations.showAll}}</span></a>
-	<a class="btn" ng-click="toggleAllVideos()" ng-if="showVisibilityToggle && !options.onlyShowPublic"><span>{{::translations.showOnlyPublic}}</span></a>
+	<a class="btn" ng-click="toggleAllVideos()" ng-if="showVisibilityToggle && options.onlyShowPublic && !hideAllFilters"><span>{{::translations.showAll}}</span></a>
+	<a class="btn" ng-click="toggleAllVideos()" ng-if="showVisibilityToggle && !options.onlyShowPublic && !hideAllFilters"><span>{{::translations.showOnlyPublic}}</span></a>
 
-	<div class="line-break"></div>
+	<div class="line-break" ng-if="!hideAllFilters"></div>
 
-	<a ng-click="toggleAdvancedOptions()" class="show-advanced-button" ng-if=":advanced:!advancedOptions && !hideAdvanced">{{::translations.showAdvancedOptions}}</a>
-	<a ng-click="toggleAdvancedOptions()" ng-if=":advanced:advancedOptions && !hideAdvanced">{{::translations.hideAdvancedOptions}}</a>
+	<a ng-click="toggleAdvancedOptions()" class="show-advanced-button" ng-if=":advanced:!advancedOptions && !hideAdvanced && !hideAllFilters">{{::translations.showAdvancedOptions}}</a>
+	<a ng-click="toggleAdvancedOptions()" ng-if=":advanced:advancedOptions && !hideAdvanced && !hideAllFilters">{{::translations.hideAdvancedOptions}}</a>
 
 
 
-	<div class="advanced-options" ng-if=":advanced:advancedOptions && !hideAdvanced">
+	<div class="advanced-options" ng-if=":advanced:advancedOptions && !hideAdvanced && !hideAllFilters">
 
 		<!-- Search by author -->
 		<div class="author-search search-group">
@@ -144,7 +144,7 @@
 	<div class="line-break"></div>
 
 	<div class="search-block buttons-group">
-		<button type="submit" class="btn btn-default" ng-click="searchFromClick()" ng-if="!hideButtons"><span>{{::translations.searchButton}}</span></button>
+		<button type="submit" class="btn btn-default" title="{{::translations.searchButtonTooltip}}" ng-click="searchFromClick()" ng-if="!hideButtons"><span>{{::translations.searchButton}} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span></button>
 		<button type="submit" class="btn btn-default" ng-click="clearFilters()" ng-if="!hideButtons"><span>{{::translations.clearFilterButton}}</span></button>
 		<button class="btn btn-default" ng-click="showSubscriptionModal()" ng-hide="!sport || !User.isLoggedIn() || settingName" title="{{::translations.subscribeTooltip}}" ng-if="!hideButtons">{{::translations.subscribe}} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 

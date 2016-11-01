@@ -194,7 +194,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@Indexed
 	@JsonIgnore
-	private Set<String> allAuthors = new HashSet<>();
+	private Set<String> allAuthors = new HashSet<>(), allAuthorIds = new HashSet<>();
 
 	@Indexed
 	@JsonIgnore
@@ -341,13 +341,17 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	public Set<String> buildAllAuthors() {
 		allAuthors = new HashSet<>();
+		allAuthorIds = new HashSet<>();
 		if (!StringUtils.isNullOrEmpty(author)) {
 			allAuthors.add(author);
+		}
+		if (!StringUtils.isNullOrEmpty(authorId)) {
+			allAuthorIds.add(authorId);
 		}
 
 		if (comments != null) {
 			for (Comment comment : comments) {
-				comment.addAllAuthors(allAuthors);
+				comment.addAllAuthors(allAuthors, allAuthorIds);
 			}
 		}
 

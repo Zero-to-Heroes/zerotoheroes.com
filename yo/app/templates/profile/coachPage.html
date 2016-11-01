@@ -33,9 +33,11 @@
 
 
 	<!-- Videos showcased by the coach -->
-	<div class="videos-list" ng-show="::config.searchConfig.videos && config.searchConfig.videos.length > 0">
+	<div class="videos-list">
 		<h2>{{::translations.allReviews}}</h2>
-		<video-search config="::config.searchConfig" sport="::sport"></video-search>
+
+		<search-controls sport="sport" hide-all-filters="true" hide-buttons="true" reference-options="options"></search-controls>
+
 	</div>
 
 </div>

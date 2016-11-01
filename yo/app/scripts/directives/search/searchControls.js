@@ -12,6 +12,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				sport: '<',
 				hideAdvanced: '<',
 				hideButtons: '<',
+				hideAllFilters: '<',
 				showVisibilityToggle: '<',
 				referenceOptions: '<',
 				showVisibility: '<'
@@ -39,6 +40,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					sort: $translate.instant('global.search.sort'),
 					ownVideos: $translate.instant('global.search.ownVideos'),
 					searchButton: $translate.instant('global.search.searchButton'),
+					searchButtonTooltip: $translate.instant('global.search.searchButtonTooltip'),
 					clearFilterButton: $translate.instant('global.search.clearFilterButton'),
 					subscribe: $translate.instant('global.search.subscribe'),			
 					subscribeTooltip: $translate.instant('global.search.subscribeTooltip'),
@@ -172,6 +174,13 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					$scope.options.criteria.skillRangeTo = undefined
 				}
 
+				var listener = $scope.$watch('referenceOptions', function(newVal) {
+					if (newVal) {
+						$scope.clearFilters()
+						listener()
+					}
+				})
+
 				$scope.clearFilters = function() {
 					$scope.options = $scope.options || {}
 					$scope.options.criteria = $scope.options.criteria || {}
@@ -186,7 +195,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					// angular.copy($scope.referenceOptions.criteria, $scope.options.criteria)
 					$log.debug('clearing fitlers', $scope.options, $scope.referenceOptions)
 				}
-				$scope.clearFilters()
+				// $scope.clearFilters()
 
 				$scope.toggleAllVideos = function() {
 					$scope.options.onlyShowPublic = !$scope.options.onlyShowPublic
@@ -221,7 +230,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.firstSearch = function() {
-					if (!$scope.options.criteria.search) {
+					if (!$scope.options || !$scope.options.criteria || !$scope.options.criteria.search) {
 						$timeout(function() {
 							$scope.firstSearch()
 						}, 50)
@@ -361,12 +370,18 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					// Contributors
 					if (criteria.contributor && criteria.contributor.length > 2) {
 						$log.debug('looking at all contributors', criteria.contributor, review.allAuthors)
-						if (!review.allAuthors)
+						if (!review.allAuthors && !review.allAuthorIds)
 							return false
 
 						var found = false
 						review.allAuthors.forEach(function(author) {
 							if (author.indexOf(criteria.contributor) != -1) {
+								$log.debug('\tFound contributor', author, criteria.contributor)
+								found = true
+							}
+						})
+						review.allAuthorIds.forEach(function(author) {
+							if (author == criteria.contributor) {
 								$log.debug('\tFound contributor', author, criteria.contributor)
 								found = true
 							}

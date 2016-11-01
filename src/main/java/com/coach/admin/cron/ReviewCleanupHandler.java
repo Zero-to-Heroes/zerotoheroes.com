@@ -77,7 +77,7 @@ public class ReviewCleanupHandler {
 
 		Query query = query(crit);
 
-		PageRequest pageRequest = new PageRequest(0, 10000);
+		PageRequest pageRequest = new PageRequest(0, 200);
 
 		query.with(pageRequest);
 
@@ -107,7 +107,7 @@ public class ReviewCleanupHandler {
 		Criteria crit = where("creationDate").lt(calendar.getTime());
 		Query query = query(crit);
 
-		PageRequest pageRequest = new PageRequest(0, 500);
+		PageRequest pageRequest = new PageRequest(0, 20);
 
 		query.with(pageRequest);
 

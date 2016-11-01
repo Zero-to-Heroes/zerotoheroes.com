@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('app').directive('coachPage', ['$routeParams', 'Api', '$log', 'User', '$route', '$timeout', '$translate', 
-	function($routeParams, Api, $log, User, $route, $timeout, $translate) {
+angular.module('app').directive('coachPage', ['$routeParams', 'Api', '$log', 'User', '$route', '$timeout', '$translate', 'ProfileService', 
+	function($routeParams, Api, $log, User, $route, $timeout, $translate, ProfileService) {
 
 		return {
 			restrict: 'E',
@@ -32,7 +32,8 @@ angular.module('app').directive('coachPage', ['$routeParams', 'Api', '$log', 'Us
 						$scope.config.searchConfig = {}
 						$log.debug('coachInformation', $scope.coachInformation)
 						$scope.updateCoachInfo()
-						$scope.search()
+						// $scope.search()
+						$scope.initCriteria()
 						// http://stackoverflow.com/questions/14957614/angularjs-clear-watch
 						listener()
 					}
@@ -81,26 +82,34 @@ angular.module('app').directive('coachPage', ['$routeParams', 'Api', '$log', 'Us
 				// ===============
 				// Showcasing coach videos
 				// ===============
-				$scope.criteria = {
-					wantedTags: []
-				}
-
-				$scope.search = function() {
-					if (!$scope.config.searchConfig.search) {
-						$timeout(function() {
-							$scope.search()
-						}, 50)
-						return
+				$scope.initCriteria = function() {
+					$scope.options = {	
+						criteria: {
+							wantedTags: [],
+							unwantedTags: [],
+							sort: 'publicationDate',
+							contributor: $scope.coachInformation.id
+						}
 					}
-
-					$scope.criteria.contributorId = $scope.coachInformation.id
-					$scope.criteria.sport = $scope.sport
-
-					$timeout(function() {
-						$scope.config.searchConfig.search($scope.criteria, false, $scope.pageNumber)
-					})
-					
+					ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 				}
+
+				// $scope.search = function() {
+				// 	if (!$scope.config.searchConfig.search) {
+				// 		$timeout(function() {
+				// 			$scope.search()
+				// 		}, 50)
+				// 		return
+				// 	}
+
+				// 	$scope.criteria.contributorId = $scope.coachInformation.id
+				// 	$scope.criteria.sport = $scope.sport
+
+				// 	$timeout(function() {
+				// 		$scope.config.searchConfig.search($scope.criteria, false, $scope.pageNumber)
+				// 	})
+					
+				// }
 			}
 		}
 

@@ -46,7 +46,7 @@ public class ListReviewResponse {
 		private String visibility;
 		// Needed to display either the "draft" or the "game" participants
 		private String mediaType;
-		private Set<String> allAuthors;
+		private Set<String> allAuthors, allAuthorIds;
 
 		public static ResponseReview from(Review review) {
 			if (review == null) { return null; }
@@ -70,6 +70,7 @@ public class ListReviewResponse {
 			result.visibility = review.getVisibility();
 			result.mediaType = review.getMediaType();
 			result.allAuthors = review.getAllAuthors();
+			result.allAuthorIds = review.getAllAuthorIds();
 			return result;
 		}
 	}

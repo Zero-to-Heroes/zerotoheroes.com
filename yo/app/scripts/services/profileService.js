@@ -3,12 +3,21 @@ var services = angular.module('services');
 services.factory('ProfileService', ['$log', 'Api', '$timeout', 
 	function ($log, Api, $timeout) {
 
+		var inProgress = false
+
 		var service = {}
 
 		service.getProfile = function(callback, force) {
-			if (!service.profile && !force) {
+			if (inProgress) {
+				$timeout(function() {
+					service.getProfile(callback, force)
+				}, 50)
+			}
+			else if (!service.profile || force) {
+				inProgress = true
 				Api.Profile.get( 
 					function(data) {
+						inProgress = false
 						$log.debug('loaded profile', data)
 						service.profile = data
 						if (callback) {

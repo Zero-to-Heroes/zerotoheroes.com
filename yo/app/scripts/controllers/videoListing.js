@@ -26,8 +26,8 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				criteria: {
 					wantedTags: [],
 					unwantedTags: [],
-					sort: 'publicationDate'
-					
+					sort: 'publicationDate',
+					ownVideos: $scope.ownVideos
 						
 					// search: searchFn
 				},
@@ -35,10 +35,10 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			}
 			ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 		}
-		$scope.initCriteria()
 		$timeout(function() {
 			// $log.debug('own videos?', $scope.ownVideos, $routeParams, $scope)
-			$scope.options.criteria.ownVideos = $scope.ownVideos
+			$scope.initCriteria()
+			// $scope.options.criteria.ownVideos = $scope.ownVideos
 		})
 
 

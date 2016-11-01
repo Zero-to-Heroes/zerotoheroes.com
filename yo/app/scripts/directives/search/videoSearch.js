@@ -156,8 +156,14 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 							$scope.updateUrl(params)
 					})
 				}
-				$scope.config.search = $scope.retrieveVideos
-				$scope.config.udpateSearchParams = $scope.udpateSearchParams
+
+				var configListener = $scope.$watch('config', function(newVal) {
+					if (newVal) {
+						$scope.config.search = $scope.retrieveVideos
+						$scope.config.udpateSearchParams = $scope.udpateSearchParams
+						configListener()
+					}
+				})
 
 				$scope.searchAgain = function() {
 					$scope.performSearch($scope.latestParams, null, $scope.latestUpdateUrl)

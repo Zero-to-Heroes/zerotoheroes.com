@@ -135,7 +135,11 @@ public class ReviewDao {
 			// http://stackoverflow.com/questions/38785349/spring-data-mongodb-criteria-with-in-and-list-of-regexes
 			List<Pattern> regexList = Arrays
 					.asList(Pattern.compile(".*" + criteria.getContributor() + ".*", Pattern.CASE_INSENSITIVE));
-			crit.and("allAuthors").in(regexList);
+
+			Criteria allAuthor = where("allAuthors").in(regexList);
+			Criteria allAuthorIds = where("allAuthorIds").in(regexList);
+			crit.orOperator(allAuthor, allAuthorIds);
+			// crit.and("allAuthors").in(regexList);
 		}
 
 		// Tags
@@ -191,6 +195,7 @@ public class ReviewDao {
 		fields.include("visibility");
 		fields.include("lastModifiedDate");
 		fields.include("allAuthors");
+		fields.include("allAuthorIds");
 
 		List<Review> find = mongoTemplate.find(query, Review.class);
 		return find;

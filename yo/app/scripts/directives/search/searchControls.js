@@ -115,7 +115,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				$scope.rankOptions.push({ "value" : 0, "label" : $translate.instant('hearthstone.ranking.legend') })
 
 				$scope.getRankedSkillFromOptions = function() {
-					if ($scope.options.criteria.skillRangeTo && $scope.options.criteria.skillRangeTo != 0) {
+					if ($scope.options && $scope.options.criteria.skillRangeTo && $scope.options.criteria.skillRangeTo != 0) {
 						var options = []
 						for (var i = 25; i >= $scope.options.criteria.skillRangeTo; i--) {
 							options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.rank' + i) })
@@ -125,7 +125,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					return $scope.rankOptions
 				}
 				$scope.getRankedSkillToOptions = function() {
-					if ($scope.options.criteria.skillRangeFrom && $scope.options.criteria.skillRangeFrom != 25) {
+					if ($scope.options && $scope.options.criteria.skillRangeFrom && $scope.options.criteria.skillRangeFrom != 25) {
 						var options = []
 						for (var i = $scope.options.criteria.skillRangeFrom; i > 0; i--) {
 							options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.rank' + i) })
@@ -143,7 +143,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.getArenaSkillFromOptions = function() {
-					if ($scope.options.criteria.skillRangeTo && $scope.options.criteria.skillRangeTo != 12) {
+					if ($scope.options && $scope.options.criteria.skillRangeTo && $scope.options.criteria.skillRangeTo != 12) {
 						var options = []
 						for (var i = 0; i <= $scope.options.criteria.skillRangeTo; i++) {
 							options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.arena' + i + 'wins') })
@@ -153,7 +153,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					return $scope.arenaOptions
 				}
 				$scope.getArenaSkillToOptions = function() {
-					if ($scope.options.criteria.skillRangeFrom && $scope.options.criteria.skillRangeFrom != 0) {
+					if ($scope.options && $scope.options.criteria.skillRangeFrom && $scope.options.criteria.skillRangeFrom != 0) {
 						var options = []
 						for (var i = $scope.options.criteria.skillRangeFrom; i <= 12; i++) {
 							options.push({ "value" : i, "label" : $translate.instant('hearthstone.ranking.arena' + i + 'wins') })

@@ -12,6 +12,14 @@ app.directive('reviewListDisplayMode', ['$log', 'ProfileService',
 			},
 			controller: function($scope) {
 
+				var listener = $scope.$watch('options', function(newVal) {
+					if (newVal) {
+						ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
+						// $scope.setDisplayMode($scope.options.displayMode)
+						listener()
+					}
+				})
+
 				$scope.setDisplayMode = function(style) {
 					$scope.options.displayMode = style
 					// $log.debug('broadcasting', {displayMode: style})

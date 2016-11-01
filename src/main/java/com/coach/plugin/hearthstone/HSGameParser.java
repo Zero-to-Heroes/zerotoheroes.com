@@ -87,13 +87,14 @@ public class HSGameParser implements ReplayPlugin {
 			HearthstoneMetaData hsMeta = (HearthstoneMetaData) metaData;
 			hsMeta.setDurationInSeconds(meta.getDurationInSeconds());
 			hsMeta.setNumberOfTurns(meta.getNumberOfTurns());
-			hsMeta.setWinStatus(meta.getWinStatus());
+			hsMeta.setWinStatus(meta.getResult());
 			hsMeta.setOpponentClass(meta.getOpponentClass());
 			hsMeta.setOpponentName(meta.getOpponentName());
 			hsMeta.setPlayerName(meta.getPlayerName());
 			hsMeta.setPlayerClass(meta.getPlayerClass());
 			hsMeta.setPlayCoin(meta.getPlayCoin());
 			// hsMeta.setGameMode(meta.getGameMode());
+			// hsMeta.setSkillLevel(meta.getSkillLevel());
 			hsMeta.extractGameMode(review.getReviewType());
 			hsMeta.extractSkillLevel(review.getParticipantDetails().getSkillLevel());
 

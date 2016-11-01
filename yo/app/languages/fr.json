@@ -50,10 +50,42 @@
 		"search": {
 			"lookingFor": "Je recherche des",
 			"gameType": {
-				"all": "parties et drafts",
-				"game": "parties",
-				"draft": "drafts"
+				"all": "Tous les modes",
+				"ranked": "Classé",
+				"arenaGame": "Matches d'arène",
+				"arenaDraft": "Drafts d'arène",
+				"casual": "Casual",
+				"friendly": "Amical",
+				"tavernBrawl": "Bras de Fer",
+				"adventure": "Aventure"
 			},
+			"result": {
+				"all": "Tous les résultats",
+				"win": "Gagné",
+				"loss": "Perdu",
+				"tie": "Egalité"
+			},
+			"playCoin": {
+				"all": "Premier et Pièce",
+				"play": "Premier",
+				"coin": "Pièce"
+			},
+			"skill": {
+				"rankedFrom": "De",
+				"rankedTo": "à"
+			},
+			"contributorOptions": {
+				"gte": "Au moins",
+				"lte": "Au plus"
+			},
+			"showAdvancedOptions": "Montrer les options avancées",
+			"hideAdvancedOptions": "Cacher les options avancées",
+			"contributors": "contributeurs",
+			"and": " et",
+			"helpfulComments": "commentaires marqués comme utiles",
+			"textSearchPlaceholder": "Rechercher n'importe quel texte",
+			"authorSearchPlaceholder": "Nom de l'auteur / joueur",
+			"contributorSearchPlaceholder": "Nom du contributeur",
 			"matchupLabel": "qui opposent",
 			"arenaClassLabel": "de"
 		},
@@ -67,7 +99,9 @@
 			"decklist": "Decklist"
 		},
 		"classes": {
-			"any": "Toutes",
+			"allClasses": "Toutes les Classes",
+			"anyHero": "Tous les Héros",
+			"anyOpponent": "Tous les Adversaires",
 			"druid": "Druide",
 			"hunter": "Chasseur",
 			"mage": "Mage",
@@ -214,6 +248,7 @@
 			"nbComments_post": " commentaires",
 			"helpfulCommentLabel": "Je veux voir",
 			"searchButton": "Recherche",
+			"searchButtonTooltip": "Lorsque vous modifiez les critères ci-dessus, nous appliquons un filtre sur les recherches retournées par la recherche précédente. Si vous voulez avoir toutes les revues qui remplissent vos critères, veuillez utliser ce bouton pour relancer une recherche sur le serveur",
 			"clearFilterButton": "Effacer les filtres",
 			"skillLabel": "au niveau de jeu",
 			"nbComments": {
@@ -226,15 +261,18 @@
 			},
 			"sortLabel": "Trier par",
 			"sort": {
-				"updateDate": "date de dernière modification",
-				"creationDate": "date de création"
+				"publicationDate": "Trier par date de publication",
+				"updateDate": "Trier par date de dernière modification",
+				"creationDate": "Trier par date de création"
 			},
 			"subscribeConfirm": "S'abonner",
 			"subscribeCancel": "Annuler",
 			"subscribe": "S'abonner",
 			"subscribeTooltip": "Recevez une notification à chaque fois qu'une nouvelle revue qui correspond à vos critères est postée",
 			"subscribePlaceholder": "Donnez un nom",
-			"subscriptionOk": "Vous vous êtes abonné aux résultats de recherche et recevrez une notification à chaque fois qu'une nouvelle revue qui correspond à vos critères est postée. Vous pouvez gérer vos abonnements dans votre page profil"
+			"subscriptionOk": "Vous vous êtes abonné aux résultats de recherche et recevrez une notification à chaque fois qu'une nouvelle revue qui correspond à vos critères est postée. Vous pouvez gérer vos abonnements dans votre page profil",
+			"needNewSearch": "Vous venez des modifier un critère de recherche complexe - veuillez utiliser le bouton de Recherche pour effectuer la recherche sur le serveur",
+			"authorCriteriaTooShort": "Veuillez renseigner au moins 3 caractères lorsque vous recherchez un joueur / contributeur"
 		},
 		"profile": {
 			"messages": {

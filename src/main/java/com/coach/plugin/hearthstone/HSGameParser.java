@@ -67,10 +67,10 @@ public class HSGameParser implements ReplayPlugin {
 		try {
 			log.debug("Adding meta data to " + review.getId() + " - " + review.getTitle());
 			String replay = getReplay(review);
-			log.debug("temp replay is ");
+			// log.debug("temp replay is ");
 			HearthstoneReplay game = new ReplayConverter()
 					.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
-			log.debug("game is ");
+			// log.debug("game is ");
 
 			GameMetaData meta = gameParser.getGameParser().getMetaData(game);
 			log.info("built meta data " + meta);
@@ -98,7 +98,7 @@ public class HSGameParser implements ReplayPlugin {
 			hsMeta.extractGameMode(review.getReviewType());
 			hsMeta.extractSkillLevel(review.getParticipantDetails().getSkillLevel());
 
-			log.debug("adding title?");
+			// log.debug("adding title?");
 			if (StringUtils.isEmpty(review.getTitle())) {
 				String title = review.getParticipantDetails().getPlayerName() + "("
 						+ review.getParticipantDetails().getPlayerCategory() + ") vs "
@@ -119,9 +119,12 @@ public class HSGameParser implements ReplayPlugin {
 	}
 
 	private String getReplay(Review review) throws IOException {
-		String replay = review.getTemporaryReplay();
+		String replay = s3utils.readFromS3Output(review.getKey());
 		if (replay == null) {
-			replay = s3utils.readFromS3Output(review.getKey());
+			replay = review.getTemporaryReplay();
+		}
+		else {
+			review.setTemporaryReplay(null);
 		}
 		return replay;
 	}

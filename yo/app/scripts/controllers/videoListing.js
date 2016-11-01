@@ -33,7 +33,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				},
 				onlyShowPublic: true
 			}
-			ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
+			// ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 		}
 		$timeout(function() {
 			// $log.debug('own videos?', $scope.ownVideos, $routeParams, $scope)

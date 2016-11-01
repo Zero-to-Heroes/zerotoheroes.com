@@ -92,7 +92,6 @@ public class HSArenaDraft implements ReplayPlugin {
 		return true;
 	}
 
-
 	public void addMetaData(Review review) throws IOException {
 		// String draft = getDraft(review);
 		HearthstoneMetaData metaData = new HearthstoneMetaData();
@@ -124,7 +123,7 @@ public class HSArenaDraft implements ReplayPlugin {
 		return replay;
 	}
 
-	private String convertToJson(String atFile) throws Exception {
+	public String convertToJson(String atFile) throws Exception {
 		Pattern heroPickRegex = Pattern.compile(".* - GameWatcher\\(\\d+\\): New arena\\. Heroe: (\\d+).*");
 		Pattern heroPickRegex2 = Pattern.compile(".* - DraftHandler: Begin draft. Heroe: (\\d+).*");
 		Pattern choiceRegex = Pattern.compile(".* - DraftHandler: \\(\\d+\\) (\\w+)\\/(\\w+)\\/(\\w+).*");
@@ -216,7 +215,6 @@ public class HSArenaDraft implements ReplayPlugin {
 		private Pick[] detectedcards = new Pick[30];
 		private String[] pickedcards = new String[30];
 	}
-
 
 	@NoArgsConstructor
 	@Setter

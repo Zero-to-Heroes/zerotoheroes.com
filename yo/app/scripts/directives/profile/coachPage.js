@@ -91,7 +91,7 @@ angular.module('app').directive('coachPage', ['$routeParams', 'Api', '$log', 'Us
 							contributor: $scope.coachInformation.id
 						}
 					}
-					ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
+					// ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 				}
 
 				// $scope.search = function() {

@@ -27,7 +27,7 @@ app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeo
 						},
 						onlyShowPublic: true
 					}
-					ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
+					// ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 				}
 				$scope.initCriteria()
 			}

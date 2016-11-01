@@ -31,11 +31,11 @@ angular.module('controllers').controller('SearchCtrl', ['$scope', 'ProfileServic
 					
 					// search: searchFn
 				},
-				displayMode: 'grid',
+				// displayMode: 'grid',
 				showIntermediateText: true
 			}
 
-			ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
+			// ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 		}
 		$scope.initCriteria()
 	}

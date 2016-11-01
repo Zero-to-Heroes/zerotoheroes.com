@@ -26,7 +26,7 @@ app.directive('watchAndLearn', ['$log', '$location', 'Api', '$routeParams', '$ti
 						},
 						onlyShowPublic: true
 					}
-					ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
+					// ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')
 				}
 				$scope.initCriteria()
 			}

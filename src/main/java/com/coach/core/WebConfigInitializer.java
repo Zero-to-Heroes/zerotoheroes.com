@@ -3,6 +3,8 @@ package com.coach.core;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletContextInitializer;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +18,18 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Configuration
 public class WebConfigInitializer implements ServletContextInitializer {
+
+	@Value("${videos.bucket.output.name}")
+	String outputBucket;
+
+	@Autowired
+	public WebConfigInitializer(@Value("${videos.bucket.output.name}") String outputBucket,
+			@Value("${transcoding.sqs.queue.url}") String queue) {
+		super();
+		this.outputBucket = outputBucket;
+		log.debug("!!" + outputBucket);
+		log.debug("!!" + queue);
+	}
 
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
@@ -32,7 +46,7 @@ public class WebConfigInitializer implements ServletContextInitializer {
 
 	@Bean
 	public FilterRegistrationBean preRenderSEOFilterRegistration() {
-		log.debug("Registering SEO filter");
+		log.debug("!!" + outputBucket);
 		FilterRegistrationBean registration = new FilterRegistrationBean();
 		registration.setFilter(preRenderSEOFilter());
 		registration.addUrlPatterns("/*");

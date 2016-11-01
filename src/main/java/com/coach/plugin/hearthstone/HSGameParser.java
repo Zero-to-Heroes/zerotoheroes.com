@@ -65,7 +65,7 @@ public class HSGameParser implements ReplayPlugin {
 		}
 
 		try {
-			log.debug("Adding meta data to " + review);
+			log.debug("Adding meta data to " + review.getId() + " - " + review.getTitle());
 			String replay = getReplay(review);
 			log.debug("temp replay is ");
 			HearthstoneReplay game = new ReplayConverter()
@@ -109,7 +109,7 @@ public class HSGameParser implements ReplayPlugin {
 			}
 
 			review.setLastMetaDataParsingDate(new Date());
-			log.debug("done adding meta " + review);
+			log.debug("done adding meta ");
 		}
 		catch (Exception e) {
 			// log.error("Could not add metata to review " + review, e);

@@ -2,6 +2,7 @@ package com.coach.admin.cron;
 
 import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
+import static org.springframework.data.mongodb.core.query.Update.*;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -14,6 +15,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Field;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,13 +48,11 @@ public class ReviewCleanupHandler {
 	@Autowired
 	HSArenaDraft draftParser;
 
-	private final String environment;
+	@Value("${environment}")
+	String environment;
 
-	@Autowired
-	public ReviewCleanupHandler(@Value("${environment}") String environment) {
-		super();
-		this.environment = environment;
-	}
+	@Value("${videos.bucket.output.name}")
+	String outputBucket;
 
 	@RequestMapping(value = "/cleanUp", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> processGames() {
@@ -94,6 +94,26 @@ public class ReviewCleanupHandler {
 				HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/reinit", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> reinit() {
+
+		log.debug("bucket " + outputBucket);
+
+		long totalReviews = reviewRepository.count();
+
+		Criteria crit = where("published").is(true);
+		Query query = query(crit);
+
+		Update update = update("lastMetaDataParsingDate", null).set("invalidGame", false);
+		WriteResult result = mongoTemplate.updateMulti(query, update, Review.class);
+		int removedReviews = result.getN();
+
+		log.debug("Updated " + removedReviews + " out of " + totalReviews + " reviews");
+
+		return new ResponseEntity<String>("Updated " + removedReviews + " out of " + totalReviews + " reviews",
+				HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/parseMetaData", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> parseMetaData() {
 
@@ -106,7 +126,7 @@ public class ReviewCleanupHandler {
 		// Criteria crit = where("creationDate").lt(calendar.getTime());
 		Query query = query(crit);
 
-		PageRequest pageRequest = new PageRequest(0, 20);
+		PageRequest pageRequest = new PageRequest(0, 50);
 
 		query.with(pageRequest);
 
@@ -118,15 +138,15 @@ public class ReviewCleanupHandler {
 				if ("arena-draft".equals(review.getReviewType())) {
 					draftParser.addMetaData(review);
 				}
-				else if ("game-replay".equals(review.getReviewType())) {
+				else if ("game-replay".equals(review.getReviewType()) && !"video/mp4".equals(review.getFileType())) {
 					gameParser.addMetaData(review);
 				}
 				else {
-					log.warn("Can't define metadata type for " + review);
+					log.warn("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
 				}
 			}
 			catch (Exception e) {
-				log.info("Could not parse meta data for " + review.getId());
+				log.info("Could not parse meta data for " + review.getId(), e);
 				review.setInvalidGame(true);
 			}
 			review.buildAllAuthors();

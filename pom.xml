@@ -66,12 +66,12 @@
 		<dependency>
 			<groupId>com.zerotoheroes</groupId>
 			<artifactId>hs-game-entities</artifactId>
-			<version>1.0.3</version>
-		</dependency>
+			<version>1.0.4</version>
+		</dependency> 
 		<dependency>
 			<groupId>com.zerotoheroes</groupId>
 			<artifactId>hs-game-parser</artifactId>
-			<version>1.0.5</version>
+			<version>1.0.6</version>
 		</dependency>
 		<dependency>
 			<groupId>com.zerotoheroes</groupId>

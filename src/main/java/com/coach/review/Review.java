@@ -339,7 +339,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		viewCount++;
 	}
 
-	public Set<String> buildAllAuthors() {
+	public void buildAllAuthors() {
 		allAuthors = new HashSet<>();
 		allAuthorIds = new HashSet<>();
 		if (!StringUtils.isNullOrEmpty(author)) {
@@ -356,8 +356,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		}
 
 		authorCount = allAuthors.size();
-
-		return allAuthors;
 	}
 
 	public void normalizeUsers(Map<String, User> userMap, Map<String, Profile> profileMap) {

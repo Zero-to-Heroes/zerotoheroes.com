@@ -85,7 +85,8 @@ public class ReviewService {
 	}
 
 	protected void denormalizeReputations(Review review) {
-		Iterable<String> userIds = review.buildAllAuthors();
+		review.buildAllAuthors();
+		Iterable<String> userIds = review.getAllAuthorIds();
 		Iterable<User> users = userRepo.findAll(userIds);
 
 		Map<String, User> userMap = new HashMap<>();

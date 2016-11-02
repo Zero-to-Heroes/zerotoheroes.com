@@ -472,37 +472,42 @@ public class SlackNotifier {
 			return;
 		}
 
-		final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		try {
+			final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				log.debug("Sending error to Sleck");
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+			executorProvider.getExecutor().submit(new Callable<String>() {
+				@Override
+				public String call() throws Exception {
+					log.debug("Sending error to Sleck");
+					SlackApi api = new SlackApi(
+							"https://hooks.slack.com/services/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");
 
-				SlackMessage message = new SlackMessage();
-				message.setText("Generic error with details for user " + currentUser);
+					SlackMessage message = new SlackMessage();
+					message.setText("Generic error with details for user " + currentUser);
 
-				SlackAttachment exAttach = new SlackAttachment();
-				exAttach.setColor("danger");
-				exAttach.setTitle("StackTrace for exception: ");
-				exAttach.setText(ExceptionUtils.getFullStackTrace(e));
-				exAttach.setFallback("placeholder fallback");
-				message.addAttachments(exAttach);
+					SlackAttachment exAttach = new SlackAttachment();
+					exAttach.setColor("danger");
+					exAttach.setTitle("StackTrace for exception: ");
+					exAttach.setText(ExceptionUtils.getFullStackTrace(e));
+					exAttach.setFallback("placeholder fallback");
+					message.addAttachments(exAttach);
 
-				for (Object param : params) {
-					SlackAttachment attach = new SlackAttachment();
-					attach.setColor("danger");
-					attach.setText(param != null ? param.toString() : "null");
-					attach.setFallback("placeholder fallback");
-					message.addAttachments(attach);
+					for (Object param : params) {
+						SlackAttachment attach = new SlackAttachment();
+						attach.setColor("danger");
+						attach.setText(param != null ? param.toString() : "null");
+						attach.setFallback("placeholder fallback");
+						message.addAttachments(attach);
+					}
+
+					api.call(message);
+					return null;
 				}
-
-				api.call(message);
-				return null;
-			}
-		});
+			});
+		}
+		catch (Exception e2) {
+			log.error("Could not notify error", e2);
+		}
 	}
 
 	public void notifyUnsupportedUrlImport(final UrlInput url, final User user, final Review review) {

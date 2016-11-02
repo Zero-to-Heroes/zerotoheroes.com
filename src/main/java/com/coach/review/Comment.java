@@ -240,10 +240,12 @@ public class Comment implements HasText, HasReputation {
 		for (String userId : upvotes) {
 			if (!userId.equals(authorId)) {
 				Voter voter = new Voter();
-				voter.username = userMap.get(userId).getUsername();
-				voter.userId = userId;
-				voter.score = buildScore(sport, voter, userMap.get(voter.userId), profileMap.get(voter.userId));
-				upvoters.add(voter);
+				if (userMap.get(userId) != null) {
+					voter.username = userMap.get(userId).getUsername();
+					voter.userId = userId;
+					voter.score = buildScore(sport, voter, userMap.get(voter.userId), profileMap.get(voter.userId));
+					upvoters.add(voter);
+				}
 			}
 		}
 		// log.debug("\tupvoters " + upvoters);

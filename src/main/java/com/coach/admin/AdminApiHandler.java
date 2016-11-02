@@ -6,6 +6,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,12 +44,24 @@ public class AdminApiHandler {
 	@Autowired
 	ArchiveJournalRepository journalRepository;
 
+	@Autowired
+	MongoTemplate mongoTemplate;
+
 	private final String environment;
 
 	@Autowired
 	public AdminApiHandler(@Value("${environment}") String environment) {
 		super();
 		this.environment = environment;
+	}
+
+	@RequestMapping(value = "/doAdmin", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<String> doAdmin() {
+
+		if ("prod".equalsIgnoreCase(
+				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
+
+		return new ResponseEntity<String>((String) null, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/updateAllReviews", method = RequestMethod.GET)

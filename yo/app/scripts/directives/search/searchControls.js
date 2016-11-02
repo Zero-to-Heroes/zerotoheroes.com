@@ -1,3 +1,4 @@
+
 'use strict';
 
 var app = angular.module('app');
@@ -105,6 +106,13 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					{ "value" : "publicationDate", "label" : $translate.instant('global.search.sort.publicationDate') },
 					{ "value" : "creationDate", "label" : $translate.instant('global.search.sort.creationDate') },
 					{ "value" : "updateDate", "label" : $translate.instant('global.search.sort.updateDate') }
+				]
+
+				// Options for visibility
+				$scope.visibilityOptions = [
+					{ "value" : null, "label" : $translate.instant('global.search.visibility.all') },
+					{ "value" : "public", "label" : $translate.instant('global.search.visibility.public') },
+					{ "value" : "unlisted", "label" : $translate.instant('global.search.visibility.unlisted') }
 				]
 
 				// Options for ranked play skill selection
@@ -428,6 +436,14 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 							if (anyFound)
 								return false
 						}
+					}
+
+					// Visibility
+					if (criteria.visibility) {
+						if (criteria.visibility == 'public' && review.visibility != 'public') 
+							return false
+						if (criteria.visibility != 'public' && review.visibility == 'public') 
+							return false
 					}
 
 					if (criteria.contributorsComparator) {

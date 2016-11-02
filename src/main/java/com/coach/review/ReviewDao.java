@@ -48,9 +48,16 @@ public class ReviewDao {
 		crit.and("published").is(true);
 
 		// I can see all my reviews, but only the public ones from others
-		if (criteria.getOwnVideos() != null && criteria.getOwnVideos()
-				&& !StringUtils.isEmpty(criteria.getVisibility())) {
-			crit.and("visibility").is(criteria.getVisibility());
+		if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) {
+			// Visibility
+			if (!StringUtils.isEmpty(criteria.getVisibility())) {
+				if ("public".equals(criteria.getVisibility())) {
+					crit.and("visibility").is("public");
+				}
+				else {
+					crit.and("visibility").in(Arrays.asList(new String[] { "restricted", "private" }));
+				}
+			}
 		}
 		else if (criteria.getOwnVideos() == null || !criteria.getOwnVideos()) {
 			crit.and("visibility").is("public");

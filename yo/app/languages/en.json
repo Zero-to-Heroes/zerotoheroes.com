@@ -334,6 +334,11 @@
 				"updateDate": "Sort by last modification date",
 				"creationDate": "Sort by creation date"
 			},
+			"visibility": {
+				"all": "Show all games",
+				"public": "Public only",
+				"unlisted": "Unlisted only"
+			},
 			"ownReviews": {
 				"showAll": "Show all reviews",
 				"showOnlyPublic": "Show only public reviews"

@@ -137,6 +137,9 @@
 			<label>
 				<span>{{::translations.ownVideos}}</span> <input type="checkbox" ng-model="options.criteria.ownVideos" ng-change="filterReviews()">
 			</label>
+			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.visibility" data-html="1" bs-options="::option.value as option.label for option in visibilityOptions" bs-select ng-change="filterReviews()" placeholder="{{visibilityOptions[0].label}}" ng-show="options.criteria.ownVideos">
+			  	<span>Action</span>
+			</button>
 		</div>
 
 	</div>

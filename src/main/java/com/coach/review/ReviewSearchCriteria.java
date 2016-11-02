@@ -155,6 +155,18 @@ public class ReviewSearchCriteria {
 			}
 		}
 
+		// Text
+		if (!StringUtils.isEmpty(title)) {
+			boolean match = false;
+			if (!StringUtils.isEmpty(review.getTitle())) {
+				match |= review.getTitle().contains(title);
+			}
+			if (!StringUtils.isEmpty(review.getText())) {
+				match |= review.getText().contains(title);
+			}
+			if (!match) { return false; }
+		}
+
 		return true;
 	}
 

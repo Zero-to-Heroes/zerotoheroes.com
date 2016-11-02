@@ -66,7 +66,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							{name: 'joustjs', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 108, dev: dev},
 							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 20, dev: dev}
 						],
-						customCss: 'hearthstone.css?3'
+						customCss: 'hearthstone.css?4'
 					},
 					deactivateControls: {
 						slow: true,

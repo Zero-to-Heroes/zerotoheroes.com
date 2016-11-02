@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.coach.core.security.User;
-import com.coach.profile.Notifications;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
@@ -29,7 +28,7 @@ public class UserNotifier {
 	ProfileRepository profileRepository;
 
 	@Autowired
-	NotificationDao NotificationDao;
+	NotificationDao notificationDao;
 
 	@Autowired
 	ProfileService profileService;
@@ -128,16 +127,16 @@ public class UserNotifier {
 		}
 	}
 
-	private Notifications addNotification(Profile profile, Notification notification) {
-		Notifications notifications = profile.getNotifications();
-		if (notifications == null) {
-			notifications = new Notifications();
-			profile.setNotifications(notifications);
-		}
-		notifications.incrementUnread();
-		profileRepository.save(profile);
+	private void addNotification(Profile profile, Notification notification) {
+		// Notifications notifications = profile.getNotifications();
+		// if (notifications == null) {
+		// notifications = new Notifications();
+		// profile.setNotifications(notifications);
+		// }
+		// notifications.incrementUnread();
+		// profileRepository.save(profile);
 
-		NotificationDao.save(notification);
-		return notifications;
+		notificationDao.save(notification);
+		// return notifications;
 	}
 }

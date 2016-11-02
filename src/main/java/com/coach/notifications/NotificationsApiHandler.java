@@ -90,7 +90,7 @@ public class NotificationsApiHandler {
 				Notification notif = notificationDao.findById(messageId);
 				notif.setReadDate(new Date());
 				notificationDao.save(notif);
-				profile.getNotifications().decrementUnread();
+				// profile.getNotifications().decrementUnread();
 			}
 		}
 
@@ -133,9 +133,9 @@ public class NotificationsApiHandler {
 
 		notif.setReadDate(null);
 
-		Profile profile = profileService.getLoggedInProfile();
-		profile.getNotifications().incrementUnread();
-		profileService.save(profile);
+		// Profile profile = profileService.getLoggedInProfile();
+		// profile.getNotifications().incrementUnread();
+		// profileService.save(profile);
 
 		notificationDao.save(notif);
 

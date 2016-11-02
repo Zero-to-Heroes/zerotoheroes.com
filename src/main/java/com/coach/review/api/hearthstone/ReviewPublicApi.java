@@ -205,7 +205,7 @@ public class ReviewPublicApi {
 		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/upload/review", method = RequestMethod.POST)
+	@RequestMapping(value = "/upload/game", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> uploadFile(@RequestParam("data") MultipartFile data)
 			throws Exception {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -218,7 +218,7 @@ public class ReviewPublicApi {
 		return processReviewLogs(user, reviews, logInfo);
 	}
 
-	@RequestMapping(value = "/upload/review/{applicationKey}/{userToken}", method = RequestMethod.POST)
+	@RequestMapping(value = "/upload/game/{applicationKey}/{userToken}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> uploadReviewWithToken(
 			@RequestParam("data") MultipartFile data, @PathVariable(value = "applicationKey") String applicationKey,
 			@PathVariable(value = "userToken") String userToken) throws Exception {

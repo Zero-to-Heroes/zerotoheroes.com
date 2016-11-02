@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.coach.core.notification.ExecutorProvider;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
@@ -35,6 +36,9 @@ public class ReviewService {
 
 	@Autowired
 	ProfileRepository profileRepo;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	@Autowired
 	ReviewJournalRepository reviewJournalRepo;
@@ -95,7 +99,13 @@ public class ReviewService {
 			profileMap.put(profile.getUserId(), profile);
 		}
 		review.normalizeUsers(userMap, profileMap);
-		review.highlightNoticeableVotes(userMap, profileMap);
+		try {
+			review.highlightNoticeableVotes(userMap, profileMap);
+		}
+		catch (Exception e) {
+			log.error("Could not highlight votes", e);
+			slackNotifier.notifyError(e, "Could not highlight votes", review);
+		}
 	}
 
 	public void triggerReviewCreationJobs(Review review) {

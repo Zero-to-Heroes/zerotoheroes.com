@@ -591,6 +591,9 @@ body {
   margin-right: 15px;
   order: -1;
 }
+.grid .review-list-item read-only-tags div[data-type=tag]:nth-child(n + 3) {
+  display: none;
+}
 .search-page-global .main-panel {
   width: calc(100% - 45px);
   max-width: none;

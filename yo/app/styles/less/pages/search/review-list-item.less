@@ -220,3 +220,14 @@
 		order: -1;
 	}
 }
+
+.grid .review-list-item {
+
+	read-only-tags {
+
+		// Only show two tags in grid mode
+		div[data-type=tag]:nth-child(n + 3) {
+			display: none;
+		}
+	}
+}

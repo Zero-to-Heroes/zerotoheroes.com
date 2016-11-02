@@ -60,10 +60,11 @@ public class ReviewPublicApi {
 
 	@Autowired
 	HSReplay hsReplay;
-	
+
 	@Autowired
 	HSArenaDraft hsArenaDraft;
 
+	@Deprecated
 	@RequestMapping(value = "/progressive/init", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> initReview(@RequestBody ReviewCreationParams data)
 			throws Exception {
@@ -91,24 +92,7 @@ public class ReviewPublicApi {
 		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
 	}
 
-	private void addMetaData(ReviewCreationParams data, Review review) {
-		HearthstoneMetaData meta = new HearthstoneMetaData();
-		meta.setGameMode(data.getGameMode());
-		review.setMetaData(meta);
-
-		String rank = null;
-		if (data.getRank() != 0) {
-			rank = "Rank " + data.getRank();
-		}
-		else if (data.getLegendRank() != 0) {
-			rank = "Legend";
-		}
-		if (rank != null) {
-			review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag(rank)));
-			// review.setTemporaryKey(tempKey);
-		}
-	}
-
+	@Deprecated
 	@RequestMapping(value = "/progressive/append/gzip/{reviewId}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> appendGameLog(@PathVariable("reviewId") final String id,
 			@RequestParam("data") MultipartFile data) throws Exception {
@@ -116,7 +100,7 @@ public class ReviewPublicApi {
 		FileUploadResponse response = null;
 
 		// Are there several games in the single file?
-		byte[] logInfo = getGzipLogInfo(data);
+		byte[] logInfo = getLogInfo(data);
 		String logToAppend = new String(logInfo, "UTF-8");
 		// log.debug(logToAppend);
 		log.debug("appending " + logToAppend.split("\n").length + " lines");
@@ -130,6 +114,7 @@ public class ReviewPublicApi {
 		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
 	}
 
+	@Deprecated
 	@RequestMapping(value = "/progressive/finalize/{reviewId}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> finalize(@PathVariable("reviewId") final String id,
 			@RequestBody ReviewCreationParams data) throws Exception {
@@ -175,8 +160,7 @@ public class ReviewPublicApi {
 		log.debug("Starting draft upload for " + currentUser + " " + applicationKey + " " + userToken);
 		User user = userRepo.findByUsername(currentUser);
 
-		// Are there several games in the single file?
-		byte[] logInfo = data.getBytes();
+		byte[] logInfo = getLogInfo(data);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
 
 		StringBuilder draft = new StringBuilder();
@@ -185,7 +169,7 @@ public class ReviewPublicApi {
 			draft.append(line + "\n");
 		}
 		log.debug("\tbuilt draft");
-		
+
 		// Process file
 		Review review = new Review();
 		review.setMediaType("arena-draft");
@@ -196,12 +180,12 @@ public class ReviewPublicApi {
 		review.setReplay("true");
 		review.setUploaderApplicationKey(applicationKey);
 		review.setUploaderToken(userToken);
-		
+
 		// TODO: hard-code
 		if ("ArenaTracker".equals(review.getUploaderApplicationKey())) {
 			review.setFileType("arenatracker");
 		}
-		
+
 		hsArenaDraft.transformReplayFile(review);
 
 		if (user != null) {
@@ -230,12 +214,33 @@ public class ReviewPublicApi {
 		List<Review> reviews = new ArrayList<>();
 
 		// Are there several games in the single file?
-		byte[] logInfo = data.getBytes();
+		byte[] logInfo = getLogInfo(data);
 		return processReviewLogs(user, reviews, logInfo);
+	}
+
+	@RequestMapping(value = "/upload/review/{applicationKey}/{userToken}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> uploadReviewWithToken(
+			@RequestParam("data") MultipartFile data, @PathVariable(value = "applicationKey") String applicationKey,
+			@PathVariable(value = "userToken") String userToken) throws Exception {
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		log.debug("Starting draft upload for " + currentUser + " " + applicationKey + " " + userToken);
+		User user = userRepo.findByUsername(currentUser);
+
+		byte[] logInfo = getLogInfo(data);
+
+		List<Review> reviews = new ArrayList<>();
+
+		return processReviewLogs(user, reviews, logInfo, applicationKey, userToken);
 	}
 
 	private ResponseEntity<FileUploadResponse> processReviewLogs(User user, List<Review> reviews, byte[] logInfo)
 			throws IOException, ZipException {
+		return processReviewLogs(user, reviews, logInfo, null, null);
+	}
+
+	private ResponseEntity<FileUploadResponse> processReviewLogs(User user, List<Review> reviews, byte[] logInfo,
+			String applicationKey, String userToken) throws IOException, ZipException {
 		FileUploadResponse response;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
 		List<String> games = hsReplay.extractGames(null, "text/plain", reader);
@@ -249,6 +254,8 @@ public class ReviewPublicApi {
 			review.setSport(Review.Sport.load("hearthstone"));
 			review.setTemporaryReplay(game);
 			review.setReplay("true");
+			review.setUploaderApplicationKey(applicationKey);
+			review.setUploaderToken(userToken);
 			if (user != null) {
 				review.setAuthorId(user.getId());
 				review.setAuthor(user.getUsername());
@@ -275,7 +282,7 @@ public class ReviewPublicApi {
 		List<Review> reviews = new ArrayList<>();
 
 		// Are there several games in the single file?
-		byte[] logInfo = getGzipLogInfo(data);
+		byte[] logInfo = getLogInfo(data);
 		return processReviewLogs(user, reviews, logInfo);
 	}
 
@@ -306,22 +313,45 @@ public class ReviewPublicApi {
 		return reviewApi.publish(id, review);
 	}
 
-	private byte[] getGzipLogInfo(MultipartFile data) throws Exception {
+	private void addMetaData(ReviewCreationParams data, Review review) {
+		HearthstoneMetaData meta = new HearthstoneMetaData();
+		meta.setGameMode(data.getGameMode());
+		review.setMetaData(meta);
+
+		String rank = null;
+		if (data.getRank() != 0) {
+			rank = "Rank " + data.getRank();
+		}
+		else if (data.getLegendRank() != 0) {
+			rank = "Legend";
+		}
+		if (rank != null) {
+			review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag(rank)));
+			// review.setTemporaryKey(tempKey);
+		}
+	}
+
+	private byte[] getLogInfo(MultipartFile data) throws IOException {
 		byte[] bytes = data.getBytes();
 
-		ByteArrayInputStream bytein = new ByteArrayInputStream(bytes);
-		GZIPInputStream gzin = new GZIPInputStream(bytein);
-		ByteArrayOutputStream byteout = new ByteArrayOutputStream();
+		try {
+			ByteArrayInputStream bytein = new ByteArrayInputStream(bytes);
+			GZIPInputStream gzin = new GZIPInputStream(bytein);
+			ByteArrayOutputStream byteout = new ByteArrayOutputStream();
 
-		int res = 0;
-		byte buf[] = new byte[1024];
-		while (res >= 0) {
-			res = gzin.read(buf, 0, buf.length);
-			if (res > 0) {
-				byteout.write(buf, 0, res);
+			int res = 0;
+			byte buf[] = new byte[1024];
+			while (res >= 0) {
+				res = gzin.read(buf, 0, buf.length);
+				if (res > 0) {
+					byteout.write(buf, 0, res);
+				}
 			}
+			byte uncompressed[] = byteout.toByteArray();
+			return uncompressed;
 		}
-		byte uncompressed[] = byteout.toByteArray();
-		return uncompressed;
+		catch (IOException e) {
+			return bytes;
+		}
 	}
 }

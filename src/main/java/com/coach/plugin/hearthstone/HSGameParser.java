@@ -119,7 +119,13 @@ public class HSGameParser implements ReplayPlugin {
 	}
 
 	private String getReplay(Review review) throws IOException {
-		String replay = s3utils.readFromS3Output(review.getKey());
+		String replay = null;
+		try {
+			replay = s3utils.readFromS3Output(review.getKey());
+		}
+		catch (Exception e) {
+			log.info("Exceptin trying to get review key, reading from temp replay");
+		}
 		if (replay == null) {
 			replay = review.getTemporaryReplay();
 		}

@@ -33,11 +33,34 @@ public class HearthstoneMetaData extends MetaData {
 	private String playCoin;
 	private Float skillLevel;
 
+	@Override
 	public void extractSkillLevel(List<Tag> skillLevel) {
 		if (!CollectionUtils.isEmpty(skillLevel)) {
+			if ("Arena".equals(gameMode) || gameMode == null) {
+				this.skillLevel = null;
+				gameMode = null;
+			}
 			String skillTag = skillLevel.get(0).getText();
 			if (skillTag.contains("legend") || skillTag.contains("Legend")) {
 				this.skillLevel = 0f;
+			}
+			else if (skillTag.contains("Tavern Brawl")) {
+				gameMode = "tavern-brawl";
+			}
+			else if (skillTag.contains("Casual")) {
+				gameMode = "casual";
+			}
+			else if (skillTag.contains("Friendly")) {
+				gameMode = "friendly";
+			}
+			else if (skillTag.contains("Tournament")) {
+				gameMode = "tournament";
+			}
+			else if (skillTag.contains("Adventure")) {
+				gameMode = "adventure";
+			}
+			else if (skillTag.contains("Arena Draft")) {
+				gameMode = "arena-draft";
 			}
 			else {
 				Matcher matcher = RANKED_PATTERN.matcher(skillTag);
@@ -53,6 +76,7 @@ public class HearthstoneMetaData extends MetaData {
 					matcher = ARENA_PATTERN.matcher(skillTag);
 					while (matcher.find()) {
 						this.skillLevel = Float.parseFloat(matcher.group(1));
+						// Legacy, probably from an early migration
 						if (gameMode == null) {
 							gameMode = "arena-game";
 						}

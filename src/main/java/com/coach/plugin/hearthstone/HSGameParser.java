@@ -65,6 +65,7 @@ public class HSGameParser implements ReplayPlugin {
 		}
 
 		try {
+			review.setInvalidGame(false);
 			log.debug("Adding meta data to " + review.getId() + " - " + review.getTitle());
 			String replay = getReplay(review);
 			// log.debug("temp replay is ");

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.coach.core.notification.ExecutorProvider;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
+import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.reputation.ReputationAction;
@@ -67,6 +68,10 @@ public class ReviewService {
 				review.updateFullTextSearch();
 				review.updateCommentsCount();
 				denormalizeReputations(review);
+				if (review.getMetaData() == null) {
+					review.setMetaData(new HearthstoneMetaData());
+				}
+				review.getMetaData().extractSkillLevel(review.getParticipantDetails().getSkillLevel());
 				// log.debug("updating review");
 				reviewRepo.save(review);
 				// log.debug("updated refiew", review);

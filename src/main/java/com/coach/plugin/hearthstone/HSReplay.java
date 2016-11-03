@@ -220,6 +220,20 @@ public class HSReplay implements ReplayPlugin {
 				games.add(currentGame.toString());
 			}
 		}
+		else if (fileType.startsWith("text/xml")) {
+			log.debug("processing xml file");
+			currentGame = new StringBuilder();
+			String line;
+			while ((line = reader.readLine()) != null) {
+				currentGame.append(line);
+				currentGame.append(System.lineSeparator());
+			}
+			if (currentGame != null && currentGame.length() > 0) {
+				log.debug("Added a new game");
+				// log.debug(currentGame.toString());
+				games.add(currentGame.toString());
+			}
+		}
 		else if ("hdtreplay".equals(fileType)) {
 			File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
 			s3utils.readFromS3ToFile(key, tempFile);

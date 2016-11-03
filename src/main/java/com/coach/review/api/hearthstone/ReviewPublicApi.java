@@ -243,14 +243,21 @@ public class ReviewPublicApi {
 			String applicationKey, String userToken) throws IOException, ZipException {
 		FileUploadResponse response;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
-		List<String> games = hsReplay.extractGames(null, "text/plain", reader);
+		String fileType = "text/plain";
+		List<String> games = hsReplay.extractGames(null, fileType, reader);
 		log.debug("\tbuilt " + games.size() + " games");
+
+		if (games.size() == 0) {
+			reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
+			fileType = "text/xml";
+			games = hsReplay.extractGames(null, fileType, reader);
+		}
 
 		// Process file
 		List<String> ids = new ArrayList<>();
 		for (String game : games) {
 			Review review = new Review();
-			review.setFileType("text/plain");
+			review.setFileType(fileType);
 			review.setSport(Review.Sport.load("hearthstone"));
 			review.setTemporaryReplay(game);
 			review.setReplay("true");

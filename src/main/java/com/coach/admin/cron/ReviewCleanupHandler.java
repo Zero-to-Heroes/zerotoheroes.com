@@ -61,11 +61,11 @@ public class ReviewCleanupHandler {
 		calendar.add(Calendar.DAY_OF_MONTH, -7);
 
 		Criteria noKey = where("key").is(null);
-		Criteria invalidReplay = where("invalidGame").is(true);
+		// Criteria invalidReplay = where("invalidGame").is(true);
 		Criteria unpublished = where("published").is(false);
 
 		Criteria crit = where("creationDate").lt(calendar.getTime());
-		crit.orOperator(noKey, invalidReplay, unpublished);
+		crit.orOperator(noKey, unpublished);
 
 		Query query = query(crit);
 
@@ -121,8 +121,14 @@ public class ReviewCleanupHandler {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.HOUR, -2);
 
-		Criteria crit = where("lastMetaDataParsingDate").is(null).and("creationDate").lt(calendar.getTime());
-		// Criteria crit = where("creationDate").lt(calendar.getTime());
+		// Criteria crit = where("id").is("580d12cb0ca136653db61a64");
+
+		Criteria crit = where("creationDate").lt(calendar.getTime());
+		Criteria invalid = where("invalidGame").is(true);
+		Criteria unprocessed = where("invalidGame").exists(false);
+		Criteria emptyGameMode = where("metaData.gameMode").is(null);
+		crit.orOperator(invalid, unprocessed, emptyGameMode);
+
 		Query query = query(crit);
 
 		PageRequest pageRequest = new PageRequest(0, 20);
@@ -133,6 +139,7 @@ public class ReviewCleanupHandler {
 		log.debug("Parsing " + find.size() + " reviews to add meta data");
 
 		for (Review review : find) {
+			review.setInvalidGame(false);
 			try {
 				if ("arena-draft".equals(review.getReviewType())) {
 					draftParser.addMetaData(review);

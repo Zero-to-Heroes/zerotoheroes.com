@@ -1,12 +1,19 @@
 package com.coach.admin;
 
+import static org.springframework.data.mongodb.core.query.Criteria.*;
+import static org.springframework.data.mongodb.core.query.Query.*;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Field;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,13 +62,30 @@ public class AdminApiHandler {
 		this.environment = environment;
 	}
 
-	@RequestMapping(value = "/doAdmin", method = RequestMethod.GET)
+	@RequestMapping(value = "/findUntaggedReviews", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> doAdmin() {
 
 		if ("prod".equalsIgnoreCase(
 				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
 
-		return new ResponseEntity<String>((String) null, HttpStatus.OK);
+		Criteria crit = where("tags").size(0);
+		crit.and("sport").is("HearthStone");
+		crit.and("published").is(true);
+		crit.and("visibility").is("public");
+		crit.and("metaData.gameMode").nin("arena-game", "arena-draft", "tavern-brawl", "casual", "friendly");
+
+		Query query = query(crit);
+
+		Field fields = query.fields();
+		fields.include("id");
+		fields.include("tags");
+
+		List<Review> find = mongoTemplate.find(query, Review.class);
+
+		log.debug("count is " + find.stream().map(r -> r.getId()).collect(Collectors.toList()));
+		log.debug("" + find);
+
+		return new ResponseEntity<String>("count is " + find.size(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/updateAllReviews", method = RequestMethod.GET)

@@ -51,6 +51,8 @@
 											<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-if="review.authorReputation">{{review.authorReputation}}<img class="reputation-icon" src="{{ config.images.reputation }}"></img></span>
 											<span ng-if="!review.editing && canEdit(review)"> - </span>
 											<a ng-click="startEditingInformation()" class="link-minor" ng-if="!review.editing && canEdit(review)"> {{ 'global.review.comment.edit' | translate }}</a>
+											<a class="link-minor link-delete" ng-click="showConfirmDeleteButton()" ng-if=":delete:review.authorId == User.getUser().id && !showDelete" title="{{::translations.deleteButtonTooltip}}">{{::translations.deleteButton}}</a>
+											<a class="link-minor link-delete" ng-click="deleteReview()" ng-if=":delete:review.authorId == User.getUser().id && showDelete" title="{{::translations.confirmDeleteButtonTooltip}}">{{::translations.confirmDeleteButton}}</a>
 										</div>
 										<div class="decklist-field" ng-if="review.plugins.hearthstone.parseDecks.reviewDeck">
 											<span translate="hearthstone.review.decklist"></span>
@@ -112,8 +114,6 @@
 				<a class="link-minor link-nodeco" ng-click="unsubscribe()" ng-if=":reviewRefresh:(subscribed() && User.isLoggedIn())" title="{{::translations.unsubscribeReviewTooltip}}">{{::translations.unsubscribeReview}}<span class="glyphicon glyphicon-info-sign"></span></a>
 				<a class="link-minor link-nodeco" ng-click="subscribe()" ng-if=":reviewRefresh:(!subscribed() && User.isLoggedIn())" title="{{::translations.subscribeReviewTooltip}}">{{::translations.subscribeReview}}<span class="glyphicon glyphicon-info-sign"></span></a>
 				<a class="link-minor link-nodeco" ng-click="showProModal()" ng-if=":reviewRefresh:(!!coaches.length && !review.editing)" title="{{::translations.askProTooltip}}">{{::translations.askProButton}}</a>
-				<a class="link-minor link-delete" ng-click="showConfirmDeleteButton()" ng-if=":delete:review.authorId == User.getUser().id && !showDelete" title="{{::translations.deleteButtonTooltip}}">{{::translations.deleteButton}}</a>
-				<a class="link-minor link-delete" ng-click="deleteReview()" ng-if=":delete:review.authorId == User.getUser().id && showDelete" title="{{::translations.confirmDeleteButtonTooltip}}">{{::translations.confirmDeleteButton}}</a>
 			</div>
 
 			<!-- Dropdown to sort the criteria. Don't show if in the old comment system -->

@@ -551,14 +551,16 @@ body {
   margin-right: 15px;
   order: -2;
 }
-.list .review-list-item .specific-info .player-details {
+.list .review-list-item .specific-info .player-details,
+.list .review-list-item .specific-info .opponent-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: auto;
 }
-.list .review-list-item .specific-info .player-details i {
+.list .review-list-item .specific-info .player-details i,
+.list .review-list-item .specific-info .opponent-details i {
   margin: 0;
 }
 .list .review-list-item .title-container {

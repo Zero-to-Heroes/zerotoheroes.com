@@ -483,6 +483,7 @@ module.exports = function (grunt) {
 		grunt.task.run([
 		  	'clean:server',
 			'ngconstant:development',
+			// 'ngconstant:production',
 			'replace:defaultI18n',
 			'less',
 			'copy:index',
@@ -530,6 +531,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build-dev', [
 		'clean:dist',
 		'ngconstant:development',
+		// 'ngconstant:production',
 		'replace:defaultI18n',
 		'less',
 		'copy:index',

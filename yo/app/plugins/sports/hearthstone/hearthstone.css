@@ -229,7 +229,8 @@
   background-position: 100% 0;
 }
 .hearthstone .any-class-icon,
-.hearthstone .unknown-icon {
+.hearthstone .unknown-icon,
+.hearthstone .-icon {
   height: 45px;
   width: 45px;
   background: url(images/classes/any-class.png) no-repeat;
@@ -498,11 +499,6 @@
 }
 .hearthstone hearthstone-participants-details-arena .hearthstone-participants .level-details {
   display: none;
-}
-.hearthstone .hearthstone-participants .player-details,
-.hearthstone .hearthstone-participants .opponent-details {
-  display: table-cell;
-  vertical-align: middle;
 }
 .hearthstone .hearthstone-participants .player-name {
   display: inline-block;

@@ -126,6 +126,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Arena 10 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena 11 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena 12 wins", "skill-level"));
+		hearthstone.add(new Tag("Arena Draft", "skill-level"));
 		hearthstone.add(new Tag("Casual", "skill-level"));
 		hearthstone.add(new Tag("Friendly", "skill-level"));
 		hearthstone.add(new Tag("Tavern Brawl", "skill-level"));
@@ -139,6 +140,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("Midrange Hunter"));
 		hearthstone.add(new Tag("NZoth Hunter"));
 		hearthstone.add(new Tag("Secret Hunter"));
+		hearthstone.add(new Tag("Deathrattle Hunter"));
+		hearthstone.add(new Tag("Yogg'N'Load Hunter"));
 
 		hearthstone.add(new Tag("Combo Druid"));
 		hearthstone.add(new Tag("Astral Druid"));
@@ -158,6 +161,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("Palamurloc"));
 		hearthstone.add(new Tag("Midrange Paladin"));
 		hearthstone.add(new Tag("Dragon Paladin"));
+		hearthstone.add(new Tag("Egg Paladin"));
+		hearthstone.add(new Tag("Reno Paladin"));
 
 		hearthstone.add(new Tag("Mech Mage"));
 		hearthstone.add(new Tag("Tempo Mage"));
@@ -190,6 +195,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("NZoth Priest"));
 		hearthstone.add(new Tag("OTK Priest"));
 		hearthstone.add(new Tag("Resurrect Priest"));
+		hearthstone.add(new Tag("Reno Priest"));
 
 		hearthstone.add(new Tag("Oil Rogue"));
 		hearthstone.add(new Tag("Malygos Rogue"));
@@ -197,6 +203,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("Mill Rogue"));
 		hearthstone.add(new Tag("NZoth Rogue"));
 		hearthstone.add(new Tag("Thief Rogue"));
+		hearthstone.add(new Tag("Tempo Rogue"));
+		hearthstone.add(new Tag("Deathrattle Rogue"));
 
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));
@@ -206,6 +214,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Tempo Warrior"));
 		hearthstone.add(new Tag("Dragon Warrior"));
 
+		hearthstone.add(new Tag("Uncategorized"));
 		// Category
 		// hearthstone.add(new Tag("Aggro"));
 		// hearthstone.add(new Tag("Midrange"));

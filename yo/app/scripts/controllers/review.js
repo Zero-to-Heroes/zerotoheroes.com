@@ -239,13 +239,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		$rootScope.$on('account.close', function() {
 			//$log.log('on account close in review.js');
-			if ($scope.onAddComment) {
-				$log.log('in onAddComment');
-				$scope.uploadComment();
-				$scope.onAddComment = false;
-				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
-			}
-			else if ($scope.upvoting) {
+			if ($scope.upvoting) {
 				//$log.log('in upvoting');
 				$scope.upvoteReview();
 				$scope.upvoting = false;

@@ -130,7 +130,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 
 				$scope.toggleShowHelp = function() {
 					$scope.showHelp = !$scope.showHelp
-					$scope.$broadcast('$$rebind::' + 'commentRefresh')
+					$scope.$broadcast('$$rebind::' + 'help')
 				}
 
 				$scope.highlightUnread = function() {

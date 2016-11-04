@@ -221,7 +221,7 @@ public class ReviewApiHandler {
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/{reviewId}", method = RequestMethod.DELETE)
 	public @ResponseBody ResponseEntity<String> deleteReview(@PathVariable("reviewId") final String id) {
 		// String currentUser =
@@ -233,14 +233,11 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
 
-		if (user == null) {
-			return new ResponseEntity<String>("Unknown user ", HttpStatus.FORBIDDEN);
-		}
-		
-		if (!user.getId().equals(review.getAuthorId())) {
-			return new ResponseEntity<String>("You can only delete your own reviews", HttpStatus.FORBIDDEN);
-		}
-		
+		if (user == null) { return new ResponseEntity<String>("Unknown user ", HttpStatus.FORBIDDEN); }
+
+		if (!user.getId().equals(review.getAuthorId())) { return new ResponseEntity<String>(
+				"You can only delete your own reviews", HttpStatus.FORBIDDEN); }
+
 		reviewRepo.delete(review);
 
 		return new ResponseEntity<String>("Deleted review", HttpStatus.OK);
@@ -466,6 +463,21 @@ public class ReviewApiHandler {
 
 		Review review = reviewRepo.findById(id);
 		User user = userRepo.findByUsername(currentUser);
+
+		if (user == null) {
+			String providedName = null;
+			for (Comment comment : multiComment.values()) {
+				if (!StringUtils.isNullOrEmpty(comment.getAuthor())) {
+					providedName = comment.getAuthor();
+					break;
+				}
+			}
+			if (providedName != null) {
+				if (userRepo.findByUsername(providedName) != null) { return new ResponseEntity<Review>((Review) null,
+						HttpStatus.UNAUTHORIZED); }
+				currentUser = providedName;
+			}
+		}
 
 		List<Comment> orderedComments = new ArrayList<>();
 		for (String turn : multiComment.keySet()) {
@@ -996,10 +1008,12 @@ public class ReviewApiHandler {
 		// Add the ID of the author in addition to the name (we still keep
 		// the name
 		User user = userRepo.findByUsername(currentUser);
-		entity.setAuthorId(user.getId());
-		// by default a poster likes his post
-		reputationUpdater.updateReputationAfterAction(sport, entity.getReputation(), ReputationAction.Upvote,
-				entity.getAuthorId(), user);
-		entity.setAuthorReputation(user.getReputation(sport));
+		if (user != null) {
+			entity.setAuthorId(user.getId());
+			// by default a poster likes his post
+			reputationUpdater.updateReputationAfterAction(sport, entity.getReputation(), ReputationAction.Upvote,
+					entity.getAuthorId(), user);
+			entity.setAuthorReputation(user.getReputation(sport));
+		}
 	}
 }

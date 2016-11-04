@@ -72,6 +72,13 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 				$scope.uploadComments = function() {
 					// $log.debug('uploading comments', $scope.newComments)
 					$scope.mediaPlayer.preUploadComment($scope.review, $scope.newComments)
+					if (!User.isLoggedIn()) {
+						for (var property in $scope.newComments) {
+							if ($scope.newComments.hasOwnProperty(property)) {
+								$scope.newComments[property].author = $scope.guestUserName
+							}
+						}
+					}
 					Api.ReviewsMulti.save({reviewId: $scope.review.id}, $scope.newComments, 
 						function(data) {
 							$scope.showHelp = false;
@@ -83,6 +90,7 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 				  			$scope.review.canvas = data.canvas;
 				  			$scope.review.subscribers = data.subscribers;
 				  			$scope.review.plugins = data.plugins;
+				  			$scope.guestUserName = undefined
 
 							$scope.$broadcast('show-errors-reset')
 
@@ -124,6 +132,16 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 				$scope.goToTimestamp = function(turn) {
 					$scope.mediaPlayer.goToTimestamp(turn) 
 				}
+
+				$rootScope.$on('account.close', function() {
+					//$log.log('on account close in review.js');
+					if ($scope.onAddComment) {
+						$log.log('in onAddComment');
+						$scope.uploadComments();
+						$scope.onAddComment = false;
+						$scope.$broadcast('$$rebind::' + 'reviewRefresh')
+					}
+				});
 			}
 		}
 	}

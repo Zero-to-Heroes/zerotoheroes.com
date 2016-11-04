@@ -105,7 +105,7 @@ public class HSGameParser implements ReplayPlugin {
 						+ review.getParticipantDetails().getPlayerCategory() + ") vs "
 						+ review.getParticipantDetails().getOpponentName() + "("
 						+ review.getParticipantDetails().getOpponentCategory() + ")";
-				title += " - " + hsMeta.getWinStatus();
+				title += " - " + review.getParticipantDetails().getPlayerName() + " " + hsMeta.getWinStatus();
 				review.setTitle(title);
 			}
 

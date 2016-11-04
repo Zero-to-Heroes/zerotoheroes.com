@@ -20,11 +20,12 @@
 			</div>
 		</span>
 		<span class="more-meta-data">
+			<!-- TODO: 12 watchers created by these 2 lines in total, don't know why or how to remove them -->
 			<span class="result {{::video.metaData.winStatus}}" title="{{::translations[video.metaData.winStatus]}}"></span>
 			<span class="play-coin {{::video.metaData.playCoin}}" title="{{::translations[video.metaData.playCoin]}}"></span>
 		</span>
 		<span class="specific-info">
-			<div ng-switch="sport">
+			<div ng-switch="::sport">
 				<hearthstone-listing-details ng-switch-when="hearthstone" review="::video" hide-skill-level="true"></hearthstone-listing-details>
 			</div>
 		</span>

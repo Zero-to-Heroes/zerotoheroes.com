@@ -17,8 +17,11 @@ app.directive('reviewListItem', ['$log', 'SportsConfig', '$translate',
 				$scope.translations = {
 					submitted: $translate.instant('global.listing.video.submitted'),
 					by: $translate.instant('global.listing.video.by'),
+
 					won: $translate.instant('global.listing.wonTooltip'),
 					lost: $translate.instant('global.listing.lostTooltip'),
+					tie: $translate.instant('global.listing.tieTooltip'),
+
 					play: $translate.instant('global.listing.playTooltip'),
 					coin: $translate.instant('global.listing.coinTooltip'),
 					commentsTitle: $translate.instant('global.listing.video.commentsTitle'),

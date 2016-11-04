@@ -302,6 +302,7 @@
 			},
 			"wonTooltip": "The main player won",
 			"lostTooltip": "The main player lost",
+			"tieTooltip": "Game ended in a tie",
 			"playTooltip": "The main player was on the play",
 			"coinTooltip": "The main player was on the coin"
 		},

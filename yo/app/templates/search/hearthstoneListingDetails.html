@@ -1,4 +1,4 @@
-<div ng-switch="review.mediaType">
+<div ng-switch="::review.mediaType">
   <hearthstone-listing-details-arena ng-switch-when="arena-draft" review="::review" hide-participants="::hideParticipants" hide-skill-level="::hideSkillLevel"></hearthstone-listing-details-arena>
   <hearthstone-listing-details-game ng-switch-default review="::review" hide-participants="::hideParticipants" hide-skill-level="::hideSkillLevel"></hearthstone-listing-details-game>
 </div>

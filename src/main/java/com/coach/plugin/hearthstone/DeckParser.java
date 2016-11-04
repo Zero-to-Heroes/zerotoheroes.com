@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -117,8 +118,9 @@ public class DeckParser implements Plugin {
 		parseIcyVeinsDeck(pluginData, initialText);
 		parseManaCrystalsDeck(pluginData, initialText);
 		parseHearthStatsDeck(pluginData, initialText);
-		// parseHearthStatsDeckFull(pluginData, initialText);
-		parseHearthHeadDeck(pluginData, initialText);
+		// Not supporting HH for now, as it requires javascript support. Waiting
+		// to see if an API is available
+		// parseHearthHeadDeck(pluginData, initialText);
 		parseInlineDeck(pluginData, initialText);
 	}
 
@@ -160,7 +162,7 @@ public class DeckParser implements Plugin {
 		Pattern pattern = Pattern.compile(HEARTHHEAD_DECK_ID_REGEX, Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(initialText);
 		while (matcher.find()) {
-			String deckId = matcher.group(2) + matcher.group(3);
+			String deckId = matcher.group(2) + (StringUtils.isEmpty(matcher.group(3)) ? "" : matcher.group(3));
 
 			// Don't override existing decks (performance)
 			if (pluginData.get(deckId) != null) {
@@ -717,6 +719,10 @@ public class DeckParser implements Plugin {
 	}
 
 	private void saveDeck(Map<String, String> pluginData, String deckId, Deck deck) throws JsonProcessingException {
+
+		// Don't save empty decks
+		if (CollectionUtils.isEmpty(deck.classCards) && CollectionUtils.isEmpty(deck.neutralCards)) { return; }
+
 		// Post-process deck
 		if (StringUtils.isNotEmpty(deck.title)) {
 			deck.title = deck.title.replaceAll("\"", "");

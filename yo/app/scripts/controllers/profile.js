@@ -4,6 +4,7 @@ angular.module('controllers').controller('ProfileController', ['$scope', '$route
 	function($scope, $routeParams, Api, $log, User, $route, $timeout, $location, $rootScope, $translate) {
 
 		$scope.translations = {
+			userNotExist: $translate.instant('global.profile.userNotExist'),
 			info: $translate.instant('global.profile.menu.info'),
 			feed: $translate.instant('global.profile.menu.feed'),
 			preferences: $translate.instant('global.profile.menu.preferences'),
@@ -18,6 +19,16 @@ angular.module('controllers').controller('ProfileController', ['$scope', '$route
 				function(data) {
 					$log.debug('retrieved data for', $routeParams.userName, data)
 					$scope.coachInformation = data
+				}
+			)
+			Api.UserPing.get({identifier: $routeParams.userName}, 
+				function(data) {
+					$scope.missingUser = false
+					$scope.$broadcast('$$rebind::' + 'newProfile')
+				},
+				function(error) {
+					$scope.missingUser = true
+					$scope.$broadcast('$$rebind::' + 'newProfile')
 				}
 			)
 		}

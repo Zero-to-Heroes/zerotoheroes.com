@@ -23,6 +23,7 @@ services.factory('Api', ['$resource', 'ENV',
 			Payment: $resource(ENV.apiEndpoint + url + 'payment/:reviewId/:coachId/:email/:tariffId', {reviewId: '@reviewId', coachId: '@coachId', email:'@email', tariffId: '@tariffId'}),
 			
 			Users: $resource(ENV.apiEndpoint + url + 'users/:identifier', {identifier: '@identifier'}),
+			UserPing: $resource(ENV.apiEndpoint + url + 'users/ping/:identifier', {identifier: '@identifier'}),					
 			Profile: $resource(ENV.apiEndpoint + url + 'profile'),					
 			Passwords: $resource(ENV.apiEndpoint + url + 'users/password/:key', {key: '@key'}),
 			Login: $resource(ENV.apiEndpoint + url + 'login', {}),

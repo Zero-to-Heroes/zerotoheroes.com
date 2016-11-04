@@ -354,6 +354,7 @@
 			"authorCriteriaTooShort": "Please specify at least 3 characters when looking for a player / contributor"
 		},
 		"profile": {
+			"userNotExist": "No one goes by that name, sorry (the user doesn't exist)",
 			"messages": {
 				"menu": {
 					"all": "all",

@@ -1,6 +1,10 @@
 <view-title>{{'User - ' + user}}</view-title>
 
-<div class="background-white profile-page">
+	<div class="alert alert-warning status-message" ng-if=":newProfile:missingUser">
+		<span>{{::translations.userNotExist}}</span>
+	</div>
+
+<div class="background-white profile-page" ng-if=":newProfile:!missingUser">
 	
 	<div class="menu-bar">
 		<ul>

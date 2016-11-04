@@ -98,6 +98,27 @@ public class UserApiHandler {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/ping/{identifier}", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<Boolean> pingUser(@PathVariable("identifier") String identifier) {
+		// log.debug("Retrieving user by " + identifier);
+
+		User user = null;
+		if (StringUtils.isNullOrEmpty(identifier)) {
+			log.debug("No identifier provided, returning 406");
+			return new ResponseEntity<Boolean>((Boolean) null, HttpStatus.NOT_ACCEPTABLE);
+		}
+		if (identifier.contains("@")) {
+			user = userRepository.findByEmail(identifier);
+		}
+		else {
+			user = userRepository.findByUsername(identifier);
+		}
+
+		if (user == null) { return new ResponseEntity<Boolean>((Boolean) null, HttpStatus.NOT_FOUND); }
+
+		return new ResponseEntity<Boolean>((Boolean) null, HttpStatus.OK);
+	}
+
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<String> register(@RequestBody final User user) {
 		log.debug("Registering user: " + user);

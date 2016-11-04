@@ -22,9 +22,9 @@ public class SavedSearchSubscriptionService {
 
 		List<SavedSearchSubscription> subs = subrepo.findAll();
 
-		log.debug("Loaded all subs: " + subs);
+		// log.debug("Loaded all subs: " + subs);
 		for (SavedSearchSubscription sub : subs) {
-			log.debug("matches? " + sub.getCriteria().matches(review));
+			// log.debug("matches? " + sub.getCriteria().matches(review));
 			if (sub.getCriteria().matches(review)) {
 				result.add(sub);
 			}

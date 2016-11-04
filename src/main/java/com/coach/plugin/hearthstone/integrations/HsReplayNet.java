@@ -33,6 +33,7 @@ import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.SSLTools;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.IntegrationPlugin;
+import com.coach.plugin.hearthstone.HSGameParser;
 import com.coach.review.HasText;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
@@ -57,6 +58,9 @@ public class HsReplayNet implements IntegrationPlugin {
 
 	@Autowired
 	SlackNotifier slackNotifier;
+
+	@Autowired
+	HSGameParser parser;
 
 	public HsReplayNet() {
 		System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
@@ -105,7 +109,14 @@ public class HsReplayNet implements IntegrationPlugin {
 					review.setFileType("json");
 					review.setMediaType("game-replay");
 					review.setReviewType("game-replay");
+					review.setVisibility("public");
 					review.setTranscodingDone(true);
+					try {
+						parser.addMetaData(review);
+					}
+					catch (Exception e) {
+						slackNotifier.notifyError(e, "Could not parse meta data for review", review);
+					}
 					repo.save(review);
 					log.debug("review " + review);
 				}

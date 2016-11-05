@@ -218,6 +218,49 @@ public class ReviewPublicApi {
 		return processReviewLogs(user, reviews, logInfo);
 	}
 
+	@RequestMapping(value = "/upload/game/init", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> initReview() throws Exception {
+		FileUploadResponse response = null;
+		Review review = new Review();
+		review.setFileType("text/plain");
+		review.setSport(Review.Sport.load("hearthstone"));
+		review.setReplay("true");
+		review.setVisibility("restricted");
+		review.setTemporaryReplay("");
+		review.setReviewType("game-replay");
+		review.setUseV2comments(true);
+
+		reviewRepo.save(review);
+		List<String> ids = new ArrayList<>();
+		ids.add(review.getId());
+		log.debug("Created review " + review);
+
+		response = new FileUploadResponse(ids, null);
+		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/upload/game/{reviewId}/{applicationKey}/{userToken}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> uploadOneReviewWithToken(
+			@RequestParam("data") MultipartFile data, @PathVariable(value = "reviewId") String reviewId,
+			@PathVariable(value = "applicationKey") String applicationKey,
+			@PathVariable(value = "userToken") String userToken) throws Exception {
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		log.debug("Starting draft upload for " + currentUser + " " + applicationKey + " " + userToken);
+		User user = userRepo.findByUsername(currentUser);
+
+		List<Review> reviews = new ArrayList<>();
+		Review review = reviewRepo.findById(reviewId);
+
+		if (review == null) { return new ResponseEntity<FileUploadResponse>((FileUploadResponse) null,
+				HttpStatus.NOT_FOUND); }
+		reviews.add(review);
+
+		byte[] logInfo = getLogInfo(data);
+
+		return processReviewLogs(user, reviews, logInfo, applicationKey, userToken);
+	}
+
 	@RequestMapping(value = "/upload/game/{applicationKey}/{userToken}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> uploadReviewWithToken(
 			@RequestParam("data") MultipartFile data, @PathVariable(value = "applicationKey") String applicationKey,
@@ -255,8 +298,16 @@ public class ReviewPublicApi {
 
 		// Process file
 		List<String> ids = new ArrayList<>();
-		for (String game : games) {
-			Review review = new Review();
+		for (int i = 0; i < games.size(); i++) {
+			String game = games.get(i);
+			Review review = null;
+			if (reviews.size() > i) {
+				review = reviews.get(i);
+			}
+			else {
+				review = new Review();
+				reviews.add(review);
+			}
 			review.setFileType(fileType);
 			review.setSport(Review.Sport.load("hearthstone"));
 			review.setTemporaryReplay(game);
@@ -271,7 +322,7 @@ public class ReviewPublicApi {
 			// review.setTemporaryKey(tempKey);
 
 			reviewApi.createReview(review);
-			reviews.add(review);
+			// reviews.add(review);
 			ids.add(review.getId());
 			log.debug("Created review " + review);
 		}

@@ -76,4 +76,19 @@ public class ClaimAccountApiHandler {
 
 		return new ResponseEntity<String>("account claimed by " + user.getUsername(), HttpStatus.OK);
 	}
+
+	@RequestMapping(value = "/account/{applicationKey}/{userToken}", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<String> getSiteAccount(@PathVariable("applicationKey") String applicationKey,
+			@PathVariable("userToken") String userToken) throws Exception {
+
+		User linkedUser = service.loadUser(applicationKey, userToken);
+		if (linkedUser == null) {
+			log.debug("no account match " + applicationKey + "/" + userToken);
+			return new ResponseEntity<String>("No account match", HttpStatus.NOT_FOUND);
+		}
+
+		log.debug("match " + applicationKey + "/" + userToken + ": " + linkedUser.getUsername());
+
+		return new ResponseEntity<String>(linkedUser.getUsername(), HttpStatus.OK);
+	}
 }

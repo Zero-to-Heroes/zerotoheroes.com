@@ -21,7 +21,7 @@
 			<span ng-if=":commentRefresh:(comment.id && canEdit(comment) && !comment.editing)"> - </span>
 			<a ng-click="startEditing(comment)" class="link-minor" ng-if=":commentRefresh:(comment.id && canEdit(comment) && !comment.editing)">{{::translations.edit}}</a>
 			
-			<span ng-if=":commentRefresh:(User.getName() == review.author&& User.getName() == review.author && review.authorId && review.authorId)"> - </span>
+			<span ng-if=":commentRefresh:(User.getName() == review.author && review.authorId && User.getName() != comment.author)"> - </span>
 			<a ng-click="toggleHelpful(comment)" class="validated" ng-if=":commentRefresh:(comment.helpful) && User.getName() != comment.author && User.getName() == review.author && review.authorId"><span class="glyphicon glyphicon-ok"></span>{{::translations.helpedAuthor}}</a>
 			<a ng-click="toggleHelpful(comment)" class="link-minor" ng-if=":commentRefresh:(!comment.helpful && User.getName() != comment.author && User.getName() == review.author && review.authorId)"><span class="glyphicon glyphicon-ok"></span>{{::translations.helpedMe}}</a>
 		</div>

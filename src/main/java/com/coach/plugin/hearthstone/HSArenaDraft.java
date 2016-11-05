@@ -48,7 +48,7 @@ public class HSArenaDraft implements ReplayPlugin {
 
 	@Override
 	public String getPhase() {
-		return "init";
+		return "all";
 	}
 
 	@Override
@@ -58,7 +58,10 @@ public class HSArenaDraft implements ReplayPlugin {
 		String replayJson = null;
 
 		// Try to parse the .json file
-		if ("arenatracker".equals(review.getFileType()) && !StringUtils.isEmpty(review.getTemporaryReplay())) {
+		if (!StringUtils.isEmpty(review.getKey())) {
+			replayJson = s3utils.readFromS3(review.getKey());
+		}
+		else if ("arenatracker".equals(review.getFileType()) && !StringUtils.isEmpty(review.getTemporaryReplay())) {
 			log.debug("Converting arena tracker file");
 			String atFile = review.getTemporaryReplay();
 			replayJson = convertToJson(atFile);
@@ -78,9 +81,11 @@ public class HSArenaDraft implements ReplayPlugin {
 		}
 		// Store the new file to S3 and update the review with the correct
 		// key
-		String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/draft");
-		review.setKey(key);
-		s3utils.putToS3(replayJson, review.getKey(), "application/json");
+		if (StringUtils.isEmpty(review.getKey())) {
+			String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/draft");
+			review.setKey(key);
+			s3utils.putToS3(replayJson, review.getKey(), "application/json");
+		}
 
 		review.setTemporaryReplay(replayJson);
 		addMetaData(review);

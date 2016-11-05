@@ -253,6 +253,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			}
 		});
 
+		$rootScope.$on('reviewRefresh', function() {
+			$scope.$broadcast('$$rebind::' + 'reviewRefresh')
+		})
+
 
 
 		//===============

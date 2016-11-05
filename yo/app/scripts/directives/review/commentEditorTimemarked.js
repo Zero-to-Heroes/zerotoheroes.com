@@ -93,6 +93,8 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 				  			$scope.guestUserName = undefined
 
 							$scope.$broadcast('show-errors-reset')
+							$rootScope.$broadcast('reviewRefresh')
+
 
 							$scope.addingComment = false
 						}, 

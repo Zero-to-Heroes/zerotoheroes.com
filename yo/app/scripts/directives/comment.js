@@ -208,10 +208,11 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 									$scope.review.reviewVideoMap = data.reviewVideoMap || {};
 									$scope.review.plugins = data.plugins;
 									$scope.reply = {};
-									if (data.text.match(timestampOnlyRegex)) {
-										//$log.log('incrementing timestamps after comment upload');
-										User.incrementTimestamps();
-									}
+									$rootScope.$broadcast('reviewRefresh')
+									// if (data.text.match(timestampOnlyRegex)) {
+									// 	//$log.log('incrementing timestamps after comment upload');
+									// 	User.incrementTimestamps();
+									// }
 								}, 
 								function(error) {
 									// Error handling

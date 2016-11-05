@@ -48,7 +48,7 @@ public class ProfileInfo {
 	}
 
 	public void populateForSport(User user, Sport sport) {
-		flair = fetchFlair(sport, "unframed");
+		flair = fetchFlair(sport, null);
 		gameIdentifier = fetchGameIdentifier(sport);
 		dailyPlays = fetchDailyPlays(sport);
 		dailyComments = fetchDailyComments(sport);

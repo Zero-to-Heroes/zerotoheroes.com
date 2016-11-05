@@ -314,6 +314,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.updateDescription = function() {
+			$log.debug('anyone here?')
 			$scope.mediaPlayer.preUploadComment($scope.review, $scope.review)
 			
 			var newReview = {
@@ -333,27 +334,28 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				newReview.plugins.hearthstone.parseDecks.reviewDeck = newReview.plugins.hearthstone.parseDecks.reviewDeck.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '')
 				newReview.plugins.hearthstone.parseDecks.reviewDeck = '[' + newReview.plugins.hearthstone.parseDecks.reviewDeck + ']'	
 			}
-			if ($scope.videoInformationForm.$valid) {
-				$log.log('updating review to ', newReview);
-				Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview, 
-					function(data) {
-						$scope.showHelp = false;
-		  				$scope.review.canvas = data.canvas
-		  				$scope.review.plugins = data.plugins;
+			$log.debug('review valid?', $scope.videoInformationForm.$valid, $scope.videoInformationForm)
+			// if ($scope.videoInformationForm.$valid) {
+			$log.log('updating review to ', newReview);
+			Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview, 
+				function(data) {
+					$scope.showHelp = false;
+	  				$scope.review.canvas = data.canvas
+	  				$scope.review.plugins = data.plugins;
 
-		  				$log.log('plugins', $scope.review.plugins);
-						$scope.updateVideoInformation(data);
-		  		// 		if (data.text.match(TextParserService.timestampOnlyRegex)) {
-						// 	// $log.log('incrementing timestamps after comment upload');
-						// 	User.incrementTimestamps();
-						// }
-					}, 
-					function(error) {
-						// Error handling
-						$log.error(error);
-					}
-				)
-			}
+	  				$log.log('plugins', $scope.review.plugins);
+					$scope.updateVideoInformation(data);
+	  		// 		if (data.text.match(TextParserService.timestampOnlyRegex)) {
+					// 	// $log.log('incrementing timestamps after comment upload');
+					// 	User.incrementTimestamps();
+					// }
+				}, 
+				function(error) {
+					// Error handling
+					$log.error(error);
+				}
+			)
+			// }
 		}
 
 		$scope.updateVideoInformation = function(data) {

@@ -165,7 +165,7 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2) + (StringUtils.isEmpty(matcher.group(3)) ? "" : matcher.group(3));
 
 			// Don't override existing decks (performance)
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
@@ -209,7 +209,7 @@ public class DeckParser implements Plugin {
 			}
 
 			// Don't override existing decks (performance)
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
@@ -247,7 +247,7 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2);
 
 			// Don't override existing decks (performance)
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
@@ -257,6 +257,7 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8", MANACRYSTALS_DECK_HOST_URL);
 
 			Deck deck = new Deck();
+			deck.url = deckUrl;
 			deck.title = doc.select(".guide article .decklist-meta-data").get(0).select("h2 a").text();
 
 			Elements classCards = doc.select(".guide article .decklist-meta-data").get(0).select(".cards").get(0)
@@ -299,7 +300,7 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2);
 
 			// Don't override existing decks (performance)
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
@@ -309,6 +310,7 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8", ICYVEINS_DECK_HOST_URL);
 
 			Deck deck = new Deck();
+			deck.url = deckUrl;
 			deck.title = doc.select(".page_title .header").text();
 
 			Elements cards = doc.select(".deck_card_list");
@@ -351,7 +353,7 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2);
 
 			// Don't override existing decks (performance)
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
@@ -361,6 +363,7 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
+			deck.url = deckUrl;
 			deck.title = doc.select("header h1").text();
 
 			Elements cards = doc.select("ul.deck-class");
@@ -403,7 +406,7 @@ public class DeckParser implements Plugin {
 			// log.debug("deck id " + deckId);
 
 			// Don't override existing decks
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
@@ -435,6 +438,7 @@ public class DeckParser implements Plugin {
 
 			Deck deck = new Deck();
 			deck.title = "ArenaDrafts - " + draft.getString("Hero") + " - " + numberOfWins + " wins";
+			deck.url = deckUrl;
 			JSONArray pickedCards = draft.getJSONArray("Picks");
 
 			for (int i = 0; i < pickedCards.length(); i++) {
@@ -467,7 +471,7 @@ public class DeckParser implements Plugin {
 
 			// log.debug("parsing ZetoH deck " + deckId);
 			// Don't override existing decks (performance)
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				// log.debug("continuing");
 				continue;
 			}
@@ -523,16 +527,15 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2);
 
 			// Don't override existing decks
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
-			String deckUrl = HEARTHARENA_DECK_HOST_URL + deckId;
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);
-
-			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
-
 			Deck deck = new Deck();
+			deck.url = HEARTHARENA_DECK_HOST_URL + deckId;
+
+			Document doc = Jsoup.connect(deck.url).userAgent("Mozilla").get();
 
 			// Build the deck title
 			deck.title = "HearthArena - " + doc.select("#arenaDeck main h1 > span").text();
@@ -563,7 +566,7 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2);
 
 			// Don't override existing decks (performance)
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
@@ -573,6 +576,7 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
+			deck.url = deckUrl;
 			deck.title = doc.select(".deck h1").text();
 
 			Elements classCards = doc.select("#liste_cartes #cartes_classe tbody tr");
@@ -612,7 +616,7 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2);
 
 			// Don't override existing decks
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
@@ -622,6 +626,7 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
+			deck.url = deckUrl;
 			deck.title = doc.select(".deck-title").first().text();
 
 			Elements classCards = doc.select(".t-deck-details-card-list.class-listing td");
@@ -657,7 +662,7 @@ public class DeckParser implements Plugin {
 			String deckId = matcher.group(2) + "#" + cardList;
 
 			// Don't override existing decks
-			if (pluginData.get(deckId) != null) {
+			if (!shouldReparseDeck(pluginData, deckId)) {
 				continue;
 			}
 
@@ -716,6 +721,15 @@ public class DeckParser implements Plugin {
 
 			saveDeck(pluginData, deckId, deck);
 		}
+	}
+
+	private boolean shouldReparseDeck(Map<String, String> pluginData, String deckId) {
+		if (pluginData.get(deckId) != null) {
+			JSONObject deck = new JSONObject(pluginData.get(deckId));
+			// Returns JSONObject#Null instead of simply null
+			if (deck.get("url") != null && !deck.get("url").equals(null)) { return false; }
+		}
+		return true;
 	}
 
 	private void saveDeck(Map<String, String> pluginData, String deckId, Deck deck) throws JsonProcessingException {

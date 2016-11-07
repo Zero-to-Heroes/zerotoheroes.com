@@ -153,7 +153,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// Users who will be notified when something is posted on this review
 	private Set<String> subscribers = new HashSet<>();
 
-	private boolean useV2comments = false;
+	private boolean useV2comments = true;
 
 	// =================
 	// Deprecated fields (mainly legacy from the video time)

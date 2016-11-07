@@ -596,6 +596,7 @@
 					"turns": {
 						"mulligan": "Mulligan and matchup",
 						"turn": "Turn ",
+						"pick": "Pick ",
 						"endgame": "Endgame"
 					}
 				}

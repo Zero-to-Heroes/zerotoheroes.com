@@ -64,7 +64,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							{name: 'parseCardsText', version: 23, dev: dev}, 
 							{name: 'parseDecks', version: 40, dev: dev}, 
 							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 110, dev: dev},
-							{name: 'hsarenadraft', player: true, mediaType: 'arena-draft', version: 20, dev: dev}
+							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 21, dev: dev}
 						],
 						customCss: 'hearthstone.css?4'
 					},
@@ -193,9 +193,9 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 		}
 
 		service.executePlugin = function(review, plugin, target) {
-			// $log.debug('Executing lpugin', plugin, target, window['hsarenadraft']);
+			// $log.debug('should execute?', plugin, plugin.name, window[plugin.name], window[plugin.name].execute)
 			if (!plugin || !plugin.name || !window[plugin.name] || !window[plugin.name].execute) return target;
-			// $log.debug('\tFound plugin to execute', window[plugin.name].execute)
+			// $log.debug('\tFound plugin to execute')
 
 			return window[plugin.name].execute(review, target);
 		}

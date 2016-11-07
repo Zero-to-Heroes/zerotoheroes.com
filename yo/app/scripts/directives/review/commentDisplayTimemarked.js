@@ -98,15 +98,15 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					if (turn == 'ZZendgame')
 						turn = 'endgame'
 
-					$log.debug('getting turn label for', turn)
+					// $log.debug('getting turn label for', turn)
 					var text = TextParserService.parseText($scope.review, turn, $scope.plugins)
-					$log.debug('text is', text)
+					// $log.debug('text is', text)
 					// Once parsed, there is an <a> tag before the turn label
 					text = text.replace('>t', '>' + $translate.instant('global.review.comment.timemarked.turns.turn'))
 					text = text.replace('>p', '>' + $translate.instant('global.review.comment.timemarked.turns.pick'))
 					text = text.replace('>mulligan', '>' + $translate.instant('global.review.comment.timemarked.turns.mulligan'))
 					text = text.replace('>endgame', '>' + $translate.instant('global.review.comment.timemarked.turns.endgame'))
-					$log.debug('final text', text)
+					// $log.debug('final text', text)
 					// $log.debug('parsed', text)
 					// if (turn == '00mulligan' || turn == 'mulligan')
 					// 	text = $translate.instant('global.review.comment.timemarked.turns.mulligan')

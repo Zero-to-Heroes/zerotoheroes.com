@@ -33,7 +33,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Getter
 @Setter
-@ToString(exclude = { "comments", "tempCanvas" })
+@ToString(exclude = { "comments", "tempCanvas", "text" })
 @Slf4j
 public class Comment implements HasText, HasReputation {
 

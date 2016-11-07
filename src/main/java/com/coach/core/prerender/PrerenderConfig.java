@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.apache.http.HttpHost;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -16,6 +14,8 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
 import com.amazonaws.util.StringUtils;
 import com.google.common.collect.Lists;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class PrerenderConfig {
@@ -82,7 +82,9 @@ public class PrerenderConfig {
 	public List<String> getCrawlerUserAgents() {
 		List<String> crawlerUserAgents = Lists.newArrayList("baiduspider", "facebookexternalhit", "twitterbot",
 				"rogerbot", "linkedinbot", "embedly", "quora link preview", "showyoubo", "outbrain", "pinterest",
-				"developers.google.com/+/web/snippet", "slackbot", "vkShare", "W3C_Validator", "redditbot", "Applebot");
+				"pinterest/0.", "developers.google.com/+/web/snippet", "slackbot", "vkShare", "W3C_Validator",
+				"redditbot", "Applebot", "WhatsApp", "flipboard", "tumblr", "bitlybot", "SkypeUriPreview", "nuzzel",
+				"Discordbot");
 		final String crawlerUserAgentsFromConfig = config.get("crawlerUserAgents");
 		if (!StringUtils.isNullOrEmpty(crawlerUserAgentsFromConfig)) {
 			crawlerUserAgents.addAll(Arrays.asList(crawlerUserAgentsFromConfig.trim().split(",")));
@@ -93,9 +95,9 @@ public class PrerenderConfig {
 
 	public List<String> getExtensionsToIgnore() {
 		List<String> extensionsToIgnore = Lists.newArrayList(".js", ".json", ".css", ".xml", ".less", ".png", ".jpg",
-				".jpeg", ".gif", ".pdf", ".doc", ".txt", ".ico", ".rss", ".zip", ".mp3", ".rar", ".exe", ".wmv",
-				".doc", ".avi", ".ppt", ".mpg", ".mpeg", ".tif", ".wav", ".mov", ".psd", ".ai", ".xls", ".mp4", ".m4a",
-				".swf", ".dat", ".dmg", ".iso", ".flv", ".m4v", ".torrent", ".woff", ".ttf");
+				".jpeg", ".gif", ".pdf", ".doc", ".txt", ".ico", ".rss", ".zip", ".mp3", ".rar", ".exe", ".wmv", ".doc",
+				".avi", ".ppt", ".mpg", ".mpeg", ".tif", ".wav", ".mov", ".psd", ".ai", ".xls", ".mp4", ".m4a", ".swf",
+				".dat", ".dmg", ".iso", ".flv", ".m4v", ".torrent", ".woff", ".ttf");
 		final String extensionsToIgnoreFromConfig = config.get("extensionsToIgnore");
 		if (!StringUtils.isNullOrEmpty(extensionsToIgnoreFromConfig)) {
 			extensionsToIgnore.addAll(Arrays.asList(extensionsToIgnoreFromConfig.trim().split(",")));

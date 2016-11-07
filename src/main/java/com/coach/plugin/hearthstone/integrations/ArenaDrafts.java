@@ -117,15 +117,20 @@ public class ArenaDrafts implements IntegrationPlugin {
 		for (int i = 0; i < pickedCards.length(); i++) {
 			JSONObject cardObj = pickedCards.getJSONObject(i);
 
-			Pick pick = new Pick();
-			pick.Item1 = cardObj.getJSONObject("Card1Info").getString("Id");
-			pick.Item2 = cardObj.getJSONObject("Card2Info").getString("Id");
-			pick.Item3 = cardObj.getJSONObject("Card3Info").getString("Id");
-			result.detectedcards.add(pick);
-
 			int cardPickIndex = cardObj.getInt("CardPicked");
-			String pickedCard = cardObj.getJSONObject("Card" + cardPickIndex + "Info").getString("Id");
-			result.pickedcards.add(pickedCard);
+
+			// A bug that can occur sometimes, cf
+			// https://github.com/Zero-to-Heroes/zerotoheroes.com/issues/39
+			if (cardPickIndex > 0) {
+				Pick pick = new Pick();
+				pick.Item1 = cardObj.getJSONObject("Card1Info").getString("Id");
+				pick.Item2 = cardObj.getJSONObject("Card2Info").getString("Id");
+				pick.Item3 = cardObj.getJSONObject("Card3Info").getString("Id");
+				result.detectedcards.add(pick);
+
+				String pickedCard = cardObj.getJSONObject("Card" + cardPickIndex + "Info").getString("Id");
+				result.pickedcards.add(pickedCard);
+			}
 		}
 		return result;
 	}

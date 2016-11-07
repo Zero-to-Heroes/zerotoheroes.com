@@ -579,6 +579,12 @@
 				"otherVotes": "and {{number}} others",
 				"otherVote": "and one other",
 
+				"deleteButtonTooltip": "Deleting a comment can't be undone. Are you SURE you want to delete it?",
+				"deleteButton": "Delete comment",
+				"confirmDeleteButtonTooltip": "Deleting a comment can't be undone. Are you REALLY SURE you want to delete it?",
+				"confirmDeleteButton": "Yes, delete it",
+				"deletionDone": "Comment successfully deleted",
+
 				"addCommentTextPlaceholderTimemarked": "Help {{name}}? You are now testing the new comment system - more info on the forums",
 				"timemarkedCommentExplanation": "You have comments waiting to be published on ",
 				"timemarkedCommentExplanation2": "They will all be published once you hit the \"add comment\" button",

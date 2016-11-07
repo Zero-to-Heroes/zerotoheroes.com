@@ -3,8 +3,8 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', '$location', 'TextParserService', '$translate', 
-	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse, $location, TextParserService, $translate) {
+app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', '$location', 'TextParserService', '$translate', '$timeout', 
+	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse, $location, TextParserService, $translate, $timeout) {
 
 		return {
 			restrict: 'E',
@@ -33,6 +33,13 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					hideFormattingHelpButton: $translate.instant('global.review.comment.hideFormattingHelpButton'),
 					markUnreadButton: $translate.instant('global.profile.messages.markUnreadButton'),
 					markReadButton: $translate.instant('global.profile.messages.markReadButton'),
+
+					deleteButtonTooltip: $translate.instant('global.review.comment.deleteButtonTooltip'),
+					deleteButton: $translate.instant('global.review.comment.deleteButton'),
+					confirmDeleteButtonTooltip: $translate.instant('global.review.comment.confirmDeleteButtonTooltip'),
+					confirmDeleteButton: $translate.instant('global.review.comment.confirmDeleteButton'),
+					deletionDone: $translate.instant('global.review.comment.deletionDone'),
+
 					helpedAuthor: $translate.instant('global.review.comment.helpedAuthor', {name: $scope.review.author}),
 					helpedMe: $translate.instant('global.review.comment.helpedMe')
 				}
@@ -222,6 +229,33 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 							);
 						}
 					}
+				}
+
+
+
+				//===============
+				// Deletion
+				//===============
+				$scope.showConfirmDeleteButton = function() {
+					$scope.showDelete = true
+					$scope.$broadcast('$$rebind::' + 'delete')
+					$timeout(function() {
+						$scope.showDelete = false
+						$scope.$broadcast('$$rebind::' + 'delete')
+					}, 10000)
+				}
+
+				$scope.deleteReview = function() {
+					Api.Comments.delete({reviewId: $scope.review.id, commentId: $scope.comment.id}, 
+						function(data) {
+							$scope.deletionMessage = true
+							$scope.showDelete = false
+							$scope.$broadcast('$$rebind::' + 'delete')
+						},
+						function(error) {
+							$log.warn('could not delete comment', error)
+						}
+					)
 				}
 
 				//===============

@@ -243,6 +243,34 @@ public class ReviewApiHandler {
 		return new ResponseEntity<String>("Deleted review", HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.DELETE)
+	public @ResponseBody ResponseEntity<String> deleteComment(@PathVariable("reviewId") final String id,
+			@PathVariable("commentId") final int commentId) {
+		// String currentUser =
+		// SecurityContextHolder.getContext().getAuthentication().getName();
+		Review review = reviewRepo.findById(id);
+
+		if (review == null) { return new ResponseEntity<String>("Review not found " + id, HttpStatus.NOT_FOUND); }
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		User user = userRepo.findByUsername(currentUser);
+
+		if (user == null) { return new ResponseEntity<String>("Unknown user " + currentUser, HttpStatus.FORBIDDEN); }
+
+		Comment comment = review.getComment(commentId);
+
+		if (comment == null) { return new ResponseEntity<String>("Comment not found " + commentId,
+				HttpStatus.NOT_FOUND); }
+
+		if (!user.getId().equals(comment.getAuthorId())) { return new ResponseEntity<String>(
+				"You can only delete your own reviews", HttpStatus.FORBIDDEN); }
+
+		review.deleteComment(commentId);
+		reviewService.updateAsync(review);
+
+		return new ResponseEntity<String>("Deleted review", HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/multi", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<ListReviewResponse> getReviews(
 			@RequestParam(value = "reviewIds") final List<String> ids) {

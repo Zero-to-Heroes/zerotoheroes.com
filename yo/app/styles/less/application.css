@@ -387,7 +387,9 @@ body {
   margin-left: 0;
 }
 .video-information .link-delete,
-.video-information .link-delete:hover {
+.video-comment .link-delete,
+.video-information .link-delete:hover,
+.video-comment .link-delete:hover {
   color: red;
 }
 .no-more-review-description-text {

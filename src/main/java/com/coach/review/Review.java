@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
@@ -590,6 +591,18 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public void highlightUnreadNotifs(List<Notification> unreadNotifs) {
 		for (Comment comment : getComments()) {
 			comment.highlightUnreadNotifs(unreadNotifs);
+		}
+	}
+
+	public void deleteComment(int commentId) {
+		Comment comment = getComment(commentId);
+		if (comment == null) { return; }
+
+		if (!CollectionUtils.isEmpty(comment.getComments())) {
+			comment.setText("[deleted]");
+		}
+		else {
+			comments.remove(comment);
 		}
 	}
 }

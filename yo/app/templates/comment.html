@@ -1,6 +1,10 @@
 
 <div class="container-fluid comment-block {{:commentRefresh:highlightedClass}}" ng-click="markRead($event)" data-comment-id="{{::comment.id}}">
 
+	<div ng-if="deletionMessage">
+		<div class="alert alert-info">{{::translations.deletionDone}}</div>
+	</div>
+
 	<div class="reputation">
 		<span id="upvote{{::commentIndex}}" class="glyphicon glyphicon-chevron-up pointer " ng-class=":commentRefresh:{'upvote': comment.reputation.hasCurrentUserVoted.Upvote && User.isLoggedIn() }" ng-click="upvoteComment(comment)" title="{{::translations.upvote}}" ></span>
 		<span class="reputation-score glyphicon"> {{:commentRefresh:(comment.reputation.nbVotes.Upvote - comment.reputation.nbVotes.Downvote) }}</span>
@@ -24,6 +28,10 @@
 			<span ng-if=":commentRefresh:(User.getName() == review.author && review.authorId && User.getName() != comment.author)"> - </span>
 			<a ng-click="toggleHelpful(comment)" class="validated" ng-if=":commentRefresh:(comment.helpful) && User.getName() != comment.author && User.getName() == review.author && review.authorId"><span class="glyphicon glyphicon-ok"></span>{{::translations.helpedAuthor}}</a>
 			<a ng-click="toggleHelpful(comment)" class="link-minor" ng-if=":commentRefresh:(!comment.helpful && User.getName() != comment.author && User.getName() == review.author && review.authorId)"><span class="glyphicon glyphicon-ok"></span>{{::translations.helpedMe}}</a>
+
+			<span ng-if="::comment.authorId == User.getUser().id"> - </span>
+			<a class="link-minor link-delete" ng-click="showConfirmDeleteButton()" ng-if=":delete:comment.authorId == User.getUser().id && !showDelete" title="{{::translations.deleteButtonTooltip}}">{{::translations.deleteButton}}</a>
+			<a class="link-minor link-delete" ng-click="deleteReview()" ng-if=":delete:comment.authorId == User.getUser().id && showDelete" title="{{::translations.confirmDeleteButtonTooltip}}">{{::translations.confirmDeleteButton}}</a></a>
 		</div>
 
 		<div class="comment-subheader">

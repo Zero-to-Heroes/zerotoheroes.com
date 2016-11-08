@@ -16,6 +16,11 @@
 		<!-- The video information -->
 		<!-- Almost no optimization done, could win max ~70 watchers -->
 		<div ng-class="pluginNames">
+
+			<div ng-if="deletionMessage">
+				<div class="alert alert-info">{{::translations.deletionDone}}</div>
+			</div>
+
 			<form class="container-fluid video-details" name="videoInformationForm" ng-class=":reviewRefresh:{'editing': review.editing}">
 				<div class="row">
 					<div class="col-md-12">
@@ -51,8 +56,8 @@
 											<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-if="review.authorReputation">{{review.authorReputation}}<img class="reputation-icon" src="{{ config.images.reputation }}"></img></span>
 											<span ng-if="!review.editing && canEdit(review)"> - </span>
 											<a ng-click="startEditingInformation()" class="link-minor" ng-if="!review.editing && canEdit(review)"> {{ 'global.review.comment.edit' | translate }}</a>
-											<a class="link-minor link-delete" ng-click="showConfirmDeleteButton()" ng-if=":delete:review.authorId == User.getUser().id && !showDelete" title="{{::translations.deleteButtonTooltip}}">{{::translations.deleteButton}}</a>
-											<a class="link-minor link-delete" ng-click="deleteReview()" ng-if=":delete:review.authorId == User.getUser().id && showDelete" title="{{::translations.confirmDeleteButtonTooltip}}">{{::translations.confirmDeleteButton}}</a>
+											<a class="link-minor link-delete" ng-click="showConfirmDeleteButton()" ng-if=":delete:review.authorId == User.getUser().id && !showDelete && !deletionMessage" title="{{::translations.deleteButtonTooltip}}">{{::translations.deleteButton}}</a>
+											<a class="link-minor link-delete" ng-click="deleteReview()" ng-if=":delete:review.authorId == User.getUser().id && showDelete && !deletionMessage" title="{{::translations.confirmDeleteButtonTooltip}}">{{::translations.confirmDeleteButton}}</a>
 										</div>
 										<div class="decklist-field" ng-if="review.plugins.hearthstone.parseDecks.reviewDeck">
 											<span translate="hearthstone.review.decklist"></span>
@@ -104,9 +109,6 @@
 				
 			<div ng-if="selectedCoach">
 				<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
-			</div>
-			<div ng-if="deletionMessage">
-				<div class="alert alert-info">{{::translations.deletionDone}}</div>
 			</div>
 
 			<h3 class="comments-headline">{{::translations.commentsHeadline}}</h3>

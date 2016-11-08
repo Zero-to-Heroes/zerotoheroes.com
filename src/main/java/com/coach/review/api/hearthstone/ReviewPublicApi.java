@@ -314,6 +314,7 @@ public class ReviewPublicApi {
 			review.setReplay("true");
 			review.setUploaderApplicationKey(applicationKey);
 			review.setUploaderToken(userToken);
+			review.setPublished(true);
 			if (user != null) {
 				review.setAuthorId(user.getId());
 				review.setAuthor(user.getUsername());

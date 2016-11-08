@@ -26,7 +26,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 				criteria: {
 					wantedTags: [],
 					unwantedTags: [],
-					sort: 'publicationDate',
+					sort: $scope.ownVideos ? 'creationDate' : 'publicationDate',
 					ownVideos: $scope.ownVideos
 						
 					// search: searchFn

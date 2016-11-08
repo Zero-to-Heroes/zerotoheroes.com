@@ -222,6 +222,7 @@ public class ReviewDao {
 
 				Update update = update("authorId", user.getId());
 				update.set("author", user.getUsername());
+				update.push("subscribers", user.getId());
 
 				mongoTemplate.updateMulti(query, update, Review.class);
 				log.debug("Account claimed");

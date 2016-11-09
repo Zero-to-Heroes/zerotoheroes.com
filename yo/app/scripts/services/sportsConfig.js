@@ -34,7 +34,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 				hearthstone: {
 					root: 'plugins/sports/hearthstone',
 					background: 'hearthstone.jpg',
-					displayName: 'HearthStone',
+					displayName: 'Hearthstone',
 					useVideo: true,
 					recommendedVideo: '55e8101be4b051128109112e',
 					isSport: true,

@@ -473,7 +473,12 @@ public class SlackNotifier {
 		}
 
 		try {
-			final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+			String currentUser = "unidentifiableUser";
+			if (SecurityContextHolder.getContext() != null
+					&& SecurityContextHolder.getContext().getAuthentication() != null) {
+				currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+			}
+			final String userName = currentUser;
 
 			executorProvider.getExecutor().submit(new Callable<String>() {
 				@Override
@@ -483,7 +488,7 @@ public class SlackNotifier {
 							"https://hooks.slack.com/services/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");
 
 					SlackMessage message = new SlackMessage();
-					message.setText("Generic error with details for user " + currentUser);
+					message.setText("Generic error with details for user " + userName);
 
 					SlackAttachment exAttach = new SlackAttachment();
 					exAttach.setColor("danger");

@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import com.amazonaws.services.s3.model.S3Object;
+import com.coach.core.notification.SlackNotifier;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
@@ -43,6 +44,9 @@ public class HSReplay implements ReplayPlugin {
 
 	@Autowired
 	HSGameParser hsParser;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	@Override
 	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws Exception {
@@ -136,7 +140,12 @@ public class HSReplay implements ReplayPlugin {
 		review.setMediaType("game-replay");
 		review.setReviewType("game-replay");
 		review.setTemporaryReplay(xml);
-		hsParser.addMetaData(review);
+		try {
+			hsParser.addMetaData(review);
+		}
+		catch (Exception e) {
+			slackNotifier.notifyError(e, "Could not parse metadata", review);
+		}
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
 		log.debug("Review updated with proper key " + review);

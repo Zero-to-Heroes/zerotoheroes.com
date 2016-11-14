@@ -6,5 +6,5 @@ import lombok.Data;
 public class HearthstoneDraftInputParameters {
 
 	private String cardId;
-	private int currentPickNumber;
+	private int currentPickNumber = 1;
 }

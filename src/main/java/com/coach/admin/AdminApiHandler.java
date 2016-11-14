@@ -87,6 +87,7 @@ public class AdminApiHandler {
 
 		if ("prod".equalsIgnoreCase(
 				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
+
 		Tag tag = new Tag("Palamurloc");
 		Query reviewQuery = query(where("tags").in(tag));
 		List<Review> find = mongoTemplate.find(reviewQuery, Review.class);

@@ -15,6 +15,7 @@ public class Metric {
 	private int comments;
 	private Set<String> uniqueContentCreators = new HashSet<>();
 	private Set<String> churn = new HashSet<>();
+	private Set<String> uniqueReviews = new HashSet<>();
 	private int returningContributors;
 
 	public void incrementReviews() {
@@ -31,6 +32,10 @@ public class Metric {
 
 	public void addUniqueContentCreator(String author) {
 		uniqueContentCreators.add(author);
+	}
+
+	public void addReview(String review) {
+		uniqueReviews.add(review);
 	}
 
 }

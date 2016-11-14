@@ -18,13 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coach.core.notification.SlackNotifier;
-import com.coach.core.security.User;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
-import com.coach.profile.profileinfo.SportProfileInfo;
-import com.coach.review.Comment;
-import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.review.journal.ArchiveJournal;
 import com.coach.review.journal.ArchiveJournalRepository;
@@ -104,6 +100,12 @@ public class DailyContributionsCronHandler {
 
 			Profile profile = profileMap.get(authorId);
 			if (profile == null) {
+
+				// Anonymous user?
+				if (userRepository.findById(authorId) == null) {
+					continue;
+				}
+
 				profile = profileService.getProfile(authorId);
 				profileMap.put(authorId, profile);
 			}
@@ -154,6 +156,12 @@ public class DailyContributionsCronHandler {
 
 			Profile profile = profileMap.get(authorId);
 			if (profile == null) {
+
+				// Anonymous user?
+				if (userRepository.findById(authorId) == null) {
+					continue;
+				}
+
 				profile = profileService.getProfile(authorId);
 				// profile = profileRepository.findByUserId(authorId);
 				profileMap.put(authorId, profile);
@@ -200,6 +208,12 @@ public class DailyContributionsCronHandler {
 
 			Profile profile = profileMap.get(authorId);
 			if (profile == null) {
+
+				// Anonymous user?
+				if (userRepository.findById(authorId) == null) {
+					continue;
+				}
+
 				profile = profileService.getProfile(authorId);
 				profileMap.put(authorId, profile);
 			}
@@ -225,94 +239,4 @@ public class DailyContributionsCronHandler {
 		return new ResponseEntity<String>("processed " + processed.size() + " reputation logs", HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/init", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<String> init() {
-
-		if ("prod".equalsIgnoreCase(
-				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
-
-		// Build the map of users
-		log.debug("Retrieving user info");
-		List<User> users = userRepository.findAll();
-		Map<String, User> userMap = new HashMap<>();
-		for (User user : users) {
-			userMap.put(user.getId(), user);
-		}
-
-		// Build the map of profiles
-		List<Profile> profiles = profileRepository.findAll();
-		Map<String, Profile> profileMap = new HashMap<>();
-		for (Profile profile : profiles) {
-			for (SportProfileInfo sportInfo : profile.getProfileInfo().getSportInfos().values()) {
-				sportInfo.getDailyPlays().clear();
-			}
-			profileMap.put(profile.getUserId(), profile);
-		}
-
-		// don't process the journal entries twice (once during init, once
-		// during journal cron)
-		reviewJournalRepo.deleteAll();
-
-		// Load all the reviews
-		log.debug("loading reviews");
-		// Sort sort = new Sort(Sort.Direction.DESC,
-		// Arrays.asList("creationDate"));
-		// PageRequest pageRequest = new PageRequest(1, 10, sort);
-		// List<Review> reviews =
-		// reviewRepository.findAll(pageRequest).getContent();
-		List<Review> reviews = reviewRepository.findAll();
-		log.debug("reviews loaded " + reviews.size());
-
-		Set<Profile> modified = new HashSet<>(profiles);
-
-		// Process each review to add the info to the user's profile
-		for (Review review : reviews) {
-
-			if (review.getSport() == null) {
-				continue;
-			}
-
-			if (review.getAuthorId() != null) {
-				Profile profile = profileMap.get(review.getAuthorId());
-				if (profile == null) {
-					profile = new Profile();
-					profile.setUserId(review.getAuthorId());
-				}
-
-				SportProfileInfo sportInfo = profile.getProfileInfo()
-						.getSportInfo(review.getSport().getKey().toLowerCase());
-				sportInfo.addDailyGame(review.getCreationDate());
-				log.debug("adding daily game to " + userMap.get(review.getAuthorId()).getUsername() + ": " + profile);
-				modified.add(profile);
-			}
-
-			if (review.getAllComments() != null && !review.getAllComments().isEmpty()) {
-				for (Comment comment : review.getAllComments()) {
-					if (comment.getAuthorId() == null) {
-						continue;
-					}
-
-					Profile profile = profileMap.get(comment.getAuthorId());
-					if (profile == null) {
-						profile = new Profile();
-						profile.setUserId(comment.getAuthorId());
-					}
-
-					SportProfileInfo sportInfo = profile.getProfileInfo()
-							.getSportInfo(review.getSport().getKey().toLowerCase());
-					sportInfo.addDailyComment(comment.getCreationDate());
-					log.debug("adding daily comment to " + userMap.get(comment.getAuthorId()).getUsername() + ": "
-							+ profile);
-					modified.add(profile);
-				}
-			}
-
-		}
-
-		log.debug("starting save of modified profiles");
-		profileRepository.save(modified);
-		log.debug("modified " + modified.size() + " profiles");
-
-		return new ResponseEntity<String>("ok", HttpStatus.OK);
-	}
 }

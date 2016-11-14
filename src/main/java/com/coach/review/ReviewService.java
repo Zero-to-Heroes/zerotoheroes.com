@@ -115,19 +115,18 @@ public class ReviewService {
 	}
 
 	public void triggerReviewCreationJobs(Review review) {
-		if (review.getAuthorId() != null && review.getSport() != null) {
-			ReviewJournal journal = new ReviewJournal(review.getId(), review.getAuthorId(),
-					review.getSport().getKey().toLowerCase(), review.getCreationDate());
-			reviewJournalRepo.save(journal);
-		}
+		String identifier = review.getAuthorId() != null ? review.getAuthorId() : review.getAuthor();
+		ReviewJournal journal = new ReviewJournal(review.getId(), identifier, review.getSport().getKey().toLowerCase(),
+				review.getCreationDate());
+		reviewJournalRepo.save(journal);
 	}
 
 	public void triggerCommentCreationJobs(Review review, Comment comment) {
-		if (comment.getAuthorId() != null && review.getSport() != null) {
-			CommentJournal journal = new CommentJournal(review.getId(), comment.getAuthorId(),
-					review.getSport().getKey().toLowerCase(), comment.getCreationDate());
-			commentJournalRepo.save(journal);
-		}
+		String identifier = comment.getAuthorId() != null ? comment.getAuthorId() : comment.getAuthor();
+		CommentJournal journal = new CommentJournal(review.getId(), identifier,
+				review.getSport().getKey().toLowerCase(), comment.getCreationDate());
+		commentJournalRepo.save(journal);
+
 	}
 
 	public void triggerReputationChangeJobs(Review review, HasReputation item, int changeValue,

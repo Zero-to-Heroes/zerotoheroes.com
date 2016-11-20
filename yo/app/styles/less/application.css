@@ -391,6 +391,7 @@ body {
 .video-information .link-delete:hover,
 .video-comment .link-delete:hover {
   color: red;
+  margin-left: 20px;
 }
 .no-more-review-description-text {
   display: block;

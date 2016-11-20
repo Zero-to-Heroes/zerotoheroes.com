@@ -110,7 +110,8 @@ public class S3Utils {
 
 		ObjectMetadata metaData = new ObjectMetadata();
 		metaData.setContentLength(contentLength);
-		metaData.setContentType(type);
+		// metaData.setContentType(type);
+		metaData.setContentType(type + "; charset=UTF-8");
 
 		AccessControlList acl = new AccessControlList();
 		acl.grantPermission(GroupGrantee.AllUsers, Permission.Read);

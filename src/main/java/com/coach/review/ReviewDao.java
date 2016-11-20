@@ -159,18 +159,20 @@ public class ReviewDao {
 
 		// Contributions
 		if (criteria.getContributorsComparator() == null || "gte".equals(criteria.getContributorsComparator())) {
-			if (criteria.getContributorsValue() > 0) {
+			if (criteria.getContributorsValue() != null && criteria.getContributorsValue() > 0) {
 				crit.and("authorCount").gt(criteria.getContributorsValue());
 			}
-			if (criteria.getHelpfulCommentsValue() > 0) {
+			if (criteria.getHelpfulCommentsValue() != null && criteria.getHelpfulCommentsValue() > 0) {
 				crit.and("totalHelpfulComments").gte(criteria.getHelpfulCommentsValue());
 			}
 		}
 		else if ("lte".equals(criteria.getContributorsComparator())) {
 			// The author is counted in the allAuthors, while we're only
 			// interested in contributors
-			crit.and("authorCount").lte(criteria.getContributorsValue() + 1);
-			if (criteria.getHelpfulCommentsValue() > 0) {
+			if (criteria.getContributorsValue() != null) {
+				crit.and("authorCount").lte(criteria.getContributorsValue() + 1);
+			}
+			if (criteria.getHelpfulCommentsValue() != null && criteria.getHelpfulCommentsValue() > 0) {
 				crit.and("totalHelpfulComments").lte(criteria.getHelpfulCommentsValue());
 			}
 		}

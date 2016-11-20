@@ -41,8 +41,8 @@ public class ReviewSearchCriteria {
 	private List<Tag> wantedTags;
 	private List<Tag> unwantedTags;
 	private String contributorsComparator;
-	private int contributorsValue;
-	private int helpfulCommentsValue;
+	private Integer contributorsValue;
+	private Integer helpfulCommentsValue;
 
 	private Boolean ownVideos;
 

@@ -14,7 +14,7 @@ var parseDecks = {
 	hearthstatsDecksRegex: /\[?(http(?:s)?:\/\/(?:hss|hearthstats)\.(?:io|net)\/d(?:ecks)?\/)([\d\w\-]+)(\?[\d\w\-\=\&\.]*)?\]?/gm,
 	// hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
 	hearthheadDecksRegex: /\[?(http:\/\/www\.hearthhead\.com\/deck=)([\d\w\-]+)\/?([\d\w\-]+)?\]?/gm,
-	inlineDecksRegex: /\[?((([\w_]+)(?::)(\d)(?:;)?)+)\]?/gm,
+	inlineDecksRegex: /\[?((([\w]{3,15})(?::)(\d)(?:;)?)+)\]?/gm,
 	
 	decks: {},
 

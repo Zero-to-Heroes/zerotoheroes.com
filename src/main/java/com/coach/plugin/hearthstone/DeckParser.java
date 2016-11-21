@@ -74,7 +74,8 @@ public class DeckParser implements Plugin {
 	private static final String HEARTHHEAD_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.hearthhead\\.com\\/deck=)([\\d\\w\\-]+)\\/?([\\d\\w\\-]+)?\\]?";
 	private static final String HEARTHHEAD_DECK_HOST_URL = "http://www.hearthhead.com/deck=";
 
-	private static final String INLINE_DECK_CONTENTS_REGEX = "(([\\w_]+)(?::)(\\d)(?:;)?)";
+	// Minimal length for IDs to avoid interfering with SI:7 Agent
+	private static final String INLINE_DECK_CONTENTS_REGEX = "(([\\w_]{3,15})(?::)(\\d)(?:;)?)";
 	private static final String INLINE_DECK_REGEX = "(" + INLINE_DECK_CONTENTS_REGEX + "+)";
 
 	@Autowired

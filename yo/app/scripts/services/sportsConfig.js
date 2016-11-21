@@ -62,7 +62,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					plugins: {
 						plugins: [
 							{name: 'parseCardsText', version: 23, dev: dev}, 
-							{name: 'parseDecks', version: 41, dev: dev}, 
+							{name: 'parseDecks', version: 42, dev: dev}, 
 							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 116, dev: dev},
 							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 27, dev: dev}
 						],

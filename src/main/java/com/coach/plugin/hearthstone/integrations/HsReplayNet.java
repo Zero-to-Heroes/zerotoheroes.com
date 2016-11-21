@@ -94,6 +94,9 @@ public class HsReplayNet implements IntegrationPlugin {
 		// Flag the review to show that we are handling it
 		review.setMediaType("game-replay");
 		review.setText("Imported from " + gameUrl);
+
+		// Set the deck URL
+		review.getPluginData("hearthstone", "parseDecks").put("reviewDeck", gameUrl);
 		log.debug("strResult ");
 
 		// Then upload the file

@@ -3,6 +3,7 @@ package com.coach.plugin.hearthstone;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.InvocationTargetException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -12,8 +13,20 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.net.ssl.SSLSocket;
+
+import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLContextBuilder;
+import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
@@ -78,6 +91,9 @@ public class DeckParser implements Plugin {
 	private static final String INLINE_DECK_CONTENTS_REGEX = "(([\\w_]{3,15})(?::)(\\d)(?:;)?)";
 	private static final String INLINE_DECK_REGEX = "(" + INLINE_DECK_CONTENTS_REGEX + "+)";
 
+	// HSReplay.net decks
+	private static final String HSREPLAY_NET_REGEX = "\\[?(?:http(?:s)?:\\/\\/hsreplay\\.net\\/replay\\/)([\\d\\w\\-]+)\\]?";
+
 	@Autowired
 	ReviewRepository repo;
 
@@ -93,7 +109,7 @@ public class DeckParser implements Plugin {
 	}
 
 	@Override
-	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws IOException {
+	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws Exception {
 		log.debug("Executing deckparser plugin");
 
 		// First look at whether there is a deck attached to the review
@@ -108,7 +124,7 @@ public class DeckParser implements Plugin {
 		return initialText;
 	}
 
-	private void parseDecks(Map<String, String> pluginData, String initialText) throws IOException {
+	private void parseDecks(Map<String, String> pluginData, String initialText) throws Exception {
 		parseHearthpwnDeck(pluginData, initialText);
 		parseHearthpwnTempDeck(pluginData, initialText);
 		parseHearthstoneDecksDeck(pluginData, initialText);
@@ -119,6 +135,7 @@ public class DeckParser implements Plugin {
 		parseIcyVeinsDeck(pluginData, initialText);
 		parseManaCrystalsDeck(pluginData, initialText);
 		parseHearthStatsDeck(pluginData, initialText);
+		parseHSReplayNetDeck(pluginData, initialText);
 		// Not supporting HH for now, as it requires javascript support. Waiting
 		// to see if an API is available
 		// parseHearthHeadDeck(pluginData, initialText);
@@ -194,6 +211,35 @@ public class DeckParser implements Plugin {
 				Card card = new Card(cardName, quantity);
 				// log.debug("\tBuilt card " + card);
 				deck.classCards.add(card);
+			}
+
+			saveDeck(pluginData, deckId, deck);
+		}
+	}
+
+	private void parseHSReplayNetDeck(Map<String, String> pluginData, String initialText) throws Exception {
+		Pattern pattern = Pattern.compile(HSREPLAY_NET_REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			String deckId = matcher.group(1);
+
+			// Don't override existing decks (performance)
+			if (!shouldReparseDeck(pluginData, deckId)) {
+				continue;
+			}
+
+			// API call
+			String apiUrl = "https://hsreplay.net/api/v1/games/" + deckId + "/";
+			String resultString = restGetCall(apiUrl);
+			JSONObject api = new JSONObject(resultString);
+			JSONArray cards = api.getJSONObject("friendly_deck").getJSONArray("cards");
+
+			Deck deck = new Deck();
+			deck.title = "HSReplay deck";
+
+			for (int i = 0; i < cards.length(); i++) {
+				String card = cards.getString(i);
+				deck.addCard(card);
 			}
 
 			saveDeck(pluginData, deckId, deck);
@@ -747,11 +793,69 @@ public class DeckParser implements Plugin {
 		pluginData.put(deckId, jsonDeck);
 	}
 
+	// apiUrl looks like
+	// https://hsreplay.net/api/v1/games/jdUbSjsEcBL5rCT7dgMXRn
+	private String restGetCall(String apiUrl) throws Exception {
+		SSLContextBuilder builder = new SSLContextBuilder();
+		builder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
+		SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(builder.build(),
+				SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER) {
+			@Override
+			protected void prepareSocket(SSLSocket socket) throws IOException {
+				try {
+					PropertyUtils.setProperty(socket, "host", "hsreplay.net");
+					socket.setEnabledProtocols(new String[] { "SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2" });
+				}
+				catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
+					log.error(ex.getMessage());
+					slackNotifier.notifyError(ex);
+				}
+				super.prepareSocket(socket);
+			}
+
+		};
+		CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
+
+		HttpGet httpGet = new HttpGet(apiUrl);
+		CloseableHttpResponse response1 = httpClient.execute(httpGet);
+		StringBuilder result = new StringBuilder();
+		try {
+			System.out.println(response1.getStatusLine());
+			HttpEntity entity1 = response1.getEntity();
+			BufferedReader rd = new BufferedReader(new InputStreamReader(entity1.getContent()));
+			String line;
+			while ((line = rd.readLine()) != null) {
+				result.append(line);
+			}
+			// do something useful with the response body
+			// and ensure it is fully consumed
+			EntityUtils.consume(entity1);
+		}
+		finally {
+			response1.close();
+		}
+
+		String resultString = result.toString();
+		return resultString;
+	}
+
 	@Data
 	private static class Deck {
 		private String title, url;
 		private final List<Card> classCards = new ArrayList<>();
 		private final List<Card> neutralCards = new ArrayList<>();
+
+		public void addCard(String card) {
+			for (Card existing : classCards) {
+				if (existing.name.equals(card)) {
+					existing.amount = "" + (Integer.parseInt(existing.amount) + 1);
+					return;
+				}
+			}
+
+			Card newCard = new Card(card, "" + 1);
+			classCards.add(newCard);
+		}
 	}
 
 	@AllArgsConstructor

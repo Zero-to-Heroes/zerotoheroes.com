@@ -12,6 +12,7 @@ var parseDecks = {
 	manaCrystalsDecksRegex: /\[?(https:\/\/manacrystals\.com\/deck_guides\/)([\da-zA-Z\-]+)\]?/gm,
 	// https://regex101.com/r/kW4oW3/1
 	hearthstatsDecksRegex: /\[?(http(?:s)?:\/\/(?:hss|hearthstats)\.(?:io|net)\/d(?:ecks)?\/)([\d\w\-]+)(\?[\d\w\-\=\&\.]*)?\]?/gm,
+	hsreplaynetDecksRegex: /\[?(http(?:s)?:\/\/hsreplay\.net\/replay\/)([\d\w\-]+)\]?/gm,
 	// hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
 	hearthheadDecksRegex: /\[?(http:\/\/www\.hearthhead\.com\/deck=)([\d\w\-]+)\/?([\d\w\-]+)?\]?/gm,
 	inlineDecksRegex: /\[?((([\w]{3,15})(?::)(\d)(?:;)?)+)\]?/gm,
@@ -32,6 +33,7 @@ var parseDecks = {
 		text = parseDecks.parse(review, text, parseDecks.icyVeinsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.manaCrystalsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthstatsDecksRegex)
+		text = parseDecks.parse(review, text, parseDecks.hsreplaynetDecksRegex)
 		// text = parseDecks.parse(review, text, parseDecks.hearthstatsFullDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthheadDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.inlineDecksRegex, true)

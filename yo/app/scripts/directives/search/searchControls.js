@@ -105,7 +105,8 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				$scope.sortOptions = [
 					{ "value" : "publicationDate", "label" : $translate.instant('global.search.sort.publicationDate') },
 					{ "value" : "creationDate", "label" : $translate.instant('global.search.sort.creationDate') },
-					{ "value" : "updateDate", "label" : $translate.instant('global.search.sort.updateDate') }
+					{ "value" : "updateDate", "label" : $translate.instant('global.search.sort.updateDate') },
+					{ "value" : "helpScore", "label" : $translate.instant('global.search.sort.helpScore') }
 				]
 
 				// Options for visibility

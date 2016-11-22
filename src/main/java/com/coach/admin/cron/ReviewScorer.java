@@ -69,7 +69,7 @@ public class ReviewScorer {
 		List<Review> reviews = mongoTemplate.find(reviewQuery, Review.class);
 		log.debug("updating score for " + reviews.size() + " reviews");
 
-		commentNeededScorer.setWeights(buildWeights());
+		commentNeededScorer.setWeights(weights);
 
 		for (Review review : reviews) {
 			try {
@@ -97,9 +97,6 @@ public class ReviewScorer {
 
 	private ScoreWeights buildWeights() {
 		ScoreWeights weights = new ScoreWeights();
-
-		weights.setDateScoreWeight(1.0f / 1000000);
-		weights.setAuthorReputationScoreWeight(0.1f);
 
 		return weights;
 	}

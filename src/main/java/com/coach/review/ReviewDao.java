@@ -205,6 +205,8 @@ public class ReviewDao {
 		fields.include("lastModifiedDate");
 		fields.include("allAuthors");
 		fields.include("allAuthorIds");
+		fields.include("helpScore");
+		fields.include("debugScore");
 
 		List<Review> find = mongoTemplate.find(query, Review.class);
 		return find;

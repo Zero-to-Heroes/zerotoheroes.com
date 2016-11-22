@@ -2,8 +2,10 @@ package com.coach.reputation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.data.annotation.Transient;
 
@@ -100,5 +102,13 @@ public class Reputation {
 	public void setHelpful(boolean helpful) {
 		this.helpful = helpful;
 		updateScore();
+	}
+
+	public Set<String> getAllUserIds() {
+		Set<String> allIds = new HashSet<>();
+		for (List<String> ids : userIds.values()) {
+			allIds.addAll(ids);
+		}
+		return allIds;
 	}
 }

@@ -152,6 +152,9 @@ public class ReviewApiHandler {
 		else if ("creationDate".equals(criteria.getSort())) {
 			sort = new Sort(Sort.Direction.DESC, Arrays.asList("creationDate"));
 		}
+		else if ("helpScore".equals(criteria.getSort())) {
+			sort = new Sort(Sort.Direction.DESC, Arrays.asList("helpScore"));
+		}
 
 		// Start pageing at 1 like normal people, not at 0 like nerds
 		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, sort);

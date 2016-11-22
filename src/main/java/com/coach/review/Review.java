@@ -25,6 +25,7 @@ import com.coach.core.security.User;
 import com.coach.notifications.Notification;
 import com.coach.profile.Profile;
 import com.coach.reputation.Reputation;
+import com.coach.review.scoring.ReviewScore;
 import com.coach.subscription.HasSubscribers;
 import com.coach.tag.Tag;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -155,6 +156,11 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private Set<String> subscribers = new HashSet<>();
 
 	private boolean useV2comments = true;
+
+	private boolean closed = false;
+	private float helpScore;
+	private ReviewScore debugScore;
+	private Date lastScoreUpdate;
 
 	// =================
 	// Deprecated fields (mainly legacy from the video time)
@@ -605,4 +611,5 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			comments.remove(comment);
 		}
 	}
+
 }

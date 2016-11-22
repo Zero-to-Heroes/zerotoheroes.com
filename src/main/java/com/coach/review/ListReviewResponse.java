@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import com.coach.reputation.Reputation;
 import com.coach.review.Review.Sport;
+import com.coach.review.scoring.ReviewScore;
 import com.coach.tag.Tag;
 
 import lombok.Data;
@@ -47,6 +48,8 @@ public class ListReviewResponse {
 		// Needed to display either the "draft" or the "game" participants
 		private String mediaType;
 		private Set<String> allAuthors, allAuthorIds;
+		private ReviewScore scoreDebug;
+		private float helpScore;
 
 		public static ResponseReview from(Review review) {
 			if (review == null) { return null; }
@@ -71,6 +74,9 @@ public class ListReviewResponse {
 			result.mediaType = review.getMediaType();
 			result.allAuthors = review.getAllAuthors();
 			result.allAuthorIds = review.getAllAuthorIds();
+			result.scoreDebug = review.getDebugScore();
+			result.helpScore = review.getHelpScore();
+
 			return result;
 		}
 	}

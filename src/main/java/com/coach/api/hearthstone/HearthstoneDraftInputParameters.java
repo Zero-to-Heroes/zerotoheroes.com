@@ -1,4 +1,4 @@
-package com.coach.api;
+package com.coach.api.hearthstone;
 
 import lombok.Data;
 

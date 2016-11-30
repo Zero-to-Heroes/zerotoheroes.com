@@ -1,4 +1,4 @@
-package com.coach.api;
+package com.coach.api.hearthstone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

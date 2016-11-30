@@ -18,6 +18,7 @@ import com.coach.review.Review;
 import com.zerotoheroes.hsgameconverter.ReplayConverter;
 import com.zerotoheroes.hsgameentities.replaydata.HearthstoneReplay;
 import com.zerotoheroes.hsgameparser.metadata.GameMetaData;
+import com.zerotoheroes.hsgameparser.metadata.InvalidGameReplayException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -111,6 +112,10 @@ public class HSGameParser implements ReplayPlugin {
 
 			review.setLastMetaDataParsingDate(new Date());
 			log.debug("done adding meta ");
+		}
+		catch (InvalidGameReplayException e) {
+			log.info("Invalid game " + e.getMessage());
+			review.setInvalidGame(true);
 		}
 		catch (Exception e) {
 			// log.error("Could not add metata to review " + review, e);

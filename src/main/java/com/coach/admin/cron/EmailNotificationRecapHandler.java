@@ -77,8 +77,9 @@ public class EmailNotificationRecapHandler {
 		for (Profile profile : profiles) {
 
 			boolean shouldNotif = Arrays.asList("gamerecap", "globalrecap")
-					.indexOf(profile.getPreferences().getEmailNotificationsType()) > 0
+					.indexOf(profile.getPreferences().getEmailNotificationsType()) >= 0
 					&& profile.getPreferences().getEmailRecapFrequency() > 0;
+			log.debug("Should notif? " + shouldNotif);
 
 			Calendar calendar = Calendar.getInstance();
 			calendar.add(Calendar.HOUR, -profile.getPreferences().getEmailRecapFrequency());

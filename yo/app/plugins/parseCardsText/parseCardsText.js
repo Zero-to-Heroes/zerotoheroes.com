@@ -264,7 +264,6 @@ var parseCardsText = {
 
 	jsonDatabase: [
 	{
-		"cardImage": "TB_ClassRandom_PickSecondClass.png",
 		"fr": {
 			"name": "Choisissez votre deuxième classe"
 		},
@@ -276,13 +275,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mauricio Herrera",
-		"cardImage": "BRM_003.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Souffle du dragon",
 			"text": "Inflige $4 points de dégâts. Coûte (1) |4(cristal,cristaux) de mana de moins pour chaque serviteur mort pendant ce tour."
 		},
+		"goldenImage": "BRM_003.gif",
 		"id": "BRM_003",
 		"name": "Dragon's Breath",
 		"playerClass": "Mage",
@@ -293,12 +292,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "TB_KTRAF_1.png",
 		"cost": 4,
 		"fr": {
 			"name": "Anub’Rekhan",
 			"text": "À la fin de votre tour, invoque un nérubien 3/1."
 		},
+		"goldenImage": "TB_KTRAF_1.gif",
 		"health": 5,
 		"id": "TB_KTRAF_1",
 		"name": "Anub'Rekhan",
@@ -311,13 +310,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 7,
-		"cardImage": "CFM_750.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Krul le Déchaîné",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, invoque tous les démons de votre main."
 		},
+		"goldenImage": "CFM_750.gif",
 		"health": 9,
 		"id": "CFM_750",
 		"name": "Krul the Unshackled",
@@ -330,13 +329,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 1,
-		"cardImage": "GVG_098.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Infanterie de Gnomeregan",
 			"text": "<b>Charge</b>\n<b>Provocation</b>"
 		},
+		"goldenImage": "GVG_098.gif",
 		"health": 4,
 		"id": "GVG_098",
 		"name": "Gnomeregan Infantry",
@@ -348,12 +347,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA16_21.png",
 		"cost": 5,
 		"fr": {
 			"name": "Chef Scarvash",
 			"text": "Les cartes adverses coûtent (1) |4(cristal,cristaux) de plus."
 		},
+		"goldenImage": "LOEA16_21.gif",
 		"health": 5,
 		"id": "LOEA16_21",
 		"name": "Chieftain Scarvash",
@@ -365,13 +364,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Bozonnet",
-		"cardImage": "CFM_811.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Visions lunaires",
 			"text": "Vous piochez 2 cartes. Les serviteurs piochés coûtent (2) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "CFM_811.gif",
 		"id": "CFM_811",
 		"name": "Lunar Visions",
 		"playerClass": "Druid",
@@ -382,13 +381,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Lucas Graciano",
-		"cardImage": "EX1_126.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Trahison",
 			"text": "Force un serviteur adverse à infliger ses dégâts aux serviteurs à côté de lui."
 		},
+		"goldenImage": "EX1_126.gif",
 		"id": "EX1_126",
 		"name": "Betrayal",
 		"playerClass": "Rogue",
@@ -400,7 +399,6 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 3,
-		"cardImage": "KAR_114.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
@@ -419,13 +417,13 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 9,
-		"cardImage": "GVG_021.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Mal’Ganis",
 			"text": "Vos autres démons ont +2/+2. Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "GVG_021.gif",
 		"health": 7,
 		"id": "GVG_021",
 		"name": "Mal'Ganis",
@@ -436,7 +434,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRM_027pH.png",
 		"cost": 2,
 		"fr": {
 			"name": "MOUREZ, INSECTES !",
@@ -451,12 +448,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t21.png",
 		"cost": 5,
 		"fr": {
 			"name": "Laine mystique",
 			"text": "Transforme un serviteur adverse aléatoire en mouton 1/1.@Métamorphose un serviteur adverse aléatoire."
 		},
+		"goldenImage": "CFM_621t21.gif",
 		"id": "CFM_621t21",
 		"name": "Mystic Wool",
 		"playerClass": "Neutral",
@@ -467,7 +464,6 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 4,
-		"cardImage": "KAR_061.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
@@ -486,13 +482,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
-		"cardImage": "AT_040.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Marcheuse sauvage",
 			"text": "<b>Cri de guerre :</b> donne\n+3 PV à une Bête alliée."
 		},
+		"goldenImage": "AT_040.gif",
 		"health": 4,
 		"id": "AT_040",
 		"name": "Wildwalker",
@@ -505,13 +501,13 @@ var parseCardsText = {
 	{
 		"artist": "Kev Walker",
 		"attack": 7,
-		"cardImage": "NEW1_038.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Gruul",
 			"text": "À la fin de chaque tour, gagne +1/+1."
 		},
+		"goldenImage": "NEW1_038.gif",
 		"health": 7,
 		"id": "NEW1_038",
 		"name": "Gruul",
@@ -524,13 +520,13 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 1,
-		"cardImage": "OG_113.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Conseiller de Sombre-Comté",
 			"text": "Gagne +1 ATQ après que vous avez invoqué un serviteur."
 		},
+		"goldenImage": "OG_113.gif",
 		"health": 5,
 		"id": "OG_113",
 		"name": "Darkshire Councilman",
@@ -541,7 +537,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_SPT_DPromoSecret9.png",
 		"cost": 2,
 		"fr": {
 			"name": "Visions de connaissance",
@@ -557,7 +552,6 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 3,
-		"cardImage": "EX1_020.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "ALLIANCE",
@@ -565,6 +559,7 @@ var parseCardsText = {
 			"name": "Croisée écarlate",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_020.gif",
 		"health": 1,
 		"id": "EX1_020",
 		"name": "Scarlet Crusader",
@@ -577,7 +572,6 @@ var parseCardsText = {
 	{
 		"artist": "Monica Langlois",
 		"attack": 3,
-		"cardImage": "CS1_069.png",
 		"collectible": true,
 		"cost": 5,
 		"faction": "ALLIANCE",
@@ -585,6 +579,7 @@ var parseCardsText = {
 			"name": "Rampant des tourbières",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS1_069.gif",
 		"health": 6,
 		"id": "CS1_069",
 		"name": "Fen Creeper",
@@ -595,7 +590,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_KaraPortal_002.png",
 		"cost": 2,
 		"fr": {
 			"name": "Invocation de Mediva",
@@ -610,7 +604,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "AT_024e.png",
 		"fr": {
 			"name": "Sombre fusion",
 			"text": "+3/+3."
@@ -624,7 +617,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "KARA_04_05h.png",
 		"cost": 3,
 		"fr": {
 			"name": "Singe volant",
@@ -639,7 +631,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GAME_005e.png",
 		"fr": {
 			"name": "La pièce"
 		},
@@ -650,7 +641,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "EX1_160be.png",
 		"fr": {
 			"name": "Chef de la meute",
 			"text": "+1/+1."
@@ -663,12 +653,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_005.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destroy",
 			"text": "Destroy a minion or hero."
 		},
+		"goldenImage": "XXX_005.gif",
 		"id": "XXX_005",
 		"name": "Destroy",
 		"playerClass": "Neutral",
@@ -680,7 +670,6 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 1,
-		"cardImage": "KAR_010a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Dragonnet"
@@ -693,7 +682,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GVG_123e.png",
 		"fr": {
 			"name": "Remonté",
 			"text": "+2 aux dégâts des sorts."
@@ -708,11 +696,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA09_13.png",
 		"cost": 5,
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_13.gif",
 		"health": 1,
 		"id": "LOEA09_13",
 		"name": "Hungry Naga",
@@ -721,7 +709,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_565o.png",
 		"fr": {
 			"name": "Langue de feu",
 			"text": "Le totem Langue de feu donne +2 ATQ."
@@ -735,13 +722,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan & Gabor",
-		"cardImage": "EX1_332.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Silence",
 			"text": "Réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "EX1_332.gif",
 		"id": "EX1_332",
 		"name": "Silence",
 		"playerClass": "Priest",
@@ -753,13 +740,13 @@ var parseCardsText = {
 	{
 		"artist": "Jeff Easley",
 		"attack": 1,
-		"cardImage": "AT_116.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Agent du Repos du ver",
 			"text": "<b>Cri de guerre :</b> gagne\n+1 ATQ et <b>Provocation</b> si vous avez un Dragon en main."
 		},
+		"goldenImage": "AT_116.gif",
 		"health": 4,
 		"id": "AT_116",
 		"name": "Wyrmrest Agent",
@@ -772,13 +759,13 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 8,
-		"cardImage": "CS2_232.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Protecteur Écorcefer",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_232.gif",
 		"health": 8,
 		"id": "CS2_232",
 		"name": "Ironbark Protector",
@@ -789,7 +776,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_625t2.png",
 		"cost": 2,
 		"fr": {
 			"name": "Briser l’esprit",
@@ -805,13 +791,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Nicholson",
 		"attack": 1,
-		"cardImage": "FP1_024.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Goule instable",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> inflige 1 point de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "FP1_024.gif",
 		"health": 3,
 		"id": "FP1_024",
 		"name": "Unstable Ghoul",
@@ -822,10 +808,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX8_01.png",
 		"fr": {
 			"name": "Gothik le Moissonneur"
 		},
+		"goldenImage": "NAX8_01.gif",
 		"health": 30,
 		"id": "NAX8_01",
 		"name": "Gothik the Harvester",
@@ -834,7 +820,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "GVG_014a.png",
 		"fr": {
 			"name": "Dissimulé",
 			"text": "La Vie a été échangée."
@@ -848,12 +833,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TBST_003.png",
 		"cost": 1,
 		"fr": {
 			"name": "Soigneur débutant",
 			"text": "À la fin de votre tour, rend 2 PV aux serviteurs adjacents."
 		},
+		"goldenImage": "TBST_003.gif",
 		"health": 1,
 		"id": "TBST_003",
 		"name": "OLDN3wb Healer",
@@ -863,7 +848,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_12_Ench.png",
 		"fr": {
 			"name": "Destin 12 : enchantement, Confusion"
 		},
@@ -875,11 +859,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "AT_099t.png",
 		"cost": 5,
 		"fr": {
 			"name": "Kodo de guerre"
 		},
+		"goldenImage": "AT_099t.gif",
 		"health": 5,
 		"id": "AT_099t",
 		"name": "War Kodo",
@@ -890,13 +874,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 3,
-		"cardImage": "LOE_017.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gardienne d’Uldaman",
 			"text": "<b>Cri de guerre :</b> fait passer l’Attaque et la Vie d’un serviteur à 3."
 		},
+		"goldenImage": "LOE_017.gif",
 		"health": 4,
 		"id": "LOE_017",
 		"name": "Keeper of Uldaman",
@@ -909,13 +893,13 @@ var parseCardsText = {
 	{
 		"artist": "Todd Lockwood",
 		"attack": 5,
-		"cardImage": "AT_118.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Grande croisée",
 			"text": "<b>Cri de guerre :</b> ajoute une carte paladin aléatoire dans votre main."
 		},
+		"goldenImage": "AT_118.gif",
 		"health": 5,
 		"id": "AT_118",
 		"name": "Grand Crusader",
@@ -927,7 +911,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Scott",
-		"cardImage": "CFM_026e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "La cache d’armes donne +2/+2."
@@ -940,7 +923,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "NAX12_02H.png",
 		"cost": 0,
 		"fr": {
 			"name": "Décimer",
@@ -954,7 +936,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "BRMA02_2_2_TB.png",
 		"cost": 2,
 		"fr": {
 			"name": "Foule moqueuse",
@@ -969,11 +950,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TU4e_002t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Flamme d’Azzinoth"
 		},
+		"goldenImage": "TU4e_002t.gif",
 		"health": 1,
 		"id": "TU4e_002t",
 		"name": "Flame of Azzinoth",
@@ -983,10 +964,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA06_1.png",
 		"fr": {
 			"name": "Chambellan Executus"
 		},
+		"goldenImage": "BRMA06_1.gif",
 		"health": 30,
 		"id": "BRMA06_1",
 		"name": "Majordomo Executus",
@@ -995,7 +976,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "BRMC_97e.png",
 		"fr": {
 			"name": "Montée d’adrénaline",
 			"text": "Coûte (2) cristaux de moins."
@@ -1008,12 +988,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA04_06a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Franchir d’un bond",
 			"text": "Subit aléatoirement 10 points de dégâts ou aucun."
 		},
+		"goldenImage": "LOEA04_06a.gif",
 		"id": "LOEA04_06a",
 		"name": "Swing Across",
 		"playerClass": "Neutral",
@@ -1024,13 +1004,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
-		"cardImage": "GVG_094.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Jeeves",
 			"text": "À la fin du tour d’un joueur, ce dernier pioche jusqu’à avoir 3 cartes."
 		},
+		"goldenImage": "GVG_094.gif",
 		"health": 4,
 		"id": "GVG_094",
 		"name": "Jeeves",
@@ -1042,7 +1022,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Wayne Reynolds",
-		"cardImage": "CFM_614e.png",
 		"fr": {
 			"name": "Marque sauvage",
 			"text": "+1/+1."
@@ -1055,7 +1034,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_SPT_DPromoSpellPortal.png",
 		"cost": 2,
 		"fr": {
 			"name": "Ouverture du portail",
@@ -1069,7 +1047,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_SPT_DPromoSecret5.png",
 		"cost": 2,
 		"fr": {
 			"name": "Visions de l’amazone",
@@ -1084,12 +1061,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_22H.png",
 		"cost": 10,
 		"fr": {
 			"name": "Archaedas",
 			"text": "Transforme un serviteur adverse aléatoire en statue 0/2 à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_22H.gif",
 		"health": 10,
 		"id": "LOEA16_22H",
 		"name": "Archaedas",
@@ -1102,7 +1079,6 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & N. Thitinunthakorn",
 		"attack": 3,
-		"cardImage": "KAR_A02_06.png",
 		"cost": 4,
 		"fr": {
 			"name": "Pichet",
@@ -1117,7 +1093,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "HERO_02a.png",
 		"collectible": true,
 		"fr": {
 			"name": "Morgl l’Oracle"
@@ -1133,7 +1108,6 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 5,
-		"cardImage": "CS2_213.png",
 		"collectible": true,
 		"cost": 6,
 		"faction": "HORDE",
@@ -1141,6 +1115,7 @@ var parseCardsText = {
 			"name": "Missilière téméraire",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_213.gif",
 		"health": 2,
 		"id": "CS2_213",
 		"name": "Reckless Rocketeer",
@@ -1151,7 +1126,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX5_02H.png",
 		"cost": 0,
 		"fr": {
 			"name": "Éruption",
@@ -1165,7 +1139,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "NAX12_03e.png",
 		"fr": {
 			"name": "Double rangée de dents",
 			"text": "Attaque augmentée."
@@ -1179,13 +1152,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan & Gabor",
-		"cardImage": "EX1_408.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Frappe mortelle",
 			"text": "Inflige $4 |4(point,points) de dégâts. Si votre héros a 12 PV ou moins, inflige $6 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "EX1_408.gif",
 		"id": "EX1_408",
 		"name": "Mortal Strike",
 		"playerClass": "Warrior",
@@ -1197,13 +1170,13 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 7,
-		"cardImage": "FP1_014.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Stalagg",
 			"text": "<b>Râle d’agonie :</b> si Feugen est aussi mort pendant cette partie, invoque Thaddius."
 		},
+		"goldenImage": "FP1_014.gif",
 		"health": 4,
 		"id": "FP1_014",
 		"name": "Stalagg",
@@ -1216,13 +1189,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 3,
-		"cardImage": "OG_202.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gardien du bourbier",
 			"text": "<b>Choix des armes :</b> invoque une gelée 2/2 ou confère un cristal de mana vide."
 		},
+		"goldenImage": "OG_202.gif",
 		"health": 3,
 		"id": "OG_202",
 		"name": "Mire Keeper",
@@ -1234,13 +1207,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Linggar Bramanty",
-		"cardImage": "EX1_538.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Lâcher les chiens",
 			"text": "Invoque un chien 1/1 avec <b>Charge</b> pour chaque serviteur adverse."
 		},
+		"goldenImage": "EX1_538.gif",
 		"id": "EX1_538",
 		"name": "Unleash the Hounds",
 		"playerClass": "Hunter",
@@ -1251,12 +1224,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "AT_132_SHAMANc.png",
 		"cost": 0,
 		"fr": {
 			"name": "Totem de griffes de pierre",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "AT_132_SHAMANc.gif",
 		"health": 2,
 		"id": "AT_132_SHAMANc",
 		"name": "Stoneclaw Totem",
@@ -1267,13 +1240,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sean O'Danield",
-		"cardImage": "AT_016.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Confusion",
 			"text": "Échange l’Attaque et la Vie de tous les serviteurs."
 		},
+		"goldenImage": "AT_016.gif",
 		"id": "AT_016",
 		"name": "Confuse",
 		"playerClass": "Priest",
@@ -1284,13 +1257,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Scott",
-		"cardImage": "GVG_029.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Appel des ancêtres",
 			"text": "Prend un serviteur aléatoire dans la main de chaque joueur et les pose sur le champ de bataille."
 		},
+		"goldenImage": "GVG_029.gif",
 		"id": "GVG_029",
 		"name": "Ancestor's Call",
 		"playerClass": "Shaman",
@@ -1302,7 +1275,6 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 0,
-		"cardImage": "KARA_04_01.png",
 		"cost": 4,
 		"fr": {
 			"name": "Dorothée",
@@ -1317,7 +1289,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "OG_047e.png",
 		"fr": {
 			"name": "Aiguillons",
 			"text": "+4 ATQ pendant ce tour."
@@ -1333,13 +1304,13 @@ var parseCardsText = {
 	{
 		"artist": "Phroi Gardner",
 		"attack": 3,
-		"cardImage": "OG_102.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Sombre orateur",
 			"text": "<b>Cri de guerre :</b> échange ses caractéristiques avec celles d’un serviteur allié."
 		},
+		"goldenImage": "OG_102.gif",
 		"health": 6,
 		"id": "OG_102",
 		"name": "Darkspeaker",
@@ -1351,12 +1322,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 8,
-		"cardImage": "BRMA14_9H.png",
 		"cost": 5,
 		"fr": {
 			"name": "Magmatron",
 			"text": "Chaque fois qu’un joueur joue une carte, lui inflige 2 points de dégâts."
 		},
+		"goldenImage": "BRMA14_9H.gif",
 		"health": 8,
 		"id": "BRMA14_9H",
 		"name": "Magmatron",
@@ -1367,7 +1338,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA05_3e.png",
 		"fr": {
 			"name": "Bombe vivante",
 			"text": "Pendant le tour de Geddon, inflige 5 points de dégâts à votre héros et vos serviteurs."
@@ -1380,7 +1350,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_BlingBrawl_Hero1e.png",
 		"fr": {
 			"name": "Affûtée",
 			"text": "+1 ATQ."
@@ -1393,7 +1362,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_107.png",
 		"cost": 0,
 		"fr": {
 			"name": "Set Health to 1",
@@ -1410,13 +1378,13 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 5,
-		"cardImage": "NEW1_005.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Kidnappeur",
 			"text": "<b>Combo :</b> renvoie un serviteur dans la main de son propriétaire."
 		},
+		"goldenImage": "NEW1_005.gif",
 		"health": 3,
 		"id": "NEW1_005",
 		"name": "Kidnapper",
@@ -1427,10 +1395,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA05_1.png",
 		"fr": {
 			"name": "Baron Geddon"
 		},
+		"goldenImage": "BRMA05_1.gif",
 		"health": 30,
 		"id": "BRMA05_1",
 		"name": "Baron Geddon",
@@ -1441,13 +1409,13 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 6,
-		"cardImage": "OG_309.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Princesse Huhuran",
 			"text": "<b>Cri de guerre :</b> déclenche le <b>Râle d’agonie</b> d’un serviteur allié."
 		},
+		"goldenImage": "OG_309.gif",
 		"health": 5,
 		"id": "OG_309",
 		"name": "Princess Huhuran",
@@ -1460,13 +1428,13 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 1,
-		"cardImage": "CFM_691.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Grouillant de jade",
 			"text": "<b>Camouflage</b>. <b>Râle d’agonie :</b> invoque un <b>golem de jade</b> {0}.@<b>Camouflage</b>. <b>Râle d’agonie :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_691.gif",
 		"health": 1,
 		"id": "CFM_691",
 		"name": "Jade Swarmer",
@@ -1479,13 +1447,13 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 4,
-		"cardImage": "OG_295.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Apothicaire du culte",
 			"text": "<b>Cri de guerre :</b> rend 2 PV à votre héros pour chaque serviteur adverse."
 		},
+		"goldenImage": "OG_295.gif",
 		"health": 4,
 		"id": "OG_295",
 		"name": "Cult Apothecary",
@@ -1496,7 +1464,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CS2_101.png",
 		"cost": 2,
 		"fr": {
 			"name": "Renfort",
@@ -1511,7 +1478,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "EX1_145o.png",
 		"fr": {
 			"name": "Préparation",
 			"text": "Le prochain sort que vous lancez pendant ce tour coûte (3) cristaux de moins."
@@ -1524,12 +1490,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA16_7.png",
 		"cost": 0,
 		"fr": {
 			"name": "Esquille de bénédiction",
 			"text": "Rend #10 PV à TOUS les personnages."
 		},
+		"goldenImage": "LOEA16_7.gif",
 		"id": "LOEA16_7",
 		"name": "Benediction Splinter",
 		"playerClass": "Neutral",
@@ -1539,12 +1505,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CRED_25.png",
 		"cost": 4,
 		"fr": {
 			"name": "Elizabeth Cho",
 			"text": "<b>Cri de guerre :</b> ajoute Écho de Medivh et Limon résonnant dans votre main."
 		},
+		"goldenImage": "CRED_25.gif",
 		"health": 4,
 		"id": "CRED_25",
 		"name": "Elizabeth Cho",
@@ -1555,7 +1521,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_060.png",
 		"cost": 0,
 		"fr": {
 			"name": "Damage All",
@@ -1571,13 +1536,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studios",
 		"attack": 5,
-		"cardImage": "CFM_671.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Cryomancienne",
 			"text": "<b>Cri de guerre :</b> gagne +2/+2 si un adversaire est <b>gelé</b>."
 		},
+		"goldenImage": "CFM_671.gif",
 		"health": 5,
 		"id": "CFM_671",
 		"name": "Cryomancer",
@@ -1590,13 +1555,13 @@ var parseCardsText = {
 	{
 		"artist": "Sedhayu Ardian",
 		"attack": 4,
-		"cardImage": "EX1_089.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Golem arcanique",
 			"text": "<b>Cri de guerre :</b> donne à votre adversaire un cristal de mana."
 		},
+		"goldenImage": "EX1_089.gif",
 		"health": 4,
 		"id": "EX1_089",
 		"name": "Arcane Golem",
@@ -1609,13 +1574,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 5,
-		"cardImage": "AT_113.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Recruteur",
 			"text": "<b>Exaltation :</b> ajoute un écuyer 2/2 dans votre main."
 		},
+		"goldenImage": "AT_113.gif",
 		"health": 4,
 		"id": "AT_113",
 		"name": "Recruiter",
@@ -1628,13 +1593,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 1,
-		"cardImage": "EX1_582.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Mage de Dalaran",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "EX1_582.gif",
 		"health": 4,
 		"id": "EX1_582",
 		"name": "Dalaran Mage",
@@ -1647,13 +1612,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Dixon",
-		"cardImage": "AT_033.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Larcin",
 			"text": "Ajoute 2 cartes de classe aléatoires dans votre main <i>(de la classe de votre adversaire)</i>."
 		},
+		"goldenImage": "AT_033.gif",
 		"id": "AT_033",
 		"name": "Burgle",
 		"playerClass": "Rogue",
@@ -1664,13 +1629,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Christopher Moeller",
-		"cardImage": "AT_043.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Communion astrale",
 			"text": "Gagne 10 cristaux de mana. Vous défausse de votre main."
 		},
+		"goldenImage": "AT_043.gif",
 		"id": "AT_043",
 		"name": "Astral Communion",
 		"playerClass": "Druid",
@@ -1682,13 +1647,13 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 2,
-		"cardImage": "AT_109.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Guetteur d’Argent",
 			"text": "Ne peut pas attaquer.\n<b>Exaltation :</b> peut attaquer normalement pendant ce tour."
 		},
+		"goldenImage": "AT_109.gif",
 		"health": 4,
 		"id": "AT_109",
 		"name": "Argent Watchman",
@@ -1699,7 +1664,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_178be.png",
 		"fr": {
 			"name": "Déraciné",
 			"text": "+5 Attaque."
@@ -1712,7 +1676,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "AT_119e.png",
 		"fr": {
 			"name": "Exalté",
 			"text": "Caractéristiques augmentées."
@@ -1727,7 +1690,6 @@ var parseCardsText = {
 	{
 		"artist": "G.Tsai & K. Turovec",
 		"attack": 3,
-		"cardImage": "KAR_A02_03.png",
 		"cost": 3,
 		"fr": {
 			"name": "Fourchette",
@@ -1742,7 +1704,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_029e.png",
 		"fr": {
 			"name": "Lame effilée",
 			"text": "+1 ATQ."
@@ -1755,7 +1716,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "EX1_508o.png",
 		"fr": {
 			"name": "Mlarggragllabl !",
 			"text": "Ce murloc a +1 ATQ."
@@ -1768,7 +1728,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "PART_006a.png",
 		"fr": {
 			"name": "Inversion",
 			"text": "L’Attaque et la Vie ont été échangées par l’inverseur."
@@ -1781,7 +1740,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "CS2_222o.png",
 		"fr": {
 			"name": "Puissance de Hurlevent",
 			"text": "A +1/+1."
@@ -1794,7 +1752,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_007e.png",
 		"fr": {
 			"name": "Inversion déviante",
 			"text": "L’Attaque et la Vie ont été échangées par Banane déviante."
@@ -1808,13 +1765,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "NAX9_05.png",
 		"cost": 3,
 		"durability": 3,
 		"fr": {
 			"name": "Lame runique",
 			"text": "A +3 ATQ si les autres cavaliers sont morts."
 		},
+		"goldenImage": "NAX9_05.gif",
 		"id": "NAX9_05",
 		"name": "Runeblade",
 		"playerClass": "Neutral",
@@ -1825,7 +1782,6 @@ var parseCardsText = {
 	{
 		"artist": "Max Grecke",
 		"attack": 4,
-		"cardImage": "KARA_06_01.png",
 		"cost": 4,
 		"fr": {
 			"name": "Romulo",
@@ -1840,7 +1796,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TU4f_006o.png",
 		"fr": {
 			"name": "Transcendance",
 			"text": "Cho ne peut pas être attaqué tant qu’il a des serviteurs."
@@ -1854,13 +1809,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ralph Horsley",
-		"cardImage": "CS2_029.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Boule de feu",
 			"text": "Inflige $6 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CS2_029.gif",
 		"id": "CS2_029",
 		"name": "Fireball",
 		"playerClass": "Mage",
@@ -1872,13 +1827,13 @@ var parseCardsText = {
 	{
 		"artist": "Eva Widermann",
 		"attack": 2,
-		"cardImage": "AT_059.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Brave archère",
 			"text": "<b>Exaltation :</b> inflige 2 points de dégâts au héros adverse si votre main est vide."
 		},
+		"goldenImage": "AT_059.gif",
 		"health": 1,
 		"id": "AT_059",
 		"name": "Brave Archer",
@@ -1889,7 +1844,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_082e.png",
 		"fr": {
 			"name": "Entraînement",
 			"text": "Attaque augmentée."
@@ -1903,12 +1857,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "LOEA02_10c.png",
 		"cost": 0,
 		"fr": {
 			"name": "Misha",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOEA02_10c.gif",
 		"health": 4,
 		"id": "LOEA02_10c",
 		"name": "Misha",
@@ -1918,7 +1872,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate7Ench.png",
 		"fr": {
 			"name": "Destin 7 : enchantement La pièce"
 		},
@@ -1931,11 +1884,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 21,
-		"cardImage": "CFM_712_t21.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t21.gif",
 		"health": 21,
 		"id": "CFM_712_t21",
 		"name": "Jade Golem",
@@ -1945,13 +1898,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "LOEA09_4H.png",
 		"cost": 1,
 		"durability": 2,
 		"fr": {
 			"name": "Lance rare",
 			"text": "Gagne +1/+1 chaque fois que votre adversaire joue une carte rare."
 		},
+		"goldenImage": "LOEA09_4H.gif",
 		"id": "LOEA09_4H",
 		"name": "Rare Spear",
 		"playerClass": "Neutral",
@@ -1961,13 +1914,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Benjamin Zhang",
-		"cardImage": "CFM_313.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Mon précieux",
 			"text": "<b>Découvre</b> une carte avec <b>Surcharge</b>. <b>Surcharge : (1)</b>"
 		},
+		"goldenImage": "CFM_313.gif",
 		"id": "CFM_313",
 		"name": "Finders Keepers",
 		"overload": 1,
@@ -1978,7 +1931,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_014te.png",
 		"fr": {
 			"name": "Banane",
 			"text": "A +1/+1."
@@ -1992,7 +1944,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "KARA_07_06.png",
 		"cost": 4,
 		"fr": {
 			"name": "Démon en liberté !",
@@ -2007,12 +1958,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "NAX6_03t.png",
 		"cost": 0,
 		"fr": {
 			"name": "Spore",
 			"text": "<b>Râle d’agonie :</b> donne +8 ATQ à tous les serviteurs adverses."
 		},
+		"goldenImage": "NAX6_03t.gif",
 		"health": 1,
 		"id": "NAX6_03t",
 		"name": "Spore",
@@ -2024,7 +1975,6 @@ var parseCardsText = {
 	{
 		"artist": "Richard Wright",
 		"attack": 4,
-		"cardImage": "GVG_054.png",
 		"collectible": true,
 		"cost": 3,
 		"durability": 2,
@@ -2032,6 +1982,7 @@ var parseCardsText = {
 			"name": "Cogneguerre ogre",
 			"text": "50% de chance d’attaquer le mauvais adversaire."
 		},
+		"goldenImage": "GVG_054.gif",
 		"id": "GVG_054",
 		"name": "Ogre Warmaul",
 		"playerClass": "Warrior",
@@ -2041,7 +1992,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "GVG_055e.png",
 		"fr": {
 			"name": "Ferraille tordue",
 			"text": "+2/+2."
@@ -2056,7 +2006,6 @@ var parseCardsText = {
 	{
 		"artist": "Alex Konstad",
 		"attack": 2,
-		"cardImage": "OG_033.png",
 		"collectible": true,
 		"cost": 5,
 		"durability": 2,
@@ -2064,6 +2013,7 @@ var parseCardsText = {
 			"name": "Tentacules brachiaux",
 			"text": "<b>Râle d’agonie :</b> replace cette carte dans votre main."
 		},
+		"goldenImage": "OG_033.gif",
 		"id": "OG_033",
 		"name": "Tentacles for Arms",
 		"playerClass": "Warrior",
@@ -2073,7 +2023,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "LOEA01_02.png",
 		"cost": 0,
 		"fr": {
 			"name": "Bénédictions du soleil",
@@ -2087,12 +2036,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "NEW1_007b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Météores",
 			"text": "Inflige $5 |4(point,points) de dégâts à un serviteur."
 		},
+		"goldenImage": "NEW1_007b.gif",
 		"id": "NEW1_007b",
 		"name": "Starfall",
 		"playerClass": "Druid",
@@ -2102,12 +2051,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "CRED_06.png",
 		"cost": 1,
 		"fr": {
 			"name": "Derek Sakamoto",
 			"text": "<i>Le célèbre tapeur des pieds.</i>"
 		},
+		"goldenImage": "CRED_06.gif",
 		"health": 1,
 		"id": "CRED_06",
 		"name": "Derek Sakamoto",
@@ -2118,12 +2067,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA04_30.png",
 		"cost": 0,
 		"fr": {
 			"name": "Les ténèbres",
 			"text": "<b>Prendre le raccourci ?</b>"
 		},
+		"goldenImage": "LOEA04_30.gif",
 		"id": "LOEA04_30",
 		"name": "The Darkness",
 		"playerClass": "Neutral",
@@ -2132,7 +2081,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "AT_045ee.png",
 		"fr": {
 			"name": "Ench. de deck de mandebrume"
 		},
@@ -2144,12 +2092,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t30.png",
 		"cost": 10,
 		"fr": {
 			"name": "Sang-royal",
 			"text": "Vous piochez 3 cartes."
 		},
+		"goldenImage": "CFM_621t30.gif",
 		"id": "CFM_621t30",
 		"name": "Kingsblood",
 		"playerClass": "Neutral",
@@ -2159,11 +2107,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "EX1_tk28.png",
 		"cost": 1,
 		"fr": {
 			"name": "Écureuil"
 		},
+		"goldenImage": "EX1_tk28.gif",
 		"health": 1,
 		"id": "EX1_tk28",
 		"name": "Squirrel",
@@ -2175,13 +2123,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 6,
-		"cardImage": "OG_318.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Lardeur, Perte d’Elwynn",
 			"text": "Chaque fois que ce serviteur subit des dégâts, invoque un gnoll 2/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "OG_318.gif",
 		"health": 6,
 		"id": "OG_318",
 		"name": "Hogger, Doom of Elwynn",
@@ -2194,13 +2142,13 @@ var parseCardsText = {
 	{
 		"artist": "Michael Komarck",
 		"attack": 3,
-		"cardImage": "EX1_274.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Arcaniste éthérien",
 			"text": "Si vous contrôlez un <b>Secret</b> à la fin de votre tour, gagne +2/+2."
 		},
+		"goldenImage": "EX1_274.gif",
 		"health": 3,
 		"id": "EX1_274",
 		"name": "Ethereal Arcanist",
@@ -2211,12 +2159,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMC_95h.png",
 		"cost": 3,
 		"fr": {
 			"name": "Chiots du magma",
 			"text": "Invoque deux chiots du magma 2/4."
 		},
+		"goldenImage": "BRMC_95h.gif",
 		"id": "BRMC_95h",
 		"name": "Core Hound Puppies",
 		"playerClass": "Neutral",
@@ -2225,7 +2173,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TU4e_002.png",
 		"cost": 2,
 		"fr": {
 			"name": "Flammes d’Azzinoth",
@@ -2240,13 +2187,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Markus Erdt",
-		"cardImage": "EX1_158.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Âme de la forêt",
 			"text": "Confère à vos serviteurs « <b>Râle d’agonie :</b> invoque un tréant 2/2. »"
 		},
+		"goldenImage": "EX1_158.gif",
 		"id": "EX1_158",
 		"name": "Soul of the Forest",
 		"playerClass": "Druid",
@@ -2256,11 +2203,11 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "HERO_01a.png",
 		"collectible": true,
 		"fr": {
 			"name": "Magni Barbe-de-Bronze"
 		},
+		"goldenImage": "HERO_01a.gif",
 		"health": 30,
 		"id": "HERO_01a",
 		"name": "Magni Bronzebeard",
@@ -2270,7 +2217,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "TU4c_008e.png",
 		"fr": {
 			"name": "Puissance de Mukla",
 			"text": "Le roi Mukla a +8 en Attaque pendant ce tour."
@@ -2283,7 +2229,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA02_02h.png",
 		"cost": 0,
 		"fr": {
 			"name": "Intuition de djinn",
@@ -2299,13 +2244,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 5,
-		"cardImage": "GVG_115.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Toshley",
 			"text": "<b>Cri de guerre et Râle d’agonie :</b> ajoute une carte <b>Pièce détachée</b> dans votre main."
 		},
+		"goldenImage": "GVG_115.gif",
 		"health": 7,
 		"id": "GVG_115",
 		"name": "Toshley",
@@ -2317,12 +2262,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "CRED_20.png",
 		"cost": 3,
 		"fr": {
 			"name": "Brian Birmingham",
 			"text": "<b>Choix des armes :</b> rend tous ses PV à un Méca ou confère <b>Furie des vents</b> à un concepteur."
 		},
+		"goldenImage": "CRED_20.gif",
 		"health": 2,
 		"id": "CRED_20",
 		"name": "Brian Birmingham",
@@ -2334,12 +2279,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "AT_132_ROGUEt.png",
 		"cost": 1,
 		"durability": 2,
 		"fr": {
 			"name": "Dague empoisonnée"
 		},
+		"goldenImage": "AT_132_ROGUEt.gif",
 		"id": "AT_132_ROGUEt",
 		"name": "Poisoned Dagger",
 		"playerClass": "Rogue",
@@ -2348,12 +2293,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "CRED_29.png",
 		"cost": 5,
 		"fr": {
 			"name": "Jason MacAllister",
 			"text": "<i>C’est un gars vraiment fiable.</i>"
 		},
+		"goldenImage": "CRED_29.gif",
 		"health": 5,
 		"id": "CRED_29",
 		"name": "Jason MacAllister",
@@ -2364,7 +2309,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "OG_174e.png",
 		"fr": {
 			"name": "Sans-visage",
 			"text": "Copie des caractéristiques."
@@ -2379,13 +2323,13 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 2,
-		"cardImage": "AT_042.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Druidesse du Sabre",
 			"text": "<b>Choix des armes :</b> se transforme pour obtenir <b>Charge</b> ou gagne +1/+1 et <b>Camouflage</b>."
 		},
+		"goldenImage": "AT_042.gif",
 		"health": 1,
 		"id": "AT_042",
 		"name": "Druid of the Saber",
@@ -2398,13 +2342,13 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 2,
-		"cardImage": "EX1_166.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gardien du bosquet",
 			"text": "<b>Choix des armes :</b> inflige 2 points de dégâts ou réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "EX1_166.gif",
 		"health": 2,
 		"id": "EX1_166",
 		"name": "Keeper of the Grove",
@@ -2415,7 +2359,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_014e.png",
 		"fr": {
 			"name": "Effet d’ombrefiel",
 			"text": "Coûte (1) |4(cristal,cristaux) de moins."
@@ -2428,7 +2371,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "OG_123e.png",
 		"fr": {
 			"name": "Déphasé",
 			"text": "Se transforme en serviteurs aléatoires."
@@ -2441,7 +2383,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "FP1_028e.png",
 		"fr": {
 			"name": "Appel des ténèbres",
 			"text": "Caractéristiques augmentées."
@@ -2456,7 +2397,6 @@ var parseCardsText = {
 	{
 		"artist": "Matt Cavotta",
 		"attack": 5,
-		"cardImage": "CS2_187.png",
 		"collectible": true,
 		"cost": 5,
 		"faction": "HORDE",
@@ -2464,6 +2404,7 @@ var parseCardsText = {
 			"name": "Garde de Baie-du-Butin",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_187.gif",
 		"health": 4,
 		"id": "CS2_187",
 		"name": "Booty Bay Bodyguard",
@@ -2474,12 +2415,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_CoOpBossSpell_6.png",
 		"cost": 0,
 		"fr": {
 			"name": "Détruire le chroniqueur",
 			"text": "Détruit le chroniqueur Cho."
 		},
+		"goldenImage": "TB_CoOpBossSpell_6.gif",
 		"id": "TB_CoOpBossSpell_6",
 		"name": "Kill the Lorewalker",
 		"playerClass": "Neutral",
@@ -2488,7 +2429,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "AT_117e.png",
 		"fr": {
 			"name": "Cérémonie",
 			"text": "+2/+2."
@@ -2502,12 +2442,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "BRMA14_12.png",
 		"cost": 5,
 		"fr": {
 			"name": "Magmagueule",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA14_12.gif",
 		"health": 2,
 		"id": "BRMA14_12",
 		"name": "Magmaw",
@@ -2518,7 +2458,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "OG_102e.png",
 		"fr": {
 			"name": "Transfert de puissance",
 			"text": "Caractéristiques échangées."
@@ -2531,7 +2470,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "OG_316k.png",
 		"fr": {
 			"name": "Ténébreux",
 			"text": "1/1."
@@ -2544,10 +2482,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA03_1.png",
 		"fr": {
 			"name": "Empereur Thaurissan"
 		},
+		"goldenImage": "BRMA03_1.gif",
 		"health": 30,
 		"id": "BRMA03_1",
 		"name": "Emperor Thaurissan",
@@ -2557,13 +2495,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sean McNally",
-		"cardImage": "CFM_696.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Dévolution",
 			"text": "Transforme tous les serviteurs adverses en serviteurs aléatoires qui coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "CFM_696.gif",
 		"id": "CFM_696",
 		"name": "Devolve",
 		"playerClass": "Shaman",
@@ -2574,12 +2512,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_25H.png",
 		"cost": 10,
 		"fr": {
 			"name": "Dame Naz’jar",
 			"text": "À la fin de votre tour, remplace tous les autres serviteurs par de nouveaux de même coût."
 		},
+		"goldenImage": "LOEA16_25H.gif",
 		"health": 10,
 		"id": "LOEA16_25H",
 		"name": "Lady Naz'jar",
@@ -2590,7 +2528,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_006e.png",
 		"fr": {
 			"name": "Grande banane",
 			"text": "A +2/+2."
@@ -2603,12 +2540,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_045.png",
 		"cost": 0,
 		"fr": {
 			"name": "Steal Card",
 			"text": "Steal a random card from your opponent."
 		},
+		"goldenImage": "XXX_045.gif",
 		"id": "XXX_045",
 		"name": "Steal Card",
 		"playerClass": "Neutral",
@@ -2619,13 +2556,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ralph Horsley",
-		"cardImage": "OG_273.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Résister aux ténèbres",
 			"text": "Invoque cinq recrues de la Main\nd’argent 1/1."
 		},
+		"goldenImage": "OG_273.gif",
 		"id": "OG_273",
 		"name": "Stand Against Darkness",
 		"playerClass": "Paladin",
@@ -2636,11 +2573,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "OG_270a.png",
 		"cost": 8,
 		"fr": {
 			"name": "Soldat nérubien"
 		},
+		"goldenImage": "OG_270a.gif",
 		"health": 7,
 		"id": "OG_270a",
 		"name": "Nerubian Soldier",
@@ -2649,12 +2586,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA04_28a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Boire à grands traits",
 			"text": "Vous piochez une carte."
 		},
+		"goldenImage": "LOEA04_28a.gif",
 		"id": "LOEA04_28a",
 		"name": "Drink Deeply",
 		"playerClass": "Neutral",
@@ -2665,13 +2602,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
-		"cardImage": "NEW1_018.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Mousse de la Voile sanglante",
 			"text": "<b>Cri de guerre :</b> gagne des points d’Attaque d’un montant équivalent à ceux de votre arme."
 		},
+		"goldenImage": "NEW1_018.gif",
 		"health": 3,
 		"id": "NEW1_018",
 		"name": "Bloodsail Raider",
@@ -2684,13 +2621,13 @@ var parseCardsText = {
 	{
 		"artist": "Phil Saunders",
 		"attack": 1,
-		"cardImage": "EX1_508.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Oracle sinistrécaille",
 			"text": "Vos autres murlocs ont +1 ATQ."
 		},
+		"goldenImage": "EX1_508.gif",
 		"health": 1,
 		"id": "EX1_508",
 		"name": "Grimscale Oracle",
@@ -2703,13 +2640,13 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 2,
-		"cardImage": "AT_080.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Commandant du fief",
 			"text": "Vous pouvez utiliser votre pouvoir héroïque deux fois par tour."
 		},
+		"goldenImage": "AT_080.gif",
 		"health": 3,
 		"id": "AT_080",
 		"name": "Garrison Commander",
@@ -2720,7 +2657,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA09_7e.png",
 		"fr": {
 			"name": "Chaudron"
 		},
@@ -2733,13 +2669,13 @@ var parseCardsText = {
 	{
 		"artist": "Paul Warzecha",
 		"attack": 2,
-		"cardImage": "EX1_390.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Guerrier tauren",
 			"text": "<b>Provocation</b>.\n<b>Accès de rage :</b> +3 ATQ"
 		},
+		"goldenImage": "EX1_390.gif",
 		"health": 3,
 		"id": "EX1_390",
 		"name": "Tauren Warrior",
@@ -2752,7 +2688,6 @@ var parseCardsText = {
 	{
 		"artist": "Efrem Palacios",
 		"attack": 1,
-		"cardImage": "EX1_366.png",
 		"collectible": true,
 		"cost": 3,
 		"durability": 5,
@@ -2760,6 +2695,7 @@ var parseCardsText = {
 			"name": "Épée de justice",
 			"text": "Après avoir invoqué un serviteur, lui donne +1/+1 et perd 1 Durabilité."
 		},
+		"goldenImage": "EX1_366.gif",
 		"id": "EX1_366",
 		"name": "Sword of Justice",
 		"playerClass": "Paladin",
@@ -2769,7 +2705,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "AT_121e.png",
 		"fr": {
 			"name": "Ego énorme",
 			"text": "Caractéristiques augmentées."
@@ -2785,7 +2720,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Capitaine Ro’Boum"
 		},
-		"goldenImage": "TB_FW_Boom.gif",
 		"health": 30,
 		"id": "TB_FW_Boom",
 		"name": "Capt. Boom Bot",
@@ -2794,12 +2728,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "XXX_043.png",
 		"cost": 0,
 		"fr": {
 			"name": "Mill 30",
 			"text": "Put 30 cards from a hero's deck into his graveyard."
 		},
+		"goldenImage": "XXX_043.gif",
 		"id": "XXX_043",
 		"name": "Mill 30",
 		"playerClass": "Neutral",
@@ -2811,11 +2745,11 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 2,
-		"cardImage": "CFM_621_m4.png",
 		"cost": 2,
 		"fr": {
 			"name": "Démon de la Kabale"
 		},
+		"goldenImage": "CFM_621_m4.gif",
 		"health": 2,
 		"id": "CFM_621_m4",
 		"name": "Kabal Demon",
@@ -2826,13 +2760,13 @@ var parseCardsText = {
 	{
 		"artist": "Jeremy Cranford",
 		"attack": 1,
-		"cardImage": "FP1_002.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Rampante hantée",
 			"text": "<b>Râle d’agonie :</b> invoque deux araignées spectrales 1/1."
 		},
+		"goldenImage": "FP1_002.gif",
 		"health": 2,
 		"id": "FP1_002",
 		"name": "Haunted Creeper",
@@ -2843,7 +2777,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "OG_293f.png",
 		"fr": {
 			"name": "Sombre gardien",
 			"text": "Caractéristiques augmentées."
@@ -2858,13 +2791,13 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 6,
-		"cardImage": "GVG_120.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Hemet Nesingwary",
 			"text": "<b>Cri de guerre :</b> détruit une Bête."
 		},
+		"goldenImage": "GVG_120.gif",
 		"health": 3,
 		"id": "GVG_120",
 		"name": "Hemet Nesingwary",
@@ -2875,12 +2808,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_037b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Racines vivantes",
 			"text": "Invoque deux arbrisseaux 1/1."
 		},
+		"goldenImage": "AT_037b.gif",
 		"id": "AT_037b",
 		"name": "Living Roots",
 		"playerClass": "Druid",
@@ -2889,7 +2822,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_613e.png",
 		"fr": {
 			"name": "Vengeance de VanCleef",
 			"text": "Caractéristiques augmentées."
@@ -2902,7 +2834,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "KARA_13_11e.png",
 		"fr": {
 			"name": "Affaiblir",
 			"text": "Les points de vie sont passés à 1."
@@ -2915,7 +2846,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "EX1_334e.png",
 		"fr": {
 			"name": "Folie de l’ombre",
 			"text": "Ce serviteur a changé de propriétaire pour ce tour."
@@ -2929,13 +2859,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Garner",
-		"cardImage": "EX1_289.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Barrière de glace",
 			"text": "<b>Secret :</b> quand votre héros est attaqué, il gagne 8 points d’armure."
 		},
+		"goldenImage": "EX1_289.gif",
 		"id": "EX1_289",
 		"name": "Ice Barrier",
 		"playerClass": "Mage",
@@ -2946,13 +2876,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "Mekka2.png",
 		"cost": 1,
 		"faction": "ALLIANCE",
 		"fr": {
 			"name": "Robot réparateur",
 			"text": "À la fin de votre tour, rend 6 PV à un personnage blessé."
 		},
+		"goldenImage": "Mekka2.gif",
 		"health": 3,
 		"id": "Mekka2",
 		"name": "Repair Bot",
@@ -2963,7 +2893,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_083e.png",
 		"fr": {
 			"name": "Volerie de faucons-dragons",
 			"text": "A <b>Furie des vents</b> pendant ce tour."
@@ -2977,12 +2906,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NAX9_02H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Dame Blaumeux",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_02H.gif",
 		"health": 7,
 		"id": "NAX9_02H",
 		"name": "Lady Blaumeux",
@@ -2993,7 +2922,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_040e.png",
 		"fr": {
 			"name": "Âme sœur",
 			"text": "+3 PV."
@@ -3008,13 +2936,13 @@ var parseCardsText = {
 	{
 		"artist": "Jon Neimeister",
 		"attack": 7,
-		"cardImage": "CFM_308.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Kun, le roi oublié",
 			"text": "<b>Choix des armes :</b> vous donne 10 points d’armure ou réinitialise vos cristaux de mana."
 		},
+		"goldenImage": "CFM_308.gif",
 		"health": 7,
 		"id": "CFM_308",
 		"name": "Kun the Forgotten King",
@@ -3027,13 +2955,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 6,
-		"cardImage": "GVG_113.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Faucheur 4000",
 			"text": "Inflige également des dégâts aux serviteurs à côté de celui qu’il attaque."
 		},
+		"goldenImage": "GVG_113.gif",
 		"health": 9,
 		"id": "GVG_113",
 		"name": "Foe Reaper 4000",
@@ -3046,13 +2974,13 @@ var parseCardsText = {
 	{
 		"artist": "Mark Zug",
 		"attack": 3,
-		"cardImage": "AT_129.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Fjola Plaie-lumineuse",
 			"text": "Chaque fois que <b>vous</b> ciblez ce serviteur avec un sort, gagne <b>Bouclier divin</b>."
 		},
+		"goldenImage": "AT_129.gif",
 		"health": 4,
 		"id": "AT_129",
 		"name": "Fjola Lightbane",
@@ -3063,7 +2991,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GVG_076a.png",
 		"fr": {
 			"name": "Pistons",
 			"text": "Attaque augmentée."
@@ -3078,7 +3005,6 @@ var parseCardsText = {
 	{
 		"artist": "Richard Wright",
 		"attack": 4,
-		"cardImage": "EX1_045.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "ALLIANCE",
@@ -3086,6 +3012,7 @@ var parseCardsText = {
 			"name": "Guetteur ancien",
 			"text": "Ne peut pas attaquer."
 		},
+		"goldenImage": "EX1_045.gif",
 		"health": 5,
 		"id": "EX1_045",
 		"name": "Ancient Watcher",
@@ -3096,12 +3023,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_ClassRandom_Druid.png",
 		"cost": 0,
 		"fr": {
 			"name": "Deuxième classe : druide",
 			"text": "Ajoute des cartes de druide dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Druid.gif",
 		"id": "TB_ClassRandom_Druid",
 		"name": "Second Class: Druid",
 		"playerClass": "Druid",
@@ -3111,12 +3038,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t20.png",
 		"cost": 5,
 		"fr": {
 			"name": "Néantine",
 			"text": "Invoque un démon 5/5."
 		},
+		"goldenImage": "CFM_621t20.gif",
 		"id": "CFM_621t20",
 		"name": "Netherbloom",
 		"playerClass": "Neutral",
@@ -3127,13 +3054,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Brereton",
 		"attack": 1,
-		"cardImage": "FP1_011.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Tisseuse",
 			"text": "<b>Râle d’agonie :</b> ajoute une carte Bête aléatoire dans votre main."
 		},
+		"goldenImage": "FP1_011.gif",
 		"health": 1,
 		"id": "FP1_011",
 		"name": "Webspinner",
@@ -3144,7 +3071,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_CoOpv3_008.png",
 		"cost": 0,
 		"fr": {
 			"name": "Projectiles enflammés",
@@ -3159,12 +3085,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NAX9_03H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Thane Korth’azz",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_03H.gif",
 		"health": 7,
 		"id": "NAX9_03H",
 		"name": "Thane Korth'azz",
@@ -3175,10 +3101,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX12_01H.png",
 		"fr": {
 			"name": "Gluth"
 		},
+		"goldenImage": "NAX12_01H.gif",
 		"health": 45,
 		"id": "NAX12_01H",
 		"name": "Gluth",
@@ -3187,7 +3113,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "NEW1_017e.png",
 		"fr": {
 			"name": "Ventre plein",
 			"text": "+2/+2. Rassasié."
@@ -3200,12 +3125,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_056.png",
 		"cost": 0,
 		"fr": {
 			"name": "Silence and Destroy All Minions",
 			"text": "Destroy all minions without triggering deathrattles."
 		},
+		"goldenImage": "XXX_056.gif",
 		"id": "XXX_056",
 		"name": "Silence and Destroy All Minions",
 		"playerClass": "Neutral",
@@ -3214,7 +3139,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_055o.png",
 		"fr": {
 			"name": "Surpuissant",
 			"text": "L’Attaque de l’accro au mana est augmentée."
@@ -3229,13 +3153,13 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & K. Turovec",
 		"attack": 5,
-		"cardImage": "CFM_760.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Livre-cristaux de la Kabale",
 			"text": "Coûte (2) |4(cristal,cristaux) de moins pour chaque <b>Secret</b> que vous avez joué pendant cette partie."
 		},
+		"goldenImage": "CFM_760.gif",
 		"health": 5,
 		"id": "CFM_760",
 		"name": "Kabal Crystal Runner",
@@ -3247,11 +3171,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "OG_044b.png",
 		"cost": 3,
 		"fr": {
 			"name": "Druide de la Flamme"
 		},
+		"goldenImage": "OG_044b.gif",
 		"health": 5,
 		"id": "OG_044b",
 		"name": "Druid of the Flame",
@@ -3261,12 +3185,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_165a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Forme de félin",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "EX1_165a.gif",
 		"id": "EX1_165a",
 		"name": "Cat Form",
 		"playerClass": "Druid",
@@ -3277,13 +3201,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Brandon Kitkouski",
-		"cardImage": "EX1_610.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Piège explosif",
 			"text": "<b>Secret :</b> quand votre héros est attaqué, inflige $2 |4(point,points) de dégâts à tous les adversaires."
 		},
+		"goldenImage": "EX1_610.gif",
 		"id": "EX1_610",
 		"name": "Explosive Trap",
 		"playerClass": "Hunter",
@@ -3294,12 +3218,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "AT_042t2.png",
 		"cost": 2,
 		"fr": {
 			"name": "Panthère dent-de-sabre",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "AT_042t2.gif",
 		"health": 2,
 		"id": "AT_042t2",
 		"name": "Sabertooth Panther",
@@ -3311,12 +3235,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t37.png",
 		"cost": 1,
 		"fr": {
 			"name": "Ichor de non-mort",
 			"text": "Invoque un serviteur allié mort pendant cette partie."
 		},
+		"goldenImage": "CFM_621t37.gif",
 		"id": "CFM_621t37",
 		"name": "Ichor of Undeath",
 		"playerClass": "Neutral",
@@ -3326,13 +3250,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jim Pavelec",
-		"cardImage": "CS2_236.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Esprit divin",
 			"text": "Double les points de vie d’un serviteur."
 		},
+		"goldenImage": "CS2_236.gif",
 		"id": "CS2_236",
 		"name": "Divine Spirit",
 		"playerClass": "Priest",
@@ -3342,7 +3266,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "KARA_13_19e.png",
 		"fr": {
 			"name": "Triste",
 			"text": "Ne peut pas attaquer pendant ce tour."
@@ -3356,11 +3279,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TU4f_002.png",
 		"cost": 1,
 		"fr": {
 			"name": "Éclaireur pandaren"
 		},
+		"goldenImage": "TU4f_002.gif",
 		"health": 1,
 		"id": "TU4f_002",
 		"name": "Pandaren Scout",
@@ -3371,13 +3294,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raven Mimura",
-		"cardImage": "EX1_294.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Entité miroir",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, en invoque une copie."
 		},
+		"goldenImage": "EX1_294.gif",
 		"id": "EX1_294",
 		"name": "Mirror Entity",
 		"playerClass": "Mage",
@@ -3387,11 +3310,11 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "HERO_08.png",
 		"collectible": true,
 		"fr": {
 			"name": "Jaina Portvaillant"
 		},
+		"goldenImage": "HERO_08.gif",
 		"health": 30,
 		"id": "HERO_08",
 		"name": "Jaina Proudmoore",
@@ -3403,13 +3326,13 @@ var parseCardsText = {
 	{
 		"artist": "Grace Liu",
 		"attack": 1,
-		"cardImage": "OG_051.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Ancien frappé d’interdit",
 			"text": "<b>Cri de guerre :</b> dépense tous vos cristaux de mana. Gagne +1/+1 pour chaque cristal dépensé."
 		},
+		"goldenImage": "OG_051.gif",
 		"health": 1,
 		"id": "OG_051",
 		"name": "Forbidden Ancient",
@@ -3420,7 +3343,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_411e.png",
 		"fr": {
 			"name": "Rage sanguinaire",
 			"text": "Aucune perte de durabilité."
@@ -3435,13 +3357,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 7,
-		"cardImage": "AT_128.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Le chevalier squelette",
 			"text": "<b>Râle d’agonie :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, renvoie le chevalier dans votre main."
 		},
+		"goldenImage": "AT_128.gif",
 		"health": 4,
 		"id": "AT_128",
 		"name": "The Skeleton Knight",
@@ -3452,12 +3374,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA02_10.png",
 		"cost": 0,
 		"fr": {
 			"name": "Vœu : compagnon",
 			"text": "<b>Découvre</b> un compagnon."
 		},
+		"goldenImage": "LOEA02_10.gif",
 		"id": "LOEA02_10",
 		"name": "Wish for Companionship",
 		"playerClass": "Neutral",
@@ -3471,7 +3393,6 @@ var parseCardsText = {
 			"name": "Contrebande",
 			"text": "L’affranchi sinistrécaille donne +1/+1."
 		},
-		"goldenImage": "CFM_650e.gif",
 		"id": "CFM_650e",
 		"name": "Smuggling",
 		"playerClass": "Neutral",
@@ -3481,12 +3402,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t25.png",
 		"cost": 10,
 		"fr": {
 			"name": "Cœur de feu",
 			"text": "Inflige $8 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CFM_621t25.gif",
 		"id": "CFM_621t25",
 		"name": "Heart of Fire",
 		"playerClass": "Neutral",
@@ -3495,12 +3416,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_ClassRandom_Shaman.png",
 		"cost": 0,
 		"fr": {
 			"name": "Deuxième classe : chaman",
 			"text": "Ajoute des cartes de chaman dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Shaman.gif",
 		"id": "TB_ClassRandom_Shaman",
 		"name": "Second Class: Shaman",
 		"playerClass": "Shaman",
@@ -3511,13 +3432,13 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 3,
-		"cardImage": "NEW1_041.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Kodo déchaîné",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur adverse aléatoire avec 2 en Attaque ou moins."
 		},
+		"goldenImage": "NEW1_041.gif",
 		"health": 5,
 		"id": "NEW1_041",
 		"name": "Stampeding Kodo",
@@ -3530,13 +3451,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
-		"cardImage": "CFM_807.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Commissaire-priseur Beardo",
 			"text": "Une fois que vous avez lancé un sort, réinitialise votre pouvoir héroïque."
 		},
+		"goldenImage": "CFM_807.gif",
 		"health": 4,
 		"id": "CFM_807",
 		"name": "Auctionmaster Beardo",
@@ -3547,7 +3468,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA14_6.png",
 		"cost": 6,
 		"fr": {
 			"name": "Activer Électron",
@@ -3563,13 +3483,13 @@ var parseCardsText = {
 	{
 		"artist": "Lars Grant-West",
 		"attack": 3,
-		"cardImage": "CS2_125.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Grizzly Ferpoil",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_125.gif",
 		"health": 3,
 		"id": "CS2_125",
 		"name": "Ironfur Grizzly",
@@ -3580,7 +3500,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_103.png",
 		"cost": 0,
 		"fr": {
 			"name": "Add 2 to Health",
@@ -3596,7 +3515,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "KARA_06_01heroic.png",
 		"cost": 3,
 		"fr": {
 			"name": "Romulo",
@@ -3612,11 +3530,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "LOEA06_02t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Statue de terrestre"
 		},
+		"goldenImage": "LOEA06_02t.gif",
 		"health": 2,
 		"id": "LOEA06_02t",
 		"name": "Earthen Statue",
@@ -3627,11 +3545,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 17,
-		"cardImage": "CFM_712_t17.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t17.gif",
 		"health": 17,
 		"id": "CFM_712_t17",
 		"name": "Jade Golem",
@@ -3641,13 +3559,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luke Mancini",
-		"cardImage": "BRM_017.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Ressusciter",
 			"text": "Invoque un serviteur allié aléatoire mort pendant la partie."
 		},
+		"goldenImage": "BRM_017.gif",
 		"id": "BRM_017",
 		"name": "Resurrect",
 		"playerClass": "Priest",
@@ -3662,7 +3580,6 @@ var parseCardsText = {
 			"name": "Contrebande",
 			"text": "Les marchandises volées donnent +3/+3."
 		},
-		"goldenImage": "CFM_752e.gif",
 		"id": "CFM_752e",
 		"name": "Smuggling",
 		"playerClass": "Neutral",
@@ -3671,7 +3588,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "KAR_A02_09H.png",
 		"cost": 4,
 		"fr": {
 			"name": "Mettre la table",
@@ -3686,7 +3602,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "TB_KaraPortals_003.png",
 		"cost": 3,
 		"fr": {
 			"name": "Élémentaire de fête",
@@ -3701,10 +3616,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA06_3H.png",
 		"fr": {
 			"name": "Ragnaros, seigneur du feu"
 		},
+		"goldenImage": "BRMA06_3H.gif",
 		"health": 30,
 		"id": "BRMA06_3H",
 		"name": "Ragnaros the Firelord",
@@ -3713,7 +3628,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "CS2_041e.png",
 		"fr": {
 			"name": "Infusion ancestrale",
 			"text": "Provocation."
@@ -3728,12 +3642,12 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 5,
-		"cardImage": "GVG_071.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Haut-trotteur égaré"
 		},
+		"goldenImage": "GVG_071.gif",
 		"health": 4,
 		"id": "GVG_071",
 		"name": "Lost Tallstrider",
@@ -3745,13 +3659,13 @@ var parseCardsText = {
 	{
 		"artist": "Lars Grant-West",
 		"attack": 2,
-		"cardImage": "EX1_170.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Cobra empereur",
 			"text": "Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "EX1_170.gif",
 		"health": 3,
 		"id": "EX1_170",
 		"name": "Emperor Cobra",
@@ -3763,7 +3677,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "L. Lullabi & C. Luechaiwattasopon",
-		"cardImage": "KAR_A02_11.png",
 		"cost": 5,
 		"fr": {
 			"name": "Lancer d’assiettes",
@@ -3779,13 +3692,13 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 1,
-		"cardImage": "GVG_103.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Micro-machine",
 			"text": "Gagne +1 ATQ au début de chaque tour."
 		},
+		"goldenImage": "GVG_103.gif",
 		"health": 2,
 		"id": "GVG_103",
 		"name": "Micro Machine",
@@ -3797,12 +3710,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "CRED_45.png",
 		"cost": 6,
 		"fr": {
 			"name": "Jonas Laster",
 			"text": "Chaque fois qu’un serviteur réduit au <b>Silence</b> meurt, gagne +1/+1."
 		},
+		"goldenImage": "CRED_45.gif",
 		"health": 6,
 		"id": "CRED_45",
 		"name": "Jonas Laster",
@@ -3814,12 +3727,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 8,
-		"cardImage": "LOEA04_13bth.png",
 		"cost": 4,
 		"fr": {
 			"name": "Garde d’Orsis",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "LOEA04_13bth.gif",
 		"health": 8,
 		"id": "LOEA04_13bth",
 		"name": "Orsis Guard",
@@ -3831,7 +3744,6 @@ var parseCardsText = {
 	{
 		"artist": "Peter C. Lee",
 		"attack": 5,
-		"cardImage": "DS1_188.png",
 		"collectible": true,
 		"cost": 7,
 		"durability": 2,
@@ -3839,6 +3751,7 @@ var parseCardsText = {
 			"name": "Arc long du gladiateur",
 			"text": "Votre héros est <b>Insensible</b> quand il attaque."
 		},
+		"goldenImage": "DS1_188.gif",
 		"id": "DS1_188",
 		"name": "Gladiator's Longbow",
 		"playerClass": "Hunter",
@@ -3850,13 +3763,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 2,
-		"cardImage": "OG_179.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Chauve-souris embrasée",
 			"text": "<b>Râle d’agonie :</b> inflige\n1 point de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "OG_179.gif",
 		"health": 1,
 		"id": "OG_179",
 		"name": "Fiery Bat",
@@ -3868,7 +3781,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "John Polidora",
-		"cardImage": "KARA_08_01.png",
 		"fr": {
 			"name": "Dédain-du-Néant"
 		},
@@ -3880,7 +3792,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "EX1_366e.png",
 		"fr": {
 			"name": "Justice rendue",
 			"text": "A +1/+1."
@@ -3894,12 +3805,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "hexfrog.png",
 		"cost": 0,
 		"fr": {
 			"name": "Grenouille",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "hexfrog.gif",
 		"health": 1,
 		"id": "hexfrog",
 		"name": "Frog",
@@ -3911,11 +3822,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA04_24.png",
 		"cost": 8,
 		"fr": {
 			"name": "Garde du temple anubisath"
 		},
+		"goldenImage": "LOEA04_24.gif",
 		"health": 10,
 		"id": "LOEA04_24",
 		"name": "Anubisath Temple Guard",
@@ -3925,12 +3836,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "NAX7_02.png",
 		"cost": 2,
 		"fr": {
 			"name": "Doublure",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "NAX7_02.gif",
 		"health": 7,
 		"id": "NAX7_02",
 		"name": "Understudy",
@@ -3942,13 +3853,13 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 2,
-		"cardImage": "GVG_055.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Cliquetteur perce-vrille",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à un Méca allié."
 		},
+		"goldenImage": "GVG_055.gif",
 		"health": 5,
 		"id": "GVG_055",
 		"name": "Screwjank Clunker",
@@ -3959,12 +3870,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA12_4.png",
 		"cost": 1,
 		"fr": {
 			"name": "Affliction de l’espèce : vert",
 			"text": "Rend 2 PV à votre adversaire au début de votre tour tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_4.gif",
 		"id": "BRMA12_4",
 		"name": "Brood Affliction: Green",
 		"playerClass": "Neutral",
@@ -3975,13 +3886,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 3,
-		"cardImage": "NEW1_010.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Al’Akir, seigneur des Vents",
 			"text": "<b>Furie des vents, Charge, Bouclier divin, Provocation</b>"
 		},
+		"goldenImage": "NEW1_010.gif",
 		"health": 5,
 		"id": "NEW1_010",
 		"name": "Al'Akir the Windlord",
@@ -3992,7 +3903,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA01_02h.png",
 		"cost": 0,
 		"fr": {
 			"name": "Bénédictions du soleil",
@@ -4007,12 +3917,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "LOEA09_7H.png",
 		"cost": 0,
 		"fr": {
 			"name": "Chaudron",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> libère Sir Finley !"
 		},
+		"goldenImage": "LOEA09_7H.gif",
 		"health": 10,
 		"id": "LOEA09_7H",
 		"name": "Cauldron",
@@ -4022,7 +3932,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_623e.png",
 		"fr": {
 			"name": "Infusion",
 			"text": "+3 PV."
@@ -4035,7 +3944,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "AT_027e.png",
 		"fr": {
 			"name": "Maître invocateur",
 			"text": "Coûte (0) |4(cristal,cristaux)."
@@ -4049,13 +3957,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Joe Wilson",
-		"cardImage": "LOE_105.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Chapeau d’explorateur",
 			"text": "Donne à un serviteur +1/+1 et « <b>Râle d’agonie :</b> ajoute une carte Chapeau d’explorateur dans\nvotre main. »"
 		},
+		"goldenImage": "LOE_105.gif",
 		"id": "LOE_105",
 		"name": "Explorer's Hat",
 		"playerClass": "Hunter",
@@ -4067,11 +3975,11 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Zaqumyenny",
 		"attack": 1,
-		"cardImage": "CFM_621_m5.png",
 		"cost": 1,
 		"fr": {
 			"name": "Mouton"
 		},
+		"goldenImage": "CFM_621_m5.gif",
 		"health": 1,
 		"id": "CFM_621_m5",
 		"name": "Sheep",
@@ -4081,13 +3989,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Leo Che",
-		"cardImage": "EX1_161.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Acclimatation",
 			"text": "Détruit un serviteur. Votre adversaire pioche 2 cartes."
 		},
+		"goldenImage": "EX1_161.gif",
 		"id": "EX1_161",
 		"name": "Naturalize",
 		"playerClass": "Druid",
@@ -4097,12 +4005,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_025.png",
 		"cost": 0,
 		"fr": {
 			"name": "Do Nothing",
 			"text": "This does nothing."
 		},
+		"goldenImage": "XXX_025.gif",
 		"id": "XXX_025",
 		"name": "Do Nothing",
 		"playerClass": "Neutral",
@@ -4114,11 +4022,11 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & A. Bozonnet",
 		"attack": 1,
-		"cardImage": "OG_241a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Ombrebête"
 		},
+		"goldenImage": "OG_241a.gif",
 		"health": 1,
 		"id": "OG_241a",
 		"name": "Shadowbeast",
@@ -4129,7 +4037,6 @@ var parseCardsText = {
 	{
 		"artist": "Ladronn",
 		"attack": 2,
-		"cardImage": "CS2_131.png",
 		"collectible": true,
 		"cost": 4,
 		"faction": "ALLIANCE",
@@ -4137,6 +4044,7 @@ var parseCardsText = {
 			"name": "Chevalier de Hurlevent",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_131.gif",
 		"health": 5,
 		"id": "CS2_131",
 		"name": "Stormwind Knight",
@@ -4147,12 +4055,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA04_06b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Traverser avec précaution",
 			"text": "Subit 5 points de dégâts."
 		},
+		"goldenImage": "LOEA04_06b.gif",
 		"id": "LOEA04_06b",
 		"name": "Walk Across Gingerly",
 		"playerClass": "Neutral",
@@ -4163,7 +4071,6 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 3,
-		"cardImage": "EX1_082.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "ALLIANCE",
@@ -4171,6 +4078,7 @@ var parseCardsText = {
 			"name": "Bombardier fou",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts répartis de façon aléatoire entre tous les autres personnages."
 		},
+		"goldenImage": "EX1_082.gif",
 		"health": 2,
 		"id": "EX1_082",
 		"name": "Mad Bomber",
@@ -4182,13 +4090,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luca Zontini",
-		"cardImage": "GVG_026.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Feindre la mort",
 			"text": "Déclenche tous les <b>Râles d’agonie</b> de vos serviteurs."
 		},
+		"goldenImage": "GVG_026.gif",
 		"id": "GVG_026",
 		"name": "Feign Death",
 		"playerClass": "Hunter",
@@ -4202,7 +4110,6 @@ var parseCardsText = {
 			"name": "Camouflage d’assassin",
 			"text": "<b>Camouflage</b>."
 		},
-		"goldenImage": "TB_SPT_DPromoSecre8e.gif",
 		"id": "TB_SPT_DPromoSecre8e",
 		"name": "Assassin's Stealth",
 		"playerClass": "Neutral",
@@ -4212,13 +4119,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Efrem Palacios",
-		"cardImage": "GVG_031.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Recyclage",
 			"text": "Replace un serviteur adverse dans le deck de votre adversaire."
 		},
+		"goldenImage": "GVG_031.gif",
 		"id": "GVG_031",
 		"name": "Recycle",
 		"playerClass": "Druid",
@@ -4228,12 +4135,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_ClassRandom_Rogue.png",
 		"cost": 0,
 		"fr": {
 			"name": "Deuxième classe : voleur",
 			"text": "Ajoute des cartes de voleur dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Rogue.gif",
 		"id": "TB_ClassRandom_Rogue",
 		"name": "Second Class: Rogue",
 		"playerClass": "Rogue",
@@ -4244,13 +4151,13 @@ var parseCardsText = {
 	{
 		"artist": "J. Meyers & T. Washington",
 		"attack": 3,
-		"cardImage": "OG_303.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Ensorceleuse du culte",
 			"text": "<b>Dégâts des sorts : +1</b>\nAprès que vous avez lancé un sort, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_303.gif",
 		"health": 2,
 		"id": "OG_303",
 		"name": "Cult Sorcerer",
@@ -4262,7 +4169,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOE_018e.png",
 		"fr": {
 			"name": "Trogg pas stupide",
 			"text": "Attaque augmentée."
@@ -4280,7 +4186,6 @@ var parseCardsText = {
 			"name": "Invocation de gardiens",
 			"text": "Invoque deux gardiens 2/4."
 		},
-		"goldenImage": "TB_SPT_DPromoSpell2.gif",
 		"id": "TB_SPT_DPromoSpell2",
 		"name": "Summon Guardians",
 		"playerClass": "Neutral",
@@ -4289,10 +4194,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA08_1.png",
 		"fr": {
 			"name": "Général Drakkisath"
 		},
+		"goldenImage": "BRMA08_1.gif",
 		"health": 50,
 		"id": "BRMA08_1",
 		"name": "General Drakkisath",
@@ -4303,13 +4208,13 @@ var parseCardsText = {
 	{
 		"artist": "Todd Lockwood",
 		"attack": 4,
-		"cardImage": "GVG_100.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Guetteur flottant",
 			"text": "Chaque fois que votre héros subit des dégâts pendant votre tour,\ngagne +2/+2."
 		},
+		"goldenImage": "GVG_100.gif",
 		"health": 4,
 		"id": "GVG_100",
 		"name": "Floating Watcher",
@@ -4320,7 +4225,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_244e.png",
 		"fr": {
 			"name": "Puissance totémique",
 			"text": "+2 PV."
@@ -4335,13 +4239,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Konstad",
 		"attack": 6,
-		"cardImage": "OG_301.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Ancienne porte-bouclier",
 			"text": "<b>Cri de guerre :</b> gagne\n10 points d’armure si votre C’Thun a au moins 10 Attaque."
 		},
+		"goldenImage": "OG_301.gif",
 		"health": 6,
 		"id": "OG_301",
 		"name": "Ancient Shieldbearer",
@@ -4352,7 +4256,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_BlingBrawl_Blade2e.png",
 		"fr": {
 			"name": "Lame de Bling-o-tron HEROÏQUE"
 		},
@@ -4365,13 +4268,13 @@ var parseCardsText = {
 	{
 		"artist": "Jon Neimeister",
 		"attack": 5,
-		"cardImage": "CFM_900.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Apothicaire clandestin",
 			"text": "Inflige 5 points de dégâts à votre héros chaque fois que vous invoquez un serviteur."
 		},
+		"goldenImage": "CFM_900.gif",
 		"health": 5,
 		"id": "CFM_900",
 		"name": "Unlicensed Apothecary",
@@ -4382,7 +4285,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOE_105e.png",
 		"fr": {
 			"name": "Chapeau d’explorateur",
 			"text": "+1/+1.<b>Râle d’agonie :</b> ajoute un Chapeau d’explorateur dans votre main."
@@ -4395,7 +4297,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "CS2_102_H1_AT_132.png",
 		"cost": 2,
 		"fr": {
 			"name": "Défense stoïque",
@@ -4409,7 +4310,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "OG_282e.png",
 		"fr": {
 			"name": "Dévotion de la lame",
 			"text": "Caractéristiques augmentées."
@@ -4423,12 +4323,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "TU4c_007.png",
 		"cost": 6,
 		"fr": {
 			"name": "Grand frère de Mukla",
 			"text": "Il est si fort, et pour seulement 6 cristaux de mana ?!"
 		},
+		"goldenImage": "TU4c_007.gif",
 		"health": 10,
 		"id": "TU4c_007",
 		"name": "Mukla's Big Brother",
@@ -4440,13 +4340,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sean O’Daniels",
-		"cardImage": "CS2_012.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Balayage",
 			"text": "Inflige $4 |4(point,points) de dégâts à un adversaire et $1 |4(point,points) de dégâts à tous les autres adversaires."
 		},
+		"goldenImage": "CS2_012.gif",
 		"id": "CS2_012",
 		"name": "Swipe",
 		"playerClass": "Druid",
@@ -4458,13 +4358,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
-		"cardImage": "BRM_002.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Attise-flammes",
 			"text": "Après que vous avez lancé un sort, inflige 2 points de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "BRM_002.gif",
 		"health": 4,
 		"id": "BRM_002",
 		"name": "Flamewaker",
@@ -4475,12 +4375,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA16_8.png",
 		"cost": 0,
 		"fr": {
 			"name": "Fiole de Putrescin",
 			"text": "Détruit un serviteur adverse aléatoire."
 		},
+		"goldenImage": "LOEA16_8.gif",
 		"id": "LOEA16_8",
 		"name": "Putress' Vial",
 		"playerClass": "Neutral",
@@ -4489,10 +4389,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA17_3H.png",
 		"fr": {
 			"name": "Onyxia"
 		},
+		"goldenImage": "BRMA17_3H.gif",
 		"health": 30,
 		"id": "BRMA17_3H",
 		"name": "Onyxia",
@@ -4501,7 +4401,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "EX1_536e.png",
 		"fr": {
 			"name": "Amélioration",
 			"text": "Durabilité augmentée."
@@ -4519,7 +4418,6 @@ var parseCardsText = {
 			"name": "Visions du croisé",
 			"text": "<b>Secret :</b> fait passer l’attaque de tous les serviteurs à 1 quand votre adversaire invoque un serviteur avec <b>Provocation</b>."
 		},
-		"goldenImage": "TB_SPT_DPromoSecret2.gif",
 		"id": "TB_SPT_DPromoSecret2",
 		"name": "Visions of the Crusader",
 		"playerClass": "Warrior",
@@ -4528,7 +4426,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_046e.png",
 		"fr": {
 			"name": "Acier trempé",
 			"text": "+2 ATQ pendant ce tour."
@@ -4542,11 +4439,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TU4d_002.png",
 		"cost": 1,
 		"fr": {
 			"name": "Chasseur fou"
 		},
+		"goldenImage": "TU4d_002.gif",
 		"health": 1,
 		"id": "TU4d_002",
 		"name": "Crazed Hunter",
@@ -4558,11 +4455,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "LOE_089t3.png",
 		"cost": 2,
 		"fr": {
 			"name": "Avorton grognon"
 		},
+		"goldenImage": "LOE_089t3.gif",
 		"health": 2,
 		"id": "LOE_089t3",
 		"name": "Grumbly Runt",
@@ -4573,11 +4470,11 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 5,
-		"cardImage": "CFM_621_m2.png",
 		"cost": 5,
 		"fr": {
 			"name": "Démon de la Kabale"
 		},
+		"goldenImage": "CFM_621_m2.gif",
 		"health": 5,
 		"id": "CFM_621_m2",
 		"name": "Kabal Demon",
@@ -4587,7 +4484,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Skan Srisuwan",
-		"cardImage": "KARA_07_07.png",
 		"cost": 3,
 		"fr": {
 			"name": "Méca détraqué !",
@@ -4602,12 +4498,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t23.png",
 		"cost": 5,
 		"fr": {
 			"name": "Huile des ténèbres",
 			"text": "Ajoute 2 démons aléatoires dans votre main."
 		},
+		"goldenImage": "CFM_621t23.gif",
 		"id": "CFM_621t23",
 		"name": "Shadow Oil",
 		"playerClass": "Neutral",
@@ -4618,7 +4514,6 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
-		"cardImage": "EX1_028.png",
 		"collectible": true,
 		"cost": 5,
 		"faction": "ALLIANCE",
@@ -4626,6 +4521,7 @@ var parseCardsText = {
 			"name": "Tigre de Strangleronce",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "EX1_028.gif",
 		"health": 5,
 		"id": "EX1_028",
 		"name": "Stranglethorn Tiger",
@@ -4636,7 +4532,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TBST_006.png",
 		"fr": {
 			"name": "Forcer une carte commune",
 			"text": "Place une carte commune dans la main du joueur."
@@ -4650,13 +4545,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Charlene Le Scanff",
-		"cardImage": "CFM_662.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Potion de feu draconique",
 			"text": "Inflige $5 points de dégâts à tous les serviteurs qui ne sont pas des dragons."
 		},
+		"goldenImage": "CFM_662.gif",
 		"id": "CFM_662",
 		"name": "Dragonfire Potion",
 		"playerClass": "Priest",
@@ -4668,13 +4563,13 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 3,
-		"cardImage": "AT_089.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Lieutenant de la garde d’os",
 			"text": "<b>Exaltation :</b> gagne +1 PV."
 		},
+		"goldenImage": "AT_089.gif",
 		"health": 2,
 		"id": "AT_089",
 		"name": "Boneguard Lieutenant",
@@ -4685,7 +4580,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TU4d_003.png",
 		"cost": 2,
 		"fr": {
 			"name": "Coup de fusil",
@@ -4701,12 +4595,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "AT_132_SHAMANa.png",
 		"cost": 0,
 		"fr": {
 			"name": "Totem de soins",
 			"text": "À la fin de votre tour, rend 1 point de vie à tous vos serviteurs."
 		},
+		"goldenImage": "AT_132_SHAMANa.gif",
 		"health": 2,
 		"id": "AT_132_SHAMANa",
 		"name": "Healing Totem",
@@ -4717,13 +4611,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Brian Despain",
-		"cardImage": "FP1_019.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Graines de poison",
 			"text": "Détruit tous les serviteurs et les remplace par des tréants 2/2."
 		},
+		"goldenImage": "FP1_019.gif",
 		"id": "FP1_019",
 		"name": "Poison Seeds",
 		"playerClass": "Druid",
@@ -4734,12 +4628,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "NAX8_05t.png",
 		"cost": 5,
 		"fr": {
 			"name": "Cavalier spectral",
 			"text": "Au début de votre tour, inflige 1 point de dégâts à votre héros."
 		},
+		"goldenImage": "NAX8_05t.gif",
 		"health": 6,
 		"id": "NAX8_05t",
 		"name": "Spectral Rider",
@@ -4749,7 +4643,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_057o.png",
 		"fr": {
 			"name": "Étrillé",
 			"text": "<b>Insensible</b> pendant ce tour"
@@ -4762,7 +4655,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "KARA_00_01H.png",
 		"fr": {
 			"name": "Prince Malchezaar"
 		},
@@ -4776,11 +4668,11 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 8,
-		"cardImage": "CFM_621_m3.png",
 		"cost": 8,
 		"fr": {
 			"name": "Démon de la Kabale"
 		},
+		"goldenImage": "CFM_621_m3.gif",
 		"health": 8,
 		"id": "CFM_621_m3",
 		"name": "Kabal Demon",
@@ -4790,12 +4682,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "NEW1_032.png",
 		"cost": 3,
 		"fr": {
 			"name": "Misha",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "NEW1_032.gif",
 		"health": 4,
 		"id": "NEW1_032",
 		"name": "Misha",
@@ -4808,13 +4700,13 @@ var parseCardsText = {
 	{
 		"artist": "Eva Widermann",
 		"attack": 3,
-		"cardImage": "AT_046.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Rohart totémique",
 			"text": "<b>Cri de guerre :</b> invoque un totem de base aléatoire."
 		},
+		"goldenImage": "AT_046.gif",
 		"health": 2,
 		"id": "AT_046",
 		"name": "Tuskarr Totemic",
@@ -4827,13 +4719,13 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"attack": 4,
-		"cardImage": "EX1_005.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Chasseur de gros gibier",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur avec 7 Attaque ou plus."
 		},
+		"goldenImage": "EX1_005.gif",
 		"health": 2,
 		"id": "EX1_005",
 		"name": "Big Game Hunter",
@@ -4844,12 +4736,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOE_008H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Œil d’Hakkar",
 			"text": "Pioche un secret dans le deck de votre adversaire et le place sur le champ de bataille."
 		},
+		"goldenImage": "LOE_008H.gif",
 		"id": "LOE_008H",
 		"name": "Eye of Hakkar",
 		"playerClass": "Neutral",
@@ -4858,7 +4750,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_111e.png",
 		"fr": {
 			"name": "All Charge, All Windfury, All The Time",
 			"text": "Your minions always have <b>Charge</b> and <b>Windfury</b>"
@@ -4872,12 +4763,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "CRED_13.png",
 		"cost": 10,
 		"fr": {
 			"name": "Brian Schwab",
 			"text": "À la fin de votre tour, donne +1 ATQ à un serviteur aléatoire."
 		},
+		"goldenImage": "CRED_13.gif",
 		"health": 10,
 		"id": "CRED_13",
 		"name": "Brian Schwab",
@@ -4890,7 +4781,6 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 3,
-		"cardImage": "KAR_035.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
@@ -4908,13 +4798,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler Walpole",
-		"cardImage": "EX1_544.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Fusée éclairante",
 			"text": "Tous les serviteurs perdent le <b>Camouflage</b>. Détruit tous les <b>Secrets</b> adverses. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_544.gif",
 		"id": "EX1_544",
 		"name": "Flare",
 		"playerClass": "Hunter",
@@ -4926,13 +4816,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 7,
-		"cardImage": "EX1_250.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Élémentaire de terre",
 			"text": "<b>Provocation</b>\n<b>Surcharge :</b> (3)"
 		},
+		"goldenImage": "EX1_250.gif",
 		"health": 8,
 		"id": "EX1_250",
 		"name": "Earth Elemental",
@@ -4944,7 +4834,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA07_03h.png",
 		"cost": 0,
 		"fr": {
 			"name": "Fuir la mine !",
@@ -4963,7 +4852,6 @@ var parseCardsText = {
 			"name": "Contrebande",
 			"text": "La caisse de contrebandier donne +2/+2."
 		},
-		"goldenImage": "CFM_334e.gif",
 		"id": "CFM_334e",
 		"name": "Smuggling",
 		"playerClass": "Neutral",
@@ -4978,7 +4866,6 @@ var parseCardsText = {
 			"name": "Gardien",
 			"text": "À la fin de votre tour, inflige 2 points de dégâts aux adversaires en face de ce serviteur."
 		},
-		"goldenImage": "TB_SPT_DPromoMinion2.gif",
 		"health": 4,
 		"id": "TB_SPT_DPromoMinion2",
 		"name": "Guardian",
@@ -4988,12 +4875,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_012.png",
 		"cost": 0,
 		"fr": {
 			"name": "Bounce",
 			"text": "Return a minion to its owner's hand."
 		},
+		"goldenImage": "XXX_012.gif",
 		"id": "XXX_012",
 		"name": "Bounce",
 		"playerClass": "Neutral",
@@ -5004,7 +4891,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Aleksandrov",
-		"cardImage": "KARA_07_05.png",
 		"cost": 3,
 		"fr": {
 			"name": "Bête déchaînée !",
@@ -5018,7 +4904,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "GVG_011a.png",
 		"fr": {
 			"name": "Rayon réducteur",
 			"text": "-2 ATQ pendant ce tour."
@@ -5033,13 +4918,13 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 5,
-		"cardImage": "FP1_030.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Horreb",
 			"text": "<b>Cri de guerre :</b> les sorts adverses coûtent (5) cristaux de plus au prochain tour."
 		},
+		"goldenImage": "FP1_030.gif",
 		"health": 5,
 		"id": "FP1_030",
 		"name": "Loatheb",
@@ -5051,13 +4936,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Eva Wilderman",
-		"cardImage": "OG_223.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Force divine",
 			"text": "Donne +1/+2 à un serviteur."
 		},
+		"goldenImage": "OG_223.gif",
 		"id": "OG_223",
 		"name": "Divine Strength",
 		"playerClass": "Paladin",
@@ -5069,7 +4954,6 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 4,
-		"cardImage": "FP1_021.png",
 		"collectible": true,
 		"cost": 4,
 		"durability": 2,
@@ -5077,6 +4961,7 @@ var parseCardsText = {
 			"name": "Morsure de la mort",
 			"text": "<b>Râle d’agonie :</b> inflige 1 point de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "FP1_021.gif",
 		"id": "FP1_021",
 		"name": "Death's Bite",
 		"playerClass": "Warrior",
@@ -5086,7 +4971,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "EX1_103e.png",
 		"fr": {
 			"name": "Mrghlglhal",
 			"text": "+2 PV."
@@ -5102,7 +4986,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ennuy-o-tron Prime"
 		},
-		"goldenImage": "TB_FactionWar_Hero_Annoy_Update.gif",
 		"health": 30,
 		"id": "TB_FactionWar_Hero_Annoy_Update",
 		"name": "Annoy-o-Tron Prime",
@@ -5113,13 +4996,13 @@ var parseCardsText = {
 	{
 		"artist": "Ben Olson",
 		"attack": 2,
-		"cardImage": "FP1_009.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Seigneur de la mort",
 			"text": "<b>Provocation. Râle d’agonie :</b> votre adversaire place un serviteur de son deck sur le champ de bataille."
 		},
+		"goldenImage": "FP1_009.gif",
 		"health": 8,
 		"id": "FP1_009",
 		"name": "Deathlord",
@@ -5131,12 +5014,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CRED_07.png",
 		"cost": 2,
 		"fr": {
 			"name": "Zwick",
 			"text": "<b>Cri de guerre :</b> se plaint du prix du bacon."
 		},
+		"goldenImage": "CRED_07.gif",
 		"health": 2,
 		"id": "CRED_07",
 		"name": "Zwick",
@@ -5152,7 +5035,6 @@ var parseCardsText = {
 			"name": "Dorépine",
 			"text": "+2 PV."
 		},
-		"goldenImage": "CFM_621e.gif",
 		"id": "CFM_621e",
 		"name": "Goldthorn",
 		"playerClass": "Neutral",
@@ -5162,11 +5044,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "NAX4_03H.png",
 		"cost": 5,
 		"fr": {
 			"name": "Squelette"
 		},
+		"goldenImage": "NAX4_03H.gif",
 		"health": 5,
 		"id": "NAX4_03H",
 		"name": "Skeleton",
@@ -5176,12 +5058,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "BRMA03_3H.png",
 		"cost": 2,
 		"fr": {
 			"name": "Moira Barbe-de-Bronze",
 			"text": "Thaurissan ne peut pas utiliser son pouvoir héroïque.\nN’attaque jamais de serviteurs à moins qu’ils n’aient <b>Provocation</b>."
 		},
+		"goldenImage": "BRMA03_3H.gif",
 		"health": 1,
 		"id": "BRMA03_3H",
 		"name": "Moira Bronzebeard",
@@ -5192,13 +5074,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Konstad",
-		"cardImage": "LOE_104.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Ensevelir",
 			"text": "Choisit un serviteur adverse. Le place dans votre deck."
 		},
+		"goldenImage": "LOE_104.gif",
 		"id": "LOE_104",
 		"name": "Entomb",
 		"playerClass": "Priest",
@@ -5208,7 +5090,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRM_020e.png",
 		"fr": {
 			"name": "Puissance draconique",
 			"text": "Caractéristiques augmentées."
@@ -5221,7 +5102,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "KARA_07_02e.png",
 		"fr": {
 			"name": "Protecteur de la galerie"
 		},
@@ -5232,10 +5112,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "NAX3_01.png",
 		"fr": {
 			"name": "Maexxna"
 		},
+		"goldenImage": "NAX3_01.gif",
 		"health": 30,
 		"id": "NAX3_01",
 		"name": "Maexxna",
@@ -5250,7 +5130,6 @@ var parseCardsText = {
 			"name": "Char de force OMÉGA MAX",
 			"text": "<b>Bouclier divin</b>\n<b>Cri de guerre :</b> invoque six Ennuy-o-trons."
 		},
-		"goldenImage": "TB_FW_OmegaMax.gif",
 		"health": 10,
 		"id": "TB_FW_OmegaMax",
 		"name": "Force-Tank OMEGA MAX",
@@ -5261,7 +5140,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA07_2.png",
 		"cost": 1,
 		"fr": {
 			"name": "MOI TOUT CASSER",
@@ -5277,13 +5155,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 8,
-		"cardImage": "LOE_073.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Diablosaure fossilisé",
 			"text": "<b>Cri de guerre :</b> gagne <b>Provocation</b> si vous contrôlez une Bête."
 		},
+		"goldenImage": "LOE_073.gif",
 		"health": 8,
 		"id": "LOE_073",
 		"name": "Fossilized Devilsaur",
@@ -5295,12 +5173,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "LOEA02_10a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Leokk",
 			"text": "Vos serviteurs ont +1 ATQ."
 		},
+		"goldenImage": "LOEA02_10a.gif",
 		"health": 4,
 		"id": "LOEA02_10a",
 		"name": "Leokk",
@@ -5311,12 +5189,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t3.png",
 		"cost": 1,
 		"fr": {
 			"name": "Huile de pierre-écaille",
 			"text": "Gagne 4 points d’armure."
 		},
+		"goldenImage": "CFM_621t3.gif",
 		"id": "CFM_621t3",
 		"name": "Stonescale Oil",
 		"playerClass": "Neutral",
@@ -5326,13 +5204,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan & Gabor",
-		"cardImage": "AT_053.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Savoir ancestral",
 			"text": "Vous piochez 2 cartes. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "AT_053.gif",
 		"id": "AT_053",
 		"name": "Ancestral Knowledge",
 		"overload": 1,
@@ -5343,7 +5221,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX11_02H.png",
 		"cost": 0,
 		"fr": {
 			"name": "Nuage empoisonné",
@@ -5359,13 +5236,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
-		"cardImage": "EX1_319.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Diablotin des flammes",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts à votre héros."
 		},
+		"goldenImage": "EX1_319.gif",
 		"health": 2,
 		"id": "EX1_319",
 		"name": "Flame Imp",
@@ -5378,13 +5255,13 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 2,
-		"cardImage": "CFM_853.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Contrebandière des bas-fonds",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_853.gif",
 		"health": 4,
 		"id": "CFM_853",
 		"name": "Grimestreet Smuggler",
@@ -5396,12 +5273,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CS2_152.png",
 		"cost": 1,
 		"faction": "ALLIANCE",
 		"fr": {
 			"name": "Écuyer"
 		},
+		"goldenImage": "CS2_152.gif",
 		"health": 2,
 		"id": "CS2_152",
 		"name": "Squire",
@@ -5411,7 +5288,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA10_3.png",
 		"cost": 1,
 		"fr": {
 			"name": "La colonie",
@@ -5426,7 +5302,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "KAR_026t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Pion",
@@ -5442,7 +5317,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Daria Tuzova",
-		"cardImage": "KAR_073.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
@@ -5460,13 +5334,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 8,
-		"cardImage": "EX1_561.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Alexstrasza",
 			"text": "<b>Cri de guerre :</b> fixe les points de vie restants d’un héros à 15."
 		},
+		"goldenImage": "EX1_561.gif",
 		"health": 8,
 		"id": "EX1_561",
 		"name": "Alexstrasza",
@@ -5479,7 +5353,6 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 2,
-		"cardImage": "CFM_717.png",
 		"collectible": true,
 		"cost": 2,
 		"durability": 2,
@@ -5487,6 +5360,7 @@ var parseCardsText = {
 			"name": "Griffes de jade",
 			"text": "<b>Cri de guerre :</b> invoque un <b>golem de jade</b> {0}.\n<b><b>Surcharge :</b></b> (1)@<b>Cri de guerre :</b> invoque un <b>golem de jade</b>.\n<b><b>Surcharge :</b></b> (1)"
 		},
+		"goldenImage": "CFM_717.gif",
 		"id": "CFM_717",
 		"name": "Jade Claws",
 		"overload": 1,
@@ -5499,13 +5373,13 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 4,
-		"cardImage": "EX1_572.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Ysera",
 			"text": "À la fin de votre tour, ajoute une carte Rêve dans votre main."
 		},
+		"goldenImage": "EX1_572.gif",
 		"health": 12,
 		"id": "EX1_572",
 		"name": "Ysera",
@@ -5516,7 +5390,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_021e.png",
 		"fr": {
 			"name": "Gangrerage",
 			"text": "Caractéristiques augmentées."
@@ -5530,13 +5403,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matthew O'Connor",
-		"cardImage": "OG_073.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Thé de chardon",
 			"text": "Vous piochez une carte. En place 2 copies supplémentaires dans votre main."
 		},
+		"goldenImage": "OG_073.gif",
 		"id": "OG_073",
 		"name": "Thistle Tea",
 		"playerClass": "Rogue",
@@ -5546,7 +5419,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA14_8H.png",
 		"cost": 6,
 		"fr": {
 			"name": "Activer Magmatron",
@@ -5562,13 +5434,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "CFM_650.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Affranchi sinistrécaille",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à un murloc aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_650.gif",
 		"health": 1,
 		"id": "CFM_650",
 		"name": "Grimscale Chum",
@@ -5581,12 +5453,12 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 2,
-		"cardImage": "CFM_668t2.png",
 		"cost": 5,
 		"fr": {
 			"name": "Gangsters, hé ho !",
 			"text": "<b>Cri de guerre :</b> invoque 2 copies de ce serviteur."
 		},
+		"goldenImage": "CFM_668t2.gif",
 		"health": 2,
 		"id": "CFM_668t2",
 		"name": "Doppelgangster",
@@ -5597,12 +5469,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_155a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Marque de la nature",
 			"text": "+4 ATQ."
 		},
+		"goldenImage": "EX1_155a.gif",
 		"id": "EX1_155a",
 		"name": "Mark of Nature",
 		"playerClass": "Druid",
@@ -5611,7 +5483,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "GVG_023a.png",
 		"fr": {
 			"name": "Lame affûtée",
 			"text": "+1 ATQ."
@@ -5624,7 +5495,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_PickYourFate_3_Ench.png",
 		"fr": {
 			"name": "Pick Your Fate 3 Ench"
 		},
@@ -5636,11 +5506,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "NAX4_03.png",
 		"cost": 1,
 		"fr": {
 			"name": "Squelette"
 		},
+		"goldenImage": "NAX4_03.gif",
 		"health": 1,
 		"id": "NAX4_03",
 		"name": "Skeleton",
@@ -5650,11 +5520,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "AT_036t.png",
 		"cost": 4,
 		"fr": {
 			"name": "Nérubien"
 		},
+		"goldenImage": "AT_036t.gif",
 		"health": 4,
 		"id": "AT_036t",
 		"name": "Nerubian",
@@ -5663,12 +5533,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_030.png",
 		"cost": 0,
 		"fr": {
 			"name": "Opponent Disconnect",
 			"text": "Force your opponnet to disconnect."
 		},
+		"goldenImage": "XXX_030.gif",
 		"id": "XXX_030",
 		"name": "Opponent Disconnect",
 		"playerClass": "Neutral",
@@ -5679,13 +5549,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Hayes",
-		"cardImage": "GVG_061.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Régiment de bataille",
 			"text": "Invoque trois recrues de la Main d’argent 1/1. Équipe une arme 1/4."
 		},
+		"goldenImage": "GVG_061.gif",
 		"id": "GVG_061",
 		"name": "Muster for Battle",
 		"playerClass": "Paladin",
@@ -5697,13 +5567,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 1,
-		"cardImage": "EX1_012.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Mage de sang Thalnos",
 			"text": "<b>Dégâts des sorts : +1</b>.\n<b>Râle d’agonie :</b> vous piochez une carte."
 		},
+		"goldenImage": "EX1_012.gif",
 		"health": 1,
 		"id": "EX1_012",
 		"name": "Bloodmage Thalnos",
@@ -5717,13 +5587,13 @@ var parseCardsText = {
 	{
 		"artist": "Ron Spears",
 		"attack": 3,
-		"cardImage": "AT_111.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Vendeur de rafraîchissements",
 			"text": "<b>Cri de guerre :</b> rend 4 PV à chaque héros."
 		},
+		"goldenImage": "AT_111.gif",
 		"health": 5,
 		"id": "AT_111",
 		"name": "Refreshment Vendor",
@@ -5735,13 +5605,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sean O’Daniels",
-		"cardImage": "CS1_113.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Contrôle mental",
 			"text": "Prend le contrôle d’un serviteur adverse."
 		},
+		"goldenImage": "CS1_113.gif",
 		"id": "CS1_113",
 		"name": "Mind Control",
 		"playerClass": "Priest",
@@ -5753,13 +5623,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
-		"cardImage": "NEW1_011.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Soldat d’élite kor’kron",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "NEW1_011.gif",
 		"health": 3,
 		"id": "NEW1_011",
 		"name": "Kor'kron Elite",
@@ -5772,13 +5642,13 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 5,
-		"cardImage": "OG_316.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Héraut Volazj",
 			"text": "<b>Cri de guerre :</b> invoque une copie 1/1 de chacun de vos autres serviteurs."
 		},
+		"goldenImage": "OG_316.gif",
 		"health": 5,
 		"id": "OG_316",
 		"name": "Herald Volazj",
@@ -5790,11 +5660,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA04_23h.png",
 		"cost": 7,
 		"fr": {
 			"name": "Insecte géant"
 		},
+		"goldenImage": "LOEA04_23h.gif",
 		"health": 6,
 		"id": "LOEA04_23h",
 		"name": "Giant Insect",
@@ -5808,7 +5678,6 @@ var parseCardsText = {
 			"name": "Destroy Played Cards",
 			"text": "Whenever a player summons a minion, destroy it."
 		},
-		"goldenImage": "XXX_115.gif",
 		"id": "XXX_115",
 		"name": "Destroy Played Cards",
 		"playerClass": "Neutral",
@@ -5823,7 +5692,6 @@ var parseCardsText = {
 			"name": "Meuh…",
 			"text": "Invoque 3 bovins infernaux. Confère <b>Provocation</b> à tous les bovins."
 		},
-		"goldenImage": "TB_SPT_DPromoSpellBovine1.gif",
 		"id": "TB_SPT_DPromoSpellBovine1",
 		"name": "Moo...",
 		"playerClass": "Neutral",
@@ -5833,7 +5701,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Rafael Zanchetin",
-		"cardImage": "KAR_013.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
@@ -5850,13 +5717,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luca Zontini",
-		"cardImage": "DS1_185.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Tir des Arcanes",
 			"text": "Inflige $2 |4(point,points) de dégâts."
 		},
+		"goldenImage": "DS1_185.gif",
 		"id": "DS1_185",
 		"name": "Arcane Shot",
 		"playerClass": "Hunter",
@@ -5868,13 +5735,13 @@ var parseCardsText = {
 	{
 		"artist": "Lars Grant-West",
 		"attack": 4,
-		"cardImage": "OG_138.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Prophète nérubien",
 			"text": "Au début de votre tour, réduit le coût en mana de cette carte de\n(1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "OG_138.gif",
 		"health": 4,
 		"id": "OG_138",
 		"name": "Nerubian Prophet",
@@ -5885,12 +5752,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_11rand.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin cruel : murlocs",
 			"text": "Transforme chaque serviteur en jeu en murloc 1/1."
 		},
+		"goldenImage": "TB_PickYourFate_11rand.gif",
 		"id": "TB_PickYourFate_11rand",
 		"name": "Dire Fate: Murlocs",
 		"playerClass": "Neutral",
@@ -5899,12 +5766,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRM_030t.png",
 		"cost": 4,
 		"fr": {
 			"name": "Balayage de queue",
 			"text": "Inflige $4 |4(point,points) de dégâts."
 		},
+		"goldenImage": "BRM_030t.gif",
 		"id": "BRM_030t",
 		"name": "Tail Swipe",
 		"playerClass": "Neutral",
@@ -5913,7 +5780,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "KARA_00_06e.png",
 		"fr": {
 			"name": "Arcaniquement puissant",
 			"text": "<b>+5 aux dégâts des sorts</b>."
@@ -5928,7 +5794,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Sass",
-		"cardImage": "KARA_08_02.png",
 		"cost": 2,
 		"fr": {
 			"name": "Rage du Néant",
@@ -5943,13 +5808,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Bozonnet",
-		"cardImage": "CFM_620.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Potion de métamorphose",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, le transforme en mouton 1/1."
 		},
+		"goldenImage": "CFM_620.gif",
 		"id": "CFM_620",
 		"name": "Potion of Polymorph",
 		"playerClass": "Mage",
@@ -5961,11 +5826,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 29,
-		"cardImage": "CFM_712_t29.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t29.gif",
 		"health": 29,
 		"id": "CFM_712_t29",
 		"name": "Jade Golem",
@@ -5974,12 +5839,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA04_28b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Traverser à pied",
 			"text": "Gagne un cristal de mana."
 		},
+		"goldenImage": "LOEA04_28b.gif",
 		"id": "LOEA04_28b",
 		"name": "Wade Through",
 		"playerClass": "Neutral",
@@ -5990,7 +5855,6 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 1,
-		"cardImage": "KAR_063.png",
 		"collectible": true,
 		"cost": 1,
 		"durability": 3,
@@ -6008,7 +5872,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "TB_Superfriends001e.png",
 		"fr": {
 			"name": "Facilité",
 			"text": "La prochaine carte légendaire que vous jouez pendant ce tour coûte (3) cristaux de moins."
@@ -6023,13 +5886,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
-		"cardImage": "LOE_046.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Crapaud énorme",
 			"text": "<b>Râle d’agonie :</b> inflige\n1 point de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "LOE_046.gif",
 		"health": 2,
 		"id": "LOE_046",
 		"name": "Huge Toad",
@@ -6041,13 +5904,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Trevor Jacobs",
-		"cardImage": "CS2_074.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Poison mortel",
 			"text": "Donne +2 ATQ à votre arme."
 		},
+		"goldenImage": "CS2_074.gif",
 		"id": "CS2_074",
 		"name": "Deadly Poison",
 		"playerClass": "Rogue",
@@ -6057,7 +5920,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_PickYourFate_5_Ench.png",
 		"fr": {
 			"name": "Choisissez votre destin : enchantement 5"
 		},
@@ -6070,13 +5932,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 7,
-		"cardImage": "EX1_614.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Illidan Hurlorage",
 			"text": "Quand vous jouez une carte, invoque une Flamme d’Azzinoth 2/1."
 		},
+		"goldenImage": "EX1_614.gif",
 		"health": 5,
 		"id": "EX1_614",
 		"name": "Illidan Stormrage",
@@ -6087,12 +5949,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA05_3.png",
 		"cost": 4,
 		"fr": {
 			"name": "Bombe vivante",
 			"text": "Choisissez un serviteur adverse. Inflige $5 |4(point,points) de dégâts à tous les adversaires s’il survit jusqu’à votre prochain tour."
 		},
+		"goldenImage": "BRMA05_3.gif",
 		"id": "BRMA05_3",
 		"name": "Living Bomb",
 		"playerClass": "Neutral",
@@ -6102,12 +5964,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t27.png",
 		"cost": 10,
 		"fr": {
 			"name": "Chapeglace",
 			"text": "<b>Gèle</b> 3 serviteurs adverses aléatoires."
 		},
+		"goldenImage": "CFM_621t27.gif",
 		"id": "CFM_621t27",
 		"name": "Icecap",
 		"playerClass": "Neutral",
@@ -6116,7 +5978,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "OG_118e.png",
 		"fr": {
 			"name": "Ench. de deck Parjurer les ténèbres"
 		},
@@ -6127,10 +5988,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA14_1.png",
 		"fr": {
 			"name": "La sentinelle d’acier"
 		},
+		"goldenImage": "LOEA14_1.gif",
 		"health": 30,
 		"id": "LOEA14_1",
 		"name": "The Steel Sentinel",
@@ -6141,12 +6002,12 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 2,
-		"cardImage": "CFM_668t.png",
 		"cost": 5,
 		"fr": {
 			"name": "Gangsters, hé ho !",
 			"text": "<b>Cri de guerre :</b> invoque 2 copies de ce serviteur."
 		},
+		"goldenImage": "CFM_668t.gif",
 		"health": 2,
 		"id": "CFM_668t",
 		"name": "Doppelgangster",
@@ -6157,12 +6018,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TU4f_004.png",
 		"cost": 3,
 		"fr": {
 			"name": "Héritage de l’Empereur",
 			"text": "Donne +2/+2 à vos serviteurs. <i>(+2 ATQ / +2 PV)</i>"
 		},
+		"goldenImage": "TU4f_004.gif",
 		"id": "TU4f_004",
 		"name": "Legacy of the Emperor",
 		"playerClass": "Neutral",
@@ -6172,7 +6033,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX2_03.png",
 		"cost": 2,
 		"fr": {
 			"name": "Pluie de feu",
@@ -6187,13 +6047,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Peter Stapleton",
-		"cardImage": "OG_211.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Appel de la nature",
 			"text": "Invoque les trois compagnons animaux."
 		},
+		"goldenImage": "OG_211.gif",
 		"id": "OG_211",
 		"name": "Call of the Wild",
 		"playerClass": "Hunter",
@@ -6204,13 +6064,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Allsop",
-		"cardImage": "DS1_233.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Attaque mentale",
 			"text": "Inflige $5 |4(point,points) de dégâts au héros adverse."
 		},
+		"goldenImage": "DS1_233.gif",
 		"id": "DS1_233",
 		"name": "Mind Blast",
 		"playerClass": "Priest",
@@ -6221,12 +6081,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "LOEA15_3H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Raptor d’os",
 			"text": "<b>Cri de guerre :</b> prend le contrôle de l’arme de votre adversaire."
 		},
+		"goldenImage": "LOEA15_3H.gif",
 		"health": 2,
 		"id": "LOEA15_3H",
 		"name": "Boneraptor",
@@ -6238,13 +6098,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 1,
-		"cardImage": "GVG_013.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Maître des rouages",
 			"text": "A +2 ATQ tant que vous avez un Méca."
 		},
+		"goldenImage": "GVG_013.gif",
 		"health": 2,
 		"id": "GVG_013",
 		"name": "Cogmaster",
@@ -6255,7 +6115,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "DS1_188e.png",
 		"fr": {
 			"name": "Enchantement d’Arc long du gladiateur"
 		},
@@ -6272,7 +6131,6 @@ var parseCardsText = {
 			"name": "Nefarian",
 			"text": "Ne peut pas être\nla cible de sorts.\n<b>Boss :</b> Nefarian gagne s’il bat l’un de vous !"
 		},
-		"goldenImage": "TB_CoOpv3_Boss_NewClasses.gif",
 		"health": 200,
 		"id": "TB_CoOpv3_Boss_NewClasses",
 		"name": "Nefarian",
@@ -6285,7 +6143,6 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
-		"cardImage": "CS2_226.png",
 		"collectible": true,
 		"cost": 5,
 		"faction": "HORDE",
@@ -6293,6 +6150,7 @@ var parseCardsText = {
 			"name": "Chef de guerre loup-de-givre",
 			"text": "<b>Cri de guerre :</b> gagne +1/+1 pour chaque autre serviteur allié sur le champ de bataille."
 		},
+		"goldenImage": "CS2_226.gif",
 		"health": 4,
 		"id": "CS2_226",
 		"name": "Frostwolf Warlord",
@@ -6304,11 +6162,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TB_015.png",
 		"cost": 2,
 		"fr": {
 			"name": "Pirate"
 		},
+		"goldenImage": "TB_015.gif",
 		"health": 3,
 		"id": "TB_015",
 		"name": "Pirate",
@@ -6317,7 +6175,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA09_5.png",
 		"cost": 4,
 		"fr": {
 			"name": "Pied à terre",
@@ -6331,10 +6188,10 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "NAX10_01H.png",
 		"fr": {
 			"name": "Le Recousu"
 		},
+		"goldenImage": "NAX10_01H.gif",
 		"health": 45,
 		"id": "NAX10_01H",
 		"name": "Patchwerk",
@@ -6344,13 +6201,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Allsop",
-		"cardImage": "GVG_047.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Sabotage",
 			"text": "Détruit un serviteur adverse aléatoire. <b>Combo :</b> détruit aussi l’arme de votre adversaire."
 		},
+		"goldenImage": "GVG_047.gif",
 		"id": "GVG_047",
 		"name": "Sabotage",
 		"playerClass": "Rogue",
@@ -6362,13 +6219,13 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 8,
-		"cardImage": "OG_308.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Ver des sables géant",
 			"text": "Quand ce serviteur en tue un autre, il peut attaquer de nouveau."
 		},
+		"goldenImage": "OG_308.gif",
 		"health": 8,
 		"id": "OG_308",
 		"name": "Giant Sand Worm",
@@ -6379,7 +6236,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_004e.png",
 		"fr": {
 			"name": "Grâce d’Élune",
 			"text": "Vie augmentée."
@@ -6392,12 +6248,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_CoOpBossSpell_3.png",
 		"cost": 0,
 		"fr": {
 			"name": "Liquide de refroidissement",
 			"text": "Gèle et inflige les dégâts de l’attaque à tous les serviteurs.\nGagne 2 ATQ."
 		},
+		"goldenImage": "TB_CoOpBossSpell_3.gif",
 		"id": "TB_CoOpBossSpell_3",
 		"name": "Release Coolant",
 		"playerClass": "Neutral",
@@ -6407,7 +6263,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jim Nelson",
-		"cardImage": "KARA_13_02.png",
 		"cost": 2,
 		"fr": {
 			"name": "La Horde",
@@ -6423,13 +6278,13 @@ var parseCardsText = {
 	{
 		"artist": "Jerry Mascho",
 		"attack": 2,
-		"cardImage": "CFM_654.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Barman amical",
 			"text": "À la fin de votre tour, rend 1 PV à votre héros."
 		},
+		"goldenImage": "CFM_654.gif",
 		"health": 3,
 		"id": "CFM_654",
 		"name": "Friendly Bartender",
@@ -6440,7 +6295,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_132_PRIEST.png",
 		"cost": 2,
 		"fr": {
 			"name": "Soins",
@@ -6455,12 +6309,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMC_84.png",
 		"cost": 5,
 		"fr": {
 			"name": "Lanceur de sorts draconien",
 			"text": "<b>Cri de guerre :</b> invoque deux dragonnets 2/2."
 		},
+		"goldenImage": "BRMC_84.gif",
 		"health": 6,
 		"id": "BRMC_84",
 		"name": "Dragonkin Spellcaster",
@@ -6472,7 +6326,6 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
-		"cardImage": "KARA_13_03.png",
 		"cost": 2,
 		"fr": {
 			"name": "Guerrière orque"
@@ -6485,10 +6338,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX3_01H.png",
 		"fr": {
 			"name": "Maexxna"
 		},
+		"goldenImage": "NAX3_01H.gif",
 		"health": 45,
 		"id": "NAX3_01H",
 		"name": "Maexxna",
@@ -6499,13 +6352,13 @@ var parseCardsText = {
 	{
 		"artist": "J. Meyers & T. Washington",
 		"attack": 1,
-		"cardImage": "OG_151.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Tentacule de N’Zoth",
 			"text": "<b>Râle d’agonie :</b> inflige\n1 point de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "OG_151.gif",
 		"health": 1,
 		"id": "OG_151",
 		"name": "Tentacle of N'Zoth",
@@ -6517,11 +6370,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "DREAM_03.png",
 		"cost": 4,
 		"fr": {
 			"name": "Drake émeraude"
 		},
+		"goldenImage": "DREAM_03.gif",
 		"health": 6,
 		"id": "DREAM_03",
 		"name": "Emerald Drake",
@@ -6530,12 +6383,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_001.png",
 		"cost": 0,
 		"fr": {
 			"name": "Damage 1",
 			"text": "Deal $1 damage."
 		},
+		"goldenImage": "XXX_001.gif",
 		"id": "XXX_001",
 		"name": "Damage 1",
 		"playerClass": "Neutral",
@@ -6545,12 +6398,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA08_3.png",
 		"cost": 1,
 		"fr": {
 			"name": "Ordres de Drakkisath",
 			"text": "Détruit un serviteur. Gagne 10 points d’armure."
 		},
+		"goldenImage": "BRMA08_3.gif",
 		"id": "BRMA08_3",
 		"name": "Drakkisath's Command",
 		"playerClass": "Neutral",
@@ -6561,13 +6414,13 @@ var parseCardsText = {
 	{
 		"artist": "Phroilan Gardner",
 		"attack": 3,
-		"cardImage": "FP1_023.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Sombre sectateur",
 			"text": "<b>Râle d’agonie :</b> donne\n+3 PV à un serviteur allié aléatoire."
 		},
+		"goldenImage": "FP1_023.gif",
 		"health": 4,
 		"id": "FP1_023",
 		"name": "Dark Cultist",
@@ -6579,12 +6432,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "TB_KTRAF_4.png",
 		"cost": 4,
 		"fr": {
 			"name": "Gothik le Moissonneur",
 			"text": "<b>Râle d’agonie :</b> invoque un Gothik spectral pour votre adversaire."
 		},
+		"goldenImage": "TB_KTRAF_4.gif",
 		"health": 4,
 		"id": "TB_KTRAF_4",
 		"name": "Gothik the Harvester",
@@ -6595,7 +6448,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CS2_073e.png",
 		"fr": {
 			"name": "Sang froid",
 			"text": "+2 ATQ."
@@ -6608,7 +6460,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "OG_303e.png",
 		"fr": {
 			"name": "Dévotion de l’ensorceleur",
 			"text": "+1/+1."
@@ -6622,13 +6473,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Berggren",
-		"cardImage": "CS2_023.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Intelligence des Arcanes",
 			"text": "Vous piochez 2 cartes."
 		},
+		"goldenImage": "CS2_023.gif",
 		"id": "CS2_023",
 		"name": "Arcane Intellect",
 		"playerClass": "Mage",
@@ -6639,12 +6490,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "AT_132_SHAMANd.png",
 		"cost": 0,
 		"fr": {
 			"name": "Totem de courroux de l’air",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "AT_132_SHAMANd.gif",
 		"health": 2,
 		"id": "AT_132_SHAMANd",
 		"name": "Wrath of Air Totem",
@@ -6659,7 +6510,6 @@ var parseCardsText = {
 			"name": "Visions d’Hypnos",
 			"text": "+2/+2."
 		},
-		"goldenImage": "CFM_617e.gif",
 		"id": "CFM_617e",
 		"name": "Visions of Hypnos",
 		"playerClass": "Neutral",
@@ -6668,7 +6518,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_999_Crash.png",
 		"cost": 0,
 		"fr": {
 			"name": "Crash the server",
@@ -6684,7 +6533,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jakub Kasper",
-		"cardImage": "KAR_025.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
@@ -6701,13 +6549,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan & Gabor",
-		"cardImage": "CS2_089.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Lumière sacrée",
 			"text": "Rend #6 |4(point,points) de vie."
 		},
+		"goldenImage": "CS2_089.gif",
 		"id": "CS2_089",
 		"name": "Holy Light",
 		"playerClass": "Paladin",
@@ -6719,13 +6567,13 @@ var parseCardsText = {
 	{
 		"artist": "Todd Lockwood",
 		"attack": 1,
-		"cardImage": "OG_320.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Drake de minuit",
 			"text": "<b>Cri de guerre :</b> gagne +1 ATQ pour chaque autre carte dans votre main."
 		},
+		"goldenImage": "OG_320.gif",
 		"health": 4,
 		"id": "OG_320",
 		"name": "Midnight Drake",
@@ -6738,7 +6586,6 @@ var parseCardsText = {
 	{
 		"artist": "Chris Rahn",
 		"attack": 3,
-		"cardImage": "EX1_066.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "ALLIANCE",
@@ -6746,6 +6593,7 @@ var parseCardsText = {
 			"name": "Limon des marais acide",
 			"text": "<b>Cri de guerre :</b> détruit l’arme de votre adversaire."
 		},
+		"goldenImage": "EX1_066.gif",
 		"health": 2,
 		"id": "EX1_066",
 		"name": "Acidic Swamp Ooze",
@@ -6757,13 +6605,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Daarken",
-		"cardImage": "EX1_238.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Éclair",
 			"text": "Inflige $3 |4(point,points) de dégâts.\n<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "EX1_238.gif",
 		"id": "EX1_238",
 		"name": "Lightning Bolt",
 		"overload": 1,
@@ -6776,13 +6624,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 5,
-		"cardImage": "CFM_020.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Raza l’Enchaîné",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, votre pouvoir héroïque coûte (0) |4(cristal,cristaux) pendant cette partie."
 		},
+		"goldenImage": "CFM_020.gif",
 		"health": 5,
 		"id": "CFM_020",
 		"name": "Raza the Chained",
@@ -6795,13 +6643,13 @@ var parseCardsText = {
 	{
 		"artist": "Laurel D. Austin",
 		"attack": 4,
-		"cardImage": "NEW1_040.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Lardeur",
 			"text": "À la fin de votre tour, invoque un gnoll 2/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "NEW1_040.gif",
 		"health": 4,
 		"id": "NEW1_040",
 		"name": "Hogger",
@@ -6814,13 +6662,13 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 1,
-		"cardImage": "CFM_315.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Chat de gouttière",
 			"text": "<b>Cri de guerre :</b> invoque un chat 1/1."
 		},
+		"goldenImage": "CFM_315.gif",
 		"health": 1,
 		"id": "CFM_315",
 		"name": "Alleycat",
@@ -6832,13 +6680,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "EX1_622.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Mot de l’ombre : Mort",
 			"text": "Détruit un serviteur avec 5 ATQ ou plus."
 		},
+		"goldenImage": "EX1_622.gif",
 		"id": "EX1_622",
 		"name": "Shadow Word: Death",
 		"playerClass": "Priest",
@@ -6850,13 +6698,13 @@ var parseCardsText = {
 	{
 		"artist": "Anton Magdalina",
 		"attack": 4,
-		"cardImage": "CFM_655.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Limon d’égout toxique",
 			"text": "<b>Cri de guerre :</b> ôte 1 Durabilité à l’arme de votre adversaire."
 		},
+		"goldenImage": "CFM_655.gif",
 		"health": 3,
 		"id": "CFM_655",
 		"name": "Toxic Sewer Ooze",
@@ -6867,10 +6715,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA15_1H.png",
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "LOEA15_1H.gif",
 		"health": 30,
 		"id": "LOEA15_1H",
 		"name": "Rafaam",
@@ -6879,12 +6727,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "EX1_178b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Déraciner",
 			"text": "+5 ATQ."
 		},
+		"goldenImage": "EX1_178b.gif",
 		"id": "EX1_178b",
 		"name": "Uproot",
 		"playerClass": "Druid",
@@ -6898,7 +6746,6 @@ var parseCardsText = {
 			"name": "La colonie",
 			"text": "<b>Pouvoir héroïque</b>\nDonne +1 PV à tous les œufs corrompus, puis en invoque un."
 		},
-		"goldenImage": "TB_BRMA10_3H.gif",
 		"id": "TB_BRMA10_3H",
 		"name": "The Rookery",
 		"playerClass": "Deathknight",
@@ -6909,13 +6756,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "GVG_009.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Bombardière d’ombre",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts aux héros."
 		},
+		"goldenImage": "GVG_009.gif",
 		"health": 1,
 		"id": "GVG_009",
 		"name": "Shadowbomber",
@@ -6926,7 +6773,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_Coopv3_102b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Aumône de Lumière",
@@ -6940,7 +6786,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "AT_028e.png",
 		"fr": {
 			"name": "Lance de chi",
 			"text": "+3 ATQ."
@@ -6959,7 +6804,6 @@ var parseCardsText = {
 			"name": "Idole de jade",
 			"text": "Invoque un <b>golem de jade</b> {0}."
 		},
-		"goldenImage": "CFM_602a.gif",
 		"id": "CFM_602a",
 		"name": "Jade Idol",
 		"playerClass": "Druid",
@@ -6973,7 +6817,6 @@ var parseCardsText = {
 			"name": "Visions de haine",
 			"text": "<b>Secret :</b> quand les deux héros ont 15 PV ou moins, BASTON !"
 		},
-		"goldenImage": "TB_SPT_DPromoSecret10.gif",
 		"id": "TB_SPT_DPromoSecret10",
 		"name": "Visions of Hate",
 		"playerClass": "Warrior",
@@ -6982,7 +6825,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "CS2_104e.png",
 		"fr": {
 			"name": "Saccager",
 			"text": "+3/+3."
@@ -6997,12 +6839,12 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
-		"cardImage": "AT_101.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Combattante de la fosse"
 		},
+		"goldenImage": "AT_101.gif",
 		"health": 6,
 		"id": "AT_101",
 		"name": "Pit Fighter",
@@ -7014,13 +6856,13 @@ var parseCardsText = {
 	{
 		"artist": "Jerry Mascho",
 		"attack": 1,
-		"cardImage": "OG_006.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Inquisiteur Aileron noir",
 			"text": "<b>Cri de guerre :</b> votre pouvoir héroïque devient « Invoque un murloc 1/1 »."
 		},
+		"goldenImage": "OG_006.gif",
 		"health": 3,
 		"id": "OG_006",
 		"name": "Vilefin Inquisitor",
@@ -7033,7 +6875,6 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 1,
-		"cardImage": "KARA_09_03a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Diablotin dégoûtant",
@@ -7048,10 +6889,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA04_1.png",
 		"fr": {
 			"name": "Garr"
 		},
+		"goldenImage": "BRMA04_1.gif",
 		"health": 30,
 		"id": "BRMA04_1",
 		"name": "Garr",
@@ -7060,7 +6901,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "KARA_09_07heroic.png",
 		"cost": 4,
 		"fr": {
 			"name": "Vol de vie",
@@ -7076,13 +6916,13 @@ var parseCardsText = {
 	{
 		"artist": "Greg Staples",
 		"attack": 8,
-		"cardImage": "AT_120.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Géant du givre",
 			"text": "Coûte (1) |4(cristal,cristaux) de moins chaque fois que vous utilisez votre pouvoir héroïque pendant cette partie."
 		},
+		"goldenImage": "AT_120.gif",
 		"health": 8,
 		"id": "AT_120",
 		"name": "Frost Giant",
@@ -7094,11 +6934,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "TU4f_005.png",
 		"cost": 4,
 		"fr": {
 			"name": "Maître brasseur"
 		},
+		"goldenImage": "TU4f_005.gif",
 		"health": 4,
 		"id": "TU4f_005",
 		"name": "Brewmaster",
@@ -7108,12 +6948,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_GiftExchange_Snowball.png",
 		"cost": 0,
 		"fr": {
 			"name": "Boules de neige durcie",
 			"text": "Renvoie 3 serviteurs adverses aléatoires dans la main de votre adversaire."
 		},
+		"goldenImage": "TB_GiftExchange_Snowball.gif",
 		"id": "TB_GiftExchange_Snowball",
 		"name": "Hardpacked Snowballs",
 		"playerClass": "Neutral",
@@ -7124,13 +6964,13 @@ var parseCardsText = {
 	{
 		"artist": "Cole Eastburn",
 		"attack": 1,
-		"cardImage": "OG_158.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Initié zélé",
 			"text": "<b>Râle d’agonie :</b> donne +1/+1 à un serviteur allié aléatoire."
 		},
+		"goldenImage": "OG_158.gif",
 		"health": 1,
 		"id": "OG_158",
 		"name": "Zealous Initiate",
@@ -7142,11 +6982,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "EX1_finkle.png",
 		"cost": 3,
 		"fr": {
 			"name": "Finkle Einhorn"
 		},
+		"goldenImage": "EX1_finkle.gif",
 		"health": 3,
 		"id": "EX1_finkle",
 		"name": "Finkle Einhorn",
@@ -7158,13 +6998,13 @@ var parseCardsText = {
 	{
 		"artist": "Phill Gonzales",
 		"attack": 2,
-		"cardImage": "CS2_122.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Chef de raid",
 			"text": "Vos autres serviteurs ont +1 ATQ."
 		},
+		"goldenImage": "CS2_122.gif",
 		"health": 2,
 		"id": "CS2_122",
 		"name": "Raid Leader",
@@ -7177,13 +7017,13 @@ var parseCardsText = {
 	{
 		"artist": "E.M. Gist",
 		"attack": 1,
-		"cardImage": "NEW1_037.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Maître fabricant d’épées",
 			"text": "À la fin de votre tour, donne +1 ATQ à un autre serviteur allié aléatoire."
 		},
+		"goldenImage": "NEW1_037.gif",
 		"health": 3,
 		"id": "NEW1_037",
 		"name": "Master Swordsmith",
@@ -7195,13 +7035,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Hideaki Takamura",
-		"cardImage": "CS2_233.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Déluge de lames",
 			"text": "Détruit votre arme, dont les dégâts sont infligés à tous les serviteurs adverses."
 		},
+		"goldenImage": "CS2_233.gif",
 		"id": "CS2_233",
 		"name": "Blade Flurry",
 		"playerClass": "Rogue",
@@ -7212,7 +7052,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Slawomir Maniak",
-		"cardImage": "KARA_00_10.png",
 		"cost": 3,
 		"fr": {
 			"name": "Rune mystérieuse",
@@ -7227,12 +7066,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_GiftExchange_Treasure.png",
 		"cost": 0,
 		"fr": {
 			"name": "Cadeau du Voile d’hiver",
 			"text": "<b>Râle d’agonie :</b> donne un cadeau volé au joueur dont c’est le tour."
 		},
+		"goldenImage": "TB_GiftExchange_Treasure.gif",
 		"health": 4,
 		"id": "TB_GiftExchange_Treasure",
 		"name": "Winter's Veil Gift",
@@ -7242,12 +7081,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TU4c_004.png",
 		"cost": 2,
 		"fr": {
 			"name": "Piétinement",
 			"text": "Inflige 2 points de dégâts à tous les adversaires."
 		},
+		"goldenImage": "TU4c_004.gif",
 		"id": "TU4c_004",
 		"name": "Stomp",
 		"playerClass": "Neutral",
@@ -7257,7 +7096,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX15_01e.png",
 		"fr": {
 			"name": "Intrus !"
 		},
@@ -7268,7 +7106,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "Mekka4e.png",
 		"fr": {
 			"name": "Transformé",
 			"text": "A été transformé en poulet !"
@@ -7283,7 +7120,6 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 2,
-		"cardImage": "EX1_133.png",
 		"collectible": true,
 		"cost": 3,
 		"durability": 2,
@@ -7291,6 +7127,7 @@ var parseCardsText = {
 			"name": "Lame de la perdition",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts. <b>Combo :</b> inflige 2 points de dégâts à la place."
 		},
+		"goldenImage": "EX1_133.gif",
 		"id": "EX1_133",
 		"name": "Perdition's Blade",
 		"playerClass": "Rogue",
@@ -7302,13 +7139,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 1,
-		"cardImage": "GVG_106.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Brik-à-bot",
 			"text": "Chaque fois qu’un Méca allié meurt, gagne +2/+2."
 		},
+		"goldenImage": "GVG_106.gif",
 		"health": 5,
 		"id": "GVG_106",
 		"name": "Junkbot",
@@ -7319,7 +7156,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "DS1_178e.png",
 		"fr": {
 			"name": "Charge",
 			"text": "Le rhino de la toundra confère <b>Charge</b>."
@@ -7332,10 +7168,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TU4e_001.png",
 		"fr": {
 			"name": "Illidan Hurlorage"
 		},
+		"goldenImage": "TU4e_001.gif",
 		"health": 30,
 		"id": "TU4e_001",
 		"name": "Illidan Stormrage",
@@ -7344,7 +7180,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "KARA_00_03H.png",
 		"fr": {
 			"name": "Medivh"
 		},
@@ -7356,10 +7191,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "NAX11_01.png",
 		"fr": {
 			"name": "Grobbulus"
 		},
+		"goldenImage": "NAX11_01.gif",
 		"health": 30,
 		"id": "NAX11_01",
 		"name": "Grobbulus",
@@ -7370,13 +7205,13 @@ var parseCardsText = {
 	{
 		"artist": "Mark Zug",
 		"attack": 0,
-		"cardImage": "EX1_100.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Chroniqueur Cho",
 			"text": "Quand un joueur lance un sort, en place une copie dans la main de son adversaire."
 		},
+		"goldenImage": "EX1_100.gif",
 		"health": 4,
 		"id": "EX1_100",
 		"name": "Lorewalker Cho",
@@ -7389,13 +7224,13 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 6,
-		"cardImage": "AT_132.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Justicière Cœur-Vrai",
 			"text": "<b>Cri de guerre :</b> remplace votre pouvoir héroïque de départ en l’améliorant."
 		},
+		"goldenImage": "AT_132.gif",
 		"health": 3,
 		"id": "AT_132",
 		"name": "Justicar Trueheart",
@@ -7408,13 +7243,13 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 2,
-		"cardImage": "AT_097.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Spectateur du tournoi",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "AT_097.gif",
 		"health": 1,
 		"id": "AT_097",
 		"name": "Tournament Attendee",
@@ -7425,12 +7260,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_Superfriends001.png",
 		"cost": 0,
 		"fr": {
 			"name": "Jeu offensif",
 			"text": "Le prochain serviteur légendaire que vous jouez et toutes ses copies coûtent (3) cristaux de moins."
 		},
+		"goldenImage": "TB_Superfriends001.gif",
 		"id": "TB_Superfriends001",
 		"name": "Offensive Play",
 		"playerClass": "Neutral",
@@ -7439,7 +7274,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "CS2_049_H1.png",
 		"cost": 2,
 		"fr": {
 			"name": "Appel totémique",
@@ -7454,10 +7288,10 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "TB_KTRAF_H_1.png",
 		"fr": {
 			"name": "Kel’Thuzad"
 		},
+		"goldenImage": "TB_KTRAF_H_1.gif",
 		"health": 30,
 		"id": "TB_KTRAF_H_1",
 		"name": "Kel'Thuzad",
@@ -7469,12 +7303,12 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 6,
-		"cardImage": "AT_020.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Garde funeste effroyable"
 		},
+		"goldenImage": "AT_020.gif",
 		"health": 8,
 		"id": "AT_020",
 		"name": "Fearsome Doomguard",
@@ -7484,12 +7318,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_046.png",
 		"cost": 0,
 		"fr": {
 			"name": "Force AI to Use Hero Power",
 			"text": "Force the AI to use their Hero Power every turn from now on."
 		},
+		"goldenImage": "XXX_046.gif",
 		"id": "XXX_046",
 		"name": "Force AI to Use Hero Power",
 		"playerClass": "Neutral",
@@ -7501,13 +7335,13 @@ var parseCardsText = {
 	{
 		"artist": "Nate Bowden",
 		"attack": 5,
-		"cardImage": "FP1_026.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Embusqué anub’ar",
 			"text": "<b>Râle d’agonie :</b> renvoie un serviteur allié aléatoire dans votre main."
 		},
+		"goldenImage": "FP1_026.gif",
 		"health": 5,
 		"id": "FP1_026",
 		"name": "Anub'ar Ambusher",
@@ -7519,13 +7353,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Justin Sweet",
-		"cardImage": "EX1_365.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Colère divine",
 			"text": "Vous piochez une carte et infligez des dégâts d’un montant égal à son coût."
 		},
+		"goldenImage": "EX1_365.gif",
 		"id": "EX1_365",
 		"name": "Holy Wrath",
 		"playerClass": "Paladin",
@@ -7537,13 +7371,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 5,
-		"cardImage": "OG_152.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Faucon-dragon difforme",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "OG_152.gif",
 		"health": 5,
 		"id": "OG_152",
 		"name": "Grotesque Dragonhawk",
@@ -7554,12 +7388,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_019.png",
 		"cost": 0,
 		"fr": {
 			"name": "Molasses",
 			"text": "You can take as long as you want on your turn."
 		},
+		"goldenImage": "XXX_019.gif",
 		"id": "XXX_019",
 		"name": "Molasses",
 		"playerClass": "Neutral",
@@ -7570,12 +7404,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CRED_39.png",
 		"cost": 2,
 		"fr": {
 			"name": "Ryan Chew",
 			"text": "<b>Chew des armes :</b> chante au karaoké ou part à l’heure et en informe tout le monde."
 		},
+		"goldenImage": "CRED_39.gif",
 		"health": 3,
 		"id": "CRED_39",
 		"name": "Ryan Chew",
@@ -7587,11 +7421,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "LOEA09_12.png",
 		"cost": 4,
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_12.gif",
 		"health": 1,
 		"id": "LOEA09_12",
 		"name": "Hungry Naga",
@@ -7602,7 +7436,6 @@ var parseCardsText = {
 	{
 		"artist": "E.M. Gist",
 		"attack": 6,
-		"cardImage": "CS2_162.png",
 		"collectible": true,
 		"cost": 6,
 		"faction": "ALLIANCE",
@@ -7610,6 +7443,7 @@ var parseCardsText = {
 			"name": "Seigneur de l’arène",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_162.gif",
 		"health": 5,
 		"id": "CS2_162",
 		"name": "Lord of the Arena",
@@ -7620,7 +7454,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA09_2.png",
 		"cost": 2,
 		"fr": {
 			"name": "Ouvrir les portes",
@@ -7635,11 +7468,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "LOEA09_5.png",
 		"cost": 1,
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_5.gif",
 		"health": 1,
 		"id": "LOEA09_5",
 		"name": "Hungry Naga",
@@ -7648,12 +7481,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_ClassRandom_Hunter.png",
 		"cost": 0,
 		"fr": {
 			"name": "Deuxième classe : chasseur",
 			"text": "Ajoute des cartes de chasseur dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Hunter.gif",
 		"id": "TB_ClassRandom_Hunter",
 		"name": "Second Class: Hunter",
 		"playerClass": "Hunter",
@@ -7663,12 +7496,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_26H.png",
 		"cost": 10,
 		"fr": {
 			"name": "Squeletosaurus Hex",
 			"text": "À la fin de votre tour, place une carte aléatoire dans votre main. Elle coûte (0) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOEA16_26H.gif",
 		"health": 10,
 		"id": "LOEA16_26H",
 		"name": "Skelesaurus Hex",
@@ -7679,7 +7512,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_016e.png",
 		"fr": {
 			"name": "Confus",
 			"text": "Attaque et Vie échangées."
@@ -7692,7 +7524,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "FP1_005e.png",
 		"fr": {
 			"name": "Consumer",
 			"text": "Caractéristiques augmentées."
@@ -7706,13 +7537,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Graven Tung",
-		"cardImage": "EX1_144.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Pas de l’ombre",
 			"text": "Renvoie un serviteur allié dans votre main. Il coûte (2) cristaux de moins."
 		},
+		"goldenImage": "EX1_144.gif",
 		"id": "EX1_144",
 		"name": "Shadowstep",
 		"playerClass": "Rogue",
@@ -7724,7 +7555,6 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
-		"cardImage": "KAR_005a.png",
 		"cost": 2,
 		"fr": {
 			"name": "Grand Méchant Loup"
@@ -7737,7 +7567,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_069e.png",
 		"fr": {
 			"name": "Entraînement terminé",
 			"text": "<b>Provocation</b>"
@@ -7752,13 +7581,13 @@ var parseCardsText = {
 	{
 		"artist": "Lucas Graciano",
 		"attack": 5,
-		"cardImage": "EX1_310.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Garde funeste",
 			"text": "<b>Charge</b>. <b>Cri de guerre :</b> vous défausse de deux cartes aléatoires."
 		},
+		"goldenImage": "EX1_310.gif",
 		"health": 7,
 		"id": "EX1_310",
 		"name": "Doomguard",
@@ -7769,7 +7598,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "DS1h_292.png",
 		"cost": 2,
 		"fr": {
 			"name": "Tir assuré",
@@ -7786,13 +7614,13 @@ var parseCardsText = {
 	{
 		"artist": "Erik Ko",
 		"attack": 1,
-		"cardImage": "EX1_001.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Gardelumière",
 			"text": "Chaque fois qu’un personnage est soigné, gagne +2 ATQ."
 		},
+		"goldenImage": "EX1_001.gif",
 		"health": 2,
 		"id": "EX1_001",
 		"name": "Lightwarden",
@@ -7803,7 +7631,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GVG_060e.png",
 		"fr": {
 			"name": "Bien équipé",
 			"text": "+2/+2."
@@ -7816,10 +7643,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA14_1H.png",
 		"fr": {
 			"name": "La sentinelle d’acier"
 		},
+		"goldenImage": "LOEA14_1H.gif",
 		"health": 30,
 		"id": "LOEA14_1H",
 		"name": "The Steel Sentinel",
@@ -7828,7 +7655,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "TB_LevelUp_001.png",
 		"cost": 2,
 		"fr": {
 			"name": "Gain de niveau !",
@@ -7843,13 +7669,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mauricio Herrera",
-		"cardImage": "AT_078.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Entrée dans le Colisée",
 			"text": "Détruit tous les serviteurs excepté le serviteur ayant l’Attaque la plus élevée pour chaque joueur."
 		},
+		"goldenImage": "AT_078.gif",
 		"id": "AT_078",
 		"name": "Enter the Coliseum",
 		"playerClass": "Paladin",
@@ -7861,13 +7687,13 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 2,
-		"cardImage": "EX1_103.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Voyant froide-lumière",
 			"text": "<b>Cri de guerre :</b> donne +2 PV à vos autres murlocs."
 		},
+		"goldenImage": "EX1_103.gif",
 		"health": 3,
 		"id": "EX1_103",
 		"name": "Coldlight Seer",
@@ -7878,7 +7704,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX2_03H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Pluie de feu",
@@ -7892,7 +7717,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "BRMA15_2H.png",
 		"cost": 0,
 		"fr": {
 			"name": "L’alchimiste",
@@ -7907,7 +7731,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "TB_Coopv3_104.png",
 		"cost": 4,
 		"fr": {
 			"name": "Tank principal",
@@ -7923,11 +7746,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "LOEA09_10.png",
 		"cost": 2,
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_10.gif",
 		"health": 1,
 		"id": "LOEA09_10",
 		"name": "Hungry Naga",
@@ -7936,12 +7759,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_164a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Nourrir",
 			"text": "Vous gagnez 2 cristaux de mana."
 		},
+		"goldenImage": "EX1_164a.gif",
 		"id": "EX1_164a",
 		"name": "Nourish",
 		"playerClass": "Druid",
@@ -7953,7 +7776,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Roi blanc"
 		},
-		"goldenImage": "KAR_a10_Boss1H_TB22.gif",
 		"health": 30,
 		"id": "KAR_a10_Boss1H_TB22",
 		"name": "White King",
@@ -7963,13 +7785,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Garner",
-		"cardImage": "FP1_018.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Dupliquer",
 			"text": "<b>Secret :</b> quand un serviteur allié meurt, en place 2 copies dans votre main."
 		},
+		"goldenImage": "FP1_018.gif",
 		"id": "FP1_018",
 		"name": "Duplicate",
 		"playerClass": "Mage",
@@ -7980,11 +7802,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "EX1_110t.png",
 		"cost": 4,
 		"fr": {
 			"name": "Baine Sabot-de-Sang"
 		},
+		"goldenImage": "EX1_110t.gif",
 		"health": 5,
 		"id": "EX1_110t",
 		"name": "Baine Bloodhoof",
@@ -7996,12 +7818,12 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 6,
-		"cardImage": "OG_142.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Horreur indicible"
 		},
+		"goldenImage": "OG_142.gif",
 		"health": 10,
 		"id": "OG_142",
 		"name": "Eldritch Horror",
@@ -8012,13 +7834,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "BRMA16_5.png",
 		"cost": 1,
 		"durability": 6,
 		"fr": {
 			"name": "Dent-de-Dragon",
 			"text": "Gagne +1 ATQ chaque fois que votre adversaire joue une carte."
 		},
+		"goldenImage": "BRMA16_5.gif",
 		"id": "BRMA16_5",
 		"name": "Dragonteeth",
 		"playerClass": "Neutral",
@@ -8027,12 +7849,12 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "LOEA16_6.png",
 		"cost": 0,
 		"fr": {
 			"name": "Éclat de Sulfuras",
 			"text": "Inflige $5 |4(point,points) de dégâts à TOUS les personnages."
 		},
+		"goldenImage": "LOEA16_6.gif",
 		"id": "LOEA16_6",
 		"name": "Shard of Sulfuras",
 		"playerClass": "Neutral",
@@ -8041,12 +7863,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA04_31b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Pas question !",
 			"text": "Vous ne faites rien."
 		},
+		"goldenImage": "LOEA04_31b.gif",
 		"id": "LOEA04_31b",
 		"name": "No Way!",
 		"playerClass": "Neutral",
@@ -8057,13 +7879,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 4,
-		"cardImage": "EX1_595.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Maître de culte",
 			"text": "Vous piochez une carte quand un de vos autres serviteurs meurt."
 		},
+		"goldenImage": "EX1_595.gif",
 		"health": 2,
 		"id": "EX1_595",
 		"name": "Cult Master",
@@ -8074,10 +7896,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA01_01h.png",
 		"fr": {
 			"name": "Écumeur du soleil Phaerix"
 		},
+		"goldenImage": "LOEA01_01h.gif",
 		"health": 30,
 		"id": "LOEA01_01h",
 		"name": "Sun Raider Phaerix",
@@ -8088,13 +7910,13 @@ var parseCardsText = {
 	{
 		"artist": "Stefan Kopinski",
 		"attack": 5,
-		"cardImage": "CS2_112.png",
 		"collectible": true,
 		"cost": 5,
 		"durability": 2,
 		"fr": {
 			"name": "Faucheuse en arcanite"
 		},
+		"goldenImage": "CS2_112.gif",
 		"id": "CS2_112",
 		"name": "Arcanite Reaper",
 		"playerClass": "Warrior",
@@ -8105,7 +7927,6 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 3,
-		"cardImage": "KAR_094a.png",
 		"cost": 3,
 		"durability": 2,
 		"fr": {
@@ -8120,13 +7941,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
-		"cardImage": "OG_315.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Adepte de la Voile sanglante",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à votre arme si vous contrôlez un autre Pirate."
 		},
+		"goldenImage": "OG_315.gif",
 		"health": 4,
 		"id": "OG_315",
 		"name": "Bloodsail Cultist",
@@ -8138,12 +7959,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t38.png",
 		"cost": 5,
 		"fr": {
 			"name": "Ichor de non-mort",
 			"text": "Invoque 2 serviteurs alliés morts pendant cette partie."
 		},
+		"goldenImage": "CFM_621t38.gif",
 		"id": "CFM_621t38",
 		"name": "Ichor of Undeath",
 		"playerClass": "Neutral",
@@ -8153,13 +7974,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Hui",
-		"cardImage": "EX1_128.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Dissimuler",
 			"text": "Confère <b>Camouflage</b> à vos serviteurs jusqu’à votre prochain tour."
 		},
+		"goldenImage": "EX1_128.gif",
 		"id": "EX1_128",
 		"name": "Conceal",
 		"playerClass": "Rogue",
@@ -8171,13 +7992,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 5,
-		"cardImage": "GVG_004.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Explomage gobelin",
 			"text": "<b>Cri de guerre :</b> si vous possédez un Méca, inflige 4 points de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "GVG_004.gif",
 		"health": 4,
 		"id": "GVG_004",
 		"name": "Goblin Blastmage",
@@ -8190,13 +8011,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyler Walpole",
 		"attack": 1,
-		"cardImage": "GVG_051.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Robo-baston",
 			"text": "<b>Accès de rage :</b> +1 ATQ."
 		},
+		"goldenImage": "GVG_051.gif",
 		"health": 3,
 		"id": "GVG_051",
 		"name": "Warbot",
@@ -8207,7 +8028,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_Windfury.png",
 		"fr": {
 			"name": "Destin",
 			"text": "Ce serviteur a <b>Furie des vents</b>."
@@ -8222,13 +8042,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Pascenko",
 		"attack": 5,
-		"cardImage": "AT_039.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Combattant sauvage",
 			"text": "<b>Exaltation :</b> donne +2 ATQ\nà votre héros pendant ce tour."
 		},
+		"goldenImage": "AT_039.gif",
 		"health": 4,
 		"id": "AT_039",
 		"name": "Savage Combatant",
@@ -8240,12 +8060,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "CRED_27.png",
 		"cost": 3,
 		"fr": {
 			"name": "Henry Ho",
 			"text": "<b>Cri de guerre :</b> regarde la main de votre adversaire."
 		},
+		"goldenImage": "CRED_27.gif",
 		"health": 4,
 		"id": "CRED_27",
 		"name": "Henry Ho",
@@ -8256,12 +8076,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA12_7H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Affliction de l’espèce : bronze",
 			"text": "Les serviteurs de Chromaggus coûtent (3) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_7H.gif",
 		"id": "BRMA12_7H",
 		"name": "Brood Affliction: Bronze",
 		"playerClass": "Neutral",
@@ -8272,13 +8092,13 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 2,
-		"cardImage": "OG_085.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Mande-givre dément",
 			"text": "Après que vous avez lancé un sort, <b>gèle</b> un adversaire aléatoire."
 		},
+		"goldenImage": "OG_085.gif",
 		"health": 4,
 		"id": "OG_085",
 		"name": "Demented Frostcaller",
@@ -8291,13 +8111,13 @@ var parseCardsText = {
 	{
 		"artist": "Doug Alexander",
 		"attack": 3,
-		"cardImage": "EX1_019.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Clerc du Soleil brisé",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à un serviteur allié."
 		},
+		"goldenImage": "EX1_019.gif",
 		"health": 2,
 		"id": "EX1_019",
 		"name": "Shattered Sun Cleric",
@@ -8310,13 +8130,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 4,
-		"cardImage": "GVG_096.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Déchiqueteur piloté",
 			"text": "<b>Râle d’agonie :</b> invoque un serviteur aléatoire coûtant 2 cristaux."
 		},
+		"goldenImage": "GVG_096.gif",
 		"health": 3,
 		"id": "GVG_096",
 		"name": "Piloted Shredder",
@@ -8328,12 +8148,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TBST_001.png",
 		"cost": 1,
 		"fr": {
 			"name": "Tank débutant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "TBST_001.gif",
 		"health": 2,
 		"id": "TBST_001",
 		"name": "OLDN3wb Tank",
@@ -8343,12 +8163,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA16_3.png",
 		"cost": 10,
 		"fr": {
 			"name": "Lanterne de puissance",
 			"text": "Donne +10/+10 à un serviteur."
 		},
+		"goldenImage": "LOEA16_3.gif",
 		"id": "LOEA16_3",
 		"name": "Lantern of Power",
 		"playerClass": "Neutral",
@@ -8357,7 +8177,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "GVG_067a.png",
 		"fr": {
 			"name": "Magie métabolisée",
 			"text": "Attaque augmentée."
@@ -8371,13 +8190,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Allsop",
-		"cardImage": "EX1_312.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Néant distordu",
 			"text": "Détruit tous les serviteurs."
 		},
+		"goldenImage": "EX1_312.gif",
 		"id": "EX1_312",
 		"name": "Twisting Nether",
 		"playerClass": "Warlock",
@@ -8388,12 +8207,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "BRMC_95he.png",
 		"cost": 3,
 		"fr": {
 			"name": "Chiot du magma",
 			"text": "À la fin de chaque tour, invoque tous les chiots du magma qui sont morts pendant ce tour."
 		},
+		"goldenImage": "BRMC_95he.gif",
 		"health": 4,
 		"id": "BRMC_95he",
 		"name": "Core Hound Pup",
@@ -8403,7 +8222,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX7_03H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Frappe déséquilibrante",
@@ -8417,7 +8235,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "BRMA08_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Regard intense",
@@ -8432,13 +8249,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NAX9_05H.png",
 		"cost": 3,
 		"durability": 3,
 		"fr": {
 			"name": "Lame runique",
 			"text": "A +6 ATQ si les autres cavaliers sont morts."
 		},
+		"goldenImage": "NAX9_05H.gif",
 		"id": "NAX9_05H",
 		"name": "Runeblade",
 		"playerClass": "Neutral",
@@ -8449,7 +8266,6 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 1,
-		"cardImage": "EX1_055.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "ALLIANCE",
@@ -8457,6 +8273,7 @@ var parseCardsText = {
 			"name": "Accro au mana",
 			"text": "Chaque fois que vous lancez un sort, gagne +2 ATQ pendant ce tour."
 		},
+		"goldenImage": "EX1_055.gif",
 		"health": 3,
 		"id": "EX1_055",
 		"name": "Mana Addict",
@@ -8469,7 +8286,6 @@ var parseCardsText = {
 	{
 		"artist": "Jerry Mascho",
 		"attack": 3,
-		"cardImage": "KAR_041.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
@@ -8486,7 +8302,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_7_EnchMinion.png",
 		"fr": {
 			"name": "Destin",
 			"text": "<b>Râle d’agonie :</b> vous obtenez une carte La pièce."
@@ -8499,10 +8314,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_KTRAF_H_2.png",
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "TB_KTRAF_H_2.gif",
 		"health": 60,
 		"id": "TB_KTRAF_H_2",
 		"name": "Rafaam",
@@ -8514,13 +8329,13 @@ var parseCardsText = {
 	{
 		"artist": "José Ladrönn",
 		"attack": 5,
-		"cardImage": "GVG_066.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Chaman cognedune",
 			"text": "<b>Furie des vents.</b>\n50% de chance d’attaquer le mauvais adversaire. \n<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "GVG_066.gif",
 		"health": 4,
 		"id": "GVG_066",
 		"name": "Dunemaul Shaman",
@@ -8532,7 +8347,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA05_02ha.png",
 		"cost": 0,
 		"fr": {
 			"name": "Trogg détester serviteurs !",
@@ -8546,12 +8360,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "XXX_003.png",
 		"cost": 0,
 		"fr": {
 			"name": "Restore 1",
 			"text": "Restore #1 Health to a character."
 		},
+		"goldenImage": "XXX_003.gif",
 		"id": "XXX_003",
 		"name": "Restore 1",
 		"playerClass": "Neutral",
@@ -8562,13 +8376,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Bozonnet",
-		"cardImage": "CFM_094.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Potion de gangrefeu",
 			"text": "Inflige $5 |4(point,points) de dégâts à tous les personnages."
 		},
+		"goldenImage": "CFM_094.gif",
 		"id": "CFM_094",
 		"name": "Felfire Potion",
 		"playerClass": "Warlock",
@@ -8580,13 +8394,13 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielson",
 		"attack": 2,
-		"cardImage": "LOE_077.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Brann Barbe-de-Bronze",
 			"text": "Vos <b>Cris de guerre</b> se déclenchent deux fois."
 		},
+		"goldenImage": "LOE_077.gif",
 		"health": 4,
 		"id": "LOE_077",
 		"name": "Brann Bronzebeard",
@@ -8597,12 +8411,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA10_5.png",
 		"cost": 5,
 		"fr": {
 			"name": "Mrgl mrgl niah niah !",
 			"text": "Invoque 3 murlocs détruits pendant cette partie."
 		},
+		"goldenImage": "LOEA10_5.gif",
 		"id": "LOEA10_5",
 		"name": "Mrgl Mrgl Nyah Nyah",
 		"playerClass": "Neutral",
@@ -8614,13 +8428,13 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 2,
-		"cardImage": "CFM_756.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Armurière clandestine",
 			"text": "<b>Provocation</b>. Chaque fois que ce serviteur inflige des dégâts, vous gagnez l’équivalent en points d’armure."
 		},
+		"goldenImage": "CFM_756.gif",
 		"health": 7,
 		"id": "CFM_756",
 		"name": "Alley Armorsmith",
@@ -8633,13 +8447,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 3,
-		"cardImage": "LOE_019.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Raptor déterré",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur allié. Gagne une copie de son <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "LOE_019.gif",
 		"health": 4,
 		"id": "LOE_019",
 		"name": "Unearthed Raptor",
@@ -8650,12 +8464,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_027.png",
 		"cost": 0,
 		"fr": {
 			"name": "Server Crash",
 			"text": "Crash the Server.  DON'T BE A FOOL."
 		},
+		"goldenImage": "XXX_027.gif",
 		"id": "XXX_027",
 		"name": "Server Crash",
 		"playerClass": "Neutral",
@@ -8666,13 +8480,13 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 5,
-		"cardImage": "AT_023.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Écraseur du Vide",
 			"text": "<b>Exaltation :</b> détruit aléatoirement un serviteur de chaque joueur."
 		},
+		"goldenImage": "AT_023.gif",
 		"health": 4,
 		"id": "AT_023",
 		"name": "Void Crusher",
@@ -8684,13 +8498,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Efrem Palacios",
-		"cardImage": "OG_048.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Marque d’Y’Shaarj",
 			"text": "Donne +2/+2 à un serviteur. Si c'est une Bête, vous piochez une carte."
 		},
+		"goldenImage": "OG_048.gif",
 		"id": "OG_048",
 		"name": "Mark of Y'Shaarj",
 		"playerClass": "Druid",
@@ -8700,7 +8514,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "CS2_049_H1_AT_132.png",
 		"cost": 2,
 		"fr": {
 			"name": "Heurt totémique",
@@ -8714,7 +8527,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "LOEA06_03e.png",
 		"fr": {
 			"name": "Animé",
 			"text": "+1/+1 et <b>Provocation</b>."
@@ -8727,7 +8539,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_CoOpv3_101e.png",
 		"fr": {
 			"name": "Enchantement de joueur d’équipe",
 			"text": "<b>Insensible</b> pendant qu’il attaque."
@@ -8742,13 +8553,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
-		"cardImage": "LOE_076.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Sir Finley Mrrgglton",
 			"text": "<b>Cri de guerre : découvre</b> un nouveau pouvoir héroïque de base."
 		},
+		"goldenImage": "LOE_076.gif",
 		"health": 3,
 		"id": "LOE_076",
 		"name": "Sir Finley Mrrgglton",
@@ -8761,13 +8572,13 @@ var parseCardsText = {
 	{
 		"artist": "Scott Altmann",
 		"attack": 0,
-		"cardImage": "EX1_575.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Totem de vague de mana",
 			"text": "Vous piochez une carte à la fin de votre tour."
 		},
+		"goldenImage": "EX1_575.gif",
 		"health": 3,
 		"id": "EX1_575",
 		"name": "Mana Tide Totem",
@@ -8780,13 +8591,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 3,
-		"cardImage": "AT_006.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Aspirant de Dalaran",
 			"text": "<b>Exaltation :</b> vous gagnez <b>+1 aux dégâts des sorts</b>."
 		},
+		"goldenImage": "AT_006.gif",
 		"health": 5,
 		"id": "AT_006",
 		"name": "Dalaran Aspirant",
@@ -8797,7 +8608,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "OG_300e.png",
 		"fr": {
 			"name": "Délicieux !",
 			"text": "Caractéristiques augmentées."
@@ -8810,7 +8620,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "KAR_A01_02H.png",
 		"cost": 0,
 		"fr": {
 			"name": "Reflets",
@@ -8825,12 +8634,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Skan Srisuwan",
-		"cardImage": "OG_195b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Feux follets furieux",
 			"text": "Donne +2/+2 à vos serviteurs."
 		},
+		"goldenImage": "OG_195b.gif",
 		"id": "OG_195b",
 		"name": "Big Wisps",
 		"playerClass": "Druid",
@@ -8842,7 +8651,6 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 4,
-		"cardImage": "KAR_712.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
@@ -8860,12 +8668,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "TBST_005.png",
 		"cost": 3,
 		"fr": {
 			"name": "Voleur JcJ",
 			"text": "<b>Camouflage</b>\nRécupère <b>Camouflage</b> quand le voleur JcJ détruit un serviteur."
 		},
+		"goldenImage": "TBST_005.gif",
 		"health": 6,
 		"id": "TBST_005",
 		"name": "OLDPvP Rogue",
@@ -8875,12 +8683,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_ClassRandom_Warrior.png",
 		"cost": 0,
 		"fr": {
 			"name": "Deuxième classe : guerrier",
 			"text": "Ajoute des cartes de guerrier dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Warrior.gif",
 		"id": "TB_ClassRandom_Warrior",
 		"name": "Second Class: Warrior",
 		"playerClass": "Warrior",
@@ -8891,13 +8699,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 1,
-		"cardImage": "CS2_065.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Marcheur du Vide",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_065.gif",
 		"health": 3,
 		"id": "CS2_065",
 		"name": "Voidwalker",
@@ -8910,12 +8718,12 @@ var parseCardsText = {
 	{
 		"artist": "Dave Kendall",
 		"attack": 7,
-		"cardImage": "CS2_186.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Golem de guerre"
 		},
+		"goldenImage": "CS2_186.gif",
 		"health": 7,
 		"id": "CS2_186",
 		"name": "War Golem",
@@ -8925,10 +8733,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA14_1.png",
 		"fr": {
 			"name": "Système de défense Omnitron"
 		},
+		"goldenImage": "BRMA14_1.gif",
 		"health": 30,
 		"id": "BRMA14_1",
 		"name": "Omnotron Defense System",
@@ -8939,13 +8747,13 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 1,
-		"cardImage": "CFM_648.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Racketteur de haut vol",
 			"text": "<b>Cri de guerre :</b> invoque un ogre 6/6."
 		},
+		"goldenImage": "CFM_648.gif",
 		"health": 1,
 		"id": "CFM_648",
 		"name": "Big-Time Racketeer",
@@ -8958,13 +8766,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 7,
-		"cardImage": "AT_009.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Rhonin",
 			"text": "<b>Râle d’agonie :</b> ajoute\n3 copies de Projectiles des Arcanes dans votre main."
 		},
+		"goldenImage": "AT_009.gif",
 		"health": 7,
 		"id": "AT_009",
 		"name": "Rhonin",
@@ -8975,7 +8783,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_7_EnchMiniom2nd.png",
 		"fr": {
 			"name": "Destin",
 			"text": "<b>Râle d’agonie :</b> une carte aléatoire de votre main coûte (0) |4(cristal,cristaux) de mana."
@@ -8989,13 +8796,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Gonzalo Ordonez",
-		"cardImage": "EX1_379.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Repentir",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, ses points de vie sont réduits à 1."
 		},
+		"goldenImage": "EX1_379.gif",
 		"id": "EX1_379",
 		"name": "Repentance",
 		"playerClass": "Paladin",
@@ -9005,12 +8812,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "GVG_032b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Don de carte",
 			"text": "Chaque joueur pioche une carte."
 		},
+		"goldenImage": "GVG_032b.gif",
 		"id": "GVG_032b",
 		"name": "Gift of Cards",
 		"playerClass": "Druid",
@@ -9019,7 +8826,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRM_027p.png",
 		"cost": 2,
 		"fr": {
 			"name": "MEURS, INSECTE !",
@@ -9033,7 +8839,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "BRM_012e.png",
 		"fr": {
 			"name": "En feu !",
 			"text": "Attaque augmentée."
@@ -9047,12 +8852,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t5.png",
 		"cost": 1,
 		"fr": {
 			"name": "Chapeglace",
 			"text": "<b>Gèle</b> un serviteur adverse aléatoire."
 		},
+		"goldenImage": "CFM_621t5.gif",
 		"id": "CFM_621t5",
 		"name": "Icecap",
 		"playerClass": "Neutral",
@@ -9063,13 +8868,13 @@ var parseCardsText = {
 	{
 		"artist": "Howard Lyon",
 		"attack": 2,
-		"cardImage": "EX1_584.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Mage ancien",
 			"text": "<b>Cri de guerre :</b> donne aux serviteurs adjacents <b>+1 aux dégâts des sorts</b>."
 		},
+		"goldenImage": "EX1_584.gif",
 		"health": 5,
 		"id": "EX1_584",
 		"name": "Ancient Mage",
@@ -9086,7 +8891,6 @@ var parseCardsText = {
 			"name": "Contrebande",
 			"text": "Don Han’Cho donne +5/+5."
 		},
-		"goldenImage": "CFM_685e.gif",
 		"id": "CFM_685e",
 		"name": "Smuggling",
 		"playerClass": "Neutral",
@@ -9095,7 +8899,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_CoOpv3_007.png",
 		"cost": 0,
 		"fr": {
 			"name": "Projectiles enflammés",
@@ -9110,7 +8913,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "KAR_A02_06H.png",
 		"cost": 4,
 		"fr": {
 			"name": "Pichet",
@@ -9125,12 +8927,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TU4f_006.png",
 		"cost": 1,
 		"fr": {
 			"name": "Transcendance",
 			"text": "Cho ne peut pas être attaqué tant qu’il a des serviteurs."
 		},
+		"goldenImage": "TU4f_006.gif",
 		"id": "TU4f_006",
 		"name": "Transcendence",
 		"playerClass": "Neutral",
@@ -9142,13 +8944,13 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 7,
-		"cardImage": "OG_134.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Yogg-Saron, la fin de l’espoir",
 			"text": "<b>Cri de guerre :</b> lance un sort aléatoire pour chaque sort que vous avez lancé pendant cette partie <i>(cibles choisies au hasard)</i>."
 		},
+		"goldenImage": "OG_134.gif",
 		"health": 5,
 		"id": "OG_134",
 		"name": "Yogg-Saron, Hope's End",
@@ -9159,7 +8961,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_050t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Décharge de foudre",
@@ -9174,12 +8975,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Nutchapol Thitinunthakorn",
-		"cardImage": "PART_004.png",
 		"cost": 1,
 		"fr": {
 			"name": "Champ de camouflage",
 			"text": "Confère <b>Camouflage</b> à un serviteur allié jusqu’à votre prochain tour."
 		},
+		"goldenImage": "PART_004.gif",
 		"id": "PART_004",
 		"name": "Finicky Cloakfield",
 		"playerClass": "Neutral",
@@ -9189,7 +8990,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Kevin Chen",
-		"cardImage": "KARA_05_01hp.png",
 		"cost": 0,
 		"fr": {
 			"name": "Apeuré",
@@ -9204,7 +9004,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "KAR_A02_09e.png",
 		"fr": {
 			"name": "Table mise",
 			"text": "+1/+1."
@@ -9219,12 +9018,12 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 2,
-		"cardImage": "CS2_120.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Crocilisque des rivières"
 		},
+		"goldenImage": "CS2_120.gif",
 		"health": 3,
 		"id": "CS2_120",
 		"name": "River Crocolisk",
@@ -9236,13 +9035,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 1,
-		"cardImage": "AT_084.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Porte-lance",
 			"text": "<b>Cri de guerre :</b> donne\n+2 ATQ à un serviteur allié."
 		},
+		"goldenImage": "AT_084.gif",
 		"health": 2,
 		"id": "AT_084",
 		"name": "Lance Carrier",
@@ -9255,7 +9054,6 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 3,
-		"cardImage": "KAR_021.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
@@ -9273,12 +9071,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "EX1_398t.png",
 		"cost": 1,
 		"durability": 2,
 		"fr": {
 			"name": "Hache d’armes"
 		},
+		"goldenImage": "EX1_398t.gif",
 		"id": "EX1_398t",
 		"name": "Battle Axe",
 		"playerClass": "Warrior",
@@ -9286,7 +9084,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "XXX_059.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destroy Hero's Stuff",
@@ -9300,12 +9097,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_CoOpBossSpell_1.png",
 		"cost": 0,
 		"fr": {
 			"name": "Fixer des priorités",
 			"text": "Inflige les dégâts de l’attaque au serviteur le plus puissant."
 		},
+		"goldenImage": "TB_CoOpBossSpell_1.gif",
 		"id": "TB_CoOpBossSpell_1",
 		"name": "Prioritize",
 		"playerClass": "Neutral",
@@ -9316,13 +9113,13 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 1,
-		"cardImage": "LOE_029.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Scarabée orné de joyaux",
 			"text": "<b>Cri de guerre : découvre</b>\nune carte à 3 cristaux de mana."
 		},
+		"goldenImage": "LOE_029.gif",
 		"health": 1,
 		"id": "LOE_029",
 		"name": "Jeweled Scarab",
@@ -9333,7 +9130,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "KARA_08_04.png",
 		"cost": 2,
 		"fr": {
 			"name": "Renforcement",
@@ -9349,13 +9145,13 @@ var parseCardsText = {
 	{
 		"artist": "Nutthapon Petchthai",
 		"attack": 4,
-		"cardImage": "AT_122.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gormok l’Empaleur",
 			"text": "<b>Cri de guerre :</b> inflige\n4 points de dégâts si vous avez au moins\n4 autres serviteurs."
 		},
+		"goldenImage": "AT_122.gif",
 		"health": 4,
 		"id": "AT_122",
 		"name": "Gormok the Impaler",
@@ -9366,7 +9162,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA13_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Puissance des anciens",
@@ -9381,13 +9176,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Richard Wright",
-		"cardImage": "CS2_008.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Éclat lunaire",
 			"text": "Inflige $1 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CS2_008.gif",
 		"id": "CS2_008",
 		"name": "Moonfire",
 		"playerClass": "Druid",
@@ -9397,10 +9192,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA08_01h.png",
 		"fr": {
 			"name": "Archaedas"
 		},
+		"goldenImage": "LOEA08_01h.gif",
 		"health": 30,
 		"id": "LOEA08_01h",
 		"name": "Archaedas",
@@ -9410,12 +9205,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t16.png",
 		"cost": 5,
 		"fr": {
 			"name": "Cœur de feu",
 			"text": "Inflige $5 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CFM_621t16.gif",
 		"id": "CFM_621t16",
 		"name": "Heart of Fire",
 		"playerClass": "Neutral",
@@ -9425,12 +9220,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMC_96.png",
 		"cost": 3,
 		"fr": {
 			"name": "Juge Supérieur Mornepierre",
 			"text": "Au début de votre tour, invoque un serviteur <b>légendaire</b>."
 		},
+		"goldenImage": "BRMC_96.gif",
 		"health": 5,
 		"id": "BRMC_96",
 		"name": "High Justice Grimstone",
@@ -9446,7 +9241,6 @@ var parseCardsText = {
 			"name": "Robustesse",
 			"text": "+3 PV."
 		},
-		"goldenImage": "CFM_626e.gif",
 		"id": "CFM_626e",
 		"name": "Fortitude",
 		"playerClass": "Neutral",
@@ -9461,7 +9255,6 @@ var parseCardsText = {
 			"name": "Démolisseur nain",
 			"text": "Inflige 1 à 4 points de dégâts à un adversaire aléatoire chaque fois que vous jouez une carte."
 		},
-		"goldenImage": "TB_FW_Mortar.gif",
 		"health": 5,
 		"id": "TB_FW_Mortar",
 		"name": "Dwarf Demolitionist",
@@ -9471,7 +9264,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "KARA_13_02H.png",
 		"cost": 2,
 		"fr": {
 			"name": "La Horde",
@@ -9486,7 +9278,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "XXX_108.png",
 		"cost": 0,
 		"fr": {
 			"name": "Set all minions to 1 health",
@@ -9504,13 +9295,13 @@ var parseCardsText = {
 	{
 		"artist": "Michael Komarck",
 		"attack": 4,
-		"cardImage": "EX1_563.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Malygos",
 			"text": "<b>Dégâts des sorts : +5</b>"
 		},
+		"goldenImage": "EX1_563.gif",
 		"health": 12,
 		"id": "EX1_563",
 		"name": "Malygos",
@@ -9523,12 +9314,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "CRED_43.png",
 		"cost": 5,
 		"fr": {
 			"name": "Jon Bankard",
 			"text": "50% de chances d’avoir raison à 100%."
 		},
+		"goldenImage": "CRED_43.gif",
 		"health": 5,
 		"id": "CRED_43",
 		"name": "Jon Bankard",
@@ -9540,12 +9331,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "BRMA09_3Ht.png",
 		"cost": 1,
 		"fr": {
 			"name": "Orc de l’ancienne Horde",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA09_3Ht.gif",
 		"health": 2,
 		"id": "BRMA09_3Ht",
 		"name": "Old Horde Orc",
@@ -9555,10 +9346,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA08_01.png",
 		"fr": {
 			"name": "Archaedas"
 		},
+		"goldenImage": "LOEA08_01.gif",
 		"health": 30,
 		"id": "LOEA08_01",
 		"name": "Archaedas",
@@ -9568,12 +9359,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t6.png",
 		"cost": 1,
 		"fr": {
 			"name": "Dorépine",
 			"text": "Donne +2 PV à vos serviteurs."
 		},
+		"goldenImage": "CFM_621t6.gif",
 		"id": "CFM_621t6",
 		"name": "Goldthorn",
 		"playerClass": "Neutral",
@@ -9582,7 +9373,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "GVG_046e.png",
 		"fr": {
 			"name": "Le roi",
 			"text": "Attaque augmentée."
@@ -9595,7 +9385,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "EX1_158e.png",
 		"fr": {
 			"name": "Âme de la forêt",
 			"text": "Râle d’agonie : invoque un tréant 2/2."
@@ -9609,12 +9398,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "LOEA09_6.png",
 		"cost": 2,
 		"fr": {
 			"name": "Archer ondulant",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "LOEA09_6.gif",
 		"health": 2,
 		"id": "LOEA09_6",
 		"name": "Slithering Archer",
@@ -9624,10 +9413,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA11_1.png",
 		"fr": {
 			"name": "Vaelastrasz le Corrompu"
 		},
+		"goldenImage": "BRMA11_1.gif",
 		"health": 30,
 		"id": "BRMA11_1",
 		"name": "Vaelastrasz the Corrupt",
@@ -9637,12 +9426,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "LOEA01_11.png",
 		"cost": 0,
 		"fr": {
 			"name": "Baguette du Soleil",
 			"text": "<b>Râle d’agonie :</b> remet cette carte à votre adversaire."
 		},
+		"goldenImage": "LOEA01_11.gif",
 		"health": 5,
 		"id": "LOEA01_11",
 		"name": "Rod of the Sun",
@@ -9653,13 +9442,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mark Gibbons",
-		"cardImage": "CFM_752.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Marchandises volées",
 			"text": "Donne +3/+3 à un serviteur aléatoire avec <b>Provocation</b> dans votre main."
 		},
+		"goldenImage": "CFM_752.gif",
 		"id": "CFM_752",
 		"name": "Stolen Goods",
 		"playerClass": "Warrior",
@@ -9669,7 +9458,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_KTRAF_HP_RAF4.png",
 		"cost": 2,
 		"fr": {
 			"name": "Deuxième morceau du bâton",
@@ -9685,13 +9473,13 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 5,
-		"cardImage": "AT_104.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Jouteur rohart",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, rend 7 PV à votre héros."
 		},
+		"goldenImage": "AT_104.gif",
 		"health": 5,
 		"id": "AT_104",
 		"name": "Tuskarr Jouster",
@@ -9702,7 +9490,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CS2_083b.png",
 		"cost": 2,
 		"fr": {
 			"name": "Maîtrise des dagues",
@@ -9718,13 +9505,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Sass",
-		"cardImage": "AT_013.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Mot de pouvoir : Gloire",
 			"text": "Choisissez un serviteur. Chaque fois qu’il attaque, rend 4 PV à votre héros."
 		},
+		"goldenImage": "AT_013.gif",
 		"id": "AT_013",
 		"name": "Power Word: Glory",
 		"playerClass": "Priest",
@@ -9734,12 +9521,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_057.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destroy Target Secrets",
 			"text": "Choose a hero. Destroy all <b>Secrets</b> controlled by that hero."
 		},
+		"goldenImage": "XXX_057.gif",
 		"id": "XXX_057",
 		"name": "Destroy Target Secrets",
 		"playerClass": "Neutral",
@@ -9750,13 +9537,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 9,
-		"cardImage": "GVG_116.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Mekgénieur Thermojoncteur",
 			"text": "Chaque fois qu’un serviteur adverse meurt, invoque un gnome lépreux."
 		},
+		"goldenImage": "GVG_116.gif",
 		"health": 7,
 		"id": "GVG_116",
 		"name": "Mekgineer Thermaplugg",
@@ -9768,13 +9555,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan & Gabor",
-		"cardImage": "EX1_130.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Noble sacrifice",
 			"text": "<b>Secret :</b> invoque un défenseur 2/1 qui devient la cible de l’adversaire sur le point d’attaquer."
 		},
+		"goldenImage": "EX1_130.gif",
 		"id": "EX1_130",
 		"name": "Noble Sacrifice",
 		"playerClass": "Paladin",
@@ -9784,7 +9571,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_399e.png",
 		"fr": {
 			"name": "Berserker",
 			"text": "L’Attaque de ce serviteur est augmentée."
@@ -9799,11 +9585,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 1,
-		"cardImage": "CFM_315t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Chat tigré"
 		},
+		"goldenImage": "CFM_315t.gif",
 		"health": 1,
 		"id": "CFM_315t",
 		"name": "Tabbycat",
@@ -9812,7 +9598,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOE_017e.png",
 		"fr": {
 			"name": "Observé",
 			"text": "Caractéristiques changées en 3/3."
@@ -9826,12 +9611,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_27H.png",
 		"cost": 10,
 		"fr": {
 			"name": "La sentinelle d’acier",
 			"text": "Ce serviteur ne peut pas subir plus de 1 point de dégâts à la fois."
 		},
+		"goldenImage": "LOEA16_27H.gif",
 		"health": 10,
 		"id": "LOEA16_27H",
 		"name": "The Steel Sentinel",
@@ -9842,7 +9627,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA01_2H.png",
 		"cost": 0,
 		"fr": {
 			"name": "Jeu forcé !",
@@ -9856,7 +9640,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "TBA01_6.png",
 		"cost": 2,
 		"fr": {
 			"name": "Rage du magma",
@@ -9871,12 +9654,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA04_25h.png",
 		"cost": 8,
 		"fr": {
 			"name": "Statue vengeresse",
 			"text": "Inflige 5 points de dégâts à tous les adversaires à la fin de votre tour."
 		},
+		"goldenImage": "LOEA04_25h.gif",
 		"health": 9,
 		"id": "LOEA04_25h",
 		"name": "Seething Statue",
@@ -9891,7 +9674,6 @@ var parseCardsText = {
 			"name": "Visions du nécromancien",
 			"text": "<b>Secret :</b> quand votre adversaire invoque un serviteur avec <b>Râle d’agonie</b>, le détruit."
 		},
-		"goldenImage": "TB_SPT_DPromoSecret7.gif",
 		"id": "TB_SPT_DPromoSecret7",
 		"name": "Visions of the Necromancer",
 		"playerClass": "Warrior",
@@ -9902,13 +9684,13 @@ var parseCardsText = {
 	{
 		"artist": "A. J. Nazzaro",
 		"attack": 9,
-		"cardImage": "OG_173.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Sang de l’Ancien",
 			"text": "Si vous contrôlez deux de ces serviteurs à la fin de votre tour, les fusionne en « l’Ancien »."
 		},
+		"goldenImage": "OG_173.gif",
 		"health": 9,
 		"id": "OG_173",
 		"name": "Blood of The Ancient One",
@@ -9920,13 +9702,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler Walpole",
-		"cardImage": "AT_051.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Destruction élémentaire",
 			"text": "Inflige $4 à $5 points\nde dégâts à tous les serviteurs.\n<b>Surcharge :</b> (5)"
 		},
+		"goldenImage": "AT_051.gif",
 		"id": "AT_051",
 		"name": "Elemental Destruction",
 		"overload": 1,
@@ -9937,12 +9719,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA07_26.png",
 		"cost": 1,
 		"fr": {
 			"name": "Consulter Brann",
 			"text": "Vous piochez 3 cartes."
 		},
+		"goldenImage": "LOEA07_26.gif",
 		"id": "LOEA07_26",
 		"name": "Consult Brann",
 		"playerClass": "Neutral",
@@ -9953,13 +9735,13 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 3,
-		"cardImage": "GVG_048.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Bondisseur dent-de-métal",
 			"text": "<b>Cri de guerre :</b> donne +2 ATQ à vos autres Méca."
 		},
+		"goldenImage": "GVG_048.gif",
 		"health": 3,
 		"id": "GVG_048",
 		"name": "Metaltooth Leaper",
@@ -9972,13 +9754,13 @@ var parseCardsText = {
 	{
 		"artist": "Doug Alexander",
 		"attack": 3,
-		"cardImage": "EX1_591.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Prêtresse auchenaï",
 			"text": "Vos cartes et pouvoirs rendant de la Vie infligent désormais des dégâts à la place."
 		},
+		"goldenImage": "EX1_591.gif",
 		"health": 5,
 		"id": "EX1_591",
 		"name": "Auchenai Soulpriest",
@@ -9989,7 +9771,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GAME_003e.png",
 		"fr": {
 			"name": "Vengeance de la pièce",
 			"text": "Passer en second renforce votre premier serviteur."
@@ -10002,10 +9783,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_SPT_Boss.png",
 		"fr": {
 			"name": "Hurlevent"
 		},
+		"goldenImage": "TB_SPT_Boss.gif",
 		"health": 1,
 		"id": "TB_SPT_Boss",
 		"name": "City of Stormwind",
@@ -10019,7 +9800,6 @@ var parseCardsText = {
 			"name": "Dégage",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "CFM_658e.gif",
 		"id": "CFM_658e",
 		"name": "Cut Off",
 		"playerClass": "Neutral",
@@ -10028,7 +9808,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_PickYourFate_2nd.png",
 		"fr": {
 			"name": "Choisissez votre destin : aléatoire 2"
 		},
@@ -10039,7 +9818,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "OG_158e.png",
 		"fr": {
 			"name": "Secrets du culte",
 			"text": "+1/+1."
@@ -10054,13 +9832,13 @@ var parseCardsText = {
 	{
 		"artist": "Daria Tuzova",
 		"attack": 0,
-		"cardImage": "CFM_039.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Entourloupeur des bas-fonds",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CFM_039.gif",
 		"health": 7,
 		"id": "CFM_039",
 		"name": "Street Trickster",
@@ -10074,13 +9852,13 @@ var parseCardsText = {
 	{
 		"artist": "Jon Neimeister",
 		"attack": 5,
-		"cardImage": "CFM_636.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Enragé d’ombre",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "CFM_636.gif",
 		"health": 1,
 		"id": "CFM_636",
 		"name": "Shadow Rager",
@@ -10092,7 +9870,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "XXX_100.png",
 		"cost": 0,
 		"fr": {
 			"name": "Yogg-Saron Test (Manual)",
@@ -10110,13 +9887,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Garner",
 		"attack": 3,
-		"cardImage": "CFM_617.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Rêveuse céleste",
 			"text": "<b>Cri de guerre :</b> gagne +2/+2 si un serviteur allié a 5 ATQ ou plus."
 		},
+		"goldenImage": "CFM_617.gif",
 		"health": 3,
 		"id": "CFM_617",
 		"name": "Celestial Dreamer",
@@ -10129,13 +9906,13 @@ var parseCardsText = {
 	{
 		"artist": "Bernie Kang",
 		"attack": 0,
-		"cardImage": "CS2_059.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Diablotin de sang",
 			"text": "<b>Camouflage</b>. À la fin de votre tour, donne +1 PV à un autre serviteur allié aléatoire."
 		},
+		"goldenImage": "CS2_059.gif",
 		"health": 1,
 		"id": "CS2_059",
 		"name": "Blood Imp",
@@ -10147,7 +9924,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Sass",
-		"cardImage": "KAR_004.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
@@ -10163,7 +9939,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_EndlessMinions01.png",
 		"fr": {
 			"name": "Enchantement sans fin",
 			"text": "+2/+2."
@@ -10176,7 +9951,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "KARA_07_07heroic.png",
 		"cost": 3,
 		"fr": {
 			"name": "Méca détraqué !",
@@ -10192,12 +9966,12 @@ var parseCardsText = {
 	{
 		"artist": "Mauro Cascioli",
 		"attack": 4,
-		"cardImage": "CS2_182.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Yéti noroît"
 		},
+		"goldenImage": "CS2_182.gif",
 		"health": 5,
 		"id": "CS2_182",
 		"name": "Chillwind Yeti",
@@ -10209,13 +9983,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
-		"cardImage": "EX1_573.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Cénarius",
 			"text": "<b>Choix des armes :</b> donne +2/+2 à vos autres serviteurs ou invoque deux tréants 2/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_573.gif",
 		"health": 8,
 		"id": "EX1_573",
 		"name": "Cenarius",
@@ -10228,13 +10002,13 @@ var parseCardsText = {
 	{
 		"artist": "Richie Marella",
 		"attack": 2,
-		"cardImage": "CS2_121.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Grunt loup-de-givre",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_121.gif",
 		"health": 2,
 		"id": "CS2_121",
 		"name": "Frostwolf Grunt",
@@ -10246,12 +10020,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "NAXM_001.png",
 		"cost": 4,
 		"fr": {
 			"name": "Nécro-chevalier",
 			"text": "<b>Râle d’agonie :</b> détruit les serviteurs adjacents."
 		},
+		"goldenImage": "NAXM_001.gif",
 		"health": 6,
 		"id": "NAXM_001",
 		"name": "Necroknight",
@@ -10262,7 +10036,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "XXX_094.png",
 		"cost": 0,
 		"fr": {
 			"name": "AI Buddy - Blank Slate",
@@ -10279,11 +10052,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "LOE_089t2.png",
 		"cost": 2,
 		"fr": {
 			"name": "Avorton rusé"
 		},
+		"goldenImage": "LOE_089t2.gif",
 		"health": 2,
 		"id": "LOE_089t2",
 		"name": "Wily Runt",
@@ -10292,7 +10065,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA10_3e.png",
 		"fr": {
 			"name": "Incubation",
 			"text": "Vie augmentée."
@@ -10305,7 +10077,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_OG_027.png",
 		"cost": 1,
 		"fr": {
 			"name": "Évolution",
@@ -10322,7 +10093,6 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 1,
-		"cardImage": "KAR_062.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
@@ -10340,13 +10110,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Justin Sweet",
-		"cardImage": "CS2_039.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Furie des vents",
 			"text": "Confère <b>Furie des vents</b> à un serviteur."
 		},
+		"goldenImage": "CS2_039.gif",
 		"id": "CS2_039",
 		"name": "Windfury",
 		"playerClass": "Shaman",
@@ -10357,12 +10127,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMC_89.png",
 		"cost": 2,
 		"fr": {
 			"name": "Cendres tourbillonnantes",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "BRMC_89.gif",
 		"health": 5,
 		"id": "BRMC_89",
 		"name": "Whirling Ash",
@@ -10373,12 +10143,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t10.png",
 		"cost": 1,
 		"fr": {
 			"name": "Néantine",
 			"text": "Invoque un démon 2/2."
 		},
+		"goldenImage": "CFM_621t10.gif",
 		"id": "CFM_621t10",
 		"name": "Netherbloom",
 		"playerClass": "Neutral",
@@ -10388,13 +10158,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Paul Mafayon",
-		"cardImage": "AT_025.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Sombre marché",
 			"text": "Détruit 2 serviteurs adverses aléatoires. Vous vous défaussez de\n2 cartes aléatoires."
 		},
+		"goldenImage": "AT_025.gif",
 		"id": "AT_025",
 		"name": "Dark Bargain",
 		"playerClass": "Warlock",
@@ -10404,7 +10174,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "OG_313e.png",
 		"fr": {
 			"name": "Perturbé",
 			"text": "+1/+1."
@@ -10419,13 +10188,13 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 3,
-		"cardImage": "EX1_382.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Garde-paix de l’Aldor",
 			"text": "<b>Cri de guerre :</b> l’Attaque d’un serviteur adverse passe à 1."
 		},
+		"goldenImage": "EX1_382.gif",
 		"health": 3,
 		"id": "EX1_382",
 		"name": "Aldor Peacekeeper",
@@ -10438,13 +10207,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
-		"cardImage": "EX1_399.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Berserker gurubashi",
 			"text": "Chaque fois que ce serviteur subit des dégâts, il gagne +3 ATQ."
 		},
+		"goldenImage": "EX1_399.gif",
 		"health": 7,
 		"id": "EX1_399",
 		"name": "Gurubashi Berserker",
@@ -10455,7 +10224,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA12_2H.png",
 		"cost": 0,
 		"fr": {
 			"name": "Affliction de l’espèce",
@@ -10470,13 +10238,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jason Chan",
-		"cardImage": "EX1_287.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Contresort",
 			"text": "<b>Secret :</b> quand votre adversaire lance un sort, le <b>contre</b>."
 		},
+		"goldenImage": "EX1_287.gif",
 		"id": "EX1_287",
 		"name": "Counterspell",
 		"playerClass": "Mage",
@@ -10486,7 +10254,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "KAR_A02_09eH.png",
 		"fr": {
 			"name": "Table mise",
 			"text": "+2/+2."
@@ -10500,12 +10267,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "EX1_165t1.png",
 		"cost": 5,
 		"fr": {
 			"name": "Druide de la Griffe",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "EX1_165t1.gif",
 		"health": 4,
 		"id": "EX1_165t1",
 		"name": "Druid of the Claw",
@@ -10517,12 +10284,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t31.png",
 		"cost": 10,
 		"fr": {
 			"name": "Huile des ténèbres",
 			"text": "Ajoute 3 démons aléatoires dans votre main."
 		},
+		"goldenImage": "CFM_621t31.gif",
 		"id": "CFM_621t31",
 		"name": "Shadow Oil",
 		"playerClass": "Neutral",
@@ -10532,12 +10299,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "EX1_165t2.png",
 		"cost": 5,
 		"fr": {
 			"name": "Druide de la Griffe",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_165t2.gif",
 		"health": 6,
 		"id": "EX1_165t2",
 		"name": "Druid of the Claw",
@@ -10549,13 +10316,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Rudy Siswanto",
-		"cardImage": "CFM_800.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Kodo de cavale",
 			"text": "<b>Secret :</b> quand un serviteur allié meurt, le renvoie dans votre main."
 		},
+		"goldenImage": "CFM_800.gif",
 		"id": "CFM_800",
 		"name": "Getaway Kodo",
 		"playerClass": "Paladin",
@@ -10567,7 +10334,6 @@ var parseCardsText = {
 	{
 		"artist": "Cyril Van Der Haegen",
 		"attack": 3,
-		"cardImage": "EX1_536.png",
 		"collectible": true,
 		"cost": 3,
 		"durability": 2,
@@ -10575,6 +10341,7 @@ var parseCardsText = {
 			"name": "Arc cornedaigle",
 			"text": "Chaque fois qu’un <b>Secret</b> allié est révélé, gagne +1 Durabilité."
 		},
+		"goldenImage": "EX1_536.gif",
 		"id": "EX1_536",
 		"name": "Eaglehorn Bow",
 		"playerClass": "Hunter",
@@ -10585,13 +10352,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Daren Bader",
-		"cardImage": "EX1_533.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Détournement",
 			"text": "<b>Secret :</b> quand un adversaire attaque votre héros, il attaque un autre personnage aléatoire à la place."
 		},
+		"goldenImage": "EX1_533.gif",
 		"id": "EX1_533",
 		"name": "Misdirection",
 		"playerClass": "Hunter",
@@ -10601,12 +10368,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_178a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Enraciner",
 			"text": "+5 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_178a.gif",
 		"id": "EX1_178a",
 		"name": "Rooted",
 		"playerClass": "Druid",
@@ -10616,12 +10383,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRMA03_3.png",
 		"cost": 2,
 		"fr": {
 			"name": "Moira Barbe-de-Bronze",
 			"text": "Thaurissan ne peut pas utiliser son pouvoir héroïque.\nN’attaque jamais de serviteurs à moins qu’ils n’aient <b>Provocation</b>."
 		},
+		"goldenImage": "BRMA03_3.gif",
 		"health": 3,
 		"id": "BRMA03_3",
 		"name": "Moira Bronzebeard",
@@ -10632,13 +10399,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Lorenzo Minaca",
-		"cardImage": "EX1_609.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Tir de précision",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, ce dernier subit $4 |4(point,points) de dégâts."
 		},
+		"goldenImage": "EX1_609.gif",
 		"id": "EX1_609",
 		"name": "Snipe",
 		"playerClass": "Hunter",
@@ -10648,7 +10415,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NEW1_014e.png",
 		"fr": {
 			"name": "Déguisé",
 			"text": "Camouflé jusqu’à votre prochain tour."
@@ -10663,7 +10429,6 @@ var parseCardsText = {
 	{
 		"artist": "Tom Baxa",
 		"attack": 3,
-		"cardImage": "EX1_083.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "ALLIANCE",
@@ -10671,6 +10436,7 @@ var parseCardsText = {
 			"name": "Suprétincelle",
 			"text": "<b>Cri de guerre :</b> transforme un autre serviteur aléatoire soit en diablosaure 5/5, soit en écureuil 1/1 ."
 		},
+		"goldenImage": "EX1_083.gif",
 		"health": 3,
 		"id": "EX1_083",
 		"name": "Tinkmaster Overspark",
@@ -10681,12 +10447,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_053.png",
 		"cost": 0,
 		"fr": {
 			"name": "Armor 100",
 			"text": "Give target Hero +100 Armor"
 		},
+		"goldenImage": "XXX_053.gif",
 		"id": "XXX_053",
 		"name": "Armor 100",
 		"playerClass": "Neutral",
@@ -10697,13 +10463,13 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 3,
-		"cardImage": "CFM_061.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Eauracle jinyu",
 			"text": "<b>Cri de guerre :</b> rend 6 PV.\n<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "CFM_061.gif",
 		"health": 6,
 		"id": "CFM_061",
 		"name": "Jinyu Waterspeaker",
@@ -10716,13 +10482,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "A.J. Nazzaro",
-		"cardImage": "OG_101.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Mutation interdite",
 			"text": "Dépense tous vos cristaux de mana. Invoque un serviteur aléatoire de même coût."
 		},
+		"goldenImage": "OG_101.gif",
 		"id": "OG_101",
 		"name": "Forbidden Shaping",
 		"playerClass": "Priest",
@@ -10733,13 +10499,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mauro Cascioli",
-		"cardImage": "DS1_184.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Pistage",
 			"text": "Affiche les 3 cartes du dessus du deck. Vous en piochez une et vous vous défaussez des autres."
 		},
+		"goldenImage": "DS1_184.gif",
 		"id": "DS1_184",
 		"name": "Tracking",
 		"playerClass": "Hunter",
@@ -10750,13 +10516,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Marcelo Vignali",
-		"cardImage": "AT_055.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Soins rapides",
 			"text": "Rend #5 PV."
 		},
+		"goldenImage": "AT_055.gif",
 		"id": "AT_055",
 		"name": "Flash Heal",
 		"playerClass": "Priest",
@@ -10766,7 +10532,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "AT_132_SHAMAN.png",
 		"cost": 2,
 		"fr": {
 			"name": "Heurt totémique",
@@ -10781,12 +10546,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "CRED_33.png",
 		"cost": 6,
 		"fr": {
 			"name": "Jomaro Kindred",
 			"text": "<b>Cri de guerre :</b> PREND n’importe quelle carte de la main de votre adversaire dont il ne veut pas."
 		},
+		"goldenImage": "CRED_33.gif",
 		"health": 6,
 		"id": "CRED_33",
 		"name": "Jomaro Kindred",
@@ -10798,13 +10563,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sean O’Daniels",
-		"cardImage": "NEW1_004.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Disparition",
 			"text": "Renvoie tous les serviteurs dans la main de leur propriétaire."
 		},
+		"goldenImage": "NEW1_004.gif",
 		"id": "NEW1_004",
 		"name": "Vanish",
 		"playerClass": "Rogue",
@@ -10816,13 +10581,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 4,
-		"cardImage": "CFM_669.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Caïd cambrioleur",
 			"text": "Ajoute une carte La pièce dans votre main chaque fois que votre adversaire lance un sort."
 		},
+		"goldenImage": "CFM_669.gif",
 		"health": 6,
 		"id": "CFM_669",
 		"name": "Burgly Bully",
@@ -10833,10 +10598,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA09_1H.png",
 		"fr": {
 			"name": "Seigneur Ondulance"
 		},
+		"goldenImage": "LOEA09_1H.gif",
 		"health": 30,
 		"id": "LOEA09_1H",
 		"name": "Lord Slitherspear",
@@ -10846,7 +10611,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "KAR_A02_05H.png",
 		"cost": 2,
 		"fr": {
 			"name": "Tasse",
@@ -10861,7 +10625,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_584e.png",
 		"fr": {
 			"name": "Enseignements du Kirin Tor",
 			"text": "<b>Dégâts des sorts : +1</b>"
@@ -10876,13 +10639,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 5,
-		"cardImage": "OG_340.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Soggoth le Rampant",
 			"text": "<b>Provocation</b>\nNe peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "OG_340.gif",
 		"health": 9,
 		"id": "OG_340",
 		"name": "Soggoth the Slitherer",
@@ -10895,7 +10658,6 @@ var parseCardsText = {
 	{
 		"artist": "Seamus Gallagher",
 		"attack": 2,
-		"cardImage": "GVG_081.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
@@ -10914,7 +10676,6 @@ var parseCardsText = {
 	{
 		"artist": "Andrea Uderzo",
 		"attack": 4,
-		"cardImage": "EX1_032.png",
 		"collectible": true,
 		"cost": 6,
 		"faction": "ALLIANCE",
@@ -10922,6 +10683,7 @@ var parseCardsText = {
 			"name": "Marche-soleil",
 			"text": "<b>Provocation</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_032.gif",
 		"health": 5,
 		"id": "EX1_032",
 		"name": "Sunwalker",
@@ -10932,7 +10694,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX14_04.png",
 		"cost": 5,
 		"fr": {
 			"name": "Froid absolu",
@@ -10946,7 +10707,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX7_01.png",
 		"fr": {
 			"name": "Instructeur Razuvious"
 		},
@@ -10958,7 +10718,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "KARA_09_02.png",
 		"fr": {
 			"name": "Conservateur"
 		},
@@ -10970,7 +10729,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "OG_150e.png",
 		"fr": {
 			"name": "Enragé",
 			"text": "+2 ATQ."
@@ -10985,7 +10743,6 @@ var parseCardsText = {
 	{
 		"artist": "Bernie Kang",
 		"attack": 5,
-		"cardImage": "EX1_057.png",
 		"collectible": true,
 		"cost": 4,
 		"faction": "ALLIANCE",
@@ -10993,6 +10750,7 @@ var parseCardsText = {
 			"name": "Ancien maître brasseur",
 			"text": "<b>Cri de guerre :</b> renvoie un serviteur allié du champ de bataille et le place dans votre main."
 		},
+		"goldenImage": "EX1_057.gif",
 		"health": 4,
 		"id": "EX1_057",
 		"name": "Ancient Brewmaster",
@@ -11004,7 +10762,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_KTRAF_4m.png",
 		"cost": 3,
 		"fr": {
 			"name": "Gothik spectral",
@@ -11020,7 +10777,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TU4a_001.png",
 		"fr": {
 			"name": "Lardeur"
 		},
@@ -11034,12 +10790,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "CRED_19.png",
 		"cost": 4,
 		"fr": {
 			"name": "Beomki Hong",
 			"text": "<b>Provocation</b>. Les serviteurs alliés ne peuvent pas être <b>gelés</b>."
 		},
+		"goldenImage": "CRED_19.gif",
 		"health": 3,
 		"id": "CRED_19",
 		"name": "Beomki Hong",
@@ -11050,12 +10806,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA06_04h.png",
 		"cost": 2,
 		"fr": {
 			"name": "Pulsion destructrice",
 			"text": "Détruit toutes les statues. Inflige 3 points de dégâts pour chaque statue détruite."
 		},
+		"goldenImage": "LOEA06_04h.gif",
 		"id": "LOEA06_04h",
 		"name": "Shattering Spree",
 		"playerClass": "Neutral",
@@ -11065,13 +10821,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jim Nelson",
-		"cardImage": "OG_314.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Du sang à l’ichor",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur.\nS’il survit, invoque une gelée 2/2."
 		},
+		"goldenImage": "OG_314.gif",
 		"id": "OG_314",
 		"name": "Blood To Ichor",
 		"playerClass": "Warrior",
@@ -11083,7 +10839,6 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielsen",
 		"attack": 3,
-		"cardImage": "KAR_025c.png",
 		"cost": 3,
 		"fr": {
 			"name": "Théière"
@@ -11098,7 +10853,6 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 6,
-		"cardImage": "GVG_062.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
@@ -11115,7 +10869,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_AllMinionsTauntCharge.png",
 		"fr": {
 			"name": "Confère Provocation et Charge",
 			"text": "Ce serviteur a obtenu <b>Provocation</b> et <b>Charge</b>."
@@ -11128,7 +10881,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "NAX5_02.png",
 		"cost": 1,
 		"fr": {
 			"name": "Éruption",
@@ -11142,7 +10894,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "TB_PickYourFate_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin : bananes",
@@ -11162,7 +10913,6 @@ var parseCardsText = {
 			"name": "Bovin infernal",
 			"text": "<b>Râle d’agonie :</b> place une copie de cette carte dans votre deck."
 		},
-		"goldenImage": "TB_SPT_DPromoMinionInit.gif",
 		"health": 2,
 		"id": "TB_SPT_DPromoMinionInit",
 		"name": "Hell Bovine",
@@ -11174,13 +10924,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 5,
-		"cardImage": "CFM_902.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Aya Patte Noire",
 			"text": "<b>Cri de guerre et Râle d’agonie :</b> invoque un <b>golem de jade</b> {0}. @<b>Cri de guerre et Râle d’agonie :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_902.gif",
 		"health": 3,
 		"id": "CFM_902",
 		"name": "Aya Blackpaw",
@@ -11193,13 +10943,13 @@ var parseCardsText = {
 	{
 		"artist": "Nutchapol Thitinunthakorn",
 		"attack": 5,
-		"cardImage": "OG_293.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Sombre arakkoa",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> donne +3/+3 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_293.gif",
 		"health": 7,
 		"id": "OG_293",
 		"name": "Dark Arakkoa",
@@ -11212,13 +10962,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
-		"cardImage": "AT_067.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Magnataure alpha",
 			"text": "Inflige également des dégâts aux serviteurs adjacents de celui qu’il attaque."
 		},
+		"goldenImage": "AT_067.gif",
 		"health": 3,
 		"id": "AT_067",
 		"name": "Magnataur Alpha",
@@ -11229,7 +10979,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_058.png",
 		"cost": 0,
 		"fr": {
 			"name": "Weapon Nerf",
@@ -11245,13 +10994,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Garner",
-		"cardImage": "EX1_339.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Vol d’esprit",
 			"text": "Copie 2 cartes du deck de votre adversaire et les place dans votre main."
 		},
+		"goldenImage": "EX1_339.gif",
 		"id": "EX1_339",
 		"name": "Thoughtsteal",
 		"playerClass": "Priest",
@@ -11261,7 +11010,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA01_2H_2_TB.png",
 		"cost": 2,
 		"fr": {
 			"name": "Pioche forcée !",
@@ -11275,7 +11023,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "LOEA02_02.png",
 		"cost": 0,
 		"fr": {
 			"name": "Intuition de djinn",
@@ -11290,7 +11037,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "KAR_A10_03.png",
 		"cost": 3,
 		"fr": {
 			"name": "Tour noire",
@@ -11306,12 +11052,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "TB_KTRAF_11.png",
 		"cost": 5,
 		"fr": {
 			"name": "Saphiron",
 			"text": "Au début de votre tour, <b>gèle</b> un serviteur adverse aléatoire."
 		},
+		"goldenImage": "TB_KTRAF_11.gif",
 		"health": 6,
 		"id": "TB_KTRAF_11",
 		"name": "Sapphiron",
@@ -11324,13 +11070,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 4,
-		"cardImage": "EX1_414.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Grommash Hurlenfer",
 			"text": "<b>Charge</b>.\n<b>Accès de rage :</b> +6 ATQ"
 		},
+		"goldenImage": "EX1_414.gif",
 		"health": 9,
 		"id": "EX1_414",
 		"name": "Grommash Hellscream",
@@ -11342,7 +11088,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "KARA_13_20.png",
 		"cost": 3,
 		"fr": {
 			"name": "Élémentaire de fête",
@@ -11357,12 +11102,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CS2_013t.png",
 		"cost": 0,
 		"fr": {
 			"name": "Excès de mana",
 			"text": "Vous piochez une carte. <i>(Vous ne pouvez avoir que 10 cristaux de mana en réserve.)</i>"
 		},
+		"goldenImage": "CS2_013t.gif",
 		"id": "CS2_013t",
 		"name": "Excess Mana",
 		"playerClass": "Druid",
@@ -11372,12 +11117,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "TB_KTRAF_12.png",
 		"cost": 8,
 		"fr": {
 			"name": "Le Recousu",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur adverse aléatoire."
 		},
+		"goldenImage": "TB_KTRAF_12.gif",
 		"health": 8,
 		"id": "TB_KTRAF_12",
 		"name": "Patchwerk",
@@ -11390,13 +11135,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Brereton",
 		"attack": 3,
-		"cardImage": "CS2_172.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "HORDE",
 		"fr": {
 			"name": "Raptor Rougefange"
 		},
+		"goldenImage": "CS2_172.gif",
 		"health": 2,
 		"id": "CS2_172",
 		"name": "Bloodfen Raptor",
@@ -11406,10 +11151,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX4_01.png",
 		"fr": {
 			"name": "Noth le Porte-Peste"
 		},
+		"goldenImage": "NAX4_01.gif",
 		"health": 30,
 		"id": "NAX4_01",
 		"name": "Noth the Plaguebringer",
@@ -11418,7 +11163,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "LOEA04_01eh.png",
 		"fr": {
 			"name": "Enchantement de fuite du temple"
 		},
@@ -11430,12 +11174,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TU4c_003.png",
 		"cost": 0,
 		"fr": {
 			"name": "Tonneau",
 			"text": "Il y a quelque chose dans ce tonneau ?"
 		},
+		"goldenImage": "TU4c_003.gif",
 		"health": 2,
 		"id": "TU4c_003",
 		"name": "Barrel",
@@ -11446,7 +11190,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "OG_023t.png",
 		"fr": {
 			"name": "Fusion primordiale",
 			"text": "Caractéristiques augmentées."
@@ -11460,12 +11203,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t19.png",
 		"cost": 5,
 		"fr": {
 			"name": "Chapeglace",
 			"text": "<b>Gèle</b> 2 serviteurs adverses aléatoires."
 		},
+		"goldenImage": "CFM_621t19.gif",
 		"id": "CFM_621t19",
 		"name": "Icecap",
 		"playerClass": "Neutral",
@@ -11476,13 +11219,13 @@ var parseCardsText = {
 	{
 		"artist": "Efrem Palacios",
 		"attack": 2,
-		"cardImage": "EX1_613.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Edwin VanCleef",
 			"text": "<b>Combo :</b> gagne +2/+2 pour chaque carte jouée auparavant pendant ce tour."
 		},
+		"goldenImage": "EX1_613.gif",
 		"health": 2,
 		"id": "EX1_613",
 		"name": "Edwin VanCleef",
@@ -11494,11 +11237,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TU4a_002.png",
 		"cost": 1,
 		"fr": {
 			"name": "Gnoll rivepatte"
 		},
+		"goldenImage": "TU4a_002.gif",
 		"health": 1,
 		"id": "TU4a_002",
 		"name": "Riverpaw Gnoll",
@@ -11508,7 +11251,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_GP_01e_copy1.png",
 		"fr": {
 			"name": "Tour des Ombres donne Camouflage à mes serviteurs.",
 			"text": "Ne peut pas attaquer.\n<b>Camouflage</b>."
@@ -11522,13 +11264,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "BRMC_94.png",
 		"cost": 2,
 		"durability": 6,
 		"fr": {
 			"name": "Sulfuras",
 			"text": "<b>Râle d’agonie :</b> transforme votre pouvoir héroïque, qui inflige 8 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "BRMC_94.gif",
 		"id": "BRMC_94",
 		"name": "Sulfuras",
 		"playerClass": "Neutral",
@@ -11537,7 +11279,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "BRMA12_8te.png",
 		"fr": {
 			"name": "Lignée draconique",
 			"text": "+2/+2."
@@ -11552,13 +11293,13 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 6,
-		"cardImage": "EX1_623.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Massacreur du temple",
 			"text": "<b>Cri de guerre :</b> donne +3 PV à un serviteur allié."
 		},
+		"goldenImage": "EX1_623.gif",
 		"health": 6,
 		"id": "EX1_623",
 		"name": "Temple Enforcer",
@@ -11569,12 +11310,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TU4c_002.png",
 		"cost": 1,
 		"fr": {
 			"name": "Lancer de tonneau",
 			"text": "Inflige 2 points de dégâts."
 		},
+		"goldenImage": "TU4c_002.gif",
 		"id": "TU4c_002",
 		"name": "Barrel Toss",
 		"playerClass": "Neutral",
@@ -11586,13 +11327,13 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 2,
-		"cardImage": "OG_256.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Rejeton de N’Zoth",
 			"text": "<b>Râle d’agonie :</b> donne +1/+1 à vos serviteurs."
 		},
+		"goldenImage": "OG_256.gif",
 		"health": 2,
 		"id": "OG_256",
 		"name": "Spawn of N'Zoth",
@@ -11605,13 +11346,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
-		"cardImage": "OG_267.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Face de poulpe",
 			"text": "<b>Râle d’agonie :</b> donne\n+2 ATQ à votre arme."
 		},
+		"goldenImage": "OG_267.gif",
 		"health": 4,
 		"id": "OG_267",
 		"name": "Southsea Squidface",
@@ -11623,13 +11364,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Andrew Robinson",
-		"cardImage": "EX1_129.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Éventail de couteaux",
 			"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_129.gif",
 		"id": "EX1_129",
 		"name": "Fan of Knives",
 		"playerClass": "Rogue",
@@ -11639,7 +11380,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_CoOpv3_013.png",
 		"cost": 0,
 		"fr": {
 			"name": "Immolation",
@@ -11654,7 +11394,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Slawomir Maniak",
-		"cardImage": "KARA_12_02.png",
 		"cost": 0,
 		"fr": {
 			"name": "Lignes telluriques",
@@ -11669,11 +11408,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRM_004t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "BRM_004t.gif",
 		"health": 1,
 		"id": "BRM_004t",
 		"name": "Whelp",
@@ -11684,13 +11423,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
-		"cardImage": "CS2_168.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "ALLIANCE",
 		"fr": {
 			"name": "Écumeur murloc"
 		},
+		"goldenImage": "CS2_168.gif",
 		"health": 1,
 		"id": "CS2_168",
 		"name": "Murloc Raider",
@@ -11700,7 +11439,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_013.png",
 		"fr": {
 			"name": "Enchantement du choix du joueur"
 		},
@@ -11711,10 +11449,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRM_027h.png",
 		"fr": {
 			"name": "Ragnaros, seigneur du feu"
 		},
+		"goldenImage": "BRM_027h.gif",
 		"health": 8,
 		"id": "BRM_027h",
 		"name": "Ragnaros the Firelord",
@@ -11723,12 +11461,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "TB_ClassRandom_Paladin.png",
 		"cost": 0,
 		"fr": {
 			"name": "Deuxième classe : paladin",
 			"text": "Ajoute des cartes de paladin dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Paladin.gif",
 		"id": "TB_ClassRandom_Paladin",
 		"name": "Second Class: Paladin",
 		"playerClass": "Paladin",
@@ -11737,12 +11475,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NEW1_008b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Secrets anciens",
 			"text": "Rend 5 points de vie."
 		},
+		"goldenImage": "NEW1_008b.gif",
 		"id": "NEW1_008b",
 		"name": "Ancient Secrets",
 		"playerClass": "Druid",
@@ -11752,13 +11490,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luca Zontini",
-		"cardImage": "CS1_112.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Nova sacrée",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les adversaires. Rend #2 |4(point,points) de vie à tous les personnages alliés."
 		},
+		"goldenImage": "CS1_112.gif",
 		"id": "CS1_112",
 		"name": "Holy Nova",
 		"playerClass": "Priest",
@@ -11768,7 +11506,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA09_2eH.png",
 		"fr": {
 			"name": "Enragé",
 			"text": "+5 ATQ."
@@ -11782,13 +11519,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "CFM_713.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Floraison de jade",
 			"text": "Invoque un <b>golem de jade</b> {0}. Gagne un cristal de mana vide.@Invoque un <b>golem de jade</b>. Gagne un cristal de mana vide."
 		},
+		"goldenImage": "CFM_713.gif",
 		"id": "CFM_713",
 		"name": "Jade Blossom",
 		"playerClass": "Druid",
@@ -11799,13 +11536,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Benjamin Zhang",
-		"cardImage": "DS1_183.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Flèches multiples",
 			"text": "Inflige $3 |4(point,points) de dégâts à deux serviteurs adverses aléatoires."
 		},
+		"goldenImage": "DS1_183.gif",
 		"id": "DS1_183",
 		"name": "Multi-Shot",
 		"playerClass": "Hunter",
@@ -11817,13 +11554,13 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielson",
 		"attack": 2,
-		"cardImage": "BRM_004.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Dragonnet du Crépuscule",
 			"text": "<b>Cri de guerre :</b> gagne +2 PV si vous avez un Dragon en main."
 		},
+		"goldenImage": "BRM_004.gif",
 		"health": 1,
 		"id": "BRM_004",
 		"name": "Twilight Whelp",
@@ -11836,13 +11573,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 2,
-		"cardImage": "GVG_058.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Mini-robot blindé",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "GVG_058.gif",
 		"health": 2,
 		"id": "GVG_058",
 		"name": "Shielded Minibot",
@@ -11853,10 +11590,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX14_01.png",
 		"fr": {
 			"name": "Saphiron"
 		},
+		"goldenImage": "NAX14_01.gif",
 		"health": 30,
 		"id": "NAX14_01",
 		"name": "Sapphiron",
@@ -11865,12 +11602,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "BRMA12_6.png",
 		"cost": 1,
 		"fr": {
 			"name": "Affliction de l’espèce : noir",
 			"text": "Chaque fois que Chromaggus pioche une carte, il en obtient une copie tant que vous avez celle-ci dans votre main."
 		},
+		"goldenImage": "BRMA12_6.gif",
 		"id": "BRMA12_6",
 		"name": "Brood Affliction: Black",
 		"playerClass": "Neutral",
@@ -11879,7 +11616,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "GVG_063a.png",
 		"fr": {
 			"name": "Vindicte",
 			"text": "Attaque augmentée."
@@ -11892,7 +11628,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "OG_104e.png",
 		"fr": {
 			"name": "Ombre étreinte",
 			"text": "Vos effets de soins infligent des dégâts."
@@ -11907,12 +11642,12 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 5,
-		"cardImage": "AT_092.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Enragé de glace"
 		},
+		"goldenImage": "AT_092.gif",
 		"health": 2,
 		"id": "AT_092",
 		"name": "Ice Rager",
@@ -11924,13 +11659,13 @@ var parseCardsText = {
 	{
 		"artist": "E. Guiton & A. Bozonnet",
 		"attack": 3,
-		"cardImage": "OG_216.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Loup contaminé",
 			"text": "<b>Râle d’agonie :</b> invoque deux araignées 1/1."
 		},
+		"goldenImage": "OG_216.gif",
 		"health": 3,
 		"id": "OG_216",
 		"name": "Infested Wolf",
@@ -11943,13 +11678,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 1,
-		"cardImage": "EX1_102.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Démolisseur",
 			"text": "Au début de votre tour, inflige 2 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "EX1_102.gif",
 		"health": 4,
 		"id": "EX1_102",
 		"name": "Demolisher",
@@ -11962,7 +11697,6 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
-		"cardImage": "EX1_093.png",
 		"collectible": true,
 		"cost": 4,
 		"faction": "ALLIANCE",
@@ -11970,6 +11704,7 @@ var parseCardsText = {
 			"name": "Défenseur d’Argus",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 et <b>Provocation</b> aux serviteurs adjacents."
 		},
+		"goldenImage": "EX1_093.gif",
 		"health": 3,
 		"id": "EX1_093",
 		"name": "Defender of Argus",
@@ -11982,11 +11717,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Saas",
 		"attack": 1,
-		"cardImage": "CFM_310t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Murloc tranche-branchie"
 		},
+		"goldenImage": "CFM_310t.gif",
 		"health": 1,
 		"id": "CFM_310t",
 		"name": "Murloc Razorgill",
@@ -11995,7 +11730,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GVG_010b.png",
 		"fr": {
 			"name": "Choix de Velen",
 			"text": "+2/+4 et <b>dégâts des sorts :+1</b>."
@@ -12008,10 +11742,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA15_1H.png",
 		"fr": {
 			"name": "Maloriak"
 		},
+		"goldenImage": "BRMA15_1H.gif",
 		"health": 30,
 		"id": "BRMA15_1H",
 		"name": "Maloriak",
@@ -12021,7 +11755,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Bozonnet",
-		"cardImage": "KARA_07_08.png",
 		"cost": 6,
 		"fr": {
 			"name": "Évasion de dragon !",
@@ -12037,13 +11770,13 @@ var parseCardsText = {
 	{
 		"artist": "Howard Lyon",
 		"attack": 2,
-		"cardImage": "FP1_010.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Maexxna",
 			"text": "Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "FP1_010.gif",
 		"health": 8,
 		"id": "FP1_010",
 		"name": "Maexxna",
@@ -12054,10 +11787,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA10_1H.png",
 		"fr": {
 			"name": "Aileron-Géant"
 		},
+		"goldenImage": "LOEA10_1H.gif",
 		"health": 30,
 		"id": "LOEA10_1H",
 		"name": "Giantfin",
@@ -12067,11 +11800,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "ds1_whelptoken.png",
 		"cost": 1,
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "ds1_whelptoken.gif",
 		"health": 1,
 		"id": "ds1_whelptoken",
 		"name": "Whelp",
@@ -12080,7 +11813,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_039e.png",
 		"fr": {
 			"name": "Sauvage",
 			"text": "+2 ATQ pendant ce tour."
@@ -12095,13 +11827,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
-		"cardImage": "AT_110.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Régisseur du Colisée",
 			"text": "<b>Exaltation :</b> renvoie ce serviteur dans votre main."
 		},
+		"goldenImage": "AT_110.gif",
 		"health": 5,
 		"id": "AT_110",
 		"name": "Coliseum Manager",
@@ -12113,11 +11845,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "EX1_tk29.png",
 		"cost": 5,
 		"fr": {
 			"name": "Diablosaure"
 		},
+		"goldenImage": "EX1_tk29.gif",
 		"health": 5,
 		"id": "EX1_tk29",
 		"name": "Devilsaur",
@@ -12128,7 +11860,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "TB_Coopv3_103.png",
 		"cost": 5,
 		"fr": {
 			"name": "Traqueuse de dragon intrépide",
@@ -12148,7 +11879,6 @@ var parseCardsText = {
 			"name": "Lame barbotée",
 			"text": "+4/+4."
 		},
-		"goldenImage": "CFM_342e.gif",
 		"id": "CFM_342e",
 		"name": "Looted Blade",
 		"playerClass": "Rogue",
@@ -12157,7 +11887,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "AT_096e.png",
 		"fr": {
 			"name": "Remonté",
 			"text": "+1/+1."
@@ -12173,7 +11902,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "La Kabale"
 		},
-		"goldenImage": "TB_Blizzcon2016_KabalEnchant.gif",
 		"id": "TB_Blizzcon2016_KabalEnchant",
 		"name": "The Kabal",
 		"playerClass": "Neutral",
@@ -12181,7 +11909,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "AT_017e.png",
 		"fr": {
 			"name": "Étreinte du Crépuscule",
 			"text": "+1 ATQ et <b>Provocation</b>."
@@ -12196,13 +11923,13 @@ var parseCardsText = {
 	{
 		"artist": "Eric Browning",
 		"attack": 1,
-		"cardImage": "FP1_003.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Limon résonnant",
 			"text": "<b>Cri de guerre :</b> invoque une copie conforme de ce serviteur à la fin du tour."
 		},
+		"goldenImage": "FP1_003.gif",
 		"health": 2,
 		"id": "FP1_003",
 		"name": "Echoing Ooze",
@@ -12215,13 +11942,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
-		"cardImage": "EX1_608.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Apprentie du sorcier",
 			"text": "Vos sorts coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "EX1_608.gif",
 		"health": 2,
 		"id": "EX1_608",
 		"name": "Sorcerer's Apprentice",
@@ -12234,13 +11961,13 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 3,
-		"cardImage": "GVG_099.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Lobe-Bombe",
 			"text": "<b>Cri de guerre :</b> inflige 4 points de dégâts à un serviteur adverse aléatoire."
 		},
+		"goldenImage": "GVG_099.gif",
 		"health": 3,
 		"id": "GVG_099",
 		"name": "Bomb Lobber",
@@ -12251,7 +11978,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "KAR_A01_02e.png",
 		"fr": {
 			"name": "Reflet",
 			"text": "1/1."
@@ -12266,13 +11992,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
-		"cardImage": "GVG_089.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Illuminatrice",
 			"text": "Si vous contrôlez un <b>Secret</b> à la fin de votre tour, rend 4 PV à votre héros."
 		},
+		"goldenImage": "GVG_089.gif",
 		"health": 4,
 		"id": "GVG_089",
 		"name": "Illuminator",
@@ -12288,7 +12014,6 @@ var parseCardsText = {
 			"name": "Visions de la sorcière",
 			"text": "<b>Secret :</b> invoque 2 gardiens quand votre adversaire invoque un serviteur avec <b>Dégâts des sorts</b>."
 		},
-		"goldenImage": "TB_SPT_DPromoSecret6.gif",
 		"id": "TB_SPT_DPromoSecret6",
 		"name": "Visions of the Sorcerer",
 		"playerClass": "Warrior",
@@ -12298,13 +12023,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Prescott",
-		"cardImage": "GVG_033.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Arbre de vie",
 			"text": "Rend à tous les personnages tous leurs points de vie."
 		},
+		"goldenImage": "GVG_033.gif",
 		"id": "GVG_033",
 		"name": "Tree of Life",
 		"playerClass": "Druid",
@@ -12314,7 +12039,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "OG_292e.png",
 		"fr": {
 			"name": "Dévotion de la nuit",
 			"text": "+1/+1."
@@ -12327,7 +12051,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA05_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Mana enflammé",
@@ -12342,12 +12065,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMC_87.png",
 		"cost": 3,
 		"fr": {
 			"name": "Moira Barbe-de-Bronze",
 			"text": "<b>Râle d’agonie :</b> invoque l’empereur Thaurissan."
 		},
+		"goldenImage": "BRMC_87.gif",
 		"health": 3,
 		"id": "BRMC_87",
 		"name": "Moira Bronzebeard",
@@ -12360,7 +12083,6 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 2,
-		"cardImage": "CS2_142.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "HORDE",
@@ -12368,6 +12090,7 @@ var parseCardsText = {
 			"name": "Géomancien kobold",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CS2_142.gif",
 		"health": 2,
 		"id": "CS2_142",
 		"name": "Kobold Geomancer",
@@ -12379,7 +12102,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_363e.png",
 		"fr": {
 			"name": "Bénédiction de sagesse",
 			"text": "Quand ce serviteur attaque, le joueur qui l’a béni pioche une carte."
@@ -12393,12 +12115,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "CRED_14.png",
 		"cost": 5,
 		"fr": {
 			"name": "Yong Woo",
 			"text": "Vos autres serviteurs ont +3 Attaque et <b>Charge</b>."
 		},
+		"goldenImage": "CRED_14.gif",
 		"health": 2,
 		"id": "CRED_14",
 		"name": "Yong Woo",
@@ -12411,7 +12133,6 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 8,
-		"cardImage": "KAR_711.png",
 		"collectible": true,
 		"cost": 12,
 		"fr": {
@@ -12428,12 +12149,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA_01H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Présence menaçante",
 			"text": "Vous piochez 3 cartes. Gagne +6 points d’armure."
 		},
+		"goldenImage": "LOEA_01H.gif",
 		"id": "LOEA_01H",
 		"name": "Looming Presence",
 		"playerClass": "Neutral",
@@ -12442,7 +12163,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "FP1_030e.png",
 		"fr": {
 			"name": "Aura nécrotique",
 			"text": "Vos sorts coûtent (5) cristaux de plus au prochain tour."
@@ -12455,12 +12175,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_PickYourFate_6_2nd.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin cruel : portails instables",
 			"text": "Place 3 cartes Portail instable dans la main de chaque joueur."
 		},
+		"goldenImage": "TB_PickYourFate_6_2nd.gif",
 		"id": "TB_PickYourFate_6_2nd",
 		"name": "Dire Fate: Unstable Portals",
 		"playerClass": "Neutral",
@@ -12474,7 +12194,6 @@ var parseCardsText = {
 			"name": "Enchantement de Raza",
 			"text": "Votre <b>pouvoir héroïque</b> coûte (0) |4(cristal,cristaux)."
 		},
-		"goldenImage": "CFM_020e.gif",
 		"id": "CFM_020e",
 		"name": "Raza Enchant",
 		"playerClass": "Neutral",
@@ -12483,7 +12202,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "AT_041e.png",
 		"fr": {
 			"name": "Appel de la nature",
 			"text": "Coût réduit."
@@ -12496,7 +12214,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "OG_337e.png",
 		"fr": {
 			"name": "Prémices de destruction",
 			"text": "Caractéristiques augmentées."
@@ -12510,7 +12227,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "XXX_110.png",
 		"cost": 0,
 		"fr": {
 			"name": "Yogg-Saron Test (Auto)",
@@ -12528,13 +12244,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 0,
-		"cardImage": "NEW1_021.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Auspice funeste",
 			"text": "Au début de votre tour, détruit TOUS les serviteurs."
 		},
+		"goldenImage": "NEW1_021.gif",
 		"health": 7,
 		"id": "NEW1_021",
 		"name": "Doomsayer",
@@ -12547,13 +12263,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 5,
-		"cardImage": "CFM_025.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Monte-en-l’air mécanique",
 			"text": "Vous piochez une carte chaque fois que ce serviteur attaque et survit."
 		},
+		"goldenImage": "CFM_025.gif",
 		"health": 5,
 		"id": "CFM_025",
 		"name": "Wind-up Burglebot",
@@ -12564,12 +12280,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_160b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Chef de la meute",
 			"text": "Donne +1/+1 à vos serviteurs."
 		},
+		"goldenImage": "EX1_160b.gif",
 		"id": "EX1_160b",
 		"name": "Leader of the Pack",
 		"playerClass": "Druid",
@@ -12580,13 +12296,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 3,
-		"cardImage": "CFM_619.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Chimiste de la Kabale",
 			"text": "<b>Cri de guerre :</b> ajoute une potion aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_619.gif",
 		"health": 3,
 		"id": "CFM_619",
 		"name": "Kabal Chemist",
@@ -12599,7 +12315,6 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 3,
-		"cardImage": "GVG_036.png",
 		"collectible": true,
 		"cost": 3,
 		"durability": 2,
@@ -12607,6 +12322,7 @@ var parseCardsText = {
 			"name": "Masse de puissance",
 			"text": "<b>Râle d’agonie :</b> donne à un Méca allié aléatoire +2/+2."
 		},
+		"goldenImage": "GVG_036.gif",
 		"id": "GVG_036",
 		"name": "Powermace",
 		"playerClass": "Shaman",
@@ -12616,10 +12332,10 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "NAX6_01.png",
 		"fr": {
 			"name": "Horreb"
 		},
+		"goldenImage": "NAX6_01.gif",
 		"health": 75,
 		"id": "NAX6_01",
 		"name": "Loatheb",
@@ -12630,13 +12346,13 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 1,
-		"cardImage": "OG_312.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Second de N’Zoth",
 			"text": "<b>Cri de guerre :</b> vous équipe d’un Crochet rouillé 1/3."
 		},
+		"goldenImage": "OG_312.gif",
 		"health": 1,
 		"id": "OG_312",
 		"name": "N'Zoth's First Mate",
@@ -12647,7 +12363,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA13_4H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Magie sauvage",
@@ -12661,7 +12376,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "KARA_12_03H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Couronne de flammes",
@@ -12675,7 +12389,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "AT_084e.png",
 		"fr": {
 			"name": "Équipé",
 			"text": "+2 ATQ."
@@ -12690,13 +12403,13 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 4,
-		"cardImage": "EX1_043.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Drake du Crépuscule",
 			"text": "<b>Cri de guerre :</b> gagne +1 PV pour chaque carte dans votre main."
 		},
+		"goldenImage": "EX1_043.gif",
 		"health": 1,
 		"id": "EX1_043",
 		"name": "Twilight Drake",
@@ -12707,7 +12420,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA04_02.png",
 		"cost": 0,
 		"fr": {
 			"name": "Fuyez !",
@@ -12724,13 +12436,13 @@ var parseCardsText = {
 	{
 		"artist": "Milivoj Ceran",
 		"attack": 6,
-		"cardImage": "EX1_534.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Grande crinière des savanes",
 			"text": "<b>Râle d’agonie :</b> invoque deux hyènes 2/2."
 		},
+		"goldenImage": "EX1_534.gif",
 		"health": 5,
 		"id": "EX1_534",
 		"name": "Savannah Highmane",
@@ -12741,7 +12453,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "KARA_07_01.png",
 		"fr": {
 			"name": "Conservateur"
 		},
@@ -12759,7 +12470,6 @@ var parseCardsText = {
 			"name": "Portail énigmatique",
 			"text": "Au début du prochain tour, votre héros est transformé et aspiré dans le Néant distordu !"
 		},
-		"goldenImage": "TB_SPT_DpromoPortal.gif",
 		"health": 10,
 		"id": "TB_SPT_DpromoPortal",
 		"name": "Enigmatic Portal",
@@ -12770,11 +12480,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TU4f_003.png",
 		"cost": 2,
 		"fr": {
 			"name": "Moine pandashan"
 		},
+		"goldenImage": "TU4f_003.gif",
 		"health": 2,
 		"id": "TU4f_003",
 		"name": "Shado-Pan Monk",
@@ -12784,7 +12494,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_116e.png",
 		"fr": {
 			"name": "Venez vous battre !",
 			"text": "+1 ATQ et <b>Provocation</b>."
@@ -12799,13 +12508,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "CFM_815.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Barbefeu Tresse-Flammes",
 			"text": "<b>Bouclier divin</b>. <b>Provocation</b>. Les dégâts infligés par ce serviteur soignent aussi votre héros."
 		},
+		"goldenImage": "CFM_815.gif",
 		"health": 2,
 		"id": "CFM_815",
 		"name": "Wickerflame Burnbristle",
@@ -12817,7 +12526,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Laurel Austin",
-		"cardImage": "KARA_11_01.png",
 		"fr": {
 			"name": "Plaie-de-nuit"
 		},
@@ -12831,13 +12539,13 @@ var parseCardsText = {
 	{
 		"artist": "Ben Olson",
 		"attack": 3,
-		"cardImage": "GVG_108.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Recombobulateur",
 			"text": "<b>Cri de guerre :</b> transforme un serviteur allié en un serviteur aléatoire de même coût."
 		},
+		"goldenImage": "GVG_108.gif",
 		"health": 2,
 		"id": "GVG_108",
 		"name": "Recombobulator",
@@ -12850,13 +12558,13 @@ var parseCardsText = {
 	{
 		"artist": "Marcleo Vignali",
 		"attack": 4,
-		"cardImage": "AT_127.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Champion du Nexus Saraad",
 			"text": "<b>Exaltation :</b> ajoute un sort aléatoire dans votre main."
 		},
+		"goldenImage": "AT_127.gif",
 		"health": 5,
 		"id": "AT_127",
 		"name": "Nexus-Champion Saraad",
@@ -12867,7 +12575,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "KARA_12_01.png",
 		"fr": {
 			"name": "Ombre d’Aran"
 		},
@@ -12881,13 +12588,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 2,
-		"cardImage": "EX1_050.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Oracle froide-lumière",
 			"text": "<b>Cri de guerre :</b> chaque joueur pioche 2 cartes."
 		},
+		"goldenImage": "EX1_050.gif",
 		"health": 2,
 		"id": "EX1_050",
 		"name": "Coldlight Oracle",
@@ -12898,7 +12605,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "KARA_05_01hheroic.png",
 		"fr": {
 			"name": "Grand Méchant Loup"
 		},
@@ -12913,13 +12619,13 @@ var parseCardsText = {
 	{
 		"artist": "Blizzard Entertainment",
 		"attack": 0,
-		"cardImage": "EX1_341.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Puits de lumière",
 			"text": "Au début de votre tour, rend 3 PV à un personnage allié blessé."
 		},
+		"goldenImage": "EX1_341.gif",
 		"health": 5,
 		"id": "EX1_341",
 		"name": "Lightwell",
@@ -12932,7 +12638,6 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 3,
-		"cardImage": "KAR_094.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
@@ -12951,13 +12656,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 9,
-		"cardImage": "BRM_027.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Chambellan Executus",
 			"text": "<b>Râle d’agonie :</b> remplace votre héros par Ragnaros, le seigneur du feu."
 		},
+		"goldenImage": "BRM_027.gif",
 		"health": 7,
 		"id": "BRM_027",
 		"name": "Majordomo Executus",
@@ -12970,13 +12675,13 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 3,
-		"cardImage": "OG_109.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Archiviste de Sombre-Comté",
 			"text": "<b>Cri de guerre :</b> vous défausse d’une carte aléatoire. <b>Râle d’agonie :</b> vous piochez une carte."
 		},
+		"goldenImage": "OG_109.gif",
 		"health": 2,
 		"id": "OG_109",
 		"name": "Darkshire Librarian",
@@ -12988,13 +12693,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Doug Alexander",
-		"cardImage": "EX1_169.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Innervation",
 			"text": "Vous gagnez 2 cristaux de mana pour ce tour uniquement."
 		},
+		"goldenImage": "EX1_169.gif",
 		"id": "EX1_169",
 		"name": "Innervate",
 		"playerClass": "Druid",
@@ -13006,13 +12711,13 @@ var parseCardsText = {
 	{
 		"artist": "Yewon Park",
 		"attack": 3,
-		"cardImage": "CFM_646.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Lépreux occulte",
 			"text": "<b>Râle d’agonie :</b> inflige 2 points de dégâts au héros adverse."
 		},
+		"goldenImage": "CFM_646.gif",
 		"health": 1,
 		"id": "CFM_646",
 		"name": "Backstreet Leper",
@@ -13025,13 +12730,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 5,
-		"cardImage": "BRM_018.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Dragon consort",
 			"text": "<b>Cri de guerre :</b> le prochain Dragon que vous jouez coûte (2) cristaux de moins."
 		},
+		"goldenImage": "BRM_018.gif",
 		"health": 5,
 		"id": "BRM_018",
 		"name": "Dragon Consort",
@@ -13042,12 +12747,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_037a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Racines vivantes",
 			"text": "Inflige $2 |4(point,points) de dégâts."
 		},
+		"goldenImage": "AT_037a.gif",
 		"id": "AT_037a",
 		"name": "Living Roots",
 		"playerClass": "Druid",
@@ -13058,13 +12763,13 @@ var parseCardsText = {
 	{
 		"artist": "Zolton Boros",
 		"attack": 3,
-		"cardImage": "GVG_023.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Robot barbier gobelin",
 			"text": "<b>Cri de guerre :</b> donne +1 ATQ à votre arme."
 		},
+		"goldenImage": "GVG_023.gif",
 		"health": 2,
 		"id": "GVG_023",
 		"name": "Goblin Auto-Barber",
@@ -13080,7 +12785,6 @@ var parseCardsText = {
 			"name": "Contrebande",
 			"text": "Hobart Martelutte donne +1 ATQ."
 		},
-		"goldenImage": "CFM_643e.gif",
 		"id": "CFM_643e",
 		"name": "Smuggling",
 		"playerClass": "Warrior",
@@ -13090,7 +12794,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "KAR_A10_05.png",
 		"cost": 3,
 		"fr": {
 			"name": "Fou blanc",
@@ -13107,13 +12810,13 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 3,
-		"cardImage": "GVG_069.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Robot de soins antique",
 			"text": "<b>Cri de guerre :</b> rend 8 PV à votre héros."
 		},
+		"goldenImage": "GVG_069.gif",
 		"health": 3,
 		"id": "GVG_069",
 		"name": "Antique Healbot",
@@ -13124,10 +12827,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX1h_01.png",
 		"fr": {
 			"name": "Anub’Rekhan"
 		},
+		"goldenImage": "NAX1h_01.gif",
 		"health": 45,
 		"id": "NAX1h_01",
 		"name": "Anub'Rekhan",
@@ -13136,12 +12839,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "BRMA16_3.png",
 		"cost": 4,
 		"fr": {
 			"name": "Souffle sonique",
 			"text": "Inflige $3 |4(point,points) de dégâts à un serviteur. Donne +3 ATQ à votre arme."
 		},
+		"goldenImage": "BRMA16_3.gif",
 		"id": "BRMA16_3",
 		"name": "Sonic Breath",
 		"playerClass": "Neutral",
@@ -13150,7 +12853,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA16_3e.png",
 		"fr": {
 			"name": "Lanterne de puissance",
 			"text": "+10/+10."
@@ -13163,7 +12865,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA13_4_2_TB.png",
 		"cost": 2,
 		"fr": {
 			"name": "Magie sauvage",
@@ -13177,7 +12878,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "GVG_043e.png",
 		"fr": {
 			"name": "Glaivezooka",
 			"text": "+1 ATQ."
@@ -13191,13 +12891,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Garner",
-		"cardImage": "EX1_384.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Courroux vengeur",
 			"text": "Inflige $8 |4(point,points) de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "EX1_384.gif",
 		"id": "EX1_384",
 		"name": "Avenging Wrath",
 		"playerClass": "Paladin",
@@ -13208,7 +12908,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luke Mancini",
-		"cardImage": "KARA_08_05.png",
 		"cost": 3,
 		"fr": {
 			"name": "Rugissement terrifiant",
@@ -13222,7 +12921,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_SPT_Minion2e.png",
 		"fr": {
 			"name": "Encouragé",
 			"text": "Le porte-étendard donne +2 ATQ à ce serviteur."
@@ -13236,12 +12934,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t29.png",
 		"cost": 10,
 		"fr": {
 			"name": "Laine mystique",
 			"text": "Transforme tous les serviteurs en moutons 1/1."
 		},
+		"goldenImage": "CFM_621t29.gif",
 		"id": "CFM_621t29",
 		"name": "Mystic Wool",
 		"playerClass": "Neutral",
@@ -13251,11 +12949,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "FP1_007t.png",
 		"cost": 4,
 		"fr": {
 			"name": "Nérubien"
 		},
+		"goldenImage": "FP1_007t.gif",
 		"health": 4,
 		"id": "FP1_007t",
 		"name": "Nerubian",
@@ -13271,7 +12969,6 @@ var parseCardsText = {
 			"name": "Armure oubliée",
 			"text": "Vous gagnez 10 points d’armure."
 		},
-		"goldenImage": "CFM_308a.gif",
 		"id": "CFM_308a",
 		"name": "Forgotten Armor",
 		"playerClass": "Druid",
@@ -13282,13 +12979,13 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 5,
-		"cardImage": "CFM_312.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Chef de jade",
 			"text": "<b>Cri de guerre :</b> invoque un <b>golem de jade</b> {0}. Lui confère <b>Provocation</b>. @<b>Cri de guerre :</b> invoque un <b>golem de jade</b>. Lui confère <b>Provocation</b>"
 		},
+		"goldenImage": "CFM_312.gif",
 		"health": 5,
 		"id": "CFM_312",
 		"name": "Jade Chieftain",
@@ -13301,13 +12998,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 3,
-		"cardImage": "OG_247.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Worgen corrompu",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "OG_247.gif",
 		"health": 1,
 		"id": "OG_247",
 		"name": "Twisted Worgen",
@@ -13323,7 +13020,6 @@ var parseCardsText = {
 			"name": "Sale petit fouineur !",
 			"text": "Inflige des dégâts au chroniqueur"
 		},
-		"goldenImage": "TB_CoOpv3_203.gif",
 		"id": "TB_CoOpv3_203",
 		"name": "Meddling Fool!",
 		"playerClass": "Neutral",
@@ -13332,12 +13028,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA12_6H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Affliction de l’espèce : noir",
 			"text": "Chaque fois que Chromaggus pioche une carte, il en obtient une copie tant que vous avez celle-ci dans votre main."
 		},
+		"goldenImage": "BRMA12_6H.gif",
 		"id": "BRMA12_6H",
 		"name": "Brood Affliction: Black",
 		"playerClass": "Neutral",
@@ -13346,7 +13042,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "DS1_175o.png",
 		"fr": {
 			"name": "Hurlement furieux",
 			"text": "Le loup des bois donne +1 ATQ."
@@ -13360,12 +13055,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t2.png",
 		"cost": 1,
 		"fr": {
 			"name": "Cœur de feu",
 			"text": "Inflige $3 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CFM_621t2.gif",
 		"id": "CFM_621t2",
 		"name": "Heart of Fire",
 		"playerClass": "Neutral",
@@ -13375,7 +13070,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "KARA_13_19.png",
 		"cost": 5,
 		"fr": {
 			"name": "Chaperon Rouge",
@@ -13392,13 +13086,13 @@ var parseCardsText = {
 	{
 		"artist": "Mark Gibbons",
 		"attack": 5,
-		"cardImage": "CFM_342.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Boucanier porte-grigris",
 			"text": "<b>Cri de guerre :</b> gagne +4/+4 si votre arme a au moins 3 ATQ."
 		},
+		"goldenImage": "CFM_342.gif",
 		"health": 5,
 		"id": "CFM_342",
 		"name": "Luckydo Buccaneer",
@@ -13411,13 +13105,13 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 5,
-		"cardImage": "CFM_855.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Nettoyeur défias",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "CFM_855.gif",
 		"health": 7,
 		"id": "CFM_855",
 		"name": "Defias Cleaner",
@@ -13428,7 +13122,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "KARA_07_08heroic.png",
 		"cost": 5,
 		"fr": {
 			"name": "Évasion de dragon !",
@@ -13444,13 +13137,13 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & Nutchapol ",
 		"attack": 2,
-		"cardImage": "OG_327.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Tentacule remuant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_327.gif",
 		"health": 4,
 		"id": "OG_327",
 		"name": "Squirming Tentacle",
@@ -13463,12 +13156,12 @@ var parseCardsText = {
 	{
 		"artist": "Ittoku",
 		"attack": 2,
-		"cardImage": "CS2_119.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gueule d’acier des oasis"
 		},
+		"goldenImage": "CS2_119.gif",
 		"health": 7,
 		"id": "CS2_119",
 		"name": "Oasis Snapjaw",
@@ -13479,7 +13172,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler Walpole",
-		"cardImage": "KARA_09_04.png",
 		"cost": 0,
 		"fr": {
 			"name": "Sombre pacte",
@@ -13493,12 +13185,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "GAME_006.png",
 		"cost": 2,
 		"fr": {
 			"name": "NOOOOOOOOOOOON !",
 			"text": "Bizarrement, la carte que vous possédiez AVANT a été effacée. Allez, prenez celle-là à la place !"
 		},
+		"goldenImage": "GAME_006.gif",
 		"id": "GAME_006",
 		"name": "NOOOOOOOOOOOO",
 		"playerClass": "Neutral",
@@ -13508,11 +13200,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "BRMA09_4t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Draconien"
 		},
+		"goldenImage": "BRMA09_4t.gif",
 		"health": 1,
 		"id": "BRMA09_4t",
 		"name": "Dragonkin",
@@ -13522,13 +13214,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler Walpole",
-		"cardImage": "EX1_355.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Bénédiction du champion",
 			"text": "Double l’Attaque d’un serviteur."
 		},
+		"goldenImage": "EX1_355.gif",
 		"id": "EX1_355",
 		"name": "Blessed Champion",
 		"playerClass": "Paladin",
@@ -13540,13 +13232,13 @@ var parseCardsText = {
 	{
 		"artist": "Svetlin Velinov",
 		"attack": 8,
-		"cardImage": "EX1_586.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Géant des mers",
 			"text": "Coûte (1) cristal de moins pour chaque autre serviteur sur le champ de bataille."
 		},
+		"goldenImage": "EX1_586.gif",
 		"health": 8,
 		"id": "EX1_586",
 		"name": "Sea Giant",
@@ -13557,7 +13249,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CS2_084e.png",
 		"fr": {
 			"name": "Marque du chasseur",
 			"text": "Ce serviteur a 1 PV."
@@ -13572,13 +13263,13 @@ var parseCardsText = {
 	{
 		"artist": "Nutchapol Thitinunthakorn",
 		"attack": 5,
-		"cardImage": "GVG_083.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Robot réparateur amélioré",
 			"text": "<b>Cri de guerre :</b> donne +4 PV à un Méca allié."
 		},
+		"goldenImage": "GVG_083.gif",
 		"health": 5,
 		"id": "GVG_083",
 		"name": "Upgraded Repair Bot",
@@ -13590,13 +13281,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Dixon",
-		"cardImage": "CFM_661.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Potion réductrice",
 			"text": "Donne -3 ATQ à tous les serviteurs adverses pendant ce tour."
 		},
+		"goldenImage": "CFM_661.gif",
 		"id": "CFM_661",
 		"name": "Pint-Size Potion",
 		"playerClass": "Priest",
@@ -13606,7 +13297,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA16_8a.png",
 		"fr": {
 			"name": "Putréfié",
 			"text": "Attaque et vie inversées."
@@ -13620,13 +13310,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luca Zontini",
-		"cardImage": "EX1_279.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Explosion pyrotechnique",
 			"text": "Inflige $10 |4(point,points) de dégâts."
 		},
+		"goldenImage": "EX1_279.gif",
 		"id": "EX1_279",
 		"name": "Pyroblast",
 		"playerClass": "Mage",
@@ -13636,11 +13326,11 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "HERO_08b.png",
 		"collectible": true,
 		"fr": {
 			"name": "Khadgar"
 		},
+		"goldenImage": "HERO_08b.gif",
 		"health": 30,
 		"id": "HERO_08b",
 		"name": "Khadgar",
@@ -13650,7 +13340,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "KARA_13_13.png",
 		"cost": 2,
 		"fr": {
 			"name": "Légion",
@@ -13665,11 +13354,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "FP1_019t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Tréant"
 		},
+		"goldenImage": "FP1_019t.gif",
 		"health": 2,
 		"id": "FP1_019t",
 		"name": "Treant",
@@ -13680,7 +13369,6 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 1,
-		"cardImage": "KAR_009.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
@@ -13699,7 +13387,6 @@ var parseCardsText = {
 	{
 		"artist": "Greg Hildebrandt",
 		"attack": 1,
-		"cardImage": "CS2_169.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "HORDE",
@@ -13707,6 +13394,7 @@ var parseCardsText = {
 			"name": "Jeune faucon-dragon",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "CS2_169.gif",
 		"health": 1,
 		"id": "CS2_169",
 		"name": "Young Dragonhawk",
@@ -13718,12 +13406,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMC_92.png",
 		"cost": 4,
 		"fr": {
 			"name": "Coren Navrebière",
 			"text": "Gagne toujours à la baston.\n<b>Cri de guerre :</b> ajoute une carte Baston dans votre main."
 		},
+		"goldenImage": "BRMC_92.gif",
 		"health": 8,
 		"id": "BRMC_92",
 		"name": "Coren Direbrew",
@@ -13734,12 +13422,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_015.png",
 		"cost": 0,
 		"fr": {
 			"name": "Crash",
 			"text": "Crash the game."
 		},
+		"goldenImage": "XXX_015.gif",
 		"id": "XXX_015",
 		"name": "Crash",
 		"playerClass": "Neutral",
@@ -13750,12 +13438,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_24H.png",
 		"cost": 10,
 		"fr": {
 			"name": "Aileron-Géant",
 			"text": "À la fin de votre tour, vous piochez 2 cartes."
 		},
+		"goldenImage": "LOEA16_24H.gif",
 		"health": 10,
 		"id": "LOEA16_24H",
 		"name": "Giantfin",
@@ -13767,12 +13455,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "LOEA07_24.png",
 		"cost": 1,
 		"fr": {
 			"name": "Leurre à pointes",
 			"text": "<b>Provocation</b>\nNe peut pas attaquer."
 		},
+		"goldenImage": "LOEA07_24.gif",
 		"health": 6,
 		"id": "LOEA07_24",
 		"name": "Spiked Decoy",
@@ -13787,7 +13475,6 @@ var parseCardsText = {
 			"name": "Dorépine",
 			"text": "+6 PV."
 		},
-		"goldenImage": "CFM_621e3.gif",
 		"id": "CFM_621e3",
 		"name": "Goldthorn",
 		"playerClass": "Neutral",
@@ -13797,12 +13484,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "NAX15_03t.png",
 		"cost": 4,
 		"fr": {
 			"name": "Garde de la Couronne de glace",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "NAX15_03t.gif",
 		"health": 5,
 		"id": "NAX15_03t",
 		"name": "Guardian of Icecrown",
@@ -13812,12 +13499,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_ClassRandom_Priest.png",
 		"cost": 0,
 		"fr": {
 			"name": "Deuxième classe : prêtre",
 			"text": "Ajoute des cartes de prêtre dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Priest.gif",
 		"id": "TB_ClassRandom_Priest",
 		"name": "Second Class: Priest",
 		"playerClass": "Priest",
@@ -13826,7 +13513,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_093e.png",
 		"fr": {
 			"name": "Main d’Argus",
 			"text": "+1/+1 et <b>Provocation</b>."
@@ -13841,7 +13527,6 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 3,
-		"cardImage": "KAR_033.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
@@ -13858,7 +13543,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_084e.png",
 		"fr": {
 			"name": "Charge",
 			"text": "L’officier chanteguerre donne +1 ATQ à ce serviteur."
@@ -13873,13 +13557,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Alexandrov",
 		"attack": 5,
-		"cardImage": "CFM_657.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Vole-chant de la Kabale",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "CFM_657.gif",
 		"health": 5,
 		"id": "CFM_657",
 		"name": "Kabal Songstealer",
@@ -13890,12 +13574,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "DREAM_02.png",
 		"cost": 2,
 		"fr": {
 			"name": "Réveil d’Ysera",
 			"text": "Inflige $5 |4(point,points) de dégâts à tous les personnages sauf Ysera."
 		},
+		"goldenImage": "DREAM_02.gif",
 		"id": "DREAM_02",
 		"name": "Ysera Awakens",
 		"playerClass": "Dream",
@@ -13905,13 +13589,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jonboy Meyers",
-		"cardImage": "CS2_104.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Saccager",
 			"text": "Donne +3/+3 à un serviteur blessé."
 		},
+		"goldenImage": "CS2_104.gif",
 		"id": "CS2_104",
 		"name": "Rampage",
 		"playerClass": "Warrior",
@@ -13922,12 +13606,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "XXX_097.png",
 		"cost": 0,
 		"fr": {
 			"name": "AI Buddy - Destroy Minions",
 			"text": "Spawn into play to destroy all minions."
 		},
+		"goldenImage": "XXX_097.gif",
 		"health": 1,
 		"id": "XXX_097",
 		"name": "AI Buddy - Destroy Minions",
@@ -13938,12 +13622,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "CRED_09.png",
 		"cost": 6,
 		"fr": {
 			"name": "Ben Thompson",
 			"text": "<b>Cri de guerre :</b> dessine ses propres cartes."
 		},
+		"goldenImage": "CRED_09.gif",
 		"health": 7,
 		"id": "CRED_09",
 		"name": "Ben Thompson",
@@ -13955,13 +13639,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "EX1_320.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Plaie funeste",
 			"text": "Inflige $2 |4(point,points) de dégâts à un personnage. S’il est tué, invoque un démon aléatoire."
 		},
+		"goldenImage": "EX1_320.gif",
 		"id": "EX1_320",
 		"name": "Bane of Doom",
 		"playerClass": "Warlock",
@@ -13971,12 +13655,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_154a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Colère",
 			"text": "Inflige $3 |4(point,points) de dégâts à un serviteur."
 		},
+		"goldenImage": "EX1_154a.gif",
 		"id": "EX1_154a",
 		"name": "Wrath",
 		"playerClass": "Druid",
@@ -13986,12 +13670,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "TB_KTRAF_6.png",
 		"cost": 5,
 		"fr": {
 			"name": "Grobbulus",
 			"text": "Chaque fois qu’il détruit un serviteur, invoque une gelée empoisonnée 2/2. "
 		},
+		"goldenImage": "TB_KTRAF_6.gif",
 		"health": 7,
 		"id": "TB_KTRAF_6",
 		"name": "Grobbulus",
@@ -14003,12 +13687,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_21H.png",
 		"cost": 10,
 		"fr": {
 			"name": "Chef Scarvash",
 			"text": "Les cartes adverses coûtent (2) |4(cristal,cristaux) de plus."
 		},
+		"goldenImage": "LOEA16_21H.gif",
 		"health": 10,
 		"id": "LOEA16_21H",
 		"name": "Chieftain Scarvash",
@@ -14021,11 +13705,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 12,
-		"cardImage": "CFM_712_t12.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t12.gif",
 		"health": 12,
 		"id": "CFM_712_t12",
 		"name": "Jade Golem",
@@ -14034,7 +13718,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_061e.png",
 		"fr": {
 			"name": "Prêt à tirer"
 		},
@@ -14047,13 +13730,13 @@ var parseCardsText = {
 	{
 		"artist": "Samwise Didier",
 		"attack": 5,
-		"cardImage": "PRO_001.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Elite Tauren Chieftain",
 			"text": "<b>Cri de guerre :</b> confère aux deux joueurs la puissance du ROCK ! (grâce à une carte au riff dément !)"
 		},
+		"goldenImage": "PRO_001.gif",
 		"health": 5,
 		"id": "PRO_001",
 		"name": "Elite Tauren Chieftain",
@@ -14065,13 +13748,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "Mekka3.png",
 		"cost": 1,
 		"faction": "ALLIANCE",
 		"fr": {
 			"name": "Encourageur 3000",
 			"text": "À la fin de votre tour, donne +1/+1 à un serviteur aléatoire."
 		},
+		"goldenImage": "Mekka3.gif",
 		"health": 4,
 		"id": "Mekka3",
 		"name": "Emboldener 3000",
@@ -14082,7 +13765,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOE_118e.png",
 		"fr": {
 			"name": "Lame maudite",
 			"text": "Double tous les dégâts subis par votre héros."
@@ -14096,13 +13778,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Richard Wright",
-		"cardImage": "LOE_002.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Torche oubliée",
 			"text": "Inflige $3 |4(point,points) de dégâts. Place une carte Torche enflammée dans votre deck qui inflige 6 points de dégâts."
 		},
+		"goldenImage": "LOE_002.gif",
 		"id": "LOE_002",
 		"name": "Forgotten Torch",
 		"playerClass": "Mage",
@@ -14112,7 +13794,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_570e.png",
 		"fr": {
 			"name": "Morsure",
 			"text": "+4 ATQ pendant ce tour."
@@ -14126,7 +13807,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Rafael Zanchetin",
-		"cardImage": "KARA_04_01h.png",
 		"fr": {
 			"name": "La Mégère"
 		},
@@ -14140,12 +13820,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "NAX9_03.png",
 		"cost": 3,
 		"fr": {
 			"name": "Thane Korth’azz",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_03.gif",
 		"health": 7,
 		"id": "NAX9_03",
 		"name": "Thane Korth'azz",
@@ -14158,13 +13838,13 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 2,
-		"cardImage": "GVG_027.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Sensei de fer",
 			"text": "À la fin de votre tour, donne +2/+2 à un autre Méca allié."
 		},
+		"goldenImage": "GVG_027.gif",
 		"health": 2,
 		"id": "GVG_027",
 		"name": "Iron Sensei",
@@ -14177,13 +13857,13 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 5,
-		"cardImage": "CFM_670.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Maire Brouillecaboche",
 			"text": "Toutes les cibles sont choisies de façon aléatoire."
 		},
+		"goldenImage": "CFM_670.gif",
 		"health": 4,
 		"id": "CFM_670",
 		"name": "Mayor Noggenfogger",
@@ -14196,13 +13876,13 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasber",
 		"attack": 3,
-		"cardImage": "OG_034.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Grouillant silithide",
 			"text": "Ne peut attaquer que si votre héros a attaqué pendant ce tour."
 		},
+		"goldenImage": "OG_034.gif",
 		"health": 5,
 		"id": "OG_034",
 		"name": "Silithid Swarmer",
@@ -14215,13 +13895,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 2,
-		"cardImage": "CFM_693.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Passeur de Gadgetzan",
 			"text": "<b>Combo :</b> renvoie un serviteur allié dans votre main."
 		},
+		"goldenImage": "CFM_693.gif",
 		"health": 3,
 		"id": "CFM_693",
 		"name": "Gadgetzan Ferryman",
@@ -14234,13 +13914,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 8,
-		"cardImage": "OG_229.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Ragnaros, porteur de Lumière",
 			"text": "À la fin de votre tour, rend 8 PV à un personnage allié blessé."
 		},
+		"goldenImage": "OG_229.gif",
 		"health": 8,
 		"id": "OG_229",
 		"name": "Ragnaros, Lightlord",
@@ -14253,13 +13933,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 6,
-		"cardImage": "AT_079.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Adversaire mystérieux",
 			"text": "<b>Cri de guerre :</b> place un <b>Secret</b> de chaque type de votre deck sur le champ de bataille."
 		},
+		"goldenImage": "AT_079.gif",
 		"health": 6,
 		"id": "AT_079",
 		"name": "Mysterious Challenger",
@@ -14270,7 +13950,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_128e.png",
 		"fr": {
 			"name": "Dissimulé",
 			"text": "Camouflé jusqu’à votre prochain tour."
@@ -14285,13 +13964,13 @@ var parseCardsText = {
 	{
 		"artist": "James Zhang",
 		"attack": 3,
-		"cardImage": "AT_058.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Elekk du roi",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, vous le piochez."
 		},
+		"goldenImage": "AT_058.gif",
 		"health": 2,
 		"id": "AT_058",
 		"name": "King's Elekk",
@@ -14302,7 +13981,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_274e.png",
 		"fr": {
 			"name": "Puissance brute !",
 			"text": "Caractéristiques augmentées."
@@ -14316,13 +13994,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "CS2_087.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Bénédiction de puissance",
 			"text": "Donne +3 ATQ à un serviteur."
 		},
+		"goldenImage": "CS2_087.gif",
 		"id": "CS2_087",
 		"name": "Blessing of Might",
 		"playerClass": "Paladin",
@@ -14333,12 +14011,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA01_12.png",
 		"cost": 3,
 		"fr": {
 			"name": "Hoplite tol’vir",
 			"text": "<b>Râle d’agonie :</b> inflige 5 points de dégâts aux deux héros."
 		},
+		"goldenImage": "LOEA01_12.gif",
 		"health": 2,
 		"id": "LOEA01_12",
 		"name": "Tol'vir Hoplite",
@@ -14349,12 +14027,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "FP1_006.png",
 		"cost": 1,
 		"fr": {
 			"name": "Destrier de la mort",
 			"text": "<b>Charge. Râle d’agonie :</b> inflige 3 points de dégâts à votre héros."
 		},
+		"goldenImage": "FP1_006.gif",
 		"health": 3,
 		"id": "FP1_006",
 		"name": "Deathcharger",
@@ -14364,7 +14042,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_080o.png",
 		"fr": {
 			"name": "Garde des secrets",
 			"text": "Caractéristiques augmentées."
@@ -14377,7 +14054,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "GVG_027e.png",
 		"fr": {
 			"name": "Bien armé",
 			"text": "Caractéristiques augmentées."
@@ -14392,13 +14068,13 @@ var parseCardsText = {
 	{
 		"artist": "Yewon Park",
 		"attack": 4,
-		"cardImage": "CFM_699.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Piqueur de démons des mers",
 			"text": "<b>Cri de guerre :</b> le prochain murloc que vous jouez pendant ce tour coûte de la Vie au lieu de cristaux de mana."
 		},
+		"goldenImage": "CFM_699.gif",
 		"health": 2,
 		"id": "CFM_699",
 		"name": "Seadevil Stinger",
@@ -14410,13 +14086,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "Mekka4.png",
 		"cost": 1,
 		"faction": "ALLIANCE",
 		"fr": {
 			"name": "Pouletisateur",
 			"text": "Au début de votre tour, transforme un serviteur aléatoire en poulet 1/1."
 		},
+		"goldenImage": "Mekka4.gif",
 		"health": 3,
 		"id": "Mekka4",
 		"name": "Poultryizer",
@@ -14429,13 +14105,13 @@ var parseCardsText = {
 	{
 		"artist": "Sean O’Daniels",
 		"attack": 5,
-		"cardImage": "EX1_178.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Ancien de la guerre",
 			"text": "<b>Choix des armes :</b> \n+5 ATQ ou +5 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_178.gif",
 		"health": 5,
 		"id": "EX1_178",
 		"name": "Ancient of War",
@@ -14448,13 +14124,13 @@ var parseCardsText = {
 	{
 		"artist": "Christopher Moeller",
 		"attack": 5,
-		"cardImage": "GVG_114.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Vieux déchiqueteur de Sneed",
 			"text": "<b>Râle d’agonie :</b> invoque un serviteur <b>Légendaire</b> aléatoire."
 		},
+		"goldenImage": "GVG_114.gif",
 		"health": 7,
 		"id": "GVG_114",
 		"name": "Sneed's Old Shredder",
@@ -14465,7 +14141,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA09_4H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Aile noire",
@@ -14479,7 +14154,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "AT_081e.png",
 		"fr": {
 			"name": "Purifié",
 			"text": "L’Attaque est passée à 1."
@@ -14494,11 +14168,11 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 5,
-		"cardImage": "BRM_010t.png",
 		"cost": 3,
 		"fr": {
 			"name": "Druidesse de la Flamme"
 		},
+		"goldenImage": "BRM_010t.gif",
 		"health": 2,
 		"id": "BRM_010t",
 		"name": "Druid of the Flame",
@@ -14508,10 +14182,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA10_1H.png",
 		"fr": {
 			"name": "Tranchetripe l’Indompté"
 		},
+		"goldenImage": "BRMA10_1H.gif",
 		"health": 30,
 		"id": "BRMA10_1H",
 		"name": "Razorgore the Untamed",
@@ -14521,12 +14195,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA16_26.png",
 		"cost": 5,
 		"fr": {
 			"name": "Squeletosaurus Hex",
 			"text": "Donne une carte aléatoire à chaque joueur à la fin de votre tour. Elle coûte (0) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOEA16_26.gif",
 		"health": 5,
 		"id": "LOEA16_26",
 		"name": "Skelesaurus Hex",
@@ -14538,11 +14212,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TU4a_003.png",
 		"cost": 1,
 		"fr": {
 			"name": "Gnoll"
 		},
+		"goldenImage": "TU4a_003.gif",
 		"health": 1,
 		"id": "TU4a_003",
 		"name": "Gnoll",
@@ -14554,13 +14228,13 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 8,
-		"cardImage": "EX1_562.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Onyxia",
 			"text": "<b>Cri de guerre :</b> invoque des dragonnets 1/1 jusqu’à remplir votre côté du champ de bataille."
 		},
+		"goldenImage": "EX1_562.gif",
 		"health": 8,
 		"id": "EX1_562",
 		"name": "Onyxia",
@@ -14573,13 +14247,13 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 3,
-		"cardImage": "BRM_012.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Destructeur garde du feu",
 			"text": "<b>Cri de guerre :</b> gagne 1 à 4 points d’Attaque. <b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "BRM_012.gif",
 		"health": 6,
 		"id": "BRM_012",
 		"name": "Fireguard Destroyer",
@@ -14596,7 +14270,6 @@ var parseCardsText = {
 			"name": "Formation",
 			"text": "+2/+2."
 		},
-		"goldenImage": "CFM_694e.gif",
 		"id": "CFM_694e",
 		"name": "Trained",
 		"playerClass": "Rogue",
@@ -14605,12 +14278,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA09_9.png",
 		"cost": 1,
 		"fr": {
 			"name": "Répulsif à nagas",
 			"text": "Détruit tous les nagas affamés."
 		},
+		"goldenImage": "LOEA09_9.gif",
 		"id": "LOEA09_9",
 		"name": "Naga Repellent",
 		"playerClass": "Neutral",
@@ -14619,7 +14292,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA04_02h.png",
 		"cost": 0,
 		"fr": {
 			"name": "Fuyez !",
@@ -14638,7 +14310,6 @@ var parseCardsText = {
 			"name": "Pouvoirs diaboliques",
 			"text": "Invoque un diablotin aléatoire."
 		},
-		"goldenImage": "TB_SPT_DPromoHP.gif",
 		"id": "TB_SPT_DPromoHP",
 		"name": "Diabolical Powers",
 		"set": "Tb",
@@ -14646,12 +14317,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "XXX_022.png",
 		"cost": 0,
 		"fr": {
 			"name": "Free Cards",
 			"text": "Your cards cost (0) for the rest of the game."
 		},
+		"goldenImage": "XXX_022.gif",
 		"id": "XXX_022",
 		"name": "Free Cards",
 		"playerClass": "Neutral",
@@ -14661,7 +14332,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "KARA_08_02H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Rage du Néant",
@@ -14676,13 +14346,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Daren Bader",
-		"cardImage": "EX1_360.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Humilité",
 			"text": "L’Attaque d’un serviteur passe à 1."
 		},
+		"goldenImage": "EX1_360.gif",
 		"id": "EX1_360",
 		"name": "Humility",
 		"playerClass": "Paladin",
@@ -14694,7 +14364,6 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 1,
-		"cardImage": "CS2_188.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "ALLIANCE",
@@ -14702,6 +14371,7 @@ var parseCardsText = {
 			"name": "Sergent grossier",
 			"text": "<b>Cri de guerre :</b> donne +2 ATQ à un serviteur pendant ce tour."
 		},
+		"goldenImage": "CS2_188.gif",
 		"health": 1,
 		"id": "CS2_188",
 		"name": "Abusive Sergeant",
@@ -14713,12 +14383,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "TU4e_007.png",
 		"cost": 6,
 		"durability": 2,
 		"fr": {
 			"name": "Glaives de guerre doubles"
 		},
+		"goldenImage": "TU4e_007.gif",
 		"id": "TU4e_007",
 		"name": "Dual Warglaives",
 		"playerClass": "Neutral",
@@ -14727,7 +14397,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "LOE_030e.png",
 		"fr": {
 			"name": "Trompeur",
 			"text": "Caractéristiques copiées."
@@ -14740,12 +14409,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_GiftExchange_Treasure_Spell.png",
 		"cost": 1,
 		"fr": {
 			"name": "Cadeau du Voile d’hiver volé",
 			"text": "<b>Découvre</b> un trésor aléatoire. Son coût est réduit."
 		},
+		"goldenImage": "TB_GiftExchange_Treasure_Spell.gif",
 		"id": "TB_GiftExchange_Treasure_Spell",
 		"name": "Stolen Winter's Veil Gift",
 		"playerClass": "Neutral",
@@ -14754,7 +14423,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "GVG_019e.png",
 		"fr": {
 			"name": "Cœur de démon",
 			"text": "+5/+5."
@@ -14769,13 +14437,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 2,
-		"cardImage": "CFM_066.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Laquais de la Kabale",
 			"text": "<b>Cri de guerre :</b> le prochain <b>Secret</b> que vous jouez pendant ce tour coûte (0) |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_066.gif",
 		"health": 1,
 		"id": "CFM_066",
 		"name": "Kabal Lackey",
@@ -14788,11 +14456,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 2,
-		"cardImage": "CFM_712_t02.png",
 		"cost": 2,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t02.gif",
 		"health": 2,
 		"id": "CFM_712_t02",
 		"name": "Jade Golem",
@@ -14801,12 +14469,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOE_008.png",
 		"cost": 1,
 		"fr": {
 			"name": "Œil d’Hakkar",
 			"text": "Pioche un secret dans le deck de votre adversaire et le place sur le champ de bataille."
 		},
+		"goldenImage": "LOE_008.gif",
 		"id": "LOE_008",
 		"name": "Eye of Hakkar",
 		"playerClass": "Neutral",
@@ -14817,13 +14485,13 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 4,
-		"cardImage": "CFM_754.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gadgétiseur des Dessoudeurs",
 			"text": "À la fin de votre tour, donne +2/+2 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_754.gif",
 		"health": 3,
 		"id": "CFM_754",
 		"name": "Grimy Gadgeteer",
@@ -14835,13 +14503,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Den",
-		"cardImage": "GVG_022.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Huile d’affûtage de Bricoleur",
 			"text": "Donne +3 ATQ à votre arme. <b>Combo :</b> donne +3 ATQ à un serviteur allié aléatoire."
 		},
+		"goldenImage": "GVG_022.gif",
 		"id": "GVG_022",
 		"name": "Tinker's Sharpsword Oil",
 		"playerClass": "Rogue",
@@ -14851,7 +14519,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "KARA_09_01heroic.png",
 		"fr": {
 			"name": "Terestian Malsabot"
 		},
@@ -14863,12 +14530,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "TB_CoOpBossSpell_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Salve de bombes",
 			"text": "Inflige les dégâts de l’attaque à 3 cibles aléatoires au maximum."
 		},
+		"goldenImage": "TB_CoOpBossSpell_2.gif",
 		"id": "TB_CoOpBossSpell_2",
 		"name": "Bomb Salvo",
 		"playerClass": "Neutral",
@@ -14877,11 +14544,11 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "HERO_03.png",
 		"collectible": true,
 		"fr": {
 			"name": "Valeera Sanguinar"
 		},
+		"goldenImage": "HERO_03.gif",
 		"health": 30,
 		"id": "HERO_03",
 		"name": "Valeera Sanguinar",
@@ -14892,12 +14559,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "EX1_409t.png",
 		"cost": 1,
 		"durability": 3,
 		"fr": {
 			"name": "Hache lourde"
 		},
+		"goldenImage": "EX1_409t.gif",
 		"id": "EX1_409t",
 		"name": "Heavy Axe",
 		"playerClass": "Warrior",
@@ -14905,7 +14572,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "TB_MechWar_Boss2_HeroPower.png",
 		"cost": 2,
 		"fr": {
 			"name": "Ro’Boum junior",
@@ -14919,12 +14585,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "XXX_018.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destroy All Minions",
 			"text": "Destroy all minions."
 		},
+		"goldenImage": "XXX_018.gif",
 		"id": "XXX_018",
 		"name": "Destroy All Minions",
 		"playerClass": "Neutral",
@@ -14936,13 +14602,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 3,
-		"cardImage": "NEW1_022.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Corsaire de l’effroi",
 			"text": "<b>Provocation</b>. Coûte (1) |4(cristal,cristaux) de moins par Attaque de votre arme."
 		},
+		"goldenImage": "NEW1_022.gif",
 		"health": 3,
 		"id": "NEW1_022",
 		"name": "Dread Corsair",
@@ -14953,7 +14619,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "OG_080de.png",
 		"fr": {
 			"name": "Pâlerette",
 			"text": "Camouflé jusqu’à votre prochain tour."
@@ -14966,7 +14631,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_PickYourFate_9_EnchMinion.png",
 		"fr": {
 			"name": "Bonus",
 			"text": "Vos serviteurs avec <b>Râle d’agonie</b> ont +1/+1."
@@ -14979,7 +14643,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_PickYourFate_2_EnchMinion.png",
 		"fr": {
 			"name": "Destin",
 			"text": "<b>Râle d’agonie :</b> vous obtenez une banane."
@@ -14994,7 +14657,6 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
-		"cardImage": "KAR_005.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
@@ -15011,7 +14673,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_SPT_Minion3e.png",
 		"fr": {
 			"name": "Force de Hurlevent",
 			"text": "Hurlevent confère de l’Attaque et de la Vie à cette carte."
@@ -15026,13 +14687,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
-		"cardImage": "EX1_412.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Worgen déchaîné",
 			"text": "<b>Accès de rage :</b> <b>Furie des vents</b> et +1 ATQ"
 		},
+		"goldenImage": "EX1_412.gif",
 		"health": 3,
 		"id": "EX1_412",
 		"name": "Raging Worgen",
@@ -15043,7 +14704,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA01_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Jeu forcé !",
@@ -15057,7 +14717,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "LOEA09_3H.png",
 		"cost": 0,
 		"fr": {
 			"name": "Faim sans fin",
@@ -15076,7 +14735,6 @@ var parseCardsText = {
 			"name": "Parcourir",
 			"text": "<b>Découvre</b> une carte de votre deck."
 		},
-		"goldenImage": "TB_DiscoverMyDeck_Discovery.gif",
 		"id": "TB_DiscoverMyDeck_Discovery",
 		"name": "Peruse",
 		"playerClass": "Neutral",
@@ -15086,7 +14744,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA05_03h.png",
 		"cost": 0,
 		"fr": {
 			"name": "Trogg détester sorts !",
@@ -15102,13 +14759,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
-		"cardImage": "EX1_323.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Seigneur Jaraxxus",
 			"text": "<b>Cri de guerre :</b> le seigneur Jaraxxus détruit votre héros et prend sa place."
 		},
+		"goldenImage": "EX1_323.gif",
 		"health": 15,
 		"id": "EX1_323",
 		"name": "Lord Jaraxxus",
@@ -15119,7 +14776,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_104.png",
 		"cost": 0,
 		"fr": {
 			"name": "Add 4 to Health.",
@@ -15135,13 +14791,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jaemin Kim",
-		"cardImage": "GVG_045.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Éruption de diablotins",
 			"text": "Inflige $2 à $4 points de dégâts à un serviteur. Invoque un diablotin 1/1 pour chaque point de dégâts infligé."
 		},
+		"goldenImage": "GVG_045.gif",
 		"id": "GVG_045",
 		"name": "Imp-losion",
 		"playerClass": "Warlock",
@@ -15153,13 +14809,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 0,
-		"cardImage": "EX1_557.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Nat Pagle",
 			"text": "Au début de votre tour, vous avez 50% de chances de piocher une carte supplémentaire."
 		},
+		"goldenImage": "EX1_557.gif",
 		"health": 4,
 		"id": "EX1_557",
 		"name": "Nat Pagle",
@@ -15172,13 +14828,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 6,
-		"cardImage": "OG_280.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "C’Thun",
 			"text": "<b>Cri de guerre :</b> inflige des dégâts égaux à l’Attaque de ce serviteur répartis aléatoirement entre tous les adversaires."
 		},
+		"goldenImage": "OG_280.gif",
 		"health": 6,
 		"id": "OG_280",
 		"name": "C'Thun",
@@ -15189,7 +14845,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA17_5.png",
 		"cost": 2,
 		"fr": {
 			"name": "Séides des os",
@@ -15204,13 +14859,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dany Orizio",
-		"cardImage": "CS2_108.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Exécution",
 			"text": "Détruit un serviteur adverse blessé."
 		},
+		"goldenImage": "CS2_108.gif",
 		"id": "CS2_108",
 		"name": "Execute",
 		"playerClass": "Warrior",
@@ -15220,7 +14875,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA09_2H.png",
 		"cost": 2,
 		"fr": {
 			"name": "Enragé !",
@@ -15235,13 +14889,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Leo Che",
-		"cardImage": "EX1_275.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Cône de froid",
 			"text": "<b>Gèle</b> et inflige $1 |4(point,points) de dégâts à un serviteur et ceux à côté de lui."
 		},
+		"goldenImage": "EX1_275.gif",
 		"id": "EX1_275",
 		"name": "Cone of Cold",
 		"playerClass": "Mage",
@@ -15252,13 +14906,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "EX1_625.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Forme d’Ombre",
 			"text": "Transforme votre pouvoir héroïque, qui inflige 2 points de dégâts. Si la forme d’Ombre est déjà adoptée : 3 points de dégâts."
 		},
+		"goldenImage": "EX1_625.gif",
 		"id": "EX1_625",
 		"name": "Shadowform",
 		"playerClass": "Priest",
@@ -15269,11 +14923,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "EX1_554t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Serpent"
 		},
+		"goldenImage": "EX1_554t.gif",
 		"health": 1,
 		"id": "EX1_554t",
 		"name": "Snake",
@@ -15283,12 +14937,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX13_03.png",
 		"cost": 2,
 		"fr": {
 			"name": "Supercharge",
 			"text": "Donne +2 PV à vos serviteurs."
 		},
+		"goldenImage": "NAX13_03.gif",
 		"id": "NAX13_03",
 		"name": "Supercharge",
 		"playerClass": "Neutral",
@@ -15299,13 +14953,13 @@ var parseCardsText = {
 	{
 		"artist": "Daria Tuzova",
 		"attack": 1,
-		"cardImage": "OG_123.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Déphaseur Zerus",
 			"text": "Chaque tour où cette carte est dans votre main, la transforme en un serviteur aléatoire."
 		},
+		"goldenImage": "OG_123.gif",
 		"health": 1,
 		"id": "OG_123",
 		"name": "Shifter Zerus",
@@ -15318,7 +14972,6 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 2,
-		"cardImage": "GVG_059.png",
 		"collectible": true,
 		"cost": 3,
 		"durability": 3,
@@ -15326,6 +14979,7 @@ var parseCardsText = {
 			"name": "Rouage-marteau",
 			"text": "<b>Cri de guerre :</b> confère <b>Bouclier divin</b> et <b>Provocation</b> à un serviteur allié aléatoire."
 		},
+		"goldenImage": "GVG_059.gif",
 		"id": "GVG_059",
 		"name": "Coghammer",
 		"playerClass": "Paladin",
@@ -15336,13 +14990,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Gaser",
-		"cardImage": "EX1_302.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Voile de mort",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur. Vous piochez une carte si ce serviteur est tué."
 		},
+		"goldenImage": "EX1_302.gif",
 		"id": "EX1_302",
 		"name": "Mortal Coil",
 		"playerClass": "Warlock",
@@ -15354,13 +15008,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 6,
-		"cardImage": "GVG_118.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Troggzor le Terreminator",
 			"text": "Chaque fois que votre adversaire lance un sort, invoque un trogg mâcheroc mastoc."
 		},
+		"goldenImage": "GVG_118.gif",
 		"health": 6,
 		"id": "GVG_118",
 		"name": "Troggzor the Earthinator",
@@ -15372,12 +15026,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "NAXM_002.png",
 		"cost": 3,
 		"fr": {
 			"name": "Forgeron squelettique",
 			"text": "<b>Râle d’agonie :</b> détruit l’arme de votre adversaire."
 		},
+		"goldenImage": "NAXM_002.gif",
 		"health": 3,
 		"id": "NAXM_002",
 		"name": "Skeletal Smith",
@@ -15389,13 +15043,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
-		"cardImage": "EX1_062.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Vieux Troublœil",
 			"text": "<b>Charge</b>. A +1 ATQ pour chaque autre murloc sur le champ de bataille."
 		},
+		"goldenImage": "EX1_062.gif",
 		"health": 4,
 		"id": "EX1_062",
 		"name": "Old Murk-Eye",
@@ -15406,7 +15060,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA13_2.png",
 		"cost": 1,
 		"fr": {
 			"name": "Forme véritable",
@@ -15422,7 +15075,6 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 2,
-		"cardImage": "KARA_09_08.png",
 		"cost": 4,
 		"fr": {
 			"name": "Kil’rek",
@@ -15437,7 +15089,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOE_113e.png",
 		"fr": {
 			"name": "Mrglllroaarrrglrur !",
 			"text": "+2/+2."
@@ -15452,13 +15103,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 5,
-		"cardImage": "AT_114.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Provocateur maléfique",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "AT_114.gif",
 		"health": 4,
 		"id": "AT_114",
 		"name": "Evil Heckler",
@@ -15471,7 +15122,6 @@ var parseCardsText = {
 	{
 		"artist": "Karl Richardson",
 		"attack": 1,
-		"cardImage": "EX1_015.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "ALLIANCE",
@@ -15479,6 +15129,7 @@ var parseCardsText = {
 			"name": "Ingénieur novice",
 			"text": "<b>Cri de guerre :</b> vous piochez une carte."
 		},
+		"goldenImage": "EX1_015.gif",
 		"health": 1,
 		"id": "EX1_015",
 		"name": "Novice Engineer",
@@ -15489,12 +15140,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_051.png",
 		"cost": 0,
 		"fr": {
 			"name": "Make Immune",
 			"text": "Permanently make a character <b>Immune</b>."
 		},
+		"goldenImage": "XXX_051.gif",
 		"id": "XXX_051",
 		"name": "Make Immune",
 		"playerClass": "Neutral",
@@ -15505,13 +15156,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Gonzalo Ordonez",
-		"cardImage": "tt_010.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Courbe-sort",
 			"text": "<b>Secret :</b> quand votre adversaire lance un sort sur un serviteur, invoque un 1/3 qui devient la nouvelle cible."
 		},
+		"goldenImage": "tt_010.gif",
 		"id": "tt_010",
 		"name": "Spellbender",
 		"playerClass": "Mage",
@@ -15521,7 +15172,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "PART_001e.png",
 		"fr": {
 			"name": "Plaque d’armure",
 			"text": "+1 PV."
@@ -15536,12 +15186,12 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 7,
-		"cardImage": "GVG_070.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Mataf"
 		},
+		"goldenImage": "GVG_070.gif",
 		"health": 4,
 		"id": "GVG_070",
 		"name": "Salty Dog",
@@ -15551,10 +15201,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX13_01.png",
 		"fr": {
 			"name": "Thaddius"
 		},
+		"goldenImage": "NAX13_01.gif",
 		"health": 30,
 		"id": "NAX13_01",
 		"name": "Thaddius",
@@ -15563,12 +15213,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "NAX6_04.png",
 		"cost": 1,
 		"fr": {
 			"name": "Explosion de spores",
 			"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses. Invoque une spore."
 		},
+		"goldenImage": "NAX6_04.gif",
 		"id": "NAX6_04",
 		"name": "Sporeburst",
 		"playerClass": "Neutral",
@@ -15577,7 +15227,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_KTRAF_HP_KT_3.png",
 		"cost": 2,
 		"fr": {
 			"name": "Nécromancie",
@@ -15592,13 +15241,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ariel Olivetti",
-		"cardImage": "EX1_124.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Éviscération",
 			"text": "Inflige $2 |4(point,points) de dégâts. <b>Combo :</b> inflige $4 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "EX1_124.gif",
 		"id": "EX1_124",
 		"name": "Eviscerate",
 		"playerClass": "Rogue",
@@ -15608,7 +15257,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA13_2H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Forme véritable",
@@ -15627,7 +15275,6 @@ var parseCardsText = {
 			"name": "Visions de l’assassin",
 			"text": "<b>Secret :</b> tous les serviteurs s’équipent d’une dague quand votre adversaire invoque un serviteur avec <b>Camouflage</b>."
 		},
-		"goldenImage": "TB_SPT_DPromoSecre8.gif",
 		"id": "TB_SPT_DPromoSecre8",
 		"name": "Visions of the Assassin",
 		"playerClass": "Warrior",
@@ -15637,13 +15284,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jonboy Meyers",
-		"cardImage": "CS2_105.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Frappe héroïque",
 			"text": "Donne +4 ATQ à votre héros pendant ce tour."
 		},
+		"goldenImage": "CS2_105.gif",
 		"id": "CS2_105",
 		"name": "Heroic Strike",
 		"playerClass": "Warrior",
@@ -15653,10 +15300,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA09_1.png",
 		"fr": {
 			"name": "Seigneur Ondulance"
 		},
+		"goldenImage": "LOEA09_1.gif",
 		"health": 30,
 		"id": "LOEA09_1",
 		"name": "Lord Slitherspear",
@@ -15666,7 +15313,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "KAR_A02_03H.png",
 		"cost": 2,
 		"fr": {
 			"name": "Fourchette",
@@ -15681,7 +15327,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "Mekka3e.png",
 		"fr": {
 			"name": "Encouragé !",
 			"text": "Caractéristiques augmentées."
@@ -15696,7 +15341,6 @@ var parseCardsText = {
 	{
 		"artist": "Warren Mahy",
 		"attack": 2,
-		"cardImage": "EX1_025.png",
 		"collectible": true,
 		"cost": 4,
 		"faction": "ALLIANCE",
@@ -15704,6 +15348,7 @@ var parseCardsText = {
 			"name": "Mécano de petit dragon",
 			"text": "<b>Cri de guerre :</b> invoque un petit dragon mécanique 2/1."
 		},
+		"goldenImage": "EX1_025.gif",
 		"health": 4,
 		"id": "EX1_025",
 		"name": "Dragonling Mechanic",
@@ -15720,7 +15365,6 @@ var parseCardsText = {
 			"name": "Maître des rouages Mécazod",
 			"text": "<b>Boss</b>\nMécazod gagne s’il bat l’un de vous !"
 		},
-		"goldenImage": "TB_CoOp_Mechazod_OLD.gif",
 		"health": 95,
 		"id": "TB_CoOp_Mechazod_OLD",
 		"name": "Gearmaster Mechazod",
@@ -15732,13 +15376,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "James Ryman",
-		"cardImage": "CS2_013.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Croissance sauvage",
 			"text": "Confère un cristal de mana vide."
 		},
+		"goldenImage": "CS2_013.gif",
 		"id": "CS2_013",
 		"name": "Wild Growth",
 		"playerClass": "Druid",
@@ -15748,7 +15392,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "KARA_08_02e.png",
 		"fr": {
 			"name": "Rage du Néant",
 			"text": "+3 ATQ."
@@ -15765,7 +15408,6 @@ var parseCardsText = {
 			"name": "Éblouissement",
 			"text": "L’Attaque est passée à 1."
 		},
-		"goldenImage": "TB_SPT_DPromoEnch3.gif",
 		"id": "TB_SPT_DPromoEnch3",
 		"name": "Shield Glare",
 		"playerClass": "Neutral",
@@ -15775,12 +15417,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "BRMA13_5.png",
 		"cost": 0,
 		"fr": {
 			"name": "Fils de la Flamme",
 			"text": "<b>Cri de guerre :</b> inflige 6 points de dégâts."
 		},
+		"goldenImage": "BRMA13_5.gif",
 		"health": 3,
 		"id": "BRMA13_5",
 		"name": "Son of the Flame",
@@ -15791,7 +15433,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "KAR_097t.png",
 		"cost": 3,
 		"durability": 3,
 		"fr": {
@@ -15806,12 +15447,12 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "TB_PickYourFate_9.png",
 		"cost": 0,
 		"fr": {
 			"name": "Bonus : Râle d’agonie",
 			"text": "Vos serviteurs avec <b>Râle d’agonie</b> ont +1/+1."
 		},
+		"goldenImage": "TB_PickYourFate_9.gif",
 		"id": "TB_PickYourFate_9",
 		"name": "Deathrattle Bonus",
 		"playerClass": "Neutral",
@@ -15821,7 +15462,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "KARA_13_16.png",
 		"cost": 2,
 		"fr": {
 			"name": "Susie Grésichant",
@@ -15837,7 +15477,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CS2_188o.png",
 		"fr": {
 			"name": "« Inspiré »",
 			"text": "Ce serviteur a +2 ATQ pendant ce tour."
@@ -15850,7 +15489,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "OG_254e.png",
 		"fr": {
 			"name": "Rassasié de secrets",
 			"text": "Caractéristiques augmentées."
@@ -15863,12 +15501,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA16_14.png",
 		"cost": 0,
 		"fr": {
 			"name": "Pipe de Khadgar",
 			"text": "Place un sort aléatoire dans la main de chaque joueur. Le vôtre coûte (0) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOEA16_14.gif",
 		"id": "LOEA16_14",
 		"name": "Khadgar's Pipe",
 		"playerClass": "Neutral",
@@ -15877,7 +15515,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "AT_077e.png",
 		"fr": {
 			"name": "Pique supplémentaire",
 			"text": "+1 Durabilité."
@@ -15890,7 +15527,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "CS2_059o.png",
 		"fr": {
 			"name": "Pacte de sang",
 			"text": "Vie augmentée."
@@ -15903,12 +15539,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_052.png",
 		"cost": 0,
 		"fr": {
 			"name": "Grant Mega-Windfury",
 			"text": "Give a minion <b>Mega-Windfury</b>."
 		},
+		"goldenImage": "XXX_052.gif",
 		"id": "XXX_052",
 		"name": "Grant Mega-Windfury",
 		"playerClass": "Neutral",
@@ -15919,7 +15555,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mark Gibbons",
-		"cardImage": "KARA_05_01h.png",
 		"fr": {
 			"name": "Grand Méchant Loup"
 		},
@@ -15932,12 +15567,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "XXX_004.png",
 		"cost": 0,
 		"fr": {
 			"name": "Restore 5",
 			"text": "Restore #5 Health to a character."
 		},
+		"goldenImage": "XXX_004.gif",
 		"id": "XXX_004",
 		"name": "Restore 5",
 		"playerClass": "Neutral",
@@ -15947,7 +15582,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_316e.png",
 		"fr": {
 			"name": "Puissance accablante",
 			"text": "Ce serviteur a +4/+4 mais il mourra de façon horrible à la fin du tour."
@@ -15962,13 +15596,13 @@ var parseCardsText = {
 	{
 		"artist": "Greg Staples",
 		"attack": 5,
-		"cardImage": "BRM_034.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Corrupteur de l’Aile noire",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts si vous avez un Dragon en main."
 		},
+		"goldenImage": "BRM_034.gif",
 		"health": 4,
 		"id": "BRM_034",
 		"name": "Blackwing Corruptor",
@@ -15979,12 +15613,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA02_05.png",
 		"cost": 0,
 		"fr": {
 			"name": "Vœu : gloire",
 			"text": "<b>Découvre</b> un serviteur."
 		},
+		"goldenImage": "LOEA02_05.gif",
 		"id": "LOEA02_05",
 		"name": "Wish for Glory",
 		"playerClass": "Neutral",
@@ -15995,13 +15629,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 4,
-		"cardImage": "GVG_111.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Tête de Mimiron",
 			"text": "Au début de votre tour, si vous avez au moins 3 Méca, les détruit tous pour former V-07-TR-0N."
 		},
+		"goldenImage": "GVG_111.gif",
 		"health": 5,
 		"id": "GVG_111",
 		"name": "Mimiron's Head",
@@ -16013,13 +15647,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "EX1_173.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Feu stellaire",
 			"text": "Inflige $5 |4(point,points) de dégâts.\nVous piochez une carte."
 		},
+		"goldenImage": "EX1_173.gif",
 		"id": "EX1_173",
 		"name": "Starfire",
 		"playerClass": "Druid",
@@ -16030,13 +15664,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "James Ryman",
-		"cardImage": "EX1_132.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Œil pour œil",
 			"text": "<b>Secret :</b> inflige au héros adverse autant de dégâts que ceux subis par votre héros."
 		},
+		"goldenImage": "EX1_132.gif",
 		"id": "EX1_132",
 		"name": "Eye for an Eye",
 		"playerClass": "Paladin",
@@ -16048,13 +15682,13 @@ var parseCardsText = {
 	{
 		"artist": "Eva Wilderman",
 		"attack": 2,
-		"cardImage": "OG_281.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Annonciatrice du mal",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_281.gif",
 		"health": 3,
 		"id": "OG_281",
 		"name": "Beckoner of Evil",
@@ -16066,11 +15700,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "BRMA17_6.png",
 		"cost": 1,
 		"fr": {
 			"name": "Assemblage d’os"
 		},
+		"goldenImage": "BRMA17_6.gif",
 		"health": 1,
 		"id": "BRMA17_6",
 		"name": "Bone Construct",
@@ -16080,13 +15714,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Phroilan Gardner",
-		"cardImage": "CS2_114.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Enchaînement",
 			"text": "Inflige $2 |4(point,points) de dégâts à deux serviteurs adverses aléatoires."
 		},
+		"goldenImage": "CS2_114.gif",
 		"id": "CS2_114",
 		"name": "Cleave",
 		"playerClass": "Warrior",
@@ -16097,13 +15731,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Josh Tallman",
-		"cardImage": "CS2_026.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Nova de givre",
 			"text": "<b>Gèle</b> tous les serviteurs adverses."
 		},
+		"goldenImage": "CS2_026.gif",
 		"id": "CS2_026",
 		"name": "Frost Nova",
 		"playerClass": "Mage",
@@ -16113,12 +15747,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "GVG_028t.png",
 		"cost": 0,
 		"fr": {
 			"name": "Pièce de Gallywix",
 			"text": "Gagne 1 cristal de mana pendant ce tour seulement. <i>(Ne déclenche pas le pouvoir de Gallywix.)</i>"
 		},
+		"goldenImage": "GVG_028t.gif",
 		"id": "GVG_028t",
 		"name": "Gallywix's Coin",
 		"playerClass": "Neutral",
@@ -16128,12 +15762,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "CRED_08.png",
 		"cost": 3,
 		"fr": {
 			"name": "Ben Brode",
 			"text": "Vous ne pouvez pas baisser le volume en dessous du maximum."
 		},
+		"goldenImage": "CRED_08.gif",
 		"health": 1,
 		"id": "CRED_08",
 		"name": "Ben Brode",
@@ -16145,13 +15779,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Scott",
-		"cardImage": "CS2_041.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Guérison ancestrale",
 			"text": "Rend tous ses points de vie à un serviteur et lui confère <b>Provocation</b>."
 		},
+		"goldenImage": "CS2_041.gif",
 		"id": "CS2_041",
 		"name": "Ancestral Healing",
 		"playerClass": "Shaman",
@@ -16161,7 +15795,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_010.png",
 		"fr": {
 			"name": "Enchantement de création de deck"
 		},
@@ -16173,13 +15806,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "EX1_392.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Rage du combat",
 			"text": "Vous piochez une carte pour chaque personnage allié blessé."
 		},
+		"goldenImage": "EX1_392.gif",
 		"id": "EX1_392",
 		"name": "Battle Rage",
 		"playerClass": "Warrior",
@@ -16189,7 +15822,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_PickYourFate_9_Ench.png",
 		"fr": {
 			"name": "Fate 9 Ench. Deathrattle bonus"
 		},
@@ -16202,7 +15834,6 @@ var parseCardsText = {
 	{
 		"artist": "Anton Magdalin",
 		"attack": 2,
-		"cardImage": "CFM_631.png",
 		"collectible": true,
 		"cost": 4,
 		"durability": 3,
@@ -16210,6 +15841,7 @@ var parseCardsText = {
 			"name": "Coup de poing en laiton",
 			"text": "Donne +1/+1 à un serviteur aléatoire dans votre main chaque fois que votre héros attaque."
 		},
+		"goldenImage": "CFM_631.gif",
 		"id": "CFM_631",
 		"name": "Brass Knuckles",
 		"playerClass": "Warrior",
@@ -16219,7 +15851,6 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "CS2_087e.png",
 		"fr": {
 			"name": "Bénédiction de puissance",
 			"text": "+3 ATQ."
@@ -16232,10 +15863,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA13_3H.png",
 		"fr": {
 			"name": "Nefarian"
 		},
+		"goldenImage": "BRMA13_3H.gif",
 		"health": 30,
 		"id": "BRMA13_3H",
 		"name": "Nefarian",
@@ -16246,13 +15877,13 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 10,
-		"cardImage": "AT_125.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Glace-Hurlante",
 			"text": "<b>Charge</b>\nNe peut pas attaquer les héros."
 		},
+		"goldenImage": "AT_125.gif",
 		"health": 10,
 		"id": "AT_125",
 		"name": "Icehowl",
@@ -16268,7 +15899,6 @@ var parseCardsText = {
 			"name": "Sort gratuit",
 			"text": "Le prochain sort que vous lancez pendant ce tour coûte (0) |4(cristal,cristaux)."
 		},
-		"goldenImage": "CFM_687e.gif",
 		"id": "CFM_687e",
 		"name": "Free Spell",
 		"playerClass": "Mage",
@@ -16279,13 +15909,13 @@ var parseCardsText = {
 	{
 		"artist": "Justin Thavirat",
 		"attack": 0,
-		"cardImage": "FP1_007.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Œuf de nérubien",
 			"text": "<b>Râle d’agonie :</b> invoque un nérubien 4/4."
 		},
+		"goldenImage": "FP1_007.gif",
 		"health": 2,
 		"id": "FP1_007",
 		"name": "Nerubian Egg",
@@ -16297,12 +15927,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t8.png",
 		"cost": 1,
 		"fr": {
 			"name": "Sang-royal",
 			"text": "Vous piochez une carte."
 		},
+		"goldenImage": "CFM_621t8.gif",
 		"id": "CFM_621t8",
 		"name": "Kingsblood",
 		"playerClass": "Neutral",
@@ -16311,7 +15941,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_062.png",
 		"cost": 0,
 		"fr": {
 			"name": "Armor 5",
@@ -16325,7 +15954,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_509e.png",
 		"fr": {
 			"name": "Blarghghl",
 			"text": "Attaque augmentée."
@@ -16338,7 +15966,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_CoOpv3_BOSS3e.png",
 		"fr": {
 			"name": "Assez !",
 			"text": "Nefarian est <b>Insensible</b> pendant ce tour."
@@ -16352,12 +15979,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TB_KTRAF_2.png",
 		"cost": 4,
 		"fr": {
 			"name": "Dame Blaumeux",
 			"text": "<b>Cri de guerre :</b> invoque un cavalier."
 		},
+		"goldenImage": "TB_KTRAF_2.gif",
 		"health": 7,
 		"id": "TB_KTRAF_2",
 		"name": "Lady Blaumeux",
@@ -16368,12 +15995,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_12.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin : confusion",
 			"text": "À la fin de chaque tour, échange l’Attaque et la Vie de tous les serviteurs."
 		},
+		"goldenImage": "TB_PickYourFate_12.gif",
 		"id": "TB_PickYourFate_12",
 		"name": "Fate: Confusion",
 		"playerClass": "Neutral",
@@ -16384,13 +16011,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
-		"cardImage": "GVG_037.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Zap-o-matic tournoyant",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "GVG_037.gif",
 		"health": 2,
 		"id": "GVG_037",
 		"name": "Whirling Zap-o-matic",
@@ -16403,7 +16030,6 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 1,
-		"cardImage": "KAR_044.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
@@ -16420,12 +16046,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA09_9H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Répulsif à nagas",
 			"text": "Fait passer l’Attaque de tous les nagas affamés à 1."
 		},
+		"goldenImage": "LOEA09_9H.gif",
 		"id": "LOEA09_9H",
 		"name": "Naga Repellent",
 		"playerClass": "Neutral",
@@ -16434,7 +16060,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMC_98e.png",
 		"fr": {
 			"name": "Soif de dragon",
 			"text": "+3 ATQ."
@@ -16448,12 +16073,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "XXX_044.png",
 		"cost": 0,
 		"fr": {
 			"name": "Hand Swapper Minion",
 			"text": "<b>Battlecry:</b> Discard 3 cards, then draw 3 cards."
 		},
+		"goldenImage": "XXX_044.gif",
 		"health": 5,
 		"id": "XXX_044",
 		"name": "Hand Swapper Minion",
@@ -16464,7 +16089,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMC_100e.png",
 		"fr": {
 			"name": "Bombe vivante",
 			"text": "Inflige 5 points de dégâts de ce côté du plateau pendant le tour de Ragnaros."
@@ -16478,12 +16102,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMC_85.png",
 		"cost": 4,
 		"fr": {
 			"name": "Lucifron",
 			"text": "<b>Cri de guerre :</b> lance Corruption sur tous les autres serviteurs."
 		},
+		"goldenImage": "BRMC_85.gif",
 		"health": 7,
 		"id": "BRMC_85",
 		"name": "Lucifron",
@@ -16496,13 +16120,13 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 2,
-		"cardImage": "OG_271.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Cauchemar écailleux",
 			"text": "Au début de votre tour, double l’Attaque de ce serviteur."
 		},
+		"goldenImage": "OG_271.gif",
 		"health": 8,
 		"id": "OG_271",
 		"name": "Scaled Nightmare",
@@ -16514,13 +16138,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Evgeniy Zaqumyenny",
-		"cardImage": "CFM_623.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Projectiles des Arcanes majeurs",
 			"text": "Lance trois missiles infligeant chacun $3 |4(point,points) de dégâts à des adversaires aléatoires."
 		},
+		"goldenImage": "CFM_623.gif",
 		"id": "CFM_623",
 		"name": "Greater Arcane Missiles",
 		"playerClass": "Mage",
@@ -16531,13 +16155,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "CFM_616.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Puissance chapardée",
 			"text": "Gagne un cristal de mana vide pour chaque serviteur allié."
 		},
+		"goldenImage": "CFM_616.gif",
 		"id": "CFM_616",
 		"name": "Pilfered Power",
 		"playerClass": "Druid",
@@ -16549,13 +16173,13 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 1,
-		"cardImage": "LOE_116.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Chercheuse du Reliquaire",
 			"text": "<b>Cri de guerre :</b> gagne +4/+4 si vous avez 6 autres serviteurs."
 		},
+		"goldenImage": "LOE_116.gif",
 		"health": 1,
 		"id": "LOE_116",
 		"name": "Reliquary Seeker",
@@ -16570,7 +16194,6 @@ var parseCardsText = {
 			"name": "Connaissance",
 			"text": "Coûte (1) |4(cristal,cristaux) de mana."
 		},
-		"goldenImage": "TB_SPT_DPromoSecret9e.gif",
 		"id": "TB_SPT_DPromoSecret9e",
 		"name": "Knowledge",
 		"playerClass": "Neutral",
@@ -16579,10 +16202,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TU4c_001.png",
 		"fr": {
 			"name": "Roi Mukla"
 		},
+		"goldenImage": "TU4c_001.gif",
 		"health": 26,
 		"id": "TU4c_001",
 		"name": "King Mukla",
@@ -16593,13 +16216,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Andrew Hou",
-		"cardImage": "GVG_050.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Lame rebondissante",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur aléatoire. Recommence jusqu’à ce qu’un serviteur meure."
 		},
+		"goldenImage": "GVG_050.gif",
 		"id": "GVG_050",
 		"name": "Bouncing Blade",
 		"playerClass": "Warrior",
@@ -16609,7 +16232,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_CoOpv3_009.png",
 		"cost": 0,
 		"fr": {
 			"name": "Rune explosive",
@@ -16623,7 +16245,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA14_2.png",
 		"cost": 2,
 		"fr": {
 			"name": "Activer Arcanotron",
@@ -16638,12 +16259,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRMA09_3t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Orc de l’ancienne Horde",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA09_3t.gif",
 		"health": 1,
 		"id": "BRMA09_3t",
 		"name": "Old Horde Orc",
@@ -16654,13 +16275,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Kendall",
-		"cardImage": "EX1_303.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Ombreflamme",
 			"text": "Détruit un serviteur allié et inflige des dégâts équivalents à ses points d’attaque à tous les serviteurs adverses."
 		},
+		"goldenImage": "EX1_303.gif",
 		"id": "EX1_303",
 		"name": "Shadowflame",
 		"playerClass": "Warlock",
@@ -16671,12 +16292,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "BRMA10_4H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Œuf corrompu",
 			"text": "Éclot quand il a 5 PV ou plus."
 		},
+		"goldenImage": "BRMA10_4H.gif",
 		"health": 3,
 		"id": "BRMA10_4H",
 		"name": "Corrupted Egg",
@@ -16688,12 +16309,12 @@ var parseCardsText = {
 	{
 		"artist": "Malcolm Davis",
 		"attack": 1,
-		"cardImage": "CS2_231.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Feu follet"
 		},
+		"goldenImage": "CS2_231.gif",
 		"health": 1,
 		"id": "CS2_231",
 		"name": "Wisp",
@@ -16703,7 +16324,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CS2_102.png",
 		"cost": 2,
 		"fr": {
 			"name": "Gain d’armure !",
@@ -16719,13 +16339,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "CS2_073.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Sang froid",
 			"text": "Donne +2 ATQ à un serviteur. <b>Combo :</b> +4 ATQ à la place."
 		},
+		"goldenImage": "CS2_073.gif",
 		"id": "CS2_073",
 		"name": "Cold Blood",
 		"playerClass": "Rogue",
@@ -16735,7 +16355,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_054e.png",
 		"fr": {
 			"name": "Weapon Buff Enchant"
 		},
@@ -16748,13 +16367,13 @@ var parseCardsText = {
 	{
 		"artist": "Christopher Moeller",
 		"attack": 6,
-		"cardImage": "AT_008.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Drake de Frimarra",
 			"text": "Vous pouvez utiliser votre pouvoir héroïque autant de fois que vous voulez."
 		},
+		"goldenImage": "AT_008.gif",
 		"health": 6,
 		"id": "AT_008",
 		"name": "Coldarra Drake",
@@ -16765,7 +16384,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA14_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Armure de plates",
@@ -16781,13 +16399,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
-		"cardImage": "EX1_096.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Amasseur de butin",
 			"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 		},
+		"goldenImage": "EX1_096.gif",
 		"health": 1,
 		"id": "EX1_096",
 		"name": "Loot Hoarder",
@@ -16799,12 +16417,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t24.png",
 		"cost": 5,
 		"fr": {
 			"name": "Dorépine",
 			"text": "Donne +4 PV à vos serviteurs."
 		},
+		"goldenImage": "CFM_621t24.gif",
 		"id": "CFM_621t24",
 		"name": "Goldthorn",
 		"playerClass": "Neutral",
@@ -16815,12 +16433,12 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 6,
-		"cardImage": "LOE_019t2.png",
 		"cost": 4,
 		"fr": {
 			"name": "Singe doré",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> remplace votre main et votre deck par des serviteurs <b>légendaires</b>."
 		},
+		"goldenImage": "LOE_019t2.gif",
 		"health": 6,
 		"id": "LOE_019t2",
 		"name": "Golden Monkey",
@@ -16835,7 +16453,6 @@ var parseCardsText = {
 			"name": "Visions du destin",
 			"text": "<b>Secret :</b> quand votre adversaire subit des dégâts fatals… le sauve."
 		},
-		"goldenImage": "TB_SPT_DPromoSecret4.gif",
 		"id": "TB_SPT_DPromoSecret4",
 		"name": "Visions of Fate",
 		"playerClass": "Warrior",
@@ -16844,7 +16461,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA15_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "L’alchimiste",
@@ -16859,13 +16475,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Kan Lui",
-		"cardImage": "CFM_940.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Je connais un gars",
 			"text": "<b>Découvre</b> un serviteur avec <b>Provocation</b>."
 		},
+		"goldenImage": "CFM_940.gif",
 		"id": "CFM_940",
 		"name": "I Know a Guy",
 		"playerClass": "Warrior",
@@ -16875,7 +16491,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "KAR_037t.png",
 		"fr": {
 			"name": "Secrets de Karazhan",
 			"text": "+1/+1 et <b>Provocation</b>."
@@ -16889,12 +16504,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NAX2_05H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Adorateur",
 			"text": "Votre héros a +3 ATQ pendant votre tour."
 		},
+		"goldenImage": "NAX2_05H.gif",
 		"health": 4,
 		"id": "NAX2_05H",
 		"name": "Worshipper",
@@ -16904,7 +16519,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_2_Ench.png",
 		"fr": {
 			"name": "Pick Your Fate 2 Ench"
 		},
@@ -16915,7 +16529,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMC_86e.png",
 		"fr": {
 			"name": "Je vous entends…",
 			"text": "Attaque augmentée."
@@ -16928,12 +16541,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA02_04.png",
 		"cost": 0,
 		"fr": {
 			"name": "Vœu : vaillance",
 			"text": "<b>Découvre</b> une carte à (4) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOEA02_04.gif",
 		"id": "LOEA02_04",
 		"name": "Wish for Valor",
 		"playerClass": "Neutral",
@@ -16944,13 +16557,13 @@ var parseCardsText = {
 	{
 		"artist": "Eva Widermann",
 		"attack": 2,
-		"cardImage": "GVG_030.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Ourson robot anodisé",
 			"text": "<b>Provocation</b>.\n<b>Choix des armes :</b>\n+1 ATQ ou +1 PV."
 		},
+		"goldenImage": "GVG_030.gif",
 		"health": 2,
 		"id": "GVG_030",
 		"name": "Anodized Robo Cub",
@@ -16963,13 +16576,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
-		"cardImage": "GVG_053.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Vierge guerrière",
 			"text": "<b>Cri de guerre :</b> gagne 5 points d’armure."
 		},
+		"goldenImage": "GVG_053.gif",
 		"health": 5,
 		"id": "GVG_053",
 		"name": "Shieldmaiden",
@@ -16980,7 +16593,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CS2_226e.png",
 		"fr": {
 			"name": "Bannière loup-de-givre",
 			"text": "Caractéristiques augmentées."
@@ -16994,11 +16606,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "BRMA10_5H.png",
 		"cost": 4,
 		"fr": {
 			"name": "Drake chromatique"
 		},
+		"goldenImage": "BRMA10_5H.gif",
 		"health": 7,
 		"id": "BRMA10_5H",
 		"name": "Chromatic Drake",
@@ -17007,7 +16619,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA07_29.png",
 		"cost": 1,
 		"fr": {
 			"name": "Lancer des rochers",
@@ -17022,11 +16633,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CS2_tk1.png",
 		"cost": 1,
 		"fr": {
 			"name": "Mouton"
 		},
+		"goldenImage": "CS2_tk1.gif",
 		"health": 1,
 		"id": "CS2_tk1",
 		"name": "Sheep",
@@ -17036,7 +16647,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CS2_092e.png",
 		"fr": {
 			"name": "Bénédiction des rois",
 			"text": "+4/+4."
@@ -17051,13 +16661,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 5,
-		"cardImage": "CFM_688.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Motard huran",
 			"text": "<b>Cri de guerre :</b> gagne <b>Charge</b> si un serviteur adverse a <b>Provocation</b>."
 		},
+		"goldenImage": "CFM_688.gif",
 		"health": 5,
 		"id": "CFM_688",
 		"name": "Spiked Hogrider",
@@ -17068,7 +16678,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TBA01_5.png",
 		"cost": 2,
 		"fr": {
 			"name": "Magie sauvage",
@@ -17082,7 +16691,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "OG_320e.png",
 		"fr": {
 			"name": "Heure de la corruption",
 			"text": "Attaque augmentée."
@@ -17095,12 +16703,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA06_04.png",
 		"cost": 2,
 		"fr": {
 			"name": "Pulsion destructrice",
 			"text": "Détruit toutes les statues. Inflige 1 point de dégâts pour chaque statue détruite."
 		},
+		"goldenImage": "LOEA06_04.gif",
 		"id": "LOEA06_04",
 		"name": "Shattering Spree",
 		"playerClass": "Neutral",
@@ -17109,7 +16717,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "CS1h_001.png",
 		"cost": 2,
 		"fr": {
 			"name": "Soins inférieurs",
@@ -17126,13 +16733,13 @@ var parseCardsText = {
 	{
 		"artist": "Lucas Graciano",
 		"attack": 3,
-		"cardImage": "CS2_106.png",
 		"collectible": true,
 		"cost": 2,
 		"durability": 2,
 		"fr": {
 			"name": "Hache de guerre embrasée"
 		},
+		"goldenImage": "CS2_106.gif",
 		"id": "CS2_106",
 		"name": "Fiery War Axe",
 		"playerClass": "Warrior",
@@ -17143,13 +16750,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 5,
-		"cardImage": "CFM_605.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Agent drakônide",
 			"text": "<b>Cri de guerre :</b> <b>découvre</b> une carte du deck de votre adversaire si vous avez un Dragon en main."
 		},
+		"goldenImage": "CFM_605.gif",
 		"health": 6,
 		"id": "CFM_605",
 		"name": "Drakonid Operative",
@@ -17160,12 +16767,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_ClassRandom_Mage.png",
 		"cost": 0,
 		"fr": {
 			"name": "Deuxième classe : mage",
 			"text": "Ajoute des cartes de mage dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Mage.gif",
 		"id": "TB_ClassRandom_Mage",
 		"name": "Second Class: Mage",
 		"playerClass": "Mage",
@@ -17176,7 +16783,6 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 2,
-		"cardImage": "EX1_010.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "ALLIANCE",
@@ -17184,6 +16790,7 @@ var parseCardsText = {
 			"name": "Infiltrateur worgen",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "EX1_010.gif",
 		"health": 1,
 		"id": "EX1_010",
 		"name": "Worgen Infiltrator",
@@ -17195,12 +16802,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "CRED_44.png",
 		"cost": 4,
 		"fr": {
 			"name": "Walter Kong",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à deux cibles stratégiques."
 		},
+		"goldenImage": "CRED_44.gif",
 		"health": 2,
 		"id": "CRED_44",
 		"name": "Walter Kong",
@@ -17213,13 +16820,13 @@ var parseCardsText = {
 	{
 		"artist": " James Ryman",
 		"attack": 3,
-		"cardImage": "AT_081.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Eadric le Pur",
 			"text": "<b>Cri de guerre :</b> l’Attaque de tous les serviteurs adverses passe à 1."
 		},
+		"goldenImage": "AT_081.gif",
 		"health": 7,
 		"id": "AT_081",
 		"name": "Eadric the Pure",
@@ -17231,13 +16838,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Slawomir Maniak",
-		"cardImage": "EX1_607.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Rage intérieure",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur et lui donne +2 ATQ."
 		},
+		"goldenImage": "EX1_607.gif",
 		"id": "EX1_607",
 		"name": "Inner Rage",
 		"playerClass": "Warrior",
@@ -17248,13 +16855,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "OG_239.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "MALÉDICTION !",
 			"text": "Détruit tous les serviteurs. Pioche une carte pour chaque serviteur détruit."
 		},
+		"goldenImage": "OG_239.gif",
 		"id": "OG_239",
 		"name": "DOOM!",
 		"playerClass": "Warlock",
@@ -17266,13 +16873,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 7,
-		"cardImage": "GVG_034.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Méca chat-ours",
 			"text": "Chaque fois que ce serviteur subit des dégâts, place une carte <b>Pièce détachée</b> dans votre main."
 		},
+		"goldenImage": "GVG_034.gif",
 		"health": 6,
 		"id": "GVG_034",
 		"name": "Mech-Bear-Cat",
@@ -17285,13 +16892,13 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 4,
-		"cardImage": "BRM_014.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Rageur du Magma",
 			"text": "<b>Cri de guerre :</b> gagne +3/+3 si votre main est vide."
 		},
+		"goldenImage": "BRM_014.gif",
 		"health": 4,
 		"id": "BRM_014",
 		"name": "Core Rager",
@@ -17303,13 +16910,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Daarken",
-		"cardImage": "EX1_621.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Cercle de soins",
 			"text": "Rend #4 |4(point,points) de vie à TOUS les serviteurs."
 		},
+		"goldenImage": "EX1_621.gif",
 		"id": "EX1_621",
 		"name": "Circle of Healing",
 		"playerClass": "Priest",
@@ -17320,13 +16927,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler Walpole",
-		"cardImage": "EX1_309.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Siphonner l’âme",
 			"text": "Détruit un serviteur. Rend #3 PV à votre héros."
 		},
+		"goldenImage": "EX1_309.gif",
 		"id": "EX1_309",
 		"name": "Siphon Soul",
 		"playerClass": "Warlock",
@@ -17336,7 +16943,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "OG_311e.png",
 		"fr": {
 			"name": "Signal d’espoir",
 			"text": "+1/+1."
@@ -17350,11 +16956,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "GVG_045t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Diablotin"
 		},
+		"goldenImage": "GVG_045t.gif",
 		"health": 1,
 		"id": "GVG_045t",
 		"name": "Imp",
@@ -17364,7 +16970,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_Coopv3_009t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Rune explosive",
@@ -17379,11 +16984,11 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "HERO_05.png",
 		"collectible": true,
 		"fr": {
 			"name": "Rexxar"
 		},
+		"goldenImage": "HERO_05.gif",
 		"health": 30,
 		"id": "HERO_05",
 		"name": "Rexxar",
@@ -17395,12 +17000,12 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
-		"cardImage": "OG_319.png",
 		"cost": 7,
 		"fr": {
 			"name": "Empereur jumeau Vek’nilash",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_319.gif",
 		"health": 6,
 		"id": "OG_319",
 		"name": "Twin Emperor Vek'nilash",
@@ -17413,13 +17018,13 @@ var parseCardsText = {
 	{
 		"artist": "Penny Arcade",
 		"attack": 5,
-		"cardImage": "AT_112.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Maître jouteur",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne <b>Provocation</b> et <b>Bouclier divin</b>."
 		},
+		"goldenImage": "AT_112.gif",
 		"health": 6,
 		"id": "AT_112",
 		"name": "Master Jouster",
@@ -17431,11 +17036,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "EX1_116t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "EX1_116t.gif",
 		"health": 1,
 		"id": "EX1_116t",
 		"name": "Whelp",
@@ -17445,13 +17050,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_SPT_BossWeapon.png",
 		"cost": 1,
 		"durability": 1,
 		"fr": {
 			"name": "Armurerie",
 			"text": "L’Attaque augmente sur la durée."
 		},
+		"goldenImage": "TB_SPT_BossWeapon.gif",
 		"id": "TB_SPT_BossWeapon",
 		"name": "Armory",
 		"playerClass": "Neutral",
@@ -17461,11 +17066,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "NAX1_03.png",
 		"cost": 2,
 		"fr": {
 			"name": "Nérubien"
 		},
+		"goldenImage": "NAX1_03.gif",
 		"health": 1,
 		"id": "NAX1_03",
 		"name": "Nerubian",
@@ -17475,11 +17080,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMA17_6H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Assemblage d’os"
 		},
+		"goldenImage": "BRMA17_6H.gif",
 		"health": 2,
 		"id": "BRMA17_6H",
 		"name": "Bone Construct",
@@ -17488,7 +17093,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX15_01He.png",
 		"fr": {
 			"name": "Intrus !"
 		},
@@ -17501,13 +17105,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 5,
-		"cardImage": "EX1_016.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Sylvanas Coursevent",
 			"text": "<b>Râle d’agonie :</b> prend le contrôle d’un serviteur adverse aléatoire."
 		},
+		"goldenImage": "EX1_016.gif",
 		"health": 5,
 		"id": "EX1_016",
 		"name": "Sylvanas Windrunner",
@@ -17518,7 +17122,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NEW1_033o.png",
 		"fr": {
 			"name": "Œil céleste",
 			"text": "Leokk donne +1 ATQ à ce serviteur."
@@ -17533,13 +17136,13 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 3,
-		"cardImage": "OG_286.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Ancien du Crépuscule",
 			"text": "À la fin de votre tour, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_286.gif",
 		"health": 4,
 		"id": "OG_286",
 		"name": "Twilight Elder",
@@ -17550,7 +17153,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX12_02.png",
 		"cost": 2,
 		"fr": {
 			"name": "Décimer",
@@ -17565,7 +17167,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Lars Grant-West",
-		"cardImage": "CS2_053e.png",
 		"fr": {
 			"name": "Double vue",
 			"text": "Une de vos cartes coûte (3) cristaux de moins."
@@ -17583,7 +17184,6 @@ var parseCardsText = {
 			"name": "Héritiers de Ro’Boum",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
-		"goldenImage": "TB_FW_HeroPower_Boom.gif",
 		"id": "TB_FW_HeroPower_Boom",
 		"name": "Boom Bot Brood",
 		"playerClass": "Neutral",
@@ -17594,13 +17194,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 5,
-		"cardImage": "NEW1_024.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Capitaine Vertepeau",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à votre arme."
 		},
+		"goldenImage": "NEW1_024.gif",
 		"health": 4,
 		"id": "NEW1_024",
 		"name": "Captain Greenskin",
@@ -17611,7 +17211,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_132_ROGUE.png",
 		"cost": 2,
 		"fr": {
 			"name": "Dagues empoisonnées",
@@ -17630,7 +17229,6 @@ var parseCardsText = {
 			"name": "Lame affûtée",
 			"text": "+1 ATQ."
 		},
-		"goldenImage": "CFM_651e.gif",
 		"id": "CFM_651e",
 		"name": "Extra Sharp",
 		"playerClass": "Neutral",
@@ -17640,7 +17238,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "XXX_109.png",
 		"cost": 0,
 		"fr": {
 			"name": "Illidan Stormrage Cheat",
@@ -17656,7 +17253,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA05_02a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Trogg détester serviteurs !",
@@ -17682,7 +17278,6 @@ var parseCardsText = {
 			"name": "Zoobot",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à une Bête, un Dragon et un Murloc alliés aléatoires."
 		},
-		"goldenImage": "KAR_095.gif",
 		"health": 3,
 		"id": "KAR_095",
 		"name": "Zoobot",
@@ -17695,13 +17290,13 @@ var parseCardsText = {
 	{
 		"artist": "Edouard Guiton & Tony Washington",
 		"attack": 5,
-		"cardImage": "AT_108.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Cheval de guerre cuirassé",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne <b>Charge</b>."
 		},
+		"goldenImage": "AT_108.gif",
 		"health": 3,
 		"id": "AT_108",
 		"name": "Armored Warhorse",
@@ -17714,13 +17309,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 6,
-		"cardImage": "GVG_014.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Vol’jin",
 			"text": "<b>Cri de guerre :</b> échange sa Vie avec un autre serviteur."
 		},
+		"goldenImage": "GVG_014.gif",
 		"health": 2,
 		"id": "GVG_014",
 		"name": "Vol'jin",
@@ -17736,7 +17331,6 @@ var parseCardsText = {
 			"name": "Entoilage",
 			"text": "<b>Pouvoir héroïque</b>\nRenvoie un serviteur adverse aléatoire dans la main de votre adversaire."
 		},
-		"goldenImage": "NAX3_02_TB.gif",
 		"id": "NAX3_02_TB",
 		"name": "Web Wrap",
 		"playerClass": "Neutral",
@@ -17746,12 +17340,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TB_BlingBrawl_Weapon.png",
 		"cost": 1,
 		"durability": 2,
 		"fr": {
 			"name": "Épée en mousse"
 		},
+		"goldenImage": "TB_BlingBrawl_Weapon.gif",
 		"id": "TB_BlingBrawl_Weapon",
 		"name": "Foam Sword",
 		"playerClass": "Neutral",
@@ -17761,11 +17355,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Robinson",
 		"attack": 2,
-		"cardImage": "EX1_534t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Hyène"
 		},
+		"goldenImage": "EX1_534t.gif",
 		"health": 2,
 		"id": "EX1_534t",
 		"name": "Hyena",
@@ -17780,7 +17374,6 @@ var parseCardsText = {
 			"name": "Frappe haineuse",
 			"text": "<b>Pouvoir héroïque</b>\nDétruit un serviteur."
 		},
-		"goldenImage": "NAX10_03H.gif",
 		"id": "NAX10_03H",
 		"name": "Hateful Strike",
 		"playerClass": "Neutral",
@@ -17789,12 +17382,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "LOEA06_03h.png",
 		"cost": 2,
 		"fr": {
 			"name": "Terrestre animé",
 			"text": "Donne +3/+3 et <b>Provocation</b> à vos serviteurs."
 		},
+		"goldenImage": "LOEA06_03h.gif",
 		"id": "LOEA06_03h",
 		"name": "Animate Earthen",
 		"playerClass": "Neutral",
@@ -17808,7 +17401,6 @@ var parseCardsText = {
 			"name": "Affûtage",
 			"text": "<b>Pouvoir héroïque</b>\nAugmente l’attaque de votre arme de 1."
 		},
-		"goldenImage": "TB_BlingBrawl_Hero1p.gif",
 		"id": "TB_BlingBrawl_Hero1p",
 		"name": "Sharpen",
 		"playerClass": "Rogue",
@@ -17819,13 +17411,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "NAX7_04.png",
 		"cost": 3,
 		"durability": 2,
 		"fr": {
 			"name": "Lame runique massive",
 			"text": "Inflige des dégâts doublés aux héros."
 		},
+		"goldenImage": "NAX7_04.gif",
 		"id": "NAX7_04",
 		"name": "Massive Runeblade",
 		"playerClass": "Neutral",
@@ -17835,13 +17427,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Ellis",
-		"cardImage": "CS1_130.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Châtiment sacré",
 			"text": "Inflige $2 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CS1_130.gif",
 		"id": "CS1_130",
 		"name": "Holy Smite",
 		"playerClass": "Priest",
@@ -17853,13 +17445,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 2,
-		"cardImage": "AT_105.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Kvaldir blessé",
 			"text": "<b>Cri de guerre :</b> inflige\n3 points de dégâts à ce serviteur."
 		},
+		"goldenImage": "AT_105.gif",
 		"health": 4,
 		"id": "AT_105",
 		"name": "Injured Kvaldir",
@@ -17875,7 +17467,6 @@ var parseCardsText = {
 			"name": "Entoilage",
 			"text": "<b>Pouvoir héroïque</b>\nRenvoie un serviteur adverse aléatoire dans la main de votre adversaire."
 		},
-		"goldenImage": "NAX3_02.gif",
 		"id": "NAX3_02",
 		"name": "Web Wrap",
 		"playerClass": "Neutral",
@@ -17885,12 +17476,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "BRMA04_3.png",
 		"cost": 0,
 		"fr": {
 			"name": "Lige du feu",
 			"text": "<b>Râle d’agonie :</b> inflige 1 point de dégâts au héros adverse pour chaque lige du feu mort pendant ce tour."
 		},
+		"goldenImage": "BRMA04_3.gif",
 		"health": 5,
 		"id": "BRMA04_3",
 		"name": "Firesworn",
@@ -17902,13 +17493,13 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"attack": 4,
-		"cardImage": "LOE_053.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Djinn des zéphirs",
 			"text": "Lorsque vous lancez un sort sur un autre serviteur allié, en lance une copie sur le djinn."
 		},
+		"goldenImage": "LOE_053.gif",
 		"health": 6,
 		"id": "LOE_053",
 		"name": "Djinni of Zephyrs",
@@ -17920,12 +17511,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "LOEA04_25.png",
 		"cost": 8,
 		"fr": {
 			"name": "Statue vengeresse",
 			"text": "Inflige 2 points de dégâts à tous les adversaires à la fin de votre tour."
 		},
+		"goldenImage": "LOEA04_25.gif",
 		"health": 9,
 		"id": "LOEA04_25",
 		"name": "Seething Statue",
@@ -17936,12 +17527,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA16_23.png",
 		"cost": 5,
 		"fr": {
 			"name": "Seigneur Ondulance",
 			"text": "À la fin de votre tour, invoque un Naga affamé 1/1 pour chaque serviteur adverse."
 		},
+		"goldenImage": "LOEA16_23.gif",
 		"health": 5,
 		"id": "LOEA16_23",
 		"name": "Lord Slitherspear",
@@ -17957,7 +17548,6 @@ var parseCardsText = {
 			"name": "Salve de traits de l’ombre",
 			"text": "Inflige $4 |4(point,points) de dégâts à trois adversaires aléatoires."
 		},
-		"goldenImage": "KARA_13_11.gif",
 		"id": "KARA_13_11",
 		"name": "Shadow Bolt Volley",
 		"playerClass": "Neutral",
@@ -17968,13 +17558,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 3,
-		"cardImage": "AT_021.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Minuscule chevalier maléfique",
 			"text": "Chaque fois que vous vous défaussez d’une carte, gagne +1/+1."
 		},
+		"goldenImage": "AT_021.gif",
 		"health": 2,
 		"id": "AT_021",
 		"name": "Tiny Knight of Evil",
@@ -17985,12 +17575,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "DREAM_05.png",
 		"cost": 0,
 		"fr": {
 			"name": "Cauchemar",
 			"text": "Donne +5/+5 à un serviteur. Au début de votre prochain tour, le détruit."
 		},
+		"goldenImage": "DREAM_05.gif",
 		"id": "DREAM_05",
 		"name": "Nightmare",
 		"playerClass": "Dream",
@@ -18000,11 +17590,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "LOEA09_11.png",
 		"cost": 3,
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_11.gif",
 		"health": 1,
 		"id": "LOEA09_11",
 		"name": "Hungry Naga",
@@ -18018,7 +17608,6 @@ var parseCardsText = {
 			"name": "Essence des Rouges",
 			"text": "<b>Pouvoir héroïque</b>\nChaque joueur pioche 2 cartes."
 		},
-		"goldenImage": "BRMA11_2.gif",
 		"id": "BRMA11_2",
 		"name": "Essence of the Red",
 		"playerClass": "Neutral",
@@ -18027,12 +17616,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "LOEA04_29a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Toucher",
 			"text": "Rend 10 PV à votre héros."
 		},
+		"goldenImage": "LOEA04_29a.gif",
 		"id": "LOEA04_29a",
 		"name": "Touch It",
 		"playerClass": "Neutral",
@@ -18043,13 +17632,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "CFM_344.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Bourbinja, l’étoile volante",
 			"text": "<b>Camouflage</b>\nInvoque 2 murlocs de votre deck chaque fois qu’il attaque et tue un serviteur."
 		},
+		"goldenImage": "CFM_344.gif",
 		"health": 4,
 		"id": "CFM_344",
 		"name": "Finja, the Flying Star",
@@ -18061,7 +17650,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TB_FW_ImbaTron.png",
 		"cost": 4,
 		"fr": {
 			"name": "Ennuy-o-p-tron",
@@ -18078,13 +17666,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 6,
-		"cardImage": "AT_130.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Saccageur des mers",
 			"text": "Quand vous piochez cette carte, inflige 1 point de dégâts à vos serviteurs."
 		},
+		"goldenImage": "AT_130.gif",
 		"health": 7,
 		"id": "AT_130",
 		"name": "Sea Reaver",
@@ -18096,13 +17684,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Chris Seaman",
-		"cardImage": "CS2_028.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Blizzard",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs adverses et les <b>gèle</b>."
 		},
+		"goldenImage": "CS2_028.gif",
 		"id": "CS2_028",
 		"name": "Blizzard",
 		"playerClass": "Mage",
@@ -18120,7 +17708,6 @@ var parseCardsText = {
 			"name": "Anomalie arcanique",
 			"text": "Chaque fois que vous lancez un sort, donne +1 PV à ce serviteur."
 		},
-		"goldenImage": "KAR_036.gif",
 		"health": 1,
 		"id": "KAR_036",
 		"name": "Arcane Anomaly",
@@ -18133,13 +17720,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley",
 		"attack": 8,
-		"cardImage": "BRM_029.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Rend Main-Noire",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur <b>légendaire</b> si vous avez un Dragon en main."
 		},
+		"goldenImage": "BRM_029.gif",
 		"health": 4,
 		"id": "BRM_029",
 		"name": "Rend Blackhand",
@@ -18152,13 +17739,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 4,
-		"cardImage": "OG_328.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Maître de l’évolution",
 			"text": "<b>Cri de guerre :</b> transforme un serviteur allié en un serviteur aléatoire coûtant\n(1) |4(cristal,cristaux) de plus."
 		},
+		"goldenImage": "OG_328.gif",
 		"health": 5,
 		"id": "OG_328",
 		"name": "Master of Evolution",
@@ -18170,13 +17757,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Maurico Herrera",
-		"cardImage": "OG_206.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Coup de tonnerre",
 			"text": "Inflige $4 |4(point,points) de dégâts à un serviteur. <b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "OG_206.gif",
 		"id": "OG_206",
 		"name": "Stormcrack",
 		"overload": 1,
@@ -18191,7 +17778,6 @@ var parseCardsText = {
 			"name": "Un amour fatal",
 			"text": "Julianne est <b>Insensible</b>."
 		},
-		"goldenImage": "KARA_06_01e.gif",
 		"id": "KARA_06_01e",
 		"name": "Death-Marked Love",
 		"playerClass": "Neutral",
@@ -18205,7 +17791,6 @@ var parseCardsText = {
 			"name": "Activation !",
 			"text": "<b>Pouvoir héroïque</b>\nActive un Tron aléatoire."
 		},
-		"goldenImage": "BRMA14_10H.gif",
 		"id": "BRMA14_10H",
 		"name": "Activate!",
 		"playerClass": "Neutral",
@@ -18214,12 +17799,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "EX1_573b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Leçon de Shan’do",
 			"text": "Invoque deux tréants 2/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_573b.gif",
 		"id": "EX1_573b",
 		"name": "Shan'do's Lesson",
 		"playerClass": "Druid",
@@ -18228,11 +17813,11 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "HERO_04a.png",
 		"collectible": true,
 		"fr": {
 			"name": "Dame Liadrin"
 		},
+		"goldenImage": "HERO_04a.gif",
 		"health": 30,
 		"id": "HERO_04a",
 		"name": "Lady Liadrin",
@@ -18251,7 +17836,6 @@ var parseCardsText = {
 			"name": "Écrase-patate",
 			"text": "Pas de limite d’attaques par tour. Ne peut pas attaquer les héros."
 		},
-		"goldenImage": "KAR_028.gif",
 		"id": "KAR_028",
 		"name": "Fool's Bane",
 		"playerClass": "Warrior",
@@ -18263,13 +17847,13 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 3,
-		"cardImage": "AT_066.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Aspirant d’Orgrimmar",
 			"text": "<b>Exaltation :</b> donne +1 ATQ à votre arme."
 		},
+		"goldenImage": "AT_066.gif",
 		"health": 3,
 		"id": "AT_066",
 		"name": "Orgrimmar Aspirant",
@@ -18282,13 +17866,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 3,
-		"cardImage": "NEW1_026.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Enseignante pourpre",
 			"text": "Chaque fois que vous lancez un sort, invoque un apprenti pourpre 1/1."
 		},
+		"goldenImage": "NEW1_026.gif",
 		"health": 5,
 		"id": "NEW1_026",
 		"name": "Violet Teacher",
@@ -18301,11 +17885,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 11,
-		"cardImage": "CFM_712_t11.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t11.gif",
 		"health": 11,
 		"id": "CFM_712_t11",
 		"name": "Jade Golem",
@@ -18315,12 +17899,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "NAX15_03n.png",
 		"cost": 4,
 		"fr": {
 			"name": "Garde de la Couronne de glace",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "NAX15_03n.gif",
 		"health": 3,
 		"id": "NAX15_03n",
 		"name": "Guardian of Icecrown",
@@ -18337,7 +17921,6 @@ var parseCardsText = {
 			"name": "Portail des terres de Feu",
 			"text": "Inflige $5 |4(point,points) de dégâts. Invoque un serviteur aléatoire coûtant 5 cristaux."
 		},
-		"goldenImage": "KAR_076.gif",
 		"id": "KAR_076",
 		"name": "Firelands Portal",
 		"playerClass": "Mage",
@@ -18349,13 +17932,13 @@ var parseCardsText = {
 	{
 		"artist": "Phroilan Gardner",
 		"attack": 2,
-		"cardImage": "GVG_060.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Intendant",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à vos recrues de la Main d’argent."
 		},
+		"goldenImage": "GVG_060.gif",
 		"health": 5,
 		"id": "GVG_060",
 		"name": "Quartermaster",
@@ -18366,12 +17949,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA01_4.png",
 		"cost": 3,
 		"fr": {
 			"name": "Chopez-les !",
 			"text": "Invoque quatre nains 1/1 avec <b>Provocation</b>."
 		},
+		"goldenImage": "BRMA01_4.gif",
 		"id": "BRMA01_4",
 		"name": "Get 'em!",
 		"playerClass": "Neutral",
@@ -18381,13 +17964,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ben Olson",
-		"cardImage": "BRM_015.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Revanche",
 			"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs. Si vous avez 12 PV ou moins, inflige $3 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "BRM_015.gif",
 		"id": "BRM_015",
 		"name": "Revenge",
 		"playerClass": "Warrior",
@@ -18398,13 +17981,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Michal Ivan",
-		"cardImage": "EX1_619.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Égalité",
 			"text": "Les points de vie de TOUS les serviteurs passent à 1."
 		},
+		"goldenImage": "EX1_619.gif",
 		"id": "EX1_619",
 		"name": "Equality",
 		"playerClass": "Paladin",
@@ -18414,10 +17997,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA13_3.png",
 		"fr": {
 			"name": "Nefarian"
 		},
+		"goldenImage": "BRMA13_3.gif",
 		"health": 30,
 		"id": "BRMA13_3",
 		"name": "Nefarian",
@@ -18431,7 +18014,6 @@ var parseCardsText = {
 			"name": "L’Ombre ou la Lumière ?",
 			"text": "<b>Choix des armes :</b> chaque joueur pioche 2 cartes, ou rend 8 PV à chaque héros."
 		},
-		"goldenImage": "TB_Coopv3_102.gif",
 		"id": "TB_Coopv3_102",
 		"name": "Shadow or Light?",
 		"playerClass": "Priest",
@@ -18442,13 +18024,13 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 4,
-		"cardImage": "AT_032.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Marchand douteux",
 			"text": "<b>Cri de guerre :</b> si vous avez un pirate, gagne +1/+1."
 		},
+		"goldenImage": "AT_032.gif",
 		"health": 3,
 		"id": "AT_032",
 		"name": "Shady Dealer",
@@ -18463,7 +18045,6 @@ var parseCardsText = {
 			"name": "Renforcé",
 			"text": "+2/+2."
 		},
-		"goldenImage": "AT_068e.gif",
 		"id": "AT_068e",
 		"name": "Bolstered",
 		"playerClass": "Warrior",
@@ -18474,13 +18055,13 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 7,
-		"cardImage": "LOE_110.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Ombre ancienne",
 			"text": "<b>Cri de guerre :</b> place une carte Malédiction ancestrale dans votre deck qui vous inflige 7 points de dégâts quand vous la piochez."
 		},
+		"goldenImage": "LOE_110.gif",
 		"health": 4,
 		"id": "LOE_110",
 		"name": "Ancient Shade",
@@ -18491,7 +18072,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_119e.png",
 		"fr": {
 			"name": "Death No Rattle",
 			"text": "Died without triggering <b>Deathrattle</b>, All The Time"
@@ -18504,7 +18084,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621e2.png",
 		"fr": {
 			"name": "Dorépine",
 			"text": "+4 PV."
@@ -18518,12 +18097,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "L. Lullabi & S. Srisuwan",
-		"cardImage": "OG_202a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Force d’Y’Shaarj",
 			"text": "Invoque une gelée 2/2."
 		},
+		"goldenImage": "OG_202a.gif",
 		"id": "OG_202a",
 		"name": "Y'Shaarj's Strength",
 		"playerClass": "Druid",
@@ -18535,13 +18114,13 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 4,
-		"cardImage": "OG_292.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Traqueur lugubre",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à tous les serviteurs avec <b>Râle d’agonie</b> dans votre main."
 		},
+		"goldenImage": "OG_292.gif",
 		"health": 2,
 		"id": "OG_292",
 		"name": "Forlorn Stalker",
@@ -18556,7 +18135,6 @@ var parseCardsText = {
 			"name": "Intimidé",
 			"text": "Ne peut pas attaquer pendant ce tour."
 		},
-		"goldenImage": "TB_CoOpv3_BOSS4e.gif",
 		"id": "TB_CoOpv3_BOSS4e",
 		"name": "Cowed",
 		"playerClass": "Neutral",
@@ -18567,13 +18145,13 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 3,
-		"cardImage": "EX1_398.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Fabricante d’armes",
 			"text": "<b>Cri de guerre :</b> vous équipe d’une arme 2/2."
 		},
+		"goldenImage": "EX1_398.gif",
 		"health": 3,
 		"id": "EX1_398",
 		"name": "Arathi Weaponsmith",
@@ -18584,12 +18162,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_054.png",
 		"cost": 0,
 		"fr": {
 			"name": "Weapon Buff",
 			"text": "Give your Weapon +100/+100"
 		},
+		"goldenImage": "XXX_054.gif",
 		"id": "XXX_054",
 		"name": "Weapon Buff",
 		"playerClass": "Neutral",
@@ -18603,7 +18181,6 @@ var parseCardsText = {
 			"name": "Explosion de feu",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $1 point de dégâts."
 		},
-		"goldenImage": "CS2_034_H2.gif",
 		"id": "CS2_034_H2",
 		"name": "Fireblast",
 		"playerClass": "Mage",
@@ -18613,12 +18190,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "GVG_041b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Sombres feux follets",
 			"text": "Invoque 5 feux follets."
 		},
+		"goldenImage": "GVG_041b.gif",
 		"id": "GVG_041b",
 		"name": "Dark Wispers",
 		"playerClass": "Druid",
@@ -18632,7 +18209,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Assiette"
 		},
-		"goldenImage": "KAR_A02_01H.gif",
 		"health": 2,
 		"id": "KAR_A02_01H",
 		"name": "Plate",
@@ -18649,7 +18225,6 @@ var parseCardsText = {
 			"name": "Colporteur éthérien",
 			"text": "<b>Cri de guerre :</b> réduit de (2) cristaux le coût des cartes de votre main qui ne sont pas de la classe voleur."
 		},
-		"goldenImage": "KAR_070.gif",
 		"health": 6,
 		"id": "KAR_070",
 		"name": "Ethereal Peddler",
@@ -18662,13 +18237,13 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 3,
-		"cardImage": "AT_083.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Chevaucheur de faucon-dragon",
 			"text": "<b>Exaltation :</b> gagne <b>Furie des vents</b> pendant ce tour."
 		},
+		"goldenImage": "AT_083.gif",
 		"health": 3,
 		"id": "AT_083",
 		"name": "Dragonhawk Rider",
@@ -18680,12 +18255,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "OG_279.png",
 		"cost": 10,
 		"fr": {
 			"name": "C’Thun",
 			"text": "<b>Cri de guerre :</b> inflige des dégâts égaux à l’Attaque de ce serviteur répartis aléatoirement entre tous les adversaires."
 		},
+		"goldenImage": "OG_279.gif",
 		"health": 6,
 		"id": "OG_279",
 		"name": "C'Thun",
@@ -18697,13 +18272,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Daren Bader",
-		"cardImage": "CFM_905.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Recrues à la petite semaine",
 			"text": "Vous piochez trois serviteurs à 1 cristal dans votre deck."
 		},
+		"goldenImage": "CFM_905.gif",
 		"id": "CFM_905",
 		"name": "Small-Time Recruits",
 		"playerClass": "Paladin",
@@ -18717,7 +18292,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Prince Malchezaar"
 		},
-		"goldenImage": "KARA_13_06H.gif",
 		"health": 30,
 		"id": "KARA_13_06H",
 		"name": "Prince Malchezaar",
@@ -18727,7 +18301,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Wayne Reynolds",
-		"cardImage": "CFM_754e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "Caractéristiques augmentées par le gadgétiseur des Dessoudeurs."
@@ -18745,7 +18318,6 @@ var parseCardsText = {
 			"name": "Le chambellan",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un acolyte attise-flammes 1/3."
 		},
-		"goldenImage": "BRMA06_2.gif",
 		"id": "BRMA06_2",
 		"name": "The Majordomo",
 		"playerClass": "Neutral",
@@ -18759,7 +18331,6 @@ var parseCardsText = {
 			"name": "Frappe déséquilibrante",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts."
 		},
-		"goldenImage": "NAX7_03.gif",
 		"id": "NAX7_03",
 		"name": "Unbalancing Strike",
 		"playerClass": "Neutral",
@@ -18772,7 +18343,6 @@ var parseCardsText = {
 			"name": "Griffes",
 			"text": "Votre héros a +1 ATQ pendant ce tour."
 		},
-		"goldenImage": "CS2_017o.gif",
 		"id": "CS2_017o",
 		"name": "Claws",
 		"playerClass": "Druid",
@@ -18785,7 +18355,6 @@ var parseCardsText = {
 			"name": "À l’abri",
 			"text": "Ce serviteur est protégé des attaques et ne peut pas avoir Provocation."
 		},
-		"goldenImage": "TB_Face_Ench1.gif",
 		"id": "TB_Face_Ench1",
 		"name": "Safe",
 		"playerClass": "Neutral",
@@ -18802,7 +18371,6 @@ var parseCardsText = {
 			"name": "Prince Malchezaar",
 			"text": "Quand la partie commence, ajoute 5 serviteurs <b>légendaires</b> dans votre deck."
 		},
-		"goldenImage": "KAR_096.gif",
 		"health": 6,
 		"id": "KAR_096",
 		"name": "Prince Malchezaar",
@@ -18816,7 +18384,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Plaie-de-nuit"
 		},
-		"goldenImage": "KARA_11_01heroic.gif",
 		"health": 30,
 		"id": "KARA_11_01heroic",
 		"name": "Nightbane",
@@ -18829,7 +18396,6 @@ var parseCardsText = {
 			"name": "Enragé",
 			"text": "+3 ATQ."
 		},
-		"goldenImage": "EX1_393e.gif",
 		"id": "EX1_393e",
 		"name": "Enraged",
 		"playerClass": "Neutral",
@@ -18840,13 +18406,13 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Esjing",
 		"attack": 4,
-		"cardImage": "OG_283.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Élue de C’Thun",
 			"text": "<b>Bouclier divin</b>. <b>Cri de\nguerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_283.gif",
 		"health": 2,
 		"id": "OG_283",
 		"name": "C'Thun's Chosen",
@@ -18858,7 +18424,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Eva Widermann",
-		"cardImage": "CFM_064e.png",
 		"fr": {
 			"name": "Agrandissement",
 			"text": "Caractéristiques augmentées."
@@ -18873,13 +18438,13 @@ var parseCardsText = {
 	{
 		"artist": "Vinod Rams",
 		"attack": 4,
-		"cardImage": "GVG_065.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Brute ogre",
 			"text": "50% de chance d’attaquer le mauvais adversaire."
 		},
+		"goldenImage": "GVG_065.gif",
 		"health": 4,
 		"id": "GVG_065",
 		"name": "Ogre Brute",
@@ -18895,7 +18460,6 @@ var parseCardsText = {
 			"name": "Amour véritable",
 			"text": "<b>Pouvoir héroïque</b>\nSi vous n’avez pas Romulo, l’invoque."
 		},
-		"goldenImage": "KARA_06_03hpheroic.gif",
 		"id": "KARA_06_03hpheroic",
 		"name": "True Love",
 		"playerClass": "Neutral",
@@ -18907,13 +18471,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 4,
-		"cardImage": "NEW1_029.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Millhouse Tempête-de-Mana",
 			"text": "<b>Cri de guerre :</b> les sorts adverses coûtent (0) |4(cristal,cristaux) au prochain tour."
 		},
+		"goldenImage": "NEW1_029.gif",
 		"health": 4,
 		"id": "NEW1_029",
 		"name": "Millhouse Manastorm",
@@ -18928,7 +18492,6 @@ var parseCardsText = {
 			"name": "En train de manger",
 			"text": "Vie augmentée."
 		},
-		"goldenImage": "KAR_036e.gif",
 		"id": "KAR_036e",
 		"name": "Eating",
 		"playerClass": "Neutral",
@@ -18939,13 +18502,13 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 4,
-		"cardImage": "AT_027.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Wilfred Flopboum",
 			"text": "Les cartes que vous piochez avec votre pouvoir héroïque coûtent (0) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_027.gif",
 		"health": 4,
 		"id": "AT_027",
 		"name": "Wilfred Fizzlebang",
@@ -18960,7 +18523,6 @@ var parseCardsText = {
 			"name": "Empty Enchant",
 			"text": "This enchantment does nothing."
 		},
-		"goldenImage": "XXX_009e.gif",
 		"id": "XXX_009e",
 		"name": "Empty Enchant",
 		"playerClass": "Neutral",
@@ -18973,7 +18535,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "TB_EnchWhosTheBossNow"
 		},
-		"goldenImage": "TB_RandHero2_001.gif",
 		"id": "TB_RandHero2_001",
 		"name": "TB_EnchWhosTheBossNow",
 		"playerClass": "Neutral",
@@ -18982,12 +18543,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "EX1_323w.png",
 		"cost": 3,
 		"durability": 8,
 		"fr": {
 			"name": "Fureur sanguinaire"
 		},
+		"goldenImage": "EX1_323w.gif",
 		"id": "EX1_323w",
 		"name": "Blood Fury",
 		"playerClass": "Warlock",
@@ -18997,13 +18558,13 @@ var parseCardsText = {
 	{
 		"artist": "Dave Kendall",
 		"attack": 1,
-		"cardImage": "EX1_007.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Acolyte de la souffrance",
 			"text": "Vous piochez une carte chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "EX1_007.gif",
 		"health": 3,
 		"id": "EX1_007",
 		"name": "Acolyte of Pain",
@@ -19016,13 +18577,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
-		"cardImage": "OG_254.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Mange-secrets",
 			"text": "<b>Cri de guerre :</b> détruit tous les <b>secrets</b> adverses. Gagne +1/+1 par secret détruit."
 		},
+		"goldenImage": "OG_254.gif",
 		"health": 4,
 		"id": "OG_254",
 		"name": "Eater of Secrets",
@@ -19037,7 +18598,6 @@ var parseCardsText = {
 			"name": "Pouvoir interdit",
 			"text": "Caractéristiques augmentées."
 		},
-		"goldenImage": "OG_051e.gif",
 		"id": "OG_051e",
 		"name": "Forbidden Power",
 		"playerClass": "Druid",
@@ -19048,13 +18608,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 7,
-		"cardImage": "BRM_009.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Lourdaud volcanique",
 			"text": "<b>Provocation</b>.\n Coûte (1) |4(cristal,cristaux) de moins pour chaque serviteur mort pendant ce tour."
 		},
+		"goldenImage": "BRM_009.gif",
 		"health": 8,
 		"id": "BRM_009",
 		"name": "Volcanic Lumberer",
@@ -19068,7 +18628,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Miroir magique"
 		},
-		"goldenImage": "KAR_A01_01H.gif",
 		"health": 30,
 		"id": "KAR_A01_01H",
 		"name": "Magic Mirror",
@@ -19079,13 +18638,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Orizio",
 		"attack": 0,
-		"cardImage": "OG_200.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Auspice funeste confirmé",
 			"text": "Au début de votre tour, porte l’Attaque de ce serviteur à 7."
 		},
+		"goldenImage": "OG_200.gif",
 		"health": 7,
 		"id": "OG_200",
 		"name": "Validated Doomsayer",
@@ -19101,7 +18660,6 @@ var parseCardsText = {
 			"name": "Tir assuré",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts au héros adverse."
 		},
-		"goldenImage": "DS1h_292_H1.gif",
 		"id": "DS1h_292_H1",
 		"name": "Steady Shot",
 		"playerClass": "Hunter",
@@ -19113,13 +18671,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 12,
-		"cardImage": "OG_317.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Seigneur Aile de mort",
 			"text": "<b>Râle d’agonie :</b> place tous les dragons de votre main sur le champ de bataille."
 		},
+		"goldenImage": "OG_317.gif",
 		"health": 12,
 		"id": "OG_317",
 		"name": "Deathwing, Dragonlord",
@@ -19131,13 +18689,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ben Wootten",
-		"cardImage": "EX1_596.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Feu démoniaque",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur. Si la cible est un de vos démons, lui donne +2/+2 à la place."
 		},
+		"goldenImage": "EX1_596.gif",
 		"id": "EX1_596",
 		"name": "Demonfire",
 		"playerClass": "Warlock",
@@ -19148,12 +18706,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CS2_082.png",
 		"cost": 1,
 		"durability": 2,
 		"fr": {
 			"name": "Lame pernicieuse"
 		},
+		"goldenImage": "CS2_082.gif",
 		"id": "CS2_082",
 		"name": "Wicked Knife",
 		"playerClass": "Rogue",
@@ -19166,7 +18724,6 @@ var parseCardsText = {
 			"name": "Faveur du demi-dieu",
 			"text": "+2/+2."
 		},
-		"goldenImage": "EX1_573ae.gif",
 		"id": "EX1_573ae",
 		"name": "Demigod's Favor",
 		"playerClass": "Druid",
@@ -19175,12 +18732,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA_01.png",
 		"cost": 3,
 		"fr": {
 			"name": "Cœur-de-flammes",
 			"text": "Vous piochez 2 cartes.\nVous donne 4 points d’armure."
 		},
+		"goldenImage": "BRMA_01.gif",
 		"id": "BRMA_01",
 		"name": "Flameheart",
 		"playerClass": "Neutral",
@@ -19191,13 +18748,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 4,
-		"cardImage": "EX1_593.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Lamenuit",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts au héros adverse."
 		},
+		"goldenImage": "EX1_593.gif",
 		"health": 4,
 		"id": "EX1_593",
 		"name": "Nightblade",
@@ -19208,12 +18765,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA10_5H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Mrgl mrgl niah niah !",
 			"text": "Invoque 5 murlocs détruits pendant cette partie."
 		},
+		"goldenImage": "LOEA10_5H.gif",
 		"id": "LOEA10_5H",
 		"name": "Mrgl Mrgl Nyah Nyah",
 		"playerClass": "Neutral",
@@ -19224,12 +18781,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "NAX15_05.png",
 		"cost": 0,
 		"fr": {
 			"name": "M. Bigglesworth",
 			"text": "<i>Le chat-chat adoré de Kel’Thuzad.</i>"
 		},
+		"goldenImage": "NAX15_05.gif",
 		"health": 1,
 		"id": "NAX15_05",
 		"name": "Mr. Bigglesworth",
@@ -19241,13 +18798,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Anton Zemskov",
-		"cardImage": "OG_045.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Infester",
 			"text": "Confère à vos serviteurs « <b>Râle d’agonie :</b> ajoute une carte Bête aléatoire dans votre main. »"
 		},
+		"goldenImage": "OG_045.gif",
 		"id": "OG_045",
 		"name": "Infest",
 		"playerClass": "Hunter",
@@ -19262,7 +18819,6 @@ var parseCardsText = {
 			"name": "Portail astral",
 			"text": "Invoque un serviteur <b>légendaire</b> aléatoire."
 		},
-		"goldenImage": "KARA_00_07.gif",
 		"id": "KARA_00_07",
 		"name": "Astral Portal",
 		"playerClass": "Mage",
@@ -19284,12 +18840,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "LOEA16_12.png",
 		"cost": 0,
 		"fr": {
 			"name": "Médaillon de Medivh",
 			"text": "Remplace votre main par des cartes Portail instable."
 		},
+		"goldenImage": "LOEA16_12.gif",
 		"id": "LOEA16_12",
 		"name": "Medivh's Locket",
 		"playerClass": "Neutral",
@@ -19300,13 +18856,13 @@ var parseCardsText = {
 	{
 		"artist": "Zero Yue",
 		"attack": 2,
-		"cardImage": "GVG_091.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Annulateur d’Arcane X-21",
 			"text": "<b>Provocation</b>\nNe peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "GVG_091.gif",
 		"health": 5,
 		"id": "GVG_091",
 		"name": "Arcane Nullifier X-21",
@@ -19325,7 +18881,6 @@ var parseCardsText = {
 			"name": "Magicien de la Ménagerie",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à une Bête, un Dragon et un Murloc alliés aléatoires."
 		},
-		"goldenImage": "KAR_702.gif",
 		"health": 4,
 		"id": "KAR_702",
 		"name": "Menagerie Magician",
@@ -19337,12 +18892,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "BRMA14_3.png",
 		"cost": 0,
 		"fr": {
 			"name": "Arcanotron",
 			"text": "Chaque joueur a <b>+2 aux dégâts des sorts</b>."
 		},
+		"goldenImage": "BRMA14_3.gif",
 		"health": 2,
 		"id": "BRMA14_3",
 		"name": "Arcanotron",
@@ -19356,12 +18911,12 @@ var parseCardsText = {
 	{
 		"artist": "Greg Staples",
 		"attack": 2,
-		"cardImage": "OG_318t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Gnoll",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_318t.gif",
 		"health": 2,
 		"id": "OG_318t",
 		"name": "Gnoll",
@@ -19372,12 +18927,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "CS2_052.png",
 		"cost": 1,
 		"fr": {
 			"name": "Totem de courroux de l’air",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CS2_052.gif",
 		"health": 2,
 		"id": "CS2_052",
 		"name": "Wrath of Air Totem",
@@ -19389,12 +18944,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "PRO_001b.png",
 		"cost": 4,
 		"fr": {
 			"name": "Les voleurs, ça vous prend...",
 			"text": "Inflige $4 |4(point,points) de dégâts. Vous piochez une carte."
 		},
+		"goldenImage": "PRO_001b.gif",
 		"id": "PRO_001b",
 		"name": "Rogues Do It...",
 		"playerClass": "Neutral",
@@ -19405,13 +18960,13 @@ var parseCardsText = {
 	{
 		"artist": "Simon Bisley",
 		"attack": 2,
-		"cardImage": "EX1_604.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Berserker écumant",
 			"text": "Chaque fois qu’un serviteur subit des dégâts, gagne +1 ATQ."
 		},
+		"goldenImage": "EX1_604.gif",
 		"health": 4,
 		"id": "EX1_604",
 		"name": "Frothing Berserker",
@@ -19424,13 +18979,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 6,
-		"cardImage": "OG_300.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "L’Épouvantueur",
 			"text": "Quand il attaque un serviteur et le tue,\ngagne +2/+2."
 		},
+		"goldenImage": "OG_300.gif",
 		"health": 7,
 		"id": "OG_300",
 		"name": "The Boogeymonster",
@@ -19446,7 +19001,6 @@ var parseCardsText = {
 			"name": "Remove All Immune",
 			"text": "Remove <b>Immune</b> from ALL characters."
 		},
-		"goldenImage": "XXX_065.gif",
 		"id": "XXX_065",
 		"name": "Remove All Immune",
 		"playerClass": "Neutral",
@@ -19458,11 +19012,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 26,
-		"cardImage": "CFM_712_t26.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t26.gif",
 		"health": 26,
 		"id": "CFM_712_t26",
 		"name": "Jade Golem",
@@ -19471,12 +19025,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_154b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Colère",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_154b.gif",
 		"id": "EX1_154b",
 		"name": "Wrath",
 		"playerClass": "Druid",
@@ -19486,13 +19040,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "CS2_045.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Arme croque-roc",
 			"text": "Donne +3 ATQ à un personnage allié pendant ce tour."
 		},
+		"goldenImage": "CS2_045.gif",
 		"id": "CS2_045",
 		"name": "Rockbiter Weapon",
 		"playerClass": "Shaman",
@@ -19503,12 +19057,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "BRMA14_7.png",
 		"cost": 3,
 		"fr": {
 			"name": "Électron",
 			"text": "Tous les sorts coûtent (3) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "BRMA14_7.gif",
 		"health": 5,
 		"id": "BRMA14_7",
 		"name": "Electron",
@@ -19521,13 +19075,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 4,
-		"cardImage": "AT_119.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Écumeur kvaldir",
 			"text": "<b>Exaltation :</b> gagne +2/+2."
 		},
+		"goldenImage": "AT_119.gif",
 		"health": 4,
 		"id": "AT_119",
 		"name": "Kvaldir Raider",
@@ -19538,12 +19092,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_11b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Bonus : murloc",
 			"text": "À la fin de votre tour, invoque un murloc 1/1."
 		},
+		"goldenImage": "TB_PickYourFate_11b.gif",
 		"id": "TB_PickYourFate_11b",
 		"name": "Murloc Bonus",
 		"playerClass": "Neutral",
@@ -19556,7 +19110,6 @@ var parseCardsText = {
 			"name": "Rayon bleu",
 			"text": "Ne subit que 1 point de dégâts à la fois."
 		},
-		"goldenImage": "KARA_08_06e2.gif",
 		"id": "KARA_08_06e2",
 		"name": "Blue Beam",
 		"playerClass": "Neutral",
@@ -19578,12 +19131,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "XXX_096.png",
 		"cost": 0,
 		"fr": {
 			"name": "AI Buddy - Damage Own Hero 5",
 			"text": "Spawn into play to smack your own hero for 5."
 		},
+		"goldenImage": "XXX_096.gif",
 		"health": 1,
 		"id": "XXX_096",
 		"name": "AI Buddy - Damage Own Hero 5",
@@ -19593,10 +19146,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA13_1.png",
 		"fr": {
 			"name": "Squeletosaurus Hex"
 		},
+		"goldenImage": "LOEA13_1.gif",
 		"health": 30,
 		"id": "LOEA13_1",
 		"name": "Skelesaurus Hex",
@@ -19610,7 +19163,6 @@ var parseCardsText = {
 			"name": "Bâton de l’Origine",
 			"text": "<b>Pouvoir héroïque passif</b>\nVotre héros est <b>Insensible</b>."
 		},
-		"goldenImage": "LOEA16_2H.gif",
 		"id": "LOEA16_2H",
 		"name": "Staff of Origination",
 		"playerClass": "Neutral",
@@ -19624,7 +19176,6 @@ var parseCardsText = {
 			"name": "Ancienne Horde",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque deux orcs 2/2 avec <b>Provocation</b>. Change de pouvoir héroïque."
 		},
-		"goldenImage": "BRMA09_3H.gif",
 		"id": "BRMA09_3H",
 		"name": "Old Horde",
 		"playerClass": "Neutral",
@@ -19634,13 +19185,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Prescott",
-		"cardImage": "EX1_617.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Tir meurtrier",
 			"text": "Détruit un serviteur adverse aléatoire."
 		},
+		"goldenImage": "EX1_617.gif",
 		"id": "EX1_617",
 		"name": "Deadly Shot",
 		"playerClass": "Hunter",
@@ -19651,13 +19202,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Rapoza",
-		"cardImage": "EX1_578.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Sauvagerie",
 			"text": "Inflige des dégâts d’un montant équivalent à l’Attaque de votre héros à un serviteur."
 		},
+		"goldenImage": "EX1_578.gif",
 		"id": "EX1_578",
 		"name": "Savagery",
 		"playerClass": "Druid",
@@ -19673,7 +19224,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Assiette"
 		},
-		"goldenImage": "KAR_A02_01.gif",
 		"health": 1,
 		"id": "KAR_A02_01",
 		"name": "Plate",
@@ -19684,13 +19234,13 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 5,
-		"cardImage": "OG_302.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Passeuse d’âmes",
 			"text": "Chaque fois qu’un serviteur allié meurt, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_302.gif",
 		"health": 6,
 		"id": "OG_302",
 		"name": "Usher of Souls",
@@ -19703,13 +19253,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
-		"cardImage": "EX1_067.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Commandant d’Argent",
 			"text": "<b>Charge</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_067.gif",
 		"health": 2,
 		"id": "EX1_067",
 		"name": "Argent Commander",
@@ -19726,7 +19276,6 @@ var parseCardsText = {
 			"name": "Triche",
 			"text": "<b>Pouvoir héroïque</b>\nDétruit le serviteur adverse le plus à gauche."
 		},
-		"goldenImage": "KAR_A10_33.gif",
 		"id": "KAR_A10_33",
 		"name": "Cheat",
 		"playerClass": "Neutral",
@@ -19736,11 +19285,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "LOEA07_12.png",
 		"cost": 5,
 		"fr": {
 			"name": "Poursuivant terrestre"
 		},
+		"goldenImage": "LOEA07_12.gif",
 		"health": 6,
 		"id": "LOEA07_12",
 		"name": "Earthen Pursuer",
@@ -19750,11 +19299,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA04_23.png",
 		"cost": 7,
 		"fr": {
 			"name": "Insecte géant"
 		},
+		"goldenImage": "LOEA04_23.gif",
 		"health": 3,
 		"id": "LOEA04_23",
 		"name": "Giant Insect",
@@ -19763,7 +19312,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_SPT_DPromoSecret1.png",
 		"cost": 2,
 		"fr": {
 			"name": "Visions du barbare",
@@ -19782,7 +19330,6 @@ var parseCardsText = {
 			"name": "Ombre impie",
 			"text": "<b>Pouvoir héroïque</b>\nPioche deux cartes."
 		},
-		"goldenImage": "NAX9_06.gif",
 		"id": "NAX9_06",
 		"name": "Unholy Shadow",
 		"playerClass": "Neutral",
@@ -19793,13 +19340,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 6,
-		"cardImage": "CFM_062.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Protecteur des Dessoudeurs",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> confère <b>Bouclier divin</b> aux serviteurs adjacents."
 		},
+		"goldenImage": "CFM_062.gif",
 		"health": 6,
 		"id": "CFM_062",
 		"name": "Grimestreet Protector",
@@ -19811,11 +19358,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "PRO_001at.png",
 		"cost": 0,
 		"fr": {
 			"name": "Murloc"
 		},
+		"goldenImage": "PRO_001at.gif",
 		"health": 1,
 		"id": "PRO_001at",
 		"name": "Murloc",
@@ -19826,13 +19373,13 @@ var parseCardsText = {
 	{
 		"artist": "Chris Rahn",
 		"attack": 5,
-		"cardImage": "AT_018.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Confesseur d’argent Paletress",
 			"text": "<b>Exaltation :</b> invoque un serviteur <b>légendaire</b> aléatoire."
 		},
+		"goldenImage": "AT_018.gif",
 		"health": 4,
 		"id": "AT_018",
 		"name": "Confessor Paletress",
@@ -19845,13 +19392,13 @@ var parseCardsText = {
 	{
 		"artist": "Danny Beck",
 		"attack": 4,
-		"cardImage": "GVG_025.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Tricheur borgne",
 			"text": "Chaque fois que vous jouez un pirate, gagne <b>Camouflage</b>."
 		},
+		"goldenImage": "GVG_025.gif",
 		"health": 1,
 		"id": "GVG_025",
 		"name": "One-eyed Cheat",
@@ -19866,7 +19413,6 @@ var parseCardsText = {
 			"name": "Puissance sinistre",
 			"text": "+4/+4."
 		},
-		"goldenImage": "LOE_009e.gif",
 		"id": "LOE_009e",
 		"name": "Sinister Power",
 		"playerClass": "Warlock",
@@ -19880,7 +19426,6 @@ var parseCardsText = {
 			"name": "Perle des marées",
 			"text": "À la fin de votre tour, remplace tous les serviteurs par de nouveaux. Les vôtres coûtent (1) |4(cristal,cristaux) de plus."
 		},
-		"goldenImage": "LOEA12_2H.gif",
 		"id": "LOEA12_2H",
 		"name": "Pearl of the Tides",
 		"playerClass": "Neutral",
@@ -19890,7 +19435,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Gimaldinov",
-		"cardImage": "CFM_610e.png",
 		"fr": {
 			"name": "Ombres acérées",
 			"text": "+1/+1."
@@ -19905,13 +19449,13 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"attack": 4,
-		"cardImage": "CFM_672.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Madame Goya",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur allié et l’échange avec un serviteur de votre deck."
 		},
+		"goldenImage": "CFM_672.gif",
 		"health": 3,
 		"id": "CFM_672",
 		"name": "Madam Goya",
@@ -19922,10 +19466,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA01_1.png",
 		"fr": {
 			"name": "Coren Navrebière"
 		},
+		"goldenImage": "BRMA01_1.gif",
 		"health": 30,
 		"id": "BRMA01_1",
 		"name": "Coren Direbrew",
@@ -19939,7 +19483,6 @@ var parseCardsText = {
 			"name": "Ne me poussez pas !",
 			"text": "Il se met en colère…"
 		},
-		"goldenImage": "TB_CoOpv3_011.gif",
 		"id": "TB_CoOpv3_011",
 		"name": "Don't Push Me!",
 		"playerClass": "Neutral",
@@ -19950,13 +19493,13 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 3,
-		"cardImage": "GVG_092.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Expérimentateur gnome",
 			"text": "<b>Cri de guerre :</b> vous piochez une carte. Si c’est un serviteur, le transforme en poulet."
 		},
+		"goldenImage": "GVG_092.gif",
 		"health": 2,
 		"id": "GVG_092",
 		"name": "Gnomish Experimenter",
@@ -19967,12 +19510,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA16_15.png",
 		"cost": 0,
 		"fr": {
 			"name": "Larme d’Ysera",
 			"text": "Gagne 4 cristaux de mana pendant ce tour uniquement."
 		},
+		"goldenImage": "LOEA16_15.gif",
 		"id": "LOEA16_15",
 		"name": "Ysera's Tear",
 		"playerClass": "Neutral",
@@ -19987,7 +19530,6 @@ var parseCardsText = {
 			"name": "Couteau",
 			"text": "Les assiettes ont <b>Provocation</b>."
 		},
-		"goldenImage": "KAR_A02_04H.gif",
 		"health": 5,
 		"id": "KAR_A02_04H",
 		"name": "Knife",
@@ -20002,7 +19544,6 @@ var parseCardsText = {
 			"name": "Add 8 to Health.",
 			"text": "Adds 8 health to a damaged character. Does NOT heal."
 		},
-		"goldenImage": "XXX_105.gif",
 		"id": "XXX_105",
 		"name": "Add 8 to Health.",
 		"playerClass": "Neutral",
@@ -20016,7 +19557,6 @@ var parseCardsText = {
 			"name": "Ombres de M’uru",
 			"text": "Ce serviteur a consumé les Boucliers divins, et ses points d’Attaque et de Vie sont augmentés."
 		},
-		"goldenImage": "EX1_590e.gif",
 		"id": "EX1_590e",
 		"name": "Shadows of M'uru",
 		"playerClass": "Neutral",
@@ -20027,13 +19567,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "LOE_027.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Épreuve sacrée",
 			"text": "<b>Secret :</b> si votre adversaire possède au moins 3 serviteurs et qu’il en joue un autre, le détruit."
 		},
+		"goldenImage": "LOE_027.gif",
 		"id": "LOE_027",
 		"name": "Sacred Trial",
 		"playerClass": "Paladin",
@@ -20045,13 +19585,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 1,
-		"cardImage": "CFM_637.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Neunœil le pirate",
 			"text": "<b>Charge</b>. Une fois que vous avez joué un Pirate, invoque ce serviteur de votre deck."
 		},
+		"goldenImage": "CFM_637.gif",
 		"health": 1,
 		"id": "CFM_637",
 		"name": "Patches the Pirate",
@@ -20062,12 +19602,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_006.png",
 		"cost": 1,
 		"fr": {
 			"name": "Grande banane",
 			"text": "Donne +2/+2 à un serviteur."
 		},
+		"goldenImage": "TB_006.gif",
 		"id": "TB_006",
 		"name": "Big Banana",
 		"playerClass": "Neutral",
@@ -20081,7 +19621,6 @@ var parseCardsText = {
 			"name": "Vous êtes notre invité",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque deux assiettes 1/1."
 		},
-		"goldenImage": "KAR_A02_13H.gif",
 		"id": "KAR_A02_13H",
 		"name": "Be Our Guest",
 		"playerClass": "Neutral",
@@ -20094,7 +19633,6 @@ var parseCardsText = {
 			"name": "Brume surpuissante",
 			"text": "+1/+1."
 		},
-		"goldenImage": "AT_045e.gif",
 		"id": "AT_045e",
 		"name": "Empowering Mist",
 		"playerClass": "Neutral",
@@ -20110,7 +19648,6 @@ var parseCardsText = {
 			"name": "Tasse",
 			"text": "Les assiettes ont +1 ATQ."
 		},
-		"goldenImage": "KAR_A02_05.gif",
 		"health": 1,
 		"id": "KAR_A02_05",
 		"name": "Cup",
@@ -20122,13 +19659,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 5,
-		"cardImage": "EX1_283.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Élémentaire de givre",
 			"text": "<b>Cri de guerre :</b> <b>gèle</b> un personnage."
 		},
+		"goldenImage": "EX1_283.gif",
 		"health": 5,
 		"id": "EX1_283",
 		"name": "Frost Elemental",
@@ -20143,7 +19680,6 @@ var parseCardsText = {
 			"name": "CADEAU BONUS",
 			"text": "+2/+2."
 		},
-		"goldenImage": "GVG_104a.gif",
 		"id": "GVG_104a",
 		"name": "HERE, TAKE BUFF.",
 		"playerClass": "Neutral",
@@ -20153,12 +19689,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CRED_03.png",
 		"cost": 3,
 		"fr": {
 			"name": "Bob Fitch",
 			"text": "<b>Super provocation</b> <i>(TOUS les personnages doivent attaquer ce serviteur.)</i>"
 		},
+		"goldenImage": "CRED_03.gif",
 		"health": 4,
 		"id": "CRED_03",
 		"name": "Bob Fitch",
@@ -20170,12 +19706,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "XXX_098.png",
 		"cost": 0,
 		"fr": {
 			"name": "AI Buddy - No Deck/Hand",
 			"text": "Spawn into play to destroy the AI's Hand and Deck."
 		},
+		"goldenImage": "XXX_098.gif",
 		"health": 1,
 		"id": "XXX_098",
 		"name": "AI Buddy - No Deck/Hand",
@@ -20186,12 +19722,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_KTRAF_5.png",
 		"cost": 4,
 		"fr": {
 			"name": "Grande veuve Faerlina",
 			"text": "Obtient +1 ATQ pour chaque carte dans la main de votre adversaire."
 		},
+		"goldenImage": "TB_KTRAF_5.gif",
 		"health": 5,
 		"id": "TB_KTRAF_5",
 		"name": "Grand Widow Faerlina",
@@ -20205,7 +19741,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Roi noir"
 		},
-		"goldenImage": "KAR_a10_Boss2.gif",
 		"health": 20,
 		"id": "KAR_a10_Boss2",
 		"name": "Black King",
@@ -20216,13 +19751,13 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 7,
-		"cardImage": "LOE_009.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Destructeur d’obsidienne",
 			"text": "À la fin de votre tour, invoque un scarabée 1/1 avec <b>Provocation</b>."
 		},
+		"goldenImage": "LOE_009.gif",
 		"health": 7,
 		"id": "LOE_009",
 		"name": "Obsidian Destroyer",
@@ -20235,7 +19770,6 @@ var parseCardsText = {
 	{
 		"artist": "Jeremy Cranford",
 		"attack": 3,
-		"cardImage": "OG_222.png",
 		"collectible": true,
 		"cost": 3,
 		"durability": 2,
@@ -20243,6 +19777,7 @@ var parseCardsText = {
 			"name": "Lame de ralliement",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à vos serviteurs avec <b>Bouclier divin</b>."
 		},
+		"goldenImage": "OG_222.gif",
 		"id": "OG_222",
 		"name": "Rallying Blade",
 		"playerClass": "Paladin",
@@ -20253,13 +19788,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Trent Kaniuga",
-		"cardImage": "EX1_244.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Puissance totémique",
 			"text": "Donne +2 PV à vos totems."
 		},
+		"goldenImage": "EX1_244.gif",
 		"id": "EX1_244",
 		"name": "Totemic Might",
 		"playerClass": "Shaman",
@@ -20271,13 +19806,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
-		"cardImage": "tt_004.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Goule mangeuse de chair",
 			"text": "Chaque fois qu’un serviteur meurt, gagne +1 ATQ."
 		},
+		"goldenImage": "tt_004.gif",
 		"health": 3,
 		"id": "tt_004",
 		"name": "Flesheating Ghoul",
@@ -20288,10 +19823,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA17_3.png",
 		"fr": {
 			"name": "Onyxia"
 		},
+		"goldenImage": "BRMA17_3.gif",
 		"health": 15,
 		"id": "BRMA17_3",
 		"name": "Onyxia",
@@ -20301,12 +19836,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "EX1_538t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Chien",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "EX1_538t.gif",
 		"health": 1,
 		"id": "EX1_538t",
 		"name": "Hound",
@@ -20318,13 +19853,13 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 5,
-		"cardImage": "CFM_651.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Corsaire naga",
 			"text": "<b>Cri de guerre :</b> donne +1 ATQ à votre arme."
 		},
+		"goldenImage": "CFM_651.gif",
 		"health": 4,
 		"id": "CFM_651",
 		"name": "Naga Corsair",
@@ -20339,7 +19874,6 @@ var parseCardsText = {
 			"name": "Puissance de la ziggourat",
 			"text": "+3 PV."
 		},
-		"goldenImage": "FP1_023e.gif",
 		"id": "FP1_023e",
 		"name": "Power of the Ziggurat",
 		"playerClass": "Priest",
@@ -20352,7 +19886,6 @@ var parseCardsText = {
 			"name": "Je vous entends…",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "BRMA16_5e.gif",
 		"id": "BRMA16_5e",
 		"name": "I hear you...",
 		"playerClass": "Neutral",
@@ -20361,12 +19894,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_CoOpBossSpell_5.png",
 		"cost": 0,
 		"fr": {
 			"name": "Double zap",
 			"text": "Inflige les dégâts de l’attaque aux deux joueurs."
 		},
+		"goldenImage": "TB_CoOpBossSpell_5.gif",
 		"id": "TB_CoOpBossSpell_5",
 		"name": "Double Zap",
 		"playerClass": "Neutral",
@@ -20375,12 +19908,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRM_010a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Forme de félin-de-feu",
 			"text": "Se transforme en un serviteur 5/2."
 		},
+		"goldenImage": "BRM_010a.gif",
 		"id": "BRM_010a",
 		"name": "Firecat Form",
 		"playerClass": "Druid",
@@ -20390,12 +19923,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX9_07.png",
 		"cost": 5,
 		"fr": {
 			"name": "Marque des cavaliers",
 			"text": "Donne +1/+1 à vos serviteurs et à votre arme."
 		},
+		"goldenImage": "NAX9_07.gif",
 		"id": "NAX9_07",
 		"name": "Mark of the Horsemen",
 		"playerClass": "Neutral",
@@ -20404,12 +19937,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX11_04.png",
 		"cost": 3,
 		"fr": {
 			"name": "Injection mutante",
 			"text": "Donne +4/+4 et <b>Provocation</b> à un serviteur."
 		},
+		"goldenImage": "NAX11_04.gif",
 		"id": "NAX11_04",
 		"name": "Mutating Injection",
 		"playerClass": "Neutral",
@@ -20419,12 +19952,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 9,
-		"cardImage": "TB_CoOp_Mechazod2.png",
 		"cost": 10,
 		"fr": {
 			"name": "Mécazod surchargé",
 			"text": "<b>Boss</b>\nAu début de chaque tour, Mécazod frappe !"
 		},
+		"goldenImage": "TB_CoOp_Mechazod2.gif",
 		"health": 80,
 		"id": "TB_CoOp_Mechazod2",
 		"name": "Overloaded Mechazod",
@@ -20439,7 +19972,6 @@ var parseCardsText = {
 			"name": "Rayon rouge",
 			"text": "A <b>Furie des vents</b>."
 		},
-		"goldenImage": "KARA_08_08e2.gif",
 		"id": "KARA_08_08e2",
 		"name": "Red Beam",
 		"playerClass": "Neutral",
@@ -20450,13 +19982,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 4,
-		"cardImage": "EX1_095.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Commissaire-priseur",
 			"text": "Vous piochez une carte chaque fois que vous lancez un sort."
 		},
+		"goldenImage": "EX1_095.gif",
 		"health": 4,
 		"id": "EX1_095",
 		"name": "Gadgetzan Auctioneer",
@@ -20471,7 +20003,6 @@ var parseCardsText = {
 			"name": "Obnubilé par les trésors",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "NEW1_018e.gif",
 		"id": "NEW1_018e",
 		"name": "Treasure Crazed",
 		"playerClass": "Neutral",
@@ -20482,13 +20013,13 @@ var parseCardsText = {
 	{
 		"artist": "Clint Langley",
 		"attack": 2,
-		"cardImage": "GVG_040.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Marche-esprit aileron vaseux",
 			"text": "Chaque fois qu’un autre murloc allié meurt, vous piochez une carte.\n<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "GVG_040.gif",
 		"health": 5,
 		"id": "GVG_040",
 		"name": "Siltfin Spiritwalker",
@@ -20501,12 +20032,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NAX8_03.png",
 		"cost": 1,
 		"fr": {
 			"name": "Jeune recrue tenace",
 			"text": "<b>Râle d’agonie :</b> invoque une jeune recrue spectrale pour votre adversaire."
 		},
+		"goldenImage": "NAX8_03.gif",
 		"health": 2,
 		"id": "NAX8_03",
 		"name": "Unrelenting Trainee",
@@ -20517,12 +20048,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Alexandrov",
-		"cardImage": "OG_047b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Production d’écailles",
 			"text": "Donne 8 points d’armure."
 		},
+		"goldenImage": "OG_047b.gif",
 		"id": "OG_047b",
 		"name": "Evolve Scales",
 		"playerClass": "Druid",
@@ -20534,13 +20065,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 6,
-		"cardImage": "GVG_056.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Mastodonte de fer",
 			"text": "<b>Cri de guerre :</b> place une mine dans le deck de votre adversaire. Quand elle est piochée, elle explose et inflige 10 points de dégâts."
 		},
+		"goldenImage": "GVG_056.gif",
 		"health": 5,
 		"id": "GVG_056",
 		"name": "Iron Juggernaut",
@@ -20553,13 +20084,13 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 5,
-		"cardImage": "GVG_028.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Prince marchand Gallywix",
 			"text": "Chaque fois que votre adversaire lance un sort, il obtient une Pièce et vous gagnez une copie du sort."
 		},
+		"goldenImage": "GVG_028.gif",
 		"health": 8,
 		"id": "GVG_028",
 		"name": "Trade Prince Gallywix",
@@ -20571,11 +20102,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "NAX1h_03.png",
 		"cost": 2,
 		"fr": {
 			"name": "Nérubien"
 		},
+		"goldenImage": "NAX1h_03.gif",
 		"health": 4,
 		"id": "NAX1h_03",
 		"name": "Nerubian",
@@ -20585,13 +20116,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jimmy Lo",
-		"cardImage": "OG_023.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Fusion primordiale",
 			"text": "Donne +1/+1 à un serviteur pour chacun de vos totems."
 		},
+		"goldenImage": "OG_023.gif",
 		"id": "OG_023",
 		"name": "Primal Fusion",
 		"playerClass": "Shaman",
@@ -20602,12 +20133,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Nutthapon Petthai",
-		"cardImage": "PART_006.png",
 		"cost": 1,
 		"fr": {
 			"name": "Inverseur",
 			"text": "Inverse l’Attaque et la Vie d’un serviteur."
 		},
+		"goldenImage": "PART_006.gif",
 		"id": "PART_006",
 		"name": "Reversing Switch",
 		"playerClass": "Neutral",
@@ -20616,10 +20147,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA10_1.png",
 		"fr": {
 			"name": "Tranchetripe l’Indompté"
 		},
+		"goldenImage": "BRMA10_1.gif",
 		"health": 30,
 		"id": "BRMA10_1",
 		"name": "Razorgore the Untamed",
@@ -20632,7 +20163,6 @@ var parseCardsText = {
 			"name": "Lame de Bling-o-tron",
 			"text": "Quand elle casse, invoque une nouvelle arme aléatoire."
 		},
-		"goldenImage": "TB_BlingBrawl_Blade1e.gif",
 		"id": "TB_BlingBrawl_Blade1e",
 		"name": "Blingtron's Blade",
 		"playerClass": "Neutral",
@@ -20643,13 +20173,13 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 1,
-		"cardImage": "AT_133.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Jouteuse de Gadgetzan",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne +1/+1."
 		},
+		"goldenImage": "AT_133.gif",
 		"health": 2,
 		"id": "AT_133",
 		"name": "Gadgetzan Jouster",
@@ -20664,7 +20194,6 @@ var parseCardsText = {
 			"name": "Visage terrifiant",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "OG_271e.gif",
 		"id": "OG_271e",
 		"name": "Terrifying Visage",
 		"playerClass": "Neutral",
@@ -20674,13 +20203,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "NAX10_02H.png",
 		"cost": 3,
 		"durability": 8,
 		"fr": {
 			"name": "Crochet",
 			"text": "<b>Furie des vents</b>\n<b>Râle d’agonie :</b> place cette arme dans votre main."
 		},
+		"goldenImage": "NAX10_02H.gif",
 		"id": "NAX10_02H",
 		"name": "Hook",
 		"playerClass": "Neutral",
@@ -20691,13 +20220,13 @@ var parseCardsText = {
 	{
 		"artist": "Ben Thompson",
 		"attack": 3,
-		"cardImage": "AT_131.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Eydis Plaie-sombre",
 			"text": "Chaque fois que <b>vous</b> ciblez ce serviteur avec un sort, inflige\n3 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "AT_131.gif",
 		"health": 4,
 		"id": "AT_131",
 		"name": "Eydis Darkbane",
@@ -20709,12 +20238,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TU4e_004.png",
 		"cost": 2,
 		"durability": 2,
 		"fr": {
 			"name": "Glaive de guerre d’Azzinoth"
 		},
+		"goldenImage": "TU4e_004.gif",
 		"id": "TU4e_004",
 		"name": "Warglaive of Azzinoth",
 		"playerClass": "Neutral",
@@ -20724,12 +20253,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "BRMA10_4.png",
 		"cost": 1,
 		"fr": {
 			"name": "Œuf corrompu",
 			"text": "Éclot quand il a 4 PV ou plus."
 		},
+		"goldenImage": "BRMA10_4.gif",
 		"health": 1,
 		"id": "BRMA10_4",
 		"name": "Corrupted Egg",
@@ -20741,13 +20270,13 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 4,
-		"cardImage": "AT_054.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Le mandebrume",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à tous les serviteurs dans votre main et votre deck."
 		},
+		"goldenImage": "AT_054.gif",
 		"health": 4,
 		"id": "AT_054",
 		"name": "The Mistcaller",
@@ -20762,7 +20291,6 @@ var parseCardsText = {
 			"name": "Forges d’Orgrimmar",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "AT_066e.gif",
 		"id": "AT_066e",
 		"name": "Forges of Orgrimmar",
 		"playerClass": "Warrior",
@@ -20772,12 +20300,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "CS2_051.png",
 		"cost": 1,
 		"fr": {
 			"name": "Totem de griffes de pierre",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_051.gif",
 		"health": 2,
 		"id": "CS2_051",
 		"name": "Stoneclaw Totem",
@@ -20792,7 +20320,6 @@ var parseCardsText = {
 			"name": "Furie sanguinaire",
 			"text": "+3 ATQ pendant ce tour."
 		},
-		"goldenImage": "CS2_046e.gif",
 		"id": "CS2_046e",
 		"name": "Bloodlust",
 		"playerClass": "Shaman",
@@ -20801,12 +20328,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA16_13.png",
 		"cost": 0,
 		"fr": {
 			"name": "Œil d’Orsis",
 			"text": "<b>Découvre</b> un serviteur. Vous en gagnez 3 copies."
 		},
+		"goldenImage": "LOEA16_13.gif",
 		"id": "LOEA16_13",
 		"name": "Eye of Orsis",
 		"playerClass": "Neutral",
@@ -20816,13 +20343,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Kevin Chin",
-		"cardImage": "EX1_245.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Horion de terre",
 			"text": "Réduit un serviteur au <b>Silence</b>, puis lui inflige $1 |4(point,points) de dégâts."
 		},
+		"goldenImage": "EX1_245.gif",
 		"id": "EX1_245",
 		"name": "Earth Shock",
 		"playerClass": "Shaman",
@@ -20832,10 +20359,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA09_1.png",
 		"fr": {
 			"name": "Rend Main-Noire"
 		},
+		"goldenImage": "BRMA09_1.gif",
 		"health": 30,
 		"id": "BRMA09_1",
 		"name": "Rend Blackhand",
@@ -20846,13 +20373,13 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 2,
-		"cardImage": "OG_249.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Tauren contaminé",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> invoque une gelée 2/2."
 		},
+		"goldenImage": "OG_249.gif",
 		"health": 3,
 		"id": "OG_249",
 		"name": "Infested Tauren",
@@ -20864,13 +20391,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "Mekka1.png",
 		"cost": 1,
 		"faction": "ALLIANCE",
 		"fr": {
 			"name": "Poulet à tête chercheuse",
 			"text": "Au début de votre tour, ce serviteur est détruit et vous piochez 3 cartes."
 		},
+		"goldenImage": "Mekka1.gif",
 		"health": 1,
 		"id": "Mekka1",
 		"name": "Homing Chicken",
@@ -20886,7 +20413,6 @@ var parseCardsText = {
 			"name": "Impulsion de magma",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 1 point de dégâts à tous les serviteurs."
 		},
-		"goldenImage": "BRMA04_2.gif",
 		"id": "BRMA04_2",
 		"name": "Magma Pulse",
 		"playerClass": "Neutral",
@@ -20896,12 +20422,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA16_24.png",
 		"cost": 5,
 		"fr": {
 			"name": "Aileron-Géant",
 			"text": "À la fin de votre tour, vous piochez jusqu’à avoir autant de cartes que votre adversaire."
 		},
+		"goldenImage": "LOEA16_24.gif",
 		"health": 5,
 		"id": "LOEA16_24",
 		"name": "Giantfin",
@@ -20913,13 +20439,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dany Orizio",
-		"cardImage": "CS2_005.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Griffe",
 			"text": "Donne +2 ATQ à votre héros pendant ce tour. +2 points d’armure."
 		},
+		"goldenImage": "CS2_005.gif",
 		"id": "CS2_005",
 		"name": "Claw",
 		"playerClass": "Druid",
@@ -20933,7 +20459,6 @@ var parseCardsText = {
 			"name": "Ordres de Vertepeau",
 			"text": "+1/+1."
 		},
-		"goldenImage": "NEW1_024o.gif",
 		"id": "NEW1_024o",
 		"name": "Greenskin's Command",
 		"playerClass": "Neutral",
@@ -20943,13 +20468,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "TB_KTRAF_08w.png",
 		"cost": 3,
 		"durability": 2,
 		"fr": {
 			"name": "Lame runique massive",
 			"text": "Inflige des dégâts doublés aux héros."
 		},
+		"goldenImage": "TB_KTRAF_08w.gif",
 		"id": "TB_KTRAF_08w",
 		"name": "Massive Runeblade",
 		"playerClass": "Neutral",
@@ -20958,12 +20483,12 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "LOEA16_9.png",
 		"cost": 0,
 		"fr": {
 			"name": "Grèves abandonnées de Lothar",
 			"text": "Inflige $3 |4(point,points) de dégâts à tous les adversaires."
 		},
+		"goldenImage": "LOEA16_9.gif",
 		"id": "LOEA16_9",
 		"name": "Lothar's Left Greave",
 		"playerClass": "Neutral",
@@ -20984,7 +20509,6 @@ var parseCardsText = {
 	{
 		"artist": "Leo Che",
 		"attack": 3,
-		"cardImage": "EX1_085.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "ALLIANCE",
@@ -20992,6 +20516,7 @@ var parseCardsText = {
 			"name": "Contrôleur mental",
 			"text": "<b>Cri de guerre :</b> si l’adversaire a 4 serviteurs ou plus, prend le contrôle de l’un d’eux au hasard."
 		},
+		"goldenImage": "EX1_085.gif",
 		"health": 3,
 		"id": "EX1_085",
 		"name": "Mind Control Tech",
@@ -21003,13 +20528,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Prescott",
-		"cardImage": "CS1_129.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Feu intérieur",
 			"text": "Change l’Attaque d’un serviteur pour qu’elle soit égale à ses PV."
 		},
+		"goldenImage": "CS1_129.gif",
 		"id": "CS1_129",
 		"name": "Inner Fire",
 		"playerClass": "Priest",
@@ -21021,13 +20546,13 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 4,
-		"cardImage": "CFM_653.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Flingueur",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CFM_653.gif",
 		"health": 3,
 		"id": "CFM_653",
 		"name": "Hired Gun",
@@ -21054,11 +20579,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "GVG_092t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Poulet"
 		},
+		"goldenImage": "GVG_092t.gif",
 		"health": 1,
 		"id": "GVG_092t",
 		"name": "Chicken",
@@ -21072,7 +20597,6 @@ var parseCardsText = {
 			"name": "Appel totémique",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un totem aléatoire."
 		},
-		"goldenImage": "CS2_049.gif",
 		"id": "CS2_049",
 		"name": "Totemic Call",
 		"playerClass": "Shaman",
@@ -21084,13 +20608,13 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 2,
-		"cardImage": "EX1_131.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Meneur défias",
 			"text": "<b>Combo :</b> invoque un bandit défias 2/1."
 		},
+		"goldenImage": "EX1_131.gif",
 		"health": 2,
 		"id": "EX1_131",
 		"name": "Defias Ringleader",
@@ -21102,13 +20626,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "BRM_005.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Courroux démoniaque",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs qui ne sont pas des démons."
 		},
+		"goldenImage": "BRM_005.gif",
 		"id": "BRM_005",
 		"name": "Demonwrath",
 		"playerClass": "Warlock",
@@ -21120,11 +20644,11 @@ var parseCardsText = {
 	{
 		"artist": "J. Cranford & A.J. Nazzaro",
 		"attack": 2,
-		"cardImage": "CFM_606t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Cristal"
 		},
+		"goldenImage": "CFM_606t.gif",
 		"health": 2,
 		"id": "CFM_606t",
 		"name": "Crystal",
@@ -21133,10 +20657,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA07_1H.png",
 		"fr": {
 			"name": "Généralissime Omokk"
 		},
+		"goldenImage": "BRMA07_1H.gif",
 		"health": 30,
 		"id": "BRMA07_1H",
 		"name": "Highlord Omokk",
@@ -21146,11 +20670,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_17.png",
 		"cost": 10,
 		"fr": {
 			"name": "Statue animée"
 		},
+		"goldenImage": "LOEA16_17.gif",
 		"health": 10,
 		"id": "LOEA16_17",
 		"name": "Animated Statue",
@@ -21160,12 +20684,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "A.J. Nazzaro",
-		"cardImage": "LOE_115a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Idole corbeau",
 			"text": "<b>Découvre</b> un serviteur."
 		},
+		"goldenImage": "LOE_115a.gif",
 		"id": "LOE_115a",
 		"name": "Raven Idol",
 		"playerClass": "Druid",
@@ -21175,12 +20699,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA04_30a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Prendre le raccourci",
 			"text": "Vous vous rapprochez d’un tour de la sortie ! Vous rencontrez un golem de guerre 7/7."
 		},
+		"goldenImage": "LOEA04_30a.gif",
 		"id": "LOEA04_30a",
 		"name": "Take the Shortcut",
 		"playerClass": "Neutral",
@@ -21191,13 +20715,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
-		"cardImage": "OG_241.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Villageois possédé",
 			"text": "<b>Râle d’agonie :</b> invoque une ombrebête 1/1."
 		},
+		"goldenImage": "OG_241.gif",
 		"health": 1,
 		"id": "OG_241",
 		"name": "Possessed Villager",
@@ -21209,12 +20733,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "CRED_34.png",
 		"cost": 3,
 		"fr": {
 			"name": "Max Ma",
 			"text": "Peut uniquement être joué sur un mobile."
 		},
+		"goldenImage": "CRED_34.gif",
 		"health": 3,
 		"id": "CRED_34",
 		"name": "Max Ma",
@@ -21226,12 +20750,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NAX9_04H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Sire Zeliek",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_04H.gif",
 		"health": 7,
 		"id": "NAX9_04H",
 		"name": "Sir Zeliek",
@@ -21243,7 +20767,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TB_FW_Boom_Weapon.png",
 		"cost": 2,
 		"durability": 2,
 		"fr": {
@@ -21259,11 +20782,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "LOEA06_02th.png",
 		"cost": 1,
 		"fr": {
 			"name": "Statue de terrestre"
 		},
+		"goldenImage": "LOEA06_02th.gif",
 		"health": 5,
 		"id": "LOEA06_02th",
 		"name": "Earthen Statue",
@@ -21274,13 +20797,13 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 3,
-		"cardImage": "OG_334.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Acolyte capuchonnée",
 			"text": "Chaque fois qu’un personnage est soigné, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_334.gif",
 		"health": 6,
 		"id": "OG_334",
 		"name": "Hooded Acolyte",
@@ -21293,13 +20816,13 @@ var parseCardsText = {
 	{
 		"artist": "Esad Ribic",
 		"attack": 2,
-		"cardImage": "AT_095.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Chevalier silencieux",
 			"text": "<b>Camouflage</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "AT_095.gif",
 		"health": 2,
 		"id": "AT_095",
 		"name": "Silent Knight",
@@ -21311,12 +20834,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "BRMC_86.png",
 		"cost": 4,
 		"fr": {
 			"name": "Atramédès",
 			"text": "Gagne +2 ATQ chaque fois que votre adversaire joue une carte."
 		},
+		"goldenImage": "BRMC_86.gif",
 		"health": 8,
 		"id": "BRMC_86",
 		"name": "Atramedes",
@@ -21329,13 +20852,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 1,
-		"cardImage": "LOE_006.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Conservateur du musée",
 			"text": "<b>Cri de guerre : découvre</b> une carte avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "LOE_006.gif",
 		"health": 2,
 		"id": "LOE_006",
 		"name": "Museum Curator",
@@ -21349,7 +20872,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gentille grand-mère"
 		},
-		"goldenImage": "KARA_05_01b.gif",
 		"health": 20,
 		"id": "KARA_05_01b",
 		"name": "Kindly Grandmother",
@@ -21362,7 +20884,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nefarian"
 		},
-		"goldenImage": "TBA01_4.gif",
 		"health": 30,
 		"id": "TBA01_4",
 		"name": "Nefarian",
@@ -21377,7 +20898,6 @@ var parseCardsText = {
 			"name": "Perspicacité d’archimage",
 			"text": "Vos sorts coûtent (0) |4(cristal,cristaux) pendant ce tour."
 		},
-		"goldenImage": "KARA_00_05.gif",
 		"id": "KARA_00_05",
 		"name": "Archmage's Insight",
 		"playerClass": "Mage",
@@ -21386,10 +20906,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA12_1H.png",
 		"fr": {
 			"name": "Dame Naz’jar"
 		},
+		"goldenImage": "LOEA12_1H.gif",
 		"health": 30,
 		"id": "LOEA12_1H",
 		"name": "Lady Naz'jar",
@@ -21402,7 +20922,6 @@ var parseCardsText = {
 			"name": "Cannibalisme",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "tt_004o.gif",
 		"id": "tt_004o",
 		"name": "Cannibalize",
 		"playerClass": "Neutral",
@@ -21413,13 +20932,13 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 3,
-		"cardImage": "CFM_626.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Prêtre de la serre de la Kabale",
 			"text": "<b>Cri de guerre :</b> donne +3 PV à un serviteur allié."
 		},
+		"goldenImage": "CFM_626.gif",
 		"health": 4,
 		"id": "CFM_626",
 		"name": "Kabal Talonpriest",
@@ -21430,12 +20949,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NEW1_007a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Météores",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "NEW1_007a.gif",
 		"id": "NEW1_007a",
 		"name": "Starfall",
 		"playerClass": "Druid",
@@ -21448,7 +20967,6 @@ var parseCardsText = {
 			"name": "Corruption",
 			"text": "Au début du tour du joueur utilisant Corruption, détruit ce serviteur."
 		},
-		"goldenImage": "CS2_063e.gif",
 		"id": "CS2_063e",
 		"name": "Corruption",
 		"playerClass": "Warlock",
@@ -21461,7 +20979,6 @@ var parseCardsText = {
 			"name": "Croissance fongique",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "NAX6_03te.gif",
 		"id": "NAX6_03te",
 		"name": "Fungal Growth",
 		"playerClass": "Neutral",
@@ -21472,13 +20989,13 @@ var parseCardsText = {
 	{
 		"artist": "Genevieve Tsai & Nutchapol ",
 		"attack": 2,
-		"cardImage": "OG_082.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Kobold évolué",
 			"text": "<b>Dégâts des sorts : +2</b>"
 		},
+		"goldenImage": "OG_082.gif",
 		"health": 2,
 		"id": "OG_082",
 		"name": "Evolved Kobold",
@@ -21490,7 +21007,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_SPT_DPromo_Hero.png",
 		"fr": {
 			"name": "Rôdeur noir"
 		},
@@ -21503,13 +21019,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Michael Sutfin",
-		"cardImage": "GVG_052.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Écraser",
 			"text": "Détruit un serviteur. Si vous avez un serviteur blessé, cette carte coûte (4) cristaux de moins."
 		},
+		"goldenImage": "GVG_052.gif",
 		"id": "GVG_052",
 		"name": "Crush",
 		"playerClass": "Warrior",
@@ -21523,7 +21039,6 @@ var parseCardsText = {
 			"name": "Souffle du Néant",
 			"text": "Les points de vie sont passés à 1."
 		},
-		"goldenImage": "KARA_08_03e.gif",
 		"id": "KARA_08_03e",
 		"name": "Nether Breath",
 		"playerClass": "Neutral",
@@ -21533,12 +21048,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TBST_002.png",
 		"cost": 1,
 		"fr": {
 			"name": "Mage débutant",
 			"text": "À la fin de votre tour, inflige 1 point de dégâts à un serviteur adverse aléatoire."
 		},
+		"goldenImage": "TBST_002.gif",
 		"health": 1,
 		"id": "TBST_002",
 		"name": "OLDN3wb Mage",
@@ -21550,13 +21065,13 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 5,
-		"cardImage": "OG_087.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Serviteur de Yogg-Saron",
 			"text": "<b>Cri de guerre :</b> lance un sort aléatoire coûtant au maximum\n(5) cristaux de mana <i>(cibles choisies au hasard).</i>"
 		},
+		"goldenImage": "OG_087.gif",
 		"health": 4,
 		"id": "OG_087",
 		"name": "Servant of Yogg-Saron",
@@ -21586,7 +21101,6 @@ var parseCardsText = {
 			"name": "Trait de givre",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 2 points de dégâts au héros adverse et le <b>gèle</b>."
 		},
-		"goldenImage": "NAX15_02.gif",
 		"id": "NAX15_02",
 		"name": "Frost Blast",
 		"playerClass": "Neutral",
@@ -21596,12 +21110,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "OG_044a.png",
 		"cost": 5,
 		"fr": {
 			"name": "Druide de la Griffe",
 			"text": "<b>Charge, Provocation</b>"
 		},
+		"goldenImage": "OG_044a.gif",
 		"health": 6,
 		"id": "OG_044a",
 		"name": "Druid of the Claw",
@@ -21614,13 +21128,13 @@ var parseCardsText = {
 	{
 		"artist": "J. Meyers & Nutchapol ",
 		"attack": 3,
-		"cardImage": "OG_026.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Sentinelle éternelle",
 			"text": "<b>Cri de guerre :</b> débloque vos cristaux de mana en <b>Surcharge</b>."
 		},
+		"goldenImage": "OG_026.gif",
 		"health": 2,
 		"id": "OG_026",
 		"name": "Eternal Sentinel",
@@ -21632,12 +21146,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_165b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Forme d’ours",
 			"text": "+2 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_165b.gif",
 		"id": "EX1_165b",
 		"name": "Bear Form",
 		"playerClass": "Druid",
@@ -21652,7 +21166,6 @@ var parseCardsText = {
 			"name": "Chaînes",
 			"text": "<b>Pouvoir héroïque</b>\nPrend le contrôle d’un serviteur adverse aléatoire jusqu’à la fin du tour."
 		},
-		"goldenImage": "NAX15_04.gif",
 		"id": "NAX15_04",
 		"name": "Chains",
 		"playerClass": "Neutral",
@@ -21662,12 +21175,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t15.png",
 		"cost": 10,
 		"fr": {
 			"name": "Potion de Kazakus",
 			"text": "{0}\n{1}"
 		},
+		"goldenImage": "CFM_621t15.gif",
 		"id": "CFM_621t15",
 		"name": "Kazakus Potion",
 		"playerClass": "Neutral",
@@ -21677,7 +21190,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sean McNally",
-		"cardImage": "CFM_853e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "La contrebandière des bas-fonds donne +1/+1."
@@ -21692,13 +21204,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
-		"cardImage": "NEW1_020.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Pyromancien sauvage",
 			"text": "Après que vous avez lancé un sort, inflige 1 point de dégâts à TOUS les serviteurs."
 		},
+		"goldenImage": "NEW1_020.gif",
 		"health": 2,
 		"id": "NEW1_020",
 		"name": "Wild Pyromancer",
@@ -21710,12 +21222,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "XXX_099.png",
 		"cost": 0,
 		"fr": {
 			"name": "AI Helper Buddy",
 			"text": "Get the AI ready for testing."
 		},
+		"goldenImage": "XXX_099.gif",
 		"health": 1,
 		"id": "XXX_099",
 		"name": "AI Helper Buddy",
@@ -21728,7 +21240,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Choisir un des trois"
 		},
-		"goldenImage": "TB_010e.gif",
 		"id": "TB_010e",
 		"name": "Choose One of Three",
 		"playerClass": "Neutral",
@@ -21737,12 +21248,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TU4e_003.png",
 		"cost": 1,
 		"fr": {
 			"name": "Myrmidon naga",
 			"text": "<b></b>"
 		},
+		"goldenImage": "TU4e_003.gif",
 		"health": 1,
 		"id": "TU4e_003",
 		"name": "Naga Myrmidon",
@@ -21755,13 +21266,13 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 4,
-		"cardImage": "AT_117.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Maîtresse de cérémonie",
 			"text": "<b>Cri de guerre :</b> gagne +2/+2 si vous avez un serviteur avec <b>Dégâts des sorts</b>."
 		},
+		"goldenImage": "AT_117.gif",
 		"health": 2,
 		"id": "AT_117",
 		"name": "Master of Ceremonies",
@@ -21772,12 +21283,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA07_21.png",
 		"cost": 1,
 		"fr": {
 			"name": "Foncer en avant",
 			"text": "Vous rapproche d’un tour de la sortie !"
 		},
+		"goldenImage": "LOEA07_21.gif",
 		"id": "LOEA07_21",
 		"name": "Barrel Forward",
 		"playerClass": "Neutral",
@@ -21789,7 +21300,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "ID de mon deck"
 		},
-		"goldenImage": "TB_DeckRecipe_MyDeckID.gif",
 		"id": "TB_DeckRecipe_MyDeckID",
 		"name": "My Deck ID",
 		"playerClass": "Neutral",
@@ -21799,13 +21309,13 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"attack": 4,
-		"cardImage": "AT_121.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Favori de la foule",
 			"text": "Chaque fois que vous jouez une carte avec <b>Cri de guerre</b>, gagne +1/+1."
 		},
+		"goldenImage": "AT_121.gif",
 		"health": 4,
 		"id": "AT_121",
 		"name": "Crowd Favorite",
@@ -21817,12 +21327,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Alexandrov",
-		"cardImage": "OG_047a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Production d’aiguillons",
 			"text": "Donne +4 ATQ à votre héros pendant ce tour."
 		},
+		"goldenImage": "OG_047a.gif",
 		"id": "OG_047a",
 		"name": "Evolve Spines",
 		"playerClass": "Druid",
@@ -21836,7 +21346,6 @@ var parseCardsText = {
 			"name": "Exalté",
 			"text": "Peut attaquer pendant ce tour."
 		},
-		"goldenImage": "AT_109e.gif",
 		"id": "AT_109e",
 		"name": "Inspired",
 		"playerClass": "Neutral",
@@ -21850,7 +21359,6 @@ var parseCardsText = {
 			"name": "Regard intense",
 			"text": "<b>Pouvoir héroïque passif</b>\nToutes les cartes coûtent (1) |4(cristal,cristaux) de mana. Vous êtes limité à 2 cristaux et l’adversaire à 1."
 		},
-		"goldenImage": "BRMA08_2H.gif",
 		"id": "BRMA08_2H",
 		"name": "Intense Gaze",
 		"playerClass": "Neutral",
@@ -21861,13 +21369,13 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 1,
-		"cardImage": "FP1_031.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Baron Vaillefendre",
 			"text": "Vos serviteurs déclenchent deux fois leur <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "FP1_031.gif",
 		"health": 7,
 		"id": "FP1_031",
 		"name": "Baron Rivendare",
@@ -21879,13 +21387,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler West Studios",
-		"cardImage": "CFM_604.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Potion de soins supérieure",
 			"text": "Rend 12 PV à un personnage allié."
 		},
+		"goldenImage": "CFM_604.gif",
 		"id": "CFM_604",
 		"name": "Greater Healing Potion",
 		"playerClass": "Priest",
@@ -21899,7 +21407,6 @@ var parseCardsText = {
 			"name": "Peur du loup",
 			"text": "Passe à 1/1."
 		},
-		"goldenImage": "KARA_05_01e.gif",
 		"id": "KARA_05_01e",
 		"name": "Trembling Before the Wolf",
 		"playerClass": "Neutral",
@@ -21911,7 +21418,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Prince Malchezaar"
 		},
-		"goldenImage": "KARA_00_01.gif",
 		"health": 30,
 		"id": "KARA_00_01",
 		"name": "Prince Malchezaar",
@@ -21920,12 +21426,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "NAX5_03.png",
 		"cost": 2,
 		"fr": {
 			"name": "Cervocalypse",
 			"text": "Les deux joueurs piochent 2 cartes et gagnent un cristal de mana."
 		},
+		"goldenImage": "NAX5_03.gif",
 		"id": "NAX5_03",
 		"name": "Mindpocalypse",
 		"playerClass": "Neutral",
@@ -21936,13 +21442,13 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 2,
-		"cardImage": "CFM_120.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Maîtresse des mélanges",
 			"text": "<b>Râle d’agonie :</b> rend 4 PV aux deux héros."
 		},
+		"goldenImage": "CFM_120.gif",
 		"health": 2,
 		"id": "CFM_120",
 		"name": "Mistress of Mixtures",
@@ -21966,12 +21472,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "NAX4_05.png",
 		"cost": 6,
 		"fr": {
 			"name": "Peste",
 			"text": "Détruit tous les serviteurs sauf les squelettes."
 		},
+		"goldenImage": "NAX4_05.gif",
 		"id": "NAX4_05",
 		"name": "Plague",
 		"playerClass": "Neutral",
@@ -21980,7 +21486,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX10_01.png",
 		"fr": {
 			"name": "Le Recousu"
 		},
@@ -21994,7 +21499,6 @@ var parseCardsText = {
 	{
 		"artist": "Karl Richardson",
 		"attack": 2,
-		"cardImage": "EX1_011.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "HORDE",
@@ -22017,7 +21521,6 @@ var parseCardsText = {
 			"name": "Runes explosives",
 			"text": "Invoque deux « runes explosives »."
 		},
-		"goldenImage": "TB_CoOpv3_010.gif",
 		"id": "TB_CoOpv3_010",
 		"name": "Explosive Runes",
 		"playerClass": "Neutral",
@@ -22030,7 +21533,6 @@ var parseCardsText = {
 			"name": "Invocation précoce de serviteur",
 			"text": "Invoque un serviteur gratuit à chaque tour, si vous avez moins de PV que votre adversaire."
 		},
-		"goldenImage": "TBUD_1.gif",
 		"id": "TBUD_1",
 		"name": "TBUD Summon Early Minion",
 		"playerClass": "Neutral",
@@ -22040,7 +21542,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Richard Wright",
-		"cardImage": "LOE_002t.png",
 		"cost": 3,
 		"fr": {
 			"name": "Torche enflammée",
@@ -22058,7 +21559,6 @@ var parseCardsText = {
 			"name": "Unité",
 			"text": "+2/+2."
 		},
-		"goldenImage": "TB_CoOpv3_104e.gif",
 		"id": "TB_CoOpv3_104e",
 		"name": "Unity",
 		"playerClass": "Neutral",
@@ -22068,7 +21568,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raven Mimura",
-		"cardImage": "CFM_611e2.png",
 		"fr": {
 			"name": "Breuvage démoniaque",
 			"text": "+3/+3."
@@ -22083,7 +21582,6 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"attack": 4,
-		"cardImage": "GVG_111t.png",
 		"cost": 8,
 		"fr": {
 			"name": "V-07-TR-0N",
@@ -22101,7 +21599,6 @@ var parseCardsText = {
 	{
 		"artist": "Josh Harris",
 		"attack": 5,
-		"cardImage": "OG_272t.png",
 		"cost": 4,
 		"fr": {
 			"name": "Destructeur sans-visage"
@@ -22116,7 +21613,6 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 30,
-		"cardImage": "OG_173a.png",
 		"cost": 9,
 		"fr": {
 			"name": "L’Ancien"
@@ -22132,7 +21628,6 @@ var parseCardsText = {
 	{
 		"artist": "Alex Garner",
 		"attack": 7,
-		"cardImage": "GVG_110.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
@@ -22149,7 +21644,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA07_02.png",
 		"fr": {
 			"name": "Puits de mine"
 		},
@@ -22162,7 +21656,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA01_12h.png",
 		"cost": 3,
 		"fr": {
 			"name": "Hoplite tol’vir",
@@ -22178,7 +21671,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jim Nelson",
-		"cardImage": "LOE_007t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Maudit !",
@@ -22192,7 +21684,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_ClassRandom_Warlock.png",
 		"cost": 0,
 		"fr": {
 			"name": "Deuxième classe : démoniste",
@@ -22208,7 +21699,6 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 4,
-		"cardImage": "CFM_639.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
@@ -22225,7 +21715,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "AT_042b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Forme de panthère",
@@ -22245,7 +21734,6 @@ var parseCardsText = {
 			"name": "Écholocation",
 			"text": "<b>Pouvoir héroïque</b>\nS’équipe d’une arme qui croît à mesure que l’adversaire joue des cartes."
 		},
-		"goldenImage": "BRMA16_2.gif",
 		"id": "BRMA16_2",
 		"name": "Echolocate",
 		"playerClass": "Neutral",
@@ -22258,7 +21746,6 @@ var parseCardsText = {
 			"name": "Cri de commandement",
 			"text": "Les points de vie de vos serviteurs ne peuvent pas passer en dessous de 1 ce tour-ci."
 		},
-		"goldenImage": "NEW1_036e2.gif",
 		"id": "NEW1_036e2",
 		"name": "Commanding Shout",
 		"playerClass": "Warrior",
@@ -22268,7 +21755,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t17.png",
 		"cost": 5,
 		"fr": {
 			"name": "Huile de pierre-écaille",
@@ -22283,7 +21769,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NEW1_040t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Gnoll",
@@ -22300,7 +21785,6 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 5,
-		"cardImage": "EX1_583.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
@@ -22319,7 +21803,6 @@ var parseCardsText = {
 	{
 		"artist": "James Zhang",
 		"attack": 2,
-		"cardImage": "AT_094.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
@@ -22338,7 +21821,6 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 1,
-		"cardImage": "OG_114a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Tentacule gluant"
@@ -22353,7 +21835,6 @@ var parseCardsText = {
 	{
 		"artist": "Seamus Gallagher",
 		"attack": 9,
-		"cardImage": "AT_103.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
@@ -22372,11 +21853,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 6,
-		"cardImage": "CFM_712_t06.png",
 		"cost": 6,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t06.gif",
 		"health": 6,
 		"id": "CFM_712_t06",
 		"name": "Jade Golem",
@@ -22386,13 +21867,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Grace Liu",
-		"cardImage": "CS2_011.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Rugissement sauvage",
 			"text": "Donne +2 ATQ à vos personnages pendant ce tour."
 		},
+		"goldenImage": "CS2_011.gif",
 		"id": "CS2_011",
 		"name": "Savage Roar",
 		"playerClass": "Druid",
@@ -22402,12 +21883,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA16_20.png",
 		"cost": 1,
 		"fr": {
 			"name": "Bénédiction du soleil",
 			"text": "Confère <b>Insensible</b> à un serviteur pendant ce tour."
 		},
+		"goldenImage": "LOEA16_20.gif",
 		"id": "LOEA16_20",
 		"name": "Blessing of the Sun",
 		"playerClass": "Neutral",
@@ -22418,13 +21899,13 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 3,
-		"cardImage": "OG_080.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Xaril l’Esprit empoisonné",
 			"text": "<b>Cri de guerre et Râle d’agonie :</b> ajoute une carte Toxine aléatoire dans votre main."
 		},
+		"goldenImage": "OG_080.gif",
 		"health": 2,
 		"id": "OG_080",
 		"name": "Xaril, Poisoned Mind",
@@ -22440,7 +21921,6 @@ var parseCardsText = {
 			"name": "Premier morceau du bâton",
 			"text": "Ajoute une carte rare aléatoire dans votre main. Elle coûte (2) cristaux de moins."
 		},
-		"goldenImage": "TB_KTRAF_HP_RAF3.gif",
 		"id": "TB_KTRAF_HP_RAF3",
 		"name": "Staff, First Piece",
 		"playerClass": "Neutral",
@@ -22453,7 +21933,6 @@ var parseCardsText = {
 			"name": "Mort de faim",
 			"text": "A vraiment faim."
 		},
-		"goldenImage": "LOEA09_3aH.gif",
 		"id": "LOEA09_3aH",
 		"name": "Famished",
 		"playerClass": "Neutral",
@@ -22465,7 +21944,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Destin"
 		},
-		"goldenImage": "TB_PickYourFate_10_Ench.gif",
 		"id": "TB_PickYourFate_10_Ench",
 		"name": "Fate",
 		"playerClass": "Neutral",
@@ -22474,12 +21952,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_23H.png",
 		"cost": 10,
 		"fr": {
 			"name": "Seigneur Ondulance",
 			"text": "À la fin de votre tour, invoque un Naga affamé 1/1 pour chaque serviteur adverse."
 		},
+		"goldenImage": "LOEA16_23H.gif",
 		"health": 10,
 		"id": "LOEA16_23H",
 		"name": "Lord Slitherspear",
@@ -22494,7 +21972,6 @@ var parseCardsText = {
 			"name": "Décimer",
 			"text": "Les points de vie sont passés à 1."
 		},
-		"goldenImage": "NAX12_02e.gif",
 		"id": "NAX12_02e",
 		"name": "Decimate",
 		"playerClass": "Neutral",
@@ -22504,13 +21981,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "BRM_011.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Horion de lave",
 			"text": "Inflige $2 |4(point,points) de dégâts. Débloque vos cristaux de mana en <b>Surcharge</b>."
 		},
+		"goldenImage": "BRM_011.gif",
 		"id": "BRM_011",
 		"name": "Lava Shock",
 		"overload": 1,
@@ -22522,11 +21999,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "EX1_tk34.png",
 		"cost": 6,
 		"fr": {
 			"name": "Infernal"
 		},
+		"goldenImage": "EX1_tk34.gif",
 		"health": 6,
 		"id": "EX1_tk34",
 		"name": "Infernal",
@@ -22538,13 +22015,13 @@ var parseCardsText = {
 	{
 		"artist": "Blizzard Cinematics",
 		"attack": 1,
-		"cardImage": "NEW1_012.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Wyrm de mana",
 			"text": "Chaque fois que vous lancez un sort, gagne +1 ATQ."
 		},
+		"goldenImage": "NEW1_012.gif",
 		"health": 3,
 		"id": "NEW1_012",
 		"name": "Mana Wyrm",
@@ -22555,12 +22032,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_026.png",
 		"cost": 0,
 		"fr": {
 			"name": "Enable Emotes",
 			"text": "Enable emotes for your VS.AI game. (not in tutorials, though)"
 		},
+		"goldenImage": "XXX_026.gif",
 		"id": "XXX_026",
 		"name": "Enable Emotes",
 		"playerClass": "Neutral",
@@ -22572,13 +22049,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyler Walpole",
 		"attack": 4,
-		"cardImage": "OG_335.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Ombre mouvante",
 			"text": "<b>Râle d’agonie :</b> copie une carte du deck de votre adversaire et la place dans votre main."
 		},
+		"goldenImage": "OG_335.gif",
 		"health": 3,
 		"id": "OG_335",
 		"name": "Shifting Shade",
@@ -22590,13 +22067,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Trent Kaniuga",
-		"cardImage": "OG_081.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Fracasser",
 			"text": "Détruit un serviteur <b>gelé</b>."
 		},
+		"goldenImage": "OG_081.gif",
 		"id": "OG_081",
 		"name": "Shatter",
 		"playerClass": "Mage",
@@ -22610,7 +22087,6 @@ var parseCardsText = {
 			"name": "Renforcement",
 			"text": "Vie augmentée."
 		},
-		"goldenImage": "NEW1_025e.gif",
 		"id": "NEW1_025e",
 		"name": "Bolstered",
 		"playerClass": "Neutral",
@@ -22639,12 +22115,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "LOEA04_13bt.png",
 		"cost": 4,
 		"fr": {
 			"name": "Garde d’Orsis",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "LOEA04_13bt.gif",
 		"health": 5,
 		"id": "LOEA04_13bt",
 		"name": "Orsis Guard",
@@ -22655,13 +22131,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Chippy",
-		"cardImage": "CS2_062.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Flammes infernales",
 			"text": "Inflige $3 |4(point,points) de dégâts à TOUS les personnages."
 		},
+		"goldenImage": "CS2_062.gif",
 		"id": "CS2_062",
 		"name": "Hellfire",
 		"playerClass": "Warlock",
@@ -22676,7 +22152,6 @@ var parseCardsText = {
 			"name": "Nuage empoisonné",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 1 point de dégâts à\n tous les serviteurs. Invoque une gelée si l’un d’eux meurt."
 		},
-		"goldenImage": "NAX11_02.gif",
 		"id": "NAX11_02",
 		"name": "Poison Cloud",
 		"playerClass": "Neutral",
@@ -22687,13 +22162,13 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 3,
-		"cardImage": "LOE_050.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Raptor de monte",
 			"text": "<b>Râle d’agonie :</b> invoque un serviteur aléatoire coûtant 1 cristal."
 		},
+		"goldenImage": "LOE_050.gif",
 		"health": 2,
 		"id": "LOE_050",
 		"name": "Mounted Raptor",
@@ -22705,12 +22180,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t13.png",
 		"cost": 10,
 		"fr": {
 			"name": "Potion excellente",
 			"text": "Crée un sort coûtant 10 |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_621t13.gif",
 		"id": "CFM_621t13",
 		"name": "Superior Potion",
 		"playerClass": "Neutral",
@@ -22719,10 +22194,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX9_01.png",
 		"fr": {
 			"name": "Baron Vaillefendre"
 		},
+		"goldenImage": "NAX9_01.gif",
 		"health": 7,
 		"id": "NAX9_01",
 		"name": "Baron Rivendare",
@@ -22735,7 +22210,6 @@ var parseCardsText = {
 			"name": "Sourcils froncés",
 			"text": "Caractéristiques augmentées."
 		},
-		"goldenImage": "GVG_100e.gif",
 		"id": "GVG_100e",
 		"name": "Brow Furrow",
 		"playerClass": "Warlock",
@@ -22750,7 +22224,6 @@ var parseCardsText = {
 			"name": "Amour véritable",
 			"text": "<b>Pouvoir héroïque</b>\nSi vous n’avez pas Romulo, l’invoque."
 		},
-		"goldenImage": "KARA_06_03hp.gif",
 		"id": "KARA_06_03hp",
 		"name": "True Love",
 		"playerClass": "Neutral",
@@ -22764,7 +22237,6 @@ var parseCardsText = {
 			"name": "Enragé",
 			"text": "+1 ATQ et <b>Furie des vents</b>."
 		},
-		"goldenImage": "EX1_412e.gif",
 		"id": "EX1_412e",
 		"name": "Enraged",
 		"playerClass": "Neutral",
@@ -22773,10 +22245,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_BlingBrawl_Hero1.png",
 		"fr": {
 			"name": "Valeera Sanguinar"
 		},
+		"goldenImage": "TB_BlingBrawl_Hero1.gif",
 		"health": 30,
 		"id": "TB_BlingBrawl_Hero1",
 		"name": "Valeera Sanguinar",
@@ -22788,13 +22260,13 @@ var parseCardsText = {
 	{
 		"artist": "Lars Grant-West",
 		"attack": 2,
-		"cardImage": "DS1_178.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Rhino de la toundra",
 			"text": "Vos Bêtes ont <b>Charge</b>."
 		},
+		"goldenImage": "DS1_178.gif",
 		"health": 5,
 		"id": "DS1_178",
 		"name": "Tundra Rhino",
@@ -22808,7 +22280,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Pick Your Fate 4 Ench"
 		},
-		"goldenImage": "TB_PickYourFate_4_Ench.gif",
 		"id": "TB_PickYourFate_4_Ench",
 		"name": "Pick Your Fate 4 Ench",
 		"playerClass": "Neutral",
@@ -22818,13 +22289,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 3,
-		"cardImage": "CFM_666.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Maître de grouk-fu",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "CFM_666.gif",
 		"health": 5,
 		"id": "CFM_666",
 		"name": "Grook Fu Master",
@@ -22838,7 +22309,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Destin 7 : enchantement 2"
 		},
-		"goldenImage": "TB_PickYourFate_7_Ench_2nd.gif",
 		"id": "TB_PickYourFate_7_Ench_2nd",
 		"name": "Fate 7 Ench 2nd",
 		"playerClass": "Neutral",
@@ -22850,7 +22320,6 @@ var parseCardsText = {
 			"name": "Tentacules",
 			"text": "+2/+6"
 		},
-		"goldenImage": "OG_094e.gif",
 		"id": "OG_094e",
 		"name": "Tentacles",
 		"playerClass": "Priest",
@@ -22864,7 +22333,6 @@ var parseCardsText = {
 			"name": "Bâton de l’Origine",
 			"text": "<b>Pouvoir héroïque passif</b>\nVotre héros est <b>Insensible</b> tant que le bâton se charge."
 		},
-		"goldenImage": "LOEA16_2.gif",
 		"id": "LOEA16_2",
 		"name": "Staff of Origination",
 		"playerClass": "Neutral",
@@ -22876,7 +22344,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Roi noir"
 		},
-		"goldenImage": "KAR_a10_Boss2H_TB.gif",
 		"health": 10,
 		"id": "KAR_a10_Boss2H_TB",
 		"name": "Black King",
@@ -22887,13 +22354,13 @@ var parseCardsText = {
 	{
 		"artist": "Ben Olson",
 		"attack": 1,
-		"cardImage": "EX1_522.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Assassin patient",
 			"text": "<b>Camouflage</b>. Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "EX1_522.gif",
 		"health": 1,
 		"id": "EX1_522",
 		"name": "Patient Assassin",
@@ -22905,12 +22372,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CRED_21.png",
 		"cost": 1,
 		"fr": {
 			"name": "Bryan Chang",
 			"text": "<b>Gourmet :</b> rend tous les serviteurs comestibles."
 		},
+		"goldenImage": "CRED_21.gif",
 		"health": 3,
 		"id": "CRED_21",
 		"name": "Bryan Chang",
@@ -22922,13 +22389,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Garner",
-		"cardImage": "EX1_278.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Kriss",
 			"text": "Inflige $1 |4(point,points) de dégâts. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_278.gif",
 		"id": "EX1_278",
 		"name": "Shiv",
 		"playerClass": "Rogue",
@@ -22939,11 +22406,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRM_006t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Diablotin"
 		},
+		"goldenImage": "BRM_006t.gif",
 		"health": 1,
 		"id": "BRM_006t",
 		"name": "Imp",
@@ -22952,12 +22419,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_CoOpBossSpell_4.png",
 		"cost": 0,
 		"fr": {
 			"name": "Suralimenter",
 			"text": "Gagne 2 ATQ."
 		},
+		"goldenImage": "TB_CoOpBossSpell_4.gif",
 		"id": "TB_CoOpBossSpell_4",
 		"name": "Overclock",
 		"playerClass": "Neutral",
@@ -22968,13 +22435,13 @@ var parseCardsText = {
 	{
 		"artist": "Ken Steacy",
 		"attack": 3,
-		"cardImage": "NEW1_027.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Capitaine des mers du Sud",
 			"text": "Vos autres pirates\nont +1/+1."
 		},
+		"goldenImage": "NEW1_027.gif",
 		"health": 3,
 		"id": "NEW1_027",
 		"name": "Southsea Captain",
@@ -22987,13 +22454,13 @@ var parseCardsText = {
 	{
 		"artist": "Froilan Gardner",
 		"attack": 2,
-		"cardImage": "AT_085.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Damoiselle du Lac",
 			"text": "Votre pouvoir héroïque coûte (1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_085.gif",
 		"health": 6,
 		"id": "AT_085",
 		"name": "Maiden of the Lake",
@@ -23004,12 +22471,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GAME_005.png",
 		"cost": 0,
 		"fr": {
 			"name": "La pièce",
 			"text": "Donne 1 cristal de mana pendant ce tour uniquement."
 		},
+		"goldenImage": "GAME_005.gif",
 		"id": "GAME_005",
 		"name": "The Coin",
 		"playerClass": "Neutral",
@@ -23025,7 +22492,6 @@ var parseCardsText = {
 			"name": "Cavalier blanc",
 			"text": "<b>Charge</b>.\nNe peut pas attaquer les héros."
 		},
-		"goldenImage": "KAR_A10_08.gif",
 		"health": 3,
 		"id": "KAR_A10_08",
 		"name": "White Knight",
@@ -23039,7 +22505,6 @@ var parseCardsText = {
 			"name": "Puissance des titans",
 			"text": "+3/+3."
 		},
-		"goldenImage": "LOE_061e.gif",
 		"id": "LOE_061e",
 		"name": "Power of the Titans",
 		"playerClass": "Neutral",
@@ -23050,7 +22515,6 @@ var parseCardsText = {
 	{
 		"artist": "Craig Mullins",
 		"attack": 2,
-		"cardImage": "LOE_118.png",
 		"collectible": true,
 		"cost": 1,
 		"durability": 3,
@@ -23058,6 +22522,7 @@ var parseCardsText = {
 			"name": "Lame maudite",
 			"text": "Double tous les dégâts subis par votre héros."
 		},
+		"goldenImage": "LOE_118.gif",
 		"id": "LOE_118",
 		"name": "Cursed Blade",
 		"playerClass": "Warrior",
@@ -23073,7 +22538,6 @@ var parseCardsText = {
 			"name": "Cavalier noir",
 			"text": "<b>Charge</b>.\nNe peut pas attaquer les héros."
 		},
-		"goldenImage": "KAR_A10_07.gif",
 		"health": 3,
 		"id": "KAR_A10_07",
 		"name": "Black Knight",
@@ -23084,12 +22548,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Nutthapon Petthai",
-		"cardImage": "PART_002.png",
 		"cost": 1,
 		"fr": {
 			"name": "Remontoir",
 			"text": "Renvoie un serviteur allié dans votre main."
 		},
+		"goldenImage": "PART_002.gif",
 		"id": "PART_002",
 		"name": "Time Rewinder",
 		"playerClass": "Neutral",
@@ -23103,7 +22567,6 @@ var parseCardsText = {
 			"name": "Activer Toxitron",
 			"text": "<b>Pouvoir héroïque</b>\nActive Toxitron !"
 		},
-		"goldenImage": "BRMA14_4H.gif",
 		"id": "BRMA14_4H",
 		"name": "Activate Toxitron",
 		"playerClass": "Neutral",
@@ -23114,11 +22577,11 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & A. Bozonnet",
 		"attack": 1,
-		"cardImage": "CFM_316t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Rat"
 		},
+		"goldenImage": "CFM_316t.gif",
 		"health": 1,
 		"id": "CFM_316t",
 		"name": "Rat",
@@ -23129,13 +22592,13 @@ var parseCardsText = {
 	{
 		"artist": "Guangjian Huang",
 		"attack": 0,
-		"cardImage": "GVG_039.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Totem de vitalité",
 			"text": "À la fin de votre tour, rend 4 PV à votre héros."
 		},
+		"goldenImage": "GVG_039.gif",
 		"health": 3,
 		"id": "GVG_039",
 		"name": "Vitality Totem",
@@ -23151,7 +22614,6 @@ var parseCardsText = {
 			"name": "Gain d’armure !",
 			"text": "<b>Pouvoir héroïque</b>\nDonne 2 points d’armure."
 		},
-		"goldenImage": "CS2_102_H1.gif",
 		"id": "CS2_102_H1",
 		"name": "Armor Up!",
 		"playerClass": "Warrior",
@@ -23166,7 +22628,6 @@ var parseCardsText = {
 			"name": "Foule moqueuse",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un spectateur 1/1 avec <b>Provocation</b>."
 		},
-		"goldenImage": "BRMA02_2H.gif",
 		"id": "BRMA02_2H",
 		"name": "Jeering Crowd",
 		"playerClass": "Neutral",
@@ -23176,12 +22637,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t4.png",
 		"cost": 1,
 		"fr": {
 			"name": "Gangrenelle",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "CFM_621t4.gif",
 		"id": "CFM_621t4",
 		"name": "Felbloom",
 		"playerClass": "Neutral",
@@ -23192,13 +22653,13 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 4,
-		"cardImage": "DS1_055.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Soigneuse sombrécaille",
 			"text": "<b>Cri de guerre :</b> rend 2 points de vie à tous les personnages alliés."
 		},
+		"goldenImage": "DS1_055.gif",
 		"health": 5,
 		"id": "DS1_055",
 		"name": "Darkscale Healer",
@@ -23215,7 +22676,6 @@ var parseCardsText = {
 			"name": "Guerrière orque",
 			"text": "<b>Charge</b>"
 		},
-		"goldenImage": "KARA_13_03H.gif",
 		"health": 3,
 		"id": "KARA_13_03H",
 		"name": "Orc Warrior",
@@ -23225,12 +22685,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_048.png",
 		"cost": 0,
 		"fr": {
 			"name": "-1 Durability",
 			"text": "Give a player's weapon -1 Durability."
 		},
+		"goldenImage": "XXX_048.gif",
 		"id": "XXX_048",
 		"name": "-1 Durability",
 		"playerClass": "Neutral",
@@ -23246,7 +22706,6 @@ var parseCardsText = {
 			"name": "Roque",
 			"text": "<b>Pouvoir héroïque</b>\nDéplace un serviteur allié à gauche. Peut être répété."
 		},
-		"goldenImage": "KAR_A10_22H.gif",
 		"id": "KAR_A10_22H",
 		"name": "Castle",
 		"playerClass": "Neutral",
@@ -23256,12 +22715,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "NAX12_04.png",
 		"cost": 3,
 		"fr": {
 			"name": "Accès de rage",
 			"text": "Donne +6 ATQ à votre héros pendant ce tour."
 		},
+		"goldenImage": "NAX12_04.gif",
 		"id": "NAX12_04",
 		"name": "Enrage",
 		"playerClass": "Neutral",
@@ -23275,7 +22734,6 @@ var parseCardsText = {
 			"name": "Invocation de Kil’rek",
 			"text": "Invoque Kil’rek."
 		},
-		"goldenImage": "KARA_09_05heroic.gif",
 		"id": "KARA_09_05heroic",
 		"name": "Summon Kil'rek",
 		"playerClass": "Neutral",
@@ -23285,13 +22743,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Carl Frank",
-		"cardImage": "EX1_295.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Bloc de glace",
 			"text": "<b>Secret :</b> protège votre héros des dégâts mortels, et le rend <b>Insensible</b> pendant ce tour."
 		},
+		"goldenImage": "EX1_295.gif",
 		"id": "EX1_295",
 		"name": "Ice Block",
 		"playerClass": "Mage",
@@ -23302,12 +22760,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "TB_KTRAF_7.png",
 		"cost": 3,
 		"fr": {
 			"name": "Heigan l’Impur",
 			"text": "À la fin de votre tour, inflige 4 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "TB_KTRAF_7.gif",
 		"health": 5,
 		"id": "TB_KTRAF_7",
 		"name": "Heigan the Unclean",
@@ -23323,7 +22781,6 @@ var parseCardsText = {
 			"name": "Sculpture sur pierre",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque une statue pour chaque joueur."
 		},
-		"goldenImage": "LOEA06_02h.gif",
 		"id": "LOEA06_02h",
 		"name": "Stonesculpting",
 		"playerClass": "Neutral",
@@ -23336,7 +22793,6 @@ var parseCardsText = {
 			"name": "Esprit divin",
 			"text": "Les points de vie de ce serviteur sont doublés."
 		},
-		"goldenImage": "CS2_236e.gif",
 		"id": "CS2_236e",
 		"name": "Divine Spirit",
 		"playerClass": "Priest",
@@ -23347,13 +22803,13 @@ var parseCardsText = {
 	{
 		"artist": "Ittoku",
 		"attack": 2,
-		"cardImage": "FP1_005.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Ombre de Naxxramas",
 			"text": "<b>Camouflage</b>\nGagne +1/+1 au début de votre tour."
 		},
+		"goldenImage": "FP1_005.gif",
 		"health": 2,
 		"id": "FP1_005",
 		"name": "Shade of Naxxramas",
@@ -23366,13 +22822,13 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 6,
-		"cardImage": "CFM_751.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Massacreur abyssal",
 			"text": "<b>Cri de guerre :</b> inflige 3 point de dégâts à tous les autres personnages."
 		},
+		"goldenImage": "CFM_751.gif",
 		"health": 6,
 		"id": "CFM_751",
 		"name": "Abyssal Enforcer",
@@ -23384,12 +22840,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "A.J. Nazzaro",
-		"cardImage": "LOE_115b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Idole corbeau",
 			"text": "<b>Découvre</b> un sort."
 		},
+		"goldenImage": "LOE_115b.gif",
 		"id": "LOE_115b",
 		"name": "Raven Idol",
 		"playerClass": "Druid",
@@ -23399,10 +22855,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA02_1H.png",
 		"fr": {
 			"name": "Juge Supérieur Mornepierre"
 		},
+		"goldenImage": "BRMA02_1H.gif",
 		"health": 30,
 		"id": "BRMA02_1H",
 		"name": "High Justice Grimstone",
@@ -23413,13 +22869,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Gaser",
 		"attack": 2,
-		"cardImage": "EX1_258.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Élémentaire délié",
 			"text": "Chaque fois que vous jouez une carte avec <b>Surcharge</b>, gagne +1/+1."
 		},
+		"goldenImage": "EX1_258.gif",
 		"health": 4,
 		"id": "EX1_258",
 		"name": "Unbound Elemental",
@@ -23432,7 +22888,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Adam Byrne",
-		"cardImage": "CFM_338e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "L’enrage-bête trogg donne +1/+1."
@@ -23445,10 +22900,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "NAX9_01H.png",
 		"fr": {
 			"name": "Baron Vaillefendre"
 		},
+		"goldenImage": "NAX9_01H.gif",
 		"health": 14,
 		"id": "NAX9_01H",
 		"name": "Baron Rivendare",
@@ -23459,13 +22914,13 @@ var parseCardsText = {
 	{
 		"artist": "Ron Spears",
 		"attack": 1,
-		"cardImage": "AT_082.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Modeste écuyer",
 			"text": "<b>Exaltation :</b> gagne +1 ATQ."
 		},
+		"goldenImage": "AT_082.gif",
 		"health": 2,
 		"id": "AT_082",
 		"name": "Lowly Squire",
@@ -23477,12 +22932,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TB_KTRAF_6m.png",
 		"cost": 1,
 		"fr": {
 			"name": "Gelée polluée",
 			"text": "Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "TB_KTRAF_6m.gif",
 		"health": 2,
 		"id": "TB_KTRAF_6m",
 		"name": "Fallout Slime",
@@ -23494,13 +22949,13 @@ var parseCardsText = {
 	{
 		"artist": "Phil Saunders",
 		"attack": 3,
-		"cardImage": "GVG_123.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Cracheur de suie",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "GVG_123.gif",
 		"health": 3,
 		"id": "GVG_123",
 		"name": "Soot Spewer",
@@ -23512,10 +22967,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA06_1H.png",
 		"fr": {
 			"name": "Chambellan Executus"
 		},
+		"goldenImage": "BRMA06_1H.gif",
 		"health": 30,
 		"id": "BRMA06_1H",
 		"name": "Majordomo Executus",
@@ -23526,13 +22981,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Alexandrov",
 		"attack": 0,
-		"cardImage": "CFM_300.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Avocat commis d’office",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CFM_300.gif",
 		"health": 7,
 		"id": "CFM_300",
 		"name": "Public Defender",
@@ -23545,13 +23000,13 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielsen",
 		"attack": 3,
-		"cardImage": "CFM_333.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Phalanges",
 			"text": "Après avoir attaqué un serviteur, frappe aussi le héros adverse."
 		},
+		"goldenImage": "CFM_333.gif",
 		"health": 7,
 		"id": "CFM_333",
 		"name": "Knuckles",
@@ -23563,13 +23018,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Joe Wilson",
-		"cardImage": "CFM_630.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Pièce contrefaite",
 			"text": "Donne 1 cristal de mana pendant ce tour uniquement."
 		},
+		"goldenImage": "CFM_630.gif",
 		"id": "CFM_630",
 		"name": "Counterfeit Coin",
 		"playerClass": "Rogue",
@@ -23580,13 +23035,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Wayne Reynolds",
-		"cardImage": "NEW1_036.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Cri de commandement",
 			"text": "Les points de vie de vos serviteurs ne peuvent pas passer en dessous de 1 ce tour-ci. Vous piochez une carte."
 		},
+		"goldenImage": "NEW1_036.gif",
 		"id": "NEW1_036",
 		"name": "Commanding Shout",
 		"playerClass": "Warrior",
@@ -23596,12 +23051,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_166a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Éclat lunaire",
 			"text": "Inflige 2 points de dégâts."
 		},
+		"goldenImage": "EX1_166a.gif",
 		"id": "EX1_166a",
 		"name": "Moonfire",
 		"playerClass": "Druid",
@@ -23615,7 +23070,6 @@ var parseCardsText = {
 			"name": "Légion",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un abyssal 6/6."
 		},
-		"goldenImage": "KARA_00_02H.gif",
 		"id": "KARA_00_02H",
 		"name": "Legion",
 		"playerClass": "Neutral",
@@ -23625,12 +23079,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "EX1_tk11.png",
 		"cost": 2,
 		"fr": {
 			"name": "Esprit du loup",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_tk11.gif",
 		"health": 3,
 		"id": "EX1_tk11",
 		"name": "Spirit Wolf",
@@ -23645,7 +23099,6 @@ var parseCardsText = {
 			"name": "Enragé",
 			"text": "+2 ATQ."
 		},
-		"goldenImage": "LOEA09_2e.gif",
 		"id": "LOEA09_2e",
 		"name": "Enraged",
 		"playerClass": "Neutral",
@@ -23659,7 +23112,6 @@ var parseCardsText = {
 			"name": "Souffle du Néant",
 			"text": "Fait passer la Vie de tous les serviteurs adverses à 1."
 		},
-		"goldenImage": "KARA_08_03H.gif",
 		"id": "KARA_08_03H",
 		"name": "Nether Breath",
 		"playerClass": "Neutral",
@@ -23672,7 +23124,6 @@ var parseCardsText = {
 			"name": "Puissance du singe",
 			"text": "+1/+1."
 		},
-		"goldenImage": "AT_090e.gif",
 		"id": "AT_090e",
 		"name": "Might of the Monkey",
 		"playerClass": "Neutral",
@@ -23682,12 +23133,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t11.png",
 		"cost": 1,
 		"fr": {
 			"name": "Potion inférieure",
 			"text": "Crée un sort coûtant 1 |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_621t11.gif",
 		"id": "CFM_621t11",
 		"name": "Lesser Potion",
 		"playerClass": "Neutral",
@@ -23697,13 +23148,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Trevor Jacobs",
-		"cardImage": "EX1_571.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Force de la nature",
 			"text": "Invoque trois tréants 2/2."
 		},
+		"goldenImage": "EX1_571.gif",
 		"id": "EX1_571",
 		"name": "Force of Nature",
 		"playerClass": "Druid",
@@ -23717,7 +23168,6 @@ var parseCardsText = {
 			"name": "Sang froid",
 			"text": "+4 ATQ."
 		},
-		"goldenImage": "CS2_073e2.gif",
 		"id": "CS2_073e2",
 		"name": "Cold Blood",
 		"playerClass": "Rogue",
@@ -23726,11 +23176,11 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "HERO_01.png",
 		"collectible": true,
 		"fr": {
 			"name": "Garrosh Hurlenfer"
 		},
+		"goldenImage": "HERO_01.gif",
 		"health": 30,
 		"id": "HERO_01",
 		"name": "Garrosh Hellscream",
@@ -23742,13 +23192,13 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 3,
-		"cardImage": "LOE_039.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gorillobot A-3",
 			"text": "<b>Cri de guerre :</b> si vous contrôlez un autre Méca, <b>découvre</b> un nouveau Méca."
 		},
+		"goldenImage": "LOE_039.gif",
 		"health": 4,
 		"id": "LOE_039",
 		"name": "Gorillabot A-3",
@@ -23761,13 +23211,13 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 5,
-		"cardImage": "AT_012.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Rejeton des Ombres",
 			"text": "<b>Exaltation :</b> inflige 4 points de dégâts à chaque héros."
 		},
+		"goldenImage": "AT_012.gif",
 		"health": 4,
 		"id": "AT_012",
 		"name": "Spawn of Shadows",
@@ -23782,7 +23232,6 @@ var parseCardsText = {
 			"name": "Enragé",
 			"text": "+3 ATQ."
 		},
-		"goldenImage": "OG_218e.gif",
 		"id": "OG_218e",
 		"name": "Enraged",
 		"playerClass": "Neutral",
@@ -23792,12 +23241,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CRED_46.png",
 		"cost": 2,
 		"fr": {
 			"name": "Keith Landes",
 			"text": "Au début de votre tour, la faim inflige 2 points de dégâts à votre héros."
 		},
+		"goldenImage": "CRED_46.gif",
 		"health": 6,
 		"id": "CRED_46",
 		"name": "Keith Landes",
@@ -23812,7 +23261,6 @@ var parseCardsText = {
 			"name": "Enragé",
 			"text": "+6 ATQ."
 		},
-		"goldenImage": "EX1_414e.gif",
 		"id": "EX1_414e",
 		"name": "Enraged",
 		"playerClass": "Warrior",
@@ -23825,7 +23273,6 @@ var parseCardsText = {
 			"name": "Mode héroïque",
 			"text": "+3/+3 si Phaerix contrôle la baguette !"
 		},
-		"goldenImage": "LOEA01_11he.gif",
 		"id": "LOEA01_11he",
 		"name": "Heroic Mode",
 		"playerClass": "Neutral",
@@ -23836,13 +23283,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 5,
-		"cardImage": "EX1_313.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Seigneur des abîmes",
 			"text": "<b>Cri de guerre :</b> inflige 5 points de dégâts à votre héros."
 		},
+		"goldenImage": "EX1_313.gif",
 		"health": 6,
 		"id": "EX1_313",
 		"name": "Pit Lord",
@@ -23854,12 +23301,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CRED_18.png",
 		"cost": 2,
 		"fr": {
 			"name": "Becca Abel",
 			"text": "Chaque fois que vous piochez une carte, la transforme en carte dorée."
 		},
+		"goldenImage": "CRED_18.gif",
 		"health": 2,
 		"id": "CRED_18",
 		"name": "Becca Abel",
@@ -23888,11 +23335,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "OG_314b.png",
 		"cost": 2,
 		"fr": {
 			"name": "Gelée"
 		},
+		"goldenImage": "OG_314b.gif",
 		"health": 2,
 		"id": "OG_314b",
 		"name": "Slime",
@@ -23906,7 +23353,6 @@ var parseCardsText = {
 			"name": "Bête déchaînée !",
 			"text": "Invoque une Bête aléatoire."
 		},
-		"goldenImage": "KARA_07_05heroic.gif",
 		"id": "KARA_07_05heroic",
 		"name": "Stampeding Beast!",
 		"playerClass": "Neutral",
@@ -23919,7 +23365,6 @@ var parseCardsText = {
 			"name": "Courroux bestial",
 			"text": "+2 ATQ et <b>Insensible</b> pendant ce tour."
 		},
-		"goldenImage": "EX1_549o.gif",
 		"id": "EX1_549o",
 		"name": "Bestial Wrath",
 		"playerClass": "Hunter",
@@ -23928,12 +23373,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_PickYourFate_3.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin cruel : Furie des vents",
 			"text": "Tous les serviteurs ont <b>Furie des vents</b>."
 		},
+		"goldenImage": "TB_PickYourFate_3.gif",
 		"id": "TB_PickYourFate_3",
 		"name": "Dire Fate: Windfury",
 		"playerClass": "Neutral",
@@ -23942,10 +23387,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA04_1H.png",
 		"fr": {
 			"name": "Garr"
 		},
+		"goldenImage": "BRMA04_1H.gif",
 		"health": 45,
 		"id": "BRMA04_1H",
 		"name": "Garr",
@@ -23955,12 +23400,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "NEW1_009.png",
 		"cost": 1,
 		"fr": {
 			"name": "Totem de soins",
 			"text": "À la fin de votre tour, rend 1 point de vie à tous vos serviteurs."
 		},
+		"goldenImage": "NEW1_009.gif",
 		"health": 2,
 		"id": "NEW1_009",
 		"name": "Healing Totem",
@@ -23975,7 +23420,6 @@ var parseCardsText = {
 			"name": "Puissance de Dalaran",
 			"text": "Dégâts des sorts augmentés."
 		},
-		"goldenImage": "AT_006e.gif",
 		"id": "AT_006e",
 		"name": "Power of Dalaran",
 		"playerClass": "Mage",
@@ -23985,13 +23429,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "CS2_031.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Javelot de glace",
 			"text": "<b>Gèle</b> un personnage. S’il est déjà <b>gelé</b>, inflige $4 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "CS2_031.gif",
 		"id": "CS2_031",
 		"name": "Ice Lance",
 		"playerClass": "Mage",
@@ -24002,13 +23446,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "OG_311.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Lumière dans les ténèbres",
 			"text": "<b>Découvre</b> un serviteur.\nLui donne +1/+1."
 		},
+		"goldenImage": "OG_311.gif",
 		"id": "OG_311",
 		"name": "A Light in the Darkness",
 		"playerClass": "Paladin",
@@ -24023,7 +23467,6 @@ var parseCardsText = {
 			"name": "Bonjour ! Bonjour ! Bonjour !",
 			"text": "<b>Pouvoir héroïque</b>\nConfère <b>Bouclier divin</b> et <b>Provocation</b> à votre serviteur ayant la plus faible attaque."
 		},
-		"goldenImage": "TB_MechWar_Boss1_HeroPower.gif",
 		"id": "TB_MechWar_Boss1_HeroPower",
 		"name": "Hello! Hello! Hello!",
 		"playerClass": "Neutral",
@@ -24034,13 +23477,13 @@ var parseCardsText = {
 	{
 		"artist": "Ruan Jia",
 		"attack": 7,
-		"cardImage": "GVG_042.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Neptulon",
 			"text": "<b>Cri de guerre :</b> ajoute 4 murlocs aléatoires dans votre main.\n<b>Surcharge :</b> (3)"
 		},
+		"goldenImage": "GVG_042.gif",
 		"health": 7,
 		"id": "GVG_042",
 		"name": "Neptulon",
@@ -24056,7 +23499,6 @@ var parseCardsText = {
 			"name": "Mot de pouvoir : Bouclier",
 			"text": "+2 PV."
 		},
-		"goldenImage": "CS2_004e.gif",
 		"id": "CS2_004e",
 		"name": "Power Word: Shield",
 		"playerClass": "Priest",
@@ -24067,13 +23509,13 @@ var parseCardsText = {
 	{
 		"artist": "Mark Gibbons",
 		"attack": 1,
-		"cardImage": "EX1_597.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Maître des diablotins",
 			"text": "À la fin de votre tour, ce serviteur subit 1 point de dégâts et invoque un diablotin 1/1."
 		},
+		"goldenImage": "EX1_597.gif",
 		"health": 5,
 		"id": "EX1_597",
 		"name": "Imp Master",
@@ -24084,10 +23526,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA05_1H.png",
 		"fr": {
 			"name": "Baron Geddon"
 		},
+		"goldenImage": "BRMA05_1H.gif",
 		"health": 50,
 		"id": "BRMA05_1H",
 		"name": "Baron Geddon",
@@ -24098,13 +23540,13 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 2,
-		"cardImage": "CFM_060.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Wyrm de mana rouge",
 			"text": "Gagne +2 ATQ chaque fois que vous lancez un sort."
 		},
+		"goldenImage": "CFM_060.gif",
 		"health": 6,
 		"id": "CFM_060",
 		"name": "Red Mana Wyrm",
@@ -24115,12 +23557,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_014t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Banane",
 			"text": "Donne +1/+1 à un serviteur."
 		},
+		"goldenImage": "EX1_014t.gif",
 		"id": "EX1_014t",
 		"name": "Bananas",
 		"playerClass": "Neutral",
@@ -24133,7 +23575,6 @@ var parseCardsText = {
 			"name": "Réparations !",
 			"text": "+4 PV."
 		},
-		"goldenImage": "GVG_069a.gif",
 		"id": "GVG_069a",
 		"name": "Repairs!",
 		"playerClass": "Priest",
@@ -24143,13 +23584,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jim Nelson",
-		"cardImage": "NEW1_003.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Pacte sacrificiel",
 			"text": "Détruit un démon. Rend #5 PV à votre héros."
 		},
+		"goldenImage": "NEW1_003.gif",
 		"id": "NEW1_003",
 		"name": "Sacrificial Pact",
 		"playerClass": "Warlock",
@@ -24162,7 +23603,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "1000 Stats Enchant"
 		},
-		"goldenImage": "XXX_055e.gif",
 		"id": "XXX_055e",
 		"name": "1000 Stats Enchant",
 		"playerClass": "Neutral",
@@ -24175,7 +23615,6 @@ var parseCardsText = {
 			"name": "Activer Magmatron",
 			"text": "<b>Pouvoir héroïque</b>\nActive Magmatron !"
 		},
-		"goldenImage": "BRMA14_8.gif",
 		"id": "BRMA14_8",
 		"name": "Activate Magmatron",
 		"playerClass": "Neutral",
@@ -24186,7 +23625,6 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 1,
-		"cardImage": "EX1_080.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "ALLIANCE",
@@ -24194,6 +23632,7 @@ var parseCardsText = {
 			"name": "Gardienne des secrets",
 			"text": "Chaque fois qu’un <b>Secret</b> est joué, gagne +1/+1."
 		},
+		"goldenImage": "EX1_080.gif",
 		"health": 2,
 		"id": "EX1_080",
 		"name": "Secretkeeper",
@@ -24204,7 +23643,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_FW_Boom_Update.png",
 		"fr": {
 			"name": "Capitaine Ro’Boum"
 		},
@@ -24216,10 +23654,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "TU4f_001.png",
 		"fr": {
 			"name": "Chroniqueur Cho"
 		},
+		"goldenImage": "TU4f_001.gif",
 		"health": 25,
 		"id": "TU4f_001",
 		"name": "Lorewalker Cho",
@@ -24229,7 +23667,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dany Orizio",
-		"cardImage": "CFM_816e.png",
 		"fr": {
 			"name": "Voir grand",
 			"text": "+2/+2."
@@ -24248,7 +23685,6 @@ var parseCardsText = {
 			"name": "Génie",
 			"text": "<b>Pouvoir héroïque</b>\nVous piochez 3 cartes."
 		},
-		"goldenImage": "KARA_00_04.gif",
 		"id": "KARA_00_04",
 		"name": "Brilliance",
 		"playerClass": "Neutral",
@@ -24261,7 +23697,6 @@ var parseCardsText = {
 			"name": "Pur",
 			"text": "Caractéristiques augmentées."
 		},
-		"goldenImage": "GVG_101e.gif",
 		"id": "GVG_101e",
 		"name": "Pure",
 		"playerClass": "Paladin",
@@ -24272,13 +23707,13 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 1,
-		"cardImage": "GVG_076.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Mouton explosif",
 			"text": "<b>Râle d’agonie :</b> inflige 2 points de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "GVG_076.gif",
 		"health": 1,
 		"id": "GVG_076",
 		"name": "Explosive Sheep",
@@ -24291,13 +23726,13 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 3,
-		"cardImage": "LOE_022.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Singe féroce",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOE_022.gif",
 		"health": 4,
 		"id": "LOE_022",
 		"name": "Fierce Monkey",
@@ -24312,7 +23747,6 @@ var parseCardsText = {
 			"name": "Sang de dragon",
 			"text": "+1/+1"
 		},
-		"goldenImage": "BRM_033e.gif",
 		"id": "BRM_033e",
 		"name": "Dragon Blood",
 		"playerClass": "Neutral",
@@ -24323,13 +23757,13 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 5,
-		"cardImage": "CFM_610.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Tisse-cristal",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à vos démons."
 		},
+		"goldenImage": "CFM_610.gif",
 		"health": 4,
 		"id": "CFM_610",
 		"name": "Crystalweaver",
@@ -24358,7 +23792,6 @@ var parseCardsText = {
 			"name": "Fondre",
 			"text": "L’Attaque passe à 0 pendant ce tour."
 		},
-		"goldenImage": "BRM_001e.gif",
 		"id": "BRM_001e",
 		"name": "Melt",
 		"playerClass": "Priest",
@@ -24368,13 +23801,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raven Mimura",
-		"cardImage": "EX1_317.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Détection des démons",
 			"text": "Place dans votre main 2 démons aléatoires de votre jeu."
 		},
+		"goldenImage": "EX1_317.gif",
 		"id": "EX1_317",
 		"name": "Sense Demons",
 		"playerClass": "Warlock",
@@ -24385,12 +23818,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t39.png",
 		"cost": 10,
 		"fr": {
 			"name": "Ichor de non-mort",
 			"text": "Invoque 3 serviteurs alliés morts pendant cette partie."
 		},
+		"goldenImage": "CFM_621t39.gif",
 		"id": "CFM_621t39",
 		"name": "Ichor of Undeath",
 		"playerClass": "Neutral",
@@ -24399,10 +23832,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA10_1.png",
 		"fr": {
 			"name": "Aileron-Géant"
 		},
+		"goldenImage": "LOEA10_1.gif",
 		"health": 30,
 		"id": "LOEA10_1",
 		"name": "Giantfin",
@@ -24418,7 +23851,6 @@ var parseCardsText = {
 			"name": "Apprenti de l’archimage",
 			"text": "Chaque fois que vous lancez un sort, en place une copie dans votre deck."
 		},
-		"goldenImage": "KARA_00_08.gif",
 		"health": 4,
 		"id": "KARA_00_08",
 		"name": "Archmage's Apprentice",
@@ -24428,12 +23860,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_4.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin cruel : carte",
 			"text": "Quand un serviteur meurt, son propriétaire pioche une carte."
 		},
+		"goldenImage": "TB_PickYourFate_4.gif",
 		"id": "TB_PickYourFate_4",
 		"name": "Dire Fate: Card",
 		"playerClass": "Neutral",
@@ -24462,12 +23894,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 9,
-		"cardImage": "CRED_16.png",
 		"cost": 7,
 		"fr": {
 			"name": "Hamilton Chu",
 			"text": "<i>Ne fait PAS partie du problème... la plupart du temps.</i>"
 		},
+		"goldenImage": "CRED_16.gif",
 		"health": 5,
 		"id": "CRED_16",
 		"name": "Hamilton Chu",
@@ -24483,7 +23915,6 @@ var parseCardsText = {
 			"name": "La Main d’argent",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque deux recrues 1/1."
 		},
-		"goldenImage": "AT_132_PALADIN.gif",
 		"id": "AT_132_PALADIN",
 		"name": "The Silver Hand",
 		"playerClass": "Paladin",
@@ -24494,13 +23925,13 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 7,
-		"cardImage": "OG_339.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Sectateur Skeram",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_339.gif",
 		"health": 6,
 		"id": "OG_339",
 		"name": "Skeram Cultist",
@@ -24512,13 +23943,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Saas",
-		"cardImage": "CFM_310.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Quatre murlocs et un enterrement",
 			"text": "Invoque quatre murlocs 1/1."
 		},
+		"goldenImage": "CFM_310.gif",
 		"id": "CFM_310",
 		"name": "Call in the Finishers",
 		"playerClass": "Shaman",
@@ -24529,13 +23960,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "LOE_007.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Malédiction de Rafaam",
 			"text": "Donne une carte Maudit ! à votre adversaire.\nTant qu’elle est dans sa main, il subit 2 points de dégâts au début de son tour."
 		},
+		"goldenImage": "LOE_007.gif",
 		"id": "LOE_007",
 		"name": "Curse of Rafaam",
 		"playerClass": "Warlock",
@@ -24547,13 +23978,13 @@ var parseCardsText = {
 	{
 		"artist": "Malcolm Davis",
 		"attack": 1,
-		"cardImage": "DS1_175.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Loup des bois",
 			"text": "Vos autres Bêtes ont +1 ATQ."
 		},
+		"goldenImage": "DS1_175.gif",
 		"health": 1,
 		"id": "DS1_175",
 		"name": "Timber Wolf",
@@ -24564,12 +23995,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NEW1_008a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Connaissances anciennes",
 			"text": "Vous piochez une carte."
 		},
+		"goldenImage": "NEW1_008a.gif",
 		"id": "NEW1_008a",
 		"name": "Ancient Teachings",
 		"playerClass": "Druid",
@@ -24578,12 +24009,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA07_18.png",
 		"cost": 1,
 		"fr": {
 			"name": "Dynamite",
 			"text": "Inflige $10 |4(point,points) de dégâts."
 		},
+		"goldenImage": "LOEA07_18.gif",
 		"id": "LOEA07_18",
 		"name": "Dynamite",
 		"playerClass": "Neutral",
@@ -24592,12 +24023,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA12_7.png",
 		"cost": 1,
 		"fr": {
 			"name": "Affliction de l’espèce : bronze",
 			"text": "Les serviteurs de Chromaggus coûtent (1) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_7.gif",
 		"id": "BRMA12_7",
 		"name": "Brood Affliction: Bronze",
 		"playerClass": "Neutral",
@@ -24607,13 +24038,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Romain De Santi",
-		"cardImage": "CS2_032.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Choc de flammes",
 			"text": "Inflige $4 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "CS2_032.gif",
 		"id": "CS2_032",
 		"name": "Flamestrike",
 		"playerClass": "Mage",
@@ -24627,7 +24058,6 @@ var parseCardsText = {
 			"name": "Dévotion de l’implorateur",
 			"text": "+1/+1."
 		},
-		"goldenImage": "OG_290e.gif",
 		"id": "OG_290e",
 		"name": "Caller Devotion",
 		"playerClass": "Neutral",
@@ -24638,7 +24068,6 @@ var parseCardsText = {
 	{
 		"artist": "Nutthapon Petchthai",
 		"attack": 1,
-		"cardImage": "AT_034.png",
 		"collectible": true,
 		"cost": 4,
 		"durability": 3,
@@ -24646,6 +24075,7 @@ var parseCardsText = {
 			"name": "Lame empoisonnée",
 			"text": "Votre pouvoir héroïque donne à cette arme\n+1 ATQ au lieu de la remplacer."
 		},
+		"goldenImage": "AT_034.gif",
 		"id": "AT_034",
 		"name": "Poisoned Blade",
 		"playerClass": "Rogue",
@@ -24656,11 +24086,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "FP1_002t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Araignée spectrale"
 		},
+		"goldenImage": "FP1_002t.gif",
 		"health": 1,
 		"id": "FP1_002t",
 		"name": "Spectral Spider",
@@ -24671,13 +24101,13 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 8,
-		"cardImage": "AT_036.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Anub’arak",
 			"text": "<b>Râle d’agonie :</b> le renvoie dans votre main et invoque un nérubien 4/4."
 		},
+		"goldenImage": "AT_036.gif",
 		"health": 4,
 		"id": "AT_036",
 		"name": "Anub'arak",
@@ -24690,13 +24120,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyler Walpole",
 		"attack": 0,
-		"cardImage": "EX1_315.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Portail d’invocation",
 			"text": "Vos serviteurs coûtent (2) cristaux de moins, mais jamais moins\nde (1)."
 		},
+		"goldenImage": "EX1_315.gif",
 		"health": 4,
 		"id": "EX1_315",
 		"name": "Summoning Portal",
@@ -24708,12 +24138,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Izzy Hoover",
-		"cardImage": "OG_080f.png",
 		"cost": 1,
 		"fr": {
 			"name": "Toxine de fleur de feu",
 			"text": "Inflige $2 |4(point,points) de dégâts."
 		},
+		"goldenImage": "OG_080f.gif",
 		"id": "OG_080f",
 		"name": "Firebloom Toxin",
 		"playerClass": "Rogue",
@@ -24726,7 +24156,6 @@ var parseCardsText = {
 			"name": "Garde rapprochée",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "EX1_001e.gif",
 		"id": "EX1_001e",
 		"name": "Warded",
 		"playerClass": "Neutral",
@@ -24737,13 +24166,13 @@ var parseCardsText = {
 	{
 		"artist": "Bernie Kang",
 		"attack": 12,
-		"cardImage": "NEW1_030.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Aile de mort",
 			"text": "<b>Cri de guerre :</b> détruit tous les autres serviteurs et vous défausse de votre main."
 		},
+		"goldenImage": "NEW1_030.gif",
 		"health": 12,
 		"id": "NEW1_030",
 		"name": "Deathwing",
@@ -24755,12 +24184,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CRED_11.png",
 		"cost": 4,
 		"fr": {
 			"name": "Jay Baxter",
 			"text": "<b>Cri de guerre :</b> invoque CINQ inventions aléatoires."
 		},
+		"goldenImage": "CRED_11.gif",
 		"health": 4,
 		"id": "CRED_11",
 		"name": "Jay Baxter",
@@ -24775,7 +24204,6 @@ var parseCardsText = {
 			"name": "Se met en colère…",
 			"text": "Maintenant, il est en colère…"
 		},
-		"goldenImage": "TB_CoOpv3_BOSS2e.gif",
 		"id": "TB_CoOpv3_BOSS2e",
 		"name": "Getting Angry....",
 		"playerClass": "Neutral",
@@ -24785,12 +24213,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "EX1_345t.png",
 		"cost": 0,
 		"fr": {
 			"name": "Ombre du néant",
 			"text": "Comment ça « Votre adversaire n’a plus de serviteurs » ?"
 		},
+		"goldenImage": "EX1_345t.gif",
 		"health": 1,
 		"id": "EX1_345t",
 		"name": "Shadow of Nothing",
@@ -24803,13 +24231,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 2,
-		"cardImage": "CFM_668.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Gangsters, hé ho !",
 			"text": "<b>Cri de guerre :</b> invoque 2 copies de ce serviteur."
 		},
+		"goldenImage": "CFM_668.gif",
 		"health": 2,
 		"id": "CFM_668",
 		"name": "Doppelgangster",
@@ -24821,13 +24249,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Dixon",
-		"cardImage": "AT_061.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Prêt à tirer",
 			"text": "Chaque fois que vous lancez un sort pendant ce tour, ajoute une carte chasseur aléatoire dans votre main."
 		},
+		"goldenImage": "AT_061.gif",
 		"id": "AT_061",
 		"name": "Lock and Load",
 		"playerClass": "Hunter",
@@ -24841,7 +24269,6 @@ var parseCardsText = {
 			"name": "Charge",
 			"text": "A <b>Charge</b>."
 		},
-		"goldenImage": "CS2_103e2.gif",
 		"id": "CS2_103e2",
 		"name": "Charge",
 		"playerClass": "Warrior",
@@ -24854,7 +24281,6 @@ var parseCardsText = {
 			"name": "Du calme !",
 			"text": "L’Attaque est passée à 1."
 		},
-		"goldenImage": "EX1_382e.gif",
 		"id": "EX1_382e",
 		"name": "Stand Down!",
 		"playerClass": "Paladin",
@@ -24864,12 +24290,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "EX1_573t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Tréant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_573t.gif",
 		"health": 2,
 		"id": "EX1_573t",
 		"name": "Treant",
@@ -24884,7 +24310,6 @@ var parseCardsText = {
 			"name": "Activer Électron",
 			"text": "<b>Pouvoir héroïque</b>\nActive Électron !"
 		},
-		"goldenImage": "BRMA14_6H.gif",
 		"id": "BRMA14_6H",
 		"name": "Activate Electron",
 		"playerClass": "Neutral",
@@ -24897,7 +24322,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Again"
 		},
-		"goldenImage": "XXX_113.gif",
 		"id": "XXX_113",
 		"name": "Again",
 		"playerClass": "Neutral",
@@ -24907,12 +24331,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Nutchapol Thitinunthakorn",
-		"cardImage": "PART_007.png",
 		"cost": 1,
 		"fr": {
 			"name": "Lames tourbillonnantes",
 			"text": "Donne +1 ATQ à un serviteur."
 		},
+		"goldenImage": "PART_007.gif",
 		"id": "PART_007",
 		"name": "Whirling Blades",
 		"playerClass": "Neutral",
@@ -24922,7 +24346,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 9,
-		"cardImage": "TB_FW_DrBoomMega.png",
 		"cost": 9,
 		"fr": {
 			"name": "Dr Boum Boum Boum Boum",
@@ -24940,13 +24363,13 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"attack": 2,
-		"cardImage": "CS2_173.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Guerrier branchie-bleue",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_173.gif",
 		"health": 1,
 		"id": "CS2_173",
 		"name": "Bluegill Warrior",
@@ -24958,13 +24381,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ralph Horsley",
-		"cardImage": "EX1_251.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Fourche d’éclairs",
 			"text": "Inflige $2 |4(point,points) de dégâts à 2 serviteurs adverses aléatoires. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_251.gif",
 		"id": "EX1_251",
 		"name": "Forked Lightning",
 		"overload": 1,
@@ -24977,13 +24400,13 @@ var parseCardsText = {
 	{
 		"artist": "Laurel D. Austin",
 		"attack": 2,
-		"cardImage": "GVG_104.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Hobgobelin",
 			"text": "Chaque fois que vous jouez un serviteur avec 1 ATQ, lui donne +2/+2."
 		},
+		"goldenImage": "GVG_104.gif",
 		"health": 3,
 		"id": "GVG_104",
 		"name": "Hobgoblin",
@@ -24996,13 +24419,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 4,
-		"cardImage": "AT_090.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Champion de Mukla",
 			"text": "<b>Exaltation :</b> donne +1/+1 à vos autres serviteurs."
 		},
+		"goldenImage": "AT_090.gif",
 		"health": 3,
 		"id": "AT_090",
 		"name": "Mukla's Champion",
@@ -25014,12 +24437,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TU4c_005.png",
 		"cost": 2,
 		"fr": {
 			"name": "Gnome caché",
 			"text": "Il se cachait dans un tonneau !"
 		},
+		"goldenImage": "TU4c_005.gif",
 		"health": 3,
 		"id": "TU4c_005",
 		"name": "Hidden Gnome",
@@ -25032,11 +24455,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Kagounkin",
 		"attack": 2,
-		"cardImage": "OG_202c.png",
 		"cost": 2,
 		"fr": {
 			"name": "Gelée"
 		},
+		"goldenImage": "OG_202c.gif",
 		"health": 2,
 		"id": "OG_202c",
 		"name": "Slime",
@@ -25051,7 +24474,6 @@ var parseCardsText = {
 			"name": "C’est ma tournée",
 			"text": "Vous piochez une carte pour chacune de vos assiettes."
 		},
-		"goldenImage": "KAR_A02_10.gif",
 		"id": "KAR_A02_10",
 		"name": "Pour a Round",
 		"playerClass": "Neutral",
@@ -25061,11 +24483,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "NAX13_04H.png",
 		"cost": 5,
 		"fr": {
 			"name": "Feugen"
 		},
+		"goldenImage": "NAX13_04H.gif",
 		"health": 7,
 		"id": "NAX13_04H",
 		"name": "Feugen",
@@ -25076,13 +24498,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tom Baxa",
-		"cardImage": "EX1_316.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Puissance accablante",
 			"text": "Donne +4/+4 à un serviteur allié jusqu’à la fin du tour. Puis il meurt. De façon horrible."
 		},
+		"goldenImage": "EX1_316.gif",
 		"id": "EX1_316",
 		"name": "Power Overwhelming",
 		"playerClass": "Warlock",
@@ -25097,7 +24519,6 @@ var parseCardsText = {
 			"name": "Set health to full",
 			"text": "Set a character's health to full, and removes armour."
 		},
-		"goldenImage": "XXX_101.gif",
 		"id": "XXX_101",
 		"name": "Set health to full",
 		"playerClass": "Neutral",
@@ -25111,7 +24532,6 @@ var parseCardsText = {
 			"name": "Heure du Crépuscule",
 			"text": "Vie augmentée."
 		},
-		"goldenImage": "EX1_043e.gif",
 		"id": "EX1_043e",
 		"name": "Hour of Twilight",
 		"playerClass": "Neutral",
@@ -25122,13 +24542,13 @@ var parseCardsText = {
 	{
 		"artist": "Peet Cooper",
 		"attack": 2,
-		"cardImage": "GVG_067.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Trogg brisepierre",
 			"text": "Chaque fois que votre adversaire lance un sort, gagne +1 ATQ."
 		},
+		"goldenImage": "GVG_067.gif",
 		"health": 3,
 		"id": "GVG_067",
 		"name": "Stonesplinter Trogg",
@@ -25146,7 +24566,6 @@ var parseCardsText = {
 			"name": "Pion blanc",
 			"text": "<b>Attaque automatique :</b> inflige 1 point de dégâts aux adversaires en face de ce serviteur."
 		},
-		"goldenImage": "KAR_A10_02.gif",
 		"health": 6,
 		"id": "KAR_A10_02",
 		"name": "White Pawn",
@@ -25157,13 +24576,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Bozonnet",
-		"cardImage": "CFM_021.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Potion de gel",
 			"text": "<b>Gèle</b> un adversaire."
 		},
+		"goldenImage": "CFM_021.gif",
 		"id": "CFM_021",
 		"name": "Freezing Potion",
 		"playerClass": "Mage",
@@ -25175,13 +24594,13 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 3,
-		"cardImage": "CFM_697.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Illusionniste du Lotus",
 			"text": "Une fois que ce serviteur a attaqué un héros, le transforme en serviteur aléatoire coûtant 6 cristaux."
 		},
+		"goldenImage": "CFM_697.gif",
 		"health": 5,
 		"id": "CFM_697",
 		"name": "Lotus Illusionist",
@@ -25193,12 +24612,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "GAME_002.png",
 		"cost": 0,
 		"fr": {
 			"name": "Avatar de la pièce",
 			"text": "<i>Vous avez peut-être perdu à pile ou face, mais vous avez gagné un ami.</i>"
 		},
+		"goldenImage": "GAME_002.gif",
 		"health": 1,
 		"id": "GAME_002",
 		"name": "Avatar of the Coin",
@@ -25215,7 +24634,6 @@ var parseCardsText = {
 			"name": "Soigneuse de raid",
 			"text": "Chaque fois que votre héros est soigné, soigne d’autant votre équipier."
 		},
-		"goldenImage": "TB_Coopv3_105.gif",
 		"health": 7,
 		"id": "TB_Coopv3_105",
 		"name": "Raid Healer",
@@ -25227,13 +24645,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 4,
-		"cardImage": "OG_323.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Amasseur vicié",
 			"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 		},
+		"goldenImage": "OG_323.gif",
 		"health": 2,
 		"id": "OG_323",
 		"name": "Polluted Hoarder",
@@ -25248,7 +24666,6 @@ var parseCardsText = {
 			"name": "Poisseux",
 			"text": "+1/+1."
 		},
-		"goldenImage": "OG_256e.gif",
 		"id": "OG_256e",
 		"name": "Slimed",
 		"playerClass": "Neutral",
@@ -25282,7 +24699,6 @@ var parseCardsText = {
 			"name": "Golem d’argenterie",
 			"text": "Si vous vous défaussez de ce serviteur, l’invoque."
 		},
-		"goldenImage": "KAR_205.gif",
 		"health": 3,
 		"id": "KAR_205",
 		"name": "Silverware Golem",
@@ -25295,7 +24711,6 @@ var parseCardsText = {
 	{
 		"artist": "Justin Sweet",
 		"attack": 4,
-		"cardImage": "CS2_221.png",
 		"collectible": true,
 		"cost": 5,
 		"faction": "HORDE",
@@ -25303,6 +24718,7 @@ var parseCardsText = {
 			"name": "Forgeron malveillant",
 			"text": "<b>Accès de rage :</b> votre arme a +2 ATQ."
 		},
+		"goldenImage": "CS2_221.gif",
 		"health": 6,
 		"id": "CS2_221",
 		"name": "Spiteful Smith",
@@ -25317,7 +24733,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Medivh"
 		},
-		"goldenImage": "KARA_00_03.gif",
 		"health": 30,
 		"id": "KARA_00_03",
 		"name": "Medivh",
@@ -25328,11 +24743,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 28,
-		"cardImage": "CFM_712_t28.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t28.gif",
 		"health": 28,
 		"id": "CFM_712_t28",
 		"name": "Jade Golem",
@@ -25346,7 +24761,6 @@ var parseCardsText = {
 			"name": "Soins",
 			"text": "<b>Pouvoir héroïque</b>\nRend #4 PV."
 		},
-		"goldenImage": "CS1h_001_H1_AT_132.gif",
 		"id": "CS1h_001_H1_AT_132",
 		"name": "Heal",
 		"playerClass": "Priest",
@@ -25356,12 +24770,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "CRED_24.png",
 		"cost": 7,
 		"fr": {
 			"name": "Dean Ayala",
 			"text": "Vous ne pouvez pas perdre d’étoiles tant que vous avez cette carte dans votre deck."
 		},
+		"goldenImage": "CRED_24.gif",
 		"health": 5,
 		"id": "CRED_24",
 		"name": "Dean Ayala",
@@ -25372,10 +24786,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX15_01H.png",
 		"fr": {
 			"name": "Kel’Thuzad"
 		},
+		"goldenImage": "NAX15_01H.gif",
 		"health": 45,
 		"id": "NAX15_01H",
 		"name": "Kel'Thuzad",
@@ -25386,12 +24800,12 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 5,
-		"cardImage": "AT_102.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Jormungar capturé"
 		},
+		"goldenImage": "AT_102.gif",
 		"health": 9,
 		"id": "AT_102",
 		"name": "Captured Jormungar",
@@ -25405,7 +24819,6 @@ var parseCardsText = {
 			"name": "Sombres feux follets",
 			"text": "+5/+5 et <b>Provocation</b>."
 		},
-		"goldenImage": "GVG_041c.gif",
 		"id": "GVG_041c",
 		"name": "Dark Wispers",
 		"playerClass": "Druid",
@@ -25414,10 +24827,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA13_1h.png",
 		"fr": {
 			"name": "Squeletosaurus Hex"
 		},
+		"goldenImage": "LOEA13_1h.gif",
 		"health": 30,
 		"id": "LOEA13_1h",
 		"name": "Skelesaurus Hex",
@@ -25427,13 +24840,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "NAX10_02.png",
 		"cost": 3,
 		"durability": 8,
 		"fr": {
 			"name": "Crochet",
 			"text": "<b>Râle d’agonie :</b> place cette arme dans votre main."
 		},
+		"goldenImage": "NAX10_02.gif",
 		"id": "NAX10_02",
 		"name": "Hook",
 		"playerClass": "Neutral",
@@ -25444,13 +24857,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "AT_029.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Boucanier",
 			"text": "Chaque fois que vous vous équipez d’une arme, lui donne +1 ATQ."
 		},
+		"goldenImage": "AT_029.gif",
 		"health": 1,
 		"id": "AT_029",
 		"name": "Buccaneer",
@@ -25461,7 +24874,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_119.png",
 		"cost": 0,
 		"fr": {
 			"name": "Death No Rattle",
@@ -25478,7 +24890,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Contrôle mental"
 		},
-		"goldenImage": "EX1_tk31.gif",
 		"id": "EX1_tk31",
 		"name": "Mind Controlling",
 		"playerClass": "Priest",
@@ -25489,13 +24900,13 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 2,
-		"cardImage": "CFM_643.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Hobart Martelutte",
 			"text": "<b>Cri de guerre :</b> donne +1 ATQ à toutes les armes dans votre main et votre deck."
 		},
+		"goldenImage": "CFM_643.gif",
 		"health": 2,
 		"id": "CFM_643",
 		"name": "Hobart Grapplehammer",
@@ -25508,13 +24919,13 @@ var parseCardsText = {
 	{
 		"artist": "Jon Neimeister",
 		"attack": 6,
-		"cardImage": "CFM_663.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Trafiquante de la Kabale",
 			"text": "À la fin de votre tour, ajoute un démon aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_663.gif",
 		"health": 6,
 		"id": "CFM_663",
 		"name": "Kabal Trafficker",
@@ -25526,12 +24937,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "BRMA14_7H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Électron",
 			"text": "Tous les sorts coûtent (3) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "BRMA14_7H.gif",
 		"health": 6,
 		"id": "BRMA14_7H",
 		"name": "Electron",
@@ -25546,7 +24957,6 @@ var parseCardsText = {
 			"name": "Weapon Nerf Enchant",
 			"text": "Red Sparkles!"
 		},
-		"goldenImage": "XXX_058e.gif",
 		"id": "XXX_058e",
 		"name": "Weapon Nerf Enchant",
 		"playerClass": "Neutral",
@@ -25555,12 +24965,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "EX1_164b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Nourrir",
 			"text": "Vous piochez 3 cartes."
 		},
+		"goldenImage": "EX1_164b.gif",
 		"id": "EX1_164b",
 		"name": "Nourish",
 		"playerClass": "Druid",
@@ -25570,13 +24980,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jim Nelson",
-		"cardImage": "BRM_007.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Recrutement",
 			"text": "Choisissez un serviteur. En place 3 copies dans votre deck."
 		},
+		"goldenImage": "BRM_007.gif",
 		"id": "BRM_007",
 		"name": "Gang Up",
 		"playerClass": "Rogue",
@@ -25588,13 +24998,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
-		"cardImage": "FP1_004.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Savant fou",
 			"text": "<b>Râle d’agonie :</b> place un <b>Secret</b> de votre deck sur le champ de bataille."
 		},
+		"goldenImage": "FP1_004.gif",
 		"health": 2,
 		"id": "FP1_004",
 		"name": "Mad Scientist",
@@ -25606,13 +25016,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "CS2_234.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Mot de l’ombre : Douleur",
 			"text": "Détruit un serviteur avec 3 Attaque ou moins."
 		},
+		"goldenImage": "CS2_234.gif",
 		"id": "CS2_234",
 		"name": "Shadow Word: Pain",
 		"playerClass": "Priest",
@@ -25624,13 +25034,13 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 2,
-		"cardImage": "CFM_335.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Kodo de livraison",
 			"text": "<b>Cri de guerre :</b> inflige des dégâts d’un montant égal à l’Attaque de ce serviteur."
 		},
+		"goldenImage": "CFM_335.gif",
 		"health": 4,
 		"id": "CFM_335",
 		"name": "Dispatch Kodo",
@@ -25643,13 +25053,13 @@ var parseCardsText = {
 	{
 		"artist": "Howard Lyon",
 		"attack": 2,
-		"cardImage": "AT_115.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Maître d’escrime",
 			"text": "<b>Cri de guerre :</b> la prochaine fois que vous utilisez votre pouvoir héroïque, il coûte\n(2) cristaux de moins."
 		},
+		"goldenImage": "AT_115.gif",
 		"health": 2,
 		"id": "AT_115",
 		"name": "Fencing Coach",
@@ -25662,11 +25072,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 7,
-		"cardImage": "CFM_712_t07.png",
 		"cost": 7,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t07.gif",
 		"health": 7,
 		"id": "CFM_712_t07",
 		"name": "Jade Golem",
@@ -25677,13 +25087,13 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"attack": 4,
-		"cardImage": "OG_234.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Alchimiste de Sombre-Comté",
 			"text": "<b>Cri de guerre :</b> rend 5 PV."
 		},
+		"goldenImage": "OG_234.gif",
 		"health": 5,
 		"id": "OG_234",
 		"name": "Darkshire Alchemist",
@@ -25694,12 +25104,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA12_3H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Affliction de l’espèce : rouge",
 			"text": "Vous subissez 3 points de dégâts au début de votre tour tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_3H.gif",
 		"id": "BRMA12_3H",
 		"name": "Brood Affliction: Red",
 		"playerClass": "Neutral",
@@ -25709,7 +25119,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "TB_Coopv3_104_NewClasses.png",
 		"cost": 4,
 		"fr": {
 			"name": "Tank principal",
@@ -25726,11 +25135,11 @@ var parseCardsText = {
 	{
 		"artist": "A. J. Nazzaro",
 		"attack": 4,
-		"cardImage": "OG_031a.png",
 		"cost": 3,
 		"fr": {
 			"name": "Élémentaire du Crépuscule"
 		},
+		"goldenImage": "OG_031a.gif",
 		"health": 2,
 		"id": "OG_031a",
 		"name": "Twilight Elemental",
@@ -25742,12 +25151,12 @@ var parseCardsText = {
 	{
 		"artist": "Alex Alexandrov",
 		"attack": 6,
-		"cardImage": "CFM_665.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Motard worgen"
 		},
+		"goldenImage": "CFM_665.gif",
 		"health": 3,
 		"id": "CFM_665",
 		"name": "Worgen Greaser",
@@ -25757,12 +25166,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_573a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Faveur du demi-dieu",
 			"text": "Donne +2/+2 à vos autres serviteurs."
 		},
+		"goldenImage": "EX1_573a.gif",
 		"id": "EX1_573a",
 		"name": "Demigod's Favor",
 		"playerClass": "Druid",
@@ -25772,13 +25181,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Clint Langley",
-		"cardImage": "EX1_248.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Esprit farouche",
 			"text": "Invoque deux esprits du loup 2/3 avec <b>Provocation</b>.\n<b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_248.gif",
 		"id": "EX1_248",
 		"name": "Feral Spirit",
 		"overload": 1,
@@ -25791,13 +25200,13 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 3,
-		"cardImage": "GVG_117.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Gazleu",
 			"text": "Chaque fois que vous lancez un sort à 1 cristal, ajoute un Méca aléatoire dans votre main."
 		},
+		"goldenImage": "GVG_117.gif",
 		"health": 6,
 		"id": "GVG_117",
 		"name": "Gazlowe",
@@ -25812,7 +25221,6 @@ var parseCardsText = {
 			"name": "Pris au piège",
 			"text": "Sera <b>Gelé</b> à nouveau au début du tour suivant."
 		},
-		"goldenImage": "EX1_611e.gif",
 		"id": "EX1_611e",
 		"name": "Trapped",
 		"playerClass": "Hunter",
@@ -25822,11 +25230,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "LOEA04_24h.png",
 		"cost": 8,
 		"fr": {
 			"name": "Garde du temple anubisath"
 		},
+		"goldenImage": "LOEA04_24h.gif",
 		"health": 15,
 		"id": "LOEA04_24h",
 		"name": "Anubisath Temple Guard",
@@ -25837,13 +25245,13 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielson",
 		"attack": 5,
-		"cardImage": "OG_122.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Mukla, tyran du val",
 			"text": "<b>Cri de guerre :</b> place\n2 bananes dans votre main."
 		},
+		"goldenImage": "OG_122.gif",
 		"health": 5,
 		"id": "OG_122",
 		"name": "Mukla, Tyrant of the Vale",
@@ -25856,13 +25264,13 @@ var parseCardsText = {
 	{
 		"artist": "Jonboy Meyers",
 		"attack": 1,
-		"cardImage": "FP1_028.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Fossoyeur",
 			"text": "Gagne +1 ATQ chaque fois que vous invoquez un serviteur avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "FP1_028.gif",
 		"health": 2,
 		"id": "FP1_028",
 		"name": "Undertaker",
@@ -25874,13 +25282,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Efrem Palacios",
-		"cardImage": "CS2_094.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Marteau de courroux",
 			"text": "Inflige $3 |4(point,points) de dégâts. Vous piochez une carte."
 		},
+		"goldenImage": "CS2_094.gif",
 		"id": "CS2_094",
 		"name": "Hammer of Wrath",
 		"playerClass": "Paladin",
@@ -25892,13 +25300,13 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 6,
-		"cardImage": "AT_098.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Mangesort prodigieuse",
 			"text": "<b>Cri de guerre :</b> copie le pouvoir héroïque de votre adversaire."
 		},
+		"goldenImage": "AT_098.gif",
 		"health": 5,
 		"id": "AT_098",
 		"name": "Sideshow Spelleater",
@@ -25910,12 +25318,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Nutchapol Thitinunthakorn",
-		"cardImage": "OG_080c.png",
 		"cost": 1,
 		"fr": {
 			"name": "Toxine de chardon sanglant",
 			"text": "Renvoie un serviteur allié dans votre main.\nIl coûte (2) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "OG_080c.gif",
 		"id": "OG_080c",
 		"name": "Bloodthistle Toxin",
 		"playerClass": "Rogue",
@@ -25924,7 +25332,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_CoOpv3_201.png",
 		"cost": 0,
 		"fr": {
 			"name": "Incantation de l’ombre",
@@ -25939,11 +25346,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "AT_132_SHAMANb.png",
 		"cost": 0,
 		"fr": {
 			"name": "Totem incendiaire"
 		},
+		"goldenImage": "AT_132_SHAMANb.gif",
 		"health": 1,
 		"id": "AT_132_SHAMANb",
 		"name": "Searing Totem",
@@ -25952,10 +25359,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA15_1.png",
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "LOEA15_1.gif",
 		"health": 30,
 		"id": "LOEA15_1",
 		"name": "Rafaam",
@@ -25970,7 +25377,6 @@ var parseCardsText = {
 			"name": "Furtif insoumis",
 			"text": "À la fin de votre tour, change de camp."
 		},
-		"goldenImage": "TB_Coopv3_101.gif",
 		"health": 6,
 		"id": "TB_Coopv3_101",
 		"name": "Freewheeling Skulker",
@@ -25981,11 +25387,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CS2_050.png",
 		"cost": 1,
 		"fr": {
 			"name": "Totem incendiaire"
 		},
+		"goldenImage": "CS2_050.gif",
 		"health": 1,
 		"id": "CS2_050",
 		"name": "Searing Totem",
@@ -25997,13 +25403,13 @@ var parseCardsText = {
 	{
 		"artist": "Zero Yue",
 		"attack": 5,
-		"cardImage": "GVG_086.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Engin de siège",
 			"text": "Chaque fois que vous gagnez de l’Armure, donne +1 ATQ à ce serviteur."
 		},
+		"goldenImage": "GVG_086.gif",
 		"health": 5,
 		"id": "GVG_086",
 		"name": "Siege Engine",
@@ -26016,7 +25422,6 @@ var parseCardsText = {
 	{
 		"artist": "Court Jones",
 		"attack": 2,
-		"cardImage": "CS2_147.png",
 		"collectible": true,
 		"cost": 4,
 		"faction": "ALLIANCE",
@@ -26024,6 +25429,7 @@ var parseCardsText = {
 			"name": "Inventrice gnome",
 			"text": "<b>Cri de guerre :</b> vous piochez une carte."
 		},
+		"goldenImage": "CS2_147.gif",
 		"health": 4,
 		"id": "CS2_147",
 		"name": "Gnomish Inventor",
@@ -26035,13 +25441,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "CS2_061.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Drain de vie",
 			"text": "Inflige $2 |4(point,points) de dégâts. Rend #2 |4(point,points) de vie à votre héros."
 		},
+		"goldenImage": "CS2_061.gif",
 		"id": "CS2_061",
 		"name": "Drain Life",
 		"playerClass": "Warlock",
@@ -26054,7 +25460,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Prince Malchezaar"
 		},
-		"goldenImage": "KARA_13_06.gif",
 		"health": 30,
 		"id": "KARA_13_06",
 		"name": "Prince Malchezaar",
@@ -26064,12 +25469,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "DREAM_01.png",
 		"cost": 3,
 		"fr": {
 			"name": "Sœur rieuse",
 			"text": "Ne peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "DREAM_01.gif",
 		"health": 5,
 		"id": "DREAM_01",
 		"name": "Laughing Sister",
@@ -26079,10 +25484,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA16_1H.png",
 		"fr": {
 			"name": "Atramédès"
 		},
+		"goldenImage": "BRMA16_1H.gif",
 		"health": 30,
 		"id": "BRMA16_1H",
 		"name": "Atramedes",
@@ -26092,13 +25497,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "LOE_021.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Piège de fléchettes",
 			"text": "<b>Secret :</b> inflige\n$5 |4(point,points) de dégâts à un adversaire aléatoire après qu’un <b>pouvoir héroïque</b> adverse est utilisé."
 		},
+		"goldenImage": "LOE_021.gif",
 		"id": "LOE_021",
 		"name": "Dart Trap",
 		"playerClass": "Hunter",
@@ -26110,13 +25515,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 4,
-		"cardImage": "EX1_306.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Succube",
 			"text": "<b>Cri de guerre :</b> vous défausse d’une carte aléatoire."
 		},
+		"goldenImage": "EX1_306.gif",
 		"health": 3,
 		"id": "EX1_306",
 		"name": "Succubus",
@@ -26129,13 +25534,13 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 1,
-		"cardImage": "CFM_753.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Outilleur des Dessoudeurs",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à tous les serviteurs dans votre main."
 		},
+		"goldenImage": "CFM_753.gif",
 		"health": 1,
 		"id": "CFM_753",
 		"name": "Grimestreet Outfitter",
@@ -26147,12 +25552,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRMA01_4t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Écluseur",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA01_4t.gif",
 		"health": 1,
 		"id": "BRMA01_4t",
 		"name": "Guzzler",
@@ -26164,13 +25569,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 2,
-		"cardImage": "BRM_006.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Chef du gang des diablotins",
 			"text": "Invoque un diablotin 1/1 chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "BRM_006.gif",
 		"health": 4,
 		"id": "BRM_006",
 		"name": "Imp Gang Boss",
@@ -26181,12 +25586,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA16_11.png",
 		"cost": 0,
 		"fr": {
 			"name": "Couronne de Kael’thas",
 			"text": "Inflige $10 |4(point,points) de dégâts répartis de façon aléatoire entre TOUS les personnages."
 		},
+		"goldenImage": "LOEA16_11.gif",
 		"id": "LOEA16_11",
 		"name": "Crown of Kael'thas",
 		"playerClass": "Neutral",
@@ -26196,13 +25601,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Dixon",
-		"cardImage": "AT_022.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Poing de Jaraxxus",
 			"text": "Quand vous jouez ou que vous vous défaussez de cette carte, inflige $4 |4(point,points) de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "AT_022.gif",
 		"id": "AT_022",
 		"name": "Fist of Jaraxxus",
 		"playerClass": "Warlock",
@@ -26212,10 +25617,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA06_3.png",
 		"fr": {
 			"name": "Ragnaros, seigneur du feu"
 		},
+		"goldenImage": "BRMA06_3.gif",
 		"health": 8,
 		"id": "BRMA06_3",
 		"name": "Ragnaros the Firelord",
@@ -26224,10 +25629,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "NAX12_01.png",
 		"fr": {
 			"name": "Gluth"
 		},
+		"goldenImage": "NAX12_01.gif",
 		"health": 30,
 		"id": "NAX12_01",
 		"name": "Gluth",
@@ -26237,12 +25642,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "OG_044c.png",
 		"cost": 2,
 		"fr": {
 			"name": "Tigre dent-de-sabre",
 			"text": "<b>Charge, Camouflage</b>"
 		},
+		"goldenImage": "OG_044c.gif",
 		"health": 2,
 		"id": "OG_044c",
 		"name": "Sabertooth Tiger",
@@ -26254,13 +25659,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Bozonnet",
-		"cardImage": "CFM_603.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Potion de folie",
 			"text": "Vous prenez le contrôle d’un serviteur adverse avec 2 ATQ ou moins jusqu’à la fin du tour."
 		},
+		"goldenImage": "CFM_603.gif",
 		"id": "CFM_603",
 		"name": "Potion of Madness",
 		"playerClass": "Priest",
@@ -26272,13 +25677,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 3,
-		"cardImage": "CFM_336.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Porte-flingue secoué",
 			"text": "<b>Râle d’agonie :</b> donne +2/+2 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_336.gif",
 		"health": 3,
 		"id": "CFM_336",
 		"name": "Shaky Zipgunner",
@@ -26297,7 +25702,6 @@ var parseCardsText = {
 			"name": "Fou en onyx",
 			"text": "<b>Cri de guerre :</b> invoque un serviteur aléatoire allié mort pendant cette partie."
 		},
-		"goldenImage": "KAR_204.gif",
 		"health": 4,
 		"id": "KAR_204",
 		"name": "Onyx Bishop",
@@ -26308,10 +25712,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA02_1.png",
 		"fr": {
 			"name": "Juge Supérieur Mornepierre"
 		},
+		"goldenImage": "BRMA02_1.gif",
 		"health": 30,
 		"id": "BRMA02_1",
 		"name": "High Justice Grimstone",
@@ -26322,13 +25726,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "GVG_082.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Gnome mécanique",
 			"text": "<b>Râle d’agonie :</b> ajoute une carte <b>Pièce détachée</b> dans votre main."
 		},
+		"goldenImage": "GVG_082.gif",
 		"health": 1,
 		"id": "GVG_082",
 		"name": "Clockwork Gnome",
@@ -26344,7 +25748,6 @@ var parseCardsText = {
 			"name": "Moisson",
 			"text": "<b>Pouvoir héroïque</b>\nVous piochez une carte et gagnez un cristal de mana."
 		},
-		"goldenImage": "NAX8_02H.gif",
 		"id": "NAX8_02H",
 		"name": "Harvest",
 		"playerClass": "Neutral",
@@ -26368,12 +25771,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "BRMC_99e.png",
 		"cost": 2,
 		"fr": {
 			"name": "Élémentaire de roche",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMC_99e.gif",
 		"health": 3,
 		"id": "BRMC_99e",
 		"name": "Rock Elemental",
@@ -26385,13 +25788,13 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 3,
-		"cardImage": "AT_049.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Vaillant des Pitons-du-Tonnerre",
 			"text": "<b>Exaltation :</b> donne +2 ATQ à vos totems."
 		},
+		"goldenImage": "AT_049.gif",
 		"health": 6,
 		"id": "AT_049",
 		"name": "Thunder Bluff Valiant",
@@ -26407,7 +25810,6 @@ var parseCardsText = {
 			"name": "Mrglmrgl MRGL !",
 			"text": "<b>Pouvoir héroïque</b>\nPioche deux cartes."
 		},
-		"goldenImage": "LOEA10_2H.gif",
 		"id": "LOEA10_2H",
 		"name": "Mrglmrgl MRGL!",
 		"playerClass": "Neutral",
@@ -26416,10 +25818,10 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "NAX15_01.png",
 		"fr": {
 			"name": "Kel’Thuzad"
 		},
+		"goldenImage": "NAX15_01.gif",
 		"health": 30,
 		"id": "NAX15_01",
 		"name": "Kel'Thuzad",
@@ -26430,13 +25832,13 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 3,
-		"cardImage": "OG_149.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Goule ravageuse",
 			"text": "<b>Cri de guerre :</b> inflige\n1 point de dégâts à tous les autres serviteurs."
 		},
+		"goldenImage": "OG_149.gif",
 		"health": 3,
 		"id": "OG_149",
 		"name": "Ravaging Ghoul",
@@ -26453,7 +25855,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Serveur"
 		},
-		"goldenImage": "KAR_044a.gif",
 		"health": 1,
 		"id": "KAR_044a",
 		"name": "Steward",
@@ -26466,7 +25867,6 @@ var parseCardsText = {
 			"name": "Force de la meute",
 			"text": "Le loup alpha redoutable donne +1 ATQ à ce serviteur."
 		},
-		"goldenImage": "EX1_162o.gif",
 		"id": "EX1_162o",
 		"name": "Strength of the Pack",
 		"playerClass": "Neutral",
@@ -26476,13 +25876,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "CS2_103.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Charge",
 			"text": "Confère <b>Charge</b> à un serviteur allié. Il ne peut pas attaquer de héros pendant ce tour."
 		},
+		"goldenImage": "CS2_103.gif",
 		"id": "CS2_103",
 		"name": "Charge",
 		"playerClass": "Warrior",
@@ -26494,7 +25894,6 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 4,
-		"cardImage": "EX1_017.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "HORDE",
@@ -26502,6 +25901,7 @@ var parseCardsText = {
 			"name": "Panthère de la jungle",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "EX1_017.gif",
 		"health": 2,
 		"id": "EX1_017",
 		"name": "Jungle Panther",
@@ -26520,7 +25920,6 @@ var parseCardsText = {
 			"name": "Diablotin de Malchezaar",
 			"text": "Chaque fois que vous vous défaussez d’une carte, vous en piochez une."
 		},
-		"goldenImage": "KAR_089.gif",
 		"health": 3,
 		"id": "KAR_089",
 		"name": "Malchezaar's Imp",
@@ -26532,11 +25931,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "LOEA07_14.png",
 		"cost": 6,
 		"fr": {
 			"name": "Golem chancelant"
 		},
+		"goldenImage": "LOEA07_14.gif",
 		"health": 6,
 		"id": "LOEA07_14",
 		"name": "Lumbering Golem",
@@ -26550,7 +25949,6 @@ var parseCardsText = {
 			"name": "Chambardement",
 			"text": "Échange les mains des joueurs."
 		},
-		"goldenImage": "TB_CoOpv3_003.gif",
 		"id": "TB_CoOpv3_003",
 		"name": "Bamboozle",
 		"playerClass": "Neutral",
@@ -26563,7 +25961,6 @@ var parseCardsText = {
 			"name": "Vilenie",
 			"text": "Votre pouvoir héroïque coûte (5) cristaux de plus pendant ce tour."
 		},
-		"goldenImage": "AT_086e.gif",
 		"id": "AT_086e",
 		"name": "Villainy",
 		"playerClass": "Neutral",
@@ -26578,7 +25975,6 @@ var parseCardsText = {
 			"name": "Dorothée",
 			"text": "Les serviteurs à gauche ont <b>Charge</b>. Les serviteurs à droite ont <b>Provocation</b>."
 		},
-		"goldenImage": "TB_Dorothee_001.gif",
 		"health": 10,
 		"id": "TB_Dorothee_001",
 		"name": "Dorothee",
@@ -26589,13 +25985,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "GVG_010.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Choix de Velen",
 			"text": "Donne +2/+4 et <b>+1 aux dégâts des sorts</b> à un serviteur."
 		},
+		"goldenImage": "GVG_010.gif",
 		"id": "GVG_010",
 		"name": "Velen's Chosen",
 		"playerClass": "Priest",
@@ -26606,12 +26002,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_023.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destroy All Heroes",
 			"text": "Destroy all heroes."
 		},
+		"goldenImage": "XXX_023.gif",
 		"id": "XXX_023",
 		"name": "Destroy All Heroes",
 		"playerClass": "Neutral",
@@ -26623,12 +26019,12 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 3,
-		"cardImage": "GVG_044.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Char araignée"
 		},
+		"goldenImage": "GVG_044.gif",
 		"health": 4,
 		"id": "GVG_044",
 		"name": "Spider Tank",
@@ -26651,13 +26047,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Allsop",
-		"cardImage": "CS2_057.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Trait de l’ombre",
 			"text": "Inflige $4 |4(point,points) de dégâts à un serviteur."
 		},
+		"goldenImage": "CS2_057.gif",
 		"id": "CS2_057",
 		"name": "Shadow Bolt",
 		"playerClass": "Warlock",
@@ -26669,13 +26065,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 2,
-		"cardImage": "AT_075.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Maître des chevaux de guerre",
 			"text": "Vos recrues de la Main d’argent ont +1 ATQ."
 		},
+		"goldenImage": "AT_075.gif",
 		"health": 4,
 		"id": "AT_075",
 		"name": "Warhorse Trainer",
@@ -26687,12 +26083,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t22.png",
 		"cost": 5,
 		"fr": {
 			"name": "Sang-royal",
 			"text": "Vous piochez 2 cartes."
 		},
+		"goldenImage": "CFM_621t22.gif",
 		"id": "CFM_621t22",
 		"name": "Kingsblood",
 		"playerClass": "Neutral",
@@ -26706,7 +26102,6 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce",
 			"text": "<b>Pouvoir héroïque</b>\nAjoute une carte Affliction de l’espèce dans la main de votre adversaire à la fin de votre tour."
 		},
-		"goldenImage": "BRMA12_2.gif",
 		"id": "BRMA12_2",
 		"name": "Brood Affliction",
 		"playerClass": "Neutral",
@@ -26717,11 +26112,11 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 2,
-		"cardImage": "BRM_010t2.png",
 		"cost": 3,
 		"fr": {
 			"name": "Druidesse de la Flamme"
 		},
+		"goldenImage": "BRM_010t2.gif",
 		"health": 5,
 		"id": "BRM_010t2",
 		"name": "Druid of the Flame",
@@ -26733,13 +26128,13 @@ var parseCardsText = {
 	{
 		"artist": "Velvet Engine",
 		"attack": 5,
-		"cardImage": "AT_045.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Aviana",
 			"text": "Vos serviteurs coûtent\n(1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_045.gif",
 		"health": 5,
 		"id": "AT_045",
 		"name": "Aviana",
@@ -26756,7 +26151,6 @@ var parseCardsText = {
 			"name": "Souffle du Néant",
 			"text": "Fait passer la Vie de tous les serviteurs adverses à 1."
 		},
-		"goldenImage": "KARA_08_03.gif",
 		"id": "KARA_08_03",
 		"name": "Nether Breath",
 		"playerClass": "Neutral",
@@ -26765,12 +26159,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TU4a_004.png",
 		"cost": 3,
 		"fr": {
 			"name": "Lardeur TOUT CASSER !",
 			"text": "Inflige 4 points de dégâts."
 		},
+		"goldenImage": "TU4a_004.gif",
 		"id": "TU4a_004",
 		"name": "Hogger SMASH!",
 		"playerClass": "Neutral",
@@ -26781,12 +26175,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "CRED_38.png",
 		"cost": 4,
 		"fr": {
 			"name": "Robin Fredericksen",
 			"text": "<b>Cri de guerre :</b> si vous n’avez pas d’autre Eric sur le champ de bataille, renomme cette carte « Eric »."
 		},
+		"goldenImage": "CRED_38.gif",
 		"health": 4,
 		"id": "CRED_38",
 		"name": "Robin Fredericksen",
@@ -26801,7 +26195,6 @@ var parseCardsText = {
 			"name": "Enragé",
 			"text": "+1 ATQ."
 		},
-		"goldenImage": "GVG_051e.gif",
 		"id": "GVG_051e",
 		"name": "Enraged",
 		"playerClass": "Warrior",
@@ -26811,7 +26204,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "TB_FW_Warper.png",
 		"cost": 3,
 		"fr": {
 			"name": "Transfert Oméga",
@@ -26828,13 +26220,13 @@ var parseCardsText = {
 	{
 		"artist": "Sojin Hwang",
 		"attack": 3,
-		"cardImage": "CFM_851.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Journaliste intrépide",
 			"text": "Gagne +1/+1 chaque fois que votre adversaire pioche une carte."
 		},
+		"goldenImage": "CFM_851.gif",
 		"health": 3,
 		"id": "CFM_851",
 		"name": "Daring Reporter",
@@ -26850,7 +26242,6 @@ var parseCardsText = {
 			"name": "Fouilles",
 			"text": "Trouve un artéfact."
 		},
-		"goldenImage": "LOEA16_16H.gif",
 		"id": "LOEA16_16H",
 		"name": "Rummage",
 		"playerClass": "Neutral",
@@ -26860,11 +26251,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "EX1_598.png",
 		"cost": 1,
 		"fr": {
 			"name": "Diablotin"
 		},
+		"goldenImage": "EX1_598.gif",
 		"health": 1,
 		"id": "EX1_598",
 		"name": "Imp",
@@ -26875,7 +26266,6 @@ var parseCardsText = {
 	{
 		"artist": "Donato Giancola",
 		"attack": 1,
-		"cardImage": "CS1_042.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "ALLIANCE",
@@ -26883,6 +26273,7 @@ var parseCardsText = {
 			"name": "Soldat de Comté-de-l’Or",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS1_042.gif",
 		"health": 2,
 		"id": "CS1_042",
 		"name": "Goldshire Footman",
@@ -26894,13 +26285,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Skan Srisuwan",
-		"cardImage": "OG_195.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Feux follets funestes",
 			"text": "<b>Choix des armes :</b> invoque sept feux follets 1/1 ou donne +2/+2 à vos serviteurs."
 		},
+		"goldenImage": "OG_195.gif",
 		"id": "OG_195",
 		"name": "Wisps of the Old Gods",
 		"playerClass": "Druid",
@@ -26911,13 +26302,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Christopher Moeller",
-		"cardImage": "EX1_259.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Tempête de foudre",
 			"text": "Inflige $2 à $3 points de dégâts à tous les serviteurs adverses. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_259.gif",
 		"id": "EX1_259",
 		"name": "Lightning Storm",
 		"overload": 1,
@@ -26933,7 +26324,6 @@ var parseCardsText = {
 			"name": "Explosion de feu rang 2",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts."
 		},
-		"goldenImage": "CS2_034_H2_AT_132.gif",
 		"id": "CS2_034_H2_AT_132",
 		"name": "Fireblast Rank 2",
 		"playerClass": "Mage",
@@ -26942,7 +26332,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "TB_SPT_DPromoHP2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Si nombreux…",
@@ -26960,7 +26349,6 @@ var parseCardsText = {
 			"name": "Griffe",
 			"text": "+2 ATQ pendant ce tour."
 		},
-		"goldenImage": "CS2_005o.gif",
 		"id": "CS2_005o",
 		"name": "Claw",
 		"playerClass": "Druid",
@@ -26970,12 +26358,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "LOEA01_11h.png",
 		"cost": 0,
 		"fr": {
 			"name": "Baguette du Soleil",
 			"text": "<b>Râle d’agonie :</b> remet cette carte à votre adversaire."
 		},
+		"goldenImage": "LOEA01_11h.gif",
 		"health": 5,
 		"id": "LOEA01_11h",
 		"name": "Rod of the Sun",
@@ -26987,13 +26375,13 @@ var parseCardsText = {
 	{
 		"artist": "Richie Marella",
 		"attack": 1,
-		"cardImage": "CFM_759.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Marshal malhonnête",
 			"text": "<b>Râle d’agonie :</b> vous piochez une carte si ce serviteur a 2 ATQ ou plus."
 		},
+		"goldenImage": "CFM_759.gif",
 		"health": 2,
 		"id": "CFM_759",
 		"name": "Meanstreet Marshal",
@@ -27005,13 +26393,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jesper Ejsing",
-		"cardImage": "OG_094.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Mot de pouvoir : Tentacules",
 			"text": "Donne +2/+6 à un serviteur."
 		},
+		"goldenImage": "OG_094.gif",
 		"id": "OG_094",
 		"name": "Power Word: Tentacles",
 		"playerClass": "Priest",
@@ -27021,12 +26409,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_007.png",
 		"cost": 1,
 		"fr": {
 			"name": "Banane déviante",
 			"text": "Inverse l’Attaque et la Vie d’un serviteur."
 		},
+		"goldenImage": "TB_007.gif",
 		"id": "TB_007",
 		"name": "Deviate Banana",
 		"playerClass": "Neutral",
@@ -27036,12 +26424,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "CRED_05.png",
 		"cost": 3,
 		"fr": {
 			"name": "Kyle Harrison",
 			"text": "<i>3 cristaux pour un 5/4 ? Ça c’est une affaire !</i>"
 		},
+		"goldenImage": "CRED_05.gif",
 		"health": 4,
 		"id": "CRED_05",
 		"name": "Kyle Harrison",
@@ -27052,10 +26440,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX11_01H.png",
 		"fr": {
 			"name": "Grobbulus"
 		},
+		"goldenImage": "NAX11_01H.gif",
 		"health": 45,
 		"id": "NAX11_01H",
 		"name": "Grobbulus",
@@ -27066,13 +26454,13 @@ var parseCardsText = {
 	{
 		"artist": "Sojin Hwang",
 		"attack": 4,
-		"cardImage": "AT_026.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Garde-courroux",
 			"text": "Chaque fois que ce serviteur subit des dégâts, inflige le même montant de dégâts à votre héros."
 		},
+		"goldenImage": "AT_026.gif",
 		"health": 3,
 		"id": "AT_026",
 		"name": "Wrathguard",
@@ -27084,12 +26472,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "NAX8_03t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Jeune recrue spectrale",
 			"text": "Au début de votre tour, inflige 1 point de dégâts à votre héros."
 		},
+		"goldenImage": "NAX8_03t.gif",
 		"health": 2,
 		"id": "NAX8_03t",
 		"name": "Spectral Trainee",
@@ -27101,13 +26489,13 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 4,
-		"cardImage": "CFM_816.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Sensei virmen",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à une Bête alliée."
 		},
+		"goldenImage": "CFM_816.gif",
 		"health": 5,
 		"id": "CFM_816",
 		"name": "Virmen Sensei",
@@ -27120,13 +26508,13 @@ var parseCardsText = {
 	{
 		"artist": "Kan Liu",
 		"attack": 8,
-		"cardImage": "OG_120.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Anomalus",
 			"text": "<b>Râle d’agonie :</b> inflige\n8 points de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "OG_120.gif",
 		"health": 6,
 		"id": "OG_120",
 		"name": "Anomalus",
@@ -27141,7 +26529,6 @@ var parseCardsText = {
 			"name": "Puissance de Zul’Farrak",
 			"text": "Multiple l’Attaque."
 		},
-		"goldenImage": "GVG_049e.gif",
 		"id": "GVG_049e",
 		"name": "Might of Zul'Farrak",
 		"playerClass": "Hunter",
@@ -27152,13 +26539,13 @@ var parseCardsText = {
 	{
 		"artist": "Vance Kovacs",
 		"attack": 2,
-		"cardImage": "EX1_004.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Jeune prêtresse",
 			"text": "À la fin de votre tour, donne +1 PV à un autre serviteur allié aléatoire."
 		},
+		"goldenImage": "EX1_004.gif",
 		"health": 1,
 		"id": "EX1_004",
 		"name": "Young Priestess",
@@ -27174,7 +26561,6 @@ var parseCardsText = {
 			"name": "Frappe de Nefarian",
 			"text": "<b>Pouvoir héroïque</b>\nNefarian fait pleuvoir le feu depuis les cieux !"
 		},
-		"goldenImage": "BRMA17_8H.gif",
 		"id": "BRMA17_8H",
 		"name": "Nefarian Strikes!",
 		"playerClass": "Neutral",
@@ -27184,13 +26570,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jonboy Meyers",
-		"cardImage": "BRM_013.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Tir réflexe",
 			"text": "Inflige $3 |4(point,points) de dégâts. Vous piochez une carte si votre main est vide."
 		},
+		"goldenImage": "BRM_013.gif",
 		"id": "BRM_013",
 		"name": "Quick Shot",
 		"playerClass": "Hunter",
@@ -27203,7 +26589,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Destin aléatoire 8 : +2 Armure à chaque tour"
 		},
-		"goldenImage": "TB_PickYourFate_8_EnchRand.gif",
 		"id": "TB_PickYourFate_8_EnchRand",
 		"name": "Fate 8 Rand 2 armor each turn",
 		"playerClass": "Neutral",
@@ -27212,12 +26597,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRMA17_7.png",
 		"cost": 2,
 		"fr": {
 			"name": "Prototype chromatique",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA17_7.gif",
 		"health": 4,
 		"id": "BRMA17_7",
 		"name": "Chromatic Prototype",
@@ -27231,7 +26616,6 @@ var parseCardsText = {
 			"name": "Bricolé à fond",
 			"text": "Caractéristiques augmentées."
 		},
-		"goldenImage": "GVG_106e.gif",
 		"id": "GVG_106e",
 		"name": "Junked Up",
 		"playerClass": "Neutral",
@@ -27242,13 +26626,13 @@ var parseCardsText = {
 	{
 		"artist": "Laurel Austin",
 		"attack": 2,
-		"cardImage": "AT_038.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Aspirante de Darnassus",
 			"text": "<b>Cri de guerre :</b> gagne un cristal de mana vide.\n<b>Râle d’agonie :</b> perd un cristal de mana."
 		},
+		"goldenImage": "AT_038.gif",
 		"health": 3,
 		"id": "AT_038",
 		"name": "Darnassus Aspirant",
@@ -27260,12 +26644,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "skele11.png",
 		"cost": 1,
 		"fr": {
 			"name": "Squelette",
 			"text": "<b></b>"
 		},
+		"goldenImage": "skele11.gif",
 		"health": 1,
 		"id": "skele11",
 		"name": "Skeleton",
@@ -27277,13 +26661,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Brad Vancata",
-		"cardImage": "CS2_009.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Marque du fauve",
 			"text": "Confère <b>Provocation</b> et +2/+2 à un serviteur.<i> (+2 ATQ/+2 PV)</i>"
 		},
+		"goldenImage": "CS2_009.gif",
 		"id": "CS2_009",
 		"name": "Mark of the Wild",
 		"playerClass": "Druid",
@@ -27294,13 +26678,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan & Gabor",
-		"cardImage": "CS2_038.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Esprit ancestral",
 			"text": "Confère à un serviteur « <b>Râle d’agonie :</b> réinvoque ce serviteur. »"
 		},
+		"goldenImage": "CS2_038.gif",
 		"id": "CS2_038",
 		"name": "Ancestral Spirit",
 		"playerClass": "Shaman",
@@ -27311,7 +26695,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jon Neimeister",
-		"cardImage": "CFM_308b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Mana oublié",
@@ -27327,11 +26710,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 9,
-		"cardImage": "CFM_712_t09.png",
 		"cost": 9,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t09.gif",
 		"health": 9,
 		"id": "CFM_712_t09",
 		"name": "Jade Golem",
@@ -27342,13 +26725,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
-		"cardImage": "GVG_090.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Bombardier cinglé",
 			"text": "<b>Cri de guerre :</b> inflige 6 points de dégâts répartis de façon aléatoire entre tous les autres personnages."
 		},
+		"goldenImage": "GVG_090.gif",
 		"health": 4,
 		"id": "GVG_090",
 		"name": "Madder Bomber",
@@ -27361,13 +26744,13 @@ var parseCardsText = {
 	{
 		"artist": "Carl Critchlow",
 		"attack": 0,
-		"cardImage": "EX1_405.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Porte-bouclier",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_405.gif",
 		"health": 4,
 		"id": "EX1_405",
 		"name": "Shieldbearer",
@@ -27380,13 +26763,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 5,
-		"cardImage": "OG_133.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "N’Zoth le corrupteur",
 			"text": "<b>Cri de guerre :</b> invoque vos serviteurs avec <b>Râle d’agonie</b> morts pendant cette partie."
 		},
+		"goldenImage": "OG_133.gif",
 		"health": 7,
 		"id": "OG_133",
 		"name": "N'Zoth, the Corruptor",
@@ -27399,13 +26782,13 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 4,
-		"cardImage": "BRM_008.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Furtif sombrefer",
 			"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts à tous les serviteurs adverses qui ne sont pas blessés."
 		},
+		"goldenImage": "BRM_008.gif",
 		"health": 3,
 		"id": "BRM_008",
 		"name": "Dark Iron Skulker",
@@ -27418,13 +26801,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Garner",
 		"attack": 6,
-		"cardImage": "OG_096.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Soigneuse du Crépuscule",
 			"text": "<b>Cri de guerre :</b> rend 10 PV\nà votre héros si votre\nC’Thun a au moins\n10 Attaque."
 		},
+		"goldenImage": "OG_096.gif",
 		"health": 5,
 		"id": "OG_096",
 		"name": "Twilight Darkmender",
@@ -27436,12 +26819,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "NAX8_04.png",
 		"cost": 3,
 		"fr": {
 			"name": "Guerrier tenace",
 			"text": "<b>Râle d’agonie :</b> invoque un guerrier spectral pour votre adversaire."
 		},
+		"goldenImage": "NAX8_04.gif",
 		"health": 4,
 		"id": "NAX8_04",
 		"name": "Unrelenting Warrior",
@@ -27456,7 +26839,6 @@ var parseCardsText = {
 			"name": "Moisson",
 			"text": "<b>Pouvoir héroïque</b>\nVous piochez une carte et gagnez un cristal de mana."
 		},
-		"goldenImage": "NAX8_02H_TB.gif",
 		"id": "NAX8_02H_TB",
 		"name": "Harvest",
 		"playerClass": "Neutral",
@@ -27466,12 +26848,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "NAX9_02.png",
 		"cost": 3,
 		"fr": {
 			"name": "Dame Blaumeux",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_02.gif",
 		"health": 7,
 		"id": "NAX9_02",
 		"name": "Lady Blaumeux",
@@ -27484,13 +26866,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
-		"cardImage": "CFM_781.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Shaku, le Collectionneur",
 			"text": "<b>Camouflage</b>. Chaque fois que ce serviteur attaque, ajoute une carte aléatoire dans votre main <i>(de la classe de votre adversaire).</i>"
 		},
+		"goldenImage": "CFM_781.gif",
 		"health": 3,
 		"id": "CFM_781",
 		"name": "Shaku, the Collector",
@@ -27505,7 +26887,6 @@ var parseCardsText = {
 			"name": "Poison mortel",
 			"text": "+2 ATQ."
 		},
-		"goldenImage": "CS2_074e.gif",
 		"id": "CS2_074e",
 		"name": "Deadly Poison",
 		"playerClass": "Neutral",
@@ -27516,13 +26897,13 @@ var parseCardsText = {
 	{
 		"artist": "Chris Rahn",
 		"attack": 2,
-		"cardImage": "GVG_032.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Sylvenier du Bosquet",
 			"text": "<b>Choix des armes :</b> donne à chaque joueur un cristal de mana ou chaque joueur pioche une carte."
 		},
+		"goldenImage": "GVG_032.gif",
 		"health": 4,
 		"id": "GVG_032",
 		"name": "Grove Tender",
@@ -27533,7 +26914,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_115e.png",
 		"fr": {
 			"name": "Destroy Played Card Enchantment",
 			"text": "Whenever a player summons a minion, destroy it."
@@ -27549,13 +26929,13 @@ var parseCardsText = {
 	{
 		"artist": "Carl Critchlow",
 		"attack": 1,
-		"cardImage": "GVG_018.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Maîtresse de Douleur",
 			"text": "Chaque fois que ce serviteur inflige des dégâts, rend l’équivalent sous forme de PV à votre héros."
 		},
+		"goldenImage": "GVG_018.gif",
 		"health": 4,
 		"id": "GVG_018",
 		"name": "Mistress of Pain",
@@ -27571,7 +26951,6 @@ var parseCardsText = {
 			"name": "Ancienne Horde",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque deux orcs 1/1 avec <b>Provocation</b>. Change de pouvoir héroïque."
 		},
-		"goldenImage": "BRMA09_3.gif",
 		"id": "BRMA09_3",
 		"name": "Old Horde",
 		"playerClass": "Neutral",
@@ -27584,7 +26963,6 @@ var parseCardsText = {
 			"name": "Sombre puissance",
 			"text": "A reçu de la puissance de Noth."
 		},
-		"goldenImage": "TB_KTRAF_10e.gif",
 		"id": "TB_KTRAF_10e",
 		"name": "Dark Power",
 		"playerClass": "Neutral",
@@ -27595,13 +26973,13 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 2,
-		"cardImage": "EX1_084.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Officier chanteguerre",
 			"text": "Vos serviteurs avec <b>Charge</b> ont +1 ATQ."
 		},
+		"goldenImage": "EX1_084.gif",
 		"health": 3,
 		"id": "EX1_084",
 		"name": "Warsong Commander",
@@ -27614,12 +26992,12 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 4,
-		"cardImage": "OG_326.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Sanglier de pénombre"
 		},
+		"goldenImage": "OG_326.gif",
 		"health": 1,
 		"id": "OG_326",
 		"name": "Duskboar",
@@ -27631,13 +27009,13 @@ var parseCardsText = {
 	{
 		"artist": "Josh Harris",
 		"attack": 9,
-		"cardImage": "GVG_077.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Golem d’anima",
 			"text": "À la fin de chaque tour, détruit ce serviteur si c’est le seul que vous avez."
 		},
+		"goldenImage": "GVG_077.gif",
 		"health": 9,
 		"id": "GVG_077",
 		"name": "Anima Golem",
@@ -27649,13 +27027,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "James Ryman",
-		"cardImage": "CFM_716.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Nourrir les poissons",
 			"text": "Inflige $3 points de dégâts à tous les serviteurs blessés."
 		},
+		"goldenImage": "CFM_716.gif",
 		"id": "CFM_716",
 		"name": "Sleep with the Fishes",
 		"playerClass": "Warrior",
@@ -27667,13 +27045,13 @@ var parseCardsText = {
 	{
 		"artist": "Patrik Hjelm",
 		"attack": 5,
-		"cardImage": "NEW1_008.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Ancien du savoir",
 			"text": "<b>Choix des armes :</b> rend 5 PV ou vous piochez une carte."
 		},
+		"goldenImage": "NEW1_008.gif",
 		"health": 5,
 		"id": "NEW1_008",
 		"name": "Ancient of Lore",
@@ -27684,10 +27062,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX13_01H.png",
 		"fr": {
 			"name": "Thaddius"
 		},
+		"goldenImage": "NAX13_01H.gif",
 		"health": 45,
 		"id": "NAX13_01H",
 		"name": "Thaddius",
@@ -27697,7 +27075,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TB_SPT_DPromoMinion.png",
 		"cost": 3,
 		"fr": {
 			"name": "Bovin infernal",
@@ -27712,12 +27089,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA09_6.png",
 		"cost": 1,
 		"fr": {
 			"name": "Véritable chef de guerre",
 			"text": "Détruit un serviteur légendaire."
 		},
+		"goldenImage": "BRMA09_6.gif",
 		"id": "BRMA09_6",
 		"name": "The True Warchief",
 		"playerClass": "Neutral",
@@ -27727,13 +27104,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tooth",
-		"cardImage": "AT_002.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Effigie",
 			"text": "<b>Secret :</b> quand un serviteur allié meurt, invoque un serviteur aléatoire de même coût."
 		},
+		"goldenImage": "AT_002.gif",
 		"id": "AT_002",
 		"name": "Effigy",
 		"playerClass": "Mage",
@@ -27744,12 +27121,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t12.png",
 		"cost": 5,
 		"fr": {
 			"name": "Potion supérieure",
 			"text": "Crée un sort coûtant 5 |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_621t12.gif",
 		"id": "CFM_621t12",
 		"name": "Greater Potion",
 		"playerClass": "Neutral",
@@ -27759,12 +27136,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "XXX_095.png",
 		"cost": 0,
 		"fr": {
 			"name": "AI Buddy - All Charge!",
 			"text": "Spawn into play to give all minions <b>Charge</b>."
 		},
+		"goldenImage": "XXX_095.gif",
 		"health": 1,
 		"id": "XXX_095",
 		"name": "AI Buddy - All Charge!",
@@ -27775,13 +27152,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Scott",
-		"cardImage": "CFM_026.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Cache d’armes",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, donne +2/+2 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_026.gif",
 		"id": "CFM_026",
 		"name": "Hidden Cache",
 		"playerClass": "Hunter",
@@ -27795,7 +27172,6 @@ var parseCardsText = {
 			"name": "Destin",
 			"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 		},
-		"goldenImage": "TB_PickYourFate_4_EnchMinion.gif",
 		"id": "TB_PickYourFate_4_EnchMinion",
 		"name": "Fate",
 		"playerClass": "Neutral",
@@ -27805,13 +27181,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Clint Langley",
-		"cardImage": "EX1_371.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Main de protection",
 			"text": "Confère <b>Bouclier divin</b> à un serviteur."
 		},
+		"goldenImage": "EX1_371.gif",
 		"id": "EX1_371",
 		"name": "Hand of Protection",
 		"playerClass": "Paladin",
@@ -27821,12 +27197,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_007.png",
 		"cost": 0,
 		"fr": {
 			"name": "Enable for Attack",
 			"text": "Give a character Charge and make him able to attack!"
 		},
+		"goldenImage": "XXX_007.gif",
 		"id": "XXX_007",
 		"name": "Enable for Attack",
 		"playerClass": "Neutral",
@@ -27842,7 +27218,6 @@ var parseCardsText = {
 			"name": "Protection de la galerie",
 			"text": "<b>Pouvoir héroïque passif</b>\nVotre héros a <b>Provocation</b>."
 		},
-		"goldenImage": "KARA_07_02.gif",
 		"id": "KARA_07_02",
 		"name": "Gallery Protection",
 		"playerClass": "Neutral",
@@ -27852,11 +27227,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "NEW1_026t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Apprenti pourpre"
 		},
+		"goldenImage": "NEW1_026t.gif",
 		"health": 1,
 		"id": "NEW1_026t",
 		"name": "Violet Apprentice",
@@ -27867,7 +27242,6 @@ var parseCardsText = {
 	{
 		"artist": "Phroilan Gardner",
 		"attack": 3,
-		"cardImage": "EX1_023.png",
 		"collectible": true,
 		"cost": 4,
 		"faction": "HORDE",
@@ -27875,6 +27249,7 @@ var parseCardsText = {
 			"name": "Garde de Lune-d’argent",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_023.gif",
 		"health": 3,
 		"id": "EX1_023",
 		"name": "Silvermoon Guardian",
@@ -27889,7 +27264,6 @@ var parseCardsText = {
 			"name": "Rage intérieure",
 			"text": "+2 Attaque."
 		},
-		"goldenImage": "EX1_607e.gif",
 		"id": "EX1_607e",
 		"name": "Inner Rage",
 		"playerClass": "Warrior",
@@ -27900,13 +27274,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 1,
-		"cardImage": "EX1_009.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Poulet furieux",
 			"text": "<b>Accès de rage :</b> +5 ATQ."
 		},
+		"goldenImage": "EX1_009.gif",
 		"health": 1,
 		"id": "EX1_009",
 		"name": "Angry Chicken",
@@ -27919,13 +27293,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
-		"cardImage": "OG_131.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Empereur jumeau Vek’lor",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> invoque un autre empereur si votre C’Thun a au moins 10 Attaque."
 		},
+		"goldenImage": "OG_131.gif",
 		"health": 6,
 		"id": "OG_131",
 		"name": "Twin Emperor Vek'lor",
@@ -27938,13 +27312,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 2,
-		"cardImage": "OG_338.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Nat le sombre pêcheur",
 			"text": "Au début de son tour, votre adversaire a 50% de chances de piocher une carte supplémentaire."
 		},
+		"goldenImage": "OG_338.gif",
 		"health": 4,
 		"id": "OG_338",
 		"name": "Nat, the Darkfisher",
@@ -27958,7 +27332,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ombre d’Aran"
 		},
-		"goldenImage": "KARA_12_01H.gif",
 		"health": 30,
 		"id": "KARA_12_01H",
 		"name": "Shade of Aran",
@@ -27969,7 +27342,6 @@ var parseCardsText = {
 	{
 		"artist": "Dan Brereton",
 		"attack": 2,
-		"cardImage": "CS2_146.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "ALLIANCE",
@@ -27977,6 +27349,7 @@ var parseCardsText = {
 			"name": "Matelot des mers du Sud",
 			"text": "A <b>Charge</b> tant que vous êtes équipé d’une arme."
 		},
+		"goldenImage": "CS2_146.gif",
 		"health": 1,
 		"id": "CS2_146",
 		"name": "Southsea Deckhand",
@@ -27993,7 +27366,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Bougie"
 		},
-		"goldenImage": "KAR_025a.gif",
 		"health": 1,
 		"id": "KAR_025a",
 		"name": "Candle",
@@ -28002,10 +27374,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA08_1H.png",
 		"fr": {
 			"name": "Général Drakkisath"
 		},
+		"goldenImage": "BRMA08_1H.gif",
 		"health": 50,
 		"id": "BRMA08_1H",
 		"name": "General Drakkisath",
@@ -28014,10 +27386,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "BRMA15_1.png",
 		"fr": {
 			"name": "Maloriak"
 		},
+		"goldenImage": "BRMA15_1.gif",
 		"health": 30,
 		"id": "BRMA15_1",
 		"name": "Maloriak",
@@ -28031,7 +27403,6 @@ var parseCardsText = {
 			"name": "Immolation",
 			"text": "Inflige 4 points de dégâts à chaque héros."
 		},
-		"goldenImage": "TB_CoOpv3_012.gif",
 		"id": "TB_CoOpv3_012",
 		"name": "Immolate",
 		"playerClass": "Neutral",
@@ -28040,12 +27411,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_155b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Marque de la nature",
 			"text": "+4 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_155b.gif",
 		"id": "EX1_155b",
 		"name": "Mark of Nature",
 		"playerClass": "Druid",
@@ -28055,13 +27426,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Scott",
-		"cardImage": "EX1_241.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Explosion de lave",
 			"text": "Inflige $5 |4(point,points) de dégâts.\n<b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_241.gif",
 		"id": "EX1_241",
 		"name": "Lava Burst",
 		"overload": 1,
@@ -28077,7 +27448,6 @@ var parseCardsText = {
 			"name": "Enchaînement",
 			"text": "Inflige 7 points de dégâts à un serviteur et à son propriétaire."
 		},
-		"goldenImage": "TB_CoOpv3_004.gif",
 		"id": "TB_CoOpv3_004",
 		"name": "Cleave",
 		"playerClass": "Neutral",
@@ -28093,7 +27463,6 @@ var parseCardsText = {
 			"name": "Fou noir",
 			"text": "<b>Attaque automatique :</b> rend 2 PV aux serviteurs adjacents."
 		},
-		"goldenImage": "KAR_A10_06.gif",
 		"health": 6,
 		"id": "KAR_A10_06",
 		"name": "Black Bishop",
@@ -28104,12 +27473,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMA01_3.png",
 		"cost": 6,
 		"fr": {
 			"name": "Videur sombrefer",
 			"text": "Gagne toujours à la baston."
 		},
+		"goldenImage": "BRMA01_3.gif",
 		"health": 8,
 		"id": "BRMA01_3",
 		"name": "Dark Iron Bouncer",
@@ -28119,12 +27488,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_017.png",
 		"cost": 0,
 		"fr": {
 			"name": "Draw 3 Cards",
 			"text": "Draw 3 cards."
 		},
+		"goldenImage": "XXX_017.gif",
 		"id": "XXX_017",
 		"name": "Draw 3 Cards",
 		"playerClass": "Neutral",
@@ -28135,13 +27504,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jim Nelson",
-		"cardImage": "CS2_027.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Image miroir",
 			"text": "Invoque deux serviteurs 0/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "CS2_027.gif",
 		"id": "CS2_027",
 		"name": "Mirror Image",
 		"playerClass": "Mage",
@@ -28152,13 +27521,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Miguel Coimbra",
-		"cardImage": "EX1_624.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Flammes sacrées",
 			"text": "Inflige $5 points de dégâts. Rend #5 PV à votre héros."
 		},
+		"goldenImage": "EX1_624.gif",
 		"id": "EX1_624",
 		"name": "Holy Fire",
 		"playerClass": "Priest",
@@ -28169,13 +27538,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Kevin Chen",
-		"cardImage": "AT_024.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Fusion démoniaque",
 			"text": "Donne +3/+3 à un démon et un cristal de mana à votre adversaire."
 		},
+		"goldenImage": "AT_024.gif",
 		"id": "AT_024",
 		"name": "Demonfuse",
 		"playerClass": "Warlock",
@@ -28187,7 +27556,6 @@ var parseCardsText = {
 	{
 		"artist": "Nick Southham",
 		"attack": 2,
-		"cardImage": "CFM_337.png",
 		"collectible": true,
 		"cost": 5,
 		"durability": 4,
@@ -28195,6 +27563,7 @@ var parseCardsText = {
 			"name": "Lance-piranha",
 			"text": "Après que votre héros a attaqué, invoque un piranha 1/1."
 		},
+		"goldenImage": "CFM_337.gif",
 		"id": "CFM_337",
 		"name": "Piranha Launcher",
 		"playerClass": "Hunter",
@@ -28204,11 +27573,11 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "HERO_08a.png",
 		"collectible": true,
 		"fr": {
 			"name": "Medivh"
 		},
+		"goldenImage": "HERO_08a.gif",
 		"health": 30,
 		"id": "HERO_08a",
 		"name": "Medivh",
@@ -28222,7 +27591,6 @@ var parseCardsText = {
 			"name": "Bénédiction de sagesse",
 			"text": "Quand ce serviteur attaque, le joueur adverse pioche une carte."
 		},
-		"goldenImage": "EX1_363e2.gif",
 		"id": "EX1_363e2",
 		"name": "Blessing of Wisdom",
 		"playerClass": "Paladin",
@@ -28233,13 +27601,13 @@ var parseCardsText = {
 	{
 		"artist": "J. Ejsing & E. Amundsen",
 		"attack": 3,
-		"cardImage": "CFM_660.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Incante-âme démente",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur allié et en place une copie dans votre deck."
 		},
+		"goldenImage": "CFM_660.gif",
 		"health": 4,
 		"id": "CFM_660",
 		"name": "Manic Soulcaster",
@@ -28252,7 +27620,6 @@ var parseCardsText = {
 	{
 		"artist": "Trevor Jacobs",
 		"attack": 2,
-		"cardImage": "CS2_203.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "HORDE",
@@ -28260,6 +27627,7 @@ var parseCardsText = {
 			"name": "Chouette bec-de-fer",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "CS2_203.gif",
 		"health": 1,
 		"id": "CS2_203",
 		"name": "Ironbeak Owl",
@@ -28271,13 +27639,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Warren Mahy",
-		"cardImage": "GVG_038.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Crépitement",
 			"text": "Inflige $3 à $6 points de dégâts. <b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "GVG_038.gif",
 		"id": "GVG_038",
 		"name": "Crackle",
 		"overload": 1,
@@ -28290,11 +27658,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 14,
-		"cardImage": "CFM_712_t14.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t14.gif",
 		"health": 14,
 		"id": "CFM_712_t14",
 		"name": "Jade Golem",
@@ -28311,7 +27679,6 @@ var parseCardsText = {
 			"name": "Œuf runique",
 			"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 		},
-		"goldenImage": "KAR_029.gif",
 		"health": 2,
 		"id": "KAR_029",
 		"name": "Runic Egg",
@@ -28327,7 +27694,6 @@ var parseCardsText = {
 			"name": "Activation !",
 			"text": "<b>Pouvoir héroïque</b>\nActive un Tron aléatoire."
 		},
-		"goldenImage": "BRMA14_10.gif",
 		"id": "BRMA14_10",
 		"name": "Activate!",
 		"playerClass": "Neutral",
@@ -28337,11 +27703,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "LOEA07_09.png",
 		"cost": 4,
 		"fr": {
 			"name": "Trogg en chasse"
 		},
+		"goldenImage": "LOEA07_09.gif",
 		"health": 6,
 		"id": "LOEA07_09",
 		"name": "Chasing Trogg",
@@ -28356,7 +27722,6 @@ var parseCardsText = {
 			"name": "Diablotin dégoûtant",
 			"text": "<b>Râle d’agonie :</b> réinvoque ce serviteur et Malsabot perd 2 PV."
 		},
-		"goldenImage": "KARA_09_03a_heroic.gif",
 		"health": 2,
 		"id": "KARA_09_03a_heroic",
 		"name": "Icky Imp",
@@ -28372,7 +27737,6 @@ var parseCardsText = {
 			"name": "Romulo",
 			"text": "À la fin de votre tour, rend 3 PV à votre héros."
 		},
-		"goldenImage": "KARA_13_23.gif",
 		"health": 4,
 		"id": "KARA_13_23",
 		"name": "Romulo",
@@ -28387,7 +27751,6 @@ var parseCardsText = {
 			"name": "Présence démoniaque",
 			"text": "Vous piochez 3 cartes.\nGagne 10 points d’armure."
 		},
-		"goldenImage": "KARA_13_12H.gif",
 		"id": "KARA_13_12H",
 		"name": "Demonic Presence",
 		"playerClass": "Neutral",
@@ -28398,11 +27761,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 1,
-		"cardImage": "CFM_712_t01.png",
 		"cost": 1,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t01.gif",
 		"health": 1,
 		"id": "CFM_712_t01",
 		"name": "Jade Golem",
@@ -28415,7 +27778,6 @@ var parseCardsText = {
 			"name": "Puissance de Brikabrok",
 			"text": "+1/+1."
 		},
-		"goldenImage": "GVG_102e.gif",
 		"id": "GVG_102e",
 		"name": "Might of Tinkertown",
 		"playerClass": "Neutral",
@@ -28426,11 +27788,11 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 2,
-		"cardImage": "BRM_022t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Dragonnet noir"
 		},
+		"goldenImage": "BRM_022t.gif",
 		"health": 1,
 		"id": "BRM_022t",
 		"name": "Black Whelp",
@@ -28441,13 +27803,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tom Baxa",
-		"cardImage": "EX1_570.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Morsure",
 			"text": "Donne +4 ATQ au héros pendant ce tour. +4 points d’armure."
 		},
+		"goldenImage": "EX1_570.gif",
 		"id": "EX1_570",
 		"name": "Bite",
 		"playerClass": "Druid",
@@ -28461,7 +27823,6 @@ var parseCardsText = {
 			"name": "Bénédiction par la Lumière",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "AT_011e.gif",
 		"id": "AT_011e",
 		"name": "Light's Blessing",
 		"playerClass": "Neutral",
@@ -28475,7 +27836,6 @@ var parseCardsText = {
 			"name": "Grouillement",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un nérubien 4/4."
 		},
-		"goldenImage": "NAX1h_04.gif",
 		"id": "NAX1h_04",
 		"name": "Skitter",
 		"playerClass": "Neutral",
@@ -28485,12 +27845,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CRED_10.png",
 		"cost": 2,
 		"fr": {
 			"name": "Michael Schweitzer",
 			"text": "<b>C-C-C-COMBO :</b> détruit un serviteur."
 		},
+		"goldenImage": "CRED_10.gif",
 		"health": 2,
 		"id": "CRED_10",
 		"name": "Michael Schweitzer",
@@ -28506,7 +27866,6 @@ var parseCardsText = {
 			"name": "Puissance de Ragnaros",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 30 points de dégâts."
 		},
-		"goldenImage": "BRMA03_2.gif",
 		"id": "BRMA03_2",
 		"name": "Power of the Firelord",
 		"playerClass": "Neutral",
@@ -28521,7 +27880,6 @@ var parseCardsText = {
 			"name": "Mime",
 			"text": "Toujours réduit au <b>Silence</b>."
 		},
-		"goldenImage": "KARA_13_22.gif",
 		"health": 6,
 		"id": "KARA_13_22",
 		"name": "Mime",
@@ -28535,7 +27893,6 @@ var parseCardsText = {
 			"name": "Enragé",
 			"text": "+5 ATQ."
 		},
-		"goldenImage": "EX1_009e.gif",
 		"id": "EX1_009e",
 		"name": "Enraged",
 		"playerClass": "Neutral",
@@ -28547,7 +27904,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dédain-du-Néant"
 		},
-		"goldenImage": "KARA_08_01H.gif",
 		"health": 30,
 		"id": "KARA_08_01H",
 		"name": "Netherspite",
@@ -28558,13 +27914,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 8,
-		"cardImage": "EX1_560.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Nozdormu",
 			"text": "Les joueurs n’ont que 15 secondes pour jouer leur tour."
 		},
+		"goldenImage": "EX1_560.gif",
 		"health": 8,
 		"id": "EX1_560",
 		"name": "Nozdormu",
@@ -28575,10 +27931,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX1_01.png",
 		"fr": {
 			"name": "Anub’Rekhan"
 		},
+		"goldenImage": "NAX1_01.gif",
 		"health": 30,
 		"id": "NAX1_01",
 		"name": "Anub'Rekhan",
@@ -28589,13 +27945,13 @@ var parseCardsText = {
 	{
 		"artist": "Ozhill Studio",
 		"attack": 2,
-		"cardImage": "CFM_316.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Le clan des rats",
 			"text": "<b>Râle d’agonie :</b> invoque un nombre de rats 1/1 égal à l’attaque de ce serviteur."
 		},
+		"goldenImage": "CFM_316.gif",
 		"health": 2,
 		"id": "CFM_316",
 		"name": "Rat Pack",
@@ -28610,7 +27966,6 @@ var parseCardsText = {
 			"name": "Gain de niveau !",
 			"text": "Attaque et Vie augmentées."
 		},
-		"goldenImage": "EX1_044e.gif",
 		"id": "EX1_044e",
 		"name": "Level Up!",
 		"playerClass": "Neutral",
@@ -28620,12 +27975,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "CS2_mirror.png",
 		"cost": 0,
 		"fr": {
 			"name": "Image miroir",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_mirror.gif",
 		"health": 2,
 		"id": "CS2_mirror",
 		"name": "Mirror Image",
@@ -28636,12 +27991,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "PRO_001a.png",
 		"cost": 4,
 		"fr": {
 			"name": "Je suis murloc",
 			"text": "Invoque trois, quatre ou cinq murlocs 1/1."
 		},
+		"goldenImage": "PRO_001a.gif",
 		"id": "PRO_001a",
 		"name": "I Am Murloc",
 		"playerClass": "Neutral",
@@ -28652,13 +28007,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 1,
-		"cardImage": "LOE_018.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Trogg des tunnels",
 			"text": "Gagne +1 ATQ par cristal de mana verrouillé chaque fois que vous êtes en  <b>Surcharge</b>."
 		},
+		"goldenImage": "LOE_018.gif",
 		"health": 3,
 		"id": "LOE_018",
 		"name": "Tunnel Trogg",
@@ -28672,13 +28027,13 @@ var parseCardsText = {
 	{
 		"artist": "Brandon Kitkouski",
 		"attack": 3,
-		"cardImage": "AT_010.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Dompteur de béliers",
 			"text": "<b>Cri de guerre :</b> si vous avez une Bête, invoque une Bête aléatoire."
 		},
+		"goldenImage": "AT_010.gif",
 		"health": 3,
 		"id": "AT_010",
 		"name": "Ram Wrangler",
@@ -28694,7 +28049,6 @@ var parseCardsText = {
 			"name": "Enragé !",
 			"text": "Donne +2 ATQ à votre héros pendant ce tour."
 		},
-		"goldenImage": "LOEA09_2.gif",
 		"id": "LOEA09_2",
 		"name": "Enraged!",
 		"playerClass": "Neutral",
@@ -28722,13 +28076,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Smith",
 		"attack": 1,
-		"cardImage": "FP1_027.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Gargouille peau-de-pierre",
 			"text": "Au début de votre tour, rend tous ses points de vie à ce serviteur."
 		},
+		"goldenImage": "FP1_027.gif",
 		"health": 4,
 		"id": "FP1_027",
 		"name": "Stoneskin Gargoyle",
@@ -28741,13 +28095,13 @@ var parseCardsText = {
 	{
 		"artist": "Popo Wei",
 		"attack": 4,
-		"cardImage": "EX1_612.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Mage du Kirin Tor",
 			"text": "<b>Cri de guerre :</b> le prochain <b>Secret</b> que vous jouez pendant ce tour coûte (0) |4(cristal,cristaux)."
 		},
+		"goldenImage": "EX1_612.gif",
 		"health": 3,
 		"id": "EX1_612",
 		"name": "Kirin Tor Mage",
@@ -28760,13 +28114,13 @@ var parseCardsText = {
 	{
 		"artist": "Phil Saunders",
 		"attack": 2,
-		"cardImage": "GVG_006.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Méca-téléporteur",
 			"text": "Vos Méca coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "GVG_006.gif",
 		"health": 3,
 		"id": "GVG_006",
 		"name": "Mechwarper",
@@ -28782,7 +28136,6 @@ var parseCardsText = {
 			"name": "Glorieuse finale",
 			"text": "Le véritable combat commence…"
 		},
-		"goldenImage": "TB_CoOpv3_001.gif",
 		"id": "TB_CoOpv3_001",
 		"name": "Glorious Finale",
 		"playerClass": "Neutral",
@@ -28793,13 +28146,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 6,
-		"cardImage": "CFM_810.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Chef hurane vêtue de cuir",
 			"text": "<b>Cri de guerre :</b> gagne <b>Charge</b> si votre adversaire a 6 cartes ou plus dans sa main."
 		},
+		"goldenImage": "CFM_810.gif",
 		"health": 6,
 		"id": "CFM_810",
 		"name": "Leatherclad Hogleader",
@@ -28812,13 +28165,13 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 6,
-		"cardImage": "AT_041.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Chevalier des étendues sauvages",
 			"text": "Chaque fois que vous invoquez une Bête, réduit le coût de cette carte de (1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_041.gif",
 		"health": 6,
 		"id": "AT_041",
 		"name": "Knight of the Wild",
@@ -28831,13 +28184,13 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 5,
-		"cardImage": "LOE_038.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Sorcière des mers naga",
 			"text": "Vos cartes coûtent\n(5) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOE_038.gif",
 		"health": 5,
 		"id": "LOE_038",
 		"name": "Naga Sea Witch",
@@ -28852,7 +28205,6 @@ var parseCardsText = {
 			"name": "Destin",
 			"text": "Attaque et Vie échangées à la fin de chaque tour."
 		},
-		"goldenImage": "TB_PickYourFate_Confused.gif",
 		"id": "TB_PickYourFate_Confused",
 		"name": "Fate",
 		"playerClass": "Neutral",
@@ -28863,13 +28215,13 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Esjing",
 		"attack": 6,
-		"cardImage": "OG_147.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Robot de soins corrompu",
 			"text": "<b>Râle d’agonie :</b> rend 8 PV au héros adverse."
 		},
+		"goldenImage": "OG_147.gif",
 		"health": 6,
 		"id": "OG_147",
 		"name": "Corrupted Healbot",
@@ -28884,7 +28236,6 @@ var parseCardsText = {
 			"name": "Enraciné",
 			"text": "+5 PV et <b>Provocation</b>."
 		},
-		"goldenImage": "EX1_178ae.gif",
 		"id": "EX1_178ae",
 		"name": "Rooted",
 		"playerClass": "Druid",
@@ -28893,12 +28244,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "AT_042a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Forme de lion",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "AT_042a.gif",
 		"id": "AT_042a",
 		"name": "Lion Form",
 		"playerClass": "Druid",
@@ -28910,11 +28261,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 23,
-		"cardImage": "CFM_712_t23.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t23.gif",
 		"health": 23,
 		"id": "CFM_712_t23",
 		"name": "Jade Golem",
@@ -28923,12 +28274,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX1_05.png",
 		"cost": 7,
 		"fr": {
 			"name": "Nuée de sauterelles",
 			"text": "Inflige $3 |4(point,points) de dégâts à tous les serviteurs adverses. Rend #3 |4(point,points) de vie à votre héros."
 		},
+		"goldenImage": "NAX1_05.gif",
 		"id": "NAX1_05",
 		"name": "Locust Swarm",
 		"playerClass": "Neutral",
@@ -28938,13 +28289,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Lucas Graciano",
-		"cardImage": "EX1_349.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Faveur divine",
 			"text": "Vous piochez des cartes jusqu’à en avoir autant en main que votre adversaire."
 		},
+		"goldenImage": "EX1_349.gif",
 		"id": "EX1_349",
 		"name": "Divine Favor",
 		"playerClass": "Paladin",
@@ -28975,7 +28326,6 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 7,
-		"cardImage": "CS2_227.png",
 		"collectible": true,
 		"cost": 5,
 		"faction": "HORDE",
@@ -28983,6 +28333,7 @@ var parseCardsText = {
 			"name": "Nervi de la KapitalRisk",
 			"text": "Vos serviteurs coûtent (3) cristaux de plus."
 		},
+		"goldenImage": "CS2_227.gif",
 		"health": 6,
 		"id": "CS2_227",
 		"name": "Venture Co. Mercenary",
@@ -28994,13 +28345,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "A.J. Nazzaro",
-		"cardImage": "LOE_115.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Idole corbeau",
 			"text": "<b>Choix des armes :</b>\n<b>découvre</b> un serviteur ou un sort."
 		},
+		"goldenImage": "LOE_115.gif",
 		"id": "LOE_115",
 		"name": "Raven Idol",
 		"playerClass": "Druid",
@@ -29012,13 +28363,13 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 2,
-		"cardImage": "EX1_556.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Golem des moissons",
 			"text": "<b>Râle d’agonie :</b> invoque un golem endommagé 2/1."
 		},
+		"goldenImage": "EX1_556.gif",
 		"health": 3,
 		"id": "EX1_556",
 		"name": "Harvest Golem",
@@ -29031,13 +28382,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 3,
-		"cardImage": "AT_007.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Jette-sorts",
 			"text": "<b>Cri de guerre :</b> ajoute un sort aléatoire dans la main de chaque joueur."
 		},
+		"goldenImage": "AT_007.gif",
 		"health": 4,
 		"id": "AT_007",
 		"name": "Spellslinger",
@@ -29048,12 +28399,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_002.png",
 		"cost": 0,
 		"fr": {
 			"name": "Damage 5",
 			"text": "Deal $5 damage."
 		},
+		"goldenImage": "XXX_002.gif",
 		"id": "XXX_002",
 		"name": "Damage 5",
 		"playerClass": "Neutral",
@@ -29064,13 +28415,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "CFM_608.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Potion de cristal explosif",
 			"text": "Détruit un serviteur et un de vos cristaux de mana."
 		},
+		"goldenImage": "CFM_608.gif",
 		"id": "CFM_608",
 		"name": "Blastcrystal Potion",
 		"playerClass": "Warlock",
@@ -29081,12 +28432,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "LOEA09_7.png",
 		"cost": 0,
 		"fr": {
 			"name": "Chaudron",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> libère Sir Finley et arrête l’attaque naga !"
 		},
+		"goldenImage": "LOEA09_7.gif",
 		"health": 5,
 		"id": "LOEA09_7",
 		"name": "Cauldron",
@@ -29100,7 +28451,6 @@ var parseCardsText = {
 			"name": "Pioche Jeu offensif",
 			"text": "Pioche Jeu offensif au premier, troisième et cinquième tour"
 		},
-		"goldenImage": "TB_Superfriends002e.gif",
 		"id": "TB_Superfriends002e",
 		"name": "Draw Offensive Play",
 		"playerClass": "Rogue",
@@ -29113,7 +28463,6 @@ var parseCardsText = {
 			"name": "Perspicace",
 			"text": "Vos sorts coûtent (0) |4(cristal,cristaux)."
 		},
-		"goldenImage": "KARA_00_05e.gif",
 		"id": "KARA_00_05e",
 		"name": "Insightful",
 		"playerClass": "Neutral",
@@ -29122,12 +28471,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA05_3H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Bombe vivante",
 			"text": "Choisissez un serviteur adverse. Inflige $10 |4(point,points) de dégâts à tous les adversaires s’il survit jusqu’à votre prochain tour."
 		},
+		"goldenImage": "BRMA05_3H.gif",
 		"id": "BRMA05_3H",
 		"name": "Living Bomb",
 		"playerClass": "Neutral",
@@ -29136,11 +28485,11 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "HERO_05a.png",
 		"collectible": true,
 		"fr": {
 			"name": "Alleria Coursevent"
 		},
+		"goldenImage": "HERO_05a.gif",
 		"health": 30,
 		"id": "HERO_05a",
 		"name": "Alleria Windrunner",
@@ -29154,7 +28503,6 @@ var parseCardsText = {
 			"name": "Horion de lave",
 			"text": "Les cartes que vous jouez pendant ce tour n’entraînent pas de <b>Surcharge</b>."
 		},
-		"goldenImage": "BRM_011t.gif",
 		"id": "BRM_011t",
 		"name": "Lava Shock",
 		"playerClass": "Shaman",
@@ -29164,11 +28512,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "LOEA07_25.png",
 		"cost": 1,
 		"fr": {
 			"name": "Perroquet mécanique"
 		},
+		"goldenImage": "LOEA07_25.gif",
 		"health": 6,
 		"id": "LOEA07_25",
 		"name": "Mechanical Parrot",
@@ -29177,12 +28525,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMC_100.png",
 		"cost": 3,
 		"fr": {
 			"name": "Bombe vivante",
 			"text": "Choisissez un serviteur adverse. Inflige $5 |4(point,points) de dégâts à tous les adversaires s’il survit jusqu’à votre prochain tour."
 		},
+		"goldenImage": "BRMC_100.gif",
 		"id": "BRMC_100",
 		"name": "Living Bomb",
 		"playerClass": "Neutral",
@@ -29193,13 +28541,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 3,
-		"cardImage": "EX1_590.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Chevalier de sang",
 			"text": "<b>Cri de guerre :</b> tous les serviteurs perdent <b>Bouclier divin</b>. Gagne +3/+3 pour chaque bouclier perdu."
 		},
+		"goldenImage": "EX1_590.gif",
 		"health": 3,
 		"id": "EX1_590",
 		"name": "Blood Knight",
@@ -29212,11 +28560,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 3,
-		"cardImage": "CFM_712_t03.png",
 		"cost": 3,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t03.gif",
 		"health": 3,
 		"id": "CFM_712_t03",
 		"name": "Jade Golem",
@@ -29226,13 +28574,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Andrew Hou",
-		"cardImage": "OG_100.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Mot de l’ombre : Horreur",
 			"text": "Détruit tous les serviteurs avec\n2 Attaque ou moins."
 		},
+		"goldenImage": "OG_100.gif",
 		"id": "OG_100",
 		"name": "Shadow Word: Horror",
 		"playerClass": "Priest",
@@ -29247,7 +28595,6 @@ var parseCardsText = {
 			"name": "Séides des os",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque deux assemblages d’os 2/1."
 		},
-		"goldenImage": "BRMA17_5_TB.gif",
 		"id": "BRMA17_5_TB",
 		"name": "Bone Minions",
 		"playerClass": "Neutral",
@@ -29257,11 +28604,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CS2_101t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Recrue de la Main d’argent"
 		},
+		"goldenImage": "CS2_101t.gif",
 		"health": 1,
 		"id": "CS2_101t",
 		"name": "Silver Hand Recruit",
@@ -29273,7 +28620,6 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 7,
-		"cardImage": "CS2_161.png",
 		"collectible": true,
 		"cost": 7,
 		"faction": "ALLIANCE",
@@ -29281,6 +28627,7 @@ var parseCardsText = {
 			"name": "Assassin de Ravenholdt",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "CS2_161.gif",
 		"health": 5,
 		"id": "CS2_161",
 		"name": "Ravenholdt Assassin",
@@ -29295,7 +28642,6 @@ var parseCardsText = {
 			"name": "Puissance de la foi",
 			"text": "+1/+1."
 		},
-		"goldenImage": "OG_321e.gif",
 		"id": "OG_321e",
 		"name": "Power of Faith",
 		"playerClass": "Neutral",
@@ -29306,13 +28652,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "AT_093.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Frigbold algide",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "AT_093.gif",
 		"health": 6,
 		"id": "AT_093",
 		"name": "Frigid Snobold",
@@ -29325,7 +28671,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Bozonnet",
-		"cardImage": "CFM_603e.png",
 		"fr": {
 			"name": "Potion de folie",
 			"text": "Ce serviteur a changé de propriétaire pour ce tour."
@@ -29338,12 +28683,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA12_5.png",
 		"cost": 1,
 		"fr": {
 			"name": "Affliction de l’espèce : bleu",
 			"text": "Les sorts de Chromaggus coûtent (1) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_5.gif",
 		"id": "BRMA12_5",
 		"name": "Brood Affliction: Blue",
 		"playerClass": "Neutral",
@@ -29354,7 +28699,6 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 1,
-		"cardImage": "CS2_127.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "HORDE",
@@ -29362,6 +28706,7 @@ var parseCardsText = {
 			"name": "Patriarche dos-argenté",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_127.gif",
 		"health": 4,
 		"id": "CS2_127",
 		"name": "Silverback Patriarch",
@@ -29376,7 +28721,6 @@ var parseCardsText = {
 			"name": "Maléficié",
 			"text": "Ce serviteur a été transformé !"
 		},
-		"goldenImage": "EX1_246e.gif",
 		"id": "EX1_246e",
 		"name": "Hexxed",
 		"playerClass": "Shaman",
@@ -29387,13 +28731,13 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 1,
-		"cardImage": "AT_091.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Médecin du tournoi",
 			"text": "<b>Exaltation :</b> rend 2 PV à votre héros."
 		},
+		"goldenImage": "AT_091.gif",
 		"health": 8,
 		"id": "AT_091",
 		"name": "Tournament Medic",
@@ -29406,13 +28750,13 @@ var parseCardsText = {
 	{
 		"artist": "RK Post",
 		"attack": 4,
-		"cardImage": "AT_047.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Grave-totem draeneï",
 			"text": "<b>Cri de guerre :</b> gagne +1/+1 pour chaque totem allié."
 		},
+		"goldenImage": "AT_047.gif",
 		"health": 4,
 		"id": "AT_047",
 		"name": "Draenei Totemcarver",
@@ -29424,11 +28768,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "EX1_025t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Petit dragon mécanique"
 		},
+		"goldenImage": "EX1_025t.gif",
 		"health": 1,
 		"id": "EX1_025t",
 		"name": "Mechanical Dragonling",
@@ -29440,13 +28784,13 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"attack": 4,
-		"cardImage": "GVG_078.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Yéti mécanique",
 			"text": "<b>Râle d’agonie :</b> donne une <b>Pièce détachée</b> à chaque joueur."
 		},
+		"goldenImage": "GVG_078.gif",
 		"health": 5,
 		"id": "GVG_078",
 		"name": "Mechanical Yeti",
@@ -29458,11 +28802,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 11,
-		"cardImage": "FP1_014t.png",
 		"cost": 10,
 		"fr": {
 			"name": "Thaddius"
 		},
+		"goldenImage": "FP1_014t.gif",
 		"health": 11,
 		"id": "FP1_014t",
 		"name": "Thaddius",
@@ -29473,13 +28817,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Gabor Szikszai",
-		"cardImage": "AT_004.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Déflagration des Arcanes",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur. Le bonus aux <b>Dégâts des sorts</b> est doublé pour ce sort."
 		},
+		"goldenImage": "AT_004.gif",
 		"id": "AT_004",
 		"name": "Arcane Blast",
 		"playerClass": "Mage",
@@ -29494,7 +28838,6 @@ var parseCardsText = {
 			"name": "Marque de la nature",
 			"text": "Ce serviteur a +4 PV et <b>Provocation</b>."
 		},
-		"goldenImage": "EX1_155be.gif",
 		"id": "EX1_155be",
 		"name": "Mark of Nature",
 		"playerClass": "Druid",
@@ -29505,12 +28848,12 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 3,
-		"cardImage": "GVG_064.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Saute-flaque"
 		},
+		"goldenImage": "GVG_064.gif",
 		"health": 2,
 		"id": "GVG_064",
 		"name": "Puddlestomper",
@@ -29521,7 +28864,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matthew O'Connor",
-		"cardImage": "CFM_602b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Idole de jade",
@@ -29537,13 +28879,13 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Zagumennyy",
 		"attack": 2,
-		"cardImage": "AT_071.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Championne d’Alexstrasza",
 			"text": "<b>Cri de guerre :</b> gagne\n+1 ATQ et <b>Charge</b> si vous avez un Dragon en main."
 		},
+		"goldenImage": "AT_071.gif",
 		"health": 3,
 		"id": "AT_071",
 		"name": "Alexstrasza's Champion",
@@ -29555,12 +28897,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "BRMC_91.png",
 		"cost": 3,
 		"fr": {
 			"name": "Fils de la Flamme",
 			"text": "<b>Cri de guerre :</b> inflige 6 points de dégâts."
 		},
+		"goldenImage": "BRMC_91.gif",
 		"health": 3,
 		"id": "BRMC_91",
 		"name": "Son of the Flame",
@@ -29571,13 +28913,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Howard Lyon",
-		"cardImage": "CS2_025.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Explosion des Arcanes",
 			"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "CS2_025.gif",
 		"id": "CS2_025",
 		"name": "Arcane Explosion",
 		"playerClass": "Mage",
@@ -29591,7 +28933,6 @@ var parseCardsText = {
 			"name": "Mrgglaargl !",
 			"text": "Le chef de guerre murloc donne +2/+1."
 		},
-		"goldenImage": "EX1_507e.gif",
 		"id": "EX1_507e",
 		"name": "Mrgglaargl!",
 		"playerClass": "Neutral",
@@ -29602,13 +28943,13 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 3,
-		"cardImage": "CFM_609.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Âmefiel gangr’orc",
 			"text": "Ce serviteur subit 2 points de dégâts au début de votre tour."
 		},
+		"goldenImage": "CFM_609.gif",
 		"health": 7,
 		"id": "CFM_609",
 		"name": "Fel Orc Soulfiend",
@@ -29620,12 +28961,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRMA15_4.png",
 		"cost": 1,
 		"fr": {
 			"name": "Aberration",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "BRMA15_4.gif",
 		"health": 1,
 		"id": "BRMA15_4",
 		"name": "Aberration",
@@ -29637,13 +28978,13 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 3,
-		"cardImage": "CFM_854.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Ancien des floraisons",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CFM_854.gif",
 		"health": 8,
 		"id": "CFM_854",
 		"name": "Ancient of Blossoms",
@@ -29655,12 +28996,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "NAX8_05.png",
 		"cost": 6,
 		"fr": {
 			"name": "Cavalier tenace",
 			"text": "<b>Râle d’agonie :</b> invoque un cavalier spectral pour votre adversaire."
 		},
+		"goldenImage": "NAX8_05.gif",
 		"health": 6,
 		"id": "NAX8_05",
 		"name": "Unrelenting Rider",
@@ -29677,7 +29018,6 @@ var parseCardsText = {
 			"name": "Portail de Forgefer",
 			"text": "Gagne 4 points d’Armure. Invoque un serviteur aléatoire coûtant 4 cristaux de mana."
 		},
-		"goldenImage": "KAR_091.gif",
 		"id": "KAR_091",
 		"name": "Ironforge Portal",
 		"playerClass": "Warrior",
@@ -29689,13 +29029,13 @@ var parseCardsText = {
 	{
 		"artist": "Cole Eastburn",
 		"attack": 2,
-		"cardImage": "LOE_016.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Élémentaire grondant",
 			"text": "Après avoir joué un serviteur avec <b>Cri de guerre</b>, inflige\n2 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "LOE_016.gif",
 		"health": 6,
 		"id": "LOE_016",
 		"name": "Rumbling Elemental",
@@ -29708,13 +29048,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
-		"cardImage": "OG_156.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Murloc aileron-bilieux",
 			"text": "<b>Cri de guerre :</b> invoque un limon 1/1 avec <b>Provocation</b>."
 		},
+		"goldenImage": "OG_156.gif",
 		"health": 1,
 		"id": "OG_156",
 		"name": "Bilefin Tidehunter",
@@ -29731,7 +29071,6 @@ var parseCardsText = {
 			"name": "La marée d’argent",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un murloc de la Main d’argent 1/1."
 		},
-		"goldenImage": "OG_006b.gif",
 		"id": "OG_006b",
 		"name": "The Tidal Hand",
 		"playerClass": "Paladin",
@@ -29742,13 +29081,13 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 1,
-		"cardImage": "GVG_063.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Bolvar Fordragon",
 			"text": "Chaque fois qu’un serviteur allié meurt quand vous avez cette carte en main, elle gagne +1 ATQ."
 		},
+		"goldenImage": "GVG_063.gif",
 		"health": 7,
 		"id": "GVG_063",
 		"name": "Bolvar Fordragon",
@@ -29761,13 +29100,13 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 4,
-		"cardImage": "FP1_015.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Feugen",
 			"text": "<b>Râle d’agonie :</b> si Stalagg est aussi mort pendant cette partie, invoque Thaddius."
 		},
+		"goldenImage": "FP1_015.gif",
 		"health": 7,
 		"id": "FP1_015",
 		"name": "Feugen",
@@ -29778,12 +29117,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_047.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destroy Deck",
 			"text": "Delete an opponent's deck"
 		},
+		"goldenImage": "XXX_047.gif",
 		"id": "XXX_047",
 		"name": "Destroy Deck",
 		"playerClass": "Neutral",
@@ -29796,7 +29135,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Enchantement de héros par serviteur de Yogg"
 		},
-		"goldenImage": "TB_YoggServant_Enchant.gif",
 		"id": "TB_YoggServant_Enchant",
 		"name": "Yogg Servant Hero Enchant",
 		"playerClass": "Neutral",
@@ -29808,7 +29146,6 @@ var parseCardsText = {
 			"name": "Victoire !",
 			"text": "+1/+1."
 		},
-		"goldenImage": "AT_133e.gif",
 		"id": "AT_133e",
 		"name": "Victory!",
 		"playerClass": "Neutral",
@@ -29818,12 +29155,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CRED_15.png",
 		"cost": 1,
 		"fr": {
 			"name": "Andy Brock",
 			"text": "Ne peut être réduit au <b>Silence. Bouclier divin. Camouflage.</b>"
 		},
+		"goldenImage": "CRED_15.gif",
 		"health": 3,
 		"id": "CRED_15",
 		"name": "Andy Brock",
@@ -29853,12 +29190,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA16_4.png",
 		"cost": 10,
 		"fr": {
 			"name": "Horloge de l’horreur",
 			"text": "Inflige $10 |4(point,points) de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "LOEA16_4.gif",
 		"id": "LOEA16_4",
 		"name": "Timepiece of Horror",
 		"playerClass": "Neutral",
@@ -29869,13 +29206,13 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 7,
-		"cardImage": "EX1_350.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Prophète Velen",
 			"text": "Double les dégâts et les soins de vos sorts et de votre pouvoir héroïque."
 		},
+		"goldenImage": "EX1_350.gif",
 		"health": 7,
 		"id": "EX1_350",
 		"name": "Prophet Velen",
@@ -29890,7 +29227,6 @@ var parseCardsText = {
 			"name": "Défenseur du roi",
 			"text": "+1 Durabilité."
 		},
-		"goldenImage": "AT_065e.gif",
 		"id": "AT_065e",
 		"name": "King's Defender",
 		"playerClass": "Neutral",
@@ -29903,7 +29239,6 @@ var parseCardsText = {
 			"name": "Endurance du Crépuscule",
 			"text": "Vie augmentée."
 		},
-		"goldenImage": "BRM_004e.gif",
 		"id": "BRM_004e",
 		"name": "Twilight Endurance",
 		"playerClass": "Neutral",
@@ -29918,7 +29253,6 @@ var parseCardsText = {
 			"name": "Reflets",
 			"text": "<b>Pouvoir héroïque passif</b>\nChaque fois qu’un serviteur est joué, en invoque une copie 1/1."
 		},
-		"goldenImage": "KAR_A01_02.gif",
 		"id": "KAR_A01_02",
 		"name": "Reflections",
 		"playerClass": "Neutral",
@@ -29929,13 +29263,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 3,
-		"cardImage": "CFM_343.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Béhémoth de jade",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> invoque un <b>golem de jade</b> {0}.@<b>Provocation</b>\n<b>Cri de guerre :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_343.gif",
 		"health": 6,
 		"id": "CFM_343",
 		"name": "Jade Behemoth",
@@ -29948,13 +29282,13 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 3,
-		"cardImage": "AT_100.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Régente de la Main d’argent",
 			"text": "<b>Exaltation :</b> invoque une recrue de la Main\nd’argent 1/1."
 		},
+		"goldenImage": "AT_100.gif",
 		"health": 3,
 		"id": "AT_100",
 		"name": "Silver Hand Regent",
@@ -29966,12 +29300,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "CRED_23.png",
 		"cost": 4,
 		"fr": {
 			"name": "Christopher Yim",
 			"text": "<b>Cri de guerre :</b> vos emotes sont désormais prononcées avec une voix radiophonique."
 		},
+		"goldenImage": "CRED_23.gif",
 		"health": 5,
 		"id": "CRED_23",
 		"name": "Christopher Yim",
@@ -29986,7 +29320,6 @@ var parseCardsText = {
 			"name": "Marque d’Y’Shaarj",
 			"text": "+2/+2."
 		},
-		"goldenImage": "OG_048e.gif",
 		"id": "OG_048e",
 		"name": "Mark of Y'Shaarj",
 		"playerClass": "Druid",
@@ -29997,13 +29330,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Skan Srisuwan",
-		"cardImage": "AT_062.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Boule d’araignées",
 			"text": "Invoque trois\ntisseuses 1/1."
 		},
+		"goldenImage": "AT_062.gif",
 		"id": "AT_062",
 		"name": "Ball of Spiders",
 		"playerClass": "Hunter",
@@ -30015,13 +29348,13 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 4,
-		"cardImage": "CFM_658.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Videur de l’arrière-salle",
 			"text": "Gagne +1 ATQ chaque fois qu’un serviteur allié meurt."
 		},
+		"goldenImage": "CFM_658.gif",
 		"health": 4,
 		"id": "CFM_658",
 		"name": "Backroom Bouncer",
@@ -30033,12 +29366,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t26.png",
 		"cost": 10,
 		"fr": {
 			"name": "Huile de pierre-écaille",
 			"text": "Gagne 10 points d’armure."
 		},
+		"goldenImage": "CFM_621t26.gif",
 		"id": "CFM_621t26",
 		"name": "Stonescale Oil",
 		"playerClass": "Neutral",
@@ -30047,10 +29380,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA07_01.png",
 		"fr": {
 			"name": "Chariot de mine"
 		},
+		"goldenImage": "LOEA07_01.gif",
 		"health": 30,
 		"id": "LOEA07_01",
 		"name": "Mine Cart",
@@ -30060,13 +29393,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jonboy Meyers",
-		"cardImage": "EX1_400.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Tourbillon",
 			"text": "Inflige $1 |4(point,points) de dégâts à TOUS les serviteurs."
 		},
+		"goldenImage": "EX1_400.gif",
 		"id": "EX1_400",
 		"name": "Whirlwind",
 		"playerClass": "Warrior",
@@ -30080,7 +29413,6 @@ var parseCardsText = {
 			"name": "Amélioration",
 			"text": "Durabilité augmentée."
 		},
-		"goldenImage": "OG_312e.gif",
 		"id": "OG_312e",
 		"name": "Upgraded",
 		"playerClass": "Warrior",
@@ -30089,10 +29421,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "NAX2_01.png",
 		"fr": {
 			"name": "Grande veuve Faerlina"
 		},
+		"goldenImage": "NAX2_01.gif",
 		"health": 30,
 		"id": "NAX2_01",
 		"name": "Grand Widow Faerlina",
@@ -30102,13 +29434,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tom Baxa",
-		"cardImage": "EX1_537.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Tir explosif",
 			"text": "Inflige $5 |4(point,points) de dégâts à un serviteur et $2 |4(point,points) de dégâts aux serviteurs adjacents."
 		},
+		"goldenImage": "EX1_537.gif",
 		"id": "EX1_537",
 		"name": "Explosive Shot",
 		"playerClass": "Hunter",
@@ -30120,13 +29452,13 @@ var parseCardsText = {
 	{
 		"artist": "Michal Ivan",
 		"attack": 7,
-		"cardImage": "GVG_112.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Mogor l’ogre",
 			"text": "Tous les serviteurs ont 50% de chance d’attaquer le mauvais adversaire."
 		},
+		"goldenImage": "GVG_112.gif",
 		"health": 6,
 		"id": "GVG_112",
 		"name": "Mogor the Ogre",
@@ -30138,13 +29470,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "OG_072.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Périple dans les abîmes",
 			"text": "<b>Découvre</b> une carte avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "OG_072.gif",
 		"id": "OG_072",
 		"name": "Journey Below",
 		"playerClass": "Rogue",
@@ -30155,12 +29487,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "LOEA09_8.png",
 		"cost": 5,
 		"fr": {
 			"name": "Garde ondulant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOEA09_8.gif",
 		"health": 6,
 		"id": "LOEA09_8",
 		"name": "Slithering Guard",
@@ -30172,13 +29504,13 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 2,
-		"cardImage": "OG_083.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Mande-flamme du Crépuscule",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "OG_083.gif",
 		"health": 2,
 		"id": "OG_083",
 		"name": "Twilight Flamecaller",
@@ -30189,12 +29521,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_6.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin : portails",
 			"text": "Place 10 cartes Portail instable dans le deck de chaque joueur."
 		},
+		"goldenImage": "TB_PickYourFate_6.gif",
 		"id": "TB_PickYourFate_6",
 		"name": "Fate: Portals",
 		"playerClass": "Neutral",
@@ -30203,7 +29535,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_Blizzcon2016_LotusEnchant.png",
 		"fr": {
 			"name": "Le Lotus de jade"
 		},
@@ -30214,12 +29545,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA04_28.png",
 		"cost": 0,
 		"fr": {
 			"name": "Un bassin luminescent",
 			"text": "<b>Boire ?</b>"
 		},
+		"goldenImage": "LOEA04_28.gif",
 		"id": "LOEA04_28",
 		"name": "A Glowing Pool",
 		"playerClass": "Neutral",
@@ -30233,7 +29564,6 @@ var parseCardsText = {
 			"name": "Activer Arcanotron",
 			"text": "<b>Pouvoir héroïque</b>\nActive Arcanotron !"
 		},
-		"goldenImage": "BRMA14_2H.gif",
 		"id": "BRMA14_2H",
 		"name": "Activate Arcanotron",
 		"playerClass": "Neutral",
@@ -30244,13 +29574,13 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 3,
-		"cardImage": "LOE_079.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Élise Cherchétoile",
 			"text": "<b>Cri de guerre :</b> place Carte du singe doré dans votre deck."
 		},
+		"goldenImage": "LOE_079.gif",
 		"health": 5,
 		"id": "LOE_079",
 		"name": "Elise Starseeker",
@@ -30263,13 +29593,13 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 3,
-		"cardImage": "NEW1_023.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Dragon féerique",
 			"text": "Ne peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "NEW1_023.gif",
 		"health": 2,
 		"id": "NEW1_023",
 		"name": "Faerie Dragon",
@@ -30281,12 +29611,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA16_22.png",
 		"cost": 5,
 		"fr": {
 			"name": "Archaedas",
 			"text": "Transforme un serviteur adverse aléatoire en statue 0/2 à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_22.gif",
 		"health": 5,
 		"id": "LOEA16_22",
 		"name": "Archaedas",
@@ -30298,12 +29628,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Peerasak Senalai",
-		"cardImage": "PART_005.png",
 		"cost": 1,
 		"fr": {
 			"name": "Liquide de refroidissement",
 			"text": "<b>Gèle</b> un serviteur."
 		},
+		"goldenImage": "PART_005.gif",
 		"id": "PART_005",
 		"name": "Emergency Coolant",
 		"playerClass": "Neutral",
@@ -30314,13 +29644,13 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 5,
-		"cardImage": "AT_096.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Chevalier mécanique",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à un Méca allié."
 		},
+		"goldenImage": "AT_096.gif",
 		"health": 5,
 		"id": "AT_096",
 		"name": "Clockwork Knight",
@@ -30331,12 +29661,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "PRO_001c.png",
 		"cost": 4,
 		"fr": {
 			"name": "Puissance de la Horde",
 			"text": "Invoque un guerrier de la Horde aléatoire."
 		},
+		"goldenImage": "PRO_001c.gif",
 		"id": "PRO_001c",
 		"name": "Power of the Horde",
 		"playerClass": "Neutral",
@@ -30350,7 +29680,6 @@ var parseCardsText = {
 			"name": "Portail instable",
 			"text": "<b>Pouvoir héroïque</b>\nAjoute un serviteur aléatoire dans votre main. Il coûte (3) |4(cristal,cristaux) de moins."
 		},
-		"goldenImage": "LOEA15_2H.gif",
 		"id": "LOEA15_2H",
 		"name": "Unstable Portal",
 		"playerClass": "Neutral",
@@ -30365,7 +29694,6 @@ var parseCardsText = {
 			"name": "Reine noire",
 			"text": "<b>Attaque automatique :</b> inflige 4 points de dégâts aux adversaires en face de ce serviteur."
 		},
-		"goldenImage": "KAR_A10_10.gif",
 		"health": 6,
 		"id": "KAR_A10_10",
 		"name": "Black Queen",
@@ -30379,7 +29707,6 @@ var parseCardsText = {
 			"name": "Bien nourri",
 			"text": "+1/+1."
 		},
-		"goldenImage": "KAR_095e.gif",
 		"id": "KAR_095e",
 		"name": "Well Fed",
 		"playerClass": "Neutral",
@@ -30391,7 +29718,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Créer 15 secrets"
 		},
-		"goldenImage": "TB_009.gif",
 		"id": "TB_009",
 		"name": "Create 15 Secrets",
 		"playerClass": "Neutral",
@@ -30401,13 +29727,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
-		"cardImage": "GVG_072.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Boxeur de l’ombre",
 			"text": "Chaque fois qu’un personnage est soigné, inflige 1 point de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "GVG_072.gif",
 		"health": 3,
 		"id": "GVG_072",
 		"name": "Shadowboxer",
@@ -30422,7 +29748,6 @@ var parseCardsText = {
 			"name": "Bonus",
 			"text": "Vos serviteurs avec <b>Cri de guerre</b> ont +1/+1."
 		},
-		"goldenImage": "TB_PickYourFate_10_EnchMinion.gif",
 		"id": "TB_PickYourFate_10_EnchMinion",
 		"name": "Bonus",
 		"playerClass": "Neutral",
@@ -30433,13 +29758,13 @@ var parseCardsText = {
 	{
 		"artist": "Brandon Kitkouski",
 		"attack": 4,
-		"cardImage": "GVG_080.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Druide du Croc",
 			"text": "<b>Cri de guerre :</b> si vous avez une Bête, transforme ce serviteur en une carte 7/7."
 		},
+		"goldenImage": "GVG_080.gif",
 		"health": 4,
 		"id": "GVG_080",
 		"name": "Druid of the Fang",
@@ -30453,7 +29778,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Raptor déterré"
 		},
-		"goldenImage": "LOE_019e.gif",
 		"id": "LOE_019e",
 		"name": "Unearthed Raptor",
 		"playerClass": "Rogue",
@@ -30463,11 +29787,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 10,
-		"cardImage": "CFM_712_t10.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t10.gif",
 		"health": 10,
 		"id": "CFM_712_t10",
 		"name": "Jade Golem",
@@ -30481,7 +29805,6 @@ var parseCardsText = {
 			"name": "La colonie",
 			"text": "<b>Pouvoir héroïque</b>\nDonne +1 PV à tous les œufs corrompus, puis en invoque un."
 		},
-		"goldenImage": "BRMA10_3H.gif",
 		"id": "BRMA10_3H",
 		"name": "The Rookery",
 		"playerClass": "Neutral",
@@ -30490,12 +29813,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "TU4e_005.png",
 		"cost": 3,
 		"fr": {
 			"name": "Explosion de flammes",
 			"text": "Lance 5 missiles infligeant chacun $1 |4(point,points) de dégâts à des adversaires aléatoires."
 		},
+		"goldenImage": "TU4e_005.gif",
 		"id": "TU4e_005",
 		"name": "Flame Burst",
 		"playerClass": "Neutral",
@@ -30505,10 +29828,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA13_1.png",
 		"fr": {
 			"name": "Seigneur Victor Nefarius"
 		},
+		"goldenImage": "BRMA13_1.gif",
 		"health": 30,
 		"id": "BRMA13_1",
 		"name": "Lord Victor Nefarius",
@@ -30520,7 +29843,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Roi blanc"
 		},
-		"goldenImage": "KAR_a10_Boss1H.gif",
 		"health": 20,
 		"id": "KAR_a10_Boss1H",
 		"name": "White King",
@@ -30545,13 +29867,13 @@ var parseCardsText = {
 	{
 		"artist": "Bernie Kang",
 		"attack": 2,
-		"cardImage": "LOE_010.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Serpent de la fosse",
 			"text": "Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "LOE_010.gif",
 		"health": 1,
 		"id": "LOE_010",
 		"name": "Pit Snake",
@@ -30563,13 +29885,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "James Zhang",
-		"cardImage": "EX1_137.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Casse-tête",
 			"text": "Inflige $2 |4(point,points) de dégâts au héros adverse. <b>Combo :</b> renvoie cette carte dans votre main au tour suivant."
 		},
+		"goldenImage": "EX1_137.gif",
 		"id": "EX1_137",
 		"name": "Headcrack",
 		"playerClass": "Rogue",
@@ -30584,7 +29906,6 @@ var parseCardsText = {
 			"name": "Explosion de feu rang 2",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts."
 		},
-		"goldenImage": "CS2_034_H1_AT_132.gif",
 		"id": "CS2_034_H1_AT_132",
 		"name": "Fireblast Rank 2",
 		"playerClass": "Mage",
@@ -30598,7 +29919,6 @@ var parseCardsText = {
 			"name": "Invocation de Kil’rek",
 			"text": "Invoque Kil’rek."
 		},
-		"goldenImage": "KARA_09_05.gif",
 		"id": "KARA_09_05",
 		"name": "Summon Kil'rek",
 		"playerClass": "Neutral",
@@ -30609,13 +29929,13 @@ var parseCardsText = {
 	{
 		"artist": "Warren Mahy",
 		"attack": 2,
-		"cardImage": "GVG_075.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Canon du navire",
 			"text": "Après avoir invoqué un pirate, inflige 2 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "GVG_075.gif",
 		"health": 3,
 		"id": "GVG_075",
 		"name": "Ship's Cannon",
@@ -30634,7 +29954,6 @@ var parseCardsText = {
 			"name": "Templier Plaie-de-nuit",
 			"text": "<b>Cri de guerre :</b> si vous avez un Dragon en main,\ninvoque deux dragonnets 1/1."
 		},
-		"goldenImage": "KAR_010.gif",
 		"health": 3,
 		"id": "KAR_010",
 		"name": "Nightbane Templar",
@@ -30647,13 +29966,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
-		"cardImage": "OG_150.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Berserker aberrant",
 			"text": "<b>Accès de rage :</b> +2 ATQ."
 		},
+		"goldenImage": "OG_150.gif",
 		"health": 5,
 		"id": "OG_150",
 		"name": "Aberrant Berserker",
@@ -30665,13 +29984,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "EX1_308.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Feu de l’âme",
 			"text": "Inflige $4 |4(point,points) de dégâts. Vous défausse d’une carte aléatoire."
 		},
+		"goldenImage": "EX1_308.gif",
 		"id": "EX1_308",
 		"name": "Soulfire",
 		"playerClass": "Warlock",
@@ -30683,12 +30002,12 @@ var parseCardsText = {
 	{
 		"artist": "Matt Gaser",
 		"attack": 1,
-		"cardImage": "OG_248.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Enragé am’gam"
 		},
+		"goldenImage": "OG_248.gif",
 		"health": 5,
 		"id": "OG_248",
 		"name": "Am'gam Rager",
@@ -30699,13 +30018,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Scott",
-		"cardImage": "OG_118.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Parjurer les ténèbres",
 			"text": "Remplace votre pouvoir héroïque et vos cartes de démoniste par ceux d’une autre classe. Les cartes coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "OG_118.gif",
 		"id": "OG_118",
 		"name": "Renounce Darkness",
 		"playerClass": "Warlock",
@@ -30717,7 +30036,6 @@ var parseCardsText = {
 	{
 		"artist": "Ludo Lullabi",
 		"attack": 6,
-		"cardImage": "EX1_112.png",
 		"collectible": true,
 		"cost": 6,
 		"faction": "ALLIANCE",
@@ -30725,6 +30043,7 @@ var parseCardsText = {
 			"name": "Gelbin Mekkanivelle",
 			"text": "<b>Cri de guerre :</b> invoque une invention GÉNIALE."
 		},
+		"goldenImage": "EX1_112.gif",
 		"health": 6,
 		"id": "EX1_112",
 		"name": "Gelbin Mekkatorque",
@@ -30736,7 +30055,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Allsop",
-		"cardImage": "CFM_063e.png",
 		"fr": {
 			"name": "Chimie folle",
 			"text": "L’Attaque et la Vie ont été échangées par le chimiste fou."
@@ -30751,12 +30069,12 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 6,
-		"cardImage": "CS2_200.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Ogre rochepoing"
 		},
+		"goldenImage": "CS2_200.gif",
 		"health": 7,
 		"id": "CS2_200",
 		"name": "Boulderfist Ogre",
@@ -30768,7 +30086,6 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 2,
-		"cardImage": "CS2_141.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "ALLIANCE",
@@ -30776,6 +30093,7 @@ var parseCardsText = {
 			"name": "Fusilier de Forgefer",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "CS2_141.gif",
 		"health": 2,
 		"id": "CS2_141",
 		"name": "Ironforge Rifleman",
@@ -30791,7 +30109,6 @@ var parseCardsText = {
 			"name": "Lumière corrompue",
 			"text": "Rend 30 PV à Nefarian. Inflige 30 points de dégâts à tous les autres serviteurs."
 		},
-		"goldenImage": "TB_CoOpv3_002.gif",
 		"id": "TB_CoOpv3_002",
 		"name": "Twisted Light",
 		"playerClass": "Priest",
@@ -30821,13 +30138,13 @@ var parseCardsText = {
 	{
 		"artist": "J. Meyers & A. Bozonnet",
 		"attack": 4,
-		"cardImage": "OG_291.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Exhalombre",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur allié et en place une copie 1/1 coûtant (1) |4(cristal,cristaux) de mana dans votre main."
 		},
+		"goldenImage": "OG_291.gif",
 		"health": 4,
 		"id": "OG_291",
 		"name": "Shadowcaster",
@@ -30841,7 +30158,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "TB_EnchRandomManaCost"
 		},
-		"goldenImage": "TB_RMC_001.gif",
 		"id": "TB_RMC_001",
 		"name": "TB_EnchRandomManaCost",
 		"playerClass": "Neutral",
@@ -30856,7 +30172,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Corbeau enchanté"
 		},
-		"goldenImage": "KAR_300.gif",
 		"health": 2,
 		"id": "KAR_300",
 		"name": "Enchanted Raven",
@@ -30867,13 +30182,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Wayne Reynolds",
-		"cardImage": "CFM_614.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Marque du Lotus",
 			"text": "Donne +1/+1 à vos serviteurs."
 		},
+		"goldenImage": "CFM_614.gif",
 		"id": "CFM_614",
 		"name": "Mark of the Lotus",
 		"playerClass": "Druid",
@@ -30887,7 +30202,6 @@ var parseCardsText = {
 			"name": "Esclave de Kel’Thuzad",
 			"text": "À MOI !"
 		},
-		"goldenImage": "NAX15_04a.gif",
 		"id": "NAX15_04a",
 		"name": "Slave of Kel'Thuzad",
 		"playerClass": "Neutral",
@@ -30897,11 +30211,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 8,
-		"cardImage": "BRMA09_5Ht.png",
 		"cost": 3,
 		"fr": {
 			"name": "Gyth"
 		},
+		"goldenImage": "BRMA09_5Ht.gif",
 		"health": 8,
 		"id": "BRMA09_5Ht",
 		"name": "Gyth",
@@ -30919,7 +30233,6 @@ var parseCardsText = {
 			"name": "Medivh, le Gardien",
 			"text": "<b>Cri de guerre :</b> vous équipe d’Atiesh, grand bâton du Gardien."
 		},
-		"goldenImage": "KAR_097.gif",
 		"health": 7,
 		"id": "KAR_097",
 		"name": "Medivh, the Guardian",
@@ -30936,7 +30249,6 @@ var parseCardsText = {
 			"name": "Guerrier écaille-de-dragon",
 			"text": "Chaque fois qu’un joueur cible ce serviteur avec un sort, ce joueur pioche une carte."
 		},
-		"goldenImage": "TB_Coopv3_100.gif",
 		"health": 4,
 		"id": "TB_Coopv3_100",
 		"name": "Dragonscale Warrior",
@@ -30947,13 +30259,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sean O'Daniels",
-		"cardImage": "GVG_003.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Portail instable",
 			"text": "Place un serviteur aléatoire dans votre main. Il coûte (3) cristaux de moins."
 		},
+		"goldenImage": "GVG_003.gif",
 		"id": "GVG_003",
 		"name": "Unstable Portal",
 		"playerClass": "Mage",
@@ -30982,7 +30294,6 @@ var parseCardsText = {
 			"name": "Mode Attaque",
 			"text": "+1 ATQ."
 		},
-		"goldenImage": "GVG_030ae.gif",
 		"id": "GVG_030ae",
 		"name": "Attack Mode",
 		"playerClass": "Druid",
@@ -30999,7 +30310,6 @@ var parseCardsText = {
 			"name": "Gardien aviaire",
 			"text": "<b>Cri de guerre :</b> si vous contrôlez un <b>Secret</b>, gagne +1/+1 et <b>Provocation</b>."
 		},
-		"goldenImage": "KAR_037.gif",
 		"health": 6,
 		"id": "KAR_037",
 		"name": "Avian Watcher",
@@ -31012,13 +30322,13 @@ var parseCardsText = {
 	{
 		"artist": "Phroilan Gardner",
 		"attack": 2,
-		"cardImage": "EX1_603.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Sous-chef cruel",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à un serviteur et lui donne +2 ATQ."
 		},
+		"goldenImage": "EX1_603.gif",
 		"health": 2,
 		"id": "EX1_603",
 		"name": "Cruel Taskmaster",
@@ -31031,13 +30341,13 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 6,
-		"cardImage": "CS2_042.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Élémentaire de feu",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts."
 		},
+		"goldenImage": "CS2_042.gif",
 		"health": 5,
 		"id": "CS2_042",
 		"name": "Fire Elemental",
@@ -31050,13 +30360,13 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 6,
-		"cardImage": "LOE_003.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Adjurateur éthérien",
 			"text": "<b>Cri de guerre : découvre</b>\nun sort."
 		},
+		"goldenImage": "LOE_003.gif",
 		"health": 3,
 		"id": "LOE_003",
 		"name": "Ethereal Conjurer",
@@ -31068,13 +30378,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luca Zontini",
-		"cardImage": "OG_027.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Évolution",
 			"text": "Transforme vos serviteurs en serviteurs aléatoires qui coûtent (1) |4(cristal,cristaux) de plus."
 		},
+		"goldenImage": "OG_027.gif",
 		"id": "OG_027",
 		"name": "Evolve",
 		"playerClass": "Shaman",
@@ -31090,7 +30400,6 @@ var parseCardsText = {
 			"name": "Wanda Super-Sabots",
 			"text": "Les portails coûtent (1) |4(cristal,cristaux) de moins.\n<i>Ne compte pas comme un serviteur.</i>"
 		},
-		"goldenImage": "KARA_13_15.gif",
 		"health": 2,
 		"id": "KARA_13_15",
 		"name": "Wanda Wonderhooves",
@@ -31101,12 +30410,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA12_5H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Affliction de l’espèce : bleu",
 			"text": "Les sorts de Chromaggus coûtent (3) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_5H.gif",
 		"id": "BRMA12_5H",
 		"name": "Brood Affliction: Blue",
 		"playerClass": "Neutral",
@@ -31122,7 +30431,6 @@ var parseCardsText = {
 			"name": "Portail de Lune-d’Argent",
 			"text": "Donne +2/+2 à un serviteur. Invoque un serviteur aléatoire coûtant 2 cristaux."
 		},
-		"goldenImage": "KAR_077.gif",
 		"id": "KAR_077",
 		"name": "Silvermoon Portal",
 		"playerClass": "Paladin",
@@ -31134,13 +30442,13 @@ var parseCardsText = {
 	{
 		"artist": "Max Grecke",
 		"attack": 2,
-		"cardImage": "OG_322.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Pirate des flots noirs",
 			"text": "Vos armes coûtent (2) cristaux de moins."
 		},
+		"goldenImage": "OG_322.gif",
 		"health": 5,
 		"id": "OG_322",
 		"name": "Blackwater Pirate",
@@ -31152,12 +30460,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "CRED_22.png",
 		"cost": 3,
 		"fr": {
 			"name": "Cameron Chrisman",
 			"text": "Les cartes dorées coûtent (1) cristal de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "CRED_22.gif",
 		"health": 3,
 		"id": "CRED_22",
 		"name": "Cameron Chrisman",
@@ -31169,12 +30477,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "BRMA04_3H.png",
 		"cost": 0,
 		"fr": {
 			"name": "Lige du feu",
 			"text": "<b>Râle d’agonie :</b> inflige 3 points de dégâts au héros adverse pour chaque lige du feu mort pendant ce tour."
 		},
+		"goldenImage": "BRMA04_3H.gif",
 		"health": 5,
 		"id": "BRMA04_3H",
 		"name": "Firesworn",
@@ -31185,11 +30493,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "BRMA09_2Ht.png",
 		"cost": 1,
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "BRMA09_2Ht.gif",
 		"health": 2,
 		"id": "BRMA09_2Ht",
 		"name": "Whelp",
@@ -31203,7 +30511,6 @@ var parseCardsText = {
 			"name": "Frappe haineuse",
 			"text": "<b>Pouvoir héroïque</b>\nDétruit un serviteur."
 		},
-		"goldenImage": "NAX10_03.gif",
 		"id": "NAX10_03",
 		"name": "Hateful Strike",
 		"playerClass": "Neutral",
@@ -31214,13 +30521,13 @@ var parseCardsText = {
 	{
 		"artist": "Seamus Gallagher",
 		"attack": 2,
-		"cardImage": "GVG_046.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Roi des bêtes",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> gagne +1 ATQ pour chacune de vos autres Bêtes."
 		},
+		"goldenImage": "GVG_046.gif",
 		"health": 6,
 		"id": "GVG_046",
 		"name": "King of Beasts",
@@ -31233,13 +30540,13 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 3,
-		"cardImage": "OG_337.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Horreur cyclopéenne",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> gagne +1 PV pour\nchaque serviteur adverse."
 		},
+		"goldenImage": "OG_337.gif",
 		"health": 3,
 		"id": "OG_337",
 		"name": "Cyclopian Horror",
@@ -31255,7 +30562,6 @@ var parseCardsText = {
 			"name": "Défense stoïque",
 			"text": "<b>Pouvoir héroïque</b>\nGagne 4 points d’armure."
 		},
-		"goldenImage": "AT_132_WARRIOR.gif",
 		"id": "AT_132_WARRIOR",
 		"name": "Tank Up!",
 		"playerClass": "Warrior",
@@ -31266,11 +30572,11 @@ var parseCardsText = {
 	{
 		"artist": "Nick Southham",
 		"attack": 1,
-		"cardImage": "CFM_337t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Piranha"
 		},
+		"goldenImage": "CFM_337t.gif",
 		"health": 1,
 		"id": "CFM_337t",
 		"name": "Piranha",
@@ -31280,13 +30586,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "E.M. Gist",
-		"cardImage": "GVG_017.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Appel du familier",
 			"text": "Vous piochez une carte. Si c’est une Bête, elle coûte (4) cristaux de moins."
 		},
+		"goldenImage": "GVG_017.gif",
 		"id": "GVG_017",
 		"name": "Call Pet",
 		"playerClass": "Hunter",
@@ -31298,12 +30604,12 @@ var parseCardsText = {
 	{
 		"artist": "Grace Liu",
 		"attack": 1,
-		"cardImage": "OG_058.png",
 		"cost": 1,
 		"durability": 3,
 		"fr": {
 			"name": "Crochet rouillé"
 		},
+		"goldenImage": "OG_058.gif",
 		"id": "OG_058",
 		"name": "Rusty Hook",
 		"playerClass": "Warrior",
@@ -31316,7 +30622,6 @@ var parseCardsText = {
 			"name": "Caserne",
 			"text": "<b>Pouvoir héroïque</b>\nJoue un soldat de Hurlevent aléatoire."
 		},
-		"goldenImage": "TB_SPT_BossHeroPower.gif",
 		"id": "TB_SPT_BossHeroPower",
 		"name": "Barracks",
 		"playerClass": "Neutral",
@@ -31327,13 +30632,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
-		"cardImage": "LOE_051.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Sélénien de la jungle",
 			"text": "Chaque joueur a\n<b>+2 aux dégâts des sorts</b>."
 		},
+		"goldenImage": "LOE_051.gif",
 		"health": 4,
 		"id": "LOE_051",
 		"name": "Jungle Moonkin",
@@ -31347,12 +30652,12 @@ var parseCardsText = {
 	{
 		"artist": "Oliver Chipping",
 		"attack": 1,
-		"cardImage": "LOEA10_3.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Murloc mini-aileron"
 		},
+		"goldenImage": "LOEA10_3.gif",
 		"health": 1,
 		"id": "LOEA10_3",
 		"name": "Murloc Tinyfin",
@@ -31364,13 +30669,13 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 1,
-		"cardImage": "EX1_509.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Mande-flots murloc",
 			"text": "Gagne +1 ATQ chaque fois que vous invoquez un murloc."
 		},
+		"goldenImage": "EX1_509.gif",
 		"health": 2,
 		"id": "EX1_509",
 		"name": "Murloc Tidecaller",
@@ -31383,13 +30688,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 4,
-		"cardImage": "OG_290.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Ancien héraut",
 			"text": "Au début de votre tour, place un serviteur coûtant 10 cristaux de mana de votre deck dans votre main."
 		},
+		"goldenImage": "OG_290.gif",
 		"health": 6,
 		"id": "OG_290",
 		"name": "Ancient Harbinger",
@@ -31401,12 +30706,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "GVG_110t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Ro’Boum",
 			"text": "<b>Râle d’agonie :</b> inflige 1 à 4 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "GVG_110t.gif",
 		"health": 1,
 		"id": "GVG_110t",
 		"name": "Boom Bot",
@@ -31417,12 +30722,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "CRED_36.png",
 		"cost": 6,
 		"fr": {
 			"name": "Mike Donais",
 			"text": "<b>Cri de guerre :</b> remplace tous les serviteurs sur le champ de bataille, dans les mains et les decks des deux joueurs par des serviteurs aléatoires."
 		},
+		"goldenImage": "CRED_36.gif",
 		"health": 8,
 		"id": "CRED_36",
 		"name": "Mike Donais",
@@ -31434,13 +30739,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Hui",
-		"cardImage": "EX1_246.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Maléfice",
 			"text": "Transforme un serviteur en grenouille 0/1 avec <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_246.gif",
 		"id": "EX1_246",
 		"name": "Hex",
 		"playerClass": "Shaman",
@@ -31467,13 +30772,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Clint Langley",
-		"cardImage": "EX1_155.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Marque de la nature",
 			"text": "<b>Choix des armes :</b> donne +4 ATQ à un serviteur ou +4 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_155.gif",
 		"id": "EX1_155",
 		"name": "Mark of Nature",
 		"playerClass": "Druid",
@@ -31484,13 +30789,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Terese Nielsen",
-		"cardImage": "EX1_164.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Nourrir",
 			"text": "<b>Choix des armes :</b> vous gagnez 2 cristaux de mana ou vous piochez 3 cartes."
 		},
+		"goldenImage": "EX1_164.gif",
 		"id": "EX1_164",
 		"name": "Nourish",
 		"playerClass": "Druid",
@@ -31501,12 +30806,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "EX1_383t.png",
 		"cost": 5,
 		"durability": 3,
 		"fr": {
 			"name": "Porte-cendres"
 		},
+		"goldenImage": "EX1_383t.gif",
 		"id": "EX1_383t",
 		"name": "Ashbringer",
 		"playerClass": "Paladin",
@@ -31517,12 +30822,12 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 10,
-		"cardImage": "OG_141.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Béhémoth sans-visage"
 		},
+		"goldenImage": "OG_141.gif",
 		"health": 10,
 		"id": "OG_141",
 		"name": "Faceless Behemoth",
@@ -31536,7 +30841,6 @@ var parseCardsText = {
 			"name": "Puissance du peuple",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "OG_113e.gif",
 		"id": "OG_113e",
 		"name": "Power of the People",
 		"playerClass": "Warlock",
@@ -31547,7 +30851,6 @@ var parseCardsText = {
 	{
 		"artist": "Attila Adorjany",
 		"attack": 2,
-		"cardImage": "EX1_044.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "ALLIANCE",
@@ -31555,6 +30858,7 @@ var parseCardsText = {
 			"name": "Aventurier en pleine quête",
 			"text": "Chaque fois que vous jouez une carte,\ngagne +1/+1."
 		},
+		"goldenImage": "EX1_044.gif",
 		"health": 2,
 		"id": "EX1_044",
 		"name": "Questing Adventurer",
@@ -31566,11 +30870,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "EX1_131t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Bandit défias"
 		},
+		"goldenImage": "EX1_131t.gif",
 		"health": 1,
 		"id": "EX1_131t",
 		"name": "Defias Bandit",
@@ -31579,10 +30883,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA05_01h.png",
 		"fr": {
 			"name": "Chef Scarvash"
 		},
+		"goldenImage": "LOEA05_01h.gif",
 		"health": 30,
 		"id": "LOEA05_01h",
 		"name": "Chieftain Scarvash",
@@ -31596,7 +30900,6 @@ var parseCardsText = {
 			"name": "MOI TOUT CASSER",
 			"text": "<b>Pouvoir héroïque</b>\nDétruit un serviteur adverse aléatoire."
 		},
-		"goldenImage": "BRMA07_2H.gif",
 		"id": "BRMA07_2H",
 		"name": "ME SMASH",
 		"playerClass": "Neutral",
@@ -31606,12 +30909,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "BRMA12_8t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Draconien chromatique",
 			"text": "Gagne +2/+2 chaque fois que votre adversaire lance un sort."
 		},
+		"goldenImage": "BRMA12_8t.gif",
 		"health": 3,
 		"id": "BRMA12_8t",
 		"name": "Chromatic Dragonkin",
@@ -31626,7 +30929,6 @@ var parseCardsText = {
 			"name": "Soins inférieurs",
 			"text": "<b>Pouvoir héroïque</b>\nRend #2 PV."
 		},
-		"goldenImage": "CS1h_001_H1.gif",
 		"id": "CS1h_001_H1",
 		"name": "Lesser Heal",
 		"playerClass": "Priest",
@@ -31638,13 +30940,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 8,
-		"cardImage": "AT_088.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Champion de Mogor",
 			"text": "50% de chance d’attaquer le mauvais adversaire."
 		},
+		"goldenImage": "AT_088.gif",
 		"health": 5,
 		"id": "AT_088",
 		"name": "Mogor's Champion",
@@ -31659,7 +30961,6 @@ var parseCardsText = {
 			"name": "Faveur impériale",
 			"text": "Coûte (1) |4(cristal,cristaux) de moins."
 		},
-		"goldenImage": "BRM_028e.gif",
 		"id": "BRM_028e",
 		"name": "Imperial Favor",
 		"playerClass": "Neutral",
@@ -31670,13 +30971,13 @@ var parseCardsText = {
 	{
 		"artist": "Ruan Jia",
 		"attack": 8,
-		"cardImage": "BRM_030.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Nefarian",
 			"text": "<b>Cri de guerre :</b> ajoute 2 sorts aléatoires dans votre main <i>(de la classe de votre adversaire)</i>."
 		},
+		"goldenImage": "BRM_030.gif",
 		"health": 8,
 		"id": "BRM_030",
 		"name": "Nefarian",
@@ -31689,11 +30990,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 8,
-		"cardImage": "CFM_712_t08.png",
 		"cost": 8,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t08.gif",
 		"health": 8,
 		"id": "CFM_712_t08",
 		"name": "Jade Golem",
@@ -31705,7 +31006,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem d’argenterie"
 		},
-		"goldenImage": "KAR_A02_12H.gif",
 		"health": 30,
 		"id": "KAR_A02_12H",
 		"name": "Silverware Golem",
@@ -31715,12 +31015,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_SPT_Minion2.png",
 		"cost": 2,
 		"fr": {
 			"name": "Étendard de bataille",
 			"text": "Les serviteurs adjacents ont +2 ATQ."
 		},
+		"goldenImage": "TB_SPT_Minion2.gif",
 		"health": 2,
 		"id": "TB_SPT_Minion2",
 		"name": "Battle Standard",
@@ -31732,13 +31032,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 1,
-		"cardImage": "EX1_029.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Gnome lépreux",
 			"text": "<b>Râle d’agonie :</b> inflige 2 points de dégâts au héros adverse."
 		},
+		"goldenImage": "EX1_029.gif",
 		"health": 1,
 		"id": "EX1_029",
 		"name": "Leper Gnome",
@@ -31750,13 +31050,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "NAX7_04H.png",
 		"cost": 3,
 		"durability": 2,
 		"fr": {
 			"name": "Lame runique massive",
 			"text": "Inflige des dégâts doublés aux héros."
 		},
+		"goldenImage": "NAX7_04H.gif",
 		"id": "NAX7_04H",
 		"name": "Massive Runeblade",
 		"playerClass": "Neutral",
@@ -31766,12 +31066,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA04_27.png",
 		"cost": 1,
 		"fr": {
 			"name": "Statue animée",
 			"text": "Vous avez dérangé cette ancienne statue…"
 		},
+		"goldenImage": "LOEA04_27.gif",
 		"health": 10,
 		"id": "LOEA04_27",
 		"name": "Animated Statue",
@@ -31786,7 +31086,6 @@ var parseCardsText = {
 			"name": "Aura nécrotique",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts au héros adverse."
 		},
-		"goldenImage": "NAX6_02H.gif",
 		"id": "NAX6_02H",
 		"name": "Necrotic Aura",
 		"playerClass": "Neutral",
@@ -31799,7 +31098,6 @@ var parseCardsText = {
 			"name": "Free Cards",
 			"text": "Your cards cost (0) for the rest of the game."
 		},
-		"goldenImage": "XXX_022e.gif",
 		"id": "XXX_022e",
 		"name": "Free Cards",
 		"playerClass": "Neutral",
@@ -31810,13 +31108,13 @@ var parseCardsText = {
 	{
 		"artist": "Terese Nielsen",
 		"attack": 1,
-		"cardImage": "CS2_235.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Clerc de Comté-du-Nord",
 			"text": "Vous piochez une carte chaque fois qu’un serviteur est soigné."
 		},
+		"goldenImage": "CS2_235.gif",
 		"health": 3,
 		"id": "CS2_235",
 		"name": "Northshire Cleric",
@@ -31832,7 +31130,6 @@ var parseCardsText = {
 			"name": "Faim",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un naga affamé."
 		},
-		"goldenImage": "LOEA09_3.gif",
 		"id": "LOEA09_3",
 		"name": "Getting Hungry",
 		"playerClass": "Neutral",
@@ -31841,7 +31138,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "TB_SPT_DPromo_Hero2.png",
 		"fr": {
 			"name": "Le roi des vaches"
 		},
@@ -31857,7 +31153,6 @@ var parseCardsText = {
 			"name": "Vengeance de la pièce",
 			"text": "Passer en second renforce votre premier serviteur."
 		},
-		"goldenImage": "GAME_003.gif",
 		"id": "GAME_003",
 		"name": "Coin's Vengeance",
 		"playerClass": "Neutral",
@@ -31870,7 +31165,6 @@ var parseCardsText = {
 			"name": "Enchantement de héros triste",
 			"text": "Donne « Ne peut pas attaquer pendant ce tour » aux serviteurs adverses."
 		},
-		"goldenImage": "TB_KaraPortal_003.gif",
 		"id": "TB_KaraPortal_003",
 		"name": "Saddened Hero Enchant",
 		"playerClass": "Neutral",
@@ -31881,13 +31175,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 4,
-		"cardImage": "OG_282.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Lame de C’Thun",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur. Ajoute son Attaque et sa Vie à celles de votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_282.gif",
 		"health": 4,
 		"id": "OG_282",
 		"name": "Blade of C'Thun",
@@ -31899,11 +31193,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "EX1_506a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Éclaireur murloc"
 		},
+		"goldenImage": "EX1_506a.gif",
 		"health": 1,
 		"id": "EX1_506a",
 		"name": "Murloc Scout",
@@ -31914,12 +31208,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "L. Lullabi & S. Srisuwan",
-		"cardImage": "OG_202b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Magie de Yogg-Saron",
 			"text": "Confère un cristal de mana vide."
 		},
+		"goldenImage": "OG_202b.gif",
 		"id": "OG_202b",
 		"name": "Yogg-Saron's Magic",
 		"playerClass": "Druid",
@@ -31930,13 +31224,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan & Gabor",
-		"cardImage": "FP1_020.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Venger",
 			"text": "<b>Secret :</b> quand l’un de vos serviteurs meurt, donne +3/+2 à un serviteur allié aléatoire."
 		},
+		"goldenImage": "FP1_020.gif",
 		"id": "FP1_020",
 		"name": "Avenge",
 		"playerClass": "Paladin",
@@ -31946,12 +31240,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_PickYourFate_1.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin cruel : Provocation, Charge",
 			"text": "Tous les serviteurs ont <b>Provocation</b> et <b>Charge</b>."
 		},
+		"goldenImage": "TB_PickYourFate_1.gif",
 		"id": "TB_PickYourFate_1",
 		"name": "Dire Fate: Taunt and Charge",
 		"playerClass": "Neutral",
@@ -31960,12 +31254,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA04_29.png",
 		"cost": 0,
 		"fr": {
 			"name": "L’Œil",
 			"text": "<b>Choisissez un chemin !</b>"
 		},
+		"goldenImage": "LOEA04_29.gif",
 		"id": "LOEA04_29",
 		"name": "The Eye",
 		"playerClass": "Neutral",
@@ -31976,7 +31270,6 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 4,
-		"cardImage": "EX1_110.png",
 		"collectible": true,
 		"cost": 6,
 		"faction": "ALLIANCE",
@@ -31984,6 +31277,7 @@ var parseCardsText = {
 			"name": "Cairne Sabot-de-Sang",
 			"text": "<b>Râle d’agonie :</b> invoque Baine Sabot-de-Sang avec 4/5."
 		},
+		"goldenImage": "EX1_110.gif",
 		"health": 5,
 		"id": "EX1_110",
 		"name": "Cairne Bloodhoof",
@@ -32015,7 +31309,6 @@ var parseCardsText = {
 			"name": "Cauchemar",
 			"text": "Ce serviteur a +5/+5, mais il sera bientôt détruit."
 		},
-		"goldenImage": "DREAM_05e.gif",
 		"id": "DREAM_05e",
 		"name": "Nightmare",
 		"playerClass": "Neutral",
@@ -32024,7 +31317,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_Blizzcon2016_GoonsEnchant.png",
 		"fr": {
 			"name": "Les Dessoudeurs"
 		},
@@ -32038,7 +31330,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nazra Hache-Furieuse"
 		},
-		"goldenImage": "KARA_13_01H.gif",
 		"health": 15,
 		"id": "KARA_13_01H",
 		"name": "Nazra Wildaxe",
@@ -32048,13 +31339,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Clint Langley",
-		"cardImage": "EX1_145.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Préparation",
 			"text": "Le prochain sort que vous lancez pendant ce tour coûte (3) cristaux de moins."
 		},
+		"goldenImage": "EX1_145.gif",
 		"id": "EX1_145",
 		"name": "Preparation",
 		"playerClass": "Rogue",
@@ -32067,7 +31358,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Medivh"
 		},
-		"goldenImage": "KARA_00_03c.gif",
 		"health": 0,
 		"id": "KARA_00_03c",
 		"name": "Medivh",
@@ -32076,7 +31366,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "TB_FW_HeroPower_Boom_Update.png",
 		"cost": 0,
 		"fr": {
 			"name": "Héritier de Ro’Boum",
@@ -32091,11 +31380,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "EX1_614t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Flamme d’Azzinoth"
 		},
+		"goldenImage": "EX1_614t.gif",
 		"health": 1,
 		"id": "EX1_614t",
 		"name": "Flame of Azzinoth",
@@ -32108,7 +31397,6 @@ var parseCardsText = {
 			"name": "Puissance acquise",
 			"text": "+2/+2."
 		},
-		"goldenImage": "GVG_036e.gif",
 		"id": "GVG_036e",
 		"name": "Powered",
 		"playerClass": "Shaman",
@@ -32117,11 +31405,11 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "HERO_07.png",
 		"collectible": true,
 		"fr": {
 			"name": "Gul’dan"
 		},
+		"goldenImage": "HERO_07.gif",
 		"health": 30,
 		"id": "HERO_07",
 		"name": "Gul'dan",
@@ -32131,10 +31419,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "LOEA12_1.png",
 		"fr": {
 			"name": "Dame Naz’jar"
 		},
+		"goldenImage": "LOEA12_1.gif",
 		"health": 30,
 		"id": "LOEA12_1",
 		"name": "Lady Naz'jar",
@@ -32144,13 +31432,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Lucas Graciano",
-		"cardImage": "CS2_092.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Bénédiction des rois",
 			"text": "Donne +4/+4 à un serviteur. <i>(+4 ATQ/+4 PV)</i>"
 		},
+		"goldenImage": "CS2_092.gif",
 		"id": "CS2_092",
 		"name": "Blessing of Kings",
 		"playerClass": "Paladin",
@@ -32165,7 +31453,6 @@ var parseCardsText = {
 			"name": "Faim",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un naga affamé 2/1."
 		},
-		"goldenImage": "LOEA09_3c.gif",
 		"id": "LOEA09_3c",
 		"name": "Getting Hungry",
 		"playerClass": "Neutral",
@@ -32175,13 +31462,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Nutthapon Petchthai",
-		"cardImage": "AT_001.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Lance de flammes",
 			"text": "Inflige $8 |4(point,points) de dégâts à un serviteur."
 		},
+		"goldenImage": "AT_001.gif",
 		"id": "AT_001",
 		"name": "Flame Lance",
 		"playerClass": "Mage",
@@ -32195,7 +31482,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem d’argenterie"
 		},
-		"goldenImage": "KAR_A02_12.gif",
 		"health": 30,
 		"id": "KAR_A02_12",
 		"name": "Silverware Golem",
@@ -32209,7 +31495,6 @@ var parseCardsText = {
 			"name": "Connexion d’âme",
 			"text": "<b>Pouvoir héroïque</b>\nPioche une carte."
 		},
-		"goldenImage": "AT_132_WARLOCK.gif",
 		"id": "AT_132_WARLOCK",
 		"name": "Soul Tap",
 		"playerClass": "Warlock",
@@ -32222,7 +31507,6 @@ var parseCardsText = {
 			"name": "Des expériences !",
 			"text": "L’Attaque et la Vie ont été échangées par l’alchimiste dément."
 		},
-		"goldenImage": "EX1_059e.gif",
 		"id": "EX1_059e",
 		"name": "Experiments!",
 		"playerClass": "Neutral",
@@ -32235,7 +31519,6 @@ var parseCardsText = {
 			"name": "Polarité",
 			"text": "Attaque et vie inversées."
 		},
-		"goldenImage": "NAX13_02e.gif",
 		"id": "NAX13_02e",
 		"name": "Polarity",
 		"playerClass": "Neutral",
@@ -32248,7 +31531,6 @@ var parseCardsText = {
 			"name": "Animé",
 			"text": "+3/+3 et <b>Provocation</b>."
 		},
-		"goldenImage": "LOEA06_03eh.gif",
 		"id": "LOEA06_03eh",
 		"name": "Animated",
 		"playerClass": "Neutral",
@@ -32259,7 +31541,6 @@ var parseCardsText = {
 	{
 		"artist": "Clint Langley",
 		"attack": 2,
-		"cardImage": "CS2_196.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "HORDE",
@@ -32267,6 +31548,7 @@ var parseCardsText = {
 			"name": "Chasseuse de Tranchebauge",
 			"text": "<b>Cri de guerre :</b> invoque un sanglier 1/1."
 		},
+		"goldenImage": "CS2_196.gif",
 		"health": 3,
 		"id": "CS2_196",
 		"name": "Razorfen Hunter",
@@ -32279,7 +31561,6 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
-		"cardImage": "OG_031.png",
 		"collectible": true,
 		"cost": 5,
 		"durability": 2,
@@ -32287,6 +31568,7 @@ var parseCardsText = {
 			"name": "Marteau du crépuscule",
 			"text": "<b>Râle d’agonie :</b> invoque un élémentaire 4/2."
 		},
+		"goldenImage": "OG_031.gif",
 		"id": "OG_031",
 		"name": "Hammer of Twilight",
 		"playerClass": "Shaman",
@@ -32297,11 +31579,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 8,
-		"cardImage": "BRMA09_5t.png",
 		"cost": 3,
 		"fr": {
 			"name": "Gyth"
 		},
+		"goldenImage": "BRMA09_5t.gif",
 		"health": 4,
 		"id": "BRMA09_5t",
 		"name": "Gyth",
@@ -32313,13 +31595,13 @@ var parseCardsText = {
 	{
 		"artist": "Mauricio Herrera",
 		"attack": 3,
-		"cardImage": "CFM_755.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Usurière des Dessoudeurs",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à une arme aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_755.gif",
 		"health": 3,
 		"id": "CFM_755",
 		"name": "Grimestreet Pawnbroker",
@@ -32332,13 +31614,13 @@ var parseCardsText = {
 	{
 		"artist": "Jon McConnell",
 		"attack": 4,
-		"cardImage": "FP1_029.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Épées dansantes",
 			"text": "<b>Râle d’agonie :</b> votre adversaire pioche une carte."
 		},
+		"goldenImage": "FP1_029.gif",
 		"health": 4,
 		"id": "FP1_029",
 		"name": "Dancing Swords",
@@ -32353,7 +31635,6 @@ var parseCardsText = {
 			"name": "Amélioration",
 			"text": "Le chef de raid donne +1 ATQ à ce serviteur."
 		},
-		"goldenImage": "CS2_122e.gif",
 		"id": "CS2_122e",
 		"name": "Enhanced",
 		"playerClass": "Neutral",
@@ -32366,7 +31647,6 @@ var parseCardsText = {
 			"name": "Rempli",
 			"text": "+2/+2."
 		},
-		"goldenImage": "KAR_A02_06e2.gif",
 		"id": "KAR_A02_06e2",
 		"name": "Filled Up",
 		"playerClass": "Neutral",
@@ -32375,10 +31655,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "NAX7_01H.png",
 		"fr": {
 			"name": "Instructeur Razuvious"
 		},
+		"goldenImage": "NAX7_01H.gif",
 		"health": 55,
 		"id": "NAX7_01H",
 		"name": "Instructor Razuvious",
@@ -32387,12 +31667,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "BRMA14_11.png",
 		"cost": 0,
 		"fr": {
 			"name": "Recharge",
 			"text": "Remplit tous les cristaux de mana vides."
 		},
+		"goldenImage": "BRMA14_11.gif",
 		"id": "BRMA14_11",
 		"name": "Recharge",
 		"playerClass": "Neutral",
@@ -32402,13 +31682,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Wayne Reynolds",
-		"cardImage": "EX1_407.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Baston",
 			"text": "Détruit tous les serviteurs sauf un <i>(choisi au hasard)</i>."
 		},
+		"goldenImage": "EX1_407.gif",
 		"id": "EX1_407",
 		"name": "Brawl",
 		"playerClass": "Warrior",
@@ -32420,13 +31700,13 @@ var parseCardsText = {
 	{
 		"artist": "Tom Fleming",
 		"attack": 2,
-		"cardImage": "EX1_059.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Alchimiste dément",
 			"text": "<b>Cri de guerre :</b> échange l’Attaque et la Vie d’un serviteur."
 		},
+		"goldenImage": "EX1_059.gif",
 		"health": 2,
 		"id": "EX1_059",
 		"name": "Crazed Alchemist",
@@ -32438,7 +31718,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "TB_SPT_DPromoMinionChamp.png",
 		"cost": 5,
 		"fr": {
 			"name": "Champion bovin infernal",
@@ -32458,7 +31737,6 @@ var parseCardsText = {
 			"name": "Secrets de l’ombre",
 			"text": "Chaque joueur pioche 2 cartes."
 		},
-		"goldenImage": "TB_Coopv3_102a.gif",
 		"id": "TB_Coopv3_102a",
 		"name": "Secrets of Shadow",
 		"playerClass": "Priest",
@@ -32471,7 +31749,6 @@ var parseCardsText = {
 			"name": "Héritage de l’Empereur",
 			"text": "A +2/+2. <i>(+2 ATQ / +2 PV)</i>"
 		},
-		"goldenImage": "TU4f_004o.gif",
 		"id": "TU4f_004o",
 		"name": "Legacy of the Emperor",
 		"playerClass": "Neutral",
@@ -32481,13 +31758,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Phil Saunders",
-		"cardImage": "CFM_707.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Éclair de jade",
 			"text": "Inflige $4 |4(point,points) de dégâts. Invoque un <b>golem de jade</b> {0}.@Inflige $4 |4(point,points) de dégâts. Invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_707.gif",
 		"id": "CFM_707",
 		"name": "Jade Lightning",
 		"playerClass": "Shaman",
@@ -32501,7 +31778,6 @@ var parseCardsText = {
 			"name": "Banane",
 			"text": "Ce serviteur a +1/+1. <i>(+1 ATQ / +1 PV)</i>"
 		},
-		"goldenImage": "TU4c_006e.gif",
 		"id": "TU4c_006e",
 		"name": "Bananas",
 		"playerClass": "Neutral",
@@ -32511,12 +31787,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA09_8H.png",
 		"cost": 5,
 		"fr": {
 			"name": "Garde ondulant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOEA09_8H.gif",
 		"health": 7,
 		"id": "LOEA09_8H",
 		"name": "Slithering Guard",
@@ -32526,7 +31802,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_SPT_DPromoSpellPortal2.png",
 		"cost": 4,
 		"fr": {
 			"name": "Ruée",
@@ -32542,13 +31817,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
-		"cardImage": "CS2_117.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Prophète du Cercle terrestre",
 			"text": "<b>Cri de guerre :</b> rend 3 points de vie."
 		},
+		"goldenImage": "CS2_117.gif",
 		"health": 3,
 		"id": "CS2_117",
 		"name": "Earthen Ring Farseer",
@@ -32563,7 +31838,6 @@ var parseCardsText = {
 			"name": "Marché douteux",
 			"text": "+1/+1."
 		},
-		"goldenImage": "AT_032e.gif",
 		"id": "AT_032e",
 		"name": "Shady Deals",
 		"playerClass": "Rogue",
@@ -32574,13 +31848,13 @@ var parseCardsText = {
 	{
 		"artist": "Tim McBurnie",
 		"attack": 3,
-		"cardImage": "EX1_507.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Chef de guerre murloc",
 			"text": "Vos autres murlocs ont +2/+1."
 		},
+		"goldenImage": "EX1_507.gif",
 		"health": 3,
 		"id": "EX1_507",
 		"name": "Murloc Warleader",
@@ -32596,7 +31870,6 @@ var parseCardsText = {
 			"name": "Faim",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un naga affamé 1/1."
 		},
-		"goldenImage": "LOEA09_3b.gif",
 		"id": "LOEA09_3b",
 		"name": "Getting Hungry",
 		"playerClass": "Neutral",
@@ -32627,11 +31900,11 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 1,
-		"cardImage": "OG_195c.png",
 		"cost": 0,
 		"fr": {
 			"name": "Feu follet"
 		},
+		"goldenImage": "OG_195c.gif",
 		"health": 1,
 		"id": "OG_195c",
 		"name": "Wisp",
@@ -32642,13 +31915,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Bernie Kang",
-		"cardImage": "EX1_554.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Piège à serpents",
 			"text": "<b>Secret :</b> quand un de vos serviteurs est attaqué, invoque trois serpents 1/1."
 		},
+		"goldenImage": "EX1_554.gif",
 		"id": "EX1_554",
 		"name": "Snake Trap",
 		"playerClass": "Hunter",
@@ -32659,7 +31932,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Dixon",
-		"cardImage": "CFM_661e.png",
 		"fr": {
 			"name": "Rétréci",
 			"text": "-3 ATQ pendant ce tour."
@@ -32672,12 +31944,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_021.png",
 		"cost": 0,
 		"fr": {
 			"name": "Restore All Health",
 			"text": "Restore all Health to a character."
 		},
+		"goldenImage": "XXX_021.gif",
 		"id": "XXX_021",
 		"name": "Restore All Health",
 		"playerClass": "Neutral",
@@ -32688,13 +31960,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan & Gabor",
-		"cardImage": "EX1_345.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Jeux d’esprit",
 			"text": "Place une copie d’un serviteur aléatoire du deck de votre adversaire sur le champ de bataille."
 		},
+		"goldenImage": "EX1_345.gif",
 		"id": "EX1_345",
 		"name": "Mindgames",
 		"playerClass": "Priest",
@@ -32706,13 +31978,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 4,
-		"cardImage": "AT_063t.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Écaille-d’effroi",
 			"text": "Inflige 1 point de dégâts à tous les autres serviteurs à la fin de votre tour."
 		},
+		"goldenImage": "AT_063t.gif",
 		"health": 2,
 		"id": "AT_063t",
 		"name": "Dreadscale",
@@ -32725,12 +31997,12 @@ var parseCardsText = {
 	{
 		"artist": "Richard Wright",
 		"attack": 0,
-		"cardImage": "LOE_024t.png",
 		"cost": 4,
 		"fr": {
 			"name": "Rocher roulant",
 			"text": "Détruit le serviteur à gauche à la fin de votre tour."
 		},
+		"goldenImage": "LOE_024t.gif",
 		"health": 4,
 		"id": "LOE_024t",
 		"name": "Rolling Boulder",
@@ -32745,7 +32017,6 @@ var parseCardsText = {
 			"name": "Explosion de feu rang 2",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts."
 		},
-		"goldenImage": "AT_132_MAGE.gif",
 		"id": "AT_132_MAGE",
 		"name": "Fireblast Rank 2",
 		"playerClass": "Mage",
@@ -32755,13 +32026,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_065.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Potion volcanique",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "CFM_065.gif",
 		"id": "CFM_065",
 		"name": "Volcanic Potion",
 		"playerClass": "Mage",
@@ -32773,13 +32044,13 @@ var parseCardsText = {
 	{
 		"artist": "Turovec Konstantin",
 		"attack": 3,
-		"cardImage": "LOE_047.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Araignée des tombes",
 			"text": "<b>Cri de guerre : découvre</b> une Bête."
 		},
+		"goldenImage": "LOE_047.gif",
 		"health": 3,
 		"id": "LOE_047",
 		"name": "Tomb Spider",
@@ -32795,7 +32066,6 @@ var parseCardsText = {
 			"name": "Add 1 to Health.",
 			"text": "Adds 1 health to a damaged character. Does NOT heal."
 		},
-		"goldenImage": "XXX_102.gif",
 		"id": "XXX_102",
 		"name": "Add 1 to Health.",
 		"playerClass": "Neutral",
@@ -32812,7 +32082,6 @@ var parseCardsText = {
 			"name": "Protégez le roi !",
 			"text": "Invoque un pion 1/1 avec <b>Provocation</b> pour chaque serviteur adverse."
 		},
-		"goldenImage": "KAR_026.gif",
 		"id": "KAR_026",
 		"name": "Protect the King!",
 		"playerClass": "Warrior",
@@ -32823,12 +32092,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA16_27.png",
 		"cost": 5,
 		"fr": {
 			"name": "La sentinelle d’acier",
 			"text": "Ce serviteur ne peut pas subir plus de 1 point de dégâts à la fois."
 		},
+		"goldenImage": "LOEA16_27.gif",
 		"health": 5,
 		"id": "LOEA16_27",
 		"name": "The Steel Sentinel",
@@ -32840,13 +32109,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Glenn Rane",
-		"cardImage": "CS2_076.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Assassiner",
 			"text": "Détruit un serviteur adverse."
 		},
+		"goldenImage": "CS2_076.gif",
 		"id": "CS2_076",
 		"name": "Assassinate",
 		"playerClass": "Rogue",
@@ -32857,12 +32126,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMA14_5H.png",
 		"cost": 1,
 		"fr": {
 			"name": "Toxitron",
 			"text": "Inflige 1 point de dégâts à tous les autres serviteurs au début de votre tour."
 		},
+		"goldenImage": "BRMA14_5H.gif",
 		"health": 4,
 		"id": "BRMA14_5H",
 		"name": "Toxitron",
@@ -32873,12 +32142,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TU4c_006.png",
 		"cost": 1,
 		"fr": {
 			"name": "Banane",
 			"text": "Donne +1/+1 à un serviteur allié. <i>(+1 ATQ / +1 PV)</i>"
 		},
+		"goldenImage": "TU4c_006.gif",
 		"id": "TU4c_006",
 		"name": "Bananas",
 		"playerClass": "Neutral",
@@ -32895,7 +32164,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Cuillère"
 		},
-		"goldenImage": "KAR_A02_02.gif",
 		"id": "KAR_A02_02",
 		"name": "Spoon",
 		"playerClass": "Neutral",
@@ -32909,7 +32177,6 @@ var parseCardsText = {
 			"name": "Mark Marchelune",
 			"text": "Les portails coûtent (1) |4(cristal,cristaux) de moins.\n<i>Ne compte pas comme un serviteur.</i>"
 		},
-		"goldenImage": "KARA_13_17.gif",
 		"health": 2,
 		"id": "KARA_13_17",
 		"name": "Mark Moonwalker",
@@ -32921,12 +32188,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TU4f_007.png",
 		"cost": 1,
 		"fr": {
 			"name": "Singe cinglé",
 			"text": "<b>Cri de guerre :</b> lance des bananes."
 		},
+		"goldenImage": "TU4f_007.gif",
 		"health": 2,
 		"id": "TU4f_007",
 		"name": "Crazy Monkey",
@@ -32942,7 +32209,6 @@ var parseCardsText = {
 			"name": "Le chambellan",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un acolyte attise-flammes 3/3."
 		},
-		"goldenImage": "BRMA06_2H_TB.gif",
 		"id": "BRMA06_2H_TB",
 		"name": "The Majordomo",
 		"playerClass": "Neutral",
@@ -32953,13 +32219,13 @@ var parseCardsText = {
 	{
 		"artist": "E. M. Gist",
 		"attack": 7,
-		"cardImage": "OG_024.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Sans-visage nimbé de flammes",
 			"text": "<b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "OG_024.gif",
 		"health": 7,
 		"id": "OG_024",
 		"name": "Flamewreathed Faceless",
@@ -32973,13 +32239,13 @@ var parseCardsText = {
 	{
 		"artist": "Cole Eastburn",
 		"attack": 5,
-		"cardImage": "CFM_324.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Regard de nacre",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> replace la carte Le gardien des tempêtes dans votre deck."
 		},
+		"goldenImage": "CFM_324.gif",
 		"health": 5,
 		"id": "CFM_324",
 		"name": "White Eyes",
@@ -32995,7 +32261,6 @@ var parseCardsText = {
 			"name": "Faim",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un naga affamé 5/1."
 		},
-		"goldenImage": "LOEA09_3d.gif",
 		"id": "LOEA09_3d",
 		"name": "Getting Hungry",
 		"playerClass": "Neutral",
@@ -33005,13 +32270,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sean O'Daniels",
-		"cardImage": "EX1_626.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Dissipation de masse",
 			"text": "Réduit au <b>Silence</b> tous les serviteurs adverses. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_626.gif",
 		"id": "EX1_626",
 		"name": "Mass Dispel",
 		"playerClass": "Priest",
@@ -33023,7 +32288,6 @@ var parseCardsText = {
 	{
 		"artist": "Kev Walker",
 		"attack": 4,
-		"cardImage": "CS2_150.png",
 		"collectible": true,
 		"cost": 5,
 		"faction": "ALLIANCE",
@@ -33031,6 +32295,7 @@ var parseCardsText = {
 			"name": "Commando foudrepique",
 			"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts."
 		},
+		"goldenImage": "CS2_150.gif",
 		"health": 2,
 		"id": "CS2_150",
 		"name": "Stormpike Commando",
@@ -33042,12 +32307,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_18H.png",
 		"cost": 10,
 		"fr": {
 			"name": "Zinaar",
 			"text": "Vous gagnez un Vœu à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_18H.gif",
 		"health": 10,
 		"id": "LOEA16_18H",
 		"name": "Zinaar",
@@ -33062,7 +32327,6 @@ var parseCardsText = {
 			"name": "Ralliement",
 			"text": "+1/+1."
 		},
-		"goldenImage": "OG_222e.gif",
 		"id": "OG_222e",
 		"name": "Rally",
 		"playerClass": "Paladin",
@@ -33072,7 +32336,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Azevedo",
-		"cardImage": "CFM_639e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "Caractéristiques augmentées par le massacreur des Dessoudeurs."
@@ -33086,11 +32349,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "BRMA09_4Ht.png",
 		"cost": 1,
 		"fr": {
 			"name": "Draconien"
 		},
+		"goldenImage": "BRMA09_4Ht.gif",
 		"health": 4,
 		"id": "BRMA09_4Ht",
 		"name": "Dragonkin",
@@ -33101,13 +32364,13 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 4,
-		"cardImage": "LOE_061.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Sentinelle Anubisath",
 			"text": "<b>Râle d’agonie :</b> donne +3/+3 à un serviteur allié aléatoire."
 		},
+		"goldenImage": "LOE_061.gif",
 		"health": 4,
 		"id": "LOE_061",
 		"name": "Anubisath Sentinel",
@@ -33118,7 +32381,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "CFM_643e2.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "Hobart Martelutte donne +1 ATQ."
@@ -33133,13 +32395,13 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 4,
-		"cardImage": "CFM_063.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Chimiste fou",
 			"text": "<b>Cri de guerre :</b> échange l’Attaque et la Vie d’un serviteur."
 		},
+		"goldenImage": "CFM_063.gif",
 		"health": 4,
 		"id": "CFM_063",
 		"name": "Kooky Chemist",
@@ -33150,7 +32412,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_SPT_DpromoEX1_312.png",
 		"cost": 8,
 		"fr": {
 			"name": "Le Néant distordu ?",
@@ -33167,11 +32428,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 30,
-		"cardImage": "CFM_712_t30.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t30.gif",
 		"health": 30,
 		"id": "CFM_712_t30",
 		"name": "Jade Golem",
@@ -33182,13 +32443,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 4,
-		"cardImage": "AT_063.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Gueule-d’acide",
 			"text": "Chaque fois qu’un autre serviteur subit des dégâts, le détruit."
 		},
+		"goldenImage": "AT_063.gif",
 		"health": 2,
 		"id": "AT_063",
 		"name": "Acidmaw",
@@ -33203,7 +32464,6 @@ var parseCardsText = {
 			"name": "Marque de la nature",
 			"text": "Ce serviteur a +4 ATQ."
 		},
-		"goldenImage": "EX1_155ae.gif",
 		"id": "EX1_155ae",
 		"name": "Mark of Nature",
 		"playerClass": "Druid",
@@ -33214,11 +32474,11 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 6,
-		"cardImage": "CFM_648t.png",
 		"cost": 6,
 		"fr": {
 			"name": "Associé"
 		},
+		"goldenImage": "CFM_648t.gif",
 		"health": 6,
 		"id": "CFM_648t",
 		"name": "\"Little Friend\"",
@@ -33228,12 +32488,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t32.png",
 		"cost": 10,
 		"fr": {
 			"name": "Dorépine",
 			"text": "Donne +6 PV à vos serviteurs."
 		},
+		"goldenImage": "CFM_621t32.gif",
 		"id": "CFM_621t32",
 		"name": "Goldthorn",
 		"playerClass": "Neutral",
@@ -33244,13 +32504,13 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 5,
-		"cardImage": "BRM_026.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Dragon affamé",
 			"text": "<b>Cri de guerre :</b> invoque un serviteur aléatoire à 1 cristal pour votre adversaire."
 		},
+		"goldenImage": "BRM_026.gif",
 		"health": 6,
 		"id": "BRM_026",
 		"name": "Hungry Dragon",
@@ -33263,13 +32523,13 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 4,
-		"cardImage": "OG_209.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Hallazèle l’Élevé",
 			"text": "Chaque fois que vos sorts infligent des dégâts, rend l’équivalent sous forme de PV à votre héros."
 		},
+		"goldenImage": "OG_209.gif",
 		"health": 6,
 		"id": "OG_209",
 		"name": "Hallazeal the Ascended",
@@ -33282,13 +32542,13 @@ var parseCardsText = {
 	{
 		"artist": "Bobby Chiu",
 		"attack": 3,
-		"cardImage": "BRM_019.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Client sinistre",
 			"text": "Invoque un autre client sinistre chaque fois que ce serviteur survit aux dégâts qu’il subit."
 		},
+		"goldenImage": "BRM_019.gif",
 		"health": 3,
 		"id": "BRM_019",
 		"name": "Grim Patron",
@@ -33303,7 +32563,6 @@ var parseCardsText = {
 			"name": "Tuez Millhouse !",
 			"text": "Les sorts coûtent (0) pendant ce tour !"
 		},
-		"goldenImage": "NEW1_029t.gif",
 		"id": "NEW1_029t",
 		"name": "Kill Millhouse!",
 		"playerClass": "Neutral",
@@ -33314,12 +32573,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Slawomir Maniak",
-		"cardImage": "LOE_110t.png",
 		"cost": 0,
 		"fr": {
 			"name": "Malédiction ancestrale",
 			"text": "Quand vous piochez cette carte, vous subissez 7 points de dégâts et vous piochez une carte."
 		},
+		"goldenImage": "LOE_110t.gif",
 		"id": "LOE_110t",
 		"name": "Ancient Curse",
 		"playerClass": "Neutral",
@@ -33329,12 +32588,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CRED_26.png",
 		"cost": 3,
 		"fr": {
 			"name": "Eric Del Priore",
 			"text": "A <b>Provocation</b> s’il est 3 heures du matin."
 		},
+		"goldenImage": "CRED_26.gif",
 		"health": 6,
 		"id": "CRED_26",
 		"name": "Eric Del Priore",
@@ -33347,13 +32606,13 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 3,
-		"cardImage": "OG_321.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Adorateur fanatisé",
 			"text": "<b>Provocation</b>. Chaque fois que ce serviteur subit des dégâts, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_321.gif",
 		"health": 6,
 		"id": "OG_321",
 		"name": "Crazed Worshipper",
@@ -33368,7 +32627,6 @@ var parseCardsText = {
 			"name": "Furieux",
 			"text": "+2/+2."
 		},
-		"goldenImage": "OG_195e.gif",
 		"id": "OG_195e",
 		"name": "Enormous",
 		"playerClass": "Neutral",
@@ -33381,7 +32639,6 @@ var parseCardsText = {
 			"name": "Puissance d’Argent",
 			"text": "+2/+2."
 		},
-		"goldenImage": "KAR_077e.gif",
 		"id": "KAR_077e",
 		"name": "Silver Might",
 		"playerClass": "Neutral",
@@ -33392,13 +32649,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 2,
-		"cardImage": "OG_313.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Grizzly perturbé",
 			"text": "Après que vous avez invoqué un serviteur, lui donne +1/+1."
 		},
+		"goldenImage": "OG_313.gif",
 		"health": 2,
 		"id": "OG_313",
 		"name": "Addled Grizzly",
@@ -33410,13 +32667,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Scott",
-		"cardImage": "AT_044.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Charpie",
 			"text": "Détruit un serviteur.\nAjoute un serviteur aléatoire dans la main de votre adversaire."
 		},
+		"goldenImage": "AT_044.gif",
 		"id": "AT_044",
 		"name": "Mulch",
 		"playerClass": "Druid",
@@ -33428,13 +32685,13 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 5,
-		"cardImage": "CFM_808.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Genzo, le Requin",
 			"text": "Chaque fois qu’il attaque, les deux joueurs piochent des cartes jusqu’à en avoir 3."
 		},
+		"goldenImage": "CFM_808.gif",
 		"health": 4,
 		"id": "CFM_808",
 		"name": "Genzo, the Shark",
@@ -33447,13 +32704,13 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 0,
-		"cardImage": "BRM_022.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Œuf de dragon",
 			"text": "Invoque un dragonnet 2/1 chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "BRM_022.gif",
 		"health": 2,
 		"id": "BRM_022",
 		"name": "Dragon Egg",
@@ -33466,13 +32723,13 @@ var parseCardsText = {
 	{
 		"artist": "Michael Phillippi",
 		"attack": 6,
-		"cardImage": "GVG_105.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Golem céleste piloté",
 			"text": "<b>Râle d’agonie :</b> invoque un serviteur aléatoire coûtant 4 cristaux."
 		},
+		"goldenImage": "GVG_105.gif",
 		"health": 4,
 		"id": "GVG_105",
 		"name": "Piloted Sky Golem",
@@ -33483,12 +32740,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA07_20.png",
 		"cost": 1,
 		"fr": {
 			"name": "Boum !",
 			"text": "Inflige $3 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "LOEA07_20.gif",
 		"id": "LOEA07_20",
 		"name": "Boom!",
 		"playerClass": "Neutral",
@@ -33501,7 +32758,6 @@ var parseCardsText = {
 			"name": "Chance de la pièce",
 			"text": "Passer en second augmente vos points de vie."
 		},
-		"goldenImage": "GAME_001.gif",
 		"id": "GAME_001",
 		"name": "Luck of the Coin",
 		"playerClass": "Neutral",
@@ -33512,13 +32768,13 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielsen",
 		"attack": 2,
-		"cardImage": "CFM_067.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Soigneur hozen",
 			"text": "<b>Cri de guerre :</b> rend tous ses PV à un serviteur."
 		},
+		"goldenImage": "CFM_067.gif",
 		"health": 6,
 		"id": "CFM_067",
 		"name": "Hozen Healer",
@@ -33535,7 +32791,6 @@ var parseCardsText = {
 			"name": "Présence démoniaque",
 			"text": "Vous piochez 2 cartes.\nGagne 10 points d’armure."
 		},
-		"goldenImage": "KARA_13_12.gif",
 		"id": "KARA_13_12",
 		"name": "Demonic Presence",
 		"playerClass": "Neutral",
@@ -33546,11 +32801,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 25,
-		"cardImage": "CFM_712_t25.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t25.gif",
 		"health": 25,
 		"id": "CFM_712_t25",
 		"name": "Jade Golem",
@@ -33563,7 +32818,6 @@ var parseCardsText = {
 			"name": "Arme croque-roc",
 			"text": "Ce personnage a +3 ATQ pendant ce tour."
 		},
-		"goldenImage": "CS2_045e.gif",
 		"id": "CS2_045e",
 		"name": "Rockbiter Weapon",
 		"playerClass": "Shaman",
@@ -33576,7 +32830,6 @@ var parseCardsText = {
 			"name": "Bénédiction du clerc",
 			"text": "+1/+1."
 		},
-		"goldenImage": "EX1_019e.gif",
 		"id": "EX1_019e",
 		"name": "Cleric's Blessing",
 		"playerClass": "Priest",
@@ -33589,7 +32842,6 @@ var parseCardsText = {
 			"name": "Affûtage nécessaire",
 			"text": "ATQ réduite."
 		},
-		"goldenImage": "EX1_411e2.gif",
 		"id": "EX1_411e2",
 		"name": "Needs Sharpening",
 		"playerClass": "Warrior",
@@ -33599,12 +32851,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "FP1_012t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Gelée",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "FP1_012t.gif",
 		"health": 2,
 		"id": "FP1_012t",
 		"name": "Slime",
@@ -33615,13 +32867,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "CS2_037.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Horion de givre",
 			"text": "Inflige $1 |4(point,points) de dégâts à un personnage adverse, et le <b>gèle</b>."
 		},
+		"goldenImage": "CS2_037.gif",
 		"id": "CS2_037",
 		"name": "Frost Shock",
 		"playerClass": "Shaman",
@@ -33633,13 +32885,13 @@ var parseCardsText = {
 	{
 		"artist": "E. M. Gist",
 		"attack": 2,
-		"cardImage": "FP1_001.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Croq’zombie",
 			"text": "<b>Râle d’agonie :</b> rend 5 PV au héros adverse."
 		},
+		"goldenImage": "FP1_001.gif",
 		"health": 3,
 		"id": "FP1_001",
 		"name": "Zombie Chow",
@@ -33655,7 +32907,6 @@ var parseCardsText = {
 			"name": "Bâton de l’Origine",
 			"text": "Ajoute un serviteur légendaire aléatoire dans votre main. Il coûte (4) cristaux de moins."
 		},
-		"goldenImage": "TB_KTRAF_HP_RAF5.gif",
 		"id": "TB_KTRAF_HP_RAF5",
 		"name": "Staff of Origination",
 		"playerClass": "Neutral",
@@ -33665,12 +32916,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Peerasak Senalai",
-		"cardImage": "PART_003.png",
 		"cost": 1,
 		"fr": {
 			"name": "Klaxon rouillé",
 			"text": "Confère <b>Provocation</b> à un serviteur."
 		},
+		"goldenImage": "PART_003.gif",
 		"id": "PART_003",
 		"name": "Rusty Horn",
 		"playerClass": "Neutral",
@@ -33680,13 +32931,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jessica Jung",
-		"cardImage": "CS2_004.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Mot de pouvoir : Bouclier",
 			"text": "Donne +2 PV à un serviteur. Vous piochez une carte."
 		},
+		"goldenImage": "CS2_004.gif",
 		"id": "CS2_004",
 		"name": "Power Word: Shield",
 		"playerClass": "Priest",
@@ -33696,10 +32947,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA16_1H.png",
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "LOEA16_1H.gif",
 		"health": 30,
 		"id": "LOEA16_1H",
 		"name": "Rafaam",
@@ -33710,13 +32961,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
-		"cardImage": "AT_031.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Vide-gousset",
 			"text": "Chaque fois que ce serviteur attaque un héros, ajoute une carte La pièce dans votre main."
 		},
+		"goldenImage": "AT_031.gif",
 		"health": 2,
 		"id": "AT_031",
 		"name": "Cutpurse",
@@ -33728,13 +32979,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Richard Wright",
-		"cardImage": "AT_060.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Piège à ours",
 			"text": "<b>Secret :</b> invoque un ours 3/3 avec <b>Provocation</b> une fois que votre héros a été attaqué."
 		},
+		"goldenImage": "AT_060.gif",
 		"id": "AT_060",
 		"name": "Bear Trap",
 		"playerClass": "Hunter",
@@ -33745,13 +32996,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "James Zhang",
-		"cardImage": "CS2_077.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Sprint",
 			"text": "Vous piochez 4 cartes."
 		},
+		"goldenImage": "CS2_077.gif",
 		"id": "CS2_077",
 		"name": "Sprint",
 		"playerClass": "Rogue",
@@ -33766,7 +33017,6 @@ var parseCardsText = {
 			"name": "Moisson",
 			"text": "<b>Pouvoir héroïque</b>\nPioche une carte."
 		},
-		"goldenImage": "NAX8_02.gif",
 		"id": "NAX8_02",
 		"name": "Harvest",
 		"playerClass": "Neutral",
@@ -33780,7 +33030,6 @@ var parseCardsText = {
 			"name": "Armor 1",
 			"text": "Give target Hero +1 Armor"
 		},
-		"goldenImage": "XXX_061.gif",
 		"id": "XXX_061",
 		"name": "Armor 1",
 		"playerClass": "Neutral",
@@ -33791,13 +33040,13 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 2,
-		"cardImage": "CFM_649.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Messagère de la Kabale",
 			"text": "<b>Cri de guerre :</b> <b>découvre</b> une carte de mage, prêtre ou démoniste."
 		},
+		"goldenImage": "CFM_649.gif",
 		"health": 2,
 		"id": "CFM_649",
 		"name": "Kabal Courier",
@@ -33810,13 +33059,13 @@ var parseCardsText = {
 	{
 		"artist": "Chris Moeller",
 		"attack": 3,
-		"cardImage": "EX1_134.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Agent du SI:7",
 			"text": "<b>Combo :</b> inflige 2 points de dégâts."
 		},
+		"goldenImage": "EX1_134.gif",
 		"health": 3,
 		"id": "EX1_134",
 		"name": "SI:7 Agent",
@@ -33828,12 +33077,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA16_19.png",
 		"cost": 5,
 		"fr": {
 			"name": "Écumeur du soleil Phaerix",
 			"text": "Ajoute une carte Bénédiction du soleil dans votre main à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_19.gif",
 		"health": 5,
 		"id": "LOEA16_19",
 		"name": "Sun Raider Phaerix",
@@ -33846,13 +33095,13 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 1,
-		"cardImage": "CFM_341.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Sergent Sally",
 			"text": "<b>Râle d’agonie :</b> inflige des dégâts d’un montant égal à l’Attaque de ce serviteur à tous les serviteurs adverses."
 		},
+		"goldenImage": "CFM_341.gif",
 		"health": 1,
 		"id": "CFM_341",
 		"name": "Sergeant Sally",
@@ -33863,7 +33112,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_SPT_DPromoSecret3.png",
 		"cost": 2,
 		"fr": {
 			"name": "Visions de vaillance",
@@ -33879,13 +33127,13 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 2,
-		"cardImage": "CFM_606.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Géode de mana",
 			"text": "Invoque un cristal 2/2 chaque fois que ce serviteur est soigné."
 		},
+		"goldenImage": "CFM_606.gif",
 		"health": 3,
 		"id": "CFM_606",
 		"name": "Mana Geode",
@@ -33896,11 +33144,11 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "HERO_04.png",
 		"collectible": true,
 		"fr": {
 			"name": "Uther le Porteur de Lumière"
 		},
+		"goldenImage": "HERO_04.gif",
 		"health": 30,
 		"id": "HERO_04",
 		"name": "Uther Lightbringer",
@@ -33910,12 +33158,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "XXX_042.png",
 		"cost": 0,
 		"fr": {
 			"name": "Hand to Deck",
 			"text": "Shuffle a player's hand into his deck."
 		},
+		"goldenImage": "XXX_042.gif",
 		"id": "XXX_042",
 		"name": "Hand to Deck",
 		"playerClass": "Neutral",
@@ -33926,12 +33174,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Skan Srisuwan",
-		"cardImage": "OG_195a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Feux follets à foison",
 			"text": "Invoque sept feux follets 1/1."
 		},
+		"goldenImage": "OG_195a.gif",
 		"id": "OG_195a",
 		"name": "Many Wisps",
 		"playerClass": "Druid",
@@ -33946,7 +33194,6 @@ var parseCardsText = {
 			"name": "Tir de baliste",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $3 points de dégâts au héros adverse."
 		},
-		"goldenImage": "DS1h_292_H1_AT_132.gif",
 		"id": "DS1h_292_H1_AT_132",
 		"name": "Ballista Shot",
 		"playerClass": "Hunter",
@@ -33955,10 +33202,10 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "NAX2_01H.png",
 		"fr": {
 			"name": "Grande veuve Faerlina"
 		},
+		"goldenImage": "NAX2_01H.gif",
 		"health": 45,
 		"id": "NAX2_01H",
 		"name": "Grand Widow Faerlina",
@@ -33968,12 +33215,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t9.png",
 		"cost": 1,
 		"fr": {
 			"name": "Huile des ténèbres",
 			"text": "Ajoute un démon aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_621t9.gif",
 		"id": "CFM_621t9",
 		"name": "Shadow Oil",
 		"playerClass": "Neutral",
@@ -33983,12 +33230,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matthew O'Connor",
-		"cardImage": "OG_080d.png",
 		"cost": 1,
 		"fr": {
 			"name": "Toxine d’églantine",
 			"text": "Donne +3 ATQ à un serviteur."
 		},
+		"goldenImage": "OG_080d.gif",
 		"id": "OG_080d",
 		"name": "Briarthorn Toxin",
 		"playerClass": "Rogue",
@@ -33999,13 +33246,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
-		"cardImage": "GVG_011.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Réducteur fou",
 			"text": "<b>Cri de guerre :</b> donne à un serviteur -2 ATQ pendant ce tour."
 		},
+		"goldenImage": "GVG_011.gif",
 		"health": 2,
 		"id": "GVG_011",
 		"name": "Shrinkmeister",
@@ -34018,12 +33265,12 @@ var parseCardsText = {
 	{
 		"artist": "Anton Magdalin",
 		"attack": 1,
-		"cardImage": "OG_156a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Limon",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_156a.gif",
 		"health": 1,
 		"id": "OG_156a",
 		"name": "Ooze",
@@ -34039,7 +33286,6 @@ var parseCardsText = {
 			"name": "Essence des Rouges",
 			"text": "<b>Pouvoir héroïque</b>\nChaque joueur pioche 3 cartes. Vous gagnez un cristal de mana."
 		},
-		"goldenImage": "BRMA11_2H.gif",
 		"id": "BRMA11_2H",
 		"name": "Essence of the Red",
 		"playerClass": "Neutral",
@@ -34048,12 +33294,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "LOEA16_10.png",
 		"cost": 0,
 		"fr": {
 			"name": "Coupe de sang hakkari",
 			"text": "Transforme un serviteur en un serpent de la fosse 2/1."
 		},
+		"goldenImage": "LOEA16_10.gif",
 		"id": "LOEA16_10",
 		"name": "Hakkari Blood Goblet",
 		"playerClass": "Neutral",
@@ -34066,7 +33312,6 @@ var parseCardsText = {
 			"name": "Éclat d’huile de poulpe",
 			"text": "+2 ATQ."
 		},
-		"goldenImage": "OG_267e.gif",
 		"id": "OG_267e",
 		"name": "Squid Oil Sheen",
 		"playerClass": "Rogue",
@@ -34077,13 +33322,13 @@ var parseCardsText = {
 	{
 		"artist": "Sunny Gho",
 		"attack": 5,
-		"cardImage": "EX1_014.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Roi Mukla",
 			"text": "<b>Cri de guerre :</b> donne 2 bananes à votre adversaire."
 		},
+		"goldenImage": "EX1_014.gif",
 		"health": 5,
 		"id": "EX1_014",
 		"name": "King Mukla",
@@ -34099,7 +33344,6 @@ var parseCardsText = {
 			"name": "Écholocation",
 			"text": "<b>Pouvoir héroïque</b>\nS’équipe d’une arme qui croît à mesure que l’adversaire joue des cartes."
 		},
-		"goldenImage": "BRMA16_2H.gif",
 		"id": "BRMA16_2H",
 		"name": "Echolocate",
 		"playerClass": "Neutral",
@@ -34109,11 +33353,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "EX1_tk9.png",
 		"cost": 2,
 		"fr": {
 			"name": "Tréant"
 		},
+		"goldenImage": "EX1_tk9.gif",
 		"health": 2,
 		"id": "EX1_tk9",
 		"name": "Treant",
@@ -34128,7 +33372,6 @@ var parseCardsText = {
 			"name": "Des diablotins !",
 			"text": "Invoque 2 diablotins dégoûtants."
 		},
-		"goldenImage": "KARA_09_03heroic.gif",
 		"id": "KARA_09_03heroic",
 		"name": "Many Imps!",
 		"playerClass": "Neutral",
@@ -34137,7 +33380,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "CFM_325e.png",
 		"fr": {
 			"name": "Équipé",
 			"text": "+2 ATQ."
@@ -34151,12 +33393,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "LOEA15_3.png",
 		"cost": 3,
 		"fr": {
 			"name": "Raptor d’os",
 			"text": "<b>Cri de guerre :</b> prend le contrôle de l’arme de votre adversaire."
 		},
+		"goldenImage": "LOEA15_3.gif",
 		"health": 2,
 		"id": "LOEA15_3",
 		"name": "Boneraptor",
@@ -34166,12 +33408,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_10.png",
 		"cost": 0,
 		"fr": {
 			"name": "Bonus : Cri de guerre",
 			"text": "Vos serviteurs avec <b>Cri de guerre</b> ont +1/+1."
 		},
+		"goldenImage": "TB_PickYourFate_10.gif",
 		"id": "TB_PickYourFate_10",
 		"name": "Battlecry Bonus",
 		"playerClass": "Neutral",
@@ -34182,13 +33424,13 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 2,
-		"cardImage": "OG_218.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Brave Sabot-de-Sang",
 			"text": "<b>Provocation</b>\n<b>Accès de rage :</b> +3 ATQ."
 		},
+		"goldenImage": "OG_218.gif",
 		"health": 6,
 		"id": "OG_218",
 		"name": "Bloodhoof Brave",
@@ -34203,7 +33445,6 @@ var parseCardsText = {
 			"name": "Volonté du vizir",
 			"text": "Coût réduit."
 		},
-		"goldenImage": "OG_138e.gif",
 		"id": "OG_138e",
 		"name": "Will of the Vizier",
 		"playerClass": "Neutral",
@@ -34214,13 +33455,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 3,
-		"cardImage": "AT_052.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Golem totémique",
 			"text": "<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "AT_052.gif",
 		"health": 4,
 		"id": "AT_052",
 		"name": "Totem Golem",
@@ -34236,7 +33477,6 @@ var parseCardsText = {
 			"name": "Mot de pouvoir : Gloire",
 			"text": "Quand il attaque, rend 4 PV au héros du joueur l’ayant amélioré."
 		},
-		"goldenImage": "AT_013e.gif",
 		"id": "AT_013e",
 		"name": "Power Word: Glory",
 		"playerClass": "Neutral",
@@ -34246,13 +33486,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "LOEA09_4.png",
 		"cost": 1,
 		"durability": 2,
 		"fr": {
 			"name": "Lance rare",
 			"text": "Gagne +1/+1 chaque fois que votre adversaire joue une carte rare."
 		},
+		"goldenImage": "LOEA09_4.gif",
 		"id": "LOEA09_4",
 		"name": "Rare Spear",
 		"playerClass": "Neutral",
@@ -34263,13 +33503,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
-		"cardImage": "OG_162.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Disciple de C’Thun",
 			"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts. Donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_162.gif",
 		"health": 1,
 		"id": "OG_162",
 		"name": "Disciple of C'Thun",
@@ -34282,13 +33522,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "BRM_033.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Technicienne de l’Aile noire",
 			"text": "<b>Cri de guerre :</b> gagne +1/+1 si vous avez un Dragon en main."
 		},
+		"goldenImage": "BRM_033.gif",
 		"health": 4,
 		"id": "BRM_033",
 		"name": "Blackwing Technician",
@@ -34299,12 +33539,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "EX1_160a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Invocation de panthère",
 			"text": "Invoque une panthère 3/2."
 		},
+		"goldenImage": "EX1_160a.gif",
 		"id": "EX1_160a",
 		"name": "Summon a Panther",
 		"playerClass": "Druid",
@@ -34314,7 +33554,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_SPT_DPromoCrate2.png",
 		"cost": 1,
 		"fr": {
 			"name": "Armure abandonnée",
@@ -34333,7 +33572,6 @@ var parseCardsText = {
 			"name": "Puissance des Pitons",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "AT_049e.gif",
 		"id": "AT_049e",
 		"name": "Power of the Bluff",
 		"playerClass": "Shaman",
@@ -34346,7 +33584,6 @@ var parseCardsText = {
 			"name": "Cadeau nul",
 			"text": "Le coût de cette carte est réduit."
 		},
-		"goldenImage": "TB_GiftExchange_Enchantment.gif",
 		"id": "TB_GiftExchange_Enchantment",
 		"name": "Cheap Gift",
 		"playerClass": "Neutral",
@@ -34356,12 +33593,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TB_KTRAF_2s.png",
 		"cost": 4,
 		"fr": {
 			"name": "Sire Zeliek",
 			"text": "Dame Blaumeux est <b>Insensible</b>."
 		},
+		"goldenImage": "TB_KTRAF_2s.gif",
 		"health": 5,
 		"id": "TB_KTRAF_2s",
 		"name": "Sir Zeliek",
@@ -34377,7 +33614,6 @@ var parseCardsText = {
 			"name": "Réanimation morbide",
 			"text": "<b>Pouvoir héroïque passif</b>\nChaque fois qu’un adversaire meurt, un squelette 1/1 se lève."
 		},
-		"goldenImage": "NAX4_04.gif",
 		"id": "NAX4_04",
 		"name": "Raise Dead",
 		"playerClass": "Neutral",
@@ -34388,13 +33624,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 7,
-		"cardImage": "LOE_092.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Prince voleur Rafaam",
 			"text": "<b>Cri de guerre : découvre</b>\nun puissant artéfact."
 		},
+		"goldenImage": "LOE_092.gif",
 		"health": 8,
 		"id": "LOE_092",
 		"name": "Arch-Thief Rafaam",
@@ -34413,7 +33649,6 @@ var parseCardsText = {
 			"name": "Cavalier en ivoire",
 			"text": "<b>Cri de guerre :</b> <b>découvre</b> un sort. Rend un montant de PV équivalent à son coût à votre héros."
 		},
-		"goldenImage": "KAR_057.gif",
 		"health": 4,
 		"id": "KAR_057",
 		"name": "Ivory Knight",
@@ -34426,7 +33661,6 @@ var parseCardsText = {
 	{
 		"artist": "Peet Cooper",
 		"attack": 2,
-		"cardImage": "AT_050.png",
 		"collectible": true,
 		"cost": 4,
 		"durability": 4,
@@ -34434,6 +33668,7 @@ var parseCardsText = {
 			"name": "Marteau chargé",
 			"text": "<b>Râle d’agonie :</b> votre pouvoir héroïque devient « Inflige 2 points de dégâts »."
 		},
+		"goldenImage": "AT_050.gif",
 		"id": "AT_050",
 		"name": "Charged Hammer",
 		"playerClass": "Shaman",
@@ -34447,7 +33682,6 @@ var parseCardsText = {
 			"name": "Pilote mystère",
 			"text": "Qui ça peut bien être ?"
 		},
-		"goldenImage": "TB_Pilot1.gif",
 		"id": "TB_Pilot1",
 		"name": "Mystery Pilot",
 		"playerClass": "Neutral",
@@ -34461,7 +33695,6 @@ var parseCardsText = {
 			"name": "Chaînes",
 			"text": "<b>Pouvoir héroïque</b>\nPrend le contrôle d’un serviteur adverse aléatoire."
 		},
-		"goldenImage": "NAX15_04H.gif",
 		"id": "NAX15_04H",
 		"name": "Chains",
 		"playerClass": "Neutral",
@@ -34471,12 +33704,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Chris Seaman",
-		"cardImage": "GVG_056t.png",
 		"cost": 0,
 		"fr": {
 			"name": "Mine enfouie",
 			"text": "Quand vous la piochez, elle explose, vous infligeant 10 points de dégâts. Vous piochez une carte."
 		},
+		"goldenImage": "GVG_056t.gif",
 		"id": "GVG_056t",
 		"name": "Burrowing Mine",
 		"playerClass": "Warrior",
@@ -34489,7 +33722,6 @@ var parseCardsText = {
 			"name": "Transformation en nova",
 			"text": "Ça va exploser !"
 		},
-		"goldenImage": "TB_CoOpv3_009e.gif",
 		"id": "TB_CoOpv3_009e",
 		"name": "Going Nova",
 		"playerClass": "Neutral",
@@ -34499,12 +33731,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t18.png",
 		"cost": 5,
 		"fr": {
 			"name": "Gangrenelle",
 			"text": "Inflige $4 |4(point,points) de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "CFM_621t18.gif",
 		"id": "CFM_621t18",
 		"name": "Felbloom",
 		"playerClass": "Neutral",
@@ -34515,7 +33747,6 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 1,
-		"cardImage": "CS2_189.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "HORDE",
@@ -34523,6 +33754,7 @@ var parseCardsText = {
 			"name": "Archère elfe",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "CS2_189.gif",
 		"health": 1,
 		"id": "CS2_189",
 		"name": "Elven Archer",
@@ -34534,12 +33766,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMC_98.png",
 		"cost": 6,
 		"fr": {
 			"name": "Tranchetripe",
 			"text": "Donne +3 ATQ à vos serviteurs au début de votre tour."
 		},
+		"goldenImage": "BRMC_98.gif",
 		"health": 12,
 		"id": "BRMC_98",
 		"name": "Razorgore",
@@ -34554,7 +33786,6 @@ var parseCardsText = {
 			"name": "Consumer",
 			"text": "Caractéristiques augmentées."
 		},
-		"goldenImage": "EX1_304e.gif",
 		"id": "EX1_304e",
 		"name": "Consume",
 		"playerClass": "Warlock",
@@ -34565,13 +33796,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 4,
-		"cardImage": "LOE_011.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Reno Jackson",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, rend tous ses PV à votre héros."
 		},
+		"goldenImage": "LOE_011.gif",
 		"health": 6,
 		"id": "LOE_011",
 		"name": "Reno Jackson",
@@ -34583,12 +33814,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "BRMC_88.png",
 		"cost": 6,
 		"fr": {
 			"name": "Pourfendeur drakônide",
 			"text": "Inflige également des dégâts aux serviteurs à côté de celui qu’il attaque."
 		},
+		"goldenImage": "BRMC_88.gif",
 		"health": 6,
 		"id": "BRMC_88",
 		"name": "Drakonid Slayer",
@@ -34602,7 +33833,6 @@ var parseCardsText = {
 			"name": "Marque des cavaliers",
 			"text": "+1/+1."
 		},
-		"goldenImage": "NAX9_07e.gif",
 		"id": "NAX9_07e",
 		"name": "Mark of the Horsemen",
 		"playerClass": "Neutral",
@@ -34613,13 +33843,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
-		"cardImage": "CFM_809.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Chopper huran de Tanaris",
 			"text": "<b>Cri de guerre :</b> gagne <b>Charge</b> si la main de votre adversaire est vide."
 		},
+		"goldenImage": "CFM_809.gif",
 		"health": 4,
 		"id": "CFM_809",
 		"name": "Tanaris Hogchopper",
@@ -34632,13 +33862,13 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 1,
-		"cardImage": "NEW1_017.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Crabe affamé",
 			"text": "<b>Cri de guerre :</b> détruit un murloc et gagne +2/+2."
 		},
+		"goldenImage": "NEW1_017.gif",
 		"health": 2,
 		"id": "NEW1_017",
 		"name": "Hungry Crab",
@@ -34649,12 +33879,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_013.png",
 		"cost": 0,
 		"fr": {
 			"name": "Discard",
 			"text": "Choose a hero.  That hero's controller discards his hand."
 		},
+		"goldenImage": "XXX_013.gif",
 		"id": "XXX_013",
 		"name": "Discard",
 		"playerClass": "Neutral",
@@ -34665,12 +33895,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "BRMA14_9.png",
 		"cost": 5,
 		"fr": {
 			"name": "Magmatron",
 			"text": "Chaque fois qu’un joueur joue une carte, lui inflige 2 points de dégâts."
 		},
+		"goldenImage": "BRMA14_9.gif",
 		"health": 7,
 		"id": "BRMA14_9",
 		"name": "Magmatron",
@@ -34682,12 +33912,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMC_99.png",
 		"cost": 5,
 		"fr": {
 			"name": "Garr",
 			"text": "Invoque un élémentaire 2/3 avec <b>Provocation</b> chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "BRMC_99.gif",
 		"health": 8,
 		"id": "BRMC_99",
 		"name": "Garr",
@@ -34700,7 +33930,6 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 1,
-		"cardImage": "EX1_008.png",
 		"collectible": true,
 		"cost": 1,
 		"faction": "ALLIANCE",
@@ -34708,6 +33937,7 @@ var parseCardsText = {
 			"name": "Écuyère d’Argent",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_008.gif",
 		"health": 1,
 		"id": "EX1_008",
 		"name": "Argent Squire",
@@ -34718,7 +33948,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_SPT_DPromoSpell1.png",
 		"cost": 2,
 		"fr": {
 			"name": "Foudre",
@@ -34733,12 +33962,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA16_18.png",
 		"cost": 5,
 		"fr": {
 			"name": "Zinaar",
 			"text": "Vous gagnez un Vœu à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_18.gif",
 		"health": 5,
 		"id": "LOEA16_18",
 		"name": "Zinaar",
@@ -34751,13 +33980,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Brereton",
 		"attack": 4,
-		"cardImage": "DS1_070.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Maître-chien",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 et <b>Provocation</b> à une Bête alliée."
 		},
+		"goldenImage": "DS1_070.gif",
 		"health": 3,
 		"id": "DS1_070",
 		"name": "Houndmaster",
@@ -34769,12 +33998,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CRED_12.png",
 		"cost": 2,
 		"fr": {
 			"name": "Rachelle Davis",
 			"text": "<b>Cri de guerre :</b> pioche DEUX cartes. <i>Ce n’est pas un ingénieur novice.</i>"
 		},
+		"goldenImage": "CRED_12.gif",
 		"health": 2,
 		"id": "CRED_12",
 		"name": "Rachelle Davis",
@@ -34787,13 +34016,13 @@ var parseCardsText = {
 	{
 		"artist": "Ben Olson",
 		"attack": 4,
-		"cardImage": "GVG_109.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Mini-mage",
 			"text": "<b>Camouflage</b>\n<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "GVG_109.gif",
 		"health": 1,
 		"id": "GVG_109",
 		"name": "Mini-Mage",
@@ -34807,11 +34036,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Kagounkin",
 		"attack": 2,
-		"cardImage": "OG_249a.png",
 		"cost": 2,
 		"fr": {
 			"name": "Gelée"
 		},
+		"goldenImage": "OG_249a.gif",
 		"health": 2,
 		"id": "OG_249a",
 		"name": "Slime",
@@ -34822,13 +34051,13 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 2,
-		"cardImage": "AT_017.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gardien du Crépuscule",
 			"text": "<b>Cri de guerre :</b> gagne\n+1 ATQ et <b>Provocation</b> si vous avez un Dragon en main."
 		},
+		"goldenImage": "AT_017.gif",
 		"health": 6,
 		"id": "AT_017",
 		"name": "Twilight Guardian",
@@ -34842,7 +34071,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "TB_ClockworkCardDealer"
 		},
-		"goldenImage": "TB_GreatCurves_01.gif",
 		"id": "TB_GreatCurves_01",
 		"name": "TB_ClockworkCardDealer",
 		"playerClass": "Neutral",
@@ -34852,13 +34080,13 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 3,
-		"cardImage": "CFM_338.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Enrage-bête trogg",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à une Bête aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_338.gif",
 		"health": 2,
 		"id": "CFM_338",
 		"name": "Trogg Beastrager",
@@ -34873,7 +34101,6 @@ var parseCardsText = {
 			"name": "Dévotion du fanatique",
 			"text": "Caractéristiques augmentées."
 		},
-		"goldenImage": "OG_281e.gif",
 		"id": "OG_281e",
 		"name": "Fanatic Devotion",
 		"playerClass": "Neutral",
@@ -34884,7 +34111,6 @@ var parseCardsText = {
 	{
 		"artist": "Efrem Palacios",
 		"attack": 2,
-		"cardImage": "EX1_021.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "HORDE",
@@ -34892,6 +34118,7 @@ var parseCardsText = {
 			"name": "Long-voyant de Thrallmar",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "EX1_021.gif",
 		"health": 3,
 		"id": "EX1_021",
 		"name": "Thrallmar Farseer",
@@ -34902,12 +34129,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_049.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destroy all Mana",
 			"text": "Destroy all of a player's Mana Crystals."
 		},
+		"goldenImage": "XXX_049.gif",
 		"id": "XXX_049",
 		"name": "Destroy all Mana",
 		"playerClass": "Neutral",
@@ -34922,7 +34149,6 @@ var parseCardsText = {
 			"name": "Changeforme",
 			"text": "<b>Pouvoir héroïque</b>\n+1 ATQ pendant ce tour.    +1 Armure."
 		},
-		"goldenImage": "CS2_017.gif",
 		"id": "CS2_017",
 		"name": "Shapeshift",
 		"playerClass": "Druid",
@@ -34934,13 +34160,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 8,
-		"cardImage": "EX1_620.png",
 		"collectible": true,
 		"cost": 25,
 		"fr": {
 			"name": "Géant de lave",
 			"text": "Coûte (1) cristal de moins pour chaque point de dégâts subi par votre héros."
 		},
+		"goldenImage": "EX1_620.gif",
 		"health": 8,
 		"id": "EX1_620",
 		"name": "Molten Giant",
@@ -34952,11 +34178,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "TU4a_005.png",
 		"cost": 4,
 		"fr": {
 			"name": "Gnoll massif"
 		},
+		"goldenImage": "TU4a_005.gif",
 		"health": 2,
 		"id": "TU4a_005",
 		"name": "Massive Gnoll",
@@ -34968,13 +34194,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 4,
-		"cardImage": "CFM_694.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Sensei de l’ombre",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à un serviteur avec <b>Camouflage</b>."
 		},
+		"goldenImage": "CFM_694.gif",
 		"health": 4,
 		"id": "CFM_694",
 		"name": "Shadow Sensei",
@@ -34987,11 +34213,11 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 1,
-		"cardImage": "OG_216a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Araignée"
 		},
+		"goldenImage": "OG_216a.gif",
 		"health": 1,
 		"id": "OG_216a",
 		"name": "Spider",
@@ -35004,7 +34230,6 @@ var parseCardsText = {
 			"name": "Dents de métal",
 			"text": "+2 ATQ."
 		},
-		"goldenImage": "GVG_048e.gif",
 		"id": "GVG_048e",
 		"name": "Metal Teeth",
 		"playerClass": "Hunter",
@@ -35029,13 +34254,13 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 6,
-		"cardImage": "BRM_024.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Écraseur drakônide",
 			"text": "<b>Cri de guerre :</b> gagne +3/+3 si votre adversaire a 15 PV ou moins."
 		},
+		"goldenImage": "BRM_024.gif",
 		"health": 6,
 		"id": "BRM_024",
 		"name": "Drakonid Crusher",
@@ -35048,7 +34273,6 @@ var parseCardsText = {
 	{
 		"artist": "Richard Wright",
 		"attack": 1,
-		"cardImage": "GVG_024.png",
 		"collectible": true,
 		"cost": 3,
 		"durability": 3,
@@ -35056,6 +34280,7 @@ var parseCardsText = {
 			"name": "Clé de maître des rouages",
 			"text": "A +2 ATQ tant que vous avez un Méca."
 		},
+		"goldenImage": "GVG_024.gif",
 		"id": "GVG_024",
 		"name": "Cogmaster's Wrench",
 		"playerClass": "Rogue",
@@ -35066,13 +34291,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Evgeniy Zagumennyy",
-		"cardImage": "OG_114.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Rituel interdit",
 			"text": "Dépense tous vos cristaux de mana. Invoque un nombre équivalent de tentacules 1/1."
 		},
+		"goldenImage": "OG_114.gif",
 		"id": "OG_114",
 		"name": "Forbidden Ritual",
 		"playerClass": "Warlock",
@@ -35083,12 +34308,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TB_KTRAF_10.png",
 		"cost": 9,
 		"fr": {
 			"name": "Noth le Porte-Peste",
 			"text": "Chaque fois qu’un serviteur adverse meurt, invoque un squelette 1/1 et donne +1/+1 à vos autres serviteurs."
 		},
+		"goldenImage": "TB_KTRAF_10.gif",
 		"health": 5,
 		"id": "TB_KTRAF_10",
 		"name": "Noth the Plaguebringer",
@@ -35101,13 +34326,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 1,
-		"cardImage": "FP1_017.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Seigneur de la toile nérub’ar",
 			"text": "Les serviteurs avec <b>Cri de guerre</b> coûtent (2) cristaux de plus."
 		},
+		"goldenImage": "FP1_017.gif",
 		"health": 4,
 		"id": "FP1_017",
 		"name": "Nerub'ar Weblord",
@@ -35119,13 +34344,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Rafael Zanchetin",
-		"cardImage": "OG_104.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Étreindre l’ombre",
 			"text": "Durant ce tour, vos effets de soin infligent des dégâts à la place."
 		},
+		"goldenImage": "OG_104.gif",
 		"id": "OG_104",
 		"name": "Embrace the Shadow",
 		"playerClass": "Priest",
@@ -35136,12 +34361,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "CRED_31.png",
 		"cost": 4,
 		"fr": {
 			"name": "Jeremy Cranford",
 			"text": "Quand la partie commence, cette carte se place en début de deck."
 		},
+		"goldenImage": "CRED_31.gif",
 		"health": 4,
 		"id": "CRED_31",
 		"name": "Jeremy Cranford",
@@ -35157,7 +34382,6 @@ var parseCardsText = {
 			"name": "Puissance des rouages",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "HRW02_1e.gif",
 		"id": "HRW02_1e",
 		"name": "Overclock",
 		"playerClass": "Neutral",
@@ -35167,13 +34391,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ittoku",
-		"cardImage": "EX1_136.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Rédemption",
 			"text": "<b>Secret :</b> quand un de vos serviteurs meurt, il est ressuscité avec\n1 PV."
 		},
+		"goldenImage": "EX1_136.gif",
 		"id": "EX1_136",
 		"name": "Redemption",
 		"playerClass": "Paladin",
@@ -35183,7 +34407,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_BoomAnnoy_001e.png",
 		"fr": {
 			"name": "J’aime Ennuy-o-tron",
 			"text": "+2/+2."
@@ -35196,12 +34419,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA04_4.png",
 		"cost": 3,
 		"fr": {
 			"name": "Déchaînement",
 			"text": "Invoque 3 liges du feu. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "BRMA04_4.gif",
 		"id": "BRMA04_4",
 		"name": "Rock Out",
 		"overload": 1,
@@ -35211,10 +34434,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA07_02h.png",
 		"fr": {
 			"name": "Puits de mine"
 		},
+		"goldenImage": "LOEA07_02h.gif",
 		"health": 80,
 		"id": "LOEA07_02h",
 		"name": "Mine Shaft",
@@ -35225,13 +34448,13 @@ var parseCardsText = {
 	{
 		"artist": "E.M. Gist",
 		"attack": 5,
-		"cardImage": "CS2_088.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Gardien des rois",
 			"text": "<b>Cri de guerre :</b> rend 6 points de vie à votre héros."
 		},
+		"goldenImage": "CS2_088.gif",
 		"health": 6,
 		"id": "CS2_088",
 		"name": "Guardian of Kings",
@@ -35243,12 +34466,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "NEW1_034.png",
 		"cost": 3,
 		"fr": {
 			"name": "Souffleur",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "NEW1_034.gif",
 		"health": 2,
 		"id": "NEW1_034",
 		"name": "Huffer",
@@ -35264,7 +34487,6 @@ var parseCardsText = {
 			"name": "La Main d’argent",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque deux recrues 1/1."
 		},
-		"goldenImage": "CS2_101_H1_AT_132.gif",
 		"id": "CS2_101_H1_AT_132",
 		"name": "The Silver Hand",
 		"playerClass": "Paladin",
@@ -35278,7 +34500,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Julianne"
 		},
-		"goldenImage": "KARA_06_02.gif",
 		"health": 15,
 		"id": "KARA_06_02",
 		"name": "Julianne",
@@ -35289,13 +34510,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros ",
 		"attack": 3,
-		"cardImage": "AT_030.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Vaillant de Fossoyeuse",
 			"text": "<b>Combo :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "AT_030.gif",
 		"health": 2,
 		"id": "AT_030",
 		"name": "Undercity Valiant",
@@ -35310,7 +34531,6 @@ var parseCardsText = {
 			"name": "Armure en plaques",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "GVG_086e.gif",
 		"id": "GVG_086e",
 		"name": "Armor Plated",
 		"playerClass": "Warrior",
@@ -35321,13 +34541,13 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Zagumennyy",
 		"attack": 2,
-		"cardImage": "AT_087.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Cavalier d’Argent",
 			"text": "<b>Charge</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "AT_087.gif",
 		"health": 1,
 		"id": "AT_087",
 		"name": "Argent Horserider",
@@ -35338,10 +34558,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA09_1H.png",
 		"fr": {
 			"name": "Rend Main-Noire"
 		},
+		"goldenImage": "BRMA09_1H.gif",
 		"health": 30,
 		"id": "BRMA09_1H",
 		"name": "Rend Blackhand",
@@ -35352,13 +34572,13 @@ var parseCardsText = {
 	{
 		"artist": "Randy Gallegos",
 		"attack": 1,
-		"cardImage": "NEW1_025.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Forban de la Voile sanglante",
 			"text": "<b>Cri de guerre :</b> ôte 1 Durabilité à l’arme de votre adversaire."
 		},
+		"goldenImage": "NEW1_025.gif",
 		"health": 2,
 		"id": "NEW1_025",
 		"name": "Bloodsail Corsair",
@@ -35369,12 +34589,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA12_8.png",
 		"cost": 2,
 		"fr": {
 			"name": "Mutation chromatique",
 			"text": "Transforme un serviteur en draconien chromatique 2/2."
 		},
+		"goldenImage": "BRMA12_8.gif",
 		"id": "BRMA12_8",
 		"name": "Chromatic Mutation",
 		"playerClass": "Neutral",
@@ -35384,13 +34604,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Grace Liu",
-		"cardImage": "CFM_334.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Caisse de contrebandier",
 			"text": "Donne +2/+2 à une Bête aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_334.gif",
 		"id": "CFM_334",
 		"name": "Smuggler's Crate",
 		"playerClass": "Hunter",
@@ -35402,13 +34622,13 @@ var parseCardsText = {
 	{
 		"artist": "Greg Hildebrandt",
 		"attack": 1,
-		"cardImage": "EX1_402.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Fabricante d’armures",
 			"text": "Chaque fois qu’un serviteur allié subit des dégâts, vous gagnez 1 point d’armure."
 		},
+		"goldenImage": "EX1_402.gif",
 		"health": 4,
 		"id": "EX1_402",
 		"name": "Armorsmith",
@@ -35420,12 +34640,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "CRED_04.png",
 		"cost": 1,
 		"fr": {
 			"name": "Steven Gabriel",
 			"text": "<b>Cri de guerre :</b> invoque une boisson à mousse."
 		},
+		"goldenImage": "CRED_04.gif",
 		"health": 3,
 		"id": "CRED_04",
 		"name": "Steven Gabriel",
@@ -35437,13 +34657,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ryan Metcalf",
-		"cardImage": "LOE_026.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Tous les murlocs de ta vie",
 			"text": "Invoque 7 murlocs détruits pendant cette partie."
 		},
+		"goldenImage": "LOE_026.gif",
 		"id": "LOE_026",
 		"name": "Anyfin Can Happen",
 		"playerClass": "Paladin",
@@ -35455,13 +34675,13 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 3,
-		"cardImage": "EX1_301.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Gangregarde",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> détruit un de vos cristaux de mana."
 		},
+		"goldenImage": "EX1_301.gif",
 		"health": 5,
 		"id": "EX1_301",
 		"name": "Felguard",
@@ -35473,11 +34693,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "skele21.png",
 		"cost": 1,
 		"fr": {
 			"name": "Golem endommagé"
 		},
+		"goldenImage": "skele21.gif",
 		"health": 1,
 		"id": "skele21",
 		"name": "Damaged Golem",
@@ -35494,7 +34714,6 @@ var parseCardsText = {
 			"name": "Portail bleu",
 			"text": "Le personnage dans le rayon bleu ne subit que 1 point de dégâts à la fois."
 		},
-		"goldenImage": "KARA_08_06.gif",
 		"health": 1,
 		"id": "KARA_08_06",
 		"name": "Blue Portal",
@@ -35512,7 +34731,6 @@ var parseCardsText = {
 			"name": "Chasseresse capuchonnée",
 			"text": "Vos <b>Secrets</b> coûtent (0) |4(cristal,cristaux)."
 		},
-		"goldenImage": "KAR_006.gif",
 		"health": 4,
 		"id": "KAR_006",
 		"name": "Cloaked Huntress",
@@ -35527,7 +34745,6 @@ var parseCardsText = {
 			"name": "Injection mutante",
 			"text": "+4/+4 et <b>Provocation</b>."
 		},
-		"goldenImage": "NAX11_04e.gif",
 		"id": "NAX11_04e",
 		"name": "Mutating Injection",
 		"playerClass": "Neutral",
@@ -35538,13 +34755,13 @@ var parseCardsText = {
 	{
 		"artist": "E. Guiton & Nutchapol ",
 		"attack": 6,
-		"cardImage": "OG_220.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Malkorok",
 			"text": "<b>Cri de guerre :</b> vous équipe d’une arme aléatoire."
 		},
+		"goldenImage": "OG_220.gif",
 		"health": 5,
 		"id": "OG_220",
 		"name": "Malkorok",
@@ -35560,7 +34777,6 @@ var parseCardsText = {
 			"name": "Encaissement",
 			"text": "Détruit votre arme et vous en donne une nouvelle au hasard."
 		},
-		"goldenImage": "TP_Bling_HP2.gif",
 		"id": "TP_Bling_HP2",
 		"name": "Cash In",
 		"playerClass": "Rogue",
@@ -35570,13 +34786,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Michael Sutfin",
-		"cardImage": "CS2_072.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Attaque sournoise",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur indemne."
 		},
+		"goldenImage": "CS2_072.gif",
 		"id": "CS2_072",
 		"name": "Backstab",
 		"playerClass": "Rogue",
@@ -35591,7 +34807,6 @@ var parseCardsText = {
 			"name": "Pointe mentale",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $2 points de dégâts."
 		},
-		"goldenImage": "EX1_625t.gif",
 		"id": "EX1_625t",
 		"name": "Mind Spike",
 		"playerClass": "Priest",
@@ -35600,11 +34815,11 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "HERO_09.png",
 		"collectible": true,
 		"fr": {
 			"name": "Anduin Wrynn"
 		},
+		"goldenImage": "HERO_09.gif",
 		"health": 30,
 		"id": "HERO_09",
 		"name": "Anduin Wrynn",
@@ -35615,11 +34830,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRMA09_2t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "BRMA09_2t.gif",
 		"health": 1,
 		"id": "BRMA09_2t",
 		"name": "Whelp",
@@ -35629,13 +34844,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jason Chan",
-		"cardImage": "GVG_057.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Sceau de Lumière",
 			"text": "Rend #4 |4(point,points) de vie à votre héros et lui donne +2 ATQ pendant ce tour."
 		},
+		"goldenImage": "GVG_057.gif",
 		"id": "GVG_057",
 		"name": "Seal of Light",
 		"playerClass": "Paladin",
@@ -35646,12 +34861,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "CRED_02.png",
 		"cost": 6,
 		"fr": {
 			"name": "Eric Dodds",
 			"text": "<b>Cri de guerre :</b> invoque un pirate 2/2 et détruit tous les ninjas."
 		},
+		"goldenImage": "CRED_02.gif",
 		"health": 5,
 		"id": "CRED_02",
 		"name": "Eric Dodds",
@@ -35663,13 +34878,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Wayne Reynolds",
-		"cardImage": "CS2_063.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Corruption",
 			"text": "Choisissez un serviteur adverse. Au début de votre tour, il est détruit."
 		},
+		"goldenImage": "CS2_063.gif",
 		"id": "CS2_063",
 		"name": "Corruption",
 		"playerClass": "Warlock",
@@ -35681,13 +34896,13 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 3,
-		"cardImage": "AT_003.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Héros défunt",
 			"text": "Votre pouvoir héroïque inflige 1 point de dégâts supplémentaire."
 		},
+		"goldenImage": "AT_003.gif",
 		"health": 2,
 		"id": "AT_003",
 		"name": "Fallen Hero",
@@ -35698,12 +34913,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_7_2nd.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin cruel : explosion de mana",
 			"text": "Les serviteurs obtiennent « <b>Râle d’agonie :</b> une carte aléatoire de votre main coûte (0) |4(cristal,cristaux) de mana. »."
 		},
+		"goldenImage": "TB_PickYourFate_7_2nd.gif",
 		"id": "TB_PickYourFate_7_2nd",
 		"name": "Dire Fate: Manaburst",
 		"playerClass": "Neutral",
@@ -35729,7 +34944,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Roi noir"
 		},
-		"goldenImage": "KAR_a10_Boss2H.gif",
 		"health": 20,
 		"id": "KAR_a10_Boss2H",
 		"name": "Black King",
@@ -35738,10 +34952,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "BRMA13_1H.png",
 		"fr": {
 			"name": "Seigneur Victor Nefarius"
 		},
+		"goldenImage": "BRMA13_1H.gif",
 		"health": 30,
 		"id": "BRMA13_1H",
 		"name": "Lord Victor Nefarius",
@@ -35754,7 +34968,6 @@ var parseCardsText = {
 			"name": "Magie métabolisée",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "GVG_068a.gif",
 		"id": "GVG_068a",
 		"name": "Metabolized Magic",
 		"playerClass": "Neutral",
@@ -35764,13 +34977,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mauricio Herrera",
-		"cardImage": "OG_116.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Folie galopante",
 			"text": "Inflige $9 |4(point,points) de dégâts répartis de façon aléatoire entre TOUS les personnages."
 		},
+		"goldenImage": "OG_116.gif",
 		"id": "OG_116",
 		"name": "Spreading Madness",
 		"playerClass": "Warlock",
@@ -35782,13 +34995,13 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 4,
-		"cardImage": "CFM_652.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Cogneur médiocre",
 			"text": "<b>Provocation</b>. Coûte (2) |4(cristal,cristaux) de moins si votre adversaire a au moins trois serviteurs."
 		},
+		"goldenImage": "CFM_652.gif",
 		"health": 5,
 		"id": "CFM_652",
 		"name": "Second-Rate Bruiser",
@@ -35804,7 +35017,6 @@ var parseCardsText = {
 			"name": "Sculpture sur pierre",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque une statue 0/2 pour chaque joueur."
 		},
-		"goldenImage": "LOEA06_02.gif",
 		"id": "LOEA06_02",
 		"name": "Stonesculpting",
 		"playerClass": "Neutral",
@@ -35815,7 +35027,6 @@ var parseCardsText = {
 	{
 		"artist": "Steve Ellis",
 		"attack": 4,
-		"cardImage": "CS2_155.png",
 		"collectible": true,
 		"cost": 6,
 		"faction": "ALLIANCE",
@@ -35823,6 +35034,7 @@ var parseCardsText = {
 			"name": "Archimage",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CS2_155.gif",
 		"health": 7,
 		"id": "CS2_155",
 		"name": "Archmage",
@@ -35834,12 +35046,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMC_93.png",
 		"cost": 3,
 		"fr": {
 			"name": "Système de défense Omnitron",
 			"text": "Active un Tron aléatoire."
 		},
+		"goldenImage": "BRMC_93.gif",
 		"id": "BRMC_93",
 		"name": "Omnotron Defense System",
 		"playerClass": "Neutral",
@@ -35853,7 +35065,6 @@ var parseCardsText = {
 			"name": "Aile noire",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un draconien 3/1. Change de pouvoir héroïque."
 		},
-		"goldenImage": "BRMA09_4.gif",
 		"id": "BRMA09_4",
 		"name": "Blackwing",
 		"playerClass": "Neutral",
@@ -35864,13 +35075,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "LOE_020.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Dromadaire du désert",
 			"text": "<b>Cri de guerre :</b> place un serviteur à 1 cristal de mana de chaque deck sur le champ de bataille."
 		},
+		"goldenImage": "LOE_020.gif",
 		"health": 4,
 		"id": "LOE_020",
 		"name": "Desert Camel",
@@ -35886,7 +35097,6 @@ var parseCardsText = {
 			"name": "Légion",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque deux abyssaux 6/6."
 		},
-		"goldenImage": "KARA_13_13H.gif",
 		"id": "KARA_13_13H",
 		"name": "Legion",
 		"playerClass": "Neutral",
@@ -35916,13 +35126,13 @@ var parseCardsText = {
 	{
 		"artist": "Ryan Metcalf",
 		"attack": 2,
-		"cardImage": "OG_161.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Voyant corrompu",
 			"text": "<b>Cri de guerre :</b> inflige\n2 points de dégâts à tous les serviteurs non murlocs."
 		},
+		"goldenImage": "OG_161.gif",
 		"health": 3,
 		"id": "OG_161",
 		"name": "Corrupted Seer",
@@ -35939,7 +35149,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Cuillère"
 		},
-		"goldenImage": "KAR_A02_02H.gif",
 		"id": "KAR_A02_02H",
 		"name": "Spoon",
 		"playerClass": "Neutral",
@@ -35947,10 +35156,10 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
-		"cardImage": "BRMA01_1H.png",
 		"fr": {
 			"name": "Coren Navrebière"
 		},
+		"goldenImage": "BRMA01_1H.gif",
 		"health": 30,
 		"id": "BRMA01_1H",
 		"name": "Coren Direbrew",
@@ -35961,13 +35170,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 6,
-		"cardImage": "OG_153.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Rampant des marais",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_153.gif",
 		"health": 8,
 		"id": "OG_153",
 		"name": "Bog Creeper",
@@ -35980,13 +35189,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
-		"cardImage": "EX1_002.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Le Chevalier noir",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur adverse avec <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_002.gif",
 		"health": 5,
 		"id": "EX1_002",
 		"name": "The Black Knight",
@@ -36001,7 +35210,6 @@ var parseCardsText = {
 			"name": "Dévotion de l'arakkoa",
 			"text": "+5/+5."
 		},
-		"goldenImage": "OG_293e.gif",
 		"id": "OG_293e",
 		"name": "Arrakoa Devotion",
 		"playerClass": "Neutral",
@@ -36010,7 +35218,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_LOEA13_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Puissance des anciens",
@@ -36025,13 +35232,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
-		"cardImage": "OG_061.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "En chasse",
 			"text": "Inflige $1 |4(point,points) de dégâts. Invoque un mastiff 1/1."
 		},
+		"goldenImage": "OG_061.gif",
 		"id": "OG_061",
 		"name": "On the Hunt",
 		"playerClass": "Hunter",
@@ -36044,7 +35251,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Roi blanc"
 		},
-		"goldenImage": "KAR_a10_Boss1H_TB.gif",
 		"health": 10,
 		"id": "KAR_a10_Boss1H_TB",
 		"name": "White King",
@@ -36059,7 +35265,6 @@ var parseCardsText = {
 			"name": "Nefarian",
 			"text": "Ne peut pas être\nla cible de sorts.\n<b>Boss :</b> Nefarian gagne s’il bat l’un de vous !"
 		},
-		"goldenImage": "TB_CoOpv3_Boss.gif",
 		"health": 200,
 		"id": "TB_CoOpv3_Boss",
 		"name": "Nefarian",
@@ -36070,12 +35275,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA11_3.png",
 		"cost": 0,
 		"fr": {
 			"name": "Montée d’adrénaline",
 			"text": "Inflige $2 |4(point,points) de dégâts au héros adverse."
 		},
+		"goldenImage": "BRMA11_3.gif",
 		"id": "BRMA11_3",
 		"name": "Burning Adrenaline",
 		"playerClass": "Neutral",
@@ -36085,11 +35290,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "EX1_130a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Défenseur"
 		},
+		"goldenImage": "EX1_130a.gif",
 		"health": 1,
 		"id": "EX1_130a",
 		"name": "Defender",
@@ -36100,7 +35305,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "CFM_305e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "La cavale de contrebandier donne +1/+1."
@@ -36114,12 +35318,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NAX14_03.png",
 		"cost": 5,
 		"fr": {
 			"name": "Champion gelé",
 			"text": "Gelé pour toute la partie. Les serviteurs adjacents sont immunisés contre Souffle de givre."
 		},
+		"goldenImage": "NAX14_03.gif",
 		"health": 10,
 		"id": "NAX14_03",
 		"name": "Frozen Champion",
@@ -36134,7 +35338,6 @@ var parseCardsText = {
 			"name": "Mutation",
 			"text": "<b>Pouvoir héroïque</b>\nVous défausse d’une carte aléatoire."
 		},
-		"goldenImage": "BRMA12_10.gif",
 		"id": "BRMA12_10",
 		"name": "Mutation",
 		"playerClass": "Neutral",
@@ -36144,13 +35347,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Garner",
-		"cardImage": "GVG_005.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Écho de Medivh",
 			"text": "Place une copie de chaque serviteur allié dans votre main."
 		},
+		"goldenImage": "GVG_005.gif",
 		"id": "GVG_005",
 		"name": "Echo of Medivh",
 		"playerClass": "Mage",
@@ -36162,13 +35365,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 9,
-		"cardImage": "EX1_577.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "La Bête",
 			"text": "<b>Râle d’agonie :</b> invoque Finkle Einhorn 3/3 pour votre adversaire."
 		},
+		"goldenImage": "EX1_577.gif",
 		"health": 7,
 		"id": "EX1_577",
 		"name": "The Beast",
@@ -36181,13 +35384,13 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 4,
-		"cardImage": "EX1_165.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Druide de la Griffe",
 			"text": "<b>Choix des armes :</b> <b>Charge</b> ou donne +2 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_165.gif",
 		"health": 4,
 		"id": "EX1_165",
 		"name": "Druid of the Claw",
@@ -36198,12 +35401,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA02_06.png",
 		"cost": 0,
 		"fr": {
 			"name": "Vœu : plus de Vœux",
 			"text": "Gagne 2 Vœux."
 		},
+		"goldenImage": "LOEA02_06.gif",
 		"id": "LOEA02_06",
 		"name": "Wish for More Wishes",
 		"playerClass": "Neutral",
@@ -36216,7 +35419,6 @@ var parseCardsText = {
 			"name": "Un tour simple",
 			"text": "+2/+2."
 		},
-		"goldenImage": "KAR_702e.gif",
 		"id": "KAR_702e",
 		"name": "A Simple Trick",
 		"playerClass": "Neutral",
@@ -36227,13 +35429,13 @@ var parseCardsText = {
 	{
 		"artist": "Jason Kang",
 		"attack": 0,
-		"cardImage": "LOE_086.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Pierre d’invocation",
 			"text": "Chaque fois que vous lancez un sort, invoque un serviteur aléatoire de même coût."
 		},
+		"goldenImage": "LOE_086.gif",
 		"health": 6,
 		"id": "LOE_086",
 		"name": "Summoning Stone",
@@ -36246,11 +35448,11 @@ var parseCardsText = {
 	{
 		"artist": "Massive Black",
 		"attack": 7,
-		"cardImage": "GVG_080t.png",
 		"cost": 5,
 		"fr": {
 			"name": "Druide du Croc"
 		},
+		"goldenImage": "GVG_080t.gif",
 		"health": 7,
 		"id": "GVG_080t",
 		"name": "Druid of the Fang",
@@ -36259,12 +35461,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_006.png",
 		"cost": 0,
 		"fr": {
 			"name": "Break Weapon",
 			"text": "Destroy a hero's weapon."
 		},
+		"goldenImage": "XXX_006.gif",
 		"id": "XXX_006",
 		"name": "Break Weapon",
 		"playerClass": "Neutral",
@@ -36274,10 +35476,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA05_01.png",
 		"fr": {
 			"name": "Chef Scarvash"
 		},
+		"goldenImage": "LOEA05_01.gif",
 		"health": 30,
 		"id": "LOEA05_01",
 		"name": "Chieftain Scarvash",
@@ -36290,7 +35492,6 @@ var parseCardsText = {
 			"name": "Renforcé",
 			"text": "+8 ATQ pendant ce tour."
 		},
-		"goldenImage": "KARA_08_04e.gif",
 		"id": "KARA_08_04e",
 		"name": "Empowered",
 		"playerClass": "Neutral",
@@ -36303,7 +35504,6 @@ var parseCardsText = {
 			"name": "Grandes griffes",
 			"text": "+3/+3."
 		},
-		"goldenImage": "BRM_024e.gif",
 		"id": "BRM_024e",
 		"name": "Large Talons",
 		"playerClass": "Neutral",
@@ -36312,12 +35512,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_014.png",
 		"cost": 0,
 		"fr": {
 			"name": "Mill 10",
 			"text": "Put 10 cards from a hero's deck into his graveyard."
 		},
+		"goldenImage": "XXX_014.gif",
 		"id": "XXX_014",
 		"name": "Mill 10",
 		"playerClass": "Neutral",
@@ -36328,12 +35528,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_SPT_Minion1.png",
 		"cost": 2,
 		"fr": {
 			"name": "Porte-pavois",
 			"text": "<b>Provocation</b>.\n<b>Cri de guerre :</b> gagne un nombre de PV équivalent à l’attaque de Hurlevent."
 		},
+		"goldenImage": "TB_SPT_Minion1.gif",
 		"health": 1,
 		"id": "TB_SPT_Minion1",
 		"name": "Shieldsman",
@@ -36345,7 +35545,6 @@ var parseCardsText = {
 	{
 		"artist": "Nate Bowden",
 		"attack": 2,
-		"cardImage": "EX1_247.png",
 		"collectible": true,
 		"cost": 2,
 		"durability": 3,
@@ -36353,6 +35552,7 @@ var parseCardsText = {
 			"name": "Hache de Forge-foudre",
 			"text": "<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "EX1_247.gif",
 		"id": "EX1_247",
 		"name": "Stormforged Axe",
 		"overload": 1,
@@ -36364,7 +35564,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_SPT_DPromoCrate3.png",
 		"cost": 1,
 		"fr": {
 			"name": "Coffre d’or !",
@@ -36384,7 +35583,6 @@ var parseCardsText = {
 			"name": "Séides des os",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque deux assemblages d’os 4/2."
 		},
-		"goldenImage": "BRMA17_5H.gif",
 		"id": "BRMA17_5H",
 		"name": "Bone Minions",
 		"playerClass": "Neutral",
@@ -36397,7 +35595,6 @@ var parseCardsText = {
 			"name": "Bombe vivante",
 			"text": "Pendant le tour de Geddon, inflige 10 points de dégâts à votre héros et vos serviteurs."
 		},
-		"goldenImage": "BRMA05_3He.gif",
 		"id": "BRMA05_3He",
 		"name": "Living Bomb",
 		"playerClass": "Neutral",
@@ -36407,12 +35604,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "AT_005t.png",
 		"cost": 3,
 		"fr": {
 			"name": "Sanglier",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "AT_005t.gif",
 		"health": 2,
 		"id": "AT_005t",
 		"name": "Boar",
@@ -36424,11 +35621,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 13,
-		"cardImage": "CFM_712_t13.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t13.gif",
 		"health": 13,
 		"id": "CFM_712_t13",
 		"name": "Jade Golem",
@@ -36442,7 +35639,6 @@ var parseCardsText = {
 			"name": "The Song That Ends the World",
 			"text": "Crash the game server.  No, really."
 		},
-		"goldenImage": "XXX_064.gif",
 		"id": "XXX_064",
 		"name": "The Song That Ends the World",
 		"playerClass": "Neutral",
@@ -36456,7 +35652,6 @@ var parseCardsText = {
 			"name": "Puissance du dragon",
 			"text": "Coûte (3) cristaux de moins pendant ce tour."
 		},
-		"goldenImage": "BRM_003e.gif",
 		"id": "BRM_003e",
 		"name": "Dragon's Might",
 		"playerClass": "Mage",
@@ -36469,7 +35664,6 @@ var parseCardsText = {
 			"name": "Équipé",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "NEW1_037e.gif",
 		"id": "NEW1_037e",
 		"name": "Equipped",
 		"playerClass": "Neutral",
@@ -36478,10 +35672,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "EX1_323h.png",
 		"fr": {
 			"name": "Seigneur Jaraxxus"
 		},
+		"goldenImage": "EX1_323h.gif",
 		"health": 15,
 		"id": "EX1_323h",
 		"name": "Lord Jaraxxus",
@@ -36492,13 +35686,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Ellis",
-		"cardImage": "CS2_024.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Éclair de givre",
 			"text": "Inflige $3 points de dégâts à un personnage et le <b>gèle</b>."
 		},
+		"goldenImage": "CS2_024.gif",
 		"id": "CS2_024",
 		"name": "Frostbolt",
 		"playerClass": "Mage",
@@ -36510,13 +35704,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 6,
-		"cardImage": "GVG_049.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Gahz’rilla",
 			"text": "Chaque fois que ce serviteur subit des dégâts, double son Attaque."
 		},
+		"goldenImage": "GVG_049.gif",
 		"health": 9,
 		"id": "GVG_049",
 		"name": "Gahz'rilla",
@@ -36531,7 +35725,6 @@ var parseCardsText = {
 			"name": "Volonté de Hurlevent",
 			"text": "Hurlevent donne de la Vie à cette carte."
 		},
-		"goldenImage": "TB_SPT_Minion1e.gif",
 		"id": "TB_SPT_Minion1e",
 		"name": "Will of Stormwind",
 		"playerClass": "Neutral",
@@ -36540,12 +35733,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_041.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destroy Hero Power",
 			"text": "Destroy a player's Hero Power."
 		},
+		"goldenImage": "XXX_041.gif",
 		"id": "XXX_041",
 		"name": "Destroy Hero Power",
 		"playerClass": "Neutral",
@@ -36557,13 +35750,13 @@ var parseCardsText = {
 	{
 		"artist": "Oliver Chipping",
 		"attack": 9,
-		"cardImage": "GVG_035.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Malorne",
 			"text": "<b>Râle d’agonie :</b> replace ce serviteur dans votre deck."
 		},
+		"goldenImage": "GVG_035.gif",
 		"health": 7,
 		"id": "GVG_035",
 		"name": "Malorne",
@@ -36577,7 +35770,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Pick Your Fate 1 Ench"
 		},
-		"goldenImage": "TB_PickYourFate_1_Ench.gif",
 		"id": "TB_PickYourFate_1_Ench",
 		"name": "Pick Your Fate 1 Ench",
 		"playerClass": "Neutral",
@@ -36586,7 +35778,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Slawomir Maniak",
-		"cardImage": "CFM_060e.png",
 		"fr": {
 			"name": "Vol de mana",
 			"text": "Attaque augmentée."
@@ -36602,7 +35793,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Fate 8 Get Armor"
 		},
-		"goldenImage": "TB_PickYourFate_8_Ench.gif",
 		"id": "TB_PickYourFate_8_Ench",
 		"name": "Fate 8 Get Armor",
 		"playerClass": "Neutral",
@@ -36615,7 +35805,6 @@ var parseCardsText = {
 			"name": "Fuir la mine !",
 			"text": "Échappez aux troggs !"
 		},
-		"goldenImage": "LOEA07_03.gif",
 		"id": "LOEA07_03",
 		"name": "Flee the Mine!",
 		"playerClass": "Neutral",
@@ -36625,12 +35814,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "CRED_37.png",
 		"cost": 4,
 		"fr": {
 			"name": "Ricardo Robaina",
 			"text": "<b>Cri de guerre :</b> invoque trois chinchillas 1/1."
 		},
+		"goldenImage": "CRED_37.gif",
 		"health": 4,
 		"id": "CRED_37",
 		"name": "Ricardo Robaina",
@@ -36643,13 +35832,13 @@ var parseCardsText = {
 	{
 		"artist": "Mauricio Herrera",
 		"attack": 2,
-		"cardImage": "CFM_667.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Experte en déminage",
 			"text": "<b>Cri de guerre :</b> inflige 5 points de dégâts à un serviteur adverse. <b>Râle d’agonie :</b> inflige 5 points de dégâts à votre héros."
 		},
+		"goldenImage": "CFM_667.gif",
 		"health": 2,
 		"id": "CFM_667",
 		"name": "Bomb Squad",
@@ -36661,13 +35850,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Daren Bader",
-		"cardImage": "AT_035.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Embusqué",
 			"text": "Place 3 cartes Embuscade ! dans le deck de votre adversaire. À chaque fois qu’il en pioche une, vous invoquez un nérubien 4/4."
 		},
+		"goldenImage": "AT_035.gif",
 		"id": "AT_035",
 		"name": "Beneath the Grounds",
 		"playerClass": "Rogue",
@@ -36685,7 +35874,6 @@ var parseCardsText = {
 			"name": "Araignée du garde-manger",
 			"text": "<b>Cri de guerre :</b> invoque une araignée 1/3."
 		},
-		"goldenImage": "KAR_030a.gif",
 		"health": 3,
 		"id": "KAR_030a",
 		"name": "Pantry Spider",
@@ -36698,13 +35886,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 6,
-		"cardImage": "CS2_064.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Infernal de l’effroi",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à TOUS les autres personnages."
 		},
+		"goldenImage": "CS2_064.gif",
 		"health": 6,
 		"id": "CS2_064",
 		"name": "Dread Infernal",
@@ -36716,7 +35904,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Anton Magdalin",
-		"cardImage": "CFM_631e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "Caractéristiques augmentées par le coup de poing en laiton."
@@ -36734,7 +35921,6 @@ var parseCardsText = {
 			"name": "Changeforme sinistre",
 			"text": "<b>Pouvoir héroïque</b>\nGagne 2 points d’armure et +2 ATQ pendant ce tour."
 		},
-		"goldenImage": "AT_132_DRUID.gif",
 		"id": "AT_132_DRUID",
 		"name": "Dire Shapeshift",
 		"playerClass": "Druid",
@@ -36759,7 +35945,6 @@ var parseCardsText = {
 	{
 		"artist": "Ron Spears",
 		"attack": 2,
-		"cardImage": "EX1_076.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "ALLIANCE",
@@ -36767,6 +35952,7 @@ var parseCardsText = {
 			"name": "Minuscule invocatrice",
 			"text": "Le premier serviteur que vous jouez à chaque tour coûte (1) cristal de moins."
 		},
+		"goldenImage": "EX1_076.gif",
 		"health": 2,
 		"id": "EX1_076",
 		"name": "Pint-Sized Summoner",
@@ -36779,13 +35965,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 1,
-		"cardImage": "OG_272.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Invocateur du Crépuscule",
 			"text": "<b>Râle d’agonie :</b> invoque un destructeur\nsans-visage 5/5."
 		},
+		"goldenImage": "OG_272.gif",
 		"health": 1,
 		"id": "OG_272",
 		"name": "Twilight Summoner",
@@ -36796,12 +35982,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_012.png",
 		"cost": 0,
 		"fr": {
 			"name": "Choisir une nouvelle carte !",
 			"text": "Affiche 3 cartes aléatoires. Choisissez-en une à placer dans votre deck."
 		},
+		"goldenImage": "TB_012.gif",
 		"id": "TB_012",
 		"name": "Choose a New Card!",
 		"playerClass": "Neutral",
@@ -36815,7 +36001,6 @@ var parseCardsText = {
 			"name": "Trogg détester serviteurs !",
 			"text": "<b>Pouvoir héroïque passif</b> Les serviteurs adverses coûtent (11) |4(cristal,cristaux) de mana. Le pouvoir change au début de votre tour."
 		},
-		"goldenImage": "LOEA05_02h.gif",
 		"id": "LOEA05_02h",
 		"name": "Trogg Hate Minions!",
 		"playerClass": "Neutral",
@@ -36825,13 +36010,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mauricio Herrera",
-		"cardImage": "GVG_001.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Canon lance-flammes",
 			"text": "Inflige $4 |4(point,points) de dégâts à un serviteur adverse aléatoire."
 		},
+		"goldenImage": "GVG_001.gif",
 		"id": "GVG_001",
 		"name": "Flamecannon",
 		"playerClass": "Mage",
@@ -36843,13 +36028,13 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 8,
-		"cardImage": "EX1_105.png",
 		"collectible": true,
 		"cost": 12,
 		"fr": {
 			"name": "Géant des montagnes",
 			"text": "Coûte (1) cristal de moins pour chaque autre carte dans votre main."
 		},
+		"goldenImage": "EX1_105.gif",
 		"health": 8,
 		"id": "EX1_105",
 		"name": "Mountain Giant",
@@ -36861,12 +36046,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CRED_30.png",
 		"cost": 7,
 		"fr": {
 			"name": "JC Park",
 			"text": "<b>Cri de guerre :</b> ajoute une nouvelle plateforme pour Hearthstone."
 		},
+		"goldenImage": "CRED_30.gif",
 		"health": 4,
 		"id": "CRED_30",
 		"name": "JC Park",
@@ -36881,7 +36066,6 @@ var parseCardsText = {
 			"name": "Puissance du Kirin Tor",
 			"text": "Votre prochain Secret coûte (0)."
 		},
-		"goldenImage": "EX1_612o.gif",
 		"id": "EX1_612o",
 		"name": "Power of the Kirin Tor",
 		"playerClass": "Mage",
@@ -36892,13 +36076,13 @@ var parseCardsText = {
 	{
 		"artist": "Edouard Guiton & Stuido HIVE",
 		"attack": 3,
-		"cardImage": "BRM_020.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Sorcier draconien",
 			"text": "Gagne +1/+1 chaque fois que <b>vous</b> ciblez ce serviteur avec un sort."
 		},
+		"goldenImage": "BRM_020.gif",
 		"health": 5,
 		"id": "BRM_020",
 		"name": "Dragonkin Sorcerer",
@@ -36910,11 +36094,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "LOEA16_5t.png",
 		"cost": 3,
 		"fr": {
 			"name": "Momie zombie"
 		},
+		"goldenImage": "LOEA16_5t.gif",
 		"health": 3,
 		"id": "LOEA16_5t",
 		"name": "Mummy Zombie",
@@ -36925,13 +36109,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 4,
-		"cardImage": "AT_057.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Maître des écuries",
 			"text": "<b>Cri de guerre :</b> une Bête alliée devient <b>Insensible</b> pendant ce tour."
 		},
+		"goldenImage": "AT_057.gif",
 		"health": 2,
 		"id": "AT_057",
 		"name": "Stablemaster",
@@ -36943,13 +36127,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Allsop",
-		"cardImage": "OG_176.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Attaque d’ombre",
 			"text": "Inflige $5 points de dégâts à un personnage indemne."
 		},
+		"goldenImage": "OG_176.gif",
 		"id": "OG_176",
 		"name": "Shadow Strike",
 		"playerClass": "Rogue",
@@ -36961,12 +36145,12 @@ var parseCardsText = {
 	{
 		"artist": "E.M. Gist",
 		"attack": 9,
-		"cardImage": "CS2_201.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Chien du Magma"
 		},
+		"goldenImage": "CS2_201.gif",
 		"health": 5,
 		"id": "CS2_201",
 		"name": "Core Hound",
@@ -36976,12 +36160,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA06_03.png",
 		"cost": 2,
 		"fr": {
 			"name": "Terrestre animé",
 			"text": "Donne +1/+1 et <b>Provocation</b> à vos serviteurs."
 		},
+		"goldenImage": "LOEA06_03.gif",
 		"id": "LOEA06_03",
 		"name": "Animate Earthen",
 		"playerClass": "Neutral",
@@ -36992,11 +36176,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 5,
-		"cardImage": "CFM_712_t05.png",
 		"cost": 5,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t05.gif",
 		"health": 5,
 		"id": "CFM_712_t05",
 		"name": "Jade Golem",
@@ -37009,7 +36193,6 @@ var parseCardsText = {
 			"name": "Bloc de glace",
 			"text": "Votre héros est <b>Insensible</b> pour ce tour."
 		},
-		"goldenImage": "EX1_295o.gif",
 		"id": "EX1_295o",
 		"name": "Ice Block",
 		"playerClass": "Mage",
@@ -37018,12 +36201,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMC_83.png",
 		"cost": 8,
 		"fr": {
 			"name": "Ouvrir les portes",
 			"text": "Remplit le plateau de dragonnets 2/2."
 		},
+		"goldenImage": "BRMC_83.gif",
 		"id": "BRMC_83",
 		"name": "Open the Gates",
 		"playerClass": "Neutral",
@@ -37032,12 +36215,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "EX1_166b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Dissipation",
 			"text": "Réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "EX1_166b.gif",
 		"id": "EX1_166b",
 		"name": "Dispel",
 		"playerClass": "Druid",
@@ -37048,13 +36231,13 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 4,
-		"cardImage": "CFM_328.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Organisatrice de combats",
 			"text": "<b>Cri de guerre :</b> vous piochez deux cartes si vous contrôlez un serviteur avec 6 PV ou plus."
 		},
+		"goldenImage": "CFM_328.gif",
 		"health": 4,
 		"id": "CFM_328",
 		"name": "Fight Promoter",
@@ -37066,12 +36249,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "Mekka4t.png",
 		"cost": 0,
 		"fr": {
 			"name": "Poulet",
 			"text": "<i>Viens mon poulet !</i>"
 		},
+		"goldenImage": "Mekka4t.gif",
 		"health": 1,
 		"id": "Mekka4t",
 		"name": "Chicken",
@@ -37087,7 +36270,6 @@ var parseCardsText = {
 			"name": "Couronne de flammes",
 			"text": "<b>Secret :</b> quand un adversaire attaque, inflige $5 |4(point,points) de dégâts à tous les autres adversaires."
 		},
-		"goldenImage": "KARA_12_03.gif",
 		"id": "KARA_12_03",
 		"name": "Flame Wreath",
 		"playerClass": "Mage",
@@ -37100,7 +36282,6 @@ var parseCardsText = {
 			"name": "Camouflé",
 			"text": "Camouflé jusqu’à votre prochain tour."
 		},
-		"goldenImage": "PART_004e.gif",
 		"id": "PART_004e",
 		"name": "Cloaked",
 		"playerClass": "Neutral",
@@ -37110,13 +36291,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "EX1_549.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Courroux bestial",
 			"text": "Donne +2 ATQ et l’effet <b>Insensible</b> à une Bête alliée pendant ce tour."
 		},
+		"goldenImage": "EX1_549.gif",
 		"id": "EX1_549",
 		"name": "Bestial Wrath",
 		"playerClass": "Hunter",
@@ -37133,7 +36314,6 @@ var parseCardsText = {
 			"name": "Portail rouge",
 			"text": "Le personnage dans le rayon rouge a <b>Furie des vents</b>."
 		},
-		"goldenImage": "KARA_08_08.gif",
 		"health": 1,
 		"id": "KARA_08_08",
 		"name": "Red Portal",
@@ -37145,13 +36325,13 @@ var parseCardsText = {
 	{
 		"artist": "Doug Alexander",
 		"attack": 2,
-		"cardImage": "EX1_362.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Protecteur d’Argent",
 			"text": "<b>Cri de guerre :</b> confère <b>Bouclier divin</b> à un serviteur allié."
 		},
+		"goldenImage": "EX1_362.gif",
 		"health": 2,
 		"id": "EX1_362",
 		"name": "Argent Protector",
@@ -37163,13 +36343,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Cyril Van Der Haegen",
-		"cardImage": "CS2_007.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Toucher guérisseur",
 			"text": "Rend #8 |4(point,points) de vie."
 		},
+		"goldenImage": "CS2_007.gif",
 		"id": "CS2_007",
 		"name": "Healing Touch",
 		"playerClass": "Druid",
@@ -37179,10 +36359,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA04_01.png",
 		"fr": {
 			"name": "Fuite du temple"
 		},
+		"goldenImage": "LOEA04_01.gif",
 		"health": 100,
 		"id": "LOEA04_01",
 		"name": "Temple Escape",
@@ -37193,13 +36373,13 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 2,
-		"cardImage": "CFM_790.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Rat déloyal",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> votre adversaire invoque un serviteur aléatoire de sa main."
 		},
+		"goldenImage": "CFM_790.gif",
 		"health": 6,
 		"id": "CFM_790",
 		"name": "Dirty Rat",
@@ -37210,10 +36390,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX8_01H.png",
 		"fr": {
 			"name": "Gothik le Moissonneur"
 		},
+		"goldenImage": "NAX8_01H.gif",
 		"health": 45,
 		"id": "NAX8_01H",
 		"name": "Gothik the Harvester",
@@ -37227,7 +36407,6 @@ var parseCardsText = {
 			"name": "Ouvrir les portes",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque trois dragonnets 1/1."
 		},
-		"goldenImage": "BRMA09_2_TB.gif",
 		"id": "BRMA09_2_TB",
 		"name": "Open the Gates",
 		"playerClass": "Neutral",
@@ -37237,13 +36416,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Scott",
-		"cardImage": "FP1_025.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Réincarnation",
 			"text": "Détruit un serviteur, puis le ramène à la vie avec tous ses PV."
 		},
+		"goldenImage": "FP1_025.gif",
 		"id": "FP1_025",
 		"name": "Reincarnate",
 		"playerClass": "Shaman",
@@ -37254,13 +36433,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "NAX12_03H.png",
 		"cost": 1,
 		"durability": 5,
 		"fr": {
 			"name": "Mâchoires",
 			"text": "Gagne +2 ATQ chaque fois qu’un serviteur avec <b>Râle d’agonie</b> meurt."
 		},
+		"goldenImage": "NAX12_03H.gif",
 		"id": "NAX12_03H",
 		"name": "Jaws",
 		"playerClass": "Neutral",
@@ -37270,13 +36449,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raven Mimura",
-		"cardImage": "CFM_611.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Potion rougefurie",
 			"text": "Donne +3 ATQ à un serviteur. Si c’est un démon, lui donne aussi +3 PV."
 		},
+		"goldenImage": "CFM_611.gif",
 		"id": "CFM_611",
 		"name": "Bloodfury Potion",
 		"playerClass": "Warlock",
@@ -37288,13 +36467,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 3,
-		"cardImage": "GVG_107.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Mécano-amplificateur",
 			"text": "<b>Cri de guerre :</b> confère à vos autres serviteurs <b>Furie des vents</b>, <b>Provocation</b> ou <b>Bouclier divin</b> <i>(au hasard)</i>."
 		},
+		"goldenImage": "GVG_107.gif",
 		"health": 2,
 		"id": "GVG_107",
 		"name": "Enhance-o Mechano",
@@ -37305,10 +36484,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA12_9.png",
 		"fr": {
 			"name": "Draconien chromatique"
 		},
+		"goldenImage": "BRMA12_9.gif",
 		"health": 30,
 		"id": "BRMA12_9",
 		"name": "Chromatic Dragonkin",
@@ -37322,7 +36501,6 @@ var parseCardsText = {
 			"name": "Entoilage",
 			"text": "<b>Pouvoir héroïque</b>\nRenvoie 2 serviteurs adverses aléatoires dans la main de votre adversaire."
 		},
-		"goldenImage": "NAX3_02H.gif",
 		"id": "NAX3_02H",
 		"name": "Web Wrap",
 		"playerClass": "Neutral",
@@ -37332,12 +36510,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t33.png",
 		"cost": 10,
 		"fr": {
 			"name": "Gangrenelle",
 			"text": "Inflige $6 |4(point,points) de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "CFM_621t33.gif",
 		"id": "CFM_621t33",
 		"name": "Felbloom",
 		"playerClass": "Neutral",
@@ -37346,10 +36524,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA04_01h.png",
 		"fr": {
 			"name": "Fuite du temple"
 		},
+		"goldenImage": "LOEA04_01h.gif",
 		"health": 100,
 		"id": "LOEA04_01h",
 		"name": "Temple Escape",
@@ -37362,7 +36540,6 @@ var parseCardsText = {
 			"name": "Cri de commandement",
 			"text": "Ne peut pas avoir moins de 1 PV pendant ce tour."
 		},
-		"goldenImage": "NEW1_036e.gif",
 		"id": "NEW1_036e",
 		"name": "Commanding Shout",
 		"playerClass": "Warrior",
@@ -37372,13 +36549,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luca Zontini",
-		"cardImage": "GVG_008.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Bombe de lumière",
 			"text": "Inflige à chaque serviteur des dégâts équivalents à leur ATQ."
 		},
+		"goldenImage": "GVG_008.gif",
 		"id": "GVG_008",
 		"name": "Lightbomb",
 		"playerClass": "Priest",
@@ -37394,7 +36571,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Balai"
 		},
-		"goldenImage": "KAR_025b.gif",
 		"health": 2,
 		"id": "KAR_025b",
 		"name": "Broom",
@@ -37405,13 +36581,13 @@ var parseCardsText = {
 	{
 		"artist": "Ben Wootten",
 		"attack": 3,
-		"cardImage": "AT_099.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Chevaucheuse de kodo",
 			"text": "<b>Exaltation : </b> invoque un kodo de guerre 3/5."
 		},
+		"goldenImage": "AT_099.gif",
 		"health": 5,
 		"id": "AT_099",
 		"name": "Kodorider",
@@ -37426,7 +36602,6 @@ var parseCardsText = {
 			"name": "Bénédiction du soleil",
 			"text": "<b>Insensible</b>."
 		},
-		"goldenImage": "LOEA16_20H.gif",
 		"id": "LOEA16_20H",
 		"name": "Blessing of the Sun",
 		"playerClass": "Neutral",
@@ -37439,7 +36614,6 @@ var parseCardsText = {
 			"name": "Optimisme",
 			"text": "+1/+2."
 		},
-		"goldenImage": "OG_223e.gif",
 		"id": "OG_223e",
 		"name": "Optimism",
 		"playerClass": "Neutral",
@@ -37451,7 +36625,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Choisissez votre destin - Aléatoire"
 		},
-		"goldenImage": "TB_PickYourFateRandom.gif",
 		"id": "TB_PickYourFateRandom",
 		"name": "Pick Your Fate Random",
 		"playerClass": "Neutral",
@@ -37460,13 +36633,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Michael Komarck",
-		"cardImage": "CS2_003.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Vision télépathique",
 			"text": "Place une copie d’une carte aléatoire de la main de l’adversaire dans la vôtre."
 		},
+		"goldenImage": "CS2_003.gif",
 		"id": "CS2_003",
 		"name": "Mind Vision",
 		"playerClass": "Priest",
@@ -37480,7 +36653,6 @@ var parseCardsText = {
 			"name": "Reforgé",
 			"text": "+1/+1."
 		},
-		"goldenImage": "OG_315e.gif",
 		"id": "OG_315e",
 		"name": "Reforged",
 		"playerClass": "Neutral",
@@ -37491,7 +36663,6 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 4,
-		"cardImage": "EX1_033.png",
 		"collectible": true,
 		"cost": 6,
 		"faction": "ALLIANCE",
@@ -37499,6 +36670,7 @@ var parseCardsText = {
 			"name": "Harpie Furie-des-vents",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "EX1_033.gif",
 		"health": 5,
 		"id": "EX1_033",
 		"name": "Windfury Harpy",
@@ -37511,13 +36683,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 8,
-		"cardImage": "EX1_543.png",
 		"collectible": true,
 		"cost": 9,
 		"fr": {
 			"name": "Roi Krush",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "EX1_543.gif",
 		"health": 8,
 		"id": "EX1_543",
 		"name": "King Krush",
@@ -37529,12 +36701,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "HRW02_1.png",
 		"cost": 10,
 		"fr": {
 			"name": "Maître des rouages Mécazod",
 			"text": "<b>Boss</b>\nAu début de chaque tour, Mécazod frappe !"
 		},
+		"goldenImage": "HRW02_1.gif",
 		"health": 80,
 		"id": "HRW02_1",
 		"name": "Gearmaster Mechazod",
@@ -37547,13 +36719,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Cavotta",
 		"attack": 2,
-		"cardImage": "NEW1_019.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Jongleur de couteaux",
 			"text": "Inflige 1 point de dégâts à un adversaire aléatoire après que vous avez invoqué un serviteur."
 		},
+		"goldenImage": "NEW1_019.gif",
 		"health": 2,
 		"id": "NEW1_019",
 		"name": "Knife Juggler",
@@ -37565,11 +36737,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "CS2_boar.png",
 		"cost": 1,
 		"fr": {
 			"name": "Sanglier"
 		},
+		"goldenImage": "CS2_boar.gif",
 		"health": 1,
 		"id": "CS2_boar",
 		"name": "Boar",
@@ -37602,7 +36774,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Araignée de la cave"
 		},
-		"goldenImage": "KAR_030.gif",
 		"health": 3,
 		"id": "KAR_030",
 		"name": "Cellar Spider",
@@ -37618,7 +36789,6 @@ var parseCardsText = {
 			"name": "Portail de Reflet-de-Lune",
 			"text": "Rend #6 PV. Invoque un serviteur aléatoire coûtant 6 cristaux."
 		},
-		"goldenImage": "KAR_075.gif",
 		"id": "KAR_075",
 		"name": "Moonglade Portal",
 		"playerClass": "Druid",
@@ -37629,12 +36799,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
-		"cardImage": "LOEA16_25.png",
 		"cost": 5,
 		"fr": {
 			"name": "Dame Naz’jar",
 			"text": "À la fin de votre tour, remplace tous les autres serviteurs par de nouveaux de même coût."
 		},
+		"goldenImage": "LOEA16_25.gif",
 		"health": 5,
 		"id": "LOEA16_25",
 		"name": "Lady Naz'jar",
@@ -37652,7 +36822,6 @@ var parseCardsText = {
 			"name": "Atiesh",
 			"text": "Après que vous avez lancé un sort, invoque un serviteur aléatoire de même coût. Perd 1 point de durabilité."
 		},
-		"goldenImage": "KARA_13_26.gif",
 		"id": "KARA_13_26",
 		"name": "Atiesh",
 		"playerClass": "Neutral",
@@ -37668,7 +36837,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Grandes méchantes griffes"
 		},
-		"goldenImage": "KARA_05_02.gif",
 		"id": "KARA_05_02",
 		"name": "Big Bad Claws",
 		"playerClass": "Neutral",
@@ -37681,7 +36849,6 @@ var parseCardsText = {
 			"name": "Apeuré",
 			"text": "<b>Pouvoir héroïque passif</b>\nLes serviteurs coûtent (1) cristal. Les serviteurs adverses ont 1/1."
 		},
-		"goldenImage": "KARA_05_01hpheroic.gif",
 		"id": "KARA_05_01hpheroic",
 		"name": "Trembling",
 		"playerClass": "Neutral",
@@ -37691,12 +36858,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "GVG_030b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Mode Char",
 			"text": "+1 PV."
 		},
+		"goldenImage": "GVG_030b.gif",
 		"id": "GVG_030b",
 		"name": "Tank Mode",
 		"playerClass": "Druid",
@@ -37711,7 +36878,6 @@ var parseCardsText = {
 			"name": "Vous êtes notre invité",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque une assiette 1/1."
 		},
-		"goldenImage": "KAR_A02_13.gif",
 		"id": "KAR_A02_13",
 		"name": "Be Our Guest",
 		"playerClass": "Neutral",
@@ -37724,7 +36890,6 @@ var parseCardsText = {
 			"name": "Ténèbres vacillantes",
 			"text": "L’exhalombre a créé ce serviteur 1/1."
 		},
-		"goldenImage": "OG_291e.gif",
 		"id": "OG_291e",
 		"name": "Flickering Darkness",
 		"playerClass": "Neutral",
@@ -37735,13 +36900,13 @@ var parseCardsText = {
 	{
 		"artist": "John Avon",
 		"attack": 3,
-		"cardImage": "CS2_033.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Élémentaire d’eau",
 			"text": "<b>Gèle</b> tout personnage blessé par ce serviteur."
 		},
+		"goldenImage": "CS2_033.gif",
 		"health": 6,
 		"id": "CS2_033",
 		"name": "Water Elemental",
@@ -37756,7 +36921,6 @@ var parseCardsText = {
 			"name": "Miniature",
 			"text": "Miniaturisé, 1/1."
 		},
-		"goldenImage": "TB_Mini_1e.gif",
 		"id": "TB_Mini_1e",
 		"name": "Miniature",
 		"playerClass": "Neutral",
@@ -37770,7 +36934,6 @@ var parseCardsText = {
 			"name": "Roque",
 			"text": "<b>Pouvoir héroïque</b>\n<b>Découvre</b> une pièce d’échiquier."
 		},
-		"goldenImage": "KAR_A10_22.gif",
 		"id": "KAR_A10_22",
 		"name": "Castle",
 		"playerClass": "Neutral",
@@ -37780,13 +36943,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jonboy Meyers",
-		"cardImage": "AT_074.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Sceau des champions",
 			"text": "Donne +3 ATQ et <b>Bouclier divin</b> à un serviteur."
 		},
+		"goldenImage": "AT_074.gif",
 		"id": "AT_074",
 		"name": "Seal of Champions",
 		"playerClass": "Paladin",
@@ -37798,13 +36961,13 @@ var parseCardsText = {
 	{
 		"artist": "Chris Rahn",
 		"attack": 4,
-		"cardImage": "FP1_008.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Chevalier spectral",
 			"text": "Ne peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "FP1_008.gif",
 		"health": 6,
 		"id": "FP1_008",
 		"name": "Spectral Knight",
@@ -37820,7 +36983,6 @@ var parseCardsText = {
 			"name": "Explosion de feu",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $1 point de dégâts."
 		},
-		"goldenImage": "CS2_034_H1.gif",
 		"id": "CS2_034_H1",
 		"name": "Fireblast",
 		"playerClass": "Mage",
@@ -37835,7 +36997,6 @@ var parseCardsText = {
 			"name": "Connexion",
 			"text": "<b>Pouvoir héroïque</b>\nSubit $2 points de dégâts. Vous piochez une carte."
 		},
-		"goldenImage": "CS2_056.gif",
 		"id": "CS2_056",
 		"name": "Life Tap",
 		"playerClass": "Warlock",
@@ -37845,12 +37006,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "LOEA16_5.png",
 		"cost": 10,
 		"fr": {
 			"name": "Miroir du destin",
 			"text": "Remplit votre plateau de momies zombies 3/3."
 		},
+		"goldenImage": "LOEA16_5.gif",
 		"id": "LOEA16_5",
 		"name": "Mirror of Doom",
 		"playerClass": "Neutral",
@@ -37859,12 +37020,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA15_3.png",
 		"cost": 2,
 		"fr": {
 			"name": "Libérer les aberrations",
 			"text": "Invoque 3 aberrations."
 		},
+		"goldenImage": "BRMA15_3.gif",
 		"id": "BRMA15_3",
 		"name": "Release the Aberrations!",
 		"playerClass": "Neutral",
@@ -37875,13 +37036,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 8,
-		"cardImage": "GVG_121.png",
 		"collectible": true,
 		"cost": 12,
 		"fr": {
 			"name": "Géant mécanique",
 			"text": "Coûte (1) |4(cristal,cristaux) de moins pour chaque carte dans la main de votre adversaire."
 		},
+		"goldenImage": "GVG_121.gif",
 		"health": 8,
 		"id": "GVG_121",
 		"name": "Clockwork Giant",
@@ -37894,11 +37055,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 18,
-		"cardImage": "CFM_712_t18.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t18.gif",
 		"health": 18,
 		"id": "CFM_712_t18",
 		"name": "Jade Golem",
@@ -37908,13 +37069,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "EX1_594.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Vaporisation",
 			"text": "<b>Secret :</b> quand un serviteur attaque votre héros, le détruit."
 		},
+		"goldenImage": "EX1_594.gif",
 		"id": "EX1_594",
 		"name": "Vaporize",
 		"playerClass": "Mage",
@@ -37925,12 +37086,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TB_SPT_Minion3.png",
 		"cost": 3,
 		"fr": {
 			"name": "Épéiste",
 			"text": "<b>Cri de guerre :</b> gagne un nombre de points d’ATQ et de PV équivalent à l’Attaque de Hurlevent."
 		},
+		"goldenImage": "TB_SPT_Minion3.gif",
 		"health": 1,
 		"id": "TB_SPT_Minion3",
 		"name": "Swordsman",
@@ -37940,12 +37101,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_KTRAF_101.png",
 		"cost": 8,
 		"fr": {
 			"name": "Appel des ténèbres",
 			"text": "Invoque deux boss aléatoires de Naxxramas et déclenche leur <b>Cri de guerre</b>."
 		},
+		"goldenImage": "TB_KTRAF_101.gif",
 		"id": "TB_KTRAF_101",
 		"name": "Darkness Calls",
 		"playerClass": "Neutral",
@@ -37958,7 +37119,6 @@ var parseCardsText = {
 			"name": "Spores nérubiennes",
 			"text": "Vous obtenez une Bête quand ce serviteur meurt."
 		},
-		"goldenImage": "OG_045a.gif",
 		"id": "OG_045a",
 		"name": "Nerubian Spores",
 		"playerClass": "Druid",
@@ -37971,7 +37131,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Julianne"
 		},
-		"goldenImage": "KARA_06_02heroic.gif",
 		"health": 15,
 		"id": "KARA_06_02heroic",
 		"name": "Julianne",
@@ -37980,10 +37139,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "LOEA02_01.png",
 		"fr": {
 			"name": "Zinaar"
 		},
+		"goldenImage": "LOEA02_01.gif",
 		"health": 30,
 		"id": "LOEA02_01",
 		"name": "Zinaar",
@@ -37995,7 +37154,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ennuy-o-tron"
 		},
-		"goldenImage": "TB_MechWar_Boss1.gif",
 		"health": 30,
 		"id": "TB_MechWar_Boss1",
 		"name": "Annoy-o-Tron",
@@ -38009,7 +37167,6 @@ var parseCardsText = {
 			"name": "Sombre puissance",
 			"text": "Votre prochain sort coûte de la Vie au lieu de cristaux de mana."
 		},
-		"goldenImage": "OG_121e.gif",
 		"id": "OG_121e",
 		"name": "Dark Power",
 		"playerClass": "Neutral",
@@ -38023,7 +37180,6 @@ var parseCardsText = {
 			"name": "Magie sauvage",
 			"text": "<b>Pouvoir héroïque</b>\nPlace un sort aléatoire de la classe de votre adversaire dans votre main."
 		},
-		"goldenImage": "BRMA13_4.gif",
 		"id": "BRMA13_4",
 		"name": "Wild Magic",
 		"playerClass": "Neutral",
@@ -38033,12 +37189,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t14.png",
 		"cost": 5,
 		"fr": {
 			"name": "Potion de Kazakus",
 			"text": "{0}\n{1}"
 		},
+		"goldenImage": "CFM_621t14.gif",
 		"id": "CFM_621t14",
 		"name": "Kazakus Potion",
 		"playerClass": "Neutral",
@@ -38049,11 +37205,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 15,
-		"cardImage": "CFM_712_t15.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t15.gif",
 		"health": 15,
 		"id": "CFM_712_t15",
 		"name": "Jade Golem",
@@ -38064,13 +37220,13 @@ var parseCardsText = {
 	{
 		"artist": "Chris Robinson",
 		"attack": 6,
-		"cardImage": "FP1_013.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Kel’Thuzad",
 			"text": "À la fin de chaque tour, invoque tous les serviteurs alliés qui sont morts pendant ce tour."
 		},
+		"goldenImage": "FP1_013.gif",
 		"health": 8,
 		"id": "FP1_013",
 		"name": "Kel'Thuzad",
@@ -38083,11 +37239,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 20,
-		"cardImage": "CFM_712_t20.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t20.gif",
 		"health": 20,
 		"id": "CFM_712_t20",
 		"name": "Jade Golem",
@@ -38100,7 +37256,6 @@ var parseCardsText = {
 			"name": "Présence du maître",
 			"text": "+2/+2 et <b>Provocation</b>."
 		},
-		"goldenImage": "DS1_070o.gif",
 		"id": "DS1_070o",
 		"name": "Master's Presence",
 		"playerClass": "Hunter",
@@ -38109,10 +37264,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "NAX4_01H.png",
 		"fr": {
 			"name": "Noth le Porte-Peste"
 		},
+		"goldenImage": "NAX4_01H.gif",
 		"health": 45,
 		"id": "NAX4_01H",
 		"name": "Noth the Plaguebringer",
@@ -38125,7 +37280,6 @@ var parseCardsText = {
 			"name": "Impression incroyable",
 			"text": "Attaque et Vie portées à 1."
 		},
-		"goldenImage": "KAR_114e.gif",
 		"id": "KAR_114e",
 		"name": "Incredible Impression",
 		"playerClass": "Neutral",
@@ -38135,12 +37289,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "BRMC_97.png",
 		"cost": 6,
 		"fr": {
 			"name": "Vaelastrasz",
 			"text": "Vos cartes coûtent (3) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "BRMC_97.gif",
 		"health": 7,
 		"id": "BRMC_97",
 		"name": "Vaelastrasz",
@@ -38151,12 +37305,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GVG_032a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Don de mana",
 			"text": "Donne à chaque joueur un cristal de mana."
 		},
+		"goldenImage": "GVG_032a.gif",
 		"id": "GVG_032a",
 		"name": "Gift of Mana",
 		"playerClass": "Druid",
@@ -38165,12 +37319,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_008.png",
 		"cost": 1,
 		"fr": {
 			"name": "Banane pourrie",
 			"text": "Inflige $1 |4(point,points) de dégâts."
 		},
+		"goldenImage": "TB_008.gif",
 		"id": "TB_008",
 		"name": "Rotten Banana",
 		"playerClass": "Neutral",
@@ -38181,13 +37335,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
-		"cardImage": "CS2_197.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Ogre-magi",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CS2_197.gif",
 		"health": 4,
 		"id": "CS2_197",
 		"name": "Ogre Magi",
@@ -38200,13 +37354,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
-		"cardImage": "CFM_305.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Cavale de contrebandier",
 			"text": "Donne +1/+1 à tous les serviteurs dans votre main."
 		},
+		"goldenImage": "CFM_305.gif",
 		"id": "CFM_305",
 		"name": "Smuggler's Run",
 		"playerClass": "Paladin",
@@ -38219,7 +37373,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "La Mégère"
 		},
-		"goldenImage": "KARA_04_01heroic.gif",
 		"health": 50,
 		"id": "KARA_04_01heroic",
 		"name": "The Crone",
@@ -38229,13 +37382,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luca Zontini",
-		"cardImage": "AT_048.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Vague de soins",
 			"text": "Rend #7 PV. Révèle un serviteur de chaque deck. Si le vôtre coûte plus cher, rend\n#14 PV à la place."
 		},
+		"goldenImage": "AT_048.gif",
 		"id": "AT_048",
 		"name": "Healing Wave",
 		"playerClass": "Shaman",
@@ -38249,7 +37402,6 @@ var parseCardsText = {
 			"name": "Feu d’Alexstrasza",
 			"text": "Les PV passent à 15."
 		},
-		"goldenImage": "EX1_561e.gif",
 		"id": "EX1_561e",
 		"name": "Alexstrasza's Fire",
 		"playerClass": "Neutral",
@@ -38263,7 +37415,6 @@ var parseCardsText = {
 			"name": "Ouvrir les portes",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque trois dragonnets 2/2. Change de pouvoir héroïque."
 		},
-		"goldenImage": "BRMA09_2H.gif",
 		"id": "BRMA09_2H",
 		"name": "Open the Gates",
 		"playerClass": "Neutral",
@@ -38277,7 +37428,6 @@ var parseCardsText = {
 			"name": "Éruption élémentaire",
 			"text": "Inflige 4 à 6 points de dégâts à tous les autres serviteurs."
 		},
-		"goldenImage": "TB_CoOpv3_006.gif",
 		"id": "TB_CoOpv3_006",
 		"name": "Elemental Eruption",
 		"playerClass": "Shaman",
@@ -38288,13 +37438,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
-		"cardImage": "OG_145.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Psych-o-tron",
 			"text": "<b>Provocation</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "OG_145.gif",
 		"health": 4,
 		"id": "OG_145",
 		"name": "Psych-o-Tron",
@@ -38322,7 +37472,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Roi blanc"
 		},
-		"goldenImage": "KAR_a10_Boss1.gif",
 		"health": 20,
 		"id": "KAR_a10_Boss1",
 		"name": "White King",
@@ -38337,7 +37486,6 @@ var parseCardsText = {
 			"name": "Tornade",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 100 points de dégâts. Ne peut pas être utilisé si Dorothée est en vie."
 		},
-		"goldenImage": "KARA_04_02hp.gif",
 		"id": "KARA_04_02hp",
 		"name": "Twister",
 		"playerClass": "Neutral",
@@ -38351,7 +37499,6 @@ var parseCardsText = {
 			"name": "État de supercharge",
 			"text": "+2 PV."
 		},
-		"goldenImage": "NAX13_03e.gif",
 		"id": "NAX13_03e",
 		"name": "Supercharged",
 		"playerClass": "Neutral",
@@ -38361,7 +37508,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler West Studios",
-		"cardImage": "CFM_671e.png",
 		"fr": {
 			"name": "L’âge de glace",
 			"text": "+2/+2."
@@ -38376,13 +37522,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Gaser",
 		"attack": 3,
-		"cardImage": "GVG_020.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gangrecanon",
 			"text": "À la fin de votre tour, inflige 2 points de dégâts à un serviteur non Méca."
 		},
+		"goldenImage": "GVG_020.gif",
 		"health": 5,
 		"id": "GVG_020",
 		"name": "Fel Cannon",
@@ -38393,10 +37539,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA12_1.png",
 		"fr": {
 			"name": "Chromaggus"
 		},
+		"goldenImage": "BRMA12_1.gif",
 		"health": 30,
 		"id": "BRMA12_1",
 		"name": "Chromaggus",
@@ -38405,12 +37551,12 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "XXX_011.png",
 		"cost": 0,
 		"fr": {
 			"name": "Summon a random Secret",
 			"text": "Summon a secret from your deck."
 		},
+		"goldenImage": "XXX_011.gif",
 		"id": "XXX_011",
 		"name": "Summon a random Secret",
 		"playerClass": "Neutral",
@@ -38424,7 +37570,6 @@ var parseCardsText = {
 			"name": "Destin funeste évité",
 			"text": "Attaque portée à 7."
 		},
-		"goldenImage": "OG_200e.gif",
 		"id": "OG_200e",
 		"name": "Doom Free",
 		"playerClass": "Neutral",
@@ -38435,13 +37580,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 0,
-		"cardImage": "GVG_093.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Cible leurre",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "GVG_093.gif",
 		"health": 2,
 		"id": "GVG_093",
 		"name": "Target Dummy",
@@ -38456,7 +37601,6 @@ var parseCardsText = {
 			"name": "Soumission du vassal",
 			"text": "+2/+2."
 		},
-		"goldenImage": "OG_339e.gif",
 		"id": "OG_339e",
 		"name": "Vassal's Subservience",
 		"playerClass": "Neutral",
@@ -38467,7 +37611,6 @@ var parseCardsText = {
 	{
 		"artist": "Joe Wilson",
 		"attack": 2,
-		"cardImage": "AT_077.png",
 		"collectible": true,
 		"cost": 2,
 		"durability": 2,
@@ -38475,6 +37618,7 @@ var parseCardsText = {
 			"name": "Lance d’Argent",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne +1 Durabilité."
 		},
+		"goldenImage": "AT_077.gif",
 		"id": "AT_077",
 		"name": "Argent Lance",
 		"playerClass": "Paladin",
@@ -38488,7 +37632,6 @@ var parseCardsText = {
 			"name": "Aubaine d’Alexstrasza",
 			"text": "+1 ATQ et <b>Charge</b>."
 		},
-		"goldenImage": "AT_071e.gif",
 		"id": "AT_071e",
 		"name": "Alexstrasza's Boon",
 		"playerClass": "Warrior",
@@ -38497,12 +37640,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "AT_035t.png",
 		"cost": 0,
 		"fr": {
 			"name": "Embuscade !",
 			"text": "Quand vous piochez cette carte, invoque un nérubien 4/4 pour votre adversaire. Vous piochez une carte."
 		},
+		"goldenImage": "AT_035t.gif",
 		"id": "AT_035t",
 		"name": "Ambush!",
 		"playerClass": "Rogue",
@@ -38516,7 +37659,6 @@ var parseCardsText = {
 			"name": "Salve d’Ombre",
 			"text": "Inflige $3 |4(point,points) de dégâts à tous les serviteurs qui ne sont pas des démons."
 		},
-		"goldenImage": "KARA_09_06heroic.gif",
 		"id": "KARA_09_06heroic",
 		"name": "Shadow Volley",
 		"playerClass": "Neutral",
@@ -38529,7 +37671,6 @@ var parseCardsText = {
 			"name": "Frappe héroïque",
 			"text": "+4 ATQ pendant ce tour."
 		},
-		"goldenImage": "CS2_105e.gif",
 		"id": "CS2_105e",
 		"name": "Heroic Strike",
 		"playerClass": "Warrior",
@@ -38538,12 +37679,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA12_3.png",
 		"cost": 1,
 		"fr": {
 			"name": "Affliction de l’espèce : rouge",
 			"text": "Vous subissez 1 point de dégâts au début de votre tour tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_3.gif",
 		"id": "BRMA12_3",
 		"name": "Brood Affliction: Red",
 		"playerClass": "Neutral",
@@ -38556,7 +37697,6 @@ var parseCardsText = {
 			"name": "Bénédiction du champion",
 			"text": "L’Attaque de ce serviteur a été doublée."
 		},
-		"goldenImage": "EX1_355e.gif",
 		"id": "EX1_355e",
 		"name": "Blessed Champion",
 		"playerClass": "Paladin",
@@ -38567,13 +37707,13 @@ var parseCardsText = {
 	{
 		"artist": "Howard Lyon",
 		"attack": 1,
-		"cardImage": "CS2_171.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Sanglier brocheroc",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_171.gif",
 		"health": 1,
 		"id": "CS2_171",
 		"name": "Stonetusk Boar",
@@ -38586,13 +37726,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studios",
 		"attack": 2,
-		"cardImage": "CFM_647.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Sniper souffle-branchie",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "CFM_647.gif",
 		"health": 1,
 		"id": "CFM_647",
 		"name": "Blowgill Sniper",
@@ -38604,13 +37744,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Andrius Matijoshius",
-		"cardImage": "LOE_113.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Tout est vraiment génial",
 			"text": "Donne +2/+2 à vos serviteurs. Coûte\n (1) |4(cristal,cristaux) de mana de moins pour chaque murloc contrôlé."
 		},
+		"goldenImage": "LOE_113.gif",
 		"id": "LOE_113",
 		"name": "Everyfin is Awesome",
 		"playerClass": "Shaman",
@@ -38621,13 +37761,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dany Orizio",
-		"cardImage": "AT_064.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Sonner",
 			"text": "Inflige $3 |4(point,points) de dégâts. Gagne 3 points d’armure."
 		},
+		"goldenImage": "AT_064.gif",
 		"id": "AT_064",
 		"name": "Bash",
 		"playerClass": "Warrior",
@@ -38641,7 +37781,6 @@ var parseCardsText = {
 			"name": "Camouflage de la tour des Ombres",
 			"text": "<b>Camouflage</b>."
 		},
-		"goldenImage": "TB_GP_01e_v2.gif",
 		"id": "TB_GP_01e_v2",
 		"name": "Shadow Tower Stealth",
 		"playerClass": "Neutral",
@@ -38651,11 +37790,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRMA06_4.png",
 		"cost": 2,
 		"fr": {
 			"name": "Acolyte attise-flammes"
 		},
+		"goldenImage": "BRMA06_4.gif",
 		"health": 3,
 		"id": "BRMA06_4",
 		"name": "Flamewaker Acolyte",
@@ -38666,13 +37805,13 @@ var parseCardsText = {
 	{
 		"artist": "Cole Eastburn",
 		"attack": 1,
-		"cardImage": "EX1_396.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Gardien mogu’shan",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_396.gif",
 		"health": 7,
 		"id": "EX1_396",
 		"name": "Mogu'shan Warden",
@@ -38683,12 +37822,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "DREAM_04.png",
 		"cost": 0,
 		"fr": {
 			"name": "Rêve",
 			"text": "Renvoie un serviteur dans la main de son propriétaire."
 		},
+		"goldenImage": "DREAM_04.gif",
 		"id": "DREAM_04",
 		"name": "Dream",
 		"playerClass": "Dream",
@@ -38697,12 +37836,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA04_06.png",
 		"cost": 0,
 		"fr": {
 			"name": "Fosse remplie de pointes",
 			"text": "<b>Choisissez un chemin !</b>"
 		},
+		"goldenImage": "LOEA04_06.gif",
 		"id": "LOEA04_06",
 		"name": "Pit of Spikes",
 		"playerClass": "Neutral",
@@ -38711,10 +37850,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA12_1H.png",
 		"fr": {
 			"name": "Chromaggus"
 		},
+		"goldenImage": "BRMA12_1H.gif",
 		"health": 60,
 		"id": "BRMA12_1H",
 		"name": "Chromaggus",
@@ -38724,12 +37863,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 10,
-		"cardImage": "LOEA16_19H.png",
 		"cost": 10,
 		"fr": {
 			"name": "Écumeur du soleil Phaerix",
 			"text": "Vos autres serviteurs sont <b>Insensibles</b>."
 		},
+		"goldenImage": "LOEA16_19H.gif",
 		"health": 10,
 		"id": "LOEA16_19H",
 		"name": "Sun Raider Phaerix",
@@ -38740,12 +37879,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GVG_041a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Sombres feux follets",
 			"text": "+5/+5 et <b>Provocation</b>."
 		},
+		"goldenImage": "GVG_041a.gif",
 		"id": "GVG_041a",
 		"name": "Dark Wispers",
 		"playerClass": "Druid",
@@ -38755,7 +37894,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raven Mimura",
-		"cardImage": "CFM_611e.png",
 		"fr": {
 			"name": "Breuvage démoniaque",
 			"text": "+3 ATQ."
@@ -38768,12 +37906,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_PickYourFate_5.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin : sorts",
 			"text": "Les sorts coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "TB_PickYourFate_5.gif",
 		"id": "TB_PickYourFate_5",
 		"name": "Fate: Spells",
 		"playerClass": "Neutral",
@@ -38783,13 +37921,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jonboy Meyers",
-		"cardImage": "AT_056.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Tir puissant",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur et aux serviteurs adjacents."
 		},
+		"goldenImage": "AT_056.gif",
 		"id": "AT_056",
 		"name": "Powershot",
 		"playerClass": "Hunter",
@@ -38803,7 +37941,6 @@ var parseCardsText = {
 			"name": "En pleine forme",
 			"text": "Ce serviteur a +2 ATQ."
 		},
-		"goldenImage": "CS2_181e.gif",
 		"id": "CS2_181e",
 		"name": "Full Strength",
 		"playerClass": "Neutral",
@@ -38818,7 +37955,6 @@ var parseCardsText = {
 			"name": "Armure de mage",
 			"text": "Gagne 10 points d’armure."
 		},
-		"goldenImage": "KARA_00_09.gif",
 		"id": "KARA_00_09",
 		"name": "Mage Armor",
 		"playerClass": "Mage",
@@ -38827,12 +37963,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_039.png",
 		"cost": 0,
 		"fr": {
 			"name": "Become Hogger",
 			"text": "Become Hogger for Video Recording."
 		},
+		"goldenImage": "XXX_039.gif",
 		"id": "XXX_039",
 		"name": "Become Hogger",
 		"playerClass": "Neutral",
@@ -38842,13 +37978,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mishi McCaig",
-		"cardImage": "AT_068.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Renforcement",
 			"text": "Donne +2/+2 à vos serviteurs avec <b>Provocation</b>."
 		},
+		"goldenImage": "AT_068.gif",
 		"id": "AT_068",
 		"name": "Bolster",
 		"playerClass": "Warrior",
@@ -38859,12 +37995,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "NAX2_05.png",
 		"cost": 3,
 		"fr": {
 			"name": "Adorateur",
 			"text": "Votre héros a +1 ATQ pendant votre tour."
 		},
+		"goldenImage": "NAX2_05.gif",
 		"health": 4,
 		"id": "NAX2_05",
 		"name": "Worshipper",
@@ -38876,13 +38012,13 @@ var parseCardsText = {
 	{
 		"artist": "Eva Widermann",
 		"attack": 1,
-		"cardImage": "CFM_064.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Baron Boule-de-Gras",
 			"text": "Gagne +1/+1 chaque fois que vous invoquez un serviteur avec <b>Cri de guerre</b> tant que vous avez cette carte en main."
 		},
+		"goldenImage": "CFM_064.gif",
 		"health": 1,
 		"id": "CFM_064",
 		"name": "Blubber Baron",
@@ -38897,7 +38033,6 @@ var parseCardsText = {
 			"name": "Métamorphose",
 			"text": "Ce serviteur a été transformé en mouton 1/1."
 		},
-		"goldenImage": "CS2_022e.gif",
 		"id": "CS2_022e",
 		"name": "Polymorph",
 		"playerClass": "Mage",
@@ -38911,7 +38046,6 @@ var parseCardsText = {
 			"name": "Carapace d’ambre",
 			"text": "+5 PV."
 		},
-		"goldenImage": "OG_188e.gif",
 		"id": "OG_188e",
 		"name": "Amber Carapace",
 		"playerClass": "Neutral",
@@ -38921,7 +38055,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Yewon Park",
-		"cardImage": "CFM_699e.png",
 		"fr": {
 			"name": "Enchantement de démon des mers"
 		},
@@ -38951,7 +38084,6 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 3,
-		"cardImage": "CS2_179.png",
 		"collectible": true,
 		"cost": 4,
 		"faction": "HORDE",
@@ -38959,6 +38091,7 @@ var parseCardsText = {
 			"name": "Maître-bouclier de Sen’jin",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_179.gif",
 		"health": 5,
 		"id": "CS2_179",
 		"name": "Sen'jin Shieldmasta",
@@ -38976,7 +38109,6 @@ var parseCardsText = {
 			"name": "Singe volant",
 			"text": "<b>Charge</b>"
 		},
-		"goldenImage": "KARA_04_05.gif",
 		"health": 2,
 		"id": "KARA_04_05",
 		"name": "Flying Monkey",
@@ -38990,7 +38122,6 @@ var parseCardsText = {
 			"name": "Garde d’os",
 			"text": "Vie augmentée."
 		},
-		"goldenImage": "AT_089e.gif",
 		"id": "AT_089e",
 		"name": "Boneguarded",
 		"playerClass": "Neutral",
@@ -39004,7 +38135,6 @@ var parseCardsText = {
 			"name": "Explosion de feu",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $1 point de dégâts."
 		},
-		"goldenImage": "CS2_034.gif",
 		"id": "CS2_034",
 		"name": "Fireblast",
 		"playerClass": "Mage",
@@ -39016,13 +38146,13 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 5,
-		"cardImage": "CFM_634.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Assassin du Lotus",
 			"text": "<b>Camouflage</b>. Chaque fois que ce serviteur attaque et tue un ennemi, gagne <b>Camouflage</b>."
 		},
+		"goldenImage": "CFM_634.gif",
 		"health": 5,
 		"id": "CFM_634",
 		"name": "Lotus Assassin",
@@ -39034,11 +38164,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "BRMA10_5.png",
 		"cost": 4,
 		"fr": {
 			"name": "Drake chromatique"
 		},
+		"goldenImage": "BRMA10_5.gif",
 		"health": 3,
 		"id": "BRMA10_5",
 		"name": "Chromatic Drake",
@@ -39052,7 +38182,6 @@ var parseCardsText = {
 			"name": "Réanimation morbide",
 			"text": "<b>Pouvoir héroïque passif</b>\nChaque fois qu’un adversaire meurt, un squelette 5/5 se lève."
 		},
-		"goldenImage": "NAX4_04H.gif",
 		"id": "NAX4_04H",
 		"name": "Raise Dead",
 		"playerClass": "Neutral",
@@ -39062,13 +38191,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "A.J. Nazzaro",
-		"cardImage": "OG_276.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Guerriers de sang",
 			"text": "Place une copie de chaque serviteur allié blessé dans votre main."
 		},
+		"goldenImage": "OG_276.gif",
 		"id": "OG_276",
 		"name": "Blood Warriors",
 		"playerClass": "Warrior",
@@ -39079,11 +38208,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "tt_010a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Courbe-sort"
 		},
+		"goldenImage": "tt_010a.gif",
 		"health": 3,
 		"id": "tt_010a",
 		"name": "Spellbender",
@@ -39106,12 +38235,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "TB_KTRAF_104.png",
 		"cost": 2,
 		"fr": {
 			"name": "Découvrir un morceau du bâton",
 			"text": "Amplifie votre pouvoir héroïque."
 		},
+		"goldenImage": "TB_KTRAF_104.gif",
 		"id": "TB_KTRAF_104",
 		"name": "Uncover Staff Piece",
 		"playerClass": "Neutral",
@@ -39124,7 +38253,6 @@ var parseCardsText = {
 			"name": "Nouvelle vocation",
 			"text": "Coût réduit."
 		},
-		"goldenImage": "OG_118f.gif",
 		"id": "OG_118f",
 		"name": "New Calling",
 		"playerClass": "Neutral",
@@ -39133,12 +38261,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_014.png",
 		"cost": 0,
 		"fr": {
 			"name": "Choisir une nouvelle carte !",
 			"text": "Affiche 3 cartes aléatoires. Choisissez-en une à placer dans votre main."
 		},
+		"goldenImage": "TB_014.gif",
 		"id": "TB_014",
 		"name": "Choose a New Card!",
 		"playerClass": "Neutral",
@@ -39151,7 +38279,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Tyrande Murmevent"
 		},
-		"goldenImage": "HERO_09a.gif",
 		"health": 30,
 		"id": "HERO_09a",
 		"name": "Tyrande Whisperwind",
@@ -39167,7 +38294,6 @@ var parseCardsText = {
 			"name": "Mettre la table",
 			"text": "Donne +1/+1 à vos assiettes."
 		},
-		"goldenImage": "KAR_A02_09.gif",
 		"id": "KAR_A02_09",
 		"name": "Set the Table",
 		"playerClass": "Neutral",
@@ -39178,13 +38304,13 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 2,
-		"cardImage": "GVG_002.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Souffle-neige",
 			"text": "<b>Gèle</b> tout personnage blessé par ce serviteur."
 		},
+		"goldenImage": "GVG_002.gif",
 		"health": 3,
 		"id": "GVG_002",
 		"name": "Snowchugger",
@@ -39196,12 +38322,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "CRED_41.png",
 		"cost": 5,
 		"fr": {
 			"name": "Seyil Yoon",
 			"text": "<b>Cri de guerre :</b> ajoute 3 Sprint et un Marathon dans votre main."
 		},
+		"goldenImage": "CRED_41.gif",
 		"health": 9,
 		"id": "CRED_41",
 		"name": "Seyil Yoon",
@@ -39213,13 +38339,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Lars Grant-West",
-		"cardImage": "CS2_053.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Double vue",
 			"text": "Vous piochez une carte. Elle coûte (3) cristaux de moins."
 		},
+		"goldenImage": "CS2_053.gif",
 		"id": "CS2_053",
 		"name": "Far Sight",
 		"playerClass": "Shaman",
@@ -39230,13 +38356,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "EX1_410.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Heurt de bouclier",
 			"text": "Inflige 1 point de dégâts à un serviteur pour chaque point d’Armure que vous avez."
 		},
+		"goldenImage": "EX1_410.gif",
 		"id": "EX1_410",
 		"name": "Shield Slam",
 		"playerClass": "Warrior",
@@ -39248,13 +38374,13 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 3,
-		"cardImage": "CFM_621.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Kazakus",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, crée un sort personnalisé."
 		},
+		"goldenImage": "CFM_621.gif",
 		"health": 3,
 		"id": "CFM_621",
 		"name": "Kazakus",
@@ -39265,10 +38391,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "NAX14_01H.png",
 		"fr": {
 			"name": "Saphiron"
 		},
+		"goldenImage": "NAX14_01H.gif",
 		"health": 45,
 		"id": "NAX14_01H",
 		"name": "Sapphiron",
@@ -39279,13 +38405,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 3,
-		"cardImage": "EX1_243.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Diable de poussière",
 			"text": "<b>Furie des vents</b>\n<b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_243.gif",
 		"health": 1,
 		"id": "EX1_243",
 		"name": "Dust Devil",
@@ -39302,7 +38428,6 @@ var parseCardsText = {
 			"name": "Trait de givre",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts au héros adverse et le <b>gèle</b>."
 		},
-		"goldenImage": "NAX15_02H.gif",
 		"id": "NAX15_02H",
 		"name": "Frost Blast",
 		"playerClass": "Neutral",
@@ -39312,13 +38437,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Brereton",
-		"cardImage": "AT_037.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Racines vivantes",
 			"text": "<b>Choix des armes :</b> Inflige $2 |4(point,points) de dégâts ou invoque deux arbrisseaux 1/1."
 		},
+		"goldenImage": "AT_037.gif",
 		"id": "AT_037",
 		"name": "Living Roots",
 		"playerClass": "Druid",
@@ -39330,11 +38455,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 4,
-		"cardImage": "CFM_712_t04.png",
 		"cost": 4,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t04.gif",
 		"health": 4,
 		"id": "CFM_712_t04",
 		"name": "Jade Golem",
@@ -39346,7 +38471,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ro’Boum"
 		},
-		"goldenImage": "TB_MechWar_Boss2.gif",
 		"health": 30,
 		"id": "TB_MechWar_Boss2",
 		"name": "Boom Bot",
@@ -39360,7 +38484,6 @@ var parseCardsText = {
 			"name": "Béni",
 			"text": "<b>Insensible</b> pendant ce tour."
 		},
-		"goldenImage": "LOEA16_20e.gif",
 		"id": "LOEA16_20e",
 		"name": "Blessed",
 		"playerClass": "Neutral",
@@ -39371,13 +38494,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
-		"cardImage": "CFM_806.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Irion",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> vous piochez des cartes jusqu’à en obtenir une qui ne soit pas un Dragon."
 		},
+		"goldenImage": "CFM_806.gif",
 		"health": 5,
 		"id": "CFM_806",
 		"name": "Wrathion",
@@ -39390,13 +38513,13 @@ var parseCardsText = {
 	{
 		"artist": "Chippy",
 		"attack": 2,
-		"cardImage": "EX1_393.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Berserker amani",
 			"text": "<b>Accès de rage :</b> +3 ATQ."
 		},
+		"goldenImage": "EX1_393.gif",
 		"health": 3,
 		"id": "EX1_393",
 		"name": "Amani Berserker",
@@ -39408,13 +38531,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Alexandrov",
-		"cardImage": "OG_047.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Rage farouche",
 			"text": "<b>Choix des armes :</b> donne +4 ATQ à votre héros pendant ce tour ou 8 points d’armure."
 		},
+		"goldenImage": "OG_047.gif",
 		"id": "OG_047",
 		"name": "Feral Rage",
 		"playerClass": "Druid",
@@ -39425,12 +38548,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 9,
-		"cardImage": "CRED_35.png",
 		"cost": 4,
 		"fr": {
 			"name": "Max McCall",
 			"text": "Vos emotes n’ont pas de temps de recharge et ne peuvent être coupées."
 		},
+		"goldenImage": "CRED_35.gif",
 		"health": 2,
 		"id": "CRED_35",
 		"name": "Max McCall",
@@ -39443,13 +38566,13 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 5,
-		"cardImage": "LOE_012.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Pilleur de tombes",
 			"text": "<b>Râle d’agonie :</b> ajoute une carte La pièce dans votre main."
 		},
+		"goldenImage": "LOE_012.gif",
 		"health": 4,
 		"id": "LOE_012",
 		"name": "Tomb Pillager",
@@ -39461,13 +38584,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Vance Kovacs",
-		"cardImage": "CS2_093.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Consécration",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les adversaires."
 		},
+		"goldenImage": "CS2_093.gif",
 		"id": "CS2_093",
 		"name": "Consecration",
 		"playerClass": "Paladin",
@@ -39477,10 +38600,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA14_1H.png",
 		"fr": {
 			"name": "Système de défense Omnitron"
 		},
+		"goldenImage": "BRMA14_1H.gif",
 		"health": 30,
 		"id": "BRMA14_1H",
 		"name": "Omnotron Defense System",
@@ -39493,7 +38616,6 @@ var parseCardsText = {
 			"name": "Étreinte de Mal’Ganis",
 			"text": "Mal’Ganis donne +2/+2."
 		},
-		"goldenImage": "GVG_021e.gif",
 		"id": "GVG_021e",
 		"name": "Grasp of Mal'Ganis",
 		"playerClass": "Warlock",
@@ -39504,13 +38626,13 @@ var parseCardsText = {
 	{
 		"artist": "George Davis",
 		"attack": 2,
-		"cardImage": "LOE_023.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Sinistre colporteur",
 			"text": "<b>Cri de guerre : découvre</b> une carte à 1 cristal de mana."
 		},
+		"goldenImage": "LOE_023.gif",
 		"health": 2,
 		"id": "LOE_023",
 		"name": "Dark Peddler",
@@ -39538,12 +38660,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "LOEA07_11.png",
 		"cost": 1,
 		"fr": {
 			"name": "Débris",
 			"text": "<b>Provocation</b>."
 		},
+		"goldenImage": "LOEA07_11.gif",
 		"health": 3,
 		"id": "LOEA07_11",
 		"name": "Debris",
@@ -39557,7 +38679,6 @@ var parseCardsText = {
 			"name": "Force d’Y’Shaarj",
 			"text": "+3/+3."
 		},
-		"goldenImage": "OG_202ae.gif",
 		"id": "OG_202ae",
 		"name": "Y'Shaarj's Strength",
 		"playerClass": "Druid",
@@ -39567,10 +38688,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA01_01.png",
 		"fr": {
 			"name": "Écumeur du soleil Phaerix"
 		},
+		"goldenImage": "LOEA01_01.gif",
 		"health": 30,
 		"id": "LOEA01_01",
 		"name": "Sun Raider Phaerix",
@@ -39580,13 +38701,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Kerem Beyit",
-		"cardImage": "GVG_019.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Cœur de démon",
 			"text": "Inflige $5 |4(point,points) de dégâts à un serviteur. Si c’est un démon allié, lui donne +5/+5 à la place."
 		},
+		"goldenImage": "GVG_019.gif",
 		"id": "GVG_019",
 		"name": "Demonheart",
 		"playerClass": "Warlock",
@@ -39596,10 +38717,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX6_01H.png",
 		"fr": {
 			"name": "Horreb"
 		},
+		"goldenImage": "NAX6_01H.gif",
 		"health": 99,
 		"id": "NAX6_01H",
 		"name": "Loatheb",
@@ -39610,13 +38731,13 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasber",
 		"attack": 1,
-		"cardImage": "OG_070.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Sectateur de la Lame",
 			"text": "<b>Combo :</b> gagne +1/+1."
 		},
+		"goldenImage": "OG_070.gif",
 		"health": 2,
 		"id": "OG_070",
 		"name": "Bladed Cultist",
@@ -39629,13 +38750,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
-		"cardImage": "GVG_097.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Mini exorciste",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> gagne +1/+1 pour chaque serviteur adverse avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "GVG_097.gif",
 		"health": 3,
 		"id": "GVG_097",
 		"name": "Lil' Exorcist",
@@ -39649,7 +38770,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ragnaros, seigneur du feu"
 		},
-		"goldenImage": "TBA01_1.gif",
 		"health": 60,
 		"id": "TBA01_1",
 		"name": "Ragnaros the Firelord",
@@ -39659,13 +38779,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Wei Wang",
-		"cardImage": "NEW1_031.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Compagnon animal",
 			"text": "Invoque un compagnon animal aléatoire."
 		},
+		"goldenImage": "NEW1_031.gif",
 		"id": "NEW1_031",
 		"name": "Animal Companion",
 		"playerClass": "Hunter",
@@ -39675,12 +38795,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX12_02H_2c_TB.png",
 		"cost": 1,
 		"fr": {
 			"name": "Décimer",
 			"text": "Fait passer les points de vie des serviteurs adverses à 1."
 		},
+		"goldenImage": "NAX12_02H_2c_TB.gif",
 		"id": "NAX12_02H_2c_TB",
 		"name": "Decimate",
 		"playerClass": "Neutral",
@@ -39694,7 +38814,6 @@ var parseCardsText = {
 			"name": "Armure de plates",
 			"text": "<b>Pouvoir héroïque passif</b>\nVotre héros et vos serviteurs ne peuvent pas subir plus de 1 point de dégâts à la fois."
 		},
-		"goldenImage": "LOEA14_2H.gif",
 		"id": "LOEA14_2H",
 		"name": "Platemail Armor",
 		"playerClass": "Neutral",
@@ -39703,7 +38822,6 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "TB_SPT_DPromoSpellBovine1e.png",
 		"fr": {
 			"name": "Rassemblement du troupeau",
 			"text": "Le serviteur a <b>Provocation</b>."
@@ -39724,7 +38842,6 @@ var parseCardsText = {
 			"name": "Gardienne de la Ménagerie",
 			"text": "<b>Cri de guerre :</b> choisit une Bête alliée et en invoque une copie."
 		},
-		"goldenImage": "KAR_065.gif",
 		"health": 5,
 		"id": "KAR_065",
 		"name": "Menagerie Warden",
@@ -39736,13 +38853,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "EX1_154.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Colère",
 			"text": "<b>Choix des armes :</b> inflige $3 |4(point,points) de dégâts à un serviteur ; ou inflige $1 |4(point,points) de dégâts à un serviteur et vous piochez une carte."
 		},
+		"goldenImage": "EX1_154.gif",
 		"id": "EX1_154",
 		"name": "Wrath",
 		"playerClass": "Druid",
@@ -39757,7 +38874,6 @@ var parseCardsText = {
 			"name": "Nuage empoisonné",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 1 point de dégâts à\n tous les serviteurs adverses. Invoque une gelée si l’un d’eux meurt."
 		},
-		"goldenImage": "NAX11_02H_2_TB.gif",
 		"id": "NAX11_02H_2_TB",
 		"name": "Poison Cloud",
 		"playerClass": "Neutral",
@@ -39770,7 +38886,6 @@ var parseCardsText = {
 			"name": "Gorgé de mana",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "NEW1_012o.gif",
 		"id": "NEW1_012o",
 		"name": "Mana Gorged",
 		"playerClass": "Mage",
@@ -39781,13 +38896,13 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 1,
-		"cardImage": "CFM_325.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Boucanier de petite envergure",
 			"text": "A +2 ATQ tant que vous avez une arme équipée."
 		},
+		"goldenImage": "CFM_325.gif",
 		"health": 2,
 		"id": "CFM_325",
 		"name": "Small-Time Buccaneer",
@@ -39804,7 +38919,6 @@ var parseCardsText = {
 			"name": "Murloc en fuite !",
 			"text": "Invoque un Murloc aléatoire."
 		},
-		"goldenImage": "KARA_07_03.gif",
 		"id": "KARA_07_03",
 		"name": "Murloc Escaping!",
 		"playerClass": "Neutral",
@@ -39815,13 +38929,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 3,
-		"cardImage": "FP1_016.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Âme gémissante",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> vos autres serviteurs."
 		},
+		"goldenImage": "FP1_016.gif",
 		"health": 5,
 		"id": "FP1_016",
 		"name": "Wailing Soul",
@@ -39834,7 +38948,6 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 2,
-		"cardImage": "EX1_567.png",
 		"collectible": true,
 		"cost": 5,
 		"durability": 8,
@@ -39842,6 +38955,7 @@ var parseCardsText = {
 			"name": "Marteau-du-Destin",
 			"text": "<b>Furie des vents\nSurcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_567.gif",
 		"id": "EX1_567",
 		"name": "Doomhammer",
 		"overload": 1,
@@ -39854,13 +38968,13 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 3,
-		"cardImage": "OG_044.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Fandral Forteramure",
 			"text": "Vos cartes avec <b>Choix des armes</b> combinent les deux effets."
 		},
+		"goldenImage": "OG_044.gif",
 		"health": 5,
 		"id": "OG_044",
 		"name": "Fandral Staghelm",
@@ -39875,7 +38989,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Terestian Malsabot"
 		},
-		"goldenImage": "KARA_09_01.gif",
 		"health": 30,
 		"id": "KARA_09_01",
 		"name": "Terestian Illhoof",
@@ -39884,7 +38997,6 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "TB_CoOpv3_200.png",
 		"cost": 0,
 		"fr": {
 			"name": "Suivez MES règles !",
@@ -39900,7 +39012,6 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 4,
-		"cardImage": "CS2_181.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "HORDE",
@@ -39908,6 +39019,7 @@ var parseCardsText = {
 			"name": "Maître-lame blessé",
 			"text": "<b>Cri de guerre :</b> s’inflige 4 points de dégâts."
 		},
+		"goldenImage": "CS2_181.gif",
 		"health": 7,
 		"id": "CS2_181",
 		"name": "Injured Blademaster",
@@ -39919,12 +39031,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "BRMA02_2t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Spectateur sombrefer",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA02_2t.gif",
 		"health": 1,
 		"id": "BRMA02_2t",
 		"name": "Dark Iron Spectator",
@@ -39938,7 +39050,6 @@ var parseCardsText = {
 			"name": "Huile d’affûtage de Bricoleur",
 			"text": "+3 ATQ."
 		},
-		"goldenImage": "GVG_022b.gif",
 		"id": "GVG_022b",
 		"name": "Tinker's Sharpsword Oil",
 		"playerClass": "Neutral",
@@ -39949,13 +39060,13 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 2,
-		"cardImage": "GVG_095.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Sapeur gobelin",
 			"text": "A +4 ATQ tant que votre adversaire a 6 cartes ou plus dans sa main."
 		},
+		"goldenImage": "GVG_095.gif",
 		"health": 4,
 		"id": "GVG_095",
 		"name": "Goblin Sapper",
@@ -39971,7 +39082,6 @@ var parseCardsText = {
 			"name": "Lignes telluriques",
 			"text": "<b>Pouvoir héroïque passif</b>\nLes deux héros ont <b>+5 aux Dégâts des sorts</b>."
 		},
-		"goldenImage": "KARA_12_02H.gif",
 		"id": "KARA_12_02H",
 		"name": "Ley Lines",
 		"playerClass": "Neutral",
@@ -39982,13 +39092,13 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 1,
-		"cardImage": "CFM_321.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Informateur des bas-fonds",
 			"text": "<b>Cri de guerre :</b> <b>découvre</b> une carte de chasseur, paladin ou guerrier."
 		},
+		"goldenImage": "CFM_321.gif",
 		"health": 1,
 		"id": "CFM_321",
 		"name": "Grimestreet Informant",
@@ -40005,7 +39115,6 @@ var parseCardsText = {
 			"name": "Tempête de mana",
 			"text": "<b>Pouvoir héroïque passif</b>\nLes joueurs commencent la partie avec 10 cristaux de mana."
 		},
-		"goldenImage": "KARA_11_02.gif",
 		"id": "KARA_11_02",
 		"name": "Manastorm",
 		"playerClass": "Neutral",
@@ -40018,7 +39127,6 @@ var parseCardsText = {
 			"name": "Enragé",
 			"text": "+3 ATQ."
 		},
-		"goldenImage": "EX1_390e.gif",
 		"id": "EX1_390e",
 		"name": "Enraged",
 		"playerClass": "Neutral",
@@ -40027,12 +39135,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "LOEA02_03.png",
 		"cost": 0,
 		"fr": {
 			"name": "Vœu : puissance",
 			"text": "<b>Découvre</b> un sort."
 		},
+		"goldenImage": "LOEA02_03.gif",
 		"id": "LOEA02_03",
 		"name": "Wish for Power",
 		"playerClass": "Neutral",
@@ -40043,13 +39151,13 @@ var parseCardsText = {
 	{
 		"artist": "Jon Neimeister",
 		"attack": 2,
-		"cardImage": "OG_330.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Colporteur de Fossoyeuse",
 			"text": "<b>Râle d’agonie :</b> ajoute une carte aléatoire dans votre main <i>(de la classe de votre adversaire)</i>."
 		},
+		"goldenImage": "OG_330.gif",
 		"health": 2,
 		"id": "OG_330",
 		"name": "Undercity Huckster",
@@ -40062,7 +39170,6 @@ var parseCardsText = {
 	{
 		"artist": "Matt Starbuck",
 		"attack": 4,
-		"cardImage": "CS2_151.png",
 		"collectible": true,
 		"cost": 5,
 		"faction": "ALLIANCE",
@@ -40070,6 +39177,7 @@ var parseCardsText = {
 			"name": "Champion de la Main d’argent",
 			"text": "<b>Cri de guerre :</b> invoque un écuyer 2/2."
 		},
+		"goldenImage": "CS2_151.gif",
 		"health": 4,
 		"id": "CS2_151",
 		"name": "Silver Hand Knight",
@@ -40084,7 +39192,6 @@ var parseCardsText = {
 			"name": "Expérimenté",
 			"text": "Caractéristiques augmentées."
 		},
-		"goldenImage": "AT_047e.gif",
 		"id": "AT_047e",
 		"name": "Experienced",
 		"playerClass": "Shaman",
@@ -40094,12 +39201,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "NAX8_04t.png",
 		"cost": 3,
 		"fr": {
 			"name": "Guerrier spectral",
 			"text": "Au début de votre tour, inflige 1 point de dégâts à votre héros."
 		},
+		"goldenImage": "NAX8_04t.gif",
 		"health": 4,
 		"id": "NAX8_04t",
 		"name": "Spectral Warrior",
@@ -40113,7 +39220,6 @@ var parseCardsText = {
 			"name": "Vengeance",
 			"text": "+3/+2."
 		},
-		"goldenImage": "FP1_020e.gif",
 		"id": "FP1_020e",
 		"name": "Vengeance",
 		"playerClass": "Paladin",
@@ -40126,7 +39232,6 @@ var parseCardsText = {
 			"name": "Souffle sonique",
 			"text": "+3 ATQ."
 		},
-		"goldenImage": "BRMA16_3e.gif",
 		"id": "BRMA16_3e",
 		"name": "Sonic Breath",
 		"playerClass": "Neutral",
@@ -40137,7 +39242,6 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
-		"cardImage": "EX1_058.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "ALLIANCE",
@@ -40145,6 +39249,7 @@ var parseCardsText = {
 			"name": "Protectrice solfurie",
 			"text": "<b>Cri de guerre :</b> confère <b>Provocation</b> aux serviteurs adjacents."
 		},
+		"goldenImage": "EX1_058.gif",
 		"health": 3,
 		"id": "EX1_058",
 		"name": "Sunfury Protector",
@@ -40155,10 +39260,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA07_1.png",
 		"fr": {
 			"name": "Généralissime Omokk"
 		},
+		"goldenImage": "BRMA07_1.gif",
 		"health": 30,
 		"id": "BRMA07_1",
 		"name": "Highlord Omokk",
@@ -40167,10 +39272,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "TU4d_001.png",
 		"fr": {
 			"name": "Hemet Nesingwary"
 		},
+		"goldenImage": "TU4d_001.gif",
 		"health": 20,
 		"id": "TU4d_001",
 		"name": "Hemet Nesingwary",
@@ -40184,7 +39289,6 @@ var parseCardsText = {
 			"name": "Chardon sanglant",
 			"text": "Coûte (2) cristaux de moins."
 		},
-		"goldenImage": "OG_080ae.gif",
 		"id": "OG_080ae",
 		"name": "Bloodthistle",
 		"playerClass": "Neutral",
@@ -40197,7 +39301,6 @@ var parseCardsText = {
 			"name": "Huile d’affûtage de Bricoleur",
 			"text": "+3 ATQ."
 		},
-		"goldenImage": "GVG_022a.gif",
 		"id": "GVG_022a",
 		"name": "Tinker's Sharpsword Oil",
 		"playerClass": "Neutral",
@@ -40210,7 +39313,6 @@ var parseCardsText = {
 			"name": "Humilité",
 			"text": "L’Attaque est passée à 1."
 		},
-		"goldenImage": "EX1_360e.gif",
 		"id": "EX1_360e",
 		"name": "Humility",
 		"playerClass": "Paladin",
@@ -40220,11 +39322,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NAX11_03.png",
 		"cost": 1,
 		"fr": {
 			"name": "Gelée polluée"
 		},
+		"goldenImage": "NAX11_03.gif",
 		"health": 2,
 		"id": "NAX11_03",
 		"name": "Fallout Slime",
@@ -40237,7 +39339,6 @@ var parseCardsText = {
 			"name": "Rage du Néant",
 			"text": "+8 ATQ."
 		},
-		"goldenImage": "KARA_08_02eH.gif",
 		"id": "KARA_08_02eH",
 		"name": "Nether Rage",
 		"playerClass": "Neutral",
@@ -40247,12 +39348,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "TB_KTRAF_3.png",
 		"cost": 4,
 		"fr": {
 			"name": "Gluth",
 			"text": "À la fin de votre tour, invoque un mort-vivant aléatoire."
 		},
+		"goldenImage": "TB_KTRAF_3.gif",
 		"health": 4,
 		"id": "TB_KTRAF_3",
 		"name": "Gluth",
@@ -40264,13 +39365,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Sass",
-		"cardImage": "AT_005.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Métamorphose : sanglier",
 			"text": "Transforme un serviteur en sanglier 4/2 avec <b>Charge</b>."
 		},
+		"goldenImage": "AT_005.gif",
 		"id": "AT_005",
 		"name": "Polymorph: Boar",
 		"playerClass": "Mage",
@@ -40282,13 +39383,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
-		"cardImage": "AT_069.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Partenaire d’entraînement",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> confère <b>Provocation</b> à un serviteur."
 		},
+		"goldenImage": "AT_069.gif",
 		"health": 2,
 		"id": "AT_069",
 		"name": "Sparring Partner",
@@ -40300,13 +39401,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "E.M. Gist",
-		"cardImage": "EX1_391.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Heurtoir",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur. Vous piochez une carte s’il survit."
 		},
+		"goldenImage": "EX1_391.gif",
 		"id": "EX1_391",
 		"name": "Slam",
 		"playerClass": "Warrior",
@@ -40318,7 +39419,6 @@ var parseCardsText = {
 	{
 		"artist": "Doug Alexander",
 		"attack": 6,
-		"cardImage": "CS2_222.png",
 		"collectible": true,
 		"cost": 7,
 		"faction": "ALLIANCE",
@@ -40326,6 +39426,7 @@ var parseCardsText = {
 			"name": "Champion de Hurlevent",
 			"text": "Vos autres serviteurs\nont +1/+1."
 		},
+		"goldenImage": "CS2_222.gif",
 		"health": 6,
 		"id": "CS2_222",
 		"name": "Stormwind Champion",
@@ -40337,11 +39438,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "EX1_158t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Tréant"
 		},
+		"goldenImage": "EX1_158t.gif",
 		"health": 2,
 		"id": "EX1_158t",
 		"name": "Treant",
@@ -40352,13 +39453,13 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 2,
-		"cardImage": "EX1_616.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Âme en peine de mana",
 			"text": "TOUS les serviteurs coûtent (1) cristal de plus."
 		},
+		"goldenImage": "EX1_616.gif",
 		"health": 2,
 		"id": "EX1_616",
 		"name": "Mana Wraith",
@@ -40373,7 +39474,6 @@ var parseCardsText = {
 			"name": "Coup de fouet motivant",
 			"text": "+2 ATQ."
 		},
-		"goldenImage": "EX1_603e.gif",
 		"id": "EX1_603e",
 		"name": "Whipped Into Shape",
 		"playerClass": "Warrior",
@@ -40382,12 +39482,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_008.png",
 		"cost": 0,
 		"fr": {
 			"name": "Freeze",
 			"text": "<b>Freeze</b> a character."
 		},
+		"goldenImage": "XXX_008.gif",
 		"id": "XXX_008",
 		"name": "Freeze",
 		"playerClass": "Neutral",
@@ -40399,13 +39499,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
-		"cardImage": "GVG_085.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Ennuy-o-tron",
 			"text": "<b>Provocation</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "GVG_085.gif",
 		"health": 2,
 		"id": "GVG_085",
 		"name": "Annoy-o-Tron",
@@ -40417,13 +39517,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Warren Mahy",
-		"cardImage": "EX1_277.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Projectiles des Arcanes",
 			"text": "Inflige $3 |4(point,points) de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "EX1_277.gif",
 		"id": "EX1_277",
 		"name": "Arcane Missiles",
 		"playerClass": "Mage",
@@ -40435,13 +39535,13 @@ var parseCardsText = {
 	{
 		"artist": "Efrem Palacios",
 		"attack": 2,
-		"cardImage": "BRM_016.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Lanceur de hache",
 			"text": "Inflige 2 points de dégâts au héros adverse chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "BRM_016.gif",
 		"health": 5,
 		"id": "BRM_016",
 		"name": "Axe Flinger",
@@ -40453,12 +39553,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "BRMA14_5.png",
 		"cost": 1,
 		"fr": {
 			"name": "Toxitron",
 			"text": "Inflige 1 point de dégâts à tous les autres serviteurs au début de votre tour."
 		},
+		"goldenImage": "BRMA14_5.gif",
 		"health": 3,
 		"id": "BRMA14_5",
 		"name": "Toxitron",
@@ -40471,11 +39571,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 24,
-		"cardImage": "CFM_712_t24.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t24.gif",
 		"health": 24,
 		"id": "CFM_712_t24",
 		"name": "Jade Golem",
@@ -40485,12 +39585,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 9,
-		"cardImage": "CRED_17.png",
 		"cost": 9,
 		"fr": {
 			"name": "Rob Pardo",
 			"text": "Vous ne pouvez pas commencer de partie sans ce serviteur dans votre deck."
 		},
+		"goldenImage": "CRED_17.gif",
 		"health": 9,
 		"id": "CRED_17",
 		"name": "Rob Pardo",
@@ -40502,11 +39602,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "BRMA06_4H.png",
 		"cost": 2,
 		"fr": {
 			"name": "Acolyte attise-flammes"
 		},
+		"goldenImage": "BRMA06_4H.gif",
 		"health": 3,
 		"id": "BRMA06_4H",
 		"name": "Flamewaker Acolyte",
@@ -40521,7 +39621,6 @@ var parseCardsText = {
 			"name": "Kil’rek",
 			"text": "<b>Provocation</b>"
 		},
-		"goldenImage": "KARA_09_08_heroic.gif",
 		"health": 8,
 		"id": "KARA_09_08_heroic",
 		"name": "Kil'rek",
@@ -40533,13 +39632,13 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 5,
-		"cardImage": "EX1_559.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Archimage Antonidas",
 			"text": "Chaque fois que vous lancez un sort, ajoute un sort « boule de feu » dans votre main."
 		},
+		"goldenImage": "EX1_559.gif",
 		"health": 7,
 		"id": "EX1_559",
 		"name": "Archmage Antonidas",
@@ -40552,13 +39651,13 @@ var parseCardsText = {
 	{
 		"artist": "Jonboy Meyers",
 		"attack": 2,
-		"cardImage": "GVG_122.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Mini stoppe-sort",
 			"text": "Les serviteurs adjacents ne peuvent pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "GVG_122.gif",
 		"health": 5,
 		"id": "GVG_122",
 		"name": "Wee Spellstopper",
@@ -40573,7 +39672,6 @@ var parseCardsText = {
 			"name": "Puissance du valet d’écurie",
 			"text": "Le maître des chevaux de guerre donne +1 ATQ à ce serviteur."
 		},
-		"goldenImage": "AT_075e.gif",
 		"id": "AT_075e",
 		"name": "Might of the Hostler",
 		"playerClass": "Paladin",
@@ -40586,7 +39684,6 @@ var parseCardsText = {
 			"name": "Enduit perfide",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "AT_034e.gif",
 		"id": "AT_034e",
 		"name": "Laced",
 		"playerClass": "Rogue",
@@ -40600,7 +39697,6 @@ var parseCardsText = {
 			"name": "Changement de polarité",
 			"text": "<b>Pouvoir héroïque</b>\nÉchange l’Attaque et la Vie de tous les serviteurs."
 		},
-		"goldenImage": "NAX13_02.gif",
 		"id": "NAX13_02",
 		"name": "Polarity Shift",
 		"playerClass": "Neutral",
@@ -40614,7 +39710,6 @@ var parseCardsText = {
 			"name": "Trogg détester sorts !",
 			"text": "<b>Pouvoir héroïque passif</b> Les sorts adverses coûtent (2) |4(cristal,cristaux) de plus. Le pouvoir change au début de votre tour."
 		},
-		"goldenImage": "LOEA05_03.gif",
 		"id": "LOEA05_03",
 		"name": "Trogg Hate Spells!",
 		"playerClass": "Neutral",
@@ -40625,13 +39720,13 @@ var parseCardsText = {
 	{
 		"artist": "J. Ejsing & E. Amundsen",
 		"attack": 5,
-		"cardImage": "CFM_687.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Maître des encres Solia",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, votre prochain sort lancé pendant ce tour coûte (0) |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_687.gif",
 		"health": 5,
 		"id": "CFM_687",
 		"name": "Inkmaster Solia",
@@ -40646,7 +39741,6 @@ var parseCardsText = {
 			"name": "Griffes sinistres",
 			"text": "+2 ATQ pendant ce tour."
 		},
-		"goldenImage": "AT_132_DRUIDe.gif",
 		"id": "AT_132_DRUIDe",
 		"name": "Dire Claws",
 		"playerClass": "Druid",
@@ -40657,12 +39751,12 @@ var parseCardsText = {
 	{
 		"artist": "Matt Gaser",
 		"attack": 5,
-		"cardImage": "CS2_118.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Enragé du magma"
 		},
+		"goldenImage": "CS2_118.gif",
 		"health": 1,
 		"id": "CS2_118",
 		"name": "Magma Rager",
@@ -40672,7 +39766,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_BRMA01_2H_2.png",
 		"cost": 0,
 		"fr": {
 			"name": "Pioche forcée !",
@@ -40691,7 +39784,6 @@ var parseCardsText = {
 			"name": "FEU D’ENFER !",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un infernal 6/6."
 		},
-		"goldenImage": "EX1_tk33.gif",
 		"id": "EX1_tk33",
 		"name": "INFERNO!",
 		"playerClass": "Warlock",
@@ -40701,13 +39793,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "LOE_111.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Mal déterré",
 			"text": "Inflige $3 |4(point,points) de dégâts à tous les serviteurs.\nPlace cette carte dans le deck de votre adversaire."
 		},
+		"goldenImage": "LOE_111.gif",
 		"id": "LOE_111",
 		"name": "Excavated Evil",
 		"playerClass": "Priest",
@@ -40725,7 +39817,6 @@ var parseCardsText = {
 			"name": "Forge-Arcanes",
 			"text": "<b>Cri de guerre :</b> invoque un serviteur 0/5 avec <b>Provocation</b>."
 		},
-		"goldenImage": "KAR_710.gif",
 		"health": 2,
 		"id": "KAR_710",
 		"name": "Arcanosmith",
@@ -40740,7 +39831,6 @@ var parseCardsText = {
 			"name": "POURQUOI VOUS NE MOUREZ PAS ?",
 			"text": "Maintenant, il est VRAIMENT en colère…"
 		},
-		"goldenImage": "TB_CoOpv3_BOSSe.gif",
 		"id": "TB_CoOpv3_BOSSe",
 		"name": "WHY WON'T YOU DIE!?",
 		"playerClass": "Neutral",
@@ -40749,11 +39839,11 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "HERO_06.png",
 		"collectible": true,
 		"fr": {
 			"name": "Malfurion Hurlorage"
 		},
+		"goldenImage": "HERO_06.gif",
 		"health": 30,
 		"id": "HERO_06",
 		"name": "Malfurion Stormrage",
@@ -40764,13 +39854,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Michael Komarck",
-		"cardImage": "EX1_606.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Maîtrise du blocage",
 			"text": "Vous gagnez 5 points d’armure. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_606.gif",
 		"id": "EX1_606",
 		"name": "Shield Block",
 		"playerClass": "Warrior",
@@ -40782,13 +39872,13 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 5,
-		"cardImage": "OG_028.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Chose venue d’en bas",
 			"text": "<b>Provocation</b>\nCoûte (1) |4(cristal,cristaux) de moins pour chaque totem invoqué par vous dans cette partie."
 		},
+		"goldenImage": "OG_028.gif",
 		"health": 5,
 		"id": "OG_028",
 		"name": "Thing from Below",
@@ -40800,12 +39890,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "CRED_28.png",
 		"cost": 4,
 		"fr": {
 			"name": "He-Rim Woo",
 			"text": "<b>Choix des armes :</b> donne un coup dans le bras, offre une friandise ou fait un gros câlin."
 		},
+		"goldenImage": "CRED_28.gif",
 		"health": 3,
 		"id": "CRED_28",
 		"name": "He-Rim Woo",
@@ -40816,12 +39906,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA04_29b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Examiner les runes",
 			"text": "Vous piochez 2 cartes."
 		},
+		"goldenImage": "LOEA04_29b.gif",
 		"id": "LOEA04_29b",
 		"name": "Investigate the Runes",
 		"playerClass": "Neutral",
@@ -40830,10 +39920,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX5_01H.png",
 		"fr": {
 			"name": "Heigan l’Impur"
 		},
+		"goldenImage": "NAX5_01H.gif",
 		"health": 45,
 		"id": "NAX5_01H",
 		"name": "Heigan the Unclean",
@@ -40846,7 +39936,6 @@ var parseCardsText = {
 			"name": "Entraînement à l’escrime",
 			"text": "Votre pouvoir héroïque coûte (2) cristaux de moins."
 		},
-		"goldenImage": "AT_115e.gif",
 		"id": "AT_115e",
 		"name": "Fencing Practice",
 		"playerClass": "Neutral",
@@ -40856,12 +39945,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "CRED_42.png",
 		"cost": 4,
 		"fr": {
 			"name": "Tim Erskine",
 			"text": "Vous piochez une carte chaque fois que ce serviteur en détruit un autre."
 		},
+		"goldenImage": "CRED_42.gif",
 		"health": 5,
 		"id": "CRED_42",
 		"name": "Tim Erskine",
@@ -40874,13 +39963,13 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 3,
-		"cardImage": "GVG_119.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Bling-o-tron 3000",
 			"text": "<b>Cri de guerre :</b> équipe chaque joueur d’une arme aléatoire."
 		},
+		"goldenImage": "GVG_119.gif",
 		"health": 4,
 		"id": "GVG_119",
 		"name": "Blingtron 3000",
@@ -40892,7 +39981,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Andrew Hou",
-		"cardImage": "CFM_336e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "Le porte-flingue secoué donne +2/+2."
@@ -40910,7 +39998,6 @@ var parseCardsText = {
 			"name": "Fill Deck",
 			"text": "Fill target hero's deck with random cards."
 		},
-		"goldenImage": "XXX_112.gif",
 		"id": "XXX_112",
 		"name": "Fill Deck",
 		"playerClass": "Neutral",
@@ -40920,12 +40007,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "LOEA07_28.png",
 		"cost": 1,
 		"fr": {
 			"name": "Réparations",
 			"text": "Rend 10 PV."
 		},
+		"goldenImage": "LOEA07_28.gif",
 		"id": "LOEA07_28",
 		"name": "Repairs",
 		"playerClass": "Neutral",
@@ -40935,13 +40022,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Gabe from Penny Arcade",
-		"cardImage": "EX1_539.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Ordre de tuer",
 			"text": "Inflige $3 |4(point,points) de dégâts. Si vous contrôlez une Bête, inflige $5 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "EX1_539.gif",
 		"id": "EX1_539",
 		"name": "Kill Command",
 		"playerClass": "Hunter",
@@ -40951,11 +40038,11 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "HERO_02.png",
 		"collectible": true,
 		"fr": {
 			"name": "Thrall"
 		},
+		"goldenImage": "HERO_02.gif",
 		"health": 30,
 		"id": "HERO_02",
 		"name": "Thrall",
@@ -40965,10 +40052,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
-		"cardImage": "LOEA16_1.png",
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "LOEA16_1.gif",
 		"health": 30,
 		"id": "LOEA16_1",
 		"name": "Rafaam",
@@ -40979,11 +40066,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
-		"cardImage": "LOE_089t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Avorton vaurien"
 		},
+		"goldenImage": "LOE_089t.gif",
 		"health": 2,
 		"id": "LOE_089t",
 		"name": "Rascally Runt",
@@ -40994,11 +40081,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 22,
-		"cardImage": "CFM_712_t22.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t22.gif",
 		"health": 22,
 		"id": "CFM_712_t22",
 		"name": "Jade Golem",
@@ -41009,13 +40096,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
-		"cardImage": "EX1_097.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Abomination",
 			"text": "<b>Provocation</b>.\n<b>Râle d’agonie :</b> inflige 2 points de dégâts à TOUS les personnages."
 		},
+		"goldenImage": "EX1_097.gif",
 		"health": 4,
 		"id": "EX1_097",
 		"name": "Abomination",
@@ -41030,7 +40117,6 @@ var parseCardsText = {
 			"name": "Esprit ancestral",
 			"text": "<b>Râle d’agonie :</b> réinvoque ce serviteur."
 		},
-		"goldenImage": "CS2_038e.gif",
 		"id": "CS2_038e",
 		"name": "Ancestral Spirit",
 		"playerClass": "Shaman",
@@ -41046,7 +40132,6 @@ var parseCardsText = {
 			"name": "Bouclier animé",
 			"text": "<b>Provocation</b>"
 		},
-		"goldenImage": "KAR_710m.gif",
 		"health": 5,
 		"id": "KAR_710m",
 		"name": "Animated Shield",
@@ -41057,11 +40142,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "LOEA09_5H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_5H.gif",
 		"health": 3,
 		"id": "LOEA09_5H",
 		"name": "Hungry Naga",
@@ -41071,13 +40156,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jeff Haynie",
-		"cardImage": "GVG_015.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Bombe de matière noire",
 			"text": "Inflige $3 |4(point,points) de dégâts."
 		},
+		"goldenImage": "GVG_015.gif",
 		"id": "GVG_015",
 		"name": "Darkbomb",
 		"playerClass": "Warlock",
@@ -41089,12 +40174,12 @@ var parseCardsText = {
 	{
 		"artist": "Kan Liu",
 		"attack": 2,
-		"cardImage": "OG_325.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Larve putride"
 		},
+		"goldenImage": "OG_325.gif",
 		"health": 5,
 		"id": "OG_325",
 		"name": "Carrion Grub",
@@ -41108,7 +40193,6 @@ var parseCardsText = {
 			"name": "Yarrr !",
 			"text": "Le capitaine des mers du Sud donne +1/+1."
 		},
-		"goldenImage": "NEW1_027e.gif",
 		"id": "NEW1_027e",
 		"name": "Yarrr!",
 		"playerClass": "Neutral",
@@ -41118,12 +40202,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "TBST_004.png",
 		"cost": 3,
 		"fr": {
 			"name": "Soigneur honnête",
 			"text": "À la fin de votre tour, invoque un serviteur allié aléatoire mort pendant ce tour."
 		},
+		"goldenImage": "TBST_004.gif",
 		"health": 2,
 		"id": "TBST_004",
 		"name": "OLDLegit Healer",
@@ -41134,13 +40218,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jesper Ejsing",
-		"cardImage": "GVG_012.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Lumière des naaru",
 			"text": "Rend #3 |4(point,points) de vie. Si la cible est toujours blessée, invoque un Gardelumière."
 		},
+		"goldenImage": "GVG_012.gif",
 		"id": "GVG_012",
 		"name": "Light of the Naaru",
 		"playerClass": "Priest",
@@ -41151,12 +40235,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "TB_MechWar_Minion1.png",
 		"cost": 2,
 		"fr": {
 			"name": "Fan de méca",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "TB_MechWar_Minion1.gif",
 		"health": 1,
 		"id": "TB_MechWar_Minion1",
 		"name": "Mech Fan",
@@ -41170,7 +40254,6 @@ var parseCardsText = {
 			"name": "Ça pique !",
 			"text": "Le forgeron malveillant donne +2 ATQ."
 		},
-		"goldenImage": "CS2_221e.gif",
 		"id": "CS2_221e",
 		"name": "Sharp!",
 		"playerClass": "Neutral",
@@ -41179,10 +40262,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA16_1.png",
 		"fr": {
 			"name": "Atramédès"
 		},
+		"goldenImage": "BRMA16_1.gif",
 		"health": 30,
 		"id": "BRMA16_1",
 		"name": "Atramedes",
@@ -41192,13 +40275,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Howard Lyon",
-		"cardImage": "GVG_073.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Tir du cobra",
 			"text": "Inflige $3 |4(point,points) de dégâts à un serviteur et au héros adverse."
 		},
+		"goldenImage": "GVG_073.gif",
 		"id": "GVG_073",
 		"name": "Cobra Shot",
 		"playerClass": "Hunter",
@@ -41216,7 +40299,6 @@ var parseCardsText = {
 			"name": "Comédien pompeux",
 			"text": "<b>Provocation</b>"
 		},
-		"goldenImage": "KAR_011.gif",
 		"health": 2,
 		"id": "KAR_011",
 		"name": "Pompous Thespian",
@@ -41227,10 +40309,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA02_01h.png",
 		"fr": {
 			"name": "Zinaar"
 		},
+		"goldenImage": "LOEA02_01h.gif",
 		"health": 30,
 		"id": "LOEA02_01h",
 		"name": "Zinaar",
@@ -41240,13 +40322,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Franchina",
-		"cardImage": "OG_198.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Guérison interdite",
 			"text": "Dépense tout votre mana pour en rendre le double en points de vie."
 		},
+		"goldenImage": "OG_198.gif",
 		"id": "OG_198",
 		"name": "Forbidden Healing",
 		"playerClass": "Paladin",
@@ -41261,7 +40343,6 @@ var parseCardsText = {
 			"name": "Trogg détester serviteurs !",
 			"text": "<b>Pouvoir héroïque passif</b> Les serviteurs adverses coûtent (2) |4(cristal,cristaux) de plus. Le pouvoir change au début de votre tour."
 		},
-		"goldenImage": "LOEA05_02.gif",
 		"id": "LOEA05_02",
 		"name": "Trogg Hate Minions!",
 		"playerClass": "Neutral",
@@ -41275,7 +40356,6 @@ var parseCardsText = {
 			"name": "Puissance des anciens",
 			"text": "<b>Pouvoir héroïque</b>\nAjoute une carte aléatoire dans votre main. Elle coûte (0) |4(cristal,cristaux) de mana."
 		},
-		"goldenImage": "LOEA13_2H.gif",
 		"id": "LOEA13_2H",
 		"name": "Ancient Power",
 		"playerClass": "Neutral",
@@ -41286,13 +40366,13 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 2,
-		"cardImage": "OG_221.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Héroïne altruiste",
 			"text": "<b>Râle d’agonie :</b> confère <b>Bouclier divin</b> à un serviteur allié aléatoire."
 		},
+		"goldenImage": "OG_221.gif",
 		"health": 1,
 		"id": "OG_221",
 		"name": "Selfless Hero",
@@ -41307,7 +40387,6 @@ var parseCardsText = {
 			"name": "Lames assoiffées",
 			"text": "+1/+1."
 		},
-		"goldenImage": "OG_070e.gif",
 		"id": "OG_070e",
 		"name": "Thirsty Blades",
 		"playerClass": "Rogue",
@@ -41319,7 +40398,6 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 7,
-		"cardImage": "EX1_411.png",
 		"collectible": true,
 		"cost": 7,
 		"durability": 1,
@@ -41327,6 +40405,7 @@ var parseCardsText = {
 			"name": "Hurlesang",
 			"text": "Attaquer un serviteur coûte 1 ATQ au lieu de 1 Durabilité."
 		},
+		"goldenImage": "EX1_411.gif",
 		"id": "EX1_411",
 		"name": "Gorehowl",
 		"playerClass": "Warrior",
@@ -41338,13 +40417,13 @@ var parseCardsText = {
 	{
 		"artist": "Robb Shoberg",
 		"attack": 3,
-		"cardImage": "FP1_022.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Implorateur du Vide",
 			"text": "<b>Râle d’agonie :</b> place un démon aléatoire de votre main sur le champ de bataille."
 		},
+		"goldenImage": "FP1_022.gif",
 		"health": 4,
 		"id": "FP1_022",
 		"name": "Voidcaller",
@@ -41357,11 +40436,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 1,
-		"cardImage": "OG_006a.png",
 		"cost": 1,
 		"fr": {
 			"name": "Murloc de la Main d’argent"
 		},
+		"goldenImage": "OG_006a.gif",
 		"health": 1,
 		"id": "OG_006a",
 		"name": "Silver Hand Murloc",
@@ -41374,7 +40453,6 @@ var parseCardsText = {
 			"name": "Rugissement sauvage",
 			"text": "+2 ATQ pendant ce tour."
 		},
-		"goldenImage": "CS2_011o.gif",
 		"id": "CS2_011o",
 		"name": "Savage Roar",
 		"playerClass": "Druid",
@@ -41387,7 +40465,6 @@ var parseCardsText = {
 			"name": "Sceau des champions",
 			"text": "+3 ATQ et <b>Bouclier divin</b>."
 		},
-		"goldenImage": "AT_074e2.gif",
 		"id": "AT_074e2",
 		"name": "Seal of Champions",
 		"playerClass": "Paladin",
@@ -41398,13 +40475,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 6,
-		"cardImage": "AT_123.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Frissegueule",
 			"text": "<b>Provocation</b>. <b>Râle d’agonie :</b> inflige 3 points de dégâts à tous les serviteurs si vous avez un Dragon en main."
 		},
+		"goldenImage": "AT_123.gif",
 		"health": 6,
 		"id": "AT_123",
 		"name": "Chillmaw",
@@ -41420,7 +40497,6 @@ var parseCardsText = {
 			"name": "Pied à terre",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque Gyth. Change de pouvoir héroïque."
 		},
-		"goldenImage": "BRMA09_5H.gif",
 		"id": "BRMA09_5H",
 		"name": "Dismount",
 		"playerClass": "Neutral",
@@ -41431,7 +40507,6 @@ var parseCardsText = {
 	{
 		"artist": "Matt Cavotta",
 		"attack": 4,
-		"cardImage": "EX1_048.png",
 		"collectible": true,
 		"cost": 4,
 		"faction": "HORDE",
@@ -41439,6 +40514,7 @@ var parseCardsText = {
 			"name": "Brise-sort",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "EX1_048.gif",
 		"health": 3,
 		"id": "EX1_048",
 		"name": "Spellbreaker",
@@ -41450,13 +40526,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Chippy",
-		"cardImage": "EX1_363.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Bénédiction de sagesse",
 			"text": "Choisissez un serviteur. Chaque fois qu’il attaque, vous piochez une carte."
 		},
+		"goldenImage": "EX1_363.gif",
 		"id": "EX1_363",
 		"name": "Blessing of Wisdom",
 		"playerClass": "Paladin",
@@ -41468,13 +40544,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 1,
-		"cardImage": "CFM_095.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Fouine perce-tunnels",
 			"text": "<b>Râle d’agonie :</b> place ce serviteur dans le deck de votre adversaire."
 		},
+		"goldenImage": "CFM_095.gif",
 		"health": 1,
 		"id": "CFM_095",
 		"name": "Weasel Tunneler",
@@ -41485,12 +40561,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_020.png",
 		"cost": 0,
 		"fr": {
 			"name": "Damage all but 1",
 			"text": "Set the Health of a character to 1."
 		},
+		"goldenImage": "XXX_020.gif",
 		"id": "XXX_020",
 		"name": "Damage all but 1",
 		"playerClass": "Neutral",
@@ -41501,12 +40577,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "CRED_40.png",
 		"cost": 4,
 		"fr": {
 			"name": "Ryan Masterson",
 			"text": "<b>Cri de guerre :</b> lance des copies d’Attaque sournoise, Sang froid et Éviscération. <i>(cibles choisies au hasard).</i>"
 		},
+		"goldenImage": "CRED_40.gif",
 		"health": 2,
 		"id": "CRED_40",
 		"name": "Ryan Masterson",
@@ -41519,7 +40595,6 @@ var parseCardsText = {
 	{
 		"artist": "Gino Whitehall",
 		"attack": 2,
-		"cardImage": "GVG_043.png",
 		"collectible": true,
 		"cost": 2,
 		"durability": 2,
@@ -41527,6 +40602,7 @@ var parseCardsText = {
 			"name": "Glaivezooka",
 			"text": "<b>Cri de guerre :</b> donne +1 ATQ à un serviteur allié aléatoire."
 		},
+		"goldenImage": "GVG_043.gif",
 		"id": "GVG_043",
 		"name": "Glaivezooka",
 		"playerClass": "Hunter",
@@ -41541,7 +40617,6 @@ var parseCardsText = {
 			"name": "Fouilles",
 			"text": "Trouve un artéfact."
 		},
-		"goldenImage": "LOEA16_16.gif",
 		"id": "LOEA16_16",
 		"name": "Rummage",
 		"playerClass": "Neutral",
@@ -41551,11 +40626,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "EX1_160t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Panthère"
 		},
+		"goldenImage": "EX1_160t.gif",
 		"health": 2,
 		"id": "EX1_160t",
 		"name": "Panther",
@@ -41567,13 +40642,13 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 5,
-		"cardImage": "CFM_685.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Don Han’Cho",
 			"text": "<b>Cri de guerre :</b> donne +5/+5 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_685.gif",
 		"health": 6,
 		"id": "CFM_685",
 		"name": "Don Han'Cho",
@@ -41602,7 +40677,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Abyssal"
 		},
-		"goldenImage": "KARA_00_02a.gif",
 		"health": 6,
 		"id": "KARA_00_02a",
 		"name": "Abyssal",
@@ -41615,7 +40689,6 @@ var parseCardsText = {
 			"name": "Berserk",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "EX1_604o.gif",
 		"id": "EX1_604o",
 		"name": "Berserk",
 		"playerClass": "Warrior",
@@ -41626,13 +40699,13 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 1,
-		"cardImage": "NEW1_016.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Perroquet du capitaine",
 			"text": "<b>Cri de guerre :</b> place un pirate aléatoire de votre deck dans votre main."
 		},
+		"goldenImage": "NEW1_016.gif",
 		"health": 1,
 		"id": "NEW1_016",
 		"name": "Captain's Parrot",
@@ -41643,12 +40716,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_PickYourFate_8rand.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin : Armure",
 			"text": "Chaque joueur gagne +2 Armure au début de son tour."
 		},
+		"goldenImage": "TB_PickYourFate_8rand.gif",
 		"id": "TB_PickYourFate_8rand",
 		"name": "Fate: Armor",
 		"playerClass": "Neutral",
@@ -41662,7 +40735,6 @@ var parseCardsText = {
 			"name": "Enchaînement",
 			"text": "Inflige 4 points de dégâts à un serviteur et à son propriétaire."
 		},
-		"goldenImage": "TB_CoOpv3_005.gif",
 		"id": "TB_CoOpv3_005",
 		"name": "Cleave",
 		"playerClass": "Neutral",
@@ -41673,13 +40745,13 @@ var parseCardsText = {
 	{
 		"artist": "Brom",
 		"attack": 6,
-		"cardImage": "EX1_383.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Tirion Fordring",
 			"text": "<b>Bouclier divin</b>. <b>Provocation</b>. <b>Râle d’agonie :</b> vous équipe de Porte-cendres 5/3."
 		},
+		"goldenImage": "EX1_383.gif",
 		"health": 6,
 		"id": "EX1_383",
 		"name": "Tirion Fordring",
@@ -41692,13 +40764,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Garner",
 		"attack": 3,
-		"cardImage": "AT_011.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Championne sacrée",
 			"text": "Chaque fois qu’un personnage est soigné, gagne +2 ATQ."
 		},
+		"goldenImage": "AT_011.gif",
 		"health": 5,
 		"id": "AT_011",
 		"name": "Holy Champion",
@@ -41714,7 +40786,6 @@ var parseCardsText = {
 			"name": "Renfort",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque une recrue de la Main d’argent 1/1."
 		},
-		"goldenImage": "CS2_101_H1.gif",
 		"id": "CS2_101_H1",
 		"name": "Reinforce",
 		"playerClass": "Paladin",
@@ -41725,13 +40796,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Dos Santos",
-		"cardImage": "AT_015.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Convertir",
 			"text": "Place une copie d’un serviteur adverse dans votre main."
 		},
+		"goldenImage": "AT_015.gif",
 		"id": "AT_015",
 		"name": "Convert",
 		"playerClass": "Priest",
@@ -41742,11 +40813,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "AT_037t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Arbrisseau"
 		},
+		"goldenImage": "AT_037t.gif",
 		"health": 1,
 		"id": "AT_037t",
 		"name": "Sapling",
@@ -41756,13 +40827,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luca Zontini",
-		"cardImage": "CS2_046.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Furie sanguinaire",
 			"text": "Donne +3 ATQ à vos serviteurs pendant ce tour."
 		},
+		"goldenImage": "CS2_046.gif",
 		"id": "CS2_046",
 		"name": "Bloodlust",
 		"playerClass": "Shaman",
@@ -41776,7 +40847,6 @@ var parseCardsText = {
 			"name": "Mode Char",
 			"text": "+1 PV."
 		},
-		"goldenImage": "GVG_030be.gif",
 		"id": "GVG_030be",
 		"name": "Tank Mode",
 		"playerClass": "Druid",
@@ -41787,13 +40857,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
-		"cardImage": "EX1_531.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Hyène charognarde",
 			"text": "Chaque fois qu’une bête alliée meurt, gagne +2/+1."
 		},
+		"goldenImage": "EX1_531.gif",
 		"health": 2,
 		"id": "EX1_531",
 		"name": "Scavenging Hyena",
@@ -41805,7 +40875,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Peter Stapleton",
-		"cardImage": "CFM_753e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "L’outilleur des Dessoudeurs donne +1/+1."
@@ -41820,11 +40889,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 27,
-		"cardImage": "CFM_712_t27.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t27.gif",
 		"health": 27,
 		"id": "CFM_712_t27",
 		"name": "Jade Golem",
@@ -41838,7 +40907,6 @@ var parseCardsText = {
 			"name": "MOI TOUT CASSER",
 			"text": "Détruit un serviteur adverse aléatoire."
 		},
-		"goldenImage": "BRMA07_2_2c_TB.gif",
 		"id": "BRMA07_2_2c_TB",
 		"name": "ME SMASH",
 		"playerClass": "Neutral",
@@ -41848,12 +40916,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "BRMA13_6.png",
 		"cost": 0,
 		"fr": {
 			"name": "Lave vivante",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA13_6.gif",
 		"health": 6,
 		"id": "BRMA13_6",
 		"name": "Living Lava",
@@ -41865,13 +40933,13 @@ var parseCardsText = {
 	{
 		"artist": "Brian Huang",
 		"attack": 3,
-		"cardImage": "CS2_080.png",
 		"collectible": true,
 		"cost": 5,
 		"durability": 4,
 		"fr": {
 			"name": "Lame d’assassin"
 		},
+		"goldenImage": "CS2_080.gif",
 		"id": "CS2_080",
 		"name": "Assassin's Blade",
 		"playerClass": "Rogue",
@@ -41885,7 +40953,6 @@ var parseCardsText = {
 			"name": "Démon en liberté !",
 			"text": "Invoque un Démon aléatoire."
 		},
-		"goldenImage": "KARA_07_06heroic.gif",
 		"id": "KARA_07_06heroic",
 		"name": "Demons Loose!",
 		"playerClass": "Neutral",
@@ -41898,7 +40965,6 @@ var parseCardsText = {
 			"name": "Fossilisé",
 			"text": "A <b>Provocation</b>."
 		},
-		"goldenImage": "LOE_073e.gif",
 		"id": "LOE_073e",
 		"name": "Fossilized",
 		"playerClass": "Neutral",
@@ -41909,13 +40975,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 8,
-		"cardImage": "GVG_016.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Saccageur gangrené",
 			"text": "Chaque fois que votre adversaire joue une carte, retire les 3 cartes du dessus de votre deck."
 		},
+		"goldenImage": "GVG_016.gif",
 		"health": 8,
 		"id": "GVG_016",
 		"name": "Fel Reaver",
@@ -41928,13 +40994,13 @@ var parseCardsText = {
 	{
 		"artist": "Nutchapol Thitinunthakorn",
 		"attack": 7,
-		"cardImage": "GVG_079.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Char de force MAX",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "GVG_079.gif",
 		"health": 7,
 		"id": "GVG_079",
 		"name": "Force-Tank MAX",
@@ -41947,7 +41013,6 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 3,
-		"cardImage": "EX1_049.png",
 		"collectible": true,
 		"cost": 2,
 		"faction": "ALLIANCE",
@@ -41955,6 +41020,7 @@ var parseCardsText = {
 			"name": "Jeune maître brasseur",
 			"text": "<b>Cri de guerre :</b> renvoie un serviteur allié du champ de bataille et le place dans votre main."
 		},
+		"goldenImage": "EX1_049.gif",
 		"health": 2,
 		"id": "EX1_049",
 		"name": "Youthful Brewmaster",
@@ -41969,7 +41035,6 @@ var parseCardsText = {
 			"name": "Marque du fauve",
 			"text": "+2/+2 et <b>Provocation</b>."
 		},
-		"goldenImage": "CS2_009e.gif",
 		"id": "CS2_009e",
 		"name": "Mark of the Wild",
 		"playerClass": "Druid",
@@ -41982,7 +41047,6 @@ var parseCardsText = {
 			"name": "Églantine",
 			"text": "+3 ATQ."
 		},
-		"goldenImage": "OG_080ee.gif",
 		"id": "OG_080ee",
 		"name": "Briarthorn",
 		"playerClass": "Neutral",
@@ -41999,7 +41063,6 @@ var parseCardsText = {
 			"name": "Félin surprise",
 			"text": "<b>Camouflage</b>"
 		},
-		"goldenImage": "KAR_004a.gif",
 		"health": 2,
 		"id": "KAR_004a",
 		"name": "Cat in a Hat",
@@ -42011,13 +41074,13 @@ var parseCardsText = {
 	{
 		"artist": "John Dickenson",
 		"attack": 2,
-		"cardImage": "EX1_162.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Loup alpha redoutable",
 			"text": "Les serviteurs adjacents ont +1 ATQ."
 		},
+		"goldenImage": "EX1_162.gif",
 		"health": 2,
 		"id": "EX1_162",
 		"name": "Dire Wolf Alpha",
@@ -42029,12 +41092,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 20,
-		"cardImage": "BRMC_95.png",
 		"cost": 50,
 		"fr": {
 			"name": "Golemagg",
 			"text": "Coûte (1) cristal de moins pour chaque point de dégâts subi par votre héros."
 		},
+		"goldenImage": "BRMC_95.gif",
 		"health": 20,
 		"id": "BRMC_95",
 		"name": "Golemagg",
@@ -42051,7 +41114,6 @@ var parseCardsText = {
 			"name": "Pouvoir des Arcanes",
 			"text": "Vous avez <b>+5 aux dégâts des sorts</b> pendant ce tour."
 		},
-		"goldenImage": "KARA_00_06.gif",
 		"id": "KARA_00_06",
 		"name": "Arcane Power",
 		"playerClass": "Mage",
@@ -42066,7 +41128,6 @@ var parseCardsText = {
 			"name": "Le chambellan",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un acolyte attise-flammes 3/3."
 		},
-		"goldenImage": "BRMA06_2H.gif",
 		"id": "BRMA06_2H",
 		"name": "The Majordomo",
 		"playerClass": "Neutral",
@@ -42075,12 +41136,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "NAX6_03.png",
 		"cost": 4,
 		"fr": {
 			"name": "Mortelle floraison",
 			"text": "Inflige $5 |4(point,points) de dégâts à un serviteur. Invoque une spore."
 		},
+		"goldenImage": "NAX6_03.gif",
 		"id": "NAX6_03",
 		"name": "Deathbloom",
 		"playerClass": "Neutral",
@@ -42091,13 +41152,13 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 7,
-		"cardImage": "AT_072.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Varian Wrynn",
 			"text": "<b>Cri de guerre :</b> vous piochez\n3 cartes. Place tout serviteur pioché directement sur le champ de bataille."
 		},
+		"goldenImage": "AT_072.gif",
 		"health": 7,
 		"id": "AT_072",
 		"name": "Varian Wrynn",
@@ -42110,13 +41171,13 @@ var parseCardsText = {
 	{
 		"artist": "Aleksi Briclot",
 		"attack": 7,
-		"cardImage": "GVG_007.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Léviathan des flammes",
 			"text": "Quand vous piochez cette carte, inflige 2 points de dégâts à tous les personnages."
 		},
+		"goldenImage": "GVG_007.gif",
 		"health": 7,
 		"id": "GVG_007",
 		"name": "Flame Leviathan",
@@ -42128,13 +41189,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Cavotta",
-		"cardImage": "EX1_409.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Amélioration !",
 			"text": "Si vous avez une arme, lui donne +1/+1. Sinon, vous équipe d’une arme 1/3."
 		},
+		"goldenImage": "EX1_409.gif",
 		"id": "EX1_409",
 		"name": "Upgrade!",
 		"playerClass": "Warrior",
@@ -42145,13 +41206,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Trent Kaniuga",
-		"cardImage": "GVG_041.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Sombres feux follets",
 			"text": "<b>Choix des armes :</b> invoque 5 feux follets ou donne +5/+5 et <b>Provocation</b> à un serviteur."
 		},
+		"goldenImage": "GVG_041.gif",
 		"id": "GVG_041",
 		"name": "Dark Wispers",
 		"playerClass": "Druid",
@@ -42162,13 +41223,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jimmy Lo",
-		"cardImage": "CS2_084.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Marque du chasseur",
 			"text": "Fait tomber les points de vie d’un serviteur\nà 1."
 		},
+		"goldenImage": "CS2_084.gif",
 		"id": "CS2_084",
 		"name": "Hunter's Mark",
 		"playerClass": "Hunter",
@@ -42178,10 +41239,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA17_2H.png",
 		"fr": {
 			"name": "Nefarian"
 		},
+		"goldenImage": "BRMA17_2H.gif",
 		"health": 30,
 		"id": "BRMA17_2H",
 		"name": "Nefarian",
@@ -42192,13 +41253,13 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 3,
-		"cardImage": "EX1_564.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Manipulateur sans-visage",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur et en devient la copie conforme."
 		},
+		"goldenImage": "EX1_564.gif",
 		"health": 3,
 		"id": "EX1_564",
 		"name": "Faceless Manipulator",
@@ -42211,13 +41272,13 @@ var parseCardsText = {
 	{
 		"artist": "Todd Lockwood",
 		"attack": 6,
-		"cardImage": "BRM_031.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Chromaggus",
 			"text": "Chaque fois que vous piochez une carte, en place une copie dans votre main."
 		},
+		"goldenImage": "BRM_031.gif",
 		"health": 8,
 		"id": "BRM_031",
 		"name": "Chromaggus",
@@ -42233,7 +41294,6 @@ var parseCardsText = {
 			"name": "Aura nécrotique",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 3 points de dégâts au héros adverse."
 		},
-		"goldenImage": "NAX6_02.gif",
 		"id": "NAX6_02",
 		"name": "Necrotic Aura",
 		"playerClass": "Neutral",
@@ -42242,12 +41302,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "XXX_050.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destroy a Mana Crystal",
 			"text": "Pick a player and destroy one of his Mana Crystals."
 		},
+		"goldenImage": "XXX_050.gif",
 		"id": "XXX_050",
 		"name": "Destroy a Mana Crystal",
 		"playerClass": "Neutral",
@@ -42261,7 +41321,6 @@ var parseCardsText = {
 			"name": "Aiguisé",
 			"text": "+1 ATQ pendant ce tour."
 		},
-		"goldenImage": "CS2_083e.gif",
 		"id": "CS2_083e",
 		"name": "Sharpened",
 		"playerClass": "Rogue",
@@ -42270,10 +41329,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_040.png",
 		"fr": {
 			"name": "Hogger"
 		},
+		"goldenImage": "XXX_040.gif",
 		"health": 10,
 		"id": "XXX_040",
 		"name": "Hogger",
@@ -42283,12 +41342,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "NEW1_033.png",
 		"cost": 3,
 		"fr": {
 			"name": "Leokk",
 			"text": "Vos autres serviteurs ont +1 ATQ."
 		},
+		"goldenImage": "NEW1_033.gif",
 		"health": 4,
 		"id": "NEW1_033",
 		"name": "Leokk",
@@ -42300,12 +41359,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t28.png",
 		"cost": 10,
 		"fr": {
 			"name": "Néantine",
 			"text": "Invoque un démon 8/8."
 		},
+		"goldenImage": "CFM_621t28.gif",
 		"id": "CFM_621t28",
 		"name": "Netherbloom",
 		"playerClass": "Neutral",
@@ -42317,7 +41376,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Choisissez votre destin - Construction"
 		},
-		"goldenImage": "TB_PickYourFate.gif",
 		"id": "TB_PickYourFate",
 		"name": "Pick Your Fate Build Around",
 		"playerClass": "Neutral",
@@ -42329,7 +41387,6 @@ var parseCardsText = {
 			"name": "Rage aveugle",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "BRMA10_6e.gif",
 		"id": "BRMA10_6e",
 		"name": "Blind With Rage",
 		"playerClass": "Neutral",
@@ -42346,7 +41403,6 @@ var parseCardsText = {
 			"name": "Fieffé forban",
 			"text": "<b>Cri de guerre :</b> ajoute une carte de classe aléatoire dans votre main <i>(de la classe de votre adversaire).</i>"
 		},
-		"goldenImage": "KAR_069.gif",
 		"health": 1,
 		"id": "KAR_069",
 		"name": "Swashburglar",
@@ -42363,7 +41419,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Grandes méchantes griffes"
 		},
-		"goldenImage": "KARA_05_02heroic.gif",
 		"id": "KARA_05_02heroic",
 		"name": "Big Bad Claws",
 		"playerClass": "Neutral",
@@ -42379,7 +41434,6 @@ var parseCardsText = {
 			"name": "Valet de Medivh",
 			"text": "<b>Cri de guerre :</b> si vous contrôlez un <b>Secret</b>, inflige 3 points de dégâts."
 		},
-		"goldenImage": "KAR_092.gif",
 		"health": 3,
 		"id": "KAR_092",
 		"name": "Medivh's Valet",
@@ -42392,13 +41446,13 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 1,
-		"cardImage": "CS2_091.png",
 		"collectible": true,
 		"cost": 1,
 		"durability": 4,
 		"fr": {
 			"name": "Justice de la Lumière"
 		},
+		"goldenImage": "CS2_091.gif",
 		"id": "CS2_091",
 		"name": "Light's Justice",
 		"playerClass": "Paladin",
@@ -42413,7 +41467,6 @@ var parseCardsText = {
 			"name": "Des diablotins !",
 			"text": "Invoque 2 diablotins dégoûtants."
 		},
-		"goldenImage": "KARA_09_03.gif",
 		"id": "KARA_09_03",
 		"name": "Many Imps!",
 		"playerClass": "Neutral",
@@ -42424,13 +41477,13 @@ var parseCardsText = {
 	{
 		"artist": "Jonathan Ryder",
 		"attack": 0,
-		"cardImage": "EX1_565.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Totem Langue de feu",
 			"text": "Les serviteurs adjacents ont +2 ATQ."
 		},
+		"goldenImage": "EX1_565.gif",
 		"health": 3,
 		"id": "EX1_565",
 		"name": "Flametongue Totem",
@@ -42446,7 +41499,6 @@ var parseCardsText = {
 			"name": "Portail de fête !",
 			"text": "Invoque un fêtard aléatoire."
 		},
-		"goldenImage": "TB_KaraPortal_001.gif",
 		"id": "TB_KaraPortal_001",
 		"name": "Party Portal!",
 		"playerClass": "Neutral",
@@ -42460,7 +41512,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Miroir magique"
 		},
-		"goldenImage": "KAR_A01_01.gif",
 		"health": 30,
 		"id": "KAR_A01_01",
 		"name": "Magic Mirror",
@@ -42471,13 +41522,13 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielson",
 		"attack": 3,
-		"cardImage": "AT_076.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Chevalier murloc",
 			"text": "<b>Exaltation :</b> invoque un murloc aléatoire."
 		},
+		"goldenImage": "AT_076.gif",
 		"health": 4,
 		"id": "AT_076",
 		"name": "Murloc Knight",
@@ -42492,7 +41543,6 @@ var parseCardsText = {
 			"name": "Égalité",
 			"text": "Les points de vie sont passés à 1."
 		},
-		"goldenImage": "EX1_619e.gif",
 		"id": "EX1_619e",
 		"name": "Equality",
 		"playerClass": "Paladin",
@@ -42506,7 +41556,6 @@ var parseCardsText = {
 			"name": "Souffle de givre",
 			"text": "<b>Pouvoir héroïque</b>\nDétruit tous les serviteurs\n adverses qui ne sont pas <b>gelés</b>."
 		},
-		"goldenImage": "NAX14_02.gif",
 		"id": "NAX14_02",
 		"name": "Frost Breath",
 		"playerClass": "Neutral",
@@ -42516,12 +41565,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
-		"cardImage": "AT_042t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Lion dent-de-sabre",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "AT_042t.gif",
 		"health": 1,
 		"id": "AT_042t",
 		"name": "Sabertooth Lion",
@@ -42536,7 +41585,6 @@ var parseCardsText = {
 			"name": "Potion de puissance",
 			"text": "+2/+2."
 		},
-		"goldenImage": "BRMA15_2He.gif",
 		"id": "BRMA15_2He",
 		"name": "Potion of Might",
 		"playerClass": "Neutral",
@@ -42549,7 +41597,6 @@ var parseCardsText = {
 			"name": "Lames tourbillonnantes",
 			"text": "+1 ATQ."
 		},
-		"goldenImage": "PART_007e.gif",
 		"id": "PART_007e",
 		"name": "Whirling Blades",
 		"playerClass": "Neutral",
@@ -42559,11 +41606,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
-		"cardImage": "NAX13_05H.png",
 		"cost": 5,
 		"fr": {
 			"name": "Stalagg"
 		},
+		"goldenImage": "NAX13_05H.gif",
 		"health": 4,
 		"id": "NAX13_05H",
 		"name": "Stalagg",
@@ -42575,7 +41622,6 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 3,
-		"cardImage": "CS2_124.png",
 		"collectible": true,
 		"cost": 3,
 		"faction": "HORDE",
@@ -42583,6 +41629,7 @@ var parseCardsText = {
 			"name": "Chevaucheur de loup",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_124.gif",
 		"health": 1,
 		"id": "CS2_124",
 		"name": "Wolfrider",
@@ -42595,13 +41642,13 @@ var parseCardsText = {
 	{
 		"artist": "Mark Abadier",
 		"attack": 5,
-		"cardImage": "OG_207.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Invocateur sans-visage",
 			"text": "<b>Cri de guerre :</b> invoque un serviteur aléatoire coûtant 3 cristaux."
 		},
+		"goldenImage": "OG_207.gif",
 		"health": 5,
 		"id": "OG_207",
 		"name": "Faceless Summoner",
@@ -42613,13 +41660,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Vance Kovacs",
-		"cardImage": "CS2_022.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Métamorphose",
 			"text": "Transforme un serviteur en mouton 1/1."
 		},
+		"goldenImage": "CS2_022.gif",
 		"id": "CS2_022",
 		"name": "Polymorph",
 		"playerClass": "Mage",
@@ -42629,7 +41676,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_CoOpv3_202.png",
 		"cost": 0,
 		"fr": {
 			"name": "Balayage vicieux",
@@ -42648,7 +41694,6 @@ var parseCardsText = {
 			"name": "Frappe de Nefarian",
 			"text": "<b>Pouvoir héroïque</b>\nNefarian fait pleuvoir le feu depuis les cieux !"
 		},
-		"goldenImage": "BRMA17_8.gif",
 		"id": "BRMA17_8",
 		"name": "Nefarian Strikes!",
 		"playerClass": "Neutral",
@@ -42662,7 +41707,6 @@ var parseCardsText = {
 			"name": "Foule moqueuse",
 			"text": "Invoque un spectateur 1/1 avec <b>Provocation</b>."
 		},
-		"goldenImage": "BRMA02_2_2c_TB.gif",
 		"id": "BRMA02_2_2c_TB",
 		"name": "Jeering Crowd",
 		"playerClass": "Neutral",
@@ -42672,13 +41716,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Raymond Swanland",
-		"cardImage": "EX1_354.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Imposition des mains",
 			"text": "Rend #8 |4(point,points) de vie. Vous piochez 3 cartes."
 		},
+		"goldenImage": "EX1_354.gif",
 		"id": "EX1_354",
 		"name": "Lay on Hands",
 		"playerClass": "Paladin",
@@ -42690,13 +41734,13 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 2,
-		"cardImage": "CFM_715.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Esprit de jade",
 			"text": "<b>Cri de guerre :</b> invoque un <b>golem de jade</b> {0}.@<b>Cri de guerre :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_715.gif",
 		"health": 3,
 		"id": "CFM_715",
 		"name": "Jade Spirit",
@@ -42707,12 +41751,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "XXX_029.png",
 		"cost": 0,
 		"fr": {
 			"name": "Opponent Concede",
 			"text": "Force your opponent to concede."
 		},
+		"goldenImage": "XXX_029.gif",
 		"id": "XXX_029",
 		"name": "Opponent Concede",
 		"playerClass": "Neutral",
@@ -42722,13 +41766,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Milivoj Ceran",
-		"cardImage": "OG_090.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Grimoire de cabaliste",
 			"text": "Place 3 sorts de mage aléatoires dans votre main."
 		},
+		"goldenImage": "OG_090.gif",
 		"id": "OG_090",
 		"name": "Cabalist's Tome",
 		"playerClass": "Mage",
@@ -42740,7 +41784,6 @@ var parseCardsText = {
 	{
 		"artist": "Ryan Sook",
 		"attack": 4,
-		"cardImage": "CS2_097.png",
 		"collectible": true,
 		"cost": 4,
 		"durability": 2,
@@ -42748,6 +41791,7 @@ var parseCardsText = {
 			"name": "Championne en vrai-argent",
 			"text": "Chaque fois que votre héros attaque, lui rend 2 PV."
 		},
+		"goldenImage": "CS2_097.gif",
 		"id": "CS2_097",
 		"name": "Truesilver Champion",
 		"playerClass": "Paladin",
@@ -42759,13 +41803,13 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 4,
-		"cardImage": "GVG_101.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Purificateur écarlate",
 			"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts à tous les serviteurs avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "GVG_101.gif",
 		"health": 3,
 		"id": "GVG_101",
 		"name": "Scarlet Purifier",
@@ -42778,13 +41822,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 7,
-		"cardImage": "OG_121.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Cho’gall",
 			"text": "<b>Cri de guerre :</b> le prochain sort que vous lancez ce tour coûte des points de vie plutôt que des cristaux de mana."
 		},
+		"goldenImage": "OG_121.gif",
 		"health": 7,
 		"id": "OG_121",
 		"name": "Cho'gall",
@@ -42795,12 +41839,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "GVG_030a.png",
 		"cost": 0,
 		"fr": {
 			"name": "Mode Attaque",
 			"text": "+1 ATQ."
 		},
+		"goldenImage": "GVG_030a.gif",
 		"id": "GVG_030a",
 		"name": "Attack Mode",
 		"playerClass": "Druid",
@@ -42811,13 +41855,13 @@ var parseCardsText = {
 	{
 		"artist": "Greg Staples",
 		"attack": 8,
-		"cardImage": "EX1_298.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Ragnaros, seigneur du feu",
 			"text": "Ne peut pas attaquer. À la fin de votre tour, inflige 8 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "EX1_298.gif",
 		"health": 8,
 		"id": "EX1_298",
 		"name": "Ragnaros the Firelord",
@@ -42832,7 +41876,6 @@ var parseCardsText = {
 			"name": "Croissance",
 			"text": "Gruul est en train de grandir..."
 		},
-		"goldenImage": "NEW1_038o.gif",
 		"id": "NEW1_038o",
 		"name": "Growth",
 		"playerClass": "Neutral",
@@ -42843,13 +41886,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Alexandrov",
 		"attack": 1,
-		"cardImage": "OG_174.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Traînard sans-visage",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> copie l’Attaque et la Vie d’un serviteur allié."
 		},
+		"goldenImage": "OG_174.gif",
 		"health": 1,
 		"id": "OG_174",
 		"name": "Faceless Shambler",
@@ -42862,7 +41905,6 @@ var parseCardsText = {
 	{
 		"artist": "Michael Franchina",
 		"attack": 3,
-		"cardImage": "AT_065.png",
 		"collectible": true,
 		"cost": 3,
 		"durability": 2,
@@ -42870,6 +41912,7 @@ var parseCardsText = {
 			"name": "Défenseur du roi",
 			"text": "<b>Cri de guerre :</b> gagne\n+1 Durabilité si vous avez un serviteur avec <b>Provocation</b>."
 		},
+		"goldenImage": "AT_065.gif",
 		"id": "AT_065",
 		"name": "King's Defender",
 		"playerClass": "Warrior",
@@ -42881,11 +41924,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 1,
-		"cardImage": "OG_061t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Mastiff"
 		},
+		"goldenImage": "OG_061t.gif",
 		"health": 1,
 		"id": "OG_061t",
 		"name": "Mastiff",
@@ -42895,13 +41938,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Tappin",
-		"cardImage": "EX1_160.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Puissance du fauve",
 			"text": "<b>Choix des armes :</b>\ndonne +1/+1 à vos serviteurs ou invoque une panthère 3/2."
 		},
+		"goldenImage": "EX1_160.gif",
 		"id": "EX1_160",
 		"name": "Power of the Wild",
 		"playerClass": "Druid",
@@ -42911,7 +41954,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "TB_DiscoverMyDeck_Enchantment.png",
 		"fr": {
 			"name": "Enchantement Découvrir mon deck"
 		},
@@ -42924,13 +41966,13 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"attack": 4,
-		"cardImage": "GVG_074.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Mystique de Kezan",
 			"text": "<b>Cri de guerre :</b> prend le contrôle d’un <b>Secret</b> adverse aléatoire."
 		},
+		"goldenImage": "GVG_074.gif",
 		"health": 3,
 		"id": "GVG_074",
 		"name": "Kezan Mystic",
@@ -42942,7 +41984,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sojin Hwang",
-		"cardImage": "CFM_851e.png",
 		"fr": {
 			"name": "Le scoop",
 			"text": "Caractéristiques augmentées."
@@ -42958,7 +41999,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Enchantement de fuite du temple"
 		},
-		"goldenImage": "LOEA04_01e.gif",
 		"id": "LOEA04_01e",
 		"name": "Temple Escape Enchant",
 		"playerClass": "Neutral",
@@ -42968,13 +42008,13 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 3,
-		"cardImage": "AT_124.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Bolf Bélier-Frondeur",
 			"text": "Chaque fois que votre héros subit des dégâts, les inflige à ce serviteur à la place."
 		},
+		"goldenImage": "AT_124.gif",
 		"health": 9,
 		"id": "AT_124",
 		"name": "Bolf Ramshield",
@@ -42987,13 +42027,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 5,
-		"cardImage": "EX1_558.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Harrison Jones",
 			"text": "<b>Cri de guerre :</b> détruit l’arme de votre adversaire. Vous piochez le nombre de cartes équivalent à sa durabilité."
 		},
+		"goldenImage": "EX1_558.gif",
 		"health": 4,
 		"id": "EX1_558",
 		"name": "Harrison Jones",
@@ -43009,7 +42049,6 @@ var parseCardsText = {
 			"name": "Grouillement",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un nérubien 3/1."
 		},
-		"goldenImage": "NAX1_04.gif",
 		"id": "NAX1_04",
 		"name": "Skitter",
 		"playerClass": "Neutral",
@@ -43018,11 +42057,11 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "XXX_028.png",
 		"cost": 0,
 		"fr": {
 			"name": "Reveal Hand"
 		},
+		"goldenImage": "XXX_028.gif",
 		"id": "XXX_028",
 		"name": "Reveal Hand",
 		"playerClass": "Neutral",
@@ -43032,12 +42071,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "LOE_016t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Rocher",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOE_016t.gif",
 		"health": 6,
 		"id": "LOE_016t",
 		"name": "Rock",
@@ -43049,13 +42088,13 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 1,
-		"cardImage": "OG_284.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Géomancienne du Crépuscule",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> confère <b>Provocation</b> à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_284.gif",
 		"health": 4,
 		"id": "OG_284",
 		"name": "Twilight Geomancer",
@@ -43078,12 +42117,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "XXX_010.png",
 		"cost": 0,
 		"fr": {
 			"name": "Silence - debug",
 			"text": "Remove all enchantments and powers from a minion."
 		},
+		"goldenImage": "XXX_010.gif",
 		"id": "XXX_010",
 		"name": "Silence - debug",
 		"playerClass": "Neutral",
@@ -43095,13 +42134,13 @@ var parseCardsText = {
 	{
 		"artist": "Ron Spencer",
 		"attack": 4,
-		"cardImage": "NEW1_014.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Maîtresse du déguisement",
 			"text": "<b>Cri de guerre :</b> confère <b>Camouflage</b> à un serviteur allié jusqu’à votre prochain tour."
 		},
+		"goldenImage": "NEW1_014.gif",
 		"health": 4,
 		"id": "NEW1_014",
 		"name": "Master of Disguise",
@@ -43113,12 +42152,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "CRED_32.png",
 		"cost": 2,
 		"fr": {
 			"name": "Jerry Mascho",
 			"text": "Inflige 1 point de dégâts au début de votre tour. Si cette carte est dorée, inflige à la place 1 point de dégâts à la fin de votre tour. BLAGUE HAN SOLO."
 		},
+		"goldenImage": "CRED_32.gif",
 		"health": 2,
 		"id": "CRED_32",
 		"name": "Jerry Mascho",
@@ -43131,11 +42170,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 19,
-		"cardImage": "CFM_712_t19.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t19.gif",
 		"health": 19,
 		"id": "CFM_712_t19",
 		"name": "Jade Golem",
@@ -43146,13 +42185,13 @@ var parseCardsText = {
 	{
 		"artist": "Ryan Metcalf",
 		"attack": 3,
-		"cardImage": "AT_028.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Chevaucheur pandashan",
 			"text": "<b>Combo :</b> gagne +3 ATQ."
 		},
+		"goldenImage": "AT_028.gif",
 		"health": 7,
 		"id": "AT_028",
 		"name": "Shado-Pan Rider",
@@ -43165,13 +42204,13 @@ var parseCardsText = {
 	{
 		"artist": "Vance Kovacs",
 		"attack": 3,
-		"cardImage": "EX1_587.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Parlevent",
 			"text": "<b>Cri de guerre :</b> confère <b>Furie des vents</b> à un serviteur allié."
 		},
+		"goldenImage": "EX1_587.gif",
 		"health": 3,
 		"id": "EX1_587",
 		"name": "Windspeaker",
@@ -43187,7 +42226,6 @@ var parseCardsText = {
 			"name": "Rugissement terrifiant",
 			"text": "Renvoie un serviteur adverse dans la main de votre adversaire."
 		},
-		"goldenImage": "KARA_08_05H.gif",
 		"id": "KARA_08_05H",
 		"name": "Terrifying Roar",
 		"playerClass": "Neutral",
@@ -43198,12 +42236,12 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 10,
-		"cardImage": "CFM_324t.png",
 		"cost": 5,
 		"fr": {
 			"name": "Le gardien des tempêtes",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CFM_324t.gif",
 		"health": 10,
 		"id": "CFM_324t",
 		"name": "The Storm Guardian",
@@ -43214,7 +42252,6 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "TB_SPT_DPromo_EnterPortal.png",
 		"cost": 0,
 		"fr": {
 			"name": "Ouverture du portail",
@@ -43234,7 +42271,6 @@ var parseCardsText = {
 			"name": "Légion",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un abyssal 6/6."
 		},
-		"goldenImage": "KARA_00_02.gif",
 		"id": "KARA_00_02",
 		"name": "Legion",
 		"playerClass": "Neutral",
@@ -43243,12 +42279,12 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
-		"cardImage": "TB_PickYourFate_8.png",
 		"cost": 0,
 		"fr": {
 			"name": "Bonus : sorts",
 			"text": "Chaque fois que vous lancez un sort, vous gagnez 3 points d’armure."
 		},
+		"goldenImage": "TB_PickYourFate_8.gif",
 		"id": "TB_PickYourFate_8",
 		"name": "Spell Bonus",
 		"playerClass": "Neutral",
@@ -43260,7 +42296,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "TBRandomCardCost"
 		},
-		"goldenImage": "TB_RandCardCost.gif",
 		"id": "TB_RandCardCost",
 		"name": "TBRandomCardCost",
 		"playerClass": "Neutral",
@@ -43270,13 +42305,13 @@ var parseCardsText = {
 	{
 		"artist": "Nate Bowden",
 		"attack": 3,
-		"cardImage": "FP1_012.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Crache-vase",
 			"text": "<b>Provocation.\nRâle d’agonie :</b> invoque une gelée 1/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "FP1_012.gif",
 		"health": 5,
 		"id": "FP1_012",
 		"name": "Sludge Belcher",
@@ -43288,13 +42323,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Richard Wright",
-		"cardImage": "NEW1_007.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Météores",
 			"text": "<b>Choix des armes :</b> inflige $5 |4(point,points) de dégâts à un serviteur ; ou $2 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "NEW1_007.gif",
 		"id": "NEW1_007",
 		"name": "Starfall",
 		"playerClass": "Druid",
@@ -43306,13 +42341,13 @@ var parseCardsText = {
 	{
 		"artist": "Stanley Lau",
 		"attack": 2,
-		"cardImage": "BRM_010.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Druidesse de la Flamme",
 			"text": "<b>Choix des armes :</b> se transforme en un serviteur 5/2 ou en un serviteur 2/5."
 		},
+		"goldenImage": "BRM_010.gif",
 		"health": 2,
 		"id": "BRM_010",
 		"name": "Druid of the Flame",
@@ -43324,12 +42359,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler Walpole",
-		"cardImage": "OG_080b.png",
 		"cost": 1,
 		"fr": {
 			"name": "Toxine de sang-royal",
 			"text": "Vous piochez une carte."
 		},
+		"goldenImage": "OG_080b.gif",
 		"id": "OG_080b",
 		"name": "Kingsblood Toxin",
 		"playerClass": "Rogue",
@@ -43341,7 +42376,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "TBMechWarCommonCards"
 		},
-		"goldenImage": "TB_MechWar_CommonCards.gif",
 		"id": "TB_MechWar_CommonCards",
 		"name": "TBMechWarCommonCards",
 		"playerClass": "Neutral",
@@ -43349,10 +42383,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TU4b_001.png",
 		"fr": {
 			"name": "Millhouse Tempête-de-Mana"
 		},
+		"goldenImage": "TU4b_001.gif",
 		"health": 20,
 		"id": "TU4b_001",
 		"name": "Millhouse Manastorm",
@@ -43364,13 +42398,13 @@ var parseCardsText = {
 	{
 		"artist": "Jun Kang",
 		"attack": 2,
-		"cardImage": "GVG_087.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Sniper de Gentepression",
 			"text": "Votre pouvoir héroïque peut viser les serviteurs."
 		},
+		"goldenImage": "GVG_087.gif",
 		"health": 3,
 		"id": "GVG_087",
 		"name": "Steamwheedle Sniper",
@@ -43382,7 +42416,6 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
-		"cardImage": "TB_SPT_DPromoCrate1.png",
 		"cost": 1,
 		"fr": {
 			"name": "Râtelier d’armes",
@@ -43402,7 +42435,6 @@ var parseCardsText = {
 			"name": "Activation !",
 			"text": "<b>Pouvoir héroïque</b>\nActive un Tron aléatoire."
 		},
-		"goldenImage": "BRMA14_10H_TB.gif",
 		"id": "BRMA14_10H_TB",
 		"name": "Activate!",
 		"playerClass": "Neutral",
@@ -43415,7 +42447,6 @@ var parseCardsText = {
 			"name": "Feu intérieur",
 			"text": "L’Attaque de ce serviteur est égale à ses PV."
 		},
-		"goldenImage": "CS1_129e.gif",
 		"id": "CS1_129e",
 		"name": "Inner Fire",
 		"playerClass": "Priest",
@@ -43424,10 +42455,10 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA11_1H.png",
 		"fr": {
 			"name": "Vaelastrasz le Corrompu"
 		},
+		"goldenImage": "BRMA11_1H.gif",
 		"health": 30,
 		"id": "BRMA11_1H",
 		"name": "Vaelastrasz the Corrupt",
@@ -43441,7 +42472,6 @@ var parseCardsText = {
 			"name": "Perle des marées",
 			"text": "À la fin de votre tour, remplace tous les serviteurs par de nouveaux coûtant (1) |4(cristal,cristaux) de plus."
 		},
-		"goldenImage": "LOEA12_2.gif",
 		"id": "LOEA12_2",
 		"name": "Pearl of the Tides",
 		"playerClass": "Neutral",
@@ -43451,12 +42481,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "XXX_024.png",
 		"cost": 0,
 		"fr": {
 			"name": "Damage Reflector",
 			"text": "Whenever this minion takes damage, deal 1 damage to ALL other characters."
 		},
+		"goldenImage": "XXX_024.gif",
 		"health": 10,
 		"id": "XXX_024",
 		"name": "Damage Reflector",
@@ -43469,13 +42499,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
-		"cardImage": "AT_070.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Cap’taine céleste Kragg",
 			"text": "<b>Charrrrrge</b>\nCoûte (1) |4(cristal,cristaux) de moins pour chaque pirate allié."
 		},
+		"goldenImage": "AT_070.gif",
 		"health": 6,
 		"id": "AT_070",
 		"name": "Skycap'n Kragg",
@@ -43493,7 +42523,6 @@ var parseCardsText = {
 			"name": "Tour blanche",
 			"text": "<b>Attaque automatique :</b> inflige 2 points de dégâts aux adversaires en face de ce serviteur."
 		},
-		"goldenImage": "KAR_A10_04.gif",
 		"health": 6,
 		"id": "KAR_A10_04",
 		"name": "White Rook",
@@ -43507,7 +42536,6 @@ var parseCardsText = {
 			"name": "Améliorée",
 			"text": "+1 ATQ et +1 Durabilité."
 		},
-		"goldenImage": "EX1_409e.gif",
 		"id": "EX1_409e",
 		"name": "Upgraded",
 		"playerClass": "Warrior",
@@ -43517,13 +42545,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jim Nelson",
-		"cardImage": "AT_073.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Esprit combatif",
 			"text": "<b>Secret :</b> donne +1/+1 à vos serviteurs quand votre tour commence."
 		},
+		"goldenImage": "AT_073.gif",
 		"id": "AT_073",
 		"name": "Competitive Spirit",
 		"playerClass": "Paladin",
@@ -43535,13 +42563,13 @@ var parseCardsText = {
 	{
 		"artist": "Sean O’Daniels",
 		"attack": 0,
-		"cardImage": "EX1_006.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Robot d’alarme",
 			"text": "Au début de votre tour, échange ce serviteur avec un autre choisi au hasard dans votre main."
 		},
+		"goldenImage": "EX1_006.gif",
 		"health": 3,
 		"id": "EX1_006",
 		"name": "Alarm-o-Bot",
@@ -43554,13 +42582,13 @@ var parseCardsText = {
 	{
 		"artist": "Cole Eastburn",
 		"attack": 4,
-		"cardImage": "OG_188.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Tisse-ambre klaxxi",
 			"text": "<b>Cri de guerre :</b> gagne\n+5 PV si votre C’Thun a au moins 10 Attaque."
 		},
+		"goldenImage": "OG_188.gif",
 		"health": 5,
 		"id": "OG_188",
 		"name": "Klaxxi Amber-Weaver",
@@ -43571,10 +42599,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA03_1H.png",
 		"fr": {
 			"name": "Empereur Thaurissan"
 		},
+		"goldenImage": "BRMA03_1H.gif",
 		"health": 30,
 		"id": "BRMA03_1H",
 		"name": "Emperor Thaurissan",
@@ -43588,7 +42616,6 @@ var parseCardsText = {
 			"name": "Destroy ALL Secrets",
 			"text": "Destroy all <b>Secrets:</b>."
 		},
-		"goldenImage": "XXX_063.gif",
 		"id": "XXX_063",
 		"name": "Destroy ALL Secrets",
 		"playerClass": "Neutral",
@@ -43597,12 +42624,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_055.png",
 		"cost": 0,
 		"fr": {
 			"name": "1000 Stats",
 			"text": "Give a Minion +1000/+1000"
 		},
+		"goldenImage": "XXX_055.gif",
 		"id": "XXX_055",
 		"name": "1000 Stats",
 		"playerClass": "Neutral",
@@ -43612,13 +42639,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "NAX12_03.png",
 		"cost": 1,
 		"durability": 5,
 		"fr": {
 			"name": "Mâchoires",
 			"text": "Gagne +2 ATQ chaque fois qu’un serviteur avec <b>Râle d’agonie</b> meurt."
 		},
+		"goldenImage": "NAX12_03.gif",
 		"id": "NAX12_03",
 		"name": "Jaws",
 		"playerClass": "Neutral",
@@ -43630,7 +42657,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Conservateur"
 		},
-		"goldenImage": "KARA_07_01heroic.gif",
 		"health": 40,
 		"id": "KARA_07_01heroic",
 		"name": "Curator",
@@ -43640,12 +42666,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Joe Wilson",
-		"cardImage": "OG_080e.png",
 		"cost": 1,
 		"fr": {
 			"name": "Toxine de pâlerette",
 			"text": "Confère <b>Camouflage</b> à un serviteur allié jusqu’à votre prochain tour."
 		},
+		"goldenImage": "OG_080e.gif",
 		"id": "OG_080e",
 		"name": "Fadeleaf Toxin",
 		"playerClass": "Rogue",
@@ -43658,7 +42684,6 @@ var parseCardsText = {
 			"name": "Accès de rage",
 			"text": "+6 ATQ pendant ce tour."
 		},
-		"goldenImage": "NAX12_04e.gif",
 		"id": "NAX12_04e",
 		"name": "Enrage",
 		"playerClass": "Neutral",
@@ -43672,7 +42697,6 @@ var parseCardsText = {
 			"name": "Foule moqueuse",
 			"text": "<b>Pouvoir héroïque</b>\nInvoque un spectateur 1/1 avec <b>Provocation</b>."
 		},
-		"goldenImage": "BRMA02_2.gif",
 		"id": "BRMA02_2",
 		"name": "Jeering Crowd",
 		"playerClass": "Neutral",
@@ -43685,7 +42709,6 @@ var parseCardsText = {
 			"name": "Sceau de Lumière",
 			"text": "+2 ATQ pendant ce tour."
 		},
-		"goldenImage": "GVG_057a.gif",
 		"id": "GVG_057a",
 		"name": "Seal of Light",
 		"playerClass": "Neutral",
@@ -43695,12 +42718,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
-		"cardImage": "TB_KTRAF_8.png",
 		"cost": 8,
 		"fr": {
 			"name": "Instructeur Razuvious",
 			"text": "<b>Cri de guerre :</b> vous équipe d’une Lame runique massive 5/2."
 		},
+		"goldenImage": "TB_KTRAF_8.gif",
 		"health": 3,
 		"id": "TB_KTRAF_8",
 		"name": "Instructor Razuvious",
@@ -43713,13 +42736,13 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 7,
-		"cardImage": "OG_255.png",
 		"collectible": true,
 		"cost": 8,
 		"fr": {
 			"name": "Implorateur funeste",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>. S’il est mort, le place dans votre deck."
 		},
+		"goldenImage": "OG_255.gif",
 		"health": 9,
 		"id": "OG_255",
 		"name": "Doomcaller",
@@ -43730,12 +42753,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA16_4.png",
 		"cost": 1,
 		"fr": {
 			"name": "Gong réverbérant",
 			"text": "Détruit l’arme de votre adversaire."
 		},
+		"goldenImage": "BRMA16_4.gif",
 		"id": "BRMA16_4",
 		"name": "Reverberating Gong",
 		"playerClass": "Neutral",
@@ -43746,13 +42769,13 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielson",
 		"attack": 2,
-		"cardImage": "LOE_089.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Avortons tremblants",
 			"text": "<b>Râle d’agonie :</b> invoque trois avortons 2/2."
 		},
+		"goldenImage": "LOE_089.gif",
 		"health": 6,
 		"id": "LOE_089",
 		"name": "Wobbling Runts",
@@ -43763,12 +42786,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA12_4H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Affliction de l’espèce : vert",
 			"text": "Rend 6 PV à votre adversaire au début de votre tour tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_4H.gif",
 		"id": "BRMA12_4H",
 		"name": "Brood Affliction: Green",
 		"playerClass": "Neutral",
@@ -43777,10 +42800,10 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "NAX5_01.png",
 		"fr": {
 			"name": "Heigan l’Impur"
 		},
+		"goldenImage": "NAX5_01.gif",
 		"health": 30,
 		"id": "NAX5_01",
 		"name": "Heigan the Unclean",
@@ -43792,7 +42815,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Fate 11 Ench. Murloc"
 		},
-		"goldenImage": "TB_PickYourFate_11_Ench.gif",
 		"id": "TB_PickYourFate_11_Ench",
 		"name": "Fate 11 Ench. Murloc",
 		"playerClass": "Neutral",
@@ -43802,13 +42824,13 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 4,
-		"cardImage": "CFM_656.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Enquêteur perspicace",
 			"text": "<b>Cri de guerre :</b> les serviteurs adverses perdent le <b>Camouflage</b>."
 		},
+		"goldenImage": "CFM_656.gif",
 		"health": 6,
 		"id": "CFM_656",
 		"name": "Streetwise Investigator",
@@ -43820,13 +42842,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Hideaki Takamura",
-		"cardImage": "OG_086.png",
 		"collectible": true,
 		"cost": 0,
 		"fr": {
 			"name": "Flamme interdite",
 			"text": "Dépense tous vos cristaux de mana. Inflige l’équivalent sous forme de dégâts à un serviteur."
 		},
+		"goldenImage": "OG_086.gif",
 		"id": "OG_086",
 		"name": "Forbidden Flame",
 		"playerClass": "Mage",
@@ -43838,13 +42860,13 @@ var parseCardsText = {
 	{
 		"artist": "Grace Lui",
 		"attack": 5,
-		"cardImage": "CFM_852.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Agents du Lotus",
 			"text": "<b>Cri de guerre :</b> <b>découvre</b> une carte de druide, voleur ou chaman."
 		},
+		"goldenImage": "CFM_852.gif",
 		"health": 3,
 		"id": "CFM_852",
 		"name": "Lotus Agents",
@@ -43859,7 +42881,6 @@ var parseCardsText = {
 			"name": "Libéré !",
 			"text": "Votre prochain Dragon coûte (2) cristaux de moins."
 		},
-		"goldenImage": "BRM_018e.gif",
 		"id": "BRM_018e",
 		"name": "Unchained!",
 		"playerClass": "Paladin",
@@ -43868,12 +42889,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRM_010b.png",
 		"cost": 0,
 		"fr": {
 			"name": "Forme de faucon-de-feu",
 			"text": "Se transforme en un serviteur 2/5."
 		},
+		"goldenImage": "BRM_010b.gif",
 		"id": "BRM_010b",
 		"name": "Fire Hawk Form",
 		"playerClass": "Druid",
@@ -43883,12 +42904,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA13_8.png",
 		"cost": 0,
 		"fr": {
 			"name": "MEURS, INSECTE !",
 			"text": "Inflige $8 |4(point,points) de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "BRMA13_8.gif",
 		"id": "BRMA13_8",
 		"name": "DIE, INSECT!",
 		"playerClass": "Neutral",
@@ -43899,13 +42920,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
-		"cardImage": "LOE_119.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Armure animée",
 			"text": "Votre héros ne peut pas subir plus de 1 point de dégâts à la fois."
 		},
+		"goldenImage": "LOE_119.gif",
 		"health": 4,
 		"id": "LOE_119",
 		"name": "Animated Armor",
@@ -43917,13 +42938,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matthew O'Connor",
-		"cardImage": "CFM_602.png",
 		"collectible": true,
 		"cost": 1,
 		"fr": {
 			"name": "Idole de jade",
 			"text": "<b>Choix des armes :</b> invoque un <b>golem de jade</b> {0} ou place 3 copies de cette carte dans votre deck.@<b>Choix des armes :</b> invoque un <b>golem de jade</b> ou place 3 copies de cette carte dans votre deck."
 		},
+		"goldenImage": "CFM_602.gif",
 		"id": "CFM_602",
 		"name": "Jade Idol",
 		"playerClass": "Druid",
@@ -43935,13 +42956,13 @@ var parseCardsText = {
 	{
 		"artist": "Aleksi Briclot",
 		"attack": 3,
-		"cardImage": "GVG_068.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Trogg mâcheroc mastoc",
 			"text": "Chaque fois que votre adversaire lance un sort, gagne +2 ATQ."
 		},
+		"goldenImage": "GVG_068.gif",
 		"health": 5,
 		"id": "GVG_068",
 		"name": "Burly Rockjaw Trogg",
@@ -43954,7 +42975,6 @@ var parseCardsText = {
 	{
 		"artist": "Gabe from Penny Arcade",
 		"attack": 6,
-		"cardImage": "EX1_116.png",
 		"collectible": true,
 		"cost": 5,
 		"faction": "ALLIANCE",
@@ -43962,6 +42982,7 @@ var parseCardsText = {
 			"name": "Leeroy Jenkins",
 			"text": "<b>Charge</b>. <b>Cri de guerre :</b> invoque deux dragonnets 1/1 pour votre adversaire."
 		},
+		"goldenImage": "EX1_116.gif",
 		"health": 2,
 		"id": "EX1_116",
 		"name": "Leeroy Jenkins",
@@ -43978,7 +42999,6 @@ var parseCardsText = {
 			"name": "Pion noir",
 			"text": "<b>Attaque automatique :</b> inflige 1 point de dégâts aux adversaires en face de ce serviteur."
 		},
-		"goldenImage": "KAR_A10_01.gif",
 		"health": 6,
 		"id": "KAR_A10_01",
 		"name": "Black Pawn",
@@ -43990,13 +43010,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
-		"cardImage": "GVG_084.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Machine volante",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "GVG_084.gif",
 		"health": 4,
 		"id": "GVG_084",
 		"name": "Flying Machine",
@@ -44009,13 +43029,13 @@ var parseCardsText = {
 	{
 		"artist": "Lucas Graciano",
 		"attack": 6,
-		"cardImage": "BRM_025.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Drake volcanique",
 			"text": "Coûte (1) |4(cristal,cristaux) de moins pour chaque serviteur mort pendant ce tour."
 		},
+		"goldenImage": "BRM_025.gif",
 		"health": 4,
 		"id": "BRM_025",
 		"name": "Volcanic Drake",
@@ -44027,12 +43047,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 6,
-		"cardImage": "BRMC_90.png",
 		"cost": 2,
 		"fr": {
 			"name": "Lave vivante",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMC_90.gif",
 		"health": 6,
 		"id": "BRMC_90",
 		"name": "Living Lava",
@@ -44044,13 +43064,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
-		"cardImage": "EX1_506.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Chasse-marée murloc",
 			"text": "<b>Cri de guerre :</b> invoque un éclaireur murloc 1/1."
 		},
+		"goldenImage": "EX1_506.gif",
 		"health": 1,
 		"id": "EX1_506",
 		"name": "Murloc Tidehunter",
@@ -44063,11 +43083,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 16,
-		"cardImage": "CFM_712_t16.png",
 		"cost": 10,
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t16.gif",
 		"health": 16,
 		"id": "CFM_712_t16",
 		"name": "Jade Golem",
@@ -44076,12 +43096,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "LOEA_01.png",
 		"cost": 3,
 		"fr": {
 			"name": "Présence menaçante",
 			"text": "Vous piochez 2 cartes. Gagne +4 points d’armure."
 		},
+		"goldenImage": "LOEA_01.gif",
 		"id": "LOEA_01",
 		"name": "Looming Presence",
 		"playerClass": "Neutral",
@@ -44092,13 +43112,13 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 10,
-		"cardImage": "OG_042.png",
 		"collectible": true,
 		"cost": 10,
 		"fr": {
 			"name": "Y’Shaarj, la rage déchaînée",
 			"text": "À la fin de votre tour, place un serviteur de votre deck sur le champ de bataille."
 		},
+		"goldenImage": "OG_042.gif",
 		"health": 10,
 		"id": "OG_042",
 		"name": "Y'Shaarj, Rage Unbound",
@@ -44109,10 +43129,10 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"cardImage": "BRMA17_2.png",
 		"fr": {
 			"name": "Nefarian"
 		},
+		"goldenImage": "BRMA17_2.gif",
 		"health": 30,
 		"id": "BRMA17_2",
 		"name": "Nefarian",
@@ -44122,13 +43142,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Izzy Hoover",
-		"cardImage": "CFM_690.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Shuriken de jade",
 			"text": "Inflige $2 |4(point,points) de dégâts. <b>Combo :</b> invoque un <b>golem de jade</b> {0}.@Inflige $2 |4(point,points) de dégâts. <b>Combo :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_690.gif",
 		"id": "CFM_690",
 		"name": "Jade Shuriken",
 		"playerClass": "Rogue",
@@ -44138,12 +43158,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "XXX_016.png",
 		"cost": 0,
 		"fr": {
 			"name": "Snake Ball",
 			"text": "Summon five 1/1 snakes."
 		},
+		"goldenImage": "XXX_016.gif",
 		"id": "XXX_016",
 		"name": "Snake Ball",
 		"playerClass": "Neutral",
@@ -44156,7 +43176,6 @@ var parseCardsText = {
 			"name": "Rempli",
 			"text": "+3/+3."
 		},
-		"goldenImage": "KAR_A02_06He.gif",
 		"id": "KAR_A02_06He",
 		"name": "Filled Up",
 		"playerClass": "Neutral",
@@ -44165,12 +43184,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_PickYourFate_7.png",
 		"cost": 0,
 		"fr": {
 			"name": "Destin : La pièce",
 			"text": "Quand un serviteur meurt, son propriétaire obtient une carte La pièce."
 		},
+		"goldenImage": "TB_PickYourFate_7.gif",
 		"id": "TB_PickYourFate_7",
 		"name": "Fate: Coin",
 		"playerClass": "Neutral",
@@ -44181,13 +43200,13 @@ var parseCardsText = {
 	{
 		"artist": "Greg Staples",
 		"attack": 4,
-		"cardImage": "AT_086.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Saboteur",
 			"text": "<b>Cri de guerre :</b> le pouvoir héroïque de votre adversaire coûte (5) cristaux de plus au tour suivant."
 		},
+		"goldenImage": "AT_086.gif",
 		"health": 3,
 		"id": "AT_086",
 		"name": "Saboteur",
@@ -44202,7 +43221,6 @@ var parseCardsText = {
 			"name": "Bien nourri",
 			"text": "Les points d’Attaque et de Vie sont augmentés."
 		},
-		"goldenImage": "EX1_531e.gif",
 		"id": "EX1_531e",
 		"name": "Well Fed",
 		"playerClass": "Hunter",
@@ -44218,7 +43236,6 @@ var parseCardsText = {
 			"name": "Reine blanche",
 			"text": "<b>Attaque automatique :</b> inflige 4 points de dégâts aux adversaires en face de ce serviteur."
 		},
-		"goldenImage": "KAR_A10_09.gif",
 		"health": 6,
 		"id": "KAR_A10_09",
 		"name": "White Queen",
@@ -44232,7 +43249,6 @@ var parseCardsText = {
 			"name": "Géomancie",
 			"text": "A <b>Provocation</b>."
 		},
-		"goldenImage": "OG_284e.gif",
 		"id": "OG_284e",
 		"name": "Geomancy",
 		"playerClass": "Neutral",
@@ -44243,13 +43259,13 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 5,
-		"cardImage": "BRM_028.png",
 		"collectible": true,
 		"cost": 6,
 		"fr": {
 			"name": "Empereur Thaurissan",
 			"text": "À la fin de votre tour, réduit de (1) |4(cristal,cristaux) le coût des cartes dans votre main."
 		},
+		"goldenImage": "BRM_028.gif",
 		"health": 5,
 		"id": "BRM_028",
 		"name": "Emperor Thaurissan",
@@ -44265,7 +43281,6 @@ var parseCardsText = {
 			"name": "Activer Toxitron",
 			"text": "<b>Pouvoir héroïque</b>\nActive Toxitron !"
 		},
-		"goldenImage": "BRMA14_4.gif",
 		"id": "BRMA14_4",
 		"name": "Activate Toxitron",
 		"playerClass": "Neutral",
@@ -44275,12 +43290,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
-		"cardImage": "CFM_621t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Potion de Kazakus",
 			"text": "{0}\n{1}"
 		},
+		"goldenImage": "CFM_621t.gif",
 		"id": "CFM_621t",
 		"name": "Kazakus Potion",
 		"playerClass": "Neutral",
@@ -44294,7 +43309,6 @@ var parseCardsText = {
 			"name": "Mrglmrgl MRGL !",
 			"text": "<b>Pouvoir héroïque</b>\nVous piochez des cartes jusqu’à en avoir autant en main que votre adversaire."
 		},
-		"goldenImage": "LOEA10_2.gif",
 		"id": "LOEA10_2",
 		"name": "Mrglmrgl MRGL!",
 		"playerClass": "Neutral",
@@ -44305,13 +43319,13 @@ var parseCardsText = {
 	{
 		"artist": "Ian Ameling",
 		"attack": 7,
-		"cardImage": "EX1_249.png",
 		"collectible": true,
 		"cost": 7,
 		"fr": {
 			"name": "Baron Geddon",
 			"text": "À la fin de votre tour, inflige 2 points de dégâts à TOUS les autres personnages."
 		},
+		"goldenImage": "EX1_249.gif",
 		"health": 5,
 		"id": "EX1_249",
 		"name": "Baron Geddon",
@@ -44326,7 +43340,6 @@ var parseCardsText = {
 			"name": "Puissance de l’âme",
 			"text": "Attaque augmentée."
 		},
-		"goldenImage": "OG_302e.gif",
 		"id": "OG_302e",
 		"name": "Soul Power",
 		"playerClass": "Neutral",
@@ -44336,12 +43349,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "NAX9_04.png",
 		"cost": 3,
 		"fr": {
 			"name": "Sire Zeliek",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_04.gif",
 		"health": 7,
 		"id": "NAX9_04",
 		"name": "Sir Zeliek",
@@ -44357,7 +43370,6 @@ var parseCardsText = {
 			"name": "Tir de baliste",
 			"text": "<b>Pouvoir héroïque</b>\nInflige $3 points de dégâts au héros adverse."
 		},
-		"goldenImage": "AT_132_HUNTER.gif",
 		"id": "AT_132_HUNTER",
 		"name": "Ballista Shot",
 		"playerClass": "Hunter",
@@ -44368,13 +43380,13 @@ var parseCardsText = {
 	{
 		"artist": "Andrea Uderzo",
 		"attack": 4,
-		"cardImage": "AT_106.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Champion de la Lumière",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un démon."
 		},
+		"goldenImage": "AT_106.gif",
 		"health": 3,
 		"id": "AT_106",
 		"name": "Light's Champion",
@@ -44391,7 +43403,6 @@ var parseCardsText = {
 			"name": "Évocation",
 			"text": "Gagne 5 cristaux de mana pendant ce tour uniquement."
 		},
-		"goldenImage": "KARA_00_11.gif",
 		"id": "KARA_00_11",
 		"name": "Evocation",
 		"playerClass": "Mage",
@@ -44402,13 +43413,13 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 7,
-		"cardImage": "LOE_107.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Statue sinistre",
 			"text": "Ne peut pas attaquer à moins d’être le seul serviteur sur le champ de bataille."
 		},
+		"goldenImage": "LOE_107.gif",
 		"health": 7,
 		"id": "LOE_107",
 		"name": "Eerie Statue",
@@ -44423,7 +43434,6 @@ var parseCardsText = {
 			"name": "Repentir",
 			"text": "Points de vie réduits à 1."
 		},
-		"goldenImage": "EX1_379e.gif",
 		"id": "EX1_379e",
 		"name": "Repentance",
 		"playerClass": "Paladin",
@@ -44432,12 +43442,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TB_FactionWar_Rag1.png",
 		"cost": 4,
 		"fr": {
 			"name": "MEURS, INSECTE !",
 			"text": "Votre pouvoir héroïque devient « Inflige $8 points de dégâts à un adversaire aléatoire »."
 		},
+		"goldenImage": "TB_FactionWar_Rag1.gif",
 		"id": "TB_FactionWar_Rag1",
 		"name": "DIE, INSECT!",
 		"playerClass": "Neutral",
@@ -44453,7 +43463,6 @@ var parseCardsText = {
 			"name": "Couteau",
 			"text": "Les assiettes ont <b>Provocation</b>."
 		},
-		"goldenImage": "KAR_A02_04.gif",
 		"health": 1,
 		"id": "KAR_A02_04",
 		"name": "Knife",
@@ -44468,7 +43477,6 @@ var parseCardsText = {
 			"name": "Mana enflammé",
 			"text": "<b>Pouvoir héroïque</b>\nInflige 10 points de dégâts au héros adverse s’il lui reste des cristaux de mana inutilisés."
 		},
-		"goldenImage": "BRMA05_2H.gif",
 		"id": "BRMA05_2H",
 		"name": "Ignite Mana",
 		"playerClass": "Neutral",
@@ -44481,7 +43489,6 @@ var parseCardsText = {
 			"name": "ABS",
 			"text": "Vos tours sont plus courts."
 		},
-		"goldenImage": "GAME_004.gif",
 		"id": "GAME_004",
 		"name": "AFK",
 		"playerClass": "Neutral",
@@ -44506,13 +43513,13 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 4,
-		"cardImage": "EX1_284.png",
 		"collectible": true,
 		"cost": 5,
 		"fr": {
 			"name": "Drake azur",
 			"text": "<b>Dégâts des sorts : +1</b>.\n<b>Cri de guerre :</b> vous piochez une carte."
 		},
+		"goldenImage": "EX1_284.gif",
 		"health": 4,
 		"id": "EX1_284",
 		"name": "Azure Drake",
@@ -44529,7 +43536,6 @@ var parseCardsText = {
 			"name": "Murlocs en fuite !",
 			"text": "Invoque deux murlocs aléatoires."
 		},
-		"goldenImage": "KARA_07_03heroic.gif",
 		"id": "KARA_07_03heroic",
 		"name": "Murlocs Escaping!",
 		"playerClass": "Neutral",
@@ -44540,13 +43546,13 @@ var parseCardsText = {
 	{
 		"artist": "Phroi Gardner",
 		"attack": 3,
-		"cardImage": "OG_310.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Régisseuse de Sombre-Comté",
 			"text": "Quand vous invoquez un serviteur à 1 PV, lui donne <b>Bouclier divin</b>."
 		},
+		"goldenImage": "OG_310.gif",
 		"health": 3,
 		"id": "OG_310",
 		"name": "Steward of Darkshire",
@@ -44558,12 +43564,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
-		"cardImage": "EX1_317t.png",
 		"cost": 1,
 		"fr": {
 			"name": "Diablotin sans valeur",
 			"text": "<i>Vous n’avez plus de démons ! Heureusement, il y a toujours des diablotins...</i>"
 		},
+		"goldenImage": "EX1_317t.gif",
 		"health": 1,
 		"id": "EX1_317t",
 		"name": "Worthless Imp",
@@ -44578,7 +43584,6 @@ var parseCardsText = {
 			"name": "Feu démoniaque",
 			"text": "Ce démon a +2/+2."
 		},
-		"goldenImage": "EX1_596e.gif",
 		"id": "EX1_596e",
 		"name": "Demonfire",
 		"playerClass": "Warlock",
@@ -44589,7 +43594,6 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mauricio Herrera",
-		"cardImage": "CFM_755e.png",
 		"fr": {
 			"name": "Contrebande",
 			"text": "L’usurière des Dessoudeurs donne +1/+1."
@@ -44602,12 +43606,12 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "BRMA07_3.png",
 		"cost": 4,
 		"fr": {
 			"name": "CASSE-TÊTE",
 			"text": "Inflige $5 |4(point,points) de dégâts à un adversaire aléatoire. Gagne 5 points d’armure."
 		},
+		"goldenImage": "BRMA07_3.gif",
 		"id": "BRMA07_3",
 		"name": "TIME FOR SMASH",
 		"playerClass": "Neutral",
@@ -44616,12 +43620,12 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"cardImage": "BRMA04_4H.png",
 		"cost": 3,
 		"fr": {
 			"name": "Déchaînement",
 			"text": "Invoque 3 liges du feu. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "BRMA04_4H.gif",
 		"id": "BRMA04_4H",
 		"name": "Rock Out",
 		"overload": 1,
@@ -44633,13 +43637,13 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 3,
-		"cardImage": "GVG_102.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Technicien de Brikabrok",
 			"text": "<b>Cri de guerre :</b> si vous avez un Méca, gagne +1/+1 et ajoute une <b>Pièce détachée</b> dans votre main."
 		},
+		"goldenImage": "GVG_102.gif",
 		"health": 3,
 		"id": "GVG_102",
 		"name": "Tinkertown Technician",
@@ -44655,7 +43659,6 @@ var parseCardsText = {
 			"name": "Génie",
 			"text": "<b>Pouvoir héroïque</b>\nVous piochez 3 cartes."
 		},
-		"goldenImage": "KARA_00_04H.gif",
 		"id": "KARA_00_04H",
 		"name": "Brilliance",
 		"playerClass": "Neutral",
@@ -44665,13 +43668,13 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mark Gibbons",
-		"cardImage": "EX1_334.png",
 		"collectible": true,
 		"cost": 4,
 		"fr": {
 			"name": "Folie de l’ombre",
 			"text": "Prend le contrôle d’un serviteur adverse avec 3 ATQ ou moins jusqu’à la fin du tour."
 		},
+		"goldenImage": "EX1_334.gif",
 		"id": "EX1_334",
 		"name": "Shadow Madness",
 		"playerClass": "Priest",
@@ -44682,12 +43685,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Nutchapol Thitinunthakorn",
-		"cardImage": "PART_001.png",
 		"cost": 1,
 		"fr": {
 			"name": "Plaque d’armure",
 			"text": "Donne +1 PV à un serviteur."
 		},
+		"goldenImage": "PART_001.gif",
 		"id": "PART_001",
 		"name": "Armor Plating",
 		"playerClass": "Neutral",
@@ -44700,7 +43703,6 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nazra Hache-Furieuse"
 		},
-		"goldenImage": "KARA_13_01.gif",
 		"health": 15,
 		"id": "KARA_13_01",
 		"name": "Nazra Wildaxe",
@@ -44710,12 +43712,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
-		"cardImage": "BRMA13_7.png",
 		"cost": 0,
 		"fr": {
 			"name": "Cendres tourbillonnantes",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "BRMA13_7.gif",
 		"health": 5,
 		"id": "BRMA13_7",
 		"name": "Whirling Ash",
@@ -44727,13 +43729,13 @@ var parseCardsText = {
 	{
 		"artist": "Eva Wildermann",
 		"attack": 2,
-		"cardImage": "CFM_659.png",
 		"collectible": true,
 		"cost": 2,
 		"fr": {
 			"name": "Mondaine de Gadgetzan",
 			"text": "<b>Cri de guerre :</b> rend 2 PV."
 		},
+		"goldenImage": "CFM_659.gif",
 		"health": 2,
 		"id": "CFM_659",
 		"name": "Gadgetzan Socialite",
@@ -44745,12 +43747,12 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Milivoj Ceran",
-		"cardImage": "LOE_019t.png",
 		"cost": 2,
 		"fr": {
 			"name": "Carte du singe doré",
 			"text": "Place la carte Singe doré dans votre deck. Vous piochez une carte."
 		},
+		"goldenImage": "LOE_019t.gif",
 		"id": "LOE_019t",
 		"name": "Map to the Golden Monkey",
 		"playerClass": "Neutral",
@@ -44761,13 +43763,13 @@ var parseCardsText = {
 	{
 		"artist": "Warren Mahy",
 		"attack": 3,
-		"cardImage": "AT_014.png",
 		"collectible": true,
 		"cost": 3,
 		"fr": {
 			"name": "Ombrefiel",
 			"text": "Chaque fois que vous piochez une carte, réduit son coût de\n(1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_014.gif",
 		"health": 3,
 		"id": "AT_014",
 		"name": "Shadowfiend",

@@ -235,7 +235,7 @@ var parseCardsText = {
 				result = card;
 				return true;
 			}
-			else if (card.name.toLowerCase() == cardName.toLowerCase()) {
+			else if (card.name && card.name.toLowerCase() == cardName.toLowerCase()) {
 				// console.log('getting card', cardName, card)
 				if (card.set == 'Basic') {
 					card.rarity = 'Free';

@@ -138,6 +138,8 @@ var parseCardsText = {
 			match: /\[\[[a-zA-Z\-\s0-9\.\:\']{3,}$/,
 			search: function (term, callback, match) {
 				var cards = $.map(parseCardsText.jsonDatabase, function(card) {
+					if (!card.name)	return false
+
 					var localizeName = parseCardsText.localizeName(card);
 					var res = S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) === 0;
 					// add search on english term

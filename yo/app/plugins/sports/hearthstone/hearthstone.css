@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
 @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
 .hearthstone {
-  background: #edd6aa url(images/new/bg-hearthstone-2.png) top center no-repeat !important;
+  background: #edd6aa top center no-repeat !important;
   color: #edd6aa;
   font-family: 'Raleway', Arial, sans-serif;
 }

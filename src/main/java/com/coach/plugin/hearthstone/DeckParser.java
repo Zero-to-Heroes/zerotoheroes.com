@@ -457,7 +457,8 @@ public class DeckParser implements Plugin {
 				continue;
 			}
 
-			String deckUrl = ARENADRAFTS_DECK_HOST_URL + deckId + "?format=JSON";
+			String baseDeckUril = ARENADRAFTS_DECK_HOST_URL + deckId;
+			String deckUrl = baseDeckUril + "?format=JSON";
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 
 			StringBuilder result = new StringBuilder();
@@ -485,7 +486,7 @@ public class DeckParser implements Plugin {
 
 			Deck deck = new Deck();
 			deck.title = "ArenaDrafts - " + draft.getString("Hero") + " - " + numberOfWins + " wins";
-			deck.url = deckUrl;
+			deck.url = baseDeckUril;
 			JSONArray pickedCards = draft.getJSONArray("Picks");
 
 			for (int i = 0; i < pickedCards.length(); i++) {

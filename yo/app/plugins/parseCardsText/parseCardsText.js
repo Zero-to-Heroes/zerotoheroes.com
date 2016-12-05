@@ -138,7 +138,7 @@ var parseCardsText = {
 			match: /\[\[[a-zA-Z\-\s0-9\.\:\']{3,}$/,
 			search: function (term, callback, match) {
 				var cards = $.map(parseCardsText.jsonDatabase, function(card) {
-					if (!card.name)	return false
+					if (!card.name)	return null
 
 					var localizeName = parseCardsText.localizeName(card);
 					var res = S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) !== -1;
@@ -286,6 +286,7 @@ var parseCardsText = {
 			"name": "Souffle du dragon",
 			"text": "Inflige $4 points de dégâts. Coûte (1) |4(cristal,cristaux) de mana de moins pour chaque serviteur mort pendant ce tour."
 		},
+		"goldenImage": "BRM_003.gif",
 		"id": "BRM_003",
 		"name": "Dragon's Breath",
 		"playerClass": "Mage",
@@ -302,6 +303,7 @@ var parseCardsText = {
 			"name": "Anub’Rekhan",
 			"text": "À la fin de votre tour, invoque un nérubien 3/1."
 		},
+		"goldenImage": "TB_KTRAF_1.gif",
 		"health": 5,
 		"id": "TB_KTRAF_1",
 		"name": "Anub'Rekhan",
@@ -321,6 +323,7 @@ var parseCardsText = {
 			"name": "Krul le Déchaîné",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, invoque tous les démons de votre main."
 		},
+		"goldenImage": "CFM_750.gif",
 		"health": 9,
 		"id": "CFM_750",
 		"name": "Krul the Unshackled",
@@ -340,6 +343,7 @@ var parseCardsText = {
 			"name": "Infanterie de Gnomeregan",
 			"text": "<b>Charge</b>\n<b>Provocation</b>"
 		},
+		"goldenImage": "GVG_098.gif",
 		"health": 4,
 		"id": "GVG_098",
 		"name": "Gnomeregan Infantry",
@@ -357,6 +361,7 @@ var parseCardsText = {
 			"name": "Chef Scarvash",
 			"text": "Les cartes adverses coûtent (1) |4(cristal,cristaux) de plus."
 		},
+		"goldenImage": "LOEA16_21.gif",
 		"health": 5,
 		"id": "LOEA16_21",
 		"name": "Chieftain Scarvash",
@@ -375,6 +380,7 @@ var parseCardsText = {
 			"name": "Visions lunaires",
 			"text": "Vous piochez 2 cartes. Les serviteurs piochés coûtent (2) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "CFM_811.gif",
 		"id": "CFM_811",
 		"name": "Lunar Visions",
 		"playerClass": "Druid",
@@ -392,6 +398,7 @@ var parseCardsText = {
 			"name": "Trahison",
 			"text": "Force un serviteur adverse à infliger ses dégâts aux serviteurs à côté de lui."
 		},
+		"goldenImage": "EX1_126.gif",
 		"id": "EX1_126",
 		"name": "Betrayal",
 		"playerClass": "Rogue",
@@ -430,6 +437,7 @@ var parseCardsText = {
 			"name": "Mal’Ganis",
 			"text": "Vos autres démons ont +2/+2. Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "GVG_021.gif",
 		"health": 7,
 		"id": "GVG_021",
 		"name": "Mal'Ganis",
@@ -462,6 +470,7 @@ var parseCardsText = {
 			"name": "Laine mystique",
 			"text": "Transforme un serviteur adverse aléatoire en mouton 1/1.@Métamorphose un serviteur adverse aléatoire."
 		},
+		"goldenImage": "CFM_621t21.gif",
 		"id": "CFM_621t21",
 		"name": "Mystic Wool",
 		"playerClass": "Neutral",
@@ -499,6 +508,7 @@ var parseCardsText = {
 			"name": "Marcheuse sauvage",
 			"text": "<b>Cri de guerre :</b> donne\n+3 PV à une Bête alliée."
 		},
+		"goldenImage": "AT_040.gif",
 		"health": 4,
 		"id": "AT_040",
 		"name": "Wildwalker",
@@ -518,6 +528,7 @@ var parseCardsText = {
 			"name": "Gruul",
 			"text": "À la fin de chaque tour, gagne +1/+1."
 		},
+		"goldenImage": "NEW1_038.gif",
 		"health": 7,
 		"id": "NEW1_038",
 		"name": "Gruul",
@@ -537,6 +548,7 @@ var parseCardsText = {
 			"name": "Conseiller de Sombre-Comté",
 			"text": "Gagne +1 ATQ après que vous avez invoqué un serviteur."
 		},
+		"goldenImage": "OG_113.gif",
 		"health": 5,
 		"id": "OG_113",
 		"name": "Darkshire Councilman",
@@ -572,6 +584,7 @@ var parseCardsText = {
 			"name": "Croisée écarlate",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_020.gif",
 		"health": 1,
 		"id": "EX1_020",
 		"name": "Scarlet Crusader",
@@ -592,6 +605,7 @@ var parseCardsText = {
 			"name": "Rampant des tourbières",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS1_069.gif",
 		"health": 6,
 		"id": "CS1_069",
 		"name": "Fen Creeper",
@@ -681,6 +695,7 @@ var parseCardsText = {
 			"name": "Destroy",
 			"text": "Destroy a minion or hero."
 		},
+		"goldenImage": "XXX_005.gif",
 		"id": "XXX_005",
 		"name": "Destroy",
 		"playerClass": "Neutral",
@@ -727,6 +742,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_13.gif",
 		"health": 1,
 		"id": "LOEA09_13",
 		"name": "Hungry Naga",
@@ -757,6 +773,7 @@ var parseCardsText = {
 			"name": "Silence",
 			"text": "Réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "EX1_332.gif",
 		"id": "EX1_332",
 		"name": "Silence",
 		"playerClass": "Priest",
@@ -775,6 +792,7 @@ var parseCardsText = {
 			"name": "Agent du Repos du ver",
 			"text": "<b>Cri de guerre :</b> gagne\n+1 ATQ et <b>Provocation</b> si vous avez un Dragon en main."
 		},
+		"goldenImage": "AT_116.gif",
 		"health": 4,
 		"id": "AT_116",
 		"name": "Wyrmrest Agent",
@@ -794,6 +812,7 @@ var parseCardsText = {
 			"name": "Protecteur Écorcefer",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_232.gif",
 		"health": 8,
 		"id": "CS2_232",
 		"name": "Ironbark Protector",
@@ -828,6 +847,7 @@ var parseCardsText = {
 			"name": "Goule instable",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> inflige 1 point de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "FP1_024.gif",
 		"health": 3,
 		"id": "FP1_024",
 		"name": "Unstable Ghoul",
@@ -842,6 +862,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gothik le Moissonneur"
 		},
+		"goldenImage": "NAX8_01.gif",
 		"health": 30,
 		"id": "NAX8_01",
 		"name": "Gothik the Harvester",
@@ -871,6 +892,7 @@ var parseCardsText = {
 			"name": "Soigneur débutant",
 			"text": "À la fin de votre tour, rend 2 PV aux serviteurs adjacents."
 		},
+		"goldenImage": "TBST_003.gif",
 		"health": 1,
 		"id": "TBST_003",
 		"name": "OLDN3wb Healer",
@@ -898,6 +920,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Kodo de guerre"
 		},
+		"goldenImage": "AT_099t.gif",
 		"health": 5,
 		"id": "AT_099t",
 		"name": "War Kodo",
@@ -915,6 +938,7 @@ var parseCardsText = {
 			"name": "Gardienne d’Uldaman",
 			"text": "<b>Cri de guerre :</b> fait passer l’Attaque et la Vie d’un serviteur à 3."
 		},
+		"goldenImage": "LOE_017.gif",
 		"health": 4,
 		"id": "LOE_017",
 		"name": "Keeper of Uldaman",
@@ -934,6 +958,7 @@ var parseCardsText = {
 			"name": "Grande croisée",
 			"text": "<b>Cri de guerre :</b> ajoute une carte paladin aléatoire dans votre main."
 		},
+		"goldenImage": "AT_118.gif",
 		"health": 5,
 		"id": "AT_118",
 		"name": "Grand Crusader",
@@ -995,6 +1020,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Flamme d’Azzinoth"
 		},
+		"goldenImage": "TU4e_002t.gif",
 		"health": 1,
 		"id": "TU4e_002t",
 		"name": "Flame of Azzinoth",
@@ -1008,6 +1034,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chambellan Executus"
 		},
+		"goldenImage": "BRMA06_1.gif",
 		"health": 30,
 		"id": "BRMA06_1",
 		"name": "Majordomo Executus",
@@ -1036,6 +1063,7 @@ var parseCardsText = {
 			"name": "Franchir d’un bond",
 			"text": "Subit aléatoirement 10 points de dégâts ou aucun."
 		},
+		"goldenImage": "LOEA04_06a.gif",
 		"id": "LOEA04_06a",
 		"name": "Swing Across",
 		"playerClass": "Neutral",
@@ -1053,6 +1081,7 @@ var parseCardsText = {
 			"name": "Jeeves",
 			"text": "À la fin du tour d’un joueur, ce dernier pioche jusqu’à avoir 3 cartes."
 		},
+		"goldenImage": "GVG_094.gif",
 		"health": 4,
 		"id": "GVG_094",
 		"name": "Jeeves",
@@ -1115,6 +1144,7 @@ var parseCardsText = {
 			"name": "Archaedas",
 			"text": "Transforme un serviteur adverse aléatoire en statue 0/2 à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_22H.gif",
 		"health": 10,
 		"id": "LOEA16_22H",
 		"name": "Archaedas",
@@ -1168,6 +1198,7 @@ var parseCardsText = {
 			"name": "Missilière téméraire",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_213.gif",
 		"health": 2,
 		"id": "CS2_213",
 		"name": "Reckless Rocketeer",
@@ -1215,6 +1246,7 @@ var parseCardsText = {
 			"name": "Frappe mortelle",
 			"text": "Inflige $4 |4(point,points) de dégâts. Si votre héros a 12 PV ou moins, inflige $6 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "EX1_408.gif",
 		"id": "EX1_408",
 		"name": "Mortal Strike",
 		"playerClass": "Warrior",
@@ -1233,6 +1265,7 @@ var parseCardsText = {
 			"name": "Stalagg",
 			"text": "<b>Râle d’agonie :</b> si Feugen est aussi mort pendant cette partie, invoque Thaddius."
 		},
+		"goldenImage": "FP1_014.gif",
 		"health": 4,
 		"id": "FP1_014",
 		"name": "Stalagg",
@@ -1252,6 +1285,7 @@ var parseCardsText = {
 			"name": "Gardien du bourbier",
 			"text": "<b>Choix des armes :</b> invoque une gelée 2/2 ou confère un cristal de mana vide."
 		},
+		"goldenImage": "OG_202.gif",
 		"health": 3,
 		"id": "OG_202",
 		"name": "Mire Keeper",
@@ -1270,6 +1304,7 @@ var parseCardsText = {
 			"name": "Lâcher les chiens",
 			"text": "Invoque un chien 1/1 avec <b>Charge</b> pour chaque serviteur adverse."
 		},
+		"goldenImage": "EX1_538.gif",
 		"id": "EX1_538",
 		"name": "Unleash the Hounds",
 		"playerClass": "Hunter",
@@ -1286,6 +1321,7 @@ var parseCardsText = {
 			"name": "Totem de griffes de pierre",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "AT_132_SHAMANc.gif",
 		"health": 2,
 		"id": "AT_132_SHAMANc",
 		"name": "Stoneclaw Totem",
@@ -1303,6 +1339,7 @@ var parseCardsText = {
 			"name": "Confusion",
 			"text": "Échange l’Attaque et la Vie de tous les serviteurs."
 		},
+		"goldenImage": "AT_016.gif",
 		"id": "AT_016",
 		"name": "Confuse",
 		"playerClass": "Priest",
@@ -1320,6 +1357,7 @@ var parseCardsText = {
 			"name": "Appel des ancêtres",
 			"text": "Prend un serviteur aléatoire dans la main de chaque joueur et les pose sur le champ de bataille."
 		},
+		"goldenImage": "GVG_029.gif",
 		"id": "GVG_029",
 		"name": "Ancestor's Call",
 		"playerClass": "Shaman",
@@ -1371,6 +1409,7 @@ var parseCardsText = {
 			"name": "Sombre orateur",
 			"text": "<b>Cri de guerre :</b> échange ses caractéristiques avec celles d’un serviteur allié."
 		},
+		"goldenImage": "OG_102.gif",
 		"health": 6,
 		"id": "OG_102",
 		"name": "Darkspeaker",
@@ -1388,6 +1427,7 @@ var parseCardsText = {
 			"name": "Magmatron",
 			"text": "Chaque fois qu’un joueur joue une carte, lui inflige 2 points de dégâts."
 		},
+		"goldenImage": "BRMA14_9H.gif",
 		"health": 8,
 		"id": "BRMA14_9H",
 		"name": "Magmatron",
@@ -1451,6 +1491,7 @@ var parseCardsText = {
 			"name": "Kidnappeur",
 			"text": "<b>Combo :</b> renvoie un serviteur dans la main de son propriétaire."
 		},
+		"goldenImage": "NEW1_005.gif",
 		"health": 3,
 		"id": "NEW1_005",
 		"name": "Kidnapper",
@@ -1465,6 +1506,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Baron Geddon"
 		},
+		"goldenImage": "BRMA05_1.gif",
 		"health": 30,
 		"id": "BRMA05_1",
 		"name": "Baron Geddon",
@@ -1482,6 +1524,7 @@ var parseCardsText = {
 			"name": "Princesse Huhuran",
 			"text": "<b>Cri de guerre :</b> déclenche le <b>Râle d’agonie</b> d’un serviteur allié."
 		},
+		"goldenImage": "OG_309.gif",
 		"health": 5,
 		"id": "OG_309",
 		"name": "Princess Huhuran",
@@ -1501,6 +1544,7 @@ var parseCardsText = {
 			"name": "Grouillant de jade",
 			"text": "<b>Camouflage</b>. <b>Râle d’agonie :</b> invoque un <b>golem de jade</b> {0}.@<b>Camouflage</b>. <b>Râle d’agonie :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_691.gif",
 		"health": 1,
 		"id": "CFM_691",
 		"name": "Jade Swarmer",
@@ -1520,6 +1564,7 @@ var parseCardsText = {
 			"name": "Apothicaire du culte",
 			"text": "<b>Cri de guerre :</b> rend 2 PV à votre héros pour chaque serviteur adverse."
 		},
+		"goldenImage": "OG_295.gif",
 		"health": 4,
 		"id": "OG_295",
 		"name": "Cult Apothecary",
@@ -1566,6 +1611,7 @@ var parseCardsText = {
 			"name": "Esquille de bénédiction",
 			"text": "Rend #10 PV à TOUS les personnages."
 		},
+		"goldenImage": "LOEA16_7.gif",
 		"id": "LOEA16_7",
 		"name": "Benediction Splinter",
 		"playerClass": "Neutral",
@@ -1581,6 +1627,7 @@ var parseCardsText = {
 			"name": "Elizabeth Cho",
 			"text": "<b>Cri de guerre :</b> ajoute Écho de Medivh et Limon résonnant dans votre main."
 		},
+		"goldenImage": "CRED_25.gif",
 		"health": 4,
 		"id": "CRED_25",
 		"name": "Elizabeth Cho",
@@ -1615,6 +1662,7 @@ var parseCardsText = {
 			"name": "Cryomancienne",
 			"text": "<b>Cri de guerre :</b> gagne +2/+2 si un adversaire est <b>gelé</b>."
 		},
+		"goldenImage": "CFM_671.gif",
 		"health": 5,
 		"id": "CFM_671",
 		"name": "Cryomancer",
@@ -1634,6 +1682,7 @@ var parseCardsText = {
 			"name": "Golem arcanique",
 			"text": "<b>Cri de guerre :</b> donne à votre adversaire un cristal de mana."
 		},
+		"goldenImage": "EX1_089.gif",
 		"health": 4,
 		"id": "EX1_089",
 		"name": "Arcane Golem",
@@ -1653,6 +1702,7 @@ var parseCardsText = {
 			"name": "Recruteur",
 			"text": "<b>Exaltation :</b> ajoute un écuyer 2/2 dans votre main."
 		},
+		"goldenImage": "AT_113.gif",
 		"health": 4,
 		"id": "AT_113",
 		"name": "Recruiter",
@@ -1672,6 +1722,7 @@ var parseCardsText = {
 			"name": "Mage de Dalaran",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "EX1_582.gif",
 		"health": 4,
 		"id": "EX1_582",
 		"name": "Dalaran Mage",
@@ -1691,6 +1742,7 @@ var parseCardsText = {
 			"name": "Larcin",
 			"text": "Ajoute 2 cartes de classe aléatoires dans votre main <i>(de la classe de votre adversaire)</i>."
 		},
+		"goldenImage": "AT_033.gif",
 		"id": "AT_033",
 		"name": "Burgle",
 		"playerClass": "Rogue",
@@ -1708,6 +1760,7 @@ var parseCardsText = {
 			"name": "Communion astrale",
 			"text": "Gagne 10 cristaux de mana. Vous défausse de votre main."
 		},
+		"goldenImage": "AT_043.gif",
 		"id": "AT_043",
 		"name": "Astral Communion",
 		"playerClass": "Druid",
@@ -1726,6 +1779,7 @@ var parseCardsText = {
 			"name": "Guetteur d’Argent",
 			"text": "Ne peut pas attaquer.\n<b>Exaltation :</b> peut attaquer normalement pendant ce tour."
 		},
+		"goldenImage": "AT_109.gif",
 		"health": 4,
 		"id": "AT_109",
 		"name": "Argent Watchman",
@@ -1860,6 +1914,7 @@ var parseCardsText = {
 			"name": "Lame runique",
 			"text": "A +3 ATQ si les autres cavaliers sont morts."
 		},
+		"goldenImage": "NAX9_05.gif",
 		"id": "NAX9_05",
 		"name": "Runeblade",
 		"playerClass": "Neutral",
@@ -1908,6 +1963,7 @@ var parseCardsText = {
 			"name": "Boule de feu",
 			"text": "Inflige $6 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CS2_029.gif",
 		"id": "CS2_029",
 		"name": "Fireball",
 		"playerClass": "Mage",
@@ -1926,6 +1982,7 @@ var parseCardsText = {
 			"name": "Brave archère",
 			"text": "<b>Exaltation :</b> inflige 2 points de dégâts au héros adverse si votre main est vide."
 		},
+		"goldenImage": "AT_059.gif",
 		"health": 1,
 		"id": "AT_059",
 		"name": "Brave Archer",
@@ -1957,6 +2014,7 @@ var parseCardsText = {
 			"name": "Misha",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOEA02_10c.gif",
 		"health": 4,
 		"id": "LOEA02_10c",
 		"name": "Misha",
@@ -1985,6 +2043,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t21.gif",
 		"health": 21,
 		"id": "CFM_712_t21",
 		"name": "Jade Golem",
@@ -2001,6 +2060,7 @@ var parseCardsText = {
 			"name": "Lance rare",
 			"text": "Gagne +1/+1 chaque fois que votre adversaire joue une carte rare."
 		},
+		"goldenImage": "LOEA09_4H.gif",
 		"id": "LOEA09_4H",
 		"name": "Rare Spear",
 		"playerClass": "Neutral",
@@ -2017,6 +2077,7 @@ var parseCardsText = {
 			"name": "Mon précieux",
 			"text": "<b>Découvre</b> une carte avec <b>Surcharge</b>. <b>Surcharge : (1)</b>"
 		},
+		"goldenImage": "CFM_313.gif",
 		"id": "CFM_313",
 		"name": "Finders Keepers",
 		"overload": 1,
@@ -2064,6 +2125,7 @@ var parseCardsText = {
 			"name": "Spore",
 			"text": "<b>Râle d’agonie :</b> donne +8 ATQ à tous les serviteurs adverses."
 		},
+		"goldenImage": "NAX6_03t.gif",
 		"health": 1,
 		"id": "NAX6_03t",
 		"name": "Spore",
@@ -2083,6 +2145,7 @@ var parseCardsText = {
 			"name": "Cogneguerre ogre",
 			"text": "50% de chance d’attaquer le mauvais adversaire."
 		},
+		"goldenImage": "GVG_054.gif",
 		"id": "GVG_054",
 		"name": "Ogre Warmaul",
 		"playerClass": "Warrior",
@@ -2116,6 +2179,7 @@ var parseCardsText = {
 			"name": "Tentacules brachiaux",
 			"text": "<b>Râle d’agonie :</b> replace cette carte dans votre main."
 		},
+		"goldenImage": "OG_033.gif",
 		"id": "OG_033",
 		"name": "Tentacles for Arms",
 		"playerClass": "Warrior",
@@ -2146,6 +2210,7 @@ var parseCardsText = {
 			"name": "Météores",
 			"text": "Inflige $5 |4(point,points) de dégâts à un serviteur."
 		},
+		"goldenImage": "NEW1_007b.gif",
 		"id": "NEW1_007b",
 		"name": "Starfall",
 		"playerClass": "Druid",
@@ -2161,6 +2226,7 @@ var parseCardsText = {
 			"name": "Derek Sakamoto",
 			"text": "<i>Le célèbre tapeur des pieds.</i>"
 		},
+		"goldenImage": "CRED_06.gif",
 		"health": 1,
 		"id": "CRED_06",
 		"name": "Derek Sakamoto",
@@ -2177,6 +2243,7 @@ var parseCardsText = {
 			"name": "Les ténèbres",
 			"text": "<b>Prendre le raccourci ?</b>"
 		},
+		"goldenImage": "LOEA04_30.gif",
 		"id": "LOEA04_30",
 		"name": "The Darkness",
 		"playerClass": "Neutral",
@@ -2204,6 +2271,7 @@ var parseCardsText = {
 			"name": "Sang-royal",
 			"text": "Vous piochez 3 cartes."
 		},
+		"goldenImage": "CFM_621t30.gif",
 		"id": "CFM_621t30",
 		"name": "Kingsblood",
 		"playerClass": "Neutral",
@@ -2218,6 +2286,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Écureuil"
 		},
+		"goldenImage": "EX1_tk28.gif",
 		"health": 1,
 		"id": "EX1_tk28",
 		"name": "Squirrel",
@@ -2236,6 +2305,7 @@ var parseCardsText = {
 			"name": "Lardeur, Perte d’Elwynn",
 			"text": "Chaque fois que ce serviteur subit des dégâts, invoque un gnoll 2/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "OG_318.gif",
 		"health": 6,
 		"id": "OG_318",
 		"name": "Hogger, Doom of Elwynn",
@@ -2255,6 +2325,7 @@ var parseCardsText = {
 			"name": "Arcaniste éthérien",
 			"text": "Si vous contrôlez un <b>Secret</b> à la fin de votre tour, gagne +2/+2."
 		},
+		"goldenImage": "EX1_274.gif",
 		"health": 3,
 		"id": "EX1_274",
 		"name": "Ethereal Arcanist",
@@ -2271,6 +2342,7 @@ var parseCardsText = {
 			"name": "Chiots du magma",
 			"text": "Invoque deux chiots du magma 2/4."
 		},
+		"goldenImage": "BRMC_95h.gif",
 		"id": "BRMC_95h",
 		"name": "Core Hound Puppies",
 		"playerClass": "Neutral",
@@ -2302,6 +2374,7 @@ var parseCardsText = {
 			"name": "Âme de la forêt",
 			"text": "Confère à vos serviteurs « <b>Râle d’agonie :</b> invoque un tréant 2/2. »"
 		},
+		"goldenImage": "EX1_158.gif",
 		"id": "EX1_158",
 		"name": "Soul of the Forest",
 		"playerClass": "Druid",
@@ -2316,6 +2389,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Magni Barbe-de-Bronze"
 		},
+		"goldenImage": "HERO_01a.gif",
 		"health": 30,
 		"id": "HERO_01a",
 		"name": "Magni Bronzebeard",
@@ -2363,6 +2437,7 @@ var parseCardsText = {
 			"name": "Toshley",
 			"text": "<b>Cri de guerre et Râle d’agonie :</b> ajoute une carte <b>Pièce détachée</b> dans votre main."
 		},
+		"goldenImage": "GVG_115.gif",
 		"health": 7,
 		"id": "GVG_115",
 		"name": "Toshley",
@@ -2380,6 +2455,7 @@ var parseCardsText = {
 			"name": "Brian Birmingham",
 			"text": "<b>Choix des armes :</b> rend tous ses PV à un Méca ou confère <b>Furie des vents</b> à un concepteur."
 		},
+		"goldenImage": "CRED_20.gif",
 		"health": 2,
 		"id": "CRED_20",
 		"name": "Brian Birmingham",
@@ -2397,6 +2473,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dague empoisonnée"
 		},
+		"goldenImage": "AT_132_ROGUEt.gif",
 		"id": "AT_132_ROGUEt",
 		"name": "Poisoned Dagger",
 		"playerClass": "Rogue",
@@ -2411,6 +2488,7 @@ var parseCardsText = {
 			"name": "Jason MacAllister",
 			"text": "<i>C’est un gars vraiment fiable.</i>"
 		},
+		"goldenImage": "CRED_29.gif",
 		"health": 5,
 		"id": "CRED_29",
 		"name": "Jason MacAllister",
@@ -2444,6 +2522,7 @@ var parseCardsText = {
 			"name": "Druidesse du Sabre",
 			"text": "<b>Choix des armes :</b> se transforme pour obtenir <b>Charge</b> ou gagne +1/+1 et <b>Camouflage</b>."
 		},
+		"goldenImage": "AT_042.gif",
 		"health": 1,
 		"id": "AT_042",
 		"name": "Druid of the Saber",
@@ -2463,6 +2542,7 @@ var parseCardsText = {
 			"name": "Gardien du bosquet",
 			"text": "<b>Choix des armes :</b> inflige 2 points de dégâts ou réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "EX1_166.gif",
 		"health": 2,
 		"id": "EX1_166",
 		"name": "Keeper of the Grove",
@@ -2525,6 +2605,7 @@ var parseCardsText = {
 			"name": "Garde de Baie-du-Butin",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_187.gif",
 		"health": 4,
 		"id": "CS2_187",
 		"name": "Booty Bay Bodyguard",
@@ -2541,6 +2622,7 @@ var parseCardsText = {
 			"name": "Détruire le chroniqueur",
 			"text": "Détruit le chroniqueur Cho."
 		},
+		"goldenImage": "TB_CoOpBossSpell_6.gif",
 		"id": "TB_CoOpBossSpell_6",
 		"name": "Kill the Lorewalker",
 		"playerClass": "Neutral",
@@ -2570,6 +2652,7 @@ var parseCardsText = {
 			"name": "Magmagueule",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA14_12.gif",
 		"health": 2,
 		"id": "BRMA14_12",
 		"name": "Magmaw",
@@ -2612,6 +2695,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Empereur Thaurissan"
 		},
+		"goldenImage": "BRMA03_1.gif",
 		"health": 30,
 		"id": "BRMA03_1",
 		"name": "Emperor Thaurissan",
@@ -2628,6 +2712,7 @@ var parseCardsText = {
 			"name": "Dévolution",
 			"text": "Transforme tous les serviteurs adverses en serviteurs aléatoires qui coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "CFM_696.gif",
 		"id": "CFM_696",
 		"name": "Devolve",
 		"playerClass": "Shaman",
@@ -2644,6 +2729,7 @@ var parseCardsText = {
 			"name": "Dame Naz’jar",
 			"text": "À la fin de votre tour, remplace tous les autres serviteurs par de nouveaux de même coût."
 		},
+		"goldenImage": "LOEA16_25H.gif",
 		"health": 10,
 		"id": "LOEA16_25H",
 		"name": "Lady Naz'jar",
@@ -2674,6 +2760,7 @@ var parseCardsText = {
 			"name": "Steal Card",
 			"text": "Steal a random card from your opponent."
 		},
+		"goldenImage": "XXX_045.gif",
 		"id": "XXX_045",
 		"name": "Steal Card",
 		"playerClass": "Neutral",
@@ -2691,6 +2778,7 @@ var parseCardsText = {
 			"name": "Résister aux ténèbres",
 			"text": "Invoque cinq recrues de la Main\nd’argent 1/1."
 		},
+		"goldenImage": "OG_273.gif",
 		"id": "OG_273",
 		"name": "Stand Against Darkness",
 		"playerClass": "Paladin",
@@ -2706,6 +2794,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Soldat nérubien"
 		},
+		"goldenImage": "OG_270a.gif",
 		"health": 7,
 		"id": "OG_270a",
 		"name": "Nerubian Soldier",
@@ -2720,6 +2809,7 @@ var parseCardsText = {
 			"name": "Boire à grands traits",
 			"text": "Vous piochez une carte."
 		},
+		"goldenImage": "LOEA04_28a.gif",
 		"id": "LOEA04_28a",
 		"name": "Drink Deeply",
 		"playerClass": "Neutral",
@@ -2737,6 +2827,7 @@ var parseCardsText = {
 			"name": "Mousse de la Voile sanglante",
 			"text": "<b>Cri de guerre :</b> gagne des points d’Attaque d’un montant équivalent à ceux de votre arme."
 		},
+		"goldenImage": "NEW1_018.gif",
 		"health": 3,
 		"id": "NEW1_018",
 		"name": "Bloodsail Raider",
@@ -2756,6 +2847,7 @@ var parseCardsText = {
 			"name": "Oracle sinistrécaille",
 			"text": "Vos autres murlocs ont +1 ATQ."
 		},
+		"goldenImage": "EX1_508.gif",
 		"health": 1,
 		"id": "EX1_508",
 		"name": "Grimscale Oracle",
@@ -2775,6 +2867,7 @@ var parseCardsText = {
 			"name": "Commandant du fief",
 			"text": "Vous pouvez utiliser votre pouvoir héroïque deux fois par tour."
 		},
+		"goldenImage": "AT_080.gif",
 		"health": 3,
 		"id": "AT_080",
 		"name": "Garrison Commander",
@@ -2806,6 +2899,7 @@ var parseCardsText = {
 			"name": "Guerrier tauren",
 			"text": "<b>Provocation</b>.\n<b>Accès de rage :</b> +3 ATQ"
 		},
+		"goldenImage": "EX1_390.gif",
 		"health": 3,
 		"id": "EX1_390",
 		"name": "Tauren Warrior",
@@ -2826,6 +2920,7 @@ var parseCardsText = {
 			"name": "Épée de justice",
 			"text": "Après avoir invoqué un serviteur, lui donne +1/+1 et perd 1 Durabilité."
 		},
+		"goldenImage": "EX1_366.gif",
 		"id": "EX1_366",
 		"name": "Sword of Justice",
 		"playerClass": "Paladin",
@@ -2868,6 +2963,7 @@ var parseCardsText = {
 			"name": "Mill 30",
 			"text": "Put 30 cards from a hero's deck into his graveyard."
 		},
+		"goldenImage": "XXX_043.gif",
 		"id": "XXX_043",
 		"name": "Mill 30",
 		"playerClass": "Neutral",
@@ -2884,6 +2980,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Démon de la Kabale"
 		},
+		"goldenImage": "CFM_621_m4.gif",
 		"health": 2,
 		"id": "CFM_621_m4",
 		"name": "Kabal Demon",
@@ -2901,6 +2998,7 @@ var parseCardsText = {
 			"name": "Rampante hantée",
 			"text": "<b>Râle d’agonie :</b> invoque deux araignées spectrales 1/1."
 		},
+		"goldenImage": "FP1_002.gif",
 		"health": 2,
 		"id": "FP1_002",
 		"name": "Haunted Creeper",
@@ -2934,6 +3032,7 @@ var parseCardsText = {
 			"name": "Hemet Nesingwary",
 			"text": "<b>Cri de guerre :</b> détruit une Bête."
 		},
+		"goldenImage": "GVG_120.gif",
 		"health": 3,
 		"id": "GVG_120",
 		"name": "Hemet Nesingwary",
@@ -2950,6 +3049,7 @@ var parseCardsText = {
 			"name": "Racines vivantes",
 			"text": "Invoque deux arbrisseaux 1/1."
 		},
+		"goldenImage": "AT_037b.gif",
 		"id": "AT_037b",
 		"name": "Living Roots",
 		"playerClass": "Druid",
@@ -3008,6 +3108,7 @@ var parseCardsText = {
 			"name": "Barrière de glace",
 			"text": "<b>Secret :</b> quand votre héros est attaqué, il gagne 8 points d’armure."
 		},
+		"goldenImage": "EX1_289.gif",
 		"id": "EX1_289",
 		"name": "Ice Barrier",
 		"playerClass": "Mage",
@@ -3025,6 +3126,7 @@ var parseCardsText = {
 			"name": "Robot réparateur",
 			"text": "À la fin de votre tour, rend 6 PV à un personnage blessé."
 		},
+		"goldenImage": "Mekka2.gif",
 		"health": 3,
 		"id": "Mekka2",
 		"name": "Repair Bot",
@@ -3056,6 +3158,7 @@ var parseCardsText = {
 			"name": "Dame Blaumeux",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_02H.gif",
 		"health": 7,
 		"id": "NAX9_02H",
 		"name": "Lady Blaumeux",
@@ -3089,6 +3192,7 @@ var parseCardsText = {
 			"name": "Kun, le roi oublié",
 			"text": "<b>Choix des armes :</b> vous donne 10 points d’armure ou réinitialise vos cristaux de mana."
 		},
+		"goldenImage": "CFM_308.gif",
 		"health": 7,
 		"id": "CFM_308",
 		"name": "Kun the Forgotten King",
@@ -3108,6 +3212,7 @@ var parseCardsText = {
 			"name": "Faucheur 4000",
 			"text": "Inflige également des dégâts aux serviteurs à côté de celui qu’il attaque."
 		},
+		"goldenImage": "GVG_113.gif",
 		"health": 9,
 		"id": "GVG_113",
 		"name": "Foe Reaper 4000",
@@ -3127,6 +3232,7 @@ var parseCardsText = {
 			"name": "Fjola Plaie-lumineuse",
 			"text": "Chaque fois que <b>vous</b> ciblez ce serviteur avec un sort, gagne <b>Bouclier divin</b>."
 		},
+		"goldenImage": "AT_129.gif",
 		"health": 4,
 		"id": "AT_129",
 		"name": "Fjola Lightbane",
@@ -3161,6 +3267,7 @@ var parseCardsText = {
 			"name": "Guetteur ancien",
 			"text": "Ne peut pas attaquer."
 		},
+		"goldenImage": "EX1_045.gif",
 		"health": 5,
 		"id": "EX1_045",
 		"name": "Ancient Watcher",
@@ -3177,6 +3284,7 @@ var parseCardsText = {
 			"name": "Deuxième classe : druide",
 			"text": "Ajoute des cartes de druide dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Druid.gif",
 		"id": "TB_ClassRandom_Druid",
 		"name": "Second Class: Druid",
 		"playerClass": "Druid",
@@ -3192,6 +3300,7 @@ var parseCardsText = {
 			"name": "Néantine",
 			"text": "Invoque un démon 5/5."
 		},
+		"goldenImage": "CFM_621t20.gif",
 		"id": "CFM_621t20",
 		"name": "Netherbloom",
 		"playerClass": "Neutral",
@@ -3209,6 +3318,7 @@ var parseCardsText = {
 			"name": "Tisseuse",
 			"text": "<b>Râle d’agonie :</b> ajoute une carte Bête aléatoire dans votre main."
 		},
+		"goldenImage": "FP1_011.gif",
 		"health": 1,
 		"id": "FP1_011",
 		"name": "Webspinner",
@@ -3241,6 +3351,7 @@ var parseCardsText = {
 			"name": "Thane Korth’azz",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_03H.gif",
 		"health": 7,
 		"id": "NAX9_03H",
 		"name": "Thane Korth'azz",
@@ -3255,6 +3366,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gluth"
 		},
+		"goldenImage": "NAX12_01H.gif",
 		"health": 45,
 		"id": "NAX12_01H",
 		"name": "Gluth",
@@ -3283,6 +3395,7 @@ var parseCardsText = {
 			"name": "Silence and Destroy All Minions",
 			"text": "Destroy all minions without triggering deathrattles."
 		},
+		"goldenImage": "XXX_056.gif",
 		"id": "XXX_056",
 		"name": "Silence and Destroy All Minions",
 		"playerClass": "Neutral",
@@ -3314,6 +3427,7 @@ var parseCardsText = {
 			"name": "Livre-cristaux de la Kabale",
 			"text": "Coûte (2) |4(cristal,cristaux) de moins pour chaque <b>Secret</b> que vous avez joué pendant cette partie."
 		},
+		"goldenImage": "CFM_760.gif",
 		"health": 5,
 		"id": "CFM_760",
 		"name": "Kabal Crystal Runner",
@@ -3330,6 +3444,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Druide de la Flamme"
 		},
+		"goldenImage": "OG_044b.gif",
 		"health": 5,
 		"id": "OG_044b",
 		"name": "Druid of the Flame",
@@ -3345,6 +3460,7 @@ var parseCardsText = {
 			"name": "Forme de félin",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "EX1_165a.gif",
 		"id": "EX1_165a",
 		"name": "Cat Form",
 		"playerClass": "Druid",
@@ -3362,6 +3478,7 @@ var parseCardsText = {
 			"name": "Piège explosif",
 			"text": "<b>Secret :</b> quand votre héros est attaqué, inflige $2 |4(point,points) de dégâts à tous les adversaires."
 		},
+		"goldenImage": "EX1_610.gif",
 		"id": "EX1_610",
 		"name": "Explosive Trap",
 		"playerClass": "Hunter",
@@ -3378,6 +3495,7 @@ var parseCardsText = {
 			"name": "Panthère dent-de-sabre",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "AT_042t2.gif",
 		"health": 2,
 		"id": "AT_042t2",
 		"name": "Sabertooth Panther",
@@ -3395,6 +3513,7 @@ var parseCardsText = {
 			"name": "Ichor de non-mort",
 			"text": "Invoque un serviteur allié mort pendant cette partie."
 		},
+		"goldenImage": "CFM_621t37.gif",
 		"id": "CFM_621t37",
 		"name": "Ichor of Undeath",
 		"playerClass": "Neutral",
@@ -3411,6 +3530,7 @@ var parseCardsText = {
 			"name": "Esprit divin",
 			"text": "Double les points de vie d’un serviteur."
 		},
+		"goldenImage": "CS2_236.gif",
 		"id": "CS2_236",
 		"name": "Divine Spirit",
 		"playerClass": "Priest",
@@ -3440,6 +3560,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Éclaireur pandaren"
 		},
+		"goldenImage": "TU4f_002.gif",
 		"health": 1,
 		"id": "TU4f_002",
 		"name": "Pandaren Scout",
@@ -3457,6 +3578,7 @@ var parseCardsText = {
 			"name": "Entité miroir",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, en invoque une copie."
 		},
+		"goldenImage": "EX1_294.gif",
 		"id": "EX1_294",
 		"name": "Mirror Entity",
 		"playerClass": "Mage",
@@ -3471,6 +3593,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Jaina Portvaillant"
 		},
+		"goldenImage": "HERO_08.gif",
 		"health": 30,
 		"id": "HERO_08",
 		"name": "Jaina Proudmoore",
@@ -3489,6 +3612,7 @@ var parseCardsText = {
 			"name": "Ancien frappé d’interdit",
 			"text": "<b>Cri de guerre :</b> dépense tous vos cristaux de mana. Gagne +1/+1 pour chaque cristal dépensé."
 		},
+		"goldenImage": "OG_051.gif",
 		"health": 1,
 		"id": "OG_051",
 		"name": "Forbidden Ancient",
@@ -3522,6 +3646,7 @@ var parseCardsText = {
 			"name": "Le chevalier squelette",
 			"text": "<b>Râle d’agonie :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, renvoie le chevalier dans votre main."
 		},
+		"goldenImage": "AT_128.gif",
 		"health": 4,
 		"id": "AT_128",
 		"name": "The Skeleton Knight",
@@ -3538,6 +3663,7 @@ var parseCardsText = {
 			"name": "Vœu : compagnon",
 			"text": "<b>Découvre</b> un compagnon."
 		},
+		"goldenImage": "LOEA02_10.gif",
 		"id": "LOEA02_10",
 		"name": "Wish for Companionship",
 		"playerClass": "Neutral",
@@ -3568,6 +3694,7 @@ var parseCardsText = {
 			"name": "Cœur de feu",
 			"text": "Inflige $8 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CFM_621t25.gif",
 		"id": "CFM_621t25",
 		"name": "Heart of Fire",
 		"playerClass": "Neutral",
@@ -3582,6 +3709,7 @@ var parseCardsText = {
 			"name": "Deuxième classe : chaman",
 			"text": "Ajoute des cartes de chaman dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Shaman.gif",
 		"id": "TB_ClassRandom_Shaman",
 		"name": "Second Class: Shaman",
 		"playerClass": "Shaman",
@@ -3599,6 +3727,7 @@ var parseCardsText = {
 			"name": "Kodo déchaîné",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur adverse aléatoire avec 2 en Attaque ou moins."
 		},
+		"goldenImage": "NEW1_041.gif",
 		"health": 5,
 		"id": "NEW1_041",
 		"name": "Stampeding Kodo",
@@ -3618,6 +3747,7 @@ var parseCardsText = {
 			"name": "Commissaire-priseur Beardo",
 			"text": "Une fois que vous avez lancé un sort, réinitialise votre pouvoir héroïque."
 		},
+		"goldenImage": "CFM_807.gif",
 		"health": 4,
 		"id": "CFM_807",
 		"name": "Auctionmaster Beardo",
@@ -3652,6 +3782,7 @@ var parseCardsText = {
 			"name": "Grizzly Ferpoil",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_125.gif",
 		"health": 3,
 		"id": "CS2_125",
 		"name": "Ironfur Grizzly",
@@ -3701,6 +3832,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Statue de terrestre"
 		},
+		"goldenImage": "LOEA06_02t.gif",
 		"health": 2,
 		"id": "LOEA06_02t",
 		"name": "Earthen Statue",
@@ -3716,6 +3848,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t17.gif",
 		"health": 17,
 		"id": "CFM_712_t17",
 		"name": "Jade Golem",
@@ -3732,6 +3865,7 @@ var parseCardsText = {
 			"name": "Ressusciter",
 			"text": "Invoque un serviteur allié aléatoire mort pendant la partie."
 		},
+		"goldenImage": "BRM_017.gif",
 		"id": "BRM_017",
 		"name": "Resurrect",
 		"playerClass": "Priest",
@@ -3792,6 +3926,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ragnaros, seigneur du feu"
 		},
+		"goldenImage": "BRMA06_3H.gif",
 		"health": 30,
 		"id": "BRMA06_3H",
 		"name": "Ragnaros the Firelord",
@@ -3822,6 +3957,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Haut-trotteur égaré"
 		},
+		"goldenImage": "GVG_071.gif",
 		"health": 4,
 		"id": "GVG_071",
 		"name": "Lost Tallstrider",
@@ -3840,6 +3976,7 @@ var parseCardsText = {
 			"name": "Cobra empereur",
 			"text": "Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "EX1_170.gif",
 		"health": 3,
 		"id": "EX1_170",
 		"name": "Emperor Cobra",
@@ -3875,6 +4012,7 @@ var parseCardsText = {
 			"name": "Micro-machine",
 			"text": "Gagne +1 ATQ au début de chaque tour."
 		},
+		"goldenImage": "GVG_103.gif",
 		"health": 2,
 		"id": "GVG_103",
 		"name": "Micro Machine",
@@ -3892,6 +4030,7 @@ var parseCardsText = {
 			"name": "Jonas Laster",
 			"text": "Chaque fois qu’un serviteur réduit au <b>Silence</b> meurt, gagne +1/+1."
 		},
+		"goldenImage": "CRED_45.gif",
 		"health": 6,
 		"id": "CRED_45",
 		"name": "Jonas Laster",
@@ -3909,6 +4048,7 @@ var parseCardsText = {
 			"name": "Garde d’Orsis",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "LOEA04_13bth.gif",
 		"health": 8,
 		"id": "LOEA04_13bth",
 		"name": "Orsis Guard",
@@ -3928,6 +4068,7 @@ var parseCardsText = {
 			"name": "Arc long du gladiateur",
 			"text": "Votre héros est <b>Insensible</b> quand il attaque."
 		},
+		"goldenImage": "DS1_188.gif",
 		"id": "DS1_188",
 		"name": "Gladiator's Longbow",
 		"playerClass": "Hunter",
@@ -3946,6 +4087,7 @@ var parseCardsText = {
 			"name": "Chauve-souris embrasée",
 			"text": "<b>Râle d’agonie :</b> inflige\n1 point de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "OG_179.gif",
 		"health": 1,
 		"id": "OG_179",
 		"name": "Fiery Bat",
@@ -3991,6 +4133,7 @@ var parseCardsText = {
 			"name": "Grenouille",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "hexfrog.gif",
 		"health": 1,
 		"id": "hexfrog",
 		"name": "Frog",
@@ -4007,6 +4150,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Garde du temple anubisath"
 		},
+		"goldenImage": "LOEA04_24.gif",
 		"health": 10,
 		"id": "LOEA04_24",
 		"name": "Anubisath Temple Guard",
@@ -4022,6 +4166,7 @@ var parseCardsText = {
 			"name": "Doublure",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "NAX7_02.gif",
 		"health": 7,
 		"id": "NAX7_02",
 		"name": "Understudy",
@@ -4040,6 +4185,7 @@ var parseCardsText = {
 			"name": "Cliquetteur perce-vrille",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à un Méca allié."
 		},
+		"goldenImage": "GVG_055.gif",
 		"health": 5,
 		"id": "GVG_055",
 		"name": "Screwjank Clunker",
@@ -4056,6 +4202,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : vert",
 			"text": "Rend 2 PV à votre adversaire au début de votre tour tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_4.gif",
 		"id": "BRMA12_4",
 		"name": "Brood Affliction: Green",
 		"playerClass": "Neutral",
@@ -4073,6 +4220,7 @@ var parseCardsText = {
 			"name": "Al’Akir, seigneur des Vents",
 			"text": "<b>Furie des vents, Charge, Bouclier divin, Provocation</b>"
 		},
+		"goldenImage": "NEW1_010.gif",
 		"health": 5,
 		"id": "NEW1_010",
 		"name": "Al'Akir the Windlord",
@@ -4105,6 +4253,7 @@ var parseCardsText = {
 			"name": "Chaudron",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> libère Sir Finley !"
 		},
+		"goldenImage": "LOEA09_7H.gif",
 		"health": 10,
 		"id": "LOEA09_7H",
 		"name": "Cauldron",
@@ -4150,6 +4299,7 @@ var parseCardsText = {
 			"name": "Chapeau d’explorateur",
 			"text": "Donne à un serviteur +1/+1 et « <b>Râle d’agonie :</b> ajoute une carte Chapeau d’explorateur dans\nvotre main. »"
 		},
+		"goldenImage": "LOE_105.gif",
 		"id": "LOE_105",
 		"name": "Explorer's Hat",
 		"playerClass": "Hunter",
@@ -4166,6 +4316,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Mouton"
 		},
+		"goldenImage": "CFM_621_m5.gif",
 		"health": 1,
 		"id": "CFM_621_m5",
 		"name": "Sheep",
@@ -4182,6 +4333,7 @@ var parseCardsText = {
 			"name": "Acclimatation",
 			"text": "Détruit un serviteur. Votre adversaire pioche 2 cartes."
 		},
+		"goldenImage": "EX1_161.gif",
 		"id": "EX1_161",
 		"name": "Naturalize",
 		"playerClass": "Druid",
@@ -4197,6 +4349,7 @@ var parseCardsText = {
 			"name": "Do Nothing",
 			"text": "This does nothing."
 		},
+		"goldenImage": "XXX_025.gif",
 		"id": "XXX_025",
 		"name": "Do Nothing",
 		"playerClass": "Neutral",
@@ -4213,6 +4366,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ombrebête"
 		},
+		"goldenImage": "OG_241a.gif",
 		"health": 1,
 		"id": "OG_241a",
 		"name": "Shadowbeast",
@@ -4231,6 +4385,7 @@ var parseCardsText = {
 			"name": "Chevalier de Hurlevent",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_131.gif",
 		"health": 5,
 		"id": "CS2_131",
 		"name": "Stormwind Knight",
@@ -4247,6 +4402,7 @@ var parseCardsText = {
 			"name": "Traverser avec précaution",
 			"text": "Subit 5 points de dégâts."
 		},
+		"goldenImage": "LOEA04_06b.gif",
 		"id": "LOEA04_06b",
 		"name": "Walk Across Gingerly",
 		"playerClass": "Neutral",
@@ -4265,6 +4421,7 @@ var parseCardsText = {
 			"name": "Bombardier fou",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts répartis de façon aléatoire entre tous les autres personnages."
 		},
+		"goldenImage": "EX1_082.gif",
 		"health": 2,
 		"id": "EX1_082",
 		"name": "Mad Bomber",
@@ -4283,6 +4440,7 @@ var parseCardsText = {
 			"name": "Feindre la mort",
 			"text": "Déclenche tous les <b>Râles d’agonie</b> de vos serviteurs."
 		},
+		"goldenImage": "GVG_026.gif",
 		"id": "GVG_026",
 		"name": "Feign Death",
 		"playerClass": "Hunter",
@@ -4314,6 +4472,7 @@ var parseCardsText = {
 			"name": "Recyclage",
 			"text": "Replace un serviteur adverse dans le deck de votre adversaire."
 		},
+		"goldenImage": "GVG_031.gif",
 		"id": "GVG_031",
 		"name": "Recycle",
 		"playerClass": "Druid",
@@ -4329,6 +4488,7 @@ var parseCardsText = {
 			"name": "Deuxième classe : voleur",
 			"text": "Ajoute des cartes de voleur dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Rogue.gif",
 		"id": "TB_ClassRandom_Rogue",
 		"name": "Second Class: Rogue",
 		"playerClass": "Rogue",
@@ -4346,6 +4506,7 @@ var parseCardsText = {
 			"name": "Ensorceleuse du culte",
 			"text": "<b>Dégâts des sorts : +1</b>\nAprès que vous avez lancé un sort, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_303.gif",
 		"health": 2,
 		"id": "OG_303",
 		"name": "Cult Sorcerer",
@@ -4390,6 +4551,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Général Drakkisath"
 		},
+		"goldenImage": "BRMA08_1.gif",
 		"health": 50,
 		"id": "BRMA08_1",
 		"name": "General Drakkisath",
@@ -4407,6 +4569,7 @@ var parseCardsText = {
 			"name": "Guetteur flottant",
 			"text": "Chaque fois que votre héros subit des dégâts pendant votre tour,\ngagne +2/+2."
 		},
+		"goldenImage": "GVG_100.gif",
 		"health": 4,
 		"id": "GVG_100",
 		"name": "Floating Watcher",
@@ -4440,6 +4603,7 @@ var parseCardsText = {
 			"name": "Ancienne porte-bouclier",
 			"text": "<b>Cri de guerre :</b> gagne\n10 points d’armure si votre C’Thun a au moins 10 Attaque."
 		},
+		"goldenImage": "OG_301.gif",
 		"health": 6,
 		"id": "OG_301",
 		"name": "Ancient Shieldbearer",
@@ -4471,6 +4635,7 @@ var parseCardsText = {
 			"name": "Apothicaire clandestin",
 			"text": "Inflige 5 points de dégâts à votre héros chaque fois que vous invoquez un serviteur."
 		},
+		"goldenImage": "CFM_900.gif",
 		"health": 5,
 		"id": "CFM_900",
 		"name": "Unlicensed Apothecary",
@@ -4531,6 +4696,7 @@ var parseCardsText = {
 			"name": "Grand frère de Mukla",
 			"text": "Il est si fort, et pour seulement 6 cristaux de mana ?!"
 		},
+		"goldenImage": "TU4c_007.gif",
 		"health": 10,
 		"id": "TU4c_007",
 		"name": "Mukla's Big Brother",
@@ -4549,6 +4715,7 @@ var parseCardsText = {
 			"name": "Balayage",
 			"text": "Inflige $4 |4(point,points) de dégâts à un adversaire et $1 |4(point,points) de dégâts à tous les autres adversaires."
 		},
+		"goldenImage": "CS2_012.gif",
 		"id": "CS2_012",
 		"name": "Swipe",
 		"playerClass": "Druid",
@@ -4567,6 +4734,7 @@ var parseCardsText = {
 			"name": "Attise-flammes",
 			"text": "Après que vous avez lancé un sort, inflige 2 points de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "BRM_002.gif",
 		"health": 4,
 		"id": "BRM_002",
 		"name": "Flamewaker",
@@ -4583,6 +4751,7 @@ var parseCardsText = {
 			"name": "Fiole de Putrescin",
 			"text": "Détruit un serviteur adverse aléatoire."
 		},
+		"goldenImage": "LOEA16_8.gif",
 		"id": "LOEA16_8",
 		"name": "Putress' Vial",
 		"playerClass": "Neutral",
@@ -4595,6 +4764,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Onyxia"
 		},
+		"goldenImage": "BRMA17_3H.gif",
 		"health": 30,
 		"id": "BRMA17_3H",
 		"name": "Onyxia",
@@ -4652,6 +4822,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chasseur fou"
 		},
+		"goldenImage": "TU4d_002.gif",
 		"health": 1,
 		"id": "TU4d_002",
 		"name": "Crazed Hunter",
@@ -4668,6 +4839,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Avorton grognon"
 		},
+		"goldenImage": "LOE_089t3.gif",
 		"health": 2,
 		"id": "LOE_089t3",
 		"name": "Grumbly Runt",
@@ -4683,6 +4855,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Démon de la Kabale"
 		},
+		"goldenImage": "CFM_621_m2.gif",
 		"health": 5,
 		"id": "CFM_621_m2",
 		"name": "Kabal Demon",
@@ -4714,6 +4887,7 @@ var parseCardsText = {
 			"name": "Huile des ténèbres",
 			"text": "Ajoute 2 démons aléatoires dans votre main."
 		},
+		"goldenImage": "CFM_621t23.gif",
 		"id": "CFM_621t23",
 		"name": "Shadow Oil",
 		"playerClass": "Neutral",
@@ -4732,6 +4906,7 @@ var parseCardsText = {
 			"name": "Tigre de Strangleronce",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "EX1_028.gif",
 		"health": 5,
 		"id": "EX1_028",
 		"name": "Stranglethorn Tiger",
@@ -4764,6 +4939,7 @@ var parseCardsText = {
 			"name": "Potion de feu draconique",
 			"text": "Inflige $5 points de dégâts à tous les serviteurs qui ne sont pas des dragons."
 		},
+		"goldenImage": "CFM_662.gif",
 		"id": "CFM_662",
 		"name": "Dragonfire Potion",
 		"playerClass": "Priest",
@@ -4782,6 +4958,7 @@ var parseCardsText = {
 			"name": "Lieutenant de la garde d’os",
 			"text": "<b>Exaltation :</b> gagne +1 PV."
 		},
+		"goldenImage": "AT_089.gif",
 		"health": 2,
 		"id": "AT_089",
 		"name": "Boneguard Lieutenant",
@@ -4815,6 +4992,7 @@ var parseCardsText = {
 			"name": "Totem de soins",
 			"text": "À la fin de votre tour, rend 1 point de vie à tous vos serviteurs."
 		},
+		"goldenImage": "AT_132_SHAMANa.gif",
 		"health": 2,
 		"id": "AT_132_SHAMANa",
 		"name": "Healing Totem",
@@ -4832,6 +5010,7 @@ var parseCardsText = {
 			"name": "Graines de poison",
 			"text": "Détruit tous les serviteurs et les remplace par des tréants 2/2."
 		},
+		"goldenImage": "FP1_019.gif",
 		"id": "FP1_019",
 		"name": "Poison Seeds",
 		"playerClass": "Druid",
@@ -4848,6 +5027,7 @@ var parseCardsText = {
 			"name": "Cavalier spectral",
 			"text": "Au début de votre tour, inflige 1 point de dégâts à votre héros."
 		},
+		"goldenImage": "NAX8_05t.gif",
 		"health": 6,
 		"id": "NAX8_05t",
 		"name": "Spectral Rider",
@@ -4891,6 +5071,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Démon de la Kabale"
 		},
+		"goldenImage": "CFM_621_m3.gif",
 		"health": 8,
 		"id": "CFM_621_m3",
 		"name": "Kabal Demon",
@@ -4906,6 +5087,7 @@ var parseCardsText = {
 			"name": "Misha",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "NEW1_032.gif",
 		"health": 4,
 		"id": "NEW1_032",
 		"name": "Misha",
@@ -4925,6 +5107,7 @@ var parseCardsText = {
 			"name": "Rohart totémique",
 			"text": "<b>Cri de guerre :</b> invoque un totem de base aléatoire."
 		},
+		"goldenImage": "AT_046.gif",
 		"health": 2,
 		"id": "AT_046",
 		"name": "Tuskarr Totemic",
@@ -4944,6 +5127,7 @@ var parseCardsText = {
 			"name": "Chasseur de gros gibier",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur avec 7 Attaque ou plus."
 		},
+		"goldenImage": "EX1_005.gif",
 		"health": 2,
 		"id": "EX1_005",
 		"name": "Big Game Hunter",
@@ -4960,6 +5144,7 @@ var parseCardsText = {
 			"name": "Œil d’Hakkar",
 			"text": "Pioche un secret dans le deck de votre adversaire et le place sur le champ de bataille."
 		},
+		"goldenImage": "LOE_008H.gif",
 		"id": "LOE_008H",
 		"name": "Eye of Hakkar",
 		"playerClass": "Neutral",
@@ -4989,6 +5174,7 @@ var parseCardsText = {
 			"name": "Brian Schwab",
 			"text": "À la fin de votre tour, donne +1 ATQ à un serviteur aléatoire."
 		},
+		"goldenImage": "CRED_13.gif",
 		"health": 10,
 		"id": "CRED_13",
 		"name": "Brian Schwab",
@@ -5027,6 +5213,7 @@ var parseCardsText = {
 			"name": "Fusée éclairante",
 			"text": "Tous les serviteurs perdent le <b>Camouflage</b>. Détruit tous les <b>Secrets</b> adverses. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_544.gif",
 		"id": "EX1_544",
 		"name": "Flare",
 		"playerClass": "Hunter",
@@ -5045,6 +5232,7 @@ var parseCardsText = {
 			"name": "Élémentaire de terre",
 			"text": "<b>Provocation</b>\n<b>Surcharge :</b> (3)"
 		},
+		"goldenImage": "EX1_250.gif",
 		"health": 8,
 		"id": "EX1_250",
 		"name": "Earth Elemental",
@@ -5109,6 +5297,7 @@ var parseCardsText = {
 			"name": "Bounce",
 			"text": "Return a minion to its owner's hand."
 		},
+		"goldenImage": "XXX_012.gif",
 		"id": "XXX_012",
 		"name": "Bounce",
 		"playerClass": "Neutral",
@@ -5157,6 +5346,7 @@ var parseCardsText = {
 			"name": "Horreb",
 			"text": "<b>Cri de guerre :</b> les sorts adverses coûtent (5) cristaux de plus au prochain tour."
 		},
+		"goldenImage": "FP1_030.gif",
 		"health": 5,
 		"id": "FP1_030",
 		"name": "Loatheb",
@@ -5175,6 +5365,7 @@ var parseCardsText = {
 			"name": "Force divine",
 			"text": "Donne +1/+2 à un serviteur."
 		},
+		"goldenImage": "OG_223.gif",
 		"id": "OG_223",
 		"name": "Divine Strength",
 		"playerClass": "Paladin",
@@ -5194,6 +5385,7 @@ var parseCardsText = {
 			"name": "Morsure de la mort",
 			"text": "<b>Râle d’agonie :</b> inflige 1 point de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "FP1_021.gif",
 		"id": "FP1_021",
 		"name": "Death's Bite",
 		"playerClass": "Warrior",
@@ -5239,6 +5431,7 @@ var parseCardsText = {
 			"name": "Seigneur de la mort",
 			"text": "<b>Provocation. Râle d’agonie :</b> votre adversaire place un serviteur de son deck sur le champ de bataille."
 		},
+		"goldenImage": "FP1_009.gif",
 		"health": 8,
 		"id": "FP1_009",
 		"name": "Deathlord",
@@ -5256,6 +5449,7 @@ var parseCardsText = {
 			"name": "Zwick",
 			"text": "<b>Cri de guerre :</b> se plaint du prix du bacon."
 		},
+		"goldenImage": "CRED_07.gif",
 		"health": 2,
 		"id": "CRED_07",
 		"name": "Zwick",
@@ -5287,6 +5481,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Squelette"
 		},
+		"goldenImage": "NAX4_03H.gif",
 		"health": 5,
 		"id": "NAX4_03H",
 		"name": "Skeleton",
@@ -5302,6 +5497,7 @@ var parseCardsText = {
 			"name": "Moira Barbe-de-Bronze",
 			"text": "Thaurissan ne peut pas utiliser son pouvoir héroïque.\nN’attaque jamais de serviteurs à moins qu’ils n’aient <b>Provocation</b>."
 		},
+		"goldenImage": "BRMA03_3H.gif",
 		"health": 1,
 		"id": "BRMA03_3H",
 		"name": "Moira Bronzebeard",
@@ -5319,6 +5515,7 @@ var parseCardsText = {
 			"name": "Ensevelir",
 			"text": "Choisit un serviteur adverse. Le place dans votre deck."
 		},
+		"goldenImage": "LOE_104.gif",
 		"id": "LOE_104",
 		"name": "Entomb",
 		"playerClass": "Priest",
@@ -5358,6 +5555,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Maexxna"
 		},
+		"goldenImage": "NAX3_01.gif",
 		"health": 30,
 		"id": "NAX3_01",
 		"name": "Maexxna",
@@ -5408,6 +5606,7 @@ var parseCardsText = {
 			"name": "Diablosaure fossilisé",
 			"text": "<b>Cri de guerre :</b> gagne <b>Provocation</b> si vous contrôlez une Bête."
 		},
+		"goldenImage": "LOE_073.gif",
 		"health": 8,
 		"id": "LOE_073",
 		"name": "Fossilized Devilsaur",
@@ -5425,6 +5624,7 @@ var parseCardsText = {
 			"name": "Leokk",
 			"text": "Vos serviteurs ont +1 ATQ."
 		},
+		"goldenImage": "LOEA02_10a.gif",
 		"health": 4,
 		"id": "LOEA02_10a",
 		"name": "Leokk",
@@ -5441,6 +5641,7 @@ var parseCardsText = {
 			"name": "Huile de pierre-écaille",
 			"text": "Gagne 4 points d’armure."
 		},
+		"goldenImage": "CFM_621t3.gif",
 		"id": "CFM_621t3",
 		"name": "Stonescale Oil",
 		"playerClass": "Neutral",
@@ -5457,6 +5658,7 @@ var parseCardsText = {
 			"name": "Savoir ancestral",
 			"text": "Vous piochez 2 cartes. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "AT_053.gif",
 		"id": "AT_053",
 		"name": "Ancestral Knowledge",
 		"overload": 1,
@@ -5491,6 +5693,7 @@ var parseCardsText = {
 			"name": "Diablotin des flammes",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts à votre héros."
 		},
+		"goldenImage": "EX1_319.gif",
 		"health": 2,
 		"id": "EX1_319",
 		"name": "Flame Imp",
@@ -5510,6 +5713,7 @@ var parseCardsText = {
 			"name": "Contrebandière des bas-fonds",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_853.gif",
 		"health": 4,
 		"id": "CFM_853",
 		"name": "Grimestreet Smuggler",
@@ -5527,6 +5731,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Écuyer"
 		},
+		"goldenImage": "CS2_152.gif",
 		"health": 2,
 		"id": "CS2_152",
 		"name": "Squire",
@@ -5595,6 +5800,7 @@ var parseCardsText = {
 			"name": "Alexstrasza",
 			"text": "<b>Cri de guerre :</b> fixe les points de vie restants d’un héros à 15."
 		},
+		"goldenImage": "EX1_561.gif",
 		"health": 8,
 		"id": "EX1_561",
 		"name": "Alexstrasza",
@@ -5615,6 +5821,7 @@ var parseCardsText = {
 			"name": "Griffes de jade",
 			"text": "<b>Cri de guerre :</b> invoque un <b>golem de jade</b> {0}.\n<b><b>Surcharge :</b></b> (1)@<b>Cri de guerre :</b> invoque un <b>golem de jade</b>.\n<b><b>Surcharge :</b></b> (1)"
 		},
+		"goldenImage": "CFM_717.gif",
 		"id": "CFM_717",
 		"name": "Jade Claws",
 		"overload": 1,
@@ -5634,6 +5841,7 @@ var parseCardsText = {
 			"name": "Ysera",
 			"text": "À la fin de votre tour, ajoute une carte Rêve dans votre main."
 		},
+		"goldenImage": "EX1_572.gif",
 		"health": 12,
 		"id": "EX1_572",
 		"name": "Ysera",
@@ -5666,6 +5874,7 @@ var parseCardsText = {
 			"name": "Thé de chardon",
 			"text": "Vous piochez une carte. En place 2 copies supplémentaires dans votre main."
 		},
+		"goldenImage": "OG_073.gif",
 		"id": "OG_073",
 		"name": "Thistle Tea",
 		"playerClass": "Rogue",
@@ -5699,6 +5908,7 @@ var parseCardsText = {
 			"name": "Affranchi sinistrécaille",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à un murloc aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_650.gif",
 		"health": 1,
 		"id": "CFM_650",
 		"name": "Grimscale Chum",
@@ -5717,6 +5927,7 @@ var parseCardsText = {
 			"name": "Gangsters, hé ho !",
 			"text": "<b>Cri de guerre :</b> invoque 2 copies de ce serviteur."
 		},
+		"goldenImage": "CFM_668t2.gif",
 		"health": 2,
 		"id": "CFM_668t2",
 		"name": "Doppelgangster",
@@ -5733,6 +5944,7 @@ var parseCardsText = {
 			"name": "Marque de la nature",
 			"text": "+4 ATQ."
 		},
+		"goldenImage": "EX1_155a.gif",
 		"id": "EX1_155a",
 		"name": "Mark of Nature",
 		"playerClass": "Druid",
@@ -5773,6 +5985,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Squelette"
 		},
+		"goldenImage": "NAX4_03.gif",
 		"health": 1,
 		"id": "NAX4_03",
 		"name": "Skeleton",
@@ -5787,6 +6000,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nérubien"
 		},
+		"goldenImage": "AT_036t.gif",
 		"health": 4,
 		"id": "AT_036t",
 		"name": "Nerubian",
@@ -5801,6 +6015,7 @@ var parseCardsText = {
 			"name": "Opponent Disconnect",
 			"text": "Force your opponnet to disconnect."
 		},
+		"goldenImage": "XXX_030.gif",
 		"id": "XXX_030",
 		"name": "Opponent Disconnect",
 		"playerClass": "Neutral",
@@ -5818,6 +6033,7 @@ var parseCardsText = {
 			"name": "Régiment de bataille",
 			"text": "Invoque trois recrues de la Main d’argent 1/1. Équipe une arme 1/4."
 		},
+		"goldenImage": "GVG_061.gif",
 		"id": "GVG_061",
 		"name": "Muster for Battle",
 		"playerClass": "Paladin",
@@ -5836,6 +6052,7 @@ var parseCardsText = {
 			"name": "Mage de sang Thalnos",
 			"text": "<b>Dégâts des sorts : +1</b>.\n<b>Râle d’agonie :</b> vous piochez une carte."
 		},
+		"goldenImage": "EX1_012.gif",
 		"health": 1,
 		"id": "EX1_012",
 		"name": "Bloodmage Thalnos",
@@ -5856,6 +6073,7 @@ var parseCardsText = {
 			"name": "Vendeur de rafraîchissements",
 			"text": "<b>Cri de guerre :</b> rend 4 PV à chaque héros."
 		},
+		"goldenImage": "AT_111.gif",
 		"health": 5,
 		"id": "AT_111",
 		"name": "Refreshment Vendor",
@@ -5874,6 +6092,7 @@ var parseCardsText = {
 			"name": "Contrôle mental",
 			"text": "Prend le contrôle d’un serviteur adverse."
 		},
+		"goldenImage": "CS1_113.gif",
 		"id": "CS1_113",
 		"name": "Mind Control",
 		"playerClass": "Priest",
@@ -5892,6 +6111,7 @@ var parseCardsText = {
 			"name": "Soldat d’élite kor’kron",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "NEW1_011.gif",
 		"health": 3,
 		"id": "NEW1_011",
 		"name": "Kor'kron Elite",
@@ -5911,6 +6131,7 @@ var parseCardsText = {
 			"name": "Héraut Volazj",
 			"text": "<b>Cri de guerre :</b> invoque une copie 1/1 de chacun de vos autres serviteurs."
 		},
+		"goldenImage": "OG_316.gif",
 		"health": 5,
 		"id": "OG_316",
 		"name": "Herald Volazj",
@@ -5927,6 +6148,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Insecte géant"
 		},
+		"goldenImage": "LOEA04_23h.gif",
 		"health": 6,
 		"id": "LOEA04_23h",
 		"name": "Giant Insect",
@@ -5992,6 +6214,7 @@ var parseCardsText = {
 			"name": "Tir des Arcanes",
 			"text": "Inflige $2 |4(point,points) de dégâts."
 		},
+		"goldenImage": "DS1_185.gif",
 		"id": "DS1_185",
 		"name": "Arcane Shot",
 		"playerClass": "Hunter",
@@ -6010,6 +6233,7 @@ var parseCardsText = {
 			"name": "Prophète nérubien",
 			"text": "Au début de votre tour, réduit le coût en mana de cette carte de\n(1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "OG_138.gif",
 		"health": 4,
 		"id": "OG_138",
 		"name": "Nerubian Prophet",
@@ -6026,6 +6250,7 @@ var parseCardsText = {
 			"name": "Destin cruel : murlocs",
 			"text": "Transforme chaque serviteur en jeu en murloc 1/1."
 		},
+		"goldenImage": "TB_PickYourFate_11rand.gif",
 		"id": "TB_PickYourFate_11rand",
 		"name": "Dire Fate: Murlocs",
 		"playerClass": "Neutral",
@@ -6040,6 +6265,7 @@ var parseCardsText = {
 			"name": "Balayage de queue",
 			"text": "Inflige $4 |4(point,points) de dégâts."
 		},
+		"goldenImage": "BRM_030t.gif",
 		"id": "BRM_030t",
 		"name": "Tail Swipe",
 		"playerClass": "Neutral",
@@ -6087,6 +6313,7 @@ var parseCardsText = {
 			"name": "Potion de métamorphose",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, le transforme en mouton 1/1."
 		},
+		"goldenImage": "CFM_620.gif",
 		"id": "CFM_620",
 		"name": "Potion of Polymorph",
 		"playerClass": "Mage",
@@ -6103,6 +6330,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t29.gif",
 		"health": 29,
 		"id": "CFM_712_t29",
 		"name": "Jade Golem",
@@ -6117,6 +6345,7 @@ var parseCardsText = {
 			"name": "Traverser à pied",
 			"text": "Gagne un cristal de mana."
 		},
+		"goldenImage": "LOEA04_28b.gif",
 		"id": "LOEA04_28b",
 		"name": "Wade Through",
 		"playerClass": "Neutral",
@@ -6169,6 +6398,7 @@ var parseCardsText = {
 			"name": "Crapaud énorme",
 			"text": "<b>Râle d’agonie :</b> inflige\n1 point de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "LOE_046.gif",
 		"health": 2,
 		"id": "LOE_046",
 		"name": "Huge Toad",
@@ -6187,6 +6417,7 @@ var parseCardsText = {
 			"name": "Poison mortel",
 			"text": "Donne +2 ATQ à votre arme."
 		},
+		"goldenImage": "CS2_074.gif",
 		"id": "CS2_074",
 		"name": "Deadly Poison",
 		"playerClass": "Rogue",
@@ -6217,6 +6448,7 @@ var parseCardsText = {
 			"name": "Illidan Hurlorage",
 			"text": "Quand vous jouez une carte, invoque une Flamme d’Azzinoth 2/1."
 		},
+		"goldenImage": "EX1_614.gif",
 		"health": 5,
 		"id": "EX1_614",
 		"name": "Illidan Stormrage",
@@ -6233,6 +6465,7 @@ var parseCardsText = {
 			"name": "Bombe vivante",
 			"text": "Choisissez un serviteur adverse. Inflige $5 |4(point,points) de dégâts à tous les adversaires s’il survit jusqu’à votre prochain tour."
 		},
+		"goldenImage": "BRMA05_3.gif",
 		"id": "BRMA05_3",
 		"name": "Living Bomb",
 		"playerClass": "Neutral",
@@ -6248,6 +6481,7 @@ var parseCardsText = {
 			"name": "Chapeglace",
 			"text": "<b>Gèle</b> 3 serviteurs adverses aléatoires."
 		},
+		"goldenImage": "CFM_621t27.gif",
 		"id": "CFM_621t27",
 		"name": "Icecap",
 		"playerClass": "Neutral",
@@ -6272,6 +6506,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "La sentinelle d’acier"
 		},
+		"goldenImage": "LOEA14_1.gif",
 		"health": 30,
 		"id": "LOEA14_1",
 		"name": "The Steel Sentinel",
@@ -6288,6 +6523,7 @@ var parseCardsText = {
 			"name": "Gangsters, hé ho !",
 			"text": "<b>Cri de guerre :</b> invoque 2 copies de ce serviteur."
 		},
+		"goldenImage": "CFM_668t.gif",
 		"health": 2,
 		"id": "CFM_668t",
 		"name": "Doppelgangster",
@@ -6304,6 +6540,7 @@ var parseCardsText = {
 			"name": "Héritage de l’Empereur",
 			"text": "Donne +2/+2 à vos serviteurs. <i>(+2 ATQ / +2 PV)</i>"
 		},
+		"goldenImage": "TU4f_004.gif",
 		"id": "TU4f_004",
 		"name": "Legacy of the Emperor",
 		"playerClass": "Neutral",
@@ -6336,6 +6573,7 @@ var parseCardsText = {
 			"name": "Appel de la nature",
 			"text": "Invoque les trois compagnons animaux."
 		},
+		"goldenImage": "OG_211.gif",
 		"id": "OG_211",
 		"name": "Call of the Wild",
 		"playerClass": "Hunter",
@@ -6353,6 +6591,7 @@ var parseCardsText = {
 			"name": "Attaque mentale",
 			"text": "Inflige $5 |4(point,points) de dégâts au héros adverse."
 		},
+		"goldenImage": "DS1_233.gif",
 		"id": "DS1_233",
 		"name": "Mind Blast",
 		"playerClass": "Priest",
@@ -6369,6 +6608,7 @@ var parseCardsText = {
 			"name": "Raptor d’os",
 			"text": "<b>Cri de guerre :</b> prend le contrôle de l’arme de votre adversaire."
 		},
+		"goldenImage": "LOEA15_3H.gif",
 		"health": 2,
 		"id": "LOEA15_3H",
 		"name": "Boneraptor",
@@ -6387,6 +6627,7 @@ var parseCardsText = {
 			"name": "Maître des rouages",
 			"text": "A +2 ATQ tant que vous avez un Méca."
 		},
+		"goldenImage": "GVG_013.gif",
 		"health": 2,
 		"id": "GVG_013",
 		"name": "Cogmaster",
@@ -6437,6 +6678,7 @@ var parseCardsText = {
 			"name": "Chef de guerre loup-de-givre",
 			"text": "<b>Cri de guerre :</b> gagne +1/+1 pour chaque autre serviteur allié sur le champ de bataille."
 		},
+		"goldenImage": "CS2_226.gif",
 		"health": 4,
 		"id": "CS2_226",
 		"name": "Frostwolf Warlord",
@@ -6453,6 +6695,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Pirate"
 		},
+		"goldenImage": "TB_015.gif",
 		"health": 3,
 		"id": "TB_015",
 		"name": "Pirate",
@@ -6480,6 +6723,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Le Recousu"
 		},
+		"goldenImage": "NAX10_01H.gif",
 		"health": 45,
 		"id": "NAX10_01H",
 		"name": "Patchwerk",
@@ -6496,6 +6740,7 @@ var parseCardsText = {
 			"name": "Sabotage",
 			"text": "Détruit un serviteur adverse aléatoire. <b>Combo :</b> détruit aussi l’arme de votre adversaire."
 		},
+		"goldenImage": "GVG_047.gif",
 		"id": "GVG_047",
 		"name": "Sabotage",
 		"playerClass": "Rogue",
@@ -6514,6 +6759,7 @@ var parseCardsText = {
 			"name": "Ver des sables géant",
 			"text": "Quand ce serviteur en tue un autre, il peut attaquer de nouveau."
 		},
+		"goldenImage": "OG_308.gif",
 		"health": 8,
 		"id": "OG_308",
 		"name": "Giant Sand Worm",
@@ -6544,6 +6790,7 @@ var parseCardsText = {
 			"name": "Liquide de refroidissement",
 			"text": "Gèle et inflige les dégâts de l’attaque à tous les serviteurs.\nGagne 2 ATQ."
 		},
+		"goldenImage": "TB_CoOpBossSpell_3.gif",
 		"id": "TB_CoOpBossSpell_3",
 		"name": "Release Coolant",
 		"playerClass": "Neutral",
@@ -6577,6 +6824,7 @@ var parseCardsText = {
 			"name": "Barman amical",
 			"text": "À la fin de votre tour, rend 1 PV à votre héros."
 		},
+		"goldenImage": "CFM_654.gif",
 		"health": 3,
 		"id": "CFM_654",
 		"name": "Friendly Bartender",
@@ -6609,6 +6857,7 @@ var parseCardsText = {
 			"name": "Lanceur de sorts draconien",
 			"text": "<b>Cri de guerre :</b> invoque deux dragonnets 2/2."
 		},
+		"goldenImage": "BRMC_84.gif",
 		"health": 6,
 		"id": "BRMC_84",
 		"name": "Dragonkin Spellcaster",
@@ -6638,6 +6887,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Maexxna"
 		},
+		"goldenImage": "NAX3_01H.gif",
 		"health": 45,
 		"id": "NAX3_01H",
 		"name": "Maexxna",
@@ -6655,6 +6905,7 @@ var parseCardsText = {
 			"name": "Tentacule de N’Zoth",
 			"text": "<b>Râle d’agonie :</b> inflige\n1 point de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "OG_151.gif",
 		"health": 1,
 		"id": "OG_151",
 		"name": "Tentacle of N'Zoth",
@@ -6671,6 +6922,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Drake émeraude"
 		},
+		"goldenImage": "DREAM_03.gif",
 		"health": 6,
 		"id": "DREAM_03",
 		"name": "Emerald Drake",
@@ -6685,6 +6937,7 @@ var parseCardsText = {
 			"name": "Damage 1",
 			"text": "Deal $1 damage."
 		},
+		"goldenImage": "XXX_001.gif",
 		"id": "XXX_001",
 		"name": "Damage 1",
 		"playerClass": "Neutral",
@@ -6700,6 +6953,7 @@ var parseCardsText = {
 			"name": "Ordres de Drakkisath",
 			"text": "Détruit un serviteur. Gagne 10 points d’armure."
 		},
+		"goldenImage": "BRMA08_3.gif",
 		"id": "BRMA08_3",
 		"name": "Drakkisath's Command",
 		"playerClass": "Neutral",
@@ -6717,6 +6971,7 @@ var parseCardsText = {
 			"name": "Sombre sectateur",
 			"text": "<b>Râle d’agonie :</b> donne\n+3 PV à un serviteur allié aléatoire."
 		},
+		"goldenImage": "FP1_023.gif",
 		"health": 4,
 		"id": "FP1_023",
 		"name": "Dark Cultist",
@@ -6734,6 +6989,7 @@ var parseCardsText = {
 			"name": "Gothik le Moissonneur",
 			"text": "<b>Râle d’agonie :</b> invoque un Gothik spectral pour votre adversaire."
 		},
+		"goldenImage": "TB_KTRAF_4.gif",
 		"health": 4,
 		"id": "TB_KTRAF_4",
 		"name": "Gothik the Harvester",
@@ -6780,6 +7036,7 @@ var parseCardsText = {
 			"name": "Intelligence des Arcanes",
 			"text": "Vous piochez 2 cartes."
 		},
+		"goldenImage": "CS2_023.gif",
 		"id": "CS2_023",
 		"name": "Arcane Intellect",
 		"playerClass": "Mage",
@@ -6796,6 +7053,7 @@ var parseCardsText = {
 			"name": "Totem de courroux de l’air",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "AT_132_SHAMANd.gif",
 		"health": 2,
 		"id": "AT_132_SHAMANd",
 		"name": "Wrath of Air Totem",
@@ -6862,6 +7120,7 @@ var parseCardsText = {
 			"name": "Lumière sacrée",
 			"text": "Rend #6 |4(point,points) de vie."
 		},
+		"goldenImage": "CS2_089.gif",
 		"id": "CS2_089",
 		"name": "Holy Light",
 		"playerClass": "Paladin",
@@ -6880,6 +7139,7 @@ var parseCardsText = {
 			"name": "Drake de minuit",
 			"text": "<b>Cri de guerre :</b> gagne +1 ATQ pour chaque autre carte dans votre main."
 		},
+		"goldenImage": "OG_320.gif",
 		"health": 4,
 		"id": "OG_320",
 		"name": "Midnight Drake",
@@ -6900,6 +7160,7 @@ var parseCardsText = {
 			"name": "Limon des marais acide",
 			"text": "<b>Cri de guerre :</b> détruit l’arme de votre adversaire."
 		},
+		"goldenImage": "EX1_066.gif",
 		"health": 2,
 		"id": "EX1_066",
 		"name": "Acidic Swamp Ooze",
@@ -6918,6 +7179,7 @@ var parseCardsText = {
 			"name": "Éclair",
 			"text": "Inflige $3 |4(point,points) de dégâts.\n<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "EX1_238.gif",
 		"id": "EX1_238",
 		"name": "Lightning Bolt",
 		"overload": 1,
@@ -6937,6 +7199,7 @@ var parseCardsText = {
 			"name": "Raza l’Enchaîné",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, votre pouvoir héroïque coûte (0) |4(cristal,cristaux) pendant cette partie."
 		},
+		"goldenImage": "CFM_020.gif",
 		"health": 5,
 		"id": "CFM_020",
 		"name": "Raza the Chained",
@@ -6956,6 +7219,7 @@ var parseCardsText = {
 			"name": "Lardeur",
 			"text": "À la fin de votre tour, invoque un gnoll 2/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "NEW1_040.gif",
 		"health": 4,
 		"id": "NEW1_040",
 		"name": "Hogger",
@@ -6975,6 +7239,7 @@ var parseCardsText = {
 			"name": "Chat de gouttière",
 			"text": "<b>Cri de guerre :</b> invoque un chat 1/1."
 		},
+		"goldenImage": "CFM_315.gif",
 		"health": 1,
 		"id": "CFM_315",
 		"name": "Alleycat",
@@ -6993,6 +7258,7 @@ var parseCardsText = {
 			"name": "Mot de l’ombre : Mort",
 			"text": "Détruit un serviteur avec 5 ATQ ou plus."
 		},
+		"goldenImage": "EX1_622.gif",
 		"id": "EX1_622",
 		"name": "Shadow Word: Death",
 		"playerClass": "Priest",
@@ -7011,6 +7277,7 @@ var parseCardsText = {
 			"name": "Limon d’égout toxique",
 			"text": "<b>Cri de guerre :</b> ôte 1 Durabilité à l’arme de votre adversaire."
 		},
+		"goldenImage": "CFM_655.gif",
 		"health": 3,
 		"id": "CFM_655",
 		"name": "Toxic Sewer Ooze",
@@ -7025,6 +7292,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "LOEA15_1H.gif",
 		"health": 30,
 		"id": "LOEA15_1H",
 		"name": "Rafaam",
@@ -7039,6 +7307,7 @@ var parseCardsText = {
 			"name": "Déraciner",
 			"text": "+5 ATQ."
 		},
+		"goldenImage": "EX1_178b.gif",
 		"id": "EX1_178b",
 		"name": "Uproot",
 		"playerClass": "Druid",
@@ -7071,6 +7340,7 @@ var parseCardsText = {
 			"name": "Bombardière d’ombre",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts aux héros."
 		},
+		"goldenImage": "GVG_009.gif",
 		"health": 1,
 		"id": "GVG_009",
 		"name": "Shadowbomber",
@@ -7163,6 +7433,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Combattante de la fosse"
 		},
+		"goldenImage": "AT_101.gif",
 		"health": 6,
 		"id": "AT_101",
 		"name": "Pit Fighter",
@@ -7181,6 +7452,7 @@ var parseCardsText = {
 			"name": "Inquisiteur Aileron noir",
 			"text": "<b>Cri de guerre :</b> votre pouvoir héroïque devient « Invoque un murloc 1/1 »."
 		},
+		"goldenImage": "OG_006.gif",
 		"health": 3,
 		"id": "OG_006",
 		"name": "Vilefin Inquisitor",
@@ -7213,6 +7485,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Garr"
 		},
+		"goldenImage": "BRMA04_1.gif",
 		"health": 30,
 		"id": "BRMA04_1",
 		"name": "Garr",
@@ -7245,6 +7518,7 @@ var parseCardsText = {
 			"name": "Géant du givre",
 			"text": "Coûte (1) |4(cristal,cristaux) de moins chaque fois que vous utilisez votre pouvoir héroïque pendant cette partie."
 		},
+		"goldenImage": "AT_120.gif",
 		"health": 8,
 		"id": "AT_120",
 		"name": "Frost Giant",
@@ -7261,6 +7535,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Maître brasseur"
 		},
+		"goldenImage": "TU4f_005.gif",
 		"health": 4,
 		"id": "TU4f_005",
 		"name": "Brewmaster",
@@ -7276,6 +7551,7 @@ var parseCardsText = {
 			"name": "Boules de neige durcie",
 			"text": "Renvoie 3 serviteurs adverses aléatoires dans la main de votre adversaire."
 		},
+		"goldenImage": "TB_GiftExchange_Snowball.gif",
 		"id": "TB_GiftExchange_Snowball",
 		"name": "Hardpacked Snowballs",
 		"playerClass": "Neutral",
@@ -7293,6 +7569,7 @@ var parseCardsText = {
 			"name": "Initié zélé",
 			"text": "<b>Râle d’agonie :</b> donne +1/+1 à un serviteur allié aléatoire."
 		},
+		"goldenImage": "OG_158.gif",
 		"health": 1,
 		"id": "OG_158",
 		"name": "Zealous Initiate",
@@ -7309,6 +7586,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Finkle Einhorn"
 		},
+		"goldenImage": "EX1_finkle.gif",
 		"health": 3,
 		"id": "EX1_finkle",
 		"name": "Finkle Einhorn",
@@ -7327,6 +7605,7 @@ var parseCardsText = {
 			"name": "Chef de raid",
 			"text": "Vos autres serviteurs ont +1 ATQ."
 		},
+		"goldenImage": "CS2_122.gif",
 		"health": 2,
 		"id": "CS2_122",
 		"name": "Raid Leader",
@@ -7346,6 +7625,7 @@ var parseCardsText = {
 			"name": "Maître fabricant d’épées",
 			"text": "À la fin de votre tour, donne +1 ATQ à un autre serviteur allié aléatoire."
 		},
+		"goldenImage": "NEW1_037.gif",
 		"health": 3,
 		"id": "NEW1_037",
 		"name": "Master Swordsmith",
@@ -7364,6 +7644,7 @@ var parseCardsText = {
 			"name": "Déluge de lames",
 			"text": "Détruit votre arme, dont les dégâts sont infligés à tous les serviteurs adverses."
 		},
+		"goldenImage": "CS2_233.gif",
 		"id": "CS2_233",
 		"name": "Blade Flurry",
 		"playerClass": "Rogue",
@@ -7396,6 +7677,7 @@ var parseCardsText = {
 			"name": "Cadeau du Voile d’hiver",
 			"text": "<b>Râle d’agonie :</b> donne un cadeau volé au joueur dont c’est le tour."
 		},
+		"goldenImage": "TB_GiftExchange_Treasure.gif",
 		"health": 4,
 		"id": "TB_GiftExchange_Treasure",
 		"name": "Winter's Veil Gift",
@@ -7411,6 +7693,7 @@ var parseCardsText = {
 			"name": "Piétinement",
 			"text": "Inflige 2 points de dégâts à tous les adversaires."
 		},
+		"goldenImage": "TU4c_004.gif",
 		"id": "TU4c_004",
 		"name": "Stomp",
 		"playerClass": "Neutral",
@@ -7456,6 +7739,7 @@ var parseCardsText = {
 			"name": "Lame de la perdition",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts. <b>Combo :</b> inflige 2 points de dégâts à la place."
 		},
+		"goldenImage": "EX1_133.gif",
 		"id": "EX1_133",
 		"name": "Perdition's Blade",
 		"playerClass": "Rogue",
@@ -7474,6 +7758,7 @@ var parseCardsText = {
 			"name": "Brik-à-bot",
 			"text": "Chaque fois qu’un Méca allié meurt, gagne +2/+2."
 		},
+		"goldenImage": "GVG_106.gif",
 		"health": 5,
 		"id": "GVG_106",
 		"name": "Junkbot",
@@ -7502,6 +7787,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Illidan Hurlorage"
 		},
+		"goldenImage": "TU4e_001.gif",
 		"health": 30,
 		"id": "TU4e_001",
 		"name": "Illidan Stormrage",
@@ -7527,6 +7813,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Grobbulus"
 		},
+		"goldenImage": "NAX11_01.gif",
 		"health": 30,
 		"id": "NAX11_01",
 		"name": "Grobbulus",
@@ -7544,6 +7831,7 @@ var parseCardsText = {
 			"name": "Chroniqueur Cho",
 			"text": "Quand un joueur lance un sort, en place une copie dans la main de son adversaire."
 		},
+		"goldenImage": "EX1_100.gif",
 		"health": 4,
 		"id": "EX1_100",
 		"name": "Lorewalker Cho",
@@ -7563,6 +7851,7 @@ var parseCardsText = {
 			"name": "Justicière Cœur-Vrai",
 			"text": "<b>Cri de guerre :</b> remplace votre pouvoir héroïque de départ en l’améliorant."
 		},
+		"goldenImage": "AT_132.gif",
 		"health": 3,
 		"id": "AT_132",
 		"name": "Justicar Trueheart",
@@ -7582,6 +7871,7 @@ var parseCardsText = {
 			"name": "Spectateur du tournoi",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "AT_097.gif",
 		"health": 1,
 		"id": "AT_097",
 		"name": "Tournament Attendee",
@@ -7598,6 +7888,7 @@ var parseCardsText = {
 			"name": "Jeu offensif",
 			"text": "Le prochain serviteur légendaire que vous jouez et toutes ses copies coûtent (3) cristaux de moins."
 		},
+		"goldenImage": "TB_Superfriends001.gif",
 		"id": "TB_Superfriends001",
 		"name": "Offensive Play",
 		"playerClass": "Neutral",
@@ -7626,6 +7917,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Kel’Thuzad"
 		},
+		"goldenImage": "TB_KTRAF_H_1.gif",
 		"health": 30,
 		"id": "TB_KTRAF_H_1",
 		"name": "Kel'Thuzad",
@@ -7643,6 +7935,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Garde funeste effroyable"
 		},
+		"goldenImage": "AT_020.gif",
 		"health": 8,
 		"id": "AT_020",
 		"name": "Fearsome Doomguard",
@@ -7658,6 +7951,7 @@ var parseCardsText = {
 			"name": "Force AI to Use Hero Power",
 			"text": "Force the AI to use their Hero Power every turn from now on."
 		},
+		"goldenImage": "XXX_046.gif",
 		"id": "XXX_046",
 		"name": "Force AI to Use Hero Power",
 		"playerClass": "Neutral",
@@ -7676,6 +7970,7 @@ var parseCardsText = {
 			"name": "Embusqué anub’ar",
 			"text": "<b>Râle d’agonie :</b> renvoie un serviteur allié aléatoire dans votre main."
 		},
+		"goldenImage": "FP1_026.gif",
 		"health": 5,
 		"id": "FP1_026",
 		"name": "Anub'ar Ambusher",
@@ -7694,6 +7989,7 @@ var parseCardsText = {
 			"name": "Colère divine",
 			"text": "Vous piochez une carte et infligez des dégâts d’un montant égal à son coût."
 		},
+		"goldenImage": "EX1_365.gif",
 		"id": "EX1_365",
 		"name": "Holy Wrath",
 		"playerClass": "Paladin",
@@ -7712,6 +8008,7 @@ var parseCardsText = {
 			"name": "Faucon-dragon difforme",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "OG_152.gif",
 		"health": 5,
 		"id": "OG_152",
 		"name": "Grotesque Dragonhawk",
@@ -7728,6 +8025,7 @@ var parseCardsText = {
 			"name": "Molasses",
 			"text": "You can take as long as you want on your turn."
 		},
+		"goldenImage": "XXX_019.gif",
 		"id": "XXX_019",
 		"name": "Molasses",
 		"playerClass": "Neutral",
@@ -7744,6 +8042,7 @@ var parseCardsText = {
 			"name": "Ryan Chew",
 			"text": "<b>Chew des armes :</b> chante au karaoké ou part à l’heure et en informe tout le monde."
 		},
+		"goldenImage": "CRED_39.gif",
 		"health": 3,
 		"id": "CRED_39",
 		"name": "Ryan Chew",
@@ -7760,6 +8059,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_12.gif",
 		"health": 1,
 		"id": "LOEA09_12",
 		"name": "Hungry Naga",
@@ -7778,6 +8078,7 @@ var parseCardsText = {
 			"name": "Seigneur de l’arène",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_162.gif",
 		"health": 5,
 		"id": "CS2_162",
 		"name": "Lord of the Arena",
@@ -7809,6 +8110,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_5.gif",
 		"health": 1,
 		"id": "LOEA09_5",
 		"name": "Hungry Naga",
@@ -7823,6 +8125,7 @@ var parseCardsText = {
 			"name": "Deuxième classe : chasseur",
 			"text": "Ajoute des cartes de chasseur dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Hunter.gif",
 		"id": "TB_ClassRandom_Hunter",
 		"name": "Second Class: Hunter",
 		"playerClass": "Hunter",
@@ -7838,6 +8141,7 @@ var parseCardsText = {
 			"name": "Squeletosaurus Hex",
 			"text": "À la fin de votre tour, place une carte aléatoire dans votre main. Elle coûte (0) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOEA16_26H.gif",
 		"health": 10,
 		"id": "LOEA16_26H",
 		"name": "Skelesaurus Hex",
@@ -7884,6 +8188,7 @@ var parseCardsText = {
 			"name": "Pas de l’ombre",
 			"text": "Renvoie un serviteur allié dans votre main. Il coûte (2) cristaux de moins."
 		},
+		"goldenImage": "EX1_144.gif",
 		"id": "EX1_144",
 		"name": "Shadowstep",
 		"playerClass": "Rogue",
@@ -7932,6 +8237,7 @@ var parseCardsText = {
 			"name": "Garde funeste",
 			"text": "<b>Charge</b>. <b>Cri de guerre :</b> vous défausse de deux cartes aléatoires."
 		},
+		"goldenImage": "EX1_310.gif",
 		"health": 7,
 		"id": "EX1_310",
 		"name": "Doomguard",
@@ -7967,6 +8273,7 @@ var parseCardsText = {
 			"name": "Gardelumière",
 			"text": "Chaque fois qu’un personnage est soigné, gagne +2 ATQ."
 		},
+		"goldenImage": "EX1_001.gif",
 		"health": 2,
 		"id": "EX1_001",
 		"name": "Lightwarden",
@@ -7995,6 +8302,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "La sentinelle d’acier"
 		},
+		"goldenImage": "LOEA14_1H.gif",
 		"health": 30,
 		"id": "LOEA14_1H",
 		"name": "The Steel Sentinel",
@@ -8026,6 +8334,7 @@ var parseCardsText = {
 			"name": "Entrée dans le Colisée",
 			"text": "Détruit tous les serviteurs excepté le serviteur ayant l’Attaque la plus élevée pour chaque joueur."
 		},
+		"goldenImage": "AT_078.gif",
 		"id": "AT_078",
 		"name": "Enter the Coliseum",
 		"playerClass": "Paladin",
@@ -8044,6 +8353,7 @@ var parseCardsText = {
 			"name": "Voyant froide-lumière",
 			"text": "<b>Cri de guerre :</b> donne +2 PV à vos autres murlocs."
 		},
+		"goldenImage": "EX1_103.gif",
 		"health": 3,
 		"id": "EX1_103",
 		"name": "Coldlight Seer",
@@ -8107,6 +8417,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_10.gif",
 		"health": 1,
 		"id": "LOEA09_10",
 		"name": "Hungry Naga",
@@ -8121,6 +8432,7 @@ var parseCardsText = {
 			"name": "Nourrir",
 			"text": "Vous gagnez 2 cristaux de mana."
 		},
+		"goldenImage": "EX1_164a.gif",
 		"id": "EX1_164a",
 		"name": "Nourish",
 		"playerClass": "Druid",
@@ -8150,6 +8462,7 @@ var parseCardsText = {
 			"name": "Dupliquer",
 			"text": "<b>Secret :</b> quand un serviteur allié meurt, en place 2 copies dans votre main."
 		},
+		"goldenImage": "FP1_018.gif",
 		"id": "FP1_018",
 		"name": "Duplicate",
 		"playerClass": "Mage",
@@ -8165,6 +8478,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Baine Sabot-de-Sang"
 		},
+		"goldenImage": "EX1_110t.gif",
 		"health": 5,
 		"id": "EX1_110t",
 		"name": "Baine Bloodhoof",
@@ -8182,6 +8496,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Horreur indicible"
 		},
+		"goldenImage": "OG_142.gif",
 		"health": 10,
 		"id": "OG_142",
 		"name": "Eldritch Horror",
@@ -8199,6 +8514,7 @@ var parseCardsText = {
 			"name": "Dent-de-Dragon",
 			"text": "Gagne +1 ATQ chaque fois que votre adversaire joue une carte."
 		},
+		"goldenImage": "BRMA16_5.gif",
 		"id": "BRMA16_5",
 		"name": "Dragonteeth",
 		"playerClass": "Neutral",
@@ -8213,6 +8529,7 @@ var parseCardsText = {
 			"name": "Éclat de Sulfuras",
 			"text": "Inflige $5 |4(point,points) de dégâts à TOUS les personnages."
 		},
+		"goldenImage": "LOEA16_6.gif",
 		"id": "LOEA16_6",
 		"name": "Shard of Sulfuras",
 		"playerClass": "Neutral",
@@ -8227,6 +8544,7 @@ var parseCardsText = {
 			"name": "Pas question !",
 			"text": "Vous ne faites rien."
 		},
+		"goldenImage": "LOEA04_31b.gif",
 		"id": "LOEA04_31b",
 		"name": "No Way!",
 		"playerClass": "Neutral",
@@ -8244,6 +8562,7 @@ var parseCardsText = {
 			"name": "Maître de culte",
 			"text": "Vous piochez une carte quand un de vos autres serviteurs meurt."
 		},
+		"goldenImage": "EX1_595.gif",
 		"health": 2,
 		"id": "EX1_595",
 		"name": "Cult Master",
@@ -8258,6 +8577,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Écumeur du soleil Phaerix"
 		},
+		"goldenImage": "LOEA01_01h.gif",
 		"health": 30,
 		"id": "LOEA01_01h",
 		"name": "Sun Raider Phaerix",
@@ -8275,6 +8595,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Faucheuse en arcanite"
 		},
+		"goldenImage": "CS2_112.gif",
 		"id": "CS2_112",
 		"name": "Arcanite Reaper",
 		"playerClass": "Warrior",
@@ -8308,6 +8629,7 @@ var parseCardsText = {
 			"name": "Adepte de la Voile sanglante",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à votre arme si vous contrôlez un autre Pirate."
 		},
+		"goldenImage": "OG_315.gif",
 		"health": 4,
 		"id": "OG_315",
 		"name": "Bloodsail Cultist",
@@ -8325,6 +8647,7 @@ var parseCardsText = {
 			"name": "Ichor de non-mort",
 			"text": "Invoque 2 serviteurs alliés morts pendant cette partie."
 		},
+		"goldenImage": "CFM_621t38.gif",
 		"id": "CFM_621t38",
 		"name": "Ichor of Undeath",
 		"playerClass": "Neutral",
@@ -8341,6 +8664,7 @@ var parseCardsText = {
 			"name": "Dissimuler",
 			"text": "Confère <b>Camouflage</b> à vos serviteurs jusqu’à votre prochain tour."
 		},
+		"goldenImage": "EX1_128.gif",
 		"id": "EX1_128",
 		"name": "Conceal",
 		"playerClass": "Rogue",
@@ -8359,6 +8683,7 @@ var parseCardsText = {
 			"name": "Explomage gobelin",
 			"text": "<b>Cri de guerre :</b> si vous possédez un Méca, inflige 4 points de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "GVG_004.gif",
 		"health": 4,
 		"id": "GVG_004",
 		"name": "Goblin Blastmage",
@@ -8378,6 +8703,7 @@ var parseCardsText = {
 			"name": "Robo-baston",
 			"text": "<b>Accès de rage :</b> +1 ATQ."
 		},
+		"goldenImage": "GVG_051.gif",
 		"health": 3,
 		"id": "GVG_051",
 		"name": "Warbot",
@@ -8411,6 +8737,7 @@ var parseCardsText = {
 			"name": "Combattant sauvage",
 			"text": "<b>Exaltation :</b> donne +2 ATQ\nà votre héros pendant ce tour."
 		},
+		"goldenImage": "AT_039.gif",
 		"health": 4,
 		"id": "AT_039",
 		"name": "Savage Combatant",
@@ -8428,6 +8755,7 @@ var parseCardsText = {
 			"name": "Henry Ho",
 			"text": "<b>Cri de guerre :</b> regarde la main de votre adversaire."
 		},
+		"goldenImage": "CRED_27.gif",
 		"health": 4,
 		"id": "CRED_27",
 		"name": "Henry Ho",
@@ -8444,6 +8772,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : bronze",
 			"text": "Les serviteurs de Chromaggus coûtent (3) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_7H.gif",
 		"id": "BRMA12_7H",
 		"name": "Brood Affliction: Bronze",
 		"playerClass": "Neutral",
@@ -8461,6 +8790,7 @@ var parseCardsText = {
 			"name": "Mande-givre dément",
 			"text": "Après que vous avez lancé un sort, <b>gèle</b> un adversaire aléatoire."
 		},
+		"goldenImage": "OG_085.gif",
 		"health": 4,
 		"id": "OG_085",
 		"name": "Demented Frostcaller",
@@ -8480,6 +8810,7 @@ var parseCardsText = {
 			"name": "Clerc du Soleil brisé",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à un serviteur allié."
 		},
+		"goldenImage": "EX1_019.gif",
 		"health": 2,
 		"id": "EX1_019",
 		"name": "Shattered Sun Cleric",
@@ -8499,6 +8830,7 @@ var parseCardsText = {
 			"name": "Déchiqueteur piloté",
 			"text": "<b>Râle d’agonie :</b> invoque un serviteur aléatoire coûtant 2 cristaux."
 		},
+		"goldenImage": "GVG_096.gif",
 		"health": 3,
 		"id": "GVG_096",
 		"name": "Piloted Shredder",
@@ -8516,6 +8848,7 @@ var parseCardsText = {
 			"name": "Tank débutant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "TBST_001.gif",
 		"health": 2,
 		"id": "TBST_001",
 		"name": "OLDN3wb Tank",
@@ -8531,6 +8864,7 @@ var parseCardsText = {
 			"name": "Lanterne de puissance",
 			"text": "Donne +10/+10 à un serviteur."
 		},
+		"goldenImage": "LOEA16_3.gif",
 		"id": "LOEA16_3",
 		"name": "Lantern of Power",
 		"playerClass": "Neutral",
@@ -8561,6 +8895,7 @@ var parseCardsText = {
 			"name": "Néant distordu",
 			"text": "Détruit tous les serviteurs."
 		},
+		"goldenImage": "EX1_312.gif",
 		"id": "EX1_312",
 		"name": "Twisting Nether",
 		"playerClass": "Warlock",
@@ -8577,6 +8912,7 @@ var parseCardsText = {
 			"name": "Chiot du magma",
 			"text": "À la fin de chaque tour, invoque tous les chiots du magma qui sont morts pendant ce tour."
 		},
+		"goldenImage": "BRMC_95he.gif",
 		"health": 4,
 		"id": "BRMC_95he",
 		"name": "Core Hound Pup",
@@ -8624,6 +8960,7 @@ var parseCardsText = {
 			"name": "Lame runique",
 			"text": "A +6 ATQ si les autres cavaliers sont morts."
 		},
+		"goldenImage": "NAX9_05H.gif",
 		"id": "NAX9_05H",
 		"name": "Runeblade",
 		"playerClass": "Neutral",
@@ -8642,6 +8979,7 @@ var parseCardsText = {
 			"name": "Accro au mana",
 			"text": "Chaque fois que vous lancez un sort, gagne +2 ATQ pendant ce tour."
 		},
+		"goldenImage": "EX1_055.gif",
 		"health": 3,
 		"id": "EX1_055",
 		"name": "Mana Addict",
@@ -8690,6 +9028,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "TB_KTRAF_H_2.gif",
 		"health": 60,
 		"id": "TB_KTRAF_H_2",
 		"name": "Rafaam",
@@ -8708,6 +9047,7 @@ var parseCardsText = {
 			"name": "Chaman cognedune",
 			"text": "<b>Furie des vents.</b>\n50% de chance d’attaquer le mauvais adversaire. \n<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "GVG_066.gif",
 		"health": 4,
 		"id": "GVG_066",
 		"name": "Dunemaul Shaman",
@@ -8740,6 +9080,7 @@ var parseCardsText = {
 			"name": "Restore 1",
 			"text": "Restore #1 Health to a character."
 		},
+		"goldenImage": "XXX_003.gif",
 		"id": "XXX_003",
 		"name": "Restore 1",
 		"playerClass": "Neutral",
@@ -8757,6 +9098,7 @@ var parseCardsText = {
 			"name": "Potion de gangrefeu",
 			"text": "Inflige $5 |4(point,points) de dégâts à tous les personnages."
 		},
+		"goldenImage": "CFM_094.gif",
 		"id": "CFM_094",
 		"name": "Felfire Potion",
 		"playerClass": "Warlock",
@@ -8775,6 +9117,7 @@ var parseCardsText = {
 			"name": "Brann Barbe-de-Bronze",
 			"text": "Vos <b>Cris de guerre</b> se déclenchent deux fois."
 		},
+		"goldenImage": "LOE_077.gif",
 		"health": 4,
 		"id": "LOE_077",
 		"name": "Brann Bronzebeard",
@@ -8791,6 +9134,7 @@ var parseCardsText = {
 			"name": "Mrgl mrgl niah niah !",
 			"text": "Invoque 3 murlocs détruits pendant cette partie."
 		},
+		"goldenImage": "LOEA10_5.gif",
 		"id": "LOEA10_5",
 		"name": "Mrgl Mrgl Nyah Nyah",
 		"playerClass": "Neutral",
@@ -8809,6 +9153,7 @@ var parseCardsText = {
 			"name": "Armurière clandestine",
 			"text": "<b>Provocation</b>. Chaque fois que ce serviteur inflige des dégâts, vous gagnez l’équivalent en points d’armure."
 		},
+		"goldenImage": "CFM_756.gif",
 		"health": 7,
 		"id": "CFM_756",
 		"name": "Alley Armorsmith",
@@ -8828,6 +9173,7 @@ var parseCardsText = {
 			"name": "Raptor déterré",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur allié. Gagne une copie de son <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "LOE_019.gif",
 		"health": 4,
 		"id": "LOE_019",
 		"name": "Unearthed Raptor",
@@ -8844,6 +9190,7 @@ var parseCardsText = {
 			"name": "Server Crash",
 			"text": "Crash the Server.  DON'T BE A FOOL."
 		},
+		"goldenImage": "XXX_027.gif",
 		"id": "XXX_027",
 		"name": "Server Crash",
 		"playerClass": "Neutral",
@@ -8861,6 +9208,7 @@ var parseCardsText = {
 			"name": "Écraseur du Vide",
 			"text": "<b>Exaltation :</b> détruit aléatoirement un serviteur de chaque joueur."
 		},
+		"goldenImage": "AT_023.gif",
 		"health": 4,
 		"id": "AT_023",
 		"name": "Void Crusher",
@@ -8879,6 +9227,7 @@ var parseCardsText = {
 			"name": "Marque d’Y’Shaarj",
 			"text": "Donne +2/+2 à un serviteur. Si c'est une Bête, vous piochez une carte."
 		},
+		"goldenImage": "OG_048.gif",
 		"id": "OG_048",
 		"name": "Mark of Y'Shaarj",
 		"playerClass": "Druid",
@@ -8940,6 +9289,7 @@ var parseCardsText = {
 			"name": "Sir Finley Mrrgglton",
 			"text": "<b>Cri de guerre : découvre</b> un nouveau pouvoir héroïque de base."
 		},
+		"goldenImage": "LOE_076.gif",
 		"health": 3,
 		"id": "LOE_076",
 		"name": "Sir Finley Mrrgglton",
@@ -8959,6 +9309,7 @@ var parseCardsText = {
 			"name": "Totem de vague de mana",
 			"text": "Vous piochez une carte à la fin de votre tour."
 		},
+		"goldenImage": "EX1_575.gif",
 		"health": 3,
 		"id": "EX1_575",
 		"name": "Mana Tide Totem",
@@ -8978,6 +9329,7 @@ var parseCardsText = {
 			"name": "Aspirant de Dalaran",
 			"text": "<b>Exaltation :</b> vous gagnez <b>+1 aux dégâts des sorts</b>."
 		},
+		"goldenImage": "AT_006.gif",
 		"health": 5,
 		"id": "AT_006",
 		"name": "Dalaran Aspirant",
@@ -9024,6 +9376,7 @@ var parseCardsText = {
 			"name": "Feux follets furieux",
 			"text": "Donne +2/+2 à vos serviteurs."
 		},
+		"goldenImage": "OG_195b.gif",
 		"id": "OG_195b",
 		"name": "Big Wisps",
 		"playerClass": "Druid",
@@ -9060,6 +9413,7 @@ var parseCardsText = {
 			"name": "Voleur JcJ",
 			"text": "<b>Camouflage</b>\nRécupère <b>Camouflage</b> quand le voleur JcJ détruit un serviteur."
 		},
+		"goldenImage": "TBST_005.gif",
 		"health": 6,
 		"id": "TBST_005",
 		"name": "OLDPvP Rogue",
@@ -9075,6 +9429,7 @@ var parseCardsText = {
 			"name": "Deuxième classe : guerrier",
 			"text": "Ajoute des cartes de guerrier dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Warrior.gif",
 		"id": "TB_ClassRandom_Warrior",
 		"name": "Second Class: Warrior",
 		"playerClass": "Warrior",
@@ -9092,6 +9447,7 @@ var parseCardsText = {
 			"name": "Marcheur du Vide",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_065.gif",
 		"health": 3,
 		"id": "CS2_065",
 		"name": "Voidwalker",
@@ -9110,6 +9466,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de guerre"
 		},
+		"goldenImage": "CS2_186.gif",
 		"health": 7,
 		"id": "CS2_186",
 		"name": "War Golem",
@@ -9123,6 +9480,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Système de défense Omnitron"
 		},
+		"goldenImage": "BRMA14_1.gif",
 		"health": 30,
 		"id": "BRMA14_1",
 		"name": "Omnotron Defense System",
@@ -9140,6 +9498,7 @@ var parseCardsText = {
 			"name": "Racketteur de haut vol",
 			"text": "<b>Cri de guerre :</b> invoque un ogre 6/6."
 		},
+		"goldenImage": "CFM_648.gif",
 		"health": 1,
 		"id": "CFM_648",
 		"name": "Big-Time Racketeer",
@@ -9159,6 +9518,7 @@ var parseCardsText = {
 			"name": "Rhonin",
 			"text": "<b>Râle d’agonie :</b> ajoute\n3 copies de Projectiles des Arcanes dans votre main."
 		},
+		"goldenImage": "AT_009.gif",
 		"health": 7,
 		"id": "AT_009",
 		"name": "Rhonin",
@@ -9191,6 +9551,7 @@ var parseCardsText = {
 			"name": "Repentir",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, ses points de vie sont réduits à 1."
 		},
+		"goldenImage": "EX1_379.gif",
 		"id": "EX1_379",
 		"name": "Repentance",
 		"playerClass": "Paladin",
@@ -9206,6 +9567,7 @@ var parseCardsText = {
 			"name": "Don de carte",
 			"text": "Chaque joueur pioche une carte."
 		},
+		"goldenImage": "GVG_032b.gif",
 		"id": "GVG_032b",
 		"name": "Gift of Cards",
 		"playerClass": "Druid",
@@ -9250,6 +9612,7 @@ var parseCardsText = {
 			"name": "Chapeglace",
 			"text": "<b>Gèle</b> un serviteur adverse aléatoire."
 		},
+		"goldenImage": "CFM_621t5.gif",
 		"id": "CFM_621t5",
 		"name": "Icecap",
 		"playerClass": "Neutral",
@@ -9267,6 +9630,7 @@ var parseCardsText = {
 			"name": "Mage ancien",
 			"text": "<b>Cri de guerre :</b> donne aux serviteurs adjacents <b>+1 aux dégâts des sorts</b>."
 		},
+		"goldenImage": "EX1_584.gif",
 		"health": 5,
 		"id": "EX1_584",
 		"name": "Ancient Mage",
@@ -9331,6 +9695,7 @@ var parseCardsText = {
 			"name": "Transcendance",
 			"text": "Cho ne peut pas être attaqué tant qu’il a des serviteurs."
 		},
+		"goldenImage": "TU4f_006.gif",
 		"id": "TU4f_006",
 		"name": "Transcendence",
 		"playerClass": "Neutral",
@@ -9349,6 +9714,7 @@ var parseCardsText = {
 			"name": "Yogg-Saron, la fin de l’espoir",
 			"text": "<b>Cri de guerre :</b> lance un sort aléatoire pour chaque sort que vous avez lancé pendant cette partie <i>(cibles choisies au hasard)</i>."
 		},
+		"goldenImage": "OG_134.gif",
 		"health": 5,
 		"id": "OG_134",
 		"name": "Yogg-Saron, Hope's End",
@@ -9381,6 +9747,7 @@ var parseCardsText = {
 			"name": "Champ de camouflage",
 			"text": "Confère <b>Camouflage</b> à un serviteur allié jusqu’à votre prochain tour."
 		},
+		"goldenImage": "PART_004.gif",
 		"id": "PART_004",
 		"name": "Finicky Cloakfield",
 		"playerClass": "Neutral",
@@ -9428,6 +9795,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Crocilisque des rivières"
 		},
+		"goldenImage": "CS2_120.gif",
 		"health": 3,
 		"id": "CS2_120",
 		"name": "River Crocolisk",
@@ -9446,6 +9814,7 @@ var parseCardsText = {
 			"name": "Porte-lance",
 			"text": "<b>Cri de guerre :</b> donne\n+2 ATQ à un serviteur allié."
 		},
+		"goldenImage": "AT_084.gif",
 		"health": 2,
 		"id": "AT_084",
 		"name": "Lance Carrier",
@@ -9483,6 +9852,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Hache d’armes"
 		},
+		"goldenImage": "EX1_398t.gif",
 		"id": "EX1_398t",
 		"name": "Battle Axe",
 		"playerClass": "Warrior",
@@ -9511,6 +9881,7 @@ var parseCardsText = {
 			"name": "Fixer des priorités",
 			"text": "Inflige les dégâts de l’attaque au serviteur le plus puissant."
 		},
+		"goldenImage": "TB_CoOpBossSpell_1.gif",
 		"id": "TB_CoOpBossSpell_1",
 		"name": "Prioritize",
 		"playerClass": "Neutral",
@@ -9528,6 +9899,7 @@ var parseCardsText = {
 			"name": "Scarabée orné de joyaux",
 			"text": "<b>Cri de guerre : découvre</b>\nune carte à 3 cristaux de mana."
 		},
+		"goldenImage": "LOE_029.gif",
 		"health": 1,
 		"id": "LOE_029",
 		"name": "Jeweled Scarab",
@@ -9562,6 +9934,7 @@ var parseCardsText = {
 			"name": "Gormok l’Empaleur",
 			"text": "<b>Cri de guerre :</b> inflige\n4 points de dégâts si vous avez au moins\n4 autres serviteurs."
 		},
+		"goldenImage": "AT_122.gif",
 		"health": 4,
 		"id": "AT_122",
 		"name": "Gormok the Impaler",
@@ -9595,6 +9968,7 @@ var parseCardsText = {
 			"name": "Éclat lunaire",
 			"text": "Inflige $1 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CS2_008.gif",
 		"id": "CS2_008",
 		"name": "Moonfire",
 		"playerClass": "Druid",
@@ -9608,6 +9982,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Archaedas"
 		},
+		"goldenImage": "LOEA08_01h.gif",
 		"health": 30,
 		"id": "LOEA08_01h",
 		"name": "Archaedas",
@@ -9623,6 +9998,7 @@ var parseCardsText = {
 			"name": "Cœur de feu",
 			"text": "Inflige $5 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CFM_621t16.gif",
 		"id": "CFM_621t16",
 		"name": "Heart of Fire",
 		"playerClass": "Neutral",
@@ -9638,6 +10014,7 @@ var parseCardsText = {
 			"name": "Juge Supérieur Mornepierre",
 			"text": "Au début de votre tour, invoque un serviteur <b>légendaire</b>."
 		},
+		"goldenImage": "BRMC_96.gif",
 		"health": 5,
 		"id": "BRMC_96",
 		"name": "High Justice Grimstone",
@@ -9722,6 +10099,7 @@ var parseCardsText = {
 			"name": "Malygos",
 			"text": "<b>Dégâts des sorts : +5</b>"
 		},
+		"goldenImage": "EX1_563.gif",
 		"health": 12,
 		"id": "EX1_563",
 		"name": "Malygos",
@@ -9740,6 +10118,7 @@ var parseCardsText = {
 			"name": "Jon Bankard",
 			"text": "50% de chances d’avoir raison à 100%."
 		},
+		"goldenImage": "CRED_43.gif",
 		"health": 5,
 		"id": "CRED_43",
 		"name": "Jon Bankard",
@@ -9757,6 +10136,7 @@ var parseCardsText = {
 			"name": "Orc de l’ancienne Horde",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA09_3Ht.gif",
 		"health": 2,
 		"id": "BRMA09_3Ht",
 		"name": "Old Horde Orc",
@@ -9770,6 +10150,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Archaedas"
 		},
+		"goldenImage": "LOEA08_01.gif",
 		"health": 30,
 		"id": "LOEA08_01",
 		"name": "Archaedas",
@@ -9785,6 +10166,7 @@ var parseCardsText = {
 			"name": "Dorépine",
 			"text": "Donne +2 PV à vos serviteurs."
 		},
+		"goldenImage": "CFM_621t6.gif",
 		"id": "CFM_621t6",
 		"name": "Goldthorn",
 		"playerClass": "Neutral",
@@ -9828,6 +10210,7 @@ var parseCardsText = {
 			"name": "Archer ondulant",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "LOEA09_6.gif",
 		"health": 2,
 		"id": "LOEA09_6",
 		"name": "Slithering Archer",
@@ -9841,6 +10224,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Vaelastrasz le Corrompu"
 		},
+		"goldenImage": "BRMA11_1.gif",
 		"health": 30,
 		"id": "BRMA11_1",
 		"name": "Vaelastrasz the Corrupt",
@@ -9856,6 +10240,7 @@ var parseCardsText = {
 			"name": "Baguette du Soleil",
 			"text": "<b>Râle d’agonie :</b> remet cette carte à votre adversaire."
 		},
+		"goldenImage": "LOEA01_11.gif",
 		"health": 5,
 		"id": "LOEA01_11",
 		"name": "Rod of the Sun",
@@ -9873,6 +10258,7 @@ var parseCardsText = {
 			"name": "Marchandises volées",
 			"text": "Donne +3/+3 à un serviteur aléatoire avec <b>Provocation</b> dans votre main."
 		},
+		"goldenImage": "CFM_752.gif",
 		"id": "CFM_752",
 		"name": "Stolen Goods",
 		"playerClass": "Warrior",
@@ -9906,6 +10292,7 @@ var parseCardsText = {
 			"name": "Jouteur rohart",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, rend 7 PV à votre héros."
 		},
+		"goldenImage": "AT_104.gif",
 		"health": 5,
 		"id": "AT_104",
 		"name": "Tuskarr Jouster",
@@ -9940,6 +10327,7 @@ var parseCardsText = {
 			"name": "Mot de pouvoir : Gloire",
 			"text": "Choisissez un serviteur. Chaque fois qu’il attaque, rend 4 PV à votre héros."
 		},
+		"goldenImage": "AT_013.gif",
 		"id": "AT_013",
 		"name": "Power Word: Glory",
 		"playerClass": "Priest",
@@ -9955,6 +10343,7 @@ var parseCardsText = {
 			"name": "Destroy Target Secrets",
 			"text": "Choose a hero. Destroy all <b>Secrets</b> controlled by that hero."
 		},
+		"goldenImage": "XXX_057.gif",
 		"id": "XXX_057",
 		"name": "Destroy Target Secrets",
 		"playerClass": "Neutral",
@@ -9972,6 +10361,7 @@ var parseCardsText = {
 			"name": "Mekgénieur Thermojoncteur",
 			"text": "Chaque fois qu’un serviteur adverse meurt, invoque un gnome lépreux."
 		},
+		"goldenImage": "GVG_116.gif",
 		"health": 7,
 		"id": "GVG_116",
 		"name": "Mekgineer Thermaplugg",
@@ -9990,6 +10380,7 @@ var parseCardsText = {
 			"name": "Noble sacrifice",
 			"text": "<b>Secret :</b> invoque un défenseur 2/1 qui devient la cible de l’adversaire sur le point d’attaquer."
 		},
+		"goldenImage": "EX1_130.gif",
 		"id": "EX1_130",
 		"name": "Noble Sacrifice",
 		"playerClass": "Paladin",
@@ -10020,6 +10411,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chat tigré"
 		},
+		"goldenImage": "CFM_315t.gif",
 		"health": 1,
 		"id": "CFM_315t",
 		"name": "Tabbycat",
@@ -10049,6 +10441,7 @@ var parseCardsText = {
 			"name": "La sentinelle d’acier",
 			"text": "Ce serviteur ne peut pas subir plus de 1 point de dégâts à la fois."
 		},
+		"goldenImage": "LOEA16_27H.gif",
 		"health": 10,
 		"id": "LOEA16_27H",
 		"name": "The Steel Sentinel",
@@ -10096,6 +10489,7 @@ var parseCardsText = {
 			"name": "Statue vengeresse",
 			"text": "Inflige 5 points de dégâts à tous les adversaires à la fin de votre tour."
 		},
+		"goldenImage": "LOEA04_25h.gif",
 		"health": 9,
 		"id": "LOEA04_25h",
 		"name": "Seething Statue",
@@ -10129,6 +10523,7 @@ var parseCardsText = {
 			"name": "Sang de l’Ancien",
 			"text": "Si vous contrôlez deux de ces serviteurs à la fin de votre tour, les fusionne en « l’Ancien »."
 		},
+		"goldenImage": "OG_173.gif",
 		"health": 9,
 		"id": "OG_173",
 		"name": "Blood of The Ancient One",
@@ -10147,6 +10542,7 @@ var parseCardsText = {
 			"name": "Destruction élémentaire",
 			"text": "Inflige $4 à $5 points\nde dégâts à tous les serviteurs.\n<b>Surcharge :</b> (5)"
 		},
+		"goldenImage": "AT_051.gif",
 		"id": "AT_051",
 		"name": "Elemental Destruction",
 		"overload": 1,
@@ -10163,6 +10559,7 @@ var parseCardsText = {
 			"name": "Consulter Brann",
 			"text": "Vous piochez 3 cartes."
 		},
+		"goldenImage": "LOEA07_26.gif",
 		"id": "LOEA07_26",
 		"name": "Consult Brann",
 		"playerClass": "Neutral",
@@ -10180,6 +10577,7 @@ var parseCardsText = {
 			"name": "Bondisseur dent-de-métal",
 			"text": "<b>Cri de guerre :</b> donne +2 ATQ à vos autres Méca."
 		},
+		"goldenImage": "GVG_048.gif",
 		"health": 3,
 		"id": "GVG_048",
 		"name": "Metaltooth Leaper",
@@ -10199,6 +10597,7 @@ var parseCardsText = {
 			"name": "Prêtresse auchenaï",
 			"text": "Vos cartes et pouvoirs rendant de la Vie infligent désormais des dégâts à la place."
 		},
+		"goldenImage": "EX1_591.gif",
 		"health": 5,
 		"id": "EX1_591",
 		"name": "Auchenai Soulpriest",
@@ -10227,6 +10626,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Hurlevent"
 		},
+		"goldenImage": "TB_SPT_Boss.gif",
 		"health": 1,
 		"id": "TB_SPT_Boss",
 		"name": "City of Stormwind",
@@ -10285,6 +10685,7 @@ var parseCardsText = {
 			"name": "Entourloupeur des bas-fonds",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CFM_039.gif",
 		"health": 7,
 		"id": "CFM_039",
 		"name": "Street Trickster",
@@ -10305,6 +10706,7 @@ var parseCardsText = {
 			"name": "Enragé d’ombre",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "CFM_636.gif",
 		"health": 1,
 		"id": "CFM_636",
 		"name": "Shadow Rager",
@@ -10342,6 +10744,7 @@ var parseCardsText = {
 			"name": "Rêveuse céleste",
 			"text": "<b>Cri de guerre :</b> gagne +2/+2 si un serviteur allié a 5 ATQ ou plus."
 		},
+		"goldenImage": "CFM_617.gif",
 		"health": 3,
 		"id": "CFM_617",
 		"name": "Celestial Dreamer",
@@ -10361,6 +10764,7 @@ var parseCardsText = {
 			"name": "Diablotin de sang",
 			"text": "<b>Camouflage</b>. À la fin de votre tour, donne +1 PV à un autre serviteur allié aléatoire."
 		},
+		"goldenImage": "CS2_059.gif",
 		"health": 1,
 		"id": "CS2_059",
 		"name": "Blood Imp",
@@ -10426,6 +10830,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Yéti noroît"
 		},
+		"goldenImage": "CS2_182.gif",
 		"health": 5,
 		"id": "CS2_182",
 		"name": "Chillwind Yeti",
@@ -10444,6 +10849,7 @@ var parseCardsText = {
 			"name": "Cénarius",
 			"text": "<b>Choix des armes :</b> donne +2/+2 à vos autres serviteurs ou invoque deux tréants 2/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_573.gif",
 		"health": 8,
 		"id": "EX1_573",
 		"name": "Cenarius",
@@ -10463,6 +10869,7 @@ var parseCardsText = {
 			"name": "Grunt loup-de-givre",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_121.gif",
 		"health": 2,
 		"id": "CS2_121",
 		"name": "Frostwolf Grunt",
@@ -10480,6 +10887,7 @@ var parseCardsText = {
 			"name": "Nécro-chevalier",
 			"text": "<b>Râle d’agonie :</b> détruit les serviteurs adjacents."
 		},
+		"goldenImage": "NAXM_001.gif",
 		"health": 6,
 		"id": "NAXM_001",
 		"name": "Necroknight",
@@ -10513,6 +10921,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Avorton rusé"
 		},
+		"goldenImage": "LOE_089t2.gif",
 		"health": 2,
 		"id": "LOE_089t2",
 		"name": "Wily Runt",
@@ -10579,6 +10988,7 @@ var parseCardsText = {
 			"name": "Furie des vents",
 			"text": "Confère <b>Furie des vents</b> à un serviteur."
 		},
+		"goldenImage": "CS2_039.gif",
 		"id": "CS2_039",
 		"name": "Windfury",
 		"playerClass": "Shaman",
@@ -10595,6 +11005,7 @@ var parseCardsText = {
 			"name": "Cendres tourbillonnantes",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "BRMC_89.gif",
 		"health": 5,
 		"id": "BRMC_89",
 		"name": "Whirling Ash",
@@ -10611,6 +11022,7 @@ var parseCardsText = {
 			"name": "Néantine",
 			"text": "Invoque un démon 2/2."
 		},
+		"goldenImage": "CFM_621t10.gif",
 		"id": "CFM_621t10",
 		"name": "Netherbloom",
 		"playerClass": "Neutral",
@@ -10627,6 +11039,7 @@ var parseCardsText = {
 			"name": "Sombre marché",
 			"text": "Détruit 2 serviteurs adverses aléatoires. Vous vous défaussez de\n2 cartes aléatoires."
 		},
+		"goldenImage": "AT_025.gif",
 		"id": "AT_025",
 		"name": "Dark Bargain",
 		"playerClass": "Warlock",
@@ -10659,6 +11072,7 @@ var parseCardsText = {
 			"name": "Garde-paix de l’Aldor",
 			"text": "<b>Cri de guerre :</b> l’Attaque d’un serviteur adverse passe à 1."
 		},
+		"goldenImage": "EX1_382.gif",
 		"health": 3,
 		"id": "EX1_382",
 		"name": "Aldor Peacekeeper",
@@ -10678,6 +11092,7 @@ var parseCardsText = {
 			"name": "Berserker gurubashi",
 			"text": "Chaque fois que ce serviteur subit des dégâts, il gagne +3 ATQ."
 		},
+		"goldenImage": "EX1_399.gif",
 		"health": 7,
 		"id": "EX1_399",
 		"name": "Gurubashi Berserker",
@@ -10711,6 +11126,7 @@ var parseCardsText = {
 			"name": "Contresort",
 			"text": "<b>Secret :</b> quand votre adversaire lance un sort, le <b>contre</b>."
 		},
+		"goldenImage": "EX1_287.gif",
 		"id": "EX1_287",
 		"name": "Counterspell",
 		"playerClass": "Mage",
@@ -10741,6 +11157,7 @@ var parseCardsText = {
 			"name": "Druide de la Griffe",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "EX1_165t1.gif",
 		"health": 4,
 		"id": "EX1_165t1",
 		"name": "Druid of the Claw",
@@ -10758,6 +11175,7 @@ var parseCardsText = {
 			"name": "Huile des ténèbres",
 			"text": "Ajoute 3 démons aléatoires dans votre main."
 		},
+		"goldenImage": "CFM_621t31.gif",
 		"id": "CFM_621t31",
 		"name": "Shadow Oil",
 		"playerClass": "Neutral",
@@ -10773,6 +11191,7 @@ var parseCardsText = {
 			"name": "Druide de la Griffe",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_165t2.gif",
 		"health": 6,
 		"id": "EX1_165t2",
 		"name": "Druid of the Claw",
@@ -10791,6 +11210,7 @@ var parseCardsText = {
 			"name": "Kodo de cavale",
 			"text": "<b>Secret :</b> quand un serviteur allié meurt, le renvoie dans votre main."
 		},
+		"goldenImage": "CFM_800.gif",
 		"id": "CFM_800",
 		"name": "Getaway Kodo",
 		"playerClass": "Paladin",
@@ -10810,6 +11230,7 @@ var parseCardsText = {
 			"name": "Arc cornedaigle",
 			"text": "Chaque fois qu’un <b>Secret</b> allié est révélé, gagne +1 Durabilité."
 		},
+		"goldenImage": "EX1_536.gif",
 		"id": "EX1_536",
 		"name": "Eaglehorn Bow",
 		"playerClass": "Hunter",
@@ -10827,6 +11248,7 @@ var parseCardsText = {
 			"name": "Détournement",
 			"text": "<b>Secret :</b> quand un adversaire attaque votre héros, il attaque un autre personnage aléatoire à la place."
 		},
+		"goldenImage": "EX1_533.gif",
 		"id": "EX1_533",
 		"name": "Misdirection",
 		"playerClass": "Hunter",
@@ -10842,6 +11264,7 @@ var parseCardsText = {
 			"name": "Enraciner",
 			"text": "+5 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_178a.gif",
 		"id": "EX1_178a",
 		"name": "Rooted",
 		"playerClass": "Druid",
@@ -10857,6 +11280,7 @@ var parseCardsText = {
 			"name": "Moira Barbe-de-Bronze",
 			"text": "Thaurissan ne peut pas utiliser son pouvoir héroïque.\nN’attaque jamais de serviteurs à moins qu’ils n’aient <b>Provocation</b>."
 		},
+		"goldenImage": "BRMA03_3.gif",
 		"health": 3,
 		"id": "BRMA03_3",
 		"name": "Moira Bronzebeard",
@@ -10874,6 +11298,7 @@ var parseCardsText = {
 			"name": "Tir de précision",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, ce dernier subit $4 |4(point,points) de dégâts."
 		},
+		"goldenImage": "EX1_609.gif",
 		"id": "EX1_609",
 		"name": "Snipe",
 		"playerClass": "Hunter",
@@ -10907,6 +11332,7 @@ var parseCardsText = {
 			"name": "Suprétincelle",
 			"text": "<b>Cri de guerre :</b> transforme un autre serviteur aléatoire soit en diablosaure 5/5, soit en écureuil 1/1 ."
 		},
+		"goldenImage": "EX1_083.gif",
 		"health": 3,
 		"id": "EX1_083",
 		"name": "Tinkmaster Overspark",
@@ -10923,6 +11349,7 @@ var parseCardsText = {
 			"name": "Armor 100",
 			"text": "Give target Hero +100 Armor"
 		},
+		"goldenImage": "XXX_053.gif",
 		"id": "XXX_053",
 		"name": "Armor 100",
 		"playerClass": "Neutral",
@@ -10940,6 +11367,7 @@ var parseCardsText = {
 			"name": "Eauracle jinyu",
 			"text": "<b>Cri de guerre :</b> rend 6 PV.\n<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "CFM_061.gif",
 		"health": 6,
 		"id": "CFM_061",
 		"name": "Jinyu Waterspeaker",
@@ -10959,6 +11387,7 @@ var parseCardsText = {
 			"name": "Mutation interdite",
 			"text": "Dépense tous vos cristaux de mana. Invoque un serviteur aléatoire de même coût."
 		},
+		"goldenImage": "OG_101.gif",
 		"id": "OG_101",
 		"name": "Forbidden Shaping",
 		"playerClass": "Priest",
@@ -10976,6 +11405,7 @@ var parseCardsText = {
 			"name": "Pistage",
 			"text": "Affiche les 3 cartes du dessus du deck. Vous en piochez une et vous vous défaussez des autres."
 		},
+		"goldenImage": "DS1_184.gif",
 		"id": "DS1_184",
 		"name": "Tracking",
 		"playerClass": "Hunter",
@@ -10993,6 +11423,7 @@ var parseCardsText = {
 			"name": "Soins rapides",
 			"text": "Rend #5 PV."
 		},
+		"goldenImage": "AT_055.gif",
 		"id": "AT_055",
 		"name": "Flash Heal",
 		"playerClass": "Priest",
@@ -11024,6 +11455,7 @@ var parseCardsText = {
 			"name": "Jomaro Kindred",
 			"text": "<b>Cri de guerre :</b> PREND n’importe quelle carte de la main de votre adversaire dont il ne veut pas."
 		},
+		"goldenImage": "CRED_33.gif",
 		"health": 6,
 		"id": "CRED_33",
 		"name": "Jomaro Kindred",
@@ -11042,6 +11474,7 @@ var parseCardsText = {
 			"name": "Disparition",
 			"text": "Renvoie tous les serviteurs dans la main de leur propriétaire."
 		},
+		"goldenImage": "NEW1_004.gif",
 		"id": "NEW1_004",
 		"name": "Vanish",
 		"playerClass": "Rogue",
@@ -11060,6 +11493,7 @@ var parseCardsText = {
 			"name": "Caïd cambrioleur",
 			"text": "Ajoute une carte La pièce dans votre main chaque fois que votre adversaire lance un sort."
 		},
+		"goldenImage": "CFM_669.gif",
 		"health": 6,
 		"id": "CFM_669",
 		"name": "Burgly Bully",
@@ -11074,6 +11508,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Seigneur Ondulance"
 		},
+		"goldenImage": "LOEA09_1H.gif",
 		"health": 30,
 		"id": "LOEA09_1H",
 		"name": "Lord Slitherspear",
@@ -11122,6 +11557,7 @@ var parseCardsText = {
 			"name": "Soggoth le Rampant",
 			"text": "<b>Provocation</b>\nNe peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "OG_340.gif",
 		"health": 9,
 		"id": "OG_340",
 		"name": "Soggoth the Slitherer",
@@ -11162,6 +11598,7 @@ var parseCardsText = {
 			"name": "Marche-soleil",
 			"text": "<b>Provocation</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_032.gif",
 		"health": 5,
 		"id": "EX1_032",
 		"name": "Sunwalker",
@@ -11204,6 +11641,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Conservateur"
 		},
+		"goldenImage": "KARA_09_02.gif",
 		"health": 30,
 		"id": "KARA_09_02",
 		"name": "Curator",
@@ -11217,6 +11655,7 @@ var parseCardsText = {
 			"name": "Enragé",
 			"text": "+2 ATQ."
 		},
+		"goldenImage": "OG_150e.gif",
 		"id": "OG_150e",
 		"name": "Enraged",
 		"playerClass": "Neutral",
@@ -11235,6 +11674,7 @@ var parseCardsText = {
 			"name": "Ancien maître brasseur",
 			"text": "<b>Cri de guerre :</b> renvoie un serviteur allié du champ de bataille et le place dans votre main."
 		},
+		"goldenImage": "EX1_057.gif",
 		"health": 4,
 		"id": "EX1_057",
 		"name": "Ancient Brewmaster",
@@ -11284,6 +11724,7 @@ var parseCardsText = {
 			"name": "Beomki Hong",
 			"text": "<b>Provocation</b>. Les serviteurs alliés ne peuvent pas être <b>gelés</b>."
 		},
+		"goldenImage": "CRED_19.gif",
 		"health": 3,
 		"id": "CRED_19",
 		"name": "Beomki Hong",
@@ -11300,6 +11741,7 @@ var parseCardsText = {
 			"name": "Pulsion destructrice",
 			"text": "Détruit toutes les statues. Inflige 3 points de dégâts pour chaque statue détruite."
 		},
+		"goldenImage": "LOEA06_04h.gif",
 		"id": "LOEA06_04h",
 		"name": "Shattering Spree",
 		"playerClass": "Neutral",
@@ -11316,6 +11758,7 @@ var parseCardsText = {
 			"name": "Du sang à l’ichor",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur.\nS’il survit, invoque une gelée 2/2."
 		},
+		"goldenImage": "OG_314.gif",
 		"id": "OG_314",
 		"name": "Blood To Ichor",
 		"playerClass": "Warrior",
@@ -11366,6 +11809,7 @@ var parseCardsText = {
 			"name": "Confère Provocation et Charge",
 			"text": "Ce serviteur a obtenu <b>Provocation</b> et <b>Charge</b>."
 		},
+		"goldenImage": "TB_AllMinionsTauntCharge.gif",
 		"id": "TB_AllMinionsTauntCharge",
 		"name": "Give Taunt and Charge",
 		"playerClass": "Neutral",
@@ -11430,6 +11874,7 @@ var parseCardsText = {
 			"name": "Aya Patte Noire",
 			"text": "<b>Cri de guerre et Râle d’agonie :</b> invoque un <b>golem de jade</b> {0}. @<b>Cri de guerre et Râle d’agonie :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_902.gif",
 		"health": 3,
 		"id": "CFM_902",
 		"name": "Aya Blackpaw",
@@ -11449,6 +11894,7 @@ var parseCardsText = {
 			"name": "Sombre arakkoa",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> donne +3/+3 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_293.gif",
 		"health": 7,
 		"id": "OG_293",
 		"name": "Dark Arakkoa",
@@ -11468,6 +11914,7 @@ var parseCardsText = {
 			"name": "Magnataure alpha",
 			"text": "Inflige également des dégâts aux serviteurs adjacents de celui qu’il attaque."
 		},
+		"goldenImage": "AT_067.gif",
 		"health": 3,
 		"id": "AT_067",
 		"name": "Magnataur Alpha",
@@ -11502,6 +11949,7 @@ var parseCardsText = {
 			"name": "Vol d’esprit",
 			"text": "Copie 2 cartes du deck de votre adversaire et les place dans votre main."
 		},
+		"goldenImage": "EX1_339.gif",
 		"id": "EX1_339",
 		"name": "Thoughtsteal",
 		"playerClass": "Priest",
@@ -11565,6 +12013,7 @@ var parseCardsText = {
 			"name": "Saphiron",
 			"text": "Au début de votre tour, <b>gèle</b> un serviteur adverse aléatoire."
 		},
+		"goldenImage": "TB_KTRAF_11.gif",
 		"health": 6,
 		"id": "TB_KTRAF_11",
 		"name": "Sapphiron",
@@ -11584,6 +12033,7 @@ var parseCardsText = {
 			"name": "Grommash Hurlenfer",
 			"text": "<b>Charge</b>.\n<b>Accès de rage :</b> +6 ATQ"
 		},
+		"goldenImage": "EX1_414.gif",
 		"health": 9,
 		"id": "EX1_414",
 		"name": "Grommash Hellscream",
@@ -11617,6 +12067,7 @@ var parseCardsText = {
 			"name": "Excès de mana",
 			"text": "Vous piochez une carte. <i>(Vous ne pouvez avoir que 10 cristaux de mana en réserve.)</i>"
 		},
+		"goldenImage": "CS2_013t.gif",
 		"id": "CS2_013t",
 		"name": "Excess Mana",
 		"playerClass": "Druid",
@@ -11632,6 +12083,7 @@ var parseCardsText = {
 			"name": "Le Recousu",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur adverse aléatoire."
 		},
+		"goldenImage": "TB_KTRAF_12.gif",
 		"health": 8,
 		"id": "TB_KTRAF_12",
 		"name": "Patchwerk",
@@ -11651,6 +12103,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Raptor Rougefange"
 		},
+		"goldenImage": "CS2_172.gif",
 		"health": 2,
 		"id": "CS2_172",
 		"name": "Bloodfen Raptor",
@@ -11664,6 +12117,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Noth le Porte-Peste"
 		},
+		"goldenImage": "NAX4_01.gif",
 		"health": 30,
 		"id": "NAX4_01",
 		"name": "Noth the Plaguebringer",
@@ -11691,6 +12145,7 @@ var parseCardsText = {
 			"name": "Tonneau",
 			"text": "Il y a quelque chose dans ce tonneau ?"
 		},
+		"goldenImage": "TU4c_003.gif",
 		"health": 2,
 		"id": "TU4c_003",
 		"name": "Barrel",
@@ -11722,6 +12177,7 @@ var parseCardsText = {
 			"name": "Chapeglace",
 			"text": "<b>Gèle</b> 2 serviteurs adverses aléatoires."
 		},
+		"goldenImage": "CFM_621t19.gif",
 		"id": "CFM_621t19",
 		"name": "Icecap",
 		"playerClass": "Neutral",
@@ -11739,6 +12195,7 @@ var parseCardsText = {
 			"name": "Edwin VanCleef",
 			"text": "<b>Combo :</b> gagne +2/+2 pour chaque carte jouée auparavant pendant ce tour."
 		},
+		"goldenImage": "EX1_613.gif",
 		"health": 2,
 		"id": "EX1_613",
 		"name": "Edwin VanCleef",
@@ -11755,6 +12212,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gnoll rivepatte"
 		},
+		"goldenImage": "TU4a_002.gif",
 		"health": 1,
 		"id": "TU4a_002",
 		"name": "Riverpaw Gnoll",
@@ -11786,6 +12244,7 @@ var parseCardsText = {
 			"name": "Sulfuras",
 			"text": "<b>Râle d’agonie :</b> transforme votre pouvoir héroïque, qui inflige 8 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "BRMC_94.gif",
 		"id": "BRMC_94",
 		"name": "Sulfuras",
 		"playerClass": "Neutral",
@@ -11817,6 +12276,7 @@ var parseCardsText = {
 			"name": "Massacreur du temple",
 			"text": "<b>Cri de guerre :</b> donne +3 PV à un serviteur allié."
 		},
+		"goldenImage": "EX1_623.gif",
 		"health": 6,
 		"id": "EX1_623",
 		"name": "Temple Enforcer",
@@ -11833,6 +12293,7 @@ var parseCardsText = {
 			"name": "Lancer de tonneau",
 			"text": "Inflige 2 points de dégâts."
 		},
+		"goldenImage": "TU4c_002.gif",
 		"id": "TU4c_002",
 		"name": "Barrel Toss",
 		"playerClass": "Neutral",
@@ -11851,6 +12312,7 @@ var parseCardsText = {
 			"name": "Rejeton de N’Zoth",
 			"text": "<b>Râle d’agonie :</b> donne +1/+1 à vos serviteurs."
 		},
+		"goldenImage": "OG_256.gif",
 		"health": 2,
 		"id": "OG_256",
 		"name": "Spawn of N'Zoth",
@@ -11870,6 +12332,7 @@ var parseCardsText = {
 			"name": "Face de poulpe",
 			"text": "<b>Râle d’agonie :</b> donne\n+2 ATQ à votre arme."
 		},
+		"goldenImage": "OG_267.gif",
 		"health": 4,
 		"id": "OG_267",
 		"name": "Southsea Squidface",
@@ -11888,6 +12351,7 @@ var parseCardsText = {
 			"name": "Éventail de couteaux",
 			"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_129.gif",
 		"id": "EX1_129",
 		"name": "Fan of Knives",
 		"playerClass": "Rogue",
@@ -11934,6 +12398,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "BRM_004t.gif",
 		"health": 1,
 		"id": "BRM_004t",
 		"name": "Whelp",
@@ -11951,6 +12416,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Écumeur murloc"
 		},
+		"goldenImage": "CS2_168.gif",
 		"health": 1,
 		"id": "CS2_168",
 		"name": "Murloc Raider",
@@ -11976,6 +12442,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ragnaros, seigneur du feu"
 		},
+		"goldenImage": "BRM_027h.gif",
 		"health": 8,
 		"id": "BRM_027h",
 		"name": "Ragnaros the Firelord",
@@ -11990,6 +12457,7 @@ var parseCardsText = {
 			"name": "Deuxième classe : paladin",
 			"text": "Ajoute des cartes de paladin dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Paladin.gif",
 		"id": "TB_ClassRandom_Paladin",
 		"name": "Second Class: Paladin",
 		"playerClass": "Paladin",
@@ -12004,6 +12472,7 @@ var parseCardsText = {
 			"name": "Secrets anciens",
 			"text": "Rend 5 points de vie."
 		},
+		"goldenImage": "NEW1_008b.gif",
 		"id": "NEW1_008b",
 		"name": "Ancient Secrets",
 		"playerClass": "Druid",
@@ -12020,6 +12489,7 @@ var parseCardsText = {
 			"name": "Nova sacrée",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les adversaires. Rend #2 |4(point,points) de vie à tous les personnages alliés."
 		},
+		"goldenImage": "CS1_112.gif",
 		"id": "CS1_112",
 		"name": "Holy Nova",
 		"playerClass": "Priest",
@@ -12051,6 +12521,7 @@ var parseCardsText = {
 			"name": "Floraison de jade",
 			"text": "Invoque un <b>golem de jade</b> {0}. Gagne un cristal de mana vide.@Invoque un <b>golem de jade</b>. Gagne un cristal de mana vide."
 		},
+		"goldenImage": "CFM_713.gif",
 		"id": "CFM_713",
 		"name": "Jade Blossom",
 		"playerClass": "Druid",
@@ -12068,6 +12539,7 @@ var parseCardsText = {
 			"name": "Flèches multiples",
 			"text": "Inflige $3 |4(point,points) de dégâts à deux serviteurs adverses aléatoires."
 		},
+		"goldenImage": "DS1_183.gif",
 		"id": "DS1_183",
 		"name": "Multi-Shot",
 		"playerClass": "Hunter",
@@ -12086,6 +12558,7 @@ var parseCardsText = {
 			"name": "Dragonnet du Crépuscule",
 			"text": "<b>Cri de guerre :</b> gagne +2 PV si vous avez un Dragon en main."
 		},
+		"goldenImage": "BRM_004.gif",
 		"health": 1,
 		"id": "BRM_004",
 		"name": "Twilight Whelp",
@@ -12105,6 +12578,7 @@ var parseCardsText = {
 			"name": "Mini-robot blindé",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "GVG_058.gif",
 		"health": 2,
 		"id": "GVG_058",
 		"name": "Shielded Minibot",
@@ -12119,6 +12593,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Saphiron"
 		},
+		"goldenImage": "NAX14_01.gif",
 		"health": 30,
 		"id": "NAX14_01",
 		"name": "Sapphiron",
@@ -12133,6 +12608,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : noir",
 			"text": "Chaque fois que Chromaggus pioche une carte, il en obtient une copie tant que vous avez celle-ci dans votre main."
 		},
+		"goldenImage": "BRMA12_6.gif",
 		"id": "BRMA12_6",
 		"name": "Brood Affliction: Black",
 		"playerClass": "Neutral",
@@ -12177,6 +12653,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Enragé de glace"
 		},
+		"goldenImage": "AT_092.gif",
 		"health": 2,
 		"id": "AT_092",
 		"name": "Ice Rager",
@@ -12195,6 +12672,7 @@ var parseCardsText = {
 			"name": "Loup contaminé",
 			"text": "<b>Râle d’agonie :</b> invoque deux araignées 1/1."
 		},
+		"goldenImage": "OG_216.gif",
 		"health": 3,
 		"id": "OG_216",
 		"name": "Infested Wolf",
@@ -12214,6 +12692,7 @@ var parseCardsText = {
 			"name": "Démolisseur",
 			"text": "Au début de votre tour, inflige 2 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "EX1_102.gif",
 		"health": 4,
 		"id": "EX1_102",
 		"name": "Demolisher",
@@ -12234,6 +12713,7 @@ var parseCardsText = {
 			"name": "Défenseur d’Argus",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 et <b>Provocation</b> aux serviteurs adjacents."
 		},
+		"goldenImage": "EX1_093.gif",
 		"health": 3,
 		"id": "EX1_093",
 		"name": "Defender of Argus",
@@ -12251,6 +12731,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Murloc tranche-branchie"
 		},
+		"goldenImage": "CFM_310t.gif",
 		"health": 1,
 		"id": "CFM_310t",
 		"name": "Murloc Razorgill",
@@ -12277,6 +12758,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Maloriak"
 		},
+		"goldenImage": "BRMA15_1H.gif",
 		"health": 30,
 		"id": "BRMA15_1H",
 		"name": "Maloriak",
@@ -12310,6 +12792,7 @@ var parseCardsText = {
 			"name": "Maexxna",
 			"text": "Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "FP1_010.gif",
 		"health": 8,
 		"id": "FP1_010",
 		"name": "Maexxna",
@@ -12324,6 +12807,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Aileron-Géant"
 		},
+		"goldenImage": "LOEA10_1H.gif",
 		"health": 30,
 		"id": "LOEA10_1H",
 		"name": "Giantfin",
@@ -12338,6 +12822,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "ds1_whelptoken.gif",
 		"health": 1,
 		"id": "ds1_whelptoken",
 		"name": "Whelp",
@@ -12369,6 +12854,7 @@ var parseCardsText = {
 			"name": "Régisseur du Colisée",
 			"text": "<b>Exaltation :</b> renvoie ce serviteur dans votre main."
 		},
+		"goldenImage": "AT_110.gif",
 		"health": 5,
 		"id": "AT_110",
 		"name": "Coliseum Manager",
@@ -12385,6 +12871,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Diablosaure"
 		},
+		"goldenImage": "EX1_tk29.gif",
 		"health": 5,
 		"id": "EX1_tk29",
 		"name": "Devilsaur",
@@ -12475,6 +12962,7 @@ var parseCardsText = {
 			"name": "Limon résonnant",
 			"text": "<b>Cri de guerre :</b> invoque une copie conforme de ce serviteur à la fin du tour."
 		},
+		"goldenImage": "FP1_003.gif",
 		"health": 2,
 		"id": "FP1_003",
 		"name": "Echoing Ooze",
@@ -12494,6 +12982,7 @@ var parseCardsText = {
 			"name": "Apprentie du sorcier",
 			"text": "Vos sorts coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "EX1_608.gif",
 		"health": 2,
 		"id": "EX1_608",
 		"name": "Sorcerer's Apprentice",
@@ -12513,6 +13002,7 @@ var parseCardsText = {
 			"name": "Lobe-Bombe",
 			"text": "<b>Cri de guerre :</b> inflige 4 points de dégâts à un serviteur adverse aléatoire."
 		},
+		"goldenImage": "GVG_099.gif",
 		"health": 3,
 		"id": "GVG_099",
 		"name": "Bomb Lobber",
@@ -12546,6 +13036,7 @@ var parseCardsText = {
 			"name": "Illuminatrice",
 			"text": "Si vous contrôlez un <b>Secret</b> à la fin de votre tour, rend 4 PV à votre héros."
 		},
+		"goldenImage": "GVG_089.gif",
 		"health": 4,
 		"id": "GVG_089",
 		"name": "Illuminator",
@@ -12579,6 +13070,7 @@ var parseCardsText = {
 			"name": "Arbre de vie",
 			"text": "Rend à tous les personnages tous leurs points de vie."
 		},
+		"goldenImage": "GVG_033.gif",
 		"id": "GVG_033",
 		"name": "Tree of Life",
 		"playerClass": "Druid",
@@ -12624,6 +13116,7 @@ var parseCardsText = {
 			"name": "Moira Barbe-de-Bronze",
 			"text": "<b>Râle d’agonie :</b> invoque l’empereur Thaurissan."
 		},
+		"goldenImage": "BRMC_87.gif",
 		"health": 3,
 		"id": "BRMC_87",
 		"name": "Moira Bronzebeard",
@@ -12644,6 +13137,7 @@ var parseCardsText = {
 			"name": "Géomancien kobold",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CS2_142.gif",
 		"health": 2,
 		"id": "CS2_142",
 		"name": "Kobold Geomancer",
@@ -12676,6 +13170,7 @@ var parseCardsText = {
 			"name": "Yong Woo",
 			"text": "Vos autres serviteurs ont +3 Attaque et <b>Charge</b>."
 		},
+		"goldenImage": "CRED_14.gif",
 		"health": 2,
 		"id": "CRED_14",
 		"name": "Yong Woo",
@@ -12712,6 +13207,7 @@ var parseCardsText = {
 			"name": "Présence menaçante",
 			"text": "Vous piochez 3 cartes. Gagne +6 points d’armure."
 		},
+		"goldenImage": "LOEA_01H.gif",
 		"id": "LOEA_01H",
 		"name": "Looming Presence",
 		"playerClass": "Neutral",
@@ -12740,6 +13236,7 @@ var parseCardsText = {
 			"name": "Destin cruel : portails instables",
 			"text": "Place 3 cartes Portail instable dans la main de chaque joueur."
 		},
+		"goldenImage": "TB_PickYourFate_6_2nd.gif",
 		"id": "TB_PickYourFate_6_2nd",
 		"name": "Dire Fate: Unstable Portals",
 		"playerClass": "Neutral",
@@ -12818,6 +13315,7 @@ var parseCardsText = {
 			"name": "Auspice funeste",
 			"text": "Au début de votre tour, détruit TOUS les serviteurs."
 		},
+		"goldenImage": "NEW1_021.gif",
 		"health": 7,
 		"id": "NEW1_021",
 		"name": "Doomsayer",
@@ -12837,6 +13335,7 @@ var parseCardsText = {
 			"name": "Monte-en-l’air mécanique",
 			"text": "Vous piochez une carte chaque fois que ce serviteur attaque et survit."
 		},
+		"goldenImage": "CFM_025.gif",
 		"health": 5,
 		"id": "CFM_025",
 		"name": "Wind-up Burglebot",
@@ -12853,6 +13352,7 @@ var parseCardsText = {
 			"name": "Chef de la meute",
 			"text": "Donne +1/+1 à vos serviteurs."
 		},
+		"goldenImage": "EX1_160b.gif",
 		"id": "EX1_160b",
 		"name": "Leader of the Pack",
 		"playerClass": "Druid",
@@ -12870,6 +13370,7 @@ var parseCardsText = {
 			"name": "Chimiste de la Kabale",
 			"text": "<b>Cri de guerre :</b> ajoute une potion aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_619.gif",
 		"health": 3,
 		"id": "CFM_619",
 		"name": "Kabal Chemist",
@@ -12890,6 +13391,7 @@ var parseCardsText = {
 			"name": "Masse de puissance",
 			"text": "<b>Râle d’agonie :</b> donne à un Méca allié aléatoire +2/+2."
 		},
+		"goldenImage": "GVG_036.gif",
 		"id": "GVG_036",
 		"name": "Powermace",
 		"playerClass": "Shaman",
@@ -12903,6 +13405,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Horreb"
 		},
+		"goldenImage": "NAX6_01.gif",
 		"health": 75,
 		"id": "NAX6_01",
 		"name": "Loatheb",
@@ -12920,6 +13423,7 @@ var parseCardsText = {
 			"name": "Second de N’Zoth",
 			"text": "<b>Cri de guerre :</b> vous équipe d’un Crochet rouillé 1/3."
 		},
+		"goldenImage": "OG_312.gif",
 		"health": 1,
 		"id": "OG_312",
 		"name": "N'Zoth's First Mate",
@@ -12983,6 +13487,7 @@ var parseCardsText = {
 			"name": "Drake du Crépuscule",
 			"text": "<b>Cri de guerre :</b> gagne +1 PV pour chaque carte dans votre main."
 		},
+		"goldenImage": "EX1_043.gif",
 		"health": 1,
 		"id": "EX1_043",
 		"name": "Twilight Drake",
@@ -13018,6 +13523,7 @@ var parseCardsText = {
 			"name": "Grande crinière des savanes",
 			"text": "<b>Râle d’agonie :</b> invoque deux hyènes 2/2."
 		},
+		"goldenImage": "EX1_534.gif",
 		"health": 5,
 		"id": "EX1_534",
 		"name": "Savannah Highmane",
@@ -13064,6 +13570,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Moine pandashan"
 		},
+		"goldenImage": "TU4f_003.gif",
 		"health": 2,
 		"id": "TU4f_003",
 		"name": "Shado-Pan Monk",
@@ -13096,6 +13603,7 @@ var parseCardsText = {
 			"name": "Barbefeu Tresse-Flammes",
 			"text": "<b>Bouclier divin</b>. <b>Provocation</b>. Les dégâts infligés par ce serviteur soignent aussi votre héros."
 		},
+		"goldenImage": "CFM_815.gif",
 		"health": 2,
 		"id": "CFM_815",
 		"name": "Wickerflame Burnbristle",
@@ -13129,6 +13637,7 @@ var parseCardsText = {
 			"name": "Recombobulateur",
 			"text": "<b>Cri de guerre :</b> transforme un serviteur allié en un serviteur aléatoire de même coût."
 		},
+		"goldenImage": "GVG_108.gif",
 		"health": 2,
 		"id": "GVG_108",
 		"name": "Recombobulator",
@@ -13148,6 +13657,7 @@ var parseCardsText = {
 			"name": "Champion du Nexus Saraad",
 			"text": "<b>Exaltation :</b> ajoute un sort aléatoire dans votre main."
 		},
+		"goldenImage": "AT_127.gif",
 		"health": 5,
 		"id": "AT_127",
 		"name": "Nexus-Champion Saraad",
@@ -13180,6 +13690,7 @@ var parseCardsText = {
 			"name": "Oracle froide-lumière",
 			"text": "<b>Cri de guerre :</b> chaque joueur pioche 2 cartes."
 		},
+		"goldenImage": "EX1_050.gif",
 		"health": 2,
 		"id": "EX1_050",
 		"name": "Coldlight Oracle",
@@ -13213,6 +13724,7 @@ var parseCardsText = {
 			"name": "Puits de lumière",
 			"text": "Au début de votre tour, rend 3 PV à un personnage allié blessé."
 		},
+		"goldenImage": "EX1_341.gif",
 		"health": 5,
 		"id": "EX1_341",
 		"name": "Lightwell",
@@ -13252,6 +13764,7 @@ var parseCardsText = {
 			"name": "Chambellan Executus",
 			"text": "<b>Râle d’agonie :</b> remplace votre héros par Ragnaros, le seigneur du feu."
 		},
+		"goldenImage": "BRM_027.gif",
 		"health": 7,
 		"id": "BRM_027",
 		"name": "Majordomo Executus",
@@ -13271,6 +13784,7 @@ var parseCardsText = {
 			"name": "Archiviste de Sombre-Comté",
 			"text": "<b>Cri de guerre :</b> vous défausse d’une carte aléatoire. <b>Râle d’agonie :</b> vous piochez une carte."
 		},
+		"goldenImage": "OG_109.gif",
 		"health": 2,
 		"id": "OG_109",
 		"name": "Darkshire Librarian",
@@ -13289,6 +13803,7 @@ var parseCardsText = {
 			"name": "Innervation",
 			"text": "Vous gagnez 2 cristaux de mana pour ce tour uniquement."
 		},
+		"goldenImage": "EX1_169.gif",
 		"id": "EX1_169",
 		"name": "Innervate",
 		"playerClass": "Druid",
@@ -13307,6 +13822,7 @@ var parseCardsText = {
 			"name": "Lépreux occulte",
 			"text": "<b>Râle d’agonie :</b> inflige 2 points de dégâts au héros adverse."
 		},
+		"goldenImage": "CFM_646.gif",
 		"health": 1,
 		"id": "CFM_646",
 		"name": "Backstreet Leper",
@@ -13326,6 +13842,7 @@ var parseCardsText = {
 			"name": "Dragon consort",
 			"text": "<b>Cri de guerre :</b> le prochain Dragon que vous jouez coûte (2) cristaux de moins."
 		},
+		"goldenImage": "BRM_018.gif",
 		"health": 5,
 		"id": "BRM_018",
 		"name": "Dragon Consort",
@@ -13342,6 +13859,7 @@ var parseCardsText = {
 			"name": "Racines vivantes",
 			"text": "Inflige $2 |4(point,points) de dégâts."
 		},
+		"goldenImage": "AT_037a.gif",
 		"id": "AT_037a",
 		"name": "Living Roots",
 		"playerClass": "Druid",
@@ -13359,6 +13877,7 @@ var parseCardsText = {
 			"name": "Robot barbier gobelin",
 			"text": "<b>Cri de guerre :</b> donne +1 ATQ à votre arme."
 		},
+		"goldenImage": "GVG_023.gif",
 		"health": 2,
 		"id": "GVG_023",
 		"name": "Goblin Auto-Barber",
@@ -13410,6 +13929,7 @@ var parseCardsText = {
 			"name": "Robot de soins antique",
 			"text": "<b>Cri de guerre :</b> rend 8 PV à votre héros."
 		},
+		"goldenImage": "GVG_069.gif",
 		"health": 3,
 		"id": "GVG_069",
 		"name": "Antique Healbot",
@@ -13424,6 +13944,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Anub’Rekhan"
 		},
+		"goldenImage": "NAX1h_01.gif",
 		"health": 45,
 		"id": "NAX1h_01",
 		"name": "Anub'Rekhan",
@@ -13438,6 +13959,7 @@ var parseCardsText = {
 			"name": "Souffle sonique",
 			"text": "Inflige $3 |4(point,points) de dégâts à un serviteur. Donne +3 ATQ à votre arme."
 		},
+		"goldenImage": "BRMA16_3.gif",
 		"id": "BRMA16_3",
 		"name": "Sonic Breath",
 		"playerClass": "Neutral",
@@ -13497,6 +14019,7 @@ var parseCardsText = {
 			"name": "Courroux vengeur",
 			"text": "Inflige $8 |4(point,points) de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "EX1_384.gif",
 		"id": "EX1_384",
 		"name": "Avenging Wrath",
 		"playerClass": "Paladin",
@@ -13543,6 +14066,7 @@ var parseCardsText = {
 			"name": "Laine mystique",
 			"text": "Transforme tous les serviteurs en moutons 1/1."
 		},
+		"goldenImage": "CFM_621t29.gif",
 		"id": "CFM_621t29",
 		"name": "Mystic Wool",
 		"playerClass": "Neutral",
@@ -13557,6 +14081,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nérubien"
 		},
+		"goldenImage": "FP1_007t.gif",
 		"health": 4,
 		"id": "FP1_007t",
 		"name": "Nerubian",
@@ -13591,6 +14116,7 @@ var parseCardsText = {
 			"name": "Chef de jade",
 			"text": "<b>Cri de guerre :</b> invoque un <b>golem de jade</b> {0}. Lui confère <b>Provocation</b>. @<b>Cri de guerre :</b> invoque un <b>golem de jade</b>. Lui confère <b>Provocation</b>"
 		},
+		"goldenImage": "CFM_312.gif",
 		"health": 5,
 		"id": "CFM_312",
 		"name": "Jade Chieftain",
@@ -13610,6 +14136,7 @@ var parseCardsText = {
 			"name": "Worgen corrompu",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "OG_247.gif",
 		"health": 1,
 		"id": "OG_247",
 		"name": "Twisted Worgen",
@@ -13641,6 +14168,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : noir",
 			"text": "Chaque fois que Chromaggus pioche une carte, il en obtient une copie tant que vous avez celle-ci dans votre main."
 		},
+		"goldenImage": "BRMA12_6H.gif",
 		"id": "BRMA12_6H",
 		"name": "Brood Affliction: Black",
 		"playerClass": "Neutral",
@@ -13670,6 +14198,7 @@ var parseCardsText = {
 			"name": "Cœur de feu",
 			"text": "Inflige $3 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CFM_621t2.gif",
 		"id": "CFM_621t2",
 		"name": "Heart of Fire",
 		"playerClass": "Neutral",
@@ -13704,6 +14233,7 @@ var parseCardsText = {
 			"name": "Boucanier porte-grigris",
 			"text": "<b>Cri de guerre :</b> gagne +4/+4 si votre arme a au moins 3 ATQ."
 		},
+		"goldenImage": "CFM_342.gif",
 		"health": 5,
 		"id": "CFM_342",
 		"name": "Luckydo Buccaneer",
@@ -13723,6 +14253,7 @@ var parseCardsText = {
 			"name": "Nettoyeur défias",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "CFM_855.gif",
 		"health": 7,
 		"id": "CFM_855",
 		"name": "Defias Cleaner",
@@ -13757,6 +14288,7 @@ var parseCardsText = {
 			"name": "Tentacule remuant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_327.gif",
 		"health": 4,
 		"id": "OG_327",
 		"name": "Squirming Tentacle",
@@ -13775,6 +14307,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gueule d’acier des oasis"
 		},
+		"goldenImage": "CS2_119.gif",
 		"health": 7,
 		"id": "CS2_119",
 		"name": "Oasis Snapjaw",
@@ -13806,6 +14339,7 @@ var parseCardsText = {
 			"name": "NOOOOOOOOOOOON !",
 			"text": "Bizarrement, la carte que vous possédiez AVANT a été effacée. Allez, prenez celle-là à la place !"
 		},
+		"goldenImage": "GAME_006.gif",
 		"id": "GAME_006",
 		"name": "NOOOOOOOOOOOO",
 		"playerClass": "Neutral",
@@ -13820,6 +14354,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Draconien"
 		},
+		"goldenImage": "BRMA09_4t.gif",
 		"health": 1,
 		"id": "BRMA09_4t",
 		"name": "Dragonkin",
@@ -13836,6 +14371,7 @@ var parseCardsText = {
 			"name": "Bénédiction du champion",
 			"text": "Double l’Attaque d’un serviteur."
 		},
+		"goldenImage": "EX1_355.gif",
 		"id": "EX1_355",
 		"name": "Blessed Champion",
 		"playerClass": "Paladin",
@@ -13854,6 +14390,7 @@ var parseCardsText = {
 			"name": "Géant des mers",
 			"text": "Coûte (1) cristal de moins pour chaque autre serviteur sur le champ de bataille."
 		},
+		"goldenImage": "EX1_586.gif",
 		"health": 8,
 		"id": "EX1_586",
 		"name": "Sea Giant",
@@ -13887,6 +14424,7 @@ var parseCardsText = {
 			"name": "Robot réparateur amélioré",
 			"text": "<b>Cri de guerre :</b> donne +4 PV à un Méca allié."
 		},
+		"goldenImage": "GVG_083.gif",
 		"health": 5,
 		"id": "GVG_083",
 		"name": "Upgraded Repair Bot",
@@ -13905,6 +14443,7 @@ var parseCardsText = {
 			"name": "Potion réductrice",
 			"text": "Donne -3 ATQ à tous les serviteurs adverses pendant ce tour."
 		},
+		"goldenImage": "CFM_661.gif",
 		"id": "CFM_661",
 		"name": "Pint-Size Potion",
 		"playerClass": "Priest",
@@ -13936,6 +14475,7 @@ var parseCardsText = {
 			"name": "Explosion pyrotechnique",
 			"text": "Inflige $10 |4(point,points) de dégâts."
 		},
+		"goldenImage": "EX1_279.gif",
 		"id": "EX1_279",
 		"name": "Pyroblast",
 		"playerClass": "Mage",
@@ -13950,6 +14490,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Khadgar"
 		},
+		"goldenImage": "HERO_08b.gif",
 		"health": 30,
 		"id": "HERO_08b",
 		"name": "Khadgar",
@@ -13980,6 +14521,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Tréant"
 		},
+		"goldenImage": "FP1_019t.gif",
 		"health": 2,
 		"id": "FP1_019t",
 		"name": "Treant",
@@ -14018,6 +14560,7 @@ var parseCardsText = {
 			"name": "Jeune faucon-dragon",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "CS2_169.gif",
 		"health": 1,
 		"id": "CS2_169",
 		"name": "Young Dragonhawk",
@@ -14035,6 +14578,7 @@ var parseCardsText = {
 			"name": "Coren Navrebière",
 			"text": "Gagne toujours à la baston.\n<b>Cri de guerre :</b> ajoute une carte Baston dans votre main."
 		},
+		"goldenImage": "BRMC_92.gif",
 		"health": 8,
 		"id": "BRMC_92",
 		"name": "Coren Direbrew",
@@ -14051,6 +14595,7 @@ var parseCardsText = {
 			"name": "Crash",
 			"text": "Crash the game."
 		},
+		"goldenImage": "XXX_015.gif",
 		"id": "XXX_015",
 		"name": "Crash",
 		"playerClass": "Neutral",
@@ -14067,6 +14612,7 @@ var parseCardsText = {
 			"name": "Aileron-Géant",
 			"text": "À la fin de votre tour, vous piochez 2 cartes."
 		},
+		"goldenImage": "LOEA16_24H.gif",
 		"health": 10,
 		"id": "LOEA16_24H",
 		"name": "Giantfin",
@@ -14084,6 +14630,7 @@ var parseCardsText = {
 			"name": "Leurre à pointes",
 			"text": "<b>Provocation</b>\nNe peut pas attaquer."
 		},
+		"goldenImage": "LOEA07_24.gif",
 		"health": 6,
 		"id": "LOEA07_24",
 		"name": "Spiked Decoy",
@@ -14115,6 +14662,7 @@ var parseCardsText = {
 			"name": "Garde de la Couronne de glace",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "NAX15_03t.gif",
 		"health": 5,
 		"id": "NAX15_03t",
 		"name": "Guardian of Icecrown",
@@ -14130,6 +14678,7 @@ var parseCardsText = {
 			"name": "Deuxième classe : prêtre",
 			"text": "Ajoute des cartes de prêtre dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Priest.gif",
 		"id": "TB_ClassRandom_Priest",
 		"name": "Second Class: Priest",
 		"playerClass": "Priest",
@@ -14195,6 +14744,7 @@ var parseCardsText = {
 			"name": "Vole-chant de la Kabale",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "CFM_657.gif",
 		"health": 5,
 		"id": "CFM_657",
 		"name": "Kabal Songstealer",
@@ -14211,6 +14761,7 @@ var parseCardsText = {
 			"name": "Réveil d’Ysera",
 			"text": "Inflige $5 |4(point,points) de dégâts à tous les personnages sauf Ysera."
 		},
+		"goldenImage": "DREAM_02.gif",
 		"id": "DREAM_02",
 		"name": "Ysera Awakens",
 		"playerClass": "Dream",
@@ -14227,6 +14778,7 @@ var parseCardsText = {
 			"name": "Saccager",
 			"text": "Donne +3/+3 à un serviteur blessé."
 		},
+		"goldenImage": "CS2_104.gif",
 		"id": "CS2_104",
 		"name": "Rampage",
 		"playerClass": "Warrior",
@@ -14243,6 +14795,7 @@ var parseCardsText = {
 			"name": "AI Buddy - Destroy Minions",
 			"text": "Spawn into play to destroy all minions."
 		},
+		"goldenImage": "XXX_097.gif",
 		"health": 1,
 		"id": "XXX_097",
 		"name": "AI Buddy - Destroy Minions",
@@ -14259,6 +14812,7 @@ var parseCardsText = {
 			"name": "Ben Thompson",
 			"text": "<b>Cri de guerre :</b> dessine ses propres cartes."
 		},
+		"goldenImage": "CRED_09.gif",
 		"health": 7,
 		"id": "CRED_09",
 		"name": "Ben Thompson",
@@ -14277,6 +14831,7 @@ var parseCardsText = {
 			"name": "Plaie funeste",
 			"text": "Inflige $2 |4(point,points) de dégâts à un personnage. S’il est tué, invoque un démon aléatoire."
 		},
+		"goldenImage": "EX1_320.gif",
 		"id": "EX1_320",
 		"name": "Bane of Doom",
 		"playerClass": "Warlock",
@@ -14292,6 +14847,7 @@ var parseCardsText = {
 			"name": "Colère",
 			"text": "Inflige $3 |4(point,points) de dégâts à un serviteur."
 		},
+		"goldenImage": "EX1_154a.gif",
 		"id": "EX1_154a",
 		"name": "Wrath",
 		"playerClass": "Druid",
@@ -14307,6 +14863,7 @@ var parseCardsText = {
 			"name": "Grobbulus",
 			"text": "Chaque fois qu’il détruit un serviteur, invoque une gelée empoisonnée 2/2. "
 		},
+		"goldenImage": "TB_KTRAF_6.gif",
 		"health": 7,
 		"id": "TB_KTRAF_6",
 		"name": "Grobbulus",
@@ -14324,6 +14881,7 @@ var parseCardsText = {
 			"name": "Chef Scarvash",
 			"text": "Les cartes adverses coûtent (2) |4(cristal,cristaux) de plus."
 		},
+		"goldenImage": "LOEA16_21H.gif",
 		"health": 10,
 		"id": "LOEA16_21H",
 		"name": "Chieftain Scarvash",
@@ -14341,6 +14899,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t12.gif",
 		"health": 12,
 		"id": "CFM_712_t12",
 		"name": "Jade Golem",
@@ -14370,6 +14929,7 @@ var parseCardsText = {
 			"name": "Elite Tauren Chieftain",
 			"text": "<b>Cri de guerre :</b> confère aux deux joueurs la puissance du ROCK ! (grâce à une carte au riff dément !)"
 		},
+		"goldenImage": "PRO_001.gif",
 		"health": 5,
 		"id": "PRO_001",
 		"name": "Elite Tauren Chieftain",
@@ -14388,6 +14948,7 @@ var parseCardsText = {
 			"name": "Encourageur 3000",
 			"text": "À la fin de votre tour, donne +1/+1 à un serviteur aléatoire."
 		},
+		"goldenImage": "Mekka3.gif",
 		"health": 4,
 		"id": "Mekka3",
 		"name": "Emboldener 3000",
@@ -14420,6 +14981,7 @@ var parseCardsText = {
 			"name": "Torche oubliée",
 			"text": "Inflige $3 |4(point,points) de dégâts. Place une carte Torche enflammée dans votre deck qui inflige 6 points de dégâts."
 		},
+		"goldenImage": "LOE_002.gif",
 		"id": "LOE_002",
 		"name": "Forgotten Torch",
 		"playerClass": "Mage",
@@ -14465,6 +15027,7 @@ var parseCardsText = {
 			"name": "Thane Korth’azz",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_03.gif",
 		"health": 7,
 		"id": "NAX9_03",
 		"name": "Thane Korth'azz",
@@ -14484,6 +15047,7 @@ var parseCardsText = {
 			"name": "Sensei de fer",
 			"text": "À la fin de votre tour, donne +2/+2 à un autre Méca allié."
 		},
+		"goldenImage": "GVG_027.gif",
 		"health": 2,
 		"id": "GVG_027",
 		"name": "Iron Sensei",
@@ -14503,6 +15067,7 @@ var parseCardsText = {
 			"name": "Maire Brouillecaboche",
 			"text": "Toutes les cibles sont choisies de façon aléatoire."
 		},
+		"goldenImage": "CFM_670.gif",
 		"health": 4,
 		"id": "CFM_670",
 		"name": "Mayor Noggenfogger",
@@ -14522,6 +15087,7 @@ var parseCardsText = {
 			"name": "Grouillant silithide",
 			"text": "Ne peut attaquer que si votre héros a attaqué pendant ce tour."
 		},
+		"goldenImage": "OG_034.gif",
 		"health": 5,
 		"id": "OG_034",
 		"name": "Silithid Swarmer",
@@ -14541,6 +15107,7 @@ var parseCardsText = {
 			"name": "Passeur de Gadgetzan",
 			"text": "<b>Combo :</b> renvoie un serviteur allié dans votre main."
 		},
+		"goldenImage": "CFM_693.gif",
 		"health": 3,
 		"id": "CFM_693",
 		"name": "Gadgetzan Ferryman",
@@ -14560,6 +15127,7 @@ var parseCardsText = {
 			"name": "Ragnaros, porteur de Lumière",
 			"text": "À la fin de votre tour, rend 8 PV à un personnage allié blessé."
 		},
+		"goldenImage": "OG_229.gif",
 		"health": 8,
 		"id": "OG_229",
 		"name": "Ragnaros, Lightlord",
@@ -14579,6 +15147,7 @@ var parseCardsText = {
 			"name": "Adversaire mystérieux",
 			"text": "<b>Cri de guerre :</b> place un <b>Secret</b> de chaque type de votre deck sur le champ de bataille."
 		},
+		"goldenImage": "AT_079.gif",
 		"health": 6,
 		"id": "AT_079",
 		"name": "Mysterious Challenger",
@@ -14612,6 +15181,7 @@ var parseCardsText = {
 			"name": "Elekk du roi",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, vous le piochez."
 		},
+		"goldenImage": "AT_058.gif",
 		"health": 2,
 		"id": "AT_058",
 		"name": "King's Elekk",
@@ -14644,6 +15214,7 @@ var parseCardsText = {
 			"name": "Bénédiction de puissance",
 			"text": "Donne +3 ATQ à un serviteur."
 		},
+		"goldenImage": "CS2_087.gif",
 		"id": "CS2_087",
 		"name": "Blessing of Might",
 		"playerClass": "Paladin",
@@ -14660,6 +15231,7 @@ var parseCardsText = {
 			"name": "Hoplite tol’vir",
 			"text": "<b>Râle d’agonie :</b> inflige 5 points de dégâts aux deux héros."
 		},
+		"goldenImage": "LOEA01_12.gif",
 		"health": 2,
 		"id": "LOEA01_12",
 		"name": "Tol'vir Hoplite",
@@ -14676,6 +15248,7 @@ var parseCardsText = {
 			"name": "Destrier de la mort",
 			"text": "<b>Charge. Râle d’agonie :</b> inflige 3 points de dégâts à votre héros."
 		},
+		"goldenImage": "FP1_006.gif",
 		"health": 3,
 		"id": "FP1_006",
 		"name": "Deathcharger",
@@ -14722,6 +15295,7 @@ var parseCardsText = {
 			"name": "Piqueur de démons des mers",
 			"text": "<b>Cri de guerre :</b> le prochain murloc que vous jouez pendant ce tour coûte de la Vie au lieu de cristaux de mana."
 		},
+		"goldenImage": "CFM_699.gif",
 		"health": 2,
 		"id": "CFM_699",
 		"name": "Seadevil Stinger",
@@ -14740,6 +15314,7 @@ var parseCardsText = {
 			"name": "Pouletisateur",
 			"text": "Au début de votre tour, transforme un serviteur aléatoire en poulet 1/1."
 		},
+		"goldenImage": "Mekka4.gif",
 		"health": 3,
 		"id": "Mekka4",
 		"name": "Poultryizer",
@@ -14759,6 +15334,7 @@ var parseCardsText = {
 			"name": "Ancien de la guerre",
 			"text": "<b>Choix des armes :</b> \n+5 ATQ ou +5 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_178.gif",
 		"health": 5,
 		"id": "EX1_178",
 		"name": "Ancient of War",
@@ -14778,6 +15354,7 @@ var parseCardsText = {
 			"name": "Vieux déchiqueteur de Sneed",
 			"text": "<b>Râle d’agonie :</b> invoque un serviteur <b>Légendaire</b> aléatoire."
 		},
+		"goldenImage": "GVG_114.gif",
 		"health": 7,
 		"id": "GVG_114",
 		"name": "Sneed's Old Shredder",
@@ -14824,6 +15401,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Druidesse de la Flamme"
 		},
+		"goldenImage": "BRM_010t.gif",
 		"health": 2,
 		"id": "BRM_010t",
 		"name": "Druid of the Flame",
@@ -14837,6 +15415,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Tranchetripe l’Indompté"
 		},
+		"goldenImage": "BRMA10_1H.gif",
 		"health": 30,
 		"id": "BRMA10_1H",
 		"name": "Razorgore the Untamed",
@@ -14852,6 +15431,7 @@ var parseCardsText = {
 			"name": "Squeletosaurus Hex",
 			"text": "Donne une carte aléatoire à chaque joueur à la fin de votre tour. Elle coûte (0) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOEA16_26.gif",
 		"health": 5,
 		"id": "LOEA16_26",
 		"name": "Skelesaurus Hex",
@@ -14868,6 +15448,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gnoll"
 		},
+		"goldenImage": "TU4a_003.gif",
 		"health": 1,
 		"id": "TU4a_003",
 		"name": "Gnoll",
@@ -14886,6 +15467,7 @@ var parseCardsText = {
 			"name": "Onyxia",
 			"text": "<b>Cri de guerre :</b> invoque des dragonnets 1/1 jusqu’à remplir votre côté du champ de bataille."
 		},
+		"goldenImage": "EX1_562.gif",
 		"health": 8,
 		"id": "EX1_562",
 		"name": "Onyxia",
@@ -14905,6 +15487,7 @@ var parseCardsText = {
 			"name": "Destructeur garde du feu",
 			"text": "<b>Cri de guerre :</b> gagne 1 à 4 points d’Attaque. <b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "BRM_012.gif",
 		"health": 6,
 		"id": "BRM_012",
 		"name": "Fireguard Destroyer",
@@ -14937,6 +15520,7 @@ var parseCardsText = {
 			"name": "Répulsif à nagas",
 			"text": "Détruit tous les nagas affamés."
 		},
+		"goldenImage": "LOEA09_9.gif",
 		"id": "LOEA09_9",
 		"name": "Naga Repellent",
 		"playerClass": "Neutral",
@@ -14980,6 +15564,7 @@ var parseCardsText = {
 			"name": "Free Cards",
 			"text": "Your cards cost (0) for the rest of the game."
 		},
+		"goldenImage": "XXX_022.gif",
 		"id": "XXX_022",
 		"name": "Free Cards",
 		"playerClass": "Neutral",
@@ -15012,6 +15597,7 @@ var parseCardsText = {
 			"name": "Humilité",
 			"text": "L’Attaque d’un serviteur passe à 1."
 		},
+		"goldenImage": "EX1_360.gif",
 		"id": "EX1_360",
 		"name": "Humility",
 		"playerClass": "Paladin",
@@ -15031,6 +15617,7 @@ var parseCardsText = {
 			"name": "Sergent grossier",
 			"text": "<b>Cri de guerre :</b> donne +2 ATQ à un serviteur pendant ce tour."
 		},
+		"goldenImage": "CS2_188.gif",
 		"health": 1,
 		"id": "CS2_188",
 		"name": "Abusive Sergeant",
@@ -15048,6 +15635,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Glaives de guerre doubles"
 		},
+		"goldenImage": "TU4e_007.gif",
 		"id": "TU4e_007",
 		"name": "Dual Warglaives",
 		"playerClass": "Neutral",
@@ -15076,6 +15664,7 @@ var parseCardsText = {
 			"name": "Cadeau du Voile d’hiver volé",
 			"text": "<b>Découvre</b> un trésor aléatoire. Son coût est réduit."
 		},
+		"goldenImage": "TB_GiftExchange_Treasure_Spell.gif",
 		"id": "TB_GiftExchange_Treasure_Spell",
 		"name": "Stolen Winter's Veil Gift",
 		"playerClass": "Neutral",
@@ -15107,6 +15696,7 @@ var parseCardsText = {
 			"name": "Laquais de la Kabale",
 			"text": "<b>Cri de guerre :</b> le prochain <b>Secret</b> que vous jouez pendant ce tour coûte (0) |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_066.gif",
 		"health": 1,
 		"id": "CFM_066",
 		"name": "Kabal Lackey",
@@ -15124,6 +15714,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t02.gif",
 		"health": 2,
 		"id": "CFM_712_t02",
 		"name": "Jade Golem",
@@ -15138,6 +15729,7 @@ var parseCardsText = {
 			"name": "Œil d’Hakkar",
 			"text": "Pioche un secret dans le deck de votre adversaire et le place sur le champ de bataille."
 		},
+		"goldenImage": "LOE_008.gif",
 		"id": "LOE_008",
 		"name": "Eye of Hakkar",
 		"playerClass": "Neutral",
@@ -15155,6 +15747,7 @@ var parseCardsText = {
 			"name": "Gadgétiseur des Dessoudeurs",
 			"text": "À la fin de votre tour, donne +2/+2 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_754.gif",
 		"health": 3,
 		"id": "CFM_754",
 		"name": "Grimy Gadgeteer",
@@ -15173,6 +15766,7 @@ var parseCardsText = {
 			"name": "Huile d’affûtage de Bricoleur",
 			"text": "Donne +3 ATQ à votre arme. <b>Combo :</b> donne +3 ATQ à un serviteur allié aléatoire."
 		},
+		"goldenImage": "GVG_022.gif",
 		"id": "GVG_022",
 		"name": "Tinker's Sharpsword Oil",
 		"playerClass": "Rogue",
@@ -15201,6 +15795,7 @@ var parseCardsText = {
 			"name": "Salve de bombes",
 			"text": "Inflige les dégâts de l’attaque à 3 cibles aléatoires au maximum."
 		},
+		"goldenImage": "TB_CoOpBossSpell_2.gif",
 		"id": "TB_CoOpBossSpell_2",
 		"name": "Bomb Salvo",
 		"playerClass": "Neutral",
@@ -15214,6 +15809,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Valeera Sanguinar"
 		},
+		"goldenImage": "HERO_03.gif",
 		"health": 30,
 		"id": "HERO_03",
 		"name": "Valeera Sanguinar",
@@ -15230,6 +15826,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Hache lourde"
 		},
+		"goldenImage": "EX1_409t.gif",
 		"id": "EX1_409t",
 		"name": "Heavy Axe",
 		"playerClass": "Warrior",
@@ -15258,6 +15855,7 @@ var parseCardsText = {
 			"name": "Destroy All Minions",
 			"text": "Destroy all minions."
 		},
+		"goldenImage": "XXX_018.gif",
 		"id": "XXX_018",
 		"name": "Destroy All Minions",
 		"playerClass": "Neutral",
@@ -15276,6 +15874,7 @@ var parseCardsText = {
 			"name": "Corsaire de l’effroi",
 			"text": "<b>Provocation</b>. Coûte (1) |4(cristal,cristaux) de moins par Attaque de votre arme."
 		},
+		"goldenImage": "NEW1_022.gif",
 		"health": 3,
 		"id": "NEW1_022",
 		"name": "Dread Corsair",
@@ -15371,6 +15970,7 @@ var parseCardsText = {
 			"name": "Worgen déchaîné",
 			"text": "<b>Accès de rage :</b> <b>Furie des vents</b> et +1 ATQ"
 		},
+		"goldenImage": "EX1_412.gif",
 		"health": 3,
 		"id": "EX1_412",
 		"name": "Raging Worgen",
@@ -15451,6 +16051,7 @@ var parseCardsText = {
 			"name": "Seigneur Jaraxxus",
 			"text": "<b>Cri de guerre :</b> le seigneur Jaraxxus détruit votre héros et prend sa place."
 		},
+		"goldenImage": "EX1_323.gif",
 		"health": 15,
 		"id": "EX1_323",
 		"name": "Lord Jaraxxus",
@@ -15485,6 +16086,7 @@ var parseCardsText = {
 			"name": "Éruption de diablotins",
 			"text": "Inflige $2 à $4 points de dégâts à un serviteur. Invoque un diablotin 1/1 pour chaque point de dégâts infligé."
 		},
+		"goldenImage": "GVG_045.gif",
 		"id": "GVG_045",
 		"name": "Imp-losion",
 		"playerClass": "Warlock",
@@ -15503,6 +16105,7 @@ var parseCardsText = {
 			"name": "Nat Pagle",
 			"text": "Au début de votre tour, vous avez 50% de chances de piocher une carte supplémentaire."
 		},
+		"goldenImage": "EX1_557.gif",
 		"health": 4,
 		"id": "EX1_557",
 		"name": "Nat Pagle",
@@ -15522,6 +16125,7 @@ var parseCardsText = {
 			"name": "C’Thun",
 			"text": "<b>Cri de guerre :</b> inflige des dégâts égaux à l’Attaque de ce serviteur répartis aléatoirement entre tous les adversaires."
 		},
+		"goldenImage": "OG_280.gif",
 		"health": 6,
 		"id": "OG_280",
 		"name": "C'Thun",
@@ -15555,6 +16159,7 @@ var parseCardsText = {
 			"name": "Exécution",
 			"text": "Détruit un serviteur adverse blessé."
 		},
+		"goldenImage": "CS2_108.gif",
 		"id": "CS2_108",
 		"name": "Execute",
 		"playerClass": "Warrior",
@@ -15587,6 +16192,7 @@ var parseCardsText = {
 			"name": "Cône de froid",
 			"text": "<b>Gèle</b> et inflige $1 |4(point,points) de dégâts à un serviteur et ceux à côté de lui."
 		},
+		"goldenImage": "EX1_275.gif",
 		"id": "EX1_275",
 		"name": "Cone of Cold",
 		"playerClass": "Mage",
@@ -15604,6 +16210,7 @@ var parseCardsText = {
 			"name": "Forme d’Ombre",
 			"text": "Transforme votre pouvoir héroïque, qui inflige 2 points de dégâts. Si la forme d’Ombre est déjà adoptée : 3 points de dégâts."
 		},
+		"goldenImage": "EX1_625.gif",
 		"id": "EX1_625",
 		"name": "Shadowform",
 		"playerClass": "Priest",
@@ -15619,6 +16226,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Serpent"
 		},
+		"goldenImage": "EX1_554t.gif",
 		"health": 1,
 		"id": "EX1_554t",
 		"name": "Snake",
@@ -15634,6 +16242,7 @@ var parseCardsText = {
 			"name": "Supercharge",
 			"text": "Donne +2 PV à vos serviteurs."
 		},
+		"goldenImage": "NAX13_03.gif",
 		"id": "NAX13_03",
 		"name": "Supercharge",
 		"playerClass": "Neutral",
@@ -15651,6 +16260,7 @@ var parseCardsText = {
 			"name": "Déphaseur Zerus",
 			"text": "Chaque tour où cette carte est dans votre main, la transforme en un serviteur aléatoire."
 		},
+		"goldenImage": "OG_123.gif",
 		"health": 1,
 		"id": "OG_123",
 		"name": "Shifter Zerus",
@@ -15671,6 +16281,7 @@ var parseCardsText = {
 			"name": "Rouage-marteau",
 			"text": "<b>Cri de guerre :</b> confère <b>Bouclier divin</b> et <b>Provocation</b> à un serviteur allié aléatoire."
 		},
+		"goldenImage": "GVG_059.gif",
 		"id": "GVG_059",
 		"name": "Coghammer",
 		"playerClass": "Paladin",
@@ -15688,6 +16299,7 @@ var parseCardsText = {
 			"name": "Voile de mort",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur. Vous piochez une carte si ce serviteur est tué."
 		},
+		"goldenImage": "EX1_302.gif",
 		"id": "EX1_302",
 		"name": "Mortal Coil",
 		"playerClass": "Warlock",
@@ -15706,6 +16318,7 @@ var parseCardsText = {
 			"name": "Troggzor le Terreminator",
 			"text": "Chaque fois que votre adversaire lance un sort, invoque un trogg mâcheroc mastoc."
 		},
+		"goldenImage": "GVG_118.gif",
 		"health": 6,
 		"id": "GVG_118",
 		"name": "Troggzor the Earthinator",
@@ -15723,6 +16336,7 @@ var parseCardsText = {
 			"name": "Forgeron squelettique",
 			"text": "<b>Râle d’agonie :</b> détruit l’arme de votre adversaire."
 		},
+		"goldenImage": "NAXM_002.gif",
 		"health": 3,
 		"id": "NAXM_002",
 		"name": "Skeletal Smith",
@@ -15741,6 +16355,7 @@ var parseCardsText = {
 			"name": "Vieux Troublœil",
 			"text": "<b>Charge</b>. A +1 ATQ pour chaque autre murloc sur le champ de bataille."
 		},
+		"goldenImage": "EX1_062.gif",
 		"health": 4,
 		"id": "EX1_062",
 		"name": "Old Murk-Eye",
@@ -15807,6 +16422,7 @@ var parseCardsText = {
 			"name": "Provocateur maléfique",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "AT_114.gif",
 		"health": 4,
 		"id": "AT_114",
 		"name": "Evil Heckler",
@@ -15827,6 +16443,7 @@ var parseCardsText = {
 			"name": "Ingénieur novice",
 			"text": "<b>Cri de guerre :</b> vous piochez une carte."
 		},
+		"goldenImage": "EX1_015.gif",
 		"health": 1,
 		"id": "EX1_015",
 		"name": "Novice Engineer",
@@ -15843,6 +16460,7 @@ var parseCardsText = {
 			"name": "Make Immune",
 			"text": "Permanently make a character <b>Immune</b>."
 		},
+		"goldenImage": "XXX_051.gif",
 		"id": "XXX_051",
 		"name": "Make Immune",
 		"playerClass": "Neutral",
@@ -15860,6 +16478,7 @@ var parseCardsText = {
 			"name": "Courbe-sort",
 			"text": "<b>Secret :</b> quand votre adversaire lance un sort sur un serviteur, invoque un 1/3 qui devient la nouvelle cible."
 		},
+		"goldenImage": "tt_010.gif",
 		"id": "tt_010",
 		"name": "Spellbender",
 		"playerClass": "Mage",
@@ -15891,6 +16510,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Mataf"
 		},
+		"goldenImage": "GVG_070.gif",
 		"health": 4,
 		"id": "GVG_070",
 		"name": "Salty Dog",
@@ -15904,6 +16524,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Thaddius"
 		},
+		"goldenImage": "NAX13_01.gif",
 		"health": 30,
 		"id": "NAX13_01",
 		"name": "Thaddius",
@@ -15918,6 +16539,7 @@ var parseCardsText = {
 			"name": "Explosion de spores",
 			"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses. Invoque une spore."
 		},
+		"goldenImage": "NAX6_04.gif",
 		"id": "NAX6_04",
 		"name": "Sporeburst",
 		"playerClass": "Neutral",
@@ -15949,6 +16571,7 @@ var parseCardsText = {
 			"name": "Éviscération",
 			"text": "Inflige $2 |4(point,points) de dégâts. <b>Combo :</b> inflige $4 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "EX1_124.gif",
 		"id": "EX1_124",
 		"name": "Eviscerate",
 		"playerClass": "Rogue",
@@ -15996,6 +16619,7 @@ var parseCardsText = {
 			"name": "Frappe héroïque",
 			"text": "Donne +4 ATQ à votre héros pendant ce tour."
 		},
+		"goldenImage": "CS2_105.gif",
 		"id": "CS2_105",
 		"name": "Heroic Strike",
 		"playerClass": "Warrior",
@@ -16009,6 +16633,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Seigneur Ondulance"
 		},
+		"goldenImage": "LOEA09_1.gif",
 		"health": 30,
 		"id": "LOEA09_1",
 		"name": "Lord Slitherspear",
@@ -16058,6 +16683,7 @@ var parseCardsText = {
 			"name": "Mécano de petit dragon",
 			"text": "<b>Cri de guerre :</b> invoque un petit dragon mécanique 2/1."
 		},
+		"goldenImage": "EX1_025.gif",
 		"health": 4,
 		"id": "EX1_025",
 		"name": "Dragonling Mechanic",
@@ -16094,6 +16720,7 @@ var parseCardsText = {
 			"name": "Croissance sauvage",
 			"text": "Confère un cristal de mana vide."
 		},
+		"goldenImage": "CS2_013.gif",
 		"id": "CS2_013",
 		"name": "Wild Growth",
 		"playerClass": "Druid",
@@ -16138,6 +16765,7 @@ var parseCardsText = {
 			"name": "Fils de la Flamme",
 			"text": "<b>Cri de guerre :</b> inflige 6 points de dégâts."
 		},
+		"goldenImage": "BRMA13_5.gif",
 		"health": 3,
 		"id": "BRMA13_5",
 		"name": "Son of the Flame",
@@ -16170,6 +16798,7 @@ var parseCardsText = {
 			"name": "Bonus : Râle d’agonie",
 			"text": "Vos serviteurs avec <b>Râle d’agonie</b> ont +1/+1."
 		},
+		"goldenImage": "TB_PickYourFate_9.gif",
 		"id": "TB_PickYourFate_9",
 		"name": "Deathrattle Bonus",
 		"playerClass": "Neutral",
@@ -16230,6 +16859,7 @@ var parseCardsText = {
 			"name": "Pipe de Khadgar",
 			"text": "Place un sort aléatoire dans la main de chaque joueur. Le vôtre coûte (0) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOEA16_14.gif",
 		"id": "LOEA16_14",
 		"name": "Khadgar's Pipe",
 		"playerClass": "Neutral",
@@ -16272,6 +16902,7 @@ var parseCardsText = {
 			"name": "Grant Mega-Windfury",
 			"text": "Give a minion <b>Mega-Windfury</b>."
 		},
+		"goldenImage": "XXX_052.gif",
 		"id": "XXX_052",
 		"name": "Grant Mega-Windfury",
 		"playerClass": "Neutral",
@@ -16302,6 +16933,7 @@ var parseCardsText = {
 			"name": "Restore 5",
 			"text": "Restore #5 Health to a character."
 		},
+		"goldenImage": "XXX_004.gif",
 		"id": "XXX_004",
 		"name": "Restore 5",
 		"playerClass": "Neutral",
@@ -16334,6 +16966,7 @@ var parseCardsText = {
 			"name": "Corrupteur de l’Aile noire",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts si vous avez un Dragon en main."
 		},
+		"goldenImage": "BRM_034.gif",
 		"health": 4,
 		"id": "BRM_034",
 		"name": "Blackwing Corruptor",
@@ -16350,6 +16983,7 @@ var parseCardsText = {
 			"name": "Vœu : gloire",
 			"text": "<b>Découvre</b> un serviteur."
 		},
+		"goldenImage": "LOEA02_05.gif",
 		"id": "LOEA02_05",
 		"name": "Wish for Glory",
 		"playerClass": "Neutral",
@@ -16367,6 +17001,7 @@ var parseCardsText = {
 			"name": "Tête de Mimiron",
 			"text": "Au début de votre tour, si vous avez au moins 3 Méca, les détruit tous pour former V-07-TR-0N."
 		},
+		"goldenImage": "GVG_111.gif",
 		"health": 5,
 		"id": "GVG_111",
 		"name": "Mimiron's Head",
@@ -16385,6 +17020,7 @@ var parseCardsText = {
 			"name": "Feu stellaire",
 			"text": "Inflige $5 |4(point,points) de dégâts.\nVous piochez une carte."
 		},
+		"goldenImage": "EX1_173.gif",
 		"id": "EX1_173",
 		"name": "Starfire",
 		"playerClass": "Druid",
@@ -16402,6 +17038,7 @@ var parseCardsText = {
 			"name": "Œil pour œil",
 			"text": "<b>Secret :</b> inflige au héros adverse autant de dégâts que ceux subis par votre héros."
 		},
+		"goldenImage": "EX1_132.gif",
 		"id": "EX1_132",
 		"name": "Eye for an Eye",
 		"playerClass": "Paladin",
@@ -16420,6 +17057,7 @@ var parseCardsText = {
 			"name": "Annonciatrice du mal",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_281.gif",
 		"health": 3,
 		"id": "OG_281",
 		"name": "Beckoner of Evil",
@@ -16436,6 +17074,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Assemblage d’os"
 		},
+		"goldenImage": "BRMA17_6.gif",
 		"health": 1,
 		"id": "BRMA17_6",
 		"name": "Bone Construct",
@@ -16452,6 +17091,7 @@ var parseCardsText = {
 			"name": "Enchaînement",
 			"text": "Inflige $2 |4(point,points) de dégâts à deux serviteurs adverses aléatoires."
 		},
+		"goldenImage": "CS2_114.gif",
 		"id": "CS2_114",
 		"name": "Cleave",
 		"playerClass": "Warrior",
@@ -16469,6 +17109,7 @@ var parseCardsText = {
 			"name": "Nova de givre",
 			"text": "<b>Gèle</b> tous les serviteurs adverses."
 		},
+		"goldenImage": "CS2_026.gif",
 		"id": "CS2_026",
 		"name": "Frost Nova",
 		"playerClass": "Mage",
@@ -16484,6 +17125,7 @@ var parseCardsText = {
 			"name": "Pièce de Gallywix",
 			"text": "Gagne 1 cristal de mana pendant ce tour seulement. <i>(Ne déclenche pas le pouvoir de Gallywix.)</i>"
 		},
+		"goldenImage": "GVG_028t.gif",
 		"id": "GVG_028t",
 		"name": "Gallywix's Coin",
 		"playerClass": "Neutral",
@@ -16499,6 +17141,7 @@ var parseCardsText = {
 			"name": "Ben Brode",
 			"text": "Vous ne pouvez pas baisser le volume en dessous du maximum."
 		},
+		"goldenImage": "CRED_08.gif",
 		"health": 1,
 		"id": "CRED_08",
 		"name": "Ben Brode",
@@ -16517,6 +17160,7 @@ var parseCardsText = {
 			"name": "Guérison ancestrale",
 			"text": "Rend tous ses points de vie à un serviteur et lui confère <b>Provocation</b>."
 		},
+		"goldenImage": "CS2_041.gif",
 		"id": "CS2_041",
 		"name": "Ancestral Healing",
 		"playerClass": "Shaman",
@@ -16546,6 +17190,7 @@ var parseCardsText = {
 			"name": "Rage du combat",
 			"text": "Vous piochez une carte pour chaque personnage allié blessé."
 		},
+		"goldenImage": "EX1_392.gif",
 		"id": "EX1_392",
 		"name": "Battle Rage",
 		"playerClass": "Warrior",
@@ -16577,6 +17222,7 @@ var parseCardsText = {
 			"name": "Coup de poing en laiton",
 			"text": "Donne +1/+1 à un serviteur aléatoire dans votre main chaque fois que votre héros attaque."
 		},
+		"goldenImage": "CFM_631.gif",
 		"id": "CFM_631",
 		"name": "Brass Knuckles",
 		"playerClass": "Warrior",
@@ -16604,6 +17250,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nefarian"
 		},
+		"goldenImage": "BRMA13_3H.gif",
 		"health": 30,
 		"id": "BRMA13_3H",
 		"name": "Nefarian",
@@ -16621,6 +17268,7 @@ var parseCardsText = {
 			"name": "Glace-Hurlante",
 			"text": "<b>Charge</b>\nNe peut pas attaquer les héros."
 		},
+		"goldenImage": "AT_125.gif",
 		"health": 10,
 		"id": "AT_125",
 		"name": "Icehowl",
@@ -16655,6 +17303,7 @@ var parseCardsText = {
 			"name": "Œuf de nérubien",
 			"text": "<b>Râle d’agonie :</b> invoque un nérubien 4/4."
 		},
+		"goldenImage": "FP1_007.gif",
 		"health": 2,
 		"id": "FP1_007",
 		"name": "Nerubian Egg",
@@ -16672,6 +17321,7 @@ var parseCardsText = {
 			"name": "Sang-royal",
 			"text": "Vous piochez une carte."
 		},
+		"goldenImage": "CFM_621t8.gif",
 		"id": "CFM_621t8",
 		"name": "Kingsblood",
 		"playerClass": "Neutral",
@@ -16730,6 +17380,7 @@ var parseCardsText = {
 			"name": "Dame Blaumeux",
 			"text": "<b>Cri de guerre :</b> invoque un cavalier."
 		},
+		"goldenImage": "TB_KTRAF_2.gif",
 		"health": 7,
 		"id": "TB_KTRAF_2",
 		"name": "Lady Blaumeux",
@@ -16746,6 +17397,7 @@ var parseCardsText = {
 			"name": "Destin : confusion",
 			"text": "À la fin de chaque tour, échange l’Attaque et la Vie de tous les serviteurs."
 		},
+		"goldenImage": "TB_PickYourFate_12.gif",
 		"id": "TB_PickYourFate_12",
 		"name": "Fate: Confusion",
 		"playerClass": "Neutral",
@@ -16763,6 +17415,7 @@ var parseCardsText = {
 			"name": "Zap-o-matic tournoyant",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "GVG_037.gif",
 		"health": 2,
 		"id": "GVG_037",
 		"name": "Whirling Zap-o-matic",
@@ -16799,6 +17452,7 @@ var parseCardsText = {
 			"name": "Répulsif à nagas",
 			"text": "Fait passer l’Attaque de tous les nagas affamés à 1."
 		},
+		"goldenImage": "LOEA09_9H.gif",
 		"id": "LOEA09_9H",
 		"name": "Naga Repellent",
 		"playerClass": "Neutral",
@@ -16828,6 +17482,7 @@ var parseCardsText = {
 			"name": "Hand Swapper Minion",
 			"text": "<b>Battlecry:</b> Discard 3 cards, then draw 3 cards."
 		},
+		"goldenImage": "XXX_044.gif",
 		"health": 5,
 		"id": "XXX_044",
 		"name": "Hand Swapper Minion",
@@ -16859,6 +17514,7 @@ var parseCardsText = {
 			"name": "Lucifron",
 			"text": "<b>Cri de guerre :</b> lance Corruption sur tous les autres serviteurs."
 		},
+		"goldenImage": "BRMC_85.gif",
 		"health": 7,
 		"id": "BRMC_85",
 		"name": "Lucifron",
@@ -16878,6 +17534,7 @@ var parseCardsText = {
 			"name": "Cauchemar écailleux",
 			"text": "Au début de votre tour, double l’Attaque de ce serviteur."
 		},
+		"goldenImage": "OG_271.gif",
 		"health": 8,
 		"id": "OG_271",
 		"name": "Scaled Nightmare",
@@ -16896,6 +17553,7 @@ var parseCardsText = {
 			"name": "Projectiles des Arcanes majeurs",
 			"text": "Lance trois missiles infligeant chacun $3 |4(point,points) de dégâts à des adversaires aléatoires."
 		},
+		"goldenImage": "CFM_623.gif",
 		"id": "CFM_623",
 		"name": "Greater Arcane Missiles",
 		"playerClass": "Mage",
@@ -16913,6 +17571,7 @@ var parseCardsText = {
 			"name": "Puissance chapardée",
 			"text": "Gagne un cristal de mana vide pour chaque serviteur allié."
 		},
+		"goldenImage": "CFM_616.gif",
 		"id": "CFM_616",
 		"name": "Pilfered Power",
 		"playerClass": "Druid",
@@ -16931,6 +17590,7 @@ var parseCardsText = {
 			"name": "Chercheuse du Reliquaire",
 			"text": "<b>Cri de guerre :</b> gagne +4/+4 si vous avez 6 autres serviteurs."
 		},
+		"goldenImage": "LOE_116.gif",
 		"health": 1,
 		"id": "LOE_116",
 		"name": "Reliquary Seeker",
@@ -16959,6 +17619,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Roi Mukla"
 		},
+		"goldenImage": "TU4c_001.gif",
 		"health": 26,
 		"id": "TU4c_001",
 		"name": "King Mukla",
@@ -16976,6 +17637,7 @@ var parseCardsText = {
 			"name": "Lame rebondissante",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur aléatoire. Recommence jusqu’à ce qu’un serviteur meure."
 		},
+		"goldenImage": "GVG_050.gif",
 		"id": "GVG_050",
 		"name": "Bouncing Blade",
 		"playerClass": "Warrior",
@@ -17022,6 +17684,7 @@ var parseCardsText = {
 			"name": "Orc de l’ancienne Horde",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA09_3t.gif",
 		"health": 1,
 		"id": "BRMA09_3t",
 		"name": "Old Horde Orc",
@@ -17039,6 +17702,7 @@ var parseCardsText = {
 			"name": "Ombreflamme",
 			"text": "Détruit un serviteur allié et inflige des dégâts équivalents à ses points d’attaque à tous les serviteurs adverses."
 		},
+		"goldenImage": "EX1_303.gif",
 		"id": "EX1_303",
 		"name": "Shadowflame",
 		"playerClass": "Warlock",
@@ -17055,6 +17719,7 @@ var parseCardsText = {
 			"name": "Œuf corrompu",
 			"text": "Éclot quand il a 5 PV ou plus."
 		},
+		"goldenImage": "BRMA10_4H.gif",
 		"health": 3,
 		"id": "BRMA10_4H",
 		"name": "Corrupted Egg",
@@ -17072,6 +17737,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Feu follet"
 		},
+		"goldenImage": "CS2_231.gif",
 		"health": 1,
 		"id": "CS2_231",
 		"name": "Wisp",
@@ -17105,6 +17771,7 @@ var parseCardsText = {
 			"name": "Sang froid",
 			"text": "Donne +2 ATQ à un serviteur. <b>Combo :</b> +4 ATQ à la place."
 		},
+		"goldenImage": "CS2_073.gif",
 		"id": "CS2_073",
 		"name": "Cold Blood",
 		"playerClass": "Rogue",
@@ -17135,6 +17802,7 @@ var parseCardsText = {
 			"name": "Drake de Frimarra",
 			"text": "Vous pouvez utiliser votre pouvoir héroïque autant de fois que vous voulez."
 		},
+		"goldenImage": "AT_008.gif",
 		"health": 6,
 		"id": "AT_008",
 		"name": "Coldarra Drake",
@@ -17169,6 +17837,7 @@ var parseCardsText = {
 			"name": "Amasseur de butin",
 			"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 		},
+		"goldenImage": "EX1_096.gif",
 		"health": 1,
 		"id": "EX1_096",
 		"name": "Loot Hoarder",
@@ -17186,6 +17855,7 @@ var parseCardsText = {
 			"name": "Dorépine",
 			"text": "Donne +4 PV à vos serviteurs."
 		},
+		"goldenImage": "CFM_621t24.gif",
 		"id": "CFM_621t24",
 		"name": "Goldthorn",
 		"playerClass": "Neutral",
@@ -17202,6 +17872,7 @@ var parseCardsText = {
 			"name": "Singe doré",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> remplace votre main et votre deck par des serviteurs <b>légendaires</b>."
 		},
+		"goldenImage": "LOE_019t2.gif",
 		"health": 6,
 		"id": "LOE_019t2",
 		"name": "Golden Monkey",
@@ -17249,6 +17920,7 @@ var parseCardsText = {
 			"name": "Je connais un gars",
 			"text": "<b>Découvre</b> un serviteur avec <b>Provocation</b>."
 		},
+		"goldenImage": "CFM_940.gif",
 		"id": "CFM_940",
 		"name": "I Know a Guy",
 		"playerClass": "Warrior",
@@ -17279,6 +17951,7 @@ var parseCardsText = {
 			"name": "Adorateur",
 			"text": "Votre héros a +3 ATQ pendant votre tour."
 		},
+		"goldenImage": "NAX2_05H.gif",
 		"health": 4,
 		"id": "NAX2_05H",
 		"name": "Worshipper",
@@ -17320,6 +17993,7 @@ var parseCardsText = {
 			"name": "Vœu : vaillance",
 			"text": "<b>Découvre</b> une carte à (4) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOEA02_04.gif",
 		"id": "LOEA02_04",
 		"name": "Wish for Valor",
 		"playerClass": "Neutral",
@@ -17337,6 +18011,7 @@ var parseCardsText = {
 			"name": "Ourson robot anodisé",
 			"text": "<b>Provocation</b>.\n<b>Choix des armes :</b>\n+1 ATQ ou +1 PV."
 		},
+		"goldenImage": "GVG_030.gif",
 		"health": 2,
 		"id": "GVG_030",
 		"name": "Anodized Robo Cub",
@@ -17356,6 +18031,7 @@ var parseCardsText = {
 			"name": "Vierge guerrière",
 			"text": "<b>Cri de guerre :</b> gagne 5 points d’armure."
 		},
+		"goldenImage": "GVG_053.gif",
 		"health": 5,
 		"id": "GVG_053",
 		"name": "Shieldmaiden",
@@ -17386,6 +18062,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Drake chromatique"
 		},
+		"goldenImage": "BRMA10_5H.gif",
 		"health": 7,
 		"id": "BRMA10_5H",
 		"name": "Chromatic Drake",
@@ -17415,6 +18092,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Mouton"
 		},
+		"goldenImage": "CS2_tk1.gif",
 		"health": 1,
 		"id": "CS2_tk1",
 		"name": "Sheep",
@@ -17447,6 +18125,7 @@ var parseCardsText = {
 			"name": "Motard huran",
 			"text": "<b>Cri de guerre :</b> gagne <b>Charge</b> si un serviteur adverse a <b>Provocation</b>."
 		},
+		"goldenImage": "CFM_688.gif",
 		"health": 5,
 		"id": "CFM_688",
 		"name": "Spiked Hogrider",
@@ -17492,6 +18171,7 @@ var parseCardsText = {
 			"name": "Pulsion destructrice",
 			"text": "Détruit toutes les statues. Inflige 1 point de dégâts pour chaque statue détruite."
 		},
+		"goldenImage": "LOEA06_04.gif",
 		"id": "LOEA06_04",
 		"name": "Shattering Spree",
 		"playerClass": "Neutral",
@@ -17525,6 +18205,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Hache de guerre embrasée"
 		},
+		"goldenImage": "CS2_106.gif",
 		"id": "CS2_106",
 		"name": "Fiery War Axe",
 		"playerClass": "Warrior",
@@ -17542,6 +18223,7 @@ var parseCardsText = {
 			"name": "Agent drakônide",
 			"text": "<b>Cri de guerre :</b> <b>découvre</b> une carte du deck de votre adversaire si vous avez un Dragon en main."
 		},
+		"goldenImage": "CFM_605.gif",
 		"health": 6,
 		"id": "CFM_605",
 		"name": "Drakonid Operative",
@@ -17558,6 +18240,7 @@ var parseCardsText = {
 			"name": "Deuxième classe : mage",
 			"text": "Ajoute des cartes de mage dans votre deck."
 		},
+		"goldenImage": "TB_ClassRandom_Mage.gif",
 		"id": "TB_ClassRandom_Mage",
 		"name": "Second Class: Mage",
 		"playerClass": "Mage",
@@ -17576,6 +18259,7 @@ var parseCardsText = {
 			"name": "Infiltrateur worgen",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "EX1_010.gif",
 		"health": 1,
 		"id": "EX1_010",
 		"name": "Worgen Infiltrator",
@@ -17593,6 +18277,7 @@ var parseCardsText = {
 			"name": "Walter Kong",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à deux cibles stratégiques."
 		},
+		"goldenImage": "CRED_44.gif",
 		"health": 2,
 		"id": "CRED_44",
 		"name": "Walter Kong",
@@ -17612,6 +18297,7 @@ var parseCardsText = {
 			"name": "Eadric le Pur",
 			"text": "<b>Cri de guerre :</b> l’Attaque de tous les serviteurs adverses passe à 1."
 		},
+		"goldenImage": "AT_081.gif",
 		"health": 7,
 		"id": "AT_081",
 		"name": "Eadric the Pure",
@@ -17630,6 +18316,7 @@ var parseCardsText = {
 			"name": "Rage intérieure",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur et lui donne +2 ATQ."
 		},
+		"goldenImage": "EX1_607.gif",
 		"id": "EX1_607",
 		"name": "Inner Rage",
 		"playerClass": "Warrior",
@@ -17647,6 +18334,7 @@ var parseCardsText = {
 			"name": "MALÉDICTION !",
 			"text": "Détruit tous les serviteurs. Pioche une carte pour chaque serviteur détruit."
 		},
+		"goldenImage": "OG_239.gif",
 		"id": "OG_239",
 		"name": "DOOM!",
 		"playerClass": "Warlock",
@@ -17665,6 +18353,7 @@ var parseCardsText = {
 			"name": "Méca chat-ours",
 			"text": "Chaque fois que ce serviteur subit des dégâts, place une carte <b>Pièce détachée</b> dans votre main."
 		},
+		"goldenImage": "GVG_034.gif",
 		"health": 6,
 		"id": "GVG_034",
 		"name": "Mech-Bear-Cat",
@@ -17684,6 +18373,7 @@ var parseCardsText = {
 			"name": "Rageur du Magma",
 			"text": "<b>Cri de guerre :</b> gagne +3/+3 si votre main est vide."
 		},
+		"goldenImage": "BRM_014.gif",
 		"health": 4,
 		"id": "BRM_014",
 		"name": "Core Rager",
@@ -17702,6 +18392,7 @@ var parseCardsText = {
 			"name": "Cercle de soins",
 			"text": "Rend #4 |4(point,points) de vie à TOUS les serviteurs."
 		},
+		"goldenImage": "EX1_621.gif",
 		"id": "EX1_621",
 		"name": "Circle of Healing",
 		"playerClass": "Priest",
@@ -17719,6 +18410,7 @@ var parseCardsText = {
 			"name": "Siphonner l’âme",
 			"text": "Détruit un serviteur. Rend #3 PV à votre héros."
 		},
+		"goldenImage": "EX1_309.gif",
 		"id": "EX1_309",
 		"name": "Siphon Soul",
 		"playerClass": "Warlock",
@@ -17748,6 +18440,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Diablotin"
 		},
+		"goldenImage": "GVG_045t.gif",
 		"health": 1,
 		"id": "GVG_045t",
 		"name": "Imp",
@@ -17778,6 +18471,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Rexxar"
 		},
+		"goldenImage": "HERO_05.gif",
 		"health": 30,
 		"id": "HERO_05",
 		"name": "Rexxar",
@@ -17795,6 +18489,7 @@ var parseCardsText = {
 			"name": "Empereur jumeau Vek’nilash",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_319.gif",
 		"health": 6,
 		"id": "OG_319",
 		"name": "Twin Emperor Vek'nilash",
@@ -17814,6 +18509,7 @@ var parseCardsText = {
 			"name": "Maître jouteur",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne <b>Provocation</b> et <b>Bouclier divin</b>."
 		},
+		"goldenImage": "AT_112.gif",
 		"health": 6,
 		"id": "AT_112",
 		"name": "Master Jouster",
@@ -17830,6 +18526,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "EX1_116t.gif",
 		"health": 1,
 		"id": "EX1_116t",
 		"name": "Whelp",
@@ -17846,6 +18543,7 @@ var parseCardsText = {
 			"name": "Armurerie",
 			"text": "L’Attaque augmente sur la durée."
 		},
+		"goldenImage": "TB_SPT_BossWeapon.gif",
 		"id": "TB_SPT_BossWeapon",
 		"name": "Armory",
 		"playerClass": "Neutral",
@@ -17860,6 +18558,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nérubien"
 		},
+		"goldenImage": "NAX1_03.gif",
 		"health": 1,
 		"id": "NAX1_03",
 		"name": "Nerubian",
@@ -17874,6 +18573,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Assemblage d’os"
 		},
+		"goldenImage": "BRMA17_6H.gif",
 		"health": 2,
 		"id": "BRMA17_6H",
 		"name": "Bone Construct",
@@ -17903,6 +18603,7 @@ var parseCardsText = {
 			"name": "Sylvanas Coursevent",
 			"text": "<b>Râle d’agonie :</b> prend le contrôle d’un serviteur adverse aléatoire."
 		},
+		"goldenImage": "EX1_016.gif",
 		"health": 5,
 		"id": "EX1_016",
 		"name": "Sylvanas Windrunner",
@@ -17936,6 +18637,7 @@ var parseCardsText = {
 			"name": "Ancien du Crépuscule",
 			"text": "À la fin de votre tour, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_286.gif",
 		"health": 4,
 		"id": "OG_286",
 		"name": "Twilight Elder",
@@ -18000,6 +18702,7 @@ var parseCardsText = {
 			"name": "Capitaine Vertepeau",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à votre arme."
 		},
+		"goldenImage": "NEW1_024.gif",
 		"health": 4,
 		"id": "NEW1_024",
 		"name": "Captain Greenskin",
@@ -18106,6 +18809,7 @@ var parseCardsText = {
 			"name": "Cheval de guerre cuirassé",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne <b>Charge</b>."
 		},
+		"goldenImage": "AT_108.gif",
 		"health": 3,
 		"id": "AT_108",
 		"name": "Armored Warhorse",
@@ -18125,6 +18829,7 @@ var parseCardsText = {
 			"name": "Vol’jin",
 			"text": "<b>Cri de guerre :</b> échange sa Vie avec un autre serviteur."
 		},
+		"goldenImage": "GVG_014.gif",
 		"health": 2,
 		"id": "GVG_014",
 		"name": "Vol'jin",
@@ -18157,6 +18862,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Épée en mousse"
 		},
+		"goldenImage": "TB_BlingBrawl_Weapon.gif",
 		"id": "TB_BlingBrawl_Weapon",
 		"name": "Foam Sword",
 		"playerClass": "Neutral",
@@ -18171,6 +18877,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Hyène"
 		},
+		"goldenImage": "EX1_534t.gif",
 		"health": 2,
 		"id": "EX1_534t",
 		"name": "Hyena",
@@ -18201,6 +18908,7 @@ var parseCardsText = {
 			"name": "Terrestre animé",
 			"text": "Donne +3/+3 et <b>Provocation</b> à vos serviteurs."
 		},
+		"goldenImage": "LOEA06_03h.gif",
 		"id": "LOEA06_03h",
 		"name": "Animate Earthen",
 		"playerClass": "Neutral",
@@ -18233,6 +18941,7 @@ var parseCardsText = {
 			"name": "Lame runique massive",
 			"text": "Inflige des dégâts doublés aux héros."
 		},
+		"goldenImage": "NAX7_04.gif",
 		"id": "NAX7_04",
 		"name": "Massive Runeblade",
 		"playerClass": "Neutral",
@@ -18249,6 +18958,7 @@ var parseCardsText = {
 			"name": "Châtiment sacré",
 			"text": "Inflige $2 |4(point,points) de dégâts."
 		},
+		"goldenImage": "CS1_130.gif",
 		"id": "CS1_130",
 		"name": "Holy Smite",
 		"playerClass": "Priest",
@@ -18267,6 +18977,7 @@ var parseCardsText = {
 			"name": "Kvaldir blessé",
 			"text": "<b>Cri de guerre :</b> inflige\n3 points de dégâts à ce serviteur."
 		},
+		"goldenImage": "AT_105.gif",
 		"health": 4,
 		"id": "AT_105",
 		"name": "Injured Kvaldir",
@@ -18299,6 +19010,7 @@ var parseCardsText = {
 			"name": "Lige du feu",
 			"text": "<b>Râle d’agonie :</b> inflige 1 point de dégâts au héros adverse pour chaque lige du feu mort pendant ce tour."
 		},
+		"goldenImage": "BRMA04_3.gif",
 		"health": 5,
 		"id": "BRMA04_3",
 		"name": "Firesworn",
@@ -18317,6 +19029,7 @@ var parseCardsText = {
 			"name": "Djinn des zéphirs",
 			"text": "Lorsque vous lancez un sort sur un autre serviteur allié, en lance une copie sur le djinn."
 		},
+		"goldenImage": "LOE_053.gif",
 		"health": 6,
 		"id": "LOE_053",
 		"name": "Djinni of Zephyrs",
@@ -18334,6 +19047,7 @@ var parseCardsText = {
 			"name": "Statue vengeresse",
 			"text": "Inflige 2 points de dégâts à tous les adversaires à la fin de votre tour."
 		},
+		"goldenImage": "LOEA04_25.gif",
 		"health": 9,
 		"id": "LOEA04_25",
 		"name": "Seething Statue",
@@ -18350,6 +19064,7 @@ var parseCardsText = {
 			"name": "Seigneur Ondulance",
 			"text": "À la fin de votre tour, invoque un Naga affamé 1/1 pour chaque serviteur adverse."
 		},
+		"goldenImage": "LOEA16_23.gif",
 		"health": 5,
 		"id": "LOEA16_23",
 		"name": "Lord Slitherspear",
@@ -18384,6 +19099,7 @@ var parseCardsText = {
 			"name": "Minuscule chevalier maléfique",
 			"text": "Chaque fois que vous vous défaussez d’une carte, gagne +1/+1."
 		},
+		"goldenImage": "AT_021.gif",
 		"health": 2,
 		"id": "AT_021",
 		"name": "Tiny Knight of Evil",
@@ -18400,6 +19116,7 @@ var parseCardsText = {
 			"name": "Cauchemar",
 			"text": "Donne +5/+5 à un serviteur. Au début de votre prochain tour, le détruit."
 		},
+		"goldenImage": "DREAM_05.gif",
 		"id": "DREAM_05",
 		"name": "Nightmare",
 		"playerClass": "Dream",
@@ -18414,6 +19131,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_11.gif",
 		"health": 1,
 		"id": "LOEA09_11",
 		"name": "Hungry Naga",
@@ -18443,6 +19161,7 @@ var parseCardsText = {
 			"name": "Toucher",
 			"text": "Rend 10 PV à votre héros."
 		},
+		"goldenImage": "LOEA04_29a.gif",
 		"id": "LOEA04_29a",
 		"name": "Touch It",
 		"playerClass": "Neutral",
@@ -18460,6 +19179,7 @@ var parseCardsText = {
 			"name": "Bourbinja, l’étoile volante",
 			"text": "<b>Camouflage</b>\nInvoque 2 murlocs de votre deck chaque fois qu’il attaque et tue un serviteur."
 		},
+		"goldenImage": "CFM_344.gif",
 		"health": 4,
 		"id": "CFM_344",
 		"name": "Finja, the Flying Star",
@@ -18496,6 +19216,7 @@ var parseCardsText = {
 			"name": "Saccageur des mers",
 			"text": "Quand vous piochez cette carte, inflige 1 point de dégâts à vos serviteurs."
 		},
+		"goldenImage": "AT_130.gif",
 		"health": 7,
 		"id": "AT_130",
 		"name": "Sea Reaver",
@@ -18514,6 +19235,7 @@ var parseCardsText = {
 			"name": "Blizzard",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs adverses et les <b>gèle</b>."
 		},
+		"goldenImage": "CS2_028.gif",
 		"id": "CS2_028",
 		"name": "Blizzard",
 		"playerClass": "Mage",
@@ -18552,6 +19274,7 @@ var parseCardsText = {
 			"name": "Rend Main-Noire",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur <b>légendaire</b> si vous avez un Dragon en main."
 		},
+		"goldenImage": "BRM_029.gif",
 		"health": 4,
 		"id": "BRM_029",
 		"name": "Rend Blackhand",
@@ -18571,6 +19294,7 @@ var parseCardsText = {
 			"name": "Maître de l’évolution",
 			"text": "<b>Cri de guerre :</b> transforme un serviteur allié en un serviteur aléatoire coûtant\n(1) |4(cristal,cristaux) de plus."
 		},
+		"goldenImage": "OG_328.gif",
 		"health": 5,
 		"id": "OG_328",
 		"name": "Master of Evolution",
@@ -18589,6 +19313,7 @@ var parseCardsText = {
 			"name": "Coup de tonnerre",
 			"text": "Inflige $4 |4(point,points) de dégâts à un serviteur. <b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "OG_206.gif",
 		"id": "OG_206",
 		"name": "Stormcrack",
 		"overload": 1,
@@ -18634,6 +19359,7 @@ var parseCardsText = {
 			"name": "Leçon de Shan’do",
 			"text": "Invoque deux tréants 2/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_573b.gif",
 		"id": "EX1_573b",
 		"name": "Shan'do's Lesson",
 		"playerClass": "Druid",
@@ -18647,6 +19373,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dame Liadrin"
 		},
+		"goldenImage": "HERO_04a.gif",
 		"health": 30,
 		"id": "HERO_04a",
 		"name": "Lady Liadrin",
@@ -18685,6 +19412,7 @@ var parseCardsText = {
 			"name": "Aspirant d’Orgrimmar",
 			"text": "<b>Exaltation :</b> donne +1 ATQ à votre arme."
 		},
+		"goldenImage": "AT_066.gif",
 		"health": 3,
 		"id": "AT_066",
 		"name": "Orgrimmar Aspirant",
@@ -18704,6 +19432,7 @@ var parseCardsText = {
 			"name": "Enseignante pourpre",
 			"text": "Chaque fois que vous lancez un sort, invoque un apprenti pourpre 1/1."
 		},
+		"goldenImage": "NEW1_026.gif",
 		"health": 5,
 		"id": "NEW1_026",
 		"name": "Violet Teacher",
@@ -18721,6 +19450,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t11.gif",
 		"health": 11,
 		"id": "CFM_712_t11",
 		"name": "Jade Golem",
@@ -18736,6 +19466,7 @@ var parseCardsText = {
 			"name": "Garde de la Couronne de glace",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "NAX15_03n.gif",
 		"health": 3,
 		"id": "NAX15_03n",
 		"name": "Guardian of Icecrown",
@@ -18772,6 +19503,7 @@ var parseCardsText = {
 			"name": "Intendant",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à vos recrues de la Main d’argent."
 		},
+		"goldenImage": "GVG_060.gif",
 		"health": 5,
 		"id": "GVG_060",
 		"name": "Quartermaster",
@@ -18788,6 +19520,7 @@ var parseCardsText = {
 			"name": "Chopez-les !",
 			"text": "Invoque quatre nains 1/1 avec <b>Provocation</b>."
 		},
+		"goldenImage": "BRMA01_4.gif",
 		"id": "BRMA01_4",
 		"name": "Get 'em!",
 		"playerClass": "Neutral",
@@ -18804,6 +19537,7 @@ var parseCardsText = {
 			"name": "Revanche",
 			"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs. Si vous avez 12 PV ou moins, inflige $3 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "BRM_015.gif",
 		"id": "BRM_015",
 		"name": "Revenge",
 		"playerClass": "Warrior",
@@ -18821,6 +19555,7 @@ var parseCardsText = {
 			"name": "Égalité",
 			"text": "Les points de vie de TOUS les serviteurs passent à 1."
 		},
+		"goldenImage": "EX1_619.gif",
 		"id": "EX1_619",
 		"name": "Equality",
 		"playerClass": "Paladin",
@@ -18834,6 +19569,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nefarian"
 		},
+		"goldenImage": "BRMA13_3.gif",
 		"health": 30,
 		"id": "BRMA13_3",
 		"name": "Nefarian",
@@ -18866,6 +19602,7 @@ var parseCardsText = {
 			"name": "Marchand douteux",
 			"text": "<b>Cri de guerre :</b> si vous avez un pirate, gagne +1/+1."
 		},
+		"goldenImage": "AT_032.gif",
 		"health": 3,
 		"id": "AT_032",
 		"name": "Shady Dealer",
@@ -18899,6 +19636,7 @@ var parseCardsText = {
 			"name": "Ombre ancienne",
 			"text": "<b>Cri de guerre :</b> place une carte Malédiction ancestrale dans votre deck qui vous inflige 7 points de dégâts quand vous la piochez."
 		},
+		"goldenImage": "LOE_110.gif",
 		"health": 4,
 		"id": "LOE_110",
 		"name": "Ancient Shade",
@@ -18944,6 +19682,7 @@ var parseCardsText = {
 			"name": "Force d’Y’Shaarj",
 			"text": "Invoque une gelée 2/2."
 		},
+		"goldenImage": "OG_202a.gif",
 		"id": "OG_202a",
 		"name": "Y'Shaarj's Strength",
 		"playerClass": "Druid",
@@ -18962,6 +19701,7 @@ var parseCardsText = {
 			"name": "Traqueur lugubre",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à tous les serviteurs avec <b>Râle d’agonie</b> dans votre main."
 		},
+		"goldenImage": "OG_292.gif",
 		"health": 2,
 		"id": "OG_292",
 		"name": "Forlorn Stalker",
@@ -18995,6 +19735,7 @@ var parseCardsText = {
 			"name": "Fabricante d’armes",
 			"text": "<b>Cri de guerre :</b> vous équipe d’une arme 2/2."
 		},
+		"goldenImage": "EX1_398.gif",
 		"health": 3,
 		"id": "EX1_398",
 		"name": "Arathi Weaponsmith",
@@ -19011,6 +19752,7 @@ var parseCardsText = {
 			"name": "Weapon Buff",
 			"text": "Give your Weapon +100/+100"
 		},
+		"goldenImage": "XXX_054.gif",
 		"id": "XXX_054",
 		"name": "Weapon Buff",
 		"playerClass": "Neutral",
@@ -19041,6 +19783,7 @@ var parseCardsText = {
 			"name": "Sombres feux follets",
 			"text": "Invoque 5 feux follets."
 		},
+		"goldenImage": "GVG_041b.gif",
 		"id": "GVG_041b",
 		"name": "Dark Wispers",
 		"playerClass": "Druid",
@@ -19093,6 +19836,7 @@ var parseCardsText = {
 			"name": "Chevaucheur de faucon-dragon",
 			"text": "<b>Exaltation :</b> gagne <b>Furie des vents</b> pendant ce tour."
 		},
+		"goldenImage": "AT_083.gif",
 		"health": 3,
 		"id": "AT_083",
 		"name": "Dragonhawk Rider",
@@ -19110,6 +19854,7 @@ var parseCardsText = {
 			"name": "C’Thun",
 			"text": "<b>Cri de guerre :</b> inflige des dégâts égaux à l’Attaque de ce serviteur répartis aléatoirement entre tous les adversaires."
 		},
+		"goldenImage": "OG_279.gif",
 		"health": 6,
 		"id": "OG_279",
 		"name": "C'Thun",
@@ -19128,6 +19873,7 @@ var parseCardsText = {
 			"name": "Recrues à la petite semaine",
 			"text": "Vous piochez trois serviteurs à 1 cristal dans votre deck."
 		},
+		"goldenImage": "CFM_905.gif",
 		"id": "CFM_905",
 		"name": "Small-Time Recruits",
 		"playerClass": "Paladin",
@@ -19280,6 +20026,7 @@ var parseCardsText = {
 			"name": "Élue de C’Thun",
 			"text": "<b>Bouclier divin</b>. <b>Cri de\nguerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_283.gif",
 		"health": 2,
 		"id": "OG_283",
 		"name": "C'Thun's Chosen",
@@ -19314,6 +20061,7 @@ var parseCardsText = {
 			"name": "Brute ogre",
 			"text": "50% de chance d’attaquer le mauvais adversaire."
 		},
+		"goldenImage": "GVG_065.gif",
 		"health": 4,
 		"id": "GVG_065",
 		"name": "Ogre Brute",
@@ -19349,6 +20097,7 @@ var parseCardsText = {
 			"name": "Millhouse Tempête-de-Mana",
 			"text": "<b>Cri de guerre :</b> les sorts adverses coûtent (0) |4(cristal,cristaux) au prochain tour."
 		},
+		"goldenImage": "NEW1_029.gif",
 		"health": 4,
 		"id": "NEW1_029",
 		"name": "Millhouse Manastorm",
@@ -19382,6 +20131,7 @@ var parseCardsText = {
 			"name": "Wilfred Flopboum",
 			"text": "Les cartes que vous piochez avec votre pouvoir héroïque coûtent (0) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_027.gif",
 		"health": 4,
 		"id": "AT_027",
 		"name": "Wilfred Fizzlebang",
@@ -19426,6 +20176,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Fureur sanguinaire"
 		},
+		"goldenImage": "EX1_323w.gif",
 		"id": "EX1_323w",
 		"name": "Blood Fury",
 		"playerClass": "Warlock",
@@ -19442,6 +20193,7 @@ var parseCardsText = {
 			"name": "Acolyte de la souffrance",
 			"text": "Vous piochez une carte chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "EX1_007.gif",
 		"health": 3,
 		"id": "EX1_007",
 		"name": "Acolyte of Pain",
@@ -19461,6 +20213,7 @@ var parseCardsText = {
 			"name": "Mange-secrets",
 			"text": "<b>Cri de guerre :</b> détruit tous les <b>secrets</b> adverses. Gagne +1/+1 par secret détruit."
 		},
+		"goldenImage": "OG_254.gif",
 		"health": 4,
 		"id": "OG_254",
 		"name": "Eater of Secrets",
@@ -19494,6 +20247,7 @@ var parseCardsText = {
 			"name": "Lourdaud volcanique",
 			"text": "<b>Provocation</b>.\n Coûte (1) |4(cristal,cristaux) de moins pour chaque serviteur mort pendant ce tour."
 		},
+		"goldenImage": "BRM_009.gif",
 		"health": 8,
 		"id": "BRM_009",
 		"name": "Volcanic Lumberer",
@@ -19526,6 +20280,7 @@ var parseCardsText = {
 			"name": "Auspice funeste confirmé",
 			"text": "Au début de votre tour, porte l’Attaque de ce serviteur à 7."
 		},
+		"goldenImage": "OG_200.gif",
 		"health": 7,
 		"id": "OG_200",
 		"name": "Validated Doomsayer",
@@ -19561,6 +20316,7 @@ var parseCardsText = {
 			"name": "Seigneur Aile de mort",
 			"text": "<b>Râle d’agonie :</b> place tous les dragons de votre main sur le champ de bataille."
 		},
+		"goldenImage": "OG_317.gif",
 		"health": 12,
 		"id": "OG_317",
 		"name": "Deathwing, Dragonlord",
@@ -19579,6 +20335,7 @@ var parseCardsText = {
 			"name": "Feu démoniaque",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur. Si la cible est un de vos démons, lui donne +2/+2 à la place."
 		},
+		"goldenImage": "EX1_596.gif",
 		"id": "EX1_596",
 		"name": "Demonfire",
 		"playerClass": "Warlock",
@@ -19595,6 +20352,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Lame pernicieuse"
 		},
+		"goldenImage": "CS2_082.gif",
 		"id": "CS2_082",
 		"name": "Wicked Knife",
 		"playerClass": "Rogue",
@@ -19623,6 +20381,7 @@ var parseCardsText = {
 			"name": "Cœur-de-flammes",
 			"text": "Vous piochez 2 cartes.\nVous donne 4 points d’armure."
 		},
+		"goldenImage": "BRMA_01.gif",
 		"id": "BRMA_01",
 		"name": "Flameheart",
 		"playerClass": "Neutral",
@@ -19640,6 +20399,7 @@ var parseCardsText = {
 			"name": "Lamenuit",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts au héros adverse."
 		},
+		"goldenImage": "EX1_593.gif",
 		"health": 4,
 		"id": "EX1_593",
 		"name": "Nightblade",
@@ -19656,6 +20416,7 @@ var parseCardsText = {
 			"name": "Mrgl mrgl niah niah !",
 			"text": "Invoque 5 murlocs détruits pendant cette partie."
 		},
+		"goldenImage": "LOEA10_5H.gif",
 		"id": "LOEA10_5H",
 		"name": "Mrgl Mrgl Nyah Nyah",
 		"playerClass": "Neutral",
@@ -19672,6 +20433,7 @@ var parseCardsText = {
 			"name": "M. Bigglesworth",
 			"text": "<i>Le chat-chat adoré de Kel’Thuzad.</i>"
 		},
+		"goldenImage": "NAX15_05.gif",
 		"health": 1,
 		"id": "NAX15_05",
 		"name": "Mr. Bigglesworth",
@@ -19690,6 +20452,7 @@ var parseCardsText = {
 			"name": "Infester",
 			"text": "Confère à vos serviteurs « <b>Râle d’agonie :</b> ajoute une carte Bête aléatoire dans votre main. »"
 		},
+		"goldenImage": "OG_045.gif",
 		"id": "OG_045",
 		"name": "Infest",
 		"playerClass": "Hunter",
@@ -19718,6 +20481,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Jaina Portvaillant"
 		},
+		"goldenImage": "TU4a_006.gif",
 		"health": 30,
 		"id": "TU4a_006",
 		"name": "Jaina Proudmoore",
@@ -19733,6 +20497,7 @@ var parseCardsText = {
 			"name": "Médaillon de Medivh",
 			"text": "Remplace votre main par des cartes Portail instable."
 		},
+		"goldenImage": "LOEA16_12.gif",
 		"id": "LOEA16_12",
 		"name": "Medivh's Locket",
 		"playerClass": "Neutral",
@@ -19750,6 +20515,7 @@ var parseCardsText = {
 			"name": "Annulateur d’Arcane X-21",
 			"text": "<b>Provocation</b>\nNe peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "GVG_091.gif",
 		"health": 5,
 		"id": "GVG_091",
 		"name": "Arcane Nullifier X-21",
@@ -19787,6 +20553,7 @@ var parseCardsText = {
 			"name": "Arcanotron",
 			"text": "Chaque joueur a <b>+2 aux dégâts des sorts</b>."
 		},
+		"goldenImage": "BRMA14_3.gif",
 		"health": 2,
 		"id": "BRMA14_3",
 		"name": "Arcanotron",
@@ -19806,6 +20573,7 @@ var parseCardsText = {
 			"name": "Gnoll",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_318t.gif",
 		"health": 2,
 		"id": "OG_318t",
 		"name": "Gnoll",
@@ -19822,6 +20590,7 @@ var parseCardsText = {
 			"name": "Totem de courroux de l’air",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CS2_052.gif",
 		"health": 2,
 		"id": "CS2_052",
 		"name": "Wrath of Air Totem",
@@ -19839,6 +20608,7 @@ var parseCardsText = {
 			"name": "Les voleurs, ça vous prend...",
 			"text": "Inflige $4 |4(point,points) de dégâts. Vous piochez une carte."
 		},
+		"goldenImage": "PRO_001b.gif",
 		"id": "PRO_001b",
 		"name": "Rogues Do It...",
 		"playerClass": "Neutral",
@@ -19856,6 +20626,7 @@ var parseCardsText = {
 			"name": "Berserker écumant",
 			"text": "Chaque fois qu’un serviteur subit des dégâts, gagne +1 ATQ."
 		},
+		"goldenImage": "EX1_604.gif",
 		"health": 4,
 		"id": "EX1_604",
 		"name": "Frothing Berserker",
@@ -19875,6 +20646,7 @@ var parseCardsText = {
 			"name": "L’Épouvantueur",
 			"text": "Quand il attaque un serviteur et le tue,\ngagne +2/+2."
 		},
+		"goldenImage": "OG_300.gif",
 		"health": 7,
 		"id": "OG_300",
 		"name": "The Boogeymonster",
@@ -19908,6 +20680,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t26.gif",
 		"health": 26,
 		"id": "CFM_712_t26",
 		"name": "Jade Golem",
@@ -19922,6 +20695,7 @@ var parseCardsText = {
 			"name": "Colère",
 			"text": "Inflige $1 |4(point,points) de dégâts à un serviteur. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_154b.gif",
 		"id": "EX1_154b",
 		"name": "Wrath",
 		"playerClass": "Druid",
@@ -19938,6 +20712,7 @@ var parseCardsText = {
 			"name": "Arme croque-roc",
 			"text": "Donne +3 ATQ à un personnage allié pendant ce tour."
 		},
+		"goldenImage": "CS2_045.gif",
 		"id": "CS2_045",
 		"name": "Rockbiter Weapon",
 		"playerClass": "Shaman",
@@ -19954,6 +20729,7 @@ var parseCardsText = {
 			"name": "Électron",
 			"text": "Tous les sorts coûtent (3) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "BRMA14_7.gif",
 		"health": 5,
 		"id": "BRMA14_7",
 		"name": "Electron",
@@ -19973,6 +20749,7 @@ var parseCardsText = {
 			"name": "Écumeur kvaldir",
 			"text": "<b>Exaltation :</b> gagne +2/+2."
 		},
+		"goldenImage": "AT_119.gif",
 		"health": 4,
 		"id": "AT_119",
 		"name": "Kvaldir Raider",
@@ -19989,6 +20766,7 @@ var parseCardsText = {
 			"name": "Bonus : murloc",
 			"text": "À la fin de votre tour, invoque un murloc 1/1."
 		},
+		"goldenImage": "TB_PickYourFate_11b.gif",
 		"id": "TB_PickYourFate_11b",
 		"name": "Murloc Bonus",
 		"playerClass": "Neutral",
@@ -20032,6 +20810,7 @@ var parseCardsText = {
 			"name": "AI Buddy - Damage Own Hero 5",
 			"text": "Spawn into play to smack your own hero for 5."
 		},
+		"goldenImage": "XXX_096.gif",
 		"health": 1,
 		"id": "XXX_096",
 		"name": "AI Buddy - Damage Own Hero 5",
@@ -20045,6 +20824,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Squeletosaurus Hex"
 		},
+		"goldenImage": "LOEA13_1.gif",
 		"health": 30,
 		"id": "LOEA13_1",
 		"name": "Skelesaurus Hex",
@@ -20091,6 +20871,7 @@ var parseCardsText = {
 			"name": "Tir meurtrier",
 			"text": "Détruit un serviteur adverse aléatoire."
 		},
+		"goldenImage": "EX1_617.gif",
 		"id": "EX1_617",
 		"name": "Deadly Shot",
 		"playerClass": "Hunter",
@@ -20108,6 +20889,7 @@ var parseCardsText = {
 			"name": "Sauvagerie",
 			"text": "Inflige des dégâts d’un montant équivalent à l’Attaque de votre héros à un serviteur."
 		},
+		"goldenImage": "EX1_578.gif",
 		"id": "EX1_578",
 		"name": "Savagery",
 		"playerClass": "Druid",
@@ -20142,6 +20924,7 @@ var parseCardsText = {
 			"name": "Passeuse d’âmes",
 			"text": "Chaque fois qu’un serviteur allié meurt, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_302.gif",
 		"health": 6,
 		"id": "OG_302",
 		"name": "Usher of Souls",
@@ -20161,6 +20944,7 @@ var parseCardsText = {
 			"name": "Commandant d’Argent",
 			"text": "<b>Charge</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_067.gif",
 		"health": 2,
 		"id": "EX1_067",
 		"name": "Argent Commander",
@@ -20193,6 +20977,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Poursuivant terrestre"
 		},
+		"goldenImage": "LOEA07_12.gif",
 		"health": 6,
 		"id": "LOEA07_12",
 		"name": "Earthen Pursuer",
@@ -20207,6 +20992,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Insecte géant"
 		},
+		"goldenImage": "LOEA04_23.gif",
 		"health": 3,
 		"id": "LOEA04_23",
 		"name": "Giant Insect",
@@ -20254,6 +21040,7 @@ var parseCardsText = {
 			"name": "Protecteur des Dessoudeurs",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> confère <b>Bouclier divin</b> aux serviteurs adjacents."
 		},
+		"goldenImage": "CFM_062.gif",
 		"health": 6,
 		"id": "CFM_062",
 		"name": "Grimestreet Protector",
@@ -20270,6 +21057,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Murloc"
 		},
+		"goldenImage": "PRO_001at.gif",
 		"health": 1,
 		"id": "PRO_001at",
 		"name": "Murloc",
@@ -20287,6 +21075,7 @@ var parseCardsText = {
 			"name": "Confesseur d’argent Paletress",
 			"text": "<b>Exaltation :</b> invoque un serviteur <b>légendaire</b> aléatoire."
 		},
+		"goldenImage": "AT_018.gif",
 		"health": 4,
 		"id": "AT_018",
 		"name": "Confessor Paletress",
@@ -20306,6 +21095,7 @@ var parseCardsText = {
 			"name": "Tricheur borgne",
 			"text": "Chaque fois que vous jouez un pirate, gagne <b>Camouflage</b>."
 		},
+		"goldenImage": "GVG_025.gif",
 		"health": 1,
 		"id": "GVG_025",
 		"name": "One-eyed Cheat",
@@ -20369,6 +21159,7 @@ var parseCardsText = {
 			"name": "Madame Goya",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur allié et l’échange avec un serviteur de votre deck."
 		},
+		"goldenImage": "CFM_672.gif",
 		"health": 3,
 		"id": "CFM_672",
 		"name": "Madam Goya",
@@ -20383,6 +21174,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Coren Navrebière"
 		},
+		"goldenImage": "BRMA01_1.gif",
 		"health": 30,
 		"id": "BRMA01_1",
 		"name": "Coren Direbrew",
@@ -20415,6 +21207,7 @@ var parseCardsText = {
 			"name": "Expérimentateur gnome",
 			"text": "<b>Cri de guerre :</b> vous piochez une carte. Si c’est un serviteur, le transforme en poulet."
 		},
+		"goldenImage": "GVG_092.gif",
 		"health": 2,
 		"id": "GVG_092",
 		"name": "Gnomish Experimenter",
@@ -20431,6 +21224,7 @@ var parseCardsText = {
 			"name": "Larme d’Ysera",
 			"text": "Gagne 4 cristaux de mana pendant ce tour uniquement."
 		},
+		"goldenImage": "LOEA16_15.gif",
 		"id": "LOEA16_15",
 		"name": "Ysera's Tear",
 		"playerClass": "Neutral",
@@ -20495,6 +21289,7 @@ var parseCardsText = {
 			"name": "Épreuve sacrée",
 			"text": "<b>Secret :</b> si votre adversaire possède au moins 3 serviteurs et qu’il en joue un autre, le détruit."
 		},
+		"goldenImage": "LOE_027.gif",
 		"id": "LOE_027",
 		"name": "Sacred Trial",
 		"playerClass": "Paladin",
@@ -20513,6 +21308,7 @@ var parseCardsText = {
 			"name": "Neunœil le pirate",
 			"text": "<b>Charge</b>. Une fois que vous avez joué un Pirate, invoque ce serviteur de votre deck."
 		},
+		"goldenImage": "CFM_637.gif",
 		"health": 1,
 		"id": "CFM_637",
 		"name": "Patches the Pirate",
@@ -20529,6 +21325,7 @@ var parseCardsText = {
 			"name": "Grande banane",
 			"text": "Donne +2/+2 à un serviteur."
 		},
+		"goldenImage": "TB_006.gif",
 		"id": "TB_006",
 		"name": "Big Banana",
 		"playerClass": "Neutral",
@@ -20593,6 +21390,7 @@ var parseCardsText = {
 			"name": "Élémentaire de givre",
 			"text": "<b>Cri de guerre :</b> <b>gèle</b> un personnage."
 		},
+		"goldenImage": "EX1_283.gif",
 		"health": 5,
 		"id": "EX1_283",
 		"name": "Frost Elemental",
@@ -20624,6 +21422,7 @@ var parseCardsText = {
 			"name": "Bob Fitch",
 			"text": "<b>Super provocation</b> <i>(TOUS les personnages doivent attaquer ce serviteur.)</i>"
 		},
+		"goldenImage": "CRED_03.gif",
 		"health": 4,
 		"id": "CRED_03",
 		"name": "Bob Fitch",
@@ -20641,6 +21440,7 @@ var parseCardsText = {
 			"name": "AI Buddy - No Deck/Hand",
 			"text": "Spawn into play to destroy the AI's Hand and Deck."
 		},
+		"goldenImage": "XXX_098.gif",
 		"health": 1,
 		"id": "XXX_098",
 		"name": "AI Buddy - No Deck/Hand",
@@ -20657,6 +21457,7 @@ var parseCardsText = {
 			"name": "Grande veuve Faerlina",
 			"text": "Obtient +1 ATQ pour chaque carte dans la main de votre adversaire."
 		},
+		"goldenImage": "TB_KTRAF_5.gif",
 		"health": 5,
 		"id": "TB_KTRAF_5",
 		"name": "Grand Widow Faerlina",
@@ -20689,6 +21490,7 @@ var parseCardsText = {
 			"name": "Destructeur d’obsidienne",
 			"text": "À la fin de votre tour, invoque un scarabée 1/1 avec <b>Provocation</b>."
 		},
+		"goldenImage": "LOE_009.gif",
 		"health": 7,
 		"id": "LOE_009",
 		"name": "Obsidian Destroyer",
@@ -20709,6 +21511,7 @@ var parseCardsText = {
 			"name": "Lame de ralliement",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à vos serviteurs avec <b>Bouclier divin</b>."
 		},
+		"goldenImage": "OG_222.gif",
 		"id": "OG_222",
 		"name": "Rallying Blade",
 		"playerClass": "Paladin",
@@ -20726,6 +21529,7 @@ var parseCardsText = {
 			"name": "Puissance totémique",
 			"text": "Donne +2 PV à vos totems."
 		},
+		"goldenImage": "EX1_244.gif",
 		"id": "EX1_244",
 		"name": "Totemic Might",
 		"playerClass": "Shaman",
@@ -20744,6 +21548,7 @@ var parseCardsText = {
 			"name": "Goule mangeuse de chair",
 			"text": "Chaque fois qu’un serviteur meurt, gagne +1 ATQ."
 		},
+		"goldenImage": "tt_004.gif",
 		"health": 3,
 		"id": "tt_004",
 		"name": "Flesheating Ghoul",
@@ -20758,6 +21563,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Onyxia"
 		},
+		"goldenImage": "BRMA17_3.gif",
 		"health": 15,
 		"id": "BRMA17_3",
 		"name": "Onyxia",
@@ -20773,6 +21579,7 @@ var parseCardsText = {
 			"name": "Chien",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "EX1_538t.gif",
 		"health": 1,
 		"id": "EX1_538t",
 		"name": "Hound",
@@ -20791,6 +21598,7 @@ var parseCardsText = {
 			"name": "Corsaire naga",
 			"text": "<b>Cri de guerre :</b> donne +1 ATQ à votre arme."
 		},
+		"goldenImage": "CFM_651.gif",
 		"health": 4,
 		"id": "CFM_651",
 		"name": "Naga Corsair",
@@ -20835,6 +21643,7 @@ var parseCardsText = {
 			"name": "Double zap",
 			"text": "Inflige les dégâts de l’attaque aux deux joueurs."
 		},
+		"goldenImage": "TB_CoOpBossSpell_5.gif",
 		"id": "TB_CoOpBossSpell_5",
 		"name": "Double Zap",
 		"playerClass": "Neutral",
@@ -20849,6 +21658,7 @@ var parseCardsText = {
 			"name": "Forme de félin-de-feu",
 			"text": "Se transforme en un serviteur 5/2."
 		},
+		"goldenImage": "BRM_010a.gif",
 		"id": "BRM_010a",
 		"name": "Firecat Form",
 		"playerClass": "Druid",
@@ -20864,6 +21674,7 @@ var parseCardsText = {
 			"name": "Marque des cavaliers",
 			"text": "Donne +1/+1 à vos serviteurs et à votre arme."
 		},
+		"goldenImage": "NAX9_07.gif",
 		"id": "NAX9_07",
 		"name": "Mark of the Horsemen",
 		"playerClass": "Neutral",
@@ -20878,6 +21689,7 @@ var parseCardsText = {
 			"name": "Injection mutante",
 			"text": "Donne +4/+4 et <b>Provocation</b> à un serviteur."
 		},
+		"goldenImage": "NAX11_04.gif",
 		"id": "NAX11_04",
 		"name": "Mutating Injection",
 		"playerClass": "Neutral",
@@ -20893,6 +21705,7 @@ var parseCardsText = {
 			"name": "Mécazod surchargé",
 			"text": "<b>Boss</b>\nAu début de chaque tour, Mécazod frappe !"
 		},
+		"goldenImage": "TB_CoOp_Mechazod2.gif",
 		"health": 80,
 		"id": "TB_CoOp_Mechazod2",
 		"name": "Overloaded Mechazod",
@@ -20926,6 +21739,7 @@ var parseCardsText = {
 			"name": "Commissaire-priseur",
 			"text": "Vous piochez une carte chaque fois que vous lancez un sort."
 		},
+		"goldenImage": "EX1_095.gif",
 		"health": 4,
 		"id": "EX1_095",
 		"name": "Gadgetzan Auctioneer",
@@ -20959,6 +21773,7 @@ var parseCardsText = {
 			"name": "Marche-esprit aileron vaseux",
 			"text": "Chaque fois qu’un autre murloc allié meurt, vous piochez une carte.\n<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "GVG_040.gif",
 		"health": 5,
 		"id": "GVG_040",
 		"name": "Siltfin Spiritwalker",
@@ -20977,6 +21792,7 @@ var parseCardsText = {
 			"name": "Jeune recrue tenace",
 			"text": "<b>Râle d’agonie :</b> invoque une jeune recrue spectrale pour votre adversaire."
 		},
+		"goldenImage": "NAX8_03.gif",
 		"health": 2,
 		"id": "NAX8_03",
 		"name": "Unrelenting Trainee",
@@ -20993,6 +21809,7 @@ var parseCardsText = {
 			"name": "Production d’écailles",
 			"text": "Donne 8 points d’armure."
 		},
+		"goldenImage": "OG_047b.gif",
 		"id": "OG_047b",
 		"name": "Evolve Scales",
 		"playerClass": "Druid",
@@ -21011,6 +21828,7 @@ var parseCardsText = {
 			"name": "Mastodonte de fer",
 			"text": "<b>Cri de guerre :</b> place une mine dans le deck de votre adversaire. Quand elle est piochée, elle explose et inflige 10 points de dégâts."
 		},
+		"goldenImage": "GVG_056.gif",
 		"health": 5,
 		"id": "GVG_056",
 		"name": "Iron Juggernaut",
@@ -21030,6 +21848,7 @@ var parseCardsText = {
 			"name": "Prince marchand Gallywix",
 			"text": "Chaque fois que votre adversaire lance un sort, il obtient une Pièce et vous gagnez une copie du sort."
 		},
+		"goldenImage": "GVG_028.gif",
 		"health": 8,
 		"id": "GVG_028",
 		"name": "Trade Prince Gallywix",
@@ -21046,6 +21865,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nérubien"
 		},
+		"goldenImage": "NAX1h_03.gif",
 		"health": 4,
 		"id": "NAX1h_03",
 		"name": "Nerubian",
@@ -21062,6 +21882,7 @@ var parseCardsText = {
 			"name": "Fusion primordiale",
 			"text": "Donne +1/+1 à un serviteur pour chacun de vos totems."
 		},
+		"goldenImage": "OG_023.gif",
 		"id": "OG_023",
 		"name": "Primal Fusion",
 		"playerClass": "Shaman",
@@ -21078,6 +21899,7 @@ var parseCardsText = {
 			"name": "Inverseur",
 			"text": "Inverse l’Attaque et la Vie d’un serviteur."
 		},
+		"goldenImage": "PART_006.gif",
 		"id": "PART_006",
 		"name": "Reversing Switch",
 		"playerClass": "Neutral",
@@ -21090,6 +21912,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Tranchetripe l’Indompté"
 		},
+		"goldenImage": "BRMA10_1.gif",
 		"health": 30,
 		"id": "BRMA10_1",
 		"name": "Razorgore the Untamed",
@@ -21121,6 +21944,7 @@ var parseCardsText = {
 			"name": "Jouteuse de Gadgetzan",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne +1/+1."
 		},
+		"goldenImage": "AT_133.gif",
 		"health": 2,
 		"id": "AT_133",
 		"name": "Gadgetzan Jouster",
@@ -21153,6 +21977,7 @@ var parseCardsText = {
 			"name": "Crochet",
 			"text": "<b>Furie des vents</b>\n<b>Râle d’agonie :</b> place cette arme dans votre main."
 		},
+		"goldenImage": "NAX10_02H.gif",
 		"id": "NAX10_02H",
 		"name": "Hook",
 		"playerClass": "Neutral",
@@ -21170,6 +21995,7 @@ var parseCardsText = {
 			"name": "Eydis Plaie-sombre",
 			"text": "Chaque fois que <b>vous</b> ciblez ce serviteur avec un sort, inflige\n3 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "AT_131.gif",
 		"health": 4,
 		"id": "AT_131",
 		"name": "Eydis Darkbane",
@@ -21187,6 +22013,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Glaive de guerre d’Azzinoth"
 		},
+		"goldenImage": "TU4e_004.gif",
 		"id": "TU4e_004",
 		"name": "Warglaive of Azzinoth",
 		"playerClass": "Neutral",
@@ -21202,6 +22029,7 @@ var parseCardsText = {
 			"name": "Œuf corrompu",
 			"text": "Éclot quand il a 4 PV ou plus."
 		},
+		"goldenImage": "BRMA10_4.gif",
 		"health": 1,
 		"id": "BRMA10_4",
 		"name": "Corrupted Egg",
@@ -21220,6 +22048,7 @@ var parseCardsText = {
 			"name": "Le mandebrume",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à tous les serviteurs dans votre main et votre deck."
 		},
+		"goldenImage": "AT_054.gif",
 		"health": 4,
 		"id": "AT_054",
 		"name": "The Mistcaller",
@@ -21251,6 +22080,7 @@ var parseCardsText = {
 			"name": "Totem de griffes de pierre",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_051.gif",
 		"health": 2,
 		"id": "CS2_051",
 		"name": "Stoneclaw Totem",
@@ -21281,6 +22111,7 @@ var parseCardsText = {
 			"name": "Œil d’Orsis",
 			"text": "<b>Découvre</b> un serviteur. Vous en gagnez 3 copies."
 		},
+		"goldenImage": "LOEA16_13.gif",
 		"id": "LOEA16_13",
 		"name": "Eye of Orsis",
 		"playerClass": "Neutral",
@@ -21297,6 +22128,7 @@ var parseCardsText = {
 			"name": "Horion de terre",
 			"text": "Réduit un serviteur au <b>Silence</b>, puis lui inflige $1 |4(point,points) de dégâts."
 		},
+		"goldenImage": "EX1_245.gif",
 		"id": "EX1_245",
 		"name": "Earth Shock",
 		"playerClass": "Shaman",
@@ -21310,6 +22142,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Rend Main-Noire"
 		},
+		"goldenImage": "BRMA09_1.gif",
 		"health": 30,
 		"id": "BRMA09_1",
 		"name": "Rend Blackhand",
@@ -21327,6 +22160,7 @@ var parseCardsText = {
 			"name": "Tauren contaminé",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> invoque une gelée 2/2."
 		},
+		"goldenImage": "OG_249.gif",
 		"health": 3,
 		"id": "OG_249",
 		"name": "Infested Tauren",
@@ -21345,6 +22179,7 @@ var parseCardsText = {
 			"name": "Poulet à tête chercheuse",
 			"text": "Au début de votre tour, ce serviteur est détruit et vous piochez 3 cartes."
 		},
+		"goldenImage": "Mekka1.gif",
 		"health": 1,
 		"id": "Mekka1",
 		"name": "Homing Chicken",
@@ -21377,6 +22212,7 @@ var parseCardsText = {
 			"name": "Aileron-Géant",
 			"text": "À la fin de votre tour, vous piochez jusqu’à avoir autant de cartes que votre adversaire."
 		},
+		"goldenImage": "LOEA16_24.gif",
 		"health": 5,
 		"id": "LOEA16_24",
 		"name": "Giantfin",
@@ -21395,6 +22231,7 @@ var parseCardsText = {
 			"name": "Griffe",
 			"text": "Donne +2 ATQ à votre héros pendant ce tour. +2 points d’armure."
 		},
+		"goldenImage": "CS2_005.gif",
 		"id": "CS2_005",
 		"name": "Claw",
 		"playerClass": "Druid",
@@ -21426,6 +22263,7 @@ var parseCardsText = {
 			"name": "Lame runique massive",
 			"text": "Inflige des dégâts doublés aux héros."
 		},
+		"goldenImage": "TB_KTRAF_08w.gif",
 		"id": "TB_KTRAF_08w",
 		"name": "Massive Runeblade",
 		"playerClass": "Neutral",
@@ -21440,6 +22278,7 @@ var parseCardsText = {
 			"name": "Grèves abandonnées de Lothar",
 			"text": "Inflige $3 |4(point,points) de dégâts à tous les adversaires."
 		},
+		"goldenImage": "LOEA16_9.gif",
 		"id": "LOEA16_9",
 		"name": "Lothar's Left Greave",
 		"playerClass": "Neutral",
@@ -21470,6 +22309,7 @@ var parseCardsText = {
 			"name": "Contrôleur mental",
 			"text": "<b>Cri de guerre :</b> si l’adversaire a 4 serviteurs ou plus, prend le contrôle de l’un d’eux au hasard."
 		},
+		"goldenImage": "EX1_085.gif",
 		"health": 3,
 		"id": "EX1_085",
 		"name": "Mind Control Tech",
@@ -21488,6 +22328,7 @@ var parseCardsText = {
 			"name": "Feu intérieur",
 			"text": "Change l’Attaque d’un serviteur pour qu’elle soit égale à ses PV."
 		},
+		"goldenImage": "CS1_129.gif",
 		"id": "CS1_129",
 		"name": "Inner Fire",
 		"playerClass": "Priest",
@@ -21506,6 +22347,7 @@ var parseCardsText = {
 			"name": "Flingueur",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CFM_653.gif",
 		"health": 3,
 		"id": "CFM_653",
 		"name": "Hired Gun",
@@ -21522,6 +22364,7 @@ var parseCardsText = {
 			"name": "Volonté de Mukla",
 			"text": "Rend 8 points de vie."
 		},
+		"goldenImage": "TU4c_008.gif",
 		"id": "TU4c_008",
 		"name": "Will of Mukla",
 		"playerClass": "Neutral",
@@ -21537,6 +22380,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Poulet"
 		},
+		"goldenImage": "GVG_092t.gif",
 		"health": 1,
 		"id": "GVG_092t",
 		"name": "Chicken",
@@ -21570,6 +22414,7 @@ var parseCardsText = {
 			"name": "Meneur défias",
 			"text": "<b>Combo :</b> invoque un bandit défias 2/1."
 		},
+		"goldenImage": "EX1_131.gif",
 		"health": 2,
 		"id": "EX1_131",
 		"name": "Defias Ringleader",
@@ -21588,6 +22433,7 @@ var parseCardsText = {
 			"name": "Courroux démoniaque",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs qui ne sont pas des démons."
 		},
+		"goldenImage": "BRM_005.gif",
 		"id": "BRM_005",
 		"name": "Demonwrath",
 		"playerClass": "Warlock",
@@ -21604,6 +22450,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Cristal"
 		},
+		"goldenImage": "CFM_606t.gif",
 		"health": 2,
 		"id": "CFM_606t",
 		"name": "Crystal",
@@ -21616,6 +22463,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Généralissime Omokk"
 		},
+		"goldenImage": "BRMA07_1H.gif",
 		"health": 30,
 		"id": "BRMA07_1H",
 		"name": "Highlord Omokk",
@@ -21630,6 +22478,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Statue animée"
 		},
+		"goldenImage": "LOEA16_17.gif",
 		"health": 10,
 		"id": "LOEA16_17",
 		"name": "Animated Statue",
@@ -21645,6 +22494,7 @@ var parseCardsText = {
 			"name": "Idole corbeau",
 			"text": "<b>Découvre</b> un serviteur."
 		},
+		"goldenImage": "LOE_115a.gif",
 		"id": "LOE_115a",
 		"name": "Raven Idol",
 		"playerClass": "Druid",
@@ -21660,6 +22510,7 @@ var parseCardsText = {
 			"name": "Prendre le raccourci",
 			"text": "Vous vous rapprochez d’un tour de la sortie ! Vous rencontrez un golem de guerre 7/7."
 		},
+		"goldenImage": "LOEA04_30a.gif",
 		"id": "LOEA04_30a",
 		"name": "Take the Shortcut",
 		"playerClass": "Neutral",
@@ -21677,6 +22528,7 @@ var parseCardsText = {
 			"name": "Villageois possédé",
 			"text": "<b>Râle d’agonie :</b> invoque une ombrebête 1/1."
 		},
+		"goldenImage": "OG_241.gif",
 		"health": 1,
 		"id": "OG_241",
 		"name": "Possessed Villager",
@@ -21694,6 +22546,7 @@ var parseCardsText = {
 			"name": "Max Ma",
 			"text": "Peut uniquement être joué sur un mobile."
 		},
+		"goldenImage": "CRED_34.gif",
 		"health": 3,
 		"id": "CRED_34",
 		"name": "Max Ma",
@@ -21711,6 +22564,7 @@ var parseCardsText = {
 			"name": "Sire Zeliek",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_04H.gif",
 		"health": 7,
 		"id": "NAX9_04H",
 		"name": "Sir Zeliek",
@@ -21744,6 +22598,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Statue de terrestre"
 		},
+		"goldenImage": "LOEA06_02th.gif",
 		"health": 5,
 		"id": "LOEA06_02th",
 		"name": "Earthen Statue",
@@ -21761,6 +22616,7 @@ var parseCardsText = {
 			"name": "Acolyte capuchonnée",
 			"text": "Chaque fois qu’un personnage est soigné, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_334.gif",
 		"health": 6,
 		"id": "OG_334",
 		"name": "Hooded Acolyte",
@@ -21780,6 +22636,7 @@ var parseCardsText = {
 			"name": "Chevalier silencieux",
 			"text": "<b>Camouflage</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "AT_095.gif",
 		"health": 2,
 		"id": "AT_095",
 		"name": "Silent Knight",
@@ -21797,6 +22654,7 @@ var parseCardsText = {
 			"name": "Atramédès",
 			"text": "Gagne +2 ATQ chaque fois que votre adversaire joue une carte."
 		},
+		"goldenImage": "BRMC_86.gif",
 		"health": 8,
 		"id": "BRMC_86",
 		"name": "Atramedes",
@@ -21816,6 +22674,7 @@ var parseCardsText = {
 			"name": "Conservateur du musée",
 			"text": "<b>Cri de guerre : découvre</b> une carte avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "LOE_006.gif",
 		"health": 2,
 		"id": "LOE_006",
 		"name": "Museum Curator",
@@ -21873,6 +22732,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dame Naz’jar"
 		},
+		"goldenImage": "LOEA12_1H.gif",
 		"health": 30,
 		"id": "LOEA12_1H",
 		"name": "Lady Naz'jar",
@@ -21904,6 +22764,7 @@ var parseCardsText = {
 			"name": "Prêtre de la serre de la Kabale",
 			"text": "<b>Cri de guerre :</b> donne +3 PV à un serviteur allié."
 		},
+		"goldenImage": "CFM_626.gif",
 		"health": 4,
 		"id": "CFM_626",
 		"name": "Kabal Talonpriest",
@@ -21920,6 +22781,7 @@ var parseCardsText = {
 			"name": "Météores",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "NEW1_007a.gif",
 		"id": "NEW1_007a",
 		"name": "Starfall",
 		"playerClass": "Druid",
@@ -21965,6 +22827,7 @@ var parseCardsText = {
 			"name": "Kobold évolué",
 			"text": "<b>Dégâts des sorts : +2</b>"
 		},
+		"goldenImage": "OG_082.gif",
 		"health": 2,
 		"id": "OG_082",
 		"name": "Evolved Kobold",
@@ -21997,6 +22860,7 @@ var parseCardsText = {
 			"name": "Écraser",
 			"text": "Détruit un serviteur. Si vous avez un serviteur blessé, cette carte coûte (4) cristaux de moins."
 		},
+		"goldenImage": "GVG_052.gif",
 		"id": "GVG_052",
 		"name": "Crush",
 		"playerClass": "Warrior",
@@ -22027,6 +22891,7 @@ var parseCardsText = {
 			"name": "Mage débutant",
 			"text": "À la fin de votre tour, inflige 1 point de dégâts à un serviteur adverse aléatoire."
 		},
+		"goldenImage": "TBST_002.gif",
 		"health": 1,
 		"id": "TBST_002",
 		"name": "OLDN3wb Mage",
@@ -22045,6 +22910,7 @@ var parseCardsText = {
 			"name": "Serviteur de Yogg-Saron",
 			"text": "<b>Cri de guerre :</b> lance un sort aléatoire coûtant au maximum\n(5) cristaux de mana <i>(cibles choisies au hasard).</i>"
 		},
+		"goldenImage": "OG_087.gif",
 		"health": 4,
 		"id": "OG_087",
 		"name": "Servant of Yogg-Saron",
@@ -22062,6 +22928,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Onyxigriffe"
 		},
+		"goldenImage": "BRMA17_9.gif",
 		"id": "BRMA17_9",
 		"name": "Onyxiclaw",
 		"playerClass": "Neutral",
@@ -22091,6 +22958,7 @@ var parseCardsText = {
 			"name": "Druide de la Griffe",
 			"text": "<b>Charge, Provocation</b>"
 		},
+		"goldenImage": "OG_044a.gif",
 		"health": 6,
 		"id": "OG_044a",
 		"name": "Druid of the Claw",
@@ -22110,6 +22978,7 @@ var parseCardsText = {
 			"name": "Sentinelle éternelle",
 			"text": "<b>Cri de guerre :</b> débloque vos cristaux de mana en <b>Surcharge</b>."
 		},
+		"goldenImage": "OG_026.gif",
 		"health": 2,
 		"id": "OG_026",
 		"name": "Eternal Sentinel",
@@ -22127,6 +22996,7 @@ var parseCardsText = {
 			"name": "Forme d’ours",
 			"text": "+2 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_165b.gif",
 		"id": "EX1_165b",
 		"name": "Bear Form",
 		"playerClass": "Druid",
@@ -22158,6 +23028,7 @@ var parseCardsText = {
 			"name": "Potion de Kazakus",
 			"text": "{0}\n{1}"
 		},
+		"goldenImage": "CFM_621t15.gif",
 		"id": "CFM_621t15",
 		"name": "Kazakus Potion",
 		"playerClass": "Neutral",
@@ -22190,6 +23061,7 @@ var parseCardsText = {
 			"name": "Pyromancien sauvage",
 			"text": "Après que vous avez lancé un sort, inflige 1 point de dégâts à TOUS les serviteurs."
 		},
+		"goldenImage": "NEW1_020.gif",
 		"health": 2,
 		"id": "NEW1_020",
 		"name": "Wild Pyromancer",
@@ -22207,6 +23079,7 @@ var parseCardsText = {
 			"name": "AI Helper Buddy",
 			"text": "Get the AI ready for testing."
 		},
+		"goldenImage": "XXX_099.gif",
 		"health": 1,
 		"id": "XXX_099",
 		"name": "AI Helper Buddy",
@@ -22235,6 +23108,7 @@ var parseCardsText = {
 			"name": "Myrmidon naga",
 			"text": "<b></b>"
 		},
+		"goldenImage": "TU4e_003.gif",
 		"health": 1,
 		"id": "TU4e_003",
 		"name": "Naga Myrmidon",
@@ -22254,6 +23128,7 @@ var parseCardsText = {
 			"name": "Maîtresse de cérémonie",
 			"text": "<b>Cri de guerre :</b> gagne +2/+2 si vous avez un serviteur avec <b>Dégâts des sorts</b>."
 		},
+		"goldenImage": "AT_117.gif",
 		"health": 2,
 		"id": "AT_117",
 		"name": "Master of Ceremonies",
@@ -22270,6 +23145,7 @@ var parseCardsText = {
 			"name": "Foncer en avant",
 			"text": "Vous rapproche d’un tour de la sortie !"
 		},
+		"goldenImage": "LOEA07_21.gif",
 		"id": "LOEA07_21",
 		"name": "Barrel Forward",
 		"playerClass": "Neutral",
@@ -22299,6 +23175,7 @@ var parseCardsText = {
 			"name": "Favori de la foule",
 			"text": "Chaque fois que vous jouez une carte avec <b>Cri de guerre</b>, gagne +1/+1."
 		},
+		"goldenImage": "AT_121.gif",
 		"health": 4,
 		"id": "AT_121",
 		"name": "Crowd Favorite",
@@ -22316,6 +23193,7 @@ var parseCardsText = {
 			"name": "Production d’aiguillons",
 			"text": "Donne +4 ATQ à votre héros pendant ce tour."
 		},
+		"goldenImage": "OG_047a.gif",
 		"id": "OG_047a",
 		"name": "Evolve Spines",
 		"playerClass": "Druid",
@@ -22363,6 +23241,7 @@ var parseCardsText = {
 			"name": "Baron Vaillefendre",
 			"text": "Vos serviteurs déclenchent deux fois leur <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "FP1_031.gif",
 		"health": 7,
 		"id": "FP1_031",
 		"name": "Baron Rivendare",
@@ -22381,6 +23260,7 @@ var parseCardsText = {
 			"name": "Potion de soins supérieure",
 			"text": "Rend 12 PV à un personnage allié."
 		},
+		"goldenImage": "CFM_604.gif",
 		"id": "CFM_604",
 		"name": "Greater Healing Potion",
 		"playerClass": "Priest",
@@ -22423,6 +23303,7 @@ var parseCardsText = {
 			"name": "Cervocalypse",
 			"text": "Les deux joueurs piochent 2 cartes et gagnent un cristal de mana."
 		},
+		"goldenImage": "NAX5_03.gif",
 		"id": "NAX5_03",
 		"name": "Mindpocalypse",
 		"playerClass": "Neutral",
@@ -22440,6 +23321,7 @@ var parseCardsText = {
 			"name": "Maîtresse des mélanges",
 			"text": "<b>Râle d’agonie :</b> rend 4 PV aux deux héros."
 		},
+		"goldenImage": "CFM_120.gif",
 		"health": 2,
 		"id": "CFM_120",
 		"name": "Mistress of Mixtures",
@@ -22471,6 +23353,7 @@ var parseCardsText = {
 			"name": "Peste",
 			"text": "Détruit tous les serviteurs sauf les squelettes."
 		},
+		"goldenImage": "NAX4_05.gif",
 		"id": "NAX4_05",
 		"name": "Plague",
 		"playerClass": "Neutral",
@@ -22519,6 +23402,7 @@ var parseCardsText = {
 			"name": "Runes explosives",
 			"text": "Invoque deux « runes explosives »."
 		},
+		"goldenImage": "TB_CoOpv3_010.gif",
 		"id": "TB_CoOpv3_010",
 		"name": "Explosive Runes",
 		"playerClass": "Neutral",
@@ -22532,6 +23416,7 @@ var parseCardsText = {
 			"name": "Invocation précoce de serviteur",
 			"text": "Invoque un serviteur gratuit à chaque tour, si vous avez moins de PV que votre adversaire."
 		},
+		"goldenImage": "TBUD_1.gif",
 		"id": "TBUD_1",
 		"name": "TBUD Summon Early Minion",
 		"playerClass": "Neutral",
@@ -22561,6 +23446,7 @@ var parseCardsText = {
 			"name": "Unité",
 			"text": "+2/+2."
 		},
+		"goldenImage": "TB_CoOpv3_104e.gif",
 		"id": "TB_CoOpv3_104e",
 		"name": "Unity",
 		"playerClass": "Neutral",
@@ -22575,6 +23461,7 @@ var parseCardsText = {
 			"name": "Breuvage démoniaque",
 			"text": "+3/+3."
 		},
+		"goldenImage": "CFM_611e2.gif",
 		"id": "CFM_611e2",
 		"name": "Demonic Draught",
 		"playerClass": "Neutral",
@@ -22758,6 +23645,7 @@ var parseCardsText = {
 			"name": "Écholocation",
 			"text": "<b>Pouvoir héroïque</b>\nS’équipe d’une arme qui croît à mesure que l’adversaire joue des cartes."
 		},
+		"goldenImage": "BRMA16_2.gif",
 		"id": "BRMA16_2",
 		"name": "Echolocate",
 		"playerClass": "Neutral",
@@ -22771,6 +23659,7 @@ var parseCardsText = {
 			"name": "Cri de commandement",
 			"text": "Les points de vie de vos serviteurs ne peuvent pas passer en dessous de 1 ce tour-ci."
 		},
+		"goldenImage": "NEW1_036e2.gif",
 		"id": "NEW1_036e2",
 		"name": "Commanding Shout",
 		"playerClass": "Warrior",
@@ -22895,6 +23784,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t06.gif",
 		"health": 6,
 		"id": "CFM_712_t06",
 		"name": "Jade Golem",
@@ -22911,6 +23801,7 @@ var parseCardsText = {
 			"name": "Rugissement sauvage",
 			"text": "Donne +2 ATQ à vos personnages pendant ce tour."
 		},
+		"goldenImage": "CS2_011.gif",
 		"id": "CS2_011",
 		"name": "Savage Roar",
 		"playerClass": "Druid",
@@ -22926,6 +23817,7 @@ var parseCardsText = {
 			"name": "Bénédiction du soleil",
 			"text": "Confère <b>Insensible</b> à un serviteur pendant ce tour."
 		},
+		"goldenImage": "LOEA16_20.gif",
 		"id": "LOEA16_20",
 		"name": "Blessing of the Sun",
 		"playerClass": "Neutral",
@@ -22943,6 +23835,7 @@ var parseCardsText = {
 			"name": "Xaril l’Esprit empoisonné",
 			"text": "<b>Cri de guerre et Râle d’agonie :</b> ajoute une carte Toxine aléatoire dans votre main."
 		},
+		"goldenImage": "OG_080.gif",
 		"health": 2,
 		"id": "OG_080",
 		"name": "Xaril, Poisoned Mind",
@@ -23001,6 +23894,7 @@ var parseCardsText = {
 			"name": "Seigneur Ondulance",
 			"text": "À la fin de votre tour, invoque un Naga affamé 1/1 pour chaque serviteur adverse."
 		},
+		"goldenImage": "LOEA16_23H.gif",
 		"health": 10,
 		"id": "LOEA16_23H",
 		"name": "Lord Slitherspear",
@@ -23033,6 +23927,7 @@ var parseCardsText = {
 			"name": "Horion de lave",
 			"text": "Inflige $2 |4(point,points) de dégâts. Débloque vos cristaux de mana en <b>Surcharge</b>."
 		},
+		"goldenImage": "BRM_011.gif",
 		"id": "BRM_011",
 		"name": "Lava Shock",
 		"overload": 1,
@@ -23049,6 +23944,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Infernal"
 		},
+		"goldenImage": "EX1_tk34.gif",
 		"health": 6,
 		"id": "EX1_tk34",
 		"name": "Infernal",
@@ -23067,6 +23963,7 @@ var parseCardsText = {
 			"name": "Wyrm de mana",
 			"text": "Chaque fois que vous lancez un sort, gagne +1 ATQ."
 		},
+		"goldenImage": "NEW1_012.gif",
 		"health": 3,
 		"id": "NEW1_012",
 		"name": "Mana Wyrm",
@@ -23083,6 +23980,7 @@ var parseCardsText = {
 			"name": "Enable Emotes",
 			"text": "Enable emotes for your VS.AI game. (not in tutorials, though)"
 		},
+		"goldenImage": "XXX_026.gif",
 		"id": "XXX_026",
 		"name": "Enable Emotes",
 		"playerClass": "Neutral",
@@ -23101,6 +23999,7 @@ var parseCardsText = {
 			"name": "Ombre mouvante",
 			"text": "<b>Râle d’agonie :</b> copie une carte du deck de votre adversaire et la place dans votre main."
 		},
+		"goldenImage": "OG_335.gif",
 		"health": 3,
 		"id": "OG_335",
 		"name": "Shifting Shade",
@@ -23119,6 +24018,7 @@ var parseCardsText = {
 			"name": "Fracasser",
 			"text": "Détruit un serviteur <b>gelé</b>."
 		},
+		"goldenImage": "OG_081.gif",
 		"id": "OG_081",
 		"name": "Shatter",
 		"playerClass": "Mage",
@@ -23151,6 +24051,7 @@ var parseCardsText = {
 			"name": "Rejeton de lumière",
 			"text": "L’Attaque de ce serviteur est toujours égale à sa Vie."
 		},
+		"goldenImage": "EX1_335.gif",
 		"health": 5,
 		"id": "EX1_335",
 		"name": "Lightspawn",
@@ -23168,6 +24069,7 @@ var parseCardsText = {
 			"name": "Garde d’Orsis",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "LOEA04_13bt.gif",
 		"health": 5,
 		"id": "LOEA04_13bt",
 		"name": "Orsis Guard",
@@ -23185,6 +24087,7 @@ var parseCardsText = {
 			"name": "Flammes infernales",
 			"text": "Inflige $3 |4(point,points) de dégâts à TOUS les personnages."
 		},
+		"goldenImage": "CS2_062.gif",
 		"id": "CS2_062",
 		"name": "Hellfire",
 		"playerClass": "Warlock",
@@ -23218,6 +24121,7 @@ var parseCardsText = {
 			"name": "Raptor de monte",
 			"text": "<b>Râle d’agonie :</b> invoque un serviteur aléatoire coûtant 1 cristal."
 		},
+		"goldenImage": "LOE_050.gif",
 		"health": 2,
 		"id": "LOE_050",
 		"name": "Mounted Raptor",
@@ -23235,6 +24139,7 @@ var parseCardsText = {
 			"name": "Potion excellente",
 			"text": "Crée un sort coûtant 10 |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_621t13.gif",
 		"id": "CFM_621t13",
 		"name": "Superior Potion",
 		"playerClass": "Neutral",
@@ -23247,6 +24152,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Baron Vaillefendre"
 		},
+		"goldenImage": "NAX9_01.gif",
 		"health": 7,
 		"id": "NAX9_01",
 		"name": "Baron Rivendare",
@@ -23304,6 +24210,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Valeera Sanguinar"
 		},
+		"goldenImage": "TB_BlingBrawl_Hero1.gif",
 		"health": 30,
 		"id": "TB_BlingBrawl_Hero1",
 		"name": "Valeera Sanguinar",
@@ -23322,6 +24229,7 @@ var parseCardsText = {
 			"name": "Rhino de la toundra",
 			"text": "Vos Bêtes ont <b>Charge</b>."
 		},
+		"goldenImage": "DS1_178.gif",
 		"health": 5,
 		"id": "DS1_178",
 		"name": "Tundra Rhino",
@@ -23353,6 +24261,7 @@ var parseCardsText = {
 			"name": "Maître de grouk-fu",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "CFM_666.gif",
 		"health": 5,
 		"id": "CFM_666",
 		"name": "Grook Fu Master",
@@ -23426,6 +24335,7 @@ var parseCardsText = {
 			"name": "Assassin patient",
 			"text": "<b>Camouflage</b>. Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "EX1_522.gif",
 		"health": 1,
 		"id": "EX1_522",
 		"name": "Patient Assassin",
@@ -23443,6 +24353,7 @@ var parseCardsText = {
 			"name": "Bryan Chang",
 			"text": "<b>Gourmet :</b> rend tous les serviteurs comestibles."
 		},
+		"goldenImage": "CRED_21.gif",
 		"health": 3,
 		"id": "CRED_21",
 		"name": "Bryan Chang",
@@ -23461,6 +24372,7 @@ var parseCardsText = {
 			"name": "Kriss",
 			"text": "Inflige $1 |4(point,points) de dégâts. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_278.gif",
 		"id": "EX1_278",
 		"name": "Shiv",
 		"playerClass": "Rogue",
@@ -23476,6 +24388,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Diablotin"
 		},
+		"goldenImage": "BRM_006t.gif",
 		"health": 1,
 		"id": "BRM_006t",
 		"name": "Imp",
@@ -23490,6 +24403,7 @@ var parseCardsText = {
 			"name": "Suralimenter",
 			"text": "Gagne 2 ATQ."
 		},
+		"goldenImage": "TB_CoOpBossSpell_4.gif",
 		"id": "TB_CoOpBossSpell_4",
 		"name": "Overclock",
 		"playerClass": "Neutral",
@@ -23507,6 +24421,7 @@ var parseCardsText = {
 			"name": "Capitaine des mers du Sud",
 			"text": "Vos autres pirates\nont +1/+1."
 		},
+		"goldenImage": "NEW1_027.gif",
 		"health": 3,
 		"id": "NEW1_027",
 		"name": "Southsea Captain",
@@ -23526,6 +24441,7 @@ var parseCardsText = {
 			"name": "Damoiselle du Lac",
 			"text": "Votre pouvoir héroïque coûte (1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_085.gif",
 		"health": 6,
 		"id": "AT_085",
 		"name": "Maiden of the Lake",
@@ -23542,6 +24458,7 @@ var parseCardsText = {
 			"name": "La pièce",
 			"text": "Donne 1 cristal de mana pendant ce tour uniquement."
 		},
+		"goldenImage": "GAME_005.gif",
 		"id": "GAME_005",
 		"name": "The Coin",
 		"playerClass": "Neutral",
@@ -23592,6 +24509,7 @@ var parseCardsText = {
 			"name": "Lame maudite",
 			"text": "Double tous les dégâts subis par votre héros."
 		},
+		"goldenImage": "LOE_118.gif",
 		"id": "LOE_118",
 		"name": "Cursed Blade",
 		"playerClass": "Warrior",
@@ -23625,6 +24543,7 @@ var parseCardsText = {
 			"name": "Remontoir",
 			"text": "Renvoie un serviteur allié dans votre main."
 		},
+		"goldenImage": "PART_002.gif",
 		"id": "PART_002",
 		"name": "Time Rewinder",
 		"playerClass": "Neutral",
@@ -23655,6 +24574,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Rat"
 		},
+		"goldenImage": "CFM_316t.gif",
 		"health": 1,
 		"id": "CFM_316t",
 		"name": "Rat",
@@ -23672,6 +24592,7 @@ var parseCardsText = {
 			"name": "Totem de vitalité",
 			"text": "À la fin de votre tour, rend 4 PV à votre héros."
 		},
+		"goldenImage": "GVG_039.gif",
 		"health": 3,
 		"id": "GVG_039",
 		"name": "Vitality Totem",
@@ -23720,6 +24641,7 @@ var parseCardsText = {
 			"name": "Gangrenelle",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "CFM_621t4.gif",
 		"id": "CFM_621t4",
 		"name": "Felbloom",
 		"playerClass": "Neutral",
@@ -23737,6 +24659,7 @@ var parseCardsText = {
 			"name": "Soigneuse sombrécaille",
 			"text": "<b>Cri de guerre :</b> rend 2 points de vie à tous les personnages alliés."
 		},
+		"goldenImage": "DS1_055.gif",
 		"health": 5,
 		"id": "DS1_055",
 		"name": "Darkscale Healer",
@@ -23770,6 +24693,7 @@ var parseCardsText = {
 			"name": "-1 Durability",
 			"text": "Give a player's weapon -1 Durability."
 		},
+		"goldenImage": "XXX_048.gif",
 		"id": "XXX_048",
 		"name": "-1 Durability",
 		"playerClass": "Neutral",
@@ -23802,6 +24726,7 @@ var parseCardsText = {
 			"name": "Accès de rage",
 			"text": "Donne +6 ATQ à votre héros pendant ce tour."
 		},
+		"goldenImage": "NAX12_04.gif",
 		"id": "NAX12_04",
 		"name": "Enrage",
 		"playerClass": "Neutral",
@@ -23833,6 +24758,7 @@ var parseCardsText = {
 			"name": "Bloc de glace",
 			"text": "<b>Secret :</b> protège votre héros des dégâts mortels, et le rend <b>Insensible</b> pendant ce tour."
 		},
+		"goldenImage": "EX1_295.gif",
 		"id": "EX1_295",
 		"name": "Ice Block",
 		"playerClass": "Mage",
@@ -23849,6 +24775,7 @@ var parseCardsText = {
 			"name": "Heigan l’Impur",
 			"text": "À la fin de votre tour, inflige 4 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "TB_KTRAF_7.gif",
 		"health": 5,
 		"id": "TB_KTRAF_7",
 		"name": "Heigan the Unclean",
@@ -23897,6 +24824,7 @@ var parseCardsText = {
 			"name": "Ombre de Naxxramas",
 			"text": "<b>Camouflage</b>\nGagne +1/+1 au début de votre tour."
 		},
+		"goldenImage": "FP1_005.gif",
 		"health": 2,
 		"id": "FP1_005",
 		"name": "Shade of Naxxramas",
@@ -23916,6 +24844,7 @@ var parseCardsText = {
 			"name": "Massacreur abyssal",
 			"text": "<b>Cri de guerre :</b> inflige 3 point de dégâts à tous les autres personnages."
 		},
+		"goldenImage": "CFM_751.gif",
 		"health": 6,
 		"id": "CFM_751",
 		"name": "Abyssal Enforcer",
@@ -23933,6 +24862,7 @@ var parseCardsText = {
 			"name": "Idole corbeau",
 			"text": "<b>Découvre</b> un sort."
 		},
+		"goldenImage": "LOE_115b.gif",
 		"id": "LOE_115b",
 		"name": "Raven Idol",
 		"playerClass": "Druid",
@@ -23946,6 +24876,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Juge Supérieur Mornepierre"
 		},
+		"goldenImage": "BRMA02_1H.gif",
 		"health": 30,
 		"id": "BRMA02_1H",
 		"name": "High Justice Grimstone",
@@ -23963,6 +24894,7 @@ var parseCardsText = {
 			"name": "Élémentaire délié",
 			"text": "Chaque fois que vous jouez une carte avec <b>Surcharge</b>, gagne +1/+1."
 		},
+		"goldenImage": "EX1_258.gif",
 		"health": 4,
 		"id": "EX1_258",
 		"name": "Unbound Elemental",
@@ -23993,6 +24925,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Baron Vaillefendre"
 		},
+		"goldenImage": "NAX9_01H.gif",
 		"health": 14,
 		"id": "NAX9_01H",
 		"name": "Baron Rivendare",
@@ -24010,6 +24943,7 @@ var parseCardsText = {
 			"name": "Modeste écuyer",
 			"text": "<b>Exaltation :</b> gagne +1 ATQ."
 		},
+		"goldenImage": "AT_082.gif",
 		"health": 2,
 		"id": "AT_082",
 		"name": "Lowly Squire",
@@ -24027,6 +24961,7 @@ var parseCardsText = {
 			"name": "Gelée polluée",
 			"text": "Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "TB_KTRAF_6m.gif",
 		"health": 2,
 		"id": "TB_KTRAF_6m",
 		"name": "Fallout Slime",
@@ -24045,6 +24980,7 @@ var parseCardsText = {
 			"name": "Cracheur de suie",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "GVG_123.gif",
 		"health": 3,
 		"id": "GVG_123",
 		"name": "Soot Spewer",
@@ -24060,6 +24996,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chambellan Executus"
 		},
+		"goldenImage": "BRMA06_1H.gif",
 		"health": 30,
 		"id": "BRMA06_1H",
 		"name": "Majordomo Executus",
@@ -24077,6 +25014,7 @@ var parseCardsText = {
 			"name": "Avocat commis d’office",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CFM_300.gif",
 		"health": 7,
 		"id": "CFM_300",
 		"name": "Public Defender",
@@ -24096,6 +25034,7 @@ var parseCardsText = {
 			"name": "Phalanges",
 			"text": "Après avoir attaqué un serviteur, frappe aussi le héros adverse."
 		},
+		"goldenImage": "CFM_333.gif",
 		"health": 7,
 		"id": "CFM_333",
 		"name": "Knuckles",
@@ -24114,6 +25053,7 @@ var parseCardsText = {
 			"name": "Pièce contrefaite",
 			"text": "Donne 1 cristal de mana pendant ce tour uniquement."
 		},
+		"goldenImage": "CFM_630.gif",
 		"id": "CFM_630",
 		"name": "Counterfeit Coin",
 		"playerClass": "Rogue",
@@ -24131,6 +25071,7 @@ var parseCardsText = {
 			"name": "Cri de commandement",
 			"text": "Les points de vie de vos serviteurs ne peuvent pas passer en dessous de 1 ce tour-ci. Vous piochez une carte."
 		},
+		"goldenImage": "NEW1_036.gif",
 		"id": "NEW1_036",
 		"name": "Commanding Shout",
 		"playerClass": "Warrior",
@@ -24146,6 +25087,7 @@ var parseCardsText = {
 			"name": "Éclat lunaire",
 			"text": "Inflige 2 points de dégâts."
 		},
+		"goldenImage": "EX1_166a.gif",
 		"id": "EX1_166a",
 		"name": "Moonfire",
 		"playerClass": "Druid",
@@ -24176,6 +25118,7 @@ var parseCardsText = {
 			"name": "Esprit du loup",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_tk11.gif",
 		"health": 3,
 		"id": "EX1_tk11",
 		"name": "Spirit Wolf",
@@ -24236,6 +25179,7 @@ var parseCardsText = {
 			"name": "Potion inférieure",
 			"text": "Crée un sort coûtant 1 |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_621t11.gif",
 		"id": "CFM_621t11",
 		"name": "Lesser Potion",
 		"playerClass": "Neutral",
@@ -24252,6 +25196,7 @@ var parseCardsText = {
 			"name": "Force de la nature",
 			"text": "Invoque trois tréants 2/2."
 		},
+		"goldenImage": "EX1_571.gif",
 		"id": "EX1_571",
 		"name": "Force of Nature",
 		"playerClass": "Druid",
@@ -24280,6 +25225,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Garrosh Hurlenfer"
 		},
+		"goldenImage": "HERO_01.gif",
 		"health": 30,
 		"id": "HERO_01",
 		"name": "Garrosh Hellscream",
@@ -24298,6 +25244,7 @@ var parseCardsText = {
 			"name": "Gorillobot A-3",
 			"text": "<b>Cri de guerre :</b> si vous contrôlez un autre Méca, <b>découvre</b> un nouveau Méca."
 		},
+		"goldenImage": "LOE_039.gif",
 		"health": 4,
 		"id": "LOE_039",
 		"name": "Gorillabot A-3",
@@ -24317,6 +25264,7 @@ var parseCardsText = {
 			"name": "Rejeton des Ombres",
 			"text": "<b>Exaltation :</b> inflige 4 points de dégâts à chaque héros."
 		},
+		"goldenImage": "AT_012.gif",
 		"health": 4,
 		"id": "AT_012",
 		"name": "Spawn of Shadows",
@@ -24348,6 +25296,7 @@ var parseCardsText = {
 			"name": "Keith Landes",
 			"text": "Au début de votre tour, la faim inflige 2 points de dégâts à votre héros."
 		},
+		"goldenImage": "CRED_46.gif",
 		"health": 6,
 		"id": "CRED_46",
 		"name": "Keith Landes",
@@ -24395,6 +25344,7 @@ var parseCardsText = {
 			"name": "Seigneur des abîmes",
 			"text": "<b>Cri de guerre :</b> inflige 5 points de dégâts à votre héros."
 		},
+		"goldenImage": "EX1_313.gif",
 		"health": 6,
 		"id": "EX1_313",
 		"name": "Pit Lord",
@@ -24412,6 +25362,7 @@ var parseCardsText = {
 			"name": "Becca Abel",
 			"text": "Chaque fois que vous piochez une carte, la transforme en carte dorée."
 		},
+		"goldenImage": "CRED_18.gif",
 		"health": 2,
 		"id": "CRED_18",
 		"name": "Becca Abel",
@@ -24430,6 +25381,7 @@ var parseCardsText = {
 			"name": "Piège givrant",
 			"text": "<b>Secret :</b> quand un serviteur adverse attaque, le renvoie dans la main de son propriétaire et il coûte désormais (2) cristaux de plus."
 		},
+		"goldenImage": "EX1_611.gif",
 		"id": "EX1_611",
 		"name": "Freezing Trap",
 		"playerClass": "Hunter",
@@ -24445,6 +25397,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gelée"
 		},
+		"goldenImage": "OG_314b.gif",
 		"health": 2,
 		"id": "OG_314b",
 		"name": "Slime",
@@ -24488,6 +25441,7 @@ var parseCardsText = {
 			"name": "Destin cruel : Furie des vents",
 			"text": "Tous les serviteurs ont <b>Furie des vents</b>."
 		},
+		"goldenImage": "TB_PickYourFate_3.gif",
 		"id": "TB_PickYourFate_3",
 		"name": "Dire Fate: Windfury",
 		"playerClass": "Neutral",
@@ -24500,6 +25454,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Garr"
 		},
+		"goldenImage": "BRMA04_1H.gif",
 		"health": 45,
 		"id": "BRMA04_1H",
 		"name": "Garr",
@@ -24515,6 +25470,7 @@ var parseCardsText = {
 			"name": "Totem de soins",
 			"text": "À la fin de votre tour, rend 1 point de vie à tous vos serviteurs."
 		},
+		"goldenImage": "NEW1_009.gif",
 		"health": 2,
 		"id": "NEW1_009",
 		"name": "Healing Totem",
@@ -24547,6 +25503,7 @@ var parseCardsText = {
 			"name": "Javelot de glace",
 			"text": "<b>Gèle</b> un personnage. S’il est déjà <b>gelé</b>, inflige $4 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "CS2_031.gif",
 		"id": "CS2_031",
 		"name": "Ice Lance",
 		"playerClass": "Mage",
@@ -24564,6 +25521,7 @@ var parseCardsText = {
 			"name": "Lumière dans les ténèbres",
 			"text": "<b>Découvre</b> un serviteur.\nLui donne +1/+1."
 		},
+		"goldenImage": "OG_311.gif",
 		"id": "OG_311",
 		"name": "A Light in the Darkness",
 		"playerClass": "Paladin",
@@ -24597,6 +25555,7 @@ var parseCardsText = {
 			"name": "Neptulon",
 			"text": "<b>Cri de guerre :</b> ajoute 4 murlocs aléatoires dans votre main.\n<b>Surcharge :</b> (3)"
 		},
+		"goldenImage": "GVG_042.gif",
 		"health": 7,
 		"id": "GVG_042",
 		"name": "Neptulon",
@@ -24631,6 +25590,7 @@ var parseCardsText = {
 			"name": "Maître des diablotins",
 			"text": "À la fin de votre tour, ce serviteur subit 1 point de dégâts et invoque un diablotin 1/1."
 		},
+		"goldenImage": "EX1_597.gif",
 		"health": 5,
 		"id": "EX1_597",
 		"name": "Imp Master",
@@ -24645,6 +25605,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Baron Geddon"
 		},
+		"goldenImage": "BRMA05_1H.gif",
 		"health": 50,
 		"id": "BRMA05_1H",
 		"name": "Baron Geddon",
@@ -24662,6 +25623,7 @@ var parseCardsText = {
 			"name": "Wyrm de mana rouge",
 			"text": "Gagne +2 ATQ chaque fois que vous lancez un sort."
 		},
+		"goldenImage": "CFM_060.gif",
 		"health": 6,
 		"id": "CFM_060",
 		"name": "Red Mana Wyrm",
@@ -24678,6 +25640,7 @@ var parseCardsText = {
 			"name": "Banane",
 			"text": "Donne +1/+1 à un serviteur."
 		},
+		"goldenImage": "EX1_014t.gif",
 		"id": "EX1_014t",
 		"name": "Bananas",
 		"playerClass": "Neutral",
@@ -24708,6 +25671,7 @@ var parseCardsText = {
 			"name": "Pacte sacrificiel",
 			"text": "Détruit un démon. Rend #5 PV à votre héros."
 		},
+		"goldenImage": "NEW1_003.gif",
 		"id": "NEW1_003",
 		"name": "Sacrificial Pact",
 		"playerClass": "Warlock",
@@ -24754,6 +25718,7 @@ var parseCardsText = {
 			"name": "Gardienne des secrets",
 			"text": "Chaque fois qu’un <b>Secret</b> est joué, gagne +1/+1."
 		},
+		"goldenImage": "EX1_080.gif",
 		"health": 2,
 		"id": "EX1_080",
 		"name": "Secretkeeper",
@@ -24781,6 +25746,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chroniqueur Cho"
 		},
+		"goldenImage": "TU4f_001.gif",
 		"health": 25,
 		"id": "TU4f_001",
 		"name": "Lorewalker Cho",
@@ -24843,6 +25809,7 @@ var parseCardsText = {
 			"name": "Mouton explosif",
 			"text": "<b>Râle d’agonie :</b> inflige 2 points de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "GVG_076.gif",
 		"health": 1,
 		"id": "GVG_076",
 		"name": "Explosive Sheep",
@@ -24862,6 +25829,7 @@ var parseCardsText = {
 			"name": "Singe féroce",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOE_022.gif",
 		"health": 4,
 		"id": "LOE_022",
 		"name": "Fierce Monkey",
@@ -24895,6 +25863,7 @@ var parseCardsText = {
 			"name": "Tisse-cristal",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à vos démons."
 		},
+		"goldenImage": "CFM_610.gif",
 		"health": 4,
 		"id": "CFM_610",
 		"name": "Crystalweaver",
@@ -24943,6 +25912,7 @@ var parseCardsText = {
 			"name": "Détection des démons",
 			"text": "Place dans votre main 2 démons aléatoires de votre jeu."
 		},
+		"goldenImage": "EX1_317.gif",
 		"id": "EX1_317",
 		"name": "Sense Demons",
 		"playerClass": "Warlock",
@@ -24959,6 +25929,7 @@ var parseCardsText = {
 			"name": "Ichor de non-mort",
 			"text": "Invoque 3 serviteurs alliés morts pendant cette partie."
 		},
+		"goldenImage": "CFM_621t39.gif",
 		"id": "CFM_621t39",
 		"name": "Ichor of Undeath",
 		"playerClass": "Neutral",
@@ -24971,6 +25942,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Aileron-Géant"
 		},
+		"goldenImage": "LOEA10_1.gif",
 		"health": 30,
 		"id": "LOEA10_1",
 		"name": "Giantfin",
@@ -25003,6 +25975,7 @@ var parseCardsText = {
 			"name": "Destin cruel : carte",
 			"text": "Quand un serviteur meurt, son propriétaire pioche une carte."
 		},
+		"goldenImage": "TB_PickYourFate_4.gif",
 		"id": "TB_PickYourFate_4",
 		"name": "Dire Fate: Card",
 		"playerClass": "Neutral",
@@ -25020,6 +25993,7 @@ var parseCardsText = {
 			"name": "Prêtresse de la Cabale",
 			"text": "<b>Cri de guerre :</b> prend le contrôle d’un serviteur adverse avec 2 en Attaque ou moins."
 		},
+		"goldenImage": "EX1_091.gif",
 		"health": 5,
 		"id": "EX1_091",
 		"name": "Cabal Shadow Priest",
@@ -25037,6 +26011,7 @@ var parseCardsText = {
 			"name": "Hamilton Chu",
 			"text": "<i>Ne fait PAS partie du problème... la plupart du temps.</i>"
 		},
+		"goldenImage": "CRED_16.gif",
 		"health": 5,
 		"id": "CRED_16",
 		"name": "Hamilton Chu",
@@ -25071,6 +26046,7 @@ var parseCardsText = {
 			"name": "Sectateur Skeram",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_339.gif",
 		"health": 6,
 		"id": "OG_339",
 		"name": "Skeram Cultist",
@@ -25089,6 +26065,7 @@ var parseCardsText = {
 			"name": "Quatre murlocs et un enterrement",
 			"text": "Invoque quatre murlocs 1/1."
 		},
+		"goldenImage": "CFM_310.gif",
 		"id": "CFM_310",
 		"name": "Call in the Finishers",
 		"playerClass": "Shaman",
@@ -25106,6 +26083,7 @@ var parseCardsText = {
 			"name": "Malédiction de Rafaam",
 			"text": "Donne une carte Maudit ! à votre adversaire.\nTant qu’elle est dans sa main, il subit 2 points de dégâts au début de son tour."
 		},
+		"goldenImage": "LOE_007.gif",
 		"id": "LOE_007",
 		"name": "Curse of Rafaam",
 		"playerClass": "Warlock",
@@ -25124,6 +26102,7 @@ var parseCardsText = {
 			"name": "Loup des bois",
 			"text": "Vos autres Bêtes ont +1 ATQ."
 		},
+		"goldenImage": "DS1_175.gif",
 		"health": 1,
 		"id": "DS1_175",
 		"name": "Timber Wolf",
@@ -25140,6 +26119,7 @@ var parseCardsText = {
 			"name": "Connaissances anciennes",
 			"text": "Vous piochez une carte."
 		},
+		"goldenImage": "NEW1_008a.gif",
 		"id": "NEW1_008a",
 		"name": "Ancient Teachings",
 		"playerClass": "Druid",
@@ -25154,6 +26134,7 @@ var parseCardsText = {
 			"name": "Dynamite",
 			"text": "Inflige $10 |4(point,points) de dégâts."
 		},
+		"goldenImage": "LOEA07_18.gif",
 		"id": "LOEA07_18",
 		"name": "Dynamite",
 		"playerClass": "Neutral",
@@ -25168,6 +26149,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : bronze",
 			"text": "Les serviteurs de Chromaggus coûtent (1) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_7.gif",
 		"id": "BRMA12_7",
 		"name": "Brood Affliction: Bronze",
 		"playerClass": "Neutral",
@@ -25184,6 +26166,7 @@ var parseCardsText = {
 			"name": "Choc de flammes",
 			"text": "Inflige $4 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "CS2_032.gif",
 		"id": "CS2_032",
 		"name": "Flamestrike",
 		"playerClass": "Mage",
@@ -25217,6 +26200,7 @@ var parseCardsText = {
 			"name": "Lame empoisonnée",
 			"text": "Votre pouvoir héroïque donne à cette arme\n+1 ATQ au lieu de la remplacer."
 		},
+		"goldenImage": "AT_034.gif",
 		"id": "AT_034",
 		"name": "Poisoned Blade",
 		"playerClass": "Rogue",
@@ -25232,6 +26216,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Araignée spectrale"
 		},
+		"goldenImage": "FP1_002t.gif",
 		"health": 1,
 		"id": "FP1_002t",
 		"name": "Spectral Spider",
@@ -25249,6 +26234,7 @@ var parseCardsText = {
 			"name": "Anub’arak",
 			"text": "<b>Râle d’agonie :</b> le renvoie dans votre main et invoque un nérubien 4/4."
 		},
+		"goldenImage": "AT_036.gif",
 		"health": 4,
 		"id": "AT_036",
 		"name": "Anub'arak",
@@ -25268,6 +26254,7 @@ var parseCardsText = {
 			"name": "Portail d’invocation",
 			"text": "Vos serviteurs coûtent (2) cristaux de moins, mais jamais moins\nde (1)."
 		},
+		"goldenImage": "EX1_315.gif",
 		"health": 4,
 		"id": "EX1_315",
 		"name": "Summoning Portal",
@@ -25285,6 +26272,7 @@ var parseCardsText = {
 			"name": "Toxine de fleur de feu",
 			"text": "Inflige $2 |4(point,points) de dégâts."
 		},
+		"goldenImage": "OG_080f.gif",
 		"id": "OG_080f",
 		"name": "Firebloom Toxin",
 		"playerClass": "Rogue",
@@ -25316,13 +26304,14 @@ var parseCardsText = {
 			"name": "Aile de mort",
 			"text": "<b>Cri de guerre :</b> détruit tous les autres serviteurs et vous défausse de votre main."
 		},
+		"goldenImage": "NEW1_030.gif",
 		"health": 12,
 		"id": "NEW1_030",
 		"name": "Deathwing",
 		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
-		"text": "<b>Battlecry:</b> Destroy all other minions and discard your��hand.",
+		"text": "<b>Battlecry:</b> Destroy all other minions and discard your hand.",
 		"type": "Minion"
 	},
 	{
@@ -25333,6 +26322,7 @@ var parseCardsText = {
 			"name": "Jay Baxter",
 			"text": "<b>Cri de guerre :</b> invoque CINQ inventions aléatoires."
 		},
+		"goldenImage": "CRED_11.gif",
 		"health": 4,
 		"id": "CRED_11",
 		"name": "Jay Baxter",
@@ -25364,6 +26354,7 @@ var parseCardsText = {
 			"name": "Ombre du néant",
 			"text": "Comment ça « Votre adversaire n’a plus de serviteurs » ?"
 		},
+		"goldenImage": "EX1_345t.gif",
 		"health": 1,
 		"id": "EX1_345t",
 		"name": "Shadow of Nothing",
@@ -25383,6 +26374,7 @@ var parseCardsText = {
 			"name": "Gangsters, hé ho !",
 			"text": "<b>Cri de guerre :</b> invoque 2 copies de ce serviteur."
 		},
+		"goldenImage": "CFM_668.gif",
 		"health": 2,
 		"id": "CFM_668",
 		"name": "Doppelgangster",
@@ -25401,6 +26393,7 @@ var parseCardsText = {
 			"name": "Prêt à tirer",
 			"text": "Chaque fois que vous lancez un sort pendant ce tour, ajoute une carte chasseur aléatoire dans votre main."
 		},
+		"goldenImage": "AT_061.gif",
 		"id": "AT_061",
 		"name": "Lock and Load",
 		"playerClass": "Hunter",
@@ -25445,6 +26438,7 @@ var parseCardsText = {
 			"name": "Tréant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_573t.gif",
 		"health": 2,
 		"id": "EX1_573t",
 		"name": "Treant",
@@ -25490,6 +26484,7 @@ var parseCardsText = {
 			"name": "Lames tourbillonnantes",
 			"text": "Donne +1 ATQ à un serviteur."
 		},
+		"goldenImage": "PART_007.gif",
 		"id": "PART_007",
 		"name": "Whirling Blades",
 		"playerClass": "Neutral",
@@ -25525,6 +26520,7 @@ var parseCardsText = {
 			"name": "Guerrier branchie-bleue",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_173.gif",
 		"health": 1,
 		"id": "CS2_173",
 		"name": "Bluegill Warrior",
@@ -25543,6 +26539,7 @@ var parseCardsText = {
 			"name": "Fourche d’éclairs",
 			"text": "Inflige $2 |4(point,points) de dégâts à 2 serviteurs adverses aléatoires. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_251.gif",
 		"id": "EX1_251",
 		"name": "Forked Lightning",
 		"overload": 1,
@@ -25562,6 +26559,7 @@ var parseCardsText = {
 			"name": "Hobgobelin",
 			"text": "Chaque fois que vous jouez un serviteur avec 1 ATQ, lui donne +2/+2."
 		},
+		"goldenImage": "GVG_104.gif",
 		"health": 3,
 		"id": "GVG_104",
 		"name": "Hobgoblin",
@@ -25581,6 +26579,7 @@ var parseCardsText = {
 			"name": "Champion de Mukla",
 			"text": "<b>Exaltation :</b> donne +1/+1 à vos autres serviteurs."
 		},
+		"goldenImage": "AT_090.gif",
 		"health": 3,
 		"id": "AT_090",
 		"name": "Mukla's Champion",
@@ -25598,6 +26597,7 @@ var parseCardsText = {
 			"name": "Gnome caché",
 			"text": "Il se cachait dans un tonneau !"
 		},
+		"goldenImage": "TU4c_005.gif",
 		"health": 3,
 		"id": "TU4c_005",
 		"name": "Hidden Gnome",
@@ -25615,6 +26615,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gelée"
 		},
+		"goldenImage": "OG_202c.gif",
 		"health": 2,
 		"id": "OG_202c",
 		"name": "Slime",
@@ -25645,6 +26646,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Feugen"
 		},
+		"goldenImage": "NAX13_04H.gif",
 		"health": 7,
 		"id": "NAX13_04H",
 		"name": "Feugen",
@@ -25662,6 +26664,7 @@ var parseCardsText = {
 			"name": "Puissance accablante",
 			"text": "Donne +4/+4 à un serviteur allié jusqu’à la fin du tour. Puis il meurt. De façon horrible."
 		},
+		"goldenImage": "EX1_316.gif",
 		"id": "EX1_316",
 		"name": "Power Overwhelming",
 		"playerClass": "Warlock",
@@ -25710,6 +26713,7 @@ var parseCardsText = {
 			"name": "Trogg brisepierre",
 			"text": "Chaque fois que votre adversaire lance un sort, gagne +1 ATQ."
 		},
+		"goldenImage": "GVG_067.gif",
 		"health": 3,
 		"id": "GVG_067",
 		"name": "Stonesplinter Trogg",
@@ -25746,6 +26750,7 @@ var parseCardsText = {
 			"name": "Potion de gel",
 			"text": "<b>Gèle</b> un adversaire."
 		},
+		"goldenImage": "CFM_021.gif",
 		"id": "CFM_021",
 		"name": "Freezing Potion",
 		"playerClass": "Mage",
@@ -25764,6 +26769,7 @@ var parseCardsText = {
 			"name": "Illusionniste du Lotus",
 			"text": "Une fois que ce serviteur a attaqué un héros, le transforme en serviteur aléatoire coûtant 6 cristaux."
 		},
+		"goldenImage": "CFM_697.gif",
 		"health": 5,
 		"id": "CFM_697",
 		"name": "Lotus Illusionist",
@@ -25781,6 +26787,7 @@ var parseCardsText = {
 			"name": "Avatar de la pièce",
 			"text": "<i>Vous avez peut-être perdu à pile ou face, mais vous avez gagné un ami.</i>"
 		},
+		"goldenImage": "GAME_002.gif",
 		"health": 1,
 		"id": "GAME_002",
 		"name": "Avatar of the Coin",
@@ -25817,6 +26824,7 @@ var parseCardsText = {
 			"name": "Amasseur vicié",
 			"text": "<b>Râle d’agonie :</b> vous piochez une carte."
 		},
+		"goldenImage": "OG_323.gif",
 		"health": 2,
 		"id": "OG_323",
 		"name": "Polluted Hoarder",
@@ -25849,6 +26857,7 @@ var parseCardsText = {
 			"name": "Veille solennelle",
 			"text": "Vous piochez 2 cartes. Coûte (1) |4(cristal,cristaux) de mana de moins pour chaque serviteur mort pendant ce tour."
 		},
+		"goldenImage": "BRM_001.gif",
 		"id": "BRM_001",
 		"name": "Solemn Vigil",
 		"playerClass": "Paladin",
@@ -25888,6 +26897,7 @@ var parseCardsText = {
 			"name": "Forgeron malveillant",
 			"text": "<b>Accès de rage :</b> votre arme a +2 ATQ."
 		},
+		"goldenImage": "CS2_221.gif",
 		"health": 6,
 		"id": "CS2_221",
 		"name": "Spiteful Smith",
@@ -25919,6 +26929,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t28.gif",
 		"health": 28,
 		"id": "CFM_712_t28",
 		"name": "Jade Golem",
@@ -25949,6 +26960,7 @@ var parseCardsText = {
 			"name": "Dean Ayala",
 			"text": "Vous ne pouvez pas perdre d’étoiles tant que vous avez cette carte dans votre deck."
 		},
+		"goldenImage": "CRED_24.gif",
 		"health": 5,
 		"id": "CRED_24",
 		"name": "Dean Ayala",
@@ -25963,6 +26975,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Kel’Thuzad"
 		},
+		"goldenImage": "NAX15_01H.gif",
 		"health": 45,
 		"id": "NAX15_01H",
 		"name": "Kel'Thuzad",
@@ -25979,6 +26992,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Jormungar capturé"
 		},
+		"goldenImage": "AT_102.gif",
 		"health": 9,
 		"id": "AT_102",
 		"name": "Captured Jormungar",
@@ -26006,6 +27020,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Squeletosaurus Hex"
 		},
+		"goldenImage": "LOEA13_1h.gif",
 		"health": 30,
 		"id": "LOEA13_1h",
 		"name": "Skelesaurus Hex",
@@ -26022,6 +27037,7 @@ var parseCardsText = {
 			"name": "Crochet",
 			"text": "<b>Râle d’agonie :</b> place cette arme dans votre main."
 		},
+		"goldenImage": "NAX10_02.gif",
 		"id": "NAX10_02",
 		"name": "Hook",
 		"playerClass": "Neutral",
@@ -26039,6 +27055,7 @@ var parseCardsText = {
 			"name": "Boucanier",
 			"text": "Chaque fois que vous vous équipez d’une arme, lui donne +1 ATQ."
 		},
+		"goldenImage": "AT_029.gif",
 		"health": 1,
 		"id": "AT_029",
 		"name": "Buccaneer",
@@ -26086,6 +27103,7 @@ var parseCardsText = {
 			"name": "Hobart Martelutte",
 			"text": "<b>Cri de guerre :</b> donne +1 ATQ à toutes les armes dans votre main et votre deck."
 		},
+		"goldenImage": "CFM_643.gif",
 		"health": 2,
 		"id": "CFM_643",
 		"name": "Hobart Grapplehammer",
@@ -26105,6 +27123,7 @@ var parseCardsText = {
 			"name": "Trafiquante de la Kabale",
 			"text": "À la fin de votre tour, ajoute un démon aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_663.gif",
 		"health": 6,
 		"id": "CFM_663",
 		"name": "Kabal Trafficker",
@@ -26122,6 +27141,7 @@ var parseCardsText = {
 			"name": "Électron",
 			"text": "Tous les sorts coûtent (3) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "BRMA14_7H.gif",
 		"health": 6,
 		"id": "BRMA14_7H",
 		"name": "Electron",
@@ -26152,6 +27172,7 @@ var parseCardsText = {
 			"name": "Nourrir",
 			"text": "Vous piochez 3 cartes."
 		},
+		"goldenImage": "EX1_164b.gif",
 		"id": "EX1_164b",
 		"name": "Nourish",
 		"playerClass": "Druid",
@@ -26168,6 +27189,7 @@ var parseCardsText = {
 			"name": "Recrutement",
 			"text": "Choisissez un serviteur. En place 3 copies dans votre deck."
 		},
+		"goldenImage": "BRM_007.gif",
 		"id": "BRM_007",
 		"name": "Gang Up",
 		"playerClass": "Rogue",
@@ -26186,6 +27208,7 @@ var parseCardsText = {
 			"name": "Savant fou",
 			"text": "<b>Râle d’agonie :</b> place un <b>Secret</b> de votre deck sur le champ de bataille."
 		},
+		"goldenImage": "FP1_004.gif",
 		"health": 2,
 		"id": "FP1_004",
 		"name": "Mad Scientist",
@@ -26204,6 +27227,7 @@ var parseCardsText = {
 			"name": "Mot de l’ombre : Douleur",
 			"text": "Détruit un serviteur avec 3 Attaque ou moins."
 		},
+		"goldenImage": "CS2_234.gif",
 		"id": "CS2_234",
 		"name": "Shadow Word: Pain",
 		"playerClass": "Priest",
@@ -26222,6 +27246,7 @@ var parseCardsText = {
 			"name": "Kodo de livraison",
 			"text": "<b>Cri de guerre :</b> inflige des dégâts d’un montant égal à l’Attaque de ce serviteur."
 		},
+		"goldenImage": "CFM_335.gif",
 		"health": 4,
 		"id": "CFM_335",
 		"name": "Dispatch Kodo",
@@ -26241,6 +27266,7 @@ var parseCardsText = {
 			"name": "Maître d’escrime",
 			"text": "<b>Cri de guerre :</b> la prochaine fois que vous utilisez votre pouvoir héroïque, il coûte\n(2) cristaux de moins."
 		},
+		"goldenImage": "AT_115.gif",
 		"health": 2,
 		"id": "AT_115",
 		"name": "Fencing Coach",
@@ -26258,6 +27284,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t07.gif",
 		"health": 7,
 		"id": "CFM_712_t07",
 		"name": "Jade Golem",
@@ -26275,6 +27302,7 @@ var parseCardsText = {
 			"name": "Alchimiste de Sombre-Comté",
 			"text": "<b>Cri de guerre :</b> rend 5 PV."
 		},
+		"goldenImage": "OG_234.gif",
 		"health": 5,
 		"id": "OG_234",
 		"name": "Darkshire Alchemist",
@@ -26291,6 +27319,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : rouge",
 			"text": "Vous subissez 3 points de dégâts au début de votre tour tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_3H.gif",
 		"id": "BRMA12_3H",
 		"name": "Brood Affliction: Red",
 		"playerClass": "Neutral",
@@ -26323,6 +27352,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Élémentaire du Crépuscule"
 		},
+		"goldenImage": "OG_031a.gif",
 		"health": 2,
 		"id": "OG_031a",
 		"name": "Twilight Elemental",
@@ -26340,6 +27370,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Motard worgen"
 		},
+		"goldenImage": "CFM_665.gif",
 		"health": 3,
 		"id": "CFM_665",
 		"name": "Worgen Greaser",
@@ -26355,6 +27386,7 @@ var parseCardsText = {
 			"name": "Faveur du demi-dieu",
 			"text": "Donne +2/+2 à vos autres serviteurs."
 		},
+		"goldenImage": "EX1_573a.gif",
 		"id": "EX1_573a",
 		"name": "Demigod's Favor",
 		"playerClass": "Druid",
@@ -26371,6 +27403,7 @@ var parseCardsText = {
 			"name": "Esprit farouche",
 			"text": "Invoque deux esprits du loup 2/3 avec <b>Provocation</b>.\n<b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_248.gif",
 		"id": "EX1_248",
 		"name": "Feral Spirit",
 		"overload": 1,
@@ -26390,6 +27423,7 @@ var parseCardsText = {
 			"name": "Gazleu",
 			"text": "Chaque fois que vous lancez un sort à 1 cristal, ajoute un Méca aléatoire dans votre main."
 		},
+		"goldenImage": "GVG_117.gif",
 		"health": 6,
 		"id": "GVG_117",
 		"name": "Gazlowe",
@@ -26420,6 +27454,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Garde du temple anubisath"
 		},
+		"goldenImage": "LOEA04_24h.gif",
 		"health": 15,
 		"id": "LOEA04_24h",
 		"name": "Anubisath Temple Guard",
@@ -26437,6 +27472,7 @@ var parseCardsText = {
 			"name": "Mukla, tyran du val",
 			"text": "<b>Cri de guerre :</b> place\n2 bananes dans votre main."
 		},
+		"goldenImage": "OG_122.gif",
 		"health": 5,
 		"id": "OG_122",
 		"name": "Mukla, Tyrant of the Vale",
@@ -26456,6 +27492,7 @@ var parseCardsText = {
 			"name": "Fossoyeur",
 			"text": "Gagne +1 ATQ chaque fois que vous invoquez un serviteur avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "FP1_028.gif",
 		"health": 2,
 		"id": "FP1_028",
 		"name": "Undertaker",
@@ -26474,6 +27511,7 @@ var parseCardsText = {
 			"name": "Marteau de courroux",
 			"text": "Inflige $3 |4(point,points) de dégâts. Vous piochez une carte."
 		},
+		"goldenImage": "CS2_094.gif",
 		"id": "CS2_094",
 		"name": "Hammer of Wrath",
 		"playerClass": "Paladin",
@@ -26492,6 +27530,7 @@ var parseCardsText = {
 			"name": "Mangesort prodigieuse",
 			"text": "<b>Cri de guerre :</b> copie le pouvoir héroïque de votre adversaire."
 		},
+		"goldenImage": "AT_098.gif",
 		"health": 5,
 		"id": "AT_098",
 		"name": "Sideshow Spelleater",
@@ -26509,6 +27548,7 @@ var parseCardsText = {
 			"name": "Toxine de chardon sanglant",
 			"text": "Renvoie un serviteur allié dans votre main.\nIl coûte (2) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "OG_080c.gif",
 		"id": "OG_080c",
 		"name": "Bloodthistle Toxin",
 		"playerClass": "Rogue",
@@ -26538,6 +27578,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Totem incendiaire"
 		},
+		"goldenImage": "AT_132_SHAMANb.gif",
 		"health": 1,
 		"id": "AT_132_SHAMANb",
 		"name": "Searing Totem",
@@ -26550,6 +27591,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "LOEA15_1.gif",
 		"health": 30,
 		"id": "LOEA15_1",
 		"name": "Rafaam",
@@ -26581,6 +27623,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Totem incendiaire"
 		},
+		"goldenImage": "CS2_050.gif",
 		"health": 1,
 		"id": "CS2_050",
 		"name": "Searing Totem",
@@ -26599,6 +27642,7 @@ var parseCardsText = {
 			"name": "Engin de siège",
 			"text": "Chaque fois que vous gagnez de l’Armure, donne +1 ATQ à ce serviteur."
 		},
+		"goldenImage": "GVG_086.gif",
 		"health": 5,
 		"id": "GVG_086",
 		"name": "Siege Engine",
@@ -26619,6 +27663,7 @@ var parseCardsText = {
 			"name": "Inventrice gnome",
 			"text": "<b>Cri de guerre :</b> vous piochez une carte."
 		},
+		"goldenImage": "CS2_147.gif",
 		"health": 4,
 		"id": "CS2_147",
 		"name": "Gnomish Inventor",
@@ -26637,6 +27682,7 @@ var parseCardsText = {
 			"name": "Drain de vie",
 			"text": "Inflige $2 |4(point,points) de dégâts. Rend #2 |4(point,points) de vie à votre héros."
 		},
+		"goldenImage": "CS2_061.gif",
 		"id": "CS2_061",
 		"name": "Drain Life",
 		"playerClass": "Warlock",
@@ -26666,6 +27712,7 @@ var parseCardsText = {
 			"name": "Sœur rieuse",
 			"text": "Ne peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "DREAM_01.gif",
 		"health": 5,
 		"id": "DREAM_01",
 		"name": "Laughing Sister",
@@ -26679,6 +27726,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Atramédès"
 		},
+		"goldenImage": "BRMA16_1H.gif",
 		"health": 30,
 		"id": "BRMA16_1H",
 		"name": "Atramedes",
@@ -26695,6 +27743,7 @@ var parseCardsText = {
 			"name": "Piège de fléchettes",
 			"text": "<b>Secret :</b> inflige\n$5 |4(point,points) de dégâts à un adversaire aléatoire après qu’un <b>pouvoir héroïque</b> adverse est utilisé."
 		},
+		"goldenImage": "LOE_021.gif",
 		"id": "LOE_021",
 		"name": "Dart Trap",
 		"playerClass": "Hunter",
@@ -26713,6 +27762,7 @@ var parseCardsText = {
 			"name": "Succube",
 			"text": "<b>Cri de guerre :</b> vous défausse d’une carte aléatoire."
 		},
+		"goldenImage": "EX1_306.gif",
 		"health": 3,
 		"id": "EX1_306",
 		"name": "Succubus",
@@ -26732,6 +27782,7 @@ var parseCardsText = {
 			"name": "Outilleur des Dessoudeurs",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à tous les serviteurs dans votre main."
 		},
+		"goldenImage": "CFM_753.gif",
 		"health": 1,
 		"id": "CFM_753",
 		"name": "Grimestreet Outfitter",
@@ -26749,6 +27800,7 @@ var parseCardsText = {
 			"name": "Écluseur",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA01_4t.gif",
 		"health": 1,
 		"id": "BRMA01_4t",
 		"name": "Guzzler",
@@ -26767,6 +27819,7 @@ var parseCardsText = {
 			"name": "Chef du gang des diablotins",
 			"text": "Invoque un diablotin 1/1 chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "BRM_006.gif",
 		"health": 4,
 		"id": "BRM_006",
 		"name": "Imp Gang Boss",
@@ -26783,6 +27836,7 @@ var parseCardsText = {
 			"name": "Couronne de Kael’thas",
 			"text": "Inflige $10 |4(point,points) de dégâts répartis de façon aléatoire entre TOUS les personnages."
 		},
+		"goldenImage": "LOEA16_11.gif",
 		"id": "LOEA16_11",
 		"name": "Crown of Kael'thas",
 		"playerClass": "Neutral",
@@ -26799,6 +27853,7 @@ var parseCardsText = {
 			"name": "Poing de Jaraxxus",
 			"text": "Quand vous jouez ou que vous vous défaussez de cette carte, inflige $4 |4(point,points) de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "AT_022.gif",
 		"id": "AT_022",
 		"name": "Fist of Jaraxxus",
 		"playerClass": "Warlock",
@@ -26812,6 +27867,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ragnaros, seigneur du feu"
 		},
+		"goldenImage": "BRMA06_3.gif",
 		"health": 8,
 		"id": "BRMA06_3",
 		"name": "Ragnaros the Firelord",
@@ -26824,6 +27880,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gluth"
 		},
+		"goldenImage": "NAX12_01.gif",
 		"health": 30,
 		"id": "NAX12_01",
 		"name": "Gluth",
@@ -26839,6 +27896,7 @@ var parseCardsText = {
 			"name": "Tigre dent-de-sabre",
 			"text": "<b>Charge, Camouflage</b>"
 		},
+		"goldenImage": "OG_044c.gif",
 		"health": 2,
 		"id": "OG_044c",
 		"name": "Sabertooth Tiger",
@@ -26857,6 +27915,7 @@ var parseCardsText = {
 			"name": "Potion de folie",
 			"text": "Vous prenez le contrôle d’un serviteur adverse avec 2 ATQ ou moins jusqu’à la fin du tour."
 		},
+		"goldenImage": "CFM_603.gif",
 		"id": "CFM_603",
 		"name": "Potion of Madness",
 		"playerClass": "Priest",
@@ -26875,6 +27934,7 @@ var parseCardsText = {
 			"name": "Porte-flingue secoué",
 			"text": "<b>Râle d’agonie :</b> donne +2/+2 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_336.gif",
 		"health": 3,
 		"id": "CFM_336",
 		"name": "Shaky Zipgunner",
@@ -26909,6 +27969,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Juge Supérieur Mornepierre"
 		},
+		"goldenImage": "BRMA02_1.gif",
 		"health": 30,
 		"id": "BRMA02_1",
 		"name": "High Justice Grimstone",
@@ -26926,6 +27987,7 @@ var parseCardsText = {
 			"name": "Gnome mécanique",
 			"text": "<b>Râle d’agonie :</b> ajoute une carte <b>Pièce détachée</b> dans votre main."
 		},
+		"goldenImage": "GVG_082.gif",
 		"health": 1,
 		"id": "GVG_082",
 		"name": "Clockwork Gnome",
@@ -26974,6 +28036,7 @@ var parseCardsText = {
 			"name": "Élémentaire de roche",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMC_99e.gif",
 		"health": 3,
 		"id": "BRMC_99e",
 		"name": "Rock Elemental",
@@ -26992,6 +28055,7 @@ var parseCardsText = {
 			"name": "Vaillant des Pitons-du-Tonnerre",
 			"text": "<b>Exaltation :</b> donne +2 ATQ à vos totems."
 		},
+		"goldenImage": "AT_049.gif",
 		"health": 6,
 		"id": "AT_049",
 		"name": "Thunder Bluff Valiant",
@@ -27021,6 +28085,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Kel’Thuzad"
 		},
+		"goldenImage": "NAX15_01.gif",
 		"health": 30,
 		"id": "NAX15_01",
 		"name": "Kel'Thuzad",
@@ -27038,6 +28103,7 @@ var parseCardsText = {
 			"name": "Goule ravageuse",
 			"text": "<b>Cri de guerre :</b> inflige\n1 point de dégâts à tous les autres serviteurs."
 		},
+		"goldenImage": "OG_149.gif",
 		"health": 3,
 		"id": "OG_149",
 		"name": "Ravaging Ghoul",
@@ -27086,6 +28152,7 @@ var parseCardsText = {
 			"name": "Charge",
 			"text": "Confère <b>Charge</b> à un serviteur allié. Il ne peut pas attaquer de héros pendant ce tour."
 		},
+		"goldenImage": "CS2_103.gif",
 		"id": "CS2_103",
 		"name": "Charge",
 		"playerClass": "Warrior",
@@ -27105,6 +28172,7 @@ var parseCardsText = {
 			"name": "Panthère de la jungle",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "EX1_017.gif",
 		"health": 2,
 		"id": "EX1_017",
 		"name": "Jungle Panther",
@@ -27141,6 +28209,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem chancelant"
 		},
+		"goldenImage": "LOEA07_14.gif",
 		"health": 6,
 		"id": "LOEA07_14",
 		"name": "Lumbering Golem",
@@ -27203,6 +28272,7 @@ var parseCardsText = {
 			"name": "Choix de Velen",
 			"text": "Donne +2/+4 et <b>+1 aux dégâts des sorts</b> à un serviteur."
 		},
+		"goldenImage": "GVG_010.gif",
 		"id": "GVG_010",
 		"name": "Velen's Chosen",
 		"playerClass": "Priest",
@@ -27219,6 +28289,7 @@ var parseCardsText = {
 			"name": "Destroy All Heroes",
 			"text": "Destroy all heroes."
 		},
+		"goldenImage": "XXX_023.gif",
 		"id": "XXX_023",
 		"name": "Destroy All Heroes",
 		"playerClass": "Neutral",
@@ -27236,6 +28307,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Char araignée"
 		},
+		"goldenImage": "GVG_044.gif",
 		"health": 4,
 		"id": "GVG_044",
 		"name": "Spider Tank",
@@ -27267,6 +28339,7 @@ var parseCardsText = {
 			"name": "Trait de l’ombre",
 			"text": "Inflige $4 |4(point,points) de dégâts à un serviteur."
 		},
+		"goldenImage": "CS2_057.gif",
 		"id": "CS2_057",
 		"name": "Shadow Bolt",
 		"playerClass": "Warlock",
@@ -27285,6 +28358,7 @@ var parseCardsText = {
 			"name": "Maître des chevaux de guerre",
 			"text": "Vos recrues de la Main d’argent ont +1 ATQ."
 		},
+		"goldenImage": "AT_075.gif",
 		"health": 4,
 		"id": "AT_075",
 		"name": "Warhorse Trainer",
@@ -27302,6 +28376,7 @@ var parseCardsText = {
 			"name": "Sang-royal",
 			"text": "Vous piochez 2 cartes."
 		},
+		"goldenImage": "CFM_621t22.gif",
 		"id": "CFM_621t22",
 		"name": "Kingsblood",
 		"playerClass": "Neutral",
@@ -27332,6 +28407,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Druidesse de la Flamme"
 		},
+		"goldenImage": "BRM_010t2.gif",
 		"health": 5,
 		"id": "BRM_010t2",
 		"name": "Druid of the Flame",
@@ -27350,6 +28426,7 @@ var parseCardsText = {
 			"name": "Aviana",
 			"text": "Vos serviteurs coûtent\n(1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_045.gif",
 		"health": 5,
 		"id": "AT_045",
 		"name": "Aviana",
@@ -27382,6 +28459,7 @@ var parseCardsText = {
 			"name": "Lardeur TOUT CASSER !",
 			"text": "Inflige 4 points de dégâts."
 		},
+		"goldenImage": "TU4a_004.gif",
 		"id": "TU4a_004",
 		"name": "Hogger SMASH!",
 		"playerClass": "Neutral",
@@ -27398,6 +28476,7 @@ var parseCardsText = {
 			"name": "Robin Fredericksen",
 			"text": "<b>Cri de guerre :</b> si vous n’avez pas d’autre Eric sur le champ de bataille, renomme cette carte « Eric »."
 		},
+		"goldenImage": "CRED_38.gif",
 		"health": 4,
 		"id": "CRED_38",
 		"name": "Robin Fredericksen",
@@ -27448,6 +28527,7 @@ var parseCardsText = {
 			"name": "Journaliste intrépide",
 			"text": "Gagne +1/+1 chaque fois que votre adversaire pioche une carte."
 		},
+		"goldenImage": "CFM_851.gif",
 		"health": 3,
 		"id": "CFM_851",
 		"name": "Daring Reporter",
@@ -27479,6 +28559,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Diablotin"
 		},
+		"goldenImage": "EX1_598.gif",
 		"health": 1,
 		"id": "EX1_598",
 		"name": "Imp",
@@ -27497,6 +28578,7 @@ var parseCardsText = {
 			"name": "Soldat de Comté-de-l’Or",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS1_042.gif",
 		"health": 2,
 		"id": "CS1_042",
 		"name": "Goldshire Footman",
@@ -27515,6 +28597,7 @@ var parseCardsText = {
 			"name": "Feux follets funestes",
 			"text": "<b>Choix des armes :</b> invoque sept feux follets 1/1 ou donne +2/+2 à vos serviteurs."
 		},
+		"goldenImage": "OG_195.gif",
 		"id": "OG_195",
 		"name": "Wisps of the Old Gods",
 		"playerClass": "Druid",
@@ -27532,6 +28615,7 @@ var parseCardsText = {
 			"name": "Tempête de foudre",
 			"text": "Inflige $2 à $3 points de dégâts à tous les serviteurs adverses. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_259.gif",
 		"id": "EX1_259",
 		"name": "Lightning Storm",
 		"overload": 1,
@@ -27593,6 +28677,7 @@ var parseCardsText = {
 			"name": "Baguette du Soleil",
 			"text": "<b>Râle d’agonie :</b> remet cette carte à votre adversaire."
 		},
+		"goldenImage": "LOEA01_11h.gif",
 		"health": 5,
 		"id": "LOEA01_11h",
 		"name": "Rod of the Sun",
@@ -27611,6 +28696,7 @@ var parseCardsText = {
 			"name": "Marshal malhonnête",
 			"text": "<b>Râle d’agonie :</b> vous piochez une carte si ce serviteur a 2 ATQ ou plus."
 		},
+		"goldenImage": "CFM_759.gif",
 		"health": 2,
 		"id": "CFM_759",
 		"name": "Meanstreet Marshal",
@@ -27629,6 +28715,7 @@ var parseCardsText = {
 			"name": "Mot de pouvoir : Tentacules",
 			"text": "Donne +2/+6 à un serviteur."
 		},
+		"goldenImage": "OG_094.gif",
 		"id": "OG_094",
 		"name": "Power Word: Tentacles",
 		"playerClass": "Priest",
@@ -27644,6 +28731,7 @@ var parseCardsText = {
 			"name": "Banane déviante",
 			"text": "Inverse l’Attaque et la Vie d’un serviteur."
 		},
+		"goldenImage": "TB_007.gif",
 		"id": "TB_007",
 		"name": "Deviate Banana",
 		"playerClass": "Neutral",
@@ -27659,6 +28747,7 @@ var parseCardsText = {
 			"name": "Kyle Harrison",
 			"text": "<i>3 cristaux pour un 5/4 ? Ça c’est une affaire !</i>"
 		},
+		"goldenImage": "CRED_05.gif",
 		"health": 4,
 		"id": "CRED_05",
 		"name": "Kyle Harrison",
@@ -27673,6 +28762,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Grobbulus"
 		},
+		"goldenImage": "NAX11_01H.gif",
 		"health": 45,
 		"id": "NAX11_01H",
 		"name": "Grobbulus",
@@ -27690,6 +28780,7 @@ var parseCardsText = {
 			"name": "Garde-courroux",
 			"text": "Chaque fois que ce serviteur subit des dégâts, inflige le même montant de dégâts à votre héros."
 		},
+		"goldenImage": "AT_026.gif",
 		"health": 3,
 		"id": "AT_026",
 		"name": "Wrathguard",
@@ -27707,6 +28798,7 @@ var parseCardsText = {
 			"name": "Jeune recrue spectrale",
 			"text": "Au début de votre tour, inflige 1 point de dégâts à votre héros."
 		},
+		"goldenImage": "NAX8_03t.gif",
 		"health": 2,
 		"id": "NAX8_03t",
 		"name": "Spectral Trainee",
@@ -27725,6 +28817,7 @@ var parseCardsText = {
 			"name": "Sensei virmen",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à une Bête alliée."
 		},
+		"goldenImage": "CFM_816.gif",
 		"health": 5,
 		"id": "CFM_816",
 		"name": "Virmen Sensei",
@@ -27744,6 +28837,7 @@ var parseCardsText = {
 			"name": "Anomalus",
 			"text": "<b>Râle d’agonie :</b> inflige\n8 points de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "OG_120.gif",
 		"health": 6,
 		"id": "OG_120",
 		"name": "Anomalus",
@@ -27777,6 +28871,7 @@ var parseCardsText = {
 			"name": "Jeune prêtresse",
 			"text": "À la fin de votre tour, donne +1 PV à un autre serviteur allié aléatoire."
 		},
+		"goldenImage": "EX1_004.gif",
 		"health": 1,
 		"id": "EX1_004",
 		"name": "Young Priestess",
@@ -27810,6 +28905,7 @@ var parseCardsText = {
 			"name": "Tir réflexe",
 			"text": "Inflige $3 |4(point,points) de dégâts. Vous piochez une carte si votre main est vide."
 		},
+		"goldenImage": "BRM_013.gif",
 		"id": "BRM_013",
 		"name": "Quick Shot",
 		"playerClass": "Hunter",
@@ -27838,6 +28934,7 @@ var parseCardsText = {
 			"name": "Prototype chromatique",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA17_7.gif",
 		"health": 4,
 		"id": "BRMA17_7",
 		"name": "Chromatic Prototype",
@@ -27870,6 +28967,7 @@ var parseCardsText = {
 			"name": "Aspirante de Darnassus",
 			"text": "<b>Cri de guerre :</b> gagne un cristal de mana vide.\n<b>Râle d’agonie :</b> perd un cristal de mana."
 		},
+		"goldenImage": "AT_038.gif",
 		"health": 3,
 		"id": "AT_038",
 		"name": "Darnassus Aspirant",
@@ -27887,6 +28985,7 @@ var parseCardsText = {
 			"name": "Squelette",
 			"text": "<b></b>"
 		},
+		"goldenImage": "skele11.gif",
 		"health": 1,
 		"id": "skele11",
 		"name": "Skeleton",
@@ -27905,6 +29004,7 @@ var parseCardsText = {
 			"name": "Marque du fauve",
 			"text": "Confère <b>Provocation</b> et +2/+2 à un serviteur.<i> (+2 ATQ/+2 PV)</i>"
 		},
+		"goldenImage": "CS2_009.gif",
 		"id": "CS2_009",
 		"name": "Mark of the Wild",
 		"playerClass": "Druid",
@@ -27922,6 +29022,7 @@ var parseCardsText = {
 			"name": "Esprit ancestral",
 			"text": "Confère à un serviteur « <b>Râle d’agonie :</b> réinvoque ce serviteur. »"
 		},
+		"goldenImage": "CS2_038.gif",
 		"id": "CS2_038",
 		"name": "Ancestral Spirit",
 		"playerClass": "Shaman",
@@ -27954,6 +29055,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t09.gif",
 		"health": 9,
 		"id": "CFM_712_t09",
 		"name": "Jade Golem",
@@ -27971,6 +29073,7 @@ var parseCardsText = {
 			"name": "Bombardier cinglé",
 			"text": "<b>Cri de guerre :</b> inflige 6 points de dégâts répartis de façon aléatoire entre tous les autres personnages."
 		},
+		"goldenImage": "GVG_090.gif",
 		"health": 4,
 		"id": "GVG_090",
 		"name": "Madder Bomber",
@@ -27990,6 +29093,7 @@ var parseCardsText = {
 			"name": "Porte-bouclier",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_405.gif",
 		"health": 4,
 		"id": "EX1_405",
 		"name": "Shieldbearer",
@@ -28009,6 +29113,7 @@ var parseCardsText = {
 			"name": "N’Zoth le corrupteur",
 			"text": "<b>Cri de guerre :</b> invoque vos serviteurs avec <b>Râle d’agonie</b> morts pendant cette partie."
 		},
+		"goldenImage": "OG_133.gif",
 		"health": 7,
 		"id": "OG_133",
 		"name": "N'Zoth, the Corruptor",
@@ -28028,6 +29133,7 @@ var parseCardsText = {
 			"name": "Furtif sombrefer",
 			"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts à tous les serviteurs adverses qui ne sont pas blessés."
 		},
+		"goldenImage": "BRM_008.gif",
 		"health": 3,
 		"id": "BRM_008",
 		"name": "Dark Iron Skulker",
@@ -28047,6 +29153,7 @@ var parseCardsText = {
 			"name": "Soigneuse du Crépuscule",
 			"text": "<b>Cri de guerre :</b> rend 10 PV\nà votre héros si votre\nC’Thun a au moins\n10 Attaque."
 		},
+		"goldenImage": "OG_096.gif",
 		"health": 5,
 		"id": "OG_096",
 		"name": "Twilight Darkmender",
@@ -28064,6 +29171,7 @@ var parseCardsText = {
 			"name": "Guerrier tenace",
 			"text": "<b>Râle d’agonie :</b> invoque un guerrier spectral pour votre adversaire."
 		},
+		"goldenImage": "NAX8_04.gif",
 		"health": 4,
 		"id": "NAX8_04",
 		"name": "Unrelenting Warrior",
@@ -28095,6 +29203,7 @@ var parseCardsText = {
 			"name": "Dame Blaumeux",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_02.gif",
 		"health": 7,
 		"id": "NAX9_02",
 		"name": "Lady Blaumeux",
@@ -28114,6 +29223,7 @@ var parseCardsText = {
 			"name": "Shaku, le Collectionneur",
 			"text": "<b>Camouflage</b>. Chaque fois que ce serviteur attaque, ajoute une carte aléatoire dans votre main <i>(de la classe de votre adversaire).</i>"
 		},
+		"goldenImage": "CFM_781.gif",
 		"health": 3,
 		"id": "CFM_781",
 		"name": "Shaku, the Collector",
@@ -28147,6 +29257,7 @@ var parseCardsText = {
 			"name": "Sylvenier du Bosquet",
 			"text": "<b>Choix des armes :</b> donne à chaque joueur un cristal de mana ou chaque joueur pioche une carte."
 		},
+		"goldenImage": "GVG_032.gif",
 		"health": 4,
 		"id": "GVG_032",
 		"name": "Grove Tender",
@@ -28181,6 +29292,7 @@ var parseCardsText = {
 			"name": "Maîtresse de Douleur",
 			"text": "Chaque fois que ce serviteur inflige des dégâts, rend l’équivalent sous forme de PV à votre héros."
 		},
+		"goldenImage": "GVG_018.gif",
 		"health": 4,
 		"id": "GVG_018",
 		"name": "Mistress of Pain",
@@ -28229,6 +29341,7 @@ var parseCardsText = {
 			"name": "Officier chanteguerre",
 			"text": "Vos serviteurs avec <b>Charge</b> ont +1 ATQ."
 		},
+		"goldenImage": "EX1_084.gif",
 		"health": 3,
 		"id": "EX1_084",
 		"name": "Warsong Commander",
@@ -28247,6 +29360,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Sanglier de pénombre"
 		},
+		"goldenImage": "OG_326.gif",
 		"health": 1,
 		"id": "OG_326",
 		"name": "Duskboar",
@@ -28265,6 +29379,7 @@ var parseCardsText = {
 			"name": "Golem d’anima",
 			"text": "À la fin de chaque tour, détruit ce serviteur si c’est le seul que vous avez."
 		},
+		"goldenImage": "GVG_077.gif",
 		"health": 9,
 		"id": "GVG_077",
 		"name": "Anima Golem",
@@ -28283,6 +29398,7 @@ var parseCardsText = {
 			"name": "Nourrir les poissons",
 			"text": "Inflige $3 points de dégâts à tous les serviteurs blessés."
 		},
+		"goldenImage": "CFM_716.gif",
 		"id": "CFM_716",
 		"name": "Sleep with the Fishes",
 		"playerClass": "Warrior",
@@ -28301,6 +29417,7 @@ var parseCardsText = {
 			"name": "Ancien du savoir",
 			"text": "<b>Choix des armes :</b> rend 5 PV ou vous piochez une carte."
 		},
+		"goldenImage": "NEW1_008.gif",
 		"health": 5,
 		"id": "NEW1_008",
 		"name": "Ancient of Lore",
@@ -28315,6 +29432,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Thaddius"
 		},
+		"goldenImage": "NAX13_01H.gif",
 		"health": 45,
 		"id": "NAX13_01H",
 		"name": "Thaddius",
@@ -28346,6 +29464,7 @@ var parseCardsText = {
 			"name": "Véritable chef de guerre",
 			"text": "Détruit un serviteur légendaire."
 		},
+		"goldenImage": "BRMA09_6.gif",
 		"id": "BRMA09_6",
 		"name": "The True Warchief",
 		"playerClass": "Neutral",
@@ -28362,6 +29481,7 @@ var parseCardsText = {
 			"name": "Effigie",
 			"text": "<b>Secret :</b> quand un serviteur allié meurt, invoque un serviteur aléatoire de même coût."
 		},
+		"goldenImage": "AT_002.gif",
 		"id": "AT_002",
 		"name": "Effigy",
 		"playerClass": "Mage",
@@ -28378,6 +29498,7 @@ var parseCardsText = {
 			"name": "Potion supérieure",
 			"text": "Crée un sort coûtant 5 |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_621t12.gif",
 		"id": "CFM_621t12",
 		"name": "Greater Potion",
 		"playerClass": "Neutral",
@@ -28393,6 +29514,7 @@ var parseCardsText = {
 			"name": "AI Buddy - All Charge!",
 			"text": "Spawn into play to give all minions <b>Charge</b>."
 		},
+		"goldenImage": "XXX_095.gif",
 		"health": 1,
 		"id": "XXX_095",
 		"name": "AI Buddy - All Charge!",
@@ -28410,6 +29532,7 @@ var parseCardsText = {
 			"name": "Cache d’armes",
 			"text": "<b>Secret :</b> une fois que votre adversaire a joué un serviteur, donne +2/+2 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_026.gif",
 		"id": "CFM_026",
 		"name": "Hidden Cache",
 		"playerClass": "Hunter",
@@ -28441,6 +29564,7 @@ var parseCardsText = {
 			"name": "Main de protection",
 			"text": "Confère <b>Bouclier divin</b> à un serviteur."
 		},
+		"goldenImage": "EX1_371.gif",
 		"id": "EX1_371",
 		"name": "Hand of Protection",
 		"playerClass": "Paladin",
@@ -28456,6 +29580,7 @@ var parseCardsText = {
 			"name": "Enable for Attack",
 			"text": "Give a character Charge and make him able to attack!"
 		},
+		"goldenImage": "XXX_007.gif",
 		"id": "XXX_007",
 		"name": "Enable for Attack",
 		"playerClass": "Neutral",
@@ -28487,6 +29612,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Apprenti pourpre"
 		},
+		"goldenImage": "NEW1_026t.gif",
 		"health": 1,
 		"id": "NEW1_026t",
 		"name": "Violet Apprentice",
@@ -28505,6 +29631,7 @@ var parseCardsText = {
 			"name": "Garde de Lune-d’argent",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_023.gif",
 		"health": 3,
 		"id": "EX1_023",
 		"name": "Silvermoon Guardian",
@@ -28538,6 +29665,7 @@ var parseCardsText = {
 			"name": "Poulet furieux",
 			"text": "<b>Accès de rage :</b> +5 ATQ."
 		},
+		"goldenImage": "EX1_009.gif",
 		"health": 1,
 		"id": "EX1_009",
 		"name": "Angry Chicken",
@@ -28557,6 +29685,7 @@ var parseCardsText = {
 			"name": "Empereur jumeau Vek’lor",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> invoque un autre empereur si votre C’Thun a au moins 10 Attaque."
 		},
+		"goldenImage": "OG_131.gif",
 		"health": 6,
 		"id": "OG_131",
 		"name": "Twin Emperor Vek'lor",
@@ -28576,6 +29705,7 @@ var parseCardsText = {
 			"name": "Nat le sombre pêcheur",
 			"text": "Au début de son tour, votre adversaire a 50% de chances de piocher une carte supplémentaire."
 		},
+		"goldenImage": "OG_338.gif",
 		"health": 4,
 		"id": "OG_338",
 		"name": "Nat, the Darkfisher",
@@ -28609,6 +29739,7 @@ var parseCardsText = {
 			"name": "Matelot des mers du Sud",
 			"text": "A <b>Charge</b> tant que vous êtes équipé d’une arme."
 		},
+		"goldenImage": "CS2_146.gif",
 		"health": 1,
 		"id": "CS2_146",
 		"name": "Southsea Deckhand",
@@ -28639,6 +29770,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Général Drakkisath"
 		},
+		"goldenImage": "BRMA08_1H.gif",
 		"health": 50,
 		"id": "BRMA08_1H",
 		"name": "General Drakkisath",
@@ -28651,6 +29783,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Maloriak"
 		},
+		"goldenImage": "BRMA15_1.gif",
 		"health": 30,
 		"id": "BRMA15_1",
 		"name": "Maloriak",
@@ -28680,6 +29813,7 @@ var parseCardsText = {
 			"name": "Marque de la nature",
 			"text": "+4 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_155b.gif",
 		"id": "EX1_155b",
 		"name": "Mark of Nature",
 		"playerClass": "Druid",
@@ -28696,6 +29830,7 @@ var parseCardsText = {
 			"name": "Explosion de lave",
 			"text": "Inflige $5 |4(point,points) de dégâts.\n<b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_241.gif",
 		"id": "EX1_241",
 		"name": "Lava Burst",
 		"overload": 1,
@@ -28746,6 +29881,7 @@ var parseCardsText = {
 			"name": "Videur sombrefer",
 			"text": "Gagne toujours à la baston."
 		},
+		"goldenImage": "BRMA01_3.gif",
 		"health": 8,
 		"id": "BRMA01_3",
 		"name": "Dark Iron Bouncer",
@@ -28761,6 +29897,7 @@ var parseCardsText = {
 			"name": "Draw 3 Cards",
 			"text": "Draw 3 cards."
 		},
+		"goldenImage": "XXX_017.gif",
 		"id": "XXX_017",
 		"name": "Draw 3 Cards",
 		"playerClass": "Neutral",
@@ -28778,6 +29915,7 @@ var parseCardsText = {
 			"name": "Image miroir",
 			"text": "Invoque deux serviteurs 0/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "CS2_027.gif",
 		"id": "CS2_027",
 		"name": "Mirror Image",
 		"playerClass": "Mage",
@@ -28795,6 +29933,7 @@ var parseCardsText = {
 			"name": "Flammes sacrées",
 			"text": "Inflige $5 points de dégâts. Rend #5 PV à votre héros."
 		},
+		"goldenImage": "EX1_624.gif",
 		"id": "EX1_624",
 		"name": "Holy Fire",
 		"playerClass": "Priest",
@@ -28812,6 +29951,7 @@ var parseCardsText = {
 			"name": "Fusion démoniaque",
 			"text": "Donne +3/+3 à un démon et un cristal de mana à votre adversaire."
 		},
+		"goldenImage": "AT_024.gif",
 		"id": "AT_024",
 		"name": "Demonfuse",
 		"playerClass": "Warlock",
@@ -28831,6 +29971,7 @@ var parseCardsText = {
 			"name": "Lance-piranha",
 			"text": "Après que votre héros a attaqué, invoque un piranha 1/1."
 		},
+		"goldenImage": "CFM_337.gif",
 		"id": "CFM_337",
 		"name": "Piranha Launcher",
 		"playerClass": "Hunter",
@@ -28845,6 +29986,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Medivh"
 		},
+		"goldenImage": "HERO_08a.gif",
 		"health": 30,
 		"id": "HERO_08a",
 		"name": "Medivh",
@@ -28877,6 +30019,7 @@ var parseCardsText = {
 			"name": "Incante-âme démente",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur allié et en place une copie dans votre deck."
 		},
+		"goldenImage": "CFM_660.gif",
 		"health": 4,
 		"id": "CFM_660",
 		"name": "Manic Soulcaster",
@@ -28897,6 +30040,7 @@ var parseCardsText = {
 			"name": "Chouette bec-de-fer",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "CS2_203.gif",
 		"health": 1,
 		"id": "CS2_203",
 		"name": "Ironbeak Owl",
@@ -28915,6 +30059,7 @@ var parseCardsText = {
 			"name": "Crépitement",
 			"text": "Inflige $3 à $6 points de dégâts. <b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "GVG_038.gif",
 		"id": "GVG_038",
 		"name": "Crackle",
 		"overload": 1,
@@ -28932,6 +30077,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t14.gif",
 		"health": 14,
 		"id": "CFM_712_t14",
 		"name": "Jade Golem",
@@ -28981,6 +30127,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Trogg en chasse"
 		},
+		"goldenImage": "LOEA07_09.gif",
 		"health": 6,
 		"id": "LOEA07_09",
 		"name": "Chasing Trogg",
@@ -29045,6 +30192,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t01.gif",
 		"health": 1,
 		"id": "CFM_712_t01",
 		"name": "Jade Golem",
@@ -29074,6 +30222,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dragonnet noir"
 		},
+		"goldenImage": "BRM_022t.gif",
 		"health": 1,
 		"id": "BRM_022t",
 		"name": "Black Whelp",
@@ -29091,6 +30240,7 @@ var parseCardsText = {
 			"name": "Morsure",
 			"text": "Donne +4 ATQ au héros pendant ce tour. +4 points d’armure."
 		},
+		"goldenImage": "EX1_570.gif",
 		"id": "EX1_570",
 		"name": "Bite",
 		"playerClass": "Druid",
@@ -29136,6 +30286,7 @@ var parseCardsText = {
 			"name": "Michael Schweitzer",
 			"text": "<b>C-C-C-COMBO :</b> détruit un serviteur."
 		},
+		"goldenImage": "CRED_10.gif",
 		"health": 2,
 		"id": "CRED_10",
 		"name": "Michael Schweitzer",
@@ -29214,6 +30365,7 @@ var parseCardsText = {
 			"name": "Nozdormu",
 			"text": "Les joueurs n’ont que 15 secondes pour jouer leur tour."
 		},
+		"goldenImage": "EX1_560.gif",
 		"health": 8,
 		"id": "EX1_560",
 		"name": "Nozdormu",
@@ -29228,6 +30380,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Anub’Rekhan"
 		},
+		"goldenImage": "NAX1_01.gif",
 		"health": 30,
 		"id": "NAX1_01",
 		"name": "Anub'Rekhan",
@@ -29245,6 +30398,7 @@ var parseCardsText = {
 			"name": "Le clan des rats",
 			"text": "<b>Râle d’agonie :</b> invoque un nombre de rats 1/1 égal à l’attaque de ce serviteur."
 		},
+		"goldenImage": "CFM_316.gif",
 		"health": 2,
 		"id": "CFM_316",
 		"name": "Rat Pack",
@@ -29276,6 +30430,7 @@ var parseCardsText = {
 			"name": "Image miroir",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_mirror.gif",
 		"health": 2,
 		"id": "CS2_mirror",
 		"name": "Mirror Image",
@@ -29292,6 +30447,7 @@ var parseCardsText = {
 			"name": "Je suis murloc",
 			"text": "Invoque trois, quatre ou cinq murlocs 1/1."
 		},
+		"goldenImage": "PRO_001a.gif",
 		"id": "PRO_001a",
 		"name": "I Am Murloc",
 		"playerClass": "Neutral",
@@ -29309,6 +30465,7 @@ var parseCardsText = {
 			"name": "Trogg des tunnels",
 			"text": "Gagne +1 ATQ par cristal de mana verrouillé chaque fois que vous êtes en  <b>Surcharge</b>."
 		},
+		"goldenImage": "LOE_018.gif",
 		"health": 3,
 		"id": "LOE_018",
 		"name": "Tunnel Trogg",
@@ -29329,6 +30486,7 @@ var parseCardsText = {
 			"name": "Dompteur de béliers",
 			"text": "<b>Cri de guerre :</b> si vous avez une Bête, invoque une Bête aléatoire."
 		},
+		"goldenImage": "AT_010.gif",
 		"health": 3,
 		"id": "AT_010",
 		"name": "Ram Wrangler",
@@ -29361,6 +30519,7 @@ var parseCardsText = {
 			"name": "Jason Chayes",
 			"text": "<b>Accès de rage :</b> non, on blague ! Il ne s’énerve jamais."
 		},
+		"goldenImage": "CRED_01.gif",
 		"health": 6,
 		"id": "CRED_01",
 		"name": "Jason Chayes",
@@ -29380,6 +30539,7 @@ var parseCardsText = {
 			"name": "Gargouille peau-de-pierre",
 			"text": "Au début de votre tour, rend tous ses points de vie à ce serviteur."
 		},
+		"goldenImage": "FP1_027.gif",
 		"health": 4,
 		"id": "FP1_027",
 		"name": "Stoneskin Gargoyle",
@@ -29399,6 +30559,7 @@ var parseCardsText = {
 			"name": "Mage du Kirin Tor",
 			"text": "<b>Cri de guerre :</b> le prochain <b>Secret</b> que vous jouez pendant ce tour coûte (0) |4(cristal,cristaux)."
 		},
+		"goldenImage": "EX1_612.gif",
 		"health": 3,
 		"id": "EX1_612",
 		"name": "Kirin Tor Mage",
@@ -29418,6 +30579,7 @@ var parseCardsText = {
 			"name": "Méca-téléporteur",
 			"text": "Vos Méca coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "GVG_006.gif",
 		"health": 3,
 		"id": "GVG_006",
 		"name": "Mechwarper",
@@ -29452,6 +30614,7 @@ var parseCardsText = {
 			"name": "Chef hurane vêtue de cuir",
 			"text": "<b>Cri de guerre :</b> gagne <b>Charge</b> si votre adversaire a 6 cartes ou plus dans sa main."
 		},
+		"goldenImage": "CFM_810.gif",
 		"health": 6,
 		"id": "CFM_810",
 		"name": "Leatherclad Hogleader",
@@ -29471,6 +30634,7 @@ var parseCardsText = {
 			"name": "Chevalier des étendues sauvages",
 			"text": "Chaque fois que vous invoquez une Bête, réduit le coût de cette carte de (1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_041.gif",
 		"health": 6,
 		"id": "AT_041",
 		"name": "Knight of the Wild",
@@ -29490,6 +30654,7 @@ var parseCardsText = {
 			"name": "Sorcière des mers naga",
 			"text": "Vos cartes coûtent\n(5) |4(cristal,cristaux) de mana."
 		},
+		"goldenImage": "LOE_038.gif",
 		"health": 5,
 		"id": "LOE_038",
 		"name": "Naga Sea Witch",
@@ -29523,6 +30688,7 @@ var parseCardsText = {
 			"name": "Robot de soins corrompu",
 			"text": "<b>Râle d’agonie :</b> rend 8 PV au héros adverse."
 		},
+		"goldenImage": "OG_147.gif",
 		"health": 6,
 		"id": "OG_147",
 		"name": "Corrupted Healbot",
@@ -29553,6 +30719,7 @@ var parseCardsText = {
 			"name": "Forme de lion",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "AT_042a.gif",
 		"id": "AT_042a",
 		"name": "Lion Form",
 		"playerClass": "Druid",
@@ -29569,6 +30736,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t23.gif",
 		"health": 23,
 		"id": "CFM_712_t23",
 		"name": "Jade Golem",
@@ -29583,6 +30751,7 @@ var parseCardsText = {
 			"name": "Nuée de sauterelles",
 			"text": "Inflige $3 |4(point,points) de dégâts à tous les serviteurs adverses. Rend #3 |4(point,points) de vie à votre héros."
 		},
+		"goldenImage": "NAX1_05.gif",
 		"id": "NAX1_05",
 		"name": "Locust Swarm",
 		"playerClass": "Neutral",
@@ -29599,6 +30768,7 @@ var parseCardsText = {
 			"name": "Faveur divine",
 			"text": "Vous piochez des cartes jusqu’à en avoir autant en main que votre adversaire."
 		},
+		"goldenImage": "EX1_349.gif",
 		"id": "EX1_349",
 		"name": "Divine Favor",
 		"playerClass": "Paladin",
@@ -29617,6 +30787,7 @@ var parseCardsText = {
 			"name": "Ninja ogre",
 			"text": "<b>Camouflage</b>\n50% de chance d’attaquer le mauvais adversaire."
 		},
+		"goldenImage": "GVG_088.gif",
 		"health": 6,
 		"id": "GVG_088",
 		"name": "Ogre Ninja",
@@ -29637,6 +30808,7 @@ var parseCardsText = {
 			"name": "Nervi de la KapitalRisk",
 			"text": "Vos serviteurs coûtent (3) cristaux de plus."
 		},
+		"goldenImage": "CS2_227.gif",
 		"health": 6,
 		"id": "CS2_227",
 		"name": "Venture Co. Mercenary",
@@ -29655,6 +30827,7 @@ var parseCardsText = {
 			"name": "Idole corbeau",
 			"text": "<b>Choix des armes :</b>\n<b>découvre</b> un serviteur ou un sort."
 		},
+		"goldenImage": "LOE_115.gif",
 		"id": "LOE_115",
 		"name": "Raven Idol",
 		"playerClass": "Druid",
@@ -29673,6 +30846,7 @@ var parseCardsText = {
 			"name": "Golem des moissons",
 			"text": "<b>Râle d’agonie :</b> invoque un golem endommagé 2/1."
 		},
+		"goldenImage": "EX1_556.gif",
 		"health": 3,
 		"id": "EX1_556",
 		"name": "Harvest Golem",
@@ -29692,6 +30866,7 @@ var parseCardsText = {
 			"name": "Jette-sorts",
 			"text": "<b>Cri de guerre :</b> ajoute un sort aléatoire dans la main de chaque joueur."
 		},
+		"goldenImage": "AT_007.gif",
 		"health": 4,
 		"id": "AT_007",
 		"name": "Spellslinger",
@@ -29708,6 +30883,7 @@ var parseCardsText = {
 			"name": "Damage 5",
 			"text": "Deal $5 damage."
 		},
+		"goldenImage": "XXX_002.gif",
 		"id": "XXX_002",
 		"name": "Damage 5",
 		"playerClass": "Neutral",
@@ -29725,6 +30901,7 @@ var parseCardsText = {
 			"name": "Potion de cristal explosif",
 			"text": "Détruit un serviteur et un de vos cristaux de mana."
 		},
+		"goldenImage": "CFM_608.gif",
 		"id": "CFM_608",
 		"name": "Blastcrystal Potion",
 		"playerClass": "Warlock",
@@ -29741,6 +30918,7 @@ var parseCardsText = {
 			"name": "Chaudron",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> libère Sir Finley et arrête l’attaque naga !"
 		},
+		"goldenImage": "LOEA09_7.gif",
 		"health": 5,
 		"id": "LOEA09_7",
 		"name": "Cauldron",
@@ -29784,6 +30962,7 @@ var parseCardsText = {
 			"name": "Bombe vivante",
 			"text": "Choisissez un serviteur adverse. Inflige $10 |4(point,points) de dégâts à tous les adversaires s’il survit jusqu’à votre prochain tour."
 		},
+		"goldenImage": "BRMA05_3H.gif",
 		"id": "BRMA05_3H",
 		"name": "Living Bomb",
 		"playerClass": "Neutral",
@@ -29797,6 +30976,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Alleria Coursevent"
 		},
+		"goldenImage": "HERO_05a.gif",
 		"health": 30,
 		"id": "HERO_05a",
 		"name": "Alleria Windrunner",
@@ -29826,6 +31006,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Perroquet mécanique"
 		},
+		"goldenImage": "LOEA07_25.gif",
 		"health": 6,
 		"id": "LOEA07_25",
 		"name": "Mechanical Parrot",
@@ -29840,6 +31021,7 @@ var parseCardsText = {
 			"name": "Bombe vivante",
 			"text": "Choisissez un serviteur adverse. Inflige $5 |4(point,points) de dégâts à tous les adversaires s’il survit jusqu’à votre prochain tour."
 		},
+		"goldenImage": "BRMC_100.gif",
 		"id": "BRMC_100",
 		"name": "Living Bomb",
 		"playerClass": "Neutral",
@@ -29857,6 +31039,7 @@ var parseCardsText = {
 			"name": "Chevalier de sang",
 			"text": "<b>Cri de guerre :</b> tous les serviteurs perdent <b>Bouclier divin</b>. Gagne +3/+3 pour chaque bouclier perdu."
 		},
+		"goldenImage": "EX1_590.gif",
 		"health": 3,
 		"id": "EX1_590",
 		"name": "Blood Knight",
@@ -29874,6 +31057,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t03.gif",
 		"health": 3,
 		"id": "CFM_712_t03",
 		"name": "Jade Golem",
@@ -29890,6 +31074,7 @@ var parseCardsText = {
 			"name": "Mot de l’ombre : Horreur",
 			"text": "Détruit tous les serviteurs avec\n2 Attaque ou moins."
 		},
+		"goldenImage": "OG_100.gif",
 		"id": "OG_100",
 		"name": "Shadow Word: Horror",
 		"playerClass": "Priest",
@@ -29920,6 +31105,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Recrue de la Main d’argent"
 		},
+		"goldenImage": "CS2_101t.gif",
 		"health": 1,
 		"id": "CS2_101t",
 		"name": "Silver Hand Recruit",
@@ -29939,6 +31125,7 @@ var parseCardsText = {
 			"name": "Assassin de Ravenholdt",
 			"text": "<b>Camouflage</b>"
 		},
+		"goldenImage": "CS2_161.gif",
 		"health": 5,
 		"id": "CS2_161",
 		"name": "Ravenholdt Assassin",
@@ -29972,6 +31159,7 @@ var parseCardsText = {
 			"name": "Frigbold algide",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "AT_093.gif",
 		"health": 6,
 		"id": "AT_093",
 		"name": "Frigid Snobold",
@@ -30004,6 +31192,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : bleu",
 			"text": "Les sorts de Chromaggus coûtent (1) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_5.gif",
 		"id": "BRMA12_5",
 		"name": "Brood Affliction: Blue",
 		"playerClass": "Neutral",
@@ -30022,6 +31211,7 @@ var parseCardsText = {
 			"name": "Patriarche dos-argenté",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_127.gif",
 		"health": 4,
 		"id": "CS2_127",
 		"name": "Silverback Patriarch",
@@ -30055,6 +31245,7 @@ var parseCardsText = {
 			"name": "Médecin du tournoi",
 			"text": "<b>Exaltation :</b> rend 2 PV à votre héros."
 		},
+		"goldenImage": "AT_091.gif",
 		"health": 8,
 		"id": "AT_091",
 		"name": "Tournament Medic",
@@ -30074,6 +31265,7 @@ var parseCardsText = {
 			"name": "Grave-totem draeneï",
 			"text": "<b>Cri de guerre :</b> gagne +1/+1 pour chaque totem allié."
 		},
+		"goldenImage": "AT_047.gif",
 		"health": 4,
 		"id": "AT_047",
 		"name": "Draenei Totemcarver",
@@ -30090,6 +31282,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Petit dragon mécanique"
 		},
+		"goldenImage": "EX1_025t.gif",
 		"health": 1,
 		"id": "EX1_025t",
 		"name": "Mechanical Dragonling",
@@ -30108,6 +31301,7 @@ var parseCardsText = {
 			"name": "Yéti mécanique",
 			"text": "<b>Râle d’agonie :</b> donne une <b>Pièce détachée</b> à chaque joueur."
 		},
+		"goldenImage": "GVG_078.gif",
 		"health": 5,
 		"id": "GVG_078",
 		"name": "Mechanical Yeti",
@@ -30124,6 +31318,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Thaddius"
 		},
+		"goldenImage": "FP1_014t.gif",
 		"health": 11,
 		"id": "FP1_014t",
 		"name": "Thaddius",
@@ -30141,6 +31336,7 @@ var parseCardsText = {
 			"name": "Déflagration des Arcanes",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur. Le bonus aux <b>Dégâts des sorts</b> est doublé pour ce sort."
 		},
+		"goldenImage": "AT_004.gif",
 		"id": "AT_004",
 		"name": "Arcane Blast",
 		"playerClass": "Mage",
@@ -30173,6 +31369,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Saute-flaque"
 		},
+		"goldenImage": "GVG_064.gif",
 		"health": 2,
 		"id": "GVG_064",
 		"name": "Puddlestomper",
@@ -30207,6 +31404,7 @@ var parseCardsText = {
 			"name": "Championne d’Alexstrasza",
 			"text": "<b>Cri de guerre :</b> gagne\n+1 ATQ et <b>Charge</b> si vous avez un Dragon en main."
 		},
+		"goldenImage": "AT_071.gif",
 		"health": 3,
 		"id": "AT_071",
 		"name": "Alexstrasza's Champion",
@@ -30224,6 +31422,7 @@ var parseCardsText = {
 			"name": "Fils de la Flamme",
 			"text": "<b>Cri de guerre :</b> inflige 6 points de dégâts."
 		},
+		"goldenImage": "BRMC_91.gif",
 		"health": 3,
 		"id": "BRMC_91",
 		"name": "Son of the Flame",
@@ -30241,6 +31440,7 @@ var parseCardsText = {
 			"name": "Explosion des Arcanes",
 			"text": "Inflige $1 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "CS2_025.gif",
 		"id": "CS2_025",
 		"name": "Arcane Explosion",
 		"playerClass": "Mage",
@@ -30273,6 +31473,7 @@ var parseCardsText = {
 			"name": "Âmefiel gangr’orc",
 			"text": "Ce serviteur subit 2 points de dégâts au début de votre tour."
 		},
+		"goldenImage": "CFM_609.gif",
 		"health": 7,
 		"id": "CFM_609",
 		"name": "Fel Orc Soulfiend",
@@ -30290,6 +31491,7 @@ var parseCardsText = {
 			"name": "Aberration",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "BRMA15_4.gif",
 		"health": 1,
 		"id": "BRMA15_4",
 		"name": "Aberration",
@@ -30308,6 +31510,7 @@ var parseCardsText = {
 			"name": "Ancien des floraisons",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CFM_854.gif",
 		"health": 8,
 		"id": "CFM_854",
 		"name": "Ancient of Blossoms",
@@ -30325,6 +31528,7 @@ var parseCardsText = {
 			"name": "Cavalier tenace",
 			"text": "<b>Râle d’agonie :</b> invoque un cavalier spectral pour votre adversaire."
 		},
+		"goldenImage": "NAX8_05.gif",
 		"health": 6,
 		"id": "NAX8_05",
 		"name": "Unrelenting Rider",
@@ -30361,6 +31565,7 @@ var parseCardsText = {
 			"name": "Élémentaire grondant",
 			"text": "Après avoir joué un serviteur avec <b>Cri de guerre</b>, inflige\n2 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "LOE_016.gif",
 		"health": 6,
 		"id": "LOE_016",
 		"name": "Rumbling Elemental",
@@ -30380,6 +31585,7 @@ var parseCardsText = {
 			"name": "Murloc aileron-bilieux",
 			"text": "<b>Cri de guerre :</b> invoque un limon 1/1 avec <b>Provocation</b>."
 		},
+		"goldenImage": "OG_156.gif",
 		"health": 1,
 		"id": "OG_156",
 		"name": "Bilefin Tidehunter",
@@ -30415,6 +31621,7 @@ var parseCardsText = {
 			"name": "Bolvar Fordragon",
 			"text": "Chaque fois qu’un serviteur allié meurt quand vous avez cette carte en main, elle gagne +1 ATQ."
 		},
+		"goldenImage": "GVG_063.gif",
 		"health": 7,
 		"id": "GVG_063",
 		"name": "Bolvar Fordragon",
@@ -30434,6 +31641,7 @@ var parseCardsText = {
 			"name": "Feugen",
 			"text": "<b>Râle d’agonie :</b> si Stalagg est aussi mort pendant cette partie, invoque Thaddius."
 		},
+		"goldenImage": "FP1_015.gif",
 		"health": 7,
 		"id": "FP1_015",
 		"name": "Feugen",
@@ -30450,6 +31658,7 @@ var parseCardsText = {
 			"name": "Destroy Deck",
 			"text": "Delete an opponent's deck"
 		},
+		"goldenImage": "XXX_047.gif",
 		"id": "XXX_047",
 		"name": "Destroy Deck",
 		"playerClass": "Neutral",
@@ -30492,6 +31701,7 @@ var parseCardsText = {
 			"name": "Andy Brock",
 			"text": "Ne peut être réduit au <b>Silence. Bouclier divin. Camouflage.</b>"
 		},
+		"goldenImage": "CRED_15.gif",
 		"health": 3,
 		"id": "CRED_15",
 		"name": "Andy Brock",
@@ -30511,6 +31721,7 @@ var parseCardsText = {
 			"name": "Terreur du Vide",
 			"text": "<b>Cri de guerre :</b> détruit les serviteurs adjacents et gagne leurs points d’Attaque et de Vie."
 		},
+		"goldenImage": "EX1_304.gif",
 		"health": 3,
 		"id": "EX1_304",
 		"name": "Void Terror",
@@ -30527,6 +31738,7 @@ var parseCardsText = {
 			"name": "Horloge de l’horreur",
 			"text": "Inflige $10 |4(point,points) de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "LOEA16_4.gif",
 		"id": "LOEA16_4",
 		"name": "Timepiece of Horror",
 		"playerClass": "Neutral",
@@ -30544,6 +31756,7 @@ var parseCardsText = {
 			"name": "Prophète Velen",
 			"text": "Double les dégâts et les soins de vos sorts et de votre pouvoir héroïque."
 		},
+		"goldenImage": "EX1_350.gif",
 		"health": 7,
 		"id": "EX1_350",
 		"name": "Prophet Velen",
@@ -30607,6 +31820,7 @@ var parseCardsText = {
 			"name": "Béhémoth de jade",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> invoque un <b>golem de jade</b> {0}.@<b>Provocation</b>\n<b>Cri de guerre :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_343.gif",
 		"health": 6,
 		"id": "CFM_343",
 		"name": "Jade Behemoth",
@@ -30626,6 +31840,7 @@ var parseCardsText = {
 			"name": "Régente de la Main d’argent",
 			"text": "<b>Exaltation :</b> invoque une recrue de la Main\nd’argent 1/1."
 		},
+		"goldenImage": "AT_100.gif",
 		"health": 3,
 		"id": "AT_100",
 		"name": "Silver Hand Regent",
@@ -30643,6 +31858,7 @@ var parseCardsText = {
 			"name": "Christopher Yim",
 			"text": "<b>Cri de guerre :</b> vos emotes sont désormais prononcées avec une voix radiophonique."
 		},
+		"goldenImage": "CRED_23.gif",
 		"health": 5,
 		"id": "CRED_23",
 		"name": "Christopher Yim",
@@ -30676,6 +31892,7 @@ var parseCardsText = {
 			"name": "Boule d’araignées",
 			"text": "Invoque trois\ntisseuses 1/1."
 		},
+		"goldenImage": "AT_062.gif",
 		"id": "AT_062",
 		"name": "Ball of Spiders",
 		"playerClass": "Hunter",
@@ -30694,6 +31911,7 @@ var parseCardsText = {
 			"name": "Videur de l’arrière-salle",
 			"text": "Gagne +1 ATQ chaque fois qu’un serviteur allié meurt."
 		},
+		"goldenImage": "CFM_658.gif",
 		"health": 4,
 		"id": "CFM_658",
 		"name": "Backroom Bouncer",
@@ -30711,6 +31929,7 @@ var parseCardsText = {
 			"name": "Huile de pierre-écaille",
 			"text": "Gagne 10 points d’armure."
 		},
+		"goldenImage": "CFM_621t26.gif",
 		"id": "CFM_621t26",
 		"name": "Stonescale Oil",
 		"playerClass": "Neutral",
@@ -30723,6 +31942,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chariot de mine"
 		},
+		"goldenImage": "LOEA07_01.gif",
 		"health": 30,
 		"id": "LOEA07_01",
 		"name": "Mine Cart",
@@ -30739,6 +31959,7 @@ var parseCardsText = {
 			"name": "Tourbillon",
 			"text": "Inflige $1 |4(point,points) de dégâts à TOUS les serviteurs."
 		},
+		"goldenImage": "EX1_400.gif",
 		"id": "EX1_400",
 		"name": "Whirlwind",
 		"playerClass": "Warrior",
@@ -30766,6 +31987,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Grande veuve Faerlina"
 		},
+		"goldenImage": "NAX2_01.gif",
 		"health": 30,
 		"id": "NAX2_01",
 		"name": "Grand Widow Faerlina",
@@ -30782,6 +32004,7 @@ var parseCardsText = {
 			"name": "Tir explosif",
 			"text": "Inflige $5 |4(point,points) de dégâts à un serviteur et $2 |4(point,points) de dégâts aux serviteurs adjacents."
 		},
+		"goldenImage": "EX1_537.gif",
 		"id": "EX1_537",
 		"name": "Explosive Shot",
 		"playerClass": "Hunter",
@@ -30800,6 +32023,7 @@ var parseCardsText = {
 			"name": "Mogor l’ogre",
 			"text": "Tous les serviteurs ont 50% de chance d’attaquer le mauvais adversaire."
 		},
+		"goldenImage": "GVG_112.gif",
 		"health": 6,
 		"id": "GVG_112",
 		"name": "Mogor the Ogre",
@@ -30818,6 +32042,7 @@ var parseCardsText = {
 			"name": "Périple dans les abîmes",
 			"text": "<b>Découvre</b> une carte avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "OG_072.gif",
 		"id": "OG_072",
 		"name": "Journey Below",
 		"playerClass": "Rogue",
@@ -30834,6 +32059,7 @@ var parseCardsText = {
 			"name": "Garde ondulant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOEA09_8.gif",
 		"health": 6,
 		"id": "LOEA09_8",
 		"name": "Slithering Guard",
@@ -30852,6 +32078,7 @@ var parseCardsText = {
 			"name": "Mande-flamme du Crépuscule",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "OG_083.gif",
 		"health": 2,
 		"id": "OG_083",
 		"name": "Twilight Flamecaller",
@@ -30868,6 +32095,7 @@ var parseCardsText = {
 			"name": "Destin : portails",
 			"text": "Place 10 cartes Portail instable dans le deck de chaque joueur."
 		},
+		"goldenImage": "TB_PickYourFate_6.gif",
 		"id": "TB_PickYourFate_6",
 		"name": "Fate: Portals",
 		"playerClass": "Neutral",
@@ -30894,6 +32122,7 @@ var parseCardsText = {
 			"name": "Un bassin luminescent",
 			"text": "<b>Boire ?</b>"
 		},
+		"goldenImage": "LOEA04_28.gif",
 		"id": "LOEA04_28",
 		"name": "A Glowing Pool",
 		"playerClass": "Neutral",
@@ -30926,6 +32155,7 @@ var parseCardsText = {
 			"name": "Élise Cherchétoile",
 			"text": "<b>Cri de guerre :</b> place Carte du singe doré dans votre deck."
 		},
+		"goldenImage": "LOE_079.gif",
 		"health": 5,
 		"id": "LOE_079",
 		"name": "Elise Starseeker",
@@ -30945,6 +32175,7 @@ var parseCardsText = {
 			"name": "Dragon féerique",
 			"text": "Ne peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "NEW1_023.gif",
 		"health": 2,
 		"id": "NEW1_023",
 		"name": "Faerie Dragon",
@@ -30962,6 +32193,7 @@ var parseCardsText = {
 			"name": "Archaedas",
 			"text": "Transforme un serviteur adverse aléatoire en statue 0/2 à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_22.gif",
 		"health": 5,
 		"id": "LOEA16_22",
 		"name": "Archaedas",
@@ -30979,6 +32211,7 @@ var parseCardsText = {
 			"name": "Liquide de refroidissement",
 			"text": "<b>Gèle</b> un serviteur."
 		},
+		"goldenImage": "PART_005.gif",
 		"id": "PART_005",
 		"name": "Emergency Coolant",
 		"playerClass": "Neutral",
@@ -30996,6 +32229,7 @@ var parseCardsText = {
 			"name": "Chevalier mécanique",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à un Méca allié."
 		},
+		"goldenImage": "AT_096.gif",
 		"health": 5,
 		"id": "AT_096",
 		"name": "Clockwork Knight",
@@ -31012,6 +32246,7 @@ var parseCardsText = {
 			"name": "Puissance de la Horde",
 			"text": "Invoque un guerrier de la Horde aléatoire."
 		},
+		"goldenImage": "PRO_001c.gif",
 		"id": "PRO_001c",
 		"name": "Power of the Horde",
 		"playerClass": "Neutral",
@@ -31087,6 +32322,7 @@ var parseCardsText = {
 			"name": "Boxeur de l’ombre",
 			"text": "Chaque fois qu’un personnage est soigné, inflige 1 point de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "GVG_072.gif",
 		"health": 3,
 		"id": "GVG_072",
 		"name": "Shadowboxer",
@@ -31120,6 +32356,7 @@ var parseCardsText = {
 			"name": "Druide du Croc",
 			"text": "<b>Cri de guerre :</b> si vous avez une Bête, transforme ce serviteur en une carte 7/7."
 		},
+		"goldenImage": "GVG_080.gif",
 		"health": 4,
 		"id": "GVG_080",
 		"name": "Druid of the Fang",
@@ -31149,6 +32386,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t10.gif",
 		"health": 10,
 		"id": "CFM_712_t10",
 		"name": "Jade Golem",
@@ -31178,6 +32416,7 @@ var parseCardsText = {
 			"name": "Explosion de flammes",
 			"text": "Lance 5 missiles infligeant chacun $1 |4(point,points) de dégâts à des adversaires aléatoires."
 		},
+		"goldenImage": "TU4e_005.gif",
 		"id": "TU4e_005",
 		"name": "Flame Burst",
 		"playerClass": "Neutral",
@@ -31191,6 +32430,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Seigneur Victor Nefarius"
 		},
+		"goldenImage": "BRMA13_1.gif",
 		"health": 30,
 		"id": "BRMA13_1",
 		"name": "Lord Victor Nefarius",
@@ -31218,6 +32458,7 @@ var parseCardsText = {
 			"name": "Cristal de contrôle mental",
 			"text": "Active le cristal pour prendre le contrôle des doublures !"
 		},
+		"goldenImage": "NAX7_05.gif",
 		"id": "NAX7_05",
 		"name": "Mind Control Crystal",
 		"playerClass": "Neutral",
@@ -31235,6 +32476,7 @@ var parseCardsText = {
 			"name": "Serpent de la fosse",
 			"text": "Détruit tout serviteur blessé par ce serviteur."
 		},
+		"goldenImage": "LOE_010.gif",
 		"health": 1,
 		"id": "LOE_010",
 		"name": "Pit Snake",
@@ -31253,6 +32495,7 @@ var parseCardsText = {
 			"name": "Casse-tête",
 			"text": "Inflige $2 |4(point,points) de dégâts au héros adverse. <b>Combo :</b> renvoie cette carte dans votre main au tour suivant."
 		},
+		"goldenImage": "EX1_137.gif",
 		"id": "EX1_137",
 		"name": "Headcrack",
 		"playerClass": "Rogue",
@@ -31301,6 +32544,7 @@ var parseCardsText = {
 			"name": "Canon du navire",
 			"text": "Après avoir invoqué un pirate, inflige 2 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "GVG_075.gif",
 		"health": 3,
 		"id": "GVG_075",
 		"name": "Ship's Cannon",
@@ -31340,6 +32584,7 @@ var parseCardsText = {
 			"name": "Berserker aberrant",
 			"text": "<b>Accès de rage :</b> +2 ATQ."
 		},
+		"goldenImage": "OG_150.gif",
 		"health": 5,
 		"id": "OG_150",
 		"name": "Aberrant Berserker",
@@ -31358,6 +32603,7 @@ var parseCardsText = {
 			"name": "Feu de l’âme",
 			"text": "Inflige $4 |4(point,points) de dégâts. Vous défausse d’une carte aléatoire."
 		},
+		"goldenImage": "EX1_308.gif",
 		"id": "EX1_308",
 		"name": "Soulfire",
 		"playerClass": "Warlock",
@@ -31375,6 +32621,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Enragé am’gam"
 		},
+		"goldenImage": "OG_248.gif",
 		"health": 5,
 		"id": "OG_248",
 		"name": "Am'gam Rager",
@@ -31392,6 +32639,7 @@ var parseCardsText = {
 			"name": "Parjurer les ténèbres",
 			"text": "Remplace votre pouvoir héroïque et vos cartes de démoniste par ceux d’une autre classe. Les cartes coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "OG_118.gif",
 		"id": "OG_118",
 		"name": "Renounce Darkness",
 		"playerClass": "Warlock",
@@ -31411,6 +32659,7 @@ var parseCardsText = {
 			"name": "Gelbin Mekkanivelle",
 			"text": "<b>Cri de guerre :</b> invoque une invention GÉNIALE."
 		},
+		"goldenImage": "EX1_112.gif",
 		"health": 6,
 		"id": "EX1_112",
 		"name": "Gelbin Mekkatorque",
@@ -31444,6 +32693,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Ogre rochepoing"
 		},
+		"goldenImage": "CS2_200.gif",
 		"health": 7,
 		"id": "CS2_200",
 		"name": "Boulderfist Ogre",
@@ -31463,6 +32713,7 @@ var parseCardsText = {
 			"name": "Fusilier de Forgefer",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "CS2_141.gif",
 		"health": 2,
 		"id": "CS2_141",
 		"name": "Ironforge Rifleman",
@@ -31497,6 +32748,7 @@ var parseCardsText = {
 			"name": "Busard affamé",
 			"text": "Vous piochez une carte chaque fois que vous invoquez une bête."
 		},
+		"goldenImage": "CS2_237.gif",
 		"health": 2,
 		"id": "CS2_237",
 		"name": "Starving Buzzard",
@@ -31516,6 +32768,7 @@ var parseCardsText = {
 			"name": "Exhalombre",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur allié et en place une copie 1/1 coûtant (1) |4(cristal,cristaux) de mana dans votre main."
 		},
+		"goldenImage": "OG_291.gif",
 		"health": 4,
 		"id": "OG_291",
 		"name": "Shadowcaster",
@@ -31564,6 +32817,7 @@ var parseCardsText = {
 			"name": "Marque du Lotus",
 			"text": "Donne +1/+1 à vos serviteurs."
 		},
+		"goldenImage": "CFM_614.gif",
 		"id": "CFM_614",
 		"name": "Mark of the Lotus",
 		"playerClass": "Druid",
@@ -31593,6 +32847,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gyth"
 		},
+		"goldenImage": "BRMA09_5Ht.gif",
 		"health": 8,
 		"id": "BRMA09_5Ht",
 		"name": "Gyth",
@@ -31647,6 +32902,7 @@ var parseCardsText = {
 			"name": "Portail instable",
 			"text": "Place un serviteur aléatoire dans votre main. Il coûte (3) cristaux de moins."
 		},
+		"goldenImage": "GVG_003.gif",
 		"id": "GVG_003",
 		"name": "Unstable Portal",
 		"playerClass": "Mage",
@@ -31662,6 +32918,7 @@ var parseCardsText = {
 			"name": "Enchant",
 			"text": "Enchant a minion with an empty enchant."
 		},
+		"goldenImage": "XXX_009.gif",
 		"id": "XXX_009",
 		"name": "Enchant",
 		"playerClass": "Neutral",
@@ -31714,6 +32971,7 @@ var parseCardsText = {
 			"name": "Sous-chef cruel",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à un serviteur et lui donne +2 ATQ."
 		},
+		"goldenImage": "EX1_603.gif",
 		"health": 2,
 		"id": "EX1_603",
 		"name": "Cruel Taskmaster",
@@ -31733,6 +32991,7 @@ var parseCardsText = {
 			"name": "Élémentaire de feu",
 			"text": "<b>Cri de guerre :</b> inflige 3 points de dégâts."
 		},
+		"goldenImage": "CS2_042.gif",
 		"health": 5,
 		"id": "CS2_042",
 		"name": "Fire Elemental",
@@ -31752,6 +33011,7 @@ var parseCardsText = {
 			"name": "Adjurateur éthérien",
 			"text": "<b>Cri de guerre : découvre</b>\nun sort."
 		},
+		"goldenImage": "LOE_003.gif",
 		"health": 3,
 		"id": "LOE_003",
 		"name": "Ethereal Conjurer",
@@ -31770,6 +33030,7 @@ var parseCardsText = {
 			"name": "Évolution",
 			"text": "Transforme vos serviteurs en serviteurs aléatoires qui coûtent (1) |4(cristal,cristaux) de plus."
 		},
+		"goldenImage": "OG_027.gif",
 		"id": "OG_027",
 		"name": "Evolve",
 		"playerClass": "Shaman",
@@ -31803,6 +33064,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : bleu",
 			"text": "Les sorts de Chromaggus coûtent (3) |4(cristal,cristaux) de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_5H.gif",
 		"id": "BRMA12_5H",
 		"name": "Brood Affliction: Blue",
 		"playerClass": "Neutral",
@@ -31838,6 +33100,7 @@ var parseCardsText = {
 			"name": "Pirate des flots noirs",
 			"text": "Vos armes coûtent (2) cristaux de moins."
 		},
+		"goldenImage": "OG_322.gif",
 		"health": 5,
 		"id": "OG_322",
 		"name": "Blackwater Pirate",
@@ -31855,6 +33118,7 @@ var parseCardsText = {
 			"name": "Cameron Chrisman",
 			"text": "Les cartes dorées coûtent (1) cristal de moins tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "CRED_22.gif",
 		"health": 3,
 		"id": "CRED_22",
 		"name": "Cameron Chrisman",
@@ -31872,6 +33136,7 @@ var parseCardsText = {
 			"name": "Lige du feu",
 			"text": "<b>Râle d’agonie :</b> inflige 3 points de dégâts au héros adverse pour chaque lige du feu mort pendant ce tour."
 		},
+		"goldenImage": "BRMA04_3H.gif",
 		"health": 5,
 		"id": "BRMA04_3H",
 		"name": "Firesworn",
@@ -31887,6 +33152,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "BRMA09_2Ht.gif",
 		"health": 2,
 		"id": "BRMA09_2Ht",
 		"name": "Whelp",
@@ -31919,6 +33185,7 @@ var parseCardsText = {
 			"name": "Roi des bêtes",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> gagne +1 ATQ pour chacune de vos autres Bêtes."
 		},
+		"goldenImage": "GVG_046.gif",
 		"health": 6,
 		"id": "GVG_046",
 		"name": "King of Beasts",
@@ -31938,6 +33205,7 @@ var parseCardsText = {
 			"name": "Horreur cyclopéenne",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> gagne +1 PV pour\nchaque serviteur adverse."
 		},
+		"goldenImage": "OG_337.gif",
 		"health": 3,
 		"id": "OG_337",
 		"name": "Cyclopian Horror",
@@ -31970,6 +33238,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Piranha"
 		},
+		"goldenImage": "CFM_337t.gif",
 		"health": 1,
 		"id": "CFM_337t",
 		"name": "Piranha",
@@ -31986,6 +33255,7 @@ var parseCardsText = {
 			"name": "Appel du familier",
 			"text": "Vous piochez une carte. Si c’est une Bête, elle coûte (4) cristaux de moins."
 		},
+		"goldenImage": "GVG_017.gif",
 		"id": "GVG_017",
 		"name": "Call Pet",
 		"playerClass": "Hunter",
@@ -32003,6 +33273,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Crochet rouillé"
 		},
+		"goldenImage": "OG_058.gif",
 		"id": "OG_058",
 		"name": "Rusty Hook",
 		"playerClass": "Warrior",
@@ -32034,6 +33305,7 @@ var parseCardsText = {
 			"name": "Sélénien de la jungle",
 			"text": "Chaque joueur a\n<b>+2 aux dégâts des sorts</b>."
 		},
+		"goldenImage": "LOE_051.gif",
 		"health": 4,
 		"id": "LOE_051",
 		"name": "Jungle Moonkin",
@@ -32053,6 +33325,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Murloc mini-aileron"
 		},
+		"goldenImage": "LOEA10_3.gif",
 		"health": 1,
 		"id": "LOEA10_3",
 		"name": "Murloc Tinyfin",
@@ -32071,6 +33344,7 @@ var parseCardsText = {
 			"name": "Mande-flots murloc",
 			"text": "Gagne +1 ATQ chaque fois que vous invoquez un murloc."
 		},
+		"goldenImage": "EX1_509.gif",
 		"health": 2,
 		"id": "EX1_509",
 		"name": "Murloc Tidecaller",
@@ -32090,6 +33364,7 @@ var parseCardsText = {
 			"name": "Ancien héraut",
 			"text": "Au début de votre tour, place un serviteur coûtant 10 cristaux de mana de votre deck dans votre main."
 		},
+		"goldenImage": "OG_290.gif",
 		"health": 6,
 		"id": "OG_290",
 		"name": "Ancient Harbinger",
@@ -32107,6 +33382,7 @@ var parseCardsText = {
 			"name": "Ro’Boum",
 			"text": "<b>Râle d’agonie :</b> inflige 1 à 4 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "GVG_110t.gif",
 		"health": 1,
 		"id": "GVG_110t",
 		"name": "Boom Bot",
@@ -32123,6 +33399,7 @@ var parseCardsText = {
 			"name": "Mike Donais",
 			"text": "<b>Cri de guerre :</b> remplace tous les serviteurs sur le champ de bataille, dans les mains et les decks des deux joueurs par des serviteurs aléatoires."
 		},
+		"goldenImage": "CRED_36.gif",
 		"health": 8,
 		"id": "CRED_36",
 		"name": "Mike Donais",
@@ -32141,6 +33418,7 @@ var parseCardsText = {
 			"name": "Maléfice",
 			"text": "Transforme un serviteur en grenouille 0/1 avec <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_246.gif",
 		"id": "EX1_246",
 		"name": "Hex",
 		"playerClass": "Shaman",
@@ -32157,6 +33435,7 @@ var parseCardsText = {
 			"name": "Archer ondulant",
 			"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "LOEA09_6H.gif",
 		"health": 2,
 		"id": "LOEA09_6H",
 		"name": "Slithering Archer",
@@ -32174,6 +33453,7 @@ var parseCardsText = {
 			"name": "Marque de la nature",
 			"text": "<b>Choix des armes :</b> donne +4 ATQ à un serviteur ou +4 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_155.gif",
 		"id": "EX1_155",
 		"name": "Mark of Nature",
 		"playerClass": "Druid",
@@ -32191,6 +33471,7 @@ var parseCardsText = {
 			"name": "Nourrir",
 			"text": "<b>Choix des armes :</b> vous gagnez 2 cristaux de mana ou vous piochez 3 cartes."
 		},
+		"goldenImage": "EX1_164.gif",
 		"id": "EX1_164",
 		"name": "Nourish",
 		"playerClass": "Druid",
@@ -32207,6 +33488,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Porte-cendres"
 		},
+		"goldenImage": "EX1_383t.gif",
 		"id": "EX1_383t",
 		"name": "Ashbringer",
 		"playerClass": "Paladin",
@@ -32223,6 +33505,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Béhémoth sans-visage"
 		},
+		"goldenImage": "OG_141.gif",
 		"health": 10,
 		"id": "OG_141",
 		"name": "Faceless Behemoth",
@@ -32256,6 +33539,7 @@ var parseCardsText = {
 			"name": "Aventurier en pleine quête",
 			"text": "Chaque fois que vous jouez une carte,\ngagne +1/+1."
 		},
+		"goldenImage": "EX1_044.gif",
 		"health": 2,
 		"id": "EX1_044",
 		"name": "Questing Adventurer",
@@ -32272,6 +33556,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Bandit défias"
 		},
+		"goldenImage": "EX1_131t.gif",
 		"health": 1,
 		"id": "EX1_131t",
 		"name": "Defias Bandit",
@@ -32284,6 +33569,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chef Scarvash"
 		},
+		"goldenImage": "LOEA05_01h.gif",
 		"health": 30,
 		"id": "LOEA05_01h",
 		"name": "Chieftain Scarvash",
@@ -32314,6 +33600,7 @@ var parseCardsText = {
 			"name": "Draconien chromatique",
 			"text": "Gagne +2/+2 chaque fois que votre adversaire lance un sort."
 		},
+		"goldenImage": "BRMA12_8t.gif",
 		"health": 3,
 		"id": "BRMA12_8t",
 		"name": "Chromatic Dragonkin",
@@ -32348,6 +33635,7 @@ var parseCardsText = {
 			"name": "Champion de Mogor",
 			"text": "50% de chance d’attaquer le mauvais adversaire."
 		},
+		"goldenImage": "AT_088.gif",
 		"health": 5,
 		"id": "AT_088",
 		"name": "Mogor's Champion",
@@ -32381,6 +33669,7 @@ var parseCardsText = {
 			"name": "Nefarian",
 			"text": "<b>Cri de guerre :</b> ajoute 2 sorts aléatoires dans votre main <i>(de la classe de votre adversaire)</i>."
 		},
+		"goldenImage": "BRM_030.gif",
 		"health": 8,
 		"id": "BRM_030",
 		"name": "Nefarian",
@@ -32398,6 +33687,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t08.gif",
 		"health": 8,
 		"id": "CFM_712_t08",
 		"name": "Jade Golem",
@@ -32426,6 +33716,7 @@ var parseCardsText = {
 			"name": "Étendard de bataille",
 			"text": "Les serviteurs adjacents ont +2 ATQ."
 		},
+		"goldenImage": "TB_SPT_Minion2.gif",
 		"health": 2,
 		"id": "TB_SPT_Minion2",
 		"name": "Battle Standard",
@@ -32444,6 +33735,7 @@ var parseCardsText = {
 			"name": "Gnome lépreux",
 			"text": "<b>Râle d’agonie :</b> inflige 2 points de dégâts au héros adverse."
 		},
+		"goldenImage": "EX1_029.gif",
 		"health": 1,
 		"id": "EX1_029",
 		"name": "Leper Gnome",
@@ -32462,6 +33754,7 @@ var parseCardsText = {
 			"name": "Lame runique massive",
 			"text": "Inflige des dégâts doublés aux héros."
 		},
+		"goldenImage": "NAX7_04H.gif",
 		"id": "NAX7_04H",
 		"name": "Massive Runeblade",
 		"playerClass": "Neutral",
@@ -32477,6 +33770,7 @@ var parseCardsText = {
 			"name": "Statue animée",
 			"text": "Vous avez dérangé cette ancienne statue…"
 		},
+		"goldenImage": "LOEA04_27.gif",
 		"health": 10,
 		"id": "LOEA04_27",
 		"name": "Animated Statue",
@@ -32524,6 +33818,7 @@ var parseCardsText = {
 			"name": "Clerc de Comté-du-Nord",
 			"text": "Vous piochez une carte chaque fois qu’un serviteur est soigné."
 		},
+		"goldenImage": "CS2_235.gif",
 		"health": 3,
 		"id": "CS2_235",
 		"name": "Northshire Cleric",
@@ -32599,6 +33894,7 @@ var parseCardsText = {
 			"name": "Lame de C’Thun",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur. Ajoute son Attaque et sa Vie à celles de votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_282.gif",
 		"health": 4,
 		"id": "OG_282",
 		"name": "Blade of C'Thun",
@@ -32615,6 +33911,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Éclaireur murloc"
 		},
+		"goldenImage": "EX1_506a.gif",
 		"health": 1,
 		"id": "EX1_506a",
 		"name": "Murloc Scout",
@@ -32631,6 +33928,7 @@ var parseCardsText = {
 			"name": "Magie de Yogg-Saron",
 			"text": "Confère un cristal de mana vide."
 		},
+		"goldenImage": "OG_202b.gif",
 		"id": "OG_202b",
 		"name": "Yogg-Saron's Magic",
 		"playerClass": "Druid",
@@ -32648,6 +33946,7 @@ var parseCardsText = {
 			"name": "Venger",
 			"text": "<b>Secret :</b> quand l’un de vos serviteurs meurt, donne +3/+2 à un serviteur allié aléatoire."
 		},
+		"goldenImage": "FP1_020.gif",
 		"id": "FP1_020",
 		"name": "Avenge",
 		"playerClass": "Paladin",
@@ -32663,6 +33962,7 @@ var parseCardsText = {
 			"name": "Destin cruel : Provocation, Charge",
 			"text": "Tous les serviteurs ont <b>Provocation</b> et <b>Charge</b>."
 		},
+		"goldenImage": "TB_PickYourFate_1.gif",
 		"id": "TB_PickYourFate_1",
 		"name": "Dire Fate: Taunt and Charge",
 		"playerClass": "Neutral",
@@ -32677,6 +33977,7 @@ var parseCardsText = {
 			"name": "L’Œil",
 			"text": "<b>Choisissez un chemin !</b>"
 		},
+		"goldenImage": "LOEA04_29.gif",
 		"id": "LOEA04_29",
 		"name": "The Eye",
 		"playerClass": "Neutral",
@@ -32695,6 +33996,7 @@ var parseCardsText = {
 			"name": "Cairne Sabot-de-Sang",
 			"text": "<b>Râle d’agonie :</b> invoque Baine Sabot-de-Sang avec 4/5."
 		},
+		"goldenImage": "EX1_110.gif",
 		"health": 5,
 		"id": "EX1_110",
 		"name": "Cairne Bloodhoof",
@@ -32713,6 +34015,7 @@ var parseCardsText = {
 			"name": "Attaque pernicieuse",
 			"text": "Inflige $3 |4(point,points) de dégâts au héros adverse."
 		},
+		"goldenImage": "CS2_075.gif",
 		"id": "CS2_075",
 		"name": "Sinister Strike",
 		"playerClass": "Rogue",
@@ -32769,6 +34072,7 @@ var parseCardsText = {
 			"name": "Préparation",
 			"text": "Le prochain sort que vous lancez pendant ce tour coûte (3) cristaux de moins."
 		},
+		"goldenImage": "EX1_145.gif",
 		"id": "EX1_145",
 		"name": "Preparation",
 		"playerClass": "Rogue",
@@ -32812,6 +34116,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Flamme d’Azzinoth"
 		},
+		"goldenImage": "EX1_614t.gif",
 		"health": 1,
 		"id": "EX1_614t",
 		"name": "Flame of Azzinoth",
@@ -32839,6 +34144,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gul’dan"
 		},
+		"goldenImage": "HERO_07.gif",
 		"health": 30,
 		"id": "HERO_07",
 		"name": "Gul'dan",
@@ -32852,6 +34158,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dame Naz’jar"
 		},
+		"goldenImage": "LOEA12_1.gif",
 		"health": 30,
 		"id": "LOEA12_1",
 		"name": "Lady Naz'jar",
@@ -32868,6 +34175,7 @@ var parseCardsText = {
 			"name": "Bénédiction des rois",
 			"text": "Donne +4/+4 à un serviteur. <i>(+4 ATQ/+4 PV)</i>"
 		},
+		"goldenImage": "CS2_092.gif",
 		"id": "CS2_092",
 		"name": "Blessing of Kings",
 		"playerClass": "Paladin",
@@ -32900,6 +34208,7 @@ var parseCardsText = {
 			"name": "Lance de flammes",
 			"text": "Inflige $8 |4(point,points) de dégâts à un serviteur."
 		},
+		"goldenImage": "AT_001.gif",
 		"id": "AT_001",
 		"name": "Flame Lance",
 		"playerClass": "Mage",
@@ -32990,6 +34299,7 @@ var parseCardsText = {
 			"name": "Chasseuse de Tranchebauge",
 			"text": "<b>Cri de guerre :</b> invoque un sanglier 1/1."
 		},
+		"goldenImage": "CS2_196.gif",
 		"health": 3,
 		"id": "CS2_196",
 		"name": "Razorfen Hunter",
@@ -33010,6 +34320,7 @@ var parseCardsText = {
 			"name": "Marteau du crépuscule",
 			"text": "<b>Râle d’agonie :</b> invoque un élémentaire 4/2."
 		},
+		"goldenImage": "OG_031.gif",
 		"id": "OG_031",
 		"name": "Hammer of Twilight",
 		"playerClass": "Shaman",
@@ -33025,6 +34336,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gyth"
 		},
+		"goldenImage": "BRMA09_5t.gif",
 		"health": 4,
 		"id": "BRMA09_5t",
 		"name": "Gyth",
@@ -33043,6 +34355,7 @@ var parseCardsText = {
 			"name": "Usurière des Dessoudeurs",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à une arme aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_755.gif",
 		"health": 3,
 		"id": "CFM_755",
 		"name": "Grimestreet Pawnbroker",
@@ -33062,6 +34375,7 @@ var parseCardsText = {
 			"name": "Épées dansantes",
 			"text": "<b>Râle d’agonie :</b> votre adversaire pioche une carte."
 		},
+		"goldenImage": "FP1_029.gif",
 		"health": 4,
 		"id": "FP1_029",
 		"name": "Dancing Swords",
@@ -33104,6 +34418,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Instructeur Razuvious"
 		},
+		"goldenImage": "NAX7_01H.gif",
 		"health": 55,
 		"id": "NAX7_01H",
 		"name": "Instructor Razuvious",
@@ -33118,6 +34433,7 @@ var parseCardsText = {
 			"name": "Recharge",
 			"text": "Remplit tous les cristaux de mana vides."
 		},
+		"goldenImage": "BRMA14_11.gif",
 		"id": "BRMA14_11",
 		"name": "Recharge",
 		"playerClass": "Neutral",
@@ -33134,6 +34450,7 @@ var parseCardsText = {
 			"name": "Baston",
 			"text": "Détruit tous les serviteurs sauf un <i>(choisi au hasard)</i>."
 		},
+		"goldenImage": "EX1_407.gif",
 		"id": "EX1_407",
 		"name": "Brawl",
 		"playerClass": "Warrior",
@@ -33152,6 +34469,7 @@ var parseCardsText = {
 			"name": "Alchimiste dément",
 			"text": "<b>Cri de guerre :</b> échange l’Attaque et la Vie d’un serviteur."
 		},
+		"goldenImage": "EX1_059.gif",
 		"health": 2,
 		"id": "EX1_059",
 		"name": "Crazed Alchemist",
@@ -33216,6 +34534,7 @@ var parseCardsText = {
 			"name": "Éclair de jade",
 			"text": "Inflige $4 |4(point,points) de dégâts. Invoque un <b>golem de jade</b> {0}.@Inflige $4 |4(point,points) de dégâts. Invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_707.gif",
 		"id": "CFM_707",
 		"name": "Jade Lightning",
 		"playerClass": "Shaman",
@@ -33246,6 +34565,7 @@ var parseCardsText = {
 			"name": "Garde ondulant",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOEA09_8H.gif",
 		"health": 7,
 		"id": "LOEA09_8H",
 		"name": "Slithering Guard",
@@ -33279,6 +34599,7 @@ var parseCardsText = {
 			"name": "Prophète du Cercle terrestre",
 			"text": "<b>Cri de guerre :</b> rend 3 points de vie."
 		},
+		"goldenImage": "CS2_117.gif",
 		"health": 3,
 		"id": "CS2_117",
 		"name": "Earthen Ring Farseer",
@@ -33312,6 +34633,7 @@ var parseCardsText = {
 			"name": "Chef de guerre murloc",
 			"text": "Vos autres murlocs ont +2/+1."
 		},
+		"goldenImage": "EX1_507.gif",
 		"health": 3,
 		"id": "EX1_507",
 		"name": "Murloc Warleader",
@@ -33347,6 +34669,7 @@ var parseCardsText = {
 			"name": "Nain sombrefer",
 			"text": "<b>Cri de guerre :</b> donne +2 ATQ à un serviteur pendant ce tour."
 		},
+		"goldenImage": "EX1_046.gif",
 		"health": 4,
 		"id": "EX1_046",
 		"name": "Dark Iron Dwarf",
@@ -33364,6 +34687,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Feu follet"
 		},
+		"goldenImage": "OG_195c.gif",
 		"health": 1,
 		"id": "OG_195c",
 		"name": "Wisp",
@@ -33381,6 +34705,7 @@ var parseCardsText = {
 			"name": "Piège à serpents",
 			"text": "<b>Secret :</b> quand un de vos serviteurs est attaqué, invoque trois serpents 1/1."
 		},
+		"goldenImage": "EX1_554.gif",
 		"id": "EX1_554",
 		"name": "Snake Trap",
 		"playerClass": "Hunter",
@@ -33411,6 +34736,7 @@ var parseCardsText = {
 			"name": "Restore All Health",
 			"text": "Restore all Health to a character."
 		},
+		"goldenImage": "XXX_021.gif",
 		"id": "XXX_021",
 		"name": "Restore All Health",
 		"playerClass": "Neutral",
@@ -33428,6 +34754,7 @@ var parseCardsText = {
 			"name": "Jeux d’esprit",
 			"text": "Place une copie d’un serviteur aléatoire du deck de votre adversaire sur le champ de bataille."
 		},
+		"goldenImage": "EX1_345.gif",
 		"id": "EX1_345",
 		"name": "Mindgames",
 		"playerClass": "Priest",
@@ -33446,6 +34773,7 @@ var parseCardsText = {
 			"name": "Écaille-d’effroi",
 			"text": "Inflige 1 point de dégâts à tous les autres serviteurs à la fin de votre tour."
 		},
+		"goldenImage": "AT_063t.gif",
 		"health": 2,
 		"id": "AT_063t",
 		"name": "Dreadscale",
@@ -33464,6 +34792,7 @@ var parseCardsText = {
 			"name": "Rocher roulant",
 			"text": "Détruit le serviteur à gauche à la fin de votre tour."
 		},
+		"goldenImage": "LOE_024t.gif",
 		"health": 4,
 		"id": "LOE_024t",
 		"name": "Rolling Boulder",
@@ -33496,6 +34825,7 @@ var parseCardsText = {
 			"name": "Potion volcanique",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "CFM_065.gif",
 		"id": "CFM_065",
 		"name": "Volcanic Potion",
 		"playerClass": "Mage",
@@ -33514,6 +34844,7 @@ var parseCardsText = {
 			"name": "Araignée des tombes",
 			"text": "<b>Cri de guerre : découvre</b> une Bête."
 		},
+		"goldenImage": "LOE_047.gif",
 		"health": 3,
 		"id": "LOE_047",
 		"name": "Tomb Spider",
@@ -33565,6 +34896,7 @@ var parseCardsText = {
 			"name": "La sentinelle d’acier",
 			"text": "Ce serviteur ne peut pas subir plus de 1 point de dégâts à la fois."
 		},
+		"goldenImage": "LOEA16_27.gif",
 		"health": 5,
 		"id": "LOEA16_27",
 		"name": "The Steel Sentinel",
@@ -33583,6 +34915,7 @@ var parseCardsText = {
 			"name": "Assassiner",
 			"text": "Détruit un serviteur adverse."
 		},
+		"goldenImage": "CS2_076.gif",
 		"id": "CS2_076",
 		"name": "Assassinate",
 		"playerClass": "Rogue",
@@ -33599,6 +34932,7 @@ var parseCardsText = {
 			"name": "Toxitron",
 			"text": "Inflige 1 point de dégâts à tous les autres serviteurs au début de votre tour."
 		},
+		"goldenImage": "BRMA14_5H.gif",
 		"health": 4,
 		"id": "BRMA14_5H",
 		"name": "Toxitron",
@@ -33615,6 +34949,7 @@ var parseCardsText = {
 			"name": "Banane",
 			"text": "Donne +1/+1 à un serviteur allié. <i>(+1 ATQ / +1 PV)</i>"
 		},
+		"goldenImage": "TU4c_006.gif",
 		"id": "TU4c_006",
 		"name": "Bananas",
 		"playerClass": "Neutral",
@@ -33665,6 +35000,7 @@ var parseCardsText = {
 			"name": "Singe cinglé",
 			"text": "<b>Cri de guerre :</b> lance des bananes."
 		},
+		"goldenImage": "TU4f_007.gif",
 		"health": 2,
 		"id": "TU4f_007",
 		"name": "Crazy Monkey",
@@ -33699,6 +35035,7 @@ var parseCardsText = {
 			"name": "Sans-visage nimbé de flammes",
 			"text": "<b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "OG_024.gif",
 		"health": 7,
 		"id": "OG_024",
 		"name": "Flamewreathed Faceless",
@@ -33719,6 +35056,7 @@ var parseCardsText = {
 			"name": "Regard de nacre",
 			"text": "<b>Provocation</b>\n<b>Râle d’agonie :</b> replace la carte Le gardien des tempêtes dans votre deck."
 		},
+		"goldenImage": "CFM_324.gif",
 		"health": 5,
 		"id": "CFM_324",
 		"name": "White Eyes",
@@ -33752,6 +35090,7 @@ var parseCardsText = {
 			"name": "Dissipation de masse",
 			"text": "Réduit au <b>Silence</b> tous les serviteurs adverses. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_626.gif",
 		"id": "EX1_626",
 		"name": "Mass Dispel",
 		"playerClass": "Priest",
@@ -33771,6 +35110,7 @@ var parseCardsText = {
 			"name": "Commando foudrepique",
 			"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts."
 		},
+		"goldenImage": "CS2_150.gif",
 		"health": 2,
 		"id": "CS2_150",
 		"name": "Stormpike Commando",
@@ -33788,6 +35128,7 @@ var parseCardsText = {
 			"name": "Zinaar",
 			"text": "Vous gagnez un Vœu à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_18H.gif",
 		"health": 10,
 		"id": "LOEA16_18H",
 		"name": "Zinaar",
@@ -33833,6 +35174,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Draconien"
 		},
+		"goldenImage": "BRMA09_4Ht.gif",
 		"health": 4,
 		"id": "BRMA09_4Ht",
 		"name": "Dragonkin",
@@ -33850,6 +35192,7 @@ var parseCardsText = {
 			"name": "Sentinelle Anubisath",
 			"text": "<b>Râle d’agonie :</b> donne +3/+3 à un serviteur allié aléatoire."
 		},
+		"goldenImage": "LOE_061.gif",
 		"health": 4,
 		"id": "LOE_061",
 		"name": "Anubisath Sentinel",
@@ -33883,6 +35226,7 @@ var parseCardsText = {
 			"name": "Chimiste fou",
 			"text": "<b>Cri de guerre :</b> échange l’Attaque et la Vie d’un serviteur."
 		},
+		"goldenImage": "CFM_063.gif",
 		"health": 4,
 		"id": "CFM_063",
 		"name": "Kooky Chemist",
@@ -33916,6 +35260,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t30.gif",
 		"health": 30,
 		"id": "CFM_712_t30",
 		"name": "Jade Golem",
@@ -33933,6 +35278,7 @@ var parseCardsText = {
 			"name": "Gueule-d’acide",
 			"text": "Chaque fois qu’un autre serviteur subit des dégâts, le détruit."
 		},
+		"goldenImage": "AT_063.gif",
 		"health": 2,
 		"id": "AT_063",
 		"name": "Acidmaw",
@@ -33964,6 +35310,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Associé"
 		},
+		"goldenImage": "CFM_648t.gif",
 		"health": 6,
 		"id": "CFM_648t",
 		"name": "\"Little Friend\"",
@@ -33979,6 +35326,7 @@ var parseCardsText = {
 			"name": "Dorépine",
 			"text": "Donne +6 PV à vos serviteurs."
 		},
+		"goldenImage": "CFM_621t32.gif",
 		"id": "CFM_621t32",
 		"name": "Goldthorn",
 		"playerClass": "Neutral",
@@ -33996,6 +35344,7 @@ var parseCardsText = {
 			"name": "Dragon affamé",
 			"text": "<b>Cri de guerre :</b> invoque un serviteur aléatoire à 1 cristal pour votre adversaire."
 		},
+		"goldenImage": "BRM_026.gif",
 		"health": 6,
 		"id": "BRM_026",
 		"name": "Hungry Dragon",
@@ -34015,6 +35364,7 @@ var parseCardsText = {
 			"name": "Hallazèle l’Élevé",
 			"text": "Chaque fois que vos sorts infligent des dégâts, rend l’équivalent sous forme de PV à votre héros."
 		},
+		"goldenImage": "OG_209.gif",
 		"health": 6,
 		"id": "OG_209",
 		"name": "Hallazeal the Ascended",
@@ -34034,6 +35384,7 @@ var parseCardsText = {
 			"name": "Client sinistre",
 			"text": "Invoque un autre client sinistre chaque fois que ce serviteur survit aux dégâts qu’il subit."
 		},
+		"goldenImage": "BRM_019.gif",
 		"health": 3,
 		"id": "BRM_019",
 		"name": "Grim Patron",
@@ -34066,6 +35417,7 @@ var parseCardsText = {
 			"name": "Malédiction ancestrale",
 			"text": "Quand vous piochez cette carte, vous subissez 7 points de dégâts et vous piochez une carte."
 		},
+		"goldenImage": "LOE_110t.gif",
 		"id": "LOE_110t",
 		"name": "Ancient Curse",
 		"playerClass": "Neutral",
@@ -34081,6 +35433,7 @@ var parseCardsText = {
 			"name": "Eric Del Priore",
 			"text": "A <b>Provocation</b> s’il est 3 heures du matin."
 		},
+		"goldenImage": "CRED_26.gif",
 		"health": 6,
 		"id": "CRED_26",
 		"name": "Eric Del Priore",
@@ -34100,6 +35453,7 @@ var parseCardsText = {
 			"name": "Adorateur fanatisé",
 			"text": "<b>Provocation</b>. Chaque fois que ce serviteur subit des dégâts, donne +1/+1 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_321.gif",
 		"health": 6,
 		"id": "OG_321",
 		"name": "Crazed Worshipper",
@@ -34147,6 +35501,7 @@ var parseCardsText = {
 			"name": "Grizzly perturbé",
 			"text": "Après que vous avez invoqué un serviteur, lui donne +1/+1."
 		},
+		"goldenImage": "OG_313.gif",
 		"health": 2,
 		"id": "OG_313",
 		"name": "Addled Grizzly",
@@ -34165,6 +35520,7 @@ var parseCardsText = {
 			"name": "Charpie",
 			"text": "Détruit un serviteur.\nAjoute un serviteur aléatoire dans la main de votre adversaire."
 		},
+		"goldenImage": "AT_044.gif",
 		"id": "AT_044",
 		"name": "Mulch",
 		"playerClass": "Druid",
@@ -34183,6 +35539,7 @@ var parseCardsText = {
 			"name": "Genzo, le Requin",
 			"text": "Chaque fois qu’il attaque, les deux joueurs piochent des cartes jusqu’à en avoir 3."
 		},
+		"goldenImage": "CFM_808.gif",
 		"health": 4,
 		"id": "CFM_808",
 		"name": "Genzo, the Shark",
@@ -34202,6 +35559,7 @@ var parseCardsText = {
 			"name": "Œuf de dragon",
 			"text": "Invoque un dragonnet 2/1 chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "BRM_022.gif",
 		"health": 2,
 		"id": "BRM_022",
 		"name": "Dragon Egg",
@@ -34221,6 +35579,7 @@ var parseCardsText = {
 			"name": "Golem céleste piloté",
 			"text": "<b>Râle d’agonie :</b> invoque un serviteur aléatoire coûtant 4 cristaux."
 		},
+		"goldenImage": "GVG_105.gif",
 		"health": 4,
 		"id": "GVG_105",
 		"name": "Piloted Sky Golem",
@@ -34237,6 +35596,7 @@ var parseCardsText = {
 			"name": "Boum !",
 			"text": "Inflige $3 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "LOEA07_20.gif",
 		"id": "LOEA07_20",
 		"name": "Boom!",
 		"playerClass": "Neutral",
@@ -34268,6 +35628,7 @@ var parseCardsText = {
 			"name": "Soigneur hozen",
 			"text": "<b>Cri de guerre :</b> rend tous ses PV à un serviteur."
 		},
+		"goldenImage": "CFM_067.gif",
 		"health": 6,
 		"id": "CFM_067",
 		"name": "Hozen Healer",
@@ -34301,6 +35662,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t25.gif",
 		"health": 25,
 		"id": "CFM_712_t25",
 		"name": "Jade Golem",
@@ -34358,6 +35720,7 @@ var parseCardsText = {
 			"name": "Gelée",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "FP1_012t.gif",
 		"health": 2,
 		"id": "FP1_012t",
 		"name": "Slime",
@@ -34375,6 +35738,7 @@ var parseCardsText = {
 			"name": "Horion de givre",
 			"text": "Inflige $1 |4(point,points) de dégâts à un personnage adverse, et le <b>gèle</b>."
 		},
+		"goldenImage": "CS2_037.gif",
 		"id": "CS2_037",
 		"name": "Frost Shock",
 		"playerClass": "Shaman",
@@ -34393,6 +35757,7 @@ var parseCardsText = {
 			"name": "Croq’zombie",
 			"text": "<b>Râle d’agonie :</b> rend 5 PV au héros adverse."
 		},
+		"goldenImage": "FP1_001.gif",
 		"health": 3,
 		"id": "FP1_001",
 		"name": "Zombie Chow",
@@ -34425,6 +35790,7 @@ var parseCardsText = {
 			"name": "Klaxon rouillé",
 			"text": "Confère <b>Provocation</b> à un serviteur."
 		},
+		"goldenImage": "PART_003.gif",
 		"id": "PART_003",
 		"name": "Rusty Horn",
 		"playerClass": "Neutral",
@@ -34441,6 +35807,7 @@ var parseCardsText = {
 			"name": "Mot de pouvoir : Bouclier",
 			"text": "Donne +2 PV à un serviteur. Vous piochez une carte."
 		},
+		"goldenImage": "CS2_004.gif",
 		"id": "CS2_004",
 		"name": "Power Word: Shield",
 		"playerClass": "Priest",
@@ -34454,6 +35821,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "LOEA16_1H.gif",
 		"health": 30,
 		"id": "LOEA16_1H",
 		"name": "Rafaam",
@@ -34471,6 +35839,7 @@ var parseCardsText = {
 			"name": "Vide-gousset",
 			"text": "Chaque fois que ce serviteur attaque un héros, ajoute une carte La pièce dans votre main."
 		},
+		"goldenImage": "AT_031.gif",
 		"health": 2,
 		"id": "AT_031",
 		"name": "Cutpurse",
@@ -34489,6 +35858,7 @@ var parseCardsText = {
 			"name": "Piège à ours",
 			"text": "<b>Secret :</b> invoque un ours 3/3 avec <b>Provocation</b> une fois que votre héros a été attaqué."
 		},
+		"goldenImage": "AT_060.gif",
 		"id": "AT_060",
 		"name": "Bear Trap",
 		"playerClass": "Hunter",
@@ -34506,6 +35876,7 @@ var parseCardsText = {
 			"name": "Sprint",
 			"text": "Vous piochez 4 cartes."
 		},
+		"goldenImage": "CS2_077.gif",
 		"id": "CS2_077",
 		"name": "Sprint",
 		"playerClass": "Rogue",
@@ -34554,6 +35925,7 @@ var parseCardsText = {
 			"name": "Messagère de la Kabale",
 			"text": "<b>Cri de guerre :</b> <b>découvre</b> une carte de mage, prêtre ou démoniste."
 		},
+		"goldenImage": "CFM_649.gif",
 		"health": 2,
 		"id": "CFM_649",
 		"name": "Kabal Courier",
@@ -34573,6 +35945,7 @@ var parseCardsText = {
 			"name": "Agent du SI:7",
 			"text": "<b>Combo :</b> inflige 2 points de dégâts."
 		},
+		"goldenImage": "EX1_134.gif",
 		"health": 3,
 		"id": "EX1_134",
 		"name": "SI:7 Agent",
@@ -34590,6 +35963,7 @@ var parseCardsText = {
 			"name": "Écumeur du soleil Phaerix",
 			"text": "Ajoute une carte Bénédiction du soleil dans votre main à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_19.gif",
 		"health": 5,
 		"id": "LOEA16_19",
 		"name": "Sun Raider Phaerix",
@@ -34609,6 +35983,7 @@ var parseCardsText = {
 			"name": "Sergent Sally",
 			"text": "<b>Râle d’agonie :</b> inflige des dégâts d’un montant égal à l’Attaque de ce serviteur à tous les serviteurs adverses."
 		},
+		"goldenImage": "CFM_341.gif",
 		"health": 1,
 		"id": "CFM_341",
 		"name": "Sergeant Sally",
@@ -34643,6 +36018,7 @@ var parseCardsText = {
 			"name": "Géode de mana",
 			"text": "Invoque un cristal 2/2 chaque fois que ce serviteur est soigné."
 		},
+		"goldenImage": "CFM_606.gif",
 		"health": 3,
 		"id": "CFM_606",
 		"name": "Mana Geode",
@@ -34658,6 +36034,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Uther le Porteur de Lumière"
 		},
+		"goldenImage": "HERO_04.gif",
 		"health": 30,
 		"id": "HERO_04",
 		"name": "Uther Lightbringer",
@@ -34673,6 +36050,7 @@ var parseCardsText = {
 			"name": "Hand to Deck",
 			"text": "Shuffle a player's hand into his deck."
 		},
+		"goldenImage": "XXX_042.gif",
 		"id": "XXX_042",
 		"name": "Hand to Deck",
 		"playerClass": "Neutral",
@@ -34689,6 +36067,7 @@ var parseCardsText = {
 			"name": "Feux follets à foison",
 			"text": "Invoque sept feux follets 1/1."
 		},
+		"goldenImage": "OG_195a.gif",
 		"id": "OG_195a",
 		"name": "Many Wisps",
 		"playerClass": "Druid",
@@ -34717,6 +36096,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Grande veuve Faerlina"
 		},
+		"goldenImage": "NAX2_01H.gif",
 		"health": 45,
 		"id": "NAX2_01H",
 		"name": "Grand Widow Faerlina",
@@ -34732,6 +36112,7 @@ var parseCardsText = {
 			"name": "Huile des ténèbres",
 			"text": "Ajoute un démon aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_621t9.gif",
 		"id": "CFM_621t9",
 		"name": "Shadow Oil",
 		"playerClass": "Neutral",
@@ -34747,6 +36128,7 @@ var parseCardsText = {
 			"name": "Toxine d’églantine",
 			"text": "Donne +3 ATQ à un serviteur."
 		},
+		"goldenImage": "OG_080d.gif",
 		"id": "OG_080d",
 		"name": "Briarthorn Toxin",
 		"playerClass": "Rogue",
@@ -34764,6 +36146,7 @@ var parseCardsText = {
 			"name": "Réducteur fou",
 			"text": "<b>Cri de guerre :</b> donne à un serviteur -2 ATQ pendant ce tour."
 		},
+		"goldenImage": "GVG_011.gif",
 		"health": 2,
 		"id": "GVG_011",
 		"name": "Shrinkmeister",
@@ -34782,6 +36165,7 @@ var parseCardsText = {
 			"name": "Limon",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_156a.gif",
 		"health": 1,
 		"id": "OG_156a",
 		"name": "Ooze",
@@ -34813,6 +36197,7 @@ var parseCardsText = {
 			"name": "Coupe de sang hakkari",
 			"text": "Transforme un serviteur en un serpent de la fosse 2/1."
 		},
+		"goldenImage": "LOEA16_10.gif",
 		"id": "LOEA16_10",
 		"name": "Hakkari Blood Goblet",
 		"playerClass": "Neutral",
@@ -34844,6 +36229,7 @@ var parseCardsText = {
 			"name": "Roi Mukla",
 			"text": "<b>Cri de guerre :</b> donne 2 bananes à votre adversaire."
 		},
+		"goldenImage": "EX1_014.gif",
 		"health": 5,
 		"id": "EX1_014",
 		"name": "King Mukla",
@@ -34875,6 +36261,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Tréant"
 		},
+		"goldenImage": "EX1_tk9.gif",
 		"health": 2,
 		"id": "EX1_tk9",
 		"name": "Treant",
@@ -34920,6 +36307,7 @@ var parseCardsText = {
 			"name": "Raptor d’os",
 			"text": "<b>Cri de guerre :</b> prend le contrôle de l’arme de votre adversaire."
 		},
+		"goldenImage": "LOEA15_3.gif",
 		"health": 2,
 		"id": "LOEA15_3",
 		"name": "Boneraptor",
@@ -34935,6 +36323,7 @@ var parseCardsText = {
 			"name": "Bonus : Cri de guerre",
 			"text": "Vos serviteurs avec <b>Cri de guerre</b> ont +1/+1."
 		},
+		"goldenImage": "TB_PickYourFate_10.gif",
 		"id": "TB_PickYourFate_10",
 		"name": "Battlecry Bonus",
 		"playerClass": "Neutral",
@@ -34952,6 +36341,7 @@ var parseCardsText = {
 			"name": "Brave Sabot-de-Sang",
 			"text": "<b>Provocation</b>\n<b>Accès de rage :</b> +3 ATQ."
 		},
+		"goldenImage": "OG_218.gif",
 		"health": 6,
 		"id": "OG_218",
 		"name": "Bloodhoof Brave",
@@ -34985,6 +36375,7 @@ var parseCardsText = {
 			"name": "Golem totémique",
 			"text": "<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "AT_052.gif",
 		"health": 4,
 		"id": "AT_052",
 		"name": "Totem Golem",
@@ -35018,6 +36409,7 @@ var parseCardsText = {
 			"name": "Lance rare",
 			"text": "Gagne +1/+1 chaque fois que votre adversaire joue une carte rare."
 		},
+		"goldenImage": "LOEA09_4.gif",
 		"id": "LOEA09_4",
 		"name": "Rare Spear",
 		"playerClass": "Neutral",
@@ -35035,6 +36427,7 @@ var parseCardsText = {
 			"name": "Disciple de C’Thun",
 			"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts. Donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_162.gif",
 		"health": 1,
 		"id": "OG_162",
 		"name": "Disciple of C'Thun",
@@ -35054,6 +36447,7 @@ var parseCardsText = {
 			"name": "Technicienne de l’Aile noire",
 			"text": "<b>Cri de guerre :</b> gagne +1/+1 si vous avez un Dragon en main."
 		},
+		"goldenImage": "BRM_033.gif",
 		"health": 4,
 		"id": "BRM_033",
 		"name": "Blackwing Technician",
@@ -35070,6 +36464,7 @@ var parseCardsText = {
 			"name": "Invocation de panthère",
 			"text": "Invoque une panthère 3/2."
 		},
+		"goldenImage": "EX1_160a.gif",
 		"id": "EX1_160a",
 		"name": "Summon a Panther",
 		"playerClass": "Druid",
@@ -35130,6 +36525,7 @@ var parseCardsText = {
 			"name": "Sire Zeliek",
 			"text": "Dame Blaumeux est <b>Insensible</b>."
 		},
+		"goldenImage": "TB_KTRAF_2s.gif",
 		"health": 5,
 		"id": "TB_KTRAF_2s",
 		"name": "Sir Zeliek",
@@ -35164,6 +36560,7 @@ var parseCardsText = {
 			"name": "Prince voleur Rafaam",
 			"text": "<b>Cri de guerre : découvre</b>\nun puissant artéfact."
 		},
+		"goldenImage": "LOE_092.gif",
 		"health": 8,
 		"id": "LOE_092",
 		"name": "Arch-Thief Rafaam",
@@ -35202,8 +36599,9 @@ var parseCardsText = {
 		"durability": 4,
 		"fr": {
 			"name": "Marteau chargé",
-			"text": "<b>R��le d’agonie :</b> votre pouvoir héroïque devient « Inflige 2 points de dégâts »."
+			"text": "<b>Râle d’agonie :</b> votre pouvoir héroïque devient « Inflige 2 points de dégâts »."
 		},
+		"goldenImage": "AT_050.gif",
 		"id": "AT_050",
 		"name": "Charged Hammer",
 		"playerClass": "Shaman",
@@ -35249,6 +36647,7 @@ var parseCardsText = {
 			"name": "Mine enfouie",
 			"text": "Quand vous la piochez, elle explose, vous infligeant 10 points de dégâts. Vous piochez une carte."
 		},
+		"goldenImage": "GVG_056t.gif",
 		"id": "GVG_056t",
 		"name": "Burrowing Mine",
 		"playerClass": "Warrior",
@@ -35278,6 +36677,7 @@ var parseCardsText = {
 			"name": "Gangrenelle",
 			"text": "Inflige $4 |4(point,points) de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "CFM_621t18.gif",
 		"id": "CFM_621t18",
 		"name": "Felbloom",
 		"playerClass": "Neutral",
@@ -35296,6 +36696,7 @@ var parseCardsText = {
 			"name": "Archère elfe",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "CS2_189.gif",
 		"health": 1,
 		"id": "CS2_189",
 		"name": "Elven Archer",
@@ -35313,6 +36714,7 @@ var parseCardsText = {
 			"name": "Tranchetripe",
 			"text": "Donne +3 ATQ à vos serviteurs au début de votre tour."
 		},
+		"goldenImage": "BRMC_98.gif",
 		"health": 12,
 		"id": "BRMC_98",
 		"name": "Razorgore",
@@ -35346,6 +36748,7 @@ var parseCardsText = {
 			"name": "Reno Jackson",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, rend tous ses PV à votre héros."
 		},
+		"goldenImage": "LOE_011.gif",
 		"health": 6,
 		"id": "LOE_011",
 		"name": "Reno Jackson",
@@ -35363,6 +36766,7 @@ var parseCardsText = {
 			"name": "Pourfendeur drakônide",
 			"text": "Inflige également des dégâts aux serviteurs à côté de celui qu’il attaque."
 		},
+		"goldenImage": "BRMC_88.gif",
 		"health": 6,
 		"id": "BRMC_88",
 		"name": "Drakonid Slayer",
@@ -35395,6 +36799,7 @@ var parseCardsText = {
 			"name": "Chopper huran de Tanaris",
 			"text": "<b>Cri de guerre :</b> gagne <b>Charge</b> si la main de votre adversaire est vide."
 		},
+		"goldenImage": "CFM_809.gif",
 		"health": 4,
 		"id": "CFM_809",
 		"name": "Tanaris Hogchopper",
@@ -35414,6 +36819,7 @@ var parseCardsText = {
 			"name": "Crabe affamé",
 			"text": "<b>Cri de guerre :</b> détruit un murloc et gagne +2/+2."
 		},
+		"goldenImage": "NEW1_017.gif",
 		"health": 2,
 		"id": "NEW1_017",
 		"name": "Hungry Crab",
@@ -35430,6 +36836,7 @@ var parseCardsText = {
 			"name": "Discard",
 			"text": "Choose a hero.  That hero's controller discards his hand."
 		},
+		"goldenImage": "XXX_013.gif",
 		"id": "XXX_013",
 		"name": "Discard",
 		"playerClass": "Neutral",
@@ -35446,6 +36853,7 @@ var parseCardsText = {
 			"name": "Magmatron",
 			"text": "Chaque fois qu’un joueur joue une carte, lui inflige 2 points de dégâts."
 		},
+		"goldenImage": "BRMA14_9.gif",
 		"health": 7,
 		"id": "BRMA14_9",
 		"name": "Magmatron",
@@ -35463,6 +36871,7 @@ var parseCardsText = {
 			"name": "Garr",
 			"text": "Invoque un élémentaire 2/3 avec <b>Provocation</b> chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "BRMC_99.gif",
 		"health": 8,
 		"id": "BRMC_99",
 		"name": "Garr",
@@ -35483,6 +36892,7 @@ var parseCardsText = {
 			"name": "Écuyère d’Argent",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "EX1_008.gif",
 		"health": 1,
 		"id": "EX1_008",
 		"name": "Argent Squire",
@@ -35515,6 +36925,7 @@ var parseCardsText = {
 			"name": "Zinaar",
 			"text": "Vous gagnez un Vœu à la fin de votre tour."
 		},
+		"goldenImage": "LOEA16_18.gif",
 		"health": 5,
 		"id": "LOEA16_18",
 		"name": "Zinaar",
@@ -35534,6 +36945,7 @@ var parseCardsText = {
 			"name": "Maître-chien",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 et <b>Provocation</b> à une Bête alliée."
 		},
+		"goldenImage": "DS1_070.gif",
 		"health": 3,
 		"id": "DS1_070",
 		"name": "Houndmaster",
@@ -35551,6 +36963,7 @@ var parseCardsText = {
 			"name": "Rachelle Davis",
 			"text": "<b>Cri de guerre :</b> pioche DEUX cartes. <i>Ce n’est pas un ingénieur novice.</i>"
 		},
+		"goldenImage": "CRED_12.gif",
 		"health": 2,
 		"id": "CRED_12",
 		"name": "Rachelle Davis",
@@ -35570,6 +36983,7 @@ var parseCardsText = {
 			"name": "Mini-mage",
 			"text": "<b>Camouflage</b>\n<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "GVG_109.gif",
 		"health": 1,
 		"id": "GVG_109",
 		"name": "Mini-Mage",
@@ -35588,6 +37002,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gelée"
 		},
+		"goldenImage": "OG_249a.gif",
 		"health": 2,
 		"id": "OG_249a",
 		"name": "Slime",
@@ -35605,6 +37020,7 @@ var parseCardsText = {
 			"name": "Gardien du Crépuscule",
 			"text": "<b>Cri de guerre :</b> gagne\n+1 ATQ et <b>Provocation</b> si vous avez un Dragon en main."
 		},
+		"goldenImage": "AT_017.gif",
 		"health": 6,
 		"id": "AT_017",
 		"name": "Twilight Guardian",
@@ -35636,6 +37052,7 @@ var parseCardsText = {
 			"name": "Enrage-bête trogg",
 			"text": "<b>Cri de guerre :</b> donne +1/+1 à une Bête aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_338.gif",
 		"health": 2,
 		"id": "CFM_338",
 		"name": "Trogg Beastrager",
@@ -35670,6 +37087,7 @@ var parseCardsText = {
 			"name": "Long-voyant de Thrallmar",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "EX1_021.gif",
 		"health": 3,
 		"id": "EX1_021",
 		"name": "Thrallmar Farseer",
@@ -35686,6 +37104,7 @@ var parseCardsText = {
 			"name": "Destroy all Mana",
 			"text": "Destroy all of a player's Mana Crystals."
 		},
+		"goldenImage": "XXX_049.gif",
 		"id": "XXX_049",
 		"name": "Destroy all Mana",
 		"playerClass": "Neutral",
@@ -35720,6 +37139,7 @@ var parseCardsText = {
 			"name": "Géant de lave",
 			"text": "Coûte (1) cristal de moins pour chaque point de dégâts subi par votre héros."
 		},
+		"goldenImage": "EX1_620.gif",
 		"health": 8,
 		"id": "EX1_620",
 		"name": "Molten Giant",
@@ -35736,6 +37156,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gnoll massif"
 		},
+		"goldenImage": "TU4a_005.gif",
 		"health": 2,
 		"id": "TU4a_005",
 		"name": "Massive Gnoll",
@@ -35754,6 +37175,7 @@ var parseCardsText = {
 			"name": "Sensei de l’ombre",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à un serviteur avec <b>Camouflage</b>."
 		},
+		"goldenImage": "CFM_694.gif",
 		"health": 4,
 		"id": "CFM_694",
 		"name": "Shadow Sensei",
@@ -35771,6 +37193,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Araignée"
 		},
+		"goldenImage": "OG_216a.gif",
 		"health": 1,
 		"id": "OG_216a",
 		"name": "Spider",
@@ -35799,6 +37222,7 @@ var parseCardsText = {
 			"name": "LAVE !",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "BRMA17_4.gif",
 		"id": "BRMA17_4",
 		"name": "LAVA!",
 		"playerClass": "Neutral",
@@ -35816,6 +37240,7 @@ var parseCardsText = {
 			"name": "Écraseur drakônide",
 			"text": "<b>Cri de guerre :</b> gagne +3/+3 si votre adversaire a 15 PV ou moins."
 		},
+		"goldenImage": "BRM_024.gif",
 		"health": 6,
 		"id": "BRM_024",
 		"name": "Drakonid Crusher",
@@ -35836,6 +37261,7 @@ var parseCardsText = {
 			"name": "Clé de maître des rouages",
 			"text": "A +2 ATQ tant que vous avez un Méca."
 		},
+		"goldenImage": "GVG_024.gif",
 		"id": "GVG_024",
 		"name": "Cogmaster's Wrench",
 		"playerClass": "Rogue",
@@ -35853,6 +37279,7 @@ var parseCardsText = {
 			"name": "Rituel interdit",
 			"text": "Dépense tous vos cristaux de mana. Invoque un nombre équivalent de tentacules 1/1."
 		},
+		"goldenImage": "OG_114.gif",
 		"id": "OG_114",
 		"name": "Forbidden Ritual",
 		"playerClass": "Warlock",
@@ -35869,6 +37296,7 @@ var parseCardsText = {
 			"name": "Noth le Porte-Peste",
 			"text": "Chaque fois qu’un serviteur adverse meurt, invoque un squelette 1/1 et donne +1/+1 à vos autres serviteurs."
 		},
+		"goldenImage": "TB_KTRAF_10.gif",
 		"health": 5,
 		"id": "TB_KTRAF_10",
 		"name": "Noth the Plaguebringer",
@@ -35888,6 +37316,7 @@ var parseCardsText = {
 			"name": "Seigneur de la toile nérub’ar",
 			"text": "Les serviteurs avec <b>Cri de guerre</b> coûtent (2) cristaux de plus."
 		},
+		"goldenImage": "FP1_017.gif",
 		"health": 4,
 		"id": "FP1_017",
 		"name": "Nerub'ar Weblord",
@@ -35906,6 +37335,7 @@ var parseCardsText = {
 			"name": "Étreindre l’ombre",
 			"text": "Durant ce tour, vos effets de soin infligent des dégâts à la place."
 		},
+		"goldenImage": "OG_104.gif",
 		"id": "OG_104",
 		"name": "Embrace the Shadow",
 		"playerClass": "Priest",
@@ -35922,6 +37352,7 @@ var parseCardsText = {
 			"name": "Jeremy Cranford",
 			"text": "Quand la partie commence, cette carte se place en début de deck."
 		},
+		"goldenImage": "CRED_31.gif",
 		"health": 4,
 		"id": "CRED_31",
 		"name": "Jeremy Cranford",
@@ -35955,6 +37386,7 @@ var parseCardsText = {
 			"name": "Rédemption",
 			"text": "<b>Secret :</b> quand un de vos serviteurs meurt, il est ressuscité avec\n1 PV."
 		},
+		"goldenImage": "EX1_136.gif",
 		"id": "EX1_136",
 		"name": "Redemption",
 		"playerClass": "Paladin",
@@ -35984,6 +37416,7 @@ var parseCardsText = {
 			"name": "Déchaînement",
 			"text": "Invoque 3 liges du feu. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "BRMA04_4.gif",
 		"id": "BRMA04_4",
 		"name": "Rock Out",
 		"overload": 1,
@@ -35997,6 +37430,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Puits de mine"
 		},
+		"goldenImage": "LOEA07_02h.gif",
 		"health": 80,
 		"id": "LOEA07_02h",
 		"name": "Mine Shaft",
@@ -36014,6 +37448,7 @@ var parseCardsText = {
 			"name": "Gardien des rois",
 			"text": "<b>Cri de guerre :</b> rend 6 points de vie à votre héros."
 		},
+		"goldenImage": "CS2_088.gif",
 		"health": 6,
 		"id": "CS2_088",
 		"name": "Guardian of Kings",
@@ -36031,6 +37466,7 @@ var parseCardsText = {
 			"name": "Souffleur",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "NEW1_034.gif",
 		"health": 2,
 		"id": "NEW1_034",
 		"name": "Huffer",
@@ -36080,6 +37516,7 @@ var parseCardsText = {
 			"name": "Vaillant de Fossoyeuse",
 			"text": "<b>Combo :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "AT_030.gif",
 		"health": 2,
 		"id": "AT_030",
 		"name": "Undercity Valiant",
@@ -36113,6 +37550,7 @@ var parseCardsText = {
 			"name": "Cavalier d’Argent",
 			"text": "<b>Charge</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "AT_087.gif",
 		"health": 1,
 		"id": "AT_087",
 		"name": "Argent Horserider",
@@ -36127,6 +37565,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Rend Main-Noire"
 		},
+		"goldenImage": "BRMA09_1H.gif",
 		"health": 30,
 		"id": "BRMA09_1H",
 		"name": "Rend Blackhand",
@@ -36144,6 +37583,7 @@ var parseCardsText = {
 			"name": "Forban de la Voile sanglante",
 			"text": "<b>Cri de guerre :</b> ôte 1 Durabilité à l’arme de votre adversaire."
 		},
+		"goldenImage": "NEW1_025.gif",
 		"health": 2,
 		"id": "NEW1_025",
 		"name": "Bloodsail Corsair",
@@ -36160,6 +37600,7 @@ var parseCardsText = {
 			"name": "Mutation chromatique",
 			"text": "Transforme un serviteur en draconien chromatique 2/2."
 		},
+		"goldenImage": "BRMA12_8.gif",
 		"id": "BRMA12_8",
 		"name": "Chromatic Mutation",
 		"playerClass": "Neutral",
@@ -36176,6 +37617,7 @@ var parseCardsText = {
 			"name": "Caisse de contrebandier",
 			"text": "Donne +2/+2 à une Bête aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_334.gif",
 		"id": "CFM_334",
 		"name": "Smuggler's Crate",
 		"playerClass": "Hunter",
@@ -36194,6 +37636,7 @@ var parseCardsText = {
 			"name": "Fabricante d’armures",
 			"text": "Chaque fois qu’un serviteur allié subit des dégâts, vous gagnez 1 point d’armure."
 		},
+		"goldenImage": "EX1_402.gif",
 		"health": 4,
 		"id": "EX1_402",
 		"name": "Armorsmith",
@@ -36211,6 +37654,7 @@ var parseCardsText = {
 			"name": "Steven Gabriel",
 			"text": "<b>Cri de guerre :</b> invoque une boisson à mousse."
 		},
+		"goldenImage": "CRED_04.gif",
 		"health": 3,
 		"id": "CRED_04",
 		"name": "Steven Gabriel",
@@ -36229,6 +37673,7 @@ var parseCardsText = {
 			"name": "Tous les murlocs de ta vie",
 			"text": "Invoque 7 murlocs détruits pendant cette partie."
 		},
+		"goldenImage": "LOE_026.gif",
 		"id": "LOE_026",
 		"name": "Anyfin Can Happen",
 		"playerClass": "Paladin",
@@ -36247,6 +37692,7 @@ var parseCardsText = {
 			"name": "Gangregarde",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> détruit un de vos cristaux de mana."
 		},
+		"goldenImage": "EX1_301.gif",
 		"health": 5,
 		"id": "EX1_301",
 		"name": "Felguard",
@@ -36263,6 +37709,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem endommagé"
 		},
+		"goldenImage": "skele21.gif",
 		"health": 1,
 		"id": "skele21",
 		"name": "Damaged Golem",
@@ -36333,6 +37780,7 @@ var parseCardsText = {
 			"name": "Malkorok",
 			"text": "<b>Cri de guerre :</b> vous équipe d’une arme aléatoire."
 		},
+		"goldenImage": "OG_220.gif",
 		"health": 5,
 		"id": "OG_220",
 		"name": "Malkorok",
@@ -36366,6 +37814,7 @@ var parseCardsText = {
 			"name": "Attaque sournoise",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur indemne."
 		},
+		"goldenImage": "CS2_072.gif",
 		"id": "CS2_072",
 		"name": "Backstab",
 		"playerClass": "Rogue",
@@ -36395,6 +37844,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Anduin Wrynn"
 		},
+		"goldenImage": "HERO_09.gif",
 		"health": 30,
 		"id": "HERO_09",
 		"name": "Anduin Wrynn",
@@ -36410,6 +37860,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Dragonnet"
 		},
+		"goldenImage": "BRMA09_2t.gif",
 		"health": 1,
 		"id": "BRMA09_2t",
 		"name": "Whelp",
@@ -36426,6 +37877,7 @@ var parseCardsText = {
 			"name": "Sceau de Lumière",
 			"text": "Rend #4 |4(point,points) de vie à votre héros et lui donne +2 ATQ pendant ce tour."
 		},
+		"goldenImage": "GVG_057.gif",
 		"id": "GVG_057",
 		"name": "Seal of Light",
 		"playerClass": "Paladin",
@@ -36442,6 +37894,7 @@ var parseCardsText = {
 			"name": "Eric Dodds",
 			"text": "<b>Cri de guerre :</b> invoque un pirate 2/2 et détruit tous les ninjas."
 		},
+		"goldenImage": "CRED_02.gif",
 		"health": 5,
 		"id": "CRED_02",
 		"name": "Eric Dodds",
@@ -36460,6 +37913,7 @@ var parseCardsText = {
 			"name": "Corruption",
 			"text": "Choisissez un serviteur adverse. Au début de votre tour, il est détruit."
 		},
+		"goldenImage": "CS2_063.gif",
 		"id": "CS2_063",
 		"name": "Corruption",
 		"playerClass": "Warlock",
@@ -36478,6 +37932,7 @@ var parseCardsText = {
 			"name": "Héros défunt",
 			"text": "Votre pouvoir héroïque inflige 1 point de dégâts supplémentaire."
 		},
+		"goldenImage": "AT_003.gif",
 		"health": 2,
 		"id": "AT_003",
 		"name": "Fallen Hero",
@@ -36494,6 +37949,7 @@ var parseCardsText = {
 			"name": "Destin cruel : explosion de mana",
 			"text": "Les serviteurs obtiennent « <b>Râle d’agonie :</b> une carte aléatoire de votre main coûte (0) |4(cristal,cristaux) de mana. »."
 		},
+		"goldenImage": "TB_PickYourFate_7_2nd.gif",
 		"id": "TB_PickYourFate_7_2nd",
 		"name": "Dire Fate: Manaburst",
 		"playerClass": "Neutral",
@@ -36535,6 +37991,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Seigneur Victor Nefarius"
 		},
+		"goldenImage": "BRMA13_1H.gif",
 		"health": 30,
 		"id": "BRMA13_1H",
 		"name": "Lord Victor Nefarius",
@@ -36565,6 +38022,7 @@ var parseCardsText = {
 			"name": "Folie galopante",
 			"text": "Inflige $9 |4(point,points) de dégâts répartis de façon aléatoire entre TOUS les personnages."
 		},
+		"goldenImage": "OG_116.gif",
 		"id": "OG_116",
 		"name": "Spreading Madness",
 		"playerClass": "Warlock",
@@ -36583,6 +38041,7 @@ var parseCardsText = {
 			"name": "Cogneur médiocre",
 			"text": "<b>Provocation</b>. Coûte (2) |4(cristal,cristaux) de moins si votre adversaire a au moins trois serviteurs."
 		},
+		"goldenImage": "CFM_652.gif",
 		"health": 5,
 		"id": "CFM_652",
 		"name": "Second-Rate Bruiser",
@@ -36618,6 +38077,7 @@ var parseCardsText = {
 			"name": "Archimage",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CS2_155.gif",
 		"health": 7,
 		"id": "CS2_155",
 		"name": "Archmage",
@@ -36635,6 +38095,7 @@ var parseCardsText = {
 			"name": "Système de défense Omnitron",
 			"text": "Active un Tron aléatoire."
 		},
+		"goldenImage": "BRMC_93.gif",
 		"id": "BRMC_93",
 		"name": "Omnotron Defense System",
 		"playerClass": "Neutral",
@@ -36667,6 +38128,7 @@ var parseCardsText = {
 			"name": "Dromadaire du désert",
 			"text": "<b>Cri de guerre :</b> place un serviteur à 1 cristal de mana de chaque deck sur le champ de bataille."
 		},
+		"goldenImage": "LOE_020.gif",
 		"health": 4,
 		"id": "LOE_020",
 		"name": "Desert Camel",
@@ -36701,6 +38163,7 @@ var parseCardsText = {
 			"name": "Destrier de l’effroi",
 			"text": "<b>Râle d’agonie :</b> invoque un destrier de l’effroi."
 		},
+		"goldenImage": "AT_019.gif",
 		"health": 1,
 		"id": "AT_019",
 		"name": "Dreadsteed",
@@ -36720,6 +38183,7 @@ var parseCardsText = {
 			"name": "Voyant corrompu",
 			"text": "<b>Cri de guerre :</b> inflige\n2 points de dégâts à tous les serviteurs non murlocs."
 		},
+		"goldenImage": "OG_161.gif",
 		"health": 3,
 		"id": "OG_161",
 		"name": "Corrupted Seer",
@@ -36749,6 +38213,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Coren Navrebière"
 		},
+		"goldenImage": "BRMA01_1H.gif",
 		"health": 30,
 		"id": "BRMA01_1H",
 		"name": "Coren Direbrew",
@@ -36766,6 +38231,7 @@ var parseCardsText = {
 			"name": "Rampant des marais",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "OG_153.gif",
 		"health": 8,
 		"id": "OG_153",
 		"name": "Bog Creeper",
@@ -36785,6 +38251,7 @@ var parseCardsText = {
 			"name": "Le Chevalier noir",
 			"text": "<b>Cri de guerre :</b> détruit un serviteur adverse avec <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_002.gif",
 		"health": 5,
 		"id": "EX1_002",
 		"name": "The Black Knight",
@@ -36832,6 +38299,7 @@ var parseCardsText = {
 			"name": "En chasse",
 			"text": "Inflige $1 |4(point,points) de dégâts. Invoque un mastiff 1/1."
 		},
+		"goldenImage": "OG_061.gif",
 		"id": "OG_061",
 		"name": "On the Hunt",
 		"playerClass": "Hunter",
@@ -36878,6 +38346,7 @@ var parseCardsText = {
 			"name": "Montée d’adrénaline",
 			"text": "Inflige $2 |4(point,points) de dégâts au héros adverse."
 		},
+		"goldenImage": "BRMA11_3.gif",
 		"id": "BRMA11_3",
 		"name": "Burning Adrenaline",
 		"playerClass": "Neutral",
@@ -36892,6 +38361,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Défenseur"
 		},
+		"goldenImage": "EX1_130a.gif",
 		"health": 1,
 		"id": "EX1_130a",
 		"name": "Defender",
@@ -36923,6 +38393,7 @@ var parseCardsText = {
 			"name": "Champion gelé",
 			"text": "Gelé pour toute la partie. Les serviteurs adjacents sont immunisés contre Souffle de givre."
 		},
+		"goldenImage": "NAX14_03.gif",
 		"health": 10,
 		"id": "NAX14_03",
 		"name": "Frozen Champion",
@@ -36955,6 +38426,7 @@ var parseCardsText = {
 			"name": "Écho de Medivh",
 			"text": "Place une copie de chaque serviteur allié dans votre main."
 		},
+		"goldenImage": "GVG_005.gif",
 		"id": "GVG_005",
 		"name": "Echo of Medivh",
 		"playerClass": "Mage",
@@ -36973,6 +38445,7 @@ var parseCardsText = {
 			"name": "La Bête",
 			"text": "<b>Râle d’agonie :</b> invoque Finkle Einhorn 3/3 pour votre adversaire."
 		},
+		"goldenImage": "EX1_577.gif",
 		"health": 7,
 		"id": "EX1_577",
 		"name": "The Beast",
@@ -36992,6 +38465,7 @@ var parseCardsText = {
 			"name": "Druide de la Griffe",
 			"text": "<b>Choix des armes :</b> <b>Charge</b> ou donne +2 PV et <b>Provocation</b>."
 		},
+		"goldenImage": "EX1_165.gif",
 		"health": 4,
 		"id": "EX1_165",
 		"name": "Druid of the Claw",
@@ -37008,6 +38482,7 @@ var parseCardsText = {
 			"name": "Vœu : plus de Vœux",
 			"text": "Gagne 2 Vœux."
 		},
+		"goldenImage": "LOEA02_06.gif",
 		"id": "LOEA02_06",
 		"name": "Wish for More Wishes",
 		"playerClass": "Neutral",
@@ -37039,6 +38514,7 @@ var parseCardsText = {
 			"name": "Pierre d’invocation",
 			"text": "Chaque fois que vous lancez un sort, invoque un serviteur aléatoire de même coût."
 		},
+		"goldenImage": "LOE_086.gif",
 		"health": 6,
 		"id": "LOE_086",
 		"name": "Summoning Stone",
@@ -37056,6 +38532,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Druide du Croc"
 		},
+		"goldenImage": "GVG_080t.gif",
 		"health": 7,
 		"id": "GVG_080t",
 		"name": "Druid of the Fang",
@@ -37070,6 +38547,7 @@ var parseCardsText = {
 			"name": "Break Weapon",
 			"text": "Destroy a hero's weapon."
 		},
+		"goldenImage": "XXX_006.gif",
 		"id": "XXX_006",
 		"name": "Break Weapon",
 		"playerClass": "Neutral",
@@ -37083,6 +38561,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chef Scarvash"
 		},
+		"goldenImage": "LOEA05_01.gif",
 		"health": 30,
 		"id": "LOEA05_01",
 		"name": "Chieftain Scarvash",
@@ -37125,6 +38604,7 @@ var parseCardsText = {
 			"name": "Mill 10",
 			"text": "Put 10 cards from a hero's deck into his graveyard."
 		},
+		"goldenImage": "XXX_014.gif",
 		"id": "XXX_014",
 		"name": "Mill 10",
 		"playerClass": "Neutral",
@@ -37141,6 +38621,7 @@ var parseCardsText = {
 			"name": "Porte-pavois",
 			"text": "<b>Provocation</b>.\n<b>Cri de guerre :</b> gagne un nombre de PV équivalent à l’attaque de Hurlevent."
 		},
+		"goldenImage": "TB_SPT_Minion1.gif",
 		"health": 1,
 		"id": "TB_SPT_Minion1",
 		"name": "Shieldsman",
@@ -37160,6 +38641,7 @@ var parseCardsText = {
 			"name": "Hache de Forge-foudre",
 			"text": "<b>Surcharge :</b> (1)"
 		},
+		"goldenImage": "EX1_247.gif",
 		"id": "EX1_247",
 		"name": "Stormforged Axe",
 		"overload": 1,
@@ -37223,6 +38705,7 @@ var parseCardsText = {
 			"name": "Sanglier",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "AT_005t.gif",
 		"health": 2,
 		"id": "AT_005t",
 		"name": "Boar",
@@ -37239,6 +38722,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t13.gif",
 		"health": 13,
 		"id": "CFM_712_t13",
 		"name": "Jade Golem",
@@ -37295,6 +38779,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Seigneur Jaraxxus"
 		},
+		"goldenImage": "EX1_323h.gif",
 		"health": 15,
 		"id": "EX1_323h",
 		"name": "Lord Jaraxxus",
@@ -37312,6 +38797,7 @@ var parseCardsText = {
 			"name": "Éclair de givre",
 			"text": "Inflige $3 points de dégâts à un personnage et le <b>gèle</b>."
 		},
+		"goldenImage": "CS2_024.gif",
 		"id": "CS2_024",
 		"name": "Frostbolt",
 		"playerClass": "Mage",
@@ -37330,6 +38816,7 @@ var parseCardsText = {
 			"name": "Gahz’rilla",
 			"text": "Chaque fois que ce serviteur subit des dégâts, double son Attaque."
 		},
+		"goldenImage": "GVG_049.gif",
 		"health": 9,
 		"id": "GVG_049",
 		"name": "Gahz'rilla",
@@ -37360,6 +38847,7 @@ var parseCardsText = {
 			"name": "Destroy Hero Power",
 			"text": "Destroy a player's Hero Power."
 		},
+		"goldenImage": "XXX_041.gif",
 		"id": "XXX_041",
 		"name": "Destroy Hero Power",
 		"playerClass": "Neutral",
@@ -37378,6 +38866,7 @@ var parseCardsText = {
 			"name": "Malorne",
 			"text": "<b>Râle d’agonie :</b> replace ce serviteur dans votre deck."
 		},
+		"goldenImage": "GVG_035.gif",
 		"health": 7,
 		"id": "GVG_035",
 		"name": "Malorne",
@@ -37449,6 +38938,7 @@ var parseCardsText = {
 			"name": "Ricardo Robaina",
 			"text": "<b>Cri de guerre :</b> invoque trois chinchillas 1/1."
 		},
+		"goldenImage": "CRED_37.gif",
 		"health": 4,
 		"id": "CRED_37",
 		"name": "Ricardo Robaina",
@@ -37468,6 +38958,7 @@ var parseCardsText = {
 			"name": "Experte en déminage",
 			"text": "<b>Cri de guerre :</b> inflige 5 points de dégâts à un serviteur adverse. <b>Râle d’agonie :</b> inflige 5 points de dégâts à votre héros."
 		},
+		"goldenImage": "CFM_667.gif",
 		"health": 2,
 		"id": "CFM_667",
 		"name": "Bomb Squad",
@@ -37486,6 +38977,7 @@ var parseCardsText = {
 			"name": "Embusqué",
 			"text": "Place 3 cartes Embuscade ! dans le deck de votre adversaire. À chaque fois qu’il en pioche une, vous invoquez un nérubien 4/4."
 		},
+		"goldenImage": "AT_035.gif",
 		"id": "AT_035",
 		"name": "Beneath the Grounds",
 		"playerClass": "Rogue",
@@ -37524,6 +39016,7 @@ var parseCardsText = {
 			"name": "Infernal de l’effroi",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts à TOUS les autres personnages."
 		},
+		"goldenImage": "CS2_064.gif",
 		"health": 6,
 		"id": "CS2_064",
 		"name": "Dread Infernal",
@@ -37570,6 +39063,7 @@ var parseCardsText = {
 			"name": "Pièce ternie",
 			"text": "Donne 1 cristal de mana pendant ce tour uniquement."
 		},
+		"goldenImage": "TB_011.gif",
 		"id": "TB_011",
 		"name": "Tarnished Coin",
 		"playerClass": "Neutral",
@@ -37588,6 +39082,7 @@ var parseCardsText = {
 			"name": "Minuscule invocatrice",
 			"text": "Le premier serviteur que vous jouez à chaque tour coûte (1) cristal de moins."
 		},
+		"goldenImage": "EX1_076.gif",
 		"health": 2,
 		"id": "EX1_076",
 		"name": "Pint-Sized Summoner",
@@ -37607,6 +39102,7 @@ var parseCardsText = {
 			"name": "Invocateur du Crépuscule",
 			"text": "<b>Râle d’agonie :</b> invoque un destructeur\nsans-visage 5/5."
 		},
+		"goldenImage": "OG_272.gif",
 		"health": 1,
 		"id": "OG_272",
 		"name": "Twilight Summoner",
@@ -37623,6 +39119,7 @@ var parseCardsText = {
 			"name": "Choisir une nouvelle carte !",
 			"text": "Affiche 3 cartes aléatoires. Choisissez-en une à placer dans votre deck."
 		},
+		"goldenImage": "TB_012.gif",
 		"id": "TB_012",
 		"name": "Choose a New Card!",
 		"playerClass": "Neutral",
@@ -37654,6 +39151,7 @@ var parseCardsText = {
 			"name": "Canon lance-flammes",
 			"text": "Inflige $4 |4(point,points) de dégâts à un serviteur adverse aléatoire."
 		},
+		"goldenImage": "GVG_001.gif",
 		"id": "GVG_001",
 		"name": "Flamecannon",
 		"playerClass": "Mage",
@@ -37672,6 +39170,7 @@ var parseCardsText = {
 			"name": "Géant des montagnes",
 			"text": "Coûte (1) cristal de moins pour chaque autre carte dans votre main."
 		},
+		"goldenImage": "EX1_105.gif",
 		"health": 8,
 		"id": "EX1_105",
 		"name": "Mountain Giant",
@@ -37689,6 +39188,7 @@ var parseCardsText = {
 			"name": "JC Park",
 			"text": "<b>Cri de guerre :</b> ajoute une nouvelle plateforme pour Hearthstone."
 		},
+		"goldenImage": "CRED_30.gif",
 		"health": 4,
 		"id": "CRED_30",
 		"name": "JC Park",
@@ -37722,6 +39222,7 @@ var parseCardsText = {
 			"name": "Sorcier draconien",
 			"text": "Gagne +1/+1 chaque fois que <b>vous</b> ciblez ce serviteur avec un sort."
 		},
+		"goldenImage": "BRM_020.gif",
 		"health": 5,
 		"id": "BRM_020",
 		"name": "Dragonkin Sorcerer",
@@ -37738,6 +39239,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Momie zombie"
 		},
+		"goldenImage": "LOEA16_5t.gif",
 		"health": 3,
 		"id": "LOEA16_5t",
 		"name": "Mummy Zombie",
@@ -37755,6 +39257,7 @@ var parseCardsText = {
 			"name": "Maître des écuries",
 			"text": "<b>Cri de guerre :</b> une Bête alliée devient <b>Insensible</b> pendant ce tour."
 		},
+		"goldenImage": "AT_057.gif",
 		"health": 2,
 		"id": "AT_057",
 		"name": "Stablemaster",
@@ -37773,6 +39276,7 @@ var parseCardsText = {
 			"name": "Attaque d’ombre",
 			"text": "Inflige $5 points de dégâts à un personnage indemne."
 		},
+		"goldenImage": "OG_176.gif",
 		"id": "OG_176",
 		"name": "Shadow Strike",
 		"playerClass": "Rogue",
@@ -37790,6 +39294,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chien du Magma"
 		},
+		"goldenImage": "CS2_201.gif",
 		"health": 5,
 		"id": "CS2_201",
 		"name": "Core Hound",
@@ -37805,6 +39310,7 @@ var parseCardsText = {
 			"name": "Terrestre animé",
 			"text": "Donne +1/+1 et <b>Provocation</b> à vos serviteurs."
 		},
+		"goldenImage": "LOEA06_03.gif",
 		"id": "LOEA06_03",
 		"name": "Animate Earthen",
 		"playerClass": "Neutral",
@@ -37820,6 +39326,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t05.gif",
 		"health": 5,
 		"id": "CFM_712_t05",
 		"name": "Jade Golem",
@@ -37848,6 +39355,7 @@ var parseCardsText = {
 			"name": "Ouvrir les portes",
 			"text": "Remplit le plateau de dragonnets 2/2."
 		},
+		"goldenImage": "BRMC_83.gif",
 		"id": "BRMC_83",
 		"name": "Open the Gates",
 		"playerClass": "Neutral",
@@ -37862,6 +39370,7 @@ var parseCardsText = {
 			"name": "Dissipation",
 			"text": "Réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "EX1_166b.gif",
 		"id": "EX1_166b",
 		"name": "Dispel",
 		"playerClass": "Druid",
@@ -37879,6 +39388,7 @@ var parseCardsText = {
 			"name": "Organisatrice de combats",
 			"text": "<b>Cri de guerre :</b> vous piochez deux cartes si vous contrôlez un serviteur avec 6 PV ou plus."
 		},
+		"goldenImage": "CFM_328.gif",
 		"health": 4,
 		"id": "CFM_328",
 		"name": "Fight Promoter",
@@ -37896,6 +39406,7 @@ var parseCardsText = {
 			"name": "Poulet",
 			"text": "<i>Viens mon poulet !</i>"
 		},
+		"goldenImage": "Mekka4t.gif",
 		"health": 1,
 		"id": "Mekka4t",
 		"name": "Chicken",
@@ -37943,6 +39454,7 @@ var parseCardsText = {
 			"name": "Courroux bestial",
 			"text": "Donne +2 ATQ et l’effet <b>Insensible</b> à une Bête alliée pendant ce tour."
 		},
+		"goldenImage": "EX1_549.gif",
 		"id": "EX1_549",
 		"name": "Bestial Wrath",
 		"playerClass": "Hunter",
@@ -37979,6 +39491,7 @@ var parseCardsText = {
 			"name": "Protecteur d’Argent",
 			"text": "<b>Cri de guerre :</b> confère <b>Bouclier divin</b> à un serviteur allié."
 		},
+		"goldenImage": "EX1_362.gif",
 		"health": 2,
 		"id": "EX1_362",
 		"name": "Argent Protector",
@@ -37997,6 +39510,7 @@ var parseCardsText = {
 			"name": "Toucher guérisseur",
 			"text": "Rend #8 |4(point,points) de vie."
 		},
+		"goldenImage": "CS2_007.gif",
 		"id": "CS2_007",
 		"name": "Healing Touch",
 		"playerClass": "Druid",
@@ -38010,6 +39524,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Fuite du temple"
 		},
+		"goldenImage": "LOEA04_01.gif",
 		"health": 100,
 		"id": "LOEA04_01",
 		"name": "Temple Escape",
@@ -38027,6 +39542,7 @@ var parseCardsText = {
 			"name": "Rat déloyal",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> votre adversaire invoque un serviteur aléatoire de sa main."
 		},
+		"goldenImage": "CFM_790.gif",
 		"health": 6,
 		"id": "CFM_790",
 		"name": "Dirty Rat",
@@ -38041,6 +39557,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gothik le Moissonneur"
 		},
+		"goldenImage": "NAX8_01H.gif",
 		"health": 45,
 		"id": "NAX8_01H",
 		"name": "Gothik the Harvester",
@@ -38072,6 +39589,7 @@ var parseCardsText = {
 			"name": "Réincarnation",
 			"text": "Détruit un serviteur, puis le ramène à la vie avec tous ses PV."
 		},
+		"goldenImage": "FP1_025.gif",
 		"id": "FP1_025",
 		"name": "Reincarnate",
 		"playerClass": "Shaman",
@@ -38089,6 +39607,7 @@ var parseCardsText = {
 			"name": "Mâchoires",
 			"text": "Gagne +2 ATQ chaque fois qu’un serviteur avec <b>Râle d’agonie</b> meurt."
 		},
+		"goldenImage": "NAX12_03H.gif",
 		"id": "NAX12_03H",
 		"name": "Jaws",
 		"playerClass": "Neutral",
@@ -38105,6 +39624,7 @@ var parseCardsText = {
 			"name": "Potion rougefurie",
 			"text": "Donne +3 ATQ à un serviteur. Si c’est un démon, lui donne aussi +3 PV."
 		},
+		"goldenImage": "CFM_611.gif",
 		"id": "CFM_611",
 		"name": "Bloodfury Potion",
 		"playerClass": "Warlock",
@@ -38123,6 +39643,7 @@ var parseCardsText = {
 			"name": "Mécano-amplificateur",
 			"text": "<b>Cri de guerre :</b> confère à vos autres serviteurs <b>Furie des vents</b>, <b>Provocation</b> ou <b>Bouclier divin</b> <i>(au hasard)</i>."
 		},
+		"goldenImage": "GVG_107.gif",
 		"health": 2,
 		"id": "GVG_107",
 		"name": "Enhance-o Mechano",
@@ -38137,6 +39658,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Draconien chromatique"
 		},
+		"goldenImage": "BRMA12_9.gif",
 		"health": 30,
 		"id": "BRMA12_9",
 		"name": "Chromatic Dragonkin",
@@ -38167,6 +39689,7 @@ var parseCardsText = {
 			"name": "Gangrenelle",
 			"text": "Inflige $6 |4(point,points) de dégâts à tous les serviteurs."
 		},
+		"goldenImage": "CFM_621t33.gif",
 		"id": "CFM_621t33",
 		"name": "Felbloom",
 		"playerClass": "Neutral",
@@ -38179,6 +39702,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Fuite du temple"
 		},
+		"goldenImage": "LOEA04_01h.gif",
 		"health": 100,
 		"id": "LOEA04_01h",
 		"name": "Temple Escape",
@@ -38209,6 +39733,7 @@ var parseCardsText = {
 			"name": "Bombe de lumière",
 			"text": "Inflige à chaque serviteur des dégâts équivalents à leur ATQ."
 		},
+		"goldenImage": "GVG_008.gif",
 		"id": "GVG_008",
 		"name": "Lightbomb",
 		"playerClass": "Priest",
@@ -38243,6 +39768,7 @@ var parseCardsText = {
 			"name": "Chevaucheuse de kodo",
 			"text": "<b>Exaltation : </b> invoque un kodo de guerre 3/5."
 		},
+		"goldenImage": "AT_099.gif",
 		"health": 5,
 		"id": "AT_099",
 		"name": "Kodorider",
@@ -38301,6 +39827,7 @@ var parseCardsText = {
 			"name": "Vision télépathique",
 			"text": "Place une copie d’une carte aléatoire de la main de l’adversaire dans la vôtre."
 		},
+		"goldenImage": "CS2_003.gif",
 		"id": "CS2_003",
 		"name": "Mind Vision",
 		"playerClass": "Priest",
@@ -38334,6 +39861,7 @@ var parseCardsText = {
 			"name": "Harpie Furie-des-vents",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "EX1_033.gif",
 		"health": 5,
 		"id": "EX1_033",
 		"name": "Windfury Harpy",
@@ -38353,6 +39881,7 @@ var parseCardsText = {
 			"name": "Roi Krush",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "EX1_543.gif",
 		"health": 8,
 		"id": "EX1_543",
 		"name": "King Krush",
@@ -38370,6 +39899,7 @@ var parseCardsText = {
 			"name": "Maître des rouages Mécazod",
 			"text": "<b>Boss</b>\nAu début de chaque tour, Mécazod frappe !"
 		},
+		"goldenImage": "HRW02_1.gif",
 		"health": 80,
 		"id": "HRW02_1",
 		"name": "Gearmaster Mechazod",
@@ -38389,6 +39919,7 @@ var parseCardsText = {
 			"name": "Jongleur de couteaux",
 			"text": "Inflige 1 point de dégâts à un adversaire aléatoire après que vous avez invoqué un serviteur."
 		},
+		"goldenImage": "NEW1_019.gif",
 		"health": 2,
 		"id": "NEW1_019",
 		"name": "Knife Juggler",
@@ -38405,6 +39936,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Sanglier"
 		},
+		"goldenImage": "CS2_boar.gif",
 		"health": 1,
 		"id": "CS2_boar",
 		"name": "Boar",
@@ -38422,6 +39954,7 @@ var parseCardsText = {
 			"name": "Assommer",
 			"text": "Renvoie un serviteur adverse dans la main de votre adversaire."
 		},
+		"goldenImage": "EX1_581.gif",
 		"id": "EX1_581",
 		"name": "Sap",
 		"playerClass": "Rogue",
@@ -38472,6 +40005,7 @@ var parseCardsText = {
 			"name": "Dame Naz’jar",
 			"text": "À la fin de votre tour, remplace tous les autres serviteurs par de nouveaux de même coût."
 		},
+		"goldenImage": "LOEA16_25.gif",
 		"health": 5,
 		"id": "LOEA16_25",
 		"name": "Lady Naz'jar",
@@ -38537,6 +40071,7 @@ var parseCardsText = {
 			"name": "Mode Char",
 			"text": "+1 PV."
 		},
+		"goldenImage": "GVG_030b.gif",
 		"id": "GVG_030b",
 		"name": "Tank Mode",
 		"playerClass": "Druid",
@@ -38584,6 +40119,7 @@ var parseCardsText = {
 			"name": "Élémentaire d’eau",
 			"text": "<b>Gèle</b> tout personnage blessé par ce serviteur."
 		},
+		"goldenImage": "CS2_033.gif",
 		"health": 6,
 		"id": "CS2_033",
 		"name": "Water Elemental",
@@ -38631,6 +40167,7 @@ var parseCardsText = {
 			"name": "Sceau des champions",
 			"text": "Donne +3 ATQ et <b>Bouclier divin</b> à un serviteur."
 		},
+		"goldenImage": "AT_074.gif",
 		"id": "AT_074",
 		"name": "Seal of Champions",
 		"playerClass": "Paladin",
@@ -38649,6 +40186,7 @@ var parseCardsText = {
 			"name": "Chevalier spectral",
 			"text": "Ne peut pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "FP1_008.gif",
 		"health": 6,
 		"id": "FP1_008",
 		"name": "Spectral Knight",
@@ -38697,6 +40235,7 @@ var parseCardsText = {
 			"name": "Miroir du destin",
 			"text": "Remplit votre plateau de momies zombies 3/3."
 		},
+		"goldenImage": "LOEA16_5.gif",
 		"id": "LOEA16_5",
 		"name": "Mirror of Doom",
 		"playerClass": "Neutral",
@@ -38711,6 +40250,7 @@ var parseCardsText = {
 			"name": "Libérer les aberrations",
 			"text": "Invoque 3 aberrations."
 		},
+		"goldenImage": "BRMA15_3.gif",
 		"id": "BRMA15_3",
 		"name": "Release the Aberrations!",
 		"playerClass": "Neutral",
@@ -38728,6 +40268,7 @@ var parseCardsText = {
 			"name": "Géant mécanique",
 			"text": "Coûte (1) |4(cristal,cristaux) de moins pour chaque carte dans la main de votre adversaire."
 		},
+		"goldenImage": "GVG_121.gif",
 		"health": 8,
 		"id": "GVG_121",
 		"name": "Clockwork Giant",
@@ -38745,6 +40286,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t18.gif",
 		"health": 18,
 		"id": "CFM_712_t18",
 		"name": "Jade Golem",
@@ -38761,6 +40303,7 @@ var parseCardsText = {
 			"name": "Vaporisation",
 			"text": "<b>Secret :</b> quand un serviteur attaque votre héros, le détruit."
 		},
+		"goldenImage": "EX1_594.gif",
 		"id": "EX1_594",
 		"name": "Vaporize",
 		"playerClass": "Mage",
@@ -38777,6 +40320,7 @@ var parseCardsText = {
 			"name": "Épéiste",
 			"text": "<b>Cri de guerre :</b> gagne un nombre de points d’ATQ et de PV équivalent à l’Attaque de Hurlevent."
 		},
+		"goldenImage": "TB_SPT_Minion3.gif",
 		"health": 1,
 		"id": "TB_SPT_Minion3",
 		"name": "Swordsman",
@@ -38792,6 +40336,7 @@ var parseCardsText = {
 			"name": "Appel des ténèbres",
 			"text": "Invoque deux boss aléatoires de Naxxramas et déclenche leur <b>Cri de guerre</b>."
 		},
+		"goldenImage": "TB_KTRAF_101.gif",
 		"id": "TB_KTRAF_101",
 		"name": "Darkness Calls",
 		"playerClass": "Neutral",
@@ -38832,6 +40377,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Zinaar"
 		},
+		"goldenImage": "LOEA02_01.gif",
 		"health": 30,
 		"id": "LOEA02_01",
 		"name": "Zinaar",
@@ -38890,6 +40436,7 @@ var parseCardsText = {
 			"name": "Potion de Kazakus",
 			"text": "{0}\n{1}"
 		},
+		"goldenImage": "CFM_621t14.gif",
 		"id": "CFM_621t14",
 		"name": "Kazakus Potion",
 		"playerClass": "Neutral",
@@ -38905,6 +40452,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t15.gif",
 		"health": 15,
 		"id": "CFM_712_t15",
 		"name": "Jade Golem",
@@ -38922,6 +40470,7 @@ var parseCardsText = {
 			"name": "Kel’Thuzad",
 			"text": "À la fin de chaque tour, invoque tous les serviteurs alliés qui sont morts pendant ce tour."
 		},
+		"goldenImage": "FP1_013.gif",
 		"health": 8,
 		"id": "FP1_013",
 		"name": "Kel'Thuzad",
@@ -38939,6 +40488,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t20.gif",
 		"health": 20,
 		"id": "CFM_712_t20",
 		"name": "Jade Golem",
@@ -38965,6 +40515,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Noth le Porte-Peste"
 		},
+		"goldenImage": "NAX4_01H.gif",
 		"health": 45,
 		"id": "NAX4_01H",
 		"name": "Noth the Plaguebringer",
@@ -38994,6 +40545,7 @@ var parseCardsText = {
 			"name": "Vaelastrasz",
 			"text": "Vos cartes coûtent (3) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "BRMC_97.gif",
 		"health": 7,
 		"id": "BRMC_97",
 		"name": "Vaelastrasz",
@@ -39010,6 +40562,7 @@ var parseCardsText = {
 			"name": "Don de mana",
 			"text": "Donne à chaque joueur un cristal de mana."
 		},
+		"goldenImage": "GVG_032a.gif",
 		"id": "GVG_032a",
 		"name": "Gift of Mana",
 		"playerClass": "Druid",
@@ -39024,6 +40577,7 @@ var parseCardsText = {
 			"name": "Banane pourrie",
 			"text": "Inflige $1 |4(point,points) de dégâts."
 		},
+		"goldenImage": "TB_008.gif",
 		"id": "TB_008",
 		"name": "Rotten Banana",
 		"playerClass": "Neutral",
@@ -39041,6 +40595,7 @@ var parseCardsText = {
 			"name": "Ogre-magi",
 			"text": "<b>Dégâts des sorts : +1</b>"
 		},
+		"goldenImage": "CS2_197.gif",
 		"health": 4,
 		"id": "CS2_197",
 		"name": "Ogre Magi",
@@ -39060,6 +40615,7 @@ var parseCardsText = {
 			"name": "Cavale de contrebandier",
 			"text": "Donne +1/+1 à tous les serviteurs dans votre main."
 		},
+		"goldenImage": "CFM_305.gif",
 		"id": "CFM_305",
 		"name": "Smuggler's Run",
 		"playerClass": "Paladin",
@@ -39090,6 +40646,7 @@ var parseCardsText = {
 			"name": "Vague de soins",
 			"text": "Rend #7 PV. Révèle un serviteur de chaque deck. Si le vôtre coûte plus cher, rend\n#14 PV à la place."
 		},
+		"goldenImage": "AT_048.gif",
 		"id": "AT_048",
 		"name": "Healing Wave",
 		"playerClass": "Shaman",
@@ -39152,6 +40709,7 @@ var parseCardsText = {
 			"name": "Psych-o-tron",
 			"text": "<b>Provocation</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "OG_145.gif",
 		"health": 4,
 		"id": "OG_145",
 		"name": "Psych-o-Tron",
@@ -39246,6 +40804,7 @@ var parseCardsText = {
 			"name": "Gangrecanon",
 			"text": "À la fin de votre tour, inflige 2 points de dégâts à un serviteur non Méca."
 		},
+		"goldenImage": "GVG_020.gif",
 		"health": 5,
 		"id": "GVG_020",
 		"name": "Fel Cannon",
@@ -39260,6 +40819,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chromaggus"
 		},
+		"goldenImage": "BRMA12_1.gif",
 		"health": 30,
 		"id": "BRMA12_1",
 		"name": "Chromaggus",
@@ -39274,6 +40834,7 @@ var parseCardsText = {
 			"name": "Summon a random Secret",
 			"text": "Summon a secret from your deck."
 		},
+		"goldenImage": "XXX_011.gif",
 		"id": "XXX_011",
 		"name": "Summon a random Secret",
 		"playerClass": "Neutral",
@@ -39306,6 +40867,7 @@ var parseCardsText = {
 			"name": "Cible leurre",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "GVG_093.gif",
 		"health": 2,
 		"id": "GVG_093",
 		"name": "Target Dummy",
@@ -39340,6 +40902,7 @@ var parseCardsText = {
 			"name": "Lance d’Argent",
 			"text": "<b>Cri de guerre :</b> révèle un serviteur de chaque deck. Si le vôtre coûte plus, gagne +1 Durabilité."
 		},
+		"goldenImage": "AT_077.gif",
 		"id": "AT_077",
 		"name": "Argent Lance",
 		"playerClass": "Paladin",
@@ -39369,6 +40932,7 @@ var parseCardsText = {
 			"name": "Embuscade !",
 			"text": "Quand vous piochez cette carte, invoque un nérubien 4/4 pour votre adversaire. Vous piochez une carte."
 		},
+		"goldenImage": "AT_035t.gif",
 		"id": "AT_035t",
 		"name": "Ambush!",
 		"playerClass": "Rogue",
@@ -39412,6 +40976,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : rouge",
 			"text": "Vous subissez 1 point de dégâts au début de votre tour tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_3.gif",
 		"id": "BRMA12_3",
 		"name": "Brood Affliction: Red",
 		"playerClass": "Neutral",
@@ -39443,6 +41008,7 @@ var parseCardsText = {
 			"name": "Sanglier brocheroc",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_171.gif",
 		"health": 1,
 		"id": "CS2_171",
 		"name": "Stonetusk Boar",
@@ -39462,6 +41028,7 @@ var parseCardsText = {
 			"name": "Sniper souffle-branchie",
 			"text": "<b>Cri de guerre :</b> inflige 1 point de dégâts."
 		},
+		"goldenImage": "CFM_647.gif",
 		"health": 1,
 		"id": "CFM_647",
 		"name": "Blowgill Sniper",
@@ -39480,6 +41047,7 @@ var parseCardsText = {
 			"name": "Tout est vraiment génial",
 			"text": "Donne +2/+2 à vos serviteurs. Coûte\n (1) |4(cristal,cristaux) de mana de moins pour chaque murloc contrôlé."
 		},
+		"goldenImage": "LOE_113.gif",
 		"id": "LOE_113",
 		"name": "Everyfin is Awesome",
 		"playerClass": "Shaman",
@@ -39497,6 +41065,7 @@ var parseCardsText = {
 			"name": "Sonner",
 			"text": "Inflige $3 |4(point,points) de dégâts. Gagne 3 points d’armure."
 		},
+		"goldenImage": "AT_064.gif",
 		"id": "AT_064",
 		"name": "Bash",
 		"playerClass": "Warrior",
@@ -39526,6 +41095,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Acolyte attise-flammes"
 		},
+		"goldenImage": "BRMA06_4.gif",
 		"health": 3,
 		"id": "BRMA06_4",
 		"name": "Flamewaker Acolyte",
@@ -39543,6 +41113,7 @@ var parseCardsText = {
 			"name": "Gardien mogu’shan",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "EX1_396.gif",
 		"health": 7,
 		"id": "EX1_396",
 		"name": "Mogu'shan Warden",
@@ -39559,6 +41130,7 @@ var parseCardsText = {
 			"name": "Rêve",
 			"text": "Renvoie un serviteur dans la main de son propriétaire."
 		},
+		"goldenImage": "DREAM_04.gif",
 		"id": "DREAM_04",
 		"name": "Dream",
 		"playerClass": "Dream",
@@ -39573,6 +41145,7 @@ var parseCardsText = {
 			"name": "Fosse remplie de pointes",
 			"text": "<b>Choisissez un chemin !</b>"
 		},
+		"goldenImage": "LOEA04_06.gif",
 		"id": "LOEA04_06",
 		"name": "Pit of Spikes",
 		"playerClass": "Neutral",
@@ -39585,6 +41158,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Chromaggus"
 		},
+		"goldenImage": "BRMA12_1H.gif",
 		"health": 60,
 		"id": "BRMA12_1H",
 		"name": "Chromaggus",
@@ -39600,6 +41174,7 @@ var parseCardsText = {
 			"name": "Écumeur du soleil Phaerix",
 			"text": "Vos autres serviteurs sont <b>Insensibles</b>."
 		},
+		"goldenImage": "LOEA16_19H.gif",
 		"health": 10,
 		"id": "LOEA16_19H",
 		"name": "Sun Raider Phaerix",
@@ -39616,6 +41191,7 @@ var parseCardsText = {
 			"name": "Sombres feux follets",
 			"text": "+5/+5 et <b>Provocation</b>."
 		},
+		"goldenImage": "GVG_041a.gif",
 		"id": "GVG_041a",
 		"name": "Dark Wispers",
 		"playerClass": "Druid",
@@ -39645,6 +41221,7 @@ var parseCardsText = {
 			"name": "Destin : sorts",
 			"text": "Les sorts coûtent (1) |4(cristal,cristaux) de moins."
 		},
+		"goldenImage": "TB_PickYourFate_5.gif",
 		"id": "TB_PickYourFate_5",
 		"name": "Fate: Spells",
 		"playerClass": "Neutral",
@@ -39661,6 +41238,7 @@ var parseCardsText = {
 			"name": "Tir puissant",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur et aux serviteurs adjacents."
 		},
+		"goldenImage": "AT_056.gif",
 		"id": "AT_056",
 		"name": "Powershot",
 		"playerClass": "Hunter",
@@ -39706,6 +41284,7 @@ var parseCardsText = {
 			"name": "Become Hogger",
 			"text": "Become Hogger for Video Recording."
 		},
+		"goldenImage": "XXX_039.gif",
 		"id": "XXX_039",
 		"name": "Become Hogger",
 		"playerClass": "Neutral",
@@ -39722,6 +41301,7 @@ var parseCardsText = {
 			"name": "Renforcement",
 			"text": "Donne +2/+2 à vos serviteurs avec <b>Provocation</b>."
 		},
+		"goldenImage": "AT_068.gif",
 		"id": "AT_068",
 		"name": "Bolster",
 		"playerClass": "Warrior",
@@ -39738,6 +41318,7 @@ var parseCardsText = {
 			"name": "Adorateur",
 			"text": "Votre héros a +1 ATQ pendant votre tour."
 		},
+		"goldenImage": "NAX2_05.gif",
 		"health": 4,
 		"id": "NAX2_05",
 		"name": "Worshipper",
@@ -39756,6 +41337,7 @@ var parseCardsText = {
 			"name": "Baron Boule-de-Gras",
 			"text": "Gagne +1/+1 chaque fois que vous invoquez un serviteur avec <b>Cri de guerre</b> tant que vous avez cette carte en main."
 		},
+		"goldenImage": "CFM_064.gif",
 		"health": 1,
 		"id": "CFM_064",
 		"name": "Blubber Baron",
@@ -39816,6 +41398,7 @@ var parseCardsText = {
 			"name": "Scarabée",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOE_009t.gif",
 		"health": 1,
 		"id": "LOE_009t",
 		"name": "Scarab",
@@ -39835,6 +41418,7 @@ var parseCardsText = {
 			"name": "Maître-bouclier de Sen’jin",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CS2_179.gif",
 		"health": 5,
 		"id": "CS2_179",
 		"name": "Sen'jin Shieldmasta",
@@ -39902,6 +41486,7 @@ var parseCardsText = {
 			"name": "Assassin du Lotus",
 			"text": "<b>Camouflage</b>. Chaque fois que ce serviteur attaque et tue un ennemi, gagne <b>Camouflage</b>."
 		},
+		"goldenImage": "CFM_634.gif",
 		"health": 5,
 		"id": "CFM_634",
 		"name": "Lotus Assassin",
@@ -39918,6 +41503,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Drake chromatique"
 		},
+		"goldenImage": "BRMA10_5.gif",
 		"health": 3,
 		"id": "BRMA10_5",
 		"name": "Chromatic Drake",
@@ -39949,6 +41535,7 @@ var parseCardsText = {
 			"name": "Guerriers de sang",
 			"text": "Place une copie de chaque serviteur allié blessé dans votre main."
 		},
+		"goldenImage": "OG_276.gif",
 		"id": "OG_276",
 		"name": "Blood Warriors",
 		"playerClass": "Warrior",
@@ -39964,6 +41551,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Courbe-sort"
 		},
+		"goldenImage": "tt_010a.gif",
 		"health": 3,
 		"id": "tt_010a",
 		"name": "Spellbender",
@@ -39994,6 +41582,7 @@ var parseCardsText = {
 			"name": "Découvrir un morceau du bâton",
 			"text": "Amplifie votre pouvoir héroïque."
 		},
+		"goldenImage": "TB_KTRAF_104.gif",
 		"id": "TB_KTRAF_104",
 		"name": "Uncover Staff Piece",
 		"playerClass": "Neutral",
@@ -40022,6 +41611,7 @@ var parseCardsText = {
 			"name": "Choisir une nouvelle carte !",
 			"text": "Affiche 3 cartes aléatoires. Choisissez-en une à placer dans votre main."
 		},
+		"goldenImage": "TB_014.gif",
 		"id": "TB_014",
 		"name": "Choose a New Card!",
 		"playerClass": "Neutral",
@@ -40070,6 +41660,7 @@ var parseCardsText = {
 			"name": "Souffle-neige",
 			"text": "<b>Gèle</b> tout personnage blessé par ce serviteur."
 		},
+		"goldenImage": "GVG_002.gif",
 		"health": 3,
 		"id": "GVG_002",
 		"name": "Snowchugger",
@@ -40087,6 +41678,7 @@ var parseCardsText = {
 			"name": "Seyil Yoon",
 			"text": "<b>Cri de guerre :</b> ajoute 3 Sprint et un Marathon dans votre main."
 		},
+		"goldenImage": "CRED_41.gif",
 		"health": 9,
 		"id": "CRED_41",
 		"name": "Seyil Yoon",
@@ -40105,6 +41697,7 @@ var parseCardsText = {
 			"name": "Double vue",
 			"text": "Vous piochez une carte. Elle coûte (3) cristaux de moins."
 		},
+		"goldenImage": "CS2_053.gif",
 		"id": "CS2_053",
 		"name": "Far Sight",
 		"playerClass": "Shaman",
@@ -40122,6 +41715,7 @@ var parseCardsText = {
 			"name": "Heurt de bouclier",
 			"text": "Inflige 1 point de dégâts à un serviteur pour chaque point d’Armure que vous avez."
 		},
+		"goldenImage": "EX1_410.gif",
 		"id": "EX1_410",
 		"name": "Shield Slam",
 		"playerClass": "Warrior",
@@ -40140,6 +41734,7 @@ var parseCardsText = {
 			"name": "Kazakus",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, crée un sort personnalisé."
 		},
+		"goldenImage": "CFM_621.gif",
 		"health": 3,
 		"id": "CFM_621",
 		"name": "Kazakus",
@@ -40154,6 +41749,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Saphiron"
 		},
+		"goldenImage": "NAX14_01H.gif",
 		"health": 45,
 		"id": "NAX14_01H",
 		"name": "Sapphiron",
@@ -40171,6 +41767,7 @@ var parseCardsText = {
 			"name": "Diable de poussière",
 			"text": "<b>Furie des vents</b>\n<b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_243.gif",
 		"health": 1,
 		"id": "EX1_243",
 		"name": "Dust Devil",
@@ -40205,6 +41802,7 @@ var parseCardsText = {
 			"name": "Racines vivantes",
 			"text": "<b>Choix des armes :</b> Inflige $2 |4(point,points) de dégâts ou invoque deux arbrisseaux 1/1."
 		},
+		"goldenImage": "AT_037.gif",
 		"id": "AT_037",
 		"name": "Living Roots",
 		"playerClass": "Druid",
@@ -40221,6 +41819,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t04.gif",
 		"health": 4,
 		"id": "CFM_712_t04",
 		"name": "Jade Golem",
@@ -40266,6 +41865,7 @@ var parseCardsText = {
 			"name": "Irion",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> vous piochez des cartes jusqu’à en obtenir une qui ne soit pas un Dragon."
 		},
+		"goldenImage": "CFM_806.gif",
 		"health": 5,
 		"id": "CFM_806",
 		"name": "Wrathion",
@@ -40285,6 +41885,7 @@ var parseCardsText = {
 			"name": "Berserker amani",
 			"text": "<b>Accès de rage :</b> +3 ATQ."
 		},
+		"goldenImage": "EX1_393.gif",
 		"health": 3,
 		"id": "EX1_393",
 		"name": "Amani Berserker",
@@ -40303,6 +41904,7 @@ var parseCardsText = {
 			"name": "Rage farouche",
 			"text": "<b>Choix des armes :</b> donne +4 ATQ à votre héros pendant ce tour ou 8 points d’armure."
 		},
+		"goldenImage": "OG_047.gif",
 		"id": "OG_047",
 		"name": "Feral Rage",
 		"playerClass": "Druid",
@@ -40319,6 +41921,7 @@ var parseCardsText = {
 			"name": "Max McCall",
 			"text": "Vos emotes n’ont pas de temps de recharge et ne peuvent être coupées."
 		},
+		"goldenImage": "CRED_35.gif",
 		"health": 2,
 		"id": "CRED_35",
 		"name": "Max McCall",
@@ -40338,6 +41941,7 @@ var parseCardsText = {
 			"name": "Pilleur de tombes",
 			"text": "<b>Râle d’agonie :</b> ajoute une carte La pièce dans votre main."
 		},
+		"goldenImage": "LOE_012.gif",
 		"health": 4,
 		"id": "LOE_012",
 		"name": "Tomb Pillager",
@@ -40356,6 +41960,7 @@ var parseCardsText = {
 			"name": "Consécration",
 			"text": "Inflige $2 |4(point,points) de dégâts à tous les adversaires."
 		},
+		"goldenImage": "CS2_093.gif",
 		"id": "CS2_093",
 		"name": "Consecration",
 		"playerClass": "Paladin",
@@ -40369,6 +41974,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Système de défense Omnitron"
 		},
+		"goldenImage": "BRMA14_1H.gif",
 		"health": 30,
 		"id": "BRMA14_1H",
 		"name": "Omnotron Defense System",
@@ -40400,6 +42006,7 @@ var parseCardsText = {
 			"name": "Sinistre colporteur",
 			"text": "<b>Cri de guerre : découvre</b> une carte à 1 cristal de mana."
 		},
+		"goldenImage": "LOE_023.gif",
 		"health": 2,
 		"id": "LOE_023",
 		"name": "Dark Peddler",
@@ -40418,6 +42025,7 @@ var parseCardsText = {
 			"name": "Griffes de Tranchetripe",
 			"text": "Gagne +1 ATQ chaque fois qu’un œuf corrompu est détruit."
 		},
+		"goldenImage": "BRMA10_6.gif",
 		"id": "BRMA10_6",
 		"name": "Razorgore's Claws",
 		"playerClass": "Neutral",
@@ -40433,6 +42041,7 @@ var parseCardsText = {
 			"name": "Débris",
 			"text": "<b>Provocation</b>."
 		},
+		"goldenImage": "LOEA07_11.gif",
 		"health": 3,
 		"id": "LOEA07_11",
 		"name": "Debris",
@@ -40461,6 +42070,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Écumeur du soleil Phaerix"
 		},
+		"goldenImage": "LOEA01_01.gif",
 		"health": 30,
 		"id": "LOEA01_01",
 		"name": "Sun Raider Phaerix",
@@ -40477,6 +42087,7 @@ var parseCardsText = {
 			"name": "Cœur de démon",
 			"text": "Inflige $5 |4(point,points) de dégâts à un serviteur. Si c’est un démon allié, lui donne +5/+5 à la place."
 		},
+		"goldenImage": "GVG_019.gif",
 		"id": "GVG_019",
 		"name": "Demonheart",
 		"playerClass": "Warlock",
@@ -40490,6 +42101,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Horreb"
 		},
+		"goldenImage": "NAX6_01H.gif",
 		"health": 99,
 		"id": "NAX6_01H",
 		"name": "Loatheb",
@@ -40507,6 +42119,7 @@ var parseCardsText = {
 			"name": "Sectateur de la Lame",
 			"text": "<b>Combo :</b> gagne +1/+1."
 		},
+		"goldenImage": "OG_070.gif",
 		"health": 2,
 		"id": "OG_070",
 		"name": "Bladed Cultist",
@@ -40526,6 +42139,7 @@ var parseCardsText = {
 			"name": "Mini exorciste",
 			"text": "<b>Provocation</b>. <b>Cri de guerre :</b> gagne +1/+1 pour chaque serviteur adverse avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "GVG_097.gif",
 		"health": 3,
 		"id": "GVG_097",
 		"name": "Lil' Exorcist",
@@ -40557,6 +42171,7 @@ var parseCardsText = {
 			"name": "Compagnon animal",
 			"text": "Invoque un compagnon animal aléatoire."
 		},
+		"goldenImage": "NEW1_031.gif",
 		"id": "NEW1_031",
 		"name": "Animal Companion",
 		"playerClass": "Hunter",
@@ -40572,6 +42187,7 @@ var parseCardsText = {
 			"name": "Décimer",
 			"text": "Fait passer les points de vie des serviteurs adverses à 1."
 		},
+		"goldenImage": "NAX12_02H_2c_TB.gif",
 		"id": "NAX12_02H_2c_TB",
 		"name": "Decimate",
 		"playerClass": "Neutral",
@@ -40637,6 +42253,7 @@ var parseCardsText = {
 			"name": "Colère",
 			"text": "<b>Choix des armes :</b> inflige $3 |4(point,points) de dégâts à un serviteur ; ou inflige $1 |4(point,points) de dégâts à un serviteur et vous piochez une carte."
 		},
+		"goldenImage": "EX1_154.gif",
 		"id": "EX1_154",
 		"name": "Wrath",
 		"playerClass": "Druid",
@@ -40684,6 +42301,7 @@ var parseCardsText = {
 			"name": "Boucanier de petite envergure",
 			"text": "A +2 ATQ tant que vous avez une arme équipée."
 		},
+		"goldenImage": "CFM_325.gif",
 		"health": 2,
 		"id": "CFM_325",
 		"name": "Small-Time Buccaneer",
@@ -40719,6 +42337,7 @@ var parseCardsText = {
 			"name": "Âme gémissante",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> vos autres serviteurs."
 		},
+		"goldenImage": "FP1_016.gif",
 		"health": 5,
 		"id": "FP1_016",
 		"name": "Wailing Soul",
@@ -40739,6 +42358,7 @@ var parseCardsText = {
 			"name": "Marteau-du-Destin",
 			"text": "<b>Furie des vents\nSurcharge :</b> (2)"
 		},
+		"goldenImage": "EX1_567.gif",
 		"id": "EX1_567",
 		"name": "Doomhammer",
 		"overload": 1,
@@ -40758,6 +42378,7 @@ var parseCardsText = {
 			"name": "Fandral Forteramure",
 			"text": "Vos cartes avec <b>Choix des armes</b> combinent les deux effets."
 		},
+		"goldenImage": "OG_044.gif",
 		"health": 5,
 		"id": "OG_044",
 		"name": "Fandral Staghelm",
@@ -40807,6 +42428,7 @@ var parseCardsText = {
 			"name": "Maître-lame blessé",
 			"text": "<b>Cri de guerre :</b> s’inflige 4 points de dégâts."
 		},
+		"goldenImage": "CS2_181.gif",
 		"health": 7,
 		"id": "CS2_181",
 		"name": "Injured Blademaster",
@@ -40824,6 +42446,7 @@ var parseCardsText = {
 			"name": "Spectateur sombrefer",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA02_2t.gif",
 		"health": 1,
 		"id": "BRMA02_2t",
 		"name": "Dark Iron Spectator",
@@ -40856,6 +42479,7 @@ var parseCardsText = {
 			"name": "Sapeur gobelin",
 			"text": "A +4 ATQ tant que votre adversaire a 6 cartes ou plus dans sa main."
 		},
+		"goldenImage": "GVG_095.gif",
 		"health": 4,
 		"id": "GVG_095",
 		"name": "Goblin Sapper",
@@ -40890,6 +42514,7 @@ var parseCardsText = {
 			"name": "Informateur des bas-fonds",
 			"text": "<b>Cri de guerre :</b> <b>découvre</b> une carte de chasseur, paladin ou guerrier."
 		},
+		"goldenImage": "CFM_321.gif",
 		"health": 1,
 		"id": "CFM_321",
 		"name": "Grimestreet Informant",
@@ -40936,6 +42561,7 @@ var parseCardsText = {
 			"name": "Vœu : puissance",
 			"text": "<b>Découvre</b> un sort."
 		},
+		"goldenImage": "LOEA02_03.gif",
 		"id": "LOEA02_03",
 		"name": "Wish for Power",
 		"playerClass": "Neutral",
@@ -40953,6 +42579,7 @@ var parseCardsText = {
 			"name": "Colporteur de Fossoyeuse",
 			"text": "<b>Râle d’agonie :</b> ajoute une carte aléatoire dans votre main <i>(de la classe de votre adversaire)</i>."
 		},
+		"goldenImage": "OG_330.gif",
 		"health": 2,
 		"id": "OG_330",
 		"name": "Undercity Huckster",
@@ -40973,6 +42600,7 @@ var parseCardsText = {
 			"name": "Champion de la Main d’argent",
 			"text": "<b>Cri de guerre :</b> invoque un écuyer 2/2."
 		},
+		"goldenImage": "CS2_151.gif",
 		"health": 4,
 		"id": "CS2_151",
 		"name": "Silver Hand Knight",
@@ -41004,6 +42632,7 @@ var parseCardsText = {
 			"name": "Guerrier spectral",
 			"text": "Au début de votre tour, inflige 1 point de dégâts à votre héros."
 		},
+		"goldenImage": "NAX8_04t.gif",
 		"health": 4,
 		"id": "NAX8_04t",
 		"name": "Spectral Warrior",
@@ -41051,6 +42680,7 @@ var parseCardsText = {
 			"name": "Protectrice solfurie",
 			"text": "<b>Cri de guerre :</b> confère <b>Provocation</b> aux serviteurs adjacents."
 		},
+		"goldenImage": "EX1_058.gif",
 		"health": 3,
 		"id": "EX1_058",
 		"name": "Sunfury Protector",
@@ -41065,6 +42695,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Généralissime Omokk"
 		},
+		"goldenImage": "BRMA07_1.gif",
 		"health": 30,
 		"id": "BRMA07_1",
 		"name": "Highlord Omokk",
@@ -41077,6 +42708,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Hemet Nesingwary"
 		},
+		"goldenImage": "TU4d_001.gif",
 		"health": 20,
 		"id": "TU4d_001",
 		"name": "Hemet Nesingwary",
@@ -41134,6 +42766,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Gelée polluée"
 		},
+		"goldenImage": "NAX11_03.gif",
 		"health": 2,
 		"id": "NAX11_03",
 		"name": "Fallout Slime",
@@ -41163,6 +42796,7 @@ var parseCardsText = {
 			"name": "Gluth",
 			"text": "À la fin de votre tour, invoque un mort-vivant aléatoire."
 		},
+		"goldenImage": "TB_KTRAF_3.gif",
 		"health": 4,
 		"id": "TB_KTRAF_3",
 		"name": "Gluth",
@@ -41181,6 +42815,7 @@ var parseCardsText = {
 			"name": "Métamorphose : sanglier",
 			"text": "Transforme un serviteur en sanglier 4/2 avec <b>Charge</b>."
 		},
+		"goldenImage": "AT_005.gif",
 		"id": "AT_005",
 		"name": "Polymorph: Boar",
 		"playerClass": "Mage",
@@ -41199,6 +42834,7 @@ var parseCardsText = {
 			"name": "Partenaire d’entraînement",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> confère <b>Provocation</b> à un serviteur."
 		},
+		"goldenImage": "AT_069.gif",
 		"health": 2,
 		"id": "AT_069",
 		"name": "Sparring Partner",
@@ -41217,6 +42853,7 @@ var parseCardsText = {
 			"name": "Heurtoir",
 			"text": "Inflige $2 |4(point,points) de dégâts à un serviteur. Vous piochez une carte s’il survit."
 		},
+		"goldenImage": "EX1_391.gif",
 		"id": "EX1_391",
 		"name": "Slam",
 		"playerClass": "Warrior",
@@ -41236,6 +42873,7 @@ var parseCardsText = {
 			"name": "Champion de Hurlevent",
 			"text": "Vos autres serviteurs\nont +1/+1."
 		},
+		"goldenImage": "CS2_222.gif",
 		"health": 6,
 		"id": "CS2_222",
 		"name": "Stormwind Champion",
@@ -41252,6 +42890,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Tréant"
 		},
+		"goldenImage": "EX1_158t.gif",
 		"health": 2,
 		"id": "EX1_158t",
 		"name": "Treant",
@@ -41269,6 +42908,7 @@ var parseCardsText = {
 			"name": "Âme en peine de mana",
 			"text": "TOUS les serviteurs coûtent (1) cristal de plus."
 		},
+		"goldenImage": "EX1_616.gif",
 		"health": 2,
 		"id": "EX1_616",
 		"name": "Mana Wraith",
@@ -41299,6 +42939,7 @@ var parseCardsText = {
 			"name": "Freeze",
 			"text": "<b>Freeze</b> a character."
 		},
+		"goldenImage": "XXX_008.gif",
 		"id": "XXX_008",
 		"name": "Freeze",
 		"playerClass": "Neutral",
@@ -41317,6 +42958,7 @@ var parseCardsText = {
 			"name": "Ennuy-o-tron",
 			"text": "<b>Provocation</b>\n<b>Bouclier divin</b>"
 		},
+		"goldenImage": "GVG_085.gif",
 		"health": 2,
 		"id": "GVG_085",
 		"name": "Annoy-o-Tron",
@@ -41335,6 +42977,7 @@ var parseCardsText = {
 			"name": "Projectiles des Arcanes",
 			"text": "Inflige $3 |4(point,points) de dégâts répartis de façon aléatoire entre tous les adversaires."
 		},
+		"goldenImage": "EX1_277.gif",
 		"id": "EX1_277",
 		"name": "Arcane Missiles",
 		"playerClass": "Mage",
@@ -41353,6 +42996,7 @@ var parseCardsText = {
 			"name": "Lanceur de hache",
 			"text": "Inflige 2 points de dégâts au héros adverse chaque fois que ce serviteur subit des dégâts."
 		},
+		"goldenImage": "BRM_016.gif",
 		"health": 5,
 		"id": "BRM_016",
 		"name": "Axe Flinger",
@@ -41370,6 +43014,7 @@ var parseCardsText = {
 			"name": "Toxitron",
 			"text": "Inflige 1 point de dégâts à tous les autres serviteurs au début de votre tour."
 		},
+		"goldenImage": "BRMA14_5.gif",
 		"health": 3,
 		"id": "BRMA14_5",
 		"name": "Toxitron",
@@ -41387,6 +43032,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t24.gif",
 		"health": 24,
 		"id": "CFM_712_t24",
 		"name": "Jade Golem",
@@ -41402,6 +43048,7 @@ var parseCardsText = {
 			"name": "Rob Pardo",
 			"text": "Vous ne pouvez pas commencer de partie sans ce serviteur dans votre deck."
 		},
+		"goldenImage": "CRED_17.gif",
 		"health": 9,
 		"id": "CRED_17",
 		"name": "Rob Pardo",
@@ -41418,6 +43065,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Acolyte attise-flammes"
 		},
+		"goldenImage": "BRMA06_4H.gif",
 		"health": 3,
 		"id": "BRMA06_4H",
 		"name": "Flamewaker Acolyte",
@@ -41452,6 +43100,7 @@ var parseCardsText = {
 			"name": "Archimage Antonidas",
 			"text": "Chaque fois que vous lancez un sort, ajoute un sort « boule de feu » dans votre main."
 		},
+		"goldenImage": "EX1_559.gif",
 		"health": 7,
 		"id": "EX1_559",
 		"name": "Archmage Antonidas",
@@ -41471,6 +43120,7 @@ var parseCardsText = {
 			"name": "Mini stoppe-sort",
 			"text": "Les serviteurs adjacents ne peuvent pas être la cible de sorts ou de pouvoirs héroïques."
 		},
+		"goldenImage": "GVG_122.gif",
 		"health": 5,
 		"id": "GVG_122",
 		"name": "Wee Spellstopper",
@@ -41548,6 +43198,7 @@ var parseCardsText = {
 			"name": "Maître des encres Solia",
 			"text": "<b>Cri de guerre :</b> si votre deck ne contient pas de cartes en double, votre prochain sort lancé pendant ce tour coûte (0) |4(cristal,cristaux)."
 		},
+		"goldenImage": "CFM_687.gif",
 		"health": 5,
 		"id": "CFM_687",
 		"name": "Inkmaster Solia",
@@ -41580,6 +43231,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Enragé du magma"
 		},
+		"goldenImage": "CS2_118.gif",
 		"health": 1,
 		"id": "CS2_118",
 		"name": "Magma Rager",
@@ -41627,6 +43279,7 @@ var parseCardsText = {
 			"name": "Mal déterré",
 			"text": "Inflige $3 |4(point,points) de dégâts à tous les serviteurs.\nPlace cette carte dans le deck de votre adversaire."
 		},
+		"goldenImage": "LOE_111.gif",
 		"id": "LOE_111",
 		"name": "Excavated Evil",
 		"playerClass": "Priest",
@@ -41675,6 +43328,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Malfurion Hurlorage"
 		},
+		"goldenImage": "HERO_06.gif",
 		"health": 30,
 		"id": "HERO_06",
 		"name": "Malfurion Stormrage",
@@ -41692,6 +43346,7 @@ var parseCardsText = {
 			"name": "Maîtrise du blocage",
 			"text": "Vous gagnez 5 points d’armure. Vous piochez une carte."
 		},
+		"goldenImage": "EX1_606.gif",
 		"id": "EX1_606",
 		"name": "Shield Block",
 		"playerClass": "Warrior",
@@ -41710,6 +43365,7 @@ var parseCardsText = {
 			"name": "Chose venue d’en bas",
 			"text": "<b>Provocation</b>\nCoûte (1) |4(cristal,cristaux) de moins pour chaque totem invoqué par vous dans cette partie."
 		},
+		"goldenImage": "OG_028.gif",
 		"health": 5,
 		"id": "OG_028",
 		"name": "Thing from Below",
@@ -41727,6 +43383,7 @@ var parseCardsText = {
 			"name": "He-Rim Woo",
 			"text": "<b>Choix des armes :</b> donne un coup dans le bras, offre une friandise ou fait un gros câlin."
 		},
+		"goldenImage": "CRED_28.gif",
 		"health": 3,
 		"id": "CRED_28",
 		"name": "He-Rim Woo",
@@ -41743,6 +43400,7 @@ var parseCardsText = {
 			"name": "Examiner les runes",
 			"text": "Vous piochez 2 cartes."
 		},
+		"goldenImage": "LOEA04_29b.gif",
 		"id": "LOEA04_29b",
 		"name": "Investigate the Runes",
 		"playerClass": "Neutral",
@@ -41755,6 +43413,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Heigan l’Impur"
 		},
+		"goldenImage": "NAX5_01H.gif",
 		"health": 45,
 		"id": "NAX5_01H",
 		"name": "Heigan the Unclean",
@@ -41784,6 +43443,7 @@ var parseCardsText = {
 			"name": "Tim Erskine",
 			"text": "Vous piochez une carte chaque fois que ce serviteur en détruit un autre."
 		},
+		"goldenImage": "CRED_42.gif",
 		"health": 5,
 		"id": "CRED_42",
 		"name": "Tim Erskine",
@@ -41803,6 +43463,7 @@ var parseCardsText = {
 			"name": "Bling-o-tron 3000",
 			"text": "<b>Cri de guerre :</b> équipe chaque joueur d’une arme aléatoire."
 		},
+		"goldenImage": "GVG_119.gif",
 		"health": 4,
 		"id": "GVG_119",
 		"name": "Blingtron 3000",
@@ -41850,6 +43511,7 @@ var parseCardsText = {
 			"name": "Réparations",
 			"text": "Rend 10 PV."
 		},
+		"goldenImage": "LOEA07_28.gif",
 		"id": "LOEA07_28",
 		"name": "Repairs",
 		"playerClass": "Neutral",
@@ -41866,6 +43528,7 @@ var parseCardsText = {
 			"name": "Ordre de tuer",
 			"text": "Inflige $3 |4(point,points) de dégâts. Si vous contrôlez une Bête, inflige $5 |4(point,points) de dégâts à la place."
 		},
+		"goldenImage": "EX1_539.gif",
 		"id": "EX1_539",
 		"name": "Kill Command",
 		"playerClass": "Hunter",
@@ -41880,6 +43543,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Thrall"
 		},
+		"goldenImage": "HERO_02.gif",
 		"health": 30,
 		"id": "HERO_02",
 		"name": "Thrall",
@@ -41893,6 +43557,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Rafaam"
 		},
+		"goldenImage": "LOEA16_1.gif",
 		"health": 30,
 		"id": "LOEA16_1",
 		"name": "Rafaam",
@@ -41908,6 +43573,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Avorton vaurien"
 		},
+		"goldenImage": "LOE_089t.gif",
 		"health": 2,
 		"id": "LOE_089t",
 		"name": "Rascally Runt",
@@ -41923,6 +43589,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t22.gif",
 		"health": 22,
 		"id": "CFM_712_t22",
 		"name": "Jade Golem",
@@ -41940,6 +43607,7 @@ var parseCardsText = {
 			"name": "Abomination",
 			"text": "<b>Provocation</b>.\n<b>Râle d’agonie :</b> inflige 2 points de dégâts à TOUS les personnages."
 		},
+		"goldenImage": "EX1_097.gif",
 		"health": 4,
 		"id": "EX1_097",
 		"name": "Abomination",
@@ -41988,6 +43656,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Naga affamé"
 		},
+		"goldenImage": "LOEA09_5H.gif",
 		"health": 3,
 		"id": "LOEA09_5H",
 		"name": "Hungry Naga",
@@ -42004,6 +43673,7 @@ var parseCardsText = {
 			"name": "Bombe de matière noire",
 			"text": "Inflige $3 |4(point,points) de dégâts."
 		},
+		"goldenImage": "GVG_015.gif",
 		"id": "GVG_015",
 		"name": "Darkbomb",
 		"playerClass": "Warlock",
@@ -42021,6 +43691,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Larve putride"
 		},
+		"goldenImage": "OG_325.gif",
 		"health": 5,
 		"id": "OG_325",
 		"name": "Carrion Grub",
@@ -42051,6 +43722,7 @@ var parseCardsText = {
 			"name": "Soigneur honnête",
 			"text": "À la fin de votre tour, invoque un serviteur allié aléatoire mort pendant ce tour."
 		},
+		"goldenImage": "TBST_004.gif",
 		"health": 2,
 		"id": "TBST_004",
 		"name": "OLDLegit Healer",
@@ -42068,6 +43740,7 @@ var parseCardsText = {
 			"name": "Lumière des naaru",
 			"text": "Rend #3 |4(point,points) de vie. Si la cible est toujours blessée, invoque un Gardelumière."
 		},
+		"goldenImage": "GVG_012.gif",
 		"id": "GVG_012",
 		"name": "Light of the Naaru",
 		"playerClass": "Priest",
@@ -42084,6 +43757,7 @@ var parseCardsText = {
 			"name": "Fan de méca",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "TB_MechWar_Minion1.gif",
 		"health": 1,
 		"id": "TB_MechWar_Minion1",
 		"name": "Mech Fan",
@@ -42111,6 +43785,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Atramédès"
 		},
+		"goldenImage": "BRMA16_1.gif",
 		"health": 30,
 		"id": "BRMA16_1",
 		"name": "Atramedes",
@@ -42127,6 +43802,7 @@ var parseCardsText = {
 			"name": "Tir du cobra",
 			"text": "Inflige $3 |4(point,points) de dégâts à un serviteur et au héros adverse."
 		},
+		"goldenImage": "GVG_073.gif",
 		"id": "GVG_073",
 		"name": "Cobra Shot",
 		"playerClass": "Hunter",
@@ -42160,6 +43836,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Zinaar"
 		},
+		"goldenImage": "LOEA02_01h.gif",
 		"health": 30,
 		"id": "LOEA02_01h",
 		"name": "Zinaar",
@@ -42176,6 +43853,7 @@ var parseCardsText = {
 			"name": "Guérison interdite",
 			"text": "Dépense tout votre mana pour en rendre le double en points de vie."
 		},
+		"goldenImage": "OG_198.gif",
 		"id": "OG_198",
 		"name": "Forbidden Healing",
 		"playerClass": "Paladin",
@@ -42224,6 +43902,7 @@ var parseCardsText = {
 			"name": "Héroïne altruiste",
 			"text": "<b>Râle d’agonie :</b> confère <b>Bouclier divin</b> à un serviteur allié aléatoire."
 		},
+		"goldenImage": "OG_221.gif",
 		"health": 1,
 		"id": "OG_221",
 		"name": "Selfless Hero",
@@ -42259,6 +43938,7 @@ var parseCardsText = {
 			"name": "Hurlesang",
 			"text": "Attaquer un serviteur coûte 1 ATQ au lieu de 1 Durabilité."
 		},
+		"goldenImage": "EX1_411.gif",
 		"id": "EX1_411",
 		"name": "Gorehowl",
 		"playerClass": "Warrior",
@@ -42277,6 +43957,7 @@ var parseCardsText = {
 			"name": "Implorateur du Vide",
 			"text": "<b>Râle d’agonie :</b> place un démon aléatoire de votre main sur le champ de bataille."
 		},
+		"goldenImage": "FP1_022.gif",
 		"health": 4,
 		"id": "FP1_022",
 		"name": "Voidcaller",
@@ -42294,6 +43975,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Murloc de la Main d’argent"
 		},
+		"goldenImage": "OG_006a.gif",
 		"health": 1,
 		"id": "OG_006a",
 		"name": "Silver Hand Murloc",
@@ -42339,6 +44021,7 @@ var parseCardsText = {
 			"name": "Frissegueule",
 			"text": "<b>Provocation</b>. <b>Râle d’agonie :</b> inflige 3 points de dégâts à tous les serviteurs si vous avez un Dragon en main."
 		},
+		"goldenImage": "AT_123.gif",
 		"health": 6,
 		"id": "AT_123",
 		"name": "Chillmaw",
@@ -42374,6 +44057,7 @@ var parseCardsText = {
 			"name": "Brise-sort",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un serviteur."
 		},
+		"goldenImage": "EX1_048.gif",
 		"health": 3,
 		"id": "EX1_048",
 		"name": "Spellbreaker",
@@ -42392,6 +44076,7 @@ var parseCardsText = {
 			"name": "Bénédiction de sagesse",
 			"text": "Choisissez un serviteur. Chaque fois qu’il attaque, vous piochez une carte."
 		},
+		"goldenImage": "EX1_363.gif",
 		"id": "EX1_363",
 		"name": "Blessing of Wisdom",
 		"playerClass": "Paladin",
@@ -42410,6 +44095,7 @@ var parseCardsText = {
 			"name": "Fouine perce-tunnels",
 			"text": "<b>Râle d’agonie :</b> place ce serviteur dans le deck de votre adversaire."
 		},
+		"goldenImage": "CFM_095.gif",
 		"health": 1,
 		"id": "CFM_095",
 		"name": "Weasel Tunneler",
@@ -42426,6 +44112,7 @@ var parseCardsText = {
 			"name": "Damage all but 1",
 			"text": "Set the Health of a character to 1."
 		},
+		"goldenImage": "XXX_020.gif",
 		"id": "XXX_020",
 		"name": "Damage all but 1",
 		"playerClass": "Neutral",
@@ -42442,6 +44129,7 @@ var parseCardsText = {
 			"name": "Ryan Masterson",
 			"text": "<b>Cri de guerre :</b> lance des copies d’Attaque sournoise, Sang froid et Éviscération. <i>(cibles choisies au hasard).</i>"
 		},
+		"goldenImage": "CRED_40.gif",
 		"health": 2,
 		"id": "CRED_40",
 		"name": "Ryan Masterson",
@@ -42462,6 +44150,7 @@ var parseCardsText = {
 			"name": "Glaivezooka",
 			"text": "<b>Cri de guerre :</b> donne +1 ATQ à un serviteur allié aléatoire."
 		},
+		"goldenImage": "GVG_043.gif",
 		"id": "GVG_043",
 		"name": "Glaivezooka",
 		"playerClass": "Hunter",
@@ -42492,6 +44181,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Panthère"
 		},
+		"goldenImage": "EX1_160t.gif",
 		"health": 2,
 		"id": "EX1_160t",
 		"name": "Panther",
@@ -42510,6 +44200,7 @@ var parseCardsText = {
 			"name": "Don Han’Cho",
 			"text": "<b>Cri de guerre :</b> donne +5/+5 à un serviteur aléatoire dans votre main."
 		},
+		"goldenImage": "CFM_685.gif",
 		"health": 6,
 		"id": "CFM_685",
 		"name": "Don Han'Cho",
@@ -42573,6 +44264,7 @@ var parseCardsText = {
 			"name": "Perroquet du capitaine",
 			"text": "<b>Cri de guerre :</b> place un pirate aléatoire de votre deck dans votre main."
 		},
+		"goldenImage": "NEW1_016.gif",
 		"health": 1,
 		"id": "NEW1_016",
 		"name": "Captain's Parrot",
@@ -42589,6 +44281,7 @@ var parseCardsText = {
 			"name": "Destin : Armure",
 			"text": "Chaque joueur gagne +2 Armure au début de son tour."
 		},
+		"goldenImage": "TB_PickYourFate_8rand.gif",
 		"id": "TB_PickYourFate_8rand",
 		"name": "Fate: Armor",
 		"playerClass": "Neutral",
@@ -42621,6 +44314,7 @@ var parseCardsText = {
 			"name": "Tirion Fordring",
 			"text": "<b>Bouclier divin</b>. <b>Provocation</b>. <b>Râle d’agonie :</b> vous équipe de Porte-cendres 5/3."
 		},
+		"goldenImage": "EX1_383.gif",
 		"health": 6,
 		"id": "EX1_383",
 		"name": "Tirion Fordring",
@@ -42640,6 +44334,7 @@ var parseCardsText = {
 			"name": "Championne sacrée",
 			"text": "Chaque fois qu’un personnage est soigné, gagne +2 ATQ."
 		},
+		"goldenImage": "AT_011.gif",
 		"health": 5,
 		"id": "AT_011",
 		"name": "Holy Champion",
@@ -42674,6 +44369,7 @@ var parseCardsText = {
 			"name": "Convertir",
 			"text": "Place une copie d’un serviteur adverse dans votre main."
 		},
+		"goldenImage": "AT_015.gif",
 		"id": "AT_015",
 		"name": "Convert",
 		"playerClass": "Priest",
@@ -42689,6 +44385,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Arbrisseau"
 		},
+		"goldenImage": "AT_037t.gif",
 		"health": 1,
 		"id": "AT_037t",
 		"name": "Sapling",
@@ -42705,6 +44402,7 @@ var parseCardsText = {
 			"name": "Furie sanguinaire",
 			"text": "Donne +3 ATQ à vos serviteurs pendant ce tour."
 		},
+		"goldenImage": "CS2_046.gif",
 		"id": "CS2_046",
 		"name": "Bloodlust",
 		"playerClass": "Shaman",
@@ -42737,6 +44435,7 @@ var parseCardsText = {
 			"name": "Hyène charognarde",
 			"text": "Chaque fois qu’une bête alliée meurt, gagne +2/+1."
 		},
+		"goldenImage": "EX1_531.gif",
 		"health": 2,
 		"id": "EX1_531",
 		"name": "Scavenging Hyena",
@@ -42769,6 +44468,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t27.gif",
 		"health": 27,
 		"id": "CFM_712_t27",
 		"name": "Jade Golem",
@@ -42799,6 +44499,7 @@ var parseCardsText = {
 			"name": "Lave vivante",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMA13_6.gif",
 		"health": 6,
 		"id": "BRMA13_6",
 		"name": "Living Lava",
@@ -42817,6 +44518,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Lame d’assassin"
 		},
+		"goldenImage": "CS2_080.gif",
 		"id": "CS2_080",
 		"name": "Assassin's Blade",
 		"playerClass": "Rogue",
@@ -42863,6 +44565,7 @@ var parseCardsText = {
 			"name": "Saccageur gangrené",
 			"text": "Chaque fois que votre adversaire joue une carte, retire les 3 cartes du dessus de votre deck."
 		},
+		"goldenImage": "GVG_016.gif",
 		"health": 8,
 		"id": "GVG_016",
 		"name": "Fel Reaver",
@@ -42882,6 +44585,7 @@ var parseCardsText = {
 			"name": "Char de force MAX",
 			"text": "<b>Bouclier divin</b>"
 		},
+		"goldenImage": "GVG_079.gif",
 		"health": 7,
 		"id": "GVG_079",
 		"name": "Force-Tank MAX",
@@ -42902,6 +44606,7 @@ var parseCardsText = {
 			"name": "Jeune maître brasseur",
 			"text": "<b>Cri de guerre :</b> renvoie un serviteur allié du champ de bataille et le place dans votre main."
 		},
+		"goldenImage": "EX1_049.gif",
 		"health": 2,
 		"id": "EX1_049",
 		"name": "Youthful Brewmaster",
@@ -42968,6 +44673,7 @@ var parseCardsText = {
 			"name": "Loup alpha redoutable",
 			"text": "Les serviteurs adjacents ont +1 ATQ."
 		},
+		"goldenImage": "EX1_162.gif",
 		"health": 2,
 		"id": "EX1_162",
 		"name": "Dire Wolf Alpha",
@@ -42985,6 +44691,7 @@ var parseCardsText = {
 			"name": "Golemagg",
 			"text": "Coûte (1) cristal de moins pour chaque point de dégâts subi par votre héros."
 		},
+		"goldenImage": "BRMC_95.gif",
 		"health": 20,
 		"id": "BRMC_95",
 		"name": "Golemagg",
@@ -43033,6 +44740,7 @@ var parseCardsText = {
 			"name": "Mortelle floraison",
 			"text": "Inflige $5 |4(point,points) de dégâts à un serviteur. Invoque une spore."
 		},
+		"goldenImage": "NAX6_03.gif",
 		"id": "NAX6_03",
 		"name": "Deathbloom",
 		"playerClass": "Neutral",
@@ -43050,6 +44758,7 @@ var parseCardsText = {
 			"name": "Varian Wrynn",
 			"text": "<b>Cri de guerre :</b> vous piochez\n3 cartes. Place tout serviteur pioché directement sur le champ de bataille."
 		},
+		"goldenImage": "AT_072.gif",
 		"health": 7,
 		"id": "AT_072",
 		"name": "Varian Wrynn",
@@ -43069,6 +44778,7 @@ var parseCardsText = {
 			"name": "Léviathan des flammes",
 			"text": "Quand vous piochez cette carte, inflige 2 points de dégâts à tous les personnages."
 		},
+		"goldenImage": "GVG_007.gif",
 		"health": 7,
 		"id": "GVG_007",
 		"name": "Flame Leviathan",
@@ -43087,6 +44797,7 @@ var parseCardsText = {
 			"name": "Amélioration !",
 			"text": "Si vous avez une arme, lui donne +1/+1. Sinon, vous équipe d’une arme 1/3."
 		},
+		"goldenImage": "EX1_409.gif",
 		"id": "EX1_409",
 		"name": "Upgrade!",
 		"playerClass": "Warrior",
@@ -43104,6 +44815,7 @@ var parseCardsText = {
 			"name": "Sombres feux follets",
 			"text": "<b>Choix des armes :</b> invoque 5 feux follets ou donne +5/+5 et <b>Provocation</b> à un serviteur."
 		},
+		"goldenImage": "GVG_041.gif",
 		"id": "GVG_041",
 		"name": "Dark Wispers",
 		"playerClass": "Druid",
@@ -43121,6 +44833,7 @@ var parseCardsText = {
 			"name": "Marque du chasseur",
 			"text": "Fait tomber les points de vie d’un serviteur\nà 1."
 		},
+		"goldenImage": "CS2_084.gif",
 		"id": "CS2_084",
 		"name": "Hunter's Mark",
 		"playerClass": "Hunter",
@@ -43134,6 +44847,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nefarian"
 		},
+		"goldenImage": "BRMA17_2H.gif",
 		"health": 30,
 		"id": "BRMA17_2H",
 		"name": "Nefarian",
@@ -43151,6 +44865,7 @@ var parseCardsText = {
 			"name": "Manipulateur sans-visage",
 			"text": "<b>Cri de guerre :</b> choisit un serviteur et en devient la copie conforme."
 		},
+		"goldenImage": "EX1_564.gif",
 		"health": 3,
 		"id": "EX1_564",
 		"name": "Faceless Manipulator",
@@ -43170,6 +44885,7 @@ var parseCardsText = {
 			"name": "Chromaggus",
 			"text": "Chaque fois que vous piochez une carte, en place une copie dans votre main."
 		},
+		"goldenImage": "BRM_031.gif",
 		"health": 8,
 		"id": "BRM_031",
 		"name": "Chromaggus",
@@ -43201,6 +44917,7 @@ var parseCardsText = {
 			"name": "Destroy a Mana Crystal",
 			"text": "Pick a player and destroy one of his Mana Crystals."
 		},
+		"goldenImage": "XXX_050.gif",
 		"id": "XXX_050",
 		"name": "Destroy a Mana Crystal",
 		"playerClass": "Neutral",
@@ -43228,6 +44945,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Hogger"
 		},
+		"goldenImage": "XXX_040.gif",
 		"health": 10,
 		"id": "XXX_040",
 		"name": "Hogger",
@@ -43243,6 +44961,7 @@ var parseCardsText = {
 			"name": "Leokk",
 			"text": "Vos autres serviteurs ont +1 ATQ."
 		},
+		"goldenImage": "NEW1_033.gif",
 		"health": 4,
 		"id": "NEW1_033",
 		"name": "Leokk",
@@ -43260,6 +44979,7 @@ var parseCardsText = {
 			"name": "Néantine",
 			"text": "Invoque un démon 8/8."
 		},
+		"goldenImage": "CFM_621t28.gif",
 		"id": "CFM_621t28",
 		"name": "Netherbloom",
 		"playerClass": "Neutral",
@@ -43358,6 +45078,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Justice de la Lumière"
 		},
+		"goldenImage": "CS2_091.gif",
 		"id": "CS2_091",
 		"name": "Light's Justice",
 		"playerClass": "Paladin",
@@ -43391,6 +45112,7 @@ var parseCardsText = {
 			"name": "Totem Langue de feu",
 			"text": "Les serviteurs adjacents ont +2 ATQ."
 		},
+		"goldenImage": "EX1_565.gif",
 		"health": 3,
 		"id": "EX1_565",
 		"name": "Flametongue Totem",
@@ -43440,6 +45162,7 @@ var parseCardsText = {
 			"name": "Chevalier murloc",
 			"text": "<b>Exaltation :</b> invoque un murloc aléatoire."
 		},
+		"goldenImage": "AT_076.gif",
 		"health": 4,
 		"id": "AT_076",
 		"name": "Murloc Knight",
@@ -43486,6 +45209,7 @@ var parseCardsText = {
 			"name": "Lion dent-de-sabre",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "AT_042t.gif",
 		"health": 1,
 		"id": "AT_042t",
 		"name": "Sabertooth Lion",
@@ -43530,6 +45254,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Stalagg"
 		},
+		"goldenImage": "NAX13_05H.gif",
 		"health": 4,
 		"id": "NAX13_05H",
 		"name": "Stalagg",
@@ -43549,6 +45274,7 @@ var parseCardsText = {
 			"name": "Chevaucheur de loup",
 			"text": "<b>Charge</b>"
 		},
+		"goldenImage": "CS2_124.gif",
 		"health": 1,
 		"id": "CS2_124",
 		"name": "Wolfrider",
@@ -43568,6 +45294,7 @@ var parseCardsText = {
 			"name": "Invocateur sans-visage",
 			"text": "<b>Cri de guerre :</b> invoque un serviteur aléatoire coûtant 3 cristaux."
 		},
+		"goldenImage": "OG_207.gif",
 		"health": 5,
 		"id": "OG_207",
 		"name": "Faceless Summoner",
@@ -43586,6 +45313,7 @@ var parseCardsText = {
 			"name": "Métamorphose",
 			"text": "Transforme un serviteur en mouton 1/1."
 		},
+		"goldenImage": "CS2_022.gif",
 		"id": "CS2_022",
 		"name": "Polymorph",
 		"playerClass": "Mage",
@@ -43648,6 +45376,7 @@ var parseCardsText = {
 			"name": "Imposition des mains",
 			"text": "Rend #8 |4(point,points) de vie. Vous piochez 3 cartes."
 		},
+		"goldenImage": "EX1_354.gif",
 		"id": "EX1_354",
 		"name": "Lay on Hands",
 		"playerClass": "Paladin",
@@ -43666,6 +45395,7 @@ var parseCardsText = {
 			"name": "Esprit de jade",
 			"text": "<b>Cri de guerre :</b> invoque un <b>golem de jade</b> {0}.@<b>Cri de guerre :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_715.gif",
 		"health": 3,
 		"id": "CFM_715",
 		"name": "Jade Spirit",
@@ -43682,6 +45412,7 @@ var parseCardsText = {
 			"name": "Opponent Concede",
 			"text": "Force your opponent to concede."
 		},
+		"goldenImage": "XXX_029.gif",
 		"id": "XXX_029",
 		"name": "Opponent Concede",
 		"playerClass": "Neutral",
@@ -43698,6 +45429,7 @@ var parseCardsText = {
 			"name": "Grimoire de cabaliste",
 			"text": "Place 3 sorts de mage aléatoires dans votre main."
 		},
+		"goldenImage": "OG_090.gif",
 		"id": "OG_090",
 		"name": "Cabalist's Tome",
 		"playerClass": "Mage",
@@ -43717,6 +45449,7 @@ var parseCardsText = {
 			"name": "Championne en vrai-argent",
 			"text": "Chaque fois que votre héros attaque, lui rend 2 PV."
 		},
+		"goldenImage": "CS2_097.gif",
 		"id": "CS2_097",
 		"name": "Truesilver Champion",
 		"playerClass": "Paladin",
@@ -43735,6 +45468,7 @@ var parseCardsText = {
 			"name": "Purificateur écarlate",
 			"text": "<b>Cri de guerre :</b> inflige 2 points de dégâts à tous les serviteurs avec <b>Râle d’agonie</b>."
 		},
+		"goldenImage": "GVG_101.gif",
 		"health": 3,
 		"id": "GVG_101",
 		"name": "Scarlet Purifier",
@@ -43754,6 +45488,7 @@ var parseCardsText = {
 			"name": "Cho’gall",
 			"text": "<b>Cri de guerre :</b> le prochain sort que vous lancez ce tour coûte des points de vie plutôt que des cristaux de mana."
 		},
+		"goldenImage": "OG_121.gif",
 		"health": 7,
 		"id": "OG_121",
 		"name": "Cho'gall",
@@ -43770,6 +45505,7 @@ var parseCardsText = {
 			"name": "Mode Attaque",
 			"text": "+1 ATQ."
 		},
+		"goldenImage": "GVG_030a.gif",
 		"id": "GVG_030a",
 		"name": "Attack Mode",
 		"playerClass": "Druid",
@@ -43787,6 +45523,7 @@ var parseCardsText = {
 			"name": "Ragnaros, seigneur du feu",
 			"text": "Ne peut pas attaquer. À la fin de votre tour, inflige 8 points de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "EX1_298.gif",
 		"health": 8,
 		"id": "EX1_298",
 		"name": "Ragnaros the Firelord",
@@ -43820,6 +45557,7 @@ var parseCardsText = {
 			"name": "Traînard sans-visage",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> copie l’Attaque et la Vie d’un serviteur allié."
 		},
+		"goldenImage": "OG_174.gif",
 		"health": 1,
 		"id": "OG_174",
 		"name": "Faceless Shambler",
@@ -43840,6 +45578,7 @@ var parseCardsText = {
 			"name": "Défenseur du roi",
 			"text": "<b>Cri de guerre :</b> gagne\n+1 Durabilité si vous avez un serviteur avec <b>Provocation</b>."
 		},
+		"goldenImage": "AT_065.gif",
 		"id": "AT_065",
 		"name": "King's Defender",
 		"playerClass": "Warrior",
@@ -43856,6 +45595,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Mastiff"
 		},
+		"goldenImage": "OG_061t.gif",
 		"health": 1,
 		"id": "OG_061t",
 		"name": "Mastiff",
@@ -43872,6 +45612,7 @@ var parseCardsText = {
 			"name": "Puissance du fauve",
 			"text": "<b>Choix des armes :</b>\ndonne +1/+1 à vos serviteurs ou invoque une panthère 3/2."
 		},
+		"goldenImage": "EX1_160.gif",
 		"id": "EX1_160",
 		"name": "Power of the Wild",
 		"playerClass": "Druid",
@@ -43902,6 +45643,7 @@ var parseCardsText = {
 			"name": "Mystique de Kezan",
 			"text": "<b>Cri de guerre :</b> prend le contrôle d’un <b>Secret</b> adverse aléatoire."
 		},
+		"goldenImage": "GVG_074.gif",
 		"health": 3,
 		"id": "GVG_074",
 		"name": "Kezan Mystic",
@@ -43948,6 +45690,7 @@ var parseCardsText = {
 			"name": "Bolf Bélier-Frondeur",
 			"text": "Chaque fois que votre héros subit des dégâts, les inflige à ce serviteur à la place."
 		},
+		"goldenImage": "AT_124.gif",
 		"health": 9,
 		"id": "AT_124",
 		"name": "Bolf Ramshield",
@@ -43967,6 +45710,7 @@ var parseCardsText = {
 			"name": "Harrison Jones",
 			"text": "<b>Cri de guerre :</b> détruit l’arme de votre adversaire. Vous piochez le nombre de cartes équivalent à sa durabilité."
 		},
+		"goldenImage": "EX1_558.gif",
 		"health": 4,
 		"id": "EX1_558",
 		"name": "Harrison Jones",
@@ -43997,6 +45741,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Reveal Hand"
 		},
+		"goldenImage": "XXX_028.gif",
 		"id": "XXX_028",
 		"name": "Reveal Hand",
 		"playerClass": "Neutral",
@@ -44012,6 +45757,7 @@ var parseCardsText = {
 			"name": "Rocher",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "LOE_016t.gif",
 		"health": 6,
 		"id": "LOE_016t",
 		"name": "Rock",
@@ -44030,6 +45776,7 @@ var parseCardsText = {
 			"name": "Géomancienne du Crépuscule",
 			"text": "<b>Provocation</b>\n<b>Cri de guerre :</b> confère <b>Provocation</b> à votre C’Thun <i>(où qu’il soit)</i>."
 		},
+		"goldenImage": "OG_284.gif",
 		"health": 4,
 		"id": "OG_284",
 		"name": "Twilight Geomancer",
@@ -44060,6 +45807,7 @@ var parseCardsText = {
 			"name": "Silence - debug",
 			"text": "Remove all enchantments and powers from a minion."
 		},
+		"goldenImage": "XXX_010.gif",
 		"id": "XXX_010",
 		"name": "Silence - debug",
 		"playerClass": "Neutral",
@@ -44078,6 +45826,7 @@ var parseCardsText = {
 			"name": "Maîtresse du déguisement",
 			"text": "<b>Cri de guerre :</b> confère <b>Camouflage</b> à un serviteur allié jusqu’à votre prochain tour."
 		},
+		"goldenImage": "NEW1_014.gif",
 		"health": 4,
 		"id": "NEW1_014",
 		"name": "Master of Disguise",
@@ -44095,6 +45844,7 @@ var parseCardsText = {
 			"name": "Jerry Mascho",
 			"text": "Inflige 1 point de dégâts au début de votre tour. Si cette carte est dorée, inflige à la place 1 point de dégâts à la fin de votre tour. BLAGUE HAN SOLO."
 		},
+		"goldenImage": "CRED_32.gif",
 		"health": 2,
 		"id": "CRED_32",
 		"name": "Jerry Mascho",
@@ -44112,6 +45862,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t19.gif",
 		"health": 19,
 		"id": "CFM_712_t19",
 		"name": "Jade Golem",
@@ -44129,6 +45880,7 @@ var parseCardsText = {
 			"name": "Chevaucheur pandashan",
 			"text": "<b>Combo :</b> gagne +3 ATQ."
 		},
+		"goldenImage": "AT_028.gif",
 		"health": 7,
 		"id": "AT_028",
 		"name": "Shado-Pan Rider",
@@ -44148,6 +45900,7 @@ var parseCardsText = {
 			"name": "Parlevent",
 			"text": "<b>Cri de guerre :</b> confère <b>Furie des vents</b> à un serviteur allié."
 		},
+		"goldenImage": "EX1_587.gif",
 		"health": 3,
 		"id": "EX1_587",
 		"name": "Windspeaker",
@@ -44181,6 +45934,7 @@ var parseCardsText = {
 			"name": "Le gardien des tempêtes",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "CFM_324t.gif",
 		"health": 10,
 		"id": "CFM_324t",
 		"name": "The Storm Guardian",
@@ -44228,6 +45982,7 @@ var parseCardsText = {
 			"name": "Bonus : sorts",
 			"text": "Chaque fois que vous lancez un sort, vous gagnez 3 points d’armure."
 		},
+		"goldenImage": "TB_PickYourFate_8.gif",
 		"id": "TB_PickYourFate_8",
 		"name": "Spell Bonus",
 		"playerClass": "Neutral",
@@ -44257,6 +46012,7 @@ var parseCardsText = {
 			"name": "Crache-vase",
 			"text": "<b>Provocation.\nRâle d’agonie :</b> invoque une gelée 1/2 avec <b>Provocation</b>."
 		},
+		"goldenImage": "FP1_012.gif",
 		"health": 5,
 		"id": "FP1_012",
 		"name": "Sludge Belcher",
@@ -44275,6 +46031,7 @@ var parseCardsText = {
 			"name": "Météores",
 			"text": "<b>Choix des armes :</b> inflige $5 |4(point,points) de dégâts à un serviteur ; ou $2 |4(point,points) de dégâts à tous les serviteurs adverses."
 		},
+		"goldenImage": "NEW1_007.gif",
 		"id": "NEW1_007",
 		"name": "Starfall",
 		"playerClass": "Druid",
@@ -44293,6 +46050,7 @@ var parseCardsText = {
 			"name": "Druidesse de la Flamme",
 			"text": "<b>Choix des armes :</b> se transforme en un serviteur 5/2 ou en un serviteur 2/5."
 		},
+		"goldenImage": "BRM_010.gif",
 		"health": 2,
 		"id": "BRM_010",
 		"name": "Druid of the Flame",
@@ -44310,6 +46068,7 @@ var parseCardsText = {
 			"name": "Toxine de sang-royal",
 			"text": "Vous piochez une carte."
 		},
+		"goldenImage": "OG_080b.gif",
 		"id": "OG_080b",
 		"name": "Kingsblood Toxin",
 		"playerClass": "Rogue",
@@ -44334,6 +46093,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Millhouse Tempête-de-Mana"
 		},
+		"goldenImage": "TU4b_001.gif",
 		"health": 20,
 		"id": "TU4b_001",
 		"name": "Millhouse Manastorm",
@@ -44352,6 +46112,7 @@ var parseCardsText = {
 			"name": "Sniper de Gentepression",
 			"text": "Votre pouvoir héroïque peut viser les serviteurs."
 		},
+		"goldenImage": "GVG_087.gif",
 		"health": 3,
 		"id": "GVG_087",
 		"name": "Steamwheedle Sniper",
@@ -44412,6 +46173,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Vaelastrasz le Corrompu"
 		},
+		"goldenImage": "BRMA11_1H.gif",
 		"health": 30,
 		"id": "BRMA11_1H",
 		"name": "Vaelastrasz the Corrupt",
@@ -44442,6 +46204,7 @@ var parseCardsText = {
 			"name": "Damage Reflector",
 			"text": "Whenever this minion takes damage, deal 1 damage to ALL other characters."
 		},
+		"goldenImage": "XXX_024.gif",
 		"health": 10,
 		"id": "XXX_024",
 		"name": "Damage Reflector",
@@ -44461,6 +46224,7 @@ var parseCardsText = {
 			"name": "Cap’taine céleste Kragg",
 			"text": "<b>Charrrrrge</b>\nCoûte (1) |4(cristal,cristaux) de moins pour chaque pirate allié."
 		},
+		"goldenImage": "AT_070.gif",
 		"health": 6,
 		"id": "AT_070",
 		"name": "Skycap'n Kragg",
@@ -44511,6 +46275,7 @@ var parseCardsText = {
 			"name": "Esprit combatif",
 			"text": "<b>Secret :</b> donne +1/+1 à vos serviteurs quand votre tour commence."
 		},
+		"goldenImage": "AT_073.gif",
 		"id": "AT_073",
 		"name": "Competitive Spirit",
 		"playerClass": "Paladin",
@@ -44529,6 +46294,7 @@ var parseCardsText = {
 			"name": "Robot d’alarme",
 			"text": "Au début de votre tour, échange ce serviteur avec un autre choisi au hasard dans votre main."
 		},
+		"goldenImage": "EX1_006.gif",
 		"health": 3,
 		"id": "EX1_006",
 		"name": "Alarm-o-Bot",
@@ -44548,6 +46314,7 @@ var parseCardsText = {
 			"name": "Tisse-ambre klaxxi",
 			"text": "<b>Cri de guerre :</b> gagne\n+5 PV si votre C’Thun a au moins 10 Attaque."
 		},
+		"goldenImage": "OG_188.gif",
 		"health": 5,
 		"id": "OG_188",
 		"name": "Klaxxi Amber-Weaver",
@@ -44562,6 +46329,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Empereur Thaurissan"
 		},
+		"goldenImage": "BRMA03_1H.gif",
 		"health": 30,
 		"id": "BRMA03_1H",
 		"name": "Emperor Thaurissan",
@@ -44591,6 +46359,7 @@ var parseCardsText = {
 			"name": "1000 Stats",
 			"text": "Give a Minion +1000/+1000"
 		},
+		"goldenImage": "XXX_055.gif",
 		"id": "XXX_055",
 		"name": "1000 Stats",
 		"playerClass": "Neutral",
@@ -44607,6 +46376,7 @@ var parseCardsText = {
 			"name": "Mâchoires",
 			"text": "Gagne +2 ATQ chaque fois qu’un serviteur avec <b>Râle d’agonie</b> meurt."
 		},
+		"goldenImage": "NAX12_03.gif",
 		"id": "NAX12_03",
 		"name": "Jaws",
 		"playerClass": "Neutral",
@@ -44635,6 +46405,7 @@ var parseCardsText = {
 			"name": "Toxine de pâlerette",
 			"text": "Confère <b>Camouflage</b> à un serviteur allié jusqu’à votre prochain tour."
 		},
+		"goldenImage": "OG_080e.gif",
 		"id": "OG_080e",
 		"name": "Fadeleaf Toxin",
 		"playerClass": "Rogue",
@@ -44693,6 +46464,7 @@ var parseCardsText = {
 			"name": "Instructeur Razuvious",
 			"text": "<b>Cri de guerre :</b> vous équipe d’une Lame runique massive 5/2."
 		},
+		"goldenImage": "TB_KTRAF_8.gif",
 		"health": 3,
 		"id": "TB_KTRAF_8",
 		"name": "Instructor Razuvious",
@@ -44712,6 +46484,7 @@ var parseCardsText = {
 			"name": "Implorateur funeste",
 			"text": "<b>Cri de guerre :</b> donne +2/+2 à votre C’Thun <i>(où qu’il soit)</i>. S’il est mort, le place dans votre deck."
 		},
+		"goldenImage": "OG_255.gif",
 		"health": 9,
 		"id": "OG_255",
 		"name": "Doomcaller",
@@ -44728,6 +46501,7 @@ var parseCardsText = {
 			"name": "Gong réverbérant",
 			"text": "Détruit l’arme de votre adversaire."
 		},
+		"goldenImage": "BRMA16_4.gif",
 		"id": "BRMA16_4",
 		"name": "Reverberating Gong",
 		"playerClass": "Neutral",
@@ -44745,6 +46519,7 @@ var parseCardsText = {
 			"name": "Avortons tremblants",
 			"text": "<b>Râle d’agonie :</b> invoque trois avortons 2/2."
 		},
+		"goldenImage": "LOE_089.gif",
 		"health": 6,
 		"id": "LOE_089",
 		"name": "Wobbling Runts",
@@ -44761,6 +46536,7 @@ var parseCardsText = {
 			"name": "Affliction de l’espèce : vert",
 			"text": "Rend 6 PV à votre adversaire au début de votre tour tant que vous avez cette carte dans votre main."
 		},
+		"goldenImage": "BRMA12_4H.gif",
 		"id": "BRMA12_4H",
 		"name": "Brood Affliction: Green",
 		"playerClass": "Neutral",
@@ -44773,6 +46549,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Heigan l’Impur"
 		},
+		"goldenImage": "NAX5_01.gif",
 		"health": 30,
 		"id": "NAX5_01",
 		"name": "Heigan the Unclean",
@@ -44802,6 +46579,7 @@ var parseCardsText = {
 			"name": "Enquêteur perspicace",
 			"text": "<b>Cri de guerre :</b> les serviteurs adverses perdent le <b>Camouflage</b>."
 		},
+		"goldenImage": "CFM_656.gif",
 		"health": 6,
 		"id": "CFM_656",
 		"name": "Streetwise Investigator",
@@ -44820,6 +46598,7 @@ var parseCardsText = {
 			"name": "Flamme interdite",
 			"text": "Dépense tous vos cristaux de mana. Inflige l’équivalent sous forme de dégâts à un serviteur."
 		},
+		"goldenImage": "OG_086.gif",
 		"id": "OG_086",
 		"name": "Forbidden Flame",
 		"playerClass": "Mage",
@@ -44838,6 +46617,7 @@ var parseCardsText = {
 			"name": "Agents du Lotus",
 			"text": "<b>Cri de guerre :</b> <b>découvre</b> une carte de druide, voleur ou chaman."
 		},
+		"goldenImage": "CFM_852.gif",
 		"health": 3,
 		"id": "CFM_852",
 		"name": "Lotus Agents",
@@ -44868,6 +46648,7 @@ var parseCardsText = {
 			"name": "Forme de faucon-de-feu",
 			"text": "Se transforme en un serviteur 2/5."
 		},
+		"goldenImage": "BRM_010b.gif",
 		"id": "BRM_010b",
 		"name": "Fire Hawk Form",
 		"playerClass": "Druid",
@@ -44883,6 +46664,7 @@ var parseCardsText = {
 			"name": "MEURS, INSECTE !",
 			"text": "Inflige $8 |4(point,points) de dégâts à un adversaire aléatoire."
 		},
+		"goldenImage": "BRMA13_8.gif",
 		"id": "BRMA13_8",
 		"name": "DIE, INSECT!",
 		"playerClass": "Neutral",
@@ -44900,6 +46682,7 @@ var parseCardsText = {
 			"name": "Armure animée",
 			"text": "Votre héros ne peut pas subir plus de 1 point de dégâts à la fois."
 		},
+		"goldenImage": "LOE_119.gif",
 		"health": 4,
 		"id": "LOE_119",
 		"name": "Animated Armor",
@@ -44918,6 +46701,7 @@ var parseCardsText = {
 			"name": "Idole de jade",
 			"text": "<b>Choix des armes :</b> invoque un <b>golem de jade</b> {0} ou place 3 copies de cette carte dans votre deck.@<b>Choix des armes :</b> invoque un <b>golem de jade</b> ou place 3 copies de cette carte dans votre deck."
 		},
+		"goldenImage": "CFM_602.gif",
 		"id": "CFM_602",
 		"name": "Jade Idol",
 		"playerClass": "Druid",
@@ -44936,6 +46720,7 @@ var parseCardsText = {
 			"name": "Trogg mâcheroc mastoc",
 			"text": "Chaque fois que votre adversaire lance un sort, gagne +2 ATQ."
 		},
+		"goldenImage": "GVG_068.gif",
 		"health": 5,
 		"id": "GVG_068",
 		"name": "Burly Rockjaw Trogg",
@@ -44956,6 +46741,7 @@ var parseCardsText = {
 			"name": "Leeroy Jenkins",
 			"text": "<b>Charge</b>. <b>Cri de guerre :</b> invoque deux dragonnets 1/1 pour votre adversaire."
 		},
+		"goldenImage": "EX1_116.gif",
 		"health": 2,
 		"id": "EX1_116",
 		"name": "Leeroy Jenkins",
@@ -44992,6 +46778,7 @@ var parseCardsText = {
 			"name": "Machine volante",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "GVG_084.gif",
 		"health": 4,
 		"id": "GVG_084",
 		"name": "Flying Machine",
@@ -45011,6 +46798,7 @@ var parseCardsText = {
 			"name": "Drake volcanique",
 			"text": "Coûte (1) |4(cristal,cristaux) de moins pour chaque serviteur mort pendant ce tour."
 		},
+		"goldenImage": "BRM_025.gif",
 		"health": 4,
 		"id": "BRM_025",
 		"name": "Volcanic Drake",
@@ -45028,6 +46816,7 @@ var parseCardsText = {
 			"name": "Lave vivante",
 			"text": "<b>Provocation</b>"
 		},
+		"goldenImage": "BRMC_90.gif",
 		"health": 6,
 		"id": "BRMC_90",
 		"name": "Living Lava",
@@ -45046,6 +46835,7 @@ var parseCardsText = {
 			"name": "Chasse-marée murloc",
 			"text": "<b>Cri de guerre :</b> invoque un éclaireur murloc 1/1."
 		},
+		"goldenImage": "EX1_506.gif",
 		"health": 1,
 		"id": "EX1_506",
 		"name": "Murloc Tidehunter",
@@ -45063,6 +46853,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Golem de jade"
 		},
+		"goldenImage": "CFM_712_t16.gif",
 		"health": 16,
 		"id": "CFM_712_t16",
 		"name": "Jade Golem",
@@ -45077,6 +46868,7 @@ var parseCardsText = {
 			"name": "Présence menaçante",
 			"text": "Vous piochez 2 cartes. Gagne +4 points d’armure."
 		},
+		"goldenImage": "LOEA_01.gif",
 		"id": "LOEA_01",
 		"name": "Looming Presence",
 		"playerClass": "Neutral",
@@ -45094,6 +46886,7 @@ var parseCardsText = {
 			"name": "Y’Shaarj, la rage déchaînée",
 			"text": "À la fin de votre tour, place un serviteur de votre deck sur le champ de bataille."
 		},
+		"goldenImage": "OG_042.gif",
 		"health": 10,
 		"id": "OG_042",
 		"name": "Y'Shaarj, Rage Unbound",
@@ -45108,6 +46901,7 @@ var parseCardsText = {
 		"fr": {
 			"name": "Nefarian"
 		},
+		"goldenImage": "BRMA17_2.gif",
 		"health": 30,
 		"id": "BRMA17_2",
 		"name": "Nefarian",
@@ -45124,6 +46918,7 @@ var parseCardsText = {
 			"name": "Shuriken de jade",
 			"text": "Inflige $2 |4(point,points) de dégâts. <b>Combo :</b> invoque un <b>golem de jade</b> {0}.@Inflige $2 |4(point,points) de dégâts. <b>Combo :</b> invoque un <b>golem de jade</b>."
 		},
+		"goldenImage": "CFM_690.gif",
 		"id": "CFM_690",
 		"name": "Jade Shuriken",
 		"playerClass": "Rogue",
@@ -45139,6 +46934,7 @@ var parseCardsText = {
 			"name": "Snake Ball",
 			"text": "Summon five 1/1 snakes."
 		},
+		"goldenImage": "XXX_016.gif",
 		"id": "XXX_016",
 		"name": "Snake Ball",
 		"playerClass": "Neutral",
@@ -45167,6 +46963,7 @@ var parseCardsText = {
 			"name": "Destin : La pièce",
 			"text": "Quand un serviteur meurt, son propriétaire obtient une carte La pièce."
 		},
+		"goldenImage": "TB_PickYourFate_7.gif",
 		"id": "TB_PickYourFate_7",
 		"name": "Fate: Coin",
 		"playerClass": "Neutral",
@@ -45184,6 +46981,7 @@ var parseCardsText = {
 			"name": "Saboteur",
 			"text": "<b>Cri de guerre :</b> le pouvoir héroïque de votre adversaire coûte (5) cristaux de plus au tour suivant."
 		},
+		"goldenImage": "AT_086.gif",
 		"health": 3,
 		"id": "AT_086",
 		"name": "Saboteur",
@@ -45249,6 +47047,7 @@ var parseCardsText = {
 			"name": "Empereur Thaurissan",
 			"text": "À la fin de votre tour, réduit de (1) |4(cristal,cristaux) le coût des cartes dans votre main."
 		},
+		"goldenImage": "BRM_028.gif",
 		"health": 5,
 		"id": "BRM_028",
 		"name": "Emperor Thaurissan",
@@ -45281,6 +47080,7 @@ var parseCardsText = {
 			"name": "Potion de Kazakus",
 			"text": "{0}\n{1}"
 		},
+		"goldenImage": "CFM_621t.gif",
 		"id": "CFM_621t",
 		"name": "Kazakus Potion",
 		"playerClass": "Neutral",
@@ -45313,6 +47113,7 @@ var parseCardsText = {
 			"name": "Baron Geddon",
 			"text": "À la fin de votre tour, inflige 2 points de dégâts à TOUS les autres personnages."
 		},
+		"goldenImage": "EX1_249.gif",
 		"health": 5,
 		"id": "EX1_249",
 		"name": "Baron Geddon",
@@ -45344,6 +47145,7 @@ var parseCardsText = {
 			"name": "Sire Zeliek",
 			"text": "Votre héros est <b>Insensible</b>."
 		},
+		"goldenImage": "NAX9_04.gif",
 		"health": 7,
 		"id": "NAX9_04",
 		"name": "Sir Zeliek",
@@ -45378,6 +47180,7 @@ var parseCardsText = {
 			"name": "Champion de la Lumière",
 			"text": "<b>Cri de guerre :</b> réduit au <b>Silence</b> un démon."
 		},
+		"goldenImage": "AT_106.gif",
 		"health": 3,
 		"id": "AT_106",
 		"name": "Light's Champion",
@@ -45413,6 +47216,7 @@ var parseCardsText = {
 			"name": "Statue sinistre",
 			"text": "Ne peut pas attaquer à moins d’être le seul serviteur sur le champ de bataille."
 		},
+		"goldenImage": "LOE_107.gif",
 		"health": 7,
 		"id": "LOE_107",
 		"name": "Eerie Statue",
@@ -45443,6 +47247,7 @@ var parseCardsText = {
 			"name": "MEURS, INSECTE !",
 			"text": "Votre pouvoir héroïque devient « Inflige $8 points de dégâts à un adversaire aléatoire »."
 		},
+		"goldenImage": "TB_FactionWar_Rag1.gif",
 		"id": "TB_FactionWar_Rag1",
 		"name": "DIE, INSECT!",
 		"playerClass": "Neutral",
@@ -45504,6 +47309,7 @@ var parseCardsText = {
 			"name": "Poison nécrotique",
 			"text": "Détruit un serviteur."
 		},
+		"goldenImage": "NAX3_03.gif",
 		"id": "NAX3_03",
 		"name": "Necrotic Poison",
 		"playerClass": "Neutral",
@@ -45521,6 +47327,7 @@ var parseCardsText = {
 			"name": "Drake azur",
 			"text": "<b>Dégâts des sorts : +1</b>.\n<b>Cri de guerre :</b> vous piochez une carte."
 		},
+		"goldenImage": "EX1_284.gif",
 		"health": 4,
 		"id": "EX1_284",
 		"name": "Azure Drake",
@@ -45556,6 +47363,7 @@ var parseCardsText = {
 			"name": "Régisseuse de Sombre-Comté",
 			"text": "Quand vous invoquez un serviteur à 1 PV, lui donne <b>Bouclier divin</b>."
 		},
+		"goldenImage": "OG_310.gif",
 		"health": 3,
 		"id": "OG_310",
 		"name": "Steward of Darkshire",
@@ -45573,6 +47381,7 @@ var parseCardsText = {
 			"name": "Diablotin sans valeur",
 			"text": "<i>Vous n’avez plus de démons ! Heureusement, il y a toujours des diablotins...</i>"
 		},
+		"goldenImage": "EX1_317t.gif",
 		"health": 1,
 		"id": "EX1_317t",
 		"name": "Worthless Imp",
@@ -45619,6 +47428,7 @@ var parseCardsText = {
 			"name": "CASSE-TÊTE",
 			"text": "Inflige $5 |4(point,points) de dégâts à un adversaire aléatoire. Gagne 5 points d’armure."
 		},
+		"goldenImage": "BRMA07_3.gif",
 		"id": "BRMA07_3",
 		"name": "TIME FOR SMASH",
 		"playerClass": "Neutral",
@@ -45633,6 +47443,7 @@ var parseCardsText = {
 			"name": "Déchaînement",
 			"text": "Invoque 3 liges du feu. <b>Surcharge :</b> (2)"
 		},
+		"goldenImage": "BRMA04_4H.gif",
 		"id": "BRMA04_4H",
 		"name": "Rock Out",
 		"overload": 1,
@@ -45651,6 +47462,7 @@ var parseCardsText = {
 			"name": "Technicien de Brikabrok",
 			"text": "<b>Cri de guerre :</b> si vous avez un Méca, gagne +1/+1 et ajoute une <b>Pièce détachée</b> dans votre main."
 		},
+		"goldenImage": "GVG_102.gif",
 		"health": 3,
 		"id": "GVG_102",
 		"name": "Tinkertown Technician",
@@ -45684,6 +47496,7 @@ var parseCardsText = {
 			"name": "Folie de l’ombre",
 			"text": "Prend le contrôle d’un serviteur adverse avec 3 ATQ ou moins jusqu’à la fin du tour."
 		},
+		"goldenImage": "EX1_334.gif",
 		"id": "EX1_334",
 		"name": "Shadow Madness",
 		"playerClass": "Priest",
@@ -45700,6 +47513,7 @@ var parseCardsText = {
 			"name": "Plaque d’armure",
 			"text": "Donne +1 PV à un serviteur."
 		},
+		"goldenImage": "PART_001.gif",
 		"id": "PART_001",
 		"name": "Armor Plating",
 		"playerClass": "Neutral",
@@ -45729,6 +47543,7 @@ var parseCardsText = {
 			"name": "Cendres tourbillonnantes",
 			"text": "<b>Furie des vents</b>"
 		},
+		"goldenImage": "BRMA13_7.gif",
 		"health": 5,
 		"id": "BRMA13_7",
 		"name": "Whirling Ash",
@@ -45747,6 +47562,7 @@ var parseCardsText = {
 			"name": "Mondaine de Gadgetzan",
 			"text": "<b>Cri de guerre :</b> rend 2 PV."
 		},
+		"goldenImage": "CFM_659.gif",
 		"health": 2,
 		"id": "CFM_659",
 		"name": "Gadgetzan Socialite",
@@ -45764,6 +47580,7 @@ var parseCardsText = {
 			"name": "Carte du singe doré",
 			"text": "Place la carte Singe doré dans votre deck. Vous piochez une carte."
 		},
+		"goldenImage": "LOE_019t.gif",
 		"id": "LOE_019t",
 		"name": "Map to the Golden Monkey",
 		"playerClass": "Neutral",
@@ -45781,6 +47598,7 @@ var parseCardsText = {
 			"name": "Ombrefiel",
 			"text": "Chaque fois que vous piochez une carte, réduit son coût de\n(1) |4(cristal,cristaux)."
 		},
+		"goldenImage": "AT_014.gif",
 		"health": 3,
 		"id": "AT_014",
 		"name": "Shadowfiend",

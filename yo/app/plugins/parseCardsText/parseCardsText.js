@@ -53,8 +53,10 @@ var parseCardsText = {
 		if (!parseCardsText.isUpdatePending) {
 			parseCardsText.isUpdatePending = true
 			setTimeout(function() {
-				$('[data-toggle="tooltip"]').tooltip()
-				parseCardsText.isUpdatePending = false
+				if ($('[data-toggle="tooltip"]').tooltip) {
+					$('[data-toggle="tooltip"]').tooltip()
+					parseCardsText.isUpdatePending = false
+				}
 			}, 300)
 		}
 

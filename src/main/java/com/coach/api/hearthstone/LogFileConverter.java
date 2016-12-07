@@ -31,7 +31,7 @@ public class LogFileConverter {
 	@RequestMapping(value = "/replay", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> convertLogToXml(@RequestParam("data") String fullLogs)
 			throws Exception {
-		log.debug("Receiving " + fullLogs);
+		// log.debug("Receiving " + fullLogs);
 		// Are there several games in the single file?
 		// byte[] logInfo = getLogInfo(data);
 		// String fullLogs = new String(logInfo, "UTF-8");

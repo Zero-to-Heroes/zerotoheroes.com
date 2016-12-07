@@ -153,6 +153,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Midrange Druid"));
 		hearthstone.add(new Tag("Yogg Token Druid"));
 		hearthstone.add(new Tag("Malygos Druid"));
+		hearthstone.add(new Tag("Jade Druid"));
 
 		hearthstone.add(new Tag("Palasecret"));
 		hearthstone.add(new Tag("Aggro Paladin"));
@@ -205,6 +206,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Thief Rogue"));
 		hearthstone.add(new Tag("Tempo Rogue"));
 		hearthstone.add(new Tag("Deathrattle Rogue"));
+		hearthstone.add(new Tag("Jade Rogue"));
 
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));

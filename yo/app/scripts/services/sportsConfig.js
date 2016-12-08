@@ -64,7 +64,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							{name: 'parseCardsText', version: 29, dev: dev}, 
 							{name: 'parseDecks', version: 42, dev: dev}, 
 							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 127, dev: dev},
-							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 28, dev: dev}
+							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 29, dev: dev}
 						],
 						customCss: 'hearthstone.css?4'
 					},

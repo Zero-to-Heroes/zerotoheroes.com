@@ -4,13 +4,13 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "jquery": "3.1.0",
-    "angular": "^1.5.8",
 
-    "angular-sanitize": "^1.5.8",
-    "angular-touch": "^1.5.8",
-    "angular-route": "^1.5.8",
-    "angular-resource": "^1.5.8",
-    "angular-mocks": "^1.5.8",
+    "angular": "^1.6.0",
+    "angular-sanitize": "^1.6.0",
+    "angular-touch": "^1.6.0",
+    "angular-route": "^1.6.0",
+    "angular-resource": "^1.6.0",
+    "angular-mocks": "^1.6.0",
 
     "moment": "~2.9.0",
     "momentjs": "~2.9.0",
@@ -65,7 +65,7 @@
   },
   "appPath": "app",
   "resolutions": {
-    "angular": "1.5.x",
+    "angular": "1.6.x",
     "angulartics": "1.0.2"
   }
 }

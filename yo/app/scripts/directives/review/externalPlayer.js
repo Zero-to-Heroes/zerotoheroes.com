@@ -13,6 +13,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 			},
 			controller: function($scope) {
 				// $log.debug('instanciate externalPlayer', $scope.review, $scope.config)
+				$scope.minimumAdDisplayTime = 5 * 1000
 
 				$scope.initReview = function(review) {
 					// $log.debug('init review in externalPlayer', review)
@@ -21,6 +22,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 				}
 
 				$scope.initPlayer = function(config, review, plugins, pluginNames, callback) {
+					$scope.initPlayerStartTime = new Date()
 					// $scope.externalPlayer = true;
 					// $timeout(function() {
 					// $log.debug('loading replay file')
@@ -49,11 +51,26 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 
 				$scope.decorateCallback = function(callback) {
 					return function(externalPlayer) {
-						// $log.debug('callback done in externalPlayer.js', externalPlayer)
+						$log.debug('callback done in externalPlayer.js', externalPlayer)
 						$scope.externalPlayer = externalPlayer
+						$scope.flagReviewLoaded();
+						// $scope.reviewLoaded = true
 						callback(externalPlayer)
 						// $log.debug('ready to call externalPlayer functions', $scope.externalPlayer)
 					}
+				}
+
+				$scope.flagReviewLoaded = function() {
+					if (new Date() - $scope.initPlayerStartTime < $scope.minimumAdDisplayTime) {
+						setTimeout(function() {
+							// $log.debug('still showing ad', new Date() - $scope.initPlayerStartTime, $scope.minimumAdDisplayTime)
+							$scope.flagReviewLoaded()
+						}, 50)
+						return;
+					}
+					// $log.debug('review loaded, showing it')
+					$scope.reviewLoaded = true
+					$scope.$apply()
 				}
 
 				$scope.goToTimestamp = function(timeString) {

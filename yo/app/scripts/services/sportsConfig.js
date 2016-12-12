@@ -63,8 +63,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 29, dev: dev}, 
 							{name: 'parseDecks', version: 42, dev: dev}, 
-							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 128, dev: dev},
-							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 29, dev: dev}
+							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 129, dev: dev},
+							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 30, dev: dev}
 						],
 						customCss: 'hearthstone.css?4'
 					},
@@ -269,7 +269,12 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 				}
 				// $log.debug('loaded externalPlayer is', externalPlayer)
 				try {
-					externalPlayer.init(plugin, review)
+					externalPlayer.init(plugin, review, function() {
+						if (callback) {
+							$log.debug('calling callback in SportsConfig')
+							callback(externalPlayer)
+						}
+					})
 				}
 				catch (e) {
 					$log.error('exception externalPlayer init', e)
@@ -277,10 +282,11 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 				if (activePlugins) activePlugins.push(plugin)
 				if (pluginNames) pluginNames.push(plugin.name)
 
-				if (callback) {
-					// $log.debug('calling callback')
-					callback(externalPlayer)
-				}
+				// TODO: support for drafts too
+				// if (callback) {
+				// 	// $log.debug('calling callback')
+				// 	callback(externalPlayer)
+				// }
 			}
 
 			var externalPlayer;

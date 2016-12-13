@@ -92,6 +92,11 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 				}
 			}
 
+			if (arguments[0] != null && (arguments[0].status == 403 || arguments[0].status == 401 || arguments[0].status == 404)) {
+						// Do nothing, these are functional errors
+				return;
+			}
+
 			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser().username + ':' + User.getUser().email), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(arguments));
 		};
 
@@ -111,6 +116,11 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 				}
 			}
 
+			if (arguments[0] != null && (arguments[0].status == 403 || arguments[0].status == 401 || arguments[0].status == 404)) {
+						// Do nothing, these are functional errors
+				return;
+			}
+			
 			notify('Javascript notification: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser().username + ':' + User.getUser().email), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(arguments));
 		};
 

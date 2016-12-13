@@ -92,11 +92,6 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 				}
 			}
 
-			if (arguments[0] != null && (arguments[0].status == 403 || arguments[0].status == 401 || arguments[0].status == 404)) {
-						// Do nothing, these are functional errors
-				return;
-			}
-
 			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser().username + ':' + User.getUser().email), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(arguments));
 		};
 
@@ -115,11 +110,6 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 					stacktrace = arg.stack
 				}
 			}
-
-			if (arguments[0] != null && (arguments[0].status == 403 || arguments[0].status == 401 || arguments[0].status == 404)) {
-						// Do nothing, these are functional errors
-				return;
-			}
 			
 			notify('Javascript notification: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser().username + ':' + User.getUser().email), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(arguments));
 		};
@@ -135,9 +125,11 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			// optional method
 			'responseError': function(rejection) {
 				var User = $injector.get('User');
+				// console.log('considering rejection', rejection)
 				if (rejection.config && rejection.config.url && rejection.config.url.indexOf('announcements') == -1) {
 					if (rejection.status == 401 || rejection.status == 403 || rejection.status == 404 ) {
 						// Do nothing, these are functional errors
+						// console.log('swallowing rejection', rejection)
 					}
 					else if (!rejection.data) {
 						notify('Http response error without data details - look in server logs for more info', "rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));

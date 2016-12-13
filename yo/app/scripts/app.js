@@ -266,6 +266,11 @@ app.config(function (tagsInputConfigProvider) {
 	tagsInputConfigProvider.setActiveInterpolation('tagsInput', { placeholder: true, minTags: true, ngRequired: true });
 });
 
+// https://github.com/angular-ui/ui-router/issues/2889
+app.config(['$qProvider', function($qProvider) {
+	$qProvider.errorOnUnhandledRejections(false)
+}])
+
 app.config(['$translateProvider', '$windowProvider', 'defaultI18n', 
 	function($translateProvider, $windowProvider, defaultI18n) {
 		console.log('$windowProvider', $windowProvider, $translateProvider);

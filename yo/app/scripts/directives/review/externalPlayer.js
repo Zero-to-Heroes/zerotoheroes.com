@@ -13,7 +13,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 			},
 			controller: function($scope) {
 				// $log.debug('instanciate externalPlayer', $scope.review, $scope.config)
-				$scope.minimumAdDisplayTime = 5 * 1000
+				$scope.minimumAdDisplayTime = 7 * 1000
 
 				$scope.initReview = function(review) {
 					// $log.debug('init review in externalPlayer', review)

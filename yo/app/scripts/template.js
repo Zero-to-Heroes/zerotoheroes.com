@@ -157,7 +157,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('templates/review/externalPlayer.html',
-    "<div class=\"external-player-container\"><div id=\"dummy\"></div><div id=\"externalPlayer\" class=\"external-player\"></div></div>"
+    "<div class=\"external-player-container\"><div id=\"dummy\"></div><div id=\"externalPlayer\" class=\"external-player\" ng-show=\"reviewLoaded\"></div><div class=\"video-ad-container\" ng-if=\"!reviewLoaded\">There might be an ad here in the future while the game is loading. Discussion is still open <a href=\"https://www.reddit.com/r/zerotoheroes/comments/5hrraq/monetization_brainstorming_and_looking_for/\" target=\"_blank\">on the forums</a></div></div>"
   );
 
 

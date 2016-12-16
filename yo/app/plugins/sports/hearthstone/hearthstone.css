@@ -1373,13 +1373,6 @@
 .hearthstone .page-choices .choice .fromurl {
   width: 75%;
 }
-.hearthstone .external-player .replay__controls {
-  background-image: url(images/new/border-top.png);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100%;
-  background-position-y: 10px;
-}
 .hearthstone .profile-page .activity-feed .new-review .icon {
   background-image: url(images/new/icon-new-review.png);
 }
@@ -1404,6 +1397,14 @@
 }
 .hearthstone .footer a {
   color: white;
+}
+.hearthstone .manastorm #externalPlayer .replay .game-log {
+  margin-top: 0;
+  background-color: #3a240f;
+}
+.hearthstone .manastorm #externalPlayer .replay .game-log p {
+  font-weight: normal;
+  color: #edd6aa;
 }
 @media screen and (max-width: 500px) {
   .hearthstone .navbar.navbar-default {

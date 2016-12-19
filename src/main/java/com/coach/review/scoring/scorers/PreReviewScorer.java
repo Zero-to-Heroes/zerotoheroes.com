@@ -12,12 +12,15 @@ public class PreReviewScorer {
 
 	public float score(Review review) {
 		float score = 0;
-		// Give one point per top-level comment done by the author, max 3
+		// Give points per top-level comment done by the author
+		int totalComments = 0;
 		for (Comment comment : review.getComments()) {
 			if (comment.getAuthor() != null && comment.getAuthor().equals(review.getAuthor())) {
-				score = Math.min(MAX_SCORE, score + 1);
+				totalComments++;
+				// score = Math.min(MAX_SCORE, score + 1);
 			}
 		}
+		score = (float) Math.log10(1 + totalComments);
 		return score;
 	}
 

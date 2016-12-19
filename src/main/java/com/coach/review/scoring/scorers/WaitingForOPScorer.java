@@ -22,7 +22,7 @@ public class WaitingForOPScorer {
 		long commentsAfterLastVisit = review.getAllComments().stream()
 				.filter(c -> !review.getAuthorId().equals(c.getAuthorId()))
 				.filter(c -> lastOPVisit == null || c.getCreationDate().after(lastOPVisit)).count();
-		score -= commentsAfterLastVisit;
+		score -= Math.log10(1 + commentsAfterLastVisit);
 
 		return score;
 	}
@@ -47,7 +47,7 @@ public class WaitingForOPScorer {
 				.filter(c -> c.getReputation().getAllUserIds().contains(review.getAuthorId())).count();
 
 		if (commentsBeforeLastVisit > opComments + opActions) {
-			score -= commentsBeforeLastVisit - opComments - opActions;
+			score -= Math.log10(1 + commentsBeforeLastVisit - opComments - opActions);
 		}
 
 		return score;

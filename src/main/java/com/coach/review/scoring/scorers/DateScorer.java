@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DateScorer {
 
-	public static final long TIME_UNTIL_DECREASE = 3600 * 24 * 7;
+	public static final long TIME_UNTIL_DECREASE = 3600 * 24 * 2;
 
 	public float score(Date publicationDate) {
 		if (publicationDate == null) { return -10000; }
@@ -22,7 +22,7 @@ public class DateScorer {
 		else {
 			score = 2 * TIME_UNTIL_DECREASE - elapsedSeconds;
 		}
-		score = score / 1000000f;
+		score = score / 100000f;
 
 		return score;
 	}

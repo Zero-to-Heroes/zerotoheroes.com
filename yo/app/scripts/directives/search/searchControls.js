@@ -302,6 +302,9 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					else if ($scope.options.criteria.sort == 'updateDate') {
 						$scope.options.sort = 'lastModifiedDate'
 					}
+					else if ($scope.options.criteria.sort == 'helpScore') {
+						$scope.options.sort = 'helpScore'
+					}
 					// $log.debug('updated sort', $scope.reviews)
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 				}

@@ -6,11 +6,13 @@ import lombok.Data;
 @Data
 public class ReviewScore {
 
-	private float dateScore, preReviewScore, fieldsScore, winLossScore, helpReceivedScore, waitingForOPVisitScore,
-			waitingForOPActionScore, authorReputationScore;
+	private float dateScore, preReviewScore, fieldsScore, winLossScore, helpReceivedContributorsScore,
+			helpReceivedCommentsScore, waitingForOPVisitScore, waitingForOPActionScore, authorReputationScore,
+			openReviewScore;
 
 	public float totalScore() {
-		return dateScore + preReviewScore + fieldsScore + winLossScore + helpReceivedScore + waitingForOPVisitScore
-				+ waitingForOPActionScore + authorReputationScore;
+		return dateScore + preReviewScore + fieldsScore + winLossScore + helpReceivedContributorsScore
+				+ helpReceivedCommentsScore + waitingForOPVisitScore + waitingForOPActionScore + authorReputationScore
+				+ openReviewScore;
 	}
 }

@@ -616,6 +616,11 @@
 			
 			"askProButton": "Ask a Pro",
 			"askProTooltip": "Get professional advice on your review",
+			"closeReviewTooltip": "Marking a review as solved lets others know you are not looking for any more advice (they can still add comments). This will also make your other reviews rank higher in the comments needed pages. Reviews are automatically marked as solved after 10 days",
+			"closeReviewButton": "Solve review",
+			"reopenReviewTooltip": "Indicate that you are still looking for advice on the game. Please note that having several reviews open at the same time has a slight penalty in how they rank on the comments needed pages",
+			"reopenReviewButton": "Reopen review",
+
 			"loadingComments": "Loading comments",
 			"restrictedAccess": "The author of the review has restricted its access, and only they can see it"
 		},

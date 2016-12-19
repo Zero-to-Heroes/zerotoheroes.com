@@ -7,17 +7,24 @@ import com.coach.review.Review;
 @Component
 public class HelpReceivedScorer {
 
-	public static final float COMMENTS_WEIGHT = 0.1f;
+	public float scoreContributors(Review review) {
 
-	public float score(Review review) {
+		if (review.getAuthor() == null) { return -1; }
 
-		if (review.getAuthor() == null) { return 0; }
+		int contributors = review.getAllAuthors().size() - 1;
 
-		int contributors = review.getAllAuthors().size();
+		float score = (float) (-1.0f * Math.log10(1 + contributors));
+		return score;
+	}
+
+	public float scoreComments(Review review) {
+
+		if (review.getAuthor() == null) { return -1; }
+
 		long otherComments = review.getAllComments().stream().filter(c -> !review.getAuthor().equals(c.getAuthor()))
 				.count();
 
-		float score = -1.0f * (contributors + COMMENTS_WEIGHT * otherComments);
+		float score = (float) (-1.0f * Math.log10(1 + otherComments));
 
 		return score;
 	}

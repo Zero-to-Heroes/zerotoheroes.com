@@ -6,9 +6,12 @@ import static org.springframework.data.mongodb.core.query.Update.*;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Field;
@@ -41,6 +44,9 @@ public class ReviewScorer {
 	@Autowired
 	CommentNeededScorer commentNeededScorer;
 
+	@Value("${environment}")
+	private String environment;
+
 	@RequestMapping(value = "/helpNeeded", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> computeHelpNeededScore() {
 
@@ -52,10 +58,16 @@ public class ReviewScorer {
 	public @ResponseBody ResponseEntity<String> computeHelpNeededScore(@RequestBody ScoreWeights weights) {
 
 		// Select only reviews that aren't closed
-		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.HOUR_OF_DAY, -1);
+		// Calendar calendar = Calendar.getInstance();
+		// calendar.add(Calendar.HOUR_OF_DAY, -1);
 
 		Criteria crit = where("visibility").is("public");
+		crit.and("closedDate").is(null);
+
+		// Debug
+		// calendar.add(Calendar.DAY_OF_YEAR, -15);
+		// crit.and("creationDate").gte(calendar.getTime());
+
 		// crit.orOperator(where("lastScoreUpdate").lte(calendar.getTime()),
 		// where("lastScoreUpdate").is(null));
 		// crit.and("closed").is(null);
@@ -71,9 +83,23 @@ public class ReviewScorer {
 
 		commentNeededScorer.setWeights(weights);
 
+		// TODO: integrate the count ofopen reviews by the users
+		Map<String, Integer> openReviews = new HashMap<>();
+		for (Review review : reviews) {
+			if (review.getAuthor() != null) {
+				Integer existingReviews = openReviews.get(review.getAuthor());
+				if (existingReviews == null) {
+					existingReviews = 0;
+				}
+				openReviews.put(review.getAuthor(), ++existingReviews);
+			}
+		}
+
+		// TODO: add a flag
+
 		for (Review review : reviews) {
 			try {
-				ReviewScore score = commentNeededScorer.score(review);
+				ReviewScore score = commentNeededScorer.score(review, openReviews.get(review.getAuthor()));
 
 				Criteria updateCrit = where("id").is(review.getId());
 				Query query = query(updateCrit);
@@ -92,7 +118,25 @@ public class ReviewScorer {
 		}
 
 		return new ResponseEntity<String>("processed " + reviews.size() + " reviews", HttpStatus.OK);
+	}
 
+	@RequestMapping(value = "/autoclose", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> closeAll() {
+
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DAY_OF_YEAR, -10);
+
+		Criteria updateCrit = where("creationDate").lte(calendar.getTime());
+		updateCrit.and("closedDate").is(null);
+
+		Query query = query(updateCrit);
+		// Later on we need to parse the data to add a "user karma" and look for
+		// reviews that have been close at earliest 10 days after their creation
+		// date to find the autocloses
+		Update update = update("closedDate", new Date());
+		WriteResult result = mongoTemplate.updateMulti(query, update, Review.class);
+
+		return new ResponseEntity<String>("closed " + result.getN() + " reviews", HttpStatus.OK);
 	}
 
 	private ScoreWeights buildWeights() {

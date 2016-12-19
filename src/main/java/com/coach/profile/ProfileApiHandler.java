@@ -34,9 +34,10 @@ public class ProfileApiHandler {
 		if (profile == null) { return new ResponseEntity<Profile>(profile, HttpStatus.FORBIDDEN); }
 
 		// log.debug("retrieved profile " + profile);
-		long start = System.currentTimeMillis();
+		// long start = System.currentTimeMillis();
 		int unread = notificationDao.countAllUnread(profile.getUserId());
-		log.debug("Counting unread notifs took " + (System.currentTimeMillis() - start));
+		// log.debug("Counting unread notifs took " +
+		// (System.currentTimeMillis() - start));
 		profile.getNotifications().setUnreadNotifs(unread);
 
 		return new ResponseEntity<Profile>(profile, HttpStatus.OK);

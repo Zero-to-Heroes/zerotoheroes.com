@@ -6,6 +6,7 @@ import static org.springframework.data.mongodb.core.query.Update.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -233,6 +234,26 @@ public class ReviewDao {
 			}
 		};
 		executorProvider.getExecutor().submit(runnable);
+	}
+
+	public void closeReview(Review review) {
+		Criteria crit = where("id").is(review.getId());
+		Query query = query(crit);
+
+		Update update = update("closedDate", new Date());
+
+		mongoTemplate.updateMulti(query, update, Review.class);
+		log.debug("Review closed");
+	}
+
+	public void reopenReview(Review review) {
+		Criteria crit = where("id").is(review.getId());
+		Query query = query(crit);
+
+		Update update = update("closedDate", null);
+
+		mongoTemplate.updateMulti(query, update, Review.class);
+		log.debug("Review reopened");
 	}
 
 }

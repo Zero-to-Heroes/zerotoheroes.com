@@ -157,7 +157,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	private boolean useV2comments = true;
 
-	private boolean closed = false;
+	// The date at which the review was flagged as "case closed", or when
+	// auto-closed
+	private Date closedDate;
+
 	private float helpScore;
 	private ReviewScore debugScore;
 	private Date lastScoreUpdate;

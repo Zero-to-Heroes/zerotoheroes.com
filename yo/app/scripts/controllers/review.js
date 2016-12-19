@@ -8,6 +8,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//restrictedAccess = $translate.instant('global.review.restrictedAccess')
 			askProTooltip: $translate.instant('global.review.askProTooltip'),
 			askProButton: $translate.instant('global.review.askProButton'),
+			closeReviewTooltip: $translate.instant('global.review.closeReviewTooltip'),
+			closeReviewButton: $translate.instant('global.review.closeReviewButton'),
+			reopenReviewTooltîp: $translate.instant('global.review.reopenReviewTooltîp'),
+			reopenReviewButton: $translate.instant('global.review.reopenReviewButton'),
 			
 			headline: $translate.instant('global.askPro.headline'),
 			tableCaption: $translate.instant('global.askPro.tableCaption'),
@@ -284,6 +288,19 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Review information
 		//===============
+		$scope.closeForComments = function() {
+			Api.CloseReview.save({reviewId: $scope.review.id}, function(data) {
+				$scope.review.closedDate = new Date()
+				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
+			});
+		}
+		$scope.reopenForComments = function() {
+			Api.ReopenReview.save({reviewId: $scope.review.id}, function(data) {
+				$scope.review.closedDate = null
+				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
+			});
+		}
+
 		$scope.formatDate = function(date) {
 			return moment(date).fromNow();
 		}

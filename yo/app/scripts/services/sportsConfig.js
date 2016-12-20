@@ -66,7 +66,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 135, dev: dev},
 							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 31, dev: dev}
 						],
-						customCss: 'hearthstone.css?4'
+						customCss: 'hearthstone.css?5'
 					},
 					deactivateControls: {
 						slow: true,

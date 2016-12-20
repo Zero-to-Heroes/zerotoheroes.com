@@ -125,9 +125,11 @@ public class ReviewScorer {
 
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.DAY_OF_YEAR, -10);
+		log.debug("Aucoclosing reviews older than " + calendar.getTime());
 
 		Criteria updateCrit = where("creationDate").lte(calendar.getTime());
-		updateCrit.and("closedDate").is(null);
+		// updateCrit.and("closedDate").exists(false);
+		updateCrit.orOperator(where("closedDate").is(null), where("closedDate").exists(false));
 
 		Query query = query(updateCrit);
 		// Later on we need to parse the data to add a "user karma" and look for

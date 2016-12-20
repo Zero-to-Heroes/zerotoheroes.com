@@ -342,7 +342,12 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 		claimableAccount = StringUtils.isNullOrEmpty(authorId) && !StringUtils.isNullOrEmpty(uploaderApplicationKey)
 				&& !StringUtils.isNullOrEmpty(uploaderToken);
+	}
 
+	public void registerVisit(String userId) {
+		if (userId != null) {
+			visitDates.put(userId, new Date());
+		}
 	}
 
 	public void incrementViewCount() {

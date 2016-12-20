@@ -211,10 +211,11 @@ public class ReviewApiHandler {
 			review.setReviewType(review.getMediaType());
 		}
 
+		String userId = user != null ? user.getId() : null;
+		review.registerVisit(userId);
 		reviewService.updateAsync(review);
 
 		// Now load all the unread notifs for this user and this review
-		String userId = user != null ? user.getId() : null;
 		if (userId != null) {
 			List<Notification> unreadNotifs = notificationDao.findAllUnread(userId, review.getId());
 			review.highlightUnreadNotifs(unreadNotifs);

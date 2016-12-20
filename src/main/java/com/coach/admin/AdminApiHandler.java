@@ -23,7 +23,7 @@ import com.coach.profile.ProfileService;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.review.journal.ArchiveJournalRepository;
-import com.coach.tag.Tag;
+import com.coach.review.scoring.scorers.WaitingForOPScorer;
 import com.coach.user.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -82,21 +82,44 @@ public class AdminApiHandler {
 		return new ResponseEntity<String>("count is " + find.size(), HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/findtags", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<String> updateAllReviews() {
+	@RequestMapping(value = "/findUnansweredComments", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> getUnansweredReviews() {
 
 		if ("prod".equalsIgnoreCase(
 				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
 
-		Tag tag = new Tag("Palamurloc");
-		Query reviewQuery = query(where("tags").in(tag));
-		List<Review> find = mongoTemplate.find(reviewQuery, Review.class);
-		log.debug("Found " + find.size() + " reviews tagged");
+		Criteria crit = where("authorId").ne(null);
+		crit.and("visibility").is("public");
+		crit.and("totalComments").gt(0);
+		Query query = query(crit);
+
+		Field fields = query.fields();
+		fields.exclude("text");
+		fields.exclude("description");
+		fields.exclude("plugins");
+
+		List<Review> find = mongoTemplate.find(query, Review.class);
+		log.debug("Found " + find.size() + " reviews");
+
+		WaitingForOPScorer scorer = new WaitingForOPScorer();
 		for (Review review : find) {
-			review.getTags().remove(tag);
-			review.getTags().add(new Tag("Murloc Paladin"));
+			// Ecluse reviews where no one but OP contributed
+			if (review.getAllAuthorIds().size() <= 1) {
+				continue;
+			}
+
+			float opVisit = scorer.scoreOPVisit(review);
+			float opActions = scorer.scoreOPActions(review);
+			if (opVisit < 0) {
+				System.out.println("NOT_SEEN, " + review.getPublicationDate() + ", " + review.getUrl() + ", "
+						+ review.getAuthor() + ", " + review.getAuthorId() + ", " + opVisit + ", " + opActions);
+			}
+			else if (opActions < 0) {
+				System.out.println("NOT_ACK, " + review.getPublicationDate() + ", " + review.getUrl() + ", "
+						+ review.getAuthor() + ", " + review.getAuthorId() + ", " + opVisit + ", " + opActions);
+
+			}
 		}
-		reviewRepository.save(find);
 
 		return new ResponseEntity<String>((String) null, HttpStatus.OK);
 	}

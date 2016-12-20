@@ -1093,20 +1093,12 @@
 .hearthstone .page-choices .choice img {
   width: 100%;
 }
-@media screen and (max-width: 1700px) {
-  .hearthstone .video-information {
-    width: 50%;
-  }
-  .hearthstone .video-comment {
-    width: 50%;
-  }
-}
 @media screen and (max-width: 1380px) {
   .hearthstone .video-information {
-    width: 45%;
+    width: 43%;
   }
   .hearthstone .video-comment {
-    width: 55%;
+    width: 57%;
   }
 }
 @media screen and (max-width: 1200px) {

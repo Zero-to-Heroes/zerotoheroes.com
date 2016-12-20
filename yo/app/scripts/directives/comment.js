@@ -219,6 +219,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 										$scope.review.plugins = data.plugins;
 										$scope.reply = {};
 										$rootScope.$broadcast('reviewRefresh')
+										$rootScope.$broadcast('commentRefresh')
 										// if (data.text.match(timestampOnlyRegex)) {
 										// 	//$log.log('incrementing timestamps after comment upload');
 										// 	User.incrementTimestamps();

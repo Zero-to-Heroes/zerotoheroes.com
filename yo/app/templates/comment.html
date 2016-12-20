@@ -85,8 +85,8 @@
 				<div class="col-md-2" ng-show="!User.isLoggedIn()"></div>
 				<div ng-class="{'col-md-10': !User.isLoggedIn(), 'col-md-12': User.isLoggedIn()}">
 					<div class="inline-block">
-						<button ng-click="postReply()" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.replyButton' | translate }}</span></button>
-						<button ng-click="cancelReply()" class="btn btn-default btn-xs" tabindex="-1"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
+						<button ng-click="postReply()" class="btn btn-default btn-xs" tabindex="-1" ng-disabled=":reviewRefresh:posting"><span>{{ 'global.review.comment.replyButton' | translate }}</span></button>
+						<button ng-click="cancelReply()" class="btn btn-default btn-xs" tabindex="-1" ng-disabled=":reviewRefresh:posting"><span>{{ 'global.review.comment.cancelEdit' | translate }}</span></button>
 					</div>
 					<div class="inline-block float-right">
 						<a class="link-minor" ng-click="toggleShowHelp()" ng-if=":help:!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>

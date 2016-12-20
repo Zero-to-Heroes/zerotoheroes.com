@@ -80,12 +80,12 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 						}
 					}
 
-					if (!$scope.uploading) {
-						$scope.uploading = true
+					if (!$scope.posting) {
+						$scope.posting = true
 						Api.ReviewsMulti.save({reviewId: $scope.review.id}, $scope.newComments, 
 							function(data) {
 								$scope.showHelp = false;
-								$scope.uploading = false
+								$scope.posting = false
 								$scope.newComments = {}
 								// $scope.newComment = {};
 								$scope.commentForm.$setPristine();
@@ -105,7 +105,7 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 							function(error) {
 								// Error handling
 								$log.error(error);
-								$scope.uploading = false
+								$scope.posting = false
 							}
 						);
 					}

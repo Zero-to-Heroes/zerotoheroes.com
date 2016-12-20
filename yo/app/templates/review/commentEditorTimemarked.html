@@ -27,8 +27,8 @@
 					<textarea placeholder="{{ 'global.review.comment.addCommentTextPlaceholderTimemarked' | translate:'{name: review.author}' }}" name="commentText" ng-model="newComments[currentTurn].text" class="form-control" ng-hide="review.key" comment-plugins="plugins" auto-grow></textarea>
 					<div>
 						<div class="inline-block">
-							<button ng-click="addComments()" class="btn btn-default text-right" tabindex="-1"><span>{{ 'global.review.comment.confirmCommentButton' | translate }}</span></button>
-							<button ng-click="cancelComments()" class="btn btn-default text-right" tabindex="-1"><span>{{ 'global.review.comment.cancelCommentButton' | translate }}</span></button>
+							<button ng-click="addComments()" class="btn btn-default text-right" tabindex="-1" ng-disabled=":reviewRefresh:posting"><span>{{ 'global.review.comment.confirmCommentButton' | translate }}</span></button>
+							<button ng-click="cancelComments()" class="btn btn-default text-right" tabindex="-1" ng-disabled=":reviewRefresh:posting"><span>{{ 'global.review.comment.cancelCommentButton' | translate }}</span></button>
 						</div>
 						<div class="inline-block float-right">
 							<a class="link-minor" ng-click="showHelp = true" ng-show="!showHelp">{{ 'global.review.comment.showFormattingHelpButton' | translate }}</a>

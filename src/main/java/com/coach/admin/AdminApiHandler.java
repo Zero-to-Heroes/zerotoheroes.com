@@ -123,12 +123,8 @@ public class AdminApiHandler {
 				continue;
 			}
 
-			if (!CollectionUtils.isEmpty(review.getTags())) {
-				for (Tag tag : review.getTags()) {
-					if ("Entertainment".equalsIgnoreCase(tag.getText())) {
-						continue;
-					}
-				}
+			if (isEntertainment(review)) {
+				continue;
 			}
 
 			// float opVisit = scorer.scoreOPVisit(review);
@@ -151,5 +147,14 @@ public class AdminApiHandler {
 		}
 
 		return new ResponseEntity<String>((String) null, HttpStatus.OK);
+	}
+
+	private boolean isEntertainment(Review review) {
+		if (!CollectionUtils.isEmpty(review.getTags())) {
+			for (Tag tag : review.getTags()) {
+				if ("Entertainment".equalsIgnoreCase(tag.getText())) { return true; }
+			}
+		}
+		return false;
 	}
 }

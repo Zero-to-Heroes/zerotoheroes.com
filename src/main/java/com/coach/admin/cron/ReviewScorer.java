@@ -128,7 +128,7 @@ public class ReviewScorer {
 		log.debug("Aucoclosing reviews older than " + calendar.getTime());
 
 		Criteria updateCrit = where("creationDate").lte(calendar.getTime());
-		// updateCrit.and("closedDate").exists(false);
+		updateCrit.and("visibility").is("public");
 		updateCrit.orOperator(where("closedDate").is(null), where("closedDate").exists(false));
 
 		Query query = query(updateCrit);
@@ -136,6 +136,7 @@ public class ReviewScorer {
 		// reviews that have been close at earliest 10 days after their creation
 		// date to find the autocloses
 		Update update = update("closedDate", new Date());
+		update.set("helpScore", -10000);
 		WriteResult result = mongoTemplate.updateMulti(query, update, Review.class);
 
 		return new ResponseEntity<String>("closed " + result.getN() + " reviews", HttpStatus.OK);

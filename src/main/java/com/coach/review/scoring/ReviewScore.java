@@ -7,12 +7,12 @@ import lombok.Data;
 public class ReviewScore {
 
 	private float dateScore, preReviewScore, fieldsScore, winLossScore, helpReceivedContributorsScore,
-			helpReceivedCommentsScore, waitingForOPVisitScore, waitingForOPActionScore, authorReputationScore,
-			openReviewScore;
+			helpReceivedCommentsScore, helpReceivedUpvotedCommentsScore, authorReputationScore, openReviewScore;
+	// private float waitingForOPVisitScore, waitingForOPActionScore;
 
 	public float totalScore() {
 		return dateScore + preReviewScore + fieldsScore + winLossScore + helpReceivedContributorsScore
-				+ helpReceivedCommentsScore + waitingForOPVisitScore + waitingForOPActionScore + authorReputationScore
+				+ helpReceivedCommentsScore + helpReceivedUpvotedCommentsScore + authorReputationScore
 				+ openReviewScore;
 	}
 }

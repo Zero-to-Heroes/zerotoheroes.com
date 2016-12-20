@@ -29,4 +29,15 @@ public class HelpReceivedScorer {
 		return score;
 	}
 
+	public float scoreUpvotes(Review review) {
+		if (review.getAuthor() == null) { return -1; }
+
+		double totalScore = review.getAllComments().stream().map(c -> c.getReputation()).mapToDouble(r -> r.getScore())
+				.sum();
+
+		float score = (float) (-1.0f * Math.log10(Math.max(1, totalScore)));
+
+		return score;
+	}
+
 }

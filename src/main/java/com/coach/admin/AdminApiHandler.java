@@ -1,13 +1,21 @@
 package com.coach.admin;
 
+import static java.util.Comparator.*;
 import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Field;
@@ -20,10 +28,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coach.profile.ProfileService;
+import com.coach.review.Comment;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.review.journal.ArchiveJournalRepository;
 import com.coach.review.scoring.scorers.WaitingForOPScorer;
+import com.coach.tag.Tag;
 import com.coach.user.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -98,9 +108,14 @@ public class AdminApiHandler {
 		fields.exclude("description");
 		fields.exclude("plugins");
 
+		Pageable pageRequest = new PageRequest(0, 100000,
+				new Sort(Sort.Direction.ASC, Arrays.asList("publicationDate")));
+		query.with(pageRequest);
+
 		List<Review> find = mongoTemplate.find(query, Review.class);
 		log.debug("Found " + find.size() + " reviews");
 
+		System.out.println("Reason, Pub date, First comment date, Url, Author, AuthorId, Total comments");
 		WaitingForOPScorer scorer = new WaitingForOPScorer();
 		for (Review review : find) {
 			// Ecluse reviews where no one but OP contributed
@@ -108,16 +123,30 @@ public class AdminApiHandler {
 				continue;
 			}
 
-			float opVisit = scorer.scoreOPVisit(review);
-			float opActions = scorer.scoreOPActions(review);
-			if (opVisit < 0) {
-				System.out.println("NOT_SEEN, " + review.getPublicationDate() + ", " + review.getUrl() + ", "
-						+ review.getAuthor() + ", " + review.getAuthorId() + ", " + opVisit + ", " + opActions);
+			if (!CollectionUtils.isEmpty(review.getTags())) {
+				for (Tag tag : review.getTags()) {
+					if ("Entertainment".equalsIgnoreCase(tag.getText())) {
+						continue;
+					}
+				}
 			}
-			else if (opActions < 0) {
-				System.out.println("NOT_ACK, " + review.getPublicationDate() + ", " + review.getUrl() + ", "
-						+ review.getAuthor() + ", " + review.getAuthorId() + ", " + opVisit + ", " + opActions);
 
+			// float opVisit = scorer.scoreOPVisit(review);
+			float opActions = scorer.scoreOPActions(review);
+			// if (opVisit < 0) {
+			// System.out.println("NOT_SEEN, " + review.getPublicationDate() +
+			// ", " + review.getUrl() + ", "
+			// + review.getAuthor() + ", " + review.getAuthorId() + ", " +
+			// opVisit + ", " + opActions);
+			// }
+			// else
+			if (opActions <= 0) {
+				Date firstCommentDate = review.getAllComments().stream().sorted(comparing(Comment::getCreationDate))
+						.findFirst().get().getCreationDate();
+				System.out.println("NOT_ACK, " + new SimpleDateFormat("yyy/MM/dd").format(review.getPublicationDate())
+						+ ", " + new SimpleDateFormat("yyy/MM/dd").format(firstCommentDate) + ", " + review.getUrl()
+						+ ", " + review.getAuthor() + ", " + review.getAuthorId() + ", "
+						+ review.getAllComments().size());
 			}
 		}
 

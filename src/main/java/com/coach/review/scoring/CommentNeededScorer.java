@@ -55,6 +55,8 @@ public class CommentNeededScorer {
 				weights.getHelpReceivedScoreWeight() * helpReceivedScorer.scoreContributors(review));
 		score.setHelpReceivedCommentsScore(
 				weights.getHelpReceivedNumberCommentsScoreWeight() * helpReceivedScorer.scoreComments(review));
+		score.setHelpReceivedUpvotedCommentsScore(
+				weights.getHelpReceivedUpvotedCommentsScoreWeight() * helpReceivedScorer.scoreUpvotes(review));
 
 		// Too complex for now
 		// score.setWaitingForOPVisitScore(

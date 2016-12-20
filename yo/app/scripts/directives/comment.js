@@ -206,27 +206,32 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 							$rootScope.$broadcast('account.signup.show', {identifier: $scope.reply.author});
 						}
 						else {
-							Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply, 
-								function(data) {
-									$scope.showHelp = false;
-									$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
-									$scope.review.canvas = data.canvas;
-									$scope.review.subscribers = data.subscribers;
-									$scope.review.reviewVideoMap = data.reviewVideoMap || {};
-									$scope.review.plugins = data.plugins;
-									$scope.reply = {};
-									$rootScope.$broadcast('reviewRefresh')
-									// if (data.text.match(timestampOnlyRegex)) {
-									// 	//$log.log('incrementing timestamps after comment upload');
-									// 	User.incrementTimestamps();
-									// }
-								}, 
-								function(error) {
-									// Error handling
-									$log.error(error);
-									$scope.reply = {};
-								}
-							);
+							if (!$scope.posting) {
+								$scope.posting = true
+								Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply, 
+									function(data) {
+										$scope.showHelp = false;
+										$scope.posting = false
+										$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
+										$scope.review.canvas = data.canvas;
+										$scope.review.subscribers = data.subscribers;
+										$scope.review.reviewVideoMap = data.reviewVideoMap || {};
+										$scope.review.plugins = data.plugins;
+										$scope.reply = {};
+										$rootScope.$broadcast('reviewRefresh')
+										// if (data.text.match(timestampOnlyRegex)) {
+										// 	//$log.log('incrementing timestamps after comment upload');
+										// 	User.incrementTimestamps();
+										// }
+									}, 
+									function(error) {
+										// Error handling
+										$log.error(error);
+										$scope.posting = false
+										$scope.reply = {};
+									}
+								);
+							}
 						}
 					}
 				}

@@ -79,30 +79,36 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 							}
 						}
 					}
-					Api.ReviewsMulti.save({reviewId: $scope.review.id}, $scope.newComments, 
-						function(data) {
-							$scope.showHelp = false;
-							$scope.newComments = {}
-							// $scope.newComment = {};
-							$scope.commentForm.$setPristine();
-							$scope.review.comments = data.comments
-							$scope.review.reviewVideoMap = data.reviewVideoMap || {};
-				  			$scope.review.canvas = data.canvas;
-				  			$scope.review.subscribers = data.subscribers;
-				  			$scope.review.plugins = data.plugins;
-				  			$scope.guestUserName = undefined
 
-							$scope.$broadcast('show-errors-reset')
-							$rootScope.$broadcast('reviewRefresh')
+					if (!$scope.uploading) {
+						$scope.uploading = true
+						Api.ReviewsMulti.save({reviewId: $scope.review.id}, $scope.newComments, 
+							function(data) {
+								$scope.showHelp = false;
+								$scope.uploading = false
+								$scope.newComments = {}
+								// $scope.newComment = {};
+								$scope.commentForm.$setPristine();
+								$scope.review.comments = data.comments
+								$scope.review.reviewVideoMap = data.reviewVideoMap || {};
+					  			$scope.review.canvas = data.canvas;
+					  			$scope.review.subscribers = data.subscribers;
+					  			$scope.review.plugins = data.plugins;
+					  			$scope.guestUserName = undefined
+
+								$scope.$broadcast('show-errors-reset')
+								$rootScope.$broadcast('reviewRefresh')
 
 
-							$scope.addingComment = false
-						}, 
-						function(error) {
-							// Error handling
-							$log.error(error);
-						}
-					);
+								$scope.addingComment = false
+							}, 
+							function(error) {
+								// Error handling
+								$log.error(error);
+								$scope.uploading = false
+							}
+						);
+					}
 				}
 
 				$scope.insertModel = function(model, newValue) {

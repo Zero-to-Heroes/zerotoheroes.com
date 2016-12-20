@@ -515,8 +515,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.updateSeoInformation = function(data) {
-			if ($scope.config && $scope.config.isSport)  {
-				$rootScope.pageDescription = 'Get better at ' + $scope.config.displayName;
+			if ($scope.config && $scope.config.isSport) {
+				$rootScope.pageDescription = $scope.config.displayName + ' replay review'
+
 				if (data.tags) {
 					data.tagValues = '';
 					$rootScope.pageDescription += '. ';
@@ -526,8 +527,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						key.sport = data.sport.key.toLowerCase();
 					})
 				}
+
 				$rootScope.pageDescription += '. ' + data.text;
-				//$log.log('pageDescription in review.js', $rootScope.pageDescription);
 			}
 		}
 	}

@@ -60,7 +60,7 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 				message.markedText = marked(message.textDetail || '')
 				message.notifs = reviewMessageMap[message.data.reviewId]
 				// When getting the review as a logged in user you now also get the list of unread comments since last visit
-				message.targetUrl = message.data.reviewUrl + '#' + message.data.linkId //$scope.getTargetUrl(message)
+				message.targetUrl = message.data.reviewUrl //$scope.getTargetUrl(message)
 			})
 
 			// $log.debug('displaying messages', $scope.messages)

@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.coach.core.security.User;
 import com.coach.profile.ProfileService;
 import com.coach.review.Comment;
 import com.coach.review.Review;
@@ -115,7 +116,14 @@ public class AdminApiHandler {
 		List<Review> find = mongoTemplate.find(query, Review.class);
 		log.debug("Found " + find.size() + " reviews");
 
-		System.out.println("Reason, Pub date, First comment date, Url, Author, AuthorId, Total comments");
+		Query userQuery = query(where("email").ne(null));
+		Field userField = userQuery.fields();
+		userField.include("id");
+		userField.include("email");
+
+		List<User> userFind = mongoTemplate.find(userQuery, User.class);
+
+		System.out.println("Reason, Pub date, First comment date, Url, Author, Email, Total comments");
 		WaitingForOPScorer scorer = new WaitingForOPScorer();
 		for (Review review : find) {
 			// Ecluse reviews where no one but OP contributed
@@ -139,10 +147,16 @@ public class AdminApiHandler {
 			if (opActions <= 0) {
 				Date firstCommentDate = review.getAllComments().stream().sorted(comparing(Comment::getCreationDate))
 						.findFirst().get().getCreationDate();
-				System.out.println("NOT_ACK, " + new SimpleDateFormat("yyy/MM/dd").format(review.getPublicationDate())
-						+ ", " + new SimpleDateFormat("yyy/MM/dd").format(firstCommentDate) + ", " + review.getUrl()
-						+ ", " + review.getAuthor() + ", " + review.getAuthorId() + ", "
-						+ review.getAllComments().size());
+				System.out
+						.println(
+								"NOT_ACK, "
+										+ new SimpleDateFormat("yyy/MM/dd")
+												.format(review.getPublicationDate())
+										+ ", " + new SimpleDateFormat("yyy/MM/dd").format(firstCommentDate) + ", "
+										+ review.getUrl() + ", " + review.getAuthor() + ", "
+										+ userFind.stream().filter(u -> u.getId().equals(review.getAuthorId()))
+												.map(u -> u.getEmail()).findFirst().get()
+										+ ", " + review.getAllComments().size());
 			}
 		}
 

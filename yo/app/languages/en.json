@@ -405,9 +405,9 @@
 				"emailNotifications": "Receive notifications as emails?",
 				"emailNotification": {
 					"none": "Nope, thanks",
-					"onebyone": "One at a time",
-					"gamerecap": "Regular recaps bundled by review",
-					"globalrecap": "Regular recaps with everything"
+					"onebyone": "Per comment or new review",
+					"gamerecap": "Per review",
+					"globalrecap": "<x> hourly summary"
 				},
 				"emailRecapNotifs": "Receive them as periodic recaps rather than one by one?",
 				"emailRecapSplit": "Receive one email per review?",

@@ -1095,23 +1095,36 @@
 }
 @media screen and (max-width: 1380px) {
   .hearthstone .video-information {
-    width: 43%;
+    width: 41%;
   }
   .hearthstone .video-comment {
-    width: 57%;
+    width: 59%;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .hearthstone .video-information {
-    width: 65%;
+    width: 46%;
   }
   .hearthstone .video-comment {
-    width: 100%;
-    padding-left: 15px;
-    margin-top: 20px;
+    width: 54%;
   }
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1024px) {
+  .hearthstone .video-information {
+    width: 55%;
+  }
+  .hearthstone .video-comment {
+    width: 45%;
+    padding: 10px 10px;
+  }
+  .hearthstone .video-comment .background-container {
+    padding: 0;
+  }
+  .hearthstone .video-comment .comment-block {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 850px) {
   .hearthstone .video-information {
     width: 100%;
   }

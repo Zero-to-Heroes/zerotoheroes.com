@@ -3,13 +3,25 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$timeout', '$routeParams', 'ProfileService', 
-	function(User, $log, $location, Api, $alert, $timeout, $routeParams, ProfileService) {
+app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$timeout', '$routeParams', 'ProfileService', '$translate', 
+	function(User, $log, $location, Api, $alert, $timeout, $routeParams, ProfileService, $translate) {
 		return {
 			restrict: 'A',
 			replace: true,
 			templateUrl: 'templates/navigation.html',
 			controller: function($scope, User) {
+
+				$scope.translations = {
+					reviews: $translate.instant('global.navigation.reviews'),
+					helpOthers: $translate.instant('global.navigation.helpothers'),
+					search: $translate.instant('global.navigation.search'),
+					coaches: $translate.instant('global.navigation.coaches'),
+					forum: $translate.instant('global.navigation.forum'),
+					showOwnVideos: $translate.instant('global.user.showOwnVideos'),
+					postVideo: $translate.instant('global.navigation.postVideo'),
+
+				}
+
 				$scope.name = User.getName()
 				$scope.User = User;
 				$scope.showSportsNavigationPanel = false

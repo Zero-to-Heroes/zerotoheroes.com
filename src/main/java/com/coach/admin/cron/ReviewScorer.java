@@ -4,7 +4,6 @@ import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
 import static org.springframework.data.mongodb.core.query.Update.*;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -122,24 +121,30 @@ public class ReviewScorer {
 
 	@RequestMapping(value = "/autoclose", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> closeAll() {
+		return null;
 
-		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DAY_OF_YEAR, -10);
-		log.debug("Aucoclosing reviews older than " + calendar.getTime());
-
-		Criteria updateCrit = where("creationDate").lte(calendar.getTime());
-		updateCrit.and("visibility").is("public");
-		updateCrit.orOperator(where("closedDate").is(null), where("closedDate").exists(false));
-
-		Query query = query(updateCrit);
-		// Later on we need to parse the data to add a "user karma" and look for
-		// reviews that have been close at earliest 10 days after their creation
-		// date to find the autocloses
-		Update update = update("closedDate", new Date());
-		update.set("helpScore", -10000);
-		WriteResult result = mongoTemplate.updateMulti(query, update, Review.class);
-
-		return new ResponseEntity<String>("closed " + result.getN() + " reviews", HttpStatus.OK);
+		// Calendar calendar = Calendar.getInstance();
+		// calendar.add(Calendar.DAY_OF_YEAR, -10);
+		// log.debug("Aucoclosing reviews older than " + calendar.getTime());
+		//
+		// Criteria updateCrit = where("creationDate").lte(calendar.getTime());
+		// updateCrit.and("visibility").is("public");
+		// updateCrit.orOperator(where("closedDate").is(null),
+		// where("closedDate").exists(false));
+		//
+		// Query query = query(updateCrit);
+		// // Later on we need to parse the data to add a "user karma" and look
+		// for
+		// // reviews that have been close at earliest 10 days after their
+		// creation
+		// // date to find the autocloses
+		// Update update = update("closedDate", new Date());
+		// update.set("helpScore", -10000);
+		// WriteResult result = mongoTemplate.updateMulti(query, update,
+		// Review.class);
+		//
+		// return new ResponseEntity<String>("closed " + result.getN() + "
+		// reviews", HttpStatus.OK);
 	}
 
 	private ScoreWeights buildWeights() {

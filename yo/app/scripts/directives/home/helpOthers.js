@@ -19,9 +19,9 @@ app.directive('helpOthers', ['$log', '$location', 'Api', '$routeParams', '$timeo
 						criteria: {
 							wantedTags: [],
 							unwantedTags: [],
-							sort: 'publicationDate',
-							contributorsComparator: 'lte',
-							helpfulCommentsValue: '0'
+							sort: 'helpScore',
+							// contributorsComparator: 'lte',
+							// helpfulCommentsValue: '0'
 								
 							// search: searchFn
 						},

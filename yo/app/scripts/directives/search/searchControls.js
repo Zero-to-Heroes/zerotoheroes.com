@@ -293,6 +293,11 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.updateSort = function() {
+					$scope.reviews.forEach(function(review) {
+						// $log.debug('setting previous flag', review.previousFilterOut, review.filteredOut, review)
+						review.filteredOut = review.previousFilterOut
+					})
+
 					if ($scope.options.criteria.sort == 'publicationDate') {
 						$scope.options.sort = 'publicationDate'
 					}
@@ -304,6 +309,11 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					}
 					else if ($scope.options.criteria.sort == 'helpScore') {
 						$scope.options.sort = 'helpScore'
+						$scope.reviews.forEach(function(review) {
+							review.previousFilterOut = review.filteredOut
+							review.filteredOut = $scope.hasMyContribution(review)
+							// $log.debug('filtering review', review.filteredOut, review.previousFilterOut, review)
+						})
 					}
 					// $log.debug('updated sort', $scope.reviews)
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
@@ -311,6 +321,30 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 
 				$scope.dynamicOrder = function(review) {
 					return review[$scope.options.sort] || review.creationDate
+				}
+
+				$scope.hasMyContribution = function(review) {
+					let myName = $scope.User.getName().toLowerCase()
+
+					if (review.author && review.author == myName) {
+						$log.debug('same author', review.author, myName, review)
+						return true
+					}
+
+					if (review.allAuthors) {
+						var found = false
+						review.allAuthors.forEach(function(author) {
+							if (author.toLowerCase() == myName) {
+								$log.debug('\tFound own contribution', author, myName, review)
+								found = true
+							}
+						})
+
+						if (found)
+							return true
+					}
+
+					return false
 				}
 
 				$scope.match = function(review, criteria) {
@@ -387,13 +421,13 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 
 						var found = false
 						review.allAuthors.forEach(function(author) {
-							if (author.indexOf(criteria.contributor) != -1) {
+							if (author.toLowerCase().indexOf(criteria.contributor.toLowerCase()) != -1) {
 								$log.debug('\tFound contributor', author, criteria.contributor)
 								found = true
 							}
 						})
 						review.allAuthorIds.forEach(function(author) {
-							if (author == criteria.contributor) {
+							if (author.toLowerCase() == criteria.contributor.toLowerCase()) {
 								$log.debug('\tFound contributor', author, criteria.contributor)
 								found = true
 							}

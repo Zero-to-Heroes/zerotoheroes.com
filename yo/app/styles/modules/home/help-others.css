@@ -14,3 +14,10 @@
 .help-others .wanted-tags {
 	min-width: 200px;
 }
+
+.help-others .experimental-warning {
+    text-align: center;
+    padding-top: 20px;
+    max-width: 500px;
+    margin: auto;
+}

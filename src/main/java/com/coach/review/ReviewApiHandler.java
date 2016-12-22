@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.data.domain.PageRequest;
@@ -25,7 +26,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.amazonaws.util.StringUtils;
 import com.coach.core.notification.DiscordNotifier;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.security.User;
@@ -123,7 +123,7 @@ public class ReviewApiHandler {
 				: 0;
 		String sport = criteria.getSport();
 
-		if (StringUtils.isNullOrEmpty(sport)) { return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null,
+		if (StringUtils.isEmpty(sport)) { return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null,
 				HttpStatus.BAD_REQUEST); }
 
 		Sport sportObj = Sport.load(sport);
@@ -137,7 +137,7 @@ public class ReviewApiHandler {
 		// log.info("authorities are " + authorities);
 
 		// If user is anonymous, can only show public videos
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+		if (StringUtils.isEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 			if (criteria.getOwnVideos() != null
 					&& criteria.getOwnVideos()) { return new ResponseEntity<ListReviewResponse>(
 							(ListReviewResponse) null, HttpStatus.FORBIDDEN); }
@@ -158,12 +158,16 @@ public class ReviewApiHandler {
 
 		// Start pageing at 1 like normal people, not at 0 like nerds
 		PageRequest pageRequest = new PageRequest(pageNumber, PAGE_SIZE, sort);
-		String author = criteria.getOwnVideos() != null && criteria.getOwnVideos() && user != null ? user.getId()
-				: null;
 
 		long queryStart = System.currentTimeMillis();
 		log.debug("Searching with criteria " + criteria);
-		List<Review> reviews = reviewDao.search(criteria, author, pageRequest);
+
+		String author = criteria.getOwnVideos() != null && criteria.getOwnVideos() && user != null ? user.getId()
+				: null;
+		if (!StringUtils.isEmpty(author)) {
+			criteria.setAuthor(author);
+		}
+		List<Review> reviews = reviewDao.search(criteria, user, pageRequest);
 
 		ListReviewResponse response = new ListReviewResponse(reviews);
 		response.setQueryDuration(System.currentTimeMillis() - queryStart);
@@ -319,7 +323,7 @@ public class ReviewApiHandler {
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// log.info("authorities are " + authorities);
-		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
+		if (!StringUtils.isEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			// log.debug("Setting current user as review author " +
 			// currentUser);
 			User user = userRepo.findByUsername(currentUser);
@@ -336,8 +340,8 @@ public class ReviewApiHandler {
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
-		else if (!StringUtils.isNullOrEmpty(review.getUploaderApplicationKey())
-				&& !StringUtils.isNullOrEmpty(review.getUploaderToken())) {
+		else if (!StringUtils.isEmpty(review.getUploaderApplicationKey())
+				&& !StringUtils.isEmpty(review.getUploaderToken())) {
 			// Get user from token
 			User user = externalApplicationAuthenticationService.loadUser(review.getUploaderApplicationKey(),
 					review.getUploaderToken());
@@ -380,9 +384,8 @@ public class ReviewApiHandler {
 		// }
 
 		// Start transcoding
-		if (!StringUtils.isNullOrEmpty(review.getTemporaryKey())
-				|| !StringUtils.isNullOrEmpty(review.getTemporaryReplay())) {
-			if (!StringUtils.isNullOrEmpty(review.getReplay())) {
+		if (!StringUtils.isEmpty(review.getTemporaryKey()) || !StringUtils.isEmpty(review.getTemporaryReplay())) {
+			if (!StringUtils.isEmpty(review.getReplay())) {
 				log.debug("Proessing replay");
 				replayProcessor.processReplayFile(review, "init");
 			}
@@ -422,7 +425,7 @@ public class ReviewApiHandler {
 
 		// Security
 		// Add current logged in user as the author of the review
-		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
+		if (!StringUtils.isEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			// log.debug("Setting current user as review author " +
 			// currentUser);
 			addAuthorInformation(review.getSport(), comment, currentUser);
@@ -499,7 +502,7 @@ public class ReviewApiHandler {
 		if (user == null) {
 			String providedName = null;
 			for (Comment comment : multiComment.values()) {
-				if (!StringUtils.isNullOrEmpty(comment.getAuthor())) {
+				if (!StringUtils.isEmpty(comment.getAuthor())) {
 					providedName = comment.getAuthor();
 					break;
 				}
@@ -515,7 +518,7 @@ public class ReviewApiHandler {
 		for (String turn : multiComment.keySet()) {
 			Comment comment = multiComment.get(turn);
 
-			if (StringUtils.isNullOrEmpty(comment.getText())) {
+			if (StringUtils.isEmpty(comment.getText())) {
 				continue;
 			}
 			// TODO: unhardcode this - we want the timestamps to be easily
@@ -532,7 +535,7 @@ public class ReviewApiHandler {
 
 			log.debug("\tadding comment " + multiComment);
 
-			if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+			if (StringUtils.isEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 				user = userRepo.findByUsername(comment.getAuthor());
 				if (user != null) { return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED); }
 			}
@@ -554,7 +557,7 @@ public class ReviewApiHandler {
 	}
 
 	private void addCommentToReview(Review review, Comment comment, User user, String currentUser) {
-		if (StringUtils.isNullOrEmpty(comment.getText())) { return; }
+		if (StringUtils.isEmpty(comment.getText())) { return; }
 		if (user == null) {
 			user = new User();
 			user.setUsername(currentUser);
@@ -595,7 +598,7 @@ public class ReviewApiHandler {
 		User user = userRepo.findByUsername(currentUser);
 
 		// Disallow anonymous edits
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+		if (StringUtils.isEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
 		else if (!currentUser.equals(review.getAuthor())
@@ -657,7 +660,7 @@ public class ReviewApiHandler {
 		User user = userRepo.findByUsername(currentUser);
 
 		// Disallow anonymous edits
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+		if (StringUtils.isEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
 		else if (!currentUser.equals(review.getAuthor())
@@ -711,7 +714,7 @@ public class ReviewApiHandler {
 		// log.debug("Exisint draft in the system is " + review);
 
 		// Updating author information
-		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
+		if (!StringUtils.isEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			addAuthorInformation(inputReview.getSport(), review, currentUser);
 		}
 		else {
@@ -790,7 +793,7 @@ public class ReviewApiHandler {
 				.getAuthorities();
 		User user = userRepo.findByUsername(currentUser);
 		// Disallow anonymous edits
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
+		if (StringUtils.isEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
 			return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 		}
 		else if (!currentUser.equals(comment.getAuthor())
@@ -834,7 +837,7 @@ public class ReviewApiHandler {
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 		// Add current logged in user as the author of the review
-		if (!StringUtils.isNullOrEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
+		if (!StringUtils.isEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			// log.debug("Setting current user as review author " +
 			// currentUser);
 			addAuthorInformation(review.getSport(), reply, currentUser);
@@ -910,7 +913,7 @@ public class ReviewApiHandler {
 				.getAuthorities();
 
 		// No anonymous access
-		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(
+		if (StringUtils.isEmpty(currentUser) || UserAuthority.isAnonymous(
 				authorities)) { return new ResponseEntity<Comment>((Comment) null, HttpStatus.UNAUTHORIZED); }
 
 		// log.debug("Validating that the logged in user is the review author");
@@ -922,7 +925,7 @@ public class ReviewApiHandler {
 
 		// Update the reputation only if the review author and comment author
 		// are different to avoid self-boosting
-		if (!StringUtils.isNullOrEmpty(comment.getAuthorId()) && !comment.getAuthorId().equals(review.getAuthorId())) {
+		if (!StringUtils.isEmpty(comment.getAuthorId()) && !comment.getAuthorId().equals(review.getAuthorId())) {
 			ReputationAction action = comment.isHelpful() ? ReputationAction.Helpful : ReputationAction.LostHelpful;
 			int changeAmount = reputationUpdater.updateReputation(review.getSport(), action, comment.getAuthorId());
 			reviewService.triggerReputationChangeJobs(review, comment, changeAmount,

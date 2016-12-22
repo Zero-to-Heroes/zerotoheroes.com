@@ -244,6 +244,7 @@
 			"forum": "Forums",
 			"globalForum": "General forum",
 			"reviews": "Latest reviews",
+			"helpothers": "Help others",
 			"search": "Advanced search",
 			"coaches": "Coaches",
 			"chooseSport": "Choose a sport",
@@ -333,7 +334,7 @@
 			"sort": {
 				"publicationDate": "Sort by publication date",
 				"updateDate": "Sort by last modification date",
-				"helpScore": "(Experimental) - Most help needed",
+				"helpScore": "Reviews needing help",
 				"creationDate": "Sort by creation date"
 			},
 			"visibility": {

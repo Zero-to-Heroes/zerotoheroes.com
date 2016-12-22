@@ -6,6 +6,7 @@ import static org.springframework.data.mongodb.core.query.Update.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -41,7 +42,7 @@ public class ReviewDao {
 	@Autowired
 	private ExecutorProvider executorProvider;
 
-	public List<Review> search(ReviewSearchCriteria criteria, String author, PageRequest pageRequest) {
+	public List<Review> search(ReviewSearchCriteria criteria, User user, PageRequest pageRequest) {
 
 		String sportCriteria = criteria.getSport();
 
@@ -64,17 +65,17 @@ public class ReviewDao {
 			crit.and("visibility").is("public");
 		}
 
-		// Look for the videos of the specified author
-		if (!StringUtils.isEmpty(author)) {
-			crit.and("authorId").is(author);
-		}
-
 		// This is a user-specified criteria, could be either an ID or a
 		// username
 		if (!StringUtils.isEmpty(criteria.getAuthor()) && criteria.getAuthor().length() > 2) {
 			Criteria authorIdCriteria = where("authorId").is(criteria.getAuthor());
 			Criteria authorCriteria = where("author").regex(".*" + criteria.getAuthor() + ".*", "i");
 			crit.orOperator(authorCriteria, authorIdCriteria);
+		}
+		// No author specified, so we need to exclude ourselves in case of help
+		// search
+		else if ("helpScore".equals(criteria.getSort())) {
+			crit.and("authorId").ne(user.getId());
 		}
 
 		if (!StringUtils.isEmpty(criteria.getGameMode())) {
@@ -148,6 +149,16 @@ public class ReviewDao {
 			Criteria allAuthorIds = where("allAuthorIds").in(regexList);
 			crit.orOperator(allAuthor, allAuthorIds);
 			// crit.and("allAuthors").in(regexList);
+		}
+		else if ("helpScore".equals(criteria.getSort())) {
+			crit.and("allAuthorIds").nin(user.getId());
+		}
+
+		// Don't include old reviews when looking for reviews that need help
+		if ("helpScore".equals(criteria.getSort())) {
+			Calendar calendar = Calendar.getInstance();
+			calendar.add(Calendar.DAY_OF_YEAR, -20);
+			crit.and("publicationDate").gte(calendar.getTime());
 		}
 
 		// Tags

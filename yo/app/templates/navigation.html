@@ -17,15 +17,16 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<ul class="nav navbar-nav inside-navigation">
 		<li class="upload-link" collapse-priority="prio-1">
-			<a href="/s{{sport ? '/' + sport : ''}}/upload" ng-show="useVideo"><span>{{ 'global.navigation.postVideo' | translate }}</span> <span class="sr-only">(current)</span></a>
-			<a href="/s{{sport ? '/' + sport : ''}}/upload" ng-hide="useVideo"><span>{{ 'global.navigation.postFeedback' | translate }}</span> <span class="sr-only">(current)</span></a>
+			<a href="/s{{sport ? '/' + sport : ''}}/upload" ng-show="useVideo"><span>{{::translations.postVideo}}</span></a>
+			<!-- <a href="/s{{sport ? '/' + sport : ''}}/upload" ng-hide="useVideo"><span>{{ 'global.navigation.postFeedback' | translate }}</span> <span class="sr-only">(current)</span></a> -->
 		</li>
 		<!-- <li ng-class="{active: menuItem == 'home' && !upload}" collapse-priority="prio-0"><a href="{{ '/s/' + sport }}">{{ 'global.navigation.home' | translate }}</a></li> -->
-		<li ng-class="{active: menuItem == 'reviews' && !upload}" collapse-priority="prio-0"><a href="{{ '/s/' + sport + '/reviews'}}">{{ 'global.navigation.reviews' | translate }}</a></li>
-		<li ng-class="{active: menuItem == 'search' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/search'}}">{{ 'global.navigation.search' | translate }}</a></li>
-		<li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{ 'global.navigation.coaches' | translate }}</a></li>
-		<li ng-class="{active: menuItem == 'forum' && !upload}" collapse-priority="prio-4"><a href="https://www.reddit.com/r/zerotoheroes/" target="_blank">{{ 'global.navigation.forum' | translate }}</a></li>
-		<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos'}}" translate="{{ 'global.user.showOwnVideos' | translate }}"></a></li>
+		<li ng-class="{active: menuItem == 'reviews' && !upload}" collapse-priority="prio-0"><a href="{{ '/s/' + sport + '/reviews'}}">{{::translations.reviews}}</a></li>
+		<li ng-class="{active: menuItem == 'helpothers' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/helpothers'}}">{{::translations.helpOthers}}</a></li>
+		<li ng-class="{active: menuItem == 'search' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/search'}}">{{::translations.search}}</a></li>
+		<li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{::translations.coaches}}</a></li>
+		<li ng-class="{active: menuItem == 'forum' && !upload}" collapse-priority="prio-4"><a href="https://www.reddit.com/r/zerotoheroes/" target="_blank">{{::translations.forum}}</a></li>
+		<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos'}}">{{::translations.showOwnVideos}}</a></li>
 
 		<!-- Target element @see data-target above,
 	    can contain markup alreadu ie. <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a> 
@@ -37,15 +38,16 @@
 	    		
 	    		<!-- Not automated / generic, but still works for now -->
 	    		<li class="upload-link" collapse-priority="prio-1">
-					<a href="/s{{sport ? '/' + sport : ''}}/upload" ng-show="useVideo"><span>{{ 'global.navigation.postVideo' | translate }}</span> <span class="sr-only">(current)</span></a>
-					<a href="/s{{sport ? '/' + sport : ''}}/upload" ng-hide="useVideo"><span>{{ 'global.navigation.postFeedback' | translate }}</span> <span class="sr-only">(current)</span></a>
+					<a href="/s{{sport ? '/' + sport : ''}}/upload" ng-show="useVideo"><span>{{::translations.postVideo}}</span></a>
+					<!-- <a href="/s{{sport ? '/' + sport : ''}}/upload" ng-hide="useVideo"><span>{{ 'global.navigation.postFeedback' | translate }}</span> <span class="sr-only">(current)</span></a> -->
 				</li>
 				<!-- <li ng-class="{active: menuItem == 'home' && !upload}" collapse-priority="prio-0"><a href="{{ '/s/' + sport }}">{{ 'global.navigation.home' | translate }}</a></li> -->
-				<li ng-class="{active: menuItem == 'reviews' && !upload}" collapse-priority="prio-0"><a href="{{ '/s/' + sport + '/reviews'}}">{{ 'global.navigation.reviews' | translate }}</a></li>
-				<li ng-class="{active: menuItem == 'search' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/search'}}">{{ 'global.navigation.search' | translate }}</a></li>
-				<li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{ 'global.navigation.coaches' | translate }}</a></li>
-				<li ng-class="{active: menuItem == 'forum' && !upload}" collapse-priority="prio-4"><a href="https://www.reddit.com/r/zerotoheroes/" target="_blank">{{ 'global.navigation.forum' | translate }}</a></li>
-				<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos'}}" translate="{{ 'global.user.showOwnVideos' | translate }}"></a></li>
+				<li ng-class="{active: menuItem == 'reviews' && !upload}" collapse-priority="prio-0"><a href="{{ '/s/' + sport + '/reviews'}}">{{::translations.reviews}}</a></li>
+				<li ng-class="{active: menuItem == 'helpothers' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/helpothers'}}">{{::translations.helpOthers}}</a></li>
+				<li ng-class="{active: menuItem == 'search' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/search'}}">{{::translations.search}}</a></li>
+				<li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{::translations.coaches}}</a></li>
+				<li ng-class="{active: menuItem == 'forum' && !upload}" collapse-priority="prio-4"><a href="https://www.reddit.com/r/zerotoheroes/" target="_blank">{{::translations.forum}}</a></li>
+				<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos'}}">{{::translations.showOwnVideos}}</a></li>
 
 				<li class="name-input" collapse-priority="prio-2">
 					<ul zth-name-input show-logout="true" class="nav name-group" active="menuItem == 'profile'"></ul>

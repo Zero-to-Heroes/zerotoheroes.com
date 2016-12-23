@@ -16,7 +16,9 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				hideAllFilters: '<',
 				showVisibilityToggle: '<',
 				referenceOptions: '<',
-				showVisibility: '<'
+				showVisibility: '<',
+				handle: '<',
+				skipAutoSearch: '<'
 			},
 			controller: function($scope) {
 
@@ -202,7 +204,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					}
 
 					// angular.copy($scope.referenceOptions.criteria, $scope.options.criteria)
-					$log.debug('clearing fitlers', $scope.options, $scope.referenceOptions)
+					// $log.debug('clearing fitlers', $scope.options, $scope.referenceOptions)
 				}
 				// $scope.clearFilters()
 
@@ -231,6 +233,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.search = function() {
+					$log.debug('search in searchControls', $scope.options)
 					$scope.initMessages()
 					$scope.reviews = []
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
@@ -239,13 +242,22 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.firstSearch = function() {
+					// $log.debug('in first search', $scope.options)
 					if (!$scope.options || !$scope.options.criteria || !$scope.options.criteria.search) {
 						$timeout(function() {
 							$scope.firstSearch()
 						}, 50)
+						return
+					}
+					else if (!$scope.skipAutoSearch) {
+						$scope.search()
 					}
 					else {
-						$scope.search()
+						$log.debug('skipping auto search', $scope.skipAutoSearch)
+					}
+					if ($scope.handle) {
+						$scope.handle.clearFilters = $scope.clearFilters
+						$scope.handle.search = $scope.search
 					}
 				}
 				$scope.firstSearch()
@@ -255,6 +267,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					$scope.reviews = reviews
 					// $scope.referenceReviews = reviews
 					$scope.filterReviews()
+					// if ($scope.handle.callback) $scope.handle.callback()
 					// $scope.$broadcast('$$rebind::' + 'resultsRefresh')
 				}
 
@@ -286,6 +299,9 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					// Remove reviews that don't match the criteria
 					$scope.reviews.forEach(function(review) {
 						review.filteredOut = !$scope.match(review, $scope.options.criteria)
+						if (review.filteredOut) {
+							$log.debug('filtered out', review, $scope.options)
+						}
 					})
 
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
@@ -480,7 +496,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					if (criteria.visibility) {
 						if (criteria.visibility == 'public' && review.visibility != 'public') 
 							return false
-						if (criteria.visibility != 'public' && review.visibility == 'public') 
+						if (criteria.visibility == 'restricted' && review.visibility == 'private') 
 							return false
 					}
 

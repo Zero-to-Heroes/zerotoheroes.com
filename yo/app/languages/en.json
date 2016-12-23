@@ -390,7 +390,8 @@
 				"feed": "Activity feed",
 				"preferences": "Preferences",
 				"subscriptions": "Subscriptions",
-				"coach": "Coach info"
+				"coach": "Coach info",
+				"games": "Latest games"
 			},
 			"info": {
 				"editButtonLabel": "edit",
@@ -415,7 +416,11 @@
 				"emailRecapFrequency": "At which frequency (in hours)?",
 				"emailContact": "Allow me to send you an email from time to time (I promise not to spam)?",
 				"language": "What language do you want to see the site in?",
-				"save": "Update"
+				"save": "Update",
+				"sharingPublic": "Sharing public reviews only",
+				"sharingUnlisted": "Sharing public and unlisted reviews",
+				"toggleSharingToUnlisted": "Change to also share unlisted reviews",
+				"toggleSharingToPublicOnly": "Change to share only public reviews"
 			},
 			"subscriptions": {
 				"unnamedSub": "Unnamed subscription",

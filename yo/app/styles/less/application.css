@@ -159,6 +159,22 @@ body {
   width: 20px;
   height: 20px;
 }
+.game-page .header {
+  display: flex;
+  align-items: baseline;
+}
+.game-page .header .sharing-level {
+  margin-left: 10px;
+}
+.game-page .header .toggle-sharing {
+  margin-left: 10px;
+}
+.game-page .header .toggle-sharing:before {
+  content: "(";
+}
+.game-page .header .toggle-sharing:after {
+  content: ")";
+}
 .profile-page .preferences .included {
   margin-top: 10px;
 }

@@ -1,7 +1,6 @@
 package com.coach.profile;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -39,13 +38,9 @@ public class ProfileService {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
-		Profile profile = null;
 		if (StringUtils.isNullOrEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) { return null; }
 
-		User user = userRepo.findByUsername(currentUser);
-		profile = getProfile(user.getId());
-		// log.debug("retrieved logged in profile " + profile);
-		return profile;
+		return getProfileByUsername(currentUser);
 	}
 
 	public void save(Profile profile) {
@@ -53,8 +48,9 @@ public class ProfileService {
 		profileRepository.save(profile);
 	}
 
-	public List<Profile> loadAllDailyRecaps() {
-		// TODO Auto-generated method stub
-		return null;
+	public Profile getProfileByUsername(String username) {
+		User user = userRepo.findByUsername(username);
+		Profile profile = getProfile(user.getId());
+		return profile;
 	}
 }

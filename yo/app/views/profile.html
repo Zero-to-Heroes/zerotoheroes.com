@@ -12,7 +12,8 @@
 			<li ng-if="::isOwnProfile()"><a ng-class="{ 'active': subMenu == 'feed'}" ng-click="goTo('feed')">{{::translations.feed}}</a></li>
 			<li ng-if="::isOwnProfile()"><a ng-class="{ 'active': subMenu == 'preferences'}" ng-click="goTo('preferences')">{{::translations.preferences}}</a></li>
 			<li ng-if="::isOwnProfile()"><a ng-class="{ 'active': subMenu == 'subscriptions'}" ng-click="goTo('subscriptions')">{{::translations.subscriptions}}</a></li>
-			<li ng-if="::coachInformation"><a ng-class="{ 'active': subMenu == 'coach'}" ng-click="goTo('coach')">{{::translations.coach}}</a></li>
+			<li ng-if="::coachInformation.id"><a ng-class="{ 'active': subMenu == 'coach'}" ng-click="goTo('coach')">{{::translations.coach}}</a></li>
+			<li><a ng-class="{ 'active': subMenu == 'games'}" ng-click="goTo('games')">{{::translations.games}}</a></li>
 		</ul>
 
 		<div ng-switch="subMenu" class="edit-button">
@@ -26,5 +27,6 @@
 		<profile-preferences ng-switch-when="preferences" sport="::sport" config="::subMenuConfig"></profile-preferences>
 		<profile-subscriptions ng-switch-when="subscriptions" sport="::sport" config="::subMenuConfig"></profile-subscriptions>
 		<coach-page ng-switch-when="coach" sport="::sport" config="::subMenuConfig" coach-information="::coachInformation"></coach-page>
+		<games-page ng-switch-when="games" sport="::sport" config="::subMenuConfig"></games-page>
 	</div>
 </div>

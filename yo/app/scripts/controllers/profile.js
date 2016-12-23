@@ -9,7 +9,8 @@ angular.module('controllers').controller('ProfileController', ['$scope', '$route
 			feed: $translate.instant('global.profile.menu.feed'),
 			preferences: $translate.instant('global.profile.menu.preferences'),
 			subscriptions: $translate.instant('global.profile.menu.subscriptions'),
-			coach: $translate.instant('global.profile.menu.coach')
+			coach: $translate.instant('global.profile.menu.coach'),
+			games: $translate.instant('global.profile.menu.games'),
 		}
 		$scope.sport = $routeParams['sport']
 		$scope.user = $routeParams['userName']
@@ -17,7 +18,7 @@ angular.module('controllers').controller('ProfileController', ['$scope', '$route
 		$scope.retrieveInfo = function() {
 			Api.Coaches.get({identifier: $routeParams.userName}, 
 				function(data) {
-					$log.debug('retrieved data for', $routeParams.userName, data)
+					// $log.debug('retrieved data for', $routeParams.userName, data)
 					$scope.coachInformation = data
 				}
 			)

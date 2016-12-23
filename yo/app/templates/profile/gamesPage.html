@@ -1,0 +1,14 @@
+<div class="background-white game-page"> 
+
+	<div class="header">
+		<h2>{{::user}}'s last reviews</h2>
+		<span class="sharing-level" ng-if="isOwnProfile()">{{:refreshPrefs:translations[sharingLevel]}}</span>
+		<a class="toggle-sharing" ng-click="toggleSharingLevel()" ng-if="isOwnProfile()">{{:refreshPrefs:translations['toggle_' + sharingLevel]}}</a>
+	</div>
+
+	<!-- Videos showcased by the user -->
+	<div class="videos-list medium-column">
+		<search-controls sport="sport" hide-all-filters="true" hide-buttons="true" show-visibility="true" reference-options="options" handle="searchService" skip-auto-search="true"></search-controls>
+	</div>
+
+</div>

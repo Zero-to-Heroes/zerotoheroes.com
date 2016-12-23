@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -66,6 +67,47 @@ public class PreferencesApiHandler {
 		profileRepo.save(profile);
 
 		return new ResponseEntity<Preferences>(inputPrefs, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/sharing/{username}", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<Preferences> getSharingPreferences(
+			@PathVariable("username") final String username) {
+
+		Preferences response = null;
+
+		Profile profile = profileService.getProfileByUsername(username);
+		if (profile == null) { return new ResponseEntity<Preferences>(response, HttpStatus.FORBIDDEN); }
+
+		String pref = profile.getPreferences().getSharingPreference();
+		response = new Preferences();
+		response.setSharingPreference(pref);
+
+		return new ResponseEntity<Preferences>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/sharing", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Preferences> toggleSharingPreferences() {
+
+		Preferences response = null;
+
+		Profile profile = profileService.getLoggedInProfile();
+		if (profile == null) { return new ResponseEntity<Preferences>(response, HttpStatus.FORBIDDEN); }
+
+		String current = profile.getPreferences().getSharingPreference();
+		String newPref = null;
+		if ("publicOnly".equals(current)) {
+			newPref = "unlisted";
+		}
+		else {
+			newPref = "publicOnly";
+		}
+		profile.getPreferences().setSharingPreference(newPref);
+		profileRepo.save(profile);
+
+		response = new Preferences();
+		response.setSharingPreference(newPref);
+
+		return new ResponseEntity<Preferences>(response, HttpStatus.OK);
 	}
 
 	@RequestMapping(method = RequestMethod.PATCH)

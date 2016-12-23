@@ -15,5 +15,6 @@ public class Preferences {
 	private boolean emailContact = true;
 	private String language;
 	private String displayMode = "grid";
+	private String sharingPreference = "publicOnly";
 
 }

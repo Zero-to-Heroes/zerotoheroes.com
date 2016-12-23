@@ -62,7 +62,12 @@ public class ReviewDao {
 			}
 		}
 		else if (criteria.getOwnVideos() == null || !criteria.getOwnVideos()) {
-			crit.and("visibility").is("public");
+			if ("unlisted".equals(criteria.getVisibility())) {
+				crit.and("visibility").in(Arrays.asList(new String[] { "restricted", "public" }));
+			}
+			else {
+				crit.and("visibility").is("public");
+			}
 		}
 
 		// This is a user-specified criteria, could be either an ID or a

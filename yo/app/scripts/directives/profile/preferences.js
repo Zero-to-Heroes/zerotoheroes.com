@@ -47,7 +47,7 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 						Api.Preferences.get(
 							function(data) {
 								$scope.preferences = data
-								$scope.preferences.language = $scope.preferences.language || 'en'
+								// $scope.preferences.language = $scope.preferences.language || 'en'
 							}
 						)
 					}
@@ -66,7 +66,7 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					Api.Preferences.save($scope.preferences, 
 						function(data) {
 							$scope.updateStatus = 'ok'
-							Localization.use($scope.preferences.language)
+							// Localization.use($scope.preferences.language)
 						}
 					)
 				}

@@ -41,6 +41,8 @@ services.factory('Api', ['$resource', 'ENV',
 			Preferences: $resource(ENV.apiEndpoint + url + 'preferences', null, {
 				'update': { method: 'PATCH'}
 			}),
+			SharingPreferences: $resource(ENV.apiEndpoint + url + 'preferences/sharing/:identifier', {identifier: '@identifier'}),
+
 			ProfileInfo: $resource(ENV.apiEndpoint + url + 'profileinfo/:user/:sport', {user: '@user', sport: '@sport'}),
 
 			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),

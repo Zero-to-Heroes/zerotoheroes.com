@@ -83,12 +83,14 @@ angular.module('app').directive('coachPage', ['$routeParams', 'Api', '$log', 'Us
 				// Showcasing coach videos
 				// ===============
 				$scope.initCriteria = function() {
-					$scope.options = {	
-						criteria: {
-							wantedTags: [],
-							unwantedTags: [],
-							sort: 'publicationDate',
-							contributor: $scope.coachInformation.id
+					if ($scope.coachInformation && $scope.coachInformation.id) {
+						$scope.options = {	
+							criteria: {
+								wantedTags: [],
+								unwantedTags: [],
+								sort: 'publicationDate',
+								contributor: $scope.coachInformation.id
+							}
 						}
 					}
 					// ProfileService.getProfile((profile) => $scope.options.displayMode = profile.preferences.displayMode || 'grid')

@@ -173,21 +173,25 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 		when('/u/:userName/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
+			className: 'search-page-global',
 			menuItem: 'profile'
 		}).
 		when('/u/:userName/:sport/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
+			className: 'search-page-global',
 			menuItem: 'profile'
 		}).
 		when('/user/:userName/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
+			className: 'search-page-global',
 			menuItem: 'profile'
 		}).
 		when('/user/:userName/:sport/:subMenu', {
 			templateUrl: 'views/profile.html',
 			controller: 'ProfileController',
+			className: 'search-page-global',
 			menuItem: 'profile'
 		}).
 

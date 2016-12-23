@@ -609,6 +609,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public void deleteComment(int commentId) {
+		log.debug("Befpre removal: " + getAllComments().size());
 		Comment comment = getComment(commentId);
 		if (comment == null) { return; }
 
@@ -616,7 +617,12 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			comment.setText("[deleted]");
 		}
 		else {
-			comments.remove(comment);
+			boolean removed = comments.remove(comment);
+			for (int i = 0; i < getComments().size() && !removed; i++) {
+				removed = getComments().get(i).removeComment(commentId);
+			}
+			log.debug("Remvoed comment? " + removed);
+			log.debug("After: " + getAllComments().size());
 		}
 	}
 

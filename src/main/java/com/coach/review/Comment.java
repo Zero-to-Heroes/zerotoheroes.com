@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.data.annotation.Transient;
 
 import com.amazonaws.util.StringUtils;
@@ -304,5 +305,24 @@ public class Comment implements HasText, HasReputation {
 		String userId, username, rank;
 		int reputation;
 		float score;
+	}
+
+	public boolean removeComment(int commentId) {
+		Comment comment = getComment(commentId);
+		if (comment == null) { return false; }
+
+		if (!CollectionUtils.isEmpty(comment.getComments())) {
+			comment.setText("[deleted]");
+			return true;
+		}
+		else {
+			boolean removed = comments.remove(comment);
+			for (int i = 0; i < getComments().size() && !removed; i++) {
+				removed = getComments().get(i).removeComment(commentId);
+			}
+			log.debug("Remvoed comment? " + removed);
+			log.debug("After: " + getAllComments().size());
+			return removed;
+		}
 	}
 }

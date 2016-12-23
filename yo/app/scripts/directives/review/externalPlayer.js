@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig', 
-	function($log, ENV, SportsConfig) {
+app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig', '$timeout', 
+	function($log, ENV, SportsConfig, $timeout) {
 		return {
 			restrict: 'E',
 			replace: true,
@@ -14,6 +14,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 			controller: function($scope) {
 				// $log.debug('instanciate externalPlayer', $scope.review, $scope.config)
 				$scope.minimumAdDisplayTime = 7 * 1000
+				$scope.turnChangedCallbacks = []
 
 				$scope.initReview = function(review) {
 					// $log.debug('init review in externalPlayer', review)
@@ -51,9 +52,11 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 
 				$scope.decorateCallback = function(callback) {
 					return function(externalPlayer) {
-						$log.debug('callback done in externalPlayer.js', externalPlayer)
+						// $log.debug('callback done in externalPlayer.js', externalPlayer)
 						$scope.externalPlayer = externalPlayer
-						$scope.flagReviewLoaded();
+						$scope.flagReviewLoaded()
+						// Register listeners
+						// externalPlayer.onTurnChanged = $scope.addTurnChangedListener
 						// $scope.reviewLoaded = true
 						callback(externalPlayer)
 						// $log.debug('ready to call externalPlayer functions', $scope.externalPlayer)
@@ -74,10 +77,18 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 				}
 
 				$scope.goToTimestamp = function(timeString) {
-					$log.debug('calling externalPlayer goToTimestamp', $scope.externalPlayer, timeString)
+					// $log.debug('calling externalPlayer goToTimestamp', $scope.externalPlayer, timeString)
 					$scope.externalPlayer.goToTimestamp(timeString)
 					if ($scope.config.onTimestampChanged)
 						$scope.config.onTimestampChanged(timeString)
+				}
+
+				$scope.getTurnLabel = function(turn) {
+					return $scope.externalPlayer.getTurnLabel ? $scope.externalPlayer.getTurnLabel(turn) : null
+				}
+
+				$scope.getTurnNumber = function(label) {
+					return $scope.externalPlayer.getTurnNumber ? $scope.externalPlayer.getTurnNumber(label) : null
 				}
 
 				$scope.getCurrentTimestamp = function(timeString) {
@@ -88,11 +99,18 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig',
 					// Nothing to do
 				}
 
+				// $scope.addTurnChangedListener = function(listener) {
+				// 	$scope.turnChangedCallbacks.push(listener)
+				// }
+
 				$scope.config.initReview = $scope.initReview
 				$scope.config.initPlayer = $scope.initPlayer
 				$scope.config.goToTimestamp = $scope.goToTimestamp
 				$scope.config.onVideoInfoUpdated = $scope.onVideoInfoUpdated
 				$scope.config.getCurrentTimestamp = $scope.getCurrentTimestamp
+				$scope.config.getTurnLabel = $scope.getTurnLabel
+				$scope.config.getTurnNumber = $scope.getTurnNumber
+				// $scope.config.addTurnChangedListener = $scope.addTurnChangedListener
 			}
 		}
 	}

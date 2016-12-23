@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-md-12 comments-recap" ng-show="showCommentsRecap()">
 					<span ng-bind-html="'global.review.comment.timemarkedCommentExplanation' | translate" ></span>
-					<a ng-repeat="(turn, comment) in newComments track by turn" title="{{comment.text}}" class="turn-link" ng-if="comment.text.length > 0" ng-click="goToTimestamp(turn)">{{turn}}</a>
+					<a ng-repeat="(turn, comment) in newComments track by turn" title="{{comment.text}}" class="turn-link" ng-if="comment.text.length > 0" ng-click="goToTimestamp(turn)">{{mediaPlayer.getTurnLabel(turn) }}</a>
 					<span class="explanation-second-part" ng-bind-html="'global.review.comment.timemarkedCommentExplanation2' | translate" ></span>
 				</div>
 				<div class="col-md-2" ng-show="!User.isLoggedIn()">

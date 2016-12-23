@@ -20,7 +20,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				$scope.bouncing = false
 
 				// Jump to the comment already
-				$log.debug('location', $location)
+				// $log.debug('location', $location)
 				if ($location.$$hash) {
 					$timeout(function() {
 						// Find the turn label that is about the current turn
@@ -32,7 +32,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				// External API
 				$scope.controller.onTurnChanged = function(turn) {
 					$scope.latestTurnRequest = turn
-					// $log.debug('onTurnChanged', turn)
+					// $log.debug('onTurnChanged in commentDisplayTimemarked', turn, $scope.fullCommentTurns, $scope.latestTurnRequest)
 
 					if (!$scope.bouncing) {
 						$scope.bouncing = true
@@ -48,14 +48,16 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 
 					$scope.$apply()
 
-					var turn = $scope.latestTurnRequest
+					// var turn = $scope.latestTurnRequest
 
-					if (turn == 'mulligan')
-						turn = '00mulligan'
-					if (turn == 'endgame')
-						turn = 'ZZendgame'
+					// if (turn == 'mulligan')
+					// 	turn = '00mulligan'
+					// if (turn == 'endgame')
+					// 	turn = 'ZZendgame'
 
-					$scope.currentTurn = turn
+					// $scope.currentTurn = turn
+					$scope.currentTurn = $scope.latestTurnRequest
+					// $log.debug('processTurnChanged in commentDisplayTimemarked', $scope.getCurrentTurn(), $scope.mediaPlayer.getTurnLabel($scope.getCurrentTurn()), $scope.fullCommentTurns)
 					$scope.$broadcast('$$rebind::' + 'turnRefresh')
 
 					$timeout(function() {
@@ -84,22 +86,27 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				}
 
 				$scope.getCurrentTurn = function() {
-					var turn = $scope.currentTurn || $scope.mediaPlayer.getCurrentTimestamp()
-					if (turn == 'mulligan')
-						turn = '00mulligan'
-					if (turn == 'endgame')
-						turn = 'ZZendgame'
-					return turn
+					// let turn = $scope.currentTurn || $scope.mediaPlayer.getCurrentTimestamp()
+					return $scope.currentTurn
+					// let turnLabel = $scope.mediaPlayer.getTurnLabel ? $scope.mediaPlayer.getTurnLabel($scope.currentTurn) : $scope.currentTurn
+					// if (turn == 'mulligan')
+					// 	turn = '00mulligan'
+					// if (turn == 'endgame')
+					// 	turn = 'ZZendgame'
+					// return turn
+					// return turnLabel
 				}
 
 				$scope.getTurnLabel = function(turn) {
-					if (turn == '00mulligan')
-						turn = 'mulligan'
-					if (turn == 'ZZendgame')
-						turn = 'endgame'
+					// if (turn == '00mulligan')
+					// 	turn = 'mulligan'
+					// if (turn == 'ZZendgame')
+					// 	turn = 'endgame'
+					// console.log('in commentDisplayTimemarked getting turn label', $scope.mediaPlayer.getTurnLabel(turn), turn)
+					let turnLabel = $scope.mediaPlayer.getTurnLabel ? $scope.mediaPlayer.getTurnLabel(turn) : turn
 
 					// $log.debug('getting turn label for', turn)
-					var text = TextParserService.parseText($scope.review, turn, $scope.plugins)
+					var text = TextParserService.parseText($scope.review, turnLabel, $scope.plugins)
 					// $log.debug('text is', text)
 					// Once parsed, there is an <a> tag before the turn label
 					text = text.replace('>t', '>' + $translate.instant('global.review.comment.timemarked.turns.turn'))
@@ -126,16 +133,27 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				})
 
 				$scope.getCommentTurns = function() {
-					// $log.debug('getting comment turns', $scope.review)
+					$log.debug('getting comment turns', $scope.review, $scope.mediaPlayer)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
-						if (commentTurns.indexOf(comment.timestamp) == -1) 
-							commentTurns.push(comment.timestamp)
-					})
+						let commentTurn = comment.timestamp
 
-					var orderedCommentTurns = commentTurns.sort(function(a, b) {
-						return $scope.naturalCompare(a, b)
+						if (isNaN(commentTurn)) {
+							commentTurn = $scope.mediaPlayer.getTurnNumber(commentTurn)
+						}
+						commentTurn = parseInt(commentTurn)
+
+						if (commentTurns.indexOf(commentTurn) == -1) 
+							commentTurns.push(commentTurn)
 					})
+					$log.debug('comment turns', commentTurns)
+					commentTurns.sort()
+
+					let orderedCommentTurns = commentTurns
+					// var orderedCommentTurns = commentTurns.sort(function(a, b) {
+					// 	return $scope.naturalCompare(a, b)
+					// })
+					$log.debug('orderedCommentTurns', orderedCommentTurns)
 
 					var fullCommentTurns = []
 					orderedCommentTurns.forEach(function(turn) {
@@ -145,31 +163,32 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 							comments: []
 						}
 						$scope.review.comments.forEach(function(comment) {
-							if (comment.timestamp == turn) {
+							// Trying to be backward compatible with the old way of storing turns
+							if (comment.timestamp == turn || $scope.getTurnLabel(comment.timestamp) == $scope.getTurnLabel(turn)) {
 								fullTurn.comments.push(comment)
 							}
 						})
 						fullCommentTurns.push(fullTurn)
 					})
 					$scope.fullCommentTurns = fullCommentTurns
-					// $log.debug('returning full turns', $scope.fullCommentTurns)
+					$log.debug('returning full turns', $scope.fullCommentTurns)
 				}
 				
-				$scope.naturalCompare = function(a, b) {
-				    var ax = [], bx = [];
+				// $scope.naturalCompare = function(a, b) {
+				//     var ax = [], bx = [];
 
-				    a.replace(/(\d+)|(\D+)/g, function(_, $1, $2) { ax.push([$1 || Infinity, $2 || ""]) });
-				    b.replace(/(\d+)|(\D+)/g, function(_, $1, $2) { bx.push([$1 || Infinity, $2 || ""]) });
+				//     a.replace(/(\d+)|(\D+)/g, function(_, $1, $2) { ax.push([$1 || Infinity, $2 || ""]) });
+				//     b.replace(/(\d+)|(\D+)/g, function(_, $1, $2) { bx.push([$1 || Infinity, $2 || ""]) });
 				    
-				    while(ax.length && bx.length) {
-				        var an = ax.shift();
-				        var bn = bx.shift();
-				        var nn = (an[0] - bn[0]) || an[1].localeCompare(bn[1]);
-				        if(nn) return nn;
-				    }
+				//     while(ax.length && bx.length) {
+				//         var an = ax.shift();
+				//         var bn = bx.shift();
+				//         var nn = (an[0] - bn[0]) || an[1].localeCompare(bn[1]);
+				//         if(nn) return nn;
+				//     }
 
-				    return ax.length - bx.length;
-				}
+				//     return ax.length - bx.length;
+				// }
 			}
 		}
 	}

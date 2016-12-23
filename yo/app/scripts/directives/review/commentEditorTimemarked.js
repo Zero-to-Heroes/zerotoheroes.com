@@ -18,6 +18,7 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 				
 				$scope.newComments = {}
 				$scope.currentTurn = 0
+				// $scope.turnLabels = {}
 
 				// $scope.newComment = {}
 				$scope.User = User
@@ -29,9 +30,10 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 					$timeout(function() {
 						$scope.$apply()
 						$scope.currentTurn = turn
-						// $log.debug('on turn changed in commentEditorTimemarked', $scope.currentTurn)
+						$log.debug('on turn changed in commentEditorTimemarked', $scope.currentTurn)
 						// $scope.newComments = $scope.newComments || {}
 						$scope.newComments[$scope.currentTurn] = $scope.newComments[$scope.currentTurn] || {}
+						// $scope.turnLabels[$scope.currentTurn] = turn.label || turn
 						// $log.debug('surfacing current comment', $scope.newComments[$scope.currentTurn], $scope.newComments)
 					})
 				}
@@ -39,9 +41,9 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 
 				$scope.triggerNewCommentEdition = function() {
 					$scope.addingComment = true
-					$scope.currentTurn = $scope.mediaPlayer.getCurrentTimestamp()
+					// $scope.currentTurn = $scope.mediaPlayer.getCurrentTurn()
 					$scope.newComments[$scope.currentTurn] = $scope.newComments[$scope.currentTurn] || {}
-					// $log.debug('current turn', $scope.currentTurn)
+					$log.debug('current turn', $scope.currentTurn)
 					$timeout(function() {
 						$('#newCommentArea')[0].focus()
 					})
@@ -63,6 +65,7 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 
 				$scope.cancelComments = function() {
 					$scope.newComments = {}
+					// $scope.turnLabels = {}
 					$scope.commentForm.$setPristine()
 					$scope.$broadcast('show-errors-reset')
 					$scope.mediaPlayer.onCancelEdition()
@@ -73,7 +76,7 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 					// $log.debug('uploading comments', $scope.newComments)
 					$scope.mediaPlayer.preUploadComment($scope.review, $scope.newComments)
 					if (!User.isLoggedIn()) {
-						for (var property in $scope.newComments) {
+						for (let property in $scope.newComments) {
 							if ($scope.newComments.hasOwnProperty(property)) {
 								$scope.newComments[property].author = $scope.guestUserName
 							}
@@ -144,7 +147,7 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 				$rootScope.$on('account.close', function() {
 					//$log.log('on account close in review.js');
 					if ($scope.onAddComment) {
-						$log.log('in onAddComment');
+						// $log.log('in onAddComment');
 						$scope.uploadComments();
 						$scope.onAddComment = false;
 						$scope.$broadcast('$$rebind::' + 'reviewRefresh')

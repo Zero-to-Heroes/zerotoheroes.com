@@ -193,25 +193,51 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$scope.mediaPlayer.initPlayer($scope.config, $scope.review, $scope.plugins, $scope.pluginNames, function(player) {
 				// $log.debug('media player init activated at ', Date.now() - $scope.debugTimestamp)
 				// $scope.controlFlow.pluginsReady = true
-				if (player) {
-					player.onTurnChanged(function(turn) {
-						// $log.debug('turn changed', turn)
-						if ($scope.commentEditorController.onTurnChanged) {
-							$scope.commentEditorController.onTurnChanged(turn)
-						}
-						if ($scope.commentDisplayController.onTurnChanged) {
-							$scope.commentDisplayController.onTurnChanged(turn)
-						}
-					})
-				}
 
 				$timeout(function() {
-					$scope.updateVideoInformation($scope.review)
+					$scope.finalizeInit(player)
 				})
-				$scope.handleUrlParameters()
 				// $log.debug('call to activate plugins completed')
 
 			})
+		}
+
+		$scope.finalizeInit = function(player) {
+			$scope.updateVideoInformation($scope.review)
+
+			$log.debug('registering callbacks', $scope.commentDisplayController, $scope.commentEditorController)
+			if (!$scope.commentEditorController.onTurnChanged || !$scope.commentDisplayController.onTurnChanged) {
+				$timeout(function() { $scope.finalizeInit(player) }, 50)
+				return
+			}
+
+			if (player) {
+				player.onTurnChanged(function(turn) {
+					$log.debug('review callback', turn)
+					$scope.turnChangedCallback(turn)
+				})
+			}
+
+			$scope.handleUrlParameters()
+		}
+
+		$scope.turnChangedCallback = function(turn) {
+			// $log.debug('calling turnChangedCallback', turn)
+			// if (!$scope.commentEditorController.onTurnChanged || !$scope.commentDisplayController.onTurnChanged) {
+			// 	$timeout(function() { $scope.turnChangedCallback(turn) })
+			// 	return
+			// }
+
+			$log.debug('turn changed', turn, $scope.commentEditorController, $scope.commentDisplayController)
+			if ($scope.commentEditorController.onTurnChanged) {
+				$log.debug('\talling callback in commentEditorController')
+				$scope.commentEditorController.onTurnChanged(turn)
+			}
+			if ($scope.commentDisplayController.onTurnChanged) {
+				$log.debug('\talling callback in commentDisplayController')
+				$scope.commentDisplayController.onTurnChanged(turn)
+			}
+
 		}
 
 		//===============

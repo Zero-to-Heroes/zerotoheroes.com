@@ -106,6 +106,7 @@ public class ReviewScorer {
 				Update update = update("debugScore", score);
 				update.set("helpScore", score.totalScore());
 				update.set("lastScoreUpdate", new Date());
+				update.set("scoreDebug", score);
 
 				WriteResult result = mongoTemplate.updateMulti(query, update, Review.class);
 				// log.debug("Updated " + result.getN() + " review");

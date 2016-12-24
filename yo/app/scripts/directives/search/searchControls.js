@@ -340,7 +340,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.hasMyContribution = function(review) {
-					let myName = $scope.User.getName().toLowerCase()
+					var myName = $scope.User.getName().toLowerCase()
 
 					if (review.author && review.author == myName) {
 						$log.debug('same author', review.author, myName, review)

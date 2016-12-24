@@ -103,7 +103,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					// if (turn == 'ZZendgame')
 					// 	turn = 'endgame'
 					// console.log('in commentDisplayTimemarked getting turn label', $scope.mediaPlayer.getTurnLabel(turn), turn)
-					let turnLabel = $scope.mediaPlayer.getTurnLabel ? $scope.mediaPlayer.getTurnLabel(turn) : turn
+					var turnLabel = $scope.mediaPlayer.getTurnLabel ? $scope.mediaPlayer.getTurnLabel(turn) : turn
 
 					// $log.debug('getting turn label for', turn)
 					var text = TextParserService.parseText($scope.review, turnLabel, $scope.plugins)

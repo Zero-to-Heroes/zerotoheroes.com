@@ -84,11 +84,11 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig', '$timeout',
 				}
 
 				$scope.getTurnLabel = function(turn) {
-					return $scope.externalPlayer.getTurnLabel ? $scope.externalPlayer.getTurnLabel(turn) : null
+					return $scope.externalPlayer.getTurnLabel ? $scope.externalPlayer.getTurnLabel(turn) : turn
 				}
 
 				$scope.getTurnNumber = function(label) {
-					return $scope.externalPlayer.getTurnNumber ? $scope.externalPlayer.getTurnNumber(label) : null
+					return $scope.externalPlayer.getTurnNumber ? $scope.externalPlayer.getTurnNumber(label) : turn
 				}
 
 				$scope.getCurrentTimestamp = function(timeString) {
@@ -110,6 +110,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig', '$timeout',
 				$scope.config.getCurrentTimestamp = $scope.getCurrentTimestamp
 				$scope.config.getTurnLabel = $scope.getTurnLabel
 				$scope.config.getTurnNumber = $scope.getTurnNumber
+				$scope.config.isPlayerLoaded = $scope.isPlayerLoaded
 				// $scope.config.addTurnChangedListener = $scope.addTurnChangedListener
 			}
 		}

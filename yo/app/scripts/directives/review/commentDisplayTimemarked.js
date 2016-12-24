@@ -127,9 +127,10 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					var shouldUpdate = !oldVal
 					shouldUpdate |= !$scope.fullCommentTurns
 					shouldUpdate |= (newVal && newVal.length != oldVal.length)
-					if (shouldUpdate)
+					if (shouldUpdate) {
 						$scope.getCommentTurns()
 						$scope.$broadcast('$$rebind::' + 'turnRefresh')
+					}
 				})
 
 				$scope.getCommentTurns = function() {
@@ -143,11 +144,13 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 						}
 						commentTurn = parseInt(commentTurn)
 
-						if (commentTurns.indexOf(commentTurn) == -1) 
+						if (commentTurns.indexOf(commentTurn) == -1) {
+							$log.debug('adding comment turn', commentTurn, 'from', comment.timestamp, comment)
 							commentTurns.push(commentTurn)
+						}
 					})
 					$log.debug('comment turns', commentTurns)
-					commentTurns.sort()
+					commentTurns.sort(function(a, b) { return a - b} )
 
 					var orderedCommentTurns = commentTurns
 					// var orderedCommentTurns = commentTurns.sort(function(a, b) {

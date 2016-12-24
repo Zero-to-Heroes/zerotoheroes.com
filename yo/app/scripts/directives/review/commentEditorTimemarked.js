@@ -76,7 +76,7 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 					// $log.debug('uploading comments', $scope.newComments)
 					$scope.mediaPlayer.preUploadComment($scope.review, $scope.newComments)
 					if (!User.isLoggedIn()) {
-						for (let property in $scope.newComments) {
+						for (var property in $scope.newComments) {
 							if ($scope.newComments.hasOwnProperty(property)) {
 								$scope.newComments[property].author = $scope.guestUserName
 							}

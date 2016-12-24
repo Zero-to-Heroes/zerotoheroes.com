@@ -136,7 +136,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					$log.debug('getting comment turns', $scope.review, $scope.mediaPlayer)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
-						let commentTurn = comment.timestamp
+						var commentTurn = comment.timestamp
 
 						if (isNaN(commentTurn)) {
 							commentTurn = $scope.mediaPlayer.getTurnNumber(commentTurn)
@@ -149,7 +149,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 					$log.debug('comment turns', commentTurns)
 					commentTurns.sort()
 
-					let orderedCommentTurns = commentTurns
+					var orderedCommentTurns = commentTurns
 					// var orderedCommentTurns = commentTurns.sort(function(a, b) {
 					// 	return $scope.naturalCompare(a, b)
 					// })

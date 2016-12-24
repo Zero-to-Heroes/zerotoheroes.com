@@ -1,7 +1,11 @@
 <view-title>{{sport && sportsConfig[sport].displayName ? sportsConfig[sport].displayName  + ' - ' : ''}} Help others</view-title>
 
 <div class="background-white listing-view help-others">
-	<div class="experimental-warning">We're testing a <a href="https://github.com/Zero-to-Heroes/zerotoheroes.com/issues/34" target="_blank">new (very very) experimental algorithm</a> to rank reviews that need the most help, so please report any weird behaviour <a href="https://discord.gg/uEh9gvJ" target="_blank">on Discord</a>. Also, Happy Fest of Winterveil!</div>
+	<div class="experimental-warning">
+		<p>We're testing a <a href="https://github.com/Zero-to-Heroes/zerotoheroes.com/issues/34" target="_blank">new (very very) experimental algorithm</a> to rank reviews that need the most help, so please report any weird behaviour <a href="https://discord.gg/uEh9gvJ" target="_blank">on Discord</a>. Note that because of Winterveil, updates to the algorithm probably won't happen right away :)</p>
+		<p>Mousing over the reviews on the list gives you an idea of the bonus and penalties each review received. Though the names are not always self-explicit, they all represent criteria from the above post.</p>
+		<p>And finally, Happy Fest of Winterveil!</p>
+	</div>
 	<section class="all-videos-header">
 		<h2 class="all-videos-headline">{{ 'global.home.helpothers.headline' | translate }}</h2>
 		<span title="{{ 'global.home.helpothers.explicitCriteria' | translate }}"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span>

@@ -155,7 +155,7 @@ public class ReviewDao {
 			crit.orOperator(allAuthor, allAuthorIds);
 			// crit.and("allAuthors").in(regexList);
 		}
-		else if ("helpScore".equals(criteria.getSort())) {
+		else if ("helpScore".equals(criteria.getSort()) && user != null) {
 			crit.and("allAuthorIds").nin(user.getId());
 		}
 

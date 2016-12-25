@@ -304,11 +304,14 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 						}
 					})
 
+					$scope.updateSort()
+
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 					$log.debug('filtering done after', (new Date() - now))
 				}
 
 				$scope.updateSort = function() {
+					$log.debug('Updating sort', $scope.options)
 					$scope.reviews.forEach(function(review) {
 						// $log.debug('setting previous flag', review.previousFilterOut, review.filteredOut, review)
 						review.filteredOut = review.previousFilterOut
@@ -340,9 +343,9 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.hasMyContribution = function(review) {
-					if (!$scope.User || !$scope.user.getName())
+					if (!$scope.User || !$scope.User.getName())
 						return false
-					
+
 					var myName = $scope.User.getName().toLowerCase()
 
 					if (review.author && review.author == myName) {
@@ -362,6 +365,9 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 						if (found)
 							return true
 					}
+
+					if (review.closedDate)
+						return true
 
 					return false
 				}

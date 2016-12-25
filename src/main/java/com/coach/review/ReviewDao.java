@@ -164,6 +164,8 @@ public class ReviewDao {
 			Calendar calendar = Calendar.getInstance();
 			calendar.add(Calendar.DAY_OF_YEAR, -20);
 			crit.and("publicationDate").gte(calendar.getTime());
+
+			crit.and("closedDate").is(null);
 		}
 
 		// Tags
@@ -214,6 +216,8 @@ public class ReviewDao {
 		fields.include("viewCount");
 		fields.include("tags");
 		fields.include("creationDate");
+		fields.include("publicationDate");
+		fields.include("closedDate");
 		fields.include("sport");
 		fields.include("participantDetails");
 		fields.include("metaData");

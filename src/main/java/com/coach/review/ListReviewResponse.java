@@ -34,7 +34,7 @@ public class ListReviewResponse {
 	public static class ResponseReview {
 
 		private String id;
-		private Date creationDate, lastModifiedDate;
+		private Date creationDate, lastModifiedDate, publicationDate, closedDate;
 		private String title;
 		private Sport sport;
 		private ParticipantDetails participantDetails;
@@ -60,6 +60,8 @@ public class ListReviewResponse {
 			result.id = review.getId();
 			result.creationDate = review.getCreationDate();
 			result.lastModifiedDate = review.getLastModifiedDate();
+			result.publicationDate = review.getPublicationDate();
+			result.closedDate = review.getClosedDate();
 			result.title = review.getTitle();
 			result.participantDetails = review.getParticipantDetails();
 			result.metaData = review.getMetaData();

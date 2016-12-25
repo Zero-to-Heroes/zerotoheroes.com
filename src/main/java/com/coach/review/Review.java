@@ -161,6 +161,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// auto-closed
 	private Date closedDate;
 
+	@Indexed
 	private float helpScore;
 	private ReviewScore debugScore;
 	private Date lastScoreUpdate;

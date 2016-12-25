@@ -4,6 +4,7 @@ import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
 import static org.springframework.data.mongodb.core.query.Update.*;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -61,7 +62,10 @@ public class ReviewScorer {
 		// calendar.add(Calendar.HOUR_OF_DAY, -1);
 
 		Criteria crit = where("visibility").is("public");
-		crit.and("closedDate").is(null);
+		// crit.and("closedDate").is(null);
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DAY_OF_YEAR, -20);
+		crit.and("publicationDate").gte(calendar.getTime());
 
 		// Debug
 		// calendar.add(Calendar.DAY_OF_YEAR, -15);

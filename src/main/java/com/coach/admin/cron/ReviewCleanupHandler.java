@@ -91,24 +91,32 @@ public class ReviewCleanupHandler {
 
 		// Retrieve all the keys
 		Criteria crit = where("publicationDate").is(null);
+		crit.and("visibility").is("public");
 		Query query = new Query(crit);
 		Field fields = query.fields();
 		fields.include("id");
-		List<Review> reviewIds = mongoTemplate.find(query, Review.class);
-		log.debug("Will rebuild " + reviewIds.size() + " reviews");
+		fields.include("creationDate");
+		fields.include("visibility");
 
-		for (Review reviewId : reviewIds) {
-			log.debug("rebuilding review " + reviewId);
-			Review review = reviewRepository.findById(reviewId.getId());
-			if (review.getPublicationDate() == null) {
-				review.setPublicationDate(review.getCreationDate());
-				if (review.getKey() != null) {
-					review.setTemporaryReplay(null);
-				}
-				reviewRepository.save(review);
-				log.debug("\tUpdated ");
-			}
-		}
+		List<Review> reviews = mongoTemplate.find(query, Review.class);
+
+		log.debug("Will rebuild " + reviews.size() + " reviews");
+
+		// for (Review review : reviews) {
+		//
+		// Criteria updateCrit = where("id").is(review.getId());
+		// Query updateQ = query(updateCrit);
+		//
+		// if (review.getCreationDate() == null ||
+		// !"public".equalsIgnoreCase(review.getVisibility()) ||
+		// review.getPublicationDate() != null) {
+		// throw new NullPointerException("Incorrect review " + review);
+		// }
+		//
+		// Update update = update("publicationDate", review.getCreationDate());
+		// WriteResult result = mongoTemplate.updateMulti(updateQ, update,
+		// Review.class);
+		// }
 
 		return new ResponseEntity<String>("Done", HttpStatus.OK);
 	}

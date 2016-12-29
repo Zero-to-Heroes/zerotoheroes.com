@@ -1,8 +1,8 @@
 package com.coach.admin;
 
-import static java.util.Comparator.comparing;
-import static org.springframework.data.mongodb.core.query.Criteria.where;
-import static org.springframework.data.mongodb.core.query.Query.query;
+import static java.util.Comparator.*;
+import static org.springframework.data.mongodb.core.query.Criteria.*;
+import static org.springframework.data.mongodb.core.query.Query.*;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import lombok.extern.slf4j.Slf4j;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +33,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coach.core.security.User;
+import com.coach.profile.Profile;
+import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
 import com.coach.review.Comment;
 import com.coach.review.Review;
@@ -44,6 +44,8 @@ import com.coach.review.scoring.scorers.WaitingForOPScorer;
 import com.coach.tag.Tag;
 import com.coach.user.UserRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping(value = "/api/admin")
 @Slf4j
@@ -51,6 +53,9 @@ public class AdminApiHandler {
 
 	@Autowired
 	UserRepository userRepository;
+
+	@Autowired
+	ProfileRepository profileRepo;
 
 	@Autowired
 	ProfileService profileService;
@@ -139,12 +144,20 @@ public class AdminApiHandler {
 			userEmails.put(user.getUsername(), user.getEmail());
 		}
 
+		Map<String, Boolean> contactPreferences = profileRepo.findAllByUserId(authorIds).stream()
+				.collect(Collectors.toMap(Profile::getUserId, pref -> pref.getPreferences().isSiteNotifications()));
+
 		// Get number of reviews posted by author under a single tag
 		Map<String, Map<String, List<String>>> recentReviewAsked = new HashMap<>();
 		for (Review review : reviews) {
 			if (CollectionUtils.isEmpty(review.getTags())) {
 				// log.debug("No tag: " + review.getUrl() + ": " +
 				// review.getTags());
+				continue;
+			}
+
+			if (contactPreferences.get(review.getAuthorId()) == null || !contactPreferences.get(review.getAuthorId())) {
+				log.debug("Unspecified or disallowed contact: " + review.getAuthorId());
 				continue;
 			}
 
@@ -173,6 +186,75 @@ public class AdminApiHandler {
 						+ recentReviewAsked.get(author).get(tag).size() + ", "
 						+ recentReviewAsked.get(author).get(tag));
 			}
+		}
+
+		return new ResponseEntity<String>("Done", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/findPotentialPingsArena", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> findWhoToPingArena() {
+
+		if ("prod".equalsIgnoreCase(
+				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
+
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DAY_OF_YEAR, -90);
+
+		Criteria crit = where("publicationDate").gte(calendar.getTime());
+		crit.and("published").is(true);
+		crit.and("visibility").is("public");
+		crit.and("authorId").ne(null);
+		crit.and("metaData.gameMode").is("arena-game");
+
+		Query query = query(crit);
+
+		Field fields = query.fields();
+		fields.include("author");
+		fields.include("sport");
+		fields.include("id");
+		fields.include("authorId");
+		fields.include("title");
+
+		// Find all the latest reviews
+		List<Review> reviews = mongoTemplate.find(query, Review.class);
+
+		log.debug("Found " + reviews.size() + " reviews");
+
+		// Get all users for posted reviews
+		Set<String> authorIds = reviews.parallelStream().map(r -> r.getAuthorId()).collect(Collectors.toSet());
+		log.debug("By " + authorIds.size() + " different authors: " + authorIds);
+		Iterable<User> users = userRepository.findAll(authorIds);
+
+		Map<String, String> userEmails = new HashMap<>();
+		for (User user : users) {
+			userEmails.put(user.getUsername(), user.getEmail());
+		}
+
+		Map<String, Boolean> contactPreferences = profileRepo.findAllByUserId(authorIds).stream()
+				.collect(Collectors.toMap(Profile::getUserId, pref -> pref.getPreferences().isSiteNotifications()));
+
+		// Get number of reviews posted by author under a single tag
+		Map<String, List<String>> recentReviewAsked = new HashMap<>();
+		for (Review review : reviews) {
+
+			if (contactPreferences.get(review.getAuthorId()) == null || !contactPreferences.get(review.getAuthorId())) {
+				log.debug("Unspecified or disallowed contact: " + review.getAuthorId());
+				continue;
+			}
+
+			List<String> authorInfo = recentReviewAsked.get(review.getAuthor());
+			if (authorInfo == null) {
+				authorInfo = new ArrayList<>();
+				recentReviewAsked.put(review.getAuthor(), authorInfo);
+			}
+
+			authorInfo.add(review.getUrl());
+		}
+
+		// For each tag
+		System.out.println("User, Email, #Reviews");
+		for (String author : recentReviewAsked.keySet()) {
+			System.out.println(author + ", " + userEmails.get(author) + ", " + recentReviewAsked.get(author).size());
 		}
 
 		return new ResponseEntity<String>("Done", HttpStatus.OK);
@@ -234,14 +316,14 @@ public class AdminApiHandler {
 						.findFirst().get().getCreationDate();
 				System.out
 						.println(
-						"NOT_ACK, "
-								+ new SimpleDateFormat("yyy/MM/dd")
-										.format(review.getPublicationDate())
-								+ ", " + new SimpleDateFormat("yyy/MM/dd").format(firstCommentDate) + ", "
-								+ review.getUrl() + ", " + review.getAuthor() + ", "
-								+ userFind.stream().filter(u -> u.getId().equals(review.getAuthorId()))
-										.map(u -> u.getEmail()).findFirst().get()
-								+ ", " + review.getAllComments().size());
+								"NOT_ACK, "
+										+ new SimpleDateFormat("yyy/MM/dd")
+												.format(review.getPublicationDate())
+										+ ", " + new SimpleDateFormat("yyy/MM/dd").format(firstCommentDate) + ", "
+										+ review.getUrl() + ", " + review.getAuthor() + ", "
+										+ userFind.stream().filter(u -> u.getId().equals(review.getAuthorId()))
+												.map(u -> u.getEmail()).findFirst().get()
+										+ ", " + review.getAllComments().size());
 			}
 		}
 

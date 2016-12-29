@@ -1,6 +1,11 @@
 package com.coach.admin.user;
 
+import static org.springframework.data.mongodb.core.query.Criteria.*;
+import static org.springframework.data.mongodb.core.query.Query.*;
+import static org.springframework.data.mongodb.core.query.Update.*;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -8,11 +13,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Field;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +43,7 @@ import com.coach.review.ReviewRepository;
 import com.coach.sport.SportRepository;
 import com.coach.user.ResetPasswordRepository;
 import com.coach.user.UserRepository;
+import com.mongodb.WriteResult;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -59,6 +71,9 @@ public class AdminUserApiHandler {
 
 	@Autowired
 	NotificationDao notificationDao;
+
+	@Autowired
+	MongoTemplate mongoTemplate;
 
 	private final String environment;
 
@@ -158,6 +173,59 @@ public class AdminUserApiHandler {
 		}
 
 		return result;
+	}
+
+	@RequestMapping(value = "/updateAllUsersContactPref", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> updateContactPrefs() {
+
+		if ("prod".equalsIgnoreCase(
+				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
+
+		List<String> emails = Arrays.asList("wouter.89@gmail.com", "jeromehebert@ymail.com",
+				"terry.pritchard@gmail.com", "rishabh.bajpai@outlook.com", "jamaldieter7@hotmail.com",
+				"thibaud@zerotoheroes.com", "sparksterzero@gmail.com", "nfaivret@hotmail.com",
+				"jeremie.corbier@gmail.com", "thibaud.jobert@gmail.com", "debon.julien@gmail.com", "tmayeur@gmail.com",
+				"guillaume.dosser@gmail.com", "james_terry@me.com", "ninja523@wp.pl", "tizzle1298@gmail.com",
+				"dobotronut@yahoo.com", "keymaker_21@hotmail.com", "gruzja@o2.pl", "wrace12@gmail.com",
+				"steph.bonnat@free.fr", "james.green@gmail.com", "smg7d@virginia.edu", "pharaon51100@yahoo.com",
+				"bruno.pinheiro@hotmail.fr", "simspok@yahoo.fr", "bchapman01@gmail.com", "vincent.rampal@gmail.com",
+				"ayreon1001@hotmail.es", "echan01@gmail.com", "gharmuth96@hotmail.com", "seb@zerotoheroes.com",
+				"thibaud.jobert@facebook.com", "rlin81@gmail.com", "dataphreak2@gmail.com", "joey.sheff@gmail.com",
+				"kelkadiri@hotenet.com", "niuwang@live.com", "jonas.per.fromell@gmail.com", "davemacvicar@gmail.com",
+				"Ben104mad@gmail.com", "alex.mullex@yahoo.fr", "christophenegro@gmail.com",
+				"sebastien.tromp+test@gmail.com", "nico.grosjean@free.fr", "guillaumetromp@gmail.com",
+				"guillaume.jobert@gmail.com", "christophe.vallet@gmail.com", "pvennegues@gmail.com",
+				"pmarx@saulnes-badminton.com", "jeanflouret@yahoo.fr", "damian_leszek@yahoo.com",
+				"thibault.cambuzat@gmail.com", "shawnbjf@gmail.com", "saladirgaming@gmail.com",
+				"enidnama1301@hotmail.fr", "carole_f_fr@yahoo.fr", "phihag@phihag.de", "frederic.pierre.info@gmail.com",
+				"mail4.essence@gmail.com", "roger.martaud@gmail.com", "asad16@gmail.com", "delorme.renaud@gmail.com",
+				"sebastien.tromp+test15@gmail.com", "sebastien.tromp+test16@gmail.com", "denisulmer@gmail.com",
+				"simon.mair@gmx.de", "Sirkrispee@gmail.com", "rwix94@gmail.com", "sebastien.tromp@gmail.com",
+				"a24648@trbvn.com", "sebastien.tromp+daedin@gmail.com", "shrenik.shah@nextgenclearing.com",
+				"youwtipsolforge@gmail.com", "wesley124@gmail.com", "victor.history@hotmail.com",
+				"jake.godfrey99@gmail.com", "ivanof76@gmail.com", "alex200295@hotmail.fr", "superbenj@gmail.com",
+				"c2149670@trbvn.com", "mcrawford@gmail.com", "evg.veretennikov@gmail.com", "jimvandriel@upcmail.nl",
+				"peter.nastke@gmx.de", "outohuupio@hotmail.com", "tiberium1337@gmx.de", "tatu@alapta.org",
+				"19kamin@gamil.com", "kai.starkk@live.com", "24erre@gmaiil.com", "h2560524@mvrht.com");
+
+		Criteria crit = where("email").in(emails);
+		Query query = query(crit);
+		Field fields = query.fields();
+		fields.include("id");
+
+		List<String> ids = mongoTemplate.find(query, User.class).stream().map(u -> u.getId())
+				.collect(Collectors.toList());
+		log.debug("Update IDs " + ids.size());
+		log.debug("" + ids);
+
+		// Update the preference for all these users
+		Criteria uCrit = where("userId").in(ids);
+		Query uQuery = query(uCrit);
+
+		Update update = update("preferences.emailContact", false);
+		WriteResult result = mongoTemplate.updateMulti(uQuery, update, Profile.class);
+
+		return new ResponseEntity<String>("updated " + result.getN(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/updateAllUsers", method = RequestMethod.GET)

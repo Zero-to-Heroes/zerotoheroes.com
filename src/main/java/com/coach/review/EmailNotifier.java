@@ -1,7 +1,9 @@
 package com.coach.review;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -159,31 +161,41 @@ public class EmailNotifier {
 				String body = "Hey " + subscriber.getUsername() + "<br/>"
 						+ "<p>You got " + notifs.size() + " new notifications waiting for you <a href=\"http://www.zerotoheroes.com/u/" + subscriber.getUsername()
 						+ "/hearthstone/inbox/unread\">in your inbox</a>:";
+				//@formatter:on
 
 				// Add a small recap for each notif
 				body += "<ul>";
+				Set<String> doneReviews = new HashSet<>();
+
 				for (Notification notif : notifs) {
 
 					String strNotif = "<li>";
 
 					if (notif.getData() != null) {
-						if (notif.getData() instanceof NotificationCommentData) {
+						if (notif.getData() instanceof NotificationCommentData
+								&& !doneReviews.contains(((NotificationCommentData) notif.getData()).getReviewId())) {
 							NotificationCommentData data = (NotificationCommentData) notif.getData();
-							strNotif += "<b>New comment</b>";
-							strNotif += " by " + notif.getFrom() + " on <a href=\"" + data.getReviewUrl() + "#" +
-									data.getLinkId() + "\">" + notif.getTitle() + "</a>";
+							strNotif += "<b>New comments</b> on <a href=\"" + data.getReviewUrl() + "\">"
+									+ notif.getTitle() + "</a>";
+							doneReviews.add(data.getReviewId());
 						}
 						else if (notif.getData() instanceof NotificationReviewData) {
 							NotificationReviewData data = (NotificationReviewData) notif.getData();
 							strNotif += "<b>New review</b>";
-							strNotif += " by " + notif.getFrom() + " at <a href=\"" + data.getReviewUrl() + "\">" + notif.getTitle() + "</a>";
+							strNotif += " by " + notif.getFrom() + " at <a href=\"" + data.getReviewUrl() + "\">"
+									+ notif.getTitle() + "</a>";
+							doneReviews.add(data.getReviewId());
 						}
 					}
 
-					strNotif +="</li>";
+					strNotif += "</li>";
 					body += strNotif;
 				}
 				body += "</ul>";
+
+				body += "<p><i>Don't forget to show your support by upvoting / marking comments as helpful when appropriate. "
+						+ "And when you're satisfied with the advice you've received on your own review, please hit the (new!) \"I'm satisfied\" button "
+						+ "(this will help other reviewers better focus their efforts)</i></p>";
 
 				//@formatter:on
 				log.debug("Sending notification recap email " + body);

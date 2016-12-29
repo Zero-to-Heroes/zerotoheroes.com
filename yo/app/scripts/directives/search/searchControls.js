@@ -304,7 +304,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 						}
 					})
 
-					$scope.updateSort()
+					// $scope.updateSort()
 
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 					$log.debug('filtering done after', (new Date() - now))

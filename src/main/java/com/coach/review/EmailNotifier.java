@@ -195,7 +195,7 @@ public class EmailNotifier {
 
 				body += "<p><i>Don't forget to show your support by upvoting / marking comments as helpful when appropriate. "
 						+ "And when you're satisfied with the advice you've received on your own review, please hit the (new!) \"I'm satisfied\" button "
-						+ "(this will help other reviewers better focus their efforts)</i></p>";
+						+ "(this will help other reviewers better focus their efforts and make your other reviews rank higher on the Help Others page)</i></p>";
 
 				//@formatter:on
 				log.debug("Sending notification recap email " + body);

@@ -370,6 +370,7 @@
 				"from": "from",
 				"sent": "sent",
 				"empty": "You don't have any messages here",
+				"upvoteReminder": "Don't forget to show your support by upvoting / marking comments as helpful when appropriate. And when you're satisfied with the advice you've received on your own review, please hit the (new!) \"I'm satisfied\" button (this will help other reviewers better focus their efforts) :)",
 				"markUnreadButton": "Mark unread",
 				"markReadButton": "Mark read",
 				"markAllReadButton": "Mark all read",

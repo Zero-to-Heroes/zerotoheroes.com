@@ -289,6 +289,10 @@ body {
 .profile-page.messages .review-comments li .message-body {
   border-radius: 10px;
 }
+.profile-page.messages .upvote-reminder {
+  padding-left: 40px;
+  padding-right: 40px;
+}
 .video-ad-container {
   position: absolute;
   background: black;

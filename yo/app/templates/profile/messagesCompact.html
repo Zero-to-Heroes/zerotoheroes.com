@@ -29,6 +29,7 @@
 					</div>
 				</li>
 			</ul>
+			<p class="upvote-reminder">{{::translations.upvoteReminder}}</p>
 			<div class="action-footer" ng-if="::message.data.textKey != 'aggregatedReview'">
 				<a ng-click="markUnread(message, $event)" ng-if=":readMessage:message.readDate">{{::translations.markUnreadButton}}</a>
 				<a ng-click="markRead(message, $event)" ng-if=":readMessage:!message.readDate">{{::translations.markReadButton}}</a>

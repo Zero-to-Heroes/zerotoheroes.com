@@ -1,7 +1,7 @@
 /* Override default navbar collapse point.
 cf http://stackoverflow.com/questions/19827605/change-bootstrap-navbar-collapse-breakpoint-without-using-less
 */
-@media (max-width: 1620px) {
+@media (max-width: 1730px) {
 	.navbar .more-menu {
 		display: block;
 	}
@@ -15,7 +15,7 @@ cf http://stackoverflow.com/questions/19827605/change-bootstrap-navbar-collapse-
 	}
 }
 
-@media (max-width: 1520px) {
+@media (max-width: 1630px) {
 	.navbar li[collapse-priority=prio-3] {
 		display: none;
 	}
@@ -25,7 +25,7 @@ cf http://stackoverflow.com/questions/19827605/change-bootstrap-navbar-collapse-
 	}
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1520px) {
 	.navbar li[collapse-priority=prio-2] {
 		display: none;
 	}

@@ -169,10 +169,15 @@ public class ReviewDao {
 		}
 
 		// Tags
-		if (!CollectionUtils.isEmpty(criteria.getWantedTags())) {
+		if (!CollectionUtils.isEmpty(criteria.getWantedTags())
+				&& !CollectionUtils.isEmpty(criteria.getUnwantedTags())) {
+			crit.andOperator(where("allTags").all(criteria.getWantedTags()),
+					where("allTags").nin(criteria.getUnwantedTags()));
+		}
+		else if (!CollectionUtils.isEmpty(criteria.getWantedTags())) {
 			crit.and("allTags").all(criteria.getWantedTags());
 		}
-		if (!CollectionUtils.isEmpty(criteria.getUnwantedTags())) {
+		else if (!CollectionUtils.isEmpty(criteria.getUnwantedTags())) {
 			crit.and("allTags").nin(criteria.getUnwantedTags());
 		}
 

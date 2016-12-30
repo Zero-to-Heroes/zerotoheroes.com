@@ -62,7 +62,7 @@ public class ReviewScorer {
 		// calendar.add(Calendar.HOUR_OF_DAY, -1);
 
 		Criteria crit = where("visibility").is("public");
-		// crit.and("closedDate").is(null);
+		crit.and("closedDate").is(null);
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.DAY_OF_YEAR, -20);
 		crit.and("publicationDate").gte(calendar.getTime());

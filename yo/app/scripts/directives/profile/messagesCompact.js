@@ -29,6 +29,7 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 					markAllReadButton: $translate.instant('global.profile.messages.markAllReadButton'),
 					empty: $translate.instant('global.profile.messages.empty'),
 					upvoteReminder: $translate.instant('global.profile.messages.upvoteReminder'),
+					upvoteReminderShort: $translate.instant('global.profile.messages.upvoteReminderShort'),
 				}	
 
 				$scope.compactMessages = function() {

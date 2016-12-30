@@ -339,7 +339,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.dynamicOrder = function(review) {
-					return review[$scope.options.sort] || review.creationDate
+					return review[$scope.options.sort] || review[$scope.options.criteria.sort] || review.creationDate
 				}
 
 				$scope.hasMyContribution = function(review) {

@@ -6,7 +6,7 @@ import lombok.Data;
 public class ScoreWeights {
 
 	private float dateScoreWeight = 1f;
-	private float preReviewScoreWeight = 1f;
+	private float preReviewScoreWeight = 2f;
 	private float fieldsScoreWeight = .25f;
 	private float winLossScoreWeight = 1f;
 	private float helpReceivedScoreWeight = 2f;

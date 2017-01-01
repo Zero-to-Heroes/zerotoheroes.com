@@ -22,20 +22,21 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 
 				// $scope.newComment = {}
 				$scope.User = User
-
-
-
+				// $scope.bouncing = false
 				// External API
 				$scope.controller.onTurnChanged = function(turn) {
+					$scope.currentTurn = turn
+					$log.debug('on turn changed in commentEditorTimemarked', $scope.currentTurn, $scope.newComments)
+					// $scope.newComments = $scope.newComments || {}
+					$scope.newComments[$scope.currentTurn] = $scope.newComments[$scope.currentTurn] || {}
+					// $scope.turnLabels[$scope.currentTurn] = turn.label || turn
+					// $log.debug('surfacing current comment', $scope.newComments[$scope.currentTurn], $scope.newComments)
+					// $scope.bouncing = false
 					$timeout(function() {
 						$scope.$apply()
-						$scope.currentTurn = turn
-						$log.debug('on turn changed in commentEditorTimemarked', $scope.currentTurn)
-						// $scope.newComments = $scope.newComments || {}
-						$scope.newComments[$scope.currentTurn] = $scope.newComments[$scope.currentTurn] || {}
-						// $scope.turnLabels[$scope.currentTurn] = turn.label || turn
-						// $log.debug('surfacing current comment', $scope.newComments[$scope.currentTurn], $scope.newComments)
-					})
+					}, 50)
+					
+
 				}
 
 

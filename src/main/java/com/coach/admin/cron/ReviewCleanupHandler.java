@@ -16,6 +16,7 @@ import org.springframework.data.mongodb.core.query.Field;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -142,6 +143,40 @@ public class ReviewCleanupHandler {
 		PageRequest pageRequest = new PageRequest(0, 20);
 
 		query.with(pageRequest);
+
+		List<Review> find = mongoTemplate.find(query, Review.class);
+		log.debug("Parsing " + find.size() + " reviews to add meta data");
+
+		for (Review review : find) {
+			review.setInvalidGame(false);
+			try {
+				if ("arena-draft".equals(review.getReviewType())) {
+					draftParser.addMetaData(review);
+				}
+				else if ("game-replay".equals(review.getReviewType()) && !"video/mp4".equals(review.getFileType())) {
+					gameParser.addMetaData(review);
+				}
+				else {
+					log.warn("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
+				}
+			}
+			catch (Exception e) {
+				log.info("Could not parse meta data for " + review.getId(), e);
+				review.setInvalidGame(true);
+			}
+			review.buildAllAuthors();
+			review.setLastMetaDataParsingDate(new Date());
+		}
+		reviewRepository.save(find);
+
+		return new ResponseEntity<String>("processed " + find.size() + " reviews", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/parseMetaData/{reviewId}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> parseMetaData(@PathVariable("reviewId") final String id) {
+
+		Criteria crit = where("id").is(id);
+		Query query = query(crit);
 
 		List<Review> find = mongoTemplate.find(query, Review.class);
 		log.debug("Parsing " + find.size() + " reviews to add meta data");

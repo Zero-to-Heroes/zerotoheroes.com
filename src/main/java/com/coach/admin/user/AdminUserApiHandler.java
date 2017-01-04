@@ -37,8 +37,6 @@ import com.coach.notifications.NotificationDao;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
 import com.coach.profile.ProfileService;
-import com.coach.review.Comment;
-import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.sport.SportRepository;
 import com.coach.user.ResetPasswordRepository;
@@ -91,7 +89,7 @@ public class AdminUserApiHandler {
 
 		log.debug("Retrieving user info");
 
-		List<Review> reviews = reviewRepository.findAll();
+		// List<Review> reviews = reviewRepository.findAll();
 		List<User> users = userRepository.findAll();
 		List<Profile> profiles = profileRepository.findAll();
 
@@ -112,7 +110,7 @@ public class AdminUserApiHandler {
 			info.setName(user.getUsername());
 			info.setEmail(user.getEmail());
 			if (user.getCreationDate() == null) {
-				log.error("No creation date for " + user);
+				log.info("No creation date for " + user);
 				user.setCreationDate(DateTimeFormat.forPattern("yyyy-MM-dd").parseDateTime("2015-09-01").toDate());
 			}
 			info.setRegistrationDate(new DateTime(user.getCreationDate()));
@@ -122,23 +120,23 @@ public class AdminUserApiHandler {
 			infos.put(user.getId(), info);
 		}
 
-		for (Review review : reviews) {
-			if (!review.isPublished()) {
-				continue;
-			}
-			// log.debug("adding review " + review);
-			if (review.getAuthorId() != null) {
-				infos.get(review.getAuthorId()).addReview(review);
-			}
-			if (review.getComments() != null) {
-				for (Comment comment : review.getAllComments()) {
-					if (comment.getAuthorId() != null) {
-						infos.get(comment.getAuthorId()).addComment(review);
-					}
-				}
-			}
-		}
-		// log.debug("Built user info");
+		// for (Review review : reviews) {
+		// if (!review.isPublished()) {
+		// continue;
+		// }
+		// // log.debug("adding review " + review);
+		// if (review.getAuthorId() != null) {
+		// infos.get(review.getAuthorId()).addReview(review);
+		// }
+		// if (review.getComments() != null) {
+		// for (Comment comment : review.getAllComments()) {
+		// if (comment.getAuthorId() != null) {
+		// infos.get(comment.getAuthorId()).addComment(review);
+		// }
+		// }
+		// }
+		// }
+		log.debug("Built user info: " + infos.size());
 
 		List<UserInfo> result = new ArrayList<>();
 		result.addAll(infos.values());

@@ -1,4 +1,8 @@
 <li class="review-list-item">
+	<div class="review-score" bs-popover="popover" data-trigger="click" data-template="templates/search/reviewScoreHelp.html" data-placement="right" data-container="body">
+		<span class="score">{{::video.helpScore | number: 0}}</span>
+		<span class="glyphicon glyphicon-info-sign"></span>
+	</div>
 	<a href="{{::buildUrl(video)}}" class="review-link">
 		<img class="visibility" ng-class="::video.visibility" ng-if="::showVisibility && video.visibility && video.visibility != 'public'" title="{{::getVisibilityTitle(video) }}" src="{{::config.images['visibility' + video.visibility] }}" />
 		<span class="skill-level" ng-if="::getSkillLevelSource(video)">

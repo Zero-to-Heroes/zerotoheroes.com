@@ -1,0 +1,14 @@
+<div class="review-score-tooltip">
+	<h2>{{::translations.scoreHelpTitle}}</h2>
+	<span class="explanation">{{::translations.scoreHelpExplanation}}</span>
+	<ul>
+		<li><span class="criteria-label"><span class="glyphicon glyphicon-info-sign" title="{{::translations.scoreHelpPreReviewTooltip}}"></span>{{::translations.scoreHelpPreReview}} :</span> {{::video.scoreDebug.preReviewScore | number:0}}</li>
+		<li><span class="criteria-label"><span class="glyphicon glyphicon-info-sign" title="{{::translations.scoreHelpHelpReceivedTooltip}}"></span>{{::translations.scoreHelpHelpReceived}} :</span> {{::video.scoreDebug.helpReceivedCommentsScore + video.scoreDebug.helpReceivedContributorsScore + video.scoreDebug.helpReceivedUpvotedCommentsScore | number:0}}</li>
+		<li><span class="criteria-label"><span class="glyphicon glyphicon-info-sign" title="{{::translations.scoreHelpFieldsTooltip}}"></span>{{::translations.scoreHelpFields}}:</span> {{::video.scoreDebug.fieldsScore | number:0}}</li>
+		<li><span class="criteria-label"><span class="glyphicon glyphicon-info-sign" title="{{::translations.scoreHelpDateTooltip}}"></span>{{::translations.scoreHelpDate}} :</span> {{::video.scoreDebug.dateScore | number:0}}</li>
+		<li><span class="criteria-label"><span class="glyphicon glyphicon-info-sign" title="{{::translations.scoreHelpAuthorReputationTooltip}}"></span>{{::translations.scoreHelpAuthorReputation}} :</span> {{::video.scoreDebug.authorReputationScore | number:0}}</li>
+		<li><span class="criteria-label"><span class="glyphicon glyphicon-info-sign" title="{{::translations.scoreHelpOpenReviewsTooltip}}"></span>{{::translations.scoreHelpOpenReviews}} :</span> {{::video.scoreDebug.openReviewScore | number:0}}</li>
+		<li><span class="criteria-label"><span class="glyphicon glyphicon-info-sign" title="{{::translations.scoreHelpWinLossTooltip}}"></span>{{::translations.scoreHelpWinLoss}} :</span> {{::video.scoreDebug.winLossScore | number:0}}</li>
+	</ul>
+	<span class="feedback-needed" ng-bind-html="::translations.feedbackNeeded"></span>
+</div>

@@ -299,7 +299,28 @@
 				"viewsTitle": "Number of views",
 				"submitted": "Submitted",
 				"modified": "Updated",
-				"by": "by"
+				"by": "by",
+				"score": {
+					"title": "Review score",
+					"scoreHelpExplanation": "The review score helps reviewer focus on reviews that need help the most. Detailed scores are:",
+					"feedbackNeeded": "This scoring system is still experimental, and we <a href=\"https://github.com/Zero-to-Heroes/zerotoheroes.com/issues/20\" target=\"_blank\">welcome any feedback</a>",
+					"criteria": {
+						"scoreHelpPreReview": "Pre-review",
+						"scoreHelpPreReviewTooltip": "Has the Original Poster gone through the review themselves and detailed their thought process? We believe the reviews are of the highest quality when the OP takes some time to go through the review first, since it lets reviewers comment not only on the plays themselves, but also on the thought process",
+						"scoreHelpHelpReceived": "Help received",
+						"scoreHelpHelpReceivedTooltip": "We want to push forward the reviews that haven't received a lot of help yet. Here we take into account the number of comments received, the number of different contributors and the quality of the comments (ie the upvotes)",
+						"scoreHelpFields": "All info present",
+						"scoreHelpFieldsTooltip": "Reviews where the decklist is present are easier to comment on. Also, we want to encourage non-arena reviews to tag the games with the correct archetype",
+						"scoreHelpDate": "Publication date",
+						"scoreHelpDateTooltip": "We want to keep the reviews relatively fresh. Date score will increase the first couple of days and start getting lower and lower after that until the review is no longer in the search results",
+						"scoreHelpAuthorReputation": "Author karma",
+						"scoreHelpAuthorReputationTooltip": "We want to reward the players who help others (which is shown by their reputation score). Later on, we'll also consider additional elements, like the overall quality of the reviews they publish, and how often they acknowledge their reviewers' efforts",
+						"scoreHelpOpenReviews": "Open reviews",
+						"scoreHelpOpenReviewsTooltip": "We want to favor quality of reviews over quantity. Keeping only a few reviews open at the same time earns a bonus that will make the reviews show higher in the rankings. You can (and should) close the reviews you consider done by clicking the \"I'm satisfied\" button in the review itself",
+						"scoreHelpWinLoss": "Win/Loss",
+						"scoreHelpWinLossTooltip": "Losses are usually more interesting than victories, so a small bonus is awarded to lost games"
+					}
+				}
 			},
 			"wonTooltip": "The main player won",
 			"lostTooltip": "The main player lost",

@@ -475,6 +475,10 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+.review-list-item .review-score {
+  display: none;
+  cursor: pointer;
+}
 .review-list-item .body {
   flex-wrap: wrap;
 }
@@ -576,6 +580,11 @@ body {
 .list .review-list-item {
   width: 100%;
   margin-bottom: 15px;
+  flex-direction: row;
+  align-items: center;
+}
+.list .review-list-item > a {
+  flex-grow: 1;
 }
 .list .review-list-item .review-link {
   align-items: center;
@@ -638,8 +647,44 @@ body {
   margin-right: 15px;
   order: -1;
 }
+.grid .review-list-item .review-score {
+  display: none;
+}
 .grid .review-list-item read-only-tags div[data-type=tag]:nth-child(n + 3) {
   display: none;
+}
+.list.helpScore .review-list-item .review-score {
+  display: flex;
+  flex-direction: row;
+  width: 50px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin-left: 10px;
+}
+.review-score-tooltip {
+  background-color: rgba(0, 0, 0, 0.95);
+  max-width: 350px;
+  padding: 15px;
+}
+.review-score-tooltip h2 {
+  text-align: center;
+  margin-top: 0;
+}
+.review-score-tooltip ul {
+  padding-left: 10px;
+  margin-top: 10px;
+}
+.review-score-tooltip ul > li {
+  list-style-type: none;
+  margin-top: 2px;
+}
+.review-score-tooltip .criteria-label {
+  margin-right: 5px;
+}
+.review-score-tooltip .criteria-label .glyphicon {
+  margin-right: 5px;
 }
 .search-page-global .main-panel {
   width: calc(100% - 45px);
@@ -874,7 +919,7 @@ upload-replay-review .no-more-review-description-text {
     padding: 10px 10px;
   }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1160px) {
   .list .review-list-item .title-container {
     width: 250px;
   }
@@ -882,12 +927,12 @@ upload-replay-review .no-more-review-description-text {
     display: none;
   }
 }
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1050px) {
   .list .review-list-item .video-info-details {
     display: none;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 940px) {
   .list .review-list-item .review-link {
     flex-wrap: wrap;
     height: 200px;
@@ -898,7 +943,12 @@ upload-replay-review .no-more-review-description-text {
     order: -5;
   }
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 700px) {
+  .list .review-list-item .more-meta-data {
+    display: none;
+  }
+}
+@media screen and (max-width: 525px) {
   .list .review-list-item .skill-level {
     display: none;
   }

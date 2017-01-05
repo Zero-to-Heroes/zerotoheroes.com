@@ -26,7 +26,27 @@ app.directive('reviewListItem', ['$log', 'SportsConfig', '$translate',
 					coin: $translate.instant('global.listing.coinTooltip'),
 					commentsTitle: $translate.instant('global.listing.video.commentsTitle'),
 					viewsTitle: $translate.instant('global.listing.video.viewsTitle'),
-					usefulTitle: $translate.instant('global.listing.video.usefulTitle')
+					usefulTitle: $translate.instant('global.listing.video.usefulTitle'),
+
+					scoreHelpTitle: $translate.instant('global.listing.video.score.title'),
+					scoreHelpExplanation: $translate.instant('global.listing.video.score.scoreHelpExplanation'),
+					feedbackNeeded: $translate.instant('global.listing.video.score.feedbackNeeded'),
+					scoreHelpPreReview: $translate.instant('global.listing.video.score.criteria.scoreHelpPreReview'),
+					scoreHelpPreReviewTooltip: $translate.instant('global.listing.video.score.criteria.scoreHelpPreReviewTooltip'),
+					scoreHelpHelpReceived: $translate.instant('global.listing.video.score.criteria.scoreHelpHelpReceived'),
+					scoreHelpHelpReceivedTooltip: $translate.instant('global.listing.video.score.criteria.scoreHelpHelpReceivedTooltip'),
+					scoreHelpFields: $translate.instant('global.listing.video.score.criteria.scoreHelpFields'),
+					scoreHelpFieldsTooltip: $translate.instant('global.listing.video.score.criteria.scoreHelpFieldsTooltip'),
+					scoreHelpDate: $translate.instant('global.listing.video.score.criteria.scoreHelpDate'),
+					scoreHelpDateTooltip: $translate.instant('global.listing.video.score.criteria.scoreHelpDateTooltip'),
+					scoreHelpAuthorReputation: $translate.instant('global.listing.video.score.criteria.scoreHelpAuthorReputation'),
+					scoreHelpAuthorReputationTooltip: $translate.instant('global.listing.video.score.criteria.scoreHelpAuthorReputationTooltip'),
+					scoreHelpOpenReviews: $translate.instant('global.listing.video.score.criteria.scoreHelpOpenReviews'),
+					scoreHelpOpenReviewsTooltip: $translate.instant('global.listing.video.score.criteria.scoreHelpOpenReviewsTooltip'),
+					scoreHelpWinLoss: $translate.instant('global.listing.video.score.criteria.scoreHelpWinLoss'),
+					scoreHelpWinLossTooltip: $translate.instant('global.listing.video.score.criteria.scoreHelpWinLossTooltip'),
+
+
 				}
 
 				$scope.config = SportsConfig[$scope.sport]

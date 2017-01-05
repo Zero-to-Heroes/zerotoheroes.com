@@ -9,6 +9,11 @@
     	flex-wrap: wrap;
     }
 
+    .review-score {
+    	display: none;
+    	cursor: pointer;
+    }
+
 
 	.body {
 		flex-wrap: wrap;
@@ -149,6 +154,12 @@
 .list .review-list-item {
 	width: 100%;
 	margin-bottom: 15px;
+	flex-direction: row;
+	align-items: center;
+
+	& > a {
+		flex-grow: 1;
+	}
 
 	.review-link {
 		align-items: center;
@@ -223,6 +234,10 @@
 
 .grid .review-list-item {
 
+	.review-score {
+		display: none;
+	}
+
 	read-only-tags {
 
 		// Only show two tags in grid mode
@@ -230,4 +245,16 @@
 			display: none;
 		}
 	}
+}
+
+.list.helpScore .review-list-item .review-score {
+// .publicationDate .review-list-item .review-score {
+	display: flex;
+    flex-direction: row;
+    width: 50px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin-left: 10px;
 }

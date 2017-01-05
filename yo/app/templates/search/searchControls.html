@@ -172,6 +172,6 @@
 	<span>{{::translations.subscribedToSearch}}</span>
 </div>
 
-<ul class="video-listing {{options.displayMode}}">
-	<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true track by review.id" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut" title="{{::review.scoreDebug }}"></review-list-item>
+<ul class="video-listing {{options.displayMode}} {{options.criteria.sort}}">
+	<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true track by review.id" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut"></review-list-item>
 </ul>

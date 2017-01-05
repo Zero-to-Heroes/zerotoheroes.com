@@ -4,6 +4,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.review.Review;
 import com.coach.tag.Tag;
 
@@ -21,6 +22,11 @@ public class FieldsScorer {
 					score -= 10000;
 				}
 			}
+		}
+		else if (review.getMetaData() != null && review.getMetaData() instanceof HearthstoneMetaData
+				&& ("arena-game".equals(((HearthstoneMetaData) review.getMetaData()).getGameMode())
+						|| "arena-draft".equals(((HearthstoneMetaData) review.getMetaData()).getGameMode()))) {
+			score += 1;
 		}
 
 		if ("hearthstone".equals(review.getStrSport())

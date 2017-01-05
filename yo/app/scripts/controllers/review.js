@@ -13,6 +13,8 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			reopenReviewTooltîp: $translate.instant('global.review.reopenReviewTooltîp'),
 			reopenReviewButton: $translate.instant('global.review.reopenReviewButton'),
 			
+			articleLink: $translate.instant('global.review.articleLink'),
+
 			headline: $translate.instant('global.askPro.headline'),
 			tableCaption: $translate.instant('global.askPro.tableCaption'),
 			name: $translate.instant('global.askPro.name'),

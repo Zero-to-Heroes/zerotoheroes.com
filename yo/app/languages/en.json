@@ -651,7 +651,9 @@
 			"reopenReviewButton": "Reopen review",
 
 			"loadingComments": "Loading comments",
-			"restrictedAccess": "The author of the review has restricted its access, and only they can see it"
+			"restrictedAccess": "The author of the review has restricted its access, and only they can see it",
+
+			"articleLink": "Don't forget to read <a href=\"http://blog.zerotoheroes.com/en/2016/08/16/how-to-get-the-most-out-of-your-game-review/\" target=\"_blank\">our article</a> for tips to get the most from your review"
 		},
 		"upload": {
 			"choice": {

@@ -11,6 +11,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				mediaPlayer: '<',
 				plugins: '<',
 				sport: '<',
+
 				controller: '<'
 			},
 			link: function ($scope, element, attrs) {
@@ -28,6 +29,17 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 						$scope.scrollTo(element)
 					}, 100)
 				}
+
+				$scope.init = function() {
+					$scope.currentTurn = $scope.mediaPlayer.getCurrentTimestamp()
+					console.log('init current turn?', $scope.currentTurn)
+					if (!$scope.currentTurn) {
+						$timeout(function() {
+							$scope.init()
+						}, 50)
+					}
+				}
+				$scope.init()
 
 				// External API
 				$scope.controller.onTurnChanged = function(turn) {

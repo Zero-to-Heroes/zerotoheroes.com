@@ -51,6 +51,8 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					$scope.updateParamsFromUrl(params, 'contributorsValue')
 					$scope.updateParamsFromUrl(params, 'helpfulCommentsValue')
 					$scope.updateParamsFromUrl(params, 'ownVideos')
+					$scope.updateParamsFromUrl(params, 'visibility')
+					$scope.updateParamsFromUrl(params, 'openGames')
 
 					if ($location.search().wantedTags && (!params.wantedTags || params.wantedTags.length == 0)) {
 						params.wantedTags = $scope.unserializeTags($location.search().wantedTags)
@@ -79,6 +81,8 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 					$scope.updateUrlFromParam(params, 'helpfulCommentsValue')
 					$scope.updateUrlFromParam(params, 'ownVideos')
 					$scope.updateUrlFromParam(params, 'pageNumber')
+					$scope.updateUrlFromParam(params, 'visibility')
+					$scope.updateUrlFromParam(params, 'openGames')
 
 					if (params.wantedTags && params.wantedTags.length > 0) $location.search('wantedTags', $scope.serializeTags(params.wantedTags))
 					if (params.unwantedTags && params.unwantedTags.length > 0) $location.search('unwantedTags', $scope.serializeTags(params.unwantedTags))

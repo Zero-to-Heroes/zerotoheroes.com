@@ -342,7 +342,7 @@
 			"searchButtonTooltip": "When modifying the criteria above, we filter the reviews you received from the previous search. If you want to get all reviews that match your chosen criteria, use this button to relaunch a full search on the server",
 			"skillLabel": "at skill level",
 			"clearFilterButton": "Clear filters",
-			"ownVideos": "Limit the search to my own reviews",
+			"ownVideos": "Limit the search to the reviews I submitted",
 			"nbComments": {
 				"unlimited": "unlimited"
 			},
@@ -359,9 +359,13 @@
 				"creationDate": "Sort by creation date"
 			},
 			"visibility": {
-				"all": "Show all games",
+				"all": "Show all visibility",
 				"public": "Public only",
 				"unlisted": "Unlisted only"
+			},
+			"openGame": {
+				"all": "Show all games",
+				"openonly": "Open games only"
 			},
 			"ownReviews": {
 				"showAll": "Show all reviews",

@@ -47,6 +47,8 @@ public class ReviewSearchCriteria {
 	private Boolean ownVideos;
 
 	private String visibility;
+	private String openGames;
+
 	private String authorId, contributorId;
 
 	public List<Tag> getWantedTags() {

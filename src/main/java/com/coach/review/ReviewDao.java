@@ -160,12 +160,15 @@ public class ReviewDao {
 		}
 
 		// Don't include old reviews when looking for reviews that need help
-		if ("helpScore".equals(criteria.getSort())) {
+		if ("helpScore".equals(criteria.getSort()) || "openonly".equals(criteria.getOpenGames())) {
 			Calendar calendar = Calendar.getInstance();
 			calendar.add(Calendar.DAY_OF_YEAR, -20);
 			crit.and("publicationDate").gte(calendar.getTime());
 
 			crit.and("closedDate").is(null);
+		}
+		else if ("publicationDate".equals(criteria.getSort())) {
+			crit.and("publicationDate").ne(null);
 		}
 
 		// Tags

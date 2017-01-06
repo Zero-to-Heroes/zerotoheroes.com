@@ -118,6 +118,12 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					{ "value" : "unlisted", "label" : $translate.instant('global.search.visibility.unlisted') }
 				]
 
+				// Options for open games
+				$scope.openGamesOptions = [
+					{ "value" : null, "label" : $translate.instant('global.search.openGame.all') },
+					{ "value" : "openonly", "label" : $translate.instant('global.search.openGame.openonly') }
+				]
+
 				// Options for ranked play skill selection
 				$scope.rankOptions = []
 				for (var i = 25; i > 0; i--) {
@@ -263,12 +269,13 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				$scope.firstSearch()
 
 				$scope.onVideosLoaded = function(reviews) {
-					$log.debug('loaded reviews', reviews)
+					$log.debug('loaded reviews', reviews, $scope.options)
 					$scope.reviews = reviews
 					// $scope.referenceReviews = reviews
-					$scope.filterReviews()
+					// $scope.filterReviews()
 					// if ($scope.handle.callback) $scope.handle.callback()
 					// $scope.$broadcast('$$rebind::' + 'resultsRefresh')
+					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 				}
 
 
@@ -293,7 +300,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				// Dynamic search
 				//===============
 				$scope.filterReviews = function() {
-					$log.debug('filtering reviews', $scope.options.criteria)
+					$log.debug('filtering reviews', $scope.options)
 					var now = new Date()
 
 					// Remove reviews that don't match the criteria
@@ -339,7 +346,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				$scope.dynamicOrder = function(review) {
-					return review[$scope.options.sort] || review[$scope.options.criteria.sort] || review.creationDate
+					return review[$scope.options.sort] || review[$scope.options.criteria.sort] || -10000
 				}
 
 				$scope.hasMyContribution = function(review) {
@@ -506,6 +513,18 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 						if (criteria.visibility == 'public' && review.visibility != 'public') 
 							return false
 						if (criteria.visibility == 'restricted' && review.visibility == 'private') 
+							return false
+					}
+
+					// Open games
+					if (criteria.openGames) {
+						if (review.closedDate)
+							return false
+						if (!review.publicationDate)
+							return false
+
+						let twentyDaysPast = moment().subtract(20, 'days')
+						if (moment(review.publicationDate).isBefore(twentyDaysPast))
 							return false
 					}
 

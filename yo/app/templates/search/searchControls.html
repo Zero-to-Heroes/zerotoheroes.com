@@ -140,6 +140,9 @@
 			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.visibility" data-html="1" bs-options="::option.value as option.label for option in visibilityOptions" bs-select ng-change="filterReviews()" placeholder="{{visibilityOptions[0].label}}" ng-show="options.criteria.ownVideos">
 			  	<span>Action</span>
 			</button>
+			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.openGames" data-html="1" bs-options="::option.value as option.label for option in openGamesOptions" bs-select ng-change="filterReviews()" placeholder="{{openGamesOptions[0].label}}" ng-show="options.criteria.ownVideos && (!options.criteria.visibility || options.criteria.visibility == 'public')">
+			  	<span>Action</span>
+			</button>
 		</div>
 
 	</div>

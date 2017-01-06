@@ -523,7 +523,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 						if (!review.publicationDate)
 							return false
 
-						let twentyDaysPast = moment().subtract(20, 'days')
+						var twentyDaysPast = moment().subtract(20, 'days')
 						if (moment(review.publicationDate).isBefore(twentyDaysPast))
 							return false
 					}

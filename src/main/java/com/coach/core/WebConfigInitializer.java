@@ -24,11 +24,12 @@ public class WebConfigInitializer implements ServletContextInitializer {
 
 	@Autowired
 	public WebConfigInitializer(@Value("${videos.bucket.output.name}") String outputBucket,
-			@Value("${transcoding.sqs.queue.url}") String queue) {
+			@Value("${transcoding.sqs.queue.url}") String queue, @Value("${mongodb.host}") String dbHost) {
 		super();
 		this.outputBucket = outputBucket;
 		log.debug("!!" + outputBucket);
 		log.debug("!!" + queue);
+		log.debug("!!" + dbHost);
 	}
 
 	@Override

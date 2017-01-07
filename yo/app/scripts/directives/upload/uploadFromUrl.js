@@ -41,7 +41,13 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 					)
 				}
 
+				$scope.retryCount = 10
+
 				$scope.retrieveCompletionStatus = function() {
+					if ($scope.retryCount < 0) {
+						return
+					}
+
 					Api.Reviews.get({reviewId: MediaUploader.review.id}, 
 						function(data) {
 							$log.debug('retrieving data', data)
@@ -70,9 +76,10 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 						},
 						function(error) {
 							$log.error('Something went wrong!!', error)
+							$scope.retryCount--
 							$timeout(function() {
 								$scope.retrieveCompletionStatus()
-							}, 5000)
+							}, 10000)
 						}
 					);
 				}

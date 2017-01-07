@@ -104,7 +104,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 					)
 				}
 
-				$scope.retryCount = 5;
+				$scope.retryCount = 10;
 				$scope.retrieveCompletionStatus = function() {
 					if ($scope.retryCount < 0)
 						return
@@ -145,16 +145,16 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 								$scope.retryCount--
 								$timeout(function() {
 									$scope.retrieveCompletionStatus()
-								}, 5000)
+								}, 10000)
 							}
 						);
 					}
 					catch (e) {
-						$log.error('Something went wrong!! Retrying in 5s...', e, $scope.review)
+						$log.error('Something went wrong!! Retrying in 10s...', e, $scope.review)
 						$scope.retryCount--
 						$timeout(function() {
 							$scope.retrieveCompletionStatus()
-						}, 5000)
+						}, 10000)
 					}
 				}
 

@@ -90,8 +90,12 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 					)
 				}
 
-				$scope.retryCount = 5;
+				$scope.retryCount = 10;
 				$scope.retrieveCompletionStatus = function() {
+					if ($scope.retryCount <= 0) {
+						return
+					}
+					
 					$log.debug('retrieving completion status')
 					try {
 						Api.Reviews.get({reviewId: $scope.review.id}, 
@@ -123,18 +127,20 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 								}
 							},
 							function(error) {
-								$log.error('Something went wrong when getting status for arena draft!', error, $scope.review)
+								$log.error('Something went wrong when getting status for arena draft!', error, $scope.review, $scope.retryCount)
 								$timeout(function() {
 									$scope.retrieveCompletionStatus()
-								}, 5000)
+									$scope.retryCount--
+								}, 10000)
 							}
 						);
 					}
 					catch (e) {
-						$log.error('Something went wrong when getting status for arena draft!! Retrying in 5s...', e, $scope.review)
+						$log.error('Something went wrong when getting status for arena draft!! Retrying in 10s...', e, $scope.review, $scope.retryCount)
 						$timeout(function() {
 							$scope.retrieveCompletionStatus()
-						}, 5000)
+							$scope.retryCount--
+						}, 10000)
 					}
 				}
 

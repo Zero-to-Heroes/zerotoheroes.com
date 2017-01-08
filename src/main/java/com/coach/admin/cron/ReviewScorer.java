@@ -29,6 +29,7 @@ import com.coach.review.Review;
 import com.coach.review.scoring.CommentNeededScorer;
 import com.coach.review.scoring.ReviewScore;
 import com.coach.review.scoring.ScoreWeights;
+import com.coach.tag.Tag;
 import com.mongodb.WriteResult;
 
 import lombok.extern.slf4j.Slf4j;
@@ -89,7 +90,7 @@ public class ReviewScorer {
 		// TODO: integrate the count ofopen reviews by the users
 		Map<String, Integer> openReviews = new HashMap<>();
 		for (Review review : reviews) {
-			if (review.getAuthor() != null) {
+			if (review.getAuthor() != null && !isEntertainment(review)) {
 				Integer existingReviews = openReviews.get(review.getAuthor());
 				if (existingReviews == null) {
 					existingReviews = 0;
@@ -122,6 +123,13 @@ public class ReviewScorer {
 		}
 
 		return new ResponseEntity<String>("processed " + reviews.size() + " reviews", HttpStatus.OK);
+	}
+
+	private boolean isEntertainment(Review review) {
+		for (Tag tag : review.getTags()) {
+			if ("Entertainment".equalsIgnoreCase(tag.getText())) { return true; }
+		}
+		return false;
 	}
 
 	@RequestMapping(value = "/autoclose", method = RequestMethod.POST)

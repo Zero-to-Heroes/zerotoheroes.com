@@ -27,7 +27,8 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 					wantedTags: [],
 					unwantedTags: [],
 					sort: $scope.ownVideos ? 'creationDate' : 'publicationDate',
-					ownVideos: $scope.ownVideos
+					ownVideos: $scope.ownVideos,
+					openGames: $routeParams.open ? 'openonly' : ''
 						
 					// search: searchFn
 				},

@@ -24,6 +24,7 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 					$scope.profile = profile
 				})
 			}
+			$scope.getProfile()
 			
 			$scope.refresh = function() {
 				// Only refresh if we're logger in

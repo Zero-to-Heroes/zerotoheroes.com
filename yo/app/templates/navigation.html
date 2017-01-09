@@ -26,7 +26,7 @@
 		<li ng-class="{active: menuItem == 'search' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/search'}}">{{::translations.search}}</a></li>
 		<li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{::translations.coaches}}</a></li>
 		<li ng-class="{active: menuItem == 'forum' && !upload}" collapse-priority="prio-4"><a href="https://www.reddit.com/r/zerotoheroes/" target="_blank">{{::translations.forum}}</a></li>
-		<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos'}}">{{::translations.showOwnVideos}}</a></li>
+		<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos/' + (profile.openReviews > 0 ? 'open' : '') }}" class="has-badge">{{::translations.showOwnVideos}}<span class="badge" title="{{::translations.openReviewsBadge}}" ng-if="profile.openReviews > 0"><span class="value">{{::profile.openReviews}}</span></span></a></li>
 
 		<!-- Target element @see data-target above,
 	    can contain markup alreadu ie. <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a> 
@@ -47,7 +47,7 @@
 				<li ng-class="{active: menuItem == 'search' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/search'}}">{{::translations.search}}</a></li>
 				<li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{::translations.coaches}}</a></li>
 				<li ng-class="{active: menuItem == 'forum' && !upload}" collapse-priority="prio-4"><a href="https://www.reddit.com/r/zerotoheroes/" target="_blank">{{::translations.forum}}</a></li>
-				<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos'}}">{{::translations.showOwnVideos}}</a></li>
+				<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos/' + (profile.openReviews > 0 ? 'open' : '') }}" class="has-badge">{{::translations.showOwnVideos}}<span class="badge" ng-if="profile.openReviews > 0"><span class="value">{{::profile.openReviews}}</span></span></a></li>
 
 				<li class="name-input" collapse-priority="prio-2">
 					<ul zth-name-input show-logout="true" class="nav name-group" active="menuItem == 'profile'"></ul>

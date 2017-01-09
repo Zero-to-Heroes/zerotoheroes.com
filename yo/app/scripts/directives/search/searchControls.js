@@ -17,6 +17,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				showVisibilityToggle: '<',
 				referenceOptions: '<',
 				showVisibility: '<',
+				showOpenGamesFilter: '<',
 				handle: '<',
 				skipAutoSearch: '<'
 			},
@@ -235,13 +236,13 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 
 				$scope.searchFromClick = function() {
 					$location.search('')
-					$scope.search()
+					$scope.search(false)
 				}
 
-				$scope.search = function() {
+				$scope.search = function(hideCurrentResult) {
 					$log.debug('search in searchControls', $scope.options)
 					$scope.initMessages()
-					$scope.reviews = []
+					if (hideCurrentResult) $scope.reviews = []
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 					$scope.options.criteria.sport = $scope.sport
 					$scope.options.criteria.search($scope.options.criteria, true, $scope.pageNumber, $scope.onVideosLoaded)
@@ -312,6 +313,8 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					})
 
 					// $scope.updateSort()
+					// And relaunch a search
+					$scope.searchFromClick()
 
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 					$log.debug('filtering done after', (new Date() - now))

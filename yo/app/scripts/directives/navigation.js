@@ -19,12 +19,20 @@ app.directive('zthNavigation', ['User', '$log', '$location', 'Api', '$alert', '$
 					forum: $translate.instant('global.navigation.forum'),
 					showOwnVideos: $translate.instant('global.user.showOwnVideos'),
 					postVideo: $translate.instant('global.navigation.postVideo'),
-
+					openReviewsBadge: $translate.instant('global.navigation.openReviewsBadge'),
 				}
 
 				$scope.name = User.getName()
 				$scope.User = User;
 				$scope.showSportsNavigationPanel = false
+
+
+				$scope.getProfile = function() {
+					ProfileService.getProfile(function(profile) {
+						$scope.profile = profile
+					})
+				}
+				$scope.getProfile()
 
 				$scope.changeName = function() {
 					$scope.name = undefined;

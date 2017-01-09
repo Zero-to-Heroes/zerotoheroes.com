@@ -58,9 +58,17 @@
 		  	<span>Action</span>
 		</button>
 	</div>
-	
-	<a class="btn" ng-click="toggleAllVideos()" ng-if="showVisibilityToggle && options.onlyShowPublic && !hideAllFilters"><span>{{::translations.showAll}}</span></a>
-	<a class="btn" ng-click="toggleAllVideos()" ng-if="showVisibilityToggle && !options.onlyShowPublic && !hideAllFilters"><span>{{::translations.showOnlyPublic}}</span></a>
+		
+	<div class="search-group own-reviews" ng-if="showVisibilityToggle && !hideAllFilters">
+		<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.visibility" data-html="1" bs-options="::option.value as option.label for option in visibilityOptions" bs-select ng-change="filterReviews()" placeholder="{{visibilityOptions[0].label}}" ng-show="options.criteria.ownVideos">
+		  	<span>Action</span>
+		</button>
+	</div>
+	<div class="search-group open-reviews" ng-if="showOpenGamesFilter && !hideAllFilters">
+		<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.openGames" data-html="1" bs-options="::option.value as option.label for option in openGamesOptions" bs-select ng-change="filterReviews()" placeholder="{{openGamesOptions[0].label}}" ng-show="!options.criteria.visibility || options.criteria.visibility == 'public'">
+		  	<span>Action</span>
+		</button>
+	</div>
 
 	<div class="line-break" ng-if="!hideAllFilters"></div>
 
@@ -131,6 +139,14 @@
 		<!-- TODO: deck filter -->
 
 		<div class="line-break"></div>
+		
+		<div class="search-group open-reviews">
+			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.openGames" data-html="1" bs-options="::option.value as option.label for option in openGamesOptions" bs-select ng-change="filterReviews()" placeholder="{{openGamesOptions[0].label}}" ng-show="!options.criteria.visibility || options.criteria.visibility == 'public'">
+			  	<span>Action</span>
+			</button>
+		</div>
+
+		<div class="line-break"></div>
 
 		<!-- Only my own reviews -->
 		<div class="search-group own-reviews">
@@ -140,9 +156,6 @@
 			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.visibility" data-html="1" bs-options="::option.value as option.label for option in visibilityOptions" bs-select ng-change="filterReviews()" placeholder="{{visibilityOptions[0].label}}" ng-show="options.criteria.ownVideos">
 			  	<span>Action</span>
 			</button>
-			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.openGames" data-html="1" bs-options="::option.value as option.label for option in openGamesOptions" bs-select ng-change="filterReviews()" placeholder="{{openGamesOptions[0].label}}" ng-show="options.criteria.ownVideos && (!options.criteria.visibility || options.criteria.visibility == 'public')">
-			  	<span>Action</span>
-			</button>
 		</div>
 
 	</div>
@@ -150,7 +163,7 @@
 	<div class="line-break"></div>
 
 	<div class="search-block buttons-group">
-		<button type="submit" class="btn btn-default" title="{{::translations.searchButtonTooltip}}" ng-click="searchFromClick()" ng-if="!hideButtons"><span>{{::translations.searchButton}} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span></button>
+		<!-- <button type="submit" class="btn btn-default" title="{{::translations.searchButtonTooltip}}" ng-click="searchFromClick()" ng-if="!hideButtons"><span>{{::translations.searchButton}} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span></button> -->
 		<button type="submit" class="btn btn-default" ng-click="clearFilters()" ng-if="!hideButtons"><span>{{::translations.clearFilterButton}}</span></button>
 		<button class="btn btn-default" ng-click="showSubscriptionModal()" ng-hide="!sport || !User.isLoggedIn() || settingName" title="{{::translations.subscribeTooltip}}" ng-if="!hideButtons">{{::translations.subscribe}} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 

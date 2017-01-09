@@ -106,7 +106,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 		when('/s/:sport/allreviews', {
 			redirectTo: '/s/:sport/reviews'
 		}).
-		when('/s/:sport/myVideos/:pageNumber?', {
+		when('/s/:sport/myVideos/:open?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
@@ -114,7 +114,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			className: 'search-page-global',
 			menuItem: 'myVideos'
 		}).
-		when('/s/:sport/myvideos/:pageNumber?', {
+		when('/s/:sport/myvideos/:open?', {
 			templateUrl: 'views/videoListing.html',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,

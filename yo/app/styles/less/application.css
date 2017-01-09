@@ -66,6 +66,33 @@ body {
 .footer a {
   color: white;
 }
+nav.navbar-default .navbar-nav > li > .has-badge {
+  display: flex;
+}
+nav.navbar-default .navbar-nav > li > .has-badge .badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  color: #860412;
+  background-color: transparent;
+  padding: 0;
+}
+nav.navbar-default .navbar-nav > li > .has-badge .badge .value {
+  z-index: 7;
+  color: #860412;
+}
+nav.navbar-default .navbar-nav > li > .has-badge .badge:before {
+  content: "";
+  background-color: #edd6aa;
+  width: 20px;
+  height: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 75px;
+  position: absolute;
+  top: 19px;
+}
 .navbar .name-input .profile-menu .unread-notifs {
   display: flex;
   margin-right: 6px;

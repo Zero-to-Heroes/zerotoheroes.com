@@ -1,0 +1,30 @@
+nav.navbar-default .navbar-nav > li > .has-badge {
+	display: flex;
+
+	.badge {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    margin-left: 10px;
+	    color: #860412;
+	    background-color: transparent;
+	    padding: 0;
+
+	    .value {
+	    	z-index: 7;
+    		color: #860412;
+	    }
+
+		&:before {
+			content: "";
+		    background-color: #edd6aa;
+		    width: 20px;
+		    height: 20px;
+		    margin-top: auto;
+		    margin-bottom: auto;
+		    border-radius: 75px;
+		    position: absolute;
+		    top: 19px;
+		}
+	}
+}

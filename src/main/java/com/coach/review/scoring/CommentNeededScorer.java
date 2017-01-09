@@ -46,13 +46,13 @@ public class CommentNeededScorer {
 		if (review.getClosedDate() != null) { return new ReviewScore(); }
 
 		ReviewScore score = new ReviewScore();
-		score.setDateScore(weights.getDateScoreWeight() * dateScorer.score(review.getPublicationDate()));
+		score.setDateScore(10 + weights.getDateScoreWeight() * dateScorer.score(review.getPublicationDate()));
 		score.setPreReviewScore(weights.getPreReviewScoreWeight() * preReviewScorer.score(review));
 		score.setFieldsScore(weights.getFieldsScoreWeight() * fieldsScorer.score(review));
 		score.setWinLossScore(weights.getWinLossScoreWeight() * winLossScorer.score(review));
 
 		score.setHelpReceivedContributorsScore(
-				weights.getHelpReceivedScoreWeight() * helpReceivedScorer.scoreContributors(review));
+				10 + weights.getHelpReceivedScoreWeight() * helpReceivedScorer.scoreContributors(review));
 		score.setHelpReceivedCommentsScore(
 				weights.getHelpReceivedNumberCommentsScoreWeight() * helpReceivedScorer.scoreComments(review));
 		score.setHelpReceivedUpvotedCommentsScore(
@@ -71,9 +71,7 @@ public class CommentNeededScorer {
 		score.setAuthorReputationScore(
 				(float) (weights.getAuthorReputationScoreWeight() * Math.log10(1 + review.getAuthorReputation())));
 
-		if (openReviews != null && openReviews > 0) {
-			score.setOpenReviewScore(weights.getOpenReviewsWeight() * openReviewScorer.score(review, openReviews));
-		}
+		score.setOpenReviewScore(10 + weights.getOpenReviewsWeight() * openReviewScorer.score(review, openReviews));
 
 		return score;
 	}

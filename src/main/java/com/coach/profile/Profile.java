@@ -38,6 +38,7 @@ public class Profile {
 	private ActivitiesStats activitiesStats = new ActivitiesStats();
 
 	private Date lastEmailRecapDate;
+	private int openReviews;
 
 	public ProfileInfo getProfileInfo() {
 		if (profileInfo == null) {

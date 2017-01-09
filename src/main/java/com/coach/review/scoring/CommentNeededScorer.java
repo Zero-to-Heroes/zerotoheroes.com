@@ -41,7 +41,7 @@ public class CommentNeededScorer {
 	@Autowired
 	private WaitingForOPScorer waitingForOPScorer;
 
-	public ReviewScore score(Review review, Integer openReviews) {
+	public ReviewScore score(Review review, int openReviews) {
 
 		if (review.getClosedDate() != null) { return new ReviewScore(); }
 
@@ -71,7 +71,7 @@ public class CommentNeededScorer {
 		score.setAuthorReputationScore(
 				(float) (weights.getAuthorReputationScoreWeight() * Math.log10(1 + review.getAuthorReputation())));
 
-		score.setOpenReviewScore(10 + weights.getOpenReviewsWeight() * openReviewScorer.score(review, openReviews));
+		score.setOpenReviewScore(weights.getOpenReviewsWeight() * openReviewScorer.score(review, openReviews));
 
 		return score;
 	}

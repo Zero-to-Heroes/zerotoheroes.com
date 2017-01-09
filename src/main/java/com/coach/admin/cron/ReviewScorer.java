@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.coach.profile.Profile;
 import com.coach.review.Review;
 import com.coach.review.scoring.CommentNeededScorer;
 import com.coach.review.scoring.ReviewScore;
@@ -87,23 +88,26 @@ public class ReviewScorer {
 
 		commentNeededScorer.setWeights(weights);
 
-		// TODO: integrate the count ofopen reviews by the users
 		Map<String, Integer> openReviews = new HashMap<>();
 		for (Review review : reviews) {
-			if (review.getAuthor() != null && !isEntertainment(review)) {
-				Integer existingReviews = openReviews.get(review.getAuthor());
+			if (review.getAuthorId() != null && !isEntertainment(review)) {
+				Integer existingReviews = openReviews.get(review.getAuthorId());
 				if (existingReviews == null) {
 					existingReviews = 0;
 				}
-				openReviews.put(review.getAuthor(), ++existingReviews);
+				openReviews.put(review.getAuthorId(), ++existingReviews);
 			}
 		}
 
-		// TODO: add a flag
+		// Now update the author's scores
+		resetAllUserOpenReviews();
+		log.debug("Reset all open reviews");
+		updateUserOpenReviews(openReviews);
 
 		for (Review review : reviews) {
 			try {
-				ReviewScore score = commentNeededScorer.score(review, openReviews.get(review.getAuthor()));
+				Integer nbOpenReviews = openReviews.get(review.getAuthorId());
+				ReviewScore score = commentNeededScorer.score(review, nbOpenReviews == null ? 0 : nbOpenReviews);
 
 				Criteria updateCrit = where("id").is(review.getId());
 				Query query = query(updateCrit);
@@ -125,7 +129,30 @@ public class ReviewScorer {
 		return new ResponseEntity<String>("processed " + reviews.size() + " reviews", HttpStatus.OK);
 	}
 
+	private void updateUserOpenReviews(Map<String, Integer> openReviews) {
+		int total = 0;
+		for (String userId : openReviews.keySet()) {
+			Criteria updateCrit = where("userId").is(userId);
+			Query query = query(updateCrit);
+			Update update = update("openReviews", openReviews.get(userId));
+
+			WriteResult result = mongoTemplate.updateMulti(query, update, Profile.class);
+			total += result.getN();
+		}
+		log.debug("Set " + total + " openReviews counters");
+	}
+
+	private void resetAllUserOpenReviews() {
+		Criteria updateCrit = where("userId").ne(null);
+		Query query = query(updateCrit);
+		Update update = update("openReviews", 0);
+
+		WriteResult result = mongoTemplate.updateMulti(query, update, Profile.class);
+		log.debug("Reset " + result.getN() + " openReviews counters");
+	}
+
 	private boolean isEntertainment(Review review) {
+		if (review.getTags() == null) { return false; }
 		for (Tag tag : review.getTags()) {
 			if ("Entertainment".equalsIgnoreCase(tag.getText())) { return true; }
 		}

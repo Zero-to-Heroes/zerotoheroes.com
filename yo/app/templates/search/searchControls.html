@@ -81,12 +81,12 @@
 
 		<!-- Search by author -->
 		<div class="author-search search-group">
-		    <input type="text" class="form-control" ng-model="options.criteria.author" ng-model-options="{ debounce: 300 }" placeholder="{{::translations.authorSearchPlaceholder}}" ng-change="filterReviews()">
+		    <input type="text" class="form-control" ng-model="options.criteria.author" ng-model-options="{ debounce: 500 }" placeholder="{{::translations.authorSearchPlaceholder}}" ng-change="filterReviews()">
 		</div>
 
 		<!-- Search by comentator  -->
 		<div class="contributor-search search-group">
-		    <input type="text" class="form-control" ng-model="options.criteria.contributor" ng-model-options="{ debounce: 300 }" placeholder="{{::translations.contributorSearchPlaceholder}}" ng-change="filterReviews()">
+		    <input type="text" class="form-control" ng-model="options.criteria.contributor" ng-model-options="{ debounce: 500 }" placeholder="{{::translations.contributorSearchPlaceholder}}" ng-change="filterReviews()">
 		</div>
 
 		<div class="line-break"></div>
@@ -189,5 +189,6 @@
 </div>
 
 <ul class="video-listing {{options.displayMode}} {{options.criteria.sort}}">
-	<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true track by review.id" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut"></review-list-item>
+	<!-- using the :resultsRefresh: binding on openGames results in removeWatchCollection[i] is not a function error -->
+	<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true track by review.id" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut" show-score="options.criteria.openGames || showScore"></review-list-item>
 </ul>

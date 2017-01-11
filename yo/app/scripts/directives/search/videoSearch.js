@@ -163,6 +163,7 @@ app.directive('videoSearch', ['$log', '$location', 'Api', '$routeParams', '$time
 
 				var configListener = $scope.$watch('config', function(newVal) {
 					if (newVal) {
+						$log.debug('updating configListener', newVal)
 						$scope.config.search = $scope.retrieveVideos
 						$scope.config.udpateSearchParams = $scope.udpateSearchParams
 						configListener()

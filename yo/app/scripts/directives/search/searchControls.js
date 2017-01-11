@@ -19,7 +19,8 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				showVisibility: '<',
 				showOpenGamesFilter: '<',
 				handle: '<',
-				skipAutoSearch: '<'
+				skipAutoSearch: '<',
+				showScore: '<'
 			},
 			controller: function($scope) {
 
@@ -194,6 +195,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 
 				var listener = $scope.$watch('referenceOptions', function(newVal) {
 					if (newVal) {
+						$log.debug('updating reference options', newVal)
 						$scope.clearFilters()
 						listener()
 					}
@@ -308,7 +310,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					$scope.reviews.forEach(function(review) {
 						review.filteredOut = !$scope.match(review, $scope.options.criteria)
 						if (review.filteredOut) {
-							$log.debug('filtered out', review, $scope.options)
+							// $log.debug('filtered out', review, $scope.options)
 						}
 					})
 

@@ -503,7 +503,6 @@ nav.navbar-default .navbar-nav > li > .has-badge .badge:before {
   flex-wrap: wrap;
 }
 .review-list-item .review-score {
-  display: none;
   cursor: pointer;
 }
 .review-list-item .body {
@@ -680,7 +679,7 @@ nav.navbar-default .navbar-nav > li > .has-badge .badge:before {
 .grid .review-list-item read-only-tags div[data-type=tag]:nth-child(n + 3) {
   display: none;
 }
-.list.helpScore .review-list-item .review-score {
+.review-list-item .review-score {
   display: flex;
   flex-direction: row;
   width: 50px;

@@ -1,5 +1,5 @@
 <li class="review-list-item">
-	<div class="review-score" bs-popover="popover" data-trigger="click" data-template="templates/search/reviewScoreHelp.html" data-placement="right" data-container="body">
+	<div class="review-score" bs-popover="popover" data-trigger="click" data-template="templates/search/reviewScoreHelp.html" data-placement="right" data-container="body" ng-if="showScore">
 		<span class="score">{{::video.helpScore | number: 0}}</span>
 		<span class="glyphicon glyphicon-info-sign"></span>
 	</div>

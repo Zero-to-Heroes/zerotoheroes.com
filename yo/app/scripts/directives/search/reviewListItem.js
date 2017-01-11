@@ -8,7 +8,8 @@ app.directive('reviewListItem', ['$log', 'SportsConfig', '$translate',
 			scope: {
 				video: '<',
 				sport: '<',
-				showVisibility: '<'
+				showVisibility: '<',
+				showScore: '<'
 			},
 			link: function ($scope, element, attrs) {
 			},

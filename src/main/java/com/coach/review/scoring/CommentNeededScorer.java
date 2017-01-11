@@ -46,13 +46,13 @@ public class CommentNeededScorer {
 		if (review.getClosedDate() != null) { return new ReviewScore(); }
 
 		ReviewScore score = new ReviewScore();
-		score.setDateScore(10 + weights.getDateScoreWeight() * dateScorer.score(review.getPublicationDate()));
+		score.setDateScore(20 + weights.getDateScoreWeight() * dateScorer.score(review.getPublicationDate()));
 		score.setPreReviewScore(weights.getPreReviewScoreWeight() * preReviewScorer.score(review));
 		score.setFieldsScore(weights.getFieldsScoreWeight() * fieldsScorer.score(review));
 		score.setWinLossScore(weights.getWinLossScoreWeight() * winLossScorer.score(review));
 
 		score.setHelpReceivedContributorsScore(
-				10 + weights.getHelpReceivedScoreWeight() * helpReceivedScorer.scoreContributors(review));
+				weights.getHelpReceivedScoreWeight() * helpReceivedScorer.scoreContributors(review));
 		score.setHelpReceivedCommentsScore(
 				weights.getHelpReceivedNumberCommentsScoreWeight() * helpReceivedScorer.scoreComments(review));
 		score.setHelpReceivedUpvotedCommentsScore(

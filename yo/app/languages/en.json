@@ -303,7 +303,7 @@
 				"by": "by",
 				"score": {
 					"title": "Review score",
-					"scoreHelpExplanation": "The review score helps reviewer focus on reviews that need help the most. Detailed scores are:",
+					"scoreHelpExplanation": "The review score helps reviewer focus on reviews that need help the most and are recomputed every 5 minutes. Detailed weighted scores are:",
 					"feedbackNeeded": "This scoring system is still experimental, and we <a href=\"https://github.com/Zero-to-Heroes/zerotoheroes.com/issues/20\" target=\"_blank\">welcome any feedback</a>",
 					"criteria": {
 						"scoreHelpPreReview": "Pre-review",
@@ -317,7 +317,7 @@
 						"scoreHelpAuthorReputation": "Author karma",
 						"scoreHelpAuthorReputationTooltip": "We want to reward the players who help others (which is shown by their reputation score). Later on, we'll also consider additional elements, like the overall quality of the reviews they publish, and how often they acknowledge their reviewers' efforts",
 						"scoreHelpOpenReviews": "Open reviews",
-						"scoreHelpOpenReviewsTooltip": "We want to favor quality of reviews over quantity. Keeping only a few reviews open at the same time earns a bonus that will make the reviews show higher in the rankings. You can (and should) close the reviews you consider done by clicking the \"I'm satisfied\" button in the review itself",
+						"scoreHelpOpenReviewsTooltip": "We want to favor quality of reviews over quantity. Keeping only a few reviews open at the same time earns a bonus that will make the reviews show higher in the rankings. You can (and should) close the reviews you consider done by clicking the \"I'm satisfied\" button in the review itself (the score does <i>not</i> tell you how many open reviews you have - for this, click on My Games and select the \"Show open reviews\" filter",
 						"scoreHelpWinLoss": "Win/Loss",
 						"scoreHelpWinLossTooltip": "Losses are usually more interesting than victories, so a small bonus is awarded to lost games"
 					}

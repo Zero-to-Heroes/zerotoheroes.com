@@ -494,7 +494,7 @@
 			"confirm": "Reset password"
 		},
 		"formattingHelp": {
-			"markdownText": "You can use <a href=\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\" target=\"_blank\">Markdow syntax</a> to format your text (bold, italics, paragraphs, etc)",
+			"markdownText": "You can use <a href=\"https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet\" target=\"_blank\">Markdown syntax</a> to format your text (bold, italics, paragraphs, etc)",
 			"markdownImage": "You can add inline images using <code>![img-small](your_img_link)</code>. For medium and bigger images, use <code>img-medium</code> or <code>img-big</code> instead. Finally, use <code>img-scale</code> to dislpay the image at its original size and limit the size to the comment box. Using any other text (like <code>![cool image](your_img_link)</code>) will try to display the image in its original size. For imgur links, be sure to use the image link (right click -> copy image link)",
 			"advancedIntro": "Additionally, you can:",
 			"timestamp": "Use the <strong>timestamp icon <span class=\"glyphicon glyphicon-time\"></span></strong> to create a link to a specific moment in the video. You can freely adjust the timestamp figures to match exactly what you need",

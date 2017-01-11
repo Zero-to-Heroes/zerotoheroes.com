@@ -166,13 +166,10 @@ public class ReviewDao {
 			crit.and("publicationDate").gte(calendar.getTime());
 
 			crit.and("closedDate").is(null);
+			crit.and("helpScore").gte(-500);
 		}
 		else if ("publicationDate".equals(criteria.getSort())) {
 			crit.and("publicationDate").ne(null);
-		}
-
-		if ("openonly".equals(criteria.getOpenGames())) {
-			crit.and("helpScore").gte(-500);
 		}
 
 		// Tags

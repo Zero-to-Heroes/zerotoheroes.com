@@ -188,13 +188,6 @@ public class ReviewApiHandler {
 
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
-		// Check that access is allowed - DEPRECATED: now all reviews can be
-		// accessed
-		// if ("private".equalsIgnoreCase(review.getVisibility()) &&
-		// review.getAuthorId() != null
-		// && (user == null || !review.getAuthorId().equals(user.getId()))) {
-		// return new ResponseEntity<Review>(
-		// review, HttpStatus.FORBIDDEN); }
 
 		// Increase the view count
 		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {
@@ -254,8 +247,7 @@ public class ReviewApiHandler {
 	@RequestMapping(value = "/{reviewId}/{commentId}", method = RequestMethod.DELETE)
 	public @ResponseBody ResponseEntity<String> deleteComment(@PathVariable("reviewId") final String id,
 			@PathVariable("commentId") final int commentId) {
-		// String currentUser =
-		// SecurityContextHolder.getContext().getAuthentication().getName();
+
 		Review review = reviewRepo.findById(id);
 
 		if (review == null) { return new ResponseEntity<String>("Review not found " + id, HttpStatus.NOT_FOUND); }
@@ -282,8 +274,7 @@ public class ReviewApiHandler {
 	@RequestMapping(value = "/multi", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<ListReviewResponse> getReviews(
 			@RequestParam(value = "reviewIds") final List<String> ids) {
-		// String currentUser =
-		// SecurityContextHolder.getContext().getAuthentication().getName();
+
 		Iterable<Review> reviews = reviewRepo.findAll(ids);
 
 		List<Review> results = new ArrayList<>();
@@ -291,14 +282,8 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
 		String userId = user != null ? user.getId() : "";
-		// Check that access is allowed - DEPRECATED: now all reviews can be
-		// accessed
+
 		for (Review review : reviews) {
-			// if ("private".equalsIgnoreCase(review.getVisibility()) &&
-			// review.getAuthorId() != null
-			// && !review.getAuthorId().equals(user.getId())) {
-			// continue;
-			// }
 			review.prepareForDisplay(userId);
 			results.add(review);
 		}
@@ -318,22 +303,15 @@ public class ReviewApiHandler {
 		// TOOD: checks
 		// Add current logged in user as the author of the review
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		// log.info("Current user is " + currentUser);
-		// log.info("Input review is " + review);
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
-		// log.info("authorities are " + authorities);
 		if (!StringUtils.isEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
-			// log.debug("Setting current user as review author " +
-			// currentUser);
 			User user = userRepo.findByUsername(currentUser);
 			review.setAuthorId(user.getId());
 			review.setAuthor(currentUser);
 		}
 		// If anonymous, make sure the user doesn't use someone else's name
 		else if (review.getAuthor() != null) {
-			// log.debug("Validating that the name used to created the review is
-			// allowed");
 			User user = userRepo.findByUsername(review.getAuthor());
 			if (user != null) {
 				log.debug("Name not allowed: " + review.getAuthor() + ". Found user " + user);
@@ -353,9 +331,9 @@ public class ReviewApiHandler {
 		}
 
 		log.debug("Review request creation: " + review);
-		Map<String, String> inputCanvas = review.getCanvas();
-		review.resetCanvas();
-		consolidateCanvas(currentUser, review, review, inputCanvas);
+		// Map<String, String> inputCanvas = review.getCanvas();
+		// review.resetCanvas();
+		// consolidateCanvas(currentUser, review, review, inputCanvas);
 		activatePlugins(currentUser, review, review);
 
 		// Create the entry on the database
@@ -363,25 +341,9 @@ public class ReviewApiHandler {
 		review.setLastModifiedBy(review.getAuthor());
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
-		// subscriptionManager.subscribe(review.getSport(),
-		// review.getAuthorId());
-		// sportManager.addNewReviewActivity(review);
-
-		// Setup v2 comments for game replays only (not drafts nor videos)
-		if ("game-replay".equalsIgnoreCase(review.getReviewType())
-				|| "game-replay".equalsIgnoreCase(review.getMediaType())) {
-			review.setUseV2comments(true);
-		}
 
 		// We need to save here so that the transcoding process can retrieve it
 		reviewRepo.save(review);
-
-		// User user = userRepo.findByUsername(currentUser);
-		// if (user != null) {
-		// user.addPostedReview(review.getSport().getKey().toLowerCase(),
-		// review.getId());
-		// userService.updateAsync(user);
-		// }
 
 		// Start transcoding
 		if (!StringUtils.isEmpty(review.getTemporaryKey()) || !StringUtils.isEmpty(review.getTemporaryReplay())) {
@@ -418,24 +380,12 @@ public class ReviewApiHandler {
 		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
 				.getAuthorities();
 
-		// Adding the comment
-		// log.debug("Adding comment " + comment + " to review " + id);
-
 		Review review = reviewRepo.findById(id);
 
-		// Security
 		// Add current logged in user as the author of the review
 		if (!StringUtils.isEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
-			// log.debug("Setting current user as review author " +
-			// currentUser);
 			addAuthorInformation(review.getSport(), comment, currentUser);
 			User user = userRepo.findByUsername(currentUser);
-
-			// Updating user stats
-			// if (commentParser.hasTimestamp(comment.getText())) {
-			// user.getStats().incrementTimestamps();
-			// userRepo.save(user);
-			// }
 
 			// Add information on whether the comment has been made by a coach
 			if (user.getCoachInformation() != null) {
@@ -469,21 +419,11 @@ public class ReviewApiHandler {
 		String userId = user != null ? user.getId() : "";
 		review.prepareForDisplay(userId);
 
-		// if (user != null) {
-		// user.addPostedComment(review.getSport().getKey().toLowerCase(),
-		// review.getId());
-		// userService.updateAsync(user);
-		// }
-
 		reviewService.triggerCommentCreationJobs(review, comment);
 
 		// Notifying the user who submitted the review (if he is registered)
 		slackNotifier.notifyNewComment(review, comment);
 		// sportManager.addNewCommentActivity(review, comment);
-
-		// log.debug("Created comment " + comment + " with id " +
-		// comment.getId());
-		// log.debug("Updated review " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
@@ -619,16 +559,12 @@ public class ReviewApiHandler {
 			review.setParticipantDetails(inputReview.getParticipantDetails());
 		}
 
-		// review.setLastModifiedDate(new Date());
-		// review.setLastModifiedBy(currentUser);
-		// review.setLanguage(inputReview.getLanguage());
+		subscriptionManager.notifyNewReview(review.getSport(), review);
 		if ("public".equalsIgnoreCase(inputReview.getVisibility())
 				&& !"public".equalsIgnoreCase(review.getVisibility())) {
-			review.setVisibility(inputReview.getVisibility());
-			subscriptionManager.notifyNewReview(review.getSport(), review);
 			slackNotifier.notifyNewReview(review);
-			// discordNotifier.notifyNewReview(review);
 		}
+
 		review.setVisibility(inputReview.getVisibility());
 
 		log.debug("Triggering plugins? " + review);
@@ -756,13 +692,11 @@ public class ReviewApiHandler {
 		reviewService.updateAsync(review);
 		reviewService.triggerReviewCreationJobs(review);
 
-		// Send notifications only if it's a real new video and
-		// not a video response
-		if (!review.isSequence()) {
+		if ("public".equalsIgnoreCase(inputReview.getVisibility())) {
 			subscriptionManager.notifyNewReview(review.getSport(), review);
-			slackNotifier.notifyNewReview(review);
-			// discordNotifier.notifyNewReview(review);
 		}
+		slackNotifier.notifyNewReview(review);
+		// discordNotifier.notifyNewReview(review);
 		log.debug("Published review is " + review);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

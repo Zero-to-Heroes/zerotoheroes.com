@@ -95,11 +95,11 @@ public class UserNotifier {
 		}
 	}
 
-	public void notifyNewReview(User subscriber, Review review, String aggregator) {
+	public void notifyNewReview(String userId, String userEmail, Review review) {
 		if ("private".equalsIgnoreCase(review.getVisibility())) { return; }
 		if ("restricted".equalsIgnoreCase(review.getVisibility())) { return; }
 
-		Profile profile = profileService.getProfile(subscriber.getId());
+		Profile profile = profileService.getProfile(userId);
 		boolean isBundled = Arrays.asList("gamerecap", "globalrecap")
 				.indexOf(profile.getPreferences().getEmailNotificationsType()) > 0;
 
@@ -110,8 +110,8 @@ public class UserNotifier {
 			notification.setTitle(review.getTitle());
 			notification.setTextDetail(review.getText());
 			notification.setFrom(review.getAuthor());
-			notification.setAggregator(aggregator);
-			notification.setUserId(subscriber.getId());
+			// notification.setAggregator(aggregator);
+			notification.setUserId(userId);
 			notification.setBundled(isBundled);
 
 			NotificationReviewData data = new NotificationReviewData();
@@ -123,7 +123,7 @@ public class UserNotifier {
 		}
 
 		if ("onebyone".equals(profile.getPreferences().getEmailNotificationsType())) {
-			emailNotifier.notifyNewReview(subscriber, review);
+			emailNotifier.notifyNewReview(userEmail, review);
 		}
 	}
 

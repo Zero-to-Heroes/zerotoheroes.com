@@ -139,10 +139,10 @@ public class ReviewSearchCriteria {
 		}
 
 		// Unwanted tags
-		if (!CollectionUtils.isEmpty(wantedTags)) {
+		if (!CollectionUtils.isEmpty(unwantedTags)) {
 			if (!CollectionUtils.isEmpty(review.getTags())) {
 				boolean anyFound = false;
-				for (Tag unwantedTag : wantedTags) {
+				for (Tag unwantedTag : unwantedTags) {
 					boolean found = false;
 					for (Tag tag : review.getTags()) {
 						if (tag.getText().equals(unwantedTag.getText())) {

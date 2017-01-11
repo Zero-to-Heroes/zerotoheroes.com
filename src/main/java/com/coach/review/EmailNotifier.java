@@ -111,13 +111,11 @@ public class EmailNotifier {
 		emailSender.send(message);
 	}
 
-	public void notifyNewReview(User subscriber, Review review) {
+	public void notifyNewReview(String recipientEmail, Review review) {
 		if (!"prod".equalsIgnoreCase(environment)) {
-			log.debug("Sending email to " + subscriber.getUsername());
+			log.debug("Sending email to " + recipientEmail);
 			return;
 		}
-
-		String recipient = subscriber.getEmail();
 
 		String sportUrl = "http://www.zerotoheroes.com/s/" + review.getSport().getKey().toLowerCase();
 		//@formatter:off
@@ -139,7 +137,7 @@ public class EmailNotifier {
 //		}
 		//@formatter:on
 
-		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipient).subject(subject)
+		EmailMessage message = EmailMessage.builder().from("seb@zerotoheroes.com").to(recipientEmail).subject(subject)
 				.content(body).type("text/html; charset=UTF-8").build();
 		emailSender.send(message);
 	}

@@ -41,7 +41,7 @@ public class Notification {
 	private String title, from, textDetail;
 
 	// Like saved search
-	private String aggregator;
+	// private String aggregator;
 
 	// private int notifId;
 	// private String type;

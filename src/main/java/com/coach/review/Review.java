@@ -155,6 +155,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// Users who will be notified when something is posted on this review
 	private Set<String> subscribers = new HashSet<>();
 
+	private Set<String> notifiedUsers = new HashSet<>();
+
 	private boolean useV2comments = true;
 
 	// The date at which the review was flagged as "case closed", or when
@@ -625,6 +627,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 			log.debug("Remvoed comment? " + removed);
 			log.debug("After: " + getAllComments().size());
 		}
+	}
+
+	public void addNotifiedUsers(Set<String> newNotifiedUsers) {
+		notifiedUsers.addAll(newNotifiedUsers);
 	}
 
 }

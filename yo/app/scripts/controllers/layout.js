@@ -37,8 +37,8 @@ angular.module('controllers').controller('LayoutCtrl', ['SportsConfig', '$rootSc
 			   	$scope.menuItem = current.$$route.menuItem
 			   	$scope.subMenu = current.$$route.subMenu
 			   	$scope.className = current.$$route.className
-			   	$log.debug('setting className', $scope.className)
 			   	$scope.useFullWidth = current.$$route.useFullWidth
+			   	$scope.showOpenGamesFilter = current.$$route.showOpenGamesFilter
 		   	}
 
 			$scope.useVideo = true;

@@ -1,6 +1,8 @@
 package com.coach.subscription;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,6 +15,7 @@ import com.coach.review.Review;
 import com.coach.sport.Sport;
 import com.coach.sport.SportManager;
 import com.coach.user.UserRepository;
+import com.coach.user.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,6 +26,9 @@ public class SubscriptionManager {
 
 	@Autowired
 	UserRepository userRepo;
+
+	@Autowired
+	UserService userService;
 
 	@Autowired
 	SportManager sportManager;
@@ -59,31 +65,55 @@ public class SubscriptionManager {
 	}
 
 	public void notifyNewReview(Review.Sport sportInput, Review review) {
+		// TODO: change mechanism. Store, for each review, who has been notified
+		// already
+		// Then, when a review is updated, find all subscription matches, and
+		// send to everyone who has not been notified yet
 		Sport sport = sportManager.findById(sportInput.getKey());
-		log.debug("Notifying new review for " + sportInput);
+		Set<String> usersToNotify = buildUsersToNotify(sport, review);
+		Set<String> alreadyNotifiedUsers = review.getNotifiedUsers();
+		Set<String> newUsersToNotify = buildNewUsersToNotify(alreadyNotifiedUsers, usersToNotify);
+		notifyNewUsers(newUsersToNotify, review);
+		review.addNotifiedUsers(newUsersToNotify);
+	}
 
-		// Notify everyone who has subscribed to a sport
-		Iterable<User> subscribers = userRepo.findAll(sport.getSubscribers());
-		// log.debug("Subscribers list is " + subscribers);
-		for (User subscriber : subscribers) {
-			// log.debug("going to " + subscriber);
-			if (!subscriber.getId().equals(review.getAuthorId())) {
-				// log.debug("Notifying " + subscriber.getUsername() + " of a
-				// new review");
-				userNotifier.notifyNewReview(subscriber, review, null);
+	private Set<String> buildNewUsersToNotify(Set<String> alreadyNotifiedUsers, Set<String> usersToNotify) {
+		Set<String> result = new HashSet<>();
+		for (String userId : usersToNotify) {
+			if (!alreadyNotifiedUsers.contains(userId)) {
+				result.add(userId);
 			}
 		}
+		return result;
+	}
 
-		// Notify everyone who has subscribed to a saved search that match the
-		// review
+	private void notifyNewUsers(Set<String> usersToNotify, Review review) {
+		for (String userId : usersToNotify) {
+			String email = userService.findEmailFromUserId(userId);
+			if (email != null) {
+				userNotifier.notifyNewReview(userId, email, review);
+			}
+		}
+	}
+
+	private Set<String> buildUsersToNotify(Sport sport, Review review) {
+		Set<String> usersToNotify = new HashSet<>();
+		usersToNotify.addAll(sport.getSubscribers());
+		usersToNotify.addAll(buildSavedSearchSubscribers(review));
+		usersToNotify.remove(review.getAuthorId());
+		return usersToNotify;
+	}
+
+	private Set<String> buildSavedSearchSubscribers(Review review) {
+		Set<String> usersToNofidy = new HashSet<>();
 		Iterable<SavedSearchSubscription> savedSearches = subService.findSearches(review);
 		log.debug("All saved searches subs: " + savedSearches);
 		for (SavedSearchSubscription sub : savedSearches) {
 			if (!sub.getUserId().equals(review.getAuthorId())) {
-				User subscriber = userRepo.findById(sub.getUserId());
-				userNotifier.notifyNewReview(subscriber, review, sub.getName());
+				usersToNofidy.add(sub.getUserId());
 			}
 		}
+		return usersToNofidy;
 	}
 
 	public void subscribe(HasSubscribers item, String subscriberId) {

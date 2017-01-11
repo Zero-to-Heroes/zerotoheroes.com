@@ -111,6 +111,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
 			reloadOnSearch: false,
+			showOpenGamesFilter: true,
 			className: 'search-page-global',
 			menuItem: 'myVideos'
 		}).
@@ -119,6 +120,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 			controller: 'VideoListingCtrl',
 			ownVideos: true,
 			reloadOnSearch: false,
+			showOpenGamesFilter: true,
 			className: 'search-page-global',
 			menuItem: 'myVideos'
 		}).

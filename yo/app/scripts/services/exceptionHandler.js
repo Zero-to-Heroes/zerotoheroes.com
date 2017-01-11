@@ -80,38 +80,54 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			debugFn.apply(null, arguments)
 
 			var User = $injector.get('User');
+			var userToLog = !User.getUser() ? 'anonUser' : (User.getUser().username + '::' + User.getUser().email)
 			var $location = $injector.get('$location');
 			var $window = $injector.get('$window');
 
 			var stacktrace = undefined
 			console.log(arguments)
+			var argsToLog = {}
 			for (var idx in arguments) {
 				var arg = arguments[idx]
+				if (arg.status) { argsToLog.status = arg.status }
+				if (arg.config) { 
+					if (arg.config.method) { argsToLog.method = arg.config.method }
+					if (arg.config.url) { argsToLog.url = arg.config.url }
+				}
+				if (arg.statusText) { argsToLog.statusText = arg.statusText }
 				if (arg.stack) {
 					stacktrace = arg.stack
 				}
 			}
 
-			notify('Javascript error: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser().username + ':' + User.getUser().email), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(arguments));
+			notify('Javascript error: ' + arguments[0], 'user: ' + userToLog, 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(argsToLog));
 		};
 
 		$delegate.notifySlack = function( )
 		{
 			var User = $injector.get('User');
+			var userToLog = !User.getUser() ? 'anonUser' : (User.getUser().username + '::' + User.getUser().email)
 			var $location = $injector.get('$location');
 			var $window = $injector.get('$window');
 			
 
 			var stacktrace = undefined
 			console.log(arguments)
+			var argsToLog = {}
 			for (var idx in arguments) {
 				var arg = arguments[idx]
+				if (arg.status) { argsToLog.status = arg.status }
+				if (arg.config) { 
+					if (arg.config.method) { argsToLog.method = arg.config.method }
+					if (arg.config.url) { argsToLog.url = arg.config.url }
+				}
+				if (arg.statusText) { argsToLog.statusText = arg.statusText }
 				if (arg.stack) {
 					stacktrace = arg.stack
 				}
 			}
-			
-			notify('Javascript notification: ' + arguments[0], 'user: ' + JSON.stringify(User.getUser().username + ':' + User.getUser().email), 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'navigatorVendor: ' + $window.navigator.vendor + ' ' + $window.navigator.vendorSub, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(arguments));
+
+			notify('Javascript notification: ' + arguments[0], 'user: ' + userToLog, 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(argsToLog));
 		};
 
 
@@ -124,22 +140,31 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 		return {
 			// optional method
 			'responseError': function(rejection) {
-				var User = $injector.get('User');
 				// console.log('considering rejection', rejection)
 				if (rejection.config && rejection.config.url && rejection.config.url.indexOf('announcements') == -1) {
+					var User = $injector.get('User');
+					var userToLog = !User.getUser() ? 'anonUser' : (User.getUser().username + '::' + User.getUser().email)
+					var rejectionToLog = {
+						status: rejection.status,
+						statusText: rejection.statusText,
+						method: rejection.config.method,
+						url: rejection.config.url,
+						data: rejection.config.data
+					}
+
 					if (rejection.status == 401 || rejection.status == 403 || rejection.status == 404 ) {
 						// Do nothing, these are functional errors
 						// console.log('swallowing rejection', rejection)
 					}
 					else if (!rejection.data) {
-						notify('Http response error without data details - look in server logs for more info', "rejection: " + JSON.stringify(rejection), "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
+						notify('Http response error without data details - look in server logs for more info', "rejection: " + JSON.stringify(rejectionToLog), "location: " + JSON.stringify($location.$$absUrl), "user: " + "user: " + userToLog);
 					}
 					else {
 						var code = rejection.data.status;
 						// 401 Unauthorized is a functional error
 						if (code != 401) {
 							notify("Http response error: " + rejection.data.path + " " + rejection.config.method + " " + rejection.data.status + " " + rejection.data.error, 
-								"rejection: " + rejection.config.url, "location: " + JSON.stringify($location.$$absUrl), "user: " + JSON.stringify(User.getUser()));
+								"rejection: " + rejection.config.url, "location: " + JSON.stringify($location.$$absUrl), "user: " + userToLog);
 						}
 					}
 				}

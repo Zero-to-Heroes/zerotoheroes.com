@@ -171,6 +171,10 @@ public class ReviewDao {
 			crit.and("publicationDate").ne(null);
 		}
 
+		if ("openonly".equals(criteria.getOpenGames())) {
+			crit.and("helpScore").gte(-500);
+		}
+
 		// Tags
 		if (!CollectionUtils.isEmpty(criteria.getWantedTags())
 				&& !CollectionUtils.isEmpty(criteria.getUnwantedTags())) {

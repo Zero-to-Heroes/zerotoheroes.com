@@ -711,6 +711,7 @@ nav.navbar-default .navbar-nav > li > .has-badge .badge:before {
 }
 .review-score-tooltip .criteria-label .glyphicon {
   margin-right: 5px;
+  cursor: default;
 }
 .search-page-global .main-panel {
   width: calc(100% - 45px);

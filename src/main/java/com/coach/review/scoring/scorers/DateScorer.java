@@ -20,7 +20,7 @@ public class DateScorer {
 			score = elapsedSeconds;
 		}
 		else {
-			score = 2 * TIME_UNTIL_DECREASE - elapsedSeconds;
+			score = 2 * TIME_UNTIL_DECREASE - 2 * elapsedSeconds;
 		}
 		score = score / 100000f;
 

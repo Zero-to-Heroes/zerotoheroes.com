@@ -37,6 +37,7 @@ import com.coach.profile.ProfileRepository;
 import com.coach.reputation.ReputationAction;
 import com.coach.reputation.ReputationUpdater;
 import com.coach.review.Review.Sport;
+import com.coach.review.events.ReviewEmitter;
 import com.coach.review.replay.ReplayProcessor;
 import com.coach.review.video.transcoding.Transcoder;
 import com.coach.sport.SportManager;
@@ -59,6 +60,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	ReviewService reviewService;
+
+	@Autowired
+	ReviewEmitter reviewEmitter;
 
 	@Autowired
 	ReviewDao reviewDao;
@@ -572,6 +576,8 @@ public class ReviewApiHandler {
 
 		reviewService.updateAsync(review);
 
+		reviewEmitter.emitReviewUpdate(review);
+
 		// Updating user stats
 		// if (commentParser.hasTimestamp(review.getText())) {
 		// user.getStats().incrementTimestamps();
@@ -690,6 +696,8 @@ public class ReviewApiHandler {
 		}
 
 		reviewService.updateAsync(review);
+
+		reviewEmitter.emitReviewUpdate(review);
 		reviewService.triggerReviewCreationJobs(review);
 
 		if ("public".equalsIgnoreCase(inputReview.getVisibility())) {

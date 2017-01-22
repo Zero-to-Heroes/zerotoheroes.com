@@ -1,5 +1,8 @@
 package com.coach.preferences;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,5 +19,8 @@ public class Preferences {
 	private String language;
 	private String displayMode = "grid";
 	private String sharingPreference = "publicOnly";
+
+	private Set<String> dontAskAgainForTheseTags = new HashSet<>();
+	private boolean neverAskAboutSavedSearch = false;
 
 }

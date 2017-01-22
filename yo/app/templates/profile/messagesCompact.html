@@ -1,12 +1,12 @@
 <ul class="message-listing compact">
 	
-	<li ng-repeat="(reviewId, message) in ::compact" class="message" ng-class=":readMessage:{ 'unread': !message.readDate && message.data.textKey != 'aggregatedReview' }">
+	<li ng-repeat="(reviewId, message) in :changeMenu:compact" class="message {{:changeMenu:message.data.textKey}}" ng-class=":readMessage:{ 'unread': !message.readDate && message.data.textKey != 'aggregatedReview' }">
 		<div>
 			<span class="notification-type">{{::translations[message.data.textKey]}}</span>
-			<a class="notification-title" href="{{::message.targetUrl}}" target="_blank">{{::message.title}}</a>
+			<a class="notification-title" href="{{::message.targetUrl}}" target="_blank" ng-if="::message.title">{{::message.title}}</a>
 			<a ng-click="markAllRead(message)" class="mark-read-button" ng-if="::message.comments.length > 0">{{::translations.markAllReadButton}}</a>
 		</div>
-		<div class="message-body" ng-click="markRead(message, $event)">
+		<div class="message-body" ng-click="markRead(message, $event)" ng-if="::message.data.textKey != 'suggestedSubscription'">
 			<div ng-if="::message.data.textKey != 'aggregatedReview'">
 				<span class="message-from-label">{{::translations.from}}</span>
 				<span class="message-from">{{message.from}}</span>
@@ -35,6 +35,21 @@
 				<a ng-click="markRead(message, $event)" ng-if=":readMessage:!message.readDate">{{::translations.markReadButton}}</a>
 			</div>
 		</div>
+
+		<div class="message-body" ng-click="markRead(message, $event)" ng-if="message.data.textKey == 'suggestedSubscription'">
+			<span class="message-body-text" ng-bind-html="::translations.suggestionText(message.data.topic)"></span>
+			<div class="button-group" ng-if=":suggestion:!hasMessage(message)">
+				<a class="btn btn-default" ng-click="subscribeToSearch(message); markRead(message, $event)">{{::translations.subscribeToSearch(message.data.topic) }}</a>
+				<a class="btn btn-default" ng-click="stopReceivingSuggestionsForTopic(message); markRead(message, $event)">{{::translations.stopForTopic(message.data.topic) }}</a>
+				<a class="btn btn-default" ng-click="stopReceivingSuggestions(); markRead(message, $event)">{{::translations.stopSuggestions}}</a>
+			</div>
+			<div class="message-group alert alert-warning" ng-if=":suggestion:hasMessage(message)">
+				<span ng-if=":suggestion:message.subscribedToSearch" ng-bind-html="::translations.subscribedToSearch(message.data.topic)"></span>
+				<span ng-if=":suggestion:message.stoppedReceivingSuggestionsForTopic" ng-bind-html="::translations.stoppedReceivingSuggestionsForTopic(message.data.topic)"></span>
+				<span ng-if=":suggestion:message.stoppedReceivingSuggestions" ng-bind-html="::translations.stoppedReceivingSuggestions"></span>
+			</div>
+		</div>
+ 
 	</li>
 	<span ng-if="::source.length == 0">{{::translations.empty}}</span>
 </ul>

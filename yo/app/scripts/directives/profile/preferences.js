@@ -23,7 +23,11 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					emailRecapFrequency: $translate.instant('global.profile.preferences.emailRecapFrequency'),
 					emailContact: $translate.instant('global.profile.preferences.emailContact'),
 					language: $translate.instant('global.profile.preferences.language'),
-					save: $translate.instant('global.profile.preferences.save')
+					neverAskAboutSavedSearch: $translate.instant('global.profile.preferences.neverAskAboutSavedSearch'),
+					neverAskAboutSavedSearchTitle: $translate.instant('global.profile.preferences.neverAskAboutSavedSearchTitle'),
+					dontAskAgainForTheseTags: $translate.instant('global.profile.preferences.dontAskAgainForTheseTags'),
+					language: $translate.instant('global.profile.preferences.language'),
+					save: $translate.instant('global.profile.preferences.save'),
 				}
 
 				$scope.languages = [
@@ -75,7 +79,13 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					$scope.updateStatus = undefined
 				}
 
-
+				$scope.removeTagFromBlacklist = function(tag) {
+					Api.TagSuggestionBlacklist.delete({tag: tag}, function(data) {
+						$log.debug('success', data)
+						$scope.preferences.dontAskAgainForTheseTags = data.dontAskAgainForTheseTags
+						$scope.$broadcast('$$rebind::' + 'tagsUpdate')
+					})
+				}
 			}
 		}
 	}

@@ -18,12 +18,7 @@
 
 
 	<!-- The standard, exploded view -->
-	<div ng-if=":changeMenu:messages && (!compactView || subMenu == 'all')">
-		<messages source="::messages"></messages>
-	</div>
-
-	<!-- The new compact view - only for new notifications for now -->
-	<div ng-if=":changeMenu:messages && compactView && subMenu != 'all'">
-		<messages-compact source="::messages"></messages-compact>
+	<div ng-if=":changeMenu:messages">
+		<messages-compact source="::messages" exploded="!compactView || subMenu == 'all'"></messages-compact>
 	</div>
 </div>

@@ -1,5 +1,7 @@
 package com.coach.preferences;
 
+import java.util.Set;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -106,6 +108,24 @@ public class PreferencesApiHandler {
 
 		response = new Preferences();
 		response.setSharingPreference(newPref);
+
+		return new ResponseEntity<Preferences>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/tagSuggestionBlacklist/{tag}", method = RequestMethod.DELETE)
+	public @ResponseBody ResponseEntity<Preferences> removeTagFromSuggestionBlacklist(@PathVariable("tag") String tag) {
+
+		Preferences response = null;
+
+		Profile profile = profileService.getLoggedInProfile();
+		if (profile == null) { return new ResponseEntity<Preferences>(response, HttpStatus.FORBIDDEN); }
+
+		Set<String> current = profile.getPreferences().getDontAskAgainForTheseTags();
+		current.remove(tag);
+		profileRepo.save(profile);
+
+		response = new Preferences();
+		response.setDontAskAgainForTheseTags(current);
 
 		return new ResponseEntity<Preferences>(response, HttpStatus.OK);
 	}

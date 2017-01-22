@@ -11,7 +11,8 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 			replace: false,
 			templateUrl: 'templates/profile/messagesCompact.html',
 			scope: {
-				source: '<'
+				source: '<',
+				exploded: '<'
 			},
 			link: function(scope, element, attributes) {
 			},
@@ -21,6 +22,7 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 					newComment: $translate.instant('global.profile.messages.type.newComment'),
 					newReview: $translate.instant('global.profile.messages.type.newReview'),
 					aggregatedReview: $translate.instant('global.profile.messages.type.aggregatedReview'),
+					suggestedSubscription: $translate.instant('global.profile.messages.type.suggestedSubscription'),
 
 					from: $translate.instant('global.profile.messages.from'),
 					sent: $translate.instant('global.profile.messages.sent'),
@@ -30,9 +32,65 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 					empty: $translate.instant('global.profile.messages.empty'),
 					upvoteReminder: $translate.instant('global.profile.messages.upvoteReminder'),
 					upvoteReminderShort: $translate.instant('global.profile.messages.upvoteReminderShort'),
+
+					subscribedToSearch: (topic) => { 
+						return $translate.instant('global.profile.messages.suggestion.subscribedToSearch', { topic: $scope.translateTopic(topic) }) },
+					stoppedReceivingSuggestionsForTopic: (topic) => { 
+						return $translate.instant('global.profile.messages.suggestion.stoppedReceivingSuggestionsForTopic', { topic: $scope.translateTopic(topic) }) },
+					stoppedReceivingSuggestions: $translate.instant('global.profile.messages.suggestion.stoppedReceivingSuggestions'),
+
+					suggestionText: (topic) => { 
+						return $translate.instant('global.profile.messages.suggestion.text', { topic: $scope.translateTopic(topic) }) },
+					subscribeToSearch: (topic) => { return $translate.instant('global.profile.messages.suggestion.subscribeToSearchButton', { topic: $scope.translateTopic(topic) }) },
+					stopForTopic: (topic) => { return $translate.instant('global.profile.messages.suggestion.stopForTopicButton', { topic: $scope.translateTopic(topic) }) },
+					stopSuggestions: $translate.instant('global.profile.messages.suggestion.stopSuggestionsButton'),
 				}	
 
+				$scope.translateTopic = function(topic) {
+					var key = 'global.profile.messages.suggestion.topics.' + topic
+					// No translation found
+					if ($translate.instant(key) === key) {
+						return topic
+					}
+					return $translate.instant(key)
+				}
+
+				$scope.subscribeToSearch = function(message) {
+					Api.SubscriptionsSuggestions.save({ topic: message.data.topic }, function(data) {
+						message.subscribedToSearch = 'ok'
+						$log.debug('subscribeToSearch')
+						$scope.$broadcast('$$rebind::' + 'suggestion')
+					})
+				}
+
+				$scope.stopReceivingSuggestionsForTopic = function(message) {
+					Api.SubscriptionsSuggestions.delete({ topic: message.data.topic }, function(data) {
+						message.stoppedReceivingSuggestionsForTopic = 'ok'
+						$log.debug('stoppedReceivingSuggestionsForTopic')
+						$scope.$broadcast('$$rebind::' + 'suggestion')
+					})
+				}
+
+				$scope.stopReceivingSuggestions = function(message) {
+					Api.SubscriptionsSuggestions.delete(function(data) {
+						message.stoppedReceivingSuggestions = 'ok'
+						$log.debug('stoppedReceivingSuggestions')
+						$scope.$broadcast('$$rebind::' + 'suggestion')
+					})
+				}
+
+				$scope.hasMessage = function(message) {
+					return message.subscribedToSearch || message.stoppedReceivingSuggestions || message.stoppedReceivingSuggestionsForTopic
+				}
+
 				$scope.compactMessages = function() {
+					$log.debug('compacting messages')
+					if ($scope.exploded === true) {
+						$log.debug('exploded mode')
+						$scope.compact = $scope.source
+						return
+					}
+
 					var compact = $scope.compact = {}
 
 					// First build the new reviews (it can happen to have a new review + new comments)
@@ -60,11 +118,21 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 							}
 							compact[message.data.reviewId].comments.push(message)
 						}
+						else if (message.data.textKey == 'suggestedSubscription') {
+							compact[message.id] = message
+						}
 					})
 
 					// $log.debug('compact messages', compact)
 				}
 				$scope.compactMessages()
+
+				$scope.$watch('exploded', function(newVal, oldVal) {
+					$log.debug('exploded changed', $scope.exploded)
+					$scope.compactMessages()
+					// Also used at the top messages level
+					$scope.$broadcast('$$rebind::' + 'changeMenu')
+				})
 
 				
 				$scope.formatDate = function(date) {

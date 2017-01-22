@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
@@ -14,8 +15,9 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableMongoAuditing
-@ComponentScan
+@ComponentScan(basePackages = { "com.coach", "com.zerotoheroes" })
 @PropertySource("classpath:/application.properties")
+@ImportResource("classpath:/config/spring-aws-cloud.xml")
 @Slf4j
 // @EnableSpringDataWebSupport
 public class Application extends SpringBootServletInitializer {

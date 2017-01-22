@@ -391,7 +391,20 @@
 				"type": {
 					"newComment": "New comment",
 					"newReview": "New review",
-					"aggregatedReview": "New comments on review"
+					"aggregatedReview": "New comments on review",
+					"suggestedSubscription": "Would you like to help others?"
+				},
+				"suggestion": {
+					"text": "Reviewing similar <span class=\"read-only-tag\">{{topic}}</span> games will help you improve as much as getting your own games reviewed (and you'll give back to the community), which is why we'd like to suggest you to subscribe to new {{topic}} reviews (you can unsubscribe at any time from your preferences)",
+					"subscribeToSearchButton": "Subscribe to {{topic}}",
+					"subscribedToSearch": "Thanks! You've successfully subscribed to <span class=\"read-only-tag\">{{topic}}</span> games. You will receive a notification whenever such a new game is published. You can unsubscribe at any time from your preferences",
+					"stopForTopicButton": "Don't ask me again for {{topic}}",
+					"stoppedReceivingSuggestionsForTopic": "Got it! We won't offer you to subscribe to <span class=\"read-only-tag\">{{topic}}</span> games anymore. If you change your mind, you can create a Saved Search from the Advanced Search tab",
+					"stopSuggestionsButton": "Don't ask me anymore",
+					"stoppedReceivingSuggestions": "Got it! We won't offer you to subscribe to games anymore. If you change your mind, you can create a Saved Search from the Advanced Search tab",
+					"topics": {
+						"arena-game": "Arena"
+					}
 				},
 				"from": "from",
 				"sent": "sent",
@@ -443,6 +456,9 @@
 				"emailRecapSplit": "Receive one email per review?",
 				"emailRecapFrequency": "At which frequency (in hours)?",
 				"emailContact": "Allow me to send you an email from time to time (I promise not to spam)?",
+				"neverAskAboutSavedSearch": "I don't want to be asked to review new games",
+				"neverAskAboutSavedSearchTitle": "We believe that reviewing games is as helpful as having your games reviewed, so we might periodically suggest you new games to review based on your latest uploads",
+				"dontAskAgainForTheseTags": "I don't want to be suggested these tags to review",
 				"language": "What language do you want to see the site in?",
 				"save": "Update",
 				"sharingPublic": "Sharing public reviews only",

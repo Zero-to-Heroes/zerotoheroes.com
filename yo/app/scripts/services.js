@@ -42,10 +42,12 @@ services.factory('Api', ['$resource', 'ENV',
 				'update': { method: 'PATCH'}
 			}),
 			SharingPreferences: $resource(ENV.apiEndpoint + url + 'preferences/sharing/:identifier', {identifier: '@identifier'}),
+			TagSuggestionBlacklist: $resource(ENV.apiEndpoint + url + 'preferences/tagSuggestionBlacklist/:tag', {tag: '@tag'}),
 
 			ProfileInfo: $resource(ENV.apiEndpoint + url + 'profileinfo/:user/:sport', {user: '@user', sport: '@sport'}),
 
 			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
+			SubscriptionsSuggestions: $resource(ENV.apiEndpoint + url + 'suggestions/:topic', {topic: '@topic'}),
 			SavedSearchSubscriptions: $resource(ENV.apiEndpoint + url + 'savedSearch/:name', {name: '@name'}),
 
 			ActivityFeed: $resource(ENV.apiEndpoint + url + 'activities/:sport', {sport: '@sport'}),

@@ -25,10 +25,25 @@
 				</button>
 			</div>
 		</div>
+		<div class="form-group" title="{{::translations.neverAskAboutSavedSearchTitle}}">
+			<label for="neverAskAboutSavedSearch">{{::translations.neverAskAboutSavedSearch}}</label> 
+			<input type="checkbox" id="neverAskAboutSavedSearch" ng-model="preferences.neverAskAboutSavedSearch"> 
+		</div>
+		<div class="form-group subscriptions-blacklist-container" ng-if=":tagsUpdate:preferences.dontAskAgainForTheseTags && preferences.dontAskAgainForTheseTags.length > 0">
+			<label for="dontAskAgainForTheseTags">{{::translations.dontAskAgainForTheseTags}}</label> 
+			<ul class="subscriptions-blacklist">
+				<li ng-repeat="tag in :tagsUpdate:preferences.dontAskAgainForTheseTags">
+					<span class="sub-name">{{::tag}}</span>
+					<button class="delete" title="{{::translations.deleteBlacklistTag}}" ng-click="removeTagFromBlacklist(tag)"></button>
+				</li>
+			</ul>
+		</div>
 		<div class="form-group">
 			<label for="emailContactCheckbox">{{::translations.emailContact}}</label> 
 			<input type="checkbox" id="emailContactCheckbox" ng-model="preferences.emailContact"> 
 		</div>
+
+
 		<!-- <div class="form-group language-group">
 			<label for="language">{{::translations.language}}</label> 
 			<button type="button" class="btn btn-default" data-trigger="click" ng-model="preferences.language" data-html="1" bs-options="option.value as option.label for option in languages" placeholder="{{::translations.language}}" bs-select ng-required="true">

@@ -80,6 +80,7 @@ angular.module('controllers').controller('MessagesController', ['$scope', '$rout
 
 		$scope.toggleCompactView = function() {
 			$scope.compactView = !$scope.compactView
+			$log.debug('toggled compact', $scope.compactView, $scope.subMenu)
 			$scope.$broadcast('$$rebind::' + 'changeMenu')
 		}
 

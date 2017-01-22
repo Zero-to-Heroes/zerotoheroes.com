@@ -12,6 +12,7 @@ import com.coach.profile.Profile;
 import com.coach.profile.ProfileService;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import com.coach.review.ReviewService;
 import com.coach.review.journal.CommentJournal;
 import com.coach.review.journal.ReputationJournal;
 import com.coach.review.journal.ReviewJournal;
@@ -29,9 +30,28 @@ public class ActivityHandler {
 	ReviewRepository reviewRepository;
 
 	@Autowired
+	ReviewService reviewService;
+
+	@Autowired
 	ProfileService profileService;
 
 	public void handleNewGame(ReviewJournal log, Profile profile) {
+		// Find if profile has decided to never be asked again
+		if (profile.getPreferences().isNeverAskAboutSavedSearch()) { return; }
+
+		// List<Tag> reviewTags =
+		// reviewService.loadTagsForReview(log.getReviewId());
+		// if (reviewTags.isEmpty()) { return; }
+		//
+		// Set<String> reviewTagNames = flattenTags(reviewTags);
+		//
+		// // Now see if he has been already asked about the tag
+		// // (assume first tag is the one we're interested in until we have
+		// proper
+		// // archetype matching)
+		// Set<String> noPrompt =
+		// profile.getNotifications().getDontAskAgainForTheseTags();
+
 		// Activity activity = new Activity();
 		// activity.setCreationDate(new Date());
 		// activity.setUserId(log.getAuthorId());

@@ -137,4 +137,8 @@ public class ReviewService {
 			reputationJournalRepo.save(journal);
 		}
 	}
+
+	public Review loadReview(String reviewId) {
+		return reviewRepo.findById(reviewId);
+	}
 }

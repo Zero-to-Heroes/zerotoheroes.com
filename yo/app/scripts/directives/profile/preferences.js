@@ -26,7 +26,6 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					neverAskAboutSavedSearch: $translate.instant('global.profile.preferences.neverAskAboutSavedSearch'),
 					neverAskAboutSavedSearchTitle: $translate.instant('global.profile.preferences.neverAskAboutSavedSearchTitle'),
 					dontAskAgainForTheseTags: $translate.instant('global.profile.preferences.dontAskAgainForTheseTags'),
-					language: $translate.instant('global.profile.preferences.language'),
 					save: $translate.instant('global.profile.preferences.save'),
 				}
 

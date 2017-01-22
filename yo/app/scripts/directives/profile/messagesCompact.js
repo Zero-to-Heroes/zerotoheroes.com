@@ -33,16 +33,16 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 					upvoteReminder: $translate.instant('global.profile.messages.upvoteReminder'),
 					upvoteReminderShort: $translate.instant('global.profile.messages.upvoteReminderShort'),
 
-					subscribedToSearch: (topic) => { 
+					subscribedToSearch: function(topic) { 
 						return $translate.instant('global.profile.messages.suggestion.subscribedToSearch', { topic: $scope.translateTopic(topic) }) },
-					stoppedReceivingSuggestionsForTopic: (topic) => { 
+					stoppedReceivingSuggestionsForTopic: function(topic) { 
 						return $translate.instant('global.profile.messages.suggestion.stoppedReceivingSuggestionsForTopic', { topic: $scope.translateTopic(topic) }) },
 					stoppedReceivingSuggestions: $translate.instant('global.profile.messages.suggestion.stoppedReceivingSuggestions'),
 
-					suggestionText: (topic) => { 
+					suggestionText: function(topic) { 
 						return $translate.instant('global.profile.messages.suggestion.text', { topic: $scope.translateTopic(topic) }) },
-					subscribeToSearch: (topic) => { return $translate.instant('global.profile.messages.suggestion.subscribeToSearchButton', { topic: $scope.translateTopic(topic) }) },
-					stopForTopic: (topic) => { return $translate.instant('global.profile.messages.suggestion.stopForTopicButton', { topic: $scope.translateTopic(topic) }) },
+					subscribeToSearch: function(topic) { return $translate.instant('global.profile.messages.suggestion.subscribeToSearchButton', { topic: $scope.translateTopic(topic) }) },
+					stopForTopic: function(topic) { return $translate.instant('global.profile.messages.suggestion.stopForTopicButton', { topic: $scope.translateTopic(topic) }) },
 					stopSuggestions: $translate.instant('global.profile.messages.suggestion.stopSuggestionsButton'),
 				}	
 

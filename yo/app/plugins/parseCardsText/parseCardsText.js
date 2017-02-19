@@ -38,8 +38,12 @@ var parseCardsText = {
 		return result;
 	},
 
-	buildCardLink: function(card, lang) {
+	buildCardLink: function(card, lang, container) {
 		if (!card) return ''
+
+		container = container || 'body'
+
+		// console.log('building card link on container', container)
 
 		lang = lang || parseCardsText.getLang();
 		var localizedName = parseCardsText.localizeName(card, lang);
@@ -48,17 +52,9 @@ var parseCardsText = {
 		var localizedImage = parseCardsText.localizeImage(card, lang);
 		var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
 		var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + localizedImage + '\'>';
-		var link = '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-container="body" data-animation="false">' + localizedName + '</span>';
+		var link = '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-animation="false" data-container="' + container + '">' + localizedName + '</span>';
 
-		if (!parseCardsText.isUpdatePending) {
-			parseCardsText.isUpdatePending = true
-			setTimeout(function() {
-				if ($('[data-toggle="tooltip"]').tooltip) {
-					$('[data-toggle="tooltip"]').tooltip()
-					parseCardsText.isUpdatePending = false
-				}
-			}, 300)
-		}
+		parseCardsText.refreshTooltips()
 
 		return link;
 	},
@@ -71,6 +67,11 @@ var parseCardsText = {
 				parseCardsText.isUpdatePending = false
 			}, 300)
 		}
+	},
+
+	destroyTooltips: function() {
+		// console.log('removing tooltips')
+		$('#externalPlayer .tooltip.parse-cards-text').remove()
 	},
 
 	buildFullCardImageUrl: function(card, lang) {
@@ -186,6 +187,16 @@ var parseCardsText = {
 				})
 			}
 		});
+
+		(function($){
+		  $.event.special.destroyed = {
+		    remove: function(o) {
+		      if (o.handler) {
+		        o.handler()
+		      }
+		    }
+		  }
+		})(jQuery)
 	},
 
 	removeDuplicates: function(list) {

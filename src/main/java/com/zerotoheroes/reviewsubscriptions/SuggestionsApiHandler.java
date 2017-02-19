@@ -3,7 +3,6 @@ package com.zerotoheroes.reviewsubscriptions;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +15,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileService;
-import com.coach.review.ReviewRepository;
 import com.coach.review.ReviewSearchCriteria;
-import com.coach.sport.SportManager;
 import com.coach.subscription.SavedSearchSubscription;
 import com.coach.subscription.SavedSearchSubscriptionService;
-import com.coach.subscription.SubscriptionManager;
 import com.coach.tag.Tag;
-import com.coach.user.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,22 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 public class SuggestionsApiHandler {
 
 	@Autowired
-	ReviewRepository reviewRepo;
-
-	@Autowired
-	SportManager sportManager;
-
-	@Autowired
-	UserRepository userRepo;
-
-	@Autowired
-	MongoTemplate mongoTemplate;
-
-	@Autowired
 	SlackNotifier slackNotifier;
-
-	@Autowired
-	SubscriptionManager subscriptionManager;
 
 	@Autowired
 	ProfileService profileService;
@@ -68,6 +48,7 @@ public class SuggestionsApiHandler {
 		else {
 			criteria.getWantedTags().add(new Tag(topic));
 		}
+		log.debug("Adding saved search from topic: " + topic);
 		return addSub("suggested sub: " + topic, criteria);
 	}
 

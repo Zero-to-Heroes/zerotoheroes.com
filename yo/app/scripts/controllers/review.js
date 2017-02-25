@@ -109,6 +109,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data
+					$log.debug('retrieved review', review)
 
 					// default sorting of comments
 					if ($scope.review.useV2comments)

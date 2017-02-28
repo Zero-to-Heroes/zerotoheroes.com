@@ -18,7 +18,7 @@ app.directive('accountClaim', ['$log', '$translate', 'User', 'Api',
 				accountClaimButton: $translate.instant('global.user.accountClaimButton'),
 				accountClaimConfirmation: $translate.instant('global.user.accountClaimConfirmation')
 			}
-			$log.debug('translations', $scope.translations)
+			// $log.debug('translations', $scope.translations)
 
 			$scope.User = User
 

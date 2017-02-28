@@ -105,11 +105,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		
 		// Load the review
 		$scope.initReview = function() {
+			$log.debug('loading review', $routeParams.reviewId)
 			// $scope.restrictedAccess = false
 			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
 				function(data) {
 					$scope.review = data
-					$log.debug('retrieved review', review)
+					$log.info('retrieved review', data)
 
 					// default sorting of comments
 					if ($scope.review.useV2comments)
@@ -137,6 +138,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 						$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 						$scope.$broadcast('$$rebind::' + 'delete')
 					})
+				},
+				function(success) {
+					$log.warn('hop')
 				},
 				function(error) {
 					$log.warn('could not load review', error)

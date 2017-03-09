@@ -225,7 +225,8 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			}
 		}
 
-		service.loadPlugin = function(plugins, pluginObj, callback) {
+		service.loadPlugin = function(plugins, pluginObj, callback, retryCount) {
+			retryCount = retryCount || 3
 			var plugin = pluginObj.name
 			var version = pluginObj.version ? '?v=' + pluginObj.version : ''
 
@@ -241,7 +242,12 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					if (callback)
 						callback()
 				}, function(error) {
-					$log.error('error while loading plugin from loadPlugin', pluginObj, error)
+					if (retryCount > 0) {
+						service.loadPlugin(plugins, pluginObj, callback, retryCount - 1)
+					}
+					else {
+						$log.error('error while loading plugin from loadPlugin', pluginObj, error)
+					}
 				})
 				angularLoad.loadCSS('/plugins/' + plugin + '/' + plugin + '.css' + version).then(function() {
 					// $log.debug('loaded css', plugin, '/plugins/' + plugin + '/' + plugin + '.css' + version);
@@ -251,7 +257,9 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 			}
 		}
 
-		service.initPlayer = function(config, review, activePlugins, pluginNames, callback) {
+		service.initPlayer = function(config, review, activePlugins, pluginNames, callback, retryCount) {
+			retryCount = retryCount || 3
+
 			if (!config || !config.plugins || !config.plugins.plugins) return false
 
 			var executePlugin = function(plugin) {
@@ -264,7 +272,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							initPlayer(config, review, activePlugins, pluginNames, callback)
 						}
 						else {
-							$log.debug('plugin loaded, but still not on window', window)
+							$log.error('plugin loaded, but still not on window', window)
 						}
 					})
 				}
@@ -313,22 +321,16 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 								executePlugin(plugin)
 								// $log.debug('externalPlayer executed')
 							}, function(error) {
-								$log.error('error while loading externalPlayer', plugin, error)
+								if (retryCount > 0) {
+									service.initPlayer(config, review, activePlugins, pluginNames, callback, retryCount)
+								}
+								else {
+									$log.error('error while loading externalPlayer', plugin, error)
+								}
 							})
 							angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css' + version).then(function() {
 								//console.log('loaded css', plugin);
 							})
-
-							// angularLoad.loadScript('/plugins/' + plugin.name + '/' + plugin.name + '.js' + version).then(function() {
-							// 	executePlugin(plugin)
-							// }).catch(function() {
-							// 	if (activePlugins) activePlugins.push(undefined)
-							// 	if (pluginNames) pluginNames.push(undefined)
-							// 	$log.error('could not load plugin', plugin )
-							// })
-							// angularLoad.loadCSS('/plugins/' + plugin.name + '/' + plugin.name + '.css').then(function() {
-							// 	//console.log('loaded css', plugin);
-							// });
 						}
 					}
 				}

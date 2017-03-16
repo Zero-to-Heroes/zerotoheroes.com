@@ -39,7 +39,11 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			subscribeReview: $translate.instant('global.review.comment.subscribeReview'),
 			subscribeReviewTooltip: $translate.instant('global.review.comment.subscribeReviewTooltip'),
 
-			sortedbyLabel: $translate.instant('global.review.comment.sort.sortedbyLabel')
+			sortedbyLabel: $translate.instant('global.review.comment.sort.sortedbyLabel'),
+
+			shareTwitter: $translate.instant('global.general.share.twitter'),
+			shareFacebook: $translate.instant('global.general.share.facebook'),
+			shareReddit: $translate.instant('global.general.share.reddit')
 		}
 		$scope.debugTimestamp = Date.now()
 		// $log.debug('init review controller at ', $scope.debugTimestamp)
@@ -563,6 +567,10 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 
 				$rootScope.pageDescription += '. ' + data.text;
 			}
+		}
+
+		$scope.getShortUrl = function(review) {
+			return review.url.substring(0, review.url.lastIndexOf('/'))
 		}
 	}
 ]);

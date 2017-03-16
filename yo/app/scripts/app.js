@@ -29,7 +29,8 @@ var app = angular.module('app', [
 	'angulartics.google.analytics',
 	'services.defaultI18n',
 	// https://github.com/Pasvaz/bindonce
-	'angular.bind.notifier'
+	'angular.bind.notifier',
+	'720kb.socialshare'
 ]);
 
 app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider', 

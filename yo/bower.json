@@ -4,14 +4,12 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "jquery": "3.1.0",
-
     "angular": "^1.6.0",
     "angular-sanitize": "^1.6.0",
     "angular-touch": "^1.6.0",
     "angular-route": "^1.6.0",
     "angular-resource": "^1.6.0",
     "angular-mocks": "^1.6.0",
-
     "moment": "~2.9.0",
     "momentjs": "~2.9.0",
     "angular-load": "~0.4.0",
@@ -22,7 +20,6 @@
     "string": "~3.3.1",
     "lodash": "~4.11.2",
     "basket.js": "~0.5.2",
-
     "angular-file-upload": "^2.3.4",
     "angular-strap": "^2.3.9",
     "videogular": "~1.4.0",
@@ -51,9 +48,9 @@
     "angulartics-google-analytics": "0.1.4",
     "cal-heatmap": "^3.6.0",
     "d3": "~3.5.17",
-    
     "aws-sdk-js": "^2.6.4",
-    "angular-bind-notifier": "^1.1.7"
+    "angular-bind-notifier": "^1.1.7",
+    "angular-socialshare": "angularjs-socialshare#^2.3.7"
   },
   "overrides": {
     "sprintf": {

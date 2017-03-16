@@ -31,6 +31,26 @@ body {
 .account-claim .confirmation-message {
   padding: 10px;
 }
+.social-share {
+  display: flex;
+}
+.social-share .share {
+  cursor: pointer;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.social-share .share.twitter-share {
+  background-image: url('/images/share/twitter.png');
+}
+.social-share .share.facebook-share {
+  background-image: url('/images/share/facebook.png');
+}
+.social-share .share.reddit-share {
+  background-image: url('/images/share/reddit.png');
+}
 .footer {
   margin-top: 70px;
   font-size: 14px;
@@ -497,6 +517,12 @@ nav.navbar-default .navbar-nav > li > .has-badge .badge:before {
 }
 .video-information .video-information-header .review-header.editing .review-visibility .btn-select {
   margin-left: 0;
+}
+.video-information .video-information-header .meta-info {
+  display: flex;
+}
+.video-information .video-information-header .meta-info .author-row {
+  flex-grow: 1;
 }
 .video-information .link-delete,
 .video-comment .link-delete,

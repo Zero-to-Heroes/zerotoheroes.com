@@ -235,7 +235,12 @@
 			"noSpam": "You know where to find us, so we won't spam"
 		},
 		"general": {
-			"email": "Email address"
+			"email": "Email address",
+			"share": {
+				"twitter": "Share on Twitter",
+				"facebook": "Share on Facebook",
+				"reddit": "Share on Reddit"
+			}
 		},
 		"navigation": {
 			"postVideo": "Upload",

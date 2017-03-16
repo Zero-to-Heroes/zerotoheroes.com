@@ -65,7 +65,12 @@
 											<span compilecontent content="review.plugins.hearthstone.parseDecks.markedReviewDeck"></span>
 										</div>
 									</div>
-									<button class="btn btn-default ask-pro" ng-click="showProModal()" ng-if="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</button>
+									<div class="social-share" ng-if="review.url">
+										<a socialshare socialshare-provider="twitter" socialshare-text="{{::'Need help! ' + review.metaData.playerName + '(' + review.metaData.playerClass + ') vs ' + review.metaData.opponentName + '(' + review.metaData.opponentClass + ')'}}" socialshare-hashtags="hearthstone, zerotoheroes" socialshare-url="{{::getShortUrl(review)}}" class="share twitter-share" title="{{::translations.shareTwitter}}"></a>
+										<a socialshare socialshare-provider="facebook" socialshare-text="{{::'Need help! ' + review.metaData.playerName + '(' + review.metaData.playerClass + ') vs ' + review.metaData.opponentName + '(' + review.metaData.opponentClass + ')'}}" socialshare-hashtags="hearthstone, zerotoheroes" socialshare-url="{{::getShortUrl(review)}}" class="share facebook-share" title="{{::translations.shareFacebook}}"></a>
+										<a socialshare socialshare-provider="reddit" socialshare-text="{{::'Need help with game review: ' + review.metaData.playerName + '(' + review.metaData.playerClass + ') vs ' + review.metaData.opponentName + '(' + review.metaData.opponentClass + ')'}}" socialshare-url="{{::getShortUrl(review)}}" socialshare-subreddit="hearthstone" class="share reddit-share" title="{{::translations.shareReddit}}"></a>
+									</div>
+									<!-- <button class="btn btn-default ask-pro" ng-click="showProModal()" ng-if="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</button> -->
 								</div>
 								
 							</div>

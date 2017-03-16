@@ -92,6 +92,11 @@
 		<link rel="stylesheet" href="styles/less/application.css">
 		<!-- endbuild -->
 
+		<link rel="stylesheet" href="plugins/manastorm/manastorm.css">
+		<link rel="stylesheet" href="plugins/parseCardsText/parseCardsText.css">
+		<link rel="stylesheet" href="plugins/parseDecks/parseDecks.css">
+		<link rel="stylesheet" href="plugins/windrunner/windrunner.css">
+
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
 		<!-- Video.js -->
@@ -288,9 +293,13 @@
 		<script src="scripts/services/hearthstone/hsReplayParser.js"></script>
 
 
-		<script src="plugins/parseDecks/hsDecklistUpload.js"></script>
 		<!-- endbuild -->
 
-		
+		<!-- build:js(.) scripts/plugins.js -->
+		<script src="plugins/parseDecks/hsDecklistUpload.js"></script>
+		<script src="plugins/manastorm/manastorm.js"></script>
+		<script src="plugins/parseCardsText/parseCardsText.js"></script>
+		<script src="plugins/windrunner/windrunner.js"></script>
+		<!-- endbuild -->
 	</body>
 </html>

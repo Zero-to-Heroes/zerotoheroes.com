@@ -66,7 +66,7 @@ public class DeckParser implements Plugin {
 	// private static final String ZTH_DECK_ID_REGEX =
 	// "\\[?(http:\\/.*localhost.*\\/r\\/hearthstone\\/)([\\da-zA-Z]+)\\/.*\\]?";
 
-	private static final String HEARTHARENA_DECK_ID_REGEX = "\\[?(http:\\/\\/www\\.heartharena\\.com\\/arena-run\\/)([\\d\\-a-zA-Z]+)\\]?";
+	private static final String HEARTHARENA_DECK_ID_REGEX = "\\[?(?:http:\\/\\/)?(www\\.heartharena\\.com\\/arena-run\\/)([\\d\\-a-zA-Z]+)\\]?";
 	private static final String HEARTHARENA_DECK_HOST_URL = "http://www.heartharena.com/arena-run/";
 
 	private static final String ARENADRAFTS_DECK_ID_REGEX = "\\[?(http:\\/\\/(www\\.)?arenadrafts\\.com\\/Arena\\/View\\/)([\\d\\-a-zA-Z\\-]+)\\]?";

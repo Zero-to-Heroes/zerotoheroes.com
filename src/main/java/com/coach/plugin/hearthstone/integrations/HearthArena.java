@@ -34,8 +34,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HearthArena implements IntegrationPlugin {
 
-	private static final String URL_PATTERN = "\\[?(http:\\/\\/www\\.heartharena\\.com\\/arena-run\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
-	private static final String URL = "http://www.heartharena.com/arena-run/";
+	private static final String URL_PATTERN = "\\[?(?:http:\\/\\/)?(www\\.heartharena\\.com\\/arena-run\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
+	// private static final String URL =
+	// "http://www.heartharena.com/arena-run/";
 
 	@Autowired
 	ReviewRepository repo;
@@ -62,35 +63,41 @@ public class HearthArena implements IntegrationPlugin {
 
 	@Override
 	public void integrateRemoteData(String draftUrl, final Review review) throws Exception {
-		// First - create a file that contains the draft info to upload to s3
-		Draft result = buildDraftObject(review, draftUrl);
-		String strResult = new ObjectMapper().writeValueAsString(result);
-		// Flag the review to show that we are handling it
-		review.setMediaType("arena-draft");
-		review.setText("Imported from " + draftUrl);
-		// log.debug("strResult " + strResult);
+		Pattern pattern = Pattern.compile(URL_PATTERN, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(draftUrl);
+		while (matcher.find()) {
+			draftUrl = "http://" + matcher.group(1) + matcher.group(2);
+			// First - create a file that contains the draft info to upload to
+			// s3
+			Draft result = buildDraftObject(review, draftUrl);
+			String strResult = new ObjectMapper().writeValueAsString(result);
+			// Flag the review to show that we are handling it
+			review.setMediaType("arena-draft");
+			review.setText("Imported from " + draftUrl);
+			// log.debug("strResult " + strResult);
 
-		// Then upload the file
-		final String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/draft");
-		ProgressListener listener = new ProgressListener() {
+			// Then upload the file
+			final String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/draft");
+			ProgressListener listener = new ProgressListener() {
 
-			@Override
-			public void progressChanged(ProgressEvent progressEvent) {
-				log.debug("progress2 " + progressEvent.getEventType());
-				if (progressEvent.getEventType().equals(ProgressEventType.TRANSFER_COMPLETED_EVENT)) {
-					// And finally update the review with all the necessary data
-					review.setKey(key);
-					review.setFileType("json");
-					review.setMediaType("arena-draft");
-					review.setReviewType("arena-draft");
-					review.setTranscodingDone(true);
-					repo.save(review);
-					// log.debug("review " + review);
+				@Override
+				public void progressChanged(ProgressEvent progressEvent) {
+					log.debug("progress2 " + progressEvent.getEventType());
+					if (progressEvent.getEventType().equals(ProgressEventType.TRANSFER_COMPLETED_EVENT)) {
+						// And finally update the review with all the necessary
+						// data
+						review.setKey(key);
+						review.setFileType("json");
+						review.setMediaType("arena-draft");
+						review.setReviewType("arena-draft");
+						review.setTranscodingDone(true);
+						repo.save(review);
+						// log.debug("review " + review);
+					}
 				}
-			}
-		};
-		s3utils.putToS3(strResult, key, "text/json", listener);
-
+			};
+			s3utils.putToS3(strResult, key, "text/json", listener);
+		}
 	}
 
 	private Draft buildDraftObject(Review review, String draftUrl) throws IOException {

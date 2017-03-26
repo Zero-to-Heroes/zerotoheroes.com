@@ -75,7 +75,8 @@ public class ReviewDao {
 		if (!StringUtils.isEmpty(criteria.getAuthor()) && criteria.getAuthor().length() > 2) {
 			Criteria authorIdCriteria = where("authorId").is(criteria.getAuthor());
 			Criteria authorCriteria = where("author").regex(".*" + criteria.getAuthor() + ".*", "i");
-			crit.orOperator(authorCriteria, authorIdCriteria);
+			Criteria playerNameCriteria = where("metaData.playerName").regex(".*" + criteria.getAuthor() + ".*", "i");
+			crit.orOperator(authorCriteria, authorIdCriteria, playerNameCriteria);
 		}
 		// No author specified, so we need to exclude ourselves in case of help
 		// search

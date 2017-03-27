@@ -108,7 +108,8 @@ public class SubcriptionConcierge {
 		List<SavedSearchSubscription> subs = profile.getSubscriptions().getSubscriptions();
 		for (SavedSearchSubscription sub : subs) {
 			if (topic.equals(sub.getCriteria().getGameMode())) { return true; }
-			if (sub.getCriteria().getPlayerCategory().contains(topic)) { return true; }
+			if (sub.getCriteria().getPlayerCategory() != null
+					&& sub.getCriteria().getPlayerCategory().contains(topic)) { return true; }
 		}
 
 		return false;

@@ -1,6 +1,8 @@
 package com.coach.plugin.hearthstone;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.time.LocalTime;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -129,10 +131,10 @@ public class HSArenaDraft implements ReplayPlugin {
 	}
 
 	public String convertToJson(String atFile) throws Exception {
-		Pattern heroPickRegex = Pattern.compile(".* - GameWatcher\\(\\d+\\): New arena\\. Heroe: (\\d+).*");
-		Pattern heroPickRegex2 = Pattern.compile(".* - DraftHandler: Begin draft. Heroe: (\\d+).*");
-		Pattern choiceRegex = Pattern.compile(".* - DraftHandler: \\(\\d+\\) (\\w+)\\/(\\w+)\\/(\\w+).*");
-		Pattern pickRegex = Pattern.compile(".* - GameWatcher\\(\\d+\\): Pick card: (\\w+).*");
+		Pattern heroPickRegex = Pattern.compile("(.*) - GameWatcher\\(\\d+\\): New arena\\. Heroe: (\\d+).*");
+		Pattern heroPickRegex2 = Pattern.compile("(.*) - DraftHandler: Begin draft. Heroe: (\\d+).*");
+		Pattern choiceRegex = Pattern.compile("(.*) - DraftHandler: \\(\\d+\\) (\\w+)\\/(\\w+)\\/(\\w+).*");
+		Pattern pickRegex = Pattern.compile("(.*) - GameWatcher\\(\\d+\\): Pick card: (\\w+).*");
 
 		String draftJson = null;
 
@@ -142,17 +144,30 @@ public class HSArenaDraft implements ReplayPlugin {
 			if (lines != null) {
 				Draft draft = new Draft();
 				int pickIndex = 0;
+				LocalTime lastTime = null;
 				for (String line : lines) {
+					line = line.replaceAll("\\r", "").replaceAll("\\n", "");
 					// log.debug("Parsing line " + line);
 					Matcher matcher = choiceRegex.matcher(line);
 					if (matcher.matches()) {
-						Pick pick = new Pick(matcher.group(1), matcher.group(2), matcher.group(3));
+						lastTime = LocalTime.parse(matcher.group(1));
+						Pick pick = new Pick(matcher.group(2), matcher.group(3), matcher.group(4));
 						draft.detectedcards[pickIndex] = pick;
 					}
 
 					matcher = pickRegex.matcher(line);
 					if (matcher.matches()) {
-						draft.pickedcards[pickIndex++] = matcher.group(1);
+						LocalTime time = LocalTime.parse(matcher.group(1));
+						String cardId = matcher.group(2);
+						// HS sometimes loos duplicate at a close interval, this
+						// is an attempt to work around it
+						if (pickIndex == 0 ||
+								!cardId.equals(draft.pickedcards[pickIndex - 1]) ||
+								Duration.between(time, lastTime).abs().getSeconds() > 2) {
+
+							draft.pickedcards[pickIndex++] = cardId;
+						}
+						lastTime = time;
 					}
 
 					matcher = heroPickRegex.matcher(line);
@@ -161,7 +176,7 @@ public class HSArenaDraft implements ReplayPlugin {
 					}
 
 					if (matcher.matches()) {
-						String heroCode = matcher.group(1);
+						String heroCode = matcher.group(2);
 						String hero = null;
 						switch (heroCode) {
 							case "01":

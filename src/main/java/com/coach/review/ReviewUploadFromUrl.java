@@ -91,6 +91,7 @@ public class ReviewUploadFromUrl {
 		review.setCreationDate(new Date());
 		review.setLastModifiedBy(review.getAuthor());
 		reviewRepo.save(review);
+		log.debug("Review saved " + review);
 
 		// Switch depending on the url integration
 		parseIntegrations(review, url.getUrl());

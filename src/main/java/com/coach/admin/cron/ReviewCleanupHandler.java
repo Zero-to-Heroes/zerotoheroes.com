@@ -252,6 +252,7 @@ public class ReviewCleanupHandler {
 			review.setLastMetaDataParsingDate(new Date());
 
 			reviewRepository.save(review);
+			log.debug("Review saved");
 		}
 
 		return new ResponseEntity<String>("Updated ", HttpStatus.OK);

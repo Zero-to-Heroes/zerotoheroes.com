@@ -74,12 +74,13 @@ public class ReviewService {
 				review.getMetaData().extractSkillLevel(review.getParticipantDetails().getSkillLevel());
 				// log.debug("updating review");
 				reviewRepo.save(review);
-				// log.debug("updated refiew", review);
+				log.debug("updated refiew" + review);
 			}
 			catch (Exception e) {
 				log.warn("Exception updating the review, retrying", e);
 				try {
 					reviewRepo.save(review);
+					log.debug("Updated review " + review);
 				}
 				catch (Exception e2) {
 					log.error("Exception updating the review", e2);

@@ -121,7 +121,7 @@ public class HsReplayNet implements IntegrationPlugin {
 						slackNotifier.notifyError(e, "Could not parse meta data for review", review);
 					}
 					repo.save(review);
-					log.debug("review " + review);
+					log.debug("review saved" + review);
 				}
 			}
 		};

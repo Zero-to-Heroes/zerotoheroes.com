@@ -193,11 +193,6 @@ public class ReviewApiHandler {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		User user = userRepo.findByUsername(currentUser);
 
-		// Increase the view count
-		if (review.isTranscodingDone() || Sport.Meta.equals(review.getSport())) {
-			review.incrementViewCount();
-		}
-
 		// Fix bogus review/mediaType (legacy)
 		if ("game".equals(review.getReviewType())) {
 			review.setReviewType("game-replay");
@@ -212,16 +207,18 @@ public class ReviewApiHandler {
 			review.setReviewType(review.getMediaType());
 		}
 
-		String userId = user != null ? user.getId() : null;
-		review.registerVisit(userId);
-		reviewService.updateAsync(review);
+		String userId = null;
+		if (review.isTranscodingDone()) {
+			userId = user != null ? user.getId() : null;
+			review.registerVisit(userId);
+			reviewService.updateAsync(review);
 
-		// Now load all the unread notifs for this user and this review
-		if (userId != null) {
-			List<Notification> unreadNotifs = notificationDao.findAllUnread(userId, review.getId());
-			review.highlightUnreadNotifs(unreadNotifs);
+			// Now load all the unread notifs for this user and this review
+			if (userId != null) {
+				List<Notification> unreadNotifs = notificationDao.findAllUnread(userId, review.getId());
+				review.highlightUnreadNotifs(unreadNotifs);
+			}
 		}
-
 		review.prepareForDisplay(userId);
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
@@ -348,6 +345,7 @@ public class ReviewApiHandler {
 
 		// We need to save here so that the transcoding process can retrieve it
 		reviewRepo.save(review);
+		log.debug("Review saved");
 
 		// Start transcoding
 		if (!StringUtils.isEmpty(review.getTemporaryKey()) || !StringUtils.isEmpty(review.getTemporaryReplay())) {
@@ -369,6 +367,7 @@ public class ReviewApiHandler {
 			log.debug("No media attached");
 			review.setPublished(true);
 			reviewRepo.save(review);
+			log.debug("Review saved");
 		}
 
 		log.debug("Transcoding started, returning with created review: " + review);

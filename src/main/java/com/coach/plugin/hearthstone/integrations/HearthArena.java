@@ -92,7 +92,7 @@ public class HearthArena implements IntegrationPlugin {
 						review.setReviewType("arena-draft");
 						review.setTranscodingDone(true);
 						repo.save(review);
-						// log.debug("review " + review);
+						log.debug("review saved " + review);
 					}
 				}
 			};

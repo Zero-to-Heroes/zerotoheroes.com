@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class TestHSArenaDraft {
 
+	@SuppressWarnings("resource")
 	@Test
 	public void testATConversion() throws Exception {
 		String atFile = new Scanner(getClass().getResourceAsStream("at-draft.arenatracker"), "UTF-8")

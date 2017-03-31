@@ -144,6 +144,7 @@ public class HSReplay implements ReplayPlugin {
 			hsParser.addMetaData(review);
 		}
 		catch (Exception e) {
+			log.error("Could not parse metadata for review " + review, e);
 			slackNotifier.notifyError(e, "Could not parse metadata", review);
 		}
 		s3utils.putToS3(xml, review.getKey(), "text/xml");

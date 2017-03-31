@@ -2,7 +2,7 @@ var services = angular.module('services');
 services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage', 
 	function ($log, angularLoad, $parse, localStorage) {
 		var service = {}
-		var dev = false;
+		var dev = true;
 
 		service =
 			{
@@ -63,8 +63,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						plugins: [
 							{name: 'parseCardsText', version: 31, dev: dev}, 
 							{name: 'parseDecks', version: 42, dev: dev}, 
-							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 152
-							, dev: dev},
+							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 153, options: { useCompressedImages: true }, dev: dev},
 							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 32, dev: dev}
 						],
 						customCss: 'hearthstone.css?7'
@@ -283,7 +282,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 							$log.debug('calling callback in SportsConfig')
 							callback(externalPlayer)
 						}
-					})
+					}, plugin.options)
 				}
 				catch (e) {
 					$log.error('exception externalPlayer init', e)

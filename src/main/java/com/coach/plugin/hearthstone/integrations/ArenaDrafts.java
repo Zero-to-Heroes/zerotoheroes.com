@@ -90,7 +90,7 @@ public class ArenaDrafts implements IntegrationPlugin {
 					review.setReviewType("arena-draft");
 					review.setTranscodingDone(true);
 					repo.save(review);
-					log.debug("review " + review);
+					log.debug("review saved " + review);
 				}
 			}
 		};

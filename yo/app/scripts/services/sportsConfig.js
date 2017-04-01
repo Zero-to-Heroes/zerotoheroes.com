@@ -2,7 +2,7 @@ var services = angular.module('services');
 services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage', 
 	function ($log, angularLoad, $parse, localStorage) {
 		var service = {}
-		var dev = true;
+		var dev = false;
 
 		service =
 			{

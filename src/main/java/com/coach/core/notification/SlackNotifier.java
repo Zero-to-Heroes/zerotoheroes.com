@@ -483,7 +483,7 @@ public class SlackNotifier {
 			executorProvider.getExecutor().submit(new Callable<String>() {
 				@Override
 				public String call() throws Exception {
-					log.debug("Sending error to Sleck");
+					log.debug("Sending error to Slack", e);
 					SlackApi api = new SlackApi(
 							"https://hooks.slack.com/services/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");
 

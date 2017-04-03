@@ -96,7 +96,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 						var replayGames = (contents.match(gameRegex) || []).length
 						var indexOfLastDot = fileItem._file.name.lastIndexOf('.')
 						var extension = fileItem._file.name.slice(indexOfLastDot + 1)
-						if ('hdtreplay' == extension || 'xml' == extension)
+						if ('hdtreplay' == extension || 'hszip' == extension || 'xml' == extension)
 							replayGames = replayGames || 1
 
 				        $scope.numberOfGames += replayGames

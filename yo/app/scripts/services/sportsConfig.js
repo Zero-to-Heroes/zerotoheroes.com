@@ -58,7 +58,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						visibilityrestricted: 'plugins/sports/hearthstone/images/new/picto-video-restreint.png',
 						rankImagesRoot: 'plugins/sports/hearthstone/images/ranks'
 					},
-					supportedExtensions: ['hdtreplay', 'arenatracker', 'log'],
+					supportedExtensions: ['hdtreplay', 'hszip', 'arenatracker', 'log'],
 					plugins: {
 						plugins: [
 							{name: 'parseCardsText', version: 31, dev: dev}, 

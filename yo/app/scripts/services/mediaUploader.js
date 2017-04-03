@@ -35,6 +35,8 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 						type = 'text/xml; charset=utf-8'
 					else if (['hdtreplay'].indexOf(extension) > -1)
 						type = 'hdtreplay'
+					else if (['hszip'].indexOf(extension) > -1)
+						type = 'hszip'
 					else if (['arenatracker'].indexOf(extension) > -1)
 						type = 'text/plain; charset=utf-8'
 				}

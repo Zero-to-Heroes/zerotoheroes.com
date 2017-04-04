@@ -47271,7 +47271,6 @@ var parseCardsText = {
 		"text": "No durability loss.",
 		"type": "Enchantment"
 	}
-]
 ],
 
 	keywords: {

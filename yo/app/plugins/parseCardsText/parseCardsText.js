@@ -43066,212 +43066,227 @@ var parseCardsText = {
 ],
 
 	keywords: {
-		"GLOBAL_KEYWORD_AUTOATTACK": {
-			"en": "Auto-Attack"
-		},
-		"GLOBAL_KEYWORD_AUTOATTACK_TEXT": {
-			"en": "Can't attack, but does something at the end of your turn."
-		},
-		"GLOBAL_KEYWORD_AUTOCAST": {
-			"en": "Auto-cast"
-		},
-		"GLOBAL_KEYWORD_AUTOCAST_TEXT": {
-			"en": "This Hero Power MUST be used every turn."
-		},
-		"GLOBAL_KEYWORD_BATTLECRY": {
-			"en": "Battlecry"
-		},
-		"GLOBAL_KEYWORD_BATTLECRY_TEXT": {
-			"en": "Does something when you play it from your hand."
-		},
-		"GLOBAL_KEYWORD_BOSS": {
-			"en": "Boss"
-		},
-		"GLOBAL_KEYWORD_BOSS_TEXT": {
-			"en": "The players are fighting together to overcome the Boss."
-		},
-		"GLOBAL_KEYWORD_CANT_BE_DAMAGED": {
-			"en": "Immune"
-		},
-		"GLOBAL_KEYWORD_CANT_BE_DAMAGED_REF_TEXT": {
-			"en": "Immune characters can't be damaged."
-		},
-		"GLOBAL_KEYWORD_CANT_BE_DAMAGED_TEXT": {
-			"en": "Can't be damaged."
-		},
-		"GLOBAL_KEYWORD_CHARGE": {
-			"en": "Charge"
-		},
-		"GLOBAL_KEYWORD_CHARGE_TEXT": {
-			"en": "Can attack immediately."
-		},
-		"GLOBAL_KEYWORD_COMBO": {
-			"en": "Combo"
-		},
-		"GLOBAL_KEYWORD_COMBO_TEXT": {
-			"en": "A bonus if you already played a card this turn."
-		},
-		"GLOBAL_KEYWORD_COUNTER": {
-			"en": "Counter"
-		},
-		"GLOBAL_KEYWORD_COUNTER_TEXT": {
-			"en": "A card that is Countered has no effect."
-		},
-		"GLOBAL_KEYWORD_CTHUN": {
-			"en": "C'Thun, Old God"
-		},
-		"GLOBAL_KEYWORD_CTHUN_TEXT": {
-			"en": "C'Thun receives buffs no matter where it is, even in your deck!"
-		},
-		"GLOBAL_KEYWORD_DEATHRATTLE": {
-			"en": "Deathrattle"
-		},
-		"GLOBAL_KEYWORD_DEATHRATTLE_TEXT": {
-			"en": "Does something when it dies."
-		},
-		"GLOBAL_KEYWORD_DISCOVER": {
-			"en": "Discover"
-		},
-		"GLOBAL_KEYWORD_DISCOVER_TEXT": {
-			"en": "Choose one of three cards to add to your hand."
-		},
-		"GLOBAL_KEYWORD_DIVINE_SHIELD": {
-			"en": "Divine Shield"
-		},
-		"GLOBAL_KEYWORD_DIVINE_SHIELD_REF_TEXT": {
-			"en": "The first time a Shielded minion takes damage, ignore it."
-		},
-		"GLOBAL_KEYWORD_DIVINE_SHIELD_TEXT": {
-			"en": "The first time this minion takes damage, ignore it."
-		},
-		"GLOBAL_KEYWORD_ENRAGED": {
-			"en": "Enrage"
-		},
-		"GLOBAL_KEYWORD_ENRAGED_TEXT": {
-			"en": "While damaged, this minion has a new power."
-		},
-		"GLOBAL_KEYWORD_FREEZE": {
-			"en": "Freeze"
-		},
-		"GLOBAL_KEYWORD_FREEZE_TEXT": {
-			"en": "Frozen characters lose their next attack."
-		},
-		"GLOBAL_KEYWORD_FROZEN": {
-			"en": "Frozen"
-		},
-		"GLOBAL_KEYWORD_FROZEN_TEXT": {
-			"en": "Misses its next attack."
-		},
-		"GLOBAL_KEYWORD_GRIMY_GOONS": {
-			"en": "Grimy Goons"
-		},
-		"GLOBAL_KEYWORD_GRIMY_GOONS_COLLECTION_TEXT": {
-			"en": "You can put this in Hunter, Paladin or Warrior decks."
-		},
-		"GLOBAL_KEYWORD_INSPIRE": {
-			"en": "Inspire"
-		},
-		"GLOBAL_KEYWORD_INSPIRE_TEXT": {
-			"en": "Does something after you use your Hero Power."
-		},
-		"GLOBAL_KEYWORD_JADE_GOLEM": {
-			"en": "Jade Golem"
-		},
-		"GLOBAL_KEYWORD_JADE_GOLEM_COLLECTION_TEXT": {
-			"en": "Your first Jade Golem is 1/1. Each future one has +1/+1."
-		},
-		"GLOBAL_KEYWORD_JADE_GOLEM_TEXT": {
-			"en": "Each Jade Golem is +1/+1 bigger than the last."
-		},
-		"GLOBAL_KEYWORD_JADE_LOTUS": {
-			"en": "Jade Lotus"
-		},
-		"GLOBAL_KEYWORD_JADE_LOTUS_COLLECTION_TEXT": {
-			"en": "You can put this in Druid, Rogue or Shaman decks."
-		},
-		"GLOBAL_KEYWORD_KABAL": {
-			"en": "Kabal"
-		},
-		"GLOBAL_KEYWORD_KABAL_COLLECTION_TEXT": {
-			"en": "You can put this in Priest, Mage or Warlock decks."
-		},
-		"GLOBAL_KEYWORD_MINION_TYPE_REFERENCE": {
-			"en": "Minion Type"
-		},
-		"GLOBAL_KEYWORD_MINION_TYPE_REFERENCE_TEXT": {
-			"en": "Beast, Demon, Dragon, Mech, Murloc, Pirate, and Totem."
-		},
-		"GLOBAL_KEYWORD_OVERLOAD": {
-			"en": "Overload: X"
-		},
-		"GLOBAL_KEYWORD_OVERLOAD_REF_TEXT": {
-			"en": "Cards with Overload limit your mana next turn."
-		},
-		"GLOBAL_KEYWORD_OVERLOAD_TEXT": {
-			"en": "You have X less mana next turn."
-		},
-		"GLOBAL_KEYWORD_POISONOUS": {
-			"en": "Poisonous"
-		},
-		"GLOBAL_KEYWORD_POISONOUS_TEXT": {
-			"en": "Destroy any minion damaged by this."
-		},
-		"GLOBAL_KEYWORD_SECRET": {
-			"en": "Secret"
-		},
-		"GLOBAL_KEYWORD_SECRET_TEXT": {
-			"en": "Hidden until a specific action occurs on your opponent's turn."
-		},
-		"GLOBAL_KEYWORD_SHIFTING": {
-			"en": "Shifter Zerus"
-		},
-		"GLOBAL_KEYWORD_SHIFTING_TEXT": {
-			"en": "Transforms into a new minion at the start of your turn."
-		},
-		"GLOBAL_KEYWORD_SILENCE": {
-			"en": "Silence"
-		},
-		"GLOBAL_KEYWORD_SILENCE_TEXT": {
-			"en": "Removes all card text and enchantments."
-		},
-		"GLOBAL_KEYWORD_SPAREPART": {
-			"en": "Spare Parts"
-		},
-		"GLOBAL_KEYWORD_SPAREPART_TEXT": {
-			"en": "Spare Parts are 1-cost spells with minor effects."
-		},
-		"GLOBAL_KEYWORD_SPELLPOWER": {
-			"en": "Spell Damage"
-		},
-		"GLOBAL_KEYWORD_SPELLPOWER_REF_TEXT": {
-			"en": "Your spells deal extra damage."
-		},
-		"GLOBAL_KEYWORD_SPELLPOWER_TEXT": {
-			"en": "Your spell cards deal {0} extra damage."
-		},
-		"GLOBAL_KEYWORD_STEALTH": {
-			"en": "Stealth"
-		},
-		"GLOBAL_KEYWORD_STEALTH_REF_TEXT": {
-			"en": "Can't be attacked or targeted until it deals damage."
-		},
-		"GLOBAL_KEYWORD_STEALTH_TEXT": {
-			"en": "Can't be attacked or targeted until it deals damage."
-		},
-		"GLOBAL_KEYWORD_TAUNT": {
-			"en": "Taunt"
-		},
-		"GLOBAL_KEYWORD_TAUNT_REF_TEXT": {
-			"en": "Enemies must attack minions that have Taunt."
-		},
-		"GLOBAL_KEYWORD_TAUNT_TEXT": {
-			"en": "Enemies must attack this minion."
-		},
-		"GLOBAL_KEYWORD_WINDFURY": {
-			"en": "Windfury"
-		},
-		"GLOBAL_KEYWORD_WINDFURY_TEXT": {
-			"en": "Can attack twice each turn."
-		}
+	    "GLOBAL_KEYWORD_ADAPT": {
+	        "en": "Adapt"
+	    },
+	    "GLOBAL_KEYWORD_ADAPT_TEXT": {
+	        "en": "Choose one of 3 bonuses."
+	    },
+	    "GLOBAL_KEYWORD_AUTOATTACK": {
+	        "en": "Auto-Attack"
+	    },
+	    "GLOBAL_KEYWORD_AUTOATTACK_TEXT": {
+	        "en": "Can't attack, but does something at the end of your turn."
+	    },
+	    "GLOBAL_KEYWORD_AUTOCAST": {
+	        "en": "Auto-cast"
+	    },
+	    "GLOBAL_KEYWORD_AUTOCAST_TEXT": {
+	        "en": "This Hero Power MUST be used every turn."
+	    },
+	    "GLOBAL_KEYWORD_BATTLECRY": {
+	        "en": "Battlecry"
+	    },
+	    "GLOBAL_KEYWORD_BATTLECRY_TEXT": {
+	        "en": "Does something when you play it from your hand."
+	    },
+	    "GLOBAL_KEYWORD_BOSS": {
+	        "en": "Boss"
+	    },
+	    "GLOBAL_KEYWORD_BOSS_TEXT": {
+	        "en": "The players are fighting together to overcome the Boss."
+	    },
+	    "GLOBAL_KEYWORD_CANT_BE_DAMAGED": {
+	        "en": "Immune"
+	    },
+	    "GLOBAL_KEYWORD_CANT_BE_DAMAGED_REF_TEXT": {
+	        "en": "Immune characters can't be damaged."
+	    },
+	    "GLOBAL_KEYWORD_CANT_BE_DAMAGED_TEXT": {
+	        "en": "Can't be damaged."
+	    },
+	    "GLOBAL_KEYWORD_CHARGE": {
+	        "en": "Charge"
+	    },
+	    "GLOBAL_KEYWORD_CHARGE_TEXT": {
+	        "en": "Can attack immediately."
+	    },
+	    "GLOBAL_KEYWORD_COMBO": {
+	        "en": "Combo"
+	    },
+	    "GLOBAL_KEYWORD_COMBO_TEXT": {
+	        "en": "A bonus if you already played a card this turn."
+	    },
+	    "GLOBAL_KEYWORD_COUNTER": {
+	        "en": "Counter"
+	    },
+	    "GLOBAL_KEYWORD_COUNTER_TEXT": {
+	        "en": "A card that is Countered has no effect."
+	    },
+	    "GLOBAL_KEYWORD_CTHUN": {
+	        "en": "C'Thun, Old God"
+	    },
+	    "GLOBAL_KEYWORD_CTHUN_TEXT": {
+	        "en": "C'Thun receives buffs no matter where it is, even in your deck!"
+	    },
+	    "GLOBAL_KEYWORD_DEATHRATTLE": {
+	        "en": "Deathrattle"
+	    },
+	    "GLOBAL_KEYWORD_DEATHRATTLE_TEXT": {
+	        "en": "Does something when it dies."
+	    },
+	    "GLOBAL_KEYWORD_DISCOVER": {
+	        "en": "Discover"
+	    },
+	    "GLOBAL_KEYWORD_DISCOVER_TEXT": {
+	        "en": "Choose one of three cards to add to your hand."
+	    },
+	    "GLOBAL_KEYWORD_DIVINE_SHIELD": {
+	        "en": "Divine Shield"
+	    },
+	    "GLOBAL_KEYWORD_DIVINE_SHIELD_REF_TEXT": {
+	        "en": "The first time a Shielded minion takes damage, ignore it."
+	    },
+	    "GLOBAL_KEYWORD_DIVINE_SHIELD_TEXT": {
+	        "en": "The first time this minion takes damage, ignore it."
+	    },
+	    "GLOBAL_KEYWORD_ENRAGED": {
+	        "en": "Enrage"
+	    },
+	    "GLOBAL_KEYWORD_ENRAGED_TEXT": {
+	        "en": "While damaged, this minion has a new power."
+	    },
+	    "GLOBAL_KEYWORD_FREEZE": {
+	        "en": "Freeze"
+	    },
+	    "GLOBAL_KEYWORD_FREEZE_TEXT": {
+	        "en": "Frozen characters lose their next attack."
+	    },
+	    "GLOBAL_KEYWORD_FROZEN": {
+	        "en": "Frozen"
+	    },
+	    "GLOBAL_KEYWORD_FROZEN_TEXT": {
+	        "en": "Misses its next attack."
+	    },
+	    "GLOBAL_KEYWORD_GRIMY_GOONS": {
+	        "en": "Grimy Goons"
+	    },
+	    "GLOBAL_KEYWORD_GRIMY_GOONS_COLLECTION_TEXT": {
+	        "en": "You can put this in Hunter, Paladin or Warrior decks."
+	    },
+	    "GLOBAL_KEYWORD_INSPIRE": {
+	        "en": "Inspire"
+	    },
+	    "GLOBAL_KEYWORD_INSPIRE_TEXT": {
+	        "en": "Does something after you use your Hero Power."
+	    },
+	    "GLOBAL_KEYWORD_JADE_GOLEM": {
+	        "en": "Jade Golem"
+	    },
+	    "GLOBAL_KEYWORD_JADE_GOLEM_COLLECTION_TEXT": {
+	        "en": "Your first Jade Golem is 1/1. Each future one has +1/+1."
+	    },
+	    "GLOBAL_KEYWORD_JADE_GOLEM_TEXT": {
+	        "en": "Each Jade Golem is +1/+1 bigger than the last."
+	    },
+	    "GLOBAL_KEYWORD_JADE_LOTUS": {
+	        "en": "Jade Lotus"
+	    },
+	    "GLOBAL_KEYWORD_JADE_LOTUS_COLLECTION_TEXT": {
+	        "en": "You can put this in Druid, Rogue or Shaman decks."
+	    },
+	    "GLOBAL_KEYWORD_KABAL": {
+	        "en": "Kabal"
+	    },
+	    "GLOBAL_KEYWORD_KABAL_COLLECTION_TEXT": {
+	        "en": "You can put this in Priest, Mage or Warlock decks."
+	    },
+	    "GLOBAL_KEYWORD_MINION_TYPE_REFERENCE": {
+	        "en": "Minion Type"
+	    },
+	    "GLOBAL_KEYWORD_MINION_TYPE_REFERENCE_TEXT": {
+	        "en": "Beast, Demon, Dragon, Mech, Murloc, Pirate, and Totem."
+	    },
+	    "GLOBAL_KEYWORD_OVERLOAD": {
+	        "en": "Overload: X"
+	    },
+	    "GLOBAL_KEYWORD_OVERLOAD_REF_TEXT": {
+	        "en": "Cards with Overload limit your mana next turn."
+	    },
+	    "GLOBAL_KEYWORD_OVERLOAD_TEXT": {
+	        "en": "You have X less mana next turn."
+	    },
+	    "GLOBAL_KEYWORD_POISONOUS": {
+	        "en": "Poisonous"
+	    },
+	    "GLOBAL_KEYWORD_POISONOUS_TEXT": {
+	        "en": "Destroy any minion damaged by this."
+	    },
+	    "GLOBAL_KEYWORD_QUEST": {
+	        "en": "Quest"
+	    },
+	    "GLOBAL_KEYWORD_QUEST_TEXT": {
+	        "en": "Starts in your hand. Complete for a reward."
+	    },
+	    "GLOBAL_KEYWORD_SECRET": {
+	        "en": "Secret"
+	    },
+	    "GLOBAL_KEYWORD_SECRET_TEXT": {
+	        "en": "Hidden until a specific action occurs on your opponent's turn."
+	    },
+	    "GLOBAL_KEYWORD_SHIFTING_MINION_TEXT": {
+	        "en": "Transforms into a new minion at the start of your turn."
+	    },
+	    "GLOBAL_KEYWORD_SHIFTING_TEXT": {
+	        "en": "Transforms into a new card at the start of your turn."
+	    },
+	    "GLOBAL_KEYWORD_SHIFTING_WEAPON_TEXT": {
+	        "en": "Transforms into a new weapon at the start of your turn."
+	    },
+	    "GLOBAL_KEYWORD_SILENCE": {
+	        "en": "Silence"
+	    },
+	    "GLOBAL_KEYWORD_SILENCE_TEXT": {
+	        "en": "Removes all card text and enchantments."
+	    },
+	    "GLOBAL_KEYWORD_SPAREPART": {
+	        "en": "Spare Parts"
+	    },
+	    "GLOBAL_KEYWORD_SPAREPART_TEXT": {
+	        "en": "Spare Parts are 1-cost spells with minor effects."
+	    },
+	    "GLOBAL_KEYWORD_SPELLPOWER": {
+	        "en": "Spell Damage"
+	    },
+	    "GLOBAL_KEYWORD_SPELLPOWER_REF_TEXT": {
+	        "en": "Your spells deal extra damage."
+	    },
+	    "GLOBAL_KEYWORD_SPELLPOWER_TEXT": {
+	        "en": "Your spell cards deal {0} extra damage."
+	    },
+	    "GLOBAL_KEYWORD_STEALTH": {
+	        "en": "Stealth"
+	    },
+	    "GLOBAL_KEYWORD_STEALTH_REF_TEXT": {
+	        "en": "Can't be attacked or targeted until it deals damage."
+	    },
+	    "GLOBAL_KEYWORD_STEALTH_TEXT": {
+	        "en": "Can't be attacked or targeted until it deals damage."
+	    },
+	    "GLOBAL_KEYWORD_TAUNT": {
+	        "en": "Taunt"
+	    },
+	    "GLOBAL_KEYWORD_TAUNT_REF_TEXT": {
+	        "en": "Enemies must attack minions that have Taunt."
+	    },
+	    "GLOBAL_KEYWORD_TAUNT_TEXT": {
+	        "en": "Enemies must attack this minion."
+	    },
+	    "GLOBAL_KEYWORD_WINDFURY": {
+	        "en": "Windfury"
+	    },
+	    "GLOBAL_KEYWORD_WINDFURY_TEXT": {
+	        "en": "Can attack twice each turn."
+	    }
 	}
 }

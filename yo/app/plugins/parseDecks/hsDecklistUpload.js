@@ -8,9 +8,9 @@ app.directive('hsDecklistUpload', ['$log', '$parse',
 			transclude: false,
 			templateUrl: 'plugins/parseDecks/hsDecklistUpload.html',
 			scope: {
-				sport: '=',
-				type: '=',
-				review: '='
+				sport: '<',
+				type: '<',
+				review: '<'
 			},
 			link: function($scope, element, attrs) {
 			},

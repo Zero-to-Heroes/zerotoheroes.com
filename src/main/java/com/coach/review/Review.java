@@ -38,13 +38,11 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString(exclude = { "comments", "canvas", "temporaryReplay", "description" })
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Slf4j
 @Document
@@ -632,5 +630,21 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public void addNotifiedUsers(Set<String> newNotifiedUsers) {
 		notifiedUsers.addAll(newNotifiedUsers);
 	}
+
+	@Override
+	public String toString() {
+		return "Review [id=" + id + ", title=" + title
+				+ "\n, author=" + author + ", authorId=" + authorId
+				+ "\n, uploaderApplicationKey=" + uploaderApplicationKey + ", uploaderToken=" + uploaderToken
+				+ "\n, key=" + key + ", temporaryKey=" + temporaryKey + ", replay=" + replay + ", temporaryReplay=" + temporaryReplay
+				+ "\n, fileType=" + fileType + ", mediaType=" + mediaType + ", reviewType=" + reviewType
+				+ "\n, participantDetails=" + participantDetails + ", metaData=" + metaData
+				+ "\n, transcodingDone=" + transcodingDone
+				+ "\n, published=" + published + ", visibility=" + visibility + ", closedDate=" + closedDate
+				+ ", helpScore=" + helpScore + ", debugScore=" + debugScore
+				+ ", invalidGame=" + invalidGame + ", lastMetaDataParsingDate="
+				+ lastMetaDataParsingDate + ", claimableAccount=" + claimableAccount + "]";
+	}
+
 
 }

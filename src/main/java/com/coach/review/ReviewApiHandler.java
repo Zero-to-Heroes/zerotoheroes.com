@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +18,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,7 +41,6 @@ import com.coach.reputation.ReputationUpdater;
 import com.coach.review.Review.Sport;
 import com.coach.review.events.ReviewEmitter;
 import com.coach.review.replay.ReplayProcessor;
-import com.coach.review.video.transcoding.Transcoder;
 import com.coach.sport.SportManager;
 import com.coach.subscription.SubscriptionManager;
 import com.coach.thirdprtyintegration.ExternalApplicationAuthenticationService;
@@ -85,8 +86,8 @@ public class ReviewApiHandler {
 	@Autowired
 	CommentParser commentParser;
 
-	@Autowired
-	Transcoder transcoder;
+//	@Autowired
+//	Transcoder transcoder;
 
 	@Autowired
 	ReplayProcessor replayProcessor;
@@ -303,9 +304,10 @@ public class ReviewApiHandler {
 
 		// TOOD: checks
 		// Add current logged in user as the author of the review
-		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
-				.getAuthorities();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String currentUser = authentication != null ? authentication.getName() : null;
+		Collection<? extends GrantedAuthority> authorities =
+				authentication != null ? authentication.getAuthorities() : Collections.emptyList();
 		if (!StringUtils.isEmpty(currentUser) && !UserAuthority.isAnonymous(authorities)) {
 			User user = userRepo.findByUsername(currentUser);
 			review.setAuthorId(user.getId());
@@ -327,14 +329,12 @@ public class ReviewApiHandler {
 			if (user != null) {
 				review.setAuthorId(user.getId());
 				review.setAuthor(user.getUsername());
+				review.setClaimableAccount(false);
 				currentUser = user.getUsername();
 			}
 		}
 
 		log.debug("Review request creation: " + review);
-		// Map<String, String> inputCanvas = review.getCanvas();
-		// review.resetCanvas();
-		// consolidateCanvas(currentUser, review, review, inputCanvas);
 		activatePlugins(currentUser, review, review);
 
 		// Create the entry on the database
@@ -343,34 +343,22 @@ public class ReviewApiHandler {
 
 		subscriptionManager.subscribe(review, review.getAuthorId());
 
-		// We need to save here so that the transcoding process can retrieve it
-		reviewRepo.save(review);
-		log.debug("Review saved");
-
 		// Start transcoding
 		if (!StringUtils.isEmpty(review.getTemporaryKey()) || !StringUtils.isEmpty(review.getTemporaryReplay())) {
-			if (!StringUtils.isEmpty(review.getReplay())) {
-				log.debug("Proessing replay");
-				replayProcessor.processReplayFile(review, "init");
-			}
-			// More generic approach to handle videos
-			else if (review.getMediaType() != null && !review.getMediaType().equals("video")) {
+			if (!StringUtils.isEmpty(review.getReplay()) ||  !"video".equals(review.getMediaType())) {
 				log.debug("Proessing secondary media type " + review);
 				replayProcessor.processReplayFile(review, "init");
 			}
 			else {
-				log.debug("Transcoding video");
-				transcoder.transcode(review.getId());
+				log.debug("Transcoding video, doing nothing");
 			}
 		}
 		else {
 			log.debug("No media attached");
 			review.setPublished(true);
-			reviewRepo.save(review);
-			log.debug("Review saved");
 		}
-
-		log.debug("Transcoding started, returning with created review: " + review);
+		reviewRepo.save(review);
+		log.debug("Review saved");
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}

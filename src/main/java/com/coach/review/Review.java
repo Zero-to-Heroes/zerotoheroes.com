@@ -636,7 +636,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		return "Review [id=" + id + ", title=" + title
 				+ "\n, author=" + author + ", authorId=" + authorId
 				+ "\n, uploaderApplicationKey=" + uploaderApplicationKey + ", uploaderToken=" + uploaderToken
-				+ "\n, key=" + key + ", temporaryKey=" + temporaryKey + ", replay=" + replay + ", temporaryReplay=" + temporaryReplay
+				+ "\n, key=" + key + ", temporaryKey=" + temporaryKey + ", replay=" + replay
+				+ "\n, temporaryReplay=" + !StringUtils.isNullOrEmpty(temporaryReplay)
 				+ "\n, fileType=" + fileType + ", mediaType=" + mediaType + ", reviewType=" + reviewType
 				+ "\n, participantDetails=" + participantDetails + ", metaData=" + metaData
 				+ "\n, transcodingDone=" + transcodingDone

@@ -11,5 +11,7 @@
 
 	<aws-context:context-region region="us-west-2" /> 
 	<aws-messaging:annotation-driven-queue-listener />
+	<aws-messaging:queue-messaging-template id="queueMessagingTemplate" />
+	
 
 </beans>

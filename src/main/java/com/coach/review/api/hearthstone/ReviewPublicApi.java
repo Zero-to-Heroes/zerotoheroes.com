@@ -29,6 +29,7 @@ import com.coach.plugin.hearthstone.HSArenaDraft;
 import com.coach.plugin.hearthstone.HSReplay;
 import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.review.Review;
+import com.coach.review.Review.Sport;
 import com.coach.review.ReviewApiHandler;
 import com.coach.review.ReviewRepository;
 import com.coach.review.ReviewService;
@@ -277,6 +278,16 @@ public class ReviewPublicApi {
 		return processReviewLogs(user, reviews, logInfo, applicationKey, userToken);
 	}
 
+	@RequestMapping(value = "/upload/createEmptyReview/{sport}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<Review> createEmptyReview(
+			@PathVariable(value = "sport") String sport) throws Exception {
+		log.debug("Creating empty review");
+		Review review = new Review();
+		review.setSport(Sport.load(sport));
+		reviewRepo.save(review);
+		return new ResponseEntity<Review>(review, HttpStatus.OK);
+	}
+
 	private ResponseEntity<FileUploadResponse> processReviewLogs(User user, List<Review> reviews, byte[] logInfo)
 			throws IOException, ZipException {
 		return processReviewLogs(user, reviews, logInfo, null, null);
@@ -315,9 +326,11 @@ public class ReviewPublicApi {
 			review.setUploaderApplicationKey(applicationKey);
 			review.setUploaderToken(userToken);
 			review.setPublished(true);
+			review.setClaimableAccount(true);
 			if (user != null) {
 				review.setAuthorId(user.getId());
 				review.setAuthor(user.getUsername());
+				review.setClaimableAccount(false);
 			}
 			review.setVisibility("restricted");
 			// review.setTemporaryKey(tempKey);

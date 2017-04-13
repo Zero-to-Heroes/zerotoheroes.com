@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.stereotype.Component;
 
-import com.coach.core.notification.ExecutorProvider;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.plugin.Plugin;
 import com.coach.plugin.ReplayPlugin;
@@ -12,7 +11,6 @@ import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.sport.SportManager;
 
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -31,60 +29,41 @@ public class ReplayProcessor {
 	@Autowired
 	ReviewRepository repo;
 
-	@Autowired
-	private ExecutorProvider executorProvider;
+	public boolean processReplayFile(final Review review, String phase) {
+		com.coach.sport.Sport sportEntity = sportManager.findById(review.getSport().getKey());
+		boolean updated = false;
+		for (String pluginClass : sportEntity.getPlugins()) {
+			try {
+				Plugin plugin = (Plugin) Class.forName(pluginClass).newInstance();
 
-	public void processReplayFile(final Review review, String phase) {
-		Runnable runnable = new ReplayProcessorRunnable(review, slackNotifier, phase);
-		executorProvider.getExecutor().submit(runnable);
-	}
+				if (plugin instanceof ReplayPlugin) {
+					beanFactory.autowireBean(plugin);
+					ReplayPlugin replayPlugin = (ReplayPlugin) plugin;
+					// Keep backward compatibility for when there was no
+					// media type attached to a review
+					// log.debug("Trying to apply player plugin " + plugin);
+					boolean isCorrectType =
+							review.getMediaType() == null
+							&& replayPlugin.getMediaType() == null
+							|| review.getMediaType() != null
+							&& review.getMediaType().equals(replayPlugin.getMediaType());
 
-	@AllArgsConstructor
-	private class ReplayProcessorRunnable implements Runnable {
+					boolean isCorrectPhase =
+							replayPlugin.getPhase().equals("all")
+							|| replayPlugin.getPhase().equals(phase);
 
-		private final Review review;
-		private final SlackNotifier slackNotifier;
-		private final String phase;
-
-		@Override
-		public void run() {
-			com.coach.sport.Sport sportEntity = sportManager.findById(review.getSport().getKey());
-			boolean updated = false;
-			for (String pluginClass : sportEntity.getPlugins()) {
-				try {
-					Plugin plugin = (Plugin) Class.forName(pluginClass).newInstance();
-
-					if (plugin instanceof ReplayPlugin) {
-						beanFactory.autowireBean(plugin);
-						ReplayPlugin replayPlugin = (ReplayPlugin) plugin;
-						// Keep backward compatibility for when there was no
-						// media type attached to a review
-						// log.debug("Trying to apply player plugin " + plugin);
-						boolean isCorrectType = review.getMediaType() == null && replayPlugin.getMediaType() == null
-								|| review.getMediaType() != null
-										&& review.getMediaType().equals(replayPlugin.getMediaType());
-						boolean isCorrectPhase = replayPlugin.getPhase().equals("all")
-								|| replayPlugin.getPhase().equals(phase);
-
-						if (isCorrectType && isCorrectPhase) {
-							log.debug("Applying plugin " + plugin);
-							updated |= replayPlugin.transformReplayFile(review);
-							log.debug("Plugin applied");
-						}
+					if (isCorrectType && isCorrectPhase) {
+						log.debug("Applying plugin " + plugin);
+						updated |= replayPlugin.transformReplayFile(review);
+						log.debug("Plugin applied");
 					}
 				}
-				catch (Exception e) {
-					log.error("Incorrect plugin execution " + pluginClass, e);
-					slackNotifier.notifyError(e, "Exception during plugin execution", pluginClass, review);
-				}
 			}
-			if (updated) {
-				log.debug("plugins modified the review, saving " + review);
-				repo.save(review);
-				log.debug("Review saved " + review);
+			catch (Exception e) {
+				log.error("Incorrect plugin execution " + pluginClass, e);
+				slackNotifier.notifyError(e, "Exception during plugin execution", pluginClass, review);
 			}
-		};
-
+		}
+		return updated;
 	}
-
 }

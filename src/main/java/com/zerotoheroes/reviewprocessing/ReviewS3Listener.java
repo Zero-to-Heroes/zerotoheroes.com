@@ -2,6 +2,7 @@ package com.zerotoheroes.reviewprocessing;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.aws.messaging.listener.Acknowledgment;
 import org.springframework.cloud.aws.messaging.listener.SqsMessageDeletionPolicy;
 import org.springframework.cloud.aws.messaging.listener.annotation.SqsListener;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,9 +38,13 @@ public class ReviewS3Listener {
 	private AmazonS3 s3;
 
 	// https://github.com/spring-cloud/spring-cloud-aws/issues/100
-	// FIXME: properly handle exceptions - resend the failed uploads to a specific queue, so that they could be reprocessed later on?
-	@SqsListener(value = "${replay.uploaded.queue.name}", deletionPolicy = SqsMessageDeletionPolicy.ALWAYS)
-	public void queueListener(String message) throws Exception {
+	// FIXME: properly handle exceptions - resend the failed uploads to a
+	// specific queue, so that they could be reprocessed later on?
+	@SqsListener(value = "${replay.uploaded.queue.name}", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
+	public void queueListener(String message, Acknowledgment acknowledgment) throws Exception {
+		// Manual acknowledgement to avoid waiting for process completion. It
+		// will also allow us to have finer control later on
+		acknowledgment.acknowledge().get();
 		String messageAsString = Jackson.jsonNodeOf(message).get("Message").toString().replaceAll("\\\\\"", "\"");
 		S3EventNotification s3event = S3EventNotification.parseJson(messageAsString.substring(1, messageAsString.length() - 1));
 		S3EventNotification.S3Entity s3Entity = s3event.getRecords().get(0).getS3();
@@ -50,9 +55,7 @@ public class ReviewS3Listener {
 		Review review = reviewService.loadReview(metadata.getUserMetaDataOf("review-id"));
 
 		// The message can be received several times
-		if (review.isPublished()) {
-			return;
-		}
+		if (review.isPublished()) { return; }
 
 		review.setUploaderApplicationKey(metadata.getUserMetaDataOf("application-key"));
 		review.setUploaderToken(metadata.getUserMetaDataOf("user-key"));

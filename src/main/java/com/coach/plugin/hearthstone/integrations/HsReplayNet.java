@@ -14,6 +14,8 @@ import javax.net.ssl.SSLSocket;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.http.HttpEntity;
+import org.apache.http.client.config.CookieSpecs;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -45,7 +47,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HsReplayNet implements IntegrationPlugin {
 
-	private static final String URL_PATTERN = "(http(?:s)?:\\/\\/(?:www\\.)?hsreplay\\.net\\/replay\\/)([\\d\\-a-zA-Z]+)";
+	private static final String URL_PATTERN = "(?:http(?:s)?:\\/\\/(?:www\\.)?hsreplay\\.net\\/(?:replay|uploads\\/upload)\\/)([\\d\\-a-zA-Z]+)(?:.*)?";
 
 	@Autowired
 	ReviewRepository repo;
@@ -149,7 +151,7 @@ public class HsReplayNet implements IntegrationPlugin {
 		log.debug(matcher.toString());
 		matcher.matches();
 
-		String gameId = matcher.group(2);
+		String gameId = matcher.group(1);
 
 		String apiUrl = "https://hsreplay.net/api/v1/games/" + gameId + "/";
 		// log.info("calling rest api");
@@ -247,7 +249,11 @@ public class HsReplayNet implements IntegrationPlugin {
 			}
 
 		};
-		CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
+		CloseableHttpClient httpClient = HttpClients
+				.custom()
+				.setSSLSocketFactory(sslsf)
+				.setDefaultRequestConfig(RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build())
+				.build();
 
 		HttpGet httpGet = new HttpGet(apiUrl);
 		CloseableHttpResponse response1 = httpClient.execute(httpGet);

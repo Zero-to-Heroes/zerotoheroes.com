@@ -493,6 +493,10 @@ public class DeckParser implements Plugin {
 			for (int i = 0; i < pickedCards.length(); i++) {
 				JSONObject cardObj = pickedCards.getJSONObject(i);
 				int cardPickIndex = cardObj.getInt("CardPicked");
+				if (cardPickIndex == 0) {
+					log.info("ArenaDraft didn't register the pick for " + cardObj + " on draft " + baseDeckUril);
+					continue;
+				}
 				String cardId = cardObj.getJSONObject("Card" + cardPickIndex + "Info").getString("Id");
 				Card card = null;
 				for (Card c : deck.classCards) {

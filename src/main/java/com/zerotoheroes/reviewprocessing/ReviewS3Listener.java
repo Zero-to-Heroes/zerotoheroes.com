@@ -60,6 +60,7 @@ public class ReviewS3Listener {
 		review.setUploaderApplicationKey(metadata.getUserMetaDataOf("application-key"));
 		review.setUploaderToken(metadata.getUserMetaDataOf("user-key"));
 		review.setFileType(metadata.getUserMetaDataOf("file-type"));
+		review.setText(metadata.getUserMetaDataOf("review-text"));
 		review.setPublished(true);
 		review.setVisibility("restricted");
 		review.setClaimableAccount(true);

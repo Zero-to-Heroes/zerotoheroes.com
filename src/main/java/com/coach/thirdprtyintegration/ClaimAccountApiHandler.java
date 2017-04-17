@@ -45,7 +45,10 @@ public class ClaimAccountApiHandler {
 
 		Review review = reviewRepo.findById(reviewId);
 		if (review == null) {
-			new ResponseEntity<String>("No review to claim an account for", HttpStatus.FORBIDDEN);
+			return new ResponseEntity<String>("No review to claim an account for", HttpStatus.FORBIDDEN);
+		}
+		if (!review.isReallyClaimable()) {
+			return new ResponseEntity<String>("Review " + review.getId() + " can't be claimed", HttpStatus.FORBIDDEN);
 		}
 
 		String applicationKey = review.getUploaderApplicationKey();
@@ -59,12 +62,12 @@ public class ClaimAccountApiHandler {
 		}
 		User user = userRepo.findByUsername(currentUser);
 		if (user == null) {
-			new ResponseEntity<String>("No account found for " + currentUser, HttpStatus.FORBIDDEN);
+			return new ResponseEntity<String>("No account found for " + currentUser, HttpStatus.FORBIDDEN);
 		}
 
 		User linkedUser = service.loadUser(applicationKey, userToken);
 		if (linkedUser != null) {
-			new ResponseEntity<String>("This account has already been claimed", HttpStatus.FORBIDDEN);
+			return new ResponseEntity<String>("This account has already been claimed", HttpStatus.FORBIDDEN);
 		}
 
 		log.debug("Storing link for user: " + user.getId());

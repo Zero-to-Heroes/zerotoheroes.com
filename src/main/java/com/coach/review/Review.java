@@ -82,9 +82,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	@Indexed
 	private Date publicationDate;
 
-	// @Indexed
-	// private Date sortingDate;
-
 	private String title;
 
 	private String text = "";
@@ -328,10 +325,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	public void prepareForDisplay(String userId) {
-		// Date lastVisit = null;
-		// if (visitDates != null) {
-		// lastVisit = visitDates.get(userId);
-		// }
 		getReputation().modifyAccordingToUser(userId);
 		// comments
 		if (comments != null) {
@@ -341,8 +334,18 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		}
 		sortComments();
 
-		claimableAccount = StringUtils.isNullOrEmpty(authorId) && !StringUtils.isNullOrEmpty(uploaderApplicationKey)
-				&& !StringUtils.isNullOrEmpty(uploaderToken);
+		claimableAccount = isReallyClaimable();
+	}
+
+	public boolean isReallyClaimable() {
+		return StringUtils.isNullOrEmpty(authorId) && !StringUtils.isNullOrEmpty(uploaderApplicationKey)
+				&& !StringUtils.isNullOrEmpty(uploaderToken) && !"overwolf".equals(uploaderApplicationKey);
+	}
+
+	// We want to use isReallyClaimable instead
+	@SuppressWarnings("unused")
+	private boolean isClaimableAccount() {
+		return claimableAccount;
 	}
 
 	public void registerVisit(String userId) {

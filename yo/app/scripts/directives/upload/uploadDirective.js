@@ -27,11 +27,11 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 				};
 				$log.debug('init review', $scope.review);
 
-				$scope.creds = {
-					bucket: ENV.bucket + '/' + ENV.folder,
-					access_key: 'AKIAJHSXPMPE223KS7PA',
-					secret_key: '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'
-				}
+				// $scope.creds = {
+				// 	bucket: ENV.bucket + '/' + ENV.folder,
+				// 	access_key: 'AKIAJHSXPMPE223KS7PA',
+				// 	secret_key: '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'
+				// }
 
 				$scope.config = {
 					theme: "bower_components/videogular-themes-default/videogular.css"
@@ -272,7 +272,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					});
 
 					// Configure The S3 Object 
-					AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
+					// AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
 					AWS.config.region = 'us-west-2';
 					AWS.config.httpOptions.timeout = 3600 * 1000 * 10;
 
@@ -290,14 +290,24 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					
 					// Initializing upload
 					$log.debug('uploading', $scope.file);
-					var upload = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
-					var params = { Key: fileKey, ContentType: $scope.file.type, Body: $scope.file };
-					/*var upload = new AWS.S3.ManagedUpload({
-					  params: {Bucket: $scope.creds.bucket, Key: fileKey, ContentType: $scope.file.type, Body: $scope.file }
-					});*/
-					//$log.log('upload is ', upload);
-					//upload.send(function(err, data) {
-					upload.upload(params, function(err, data) {
+					var s3 = new AWS.S3();
+					var params = { 
+						Bucket: ENV.bucket + '/' + ENV.folder,
+						Key: fileKey, 
+						ACL: 'public-read-write',
+						ContentType: $scope.file.type, 
+						Body: $scope.file 
+					};
+
+					let req = s3.makeUnauthenticatedRequest('putObject', params)
+					req.on('httpUploadProgress',function(progress) {
+						// Log Progress Information
+					   // $log.log(progress);
+						$scope.uploadProgress = progress.loaded / progress.total * 100;
+						//$log.log('Updating progress ' + progress.loaded + ' out of ' + progress.total + ', meaning ' + $scope.uploadProgress + '%');
+						$scope.$digest();
+					});
+					req.send(function(err, data) {
 
 						// There Was An Error With Your S3 Config
 						if (err) {
@@ -311,13 +321,6 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 							$scope.transcode();
 						}
 					})
-					.on('httpUploadProgress',function(progress) {
-						// Log Progress Information
-					   // $log.log(progress);
-						$scope.uploadProgress = progress.loaded / progress.total * 100;
-						//$log.log('Updating progress ' + progress.loaded + ' out of ' + progress.total + ', meaning ' + $scope.uploadProgress + '%');
-						$scope.$digest();
-					});
 				};
 
 				$scope.transcode = function() {

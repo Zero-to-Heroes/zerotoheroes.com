@@ -144,7 +144,7 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 				}
 
 				$scope.isDataValid = function() {
-					$scope.uploadForm.author.$setValidity('nameTaken', true)
+					// $scope.uploadForm.author.$setValidity('nameTaken', true)
 					$scope.$broadcast('show-errors-check-validity')
 					return $scope.uploadForm.$valid
 				}
@@ -278,6 +278,7 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 				// Account management hooks
 				//===============
 				$rootScope.$on('account.close', function() {
+					$scope.uploadForm.author.$setValidity('nameTaken', true)
 					if ($scope.onPublish) {
 						$scope.onPublish = false
 						$scope.publishVideo()
@@ -287,6 +288,13 @@ app.directive('uploadArenaDraftReview', ['MediaUploader', '$log', 'SportsConfig'
 						$scope.publishVideoWhenReady()
 					}
 				})
+				$rootScope.$on('user.logged.in', function() {
+					$scope.uploadForm.author.$setValidity('nameTaken', true)
+				})
+
+				$scope.onNameInputChange = function() {
+					$scope.uploadForm.author.$setValidity('nameTaken', true)
+				}
 
 
 				//===============

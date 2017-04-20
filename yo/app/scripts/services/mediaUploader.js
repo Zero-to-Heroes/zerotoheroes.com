@@ -2,11 +2,11 @@ var services = angular.module('services');
 services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 	function ($log, $analytics, ENV) {
 
-		var creds = {
-			bucket: ENV.bucket,
-			access_key: 'AKIAJHSXPMPE223KS7PA',
-			secret_key: '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'
-		}
+		// var creds = {
+		// 	bucket: ENV.bucket,
+		// 	access_key: 'AKIAJHSXPMPE223KS7PA',
+		// 	secret_key: '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'
+		// }
 
 		var service = {
 			callbacks: {}
@@ -53,36 +53,24 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 			})
 
 			// Configure The S3 Object 
-			AWS.config.update({ accessKeyId: creds.access_key, secretAccessKey: creds.secret_key })
+			// AWS.config.update({ accessKeyId: creds.access_key, secretAccessKey: creds.secret_key })
 			AWS.config.region = 'us-west-2'
 			AWS.config.httpOptions.timeout = 3600 * 1000
 
-			var upload = new AWS.S3({ params: { Bucket: creds.bucket } })
+			var s3 = new AWS.S3()
 
 			files.forEach(function(file, index) {
+				var params = { 
+					Bucket: ENV.bucket,
+					Key: fileKeys[index], 
+					ACL: 'public-read-write',
+					ContentType: service.videoInfo.fileTypes[index], 
+					Body: file 
+				}
 
-				var params = { Key: fileKeys[index], ContentType: service.videoInfo.fileTypes[index], Body: file }
 				$log.debug('uploading with params', params)
-				upload.upload(params, function(err, data) {
-					// There Was An Error With Your S3 Config
-					if (err) {
-						$log.error('An error during upload', err)
-					}
-					else {
-						// Success!
-						$log.debug('upload done!')
-						videoInfo.upload.done = true
-						file.uploaded = true
-						if (service.callbacks) {
-							for (var cb in service.callbacks) {
-								if (service.callbacks.hasOwnProperty(cb)) {
-									service.callbacks[cb](file)
-								}
-							}
-						}
-					}
-				})
-				.on('httpUploadProgress', function(progress) {
+				let req = s3.makeUnauthenticatedRequest('putObject', params);
+				req.on('httpUploadProgress', function(progress) {
 					file.uploadSize = progress.total
 					file.current = progress.loaded
 					var totalLoaded = 0
@@ -103,6 +91,25 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 									service.callbacks[cb](file)
 								}
 								catch(e) {}
+							}
+						}
+					}
+				})
+				req.send(function(err, data) {
+					// There Was An Error With Your S3 Config
+					if (err) {
+						$log.error('An error during upload', err)
+					}
+					else {
+						// Success!
+						$log.debug('upload done!')
+						videoInfo.upload.done = true
+						file.uploaded = true
+						if (service.callbacks) {
+							for (var cb in service.callbacks) {
+								if (service.callbacks.hasOwnProperty(cb)) {
+									service.callbacks[cb](file)
+								}
 							}
 						}
 					}

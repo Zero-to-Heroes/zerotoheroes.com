@@ -28,7 +28,7 @@
 				<div class="col-sm-12">
 					<div class="form-group" show-errors="{ showSuccess: true }">
 						<div class="alert alert-danger" role="alert" ng-show="uploadForm.author.$error.nameTaken"><span>{{ 'global.upload.nameTaken' | translate }}<a ng-click="signIn()">{{ 'global.upload.nameTakenLink' | translate }}</a>{{ 'global.upload.nameTaken2' | translate }}</span></div>
-						<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="{{ 'global.upload.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()" ng-readonly="transcoding">
+						<input type="text" name="author" class="form-control" ng-model="review.author" placeholder="{{ 'global.upload.authorNamePlaceholder' | translate }}" ng-required="!User.isLoggedIn()" ng-readonly="transcoding" ng-change="onNameInputChange()">
 					</div>
 			  	</div>
 		  	</div>

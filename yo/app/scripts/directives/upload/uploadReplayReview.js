@@ -159,7 +159,8 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				}
 
 				$scope.isDataValid = function() {
-					$scope.uploadForm.author.$setValidity('nameTaken', true)
+					// $log.debug('setting data valid')
+					// $scope.uploadForm.author.$setValidity('nameTaken', true)
 					$scope.$broadcast('show-errors-check-validity')
 					return $scope.uploadForm.$valid
 				}
@@ -225,6 +226,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 								// User exists
 								if (data.username) {
 									$scope.uploadForm.author.$setValidity('nameTaken', false)
+									$log.debug('name taken', $scope.uploadForm)
 								}
 								else {
 									$scope.onPublishWhenReady = true
@@ -249,12 +251,14 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.initPublishVideo = function() {
 					// If user is not registered, offer them to create an account
 					if (!User.isLoggedIn()) {
+						$log.debug('user not logged in, offering account creation')
 						// Validate that the name is free
 						Api.Users.get({identifier: $scope.review.author}, 
 							function(data) {
 								// User exists
 								if (data.username) {
 									$scope.uploadForm.author.$setValidity('nameTaken', false)
+									$log.debug('name taken', $scope.uploadForm)
 								}
 								else {
 									$scope.onPublish = true
@@ -316,6 +320,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				// Account management hooks
 				//===============
 				$rootScope.$on('account.close', function() {
+					$scope.uploadForm.author.$setValidity('nameTaken', true)
 					if ($scope.onPublish) {
 						$scope.onPublish = false
 						$scope.publishVideo()
@@ -325,6 +330,13 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						$scope.publishVideoWhenReady()
 					}
 				})
+				$rootScope.$on('user.logged.in', function() {
+					$scope.uploadForm.author.$setValidity('nameTaken', true)
+				})
+
+				$scope.onNameInputChange = function() {
+					$scope.uploadForm.author.$setValidity('nameTaken', true)
+				}
 
 
 				//===============

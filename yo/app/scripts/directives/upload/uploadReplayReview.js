@@ -320,7 +320,10 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				// Account management hooks
 				//===============
 				$rootScope.$on('account.close', function() {
-					$scope.uploadForm.author.$setValidity('nameTaken', true)
+					// Account close can occur when the form is already unloaded (ie clicking "no" when asked to create an account and still uploading)
+					if ($scope.uploadForm) {
+						$scope.uploadForm.author.$setValidity('nameTaken', true)
+					}
 					if ($scope.onPublish) {
 						$scope.onPublish = false
 						$scope.publishVideo()
@@ -331,11 +334,15 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 					}
 				})
 				$rootScope.$on('user.logged.in', function() {
-					$scope.uploadForm.author.$setValidity('nameTaken', true)
+					if ($scope.uploadForm) {
+						$scope.uploadForm.author.$setValidity('nameTaken', true)
+					}
 				})
 
 				$scope.onNameInputChange = function() {
-					$scope.uploadForm.author.$setValidity('nameTaken', true)
+					if ($scope.uploadForm) {
+						$scope.uploadForm.author.$setValidity('nameTaken', true)
+					}
 				}
 
 

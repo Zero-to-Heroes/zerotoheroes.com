@@ -69,7 +69,7 @@ services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 				}
 
 				$log.debug('uploading with params', params)
-				let req = s3.makeUnauthenticatedRequest('putObject', params);
+				var req = s3.makeUnauthenticatedRequest('putObject', params);
 				req.on('httpUploadProgress', function(progress) {
 					file.uploadSize = progress.total
 					file.current = progress.loaded

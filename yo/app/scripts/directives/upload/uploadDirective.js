@@ -299,7 +299,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 						Body: $scope.file 
 					};
 
-					let req = s3.makeUnauthenticatedRequest('putObject', params)
+					var req = s3.makeUnauthenticatedRequest('putObject', params)
 					req.on('httpUploadProgress',function(progress) {
 						// Log Progress Information
 					   // $log.log(progress);

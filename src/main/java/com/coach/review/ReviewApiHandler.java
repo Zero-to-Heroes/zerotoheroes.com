@@ -677,11 +677,6 @@ public class ReviewApiHandler {
 		review.setPublished(true);
 		review.setVisibility(inputReview.getVisibility());
 
-		// Setup v2 comments for game replays only (not drafts nor videos)
-		if ("game-replay".equalsIgnoreCase(review.getReviewType())) {
-			review.setUseV2comments(true);
-		}
-
 		reviewService.updateAsync(review);
 
 		reviewEmitter.emitReviewUpdate(review);

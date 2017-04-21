@@ -78,7 +78,6 @@ public class ReviewPublicApi {
 		review.setVisibility("restricted");
 		review.setTemporaryReplay("");
 		review.setReviewType("game-replay");
-		review.setUseV2comments(true);
 		review.setUploaderApplicationKey(data.getUploaderApplicationKey());
 		review.setUploaderToken(data.getUploaderToken());
 
@@ -229,7 +228,6 @@ public class ReviewPublicApi {
 		review.setVisibility("restricted");
 		review.setTemporaryReplay("");
 		review.setReviewType("game-replay");
-		review.setUseV2comments(true);
 
 		reviewRepo.save(review);
 		List<String> ids = new ArrayList<>();

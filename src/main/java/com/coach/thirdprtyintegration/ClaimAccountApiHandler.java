@@ -80,12 +80,55 @@ public class ClaimAccountApiHandler {
 		return new ResponseEntity<String>("account claimed by " + user.getUsername(), HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/{applicationKey}/{userKey}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> claimAccount(
+			@PathVariable("applicationKey") String applicationKey,
+			@PathVariable("userKey") String userKey)
+			throws Exception {
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		if (currentUser == null) {
+			new ResponseEntity<String>("You need to be logged in to claim an account", HttpStatus.FORBIDDEN);
+		}
+
+		User user = userRepo.findByUsername(currentUser);
+		if (user == null) {
+			return new ResponseEntity<String>("No account found for " + currentUser, HttpStatus.FORBIDDEN);
+		}
+
+		log.debug("claiming account for " + currentUser + " and keys " + applicationKey + "/" + userKey);
+		User linkedUser = service.loadUser(applicationKey, userKey);
+		if (linkedUser != null) {
+			return new ResponseEntity<String>("This account has already been claimed", HttpStatus.FORBIDDEN);
+		}
+
+		log.debug("Storing link for user: " + user.getId());
+		service.storeLink(user.getId(), applicationKey, userKey);
+
+		// http://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongo-template.save-update-remove
+		log.debug("Claiming account");
+		reviewDao.claimAccount(user, applicationKey, userKey);
+
+		return new ResponseEntity<String>("account claimed by " + user.getUsername(), HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/account/{applicationKey}/{userToken}", method = RequestMethod.GET)
+	@Deprecated
 	public @ResponseBody ResponseEntity<String> getSiteAccount(@PathVariable("applicationKey") String applicationKey,
+			@PathVariable("userToken") String userToken) throws Exception {
+		return getRealSiteAccount(applicationKey, userToken);
+	}
+
+	@RequestMapping(value = "/{applicationKey}/{userToken}", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<String> getRealSiteAccount(@PathVariable("applicationKey") String applicationKey,
 			@PathVariable("userToken") String userToken) throws Exception {
 
 		User linkedUser = service.loadUser(applicationKey, userToken);
 		if (linkedUser == null) {
+			long linkedReviews = reviewDao.countLinkedReviews(applicationKey, userToken);
+			if (linkedReviews == 0) {
+				return new ResponseEntity<String>("No reviews linked to this account", HttpStatus.NOT_ACCEPTABLE);
+			}
 			log.debug("no account match " + applicationKey + "/" + userToken);
 			return new ResponseEntity<String>("No account match", HttpStatus.NOT_FOUND);
 		}

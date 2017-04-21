@@ -286,4 +286,12 @@ public class ReviewDao {
 		log.debug("Review reopened");
 	}
 
+	public long countLinkedReviews(String applicationKey, String userToken) {
+		Criteria crit = where("uploaderApplicationKey").is(applicationKey)
+				.and("uploaderToken").is(userToken);
+		Query query = query(crit);
+
+		return mongoTemplate.count(query, Review.class);
+	}
+
 }

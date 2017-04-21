@@ -86,6 +86,16 @@ body {
 .footer a {
   color: white;
 }
+.claim-account-page {
+  max-width: 750px;
+  padding: 10px;
+}
+.claim-account-page .user-logged-in {
+  display: flex;
+}
+.claim-account-page .user-logged-in button {
+  margin: 20px;
+}
 nav.navbar-default .navbar-nav > li > .has-badge {
   display: flex;
 }

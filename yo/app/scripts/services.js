@@ -32,6 +32,8 @@ services.factory('Api', ['$resource', 'ENV',
 			Passwords: $resource(ENV.apiEndpoint + url + 'users/password/:key', {key: '@key'}),
 			Login: $resource(ENV.apiEndpoint + url + 'login', {}),
 			ClaimAccount: $resource(ENV.apiEndpoint + url + 'claimAccount/:reviewId', {reviewId: '@reviewId'}),
+			ClaimAccountWithKey: $resource(ENV.apiEndpoint + url + 'claimAccount/:applicationKey/:userKey', 
+				{applicationKey: '@applicationKey', userKey: '@userKey'}),
 			Reputation: $resource(ENV.apiEndpoint + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'}),
 
 			Notifications: $resource(ENV.apiEndpoint + url + 'notifications/:type', {type: '@type'}),

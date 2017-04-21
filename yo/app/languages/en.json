@@ -562,6 +562,14 @@
 
 			"unreadNotifTooltip": "You have unread notifications!"
 		},
+		"claimAccount": {
+			"accountAlreadyClaimed": "You can't claim this account, as it has already been claimed. If you believe this is an error, please send an email at seb@zerotoheroes.com",
+			"userNotLoggedIn": "You need to be logged in to claim an account. Please use the buttons on the top right corner of the screen to sign in or create an account.",
+			"accountClaimText": "This account is associated with a third party application ({{app}}). Claim this account now to link all the reviews created by that account to your Zero to Heroes account, and start creating public reviews that will show up on the site's main page.",
+			"accountClaimButton": "Claim account",
+			"accountClaimConfirmation": "Your account has been claimed! It can take a few minutes until all your reviews are associated with your account, but all new reviews will be linked to your new account automatically from now on. Enjoy!",
+			"invalidAccount": "This account doesn't exist, so you can't claim it. Please make sure you have at least one review uploaded with it before claiming it. If you have any question, please send an email with the link to this page to seb@zerotoheroes.com."
+		},
 		"review": {
 			"participants": {
 				"playerName": "Player name",

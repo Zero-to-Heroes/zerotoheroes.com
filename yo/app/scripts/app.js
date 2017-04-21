@@ -66,6 +66,13 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 					window.location = 'http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc/'
 			}
 		}).
+		when('/s/:sport/claimAccount/:applicationKey/:userKey', {
+			templateUrl: 'views/claimAccount.html',
+			controller: 'ClaimAccountController',
+			useFullWidth: true,
+			className: 'home-page-global',
+			hideSideBar: true
+		}).
 		when('/s/:sport/upload/:uploadType?/:step?', {
 			templateUrl: 'views/upload.html',
 			controller: 'UploadDetailsCtrl',

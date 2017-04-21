@@ -1,0 +1,15 @@
+<view-title>Claim account</view-title>
+
+<div class="background-white claim-account-page profile-page">
+
+	<div class="msg-invalid" ng-if="invalidAccount">{{::translations.invalidAccount}}</div>
+	<div class="msg-invalid" ng-if="::accountAlreadyClaimed">{{::translations.accountAlreadyClaimed}}</div>
+	<div class="msg-invalid" ng-if="!accountAlreadyClaimed && !invalidAccount && !User.isLoggedIn()">{{::translations.userNotLoggedIn}}</div>
+
+	<div class="user-logged-in" ng-if="!accountAlreadyClaimed && !invalidAccount && User.isLoggedIn()">
+		<button class="btn btn-default" ng-click="claimAccount()">{{::translations.accountClaimButton}}</button>
+		<span class="text" ng-if="!showConfirmation">{{::translations.accountClaimText}}</span>
+		<span class="confirmation-message" ng-if="showConfirmation">{{::translations.accountClaimConfirmation}}</span>
+	</div>
+
+</div>

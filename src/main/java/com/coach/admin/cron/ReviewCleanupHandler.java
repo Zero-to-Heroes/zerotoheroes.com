@@ -62,21 +62,17 @@ public class ReviewCleanupHandler {
 		calendar.add(Calendar.DAY_OF_MONTH, -7);
 
 		Criteria noKey = where("key").is(null);
-		// Criteria invalidReplay = where("invalidGame").is(true);
+		Criteria invalidReplay = where("invalidGame").is(true);
 		Criteria unpublished = where("published").is(false);
 
 		Criteria crit = where("creationDate").lt(calendar.getTime());
-		crit.orOperator(noKey, unpublished);
+		crit.orOperator(noKey, invalidReplay, unpublished);
 
 		Query query = query(crit);
 
 		PageRequest pageRequest = new PageRequest(0, 200);
 
 		query.with(pageRequest);
-
-		Field fields = query.fields();
-		fields.include("id");
-		fields.include("key");
 
 		WriteResult result = mongoTemplate.remove(query, Review.class);
 		int removedReviews = result.getN();
@@ -135,12 +131,13 @@ public class ReviewCleanupHandler {
 		Criteria crit = where("creationDate").lt(calendar.getTime());
 		Criteria invalid = where("invalidGame").is(true);
 		Criteria unprocessed = where("invalidGame").exists(false);
+		Criteria emptyMetaData = where("metaData").exists(false);
 		Criteria emptyGameMode = where("metaData.gameMode").is(null);
-		crit.orOperator(invalid, unprocessed, emptyGameMode);
+		crit.orOperator(invalid, unprocessed, emptyMetaData, emptyGameMode);
 
 		Query query = query(crit);
 
-		PageRequest pageRequest = new PageRequest(0, 20);
+		PageRequest pageRequest = new PageRequest(0, 200);
 
 		query.with(pageRequest);
 

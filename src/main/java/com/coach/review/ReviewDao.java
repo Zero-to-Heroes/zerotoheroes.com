@@ -80,9 +80,9 @@ public class ReviewDao {
 		}
 		// No author specified, so we need to exclude ourselves in case of help
 		// search
-		else if ("helpScore".equals(criteria.getSort()) && user != null) {
-			crit.and("authorId").ne(user.getId());
-		}
+//		else if ("helpScore".equals(criteria.getSort()) && user != null) {
+//			crit.and("authorId").ne(user.getId());
+//		}
 
 		if (!StringUtils.isEmpty(criteria.getGameMode())) {
 			crit.and("metaData.gameMode").is(criteria.getGameMode());

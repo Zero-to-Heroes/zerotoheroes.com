@@ -197,7 +197,9 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					if (newVal) {
 						$log.debug('updating reference options', newVal)
 						$scope.clearFilters()
-						listener()
+						if (listener) {
+							listener()
+						}
 					}
 				})
 

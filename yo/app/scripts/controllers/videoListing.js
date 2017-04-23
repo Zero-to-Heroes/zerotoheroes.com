@@ -60,8 +60,18 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 			}
 		})
 		$rootScope.$on('user.logged.in', function() {
-			$scope.search()
+			$scope.performSearch()
+			// $scope.search()
 		})
+
+		$scope.performSearch = function() {
+			if (!$scope.search) {
+				$log.debug('search not defined yet, waiting')
+				$timeout($scope.performSearch, 100)
+				return
+			}
+			$scope.search()
+		}
 
 		
 		//===============

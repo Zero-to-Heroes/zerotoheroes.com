@@ -32,7 +32,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 
 				$scope.init = function() {
 					$scope.currentTurn = $scope.mediaPlayer.getCurrentTimestamp()
-					console.log('init current turn?', $scope.currentTurn)
+					// console.log('init current turn?', $scope.currentTurn)
 					if (!$scope.currentTurn) {
 						$timeout(function() {
 							$scope.init()
@@ -146,7 +146,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 				})
 
 				$scope.getCommentTurns = function() {
-					$log.debug('getting comment turns', $scope.review, $scope.mediaPlayer)
+					// $log.debug('getting comment turns', $scope.review, $scope.mediaPlayer)
 					var commentTurns = []
 					$scope.review.comments.forEach(function(comment) {
 						var commentTurn = comment.timestamp
@@ -157,18 +157,18 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 						commentTurn = parseInt(commentTurn)
 
 						if (commentTurns.indexOf(commentTurn) == -1) {
-							$log.debug('adding comment turn', commentTurn, 'from', comment.timestamp, comment)
+							// $log.debug('adding comment turn', commentTurn, 'from', comment.timestamp, comment)
 							commentTurns.push(commentTurn)
 						}
 					})
-					$log.debug('comment turns', commentTurns)
+					// $log.debug('comment turns', commentTurns)
 					commentTurns.sort(function(a, b) { return a - b} )
 
 					var orderedCommentTurns = commentTurns
 					// var orderedCommentTurns = commentTurns.sort(function(a, b) {
 					// 	return $scope.naturalCompare(a, b)
 					// })
-					$log.debug('orderedCommentTurns', orderedCommentTurns)
+					// $log.debug('orderedCommentTurns', orderedCommentTurns)
 
 					var fullCommentTurns = []
 					orderedCommentTurns.forEach(function(turn) {
@@ -186,7 +186,7 @@ app.directive('commentDisplayTimemarked', ['$log', 'User', 'Api', '$parse', '$ro
 						fullCommentTurns.push(fullTurn)
 					})
 					$scope.fullCommentTurns = fullCommentTurns
-					$log.debug('returning full turns', $scope.fullCommentTurns)
+					// $log.debug('returning full turns', $scope.fullCommentTurns)
 				}
 				
 				// $scope.naturalCompare = function(a, b) {

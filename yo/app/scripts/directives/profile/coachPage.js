@@ -35,7 +35,7 @@ angular.module('app').directive('coachPage', ['$routeParams', 'Api', '$log', 'Us
 						// $scope.search()
 						$scope.initCriteria()
 						// http://stackoverflow.com/questions/14957614/angularjs-clear-watch
-						listener()
+						if (listener) listener()
 					}
 				})
 

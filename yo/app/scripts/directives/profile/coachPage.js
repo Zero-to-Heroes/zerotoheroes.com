@@ -67,6 +67,9 @@ angular.module('app').directive('coachPage', ['$routeParams', 'Api', '$log', 'Us
 							$scope.coachInformation = data
 							$scope.updateCoachInfo(data)
 							$scope.editing = false
+						},
+						function(error) {
+							$log.error('Could not update coach', input, $scope, error)
 						}
 					)
 				}

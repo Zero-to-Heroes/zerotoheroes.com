@@ -76,9 +76,14 @@ services.factory('User', ['$window', '$log', 'Api', 'Localization', 'localStorag
 					var user = that.getUser();
 					user.preferredLanguage = lang;
 					that.setUser(user);
-					Api.Users.save({identifier: user.username}, user, function(data) {
-						$log.log('Changed language', data);
-					});
+					Api.Users.save({identifier: user.username}, user, 
+						function(data) {
+							$log.log('Changed language', data);
+						},
+						function(error) {
+							$log.error('Could not change language', user, error)
+						}
+					);
 				}
 			},
 			getNumberOfLocalTimestamps: function() {

@@ -62,14 +62,15 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 				if (!lang)
 					lang = Localization.getLanguage();
 
-				Api.Users.save({username: $scope.account.username, password: $scope.account.password, email: $scope.account.email, registerLocation: location, preferredLanguage: lang}, 
+				var params = {username: $scope.account.username, password: $scope.account.password, email: $scope.account.email, registerLocation: location, preferredLanguage: lang}
+				Api.Users.save(params, 
 			        function(data) {
 			          	// Not necessarily the best way, but easier to separate registration from actual login
 			            $scope.login();
 			        }, 
 			        function(error) {
 			            // Error handling
-			            console.log(error);
+			            $log.error('Could not create account', params, error);
 	  					$scope.error = error.data.msg;
 			        }
 			    );

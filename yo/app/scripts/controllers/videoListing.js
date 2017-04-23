@@ -67,7 +67,7 @@ angular.module('controllers').controller('VideoListingCtrl', ['$scope', '$routeP
 		$scope.performSearch = function() {
 			if (!$scope.search) {
 				$log.debug('search not defined yet, waiting')
-				$timeout($scope.performSearch, 100)
+				$timeout(function() { $scope.performSearch() }, 100)
 				return
 			}
 			$scope.search()

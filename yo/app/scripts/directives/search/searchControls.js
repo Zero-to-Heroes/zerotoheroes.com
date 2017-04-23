@@ -304,9 +304,17 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				//===============
 				// Dynamic search
 				//===============
-				$scope.filterReviews = function() {
+				$scope.filterReviews = function(lastTry) {
 					$log.debug('filtering reviews', $scope.options)
 					var now = new Date()
+
+					if (!$scope.reviews && !lastTry) {
+						$log.debug('no reviews, waiting until filtering again')
+						$timeout(function() {
+							$scope.filterReviews(true)
+						}, 200)
+						return
+					}
 
 					// Remove reviews that don't match the criteria
 					$scope.reviews.forEach(function(review) {

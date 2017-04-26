@@ -1,9 +1,9 @@
 angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', function($provide, $httpProvider, ENV, version) {
+	console.log('preloading source map')
+	StackTrace.fromError(new Error()).then(function() { console.log('source map preloaded')})
+
 	// Use the `decorator` solution to substitute or attach behaviors to
 	// original service instance; @see angular-mocks for more examples....
-
-	console.log('site version is', version)
-
 	var notify = function(text) {
 		var shouldLog = true;
 		try {
@@ -97,6 +97,19 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 				if (arg.statusText) { argsToLog.statusText = arg.statusText }
 				if (arg.stack) {
 					stacktrace = arg.stack
+					
+					var callback = function(stackframes) {
+						var stringifiedStack = stacktrace[0].message + '\n'
+					    var stringifiedStack = stackframes.map(function(sf) {
+					        return '\tat ' + sf.toString();
+					    }).join('\n');
+
+						notify('Javascript error with clear stack trace: ', 'user: ' + userToLog, 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'stacktrace: ' + stringifiedStack, 'initial args: ' + JSON.stringify(argsToLog));
+					};
+
+					var errback = function(err) { console.log('in error', err.message); };
+
+	    			StackTrace.fromError(arg).then(callback).catch(errback);
 				}
 			}
 

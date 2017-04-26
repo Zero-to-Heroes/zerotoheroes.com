@@ -265,7 +265,7 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 // }])
 
 app.config(function (logEnhancerProvider) {
-	 logEnhancerProvider.datetimePattern = 'YYYY/MM/DD HH:mm:ss:SSS';
+	logEnhancerProvider.datetimePattern = 'YYYY/MM/DD HH:mm:ss:SSS';
 });
 
 app.config(['$analyticsProvider', function ($analyticsProvider) {
@@ -293,7 +293,7 @@ app.config(['$translateProvider', '$windowProvider', 'defaultI18n',
 		// https://github.com/angular-translate/angular-translate/issues/921
 		$translateProvider.translations('en', defaultI18n.en);
 
-	    // Configure angular-translate to load static JSON files for each language
+		// Configure angular-translate to load static JSON files for each language
 		$translateProvider.useStaticFilesLoader({
 			prefix: '/languages/',
 			suffix: '.json'
@@ -321,7 +321,7 @@ app.config(['$translateProvider', '$windowProvider', 'defaultI18n',
 		$translateProvider.forceAsyncReload(true)
 
 		// Tells angular-translate to use the English language if translations are not available in current selected language
-	    $translateProvider.fallbackLanguage('en');
+		$translateProvider.fallbackLanguage('en');
 	}
 ]);
 
@@ -507,12 +507,12 @@ var guid = function() {
 
 //http://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript-jquery
 String.prototype.hashCode = function() {
-  	var hash = 0, i, chr, len;
-  	if (this.length === 0) return hash;
-  	for (i = 0, len = this.length; i < len; i++) {
-	    chr   = this.charCodeAt(i);
-	    hash  = ((hash << 5) - hash) + chr;
-    	hash |= 0; // Convert to 32bit integer
-  	}
-  	return hash;
+	var hash = 0, i, chr, len;
+	if (this.length === 0) return hash;
+	for (i = 0, len = this.length; i < len; i++) {
+		chr   = this.charCodeAt(i);
+		hash  = ((hash << 5) - hash) + chr;
+		hash |= 0; // Convert to 32bit integer
+	}
+	return hash;
 };

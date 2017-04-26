@@ -7,7 +7,7 @@
 	<div class="msg-invalid" ng-if="!accountAlreadyClaimed && !invalidAccount && !User.isLoggedIn()">{{::translations.userNotLoggedIn}}</div>
 
 	<div class="user-logged-in" ng-if="!accountAlreadyClaimed && !invalidAccount && User.isLoggedIn()">
-		<button class="btn btn-default" ng-click="claimAccount()">{{::translations.accountClaimButton}}</button>
+		<button class="btn btn-default" ng-click="claimAccount()" ng-if="!showConfirmation">{{::translations.accountClaimButton}}</button>
 		<span class="text" ng-if="!showConfirmation">{{::translations.accountClaimText}}</span>
 		<span class="confirmation-message" ng-if="showConfirmation">{{::translations.accountClaimConfirmation}}</span>
 	</div>

@@ -69,6 +69,7 @@ module.exports = function(config) {
 			'bower_components/cal-heatmap/cal-heatmap.js',
 			'bower_components/angular-bind-notifier/dist/angular-bind-notifier.js',
 			'bower_components/angular-socialshare/dist/angular-socialshare.js',
+			'bower_components/stacktrace.js/dist/stacktrace.js',
 
 			'app/scripts/app.js',
 			'app/scripts/**/*.js',

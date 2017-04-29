@@ -2,12 +2,6 @@ var services = angular.module('services');
 services.factory('MediaUploader', ['$log', '$analytics', 'ENV',
 	function ($log, $analytics, ENV) {
 
-		// var creds = {
-		// 	bucket: ENV.bucket,
-		// 	access_key: 'AKIAJHSXPMPE223KS7PA',
-		// 	secret_key: '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'
-		// }
-
 		var service = {
 			callbacks: {}
 		}

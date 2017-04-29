@@ -27,12 +27,6 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 				};
 				$log.debug('init review', $scope.review);
 
-				// $scope.creds = {
-				// 	bucket: ENV.bucket + '/' + ENV.folder,
-				// 	access_key: 'AKIAJHSXPMPE223KS7PA',
-				// 	secret_key: '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'
-				// }
-
 				$scope.config = {
 					theme: "bower_components/videogular-themes-default/videogular.css"
 				};

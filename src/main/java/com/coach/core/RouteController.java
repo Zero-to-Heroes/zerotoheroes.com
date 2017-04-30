@@ -50,6 +50,7 @@ public class RouteController {
 			"/s/{sport}/{pageNumber}",
 			"/s/{sport}/reviews/{pageNumber}",
 			"/s/{sport}/upload",
+			"/s/{sport}/claimAccount/{applicationKey}/{userToken}",
 			"/s/{sport}/upload/{type}",
 			"/s/{sport}/upload/{type}/{step}",
 			"/s/{sport}/coaches",

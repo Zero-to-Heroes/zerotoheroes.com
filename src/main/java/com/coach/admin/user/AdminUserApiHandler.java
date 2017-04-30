@@ -179,32 +179,10 @@ public class AdminUserApiHandler {
 		if ("prod".equalsIgnoreCase(
 				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
 
-		List<String> emails = Arrays.asList("wouter.89@gmail.com", "jeromehebert@ymail.com",
-				"terry.pritchard@gmail.com", "rishabh.bajpai@outlook.com", "jamaldieter7@hotmail.com",
-				"thibaud@zerotoheroes.com", "sparksterzero@gmail.com", "nfaivret@hotmail.com",
-				"jeremie.corbier@gmail.com", "thibaud.jobert@gmail.com", "debon.julien@gmail.com", "tmayeur@gmail.com",
-				"guillaume.dosser@gmail.com", "james_terry@me.com", "ninja523@wp.pl", "tizzle1298@gmail.com",
-				"dobotronut@yahoo.com", "keymaker_21@hotmail.com", "gruzja@o2.pl", "wrace12@gmail.com",
-				"steph.bonnat@free.fr", "james.green@gmail.com", "smg7d@virginia.edu", "pharaon51100@yahoo.com",
-				"bruno.pinheiro@hotmail.fr", "simspok@yahoo.fr", "bchapman01@gmail.com", "vincent.rampal@gmail.com",
-				"ayreon1001@hotmail.es", "echan01@gmail.com", "gharmuth96@hotmail.com", "seb@zerotoheroes.com",
-				"thibaud.jobert@facebook.com", "rlin81@gmail.com", "dataphreak2@gmail.com", "joey.sheff@gmail.com",
-				"kelkadiri@hotenet.com", "niuwang@live.com", "jonas.per.fromell@gmail.com", "davemacvicar@gmail.com",
-				"Ben104mad@gmail.com", "alex.mullex@yahoo.fr", "christophenegro@gmail.com",
-				"sebastien.tromp+test@gmail.com", "nico.grosjean@free.fr", "guillaumetromp@gmail.com",
-				"guillaume.jobert@gmail.com", "christophe.vallet@gmail.com", "pvennegues@gmail.com",
-				"pmarx@saulnes-badminton.com", "jeanflouret@yahoo.fr", "damian_leszek@yahoo.com",
-				"thibault.cambuzat@gmail.com", "shawnbjf@gmail.com", "saladirgaming@gmail.com",
-				"enidnama1301@hotmail.fr", "carole_f_fr@yahoo.fr", "phihag@phihag.de", "frederic.pierre.info@gmail.com",
-				"mail4.essence@gmail.com", "roger.martaud@gmail.com", "asad16@gmail.com", "delorme.renaud@gmail.com",
-				"sebastien.tromp+test15@gmail.com", "sebastien.tromp+test16@gmail.com", "denisulmer@gmail.com",
-				"simon.mair@gmx.de", "Sirkrispee@gmail.com", "rwix94@gmail.com", "sebastien.tromp@gmail.com",
-				"a24648@trbvn.com", "sebastien.tromp+daedin@gmail.com", "shrenik.shah@nextgenclearing.com",
-				"youwtipsolforge@gmail.com", "wesley124@gmail.com", "victor.history@hotmail.com",
-				"jake.godfrey99@gmail.com", "ivanof76@gmail.com", "alex200295@hotmail.fr", "superbenj@gmail.com",
-				"c2149670@trbvn.com", "mcrawford@gmail.com", "evg.veretennikov@gmail.com", "jimvandriel@upcmail.nl",
-				"peter.nastke@gmx.de", "outohuupio@hotmail.com", "tiberium1337@gmx.de", "tatu@alapta.org",
-				"19kamin@gamil.com", "kai.starkk@live.com", "24erre@gmaiil.com", "h2560524@mvrht.com");
+		// TODO: rerun
+		List<String> emails = Arrays.asList("tstenz@uwalumni.com", "silvercomputer123@hotmail.com",
+				"tristan464@gmail.com", "canucksrawesome@hotmail.com", "petrophellis@gmail.com", "pelle5000@gmail.com",
+				"plazmrx@gmail.com");
 
 		Criteria crit = where("email").in(emails);
 		Query query = query(crit);

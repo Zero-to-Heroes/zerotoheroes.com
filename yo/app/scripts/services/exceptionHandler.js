@@ -1,6 +1,6 @@
 angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', function($provide, $httpProvider, ENV, version) {
-	console.log('preloading source map')
-	StackTrace.fromError(new Error()).then(function() { console.log('source map preloaded')})
+	// console.log('preloading source map')
+	// StackTrace.fromError(new Error()).then(function() { console.log('source map preloaded')})
 
 	// Use the `decorator` solution to substitute or attach behaviors to
 	// original service instance; @see angular-mocks for more examples....

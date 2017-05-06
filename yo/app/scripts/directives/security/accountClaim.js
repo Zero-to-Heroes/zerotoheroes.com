@@ -26,7 +26,7 @@ app.directive('accountClaim', ['$log', '$translate', 'User', 'Api',
 				$log.debug('claiming accounte')
 				Api.ClaimAccount.save({reviewId: $scope.review.id}, 
 					function(data) {
-						$scope.review.claimableAccount = false
+						$scope.review.reallyClaimable = false
 						$log.debug('account claimed')
 						$scope.$broadcast('$$rebind::' + 'accountClaim')
 					}

@@ -51,7 +51,7 @@ var parseCardsText = {
 
 		var localizedImage = parseCardsText.localizeImage(card, lang);
 		var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
-		var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + localizedImage + '\'>';
+		var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/fullcards/en/256/' + localizedImage + '\'>';
 		var link = '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-animation="false" data-container="' + container + '">' + localizedName + '</span>';
 
 		parseCardsText.refreshTooltips()
@@ -79,7 +79,7 @@ var parseCardsText = {
 
 		lang = lang || parseCardsText.getLang()
 		var localizedImage = parseCardsText.localizeImage(card, lang)
-		return 'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + localizedImage
+		return 'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/fullcards/en/256/' + localizedImage
 	},
 
 	getLang: function() {
@@ -170,7 +170,7 @@ var parseCardsText = {
 			index: 0,
 			template: function(card, term) {
 				var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
-				var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + parseCardsText.localizeImage(card) + '\'>';
+				var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/fullcards/en/256/' + parseCardsText.localizeImage(card) + '\'>';
 				var cssClass = card.rarity ? parseCardsText.getRarity(card).toLowerCase() : 'common';
 				return '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '"data-placement="auto left" data-html="true" data-container="body" data-animation="false">' + parseCardsText.localizeName(card) + '</span>';
 			},

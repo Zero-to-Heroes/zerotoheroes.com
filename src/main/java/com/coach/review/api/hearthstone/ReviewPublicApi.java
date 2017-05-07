@@ -218,26 +218,6 @@ public class ReviewPublicApi {
 		return processReviewLogs(user, reviews, logInfo);
 	}
 
-	@RequestMapping(value = "/upload/game/init", method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<FileUploadResponse> initReview() throws Exception {
-		FileUploadResponse response = null;
-		Review review = new Review();
-		review.setFileType("text/plain");
-		review.setSport(Review.Sport.load("hearthstone"));
-		review.setReplay("true");
-		review.setVisibility("restricted");
-		review.setTemporaryReplay("");
-		review.setReviewType("game-replay");
-
-		reviewRepo.save(review);
-		List<String> ids = new ArrayList<>();
-		ids.add(review.getId());
-		log.debug("Created review " + review);
-
-		response = new FileUploadResponse(ids, null);
-		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
-	}
-
 	@RequestMapping(value = "/upload/game/{reviewId}/{applicationKey}/{userToken}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<FileUploadResponse> uploadOneReviewWithToken(
 			@RequestParam("data") MultipartFile data, @PathVariable(value = "reviewId") String reviewId,
@@ -284,6 +264,26 @@ public class ReviewPublicApi {
 		review.setSport(Sport.load(sport));
 		reviewRepo.save(review);
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/upload/game/init", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<FileUploadResponse> initReview() throws Exception {
+		FileUploadResponse response = null;
+		Review review = new Review();
+		review.setFileType("text/plain");
+		review.setSport(Review.Sport.load("hearthstone"));
+		review.setReplay("true");
+		review.setVisibility("restricted");
+		review.setTemporaryReplay("");
+		review.setReviewType("game-replay");
+
+		reviewRepo.save(review);
+		List<String> ids = new ArrayList<>();
+		ids.add(review.getId());
+		log.debug("Created review " + review);
+
+		response = new FileUploadResponse(ids, null);
+		return new ResponseEntity<FileUploadResponse>(response, HttpStatus.OK);
 	}
 
 	private ResponseEntity<FileUploadResponse> processReviewLogs(User user, List<Review> reviews, byte[] logInfo)

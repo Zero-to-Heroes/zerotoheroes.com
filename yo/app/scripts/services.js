@@ -5,64 +5,67 @@ var url = '/api/';
 
 var services = angular.module('services', ['ngResource', 'config']);
 
-services.factory('Api', ['$resource', 'ENV', 
-	function($resource, ENV) {
+services.factory('Api', ['$resource', 'ENV', '$location', 
+	function($resource, ENV, $location) {
+		function getEndpoint() {
+			return $location.protocol() + "://" + ENV.apiEndpoint;
+		}
 		return {
-			Reviews: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
-			ReviewsMulti: $resource(ENV.apiEndpoint + url + 'reviews/multi/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
-			ReviewsAll: $resource(ENV.apiEndpoint + url + 'reviews/multi'),
-			ReviewsQuery: $resource(ENV.apiEndpoint + url + 'reviews/query'),
-			ReviewsUpdate: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/information', {reviewId: '@reviewId'}),
-			ReviewsUpdateFromUrl: $resource(ENV.apiEndpoint + url + 'fromurl/:sport', {sport: '@sport'}),
-			ReviewsPublish: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/publish', {reviewId: '@reviewId'}),
-			ReviewsSuggestion: $resource(ENV.apiEndpoint + url + 'reviews/suggestion/comment/:sport', {sport: '@sport'}),
-			CloseReview: $resource(ENV.apiEndpoint + url + 'reviewscore/close/:reviewId', {reviewId: '@reviewId'}),
-			ReopenReview: $resource(ENV.apiEndpoint + url + 'reviewscore/reopen/:reviewId', {reviewId: '@reviewId'}),
+			Reviews: $resource(getEndpoint() + url + 'reviews/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
+			ReviewsMulti: $resource(getEndpoint() + url + 'reviews/multi/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
+			ReviewsAll: $resource(getEndpoint() + url + 'reviews/multi'),
+			ReviewsQuery: $resource(getEndpoint() + url + 'reviews/query'),
+			ReviewsUpdate: $resource(getEndpoint() + url + 'reviews/:reviewId/information', {reviewId: '@reviewId'}),
+			ReviewsUpdateFromUrl: $resource(getEndpoint() + url + 'fromurl/:sport', {sport: '@sport'}),
+			ReviewsPublish: $resource(getEndpoint() + url + 'reviews/:reviewId/publish', {reviewId: '@reviewId'}),
+			ReviewsSuggestion: $resource(getEndpoint() + url + 'reviews/suggestion/comment/:sport', {sport: '@sport'}),
+			CloseReview: $resource(getEndpoint() + url + 'reviewscore/close/:reviewId', {reviewId: '@reviewId'}),
+			ReopenReview: $resource(getEndpoint() + url + 'reviewscore/reopen/:reviewId', {reviewId: '@reviewId'}),
 
-			CommentsReply: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId/reply', {reviewId: '@reviewId', commentId: '@commentId'}),
-			Comments: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
-			CommentValidation: $resource(ENV.apiEndpoint + url + 'reviews/:reviewId/:commentId/validate', {reviewId: '@reviewId', commentId: '@commentId'}),
-			Coaches: $resource(ENV.apiEndpoint + url + 'coaches/:identifier', {identifier: '@identifier'}),
-			CoachesAll: $resource(ENV.apiEndpoint + url + 'coaches/:sport/all', {sport: '@sport'}),
-			Payment: $resource(ENV.apiEndpoint + url + 'payment/:reviewId/:coachId/:email/:tariffId', {reviewId: '@reviewId', coachId: '@coachId', email:'@email', tariffId: '@tariffId'}),
+			CommentsReply: $resource(getEndpoint() + url + 'reviews/:reviewId/:commentId/reply', {reviewId: '@reviewId', commentId: '@commentId'}),
+			Comments: $resource(getEndpoint() + url + 'reviews/:reviewId/:commentId', {reviewId: '@reviewId', commentId: '@commentId'}),
+			CommentValidation: $resource(getEndpoint() + url + 'reviews/:reviewId/:commentId/validate', {reviewId: '@reviewId', commentId: '@commentId'}),
+			Coaches: $resource(getEndpoint() + url + 'coaches/:identifier', {identifier: '@identifier'}),
+			CoachesAll: $resource(getEndpoint() + url + 'coaches/:sport/all', {sport: '@sport'}),
+			Payment: $resource(getEndpoint() + url + 'payment/:reviewId/:coachId/:email/:tariffId', {reviewId: '@reviewId', coachId: '@coachId', email:'@email', tariffId: '@tariffId'}),
 			
-			Users: $resource(ENV.apiEndpoint + url + 'users/:identifier', {identifier: '@identifier'}),
-			UserPing: $resource(ENV.apiEndpoint + url + 'users/ping/:identifier', {identifier: '@identifier'}),					
-			Profile: $resource(ENV.apiEndpoint + url + 'profile'),					
-			Passwords: $resource(ENV.apiEndpoint + url + 'users/password/:key', {key: '@key'}),
-			Login: $resource(ENV.apiEndpoint + url + 'login', {}),
-			ClaimAccount: $resource(ENV.apiEndpoint + url + 'claimAccount/:reviewId', {reviewId: '@reviewId'}),
-			ClaimAccountWithKey: $resource(ENV.apiEndpoint + url + 'claimAccount/:applicationKey/:userKey', 
+			Users: $resource(getEndpoint() + url + 'users/:identifier', {identifier: '@identifier'}),
+			UserPing: $resource(getEndpoint() + url + 'users/ping/:identifier', {identifier: '@identifier'}),					
+			Profile: $resource(getEndpoint() + url + 'profile'),					
+			Passwords: $resource(getEndpoint() + url + 'users/password/:key', {key: '@key'}),
+			Login: $resource(getEndpoint() + url + 'login', {}),
+			ClaimAccount: $resource(getEndpoint() + url + 'claimAccount/:reviewId', {reviewId: '@reviewId'}),
+			ClaimAccountWithKey: $resource(getEndpoint() + url + 'claimAccount/:applicationKey/:userKey', 
 				{applicationKey: '@applicationKey', userKey: '@userKey'}),
-			Reputation: $resource(ENV.apiEndpoint + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'}),
+			Reputation: $resource(getEndpoint() + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'}),
 
-			Notifications: $resource(ENV.apiEndpoint + url + 'notifications/:type', {type: '@type'}),
-			NotificationsRead: $resource(ENV.apiEndpoint + url + 'notifications/read', {id: '@id'}),
-			AllNotificationsRead: $resource(ENV.apiEndpoint + url + 'notifications/allread'),
-			NotificationsUnread: $resource(ENV.apiEndpoint + url + 'notifications/unread', {id: '@id'}),
-			Preferences: $resource(ENV.apiEndpoint + url + 'preferences', null, {
+			Notifications: $resource(getEndpoint() + url + 'notifications/:type', {type: '@type'}),
+			NotificationsRead: $resource(getEndpoint() + url + 'notifications/read', {id: '@id'}),
+			AllNotificationsRead: $resource(getEndpoint() + url + 'notifications/allread'),
+			NotificationsUnread: $resource(getEndpoint() + url + 'notifications/unread', {id: '@id'}),
+			Preferences: $resource(getEndpoint() + url + 'preferences', null, {
 				'update': { method: 'PATCH'}
 			}),
-			SharingPreferences: $resource(ENV.apiEndpoint + url + 'preferences/sharing/:identifier', {identifier: '@identifier'}),
-			TagSuggestionBlacklist: $resource(ENV.apiEndpoint + url + 'preferences/tagSuggestionBlacklist/:tag', {tag: '@tag'}),
+			SharingPreferences: $resource(getEndpoint() + url + 'preferences/sharing/:identifier', {identifier: '@identifier'}),
+			TagSuggestionBlacklist: $resource(getEndpoint() + url + 'preferences/tagSuggestionBlacklist/:tag', {tag: '@tag'}),
 
-			ProfileInfo: $resource(ENV.apiEndpoint + url + 'profileinfo/:user/:sport', {user: '@user', sport: '@sport'}),
+			ProfileInfo: $resource(getEndpoint() + url + 'profileinfo/:user/:sport', {user: '@user', sport: '@sport'}),
 
-			Subscriptions: $resource(ENV.apiEndpoint + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
-			SubscriptionsSuggestions: $resource(ENV.apiEndpoint + url + 'suggestions/:topic', {topic: '@topic'}),
-			SavedSearchSubscriptions: $resource(ENV.apiEndpoint + url + 'savedSearch/:name', {name: '@name'}),
+			Subscriptions: $resource(getEndpoint() + url + 'subscriptions/:itemId', {itemId: '@itemId'}),
+			SubscriptionsSuggestions: $resource(getEndpoint() + url + 'suggestions/:topic', {topic: '@topic'}),
+			SavedSearchSubscriptions: $resource(getEndpoint() + url + 'savedSearch/:name', {name: '@name'}),
 
-			ActivityFeed: $resource(ENV.apiEndpoint + url + 'activities/:sport', {sport: '@sport'}),
-			Announcements: $resource(ENV.apiEndpoint + url + 'announcements'),
+			ActivityFeed: $resource(getEndpoint() + url + 'activities/:sport', {sport: '@sport'}),
+			Announcements: $resource(getEndpoint() + url + 'announcements'),
 
-			Features: $resource(ENV.apiEndpoint + url + 'news/features'),
-			BugFixes: $resource(ENV.apiEndpoint + url + 'news/bugfixes'),
-			Tags: $resource(ENV.apiEndpoint + url + 'tags/:sport'),
-			Sequences: $resource(ENV.apiEndpoint + url + 'sequences/:sport/:sequenceId'),
-			SequencesQuery: $resource(ENV.apiEndpoint + url + 'sequences/query'),
-			Sports: $resource(ENV.apiEndpoint + url + 'sports/:sport', {sport: '@sport'}),
+			Features: $resource(getEndpoint() + url + 'news/features'),
+			BugFixes: $resource(getEndpoint() + url + 'news/bugfixes'),
+			Tags: $resource(getEndpoint() + url + 'tags/:sport'),
+			Sequences: $resource(getEndpoint() + url + 'sequences/:sport/:sequenceId'),
+			SequencesQuery: $resource(getEndpoint() + url + 'sequences/query'),
+			Sports: $resource(getEndpoint() + url + 'sports/:sport', {sport: '@sport'}),
 
-			Replays: $resource(ENV.apiEndpoint + url + 'replays'),
+			Replays: $resource(getEndpoint() + url + 'replays'),
 
 			Slack: $resource('https://hooks.slack.com/services/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', {})
 		};

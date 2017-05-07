@@ -117,8 +117,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					$log.info('retrieved review', data)
 
 					// default sorting of comments
-					if ($scope.review.useV2comments)
-						$scope.review.commentSortCriteria = 'chronological'
+					$scope.review.commentSortCriteria = 'chronological'
 
 					TagService.filterOut(undefined, function(data) {
 						$scope.allowedTags = data
@@ -127,24 +126,20 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// Update page description
 					$scope.updateSeoInformation(data)
 
-					if ($scope.review.mediaType == 'video' || $scope.review.reviewType == 'video' || $scope.review.key.indexOf('mp4') != -1) {
-						// $log.debug('setting video playerType')
+					if ($scope.review.mediaType == 'video' || $scope.review.reviewType == 'video' || 
+						($scope.review.key && $scope.review.key.indexOf('mp4') != -1)) {
 						$scope.mediaPlayer.playerType = 'video'
 					}
 					else {
 						$scope.mediaPlayer.playerType = 'replay'
 					}
 
-					// $log.debug('mediaPlayer', $scope.mediaPlayer)
 					// Need to wait for the digest cycle so the proper directive (videoplayer vs externalplayer) is instanciated
 					$timeout(function() {
 						$scope.initPlayer(data)
 						$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 						$scope.$broadcast('$$rebind::' + 'delete')
 					})
-				},
-				function(success) {
-					$log.warn('hop')
 				},
 				function(error) {
 					$log.warn('could not load review', error)

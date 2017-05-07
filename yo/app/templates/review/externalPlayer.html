@@ -2,6 +2,9 @@
 	<div id="dummy"></div>
 	<div id="externalPlayer" class="external-player" ng-show="reviewLoaded"></div>
 
+	<!-- Waiting message -->
+	<div class="processing-replay" ng-if="!review.key">We are currently processing your replay. Please refresh the page in a few seconds to see your game</div>
+
 	<!-- Ads? -->
-	<div class="video-ad-container" ng-if="!reviewLoaded">There might be an ad here in the future while the game is loading. Discussion is still open <a href="https://www.reddit.com/r/zerotoheroes/comments/5hrraq/monetization_brainstorming_and_looking_for/" target="_blank">on the forums</a></div>
+	<div class="video-ad-container" ng-if="review.key && !reviewLoaded">There might be an ad here in the future while the game is loading. Discussion is still open <a href="https://www.reddit.com/r/zerotoheroes/comments/5hrraq/monetization_brainstorming_and_looking_for/" target="_blank">on the forums</a></div>
 </div>

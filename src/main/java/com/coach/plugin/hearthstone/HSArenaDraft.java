@@ -134,7 +134,8 @@ public class HSArenaDraft implements ReplayPlugin {
 		Pattern heroPickRegex = Pattern.compile("(.*) - GameWatcher\\(\\d+\\): New arena\\. Heroe: (\\d+).*");
 		Pattern heroPickRegex2 = Pattern.compile("(.*) - DraftHandler: Begin draft. Heroe: (\\d+).*");
 		Pattern choiceRegex = Pattern.compile("(.*) - DraftHandler: \\(\\d+\\) (\\w+)\\/(\\w+)\\/(\\w+).*");
-		Pattern pickRegex = Pattern.compile("(.*) - GameWatcher\\(\\d+\\): Pick card: (\\w+).*");
+		Pattern pickRegexOld = Pattern.compile("(.*) - GameWatcher\\(\\d+\\): Pick card: (\\w+).*");
+		Pattern pickRegex = Pattern.compile("(.*) - DraftHandler: Pick card: (\\w+).*");
 
 		String draftJson = null;
 
@@ -155,7 +156,10 @@ public class HSArenaDraft implements ReplayPlugin {
 						draft.detectedcards[pickIndex] = pick;
 					}
 
-					matcher = pickRegex.matcher(line);
+					matcher = pickRegexOld.matcher(line);
+					if (!matcher.matches()) {
+						matcher = pickRegex.matcher(line);
+					}
 					if (matcher.matches()) {
 						LocalTime time = LocalTime.parse(matcher.group(1));
 						String cardId = matcher.group(2);

@@ -27,7 +27,6 @@
 	    </div>
     </div>
     
-
     <!-- The error message if an invalid file format is added. We can't show it during the drag and drop, because we don't know what's the file type being dragged -->
     <div class="alert alert-danger unsupported-file-alert" role="alert" ng-show="hasUnsupportedFormatError">
 		<span>{{ 'global.upload.replay.invalidFormatMessage' | translate }}</span>
@@ -39,11 +38,7 @@
 		<span ng-bind-html="'global.upload.replay.disabledAnonymousMultiUpload' | translate"></span>
 	</div>
 
-	<!-- Since we have no video preview (we may have when we support upload of xml files directly), we need to at least show the file has been selected -->
-	<!-- <div class="alert alert-info selected-file" role="alert" ng-show="file">
-		<span translate="global.upload.replay.selectedFile" translate-value-file-name="{{file.name}}"></span>
-	</div> -->
-
+	<div class="help-text-replay" ng-bind-html="::translations.helpText"></div>
 
 	<!-- Let's go! -->
 	<div class="upload-button">

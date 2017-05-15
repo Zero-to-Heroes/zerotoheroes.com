@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 'User', 
-	function(FileUploader, MediaUploader, $log, SportsConfig, $timeout, $parse, ENV, User) {
+app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 'User', '$translate', 
+	function(FileUploader, MediaUploader, $log, SportsConfig, $timeout, $parse, ENV, User, $translate) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -15,6 +15,10 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 			link: function($scope, element, attrs) {
 			},
 			controller: function($scope) {
+
+				$scope.translations = {
+					helpText: $translate.instant('global.upload.replay.help')
+				}
 
 				$scope.sportsConfig = SportsConfig
 				$scope.User = User

@@ -579,12 +579,12 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					return true
 				}
 
-				$scope.notifySearchRelaunchNeeded = function(field) {
+				$scope.notifySearch/*RelaunchNeeded = function(field) {
 					if (!field)
 						$scope.searchRelaunchNeeded = false
 					else 
 						$scope.searchRelaunchNeeded = true
-				}
+				}*/
 
 				$scope.closeMessage = function(message) {
 					$scope[message] = undefined

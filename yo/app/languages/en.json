@@ -708,6 +708,7 @@
 				"review": {
 					"headline": "Add information to your replay"
 				},
+				"help": "Need help? Have a look <a href=\"http://blog.zerotoheroes.com/en/2015/11/27/how-to-record-your-hearthstone-game-android-pc\" target=\"_blank\">at our blog</a>",
 				"pageTitle": "Upload a replay",
 				"headline": "Upload a replay",
 				"chooseFileButton": "Add a game",

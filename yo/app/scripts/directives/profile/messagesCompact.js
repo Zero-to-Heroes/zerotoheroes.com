@@ -93,17 +93,14 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 
 					var compact = $scope.compact = {}
 
-					// First build the new reviews (it can happen to have a new review + new comments)
+					// Build one entry for each type - for now, only review, will be PMs later on?
 					$scope.source.forEach(function(message) {
+						// First build the new reviews (it can happen to have a new review + new comments)
 						if (message.data.textKey == 'newReview') {
 							// $log.debug('considering', message)
 							compact[message.data.reviewId] = message
 							message.comments = []
 						}
-					})
-
-					// Build one entry for each type - for now, only review, will be PMs later on?
-					$scope.source.forEach(function(message) {
 						if (message.data.textKey == 'newComment') {
 							// $log.debug('considering', message)
 							if (!compact[message.data.reviewId]) {
@@ -128,7 +125,7 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 				$scope.compactMessages()
 
 				$scope.$watch('exploded', function(newVal, oldVal) {
-					$log.debug('exploded changed', $scope.exploded)
+					// $log.debug('exploded changed', $scope.exploded)
 					$scope.compactMessages()
 					// Also used at the top messages level
 					$scope.$broadcast('$$rebind::' + 'changeMenu')
@@ -145,10 +142,10 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 				$scope.markRead = function(message, $event) {
 					if (!message.readDate) {
 						$event.stopPropagation()
-						$log.debug('marking as read', message)
+						// $log.debug('marking as read', message)
 						Api.NotificationsRead.save([message.id], 
 							function(data) {
-								$log.debug('marked read', data)
+								// $log.debug('marked read', data)
 								message.readDate = new Date()
 								$scope.$broadcast('$$rebind::' + 'readMessage')
 							}
@@ -171,11 +168,11 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 
 				$scope.markAllRead = function(message) {
 					var toRead = _.map(message.comments, 'id')
-					$log.debug("marking read", toRead, message.comments, message)
+					// $log.debug("marking read", toRead, message.comments, message)
 
 					Api.NotificationsRead.save(toRead, 
 						function(data) {
-							$log.debug('marked all read')
+							// $log.debug('marked all read')
 							message.comments.forEach(function(comment) {
 								comment.readDate = new Date()
 							})

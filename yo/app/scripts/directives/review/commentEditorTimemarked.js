@@ -1,6 +1,6 @@
 var app = angular.module('app');
-app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$rootScope', '$timeout', 
-	function($log, User, Api, $parse, $rootScope, $timeout) {
+app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$rootScope', '$timeout', '$translate',
+	function($log, User, Api, $parse, $rootScope, $timeout, $translate) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -15,34 +15,28 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 			link: function ($scope, element, attrs) {
 			},
 			controller: function($scope) {
+
+				$scope.translations = {
+					confirmLeavingPage: $translate.instant('global.review.leavePageConfirmation')
+				}
 				
 				$scope.newComments = {}
 				$scope.currentTurn = 0
-				// $scope.turnLabels = {}
-
-				// $scope.newComment = {}
 				$scope.User = User
-				// $scope.bouncing = false
+
 				// External API
 				$scope.controller.onTurnChanged = function(turn) {
 					$scope.currentTurn = turn
 					$log.debug('on turn changed in commentEditorTimemarked', $scope.currentTurn, $scope.newComments)
-					// $scope.newComments = $scope.newComments || {}
 					$scope.newComments[$scope.currentTurn] = $scope.newComments[$scope.currentTurn] || {}
-					// $scope.turnLabels[$scope.currentTurn] = turn.label || turn
-					// $log.debug('surfacing current comment', $scope.newComments[$scope.currentTurn], $scope.newComments)
-					// $scope.bouncing = false
 					$timeout(function() {
 						$scope.$apply()
 					}, 50)
-					
-
 				}
 
 
 				$scope.triggerNewCommentEdition = function() {
 					$scope.addingComment = true
-					// $scope.currentTurn = $scope.mediaPlayer.getCurrentTurn()
 					$scope.newComments[$scope.currentTurn] = $scope.newComments[$scope.currentTurn] || {}
 					$log.debug('current turn', $scope.currentTurn)
 					$timeout(function() {
@@ -66,7 +60,6 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 
 				$scope.cancelComments = function() {
 					$scope.newComments = {}
-					// $scope.turnLabels = {}
 					$scope.commentForm.$setPristine()
 					$scope.$broadcast('show-errors-reset')
 					$scope.mediaPlayer.onCancelEdition()
@@ -91,7 +84,6 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 								$scope.showHelp = false;
 								$scope.posting = false
 								$scope.newComments = {}
-								// $scope.newComment = {};
 								$scope.commentForm.$setPristine();
 								$scope.review.comments = data.comments
 								$scope.review.reviewVideoMap = data.reviewVideoMap || {};
@@ -120,13 +112,6 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 					$parse(model).assign($scope, newValue);
 				}
 
-				// $scope.getTurnLabel = function(turn) {
-				// 	// if (turn == 0) 
-				// 	// 	return 'Mulligan'
-				// 	console.log
-				// 	return turn
-				// }
-
 				$scope.showCommentsRecap = function() {
 					var turnsData = Object.getOwnPropertyNames($scope.newComments)
 					if (turnsData.length == 0) {
@@ -146,12 +131,29 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 				}
 
 				$rootScope.$on('account.close', function() {
-					//$log.log('on account close in review.js');
 					if ($scope.onAddComment) {
-						// $log.log('in onAddComment');
 						$scope.uploadComments();
 						$scope.onAddComment = false;
 						$scope.$broadcast('$$rebind::' + 'reviewRefresh')
+					}
+				});
+
+				$scope.$on('$locationChangeStart', function( event ) {
+					$log.debug('$locationChangeStart', $scope.newComments, _.isEmpty($scope.newComments))
+					var empty = true
+					if (!_.isEmpty($scope.newComments)) {
+						for (var key in $scope.newComments) {
+							var value = $scope.newComments[key]
+							if (value.text && value.text.length > 0) {
+								empty = false;
+							}
+						}
+					}
+					if (!empty) {
+					    var answer = confirm($scope.translations.confirmLeavingPage)
+					    if (!answer) {
+					        event.preventDefault();
+					    }
 					}
 				});
 			}

@@ -41,7 +41,9 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					deletionDone: $translate.instant('global.review.comment.deletionDone'),
 
 					helpedAuthor: $translate.instant('global.review.comment.helpedAuthor', {name: $scope.review.author}),
-					helpedMe: $translate.instant('global.review.comment.helpedMe')
+					helpedMe: $translate.instant('global.review.comment.helpedMe'),
+
+					confirmLeavingPage: $translate.instant('global.review.leavePageConfirmation'),
 				}
 
 				$scope.User = User;
@@ -332,6 +334,17 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 						$scope.downvoteComment($scope.downvotingComment);
 						$scope.downvotingComment = null;
 						$scope.$broadcast('$$rebind::' + 'commentRefresh')
+					}
+				});
+
+
+
+				$scope.$on('$locationChangeStart', function(event) {
+					if ($scope.comment.editing || $scope.reply.text) {
+					    var answer = confirm($scope.translations.confirmLeavingPage)
+					    if (!answer) {
+					        event.preventDefault();
+					    }
 					}
 				});
 

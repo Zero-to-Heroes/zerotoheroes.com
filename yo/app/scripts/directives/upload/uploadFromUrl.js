@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$location', '$timeout', 
-	function(Api, MediaUploader, $log, User, $location, $timeout) {
+app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$location', '$timeout', '$translate',
+	function(Api, MediaUploader, $log, User, $location, $timeout, $translate) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -15,12 +15,16 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 			link: function($scope, element, attrs) {
 			},
 			controller: function($scope) {
+				$scope.translations = {
+					processing: $translate.instant('global.upload.fromurl.processing')
+				}
 				$scope.User = User
 
 				$scope.initUpload = function() {
 					$scope.unsupportedProvider = false
 					var url = {url: $scope.url}
 					$log.debug('saving', url)
+					$scope.processing = true
 					Api.ReviewsUpdateFromUrl.save({sport: $scope.sport}, url, 
 						function(data) {
 							$log.debug('retrieved review', data)
@@ -35,6 +39,7 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 						},
 						function(error) {
 							$log.error('unsupported', error)
+							$scope.processing = false
 							if (error.status == 501)
 								$scope.unsupportedProvider = true
 						}
@@ -45,6 +50,7 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 
 				$scope.retrieveCompletionStatus = function() {
 					if ($scope.retryCount < 0) {
+						$scope.processing = false
 						return
 					}
 
@@ -67,6 +73,7 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 								else if (MediaUploader.review.reviewType == 'game-replay')
 									uploadType = 'replay'
 
+								$scope.processing = false
 								if (uploadType) {
 									var url = '/s/' + $scope.sport + '/upload/' + uploadType + '/review'
 									// var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s

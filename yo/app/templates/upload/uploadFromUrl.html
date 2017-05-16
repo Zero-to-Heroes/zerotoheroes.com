@@ -16,6 +16,9 @@
         <button type="submit" class="btn btn-primary btn-upload" ng-click="initUpload()" ng-disabled="!url"><span>{{ 'global.upload.uploadButton' | translate }}</span></button>
     </div>
 
+
+    <div ng-show="processing">{{::translations.processing}}</div>
+
     <!-- error messages -->
     <div translate="global.upload.fromurl.noUrl" ng-show="!url"></div>
 </div>

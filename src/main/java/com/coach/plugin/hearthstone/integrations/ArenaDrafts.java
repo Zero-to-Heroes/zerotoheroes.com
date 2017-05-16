@@ -14,11 +14,16 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListener;
 import com.coach.core.storage.S3Utils;
@@ -29,16 +34,10 @@ import com.coach.review.ReviewRepository;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-
 @Slf4j
 public class ArenaDrafts implements IntegrationPlugin {
 
-	private static final String URL_PATTERN = "\\[?(http:\\/\\/(www\\.)?arenadrafts\\.com\\/Arena\\/View\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
+	private static final String URL_PATTERN = "\\[?((?:http:\\/\\/)?(www\\.)?arenadrafts\\.com\\/Arena\\/View\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
 	private static final String URL = "http://arenadrafts.com/Arena/View/";
 
 	@Autowired
@@ -77,21 +76,17 @@ public class ArenaDrafts implements IntegrationPlugin {
 
 		// Then upload the file
 		final String key = review.buildKey(UUID.randomUUID().toString(), "hearthstone/draft");
-		ProgressListener listener = new ProgressListener() {
-
-			@Override
-			public void progressChanged(ProgressEvent progressEvent) {
-				log.debug("progress2 " + progressEvent.getEventType());
-				if (progressEvent.getEventType().equals(ProgressEventType.TRANSFER_COMPLETED_EVENT)) {
-					// And finally update the review with all the necessary data
-					review.setKey(key);
-					review.setFileType("json");
-					review.setMediaType("arena-draft");
-					review.setReviewType("arena-draft");
-					review.setTranscodingDone(true);
-					repo.save(review);
-					log.debug("review saved " + review);
-				}
+		ProgressListener listener = progressEvent -> {
+			log.debug("progress2 " + progressEvent.getEventType());
+			if (progressEvent.getEventType().equals(ProgressEventType.TRANSFER_COMPLETED_EVENT)) {
+				// And finally update the review with all the necessary data
+				review.setKey(key);
+				review.setFileType("json");
+				review.setMediaType("arena-draft");
+				review.setReviewType("arena-draft");
+				review.setTranscodingDone(true);
+				repo.save(review);
+				log.debug("review saved " + review);
 			}
 		};
 		s3utils.putToS3(strResult, key, "text/json", listener);
@@ -137,6 +132,11 @@ public class ArenaDrafts implements IntegrationPlugin {
 
 	private String buildDraft(String draftUrl) throws MalformedURLException, IOException, ProtocolException {
 		StringBuilder result = new StringBuilder();
+
+		if (!draftUrl.startsWith("http://")) {
+			draftUrl = "http://" + draftUrl;
+		}
+
 		URL url = new URL(draftUrl + "?format=JSON");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("GET");

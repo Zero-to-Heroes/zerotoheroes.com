@@ -2,7 +2,7 @@ var services = angular.module('services');
 services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage', 
 	function ($log, angularLoad, $parse, localStorage) {
 		var service = {}
-		var dev = false;
+		var dev = true;
 
 		service =
 			{
@@ -62,7 +62,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					plugins: {
 						plugins: [
 							{name: 'parseCardsText', version: 31, dev: dev}, 
-							{name: 'parseDecks', version: 42, dev: dev}, 
+							{name: 'parseDecks', version: 43, dev: dev}, 
 							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 157, options: { useCompressedImages: true }, dev: dev},
 							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 33, dev: dev}
 						],

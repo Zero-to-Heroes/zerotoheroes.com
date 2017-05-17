@@ -16,6 +16,7 @@ var parseDecks = {
 	// hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
 	hearthheadDecksRegex: /\[?(http:\/\/www\.hearthhead\.com\/deck=)([\d\w\-]+)\/?([\d\w\-]+)?\]?/gm,
 	inlineDecksRegex: /\[?((([\w]{3,15})(?::)(\d)(?:;)?)+)\]?/gm,
+	blizzardDeckstring: /\[?(\S*)=\]?/gm,
 	
 	decks: {},
 
@@ -34,45 +35,21 @@ var parseDecks = {
 		text = parseDecks.parse(review, text, parseDecks.manaCrystalsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthstatsDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hsreplaynetDecksRegex)
-		// text = parseDecks.parse(review, text, parseDecks.hearthstatsFullDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.hearthheadDecksRegex)
 		text = parseDecks.parse(review, text, parseDecks.inlineDecksRegex, true)
-
-		// result = parseDecks.parseTemporaryDeck(review, result, text, parseDecks.hearthpwnTempDeckRegex)
+		text = parseDecks.parse(review, text, parseDecks.blizzardDeckstring, true)
 
 		return text;
 	},
 
-	// parseTemporaryDeck: function(review, result, text, regex, groupIndex) {
-	// 	var match = regex.exec(text)
-	// 	while (match) {
-	// 		result = parseDecks.handleMatchTemporary(review, result, match, groupIndex)
-	// 		match = regex.exec(text)
-	// 	}
-	// 	return result
-	// },
-
 	parse: function(review, text, regex, useHashAsName) {
 		// Lookbehind - http://www.regular-expressions.info/lookaround.html
 		// https://regex101.com/r/qT1vF8/9 for a pure regex-based solution
-		// regex = new RegExp('(.{0,2})' + regex.source, 'gm')
 		var match = regex.exec(text)
 		while (match) {
-			// console.log('matching', text, regex)
-			// console.log('considering match', match.index, regex.lastIndex, match, regex)
-			// if (match.index === regex.lastIndex) {
-   //   			regex.lastIndex++
-			// }
-
-			// if (match[1] != '](' && match[1] != '=\'' && match[1] != '(\'') {
-				// console.log('\tmatched!!!', match[1], match)
-				// console.log('replaced substring', text.substring(match.index, match.index + match[0].length))
-				text = parseDecks.handleMatch(review, text, match, regex, useHashAsName)
-				// console.log('new text', text)
-			// }
+			text = parseDecks.handleMatch(review, text, match, regex, useHashAsName)
 			match = regex.exec(text)
 		}
-		// console.log('parsed regex', regex)
 		return text
 	},
 
@@ -82,8 +59,6 @@ var parseDecks = {
 		var deckName = useHashAsName ? match[1].hashCode() : match[2]
 		if (match.length > 3 && match[3] && !useHashAsName)
 			deckName += match[3]
-		// var deckUrl = match[1] + deckName
-		// console.log('\tdeck name', deckName, deckUrl)
 
 		var plugins = review.plugins.hearthstone;
 		// console.log('\tplugins', plugins)
@@ -91,7 +66,7 @@ var parseDecks = {
 			var strDeck = plugins.parseDecks[deckName];
 			// console.log('\tstrDeck', strDeck)
 			var deck = JSON.parse(strDeck)
-			deckUrl = deck.url
+			var deckUrl = deck.url
 			// console.log('\tjsDeck', deck)
 			var htmlDeck = parseDecks.formatToHtml(deck, deckUrl);
 			// parseDecks.deck = htmlDeck;
@@ -99,16 +74,12 @@ var parseDecks = {
 			var deckNameForDisplay = deck.title.replace(/'/g, '').replace(/\[/g, '').replace(/\]/g, '').replace(/\\/g, '')
 			parseDecks.decks[deckNameForDisplay] = htmlDeck;
 
-			// var toMatch = match[0].replace(match[1], '')
-			// console.log('\ttoMatch', toMatch, match[0])
-
 			var replaceString = '<a class="deck-link" onmouseup="parseDecks.toggleDeck(\'' + deckUrl + '\', \'' + deckNameForDisplay + '\', event)" data-template-url="plugins/parseDecks/template.html" data-title="' + htmlDeck + '" data-container="body" data-placement="auto left" bs-tooltip>' + deck.title + '</a>'
 
 			// console.log('keeping starting string', match[1], text.substring(0, match.index + match[1].length), match[1].length)
 			var newText = text.substring(0, match.index) + replaceString + text.substring(match.index + match[0].length)
 			text = newText			
 
-			// regex.lastIndex += replaceString.length - 1
 			// Offset to make sure we don't process the same URL twice. It's a magic number, works with this value and 
 			// it's not so big to skip the next one completely
 			regex.lastIndex += 399
@@ -116,16 +87,6 @@ var parseDecks = {
 
 		return text
 	},
-
-	// handleMatchTemporary: function(review, result, match, groupIndex) {
-	// 	groupIndex = groupIndex || 2
-	// 	// console.log('match', match, result);
-	// 	var deckName = 'Deck link'
-
-	// 	result = result.replace(match[0], '<a class="deck-link" href="' + match[0] + '" target="_blank">' +deckName + '</a>');
-
-	// 	return result
-	// },
 
 	toggleDeck: function (deckUrl, deckNameForDisplay, event) {
 		// console.log('toggle deck', deckUrl, deckNameForDisplay, event)
@@ -159,7 +120,6 @@ var parseDecks = {
 	},
 
 	formatToHtml: function (deck, deckUrl) {
-
 		// First make sure all cards are well placed in class vs neutral
 		var realClassCards = []
 		deck.classCards.forEach(function(card) {

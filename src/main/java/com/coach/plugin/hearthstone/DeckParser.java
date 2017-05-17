@@ -6,9 +6,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -38,14 +36,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.Plugin;
+import com.coach.plugin.hearthstone.deck.BlizzardDeckstring;
+import com.coach.plugin.hearthstone.deck.Card;
+import com.coach.plugin.hearthstone.deck.Deck;
 import com.coach.review.HasText;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -96,6 +95,9 @@ public class DeckParser implements Plugin {
 	private static final String HSREPLAY_NET_REGEX = "\\[?(?:http(?:s)?:\\/\\/hsreplay\\.net\\/replay\\/)([\\d\\w\\-]+)\\]?";
 
 	@Autowired
+	BlizzardDeckstring blizzardDeckstring;
+
+	@Autowired
 	ReviewRepository repo;
 
 	@Autowired
@@ -137,6 +139,8 @@ public class DeckParser implements Plugin {
 		parseManaCrystalsDeck(pluginData, initialText);
 		parseHearthStatsDeck(pluginData, initialText);
 		parseHSReplayNetDeck(pluginData, initialText);
+
+		blizzardDeckstring.parseDeck(pluginData, initialText);
 		// Not supporting HH for now, as it requires javascript support. Waiting
 		// to see if an API is available
 		// parseHearthHeadDeck(pluginData, initialText);
@@ -156,24 +160,17 @@ public class DeckParser implements Plugin {
 			Matcher matcher2 = pattern2.matcher(matcher.group());
 
 			Deck deck = new Deck();
-			deck.title = "Unnamed deck";
+			deck.setTitle("Unnamed deck");
 
 			while (matcher2.find()) {
 				String cardId = matcher2.group(2);
 				String quantity = matcher2.group(3);
 
 				Card card = new Card(cardId, quantity);
-				deck.classCards.add(card);
+				deck.addClassCard(card);
 			}
 
 			saveDeck(pluginData, deckId, deck);
-
-			// Don't override existing decks (performance)
-			// if (pluginData.get(deckId) != null) {
-			// continue;
-			// }
-
-			// saveDeck(pluginData, deckId, deck);
 		}
 	}
 
@@ -194,8 +191,8 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8", HEARTHHEAD_DECK_HOST_URL);
 
 			Deck deck = new Deck();
-			deck.title = doc.select("#deckguide-name").text();
-			deck.url = deckUrl;
+			deck.setTitle(doc.select("#deckguide-name").text());
+			deck.setUrl(deckUrl);
 
 			Elements cards = doc.select(".main .deckguide-cards .deckguide-cards-type li");
 
@@ -211,7 +208,7 @@ public class DeckParser implements Plugin {
 				}
 				Card card = new Card(cardName, quantity);
 				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
+				deck.addClassCard(card);
 			}
 
 			saveDeck(pluginData, deckId, deck);
@@ -236,7 +233,7 @@ public class DeckParser implements Plugin {
 			JSONArray cards = api.getJSONObject("friendly_deck").getJSONArray("cards");
 
 			Deck deck = new Deck();
-			deck.title = "HSReplay deck";
+			deck.setTitle("HSReplay deck");
 
 			for (int i = 0; i < cards.length(); i++) {
 				String card = cards.getString(i);
@@ -267,8 +264,8 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
-			deck.title = doc.select(".page-title").text();
-			deck.url = deckUrl;
+			deck.setTitle(doc.select(".page-title").text());
+			deck.setUrl(deckUrl);
 
 			Elements classCards = doc.select(".deckBuilderCardsWrapper .card");
 
@@ -281,7 +278,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(name, qty);
 				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
+				deck.addClassCard(card);
 			}
 
 			saveDeck(pluginData, deckId, deck);
@@ -305,8 +302,8 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8", MANACRYSTALS_DECK_HOST_URL);
 
 			Deck deck = new Deck();
-			deck.url = deckUrl;
-			deck.title = doc.select(".guide article .decklist-meta-data").get(0).select("h2 a").text();
+			deck.setUrl(deckUrl);
+			deck.setTitle(doc.select(".guide article .decklist-meta-data").get(0).select("h2 a").text());
 
 			Elements classCards = doc.select(".guide article .decklist-meta-data").get(0).select(".cards").get(0)
 					.select("li");
@@ -322,7 +319,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.text().trim(), qty.text().trim());
 				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
+				deck.addClassCard(card);
 			}
 
 			for (Element element : neutralCards) {
@@ -334,7 +331,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.text().trim(), qty.text().trim());
 				// log.debug("\tBuilt card " + card);
-				deck.neutralCards.add(card);
+				deck.getNeutralCards().add(card);
 			}
 
 			saveDeck(pluginData, deckId, deck);
@@ -358,8 +355,8 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.parse(new URL(deckUrl).openStream(), "UTF-8", ICYVEINS_DECK_HOST_URL);
 
 			Deck deck = new Deck();
-			deck.url = deckUrl;
-			deck.title = doc.select(".page_title .header").text();
+			deck.setUrl(deckUrl);
+			deck.setTitle(doc.select(".page_title .header").text());
 
 			Elements cards = doc.select(".deck_card_list");
 
@@ -375,7 +372,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.text().trim(), qty.trim());
 				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
+				deck.addClassCard(card);
 			}
 
 			for (Element element : neutralCards) {
@@ -387,7 +384,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.text().trim(), qty.trim());
 				// log.debug("\tBuilt card " + card);
-				deck.neutralCards.add(card);
+				deck.getNeutralCards().add(card);
 			}
 
 			saveDeck(pluginData, deckId, deck);
@@ -411,8 +408,8 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
-			deck.url = deckUrl;
-			deck.title = doc.select("header h1").text();
+			deck.setUrl(deckUrl);
+			deck.setTitle(doc.select("header h1").text());
 
 			Elements cards = doc.select("ul.deck-class");
 
@@ -427,7 +424,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.text().trim(), qtyElement.text().trim());
 				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
+				deck.addClassCard(card);
 			}
 
 			for (Element element : neutralCards) {
@@ -438,7 +435,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.text().trim(), qtyElement.text().trim());
 				// log.debug("\tBuilt card " + card);
-				deck.neutralCards.add(card);
+				deck.getNeutralCards().add(card);
 			}
 
 			saveDeck(pluginData, deckId, deck);
@@ -486,8 +483,8 @@ public class DeckParser implements Plugin {
 			}
 
 			Deck deck = new Deck();
-			deck.title = "ArenaDrafts - " + draft.getString("Hero") + " - " + numberOfWins + " wins";
-			deck.url = baseDeckUril;
+			deck.setTitle("ArenaDrafts - " + draft.getString("Hero") + " - " + numberOfWins + " wins");
+			deck.setUrl(baseDeckUril);
 			JSONArray pickedCards = draft.getJSONArray("Picks");
 
 			for (int i = 0; i < pickedCards.length(); i++) {
@@ -499,16 +496,16 @@ public class DeckParser implements Plugin {
 				}
 				String cardId = cardObj.getJSONObject("Card" + cardPickIndex + "Info").getString("Id");
 				Card card = null;
-				for (Card c : deck.classCards) {
+				for (Card c : deck.getClassCards()) {
 					if (c.getName().equals(cardId)) {
 						card = c;
-						card.amount = "" + (Integer.parseInt(card.amount) + 1);
+						card.setAmount("" + (Integer.parseInt(card.getAmount()) + 1));
 						break;
 					}
 				}
 				if (card == null) {
 					card = new Card(cardId, "1");
-					deck.classCards.add(card);
+					deck.addClassCard(card);
 				}
 			}
 
@@ -544,23 +541,23 @@ public class DeckParser implements Plugin {
 				// log.debug("json draft " + draft);
 
 				Deck deck = new Deck();
-				deck.url = ZTH_DECK_HOST_URL + deckId;
-				deck.title = "Zero to Heroes - " + review.getTitle();
+				deck.setUrl(ZTH_DECK_HOST_URL + deckId);
+				deck.setTitle("Zero to Heroes - " + review.getTitle());
 				JSONArray pickedCards = draft.getJSONArray("pickedcards");
 
 				for (int i = 0; i < pickedCards.length(); i++) {
 					String cardId = pickedCards.getString(i);
 					Card card = null;
-					for (Card c : deck.classCards) {
+					for (Card c : deck.getClassCards()) {
 						if (c.getName().equals(cardId)) {
 							card = c;
-							card.amount = "" + (Integer.parseInt(card.amount) + 1);
+							card.setAmount("" + (Integer.parseInt(card.getAmount()) + 1));
 							break;
 						}
 					}
 					if (card == null) {
 						card = new Card(cardId, "1");
-						deck.classCards.add(card);
+						deck.addClassCard(card);
 					}
 				}
 
@@ -587,12 +584,12 @@ public class DeckParser implements Plugin {
 
 			// log.debug("Trying to scrape deck data for deck " + deckUrl);
 			Deck deck = new Deck();
-			deck.url = HEARTHARENA_DECK_HOST_URL + deckId;
+			deck.setUrl(HEARTHARENA_DECK_HOST_URL + deckId);
 
-			Document doc = Jsoup.connect(deck.url).userAgent("Mozilla").get();
+			Document doc = Jsoup.connect(deck.getUrl()).userAgent("Mozilla").get();
 
 			// Build the deck title
-			deck.title = "HearthArena - " + doc.select("#arenaDeck main h1 > span").text();
+			deck.setTitle("HearthArena - " + doc.select("#arenaDeck main h1 > span").text());
 
 			// Build the deck itself
 			Elements decklist = doc.select("#basics #deck-list .decklist");
@@ -605,7 +602,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(element.attr("data-name"), qtyElement.text().trim());
 				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
+				deck.addClassCard(card);
 			}
 
 			saveDeck(pluginData, deckId, deck);
@@ -630,8 +627,8 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
-			deck.url = deckUrl;
-			deck.title = doc.select(".deck h1").text();
+			deck.setUrl(deckUrl);
+			deck.setTitle(doc.select(".deck h1").text());
 
 			Elements classCards = doc.select("#liste_cartes #cartes_classe tbody tr");
 			Elements neutralCards = doc.select("#liste_cartes #cartes_neutre tbody tr");
@@ -644,7 +641,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.attr("real_id"), qtyElement.text().trim());
 				// log.debug("\tBuilt card " + card);
-				deck.classCards.add(card);
+				deck.addClassCard(card);
 			}
 
 			for (Element element : neutralCards) {
@@ -655,7 +652,7 @@ public class DeckParser implements Plugin {
 				// log.debug("\tCard " + cardElement);
 				Card card = new Card(cardElement.attr("real_id"), qtyElement.text().trim());
 				// log.debug("\tBuilt card " + card);
-				deck.neutralCards.add(card);
+				deck.getNeutralCards().add(card);
 			}
 
 			saveDeck(pluginData, deckId, deck);
@@ -680,8 +677,8 @@ public class DeckParser implements Plugin {
 			Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
-			deck.url = deckUrl;
-			deck.title = doc.select(".deck-title").first().text();
+			deck.setUrl(deckUrl);
+			deck.setTitle(doc.select(".deck-title").first().text());
 
 			Elements classCards = doc.select(".t-deck-details-card-list.class-listing td");
 			Elements neutralCards = doc.select(".t-deck-details-card-list.neutral-listing td");
@@ -690,7 +687,7 @@ public class DeckParser implements Plugin {
 				String cardString = element.text();
 				if (cardString.contains("×")) {
 					Card card = new Card(cardString.split("×")[0].trim(), cardString.split("×")[1].trim());
-					deck.classCards.add(card);
+					deck.addClassCard(card);
 				}
 
 			}
@@ -698,7 +695,7 @@ public class DeckParser implements Plugin {
 				String cardString = element.text();
 				if (cardString.contains("×")) {
 					Card card = new Card(cardString.split("×")[0].trim(), cardString.split("×")[1].trim());
-					deck.neutralCards.add(card);
+					deck.getNeutralCards().add(card);
 				}
 			}
 
@@ -726,7 +723,7 @@ public class DeckParser implements Plugin {
 			// Document doc = Jsoup.connect(deckUrl).userAgent("Mozilla").get();
 
 			Deck deck = new Deck();
-			deck.title = matcher.group(2) + " Hearthpwn Temp Deck";
+			deck.setTitle(matcher.group(2) + " Hearthpwn Temp Deck");
 
 			// Retrieve cards
 			Map<String, String> cardsMap = new HashMap<>();
@@ -770,7 +767,7 @@ public class DeckParser implements Plugin {
 
 				Card cardObj = new Card(cardName, quantity);
 				// log.debug("adding card " + cardObj);
-				deck.classCards.add(cardObj);
+				deck.addClassCard(cardObj);
 			}
 
 			saveDeck(pluginData, deckId, deck);
@@ -789,11 +786,11 @@ public class DeckParser implements Plugin {
 	private void saveDeck(Map<String, String> pluginData, String deckId, Deck deck) throws JsonProcessingException {
 
 		// Don't save empty decks
-		if (CollectionUtils.isEmpty(deck.classCards) && CollectionUtils.isEmpty(deck.neutralCards)) { return; }
+		if (CollectionUtils.isEmpty(deck.getClassCards()) && CollectionUtils.isEmpty(deck.getNeutralCards())) { return; }
 
 		// Post-process deck
-		if (StringUtils.isNotEmpty(deck.title)) {
-			deck.title = deck.title.replaceAll("\"", "");
+		if (StringUtils.isNotEmpty(deck.getTitle())) {
+			deck.setTitle(deck.getTitle().replaceAll("\"", ""));
 		}
 
 		String jsonDeck = new ObjectMapper().writeValueAsString(deck);
@@ -844,31 +841,5 @@ public class DeckParser implements Plugin {
 
 		String resultString = result.toString();
 		return resultString;
-	}
-
-	@Data
-	private static class Deck {
-		private String title, url;
-		private final List<Card> classCards = new ArrayList<>();
-		private final List<Card> neutralCards = new ArrayList<>();
-
-		public void addCard(String card) {
-			for (Card existing : classCards) {
-				if (existing.name.equals(card)) {
-					existing.amount = "" + (Integer.parseInt(existing.amount) + 1);
-					return;
-				}
-			}
-
-			Card newCard = new Card(card, "" + 1);
-			classCards.add(newCard);
-		}
-	}
-
-	@AllArgsConstructor
-	@Data
-	private static class Card {
-		String name;
-		String amount;
 	}
 }

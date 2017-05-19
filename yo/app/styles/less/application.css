@@ -959,6 +959,10 @@ upload-replay-review .review-visibility .btn-select {
 upload-replay-review .no-more-review-description-text {
   padding-top: 0;
 }
+.upload-page .help-text-replay {
+  text-align: left;
+  padding-left: 50px;
+}
 @media screen and (max-width: 550px) {
   .main-panel-nolanding {
     margin-top: 10px;

@@ -113,7 +113,7 @@ app.directive('messagesCompact', ['$log', 'Api', '$translate',
 									comments: []
 								}
 							}
-							compact[message.data.reviewId].comments.push(message)
+							compact[message.data.reviewId].comments.unshift(message)
 						}
 						else if (message.data.textKey == 'suggestedSubscription') {
 							compact[message.id] = message

@@ -191,5 +191,5 @@
 <ul class="video-listing {{options.displayMode}} {{options.criteria.sort}}">
 	<!-- using the :resultsRefresh: binding on openGames results in removeWatchCollection[i] is not a function error -->
 	<!-- track by $index to avoid duplicate errors when tracking by review.id -->
-	<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true track by $index" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut" show-score="options.criteria.openGames || showScore || options.criteria.sort == 'helpScore'"></review-list-item>
+	<review-list-item ng-repeat="review in :resultsRefresh:reviews | orderBy:dynamicOrder:true" video="::review" sport="::sport" show-visibility="::showVisibility" ng-show=":resultsRefresh:!review.filteredOut" show-score="options.criteria.openGames || showScore || options.criteria.sort == 'helpScore'"></review-list-item>
 </ul>

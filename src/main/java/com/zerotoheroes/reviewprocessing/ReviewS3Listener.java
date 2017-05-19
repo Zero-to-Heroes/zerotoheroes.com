@@ -1,5 +1,7 @@
 package com.zerotoheroes.reviewprocessing;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.listener.Acknowledgment;
@@ -62,6 +64,7 @@ public class ReviewS3Listener {
 		review.setFileType(metadata.getUserMetaDataOf("file-type"));
 		review.setText(metadata.getUserMetaDataOf("review-text"));
 		review.setPublished(true);
+		review.setPublicationDate(new Date());
 		review.setVisibility("restricted");
 		review.setClaimableAccount(true);
 

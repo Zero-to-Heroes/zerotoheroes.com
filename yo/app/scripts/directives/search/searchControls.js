@@ -354,7 +354,9 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 							// $log.debug('filtering review', review.filteredOut, review.previousFilterOut, review)
 						})
 					}
-					// $log.debug('updated sort', $scope.reviews)
+					$log.debug('updated sort', $scope.options.criteria)
+					$scope.searchFromClick()
+					
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 				}
 

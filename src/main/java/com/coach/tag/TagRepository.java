@@ -19,69 +19,6 @@ public class TagRepository {
 	private static Map<Sport, List<Tag>> buildTagsList() {
 		Map<Sport, List<Tag>> tags = new HashMap<>();
 
-//		// Tags for squash
-//		List<Tag> squash = new ArrayList<>();
-//		squash.add(new Tag("Match"));
-//		squash.add(new Tag("Drill"));
-//		squash.add(new Tag("Training"));
-//		squash.add(new Tag("Forehand"));
-//		squash.add(new Tag("Backhand"));
-//		squash.add(new Tag("Drive"));
-//		squash.add(new Tag("Crosscourt"));
-//		squash.add(new Tag("Volley"));
-//		squash.add(new Tag("Dropshot"));
-//		squash.add(new Tag("Kill"));
-//		squash.add(new Tag("Boast"));
-//		squash.add(new Tag("Lob"));
-//		squash.add(new Tag("Movement"));
-//		squash.add(new Tag("Beginner", "level"));
-//		squash.add(new Tag("Casual", "level"));
-//		squash.add(new Tag("Club", "level"));
-//		squash.add(new Tag("Club competitive", "level"));
-//		squash.add(new Tag("Regional", "level"));
-//		squash.add(new Tag("National", "level"));
-//		squash.add(new Tag("Pro", "level"));
-//		squash.add(new Tag("Men"));
-//		squash.add(new Tag("Women"));
-//		squash.add(new Tag("Tactics"));
-//		squash.add(new Tag("Sequence"));
-//		squash.add(new Tag("Serve"));
-//		squash.add(new Tag("Ghosting"));
-//		squash.add(new Tag("Drill: Solo backhand drive good length", "achievement-drill"));
-//		tags.put(Squash, squash);
-//
-//		// Tags for badminton
-//		List<Tag> badminton = new ArrayList<>();
-//		badminton.add(new Tag("Match"));
-//		badminton.add(new Tag("Drill"));
-//		badminton.add(new Tag("Single"));
-//		badminton.add(new Tag("Double"));
-//		badminton.add(new Tag("Mixed double"));
-//		badminton.add(new Tag("Forehand"));
-//		badminton.add(new Tag("Overhead forehand"));
-//		badminton.add(new Tag("Backhand"));
-//		badminton.add(new Tag("Smash"));
-//		badminton.add(new Tag("Drop"));
-//		badminton.add(new Tag("Net"));
-//		badminton.add(new Tag("Clear"));
-//		badminton.add(new Tag("Movement"));
-//		badminton.add(new Tag("Training"));
-//		badminton.add(new Tag("Beginner", "level"));
-//		badminton.add(new Tag("Casual", "level"));
-//		badminton.add(new Tag("Club", "level"));
-//		badminton.add(new Tag("Club competitive", "level"));
-//		badminton.add(new Tag("Regional", "level"));
-//		badminton.add(new Tag("National", "level"));
-//		badminton.add(new Tag("Pro", "level"));
-//		badminton.add(new Tag("Men"));
-//		badminton.add(new Tag("Women"));
-//		badminton.add(new Tag("Tactics"));
-//		badminton.add(new Tag("Serve"));
-//		badminton.add(new Tag("Return"));
-//		badminton.add(new Tag("Backcourt"));
-//		badminton.add(new Tag("Sequence"));
-//		tags.put(Badminton, badminton);
-
 		// Tags for HearthStone
 		List<Tag> hearthstone = new ArrayList<>();
 		hearthstone.add(new Tag("Wild"));
@@ -151,7 +88,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Egg Druid"));
 		hearthstone.add(new Tag("Beast Druid"));
 		hearthstone.add(new Tag("Midrange Druid"));
-		hearthstone.add(new Tag("Yogg Token Druid"));
+		hearthstone.add(new Tag("Token Druid"));
 		hearthstone.add(new Tag("Malygos Druid"));
 		hearthstone.add(new Tag("Jade Druid"));
 
@@ -165,6 +102,7 @@ public class TagRepository {
 //		hearthstone.add(new Tag("Egg Paladin"));
 		hearthstone.add(new Tag("Reno Paladin"));
 		hearthstone.add(new Tag("Hand Buff Paladin"));
+		hearthstone.add(new Tag("Control Paladin"));
 
 		hearthstone.add(new Tag("Mech Mage"));
 		hearthstone.add(new Tag("Tempo Mage"));
@@ -174,6 +112,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("Yogg Mage"));
 		hearthstone.add(new Tag("Reno Mage"));
 		hearthstone.add(new Tag("Dragon Mage"));
+		hearthstone.add(new Tag("Burn Mage"));
+		hearthstone.add(new Tag("Secret Mage"));
 
 		hearthstone.add(new Tag("Zoolock"));
 		hearthstone.add(new Tag("Demonlock"));
@@ -200,6 +140,9 @@ public class TagRepository {
 		hearthstone.add(new Tag("OTK Priest"));
 		hearthstone.add(new Tag("Resurrect Priest"));
 		hearthstone.add(new Tag("Reno Priest"));
+		hearthstone.add(new Tag("Highlander Priest"));
+		hearthstone.add(new Tag("Miracle Priest"));
+		hearthstone.add(new Tag("Silence Priest"));
 
 		hearthstone.add(new Tag("Oil Rogue"));
 		hearthstone.add(new Tag("Malygos Rogue"));
@@ -211,7 +154,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Deathrattle Rogue"));
 		hearthstone.add(new Tag("Jade Rogue"));
 		hearthstone.add(new Tag("Water Rogue"));
-		hearthstone.add(new Tag("Cavern Rogue"));
+		hearthstone.add(new Tag("Crystal Rogue"));
 
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));
@@ -220,18 +163,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("Pirate Warrior"));
 		hearthstone.add(new Tag("Tempo Warrior"));
 		hearthstone.add(new Tag("Dragon Warrior"));
+		hearthstone.add(new Tag("Taunt Warrior"));
 
-		hearthstone.add(new Tag("Uncategorized"));
-		// Category
-		// hearthstone.add(new Tag("Aggro"));
-		// hearthstone.add(new Tag("Midrange"));
-		// hearthstone.add(new Tag("Control"));
-		// Other
-		// hearthstone.add(new Tag("Reno"));
-		// hearthstone.add(new Tag("OTK"));
-		// hearthstone.add(new Tag("Mech"));
-		// hearthstone.add(new Tag("Murloc"));
-		// hearthstone.add(new Tag("CThun"));
 		hearthstone.add(new Tag("Mirror match"));
 		hearthstone.add(new Tag("RNG"));
 		hearthstone.add(new Tag("Entertainment"));

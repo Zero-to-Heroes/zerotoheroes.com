@@ -1,5 +1,6 @@
 package com.zerotoheroes.reviewprocessing;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.listener.Acknowledgment;
 import org.springframework.cloud.aws.messaging.listener.SqsMessageDeletionPolicy;
 import org.springframework.cloud.aws.messaging.listener.annotation.SqsListener;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,9 +16,12 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.event.S3EventNotification;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.util.json.Jackson;
+import com.coach.core.notification.SlackNotifier;
+import com.coach.review.ParticipantDetails;
 import com.coach.review.Review;
 import com.coach.review.ReviewApiHandler;
 import com.coach.review.ReviewService;
+import com.coach.tag.Tag;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,6 +44,9 @@ public class ReviewS3Listener {
 	@Autowired
 	private AmazonS3 s3;
 
+	@Autowired
+	private SlackNotifier slackNotifier;
+
 	// https://github.com/spring-cloud/spring-cloud-aws/issues/100
 	// FIXME: properly handle exceptions - resend the failed uploads to a
 	// specific queue, so that they could be reprocessed later on?
@@ -48,7 +56,8 @@ public class ReviewS3Listener {
 		// will also allow us to have finer control later on
 		acknowledgment.acknowledge().get();
 		String messageAsString = Jackson.jsonNodeOf(message).get("Message").toString().replaceAll("\\\\\"", "\"");
-		S3EventNotification s3event = S3EventNotification.parseJson(messageAsString.substring(1, messageAsString.length() - 1));
+		S3EventNotification s3event = S3EventNotification
+				.parseJson(messageAsString.substring(1, messageAsString.length() - 1));
 		S3EventNotification.S3Entity s3Entity = s3event.getRecords().get(0).getS3();
 
 		String bucketName = s3Entity.getBucket().getName();
@@ -67,6 +76,22 @@ public class ReviewS3Listener {
 		review.setPublicationDate(new Date());
 		review.setVisibility("restricted");
 		review.setClaimableAccount(true);
+
+		// TODO: later on, extract that on a sports-specific class parser
+		try {
+			if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))) {
+				review.setParticipantDetails(new ParticipantDetails());
+				Tag rankTag = new Tag("Rank " + Integer.valueOf(metadata.getUserMetaDataOf("game-rank")));
+				review.getParticipantDetails().setSkillLevel(Arrays.asList(rankTag));
+			}
+			else if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-legend-rank"))) {
+				review.setParticipantDetails(new ParticipantDetails());
+				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("Legend")));
+			}
+		}
+		catch (Exception e) {
+			slackNotifier.notifyError(e, "Error while setting game rank " + messageAsString);
+		}
 
 		// FIXME: hack to easily reuse existing methods
 		String outputKey = review.buildKey(key, "hearthstone/replay");

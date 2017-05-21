@@ -92,6 +92,10 @@ public class ReviewS3Listener {
 		catch (Exception e) {
 			slackNotifier.notifyError(e, "Error while setting game rank " + messageAsString);
 		}
+		if ("wild".equalsIgnoreCase(metadata.getUserMetaDataOf("game-format")) || "2".equals(metadata.getUserMetaDataOf("game-legend-rank"))) {
+			review.getTags().add(new Tag("Wild"));
+		}
+
 
 		// FIXME: hack to easily reuse existing methods
 		String outputKey = review.buildKey(key, "hearthstone/replay");

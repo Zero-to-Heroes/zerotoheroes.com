@@ -14,7 +14,7 @@ public class Deck {
 	public void addCard(String card) {
 		for (Card existing : classCards) {
 			if (existing.getName().equals(card)) {
-				existing.setAmount("" + Integer.parseInt(existing.getAmount() + 1));
+				existing.setAmount("" + (Integer.parseInt(existing.getAmount()) + 1));
 				return;
 			}
 		}

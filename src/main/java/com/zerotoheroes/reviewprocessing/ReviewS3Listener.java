@@ -63,10 +63,13 @@ public class ReviewS3Listener {
 		String bucketName = s3Entity.getBucket().getName();
 		String key = s3Entity.getObject().getKey();
 		ObjectMetadata metadata = s3.getObjectMetadata(bucketName, key);
-		Review review = reviewService.loadReview(metadata.getUserMetaDataOf("review-id"));
+		String reviewId = metadata.getUserMetaDataOf("review-id");
+		log.debug("Received message to process reviewId " + reviewId);
+		Review review = reviewService.loadReview(reviewId);
 
 		// The message can be received several times
 		if (review.isPublished()) { return; }
+		log.debug("review " + reviewId + " not yet processed, continuing");
 
 		review.setUploaderApplicationKey(metadata.getUserMetaDataOf("application-key"));
 		review.setUploaderToken(metadata.getUserMetaDataOf("user-key"));
@@ -79,6 +82,7 @@ public class ReviewS3Listener {
 
 		// TODO: later on, extract that on a sports-specific class parser
 		try {
+			log.debug("Parsing metadata for " + reviewId);
 			if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))) {
 				review.setParticipantDetails(new ParticipantDetails());
 				Tag rankTag = new Tag("Rank " + Integer.valueOf(metadata.getUserMetaDataOf("game-rank")));
@@ -92,16 +96,18 @@ public class ReviewS3Listener {
 		catch (Exception e) {
 			slackNotifier.notifyError(e, "Error while setting game rank " + messageAsString);
 		}
-		if ("wild".equalsIgnoreCase(metadata.getUserMetaDataOf("game-format")) || "2".equals(metadata.getUserMetaDataOf("game-legend-rank"))) {
+		if ("wild".equalsIgnoreCase(metadata.getUserMetaDataOf("game-format"))) {
 			review.getTags().add(new Tag("Wild"));
 		}
 
 
 		// FIXME: hack to easily reuse existing methods
 		String outputKey = review.buildKey(key, "hearthstone/replay");
+		log.debug("Copying to temporary key " + outputKey);
 		s3.copyObject(bucketName, key, inputBucket, outputKey);
 		review.setTemporaryKey(outputKey);
 
+		log.debug("Done, creating review " + review);
 		reviewApiHandler.createReview(review);
 	}
 }

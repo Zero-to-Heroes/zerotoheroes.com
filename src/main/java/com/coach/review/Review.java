@@ -140,7 +140,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	private int viewCount;
 
-	private List<Tag> tags;
+	private List<Tag> tags = new ArrayList<>();
 
 	private int totalInsertedComments;
 

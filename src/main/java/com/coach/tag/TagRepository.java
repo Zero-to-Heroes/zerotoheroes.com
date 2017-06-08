@@ -71,15 +71,6 @@ public class TagRepository {
 		hearthstone.add(new Tag("Adventure", "skill-level"));
 		hearthstone.add(new Tag("Innkeeper", "skill-level"));
 		// Decks
-		hearthstone.add(new Tag("Face Hunter"));
-		hearthstone.add(new Tag("Hunter Beast"));
-		hearthstone.add(new Tag("Camel Hunter"));
-		hearthstone.add(new Tag("Midrange Hunter"));
-		hearthstone.add(new Tag("NZoth Hunter"));
-		hearthstone.add(new Tag("Secret Hunter"));
-		hearthstone.add(new Tag("Deathrattle Hunter"));
-		hearthstone.add(new Tag("Yogg'N'Load Hunter"));
-
 		hearthstone.add(new Tag("Combo Druid"));
 		hearthstone.add(new Tag("Astral Druid"));
 		hearthstone.add(new Tag("Mill Druid"));
@@ -92,17 +83,14 @@ public class TagRepository {
 		hearthstone.add(new Tag("Malygos Druid"));
 		hearthstone.add(new Tag("Jade Druid"));
 
-		hearthstone.add(new Tag("Secret Paladin"));
-		hearthstone.add(new Tag("Aggro Paladin"));
-		hearthstone.add(new Tag("NZoth Paladin"));
-		hearthstone.add(new Tag("Divine Shield Paladin"));
-		hearthstone.add(new Tag("Murloc Paladin"));
-		hearthstone.add(new Tag("Midrange Paladin"));
-		hearthstone.add(new Tag("Dragon Paladin"));
-//		hearthstone.add(new Tag("Egg Paladin"));
-		hearthstone.add(new Tag("Reno Paladin"));
-		hearthstone.add(new Tag("Hand Buff Paladin"));
-		hearthstone.add(new Tag("Control Paladin"));
+		hearthstone.add(new Tag("Face Hunter"));
+		hearthstone.add(new Tag("Hunter Beast"));
+		hearthstone.add(new Tag("Camel Hunter"));
+		hearthstone.add(new Tag("Midrange Hunter"));
+		hearthstone.add(new Tag("NZoth Hunter"));
+		hearthstone.add(new Tag("Secret Hunter"));
+		hearthstone.add(new Tag("Deathrattle Hunter"));
+		hearthstone.add(new Tag("Yogg'N'Load Hunter"));
 
 		hearthstone.add(new Tag("Mech Mage"));
 		hearthstone.add(new Tag("Tempo Mage"));
@@ -114,24 +102,20 @@ public class TagRepository {
 		hearthstone.add(new Tag("Dragon Mage"));
 		hearthstone.add(new Tag("Burn Mage"));
 		hearthstone.add(new Tag("Secret Mage"));
+		hearthstone.add(new Tag("Exodia Mage"));
 
-		hearthstone.add(new Tag("Zoolock"));
-		hearthstone.add(new Tag("Demonlock"));
-		hearthstone.add(new Tag("Handlock"));
-		hearthstone.add(new Tag("Malylock"));
-		hearthstone.add(new Tag("Renolock"));
-		hearthstone.add(new Tag("CThun Lock"));
-		hearthstone.add(new Tag("Discolock"));
-
-		hearthstone.add(new Tag("Aggro Shaman"));
-		hearthstone.add(new Tag("Malygos Shaman"));
-		hearthstone.add(new Tag("Reno Shaman"));
-		hearthstone.add(new Tag("Midrange Shaman"));
-		hearthstone.add(new Tag("Bloodlust Shaman"));
-		hearthstone.add(new Tag("Overload Shaman"));
-		hearthstone.add(new Tag("Evolve Shaman"));
-		hearthstone.add(new Tag("Jade Shaman"));
-		hearthstone.add(new Tag("Elemental Shaman"));
+		hearthstone.add(new Tag("Secret Paladin"));
+		hearthstone.add(new Tag("Aggro Paladin"));
+		hearthstone.add(new Tag("NZoth Paladin"));
+		hearthstone.add(new Tag("Divine Shield Paladin"));
+		hearthstone.add(new Tag("Murloc Paladin"));
+		hearthstone.add(new Tag("Midrange Paladin"));
+		hearthstone.add(new Tag("Dragon Paladin"));
+//		hearthstone.add(new Tag("Egg Paladin"));
+		hearthstone.add(new Tag("Reno Paladin"));
+		hearthstone.add(new Tag("Hand Buff Paladin"));
+		hearthstone.add(new Tag("Control Paladin"));
+		hearthstone.add(new Tag("Elemental Paladin"));
 
 		hearthstone.add(new Tag("Control Priest"));
 		hearthstone.add(new Tag("Dragon Priest"));
@@ -155,6 +139,26 @@ public class TagRepository {
 		hearthstone.add(new Tag("Jade Rogue"));
 		hearthstone.add(new Tag("Water Rogue"));
 		hearthstone.add(new Tag("Crystal Rogue"));
+
+		hearthstone.add(new Tag("Aggro Shaman"));
+		hearthstone.add(new Tag("Malygos Shaman"));
+		hearthstone.add(new Tag("Reno Shaman"));
+		hearthstone.add(new Tag("Midrange Shaman"));
+		hearthstone.add(new Tag("Bloodlust Shaman"));
+		hearthstone.add(new Tag("Overload Shaman"));
+		hearthstone.add(new Tag("Evolve Shaman"));
+		hearthstone.add(new Tag("Jade Shaman"));
+		hearthstone.add(new Tag("Elemental Shaman"));
+		hearthstone.add(new Tag("Token Shaman"));
+		hearthstone.add(new Tag("Spirit Echo Shaman"));
+
+		hearthstone.add(new Tag("Zoolock"));
+		hearthstone.add(new Tag("Demonlock"));
+		hearthstone.add(new Tag("Handlock"));
+		hearthstone.add(new Tag("Malylock"));
+		hearthstone.add(new Tag("Renolock"));
+		hearthstone.add(new Tag("CThun Lock"));
+		hearthstone.add(new Tag("Discolock"));
 
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));

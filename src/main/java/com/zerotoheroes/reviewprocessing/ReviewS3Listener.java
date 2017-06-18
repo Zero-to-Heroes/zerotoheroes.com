@@ -96,10 +96,32 @@ public class ReviewS3Listener {
 		catch (Exception e) {
 			slackNotifier.notifyError(e, "Error while setting game rank " + messageAsString);
 		}
-		if ("wild".equalsIgnoreCase(metadata.getUserMetaDataOf("game-format"))) {
-			review.getTags().add(new Tag("Wild"));
-		}
 
+		if ("TavernBrawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+			review.setParticipantDetails(new ParticipantDetails());
+			review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("tavernbrawl")));
+		}
+		// We don't want to add the Wild tag to tavern brawls
+		else {
+			if ("Casual".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				review.setParticipantDetails(new ParticipantDetails());
+				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("casual")));
+			}
+			else if ("Practice".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				review.setParticipantDetails(new ParticipantDetails());
+				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("casual")));
+			}
+			else if ("Friendly".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				review.setParticipantDetails(new ParticipantDetails());
+				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("friendly")));
+			}
+			// TODO: arena
+
+			if ("wild".equalsIgnoreCase(metadata.getUserMetaDataOf("game-format"))) {
+				review.getTags().add(new Tag("Wild"));
+			}
+
+		}
 
 		// FIXME: hack to easily reuse existing methods
 		String outputKey = review.buildKey(key, "hearthstone/replay");

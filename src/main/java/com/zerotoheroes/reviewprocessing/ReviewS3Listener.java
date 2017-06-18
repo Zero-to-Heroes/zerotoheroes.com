@@ -80,23 +80,6 @@ public class ReviewS3Listener {
 		review.setVisibility("restricted");
 		review.setClaimableAccount(true);
 
-		// TODO: later on, extract that on a sports-specific class parser
-		try {
-			log.debug("Parsing metadata for " + reviewId);
-			if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))) {
-				review.setParticipantDetails(new ParticipantDetails());
-				Tag rankTag = new Tag("Rank " + Integer.valueOf(metadata.getUserMetaDataOf("game-rank")));
-				review.getParticipantDetails().setSkillLevel(Arrays.asList(rankTag));
-			}
-			else if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-legend-rank"))) {
-				review.setParticipantDetails(new ParticipantDetails());
-				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("Legend")));
-			}
-		}
-		catch (Exception e) {
-			slackNotifier.notifyError(e, "Error while setting game rank " + messageAsString);
-		}
-
 		if ("TavernBrawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 			review.setParticipantDetails(new ParticipantDetails());
 			review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("tavernbrawl")));
@@ -115,7 +98,37 @@ public class ReviewS3Listener {
 				review.setParticipantDetails(new ParticipantDetails());
 				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("friendly")));
 			}
-			// TODO: arena
+			else if ("Ranked".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				// TODO: later on, extract that on a sports-specific class parser
+				try {
+					log.debug("Parsing metadata for " + reviewId);
+					if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))) {
+						review.setParticipantDetails(new ParticipantDetails());
+						Tag rankTag = new Tag("Rank " + Integer.valueOf(metadata.getUserMetaDataOf("game-rank")));
+						review.getParticipantDetails().setSkillLevel(Arrays.asList(rankTag));
+					}
+					else if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-legend-rank"))) {
+						review.setParticipantDetails(new ParticipantDetails());
+						review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("Legend")));
+					}
+				}
+				catch (Exception e) {
+					slackNotifier.notifyError(e, "Error while setting game rank " + messageAsString);
+				}
+			}
+			else if ("Arena".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				// TODO: later on, extract that on a sports-specific class parser
+				try {
+					if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))) {
+						review.setParticipantDetails(new ParticipantDetails());
+						Tag rankTag = new Tag("arena" + Integer.valueOf(metadata.getUserMetaDataOf("game-rank")) + "wins");
+						review.getParticipantDetails().setSkillLevel(Arrays.asList(rankTag));
+					}
+				}
+				catch (Exception e) {
+					slackNotifier.notifyError(e, "Error while setting game rank " + messageAsString);
+				}
+			}
 
 			if ("wild".equalsIgnoreCase(metadata.getUserMetaDataOf("game-format"))) {
 				review.getTags().add(new Tag("Wild"));

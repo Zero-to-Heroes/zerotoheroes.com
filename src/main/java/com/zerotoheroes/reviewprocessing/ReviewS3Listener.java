@@ -80,7 +80,8 @@ public class ReviewS3Listener {
 		review.setVisibility("restricted");
 		review.setClaimableAccount(true);
 
-		if ("TavernBrawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+		if ("TavernBrawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))
+				|| "Brawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 			review.setParticipantDetails(new ParticipantDetails());
 			review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("tavernbrawl")));
 		}

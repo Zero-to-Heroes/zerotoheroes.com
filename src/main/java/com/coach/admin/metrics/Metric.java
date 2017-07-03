@@ -11,12 +11,10 @@ import lombok.Data;
 public class Metric {
 
 	private DateTime startDate, endDate;
-	private int reviews, privateReviews;
+	private int reviews, privateReviews, publicReviews;
 	private int comments;
-	private Set<String> uniqueContentCreators = new HashSet<>();
-	private Set<String> churn = new HashSet<>();
+	private int arena, ranked, tavernBrawl, casual, friendly;
 	private Set<String> uniqueReviews = new HashSet<>();
-	private int returningContributors;
 
 	public void incrementReviews() {
 		reviews++;
@@ -30,12 +28,32 @@ public class Metric {
 		comments++;
 	}
 
-	public void addUniqueContentCreator(String author) {
-		uniqueContentCreators.add(author);
+	public void incrementArena() {
+		arena++;
 	}
 
-	public void addReview(String review) {
-		uniqueReviews.add(review);
+	public void incrementRanked() {
+		ranked++;
+	}
+
+	public void addComments(int totalComments) {
+		comments += totalComments;
+	}
+
+	public void incrementPublicReviews() {
+		publicReviews++;
+	}
+
+	public void incrementTB() {
+		tavernBrawl++;
+	}
+
+	public void incrementCasual() {
+		casual++;
+	}
+
+	public void incrementFriendly() {
+		friendly++;
 	}
 
 }

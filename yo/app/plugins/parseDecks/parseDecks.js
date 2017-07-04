@@ -16,7 +16,7 @@ var parseDecks = {
 	// hearthstatsFullDecksRegex: /\[?(http:\/\/hearthstats\.net\/d\/)([\d\w\-]+)\]?/gm,
 	hearthheadDecksRegex: /\[?(http:\/\/www\.hearthhead\.com\/deck=)([\d\w\-]+)\/?([\d\w\-]+)?\]?/gm,
 	inlineDecksRegex: /\[?((([\w]{3,15})(?::)(\d)(?:;)?)+)\]?/gm,
-	blizzardDeckstring: /\[?(\S*)=\]?/gm,
+	blizzardDeckstring: /\[(\S*)\]/gm,
 	
 	decks: {},
 
@@ -43,12 +43,17 @@ var parseDecks = {
 	},
 
 	parse: function(review, text, regex, useHashAsName) {
-		// Lookbehind - http://www.regular-expressions.info/lookaround.html
-		// https://regex101.com/r/qT1vF8/9 for a pure regex-based solution
-		var match = regex.exec(text)
-		while (match) {
-			text = parseDecks.handleMatch(review, text, match, regex, useHashAsName)
-			match = regex.exec(text)
+		try {
+			// Lookbehind - http://www.regular-expressions.info/lookaround.html
+			// https://regex101.com/r/qT1vF8/9 for a pure regex-based solution
+			var match = regex.exec(text)
+			while (match) {
+				text = parseDecks.handleMatch(review, text, match, regex, useHashAsName)
+				match = regex.exec(text)
+			}
+		}
+		catch (e) {
+			console.debug('Could not parse deck', text, regex);
 		}
 		return text
 	},

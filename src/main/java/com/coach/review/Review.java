@@ -413,7 +413,9 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@Override
 	public String getText() {
-		text = description;
+		if (text == null) {
+			text = description;
+		}
 		return text;
 	}
 

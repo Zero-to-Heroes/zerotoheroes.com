@@ -13,7 +13,8 @@ public class Metric {
 	private DateTime startDate, endDate;
 	private int reviews, privateReviews, publicReviews;
 	private int comments;
-	private int arena, ranked, tavernBrawl, casual, friendly;
+	private int arena, ranked, tavernBrawl, casual, friendly, tournament;
+	private int overwolf, hdt, arenatracker, arenadrafts, hsreplay;
 	private Set<String> uniqueReviews = new HashSet<>();
 
 	public void incrementReviews() {
@@ -54,6 +55,30 @@ public class Metric {
 
 	public void incrementFriendly() {
 		friendly++;
+	}
+
+	public void incrementOverwolf() {
+		overwolf++;
+	}
+
+	public void incrementHdt() {
+		hdt++;
+	}
+
+	public void incrementArenaTracker() {
+		arenatracker++;
+	}
+
+	public void incrementHsReplay() {
+		hsreplay++;
+	}
+
+	public void incrementArenaDrafts() {
+		arenadrafts++;
+	}
+
+	public void incrementTournament() {
+		tournament++;
 	}
 
 }

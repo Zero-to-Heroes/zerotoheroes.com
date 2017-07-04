@@ -44,7 +44,7 @@ public class MetricsApiHandler {
 		this.environment = environment;
 	}
 
-	@RequestMapping(value = "/metrics", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> getNewMetrics() {
 
 		if ("prod".equalsIgnoreCase(
@@ -57,6 +57,8 @@ public class MetricsApiHandler {
 		calendar.add(Calendar.DAY_OF_MONTH, -350);
 
 		Criteria crit = where("strSport").is("hearthstone");
+		crit.and("key").ne(null);
+
 		Query query = query(crit);
 
 		Field fields = query.fields();
@@ -68,6 +70,8 @@ public class MetricsApiHandler {
 		fields.include("totalHelpfulComments");
 		fields.include("viewCount");
 		fields.include("tags");
+		fields.include("text");
+		fields.include("description");
 		fields.include("uploaderApplicationKey");
 		fields.include("allAuthors");
 
@@ -102,25 +106,28 @@ public class MetricsApiHandler {
 						else if (skill.getText().toLowerCase().contains("rank") || skill.getText().toLowerCase().contains("legend")) {
 							metric.incrementRanked();
 						}
-						else if (skill.getText().toLowerCase().contains("tavernbrawl")) {
+						else if (skill.getText().toLowerCase().replaceAll(" ",  "").contains("tavernbrawl")) {
 							metric.incrementTB();
 						}
 						else if (skill.getText().toLowerCase().contains("casual")) {
 							metric.incrementCasual();
 						}
-						else if (skill.getText().toLowerCase().contains("rank")) {
+						else if (skill.getText().toLowerCase().contains("friendly")) {
 							metric.incrementFriendly();
+						}
+						else if (skill.getText().toLowerCase().contains("tournament")) {
+							metric.incrementTournament();
 						}
 						else {
 							log.debug("Other mode: " + skill.getText().toLowerCase());
 						}
 					}
 					else {
-						log.debug("skill text is empty");
+//						log.debug("skill text is empty");
 					}
 				}
 				else {
-					log.debug("SkillLevel is empty");
+//					log.debug("SkillLevel is empty");
 				}
 			}
 			else {
@@ -128,6 +135,26 @@ public class MetricsApiHandler {
 			}
 
 			metric.addComments(review.getTotalComments());
+
+			String key = review.getUploaderApplicationKey();
+			if (key != null && key.toLowerCase().contains("overwolf")) {
+				metric.incrementOverwolf();
+			}
+			else if (key != null && key.toLowerCase().contains("hdt")) {
+				metric.incrementHdt();
+			}
+			else if (key != null && key.toLowerCase().contains("arenatracker")) {
+				metric.incrementArenaTracker();
+			}
+			else if (key != null && key.toLowerCase().contains("arenadrafts")) {
+				metric.incrementArenaDrafts();
+			}
+			else if (key != null) {
+				log.debug("Not tracking key: " + key);
+			}
+			else if (review.getText() != null && review.getText().toLowerCase().contains("hsreplay")) {
+				metric.incrementHsReplay();
+			}
 		}
 
 		log.debug("Finalizing");
@@ -140,7 +167,7 @@ public class MetricsApiHandler {
 			}
 		});
 
-		log.debug("Formatting for CSV " + metrics);
+		log.debug("Formatting for CSV ");
 		String csvMetrics = toCsv(metrics);
 		metrics.setCsv(csvMetrics);
 
@@ -152,7 +179,8 @@ public class MetricsApiHandler {
 
 	private String toCsv(Metrics metrics) {
 
-		String result = "Day,Reviews,Public,Private,Arena,Ranked,TavernBrawl,Friendly,CasualComments\n";
+		String result = "Day,Reviews,Public,Private,Arena,Ranked,TavernBrawl,Friendly,Casual,Tournament,"
+				+ "Overwolf,HDT,ArenaTracker,ArenaDrafts,HsReplay,Comments\n";
 
 		for (Metric metric : metrics.getMetrics()) {
 			result += metric.getStartDate().toString("yyyy/MM/dd") + ","
@@ -164,7 +192,13 @@ public class MetricsApiHandler {
 					+ metric.getTavernBrawl() + ","
 					+ metric.getFriendly() + ","
 					+ metric.getCasual() + ","
-					+ metric.getComments() + ","
+					+ metric.getTournament() + ","
+					+ metric.getOverwolf() + ","
+					+ metric.getHdt() + ","
+					+ metric.getArenatracker() + ","
+					+ metric.getArenadrafts() + ","
+					+ metric.getHsreplay() + ","
+					+ metric.getComments()
 					+ "\n";
 		}
 		return result;

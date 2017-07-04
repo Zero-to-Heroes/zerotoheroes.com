@@ -98,18 +98,18 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 				if (arg.stack) {
 					stacktrace = arg.stack
 					
-					var callback = function(stackframes) {
-						var stringifiedStack = stacktrace[0].message + '\n'
-					    var stringifiedStack = stackframes.map(function(sf) {
-					        return '\tat ' + sf.toString();
-					    }).join('\n');
+					// var callback = function(stackframes) {
+					// 	var stringifiedStack = stacktrace[0].message + '\n'
+					//     var stringifiedStack = stackframes.map(function(sf) {
+					//         return '\tat ' + sf.toString();
+					//     }).join('\n');
 
-						notify('Javascript error with clear stack trace: ', 'user: ' + userToLog, 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'stacktrace: ' + stringifiedStack, 'initial args: ' + JSON.stringify(argsToLog));
-					};
+					// 	notify('Javascript error with clear stack trace: ', 'user: ' + userToLog, 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'stacktrace: ' + stringifiedStack, 'initial args: ' + JSON.stringify(argsToLog));
+					// };
 
-					var errback = function(err) { console.log('in error', err.message); };
+					// var errback = function(err) { console.log('in error', err.message); };
 
-	    			StackTrace.fromError(arg).then(callback).catch(errback);
+	    // 			StackTrace.fromError(arg).then(callback).catch(errback);
 				}
 			}
 

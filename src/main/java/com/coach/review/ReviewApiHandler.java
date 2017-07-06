@@ -360,6 +360,10 @@ public class ReviewApiHandler {
 		reviewRepo.save(review);
 		log.debug("Review saved");
 
+		if (review.isPublished()) {
+			reviewService.triggerReviewCreationJobs(review);
+		}
+
 		return new ResponseEntity<Review>(review, HttpStatus.OK);
 	}
 

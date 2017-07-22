@@ -54,12 +54,14 @@ public class SubscriptionManager {
 
 	public void notifyNewMultiComment(Review review, Collection<Comment> comments) {
 		Iterable<User> subscribers = userRepo.findAll(review.getSubscribers());
-		String authorId = comments.iterator().next().getAuthorId();
-		for (User subscriber : subscribers) {
-			if (!subscriber.getId().equals(authorId)) {
-				// log.debug("Notifying " + subscriber.getUsername() + " of a
-				// new comment");
-				userNotifier.notifyNewMultiComment(subscriber, review, comments);
+		if (!comments.isEmpty()) {
+			String authorId = comments.iterator().next().getAuthorId();
+			for (User subscriber : subscribers) {
+				if (!subscriber.getId().equals(authorId)) {
+					// log.debug("Notifying " + subscriber.getUsername() + " of a
+					// new comment");
+					userNotifier.notifyNewMultiComment(subscriber, review, comments);
+				}
 			}
 		}
 	}

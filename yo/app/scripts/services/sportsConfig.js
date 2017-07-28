@@ -1,5 +1,5 @@
 var services = angular.module('services');
-services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage', 
+services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage',
 	function ($log, angularLoad, $parse, localStorage) {
 		var service = {}
 		var dev = true;
@@ -40,14 +40,14 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					isSport: true,
 					allowDoubleSpeed: true,
 					allowedUploads:  [
-						// {id: 'video', image: 'plugins/sports/hearthstone/images/new/picto-upload-video.png' }, 
-						{id: 'replay', image: 'plugins/sports/hearthstone/images/new/picto-hs-replay.png' }, 
-						{id: 'arenadraft', image: 'plugins/sports/hearthstone/images/new/picto-draft-arene.png' }, 
+						// {id: 'video', image: 'plugins/sports/hearthstone/images/new/picto-upload-video.png' },
+						{id: 'replay', image: 'plugins/sports/hearthstone/images/new/picto-hs-replay.png' },
+						{id: 'arenadraft', image: 'plugins/sports/hearthstone/images/new/picto-draft-arene.png' },
 						{id: 'fromurl', image: 'plugins/sports/hearthstone/images/new/picto-external-site.png' }
 					],
-					homeChoices:  [ 
-						{id: 'watchlearn', image: 'plugins/sports/hearthstone/images/new/picto-watch-and-learn.png' }, 
-						{id: 'getadvice', image: 'plugins/sports/hearthstone/images/new/picto-get-advices.png' }, 
+					homeChoices:  [
+						{id: 'watchlearn', image: 'plugins/sports/hearthstone/images/new/picto-watch-and-learn.png' },
+						{id: 'getadvice', image: 'plugins/sports/hearthstone/images/new/picto-get-advices.png' },
 						{id: 'helpothers', image: 'plugins/sports/hearthstone/images/new/picto-get-advices.png' }
 					],
 					images: {
@@ -61,9 +61,9 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					supportedExtensions: ['hdtreplay', 'hszip', 'arenatracker', 'log'],
 					plugins: {
 						plugins: [
-							{name: 'parseCardsText', version: 31, dev: dev}, 
-							{name: 'parseDecks', version: 43, dev: dev}, 
-							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 157, options: { useCompressedImages: true }, dev: dev},
+							{name: 'parseCardsText', version: 31, dev: dev},
+							{name: 'parseDecks', version: 43, dev: dev},
+							{name: 'manastorm', player: true, format: ['text/xml'], mediaType: 'game-replay', version: 158, options: { useCompressedImages: true }, dev: dev},
 							{name: 'windrunner', player: true, mediaType: 'arena-draft', version: 34, dev: dev}
 						],
 						customCss: 'hearthstone.css?7'

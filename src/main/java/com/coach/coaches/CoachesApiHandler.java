@@ -39,6 +39,10 @@ public class CoachesApiHandler {
 
 		CoachInformation coach = dao.findByIdentifier(identifier);
 
+		if (coach == null) {
+			return new ResponseEntity<CoachInformation>(coach, HttpStatus.NOT_FOUND);
+		}
+
 		return new ResponseEntity<CoachInformation>(coach, HttpStatus.OK);
 	}
 

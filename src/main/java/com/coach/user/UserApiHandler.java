@@ -114,7 +114,10 @@ public class UserApiHandler {
 			user = userRepository.findByUsername(identifier);
 		}
 
-		if (user == null) { return new ResponseEntity<Boolean>((Boolean) null, HttpStatus.NOT_FOUND); }
+		if (user == null) {
+			log.debug("No user with identifier " + identifier + " found");
+			return new ResponseEntity<Boolean>((Boolean) null, HttpStatus.NOT_FOUND);
+		}
 
 		return new ResponseEntity<Boolean>((Boolean) null, HttpStatus.OK);
 	}

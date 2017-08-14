@@ -25,7 +25,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					videoFramerateRatio: 1,
 					language: Localization.getLanguage()
 				};
-				$log.debug('init review', $scope.review);
+				$log.log('init review', $scope.review);
 
 				$scope.config = {
 					theme: "bower_components/videogular-themes-default/videogular.css"
@@ -44,7 +44,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 				$scope.plugins = [];
 				if ($scope.tempPlugins) {
 					angular.forEach($scope.tempPlugins, function(plugin) {
-						// $log.debug('Prepating to load plugin in upload.js');
+						// $log.log('Prepating to load plugin in upload.js');
 						SportsConfig.loadPlugin($scope.plugins, plugin);
 					})
 				}
@@ -67,9 +67,9 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					}
 
 					if ($scope.initTags) {
-						// $log.debug('before init tags in upload directive', $scope.review);
+						// $log.log('before init tags in upload directive', $scope.review);
 						$scope.initTags($scope.review);
-						// $log.debug('init tags in upload directive', $scope.review);
+						// $log.log('init tags in upload directive', $scope.review);
 					}
 					//$log.log('sport', $scope.sport);
 					//$log.log('review.sport', $scope.review.sport);
@@ -105,7 +105,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					// Add supported types based on sports plugins
 					var additionalTypes = SportsConfig.getAdditionalSupportedTypes($scope.sport);
 					additionalTypes.forEach(function(type) {
-						// $log.debug('Adding type', type);
+						// $log.log('Adding type', type);
 						supportedFileTypes.push(type);
 					})
 					// $log.log('Supported types', supportedFileTypes);
@@ -121,7 +121,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					$scope.temp = fileObj;
 
 					if (videoTypes.indexOf(type) != -1) {
-						// $log.debug('Video format detected', type);
+						// $log.log('Video format detected', type);
 						// Hack for mkv, not supported properly by videogular
 						if (type  == 'video/x-matroska') {
 							//$log.log('hacking type');
@@ -132,7 +132,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 						];
 					}
 					else {
-						// $log.debug('Non video format detected, masking video player', type);
+						// $log.log('Non video format detected, masking video player', type);
 						$scope.useVideo = false;
 						$scope.review.replay = true;
 					}
@@ -260,7 +260,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 
 				$scope.upload = function() {
 
-					$log.debug('Setting S3 config');
+					$log.log('Setting S3 config');
 					$analytics.eventTrack('upload.start', {
 						category: 'upload'
 					});
@@ -283,7 +283,7 @@ app.directive('uploadDirective', ['$routeParams', '$sce', '$timeout', '$location
 					$document.scrollToElementAnimated(bottom, 0, 1);
 					
 					// Initializing upload
-					$log.debug('uploading', $scope.file);
+					$log.log('uploading', $scope.file);
 					var s3 = new AWS.S3();
 					var params = { 
 						Bucket: ENV.bucket + '/' + ENV.folder,

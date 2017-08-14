@@ -42,7 +42,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 								var type = item.type
 								var indexOfLastDot = item.name.lastIndexOf('.')
 								var extension = item.name.slice(indexOfLastDot + 1)
-								$log.debug('extension', extension, item)
+								$log.log('extension', extension, item)
 								if (supportedFileTypes.indexOf(type) == -1) {
 									if (supportedExtensions.indexOf(extension) == -1)
 										return false
@@ -59,7 +59,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 
 				$scope.removeFile = function(file) {
 					var fileIndex = $scope.files.indexOf(file)
-					$log.debug('removing file', file, fileIndex)
+					$log.log('removing file', file, fileIndex)
 					if (fileIndex > -1) {
 						$scope.files.splice(fileIndex, 1)
 						$scope.uploader.removeFromQueue(fileIndex)
@@ -90,7 +90,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        $scope.uploader.onAfterAddingFile = function(fileItem) {
 		            console.info('onAfterAddingFile', fileItem)
 		            $scope.hasUnsupportedFormatError = false
-		            $log.debug('added file', fileItem._file, $scope.files)
+		            $log.log('added file', fileItem._file, $scope.files)
 
 		            var r = new FileReader()
 				    r.onload = function(e) { 
@@ -120,10 +120,10 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        		games: $scope.numberOfGames, 
 		        		files: $scope.files.length
 		        	}
-		        	// $log.debug('uploaded translation data', $scope.translationData, $scope.files, $scope.uploader.queue)
+		        	// $log.log('uploaded translation data', $scope.translationData, $scope.files, $scope.uploader.queue)
 		        }
 		        $scope.$watch('numberOfGames', function(newVal, oldVal) {
-		        	// $log.debug('change in numberOfGames', newVal, oldVal)
+		        	// $log.log('change in numberOfGames', newVal, oldVal)
 		        	if (newVal != oldVal) $scope.updateTranslationData()
 		        })
 
@@ -145,11 +145,11 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 						var fileKey = 'hearthstone/replay/' + moment().get('year') + '/' + (parseInt(moment().get('month')) + 1) + '/' + moment().get('date') + '/' + Date.now() + '-' + S(file._file.name).replaceAll(' ', '-').s
 						fileKeys.push(fileKey)
 						file._file.fileKey = fileKey
-						$log.debug('fileKey is ', file, fileKey)
+						$log.log('fileKey is ', file, fileKey)
 					})
 					$scope.videoInfo.files = fileContents
 					$scope.videoInfo.numberOfReviews = $scope.numberOfGames
-					$log.debug('init upload', $scope.videoInfo)
+					$log.log('init upload', $scope.videoInfo)
 
 					MediaUploader.upload(fileContents, fileKeys, $scope.videoInfo)
 				}

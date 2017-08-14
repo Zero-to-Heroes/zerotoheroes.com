@@ -40,14 +40,14 @@ app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
 				$scope.uploader = MediaUploader
 
 				$scope.progressCallback = function(file) {
-					// $log.debug('refreshing progress')
+					// $log.log('refreshing progress')
 					$scope.$digest()
 				}
 
 				$scope.$watch('active', function(newVal) {
 					if (newVal) {
 						$scope.uploader.addCallback('upload-progress', $scope.progressCallback)
-						// $log.debug('adding progress callback', $scope.uploader)
+						// $log.log('adding progress callback', $scope.uploader)
 					}
 				})
 			}

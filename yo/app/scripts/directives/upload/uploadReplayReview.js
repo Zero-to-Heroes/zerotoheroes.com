@@ -55,10 +55,10 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						MediaUploader.addCallback('video-upload-complete', $scope.videoUploadCallback)
 					}
 					else if ($location.search().key) {
-						$log.debug('retrieved key', $location.search().key)
+						$log.log('retrieved key', $location.search().key)
 						var replayUrl = ENV.videoStorageUrl + $location.search().key
 						$.get(replayUrl, function(replayData) {
-							$log.debug('retrieved data', replayData)
+							$log.log('retrieved data', replayData)
 							$scope.review.id = $location.search().id
 							$scope.review.key = replayUrl
 							$scope.review.transcodingDone = true
@@ -73,7 +73,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 
 				$scope.$watch('active', function(newVal) {
 					if (newVal && !$scope.review.title) {
-						$log.debug('reinit', newVal, $scope.review)
+						$log.log('reinit', newVal, $scope.review)
 						$scope.initReviewData()
 					}
 				})
@@ -90,7 +90,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				}
 
 				$scope.startTranscoding = function() {
-					$log.debug('replay start transcoding', $scope.review)
+					$log.log('replay start transcoding', $scope.review)
 					Api.Reviews.save($scope.review, 
 						function(data) {
 							$scope.review.id = data.id
@@ -115,7 +115,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						Api.Reviews.get({reviewId: $scope.review.id}, 
 							function(data) {
 								$scope.review.transcodingDone = data.transcodingDone
-								$log.debug('retrieving completion status')
+								$log.log('retrieving completion status')
 
 								if (!$scope.review.transcodingDone) {
 									$timeout(function() {
@@ -124,7 +124,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 								}
 								else {
 									$scope.sources = null
-									$log.debug('putting aside the important values', $scope.review)
+									$log.log('putting aside the important values', $scope.review)
 									data.title = $scope.review.title
 									data.text = $scope.review.text
 									data.tags = $scope.review.tags
@@ -159,7 +159,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				}
 
 				$scope.isDataValid = function() {
-					// $log.debug('setting data valid')
+					// $log.log('setting data valid')
 					// $scope.uploadForm.author.$setValidity('nameTaken', true)
 					$scope.$broadcast('show-errors-check-validity')
 					return $scope.uploadForm.$valid
@@ -167,7 +167,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 
 				$scope.onTranscodingComplete = function() {
 					// And now display something on the replay player
-					$log.debug('Need to display the replay', $scope.review)
+					$log.log('Need to display the replay', $scope.review)
 					$scope.externalPlayer = true
 					// Retrieve the XML replay file from s3
 					var replayUrl = ENV.videoStorageUrl + $scope.review.key
@@ -175,9 +175,9 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						$scope.review.replayXml = data
 
 						// Init the external player
-						$log.debug('init external player')
+						$log.log('init external player')
 						SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb)
-						$log.debug('init done')
+						$log.log('init done')
 					})
 					.fail(function(error) {
 						if (error.status == 200) {
@@ -186,7 +186,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 							// Init the external player
 							// TODO: use an event system
 							SportsConfig.initPlayer($scope.config, $scope.review, null, null, $scope.externalPlayerLoadedCb);
-							$log.debug('player init')
+							$log.log('player init')
 						}
 						else {
 							$log.error('Could not load external data', data, error)
@@ -199,7 +199,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 					$scope.externalPlayer = externalPlayer
 					// $scope.$apply()
 					$scope.fileValid = $scope.externalPlayer.isValid()
-					$log.debug('is file valid?', $scope.fileValid)
+					$log.log('is file valid?', $scope.fileValid)
 
 					if ($scope.fileValid && $scope.publishPending) {
 						$scope.preparePublishing()
@@ -208,7 +208,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 
 				$scope.preparePublishing = function() {
 					// if (!$scope.review.participantDetails.populated) {
-					// 	$log.debug('aiting for population of participantDetails', $scope.review.participantDetails)
+					// 	$log.log('aiting for population of participantDetails', $scope.review.participantDetails)
 					// 	$timeout(function() {
 					// 		$scope.preparePublishing()
 					// 	}, 50)
@@ -226,7 +226,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 								// User exists
 								if (data.username) {
 									$scope.uploadForm.author.$setValidity('nameTaken', false)
-									$log.debug('name taken', $scope.uploadForm)
+									$log.log('name taken', $scope.uploadForm)
 								}
 								else {
 									$scope.onPublishWhenReady = true
@@ -251,14 +251,14 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.initPublishVideo = function() {
 					// If user is not registered, offer them to create an account
 					if (!User.isLoggedIn()) {
-						$log.debug('user not logged in, offering account creation')
+						$log.log('user not logged in, offering account creation')
 						// Validate that the name is free
 						Api.Users.get({identifier: $scope.review.author}, 
 							function(data) {
 								// User exists
 								if (data.username) {
 									$scope.uploadForm.author.$setValidity('nameTaken', false)
-									$log.debug('name taken', $scope.uploadForm)
+									$log.log('name taken', $scope.uploadForm)
 								}
 								else {
 									$scope.onPublish = true
@@ -273,7 +273,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				}
 
 				$scope.publishVideo = function() {
-					$log.debug('publishing with actual review', $scope.review)
+					$log.log('publishing with actual review', $scope.review)
 					var newReview = {
 						author: $scope.review.author,
 						text: $scope.review.text,
@@ -285,7 +285,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 						plugins: $scope.review.plugins,
 						visibility: $scope.review.visibility
 					}
-					$log.debug('publishing review', newReview)
+					$log.log('publishing review', newReview)
 					Api.ReviewsPublish.save({reviewId: $scope.review.id}, newReview, 
 						function(data) {
 							var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s;
@@ -302,7 +302,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.plugins = [];
 				if ($scope.tempPlugins) {
 					angular.forEach($scope.tempPlugins, function(plugin) {
-						$log.debug('Prepating to load plugin in uploadReplayReview.js', plugin);
+						$log.log('Prepating to load plugin in uploadReplayReview.js', plugin);
 						SportsConfig.loadPlugin($scope.plugins, plugin);
 					})
 				}
@@ -356,7 +356,7 @@ app.directive('uploadReplayReview', ['MediaUploader', '$log', 'SportsConfig', '$
 				$scope.isFileValid = function() {
 					if (!$scope.externalPlayer)
 						return true
-					// $log.debug('is file really valid?', $scope.externalPlayer, $scope.fileValid)
+					// $log.log('is file really valid?', $scope.externalPlayer, $scope.fileValid)
 					return $scope.fileValid
 				}
 			}

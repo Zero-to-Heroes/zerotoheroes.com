@@ -80,6 +80,8 @@ public class TagRepository {
 		hearthstone.add(new Tag("Beast Druid"));
 		hearthstone.add(new Tag("Midrange Druid"));
 		hearthstone.add(new Tag("Token Druid"));
+		hearthstone.add(new Tag("Aggro Token Druid"));
+		hearthstone.add(new Tag("Midrange Token Druid"));
 		hearthstone.add(new Tag("Malygos Druid"));
 		hearthstone.add(new Tag("Jade Druid"));
 
@@ -127,6 +129,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Highlander Priest"));
 		hearthstone.add(new Tag("Miracle Priest"));
 		hearthstone.add(new Tag("Silence Priest"));
+		hearthstone.add(new Tag("Big Priest"));
 
 		hearthstone.add(new Tag("Oil Rogue"));
 		hearthstone.add(new Tag("Malygos Rogue"));
@@ -159,6 +162,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Renolock"));
 		hearthstone.add(new Tag("CThun Lock"));
 		hearthstone.add(new Tag("Discolock"));
+		hearthstone.add(new Tag("Control Warlock"));
 
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));
@@ -168,6 +172,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Tempo Warrior"));
 		hearthstone.add(new Tag("Dragon Warrior"));
 		hearthstone.add(new Tag("Taunt Warrior"));
+		hearthstone.add(new Tag("Dead Man Warrior"));
 
 		hearthstone.add(new Tag("Mirror match"));
 		hearthstone.add(new Tag("RNG"));

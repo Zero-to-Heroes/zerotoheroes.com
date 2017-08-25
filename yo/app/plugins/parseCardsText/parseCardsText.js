@@ -256,7 +256,8 @@ var parseCardsText = {
 					card.rarity = 'Free';
 				}
 				// Keep only valid cards
-				var res = card.type != 'Hero' && card.type != 'Enchantment'
+				var res = card.type != 'Hero' || (card.type == 'Hero' && card.collectible)
+				res = res && card.type != 'Enchantment'
 				res = res && card.set != 'Hero_skins' && card.set != 'Cheat'
 				if (res) {
 					possibleResult = card

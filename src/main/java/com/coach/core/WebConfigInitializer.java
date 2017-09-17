@@ -69,11 +69,13 @@ public class WebConfigInitializer implements ServletContextInitializer {
 
 	@Bean
 	public HandlerExceptionResolver sentryExceptionResolver() {
+		log.debug("registering sentry exception resolver");
 	    return new SentryExceptionResolver();
 	}
 
 	@Bean
 	public  org.springframework.boot.web.servlet.ServletContextInitializer sentryServletContextInitializer() {
+		log.debug("registering sentry servlet context initializer");
 	    return new SentryServletContextInitializer();
 	}
 }

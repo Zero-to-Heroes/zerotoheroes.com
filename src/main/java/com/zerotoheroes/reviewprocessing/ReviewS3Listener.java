@@ -19,6 +19,7 @@ import com.amazonaws.util.json.Jackson;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.review.ParticipantDetails;
 import com.coach.review.Review;
+import com.coach.review.Review.Sport;
 import com.coach.review.ReviewApiHandler;
 import com.coach.review.ReviewService;
 import com.coach.tag.Tag;
@@ -52,9 +53,6 @@ public class ReviewS3Listener {
 	// specific queue, so that they could be reprocessed later on?
 	@SqsListener(value = "${replay.uploaded.queue.name}", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
 	public void queueListener(String message, Acknowledgment acknowledgment) throws Exception {
-		// Manual acknowledgement to avoid waiting for process completion. It
-		// will also allow us to have finer control later on
-		acknowledgment.acknowledge().get();
 		String messageAsString = Jackson.jsonNodeOf(message).get("Message").toString().replaceAll("\\\\\"", "\"");
 		S3EventNotification s3event = S3EventNotification
 				.parseJson(messageAsString.substring(1, messageAsString.length() - 1));
@@ -67,10 +65,18 @@ public class ReviewS3Listener {
 		log.debug("Received message to process reviewId " + reviewId);
 		Review review = reviewService.loadReview(reviewId);
 
+		if (review == null) {
+			return;
+		}
+		// Manual acknowledgement to avoid waiting for process completion. It
+		// will also allow us to have finer control later on
+		acknowledgment.acknowledge().get();
+
 		// The message can be received several times
 		if (review.isPublished()) { return; }
 		log.debug("review " + reviewId + " not yet processed, continuing");
 
+		review.setSport(Sport.HearthStone);
 		review.setUploaderApplicationKey(metadata.getUserMetaDataOf("application-key"));
 		review.setUploaderToken(metadata.getUserMetaDataOf("user-key"));
 		review.setFileType(metadata.getUserMetaDataOf("file-type"));

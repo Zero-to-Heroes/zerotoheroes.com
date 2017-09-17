@@ -9,9 +9,12 @@ import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletContextInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import com.coach.core.prerender.PreRenderSEOFilter;
 
+import io.sentry.spring.SentryExceptionResolver;
+import io.sentry.spring.SentryServletContextInitializer;
 import lombok.extern.slf4j.Slf4j;
 
 //@Component
@@ -64,4 +67,13 @@ public class WebConfigInitializer implements ServletContextInitializer {
 		return new PreRenderSEOFilter();
 	}
 
+	@Bean
+	public HandlerExceptionResolver sentryExceptionResolver() {
+	    return new SentryExceptionResolver();
+	}
+
+	@Bean
+	public  org.springframework.boot.web.servlet.ServletContextInitializer sentryServletContextInitializer() {
+	    return new SentryServletContextInitializer();
+	}
 }

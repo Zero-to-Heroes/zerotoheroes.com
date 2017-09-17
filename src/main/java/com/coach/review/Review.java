@@ -573,7 +573,12 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	public Sport getSport() {
 		if (sport == null) {
-			sport = Review.Sport.load(strSport);
+			if (StringUtils.isNullOrEmpty(strSport)) {
+				sport = Sport.HearthStone;
+			}
+			else {
+				sport = Review.Sport.load(strSport);
+			}
 		}
 		return sport;
 	}

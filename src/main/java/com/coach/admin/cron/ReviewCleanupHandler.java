@@ -154,7 +154,7 @@ public class ReviewCleanupHandler {
 					gameParser.addMetaData(review);
 				}
 				else {
-					log.warn("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
+					log.info("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
 				}
 			}
 			catch (Exception e) {
@@ -188,7 +188,7 @@ public class ReviewCleanupHandler {
 					gameParser.addMetaData(review);
 				}
 				else {
-					log.warn("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
+					log.info("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
 				}
 			}
 			catch (Exception e) {
@@ -238,7 +238,7 @@ public class ReviewCleanupHandler {
 					gameParser.addMetaData(review);
 				}
 				else {
-					log.warn("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
+					log.info("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
 				}
 			}
 			catch (Exception e) {

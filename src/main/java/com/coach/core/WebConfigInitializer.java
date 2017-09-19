@@ -1,19 +1,19 @@
 package com.coach.core;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletContextInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import com.coach.core.prerender.PreRenderSEOFilter;
 
-import io.sentry.spring.SentryExceptionResolver;
+import io.sentry.jul.SentryHandler;
 import io.sentry.spring.SentryServletContextInitializer;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,35 +22,23 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 public class WebConfigInitializer implements ServletContextInitializer {
 
-	@Value("${videos.bucket.output.name}")
-	String outputBucket;
-
-	@Autowired
-	public WebConfigInitializer(@Value("${videos.bucket.output.name}") String outputBucket,
-			@Value("${transcoding.sqs.queue.url}") String queue, @Value("${mongodb.host}") String dbHost) {
-		super();
-		this.outputBucket = outputBucket;
-		log.debug("!!" + outputBucket);
-		log.debug("!!" + queue);
-		log.debug("!!" + dbHost);
-	}
-
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
-		/*
-		 * log.debug("Initializing SEO filter"); FilterRegistration filter =
-		 * servletContext.getFilterRegistration("prerender");
-		 * filter.setInitParameter("prerenderToken", "Pyd6EO6IRaMKowTwFGCQ");
-		 * filter.setInitParameter("prerenderServiceUrl",
-		 * "http://localhost:3000");
-		 * filter.setInitParameter("crawlerUserAgents", "YahooSeeker");
-		 * filter.addMappingForUrlPatterns(null, true, "/*");
-		 */
+		// We have to do that because I haven't found how to set Sentry's log level properly using conf
+		// see https://stackoverflow.com/questions/46293943/sentry-io-tomcat-jul-all-logs-are-sent-to-sentry
+		log.debug("Configuring log timestamp");
+		 System.setProperty("java.util.logging.SimpleFormatter.format",
+                 "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$-8s --- %2$-100s : %5$s%6$s%n");
+
+		log.debug("Configuring SentryHandler");
+		SentryHandler sentryHandler = new SentryHandler();
+		sentryHandler.setLevel(Level.WARNING);
+		Logger.getLogger("").addHandler(sentryHandler);
+		log.debug("SentryHandler configured");
 	}
 
 	@Bean
 	public FilterRegistrationBean preRenderSEOFilterRegistration() {
-		log.debug("!!" + outputBucket);
 		FilterRegistrationBean registration = new FilterRegistrationBean();
 		registration.setFilter(preRenderSEOFilter());
 		registration.addUrlPatterns("/*");
@@ -68,8 +56,8 @@ public class WebConfigInitializer implements ServletContextInitializer {
 	}
 
 	@Bean
-	public  org.springframework.boot.web.servlet.ServletContextInitializer sentryServletContextInitializer() {
+	public org.springframework.boot.web.servlet.ServletContextInitializer sentryServletContextInitializer() {
 		log.debug("registering sentry servlet context initializer");
-	    return new SentryServletContextInitializer();
+		return new SentryServletContextInitializer();
 	}
 }

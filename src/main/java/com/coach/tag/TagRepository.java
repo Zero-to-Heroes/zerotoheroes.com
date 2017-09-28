@@ -62,7 +62,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Arena 9 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena 10 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena 11 wins", "skill-level"));
-		hearthstone.add(new Tag("Arena 12 wins", "skill-level"));
+//		hearthstone.add(new Tag("Arena 12 wins", "skill-level"));
 		hearthstone.add(new Tag("Arena Draft", "skill-level"));
 		hearthstone.add(new Tag("Casual", "skill-level"));
 		hearthstone.add(new Tag("Friendly", "skill-level"));
@@ -105,6 +105,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Burn Mage"));
 		hearthstone.add(new Tag("Secret Mage"));
 		hearthstone.add(new Tag("Exodia Mage"));
+		hearthstone.add(new Tag("Elemental Mage"));
 
 		hearthstone.add(new Tag("Secret Paladin"));
 		hearthstone.add(new Tag("Aggro Paladin"));

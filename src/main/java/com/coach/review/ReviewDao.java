@@ -167,7 +167,7 @@ public class ReviewDao {
 			crit.and("publicationDate").gte(calendar.getTime());
 
 			crit.and("closedDate").is(null);
-			crit.and("helpScore").gte(-500);
+			crit.and("helpScore").gte(-5);
 		}
 		else if ("publicationDate".equals(criteria.getSort()) && (criteria.getOwnVideos() == null || !criteria.getOwnVideos())) {
 			crit.and("publicationDate").ne(null);

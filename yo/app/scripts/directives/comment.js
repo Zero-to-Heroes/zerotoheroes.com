@@ -3,7 +3,7 @@
 /* Directives */
 var app = angular.module('app');
 
-app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', '$location', 'TextParserService', '$translate', '$timeout', 
+app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$rootScope', '$parse', '$location', 'TextParserService', '$translate', '$timeout',
 	function(User, $log, Api, RecursionHelper, $modal, $rootScope, $parse, $location, TextParserService, $translate, $timeout) {
 
 		return {
@@ -88,7 +88,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 						text: $scope.comment.text
 
 					}
-					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, newComment, 
+					Api.Reviews.save({reviewId: $scope.review.id, commentId: comment.id}, newComment,
 						function(data) {
 							$scope.showHelp = false;
 							// $log.log('Review', data);
@@ -97,7 +97,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 							$scope.review.plugins = data.plugins;
 							$scope.setCommentText(comment, newComment.text);
 							// $log.log('updating plugins', $scope.review.plugins);
-						}, 
+						},
 						function(error) {
 							// Error handling
 							$log.error(error);
@@ -124,12 +124,12 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				// Other comment function
 				//===============
 				$scope.toggleHelpful = function(comment) {
-					Api.CommentValidation.save({reviewId: $scope.review.id, commentId: comment.id}, 
+					Api.CommentValidation.save({reviewId: $scope.review.id, commentId: comment.id},
 						function(data) {
 							//$log.log('response data', data);
 							comment.helpful = data.helpful
 							$scope.$broadcast('$$rebind::' + 'commentRefresh')
-						}, 
+						},
 						function(error) {
 							// Error handling
 							$log.error(error);
@@ -155,7 +155,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					if ($scope.highlightedClass) {
 						var notifIds = _.map($scope.comment.linkedNotifs, 'id')
 						$log.debug('marking as read', notifIds)
-						Api.NotificationsRead.save(notifIds, 
+						Api.NotificationsRead.save(notifIds,
 							function(data) {
 								$scope.highlightedClass = undefined
 								$scope.comment.historicalLinkedNotifs = $scope.comment.linkedNotifs.slice()
@@ -171,7 +171,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					if (!$scope.highlightedClass) {
 						$log.debug('marking as unread', $scope.comment)
 						var notifIds = _.map($scope.comment.historicalLinkedNotifs, 'id')
-						Api.NotificationsUnread.save(notifIds[0], 
+						Api.NotificationsUnread.save(notifIds[0],
 							function(data) {
 								$scope.highlightedClass = 'highlighted'
 								$scope.comment.linkedNotifs = $scope.comment.historicalLinkedNotifs
@@ -199,18 +199,19 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.postReply = function() {
+					$scope.reply.replying = false
 					$scope.$broadcast('show-errors-check-validity');
 					if ($scope.replyForm.$valid) {
 						$log.debug('posting reply', $scope)
 						$scope.mediaPlayer.preUploadComment($scope.review, $scope.reply);
 						if (!User.isLoggedIn() && !$scope.onAddReply) {
-							$scope.onAddReply = true; 
+							$scope.onAddReply = true;
 							$rootScope.$broadcast('account.signup.show', {identifier: $scope.reply.author});
 						}
 						else {
 							if (!$scope.posting) {
 								$scope.posting = true
-								Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply, 
+								Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply,
 									function(data) {
 										$scope.showHelp = false;
 										$scope.posting = false
@@ -226,7 +227,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 										// 	//$log.log('incrementing timestamps after comment upload');
 										// 	User.incrementTimestamps();
 										// }
-									}, 
+									},
 									function(error) {
 										// Error handling
 										$log.error(error);
@@ -254,7 +255,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.deleteReview = function() {
-					Api.Comments.delete({reviewId: $scope.review.id, commentId: $scope.comment.id}, 
+					Api.Comments.delete({reviewId: $scope.review.id, commentId: $scope.comment.id},
 						function(data) {
 							$scope.deletionMessage = true
 							$scope.showDelete = false
@@ -281,7 +282,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 								comment.reputation = data.reputation;
 								// For bindonce refresh-on
 								$scope.$broadcast('$$rebind::' + 'commentRefresh')
-							}, 
+							},
 							function(error) {
 								// Error handling
 								$log.error(error);
@@ -302,7 +303,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 							function(data) {
 								comment.reputation = data.reputation;
 								$scope.$broadcast('$$rebind::' + 'commentRefresh')
-							}, 
+							},
 							function(error) {
 								// Error handling
 								$log.error(error);
@@ -382,7 +383,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				return RecursionHelper.compile(element, function(scope, iElement, iAttrs, controller, transcludeFn) {
 					// Define your normal link function here.
 					// Alternative: instead of passing a function,
-					// you can also pass an object with 
+					// you can also pass an object with
 					// a 'pre'- and 'post'-link function.
 				});
 			}

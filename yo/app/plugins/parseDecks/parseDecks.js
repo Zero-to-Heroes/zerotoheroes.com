@@ -5,7 +5,7 @@ var parseDecks = {
 	hsDecksDecksRegex: /\[?(http:\/\/www\.hearthstone-decks\.com\/deck\/voir\/)([\d\-a-zA-Z]+)\]?/gm,
 	zthDecksRegex: /\[(http:\/\/www\.zerotoheroes\.com\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]/gm,
 	// zthDecksRegex: /\[?(http:\/.*localhost.*\/r\/hearthstone\/)([\da-zA-Z]+)\/?.*\]?/gm,
-	hearthArenaDecksRegex: /\[?(http:\/\/www\.heartharena\.com\/arena-run\/)([\da-zA-Z]+)\]?/gm,
+	hearthArenaDecksRegex: /\[?((?:http:\/\/)?www\.heartharena\.com\/arena-run\/)([\da-zA-Z]+)\]?/gm,
 	arenaDraftsDecksRegex: /\[?(http:\/\/(?:www\.)?arenadrafts\.com\/Arena\/View\/)([\da-zA-Z\-]+)\]?/gm,
 	hsTopDecksDecksRegex: /\[?(http:\/\/www\.hearthstonetopdecks\.com\/decks\/)([\da-zA-Z\-]+)\]?/gm,
 	icyVeinsDecksRegex: /\[?(http:\/\/www\.icy-veins\.com\/hearthstone\/)([\da-zA-Z\-]+)\]?/gm,
@@ -17,7 +17,7 @@ var parseDecks = {
 	hearthheadDecksRegex: /\[?(http:\/\/www\.hearthhead\.com\/deck=)([\d\w\-]+)\/?([\d\w\-]+)?\]?/gm,
 	inlineDecksRegex: /\[?((([\w]{3,15})(?::)(\d)(?:;)?)+)\]?/gm,
 	blizzardDeckstring: /\[(\S*)\]/gm,
-	
+
 	decks: {},
 
 	execute: function (review, text) {
@@ -83,9 +83,9 @@ var parseDecks = {
 
 			// console.log('keeping starting string', match[1], text.substring(0, match.index + match[1].length), match[1].length)
 			var newText = text.substring(0, match.index) + replaceString + text.substring(match.index + match[0].length)
-			text = newText			
+			text = newText
 
-			// Offset to make sure we don't process the same URL twice. It's a magic number, works with this value and 
+			// Offset to make sure we don't process the same URL twice. It's a magic number, works with this value and
 			// it's not so big to skip the next one completely
 			regex.lastIndex += 399
 		}
@@ -166,7 +166,7 @@ var parseDecks = {
 							if (cardObject) {
 								cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
 								var image = parseCardsText.localizeImage(cardObject);
-								htmlDeck += '<tr>' + 
+								htmlDeck += '<tr>' +
 												'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
 												'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject)  + '</td>' +
 												'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
@@ -185,7 +185,7 @@ var parseDecks = {
 							var cardObject = parseCardsText.getCard(card.name);
 							cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
 							var image = parseCardsText.localizeImage(cardObject);
-							htmlDeck += '<tr>' + 
+							htmlDeck += '<tr>' +
 										'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
 										'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject)  + '</td>' +
 										'<td class=\'card-amount\'>x' + card.amount  + '</td>' +

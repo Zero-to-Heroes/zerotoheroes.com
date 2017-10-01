@@ -156,7 +156,14 @@ var parseCardsText = {
 				})
 				// Remove duplicates
 				var uniqueCards = parseCardsText.removeDuplicates(cards)
-				callback(uniqueCards)
+				var sortedCards = uniqueCards;
+				sortedCards = _.sortBy(sortedCards, [
+					(o) => o.name.toLowerCase().startsWith(S(term).latinise().s.substring(2)) ? 'a' : 'z'
+				])
+				sortedCards = _.sortBy(sortedCards, [
+					(o) => o.name.length,
+				])
+				callback(sortedCards)
 				$(function () {
 					$('.tooltip.parse-cards-text').hide();
 				})

@@ -148,7 +148,9 @@ var parseCardsText = {
 					// add search on english term
 					res = res || card.name.toLowerCase().indexOf(term.substring(2).toLowerCase()) === 0;
 					// Keep only valid cards
-					res = res && card.cardImage && card.type != 'Hero' && card.type != 'Enchantment'
+					res = res && card.cardImage && card.type != 'Enchantment'
+					// Death Knight shenanigans
+					res = res && (card.set == 'Icecrown' || card.type != 'Hero')
 					res = res && card.set != 'Hero_skins' && card.set != 'Cheat' && card.set != 'Tb'
 					res = res ? card : null
 					// if (debug) console.log('res4', term, localizeName, res);

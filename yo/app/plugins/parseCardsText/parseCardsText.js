@@ -160,10 +160,14 @@ var parseCardsText = {
 				var uniqueCards = parseCardsText.removeDuplicates(cards)
 				var sortedCards = uniqueCards;
 				sortedCards = _.sortBy(sortedCards, [
-					(o) => o.name.toLowerCase().startsWith(S(term).latinise().s.substring(2)) ? 'a' : 'z'
+					function(o) {
+						return o.name.toLowerCase().startsWith(S(term).latinise().s.substring(2)) ? 'a' : 'z';
+					}
 				])
 				sortedCards = _.sortBy(sortedCards, [
-					(o) => o.name.length,
+					function(o) {
+						return o.name.length;
+					}
 				])
 				callback(sortedCards)
 				$(function () {

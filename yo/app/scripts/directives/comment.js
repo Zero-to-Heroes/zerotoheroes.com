@@ -199,7 +199,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.postReply = function() {
-					$scope.reply.replying = false
 					$scope.$broadcast('show-errors-check-validity');
 					if ($scope.replyForm.$valid) {
 						$log.debug('posting reply', $scope)
@@ -214,15 +213,15 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 								Api.CommentsReply.save({reviewId: $scope.review.id, commentId: $scope.comment.id}, $scope.reply,
 									function(data) {
 										$scope.showHelp = false;
-										$scope.posting = false
+										$scope.posting = false;
 										$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
 										$scope.review.canvas = data.canvas;
 										$scope.review.subscribers = data.subscribers;
 										$scope.review.reviewVideoMap = data.reviewVideoMap || {};
 										$scope.review.plugins = data.plugins;
 										$scope.reply = {};
-										$rootScope.$broadcast('reviewRefresh')
-										$rootScope.$broadcast('commentRefresh')
+										$scope.$broadcast('$$rebind::' + 'reviewRefresh')
+										$scope.$broadcast('$$rebind::' + 'commentRefresh')
 										// if (data.text.match(timestampOnlyRegex)) {
 										// 	//$log.log('incrementing timestamps after comment upload');
 										// 	User.incrementTimestamps();

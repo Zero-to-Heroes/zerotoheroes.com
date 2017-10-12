@@ -2,6 +2,7 @@ package com.zerotoheroes.reviewprocessing;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -86,6 +87,22 @@ public class ReviewS3Listener {
 		review.setVisibility("restricted");
 		review.setClaimableAccount(true);
 
+		parseGameModeAndRank(metadata, review);
+		parseDeck(metadata, review);
+
+		// FIXME: hack to easily reuse existing methods
+		String outputKey = review.buildKey(key, "hearthstone/replay");
+		log.debug("Copying to temporary key " + outputKey);
+		s3.copyObject(bucketName, key, inputBucket, outputKey);
+		review.setTemporaryKey(outputKey);
+
+		log.debug("Done, creating review " + review);
+		reviewApiHandler.createReview(review);
+	}
+
+	private void parseGameModeAndRank(ObjectMetadata metadata, Review review) {
+		String reviewId = review.getId();
+
 		if ("TavernBrawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))
 				|| "Brawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 			review.setParticipantDetails(new ParticipantDetails());
@@ -120,7 +137,7 @@ public class ReviewS3Listener {
 					}
 				}
 				catch (Exception e) {
-					slackNotifier.notifyError(e, "Error while setting game rank " + messageAsString);
+					slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
 				}
 			}
 			else if ("Arena".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
@@ -133,23 +150,21 @@ public class ReviewS3Listener {
 					}
 				}
 				catch (Exception e) {
-					slackNotifier.notifyError(e, "Error while setting game rank " + messageAsString);
+					slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
 				}
 			}
 
 			if ("wild".equalsIgnoreCase(metadata.getUserMetaDataOf("game-format"))) {
 				review.getTags().add(new Tag("Wild"));
 			}
-
 		}
+	}
 
-		// FIXME: hack to easily reuse existing methods
-		String outputKey = review.buildKey(key, "hearthstone/replay");
-		log.debug("Copying to temporary key " + outputKey);
-		s3.copyObject(bucketName, key, inputBucket, outputKey);
-		review.setTemporaryKey(outputKey);
-
-		log.debug("Done, creating review " + review);
-		reviewApiHandler.createReview(review);
+	private void parseDeck(ObjectMetadata metadata, Review review) {
+		String deckstring = metadata.getUserMetaDataOf("deckstring");
+		if (!StringUtils.isEmpty(deckstring)) {
+			Map<String, String> deckPluginData = review.getPluginData("hearthstone", "parseDecks");
+			deckPluginData.put("reviewDeck", "[" + deckstring + "]");
+		}
 	}
 }

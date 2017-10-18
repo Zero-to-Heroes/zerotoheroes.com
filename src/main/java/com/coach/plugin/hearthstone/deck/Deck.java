@@ -8,6 +8,7 @@ import lombok.Data;
 @Data
 public class Deck {
 	private String title, url;
+	private String deckString;
 	private final List<Card> classCards = new ArrayList<>();
 	private final List<Card> neutralCards = new ArrayList<>();
 

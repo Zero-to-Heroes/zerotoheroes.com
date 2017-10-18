@@ -31,6 +31,7 @@ public class BlizzardDeckstring extends AbstractDeckParser {
 
 			try {
 				Deck deck = new Parser().parse(deckString);
+				deck.setDeckString(deckString);
 				if (deck.getTitle().length() > 0) {
 					saveDeck(pluginData, String.valueOf(deckString.hashCode()), deck);
 				}

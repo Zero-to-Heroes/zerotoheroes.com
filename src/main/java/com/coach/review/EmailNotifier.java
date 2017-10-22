@@ -241,8 +241,8 @@ public class EmailNotifier {
 		//@formatter:off
 		String body = "Hey there!<br/>"
 				+ "<p>I really appreciate you joining us at Zero to Heroes, and I know you'll love it "
-				+ "when you see how easier it has just become to have your play analyzed.</p>"
-				+ "<p>We built Zero to Heroes to help (e-)athletes grow and improve together, "
+				+ "when you see how easier it has just become to share your games and have your plays analyzed.</p>"
+				+ "<p>We built Zero to Heroes to help gamers grow and improve together, "
 				+ "and I hope we'll be able to do that for you too.</p>"
 				+ "<p>If you wouldn't mind, I'd love it if you answered one quick question: why did you sign up on Zero to Heroes?</p>"
 				+ "<p>I'm asking because knowing what made you sign up is really helpful for us in making sure we're delivering what our "

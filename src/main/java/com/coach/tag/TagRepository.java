@@ -131,6 +131,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Miracle Priest"));
 		hearthstone.add(new Tag("Silence Priest"));
 		hearthstone.add(new Tag("Big Priest"));
+		hearthstone.add(new Tag("Aggro Priest"));
 
 		hearthstone.add(new Tag("Oil Rogue"));
 		hearthstone.add(new Tag("Malygos Rogue"));
@@ -164,6 +165,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("CThun Lock"));
 		hearthstone.add(new Tag("Discolock"));
 		hearthstone.add(new Tag("Control Warlock"));
+		hearthstone.add(new Tag("Renounce Warlock"));
 
 		hearthstone.add(new Tag("Control Warrior"));
 		hearthstone.add(new Tag("Patron Warrior"));

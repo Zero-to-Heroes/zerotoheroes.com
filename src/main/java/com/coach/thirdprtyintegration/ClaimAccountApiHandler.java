@@ -99,7 +99,9 @@ public class ClaimAccountApiHandler {
 		log.debug("claiming account for " + currentUser + " and keys " + applicationKey + "/" + userKey);
 		User linkedUser = service.loadUser(applicationKey, userKey);
 		if (linkedUser != null) {
-			return new ResponseEntity<String>("This account has already been claimed", HttpStatus.FORBIDDEN);
+			return new ResponseEntity<String>(
+					"This account has already been claimed: " + applicationKey + "/" + userKey,
+					HttpStatus.CONFLICT);
 		}
 
 		log.debug("Storing link for user: " + user.getId());

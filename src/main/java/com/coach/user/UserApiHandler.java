@@ -126,19 +126,25 @@ public class UserApiHandler {
 	public ResponseEntity<String> register(@RequestBody final User user) {
 		log.debug("Registering user: " + user);
 		boolean exists = userRepository.findByUsername(user.getUsername()) != null;
-		if (exists) { return new ResponseEntity<String>(
-				"{\"msg\": \"This username is already in use by someone else, please choose another one\"}",
-				HttpStatus.UNPROCESSABLE_ENTITY); }
+		if (exists) {
+			return new ResponseEntity<String>(
+				"{\"reason\": \"USERNAME\", \"msg\": \"This username is already in use by someone else, please choose another one\"}",
+				HttpStatus.UNPROCESSABLE_ENTITY);
+		}
 		exists = userRepository.findByEmail(user.getEmail()) != null;
-		if (exists) { return new ResponseEntity<String>(
-				"{\"msg\": \"This email address is already in use by someone else, please choose another one\"}",
-				HttpStatus.UNPROCESSABLE_ENTITY); }
+		if (exists) {
+			return new ResponseEntity<String>(
+				"{\"reason\": \"EMAIL\", \"msg\": \"This email address is already in use by someone else, please choose another one\"}",
+				HttpStatus.UNPROCESSABLE_ENTITY);
+		}
 
 		// Perform checks on password
 		String password = user.getPassword();
-		// if (password == null || password.length() < 4) { return new
-		// ResponseEntity<String>("new password to short",
-		// HttpStatus.UNPROCESSABLE_ENTITY); }
+		 if (StringUtils.isNullOrEmpty(password)) {
+			 return new ResponseEntity<String>(
+				 "{\"reason\": \"PASSWORD\", \"msg\": \"Please provide a password\"}",
+				 HttpStatus.UNPROCESSABLE_ENTITY);
+		 }
 
 		final BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
 		user.setPassword(pwEncoder.encode(password));

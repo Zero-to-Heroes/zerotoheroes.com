@@ -25,7 +25,7 @@ var app = angular.module('app', [
 	'ngTagsInput',
 	'angularLoad',
 	'pascalprecht.translate',
-	'angulartics', 
+	'angulartics',
 	'angulartics.google.analytics',
 	'services.defaultI18n',
 	// https://github.com/Pasvaz/bindonce
@@ -33,7 +33,7 @@ var app = angular.module('app', [
 	'720kb.socialshare'
 ]);
 
-app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider', 
+app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 	function($routeProvider, $locationProvider, $rootScopeProvider) {
 
 		// Because angular doesn't handle well recursive directives for now, see https://github.com/angular/angular.js/issues/6440
@@ -69,6 +69,13 @@ app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider',
 		when('/s/:sport/claimAccount/:applicationKey/:userKey', {
 			templateUrl: 'views/claimAccount.html',
 			controller: 'ClaimAccountController',
+			useFullWidth: true,
+			className: 'home-page-global',
+			hideSideBar: true
+		}).
+		when('/s/:sport/resetpassword', {
+			templateUrl: 'views/resetPassword.html',
+			controller: 'ResetPasswordController',
 			useFullWidth: true,
 			className: 'home-page-global',
 			hideSideBar: true
@@ -285,7 +292,7 @@ app.config(['$qProvider', function($qProvider) {
 	$qProvider.errorOnUnhandledRejections(false)
 }])
 
-app.config(['$translateProvider', '$windowProvider', 'defaultI18n', 
+app.config(['$translateProvider', '$windowProvider', 'defaultI18n',
 	function($translateProvider, $windowProvider, defaultI18n) {
 		console.log('$windowProvider', $windowProvider, $translateProvider);
 
@@ -304,7 +311,7 @@ app.config(['$translateProvider', '$windowProvider', 'defaultI18n',
 			// and return a language key
 			// try {
 			// 	if (!$windowProvider.$get().localStorage.language) {
-			// 		var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage; 
+			// 		var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage;
 			// 		console.log('language is ', lang);
 			// 		if (lang && lang.slice(0, 2) == 'fr') {
 			// 			console.log('browser language is ', lang);
@@ -406,7 +413,7 @@ angular.module('controllers', []);
 angular.module('directives', []);
 
 // app.run(['$rootScope', '$window', '$location', '$http',
-// 	function ($rootScope, $window, $location, $http) {  
+// 	function ($rootScope, $window, $location, $http) {
 // 		$rootScope.$on('$locationChangeStart', function (event, next, current) {
 // 			// redirect to login page if not logged in
 // 			if ($location.path() !== '/' && !$window.sessionStorage.token) {
@@ -420,7 +427,7 @@ app.run(['$rootScope', '$window', '$location', 'Localization', 'localStorage', f
 	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 		//$window.ga('send', 'pageview', { page: $location.url() });
 		if (current.$$route) {
-			$rootScope.isLandingPage = current.$$route.isLandingPage; 
+			$rootScope.isLandingPage = current.$$route.isLandingPage;
 		}
 		// Change the language depending on URL. TEMP
 		//console.log('URL language is ', $location.search().hl);
@@ -482,12 +489,12 @@ app.directive('scrollable',  function ($window, $document, $log) {
 					newMarginTop = Math.min(0, marginTop - scrollAmount);
 					if (newMarginTop != 0) {
 						e.stopPropagation();
-						e.preventDefault();	
+						e.preventDefault();
 					}
-					
+
 				}
 				newMarginTop = Math.min(0, newMarginTop);
-				element.css('marginTop', newMarginTop + 'px'); 
+				element.css('marginTop', newMarginTop + 'px');
 			});
 			}
 		}

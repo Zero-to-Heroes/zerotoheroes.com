@@ -212,24 +212,22 @@ public class EmailNotifier {
 
 	public void sendResetPasswordLink(User user, String url) {
 		log.debug("Sending email to " + user.getEmail() + " with link " + url);
-		//@formatter:off
-		String body = "<p>You have requested to reset your password at http://www.zerotoheroes.com. "
-				+ "If you don't recall having made that request, please simply ignore this email.</p>"
-				+ "<p>Otherwise, please click on <a href=\"" + url + "\">this link</a> to reset your password.</p>"
-				+ "<p>If you have any question, please reply to this email. Have a good day!</p>";
-		String subject = "Zero to Heroes reset password link";
+		String body =
+				"<p>We received a request to reset the password associated with this email address. <br />"
+				+ "To complete the reset process, please click the link below:</p>"
+				+ url
+				+ "<p>If you did not request this reset, or if you have any question - please reply to this email, "
+				+ "and we will get back to you shortly!</p>"
+				+ "<p>The <a href=\"http://www.zerotoheroes.com\">Zero to Heroes</a> team</p>";
+		String subject = "Zero to Heroes password reset";
 
-//		if ("fr".equalsIgnoreCase(user.getPreferredLanguage())) {
-//			body = "<p>Vous avez demandé à réinitialiser votre mot de passe depuis http://www.zerotoheroes.com. "
-//					+ "Si vous ne vous souvenez pas avoir fait cette requête, veuillez simplement ignore cet email.</p>"
-//					+ "<p>Dans le cas contraire, veuillez cliquer sur <a href=\"" + url + "\">ce lien</a> pour réinitialiser votre mot de passe.</p>"
-//					+ "<p>Si vous avez n'importe quelle question, n'hésitez pas à répondre à cet email. Passez une bonne journée !</p>";
-//			subject = "Réinitialisation du mot de passe sur Zero to Heroes";
-//		}
-		//@formatter:on
-
-		EmailMessage message = EmailMessage.builder().from("Zero to Heroes reset password <contact@zerotoheroes.com>")
-				.to(user.getEmail()).subject(subject).content(body).type("text/html; charset=UTF-8").build();
+		EmailMessage message = EmailMessage.builder()
+				.from("Zero to Heroes reset password <contact@zerotoheroes.com>")
+				.to(user.getEmail())
+				.subject(subject)
+				.content(body)
+				.type("text/html; charset=UTF-8")
+				.build();
 		emailSender.send(message);
 	}
 

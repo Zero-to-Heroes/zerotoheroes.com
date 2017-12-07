@@ -5,7 +5,7 @@ var url = '/api/';
 
 var services = angular.module('services', ['ngResource', 'config']);
 
-services.factory('Api', ['$resource', 'ENV', '$location', 
+services.factory('Api', ['$resource', 'ENV', '$location',
 	function($resource, ENV, $location) {
 		function getEndpoint() {
 			return $location.protocol() + "://" + ENV.apiEndpoint;
@@ -28,14 +28,15 @@ services.factory('Api', ['$resource', 'ENV', '$location',
 			Coaches: $resource(getEndpoint() + url + 'coaches/:identifier', {identifier: '@identifier'}),
 			CoachesAll: $resource(getEndpoint() + url + 'coaches/:sport/all', {sport: '@sport'}),
 			Payment: $resource(getEndpoint() + url + 'payment/:reviewId/:coachId/:email/:tariffId', {reviewId: '@reviewId', coachId: '@coachId', email:'@email', tariffId: '@tariffId'}),
-			
+
 			Users: $resource(getEndpoint() + url + 'users/:identifier', {identifier: '@identifier'}),
-			UserPing: $resource(getEndpoint() + url + 'users/ping/:identifier', {identifier: '@identifier'}),					
-			Profile: $resource(getEndpoint() + url + 'profile'),					
+			UserPing: $resource(getEndpoint() + url + 'users/ping/:identifier', {identifier: '@identifier'}),
+			Profile: $resource(getEndpoint() + url + 'profile'),
 			Passwords: $resource(getEndpoint() + url + 'users/password/:key', {key: '@key'}),
+			PasswordReset: $resource(getEndpoint() + url + 'users/passwordreset'),
 			Login: $resource(getEndpoint() + url + 'login', {}),
 			ClaimAccount: $resource(getEndpoint() + url + 'claimAccount/:reviewId', {reviewId: '@reviewId'}),
-			ClaimAccountWithKey: $resource(getEndpoint() + url + 'claimAccount/:applicationKey/:userKey', 
+			ClaimAccountWithKey: $resource(getEndpoint() + url + 'claimAccount/:applicationKey/:userKey',
 				{applicationKey: '@applicationKey', userKey: '@userKey'}),
 			Reputation: $resource(getEndpoint() + url + 'reputation/:reviewId/:commentId/:action', {reviewId: '@reviewId', commentId: '@commentId', action: '@action'}),
 
@@ -72,7 +73,7 @@ services.factory('Api', ['$resource', 'ENV', '$location',
 	}
 ]);
 
-services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', '$analytics', '$log', 'localStorage', 
+services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api', '$analytics', '$log', 'localStorage',
 	function ($http, $window, $timeout, Api, $analytics, $log, localStorage) {
 		var service = {};
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService', '$rootScope', '$location', '$route', 'Localization', '$window', 
+angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', 'Api', 'User', 'AuthenticationService', '$rootScope', '$location', '$route', 'Localization', '$window',
 	function($scope, $log, Api, User, AuthenticationService, $rootScope, $location, $route, Localization, $window) {
 		$scope.account = {};
 
@@ -26,13 +26,15 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 
 		$scope.resetPassword = function() {
 			$scope.$broadcast('show-errors-check-validity');
+			$scope.error = null;
+			$scope.info = null;
   			if ($scope.resetForm.$valid) {
   				var location = $location.$$url;
-				Api.Passwords.save({username: $scope.account.username, password: $scope.account.password, registerLocation: $location.$$path}, 
+				Api.Passwords.save({username: $scope.account.username, password: $scope.account.password},
 			        function(data) {
 			          	// Show message
 			          	$scope.info = 'Thank you! We have just sent you an email with a link to click on to activate your new password. Until you do, your old password is still active.';
-			        }, 
+			        },
 			        function(error) {
 			            // Error handling
 			            console.log(error);
@@ -52,22 +54,22 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
   				var lang;
   				try {
 	  				if (!$window.localStorage.language) {
-						lang = $window.navigator.language || $window.navigator.userLanguage; 
+						lang = $window.navigator.language || $window.navigator.userLanguage;
 						if (lang && lang.slice(0, 2) == 'fr') {
 							lang = 'fr';
 						}
 					}
 				} catch (e) {}
-				
+
 				if (!lang)
 					lang = Localization.getLanguage();
 
 				var params = {username: $scope.account.username, password: $scope.account.password, email: $scope.account.email, registerLocation: location, preferredLanguage: lang}
-				Api.Users.save(params, 
+				Api.Users.save(params,
 			        function(data) {
 			          	// Not necessarily the best way, but easier to separate registration from actual login
 			            $scope.login();
-			        }, 
+			        },
 			        function(error) {
 			            // Error handling
 			            $log.error('Could not create account', params, error);
@@ -78,10 +80,10 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 		};
 
 		$scope.login = function() {
-	  		AuthenticationService.login($scope.account.username, $scope.account.password, 
+	  		AuthenticationService.login($scope.account.username, $scope.account.password,
 				function(response, responseHeaders) {
 					// $log.debug('logged in')
-					AuthenticationService.setAuthentication(response.username, responseHeaders, 
+					AuthenticationService.setAuthentication(response.username, responseHeaders,
 			  			function(authenticated) {
 			  				// $log.debug('setting authentication', authenticated)
 							if (authenticated) {
@@ -91,7 +93,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 				  				$scope.error = '<strong>We\'re sorry :(</strong> We couldn\'t find any account that matches your identifiers';
 							}
 			  			});
-		  		}, 
+		  		},
 		  		function(error) {
 					// Error handling
 					$log.warn('Error after login: ', error);
@@ -102,7 +104,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 
 		$scope.retrieveUserInfo = function() {
 			$log.debug('retrieveUserInfo in accountCreation')
-			Api.Users.get( 
+			Api.Users.get(
 				function(data) {
 					// $log.debug('setting user', data)
 					User.setUser(data);
@@ -115,7 +117,7 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
 				}
 			);
 		}
-		
+
 		$scope.endAccountCreation = function() {
 			$rootScope.$broadcast('account.close');
 		};

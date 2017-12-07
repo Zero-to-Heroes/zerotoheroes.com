@@ -1,5 +1,7 @@
 package com.coach.user;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -199,7 +201,7 @@ public class UserApiHandler {
 	}
 
 	@RequestMapping(value = "/password", method = RequestMethod.POST)
-	public ResponseEntity<String> resetPassword(@RequestBody User newUser) {
+	public ResponseEntity<String> initiateResetPassword(@RequestBody User newUser) {
 		String identifier = newUser.getUsername();
 		log.debug("resetting password for " + newUser.getUsername());
 
@@ -224,38 +226,62 @@ public class UserApiHandler {
 		// Creating reset password link
 		String uniqueId = UUID.randomUUID().toString();
 		// Associate the unique ID with the user
-		final BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
-		String newPassword = pwEncoder.encode(newUser.getPassword());
-		ResetPassword reset = new ResetPassword(uniqueId, user.getId(), newPassword);
+		ResetPassword reset = new ResetPassword(uniqueId, user.getId(), LocalDate.now());
 		resetPasswordRepository.save(reset);
-		log.debug("Saved new password reset " + reset);
+//		log.debug("Saved new password reset " + reset);
 
 		// Build the link to send
-		String url = "http://www.zerotoheroes.com" + newUser.getRegisterLocation() + "?resetpassword="
-				+ reset.getUniqueId();
+		String url = String.format("http://www.zerotoheroes.com/s/hearthstone/resetpassword?id=%s", uniqueId);
 		emailNotifier.sendResetPasswordLink(user, url);
 		slackNotifier.notifyResetPassword(user);
 
 		return new ResponseEntity<String>((String) null, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/password/{uniqueKey}", method = RequestMethod.POST)
-	public ResponseEntity<String> resetPassword(@PathVariable("uniqueKey") String uniqueKey) {
-		log.debug("Validating reset password for unique key " + uniqueKey);
+	@RequestMapping(value = "/passwordreset", method = RequestMethod.POST)
+	public ResponseEntity<User> resetPassword(@RequestBody User passwordContainer) {
 
-		ResetPassword resetPassword = resetPasswordRepository.findOne(uniqueKey);
-
-		if (resetPassword != null) {
-			log.debug("Loaded reset password " + resetPassword);
-
-			User user = userRepository.findById(resetPassword.getUserId());
-			user.setPassword(resetPassword.getNewPassword());
-			userRepository.save(user);
-			resetPasswordRepository.delete(uniqueKey);
-			return new ResponseEntity<String>((String) null, HttpStatus.OK);
+		if (StringUtils.isNullOrEmpty(passwordContainer.getPassword())) {
+			return new ResponseEntity<User>((User) null, HttpStatus.NOT_ACCEPTABLE);
 		}
-		else {
-			return new ResponseEntity<String>((String) null, HttpStatus.UNPROCESSABLE_ENTITY);
+
+		String id = passwordContainer.getId();
+		ResetPassword resetPassword = resetPasswordRepository.findOne(id);
+
+		if (resetPassword == null) {
+			return new ResponseEntity<User>((User) null, HttpStatus.NOT_FOUND);
 		}
+
+		if (ChronoUnit.DAYS.between(resetPassword.getCreationDate(), LocalDate.now()) > 2) {
+			return new ResponseEntity<User>((User) null, HttpStatus.GONE);
+		}
+
+		User user = userRepository.findOne(resetPassword.getUserId());
+		String newPassword = new BCryptPasswordEncoder().encode(passwordContainer.getPassword());
+		user.setPassword(newPassword);
+		userRepository.save(user);
+//		resetPasswordRepository.delete(resetPassword);
+
+		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
+
+//	@RequestMapping(value = "/password/{uniqueKey}", method = RequestMethod.POST)
+//	public ResponseEntity<String> resetPassword(@PathVariable("uniqueKey") String uniqueKey) {
+//		log.debug("Validating reset password for unique key " + uniqueKey);
+//
+//		ResetPassword resetPassword = resetPasswordRepository.findOne(uniqueKey);
+//
+//		if (resetPassword != null) {
+//			log.debug("Loaded reset password " + resetPassword);
+//
+//			User user = userRepository.findById(resetPassword.getUserId());
+//			user.setPassword(resetPassword.getNewPassword());
+//			userRepository.save(user);
+//			resetPasswordRepository.delete(uniqueKey);
+//			return new ResponseEntity<String>((String) null, HttpStatus.OK);
+//		}
+//		else {
+//			return new ResponseEntity<String>((String) null, HttpStatus.UNPROCESSABLE_ENTITY);
+//		}
+//	}
 }

@@ -96,6 +96,16 @@ body {
 .claim-account-page .user-logged-in button {
   margin: 20px;
 }
+.reset-password-page {
+  max-width: 750px;
+  padding: 10px;
+}
+.reset-password-page .user-logged-in {
+  display: flex;
+}
+.reset-password-page .user-logged-in button {
+  margin: 20px;
+}
 nav.navbar-default .navbar-nav > li > .has-badge {
   display: flex;
 }

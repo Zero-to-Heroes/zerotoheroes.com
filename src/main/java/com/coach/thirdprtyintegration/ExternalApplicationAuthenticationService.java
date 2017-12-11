@@ -29,4 +29,8 @@ public class ExternalApplicationAuthenticationService {
 		AccountLink link = new AccountLink(id, applicationKey, userToken);
 		externalApplicationAuthenticationRepository.save(link);
 	}
+
+	public void removeLink(String applicationKey, String userToken) {
+		externalApplicationAuthenticationRepository.deleteByApplicationKeyAndToken(applicationKey, userToken);
+	}
 }

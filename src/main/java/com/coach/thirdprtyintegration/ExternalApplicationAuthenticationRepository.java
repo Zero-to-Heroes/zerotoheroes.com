@@ -6,4 +6,6 @@ public interface ExternalApplicationAuthenticationRepository extends MongoReposi
 
 	AccountLink findByApplicationKeyAndToken(String applicationKey, String token);
 
+	void deleteByApplicationKeyAndToken(String applicationKey, String token);
+
 }

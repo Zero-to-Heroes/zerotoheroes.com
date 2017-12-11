@@ -20,7 +20,7 @@ import com.coach.user.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @RepositoryRestController
-@RequestMapping(value = "/api/claimAccount")
+@RequestMapping(value = "/api")
 @Slf4j
 public class ClaimAccountApiHandler {
 
@@ -39,7 +39,7 @@ public class ClaimAccountApiHandler {
 	@Autowired
 	UserRepository userRepo;
 
-	@RequestMapping(value = "/{reviewId}", method = RequestMethod.POST)
+	@RequestMapping(value = "/claimAccount/{reviewId}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> claimAccount(@PathVariable("reviewId") String reviewId)
 			throws Exception {
 
@@ -80,7 +80,7 @@ public class ClaimAccountApiHandler {
 		return new ResponseEntity<String>("account claimed by " + user.getUsername(), HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/{applicationKey}/{userKey}", method = RequestMethod.POST)
+	@RequestMapping(value = "/claimAccount/{applicationKey}/{userKey}", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> claimAccount(
 			@PathVariable("applicationKey") String applicationKey,
 			@PathVariable("userKey") String userKey)
@@ -96,7 +96,7 @@ public class ClaimAccountApiHandler {
 			return new ResponseEntity<String>("No account found for " + currentUser, HttpStatus.FORBIDDEN);
 		}
 
-		log.debug("claiming account for " + currentUser + " and keys " + applicationKey + "/" + userKey);
+		log.debug("claiming account for " + currentUser + " and key " + applicationKey + "/" + userKey);
 		User linkedUser = service.loadUser(applicationKey, userKey);
 		if (linkedUser != null) {
 			return new ResponseEntity<String>(
@@ -114,14 +114,48 @@ public class ClaimAccountApiHandler {
 		return new ResponseEntity<String>("account claimed by " + user.getUsername(), HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/account/{applicationKey}/{userToken}", method = RequestMethod.GET)
+	@RequestMapping(value = "/disconnectAccount/{applicationKey}/{userKey}", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> disconnectAccount(
+			@PathVariable("applicationKey") String applicationKey,
+			@PathVariable("userKey") String userKey)
+			throws Exception {
+
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		if (currentUser == null) {
+			new ResponseEntity<String>("You need to be logged in to disconnect an account", HttpStatus.FORBIDDEN);
+		}
+
+		User user = userRepo.findByUsername(currentUser);
+		if (user == null) {
+			return new ResponseEntity<String>("No account found for " + currentUser, HttpStatus.FORBIDDEN);
+		}
+
+		log.debug("Disconnecting account for " + currentUser + " and key " + applicationKey + "/" + userKey);
+		User linkedUser = service.loadUser(applicationKey, userKey);
+		if (linkedUser == null) {
+			return new ResponseEntity<String>(
+					"No connected account for: " + applicationKey + "/" + userKey,
+					HttpStatus.ALREADY_REPORTED);
+		}
+
+		if (!linkedUser.getId().equals(user.getId())) {
+			new ResponseEntity<String>("You can only disconnect your own account", HttpStatus.FORBIDDEN);
+		}
+
+		log.debug("Removing link for " + currentUser + " and key " + applicationKey + "/" + userKey);
+		service.removeLink(applicationKey, userKey);
+
+		return new ResponseEntity<String>("Account disconnected", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/claimAccount/account/{applicationKey}/{userToken}", method = RequestMethod.GET)
 	@Deprecated
 	public @ResponseBody ResponseEntity<String> getSiteAccount(@PathVariable("applicationKey") String applicationKey,
 			@PathVariable("userToken") String userToken) throws Exception {
 		return getRealSiteAccount(applicationKey, userToken);
 	}
 
-	@RequestMapping(value = "/{applicationKey}/{userToken}", method = RequestMethod.GET)
+	@RequestMapping(value = "/claimAccount/{applicationKey}/{userToken}", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> getRealSiteAccount(@PathVariable("applicationKey") String applicationKey,
 			@PathVariable("userToken") String userToken) throws Exception {
 

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 
+import org.assertj.core.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.listener.Acknowledgment;
@@ -13,6 +14,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.event.S3EventNotification;
 import com.amazonaws.services.s3.model.ObjectMetadata;
@@ -53,7 +55,7 @@ public class ReviewS3Listener {
 	// FIXME: properly handle exceptions - resend the failed uploads to a
 	// specific queue, so that they could be reprocessed later on?
 	@SqsListener(value = "${replay.uploaded.queue.name}", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
-	public void queueListener(String message, Acknowledgment acknowledgment) throws Exception {
+	public void queueListener(String message, Acknowledgment acknowledgment) throws ProcessingException, Exception {
 		String messageAsString = Jackson.jsonNodeOf(message).get("Message").toString().replaceAll("\\\\\"", "\"");
 		S3EventNotification s3event = S3EventNotification
 				.parseJson(messageAsString.substring(1, messageAsString.length() - 1));
@@ -61,11 +63,20 @@ public class ReviewS3Listener {
 
 		String bucketName = s3Entity.getBucket().getName();
 		String key = s3Entity.getObject().getKey();
-		ObjectMetadata metadata = s3.getObjectMetadata(bucketName, key);
-		String reviewId = metadata.getUserMetaDataOf("review-id");
-		log.debug("Received message to process reviewId " + reviewId);
-		Review review = reviewService.loadReview(reviewId);
+		String reviewId = null;
+		ObjectMetadata metadata = null;
+		try {
+			metadata = s3.getObjectMetadata(bucketName, key);
+			reviewId = metadata.getUserMetaDataOf("review-id");
+			log.debug("Received message to process reviewId " + reviewId);
+		}
+		catch (AmazonClientException e) {
+			String errorMessage = Strings.formatIfArgs("Could not retrieve metadata from s3 from bucket {} and key {}", bucketName, key);
+			log.error(errorMessage);
+			throw new ProcessingException(errorMessage, e);
+		}
 
+		Review review = reviewService.loadReview(reviewId);
 		if (review == null) {
 			return;
 		}

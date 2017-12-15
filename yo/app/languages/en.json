@@ -58,7 +58,8 @@
 				"casual": "Casual",
 				"friendly": "Friendly",
 				"tavernBrawl": "Tavern Brawl",
-				"adventure": "Adventure"
+				"adventure": "Adventure",
+				"dungeonRun": "Dungeon Run"
 			},
 			"result": {
 				"all": "All results",
@@ -678,7 +679,7 @@
 			"confirmDeleteButtonTooltip": "Deleting a review can't be undone. Are you REALLY SURE you want to delete it?",
 			"confirmDeleteButton": "Yes, delete it",
 			"deletionDone": "Review successfully deleted",
-			
+
 			"askProButton": "Ask a Pro",
 			"askProTooltip": "Get professional advice on your review",
 			"closeReviewTooltip": "This lets others know you are not looking for any more advice (they can still add comments). This will also make your other reviews rank higher in the comments needed pages. Reviews are automatically flagged as such after 10 days",
@@ -721,7 +722,7 @@
 				"someInvalidFilesMessage": "Some of the files you are trying to upload don't contain any games. Don't worry, we'll ignore them, but it may indicate you're not uploading what you wanted. This mainly happens on mobile: the \"hearthstone_2016_xx_xx_xx_xx_xx.log\" files don't always contain actual game data, (the Power.log always does contain the data from your latest sesssion)",
 				"corruptedFile": "We couldn't detect the heroes from your replay - it looks like it is corrupted. Please make sure you have the latest versions of your tracker. Otherwise, let us know on the <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
 				"noMoreDescriptionText": "There is no description text on the replays anymore. Instead, please use the comment system once the review is created to add generic information, ask questions or detail your though process. We recommend you read <a href=\"http://blog.zerotoheroes.com/en/2016/08/16/how-to-get-the-most-out-of-your-game-review/\" target=\"blank\">this blog post</a> to get the most out of your game review.",
-				
+
 
 				"dontCloseWindowMessage": "Your replay is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
 				"finalizeVideoMessage": "Processing your file. It can take up to one minute. Then you'll be able to view your replay in the viewer on the left",
@@ -762,7 +763,7 @@
 				"selectedFile": "You're about to upload {{fileName}}. It needs to be processed before being a usable draft, and you'll be able to navigate in it at the next step",
 				"invalidFormatMessage": "We only support files created by the Arena Helper plugin for Hearthstone Deck Tracker for now. They should come as .json files. If you wish to use another file format, please let us know on the forums",
 				"corruptedFile": "We couldn't detect the picked cards from your file - it looks like it is corrupted. Please make sure you have the latest versions of your tracker. Otherwise, let us know on the <a href=\"https://www.reddit.com/r/zerotoheroes/\" target=\"blank\">forums</a>",
-				
+
 				"dontCloseWindowMessage": "Your draft is being uploaded to our servers. Please don't close the window or you'll have to start all over again :(",
 				"finalizeVideoMessage": "Processing your file. It can take up to one minute. Then you'll be able to view your draft in the viewer on the left",
 				"transferCompleted": "Transfer completed. You can now publish your draft"

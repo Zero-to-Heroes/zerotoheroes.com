@@ -2,7 +2,7 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', '$modal', 'TagService', 'ProfileService', 
+app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'ENV', '$log', '$rootScope', '$route', '$timeout', '$translate', '$modal', 'TagService', 'ProfileService',
 	function($routeParams, Api, $location, User, ENV, $log, $rootScope, $route, $timeout, $translate, $modal, TagService, ProfileService) {
 
 	return {
@@ -47,7 +47,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					searchButton: $translate.instant('global.search.searchButton'),
 					searchButtonTooltip: $translate.instant('global.search.searchButtonTooltip'),
 					clearFilterButton: $translate.instant('global.search.clearFilterButton'),
-					subscribe: $translate.instant('global.search.subscribe'),			
+					subscribe: $translate.instant('global.search.subscribe'),
 					subscribeTooltip: $translate.instant('global.search.subscribeTooltip'),
 					showAll: $translate.instant('global.search.ownReviews.showAll'),
 					showOnlyPublic: $translate.instant('global.search.ownReviews.showOnlyPublic'),
@@ -71,7 +71,8 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					{ "value" : "casual", "label" : $translate.instant('hearthstone.search.gameType.casual') },
 					{ "value" : "friendly", "label" : $translate.instant('hearthstone.search.gameType.friendly') },
 					{ "value" : "tavern-brawl", "label" : $translate.instant('hearthstone.search.gameType.tavernBrawl') },
-					{ "value" : "adventure", "label" : $translate.instant('hearthstone.search.gameType.adventure') }
+					{ "value" : "adventure", "label" : $translate.instant('hearthstone.search.gameType.adventure') },
+					{ "value" : "dungeon-run", "label" : $translate.instant('hearthstone.search.gameType.dungeonRun') }
 				]
 
 				$scope.resultOptions = [
@@ -356,7 +357,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					}
 					$log.debug('updated sort', $scope.options.criteria)
 					$scope.searchFromClick()
-					
+
 					$scope.$broadcast('$$rebind::' + 'resultsRefresh')
 				}
 
@@ -398,7 +399,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					// Dev - disable live filtering to test search function
 					// return true
 
-					if (!review.metaData) 
+					if (!review.metaData)
 						return false
 
 					// Matchup
@@ -525,9 +526,9 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 
 					// Visibility
 					if (criteria.visibility) {
-						if (criteria.visibility == 'public' && review.visibility != 'public') 
+						if (criteria.visibility == 'public' && review.visibility != 'public')
 							return false
-						if (criteria.visibility == 'restricted' && review.visibility == 'private') 
+						if (criteria.visibility == 'restricted' && review.visibility == 'private')
 							return false
 					}
 
@@ -548,14 +549,14 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 						// Different contributors
 						if (criteria.contributorsComparator == 'gte' && criteria.contributorsValue > 0) {
 							// The author is counted in the allAuthors, while we're only interested in contributors
-							if (!review.allAuthors || review.allAuthors.length <= criteria.contributorsValue) 
+							if (!review.allAuthors || review.allAuthors.length <= criteria.contributorsValue)
 								return false
 						}
 
 						if (criteria.contributorsComparator == 'lte') {
 							// $log.debug('looking for at most', criteria.contributorsValue, review.allAuthors.length)
 							// The author is counted in the allAuthors, while we're only interested in contributors
-							if (review.allAuthors && review.allAuthors.length - 1 > criteria.contributorsValue) 
+							if (review.allAuthors && review.allAuthors.length - 1 > criteria.contributorsValue)
 								return false
 						}
 
@@ -584,7 +585,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				$scope.notifySearch/*RelaunchNeeded = function(field) {
 					if (!field)
 						$scope.searchRelaunchNeeded = false
-					else 
+					else
 						$scope.searchRelaunchNeeded = true
 				}*/
 
@@ -610,8 +611,8 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 				}
 
 				var subscribeModal = $modal({
-					templateUrl: 'templates/search/subscribePopup.html', 
-					show: false, 
+					templateUrl: 'templates/search/subscribePopup.html',
+					show: false,
 					animation: 'am-fade-and-scale',
 					container: ".buttons-group",
 					backdrop: false,
@@ -626,7 +627,7 @@ app.directive('searchControls', ['$routeParams', 'Api', '$location', 'User', 'EN
 					$scope.settingName = false
 					subscribeModal.$promise.then(subscribeModal.hide)
 				}
-				
+
 			}
 		}
 	}

@@ -59,6 +59,9 @@ public class HearthstoneMetaData extends MetaData {
 			else if (skillTag.contains("Adventure")) {
 				gameMode = "adventure";
 			}
+			else if (skillTag.contains("Dungeon Run")) {
+				gameMode = "dungeon-run";
+			}
 			else if (skillTag.contains("Arena Draft") || skillTag.contains("Arena draft")) {
 				gameMode = "arena-draft";
 			}

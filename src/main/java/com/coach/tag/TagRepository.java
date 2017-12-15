@@ -70,6 +70,7 @@ public class TagRepository {
 		hearthstone.add(new Tag("Tournament", "skill-level"));
 		hearthstone.add(new Tag("Adventure", "skill-level"));
 		hearthstone.add(new Tag("Innkeeper", "skill-level"));
+		hearthstone.add(new Tag("Dungeon Run", "skill-level"));
 		// Decks
 		hearthstone.add(new Tag("Combo Druid"));
 		hearthstone.add(new Tag("Astral Druid"));

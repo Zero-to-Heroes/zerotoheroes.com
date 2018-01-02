@@ -263,6 +263,10 @@ var parseCardsText = {
 				result = card;
 				return true;
 			}
+			else if (card.dbfId == cardName) {
+				result = card;
+				return true;
+			}
 			else if (card.name && card.name.toLowerCase() == cardName.toLowerCase()) {
 				// console.log('getting card', cardName, card)
 				if (card.set == 'Basic') {

@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 
-import org.assertj.core.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.listener.Acknowledgment;
@@ -71,7 +70,7 @@ public class ReviewS3Listener {
 			log.debug("Received message to process reviewId " + reviewId);
 		}
 		catch (AmazonClientException e) {
-			String errorMessage = Strings.formatIfArgs("Could not retrieve metadata from s3 from bucket {} and key {}", bucketName, key);
+			String errorMessage = String.format("Could not retrieve metadata from s3 from bucket %s and key %s", bucketName, key);
 			log.error(errorMessage);
 			throw new ProcessingException(errorMessage, e);
 		}

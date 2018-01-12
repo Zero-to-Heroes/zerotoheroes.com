@@ -74,47 +74,47 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 		// Save the original $log.debug()
 		var debugFn = $delegate.error;
 
-		$delegate.error = function( )
-		{
-			// Call the original
-			debugFn.apply(null, arguments)
+		// $delegate.error = function( )
+		// {
+		// 	// Call the original
+		// 	debugFn.apply(null, arguments)
 
-			var User = $injector.get('User');
-			var userToLog = !User.getUser() ? 'anonUser' : (User.getUser().username + '::' + User.getUser().email)
-			var $location = $injector.get('$location');
-			var $window = $injector.get('$window');
+		// 	var User = $injector.get('User');
+		// 	var userToLog = !User.getUser() ? 'anonUser' : (User.getUser().username + '::' + User.getUser().email)
+		// 	var $location = $injector.get('$location');
+		// 	var $window = $injector.get('$window');
 
-			var stacktrace = undefined
-			console.log(arguments)
-			var argsToLog = {}
-			for (var idx in arguments) {
-				var arg = arguments[idx]
-				if (arg.status) { argsToLog.status = arg.status }
-				if (arg.config) {
-					if (arg.config.method) { argsToLog.method = arg.config.method }
-					if (arg.config.url) { argsToLog.url = arg.config.url }
-				}
-				if (arg.statusText) { argsToLog.statusText = arg.statusText }
-				if (arg.stack) {
-					stacktrace = arg.stack
+		// 	var stacktrace = undefined
+		// 	console.log(arguments)
+		// 	var argsToLog = {}
+		// 	for (var idx in arguments) {
+		// 		var arg = arguments[idx]
+		// 		if (arg.status) { argsToLog.status = arg.status }
+		// 		if (arg.config) {
+		// 			if (arg.config.method) { argsToLog.method = arg.config.method }
+		// 			if (arg.config.url) { argsToLog.url = arg.config.url }
+		// 		}
+		// 		if (arg.statusText) { argsToLog.statusText = arg.statusText }
+		// 		if (arg.stack) {
+		// 			stacktrace = arg.stack
 
-					// var callback = function(stackframes) {
-					// 	var stringifiedStack = stacktrace[0].message + '\n'
-					//     var stringifiedStack = stackframes.map(function(sf) {
-					//         return '\tat ' + sf.toString();
-					//     }).join('\n');
+		// 			// var callback = function(stackframes) {
+		// 			// 	var stringifiedStack = stacktrace[0].message + '\n'
+		// 			//     var stringifiedStack = stackframes.map(function(sf) {
+		// 			//         return '\tat ' + sf.toString();
+		// 			//     }).join('\n');
 
-					// 	notify('Javascript error with clear stack trace: ', 'user: ' + userToLog, 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'stacktrace: ' + stringifiedStack, 'initial args: ' + JSON.stringify(argsToLog));
-					// };
+		// 			// 	notify('Javascript error with clear stack trace: ', 'user: ' + userToLog, 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'stacktrace: ' + stringifiedStack, 'initial args: ' + JSON.stringify(argsToLog));
+		// 			// };
 
-					// var errback = function(err) { console.log('in error', err.message); };
+		// 			// var errback = function(err) { console.log('in error', err.message); };
 
-	    // 			StackTrace.fromError(arg).then(callback).catch(errback);
-				}
-			}
+	 //    // 			StackTrace.fromError(arg).then(callback).catch(errback);
+		// 		}
+		// 	}
 
-			notify('Javascript error: ' + arguments[0], 'user: ' + userToLog, 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(argsToLog));
-		};
+		// 	notify('Javascript error: ' + arguments[0], 'user: ' + userToLog, 'location: ' + JSON.stringify($location.$$absUrl), 'userAgent: ' + $window.navigator.userAgent, 'stacktrace: ' + stacktrace, 'initial args: ' + JSON.stringify(argsToLog));
+		// };
 
 		$delegate.notifySlack = function( )
 		{

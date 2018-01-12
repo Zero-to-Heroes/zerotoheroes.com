@@ -39,8 +39,8 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			}
 		}
 
-		if (ENV.name == 'production' && !isIE() && !isBot() && !isPrerender() && !isMobile()) 
-			$.post('https://hooks.slack.com/services/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', JSON.stringify(payload));
+		if (ENV.name == 'production' && !isIE() && !isBot() && !isPrerender() && !isMobile())
+			$.post('https://hooks.slack.com/services/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', JSON.stringify(payload));
 		else {
 			console.error(payload);
 		}
@@ -64,7 +64,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 	}
 
 	var loggingExceptions = [
-		// Coming from videogular, no way to handle it properly: 
+		// Coming from videogular, no way to handle it properly:
 		// https://github.com/videogular/videogular/blob/364e004994edbdcab86801de5a39c745afd6d704/app/scripts/com/2fdevs/videogular/directives/vg-media.js
 		/.*sources\[0\]\.src.*/
 	]
@@ -90,14 +90,14 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			for (var idx in arguments) {
 				var arg = arguments[idx]
 				if (arg.status) { argsToLog.status = arg.status }
-				if (arg.config) { 
+				if (arg.config) {
 					if (arg.config.method) { argsToLog.method = arg.config.method }
 					if (arg.config.url) { argsToLog.url = arg.config.url }
 				}
 				if (arg.statusText) { argsToLog.statusText = arg.statusText }
 				if (arg.stack) {
 					stacktrace = arg.stack
-					
+
 					// var callback = function(stackframes) {
 					// 	var stringifiedStack = stacktrace[0].message + '\n'
 					//     var stringifiedStack = stackframes.map(function(sf) {
@@ -122,7 +122,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			var userToLog = !User.getUser() ? 'anonUser' : (User.getUser().username + '::' + User.getUser().email)
 			var $location = $injector.get('$location');
 			var $window = $injector.get('$window');
-			
+
 
 			var stacktrace = undefined
 			console.log(arguments)
@@ -130,7 +130,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 			for (var idx in arguments) {
 				var arg = arguments[idx]
 				if (arg.status) { argsToLog.status = arg.status }
-				if (arg.config) { 
+				if (arg.config) {
 					if (arg.config.method) { argsToLog.method = arg.config.method }
 					if (arg.config.url) { argsToLog.url = arg.config.url }
 				}
@@ -176,7 +176,7 @@ angular.module('app').config(['$provide', '$httpProvider', 'ENV', 'version', fun
 						var code = rejection.data.status;
 						// 401 Unauthorized is a functional error
 						if (code != 401) {
-							notify("Http response error: " + rejection.data.path + " " + rejection.config.method + " " + rejection.data.status + " " + rejection.data.error, 
+							notify("Http response error: " + rejection.data.path + " " + rejection.config.method + " " + rejection.data.status + " " + rejection.data.error,
 								"rejection: " + rejection.config.url, "location: " + JSON.stringify($location.$$absUrl), "user: " + userToLog);
 						}
 					}

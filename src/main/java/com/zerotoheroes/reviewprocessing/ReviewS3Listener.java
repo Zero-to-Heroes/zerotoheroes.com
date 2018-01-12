@@ -54,7 +54,7 @@ public class ReviewS3Listener {
 	// FIXME: properly handle exceptions - resend the failed uploads to a
 	// specific queue, so that they could be reprocessed later on?
 	@SqsListener(value = "${replay.uploaded.queue.name}", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
-	public void queueListener(String message, Acknowledgment acknowledgment) throws ProcessingException, Exception {
+	public void queueListener(String message, Acknowledgment acknowledgment) throws Exception {
 		String messageAsString = Jackson.jsonNodeOf(message).get("Message").toString().replaceAll("\\\\\"", "\"");
 		S3EventNotification s3event = S3EventNotification
 				.parseJson(messageAsString.substring(1, messageAsString.length() - 1));

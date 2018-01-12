@@ -1,4 +1,4 @@
-package com.coach.core;
+package com.zerotoheroes.reviewprocessing;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,19 +11,19 @@ import com.coach.core.notification.SlackNotifier;
 
 import lombok.extern.slf4j.Slf4j;
 
-@ControllerAdvice(basePackages = { "com.coach", "com.zerotoheroes" })
+@ControllerAdvice
 @Slf4j
-public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+public class TempExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@Autowired
 	SlackNotifier slackNotifier;
 
 	@ExceptionHandler(value = Exception.class)
 	protected final ResponseEntity<Object> handleControllerException(Exception ex, WebRequest request) {
-		log.warn("Handling exception", ex);
+		log.warn("Handling exception in temporary controller advice", ex);
 		// String currentUser =
 		// SecurityContextHolder.getContext().getAuthentication().getName();
-		slackNotifier.notifyException(request, ex);
+		slackNotifier.notifyException(request, ex, "Temp Controller Advice");
 		return super.handleException(ex, request);
 	}
 }

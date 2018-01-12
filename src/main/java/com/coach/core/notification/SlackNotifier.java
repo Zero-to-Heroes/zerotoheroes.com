@@ -392,7 +392,7 @@ public class SlackNotifier {
 				exAttach.setFallback("placeholder fallback");
 
 				message.addAttachments(exAttach);
-				message.setText("Server exception for user " + currentUser + ": " + ex.getClass());
+				message.setText("Temp Advice Controller: Server exception for user " + currentUser + ": " + ex.getClass());
 
 				if (params != null) {
 					for (Object param : params) {

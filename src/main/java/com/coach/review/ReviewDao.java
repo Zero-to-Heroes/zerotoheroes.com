@@ -209,8 +209,13 @@ public class ReviewDao {
 		Query query = query(crit);
 
 		// Full-text search
-		if (!StringUtils.isEmpty(criteria.getTitle())) {
-			TextCriteria textCrit = new TextCriteria().matching(criteria.getTitle());
+		String title = criteria.getTitle();
+		if (!StringUtils.isEmpty(title)) {
+			TextCriteria textCrit = new TextCriteria().matching(title);
+			if (title.startsWith("\"")) {
+				int end = title.lastIndexOf("\"") == 0 ? title.length() : title.lastIndexOf("\"");
+				textCrit = new TextCriteria().matchingPhrase(criteria.getTitle().substring(1, end));
+			}
 			query.addCriteria(textCrit);
 		}
 

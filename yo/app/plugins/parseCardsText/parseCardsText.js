@@ -252,20 +252,25 @@ var parseCardsText = {
 		}
 		cardName = cardName.replace(new RegExp('’', 'g'), '\'')
 
-		var result;
-		var possibleResult;
+		// Order the results by relevance later on
+		var result = []
 
 		// cf http://stackoverflow.com/questions/2641347/how-to-short-circuit-array-foreach-like-calling-break
 		// console.log('preparing', cardName)
-		parseCardsText.jsonDatabase.some(function(card) {
+		parseCardsText.jsonDatabase.forEach(function(card) {
+			card.collectibleSort = card.collectible ? 1 : 0;
 			// Seems like variations (the non-standard version) of the card has a lowercase letter in the name
 			if (card.id == cardName) {
-				result = card;
-				return true;
+				card.confidence = 1;
+				result.push(card);
+				// console.log('\tadding possibleResult', card);
+				return;
 			}
 			else if (card.dbfId == cardName) {
-				result = card;
-				return true;
+				card.confidence = 1;
+				result.push(card);
+				// console.log('\tadding possibleResult', card);
+				return;
 			}
 			else if (card.name && card.name.toLowerCase() == cardName.toLowerCase()) {
 				// console.log('getting card', cardName, card)
@@ -277,22 +282,34 @@ var parseCardsText = {
 				res = res && card.type != 'Enchantment'
 				res = res && card.set != 'Hero_skins' && card.set != 'Cheat'
 				if (res) {
-					possibleResult = card
+					card.confidence = 0.5;
+					// console.log('\tadding possibleResult', card);
+					result.push(card);
+					return;
 				}
+
+				// Cards which ID doesn't end with a digit are usually enchantments or things like that
 				res = res && (card.id.toLowerCase() == card.id || card.id.toUpperCase() == card.id) && card.id.match(/.*\d$/)
 				// console.log('card id matches regex?', card.id, card.id.match(/.*\d$/));
 				// console.log('card type', card.type)
 				if (res) {
 					// console.log('\tconsidering', card)
-					result = card;
-					if (result.cardImage) {
-						// console.log('returning card', result);
-						return true;
-					}
+					card.confidence = 1;
+					result.push(card);
+					// console.log('\tadding possibleResult', card);
+					return;
 				}
 			}
 		});
-		return result || possibleResult;
+		if (result.length == 0) {
+			return null;
+		}
+		var sorted = result
+			.sort(function(a, b) {
+				return a["confidence"] - b["confidence"] || b["collectibleSort"] - a["collectibleSort"];
+			});
+		// console.log('sorted', sorted);
+		return sorted[0];
 	},
 
 	jsonDatabase: [

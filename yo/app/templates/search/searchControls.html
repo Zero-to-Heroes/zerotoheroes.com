@@ -58,7 +58,7 @@
 		  	<span>Action</span>
 		</button>
 	</div>
-		
+
 	<div class="search-group own-reviews" ng-if="showVisibilityToggle && !hideAllFilters">
 		<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.visibility" data-html="1" bs-options="::option.value as option.label for option in visibilityOptions" bs-select ng-change="filterReviews()" placeholder="{{visibilityOptions[0].label}}" ng-show="options.criteria.ownVideos">
 		  	<span>Action</span>
@@ -93,7 +93,7 @@
 
 		<!-- Full-text search -->
 		<div class="title-search search-group">
-		    <input type="text" class="form-control" ng-model="options.criteria.title" placeholder="{{::translations.textSearchPlaceholder}}" ng-change="filterReviews()">
+		    <input type="text" class="form-control" ng-model="options.criteria.title" placeholder="{{::translations.textSearchPlaceholder}}" ng-change="filterReviews()" ng-model-options="{ updateOn: 'default', debounce: 500 }">
 		</div>
 
 		<!-- Tag search -->
@@ -139,7 +139,7 @@
 		<!-- TODO: deck filter -->
 
 		<div class="line-break"></div>
-		
+
 		<div class="search-group open-reviews">
 			<button type="button" class="btn btn-default btn-select" ng-model="options.criteria.openGames" data-html="1" bs-options="::option.value as option.label for option in openGamesOptions" bs-select ng-change="filterReviews()" placeholder="{{openGamesOptions[0].label}}" ng-show="!options.criteria.visibility || options.criteria.visibility == 'public'">
 			  	<span>Action</span>
@@ -167,7 +167,7 @@
 		<button type="submit" class="btn btn-default" ng-click="clearFilters()" ng-if="!hideButtons"><span>{{::translations.clearFilterButton}}</span></button>
 		<button class="btn btn-default" ng-click="showSubscriptionModal()" ng-hide="!sport || !User.isLoggedIn() || settingName" title="{{::translations.subscribeTooltip}}" ng-if="!hideButtons">{{::translations.subscribe}} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-		<review-list-display-mode options="::options"></review-list-display-mode> 
+		<review-list-display-mode options="::options"></review-list-display-mode>
 	</div>
 
 </section>

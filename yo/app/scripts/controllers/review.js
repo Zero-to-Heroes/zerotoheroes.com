@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams', '$sce', '$timeout', '$location', 'Api', 'User', 'ENV', '$modal', '$sanitize', '$log', '$rootScope', '$parse', 'SportsConfig', 'TagService', 'CoachService', 'TextParserService', '$translate',
-	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService, CoachService, TextParserService, $translate) { 
+	function($scope, $routeParams, $sce, $timeout, $location, Api, User, ENV, $modal, $sanitize, $log, $rootScope, $parse, SportsConfig, TagService, CoachService, TextParserService, $translate) {
 
 
 		$scope.translations = {
@@ -12,7 +12,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			closeReviewButton: $translate.instant('global.review.closeReviewButton'),
 			reopenReviewTooltîp: $translate.instant('global.review.reopenReviewTooltîp'),
 			reopenReviewButton: $translate.instant('global.review.reopenReviewButton'),
-			
+
 			articleLink: $translate.instant('global.review.articleLink'),
 
 			headline: $translate.instant('global.askPro.headline'),
@@ -97,7 +97,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					pluginWatchers()
 				}
 			})
-			
+
 			if ($scope.pluginsToLoad) {
 				definedPlugins = $scope.pluginsToLoad.length
 				angular.forEach($scope.pluginsToLoad, function(plugin) {
@@ -106,12 +106,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				})
 			}
 		}
-		
+
 		// Load the review
 		$scope.initReview = function() {
 			$log.debug('loading review', $routeParams.reviewId)
 			// $scope.restrictedAccess = false
-			Api.Reviews.get({reviewId: $routeParams.reviewId}, 
+			Api.Reviews.get({reviewId: $routeParams.reviewId},
 				function(data) {
 					$scope.review = data
 					$log.info('retrieved review', data)
@@ -126,7 +126,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// Update page description
 					$scope.updateSeoInformation(data)
 
-					if ($scope.review.mediaType == 'video' || $scope.review.reviewType == 'video' || 
+					if ($scope.review.mediaType == 'video' || $scope.review.reviewType == 'video' ||
 						($scope.review.key && $scope.review.key.indexOf('mp4') != -1)) {
 						$scope.mediaPlayer.playerType = 'video'
 					}
@@ -263,12 +263,12 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				var ts = decodeURIComponent($location.search().ts)
 				ts = ts.replace(new RegExp('%2E', 'g'), '.')
 				$log.debug('calling mediaplayer goToTimestamp', ts, $location.search().ts)
-				$scope.mediaPlayer.goToTimestamp(ts) 
+				$scope.mediaPlayer.goToTimestamp(ts)
 				$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 			}
 		}
-	
-		
+
+
 
 		//===============
 		// Account management hooks
@@ -316,7 +316,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			//$log.log('usbscribed', $scope.review.subscribers, User.getUser().id);
 			return $scope.review && $scope.review.subscribers && User.getUser() && $scope.review.subscribers.indexOf(User.getUser().id) > -1;
 		}
-		
+
 		//===============
 		// Review information
 		//===============
@@ -365,7 +365,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		$scope.updateDescription = function() {
 			$log.debug('anyone here?')
 			$scope.mediaPlayer.preUploadComment($scope.review, $scope.review)
-			
+
 			var newReview = {
 				text: $scope.review.text,
 				sport: $scope.review.sport.key,
@@ -380,13 +380,16 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$log.debug('preparing review', newReview)
 			if (newReview.plugins && newReview.plugins.hearthstone && newReview.plugins.hearthstone.parseDecks && newReview.plugins.hearthstone.parseDecks.reviewDeck) {
 				// $log.debug('updating review deck', newReview.plugins.hearthstone.parseDecks.reviewDeck, newReview)
-				newReview.plugins.hearthstone.parseDecks.reviewDeck = newReview.plugins.hearthstone.parseDecks.reviewDeck.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '')
-				newReview.plugins.hearthstone.parseDecks.reviewDeck = '[' + newReview.plugins.hearthstone.parseDecks.reviewDeck + ']'	
+				newReview.plugins.hearthstone.parseDecks.reviewDeck = newReview.plugins.hearthstone.parseDecks.reviewDeck
+					.replace(new RegExp('\\[', 'g'), '')
+					.replace(new RegExp('\\]', 'g'), '')
+					.replace(new RegExp('\\s', 'g'), '')
+				newReview.plugins.hearthstone.parseDecks.reviewDeck = '[' + newReview.plugins.hearthstone.parseDecks.reviewDeck + ']'
 			}
 			$log.debug('review valid?', $scope.videoInformationForm.$valid, $scope.videoInformationForm)
 			// if ($scope.videoInformationForm.$valid) {
 			$log.log('updating review to ', newReview);
-			Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview, 
+			Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview,
 				function(data) {
 					$scope.showHelp = false;
 	  				$scope.review.canvas = data.canvas
@@ -398,7 +401,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 					// 	// $log.log('incrementing timestamps after comment upload');
 					// 	User.incrementTimestamps();
 					// }
-				}, 
+				},
 				function(error) {
 					// Error handling
 					$log.error(error);
@@ -511,7 +514,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		}
 
 		$scope.deleteReview = function() {
-			Api.Reviews.delete({reviewId: $routeParams.reviewId}, 
+			Api.Reviews.delete({reviewId: $routeParams.reviewId},
 				function(data) {
 					$scope.deletionMessage = true
 					$scope.showDelete = false
@@ -528,7 +531,7 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 		//===============
 		// Timestamp controls
 		//===============
-		
+
 
 		$scope.canEdit = function(review) {
 			//$log.log('can edit review?', User.getUser());

@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @RepositoryRestController
-@RequestMapping(value = "/monitor/health")
+@RequestMapping(value = "/monitor")
 public class HealthController {
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/health", method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> checkHealth() {
 		return new ResponseEntity<String>("Health is ok", HttpStatus.OK);
 	}

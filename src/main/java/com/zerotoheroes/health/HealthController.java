@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @RepositoryRestController
-@RequestMapping(value = "/health")
+@RequestMapping(value = "/monitor/health")
 public class HealthController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)

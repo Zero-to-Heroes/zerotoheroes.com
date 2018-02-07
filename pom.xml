@@ -70,7 +70,7 @@
 		<dependency>
 			<groupId>com.zerotoheroes</groupId>
 			<artifactId>hs-game-entities</artifactId>
-			<version>1.0.17</version>
+			<version>1.0.18</version>
 		</dependency>
 		<dependency>
 			<groupId>com.zerotoheroes</groupId>

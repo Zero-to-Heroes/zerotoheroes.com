@@ -680,6 +680,9 @@
 			"confirmDeleteButton": "Yes, delete it",
 			"deletionDone": "Review successfully deleted",
 
+			"overwolfClaimAction": "Is this you?",
+			"overwolfClaimTooltip": "This review was uploaded by Overwolf's Game Summary - to claim it, all you need is to connect your Overwolf Game Summary account to Zero to Heroes, and all replays will be claimed automatically",
+
 			"askProButton": "Ask a Pro",
 			"askProTooltip": "Get professional advice on your review",
 			"closeReviewTooltip": "This lets others know you are not looking for any more advice (they can still add comments). This will also make your other reviews rank higher in the comments needed pages. Reviews are automatically flagged as such after 10 days",

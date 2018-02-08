@@ -11,8 +11,8 @@
 	<div class="background-white">
 
 		<!-- The media player -->
-		<media-player review="::review" config="::mediaPlayer" ng-class=":reviewRefresh:pluginNames"></media-player>	
-		
+		<media-player review="::review" config="::mediaPlayer" ng-class=":reviewRefresh:pluginNames"></media-player>
+
 		<!-- The video information -->
 		<!-- Almost no optimization done, could win max ~70 watchers -->
 		<div ng-class="pluginNames">
@@ -55,6 +55,8 @@
 											<span class="comment-author" ng-if="!review.authorId">{{review.author}}</span>
 											<author-name class="comment-author" entity="review" ng-if="review.authorId"></author-name>
 											<span bs-tooltip data-title="{{review.author}}'s total reputation on {{review.sport.value}}" data-placement="bottom" data-animation="am-fade-and-scale" class="total-reputation" ng-if="review.authorReputation">{{review.authorReputation}}<img class="reputation-icon" src="{{ config.images.reputation }}"></img></span>
+											<a class="link-minor link-nodeco link-action" ng-if=":reviewRefresh:(!review.authorId && review.uploaderApplicationKey == 'overwolf' && User.isLoggedIn())" title="{{::translations.overwolfClaimTooltip}}">{{::translations.overwolfClaimAction}}<span class="glyphicon glyphicon-info-sign"></span></a>
+
 											<span ng-if="!review.editing && canEdit(review)"> - </span>
 											<a ng-click="startEditingInformation()" class="link-minor" ng-if="!review.editing && canEdit(review)"> {{ 'global.review.comment.edit' | translate }}</a>
 											<a class="link-minor link-delete" ng-click="showConfirmDeleteButton()" ng-if=":delete:review.authorId == User.getUser().id && !showDelete && !deletionMessage" title="{{::translations.deleteButtonTooltip}}">{{::translations.deleteButton}}</a>
@@ -72,7 +74,7 @@
 									</div>
 									<!-- <button class="btn btn-default ask-pro" ng-click="showProModal()" ng-if="!!coaches.length && !review.editing" title="{{ 'global.review.askProTooltip' | translate }}">{{ 'global.review.askProButton' | translate }}</button> -->
 								</div>
-								
+
 							</div>
 						</div>
 
@@ -111,8 +113,6 @@
 	<div class="background-white show-x">
 		<div class="background-container">
 
-			<account-claim review="::review"></account-claim>
-				
 			<div ng-if="selectedCoach">
 				<div class="alert alert-info" translate="global.askPro.proNotified" translate-values="{name: '{{selectedCoach.name}}' }"></div>
 			</div>

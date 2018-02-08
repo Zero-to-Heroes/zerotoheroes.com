@@ -39,6 +39,9 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			subscribeReview: $translate.instant('global.review.comment.subscribeReview'),
 			subscribeReviewTooltip: $translate.instant('global.review.comment.subscribeReviewTooltip'),
 
+			overwolfClaimAction: $translate.instant('global.review.overwolfClaimAction'),
+			overwolfClaimTooltip: $translate.instant('global.review.overwolfClaimTooltip'),
+
 			sortedbyLabel: $translate.instant('global.review.comment.sort.sortedbyLabel'),
 
 			shareTwitter: $translate.instant('global.general.share.twitter'),

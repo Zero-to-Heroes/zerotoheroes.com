@@ -198,7 +198,9 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// A way to allow anonymous uploads
 	@JsonIgnore
 	@Indexed
-	private String uploaderApplicationKey, uploaderToken;
+	private String uploaderToken;
+	// This is public
+	private String uploaderApplicationKey;
 
 	@Indexed
 	@JsonIgnore

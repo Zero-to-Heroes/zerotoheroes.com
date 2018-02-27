@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadProgress', ['MediaUploader', '$log', '$parse', 
+app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
 	function(MediaUploader, $log, $parse) {
 		return {
 			restrict: 'E',
@@ -11,45 +11,18 @@ app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
 				sport: '=',
 				type: '=',
 				active: '=',
-				validation: '&',
-				fileValidation: '&',
-				publish: '&',
 				numberOfFiles: '='
 			},
-			link: function($scope, element, attrs) {
-
-				// http://stackoverflow.com/questions/18378520/angularjs-pass-function-to-directive
-				$scope.isDataValid = function() {
-					if ($scope.validation()) 
-						return $scope.validation()()
-				}
-
-				$scope.isFileValid = function() {
-					if ($scope.fileValidation()) 
-						return $scope.fileValidation()()
-					else
-						return true
-				}
-
-				$scope.initPublish = function() {
-					if ($scope.publish())
-						$scope.publish()()
-				}
-			},
 			controller: function($scope) {
-				$scope.uploader = MediaUploader
+				$scope.uploader = MediaUploader;
 
 				$scope.progressCallback = function(file) {
-					// $log.log('refreshing progress')
-					$scope.$digest()
+					$log.log('refreshing progress', file, $scope.uploader.progress);
+					$scope.$digest();
 				}
 
-				$scope.$watch('active', function(newVal) {
-					if (newVal) {
-						$scope.uploader.addCallback('upload-progress', $scope.progressCallback)
-						// $log.log('adding progress callback', $scope.uploader)
-					}
-				})
+				$scope.uploader.addCallback($scope.progressCallback)
+				$log.log('adding progress callback', $scope.uploader, $scope.progressCallback)
 			}
 		}
 	}

@@ -731,8 +731,7 @@
 				"finalizeVideoMessage": "Processing your file. It can take up to one minute. Then you'll be able to view your replay in the viewer on the left",
 				"transferCompleted": "Transfer completed. You can now publish your replay",
 				"multi": {
-					"dontCloseWindowMessage": "Your replay files are being uploaded to our servers. The game information will be automatically updated once the files have been converted into usable replays. Please don't close the window or you'll have to start all over again :(",
-					"finalizeVideoMessage": "Processing your files. It can take up to one minute, maybe more if you have many games. Then the info will be automatically filled for you",
+					"dontCloseWindowMessage": "Your replay files are being uploaded. Please don't leave the page just yet :)",
 					"transferCompleted": "Transfer completed. Your replays are being processed, and will appear in Your Games once done",
 					"genericTitle" : "Replay game #{{index}}",
 					"filesAdded": "You're about to upload {{games}} games in {{files}} files:",

@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 'User', '$translate', 
-	function(FileUploader, MediaUploader, $log, SportsConfig, $timeout, $parse, ENV, User, $translate) {
+app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 'User', '$translate', '$location',
+	function(FileUploader, MediaUploader, $log, SportsConfig, $timeout, $parse, ENV, User, $translate, $location) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -68,7 +68,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 					}
 				}
 
-				
+
 
 
 				//===============
@@ -93,7 +93,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		            $log.log('added file', fileItem._file, $scope.files)
 
 		            var r = new FileReader()
-				    r.onload = function(e) { 
+				    r.onload = function(e) {
 		            	$scope.files.push(fileItem)
 						var contents = e.target.result
 
@@ -117,7 +117,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 
 		        $scope.updateTranslationData = function() {
 		        	$scope.translationData = {
-		        		games: $scope.numberOfGames, 
+		        		games: $scope.numberOfGames,
 		        		files: $scope.files.length
 		        	}
 		        	// $log.log('uploaded translation data', $scope.translationData, $scope.files, $scope.uploader.queue)
@@ -132,37 +132,40 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 				// Our own uploader component
 				//===============
 				$scope.initUpload = function() {
-					// Start the upload
-					// var fileKey = ENV.folder + '/' + $scope.guid() + '-' + $scope.file.name
 
-					// And signal that our job here is done - let's give the control to the next step
-					$scope.videoInfo.upload = {}
-					$scope.videoInfo.upload.ongoing = true
-					var fileContents = []
-					var fileKeys = []
 					$scope.files.forEach(function(file) {
-						fileContents.push(file._file)
-						var fileKey = 'hearthstone/replay/' + moment().get('year') + '/' + (parseInt(moment().get('month')) + 1) + '/' + moment().get('date') + '/' + Date.now() + '-' + S(file._file.name).replaceAll(' ', '-').s
-						fileKeys.push(fileKey)
-						file._file.fileKey = fileKey
-						$log.log('fileKey is ', file, fileKey)
+						file._file.fileKey = 'hearthstone/replay/'
+							+ moment().get('year') + '/'
+							+ (parseInt(moment().get('month')) + 1) + '/'
+							+ moment().get('date') + '/'
+							+ Date.now()
+							+ '-' + S(file._file.name).slugify().s;
+						file._file.fileType = $scope.getType(file._file);
 					})
-					$scope.videoInfo.files = fileContents
-					$scope.videoInfo.numberOfReviews = $scope.numberOfGames
-					$log.log('init upload', $scope.videoInfo)
 
-					MediaUploader.upload(fileContents, fileKeys, $scope.videoInfo)
+					MediaUploader.upload($scope.files, $scope.numberOfGames);
+
+					$location.path($location.path() + '/multi');
 				}
 
-				$scope.guid = function() {
-				  	function s4() {
-						return Math.floor((1 + Math.random()) * 0x10000)
-					  		.toString(16)
-					  		.substring(1);
-				  	}
-				  	return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-						s4() + '-' + s4() + s4() + s4();
-				}				
+				$scope.getType = function(file) {
+					var type = file.type
+					if (!type) {
+						var indexOfLastDot = file.name.lastIndexOf('.')
+						var extension = file.name.slice(indexOfLastDot + 1)
+						if (['log', 'txt'].indexOf(extension) > -1)
+							type = 'text/plain; charset=utf-8'
+						else if (['xml'].indexOf(extension) > -1)
+							type = 'text/xml; charset=utf-8'
+						else if (['hdtreplay'].indexOf(extension) > -1)
+							type = 'hdtreplay'
+						else if (['hszip'].indexOf(extension) > -1)
+							type = 'hszip'
+						else if (['arenatracker'].indexOf(extension) > -1)
+							type = 'text/plain; charset=utf-8'
+					}
+					return type;
+				}
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', '$log', 'SportsConfig', '$location', '$routeParams', 'MediaUploader',
-	function($scope, Api, $log, SportsConfig, $location, $routeParams, MediaUploader) {
+angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', '$log', 'SportsConfig', '$location', '$routeParams',
+	function($scope, Api, $log, SportsConfig, $location, $routeParams) {
 
 		$scope.state = {
 			uploadType: undefined,
@@ -14,12 +14,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', 
 		// Now handle the various upload types
 		$scope.state.uploadType = $routeParams['uploadType']
 		$scope.state.step = $routeParams['step']
-
-		// If no upload is ongoing, don't use the step
-		if ($scope.state.step && (!MediaUploader.review && (!MediaUploader.videoInfo || !MediaUploader.videoInfo.upload || !MediaUploader.videoInfo.upload.ongoing)) && !$location.search().key) {
-			var path = '/s/' + $routeParams['sport'] + '/upload/' + $routeParams['uploadType']
-			$location.path(path)
-		}
 
 		// Take care of the defaults - if the sport has no special configuration, we go to the video upload by default
 		if (!$scope.state.allowedUploads && !$routeParams['uploadType']) {
@@ -36,13 +30,9 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', 
 
 		$scope.$watch('videoInfo.upload.ongoing', function(newVal, oldVal) {
 			if (newVal) {
-				if ($scope.videoInfo.numberOfReviews > 1) {
-					var url = $location.path() + '/multi'
-				}
-				else {
-					var url = $location.path() + '/review'
-				}
-				$location.path(url)
+				var url = $location.path() + '/multi';
+				console.log('going to', url);
+				$location.path(url);
 			}
 		})
 

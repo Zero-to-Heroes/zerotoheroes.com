@@ -106,6 +106,10 @@ services.factory('AuthenticationService', ['$http', '$window', '$timeout', 'Api'
 services.factory('authInterceptor', function ($rootScope, $q, $window) {
 	return {
 		request: function (config) {
+			if (config.noAuth) {
+				return config;
+			}
+
 			config.headers = config.headers || {};
 			try {
 				if ($window.localStorage.token) {

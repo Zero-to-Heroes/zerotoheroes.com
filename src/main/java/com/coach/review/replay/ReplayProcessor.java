@@ -42,11 +42,7 @@ public class ReplayProcessor {
 					// Keep backward compatibility for when there was no
 					// media type attached to a review
 					// log.debug("Trying to apply player plugin " + plugin);
-					boolean isCorrectType =
-							review.getMediaType() == null
-							&& replayPlugin.getMediaType() == null
-							|| review.getMediaType() != null
-							&& review.getMediaType().equals(replayPlugin.getMediaType());
+					boolean isCorrectType = replayPlugin.getMediaTypes().contains(review.getMediaType());
 
 					boolean isCorrectPhase =
 							replayPlugin.getPhase().equals("all")

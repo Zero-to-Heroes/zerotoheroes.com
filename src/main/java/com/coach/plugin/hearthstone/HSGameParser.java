@@ -3,7 +3,9 @@ package com.coach.plugin.hearthstone;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,8 +57,8 @@ public class HSGameParser implements ReplayPlugin {
 	}
 
 	@Override
-	public String getMediaType() {
-		return "game-replay";
+	public List<String> getMediaTypes() {
+		return Arrays.asList(null, "game-replay");
 	}
 
 	public void addMetaData(Review review) throws Exception {

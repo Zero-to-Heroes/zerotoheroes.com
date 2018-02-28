@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
-	function(MediaUploader, $log, $parse) {
+app.directive('uploadProgress', ['ReplayUploader', '$log', '$parse',
+	function(ReplayUploader, $log, $parse) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -14,7 +14,7 @@ app.directive('uploadProgress', ['MediaUploader', '$log', '$parse',
 				numberOfFiles: '='
 			},
 			controller: function($scope) {
-				$scope.uploader = MediaUploader;
+				$scope.uploader = ReplayUploader;
 
 				$scope.progressCallback = function(file) {
 					$log.log('refreshing progress', file, $scope.uploader.progress);

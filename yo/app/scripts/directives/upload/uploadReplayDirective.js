@@ -1,8 +1,8 @@
 'use strict';
 
 var app = angular.module('app');
-app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 'User', '$translate', '$location',
-	function(FileUploader, MediaUploader, $log, SportsConfig, $timeout, $parse, ENV, User, $translate, $location) {
+app.directive('uploadReplayDirective', ['FileUploader', 'ReplayUploader', '$log', 'SportsConfig', '$timeout', '$parse', 'ENV', 'User', '$translate', '$location',
+	function(FileUploader, ReplayUploader, $log, SportsConfig, $timeout, $parse, ENV, User, $translate, $location) {
 		return {
 			restrict: 'E',
 			transclude: false,
@@ -95,24 +95,21 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		            var r = new FileReader()
 				    r.onload = function(e) {
 		            	$scope.files.push(fileItem)
-						var contents = e.target.result
+						var contents = e.target.result;
 
-						var replayGames = (contents.match(gameRegex) || []).length
-						var indexOfLastDot = fileItem._file.name.lastIndexOf('.')
-						var extension = fileItem._file.name.slice(indexOfLastDot + 1)
-						if ('hdtreplay' == extension || 'hszip' == extension || 'xml' == extension)
-							replayGames = replayGames || 1
+						var replayGames = (contents.match(gameRegex) || []).length || 1;
+						var indexOfLastDot = fileItem._file.name.lastIndexOf('.');
+						var extension = fileItem._file.name.slice(indexOfLastDot + 1);
 
-				        $scope.numberOfGames += replayGames
-				      	console.log('numberOfGames', $scope.numberOfGames)
-				      	fileItem.numberOfGames = replayGames
-				      	$scope.$apply()
+				        $scope.numberOfGames += replayGames;
+				      	console.log('numberOfGames', $scope.numberOfGames);
+				      	fileItem.numberOfGames = replayGames;
+				      	fileItem._file.gameType = $scope.getGameType(contents);
+				      	fileItem.contents = contents;
+				      	$scope.$apply();
 				    }
-				    r.readAsText(fileItem._file)
-		            // Increase number of files
-		            // $scope.processNumberItems(fileItem)
-		            // var objectURL = window.URL.createObjectURL($scope.file)
-		            $scope.updateTranslationData()
+				    r.readAsText(fileItem._file);
+		            $scope.updateTranslationData();
 		        }
 
 		        $scope.updateTranslationData = function() {
@@ -120,7 +117,6 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 		        		games: $scope.numberOfGames,
 		        		files: $scope.files.length
 		        	}
-		        	// $log.log('uploaded translation data', $scope.translationData, $scope.files, $scope.uploader.queue)
 		        }
 		        $scope.$watch('numberOfGames', function(newVal, oldVal) {
 		        	// $log.log('change in numberOfGames', newVal, oldVal)
@@ -134,16 +130,11 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 				$scope.initUpload = function() {
 
 					$scope.files.forEach(function(file) {
-						file._file.fileKey = 'hearthstone/replay/'
-							+ moment().get('year') + '/'
-							+ (parseInt(moment().get('month')) + 1) + '/'
-							+ moment().get('date') + '/'
-							+ Date.now()
-							+ '-' + S(file._file.name).slugify().s;
+						file._file.fileKey = Date.now() + '-' + S(file._file.name).slugify().s;
 						file._file.fileType = $scope.getType(file._file);
 					})
 
-					MediaUploader.upload($scope.files, $scope.numberOfGames);
+					ReplayUploader.upload($scope.files, $scope.numberOfGames);
 
 					$location.path($location.path() + '/multi');
 				}
@@ -162,9 +153,21 @@ app.directive('uploadReplayDirective', ['FileUploader', 'MediaUploader', '$log',
 						else if (['hszip'].indexOf(extension) > -1)
 							type = 'hszip'
 						else if (['arenatracker'].indexOf(extension) > -1)
-							type = 'text/plain; charset=utf-8'
+							type = 'arenatracker'
 					}
 					return type;
+				}
+
+				$scope.getGameType = function(contents) {
+					// arena-drafts
+					if (contents.trim().startsWith('{')) {
+						return 'arena-draft';
+					}
+					// arenatracker
+					if (contents.match(/.*Begin draft.*/gm)) {
+						return 'arena-draft';
+					}
+					return 'game-replay';
 				}
 			}
 		}

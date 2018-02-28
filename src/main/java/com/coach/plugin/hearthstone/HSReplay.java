@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -204,8 +205,8 @@ public class HSReplay implements ReplayPlugin {
 	}
 
 	@Override
-	public String getMediaType() {
-		return null;
+	public List<String> getMediaTypes() {
+		return Arrays.asList(null, "game-replay");
 	}
 
 	public List<String> extractGames(String key, String fileType) throws IOException, ZipException {

@@ -10,10 +10,6 @@
 	<upload-replay-directive ng-switch-when="replay" video-info="videoInfo" sport="sport" active="state.uploadType == 'replay' && !state.step" ng-if="state.uploadType == 'replay' && !state.step"></upload-replay-directive>
 	<upload-multi ng-switch-when="replay" sport="sport" type="state.uploadType" active="state.uploadType == 'replay' && state.step == 'multi'" ng-if="state.uploadType == 'replay' && state.step == 'multi'"></upload-multi>
 
-	<!-- Arena draft -->
-	<upload-arena-draft-directive ng-switch-when="arenadraft" video-info="videoInfo" sport="sport" active="state.uploadType == 'arenadraft' && !state.step" ng-show="state.uploadType == 'arenadraft' && !state.step"></upload-arena-draft-directive>
-	<upload-arena-draft-review ng-switch-when="arenadraft" sport="sport" type="state.uploadType" active="state.uploadType == 'arenadraft' && state.step == 'review'" ng-show="state.uploadType == 'arenadraft' && state.step == 'review'"></upload-arena-draft-review>
-
 	<!-- From URL -->
 	<upload-from-url ng-switch-when="fromurl" video-info="videoInfo" sport="sport" active="state.uploadType == 'fromurl'"></upload-from-url>
 

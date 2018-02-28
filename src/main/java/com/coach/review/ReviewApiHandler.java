@@ -321,6 +321,15 @@ public class ReviewApiHandler {
 				return new ResponseEntity<Review>((Review) null, HttpStatus.UNAUTHORIZED);
 			}
 		}
+		else if (review.getAuthorId() != null) {
+			User user = userRepo.findById(review.getAuthorId());
+			if (user != null) {
+				review.setAuthorId(user.getId());
+				review.setAuthor(user.getUsername());
+				review.setClaimableAccount(false);
+				currentUser = user.getUsername();
+			}
+		}
 		else if (!StringUtils.isEmpty(review.getUploaderApplicationKey())
 				&& !StringUtils.isEmpty(review.getUploaderToken())) {
 			// Get user from token

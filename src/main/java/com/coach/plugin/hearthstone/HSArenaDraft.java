@@ -3,6 +3,8 @@ package com.coach.plugin.hearthstone;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalTime;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -226,12 +228,11 @@ public class HSArenaDraft implements ReplayPlugin {
 	}
 
 	@Override
-	public String getMediaType() {
-		return "arena-draft";
+	public List<String> getMediaTypes() {
+		return Collections.singletonList("arena-draft");
 	}
 
 	@Data
-
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	private static class Draft {
 		private String[] detectedheroes = new String[3];

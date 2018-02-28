@@ -42,7 +42,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 					allowedUploads:  [
 						// {id: 'video', image: 'plugins/sports/hearthstone/images/new/picto-upload-video.png' },
 						{id: 'replay', image: 'plugins/sports/hearthstone/images/new/picto-hs-replay.png' },
-						{id: 'arenadraft', image: 'plugins/sports/hearthstone/images/new/picto-draft-arene.png' },
+						// {id: 'arenadraft', image: 'plugins/sports/hearthstone/images/new/picto-draft-arene.png' },
 						{id: 'fromurl', image: 'plugins/sports/hearthstone/images/new/picto-external-site.png' }
 					],
 					homeChoices:  [
@@ -58,7 +58,7 @@ services.factory('SportsConfig', ['$log', 'angularLoad', '$parse', 'localStorage
 						visibilityrestricted: 'plugins/sports/hearthstone/images/new/picto-video-restreint.png',
 						rankImagesRoot: 'plugins/sports/hearthstone/images/ranks'
 					},
-					supportedExtensions: ['hdtreplay', 'hszip', 'arenatracker', 'log'],
+					supportedExtensions: ['hdtreplay', 'hszip', 'arenatracker', 'log', 'json'],
 					plugins: {
 						plugins: [
 							{name: 'parseCardsText', version: 35, dev: dev},

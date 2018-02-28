@@ -122,7 +122,9 @@ public class DeckParser implements Plugin {
 		}
 
 		String initialText = textHolder.getText();
-		parseDecks(pluginData, initialText);
+		if (StringUtils.isNotEmpty(initialText)) {
+			parseDecks(pluginData, initialText);
+		}
 
 		return initialText;
 	}

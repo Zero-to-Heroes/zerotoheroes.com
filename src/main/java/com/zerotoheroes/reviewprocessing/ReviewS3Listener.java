@@ -77,6 +77,7 @@ public class ReviewS3Listener {
 
 		Review review = reviewService.loadReview(reviewId);
 		if (review == null) {
+			log.debug("Review shell with id " + reviewId + " doesn't exist, aborting");
 			return;
 		}
 		// Manual acknowledgement to avoid waiting for process completion. It
@@ -90,8 +91,10 @@ public class ReviewS3Listener {
 		review.setSport(Sport.HearthStone);
 		review.setUploaderApplicationKey(metadata.getUserMetaDataOf("application-key"));
 		review.setUploaderToken(metadata.getUserMetaDataOf("user-key"));
+		review.setAuthorId(metadata.getUserMetaDataOf("user-id"));
 		review.setFileType(metadata.getUserMetaDataOf("file-type"));
 		review.setText(metadata.getUserMetaDataOf("review-text"));
+		review.setMediaType(metadata.getUserMetaDataOf("game-type"));
 		review.setPublished(true);
 		review.setPublicationDate(new Date());
 		review.setVisibility("restricted");

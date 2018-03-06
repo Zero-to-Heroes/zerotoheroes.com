@@ -743,7 +743,7 @@
 					"fileUploadDone": "Your files have been uploaded to our servers, and will be processed shortly. Depending on the number of files and games, it might take a while, but you're free to leave the page now. When done, your games will appear in \"My Games\" (and in the future we'll even send you a message)",
 					"fileUploadOngoing": "Your games are being uploaded. Waiting is boring, but we're here with you. Hang in there!"
 				},
-				"disabledAnonymousMultiUpload": "Uploading multiple games as an anonymous user is not supported for now. Please log in or create an account first. Thanks!"
+				"disabledAnonymousMultiUpload": "Uploading games as an anonymous user is not supported anymore. Please log in or create an account first. Thanks!"
 			},
 			"fromurl": {
 				"headline": "Upload from URL",

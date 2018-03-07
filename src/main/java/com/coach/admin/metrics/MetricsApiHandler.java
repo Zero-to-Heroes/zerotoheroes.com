@@ -9,13 +9,13 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Field;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -47,8 +47,7 @@ public class MetricsApiHandler {
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> getNewMetrics() {
 
-		if ("prod".equalsIgnoreCase(
-				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
+		log.debug("Starting metrics init");
 
 		Metrics metrics = new Metrics();
 
@@ -155,6 +154,10 @@ public class MetricsApiHandler {
 			else if (review.getText() != null && review.getText().toLowerCase().contains("hsreplay")) {
 				metric.incrementHsReplay();
 			}
+			
+			if (StringUtils.isEmpty(review.getParticipantDetails().getPlayerName())) {
+				metric.incrementUnparsableReplay();
+			}
 		}
 
 		log.debug("Finalizing");
@@ -180,7 +183,7 @@ public class MetricsApiHandler {
 	private String toCsv(Metrics metrics) {
 
 		String result = "Day,Reviews,Public,Private,Arena,Ranked,TavernBrawl,Friendly,Casual,Tournament,"
-				+ "Overwolf,HDT,ArenaTracker,ArenaDrafts,HsReplay,Comments\n";
+				+ "Overwolf,HDT,ArenaTracker,ArenaDrafts,HsReplay,UnparsableReplays,Comments\n";
 
 		for (Metric metric : metrics.getMetrics()) {
 			result += metric.getStartDate().toString("yyyy/MM/dd") + ","
@@ -198,6 +201,7 @@ public class MetricsApiHandler {
 					+ metric.getArenatracker() + ","
 					+ metric.getArenadrafts() + ","
 					+ metric.getHsreplay() + ","
+					+ metric.getUnparsableReplays() + ","
 					+ metric.getComments()
 					+ "\n";
 		}

@@ -15,6 +15,7 @@ public class Metric {
 	private int comments;
 	private int arena, ranked, tavernBrawl, casual, friendly, tournament;
 	private int overwolf, hdt, arenatracker, arenadrafts, hsreplay;
+	private int unparsableReplays;
 	private Set<String> uniqueReviews = new HashSet<>();
 
 	public void incrementReviews() {
@@ -79,6 +80,10 @@ public class Metric {
 
 	public void incrementTournament() {
 		tournament++;
+	}
+
+	public void incrementUnparsableReplay() {
+		unparsableReplays++;
 	}
 
 }

@@ -1,5 +1,5 @@
 var app = angular.module('app');
-app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig', '$timeout', 
+app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig', '$timeout',
 	function($log, ENV, SportsConfig, $timeout) {
 		return {
 			restrict: 'E',
@@ -84,7 +84,7 @@ app.directive('externalPlayer', ['$log', 'ENV', 'SportsConfig', '$timeout',
 				}
 
 				$scope.getTurnLabel = function(turn) {
-					return $scope.externalPlayer.getTurnLabel ? $scope.externalPlayer.getTurnLabel(turn) : turn
+					return ($scope.externalPlayer && $scope.externalPlayer.getTurnLabel) ? $scope.externalPlayer.getTurnLabel(turn) : turn
 				}
 
 				$scope.getTurnNumber = function(label) {

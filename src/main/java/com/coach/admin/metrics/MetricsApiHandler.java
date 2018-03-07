@@ -176,7 +176,7 @@ public class MetricsApiHandler {
 
 		log.debug(csvMetrics);
 
-		return null;
+		return ResponseEntity.ok(csvMetrics);
 	}
 
 

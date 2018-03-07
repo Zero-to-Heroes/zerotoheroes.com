@@ -103,6 +103,7 @@ public class DailyContributionsCronHandler {
 
 				// Anonymous user?
 				if (userRepository.findById(authorId) == null) {
+					processed.add(log);
 					continue;
 				}
 

@@ -106,11 +106,17 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				}
 
 				$scope.setCommentText = function(comment, text) {
+					// console.log('setting comment text', text);
 					comment.text = escapeHtml(text)
 					// // Add timestamps
+					// console.log('compiling text', comment.text);
 					comment.compiledText = TextParserService.parseText($scope.review, comment.text, $scope.plugins)
 					// // Parse markdown
-					comment.markedText = marked(comment.compiledText || '');
+					// console.log('marking text', comment.compiledText);
+					comment.markedText = marked(comment.compiledText || '', {
+						smartypants: true
+					});
+					// console.log('marked text', comment.markedText);
 					comment.editing = false;
 					comment.processed = true;
 					$scope.$broadcast('$$rebind::' + 'commentRefresh')

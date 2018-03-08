@@ -3,6 +3,8 @@ package com.coach.admin.metrics;
 import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
@@ -57,6 +59,7 @@ public class MetricsApiHandler {
 
 		Criteria crit = where("strSport").is("hearthstone");
 		crit.and("key").ne(null);
+		crit.and("creationDate").gte(LocalDateTime.of(2018, 3, 1, 0, 0));
 
 		Query query = query(crit);
 
@@ -75,6 +78,8 @@ public class MetricsApiHandler {
 		fields.include("allAuthors");
 
 		List<Review> reviews = mongoTemplate.find(query, Review.class);
+		
+		List<String> unparsedReviewIds = new ArrayList<>();
 
 		// int totalVideoViews = 0;
 		log.debug("Going through all reviews " + reviews.size());
@@ -157,8 +162,11 @@ public class MetricsApiHandler {
 			
 			if (StringUtils.isEmpty(review.getParticipantDetails().getPlayerName())) {
 				metric.incrementUnparsableReplay();
+				unparsedReviewIds.add(review.getId());
 			}
 		}
+		
+		log.debug("Unparsed review Ids: " + unparsedReviewIds);
 
 		log.debug("Finalizing");
 		// Sort from oldest to newest - useful both for result presentation and

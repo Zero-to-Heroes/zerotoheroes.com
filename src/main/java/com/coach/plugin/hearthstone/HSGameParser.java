@@ -111,17 +111,25 @@ public class HSGameParser implements ReplayPlugin {
 				title += " - " + review.getParticipantDetails().getPlayerName() + " " + hsMeta.getWinStatus();
 				review.setTitle(title);
 			}
+			
+			if ("game-replay".equals(review.getReviewType()) 
+				&& StringUtils.isEmpty(((HearthstoneMetaData)review.getMetaData()).getPlayerName())
+				&& StringUtils.isEmpty(((HearthstoneMetaData)review.getMetaData()).getPlayerClass())) {
+				review.setInvalidGame(true);;
+			}
 
 			review.setLastMetaDataParsingDate(new Date());
 			log.debug("done adding meta ");
 		}
 		catch (InvalidGameReplayException e) {
-			log.info("Invalid game " + e.getMessage());
+			log.info("Invalid game " + e.getMessage() + ". Key is " + review.getKey());
 			review.setInvalidGame(true);
+			review.setLastMetaDataParsingDate(new Date());
 		}
 		catch (Exception e) {
 			// log.error("Could not add metata to review " + review, e);
 			review.setInvalidGame(true);
+			review.setLastMetaDataParsingDate(new Date());
 			throw e;
 		}
 	}
@@ -132,7 +140,7 @@ public class HSGameParser implements ReplayPlugin {
 			replay = s3utils.readFromS3Output(review.getKey());
 		}
 		catch (Exception e) {
-			log.info("Exceptin trying to get review key, reading from temp replay");
+			log.info("Exceptin trying to get review key, reading from temp replay", e);
 		}
 		if (replay == null) {
 			replay = review.getTemporaryReplay();

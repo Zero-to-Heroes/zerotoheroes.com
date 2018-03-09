@@ -89,6 +89,9 @@ public class HearthstoneMetaData extends MetaData {
 				}
 			}
 		}
+		if (gameMode == null) {
+			gameMode = "casual";
+		}
 	}
 
 	public void extractGameMode(String reviewType) {

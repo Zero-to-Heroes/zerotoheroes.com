@@ -48,6 +48,10 @@ public class MetricsApiHandler {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<String> getNewMetrics() {
+		
+		if ("prod".equals(environment)) {
+			return ResponseEntity.unprocessableEntity().body("Not allowed in prod");
+		}
 
 		log.debug("Starting metrics init");
 

@@ -26,6 +26,7 @@ import com.coach.plugin.hearthstone.HSArenaDraft;
 import com.coach.plugin.hearthstone.HSGameParser;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import com.mongodb.WriteResult;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -46,74 +47,26 @@ public class ReviewCleanupHandler {
 	@Autowired
 	HSArenaDraft draftParser;
 
-//	@RequestMapping(value = "/cleanUp", method = RequestMethod.POST)
-//	public @ResponseBody ResponseEntity<String> processGames() {
-//
-//		// We delete all reviews that are at least one week old and that:
-//		// - Don't have a "key"
-//		// - Have a key referring to a non-existent item in s3
-//		// - Have a replay we can't parse that has been flagged as invalid
-//
-//		// Select old reviews only
-//		Calendar calendar = Calendar.getInstance();
-//		calendar.add(Calendar.DAY_OF_MONTH, -7);
-//
-//		Criteria noKey = where("key").is(null);
-//		Criteria invalidReplay = where("invalidGame").is(true);
-//		Criteria unpublished = where("published").is(false);
-//
-//		Criteria crit = new Criteria().andOperator(
-//				where("creationDate").lt(calendar.getTime()),
-//				new Criteria().orOperator(noKey, invalidReplay, unpublished));
-//
-//		Query query = query(crit);
-//
-//		PageRequest pageRequest = new PageRequest(0, 100);
-//
-//		query.with(pageRequest);
-//
-//		WriteResult result = mongoTemplate.remove(query, Review.class);
-//		int removedReviews = result.getN();
-//
-//		log.debug("Removed " + removedReviews + " reviews");
-//
-//		return new ResponseEntity<String>("Removed " + removedReviews + " reviews", HttpStatus.OK);
-//	}
-//
-//	@RequestMapping(value = "/rebuild", method = RequestMethod.POST)
-//	public @ResponseBody ResponseEntity<String> rebuild() {
-//
-//		// Retrieve all the keys
-//		Criteria crit = where("publicationDate").is(null);
-//		crit.and("visibility").is("public");
-//		Query query = new Query(crit);
-//		Field fields = query.fields();
-//		fields.include("id");
-//		fields.include("creationDate");
-//		fields.include("visibility");
-//
-//		List<Review> reviews = mongoTemplate.find(query, Review.class);
-//
-//		log.debug("Will rebuild " + reviews.size() + " reviews");
-//
-//		// for (Review review : reviews) {
-//		//
-//		// Criteria updateCrit = where("id").is(review.getId());
-//		// Query updateQ = query(updateCrit);
-//		//
-//		// if (review.getCreationDate() == null ||
-//		// !"public".equalsIgnoreCase(review.getVisibility()) ||
-//		// review.getPublicationDate() != null) {
-//		// throw new NullPointerException("Incorrect review " + review);
-//		// }
-//		//
-//		// Update update = update("publicationDate", review.getCreationDate());
-//		// WriteResult result = mongoTemplate.updateMulti(updateQ, update,
-//		// Review.class);
-//		// }
-//
-//		return new ResponseEntity<String>("Done", HttpStatus.OK);
-//	}
+	@RequestMapping(value = "/cleanUp", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<String> processGames() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DAY_OF_YEAR, -3);
+
+		Query query = query(new Criteria().andOperator(
+				where("creationDate").lt(calendar.getTime()),
+				new Criteria().orOperator(
+						where("key").is(null), 
+						where("published").is(false))));
+
+		query.with(new PageRequest(0, 100));
+
+		WriteResult result = mongoTemplate.remove(query, Review.class);
+		int removedReviews = result.getN();
+
+		log.debug("Removed " + removedReviews + " reviews");
+
+		return new ResponseEntity<String>("Removed " + removedReviews + " reviews", HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/parseMetaData", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> parseMetaData() {		

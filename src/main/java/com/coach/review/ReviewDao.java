@@ -46,8 +46,12 @@ public class ReviewDao {
 
 		String sportCriteria = criteria.getSport();
 
-		Criteria crit = where("sport").is(Sport.load(sportCriteria).getKey());
-		crit.and("published").is(true);
+		Criteria crit = new Criteria().andOperator(
+					where("sport").is(Sport.load(sportCriteria).getKey()),
+					where("published").is(true),
+					new Criteria().orOperator(
+						where("invalidGame").exists(false),
+						where("invalidGame").is(false)));
 
 		// I can see all my reviews, but only the public ones from others
 		if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) {

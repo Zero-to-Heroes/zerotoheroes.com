@@ -370,7 +370,7 @@ public class ReviewApiHandler {
 		log.debug("Review saved");
 
 		if (review.isPublished()) {
-			reviewService.triggerReviewCreationJobs(review);
+//			reviewService.triggerReviewCreationJobs(review);
 		}
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

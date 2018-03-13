@@ -327,6 +327,7 @@ var parseCardsText = {
 		"goldenImage": "AT_001.gif",
 		"id": "AT_001",
 		"name": "Flame Lance",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "Deal $8 damage to a minion.",
@@ -346,6 +347,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Effigy",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Secret:</b> When a friendly minion dies, summon a random minion with the same Cost.",
@@ -364,6 +366,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "AT_003",
 		"name": "Fallen Hero",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "Your Hero Power deals 1 extra damage.",
@@ -383,6 +386,7 @@ var parseCardsText = {
 			"RECEIVES_DOUBLE_SPELLDAMAGE_BONUS"
 		],
 		"name": "Arcane Blast",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"referencedTags": [
 			"SPELLPOWER"
@@ -402,6 +406,7 @@ var parseCardsText = {
 		"goldenImage": "AT_005.gif",
 		"id": "AT_005",
 		"name": "Polymorph: Boar",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"referencedTags": [
 			"CHARGE"
@@ -423,6 +428,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Boar",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Tgt",
 		"text": "<b>Charge</b>",
@@ -444,6 +450,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Dalaran Aspirant",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"SPELLPOWER"
@@ -458,6 +465,7 @@ var parseCardsText = {
 		"goldenImage": "AT_006e.gif",
 		"id": "AT_006e",
 		"name": "Power of Dalaran",
+		"playerClass": "Mage",
 		"set": "Tgt",
 		"text": "Increased Spell Damage.",
 		"type": "Enchantment"
@@ -478,6 +486,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Spellslinger",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Add a random spell to each player's hand.",
@@ -496,6 +505,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "AT_008",
 		"name": "Coldarra Drake",
+		"playerClass": "Mage",
 		"race": "DRAGON",
 		"rarity": "Epic",
 		"set": "Tgt",
@@ -519,6 +529,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Rhonin",
+		"playerClass": "Mage",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Deathrattle:</b> Add 3 copies of Arcane Missiles to your hand.",
@@ -540,6 +551,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ram Wrangler",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> If you have a Beast, summon a\nrandom Beast.",
@@ -558,6 +570,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "AT_011",
 		"name": "Holy Champion",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "Whenever a character is healed, gain +2 Attack.",
@@ -572,6 +585,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Light's Blessing",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -592,6 +606,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Spawn of Shadows",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Deal 4 damage to each hero.",
@@ -608,6 +623,7 @@ var parseCardsText = {
 		"goldenImage": "AT_013.gif",
 		"id": "AT_013",
 		"name": "Power Word: Glory",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "Choose a minion. Whenever it attacks, restore 4 Health to\nyour hero.",
@@ -619,6 +635,7 @@ var parseCardsText = {
 		"goldenImage": "AT_013e.gif",
 		"id": "AT_013e",
 		"name": "Power Word: Glory",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "When this attacks, restore 4 Health to the hero of the player who buffed it.",
 		"type": "Enchantment"
@@ -636,6 +653,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "AT_014",
 		"name": "Shadowfiend",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Whenever you draw a card, reduce its Cost by (1).",
@@ -647,6 +665,7 @@ var parseCardsText = {
 		"goldenImage": "AT_014e.gif",
 		"id": "AT_014e",
 		"name": "Shadowfiended",
+		"playerClass": "Priest",
 		"set": "Tgt",
 		"text": "Costs (1) less.",
 		"type": "Enchantment"
@@ -662,6 +681,7 @@ var parseCardsText = {
 		"goldenImage": "AT_015.gif",
 		"id": "AT_015",
 		"name": "Convert",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "Put a copy of an enemy minion into your hand.",
@@ -678,6 +698,7 @@ var parseCardsText = {
 		"goldenImage": "AT_016.gif",
 		"id": "AT_016",
 		"name": "Confuse",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Swap the Attack and Health of all minions.",
@@ -689,6 +710,7 @@ var parseCardsText = {
 		"goldenImage": "AT_016e.gif",
 		"id": "AT_016e",
 		"name": "Confused",
+		"playerClass": "Priest",
 		"set": "Tgt",
 		"text": "Swapped Attack and Health.",
 		"type": "Enchantment"
@@ -709,6 +731,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Twilight Guardian",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Epic",
 		"referencedTags": [
@@ -724,6 +747,7 @@ var parseCardsText = {
 		"goldenImage": "AT_017e.gif",
 		"id": "AT_017e",
 		"name": "Twilight's Embrace",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+1 Attack and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -745,6 +769,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Confessor Paletress",
+		"playerClass": "Priest",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Summon a random <b>Legendary</b> minion.",
@@ -766,6 +791,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Dreadsteed",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Epic",
 		"set": "Tgt",
@@ -778,6 +804,7 @@ var parseCardsText = {
 		"goldenImage": "AT_019e.gif",
 		"id": "AT_019e",
 		"name": "Dreadsteed",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Summon a Dreadsteed at the end of the turn.",
 		"type": "Enchantment"
@@ -795,6 +822,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "AT_020",
 		"name": "Fearsome Doomguard",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -813,6 +841,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "AT_021",
 		"name": "Tiny Knight of Evil",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Rare",
 		"set": "Tgt",
@@ -825,6 +854,7 @@ var parseCardsText = {
 		"goldenImage": "AT_021e.gif",
 		"id": "AT_021e",
 		"name": "Felrage",
+		"playerClass": "Warlock",
 		"set": "Tgt",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -843,6 +873,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Fist of Jaraxxus",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "When you play or discard this, deal $4 damage to a random enemy.",
@@ -864,6 +895,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Void Crusher",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Rare",
 		"set": "Tgt",
@@ -881,6 +913,7 @@ var parseCardsText = {
 		"goldenImage": "AT_024.gif",
 		"id": "AT_024",
 		"name": "Demonfuse",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "Give a Demon +3/+3. Give your opponent a Mana Crystal.",
@@ -892,6 +925,7 @@ var parseCardsText = {
 		"goldenImage": "AT_024e.gif",
 		"id": "AT_024e",
 		"name": "Dark Fusion",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+3/+3.",
 		"type": "Enchantment"
@@ -907,6 +941,7 @@ var parseCardsText = {
 		"goldenImage": "AT_025.gif",
 		"id": "AT_025",
 		"name": "Dark Bargain",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Destroy 2 random enemy minions. Discard 2 random cards.",
@@ -925,6 +960,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "AT_026",
 		"name": "Wrathguard",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -945,6 +981,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "AT_027",
 		"name": "Wilfred Fizzlebang",
+		"playerClass": "Warlock",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "Cards you draw from your Hero Power cost (0).",
@@ -956,6 +993,7 @@ var parseCardsText = {
 		"goldenImage": "AT_027e.gif",
 		"id": "AT_027e",
 		"name": "Master Summoner",
+		"playerClass": "Warlock",
 		"set": "Tgt",
 		"text": "Costs (0).",
 		"type": "Enchantment"
@@ -976,6 +1014,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Shado-Pan Rider",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Combo:</b> Gain +3 Attack.",
@@ -987,6 +1026,7 @@ var parseCardsText = {
 		"goldenImage": "AT_028e.gif",
 		"id": "AT_028e",
 		"name": "Chi Lance",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -1004,6 +1044,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "AT_029",
 		"name": "Buccaneer",
+		"playerClass": "Rogue",
 		"race": "PIRATE",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -1016,6 +1057,7 @@ var parseCardsText = {
 		"goldenImage": "AT_029e.gif",
 		"id": "AT_029e",
 		"name": "Extra Stabby",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+1 Attack",
 		"type": "Enchantment"
@@ -1036,6 +1078,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Undercity Valiant",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Combo:</b> Deal 1 damage.",
@@ -1054,6 +1097,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "AT_031",
 		"name": "Cutpurse",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "Whenever this minion attacks a hero, add the Coin to your hand.",
@@ -1075,6 +1119,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shady Dealer",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> If you have a Pirate, gain +1/+1.",
@@ -1086,6 +1131,7 @@ var parseCardsText = {
 		"goldenImage": "AT_032e.gif",
 		"id": "AT_032e",
 		"name": "Shady Deals",
+		"playerClass": "Rogue",
 		"set": "Tgt",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -1101,6 +1147,7 @@ var parseCardsText = {
 		"goldenImage": "AT_033.gif",
 		"id": "AT_033",
 		"name": "Burgle",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "Add 2 random class cards to your hand <i>(from your opponent's class)</i>.",
@@ -1119,6 +1166,7 @@ var parseCardsText = {
 		"goldenImage": "AT_034.gif",
 		"id": "AT_034",
 		"name": "Poisoned Blade",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Your Hero Power gives this weapon +1 Attack instead of replacing it.",
@@ -1130,6 +1178,7 @@ var parseCardsText = {
 		"goldenImage": "AT_034e.gif",
 		"id": "AT_034e",
 		"name": "Laced",
+		"playerClass": "Rogue",
 		"set": "Tgt",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -1145,6 +1194,7 @@ var parseCardsText = {
 		"goldenImage": "AT_035.gif",
 		"id": "AT_035",
 		"name": "Beneath the Grounds",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Shuffle 3 Ambushes into your opponent's deck. When drawn, you summon a 4/4 Nerubian.",
@@ -1161,6 +1211,7 @@ var parseCardsText = {
 			"TOPDECK"
 		],
 		"name": "Nerubian Ambush!",
+		"playerClass": "Rogue",
 		"set": "Tgt",
 		"text": "Summon a 4/4 Nerubian for your opponent. Draw a card. Cast this when drawn.",
 		"type": "Spell"
@@ -1182,6 +1233,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Anub'arak",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Deathrattle:</b> Return this to your hand and summon a 4/4 Nerubian.",
@@ -1197,6 +1249,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "AT_036t",
 		"name": "Nerubian",
+		"playerClass": "Rogue",
 		"set": "Tgt",
 		"type": "Minion"
 	},
@@ -1214,6 +1267,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Living Roots",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Choose One -</b> Deal $2 damage; or Summon two 1/1 Saplings.",
@@ -1227,6 +1281,7 @@ var parseCardsText = {
 		"goldenImage": "AT_037a.gif",
 		"id": "AT_037a",
 		"name": "Living Roots",
+		"playerClass": "Druid",
 		"set": "Tgt",
 		"text": "Deal $2 damage.",
 		"type": "Spell"
@@ -1239,6 +1294,7 @@ var parseCardsText = {
 		"goldenImage": "AT_037b.gif",
 		"id": "AT_037b",
 		"name": "Living Roots",
+		"playerClass": "Druid",
 		"set": "Tgt",
 		"text": "Summon two 1/1 Saplings.",
 		"type": "Spell"
@@ -1253,6 +1309,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "AT_037t",
 		"name": "Sapling",
+		"playerClass": "Druid",
 		"set": "Tgt",
 		"type": "Minion"
 	},
@@ -1273,6 +1330,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Darnassus Aspirant",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Gain an empty Mana Crystal.\n<b>Deathrattle:</b> Lose a Mana Crystal.",
@@ -1294,6 +1352,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Savage Combatant",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Tgt",
@@ -1309,6 +1368,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Savage",
+		"playerClass": "Druid",
 		"set": "Tgt",
 		"text": "+2 Attack this turn.",
 		"type": "Enchantment"
@@ -1329,6 +1389,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Wildwalker",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Give a friendly Beast +3 Health.",
@@ -1340,6 +1401,7 @@ var parseCardsText = {
 		"goldenImage": "AT_040e.gif",
 		"id": "AT_040e",
 		"name": "Kindred Spirit",
+		"playerClass": "Druid",
 		"set": "Tgt",
 		"text": "+3 Health.",
 		"type": "Enchantment"
@@ -1357,6 +1419,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "AT_041",
 		"name": "Knight of the Wild",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "Whenever you summon a Beast, reduce the Cost of this card by (1).",
@@ -1368,6 +1431,7 @@ var parseCardsText = {
 		"goldenImage": "AT_041e.gif",
 		"id": "AT_041e",
 		"name": "Call of the Wild",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Cost reduced.",
 		"type": "Enchantment"
@@ -1388,6 +1452,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Druid of the Saber",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"CHARGE",
@@ -1405,6 +1470,7 @@ var parseCardsText = {
 		"goldenImage": "AT_042a.gif",
 		"id": "AT_042a",
 		"name": "Lion Form",
+		"playerClass": "Druid",
 		"set": "Tgt",
 		"text": "<b>Charge</b>",
 		"type": "Spell"
@@ -1417,6 +1483,7 @@ var parseCardsText = {
 		"goldenImage": "AT_042b.gif",
 		"id": "AT_042b",
 		"name": "Panther Form",
+		"playerClass": "Druid",
 		"set": "Tgt",
 		"text": "+1/+1 and <b>Stealth</b>",
 		"type": "Spell"
@@ -1434,6 +1501,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Sabertooth Lion",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -1453,6 +1521,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Sabertooth Panther",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -1470,6 +1539,7 @@ var parseCardsText = {
 		"goldenImage": "AT_043.gif",
 		"id": "AT_043",
 		"name": "Astral Communion",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Gain 10 Mana Crystals. Discard your hand.",
@@ -1486,6 +1556,7 @@ var parseCardsText = {
 		"goldenImage": "AT_044.gif",
 		"id": "AT_044",
 		"name": "Mulch",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Destroy a minion.\nAdd a random minion to your opponent's hand.",
@@ -1508,6 +1579,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Aviana",
+		"playerClass": "Druid",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "Your minions cost (1).",
@@ -1519,6 +1591,7 @@ var parseCardsText = {
 		"goldenImage": "AT_045e.gif",
 		"id": "AT_045e",
 		"name": "Empowering Mist",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -1529,6 +1602,7 @@ var parseCardsText = {
 		"goldenImage": "AT_045ee.gif",
 		"id": "AT_045ee",
 		"name": "Mistcaller Deck Ench",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"type": "Enchantment"
 	},
@@ -1548,6 +1622,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tuskarr Totemic",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Summon a random basic Totem.",
@@ -1569,6 +1644,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Draenei Totemcarver",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Gain +1/+1 for each friendly Totem.",
@@ -1580,6 +1656,7 @@ var parseCardsText = {
 		"goldenImage": "AT_047e.gif",
 		"id": "AT_047e",
 		"name": "Experienced",
+		"playerClass": "Shaman",
 		"set": "Tgt",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -1595,6 +1672,7 @@ var parseCardsText = {
 		"goldenImage": "AT_048.gif",
 		"id": "AT_048",
 		"name": "Healing Wave",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "Restore #7 Health. Reveal a minion in each deck. If yours costs more, Restore #14 instead.",
@@ -1616,6 +1694,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Thunder Bluff Valiant",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Give your Totems +2 Attack.",
@@ -1627,6 +1706,7 @@ var parseCardsText = {
 		"goldenImage": "AT_049e.gif",
 		"id": "AT_049e",
 		"name": "Power of the Bluff",
+		"playerClass": "Shaman",
 		"set": "Tgt",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -1647,6 +1727,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Charged Hammer",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "<b>Deathrattle:</b> Your Hero Power becomes 'Deal 2 damage.'",
@@ -1660,6 +1741,7 @@ var parseCardsText = {
 		"goldenImage": "AT_050t.gif",
 		"id": "AT_050t",
 		"name": "Lightning Jolt",
+		"playerClass": "Shaman",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nDeal $2 damage.",
 		"type": "Hero_power"
@@ -1675,6 +1757,7 @@ var parseCardsText = {
 		"goldenImage": "AT_051.gif",
 		"id": "AT_051",
 		"name": "Elemental Destruction",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Deal $4-$5 damage to all minions. <b>Overload:</b> (5)",
@@ -1697,6 +1780,7 @@ var parseCardsText = {
 		],
 		"name": "Totem Golem",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"race": "TOTEM",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -1718,6 +1802,7 @@ var parseCardsText = {
 		],
 		"name": "Ancestral Knowledge",
 		"overload": 2,
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "Draw 2 cards. <b>Overload:</b> (2)",
@@ -1740,6 +1825,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "The Mistcaller",
+		"playerClass": "Shaman",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Give all minions in your hand and deck +1/+1.",
@@ -1756,6 +1842,7 @@ var parseCardsText = {
 		"goldenImage": "AT_055.gif",
 		"id": "AT_055",
 		"name": "Flash Heal",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "Restore #5 Health.",
@@ -1772,6 +1859,7 @@ var parseCardsText = {
 		"goldenImage": "AT_056.gif",
 		"id": "AT_056",
 		"name": "Powershot",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "Deal $2 damage to a minion and the minions next to it.",
@@ -1793,6 +1881,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Stablemaster",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"referencedTags": [
 			"IMMUNE"
@@ -1810,6 +1899,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Groomed",
+		"playerClass": "Hunter",
 		"set": "Tgt",
 		"text": "<b>Immune</b> this turn.",
 		"type": "Enchantment"
@@ -1830,6 +1920,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "King's Elekk",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -1852,6 +1943,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Brave Archer",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> If your hand is empty, deal 2 damage to the enemy hero.",
@@ -1871,6 +1963,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Bear Trap",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"referencedTags": [
 			"TAUNT"
@@ -1890,6 +1983,7 @@ var parseCardsText = {
 		"goldenImage": "AT_061.gif",
 		"id": "AT_061",
 		"name": "Lock and Load",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Each time you cast a spell this turn, add a random Hunter card to your hand.",
@@ -1904,6 +1998,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Lock and Load",
+		"playerClass": "Hunter",
 		"set": "Tgt",
 		"type": "Enchantment"
 	},
@@ -1918,6 +2013,7 @@ var parseCardsText = {
 		"goldenImage": "AT_062.gif",
 		"id": "AT_062",
 		"name": "Ball of Spiders",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "Summon three 1/1 Webspinners.",
@@ -1937,6 +2033,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "AT_063",
 		"name": "Acidmaw",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Tgt",
@@ -1957,6 +2054,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "AT_063t",
 		"name": "Dreadscale",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Tgt",
@@ -1974,6 +2072,7 @@ var parseCardsText = {
 		"goldenImage": "AT_064.gif",
 		"id": "AT_064",
 		"name": "Bash",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "Deal $3 damage.\nGain 3 Armor.",
@@ -1995,6 +2094,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "King's Defender",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -2009,6 +2109,7 @@ var parseCardsText = {
 		"goldenImage": "AT_065e.gif",
 		"id": "AT_065e",
 		"name": "King's Defender",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+1 Durability.",
 		"type": "Enchantment"
@@ -2029,6 +2130,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Orgrimmar Aspirant",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Give your weapon +1 Attack.",
@@ -2040,6 +2142,7 @@ var parseCardsText = {
 		"goldenImage": "AT_066e.gif",
 		"id": "AT_066e",
 		"name": "Forges of Orgrimmar",
+		"playerClass": "Warrior",
 		"set": "Tgt",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -2057,6 +2160,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "AT_067",
 		"name": "Magnataur Alpha",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Also damages the minions next to whomever\nhe attacks.",
@@ -2073,6 +2177,7 @@ var parseCardsText = {
 		"goldenImage": "AT_068.gif",
 		"id": "AT_068",
 		"name": "Bolster",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"referencedTags": [
 			"TAUNT"
@@ -2087,6 +2192,7 @@ var parseCardsText = {
 		"goldenImage": "AT_068e.gif",
 		"id": "AT_068e",
 		"name": "Bolstered",
+		"playerClass": "Warrior",
 		"set": "Tgt",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -2108,6 +2214,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Sparring Partner",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Give a\nminion <b>Taunt</b>.",
@@ -2119,6 +2226,7 @@ var parseCardsText = {
 		"goldenImage": "AT_069e.gif",
 		"id": "AT_069e",
 		"name": "Training Complete",
+		"playerClass": "Warrior",
 		"set": "Tgt",
 		"text": "<b>Taunt</b>",
 		"type": "Enchantment"
@@ -2140,6 +2248,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Skycap'n Kragg",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Legendary",
 		"set": "Tgt",
@@ -2162,6 +2271,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Alexstrasza's Champion",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"referencedTags": [
 			"CHARGE"
@@ -2176,6 +2286,7 @@ var parseCardsText = {
 		"goldenImage": "AT_071e.gif",
 		"id": "AT_071e",
 		"name": "Alexstrasza's Boon",
+		"playerClass": "Warrior",
 		"set": "Tgt",
 		"text": "+1 Attack and <b>Charge</b>.",
 		"type": "Enchantment"
@@ -2197,6 +2308,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Varian Wrynn",
+		"playerClass": "Warrior",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Draw 3 cards.\nPut any minions you drew directly into the battlefield.",
@@ -2216,6 +2328,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Competitive Spirit",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Secret:</b> When your turn starts, give your minions +1/+1.",
@@ -2227,6 +2340,7 @@ var parseCardsText = {
 		"goldenImage": "AT_073e.gif",
 		"id": "AT_073e",
 		"name": "Competitive Spirit",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -2242,6 +2356,7 @@ var parseCardsText = {
 		"goldenImage": "AT_074.gif",
 		"id": "AT_074",
 		"name": "Seal of Champions",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -2256,6 +2371,7 @@ var parseCardsText = {
 		"goldenImage": "AT_074e2.gif",
 		"id": "AT_074e2",
 		"name": "Seal of Champions",
+		"playerClass": "Paladin",
 		"set": "Tgt",
 		"text": "+3 Attack and <b>Divine Shield</b>.",
 		"type": "Enchantment"
@@ -2276,6 +2392,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Warhorse Trainer",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "Your Silver Hand Recruits have +1 Attack.",
@@ -2287,6 +2404,7 @@ var parseCardsText = {
 		"goldenImage": "AT_075e.gif",
 		"id": "AT_075e",
 		"name": "Might of the Hostler",
+		"playerClass": "Paladin",
 		"set": "Tgt",
 		"text": "Warhorse Trainer is granting this minion +1 Attack.",
 		"type": "Enchantment"
@@ -2307,6 +2425,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Murloc Knight",
+		"playerClass": "Paladin",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -2329,6 +2448,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Argent Lance",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, +1 Durability.",
@@ -2340,6 +2460,7 @@ var parseCardsText = {
 		"goldenImage": "AT_077e.gif",
 		"id": "AT_077e",
 		"name": "Extra Poke",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+1 Durability.",
 		"type": "Enchantment"
@@ -2355,6 +2476,7 @@ var parseCardsText = {
 		"goldenImage": "AT_078.gif",
 		"id": "AT_078",
 		"name": "Enter the Coliseum",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Destroy all minions except each player's highest Attack minion.",
@@ -2376,6 +2498,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Mysterious Challenger",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"referencedTags": [
 			"SECRET"
@@ -2397,6 +2520,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "AT_080",
 		"name": "Garrison Commander",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "You can use your Hero Power twice a turn.",
@@ -2419,6 +2543,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Eadric the Pure",
+		"playerClass": "Paladin",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Change all enemy minions'\nAttack to 1.",
@@ -2430,6 +2555,7 @@ var parseCardsText = {
 		"goldenImage": "AT_081e.gif",
 		"id": "AT_081e",
 		"name": "Purified",
+		"playerClass": "Paladin",
 		"set": "Tgt",
 		"text": "Attack changed to 1.",
 		"type": "Enchantment"
@@ -2450,6 +2576,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Lowly Squire",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Gain +1 Attack.",
@@ -2461,6 +2588,7 @@ var parseCardsText = {
 		"goldenImage": "AT_082e.gif",
 		"id": "AT_082e",
 		"name": "Training",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -2481,6 +2609,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Dragonhawk Rider",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"WINDFURY"
@@ -2498,6 +2627,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Dragonhawkery",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "<b>Windfury</b> this turn.",
 		"type": "Enchantment"
@@ -2518,6 +2648,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Lance Carrier",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Give a friendly minion +2 Attack.",
@@ -2529,6 +2660,7 @@ var parseCardsText = {
 		"goldenImage": "AT_084e.gif",
 		"id": "AT_084e",
 		"name": "Equipped",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+2 Attack.",
 		"type": "Enchantment"
@@ -2549,6 +2681,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Maiden of the Lake",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "Your Hero Power costs (1).",
@@ -2570,6 +2703,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Saboteur",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Your opponent's Hero Power costs (5) more next turn.",
@@ -2581,6 +2715,7 @@ var parseCardsText = {
 		"goldenImage": "AT_086e.gif",
 		"id": "AT_086e",
 		"name": "Villainy",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Your Hero Power costs (5) more this turn.",
 		"type": "Enchantment"
@@ -2602,6 +2737,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Argent Horserider",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Charge</b>\n<b>Divine Shield</b>",
@@ -2623,6 +2759,7 @@ var parseCardsText = {
 			"FORGETFUL"
 		],
 		"name": "Mogor's Champion",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "50% chance to attack the wrong enemy.",
@@ -2644,6 +2781,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Boneguard Lieutenant",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Gain +1 Health.",
@@ -2655,6 +2793,7 @@ var parseCardsText = {
 		"goldenImage": "AT_089e.gif",
 		"id": "AT_089e",
 		"name": "Boneguarded",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Increased Health.",
 		"type": "Enchantment"
@@ -2675,6 +2814,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Mukla's Champion",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -2687,6 +2827,7 @@ var parseCardsText = {
 		"goldenImage": "AT_090e.gif",
 		"id": "AT_090e",
 		"name": "Might of the Monkey",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -2707,6 +2848,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Tournament Medic",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Restore 2 Health to your hero.",
@@ -2725,6 +2867,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "AT_092",
 		"name": "Ice Rager",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -2746,6 +2889,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Frigid Snobold",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"spellDamage": 1,
@@ -2768,6 +2912,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Flame Juggler",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Deal 1 damage to a random enemy.",
@@ -2790,6 +2935,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Silent Knight",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Stealth</b>\n<b>Divine Shield</b>",
@@ -2811,6 +2957,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Clockwork Knight",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -2823,6 +2970,7 @@ var parseCardsText = {
 		"goldenImage": "AT_096e.gif",
 		"id": "AT_096e",
 		"name": "Wound Up",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -2843,6 +2991,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Tournament Attendee",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Taunt</b>",
@@ -2864,6 +3013,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Sideshow Spelleater",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Copy your opponent's Hero Power.",
@@ -2885,6 +3035,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Kodorider",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Summon a 3/5 War Kodo.",
@@ -2900,6 +3051,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "AT_099t",
 		"name": "War Kodo",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Tgt",
 		"type": "Minion"
@@ -2920,6 +3072,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Silver Hand Regent",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Summon a 1/1 Silver Hand Recruit.",
@@ -2938,6 +3091,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "AT_101",
 		"name": "Pit Fighter",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"type": "Minion"
@@ -2955,6 +3109,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "AT_102",
 		"name": "Captured Jormungar",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -2976,6 +3131,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "North Sea Kraken",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Deal 4 damage.",
@@ -2997,6 +3153,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tuskarr Jouster",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, restore 7 Health to your hero.",
@@ -3018,6 +3175,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Injured Kvaldir",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Deal 3 damage to this minion.",
@@ -3039,6 +3197,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Light's Champion",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SILENCE"
@@ -3063,6 +3222,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Armored Warhorse",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -3089,6 +3249,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Argent Watchman",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "Can't attack.\n<b>Inspire:</b> Can attack as normal this turn.",
@@ -3103,6 +3264,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Inspired",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Can attack this turn.",
 		"type": "Enchantment"
@@ -3123,6 +3285,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Coliseum Manager",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Return this minion to your hand.",
@@ -3144,6 +3307,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Refreshment Vendor",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Restore 4 Health to each hero.",
@@ -3165,6 +3329,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Master Jouster",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DIVINE_SHIELD",
@@ -3190,6 +3355,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Recruiter",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Add a 2/2 Squire to your hand.",
@@ -3211,6 +3377,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Evil Heckler",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Taunt</b>",
@@ -3232,6 +3399,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fencing Coach",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> The next time you use your Hero Power, it costs (2) less.",
@@ -3243,6 +3411,7 @@ var parseCardsText = {
 		"goldenImage": "AT_115e.gif",
 		"id": "AT_115e",
 		"name": "Fencing Practice",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Your Hero Power costs (2) less.",
 		"type": "Enchantment"
@@ -3263,6 +3432,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Wyrmrest Agent",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -3277,6 +3447,7 @@ var parseCardsText = {
 		"goldenImage": "AT_116e.gif",
 		"id": "AT_116e",
 		"name": "Bring it on!",
+		"playerClass": "Priest",
 		"set": "Tgt",
 		"text": "+1 Attack and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -3297,6 +3468,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Master of Ceremonies",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> If you have a minion with <b>Spell Damage</b>, gain +2/+2.",
@@ -3308,6 +3480,7 @@ var parseCardsText = {
 		"goldenImage": "AT_117e.gif",
 		"id": "AT_117e",
 		"name": "Ceremony",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -3328,6 +3501,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Grand Crusader",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Add a random Paladin card to your hand.",
@@ -3349,6 +3523,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Kvaldir Raider",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Gain +2/+2.",
@@ -3360,6 +3535,7 @@ var parseCardsText = {
 		"goldenImage": "AT_119e.gif",
 		"id": "AT_119e",
 		"name": "Inspired",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -3377,6 +3553,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "AT_120",
 		"name": "Frost Giant",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "Costs (1) less for each time you used your Hero Power this game.",
@@ -3395,6 +3572,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "AT_121",
 		"name": "Crowd Favorite",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"BATTLECRY"
@@ -3409,6 +3587,7 @@ var parseCardsText = {
 		"goldenImage": "AT_121e.gif",
 		"id": "AT_121e",
 		"name": "Huge Ego",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -3430,6 +3609,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gormok the Impaler",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> If you have at least 4 other minions, deal 4 damage.",
@@ -3453,6 +3633,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Chillmaw",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Tgt",
@@ -3473,6 +3654,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "AT_124",
 		"name": "Bolf Ramshield",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "Whenever your hero takes damage, this minion takes it instead.",
@@ -3495,6 +3677,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Icehowl",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Charge</b>\nCan't attack heroes.",
@@ -3517,6 +3700,7 @@ var parseCardsText = {
 			"INSPIRE"
 		],
 		"name": "Nexus-Champion Saraad",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Inspire:</b> Add a random spell to your hand.",
@@ -3539,6 +3723,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "The Skeleton Knight",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Deathrattle:</b> Reveal a minion in each deck. If yours costs more, return this to your hand.",
@@ -3558,6 +3743,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "AT_129",
 		"name": "Fjola Lightbane",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -3582,6 +3768,7 @@ var parseCardsText = {
 			"TOPDECK"
 		],
 		"name": "Sea Reaver",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Tgt",
 		"text": "When you draw this, deal 1 damage to your minions.",
@@ -3601,6 +3788,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "AT_131",
 		"name": "Eydis Darkbane",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "Whenever <b>you</b> target this minion with a spell, deal 3 damage to a random enemy.",
@@ -3623,6 +3811,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Justicar Trueheart",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Replace your starting Hero Power with a better one.",
@@ -3636,6 +3825,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_DRUID.gif",
 		"id": "AT_132_DRUID",
 		"name": "Dire Shapeshift",
+		"playerClass": "Druid",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nGain 2 Armor and +2 Attack this turn.",
 		"type": "Hero_power"
@@ -3649,6 +3839,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Dire Claws",
+		"playerClass": "Druid",
 		"set": "Tgt",
 		"text": "+2 Attack this turn.",
 		"type": "Enchantment"
@@ -3661,6 +3852,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_HUNTER.gif",
 		"id": "AT_132_HUNTER",
 		"name": "Ballista Shot",
+		"playerClass": "Hunter",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nDeal $3 damage to the enemy hero.",
 		"type": "Hero_power"
@@ -3673,6 +3865,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_MAGE.gif",
 		"id": "AT_132_MAGE",
 		"name": "Fireblast Rank 2",
+		"playerClass": "Mage",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nDeal $2 damage.",
 		"type": "Hero_power"
@@ -3685,6 +3878,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_PALADIN.gif",
 		"id": "AT_132_PALADIN",
 		"name": "The Silver Hand",
+		"playerClass": "Paladin",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
 		"type": "Hero_power"
@@ -3697,6 +3891,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_PRIEST.gif",
 		"id": "AT_132_PRIEST",
 		"name": "Heal",
+		"playerClass": "Priest",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nRestore #4 Health.",
 		"type": "Hero_power"
@@ -3709,6 +3904,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_ROGUE.gif",
 		"id": "AT_132_ROGUE",
 		"name": "Poisoned Daggers",
+		"playerClass": "Rogue",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nEquip a 2/2 Weapon.",
 		"type": "Hero_power"
@@ -3721,6 +3917,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_ROGUE_H1.gif",
 		"id": "AT_132_ROGUE_H1",
 		"name": "Poisoned Daggers",
+		"playerClass": "Rogue",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nEquip a 2/2 Weapon.",
 		"type": "Hero_power"
@@ -3735,6 +3932,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_ROGUEt.gif",
 		"id": "AT_132_ROGUEt",
 		"name": "Poisoned Dagger",
+		"playerClass": "Rogue",
 		"set": "Tgt",
 		"type": "Weapon"
 	},
@@ -3748,6 +3946,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_ROGUEt_H1.gif",
 		"id": "AT_132_ROGUEt_H1",
 		"name": "Poisoned Dagger",
+		"playerClass": "Rogue",
 		"set": "Hero_skins",
 		"type": "Weapon"
 	},
@@ -3759,6 +3958,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_SHAMAN.gif",
 		"id": "AT_132_SHAMAN",
 		"name": "Totemic Slam",
+		"playerClass": "Shaman",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nSummon a Totem of your choice.",
 		"type": "Hero_power"
@@ -3773,6 +3973,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "AT_132_SHAMANa",
 		"name": "Healing Totem",
+		"playerClass": "Shaman",
 		"set": "Tgt",
 		"text": "At the end of your turn, restore 1 Health to all friendly minions.",
 		"type": "Minion"
@@ -3787,6 +3988,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "AT_132_SHAMANb",
 		"name": "Searing Totem",
+		"playerClass": "Shaman",
 		"set": "Tgt",
 		"type": "Minion"
 	},
@@ -3800,6 +4002,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "AT_132_SHAMANc",
 		"name": "Stoneclaw Totem",
+		"playerClass": "Shaman",
 		"set": "Tgt",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -3814,6 +4017,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "AT_132_SHAMANd",
 		"name": "Wrath of Air Totem",
+		"playerClass": "Shaman",
 		"set": "Tgt",
 		"text": "<b>Spell Damage +1</b>",
 		"type": "Minion"
@@ -3826,6 +4030,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_WARLOCK.gif",
 		"id": "AT_132_WARLOCK",
 		"name": "Soul Tap",
+		"playerClass": "Warlock",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nDraw a card.",
 		"type": "Hero_power"
@@ -3838,6 +4043,7 @@ var parseCardsText = {
 		"goldenImage": "AT_132_WARRIOR.gif",
 		"id": "AT_132_WARRIOR",
 		"name": "Tank Up!",
+		"playerClass": "Warrior",
 		"set": "Tgt",
 		"text": "<b>Hero Power</b>\nGain 4 Armor.",
 		"type": "Hero_power"
@@ -3858,6 +4064,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gadgetzan Jouster",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tgt",
 		"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, gain +1/+1.",
@@ -3869,6 +4076,7 @@ var parseCardsText = {
 		"goldenImage": "AT_133e.gif",
 		"id": "AT_133e",
 		"name": "Victory!",
+		"playerClass": "Neutral",
 		"set": "Tgt",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -3880,6 +4088,7 @@ var parseCardsText = {
 		"dbfId": 49225,
 		"id": "BCON_001",
 		"name": "Deadeye",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "For the rest of the game,\nyour Hero Power can target minions.",
@@ -3890,6 +4099,7 @@ var parseCardsText = {
 		"dbfId": 50134,
 		"id": "BCON_001e",
 		"name": "Deadeye",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Your Hero Power can target minions.",
 		"type": "Enchantment"
@@ -3901,6 +4111,7 @@ var parseCardsText = {
 		"dbfId": 49228,
 		"id": "BCON_004",
 		"name": "Polymorph: ???",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Choose a minion. <b>Discover</b> a new minion to transform it into.",
@@ -3913,6 +4124,7 @@ var parseCardsText = {
 		"dbfId": 49231,
 		"id": "BCON_008",
 		"name": "Nature's Champion",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Return a friendly minion to your hand and give it +5/+5.",
@@ -3923,6 +4135,7 @@ var parseCardsText = {
 		"dbfId": 50131,
 		"id": "BCON_008e",
 		"name": "Nature's Champion",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "+5/+5.",
 		"type": "Enchantment"
@@ -3937,6 +4150,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Hand of Salvation",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Secret:</b> When your second minion dies in a turn, return it to life.",
@@ -3949,6 +4163,7 @@ var parseCardsText = {
 		"dbfId": 49240,
 		"id": "BCON_015",
 		"name": "Generous Spirit",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "[x]Choose a friendly minion.\nGive it to your opponent\nand draw 3 cards.",
@@ -3961,6 +4176,7 @@ var parseCardsText = {
 		"dbfId": 49241,
 		"id": "BCON_016",
 		"name": "Smoke Bomb",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give a minion <b>Stealth</b> until your next turn. Draw a card.",
@@ -3971,6 +4187,7 @@ var parseCardsText = {
 		"dbfId": 50133,
 		"id": "BCON_016e",
 		"name": "Smoke Bombed",
+		"playerClass": "Rogue",
 		"set": "Core",
 		"text": "Stealthed until your next turn.",
 		"type": "Enchantment"
@@ -3986,6 +4203,7 @@ var parseCardsText = {
 		],
 		"name": "Crackling Doom",
 		"overload": 10,
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal 12 damage to all minions.\n<b>Overload</b>: (10)",
@@ -3998,6 +4216,7 @@ var parseCardsText = {
 		"dbfId": 49249,
 		"id": "BCON_024",
 		"name": "Bottled Madness",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Replace your hand with random Demons.",
@@ -4012,6 +4231,7 @@ var parseCardsText = {
 		"durability": 3,
 		"id": "BCON_026",
 		"name": "Blazing Longsword",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Also damages minions next to whomever your hero attacks.",
@@ -4028,6 +4248,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_001.gif",
 		"id": "BRM_001",
 		"name": "Solemn Vigil",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Brm",
 		"text": "Draw 2 cards. Costs (1) less for each minion that died this turn.",
@@ -4042,6 +4263,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Melt",
+		"playerClass": "Priest",
 		"set": "Brm",
 		"text": "Attack changed to 0 this turn.",
 		"type": "Enchantment"
@@ -4059,6 +4281,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "BRM_002",
 		"name": "Flamewaker",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Brm",
 		"text": "After you cast a spell, deal 2 damage randomly split among all enemies.",
@@ -4075,6 +4298,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_003.gif",
 		"id": "BRM_003",
 		"name": "Dragon's Breath",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Brm",
 		"text": "Deal $4 damage. Costs (1) less for each minion that died this turn.",
@@ -4089,6 +4313,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Dragon's Might",
+		"playerClass": "Mage",
 		"set": "Brm",
 		"text": "Costs (3) less this turn.",
 		"type": "Enchantment"
@@ -4109,6 +4334,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Twilight Whelp",
+		"playerClass": "Priest",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4121,6 +4347,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_004e.gif",
 		"id": "BRM_004e",
 		"name": "Twilight Endurance",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Increased Health.",
 		"type": "Enchantment"
@@ -4135,6 +4362,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "BRM_004t",
 		"name": "Whelp",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Minion"
 	},
@@ -4149,6 +4377,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_005.gif",
 		"id": "BRM_005",
 		"name": "Demonwrath",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Brm",
 		"text": "[x]Deal $2 damage to all\nminions except Demons.",
@@ -4167,6 +4396,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "BRM_006",
 		"name": "Imp Gang Boss",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4183,6 +4413,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "BRM_006t",
 		"name": "Imp",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Brm",
 		"type": "Minion"
@@ -4198,6 +4429,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_007.gif",
 		"id": "BRM_007",
 		"name": "Gang Up",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Brm",
 		"text": "Choose a minion. Shuffle 3 copies of it into your deck.",
@@ -4219,6 +4451,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dark Iron Skulker",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Brm",
 		"text": "<b>Battlecry:</b> Deal 2 damage to all undamaged enemy minions.",
@@ -4240,6 +4473,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Volcanic Lumberer",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Brm",
 		"text": "<b>Taunt</b>\nCosts (1) less for each minion that died this turn.",
@@ -4261,6 +4495,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Druid of the Flame",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Brm",
 		"text": "<b>Choose One -</b> Transform into a 5/2 minion; or a 2/5 minion.",
@@ -4274,6 +4509,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_010a.gif",
 		"id": "BRM_010a",
 		"name": "Firecat Form",
+		"playerClass": "Druid",
 		"set": "Brm",
 		"text": "Transform into a 5/2 minion.",
 		"type": "Spell"
@@ -4286,6 +4522,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_010b.gif",
 		"id": "BRM_010b",
 		"name": "Fire Hawk Form",
+		"playerClass": "Druid",
 		"set": "Brm",
 		"text": "Transform into a 2/5 minion.",
 		"type": "Spell"
@@ -4301,6 +4538,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "BRM_010t",
 		"name": "Druid of the Flame",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4317,6 +4555,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "BRM_010t2",
 		"name": "Druid of the Flame",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4333,6 +4572,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_011.gif",
 		"id": "BRM_011",
 		"name": "Lava Shock",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"referencedTags": [
 			"OVERLOAD"
@@ -4350,6 +4590,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Lava Shock",
+		"playerClass": "Shaman",
 		"set": "Brm",
 		"text": "Cards you play this turn don't cause <b>Overload</b>.",
 		"type": "Enchantment"
@@ -4372,6 +4613,7 @@ var parseCardsText = {
 		],
 		"name": "Fireguard Destroyer",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4384,6 +4626,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_012e.gif",
 		"id": "BRM_012e",
 		"name": "On Fire!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -4399,6 +4642,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_013.gif",
 		"id": "BRM_013",
 		"name": "Quick Shot",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Brm",
 		"text": "Deal $3 damage.\nIf your hand is empty, draw a card.",
@@ -4420,6 +4664,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Core Rager",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Brm",
@@ -4432,6 +4677,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_014e.gif",
 		"id": "BRM_014e",
 		"name": "Power Rager",
+		"playerClass": "Hunter",
 		"set": "Brm",
 		"text": "+3/+3",
 		"type": "Enchantment"
@@ -4447,6 +4693,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_015.gif",
 		"id": "BRM_015",
 		"name": "Revenge",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Brm",
 		"text": "Deal $1 damage to all minions. If you have 12 or less Health, deal $3 damage instead.",
@@ -4465,6 +4712,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "BRM_016",
 		"name": "Axe Flinger",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Brm",
 		"text": "Whenever this minion takes damage, deal 2 damage to the enemy hero.",
@@ -4481,6 +4729,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_017.gif",
 		"id": "BRM_017",
 		"name": "Resurrect",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Brm",
 		"text": "Summon a random friendly minion that died this game.",
@@ -4502,6 +4751,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dragon Consort",
+		"playerClass": "Paladin",
 		"race": "DRAGON",
 		"rarity": "Rare",
 		"set": "Brm",
@@ -4514,6 +4764,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_018e.gif",
 		"id": "BRM_018e",
 		"name": "Unchained!",
+		"playerClass": "Paladin",
 		"set": "Brm",
 		"text": "Your next Dragon costs (2) less.",
 		"type": "Enchantment"
@@ -4531,6 +4782,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "BRM_019",
 		"name": "Grim Patron",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Brm",
 		"text": "After this minion survives damage, summon another Grim Patron.",
@@ -4549,6 +4801,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "BRM_020",
 		"name": "Dragonkin Sorcerer",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4561,6 +4814,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_020e.gif",
 		"id": "BRM_020e",
 		"name": "Draconic Power",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -4578,6 +4832,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "BRM_022",
 		"name": "Dragon Egg",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Brm",
 		"text": "Whenever this minion takes damage, summon a 2/1 Whelp.",
@@ -4594,6 +4849,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "BRM_022t",
 		"name": "Black Whelp",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4615,6 +4871,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Drakonid Crusher",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4627,6 +4884,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_024e.gif",
 		"id": "BRM_024e",
 		"name": "Large Talons",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "+3/+3.",
 		"type": "Enchantment"
@@ -4644,6 +4902,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "BRM_025",
 		"name": "Volcanic Drake",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4666,6 +4925,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Hungry Dragon",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Brm",
@@ -4689,6 +4949,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Majordomo Executus",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Brm",
 		"text": "<b>Deathrattle:</b> Replace your hero with Ragnaros, the Firelord.",
@@ -4702,6 +4963,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "BRM_027h",
 		"name": "Ragnaros the Firelord",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -4713,6 +4975,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_027p.gif",
 		"id": "BRM_027p",
 		"name": "DIE, INSECT!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nDeal $8 damage to a random enemy.",
 		"type": "Hero_power"
@@ -4725,6 +4988,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_027pH.gif",
 		"id": "BRM_027pH",
 		"name": "DIE, INSECTS!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nDeal $8 damage to a random enemy. TWICE.",
 		"type": "Hero_power"
@@ -4743,6 +5007,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "BRM_028",
 		"name": "Emperor Thaurissan",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Brm",
 		"text": "At the end of your turn, reduce the Cost of cards in your hand by (1).",
@@ -4754,6 +5019,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_028e.gif",
 		"id": "BRM_028e",
 		"name": "Imperial Favor",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Costs (1) less.",
 		"type": "Enchantment"
@@ -4775,6 +5041,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Rend Blackhand",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Brm",
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, destroy a <b>Legendary</b> minion.",
@@ -4797,6 +5064,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Nefarian",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Brm",
@@ -4811,6 +5079,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_030t.gif",
 		"id": "BRM_030t",
 		"name": "Tail Swipe",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Deal $4 damage.",
 		"type": "Spell"
@@ -4829,6 +5098,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "BRM_031",
 		"name": "Chromaggus",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Brm",
@@ -4851,6 +5121,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Blackwing Technician",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Brm",
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +1/+1.",
@@ -4862,6 +5133,7 @@ var parseCardsText = {
 		"goldenImage": "BRM_033e.gif",
 		"id": "BRM_033e",
 		"name": "Dragon Blood",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "+1/+1",
 		"type": "Enchantment"
@@ -4882,6 +5154,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Blackwing Corruptor",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Brm",
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, deal 3 damage.",
@@ -4898,6 +5171,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Coren Direbrew",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -4912,6 +5186,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Coren Direbrew",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -4926,6 +5201,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Pile On!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nPut a minion from each deck into the battlefield.",
 		"type": "Hero_power"
@@ -4941,6 +5217,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Pile On!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nPut two minions from your deck and one from your opponent's into the battlefield.",
 		"type": "Hero_power"
@@ -4953,6 +5230,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA01_2H_2_TB.gif",
 		"id": "BRMA01_2H_2_TB",
 		"name": "Pile On!!!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nPut a minion from each deck into the battlefield.",
 		"type": "Hero_power"
@@ -4965,6 +5243,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA01_2H_2c_TB.gif",
 		"id": "BRMA01_2H_2c_TB",
 		"name": "Pile On!!!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nPut two minions from your deck and one from your opponent's into the battlefield.",
 		"type": "Spell"
@@ -4979,6 +5258,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "BRMA01_3",
 		"name": "Dark Iron Bouncer",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Always wins Brawls.",
 		"type": "Minion"
@@ -4991,6 +5271,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA01_4.gif",
 		"id": "BRMA01_4",
 		"name": "Get 'em!",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -5011,6 +5292,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Guzzler",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -5023,6 +5305,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA02_1",
 		"name": "High Justice Grimstone",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5034,6 +5317,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA02_1H",
 		"name": "High Justice Grimstone",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5045,6 +5329,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA02_2.gif",
 		"id": "BRMA02_2",
 		"name": "Jeering Crowd",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Spectator with <b>Taunt</b>.",
 		"type": "Hero_power"
@@ -5057,6 +5342,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA02_2_2_TB.gif",
 		"id": "BRMA02_2_2_TB",
 		"name": "Jeering Crowd",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Spectator with <b>Taunt</b>.",
 		"type": "Hero_power"
@@ -5069,6 +5355,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA02_2_2c_TB.gif",
 		"id": "BRMA02_2_2c_TB",
 		"name": "Jeering Crowd",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -5084,6 +5371,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA02_2H.gif",
 		"id": "BRMA02_2H",
 		"name": "Jeering Crowd",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Spectator with <b>Taunt</b>.",
 		"type": "Hero_power"
@@ -5101,6 +5389,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Dark Iron Spectator",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -5113,6 +5402,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA03_1",
 		"name": "Emperor Thaurissan",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5124,6 +5414,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA03_1H",
 		"name": "Emperor Thaurissan",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5135,6 +5426,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA03_2.gif",
 		"id": "BRMA03_2",
 		"name": "Power of the Firelord",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nDeal 30 damage.",
 		"type": "Hero_power"
@@ -5153,6 +5445,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Moira Bronzebeard",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -5174,6 +5467,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Moira Bronzebeard",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -5189,6 +5483,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA04_1",
 		"name": "Garr",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5200,6 +5495,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "BRMA04_1H",
 		"name": "Garr",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5214,6 +5510,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Magma Pulse",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to all minions.",
 		"type": "Hero_power"
@@ -5231,6 +5528,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Firesworn",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Deathrattle:</b> Deal 1 damage to the enemy hero for each Firesworn that died this turn.",
 		"type": "Minion"
@@ -5248,6 +5546,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Firesworn",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Deathrattle:</b> Deal 3 damage to the enemy hero for each Firesworn that died this turn.",
 		"type": "Minion"
@@ -5264,6 +5563,7 @@ var parseCardsText = {
 		],
 		"name": "Rock Out",
 		"overload": 2,
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Summon 3 Firesworn. <b>Overload:</b> (2)",
 		"type": "Spell"
@@ -5280,6 +5580,7 @@ var parseCardsText = {
 		],
 		"name": "Rock Out",
 		"overload": 2,
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Summon 3 Firesworn. <b>Overload:</b> (2)",
 		"type": "Spell"
@@ -5292,6 +5593,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA05_1",
 		"name": "Baron Geddon",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5303,6 +5605,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "BRMA05_1H",
 		"name": "Baron Geddon",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5314,6 +5617,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA05_2.gif",
 		"id": "BRMA05_2",
 		"name": "Ignite Mana",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nDeal 5 damage to the enemy hero if they have any unspent Mana.",
 		"type": "Hero_power"
@@ -5326,6 +5630,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA05_2H.gif",
 		"id": "BRMA05_2H",
 		"name": "Ignite Mana",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nDeal 10 damage to the enemy hero if they have any unspent Mana.",
 		"type": "Hero_power"
@@ -5338,6 +5643,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA05_3.gif",
 		"id": "BRMA05_3",
 		"name": "Living Bomb",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Choose an enemy minion. If it lives until your next turn, deal $5 damage to all enemies.",
 		"type": "Spell"
@@ -5348,6 +5654,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA05_3e.gif",
 		"id": "BRMA05_3e",
 		"name": "Living Bomb",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "On Geddon's turn, deal 5 damage to all of your stuff.",
 		"type": "Enchantment"
@@ -5360,6 +5667,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA05_3H.gif",
 		"id": "BRMA05_3H",
 		"name": "Living Bomb",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Choose an enemy minion. If it lives until your next turn, deal $10 damage to all enemies.",
 		"type": "Spell"
@@ -5370,6 +5678,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA05_3He.gif",
 		"id": "BRMA05_3He",
 		"name": "Living Bomb",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "On Geddon's turn, deal 10 damage to all of your stuff.",
 		"type": "Enchantment"
@@ -5382,6 +5691,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA06_1",
 		"name": "Majordomo Executus",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5393,6 +5703,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA06_1H",
 		"name": "Majordomo Executus",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5404,6 +5715,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA06_2.gif",
 		"id": "BRMA06_2",
 		"name": "The Majordomo",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon a 1/3 Flamewaker Acolyte.",
 		"type": "Hero_power"
@@ -5416,6 +5728,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA06_2H.gif",
 		"id": "BRMA06_2H",
 		"name": "The Majordomo",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon a 3/3 Flamewaker Acolyte.",
 		"type": "Hero_power"
@@ -5428,6 +5741,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA06_2H_TB.gif",
 		"id": "BRMA06_2H_TB",
 		"name": "The Majordomo",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nSummon a 3/3 Flamewaker Acolyte.",
 		"type": "Hero_power"
@@ -5440,6 +5754,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "BRMA06_3",
 		"name": "Ragnaros the Firelord",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5451,6 +5766,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA06_3H",
 		"name": "Ragnaros the Firelord",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5464,6 +5780,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "BRMA06_4",
 		"name": "Flamewaker Acolyte",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Minion"
 	},
@@ -5477,6 +5794,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "BRMA06_4H",
 		"name": "Flamewaker Acolyte",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Minion"
 	},
@@ -5488,6 +5806,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA07_1",
 		"name": "Highlord Omokk",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5499,6 +5818,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA07_1H",
 		"name": "Highlord Omokk",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5510,6 +5830,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA07_2.gif",
 		"id": "BRMA07_2",
 		"name": "ME SMASH",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nDestroy a random damaged enemy minion.",
 		"type": "Hero_power"
@@ -5522,6 +5843,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA07_2_2_TB.gif",
 		"id": "BRMA07_2_2_TB",
 		"name": "ME SMASH",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nDestroy a random enemy minion.",
 		"type": "Hero_power"
@@ -5534,6 +5856,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA07_2_2c_TB.gif",
 		"id": "BRMA07_2_2c_TB",
 		"name": "ME SMASH",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Destroy a random enemy minion.",
 		"type": "Spell"
@@ -5549,6 +5872,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "ME SMASH",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nDestroy a random enemy minion.",
 		"type": "Hero_power"
@@ -5561,6 +5885,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA07_3.gif",
 		"id": "BRMA07_3",
 		"name": "TIME FOR SMASH",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Deal $5 damage to a random enemy. Gain 5 Armor.",
 		"type": "Spell"
@@ -5573,6 +5898,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "BRMA08_1",
 		"name": "General Drakkisath",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5584,6 +5910,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "BRMA08_1H",
 		"name": "General Drakkisath",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5596,6 +5923,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "BRMA08_2",
 		"name": "Intense Gaze",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Passive Hero Power</b>\nAll cards cost (1). Players are capped at 1 Mana Crystal.",
 		"type": "Hero_power"
@@ -5609,6 +5937,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "BRMA08_2H",
 		"name": "Intense Gaze",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Passive Hero Power</b>\nAll cards cost (1). You are capped at 2 Mana Crystals, and opponent at 1.",
 		"type": "Hero_power"
@@ -5621,6 +5950,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA08_3.gif",
 		"id": "BRMA08_3",
 		"name": "Drakkisath's Command",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Destroy a minion. Gain 10 Armor.",
 		"type": "Spell"
@@ -5633,6 +5963,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA09_1",
 		"name": "Rend Blackhand",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5644,6 +5975,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA09_1H",
 		"name": "Rend Blackhand",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5659,6 +5991,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_2.gif",
 		"id": "BRMA09_2",
 		"name": "Open the Gates",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon three 1/1 Whelps. Get a new Hero Power.",
 		"type": "Hero_power"
@@ -5671,6 +6004,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_2_TB.gif",
 		"id": "BRMA09_2_TB",
 		"name": "Open the Gates",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nSummon three 1/1 Whelps.",
 		"type": "Hero_power"
@@ -5687,6 +6021,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_2H.gif",
 		"id": "BRMA09_2H",
 		"name": "Open the Gates",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon three 2/2 Whelps. Get a new Hero Power.",
 		"type": "Hero_power"
@@ -5701,6 +6036,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "BRMA09_2Ht",
 		"name": "Whelp",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Brm",
 		"type": "Minion"
@@ -5715,6 +6051,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "BRMA09_2t",
 		"name": "Whelp",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Brm",
 		"type": "Minion"
@@ -5732,6 +6069,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_3.gif",
 		"id": "BRMA09_3",
 		"name": "Old Horde",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Orcs with <b>Taunt</b>. Get a new Hero Power.",
 		"type": "Hero_power"
@@ -5749,6 +6087,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_3H.gif",
 		"id": "BRMA09_3H",
 		"name": "Old Horde",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon two 2/2 Orcs with <b>Taunt</b>. Get a new Hero Power.",
 		"type": "Hero_power"
@@ -5766,6 +6105,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Old Horde Orc",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -5783,6 +6123,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Old Horde Orc",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -5800,6 +6141,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_4.gif",
 		"id": "BRMA09_4",
 		"name": "Blackwing",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon a 3/1 Dragonkin. Get a new Hero Power.",
 		"type": "Hero_power"
@@ -5817,6 +6159,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_4H.gif",
 		"id": "BRMA09_4H",
 		"name": "Blackwing",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon a 5/4 Dragonkin. Get a new Hero Power.",
 		"type": "Hero_power"
@@ -5831,6 +6174,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "BRMA09_4Ht",
 		"name": "Dragonkin",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Brm",
 		"type": "Minion"
@@ -5845,6 +6189,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "BRMA09_4t",
 		"name": "Dragonkin",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Brm",
 		"type": "Minion"
@@ -5862,6 +6207,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_5.gif",
 		"id": "BRMA09_5",
 		"name": "Dismount",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon Gyth. Get a new Hero Power.",
 		"type": "Hero_power"
@@ -5879,6 +6225,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_5H.gif",
 		"id": "BRMA09_5H",
 		"name": "Dismount",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon Gyth. Get a new Hero Power.",
 		"type": "Hero_power"
@@ -5894,6 +6241,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "BRMA09_5Ht",
 		"name": "Gyth",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Brm",
 		"type": "Minion"
@@ -5909,6 +6257,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "BRMA09_5t",
 		"name": "Gyth",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Brm",
 		"type": "Minion"
@@ -5921,6 +6270,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA09_6.gif",
 		"id": "BRMA09_6",
 		"name": "The True Warchief",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Destroy a Legendary minion.",
 		"type": "Spell"
@@ -5933,6 +6283,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA10_1",
 		"name": "Razorgore the Untamed",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5944,6 +6295,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA10_1H",
 		"name": "Razorgore the Untamed",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -5958,6 +6310,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "The Rookery",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nGive all Corrupted Eggs +1 Health, then summon one.",
 		"type": "Hero_power"
@@ -5968,6 +6321,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA10_3e.gif",
 		"id": "BRMA10_3e",
 		"name": "Incubation",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Increased Health.",
 		"type": "Enchantment"
@@ -5983,6 +6337,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "The Rookery",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nGive all Corrupted Eggs +1 Health, then summon one.",
 		"type": "Hero_power"
@@ -6000,6 +6355,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Corrupted Egg",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "When this minion has 4 or more Health, it hatches.",
 		"type": "Minion"
@@ -6017,6 +6373,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Corrupted Egg",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "When this minion has 5 or more Health, it hatches.",
 		"type": "Minion"
@@ -6031,6 +6388,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "BRMA10_5",
 		"name": "Chromatic Drake",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Brm",
 		"type": "Minion"
@@ -6045,6 +6403,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "BRMA10_5H",
 		"name": "Chromatic Drake",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Brm",
 		"type": "Minion"
@@ -6059,6 +6418,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA10_6.gif",
 		"id": "BRMA10_6",
 		"name": "Razorgore's Claws",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Whenever a Corrupted Egg dies, gain +1 Attack.",
 		"type": "Weapon"
@@ -6069,6 +6429,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA10_6e.gif",
 		"id": "BRMA10_6e",
 		"name": "Blind With Rage",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -6081,6 +6442,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA11_1",
 		"name": "Vaelastrasz the Corrupt",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6092,6 +6454,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA11_1H",
 		"name": "Vaelastrasz the Corrupt",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6106,6 +6469,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Essence of the Red",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nEach player draws 2 cards.",
 		"type": "Hero_power"
@@ -6121,6 +6485,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Essence of the Red",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nEach player draws 3 cards. Gain a Mana Crystal.",
 		"type": "Hero_power"
@@ -6133,6 +6498,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA11_2H_2_TB.gif",
 		"id": "BRMA11_2H_2_TB",
 		"name": "Essence of the Red",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nEach player draws 3 cards. Gain a Mana Crystal.",
 		"type": "Hero_power"
@@ -6145,6 +6511,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA11_3.gif",
 		"id": "BRMA11_3",
 		"name": "Burning Adrenaline",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Deal $2 damage to the enemy hero.",
 		"type": "Spell"
@@ -6157,6 +6524,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA12_1",
 		"name": "Chromaggus",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6168,6 +6536,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA12_10.gif",
 		"id": "BRMA12_10",
 		"name": "Mutation",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nDiscard a random card.",
 		"type": "Hero_power"
@@ -6180,6 +6549,7 @@ var parseCardsText = {
 		"health": 60,
 		"id": "BRMA12_1H",
 		"name": "Chromaggus",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6201,6 +6571,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Brood Affliction",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nAt the end of your turn, add a Brood Affliction card to your opponent's hand.",
 		"type": "Hero_power"
@@ -6223,6 +6594,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Brood Affliction",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nAt the end of your turn, add a Brood Affliction card to your opponent's hand.",
 		"type": "Hero_power"
@@ -6239,6 +6611,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Brood Affliction: Red",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, take 1 damage at the start of your turn.",
 		"type": "Spell"
@@ -6255,6 +6628,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Brood Affliction: Red",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, take 3 damage at the start of your turn.",
 		"type": "Spell"
@@ -6270,6 +6644,7 @@ var parseCardsText = {
 			"EVIL_GLOW"
 		],
 		"name": "Brood Affliction: Green",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, restore 2 health to your opponent at the start of your turn.",
 		"type": "Spell"
@@ -6285,6 +6660,7 @@ var parseCardsText = {
 			"EVIL_GLOW"
 		],
 		"name": "Brood Affliction: Green",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, restore 6 health to your opponent at the start of your turn.",
 		"type": "Spell"
@@ -6300,6 +6676,7 @@ var parseCardsText = {
 			"EVIL_GLOW"
 		],
 		"name": "Brood Affliction: Blue",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, Chromaggus' spells cost (1) less.",
 		"type": "Spell"
@@ -6315,6 +6692,7 @@ var parseCardsText = {
 			"EVIL_GLOW"
 		],
 		"name": "Brood Affliction: Blue",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, Chromaggus' spells cost (3) less.",
 		"type": "Spell"
@@ -6330,6 +6708,7 @@ var parseCardsText = {
 			"EVIL_GLOW"
 		],
 		"name": "Brood Affliction: Black",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, whenever Chromaggus draws a card, he gets another copy of it.",
 		"type": "Spell"
@@ -6345,6 +6724,7 @@ var parseCardsText = {
 			"EVIL_GLOW"
 		],
 		"name": "Brood Affliction: Black",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, whenever Chromaggus draws a card, he gets another copy of it.",
 		"type": "Spell"
@@ -6360,6 +6740,7 @@ var parseCardsText = {
 			"EVIL_GLOW"
 		],
 		"name": "Brood Affliction: Bronze",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, Chromaggus' minions cost (1) less.",
 		"type": "Spell"
@@ -6375,6 +6756,7 @@ var parseCardsText = {
 			"EVIL_GLOW"
 		],
 		"name": "Brood Affliction: Bronze",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "While this is in your hand, Chromaggus' minions cost (3) less.",
 		"type": "Spell"
@@ -6387,6 +6769,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA12_8.gif",
 		"id": "BRMA12_8",
 		"name": "Chromatic Mutation",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Transform a minion into a 2/2 Chromatic Dragonkin.",
 		"type": "Spell"
@@ -6401,6 +6784,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "BRMA12_8t",
 		"name": "Chromatic Dragonkin",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Brm",
 		"text": "Whenever your opponent casts a spell, gain +2/+2.",
@@ -6412,6 +6796,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA12_8te.gif",
 		"id": "BRMA12_8te",
 		"name": "Draconic Lineage",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "+2/+2",
 		"type": "Enchantment"
@@ -6424,6 +6809,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA12_9",
 		"name": "Chromatic Dragonkin",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6435,6 +6821,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA13_1",
 		"name": "Lord Victor Nefarius",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6446,6 +6833,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA13_1H",
 		"name": "Lord Victor Nefarius",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6466,6 +6854,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "True Form",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nLet the games begin!",
 		"type": "Hero_power"
@@ -6487,6 +6876,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "True Form",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nLet the games begin!",
 		"type": "Hero_power"
@@ -6505,6 +6895,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA13_3",
 		"name": "Nefarian",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6522,6 +6913,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA13_3H",
 		"name": "Nefarian",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6536,6 +6928,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Wild Magic",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand.",
 		"type": "Hero_power"
@@ -6548,6 +6941,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA13_4_2_TB.gif",
 		"id": "BRMA13_4_2_TB",
 		"name": "Wild Magic",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand.",
 		"type": "Hero_power"
@@ -6563,6 +6957,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Wild Magic",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand.",
 		"type": "Hero_power"
@@ -6580,6 +6975,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Son of the Flame",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Battlecry:</b> Deal 6 damage.",
 		"type": "Minion"
@@ -6597,6 +6993,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Living Lava",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -6614,6 +7011,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Whirling Ash",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Windfury</b>",
 		"type": "Minion"
@@ -6626,6 +7024,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA13_8.gif",
 		"id": "BRMA13_8",
 		"name": "DIE, INSECT!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Deal $8 damage to a random enemy.",
 		"type": "Spell"
@@ -6638,6 +7037,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA14_1",
 		"name": "Omnotron Defense System",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6655,6 +7055,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA14_10.gif",
 		"id": "BRMA14_10",
 		"name": "Activate!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate a random Tron.",
 		"type": "Hero_power"
@@ -6673,6 +7074,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA14_10H.gif",
 		"id": "BRMA14_10H",
 		"name": "Activate!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate a random Tron.",
 		"type": "Hero_power"
@@ -6691,6 +7093,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA14_10H_TB.gif",
 		"id": "BRMA14_10H_TB",
 		"name": "Activate!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nActivate a random Tron.",
 		"type": "Hero_power"
@@ -6703,6 +7106,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA14_11.gif",
 		"id": "BRMA14_11",
 		"name": "Recharge",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Fill all empty Mana Crystals.",
 		"type": "Spell"
@@ -6721,6 +7125,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Magmaw",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -6733,6 +7138,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA14_1H",
 		"name": "Omnotron Defense System",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6747,6 +7153,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Activate Arcanotron",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate Arcanotron!",
 		"type": "Hero_power"
@@ -6762,6 +7169,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Activate Arcanotron",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate Arcanotron!",
 		"type": "Hero_power"
@@ -6780,6 +7188,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Arcanotron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Brm",
 		"spellDamage": 2,
@@ -6797,6 +7206,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Activate Toxitron",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate Toxitron!",
 		"type": "Hero_power"
@@ -6812,6 +7222,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Activate Toxitron",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate Toxitron!",
 		"type": "Hero_power"
@@ -6827,6 +7238,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "BRMA14_5",
 		"name": "Toxitron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Brm",
 		"text": "At the start of your turn, deal 1 damage to all other minions.",
@@ -6843,6 +7255,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "BRMA14_5H",
 		"name": "Toxitron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Brm",
 		"text": "At the start of your turn, deal 1 damage to all other minions.",
@@ -6859,6 +7272,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Activate Electron",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate Electron!",
 		"type": "Hero_power"
@@ -6874,6 +7288,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Activate Electron",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate Electron!",
 		"type": "Hero_power"
@@ -6892,6 +7307,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Electron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Brm",
 		"text": "All spells cost (3) less.",
@@ -6908,6 +7324,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "BRMA14_7H",
 		"name": "Electron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Brm",
 		"text": "All spells cost (3) less.",
@@ -6924,6 +7341,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Activate Magmatron",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate Magmatron!",
 		"type": "Hero_power"
@@ -6939,6 +7357,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Activate Magmatron",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nActivate Magmatron!",
 		"type": "Hero_power"
@@ -6957,6 +7376,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Magmatron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Brm",
 		"text": "Whenever a player plays a card, Magmatron deals 2 damage to them.",
@@ -6973,6 +7393,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "BRMA14_9H",
 		"name": "Magmatron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Brm",
 		"text": "Whenever a player plays a card, Magmatron deals 2 damage to them.",
@@ -6986,6 +7407,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA15_1",
 		"name": "Maloriak",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -6997,6 +7419,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA15_1H",
 		"name": "Maloriak",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -7008,6 +7431,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA15_2.gif",
 		"id": "BRMA15_2",
 		"name": "The Alchemist",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Passive Hero Power</b>\nWhenever a minion is summoned, swap its Attack and Health.",
 		"type": "Hero_power"
@@ -7020,6 +7444,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA15_2H.gif",
 		"id": "BRMA15_2H",
 		"name": "The Alchemist",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Passive Hero Power</b>\nMinions' Attack and Health are swapped.\nYour minions have +2/+2.",
 		"type": "Hero_power"
@@ -7030,6 +7455,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA15_2He.gif",
 		"id": "BRMA15_2He",
 		"name": "Potion of Might",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -7042,6 +7468,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA15_3.gif",
 		"id": "BRMA15_3",
 		"name": "Release the Aberrations!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Summon 3 Aberrations.",
 		"type": "Spell"
@@ -7059,6 +7486,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Aberration",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Charge</b>",
 		"type": "Minion"
@@ -7071,6 +7499,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA16_1",
 		"name": "Atramedes",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -7082,6 +7511,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA16_1H",
 		"name": "Atramedes",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -7093,6 +7523,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA16_2.gif",
 		"id": "BRMA16_2",
 		"name": "Echolocate",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nEquip a weapon that grows as your opponent plays cards.",
 		"type": "Hero_power"
@@ -7105,6 +7536,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA16_2H.gif",
 		"id": "BRMA16_2H",
 		"name": "Echolocate",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nEquip a weapon that grows as your opponent plays cards.",
 		"type": "Hero_power"
@@ -7117,6 +7549,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA16_3.gif",
 		"id": "BRMA16_3",
 		"name": "Sonic Breath",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Deal $3 damage to a minion. Give your weapon +3 Attack.",
 		"type": "Spell"
@@ -7127,6 +7560,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA16_3e.gif",
 		"id": "BRMA16_3e",
 		"name": "Sonic Breath",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -7139,6 +7573,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA16_4.gif",
 		"id": "BRMA16_4",
 		"name": "Reverberating Gong",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Destroy your opponent's weapon.",
 		"type": "Spell"
@@ -7153,6 +7588,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA16_5.gif",
 		"id": "BRMA16_5",
 		"name": "Dragonteeth",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Whenever your opponent plays a card, gain +1 Attack.",
 		"type": "Weapon"
@@ -7163,6 +7599,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA16_5e.gif",
 		"id": "BRMA16_5e",
 		"name": "I hear you...",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -7175,6 +7612,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA17_2",
 		"name": "Nefarian",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -7186,6 +7624,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA17_2H",
 		"name": "Nefarian",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -7197,6 +7636,7 @@ var parseCardsText = {
 		"health": 15,
 		"id": "BRMA17_3",
 		"name": "Onyxia",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -7208,6 +7648,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "BRMA17_3H",
 		"name": "Onyxia",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Hero"
 	},
@@ -7219,6 +7660,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA17_4.gif",
 		"id": "BRMA17_4",
 		"name": "LAVA!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Deal $2 damage to all minions.",
 		"type": "Spell"
@@ -7231,6 +7673,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA17_5.gif",
 		"id": "BRMA17_5",
 		"name": "Bone Minions",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon two 2/1 Bone Constructs.",
 		"type": "Hero_power"
@@ -7243,6 +7686,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA17_5_TB.gif",
 		"id": "BRMA17_5_TB",
 		"name": "Bone Minions",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nSummon two 2/1 Bone Constructs.",
 		"type": "Hero_power"
@@ -7255,6 +7699,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA17_5H.gif",
 		"id": "BRMA17_5H",
 		"name": "Bone Minions",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nSummon two 4/2 Bone Constructs.",
 		"type": "Hero_power"
@@ -7269,6 +7714,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "BRMA17_6",
 		"name": "Bone Construct",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Minion"
 	},
@@ -7282,6 +7728,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "BRMA17_6H",
 		"name": "Bone Construct",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Minion"
 	},
@@ -7298,6 +7745,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Chromatic Prototype",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -7313,6 +7761,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Nefarian Strikes!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nNefarian rains fire from above!",
 		"type": "Hero_power"
@@ -7328,6 +7777,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Nefarian Strikes!",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "<b>Hero Power</b>\nNefarian rains fire from above!",
 		"type": "Hero_power"
@@ -7342,6 +7792,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA17_9.gif",
 		"id": "BRMA17_9",
 		"name": "Onyxiclaw",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"type": "Weapon"
 	},
@@ -7353,6 +7804,7 @@ var parseCardsText = {
 		"goldenImage": "BRMA_01.gif",
 		"id": "BRMA_01",
 		"name": "Flameheart",
+		"playerClass": "Neutral",
 		"set": "Brm",
 		"text": "Draw 2 cards.\nGain 4 Armor.",
 		"type": "Spell"
@@ -7365,6 +7817,7 @@ var parseCardsText = {
 		"goldenImage": "BRMC_100.gif",
 		"id": "BRMC_100",
 		"name": "Living Bomb",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Choose an enemy minion. If it lives until your next turn, deal $5 damage to all enemies.",
 		"type": "Spell"
@@ -7375,6 +7828,7 @@ var parseCardsText = {
 		"goldenImage": "BRMC_100e.gif",
 		"id": "BRMC_100e",
 		"name": "Living Bomb",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "On Ragnaros' turn, deal 5 damage to this side of the board.",
 		"type": "Enchantment"
@@ -7387,6 +7841,7 @@ var parseCardsText = {
 		"goldenImage": "BRMC_83.gif",
 		"id": "BRMC_83",
 		"name": "Open the Gates",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Fill your board with 2/2 Whelps.",
 		"type": "Spell"
@@ -7404,6 +7859,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dragonkin Spellcaster",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Summon two 2/2 Whelps.",
@@ -7423,6 +7879,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Lucifron",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Cast Corruption on all other minions.",
 		"type": "Minion"
@@ -7438,6 +7895,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "BRMC_86",
 		"name": "Atramedes",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Tb",
 		"text": "Whenever your opponent plays a card, gain +2 Attack.",
@@ -7449,6 +7907,7 @@ var parseCardsText = {
 		"goldenImage": "BRMC_86e.gif",
 		"id": "BRMC_86e",
 		"name": "I Hear You...",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -7467,6 +7926,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Moira Bronzebeard",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Summon Emperor Thaurissan.",
 		"type": "Minion"
@@ -7481,6 +7941,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "BRMC_88",
 		"name": "Drakonid Slayer",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Tb",
 		"text": "Also damages the minions next to whomever he attacks.",
@@ -7499,6 +7960,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Whirling Ash",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Windfury</b>",
 		"type": "Minion"
@@ -7516,6 +7978,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Living Lava",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -7533,6 +7996,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Son of the Flame",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Deal 6 damage.",
 		"type": "Minion"
@@ -7551,6 +8015,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Coren Direbrew",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Always wins Brawls.\n <b>Battlecry:</b> Add a Brawl to your hand.",
 		"type": "Minion"
@@ -7569,6 +8034,7 @@ var parseCardsText = {
 		"goldenImage": "BRMC_93.gif",
 		"id": "BRMC_93",
 		"name": "Omnotron Defense System",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Summon a random Tron.",
 		"type": "Spell"
@@ -7586,6 +8052,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Sulfuras",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Your Hero Power becomes 'Deal 8 damage to a random enemy'.",
 		"type": "Weapon"
@@ -7601,6 +8068,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "BRMC_95",
 		"name": "Golemagg",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Tb",
 		"text": "Costs (1) less for each damage your hero has taken.",
@@ -7614,6 +8082,7 @@ var parseCardsText = {
 		"goldenImage": "BRMC_95h.gif",
 		"id": "BRMC_95h",
 		"name": "Core Hound Puppies",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Summon two 2/4 Core Hound Pups.",
 		"type": "Spell"
@@ -7628,6 +8097,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "BRMC_95he",
 		"name": "Core Hound Pup",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Tb",
 		"text": "At the end of each turn, summon all Core Hound Pups that died this turn.",
@@ -7644,6 +8114,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "BRMC_96",
 		"name": "High Justice Grimstone",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the start of your turn, summon a <b>Legendary</b> minion.",
 		"type": "Minion"
@@ -7659,6 +8130,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "BRMC_97",
 		"name": "Vaelastrasz",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Tb",
 		"text": "Your cards cost (3) less.",
@@ -7670,6 +8142,7 @@ var parseCardsText = {
 		"goldenImage": "BRMC_97e.gif",
 		"id": "BRMC_97e",
 		"name": "Burning Adrenaline",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Costs (2) less.",
 		"type": "Enchantment"
@@ -7685,6 +8158,7 @@ var parseCardsText = {
 		"health": 12,
 		"id": "BRMC_98",
 		"name": "Razorgore",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Tb",
 		"text": "At the start of your turn, give your minions +3 Attack.",
@@ -7696,6 +8170,7 @@ var parseCardsText = {
 		"goldenImage": "BRMC_98e.gif",
 		"id": "BRMC_98e",
 		"name": "Dragonlust",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -7711,6 +8186,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "BRMC_99",
 		"name": "Garr",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -7731,6 +8207,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Rock Elemental",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -7752,6 +8229,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Raza the Chained",
+		"playerClass": "Priest",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "[x]  <b>Battlecry:</b> If your deck has  \nno duplicates, your Hero\n Power costs (1) this game.",
@@ -7764,6 +8242,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_020e.gif",
 		"id": "CFM_020e",
 		"name": "Raza Enchant",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Your <b>Hero Power</b> costs (1).",
 		"type": "Enchantment"
@@ -7779,6 +8258,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_021.gif",
 		"id": "CFM_021",
 		"name": "Freezing Potion",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"FREEZE"
@@ -7800,6 +8280,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CFM_025",
 		"name": "Wind-up Burglebot",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Epic",
 		"set": "Gangs",
@@ -7820,6 +8301,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Hidden Cache",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Secret:</b> After your opponent plays a minion, give a random minion in your hand +2/+2.",
@@ -7832,6 +8314,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_026e.gif",
 		"id": "CFM_026e",
 		"name": "Smuggling",
+		"playerClass": "Hunter",
 		"set": "Gangs",
 		"text": "+2/+2 from Hidden Cache.",
 		"type": "Enchantment"
@@ -7852,6 +8335,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Street Trickster",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Gangs",
@@ -7872,6 +8356,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CFM_060",
 		"name": "Red Mana Wyrm",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "Whenever  you cast a spell, gain +2 Attack.",
@@ -7884,6 +8369,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_060e.gif",
 		"id": "CFM_060e",
 		"name": "Mana Heist",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -7906,6 +8392,7 @@ var parseCardsText = {
 		],
 		"name": "Jinyu Waterspeaker",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "[x]<b>Battlecry:</b> Restore 6 Health.\n<b>Overload:</b> (1)",
@@ -7928,6 +8415,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Grimestreet Protector",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -7952,6 +8440,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kooky Chemist",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Swap the Attack and Health of a minion.",
@@ -7964,6 +8453,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_063e.gif",
 		"id": "CFM_063e",
 		"name": "Kooky Chemistry",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Attack and Health have been swapped by Kooky Chemist.",
 		"type": "Enchantment"
@@ -7981,6 +8471,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CFM_064",
 		"name": "Blubber Baron",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"BATTLECRY"
@@ -7996,6 +8487,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_064e.gif",
 		"id": "CFM_064e",
 		"name": "Size Increase",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -8011,6 +8503,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_065.gif",
 		"id": "CFM_065",
 		"name": "Volcanic Potion",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "Deal $2 damage to all minions.",
@@ -8032,6 +8525,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kabal Lackey",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"SECRET"
@@ -8056,6 +8550,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Hozen Healer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry</b>: Restore a minion to full Health.",
@@ -8072,6 +8567,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_094.gif",
 		"id": "CFM_094",
 		"name": "Felfire Potion",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "Deal $5 damage to all characters.",
@@ -8093,6 +8589,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Weasel Tunneler",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Gangs",
@@ -8115,6 +8612,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Mistress of Mixtures",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Deathrattle:</b> Restore 4 Health to each hero.",
@@ -8136,6 +8634,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Public Defender",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Taunt</b>",
@@ -8152,6 +8651,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_305.gif",
 		"id": "CFM_305",
 		"name": "Smuggler's Run",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "Give all minions in your hand +1/+1.",
@@ -8164,6 +8664,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_305e.gif",
 		"id": "CFM_305e",
 		"name": "Smuggling",
+		"playerClass": "Paladin",
 		"set": "Gangs",
 		"text": "+1/+1 from Smuggler's Run.",
 		"type": "Enchantment"
@@ -8185,6 +8686,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Kun the Forgotten King",
+		"playerClass": "Druid",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "<b>Choose One -</b> Gain 10 Armor; or Refresh your Mana Crystals.",
@@ -8199,6 +8701,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_308a.gif",
 		"id": "CFM_308a",
 		"name": "Forgotten Armor",
+		"playerClass": "Druid",
 		"set": "Gangs",
 		"text": "Gain 10 Armor.",
 		"type": "Spell"
@@ -8212,6 +8715,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_308b.gif",
 		"id": "CFM_308b",
 		"name": "Forgotten Mana",
+		"playerClass": "Druid",
 		"set": "Gangs",
 		"text": "Refresh your Mana Crystals.",
 		"type": "Spell"
@@ -8227,6 +8731,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_310.gif",
 		"id": "CFM_310",
 		"name": "Call in the Finishers",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "Summon four 1/1 Murlocs.",
@@ -8243,6 +8748,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CFM_310t",
 		"name": "Murloc Razorgill",
+		"playerClass": "Shaman",
 		"race": "MURLOC",
 		"set": "Gangs",
 		"type": "Minion"
@@ -8263,6 +8769,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Jade Chieftain",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"referencedTags": [
 			"JADE_GOLEM",
@@ -8287,6 +8794,7 @@ var parseCardsText = {
 		],
 		"name": "Finders Keepers",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DISCOVER"
@@ -8311,6 +8819,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Alleycat",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Gangs",
@@ -8328,6 +8837,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CFM_315t",
 		"name": "Tabbycat",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Gangs",
 		"type": "Minion"
@@ -8348,6 +8858,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Rat Pack",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Gangs",
@@ -8365,6 +8876,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CFM_316t",
 		"name": "Rat",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Gangs",
 		"type": "Minion"
@@ -8391,6 +8903,7 @@ var parseCardsText = {
 		],
 		"multiClassGroup": "GRIMY_GOONS",
 		"name": "Grimestreet Informant",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DISCOVER"
@@ -8417,6 +8930,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "White Eyes",
+		"playerClass": "Shaman",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Shuffle\n'The Storm Guardian' into your deck.",
@@ -8437,6 +8951,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "The Storm Guardian",
+		"playerClass": "Shaman",
 		"set": "Gangs",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -8454,6 +8969,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CFM_325",
 		"name": "Small-Time Buccaneer",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Rare",
 		"set": "Gangs",
@@ -8466,6 +8982,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_325e.gif",
 		"id": "CFM_325e",
 		"name": "Equipped",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+2 Attack.",
 		"type": "Enchantment"
@@ -8486,6 +9003,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fight Promoter",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "[x]<b>Battlecry:</b> If you control\na minion with 6 or more\n Health, draw two cards.",
@@ -8505,6 +9023,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "CFM_333",
 		"name": "Knuckles",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Gangs",
@@ -8522,6 +9041,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_334.gif",
 		"id": "CFM_334",
 		"name": "Smuggler's Crate",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "Give a random Beast in your hand +2/+2.",
@@ -8534,6 +9054,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_334e.gif",
 		"id": "CFM_334e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+2/+2 from Smuggler's Crate.",
 		"type": "Enchantment"
@@ -8554,6 +9075,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dispatch Kodo",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Gangs",
@@ -8576,6 +9098,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Shaky Zipgunner",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "[x]<b>Deathrattle:</b> Give a random\nminion in your hand +2/+2.",
@@ -8588,6 +9111,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_336e.gif",
 		"id": "CFM_336e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+2/+2 from Shaky Zipgunner.",
 		"type": "Enchantment"
@@ -8605,6 +9129,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_337.gif",
 		"id": "CFM_337",
 		"name": "Piranha Launcher",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "[x]After your hero attacks,\nsummon a 1/1 Piranha.",
@@ -8621,6 +9146,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CFM_337t",
 		"name": "Piranha",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Gangs",
 		"type": "Minion"
@@ -8641,6 +9167,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Trogg Beastrager",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Give a random Beast in your hand +1/+1.",
@@ -8653,6 +9180,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_338e.gif",
 		"id": "CFM_338e",
 		"name": "Smuggling",
+		"playerClass": "Hunter",
 		"set": "Gangs",
 		"text": "+1/+1 from Trogg Beastrager.",
 		"type": "Enchantment"
@@ -8674,6 +9202,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Sergeant Sally",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "<b>Deathrattle:</b> Deal damage equal to this minion's Attack to all enemy minions.",
@@ -8695,6 +9224,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Luckydo Buccaneer",
+		"playerClass": "Rogue",
 		"race": "PIRATE",
 		"rarity": "Epic",
 		"set": "Gangs",
@@ -8708,6 +9238,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_342e.gif",
 		"id": "CFM_342e",
 		"name": "Looted Blade",
+		"playerClass": "Rogue",
 		"set": "Gangs",
 		"text": "+4/+4.",
 		"type": "Enchantment"
@@ -8729,6 +9260,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Jade Behemoth",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"JADE_GOLEM"
@@ -8754,6 +9286,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Finja, the Flying Star",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Legendary",
 		"set": "Gangs",
@@ -8774,6 +9307,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Jade Idol",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"referencedTags": [
 			"JADE_GOLEM"
@@ -8791,6 +9325,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_602a.gif",
 		"id": "CFM_602a",
 		"name": "Jade Idol",
+		"playerClass": "Druid",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -8807,6 +9342,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_602b.gif",
 		"id": "CFM_602b",
 		"name": "Jade Idol",
+		"playerClass": "Druid",
 		"set": "Gangs",
 		"text": "Shuffle 3 Jade Idols into your deck.",
 		"type": "Spell"
@@ -8822,6 +9358,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_603.gif",
 		"id": "CFM_603",
 		"name": "Potion of Madness",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "Gain control of an enemy minion with 2 or less Attack until end of turn.",
@@ -8834,6 +9371,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_603e.gif",
 		"id": "CFM_603e",
 		"name": "Madness Potion",
+		"playerClass": "Priest",
 		"set": "Gangs",
 		"text": "This minion has switched controllers this turn.",
 		"type": "Enchantment"
@@ -8849,6 +9387,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_604.gif",
 		"id": "CFM_604",
 		"name": "Greater Healing Potion",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "Restore #12 Health to a friendly character.",
@@ -8870,6 +9409,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Drakonid Operative",
+		"playerClass": "Priest",
 		"race": "DRAGON",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -8892,6 +9432,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CFM_606",
 		"name": "Mana Geode",
+		"playerClass": "Priest",
 		"race": "ELEMENTAL",
 		"rarity": "Epic",
 		"set": "Gangs",
@@ -8909,6 +9450,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CFM_606t",
 		"name": "Crystal",
+		"playerClass": "Priest",
 		"race": "ELEMENTAL",
 		"set": "Gangs",
 		"type": "Minion"
@@ -8924,6 +9466,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_608.gif",
 		"id": "CFM_608",
 		"name": "Blastcrystal Potion",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "Destroy a minion and one of your Mana Crystals.",
@@ -8942,6 +9485,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "CFM_609",
 		"name": "Fel Orc Soulfiend",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "At the start of your turn, deal 2 damage to this minion.",
@@ -8963,6 +9507,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Crystalweaver",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Give your Demons +1/+1.",
@@ -8975,6 +9520,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_610e.gif",
 		"id": "CFM_610e",
 		"name": "Serrated Shadows",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -8990,6 +9536,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_611.gif",
 		"id": "CFM_611",
 		"name": "Bloodfury Potion",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "[x]Give a minion +3 Attack.\nIf it's a Demon, also\ngive it +3 Health.",
@@ -9002,6 +9549,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_611e.gif",
 		"id": "CFM_611e",
 		"name": "Demonic Draught",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -9013,6 +9561,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_611e2.gif",
 		"id": "CFM_611e2",
 		"name": "Demonic Draught",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+3/+3.",
 		"type": "Enchantment"
@@ -9028,6 +9577,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_614.gif",
 		"id": "CFM_614",
 		"name": "Mark of the Lotus",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "Give your minions +1/+1.",
@@ -9040,6 +9590,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_614e.gif",
 		"id": "CFM_614e",
 		"name": "Savage Mark",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -9055,6 +9606,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_616.gif",
 		"id": "CFM_616",
 		"name": "Pilfered Power",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "Gain an empty Mana Crystal for each friendly minion.",
@@ -9076,6 +9628,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Celestial Dreamer",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "[x]<b>Battlecry:</b> If you control a\nminion with 5 or more\nAttack, gain +2/+2.",
@@ -9088,6 +9641,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_617e.gif",
 		"id": "CFM_617e",
 		"name": "Visions of Hypnos",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -9126,6 +9680,7 @@ var parseCardsText = {
 		],
 		"multiClassGroup": "KABAL",
 		"name": "Kabal Chemist",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Add a random Potion to your hand.",
@@ -9145,6 +9700,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Potion of Polymorph",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Secret:</b> After your opponent plays a minion, transform it into a\n1/1 Sheep.",
@@ -9178,6 +9734,7 @@ var parseCardsText = {
 		],
 		"multiClassGroup": "KABAL",
 		"name": "Kazakus",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "[x]<b>Battlecry:</b> If your deck\nhas no duplicates,\n create a custom spell.",
@@ -9194,6 +9751,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CFM_621_m2",
 		"name": "Kabal Demon",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Gangs",
 		"type": "Minion"
@@ -9209,6 +9767,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "CFM_621_m3",
 		"name": "Kabal Demon",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Gangs",
 		"type": "Minion"
@@ -9224,6 +9783,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CFM_621_m4",
 		"name": "Kabal Demon",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Gangs",
 		"type": "Minion"
@@ -9239,6 +9799,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CFM_621_m5",
 		"name": "Sheep",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Gangs",
 		"type": "Minion"
@@ -9250,6 +9811,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621e.gif",
 		"id": "CFM_621e",
 		"name": "Goldthorn",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+2 Health.",
 		"type": "Enchantment"
@@ -9261,6 +9823,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621e2.gif",
 		"id": "CFM_621e2",
 		"name": "Goldthorn",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+4 Health.",
 		"type": "Enchantment"
@@ -9272,6 +9835,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621e3.gif",
 		"id": "CFM_621e3",
 		"name": "Goldthorn",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+6 Health.",
 		"type": "Enchantment"
@@ -9285,6 +9849,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t.gif",
 		"id": "CFM_621t",
 		"name": "Kazakus Potion",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "{0}\n{1}",
 		"type": "Spell"
@@ -9298,6 +9863,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t10.gif",
 		"id": "CFM_621t10",
 		"name": "Netherbloom",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Summon a 2/2 Demon.",
 		"type": "Spell"
@@ -9311,6 +9877,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t11.gif",
 		"id": "CFM_621t11",
 		"name": "Lesser Potion",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Create a 1-Cost spell.",
 		"type": "Spell"
@@ -9324,6 +9891,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t12.gif",
 		"id": "CFM_621t12",
 		"name": "Greater Potion",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Create a 5-Cost spell.",
 		"type": "Spell"
@@ -9337,6 +9905,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t13.gif",
 		"id": "CFM_621t13",
 		"name": "Superior Potion",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Create a 10-Cost spell.",
 		"type": "Spell"
@@ -9350,6 +9919,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t14.gif",
 		"id": "CFM_621t14",
 		"name": "Kazakus Potion",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "{0}\n{1}",
 		"type": "Spell"
@@ -9363,6 +9933,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t15.gif",
 		"id": "CFM_621t15",
 		"name": "Kazakus Potion",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "{0}\n{1}",
 		"type": "Spell"
@@ -9376,6 +9947,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t16.gif",
 		"id": "CFM_621t16",
 		"name": "Heart of Fire",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Deal $5 damage.",
 		"type": "Spell"
@@ -9389,6 +9961,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t17.gif",
 		"id": "CFM_621t17",
 		"name": "Stonescale Oil",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Gain 7 Armor.",
 		"type": "Spell"
@@ -9402,6 +9975,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t18.gif",
 		"id": "CFM_621t18",
 		"name": "Felbloom",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Deal $4 damage to all minions.",
 		"type": "Spell"
@@ -9415,6 +9989,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t19.gif",
 		"id": "CFM_621t19",
 		"name": "Icecap",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "<b>Freeze</b> 2 random enemy minions.",
 		"type": "Spell"
@@ -9428,6 +10003,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t2.gif",
 		"id": "CFM_621t2",
 		"name": "Heart of Fire",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Deal $3 damage.",
 		"type": "Spell"
@@ -9441,6 +10017,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t20.gif",
 		"id": "CFM_621t20",
 		"name": "Netherbloom",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Summon a 5/5 Demon.",
 		"type": "Spell"
@@ -9454,6 +10031,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t21.gif",
 		"id": "CFM_621t21",
 		"name": "Mystic Wool",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Transform a random enemy minion into a 1/1 Sheep.",
 		"type": "Spell"
@@ -9467,6 +10045,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t22.gif",
 		"id": "CFM_621t22",
 		"name": "Kingsblood",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Draw 2 cards.",
 		"type": "Spell"
@@ -9480,6 +10059,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t23.gif",
 		"id": "CFM_621t23",
 		"name": "Shadow Oil",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Add 2 random Demons to your hand.",
 		"type": "Spell"
@@ -9493,6 +10073,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t24.gif",
 		"id": "CFM_621t24",
 		"name": "Goldthorn",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Give your minions +4 Health.",
 		"type": "Spell"
@@ -9506,6 +10087,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t25.gif",
 		"id": "CFM_621t25",
 		"name": "Heart of Fire",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Deal $8 damage.",
 		"type": "Spell"
@@ -9519,6 +10101,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t26.gif",
 		"id": "CFM_621t26",
 		"name": "Stonescale Oil",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Gain 10 Armor.",
 		"type": "Spell"
@@ -9532,6 +10115,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t27.gif",
 		"id": "CFM_621t27",
 		"name": "Icecap",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"FREEZE"
 		],
@@ -9548,6 +10132,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t28.gif",
 		"id": "CFM_621t28",
 		"name": "Netherbloom",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Summon an 8/8 Demon.",
 		"type": "Spell"
@@ -9561,6 +10146,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t29.gif",
 		"id": "CFM_621t29",
 		"name": "Mystic Wool",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Transform all minions into 1/1 Sheep.",
 		"type": "Spell"
@@ -9574,6 +10160,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t3.gif",
 		"id": "CFM_621t3",
 		"name": "Stonescale Oil",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Gain 4 Armor.",
 		"type": "Spell"
@@ -9587,6 +10174,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t30.gif",
 		"id": "CFM_621t30",
 		"name": "Kingsblood",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Draw 3 cards.",
 		"type": "Spell"
@@ -9600,6 +10188,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t31.gif",
 		"id": "CFM_621t31",
 		"name": "Shadow Oil",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Add 3 random Demons to your hand.",
 		"type": "Spell"
@@ -9613,6 +10202,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t32.gif",
 		"id": "CFM_621t32",
 		"name": "Goldthorn",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Give your minions +6 Health.",
 		"type": "Spell"
@@ -9626,6 +10216,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t33.gif",
 		"id": "CFM_621t33",
 		"name": "Felbloom",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Deal $6 damage to all minions.",
 		"type": "Spell"
@@ -9639,6 +10230,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t37.gif",
 		"id": "CFM_621t37",
 		"name": "Ichor of Undeath",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Summon a friendly minion that died this game.",
 		"type": "Spell"
@@ -9652,6 +10244,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t38.gif",
 		"id": "CFM_621t38",
 		"name": "Ichor of Undeath",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Summon 2 friendly minions that died this game.",
 		"type": "Spell"
@@ -9665,6 +10258,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t39.gif",
 		"id": "CFM_621t39",
 		"name": "Ichor of Undeath",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Summon 3 friendly minions that died this game.",
 		"type": "Spell"
@@ -9678,6 +10272,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t4.gif",
 		"id": "CFM_621t4",
 		"name": "Felbloom",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Deal $2 damage to all minions.",
 		"type": "Spell"
@@ -9691,6 +10286,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t5.gif",
 		"id": "CFM_621t5",
 		"name": "Icecap",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"FREEZE"
 		],
@@ -9707,6 +10303,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t6.gif",
 		"id": "CFM_621t6",
 		"name": "Goldthorn",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Give your minions +2 Health.",
 		"type": "Spell"
@@ -9720,6 +10317,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t8.gif",
 		"id": "CFM_621t8",
 		"name": "Kingsblood",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Draw a card.",
 		"type": "Spell"
@@ -9733,6 +10331,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_621t9.gif",
 		"id": "CFM_621t9",
 		"name": "Shadow Oil",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Add a random Demon to your hand.",
 		"type": "Spell"
@@ -9748,6 +10347,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_623.gif",
 		"id": "CFM_623",
 		"name": "Greater Arcane Missiles",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "Shoot three missiles at random enemies that deal $3 damage each.",
@@ -9769,6 +10369,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kabal Talonpriest",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Give a friendly minion +3 Health.",
@@ -9781,6 +10382,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_626e.gif",
 		"id": "CFM_626e",
 		"name": "Fortitude",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+3 Health.",
 		"type": "Enchantment"
@@ -9796,6 +10398,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_630.gif",
 		"id": "CFM_630",
 		"name": "Counterfeit Coin",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "Gain 1 Mana Crystal this turn only.",
@@ -9814,6 +10417,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_631.gif",
 		"id": "CFM_631",
 		"name": "Brass Knuckles",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "[x]After your hero attacks,\ngive a random minion in\nyour hand +1/+1.",
@@ -9826,6 +10430,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_631e.gif",
 		"id": "CFM_631e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Increased stats from Brass Knuckles.",
 		"type": "Enchantment"
@@ -9846,6 +10451,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Lotus Assassin",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "<b>Stealth</b>. Whenever this attacks and kills a minion, gain <b>Stealth</b>.",
@@ -9867,6 +10473,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Shadow Rager",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Stealth</b>",
@@ -9886,6 +10493,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CFM_637",
 		"name": "Patches the Pirate",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Legendary",
 		"set": "Gangs",
@@ -9905,6 +10513,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CFM_639",
 		"name": "Grimestreet Enforcer",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "At the end of your turn, give all minions in your hand +1/+1.",
@@ -9917,6 +10526,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_639e.gif",
 		"id": "CFM_639e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Increased stats from Grimestreet Enforcer.",
 		"type": "Enchantment"
@@ -9938,6 +10548,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Hobart Grapplehammer",
+		"playerClass": "Warrior",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Give all weapons in your hand and deck +1 Attack.",
@@ -9950,6 +10561,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_643e.gif",
 		"id": "CFM_643e",
 		"name": "Smuggling",
+		"playerClass": "Warrior",
 		"set": "Gangs",
 		"text": "+1 Attack from Hobart Grapplehammer.",
 		"type": "Enchantment"
@@ -9960,6 +10572,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_643e2.gif",
 		"id": "CFM_643e2",
 		"name": "Smuggling",
+		"playerClass": "Warrior",
 		"set": "Gangs",
 		"text": "+1 Attack from Hobart Grapplehammer.",
 		"type": "Enchantment"
@@ -9980,6 +10593,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Backstreet Leper",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "[x]<b>Deathrattle:</b> Deal 2 damage\nto the enemy hero.",
@@ -10001,6 +10615,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Blowgill Sniper",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"set": "Gangs",
@@ -10023,6 +10638,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Big-Time Racketeer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Summon a 6/6 Ogre.",
@@ -10039,6 +10655,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CFM_648t",
 		"name": "\"Little Friend\"",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"type": "Minion"
 	},
@@ -10064,6 +10681,7 @@ var parseCardsText = {
 		],
 		"multiClassGroup": "KABAL",
 		"name": "Kabal Courier",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DISCOVER"
@@ -10088,6 +10706,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Grimscale Chum",
+		"playerClass": "Paladin",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"set": "Gangs",
@@ -10101,6 +10720,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_650e.gif",
 		"id": "CFM_650e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+1/+1 from Grimscale Chum.",
 		"type": "Enchantment"
@@ -10121,6 +10741,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Naga Corsair",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Common",
 		"set": "Gangs",
@@ -10134,6 +10755,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_651e.gif",
 		"id": "CFM_651e",
 		"name": "Extra Sharp",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+1 Attack.",
 		"type": "Enchantment"
@@ -10154,6 +10776,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Second-Rate Bruiser",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "[x]<b>Taunt</b>\nCosts (2) less if your\nopponent has at least\nthree minions.",
@@ -10175,6 +10798,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Hired Gun",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Taunt</b>",
@@ -10193,6 +10817,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CFM_654",
 		"name": "Friendly Bartender",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "At the end of your turn, restore 1 Health to your hero.",
@@ -10214,6 +10839,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Toxic Sewer Ooze",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Remove 1 Durability from your opponent's weapon.",
@@ -10235,6 +10861,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Streetwise Investigator",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"STEALTH"
@@ -10259,6 +10886,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kabal Songstealer",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"referencedTags": [
 			"SILENCE"
@@ -10280,6 +10908,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CFM_658",
 		"name": "Backroom Bouncer",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "Whenever a friendly minion dies, gain +1 Attack.",
@@ -10292,6 +10921,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_658e.gif",
 		"id": "CFM_658e",
 		"name": "Cut Off",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -10312,6 +10942,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gadgetzan Socialite",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Restore 2 Health.",
@@ -10333,6 +10964,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Manic Soulcaster",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Choose a friendly minion. Shuffle a copy into your deck.",
@@ -10349,6 +10981,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_661.gif",
 		"id": "CFM_661",
 		"name": "Pint-Size Potion",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "[x]Give all enemy minions\n-3 Attack this turn only.",
@@ -10364,6 +10997,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Shrunk",
+		"playerClass": "Priest",
 		"set": "Gangs",
 		"text": "-3 Attack this turn.",
 		"type": "Enchantment"
@@ -10379,6 +11013,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_662.gif",
 		"id": "CFM_662",
 		"name": "Dragonfire Potion",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "[x]Deal $5 damage to all\nminions except Dragons.",
@@ -10397,6 +11032,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CFM_663",
 		"name": "Kabal Trafficker",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "[x]At the end of your turn,\nadd a random Demon\nto your hand.",
@@ -10415,6 +11051,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CFM_665",
 		"name": "Worgen Greaser",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"type": "Minion"
@@ -10435,6 +11072,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Grook Fu Master",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Windfury</b>",
@@ -10457,6 +11095,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Bomb Squad",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "[x]<b>Battlecry:</b> Deal 5 damage\nto an enemy minion.\n<b>Deathrattle:</b> Deal 5 damage\nto your hero.",
@@ -10478,6 +11117,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Doppelgangster",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Summon 2 copies of this minion.",
@@ -10497,6 +11137,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Doppelgangster",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Summon 2 copies of this minion.",
@@ -10516,6 +11157,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Doppelgangster",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Summon 2 copies of this minion.",
@@ -10534,6 +11176,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CFM_669",
 		"name": "Burgly Bully",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "Whenever your opponent casts a spell, add a Coin to your hand.",
@@ -10553,6 +11196,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CFM_670",
 		"name": "Mayor Noggenfogger",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "All targets are chosen randomly.",
@@ -10574,6 +11218,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Cryomancer",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"FREEZE"
@@ -10589,6 +11234,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_671e.gif",
 		"id": "CFM_671e",
 		"name": "We All Scream",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -10610,6 +11256,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Madam Goya",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Choose a friendly minion. Swap it with a minion in your deck.",
@@ -10638,6 +11285,7 @@ var parseCardsText = {
 		],
 		"multiClassGroup": "GRIMY_GOONS",
 		"name": "Don Han'Cho",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Give a random minion in your hand +5/+5.",
@@ -10650,6 +11298,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_685e.gif",
 		"id": "CFM_685e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+5/+5 from Don Han'Cho.",
 		"type": "Enchantment"
@@ -10671,6 +11320,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Inkmaster Solia",
+		"playerClass": "Mage",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "[x]<b>Battlecry:</b> If your deck has\nno duplicates, the next\nspell you cast this turn\ncosts (0).",
@@ -10686,6 +11336,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Free Spell",
+		"playerClass": "Mage",
 		"set": "Gangs",
 		"text": "The next spell you cast this turn costs (0).",
 		"type": "Enchantment"
@@ -10706,6 +11357,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Spiked Hogrider",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"CHARGE",
@@ -10729,6 +11381,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Jade Shuriken",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"referencedTags": [
 			"CHOOSE_ONE",
@@ -10755,6 +11408,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Jade Swarmer",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"referencedTags": [
 			"JADE_GOLEM"
@@ -10779,6 +11433,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Gadgetzan Ferryman",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Combo:</b> Return a friendly minion to your hand.",
@@ -10800,6 +11455,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shadow Sensei",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"referencedTags": [
 			"STEALTH"
@@ -10815,6 +11471,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_694e.gif",
 		"id": "CFM_694e",
 		"name": "Trained",
+		"playerClass": "Rogue",
 		"set": "Gangs",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -10830,6 +11487,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_696.gif",
 		"id": "CFM_696",
 		"name": "Devolve",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "Transform all enemy minions into random ones that cost (1) less.",
@@ -10848,6 +11506,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CFM_697",
 		"name": "Lotus Illusionist",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "[x]After this minion attacks\na hero, transform it into a\n random 6-Cost minion.",
@@ -10869,6 +11528,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Seadevil Stinger",
+		"playerClass": "Warlock",
 		"race": "MURLOC",
 		"rarity": "Rare",
 		"set": "Gangs",
@@ -10885,6 +11545,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Seadevil Enchant",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"type": "Enchantment"
 	},
@@ -10899,6 +11560,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_707.gif",
 		"id": "CFM_707",
 		"name": "Jade Lightning",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"referencedTags": [
 			"JADE_GOLEM"
@@ -10918,6 +11580,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CFM_712_t01",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -10935,6 +11598,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CFM_712_t02",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -10952,6 +11616,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CFM_712_t03",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -10969,6 +11634,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CFM_712_t04",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -10986,6 +11652,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CFM_712_t05",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11003,6 +11670,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CFM_712_t06",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11020,6 +11688,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "CFM_712_t07",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11037,6 +11706,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "CFM_712_t08",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11054,6 +11724,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "CFM_712_t09",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11071,6 +11742,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "CFM_712_t10",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11088,6 +11760,7 @@ var parseCardsText = {
 		"health": 11,
 		"id": "CFM_712_t11",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11105,6 +11778,7 @@ var parseCardsText = {
 		"health": 12,
 		"id": "CFM_712_t12",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11122,6 +11796,7 @@ var parseCardsText = {
 		"health": 13,
 		"id": "CFM_712_t13",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11139,6 +11814,7 @@ var parseCardsText = {
 		"health": 14,
 		"id": "CFM_712_t14",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11156,6 +11832,7 @@ var parseCardsText = {
 		"health": 15,
 		"id": "CFM_712_t15",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11173,6 +11850,7 @@ var parseCardsText = {
 		"health": 16,
 		"id": "CFM_712_t16",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11190,6 +11868,7 @@ var parseCardsText = {
 		"health": 17,
 		"id": "CFM_712_t17",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11207,6 +11886,7 @@ var parseCardsText = {
 		"health": 18,
 		"id": "CFM_712_t18",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11224,6 +11904,7 @@ var parseCardsText = {
 		"health": 19,
 		"id": "CFM_712_t19",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11241,6 +11922,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "CFM_712_t20",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11258,6 +11940,7 @@ var parseCardsText = {
 		"health": 21,
 		"id": "CFM_712_t21",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11275,6 +11958,7 @@ var parseCardsText = {
 		"health": 22,
 		"id": "CFM_712_t22",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11292,6 +11976,7 @@ var parseCardsText = {
 		"health": 23,
 		"id": "CFM_712_t23",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11309,6 +11994,7 @@ var parseCardsText = {
 		"health": 24,
 		"id": "CFM_712_t24",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11326,6 +12012,7 @@ var parseCardsText = {
 		"health": 25,
 		"id": "CFM_712_t25",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11343,6 +12030,7 @@ var parseCardsText = {
 		"health": 26,
 		"id": "CFM_712_t26",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11360,6 +12048,7 @@ var parseCardsText = {
 		"health": 27,
 		"id": "CFM_712_t27",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11377,6 +12066,7 @@ var parseCardsText = {
 		"health": 28,
 		"id": "CFM_712_t28",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11394,6 +12084,7 @@ var parseCardsText = {
 		"health": 29,
 		"id": "CFM_712_t29",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11411,6 +12102,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "CFM_712_t30",
 		"name": "Jade Golem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -11428,6 +12120,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_713.gif",
 		"id": "CFM_713",
 		"name": "Jade Blossom",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"JADE_GOLEM"
@@ -11459,6 +12152,7 @@ var parseCardsText = {
 		],
 		"multiClassGroup": "JADE_LOTUS",
 		"name": "Jade Spirit",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Gangs",
@@ -11476,6 +12170,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_716.gif",
 		"id": "CFM_716",
 		"name": "Sleep with the Fishes",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "Deal $3 damage to all damaged minions.",
@@ -11499,6 +12194,7 @@ var parseCardsText = {
 		],
 		"name": "Jade Claws",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"referencedTags": [
 			"JADE_GOLEM"
@@ -11524,6 +12220,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Krul the Unshackled",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Legendary",
 		"set": "Gangs",
@@ -11546,6 +12243,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Abyssal Enforcer",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Gangs",
@@ -11563,6 +12261,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_752.gif",
 		"id": "CFM_752",
 		"name": "Stolen Goods",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -11578,6 +12277,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_752e.gif",
 		"id": "CFM_752e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+3/+3 from Stolen Goods.",
 		"type": "Enchantment"
@@ -11598,6 +12298,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Grimestreet Outfitter",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Give all minions in your hand +1/+1.",
@@ -11610,6 +12311,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_753e.gif",
 		"id": "CFM_753e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+1/+1 from Grimestreet Outfitter.",
 		"type": "Enchantment"
@@ -11627,6 +12329,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CFM_754",
 		"name": "Grimy Gadgeteer",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "At the end of your turn, give a random minion in your hand +2/+2.",
@@ -11639,6 +12342,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_754e.gif",
 		"id": "CFM_754e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Increased stats from Grimy Gadgeteer.",
 		"type": "Enchantment"
@@ -11659,6 +12363,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Grimestreet Pawnbroker",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Give a random weapon in your hand +1/+1.",
@@ -11671,6 +12376,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_755e.gif",
 		"id": "CFM_755e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+1/+1 from Grimestreet Pawnbroker.",
 		"type": "Enchantment"
@@ -11691,6 +12397,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Alley Armorsmith",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "[x]<b>Taunt</b>\nWhenever this minion\ndeals damage, gain\nthat much Armor.",
@@ -11712,6 +12419,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Meanstreet Marshal",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "<b>Deathrattle:</b> If this minion has 2 or more Attack, draw a card.",
@@ -11730,6 +12438,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CFM_760",
 		"name": "Kabal Crystal Runner",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET"
@@ -11755,6 +12464,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Shaku, the Collector",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "[x]<b>Stealth</b>. Whenever this\nattacks, add a random card\nto your hand <i>(from your\nopponent's class).</i>",
@@ -11777,6 +12487,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Dirty Rat",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Your opponent\nsummons a random minion\nfrom their hand.",
@@ -11796,6 +12507,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Getaway Kodo",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Secret:</b> When a friendly minion dies, return it to your hand.",
@@ -11819,6 +12531,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Wrathion",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "<b>Taunt</b>. <b>Battlecry:</b> Draw cards until you draw one that isn't a Dragon.",
@@ -11838,6 +12551,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CFM_807",
 		"name": "Auctionmaster Beardo",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "After you cast a spell, refresh your Hero Power.",
@@ -11857,6 +12571,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CFM_808",
 		"name": "Genzo, the Shark",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "Whenever this attacks, both players draw until they have 3 cards.",
@@ -11878,6 +12593,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tanaris Hogchopper",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"CHARGE"
@@ -11902,6 +12618,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Leatherclad Hogleader",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"CHARGE"
@@ -11921,6 +12638,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_811.gif",
 		"id": "CFM_811",
 		"name": "Lunar Visions",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "Draw 2 cards. Minions drawn cost (2) less.",
@@ -11945,6 +12663,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Wickerflame Burnbristle",
+		"playerClass": "Paladin",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "<b>Divine Shield, Taunt, Lifesteal</b>",
@@ -11966,6 +12685,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Virmen Sensei",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Give a friendly Beast +2/+2.",
@@ -11978,6 +12698,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_816e.gif",
 		"id": "CFM_816e",
 		"name": "Get Big",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -11995,6 +12716,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CFM_851",
 		"name": "Daring Reporter",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "Whenever your opponent draws a card, gain +1/+1.",
@@ -12007,6 +12729,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_851e.gif",
 		"id": "CFM_851e",
 		"name": "The Scoop",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -12033,6 +12756,7 @@ var parseCardsText = {
 		],
 		"multiClassGroup": "JADE_LOTUS",
 		"name": "Lotus Agents",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DISCOVER"
@@ -12063,6 +12787,7 @@ var parseCardsText = {
 		],
 		"multiClassGroup": "GRIMY_GOONS",
 		"name": "Grimestreet Smuggler",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Battlecry:</b> Give a random minion in your hand +1/+1.",
@@ -12075,6 +12800,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_853e.gif",
 		"id": "CFM_853e",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+1/+1 from Grimestreet Smuggler.",
 		"type": "Enchantment"
@@ -12095,6 +12821,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Ancient of Blossoms",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gangs",
 		"text": "<b>Taunt</b>",
@@ -12116,6 +12843,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Defias Cleaner",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DEATHRATTLE",
@@ -12138,6 +12866,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CFM_900",
 		"name": "Unlicensed Apothecary",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Epic",
 		"set": "Gangs",
@@ -12169,6 +12898,7 @@ var parseCardsText = {
 		],
 		"multiClassGroup": "JADE_LOTUS",
 		"name": "Aya Blackpaw",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gangs",
 		"text": "<b>Battlecry and Deathrattle:</b> Summon a{1} {0} <b>Jade Golem</b>.",
@@ -12185,6 +12915,7 @@ var parseCardsText = {
 		"goldenImage": "CFM_905.gif",
 		"id": "CFM_905",
 		"name": "Small-Time Recruits",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Gangs",
 		"text": "[x]Draw three 1-Cost\nminions from your deck.",
@@ -12204,6 +12935,7 @@ var parseCardsText = {
 			"DISCOVER"
 		],
 		"name": "I Know a Guy",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"referencedTags": [
 			"TAUNT"
@@ -12223,6 +12955,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_01",
 		"name": "Jason Chayes",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Enrage:</b> Just kidding! He never Enrages.",
@@ -12239,6 +12972,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_02",
 		"name": "Eric Dodds",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Summon a 2/2 Pirate and destroy all Ninjas.",
@@ -12255,6 +12989,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_03",
 		"name": "Bob Fitch",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Super Taunt</b> <i>(EVERY character must attack this minion.)</i>",
@@ -12271,6 +13006,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_04",
 		"name": "Steven Gabriel",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Summon a frothy beverage.",
@@ -12287,6 +13023,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_05",
 		"name": "Kyle Harrison",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>3 for a 5/4? That's a good deal!</i>",
@@ -12303,6 +13040,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CRED_06",
 		"name": "Derek Sakamoto",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>The notorious Footclapper.</i>",
@@ -12319,6 +13057,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_07",
 		"name": "Zwick",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Complain about bacon prices.",
@@ -12335,6 +13074,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CRED_08",
 		"name": "Ben Brode",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Your volume can't be reduced below maximum.",
@@ -12351,6 +13091,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "CRED_09",
 		"name": "Ben Thompson",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Draw some cards. With a pen.",
@@ -12367,6 +13108,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_10",
 		"name": "Michael Schweitzer",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>C-C-C-COMBO:</b> Destroy a minion.",
@@ -12383,6 +13125,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_11",
 		"name": "Jay Baxter",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Summon FIVE random Inventions.",
@@ -12399,6 +13142,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_12",
 		"name": "Rachelle Davis",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Draw TWO cards. <i>She's not a novice engineer.</i>",
@@ -12415,6 +13159,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "CRED_13",
 		"name": "Brian Schwab",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "At the end of your turn, give a random minion +1 Attack.",
@@ -12431,6 +13176,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_14",
 		"name": "Yong Woo",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Your other minions have +3 Attack and <b>Charge</b>.",
@@ -12447,6 +13193,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_15",
 		"name": "Andy Brock",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Can't be <b>Silenced. Divine Shield, Stealth.</b>",
@@ -12463,6 +13210,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_16",
 		"name": "Hamilton Chu",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>Was successfully NOT part of the problem! ...most of the time.</i>",
@@ -12479,6 +13227,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "CRED_17",
 		"name": "Rob Pardo",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "You can't start a game without this minion in your deck.",
@@ -12495,6 +13244,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_18",
 		"name": "Becca Abel",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Whenever you draw a card, make it Golden.",
@@ -12511,6 +13261,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_19",
 		"name": "Beomki Hong",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Taunt.</b> Friendly minions can’t be <b>Frozen.</b>",
@@ -12527,6 +13278,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_20",
 		"name": "Brian Birmingham",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Choose One</b> - Restore a Mech to full Health; or Give a Designer <b>Windfury.</b>",
@@ -12543,6 +13295,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_21",
 		"name": "Bryan Chang",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Foodie:</b> Make all minions edible.",
@@ -12559,6 +13312,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_22",
 		"name": "Cameron Chrisman",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "While this is in your hand, Golden cards cost (1) less.",
@@ -12575,6 +13329,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_23",
 		"name": "Christopher Yim",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Your emotes are now spoken in \"Radio Voice.\"",
@@ -12591,6 +13346,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_24",
 		"name": "Dean Ayala",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "You can't lose stars while this is in your deck.",
@@ -12607,6 +13363,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_25",
 		"name": "Elizabeth Cho",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Add Echo of Medivh and Echoing Ooze to your hand.",
@@ -12623,6 +13380,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_26",
 		"name": "Eric Del Priore",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Has <b>Taunt</b> if it's 3 AM.",
@@ -12639,6 +13397,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_27",
 		"name": "Henry Ho",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Spectate your opponent's hand.",
@@ -12655,6 +13414,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_28",
 		"name": "He-Rim Woo",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Choose One</b> - Punch an arm; Offer a treat; or Give a big hug.",
@@ -12671,6 +13431,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_29",
 		"name": "Jason MacAllister",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>He's a real stand-up guy.</i>",
@@ -12687,6 +13448,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_30",
 		"name": "JC Park",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Add a new platform for Hearthstone.",
@@ -12703,6 +13465,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_31",
 		"name": "Jeremy Cranford",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "When the game starts, this card climbs to the top of the deck.",
@@ -12719,6 +13482,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_32",
 		"name": "Jerry Mascho",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "At the start of your turn, deal 1 damage. If this card is golden, deal 1 damage at the end of your turn instead. THIS IS A HAN SOLO JOKE.",
@@ -12735,6 +13499,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_33",
 		"name": "Jomaro Kindred",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> TAKE any cards from your opponent's hand that they don't want.",
@@ -12751,6 +13516,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_34",
 		"name": "Max Ma",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Can only be played on a mobile device.",
@@ -12767,6 +13533,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_35",
 		"name": "Max McCall",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Your emotes have no cooldown and can't be squelched.",
@@ -12783,6 +13550,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "CRED_36",
 		"name": "Mike Donais",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Replace all minions in the battlefield, in both hands, and in both decks with random minions.",
@@ -12799,6 +13567,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_37",
 		"name": "Ricardo Robaina",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Summon three 1/1 Chinchillas.",
@@ -12815,6 +13584,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_38",
 		"name": "Robin Fredericksen",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> If you have no other Erics on the battlefield, rename this card to \"Eric\".",
@@ -12831,6 +13601,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_39",
 		"name": "Ryan Chew",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Chews One</b> - Sing karaoke; or Leave on time and tell everyone about it.",
@@ -12847,6 +13618,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_40",
 		"name": "Ryan Masterson",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Cast copies of Backstab, Cold Blood, and Eviscerate. <i>(targets chosen randomly).</i>",
@@ -12863,6 +13635,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "CRED_41",
 		"name": "Seyil Yoon",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Add 3 Sprints and a Marathon to your hand.",
@@ -12879,6 +13652,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_42",
 		"name": "Tim Erskine",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Whenever this minion destroys another minion, draw a card.",
@@ -12895,6 +13669,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_43",
 		"name": "Jon Bankard",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "50% chance to be 100% right.",
@@ -12911,6 +13686,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_44",
 		"name": "Walter Kong",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Deal 1 damage to each of 2 strategic targets.",
@@ -12927,6 +13703,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_45",
 		"name": "Jonas Laster",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Whenever a <b>Silenced</b> minion dies, gain +1/+1.",
@@ -12943,6 +13720,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_46",
 		"name": "Keith Landes",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "At the start of your turn, get -2 Health due to hunger.",
@@ -12959,6 +13737,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_47",
 		"name": "Dan Emmons",
+		"playerClass": "Shaman",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> <b>Design</b> \na solution \n <i>(wherever it is)</i>.",
@@ -12975,6 +13754,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_48",
 		"name": "Christian Scharling",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"rarity": "Legendary",
 		"set": "Credits",
@@ -12992,6 +13772,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_49",
 		"name": "Kris Zierhut",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Stealth</b>.\n<b>Deathrattle</b>: Those \nare… my… boots…",
@@ -13008,6 +13789,7 @@ var parseCardsText = {
 		"health": 11,
 		"id": "CRED_50",
 		"name": "Brian Farr",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> For the rest of the game, your minions can't be <b><b>Silence</b>d</b>.",
@@ -13024,6 +13806,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_51",
 		"name": "Jerry Cheng",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Inspire</b>: Give a random Engineer +1/+1.",
@@ -13040,6 +13823,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_52",
 		"name": "Alex Chapman",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Whenever a sound plays, replace it with \nJaraxxus' greeting.",
@@ -13056,6 +13840,7 @@ var parseCardsText = {
 		"health": 14,
 		"id": "CRED_53",
 		"name": "Camille Sanford",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Give all \nDevs in your hand and deck +1 Swag.",
@@ -13072,6 +13857,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CRED_54",
 		"name": "Hadidjah Chamberlin",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Stealth</b>.  At the beginning of each turn, create a random effect.  It doesn't actually do anything.",
@@ -13088,6 +13874,7 @@ var parseCardsText = {
 		"health": 12,
 		"id": "CRED_55",
 		"name": "Dave Kosak",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Costs (1) more for each word of text on this card.",
@@ -13104,6 +13891,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_56",
 		"name": "Dustin Escoffery",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Stealth</b>. Your other minions are Mechs.",
@@ -13120,6 +13908,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_57",
 		"name": "Matt Wyble",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Summon a \n Fluffy White Beast.",
@@ -13136,6 +13925,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_58",
 		"name": "Jason Shattuck",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> All cards are \n played automatically.\n <i>Please don't \n explode.</i>",
@@ -13152,6 +13942,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_59",
 		"name": "Brad Crusco",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> <b>Discover</b> \na Bagel.",
@@ -13168,6 +13959,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_60",
 		"name": "Michael Altuna",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Transform \nall enemy minions \ninto 1/1 Fish.",
@@ -13184,6 +13976,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_61",
 		"name": "Charlène Le Scanff",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>Breaktime?</i>",
@@ -13200,6 +13993,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "CRED_62",
 		"name": "Martin Brochu",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> The AI \n controls your next turn.",
@@ -13216,6 +14010,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_63",
 		"name": "Evan Polekoff",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Create a custom spell… in under 48 hours.",
@@ -13232,6 +14027,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_64",
 		"name": "Liv Breeden",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b>  Make your \n card back orange.  Actually… make everything orange.",
@@ -13248,6 +14044,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "CRED_65",
 		"name": "Matt Place",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>Wait, wait! I’m having one of those things… it’s like a headache with pictures… oh right, AN IDEA!</i>",
@@ -13264,6 +14061,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "CRED_66",
 		"name": "Jason DeFord",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>Ensure a better foundation by blowing up the old one!</i>",
@@ -13280,6 +14078,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_67",
 		"name": "Michael Skacal",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Destroy \n your weekend. Restore \nall services to Hearthstone.",
@@ -13296,6 +14095,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_68",
 		"name": "Peter Whalen",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Remove a word from a card in your hand.",
@@ -13312,6 +14112,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CRED_69",
 		"name": "Chris Belcher",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Immune</b> to everything.",
@@ -13328,6 +14129,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CRED_70",
 		"name": "Monique Ory",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b>  Knit a cozy +1/+1 sweater for a friendly Beast.",
@@ -13344,6 +14146,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_71",
 		"name": "Michael Reynaga",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Your minions \n attack randomly. \n <b>Deathrattle:</b> Fix all but one.",
@@ -13360,6 +14163,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_72",
 		"name": "Steve Shimizu",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Send an email to all friendly minions.",
@@ -13376,6 +14180,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_73",
 		"name": "David Pendergrast",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> If you're holding a Cookie, destroy all bugs.",
@@ -13392,6 +14197,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_74",
 		"name": "Drew Korfe",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b>  Summon two 1/1 wolves.",
@@ -13408,6 +14214,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "CRED_75",
 		"name": "Steve Walker",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> If everything \n is on fire, <b>Adapt</b>. If it’s 3AM, <b>Adapt</b> again.",
@@ -13424,6 +14231,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_76",
 		"name": "Nicholas Kinney",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>I can't believe it's \nnot golden!</i>",
@@ -13440,6 +14248,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "CRED_77",
 		"name": "Lorenzo Minaca",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Inspire</b>: Gain <b>Barbarism</b>, then swap this minion's Attack and Health.",
@@ -13456,6 +14265,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_78",
 		"name": "Matthew Grubb",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Fill both \n sides of the board with Carrion Grubs.",
@@ -13472,6 +14282,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CRED_79",
 		"name": "Aaron Gutierrez",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> <b>Discover</b> a preeetty good card.",
@@ -13488,6 +14299,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_80",
 		"name": "Derek Dupras",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Give all friendly minions <b>Donuts</b>.",
@@ -13504,6 +14316,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_81",
 		"name": "Sojin Hwang",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>Ooooo, more pieces for \n my collection!</i>",
@@ -13520,6 +14333,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CRED_82",
 		"name": "Jacob Jarecki",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Never Give Up</b>: If your opponent has lethal, they disconnect.",
@@ -13536,6 +14350,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_83",
 		"name": "Josh Durica",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Implement \na 'cool new card.' \nDeal 5 damage to \nthis minion.",
@@ -13552,6 +14367,7 @@ var parseCardsText = {
 		"health": 14,
 		"id": "CRED_84",
 		"name": "Alex Tsang",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Your Schedule is <b>Immune</b> to feature creep.",
@@ -13568,6 +14384,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CRED_85",
 		"name": "Pat Nagle",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<i>For the last time, yes! \nI love fishing!</i>",
@@ -13584,6 +14401,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "CRED_86",
 		"name": "Neal Kochhar",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "<b>Battlecry:</b> Help others find your <b>Fireside Gathering</b> <i>(wherever it is).</i>",
@@ -13600,6 +14418,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "CRED_87",
 		"name": "Terri Wellman",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Credits",
 		"text": "Adjacent minions \nare <b>Immune</b> to fire spells. <i>This is fine.</i>",
@@ -13622,6 +14441,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Goldshire Footman",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Taunt</b>",
@@ -13644,6 +14464,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Fen Creeper",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Taunt</b>",
@@ -13660,6 +14481,7 @@ var parseCardsText = {
 		"goldenImage": "CS1_112.gif",
 		"id": "CS1_112",
 		"name": "Holy Nova",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $2 damage to all enemies. Restore #2 Health to all friendly characters.",
@@ -13676,6 +14498,7 @@ var parseCardsText = {
 		"goldenImage": "CS1_113.gif",
 		"id": "CS1_113",
 		"name": "Mind Control",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Take control of an enemy minion.",
@@ -13692,6 +14515,7 @@ var parseCardsText = {
 		"goldenImage": "CS1_129.gif",
 		"id": "CS1_129",
 		"name": "Inner Fire",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Change a minion's Attack to be equal to its Health.",
@@ -13703,6 +14527,7 @@ var parseCardsText = {
 		"goldenImage": "CS1_129e.gif",
 		"id": "CS1_129e",
 		"name": "Inner Fire",
+		"playerClass": "Priest",
 		"set": "Expert1",
 		"text": "This minion's Attack is equal to its Health.",
 		"type": "Enchantment"
@@ -13718,6 +14543,7 @@ var parseCardsText = {
 		"goldenImage": "CS1_130.gif",
 		"id": "CS1_130",
 		"name": "Holy Smite",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $2 damage.",
@@ -13731,6 +14557,7 @@ var parseCardsText = {
 		"goldenImage": "CS1h_001.gif",
 		"id": "CS1h_001",
 		"name": "Lesser Heal",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Hero Power</b>\nRestore #2 Health.",
@@ -13744,6 +14571,7 @@ var parseCardsText = {
 		"goldenImage": "CS1h_001_H1.gif",
 		"id": "CS1h_001_H1",
 		"name": "Lesser Heal",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nRestore #2 Health.",
@@ -13757,6 +14585,7 @@ var parseCardsText = {
 		"goldenImage": "CS1h_001_H1_AT_132.gif",
 		"id": "CS1h_001_H1_AT_132",
 		"name": "Heal",
+		"playerClass": "Priest",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nRestore #4 Health.",
 		"type": "Hero_power"
@@ -13772,6 +14601,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_003.gif",
 		"id": "CS2_003",
 		"name": "Mind Vision",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Put a copy of a random card in your opponent's hand into your hand.",
@@ -13788,6 +14618,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_004.gif",
 		"id": "CS2_004",
 		"name": "Power Word: Shield",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give a minion +2 Health.\nDraw a card.",
@@ -13799,6 +14630,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_004e.gif",
 		"id": "CS2_004e",
 		"name": "Power Word: Shield",
+		"playerClass": "Priest",
 		"set": "Core",
 		"text": "+2 Health.",
 		"type": "Enchantment"
@@ -13814,6 +14646,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_005.gif",
 		"id": "CS2_005",
 		"name": "Claw",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give your hero +2 Attack this turn. Gain 2 Armor.",
@@ -13828,6 +14661,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Claw",
+		"playerClass": "Druid",
 		"set": "Core",
 		"text": "+2 Attack this turn.",
 		"type": "Enchantment"
@@ -13843,6 +14677,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_007.gif",
 		"id": "CS2_007",
 		"name": "Healing Touch",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Restore #8 Health.",
@@ -13859,6 +14694,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_008.gif",
 		"id": "CS2_008",
 		"name": "Moonfire",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $1 damage.",
@@ -13875,6 +14711,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_009.gif",
 		"id": "CS2_009",
 		"name": "Mark of the Wild",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"referencedTags": [
 			"TAUNT"
@@ -13889,6 +14726,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_009e.gif",
 		"id": "CS2_009e",
 		"name": "Mark of the Wild",
+		"playerClass": "Druid",
 		"set": "Core",
 		"text": "+2/+2 and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -13904,6 +14742,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_011.gif",
 		"id": "CS2_011",
 		"name": "Savage Roar",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give your characters +2 Attack this turn.",
@@ -13918,6 +14757,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Savage Roar",
+		"playerClass": "Druid",
 		"set": "Core",
 		"text": "+2 Attack this turn.",
 		"type": "Enchantment"
@@ -13933,6 +14773,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_012.gif",
 		"id": "CS2_012",
 		"name": "Swipe",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $4 damage to an enemy and $1 damage to all other enemies.",
@@ -13949,6 +14790,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_013.gif",
 		"id": "CS2_013",
 		"name": "Wild Growth",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Gain an empty Mana Crystal.",
@@ -13962,6 +14804,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_013t.gif",
 		"id": "CS2_013t",
 		"name": "Excess Mana",
+		"playerClass": "Druid",
 		"set": "Core",
 		"text": "Draw a card. <i>(You can only have 10 Mana in your tray.)</i>",
 		"type": "Spell"
@@ -13974,6 +14817,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_017.gif",
 		"id": "CS2_017",
 		"name": "Shapeshift",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Hero Power</b>\n+1 Attack this turn.    +1 Armor.",
@@ -13988,6 +14832,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Claws",
+		"playerClass": "Druid",
 		"set": "Core",
 		"text": "Your hero has +1 Attack this turn.",
 		"type": "Enchantment"
@@ -14003,6 +14848,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_022.gif",
 		"id": "CS2_022",
 		"name": "Polymorph",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Transform a minion\ninto a 1/1 Sheep.",
@@ -14017,6 +14863,7 @@ var parseCardsText = {
 			"MORPH"
 		],
 		"name": "Polymorph",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Core",
 		"text": "This minion has been transformed into a 1/1 Sheep.",
@@ -14033,6 +14880,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_023.gif",
 		"id": "CS2_023",
 		"name": "Arcane Intellect",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Draw 2 cards.",
@@ -14052,6 +14900,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Frostbolt",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $3 damage to a character and <b>Freeze</b> it.",
@@ -14068,6 +14917,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_025.gif",
 		"id": "CS2_025",
 		"name": "Arcane Explosion",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $1 damage to all enemy minions.",
@@ -14087,6 +14937,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Frost Nova",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Freeze</b> all enemy minions.",
@@ -14103,6 +14954,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_027.gif",
 		"id": "CS2_027",
 		"name": "Mirror Image",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"referencedTags": [
 			"TAUNT"
@@ -14125,6 +14977,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Blizzard",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Deal $2 damage to all enemy minions and <b>Freeze</b> them.",
@@ -14141,6 +14994,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_029.gif",
 		"id": "CS2_029",
 		"name": "Fireball",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $6 damage.",
@@ -14160,6 +15014,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Ice Lance",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Hof",
 		"text": "<b>Freeze</b> a character. If it was already <b>Frozen</b>, deal $4 damage instead.",
@@ -14176,6 +15031,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_032.gif",
 		"id": "CS2_032",
 		"name": "Flamestrike",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $4 damage to all enemy minions.",
@@ -14197,6 +15053,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Water Elemental",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Free",
 		"set": "Core",
@@ -14211,6 +15068,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_034.gif",
 		"id": "CS2_034",
 		"name": "Fireblast",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Hero Power</b>\nDeal $1 damage.",
@@ -14224,6 +15082,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_034_H1.gif",
 		"id": "CS2_034_H1",
 		"name": "Fireblast",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nDeal $1 damage.",
@@ -14237,6 +15096,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_034_H1_AT_132.gif",
 		"id": "CS2_034_H1_AT_132",
 		"name": "Fireblast Rank 2",
+		"playerClass": "Mage",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nDeal $2 damage.",
 		"type": "Hero_power"
@@ -14249,6 +15109,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_034_H2.gif",
 		"id": "CS2_034_H2",
 		"name": "Fireblast",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nDeal $1 damage.",
@@ -14262,6 +15123,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_034_H2_AT_132.gif",
 		"id": "CS2_034_H2_AT_132",
 		"name": "Fireblast Rank 2",
+		"playerClass": "Mage",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nDeal $2 damage.",
 		"type": "Hero_power"
@@ -14280,6 +15142,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Frost Shock",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $1 damage to an enemy character and <b>Freeze</b> it.",
@@ -14296,6 +15159,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_038.gif",
 		"id": "CS2_038",
 		"name": "Ancestral Spirit",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -14310,6 +15174,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_038e.gif",
 		"id": "CS2_038e",
 		"name": "Ancestral Spirit",
+		"playerClass": "Shaman",
 		"set": "Expert1",
 		"text": "<b>Deathrattle:</b> Resummon this minion.",
 		"type": "Enchantment"
@@ -14325,6 +15190,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_039.gif",
 		"id": "CS2_039",
 		"name": "Windfury",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"referencedTags": [
 			"WINDFURY"
@@ -14344,6 +15210,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_041.gif",
 		"id": "CS2_041",
 		"name": "Ancestral Healing",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"referencedTags": [
 			"TAUNT"
@@ -14361,6 +15228,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Ancestral Infusion",
+		"playerClass": "Shaman",
 		"set": "Core",
 		"text": "Taunt.",
 		"type": "Enchantment"
@@ -14381,6 +15249,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fire Elemental",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Free",
 		"set": "Core",
@@ -14398,6 +15267,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_045.gif",
 		"id": "CS2_045",
 		"name": "Rockbiter Weapon",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give a friendly character +3 Attack this turn.",
@@ -14412,6 +15282,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Rockbiter Weapon",
+		"playerClass": "Shaman",
 		"set": "Core",
 		"text": "This character has +3 Attack this turn.",
 		"type": "Enchantment"
@@ -14427,6 +15298,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_046.gif",
 		"id": "CS2_046",
 		"name": "Bloodlust",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give your minions +3 Attack this turn.",
@@ -14441,6 +15313,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Bloodlust",
+		"playerClass": "Shaman",
 		"set": "Core",
 		"text": "+3 Attack this turn.",
 		"type": "Enchantment"
@@ -14459,6 +15332,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_049.gif",
 		"id": "CS2_049",
 		"name": "Totemic Call",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Hero Power</b>\nSummon a random Totem.",
@@ -14478,6 +15352,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_049_H1.gif",
 		"id": "CS2_049_H1",
 		"name": "Totemic Call",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nSummon a random Totem.",
@@ -14491,6 +15366,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_049_H1_AT_132.gif",
 		"id": "CS2_049_H1_AT_132",
 		"name": "Totemic Slam",
+		"playerClass": "Shaman",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nSummon a Totem of your choice.",
 		"type": "Hero_power"
@@ -14505,6 +15381,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CS2_050",
 		"name": "Searing Totem",
+		"playerClass": "Shaman",
 		"race": "TOTEM",
 		"rarity": "Free",
 		"set": "Core",
@@ -14523,6 +15400,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Stoneclaw Totem",
+		"playerClass": "Shaman",
 		"race": "TOTEM",
 		"rarity": "Free",
 		"set": "Core",
@@ -14542,6 +15420,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Wrath of Air Totem",
+		"playerClass": "Shaman",
 		"race": "TOTEM",
 		"rarity": "Free",
 		"set": "Core",
@@ -14560,6 +15439,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_053.gif",
 		"id": "CS2_053",
 		"name": "Far Sight",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Draw a card. That card costs (3) less.",
@@ -14572,6 +15452,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_053e.gif",
 		"id": "CS2_053e",
 		"name": "Far Sight",
+		"playerClass": "Shaman",
 		"set": "Expert1",
 		"text": "One of your cards costs (3) less.",
 		"type": "Enchantment"
@@ -14584,6 +15465,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_056.gif",
 		"id": "CS2_056",
 		"name": "Life Tap",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Hero Power</b>\nDraw a card and take $2 damage.",
@@ -14597,6 +15479,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_056_H1.gif",
 		"id": "CS2_056_H1",
 		"name": "Life Tap",
+		"playerClass": "Warlock",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nDraw a card and take $2 damage.",
 		"type": "Hero_power"
@@ -14612,6 +15495,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_057.gif",
 		"id": "CS2_057",
 		"name": "Shadow Bolt",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $4 damage\nto a minion.",
@@ -14633,6 +15517,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Blood Imp",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -14645,6 +15530,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_059o.gif",
 		"id": "CS2_059o",
 		"name": "Blood Pact",
+		"playerClass": "Warlock",
 		"set": "Expert1",
 		"text": "Increased Health.",
 		"type": "Enchantment"
@@ -14660,6 +15546,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_061.gif",
 		"id": "CS2_061",
 		"name": "Drain Life",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $2 damage. Restore #2 Health to your hero.",
@@ -14676,6 +15563,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_062.gif",
 		"id": "CS2_062",
 		"name": "Hellfire",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $3 damage to ALL characters.",
@@ -14692,6 +15580,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_063.gif",
 		"id": "CS2_063",
 		"name": "Corruption",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Choose an enemy minion. At the start of your turn, destroy it.",
@@ -14703,6 +15592,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_063e.gif",
 		"id": "CS2_063e",
 		"name": "Corruption",
+		"playerClass": "Warlock",
 		"set": "Core",
 		"text": "At the start of the corrupting player's turn, destroy this minion.",
 		"type": "Enchantment"
@@ -14723,6 +15613,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dread Infernal",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Free",
 		"set": "Core",
@@ -14745,6 +15636,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Voidwalker",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Free",
 		"set": "Core",
@@ -14762,6 +15654,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_072.gif",
 		"id": "CS2_072",
 		"name": "Backstab",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $2 damage to an undamaged minion.",
@@ -14781,6 +15674,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Cold Blood",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Give a minion +2 Attack. <b>Combo:</b> +4 Attack instead.",
@@ -14792,6 +15686,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_073e.gif",
 		"id": "CS2_073e",
 		"name": "Cold Blood",
+		"playerClass": "Rogue",
 		"set": "Expert1",
 		"text": "+2 Attack.",
 		"type": "Enchantment"
@@ -14802,6 +15697,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_073e2.gif",
 		"id": "CS2_073e2",
 		"name": "Cold Blood",
+		"playerClass": "Rogue",
 		"set": "Expert1",
 		"text": "+4 Attack.",
 		"type": "Enchantment"
@@ -14817,6 +15713,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_074.gif",
 		"id": "CS2_074",
 		"name": "Deadly Poison",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give your weapon +2 Attack.",
@@ -14828,6 +15725,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_074e.gif",
 		"id": "CS2_074e",
 		"name": "Deadly Poison",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "+2 Attack.",
 		"type": "Enchantment"
@@ -14843,6 +15741,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_075.gif",
 		"id": "CS2_075",
 		"name": "Sinister Strike",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $3 damage to the enemy hero.",
@@ -14859,6 +15758,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_076.gif",
 		"id": "CS2_076",
 		"name": "Assassinate",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Destroy an enemy minion.",
@@ -14875,6 +15775,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_077.gif",
 		"id": "CS2_077",
 		"name": "Sprint",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Draw 4 cards.",
@@ -14893,6 +15794,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_080.gif",
 		"id": "CS2_080",
 		"name": "Assassin's Blade",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Weapon"
@@ -14907,6 +15809,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_082.gif",
 		"id": "CS2_082",
 		"name": "Wicked Knife",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Weapon"
@@ -14921,6 +15824,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_082_H1.gif",
 		"id": "CS2_082_H1",
 		"name": "Wicked Knife",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"type": "Weapon"
@@ -14933,6 +15837,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_083b.gif",
 		"id": "CS2_083b",
 		"name": "Dagger Mastery",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Hero Power</b>\nEquip a 1/2 Dagger.",
@@ -14946,6 +15851,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_083b_H1.gif",
 		"id": "CS2_083b_H1",
 		"name": "Dagger Mastery",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nEquip a 1/2 Dagger.",
@@ -14960,6 +15866,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Sharpened",
+		"playerClass": "Rogue",
 		"set": "Core",
 		"text": "+1 Attack this turn.",
 		"type": "Enchantment"
@@ -14975,6 +15882,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_084.gif",
 		"id": "CS2_084",
 		"name": "Hunter's Mark",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Change a minion's Health to 1.",
@@ -14986,6 +15894,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_084e.gif",
 		"id": "CS2_084e",
 		"name": "Hunter's Mark",
+		"playerClass": "Hunter",
 		"set": "Core",
 		"text": "This minion has 1 Health.",
 		"type": "Enchantment"
@@ -15001,6 +15910,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_087.gif",
 		"id": "CS2_087",
 		"name": "Blessing of Might",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give a minion +3 Attack.",
@@ -15012,6 +15922,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_087e.gif",
 		"id": "CS2_087e",
 		"name": "Blessing of Might",
+		"playerClass": "Paladin",
 		"set": "Core",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -15032,6 +15943,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Guardian of Kings",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Restore 6 Health to your hero.",
@@ -15048,6 +15960,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_089.gif",
 		"id": "CS2_089",
 		"name": "Holy Light",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Restore #6 Health.",
@@ -15066,6 +15979,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_091.gif",
 		"id": "CS2_091",
 		"name": "Light's Justice",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Weapon"
@@ -15081,6 +15995,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_092.gif",
 		"id": "CS2_092",
 		"name": "Blessing of Kings",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give a minion +4/+4. <i>(+4 Attack/+4 Health)</i>",
@@ -15092,6 +16007,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_092e.gif",
 		"id": "CS2_092e",
 		"name": "Blessing of Kings",
+		"playerClass": "Paladin",
 		"set": "Core",
 		"text": "+4/+4.",
 		"type": "Enchantment"
@@ -15107,6 +16023,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_093.gif",
 		"id": "CS2_093",
 		"name": "Consecration",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $2 damage to all enemies.",
@@ -15123,6 +16040,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_094.gif",
 		"id": "CS2_094",
 		"name": "Hammer of Wrath",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $3 damage.\nDraw a card.",
@@ -15141,6 +16059,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_097.gif",
 		"id": "CS2_097",
 		"name": "Truesilver Champion",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Whenever your hero attacks, restore 2 Health to it.",
@@ -15154,6 +16073,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_101.gif",
 		"id": "CS2_101",
 		"name": "Reinforce",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit.",
@@ -15167,6 +16087,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_101_H1.gif",
 		"id": "CS2_101_H1",
 		"name": "Reinforce",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit.",
@@ -15180,6 +16101,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_101_H1_AT_132.gif",
 		"id": "CS2_101_H1_AT_132",
 		"name": "The Silver Hand",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
@@ -15193,6 +16115,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_101_H2.gif",
 		"id": "CS2_101_H2",
 		"name": "Reinforce",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit.",
@@ -15206,6 +16129,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_101_H2_AT_132.gif",
 		"id": "CS2_101_H2_AT_132",
 		"name": "The Silver Hand",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
@@ -15221,6 +16145,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CS2_101t",
 		"name": "Silver Hand Recruit",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Minion"
@@ -15233,6 +16158,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_102.gif",
 		"id": "CS2_102",
 		"name": "Armor Up!",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Hero Power</b>\nGain 2 Armor.",
@@ -15246,6 +16172,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_102_H1.gif",
 		"id": "CS2_102_H1",
 		"name": "Armor Up!",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nGain 2 Armor.",
@@ -15259,6 +16186,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_102_H1_AT_132.gif",
 		"id": "CS2_102_H1_AT_132",
 		"name": "Tank Up!",
+		"playerClass": "Warrior",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nGain 4 Armor.",
 		"type": "Hero_power"
@@ -15274,6 +16202,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_103.gif",
 		"id": "CS2_103",
 		"name": "Charge",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"referencedTags": [
 			"CHARGE"
@@ -15288,6 +16217,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_103e2.gif",
 		"id": "CS2_103e2",
 		"name": "Charge",
+		"playerClass": "Warrior",
 		"set": "Core",
 		"text": "Has <b>Charge</b>.",
 		"type": "Enchantment"
@@ -15303,6 +16233,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_104.gif",
 		"id": "CS2_104",
 		"name": "Rampage",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Give a damaged minion +3/+3.",
@@ -15314,6 +16245,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_104e.gif",
 		"id": "CS2_104e",
 		"name": "Rampage",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "+3/+3.",
 		"type": "Enchantment"
@@ -15329,6 +16261,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_105.gif",
 		"id": "CS2_105",
 		"name": "Heroic Strike",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give your hero +4 Attack this turn.",
@@ -15343,6 +16276,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Heroic Strike",
+		"playerClass": "Warrior",
 		"set": "Core",
 		"text": "+4 Attack this turn.",
 		"type": "Enchantment"
@@ -15360,6 +16294,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_106.gif",
 		"id": "CS2_106",
 		"name": "Fiery War Axe",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Weapon"
@@ -15375,6 +16310,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_108.gif",
 		"id": "CS2_108",
 		"name": "Execute",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Destroy a damaged enemy minion.",
@@ -15393,6 +16329,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_112.gif",
 		"id": "CS2_112",
 		"name": "Arcanite Reaper",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Weapon"
@@ -15408,6 +16345,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_114.gif",
 		"id": "CS2_114",
 		"name": "Cleave",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "[x]Deal $2 damage to\ntwo random enemy\nminions.",
@@ -15429,6 +16367,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Earthen Ring Farseer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Restore 3 Health.",
@@ -15447,6 +16386,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CS2_118",
 		"name": "Magma Rager",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Free",
 		"set": "Core",
@@ -15465,6 +16405,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "CS2_119",
 		"name": "Oasis Snapjaw",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Free",
 		"set": "Core",
@@ -15483,6 +16424,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CS2_120",
 		"name": "River Crocolisk",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Free",
 		"set": "Core",
@@ -15504,6 +16446,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Frostwolf Grunt",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Taunt</b>",
@@ -15525,6 +16468,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Raid Leader",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Your other minions have +1 Attack.",
@@ -15536,6 +16480,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_122e.gif",
 		"id": "CS2_122e",
 		"name": "Enhanced",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Raid Leader is granting this minion +1 Attack.",
 		"type": "Enchantment"
@@ -15557,6 +16502,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Wolfrider",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Charge</b>",
@@ -15578,6 +16524,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Ironfur Grizzly",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Free",
 		"set": "Core",
@@ -15601,6 +16548,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Silverback Patriarch",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Free",
 		"set": "Core",
@@ -15624,6 +16572,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Stormwind Knight",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Charge</b>",
@@ -15646,6 +16595,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ironforge Rifleman",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Deal 1 damage.",
@@ -15668,6 +16618,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Kobold Geomancer",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"spellDamage": 1,
@@ -15688,6 +16639,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CS2_146",
 		"name": "Southsea Deckhand",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Common",
 		"referencedTags": [
@@ -15714,6 +16666,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gnomish Inventor",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Draw a card.",
@@ -15736,6 +16689,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Stormpike Commando",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Deal 2 damage.",
@@ -15758,6 +16712,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Silver Hand Knight",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Summon a 2/2 Squire.",
@@ -15774,6 +16729,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CS2_152",
 		"name": "Squire",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"type": "Minion"
@@ -15795,6 +16751,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Archmage",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"spellDamage": 1,
@@ -15818,6 +16775,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Ravenholdt Assassin",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Stealth</b>",
@@ -15840,6 +16798,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Lord of the Arena",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Taunt</b>",
@@ -15859,6 +16818,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CS2_168",
 		"name": "Murloc Raider",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Free",
 		"set": "Core",
@@ -15881,6 +16841,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Young Dragonhawk",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -15903,6 +16864,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Stonetusk Boar",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Free",
 		"set": "Core",
@@ -15923,6 +16885,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CS2_172",
 		"name": "Bloodfen Raptor",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Free",
 		"set": "Core",
@@ -15944,6 +16907,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Bluegill Warrior",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Free",
 		"set": "Core",
@@ -15967,6 +16931,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Sen'jin Shieldmasta",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Taunt</b>",
@@ -15989,6 +16954,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Injured Blademaster",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Deal 4 damage to HIMSELF.",
@@ -16000,6 +16966,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_181e.gif",
 		"id": "CS2_181e",
 		"name": "Full Strength",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "This minion has +2 Attack.",
 		"type": "Enchantment"
@@ -16017,6 +16984,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CS2_182",
 		"name": "Chillwind Yeti",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Minion"
@@ -16034,6 +17002,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "CS2_186",
 		"name": "War Golem",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Minion"
@@ -16055,6 +17024,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Booty Bay Bodyguard",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Taunt</b>",
@@ -16077,6 +17047,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Abusive Sergeant",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Give a minion +2 Attack this turn.",
@@ -16091,6 +17062,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "'Inspired'",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "This minion has +2 Attack this turn.",
 		"type": "Enchantment"
@@ -16112,6 +17084,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Elven Archer",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Deal 1 damage.",
@@ -16134,6 +17107,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Razorfen Hunter",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Summon a 1/1 Boar.",
@@ -16155,6 +17129,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Ogre Magi",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"spellDamage": 1,
@@ -16174,6 +17149,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "CS2_200",
 		"name": "Boulderfist Ogre",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Minion"
@@ -16191,6 +17167,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "CS2_201",
 		"name": "Core Hound",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Free",
 		"set": "Core",
@@ -16213,6 +17190,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ironbeak Owl",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -16239,6 +17217,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Reckless Rocketeer",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Charge</b>",
@@ -16261,6 +17240,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Spiteful Smith",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Enrage:</b> Your weapon has +2 Attack.",
@@ -16272,6 +17252,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_221e.gif",
 		"id": "CS2_221e",
 		"name": "Sharp!",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+2 Attack from Spiteful Smith.",
 		"type": "Enchantment"
@@ -16293,6 +17274,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Stormwind Champion",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Your other minions have +1/+1.",
@@ -16304,6 +17286,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_222o.gif",
 		"id": "CS2_222o",
 		"name": "Might of Stormwind",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Has +1/+1.",
 		"type": "Enchantment"
@@ -16325,6 +17308,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Frostwolf Warlord",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Gain +1/+1 for each other friendly minion on the battlefield.",
@@ -16336,6 +17320,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_226e.gif",
 		"id": "CS2_226e",
 		"name": "Frostwolf Banner",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -16357,6 +17342,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Venture Co. Mercenary",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Your minions cost (3) more.",
@@ -16375,6 +17361,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CS2_231",
 		"name": "Wisp",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"type": "Minion"
@@ -16395,6 +17382,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Ironbark Protector",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Taunt</b>",
@@ -16411,6 +17399,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_233.gif",
 		"id": "CS2_233",
 		"name": "Blade Flurry",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Destroy your weapon and deal its damage to all enemy minions.",
@@ -16427,6 +17416,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_234.gif",
 		"id": "CS2_234",
 		"name": "Shadow Word: Pain",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Destroy a minion with 3 or less Attack.",
@@ -16445,6 +17435,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "CS2_235",
 		"name": "Northshire Cleric",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Whenever a minion is healed, draw a card.",
@@ -16461,6 +17452,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_236.gif",
 		"id": "CS2_236",
 		"name": "Divine Spirit",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Double a minion's Health.",
@@ -16472,6 +17464,7 @@ var parseCardsText = {
 		"goldenImage": "CS2_236e.gif",
 		"id": "CS2_236e",
 		"name": "Divine Spirit",
+		"playerClass": "Priest",
 		"set": "Core",
 		"text": "This minion has double Health.",
 		"type": "Enchantment"
@@ -16489,6 +17482,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "CS2_237",
 		"name": "Starving Buzzard",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Free",
 		"set": "Core",
@@ -16505,6 +17499,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CS2_boar",
 		"name": "Boar",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Core",
@@ -16523,6 +17518,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Mirror Image",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Core",
 		"text": "<b>Taunt</b>",
@@ -16538,6 +17534,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "CS2_tk1",
 		"name": "Sheep",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Core",
@@ -16557,6 +17554,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Laughing Sister",
+		"playerClass": "Dream",
 		"set": "Expert1",
 		"text": "Can't be targeted by spells or Hero Powers.",
 		"type": "Minion"
@@ -16569,6 +17567,7 @@ var parseCardsText = {
 		"goldenImage": "DREAM_02.gif",
 		"id": "DREAM_02",
 		"name": "Ysera Awakens",
+		"playerClass": "Dream",
 		"set": "Expert1",
 		"text": "Deal $5 damage to all characters except Ysera.",
 		"type": "Spell"
@@ -16583,6 +17582,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "DREAM_03",
 		"name": "Emerald Drake",
+		"playerClass": "Dream",
 		"race": "DRAGON",
 		"set": "Expert1",
 		"type": "Minion"
@@ -16595,6 +17595,7 @@ var parseCardsText = {
 		"goldenImage": "DREAM_04.gif",
 		"id": "DREAM_04",
 		"name": "Dream",
+		"playerClass": "Dream",
 		"set": "Expert1",
 		"text": "Return a minion to its owner's hand.",
 		"type": "Spell"
@@ -16607,6 +17608,7 @@ var parseCardsText = {
 		"goldenImage": "DREAM_05.gif",
 		"id": "DREAM_05",
 		"name": "Nightmare",
+		"playerClass": "Dream",
 		"set": "Expert1",
 		"text": "Give a minion +5/+5. At the start of your next turn, destroy it.",
 		"type": "Spell"
@@ -16617,6 +17619,7 @@ var parseCardsText = {
 		"goldenImage": "DREAM_05e.gif",
 		"id": "DREAM_05e",
 		"name": "Nightmare",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "This minion has +5/+5, but will be destroyed soon.",
 		"type": "Enchantment"
@@ -16637,6 +17640,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Darkscale Healer",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Restore 2 Health to all friendly characters.",
@@ -16658,6 +17662,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Houndmaster",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"referencedTags": [
 			"TAUNT"
@@ -16672,6 +17677,7 @@ var parseCardsText = {
 		"goldenImage": "DS1_070o.gif",
 		"id": "DS1_070o",
 		"name": "Master's Presence",
+		"playerClass": "Hunter",
 		"set": "Core",
 		"text": "+2/+2 and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -16692,6 +17698,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Timber Wolf",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Free",
 		"set": "Core",
@@ -16704,6 +17711,7 @@ var parseCardsText = {
 		"goldenImage": "DS1_175o.gif",
 		"id": "DS1_175o",
 		"name": "Furious Howl",
+		"playerClass": "Hunter",
 		"set": "Core",
 		"text": "+1 Attack from {0}.",
 		"type": "Enchantment"
@@ -16724,6 +17732,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Tundra Rhino",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Free",
 		"referencedTags": [
@@ -16739,6 +17748,7 @@ var parseCardsText = {
 		"goldenImage": "DS1_178e.gif",
 		"id": "DS1_178e",
 		"name": "Charge",
+		"playerClass": "Hunter",
 		"set": "Core",
 		"text": "{0} grants <b>Charge</b>.",
 		"type": "Enchantment"
@@ -16754,6 +17764,7 @@ var parseCardsText = {
 		"goldenImage": "DS1_183.gif",
 		"id": "DS1_183",
 		"name": "Multi-Shot",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $3 damage to two random enemy minions.",
@@ -16770,6 +17781,7 @@ var parseCardsText = {
 		"goldenImage": "DS1_184.gif",
 		"id": "DS1_184",
 		"name": "Tracking",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Look at the top 3 cards of your deck. Draw one and discard the others.",
@@ -16786,6 +17798,7 @@ var parseCardsText = {
 		"goldenImage": "DS1_185.gif",
 		"id": "DS1_185",
 		"name": "Arcane Shot",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $2 damage.",
@@ -16804,6 +17817,7 @@ var parseCardsText = {
 		"goldenImage": "DS1_188.gif",
 		"id": "DS1_188",
 		"name": "Gladiator's Longbow",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"referencedTags": [
 			"IMMUNE"
@@ -16818,6 +17832,7 @@ var parseCardsText = {
 		"goldenImage": "DS1_188e.gif",
 		"id": "DS1_188e",
 		"name": "Gladiator's Longbow enchantment",
+		"playerClass": "Hunter",
 		"set": "Expert1",
 		"type": "Enchantment"
 	},
@@ -16832,6 +17847,7 @@ var parseCardsText = {
 		"goldenImage": "DS1_233.gif",
 		"id": "DS1_233",
 		"name": "Mind Blast",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $5 damage to the enemy hero.",
@@ -16847,6 +17863,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "ds1_whelptoken",
 		"name": "Whelp",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Expert1",
 		"type": "Minion"
@@ -16859,6 +17876,7 @@ var parseCardsText = {
 		"goldenImage": "DS1h_292.gif",
 		"id": "DS1h_292",
 		"name": "Steady Shot",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Hero Power</b>\nDeal $2 damage to the enemy hero.",
@@ -16872,6 +17890,7 @@ var parseCardsText = {
 		"goldenImage": "DS1h_292_H1.gif",
 		"id": "DS1h_292_H1",
 		"name": "Steady Shot",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nDeal $2 damage to the enemy hero.",
@@ -16885,6 +17904,7 @@ var parseCardsText = {
 		"goldenImage": "DS1h_292_H1_AT_132.gif",
 		"id": "DS1h_292_H1_AT_132",
 		"name": "Ballista Shot",
+		"playerClass": "Hunter",
 		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nDeal $3 damage to the enemy hero.",
 		"type": "Hero_power"
@@ -16902,6 +17922,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_001",
 		"name": "Lightwarden",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Whenever a character is healed, gain +2 Attack.",
@@ -16913,6 +17934,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_001e.gif",
 		"id": "EX1_001e",
 		"name": "Warded",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -16934,6 +17956,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "The Black Knight",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"TAUNT"
@@ -16955,6 +17978,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_004",
 		"name": "Young Priestess",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "At the end of your turn, give another random friendly minion +1 Health.",
@@ -16966,6 +17990,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_004e.gif",
 		"id": "EX1_004e",
 		"name": "Elune's Grace",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased Health.",
 		"type": "Enchantment"
@@ -16986,6 +18011,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Big Game Hunter",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Destroy a minion with 7 or more Attack.",
@@ -17004,6 +18030,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "EX1_006",
 		"name": "Alarm-o-Bot",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -17023,6 +18050,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "EX1_007",
 		"name": "Acolyte of Pain",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Whenever this minion takes damage, draw a card.",
@@ -17045,6 +18073,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Argent Squire",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Divine Shield</b>",
@@ -17066,6 +18095,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Angry Chicken",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -17081,6 +18111,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Enraged",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+5 Attack.",
 		"type": "Enchantment"
@@ -17102,6 +18133,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Worgen Infiltrator",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Stealth</b>",
@@ -17124,6 +18156,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Voodoo Doctor",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Restore 2 Health.",
@@ -17147,6 +18180,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Bloodmage Thalnos",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"spellDamage": 1,
@@ -17170,6 +18204,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "King Mukla",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -17184,6 +18219,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_014t.gif",
 		"id": "EX1_014t",
 		"name": "Bananas",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Give a minion +1/+1.",
 		"type": "Spell"
@@ -17194,6 +18230,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_014te.gif",
 		"id": "EX1_014te",
 		"name": "Bananas",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Has +1/+1.",
 		"type": "Enchantment"
@@ -17215,6 +18252,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Novice Engineer",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Draw a card.",
@@ -17237,6 +18275,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Sylvanas Windrunner",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Hof",
 		"text": "<b>Deathrattle:</b> Take\ncontrol of a random\nenemy minion.",
@@ -17259,6 +18298,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Jungle Panther",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -17281,6 +18321,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shattered Sun Cleric",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Give a friendly minion +1/+1.",
@@ -17292,6 +18333,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_019e.gif",
 		"id": "EX1_019e",
 		"name": "Cleric's Blessing",
+		"playerClass": "Priest",
 		"set": "Core",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -17313,6 +18355,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Scarlet Crusader",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Divine Shield</b>",
@@ -17335,6 +18378,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Thrallmar Farseer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Windfury</b>",
@@ -17357,6 +18401,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Silvermoon Guardian",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Divine Shield</b>",
@@ -17379,6 +18424,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dragonling Mechanic",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Summon a 2/1 Mechanical Dragonling.",
@@ -17394,6 +18440,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_025t",
 		"name": "Mechanical Dragonling",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Core",
@@ -17416,6 +18463,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Stranglethorn Tiger",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -17438,6 +18486,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Leper Gnome",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Deathrattle:</b> Deal 2 damage to the enemy hero.",
@@ -17461,6 +18510,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Sunwalker",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Taunt</b>\n<b>Divine Shield</b>",
@@ -17483,6 +18533,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Windfury Harpy",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Windfury</b>",
@@ -17504,6 +18555,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Twilight Drake",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -17516,6 +18568,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_043e.gif",
 		"id": "EX1_043e",
 		"name": "Hour of Twilight",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased Health.",
 		"type": "Enchantment"
@@ -17534,6 +18587,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_044",
 		"name": "Questing Adventurer",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Whenever you play a card, gain +1/+1.",
@@ -17545,6 +18599,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_044e.gif",
 		"id": "EX1_044e",
 		"name": "Level Up!",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased Attack and Health.",
 		"type": "Enchantment"
@@ -17566,6 +18621,7 @@ var parseCardsText = {
 			"CANT_ATTACK"
 		],
 		"name": "Ancient Watcher",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Can't attack.",
@@ -17588,6 +18644,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dark Iron Dwarf",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Give a minion +2 Attack this turn.",
@@ -17602,6 +18659,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Tempered",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+2 Attack this turn.",
 		"type": "Enchantment"
@@ -17623,6 +18681,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Spellbreaker",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"SILENCE"
@@ -17648,6 +18707,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Youthful Brewmaster",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Return a friendly minion from the battlefield to your hand.",
@@ -17669,6 +18729,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Coldlight Oracle",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -17689,6 +18750,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "EX1_055",
 		"name": "Mana Addict",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Whenever you cast a spell, gain +2 Attack this turn.",
@@ -17703,6 +18765,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Empowered",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Mana Addict has increased Attack.",
 		"type": "Enchantment"
@@ -17724,6 +18787,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ancient Brewmaster",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Return a friendly minion from the battlefield to your hand.",
@@ -17746,6 +18810,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Sunfury Protector",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -17770,6 +18835,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Crazed Alchemist",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Swap the Attack and Health of a minion.",
@@ -17781,6 +18847,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_059e.gif",
 		"id": "EX1_059e",
 		"name": "Experiments!",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Attack and Health have been swapped by Crazed Alchemist.",
 		"type": "Enchantment"
@@ -17802,6 +18869,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Old Murk-Eye",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Legendary",
 		"set": "Hof",
@@ -17825,6 +18893,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Acidic Swamp Ooze",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry:</b> Destroy your opponent's weapon.",
@@ -17847,6 +18916,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Argent Commander",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Charge</b>\n<b>Divine Shield</b>",
@@ -17869,6 +18939,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Pint-Sized Summoner",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "The first minion you play each turn costs (1) less.",
@@ -17888,6 +18959,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_080",
 		"name": "Secretkeeper",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET"
@@ -17902,6 +18974,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_080o.gif",
 		"id": "EX1_080o",
 		"name": "Keeping Secrets",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -17923,6 +18996,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Mad Bomber",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Deal 3 damage randomly split between all other characters.",
@@ -17946,6 +19020,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tinkmaster Overspark",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "[x]<b>Battlecry:</b> Transform\nanother random minion\ninto a 5/5 Devilsaur\n or a 1/1 Squirrel.",
@@ -17967,6 +19042,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Warsong Commander",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"referencedTags": [
 			"CHARGE"
@@ -17981,6 +19057,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_084e.gif",
 		"id": "EX1_084e",
 		"name": "Charge",
+		"playerClass": "Warrior",
 		"set": "Core",
 		"text": "Warsong Commander is granting this minion +1 Attack.",
 		"type": "Enchantment"
@@ -18002,6 +19079,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Mind Control Tech",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "[x]<b>Battlecry:</b> If your opponent\nhas 4 or more minions, take\n control of one at random.",
@@ -18023,6 +19101,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Arcane Golem",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Give your opponent a Mana Crystal.",
@@ -18044,6 +19123,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Cabal Shadow Priest",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Take control of an enemy minion that has 2 or less Attack.",
@@ -18066,6 +19146,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Defender of Argus",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -18080,6 +19161,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_093e.gif",
 		"id": "EX1_093e",
 		"name": "Hand of Argus",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+1/+1 and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -18097,6 +19179,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "EX1_095",
 		"name": "Gadgetzan Auctioneer",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Whenever you cast a spell, draw a card.",
@@ -18118,6 +19201,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Loot Hoarder",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Deathrattle:</b> Draw a card.",
@@ -18140,6 +19224,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Abomination",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Taunt</b>. <b>Deathrattle:</b> Deal 2\ndamage to ALL characters.",
@@ -18159,6 +19244,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "EX1_100",
 		"name": "Lorewalker Cho",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "Whenever a player casts a spell, put a copy into the other player’s hand.",
@@ -18177,6 +19263,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "EX1_102",
 		"name": "Demolisher",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -18199,6 +19286,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Coldlight Seer",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -18211,6 +19299,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_103e.gif",
 		"id": "EX1_103e",
 		"name": "Mrghlglhal",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+2 Health.",
 		"type": "Enchantment"
@@ -18228,6 +19317,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "EX1_105",
 		"name": "Mountain Giant",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Costs (1) less for each other card in your hand.",
@@ -18251,6 +19341,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Cairne Bloodhoof",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "<b>Deathrattle:</b> Summon a 4/5 Baine Bloodhoof.",
@@ -18267,6 +19358,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "EX1_110t",
 		"name": "Baine Bloodhoof",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"type": "Minion"
 	},
@@ -18294,6 +19386,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gelbin Mekkatorque",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Hof",
 		"text": "<b>Battlecry:</b> Summon an AWESOME invention.",
@@ -18318,6 +19411,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Leeroy Jenkins",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "<b>Charge</b>. <b>Battlecry:</b> Summon two 1/1 Whelps for your opponent.",
@@ -18333,6 +19427,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_116t",
 		"name": "Whelp",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"set": "Expert1",
 		"type": "Minion"
@@ -18351,6 +19446,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Eviscerate",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Deal $2 damage. <b>Combo:</b> Deal $4 damage instead.",
@@ -18367,6 +19463,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_126.gif",
 		"id": "EX1_126",
 		"name": "Betrayal",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Force an enemy minion to deal its damage to the minions next to it.",
@@ -18383,6 +19480,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_128.gif",
 		"id": "EX1_128",
 		"name": "Conceal",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"referencedTags": [
 			"STEALTH"
@@ -18397,6 +19495,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_128e.gif",
 		"id": "EX1_128e",
 		"name": "Concealed",
+		"playerClass": "Rogue",
 		"set": "Hof",
 		"text": "Stealthed until your next turn.",
 		"type": "Enchantment"
@@ -18412,6 +19511,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_129.gif",
 		"id": "EX1_129",
 		"name": "Fan of Knives",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $1 damage to all enemy minions. Draw a card.",
@@ -18431,6 +19531,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Noble Sacrifice",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When an enemy attacks, summon a 2/1 Defender as the new target.",
@@ -18446,6 +19547,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_130a",
 		"name": "Defender",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Expert1",
 		"type": "Minion"
@@ -18466,6 +19568,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Defias Ringleader",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Combo:</b> Summon a 2/1 Defias Bandit.",
@@ -18481,6 +19584,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_131t",
 		"name": "Defias Bandit",
+		"playerClass": "Rogue",
 		"set": "Expert1",
 		"type": "Minion"
 	},
@@ -18498,6 +19602,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Eye for an Eye",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When your hero takes damage, deal that much damage to the enemy hero.",
@@ -18520,6 +19625,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Perdition's Blade",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Deal 1 damage. <b>Combo:</b> Deal 2 instead.",
@@ -18541,6 +19647,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "SI:7 Agent",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Combo:</b> Deal 2 damage.",
@@ -18560,6 +19667,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Redemption",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When a friendly minion dies, return it to life with 1 Health.",
@@ -18579,6 +19687,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Headcrack",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Deal $2 damage to the enemy hero. <b>Combo:</b> Return this to your hand next turn.",
@@ -18595,6 +19704,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_144.gif",
 		"id": "EX1_144",
 		"name": "Shadowstep",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Return a friendly minion to your hand. It costs (2) less.",
@@ -18611,6 +19721,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_145.gif",
 		"id": "EX1_145",
 		"name": "Preparation",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "The next spell you cast this turn costs (3) less.",
@@ -18625,6 +19736,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Preparation",
+		"playerClass": "Rogue",
 		"set": "Expert1",
 		"text": "The next spell you cast this turn costs (3) less.",
 		"type": "Enchantment"
@@ -18643,6 +19755,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Wrath",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Choose One -</b>\nDeal $3 damage to a minion; or $1 damage\nand draw a card.",
@@ -18656,6 +19769,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_154a.gif",
 		"id": "EX1_154a",
 		"name": "Wrath",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Deal $3 damage to a minion.",
 		"type": "Spell"
@@ -18668,6 +19782,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_154b.gif",
 		"id": "EX1_154b",
 		"name": "Wrath",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Deal $1 damage to a minion. Draw a card.",
 		"type": "Spell"
@@ -18686,6 +19801,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Mark of Nature",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"TAUNT"
@@ -18702,6 +19818,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_155a.gif",
 		"id": "EX1_155a",
 		"name": "Mark of Nature",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "+4 Attack.",
 		"type": "Spell"
@@ -18712,6 +19829,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_155ae.gif",
 		"id": "EX1_155ae",
 		"name": "Mark of Nature",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "This minion has +4 Attack.",
 		"type": "Enchantment"
@@ -18724,6 +19842,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_155b.gif",
 		"id": "EX1_155b",
 		"name": "Mark of Nature",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "+4 Health and <b>Taunt</b>.",
 		"type": "Spell"
@@ -18734,6 +19853,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_155be.gif",
 		"id": "EX1_155be",
 		"name": "Mark of Nature",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "This minion has +4 Health and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -18749,6 +19869,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_158.gif",
 		"id": "EX1_158",
 		"name": "Soul of the Forest",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -18763,6 +19884,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_158e.gif",
 		"id": "EX1_158e",
 		"name": "Soul of the Forest",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Deathrattle: Summon a 2/2 Treant.",
 		"type": "Enchantment"
@@ -18777,6 +19899,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_158t",
 		"name": "Treant",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"type": "Minion"
 	},
@@ -18794,6 +19917,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Power of the Wild",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Choose One -</b> Give your minions +1/+1; or Summon a 3/2 Panther.",
@@ -18807,6 +19931,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_160a.gif",
 		"id": "EX1_160a",
 		"name": "Summon a Panther",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Summon a 3/2 Panther.",
 		"type": "Spell"
@@ -18819,6 +19944,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_160b.gif",
 		"id": "EX1_160b",
 		"name": "Leader of the Pack",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Give your minions +1/+1.",
 		"type": "Spell"
@@ -18829,6 +19955,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_160be.gif",
 		"id": "EX1_160be",
 		"name": "Leader of the Pack",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -18843,6 +19970,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_160t",
 		"name": "Panther",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -18859,6 +19987,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_161.gif",
 		"id": "EX1_161",
 		"name": "Naturalize",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Destroy a minion.\nYour opponent draws 2 cards.",
@@ -18881,6 +20010,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Dire Wolf Alpha",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -18893,6 +20023,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_162o.gif",
 		"id": "EX1_162o",
 		"name": "Strength of the Pack",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+1 Attack from {0}.",
 		"type": "Enchantment"
@@ -18911,6 +20042,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Nourish",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Choose One -</b> Gain 2 Mana Crystals; or Draw 3 cards.",
@@ -18924,6 +20056,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_164a.gif",
 		"id": "EX1_164a",
 		"name": "Nourish",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Gain 2 Mana Crystals.",
 		"type": "Spell"
@@ -18936,6 +20069,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_164b.gif",
 		"id": "EX1_164b",
 		"name": "Nourish",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Draw 3 cards.",
 		"type": "Spell"
@@ -18956,6 +20090,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Druid of the Claw",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"CHARGE",
@@ -18973,6 +20108,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_165a.gif",
 		"id": "EX1_165a",
 		"name": "Cat Form",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "<b>Charge</b>",
 		"type": "Spell"
@@ -18985,6 +20121,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_165b.gif",
 		"id": "EX1_165b",
 		"name": "Bear Form",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "+2 Health and <b>Taunt</b>.",
 		"type": "Spell"
@@ -19002,6 +20139,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Druid of the Claw",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -19021,6 +20159,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Druid of the Claw",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -19043,6 +20182,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Keeper of the Grove",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SILENCE"
@@ -19059,6 +20199,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_166a.gif",
 		"id": "EX1_166a",
 		"name": "Moonfire",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Deal 2 damage.",
 		"type": "Spell"
@@ -19074,6 +20215,7 @@ var parseCardsText = {
 			"SILENCE"
 		],
 		"name": "Dispel",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "<b>Silence</b> a minion.",
 		"type": "Spell"
@@ -19089,6 +20231,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_169.gif",
 		"id": "EX1_169",
 		"name": "Innervate",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Gain 1 Mana Crystal this turn only.",
@@ -19110,6 +20253,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Emperor Cobra",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -19127,6 +20271,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_173.gif",
 		"id": "EX1_173",
 		"name": "Starfire",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $5 damage.\nDraw a card.",
@@ -19148,6 +20293,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Ancient of War",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"referencedTags": [
 			"TAUNT"
@@ -19164,6 +20310,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_178a.gif",
 		"id": "EX1_178a",
 		"name": "Rooted",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "+5 Health and <b>Taunt</b>.",
 		"type": "Spell"
@@ -19174,6 +20321,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_178ae.gif",
 		"id": "EX1_178ae",
 		"name": "Rooted",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "+5 Health and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -19186,6 +20334,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_178b.gif",
 		"id": "EX1_178b",
 		"name": "Uproot",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "+5 Attack.",
 		"type": "Spell"
@@ -19196,6 +20345,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_178be.gif",
 		"id": "EX1_178be",
 		"name": "Uprooted",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "+5 Attack.",
 		"type": "Enchantment"
@@ -19215,6 +20365,7 @@ var parseCardsText = {
 		],
 		"name": "Lightning Bolt",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Deal $3 damage. <b>Overload:</b> (1)",
@@ -19235,6 +20386,7 @@ var parseCardsText = {
 		],
 		"name": "Lava Burst",
 		"overload": 2,
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Deal $5 damage. <b>Overload:</b> (2)",
@@ -19258,6 +20410,7 @@ var parseCardsText = {
 		],
 		"name": "Dust Devil",
 		"overload": 2,
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -19275,6 +20428,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_244.gif",
 		"id": "EX1_244",
 		"name": "Totemic Might",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Give your Totems +2 Health.",
@@ -19286,6 +20440,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_244e.gif",
 		"id": "EX1_244e",
 		"name": "Totemic Might",
+		"playerClass": "Shaman",
 		"set": "Core",
 		"text": "+2 Health.",
 		"type": "Enchantment"
@@ -19304,6 +20459,7 @@ var parseCardsText = {
 			"SILENCE"
 		],
 		"name": "Earth Shock",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Silence</b> a minion, then deal $1 damage to it.",
@@ -19320,6 +20476,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_246.gif",
 		"id": "EX1_246",
 		"name": "Hex",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"referencedTags": [
 			"TAUNT"
@@ -19337,6 +20494,7 @@ var parseCardsText = {
 			"MORPH"
 		],
 		"name": "Hexxed",
+		"playerClass": "Shaman",
 		"set": "Core",
 		"text": "This minion has been transformed!",
 		"type": "Enchantment"
@@ -19358,6 +20516,7 @@ var parseCardsText = {
 		],
 		"name": "Stormforged Axe",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Overload:</b> (1)",
@@ -19378,6 +20537,7 @@ var parseCardsText = {
 		],
 		"name": "Feral Spirit",
 		"overload": 2,
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -19400,6 +20560,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "EX1_249",
 		"name": "Baron Geddon",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -19424,6 +20585,7 @@ var parseCardsText = {
 		],
 		"name": "Earth Elemental",
 		"overload": 3,
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Epic",
 		"set": "Expert1",
@@ -19445,6 +20607,7 @@ var parseCardsText = {
 		],
 		"name": "Forked Lightning",
 		"overload": 2,
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Deal $2 damage to 2 random enemy minions. <b>Overload:</b> (2)",
@@ -19463,6 +20626,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "EX1_258",
 		"name": "Unbound Elemental",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"referencedTags": [
@@ -19478,6 +20642,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_258e.gif",
 		"id": "EX1_258e",
 		"name": "Overloading",
+		"playerClass": "Shaman",
 		"set": "Expert1",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -19497,6 +20662,7 @@ var parseCardsText = {
 		],
 		"name": "Lightning Storm",
 		"overload": 2,
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Deal $2-$3 damage to all enemy minions. <b>Overload:</b> (2)",
@@ -19515,6 +20681,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "EX1_274",
 		"name": "Ethereal Arcanist",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET"
@@ -19529,6 +20696,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_274e.gif",
 		"id": "EX1_274e",
 		"name": "Raw Power!",
+		"playerClass": "Mage",
 		"set": "Expert1",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -19547,6 +20715,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Cone of Cold",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Freeze</b> a minion and the minions next to it, and deal $1 damage to them.",
@@ -19566,6 +20735,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Arcane Missiles",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $3 damage randomly split among all enemies.",
@@ -19582,6 +20752,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_278.gif",
 		"id": "EX1_278",
 		"name": "Shiv",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $1 damage.\nDraw a card.",
@@ -19598,6 +20769,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_279.gif",
 		"id": "EX1_279",
 		"name": "Pyroblast",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Deal $10 damage.",
@@ -19620,6 +20792,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Frost Elemental",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -19643,6 +20816,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Azure Drake",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Rare",
 		"set": "Hof",
@@ -19664,6 +20838,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Counterspell",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"referencedTags": [
 			"COUNTER"
@@ -19686,6 +20861,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Ice Barrier",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When your\nhero is attacked,\ngain 8 Armor.",
@@ -19705,6 +20881,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Mirror Entity",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> After your opponent plays a minion, summon a copy of it.",
@@ -19724,6 +20901,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Ice Block",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"referencedTags": [
 			"IMMUNE"
@@ -19741,6 +20919,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Ice Block",
+		"playerClass": "Mage",
 		"set": "Expert1",
 		"text": "Your hero is <b>Immune</b> this turn.",
 		"type": "Enchantment"
@@ -19762,6 +20941,7 @@ var parseCardsText = {
 			"CANT_ATTACK"
 		],
 		"name": "Ragnaros the Firelord",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Hof",
@@ -19785,6 +20965,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Felguard",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -19802,6 +20983,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_302.gif",
 		"id": "EX1_302",
 		"name": "Mortal Coil",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $1 damage to a minion. If that kills it, draw a card.",
@@ -19818,6 +21000,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_303.gif",
 		"id": "EX1_303",
 		"name": "Shadowflame",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Destroy a friendly minion and deal its Attack damage to all enemy minions.",
@@ -19839,6 +21022,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Void Terror",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -19851,6 +21035,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_304e.gif",
 		"id": "EX1_304e",
 		"name": "Consume",
+		"playerClass": "Warlock",
 		"set": "Expert1",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -19871,6 +21056,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Succubus",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Free",
 		"set": "Core",
@@ -19888,6 +21074,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_308.gif",
 		"id": "EX1_308",
 		"name": "Soulfire",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "[x]Deal $4 damage.\nDiscard a random card.",
@@ -19904,6 +21091,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_309.gif",
 		"id": "EX1_309",
 		"name": "Siphon Soul",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Destroy a minion. Restore #3 Health to your hero.",
@@ -19926,6 +21114,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Doomguard",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -19943,6 +21132,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_312.gif",
 		"id": "EX1_312",
 		"name": "Twisting Nether",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Destroy all minions.",
@@ -19964,6 +21154,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Pit Lord",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Epic",
 		"set": "Expert1",
@@ -19986,6 +21177,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Summoning Portal",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Your minions cost (2) less, but not less than (1).",
@@ -20002,6 +21194,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_316.gif",
 		"id": "EX1_316",
 		"name": "Power Overwhelming",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Hof",
 		"text": "Give a friendly minion +4/+4 until end of turn. Then, it dies. Horribly.",
@@ -20013,6 +21206,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_316e.gif",
 		"id": "EX1_316e",
 		"name": "Power Overwhelming",
+		"playerClass": "Warlock",
 		"set": "Hof",
 		"text": "This minion has +4/+4, but will die a horrible death at the end of the turn.",
 		"type": "Enchantment"
@@ -20028,6 +21222,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_317.gif",
 		"id": "EX1_317",
 		"name": "Sense Demons",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Draw 2 Demons\nfrom your deck.",
@@ -20043,6 +21238,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_317t",
 		"name": "Worthless Imp",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -20065,6 +21261,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Flame Imp",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -20082,6 +21279,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_320.gif",
 		"id": "EX1_320",
 		"name": "Bane of Doom",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Deal $2 damage to a character. If that kills it, summon a random Demon.",
@@ -20104,6 +21302,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Lord Jaraxxus",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -20118,6 +21317,7 @@ var parseCardsText = {
 		"health": 15,
 		"id": "EX1_323h",
 		"name": "Lord Jaraxxus",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -20134,6 +21334,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_323w.gif",
 		"id": "EX1_323w",
 		"name": "Blood Fury",
+		"playerClass": "Warlock",
 		"set": "Expert1",
 		"type": "Weapon"
 	},
@@ -20151,6 +21352,7 @@ var parseCardsText = {
 			"SILENCE"
 		],
 		"name": "Silence",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Silence</b> a minion.",
@@ -20167,6 +21369,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_334.gif",
 		"id": "EX1_334",
 		"name": "Shadow Madness",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Gain control of an enemy minion with 3 or less Attack until end of turn.",
@@ -20178,6 +21381,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_334e.gif",
 		"id": "EX1_334e",
 		"name": "Shadow Madness",
+		"playerClass": "Priest",
 		"set": "Expert1",
 		"text": "This minion has switched controllers this turn.",
 		"type": "Enchantment"
@@ -20195,6 +21399,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "EX1_335",
 		"name": "Lightspawn",
+		"playerClass": "Priest",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -20212,6 +21417,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_339.gif",
 		"id": "EX1_339",
 		"name": "Thoughtsteal",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Copy 2 cards in your opponent's deck and add them to your hand.",
@@ -20230,6 +21436,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "EX1_341",
 		"name": "Lightwell",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "At the start of your turn, restore 3 Health to a damaged friendly character.",
@@ -20246,6 +21453,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_345.gif",
 		"id": "EX1_345",
 		"name": "Mindgames",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Put a copy of\na random minion from\nyour opponent's deck into the battlefield.",
@@ -20261,6 +21469,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_345t",
 		"name": "Shadow of Nothing",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Mindgames whiffed! Your opponent had no minions!",
@@ -20277,6 +21486,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_349.gif",
 		"id": "EX1_349",
 		"name": "Divine Favor",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Draw cards until you have as many in hand as your opponent.",
@@ -20296,6 +21506,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "EX1_350",
 		"name": "Prophet Velen",
+		"playerClass": "Priest",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "Double the damage and healing of your spells and Hero Power.",
@@ -20312,6 +21523,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_354.gif",
 		"id": "EX1_354",
 		"name": "Lay on Hands",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Restore #8 Health. Draw 3 cards.",
@@ -20328,6 +21540,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_355.gif",
 		"id": "EX1_355",
 		"name": "Blessed Champion",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Double a minion's Attack.",
@@ -20339,6 +21552,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_355e.gif",
 		"id": "EX1_355e",
 		"name": "Blessed Champion",
+		"playerClass": "Paladin",
 		"set": "Expert1",
 		"text": "This minion's Attack has been doubled.",
 		"type": "Enchantment"
@@ -20354,6 +21568,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_360.gif",
 		"id": "EX1_360",
 		"name": "Humility",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Change a minion's Attack to 1.",
@@ -20365,6 +21580,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_360e.gif",
 		"id": "EX1_360e",
 		"name": "Humility",
+		"playerClass": "Paladin",
 		"set": "Core",
 		"text": "Attack has been changed to 1.",
 		"type": "Enchantment"
@@ -20385,6 +21601,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Argent Protector",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -20404,6 +21621,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_363.gif",
 		"id": "EX1_363",
 		"name": "Blessing of Wisdom",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Choose a minion. Whenever it attacks, draw a card.",
@@ -20415,6 +21633,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_363e.gif",
 		"id": "EX1_363e",
 		"name": "Blessing of Wisdom",
+		"playerClass": "Paladin",
 		"set": "Expert1",
 		"text": "When this minion attacks, the player who blessed it draws a card.",
 		"type": "Enchantment"
@@ -20425,6 +21644,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_363e2.gif",
 		"id": "EX1_363e2",
 		"name": "Blessing of Wisdom",
+		"playerClass": "Paladin",
 		"set": "Expert1",
 		"text": "When this minion attacks, the enemy player draws a card.",
 		"type": "Enchantment"
@@ -20440,6 +21660,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_365.gif",
 		"id": "EX1_365",
 		"name": "Holy Wrath",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Draw a card and deal damage equal to its Cost.",
@@ -20458,6 +21679,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_366.gif",
 		"id": "EX1_366",
 		"name": "Sword of Justice",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "After you summon a minion, give it +1/+1 and this loses 1 Durability.",
@@ -20469,6 +21691,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_366e.gif",
 		"id": "EX1_366e",
 		"name": "Justice Served",
+		"playerClass": "Paladin",
 		"set": "Expert1",
 		"text": "Has +1/+1.",
 		"type": "Enchantment"
@@ -20484,6 +21707,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_371.gif",
 		"id": "EX1_371",
 		"name": "Hand of Protection",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -20506,6 +21730,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Repentance",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> After your opponent plays a minion, reduce its Health to 1.",
@@ -20517,6 +21742,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_379e.gif",
 		"id": "EX1_379e",
 		"name": "Repentance",
+		"playerClass": "Paladin",
 		"set": "Expert1",
 		"text": "Health reduced to 1.",
 		"type": "Enchantment"
@@ -20537,6 +21763,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Aldor Peacekeeper",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Change an enemy minion's Attack to 1.",
@@ -20548,6 +21775,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_382e.gif",
 		"id": "EX1_382e",
 		"name": "Stand Down!",
+		"playerClass": "Paladin",
 		"set": "Expert1",
 		"text": "Attack changed to 1.",
 		"type": "Enchantment"
@@ -20571,6 +21799,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Tirion Fordring",
+		"playerClass": "Paladin",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "<b><b>Divine Shield</b>,</b> <b>Taunt</b> <b>Deathrattle:</b> Equip a 5/3 Ashbringer.",
@@ -20587,6 +21816,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_383t.gif",
 		"id": "EX1_383t",
 		"name": "Ashbringer",
+		"playerClass": "Paladin",
 		"set": "Expert1",
 		"type": "Weapon"
 	},
@@ -20604,6 +21834,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Avenging Wrath",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Deal $8 damage randomly split among all enemies.",
@@ -20626,6 +21857,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Tauren Warrior",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Taunt</b>\n<b>Enrage:</b> +3 Attack.",
@@ -20640,6 +21872,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Enraged",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -20655,6 +21888,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_391.gif",
 		"id": "EX1_391",
 		"name": "Slam",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Deal $2 damage to a minion. If it survives, draw a card.",
@@ -20671,6 +21905,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_392.gif",
 		"id": "EX1_392",
 		"name": "Battle Rage",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Draw a card for each damaged friendly character.",
@@ -20692,6 +21927,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Amani Berserker",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Enrage:</b> +3 Attack",
@@ -20706,6 +21942,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Enraged",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -20726,6 +21963,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Mogu'shan Warden",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Taunt</b>",
@@ -20747,6 +21985,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Arathi Weaponsmith",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Equip a 2/2 weapon.",
@@ -20762,6 +22001,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_398t.gif",
 		"id": "EX1_398t",
 		"name": "Battle Axe",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"type": "Weapon"
 	},
@@ -20778,6 +22018,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "EX1_399",
 		"name": "Gurubashi Berserker",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Whenever this minion takes damage, gain +3 Attack.",
@@ -20789,6 +22030,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_399e.gif",
 		"id": "EX1_399e",
 		"name": "Berserking",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "This minion has increased Attack.",
 		"type": "Enchantment"
@@ -20804,6 +22046,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_400.gif",
 		"id": "EX1_400",
 		"name": "Whirlwind",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $1 damage to ALL minions.",
@@ -20822,6 +22065,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "EX1_402",
 		"name": "Armorsmith",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Whenever a friendly minion takes damage, gain 1 Armor.",
@@ -20843,6 +22087,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Shieldbearer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Taunt</b>",
@@ -20859,6 +22104,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_407.gif",
 		"id": "EX1_407",
 		"name": "Brawl",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Destroy all minions except one. <i>(chosen randomly)</i>",
@@ -20875,6 +22121,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_408.gif",
 		"id": "EX1_408",
 		"name": "Mortal Strike",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Deal $4 damage. If you have 12 or less Health, deal $6 instead.",
@@ -20891,6 +22138,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_409.gif",
 		"id": "EX1_409",
 		"name": "Upgrade!",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "If you have a weapon, give it +1/+1. Otherwise equip a 1/3 weapon.",
@@ -20902,6 +22150,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_409e.gif",
 		"id": "EX1_409e",
 		"name": "Upgraded",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "+1 Attack and +1 Durability.",
 		"type": "Enchantment"
@@ -20916,6 +22165,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_409t.gif",
 		"id": "EX1_409t",
 		"name": "Heavy Axe",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"type": "Weapon"
 	},
@@ -20930,6 +22180,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_410.gif",
 		"id": "EX1_410",
 		"name": "Shield Slam",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Deal 1 damage to a minion for each Armor you have.",
@@ -20948,6 +22199,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_411.gif",
 		"id": "EX1_411",
 		"name": "Gorehowl",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Attacking a minion costs 1 Attack instead of 1 Durability.",
@@ -20959,6 +22211,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_411e.gif",
 		"id": "EX1_411e",
 		"name": "Bloodrage",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "No durability loss.",
 		"type": "Enchantment"
@@ -20969,6 +22222,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_411e2.gif",
 		"id": "EX1_411e2",
 		"name": "Needs Sharpening",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "Decreased Attack.",
 		"type": "Enchantment"
@@ -20989,6 +22243,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Raging Worgen",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"WINDFURY"
@@ -21006,6 +22261,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Enraged",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+1 Attack and <b>Windfury</b>.",
 		"type": "Enchantment"
@@ -21028,6 +22284,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Grommash Hellscream",
+		"playerClass": "Warrior",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "<b>Charge</b>\n<b>Enrage:</b> +6 Attack",
@@ -21039,6 +22296,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_414e.gif",
 		"id": "EX1_414e",
 		"name": "Enraged",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "+6 Attack",
 		"type": "Enchantment"
@@ -21059,6 +22317,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Murloc Tidehunter",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Free",
 		"set": "Core",
@@ -21075,6 +22334,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_506a",
 		"name": "Murloc Scout",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"set": "Core",
@@ -21096,6 +22356,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Murloc Warleader",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Epic",
 		"set": "Expert1",
@@ -21108,6 +22369,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_507e.gif",
 		"id": "EX1_507e",
 		"name": "Mrgglaargl!",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+2 Attack from Murloc Warleader.",
 		"type": "Enchantment"
@@ -21125,6 +22387,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_508",
 		"name": "Grimscale Oracle",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Free",
 		"set": "Core",
@@ -21137,6 +22400,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_508o.gif",
 		"id": "EX1_508o",
 		"name": "Mlarggragllabl!",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "This Murloc has +1 Attack.",
 		"type": "Enchantment"
@@ -21154,6 +22418,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_509",
 		"name": "Murloc Tidecaller",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -21166,6 +22431,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_509e.gif",
 		"id": "EX1_509e",
 		"name": "Blarghghl",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -21187,6 +22453,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Patient Assassin",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "<b>Stealth</b>\n <b>Poisonous</b>",
@@ -21205,6 +22472,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_531",
 		"name": "Scavenging Hyena",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -21217,6 +22485,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_531e.gif",
 		"id": "EX1_531e",
 		"name": "Well Fed",
+		"playerClass": "Hunter",
 		"set": "Expert1",
 		"text": "Increased Attack and Health.",
 		"type": "Enchantment"
@@ -21235,6 +22504,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Misdirection",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When an enemy attacks your hero, instead it attacks another random character.",
@@ -21256,6 +22526,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Savannah Highmane",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -21273,6 +22544,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_534t",
 		"name": "Hyena",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -21291,6 +22563,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_536.gif",
 		"id": "EX1_536",
 		"name": "Eaglehorn Bow",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET"
@@ -21305,6 +22578,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_536e.gif",
 		"id": "EX1_536e",
 		"name": "Upgraded",
+		"playerClass": "Hunter",
 		"set": "Expert1",
 		"text": "Increased Durability.",
 		"type": "Enchantment"
@@ -21320,6 +22594,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_537.gif",
 		"id": "EX1_537",
 		"name": "Explosive Shot",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Deal $5 damage to a minion and $2 damage to adjacent ones.",
@@ -21336,6 +22611,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_538.gif",
 		"id": "EX1_538",
 		"name": "Unleash the Hounds",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"referencedTags": [
 			"CHARGE"
@@ -21357,6 +22633,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Hound",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Expert1",
 		"text": "<b>Charge</b>",
@@ -21373,6 +22650,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_539.gif",
 		"id": "EX1_539",
 		"name": "Kill Command",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Deal $3 damage. If you control a Beast, deal\n$5 damage instead.",
@@ -21395,6 +22673,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "King Krush",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -21412,6 +22691,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_544.gif",
 		"id": "EX1_544",
 		"name": "Flare",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET",
@@ -21432,6 +22712,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_549.gif",
 		"id": "EX1_549",
 		"name": "Bestial Wrath",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"referencedTags": [
 			"IMMUNE"
@@ -21449,6 +22730,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Bestial Wrath",
+		"playerClass": "Hunter",
 		"set": "Expert1",
 		"text": "+2 Attack and <b>Immune</b> this turn.",
 		"type": "Enchantment"
@@ -21467,6 +22749,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Snake Trap",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When one of your minions is attacked, summon three 1/1 Snakes.",
@@ -21482,6 +22765,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_554t",
 		"name": "Snake",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -21503,6 +22787,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Harvest Golem",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -21523,6 +22808,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "EX1_557",
 		"name": "Nat Pagle",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "At the start of your turn, you have a 50% chance to draw an extra card.",
@@ -21545,6 +22831,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Harrison Jones",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Destroy your opponent's weapon and draw cards equal to its Durability.",
@@ -21564,6 +22851,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "EX1_559",
 		"name": "Archmage Antonidas",
+		"playerClass": "Mage",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "Whenever you cast a spell, add a 'Fireball' spell to your hand.",
@@ -21583,6 +22871,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "EX1_560",
 		"name": "Nozdormu",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -21606,6 +22895,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Alexstrasza",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -21618,6 +22908,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_561e.gif",
 		"id": "EX1_561e",
 		"name": "Alexstrasza's Fire",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Health set to 15.",
 		"type": "Enchantment"
@@ -21639,6 +22930,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Onyxia",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -21662,6 +22954,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Malygos",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -21685,6 +22978,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Faceless Manipulator",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Choose a minion and become a copy of it.",
@@ -21707,6 +23001,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Flametongue Totem",
+		"playerClass": "Shaman",
 		"race": "TOTEM",
 		"rarity": "Free",
 		"set": "Core",
@@ -21719,6 +23014,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_565o.gif",
 		"id": "EX1_565o",
 		"name": "Flametongue",
+		"playerClass": "Shaman",
 		"set": "Core",
 		"text": "+2 Attack from Flametongue Totem.",
 		"type": "Enchantment"
@@ -21741,6 +23037,7 @@ var parseCardsText = {
 		],
 		"name": "Doomhammer",
 		"overload": 2,
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "<b>Windfury, Overload:</b> (2)",
@@ -21757,6 +23054,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_570.gif",
 		"id": "EX1_570",
 		"name": "Bite",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Give your hero +4 Attack this turn. Gain 4 Armor.",
@@ -21771,6 +23069,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Bite",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+4 Attack this turn.",
 		"type": "Enchantment"
@@ -21786,6 +23085,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_571.gif",
 		"id": "EX1_571",
 		"name": "Force of Nature",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Summon three 2/2 Treants.",
@@ -21812,6 +23112,7 @@ var parseCardsText = {
 		"health": 12,
 		"id": "EX1_572",
 		"name": "Ysera",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -21835,6 +23136,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Cenarius",
+		"playerClass": "Druid",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"TAUNT"
@@ -21851,6 +23153,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_573a.gif",
 		"id": "EX1_573a",
 		"name": "Demigod's Favor",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Give your other minions +2/+2.",
 		"type": "Spell"
@@ -21861,6 +23164,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_573ae.gif",
 		"id": "EX1_573ae",
 		"name": "Demigod's Favor",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -21873,6 +23177,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_573b.gif",
 		"id": "EX1_573b",
 		"name": "Shan'do's Lesson",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Summon two 2/2 Treants with <b>Taunt</b>.",
 		"type": "Spell"
@@ -21890,6 +23195,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Treant",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -21907,6 +23213,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "EX1_575",
 		"name": "Mana Tide Totem",
+		"playerClass": "Shaman",
 		"race": "TOTEM",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -21930,6 +23237,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "The Beast",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -21947,6 +23255,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_578.gif",
 		"id": "EX1_578",
 		"name": "Savagery",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Deal damage equal to your hero's Attack to a minion.",
@@ -21963,6 +23272,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_581.gif",
 		"id": "EX1_581",
 		"name": "Sap",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Return an enemy minion to your opponent's hand.",
@@ -21984,6 +23294,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Dalaran Mage",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"spellDamage": 1,
@@ -22006,6 +23317,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Priestess of Elune",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Restore 4 Health to your hero.",
@@ -22027,6 +23339,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ancient Mage",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SPELLPOWER"
@@ -22041,6 +23354,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_584e.gif",
 		"id": "EX1_584e",
 		"name": "Teachings of the Kirin Tor",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "<b>Spell Damage +1</b>.",
 		"type": "Enchantment"
@@ -22058,6 +23372,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "EX1_586",
 		"name": "Sea Giant",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Costs (1) less for each other minion on the battlefield.",
@@ -22079,6 +23394,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Windspeaker",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"referencedTags": [
 			"WINDFURY"
@@ -22103,6 +23419,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Blood Knight",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -22117,6 +23434,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_590e.gif",
 		"id": "EX1_590e",
 		"name": "Shadows of M'uru",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "This minion has consumed Divine Shields and has increased Attack and Health.",
@@ -22138,6 +23456,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Auchenai Soulpriest",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Your cards and powers that restore Health now deal damage instead.",
@@ -22159,6 +23478,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Nightblade",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Battlecry: </b>Deal 3 damage to the enemy hero.",
@@ -22178,6 +23498,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Vaporize",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When a minion attacks your hero, destroy it.",
@@ -22196,6 +23517,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_595",
 		"name": "Cult Master",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Whenever one of your other minions dies, draw a card.",
@@ -22212,6 +23534,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_596.gif",
 		"id": "EX1_596",
 		"name": "Demonfire",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Deal $2 damage to a minion. If it’s a friendly Demon, give it +2/+2 instead.",
@@ -22223,6 +23546,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_596e.gif",
 		"id": "EX1_596e",
 		"name": "Demonfire",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "This Demon has +2/+2.",
@@ -22241,6 +23565,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "EX1_597",
 		"name": "Imp Master",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "[x]At the end of your turn, deal\n1 damage to this minion\n and summon a 1/1 Imp.",
@@ -22256,6 +23581,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_598",
 		"name": "Imp",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Expert1",
 		"type": "Minion"
@@ -22276,6 +23602,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Cruel Taskmaster",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Deal 1 damage to a minion and give it +2 Attack.",
@@ -22287,6 +23614,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_603e.gif",
 		"id": "EX1_603e",
 		"name": "Whipped Into Shape",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "+2 Attack.",
 		"type": "Enchantment"
@@ -22304,6 +23632,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "EX1_604",
 		"name": "Frothing Berserker",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Whenever a minion takes damage, gain +1 Attack.",
@@ -22315,6 +23644,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_604o.gif",
 		"id": "EX1_604o",
 		"name": "Berserk",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -22330,6 +23660,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_606.gif",
 		"id": "EX1_606",
 		"name": "Shield Block",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Gain 5 Armor.\nDraw a card.",
@@ -22346,6 +23677,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_607.gif",
 		"id": "EX1_607",
 		"name": "Inner Rage",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Deal $1 damage to a minion and give it +2 Attack.",
@@ -22357,6 +23689,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_607e.gif",
 		"id": "EX1_607e",
 		"name": "Inner Rage",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "+2 Attack.",
 		"type": "Enchantment"
@@ -22377,6 +23710,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Sorcerer's Apprentice",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Your spells cost (1) less.",
@@ -22396,6 +23730,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Snipe",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> After your opponent plays a minion, deal $4 damage to it.",
@@ -22415,6 +23750,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Explosive Trap",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When your hero is attacked, deal $2 damage to all enemies.",
@@ -22434,6 +23770,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Freezing Trap",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When an enemy minion attacks, return it to its owner's hand. It costs (2) more.",
@@ -22445,6 +23782,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_611e.gif",
 		"id": "EX1_611e",
 		"name": "Trapped",
+		"playerClass": "Hunter",
 		"set": "Expert1",
 		"text": "Will be <b>Frozen</b> again at the start of the next turn.",
 		"type": "Enchantment"
@@ -22465,6 +23803,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kirin Tor Mage",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET"
@@ -22482,6 +23821,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Power of the Kirin Tor",
+		"playerClass": "Mage",
 		"set": "Expert1",
 		"text": "Your next Secret costs (0).",
 		"type": "Enchantment"
@@ -22503,6 +23843,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Edwin VanCleef",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "<b>Combo:</b> Gain +2/+2 for each other card you've played this turn.",
@@ -22514,6 +23855,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_613e.gif",
 		"id": "EX1_613e",
 		"name": "VanCleef's Vengeance",
+		"playerClass": "Rogue",
 		"set": "Expert1",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -22532,6 +23874,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "EX1_614",
 		"name": "Illidan Stormrage",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -22548,6 +23891,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_614t",
 		"name": "Flame of Azzinoth",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"set": "Expert1",
 		"type": "Minion"
@@ -22568,6 +23912,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Mana Wraith",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "ALL minions cost (1) more.",
@@ -22584,6 +23929,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_617.gif",
 		"id": "EX1_617",
 		"name": "Deadly Shot",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Destroy a random enemy minion.",
@@ -22600,6 +23946,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_619.gif",
 		"id": "EX1_619",
 		"name": "Equality",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Change the Health of ALL minions to 1.",
@@ -22611,6 +23958,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_619e.gif",
 		"id": "EX1_619e",
 		"name": "Equality",
+		"playerClass": "Paladin",
 		"set": "Expert1",
 		"text": "Health changed to 1.",
 		"type": "Enchantment"
@@ -22628,6 +23976,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "EX1_620",
 		"name": "Molten Giant",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Costs (1) less for each damage your hero has taken.",
@@ -22644,6 +23993,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_621.gif",
 		"id": "EX1_621",
 		"name": "Circle of Healing",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Restore #4 Health to ALL minions.",
@@ -22660,6 +24010,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_622.gif",
 		"id": "EX1_622",
 		"name": "Shadow Word: Death",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Destroy a minion with 5 or more Attack.",
@@ -22681,6 +24032,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Temple Enforcer",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Give a friendly minion +3 Health.",
@@ -22692,6 +24044,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_623e.gif",
 		"id": "EX1_623e",
 		"name": "Infusion",
+		"playerClass": "Priest",
 		"set": "Expert1",
 		"text": "+3 Health.",
 		"type": "Enchantment"
@@ -22707,6 +24060,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_624.gif",
 		"id": "EX1_624",
 		"name": "Holy Fire",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Deal $5 damage. Restore #5 Health to your hero.",
@@ -22723,6 +24077,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_625.gif",
 		"id": "EX1_625",
 		"name": "Shadowform",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "Your Hero Power becomes 'Deal 2 damage'. If already in Shadowform: 3 damage.",
@@ -22736,6 +24091,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_625t.gif",
 		"id": "EX1_625t",
 		"name": "Mind Spike",
+		"playerClass": "Priest",
 		"set": "Expert1",
 		"text": "<b>Hero Power</b>\nDeal $2 damage.",
 		"type": "Hero_power"
@@ -22748,6 +24104,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_625t2.gif",
 		"id": "EX1_625t2",
 		"name": "Mind Shatter",
+		"playerClass": "Priest",
 		"set": "Expert1",
 		"text": "<b>Hero Power</b>\nDeal $3 damage.",
 		"type": "Hero_power"
@@ -22766,6 +24123,7 @@ var parseCardsText = {
 			"SILENCE"
 		],
 		"name": "Mass Dispel",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Silence</b> all enemy minions. Draw a card.",
@@ -22782,6 +24140,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "EX1_finkle",
 		"name": "Finkle Einhorn",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"type": "Minion"
 	},
@@ -22798,6 +24157,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Spirit Wolf",
+		"playerClass": "Shaman",
 		"set": "Expert1",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -22812,6 +24172,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "EX1_tk28",
 		"name": "Squirrel",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Expert1",
 		"type": "Minion"
@@ -22826,6 +24187,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "EX1_tk29",
 		"name": "Devilsaur",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Expert1",
 		"type": "Minion"
@@ -22836,6 +24198,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_tk31.gif",
 		"id": "EX1_tk31",
 		"name": "Mind Controlling",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Expert1",
 		"type": "Enchantment"
@@ -22848,6 +24211,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_tk33.gif",
 		"id": "EX1_tk33",
 		"name": "INFERNO!",
+		"playerClass": "Warlock",
 		"set": "Expert1",
 		"text": "<b>Hero Power</b>\nSummon a 6/6 Infernal.",
 		"type": "Hero_power"
@@ -22860,6 +24224,7 @@ var parseCardsText = {
 		"goldenImage": "EX1_tk33_2_TB.gif",
 		"id": "EX1_tk33_2_TB",
 		"name": "INFERNO!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nSummon a 6/6 Infernal.",
 		"type": "Hero_power"
@@ -22874,6 +24239,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "EX1_tk34",
 		"name": "Infernal",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Expert1",
 		"type": "Minion"
@@ -22888,6 +24254,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "EX1_tk9",
 		"name": "Treant",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"type": "Minion"
 	},
@@ -22902,6 +24269,7 @@ var parseCardsText = {
 		],
 		"id": "FB_BuildABrawl001",
 		"name": "Innkeeper Tools - Build A Brawl",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Play the Brawl as normal or Build a new brawl",
 		"type": "Enchantment"
@@ -22913,6 +24281,7 @@ var parseCardsText = {
 		"dbfId": 49075,
 		"id": "FB_BuildABrawl001a",
 		"name": "By the Power of Ragnaros!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of your turn, reduce the Cost of cards in your hand by (1).",
 		"type": "Spell"
@@ -22922,6 +24291,7 @@ var parseCardsText = {
 		"dbfId": 49113,
 		"id": "FB_BuildABrawl001a_ench",
 		"name": "By the Power of Ragnaros! Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Each turn reduce the cost of all cards by (1).",
 		"type": "Enchantment"
@@ -22933,6 +24303,7 @@ var parseCardsText = {
 		"dbfId": 49076,
 		"id": "FB_BuildABrawl001b",
 		"name": "Randomonium",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the start of your turn, randomize the Cost of cards in your hand.",
 		"type": "Spell"
@@ -22942,6 +24313,7 @@ var parseCardsText = {
 		"dbfId": 49118,
 		"id": "FB_BuildABrawl001b_ench",
 		"name": "Randomonium Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Each turn randomize the cost of all cards in your hand.",
 		"type": "Enchantment"
@@ -22953,6 +24325,7 @@ var parseCardsText = {
 		"dbfId": 49077,
 		"id": "FB_BuildABrawl001c",
 		"name": "Battle of Tol Barad",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "After you summon a minion, add a spell of the same Cost to your hand. \n It costs (0).",
 		"type": "Spell"
@@ -22962,6 +24335,7 @@ var parseCardsText = {
 		"dbfId": 49119,
 		"id": "FB_BuildABrawl001c_ench",
 		"name": "Battle of Tol Barad Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "After a minion is played add a spell of the same mana cost to your hand. \n It costs (0).",
 		"type": "Enchantment"
@@ -22977,6 +24351,7 @@ var parseCardsText = {
 		],
 		"id": "FB_BuildABrawl002",
 		"name": "Innkeeper Tools - Build A Brawl 2",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Second Tier of Choices for Build A Brawl",
 		"type": "Enchantment"
@@ -22988,6 +24363,7 @@ var parseCardsText = {
 		"dbfId": 49130,
 		"id": "FB_BuildABrawl002a",
 		"name": "Summoner Competition",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "After you cast a spell, summon a random minion of the same Cost.",
 		"type": "Spell"
@@ -22997,6 +24373,7 @@ var parseCardsText = {
 		"dbfId": 49133,
 		"id": "FB_BuildABrawl002a_ench",
 		"name": "Great Summoner Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Spells summon minions of the same mana cost.",
 		"type": "Enchantment"
@@ -23008,6 +24385,7 @@ var parseCardsText = {
 		"dbfId": 49131,
 		"id": "FB_BuildABrawl002b",
 		"name": "The Masked Ball",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "After you summon a minion, give it \"<b>Deathrattle:</b> Summon a minion that costs (2) less.\"",
 		"type": "Spell"
@@ -23017,6 +24395,7 @@ var parseCardsText = {
 		"dbfId": 49134,
 		"id": "FB_BuildABrawl002b_ench",
 		"name": "Masked Ball Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "All minions gain <b>Deathrattle:</b> Summon a minion that costs (2) less.",
 		"type": "Enchantment"
@@ -23028,6 +24407,7 @@ var parseCardsText = {
 		"dbfId": 49132,
 		"id": "FB_BuildABrawl002c",
 		"name": "Servant of Yogg Tryouts",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "After you summon a minion, cast a random spell on a random target.",
 		"type": "Spell"
@@ -23037,6 +24417,7 @@ var parseCardsText = {
 		"dbfId": 49135,
 		"id": "FB_BuildABrawl002c_ench",
 		"name": "Servant of Yogg Saron Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "All minons cast a random spell at a random target when played.",
 		"type": "Enchantment"
@@ -23051,6 +24432,7 @@ var parseCardsText = {
 		],
 		"id": "FB_BuildABrawl003",
 		"name": "Innkeeper Tools - Build A Brawl 3",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Third Tier of Choices for Build A Brawl",
 		"type": "Enchantment"
@@ -23062,6 +24444,7 @@ var parseCardsText = {
 		"dbfId": 49139,
 		"id": "FB_BuildABrawl003b",
 		"name": "Clash of the Minions",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "After you summon a minion, give it <b>Charge</b> and <b>Taunt</b>.",
 		"type": "Spell"
@@ -23071,6 +24454,7 @@ var parseCardsText = {
 		"dbfId": 49140,
 		"id": "FB_BuildABrawl003b_ench",
 		"name": "Clash of the Minions Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "All minions gain <b>Charge</b> and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -23082,6 +24466,7 @@ var parseCardsText = {
 		"dbfId": 49141,
 		"id": "FB_BuildABrawl003c",
 		"name": "Blood Magic",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "All spells cost Health instead of Mana.",
 		"type": "Spell"
@@ -23091,6 +24476,7 @@ var parseCardsText = {
 		"dbfId": 49142,
 		"id": "FB_BuildABrawl003c_ench",
 		"name": "Blood Magic Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "All spells cost health instead of mana",
 		"type": "Enchantment"
@@ -23104,6 +24490,7 @@ var parseCardsText = {
 		],
 		"id": "FB_BuildABrawl_Tools_ench",
 		"name": "Build-A-Brawl Innkeeper Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Choose a new blend of Tavern Brawls for your Fireside Gathering.",
 		"type": "Enchantment"
@@ -23115,6 +24502,7 @@ var parseCardsText = {
 		"dbfId": 49409,
 		"id": "FB_BuildABrawl_Tools_reset",
 		"name": "Build-A-Brawl",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Choose a new blend of Tavern Brawls for your Fireside Gathering.",
 		"type": "Spell"
@@ -23129,6 +24517,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_CS2_106.gif",
 		"id": "FB_Champs_CS2_106",
 		"name": "Fiery War Axe",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Tb",
 		"type": "Weapon"
@@ -23141,6 +24530,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_CS2_108.gif",
 		"id": "FB_Champs_CS2_108",
 		"name": "Execute",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Tb",
 		"text": "Destroy a damaged enemy minion.",
@@ -23160,6 +24550,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Abusive Sergeant",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Give a minion +2 Attack this turn.",
@@ -23173,6 +24564,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_CS2_233.gif",
 		"id": "FB_Champs_CS2_233",
 		"name": "Blade Flurry",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Tb",
 		"text": "Destroy your weapon and deal its damage to all enemies.",
@@ -23191,6 +24583,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Big Game Hunter",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Destroy a minion with 7 or more Attack.",
@@ -23209,6 +24602,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Leper Gnome",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Deal 2 damage to the enemy hero.",
@@ -23224,6 +24618,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "FB_Champs_EX1_095",
 		"name": "Gadgetzan Auctioneer",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Tb",
 		"text": "Whenever you cast a spell, draw a card.",
@@ -23242,6 +24637,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Druid of the Claw",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"CHARGE",
@@ -23259,6 +24655,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_EX1_165a.gif",
 		"id": "FB_Champs_EX1_165a",
 		"name": "Cat Form",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "<b>Charge</b>",
 		"type": "Spell"
@@ -23271,6 +24668,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_EX1_165b.gif",
 		"id": "FB_Champs_EX1_165b",
 		"name": "Bear Form",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "+2 Health and <b>Taunt</b>.",
 		"type": "Spell"
@@ -23288,6 +24686,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Druid of the Claw",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Tb",
 		"text": "<b>Charge</b>",
@@ -23306,6 +24705,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Druid of the Claw",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Tb",
 		"text": "<b>Taunt</b>",
@@ -23324,6 +24724,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Keeper of the Grove",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SILENCE"
@@ -23340,6 +24741,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_EX1_169.gif",
 		"id": "FB_Champs_EX1_169",
 		"name": "Innervate",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Tb",
 		"text": "Gain 2 Mana Crystals this turn only.",
@@ -23353,6 +24755,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_EX1_246.gif",
 		"id": "FB_Champs_EX1_246",
 		"name": "Hex",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"referencedTags": [
 			"TAUNT"
@@ -23369,6 +24772,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_EX1_308.gif",
 		"id": "FB_Champs_EX1_308",
 		"name": "Soulfire",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Tb",
 		"text": "[x]Deal $4 damage.\nDiscard a random card.",
@@ -23387,6 +24791,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Harvest Golem",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Summon a 2/1 Damaged Golem.",
@@ -23400,6 +24805,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_EX1_571.gif",
 		"id": "FB_Champs_EX1_571",
 		"name": "Force of Nature",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Tb",
 		"text": "Summon three 2/2 Treants with\n<b>Charge</b> that die at the end of the turn.",
@@ -23419,6 +24825,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Treant",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Tb",
 		"type": "Minion"
@@ -23433,6 +24840,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "FB_Champs_FP1_028",
 		"name": "Undertaker",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -23447,6 +24855,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_FP1_028e.gif",
 		"id": "FB_Champs_FP1_028e",
 		"name": "Darkness Calls",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -23461,6 +24870,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_KAR_063.gif",
 		"id": "FB_Champs_KAR_063",
 		"name": "Spirit Claws",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"referencedTags": [
 			"SPELLPOWER"
@@ -23482,6 +24892,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Ancient of Lore",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Tb",
 		"text": "<b>Choose One -</b> Draw 2 cards; or Restore 5 Health.",
@@ -23495,6 +24906,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_NEW1_008a.gif",
 		"id": "FB_Champs_NEW1_008a",
 		"name": "Ancient Teachings",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "Draw two cards.",
 		"type": "Spell"
@@ -23507,6 +24919,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_NEW1_008b.gif",
 		"id": "FB_Champs_NEW1_008b",
 		"name": "Ancient Secrets",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "Restore 5 Health.",
 		"type": "Spell"
@@ -23521,6 +24934,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "FB_Champs_NEW1_019",
 		"name": "Knife Juggler",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Tb",
 		"text": "[x]After you summon a\nminion, deal 1 damage\nto a random enemy.",
@@ -23540,6 +24954,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Druid of the Claw",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Tb",
 		"text": "<b>Charge</b>\n<b>Taunt</b>",
@@ -23554,6 +24969,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_Champs_Reset",
 		"name": "Reset the Brawl",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reset the Champions' Win Percents to 0.",
 		"type": "Spell"
@@ -23564,6 +24980,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_SetEvent.gif",
 		"id": "FB_Champs_SetEvent",
 		"name": "Set Mission Event",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -23574,6 +24991,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_SetEvent_copy.gif",
 		"id": "FB_Champs_SetEvent_copy",
 		"name": "Add FSG Score Screen",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -23583,6 +25001,7 @@ var parseCardsText = {
 		"goldenImage": "FB_Champs_SetUp_Ench.gif",
 		"id": "FB_Champs_SetUp_Ench",
 		"name": "Champs Setup",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -23596,6 +25015,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "FB_Champs_skele21",
 		"name": "Damaged Golem",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Tb",
 		"type": "Minion"
@@ -23610,6 +25030,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO001.gif",
 		"id": "FB_ELO001",
 		"name": "Innkeeper Tools - ELO",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reset the brawl or play as normal",
 		"type": "Enchantment"
@@ -23622,6 +25043,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO001a.gif",
 		"id": "FB_ELO001a",
 		"name": "Play the Brawl",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Continue playing normally.",
 		"type": "Spell"
@@ -23634,6 +25056,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO001b.gif",
 		"id": "FB_ELO001b",
 		"name": "Reset the Brawl",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reset all player wins to 0.",
 		"type": "Spell"
@@ -23648,6 +25071,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO001bench.gif",
 		"id": "FB_ELO001bench",
 		"name": "ELO Reset Confirmation",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -23659,6 +25083,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO001c.gif",
 		"id": "FB_ELO001c",
 		"name": "Confirm",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reset all Fireside Gathering Player wins. This will end the current game.",
 		"type": "Spell"
@@ -23671,6 +25096,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO001d.gif",
 		"id": "FB_ELO001d",
 		"name": "Cancel",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Do NOT reset Fireside Gathering Player wins. Play the Brawl as normal.",
 		"type": "Spell"
@@ -23686,6 +25112,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002.gif",
 		"id": "FB_ELO002",
 		"name": "Competitive Spirits",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Gain an advantage against your opponent.",
 		"type": "Enchantment"
@@ -23701,6 +25128,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002_copy.gif",
 		"id": "FB_ELO002_copy",
 		"name": "Greater Competitive Spirits",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Gain an advantage against your opponent.",
 		"type": "Enchantment"
@@ -23713,6 +25141,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002a.gif",
 		"id": "FB_ELO002a",
 		"name": "Spirit of Heroism",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reduce the cost of your Hero Power by (1).",
 		"type": "Spell"
@@ -23725,6 +25154,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002a_copy.gif",
 		"id": "FB_ELO002a_copy",
 		"name": "Greater Spirit of Heroism",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Replace your starting Hero Power with a better one. It costs (0).",
 		"type": "Spell"
@@ -23735,6 +25165,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002a_ench.gif",
 		"id": "FB_ELO002a_ench",
 		"name": "Spirit of Heroism",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reduce the cost of your Hero Power by (1).",
 		"type": "Enchantment"
@@ -23745,6 +25176,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002a_ench_copy.gif",
 		"id": "FB_ELO002a_ench_copy",
 		"name": "Greater Spirit of Heroism",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Replace your starting Hero Power with a better one. It costs (0)",
 		"type": "Enchantment"
@@ -23757,6 +25189,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002b.gif",
 		"id": "FB_ELO002b",
 		"name": "Spirit of Wisdom",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reduce the Cost of all spells in your deck and hand by (1).",
 		"type": "Spell"
@@ -23769,6 +25202,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002b_copy.gif",
 		"id": "FB_ELO002b_copy",
 		"name": "Greater Spirit of Wisdom",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reduce the Cost of all spells in your deck and hand by (2).",
 		"type": "Spell"
@@ -23779,6 +25213,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002b_ench.gif",
 		"id": "FB_ELO002b_ench",
 		"name": "Spirit of Wisdom",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reduce the Cost of all spells in your deck and hand by (1).",
 		"type": "Enchantment"
@@ -23789,6 +25224,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002b_ench_copy.gif",
 		"id": "FB_ELO002b_ench_copy",
 		"name": "Greater Spirit of Wisdom",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Reduce the Cost of all spells in your deck and hand by (2).",
 		"type": "Enchantment"
@@ -23801,6 +25237,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002c.gif",
 		"id": "FB_ELO002c",
 		"name": "Spirit of Strength",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Give all minions in your deck and hand \n+1 Attack.",
 		"type": "Spell"
@@ -23813,6 +25250,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002c_copy.gif",
 		"id": "FB_ELO002c_copy",
 		"name": "Greater Spirit of Strength",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Give all minions in your deck and hand \n+2 Attack.",
 		"type": "Spell"
@@ -23823,6 +25261,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002c_ench.gif",
 		"id": "FB_ELO002c_ench",
 		"name": "Spirit of Strength",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Give all minions in your deck and hand +1 Attack.",
 		"type": "Enchantment"
@@ -23833,6 +25272,7 @@ var parseCardsText = {
 		"goldenImage": "FB_ELO002c_ench_copy.gif",
 		"id": "FB_ELO002c_ench_copy",
 		"name": "Greater Spirit of Strength",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Give all minions in your deck and hand +2 Attack.",
 		"type": "Enchantment"
@@ -23843,6 +25283,7 @@ var parseCardsText = {
 		"goldenImage": "FB_IKC_KeepOld_Ench.gif",
 		"id": "FB_IKC_KeepOld_Ench",
 		"name": "Innkeepers Choice Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -23852,6 +25293,7 @@ var parseCardsText = {
 		"goldenImage": "FB_IKC_KeepSetUp_Ench.gif",
 		"id": "FB_IKC_KeepSetUp_Ench",
 		"name": "Innkeepers Choice Setup",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -23864,6 +25306,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_IKC_SetupNo",
 		"name": "Play!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Play the brawl normally.",
 		"type": "Spell"
@@ -23877,6 +25320,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_IKC_SetupYes",
 		"name": "Set Up Brawl",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Change the Innkeeper's Choice card.",
 		"type": "Spell"
@@ -23889,6 +25333,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK001.gif",
 		"id": "FB_LK001",
 		"name": "Soldiers of the Cold Dark",
+		"playerClass": "Deathknight",
 		"rarity": "Free",
 		"set": "Tb",
 		"text": "Draw 4 cards.",
@@ -23902,6 +25347,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK002.gif",
 		"id": "FB_LK002",
 		"name": "Relentless March",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Tb",
 		"text": "Replace your deck with a fresh one.\n<i>Death does not feel fatigue</i>",
@@ -23913,6 +25359,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK003.gif",
 		"id": "FB_LK003",
 		"name": "Check for Hero Death in Lich King Raid",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -23923,6 +25370,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK004.gif",
 		"id": "FB_LK004",
 		"name": "Calling for Backup",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Choose the next Hero.",
 		"type": "Spell"
@@ -23938,6 +25386,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Remorseless Winter",
+		"playerClass": "Deathknight",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nDeal",
 		"type": "Hero_power"
@@ -23950,6 +25399,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK006.gif",
 		"id": "FB_LK006",
 		"name": "To My Aid Underling!",
+		"playerClass": "Deathknight",
 		"set": "Tb",
 		"text": "Summon a different Frozen Throne boss.\n <i> You aren't worth the Lich King's time.</i>",
 		"type": "Spell"
@@ -23965,6 +25415,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Freezing Blast",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\n<b>Freeze</b> a random enemy minion and deal 1 damage to it.",
 		"type": "Hero_power"
@@ -23977,6 +25428,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "FB_LK008h",
 		"name": "Blood-Queen Lana'thel",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -23986,6 +25438,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK009.gif",
 		"id": "FB_LK009",
 		"name": "Swap Hero With Death Knight",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -23997,6 +25450,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK010.gif",
 		"id": "FB_LK010",
 		"name": "The Final Battle",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Show The Lich King your true form!",
 		"type": "Spell"
@@ -24009,6 +25463,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK011.gif",
 		"id": "FB_LK011",
 		"name": "Cancelling the Apocalypse!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Destroy all minions.\n<i>Nice try, Uther!</i>",
 		"type": "Spell"
@@ -24021,6 +25476,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "FB_LK_012h",
 		"name": "Lord Marrowgar",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -24032,6 +25488,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "FB_LK_013h",
 		"name": "Professor Putricide",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -24043,6 +25500,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "FB_LK_014h",
 		"name": "Sindragosa",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -24100,6 +25558,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_ClearBoard.gif",
 		"id": "FB_LK_ClearBoard",
 		"name": "A New Hero Approaches",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Destroy all minions. Drain all Mana.",
 		"type": "Spell"
@@ -24113,6 +25572,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_LK_Druid_copy",
 		"name": "Druid",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "Select Druid as your next class.",
 		"type": "Spell"
@@ -24126,6 +25586,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_Druid_Ench_copy.gif",
 		"id": "FB_LK_Druid_Ench_copy",
 		"name": "Next Hero: Druid Ench Copy",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "Add Druid cards to your deck.",
 		"type": "Enchantment"
@@ -24147,6 +25608,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_GetClass_copy.gif",
 		"id": "FB_LK_GetClass_copy",
 		"name": "Discover Next Class Copy",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -24159,6 +25621,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_LK_Hunter_copy",
 		"name": "Hunter",
+		"playerClass": "Hunter",
 		"set": "Tb",
 		"text": "Select Hunter as your next class.",
 		"type": "Spell"
@@ -24172,6 +25635,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_Hunter_Ench_copy.gif",
 		"id": "FB_LK_Hunter_Ench_copy",
 		"name": "Next Hero: Hunter Ench Copy",
+		"playerClass": "Hunter",
 		"set": "Tb",
 		"text": "Add Hunter cards to your deck.",
 		"type": "Enchantment"
@@ -24185,6 +25649,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_LK_Mage_copy",
 		"name": "Mage",
+		"playerClass": "Mage",
 		"set": "Tb",
 		"text": "Select Mage as your next class.",
 		"type": "Spell"
@@ -24198,6 +25663,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_Mage_Ench_copy.gif",
 		"id": "FB_LK_Mage_Ench_copy",
 		"name": "Next Hero: Mage Ench Copy",
+		"playerClass": "Mage",
 		"set": "Tb",
 		"text": "Add Mage cards to your deck.",
 		"type": "Enchantment"
@@ -24210,6 +25676,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_NewHeroCards.gif",
 		"id": "FB_LK_NewHeroCards",
 		"name": "New Hero!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "A new Hero takes position.",
 		"type": "Spell"
@@ -24223,6 +25690,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_LK_Paladin_copy",
 		"name": "Paladin",
+		"playerClass": "Paladin",
 		"set": "Tb",
 		"text": "Select Paladin as your next class.",
 		"type": "Spell"
@@ -24236,6 +25704,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_Paladin_Ench_copy.gif",
 		"id": "FB_LK_Paladin_Ench_copy",
 		"name": "Next Hero: Paladin Ench Copy",
+		"playerClass": "Paladin",
 		"set": "Tb",
 		"text": "Add Paladin cards to your deck.",
 		"type": "Enchantment"
@@ -24249,6 +25718,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_LK_Priest_copy",
 		"name": "Priest",
+		"playerClass": "Priest",
 		"set": "Tb",
 		"text": "Select Priest as your next class.",
 		"type": "Spell"
@@ -24262,6 +25732,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_Priest_Ench_copy.gif",
 		"id": "FB_LK_Priest_Ench_copy",
 		"name": "Next Hero: Priest Ench Copy",
+		"playerClass": "Priest",
 		"set": "Tb",
 		"text": "Add Priest cards to your deck.",
 		"type": "Enchantment"
@@ -24274,6 +25745,7 @@ var parseCardsText = {
 		"health": 400,
 		"id": "FB_LK_Raid_Hero",
 		"name": "Supreme Lich King",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -24285,6 +25757,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "FB_LK_Raid_Hero_Battledamaged",
 		"name": "Supreme Lich King",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -24297,6 +25770,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_LK_Rogue_copy",
 		"name": "Rogue",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Select Rogue as your next class.",
 		"type": "Spell"
@@ -24310,6 +25784,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_Rogue_Ench_copy.gif",
 		"id": "FB_LK_Rogue_Ench_copy",
 		"name": "Next Hero: Rogue Ench Copy",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Add Rogue cards to your deck.",
 		"type": "Enchantment"
@@ -24323,6 +25798,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_LK_Shaman_copy",
 		"name": "Shaman",
+		"playerClass": "Shaman",
 		"set": "Tb",
 		"text": "Select Shaman as your next class.",
 		"type": "Spell"
@@ -24336,6 +25812,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_Shaman_Ench_copy.gif",
 		"id": "FB_LK_Shaman_Ench_copy",
 		"name": "Next Hero: Shaman Ench Copy",
+		"playerClass": "Shaman",
 		"set": "Tb",
 		"text": "Add Shaman cards to your deck.",
 		"type": "Enchantment"
@@ -24346,6 +25823,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_WaitForDiscover.gif",
 		"id": "FB_LK_WaitForDiscover",
 		"name": "Wait for Discover",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -24358,6 +25836,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_LK_Warlock_copy",
 		"name": "Warlock",
+		"playerClass": "Warlock",
 		"set": "Tb",
 		"text": "Select Warlock as your next class.",
 		"type": "Spell"
@@ -24371,6 +25850,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_Warlock_Ench_copy.gif",
 		"id": "FB_LK_Warlock_Ench_copy",
 		"name": "Next Hero: Warlock Ench Copy",
+		"playerClass": "Warlock",
 		"set": "Tb",
 		"text": "Add Warlock cards to your deck.",
 		"type": "Enchantment"
@@ -24384,6 +25864,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "FB_LK_Warrior_copy",
 		"name": "Warrior",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "Select Warrior as your next class.",
 		"type": "Spell"
@@ -24397,6 +25878,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LK_Warrior_Ench_copy.gif",
 		"id": "FB_LK_Warrior_Ench_copy",
 		"name": "Next Hero: Warrior Ench Copy",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "Add Warrior cards to your deck.",
 		"type": "Enchantment"
@@ -24408,6 +25890,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKDebug001.gif",
 		"id": "FB_LKDebug001",
 		"name": "LK Phase 2 Debug",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Change boss to phase 2",
 		"type": "Spell"
@@ -24419,6 +25902,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKDebug002.gif",
 		"id": "FB_LKDebug002",
 		"name": "LK Phase 3 Debug",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Change boss to phase 3",
 		"type": "Spell"
@@ -24433,6 +25917,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKStats001.gif",
 		"id": "FB_LKStats001",
 		"name": "Innkeeper Tools",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Fight the Lich King or make modifications to his health.",
 		"type": "Enchantment"
@@ -24445,6 +25930,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKStats001a.gif",
 		"id": "FB_LKStats001a",
 		"name": "Fight the Lich King!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Continue playing normally.",
 		"type": "Spell"
@@ -24461,6 +25947,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKStats001d.gif",
 		"id": "FB_LKStats001d",
 		"name": "Modify the Lich King",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Change Health, Assign Modifiers.",
 		"type": "Spell"
@@ -24473,6 +25960,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKStats002.gif",
 		"id": "FB_LKStats002",
 		"name": "Lich King Modifications",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Increase or Decrease the maximum health of the Lich King.",
 		"type": "Spell"
@@ -24490,6 +25978,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKStats002a.gif",
 		"id": "FB_LKStats002a",
 		"name": "Increase Health",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Increase the Lich King's maximum health by 10%.",
 		"type": "Spell"
@@ -24507,6 +25996,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKStats002b.gif",
 		"id": "FB_LKStats002b",
 		"name": "Decrease Health",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Decrease the Lich King's maximum health by 10%",
 		"type": "Spell"
@@ -24523,6 +26013,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKStats002c.gif",
 		"id": "FB_LKStats002c",
 		"name": "Modifications Complete",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Lock in the new maximum health. This will end the setup phase.",
 		"type": "Spell"
@@ -24538,6 +26029,7 @@ var parseCardsText = {
 		"goldenImage": "FB_LKStats002ench.gif",
 		"id": "FB_LKStats002ench",
 		"name": "Lich King Modifications Copy",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -24551,6 +26043,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_Druid_Ench.gif",
 		"id": "FB_TagTeam_Druid_Ench",
 		"name": "Next Hero: Druid Ench",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "Add Druid cards to your deck.",
 		"type": "Enchantment"
@@ -24565,6 +26058,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_Hunter_Ench.gif",
 		"id": "FB_TagTeam_Hunter_Ench",
 		"name": "Next Hero: Hunter Ench",
+		"playerClass": "Hunter",
 		"set": "Tb",
 		"text": "Add Hunter cards to your deck.",
 		"type": "Enchantment"
@@ -24579,6 +26073,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_Mage_Ench.gif",
 		"id": "FB_TagTeam_Mage_Ench",
 		"name": "Next Hero: Mage Ench",
+		"playerClass": "Mage",
 		"set": "Tb",
 		"text": "Add Mage cards to your deck.",
 		"type": "Enchantment"
@@ -24593,6 +26088,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_Paladin_Ench.gif",
 		"id": "FB_TagTeam_Paladin_Ench",
 		"name": "Next Hero: Paladin Ench",
+		"playerClass": "Paladin",
 		"set": "Tb",
 		"text": "Add Paladin cards to your deck.",
 		"type": "Enchantment"
@@ -24607,6 +26103,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_Priest_Ench.gif",
 		"id": "FB_TagTeam_Priest_Ench",
 		"name": "Next Hero: Priest Ench",
+		"playerClass": "Priest",
 		"set": "Tb",
 		"text": "Add Priest cards to your deck.",
 		"type": "Enchantment"
@@ -24621,6 +26118,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_Rogue_Ench.gif",
 		"id": "FB_TagTeam_Rogue_Ench",
 		"name": "Next Hero: Rogue Ench",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Add Rogue cards to your deck.",
 		"type": "Enchantment"
@@ -24635,6 +26133,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_Shaman_Ench.gif",
 		"id": "FB_TagTeam_Shaman_Ench",
 		"name": "Next Hero: Shaman Ench",
+		"playerClass": "Shaman",
 		"set": "Tb",
 		"text": "Add Shaman cards to your deck.",
 		"type": "Enchantment"
@@ -24646,6 +26145,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_WaitForDiscover.gif",
 		"id": "FB_TagTeam_WaitForDiscover",
 		"name": "Wait for Discover",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -24659,6 +26159,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_Warlock_Ench.gif",
 		"id": "FB_TagTeam_Warlock_Ench",
 		"name": "Next Hero: Warlock Ench",
+		"playerClass": "Warlock",
 		"set": "Tb",
 		"text": "Add Warlock cards to your deck.",
 		"type": "Enchantment"
@@ -24673,6 +26174,7 @@ var parseCardsText = {
 		"goldenImage": "FB_TagTeam_Warrior_Ench.gif",
 		"id": "FB_TagTeam_Warrior_Ench",
 		"name": "Next Hero: Warrior Ench",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "Add Warrior cards to your deck.",
 		"type": "Enchantment"
@@ -24693,6 +26195,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Zombie Chow",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Restore 5 Health to the enemy hero.",
@@ -24714,6 +26217,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Haunted Creeper",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Naxx",
@@ -24730,6 +26234,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "FP1_002t",
 		"name": "Spectral Spider",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Minion"
 	},
@@ -24749,6 +26254,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Echoing Ooze",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Naxx",
 		"text": "<b>Battlecry:</b> Summon an exact copy of this minion at the end of the turn.",
@@ -24770,6 +26276,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Mad Scientist",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"SECRET"
@@ -24794,6 +26301,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Shade of Naxxramas",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Naxx",
 		"text": "<b>Stealth.</b> At the start of your turn, gain +1/+1.",
@@ -24805,6 +26313,7 @@ var parseCardsText = {
 		"goldenImage": "FP1_005e.gif",
 		"id": "FP1_005e",
 		"name": "Consume",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -24823,6 +26332,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Deathcharger",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Charge. Deathrattle:</b> Deal 3 damage to your hero.",
 		"type": "Minion"
@@ -24843,6 +26353,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Nerubian Egg",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Summon a 4/4 Nerubian.",
@@ -24858,6 +26369,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "FP1_007t",
 		"name": "Nerubian",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Minion"
 	},
@@ -24878,6 +26390,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Spectral Knight",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "Can't be targeted by spells or Hero Powers.",
@@ -24900,6 +26413,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Deathlord",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Naxx",
 		"text": "<b>Taunt. Deathrattle:</b> Your opponent puts a minion from their deck into the battlefield.",
@@ -24922,6 +26436,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Maexxna",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Naxx",
@@ -24944,6 +26459,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Webspinner",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Naxx",
@@ -24967,6 +26483,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Sludge Belcher",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Naxx",
 		"text": "<b>Taunt\nDeathrattle:</b> Summon a 1/2 Slime with <b>Taunt</b>.",
@@ -24985,6 +26502,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Slime",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -25003,6 +26521,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "FP1_013",
 		"name": "Kel'Thuzad",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Naxx",
 		"text": "At the end of each turn, summon all friendly minions that died this turn.",
@@ -25025,6 +26544,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Stalagg",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> If Feugen also died this game, summon Thaddius.",
@@ -25041,6 +26561,7 @@ var parseCardsText = {
 		"health": 11,
 		"id": "FP1_014t",
 		"name": "Thaddius",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Minion"
 	},
@@ -25061,6 +26582,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Feugen",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> If Stalagg also died this game, summon Thaddius.",
@@ -25082,6 +26604,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Wailing Soul",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SILENCE"
@@ -25106,6 +26629,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Nerub'ar Weblord",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"BATTLECRY"
@@ -25128,6 +26652,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Duplicate",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "<b>Secret:</b> When a friendly minion dies, put 2 copies of it into your hand.",
@@ -25144,6 +26669,7 @@ var parseCardsText = {
 		"goldenImage": "FP1_019.gif",
 		"id": "FP1_019",
 		"name": "Poison Seeds",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "Destroy all minions and summon 2/2 Treants to replace them.",
@@ -25159,6 +26685,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "FP1_019t",
 		"name": "Treant",
+		"playerClass": "Druid",
 		"set": "Naxx",
 		"type": "Minion"
 	},
@@ -25176,6 +26703,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Avenge",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "<b>Secret:</b> When one of your minions dies, give a random friendly minion +3/+2.",
@@ -25187,6 +26715,7 @@ var parseCardsText = {
 		"goldenImage": "FP1_020e.gif",
 		"id": "FP1_020e",
 		"name": "Vengeance",
+		"playerClass": "Paladin",
 		"set": "Naxx",
 		"text": "+3/+2.",
 		"type": "Enchantment"
@@ -25207,6 +26736,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Death's Bite",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Deal 1 damage to all minions.",
@@ -25228,6 +26758,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Voidcaller",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Naxx",
@@ -25250,6 +26781,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Dark Cultist",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Give a random friendly minion +3 Health.",
@@ -25261,6 +26793,7 @@ var parseCardsText = {
 		"goldenImage": "FP1_023e.gif",
 		"id": "FP1_023e",
 		"name": "Power of the Ziggurat",
+		"playerClass": "Priest",
 		"set": "Naxx",
 		"text": "+3 Health.",
 		"type": "Enchantment"
@@ -25282,6 +26815,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Unstable Ghoul",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "<b>Taunt</b>. <b>Deathrattle:</b> Deal 1 damage to all minions.",
@@ -25298,6 +26832,7 @@ var parseCardsText = {
 		"goldenImage": "FP1_025.gif",
 		"id": "FP1_025",
 		"name": "Reincarnate",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "Destroy a minion, then return it to life with full Health.",
@@ -25319,6 +26854,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Anub'ar Ambusher",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Return a random friendly minion to your hand.",
@@ -25337,6 +26873,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "FP1_027",
 		"name": "Stoneskin Gargoyle",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "At the start of your turn, restore this minion to full Health.",
@@ -25355,6 +26892,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "FP1_028",
 		"name": "Undertaker",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -25369,6 +26907,7 @@ var parseCardsText = {
 		"goldenImage": "FP1_028e.gif",
 		"id": "FP1_028e",
 		"name": "Darkness Calls",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -25389,6 +26928,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Dancing Swords",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Your opponent draws a card.",
@@ -25411,6 +26951,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Loatheb",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Naxx",
 		"text": "<b>Battlecry:</b> Enemy spells cost (5) more next turn.",
@@ -25422,6 +26963,7 @@ var parseCardsText = {
 		"goldenImage": "FP1_030e.gif",
 		"id": "FP1_030e",
 		"name": "Necrotic Aura",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Your spells cost (5) more this turn.",
 		"type": "Enchantment"
@@ -25443,6 +26985,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Baron Rivendare",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -25457,6 +27000,7 @@ var parseCardsText = {
 		"goldenImage": "GAME_001.gif",
 		"id": "GAME_001",
 		"name": "Luck of the Coin",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Going second grants you increased Health.",
 		"type": "Enchantment"
@@ -25471,6 +27015,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "GAME_002",
 		"name": "Avatar of the Coin",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<i>You lost the coin flip, but gained a friend.</i>",
@@ -25482,6 +27027,7 @@ var parseCardsText = {
 		"goldenImage": "GAME_003.gif",
 		"id": "GAME_003",
 		"name": "Coin's Vengeance",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Going second makes your first minion stronger.",
 		"type": "Enchantment"
@@ -25492,6 +27038,7 @@ var parseCardsText = {
 		"goldenImage": "GAME_003e.gif",
 		"id": "GAME_003e",
 		"name": "Coin's Vengence",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Going second makes your first minion stronger.",
 		"type": "Enchantment"
@@ -25502,6 +27049,7 @@ var parseCardsText = {
 		"goldenImage": "GAME_004.gif",
 		"id": "GAME_004",
 		"name": "AFK",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Your turns are shorter.",
 		"type": "Enchantment"
@@ -25514,6 +27062,7 @@ var parseCardsText = {
 		"goldenImage": "GAME_005.gif",
 		"id": "GAME_005",
 		"name": "The Coin",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Gain 1 Mana Crystal this turn only.",
 		"type": "Spell"
@@ -25524,6 +27073,7 @@ var parseCardsText = {
 		"goldenImage": "GAME_005e.gif",
 		"id": "GAME_005e",
 		"name": "The Coin",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"type": "Enchantment"
 	},
@@ -25536,6 +27086,7 @@ var parseCardsText = {
 		"goldenImage": "GAME_006.gif",
 		"id": "GAME_006",
 		"name": "NOOOOOOOOOOOO",
+		"playerClass": "Neutral",
 		"set": "Core",
 		"text": "Somehow, the card you USED to have has been deleted.  Here, have this one instead!",
 		"type": "Spell"
@@ -25551,6 +27102,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_001.gif",
 		"id": "GVG_001",
 		"name": "Flamecannon",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "Deal $4 damage to a random enemy minion.",
@@ -25572,6 +27124,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Snowchugger",
+		"playerClass": "Mage",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -25589,6 +27142,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_003.gif",
 		"id": "GVG_003",
 		"name": "Unstable Portal",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "Add a random minion to your hand. It costs (3) less.",
@@ -25610,6 +27164,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Goblin Blastmage",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> If you have a Mech, deal 4 damage randomly split among all enemies.",
@@ -25626,6 +27181,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_005.gif",
 		"id": "GVG_005",
 		"name": "Echo of Medivh",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Put a copy of each friendly minion into your hand.",
@@ -25647,6 +27203,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Mechwarper",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -25670,6 +27227,7 @@ var parseCardsText = {
 			"TOPDECK"
 		],
 		"name": "Flame Leviathan",
+		"playerClass": "Mage",
 		"race": "MECHANICAL",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -25687,6 +27245,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_008.gif",
 		"id": "GVG_008",
 		"name": "Lightbomb",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Deal damage to each minion equal to its Attack.",
@@ -25708,6 +27267,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shadowbomber",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Deal 3 damage to each hero.",
@@ -25724,6 +27284,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_010.gif",
 		"id": "GVG_010",
 		"name": "Velen's Chosen",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"referencedTags": [
 			"SPELLPOWER"
@@ -25738,6 +27299,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_010b.gif",
 		"id": "GVG_010b",
 		"name": "Velen's Chosen",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "+2/+4 and <b>Spell Damage +1</b>.",
 		"type": "Enchantment"
@@ -25758,6 +27320,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shrinkmeister",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Give a minion -2 Attack this turn.",
@@ -25772,6 +27335,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Shrink Ray",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "-2 Attack this turn.",
 		"type": "Enchantment"
@@ -25787,6 +27351,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_012.gif",
 		"id": "GVG_012",
 		"name": "Light of the Naaru",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "Restore #3 Health. If the target is still damaged, summon a Lightwarden.",
@@ -25808,6 +27373,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Cogmaster",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "Has +2 Attack while you have a Mech.",
@@ -25830,6 +27396,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Vol'jin",
+		"playerClass": "Priest",
 		"rarity": "Legendary",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Swap Health with another minion.",
@@ -25841,6 +27408,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_014a.gif",
 		"id": "GVG_014a",
 		"name": "Shadowed",
+		"playerClass": "Priest",
 		"set": "Gvg",
 		"text": "Health was swapped.",
 		"type": "Enchantment"
@@ -25856,6 +27424,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_015.gif",
 		"id": "GVG_015",
 		"name": "Darkbomb",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "Deal $3 damage.",
@@ -25874,6 +27443,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "GVG_016",
 		"name": "Fel Reaver",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Epic",
 		"set": "Gvg",
@@ -25891,6 +27461,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_017.gif",
 		"id": "GVG_017",
 		"name": "Call Pet",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "Draw a card.\nIf it's a Beast, it costs (4) less.",
@@ -25912,6 +27483,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Mistress of Pain",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -25929,6 +27501,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_019.gif",
 		"id": "GVG_019",
 		"name": "Demonheart",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Deal $5 damage to a minion.  If it's a friendly Demon, give it +5/+5 instead.",
@@ -25940,6 +27513,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_019e.gif",
 		"id": "GVG_019e",
 		"name": "Demonheart",
+		"playerClass": "Warlock",
 		"set": "Gvg",
 		"text": "+5/+5.",
 		"type": "Enchantment"
@@ -25957,6 +27531,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "GVG_020",
 		"name": "Fel Cannon",
+		"playerClass": "Warlock",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -25980,6 +27555,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Mal'Ganis",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Legendary",
 		"referencedTags": [
@@ -25995,6 +27571,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_021e.gif",
 		"id": "GVG_021e",
 		"name": "Grasp of Mal'Ganis",
+		"playerClass": "Warlock",
 		"set": "Gvg",
 		"text": "Mal'Ganis is granting +2/+2.",
 		"type": "Enchantment"
@@ -26013,6 +27590,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Tinker's Sharpsword Oil",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "Give your weapon +3 Attack. <b>Combo:</b> Give a random friendly minion +3 Attack.",
@@ -26024,6 +27602,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_022a.gif",
 		"id": "GVG_022a",
 		"name": "Tinker's Sharpsword Oil",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -26034,6 +27613,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_022b.gif",
 		"id": "GVG_022b",
 		"name": "Tinker's Sharpsword Oil",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -26054,6 +27634,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Goblin Auto-Barber",
+		"playerClass": "Rogue",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -26066,6 +27647,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_023a.gif",
 		"id": "GVG_023a",
 		"name": "Extra Sharp",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "+1 Attack.",
 		"type": "Enchantment"
@@ -26086,6 +27668,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Cogmaster's Wrench",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Has +2 Attack while you have a Mech.",
@@ -26104,6 +27687,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "GVG_025",
 		"name": "One-eyed Cheat",
+		"playerClass": "Rogue",
 		"race": "PIRATE",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -26124,6 +27708,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_026.gif",
 		"id": "GVG_026",
 		"name": "Feign Death",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -26145,6 +27730,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "GVG_027",
 		"name": "Iron Sensei",
+		"playerClass": "Rogue",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -26157,6 +27743,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_027e.gif",
 		"id": "GVG_027e",
 		"name": "Ironed Out",
+		"playerClass": "Rogue",
 		"set": "Gvg",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -26175,6 +27762,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "GVG_028",
 		"name": "Trade Prince Gallywix",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Gvg",
 		"text": "Whenever your opponent casts a spell, gain a copy of it and give them a Coin.",
@@ -26188,6 +27776,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_028t.gif",
 		"id": "GVG_028t",
 		"name": "Gallywix's Coin",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Gain 1 Mana Crystal this turn only.\n<i>(Won't trigger Gallywix.)</i>",
 		"type": "Spell"
@@ -26203,6 +27792,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_029.gif",
 		"id": "GVG_029",
 		"name": "Ancestor's Call",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Put a random minion from each player's hand into the battlefield.",
@@ -26225,6 +27815,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Anodized Robo Cub",
+		"playerClass": "Druid",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -26239,6 +27830,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_030a.gif",
 		"id": "GVG_030a",
 		"name": "Attack Mode",
+		"playerClass": "Druid",
 		"set": "Gvg",
 		"text": "+1 Attack.",
 		"type": "Spell"
@@ -26249,6 +27841,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_030ae.gif",
 		"id": "GVG_030ae",
 		"name": "Attack Mode",
+		"playerClass": "Druid",
 		"set": "Gvg",
 		"text": "+1 Attack.",
 		"type": "Enchantment"
@@ -26261,6 +27854,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_030b.gif",
 		"id": "GVG_030b",
 		"name": "Tank Mode",
+		"playerClass": "Druid",
 		"set": "Gvg",
 		"text": "+1 Health.",
 		"type": "Spell"
@@ -26271,6 +27865,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_030be.gif",
 		"id": "GVG_030be",
 		"name": "Tank Mode",
+		"playerClass": "Druid",
 		"set": "Gvg",
 		"text": "+1 Health.",
 		"type": "Enchantment"
@@ -26286,6 +27881,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_031.gif",
 		"id": "GVG_031",
 		"name": "Recycle",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "Shuffle an enemy minion into your opponent's deck.",
@@ -26307,6 +27903,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Grove Tender",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "<b>Choose One -</b> Give each player a Mana Crystal; or Each player draws a card.",
@@ -26320,6 +27917,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_032a.gif",
 		"id": "GVG_032a",
 		"name": "Gift of Mana",
+		"playerClass": "Druid",
 		"set": "Gvg",
 		"text": "Give each player a Mana Crystal.",
 		"type": "Spell"
@@ -26332,6 +27930,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_032b.gif",
 		"id": "GVG_032b",
 		"name": "Gift of Cards",
+		"playerClass": "Druid",
 		"set": "Gvg",
 		"text": "Each player draws a card.",
 		"type": "Spell"
@@ -26347,6 +27946,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_033.gif",
 		"id": "GVG_033",
 		"name": "Tree of Life",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Restore all characters to full Health.",
@@ -26374,6 +27974,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "GVG_034",
 		"name": "Mech-Bear-Cat",
+		"playerClass": "Druid",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -26397,6 +27998,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Malorne",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -26419,6 +28021,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Powermace",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "<b>Deathrattle:</b> Give a random friendly Mech +2/+2.",
@@ -26430,6 +28033,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_036e.gif",
 		"id": "GVG_036e",
 		"name": "Powered",
+		"playerClass": "Shaman",
 		"set": "Gvg",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -26450,6 +28054,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Whirling Zap-o-matic",
+		"playerClass": "Shaman",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -26471,6 +28076,7 @@ var parseCardsText = {
 		],
 		"name": "Crackle",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "Deal $3-$6 damage. <b>Overload:</b> (1)",
@@ -26489,6 +28095,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "GVG_039",
 		"name": "Vitality Totem",
+		"playerClass": "Shaman",
 		"race": "TOTEM",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -26512,6 +28119,7 @@ var parseCardsText = {
 		],
 		"name": "Siltfin Spiritwalker",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"race": "MURLOC",
 		"rarity": "Epic",
 		"set": "Gvg",
@@ -26532,6 +28140,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Dark Wispers",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"referencedTags": [
 			"TAUNT"
@@ -26548,6 +28157,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_041a.gif",
 		"id": "GVG_041a",
 		"name": "Dark Wispers",
+		"playerClass": "Druid",
 		"set": "Gvg",
 		"text": "+5/+5 and <b>Taunt</b>.",
 		"type": "Spell"
@@ -26560,6 +28170,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_041b.gif",
 		"id": "GVG_041b",
 		"name": "Dark Wispers",
+		"playerClass": "Druid",
 		"set": "Gvg",
 		"text": "Summon 5 Wisps.",
 		"type": "Spell"
@@ -26570,6 +28181,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_041c.gif",
 		"id": "GVG_041c",
 		"name": "Dark Wispers",
+		"playerClass": "Druid",
 		"set": "Gvg",
 		"text": "+5/+5 and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -26593,6 +28205,7 @@ var parseCardsText = {
 		],
 		"name": "Neptulon",
 		"overload": 3,
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -26615,6 +28228,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Glaivezooka",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Give a random friendly minion +1 Attack.",
@@ -26626,6 +28240,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_043e.gif",
 		"id": "GVG_043e",
 		"name": "Glaivezooka",
+		"playerClass": "Hunter",
 		"set": "Gvg",
 		"text": "+1 Attack.",
 		"type": "Enchantment"
@@ -26643,6 +28258,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "GVG_044",
 		"name": "Spider Tank",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -26659,6 +28275,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_045.gif",
 		"id": "GVG_045",
 		"name": "Imp-losion",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "Deal $2-$4 damage to a minion. Summon a 1/1 Imp for each damage dealt.",
@@ -26674,6 +28291,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "GVG_045t",
 		"name": "Imp",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Gvg",
 		"type": "Minion"
@@ -26695,6 +28313,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "King of Beasts",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -26707,6 +28326,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_046e.gif",
 		"id": "GVG_046e",
 		"name": "The King",
+		"playerClass": "Hunter",
 		"set": "Gvg",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -26725,6 +28345,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Sabotage",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Destroy a random enemy minion. <b>Combo:</b> And your opponent's weapon.",
@@ -26746,6 +28367,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Metaltooth Leaper",
+		"playerClass": "Hunter",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -26758,6 +28380,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_048e.gif",
 		"id": "GVG_048e",
 		"name": "Metal Teeth",
+		"playerClass": "Hunter",
 		"set": "Gvg",
 		"text": "+2 Attack.",
 		"type": "Enchantment"
@@ -26776,6 +28399,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "GVG_049",
 		"name": "Gahz'rilla",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -26788,6 +28412,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_049e.gif",
 		"id": "GVG_049e",
 		"name": "Might of Zul'Farrak",
+		"playerClass": "Hunter",
 		"set": "Gvg",
 		"text": "Multiplying Attack.",
 		"type": "Enchantment"
@@ -26803,6 +28428,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_050.gif",
 		"id": "GVG_050",
 		"name": "Bouncing Blade",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Deal $1 damage to a random minion. Repeat until a minion dies.",
@@ -26824,6 +28450,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Warbot",
+		"playerClass": "Warrior",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -26836,6 +28463,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_051e.gif",
 		"id": "GVG_051e",
 		"name": "Enraged",
+		"playerClass": "Warrior",
 		"set": "Gvg",
 		"text": "+1 Attack",
 		"type": "Enchantment"
@@ -26851,6 +28479,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_052.gif",
 		"id": "GVG_052",
 		"name": "Crush",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Destroy a minion. If you have a damaged minion, this costs (4) less.",
@@ -26872,6 +28501,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shieldmaiden",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Gain 5 Armor.",
@@ -26890,6 +28520,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_054.gif",
 		"id": "GVG_054",
 		"name": "Ogre Warmaul",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "50% chance to attack the wrong enemy.",
@@ -26911,6 +28542,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Screwjank Clunker",
+		"playerClass": "Warrior",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -26923,6 +28555,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_055e.gif",
 		"id": "GVG_055e",
 		"name": "Screwy Jank",
+		"playerClass": "Warrior",
 		"set": "Gvg",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -26944,6 +28577,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Iron Juggernaut",
+		"playerClass": "Warrior",
 		"race": "MECHANICAL",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -26963,6 +28597,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Burrowing Mine",
+		"playerClass": "Warrior",
 		"set": "Gvg",
 		"text": "[x]You take 10 damage.\nDraw a card. This\nexplodes when drawn.",
 		"type": "Spell"
@@ -26978,6 +28613,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_057.gif",
 		"id": "GVG_057",
 		"name": "Seal of Light",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "Restore #4 Health to your hero and gain +2 Attack this turn.",
@@ -26992,6 +28628,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Seal of Light",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "+2 Attack this turn.",
 		"type": "Enchantment"
@@ -27012,6 +28649,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Shielded Minibot",
+		"playerClass": "Paladin",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27034,6 +28672,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Coghammer",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DIVINE_SHIELD",
@@ -27059,6 +28698,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Quartermaster",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Give your Silver Hand Recruits +2/+2.",
@@ -27070,6 +28710,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_060e.gif",
 		"id": "GVG_060e",
 		"name": "Well Equipped",
+		"playerClass": "Paladin",
 		"set": "Gvg",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -27085,6 +28726,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_061.gif",
 		"id": "GVG_061",
 		"name": "Muster for Battle",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "Summon three 1/1 Silver Hand Recruits. Equip a 1/4 Weapon.",
@@ -27103,6 +28745,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "GVG_062",
 		"name": "Cobalt Guardian",
+		"playerClass": "Paladin",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -27126,6 +28769,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "GVG_063",
 		"name": "Bolvar Fordragon",
+		"playerClass": "Paladin",
 		"rarity": "Legendary",
 		"set": "Gvg",
 		"text": "Whenever a friendly minion dies while this is in your hand, gain +1 Attack.",
@@ -27137,6 +28781,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_063a.gif",
 		"id": "GVG_063a",
 		"name": "Retribution",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Increased Attack",
 		"type": "Enchantment"
@@ -27154,6 +28799,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "GVG_064",
 		"name": "Puddlestomper",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27175,6 +28821,7 @@ var parseCardsText = {
 			"FORGETFUL"
 		],
 		"name": "Ogre Brute",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "50% chance to attack the wrong enemy.",
@@ -27199,6 +28846,7 @@ var parseCardsText = {
 		],
 		"name": "Dunemaul Shaman",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "<b>Windfury, Overload:</b> (1)\n50% chance to attack the wrong enemy.",
@@ -27217,6 +28865,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "GVG_067",
 		"name": "Stonesplinter Trogg",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "Whenever your opponent casts a spell, gain +1 Attack.",
@@ -27231,6 +28880,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Metabolized Magic",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -27248,6 +28898,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "GVG_068",
 		"name": "Burly Rockjaw Trogg",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "Whenever your opponent casts a spell, gain +2 Attack.",
@@ -27262,6 +28913,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Metabolized Magic",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -27282,6 +28934,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Antique Healbot",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27294,6 +28947,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_069a.gif",
 		"id": "GVG_069a",
 		"name": "Repairs!",
+		"playerClass": "Priest",
 		"set": "Gvg",
 		"text": "+4 Health.",
 		"type": "Enchantment"
@@ -27311,6 +28965,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "GVG_070",
 		"name": "Salty Dog",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27329,6 +28984,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "GVG_071",
 		"name": "Lost Tallstrider",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27347,6 +29003,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "GVG_072",
 		"name": "Shadowboxer",
+		"playerClass": "Priest",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -27364,6 +29021,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_073.gif",
 		"id": "GVG_073",
 		"name": "Cobra Shot",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "Deal $3 damage to a minion and the enemy hero.",
@@ -27385,6 +29043,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kezan Mystic",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET"
@@ -27406,6 +29065,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "GVG_075",
 		"name": "Ship's Cannon",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "After you summon a Pirate, deal 2 damage to a random enemy.",
@@ -27427,6 +29087,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Explosive Sheep",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27439,6 +29100,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_076a.gif",
 		"id": "GVG_076a",
 		"name": "Pistons",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -27456,6 +29118,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "GVG_077",
 		"name": "Anima Golem",
+		"playerClass": "Warlock",
 		"race": "MECHANICAL",
 		"rarity": "Epic",
 		"set": "Gvg",
@@ -27487,6 +29150,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Mechanical Yeti",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27509,6 +29173,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Force-Tank MAX",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27531,6 +29196,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Druid of the Fang",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> If you have a Beast, transform this minion into a 7/7.",
@@ -27547,6 +29213,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "GVG_080t",
 		"name": "Druid of the Fang",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"set": "Gvg",
 		"type": "Minion"
@@ -27567,6 +29234,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Gilblin Stalker",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "<b>Stealth</b>",
@@ -27597,6 +29265,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Clockwork Gnome",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27619,6 +29288,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Upgraded Repair Bot",
+		"playerClass": "Priest",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -27641,6 +29311,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Flying Machine",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27664,6 +29335,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Annoy-o-Tron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27683,6 +29355,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "GVG_086",
 		"name": "Siege Engine",
+		"playerClass": "Warrior",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -27695,6 +29368,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_086e.gif",
 		"id": "GVG_086e",
 		"name": "Armor Plated",
+		"playerClass": "Warrior",
 		"set": "Gvg",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -27712,6 +29386,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "GVG_087",
 		"name": "Steamwheedle Sniper",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Your Hero Power can target minions.",
@@ -27734,6 +29409,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Ogre Ninja",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "<b>Stealth</b>\n50% chance to attack the wrong enemy.",
@@ -27752,6 +29428,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "GVG_089",
 		"name": "Illuminator",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET"
@@ -27776,6 +29453,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Madder Bomber",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Deal 6 damage randomly split between all other characters.",
@@ -27799,6 +29477,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Arcane Nullifier X-21",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -27821,6 +29500,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gnomish Experimenter",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Draw a card. If it's a minion, transform it into a Chicken.",
@@ -27836,6 +29516,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "GVG_092t",
 		"name": "Chicken",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Gvg",
 		"type": "Minion"
@@ -27856,6 +29537,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Target Dummy",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -27875,6 +29557,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "GVG_094",
 		"name": "Jeeves",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -27897,6 +29580,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Goblin Sapper",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "Has +4 Attack while your opponent has 6 or more cards in hand.",
@@ -27918,6 +29602,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Piloted Shredder",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -27941,6 +29626,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Lil' Exorcist",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -27966,6 +29652,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Gnomeregan Infantry",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "<b>Charge</b>\n<b>Taunt</b>",
@@ -27987,6 +29674,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Bomb Lobber",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Deal 4 damage to a random enemy minion.",
@@ -28005,6 +29693,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "GVG_100",
 		"name": "Floating Watcher",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -28017,6 +29706,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_100e.gif",
 		"id": "GVG_100e",
 		"name": "Brow Furrow",
+		"playerClass": "Warlock",
 		"set": "Gvg",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -28037,6 +29727,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Scarlet Purifier",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -28051,6 +29742,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_101e.gif",
 		"id": "GVG_101e",
 		"name": "Pure",
+		"playerClass": "Paladin",
 		"set": "Gvg",
 		"text": "Increased Stats.",
 		"type": "Enchantment"
@@ -28080,6 +29772,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tinkertown Technician",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> If you have a Mech, gain +1/+1 and add a <b>Spare Part</b> to your hand.",
@@ -28091,6 +29784,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_102e.gif",
 		"id": "GVG_102e",
 		"name": "Might of Tinkertown",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -28108,6 +29802,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "GVG_103",
 		"name": "Micro Machine",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Gvg",
@@ -28127,6 +29822,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "GVG_104",
 		"name": "Hobgoblin",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Whenever you play a 1-Attack minion, give it +2/+2.",
@@ -28138,6 +29834,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_104a.gif",
 		"id": "GVG_104a",
 		"name": "HERE, TAKE BUFF.",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -28158,6 +29855,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Piloted Sky Golem",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Epic",
 		"set": "Gvg",
@@ -28177,6 +29875,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "GVG_106",
 		"name": "Junkbot",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Epic",
 		"set": "Gvg",
@@ -28189,6 +29888,7 @@ var parseCardsText = {
 		"goldenImage": "GVG_106e.gif",
 		"id": "GVG_106e",
 		"name": "Junked Up",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -28209,6 +29909,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Enhance-o Mechano",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Epic",
 		"referencedTags": [
@@ -28236,6 +29937,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Recombobulator",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Transform a friendly minion into a random minion with the same Cost.",
@@ -28258,6 +29960,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Mini-Mage",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"spellDamage": 1,
@@ -28281,6 +29984,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dr. Boom",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Summon two 1/1 Boom Bots. <i>WARNING: Bots may explode.</i>",
@@ -28299,6 +30003,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Boom Bot",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Gvg",
 		"text": "<b>Deathrattle:</b> Deal 1-4 damage to a random enemy.",
@@ -28318,6 +30023,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "GVG_111",
 		"name": "Mimiron's Head",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -28339,6 +30045,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "V-07-TR-0N",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Gvg",
 		"text": "<b>Charge</b>\n<b>Mega-Windfury</b> <i>(Can attack four times a turn.)</i>",
@@ -28358,6 +30065,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "GVG_112",
 		"name": "Mogor the Ogre",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gvg",
 		"text": "All minions have a 50% chance to attack the wrong enemy.",
@@ -28377,6 +30085,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "GVG_113",
 		"name": "Foe Reaper 4000",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -28400,6 +30109,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Sneed's Old Shredder",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -28433,6 +30143,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Toshley",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gvg",
 		"text": "<b>Battlecry and Deathrattle:</b> Add a <b>Spare Part</b> card to your hand.",
@@ -28452,6 +30163,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "GVG_116",
 		"name": "Mekgineer Thermaplugg",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -28472,6 +30184,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "GVG_117",
 		"name": "Gazlowe",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gvg",
 		"text": "Whenever you cast a 1-mana spell, add a random Mech to your hand.",
@@ -28491,6 +30204,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "GVG_118",
 		"name": "Troggzor the Earthinator",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gvg",
 		"text": "Whenever your opponent casts a spell, summon a Burly Rockjaw Trogg.",
@@ -28513,6 +30227,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Blingtron 3000",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Legendary",
 		"set": "Gvg",
@@ -28536,6 +30251,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Hemet Nesingwary",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Gvg",
 		"text": "<b>Battlecry:</b> Destroy a Beast.",
@@ -28554,6 +30270,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "GVG_121",
 		"name": "Clockwork Giant",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Epic",
 		"set": "Gvg",
@@ -28576,6 +30293,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Wee Spellstopper",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Gvg",
 		"text": "Adjacent minions can't be targeted by spells or Hero Powers.",
@@ -28597,6 +30315,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Soot Spewer",
+		"playerClass": "Mage",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Gvg",
@@ -28613,6 +30332,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Overclocked",
+		"playerClass": "Mage",
 		"set": "Gvg",
 		"spellDamage": 2,
 		"text": "Spell Damage +2.",
@@ -28627,6 +30347,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_01",
 		"name": "Garrosh Hellscream",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Hero"
@@ -28640,6 +30361,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_01a",
 		"name": "Magni Bronzebeard",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28653,6 +30375,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_02",
 		"name": "Thrall",
+		"playerClass": "Shaman",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Hero"
@@ -28666,6 +30389,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_02a",
 		"name": "Morgl the Oracle",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28679,6 +30403,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_03",
 		"name": "Valeera Sanguinar",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Hero"
@@ -28692,6 +30417,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_03a",
 		"name": "Maiev Shadowsong",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28705,6 +30431,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_04",
 		"name": "Uther Lightbringer",
+		"playerClass": "Paladin",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Hero"
@@ -28718,6 +30445,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_04a",
 		"name": "Lady Liadrin",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28731,6 +30459,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_04b",
 		"name": "Prince Arthas",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28744,6 +30473,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_05",
 		"name": "Rexxar",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Hero"
@@ -28757,6 +30487,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_05a",
 		"name": "Alleria Windrunner",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28770,6 +30501,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_06",
 		"name": "Malfurion Stormrage",
+		"playerClass": "Druid",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Hero"
@@ -28783,6 +30515,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_07",
 		"name": "Gul'dan",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Hero"
@@ -28796,6 +30529,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_07a",
 		"name": "Nemsy Necrofizzle",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28809,6 +30543,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_08",
 		"name": "Jaina Proudmoore",
+		"playerClass": "Mage",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Hero"
@@ -28822,6 +30557,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_08a",
 		"name": "Medivh",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28835,6 +30571,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_08b",
 		"name": "Khadgar",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28848,6 +30585,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_09",
 		"name": "Anduin Wrynn",
+		"playerClass": "Priest",
 		"rarity": "Free",
 		"set": "Core",
 		"type": "Hero"
@@ -28861,6 +30599,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "HERO_09a",
 		"name": "Tyrande Whisperwind",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Hero_skins",
 		"type": "Hero"
@@ -28878,6 +30617,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Frog",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Core",
@@ -28899,6 +30639,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Gearmaster Mechazod",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Boss</b>\nAt the beginning of each turn, Mechazod strikes!",
 		"type": "Minion"
@@ -28910,6 +30651,7 @@ var parseCardsText = {
 		"goldenImage": "HRW02_1e.gif",
 		"id": "HRW02_1e",
 		"name": "Overclock",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -28925,6 +30667,7 @@ var parseCardsText = {
 		"health": 80,
 		"id": "HRW02_2",
 		"name": "Gearmaster Mechazod",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Boss</b>\nAt the beginning of each turn, Mechazod strikes!",
 		"type": "Minion"
@@ -28940,6 +30683,7 @@ var parseCardsText = {
 		"health": 100,
 		"id": "HRW02_3",
 		"name": "Kill Objective: Anub'arak",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Wreaks havoc at the beginning of each turn.  Immune to abilites that don't affect heroes.",
 		"type": "Minion"
@@ -28960,6 +30704,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Phantom Freebooter",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Rare",
 		"set": "Icecrown",
@@ -28972,6 +30717,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_018e.gif",
 		"id": "ICC_018e",
 		"name": "Witty Weaponplay",
+		"playerClass": "Rogue",
 		"set": "Icecrown",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -28992,6 +30738,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Skelemancer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> If it's your opponent's turn, summon an 8/8 Skeleton.",
@@ -29008,6 +30755,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "ICC_019t",
 		"name": "Skeletal Flayer",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -29027,6 +30775,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Exploding Bloatbat",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Icecrown",
@@ -29046,6 +30795,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "ICC_023",
 		"name": "Snowflipper Penguin",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Icecrown",
@@ -29068,6 +30818,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Rattling Rascal",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "[x]<b>Battlecry:</b> Summon a\n5/5 Skeleton.\n<b>Deathrattle:</b> Summon one\nfor your opponent.",
@@ -29084,6 +30835,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "ICC_025t",
 		"name": "Skeletal Enforcer",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -29103,6 +30855,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Grim Necromancer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Summon two 1/1 Skeletons.",
@@ -29119,6 +30872,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "ICC_026t",
 		"name": "Skeleton",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -29138,6 +30892,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Bone Drake",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Rare",
 		"set": "Icecrown",
@@ -29160,6 +30915,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Sunborne Val'kyr",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Give adjacent minions +2 Health.",
@@ -29171,6 +30927,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_028e.gif",
 		"id": "ICC_028e",
 		"name": "Blessing of the Val'kyr",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+2 Health.",
 		"type": "Enchantment"
@@ -29188,6 +30945,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "ICC_029",
 		"name": "Cobalt Scalebane",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Icecrown",
@@ -29200,6 +30958,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_029e.gif",
 		"id": "ICC_029e",
 		"name": "Dragonscales",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Attack increased.",
 		"type": "Enchantment"
@@ -29217,6 +30976,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "ICC_031",
 		"name": "Night Howler",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "Whenever this minion takes\ndamage, gain +2 Attack.",
@@ -29228,6 +30988,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_031e.gif",
 		"id": "ICC_031e",
 		"name": "Awooooo!",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "This minion has increased Attack.",
 		"type": "Enchantment"
@@ -29248,6 +31009,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Venomancer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Poisonous</b>",
@@ -29269,6 +31031,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Arrogant Crusader",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> If it's your opponent's turn, summon a 2/2 Ghoul.",
@@ -29291,6 +31054,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Righteous Protector",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Taunt</b>\n<b>Divine Shield</b>",
@@ -29307,6 +31071,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_039.gif",
 		"id": "ICC_039",
 		"name": "Dark Conviction",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "Set a minion's Attack and Health to 3.",
@@ -29318,6 +31083,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_039e.gif",
 		"id": "ICC_039e",
 		"name": "Convinced",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Stats changed to 3/3.",
 		"type": "Enchantment"
@@ -29333,6 +31099,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_041.gif",
 		"id": "ICC_041",
 		"name": "Defile",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "Deal $1 damage to all minions. If any die, cast this again.",
@@ -29354,6 +31121,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Fatespinner",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -29370,6 +31138,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_047a.gif",
 		"id": "ICC_047a",
 		"name": "Growth",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Give all minions +2/+2.",
 		"type": "Spell"
@@ -29382,6 +31151,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_047b.gif",
 		"id": "ICC_047b",
 		"name": "Decay",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Deal 3 damage to all minions.",
 		"type": "Spell"
@@ -29392,6 +31162,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_047e.gif",
 		"id": "ICC_047e",
 		"name": "Growth",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -29409,6 +31180,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Fatespinner",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "<b>Secret Deathrattle:</b> Deal 3 damage to all minions; or Give them +2/+2.@<b>Secret Deathrattle:</b> Give +2/+2 to all minions.@<b>Secret Deathrattle:</b> Deal 3 damage to all minions.",
@@ -29427,6 +31199,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Fatespinner",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Deal 3 damage to all minions and give them +2/+2.",
@@ -29443,6 +31216,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_049.gif",
 		"id": "ICC_049",
 		"name": "Toxic Arrow",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"referencedTags": [
 			"POISONOUS"
@@ -29457,6 +31231,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_049e.gif",
 		"id": "ICC_049e",
 		"name": "Toxic Arrow",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Poisonous.",
 		"type": "Enchantment"
@@ -29472,6 +31247,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_050.gif",
 		"id": "ICC_050",
 		"name": "Webweave",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"POISONOUS"
@@ -29496,6 +31272,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Druid of the Swarm",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"referencedTags": [
 			"POISONOUS",
@@ -29514,6 +31291,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_051a.gif",
 		"id": "ICC_051a",
 		"name": "Spider Form",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "<b>Poisonous</b>",
 		"type": "Spell"
@@ -29527,6 +31305,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_051b.gif",
 		"id": "ICC_051b",
 		"name": "Scarab Form",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "+3 Health and <b>Taunt</b>.",
 		"type": "Spell"
@@ -29544,6 +31323,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Druid of the Swarm",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Icecrown",
@@ -29563,6 +31343,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Druid of the Swarm",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Icecrown",
@@ -29584,6 +31365,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Druid of the Swarm",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Icecrown",
@@ -29601,6 +31383,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_052.gif",
 		"id": "ICC_052",
 		"name": "Play Dead",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -29620,6 +31403,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_054.gif",
 		"id": "ICC_054",
 		"name": "Spreading Plague",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -29642,6 +31426,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Drain Soul",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Lifesteal</b>\nDeal $2 damage\nto a minion.",
@@ -29658,6 +31443,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_056.gif",
 		"id": "ICC_056",
 		"name": "Cryostasis",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"referencedTags": [
 			"FREEZE"
@@ -29672,6 +31458,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_056e.gif",
 		"id": "ICC_056e",
 		"name": "Frozen Blood",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+3/+3.",
 		"type": "Enchantment"
@@ -29692,6 +31479,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Brrrloc",
+		"playerClass": "Shaman",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"referencedTags": [
@@ -29717,6 +31505,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Mountainfire Armor",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> If it's your opponent's turn,\ngain 6 Armor.",
@@ -29739,6 +31528,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Blood Razor",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Battlecry and Deathrattle:</b>\nDeal 1 damage to all minions.",
@@ -29760,6 +31550,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Bone Baron",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Add two 1/1 Skeletons to your hand.",
@@ -29781,6 +31572,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Vryghoul",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "[x]<b>Deathrattle:</b> If it's your\nopponent's turn,\nsummon a 2/2 Ghoul.",
@@ -29799,6 +31591,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "ICC_068",
 		"name": "Ice Walker",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -29824,6 +31617,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ghastly Conjurer",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Add a 'Mirror Image' spell to your hand.",
@@ -29842,6 +31636,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_071.gif",
 		"id": "ICC_071",
 		"name": "Light's Sorrow",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -29856,6 +31651,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_071e.gif",
 		"id": "ICC_071e",
 		"name": "Dying Light",
+		"playerClass": "Paladin",
 		"set": "Icecrown",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -29873,6 +31669,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "ICC_075",
 		"name": "Despicable Dreadlord",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Rare",
 		"set": "Icecrown",
@@ -29893,6 +31690,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Avalanche",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "<b>Freeze</b> a minion and deal $3 damage to adjacent ones.",
@@ -29909,6 +31707,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_079.gif",
 		"id": "ICC_079",
 		"name": "Gnash",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "Give your hero +3 Attack this turn. Gain 3 Armor.",
@@ -29923,6 +31722,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Gnash",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "+3 Attack this turn.",
@@ -29946,6 +31746,7 @@ var parseCardsText = {
 		],
 		"name": "Drakkari Defender",
 		"overload": 3,
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Taunt</b>\n<b>Overload:</b> (3)",
@@ -29965,6 +31766,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Frozen Clone",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Secret:</b> After your opponent plays a minion, add two copies of it to your hand.",
@@ -29986,6 +31788,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Doomed Apprentice",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "Your opponent's spells cost (1) more.",
@@ -30002,6 +31805,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_085.gif",
 		"id": "ICC_085",
 		"name": "Ultimate Infestation",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "[x]Deal $5 damage. Draw\n5 cards. Gain 5 Armor.\nSummon a 5/5 Ghoul.",
@@ -30018,6 +31822,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "ICC_085t",
 		"name": "Ghoul Infestor",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -30032,6 +31837,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_086.gif",
 		"id": "ICC_086",
 		"name": "Glacial Mysteries",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"referencedTags": [
 			"SECRET"
@@ -30057,6 +31863,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Voodoo Hexxer",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "<b>Taunt</b>\n<b>Freeze</b> any character damaged by this minion.",
@@ -30073,6 +31880,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_089.gif",
 		"id": "ICC_089",
 		"name": "Ice Fishing",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "Draw 2 Murlocs from your deck.",
@@ -30091,6 +31899,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "ICC_090",
 		"name": "Snowfury Giant",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Epic",
 		"referencedTags": [
@@ -30111,6 +31920,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_091.gif",
 		"id": "ICC_091",
 		"name": "Dead Man's Hand",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "Shuffle a copy of your hand into your deck.",
@@ -30132,6 +31942,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Acherus Veteran",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Give a friendly minion +1 Attack.",
@@ -30143,6 +31954,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_092e.gif",
 		"id": "ICC_092e",
 		"name": "Veteran's Favor",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+1 Attack.",
 		"type": "Enchantment"
@@ -30163,6 +31975,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tuskarr Fisherman",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"SPELLPOWER"
@@ -30177,6 +31990,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_093e.gif",
 		"id": "ICC_093e",
 		"name": "Fresh Fish!",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Spell Damage +1</b>.",
 		"type": "Enchantment"
@@ -30197,6 +32011,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fallen Sun Cleric",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Give a friendly minion +1/+1.",
@@ -30208,6 +32023,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_094e.gif",
 		"id": "ICC_094e",
 		"name": "Cleric's Blessing",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -30228,6 +32044,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Furnacefire Colossus",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Discard all weapons from your hand and gain their stats.",
@@ -30239,6 +32056,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_096e.gif",
 		"id": "ICC_096e",
 		"name": "Me Bigger",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -30256,6 +32074,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "ICC_097",
 		"name": "Grave Shambler",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Icecrown",
@@ -30268,6 +32087,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_097e.gif",
 		"id": "ICC_097e",
 		"name": "Armed and Dangerous",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -30288,6 +32108,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tomb Lurker",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -30312,6 +32133,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Ticking Abomination",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Deal 5 damage to your minions.",
@@ -30331,6 +32153,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Venomstrike Trap",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"referencedTags": [
 			"POISONOUS"
@@ -30350,6 +32173,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_201.gif",
 		"id": "ICC_201",
 		"name": "Roll the Bones",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -30372,6 +32196,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "ICC_204",
 		"name": "Professor Putricide",
+		"playerClass": "Hunter",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"SECRET"
@@ -30391,6 +32216,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_206.gif",
 		"id": "ICC_206",
 		"name": "Treachery",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "Choose a friendly minion and give it to your opponent.",
@@ -30407,6 +32233,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_207.gif",
 		"id": "ICC_207",
 		"name": "Devour Mind",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "Copy 3 cards in your opponent's deck and add them to your hand.",
@@ -30425,6 +32252,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "ICC_210",
 		"name": "Shadow Ascendant",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "[x]At the end of your turn,\ngive another random\nfriendly minion +1/+1.",
@@ -30436,6 +32264,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_210e.gif",
 		"id": "ICC_210e",
 		"name": "Ascended",
+		"playerClass": "Priest",
 		"set": "Icecrown",
 		"text": "Stats increased.",
 		"type": "Enchantment"
@@ -30456,6 +32285,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Acolyte of Agony",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Lifesteal</b>",
@@ -30472,6 +32302,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_213.gif",
 		"id": "ICC_213",
 		"name": "Eternal Servitude",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DISCOVER"
@@ -30498,6 +32329,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Obsidian Statue",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "[x]<b>Taunt, Lifesteal</b>\n<b>Deathrattle:</b> Destroy a\n random enemy minion.",
@@ -30520,6 +32352,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Archbishop Benedictus",
+		"playerClass": "Priest",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Shuffle a copy of your opponent's deck into your deck.",
@@ -30538,6 +32371,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "ICC_218",
 		"name": "Howlfiend",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Icecrown",
@@ -30560,6 +32394,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Deadscale Knight",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"set": "Icecrown",
@@ -30577,6 +32412,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_221.gif",
 		"id": "ICC_221",
 		"name": "Leeching Poison",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"referencedTags": [
 			"LIFESTEAL"
@@ -30594,6 +32430,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Leeching Poison",
+		"playerClass": "Rogue",
 		"set": "Icecrown",
 		"text": "<b>Lifesteal</b>",
 		"type": "Enchantment"
@@ -30612,6 +32449,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Doomerang",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "Throw your weapon at a minion. It deals its damage, then returns to your hand.",
@@ -30628,6 +32466,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_235.gif",
 		"id": "ICC_235",
 		"name": "Shadow Essence",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "Summon a 5/5 copy of a random minion in your deck.",
@@ -30639,6 +32478,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_235e.gif",
 		"id": "ICC_235e",
 		"name": "Shadow Essence",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Attack and Health set to 5.",
 		"type": "Enchantment"
@@ -30656,6 +32496,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_236.gif",
 		"id": "ICC_236",
 		"name": "Ice Breaker",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"referencedTags": [
 			"FREEZE"
@@ -30677,6 +32518,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "ICC_238",
 		"name": "Animated Berserker",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "After you play a minion, deal 1 damage to it.",
@@ -30698,6 +32540,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Runeforge Haunter",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "During your turn, your weapon doesn't lose Durability.",
@@ -30709,6 +32552,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_240e.gif",
 		"id": "ICC_240e",
 		"name": "Resilient Weapon",
+		"playerClass": "Rogue",
 		"set": "Icecrown",
 		"text": "No durability loss.",
 		"type": "Enchantment"
@@ -30729,6 +32573,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Corpse Widow",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -30749,6 +32594,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_244.gif",
 		"id": "ICC_244",
 		"name": "Desperate Stand",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -30763,6 +32609,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_244e.gif",
 		"id": "ICC_244e",
 		"name": "Redeemed",
+		"playerClass": "Paladin",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Return this to life with 1 Health.",
 		"type": "Enchantment"
@@ -30780,6 +32627,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "ICC_245",
 		"name": "Blackguard",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "Whenever your hero is healed, deal that much damage to a random enemy minion.",
@@ -30801,6 +32649,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Coldwraith",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"FREEZE"
@@ -30826,6 +32675,7 @@ var parseCardsText = {
 			"DEATH_KNIGHT"
 		],
 		"name": "Corpse Raiser",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -30840,6 +32690,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_257e.gif",
 		"id": "ICC_257e",
 		"name": "Ready to Return",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Resummon this minion.",
 		"type": "Enchantment"
@@ -30855,6 +32706,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_281.gif",
 		"id": "ICC_281",
 		"name": "Forge of Souls",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "Draw 2 weapons from your deck.",
@@ -30874,6 +32726,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "ICC_289",
 		"name": "Moorabi",
+		"playerClass": "Shaman",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"FREEZE"
@@ -30909,6 +32762,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "The Lich King",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "[x]<b>Taunt</b>\nAt the end of your turn,\nadd a random <b>Death Knight</b>\ncard to your hand.",
@@ -30929,6 +32783,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Frostmourne",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Summon every minion killed by this weapon.",
 		"type": "Weapon"
@@ -30939,6 +32794,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_314t1e.gif",
 		"id": "ICC_314t1e",
 		"name": "Trapped Soul",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "{0}",
 		"type": "Enchantment"
@@ -30952,6 +32808,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_314t2.gif",
 		"id": "ICC_314t2",
 		"name": "Army of the Dead",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Remove the top 5 cards of your deck. Summon any minions removed.",
 		"type": "Spell"
@@ -30965,6 +32822,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_314t3.gif",
 		"id": "ICC_314t3",
 		"name": "Doom Pact",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "[x]Destroy all minions. \nRemove the top card \nfrom your deck for each\nminion destroyed.",
 		"type": "Spell"
@@ -30978,6 +32836,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_314t4.gif",
 		"id": "ICC_314t4",
 		"name": "Death Grip",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Steal a minion from your opponent's deck and add it to your hand.",
 		"type": "Spell"
@@ -30991,6 +32850,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_314t5.gif",
 		"id": "ICC_314t5",
 		"name": "Death Coil",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Deal $5 damage to an enemy, or restore #5 Health to a friendly character.",
 		"type": "Spell"
@@ -31007,6 +32867,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Obliterate",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Destroy a minion. Your hero takes damage equal to its Health.",
 		"type": "Spell"
@@ -31024,6 +32885,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Anti-Magic Shell",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Give your minions +2/+2 and \"Can't be targeted by spells or Hero Powers.\"",
 		"type": "Spell"
@@ -31038,6 +32900,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Anti-Magic Shell",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+2/+2 and \"Can't be targeted by spells or Hero Powers.\"",
 		"type": "Enchantment"
@@ -31051,6 +32914,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_314t8.gif",
 		"id": "ICC_314t8",
 		"name": "Death and Decay",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Deal $3 damage to all enemies.",
 		"type": "Spell"
@@ -31069,6 +32933,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "ICC_405",
 		"name": "Rotface",
+		"playerClass": "Warrior",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "[x]After this minion\nsurvives damage,\nsummon a random\n<b>Legendary</b> minion.",
@@ -31090,6 +32955,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gnomeferatu",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Remove\nthe top card of your opponent's deck.",
@@ -31108,6 +32974,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "ICC_408",
 		"name": "Val'kyr Soulclaimer",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "[x]After this minion\nsurvives damage,\nsummon a 2/2 Ghoul.",
@@ -31129,6 +32996,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Stitched Tracker",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"referencedTags": [
 			"DISCOVER"
@@ -31154,6 +33022,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Bearshark",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Icecrown",
@@ -31176,6 +33045,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Death Revenant",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Gain +1/+1 for each damaged minion.",
@@ -31187,6 +33057,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_450e.gif",
 		"id": "ICC_450e",
 		"name": "Bloodthirsty",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -31208,6 +33079,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Saronite Chain Gang",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Summon a copy of this minion.",
@@ -31229,6 +33101,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Deathspeaker",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"IMMUNE"
@@ -31246,6 +33119,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Deathward",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Immune</b> this turn.",
 		"type": "Enchantment"
@@ -31263,6 +33137,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "ICC_468",
 		"name": "Wretched Tiller",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "Whenever this minion attacks, deal 2 damage to the enemy hero.",
@@ -31279,6 +33154,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_469.gif",
 		"id": "ICC_469",
 		"name": "Unwilling Sacrifice",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "Choose a friendly minion. Destroy it and a random enemy minion.",
@@ -31301,6 +33177,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Thrall, Deathseer",
+		"playerClass": "Shaman",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Transform your minions into random ones that cost (2) more.",
@@ -31314,6 +33191,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_481p.gif",
 		"id": "ICC_481p",
 		"name": "Transmute Spirit",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power:</b> Transform a friendly minion into a random one that costs (1) more.",
 		"type": "Hero_power"
@@ -31324,6 +33202,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_483e.gif",
 		"id": "ICC_483e",
 		"name": "Frostmourne Enchantment",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Enchantment"
 	},
@@ -31340,6 +33219,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "ICC_700",
 		"name": "Happy Ghoul",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "Costs (0) if your hero was healed this turn.",
@@ -31361,6 +33241,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Skulking Geist",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Destroy all\n1-Cost spells in both hands and decks.",
@@ -31382,6 +33263,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Shallow Gravedigger",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Add a random <b>Deathrattle</b> minion to your hand.",
@@ -31403,6 +33285,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Bonemare",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"TAUNT"
@@ -31417,6 +33300,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_705e.gif",
 		"id": "ICC_705e",
 		"name": "Bonemare's Boon",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+4/+4 and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -31437,6 +33321,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Nerubian Unraveler",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "Spells cost (2) more.",
@@ -31452,6 +33337,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "ICC_800h3t",
 		"name": "Zombeast",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Icecrown",
 		"type": "Minion"
@@ -31472,6 +33358,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Howling Commander",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -31494,6 +33381,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Spirit Lash",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Lifesteal</b>\nDeal $1 damage to all minions.",
@@ -31515,6 +33403,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Strongshell Scavenger",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -31529,6 +33418,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_807e.gif",
 		"id": "ICC_807e",
 		"name": "Strongshell",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -31549,6 +33439,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Crypt Lord",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "[x]<b>Taunt</b>\nAfter you summon a minion,\n gain +1 Health.",
@@ -31560,6 +33451,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_808e.gif",
 		"id": "ICC_808e",
 		"name": "Might of Ner'ub",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "Increased Health.",
 		"type": "Enchantment"
@@ -31580,6 +33472,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Plague Scientist",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"referencedTags": [
 			"POISONOUS"
@@ -31594,6 +33487,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_809e.gif",
 		"id": "ICC_809e",
 		"name": "Test Subject",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"referencedTags": [
 			"POISONOUS"
@@ -31618,6 +33512,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Deathaxe Punisher",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"LIFESTEAL"
@@ -31632,6 +33527,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_810e.gif",
 		"id": "ICC_810e",
 		"name": "Bloodthirsty",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+2/+2 from Deathaxe Punisher.",
 		"type": "Enchantment"
@@ -31653,6 +33549,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Lilian Voss",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Replace spells in your hand with random spells <i>(from your opponent's class).</i>",
@@ -31674,6 +33571,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Meat Wagon",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Epic",
 		"set": "Icecrown",
@@ -31697,6 +33595,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Chillblade Champion",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Charge</b>\n<b>Lifesteal</b>",
@@ -31713,6 +33612,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_823.gif",
 		"id": "ICC_823",
 		"name": "Simulacrum",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "Copy the lowest Cost minion in your hand.",
@@ -31734,6 +33634,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Abominable Bowman",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "[x]<b>Deathrattle:</b> Summon\na random friendly Beast\nthat died this game.",
@@ -31756,6 +33657,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Valeera the Hollow",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"STEALTH"
@@ -31770,6 +33672,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_827e.gif",
 		"id": "ICC_827e",
 		"name": "Shadow Reflection",
+		"playerClass": "Rogue",
 		"set": "Icecrown",
 		"text": "Always copy your last played card.",
 		"type": "Enchantment"
@@ -31780,6 +33683,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_827e3.gif",
 		"id": "ICC_827e3",
 		"name": "Veil of Shadows",
+		"playerClass": "Rogue",
 		"set": "Icecrown",
 		"text": "<b>Stealth</b> until your next turn.",
 		"type": "Enchantment"
@@ -31793,6 +33697,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "ICC_827p",
 		"name": "Death's Shadow",
+		"playerClass": "Rogue",
 		"set": "Icecrown",
 		"text": "<b>Passive Hero Power</b>\nDuring your turn, add a 'Shadow Reflection' to your hand.",
 		"type": "Hero_power"
@@ -31806,6 +33711,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "ICC_827t",
 		"name": "Shadow Reflection",
+		"playerClass": "Rogue",
 		"set": "Icecrown",
 		"text": "Each time you play a card, transform this into a copy of it.",
 		"type": "Spell"
@@ -31827,6 +33733,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Deathstalker Rexxar",
+		"playerClass": "Hunter",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "[x]<b>Battlecry:</b> Deal 2 damage\nto all enemy minions.",
@@ -31841,6 +33748,7 @@ var parseCardsText = {
 			"CANT_BE_SILENCED"
 		],
 		"name": "Stitched",
+		"playerClass": "Hunter",
 		"set": "Icecrown",
 		"text": "{0} and {1}.",
 		"type": "Enchantment"
@@ -31853,6 +33761,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_828p.gif",
 		"id": "ICC_828p",
 		"name": "Build-A-Beast",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\nCraft a custom Zombeast.",
 		"type": "Hero_power"
@@ -31867,6 +33776,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "ICC_828t",
 		"name": "Zombeast",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Icecrown",
 		"text": "{0}\n{1}",
@@ -31886,6 +33796,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Stubborn Gastropod",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -31906,6 +33817,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Giant Wasp",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -31929,6 +33841,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Uther of the Ebon Blade",
+		"playerClass": "Paladin",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"LIFESTEAL"
@@ -31951,6 +33864,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_829p.gif",
 		"id": "ICC_829p",
 		"name": "The Four Horsemen",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "[x]<b>Hero Power</b>\nSummon a 2/2 Horseman.\nIf you have all 4, destroy\nthe enemy hero.",
 		"type": "Hero_power"
@@ -31969,6 +33883,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Grave Vengeance",
+		"playerClass": "Paladin",
 		"set": "Icecrown",
 		"text": "<b>Lifesteal</b>",
 		"type": "Weapon"
@@ -31985,6 +33900,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "ICC_829t2",
 		"name": "Deathlord Nazgrim",
+		"playerClass": "Paladin",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -32000,6 +33916,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "ICC_829t3",
 		"name": "Thoras Trollbane",
+		"playerClass": "Paladin",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -32015,6 +33932,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "ICC_829t4",
 		"name": "Inquisitor Whitemane",
+		"playerClass": "Paladin",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -32030,6 +33948,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "ICC_829t5",
 		"name": "Darion Mograine",
+		"playerClass": "Paladin",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -32050,6 +33969,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shadowreaper Anduin",
+		"playerClass": "Priest",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Destroy all minions with 5 or more Attack.",
@@ -32063,6 +33983,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_830p.gif",
 		"id": "ICC_830p",
 		"name": "Voidform",
+		"playerClass": "Priest",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\nDeal $2 damage.\nAfter you play a card,\nrefresh this.",
 		"type": "Hero_power"
@@ -32084,6 +34005,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Bloodreaver Gul'dan",
+		"playerClass": "Warlock",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Summon all friendly Demons that died this game.",
@@ -32100,6 +34022,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Siphon Life",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\n<b>Lifesteal</b>\nDeal $3 damage.",
 		"type": "Hero_power"
@@ -32121,6 +34044,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Malfurion the Pestilent",
+		"playerClass": "Druid",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"POISONOUS",
@@ -32138,6 +34062,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_832a.gif",
 		"id": "ICC_832a",
 		"name": "Scarab Plague",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "Summon two 1/5 Scarabs with <b>Taunt</b>.",
 		"type": "Spell"
@@ -32150,6 +34075,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_832b.gif",
 		"id": "ICC_832b",
 		"name": "Spider Plague",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "[x]Summon two 1/2\nSpiders with <b>Poisonous</b>.",
 		"type": "Spell"
@@ -32163,6 +34089,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Fangs",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+3 Attack this turn.",
 		"type": "Enchantment"
@@ -32178,6 +34105,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Plague Lord",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "[x]<b>Hero Power</b>\n<b>Choose One -</b> +3 Attack\nthis turn; or Gain 3 Armor.",
 		"type": "Hero_power"
@@ -32190,6 +34118,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_832pa.gif",
 		"id": "ICC_832pa",
 		"name": "Scarab Shell",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "+3 Armor.",
 		"type": "Spell"
@@ -32202,6 +34131,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_832pb.gif",
 		"id": "ICC_832pb",
 		"name": "Spider Fangs",
+		"playerClass": "Druid",
 		"set": "Icecrown",
 		"text": "+3 Attack.",
 		"type": "Spell"
@@ -32220,6 +34150,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Frost Widow",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"set": "Icecrown",
 		"text": "<b>Poisonous</b>",
@@ -32238,6 +34169,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Scarab Beetle",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"set": "Icecrown",
 		"text": "<b>Taunt</b>",
@@ -32260,6 +34192,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Frost Lich Jaina",
+		"playerClass": "Mage",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"LIFESTEAL"
@@ -32277,6 +34210,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Frost Lich",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Your Elementals have <b>Lifesteal</b>.",
 		"type": "Enchantment"
@@ -32290,6 +34224,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Icy Veins",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Frost Lich Jaina is granting your Elementals <b>Lifesteal</b>.",
 		"type": "Enchantment"
@@ -32302,6 +34237,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_833h.gif",
 		"id": "ICC_833h",
 		"name": "Icy Touch",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\n Deal $1 damage. If this kills a minion, summon a Water Elemental.",
 		"type": "Hero_power"
@@ -32320,6 +34256,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Water Elemental",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"set": "Icecrown",
 		"text": "<b>Freeze</b> any character damaged by this minion.",
@@ -32342,6 +34279,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Scourgelord Garrosh",
+		"playerClass": "Warrior",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "<b>Battlecry</b>: Equip a 4/3 Shadowmourne that also damages adjacent minions.",
@@ -32355,6 +34293,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_834h.gif",
 		"id": "ICC_834h",
 		"name": "Bladestorm",
+		"playerClass": "Warrior",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\n Deal $1 damage to all minions.",
 		"type": "Hero_power"
@@ -32371,6 +34310,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_834w.gif",
 		"id": "ICC_834w",
 		"name": "Shadowmourne",
+		"playerClass": "Warrior",
 		"set": "Icecrown",
 		"text": "Also damages the minions next to whomever your hero attacks.",
 		"type": "Weapon"
@@ -32392,6 +34332,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Hadronox",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"referencedTags": [
@@ -32412,6 +34353,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_836.gif",
 		"id": "ICC_836",
 		"name": "Breath of Sindragosa",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"FREEZE"
@@ -32431,6 +34373,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_837.gif",
 		"id": "ICC_837",
 		"name": "Bring It On!",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "Gain 10 Armor. Reduce the Cost of minions in your opponent's hand by (2).",
@@ -32442,6 +34385,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_837e.gif",
 		"id": "ICC_837e",
 		"name": "Challenged",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Minion cost reduced by (2).",
 		"type": "Enchantment"
@@ -32463,6 +34407,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Sindragosa",
+		"playerClass": "Mage",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Icecrown",
@@ -32483,6 +34428,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Frozen Champion",
+		"playerClass": "Mage",
 		"set": "Icecrown",
 		"text": "[x]<b>Deathrattle:</b> Add a\nrandom <b>Legendary</b> minion\nto your hand.",
 		"type": "Minion"
@@ -32504,6 +34450,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Blood-Queen Lana'thel",
+		"playerClass": "Warlock",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "[x]<b>Lifesteal</b>\nHas +1 Attack for each\ncard you've discarded\nthis game.",
@@ -32515,6 +34462,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_841e.gif",
 		"id": "ICC_841e",
 		"name": "Vampiric Bite",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -32530,6 +34478,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_849.gif",
 		"id": "ICC_849",
 		"name": "Embrace Darkness",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "[x]Choose an enemy minion.\nAt the start of your turn,\ngain control of it.",
@@ -32541,6 +34490,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_849e.gif",
 		"id": "ICC_849e",
 		"name": "Embraced",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "At the start of the next turn, lose control of this minion.",
 		"type": "Enchantment"
@@ -32561,6 +34511,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shadowblade",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"referencedTags": [
 			"IMMUNE"
@@ -32578,6 +34529,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Shaded",
+		"playerClass": "Rogue",
 		"set": "Icecrown",
 		"text": "<b>Immune</b> this turn.",
 		"type": "Enchantment"
@@ -32599,6 +34551,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Prince Keleseth",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> If your deck has no 2-Cost cards, give all minions in your deck +1/+1.",
@@ -32610,6 +34563,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_851e.gif",
 		"id": "ICC_851e",
 		"name": "Keleseth's Blessing",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -32631,6 +34585,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Prince Taldaram",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> If your deck has no 3-Cost cards, transform into a 3/3 copy of a minion.",
@@ -32642,6 +34597,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_852e.gif",
 		"id": "ICC_852e",
 		"name": "Taldaram's Visage",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "3/3.",
 		"type": "Enchantment"
@@ -32663,6 +34619,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Prince Valanar",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"LIFESTEAL",
@@ -32699,6 +34656,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Arfus",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Icecrown",
@@ -32721,6 +34679,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Hyldnir Frostrider",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"FREEZE"
@@ -32745,6 +34704,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Spellweaver",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"spellDamage": 2,
@@ -32768,6 +34728,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Bolvar, Fireblood",
+		"playerClass": "Paladin",
 		"rarity": "Legendary",
 		"set": "Icecrown",
 		"text": "<b>Divine Shield</b>\nAfter a friendly minion loses <b>Divine Shield</b>, gain +2 Attack.",
@@ -32779,6 +34740,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_858e.gif",
 		"id": "ICC_858e",
 		"name": "Fading Light",
+		"playerClass": "Paladin",
 		"set": "Icecrown",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -32796,6 +34758,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "ICC_900",
 		"name": "Necrotic Geist",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "Whenever one of your other minions dies, summon a 2/2 Ghoul.",
@@ -32812,6 +34775,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "ICC_900t",
 		"name": "Ghoul",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -32831,6 +34795,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Drakkari Enchanter",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "Your end of turn effects trigger twice.",
@@ -32849,6 +34814,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "ICC_902",
 		"name": "Mindbreaker",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "Hero Powers are disabled.",
@@ -32870,6 +34836,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Sanguine Reveler",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Destroy a friendly minion and gain +2/+2.",
@@ -32881,6 +34848,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_903t.gif",
 		"id": "ICC_903t",
 		"name": "Bloodthirst",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -32901,6 +34869,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Wicked Skeleton",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Gain +1/+1 for each minion that died this turn.",
@@ -32912,6 +34881,7 @@ var parseCardsText = {
 		"goldenImage": "ICC_904e.gif",
 		"id": "ICC_904e",
 		"name": "Extra Calcium",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -32932,6 +34902,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Bloodworm",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Icecrown",
@@ -32954,6 +34925,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Spectral Pillager",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Icecrown",
 		"text": "[x]<b>Combo:</b> Deal damage equal\nto the number of other cards\nyou've played this turn.",
@@ -32972,6 +34944,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "ICC_911",
 		"name": "Keening Banshee",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Icecrown",
 		"text": "Whenever you play a card, remove the top 3 cards of your deck.",
@@ -32993,6 +34966,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Corpsetaker",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DIVINE_SHIELD",
@@ -33021,6 +34995,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Tainted Zealot",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Icecrown",
 		"spellDamage": 1,
@@ -33035,6 +35010,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA01_001",
 		"name": "The Lich King",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33046,6 +35022,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA01_003.gif",
 		"id": "ICCA01_003",
 		"name": "Blood Tap",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "The next spell you cast this turn costs (0).",
 		"type": "Spell"
@@ -33058,6 +35035,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA01_004.gif",
 		"id": "ICCA01_004",
 		"name": "Army of the Dead",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Summon seven 3/3 Ghouls with <b>Taunt</b>.",
 		"type": "Spell"
@@ -33075,6 +35053,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Ghoul",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -33090,6 +35069,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA01_005.gif",
 		"id": "ICCA01_005",
 		"name": "Frostmourne",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"type": "Weapon"
 	},
@@ -33103,6 +35083,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "ICCA01_007",
 		"name": "Eager Rogue",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Deals no damage while attacking.",
 		"type": "Minion"
@@ -33117,6 +35098,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "ICCA01_008",
 		"name": "Terrible Tank",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -33130,6 +35112,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "ICCA01_009",
 		"name": "Needy Hunter",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Whenever this minion attacks, add a Coin to your hand.",
 		"type": "Minion"
@@ -33148,6 +35131,7 @@ var parseCardsText = {
 			"CANT_ATTACK"
 		],
 		"name": "A. F. Kay",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Can't attack.",
 		"type": "Minion"
@@ -33162,6 +35146,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "ICCA01_011",
 		"name": "Warlock on Fire",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "At the end of your turn, deal 1 damage to this minion.",
 		"type": "Minion"
@@ -33184,6 +35169,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA01_013",
 		"name": "Tirion Fordring",
+		"playerClass": "Paladin",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33194,6 +35180,7 @@ var parseCardsText = {
 		"health": 100,
 		"id": "ICCA03_001",
 		"name": "Secrets of the Citadel",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33205,6 +35192,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA04_001",
 		"name": "Sindragosa",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33219,6 +35207,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Unchained Magic",
+		"playerClass": "Mage",
 		"set": "Icecrown",
 		"text": "Deal $3 damage to the enemy hero for each spell in their hand.",
 		"type": "Spell"
@@ -33237,6 +35226,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Block of Ice",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -33251,6 +35241,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Frost Breath",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\nPermanently <b>Freeze</b> all enemy minions.",
 		"type": "Hero_power"
@@ -33263,6 +35254,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA04_009p.gif",
 		"id": "ICCA04_009p",
 		"name": "Frost Breath",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Triggered Power</b>\nAt 20 Health, transforms all enemy minions into blocks of ice.",
 		"type": "Hero_power"
@@ -33275,6 +35267,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA04_010p.gif",
 		"id": "ICCA04_010p",
 		"name": "Frost Breath",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Triggered Power</b>\nAt 10 Health, transforms all enemy minions into blocks of ice.",
 		"type": "Hero_power"
@@ -33287,6 +35280,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA04_011p.gif",
 		"id": "ICCA04_011p",
 		"name": "Ice Claw",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\nDeal $2 damage.",
 		"type": "Hero_power"
@@ -33299,6 +35293,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA05_001",
 		"name": "Blood-Queen Lana'thel",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33308,6 +35303,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA05_002e.gif",
 		"id": "ICCA05_002e",
 		"name": "Bitten!",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "+2/+2. Can't be bitten again.",
 		"type": "Enchantment"
@@ -33320,6 +35316,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA05_002p.gif",
 		"id": "ICCA05_002p",
 		"name": "Vampiric Bite",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\nGive a non-Vampire +2/+2. You <i>must</i> use this.",
 		"type": "Hero_power"
@@ -33334,6 +35331,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "ICCA05_003",
 		"name": "Sleeping Acolyte",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -33348,6 +35346,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Vampiric Leech",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\n<b>Lifesteal</b>\nDeal $3 damage.",
 		"type": "Hero_power"
@@ -33363,6 +35362,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Bite of the Blood-Queen",
+		"playerClass": "Warlock",
 		"set": "Icecrown",
 		"text": "Turn a hero into a Vampire.",
 		"type": "Spell"
@@ -33375,6 +35375,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA05_021.gif",
 		"id": "ICCA05_021",
 		"name": "Blood Essence",
+		"playerClass": "Warlock",
 		"set": "Icecrown",
 		"text": "Transform 2 random minions in your opponent's hand into spells.",
 		"type": "Spell"
@@ -33387,6 +35388,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA06_001",
 		"name": "Lord Marrowgar",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33398,6 +35400,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA06_002p.gif",
 		"id": "ICCA06_002p",
 		"name": "Skeletal Reconstruction",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\nRestore your hero to full Health.",
 		"type": "Hero_power"
@@ -33416,6 +35419,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Bryn'troll, the Bone Arbiter",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Windfury</b>",
 		"type": "Weapon"
@@ -33428,6 +35432,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA06_004.gif",
 		"id": "ICCA06_004",
 		"name": "Bone Storm",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "Deal $1 damage to all enemies. Draw a card.",
 		"type": "Spell"
@@ -33442,6 +35447,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "ICCA06_005",
 		"name": "Bone Spike",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "At the start of your turn, deal 15 damage to the enemy hero.",
 		"type": "Minion"
@@ -33454,6 +35460,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA07_001",
 		"name": "Professor Putricide",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33465,6 +35472,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA07_001h2",
 		"name": "Professor Putricide",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33476,6 +35484,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA07_001h3",
 		"name": "Professor Putricide",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33488,6 +35497,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "ICCA07_002p",
 		"name": "Mad Science",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Passive Hero Power</b>\nAll <b>Secrets</b> cost (0).",
 		"type": "Hero_power"
@@ -33501,6 +35511,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "ICCA07_003p",
 		"name": "Madder Science",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Passive Hero Power</b>\nAll weapons cost (1).",
 		"type": "Hero_power"
@@ -33515,6 +35526,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "ICCA07_004",
 		"name": "Growing Ooze",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "At the start of your turn, gain +1/+1.",
 		"type": "Minion"
@@ -33525,6 +35537,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA07_004e.gif",
 		"id": "ICCA07_004e",
 		"name": "Grow",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "The ooze is growing.",
 		"type": "Enchantment"
@@ -33538,6 +35551,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "ICCA07_005p",
 		"name": "Maddest Science",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"AI_MUST_PLAY"
 		],
@@ -33556,6 +35570,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "ICCA07_008",
 		"name": "Festergut",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "At the end of your turn, deal 3 damage to all enemy minions.",
 		"type": "Minion"
@@ -33571,6 +35586,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA07_020.gif",
 		"id": "ICCA07_020",
 		"name": "Tentacles",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Weapon"
 	},
@@ -33582,6 +35598,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA08_001",
 		"name": "The Lich King",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33593,6 +35610,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA08_002p.gif",
 		"id": "ICCA08_002p",
 		"name": "The Scourge",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\nSummon a 2/2 Ghoul.",
 		"type": "Hero_power"
@@ -33607,6 +35625,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "ICCA08_002t",
 		"name": "Ghoul",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -33620,6 +35639,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "ICCA08_017",
 		"name": "Val'kyr Shadowguard",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "At the start of your turn, destroy a random enemy minion and this one.",
 		"type": "Minion"
@@ -33641,6 +35661,7 @@ var parseCardsText = {
 			"IMMUNE"
 		],
 		"name": "Frostmourne",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "<b>Battlecry:</b> Remove all your minions. <b>Deathrattle:</b> Resummon them.",
 		"type": "Weapon"
@@ -33656,6 +35677,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "The True Lich",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Set the enemy hero's remaining Health to 1.",
 		"type": "Spell"
@@ -33671,6 +35693,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Fallen Champions",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Whenever an enemy dies this game, take control of it.",
 		"type": "Spell"
@@ -33681,6 +35704,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA08_022e.gif",
 		"id": "ICCA08_022e",
 		"name": "Join the Ranks Player Enchantment",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Enchantment"
 	},
@@ -33690,6 +35714,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA08_022e2.gif",
 		"id": "ICCA08_022e2",
 		"name": "Join the Ranks",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "When this dies, resummon it for your oponent.",
 		"type": "Enchantment"
@@ -33705,6 +35730,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Necrotic Plague",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Set minions in your opponent's hand and deck to 1/1.",
 		"type": "Spell"
@@ -33715,6 +35741,7 @@ var parseCardsText = {
 		"goldenImage": "ICCA08_023e.gif",
 		"id": "ICCA08_023e",
 		"name": "Plagued",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "1/1.",
 		"type": "Enchantment"
@@ -33730,6 +35757,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "The Hunted",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Deal $2 damage to your opponent for each minion in their deck.",
 		"type": "Spell"
@@ -33745,6 +35773,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Purge the Weak",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Destroy all enemy minions that cost (3) or less, wherever they are.",
 		"type": "Spell"
@@ -33760,6 +35789,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Soul Reaper",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Deal $2 damage for each duplicate in opponent’s deck.",
 		"type": "Spell"
@@ -33775,6 +35805,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "The True King",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Gain 100 Armor.",
 		"type": "Spell"
@@ -33790,6 +35821,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "The Price of Power",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Destroy every spell in your opponent's hand and deck.",
 		"type": "Spell"
@@ -33805,6 +35837,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Shut up, Priest",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "Your opponent can't emote.",
 		"type": "Spell"
@@ -33820,6 +35853,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Remorseless Winter",
+		"playerClass": "Deathknight",
 		"set": "Icecrown",
 		"text": "<b>Hero Power</b>\nDeal",
 		"type": "Hero_power"
@@ -33833,6 +35867,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "ICCA08_032p",
 		"name": "Harvest of Souls",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Passive Hero Power</b>\nYou are <b>Immune</b> if you control a Trapped Soul.",
 		"type": "Hero_power"
@@ -33847,6 +35882,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "ICCA08_033",
 		"name": "Trapped Soul",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Minion"
 	},
@@ -33859,6 +35895,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "ICCA09_001p",
 		"name": "Blood Rune",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Passive Hero Power</b>\nCan only take damage from weapons.",
 		"type": "Hero_power"
@@ -33873,6 +35910,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "ICCA09_001t1",
 		"name": "Blood Beast",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "At the start of your turn, restore 3 Health to your hero.",
 		"type": "Minion"
@@ -33885,6 +35923,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "ICCA09_002",
 		"name": "Deathbringer Saurfang",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33899,6 +35938,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "ICCA10_001",
 		"name": "Valithria Dreamwalker",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"referencedTags": [
 			"CANT_ATTACK"
@@ -33915,6 +35955,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "ICCA10_009",
 		"name": "Lady Deathwhisper",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"type": "Hero"
 	},
@@ -33929,6 +35970,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Whisper of Death",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "[x]<b>Hero Power</b>\nDamage all enemy\nminions until they have\n1 Health.",
 		"type": "Hero_power"
@@ -33946,6 +35988,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Skeletal Knight",
+		"playerClass": "Neutral",
 		"set": "Icecrown",
 		"text": "<b>Deathrattle:</b> Add a\n <b>Knights of the Frozen Throne</b> card to your opponent's hand.",
 		"type": "Minion"
@@ -33964,6 +36007,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Cat Trick",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"referencedTags": [
 			"STEALTH"
@@ -33987,6 +36031,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Cat in a Hat",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Kara",
 		"text": "<b>Stealth</b>",
@@ -34008,6 +36053,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Kindly Grandmother",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Kara",
@@ -34025,6 +36071,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "KAR_005a",
 		"name": "Big Bad Wolf",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Kara",
 		"type": "Minion"
@@ -34042,6 +36089,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "KAR_006",
 		"name": "Cloaked Huntress",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"referencedTags": [
 			"SECRET"
@@ -34066,6 +36114,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Babbling Book",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> Add a random Mage spell to your hand.",
@@ -34087,6 +36136,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Nightbane Templar",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, summon two 1/1 Whelps.",
@@ -34103,6 +36153,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "KAR_010a",
 		"name": "Whelp",
+		"playerClass": "Paladin",
 		"race": "DRAGON",
 		"set": "Kara",
 		"type": "Minion"
@@ -34123,6 +36174,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Pompous Thespian",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Taunt</b>",
@@ -34139,6 +36191,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_013.gif",
 		"id": "KAR_013",
 		"name": "Purify",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"referencedTags": [
 			"SILENCE"
@@ -34160,6 +36213,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "KAR_021",
 		"name": "Wicked Witchdoctor",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "Whenever you cast a spell, summon a random basic Totem.",
@@ -34176,6 +36230,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_025.gif",
 		"id": "KAR_025",
 		"name": "Kara Kazham!",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "Summon a 1/1 Candle, 2/2 Broom, and 3/3 Teapot.",
@@ -34192,6 +36247,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "KAR_025a",
 		"name": "Candle",
+		"playerClass": "Warlock",
 		"set": "Kara",
 		"type": "Minion"
 	},
@@ -34206,6 +36262,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "KAR_025b",
 		"name": "Broom",
+		"playerClass": "Warlock",
 		"set": "Kara",
 		"type": "Minion"
 	},
@@ -34220,6 +36277,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "KAR_025c",
 		"name": "Teapot",
+		"playerClass": "Warlock",
 		"set": "Kara",
 		"type": "Minion"
 	},
@@ -34234,6 +36292,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_026.gif",
 		"id": "KAR_026",
 		"name": "Protect the King!",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -34255,6 +36314,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Pawn",
+		"playerClass": "Warrior",
 		"set": "Kara",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -34272,6 +36332,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_028.gif",
 		"id": "KAR_028",
 		"name": "Fool's Bane",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "Unlimited attacks each turn. Can't attack heroes.",
@@ -34293,6 +36354,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Runic Egg",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Deathrattle:</b> Draw a card.",
@@ -34309,6 +36371,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "KAR_030",
 		"name": "Cellar Spider",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Kara",
 		"type": "Minion"
@@ -34329,6 +36392,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Pantry Spider",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Kara",
@@ -34351,6 +36415,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Book Wyrm",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Rare",
 		"set": "Kara",
@@ -34370,6 +36435,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_035",
 		"name": "Priest of the Feast",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "Whenever you cast a spell, restore 3 Health to\nyour hero.",
@@ -34388,6 +36454,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "KAR_036",
 		"name": "Arcane Anomaly",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Kara",
@@ -34400,6 +36467,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_036e.gif",
 		"id": "KAR_036e",
 		"name": "Eating",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Increased Health.",
 		"type": "Enchantment"
@@ -34420,6 +36488,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Avian Watcher",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET",
@@ -34435,6 +36504,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_037t.gif",
 		"id": "KAR_037t",
 		"name": "Secrets of Karazhan",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+1/+1 and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -34456,6 +36526,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Moat Lurker",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> Destroy a minion. <b>Deathrattle:</b> Resummon it.",
@@ -34467,6 +36538,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_041e.gif",
 		"id": "KAR_041e",
 		"name": "Moat Lurker",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Destroyed {0}.",
 		"type": "Enchantment"
@@ -34488,6 +36560,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Moroes",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Kara",
 		"text": "<b>Stealth</b>\nAt the end of your turn, summon a 1/1 Steward.",
@@ -34504,6 +36577,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "KAR_044a",
 		"name": "Steward",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Minion"
 	},
@@ -34523,6 +36597,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ivory Knight",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DISCOVER"
@@ -34549,6 +36624,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "The Curator",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Legendary",
 		"set": "Kara",
@@ -34571,6 +36647,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Netherspite Historian",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"DISCOVER"
@@ -34592,6 +36669,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_063.gif",
 		"id": "KAR_063",
 		"name": "Spirit Claws",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"referencedTags": [
 			"SPELLPOWER"
@@ -34616,6 +36694,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Menagerie Warden",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> Choose a friendly Beast. Summon a copy of it.",
@@ -34637,6 +36716,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Swashburglar",
+		"playerClass": "Rogue",
 		"race": "PIRATE",
 		"rarity": "Common",
 		"set": "Kara",
@@ -34659,6 +36739,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ethereal Peddler",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Kara",
 		"text": "[x]<b>Battlecry:</b> If you're holding\nany non-Rogue class cards,\n reduce their Cost by (2).",
@@ -34675,6 +36756,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_073.gif",
 		"id": "KAR_073",
 		"name": "Maelstrom Portal",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Kara",
 		"text": "Deal $1 damage to all enemy minions. Summon a random\n1-Cost minion.",
@@ -34691,6 +36773,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_075.gif",
 		"id": "KAR_075",
 		"name": "Moonglade Portal",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Kara",
 		"text": "Restore #6 Health. Summon a random\n6-Cost minion.",
@@ -34707,6 +36790,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_076.gif",
 		"id": "KAR_076",
 		"name": "Firelands Portal",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "Deal $5 damage. Summon a random\n5-Cost minion.",
@@ -34723,6 +36807,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_077.gif",
 		"id": "KAR_077",
 		"name": "Silvermoon Portal",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "Give a minion +2/+2. Summon a random\n2-Cost minion.",
@@ -34734,6 +36819,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_077e.gif",
 		"id": "KAR_077e",
 		"name": "Silver Might",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -34751,6 +36837,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "KAR_089",
 		"name": "Malchezaar's Imp",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Kara",
@@ -34768,6 +36855,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_091.gif",
 		"id": "KAR_091",
 		"name": "Ironforge Portal",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "Gain 4 Armor.\nSummon a random\n4-Cost minion.",
@@ -34789,6 +36877,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Medivh's Valet",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"SECRET"
@@ -34813,6 +36902,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Deadly Fork",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Deathrattle:</b> Add a 3/2 weapon to your hand.",
@@ -34829,6 +36919,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_094a.gif",
 		"id": "KAR_094a",
 		"name": "Sharp Fork",
+		"playerClass": "Rogue",
 		"set": "Kara",
 		"type": "Weapon"
 	},
@@ -34848,6 +36939,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Zoobot",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Kara",
@@ -34860,6 +36952,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_095e.gif",
 		"id": "KAR_095e",
 		"name": "Well Fed",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -34878,6 +36971,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_096",
 		"name": "Prince Malchezaar",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"rarity": "Legendary",
 		"set": "Kara",
@@ -34901,6 +36995,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Medivh, the Guardian",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> Equip Atiesh, Greatstaff of the Guardian.",
@@ -34917,6 +37012,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_097t.gif",
 		"id": "KAR_097t",
 		"name": "Atiesh",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "[x]After you cast a spell,\nsummon a random\nminion of that Cost.\nLose 1 Durability.",
 		"type": "Weapon"
@@ -34938,6 +37034,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Barnes",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> Summon a 1/1 copy of a random minion in your deck.",
@@ -34949,6 +37046,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_114e.gif",
 		"id": "KAR_114e",
 		"name": "Incredible Impression",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Attack and Health set to 1.",
 		"type": "Enchantment"
@@ -34969,6 +37067,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Onyx Bishop",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> Summon a friendly minion that died this game.",
@@ -34990,6 +37089,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Silverware Golem",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Kara",
 		"text": "If you discard this minion, summon it.",
@@ -35008,6 +37108,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "KAR_300",
 		"name": "Enchanted Raven",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Kara",
@@ -35029,6 +37130,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Menagerie Magician",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> Give a random friendly Beast, Dragon, and Murloc +2/+2.",
@@ -35040,6 +37142,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_702e.gif",
 		"id": "KAR_702e",
 		"name": "A Simple Trick",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -35060,6 +37163,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Arcanosmith",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"TAUNT"
@@ -35082,6 +37186,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Animated Shield",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -35099,6 +37204,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "KAR_711",
 		"name": "Arcane Giant",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Kara",
 		"text": "[x]Costs (1) less for each spell\nyou've cast this game.",
@@ -35120,6 +37226,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Violet Illusionist",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"IMMUNE"
@@ -35137,6 +37244,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KAR_A01_01",
 		"name": "Magic Mirror",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35148,6 +37256,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KAR_A01_01H",
 		"name": "Magic Mirror",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35160,6 +37269,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A01_02.gif",
 		"id": "KAR_A01_02",
 		"name": "Reflections",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Passive Hero Power</b>\nWhenever a minion is played, summon a 1/1 copy of it.",
 		"type": "Hero_power"
@@ -35170,6 +37280,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A01_02e.gif",
 		"id": "KAR_A01_02e",
 		"name": "Reflection",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "1/1.",
 		"type": "Enchantment"
@@ -35182,6 +37293,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A01_02H.gif",
 		"id": "KAR_A01_02H",
 		"name": "Reflections",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Passive Hero Power</b>\nWhenever a minion is played, Magic Mirror summons a 1/1 copy of it.",
 		"type": "Hero_power"
@@ -35197,6 +37309,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "KAR_A02_01",
 		"name": "Plate",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Minion"
 	},
@@ -35210,6 +37323,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "KAR_A02_01H",
 		"name": "Plate",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Minion"
 	},
@@ -35224,6 +37338,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_02.gif",
 		"id": "KAR_A02_02",
 		"name": "Spoon",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Weapon"
 	},
@@ -35237,6 +37352,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_02H.gif",
 		"id": "KAR_A02_02H",
 		"name": "Spoon",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Weapon"
 	},
@@ -35254,6 +37370,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Fork",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"CHARGE"
 		],
@@ -35274,6 +37391,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Fork",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"CHARGE"
 		],
@@ -35295,6 +37413,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Knife",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -35315,6 +37434,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Knife",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -35336,6 +37456,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Cup",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Plates have +1 Attack.",
 		"type": "Minion"
@@ -35353,6 +37474,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Cup",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Plates have +3 Attack.",
 		"type": "Minion"
@@ -35371,6 +37493,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Pitcher",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> Give a minion +2/+2.",
 		"type": "Minion"
@@ -35381,6 +37504,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_06e2.gif",
 		"id": "KAR_A02_06e2",
 		"name": "Filled Up",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -35398,6 +37522,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Pitcher",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Battlecry:</b> Give a minion +3/+3.",
 		"type": "Minion"
@@ -35408,6 +37533,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_06He.gif",
 		"id": "KAR_A02_06He",
 		"name": "Filled Up",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+3/+3.",
 		"type": "Enchantment"
@@ -35421,6 +37547,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_09.gif",
 		"id": "KAR_A02_09",
 		"name": "Set the Table",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Give your Plates +1/+1.",
 		"type": "Spell"
@@ -35431,6 +37558,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_09e.gif",
 		"id": "KAR_A02_09e",
 		"name": "Table Set",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -35441,6 +37569,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_09eH.gif",
 		"id": "KAR_A02_09eH",
 		"name": "Table Set",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -35453,6 +37582,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_09H.gif",
 		"id": "KAR_A02_09H",
 		"name": "Set the Table",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Give your Plates +2/+2.",
 		"type": "Spell"
@@ -35466,6 +37596,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_10.gif",
 		"id": "KAR_A02_10",
 		"name": "Pour a Round",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Draw a card for each of your Plates.",
 		"type": "Spell"
@@ -35479,6 +37610,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A02_11.gif",
 		"id": "KAR_A02_11",
 		"name": "Tossing Plates",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon five 1/1 Plates.",
 		"type": "Spell"
@@ -35492,6 +37624,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KAR_A02_12",
 		"name": "Silverware Golem",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35503,6 +37636,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KAR_A02_12H",
 		"name": "Silverware Golem",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35518,6 +37652,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Be Our Guest",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Plate.",
 		"type": "Hero_power"
@@ -35533,6 +37668,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Be Our Guest",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Plates.",
 		"type": "Hero_power"
@@ -35547,6 +37683,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_A10_01",
 		"name": "Black Pawn",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Auto-Attack:</b> Deal 1 damage to the enemies opposite this minion.",
 		"type": "Minion"
@@ -35562,6 +37699,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_A10_02",
 		"name": "White Pawn",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Auto-Attack:</b> Deal 1 damage to the enemies opposite this minion.",
 		"type": "Minion"
@@ -35576,6 +37714,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_A10_03",
 		"name": "Black Rook",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Auto-Attack:</b> Deal 2 damage to the enemies opposite this minion.",
 		"type": "Minion"
@@ -35591,6 +37730,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_A10_04",
 		"name": "White Rook",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Auto-Attack:</b> Deal 2 damage to the enemies opposite this minion.",
 		"type": "Minion"
@@ -35605,6 +37745,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_A10_05",
 		"name": "White Bishop",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Auto-Attack:</b> Restore 2 Health to adjacent minions.",
 		"type": "Minion"
@@ -35620,6 +37761,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_A10_06",
 		"name": "Black Bishop",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Auto-Attack:</b> Restore 2 Health to adjacent minions.",
 		"type": "Minion"
@@ -35637,6 +37779,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Black Knight",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Charge</b>.\nCan't Attack Heroes.",
 		"type": "Minion"
@@ -35655,6 +37798,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "White Knight",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Charge</b>.\nCan't Attack Heroes.",
 		"type": "Minion"
@@ -35670,6 +37814,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_A10_09",
 		"name": "White Queen",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Auto-Attack:</b> Deal 4 damage to the enemies opposite this minion.",
 		"type": "Minion"
@@ -35684,6 +37829,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KAR_A10_10",
 		"name": "Black Queen",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Auto-Attack:</b> Deal 4 damage to the enemies opposite this minion.",
 		"type": "Minion"
@@ -35703,6 +37849,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A10_22.gif",
 		"id": "KAR_A10_22",
 		"name": "Castle",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\n<b>Discover</b> a chess piece.",
 		"type": "Hero_power"
@@ -35716,6 +37863,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A10_22H.gif",
 		"id": "KAR_A10_22H",
 		"name": "Castle",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nMove a friendly minion left. Repeatable.",
@@ -35730,6 +37878,7 @@ var parseCardsText = {
 		"goldenImage": "KAR_A10_33.gif",
 		"id": "KAR_A10_33",
 		"name": "Cheat",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nDestroy the left-most enemy minion.",
 		"type": "Hero_power"
@@ -35743,6 +37892,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "KAR_a10_Boss1",
 		"name": "White King",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35754,6 +37904,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "KAR_a10_Boss1H",
 		"name": "White King",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35765,6 +37916,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "KAR_a10_Boss1H_TB",
 		"name": "White King",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -35776,6 +37928,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KAR_a10_Boss1H_TB22",
 		"name": "White King",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -35787,6 +37940,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "KAR_a10_Boss2",
 		"name": "Black King",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35798,6 +37952,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "KAR_a10_Boss2H",
 		"name": "Black King",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35809,6 +37964,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "KAR_a10_Boss2H_TB",
 		"name": "Black King",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -35820,6 +37976,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_00_01",
 		"name": "Prince Malchezaar",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35831,6 +37988,7 @@ var parseCardsText = {
 		"health": 60,
 		"id": "KARA_00_01H",
 		"name": "Prince Malchezaar",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35843,6 +38001,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_02.gif",
 		"id": "KARA_00_02",
 		"name": "Legion",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nSummon a 6/6 Abyssal.",
 		"type": "Hero_power"
@@ -35858,6 +38017,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KARA_00_02a",
 		"name": "Abyssal",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Kara",
 		"type": "Minion"
@@ -35870,6 +38030,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_02H.gif",
 		"id": "KARA_00_02H",
 		"name": "Legion",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nSummon a 6/6 Abyssal.",
 		"type": "Hero_power"
@@ -35883,6 +38044,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_00_03",
 		"name": "Medivh",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35894,6 +38056,7 @@ var parseCardsText = {
 		"health": 0,
 		"id": "KARA_00_03c",
 		"name": "Medivh",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35905,6 +38068,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_00_03H",
 		"name": "Medivh",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -35917,6 +38081,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_04.gif",
 		"id": "KARA_00_04",
 		"name": "Brilliance",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nDraw 3 cards.",
 		"type": "Hero_power"
@@ -35929,6 +38094,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_04H.gif",
 		"id": "KARA_00_04H",
 		"name": "Brilliance",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nDraw 3 cards.",
 		"type": "Hero_power"
@@ -35942,6 +38108,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_05.gif",
 		"id": "KARA_00_05",
 		"name": "Archmage's Insight",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"text": "Your spells cost (0) this turn.",
 		"type": "Spell"
@@ -35955,6 +38122,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Insightful",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Your spells cost (0).",
 		"type": "Enchantment"
@@ -35968,6 +38136,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_06.gif",
 		"id": "KARA_00_06",
 		"name": "Arcane Power",
+		"playerClass": "Mage",
 		"referencedTags": [
 			"SPELLPOWER"
 		],
@@ -35984,6 +38153,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Arcanely Powerful",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"SPELLPOWER"
 		],
@@ -35999,6 +38169,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_07.gif",
 		"id": "KARA_00_07",
 		"name": "Astral Portal",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"text": "Summon a random <b>Legendary</b> minion.",
 		"type": "Spell"
@@ -36014,6 +38185,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "KARA_00_08",
 		"name": "Archmage's Apprentice",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"text": "Whenever you cast a spell, shuffle a copy of it into your deck.",
 		"type": "Minion"
@@ -36027,6 +38199,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_09.gif",
 		"id": "KARA_00_09",
 		"name": "Mage Armor",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"text": "Gain 10 Armor.",
 		"type": "Spell"
@@ -36040,6 +38213,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_10.gif",
 		"id": "KARA_00_10",
 		"name": "Mysterious Rune",
+		"playerClass": "Mage",
 		"referencedTags": [
 			"SECRET"
 		],
@@ -36056,6 +38230,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_00_11.gif",
 		"id": "KARA_00_11",
 		"name": "Evocation",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"text": "Gain 5 Mana Crystals this turn only.",
 		"type": "Spell"
@@ -36071,6 +38246,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "KARA_04_01",
 		"name": "Dorothee",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"CHARGE",
 			"TAUNT"
@@ -36088,6 +38264,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_04_01h",
 		"name": "The Crone",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"type": "Hero"
@@ -36100,6 +38277,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "KARA_04_01heroic",
 		"name": "The Crone",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36112,6 +38290,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_04_02hp.gif",
 		"id": "KARA_04_02hp",
 		"name": "Twister",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nDeal 100 damage. Can't be used if Dorothee is alive.",
@@ -36131,6 +38310,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Flying Monkey",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Charge</b>",
 		"type": "Minion"
@@ -36148,6 +38328,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Flying Monkey",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Charge</b>",
 		"type": "Minion"
@@ -36160,6 +38341,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "KARA_05_01b",
 		"name": "Kindly Grandmother",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"type": "Hero"
@@ -36170,6 +38352,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_05_01e.gif",
 		"id": "KARA_05_01e",
 		"name": "Trembling Before the Wolf",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Shrunk to a 1/1.",
 		"type": "Enchantment"
@@ -36183,6 +38366,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "KARA_05_01h",
 		"name": "Big Bad Wolf",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"type": "Hero"
@@ -36195,6 +38379,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "KARA_05_01hheroic",
 		"name": "Big Bad Wolf",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"type": "Hero"
@@ -36209,6 +38394,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "KARA_05_01hp",
 		"name": "Trembling",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Passive Hero Power</b> Enemy minions are 1/1 and cost (1).",
@@ -36223,6 +38409,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "KARA_05_01hpheroic",
 		"name": "Trembling",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Passive Hero Power</b> Minions cost (1). Enemy minions are 1/1.",
@@ -36239,6 +38426,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_05_02.gif",
 		"id": "KARA_05_02",
 		"name": "Big Bad Claws",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Weapon"
 	},
@@ -36252,6 +38440,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_05_02heroic.gif",
 		"id": "KARA_05_02heroic",
 		"name": "Big Bad Claws",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Weapon"
 	},
@@ -36266,6 +38455,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "KARA_06_01",
 		"name": "Romulo",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -36279,6 +38469,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_06_01e.gif",
 		"id": "KARA_06_01e",
 		"name": "Death-Marked Love",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Julianne is <b>immune</b>.",
 		"type": "Enchantment"
@@ -36293,6 +38484,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "KARA_06_01heroic",
 		"name": "Romulo",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -36309,6 +38501,7 @@ var parseCardsText = {
 		"health": 15,
 		"id": "KARA_06_02",
 		"name": "Julianne",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36320,6 +38513,7 @@ var parseCardsText = {
 		"health": 15,
 		"id": "KARA_06_02heroic",
 		"name": "Julianne",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36335,6 +38529,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_06_03hp.gif",
 		"id": "KARA_06_03hp",
 		"name": "True Love",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nIf you don't have Romulo, summon him.",
@@ -36351,6 +38546,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_06_03hpheroic.gif",
 		"id": "KARA_06_03hpheroic",
 		"name": "True Love",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nIf you don't have Romulo, summon him.",
@@ -36364,6 +38560,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_07_01",
 		"name": "Curator",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36375,6 +38572,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "KARA_07_01heroic",
 		"name": "Curator",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36388,6 +38586,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "KARA_07_02",
 		"name": "Gallery Protection",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Passive Hero Power</b>\nYour hero has <b>Taunt</b>.",
 		"type": "Hero_power"
@@ -36398,6 +38597,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_02e.gif",
 		"id": "KARA_07_02e",
 		"name": "Protecting the Gallery",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Enchantment"
 	},
@@ -36410,6 +38610,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_03.gif",
 		"id": "KARA_07_03",
 		"name": "Murloc Escaping!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon a random Murloc.",
 		"type": "Spell"
@@ -36422,6 +38623,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_03heroic.gif",
 		"id": "KARA_07_03heroic",
 		"name": "Murlocs Escaping!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon two random Murlocs.",
 		"type": "Spell"
@@ -36435,6 +38637,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_05.gif",
 		"id": "KARA_07_05",
 		"name": "Stampeding Beast!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon a random Beast.",
 		"type": "Spell"
@@ -36447,6 +38650,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_05heroic.gif",
 		"id": "KARA_07_05heroic",
 		"name": "Stampeding Beast!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon a random Beast.",
 		"type": "Spell"
@@ -36460,6 +38664,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_06.gif",
 		"id": "KARA_07_06",
 		"name": "Demons Loose!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon a random Demon.",
 		"type": "Spell"
@@ -36472,6 +38677,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_06heroic.gif",
 		"id": "KARA_07_06heroic",
 		"name": "Demons Loose!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon a random Demon.",
 		"type": "Spell"
@@ -36485,6 +38691,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_07.gif",
 		"id": "KARA_07_07",
 		"name": "Haywire Mech!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon a random Mech.",
 		"type": "Spell"
@@ -36497,6 +38704,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_07heroic.gif",
 		"id": "KARA_07_07heroic",
 		"name": "Haywire Mech!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon a random Mech.",
 		"type": "Spell"
@@ -36510,6 +38718,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_08.gif",
 		"id": "KARA_07_08",
 		"name": "Dragons Free!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon a random Dragon.",
 		"type": "Spell"
@@ -36522,6 +38731,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_07_08heroic.gif",
 		"id": "KARA_07_08heroic",
 		"name": "Dragons Free!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon a random Dragon.",
 		"type": "Spell"
@@ -36535,6 +38745,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_08_01",
 		"name": "Netherspite",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36546,6 +38757,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_08_01H",
 		"name": "Netherspite",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36565,6 +38777,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Nether Rage",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nGive your hero +3 Attack this turn.",
 		"type": "Hero_power"
@@ -36575,6 +38788,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_02e.gif",
 		"id": "KARA_08_02e",
 		"name": "Nether Rage",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -36585,6 +38799,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_02eH.gif",
 		"id": "KARA_08_02eH",
 		"name": "Nether Rage",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "+8 Attack.",
 		"type": "Enchantment"
@@ -36604,6 +38819,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Nether Rage",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nGive your hero +8 Attack this turn.",
 		"type": "Hero_power"
@@ -36617,6 +38833,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_03.gif",
 		"id": "KARA_08_03",
 		"name": "Nether Breath",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "[x]Change the Health of\nall enemy minions to 1.",
 		"type": "Spell"
@@ -36627,6 +38844,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_03e.gif",
 		"id": "KARA_08_03e",
 		"name": "Nether Breath",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Health changed to 1.",
 		"type": "Enchantment"
@@ -36639,6 +38857,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_03H.gif",
 		"id": "KARA_08_03H",
 		"name": "Nether Breath",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "[x]Change the Health of\nall enemy minions to 1.",
 		"type": "Spell"
@@ -36650,6 +38869,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_04.gif",
 		"id": "KARA_08_04",
 		"name": "Empowerment",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Give your hero +8 Attack this turn.",
 		"type": "Spell"
@@ -36663,6 +38883,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Empowered",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+8 Attack this turn.",
 		"type": "Enchantment"
@@ -36676,6 +38897,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_05.gif",
 		"id": "KARA_08_05",
 		"name": "Terrifying Roar",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Return an enemy minion to your opponent's hand.",
 		"type": "Spell"
@@ -36688,6 +38910,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_05H.gif",
 		"id": "KARA_08_05H",
 		"name": "Terrifying Roar",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Return an enemy minion to your opponent's hand.",
 		"type": "Spell"
@@ -36707,6 +38930,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Blue Portal",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "The character in the blue beam only takes 1 damage at a time.",
 		"type": "Minion"
@@ -36717,6 +38941,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_06e2.gif",
 		"id": "KARA_08_06e2",
 		"name": "Blue Beam",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Only take 1 damage at a time.",
 		"type": "Enchantment"
@@ -36736,6 +38961,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Red Portal",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"WINDFURY"
 		],
@@ -36749,6 +38975,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_08_08e2.gif",
 		"id": "KARA_08_08e2",
 		"name": "Red Beam",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Has <b>Windfury</b>.",
 		"type": "Enchantment"
@@ -36762,6 +38989,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_09_01",
 		"name": "Terestian Illhoof",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36773,6 +39001,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "KARA_09_01heroic",
 		"name": "Terestian Illhoof",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36783,6 +39012,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_09_02",
 		"name": "Curator",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36795,6 +39025,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_09_03.gif",
 		"id": "KARA_09_03",
 		"name": "Many Imps!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon 2 Icky Imps.",
 		"type": "Spell"
@@ -36813,6 +39044,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Icky Imp",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Kara",
 		"text": "<b>Deathrattle:</b> Resummon this minion and Illhoof loses 2 Health.",
@@ -36831,6 +39063,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Icky Imp",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Kara",
 		"text": "<b>Deathrattle:</b> Resummon this minion and Illhoof loses 2 Health.",
@@ -36844,6 +39077,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_09_03heroic.gif",
 		"id": "KARA_09_03heroic",
 		"name": "Many Imps!",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon 2 Icky Imps.",
 		"type": "Spell"
@@ -36858,6 +39092,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "KARA_09_04",
 		"name": "Dark Pact",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Passive Hero Power</b>\nOnly Icky Imps can damage Illhoof!",
 		"type": "Hero_power"
@@ -36870,6 +39105,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_09_05.gif",
 		"id": "KARA_09_05",
 		"name": "Summon Kil'rek",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon Kil'rek.",
 		"type": "Spell"
@@ -36882,6 +39118,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_09_05heroic.gif",
 		"id": "KARA_09_05heroic",
 		"name": "Summon Kil'rek",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Summon Kil'rek.",
 		"type": "Spell"
@@ -36895,6 +39132,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_09_06.gif",
 		"id": "KARA_09_06",
 		"name": "Shadow Volley",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Deal $3 damage to all non-Demon minions.",
 		"type": "Spell"
@@ -36907,6 +39145,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_09_06heroic.gif",
 		"id": "KARA_09_06heroic",
 		"name": "Shadow Volley",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Deal $3 damage to all non-Demon minions.",
 		"type": "Spell"
@@ -36920,6 +39159,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_09_07.gif",
 		"id": "KARA_09_07",
 		"name": "Steal Life",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Deal $5 damage. Restore #5 Health to your hero.",
 		"type": "Spell"
@@ -36932,6 +39172,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_09_07heroic.gif",
 		"id": "KARA_09_07heroic",
 		"name": "Steal Life",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Deal $5 damage. Restore #5 Health to your hero.",
 		"type": "Spell"
@@ -36950,6 +39191,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Kil'rek",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Kara",
 		"text": "<b>Taunt</b>",
@@ -36968,6 +39210,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Kil'rek",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Kara",
 		"text": "<b>Taunt</b>",
@@ -36982,6 +39225,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_11_01",
 		"name": "Nightbane",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -36993,6 +39237,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_11_01heroic",
 		"name": "Nightbane",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -37006,6 +39251,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "KARA_11_02",
 		"name": "Manastorm",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Passive Hero Power</b>\nPlayers start with 10 Mana Crystals.",
 		"type": "Hero_power"
@@ -37018,6 +39264,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_12_01",
 		"name": "Shade of Aran",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -37029,6 +39276,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_12_01H",
 		"name": "Shade of Aran",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -37042,6 +39290,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "KARA_12_02",
 		"name": "Ley Lines",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "[x]<b>Passive Hero Power</b>\nBoth players have\n<b>Spell Damage +3</b>.",
 		"type": "Hero_power"
@@ -37055,6 +39304,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "KARA_12_02H",
 		"name": "Ley Lines",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "[x]<b>Passive Hero Power</b>\nBoth players have\n<b>Spell Damage +5</b>.",
 		"type": "Hero_power"
@@ -37072,6 +39322,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Flame Wreath",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"text": "<b>Secret:</b> When an enemy attacks, deal 5 damage to all other enemies.",
 		"type": "Spell"
@@ -37088,6 +39339,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Flame Wreath",
+		"playerClass": "Mage",
 		"set": "Kara",
 		"text": "<b>Secret:</b> When an enemy attacks, deal 10 damage to all other enemies.",
 		"type": "Spell"
@@ -37101,6 +39353,7 @@ var parseCardsText = {
 		"health": 15,
 		"id": "KARA_13_01",
 		"name": "Nazra Wildaxe",
+		"playerClass": "Warrior",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -37112,6 +39365,7 @@ var parseCardsText = {
 		"health": 15,
 		"id": "KARA_13_01H",
 		"name": "Nazra Wildaxe",
+		"playerClass": "Warrior",
 		"set": "Kara",
 		"type": "Hero"
 	},
@@ -37124,6 +39378,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_13_02.gif",
 		"id": "KARA_13_02",
 		"name": "The Horde",
+		"playerClass": "Warrior",
 		"set": "Kara",
 		"text": "[x]<b>Hero Power</b>\nSummon a 3/2 Orc.",
 		"type": "Hero_power"
@@ -37136,6 +39391,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_13_02H.gif",
 		"id": "KARA_13_02H",
 		"name": "The Horde",
+		"playerClass": "Warrior",
 		"set": "Kara",
 		"text": "[x]<b>Hero Power</b>\nSummon a 3/3 Orc\nwith <b>Charge</b>.",
 		"type": "Hero_power"
@@ -37151,6 +39407,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "KARA_13_03",
 		"name": "Orc Warrior",
+		"playerClass": "Warrior",
 		"set": "Kara",
 		"type": "Minion"
 	},
@@ -37167,6 +39424,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Orc Warrior",
+		"playerClass": "Warrior",
 		"set": "Kara",
 		"text": "<b>Charge</b>",
 		"type": "Minion"
@@ -37186,6 +39444,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_13_06",
 		"name": "Prince Malchezaar",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Kara",
 		"type": "Hero"
@@ -37206,6 +39465,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "KARA_13_06H",
 		"name": "Prince Malchezaar",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Kara",
 		"type": "Hero"
@@ -37218,6 +39478,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_13_11.gif",
 		"id": "KARA_13_11",
 		"name": "Shadow Bolt Volley",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Deal $4 damage to three random enemies.",
 		"type": "Spell"
@@ -37228,6 +39489,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_13_11e.gif",
 		"id": "KARA_13_11e",
 		"name": "Enfeeble",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Health changed to 1.",
 		"type": "Enchantment"
@@ -37241,6 +39503,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_13_12.gif",
 		"id": "KARA_13_12",
 		"name": "Demonic Presence",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Draw 2 cards.\nGain 10 Armor.",
 		"type": "Spell"
@@ -37253,6 +39516,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_13_12H.gif",
 		"id": "KARA_13_12H",
 		"name": "Demonic Presence",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "Draw 3 cards.\nGain 10 Armor.",
 		"type": "Spell"
@@ -37268,6 +39532,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Legion",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nSummon a 6/6 Abyssal.",
 		"type": "Hero_power"
@@ -37280,6 +39545,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_13_13H.gif",
 		"id": "KARA_13_13H",
 		"name": "Legion",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "<b>Hero Power</b>\nSummon two 6/6 Abyssals.",
 		"type": "Hero_power"
@@ -37299,6 +39565,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Wanda Wonderhooves",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Portals cost (1) less. \n<i>Does not count as a minion.</i>",
 		"type": "Minion"
@@ -37318,6 +39585,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Susie Sizzlesong",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Portals cost (1) less. \n<i>Does not count as a minion.</i>",
 		"type": "Minion"
@@ -37337,6 +39605,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Mark Moonwalker",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Portals cost (1) less. \n<i>Does not count as a minion.</i>",
 		"type": "Minion"
@@ -37356,6 +39625,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Red Riding Hood",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt. Deathrattle:</b> Enemies can't attack this turn.",
 		"type": "Minion"
@@ -37369,6 +39639,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Saddened",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Can't attack this turn.",
 		"type": "Enchantment"
@@ -37383,6 +39654,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "KARA_13_20",
 		"name": "Party Elemental",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Comes with a party!",
 		"type": "Minion"
@@ -37397,6 +39669,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "KARA_13_22",
 		"name": "Mime",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Always <b>silenced</b>.",
 		"type": "Minion"
@@ -37412,6 +39685,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "KARA_13_23",
 		"name": "Romulo",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of your turn, restore 3 health to your hero.",
 		"type": "Minion"
@@ -37427,6 +39701,7 @@ var parseCardsText = {
 		"goldenImage": "KARA_13_26.gif",
 		"id": "KARA_13_26",
 		"name": "Atiesh",
+		"playerClass": "Neutral",
 		"set": "Kara",
 		"text": "[x]After you cast a spell,\nsummon a random\nminion of that Cost.\nLose 1 Durability.",
 		"type": "Weapon"
@@ -37442,6 +39717,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_002.gif",
 		"id": "LOE_002",
 		"name": "Forgotten Torch",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "Deal $3 damage. Shuffle a 'Roaring Torch' into your deck that deals 6 damage.",
@@ -37456,6 +39732,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_002t.gif",
 		"id": "LOE_002t",
 		"name": "Roaring Torch",
+		"playerClass": "Mage",
 		"set": "Loe",
 		"text": "Deal $6 damage.",
 		"type": "Spell"
@@ -37476,6 +39753,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ethereal Conjurer",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"DISCOVER"
@@ -37500,6 +39778,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Museum Curator",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"referencedTags": [
 			"DEATHRATTLE",
@@ -37520,6 +39799,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_007.gif",
 		"id": "LOE_007",
 		"name": "Curse of Rafaam",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "Give your opponent a 'Cursed!' card.\nWhile they hold it, they take 2 damage on their turn.",
@@ -37538,6 +39818,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Cursed!",
+		"playerClass": "Warlock",
 		"set": "Loe",
 		"text": "While this is in your hand, take 2 damage at the start of your turn.",
 		"type": "Spell"
@@ -37551,6 +39832,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_008.gif",
 		"id": "LOE_008",
 		"name": "Eye of Hakkar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Take a secret from your opponent's deck and put it into the battlefield.",
 		"type": "Spell"
@@ -37563,6 +39845,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_008H.gif",
 		"id": "LOE_008H",
 		"name": "Eye of Hakkar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Take a secret from your opponent's deck and put it into the battlefield.",
 		"type": "Spell"
@@ -37580,6 +39863,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "LOE_009",
 		"name": "Obsidian Destroyer",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"referencedTags": [
 			"TAUNT"
@@ -37594,6 +39878,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_009e.gif",
 		"id": "LOE_009e",
 		"name": "Sinister Power",
+		"playerClass": "Warlock",
 		"set": "Loe",
 		"text": "+4/+4.",
 		"type": "Enchantment"
@@ -37612,6 +39897,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Scarab",
+		"playerClass": "Warrior",
 		"race": "BEAST",
 		"set": "Loe",
 		"text": "<b>Taunt</b>",
@@ -37633,6 +39919,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Pit Snake",
+		"playerClass": "Rogue",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Loe",
@@ -37656,6 +39943,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Reno Jackson",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Loe",
 		"text": "<b>Battlecry:</b> If your deck has no duplicates, fully heal your hero.",
@@ -37677,6 +39965,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Tomb Pillager",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "<b>Deathrattle:</b> Add a Coin to your hand.",
@@ -37695,6 +39984,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOE_016",
 		"name": "Rumbling Elemental",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"referencedTags": [
@@ -37717,6 +40007,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Rock",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -37737,6 +40028,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Keeper of Uldaman",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "<b>Battlecry:</b> Set a minion's Attack and Health to 3.",
@@ -37748,6 +40040,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_017e.gif",
 		"id": "LOE_017e",
 		"name": "Watched",
+		"playerClass": "Paladin",
 		"set": "Loe",
 		"text": "Stats changed to 3/3.",
 		"type": "Enchantment"
@@ -37765,6 +40058,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOE_018",
 		"name": "Tunnel Trogg",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"referencedTags": [
 			"OVERLOAD"
@@ -37779,6 +40073,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_018e.gif",
 		"id": "LOE_018e",
 		"name": "Trogg No Stupid",
+		"playerClass": "Shaman",
 		"set": "Loe",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -37799,6 +40094,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Unearthed Raptor",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -37813,6 +40109,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_019e.gif",
 		"id": "LOE_019e",
 		"name": "Unearthed Raptor",
+		"playerClass": "Rogue",
 		"set": "Loe",
 		"text": "Copied Deathrattle from {0}.",
 		"type": "Enchantment"
@@ -37826,6 +40123,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_019t.gif",
 		"id": "LOE_019t",
 		"name": "Map to the Golden Monkey",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Shuffle the Golden Monkey into your deck. Draw a card.",
 		"type": "Spell"
@@ -37845,6 +40143,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Golden Monkey",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Replace your hand and deck with <b>Legendary</b> minions.",
 		"type": "Minion"
@@ -37865,6 +40164,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Desert Camel",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Loe",
@@ -37885,6 +40185,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Dart Trap",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "<b>Secret:</b> After an opposing Hero Power is used, deal $5 damage to a random enemy.",
@@ -37906,6 +40207,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Fierce Monkey",
+		"playerClass": "Warrior",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Loe",
@@ -37928,6 +40230,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dark Peddler",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"referencedTags": [
 			"DISCOVER"
@@ -37947,6 +40250,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOE_024t",
 		"name": "Rolling Boulder",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, destroy the minion to the left.",
 		"type": "Minion"
@@ -37962,6 +40266,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_026.gif",
 		"id": "LOE_026",
 		"name": "Anyfin Can Happen",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "Summon 7 Murlocs that died this game.",
@@ -37981,6 +40286,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Sacred Trial",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "<b>Secret:</b> After your opponent has at least 3 minions and plays another, destroy it.",
@@ -38002,6 +40308,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Jeweled Scarab",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -38017,6 +40324,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_030e.gif",
 		"id": "LOE_030e",
 		"name": "Hollow",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Stats copied.",
 		"type": "Enchantment"
@@ -38037,6 +40345,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Naga Sea Witch",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Loe",
 		"text": "Your cards cost (5).",
@@ -38058,6 +40367,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gorillabot A-3",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"referencedTags": [
@@ -38083,6 +40393,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Huge Toad",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Loe",
@@ -38105,6 +40416,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tomb Spider",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -38130,6 +40442,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Mounted Raptor",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Loe",
@@ -38152,6 +40465,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Jungle Moonkin",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Loe",
@@ -38172,6 +40486,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOE_053",
 		"name": "Djinni of Zephyrs",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Epic",
 		"set": "Loe",
@@ -38194,6 +40509,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Anubisath Sentinel",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "<b>Deathrattle:</b> Give a random friendly minion +3/+3.",
@@ -38205,6 +40521,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_061e.gif",
 		"id": "LOE_061e",
 		"name": "Power of the Titans",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "+3/+3.",
 		"type": "Enchantment"
@@ -38225,6 +40542,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fossilized Devilsaur",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"TAUNT"
@@ -38239,6 +40557,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_073e.gif",
 		"id": "LOE_073e",
 		"name": "Fossilized",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Has <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -38260,6 +40579,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Sir Finley Mrrgglton",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Legendary",
 		"referencedTags": [
@@ -38286,6 +40606,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Brann Bronzebeard",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"BATTLECRY"
@@ -38311,6 +40632,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Elise Starseeker",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Loe",
 		"text": "<b>Battlecry:</b> Shuffle the 'Map to the Golden Monkey'   into your deck.",
@@ -38329,6 +40651,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOE_086",
 		"name": "Summoning Stone",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "Whenever you cast a spell, summon a random minion of the same Cost.",
@@ -38350,6 +40673,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Wobbling Runts",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "<b>Deathrattle:</b> Summon three 2/2 Runts.",
@@ -38366,6 +40690,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "LOE_089t",
 		"name": "Rascally Runt",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -38380,6 +40705,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "LOE_089t2",
 		"name": "Wily Runt",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -38394,6 +40720,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "LOE_089t3",
 		"name": "Grumbly Runt",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -38414,6 +40741,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Arch-Thief Rafaam",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"DISCOVER"
@@ -38433,6 +40761,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_104.gif",
 		"id": "LOE_104",
 		"name": "Entomb",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "Choose an enemy minion.\nShuffle it into your deck.",
@@ -38449,6 +40778,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_105.gif",
 		"id": "LOE_105",
 		"name": "Explorer's Hat",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -38463,6 +40793,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_105e.gif",
 		"id": "LOE_105e",
 		"name": "Explorer's Hat",
+		"playerClass": "Hunter",
 		"set": "Loe",
 		"text": "+1/+1. <b>Deathrattle:</b> Add an Explorer's Hat to your hand.",
 		"type": "Enchantment"
@@ -38480,6 +40811,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "LOE_107",
 		"name": "Eerie Statue",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "Can’t attack unless it’s the only minion in the battlefield.",
@@ -38501,6 +40833,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ancient Shade",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "<b>Battlecry:</b> Shuffle an 'Ancient Curse' into your deck that deals 7 damage to you when drawn.",
@@ -38519,6 +40852,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Ancient Curse",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "[x]You take 7 damage.\nDraw a card.\nCast this when drawn.",
 		"type": "Spell"
@@ -38534,6 +40868,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_111.gif",
 		"id": "LOE_111",
 		"name": "Excavated Evil",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "Deal $3 damage to all minions.\nShuffle this card into your opponent's deck.",
@@ -38550,6 +40885,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_113.gif",
 		"id": "LOE_113",
 		"name": "Everyfin is Awesome",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "Give your minions +2/+2.\nCosts (1) less for each Murloc you control.",
@@ -38561,6 +40897,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_113e.gif",
 		"id": "LOE_113e",
 		"name": "Mrglllraawrrrglrur!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -38579,6 +40916,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Raven Idol",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"DISCOVER"
@@ -38596,6 +40934,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_115a.gif",
 		"id": "LOE_115a",
 		"name": "Raven Idol",
+		"playerClass": "Druid",
 		"set": "Loe",
 		"text": "<b>Discover</b> a minion.",
 		"type": "Spell"
@@ -38609,6 +40948,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_115b.gif",
 		"id": "LOE_115b",
 		"name": "Raven Idol",
+		"playerClass": "Druid",
 		"set": "Loe",
 		"text": "<b>Discover</b> a spell.",
 		"type": "Spell"
@@ -38629,6 +40969,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Reliquary Seeker",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "<b>Battlecry:</b> If you have 6 other minions, gain +4/+4.",
@@ -38647,6 +40988,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_118.gif",
 		"id": "LOE_118",
 		"name": "Cursed Blade",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "Double all damage dealt to your hero.",
@@ -38658,6 +41000,7 @@ var parseCardsText = {
 		"goldenImage": "LOE_118e.gif",
 		"id": "LOE_118e",
 		"name": "Cursed Blade",
+		"playerClass": "Warrior",
 		"set": "Loe",
 		"text": "Double all damage dealt to your hero.",
 		"type": "Enchantment"
@@ -38675,6 +41018,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOE_119",
 		"name": "Animated Armor",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Loe",
 		"text": "Your hero can only take 1 damage at a time.",
@@ -38688,6 +41032,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA01_01",
 		"name": "Sun Raider Phaerix",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -38699,6 +41044,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA01_01h",
 		"name": "Sun Raider Phaerix",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -38710,6 +41056,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA01_02.gif",
 		"id": "LOEA01_02",
 		"name": "Blessings of the Sun",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\nWhoever controls the Rod of the Sun is <b>Immune.</b>",
 		"type": "Hero_power"
@@ -38722,6 +41069,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA01_02h.gif",
 		"id": "LOEA01_02h",
 		"name": "Blessings of the Sun",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\n Phaerix is <b>Immune</b> while he controls the Rod of the Sun.",
 		"type": "Hero_power"
@@ -38739,6 +41087,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Rod of the Sun",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Deathrattle:</b> Surrender this to your opponent.",
 		"type": "Minion"
@@ -38756,6 +41105,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Rod of the Sun",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Deathrattle:</b> Surrender this to your opponent.",
 		"type": "Minion"
@@ -38766,6 +41116,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA01_11he.gif",
 		"id": "LOEA01_11he",
 		"name": "Heroic Mode",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "+3/+3 if Phaerix controls the Rod.",
 		"type": "Enchantment"
@@ -38783,6 +41134,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Tol'vir Hoplite",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Deathrattle:</b> Deal 5 damage to both heroes.",
 		"type": "Minion"
@@ -38800,6 +41152,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Tol'vir Hoplite",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Deathrattle:</b> Deal 5 damage to both heroes.",
 		"type": "Minion"
@@ -38812,6 +41165,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA02_01",
 		"name": "Zinaar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -38823,6 +41177,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA02_01h",
 		"name": "Zinaar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -38837,6 +41192,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Djinn’s Intuition",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Draw a card.\nGive your opponent a Wish.",
 		"type": "Hero_power"
@@ -38852,6 +41208,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Djinn’s Intuition",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Draw a card. Gain a Mana Crystal. Give your opponent a Wish.",
 		"type": "Hero_power"
@@ -38864,6 +41221,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA02_03.gif",
 		"id": "LOEA02_03",
 		"name": "Wish for Power",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DISCOVER"
 		],
@@ -38879,6 +41237,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA02_04.gif",
 		"id": "LOEA02_04",
 		"name": "Wish for Valor",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DISCOVER"
 		],
@@ -38894,6 +41253,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA02_05.gif",
 		"id": "LOEA02_05",
 		"name": "Wish for Glory",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DISCOVER"
 		],
@@ -38909,6 +41269,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA02_06.gif",
 		"id": "LOEA02_06",
 		"name": "Wish for More Wishes",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Gain 2 Wishes.",
 		"type": "Spell"
@@ -38921,6 +41282,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA02_10.gif",
 		"id": "LOEA02_10",
 		"name": "Wish for Companionship",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DISCOVER"
 		],
@@ -38938,6 +41300,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOEA02_10a",
 		"name": "Leokk",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Loe",
 		"text": "Your minions have +1 Attack.",
@@ -38953,6 +41316,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOEA02_10c",
 		"name": "Misha",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Loe",
 		"text": "<b>Taunt</b>",
@@ -38969,6 +41333,7 @@ var parseCardsText = {
 			"APPEAR_FUNCTIONALLY_DEAD"
 		],
 		"name": "Temple Escape",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -38978,6 +41343,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_01e.gif",
 		"id": "LOEA04_01e",
 		"name": "Temple Escape Enchant",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Enchantment"
 	},
@@ -38987,6 +41353,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_01eh.gif",
 		"id": "LOEA04_01eh",
 		"name": "Temple Escape Enchant",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Enchantment"
 	},
@@ -38998,6 +41365,7 @@ var parseCardsText = {
 		"health": 100,
 		"id": "LOEA04_01h",
 		"name": "Temple Escape",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39012,6 +41380,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Escape!",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Loe",
 		"text": "Encounter new obstacles!",
@@ -39025,6 +41394,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_02h.gif",
 		"id": "LOEA04_02h",
 		"name": "Escape!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Encounter new obstacles!",
 		"type": "Hero_power"
@@ -39037,6 +41407,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_06.gif",
 		"id": "LOEA04_06",
 		"name": "Pit of Spikes",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Choose Your Path!</b>",
 		"type": "Spell"
@@ -39052,6 +41423,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Swing Across",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Take 10 damage or no damage, at random.",
 		"type": "Spell"
@@ -39064,6 +41436,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_06b.gif",
 		"id": "LOEA04_06b",
 		"name": "Walk Across Gingerly",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Take 5 damage.",
 		"type": "Spell"
@@ -39081,6 +41454,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Orsis Guard",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Divine Shield</b>",
 		"type": "Minion"
@@ -39098,6 +41472,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Orsis Guard",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Divine Shield</b>",
 		"type": "Minion"
@@ -39112,6 +41487,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOEA04_23",
 		"name": "Giant Insect",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39125,6 +41501,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOEA04_23h",
 		"name": "Giant Insect",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39138,6 +41515,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA04_24",
 		"name": "Anubisath Temple Guard",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39151,6 +41529,7 @@ var parseCardsText = {
 		"health": 15,
 		"id": "LOEA04_24h",
 		"name": "Anubisath Temple Guard",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39164,6 +41543,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "LOEA04_25",
 		"name": "Seething Statue",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, deal 2 damage to all enemies.",
 		"type": "Minion"
@@ -39178,6 +41558,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "LOEA04_25h",
 		"name": "Seething Statue",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, deal 5 damage to all enemies.",
 		"type": "Minion"
@@ -39192,6 +41573,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA04_27",
 		"name": "Animated Statue",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "You've disturbed the ancient statue...",
 		"type": "Minion"
@@ -39204,6 +41586,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_28.gif",
 		"id": "LOEA04_28",
 		"name": "A Glowing Pool",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Drink?</b>",
 		"type": "Spell"
@@ -39216,6 +41599,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_28a.gif",
 		"id": "LOEA04_28a",
 		"name": "Drink Deeply",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Draw a card.",
 		"type": "Spell"
@@ -39228,6 +41612,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_28b.gif",
 		"id": "LOEA04_28b",
 		"name": "Wade Through",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Gain a Mana Crystal",
 		"type": "Spell"
@@ -39240,6 +41625,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_29.gif",
 		"id": "LOEA04_29",
 		"name": "The Eye",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Choose Your Path!</b>",
 		"type": "Spell"
@@ -39252,6 +41638,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_29a.gif",
 		"id": "LOEA04_29a",
 		"name": "Touch It",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Restore 10 Health to your hero.",
 		"type": "Spell"
@@ -39264,6 +41651,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_29b.gif",
 		"id": "LOEA04_29b",
 		"name": "Investigate the Runes",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Draw 2 cards.",
 		"type": "Spell"
@@ -39276,6 +41664,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_30.gif",
 		"id": "LOEA04_30",
 		"name": "The Darkness",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Take the Shortcut?</b>",
 		"type": "Spell"
@@ -39288,6 +41677,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_30a.gif",
 		"id": "LOEA04_30a",
 		"name": "Take the Shortcut",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Get 1 turn closer to the Exit! Encounter a 7/7 War Golem.",
 		"type": "Spell"
@@ -39300,6 +41690,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA04_31b.gif",
 		"id": "LOEA04_31b",
 		"name": "No Way!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Do nothing.",
 		"type": "Spell"
@@ -39312,6 +41703,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA05_01",
 		"name": "Chieftain Scarvash",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39323,6 +41715,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA05_01h",
 		"name": "Chieftain Scarvash",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39334,6 +41727,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA05_02.gif",
 		"id": "LOEA05_02",
 		"name": "Trogg Hate Minions!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\n Enemy minions cost (2) more. Swap at the start of your turn.",
 		"type": "Hero_power"
@@ -39346,6 +41740,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA05_02a.gif",
 		"id": "LOEA05_02a",
 		"name": "Trogg Hate Minions!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\n Enemy minions cost (2) more. Swap at the start of your turn.",
 		"type": "Hero_power"
@@ -39358,6 +41753,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA05_02h.gif",
 		"id": "LOEA05_02h",
 		"name": "Trogg Hate Minions!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\n Enemy minions cost (11). Swap at the start of your turn.",
 		"type": "Hero_power"
@@ -39370,6 +41766,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA05_02ha.gif",
 		"id": "LOEA05_02ha",
 		"name": "Trogg Hate Minions!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\n Enemy minions cost (11). Swap at the start of your turn.",
 		"type": "Hero_power"
@@ -39382,6 +41779,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA05_03.gif",
 		"id": "LOEA05_03",
 		"name": "Trogg Hate Spells!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\n Enemy spells cost (2) more. Swap at the start of your turn.",
 		"type": "Hero_power"
@@ -39394,6 +41792,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA05_03h.gif",
 		"id": "LOEA05_03h",
 		"name": "Trogg Hate Spells!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\n Enemy spells cost (11). Swap at the start of your turn.",
 		"type": "Hero_power"
@@ -39409,6 +41808,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Stonesculpting",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\n Summon a 0/2 Statue for both players.",
 		"type": "Hero_power"
@@ -39424,6 +41824,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Stonesculpting",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\n Summon a Statue for both players.",
 		"type": "Hero_power"
@@ -39438,6 +41839,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "LOEA06_02t",
 		"name": "Earthen Statue",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39451,6 +41853,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOEA06_02th",
 		"name": "Earthen Statue",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39462,6 +41865,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA06_03.gif",
 		"id": "LOEA06_03",
 		"name": "Animate Earthen",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -39475,6 +41879,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA06_03e.gif",
 		"id": "LOEA06_03e",
 		"name": "Animated",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "+1/+1 and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -39485,6 +41890,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA06_03eh.gif",
 		"id": "LOEA06_03eh",
 		"name": "Animated",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "+3/+3 and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -39497,6 +41903,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA06_03h.gif",
 		"id": "LOEA06_03h",
 		"name": "Animate Earthen",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -39512,6 +41919,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA06_04.gif",
 		"id": "LOEA06_04",
 		"name": "Shattering Spree",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Destroy all Statues. For each destroyed, deal 1 damage.",
 		"type": "Spell"
@@ -39524,6 +41932,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA06_04h.gif",
 		"id": "LOEA06_04h",
 		"name": "Shattering Spree",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Destroy all Statues. For each destroyed, deal 3 damage.",
 		"type": "Spell"
@@ -39536,6 +41945,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA07_01",
 		"name": "Mine Cart",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39547,6 +41957,7 @@ var parseCardsText = {
 		"health": 80,
 		"id": "LOEA07_02",
 		"name": "Mine Shaft",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39558,6 +41969,7 @@ var parseCardsText = {
 		"health": 80,
 		"id": "LOEA07_02h",
 		"name": "Mine Shaft",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39572,6 +41984,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Flee the Mine!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Escape the Troggs!",
 		"type": "Hero_power"
@@ -39587,6 +42000,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Flee the Mine!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Escape the Troggs!",
 		"type": "Hero_power"
@@ -39601,6 +42015,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOEA07_09",
 		"name": "Chasing Trogg",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39617,6 +42032,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Debris",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Taunt.</b>",
 		"type": "Minion"
@@ -39631,6 +42047,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOEA07_12",
 		"name": "Earthen Pursuer",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39644,6 +42061,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOEA07_14",
 		"name": "Lumbering Golem",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39655,6 +42073,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA07_18.gif",
 		"id": "LOEA07_18",
 		"name": "Dynamite",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Deal $10 damage.",
 		"type": "Spell"
@@ -39667,6 +42086,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA07_20.gif",
 		"id": "LOEA07_20",
 		"name": "Boom!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Deal $3 damage to all enemy minions.",
 		"type": "Spell"
@@ -39679,6 +42099,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA07_21.gif",
 		"id": "LOEA07_21",
 		"name": "Barrel Forward",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Get 1 turn closer to the Exit!",
 		"type": "Spell"
@@ -39697,6 +42118,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Spiked Decoy",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Loe",
 		"text": "<b>Taunt</b>\nCan't attack.",
@@ -39712,6 +42134,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOEA07_25",
 		"name": "Mechanical Parrot",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Loe",
 		"type": "Minion"
@@ -39724,6 +42147,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA07_26.gif",
 		"id": "LOEA07_26",
 		"name": "Consult Brann",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Draw 3 cards.",
 		"type": "Spell"
@@ -39736,6 +42160,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA07_28.gif",
 		"id": "LOEA07_28",
 		"name": "Repairs",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Restore 10 Health.",
 		"type": "Spell"
@@ -39748,6 +42173,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA07_29.gif",
 		"id": "LOEA07_29",
 		"name": "Throw Rocks",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\n Deal 3 damage to a random enemy minion.",
 		"type": "Hero_power"
@@ -39760,6 +42186,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA08_01",
 		"name": "Archaedas",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39771,6 +42198,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA08_01h",
 		"name": "Archaedas",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39782,6 +42210,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA09_1",
 		"name": "Lord Slitherspear",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39795,6 +42224,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOEA09_10",
 		"name": "Hungry Naga",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39808,6 +42238,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOEA09_11",
 		"name": "Hungry Naga",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39821,6 +42252,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOEA09_12",
 		"name": "Hungry Naga",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39834,6 +42266,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOEA09_13",
 		"name": "Hungry Naga",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -39845,6 +42278,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA09_1H",
 		"name": "Lord Slitherspear",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -39859,6 +42293,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Enraged!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Give your hero +2 attack this turn.",
 		"type": "Hero_power"
@@ -39872,6 +42307,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Enraged",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "+2 Attack",
 		"type": "Enchantment"
@@ -39885,6 +42321,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Enraged",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "+5 Attack",
 		"type": "Enchantment"
@@ -39897,6 +42334,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA09_2H.gif",
 		"id": "LOEA09_2H",
 		"name": "Enraged!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Give your hero +5 attack this turn.",
 		"type": "Hero_power"
@@ -39912,6 +42350,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Getting Hungry",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nSummon a Hungry Naga.",
 		"type": "Hero_power"
@@ -39922,6 +42361,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA09_3a.gif",
 		"id": "LOEA09_3a",
 		"name": "Famished",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Quite Hungry.",
 		"type": "Enchantment"
@@ -39932,6 +42372,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA09_3aH.gif",
 		"id": "LOEA09_3aH",
 		"name": "Famished",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Quite Hungry.",
 		"type": "Enchantment"
@@ -39947,6 +42388,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Getting Hungry",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Hungry Naga.",
 		"type": "Hero_power"
@@ -39962,6 +42404,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Getting Hungry",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nSummon a 2/1 Hungry Naga.",
 		"type": "Hero_power"
@@ -39977,6 +42420,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Getting Hungry",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nSummon a 5/1 Hungry Naga.",
 		"type": "Hero_power"
@@ -39992,6 +42436,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Endless Hunger",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nSummon a Hungry Naga.",
 		"type": "Hero_power"
@@ -40006,6 +42451,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA09_4.gif",
 		"id": "LOEA09_4",
 		"name": "Rare Spear",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Whenever your opponent plays a Rare card, gain +1/+1.",
 		"type": "Weapon"
@@ -40020,6 +42466,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA09_4H.gif",
 		"id": "LOEA09_4H",
 		"name": "Rare Spear",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Whenever your opponent plays a Rare card, gain +1/+1.",
 		"type": "Weapon"
@@ -40034,6 +42481,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOEA09_5",
 		"name": "Hungry Naga",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -40047,6 +42495,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOEA09_5H",
 		"name": "Hungry Naga",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -40063,6 +42512,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Slithering Archer",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Battlecry:</b> Deal 1 damage.",
 		"type": "Minion"
@@ -40080,6 +42530,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Slithering Archer",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Battlecry:</b> Deal 2 damage to all enemy minions.",
 		"type": "Minion"
@@ -40098,6 +42549,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Cauldron",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Save Sir Finley and stop the Naga onslaught!",
 		"type": "Minion"
@@ -40108,6 +42560,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA09_7e.gif",
 		"id": "LOEA09_7e",
 		"name": "Cauldron",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Enchantment"
 	},
@@ -40125,6 +42578,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Cauldron",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Save Sir Finley!",
 		"type": "Minion"
@@ -40142,6 +42596,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Slithering Guard",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -40159,6 +42614,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Slithering Guard",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -40171,6 +42627,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA09_9.gif",
 		"id": "LOEA09_9",
 		"name": "Naga Repellent",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Destroy all Hungry Naga.",
 		"type": "Spell"
@@ -40183,6 +42640,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA09_9H.gif",
 		"id": "LOEA09_9H",
 		"name": "Naga Repellent",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Change the Attack of all Hungry Naga to 1.",
 		"type": "Spell"
@@ -40195,6 +42653,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA10_1",
 		"name": "Giantfin",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40206,6 +42665,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA10_1H",
 		"name": "Giantfin",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40220,6 +42680,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Mrglmrgl MRGL!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nDraw cards until you have as many in hand as your opponent.",
 		"type": "Hero_power"
@@ -40235,6 +42696,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Mrglmrgl MRGL!",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nDraw 2 cards.",
 		"type": "Hero_power"
@@ -40252,6 +42714,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOEA10_3",
 		"name": "Murloc Tinyfin",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"set": "Loe",
@@ -40265,6 +42728,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA10_5.gif",
 		"id": "LOEA10_5",
 		"name": "Mrgl Mrgl Nyah Nyah",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "Summon 3 Murlocs that died this game.",
@@ -40278,6 +42742,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA10_5H.gif",
 		"id": "LOEA10_5H",
 		"name": "Mrgl Mrgl Nyah Nyah",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Loe",
 		"text": "Summon 5 Murlocs that died this game.",
@@ -40291,6 +42756,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA12_1",
 		"name": "Lady Naz'jar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40302,6 +42768,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA12_1H",
 		"name": "Lady Naz'jar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40313,6 +42780,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA12_2.gif",
 		"id": "LOEA12_2",
 		"name": "Pearl of the Tides",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, replace all minions with new ones that cost (1) more.",
 		"type": "Hero_power"
@@ -40325,6 +42793,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA12_2H.gif",
 		"id": "LOEA12_2H",
 		"name": "Pearl of the Tides",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, replace all minions with new ones. Yours cost (1) more.",
 		"type": "Hero_power"
@@ -40337,6 +42806,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA13_1",
 		"name": "Skelesaurus Hex",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40348,6 +42818,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA13_1h",
 		"name": "Skelesaurus Hex",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40362,6 +42833,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Ancient Power",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nGive each player a random card. It costs (0).",
 		"type": "Hero_power"
@@ -40377,6 +42849,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Ancient Power",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nAdd a random card to your hand. It costs (0).",
 		"type": "Hero_power"
@@ -40389,6 +42862,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA14_1",
 		"name": "The Steel Sentinel",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40400,6 +42874,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA14_1H",
 		"name": "The Steel Sentinel",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40411,6 +42886,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA14_2.gif",
 		"id": "LOEA14_2",
 		"name": "Platemail Armor",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\nYour Hero can only take 1 damage at a time.",
 		"type": "Hero_power"
@@ -40423,6 +42899,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA14_2H.gif",
 		"id": "LOEA14_2H",
 		"name": "Platemail Armor",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\nYour Hero and your minions can only take 1 damage at a time.",
 		"type": "Hero_power"
@@ -40435,6 +42912,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA15_1",
 		"name": "Rafaam",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40446,6 +42924,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA15_1H",
 		"name": "Rafaam",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40457,6 +42936,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA15_2.gif",
 		"id": "LOEA15_2",
 		"name": "Unstable Portal",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nAdd a random minion to your hand. It costs (3) less.",
 		"type": "Hero_power"
@@ -40472,6 +42952,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Unstable Portal",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Hero Power</b>\nAdd a random minion to your hand. It costs (3) less.",
 		"type": "Hero_power"
@@ -40489,6 +42970,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Boneraptor",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Battlecry:</b>Take control of your opponent's weapon.",
 		"type": "Minion"
@@ -40506,6 +42988,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Boneraptor",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Battlecry:</b>Take control of your opponent's weapon.",
 		"type": "Minion"
@@ -40529,6 +43012,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA16_1",
 		"name": "Rafaam",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40540,6 +43024,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_10.gif",
 		"id": "LOEA16_10",
 		"name": "Hakkari Blood Goblet",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Transform a minion into a 2/1 Pit Snake.",
 		"type": "Spell"
@@ -40555,6 +43040,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Crown of Kael'thas",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Deal $10 damage randomly split among ALL characters.",
 		"type": "Spell"
@@ -40567,6 +43053,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_12.gif",
 		"id": "LOEA16_12",
 		"name": "Medivh's Locket",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Replace your hand with Unstable Portals.",
 		"type": "Spell"
@@ -40579,6 +43066,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_13.gif",
 		"id": "LOEA16_13",
 		"name": "Eye of Orsis",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DISCOVER"
 		],
@@ -40594,6 +43082,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_14.gif",
 		"id": "LOEA16_14",
 		"name": "Khadgar's Pipe",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Put a random spell into each player's hand.  Yours costs (0).",
 		"type": "Spell"
@@ -40606,6 +43095,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_15.gif",
 		"id": "LOEA16_15",
 		"name": "Ysera's Tear",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Gain 4 Mana Crystals this turn only.",
 		"type": "Spell"
@@ -40630,6 +43120,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_16.gif",
 		"id": "LOEA16_16",
 		"name": "Rummage",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Find an artifact.",
 		"type": "Hero_power"
@@ -40654,6 +43145,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_16H.gif",
 		"id": "LOEA16_16H",
 		"name": "Rummage",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Find an artifact.",
 		"type": "Hero_power"
@@ -40668,6 +43160,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA16_17",
 		"name": "Animated Statue",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -40682,6 +43175,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOEA16_18",
 		"name": "Zinaar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, gain a wish.",
 		"type": "Minion"
@@ -40697,6 +43191,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA16_18H",
 		"name": "Zinaar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, gain a wish.",
 		"type": "Minion"
@@ -40712,6 +43207,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOEA16_19",
 		"name": "Sun Raider Phaerix",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -40733,6 +43229,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Sun Raider Phaerix",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -40759,6 +43256,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOEA16_1H",
 		"name": "Rafaam",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Hero"
 	},
@@ -40771,6 +43269,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOEA16_2",
 		"name": "Staff of Origination",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\nYour hero is <b>Immune</b> while the staff charges.",
 		"type": "Hero_power"
@@ -40783,6 +43282,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_20.gif",
 		"id": "LOEA16_20",
 		"name": "Blessing of the Sun",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -40799,6 +43299,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Blessed",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Immune</b> this turn.",
 		"type": "Enchantment"
@@ -40809,6 +43310,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_20H.gif",
 		"id": "LOEA16_20H",
 		"name": "Blessing of the Sun",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Immune</b>.",
 		"type": "Enchantment"
@@ -40827,6 +43329,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Chieftain Scarvash",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Enemy cards cost (1) more.",
 		"type": "Minion"
@@ -40845,6 +43348,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Chieftain Scarvash",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Enemy cards cost (2) more.",
 		"type": "Minion"
@@ -40860,6 +43364,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOEA16_22",
 		"name": "Archaedas",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, turn a random enemy minion into a 0/2 Statue.",
 		"type": "Minion"
@@ -40875,6 +43380,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA16_22H",
 		"name": "Archaedas",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, turn a random enemy minion into a 0/2 Statue.",
 		"type": "Minion"
@@ -40890,6 +43396,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOEA16_23",
 		"name": "Lord Slitherspear",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, summon 1/1 Hungry Naga for each enemy minion.",
 		"type": "Minion"
@@ -40905,6 +43412,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA16_23H",
 		"name": "Lord Slitherspear",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, summon 1/1 Hungry Naga for each enemy minion.",
 		"type": "Minion"
@@ -40920,6 +43428,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOEA16_24",
 		"name": "Giantfin",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"set": "Loe",
 		"text": "At the end of your turn, draw until you have as many cards as your opponent.",
@@ -40936,6 +43445,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA16_24H",
 		"name": "Giantfin",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"set": "Loe",
 		"text": "At the end of your turn, draw 2 cards.",
@@ -40952,6 +43462,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOEA16_25",
 		"name": "Lady Naz'jar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, replace all other minions with new ones of the same Cost.",
 		"type": "Minion"
@@ -40967,6 +43478,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA16_25H",
 		"name": "Lady Naz'jar",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, replace all other minions with new ones of the same Cost.",
 		"type": "Minion"
@@ -40982,6 +43494,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOEA16_26",
 		"name": "Skelesaurus Hex",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, give each player a random card. It costs (0).",
 		"type": "Minion"
@@ -40997,6 +43510,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA16_26H",
 		"name": "Skelesaurus Hex",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "At the end of your turn, put a random card in your hand. It costs (0).",
 		"type": "Minion"
@@ -41012,6 +43526,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOEA16_27",
 		"name": "The Steel Sentinel",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "This minion can only take 1 damage at a time.",
 		"type": "Minion"
@@ -41027,6 +43542,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOEA16_27H",
 		"name": "The Steel Sentinel",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "This minion can only take 1 damage at a time.",
 		"type": "Minion"
@@ -41040,6 +43556,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOEA16_2H",
 		"name": "Staff of Origination",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "<b>Passive Hero Power</b>\nYour hero is <b>Immune</b>.",
 		"type": "Hero_power"
@@ -41052,6 +43569,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_3.gif",
 		"id": "LOEA16_3",
 		"name": "Lantern of Power",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Give a minion +10/+10.",
 		"type": "Spell"
@@ -41062,6 +43580,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_3e.gif",
 		"id": "LOEA16_3e",
 		"name": "Lantern of Power",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "+10/+10.",
 		"type": "Enchantment"
@@ -41077,6 +43596,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Timepiece of Horror",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Deal $10 damage randomly split among all enemies.",
 		"type": "Spell"
@@ -41089,6 +43609,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_5.gif",
 		"id": "LOEA16_5",
 		"name": "Mirror of Doom",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Fill your board with 3/3 Mummy Zombies.",
 		"type": "Spell"
@@ -41103,6 +43624,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOEA16_5t",
 		"name": "Mummy Zombie",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"type": "Minion"
 	},
@@ -41114,6 +43636,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_6.gif",
 		"id": "LOEA16_6",
 		"name": "Shard of Sulfuras",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Deal $5 damage to ALL characters.",
 		"type": "Spell"
@@ -41126,6 +43649,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_7.gif",
 		"id": "LOEA16_7",
 		"name": "Benediction Splinter",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Restore #10 Health to ALL characters.",
 		"type": "Spell"
@@ -41138,6 +43662,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_8.gif",
 		"id": "LOEA16_8",
 		"name": "Putress' Vial",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Destroy a random enemy minion.",
 		"type": "Spell"
@@ -41148,6 +43673,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_8a.gif",
 		"id": "LOEA16_8a",
 		"name": "Putressed",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Attack and Health swapped.",
 		"type": "Enchantment"
@@ -41160,6 +43686,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA16_9.gif",
 		"id": "LOEA16_9",
 		"name": "Lothar's Left Greave",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Deal $3 damage to all enemies.",
 		"type": "Spell"
@@ -41172,6 +43699,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA_01.gif",
 		"id": "LOEA_01",
 		"name": "Looming Presence",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Draw 2 cards. Gain 4 Armor.",
 		"type": "Spell"
@@ -41184,6 +43712,7 @@ var parseCardsText = {
 		"goldenImage": "LOEA_01H.gif",
 		"id": "LOEA_01H",
 		"name": "Looming Presence",
+		"playerClass": "Neutral",
 		"set": "Loe",
 		"text": "Draw 3 cards. Gain 6 Armor.",
 		"type": "Spell"
@@ -41199,6 +43728,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_008.gif",
 		"id": "LOOT_008",
 		"name": "Psychic Scream",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "Shuffle all minions into your opponent's deck.",
@@ -41210,6 +43740,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_010e.gif",
 		"id": "LOOT_010e",
 		"name": "Shadowy",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "1/1.",
 		"type": "Enchantment"
@@ -41231,6 +43762,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Vulgar Homunculus",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -41253,6 +43785,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kobold Librarian",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Draw a card. Deal 2 damage to your hero.",
@@ -41270,6 +43803,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_017.gif",
 		"id": "LOOT_017",
 		"name": "Dark Pact",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Destroy a friendly minion. Restore #8 Health to your hero.",
@@ -41291,6 +43825,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Hooked Reaver",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -41307,6 +43842,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_018e.gif",
 		"id": "LOOT_018e",
 		"name": "Hooked Horror",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+3/+3.\n<b>Taunt</b>",
 		"type": "Enchantment"
@@ -41327,6 +43863,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fal'dorei Strider",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "[x]<b>Battlecry:</b> Shuffle 3\nAmbushes into your deck.\nWhen drawn, summon\na 4/4 Spider.",
@@ -41344,6 +43881,7 @@ var parseCardsText = {
 			"TOPDECK"
 		],
 		"name": "Spider Ambush!",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "Summon a 4/4 Spider. Draw a card.\nCast this when drawn.",
 		"type": "Spell"
@@ -41359,6 +43897,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOT_026t",
 		"name": "Leyline Spider",
+		"playerClass": "Rogue",
 		"race": "BEAST",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -41379,6 +43918,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Cavern Shinyfinder",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Draw a weapon from your deck.",
@@ -41397,6 +43937,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOT_041",
 		"name": "Kobold Barbarian",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "At the start of your turn, attack a random enemy.",
@@ -41416,6 +43957,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Lesser Amethyst Spellstone",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Lifesteal.</b> Deal $3 damage to a minion. <i>(Take damage from your cards to upgrade.)</i>",
@@ -41433,6 +43975,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Amethyst Spellstone",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Lifesteal.</b> Deal $5 damage to a minion. <i>(Take damage from your cards to upgrade.)</i>",
@@ -41450,6 +43993,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Greater Amethyst Spellstone",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Lifesteal.</b> Deal $7 damage to a minion.",
@@ -41468,6 +44012,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_044.gif",
 		"id": "LOOT_044",
 		"name": "Bladed Gauntlet",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "Has Attack equal to your Armor. Can't attack heroes.",
@@ -41484,6 +44029,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_047.gif",
 		"id": "LOOT_047",
 		"name": "Barkskin",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Give a minion +3 Health. Gain 3 Armor.",
@@ -41496,6 +44042,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_047e.gif",
 		"id": "LOOT_047e",
 		"name": "Barkskin",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+3 Health.",
 		"type": "Enchantment"
@@ -41516,6 +44063,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Ironwood Golem",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>\nCan only attack if you have 3 or more Armor.",
@@ -41532,6 +44080,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_051.gif",
 		"id": "LOOT_051",
 		"name": "Lesser Jasper Spellstone",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Deal $2 damage to a minion. @<i>(Gain 3 Armor to upgrade.)</i>",
@@ -41546,6 +44095,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_051t1.gif",
 		"id": "LOOT_051t1",
 		"name": "Jasper Spellstone",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Deal $4 damage to a minion.",
@@ -41560,6 +44110,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_051t2.gif",
 		"id": "LOOT_051t2",
 		"name": "Greater Jasper Spellstone",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Deal $6 damage to a minion.",
@@ -41581,6 +44132,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_054.gif",
 		"id": "LOOT_054",
 		"name": "Branching Paths",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "[x]<b>Choose Twice -</b> Draw a\ncard; Give your minions \n+1 Attack; Gain 6 Armor.",
@@ -41595,6 +44147,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_054b.gif",
 		"id": "LOOT_054b",
 		"name": "Explore the Darkness",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"text": "Give your minions +1 Attack.",
 		"type": "Spell"
@@ -41606,6 +44159,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_054be.gif",
 		"id": "LOOT_054be",
 		"name": "Fearless",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+1 Attack.",
 		"type": "Enchantment"
@@ -41619,6 +44173,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_054c.gif",
 		"id": "LOOT_054c",
 		"name": "Loot the Chest",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"text": "Gain 6 Armor.",
 		"type": "Spell"
@@ -41632,6 +44187,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_054d.gif",
 		"id": "LOOT_054d",
 		"name": "Eat the Mushroom",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"text": "Draw a card.",
 		"type": "Spell"
@@ -41652,6 +44208,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Astral Tiger",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Shuffle a\n copy of this minion into your deck.",
@@ -41672,6 +44229,7 @@ var parseCardsText = {
 		],
 		"name": "Crushing Hand",
 		"overload": 3,
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Deal $8 damage to a minion. <b><b>Overload</b>:</b> (3)",
@@ -41699,6 +44257,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kobold Hermit",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Choose a basic Totem. Summon it.",
@@ -41715,6 +44274,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_064.gif",
 		"id": "LOOT_064",
 		"name": "Lesser Sapphire Spellstone",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"referencedTags": [
 			"OVERLOAD"
@@ -41732,6 +44292,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_064t1.gif",
 		"id": "LOOT_064t1",
 		"name": "Sapphire Spellstone",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"referencedTags": [
 			"OVERLOAD"
@@ -41749,6 +44310,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_064t2.gif",
 		"id": "LOOT_064t2",
 		"name": "Greater Sapphire Spellstone",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Summon 3 copies of a friendly minion.",
@@ -41770,6 +44332,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Sewer Crawler",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Summon a 2/3 Giant Rat.",
@@ -41786,6 +44349,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOOT_069t",
 		"name": "Giant Rat",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -41801,6 +44365,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_077.gif",
 		"id": "LOOT_077",
 		"name": "Flanking Strike",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Deal $3 damage to a minion. Summon a 3/3 Wolf.",
@@ -41817,6 +44382,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOOT_077t",
 		"name": "Wolf",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -41834,6 +44400,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOT_078",
 		"name": "Cave Hydra",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -41854,6 +44421,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Wandering Monster",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Secret:</b> When an enemy attacks your hero, summon a 3-Cost minion as the new target.",
@@ -41870,6 +44438,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_080.gif",
 		"id": "LOOT_080",
 		"name": "Lesser Emerald Spellstone",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Summon two 3/3 Wolves. <i>(Play a <b>Secret</b> to upgrade.)</i>",
@@ -41884,6 +44453,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_080t2.gif",
 		"id": "LOOT_080t2",
 		"name": "Emerald Spellstone",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Summon three 3/3 Wolves. <i>(Play a <b>Secret</b> to upgrade.)</i>",
@@ -41898,6 +44468,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_080t3.gif",
 		"id": "LOOT_080t3",
 		"name": "Greater Emerald Spellstone",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Summon four 3/3 Wolves.",
@@ -41920,6 +44491,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Rhok'delar",
+		"playerClass": "Hunter",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> If your deck has no minions, fill your hand with Hunter spells.",
@@ -41936,6 +44508,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_088.gif",
 		"id": "LOOT_088",
 		"name": "Potion of Heroism",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -41955,6 +44528,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_091.gif",
 		"id": "LOOT_091",
 		"name": "Lesser Pearl Spellstone",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -41977,6 +44551,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Guardian Spirit",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -41990,6 +44565,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_091t1.gif",
 		"id": "LOOT_091t1",
 		"name": "Pearl Spellstone",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -42012,6 +44588,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Guardian Spirit",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -42025,6 +44602,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_091t2.gif",
 		"id": "LOOT_091t2",
 		"name": "Greater Pearl Spellstone",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -42047,6 +44625,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Guardian Spirit",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -42062,6 +44641,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_093.gif",
 		"id": "LOOT_093",
 		"name": "Call to Arms",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"referencedTags": [
 			"RECRUIT"
@@ -42085,6 +44665,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Explosive Runes",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Secret:</b> After your opponent plays a minion, deal $6 damage to it and any excess to their hero.",
@@ -42101,6 +44682,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_103.gif",
 		"id": "LOOT_103",
 		"name": "Lesser Ruby Spellstone",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Add 1 random Mage spell to your hand. @<i>(Play 2 Elementals to upgrade.)</i>",
@@ -42115,6 +44697,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_103t1.gif",
 		"id": "LOOT_103t1",
 		"name": "Ruby Spellstone",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Add 2 random Mage spells to your hand.",
@@ -42129,6 +44712,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_103t2.gif",
 		"id": "LOOT_103t2",
 		"name": "Greater Ruby Spellstone",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Add 3 random Mage spells to your hand.",
@@ -42146,6 +44730,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOT_104",
 		"name": "Shifting Scroll",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Each turn this is in your hand, transform it into a random Mage spell.",
@@ -42158,6 +44743,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_104e.gif",
 		"id": "LOOT_104e",
 		"name": "Shifting",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"text": "Transforming into random Mage spells.",
 		"type": "Enchantment"
@@ -42173,6 +44759,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_106.gif",
 		"id": "LOOT_106",
 		"name": "Deck of Wonders",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "Shuffle 5 Scrolls into your deck. When drawn, cast a random spell.",
@@ -42190,6 +44777,7 @@ var parseCardsText = {
 			"TOPDECK"
 		],
 		"name": "Scroll of Wonder",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"text": "Cast a random spell. Draw a card.\nCast this when drawn.",
 		"type": "Spell"
@@ -42211,6 +44799,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Aluneth",
+		"playerClass": "Mage",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "At the end of your turn, draw 3 cards.",
@@ -42232,6 +44821,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Scorp-o-matic",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
@@ -42255,6 +44845,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Wax Elemental",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -42277,6 +44868,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ebon Dragonsmith",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
@@ -42290,6 +44882,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_118e.gif",
 		"id": "LOOT_118e",
 		"name": "Smithing",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Cost reduced.",
 		"type": "Enchantment"
@@ -42311,6 +44904,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Corrosive Sludge",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Destroy your opponent's weapon.",
@@ -42332,6 +44926,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Lone Champion",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DIVINE_SHIELD",
@@ -42348,6 +44943,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_124e.gif",
 		"id": "LOOT_124e",
 		"name": "Lonely",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b> and <b>Divine Shield</b>.",
 		"type": "Enchantment"
@@ -42369,6 +44965,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Stoneskin Basilisk",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -42388,6 +44985,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOT_130",
 		"name": "Arcane Tyrant",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
@@ -42407,6 +45005,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOOT_131",
 		"name": "Green Jelly",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"TAUNT"
@@ -42429,6 +45028,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Green Ooze",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -42449,6 +45049,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dragonslayer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Deal 6 damage to a Dragon.",
@@ -42467,6 +45068,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOT_134",
 		"name": "Toothy Chest",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "At the start of your turn, set this minion's Attack to 4.",
@@ -42479,6 +45081,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_134e.gif",
 		"id": "LOOT_134e",
 		"name": "Toothy",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Attack set to 4.",
 		"type": "Enchantment"
@@ -42500,6 +45103,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Sneaky Devil",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -42513,6 +45117,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_136e.gif",
 		"id": "LOOT_136e",
 		"name": "Devilish Power",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Sneaky Devil is granting this minion +1 Attack.",
 		"type": "Enchantment"
@@ -42533,6 +45138,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Sleepy Dragon",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -42555,6 +45161,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Hoarding Dragon",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -42574,6 +45181,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOOT_149",
 		"name": "Corridor Creeper",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
@@ -42587,6 +45195,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_149e.gif",
 		"id": "LOOT_149e",
 		"name": "Creepier",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Costs (1) less.",
 		"type": "Enchantment"
@@ -42608,6 +45217,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Furbolg Mossbinder",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Transform a friendly minion into a 6/6 Elemental.",
@@ -42624,6 +45234,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOOT_150t1",
 		"name": "Moss Elemental",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -42645,6 +45256,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Boisterous Bard",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Give your other minions +1 Health.",
@@ -42657,6 +45269,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_152e.gif",
 		"id": "LOOT_152e",
 		"name": "Inspired",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+1 Health.",
 		"type": "Enchantment"
@@ -42677,6 +45290,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Violet Wurm",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -42694,6 +45308,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOOT_153t1",
 		"name": "Grub",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -42714,6 +45329,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gravelsnout Knight",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Summon a random 1-Cost minion for your opponent.",
@@ -42736,6 +45352,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Carnivorous Cube",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Destroy\na friendly minion.\n<b>Deathrattle:</b> Summon 2 copies of it.",
@@ -42748,6 +45365,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_161e.gif",
 		"id": "LOOT_161e",
 		"name": "Carnivorous Cube",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Destroyed {0}.",
 		"type": "Enchantment"
@@ -42766,6 +45384,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "LOOT_165",
 		"name": "Sonya Shadowdancer",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "After a friendly minion dies, add a 1/1 copy of it to your hand. It costs (1).",
@@ -42778,6 +45397,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_165e.gif",
 		"id": "LOOT_165e",
 		"name": "Sonya's Shadow",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Sonya Shadowdancer made this 1/1.",
 		"type": "Enchantment"
@@ -42798,6 +45418,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fungalmancer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Give adjacent minions +2/+2.",
@@ -42810,6 +45431,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_167e.gif",
 		"id": "LOOT_167e",
 		"name": "Magic Mushroom",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -42830,6 +45452,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Raven Familiar",
+		"playerClass": "Mage",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -42847,6 +45470,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_172.gif",
 		"id": "LOOT_172",
 		"name": "Dragon's Fury",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "Reveal a spell from your deck. Deal damage equal to its Cost to all minions.",
@@ -42868,6 +45492,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Silver Vanguard",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"RECRUIT"
@@ -42887,6 +45512,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_187.gif",
 		"id": "LOOT_187",
 		"name": "Twilight's Call",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -42902,6 +45528,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_187e.gif",
 		"id": "LOOT_187e",
 		"name": "Shadowy",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "1/1.",
 		"type": "Enchantment"
@@ -42919,6 +45546,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOOT_193",
 		"name": "Shimmering Courser",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
@@ -42936,6 +45564,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_203.gif",
 		"id": "LOOT_203",
 		"name": "Lesser Mithril Spellstone",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Summon one 5/5 Mithril Golem. <i>(Equip a weapon to upgrade.)</i>",
@@ -42950,6 +45579,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_203t2.gif",
 		"id": "LOOT_203t2",
 		"name": "Mithril Spellstone",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Summon two 5/5 Mithril Golems. <i>(Equip a weapon to upgrade.)</i>",
@@ -42964,6 +45594,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_203t3.gif",
 		"id": "LOOT_203t3",
 		"name": "Greater Mithril Spellstone",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Summon three 5/5 Mithril Golems.",
@@ -42980,6 +45611,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOOT_203t4",
 		"name": "Mithril Golem",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Minion"
 	},
@@ -42997,6 +45629,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Cheat Death",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Secret:</b> When a friendly minion dies, return it to your hand.\nIt costs (2) less.",
@@ -43009,6 +45642,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_204e.gif",
 		"id": "LOOT_204e",
 		"name": "Close Call",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Costs (2) less.",
 		"type": "Enchantment"
@@ -43027,6 +45661,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_209.gif",
 		"id": "LOOT_209",
 		"name": "Dragon Soul",
+		"playerClass": "Priest",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "After you cast 3 spells in a turn, summon a 5/5 Dragon.",
@@ -43043,6 +45678,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOOT_209t",
 		"name": "Dragon Spirit",
+		"playerClass": "Priest",
 		"race": "DRAGON",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -43061,6 +45697,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Sudden Betrayal",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Secret:</b> When a minion attacks your hero, instead it attacks one of its neighbors.",
@@ -43082,6 +45719,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Elven Minstrel",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Combo:</b> Draw 2 minions from your deck.",
@@ -43101,6 +45739,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Evasion",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "<b>Secret:</b> After your hero takes damage, become <b>Immune</b> this turn.",
@@ -43116,6 +45755,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Evasive",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Immune</b> until end of turn.",
 		"type": "Enchantment"
@@ -43137,6 +45777,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Lynessa Sunsorrow",
+		"playerClass": "Paladin",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "[x]<b>Battlecry:</b> Cast each spell\nyou cast on your minions\n this game on this one.",
@@ -43149,6 +45790,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_216e.gif",
 		"id": "LOOT_216e",
 		"name": "Light of the Exarch",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Spell cast on minion.",
 		"type": "Enchantment"
@@ -43169,6 +45811,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_217.gif",
 		"id": "LOOT_217",
 		"name": "To My Side!",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "[x]Summon an Animal\nCompanion, or 2 if your\ndeck has no minions.",
@@ -43187,6 +45830,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOOT_218",
 		"name": "Feral Gibberer",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "After this minion attacks a hero, add a copy of it to your hand.",
@@ -43205,6 +45849,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_222.gif",
 		"id": "LOOT_222",
 		"name": "Candleshot",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"referencedTags": [
 			"IMMUNE"
@@ -43226,6 +45871,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "LOOT_231",
 		"name": "Arcane Artificer",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -43248,6 +45894,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Cursed Disciple",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Summon a 5/1 Revenant.",
@@ -43264,6 +45911,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOOT_233t",
 		"name": "Cursed Revenant",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"type": "Minion"
 	},
@@ -43280,6 +45928,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOOT_258",
 		"name": "Dire Mole",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -43302,6 +45951,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278.gif",
 		"id": "LOOT_278",
 		"name": "Unidentified Elixir",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Give a minion +2/+2. Gains a bonus effect in your hand.",
@@ -43313,6 +45963,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278e.gif",
 		"id": "LOOT_278e",
 		"name": "Tastes Like ????",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -43326,6 +45977,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278t1.gif",
 		"id": "LOOT_278t1",
 		"name": "Elixir of Life",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Give a minion +2/+2 and <b>Lifesteal</b>.",
@@ -43341,6 +45993,7 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"name": "Sanguine",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+2/+2 and <b>Lifesteal</b>.",
 		"type": "Enchantment"
@@ -43354,6 +46007,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278t2.gif",
 		"id": "LOOT_278t2",
 		"name": "Elixir of Purity",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Give a minion +2/+2 and <b>Divine Shield</b>.",
@@ -43366,6 +46020,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278t2e.gif",
 		"id": "LOOT_278t2e",
 		"name": "Pure",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+2/+2 and <b>Divine Shield</b>.",
 		"type": "Enchantment"
@@ -43379,6 +46034,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278t3.gif",
 		"id": "LOOT_278t3",
 		"name": "Elixir of Shadows",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Give a minion +2/+2. Summon a 1/1 copy of it.",
@@ -43391,6 +46047,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278t3e.gif",
 		"id": "LOOT_278t3e",
 		"name": "Shadowtouched",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -43402,6 +46059,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278t3e2.gif",
 		"id": "LOOT_278t3e2",
 		"name": "Shadowy",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "1/1.",
 		"type": "Enchantment"
@@ -43415,6 +46073,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278t4.gif",
 		"id": "LOOT_278t4",
 		"name": "Elixir of Hope",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "[x]Give a minion +2/+2\nand \"<b>Deathrattle:</b> Return\nthis minion to your hand.\"",
@@ -43427,6 +46086,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_278t4e.gif",
 		"id": "LOOT_278t4e",
 		"name": "Hopeful",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+2/+2. <b>Deathrattle:</b> Return this minion to your hand.",
 		"type": "Enchantment"
@@ -43448,6 +46108,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_285.gif",
 		"id": "LOOT_285",
 		"name": "Unidentified Shield",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Gain 5 Armor.\nGains a bonus effect in your hand.",
@@ -43462,6 +46123,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_285t.gif",
 		"id": "LOOT_285t",
 		"name": "Tower Shield +10",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Gain 5 Armor.\nGain 10 more Armor.",
@@ -43476,6 +46138,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_285t2.gif",
 		"id": "LOOT_285t2",
 		"name": "Serrated Shield",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Gain 5 Armor.\nDeal 5 damage.",
@@ -43490,6 +46153,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_285t3.gif",
 		"id": "LOOT_285t3",
 		"name": "Runed Shield",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Gain 5 Armor.\nSummon a 5/5 Golem.",
@@ -43506,6 +46170,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOOT_285t3t",
 		"name": "Iron Golem",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Minion"
 	},
@@ -43518,6 +46183,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_285t4.gif",
 		"id": "LOOT_285t4",
 		"name": "Spiked Shield",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Gain 5 Armor.\nEquip a 5/2 weapon.",
@@ -43534,6 +46200,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_285t4t.gif",
 		"id": "LOOT_285t4t",
 		"name": "Spiked Shield",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Weapon"
 	},
@@ -43556,6 +46223,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_286.gif",
 		"id": "LOOT_286",
 		"name": "Unidentified Maul",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Gains a bonus effect in your hand.",
@@ -43575,6 +46243,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Champion's Maul",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Summon two 1/1 Silver Hand Recruits.",
@@ -43594,6 +46263,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Sacred Maul",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Give your minions <b>Taunt</b>.",
@@ -43613,6 +46283,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Blessed Maul",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Give your minions +1 Attack.",
@@ -43625,6 +46296,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_286t3e.gif",
 		"id": "LOOT_286t3e",
 		"name": "Holy Blessings",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+1 Attack.",
 		"type": "Enchantment"
@@ -43643,6 +46315,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Purifier's Maul",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Give your minions <b>Divine Shield</b>.",
@@ -43664,6 +46337,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shroom Brewer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Restore 4 Health.",
@@ -43685,6 +46359,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Possessed Lackey",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"referencedTags": [
 			"RECRUIT"
@@ -43704,6 +46379,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_309.gif",
 		"id": "LOOT_309",
 		"name": "Oaken Summons",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"referencedTags": [
 			"RECRUIT"
@@ -43728,6 +46404,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Crystal Lion",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "[x]<b>Divine Shield</b>\nCosts (1) less for each Silver\nHand Recruit you control.",
@@ -43750,6 +46427,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Grizzled Guardian",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -43776,6 +46454,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Trogg Gloomeater",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>\n<b>Poisonous</b>",
@@ -43795,6 +46474,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOT_329",
 		"name": "Ixlid, Fungal Lord",
+		"playerClass": "Druid",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
@@ -43812,6 +46492,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_333.gif",
 		"id": "LOOT_333",
 		"name": "Level Up!",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"referencedTags": [
 			"TAUNT"
@@ -43827,6 +46508,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_333e.gif",
 		"id": "LOOT_333e",
 		"name": "+1 Level!",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+2/+2 and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -43842,6 +46524,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_344.gif",
 		"id": "LOOT_344",
 		"name": "Primal Talismans",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -43857,6 +46540,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_344e.gif",
 		"id": "LOOT_344e",
 		"name": "Primal Talisman",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Summon a random basic Totem.",
 		"type": "Enchantment"
@@ -43877,6 +46561,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kobold Apprentice",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Deal 3 damage randomly split among all enemies.",
@@ -43898,6 +46583,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Greedy Sprite",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Gain an empty Mana Crystal.",
@@ -43914,6 +46600,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_353.gif",
 		"id": "LOOT_353",
 		"name": "Psionic Probe",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Copy a spell in your opponent's deck and add it to your hand.",
@@ -43936,6 +46623,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Marin the Fox",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Summon a 0/8 Treasure Chest for your opponent. <i>(Break it for awesome loot!)</i>",
@@ -43962,6 +46650,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Master Chest",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Give your opponent a fantastic treasure!",
 		"type": "Minion"
@@ -43983,6 +46672,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Grumble, Worldshaker",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
@@ -43996,6 +46686,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_358e.gif",
 		"id": "LOOT_358e",
 		"name": "Grumbly Tumbly",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Costs (1).",
 		"type": "Enchantment"
@@ -44016,6 +46707,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Drygulch Jailor",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Add 3 Silver Hand Recruits to your hand.",
@@ -44032,6 +46724,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_364.gif",
 		"id": "LOOT_364",
 		"name": "Reckless Flurry",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "Spend all your Armor. Deal that much damage to all minions.",
@@ -44053,6 +46746,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Gemstudded Golem",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>\nCan only attack if you have 5 or more Armor.",
@@ -44074,6 +46768,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Drywhisker Armorer",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> For each enemy minion, gain 2 Armor.",
@@ -44096,6 +46791,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Voidlord",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
@@ -44113,6 +46809,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_370.gif",
 		"id": "LOOT_370",
 		"name": "Gather Your Party",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"referencedTags": [
 			"RECRUIT"
@@ -44135,6 +46832,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Healing Rain",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "Restore #12 Health randomly split among all friendly characters.",
@@ -44156,6 +46854,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Guild Recruiter",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"RECRUIT"
@@ -44178,6 +46877,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_380.gif",
 		"id": "LOOT_380",
 		"name": "Woecleaver",
+		"playerClass": "Warrior",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"RECRUIT"
@@ -44199,6 +46899,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOOT_382",
 		"name": "Kobold Monk",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Your hero can't be targeted by spells or Hero Powers.",
@@ -44221,6 +46922,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Hungry Ettin",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Summon a random 2-Cost minion for your opponent.",
@@ -44242,6 +46944,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fungal Enchanter",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Restore 2 Health to all friendly characters.",
@@ -44263,6 +46966,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Rummaging Kobold",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Return one of your destroyed weapons to your hand.",
@@ -44285,6 +46989,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Twig of the World Tree",
+		"playerClass": "Druid",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Gain 10 Mana Crystals.",
@@ -44303,6 +47008,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "LOOT_394",
 		"name": "Shrieking Shroom",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "At the end of your turn, summon a random\n1-Cost minion.",
@@ -44321,6 +47027,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOT_398",
 		"name": "Benevolent Djinn",
+		"playerClass": "Paladin",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -44343,6 +47050,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Duskbreaker",
+		"playerClass": "Priest",
 		"race": "DRAGON",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
@@ -44366,6 +47074,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Kobold Illusionist",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Summon a 1/1 copy of a minion from your hand.",
@@ -44378,6 +47087,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_412e.gif",
 		"id": "LOOT_412e",
 		"name": "Shadowy",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "1/1.",
 		"type": "Enchantment"
@@ -44398,6 +47108,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Plated Beetle",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Lootapalooza",
@@ -44417,6 +47128,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "LOOT_414",
 		"name": "Grand Archivist",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "At the end of your turn, cast a spell from your deck <i>(targets chosen randomly)</i>.",
@@ -44440,6 +47152,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Rin, the First Disciple",
+		"playerClass": "Warlock",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Add 'The First Seal' to your hand.",
@@ -44454,6 +47167,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_415t1.gif",
 		"id": "LOOT_415t1",
 		"name": "The First Seal",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"text": "Summon a 2/2 Demon. Add 'The Second Seal' to your hand.",
 		"type": "Spell"
@@ -44469,6 +47183,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "LOOT_415t1t",
 		"name": "Felhunter",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -44482,6 +47197,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_415t2.gif",
 		"id": "LOOT_415t2",
 		"name": "The Second Seal",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"text": "Summon a 3/3 Demon. Add 'The Third Seal'\nto your hand.",
 		"type": "Spell"
@@ -44497,6 +47213,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOOT_415t2t",
 		"name": "Felhunter",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -44510,6 +47227,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_415t3.gif",
 		"id": "LOOT_415t3",
 		"name": "The Third Seal",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"text": "Summon a 4/4 Demon. Add 'The Fourth Seal' to your hand.",
 		"type": "Spell"
@@ -44525,6 +47243,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOT_415t3t",
 		"name": "Felhunter",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -44538,6 +47257,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_415t4.gif",
 		"id": "LOOT_415t4",
 		"name": "The Fourth Seal",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"text": "Summon a 5/5 Demon. Add 'The Final Seal'\nto your hand.",
 		"type": "Spell"
@@ -44553,6 +47273,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOOT_415t4t",
 		"name": "Felhunter",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -44566,6 +47287,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_415t5.gif",
 		"id": "LOOT_415t5",
 		"name": "The Final Seal",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"text": "[x]Summon a 6/6 Demon.\nAdd 'Azari, the Devourer'\nto your hand.",
 		"type": "Spell"
@@ -44581,6 +47303,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "LOOT_415t5t",
 		"name": "Felhunter",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -44599,6 +47322,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Azari, the Devourer",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Destroy your opponent's deck.",
@@ -44615,6 +47339,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_417.gif",
 		"id": "LOOT_417",
 		"name": "Cataclysm",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "Destroy all minions. Discard your hand.",
@@ -44637,6 +47362,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Skull of the Man'ari",
+		"playerClass": "Warlock",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "At the start of your turn, summon a Demon from your hand.",
@@ -44659,6 +47385,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Val'anyr",
+		"playerClass": "Paladin",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Give a minion in your hand +4/+2. When it dies, reequip this.",
@@ -44673,6 +47400,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_500d.gif",
 		"id": "LOOT_500d",
 		"name": "Val'anyr Reequip Effect Dummy",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"text": "It is a dummy card for holding a effect to play when reequipping Val'anyr (LOOT 500)",
 		"type": "Weapon"
@@ -44683,6 +47411,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_500e.gif",
 		"id": "LOOT_500e",
 		"name": "Wielding Val'anyr",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+4/+2.\n<b>Deathrattle:</b> Equip a 4/2 Val'anyr.",
 		"type": "Enchantment"
@@ -44698,6 +47427,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_503.gif",
 		"id": "LOOT_503",
 		"name": "Lesser Onyx Spellstone",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -44715,6 +47445,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_503t.gif",
 		"id": "LOOT_503t",
 		"name": "Onyx Spellstone",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -44732,6 +47463,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_503t2.gif",
 		"id": "LOOT_503t2",
 		"name": "Greater Onyx Spellstone",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Destroy up to 3 random enemy minions.",
@@ -44748,6 +47480,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_504.gif",
 		"id": "LOOT_504",
 		"name": "Unstable Evolution",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "Transform a friendly minion into\none that costs (1) more. Repeatable this turn.",
@@ -44762,6 +47495,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_504t.gif",
 		"id": "LOOT_504t",
 		"name": "Unstable Evolution",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"text": "Transform a friendly minion into\none that costs (1) more. Repeatable this turn.",
 		"type": "Spell"
@@ -44780,6 +47514,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_506.gif",
 		"id": "LOOT_506",
 		"name": "The Runespear",
+		"playerClass": "Shaman",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"DISCOVER"
@@ -44799,6 +47534,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_507.gif",
 		"id": "LOOT_507",
 		"name": "Lesser Diamond Spellstone",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Resurrect 2 different friendly minions. @<i>(Cast 4 spells to upgrade.)</i>",
@@ -44813,6 +47549,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_507t.gif",
 		"id": "LOOT_507t",
 		"name": "Diamond Spellstone",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Resurrect 3 different friendly minions.",
@@ -44827,6 +47564,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_507t2.gif",
 		"id": "LOOT_507t2",
 		"name": "Greater Diamond Spellstone",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
 		"text": "Resurrect 4 different friendly minions.",
@@ -44850,6 +47588,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Kathrena Winterwisp",
+		"playerClass": "Hunter",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"RECRUIT"
@@ -44875,6 +47614,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Zola the Gorgon",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Choose a friendly minion. Add a Golden copy of it to your hand.",
@@ -44896,6 +47636,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Murmuring Elemental",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
@@ -44909,6 +47650,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_517e.gif",
 		"id": "LOOT_517e",
 		"name": "Murmurs",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Your next <b>Battlecry</b> this turn triggers twice.",
 		"type": "Enchantment"
@@ -44919,6 +47661,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_517e2.gif",
 		"id": "LOOT_517e2",
 		"name": "Murmuring",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Your next <b>Battlecry</b> this turn triggers twice.",
 		"type": "Enchantment"
@@ -44939,6 +47682,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Windshear Stormcaller",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> If you control all 4 basic Totems, summon Al'Akir the Windlord.",
@@ -44958,6 +47702,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "LOOT_519",
 		"name": "Geosculptor Yip",
+		"playerClass": "Warrior",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "At the end of your turn, summon a random minion with Cost equal to your Armor <i>(up to 10)</i>.",
@@ -44979,6 +47724,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Seeping Oozeling",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -44994,6 +47740,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_520e.gif",
 		"id": "LOOT_520e",
 		"name": "Albino Chameleon",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Copied Deathrattle from {0}.",
 		"type": "Enchantment"
@@ -45015,6 +47762,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Master Oakheart",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"RECRUIT"
@@ -45034,6 +47782,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_522.gif",
 		"id": "LOOT_522",
 		"name": "Crushing Walls",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "Destroy your opponent's left and right-most minions.",
@@ -45056,6 +47805,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "The Darkness",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "[x]Starts dormant.\n<b>Battlecry:</b> Shuffle 3 Candles\ninto the enemy deck. When\ndrawn, this awakens.",
@@ -45077,6 +47827,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "The Darkness",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "@",
@@ -45088,6 +47839,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_526et.gif",
 		"id": "LOOT_526et",
 		"name": "Darkness Candle Detect",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"type": "Enchantment"
 	},
@@ -45103,6 +47855,7 @@ var parseCardsText = {
 			"TOPDECK"
 		],
 		"name": "Darkness Candle",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Snuff out a candle. Draw a card.\nCast this when drawn.",
 		"type": "Spell"
@@ -45123,6 +47876,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Twilight Acolyte",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> If you're holding\na Dragon, swap this minion's Attack with another minion's.",
@@ -45135,6 +47889,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_528e.gif",
 		"id": "LOOT_528e",
 		"name": "Twilight Curse",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "Attack was swapped.",
 		"type": "Enchantment"
@@ -45155,6 +47910,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Void Ripper",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
@@ -45168,6 +47924,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_529e.gif",
 		"id": "LOOT_529e",
 		"name": "Void Shift",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Attack and Health have been swapped.",
 		"type": "Enchantment"
@@ -45188,6 +47945,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Gilded Gargoyle",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Add a Coin to your hand.",
@@ -45210,6 +47968,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dragoncaller Alanna",
+		"playerClass": "Mage",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "<b>Battlecry:</b> Summon a 5/5 Dragon for each spell you cast this game that costs (5) or more.",
@@ -45226,6 +47985,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOOT_535t",
 		"name": "Fire Dragon",
+		"playerClass": "Mage",
 		"race": "DRAGON",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -45246,6 +48006,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Leyline Manipulator",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Rare",
 		"set": "Lootapalooza",
@@ -45269,6 +48030,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Temporus",
+		"playerClass": "Priest",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
@@ -45291,6 +48053,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Spiteful Summoner",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Lootapalooza",
 		"text": "[x]<b>Battlecry:</b> Reveal a spell\nfrom your deck. Summon\n a random minion with\nthe same Cost.",
@@ -45309,6 +48072,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOT_540",
 		"name": "Dragonhatcher",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"RECRUIT"
@@ -45334,6 +48098,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "King Togwaggle",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "[x]<b>Battlecry:</b> Swap decks\nwith your opponent.\nGive them a Ransom\nspell to swap back.",
@@ -45348,6 +48113,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_541t.gif",
 		"id": "LOOT_541t",
 		"name": "King's Ransom",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Swap decks with your opponent.",
 		"type": "Spell"
@@ -45370,6 +48136,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Kingsbane",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Lootapalooza",
 		"text": "[x]<b>Deathrattle:</b> Shuffle\nthis into your deck.\nIt keeps any\nenchantments.",
@@ -45381,6 +48148,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_542e.gif",
 		"id": "LOOT_542e",
 		"name": "Kingsbane Shuffle",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "Getting ready to shuffle in.",
 		"type": "Enchantment"
@@ -45394,6 +48162,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_998h.gif",
 		"id": "LOOT_998h",
 		"name": "Tolin's Goblet",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Draw a card. Fill your hand with copies of it.",
 		"type": "Spell"
@@ -45410,6 +48179,7 @@ var parseCardsText = {
 			"DISCOVER"
 		],
 		"name": "Zarog's Crown",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Discover</b> a <b>Legendary</b> minion. Summon two copies of it.",
 		"type": "Spell"
@@ -45430,6 +48200,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Golden Kobold",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Replace your hand with <b>Legendary</b> minions.",
 		"type": "Minion"
@@ -45443,6 +48214,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_998l.gif",
 		"id": "LOOT_998l",
 		"name": "Wondrous Wand",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Draw 3 cards. Reduce their Costs to (0).",
 		"type": "Spell"
@@ -45454,6 +48226,7 @@ var parseCardsText = {
 		"goldenImage": "LOOT_998le.gif",
 		"id": "LOOT_998le",
 		"name": "Wand's Wonder",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Costs (0).",
 		"type": "Enchantment"
@@ -45469,6 +48242,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOOTA_102",
 		"name": "Starving Crab",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Lootapalooza",
 		"text": "At the start of your turn, deal 5 damage to your hero.",
@@ -45488,6 +48262,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Sunken Chest",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "[x]<b>Deathrattle:</b> Add\nTad's Pole to your\nopponent's Dungeon Deck \nand lose the game.",
 		"type": "Minion"
@@ -45503,6 +48278,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "LOOTA_104",
 		"name": "Reverberating Ooze",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "After this minion\nsurvives damage, summon a copy of this minion.",
 		"type": "Minion"
@@ -45521,6 +48297,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Deadly Spore",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Poisonous.</b>\n<b>Poisonous</b> to heroes.",
 		"type": "Minion"
@@ -45536,6 +48313,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "LOOTA_107",
 		"name": "Shroomsayer",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "After this minion\nsurvives damage,\ndestroy all minions.",
 		"type": "Minion"
@@ -45551,6 +48329,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOOTA_109",
 		"name": "Gluttonous Trogg",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Whenever your opponent casts a spell, gain +1/+1.",
 		"type": "Minion"
@@ -45561,6 +48340,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_109e.gif",
 		"id": "LOOTA_109e",
 		"name": "Delicious Magic",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Increased Attack and Health.",
 		"type": "Enchantment"
@@ -45575,6 +48355,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_800",
 		"name": "Potion of Vitality",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive</b>\nDouble your\nstarting Health.",
 		"type": "Spell"
@@ -45589,6 +48370,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_801",
 		"name": "Crystal Gem",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive</b>\nStart with an extra Mana Crystal.",
 		"type": "Spell"
@@ -45603,6 +48385,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_802",
 		"name": "Justicar's Ring",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive</b>\nYour Hero Power is upgraded and costs (1).",
 		"type": "Spell"
@@ -45613,6 +48396,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_802e.gif",
 		"id": "LOOTA_802e",
 		"name": "Justicar's Ring Enchantment",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Your Hero Power costs (1).",
 		"type": "Enchantment"
@@ -45627,6 +48411,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_803",
 		"name": "Scepter of Summoning",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive</b>\nYour minions that\ncost (5) or more\ncost (5).",
 		"type": "Spell"
@@ -45637,6 +48422,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_803e.gif",
 		"id": "LOOTA_803e",
 		"name": "Scepter of Summoning Enchantment",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"type": "Enchantment"
 	},
@@ -45650,6 +48436,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_804",
 		"name": "Small Backpacks",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive</b>\nAt the start of the game, draw 2 cards.",
 		"type": "Spell"
@@ -45663,6 +48450,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_805.gif",
 		"id": "LOOTA_805",
 		"name": "Amulet of Domination",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Take control of an enemy minion. Add it to your Dungeon Deck.",
 		"type": "Spell"
@@ -45679,6 +48467,7 @@ var parseCardsText = {
 			"SILENCE"
 		],
 		"name": "Wand of Disintegration",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Silence</b> and destroy all enemy minions.",
 		"type": "Spell"
@@ -45692,6 +48481,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_811.gif",
 		"id": "LOOTA_811",
 		"name": "Orb of Destruction",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Destroy 2 of your opponent's Mana Crystals and they discard 2 cards.",
 		"type": "Spell"
@@ -45705,6 +48495,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_812.gif",
 		"id": "LOOTA_812",
 		"name": "Boots of Haste",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Your minions cost (0) this turn.",
 		"type": "Spell"
@@ -45718,6 +48509,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Boots of Haste Enchantment",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Your minions cost (0) this turn.",
 		"type": "Enchantment"
@@ -45731,6 +48523,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_813.gif",
 		"id": "LOOTA_813",
 		"name": "Magic Mirror",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Choose a minion and summon a copy of it. Add it to your Dungeon Deck.",
 		"type": "Spell"
@@ -45744,6 +48537,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_814.gif",
 		"id": "LOOTA_814",
 		"name": "Wish",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Fill your board with <b>Legendary</b> minions. Fully heal your hero.",
 		"type": "Spell"
@@ -45759,6 +48553,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOOTA_816",
 		"name": "Party Portal",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Whenever you cast a spell, summon a random minion of the same Cost.",
 		"type": "Minion"
@@ -45772,6 +48567,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_817.gif",
 		"id": "LOOTA_817",
 		"name": "Primordial Wand",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"ADAPT"
 		],
@@ -45789,6 +48585,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_818",
 		"name": "Grommash's Armguards",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive</b>\nYour weapons cost (1).",
 		"type": "Spell"
@@ -45799,6 +48596,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_818e.gif",
 		"id": "LOOTA_818e",
 		"name": "Grom's Amguards Enchantment",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"type": "Enchantment"
 	},
@@ -45813,6 +48611,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_819.gif",
 		"id": "LOOTA_819",
 		"name": "Archmage Staff",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "[x]At the start of your turn,\nadd a random Mage\nspell to your hand.",
 		"type": "Weapon"
@@ -45826,6 +48625,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_820.gif",
 		"id": "LOOTA_820",
 		"name": "Aleatoric Cube",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Shuffle both decks together and give\nhalf to each player.\nYour cards cost (2) less.",
 		"type": "Spell"
@@ -45836,6 +48636,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_820e.gif",
 		"id": "LOOTA_820e",
 		"name": "Mysterious Power",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"text": "Costs (2) less.",
 		"type": "Enchantment"
@@ -45854,6 +48655,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Vorpal Dagger",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Poisonous</b>\n<b>Mega-Windfury</b>\n <i>(Can attack four times a turn.)</i>",
 		"type": "Weapon"
@@ -45867,6 +48669,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_822.gif",
 		"id": "LOOTA_822",
 		"name": "Rod of Roasting",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Cast 'Pyroblast' randomly until a hero dies.",
 		"type": "Spell"
@@ -45880,6 +48683,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_823.gif",
 		"id": "LOOTA_823",
 		"name": "Bag of Stuffing",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Draw cards until your hand is full.",
 		"type": "Spell"
@@ -45894,6 +48698,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_824",
 		"name": "Khadgar's Scrying Orb",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive</b>\nYour spells cost (1) less.",
 		"type": "Spell"
@@ -45904,6 +48709,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_824e.gif",
 		"id": "LOOTA_824e",
 		"name": "Khadgar's Scrying Orb Enchantment",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Your spells cost (1) less.",
 		"type": "Enchantment"
@@ -45918,6 +48724,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_825",
 		"name": "Robe of the Magi",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"SPELLPOWER"
 		],
@@ -45934,6 +48741,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Robe of the Magi Enchantment",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"spellDamage": 1,
 		"text": "+3 Spell Damage.",
@@ -45955,6 +48763,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Portable Ice Wall",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>. Can't Attack.\n <b>Freeze</b> any character damaged by this minion.",
 		"type": "Minion"
@@ -45968,6 +48777,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_827.gif",
 		"id": "LOOTA_827",
 		"name": "Embers of Ragnaros",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Shoot three fireballs at random enemies that deal $8 damage each.",
 		"type": "Spell"
@@ -45985,6 +48795,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Captured Flag",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive</b>\nYour minions have +1/+1.",
 		"type": "Spell"
@@ -45995,6 +48806,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_828e.gif",
 		"id": "LOOTA_828e",
 		"name": "Banner of Inspiration",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -46008,6 +48820,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Banner of Inspiration Player Enchant",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -46021,6 +48834,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Banner of Inspiration",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -46039,6 +48853,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Loyal Sidekick",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Taunt</b>\nHas +1/+1 for each <b>Boss</b> you've defeated this run.",
 		"type": "Minion"
@@ -46052,6 +48867,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_830.gif",
 		"id": "LOOTA_830",
 		"name": "Shifting Hourglass",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "[x]Take an extra turn.\nCosts (1) less for each \n<b>Boss</b> you've defeated\nthis run.",
 		"type": "Spell"
@@ -46066,6 +48882,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_831",
 		"name": "Glyph of Warding",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive</b>\nEnemy minions cost (1) more.",
 		"type": "Spell"
@@ -46076,6 +48893,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_831e.gif",
 		"id": "LOOTA_831e",
 		"name": "Glyph of Warding Enchantment",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -46090,6 +48908,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_832",
 		"name": "Cloak of Invisibility",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"STEALTH"
 		],
@@ -46103,6 +48922,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_832e.gif",
 		"id": "LOOTA_832e",
 		"name": "Invisible",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Has <b>Stealth</b>.",
 		"type": "Enchantment"
@@ -46116,6 +48936,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Cloak of Invisiblity Player Enchant",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"type": "Enchantment"
 	},
@@ -46129,6 +48950,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_833",
 		"name": "Mysterious Tome",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"SECRET"
 		],
@@ -46145,6 +48967,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_834.gif",
 		"id": "LOOTA_834",
 		"name": "Gloves of Mugging",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Steal 3 cards from your opponent's hand.",
 		"type": "Spell"
@@ -46160,6 +48983,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_835.gif",
 		"id": "LOOTA_835",
 		"name": "Greedy Pickaxe",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "After your hero attacks, gain an empty Mana Crystal.",
 		"type": "Weapon"
@@ -46173,6 +48997,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_836.gif",
 		"id": "LOOTA_836",
 		"name": "Bag of Coins",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Fill your hand with Coins.",
 		"type": "Spell"
@@ -46186,6 +49011,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_837.gif",
 		"id": "LOOTA_837",
 		"name": "Horn of Cenarius",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"RECRUIT"
 		],
@@ -46202,6 +49028,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_838.gif",
 		"id": "LOOTA_838",
 		"name": "Dr. Boom's Boombox",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "[x]Summon 7 'Boom Bots'.",
 		"type": "Spell"
@@ -46215,6 +49042,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_839.gif",
 		"id": "LOOTA_839",
 		"name": "Scroll of Confusion",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Each minion randomly chooses a side of the battlefield.",
 		"type": "Spell"
@@ -46233,6 +49061,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Wax Rager",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Resummon this minion.",
@@ -46247,6 +49076,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_841.gif",
 		"id": "LOOTA_841",
 		"name": "Portable Forge",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Discover</b> a Legendary weapon and equip it.",
 		"type": "Spell"
@@ -46262,6 +49092,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_842.gif",
 		"id": "LOOTA_842",
 		"name": "Quel'Delar",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "After your hero attacks, deal 6 damage to all enemies.",
 		"type": "Weapon"
@@ -46277,6 +49108,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_842a.gif",
 		"id": "LOOTA_842a",
 		"name": "Blade of Quel'Delar",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"type": "Weapon"
 	},
@@ -46289,6 +49121,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_842b.gif",
 		"id": "LOOTA_842b",
 		"name": "Hilt of Quel'Delar",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Give a minion +3/+3.",
 		"type": "Spell"
@@ -46302,6 +49135,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_842be.gif",
 		"id": "LOOTA_842be",
 		"name": "Armed?",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+3/+3.",
 		"type": "Enchantment"
@@ -46313,6 +49147,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_842t.gif",
 		"id": "LOOTA_842t",
 		"name": "Forging Quel'Delar",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -46325,6 +49160,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_843.gif",
 		"id": "LOOTA_843",
 		"name": "THE CANDLE",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Deal $4 damage to all enemy minions. Shuffle this into your deck.",
 		"type": "Spell"
@@ -46339,6 +49175,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_845",
 		"name": "Totem of the Dead",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DEATHRATTLE"
 		],
@@ -46356,6 +49193,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_846",
 		"name": "Battle Totem",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"BATTLECRY"
 		],
@@ -46372,6 +49210,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_847.gif",
 		"id": "LOOTA_847",
 		"name": "Mask of Mimicry",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Choose a minion.\nMinions in your hand become copies of it.",
 		"type": "Spell"
@@ -46383,6 +49222,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_04e.gif",
 		"id": "LOOTA_BOSS_04e",
 		"name": "Waxed",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "1/1.",
 		"type": "Enchantment"
@@ -46396,6 +49236,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOOTA_BOSS_04h",
 		"name": "Waxmancer Sturmi",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"text": "<i>This kobold can\ncandle-craft\nminions at will.</i>",
 		"type": "Hero"
@@ -46409,6 +49250,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_04p.gif",
 		"id": "LOOTA_BOSS_04p",
 		"name": "Sculpt Wax",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 copy of a minion.",
 		"type": "Hero_power"
@@ -46422,6 +49264,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "LOOTA_BOSS_05h",
 		"name": "Pathmaker Hamm",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "<i>There's more than\none way for a kobold\nto dig a tunnel.</i>",
 		"type": "Hero"
@@ -46438,6 +49281,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Unstable Explosion",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to two random enemies.",
 		"type": "Hero_power"
@@ -46451,6 +49295,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_06h",
 		"name": "Blackseed",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"text": "<i>This furbolg’s dark magic twists the other dungeonfolk.</i>",
 		"type": "Hero"
@@ -46464,6 +49309,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_06p.gif",
 		"id": "LOOTA_BOSS_06p",
 		"name": "Evolvomancy",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nTransform a minion into a random one that costs (1) more.",
 		"type": "Hero_power"
@@ -46477,6 +49323,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "LOOTA_BOSS_09h",
 		"name": "Frostfur",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"text": "<i>These furbolg warrens feel unnaturally cold...</i>",
 		"type": "Hero"
@@ -46489,6 +49336,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_09p.gif",
 		"id": "LOOTA_BOSS_09p",
 		"name": "Freeze",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\n<b>Freeze</b> a minion.",
 		"type": "Hero_power"
@@ -46502,6 +49350,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "LOOTA_BOSS_10h",
 		"name": "Graves the Cleric",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"text": "<i>This healing adventurer was separated from his old party.</i>",
 		"type": "Hero"
@@ -46515,6 +49364,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_10p.gif",
 		"id": "LOOTA_BOSS_10p",
 		"name": "Light's Will",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nRestore 2 Health to all minions.",
 		"type": "Hero_power"
@@ -46529,6 +49379,7 @@ var parseCardsText = {
 		"health": 15,
 		"id": "LOOTA_BOSS_110",
 		"name": "Tag Team",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"text": "Swap George and Karl.",
 		"type": "Spell"
@@ -46539,6 +49390,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_11e.gif",
 		"id": "LOOTA_BOSS_11e",
 		"name": "Whipped Into Shape",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+2 Attack.",
 		"type": "Enchantment"
@@ -46552,6 +49404,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "LOOTA_BOSS_11h",
 		"name": "Overseer Mogark",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "<i>This trogg commander is extra \"motivational\" to underlings.</i>",
 		"type": "Hero"
@@ -46565,6 +49418,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_11p.gif",
 		"id": "LOOTA_BOSS_11p",
 		"name": "Cruel Words",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to a friendly minion and give it +2 Attack.",
 		"type": "Hero_power"
@@ -46575,6 +49429,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_12e.gif",
 		"id": "LOOTA_BOSS_12e",
 		"name": "Charge!",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Has <b>Charge</b>.",
 		"type": "Enchantment"
@@ -46588,6 +49443,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "LOOTA_BOSS_12h",
 		"name": "Candlebeard",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "<i>This kobold pirate's favorite move is chaaaarrrge!</i>",
 		"type": "Hero"
@@ -46601,6 +49457,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_12p.gif",
 		"id": "LOOTA_BOSS_12p",
 		"name": "Charge!",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nGive a minion <b>Charge</b>.",
 		"type": "Hero_power"
@@ -46614,6 +49471,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_13h",
 		"name": "Thaddock the Thief",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "<i>One moment her minions are there... the next... gone!</i>",
 		"type": "Hero"
@@ -46627,6 +49485,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_13p.gif",
 		"id": "LOOTA_BOSS_13p",
 		"name": "Tactical Retreat",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nReturn a friendly minion to your hand.",
 		"type": "Hero_power"
@@ -46637,6 +49496,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_15e.gif",
 		"id": "LOOTA_BOSS_15e",
 		"name": "George and Karl Enchantment",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Enchantment"
 	},
@@ -46649,6 +49509,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOOTA_BOSS_15h",
 		"name": "George and Karl",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"text": "<i>These tag-team paladins went missing in Un'goro.</i>",
 		"type": "Hero"
@@ -46662,6 +49523,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_15p.gif",
 		"id": "LOOTA_BOSS_15p",
 		"name": "Divinity",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nGive all your minions <b>Divine Shield</b>.",
 		"type": "Hero_power"
@@ -46675,6 +49537,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_16h",
 		"name": "Spiritspeaker Azun",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"text": "<i>This troll priest speaks with the dead... twice.</i>",
 		"type": "Hero"
@@ -46689,6 +49552,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_BOSS_16p",
 		"name": "Totem of the Dead",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive Hero Power</b>\nAll <b>Deathrattles</b> trigger twice.",
 		"type": "Hero_power"
@@ -46702,6 +49566,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_17h",
 		"name": "Battlecrier Jin'zo",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "<i>When he calls in the troops, they listen. Twice.</i>",
 		"type": "Hero"
@@ -46716,6 +49581,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_BOSS_17p",
 		"name": "Battle Totem",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive Hero Power</b>\nAll <b>Battlecries</b> trigger twice.",
 		"type": "Hero_power"
@@ -46729,6 +49595,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOOTA_BOSS_18h",
 		"name": "Giant Rat",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"text": "<i>The bane of every young adventurer.</i>",
 		"type": "Hero"
@@ -46741,6 +49608,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_18p.gif",
 		"id": "LOOTA_BOSS_18p",
 		"name": "Rat Race",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Rats.",
 		"type": "Hero_power"
@@ -46756,6 +49624,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "LOOTA_BOSS_18t",
 		"name": "Rat",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Lootapalooza",
 		"type": "Minion"
@@ -46769,6 +49638,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOOTA_BOSS_19h",
 		"name": "Gutmook",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"text": "<i>This trogg elder and his minions flock toward sources of magic.</i>",
 		"type": "Hero"
@@ -46782,6 +49652,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_19p.gif",
 		"id": "LOOTA_BOSS_19p",
 		"name": "Digest Magic",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "[x]<b>Passive Hero Power</b>\nWhenever your\n opponent casts a spell,\nsummon a Tunnel Trogg.",
 		"type": "Hero_power"
@@ -46795,6 +49666,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOOTA_BOSS_20h",
 		"name": "Brimstone Warden",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "<i>At all costs, stop him from waking the\nancient guardians...</i>",
 		"type": "Hero"
@@ -46807,6 +49679,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_20p.gif",
 		"id": "LOOTA_BOSS_20p",
 		"name": "Dispel Ward",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\n<b>Silence</b> your minions.",
 		"type": "Hero_power"
@@ -46826,6 +49699,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Stone Golem",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Can't attack.\n<b>Deathrattle:</b> Lose a Mana Crystal.",
 		"type": "Minion"
@@ -46839,6 +49713,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_21h",
 		"name": "Gnosh the Greatworm",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "<i>Always looking to devour the largest, tastiest minions.</i>",
 		"type": "Hero"
@@ -46855,6 +49730,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Swallow Whole",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDestroy the minion with the highest Attack.",
 		"type": "Hero_power"
@@ -46868,6 +49744,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "LOOTA_BOSS_22h",
 		"name": "Tad",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"text": "<i>Look, this murloc just wants to fish, okay?</i>",
 		"type": "Hero"
@@ -46884,6 +49761,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Catch and Release",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nSummon a random minion from your deck.",
 		"type": "Hero_power"
@@ -46899,6 +49777,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_22t.gif",
 		"id": "LOOTA_BOSS_22t",
 		"name": "Tad's Pole",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "[x]At the end of your turn,\nsummon a minion\nfrom your\nopponent's deck.",
 		"type": "Weapon"
@@ -46912,6 +49791,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "LOOTA_BOSS_23h",
 		"name": "Bristlesnarl",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"text": "<i>This legendary furbolg hunter can quickly call on big friends.</i>",
 		"type": "Hero"
@@ -46928,6 +49808,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Hunter's Call",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nReduce the Cost of cards in your hand by (1).",
 		"type": "Hero_power"
@@ -46938,6 +49819,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_24e.gif",
 		"id": "LOOTA_BOSS_24e",
 		"name": "Glooped",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Increased Stats.",
 		"type": "Enchantment"
@@ -46951,6 +49833,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "LOOTA_BOSS_24h",
 		"name": "The Mothergloop",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"text": "<i>Don't let its growing, gooey friends get\nout of hand.</i>",
 		"type": "Hero"
@@ -46966,6 +49849,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Gloop",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nGive minions in your hand +1/+1.",
 		"type": "Hero_power"
@@ -46979,6 +49863,7 @@ var parseCardsText = {
 		"health": 70,
 		"id": "LOOTA_BOSS_25h",
 		"name": "Vustrasz the Ancient",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"text": "<i>His vast treasure stores are for the taking... if you dare!</i>",
 		"type": "Hero"
@@ -46994,6 +49879,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Vindictive Breath",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to all enemies for each missing Master Chest.",
 		"type": "Hero_power"
@@ -47007,6 +49893,7 @@ var parseCardsText = {
 		"health": 70,
 		"id": "LOOTA_BOSS_26h",
 		"name": "Xol the Unscathed",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"text": "<i>She's got her eyes on you. ALL of her eyes.</i>",
 		"type": "Hero"
@@ -47020,6 +49907,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_26p2.gif",
 		"id": "LOOTA_BOSS_26p2",
 		"name": "Beam of Frost",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Freeze</b> a random enemy minion and the minions next to it.",
 		"type": "Spell"
@@ -47033,6 +49921,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_26p3.gif",
 		"id": "LOOTA_BOSS_26p3",
 		"name": "Beam of Death",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Destroy all damaged enemy minions.",
 		"type": "Spell"
@@ -47046,6 +49935,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_26p4.gif",
 		"id": "LOOTA_BOSS_26p4",
 		"name": "Beam of Confusion",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Take control of a random enemy minion.",
 		"type": "Spell"
@@ -47059,6 +49949,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_26p5.gif",
 		"id": "LOOTA_BOSS_26p5",
 		"name": "Beam of Fear",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Shuffle a random enemy minion into your opponent's deck.",
 		"type": "Spell"
@@ -47072,6 +49963,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_26p6.gif",
 		"id": "LOOTA_BOSS_26p6",
 		"name": "Beam of Fire",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Deal $2 damage to all enemy minions.",
 		"type": "Spell"
@@ -47085,6 +49977,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_26p7.gif",
 		"id": "LOOTA_BOSS_26p7",
 		"name": "Beam of Decay",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Destroy 1 of your opponent's Mana Crystal.",
 		"type": "Spell"
@@ -47106,6 +49999,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_26p8.gif",
 		"id": "LOOTA_BOSS_26p8",
 		"name": "Beam Me Up!",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive Hero Power</b>\n At the end of your turn, add a <b>Beam</b> to your hand.",
 		"type": "Hero_power"
@@ -47119,6 +50013,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "LOOTA_BOSS_27h",
 		"name": "Waxmancer Sturmi",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"text": "<i>This kobold can\ncandle-craft\nminions at will.</i>",
 		"type": "Hero"
@@ -47132,6 +50027,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_27p.gif",
 		"id": "LOOTA_BOSS_27p",
 		"name": "Harden Sculpture",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nSummon a copy of a minion.",
 		"type": "Hero_power"
@@ -47145,6 +50041,7 @@ var parseCardsText = {
 		"health": 60,
 		"id": "LOOTA_BOSS_28h",
 		"name": "Pathmaker Hamm",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "<i>There's more than\none way for a kobold\nto dig a tunnel.</i>",
 		"type": "Hero"
@@ -47161,6 +50058,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Unstable Demolition",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDeal 2 damage to three random enemies.",
 		"type": "Hero_power"
@@ -47174,6 +50072,7 @@ var parseCardsText = {
 		"health": 60,
 		"id": "LOOTA_BOSS_29h",
 		"name": "Blackseed",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"text": "<i>This furbolg’s dark magic twists the other dungeonfolk.</i>",
 		"type": "Hero"
@@ -47187,6 +50086,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_29p.gif",
 		"id": "LOOTA_BOSS_29p",
 		"name": "Greater Evolution",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nTransform a minion into a random one that costs (3) more.",
 		"type": "Hero_power"
@@ -47197,6 +50097,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_30e.gif",
 		"id": "LOOTA_BOSS_30e",
 		"name": "Whipped into Frenzy",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "+5 Attack.",
 		"type": "Enchantment"
@@ -47210,6 +50111,7 @@ var parseCardsText = {
 		"health": 60,
 		"id": "LOOTA_BOSS_30h",
 		"name": "Overseer Mogark",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "<i>This trogg commander is extra \"motivational\" to underlings.</i>",
 		"type": "Hero"
@@ -47223,6 +50125,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_30p.gif",
 		"id": "LOOTA_BOSS_30p",
 		"name": "Searing Lash",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to a friendly minion and give it +5 Attack.",
 		"type": "Hero_power"
@@ -47236,6 +50139,7 @@ var parseCardsText = {
 		"health": 60,
 		"id": "LOOTA_BOSS_31h",
 		"name": "Candlebeard",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "<i>This kobold pirate's favorite move is chaaaarrrge!</i>",
 		"type": "Hero"
@@ -47249,6 +50153,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_31p.gif",
 		"id": "LOOTA_BOSS_31p",
 		"name": "Charrrrrge!",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive Hero Power</b>\nAfter you play a minion, give it <b>Charge</b>.",
 		"type": "Hero_power"
@@ -47262,6 +50167,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOOTA_BOSS_32h",
 		"name": "Karl and George",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"text": "<i>These tag-team paladins went missing in Un'goro.</i>",
 		"type": "Hero"
@@ -47275,6 +50181,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "LOOTA_BOSS_33h",
 		"name": "Gutmook",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"text": "<i>This trogg elder and his minions flock toward sources of magic.</i>",
 		"type": "Hero"
@@ -47288,6 +50195,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_33p.gif",
 		"id": "LOOTA_BOSS_33p",
 		"name": "Metabolized Magic",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive Hero Power</b>\nWhenever your opponent casts a spell, draw a card. It costs (1).",
 		"type": "Hero_power"
@@ -47301,6 +50209,7 @@ var parseCardsText = {
 		"health": 70,
 		"id": "LOOTA_BOSS_34h",
 		"name": "Azari, the Devourer",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"text": "<i>The most terrible of demons is loose!\nAnd VERY hungry.</i>",
 		"type": "Hero"
@@ -47317,6 +50226,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Devour",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nRemove the top\n2 cards of your opponent's deck.",
 		"type": "Hero_power"
@@ -47330,6 +50240,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "LOOTA_BOSS_35h",
 		"name": "Elder Brandlemar",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"text": "<i>The bane of magic users, this furbolg can counter any spell.</i>",
 		"type": "Hero"
@@ -47343,6 +50254,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_35p.gif",
 		"id": "LOOTA_BOSS_35p",
 		"name": "Dampen Magic",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nPut a 'Counterspell' <b>Secret</b> into the battlefield.",
 		"type": "Hero_power"
@@ -47356,6 +50268,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "LOOTA_BOSS_36h",
 		"name": "Ixlid",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"text": "<i>Its deadly spores can kill an adventurer instantly!</i>",
 		"type": "Hero"
@@ -47371,6 +50284,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Sprouting Spore",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nSummon an <b><i>extremely</i></b>\nDeadly Spore.",
 		"type": "Hero_power"
@@ -47384,6 +50298,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_37h",
 		"name": "Lyris the Wild Mage",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"text": "<i>She loves fire. Her minions love that she loves fire.</i>",
 		"type": "Hero"
@@ -47398,6 +50313,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_37p.gif",
 		"id": "LOOTA_BOSS_37p",
 		"name": "Arcane Infusion",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nAdd 'Arcane Missiles' to your hand.",
 		"type": "Hero_power"
@@ -47411,6 +50327,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "LOOTA_BOSS_38h",
 		"name": "Voodoomaster Vex",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "<i>He wants to be a troll. He cries for battle and rattles for death.</i>",
 		"type": "Hero"
@@ -47425,6 +50342,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_BOSS_38p",
 		"name": "Totem of Chaos",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive Hero Power</b>\nAll <b>Battlecries</b> and <b>Deathrattles</b> trigger twice.",
 		"type": "Hero_power"
@@ -47438,6 +50356,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOOTA_BOSS_39h",
 		"name": "Kraxx",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "<i>This ancient stone guardian prefers the loot to stay here.</i>",
 		"type": "Hero"
@@ -47450,6 +50369,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_39p.gif",
 		"id": "LOOTA_BOSS_39p",
 		"name": "Giant Stomp",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to all enemy minions.",
 		"type": "Hero_power"
@@ -47463,6 +50383,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "LOOTA_BOSS_40h",
 		"name": "Seriona",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"text": "<i>A twilight dragon\nbent on draining\nyour minions.</i>",
 		"type": "Hero"
@@ -47475,6 +50396,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_40p.gif",
 		"id": "LOOTA_BOSS_40p",
 		"name": "Fading Light",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nGive a minion -1 Attack.",
 		"type": "Hero_power"
@@ -47485,6 +50407,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_40pe.gif",
 		"id": "LOOTA_BOSS_40pe",
 		"name": "Fading",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Attack reduced.",
 		"type": "Enchantment"
@@ -47498,6 +50421,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_41h",
 		"name": "Whompwhisker",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"text": "<i>A kobold berserker who never fights alone.</i>",
 		"type": "Hero"
@@ -47513,6 +50437,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Join the Fray",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"RECRUIT"
 		],
@@ -47529,6 +50454,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOOTA_BOSS_42h",
 		"name": "Elder Jari",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"text": "<i>This furbolg elder\ncalls arcane energies to her defense.</i>",
 		"type": "Hero"
@@ -47541,6 +50467,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_42p.gif",
 		"id": "LOOTA_BOSS_42p",
 		"name": "Mystic Barrier",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nGain 3 Armor.",
 		"type": "Hero_power"
@@ -47554,6 +50481,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_43h",
 		"name": "Jeeru",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"text": "<i>Don't rub the lamp! You rubbed the lamp, didn't you?</i>",
 		"type": "Hero"
@@ -47569,6 +50497,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Three Wee Wishes",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nEach player draws 3 cards.",
 		"type": "Hero_power"
@@ -47582,6 +50511,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOOTA_BOSS_44h",
 		"name": "Wee Whelp",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"text": "<i>It's just a baby dragon. But it's still a dragon.</i>",
 		"type": "Hero"
@@ -47594,6 +50524,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_44p.gif",
 		"id": "LOOTA_BOSS_44p",
 		"name": "Baby Breath",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDeal 2 damage.",
 		"type": "Hero_power"
@@ -47607,6 +50538,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "LOOTA_BOSS_45h",
 		"name": "Bink the Burglar",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "<i>This low-down thief preys on starting adventurers.</i>",
 		"type": "Hero"
@@ -47622,6 +50554,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Coin",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nGain 1 Mana Crystal this turn only.",
 		"type": "Hero_power"
@@ -47635,6 +50568,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOOTA_BOSS_46h",
 		"name": "Fungalmancer Flurgl",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"text": "<i>The fungalmancer empowers his friends. With fungus.</i>",
 		"type": "Hero"
@@ -47647,6 +50581,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_46p.gif",
 		"id": "LOOTA_BOSS_46p",
 		"name": "Fungal Infection",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nGive your minions +1/+1.",
 		"type": "Hero_power"
@@ -47657,6 +50592,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_46pe.gif",
 		"id": "LOOTA_BOSS_46pe",
 		"name": "Infected",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Stats increased.",
 		"type": "Enchantment"
@@ -47669,6 +50605,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "LOOTA_BOSS_47h",
 		"name": "Lava-Filled Chamber",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"text": "<i>The kobolds attempted to board up this lava-filled chamber!</i>",
 		"type": "Hero"
@@ -47681,6 +50618,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_47p.gif",
 		"id": "LOOTA_BOSS_47p",
 		"name": "The Floor is Lava",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive Hero Power</b>\nAfter a minion is played, deal 2 damage to it.",
 		"type": "Hero_power"
@@ -47694,6 +50632,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_48h",
 		"name": "Trapped Room",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"text": "<i>Tread carefully. Don't... touch... anything!</i>",
 		"type": "Hero"
@@ -47707,6 +50646,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_48p.gif",
 		"id": "LOOTA_BOSS_48p",
 		"name": "Alarm",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Passive Hero Power</b>\nWhenever you reveal a <b>Secret</b>, summon a 3/3 Sawblade.",
 		"type": "Hero_power"
@@ -47722,6 +50662,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "LOOTA_BOSS_48t",
 		"name": "Sawblade",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"type": "Minion"
 	},
@@ -47734,6 +50675,7 @@ var parseCardsText = {
 		"health": 70,
 		"id": "LOOTA_BOSS_49h",
 		"name": "The Darkness",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"text": "<i>There's a reason to always keep a light on down here.</i>",
 		"type": "Hero"
@@ -47749,6 +50691,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Encroaching Darkness",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nSummon a 5/5 Darkspawn.",
 		"type": "Hero_power"
@@ -47764,6 +50707,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "LOOTA_BOSS_49t",
 		"name": "Darkspawn",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"type": "Minion"
 	},
@@ -47776,6 +50720,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_49t2.gif",
 		"id": "LOOTA_BOSS_49t2",
 		"name": "Luminous Candle",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Destroy all Darkspawns.",
 		"type": "Spell"
@@ -47789,6 +50734,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_50h",
 		"name": "Mushhuckster Max",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"text": "<i>You probably don't want the potions\nhe's hocking.</i>",
 		"type": "Hero"
@@ -47807,6 +50753,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Mushroom, Mushroom",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nCraft a custom Mushroom Potion.",
 		"type": "Hero_power"
@@ -47820,6 +50767,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_50t.gif",
 		"id": "LOOTA_BOSS_50t",
 		"name": "Mushroom Potion",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "{0}\n{1}",
 		"type": "Spell"
@@ -47833,6 +50781,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "LOOTA_BOSS_51h",
 		"name": "Russell the Bard",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "<i>His tunes are catchy. Just ask your minions.</i>",
 		"type": "Hero"
@@ -47846,6 +50795,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_51p.gif",
 		"id": "LOOTA_BOSS_51p",
 		"name": "Alluring Tune",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nGain control of an enemy minion with 2 or less Attack.",
 		"type": "Hero_power"
@@ -47863,6 +50813,7 @@ var parseCardsText = {
 			"APPEAR_FUNCTIONALLY_DEAD"
 		],
 		"name": "Treasure Vault",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "<i>Grab all you can, as fast as you can!</i>",
 		"type": "Hero"
@@ -47878,6 +50829,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Doors Are Closing",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nEnd the game.",
 		"type": "Hero_power"
@@ -47896,6 +50848,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Treasure Coffer",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Deathrattle:</b> Add a random Treasure to the <b>Player's</b> Dungeon Deck.",
 		"type": "Minion"
@@ -47909,6 +50862,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "LOOTA_BOSS_53h",
 		"name": "Chronomancer Inara",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"text": "<i>Once she powers\nup, beware of her\nmastery of time!</i>",
 		"type": "Hero"
@@ -47922,6 +50876,7 @@ var parseCardsText = {
 		"health": 50,
 		"id": "LOOTA_BOSS_53h2",
 		"name": "Inara the Mage",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Hero"
 	},
@@ -47937,6 +50892,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Stolen Time",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDestroy 3 of your Mana Crystals.\nTake an extra turn.",
 		"type": "Hero_power"
@@ -47950,6 +50906,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "LOOTA_BOSS_54h",
 		"name": "A. F. Kay",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"text": "<i>Waylay this adventurer while she isn't\npaying attention!</i>",
 		"type": "Hero"
@@ -47962,6 +50919,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_54p.gif",
 		"id": "LOOTA_BOSS_54p",
 		"name": "Idle",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nDo nothing.",
 		"type": "Hero_power"
@@ -47975,6 +50933,7 @@ var parseCardsText = {
 		"health": 70,
 		"id": "LOOTA_BOSS_99h",
 		"name": "King Togwaggle",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"text": "<i>Look out! He's loaded with loot from failed adventurers.</i>",
 		"type": "Hero"
@@ -48006,6 +50965,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_BOSS_99p.gif",
 		"id": "LOOTA_BOSS_99p",
 		"name": "Magic Candle",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "<b>Hero Power</b>\nFind a Treasure!",
 		"type": "Hero_power"
@@ -48020,6 +50980,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "LOOTA_BOSS_99t",
 		"name": "Rakanishu",
+		"playerClass": "Neutral",
 		"set": "Lootapalooza",
 		"text": "Deal $4 damage to a random enemy.",
 		"type": "Spell"
@@ -48043,6 +51004,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_01.gif",
 		"id": "LOOTA_Druid_01",
 		"name": "Mana Growth",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48069,6 +51031,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_02.gif",
 		"id": "LOOTA_Druid_02",
 		"name": "Jungle King",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48092,6 +51055,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_03.gif",
 		"id": "LOOTA_Druid_03",
 		"name": "Natural Defense",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48109,6 +51073,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_04.gif",
 		"id": "LOOTA_Druid_04",
 		"name": "Jade Fangs",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48135,6 +51100,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_05.gif",
 		"id": "LOOTA_Druid_05",
 		"name": "Stampede",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48158,6 +51124,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_06.gif",
 		"id": "LOOTA_Druid_06",
 		"name": "Jungle Quest",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48180,6 +51147,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_07.gif",
 		"id": "LOOTA_Druid_07",
 		"name": "Cult of C'thun",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48205,6 +51173,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_08.gif",
 		"id": "LOOTA_Druid_08",
 		"name": "Wise Decisions",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48226,6 +51195,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_09.gif",
 		"id": "LOOTA_Druid_09",
 		"name": "Balance",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48248,6 +51218,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_10.gif",
 		"id": "LOOTA_Druid_10",
 		"name": "Restoration",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48273,6 +51244,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_11.gif",
 		"id": "LOOTA_Druid_11",
 		"name": "Taunt",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48298,6 +51270,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Druid_12.gif",
 		"id": "LOOTA_Druid_12",
 		"name": "Stomp",
+		"playerClass": "Druid",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48323,6 +51296,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_01.gif",
 		"id": "LOOTA_Hunter_01",
 		"name": "Wee Beasts",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48346,6 +51320,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_02.gif",
 		"id": "LOOTA_Hunter_02",
 		"name": "Big Beasts",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48370,6 +51345,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_03.gif",
 		"id": "LOOTA_Hunter_03",
 		"name": "Shots",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48395,6 +51371,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_04.gif",
 		"id": "LOOTA_Hunter_04",
 		"name": "Summoner",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48424,6 +51401,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_05.gif",
 		"id": "LOOTA_Hunter_05",
 		"name": "Secrets",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48445,6 +51423,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_06.gif",
 		"id": "LOOTA_Hunter_06",
 		"name": "Beast Training",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48468,6 +51447,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_07.gif",
 		"id": "LOOTA_Hunter_07",
 		"name": "Weapons",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48490,6 +51470,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_08.gif",
 		"id": "LOOTA_Hunter_08",
 		"name": "Tracker",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48518,6 +51499,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_09.gif",
 		"id": "LOOTA_Hunter_09",
 		"name": "Deathrattle",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48540,6 +51522,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_10.gif",
 		"id": "LOOTA_Hunter_10",
 		"name": "Legendary",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48562,6 +51545,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_11.gif",
 		"id": "LOOTA_Hunter_11",
 		"name": "Defense",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48582,6 +51566,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Hunter_12.gif",
 		"id": "LOOTA_Hunter_12",
 		"name": "Smugglers",
+		"playerClass": "Hunter",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48606,6 +51591,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_20.gif",
 		"id": "LOOTA_Mage_20",
 		"name": "Chaos",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48632,6 +51618,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_21.gif",
 		"id": "LOOTA_Mage_21",
 		"name": "Elementals",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48655,6 +51642,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_22.gif",
 		"id": "LOOTA_Mage_22",
 		"name": "Magical Friends",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48677,6 +51665,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_23.gif",
 		"id": "LOOTA_Mage_23",
 		"name": "Frost",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48698,6 +51687,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_24.gif",
 		"id": "LOOTA_Mage_24",
 		"name": "Fire",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48719,6 +51709,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_25.gif",
 		"id": "LOOTA_Mage_25",
 		"name": "Heroic Power",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48743,6 +51734,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_27.gif",
 		"id": "LOOTA_Mage_27",
 		"name": "Big Spells",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48764,6 +51756,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_28.gif",
 		"id": "LOOTA_Mage_28",
 		"name": "Arcane",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48786,6 +51779,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_29.gif",
 		"id": "LOOTA_Mage_29",
 		"name": "Lost Secrets",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48807,6 +51801,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_30.gif",
 		"id": "LOOTA_Mage_30",
 		"name": "Giant Army",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48828,6 +51823,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_31.gif",
 		"id": "LOOTA_Mage_31",
 		"name": "Defense",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48843,6 +51839,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Mage_32.gif",
 		"id": "LOOTA_Mage_32",
 		"name": "Unique",
+		"playerClass": "Mage",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48865,6 +51862,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_01.gif",
 		"id": "LOOTA_Paladin_01",
 		"name": "Secrets",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48888,6 +51886,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_04.gif",
 		"id": "LOOTA_Paladin_04",
 		"name": "Healing",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48915,6 +51914,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_05.gif",
 		"id": "LOOTA_Paladin_05",
 		"name": "Divine Shield",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48938,6 +51938,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_09.gif",
 		"id": "LOOTA_Paladin_09",
 		"name": "Justice",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48958,6 +51959,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_11.gif",
 		"id": "LOOTA_Paladin_11",
 		"name": "Helping Hand",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -48990,6 +51992,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_12.gif",
 		"id": "LOOTA_Paladin_12",
 		"name": "Dragonmaster",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49013,6 +52016,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_14.gif",
 		"id": "LOOTA_Paladin_14",
 		"name": "Silver Hand",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49036,6 +52040,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_16.gif",
 		"id": "LOOTA_Paladin_16",
 		"name": "Legendary",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49062,6 +52067,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_19.gif",
 		"id": "LOOTA_Paladin_19",
 		"name": "Taunt",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49084,6 +52090,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_20.gif",
 		"id": "LOOTA_Paladin_20",
 		"name": "Sacred Arms",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49110,6 +52117,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_21.gif",
 		"id": "LOOTA_Paladin_21",
 		"name": "Murlocs",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49138,6 +52146,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Paladin_22.gif",
 		"id": "LOOTA_Paladin_22",
 		"name": "Many Blessings",
+		"playerClass": "Paladin",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49162,6 +52171,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_01.gif",
 		"id": "LOOTA_Priest_01",
 		"name": "Holy",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49196,6 +52206,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_02.gif",
 		"id": "LOOTA_Priest_02",
 		"name": "Last Rites",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49224,6 +52235,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_03.gif",
 		"id": "LOOTA_Priest_03",
 		"name": "Domination",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49246,6 +52258,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_04.gif",
 		"id": "LOOTA_Priest_04",
 		"name": "Resurrection",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49274,6 +52287,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_05.gif",
 		"id": "LOOTA_Priest_05",
 		"name": "Bag of Tricks",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49300,6 +52314,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_06.gif",
 		"id": "LOOTA_Priest_06",
 		"name": "Shadow",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49331,6 +52346,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_07.gif",
 		"id": "LOOTA_Priest_07",
 		"name": "Dragon Priest",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49352,6 +52368,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_08.gif",
 		"id": "LOOTA_Priest_08",
 		"name": "Discipline",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49367,6 +52384,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_10.gif",
 		"id": "LOOTA_Priest_10",
 		"name": "Unique",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49390,6 +52408,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_12.gif",
 		"id": "LOOTA_Priest_12",
 		"name": "Elementals",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49412,6 +52431,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_13.gif",
 		"id": "LOOTA_Priest_13",
 		"name": "Cult of C'Thun",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49434,6 +52454,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Priest_9.gif",
 		"id": "LOOTA_Priest_9",
 		"name": "Combo Caster",
+		"playerClass": "Priest",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49459,6 +52480,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_01.gif",
 		"id": "LOOTA_Rogue_01",
 		"name": "Adrenaline Rush",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49481,6 +52503,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_02.gif",
 		"id": "LOOTA_Rogue_02",
 		"name": "Evasive",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49507,6 +52530,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_03.gif",
 		"id": "LOOTA_Rogue_03",
 		"name": "Blademaster",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49537,6 +52561,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_04.gif",
 		"id": "LOOTA_Rogue_04",
 		"name": "Death Dealer",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49553,6 +52578,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_05.gif",
 		"id": "LOOTA_Rogue_05",
 		"name": "Jade Lotus",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49576,6 +52602,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_07.gif",
 		"id": "LOOTA_Rogue_07",
 		"name": "Greed",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49598,6 +52625,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_09.gif",
 		"id": "LOOTA_Rogue_09",
 		"name": "Thief",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49622,6 +52650,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_10.gif",
 		"id": "LOOTA_Rogue_10",
 		"name": "Assassin",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49649,6 +52678,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_11.gif",
 		"id": "LOOTA_Rogue_11",
 		"name": "Outlaws",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49673,6 +52703,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_13.gif",
 		"id": "LOOTA_Rogue_13",
 		"name": "Bag of Tricks",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49695,6 +52726,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_15.gif",
 		"id": "LOOTA_Rogue_15",
 		"name": "Cult of C'thun",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49716,6 +52748,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Rogue_16.gif",
 		"id": "LOOTA_Rogue_16",
 		"name": "Exhaustion",
+		"playerClass": "Rogue",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49738,6 +52771,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_01.gif",
 		"id": "LOOTA_Shaman_01",
 		"name": "Destruction",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49759,6 +52793,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_02.gif",
 		"id": "LOOTA_Shaman_02",
 		"name": "Frost",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49781,6 +52816,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_03.gif",
 		"id": "LOOTA_Shaman_03",
 		"name": "Restoration",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49803,6 +52839,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_04.gif",
 		"id": "LOOTA_Shaman_04",
 		"name": "Mutations",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49831,6 +52868,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_05.gif",
 		"id": "LOOTA_Shaman_05",
 		"name": "Battlecrier",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49856,6 +52894,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_06.gif",
 		"id": "LOOTA_Shaman_06",
 		"name": "Elementals",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49886,6 +52925,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_07.gif",
 		"id": "LOOTA_Shaman_07",
 		"name": "Murlocs",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49915,6 +52955,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_08.gif",
 		"id": "LOOTA_Shaman_08",
 		"name": "Overload",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49938,6 +52979,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_09.gif",
 		"id": "LOOTA_Shaman_09",
 		"name": "Totems",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49955,6 +52997,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_11.gif",
 		"id": "LOOTA_Shaman_11",
 		"name": "Jade Lotus",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -49980,6 +53023,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_12.gif",
 		"id": "LOOTA_Shaman_12",
 		"name": "Farseer",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50006,6 +53050,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Shaman_13.gif",
 		"id": "LOOTA_Shaman_13",
 		"name": "Mechanized",
+		"playerClass": "Shaman",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50029,6 +53074,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_01.gif",
 		"id": "LOOTA_Warlock_01",
 		"name": "Little Legion",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50051,6 +53097,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_02.gif",
 		"id": "LOOTA_Warlock_02",
 		"name": "Cult of C'thun",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50066,6 +53113,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_03.gif",
 		"id": "LOOTA_Warlock_03",
 		"name": "Unique",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50090,6 +53138,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_04.gif",
 		"id": "LOOTA_Warlock_04",
 		"name": "Discard",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50111,6 +53160,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_05.gif",
 		"id": "LOOTA_Warlock_05",
 		"name": "Lifesteal",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50136,6 +53186,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_06.gif",
 		"id": "LOOTA_Warlock_06",
 		"name": "Taunt",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50160,6 +53211,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_07.gif",
 		"id": "LOOTA_Warlock_07",
 		"name": "Swarm",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50182,6 +53234,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_08.gif",
 		"id": "LOOTA_Warlock_08",
 		"name": "Destruction",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50209,6 +53262,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_09.gif",
 		"id": "LOOTA_Warlock_09",
 		"name": "Sacrifice",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50231,6 +53285,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_10.gif",
 		"id": "LOOTA_Warlock_10",
 		"name": "Blood",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50254,6 +53309,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_11.gif",
 		"id": "LOOTA_Warlock_11",
 		"name": "Dire Demons",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50276,6 +53332,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warlock_12.gif",
 		"id": "LOOTA_Warlock_12",
 		"name": "Huge Hand",
+		"playerClass": "Warlock",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50303,6 +53360,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_01.gif",
 		"id": "LOOTA_Warrior_01",
 		"name": "Berserker",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50331,6 +53389,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_02.gif",
 		"id": "LOOTA_Warrior_02",
 		"name": "Everybody Hurts",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50353,6 +53412,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_03.gif",
 		"id": "LOOTA_Warrior_03",
 		"name": "Charge!",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50380,6 +53440,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_04.gif",
 		"id": "LOOTA_Warrior_04",
 		"name": "Weapons",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50407,6 +53468,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_05.gif",
 		"id": "LOOTA_Warrior_05",
 		"name": "Armor",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50430,6 +53492,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_06.gif",
 		"id": "LOOTA_Warrior_06",
 		"name": "Pirates",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50458,6 +53521,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_07.gif",
 		"id": "LOOTA_Warrior_07",
 		"name": "Taunt",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50479,6 +53543,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_08.gif",
 		"id": "LOOTA_Warrior_08",
 		"name": "Smash!",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50498,6 +53563,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_09.gif",
 		"id": "LOOTA_Warrior_09",
 		"name": "Re-Enforcer",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50529,6 +53595,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_10.gif",
 		"id": "LOOTA_Warrior_10",
 		"name": "Legendary",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50561,6 +53628,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_12.gif",
 		"id": "LOOTA_Warrior_12",
 		"name": "Dragon Heart",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50582,6 +53650,7 @@ var parseCardsText = {
 		"goldenImage": "LOOTA_Warrior_13.gif",
 		"id": "LOOTA_Warrior_13",
 		"name": "Recruiter",
+		"playerClass": "Warrior",
 		"set": "Lootapalooza",
 		"type": "Spell"
 	},
@@ -50596,6 +53665,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "Mekka1",
 		"name": "Homing Chicken",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Hof",
@@ -50613,6 +53683,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "Mekka2",
 		"name": "Repair Bot",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Hof",
@@ -50630,6 +53701,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "Mekka3",
 		"name": "Emboldener 3000",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Hof",
@@ -50642,6 +53714,7 @@ var parseCardsText = {
 		"goldenImage": "Mekka3e.gif",
 		"id": "Mekka3e",
 		"name": "Emboldened!",
+		"playerClass": "Neutral",
 		"set": "Hof",
 		"text": "Increased Stats.",
 		"type": "Enchantment"
@@ -50657,6 +53730,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "Mekka4",
 		"name": "Poultryizer",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Hof",
@@ -50672,6 +53746,7 @@ var parseCardsText = {
 			"MORPH"
 		],
 		"name": "Transformed",
+		"playerClass": "Neutral",
 		"set": "Hof",
 		"text": "Has been transformed into a chicken!",
 		"type": "Enchantment"
@@ -50686,6 +53761,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "Mekka4t",
 		"name": "Chicken",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Hof",
 		"text": "<i>Hey Chicken!</i>",
@@ -50702,6 +53778,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Patchwerk",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -50716,6 +53793,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Patchwerk",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -50732,6 +53810,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Hook",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Put this weapon into your hand.",
 		"type": "Weapon"
@@ -50750,6 +53829,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Hook",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Windfury</b>\n<b>Deathrattle:</b> Put this weapon into your hand.",
 		"type": "Weapon"
@@ -50762,6 +53842,7 @@ var parseCardsText = {
 		"goldenImage": "NAX10_03.gif",
 		"id": "NAX10_03",
 		"name": "Hateful Strike",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDestroy a minion.",
 		"type": "Hero_power"
@@ -50774,6 +53855,7 @@ var parseCardsText = {
 		"goldenImage": "NAX10_03H.gif",
 		"id": "NAX10_03H",
 		"name": "Hateful Strike",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDestroy a minion.",
 		"type": "Hero_power"
@@ -50786,6 +53868,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX11_01",
 		"name": "Grobbulus",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -50797,6 +53880,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX11_01H",
 		"name": "Grobbulus",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -50808,6 +53892,7 @@ var parseCardsText = {
 		"goldenImage": "NAX11_02.gif",
 		"id": "NAX11_02",
 		"name": "Poison Cloud",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to all minions. If any die, summon a slime.",
 		"type": "Hero_power"
@@ -50823,6 +53908,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Poison Cloud",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 2 damage to all enemies. If any die, summon a slime.",
 		"type": "Hero_power"
@@ -50835,6 +53921,7 @@ var parseCardsText = {
 		"goldenImage": "NAX11_02H_2_TB.gif",
 		"id": "NAX11_02H_2_TB",
 		"name": "Poison Cloud",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to all enemy minions. If any die, summon a slime.",
 		"type": "Hero_power"
@@ -50849,6 +53936,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "NAX11_03",
 		"name": "Fallout Slime",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Minion"
 	},
@@ -50860,6 +53948,7 @@ var parseCardsText = {
 		"goldenImage": "NAX11_04.gif",
 		"id": "NAX11_04",
 		"name": "Mutating Injection",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -50873,6 +53962,7 @@ var parseCardsText = {
 		"goldenImage": "NAX11_04e.gif",
 		"id": "NAX11_04e",
 		"name": "Mutating Injection",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -50888,6 +53978,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX12_01",
 		"name": "Gluth",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -50899,6 +53990,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX12_01H",
 		"name": "Gluth",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -50910,6 +54002,7 @@ var parseCardsText = {
 		"goldenImage": "NAX12_02.gif",
 		"id": "NAX12_02",
 		"name": "Decimate",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nChange the Health of all minions to 1.",
 		"type": "Hero_power"
@@ -50920,6 +54013,7 @@ var parseCardsText = {
 		"goldenImage": "NAX12_02e.gif",
 		"id": "NAX12_02e",
 		"name": "Decimate",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Health changed to 1.",
 		"type": "Enchantment"
@@ -50935,6 +54029,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Decimate",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nChange the Health of enemy minions to 1.",
 		"type": "Hero_power"
@@ -50947,6 +54042,7 @@ var parseCardsText = {
 		"goldenImage": "NAX12_02H_2_TB.gif",
 		"id": "NAX12_02H_2_TB",
 		"name": "Decimate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nChange the Health of enemy minions to 1.",
 		"type": "Hero_power"
@@ -50959,6 +54055,7 @@ var parseCardsText = {
 		"goldenImage": "NAX12_02H_2c_TB.gif",
 		"id": "NAX12_02H_2c_TB",
 		"name": "Decimate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Change the Health of enemy minions to 1.",
 		"type": "Spell"
@@ -50973,6 +54070,7 @@ var parseCardsText = {
 		"goldenImage": "NAX12_03.gif",
 		"id": "NAX12_03",
 		"name": "Jaws",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DEATHRATTLE"
 		],
@@ -50986,6 +54084,7 @@ var parseCardsText = {
 		"goldenImage": "NAX12_03e.gif",
 		"id": "NAX12_03e",
 		"name": "Extra Teeth",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -51000,6 +54099,7 @@ var parseCardsText = {
 		"goldenImage": "NAX12_03H.gif",
 		"id": "NAX12_03H",
 		"name": "Jaws",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DEATHRATTLE"
 		],
@@ -51015,6 +54115,7 @@ var parseCardsText = {
 		"goldenImage": "NAX12_04.gif",
 		"id": "NAX12_04",
 		"name": "Enrage",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Give your hero +6 Attack this turn.",
 		"type": "Spell"
@@ -51028,6 +54129,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Enrage",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "+6 Attack this turn.",
 		"type": "Enchantment"
@@ -51040,6 +54142,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX13_01",
 		"name": "Thaddius",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51051,6 +54154,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX13_01H",
 		"name": "Thaddius",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51065,6 +54169,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Polarity Shift",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nSwap the Attack and Health of all minions.",
 		"type": "Hero_power"
@@ -51075,6 +54180,7 @@ var parseCardsText = {
 		"goldenImage": "NAX13_02e.gif",
 		"id": "NAX13_02e",
 		"name": "Polarity",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Attack and Health swapped.",
 		"type": "Enchantment"
@@ -51087,6 +54193,7 @@ var parseCardsText = {
 		"goldenImage": "NAX13_03.gif",
 		"id": "NAX13_03",
 		"name": "Supercharge",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Give your minions +2 Health.",
 		"type": "Spell"
@@ -51097,6 +54204,7 @@ var parseCardsText = {
 		"goldenImage": "NAX13_03e.gif",
 		"id": "NAX13_03e",
 		"name": "Supercharged",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "+2 Health.",
 		"type": "Enchantment"
@@ -51112,6 +54220,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NAX13_04H",
 		"name": "Feugen",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Naxx",
 		"type": "Minion"
@@ -51127,6 +54236,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "NAX13_05H",
 		"name": "Stalagg",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Naxx",
 		"type": "Minion"
@@ -51139,6 +54249,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX14_01",
 		"name": "Sapphiron",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51150,6 +54261,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX14_01H",
 		"name": "Sapphiron",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51164,6 +54276,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Frost Breath",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDestroy all enemy minions that aren't <b>Frozen</b>.",
 		"type": "Hero_power"
@@ -51181,6 +54294,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Frozen Champion",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"FREEZE"
 		],
@@ -51199,6 +54313,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Pure Cold",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Deal $8 damage to the enemy hero, and <b>Freeze</b> it.",
 		"type": "Spell"
@@ -51211,6 +54326,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX15_01",
 		"name": "Kel'Thuzad",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51220,6 +54336,7 @@ var parseCardsText = {
 		"goldenImage": "NAX15_01e.gif",
 		"id": "NAX15_01e",
 		"name": "Interloper!",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Enchantment"
 	},
@@ -51231,6 +54348,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX15_01H",
 		"name": "Kel'Thuzad",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51240,6 +54358,7 @@ var parseCardsText = {
 		"goldenImage": "NAX15_01He.gif",
 		"id": "NAX15_01He",
 		"name": "Interloper!",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Enchantment"
 	},
@@ -51255,6 +54374,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Frost Blast",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 2 damage to the enemy hero and <b>Freeze</b> it.",
 		"type": "Hero_power"
@@ -51271,6 +54391,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Frost Blast",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 3 damage to the enemy hero and <b>Freeze</b> it.",
 		"type": "Hero_power"
@@ -51288,6 +54409,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Guardian of Icecrown",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -51305,6 +54427,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Guardian of Icecrown",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -51317,6 +54440,7 @@ var parseCardsText = {
 		"goldenImage": "NAX15_04.gif",
 		"id": "NAX15_04",
 		"name": "Chains",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nTake control of a random enemy minion until end of turn.",
 		"type": "Hero_power"
@@ -51327,6 +54451,7 @@ var parseCardsText = {
 		"goldenImage": "NAX15_04a.gif",
 		"id": "NAX15_04a",
 		"name": "Slave of Kel'Thuzad",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "MINE!",
 		"type": "Enchantment"
@@ -51339,6 +54464,7 @@ var parseCardsText = {
 		"goldenImage": "NAX15_04H.gif",
 		"id": "NAX15_04H",
 		"name": "Chains",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nTake control of a random enemy minion.",
 		"type": "Hero_power"
@@ -51357,6 +54483,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Mr. Bigglesworth",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Naxx",
 		"text": "<i>This is Kel'Thuzad's kitty.</i>",
@@ -51370,6 +54497,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX1_01",
 		"name": "Anub'Rekhan",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51383,6 +54511,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "NAX1_03",
 		"name": "Nerubian",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Minion"
 	},
@@ -51394,6 +54523,7 @@ var parseCardsText = {
 		"goldenImage": "NAX1_04.gif",
 		"id": "NAX1_04",
 		"name": "Skitter",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nSummon a 3/1 Nerubian.",
 		"type": "Hero_power"
@@ -51406,6 +54536,7 @@ var parseCardsText = {
 		"goldenImage": "NAX1_05.gif",
 		"id": "NAX1_05",
 		"name": "Locust Swarm",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Deal $3 damage to all enemy minions. Restore #3 Health to your hero.",
 		"type": "Spell"
@@ -51418,6 +54549,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX1h_01",
 		"name": "Anub'Rekhan",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51431,6 +54563,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "NAX1h_03",
 		"name": "Nerubian",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Minion"
 	},
@@ -51442,6 +54575,7 @@ var parseCardsText = {
 		"goldenImage": "NAX1h_04.gif",
 		"id": "NAX1h_04",
 		"name": "Skitter",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nSummon a 4/4 Nerubian.",
 		"type": "Hero_power"
@@ -51454,6 +54588,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX2_01",
 		"name": "Grand Widow Faerlina",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51465,6 +54600,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX2_01H",
 		"name": "Grand Widow Faerlina",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51479,6 +54615,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Rain of Fire",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nFire a missile for each card in your opponent's hand.",
 		"type": "Hero_power"
@@ -51494,6 +54631,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Rain of Fire",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nFire a missile for each card in your opponent's hand.",
 		"type": "Hero_power"
@@ -51512,6 +54650,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Worshipper",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Your hero has +1 Attack on your turn.",
 		"type": "Minion"
@@ -51530,6 +54669,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Worshipper",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Your hero has +3 Attack on your turn.",
 		"type": "Minion"
@@ -51542,6 +54682,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX3_01",
 		"name": "Maexxna",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51553,6 +54694,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX3_01H",
 		"name": "Maexxna",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51564,6 +54706,7 @@ var parseCardsText = {
 		"goldenImage": "NAX3_02.gif",
 		"id": "NAX3_02",
 		"name": "Web Wrap",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nReturn a random enemy minion to your opponent's hand.",
 		"type": "Hero_power"
@@ -51576,6 +54719,7 @@ var parseCardsText = {
 		"goldenImage": "NAX3_02_TB.gif",
 		"id": "NAX3_02_TB",
 		"name": "Web Wrap",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nReturn a random enemy minion to your opponent's hand.",
 		"type": "Hero_power"
@@ -51591,6 +54735,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Web Wrap",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nReturn 2 random enemy minions to your opponent's hand.",
 		"type": "Hero_power"
@@ -51603,6 +54748,7 @@ var parseCardsText = {
 		"goldenImage": "NAX3_03.gif",
 		"id": "NAX3_03",
 		"name": "Necrotic Poison",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Destroy a minion.",
 		"type": "Spell"
@@ -51615,6 +54761,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX4_01",
 		"name": "Noth the Plaguebringer",
+		"playerClass": "Mage",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51626,6 +54773,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX4_01H",
 		"name": "Noth the Plaguebringer",
+		"playerClass": "Mage",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51639,6 +54787,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "NAX4_03",
 		"name": "Skeleton",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Minion"
 	},
@@ -51652,6 +54801,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "NAX4_03H",
 		"name": "Skeleton",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Minion"
 	},
@@ -51663,6 +54813,7 @@ var parseCardsText = {
 		"goldenImage": "NAX4_04.gif",
 		"id": "NAX4_04",
 		"name": "Raise Dead",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Passive Hero Power</b>\nWhenever an enemy dies, raise a 1/1 Skeleton.",
 		"type": "Hero_power"
@@ -51675,6 +54826,7 @@ var parseCardsText = {
 		"goldenImage": "NAX4_04H.gif",
 		"id": "NAX4_04H",
 		"name": "Raise Dead",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Passive Hero Power</b>\nWhenever an enemy dies, raise a 5/5 Skeleton.",
 		"type": "Hero_power"
@@ -51687,6 +54839,7 @@ var parseCardsText = {
 		"goldenImage": "NAX4_05.gif",
 		"id": "NAX4_05",
 		"name": "Plague",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Destroy all non-Skeleton minions.",
 		"type": "Spell"
@@ -51699,6 +54852,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX5_01",
 		"name": "Heigan the Unclean",
+		"playerClass": "Warlock",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51710,6 +54864,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX5_01H",
 		"name": "Heigan the Unclean",
+		"playerClass": "Warlock",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51721,6 +54876,7 @@ var parseCardsText = {
 		"goldenImage": "NAX5_02.gif",
 		"id": "NAX5_02",
 		"name": "Eruption",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 2 damage to the left-most enemy minion.",
 		"type": "Hero_power"
@@ -51736,6 +54892,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Eruption",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 3 damage to the left-most enemy minion.",
 		"type": "Hero_power"
@@ -51748,6 +54905,7 @@ var parseCardsText = {
 		"goldenImage": "NAX5_03.gif",
 		"id": "NAX5_03",
 		"name": "Mindpocalypse",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Both players draw 2 cards and gain a Mana Crystal.",
 		"type": "Spell"
@@ -51760,6 +54918,7 @@ var parseCardsText = {
 		"health": 75,
 		"id": "NAX6_01",
 		"name": "Loatheb",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51771,6 +54930,7 @@ var parseCardsText = {
 		"health": 99,
 		"id": "NAX6_01H",
 		"name": "Loatheb",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51782,6 +54942,7 @@ var parseCardsText = {
 		"goldenImage": "NAX6_02.gif",
 		"id": "NAX6_02",
 		"name": "Necrotic Aura",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 3 damage to the enemy hero.",
 		"type": "Hero_power"
@@ -51794,6 +54955,7 @@ var parseCardsText = {
 		"goldenImage": "NAX6_02H.gif",
 		"id": "NAX6_02H",
 		"name": "Necrotic Aura",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 3 damage to the enemy hero.",
 		"type": "Hero_power"
@@ -51806,6 +54968,7 @@ var parseCardsText = {
 		"goldenImage": "NAX6_03.gif",
 		"id": "NAX6_03",
 		"name": "Deathbloom",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Deal $5 damage to a minion. Summon a Spore.",
 		"type": "Spell"
@@ -51823,6 +54986,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Spore",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Give all enemy minions +8 Attack.",
 		"type": "Minion"
@@ -51833,6 +54997,7 @@ var parseCardsText = {
 		"goldenImage": "NAX6_03te.gif",
 		"id": "NAX6_03te",
 		"name": "Fungal Growth",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -51845,6 +55010,7 @@ var parseCardsText = {
 		"goldenImage": "NAX6_04.gif",
 		"id": "NAX6_04",
 		"name": "Sporeburst",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Deal $1 damage to all enemy minions. Summon a Spore.",
 		"type": "Spell"
@@ -51857,6 +55023,7 @@ var parseCardsText = {
 		"health": 40,
 		"id": "NAX7_01",
 		"name": "Instructor Razuvious",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51868,6 +55035,7 @@ var parseCardsText = {
 		"health": 55,
 		"id": "NAX7_01H",
 		"name": "Instructor Razuvious",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51884,6 +55052,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Understudy",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -51896,6 +55065,7 @@ var parseCardsText = {
 		"goldenImage": "NAX7_03.gif",
 		"id": "NAX7_03",
 		"name": "Unbalancing Strike",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 3 damage.",
 		"type": "Hero_power"
@@ -51908,6 +55078,7 @@ var parseCardsText = {
 		"goldenImage": "NAX7_03H.gif",
 		"id": "NAX7_03H",
 		"name": "Unbalancing Strike",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDeal 4 damage.",
 		"type": "Hero_power"
@@ -51922,6 +55093,7 @@ var parseCardsText = {
 		"goldenImage": "NAX7_04.gif",
 		"id": "NAX7_04",
 		"name": "Massive Runeblade",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Deals double damage to heroes.",
 		"type": "Weapon"
@@ -51936,6 +55108,7 @@ var parseCardsText = {
 		"goldenImage": "NAX7_04H.gif",
 		"id": "NAX7_04H",
 		"name": "Massive Runeblade",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Deals double damage to heroes.",
 		"type": "Weapon"
@@ -51948,6 +55121,7 @@ var parseCardsText = {
 		"goldenImage": "NAX7_05.gif",
 		"id": "NAX7_05",
 		"name": "Mind Control Crystal",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Activate the Crystal to control the Understudies!",
 		"type": "Spell"
@@ -51960,6 +55134,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "NAX8_01",
 		"name": "Gothik the Harvester",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51971,6 +55146,7 @@ var parseCardsText = {
 		"health": 45,
 		"id": "NAX8_01H",
 		"name": "Gothik the Harvester",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -51982,6 +55158,7 @@ var parseCardsText = {
 		"goldenImage": "NAX8_02.gif",
 		"id": "NAX8_02",
 		"name": "Harvest",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDraw a card.",
 		"type": "Hero_power"
@@ -51997,6 +55174,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Harvest",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDraw a card. Gain a Mana Crystal.",
 		"type": "Hero_power"
@@ -52009,6 +55187,7 @@ var parseCardsText = {
 		"goldenImage": "NAX8_02H_TB.gif",
 		"id": "NAX8_02H_TB",
 		"name": "Harvest",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nDraw a card. Gain a Mana Crystal.",
 		"type": "Hero_power"
@@ -52026,6 +55205,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Unrelenting Trainee",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Summon a Spectral Trainee for your opponent.",
 		"type": "Minion"
@@ -52040,6 +55220,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "NAX8_03t",
 		"name": "Spectral Trainee",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "At the start of your turn, deal 1 damage to your hero.",
 		"type": "Minion"
@@ -52057,6 +55238,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Unrelenting Warrior",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Summon a Spectral Warrior for your opponent.",
 		"type": "Minion"
@@ -52071,6 +55253,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "NAX8_04t",
 		"name": "Spectral Warrior",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "At the start of your turn, deal 1 damage to your hero.",
 		"type": "Minion"
@@ -52088,6 +55271,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Unrelenting Rider",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Summon a Spectral Rider for your opponent.",
 		"type": "Minion"
@@ -52102,6 +55286,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "NAX8_05t",
 		"name": "Spectral Rider",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "At the start of your turn, deal 1 damage to your hero.",
 		"type": "Minion"
@@ -52114,6 +55299,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NAX9_01",
 		"name": "Baron Rivendare",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -52125,6 +55311,7 @@ var parseCardsText = {
 		"health": 14,
 		"id": "NAX9_01H",
 		"name": "Baron Rivendare",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"type": "Hero"
 	},
@@ -52139,6 +55326,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NAX9_02",
 		"name": "Lady Blaumeux",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -52157,6 +55345,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NAX9_02H",
 		"name": "Lady Blaumeux",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -52175,6 +55364,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NAX9_03",
 		"name": "Thane Korth'azz",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -52193,6 +55383,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NAX9_03H",
 		"name": "Thane Korth'azz",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -52211,6 +55402,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NAX9_04",
 		"name": "Sir Zeliek",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -52229,6 +55421,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NAX9_04H",
 		"name": "Sir Zeliek",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -52246,6 +55439,7 @@ var parseCardsText = {
 		"goldenImage": "NAX9_05.gif",
 		"id": "NAX9_05",
 		"name": "Runeblade",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Has +3 Attack if the other Horsemen are dead.",
 		"type": "Weapon"
@@ -52260,6 +55454,7 @@ var parseCardsText = {
 		"goldenImage": "NAX9_05H.gif",
 		"id": "NAX9_05H",
 		"name": "Runeblade",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Has +6 Attack if the other Horsemen are dead.",
 		"type": "Weapon"
@@ -52272,6 +55467,7 @@ var parseCardsText = {
 		"goldenImage": "NAX9_06.gif",
 		"id": "NAX9_06",
 		"name": "Unholy Shadow",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Hero Power</b>\nDraw 2 cards.",
 		"type": "Hero_power"
@@ -52284,6 +55480,7 @@ var parseCardsText = {
 		"goldenImage": "NAX9_07.gif",
 		"id": "NAX9_07",
 		"name": "Mark of the Horsemen",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "Give your minions and your weapon +1/+1.",
 		"type": "Spell"
@@ -52294,6 +55491,7 @@ var parseCardsText = {
 		"goldenImage": "NAX9_07e.gif",
 		"id": "NAX9_07e",
 		"name": "Mark of the Horsemen",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -52311,6 +55509,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Necroknight",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Destroy the minions next to this one as well.",
 		"type": "Minion"
@@ -52328,6 +55527,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Skeletal Smith",
+		"playerClass": "Neutral",
 		"set": "Naxx",
 		"text": "<b>Deathrattle:</b> Destroy your opponent's weapon.",
 		"type": "Minion"
@@ -52343,6 +55543,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_003.gif",
 		"id": "NEW1_003",
 		"name": "Sacrificial Pact",
+		"playerClass": "Warlock",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Destroy a Demon. Restore #5 Health to your hero.",
@@ -52358,6 +55559,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_004.gif",
 		"id": "NEW1_004",
 		"name": "Vanish",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Return all minions to their owner's hand.",
@@ -52379,6 +55581,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Kidnapper",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "<b>Combo:</b> Return a minion to its owner's hand.",
@@ -52398,6 +55601,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Starfall",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "<b>Choose One -</b>\nDeal $5 damage to a minion; or $2 damage to all enemy minions.",
@@ -52411,6 +55615,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_007a.gif",
 		"id": "NEW1_007a",
 		"name": "Starfall",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Deal $2 damage to all enemy minions.",
 		"type": "Spell"
@@ -52423,6 +55628,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_007b.gif",
 		"id": "NEW1_007b",
 		"name": "Starfall",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Deal $5 damage to a minion.",
 		"type": "Spell"
@@ -52443,6 +55649,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Ancient of Lore",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "<b>Choose One -</b> Draw a card; or Restore 5 Health.",
@@ -52456,6 +55663,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_008a.gif",
 		"id": "NEW1_008a",
 		"name": "Ancient Teachings",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Draw a card.",
 		"type": "Spell"
@@ -52468,6 +55676,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_008b.gif",
 		"id": "NEW1_008b",
 		"name": "Ancient Secrets",
+		"playerClass": "Druid",
 		"set": "Expert1",
 		"text": "Restore 5 Health.",
 		"type": "Spell"
@@ -52482,6 +55691,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "NEW1_009",
 		"name": "Healing Totem",
+		"playerClass": "Shaman",
 		"race": "TOTEM",
 		"rarity": "Free",
 		"set": "Core",
@@ -52508,6 +55718,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Al'Akir the Windlord",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -52530,6 +55741,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Kor'kron Elite",
+		"playerClass": "Warrior",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "<b>Charge</b>",
@@ -52548,6 +55760,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "NEW1_012",
 		"name": "Mana Wyrm",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Whenever you cast a spell, gain +1 Attack.",
@@ -52559,6 +55772,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_012o.gif",
 		"id": "NEW1_012o",
 		"name": "Mana Gorged",
+		"playerClass": "Mage",
 		"set": "Expert1",
 		"text": "Increased attack.",
 		"type": "Enchantment"
@@ -52579,6 +55793,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Master of Disguise",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"referencedTags": [
 			"STEALTH"
@@ -52593,6 +55808,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_014e.gif",
 		"id": "NEW1_014e",
 		"name": "Disguised",
+		"playerClass": "Rogue",
 		"set": "Expert1",
 		"text": "Stealthed until your next turn.",
 		"type": "Enchantment"
@@ -52613,6 +55829,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Captain's Parrot",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Hof",
@@ -52635,6 +55852,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Hungry Crab",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Expert1",
@@ -52647,6 +55865,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_017e.gif",
 		"id": "NEW1_017e",
 		"name": "Full Belly",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+2/+2.  Full of Murloc.",
 		"type": "Enchantment"
@@ -52667,6 +55886,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Bloodsail Raider",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -52679,6 +55899,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_018e.gif",
 		"id": "NEW1_018e",
 		"name": "Treasure Crazed",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -52696,6 +55917,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "NEW1_019",
 		"name": "Knife Juggler",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "[x]After you summon a\nminion, deal 1 damage\nto a random enemy.",
@@ -52714,6 +55936,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "NEW1_020",
 		"name": "Wild Pyromancer",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "After you cast a spell, deal 1 damage to ALL minions.",
@@ -52732,6 +55955,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NEW1_021",
 		"name": "Doomsayer",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "At the start of your turn, destroy ALL minions.",
@@ -52753,6 +55977,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Dread Corsair",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -52776,6 +56001,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Faerie Dragon",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -52799,6 +56025,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Captain Greenskin",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -52811,6 +56038,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_024o.gif",
 		"id": "NEW1_024o",
 		"name": "Greenskin's Command",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -52831,6 +56059,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Bloodsail Corsair",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -52843,6 +56072,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_025e.gif",
 		"id": "NEW1_025e",
 		"name": "Bolstered",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased Health.",
 		"type": "Enchantment"
@@ -52860,6 +56090,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "NEW1_026",
 		"name": "Violet Teacher",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Whenever you cast a spell, summon a 1/1 Violet Apprentice.",
@@ -52875,6 +56106,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "NEW1_026t",
 		"name": "Violet Apprentice",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"type": "Minion"
 	},
@@ -52894,6 +56126,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Southsea Captain",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Epic",
 		"set": "Expert1",
@@ -52906,6 +56139,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_027e.gif",
 		"id": "NEW1_027e",
 		"name": "Yarrr!",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Southsea Captain is granting +1/+1.",
 		"type": "Enchantment"
@@ -52927,6 +56161,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Millhouse Manastorm",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "<b>Battlecry:</b> Enemy spells cost (0) next turn.",
@@ -52938,6 +56173,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_029t.gif",
 		"id": "NEW1_029t",
 		"name": "Kill Millhouse!",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "Spells cost (0) this turn!",
@@ -52960,6 +56196,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Deathwing",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Expert1",
@@ -52982,6 +56219,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_031.gif",
 		"id": "NEW1_031",
 		"name": "Animal Companion",
+		"playerClass": "Hunter",
 		"rarity": "Free",
 		"set": "Core",
 		"text": "Summon a random Beast Companion.",
@@ -53000,6 +56238,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Misha",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Core",
@@ -53019,6 +56258,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Leokk",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Core",
@@ -53031,6 +56271,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_033o.gif",
 		"id": "NEW1_033o",
 		"name": "Eye In The Sky",
+		"playerClass": "Hunter",
 		"set": "Core",
 		"text": "Leokk is granting this minion +1 Attack.",
 		"type": "Enchantment"
@@ -53048,6 +56289,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Huffer",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Core",
@@ -53065,6 +56307,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_036.gif",
 		"id": "NEW1_036",
 		"name": "Commanding Shout",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "Your minions can't be reduced below 1 Health this turn. Draw a card.",
@@ -53079,6 +56322,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Commanding Shout",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "Can't be reduced below 1 Health this turn.",
 		"type": "Enchantment"
@@ -53092,6 +56336,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Commanding Shout",
+		"playerClass": "Warrior",
 		"set": "Expert1",
 		"text": "Your minions can't be reduced below 1 Health this turn.",
 		"type": "Enchantment"
@@ -53109,6 +56354,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "NEW1_037",
 		"name": "Master Swordsmith",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Expert1",
 		"text": "At the end of your turn, give another random friendly minion +1 Attack.",
@@ -53120,6 +56366,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_037e.gif",
 		"id": "NEW1_037e",
 		"name": "Equipped",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -53138,6 +56385,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "NEW1_038",
 		"name": "Gruul",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Expert1",
 		"text": "At the end of each turn, gain +1/+1 .",
@@ -53149,6 +56397,7 @@ var parseCardsText = {
 		"goldenImage": "NEW1_038o.gif",
 		"id": "NEW1_038o",
 		"name": "Growth",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Gruul is growing...",
 		"type": "Enchantment"
@@ -53167,6 +56416,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "NEW1_040",
 		"name": "Hogger",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"TAUNT"
@@ -53188,6 +56438,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Gnoll",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -53208,6 +56459,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Stampeding Kodo",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Expert1",
@@ -53230,6 +56482,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Vilefin Inquisitor",
+		"playerClass": "Paladin",
 		"race": "MURLOC",
 		"rarity": "Epic",
 		"set": "Og",
@@ -53247,6 +56500,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "OG_006a",
 		"name": "Silver Hand Murloc",
+		"playerClass": "Paladin",
 		"race": "MURLOC",
 		"set": "Og",
 		"type": "Minion"
@@ -53260,6 +56514,7 @@ var parseCardsText = {
 		"goldenImage": "OG_006b.gif",
 		"id": "OG_006b",
 		"name": "The Tidal Hand",
+		"playerClass": "Paladin",
 		"set": "Og",
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Murloc.",
 		"type": "Hero_power"
@@ -53275,6 +56530,7 @@ var parseCardsText = {
 		"goldenImage": "OG_023.gif",
 		"id": "OG_023",
 		"name": "Primal Fusion",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Give a minion +1/+1 for each of your Totems.",
@@ -53286,6 +56542,7 @@ var parseCardsText = {
 		"goldenImage": "OG_023t.gif",
 		"id": "OG_023t",
 		"name": "Primally Infused",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -53307,6 +56564,7 @@ var parseCardsText = {
 		],
 		"name": "Flamewreathed Faceless",
 		"overload": 2,
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Overload:</b> (2)",
@@ -53328,6 +56586,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Eternal Sentinel",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"referencedTags": [
 			"OVERLOAD"
@@ -53347,6 +56606,7 @@ var parseCardsText = {
 		"goldenImage": "OG_027.gif",
 		"id": "OG_027",
 		"name": "Evolve",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "Transform your minions into random minions that cost (1) more.",
@@ -53368,6 +56628,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Thing from Below",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "[x]<b>Taunt</b>\nCosts (1) less for each\nTotem you've summoned\nthis game.",
@@ -53389,6 +56650,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Hammer of Twilight",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Deathrattle:</b> Summon a 4/2 Elemental.",
@@ -53405,6 +56667,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "OG_031a",
 		"name": "Twilight Elemental",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Epic",
 		"set": "Og",
@@ -53426,6 +56689,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Tentacles for Arms",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Deathrattle:</b> Return this to your hand.",
@@ -53444,6 +56708,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "OG_034",
 		"name": "Silithid Swarmer",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Og",
@@ -53464,6 +56729,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "OG_042",
 		"name": "Y'Shaarj, Rage Unbound",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "At the end of your turn, put a minion from your deck into the battlefield.",
@@ -53486,6 +56752,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Fandral Staghelm",
+		"playerClass": "Druid",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "Your <b>Choose One</b> cards and powers have both effects combined.",
@@ -53505,6 +56772,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Druid of the Claw",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -53521,6 +56789,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "OG_044b",
 		"name": "Druid of the Flame",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Brm",
@@ -53540,6 +56809,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Sabertooth Tiger",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Tgt",
@@ -53557,6 +56827,7 @@ var parseCardsText = {
 		"goldenImage": "OG_045.gif",
 		"id": "OG_045",
 		"name": "Infest",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -53571,6 +56842,7 @@ var parseCardsText = {
 		"goldenImage": "OG_045a.gif",
 		"id": "OG_045a",
 		"name": "Nerubian Spores",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Get a Beast when this dies.",
@@ -53590,6 +56862,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Feral Rage",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Choose One -</b> Give your hero +4 Attack this turn; or Gain 8 Armor.",
@@ -53604,6 +56877,7 @@ var parseCardsText = {
 		"goldenImage": "OG_047a.gif",
 		"id": "OG_047a",
 		"name": "Evolve Spines",
+		"playerClass": "Druid",
 		"set": "Og",
 		"text": "Give your hero +4 Attack this turn.",
 		"type": "Spell"
@@ -53617,6 +56891,7 @@ var parseCardsText = {
 		"goldenImage": "OG_047b.gif",
 		"id": "OG_047b",
 		"name": "Evolve Scales",
+		"playerClass": "Druid",
 		"set": "Og",
 		"text": "Gain 8 Armor.",
 		"type": "Spell"
@@ -53630,6 +56905,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Spines",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "+4 Attack this turn.",
@@ -53646,6 +56922,7 @@ var parseCardsText = {
 		"goldenImage": "OG_048.gif",
 		"id": "OG_048",
 		"name": "Mark of Y'Shaarj",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Give a minion +2/+2.\nIf it's a Beast, draw\na card.",
@@ -53657,6 +56934,7 @@ var parseCardsText = {
 		"goldenImage": "OG_048e.gif",
 		"id": "OG_048e",
 		"name": "Mark of Y'Shaarj",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "+2/+2.",
@@ -53678,6 +56956,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Forbidden Ancient",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Spend all your Mana. Gain +1/+1 for each mana spent.",
@@ -53689,6 +56968,7 @@ var parseCardsText = {
 		"goldenImage": "OG_051e.gif",
 		"id": "OG_051e",
 		"name": "Forbidden Power",
+		"playerClass": "Druid",
 		"set": "Og",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -53704,6 +56984,7 @@ var parseCardsText = {
 		"goldenImage": "OG_058.gif",
 		"id": "OG_058",
 		"name": "Rusty Hook",
+		"playerClass": "Warrior",
 		"set": "Og",
 		"type": "Weapon"
 	},
@@ -53718,6 +56999,7 @@ var parseCardsText = {
 		"goldenImage": "OG_061.gif",
 		"id": "OG_061",
 		"name": "On the Hunt",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Deal $1 damage.\nSummon a 1/1 Mastiff.",
@@ -53734,6 +57016,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "OG_061t",
 		"name": "Mastiff",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Og",
 		"type": "Minion"
@@ -53754,6 +57037,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Bladed Cultist",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Combo:</b> Gain +1/+1.",
@@ -53765,6 +57049,7 @@ var parseCardsText = {
 		"goldenImage": "OG_070e.gif",
 		"id": "OG_070e",
 		"name": "Thirsty Blades",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "+1/+1.",
@@ -53781,6 +57066,7 @@ var parseCardsText = {
 		"goldenImage": "OG_072.gif",
 		"id": "OG_072",
 		"name": "Journey Below",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE",
@@ -53801,6 +57087,7 @@ var parseCardsText = {
 		"goldenImage": "OG_073.gif",
 		"id": "OG_073",
 		"name": "Thistle Tea",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "Draw a card. Add 2 extra copies of it to your hand.",
@@ -53831,6 +57118,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Xaril, Poisoned Mind",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "<b>Battlecry and Deathrattle:</b> Add a random Toxin card to your hand.",
@@ -53842,6 +57130,7 @@ var parseCardsText = {
 		"goldenImage": "OG_080ae.gif",
 		"id": "OG_080ae",
 		"name": "Bloodthistle",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Costs (2) less.",
 		"type": "Enchantment"
@@ -53855,6 +57144,7 @@ var parseCardsText = {
 		"goldenImage": "OG_080b.gif",
 		"id": "OG_080b",
 		"name": "Kingsblood Toxin",
+		"playerClass": "Rogue",
 		"set": "Og",
 		"text": "Draw a card.",
 		"type": "Spell"
@@ -53868,6 +57158,7 @@ var parseCardsText = {
 		"goldenImage": "OG_080c.gif",
 		"id": "OG_080c",
 		"name": "Bloodthistle Toxin",
+		"playerClass": "Rogue",
 		"set": "Og",
 		"text": "Return a friendly minion to your hand.\nIt costs (2) less.",
 		"type": "Spell"
@@ -53881,6 +57172,7 @@ var parseCardsText = {
 		"goldenImage": "OG_080d.gif",
 		"id": "OG_080d",
 		"name": "Briarthorn Toxin",
+		"playerClass": "Rogue",
 		"set": "Og",
 		"text": "Give a minion +3 Attack.",
 		"type": "Spell"
@@ -53891,6 +57183,7 @@ var parseCardsText = {
 		"goldenImage": "OG_080de.gif",
 		"id": "OG_080de",
 		"name": "Fadeleaf",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Stealthed until your next turn.",
 		"type": "Enchantment"
@@ -53904,6 +57197,7 @@ var parseCardsText = {
 		"goldenImage": "OG_080e.gif",
 		"id": "OG_080e",
 		"name": "Fadeleaf Toxin",
+		"playerClass": "Rogue",
 		"referencedTags": [
 			"STEALTH"
 		],
@@ -53917,6 +57211,7 @@ var parseCardsText = {
 		"goldenImage": "OG_080ee.gif",
 		"id": "OG_080ee",
 		"name": "Briarthorn",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -53930,6 +57225,7 @@ var parseCardsText = {
 		"goldenImage": "OG_080f.gif",
 		"id": "OG_080f",
 		"name": "Firebloom Toxin",
+		"playerClass": "Rogue",
 		"set": "Og",
 		"text": "Deal $2 damage.",
 		"type": "Spell"
@@ -53945,6 +57241,7 @@ var parseCardsText = {
 		"goldenImage": "OG_081.gif",
 		"id": "OG_081",
 		"name": "Shatter",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"FREEZE"
@@ -53969,6 +57266,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Evolved Kobold",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"spellDamage": 2,
@@ -53991,6 +57289,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Twilight Flamecaller",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Deal 1 damage to all enemy minions.",
@@ -54009,6 +57308,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "OG_085",
 		"name": "Demented Frostcaller",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"referencedTags": [
 			"FREEZE"
@@ -54028,6 +57328,7 @@ var parseCardsText = {
 		"goldenImage": "OG_086.gif",
 		"id": "OG_086",
 		"name": "Forbidden Flame",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "Spend all your Mana. Deal that much damage to a minion.",
@@ -54049,6 +57350,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Servant of Yogg-Saron",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Cast a random spell that costs (5) or less <i>(targets chosen randomly)</i>.",
@@ -54065,6 +57367,7 @@ var parseCardsText = {
 		"goldenImage": "OG_090.gif",
 		"id": "OG_090",
 		"name": "Cabalist's Tome",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "Add 3 random Mage spells to your hand.",
@@ -54081,6 +57384,7 @@ var parseCardsText = {
 		"goldenImage": "OG_094.gif",
 		"id": "OG_094",
 		"name": "Power Word: Tentacles",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Give a minion +2/+6.",
@@ -54092,6 +57396,7 @@ var parseCardsText = {
 		"goldenImage": "OG_094e.gif",
 		"id": "OG_094e",
 		"name": "Tentacles",
+		"playerClass": "Priest",
 		"set": "Og",
 		"text": "+2/+6",
 		"type": "Enchantment"
@@ -54113,6 +57418,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Twilight Darkmender",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> If your C'Thun  has at least 10 Attack, restore 10 Health to your hero.",
@@ -54129,6 +57435,7 @@ var parseCardsText = {
 		"goldenImage": "OG_100.gif",
 		"id": "OG_100",
 		"name": "Shadow Word: Horror",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "Destroy all minions with 2 or less Attack.",
@@ -54145,6 +57452,7 @@ var parseCardsText = {
 		"goldenImage": "OG_101.gif",
 		"id": "OG_101",
 		"name": "Forbidden Shaping",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "Spend all your Mana. Summon a random minion that costs that much.",
@@ -54166,6 +57474,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Darkspeaker",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Swap stats with a friendly minion.",
@@ -54177,6 +57486,7 @@ var parseCardsText = {
 		"goldenImage": "OG_102e.gif",
 		"id": "OG_102e",
 		"name": "Power Transfer",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Swapped stats.",
 		"type": "Enchantment"
@@ -54192,6 +57502,7 @@ var parseCardsText = {
 		"goldenImage": "OG_104.gif",
 		"id": "OG_104",
 		"name": "Embrace the Shadow",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "This turn, your healing effects deal damage instead.",
@@ -54206,6 +57517,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Embracing the Shadow",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Your healing effects are dealing damage.",
 		"type": "Enchantment"
@@ -54227,6 +57539,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Darkshire Librarian",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Battlecry:</b>\nDiscard a random card. <b>Deathrattle:</b>\nDraw a card.",
@@ -54245,6 +57558,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "OG_113",
 		"name": "Darkshire Councilman",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "[x]After you summon a minion,\n gain +1 Attack.",
@@ -54256,6 +57570,7 @@ var parseCardsText = {
 		"goldenImage": "OG_113e.gif",
 		"id": "OG_113e",
 		"name": "Power of the People",
+		"playerClass": "Warlock",
 		"set": "Og",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -54271,6 +57586,7 @@ var parseCardsText = {
 		"goldenImage": "OG_114.gif",
 		"id": "OG_114",
 		"name": "Forbidden Ritual",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "Spend all your Mana. Summon that many 1/1 Tentacles.",
@@ -54287,6 +57603,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "OG_114a",
 		"name": "Icky Tentacle",
+		"playerClass": "Warlock",
 		"set": "Og",
 		"type": "Minion"
 	},
@@ -54304,6 +57621,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Spreading Madness",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "Deal $9 damage randomly split among ALL characters.",
@@ -54320,6 +57638,7 @@ var parseCardsText = {
 		"goldenImage": "OG_118.gif",
 		"id": "OG_118",
 		"name": "Renounce Darkness",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "Replace your Hero Power and Warlock cards with another class's. The cards cost (1) less.",
@@ -54331,6 +57650,7 @@ var parseCardsText = {
 		"goldenImage": "OG_118e.gif",
 		"id": "OG_118e",
 		"name": "Renounce Darkness Deck Ench",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"type": "Enchantment"
 	},
@@ -54340,6 +57660,7 @@ var parseCardsText = {
 		"goldenImage": "OG_118f.gif",
 		"id": "OG_118f",
 		"name": "New Calling",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Cost reduced.",
 		"type": "Enchantment"
@@ -54361,6 +57682,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Anomalus",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Og",
@@ -54384,6 +57706,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Cho'gall",
+		"playerClass": "Warlock",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> The next spell you cast this turn costs Health instead of Mana.",
@@ -54395,6 +57718,7 @@ var parseCardsText = {
 		"goldenImage": "OG_121e.gif",
 		"id": "OG_121e",
 		"name": "Dark Power",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Your next spell costs Health instead of Mana.",
 		"type": "Enchantment"
@@ -54416,6 +57740,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Mukla, Tyrant of the Vale",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Og",
@@ -54436,6 +57761,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "OG_123",
 		"name": "Shifter Zerus",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "Each turn this is in your hand, transform it into a random minion.",
@@ -54447,6 +57773,7 @@ var parseCardsText = {
 		"goldenImage": "OG_123e.gif",
 		"id": "OG_123e",
 		"name": "Shifting",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Transforming into random minions.",
 		"type": "Enchantment"
@@ -54470,6 +57797,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Twin Emperor Vek'lor",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "[x]<b><b>Taunt</b>\nBattlecry:</b> If your C'Thun has\nat least 10 Attack, summon\nanother Emperor.",
@@ -54492,6 +57820,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "N'Zoth, the Corruptor",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -54517,6 +57846,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Yogg-Saron, Hope's End",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Cast a random spell for each spell you've cast this game <i>(targets chosen randomly)</i>.",
@@ -54535,6 +57865,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "OG_138",
 		"name": "Nerubian Prophet",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "At the start of your turn, reduce this card's\nCost by (1).",
@@ -54546,6 +57877,7 @@ var parseCardsText = {
 		"goldenImage": "OG_138e.gif",
 		"id": "OG_138e",
 		"name": "Will of the Vizier",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Reduced Cost.",
 		"type": "Enchantment"
@@ -54563,6 +57895,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "OG_141",
 		"name": "Faceless Behemoth",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"type": "Minion"
@@ -54580,6 +57913,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "OG_142",
 		"name": "Eldritch Horror",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"type": "Minion"
@@ -54601,6 +57935,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Psych-o-Tron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Og",
@@ -54623,6 +57958,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Corrupted Healbot",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Rare",
 		"set": "Og",
@@ -54645,6 +57981,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ravaging Ghoul",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Deal 1 damage to all other minions.",
@@ -54666,6 +58003,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Aberrant Berserker",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Enrage:</b> +2 Attack.",
@@ -54680,6 +58018,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Enraged",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+2 Attack.",
 		"type": "Enchantment"
@@ -54700,6 +58039,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Tentacle of N'Zoth",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Deathrattle:</b> Deal 1 damage to all minions.",
@@ -54721,6 +58061,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Grotesque Dragonhawk",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Og",
@@ -54743,6 +58084,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Bog Creeper",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Taunt</b>",
@@ -54764,6 +58106,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Bilefin Tidehunter",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"referencedTags": [
@@ -54787,6 +58130,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Ooze",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Taunt</b>",
@@ -54808,6 +58152,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Zealous Initiate",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Deathrattle:</b> Give a random friendly minion +1/+1.",
@@ -54819,6 +58164,7 @@ var parseCardsText = {
 		"goldenImage": "OG_158e.gif",
 		"id": "OG_158e",
 		"name": "Secrets of the Cult",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -54839,6 +58185,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Corrupted Seer",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Rare",
 		"set": "Og",
@@ -54862,6 +58209,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Disciple of C'Thun",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Deal 2 damage. Give your C'Thun +2/+2 <i>(wherever it is)</i>.",
@@ -54880,6 +58228,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "OG_173",
 		"name": "Blood of The Ancient One",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "If you control two of these\nat the end of your turn, merge them into 'The Ancient One'.",
@@ -54896,6 +58245,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "OG_173a",
 		"name": "The Ancient One",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Og",
 		"type": "Minion"
@@ -54917,6 +58267,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Faceless Shambler",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Copy a friendly minion's Attack and Health.",
@@ -54928,6 +58279,7 @@ var parseCardsText = {
 		"goldenImage": "OG_174e.gif",
 		"id": "OG_174e",
 		"name": "Faceless",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Copying stats.",
 		"type": "Enchantment"
@@ -54943,6 +58295,7 @@ var parseCardsText = {
 		"goldenImage": "OG_176.gif",
 		"id": "OG_176",
 		"name": "Shadow Strike",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Deal $5 damage to an undamaged character.",
@@ -54964,6 +58317,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Fiery Bat",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Og",
@@ -54987,6 +58341,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Klaxxi Amber-Weaver",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> If your C'Thun has at least 10 Attack, gain +5 Health.",
@@ -54998,6 +58353,7 @@ var parseCardsText = {
 		"goldenImage": "OG_188e.gif",
 		"id": "OG_188e",
 		"name": "Amber Carapace",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+5 Health.",
 		"type": "Enchantment"
@@ -55016,6 +58372,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Wisps of the Old Gods",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Choose One -</b> Summon seven 1/1 Wisps; or Give your minions +2/+2.",
@@ -55030,6 +58387,7 @@ var parseCardsText = {
 		"goldenImage": "OG_195a.gif",
 		"id": "OG_195a",
 		"name": "Many Wisps",
+		"playerClass": "Druid",
 		"set": "Og",
 		"text": "Summon seven 1/1 Wisps.",
 		"type": "Spell"
@@ -55043,6 +58401,7 @@ var parseCardsText = {
 		"goldenImage": "OG_195b.gif",
 		"id": "OG_195b",
 		"name": "Big Wisps",
+		"playerClass": "Druid",
 		"set": "Og",
 		"text": "Give your minions +2/+2.",
 		"type": "Spell"
@@ -55058,6 +58417,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "OG_195c",
 		"name": "Wisp",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Og",
 		"type": "Minion"
@@ -55068,6 +58428,7 @@ var parseCardsText = {
 		"goldenImage": "OG_195e.gif",
 		"id": "OG_195e",
 		"name": "Enormous",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -55083,6 +58444,7 @@ var parseCardsText = {
 		"goldenImage": "OG_198.gif",
 		"id": "OG_198",
 		"name": "Forbidden Healing",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "Spend all your Mana. Restore twice that much Health.",
@@ -55101,6 +58463,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "OG_200",
 		"name": "Validated Doomsayer",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "At the start of your turn, set this minion's Attack to 7.",
@@ -55112,6 +58475,7 @@ var parseCardsText = {
 		"goldenImage": "OG_200e.gif",
 		"id": "OG_200e",
 		"name": "Doom Free",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Attack set to 7.",
 		"type": "Enchantment"
@@ -55132,6 +58496,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Mire Keeper",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "[x]<b>Choose One -</b> Summon a\n2/2 Slime; or Gain an\nempty Mana Crystal.",
@@ -55146,6 +58511,7 @@ var parseCardsText = {
 		"goldenImage": "OG_202a.gif",
 		"id": "OG_202a",
 		"name": "Y'Shaarj's Strength",
+		"playerClass": "Druid",
 		"set": "Og",
 		"text": "Summon a 2/2 Slime.",
 		"type": "Spell"
@@ -55156,6 +58522,7 @@ var parseCardsText = {
 		"goldenImage": "OG_202ae.gif",
 		"id": "OG_202ae",
 		"name": "Y'Shaarj's Strength",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "+3/+3.",
@@ -55170,6 +58537,7 @@ var parseCardsText = {
 		"goldenImage": "OG_202b.gif",
 		"id": "OG_202b",
 		"name": "Yogg-Saron's Magic",
+		"playerClass": "Druid",
 		"set": "Og",
 		"text": "Gain an empty Mana Crystal.",
 		"type": "Spell"
@@ -55185,6 +58553,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "OG_202c",
 		"name": "Slime",
+		"playerClass": "Druid",
 		"set": "Og",
 		"type": "Minion"
 	},
@@ -55203,6 +58572,7 @@ var parseCardsText = {
 		],
 		"name": "Stormcrack",
 		"overload": 1,
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Deal $4 damage to a minion. <b>Overload:</b> (1)",
@@ -55224,6 +58594,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Faceless Summoner",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Summon a random 3-Cost minion.",
@@ -55243,6 +58614,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "OG_209",
 		"name": "Hallazeal the Ascended",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Og",
@@ -55260,6 +58632,7 @@ var parseCardsText = {
 		"goldenImage": "OG_211.gif",
 		"id": "OG_211",
 		"name": "Call of the Wild",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "Summon all three Animal Companions.",
@@ -55281,6 +58654,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Infested Wolf",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Og",
@@ -55298,6 +58672,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "OG_216a",
 		"name": "Spider",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Og",
 		"type": "Minion"
@@ -55319,6 +58694,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Bloodhoof Brave",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Taunt</b>\n<b>Enrage:</b> +3 Attack.",
@@ -55333,6 +58709,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Enraged",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -55354,6 +58731,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Malkorok",
+		"playerClass": "Warrior",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Equip a random weapon.",
@@ -55375,6 +58753,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Selfless Hero",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -55399,6 +58778,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Rallying Blade",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -55413,6 +58793,7 @@ var parseCardsText = {
 		"goldenImage": "OG_222e.gif",
 		"id": "OG_222e",
 		"name": "Rally",
+		"playerClass": "Paladin",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -55428,6 +58809,7 @@ var parseCardsText = {
 		"goldenImage": "OG_223.gif",
 		"id": "OG_223",
 		"name": "Divine Strength",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Give a minion +1/+2.",
@@ -55439,6 +58821,7 @@ var parseCardsText = {
 		"goldenImage": "OG_223e.gif",
 		"id": "OG_223e",
 		"name": "Optimism",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+2.",
 		"type": "Enchantment"
@@ -55457,6 +58840,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "OG_229",
 		"name": "Ragnaros, Lightlord",
+		"playerClass": "Paladin",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Og",
@@ -55479,6 +58863,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Darkshire Alchemist",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Restore 5 Health.",
@@ -55495,6 +58880,7 @@ var parseCardsText = {
 		"goldenImage": "OG_239.gif",
 		"id": "OG_239",
 		"name": "DOOM!",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "Destroy all minions. Draw a card for each.",
@@ -55516,6 +58902,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Possessed Villager",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Deathrattle:</b> Summon a 1/1 Shadowbeast.",
@@ -55532,6 +58919,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "OG_241a",
 		"name": "Shadowbeast",
+		"playerClass": "Warlock",
 		"set": "Og",
 		"type": "Minion"
 	},
@@ -55551,6 +58939,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Twisted Worgen",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Stealth</b>",
@@ -55569,6 +58958,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "OG_248",
 		"name": "Am'gam Rager",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"type": "Minion"
@@ -55590,6 +58980,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Infested Tauren",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Summon a 2/2 Slime.",
@@ -55606,6 +58997,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "OG_249a",
 		"name": "Slime",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"type": "Minion"
 	},
@@ -55625,6 +59017,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Eater of Secrets",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"SECRET"
@@ -55639,6 +59032,7 @@ var parseCardsText = {
 		"goldenImage": "OG_254e.gif",
 		"id": "OG_254e",
 		"name": "Secretly Sated",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -55660,6 +59054,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Doomcaller",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Give your C'Thun +2/+2 <i>(wherever it is).</i> If it's dead, shuffle it into your deck.",
@@ -55681,6 +59076,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Spawn of N'Zoth",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Deathrattle:</b> Give your minions +1/+1.",
@@ -55692,6 +59088,7 @@ var parseCardsText = {
 		"goldenImage": "OG_256e.gif",
 		"id": "OG_256e",
 		"name": "Slimed",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -55712,6 +59109,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Southsea Squidface",
+		"playerClass": "Rogue",
 		"race": "PIRATE",
 		"rarity": "Common",
 		"set": "Og",
@@ -55724,6 +59122,7 @@ var parseCardsText = {
 		"goldenImage": "OG_267e.gif",
 		"id": "OG_267e",
 		"name": "Squid Oil Sheen",
+		"playerClass": "Rogue",
 		"set": "Og",
 		"text": "+2 Attack",
 		"type": "Enchantment"
@@ -55738,6 +59137,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "OG_270a",
 		"name": "Nerubian Soldier",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"type": "Minion"
 	},
@@ -55754,6 +59154,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "OG_271",
 		"name": "Scaled Nightmare",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Epic",
 		"set": "Og",
@@ -55766,6 +59167,7 @@ var parseCardsText = {
 		"goldenImage": "OG_271e.gif",
 		"id": "OG_271e",
 		"name": "Terrifying Visage",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Attack increased.",
 		"type": "Enchantment"
@@ -55786,6 +59188,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Twilight Summoner",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Deathrattle:</b> Summon a 5/5 Faceless Destroyer.",
@@ -55802,6 +59205,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "OG_272t",
 		"name": "Faceless Destroyer",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"type": "Minion"
 	},
@@ -55816,6 +59220,7 @@ var parseCardsText = {
 		"goldenImage": "OG_273.gif",
 		"id": "OG_273",
 		"name": "Stand Against Darkness",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Summon five 1/1 Silver Hand Recruits.",
@@ -55832,6 +59237,7 @@ var parseCardsText = {
 		"goldenImage": "OG_276.gif",
 		"id": "OG_276",
 		"name": "Blood Warriors",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "Add a copy of each damaged friendly minion to your hand.",
@@ -55848,6 +59254,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "OG_279",
 		"name": "C'Thun",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Deal damage equal to this minion's Attack randomly split among all enemies.",
@@ -55870,6 +59277,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "C'Thun",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Deal damage equal to this minion's Attack randomly split among all enemies.",
@@ -55892,6 +59300,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Beckoner of Evil",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Give your C'Thun +2/+2 <i>(wherever it is).</i>",
@@ -55903,6 +59312,7 @@ var parseCardsText = {
 		"goldenImage": "OG_281e.gif",
 		"id": "OG_281e",
 		"name": "Fanatic Devotion",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Increased Stats.",
 		"type": "Enchantment"
@@ -55924,6 +59334,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Blade of C'Thun",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Destroy a minion. Add its Attack and Health to your C'Thun's <i>(wherever it is).</i>",
@@ -55938,6 +59349,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Devotion of the Blade",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -55960,6 +59372,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "C'Thun's Chosen",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "[x]<b>Divine Shield</b>\n<b>Battlecry:</b> Give your C'Thun\n+2/+2 <i>(wherever it is).</i>",
@@ -55983,6 +59396,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Twilight Geomancer",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Give your C'Thun\n<b>Taunt</b> <i>(wherever it is).</i>",
@@ -55994,6 +59408,7 @@ var parseCardsText = {
 		"goldenImage": "OG_284e.gif",
 		"id": "OG_284e",
 		"name": "Geomancy",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Has <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -56014,6 +59429,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Twilight Elder",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "At the end of your turn, give your C'Thun +1/+1 <i>(wherever it is).</i>",
@@ -56032,6 +59448,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "OG_290",
 		"name": "Ancient Harbinger",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "At the start of your turn, put a 10-Cost minion from your deck into your hand.",
@@ -56043,6 +59460,7 @@ var parseCardsText = {
 		"goldenImage": "OG_290e.gif",
 		"id": "OG_290e",
 		"name": "Caller Devotion",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -56063,6 +59481,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Shadowcaster",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Choose a friendly minion. Add a 1/1 copy to your hand that costs (1).",
@@ -56074,6 +59493,7 @@ var parseCardsText = {
 		"goldenImage": "OG_291e.gif",
 		"id": "OG_291e",
 		"name": "Flickering Darkness",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Shadowcaster made this 1/1.",
 		"type": "Enchantment"
@@ -56094,6 +59514,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Forlorn Stalker",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -56108,6 +59529,7 @@ var parseCardsText = {
 		"goldenImage": "OG_292e.gif",
 		"id": "OG_292e",
 		"name": "Night's Devotion",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -56130,6 +59552,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Dark Arakkoa",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Give your C'Thun\n+3/+3 <i>(wherever it is).</i>",
@@ -56141,6 +59564,7 @@ var parseCardsText = {
 		"goldenImage": "OG_293e.gif",
 		"id": "OG_293e",
 		"name": "Arrakoa Devotion",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+5/+5.",
 		"type": "Enchantment"
@@ -56151,6 +59575,7 @@ var parseCardsText = {
 		"goldenImage": "OG_293f.gif",
 		"id": "OG_293f",
 		"name": "Dark Guardian",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Increased Stats.",
 		"type": "Enchantment"
@@ -56171,6 +59596,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Cult Apothecary",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> For each enemy minion, restore 2 Health to your hero.",
@@ -56190,6 +59616,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "OG_300",
 		"name": "The Boogeymonster",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "Whenever this attacks and kills a minion, gain +2/+2.",
@@ -56201,6 +59628,7 @@ var parseCardsText = {
 		"goldenImage": "OG_300e.gif",
 		"id": "OG_300e",
 		"name": "Tasty!",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -56222,6 +59650,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Ancient Shieldbearer",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> If your C'Thun has at least 10 Attack, gain 10 Armor.",
@@ -56243,6 +59672,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Usher of Souls",
+		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Whenever a friendly minion dies, give your C'Thun +1/+1\n<i>(wherever it is).</i>",
@@ -56254,6 +59684,7 @@ var parseCardsText = {
 		"goldenImage": "OG_302e.gif",
 		"id": "OG_302e",
 		"name": "Soul Power",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -56275,6 +59706,7 @@ var parseCardsText = {
 			"SPELLPOWER"
 		],
 		"name": "Cult Sorcerer",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Og",
 		"spellDamage": 1,
@@ -56287,6 +59719,7 @@ var parseCardsText = {
 		"goldenImage": "OG_303e.gif",
 		"id": "OG_303e",
 		"name": "Sorcerous Devotion",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -56304,6 +59737,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "OG_308",
 		"name": "Giant Sand Worm",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Og",
@@ -56327,6 +59761,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Princess Huhuran",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"referencedTags": [
@@ -56349,6 +59784,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "OG_310",
 		"name": "Steward of Darkshire",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DIVINE_SHIELD"
@@ -56368,6 +59804,7 @@ var parseCardsText = {
 		"goldenImage": "OG_311.gif",
 		"id": "OG_311",
 		"name": "A Light in the Darkness",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"referencedTags": [
 			"DISCOVER"
@@ -56382,6 +59819,7 @@ var parseCardsText = {
 		"goldenImage": "OG_311e.gif",
 		"id": "OG_311e",
 		"name": "Beacon of Hope",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -56402,6 +59840,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "N'Zoth's First Mate",
+		"playerClass": "Warrior",
 		"race": "PIRATE",
 		"rarity": "Common",
 		"set": "Og",
@@ -56414,6 +59853,7 @@ var parseCardsText = {
 		"goldenImage": "OG_312e.gif",
 		"id": "OG_312e",
 		"name": "Upgraded",
+		"playerClass": "Warrior",
 		"set": "Og",
 		"text": "Increased Durability.",
 		"type": "Enchantment"
@@ -56431,6 +59871,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "OG_313",
 		"name": "Addled Grizzly",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Og",
@@ -56443,6 +59884,7 @@ var parseCardsText = {
 		"goldenImage": "OG_313e.gif",
 		"id": "OG_313e",
 		"name": "Addled",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -56458,6 +59900,7 @@ var parseCardsText = {
 		"goldenImage": "OG_314.gif",
 		"id": "OG_314",
 		"name": "Blood To Ichor",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "Deal $1 damage to a minion. If it survives, summon a 2/2 Slime.",
@@ -56473,6 +59916,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "OG_314b",
 		"name": "Slime",
+		"playerClass": "Warrior",
 		"set": "Og",
 		"type": "Minion"
 	},
@@ -56492,6 +59936,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Bloodsail Cultist",
+		"playerClass": "Warrior",
 		"race": "PIRATE",
 		"rarity": "Rare",
 		"set": "Og",
@@ -56504,6 +59949,7 @@ var parseCardsText = {
 		"goldenImage": "OG_315e.gif",
 		"id": "OG_315e",
 		"name": "Reforged",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -56525,6 +59971,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Herald Volazj",
+		"playerClass": "Priest",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Summon a 1/1 copy of each of your other minions.",
@@ -56536,6 +59983,7 @@ var parseCardsText = {
 		"goldenImage": "OG_316k.gif",
 		"id": "OG_316k",
 		"name": "Shadowy",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "1/1.",
 		"type": "Enchantment"
@@ -56557,6 +60005,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Deathwing, Dragonlord",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Og",
@@ -56577,6 +60026,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "OG_318",
 		"name": "Hogger, Doom of Elwynn",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"TAUNT"
@@ -56599,6 +60049,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Gnoll",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -56618,6 +60069,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Twin Emperor Vek'nilash",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -56638,6 +60090,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Midnight Drake",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Rare",
 		"set": "Og",
@@ -56650,6 +60103,7 @@ var parseCardsText = {
 		"goldenImage": "OG_320e.gif",
 		"id": "OG_320e",
 		"name": "Hour of Corruption",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -56671,6 +60125,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Crazed Worshipper",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Taunt.</b> Whenever this minion takes damage, give your C'Thun +1/+1 <i>(wherever it is).</i>",
@@ -56682,6 +60137,7 @@ var parseCardsText = {
 		"goldenImage": "OG_321e.gif",
 		"id": "OG_321e",
 		"name": "Power of Faith",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -56699,6 +60155,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "OG_322",
 		"name": "Blackwater Pirate",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"rarity": "Rare",
 		"set": "Og",
@@ -56721,6 +60178,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Polluted Hoarder",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Deathrattle:</b> Draw a card.",
@@ -56739,6 +60197,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "OG_325",
 		"name": "Carrion Grub",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Og",
@@ -56757,6 +60216,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "OG_326",
 		"name": "Duskboar",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Og",
@@ -56778,6 +60238,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Squirming Tentacle",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "<b>Taunt</b>",
@@ -56799,6 +60260,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Master of Evolution",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Transform a friendly minion into a random one that costs (1) more.",
@@ -56820,6 +60282,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Undercity Huckster",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Deathrattle:</b> Add a random class card to your hand <i>(from your opponent's class)</i>.",
@@ -56841,6 +60304,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Hooded Acolyte",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Og",
 		"text": "Whenever a character is healed, give your\nC'Thun +1/+1 <i>(wherever it is).</i>",
@@ -56862,6 +60326,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Shifting Shade",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "[x]<b>Deathrattle:</b> Copy a card\nfrom your opponent's deck\n and add it to your hand.",
@@ -56884,6 +60349,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Cyclopian Horror",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Og",
 		"text": "<b>Taunt</b>. <b>Battlecry:</b> Gain      +1 Health for each enemy minion.",
@@ -56895,6 +60361,7 @@ var parseCardsText = {
 		"goldenImage": "OG_337e.gif",
 		"id": "OG_337e",
 		"name": "Eve of Destruction",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "Stats increased.",
 		"type": "Enchantment"
@@ -56913,6 +60380,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "OG_338",
 		"name": "Nat, the Darkfisher",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "At the start of your opponent's turn, they have a 50% chance to draw an extra card.",
@@ -56935,6 +60403,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Skeram Cultist",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "<b>Battlecry:</b> Give your C'Thun +2/+2 <i>(wherever it is).</i>",
@@ -56946,6 +60415,7 @@ var parseCardsText = {
 		"goldenImage": "OG_339e.gif",
 		"id": "OG_339e",
 		"name": "Vassal's Subservience",
+		"playerClass": "Neutral",
 		"set": "Og",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -56969,6 +60439,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Soggoth the Slitherer",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Og",
 		"text": "<b>Taunt</b>\nCan't be targeted by spells or Hero Powers.",
@@ -56983,6 +60454,7 @@ var parseCardsText = {
 		"goldenImage": "PART_001.gif",
 		"id": "PART_001",
 		"name": "Armor Plating",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Give a minion +1 Health.",
 		"type": "Spell"
@@ -56993,6 +60465,7 @@ var parseCardsText = {
 		"goldenImage": "PART_001e.gif",
 		"id": "PART_001e",
 		"name": "Armor Plating",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "+1 Health.",
 		"type": "Enchantment"
@@ -57006,6 +60479,7 @@ var parseCardsText = {
 		"goldenImage": "PART_002.gif",
 		"id": "PART_002",
 		"name": "Time Rewinder",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Return a friendly minion to your hand.",
 		"type": "Spell"
@@ -57019,6 +60493,7 @@ var parseCardsText = {
 		"goldenImage": "PART_003.gif",
 		"id": "PART_003",
 		"name": "Rusty Horn",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"TAUNT"
 		],
@@ -57035,6 +60510,7 @@ var parseCardsText = {
 		"goldenImage": "PART_004.gif",
 		"id": "PART_004",
 		"name": "Finicky Cloakfield",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"STEALTH"
 		],
@@ -57048,6 +60524,7 @@ var parseCardsText = {
 		"goldenImage": "PART_004e.gif",
 		"id": "PART_004e",
 		"name": "Cloaked",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Stealthed until your next turn.",
 		"type": "Enchantment"
@@ -57064,6 +60541,7 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"name": "Emergency Coolant",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "<b>Freeze</b> a minion.",
 		"type": "Spell"
@@ -57077,6 +60555,7 @@ var parseCardsText = {
 		"goldenImage": "PART_006.gif",
 		"id": "PART_006",
 		"name": "Reversing Switch",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Swap a minion's Attack and Health.",
 		"type": "Spell"
@@ -57087,6 +60566,7 @@ var parseCardsText = {
 		"goldenImage": "PART_006a.gif",
 		"id": "PART_006a",
 		"name": "Switched",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Attack and Health have been swapped by Reversing Switch.",
 		"type": "Enchantment"
@@ -57100,6 +60580,7 @@ var parseCardsText = {
 		"goldenImage": "PART_007.gif",
 		"id": "PART_007",
 		"name": "Whirling Blades",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "Give a minion +1 Attack.",
 		"type": "Spell"
@@ -57110,6 +60591,7 @@ var parseCardsText = {
 		"goldenImage": "PART_007e.gif",
 		"id": "PART_007e",
 		"name": "Whirling Blades",
+		"playerClass": "Neutral",
 		"set": "Gvg",
 		"text": "+1 Attack.",
 		"type": "Enchantment"
@@ -57140,6 +60622,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Elite Tauren Chieftain",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Hof",
 		"text": "<b>Battlecry:</b> Give both players the power to ROCK! (with a Power Chord card)",
@@ -57153,6 +60636,7 @@ var parseCardsText = {
 		"goldenImage": "PRO_001a.gif",
 		"id": "PRO_001a",
 		"name": "I Am Murloc",
+		"playerClass": "Neutral",
 		"set": "Hof",
 		"text": "Summon three, four, or five 1/1 Murlocs.",
 		"type": "Spell"
@@ -57167,6 +60651,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "PRO_001at",
 		"name": "Murloc",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"set": "Hof",
 		"type": "Minion"
@@ -57179,6 +60664,7 @@ var parseCardsText = {
 		"goldenImage": "PRO_001b.gif",
 		"id": "PRO_001b",
 		"name": "Rogues Do It...",
+		"playerClass": "Neutral",
 		"set": "Hof",
 		"text": "Deal $4 damage. Draw a card.",
 		"type": "Spell"
@@ -57199,6 +60685,7 @@ var parseCardsText = {
 		"goldenImage": "PRO_001c.gif",
 		"id": "PRO_001c",
 		"name": "Power of the Horde",
+		"playerClass": "Neutral",
 		"set": "Hof",
 		"text": "Summon a random Horde Warrior.",
 		"type": "Spell"
@@ -57213,6 +60700,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "skele11",
 		"name": "Skeleton",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Core",
 		"text": "<b></b>",
@@ -57228,6 +60716,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "skele21",
 		"name": "Damaged Golem",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Expert1",
@@ -57239,6 +60728,7 @@ var parseCardsText = {
 		"goldenImage": "TagTeamIceBlock.gif",
 		"id": "TagTeamIceBlock",
 		"name": "Tag Team Ice Block",
+		"playerClass": "Mage",
 		"set": "Tb",
 		"text": "Your hero is <b>Immune</b> this turn.",
 		"type": "Enchantment"
@@ -57311,6 +60801,7 @@ var parseCardsText = {
 		"goldenImage": "TB_001.gif",
 		"id": "TB_001",
 		"name": "Boss HP Swapper",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57322,6 +60813,7 @@ var parseCardsText = {
 		"goldenImage": "TB_006.gif",
 		"id": "TB_006",
 		"name": "Big Banana",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Give a minion +2/+2.",
 		"type": "Spell"
@@ -57332,6 +60824,7 @@ var parseCardsText = {
 		"goldenImage": "TB_006e.gif",
 		"id": "TB_006e",
 		"name": "Big Banana",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Has +2/+2.",
 		"type": "Enchantment"
@@ -57344,6 +60837,7 @@ var parseCardsText = {
 		"goldenImage": "TB_007.gif",
 		"id": "TB_007",
 		"name": "Deviate Banana",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Swap a minion's Attack and Health.",
 		"type": "Spell"
@@ -57354,6 +60848,7 @@ var parseCardsText = {
 		"goldenImage": "TB_007e.gif",
 		"id": "TB_007e",
 		"name": "Deviate Switch",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Attack and Health have been swapped by Deviate Banana.",
 		"type": "Enchantment"
@@ -57366,6 +60861,7 @@ var parseCardsText = {
 		"goldenImage": "TB_008.gif",
 		"id": "TB_008",
 		"name": "Rotten Banana",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal $1 damage.",
 		"type": "Spell"
@@ -57395,6 +60891,7 @@ var parseCardsText = {
 		"goldenImage": "TB_009.gif",
 		"id": "TB_009",
 		"name": "Create 15 Secrets",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57404,6 +60901,7 @@ var parseCardsText = {
 		"goldenImage": "TB_010.gif",
 		"id": "TB_010",
 		"name": "Deckbuilding Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57413,6 +60911,7 @@ var parseCardsText = {
 		"goldenImage": "TB_010e.gif",
 		"id": "TB_010e",
 		"name": "Choose One of Three",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57424,6 +60923,7 @@ var parseCardsText = {
 		"goldenImage": "TB_011.gif",
 		"id": "TB_011",
 		"name": "Tarnished Coin",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Gain 1 Mana Crystal this turn only.",
 		"type": "Spell"
@@ -57436,6 +60936,7 @@ var parseCardsText = {
 		"goldenImage": "TB_012.gif",
 		"id": "TB_012",
 		"name": "Choose a New Card!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Look at 3 random cards. Choose one and shuffle it into your deck.",
 		"type": "Spell"
@@ -57446,6 +60947,7 @@ var parseCardsText = {
 		"goldenImage": "TB_013.gif",
 		"id": "TB_013",
 		"name": "Player Choice Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57457,6 +60959,7 @@ var parseCardsText = {
 		"goldenImage": "TB_014.gif",
 		"id": "TB_014",
 		"name": "Choose a New Card!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Look at 3 random cards. Choose one and put it into your hand.",
 		"type": "Spell"
@@ -57471,6 +60974,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "TB_015",
 		"name": "Pirate",
+		"playerClass": "Neutral",
 		"race": "PIRATE",
 		"set": "Tb",
 		"type": "Minion"
@@ -57481,6 +60985,7 @@ var parseCardsText = {
 		"goldenImage": "TB_100th_001.gif",
 		"id": "TB_100th_001",
 		"name": "Valeera's Bag Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Playing a spell summons a minion of that type.",
 		"type": "Enchantment"
@@ -57491,6 +60996,7 @@ var parseCardsText = {
 		"goldenImage": "TB_100th_BananaPlayerEnchant.gif",
 		"id": "TB_100th_BananaPlayerEnchant",
 		"name": "Bananas on Death",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Spawn Banana",
 		"type": "Enchantment"
@@ -57501,6 +61007,7 @@ var parseCardsText = {
 		"goldenImage": "TB_AllMinionsTauntCharge.gif",
 		"id": "TB_AllMinionsTauntCharge",
 		"name": "Give Taunt and Charge",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "This minion is granted <b>Taunt</b> and <b>Charge</b>.",
 		"type": "Enchantment"
@@ -57511,6 +61018,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BlingBrawl_Blade1e.gif",
 		"id": "TB_BlingBrawl_Blade1e",
 		"name": "Blingtron's Blade",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "When this breaks, randomly summon a new weapon.",
 		"type": "Enchantment"
@@ -57521,6 +61029,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BlingBrawl_Blade2e.gif",
 		"id": "TB_BlingBrawl_Blade2e",
 		"name": "Blingtron's Blade HERO",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57530,6 +61039,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BlingBrawl_Hero1e.gif",
 		"id": "TB_BlingBrawl_Hero1e",
 		"name": "Sharpened",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "+1 Attack",
 		"type": "Enchantment"
@@ -57542,6 +61052,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BlingBrawl_Hero1p.gif",
 		"id": "TB_BlingBrawl_Hero1p",
 		"name": "Sharpen",
+		"playerClass": "Rogue",
 		"rarity": "Free",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nIncrease your weapon's attack by 1",
@@ -57557,6 +61068,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BlingBrawl_Weapon.gif",
 		"id": "TB_BlingBrawl_Weapon",
 		"name": "Foam Sword",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Weapon"
 	},
@@ -57566,6 +61078,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Blizzcon2016_GoonsEnchant.gif",
 		"id": "TB_Blizzcon2016_GoonsEnchant",
 		"name": "The Grimy Goons",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57575,6 +61088,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Blizzcon2016_KabalEnchant.gif",
 		"id": "TB_Blizzcon2016_KabalEnchant",
 		"name": "The Kabal",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57584,6 +61098,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Blizzcon2016_LotusEnchant.gif",
 		"id": "TB_Blizzcon2016_LotusEnchant",
 		"name": "The Jade Lotus",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57593,6 +61108,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BoomAnnoy_001e.gif",
 		"id": "TB_BoomAnnoy_001e",
 		"name": "Loves Annoy-o-tron",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -57604,6 +61120,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BoomBotFestival_001e.gif",
 		"id": "TB_BoomBotFestival_001e",
 		"name": "Boom Bot Attached",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Deal 1-4 damage to a random enemy.",
 		"type": "Enchantment"
@@ -57614,6 +61131,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BossRumble001hpe.gif",
 		"id": "TB_BossRumble001hpe",
 		"name": "Smuggling",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "+2/+2 from Han'Cho",
 		"type": "Enchantment"
@@ -57626,6 +61144,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_BossRumble_001",
 		"name": "Han'Cho",
+		"playerClass": "Paladin",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -57637,6 +61156,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BossRumble_001hp.gif",
 		"id": "TB_BossRumble_001hp",
 		"name": "Smuggle",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nGive a random minion in your hand +2/+2",
 		"type": "Hero_power"
@@ -57649,6 +61169,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_BossRumble_002",
 		"name": "Aya Blackpaw",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -57660,6 +61181,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BossRumble_002hp.gif",
 		"id": "TB_BossRumble_002hp",
 		"name": "Construct Golem",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nSummon a {0} <b>Jade Golem</b>.",
 		"type": "Hero_power"
@@ -57672,6 +61194,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_BossRumble_003",
 		"name": "Kazakus",
+		"playerClass": "Mage",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -57683,6 +61206,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BossRumble_003hp.gif",
 		"id": "TB_BossRumble_003hp",
 		"name": "Brew Potion",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nAdd a random Potion to your hand.",
 		"type": "Hero_power"
@@ -57695,6 +61219,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BRMA01_2H_2.gif",
 		"id": "TB_BRMA01_2H_2",
 		"name": "Pile On!!!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nPut a minion from each deck into the battlefield.",
 		"type": "Hero_power"
@@ -57707,6 +61232,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BRMA10_3H.gif",
 		"id": "TB_BRMA10_3H",
 		"name": "The Rookery",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nGive all Corrupted Eggs +1 Health, then summon one.",
 		"type": "Hero_power"
@@ -57718,6 +61244,7 @@ var parseCardsText = {
 		"health": 80,
 		"id": "TB_BuildaBoss_001",
 		"name": "Catacomb Boss",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -57728,6 +61255,7 @@ var parseCardsText = {
 		"goldenImage": "TB_BuildaBoss_404p.gif",
 		"id": "TB_BuildaBoss_404p",
 		"name": "Toxic Fumes",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to all minions.",
 		"type": "Hero_power"
@@ -57740,6 +61268,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Druid.gif",
 		"id": "TB_ClassRandom_Druid",
 		"name": "Second Class: Druid",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "Add Druid cards to your deck.",
 		"type": "Spell"
@@ -57752,6 +61281,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Hunter.gif",
 		"id": "TB_ClassRandom_Hunter",
 		"name": "Second Class: Hunter",
+		"playerClass": "Hunter",
 		"set": "Tb",
 		"text": "Add Hunter cards to your deck.",
 		"type": "Spell"
@@ -57764,6 +61294,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Mage.gif",
 		"id": "TB_ClassRandom_Mage",
 		"name": "Second Class: Mage",
+		"playerClass": "Mage",
 		"set": "Tb",
 		"text": "Add Mage cards to your deck.",
 		"type": "Spell"
@@ -57776,6 +61307,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Paladin.gif",
 		"id": "TB_ClassRandom_Paladin",
 		"name": "Second Class: Paladin",
+		"playerClass": "Paladin",
 		"set": "Tb",
 		"text": "Add Paladin cards to your deck.",
 		"type": "Spell"
@@ -57797,6 +61329,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Pick2nd_100th.gif",
 		"id": "TB_ClassRandom_Pick2nd_100th",
 		"name": "Pick your second class",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57817,6 +61350,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_PickSecondClass.gif",
 		"id": "TB_ClassRandom_PickSecondClass",
 		"name": "Pick your second class",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -57828,6 +61362,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Priest.gif",
 		"id": "TB_ClassRandom_Priest",
 		"name": "Second Class: Priest",
+		"playerClass": "Priest",
 		"set": "Tb",
 		"text": "Add Priest cards to your deck.",
 		"type": "Spell"
@@ -57840,6 +61375,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Rogue.gif",
 		"id": "TB_ClassRandom_Rogue",
 		"name": "Second Class: Rogue",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Add Rogue cards to your deck.",
 		"type": "Spell"
@@ -57852,6 +61388,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Shaman.gif",
 		"id": "TB_ClassRandom_Shaman",
 		"name": "Second Class: Shaman",
+		"playerClass": "Shaman",
 		"set": "Tb",
 		"text": "Add Shaman cards to your deck.",
 		"type": "Spell"
@@ -57864,6 +61401,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Warlock.gif",
 		"id": "TB_ClassRandom_Warlock",
 		"name": "Second Class: Warlock",
+		"playerClass": "Warlock",
 		"set": "Tb",
 		"text": "Add Warlock cards to your deck.",
 		"type": "Spell"
@@ -57876,6 +61414,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ClassRandom_Warrior.gif",
 		"id": "TB_ClassRandom_Warrior",
 		"name": "Second Class: Warrior",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "Add Warrior cards to your deck.",
 		"type": "Spell"
@@ -57890,6 +61429,7 @@ var parseCardsText = {
 		"health": 80,
 		"id": "TB_CoOp_Mechazod2",
 		"name": "Overloaded Mechazod",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Boss</b>\nAt the beginning of each turn, Mechazod strikes!",
 		"type": "Minion"
@@ -57908,6 +61448,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Gearmaster Mechazod",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Boss</b>\nMechazod wins if he defeats either of you!",
 		"type": "Minion"
@@ -57926,6 +61467,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Gearmaster Mechazod",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Boss</b>\nMechazod wins if he defeats either of you!",
 		"type": "Minion"
@@ -57938,6 +61480,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpBossSpell_1.gif",
 		"id": "TB_CoOpBossSpell_1",
 		"name": "Prioritize",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal Attack damage to biggest minion.",
 		"type": "Spell"
@@ -57950,6 +61493,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpBossSpell_2.gif",
 		"id": "TB_CoOpBossSpell_2",
 		"name": "Bomb Salvo",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal Attack damage to up to 3 random targets.",
 		"type": "Spell"
@@ -57962,6 +61506,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpBossSpell_3.gif",
 		"id": "TB_CoOpBossSpell_3",
 		"name": "Release Coolant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Freeze and deal Attack damage to all minions.\nGain 2 Attack.",
 		"type": "Spell"
@@ -57974,6 +61519,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpBossSpell_4.gif",
 		"id": "TB_CoOpBossSpell_4",
 		"name": "Overclock",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Gain 2 Attack.",
 		"type": "Spell"
@@ -57986,6 +61532,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpBossSpell_5.gif",
 		"id": "TB_CoOpBossSpell_5",
 		"name": "Double Zap",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal Attack damage to both players.",
 		"type": "Spell"
@@ -57998,6 +61545,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpBossSpell_6.gif",
 		"id": "TB_CoOpBossSpell_6",
 		"name": "Kill the Lorewalker",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Destroy Lorewalker Cho.",
 		"type": "Spell"
@@ -58012,6 +61560,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "TB_CoopHero_001",
 		"name": "Netherspite Infernal",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of each turn, deal 1 damage to all enemies.",
 		"type": "Minion"
@@ -58024,6 +61573,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoopHero_002.gif",
 		"id": "TB_CoopHero_002",
 		"name": "Power (Spell)",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Armies!!",
 		"type": "Spell"
@@ -58036,6 +61586,7 @@ var parseCardsText = {
 		"health": 100,
 		"id": "TB_CoopHero_H_001",
 		"name": "Coop Boss",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -58047,6 +61598,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoopHero_HP_001.gif",
 		"id": "TB_CoopHero_HP_001",
 		"name": "Madness",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Armies!!",
 		"type": "Hero_power"
@@ -58060,6 +61612,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_001.gif",
 		"id": "TB_CoOpv3_001",
 		"name": "Glorious Finale",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "The true battle begins....",
 		"type": "Spell"
@@ -58072,6 +61625,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_002.gif",
 		"id": "TB_CoOpv3_002",
 		"name": "Twisted Light",
+		"playerClass": "Priest",
 		"set": "Tb",
 		"text": "Restore 30 health to Nefarian. Deal 30 damage to all other minions.",
 		"type": "Spell"
@@ -58085,6 +61639,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_003.gif",
 		"id": "TB_CoOpv3_003",
 		"name": "Bamboozle",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Swap player's hands.",
 		"type": "Spell"
@@ -58098,6 +61653,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_004.gif",
 		"id": "TB_CoOpv3_004",
 		"name": "Cleave",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal 7 damage to a minion and its owner.",
 		"type": "Spell"
@@ -58111,6 +61667,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_005.gif",
 		"id": "TB_CoOpv3_005",
 		"name": "Cleave",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal 4 damage to a minion and its owner.",
 		"type": "Spell"
@@ -58123,6 +61680,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_006.gif",
 		"id": "TB_CoOpv3_006",
 		"name": "Elemental Eruption",
+		"playerClass": "Shaman",
 		"set": "Tb",
 		"text": "Deal 4-6 damage to all other minions.",
 		"type": "Spell"
@@ -58136,6 +61694,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_007.gif",
 		"id": "TB_CoOpv3_007",
 		"name": "Flame Missiles",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal 5 damage randomly split among all other characters.",
 		"type": "Spell"
@@ -58149,6 +61708,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_008.gif",
 		"id": "TB_CoOpv3_008",
 		"name": "Flame Missiles",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal 10 damage randomly split among all other characters.",
 		"type": "Spell"
@@ -58162,6 +61722,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_009.gif",
 		"id": "TB_CoOpv3_009",
 		"name": "Explosive Rune",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Summon an 'Explosive Rune.'",
 		"type": "Spell"
@@ -58175,6 +61736,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Going Nova",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "It's about to blow!",
 		"type": "Enchantment"
@@ -58192,6 +61754,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Explosive Rune",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the start of your turn, this explodes, dealing 9 damage to your hero.",
 		"type": "Minion"
@@ -58205,6 +61768,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_010.gif",
 		"id": "TB_CoOpv3_010",
 		"name": "Explosive Runes",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Summon two 'Explosive Runes.'",
 		"type": "Spell"
@@ -58218,6 +61782,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_011.gif",
 		"id": "TB_CoOpv3_011",
 		"name": "Don't Push Me!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "He's getting angry....",
 		"type": "Spell"
@@ -58231,6 +61796,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_012.gif",
 		"id": "TB_CoOpv3_012",
 		"name": "Immolate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal 4 damage to each hero.",
 		"type": "Spell"
@@ -58244,6 +61810,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_013.gif",
 		"id": "TB_CoOpv3_013",
 		"name": "Immolate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal 7 damage to each hero.",
 		"type": "Spell"
@@ -58258,6 +61825,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "TB_Coopv3_100",
 		"name": "Dragonscale Warrior",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DIVINE_SHIELD"
 		],
@@ -58275,6 +61843,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "TB_Coopv3_101",
 		"name": "Freewheeling Skulker",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of your turn, switch sides.",
 		"type": "Minion"
@@ -58285,6 +61854,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_101e.gif",
 		"id": "TB_CoOpv3_101e",
 		"name": "Team Player Enchantment",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Immune</b> ahile attacking",
 		"type": "Enchantment"
@@ -58297,6 +61867,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Coopv3_102.gif",
 		"id": "TB_Coopv3_102",
 		"name": "Shadow or Light?",
+		"playerClass": "Priest",
 		"set": "Tb",
 		"text": "<b>Choose One -</b> Each player draws 2 cards; or Restore 8 Health to each hero.",
 		"type": "Spell"
@@ -58310,6 +61881,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Coopv3_102a.gif",
 		"id": "TB_Coopv3_102a",
 		"name": "Secrets of Shadow",
+		"playerClass": "Priest",
 		"set": "Tb",
 		"text": "Each player draws 2 cards.",
 		"type": "Spell"
@@ -58323,6 +61895,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Coopv3_102b.gif",
 		"id": "TB_Coopv3_102b",
 		"name": "Alms of Light",
+		"playerClass": "Priest",
 		"set": "Tb",
 		"text": "Restore 8 Health to each hero.",
 		"type": "Spell"
@@ -58337,6 +61910,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "TB_Coopv3_103",
 		"name": "Intrepid Dragonstalker",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Whenever ANY player plays a card, gain +1/+1.",
 		"type": "Minion"
@@ -58354,6 +61928,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Main Tank",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Give all other minions +2/+2, except the <b>Boss</b>.",
 		"type": "Minion"
@@ -58371,6 +61946,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Main Tank",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Give all other minions +2/+2, except the <b>Boss</b>.",
 		"type": "Minion"
@@ -58381,6 +61957,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_104e.gif",
 		"id": "TB_CoOpv3_104e",
 		"name": "Unity",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "+2/+2",
 		"type": "Enchantment"
@@ -58395,6 +61972,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "TB_Coopv3_105",
 		"name": "Raid Healer",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Whenever your hero is healed, also heal your teammate for that much.",
 		"type": "Minion"
@@ -58407,6 +61985,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_200.gif",
 		"id": "TB_CoOpv3_200",
 		"name": "Follow MY Rules!",
+		"playerClass": "Paladin",
 		"set": "Tb",
 		"text": "Change the Attack of all other minions to 1.",
 		"type": "Spell"
@@ -58419,6 +61998,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_201.gif",
 		"id": "TB_CoOpv3_201",
 		"name": "Cast from Shadow",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Destroy all undamaged minions. Return the rest to their owner's hand.",
 		"type": "Spell"
@@ -58432,6 +62012,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_202.gif",
 		"id": "TB_CoOpv3_202",
 		"name": "Vicious Swipe",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal attack damage to 2 random minions.",
 		"type": "Spell"
@@ -58445,6 +62026,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_203.gif",
 		"id": "TB_CoOpv3_203",
 		"name": "Meddling Fool!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Damage the Lorewalker",
 		"type": "Spell"
@@ -58464,6 +62046,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Nefarian",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Tb",
@@ -58479,6 +62062,7 @@ var parseCardsText = {
 			"ENRAGED"
 		],
 		"name": "Getting Angry....",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Now he's mad....",
 		"type": "Enchantment"
@@ -58492,6 +62076,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Enough!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Nefarian is <b>Immune</b> this turn.",
 		"type": "Enchantment"
@@ -58505,6 +62090,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Cowed",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Can't attack this turn.",
 		"type": "Enchantment"
@@ -58524,6 +62110,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Nefarian",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Tb",
@@ -58545,6 +62132,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Nefarian",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Legendary",
 		"set": "Tb",
@@ -58557,6 +62145,7 @@ var parseCardsText = {
 		"goldenImage": "TB_CoOpv3_BOSSe.gif",
 		"id": "TB_CoOpv3_BOSSe",
 		"name": "WHY WON'T YOU DIE!?",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Now he's REALLY mad....",
 		"type": "Enchantment"
@@ -58567,6 +62156,7 @@ var parseCardsText = {
 		"goldenImage": "TB_DeckRecipe_MyDeckID.gif",
 		"id": "TB_DeckRecipe_MyDeckID",
 		"name": "My Deck ID",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -58578,6 +62168,7 @@ var parseCardsText = {
 		"goldenImage": "TB_DiscoverMyDeck_Discovery.gif",
 		"id": "TB_DiscoverMyDeck_Discovery",
 		"name": "Peruse",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"referencedTags": [
 			"DISCOVER"
@@ -58592,6 +62183,7 @@ var parseCardsText = {
 		"goldenImage": "TB_DiscoverMyDeck_Enchantment.gif",
 		"id": "TB_DiscoverMyDeck_Enchantment",
 		"name": "Discover My Deck Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -58609,6 +62201,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Dorothee",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"CHARGE",
 			"TAUNT"
@@ -58623,6 +62216,7 @@ var parseCardsText = {
 		"goldenImage": "TB_EndlessMinions01.gif",
 		"id": "TB_EndlessMinions01",
 		"name": "Endless Enchantment",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -58633,6 +62227,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Face_Ench1.gif",
 		"id": "TB_Face_Ench1",
 		"name": "Safe",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "This minion is safe from attacks and cannot have taunt.",
 		"type": "Enchantment"
@@ -58644,6 +62239,7 @@ var parseCardsText = {
 		"goldenImage": "TB_FireFestEnch.gif",
 		"id": "TB_FireFestEnch",
 		"name": "Conflagrate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Gains Attack for each minion killed.",
 		"type": "Enchantment"
@@ -58662,6 +62258,7 @@ var parseCardsText = {
 			"IMMUNE"
 		],
 		"name": "Brazier",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"set": "Tb",
 		"type": "Minion"
@@ -58680,6 +62277,7 @@ var parseCardsText = {
 			"IMMUNE"
 		],
 		"name": "Fireworks",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"set": "Tb",
 		"type": "Minion"
@@ -58699,6 +62297,7 @@ var parseCardsText = {
 			"IMMUNE"
 		],
 		"name": "Mini-Rag",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"set": "Tb",
 		"text": "Can't attack. <b>Immune</b>.\nAt the end of each turn, burn your enemies randomly.",
@@ -58712,6 +62311,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_FoxBlessing",
 		"name": "Blessing of the Raven",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Each minion summoned gains either <b>Lifesteal</b>, <b>Poisonous</b>, <b>Stealth</b>, <b>Charge</b> or <b>Windfury</b>.",
 		"type": "Spell"
@@ -58723,6 +62323,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_FoxBlessing1",
 		"name": "Leech Blessing",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Lifesteal</b>",
 		"type": "Enchantment"
@@ -58737,6 +62338,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Deadly Blessing",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Poisonous</b>",
 		"type": "Enchantment"
@@ -58748,6 +62350,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_FoxBlessing3",
 		"name": "Swordmaster Blessing",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Windfury</b>",
 		"type": "Enchantment"
@@ -58762,6 +62365,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "MEGA BLESSING!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Mega-Windfury</b>",
 		"type": "Enchantment"
@@ -58773,6 +62377,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_FoxBlessing5",
 		"name": "Stealth Blessing",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Stealth</b>",
 		"type": "Enchantment"
@@ -58784,6 +62389,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_FoxBlessing6",
 		"name": "Charge Blessing",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Charge</b>",
 		"type": "Enchantment"
@@ -58794,6 +62400,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_FoxBlessingEnch",
 		"name": "Fox Blessing Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -58811,6 +62418,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Ragnaros?",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"set": "Tb",
 		"text": "Can't Attack.\n<b>Deathrattle:</b> Whoever kills this deals 4 damage to their opponent.",
@@ -58830,6 +62438,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Dr. Boom Boom Boom Boom",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Summon six 1/1 Boom Bots. <i>WARNING: Bots may explode.</i>",
 		"type": "Minion"
@@ -58849,6 +62458,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Annoy-o-p-Tron",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Summon Annoy-o-Tron and Psych-o-Tron.",
@@ -58864,6 +62474,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "TB_FW_Mortar",
 		"name": "Dwarf Demolitionist",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Whenever you play a card, deal 1-4 damage to a random enemy.",
 		"type": "Minion"
@@ -58882,6 +62493,7 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"name": "Force-Tank OMEGA MAX",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"rarity": "Common",
 		"set": "Tb",
@@ -58896,6 +62508,7 @@ var parseCardsText = {
 		"health": 60,
 		"id": "TB_FW_Rag",
 		"name": "Ragnaros the Firelord",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -58912,6 +62525,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Omegawarper",
+		"playerClass": "Neutral",
 		"race": "MECHANICAL",
 		"set": "Tb",
 		"text": "Both player's Mechs cost (2) less.",
@@ -58923,6 +62537,7 @@ var parseCardsText = {
 		"goldenImage": "TB_GiftExchange_Enchantment.gif",
 		"id": "TB_GiftExchange_Enchantment",
 		"name": "Cheap Gift",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "This card's cost is reduced.",
 		"type": "Enchantment"
@@ -58935,6 +62550,7 @@ var parseCardsText = {
 		"goldenImage": "TB_GiftExchange_Snowball.gif",
 		"id": "TB_GiftExchange_Snowball",
 		"name": "Hardpacked Snowballs",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Return 3 random enemy minions to your opponent's hand.",
 		"type": "Spell"
@@ -58952,6 +62568,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Winter's Veil Gift",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Give current player a Stolen Gift.",
 		"type": "Minion"
@@ -58964,6 +62581,7 @@ var parseCardsText = {
 		"goldenImage": "TB_GiftExchange_Treasure_Spell.gif",
 		"id": "TB_GiftExchange_Treasure_Spell",
 		"name": "Stolen Winter's Veil Gift",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"DISCOVER"
 		],
@@ -58981,6 +62599,7 @@ var parseCardsText = {
 			"CANT_ATTACK"
 		],
 		"name": "Shadow Tower Power",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Can't Attack.\n<b>Stealth</b>.",
 		"type": "Enchantment"
@@ -58994,6 +62613,7 @@ var parseCardsText = {
 			"CANT_ATTACK"
 		],
 		"name": "Shadow Tower Give My minions Stealth",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Can't Attack.\n<b>Stealth</b>.",
 		"type": "Enchantment"
@@ -59004,6 +62624,7 @@ var parseCardsText = {
 		"goldenImage": "TB_GP_01e_v2.gif",
 		"id": "TB_GP_01e_v2",
 		"name": "Shadow Tower Stealth",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Stealth</b>.",
 		"type": "Enchantment"
@@ -59021,6 +62642,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Shadow Tower New",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Can't be <b><b>Silence</b>d</b>\nAdjacent minions Can't Attack, and have <b>Stealth</b>",
 		"type": "Minion"
@@ -59031,6 +62653,7 @@ var parseCardsText = {
 		"goldenImage": "TB_GreatCurves_01.gif",
 		"id": "TB_GreatCurves_01",
 		"name": "TB_ClockworkCardDealer",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -59044,6 +62667,7 @@ var parseCardsText = {
 		"health": 35,
 		"id": "TB_HeadlessHorseman_001",
 		"name": "Headless Horseman's Head",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Destroy his head to win the game, but watch out for fireballs!",
 		"type": "Minion"
@@ -59058,6 +62682,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "TB_HeadlessHorseman_002",
 		"name": "Sinister Squashling",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "After this minion attacks, destroy it and deal 3 damage to all enemies.",
 		"type": "Minion"
@@ -59072,6 +62697,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "TB_HeadlessHorseman_003",
 		"name": "Pulsing Pumpkin",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the start of your turn, destroy this and summon 2 Sinister Squashlings",
 		"type": "Minion"
@@ -59087,6 +62713,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "TB_HeadlessHorseman_004",
 		"name": "Captain Cookie",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"set": "Tb",
 		"text": "Whenever you summon a Pirate while this is in your hand, give this minion +1/+1.",
@@ -59102,6 +62729,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "TB_HeadlessHorseman_005",
 		"name": "Spectral Steed",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Minions attacking this have a 50% chance to attack a different character.",
 		"type": "Minion"
@@ -59112,6 +62740,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_005e.gif",
 		"id": "TB_HeadlessHorseman_005e",
 		"name": "Yar.",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Increased Attack and Health",
 		"type": "Enchantment"
@@ -59127,6 +62756,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_GameEnch.gif",
 		"id": "TB_HeadlessHorseman_GameEnch",
 		"name": "Pick Costume",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -59138,6 +62768,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_HeadlessHorseman_H1",
 		"name": "Headless Horseman",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -59149,6 +62780,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TB_HeadlessHorseman_H1a",
 		"name": "Headless Horseman (no head)",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -59165,6 +62797,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_HeadlessHorseman_H2",
 		"name": "Stormwind Investigator",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -59181,6 +62814,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_HeadlessHorseman_H2a",
 		"name": "Stormwind Investigator Witch",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -59197,6 +62831,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_HeadlessHorseman_H2b",
 		"name": "Stormwind Investigator Cat",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -59213,6 +62848,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_HeadlessHorseman_H2c",
 		"name": "Stormwind Investigator Pirate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -59224,6 +62860,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_HP1.gif",
 		"id": "TB_HeadlessHorseman_HP1",
 		"name": "Slash",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nDeal 2 damage randomly split among all enemies.",
 		"type": "Hero_power"
@@ -59237,6 +62874,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_HeadlessHorseman_HP3",
 		"name": "Conscript",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Passive Hero Power</b>\nYour minions count as Pirates.",
 		"type": "Hero_power"
@@ -59249,6 +62887,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_HP4.gif",
 		"id": "TB_HeadlessHorseman_HP4",
 		"name": "Witchcraft",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Passive Hero Power</b>\nIf you have enough mana, your spells cost double and cast a second copy.",
 		"type": "Hero_power"
@@ -59261,6 +62900,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_HP5.gif",
 		"id": "TB_HeadlessHorseman_HP5",
 		"name": "Sense Weakness",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Passive Hero Power</b>\nWhenever a non-<b>Boss</b> enemy survives damage, summon a 1/1 Cat.",
 		"type": "Hero_power"
@@ -59271,6 +62911,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_HP5e.gif",
 		"id": "TB_HeadlessHorseman_HP5e",
 		"name": "Senses Weakness",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "+2 Attack",
 		"type": "Enchantment"
@@ -59303,6 +62944,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_s001a.gif",
 		"id": "TB_HeadlessHorseman_s001a",
 		"name": "Witch Costume",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Dress up as a Witch. Draw a new hand.",
 		"type": "Spell"
@@ -59335,6 +62977,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_s001b.gif",
 		"id": "TB_HeadlessHorseman_s001b",
 		"name": "Cat Costume",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Dress up as a Cat.\nDraw a new hand.",
 		"type": "Spell"
@@ -59366,6 +63009,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_s001c.gif",
 		"id": "TB_HeadlessHorseman_s001c",
 		"name": "Pirate Costume",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Dress up as a Pirate. Draw a new hand.",
 		"type": "Spell"
@@ -59378,6 +63022,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_s004.gif",
 		"id": "TB_HeadlessHorseman_s004",
 		"name": "Fiery Burst",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal 2 damage to all enemies.",
 		"type": "Spell"
@@ -59390,6 +63035,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_s005.gif",
 		"id": "TB_HeadlessHorseman_s005",
 		"name": "Fear",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Destroy all enemy minions with 4 or less Attack.",
 		"type": "Spell"
@@ -59401,6 +63047,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HeadlessHorseman_XXX.gif",
 		"id": "TB_HeadlessHorseman_XXX",
 		"name": "Create Horseman",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Your hero becomes the Horseman. Cast again to become the 2nd form.",
 		"type": "Spell"
@@ -59411,6 +63058,7 @@ var parseCardsText = {
 		"goldenImage": "TB_HealthAttackSwap_Ench.gif",
 		"id": "TB_HealthAttackSwap_Ench",
 		"name": "Putricide's Potion",
+		"playerClass": "Neutral",
 		"set": "Gangs",
 		"text": "Attack and Health have been swapped by Putricide",
 		"type": "Enchantment"
@@ -59423,6 +63071,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KaraPortal_001.gif",
 		"id": "TB_KaraPortal_001",
 		"name": "Party Portal!",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Tb",
 		"text": "Summon a random Partygoer.",
@@ -59435,6 +63084,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KaraPortal_002.gif",
 		"id": "TB_KaraPortal_002",
 		"name": "Call Mediva",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Tb",
 		"text": "Summon a random Mediva",
@@ -59449,6 +63099,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Saddened Hero Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Give can't attack this turn to enemy minions.",
 		"type": "Enchantment"
@@ -59463,6 +63114,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "TB_KaraPortals_003",
 		"name": "Party Elemental",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Minion"
 	},
@@ -59472,6 +63124,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KoboldGiftEnch.gif",
 		"id": "TB_KoboldGiftEnch",
 		"name": "Great Father Kobold Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -59488,6 +63141,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Large Waxy Gift",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Add a random <b>Legendary</b> minion to your opponent's hand.\n It costs (3) less.",
 		"type": "Minion"
@@ -59499,6 +63153,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KoboldGiftSpell.gif",
 		"id": "TB_KoboldGiftSpell",
 		"name": "Great Father Kobold Spell",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Spell"
 	},
@@ -59512,6 +63167,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KTRAF_08w.gif",
 		"id": "TB_KTRAF_08w",
 		"name": "Massive Runeblade",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deals double damage to heroes.",
 		"type": "Weapon"
@@ -59527,6 +63183,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "TB_KTRAF_1",
 		"name": "Anub'Rekhan",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of your turn, summon a 3/1 Nerubian.",
 		"type": "Minion"
@@ -59542,6 +63199,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "TB_KTRAF_10",
 		"name": "Noth the Plaguebringer",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Whenever an enemy minion dies, summon a 1/1 Skeleton and give your other minions +1/+1.",
 		"type": "Minion"
@@ -59567,6 +63225,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KTRAF_101.gif",
 		"id": "TB_KTRAF_101",
 		"name": "Darkness Calls",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"BATTLECRY"
 		],
@@ -59582,6 +63241,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KTRAF_104.gif",
 		"id": "TB_KTRAF_104",
 		"name": "Uncover Staff Piece",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Add another piece to your Hero Power.",
 		"type": "Spell"
@@ -59592,6 +63252,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KTRAF_10e.gif",
 		"id": "TB_KTRAF_10e",
 		"name": "Dark Power",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Granted power from Noth",
 		"type": "Enchantment"
@@ -59607,6 +63268,7 @@ var parseCardsText = {
 		"health": 6,
 		"id": "TB_KTRAF_11",
 		"name": "Sapphiron",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"referencedTags": [
 			"FREEZE"
@@ -59629,6 +63291,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Patchwerk",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Destroy a random enemy minion.",
 		"type": "Minion"
@@ -59647,6 +63310,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Lady Blaumeux",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Summon a fellow Horseman.",
 		"type": "Minion"
@@ -59662,6 +63326,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "TB_KTRAF_2s",
 		"name": "Sir Zeliek",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"IMMUNE"
 		],
@@ -59691,6 +63356,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "TB_KTRAF_3",
 		"name": "Gluth",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of your turn, summon a random Undead.",
 		"type": "Minion"
@@ -59709,6 +63375,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Gothik the Harvester",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Summon a Spectral Gothik for your opponent.",
 		"type": "Minion"
@@ -59724,6 +63391,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "TB_KTRAF_4m",
 		"name": "Spectral Gothik",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the start of your turn, deal 4 damage to your hero.",
 		"type": "Minion"
@@ -59739,6 +63407,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "TB_KTRAF_5",
 		"name": "Grand Widow Faerlina",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Has +1 Attack for each card in your opponent's hand.",
 		"type": "Minion"
@@ -59754,6 +63423,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "TB_KTRAF_6",
 		"name": "Grobbulus",
+		"playerClass": "Neutral",
 		"referencedTags": [
 			"POISONOUS"
 		],
@@ -59774,6 +63444,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Fallout Slime",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Poisonous</b>",
 		"type": "Minion"
@@ -59789,6 +63460,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "TB_KTRAF_7",
 		"name": "Heigan the Unclean",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of your turn, deal 4 damage to a  random enemy.",
 		"type": "Minion"
@@ -59807,6 +63479,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Instructor Razuvious",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Equip a 5/2 Massive Runeblade.",
 		"type": "Minion"
@@ -59819,6 +63492,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_KTRAF_H_1",
 		"name": "Kel'Thuzad",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Tb",
 		"type": "Hero"
@@ -59831,6 +63505,7 @@ var parseCardsText = {
 		"health": 60,
 		"id": "TB_KTRAF_H_2",
 		"name": "Rafaam",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Tb",
 		"type": "Hero"
@@ -59843,6 +63518,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KTRAF_HP_KT_3.gif",
 		"id": "TB_KTRAF_HP_KT_3",
 		"name": "Necromancy",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nAdd a random Naxxramas minion to your hand.",
 		"type": "Hero_power"
@@ -59855,6 +63531,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KTRAF_HP_RAF3.gif",
 		"id": "TB_KTRAF_HP_RAF3",
 		"name": "Staff, First Piece",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Add a random rare card to your hand. It costs (2) less.",
 		"type": "Hero_power"
@@ -59867,6 +63544,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KTRAF_HP_RAF4.gif",
 		"id": "TB_KTRAF_HP_RAF4",
 		"name": "Staff, Two Pieces",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Add a random epic card to your hand. It costs (3) less.",
 		"type": "Hero_power"
@@ -59879,6 +63557,7 @@ var parseCardsText = {
 		"goldenImage": "TB_KTRAF_HP_RAF5.gif",
 		"id": "TB_KTRAF_HP_RAF5",
 		"name": "Staff of Origination",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Add a random legendary minion to your hand. It costs (4) less.",
 		"type": "Hero_power"
@@ -59896,6 +63575,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Understudy",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -59908,6 +63588,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Lethal002.gif",
 		"id": "TB_Lethal002",
 		"name": "Puzzle 1",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Seems simple enough.",
 		"type": "Spell"
@@ -59920,6 +63601,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Lethal003.gif",
 		"id": "TB_Lethal003",
 		"name": "Puzzle 2",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Survival percentage is 32.33 repeating of course.",
 		"type": "Spell"
@@ -59932,6 +63614,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Lethal004.gif",
 		"id": "TB_Lethal004",
 		"name": "Puzzle 5",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Go Go Malygos!",
 		"type": "Spell"
@@ -59944,6 +63627,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Lethal005.gif",
 		"id": "TB_Lethal005",
 		"name": "Puzzle 6",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Heal em to death!",
 		"type": "Spell"
@@ -59956,6 +63640,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Lethal006.gif",
 		"id": "TB_Lethal006",
 		"name": "Puzzle 7",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "An inspiration to totems everywhere!",
 		"type": "Spell"
@@ -59968,6 +63653,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Lethal007.gif",
 		"id": "TB_Lethal007",
 		"name": "Puzzle 3",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "BY PUZZLE BE PURGED!",
 		"type": "Spell"
@@ -59980,6 +63666,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Lethal008.gif",
 		"id": "TB_Lethal008",
 		"name": "Puzzle 9",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "What!? This again?",
 		"type": "Spell"
@@ -59992,6 +63679,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Lethal009.gif",
 		"id": "TB_Lethal009",
 		"name": "Puzzle 4",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Beasts, Beasts and more Beasts!",
 		"type": "Spell"
@@ -60004,6 +63692,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Lethal010.gif",
 		"id": "TB_Lethal010",
 		"name": "Puzzle 8",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "A chilly challenge!",
 		"type": "Spell"
@@ -60016,6 +63705,7 @@ var parseCardsText = {
 		"goldenImage": "TB_LethalSetup001a.gif",
 		"id": "TB_LethalSetup001a",
 		"name": "Continue",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Continue from where you left off.",
 		"type": "Spell"
@@ -60028,6 +63718,7 @@ var parseCardsText = {
 		"goldenImage": "TB_LethalSetup001b.gif",
 		"id": "TB_LethalSetup001b",
 		"name": "Restart",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Start again at the beginning.",
 		"type": "Spell"
@@ -60043,6 +63734,7 @@ var parseCardsText = {
 		"goldenImage": "TB_LethalSetup02.gif",
 		"id": "TB_LethalSetup02",
 		"name": "Brawl Progress Saved",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Welcome back! Would you like to restart or continue?",
 		"type": "Enchantment"
@@ -60055,6 +63747,7 @@ var parseCardsText = {
 		"goldenImage": "TB_LevelUp_001.gif",
 		"id": "TB_LevelUp_001",
 		"name": "Level Up!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Level up all the spells in your hand and deck.",
 		"type": "Hero_power"
@@ -60067,6 +63760,7 @@ var parseCardsText = {
 		"goldenImage": "TB_LevelUp_002.gif",
 		"id": "TB_LevelUp_002",
 		"name": "Fireblast",
+		"playerClass": "Mage",
 		"set": "Tb",
 		"text": "Deal $6 damage.",
 		"type": "Spell"
@@ -60079,6 +63773,7 @@ var parseCardsText = {
 		"goldenImage": "TB_LOEA13_2.gif",
 		"id": "TB_LOEA13_2",
 		"name": "Ancient Power",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nGive each player a random card. It costs (0).",
 		"type": "Hero_power"
@@ -60094,6 +63789,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Rock Candy",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Destroy a random Party Crasher.",
 		"type": "Spell"
@@ -60109,6 +63805,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Regenerative Cookies",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Restore 4 Health to each hero.",
 		"type": "Spell"
@@ -60124,6 +63821,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Divine Sweets",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Each player draws a card.",
 		"type": "Spell"
@@ -60146,6 +63844,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Piñata Golem",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Boss, Taunt</b>. Can't be targeted by spells. It's full of candy!",
 		"type": "Minion"
@@ -60158,6 +63857,7 @@ var parseCardsText = {
 		"goldenImage": "TB_MammothParty_hp001.gif",
 		"id": "TB_MammothParty_hp001",
 		"name": "Decorate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nCreate *{0}* |4(decoration, decorations) for the Tavern.\nProgress: {1}/25",
 		"type": "Hero_power"
@@ -60170,6 +63870,7 @@ var parseCardsText = {
 		"goldenImage": "TB_MammothParty_hp002.gif",
 		"id": "TB_MammothParty_hp002",
 		"name": "Pelt",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nDeal 3 damage to the Piñata.",
 		"type": "Hero_power"
@@ -60187,6 +63888,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Party Crasher",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt</b>\nYou don't control how this minion attacks.",
 		"type": "Minion"
@@ -60204,6 +63906,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Party Crasher",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt</b>\nYou don't control how this minion attacks.",
 		"type": "Minion"
@@ -60217,6 +63920,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Raucous",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "+2/+2",
 		"type": "Enchantment"
@@ -60232,6 +63936,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Something in the Punch",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal 2 damage to all minions other than Party Crashers.",
 		"type": "Spell"
@@ -60244,6 +63949,7 @@ var parseCardsText = {
 		"goldenImage": "TB_MammothParty_s101.gif",
 		"id": "TB_MammothParty_s101",
 		"name": "Party Supplies",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Choose One - </b> Destroy a random Party Crasher; or Each player draws a card.",
 		"type": "Spell"
@@ -60259,6 +63965,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Fruit Plate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Each player draws a card.",
 		"type": "Spell"
@@ -60274,6 +63981,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Like a Sore Thumb",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Destroy a random Party Crasher.",
 		"type": "Spell"
@@ -60289,6 +63997,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Noise Complaint",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "If the board opposing the <b>Boss</b> is full, destroy all those minions.",
 		"type": "Spell"
@@ -60306,6 +64015,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Journey to the Catacombs",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Tb",
 		"text": "[x]<b>Quest:</b> 7 minions are played\n by ANY player.\n<b>Reward:</b> Master Chests\n for all!",
@@ -60319,6 +64029,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_MechWar_Boss1",
 		"name": "Annoy-o-Tron",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Tb",
 		"type": "Hero"
@@ -60331,6 +64042,7 @@ var parseCardsText = {
 		"goldenImage": "TB_MechWar_Boss1_HeroPower.gif",
 		"id": "TB_MechWar_Boss1_HeroPower",
 		"name": "Hello! Hello! Hello!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nGive your lowest attack minion <b>Divine Shield</b> and <b>Taunt</b>.",
 		"type": "Hero_power"
@@ -60343,6 +64055,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_MechWar_Boss2",
 		"name": "Boom Bot",
+		"playerClass": "Neutral",
 		"rarity": "Free",
 		"set": "Tb",
 		"type": "Hero"
@@ -60355,6 +64068,7 @@ var parseCardsText = {
 		"goldenImage": "TB_MechWar_Boss2_HeroPower.gif",
 		"id": "TB_MechWar_Boss2_HeroPower",
 		"name": "Boom Bot Jr.",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nDeal 2 damage randomly split among all enemies.",
 		"type": "Hero_power"
@@ -60373,6 +64087,7 @@ var parseCardsText = {
 		"goldenImage": "TB_MechWar_CommonCards.gif",
 		"id": "TB_MechWar_CommonCards",
 		"name": "TBMechWarCommonCards",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60389,6 +64104,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Mech Fan",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -60399,6 +64115,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Mini_1e.gif",
 		"id": "TB_Mini_1e",
 		"name": "Miniature",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Mini-sized, set to 1/1",
 		"type": "Enchantment"
@@ -60414,6 +64131,7 @@ var parseCardsText = {
 		"health": 7,
 		"id": "TB_MnkWf01",
 		"name": "Nadia, Mankrik's Wife",
+		"playerClass": "Neutral",
 		"race": "ORC",
 		"rarity": "Legendary",
 		"referencedTags": [
@@ -60429,6 +64147,7 @@ var parseCardsText = {
 		"goldenImage": "TB_MP_01e.gif",
 		"id": "TB_MP_01e",
 		"name": "Charge!",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "Has <b>Charge</b>",
 		"type": "Enchantment"
@@ -60439,6 +64158,7 @@ var parseCardsText = {
 		"goldenImage": "TB_MP_02e.gif",
 		"id": "TB_MP_02e",
 		"name": "Repurposed",
+		"playerClass": "Dream",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Draw a card.",
 		"type": "Enchantment"
@@ -60450,6 +64170,7 @@ var parseCardsText = {
 		"goldenImage": "TB_OG_027.gif",
 		"id": "TB_OG_027",
 		"name": "Evolve",
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Og",
 		"text": "Transform your minions into random minions that cost (1) more.",
@@ -60467,6 +64188,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate.gif",
 		"id": "TB_PickYourFate",
 		"name": "Pick Your Fate Build Around",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60476,6 +64198,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate7Ench.gif",
 		"id": "TB_PickYourFate7Ench",
 		"name": "Fate 7 Ench Get a Coin",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60487,6 +64210,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_1.gif",
 		"id": "TB_PickYourFate_1",
 		"name": "Dire Fate: Taunt and Charge",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "All minions have <b>Taunt</b> and <b>Charge</b>.",
 		"type": "Spell"
@@ -60499,6 +64223,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_10.gif",
 		"id": "TB_PickYourFate_10",
 		"name": "Battlecry Bonus",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Your <b>Battlecry</b> minions have +1/+1.",
 		"type": "Spell"
@@ -60509,6 +64234,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_10_Ench.gif",
 		"id": "TB_PickYourFate_10_Ench",
 		"name": "Fate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60518,6 +64244,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_10_EnchMinion.gif",
 		"id": "TB_PickYourFate_10_EnchMinion",
 		"name": "Bonus",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Your <b>Battlecry</b> minions have +1/+1.",
 		"type": "Enchantment"
@@ -60528,6 +64255,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_11_Ench.gif",
 		"id": "TB_PickYourFate_11_Ench",
 		"name": "Fate 11 Ench. Murloc",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60539,6 +64267,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_11b.gif",
 		"id": "TB_PickYourFate_11b",
 		"name": "Murloc Bonus",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Summon a 1/1 Murloc at the end of your turn.",
 		"type": "Spell"
@@ -60551,6 +64280,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_11rand.gif",
 		"id": "TB_PickYourFate_11rand",
 		"name": "Dire Fate: Murlocs",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Turn each minion in play into a 1/1 Murloc.",
 		"type": "Spell"
@@ -60563,6 +64293,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_12.gif",
 		"id": "TB_PickYourFate_12",
 		"name": "Fate: Confusion",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of each turn, swap all minions' Attack and Health.",
 		"type": "Spell"
@@ -60573,6 +64304,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_12_Ench.gif",
 		"id": "TB_PickYourFate_12_Ench",
 		"name": "Fate 12 Ench, Confuse",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60582,6 +64314,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_1_Ench.gif",
 		"id": "TB_PickYourFate_1_Ench",
 		"name": "Pick Your Fate 1 Ench",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60593,6 +64326,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_2.gif",
 		"id": "TB_PickYourFate_2",
 		"name": "Fate: Bananas",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "When a minion dies, its owner gets a (1) mana Banana.",
 		"type": "Spell"
@@ -60603,6 +64337,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_2_Ench.gif",
 		"id": "TB_PickYourFate_2_Ench",
 		"name": "Pick Your Fate 2 Ench",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60615,6 +64350,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Fate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Your owner gets a banana.",
 		"type": "Enchantment"
@@ -60633,6 +64369,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_2nd.gif",
 		"id": "TB_PickYourFate_2nd",
 		"name": "Pick Your Fate Randon 2nd",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60644,6 +64381,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_3.gif",
 		"id": "TB_PickYourFate_3",
 		"name": "Dire Fate: Windfury",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "All minions have <b>Windfury</b>.",
 		"type": "Spell"
@@ -60654,6 +64392,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_3_Ench.gif",
 		"id": "TB_PickYourFate_3_Ench",
 		"name": "Pick Your Fate 3 Ench",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60665,6 +64404,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_4.gif",
 		"id": "TB_PickYourFate_4",
 		"name": "Dire Fate: Card",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "When a minion dies, its owner draws a card.",
 		"type": "Spell"
@@ -60675,6 +64415,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_4_Ench.gif",
 		"id": "TB_PickYourFate_4_Ench",
 		"name": "Pick Your Fate 4 Ench",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60687,6 +64428,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Fate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Draw a card.",
 		"type": "Enchantment"
@@ -60699,6 +64441,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_5.gif",
 		"id": "TB_PickYourFate_5",
 		"name": "Fate: Spells",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Spells cost (1) less.",
 		"type": "Spell"
@@ -60709,6 +64452,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_5_Ench.gif",
 		"id": "TB_PickYourFate_5_Ench",
 		"name": "Pick Your Fate 5 Ench",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60720,6 +64464,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_6.gif",
 		"id": "TB_PickYourFate_6",
 		"name": "Fate: Portals",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Shuffle 10 Unstable Portals into each player's deck.",
 		"type": "Spell"
@@ -60732,6 +64477,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_6_2nd.gif",
 		"id": "TB_PickYourFate_6_2nd",
 		"name": "Dire Fate: Unstable Portals",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Place 3 Unstable Portals in each player's hand.",
 		"type": "Spell"
@@ -60744,6 +64490,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_7.gif",
 		"id": "TB_PickYourFate_7",
 		"name": "Fate: Coin",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "When a minion dies, its owner gets a Coin.",
 		"type": "Spell"
@@ -60756,6 +64503,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_7_2nd.gif",
 		"id": "TB_PickYourFate_7_2nd",
 		"name": "Dire Fate: Manaburst",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Minions gain <b>Deathrattle:</b> Random card in owner's hand costs (0).",
 		"type": "Spell"
@@ -60766,6 +64514,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_7_Ench_2nd.gif",
 		"id": "TB_PickYourFate_7_Ench_2nd",
 		"name": "Fate 7 Ench 2nd",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60775,6 +64524,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_7_EnchMiniom2nd.gif",
 		"id": "TB_PickYourFate_7_EnchMiniom2nd",
 		"name": "Fate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> random card in owner's hand costs (0).",
 		"type": "Enchantment"
@@ -60785,6 +64535,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_7_EnchMinion.gif",
 		"id": "TB_PickYourFate_7_EnchMinion",
 		"name": "Fate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Your owner gets a coin.",
 		"type": "Enchantment"
@@ -60797,6 +64548,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_8.gif",
 		"id": "TB_PickYourFate_8",
 		"name": "Spell Bonus",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Whenever you cast a spell, gain 3 Armor.",
 		"type": "Spell"
@@ -60807,6 +64559,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_8_Ench.gif",
 		"id": "TB_PickYourFate_8_Ench",
 		"name": "Fate 8 Get Armor",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60816,6 +64569,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_8_EnchRand.gif",
 		"id": "TB_PickYourFate_8_EnchRand",
 		"name": "Fate 8 Rand 2 armor each turn",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60827,6 +64581,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_8rand.gif",
 		"id": "TB_PickYourFate_8rand",
 		"name": "Fate: Armor",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Each player gains 2 Armor on the start of their turn.",
 		"type": "Spell"
@@ -60839,6 +64594,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_9.gif",
 		"id": "TB_PickYourFate_9",
 		"name": "Deathrattle Bonus",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Your <b>Deathrattle</b> minions have +1/+1.",
 		"type": "Spell"
@@ -60849,6 +64605,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_9_Ench.gif",
 		"id": "TB_PickYourFate_9_Ench",
 		"name": "Fate 9 Ench. Deathrattle bonus",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60858,6 +64615,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_9_EnchMinion.gif",
 		"id": "TB_PickYourFate_9_EnchMinion",
 		"name": "Bonus",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Your <b>Deathrattle</b> minions have +1/+1.",
 		"type": "Enchantment"
@@ -60868,6 +64626,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_Confused.gif",
 		"id": "TB_PickYourFate_Confused",
 		"name": "Fate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Attack and Health swap at end of each turn.",
 		"type": "Enchantment"
@@ -60878,6 +64637,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFate_Windfury.gif",
 		"id": "TB_PickYourFate_Windfury",
 		"name": "Fate",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "This minion has <b>Windfury</b>",
 		"type": "Enchantment"
@@ -60896,6 +64656,7 @@ var parseCardsText = {
 		"goldenImage": "TB_PickYourFateRandom.gif",
 		"id": "TB_PickYourFateRandom",
 		"name": "Pick Your Fate Random",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60905,6 +64666,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Pilot1.gif",
 		"id": "TB_Pilot1",
 		"name": "Mystery Pilot",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Who could it be?!",
 		"type": "Enchantment"
@@ -60921,6 +64683,7 @@ var parseCardsText = {
 			"TOPDECK"
 		],
 		"name": "Present!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "When you draw this, <b>Discover</b> a treasure, then draw a card.",
 		"type": "Spell"
@@ -60934,6 +64697,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Presents_002.gif",
 		"id": "TB_Presents_002",
 		"name": "Card Present",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Draw a card.",
 		"type": "Spell"
@@ -60947,6 +64711,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Presents_003.gif",
 		"id": "TB_Presents_003",
 		"name": "Zombie Present",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Summon a 3/3 Zombie.",
 		"type": "Spell"
@@ -60957,6 +64722,7 @@ var parseCardsText = {
 		"goldenImage": "TB_RandCardCost.gif",
 		"id": "TB_RandCardCost",
 		"name": "TBRandomCardCost",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60980,6 +64746,7 @@ var parseCardsText = {
 		"goldenImage": "TB_RandHero2_001.gif",
 		"id": "TB_RandHero2_001",
 		"name": "TB_EnchWhosTheBossNow",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -60989,6 +64756,7 @@ var parseCardsText = {
 		"goldenImage": "TB_RMC_001.gif",
 		"id": "TB_RMC_001",
 		"name": "TB_EnchRandomManaCost",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -61002,6 +64770,7 @@ var parseCardsText = {
 		],
 		"id": "TB_SC20_001",
 		"name": "Portal Selection",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -61012,6 +64781,7 @@ var parseCardsText = {
 		"dbfId": 49779,
 		"id": "TB_SC20_001a",
 		"name": "Tech Portals",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Shuffle 20 Tech\nPortals into your deck.\nDraw 2 Cards.",
 		"type": "Spell"
@@ -61023,6 +64793,7 @@ var parseCardsText = {
 		"dbfId": 49797,
 		"id": "TB_SC20_001b",
 		"name": "Swarm Portals",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Shuffle 20 Swarm Portals into your deck.\nDraw 2 Cards.",
 		"type": "Spell"
@@ -61034,6 +64805,7 @@ var parseCardsText = {
 		"dbfId": 49799,
 		"id": "TB_SC20_001c",
 		"name": "Mind Portals",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Shuffle 20 Mind Portals into your deck.\nDraw 2 Cards.",
 		"type": "Spell"
@@ -61045,6 +64817,7 @@ var parseCardsText = {
 		"dbfId": 49780,
 		"id": "TB_SC20_002",
 		"name": "Tech Portal",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Add a random Tech card to your hand. It costs (3) less.",
 		"type": "Spell"
@@ -61056,6 +64829,7 @@ var parseCardsText = {
 		"dbfId": 49794,
 		"id": "TB_SC20_003",
 		"name": "Swarm Portal",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Add a random Swarm card to your hand. It costs (3) less.",
 		"type": "Spell"
@@ -61067,6 +64841,7 @@ var parseCardsText = {
 		"dbfId": 49798,
 		"id": "TB_SC20_004",
 		"name": "Mind Portal",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Add a random Mind card to your hand. It costs (3) less.",
 		"type": "Spell"
@@ -61080,6 +64855,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_ShadowReflection_001",
 		"name": "Shadow Reflection",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Each time you play a card, transform this into a copy of it until the end of your turn.",
 		"type": "Spell"
@@ -61090,6 +64866,7 @@ var parseCardsText = {
 		"goldenImage": "TB_ShadowReflection_001e.gif",
 		"id": "TB_ShadowReflection_001e",
 		"name": "Shadow Reflection",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Always copy your last played card.",
 		"type": "Enchantment"
@@ -61100,6 +64877,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Spellwrite_001.gif",
 		"id": "TB_Spellwrite_001",
 		"name": "SpellCaster",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -61111,6 +64889,7 @@ var parseCardsText = {
 		"health": 1000,
 		"id": "TB_SPT_Boss",
 		"name": "City of Stormwind",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -61125,6 +64904,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Barracks",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nSummon a random Stormwind Soldier.",
 		"type": "Hero_power"
@@ -61139,6 +64919,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_BossWeapon.gif",
 		"id": "TB_SPT_BossWeapon",
 		"name": "Armory",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Attack increases over time.",
 		"type": "Weapon"
@@ -61151,6 +64932,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromo_EnterPortal.gif",
 		"id": "TB_SPT_DPromo_EnterPortal",
 		"name": "The Portal Opens",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Through the Nether and into...",
 		"type": "Spell"
@@ -61163,6 +64945,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TB_SPT_DPromo_Hero",
 		"name": "Dark Wanderer",
+		"playerClass": "Warlock",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -61177,6 +64960,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "The Cow King",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -61193,6 +64977,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Weapon Rack",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Current turn player gains a random weapon.",
 		"type": "Minion"
@@ -61210,6 +64995,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Discarded Armor",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Current turn player gains 5 armor.",
 		"type": "Minion"
@@ -61227,6 +65013,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Chest of Gold!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Current turn player gains gold!",
 		"type": "Minion"
@@ -61237,6 +65024,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoEnch3.gif",
 		"id": "TB_SPT_DPromoEnch3",
 		"name": "Shield Glare",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Attack changed to 1.",
 		"type": "Enchantment"
@@ -61249,6 +65037,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DpromoEX1_312.gif",
 		"id": "TB_SPT_DpromoEX1_312",
 		"name": "Twisting Nether?",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Tb",
 		"text": "This doesn't look like Twisting Nether...",
@@ -61273,6 +65062,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoHP2.gif",
 		"id": "TB_SPT_DPromoHP2",
 		"name": "So Many...",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Whenever a Hell Bovine Dies, draw a card.",
 		"type": "Hero_power"
@@ -61290,6 +65080,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Hell Bovine",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Place a copy of this card in your deck.",
@@ -61308,6 +65099,7 @@ var parseCardsText = {
 			"CANT_ATTACK"
 		],
 		"name": "Guardian",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At end of your turn, deal 2 damage to the enemies opposite this minion.",
 		"type": "Minion"
@@ -61335,6 +65127,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Hell Bovine Champion",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Current turn player gains a random weapon.",
@@ -61354,6 +65147,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Hell Bovine",
+		"playerClass": "Neutral",
 		"race": "DEMON",
 		"set": "Tb",
 		"text": "<b>Deathrattle:</b> Place a copy of this card in your deck.",
@@ -61374,6 +65168,7 @@ var parseCardsText = {
 			"IMMUNE"
 		],
 		"name": "Enigmatic Portal",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the start of next turn, your hero is transformed and sucked through the Twisting Nether.",
 		"type": "Minion"
@@ -61389,6 +65184,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of the Assassin",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When your opponent plays a minion with <b>Stealth</b>, All minions equip a dagger.",
 		"type": "Spell"
@@ -61399,6 +65195,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoSecre8e.gif",
 		"id": "TB_SPT_DPromoSecre8e",
 		"name": "Assassin's Stealth",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Stealth</b>.",
 		"type": "Enchantment"
@@ -61414,6 +65211,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of the Barbarian",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When your opponent plays a minion with <b>Charge</b>, THUNDER FURY!",
 		"type": "Spell"
@@ -61429,6 +65227,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of Hate",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When both heroes have 15 or less Health, BRAWL!",
 		"type": "Spell"
@@ -61444,6 +65243,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of the Crusader",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When your opponent plays a minion with <b>Taunt</b>, change all minions'\nattacks to 1.",
 		"type": "Spell"
@@ -61459,6 +65259,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of Valor",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When your opponent plays a Legendary minion, give all minions <b>Windfury</b>",
 		"type": "Spell"
@@ -61474,6 +65275,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of Fate",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When your opponent takes lethal damage... save him.",
 		"type": "Spell"
@@ -61489,6 +65291,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of the Amazon",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When your opponent plays a minion with <b>Battlecry</b>, Summon a Mirror Image for both players.",
 		"type": "Spell"
@@ -61504,6 +65307,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of the Sorcerer",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When your opponent plays a minion with <b>Spell Damage</b>, Summon 2 Guardians.",
 		"type": "Spell"
@@ -61519,6 +65323,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of the Necromancer",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When your opponent plays a card with <b>Deathrattle</b>, destroy it.",
 		"type": "Spell"
@@ -61534,6 +65339,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Visions of Knowledge",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "<b>Secret:</b> When your opponent's hand has 9 or more cards, reduce the cost of all cards in both hands to (1).",
 		"type": "Spell"
@@ -61544,6 +65350,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoSecret9e.gif",
 		"id": "TB_SPT_DPromoSecret9e",
 		"name": "Knowledge",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Costs (1).",
 		"type": "Enchantment"
@@ -61556,6 +65363,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoSpell1.gif",
 		"id": "TB_SPT_DPromoSpell1",
 		"name": "Lightning",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Deal $3 damage.",
 		"type": "Spell"
@@ -61568,6 +65376,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoSpell2.gif",
 		"id": "TB_SPT_DPromoSpell2",
 		"name": "Summon Guardians",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Summon two 2/4 Guardians.",
 		"type": "Spell"
@@ -61580,6 +65389,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoSpellBovine1.gif",
 		"id": "TB_SPT_DPromoSpellBovine1",
 		"name": "Moo...",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Summon 3 Hell Bovines. Give all Hell Bovines <b>Taunt</b>.",
 		"type": "Spell"
@@ -61590,6 +65400,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoSpellBovine1e.gif",
 		"id": "TB_SPT_DPromoSpellBovine1e",
 		"name": "Herding",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Minion has <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -61602,6 +65413,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoSpellPortal.gif",
 		"id": "TB_SPT_DPromoSpellPortal",
 		"name": "The Portal Opens",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Through the Nether and into...",
 		"type": "Spell"
@@ -61614,6 +65426,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_DPromoSpellPortal2.gif",
 		"id": "TB_SPT_DPromoSpellPortal2",
 		"name": "Stampede",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Summon 2 Hell Bovines. Give all Hell Bovines <b>Charge</b>.",
 		"type": "Spell"
@@ -61632,6 +65445,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Shieldsman",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Gain Health equal to Stormwind's Attack.",
 		"type": "Minion"
@@ -61642,6 +65456,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_Minion1e.gif",
 		"id": "TB_SPT_Minion1e",
 		"name": "Will of Stormwind",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Stormwind is granting this card Health.",
 		"type": "Enchantment"
@@ -61660,6 +65475,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Battle Standard",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Adjacent minions have +2 Attack.",
 		"type": "Minion"
@@ -61670,6 +65486,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_Minion2e.gif",
 		"id": "TB_SPT_Minion2e",
 		"name": "Emboldened",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Standard Bearer is granting +2 Attack to this minion.",
 		"type": "Enchantment"
@@ -61687,6 +65504,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Swordsman",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Gain Attack and Health equal to Stormwind's Attack",
 		"type": "Minion"
@@ -61697,6 +65515,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_Minion3e.gif",
 		"id": "TB_SPT_Minion3e",
 		"name": "Strength of Stormwind",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Stormwind is granting this card Attack and Health.",
 		"type": "Enchantment"
@@ -61709,6 +65528,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TB_SPT_MTH_Boss",
 		"name": "Decorated Stormwind",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -61720,6 +65540,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TB_SPT_MTH_Boss0",
 		"name": "City of Stormwind",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -61731,6 +65552,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TB_SPT_MTH_Boss2",
 		"name": "Partytown Stormwind",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -61742,6 +65564,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TB_SPT_MTH_Boss3",
 		"name": "Party Capital",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -61756,6 +65579,7 @@ var parseCardsText = {
 			"AI_MUST_PLAY"
 		],
 		"name": "Party Barracks",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nSummon a random Stormwind Partygoer.",
 		"type": "Hero_power"
@@ -61770,6 +65594,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SPT_MTH_BossWeapon.gif",
 		"id": "TB_SPT_MTH_BossWeapon",
 		"name": "Party Armory",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Attack increases over time.",
 		"type": "Weapon"
@@ -61788,6 +65613,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Happy Partygoer",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Gain Health equal to Stormwind's Attack.",
 		"type": "Minion"
@@ -61806,6 +65632,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Party Banner",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Adjacent minions have +2 Attack.",
 		"type": "Minion"
@@ -61823,6 +65650,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ornery Partygoer",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Battlecry:</b> Gain Attack and Health equal to Stormwind's Attack.",
 		"type": "Minion"
@@ -61835,6 +65663,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Superfriends001.gif",
 		"id": "TB_Superfriends001",
 		"name": "Offensive Play",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "The next Legendary minion you play and all your other copies cost (3) less.",
 		"type": "Spell"
@@ -61845,6 +65674,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Superfriends001e.gif",
 		"id": "TB_Superfriends001e",
 		"name": "Facilitated",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "The next legend you cast this turn costs (3) less.",
 		"type": "Enchantment"
@@ -61855,6 +65685,7 @@ var parseCardsText = {
 		"goldenImage": "TB_Superfriends002e.gif",
 		"id": "TB_Superfriends002e",
 		"name": "Draw Offensive Play",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Draw Offensive Play on first, third, and fifth turn",
 		"type": "Enchantment"
@@ -61866,6 +65697,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SwapBossHeroPowerByClass.gif",
 		"id": "TB_SwapBossHeroPowerByClass",
 		"name": "Swap Boss Hero Power by Class",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -61875,6 +65707,7 @@ var parseCardsText = {
 		"goldenImage": "TB_SwapHeroWithDeathKnight.gif",
 		"id": "TB_SwapHeroWithDeathKnight",
 		"name": "Swap Hero With Death Knight",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -61884,6 +65717,7 @@ var parseCardsText = {
 		"goldenImage": "TB_TagTeam.gif",
 		"id": "TB_TagTeam",
 		"name": "Check for Hero Death",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -61895,6 +65729,7 @@ var parseCardsText = {
 		"goldenImage": "TB_TagTeam_ClearBoard.gif",
 		"id": "TB_TagTeam_ClearBoard",
 		"name": "Your Next Victim Comes",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Destroy all minions. Drain all Mana. Gain 5 Health.",
 		"type": "Spell"
@@ -61908,6 +65743,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_TagTeam_Druid",
 		"name": "Rumble in the Jungle",
+		"playerClass": "Druid",
 		"set": "Tb",
 		"text": "Enter the jungle with giant beasts and darker things...",
 		"type": "Spell"
@@ -61929,6 +65765,7 @@ var parseCardsText = {
 		"goldenImage": "TB_TagTeam_GetClass.gif",
 		"id": "TB_TagTeam_GetClass",
 		"name": "Discover Next Class",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -61941,6 +65778,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_TagTeam_Hunter",
 		"name": "Unleash the Beasts",
+		"playerClass": "Hunter",
 		"set": "Tb",
 		"text": "Release a stampede of beasts while hunting for the Marsh Queen!",
 		"type": "Spell"
@@ -61954,6 +65792,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_TagTeam_Mage",
 		"name": "Elemental Secrets",
+		"playerClass": "Mage",
 		"set": "Tb",
 		"text": "Guard your secrets and unleash elemental fury!",
 		"type": "Spell"
@@ -61966,6 +65805,7 @@ var parseCardsText = {
 		"goldenImage": "TB_TagTeam_NewHeroCards.gif",
 		"id": "TB_TagTeam_NewHeroCards",
 		"name": "New Hero!",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "A new Hero takes position.",
 		"type": "Spell"
@@ -61979,6 +65819,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_TagTeam_Paladin",
 		"name": "Dark Light",
+		"playerClass": "Paladin",
 		"set": "Tb",
 		"text": "Bend the Light to your will, while you unleash the Apocalypse!",
 		"type": "Spell"
@@ -61992,6 +65833,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_TagTeam_Priest",
 		"name": "Unbreakable",
+		"playerClass": "Priest",
 		"set": "Tb",
 		"text": "<b>Inspire</b> your minions, even in death.",
 		"type": "Spell"
@@ -62005,6 +65847,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_TagTeam_Rogue",
 		"name": "The Saint",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Assassinate with blinding speed!",
 		"type": "Spell"
@@ -62018,6 +65861,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_TagTeam_Shaman",
 		"name": "Totems Versus Secrets",
+		"playerClass": "Shaman",
 		"set": "Tb",
 		"text": "Uncover your adversary's secrets, while assembling your totem army",
 		"type": "Spell"
@@ -62031,6 +65875,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_TagTeam_Warlock",
 		"name": "Death Becomes",
+		"playerClass": "Warlock",
 		"set": "Tb",
 		"text": "Summon monstrous demons and burn away the enemy's weapons",
 		"type": "Spell"
@@ -62044,6 +65889,7 @@ var parseCardsText = {
 		"hideStats": true,
 		"id": "TB_TagTeam_Warrior",
 		"name": "The Rock",
+		"playerClass": "Warrior",
 		"set": "Tb",
 		"text": "Enrage your allies, while wielding weapons at your foes!",
 		"type": "Spell"
@@ -62056,6 +65902,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TB_VoidSingularityEnch",
 		"name": "Void Singularity Spell",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -62069,6 +65916,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TB_VoidSingularityMinion",
 		"name": "Void Singularity",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Minion"
 	},
@@ -62078,6 +65926,7 @@ var parseCardsText = {
 		"goldenImage": "TB_YoggServant_Enchant.gif",
 		"id": "TB_YoggServant_Enchant",
 		"name": "Yogg Servant Hero Enchant",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Enchantment"
 	},
@@ -62089,6 +65938,7 @@ var parseCardsText = {
 		"health": 60,
 		"id": "TBA01_1",
 		"name": "Ragnaros the Firelord",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -62100,6 +65950,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TBA01_4",
 		"name": "Nefarian",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"type": "Hero"
 	},
@@ -62111,6 +65962,7 @@ var parseCardsText = {
 		"goldenImage": "TBA01_5.gif",
 		"id": "TBA01_5",
 		"name": "Wild Magic",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nAdd a random spell from any class to your hand. It costs (0).",
 		"type": "Hero_power"
@@ -62123,6 +65975,7 @@ var parseCardsText = {
 		"goldenImage": "TBA01_6.gif",
 		"id": "TBA01_6",
 		"name": "Molten Rage",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nSummon a 5/1 Magma Rager.",
 		"type": "Hero_power"
@@ -62140,6 +65993,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "OLDN3wb Tank",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Taunt</b>",
 		"type": "Minion"
@@ -62154,6 +66008,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TBST_002",
 		"name": "OLDN3wb Mage",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of your turn, deal 1 damage to random enemy minion.",
 		"type": "Minion"
@@ -62168,6 +66023,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TBST_003",
 		"name": "OLDN3wb Healer",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of your turn, heal 2 damage from adjacent minions.",
 		"type": "Minion"
@@ -62182,6 +66038,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "TBST_004",
 		"name": "OLDLegit Healer",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "At the end of your turn, summon a random friendly minion that died this turn.",
 		"type": "Minion"
@@ -62199,6 +66056,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "OLDPvP Rogue",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Stealth</b>\nRegain <b>Stealth</b> when PvP Rogue kills a minion.",
 		"type": "Minion"
@@ -62214,6 +66072,7 @@ var parseCardsText = {
 		"goldenImage": "TBST_006.gif",
 		"id": "TBST_006",
 		"name": "OLDTBST Push Common Card",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "push a common card into player's hand",
 		"type": "Enchantment"
@@ -62228,6 +66087,7 @@ var parseCardsText = {
 		"goldenImage": "TBUD_1.gif",
 		"id": "TBUD_1",
 		"name": "TBUD Summon Early Minion",
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "Each turn, if you have less health then a your opponent, summon a free minion",
 		"type": "Enchantment"
@@ -62240,6 +66100,7 @@ var parseCardsText = {
 		"goldenImage": "TP_Bling_HP2.gif",
 		"id": "TP_Bling_HP2",
 		"name": "Cash In",
+		"playerClass": "Rogue",
 		"set": "Tb",
 		"text": "Destroy your weapon, gaining a random one.",
 		"type": "Hero_power"
@@ -62257,6 +66118,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "tt_004",
 		"name": "Flesheating Ghoul",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Expert1",
 		"text": "Whenever a minion dies, gain +1 Attack.",
@@ -62268,6 +66130,7 @@ var parseCardsText = {
 		"goldenImage": "tt_004o.gif",
 		"id": "tt_004o",
 		"name": "Cannibalize",
+		"playerClass": "Neutral",
 		"set": "Expert1",
 		"text": "Increased Attack.",
 		"type": "Enchantment"
@@ -62286,6 +66149,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Spellbender",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"text": "<b>Secret:</b> When an enemy casts a spell on a minion, summon a 1/3 as the new target.",
@@ -62301,6 +66165,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "tt_010a",
 		"name": "Spellbender",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Expert1",
 		"type": "Minion"
@@ -62313,6 +66178,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "TU4a_001",
 		"name": "Hogger",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Hero"
@@ -62327,6 +66193,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TU4a_002",
 		"name": "Riverpaw Gnoll",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Minion"
@@ -62341,6 +66208,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TU4a_003",
 		"name": "Gnoll",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Minion"
@@ -62353,6 +66221,7 @@ var parseCardsText = {
 		"goldenImage": "TU4a_004.gif",
 		"id": "TU4a_004",
 		"name": "Hogger SMASH!",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Deal 4 damage.",
@@ -62368,6 +66237,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "TU4a_005",
 		"name": "Massive Gnoll",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Minion"
@@ -62380,6 +66250,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TU4a_006",
 		"name": "Jaina Proudmoore",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Hero"
@@ -62392,6 +66263,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "TU4b_001",
 		"name": "Millhouse Manastorm",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Hero"
@@ -62404,6 +66276,7 @@ var parseCardsText = {
 		"health": 26,
 		"id": "TU4c_001",
 		"name": "King Mukla",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Hero"
@@ -62416,6 +66289,7 @@ var parseCardsText = {
 		"goldenImage": "TU4c_002.gif",
 		"id": "TU4c_002",
 		"name": "Barrel Toss",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Deal 2 damage.",
@@ -62434,6 +66308,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Barrel",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Is something in this barrel?",
@@ -62447,6 +66322,7 @@ var parseCardsText = {
 		"goldenImage": "TU4c_004.gif",
 		"id": "TU4c_004",
 		"name": "Stomp",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Deal 2 damage to all enemies.",
@@ -62462,6 +66338,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "TU4c_005",
 		"name": "Hidden Gnome",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Was hiding in a barrel!",
@@ -62475,6 +66352,7 @@ var parseCardsText = {
 		"goldenImage": "TU4c_006.gif",
 		"id": "TU4c_006",
 		"name": "Bananas",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Give a friendly minion +1/+1. <i>(+1 Attack/+1 Health)</i>",
@@ -62486,6 +66364,7 @@ var parseCardsText = {
 		"goldenImage": "TU4c_006e.gif",
 		"id": "TU4c_006e",
 		"name": "Bananas",
+		"playerClass": "Neutral",
 		"set": "Missions",
 		"text": "This minion has +1/+1. <i>(+1 Attack/+1 Health)</i>",
 		"type": "Enchantment"
@@ -62500,6 +66379,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "TU4c_007",
 		"name": "Mukla's Big Brother",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "So strong! And only 6 Mana?!",
@@ -62513,6 +66393,7 @@ var parseCardsText = {
 		"goldenImage": "TU4c_008.gif",
 		"id": "TU4c_008",
 		"name": "Will of Mukla",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Restore 8 Health.",
@@ -62527,6 +66408,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Might of Mukla",
+		"playerClass": "Neutral",
 		"set": "Missions",
 		"text": "King Mukla has +8 Attack this turn.",
 		"type": "Enchantment"
@@ -62539,6 +66421,7 @@ var parseCardsText = {
 		"health": 20,
 		"id": "TU4d_001",
 		"name": "Hemet Nesingwary",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Hero"
@@ -62553,6 +66436,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TU4d_002",
 		"name": "Crazed Hunter",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Minion"
@@ -62565,6 +66449,7 @@ var parseCardsText = {
 		"goldenImage": "TU4d_003.gif",
 		"id": "TU4d_003",
 		"name": "Shotgun Blast",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "<b>Hero Power</b>\nDeal 1 damage.",
@@ -62578,6 +66463,7 @@ var parseCardsText = {
 		"health": 30,
 		"id": "TU4e_001",
 		"name": "Illidan Stormrage",
+		"playerClass": "Hunter",
 		"set": "Missions",
 		"type": "Hero"
 	},
@@ -62589,6 +66475,7 @@ var parseCardsText = {
 		"goldenImage": "TU4e_002.gif",
 		"id": "TU4e_002",
 		"name": "Flames of Azzinoth",
+		"playerClass": "Neutral",
 		"set": "Missions",
 		"text": "<b>Hero Power</b>\nSummon two 2/1 minions.",
 		"type": "Hero_power"
@@ -62603,6 +66490,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TU4e_002t",
 		"name": "Flame of Azzinoth",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Minion"
@@ -62617,6 +66505,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TU4e_003",
 		"name": "Naga Myrmidon",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "<b></b>",
@@ -62632,6 +66521,7 @@ var parseCardsText = {
 		"goldenImage": "TU4e_004.gif",
 		"id": "TU4e_004",
 		"name": "Warglaive of Azzinoth",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Weapon"
@@ -62644,6 +66534,7 @@ var parseCardsText = {
 		"goldenImage": "TU4e_005.gif",
 		"id": "TU4e_005",
 		"name": "Flame Burst",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Shoot 5 missiles at random enemies for $1 damage each.",
@@ -62659,6 +66550,7 @@ var parseCardsText = {
 		"goldenImage": "TU4e_007.gif",
 		"id": "TU4e_007",
 		"name": "Dual Warglaives",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Weapon"
@@ -62671,6 +66563,7 @@ var parseCardsText = {
 		"health": 25,
 		"id": "TU4f_001",
 		"name": "Lorewalker Cho",
+		"playerClass": "Neutral",
 		"set": "Missions",
 		"type": "Hero"
 	},
@@ -62684,6 +66577,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "TU4f_002",
 		"name": "Pandaren Scout",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Minion"
@@ -62698,6 +66592,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "TU4f_003",
 		"name": "Shado-Pan Monk",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Minion"
@@ -62710,6 +66605,7 @@ var parseCardsText = {
 		"goldenImage": "TU4f_004.gif",
 		"id": "TU4f_004",
 		"name": "Legacy of the Emperor",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Give your minions +2/+2. <i>(+2 Attack/+2 Health)</i>",
@@ -62721,6 +66617,7 @@ var parseCardsText = {
 		"goldenImage": "TU4f_004o.gif",
 		"id": "TU4f_004o",
 		"name": "Legacy of the Emperor",
+		"playerClass": "Neutral",
 		"set": "Missions",
 		"text": "Has +2/+2. <i>(+2 Attack/+2 Health)</i>",
 		"type": "Enchantment"
@@ -62735,6 +66632,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "TU4f_005",
 		"name": "Brewmaster",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"type": "Minion"
@@ -62747,6 +66645,7 @@ var parseCardsText = {
 		"goldenImage": "TU4f_006.gif",
 		"id": "TU4f_006",
 		"name": "Transcendence",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "Until you kill Cho's minions, he can't be attacked.",
@@ -62758,6 +66657,7 @@ var parseCardsText = {
 		"goldenImage": "TU4f_006o.gif",
 		"id": "TU4f_006o",
 		"name": "Transcendence",
+		"playerClass": "Neutral",
 		"set": "Missions",
 		"text": "Until you kill Cho's minions, he can't be attacked.",
 		"type": "Enchantment"
@@ -62775,6 +66675,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Crazy Monkey",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Missions",
 		"text": "<b>Battlecry:</b> Throw Bananas.",
@@ -62796,6 +66697,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Pterrordax Hatchling",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -62821,6 +66723,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Volcanosaur",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -62841,6 +66744,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_004.gif",
 		"id": "UNG_004",
 		"name": "Dinosize",
+		"playerClass": "Paladin",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "Set a minion's Attack and Health to 10.",
@@ -62853,6 +66757,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_004e.gif",
 		"id": "UNG_004e",
 		"name": "RAAAAR!",
+		"playerClass": "Paladin",
 		"set": "Ungoro",
 		"text": "Stats changed to 10/10.",
 		"type": "Enchantment"
@@ -62873,6 +66778,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ravasaur Runt",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -62898,6 +66804,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Sated Threshadon",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -62920,6 +66827,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Hydrologist",
+		"playerClass": "Paladin",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"referencedTags": [
@@ -62948,6 +66856,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Sunkeeper Tarim",
+		"playerClass": "Paladin",
 		"rarity": "Legendary",
 		"set": "Ungoro",
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Set all other minions' Attack and Health to 3.",
@@ -62960,6 +66869,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_015e.gif",
 		"id": "UNG_015e",
 		"name": "Watched",
+		"playerClass": "Paladin",
 		"set": "Ungoro",
 		"text": "Stats changed to 3/3.",
 		"type": "Enchantment"
@@ -62975,6 +66885,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_018.gif",
 		"id": "UNG_018",
 		"name": "Flame Geyser",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "Deal $2 damage.\nAdd a 1/2 Elemental to your hand.",
@@ -62998,6 +66909,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Air Elemental",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -63020,6 +66932,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Arcanologist",
+		"playerClass": "Mage",
 		"rarity": "Common",
 		"referencedTags": [
 			"SECRET"
@@ -63044,6 +66957,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Steam Surger",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -63066,6 +66980,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Mirage Caller",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Choose a friendly minion. Summon a 1/1 copy of it.",
@@ -63078,6 +66993,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_022e.gif",
 		"id": "UNG_022e",
 		"name": "Mirage",
+		"playerClass": "Priest",
 		"set": "Ungoro",
 		"text": "1/1.",
 		"type": "Enchantment"
@@ -63096,6 +67012,7 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"name": "Mana Bind",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "<b>Secret:</b> When your opponent casts a spell, add a copy to your hand that costs (0).",
@@ -63117,6 +67034,7 @@ var parseCardsText = {
 		],
 		"name": "Volcano",
 		"overload": 2,
+		"playerClass": "Shaman",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "Deal $15 damage randomly split among all minions.\n<b>Overload:</b> (2)",
@@ -63139,6 +67057,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Pyros",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -63160,6 +67079,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Pyros",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -63178,6 +67098,7 @@ var parseCardsText = {
 		"health": 10,
 		"id": "UNG_027t4",
 		"name": "Pyros",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -63198,6 +67119,7 @@ var parseCardsText = {
 			"QUEST"
 		],
 		"name": "Open the Waygate",
+		"playerClass": "Mage",
 		"questReward": "UNG_028t",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -63214,6 +67136,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_028t.gif",
 		"id": "UNG_028t",
 		"name": "Time Warp",
+		"playerClass": "Mage",
 		"set": "Ungoro",
 		"text": "Take an extra turn.",
 		"type": "Spell"
@@ -63229,6 +67152,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_029.gif",
 		"id": "UNG_029",
 		"name": "Shadow Visions",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DISCOVER"
@@ -63248,6 +67172,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_030.gif",
 		"id": "UNG_030",
 		"name": "Binding Heal",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "Restore #5 Health to a minion and your hero.",
@@ -63270,6 +67195,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Crystalline Oracle",
+		"playerClass": "Priest",
 		"race": "ELEMENTAL",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -63292,6 +67218,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Radiant Elemental",
+		"playerClass": "Priest",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -63314,6 +67241,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Curious Glimmerroot",
+		"playerClass": "Priest",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "[x]<b>Battlecry:</b> Look at 3 cards.\nGuess which one started\nin your opponent's deck\nto get a copy of it.",
@@ -63336,6 +67264,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Tortollan Shellraiser",
+		"playerClass": "Priest",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Give a random\n friendly minion +1/+1.",
@@ -63348,6 +67277,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_037e.gif",
 		"id": "UNG_037e",
 		"name": "Shellshield",
+		"playerClass": "Priest",
 		"set": "Ungoro",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -63368,6 +67298,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Ravenous Pterrordax",
+		"playerClass": "Warlock",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -63393,6 +67324,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Tar Lurker",
+		"playerClass": "Warlock",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -63410,6 +67342,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_057.gif",
 		"id": "UNG_057",
 		"name": "Razorpetal Volley",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "Add two Razorpetals to your hand that deal 1 damage.",
@@ -63424,6 +67357,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_057t1.gif",
 		"id": "UNG_057t1",
 		"name": "Razorpetal",
+		"playerClass": "Rogue",
 		"set": "Ungoro",
 		"text": "Deal $1 damage.",
 		"type": "Spell"
@@ -63444,6 +67378,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Razorpetal Lasher",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "[x]<b>Battlecry:</b> Add a\nRazorpetal to your hand\nthat deals 1 damage.",
@@ -63460,6 +67395,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_060.gif",
 		"id": "UNG_060",
 		"name": "Mimic Pod",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "Draw a card, then add a copy of it to your hand.",
@@ -63478,6 +67414,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_061.gif",
 		"id": "UNG_061",
 		"name": "Obsidian Shard",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "[x]Costs (1) less for each\ncard you've played from\nanother class.",
@@ -63499,6 +67436,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Biteweed",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "<b>Combo:</b> Gain +1/+1 for each other card you've played this turn.",
@@ -63511,6 +67449,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_063e.gif",
 		"id": "UNG_063e",
 		"name": "Sprout",
+		"playerClass": "Rogue",
 		"set": "Ungoro",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -63531,6 +67470,7 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"name": "Vilespine Slayer",
+		"playerClass": "Rogue",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "<b>Combo:</b> Destroy a minion.",
@@ -63553,6 +67493,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Sherazin, Corpse Flower",
+		"playerClass": "Rogue",
 		"rarity": "Legendary",
 		"set": "Ungoro",
 		"text": "<b>Deathrattle:</b> Go dormant. Play 4 cards in a turn to revive this minion.",
@@ -63573,6 +67514,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Sherazin, Seed",
+		"playerClass": "Rogue",
 		"set": "Ungoro",
 		"text": "When you play 4 cards in a turn, revive this minion.",
 		"type": "Minion"
@@ -63592,6 +67534,7 @@ var parseCardsText = {
 			"QUEST"
 		],
 		"name": "The Caverns Below",
+		"playerClass": "Rogue",
 		"questReward": "UNG_067t1",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -63611,6 +67554,7 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"name": "Crystal Core",
+		"playerClass": "Rogue",
 		"set": "Ungoro",
 		"text": "For the rest of the game, your minions are 5/5.",
 		"type": "Spell"
@@ -63622,6 +67566,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_067t1e.gif",
 		"id": "UNG_067t1e",
 		"name": "Crystallized",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "Your minions are 5/5.",
 		"type": "Enchantment"
@@ -63632,6 +67577,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_067t1e2.gif",
 		"id": "UNG_067t1e2",
 		"name": "Crystallized",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "5/5.",
 		"type": "Enchantment"
@@ -63652,6 +67598,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tol'vir Stoneshaper",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DIVINE_SHIELD",
@@ -63668,6 +67615,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_070e.gif",
 		"id": "UNG_070e",
 		"name": "Stonewall",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Divine Shield</b> and <b>Taunt</b>.",
 		"type": "Enchantment"
@@ -63688,6 +67636,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Giant Mastodon",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -63711,6 +67660,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Stonehill Defender",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DISCOVER"
@@ -63735,6 +67685,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Rockpool Hunter",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -63748,6 +67699,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_073e.gif",
 		"id": "UNG_073e",
 		"name": "Trained",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "+1/+1",
 		"type": "Enchantment"
@@ -63765,6 +67717,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "UNG_075",
 		"name": "Vicious Fledgling",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -63790,6 +67743,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Eggnapper",
+		"playerClass": "Neutral",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "<b>Deathrattle:</b> Summon two 1/1 Raptors.",
@@ -63806,6 +67760,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "UNG_076t1",
 		"name": "Raptor",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Ungoro",
 		"type": "Minion"
@@ -63826,6 +67781,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tortollan Forager",
+		"playerClass": "Druid",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Add a random minion with 5 or more Attack to your hand.",
@@ -63844,6 +67800,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "UNG_079",
 		"name": "Frozen Crusher",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -63869,6 +67826,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Thunder Lizard",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -63894,6 +67852,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Devilsaur Egg",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "<b>Deathrattle:</b> Summon a 5/5 Devilsaur.",
@@ -63910,6 +67869,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "UNG_083t1",
 		"name": "Devilsaur",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"set": "Ungoro",
 		"type": "Minion"
@@ -63930,6 +67890,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fire Plume Phoenix",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -63953,6 +67914,7 @@ var parseCardsText = {
 			"AURA"
 		],
 		"name": "Emerald Hive Queen",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Ungoro",
@@ -63975,6 +67937,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Giant Anaconda",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Ungoro",
@@ -63994,6 +67957,7 @@ var parseCardsText = {
 		"health": 8,
 		"id": "UNG_087",
 		"name": "Bittertide Hydra",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Ungoro",
@@ -64016,6 +67980,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tortollan Primalist",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DISCOVER"
@@ -64040,6 +68005,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gentle Megasaur",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"referencedTags": [
@@ -64066,6 +68032,7 @@ var parseCardsText = {
 			"CHARGE"
 		],
 		"name": "Charged Devilsaur",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"set": "Ungoro",
@@ -64088,6 +68055,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Verdant Longneck",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -64113,6 +68081,7 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"name": "Shellshifter",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"referencedTags": [
 			"STEALTH",
@@ -64131,6 +68100,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_101a.gif",
 		"id": "UNG_101a",
 		"name": "Raptor Form",
+		"playerClass": "Druid",
 		"set": "Ungoro",
 		"text": "+2 Attack and <b>Stealth</b>",
 		"type": "Spell"
@@ -64144,6 +68114,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_101b.gif",
 		"id": "UNG_101b",
 		"name": "Direhorn Form",
+		"playerClass": "Druid",
 		"set": "Ungoro",
 		"text": "+2 Health and <b>Taunt</b>.",
 		"type": "Spell"
@@ -64162,6 +68133,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Shellshifter",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -64182,6 +68154,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Shellshifter",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -64203,6 +68176,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Shellshifter",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -64220,6 +68194,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_103.gif",
 		"id": "UNG_103",
 		"name": "Evolving Spores",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"referencedTags": [
 			"ADAPT"
@@ -64239,6 +68214,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_108.gif",
 		"id": "UNG_108",
 		"name": "Earthen Scales",
+		"playerClass": "Druid",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "Give a friendly minion +1/+1, then gain Armor equal to its Attack.",
@@ -64251,6 +68227,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_108e.gif",
 		"id": "UNG_108e",
 		"name": "It's All Scaley...",
+		"playerClass": "Druid",
 		"set": "Ungoro",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -64283,6 +68260,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Elder Longneck",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -64303,6 +68281,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_111.gif",
 		"id": "UNG_111",
 		"name": "Living Mana",
+		"playerClass": "Druid",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "Transform your Mana Crystals into 2/2 minions. Recover the mana when they die.",
@@ -64322,6 +68301,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Mana Treant",
+		"playerClass": "Druid",
 		"set": "Ungoro",
 		"text": "<b>Deathrattle:</b> Gain an empty Mana Crystal.",
 		"type": "Minion"
@@ -64342,6 +68322,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Bright-Eyed Scout",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Draw a card. Change its Cost to (5).",
@@ -64354,6 +68335,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_113e.gif",
 		"id": "UNG_113e",
 		"name": "Scouted",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "Costs (5).",
 		"type": "Enchantment"
@@ -64373,6 +68355,7 @@ var parseCardsText = {
 			"QUEST"
 		],
 		"name": "Jungle Giants",
+		"playerClass": "Druid",
 		"questReward": "UNG_116t",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -64394,6 +68377,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Barnabus the Stomper",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Reduce the\nCost of minions in your deck to (0).",
@@ -64406,6 +68390,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_116te.gif",
 		"id": "UNG_116te",
 		"name": "Romper Stompers",
+		"playerClass": "Druid",
 		"set": "Ungoro",
 		"text": "Costs (0).",
 		"type": "Enchantment"
@@ -64423,6 +68408,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "UNG_201",
 		"name": "Primalfin Totem",
+		"playerClass": "Shaman",
 		"race": "TOTEM",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -64440,6 +68426,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "UNG_201t",
 		"name": "Primalfin",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"set": "Ungoro",
 		"type": "Minion"
@@ -64460,6 +68447,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fire Plume Harbinger",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -64472,6 +68460,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_202e.gif",
 		"id": "UNG_202e",
 		"name": "Fiery",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "Costs (1) less.",
 		"type": "Enchantment"
@@ -64492,6 +68481,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Glacial Shard",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"referencedTags": [
@@ -64517,6 +68507,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Stone Sentinel",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Epic",
 		"referencedTags": [
@@ -64540,6 +68531,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Rock Elemental",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"set": "Ungoro",
 		"text": "<b>Taunt</b>",
@@ -64562,6 +68554,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Kalimos, Primal Lord",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -64577,6 +68570,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_211a.gif",
 		"id": "UNG_211a",
 		"name": "Invocation of Earth",
+		"playerClass": "Shaman",
 		"set": "Ungoro",
 		"text": "Fill your board with 1/1 Elementals.",
 		"type": "Spell"
@@ -64592,6 +68586,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "UNG_211aa",
 		"name": "Stone Elemental",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"set": "Ungoro",
 		"type": "Minion"
@@ -64605,6 +68600,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_211b.gif",
 		"id": "UNG_211b",
 		"name": "Invocation of Water",
+		"playerClass": "Shaman",
 		"set": "Ungoro",
 		"text": "Restore 12 Health to your hero.",
 		"type": "Spell"
@@ -64621,6 +68617,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Invocation of Fire",
+		"playerClass": "Shaman",
 		"set": "Ungoro",
 		"text": "Deal 6 damage to the enemy hero.",
 		"type": "Spell"
@@ -64637,6 +68634,7 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"name": "Invocation of Air",
+		"playerClass": "Shaman",
 		"set": "Ungoro",
 		"text": "Deal 3 damage to all enemy minions.",
 		"type": "Spell"
@@ -64657,6 +68655,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Terrorscale Stalker",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -64681,6 +68680,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Nesting Roc",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -64706,6 +68706,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Emerald Reaver",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -64725,6 +68726,7 @@ var parseCardsText = {
 		"health": 14,
 		"id": "UNG_806",
 		"name": "Ultrasaur",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -64746,6 +68748,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Golakka Crawler",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -64759,6 +68762,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_807e.gif",
 		"id": "UNG_807e",
 		"name": "Overfull Belly",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "Increased stats.",
 		"type": "Enchantment"
@@ -64780,6 +68784,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Stubborn Gastropod",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -64803,6 +68808,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Fire Fly",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -64821,6 +68827,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "UNG_809t1",
 		"name": "Flame Elemental",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"set": "Ungoro",
 		"type": "Minion"
@@ -64841,6 +68848,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Stegodon",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -64863,6 +68871,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Sabretooth Stalker",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -64885,6 +68894,7 @@ var parseCardsText = {
 			"WINDFURY"
 		],
 		"name": "Stormwatcher",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -64908,6 +68918,7 @@ var parseCardsText = {
 			"STEALTH"
 		],
 		"name": "Giant Wasp",
+		"playerClass": "Neutral",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -64930,6 +68941,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Servant of Kalimos",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -64950,6 +68962,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_817.gif",
 		"id": "UNG_817",
 		"name": "Tidal Surge",
+		"playerClass": "Shaman",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "Deal $4 damage to a minion. Restore #4 Health to your hero.",
@@ -64971,6 +68984,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Volatile Elemental",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -64988,6 +69002,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_823.gif",
 		"id": "UNG_823",
 		"name": "Envenom Weapon",
+		"playerClass": "Rogue",
 		"rarity": "Rare",
 		"referencedTags": [
 			"POISONOUS"
@@ -65005,6 +69020,7 @@ var parseCardsText = {
 			"POISONOUS"
 		],
 		"name": "Envenomed",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Poisonous</b>",
 		"type": "Enchantment"
@@ -65015,6 +69031,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_823ed.gif",
 		"id": "UNG_823ed",
 		"name": "Envenomed",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Poisonous</b>",
 		"type": "Enchantment"
@@ -65034,6 +69051,7 @@ var parseCardsText = {
 			"QUEST"
 		],
 		"name": "Lakkari Sacrifice",
+		"playerClass": "Warlock",
 		"questReward": "UNG_829t1",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -65050,6 +69068,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_829t1.gif",
 		"id": "UNG_829t1",
 		"name": "Nether Portal",
+		"playerClass": "Warlock",
 		"set": "Ungoro",
 		"text": "Open a permanent portal that summons 3/2 Imps.",
 		"type": "Spell"
@@ -65070,6 +69089,7 @@ var parseCardsText = {
 			"UNTOUCHABLE"
 		],
 		"name": "Nether Portal",
+		"playerClass": "Warlock",
 		"set": "Ungoro",
 		"text": "At the end of your turn, summon two 3/2 Imps.",
 		"type": "Minion"
@@ -65085,6 +69105,7 @@ var parseCardsText = {
 		"health": 2,
 		"id": "UNG_829t3",
 		"name": "Nether Imp",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"set": "Ungoro",
 		"type": "Minion"
@@ -65105,6 +69126,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Cruel Dinomancer",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "[x]<b>Deathrattle:</b> Summon a\nrandom minion you\ndiscarded this game.",
@@ -65121,6 +69143,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_831.gif",
 		"id": "UNG_831",
 		"name": "Corrupting Mist",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "Corrupt every minion. Destroy them at the start of your next turn.",
@@ -65133,6 +69156,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_831e.gif",
 		"id": "UNG_831e",
 		"name": "Corrupting Mist",
+		"playerClass": "Warlock",
 		"set": "Ungoro",
 		"text": "At the start of the corrupting player's turn, destroy this minion.",
 		"type": "Enchantment"
@@ -65160,6 +69184,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_832.gif",
 		"id": "UNG_832",
 		"name": "Bloodbloom",
+		"playerClass": "Warlock",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "The next spell you cast this turn costs Health instead of Mana.",
@@ -65172,6 +69197,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_832e.gif",
 		"id": "UNG_832e",
 		"name": "Dark Power",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "Your next spell costs Health instead of Mana.",
 		"type": "Enchantment"
@@ -65193,6 +69219,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Lakkari Felhound",
+		"playerClass": "Warlock",
 		"race": "DEMON",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -65210,6 +69237,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_834.gif",
 		"id": "UNG_834",
 		"name": "Feeding Time",
+		"playerClass": "Warlock",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "Deal $3 damage to a minion. Summon three 1/1 Pterrordaxes.",
@@ -65226,6 +69254,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "UNG_834t1",
 		"name": "Pterrordax",
+		"playerClass": "Warlock",
 		"race": "BEAST",
 		"set": "Ungoro",
 		"type": "Minion"
@@ -65246,6 +69275,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Chittering Tunneler",
+		"playerClass": "Warlock",
 		"race": "BEAST",
 		"rarity": "Epic",
 		"referencedTags": [
@@ -65272,6 +69302,7 @@ var parseCardsText = {
 			"InvisibleDeathrattle"
 		],
 		"name": "Clutchmother Zavas",
+		"playerClass": "Warlock",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -65285,6 +69316,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_836e.gif",
 		"id": "UNG_836e",
 		"name": "Remembrance",
+		"playerClass": "Warlock",
 		"set": "Ungoro",
 		"text": "+2/+2 each time this is discarded.",
 		"type": "Enchantment"
@@ -65305,6 +69337,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Tar Lord",
+		"playerClass": "Warrior",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -65328,6 +69361,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Hemet, Jungle Hunter",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Destroy all cards in your deck that cost (3) or less.",
@@ -65347,6 +69381,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "UNG_843",
 		"name": "The Voraxx",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Ungoro",
 		"text": "[x]After you cast a spell on\nthis minion, summon a\n1/1 Plant and cast\nanother copy on it.",
@@ -65369,6 +69404,7 @@ var parseCardsText = {
 			"CANT_ATTACK"
 		],
 		"name": "Humongous Razorleaf",
+		"playerClass": "Neutral",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "Can't attack.",
@@ -65390,6 +69426,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Igneous Elemental",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -65412,6 +69449,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Shimmering Tempest",
+		"playerClass": "Mage",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -65434,6 +69472,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Blazecaller",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Epic",
 		"set": "Ungoro",
@@ -65457,6 +69496,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Primordial Drake",
+		"playerClass": "Neutral",
 		"race": "DRAGON",
 		"rarity": "Epic",
 		"set": "Ungoro",
@@ -65480,6 +69520,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Elise the Trailblazer",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Shuffle a sealed <b>Un'Goro</b> pack into your deck.",
@@ -65494,6 +69535,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_851t1.gif",
 		"id": "UNG_851t1",
 		"name": "Un'Goro Pack",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "Add 5 <b>Journey to Un'Goro</b> cards to your hand.",
 		"type": "Spell"
@@ -65516,6 +69558,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Tyrantus",
+		"playerClass": "Druid",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -65533,6 +69576,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_854.gif",
 		"id": "UNG_854",
 		"name": "Free From Amber",
+		"playerClass": "Priest",
 		"rarity": "Rare",
 		"referencedTags": [
 			"DISCOVER"
@@ -65552,6 +69596,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_856.gif",
 		"id": "UNG_856",
 		"name": "Hallucination",
+		"playerClass": "Rogue",
 		"rarity": "Common",
 		"referencedTags": [
 			"DISCOVER"
@@ -65574,6 +69619,7 @@ var parseCardsText = {
 		"health": 4,
 		"id": "UNG_900",
 		"name": "Spiritsinger Umbra",
+		"playerClass": "Neutral",
 		"rarity": "Legendary",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -65600,6 +69646,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Ozruk",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -65613,6 +69660,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_907e.gif",
 		"id": "UNG_907e",
 		"name": "Just Blaze",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "+5 Health",
 		"type": "Enchantment"
@@ -65628,6 +69676,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_910.gif",
 		"id": "UNG_910",
 		"name": "Grievous Bite",
+		"playerClass": "Hunter",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "Deal $2 damage to a minion and $1 damage to adjacent ones.",
@@ -65649,6 +69698,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Jeweled Macaw",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -65671,6 +69721,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Tol'vir Warden",
+		"playerClass": "Hunter",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Draw two 1-Cost minions from your deck.",
@@ -65692,6 +69743,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Raptor Hatchling",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -65709,6 +69761,7 @@ var parseCardsText = {
 		"health": 3,
 		"id": "UNG_914t1",
 		"name": "Raptor Patriarch",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Ungoro",
 		"type": "Minion"
@@ -65729,6 +69782,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Crackling Razormaw",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -65749,6 +69803,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_916.gif",
 		"id": "UNG_916",
 		"name": "Stampede",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "Each time you play a Beast this turn, add a random Beast to your hand.",
@@ -65764,6 +69819,7 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"name": "Stampeding",
+		"playerClass": "Hunter",
 		"set": "Ungoro",
 		"type": "Enchantment"
 	},
@@ -65778,6 +69834,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_917.gif",
 		"id": "UNG_917",
 		"name": "Dinomancy",
+		"playerClass": "Hunter",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "Your Hero Power becomes 'Give a Beast +2/+2.'",
@@ -65790,6 +69847,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_917e.gif",
 		"id": "UNG_917e",
 		"name": "Well Fed",
+		"playerClass": "Hunter",
 		"set": "Ungoro",
 		"text": "+2/+2.",
 		"type": "Enchantment"
@@ -65803,6 +69861,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_917t1.gif",
 		"id": "UNG_917t1",
 		"name": "Dinomancy",
+		"playerClass": "Hunter",
 		"set": "Ungoro",
 		"text": "<b>Hero Power</b>\nGive a Beast +2/+2.",
 		"type": "Hero_power"
@@ -65821,6 +69880,7 @@ var parseCardsText = {
 		"health": 9,
 		"id": "UNG_919",
 		"name": "Swamp King Dred",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -65842,6 +69902,7 @@ var parseCardsText = {
 			"QUEST"
 		],
 		"name": "The Marsh Queen",
+		"playerClass": "Hunter",
 		"questReward": "UNG_920t1",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -65863,6 +69924,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Queen Carnassa",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Shuffle 15 Raptors into your deck.",
@@ -65882,6 +69944,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Carnassa's Brood",
+		"playerClass": "Hunter",
 		"race": "BEAST",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Draw a card.",
@@ -65898,6 +69961,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_922.gif",
 		"id": "UNG_922",
 		"name": "Explore Un'Goro",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DISCOVER"
@@ -65915,6 +69979,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_922t1.gif",
 		"id": "UNG_922t1",
 		"name": "Choose Your Path",
+		"playerClass": "Warrior",
 		"referencedTags": [
 			"DISCOVER"
 		],
@@ -65933,6 +69998,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_923.gif",
 		"id": "UNG_923",
 		"name": "Iron Hide",
+		"playerClass": "Warrior",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "Gain 5 Armor.",
@@ -65955,6 +70021,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Ornery Direhorn",
+		"playerClass": "Warrior",
 		"race": "BEAST",
 		"rarity": "Common",
 		"referencedTags": [
@@ -65981,6 +70048,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Cornered Sentry",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "<b>Taunt</b>. <b>Battlecry:</b> Summon three 1/1 Raptors for your opponent.",
@@ -65997,6 +70065,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_927.gif",
 		"id": "UNG_927",
 		"name": "Sudden Genesis",
+		"playerClass": "Warrior",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "Summon copies of your damaged minions.",
@@ -66018,6 +70087,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Tar Creeper",
+		"playerClass": "Neutral",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -66037,6 +70107,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_929.gif",
 		"id": "UNG_929",
 		"name": "Molten Blade",
+		"playerClass": "Warrior",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "Each turn this is in your hand, transform it into a new weapon.",
@@ -66049,6 +70120,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_929e.gif",
 		"id": "UNG_929e",
 		"name": "Magmic",
+		"playerClass": "Warrior",
 		"set": "Ungoro",
 		"text": "Transforming into random weapons.",
 		"type": "Enchantment"
@@ -66070,6 +70142,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "King Mosh",
+		"playerClass": "Warrior",
 		"race": "BEAST",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -66091,6 +70164,7 @@ var parseCardsText = {
 			"QUEST"
 		],
 		"name": "Fire Plume's Heart",
+		"playerClass": "Warrior",
 		"questReward": "UNG_934t1",
 		"rarity": "Legendary",
 		"referencedTags": [
@@ -66115,6 +70189,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Sulfuras",
+		"playerClass": "Warrior",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Your Hero Power becomes 'Deal 8 damage to a random enemy.'",
 		"type": "Weapon"
@@ -66128,6 +70203,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_934t2.gif",
 		"id": "UNG_934t2",
 		"name": "DIE, INSECT!",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Hero Power</b>\nDeal $8 damage to a random enemy.",
 		"type": "Hero_power"
@@ -66148,6 +70224,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Primalfin Lookout",
+		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Common",
 		"referencedTags": [
@@ -66174,6 +70251,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Hot Spring Guardian",
+		"playerClass": "Shaman",
 		"race": "ELEMENTAL",
 		"rarity": "Common",
 		"set": "Ungoro",
@@ -66195,6 +70273,7 @@ var parseCardsText = {
 			"QUEST"
 		],
 		"name": "Awaken the Makers",
+		"playerClass": "Priest",
 		"questReward": "UNG_940t8",
 		"rarity": "Legendary",
 		"referencedTags": [
@@ -66220,6 +70299,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Amara, Warden of Hope",
+		"playerClass": "Priest",
 		"set": "Ungoro",
 		"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Set your\nhero's Health to 40.",
 		"type": "Minion"
@@ -66235,6 +70315,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_941.gif",
 		"id": "UNG_941",
 		"name": "Primordial Glyph",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DISCOVER"
@@ -66250,6 +70331,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_941e.gif",
 		"id": "UNG_941e",
 		"name": "Primal Magic",
+		"playerClass": "Mage",
 		"set": "Ungoro",
 		"text": "Cost reduced.",
 		"type": "Enchantment"
@@ -66269,6 +70351,7 @@ var parseCardsText = {
 			"QUEST"
 		],
 		"name": "Unite the Murlocs",
+		"playerClass": "Shaman",
 		"questReward": "UNG_942t",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -66290,6 +70373,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Megafin",
+		"playerClass": "Shaman",
 		"race": "MURLOC",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Fill your hand with random Murlocs.",
@@ -66311,6 +70395,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Gluttonous Ooze",
+		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "<b>Battlecry:</b> Destroy your opponent's weapon and gain Armor equal to its Attack.",
@@ -66327,6 +70412,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_948.gif",
 		"id": "UNG_948",
 		"name": "Molten Reflection",
+		"playerClass": "Mage",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "Choose a friendly minion. Summon a copy of it.",
@@ -66345,6 +70431,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_950.gif",
 		"id": "UNG_950",
 		"name": "Vinecleaver",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"set": "Ungoro",
 		"text": "[x]After your hero attacks,\nsummon two 1/1 Silver\nHand Recruits.",
@@ -66361,6 +70448,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_952.gif",
 		"id": "UNG_952",
 		"name": "Spikeridged Steed",
+		"playerClass": "Paladin",
 		"rarity": "Rare",
 		"referencedTags": [
 			"TAUNT"
@@ -66376,6 +70464,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_952e.gif",
 		"id": "UNG_952e",
 		"name": "On a Stegodon",
+		"playerClass": "Paladin",
 		"set": "Ungoro",
 		"text": "+2/+6 and <b>Taunt</b>.\n<b>Deathrattle:</b> Summon a Stegodon.",
 		"type": "Enchantment"
@@ -66396,6 +70485,7 @@ var parseCardsText = {
 			"DEATHRATTLE"
 		],
 		"name": "Primalfin Champion",
+		"playerClass": "Paladin",
 		"race": "MURLOC",
 		"rarity": "Epic",
 		"set": "Ungoro",
@@ -66409,6 +70499,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_953e.gif",
 		"id": "UNG_953e",
 		"name": "Inspired",
+		"playerClass": "Paladin",
 		"set": "Ungoro",
 		"text": "Storing spell.",
 		"type": "Enchantment"
@@ -66428,6 +70519,7 @@ var parseCardsText = {
 			"QUEST"
 		],
 		"name": "The Last Kaleidosaur",
+		"playerClass": "Paladin",
 		"questReward": "UNG_954t1",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -66449,6 +70541,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Galvadon",
+		"playerClass": "Paladin",
 		"race": "BEAST",
 		"referencedTags": [
 			"ADAPT"
@@ -66468,6 +70561,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_955.gif",
 		"id": "UNG_955",
 		"name": "Meteor",
+		"playerClass": "Mage",
 		"rarity": "Epic",
 		"set": "Ungoro",
 		"text": "Deal $15 damage to a minion and $3 damage to adjacent ones.",
@@ -66484,6 +70578,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_956.gif",
 		"id": "UNG_956",
 		"name": "Spirit Echo",
+		"playerClass": "Shaman",
 		"rarity": "Epic",
 		"referencedTags": [
 			"DEATHRATTLE"
@@ -66499,6 +70594,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_956e.gif",
 		"id": "UNG_956e",
 		"name": "Echoed Spirit",
+		"playerClass": "Shaman",
 		"set": "Ungoro",
 		"text": "<b>Deathrattle:</b> Return to your hand.",
 		"type": "Enchantment"
@@ -66520,6 +70616,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Direhorn Hatchling",
+		"playerClass": "Warrior",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"set": "Ungoro",
@@ -66540,6 +70637,7 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"name": "Direhorn Matriarch",
+		"playerClass": "Warrior",
 		"race": "BEAST",
 		"set": "Ungoro",
 		"text": "<b>Taunt</b>",
@@ -66557,6 +70655,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_960.gif",
 		"id": "UNG_960",
 		"name": "Lost in the Jungle",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"set": "Ungoro",
 		"text": "Summon two 1/1 Silver Hand Recruits.",
@@ -66573,6 +70672,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_961.gif",
 		"id": "UNG_961",
 		"name": "Adaptation",
+		"playerClass": "Paladin",
 		"rarity": "Common",
 		"referencedTags": [
 			"ADAPT"
@@ -66597,6 +70697,7 @@ var parseCardsText = {
 			"BATTLECRY"
 		],
 		"name": "Lightfused Stegodon",
+		"playerClass": "Paladin",
 		"race": "BEAST",
 		"rarity": "Rare",
 		"referencedTags": [
@@ -66620,6 +70721,7 @@ var parseCardsText = {
 		"health": 5,
 		"id": "UNG_963",
 		"name": "Lyra the Sunshard",
+		"playerClass": "Priest",
 		"race": "ELEMENTAL",
 		"rarity": "Legendary",
 		"set": "Ungoro",
@@ -66635,6 +70737,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t10.gif",
 		"id": "UNG_999t10",
 		"name": "Shrouding Mist",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Stealth</b> until your next turn.",
 		"type": "Spell"
@@ -66646,6 +70749,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t10e.gif",
 		"id": "UNG_999t10e",
 		"name": "Shrouding Mist",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "Stealthed until your next turn.",
 		"type": "Enchantment"
@@ -66659,6 +70763,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t13.gif",
 		"id": "UNG_999t13",
 		"name": "Poison Spit",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Poisonous</b>",
 		"type": "Spell"
@@ -66670,6 +70775,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t13e.gif",
 		"id": "UNG_999t13e",
 		"name": "Poison Spit",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Poisonous</b>",
 		"type": "Enchantment"
@@ -66683,6 +70789,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t14.gif",
 		"id": "UNG_999t14",
 		"name": "Volcanic Might",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "+1/+1",
 		"type": "Spell"
@@ -66694,6 +70801,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t14e.gif",
 		"id": "UNG_999t14e",
 		"name": "Volcanic Might",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "+1/+1.",
 		"type": "Enchantment"
@@ -66707,6 +70815,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t2.gif",
 		"id": "UNG_999t2",
 		"name": "Living Spores",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Deathrattle:</b> Summon two 1/1 Plants.",
 		"type": "Spell"
@@ -66718,6 +70827,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t2e.gif",
 		"id": "UNG_999t2e",
 		"name": "Living Spores",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Deathrattle:</b> Summon two 1/1 Plants.",
 		"type": "Enchantment"
@@ -66733,6 +70843,7 @@ var parseCardsText = {
 		"health": 1,
 		"id": "UNG_999t2t1",
 		"name": "Plant",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"type": "Minion"
 	},
@@ -66745,6 +70856,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t3.gif",
 		"id": "UNG_999t3",
 		"name": "Flaming Claws",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "+3 Attack",
 		"type": "Spell"
@@ -66757,6 +70869,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t3e.gif",
 		"id": "UNG_999t3e",
 		"name": "Flaming Claws",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "+3 Attack.",
 		"type": "Enchantment"
@@ -66770,6 +70883,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t4.gif",
 		"id": "UNG_999t4",
 		"name": "Rocky Carapace",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "+3 Health",
 		"type": "Spell"
@@ -66781,6 +70895,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t4e.gif",
 		"id": "UNG_999t4e",
 		"name": "Rocky Carapace",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "+3 Health.",
 		"type": "Enchantment"
@@ -66798,6 +70913,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Liquid Membrane",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "Can't be targeted by spells or Hero Powers.",
 		"type": "Spell"
@@ -66813,6 +70929,7 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"name": "Liquid Membrane",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "Can't be targeted by spells or Hero Powers.",
 		"type": "Enchantment"
@@ -66826,6 +70943,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t6.gif",
 		"id": "UNG_999t6",
 		"name": "Massive",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Taunt</b>",
 		"type": "Spell"
@@ -66837,6 +70955,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t6e.gif",
 		"id": "UNG_999t6e",
 		"name": "Massive",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Taunt</b>",
 		"type": "Enchantment"
@@ -66850,6 +70969,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t7.gif",
 		"id": "UNG_999t7",
 		"name": "Lightning Speed",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Windfury</b>",
 		"type": "Spell"
@@ -66861,6 +70981,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t7e.gif",
 		"id": "UNG_999t7e",
 		"name": "Lightning Speed",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Windfury</b>",
 		"type": "Enchantment"
@@ -66874,6 +70995,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t8.gif",
 		"id": "UNG_999t8",
 		"name": "Crackling Shield",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Divine Shield</b>",
 		"type": "Spell"
@@ -66885,6 +71007,7 @@ var parseCardsText = {
 		"goldenImage": "UNG_999t8e.gif",
 		"id": "UNG_999t8e",
 		"name": "Crackling Shield",
+		"playerClass": "Neutral",
 		"set": "Ungoro",
 		"text": "<b>Divine Shield</b>",
 		"type": "Enchantment"

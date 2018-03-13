@@ -1,3 +1,4 @@
+
 package com.zerotoheroes.reviewprocessing;
 
 import java.util.Arrays;
@@ -80,12 +81,11 @@ public class ReviewS3Listener {
 			log.debug("Review shell with id " + reviewId + " doesn't exist, aborting");
 			return;
 		}
-		// Manual acknowledgement to avoid waiting for process completion. It
-		// will also allow us to have finer control later on
-		acknowledgment.acknowledge().get();
 
 		// The message can be received several times
-		if (review.isPublished()) { return; }
+		if (review.isPublished()) { 
+			return; 
+		}
 		log.debug("review " + reviewId + " not yet processed, continuing");
 
 		review.setSport(Sport.HearthStone);
@@ -111,6 +111,10 @@ public class ReviewS3Listener {
 
 		log.debug("Done, creating review " + review);
 		reviewApiHandler.createReview(review);
+		
+		// Manual acknowledgement to keep the message in the queue until the process is done and no exceptions 
+		// were raised
+		acknowledgment.acknowledge().get();
 	}
 
 	private void parseGameModeAndRank(ObjectMetadata metadata, Review review) {

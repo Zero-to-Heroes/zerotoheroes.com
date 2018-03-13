@@ -1,5 +1,6 @@
 package com.coach.admin.metrics;
 
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
 
@@ -10,11 +11,14 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Field;
 import org.springframework.data.mongodb.core.query.Query;
@@ -28,12 +32,26 @@ import com.coach.review.ParticipantDetails;
 import com.coach.review.Review;
 import com.coach.tag.Tag;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping(value = "/api/admin/metrics")
 @Slf4j
 public class MetricsApiHandler {
+	
+	public static class TimeMetric {
+		String day, month, year, hour, minute;
+		int reviewsPerMinute;		
+	}
+	
+	@AllArgsConstructor
+	@Getter
+	public static class ShortMetric {
+		String date;
+		int reviewsPerMinute;
+	}
 
 	@Autowired
 	MongoTemplate mongoTemplate;
@@ -44,6 +62,92 @@ public class MetricsApiHandler {
 	public MetricsApiHandler(@Value("${environment}") String environment) {
 		super();
 		this.environment = environment;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/minute")
+	public @ResponseBody ResponseEntity<String> getNewMetricsMinute() {
+		
+		if ("prod".equals(environment)) {
+//			return ResponseEntity.unprocessableEntity().body("Not allowed in prod");
+		}
+
+		log.debug("Starting metrics init");
+		
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(2018, 3, 6, 0, 0, 0);
+		
+		Aggregation agg = newAggregation(
+				match(where("creationDate").exists(true)),
+//				match(where("creationDate").gte(calendar.getTime())),
+			    project()       
+			        .andExpression("year(creationDate)").as("year")
+			        .andExpression("month(creationDate)").as("month")
+			        .andExpression("dayOfMonth(creationDate)").as("day")
+			        .andExpression("hour(creationDate)").as("hour")
+			        .andExpression("minute(creationDate)").as("minute"),
+			    group(fields().and("year").and("month").and("day").and("hour").and("minute"))     
+			        .count().as("reviewsPerMinute"));
+		
+		AggregationResults<TimeMetric> result = 
+			    mongoTemplate.aggregate(agg, "review", TimeMetric.class);
+		List<TimeMetric> resultList = result.getMappedResults();
+		
+		String join = resultList.stream()
+			.map(m -> new ShortMetric(
+					m.year + "/" 
+							+ String.format("%02d", Integer.valueOf(m.month)) + "/" 
+							+ String.format("%02d", Integer.valueOf(m.day)) + " " 
+							+ String.format("%02d", Integer.valueOf(m.hour)) + ":" 
+							+ String.format("%02d", Integer.valueOf(m.minute)) + ":00", 
+					m.reviewsPerMinute))
+			.sorted(Comparator.comparing(ShortMetric::getDate))
+			.map(m -> m.date + "," + m.reviewsPerMinute)
+			.collect(Collectors.joining("\n"));
+		System.out.println(join);
+		
+
+		return ResponseEntity.ok("");
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/day")
+	public @ResponseBody ResponseEntity<String> getNewMetricsDay() {
+		
+		if ("prod".equals(environment)) {
+			return ResponseEntity.unprocessableEntity().body("Not allowed in prod");
+		}
+
+		log.debug("Starting metrics init");
+		
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(2018, 3, 6, 0, 0, 0);
+		
+		Aggregation agg = newAggregation(
+				match(where("creationDate").exists(true)),
+//				match(where("creationDate").gte(calendar.getTime())),
+			    project()       
+			        .andExpression("year(creationDate)").as("year")
+			        .andExpression("month(creationDate)").as("month")
+			        .andExpression("dayOfMonth(creationDate)").as("day"),
+			    group(fields().and("year").and("month").and("day"))     
+			        .count().as("reviewsPerMinute"));
+		
+		AggregationResults<TimeMetric> result = 
+			    mongoTemplate.aggregate(agg, "review", TimeMetric.class);
+		List<TimeMetric> resultList = result.getMappedResults();
+		
+		String join = resultList.stream()
+			.map(m -> new ShortMetric(
+					m.year + "/" 
+							+ String.format("%02d", Integer.valueOf(m.month)) + "/" 
+							+ String.format("%02d", Integer.valueOf(m.day)), 
+					m.reviewsPerMinute))
+			.sorted(Comparator.comparing(ShortMetric::getDate))
+			.map(m -> m.date + "," + m.reviewsPerMinute)
+			.collect(Collectors.joining("\n"));
+		System.out.println(join);
+		
+
+		return ResponseEntity.ok("");
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -57,13 +161,9 @@ public class MetricsApiHandler {
 
 		Metrics metrics = new Metrics();
 
-		// Select recent entries only
-		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DAY_OF_MONTH, -350);
-
-		Criteria crit = where("strSport").is("hearthstone");
-		crit.and("key").ne(null);
-		crit.and("creationDate").gte(LocalDateTime.of(2018, 3, 1, 0, 0));
+		Criteria crit = where("strSport").is("hearthstone")
+			.and("key").ne(null)
+			.and("creationDate").gte(LocalDateTime.of(2018, 3, 1, 0, 0));
 
 		Query query = query(crit);
 
@@ -73,13 +173,9 @@ public class MetricsApiHandler {
 		fields.include("participantDetails");
 		fields.include("metaData");
 		fields.include("totalComments");
-		fields.include("totalHelpfulComments");
 		fields.include("viewCount");
 		fields.include("tags");
-		fields.include("text");
-		fields.include("description");
 		fields.include("uploaderApplicationKey");
-		fields.include("allAuthors");
 
 		List<Review> reviews = mongoTemplate.find(query, Review.class);
 		

@@ -2,7 +2,6 @@ package com.coach.admin.cron;
 
 import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
-import static org.springframework.data.mongodb.core.query.Update.*;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -71,84 +70,81 @@ public class ReviewCleanupHandler {
 	@RequestMapping(value = "/parseMetaData", method = RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> parseMetaData() {		
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DAY_OF_YEAR, -2);
+		calendar.add(Calendar.MINUTE, -2);
 		Date creationDate = calendar.getTime();
 		
-		Calendar updateCalendar = Calendar.getInstance();
-		updateCalendar.add(Calendar.DAY_OF_YEAR, -14);;
-		Date updateDate = updateCalendar.getTime();
+//		Calendar updateCalendar = Calendar.getInstance();
+//		updateCalendar.add(Calendar.DAY_OF_YEAR, -14);;
+//		Date updateDate = updateCalendar.getTime();
 		
-		Criteria crit = new Criteria().andOperator(
-				where("creationDate").lt(creationDate),
-				new Criteria().orOperator(
-						where("lastMetaDataParsingDate").exists(false),
-						where("lastMetaDataParsingDate").lt(updateDate)),
-				new Criteria().orOperator(
-						where("invalidGame").is(true), 
-						where("invalidGame").exists(false), 
-						where("metaData").exists(false), 
-						where("participantDetails.playerName").is(null)
-							.and("participantDetails.playerClass").is(null)
-							.and("reviewType").is("game-replay"), 
-						where("metaData.playerName").is(null)
-							.and("metaData.playerClass").is(null)
-							.and("reviewType").is("game-replay")));
-
-		Query query = query(crit);
-
-		PageRequest pageRequest = new PageRequest(0, 200);
-
-		query.with(pageRequest);
-
-		List<Review> find = mongoTemplate.find(query, Review.class);
-		log.debug("Parsing " + find.size() + " reviews to add meta data");
-
-		for (Review review : find) {
-			review.setInvalidGame(false);
-			try {
-				if ("game".equals(review.getReviewType())) {
-					review.setReviewType("game-replay");
+		int updated = -1;
+		
+		while (updated != 0) {
+			Criteria crit = new Criteria().andOperator(
+					where("creationDate").lt(creationDate),
+					new Criteria().orOperator(
+							where("lastMetaDataParsingDate").exists(false),
+							where("lastMetaDataParsingDate").lt(creationDate)),
+					new Criteria().orOperator(
+							where("invalidGame").is(true), 
+							where("invalidGame").exists(false), 
+							where("metaData").exists(false), 
+							where("participantDetails.playerName").is(null)
+								.and("participantDetails.playerClass").is(null)
+								.and("reviewType").is("game-replay"), 
+							where("metaData.playerName").is(null)
+								.and("metaData.playerClass").is(null)
+								.and("reviewType").is("game-replay")));
+	
+			Query query = query(crit);
+	
+			PageRequest pageRequest = new PageRequest(0, 200);
+	
+			query.with(pageRequest);
+	
+			List<Review> find = mongoTemplate.find(query, Review.class);
+			log.debug("Parsing " + find.size() + " reviews to add meta data");
+			updated = find.size();
+	
+			for (Review review : find) {
+				review.setInvalidGame(false);
+				try {
+					if ("game".equals(review.getReviewType())) {
+						review.setReviewType("game-replay");
+					}
+					if (review.getReviewType() == null && review.getTemporaryKey() != null && review.getTemporaryKey().contains("draft")) {
+						review.setReviewType("arena-draft");
+					}
+					
+					if ("arena-draft".equals(review.getReviewType())) {
+						draftParser.addMetaData(review);
+					}
+					else if ("video/mp4".equals(review.getFileType())) {
+						log.info("Not supporting videos anymore");
+						review.setInvalidGame(true);
+					}
+					else if ("game-replay".equals(review.getReviewType())) {
+						gameParser.addMetaData(review);
+					}
+					else {
+						log.info("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
+						review.setInvalidGame(true);
+					}
 				}
-				if (review.getReviewType() == null && review.getTemporaryKey() != null && review.getTemporaryKey().contains("draft")) {
-					review.setReviewType("arena-draft");
-				}
-				
-				if ("arena-draft".equals(review.getReviewType())) {
-					draftParser.addMetaData(review);
-				}
-				else if ("video/mp4".equals(review.getFileType())) {
-					log.info("Not supporting videos anymore");
+				catch (Exception e) {
+					log.info("Could not parse meta data for " + review.getId(), e);
 					review.setInvalidGame(true);
 				}
-				else if ("game-replay".equals(review.getReviewType())) {
-					gameParser.addMetaData(review);
-				}
-				else {
-					log.info("Can't define metadata type for " + review.getId() + " with " + review.getReviewType());
-					review.setInvalidGame(true);
-				}
+				review.buildAllAuthors();
+				review.setLastMetaDataParsingDate(new Date());
+				mongoTemplate.save(review);
+				log.debug("Updated review " + review.getId());
 			}
-			catch (Exception e) {
-				log.info("Could not parse meta data for " + review.getId(), e);
-				review.setInvalidGame(true);
-			}
-			review.buildAllAuthors();
-			review.setLastMetaDataParsingDate(new Date());
 		}
 		
-		find.forEach(review -> {
-			mongoTemplate.updateFirst(
-					query(where("reviewId").is(review.getId())), 
-					update("metaData", review.getMetaData())
-						.set("participantDetails", review.getParticipantDetails())
-						.set("title", review.getTitle())
-						.set("lastMetaDataParsingDate", review.getLastMetaDataParsingDate())
-						.set("reviewType", review.getReviewType())
-						.set("invalidGame", review.isInvalidGame()), 
-					Review.class);
-		});
+		log.debug("Done");
 
-		return new ResponseEntity<String>("processed " + find.size() + " reviews", HttpStatus.OK);
+		return new ResponseEntity<String>("processed reviews", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/parseMetaData/{reviewId}", method = RequestMethod.POST)

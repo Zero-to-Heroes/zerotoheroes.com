@@ -80,12 +80,28 @@
 		<dependency>
 			<groupId>com.zerotoheroes</groupId>
 			<artifactId>hs-game-parser</artifactId>
-			<version>1.0.19</version>
+			<version>1.0.20</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.zerotoheroes</groupId>
+					<artifactId>hs-game-converter</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.zerotoheroes</groupId>
+					<artifactId>hs-game-entities</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.zerotoheroes</groupId>
 			<artifactId>hs-game-converter</artifactId>
 			<version>1.0.12</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.zerotoheroes</groupId>
+					<artifactId>hs-game-entities</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- Email -->
@@ -458,6 +474,16 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.4.1</version>
+				<configuration>
+					<rules>
+						<dependencyConvergence />
+					</rules>
+				</configuration>
 			</plugin>
 		</plugins>
 

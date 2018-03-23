@@ -52,9 +52,9 @@ var parseCardsText = {
 
 		var localizedImage = parseCardsText.localizeImage(card, lang);
 		var tooltipTemplate = '<div class=\'tooltip parse-cards-text\'><div class=\'tooltip-inner\'></div></div>';
-		console.log('tooltipTemplate', tooltipTemplate);
+		// console.log('tooltipTemplate', tooltipTemplate);
 		var title = '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/fullcards/en/256/' + localizedImage + '\'>';
-		console.log('title', title);
+		// console.log('title', title);
 		var link = '<span class="autocomplete card ' + cssClass + '" data-toggle="tooltip" data-template="' + tooltipTemplate + '" data-title="' + title + '" data-placement="auto left" data-html="true" data-animation="false" data-container="' + container + '">' + localizedName + '</span>';
 
 		parseCardsText.refreshTooltips()

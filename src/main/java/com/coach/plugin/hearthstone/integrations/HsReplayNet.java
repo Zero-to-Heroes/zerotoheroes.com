@@ -107,15 +107,16 @@ public class HsReplayNet implements IntegrationPlugin {
 
 			@Override
 			public void progressChanged(ProgressEvent progressEvent) {
-				log.debug("progress2 " + progressEvent.getEventType());
+//				log.debug("progress2 " + progressEvent.getEventType());
 				if (progressEvent.getEventType().equals(ProgressEventType.TRANSFER_COMPLETED_EVENT)) {
 					// And finally update the review with all the necessary data
 					review.setKey(key);
 					review.setFileType("json");
 					review.setMediaType("game-replay");
 					review.setReviewType("game-replay");
-					review.setVisibility("public");
+					review.setVisibility("restricted");
 					review.setTranscodingDone(true);
+					review.setPublished(true);
 					try {
 						parser.addMetaData(review);
 					}

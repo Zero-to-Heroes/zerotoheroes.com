@@ -25,7 +25,7 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 					var url = {url: $scope.url}
 					$log.debug('saving', url)
 					$scope.processing = true
-					Api.ReviewsUpdateFromUrl.save({sport: $scope.sport}, url, 
+					Api.ReviewsUpdateFromUrl.save({sport: $scope.sport}, url,
 						function(data) {
 							$log.debug('retrieved review', data)
 							MediaUploader.review = data
@@ -54,7 +54,7 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 						return
 					}
 
-					Api.Reviews.get({reviewId: MediaUploader.review.id}, 
+					Api.Reviews.get({reviewId: MediaUploader.review.id},
 						function(data) {
 							$log.debug('retrieving data', data)
 							MediaUploader.review = data
@@ -75,7 +75,7 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 
 								$scope.processing = false
 								if (uploadType) {
-									var url = '/s/' + $scope.sport + '/upload/' + uploadType + '/review'
+									var url = '/s/' + $scope.sport + '/myVideos/'
 									// var url = '/r/' + data.sport.key.toLowerCase() + '/' + data.id + '/' + S(data.title).slugify().s
 									$location.path(url)
 								}
@@ -90,7 +90,7 @@ app.directive('uploadFromUrl', ['Api', 'MediaUploader', '$log', 'User', '$locati
 						}
 					);
 				}
-								
+
 			}
 		}
 	}

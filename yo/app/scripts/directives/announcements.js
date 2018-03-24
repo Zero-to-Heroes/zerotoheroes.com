@@ -21,7 +21,7 @@ app.directive('announcements', ['$log', '$http', '$interval', 'localStorage', '$
 				$http.get('https://www.zerotoheroes.com/monitor/health')
 					.then(
 						function success(data) {
-
+							$scope.announcement = '';
 						},
 						function error(data) {
 							var announcement = {

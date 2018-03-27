@@ -58,7 +58,7 @@ public class ClaimAccountApiHandler {
 		log.debug("claiming account for " + currentUser + " and keys " + applicationKey + "/" + userToken);
 
 		if (currentUser == null) {
-			new ResponseEntity<String>("You need to be logged in to claim an account", HttpStatus.FORBIDDEN);
+			return new ResponseEntity<String>("You need to be logged in to claim an account", HttpStatus.FORBIDDEN);
 		}
 		User user = userRepo.findByUsername(currentUser);
 		if (user == null) {

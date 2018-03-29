@@ -104,9 +104,9 @@ public class HSGameParser implements ReplayPlugin {
 
 			// log.debug("adding title?");
 			if (StringUtils.isEmpty(review.getTitle())) {
-				String title = review.getParticipantDetails().getPlayerName() + "("
+				String title = sanitize(review.getParticipantDetails().getPlayerName()) + "("
 						+ review.getParticipantDetails().getPlayerCategory() + ") vs "
-						+ review.getParticipantDetails().getOpponentName() + "("
+						+ sanitize(review.getParticipantDetails().getOpponentName()) + "("
 						+ review.getParticipantDetails().getOpponentCategory() + ")";
 				title += " - " + review.getParticipantDetails().getPlayerName() + " " + hsMeta.getWinStatus();
 				review.setTitle(title);
@@ -132,6 +132,16 @@ public class HSGameParser implements ReplayPlugin {
 			review.setLastMetaDataParsingDate(new Date());
 			throw e;
 		}
+	}
+
+	private String sanitize(String playerName) {
+		if (StringUtils.isEmpty(playerName)) {
+			return "";
+		}
+		if (!playerName.contains("#")) {
+			return playerName;
+		}
+		return playerName.substring(0, playerName.indexOf("#"));
 	}
 
 	private String getReplay(Review review) throws IOException {

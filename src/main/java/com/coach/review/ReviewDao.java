@@ -74,13 +74,14 @@ public class ReviewDao {
 			}
 		}
 
-		// This is a user-specified criteria, could be either an ID or a
-		// username
-		if (!StringUtils.isEmpty(criteria.getAuthor()) && criteria.getAuthor().length() > 2) {
-			Criteria authorIdCriteria = where("authorId").is(criteria.getAuthor());
-			Criteria authorCriteria = where("author").regex(".*" + criteria.getAuthor() + ".*", "i");
-			Criteria playerNameCriteria = where("metaData.playerName").regex(".*" + criteria.getAuthor() + ".*", "i");
-			crit.orOperator(authorCriteria, authorIdCriteria, playerNameCriteria);
+		if (!StringUtils.isEmpty(criteria.getAuthorId())) {
+			crit.and("authorId").is(criteria.getAuthorId());
+		}
+		// This is a user-specified criteria, could be either an ID or a username
+		else if (!StringUtils.isEmpty(criteria.getAuthor()) && criteria.getAuthor().length() > 2) {
+			Criteria authorCriteria = where("author").is(criteria.getAuthor());
+			Criteria playerNameCriteria = where("metaData.playerName").is(criteria.getAuthor());
+			crit.orOperator(authorCriteria, playerNameCriteria);
 		}
 		// No author specified, so we need to exclude ourselves in case of help
 		// search

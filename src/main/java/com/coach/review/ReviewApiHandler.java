@@ -134,18 +134,19 @@ public class ReviewApiHandler {
 		Sport sportObj = Sport.load(sport);
 		// The case when input query contains invalid data, should not arrive
 		// during normal site usage
-		if (sportObj == null) { return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null,
-				HttpStatus.BAD_REQUEST); }
+		if (sportObj == null) { 
+			return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.BAD_REQUEST); 
+		}
 
-		Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication()
-				.getAuthorities();
+		Collection<? extends GrantedAuthority> authorities = 
+				SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 		// log.info("authorities are " + authorities);
 
 		// If user is anonymous, can only show public videos
 		if (StringUtils.isEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
-			if (criteria.getOwnVideos() != null
-					&& criteria.getOwnVideos()) { return new ResponseEntity<ListReviewResponse>(
-							(ListReviewResponse) null, HttpStatus.FORBIDDEN); }
+			if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) { 
+				return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.FORBIDDEN); 
+			}
 			criteria.setVisibility("public");
 		}
 
@@ -167,10 +168,11 @@ public class ReviewApiHandler {
 		long queryStart = System.currentTimeMillis();
 		log.debug("Searching with criteria " + criteria);
 
-		String author = criteria.getOwnVideos() != null && criteria.getOwnVideos() && user != null ? user.getId()
+		String authorId = Boolean.TRUE.equals(criteria.getOwnVideos()) && user != null 
+				? user.getId()
 				: null;
-		if (!StringUtils.isEmpty(author)) {
-			criteria.setAuthor(author);
+		if (!StringUtils.isEmpty(authorId)) {
+			criteria.setAuthorId(authorId);
 		}
 		List<Review> reviews = reviewDao.search(criteria, user, pageRequest);
 

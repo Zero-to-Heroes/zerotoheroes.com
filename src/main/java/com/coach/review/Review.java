@@ -112,7 +112,10 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	@Indexed
 	private MetaData metaData;
 
-	private String author, lastModifiedBy;
+	@Indexed
+	private String author;
+	
+	private String lastModifiedBy;
 
 	@Indexed
 	private String authorId;
@@ -156,6 +159,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	// The date at which the review was flagged as "case closed", or when
 	// auto-closed
+	@Indexed
 	private Date closedDate;
 
 	@Indexed
@@ -219,6 +223,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	// Used to flag games that are corrupt
 	@JsonIgnore
+	@Indexed
 	private boolean invalidGame;
 
 	// The last time we tried to parse the review for meta data

@@ -5,6 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.coach.review.MetaData;
@@ -23,14 +24,22 @@ public class HearthstoneMetaData extends MetaData {
 	private static final String ARENA_SKILL_REGEX = "(?:Arena\\D*)(\\d+)?";
 	private static final Pattern ARENA_PATTERN = Pattern.compile(ARENA_SKILL_REGEX, Pattern.MULTILINE);
 
+	@Indexed
 	private String playerName, opponentName;
+	@Indexed
 	private String playerClass, opponentClass;
 
+	@Indexed
 	private int durationInSeconds;
+	@Indexed
 	private int numberOfTurns;
+	@Indexed
 	private String winStatus;
+	@Indexed
 	private String gameMode;
+	@Indexed
 	private String playCoin;
+	@Indexed
 	private Float skillLevel;
 
 	@Override

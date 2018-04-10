@@ -4,11 +4,12 @@ import static org.springframework.data.mongodb.core.query.Criteria.*;
 import static org.springframework.data.mongodb.core.query.Query.*;
 import static org.springframework.data.mongodb.core.query.Update.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -26,12 +27,15 @@ import org.springframework.util.StringUtils;
 import com.coach.core.notification.ExecutorProvider;
 import com.coach.core.security.User;
 import com.coach.review.Review.Sport;
+import com.google.common.collect.Sets;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
 public class ReviewDao {
+	
+	private static Criteria EMPTY_CRITERIA = new Criteria();
 
 	@Autowired
 	ReviewRepository reviewRepo;
@@ -43,174 +47,34 @@ public class ReviewDao {
 	private ExecutorProvider executorProvider;
 
 	public List<Review> search(ReviewSearchCriteria criteria, User user, PageRequest pageRequest) {
-
-		String sportCriteria = criteria.getSport();
-
-		Criteria crit = new Criteria().andOperator(
-					where("sport").is(Sport.load(sportCriteria).getKey()),
-					where("published").is(true),
-					new Criteria().orOperator(
+		Set<Criteria> allCriteria = Sets.newHashSet(
+				where("sport").is(Sport.load(criteria.getSport()).getKey()),
+				where("published").is(true),
+				new Criteria().orOperator(
 						where("invalidGame").exists(false),
-						where("invalidGame").is(false)));
-
-		// I can see all my reviews, but only the public ones from others
-		if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) {
-			// Visibility
-			if (!StringUtils.isEmpty(criteria.getVisibility())) {
-				if ("public".equals(criteria.getVisibility())) {
-					crit.and("visibility").is("public");
-				}
-				else {
-					crit.and("visibility").in(Arrays.asList(new String[] { "restricted", "private" }));
-				}
-			}
-		}
-		else if (criteria.getOwnVideos() == null || !criteria.getOwnVideos()) {
-			if ("unlisted".equals(criteria.getVisibility())) {
-				crit.and("visibility").in(Arrays.asList(new String[] { "restricted", "public" }));
-			}
-			else {
-				crit.and("visibility").is("public");
-			}
-		}
-
-		if (!StringUtils.isEmpty(criteria.getAuthorId())) {
-			crit.and("authorId").is(criteria.getAuthorId());
-		}
-		// This is a user-specified criteria, could be either an ID or a username
-		else if (!StringUtils.isEmpty(criteria.getAuthor()) && criteria.getAuthor().length() > 2) {
-			Criteria authorCriteria = where("author").is(criteria.getAuthor());
-			Criteria playerNameCriteria = where("metaData.playerName").is(criteria.getAuthor());
-			crit.orOperator(authorCriteria, playerNameCriteria);
-		}
-		// No author specified, so we need to exclude ourselves in case of help
-		// search
-//		else if ("helpScore".equals(criteria.getSort()) && user != null) {
-//			crit.and("authorId").ne(user.getId());
-//		}
-
-		if (!StringUtils.isEmpty(criteria.getGameMode())) {
-			crit.and("metaData.gameMode").is(criteria.getGameMode());
-		}
-
-		// Matchup
-		if (!CollectionUtils.isEmpty(criteria.getPlayerCategory())) {
-			crit.and("metaData.playerClass").in(criteria.getPlayerCategory());
-		}
-		if (!CollectionUtils.isEmpty(criteria.getOpponentCategory())) {
-			crit.and("metaData.opponentClass").in(criteria.getOpponentCategory());
-		}
-
-		// Result
-		if (!StringUtils.isEmpty(criteria.getResult())) {
-			crit.and("metaData.winStatus").is(criteria.getResult());
-		}
-
-		// Plan & Coin
-		if (!StringUtils.isEmpty(criteria.getPlayCoin())) {
-			crit.and("metaData.playCoin").is(criteria.getPlayCoin());
-		}
-
-		// Skill range
-		if ("ranked".equals(criteria.getGameMode())) {
-			Criteria fromSkill = null;
-			Criteria toSkill = null;
-			List<Criteria> criteriaList = new ArrayList<>();
-
-			if (criteria.getSkillRangeFrom() != null) {
-				fromSkill = where("metaData.skillLevel").lte(criteria.getSkillRangeFrom());
-				criteriaList.add(fromSkill);
-			}
-			if (criteria.getSkillRangeTo() != null) {
-				toSkill = where("metaData.skillLevel").gte(criteria.getSkillRangeTo());
-				criteriaList.add(toSkill);
-			}
-
-			if (!criteriaList.isEmpty()) {
-				crit.andOperator(criteriaList.toArray(new Criteria[criteriaList.size()]));
-			}
-		}
-		else if ("arena-game".equals(criteria.getGameMode())) {
-			Criteria fromSkill = null;
-			Criteria toSkill = null;
-			List<Criteria> criteriaList = new ArrayList<>();
-
-			if (criteria.getSkillRangeFrom() != null) {
-				fromSkill = where("metaData.skillLevel").gte(criteria.getSkillRangeFrom());
-				criteriaList.add(fromSkill);
-			}
-			if (criteria.getSkillRangeTo() != null) {
-				toSkill = where("metaData.skillLevel").lte(criteria.getSkillRangeTo());
-				criteriaList.add(toSkill);
-			}
-
-			if (!criteriaList.isEmpty()) {
-				crit.andOperator(criteriaList.toArray(new Criteria[criteriaList.size()]));
-			}
-		}
-
-		// Contributors, this will be trickier
-		if (!StringUtils.isEmpty(criteria.getContributor()) && criteria.getContributor().length() > 2) {
-			// https://docs.mongodb.com/manual/reference/operator/query/in/
-			// http://stackoverflow.com/questions/38785349/spring-data-mongodb-criteria-with-in-and-list-of-regexes
-			List<Pattern> regexList = Arrays
-					.asList(Pattern.compile(".*" + criteria.getContributor() + ".*", Pattern.CASE_INSENSITIVE));
-
-			Criteria allAuthor = where("allAuthors").in(regexList);
-			Criteria allAuthorIds = where("allAuthorIds").in(regexList);
-			crit.orOperator(allAuthor, allAuthorIds);
-			// crit.and("allAuthors").in(regexList);
-		}
-		else if ("helpScore".equals(criteria.getSort()) && user != null) {
-			crit.and("allAuthorIds").nin(user.getId());
-		}
-
-		// Don't include old reviews when looking for reviews that need help
-		if ("helpScore".equals(criteria.getSort()) || "openonly".equals(criteria.getOpenGames())) {
-			Calendar calendar = Calendar.getInstance();
-			calendar.add(Calendar.DAY_OF_YEAR, -20);
-			crit.and("publicationDate").gte(calendar.getTime());
-
-			crit.and("closedDate").is(null);
-			crit.and("helpScore").gte(-5);
-		}
-		else if ("publicationDate".equals(criteria.getSort()) && (criteria.getOwnVideos() == null || !criteria.getOwnVideos())) {
-			crit.and("publicationDate").ne(null);
-		}
-
-		// Tags
-		if (!CollectionUtils.isEmpty(criteria.getWantedTags())
-				&& !CollectionUtils.isEmpty(criteria.getUnwantedTags())) {
-			crit.andOperator(where("allTags").all(criteria.getWantedTags()),
-					where("allTags").nin(criteria.getUnwantedTags()));
-		}
-		else if (!CollectionUtils.isEmpty(criteria.getWantedTags())) {
-			crit.and("allTags").all(criteria.getWantedTags());
-		}
-		else if (!CollectionUtils.isEmpty(criteria.getUnwantedTags())) {
-			crit.and("allTags").nin(criteria.getUnwantedTags());
-		}
-
-		// Contributions
-		if (criteria.getContributorsComparator() == null || "gte".equals(criteria.getContributorsComparator())) {
-			if (criteria.getContributorsValue() != null && criteria.getContributorsValue() > 0) {
-				crit.and("authorCount").gt(criteria.getContributorsValue());
-			}
-			if (criteria.getHelpfulCommentsValue() != null && criteria.getHelpfulCommentsValue() > 0) {
-				crit.and("totalHelpfulComments").gte(criteria.getHelpfulCommentsValue());
-			}
-		}
-		else if ("lte".equals(criteria.getContributorsComparator())) {
-			// The author is counted in the allAuthors, while we're only
-			// interested in contributors
-			if (criteria.getContributorsValue() != null) {
-				crit.and("authorCount").lte(criteria.getContributorsValue() + 1);
-			}
-			if (criteria.getHelpfulCommentsValue() != null && criteria.getHelpfulCommentsValue() > 0) {
-				crit.and("totalHelpfulComments").lte(criteria.getHelpfulCommentsValue());
-			}
-		}
-
+						where("invalidGame").is(false)),
+				visibilityCriteria(criteria),
+				authorIdCriteria(criteria),
+				authorCriteria(criteria),
+				gameModeCriteria(criteria),
+				playerCriteria(criteria),
+				opponentCriteria(criteria),
+				resultCriteria(criteria),
+				playCoinCriteria(criteria),
+				minimumSkillLevelCriteria(criteria),
+				maximumSkillLevelCriteria(criteria),
+				contributorsCriteria(criteria, user),
+				publicationDateCriteria(criteria),
+				closedDateCriteria(criteria),
+				helpScoreCriteria(criteria),
+				wantedTagsCriteria(criteria),
+				unwantedTagsCriteria(criteria),
+				authorCountCriteria(criteria),
+				helpfulCommentsCountCriteria(criteria)				
+		);
+		allCriteria.remove(EMPTY_CRITERIA);
+						
+		Criteria crit = new Criteria().andOperator(allCriteria.toArray(new Criteria[] {}));
 		Query query = query(crit);
 
 		// Full-text search
@@ -251,6 +115,200 @@ public class ReviewDao {
 
 		List<Review> find = mongoTemplate.find(query, Review.class);
 		return find;
+	}
+
+	private Criteria helpfulCommentsCountCriteria(ReviewSearchCriteria criteria) {
+		if (criteria.getContributorsComparator() == null || "gte".equals(criteria.getContributorsComparator())) {
+			if (criteria.getHelpfulCommentsValue() != null && criteria.getHelpfulCommentsValue() > 0) {
+				return where("totalHelpfulComments").gte(criteria.getHelpfulCommentsValue());
+			}
+		}
+		else if ("lte".equals(criteria.getContributorsComparator())) {
+			// The author is counted in the allAuthors, while we're only
+			// interested in contributors
+			if (criteria.getHelpfulCommentsValue() != null && criteria.getHelpfulCommentsValue() > 0) {
+				return where("totalHelpfulComments").lte(criteria.getHelpfulCommentsValue());
+			}
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria authorCountCriteria(ReviewSearchCriteria criteria) {
+		if (criteria.getContributorsComparator() == null || "gte".equals(criteria.getContributorsComparator())) {
+			if (criteria.getContributorsValue() != null && criteria.getContributorsValue() > 0) {
+				return where("authorCount").gt(criteria.getContributorsValue());
+			}
+		}
+		else if ("lte".equals(criteria.getContributorsComparator())) {
+			// The author is counted in the allAuthors, while we're only
+			// interested in contributors
+			if (criteria.getContributorsValue() != null) {
+				return where("authorCount").lte(criteria.getContributorsValue() + 1);
+			}
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria unwantedTagsCriteria(ReviewSearchCriteria criteria) {
+		if (!CollectionUtils.isEmpty(criteria.getUnwantedTags())) {
+			return where("allTags").nin(criteria.getUnwantedTags());
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria wantedTagsCriteria(ReviewSearchCriteria criteria) {
+		if (!CollectionUtils.isEmpty(criteria.getWantedTags())) {
+			return where("allTags").all(criteria.getWantedTags());
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria helpScoreCriteria(ReviewSearchCriteria criteria) {
+		if ("helpScore".equals(criteria.getSort()) || "openonly".equals(criteria.getOpenGames())) {
+			return where("helpScore").gte(-5);
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria closedDateCriteria(ReviewSearchCriteria criteria) {
+		if ("helpScore".equals(criteria.getSort()) || "openonly".equals(criteria.getOpenGames())) {
+			return where("closedDate").is(null);
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria publicationDateCriteria(ReviewSearchCriteria criteria) {
+		if ("helpScore".equals(criteria.getSort()) || "openonly".equals(criteria.getOpenGames())) {
+			Calendar calendar = Calendar.getInstance();
+			calendar.add(Calendar.DAY_OF_YEAR, -20);
+			return where("publicationDate").gte(calendar.getTime());
+		}
+		else if ("publicationDate".equals(criteria.getSort()) && (criteria.getOwnVideos() == null || !criteria.getOwnVideos())) {
+			return where("publicationDate").ne(null);
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria contributorsCriteria(ReviewSearchCriteria criteria, User user) {
+		if (!StringUtils.isEmpty(criteria.getContributor()) && criteria.getContributor().length() > 2) {
+			// https://docs.mongodb.com/manual/reference/operator/query/in/
+			// http://stackoverflow.com/questions/38785349/spring-data-mongodb-criteria-with-in-and-list-of-regexes
+			Pattern pattern = Pattern.compile(".*" + criteria.getContributor() + ".*", Pattern.CASE_INSENSITIVE);
+			List<Pattern> regexList = Collections.singletonList(pattern);
+
+			Criteria allAuthor = where("allAuthors").in(regexList);
+			Criteria allAuthorIds = where("allAuthorIds").in(regexList);
+			return new Criteria().orOperator(allAuthor, allAuthorIds);
+			// crit.and("allAuthors").in(regexList);
+		}
+		else if ("helpScore".equals(criteria.getSort()) && user != null) {
+			return where("allAuthorIds").nin(user.getId());
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria maximumSkillLevelCriteria(ReviewSearchCriteria criteria) {
+		if ("ranked".equals(criteria.getGameMode())) {
+			if (criteria.getSkillRangeTo() != null) {
+				return where("metaData.skillLevel").gte(criteria.getSkillRangeTo());
+			}
+		}
+		else if ("arena-game".equals(criteria.getGameMode())) {
+			if (criteria.getSkillRangeTo() != null) {
+				return where("metaData.skillLevel").lte(criteria.getSkillRangeTo());
+			}
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria minimumSkillLevelCriteria(ReviewSearchCriteria criteria) {
+		if ("ranked".equals(criteria.getGameMode())) {
+			if (criteria.getSkillRangeFrom() != null) {
+				return where("metaData.skillLevel").lte(criteria.getSkillRangeFrom());
+			}
+		}
+		else if ("arena-game".equals(criteria.getGameMode())) {
+			if (criteria.getSkillRangeFrom() != null) {
+				return where("metaData.skillLevel").gte(criteria.getSkillRangeFrom());
+			}
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria playCoinCriteria(ReviewSearchCriteria criteria) {
+		if (!StringUtils.isEmpty(criteria.getPlayCoin())) {
+			return where("metaData.playCoin").is(criteria.getPlayCoin());
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria resultCriteria(ReviewSearchCriteria criteria) {
+		if (!StringUtils.isEmpty(criteria.getResult())) {
+			return where("metaData.winStatus").is(criteria.getResult());
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria opponentCriteria(ReviewSearchCriteria criteria) {
+		if (!CollectionUtils.isEmpty(criteria.getOpponentCategory())) {
+			return where("metaData.opponentClass").in(criteria.getOpponentCategory());
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria playerCriteria(ReviewSearchCriteria criteria) {
+		if (!CollectionUtils.isEmpty(criteria.getPlayerCategory())) {
+			return where("metaData.playerClass").in(criteria.getPlayerCategory());
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria gameModeCriteria(ReviewSearchCriteria criteria) {
+		if (!StringUtils.isEmpty(criteria.getGameMode())) {
+			return where("metaData.gameMode").is(criteria.getGameMode());
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria authorCriteria(ReviewSearchCriteria criteria) {
+		// This is a user-specified criteria, could be either an ID or a username
+		if (!StringUtils.isEmpty(criteria.getAuthor()) && criteria.getAuthor().length() > 2) {
+			Criteria authorCriteria = where("author").is(criteria.getAuthor());
+			Criteria playerNameCriteria = where("metaData.playerName").is(criteria.getAuthor());
+			return new Criteria().orOperator(authorCriteria, playerNameCriteria);
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria authorIdCriteria(ReviewSearchCriteria criteria) {
+		if (!StringUtils.isEmpty(criteria.getAuthorId())) {
+			return where("authorId").is(criteria.getAuthorId());
+		}
+		return EMPTY_CRITERIA;
+	}
+
+	private Criteria visibilityCriteria(ReviewSearchCriteria criteria) {
+		// I can see all my reviews, but only the public ones from others
+		if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) {
+			// Visibility
+			if (!StringUtils.isEmpty(criteria.getVisibility())) {
+				if ("public".equals(criteria.getVisibility())) {
+					return where("visibility").is("public");
+				}
+				else {
+					return where("visibility").in(Arrays.asList(new String[] { "restricted", "private" }));
+				}
+			}
+		}
+		else if (criteria.getOwnVideos() == null || !criteria.getOwnVideos()) {
+			if ("unlisted".equals(criteria.getVisibility())) {
+				return where("visibility").in(Arrays.asList(new String[] { "restricted", "public" }));
+			}
+			else {
+				return where("visibility").is("public");
+			}
+		}
+		return EMPTY_CRITERIA;
 	}
 
 	public void claimAccount(User user, String applicationKey, String userToken) {

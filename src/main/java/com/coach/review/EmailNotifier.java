@@ -245,7 +245,7 @@ public class EmailNotifier {
 				+ "<p>If you wouldn't mind, I'd love it if you answered one quick question: why did you sign up on Zero to Heroes?</p>"
 				+ "<p>I'm asking because knowing what made you sign up is really helpful for us in making sure we're delivering what our "
 				+ "users want. Just hit \"reply\" and let me know.</p>"
-			    + "<p>And by the way, feel free to join us on our <a href=\"https://discord.gg/uEh9gvJ\" target=\"_blank\">Discord server</a> to meet us !</p>"
+			    + "<p>And by the way, feel free to join us on our <a href=\"https://discord.gg/mZQvUU4\" target=\"_blank\">Discord server</a> to meet us !</p>"
 				+ "<p>Thanks,</p>"
 				+ "<p>Seb</p>"
 				+ "<p>Zero to Heroes</p>";

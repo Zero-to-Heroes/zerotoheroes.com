@@ -118,7 +118,7 @@ var parseDecks = {
 		  		title: function(element) {
 		  			// console.log('title', $(this));
 		  			var image = $(this).attr('data-title');
-		  			return '<img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/' + image + '\'>';
+		  			return '<img src=\'http://static.zerotoheroes.com/hearthstone/fullcard/en/256/' + image + '\'>';
 		  		}
 		  	});
 		})
@@ -167,7 +167,7 @@ var parseDecks = {
 								cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
 								var image = parseCardsText.localizeImage(cardObject);
 								htmlDeck += '<tr>' +
-												'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
+												'<td class=\'card-cost\'><img src=\'http://static.zerotoheroes.com/hearthstone/asset/mana/' + cardObject.cost + '.png\'></td>' +
 												'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject)  + '</td>' +
 												'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
 											'</tr>';
@@ -186,7 +186,7 @@ var parseDecks = {
 							cssClass += ' ' + (cardObject.rarity ? cardObject.rarity.toLowerCase() : 'common');
 							var image = parseCardsText.localizeImage(cardObject);
 							htmlDeck += '<tr>' +
-										'<td class=\'card-cost\'><img src=\'https://s3.amazonaws.com/com.zerotoheroes/plugins/hearthstone/allCards/mana/' + cardObject.cost + '.png\'></td>' +
+										'<td class=\'card-cost\'><img src=\'http://static.zerotoheroes.com/hearthstone/asset/mana/' + cardObject.cost + '.png\'></td>' +
 										'<td class=\'card-name ' + cssClass + '\' data-title=\'' + image + '\' data-toggle=\'tooltip-deck\'>' + parseCardsText.localizeName(cardObject)  + '</td>' +
 										'<td class=\'card-amount\'>x' + card.amount  + '</td>' +
 									'</tr>';

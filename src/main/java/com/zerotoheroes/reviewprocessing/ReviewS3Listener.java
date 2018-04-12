@@ -20,6 +20,7 @@ import com.amazonaws.services.s3.event.S3EventNotification;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.util.json.Jackson;
 import com.coach.core.notification.SlackNotifier;
+import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.review.ParticipantDetails;
 import com.coach.review.Review;
 import com.coach.review.Review.Sport;
@@ -119,27 +120,37 @@ public class ReviewS3Listener {
 
 	private void parseGameModeAndRank(ObjectMetadata metadata, Review review) {
 		String reviewId = review.getId();
+		HearthstoneMetaData metaData = new HearthstoneMetaData();
+		review.setMetaData(metaData);
 
 		if ("TavernBrawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))
 				|| "Brawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 			review.setParticipantDetails(new ParticipantDetails());
 			review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("tavernbrawl")));
+			metaData.setGameMode("tavern-brawl");
 		}
 		// We don't want to add the Wild tag to tavern brawls
 		else {
 			if ("Casual".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 				review.setParticipantDetails(new ParticipantDetails());
 				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("casual")));
+				metaData.setGameMode("casual");
 			}
 			else if ("Practice".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 				review.setParticipantDetails(new ParticipantDetails());
-				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("casual")));
+				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("practice")));
+				metaData.setGameMode("practice");
 			}
 			else if ("Friendly".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 				review.setParticipantDetails(new ParticipantDetails());
 				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("friendly")));
+				metaData.setGameMode("friendly");
+			}
+			else if ("Dungeon-run".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				metaData.setGameMode("dungeon-run");
 			}
 			else if ("Ranked".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				metaData.setGameMode("ranked");
 				// TODO: later on, extract that on a sports-specific class parser
 				try {
 					log.debug("Parsing metadata for " + reviewId);
@@ -158,6 +169,7 @@ public class ReviewS3Listener {
 				}
 			}
 			else if ("Arena".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				metaData.setGameMode("arena");
 				// TODO: later on, extract that on a sports-specific class parser
 				try {
 					if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))) {

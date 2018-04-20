@@ -1,5 +1,8 @@
 package com.zerotoheroes.reviewprocessing;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -34,6 +37,7 @@ public class NewReviewNotifier {
 	private String message(Review review) {
 		HearthstoneMetaData metaData = (HearthstoneMetaData) review.getMetaData();
 		JSONObject json = new JSONObject();
+		json.put("date", new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
 		json.put("reviewId", review.getId());
 		json.put("playerName", metaData.getPlayerName());
 		json.put("playerClass", metaData.getPlayerClass());

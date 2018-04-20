@@ -37,7 +37,7 @@ public class NewReviewNotifier {
 	private String message(Review review) {
 		HearthstoneMetaData metaData = (HearthstoneMetaData) review.getMetaData();
 		JSONObject json = new JSONObject();
-		json.put("date", new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
+		json.put("date", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 		json.put("reviewId", review.getId());
 		json.put("playerName", metaData.getPlayerName());
 		json.put("playerClass", metaData.getPlayerClass());

@@ -151,13 +151,13 @@ public class ReviewS3Listener {
 						: Integer.valueOf(metadata.getUserMetaDataOf("game-rank"));
 				Integer legendRank = metadata.getUserMetaDataOf("game-legend-rank") == null 
 						? null 
-						: Integer.valueOf(metadata.getUserMetaDataOf("game-legend-rank"));
+						: 0;
 				Integer opponentRank = metadata.getUserMetaDataOf("opponent-game-rank") == null 
 						? null 
 						: Integer.valueOf(metadata.getUserMetaDataOf("opponent-game-rank"));
 				Integer opponentLegendRank = metadata.getUserMetaDataOf("opponent-game-legend-rank") == null 
 						? null 
-						: Integer.valueOf(metadata.getUserMetaDataOf("opponent-game-legend-rank"));
+						: 0;
 				
 				if ("Ranked".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 					hsMetaData.setGameMode("ranked");

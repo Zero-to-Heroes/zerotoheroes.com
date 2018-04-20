@@ -120,66 +120,79 @@ public class ReviewS3Listener {
 
 	private void parseGameModeAndRank(ObjectMetadata metadata, Review review) {
 		String reviewId = review.getId();
-		HearthstoneMetaData metaData = new HearthstoneMetaData();
-		review.setMetaData(metaData);
-
+		HearthstoneMetaData hsMetaData = (HearthstoneMetaData) review.getMetaData();
+		ParticipantDetails participantDetails = review.getParticipantDetails();
+		
 		if ("TavernBrawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))
 				|| "Brawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
-			review.setParticipantDetails(new ParticipantDetails());
-			review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("tavernbrawl")));
-			metaData.setGameMode("tavern-brawl");
+			participantDetails.setSkillLevel(Arrays.asList(new Tag("tavernbrawl")));
+			hsMetaData.setGameMode("tavern-brawl");
 		}
 		// We don't want to add the Wild tag to tavern brawls
 		else {
 			if ("Casual".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
-				review.setParticipantDetails(new ParticipantDetails());
-				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("casual")));
-				metaData.setGameMode("casual");
+				participantDetails.setSkillLevel(Arrays.asList(new Tag("casual")));
+				hsMetaData.setGameMode("casual");
 			}
 			else if ("Practice".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
-				review.setParticipantDetails(new ParticipantDetails());
-				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("practice")));
-				metaData.setGameMode("practice");
+				participantDetails.setSkillLevel(Arrays.asList(new Tag("practice")));
+				hsMetaData.setGameMode("practice");
 			}
 			else if ("Friendly".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
-				review.setParticipantDetails(new ParticipantDetails());
-				review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("friendly")));
-				metaData.setGameMode("friendly");
+				participantDetails.setSkillLevel(Arrays.asList(new Tag("friendly")));
+				hsMetaData.setGameMode("friendly");
 			}
 			else if ("Dungeon-run".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
-				metaData.setGameMode("dungeon-run");
+				hsMetaData.setGameMode("dungeon-run");
 			}
-			else if ("Ranked".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
-				metaData.setGameMode("ranked");
-				// TODO: later on, extract that on a sports-specific class parser
-				try {
-					log.debug("Parsing metadata for " + reviewId);
-					if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))) {
-						review.setParticipantDetails(new ParticipantDetails());
-						Tag rankTag = new Tag("Rank " + Integer.valueOf(metadata.getUserMetaDataOf("game-rank")));
-						review.getParticipantDetails().setSkillLevel(Arrays.asList(rankTag));
+			else {
+				Integer rank = metadata.getUserMetaDataOf("game-rank") == null 
+						? null 
+						: Integer.valueOf(metadata.getUserMetaDataOf("game-rank"));
+				Integer legendRank = metadata.getUserMetaDataOf("game-legend-rank") == null 
+						? null 
+						: Integer.valueOf(metadata.getUserMetaDataOf("game-legend-rank"));
+				Integer opponentRank = metadata.getUserMetaDataOf("opponent-game-rank") == null 
+						? null 
+						: Integer.valueOf(metadata.getUserMetaDataOf("opponent-game-rank"));
+				Integer opponentLegendRank = metadata.getUserMetaDataOf("opponent-game-legend-rank") == null 
+						? null 
+						: Integer.valueOf(metadata.getUserMetaDataOf("opponent-game-legend-rank"));
+				
+				if ("Ranked".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+					hsMetaData.setGameMode("ranked");
+					try {
+						log.debug("Parsing metadata for " + reviewId);
+						if (rank != null) {
+							Tag rankTag = new Tag("Rank " + rank);
+							participantDetails.setSkillLevel(Arrays.asList(rankTag));
+							hsMetaData.setSkillLevel(rank.floatValue());
+							hsMetaData.setOpponentSkillLevel(opponentRank != null ? opponentRank.floatValue() : null);
+						}
+						else if (legendRank != null) {
+							participantDetails.setSkillLevel(Arrays.asList(new Tag("Legend")));
+							hsMetaData.setSkillLevel(rank != null ? -legendRank.floatValue() : null);
+							hsMetaData.setOpponentSkillLevel(opponentLegendRank != null ? -opponentLegendRank.floatValue() : null);
+						}
 					}
-					else if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-legend-rank"))) {
-						review.setParticipantDetails(new ParticipantDetails());
-						review.getParticipantDetails().setSkillLevel(Arrays.asList(new Tag("Legend")));
+					catch (Exception e) {
+						slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
 					}
 				}
-				catch (Exception e) {
-					slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
-				}
-			}
-			else if ("Arena".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
-				metaData.setGameMode("arena");
-				// TODO: later on, extract that on a sports-specific class parser
-				try {
-					if (!StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))) {
-						review.setParticipantDetails(new ParticipantDetails());
-						Tag rankTag = new Tag("arena" + Integer.valueOf(metadata.getUserMetaDataOf("game-rank")) + "wins");
-						review.getParticipantDetails().setSkillLevel(Arrays.asList(rankTag));
+				else if ("Arena".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+					hsMetaData.setGameMode("arena");
+					// TODO: later on, extract that on a sports-specific class parser
+					try {
+						if (rank != null) {
+							Tag rankTag = new Tag("arena" + rank + "wins");
+							participantDetails.setSkillLevel(Arrays.asList(rankTag));
+							hsMetaData.setSkillLevel(rank.floatValue());
+							hsMetaData.setOpponentSkillLevel(rank.floatValue());
+						}
 					}
-				}
-				catch (Exception e) {
-					slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
+					catch (Exception e) {
+						slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
+					}
 				}
 			}
 

@@ -23,6 +23,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
 import com.coach.notifications.Notification;
+import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.profile.Profile;
 import com.coach.reputation.Reputation;
 import com.coach.review.scoring.ReviewScore;
@@ -110,7 +111,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	@Indexed
 	private ParticipantDetails participantDetails = new ParticipantDetails();
 	@Indexed
-	private MetaData metaData;
+	private MetaData metaData = new HearthstoneMetaData();
 
 	@Indexed
 	private String author;

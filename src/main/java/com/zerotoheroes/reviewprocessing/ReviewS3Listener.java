@@ -146,13 +146,13 @@ public class ReviewS3Listener {
 				hsMetaData.setGameMode("dungeon-run");
 			}
 			else {
-				Integer rank = metadata.getUserMetaDataOf("game-rank") == null 
+				Integer rank = StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))
 						? null 
 						: Integer.valueOf(metadata.getUserMetaDataOf("game-rank"));
 				Integer legendRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("game-legend-rank")) 
 						? null 
 						: 0;
-				Integer opponentRank = metadata.getUserMetaDataOf("opponent-game-rank") == null 
+				Integer opponentRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("opponent-game-rank"))
 						? null 
 						: Integer.valueOf(metadata.getUserMetaDataOf("opponent-game-rank"));
 				Integer opponentLegendRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("opponent-game-legend-rank"))

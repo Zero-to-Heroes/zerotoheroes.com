@@ -150,7 +150,7 @@ public class HSGameParser implements ReplayPlugin {
 			replay = s3utils.readFromS3Output(review.getKey());
 		}
 		catch (Exception e) {
-			log.info("Exceptin trying to get review key, reading from temp replay", e);
+			log.info("Exceptin trying to get review key, reading from temp replay");
 		}
 		if (replay == null) {
 			replay = review.getTemporaryReplay();

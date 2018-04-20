@@ -28,6 +28,7 @@ public class HearthstoneMetaData extends MetaData {
 	private String playerName, opponentName;
 	@Indexed
 	private String playerClass, opponentClass;
+	private String playerDecklist, opponentDecklist;
 
 	@Indexed
 	private int durationInSeconds;
@@ -40,13 +41,17 @@ public class HearthstoneMetaData extends MetaData {
 	@Indexed
 	private String playCoin;
 	@Indexed
-	private Float skillLevel;
+	private Float skillLevel, opponentSkillLevel;
 
 	@Override
 	public void extractSkillLevel(List<Tag> skillLevel) {
+		if (skillLevel != null && gameMode != null) {
+			return;
+		}
+			
 		if (!CollectionUtils.isEmpty(skillLevel)) {
 			if ("Arena".equals(gameMode) || gameMode == null) {
-				this.skillLevel = null;
+				skillLevel = null;
 				gameMode = null;
 			}
 			String skillTag = skillLevel.get(0).getText();

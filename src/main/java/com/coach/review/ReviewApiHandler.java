@@ -46,6 +46,7 @@ import com.coach.subscription.SubscriptionManager;
 import com.coach.thirdprtyintegration.ExternalApplicationAuthenticationService;
 import com.coach.user.UserRepository;
 import com.coach.user.UserService;
+import com.zerotoheroes.reviewprocessing.NewReviewNotifier;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -58,6 +59,9 @@ public class ReviewApiHandler {
 
 	@Autowired
 	ReviewRepository reviewRepo;
+
+	@Autowired
+	NewReviewNotifier newReviewNotifier;
 
 	@Autowired
 	ReviewService reviewService;
@@ -373,6 +377,7 @@ public class ReviewApiHandler {
 
 		if (review.isPublished()) {
 //			reviewService.triggerReviewCreationJobs(review);
+			newReviewNotifier.notifyNewPublishedReview(review);
 		}
 
 		return new ResponseEntity<Review>(review, HttpStatus.OK);

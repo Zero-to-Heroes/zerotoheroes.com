@@ -149,13 +149,13 @@ public class ReviewS3Listener {
 				Integer rank = metadata.getUserMetaDataOf("game-rank") == null 
 						? null 
 						: Integer.valueOf(metadata.getUserMetaDataOf("game-rank"));
-				Integer legendRank = metadata.getUserMetaDataOf("game-legend-rank") == null 
+				Integer legendRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("game-legend-rank")) 
 						? null 
 						: 0;
 				Integer opponentRank = metadata.getUserMetaDataOf("opponent-game-rank") == null 
 						? null 
 						: Integer.valueOf(metadata.getUserMetaDataOf("opponent-game-rank"));
-				Integer opponentLegendRank = metadata.getUserMetaDataOf("opponent-game-legend-rank") == null 
+				Integer opponentLegendRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("opponent-game-legend-rank"))
 						? null 
 						: 0;
 				

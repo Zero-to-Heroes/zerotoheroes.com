@@ -1,8 +1,6 @@
 package com.coach.core.notification;
 
-import java.io.IOException;
 import java.util.Collection;
-import java.util.concurrent.Callable;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +28,6 @@ import net.gpedro.integrations.slack.SlackMessage;
 @Component
 public class SlackNotifier {
 
-	@Autowired
-	private ExecutorProvider executorProvider;
-
 	private final String environment;
 
 	@Autowired
@@ -44,319 +39,222 @@ public class SlackNotifier {
 	public void notifyNewComment(final Review review, final Comment reply) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws IOException {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText(reply.getText());
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText(reply.getText());
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("New comment by " + reply.getAuthor() + " at " + review.getUrl());
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText("New comment by " + reply.getAuthor() + " at " + review.getUrl());
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyNewMultiComment(Review review, Collection<Comment> comments) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
+		
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws IOException {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackMessage message = new SlackMessage();
+		message.setText(
+				"New mutli comment by " + comments.iterator().next().getAuthor() + " at " + review.getUrl());
 
-				SlackMessage message = new SlackMessage();
-				message.setText(
-						"New mutli comment by " + comments.iterator().next().getAuthor() + " at " + review.getUrl());
-
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyNewReview(final Review review) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setTitle(review.getTitle());
-				attach.setText(review.getText());
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setTitle(review.getTitle());
+		attach.setText(review.getText());
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("New " + review.getVisibility() + " review created by " + review.getAuthor() + " at "
-						+ review.getUrl());
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText("New " + review.getVisibility() + " review created by " + review.getAuthor() + " at "
+				+ review.getUrl());
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyCommentUpdate(final Review review, final Comment comment) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws IOException {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText(comment.getText());
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText(comment.getText());
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("Comment by " + comment.getAuthor() + " updated at " + review.getUrl());
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText("Comment by " + comment.getAuthor() + " updated at " + review.getUrl());
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
-
-	// public void notifyReviewUpdatet(final Review review) {
-	// if (!"prod".equalsIgnoreCase(environment)) { return; }
-	//
-	// executorProvider.getExecutor().submit(new Callable<String>() {
-	// @Override
-	// public String call() throws IOException {
-	// SlackApi api = new SlackApi(
-	// "https://hooks.slack.com/services/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");
-	//
-	// SlackAttachment attach = new SlackAttachment();
-	// attach.setColor("good");
-	// attach.setText(review.getText());
-	// attach.setFallback("placeholder fallback");
-	//
-	// SlackMessage message = new SlackMessage();
-	// message.addAttachments(attach);
-	// message.setText("Review by " + review.getAuthor() + " updated at " +
-	// review.getUrl());
-	//
-	// api.call(message);
-	// return null;
-	// }
-	// });
-	// }
 
 	public void notifyNewUser(final User user) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
+		
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText("A new user has just registered: " + user.getUsername() + " from "
+				+ user.getRegisterLocation() + " with email " + user.getEmail());
+		attach.setFallback("placeholder fallback");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText("A new user has just registered: " + user.getUsername() + " from "
-						+ user.getRegisterLocation() + " with email " + user.getEmail());
-				attach.setFallback("placeholder fallback");
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText("A new user has just registered");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("A new user has just registered");
-
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyNewPaymentRequest(final Review review, final CoachInformation coach, final String requesterEmail,
 			final int index) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText(requesterEmail + " has requeted a review from " + coach.getName() + " for a tariff of "
-						+ coach.getTariff().get(index) + " with the following conditions "
-						+ coach.getTariffDescription().get(index));
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText(requesterEmail + " has requeted a review from " + coach.getName() + " for a tariff of "
+				+ coach.getTariff().get(index) + " with the following conditions "
+				+ coach.getTariffDescription().get(index));
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("New payment request");
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText("New payment request");
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyNewSequence(final Sequence sequence) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText("A new sequence has been created: " + sequence.getTitle() + " for "
-						+ sequence.getSport().getValue());
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText("A new sequence has been created: " + sequence.getTitle() + " for "
+				+ sequence.getSport().getValue());
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("A new sequence has been created");
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText("A new sequence has been created");
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyNewSubscriber(final HasSubscribers item, final User user) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText(user.getUsername() + " has subscribed to " + item.getTitle()
-						+ ". We can contact them at " + user.getEmail());
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText(user.getUsername() + " has subscribed to " + item.getTitle()
+				+ ". We can contact them at " + user.getEmail());
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText(user.getUsername() + " has subscribed to " + item.getTitle());
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText(user.getUsername() + " has subscribed to " + item.getTitle());
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyNewSavedSearchSubscriber(final ReviewSearchCriteria searchCriteria, final String name) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText("Search criteria is " + searchCriteria);
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText("Search criteria is " + searchCriteria);
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText(name + " has subscribed to a saved search ");
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText(name + " has subscribed to a saved search ");
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyNewUnsubscriber(final HasSubscribers item, final User user) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText(user.getUsername() + " has unsubscribed from " + item.getTitle()
-						+ ". We can contact them at " + user.getEmail());
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText(user.getUsername() + " has unsubscribed from " + item.getTitle()
+				+ ". We can contact them at " + user.getEmail());
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText(user.getUsername() + " has unsubscribed from " + item.getTitle());
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText(user.getUsername() + " has unsubscribed from " + item.getTitle());
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyNewSavedSearchUnsubscriber(final SavedSearchSubscription sub, final String name) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText("Search criteria is " + sub);
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText("Search criteria is " + sub);
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText(name + " has unsubscribed from a saved search ");
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText(name + " has unsubscribed from a saved search ");
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyResetPassword(final User user) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText(user.getUsername() + " has requested a password reset. We can contact them at "
-						+ user.getEmail());
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText(user.getUsername() + " has requested a password reset. We can contact them at "
+				+ user.getEmail());
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText(user.getUsername() + " password reset");
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText(user.getUsername() + " password reset");
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyException(final WebRequest request, final Throwable ex, final Object... params) {
@@ -368,47 +266,41 @@ public class SlackNotifier {
 
 		final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackMessage message = new SlackMessage();
+		SlackMessage message = new SlackMessage();
 
-				if (request != null) {
-					SlackAttachment requestAttach = new SlackAttachment();
-					requestAttach.setColor("danger");
-					requestAttach.setText("Initial request was " + request.getDescription(true)
-							+ " and triggered the exception: " + ex.getMessage());
-					requestAttach.setFallback("placeholder fallback");
-					message.addAttachments(requestAttach);
-				}
+		if (request != null) {
+			SlackAttachment requestAttach = new SlackAttachment();
+			requestAttach.setColor("danger");
+			requestAttach.setText("Initial request was " + request.getDescription(true)
+					+ " and triggered the exception: " + ex.getMessage());
+			requestAttach.setFallback("placeholder fallback");
+			message.addAttachments(requestAttach);
+		}
 
-				SlackAttachment exAttach = new SlackAttachment();
+		SlackAttachment exAttach = new SlackAttachment();
+		exAttach.setColor("danger");
+		exAttach.setTitle("StackTrace for exception: ");
+		exAttach.setText(ExceptionUtils.getFullStackTrace(ex));
+		exAttach.setFallback("placeholder fallback");
+
+		message.addAttachments(exAttach);
+		message.setText("Temp Advice Controller: Server exception for user " + currentUser + ": " + ex.getClass());
+
+		if (params != null) {
+			for (Object param : params) {
+				SlackAttachment paramAttach = new SlackAttachment();
 				exAttach.setColor("danger");
-				exAttach.setTitle("StackTrace for exception: ");
-				exAttach.setText(ExceptionUtils.getFullStackTrace(ex));
+				exAttach.setTitle("Other params info");
+				exAttach.setText(param.toString());
 				exAttach.setFallback("placeholder fallback");
-
-				message.addAttachments(exAttach);
-				message.setText("Temp Advice Controller: Server exception for user " + currentUser + ": " + ex.getClass());
-
-				if (params != null) {
-					for (Object param : params) {
-						SlackAttachment paramAttach = new SlackAttachment();
-						exAttach.setColor("danger");
-						exAttach.setTitle("Other params info");
-						exAttach.setText(param.toString());
-						exAttach.setFallback("placeholder fallback");
-						message.addAttachments(paramAttach);
-					}
-				}
-
-				api.call(message);
-				return null;
+				message.addAttachments(paramAttach);
 			}
-		});
+		}
+
+		api.call(message);
 	}
 
 	public void notifyHelpfulComment(final Review review, final Comment comment) {
@@ -417,25 +309,19 @@ public class SlackNotifier {
 			return;
 		}
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText("Helpful comment by " + comment.getAuthor() + " on review " + review.getUrl());
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText("Helpful comment by " + comment.getAuthor() + " on review " + review.getUrl());
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("Helpful comment by " + comment.getAuthor());
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText("Helpful comment by " + comment.getAuthor());
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyUnhelpfulComment(final Review review, final Comment comment) {
@@ -444,26 +330,20 @@ public class SlackNotifier {
 			return;
 		}
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("good");
-				attach.setText(
-						"Comment by " + comment.getAuthor() + " marked as unhelpful on review " + review.getUrl());
-				attach.setFallback("placeholder fallback");
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("good");
+		attach.setText(
+				"Comment by " + comment.getAuthor() + " marked as unhelpful on review " + review.getUrl());
+		attach.setFallback("placeholder fallback");
 
-				SlackMessage message = new SlackMessage();
-				message.addAttachments(attach);
-				message.setText("Comment by " + comment.getAuthor() + " marked as unhelpful");
+		SlackMessage message = new SlackMessage();
+		message.addAttachments(attach);
+		message.setText("Comment by " + comment.getAuthor() + " marked as unhelpful");
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 	public void notifyError(final Exception e, final Object... params) {
@@ -480,35 +360,29 @@ public class SlackNotifier {
 			}
 			final String userName = currentUser;
 
-			executorProvider.getExecutor().submit(new Callable<String>() {
-				@Override
-				public String call() throws Exception {
-					log.debug("Sending error to Slack", e);
-					SlackApi api = new SlackApi(
-							"https://hooks.slack.com/services/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");
+			log.debug("Sending error to Slack", e);
+			SlackApi api = new SlackApi(
+					"https://hooks.slack.com/services/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");
 
-					SlackMessage message = new SlackMessage();
-					message.setText("Generic error with details for user " + userName);
+			SlackMessage message = new SlackMessage();
+			message.setText("Generic error with details for user " + userName);
 
-					SlackAttachment exAttach = new SlackAttachment();
-					exAttach.setColor("danger");
-					exAttach.setTitle("StackTrace for exception: ");
-					exAttach.setText(ExceptionUtils.getFullStackTrace(e));
-					exAttach.setFallback("placeholder fallback");
-					message.addAttachments(exAttach);
+			SlackAttachment exAttach = new SlackAttachment();
+			exAttach.setColor("danger");
+			exAttach.setTitle("StackTrace for exception: ");
+			exAttach.setText(ExceptionUtils.getFullStackTrace(e));
+			exAttach.setFallback("placeholder fallback");
+			message.addAttachments(exAttach);
 
-					for (Object param : params) {
-						SlackAttachment attach = new SlackAttachment();
-						attach.setColor("danger");
-						attach.setText(param != null ? param.toString() : "null");
-						attach.setFallback("placeholder fallback");
-						message.addAttachments(attach);
-					}
+			for (Object param : params) {
+				SlackAttachment attach = new SlackAttachment();
+				attach.setColor("danger");
+				attach.setText(param != null ? param.toString() : "null");
+				attach.setFallback("placeholder fallback");
+				message.addAttachments(attach);
+			}
 
-					api.call(message);
-					return null;
-				}
-			});
+			api.call(message);
 		}
 		catch (Exception e2) {
 			log.error("Could not notify error", e2);
@@ -521,32 +395,26 @@ public class SlackNotifier {
 			return;
 		}
 
-		executorProvider.getExecutor().submit(new Callable<String>() {
-			@Override
-			public String call() throws Exception {
-				SlackApi api = new SlackApi(
-						"https://hooks.slack.com/services/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");
+		SlackApi api = new SlackApi(
+				"https://hooks.slack.com/services/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");
 
-				SlackMessage message = new SlackMessage();
-				message.setText("Unsupported URL import " + url);
+		SlackMessage message = new SlackMessage();
+		message.setText("Unsupported URL import " + url);
 
-				SlackAttachment attach = new SlackAttachment();
-				attach.setColor("warning");
-				attach.setText("User " + user.getUsername() + " (" + user.getEmail()
-						+ ") tried to import a game/draft from " + url);
-				attach.setFallback("placeholder fallback");
-				message.addAttachments(attach);
+		SlackAttachment attach = new SlackAttachment();
+		attach.setColor("warning");
+		attach.setText("User " + user.getUsername() + " (" + user.getEmail()
+				+ ") tried to import a game/draft from " + url);
+		attach.setFallback("placeholder fallback");
+		message.addAttachments(attach);
 
-				SlackAttachment attachReview = new SlackAttachment();
-				attachReview.setColor("warning");
-				attachReview.setText("Review: " + review);
-				attachReview.setFallback("placeholder fallback");
-				message.addAttachments(attachReview);
+		SlackAttachment attachReview = new SlackAttachment();
+		attachReview.setColor("warning");
+		attachReview.setText("Review: " + review);
+		attachReview.setFallback("placeholder fallback");
+		message.addAttachments(attachReview);
 
-				api.call(message);
-				return null;
-			}
-		});
+		api.call(message);
 	}
 
 }

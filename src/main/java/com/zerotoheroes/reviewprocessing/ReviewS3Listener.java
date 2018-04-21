@@ -74,6 +74,7 @@ public class ReviewS3Listener {
 		catch (AmazonClientException e) {
 			String errorMessage = String.format("Could not retrieve metadata from s3 from bucket %s and key %s", bucketName, key);
 			log.error(errorMessage);
+			acknowledgment.acknowledge().get();
 			throw new ProcessingException(errorMessage, e);
 		}
 

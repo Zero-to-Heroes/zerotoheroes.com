@@ -35,6 +35,7 @@ public class NewReviewNotifier {
 		HearthstoneMetaData metaData = (HearthstoneMetaData) review.getMetaData();
 		JSONObject json = new JSONObject();
 		json.put("reviewId", review.getId());
+		json.put("userId", review.getAuthorId());
 		json.put("playerName", metaData.getPlayerName());
 		json.put("playerClass", metaData.getPlayerClass());
 		json.put("playerRank", metaData.getSkillLevel());

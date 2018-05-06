@@ -413,7 +413,6 @@ public class ReviewApiHandler {
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(comment.getAuthor());
 
-		consolidateCanvas(currentUser, review, comment, comment.getTempCanvas());
 		activatePlugins(currentUser, review, comment);
 
 		subscriptionManager.notifyNewComment(comment, review);
@@ -520,7 +519,6 @@ public class ReviewApiHandler {
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(comment.getAuthor());
 
-		consolidateCanvas(user.getUsername(), review, comment, comment.getTempCanvas());
 		activatePlugins(user.getUsername(), review, comment);
 
 		subscriptionManager.subscribe(review, comment.getAuthorId());
@@ -550,7 +548,6 @@ public class ReviewApiHandler {
 
 		review.setText(inputReview.getText());
 		review.setPlugins(inputReview.getPlugins());
-		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
 		activatePlugins(currentUser, review, review);
 		// log.debug("updated text is " + review.getText());
 
@@ -671,7 +668,6 @@ public class ReviewApiHandler {
 		}
 		review.setText(inputReview.getText());
 		review.setPlugins(inputReview.getPlugins());
-		consolidateCanvas(currentUser, review, review, inputReview.getCanvas());
 		activatePlugins(currentUser, review, review);
 		// log.debug("updated text is " + review.getText());
 
@@ -749,7 +745,6 @@ public class ReviewApiHandler {
 		// userService.saveAsync(user);
 		// }
 
-		comment.setTempCanvas(review.getCanvas());
 		// slackNotifier.notifyCommentUpdate(review, comment);
 		// sportManager.addCommentUpdatedActivity(user, review, comment);
 
@@ -799,7 +794,6 @@ public class ReviewApiHandler {
 		// log.debug("Adding reply " + reply + " to review " + review +
 		// " and comment " + comment);
 
-		consolidateCanvas(currentUser, review, reply, reply.getTempCanvas());
 		activatePlugins(currentUser, review, reply);
 		// log.debug("modified text is " + reply.getText());
 
@@ -926,27 +920,6 @@ public class ReviewApiHandler {
 	//
 	// }
 
-	private void consolidateCanvas(String prefix, Review review, HasText textHolder, Map<String, String> tempCanvas) {
-		String text = textHolder.getText();
-		// log.debug("Initial text is " + text);
-		String normalizedPrefix = prefix.replaceAll(" ", "");
-		// log.debug("Normalized prefix is " + normalizedPrefix);
-
-		// log.debug("Temp canvas is " + tempCanvas);
-		for (String canvasKey : tempCanvas.keySet()) {
-			if (review.getCanvas().containsKey(canvasKey)) {
-				review.getCanvas().put(canvasKey, tempCanvas.get(canvasKey));
-			}
-			else {
-				String newKey = normalizedPrefix + review.getCanvasId();
-				// review.removeCanvas(canvasKey);
-				review.addCanvas(newKey, tempCanvas.get(canvasKey));
-				// log.debug("Replacing " + canvasKey + " with " + newKey);
-				text = text.replaceAll(canvasKey, newKey);
-			}
-		}
-		textHolder.setText(text);
-	}
 
 	private void activatePlugins(String currentUser, Review review, HasText textHolder) {
 		com.coach.sport.Sport sportEntity = sportManager.findById(review.getSport().getKey());

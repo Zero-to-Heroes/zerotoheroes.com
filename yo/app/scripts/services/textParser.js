@@ -59,7 +59,6 @@ services.factory('TextParserService', ['$log', 'Api', '$translate', 'SportsConfi
 		service.loopRegex = /L(\d?\.?\d?\d?)?/
 		service.externalRegex = /\|\d?\d:\d?\d(:\d\d\d)?(\([a-z0-9]+\))?/
 		service.externalIdRegex = /\([a-z0-9]+\)/
-		service.canvasRegex = /\[.+?\]/
 
 		service.prettifyLink = function(timestamp) {
 			// Always keep the timestamp part
@@ -88,12 +87,6 @@ services.factory('TextParserService', ['$log', 'Api', '$translate', 'SportsConfi
 			var loop = timestamp.match(service.loopRegex);
 			if (loop) {
 				prettyLink = prettyLink + '<span class="glyphicon glyphicon-repeat inline-icon" title="Video will loop"></span>';
-			}
-
-			// Icon for canvas
-			var canvas = timestamp.match(service.canvasRegex);
-			if (canvas) {
-				prettyLink = prettyLink + '<span class="glyphicon glyphicon-picture inline-icon" title="There is a video drawing attached"></span>';
 			}
 
 			// Text for linked video

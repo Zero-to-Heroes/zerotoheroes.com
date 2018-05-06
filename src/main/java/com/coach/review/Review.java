@@ -172,8 +172,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// Deprecated fields (mainly legacy from the video time)
 	// =================
 	@Deprecated
-	private Map<String, String> canvas = new HashMap<>();
-	@Deprecated
 	private int canvasId;
 
 	// =================
@@ -375,28 +373,9 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		}
 	}
 
-	public void addCanvas(String key, String newCanvas) {
-		if (canvas == null) {
-			canvas = new HashMap<>();
-		}
-		canvas.put(key, newCanvas);
-		canvasId++;
-	}
-
-	public void removeCanvas(String canvasKey) {
-		if (canvas == null) {
-			canvas = new HashMap<>();
-		}
-		canvas.remove(canvasKey);
-	}
-
 	@Override
 	public void setText(String newText) {
 		text = newText;
-	}
-
-	public void resetCanvas() {
-		canvas = new HashMap<>();
 	}
 
 	public Set<String> getSubscribers() {

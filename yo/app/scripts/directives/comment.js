@@ -77,7 +77,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 					$scope.mediaPlayer.onCommentUpdateCancel($scope.review, $scope.comment);
 					comment.text = comment.oldText;
 					comment.editing = false;
-					$rootScope.$broadcast('editcanvas.cancel');
 					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 
@@ -93,7 +92,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 							$scope.showHelp = false;
 							// $log.log('Review', data);
 							var newComment = $scope.findComment(data.comments, comment.id);
-							$scope.review.canvas = newComment.tempCanvas;
 							$scope.review.plugins = data.plugins;
 							$scope.setCommentText(comment, newComment.text);
 							// $log.log('updating plugins', $scope.review.plugins);
@@ -198,9 +196,7 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 				$scope.cancelReply = function() {
 					// $scope.replyForm.$setPristine()
 					$scope.reply = {}
-					//$scope.drawingCanvas = false;
 					$scope.$broadcast('show-errors-reset')
-					$rootScope.$broadcast('editcanvas.cancel')
 					$scope.$broadcast('$$rebind::' + 'commentRefresh')
 				}
 
@@ -221,7 +217,6 @@ app.directive('comment', ['User', '$log', 'Api', 'RecursionHelper', '$modal', '$
 										$scope.showHelp = false;
 										$scope.posting = false;
 										$scope.comment = $scope.findComment(data.comments, $scope.comment.id);
-										$scope.review.canvas = data.canvas;
 										$scope.review.subscribers = data.subscribers;
 										$scope.review.plugins = data.plugins;
 										$scope.reply = {};

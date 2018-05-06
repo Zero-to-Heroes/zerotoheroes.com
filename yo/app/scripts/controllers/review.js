@@ -374,7 +374,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				sport: $scope.review.sport.key,
 				title: $scope.review.title,
 				tags: $scope.review.tags,
-				canvas: $scope.review.tempCanvas,
 				plugins: $scope.review.plugins,
 				visibility: $scope.review.visibility,
 				participantDetails: $scope.review.participantDetails
@@ -394,7 +393,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			Api.ReviewsUpdate.save({reviewId: $scope.review.id}, newReview,
 				function(data) {
 					$scope.showHelp = false;
-	  				$scope.review.canvas = data.canvas
 	  				$scope.review.plugins = data.plugins;
 
 	  				$log.log('plugins', $scope.review.plugins);

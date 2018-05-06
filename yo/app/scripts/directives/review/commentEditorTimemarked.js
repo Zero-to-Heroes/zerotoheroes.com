@@ -86,7 +86,6 @@ app.directive('commentEditorTimemarked', ['$log', 'User', 'Api', '$parse', '$roo
 								$scope.newComments = {}
 								$scope.commentForm.$setPristine();
 								$scope.review.comments = data.comments
-								$scope.review.reviewVideoMap = data.reviewVideoMap || {};
 					  			$scope.review.canvas = data.canvas;
 					  			$scope.review.subscribers = data.subscribers;
 					  			$scope.review.plugins = data.plugins;

@@ -87,9 +87,6 @@ public class ReviewApiHandler {
 	// @Autowired
 	// MongoTemplate mongoTemplate;
 
-	@Autowired
-	CommentParser commentParser;
-
 //	@Autowired
 //	Transcoder transcoder;
 
@@ -419,9 +416,6 @@ public class ReviewApiHandler {
 		consolidateCanvas(currentUser, review, comment, comment.getTempCanvas());
 		activatePlugins(currentUser, review, comment);
 
-		// See if there are external references to videos in the comment
-		commentParser.parseComment(review, comment);
-
 		subscriptionManager.notifyNewComment(comment, review);
 		subscriptionManager.subscribe(review, comment.getAuthorId());
 		reviewService.updateAsync(review);
@@ -528,9 +522,6 @@ public class ReviewApiHandler {
 
 		consolidateCanvas(user.getUsername(), review, comment, comment.getTempCanvas());
 		activatePlugins(user.getUsername(), review, comment);
-
-		// See if there are external references to videos in the comment
-		commentParser.parseComment(review, comment);
 
 		subscriptionManager.subscribe(review, comment.getAuthorId());
 		reviewService.triggerCommentCreationJobs(review, comment);
@@ -749,9 +740,6 @@ public class ReviewApiHandler {
 
 		// review.setLastModifiedDate(new Date());
 		// review.setLastModifiedBy(currentUser);
-
-		// See if there are external references to videos in the comment
-		commentParser.parseComment(review, comment);
 		review.sortComments();
 		reviewService.updateAsync(review);
 
@@ -821,9 +809,6 @@ public class ReviewApiHandler {
 		review.addComment(comment, reply);
 		review.setLastModifiedDate(new Date());
 		review.setLastModifiedBy(reply.getAuthor());
-
-		// See if there are external references to videos in the comment
-		commentParser.parseComment(review, reply);
 		review.sortComments();
 		reviewService.updateAsync(review);
 

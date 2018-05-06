@@ -8,7 +8,6 @@ angular.module('controllers').controller('UploadDetailsCtrl', ['$scope', 'Api', 
 			allowedUploads: SportsConfig[$scope.sport].allowedUploads
 		}
 		$scope.videoInfo = {
-			videoFramerateRatio: 1
 		}
 
 		// Now handle the various upload types

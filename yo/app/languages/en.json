@@ -802,7 +802,6 @@
 			"clipDurationText": "Clip Duration: ",
 			"doubleSpeedLink": "Double the speed",
 			"doubleSpeedText": " of the video",
-			"fasterVideoText": "The final video will be {{videoFramerateRatio}} times as fast (and as short) as the original, and won't have any audio.",
 			"whyLimit": "Our goal is to keep the analysis as focused as possible - this will make it much easier for others to give you feedback. That's why we are enforcing a 5 minutes time limit on videos",
 			"fasterVideoClick1": "Click",
 			"fastVideoLink": "here",

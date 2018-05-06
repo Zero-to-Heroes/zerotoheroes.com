@@ -172,12 +172,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// Deprecated fields (mainly legacy from the video time)
 	// =================
 	@Deprecated
-	private int beginning, ending;
-	@Deprecated
-	private float videoFramerateRatio;
-	@Deprecated
-	private Map<String, String> reviewVideoMap = new HashMap<>();
-	@Deprecated
 	private Map<String, String> canvas = new HashMap<>();
 	@Deprecated
 	private int canvasId;
@@ -307,14 +301,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 		for (Comment comment : comments) {
 			comment.sortComments();
 		}
-	}
-
-	public void addExternalLink(String reviewId, String videoKey) {
-		if (reviewVideoMap == null) {
-			reviewVideoMap = new HashMap<>();
-		}
-
-		reviewVideoMap.put(reviewId, videoKey);
 	}
 
 	public void prepareForDisplay(String userId) {

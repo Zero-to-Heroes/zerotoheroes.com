@@ -172,8 +172,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// Deprecated fields (mainly legacy from the video time)
 	// =================
 	@Deprecated
-	private String thumbnail;
-	@Deprecated
 	private int beginning, ending;
 	@Deprecated
 	private float videoFramerateRatio;

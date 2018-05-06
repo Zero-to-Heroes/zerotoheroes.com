@@ -150,16 +150,6 @@ app.directive('profileInfo', ['$log', 'Api', '$routeParams', 'User', 'Localizati
 					$scope.retrieveInfo()
 				})
 
-				// $scope.updatePreferences = function() {
-				// 	$scope.updateStatus = undefined
-				// 	Api.Preferences.save($scope.preferences, 
-				// 		function(data) {
-				// 			$scope.updateStatus = 'ok'
-				// 			Localization.use($scope.preferences.language)
-				// 		}
-				// 	)
-				// }
-
 				$scope.dismissMessage = function() {
 					$scope.updateStatus = undefined
 				}

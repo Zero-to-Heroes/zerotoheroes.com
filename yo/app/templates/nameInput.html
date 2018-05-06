@@ -12,12 +12,5 @@
 		<notifications profile="profile" sport="sport"></notifications>
 		
 	</li>
-	<li ng-hide="loggedIn">
-		<a class="dropdown-toggle profile-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'global.navigation.language' | translate }}<span class="caret"></span></a>
-		<ul class="dropdown-menu">
-			<li><a ng-click="changeLanguage('fr')"><span class="lang-sm" lang="fr"></span></a></li>
-			<li><a ng-click="changeLanguage('en')"><span class="lang-sm" lang="en"></span></a></li>
-		</ul>
-	</li>
 	<li><a class="link-minor" ng-show="showLogout && loggedIn" ng-click="signOut()">{{ 'global.user.signOut' | translate }}</a></li>
 </ul>

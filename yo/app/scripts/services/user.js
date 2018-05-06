@@ -68,24 +68,6 @@ services.factory('User', ['$window', '$log', 'Api', 'Localization', 'localStorag
 				// 	});
 				// }
 			},
-			changeLanguage: function(lang) {
-				$log.log('changing language to ', lang);
-				Localization.use(lang);
-				if (localStorage.getItem('user')) {
-					var that = this;
-					var user = that.getUser();
-					user.preferredLanguage = lang;
-					that.setUser(user);
-					Api.Users.save({identifier: user.username}, user, 
-						function(data) {
-							$log.log('Changed language', data);
-						},
-						function(error) {
-							$log.error('Could not change language', user, error)
-						}
-					);
-				}
-			},
 			getNumberOfLocalTimestamps: function() {
 				var timestamps = localStorage.getItem('timestamps');
 				return parseInt(timestamps ? timestamps : 0);

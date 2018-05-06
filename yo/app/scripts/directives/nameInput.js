@@ -78,14 +78,6 @@ app.directive('zthNameInput', ['User', '$log', 'Api', '$modal', 'AuthenticationS
 				var path = '/coach/' + $scope.User.username + '/' + $scope.sport
   	 			$location.path(path)
 			}
-
-			$scope.changeLanguage = function(languageCode) {
-				User.changeLanguage(languageCode);
-			}
-
-			$scope.currentLanguage = function() {
-				return Localization.getLanguage();
-			}
 		}
 	};
 }]);

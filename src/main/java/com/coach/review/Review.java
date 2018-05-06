@@ -172,8 +172,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// Deprecated fields (mainly legacy from the video time)
 	// =================
 	@Deprecated
-	private String language = "en";
-	@Deprecated
 	private String thumbnail;
 	@Deprecated
 	private int beginning, ending;
@@ -271,15 +269,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	public void setLastModifiedDate(Date modifiedDate) {
 		lastModifiedDate = modifiedDate;
 		// setSortingDate(lastModifiedDate);
-	}
-
-	public void setLanguage(String code) {
-		if (code != null && !code.isEmpty()) {
-			language = code;
-		}
-		else {
-			language = "en";
-		}
 	}
 
 	@JsonIgnore

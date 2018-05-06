@@ -50,21 +50,15 @@ angular.module('controllers').controller('AccountTemplate', ['$scope', '$log', '
   			if ($scope.accountForm.$valid) {
   				var location = $location.$$url;
 
-  				// Language
-  				var lang;
-  				try {
-	  				if (!$window.localStorage.language) {
-						lang = $window.navigator.language || $window.navigator.userLanguage;
-						if (lang && lang.slice(0, 2) == 'fr') {
-							lang = 'fr';
-						}
-					}
-				} catch (e) {}
+				var lang = 'en';
 
-				if (!lang)
-					lang = Localization.getLanguage();
-
-				var params = {username: $scope.account.username, password: $scope.account.password, email: $scope.account.email, registerLocation: location, preferredLanguage: lang}
+				var params = {
+					username: $scope.account.username, 
+					password: $scope.account.password, 
+					email: $scope.account.email, 
+					registerLocation: location, 
+					preferredLanguage: lang
+				}
 				Api.Users.save(params,
 			        function(data) {
 			          	// Not necessarily the best way, but easier to separate registration from actual login

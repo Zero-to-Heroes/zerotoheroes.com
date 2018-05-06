@@ -255,7 +255,6 @@
 			"openReviewsBadge": "You have open reviews (open reviews show up in the Help Others page, but the more open reviews you have, the lower they will rank). To close your open reviews, click the I'm satisfied link at the top of each review.",
 			"coaches": "Coaches",
 			"chooseSport": "Choose a sport",
-			"language": "Language",
 			"otherSections": "Other sections"
 		},
 		"home": {
@@ -465,7 +464,6 @@
 				"neverAskAboutSavedSearch": "I don't want to be asked to review new games",
 				"neverAskAboutSavedSearchTitle": "We believe that reviewing games is as helpful as having your games reviewed, so we might periodically suggest you new games to review based on your latest uploads",
 				"dontAskAgainForTheseTags": "I don't want to be suggested these tags to review",
-				"language": "What language do you want to see the site in?",
 				"save": "Update",
 				"sharingPublic": "Sharing public reviews only",
 				"sharingUnlisted": "Sharing public and unlisted reviews",
@@ -861,7 +859,6 @@
 		"fineScrolling": "You can scroll frame by frame by using the mousewheel on the time bar, letting you choose your timestamp with more precision. You can scroll more quickly if you press the Shift key at the same time"
 	},
 	"news": {
-		"news1": "Zero to Heroes has been localized in French. Use the dropdown in the top right to change your language",
 		"news2": "We've changed the video review layout to use the full width of the screen. Let us know what you think!",
 		"news3": "HearthStone players can now see the details of a deck card without having to go to an external site",
 		"news4": "HearthStone players can now also use the English name when searching for a card",

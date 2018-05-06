@@ -8,10 +8,7 @@ services.factory('Localization', ['$window', '$log', 'Api', '$translate', 'local
 				moment.locale(lang);
 			},
 			getLanguage: function() {
-				if (localStorage.getItem('language')) {
-					return localStorage.getItem('language');
-				}
-				else return 'en';
+				return 'en';
 			}
 		};
 	}

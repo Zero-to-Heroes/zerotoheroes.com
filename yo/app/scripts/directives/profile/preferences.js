@@ -22,17 +22,12 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					emailRecapSplit: $translate.instant('global.profile.preferences.emailRecapSplit'),
 					emailRecapFrequency: $translate.instant('global.profile.preferences.emailRecapFrequency'),
 					emailContact: $translate.instant('global.profile.preferences.emailContact'),
-					language: $translate.instant('global.profile.preferences.language'),
 					neverAskAboutSavedSearch: $translate.instant('global.profile.preferences.neverAskAboutSavedSearch'),
 					neverAskAboutSavedSearchTitle: $translate.instant('global.profile.preferences.neverAskAboutSavedSearchTitle'),
 					dontAskAgainForTheseTags: $translate.instant('global.profile.preferences.dontAskAgainForTheseTags'),
 					save: $translate.instant('global.profile.preferences.save'),
 				}
 
-				$scope.languages = [
-					{ "value" : "en", "label" : "<span class=\"lang-sm\" lang=\"en\"></span>" },
-					{ "value" : "fr", "label" : "<span class=\"lang-sm\" lang=\"fr\"></span>" }
-				]
 				$scope.emailNotificationsType = [
 					{ "value" : null, "label" : $translate.instant('global.profile.preferences.emailNotification.none') },
 					{ "value" : "onebyone", "label" : $translate.instant('global.profile.preferences.emailNotification.onebyone') },
@@ -50,7 +45,6 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 						Api.Preferences.get(
 							function(data) {
 								$scope.preferences = data
-								// $scope.preferences.language = $scope.preferences.language || 'en'
 							}
 						)
 					}
@@ -69,7 +63,6 @@ app.directive('profilePreferences', ['$log', 'Api', '$routeParams', 'User', 'Loc
 					Api.Preferences.save($scope.preferences, 
 						function(data) {
 							$scope.updateStatus = 'ok'
-							// Localization.use($scope.preferences.language)
 						}
 					)
 				}

@@ -307,21 +307,6 @@ app.config(['$translateProvider', '$windowProvider', 'defaultI18n',
 		})
 
 		$translateProvider.determinePreferredLanguage(function () {
-			// define a function to determine the language
-			// and return a language key
-			// try {
-			// 	if (!$windowProvider.$get().localStorage.language) {
-			// 		var lang = $windowProvider.$get().navigator.language || $windowProvider.$get().navigator.userLanguage;
-			// 		console.log('language is ', lang);
-			// 		if (lang && lang.slice(0, 2) == 'fr') {
-			// 			console.log('browser language is ', lang);
-			// 			$windowProvider.$get().localStorage.language = 'fr';
-			// 			return 'fr';
-			// 		}
-			// 	}
-			// }
-			// catch (e) {
-			// }
 			return 'en';
 		})
 		$translateProvider.useLoaderCache(true)

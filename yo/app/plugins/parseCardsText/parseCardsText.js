@@ -6,13 +6,7 @@ var parseCardsText = {
 	execute: function (review, text) {
 		var matches = text.match(parseCardsText.cardRegex);
 		var result = text;
-		var lang;
-		try {
-			lang = window.localStorage.language;
-		}
-		catch (e) {
-			lang = 'en';
-		}
+		var lang = 'en';
 		// Parsing card names
 		if (matches) {
 			// console.log('parsing cards', text);
@@ -80,26 +74,18 @@ var parseCardsText = {
 	buildFullCardImageUrl: function(card, lang) {
 		if (!card) return ''
 
-		lang = lang || parseCardsText.getLang()
-		var localizedImage = parseCardsText.localizeImage(card, lang)
+		var localizedImage = parseCardsText.localizeImage(card, 'en')
 		return 'http://static.zerotoheroes.com/hearthstone/fullcard/en/256/' + localizedImage
 	},
 
 	getLang: function() {
-		var lang;
-		try {
-			lang = window.localStorage.language;
-		}
-		catch (e) {
-			lang = 'en';
-		}
-		return lang;
+		return 'en';
 	},
 
 	localizeName: function(card, lang) {
 		if (!card) return ''
 
-		lang = lang || parseCardsText.getLang();
+		lang = 'en';
 		if (!lang) return card.name;
 		if (!card[lang]) return card.name;
 		return card[lang].name;
@@ -115,13 +101,7 @@ var parseCardsText = {
 	},
 
 	localizeImage: function(card) {
-		var lang;
-		try {
-			lang = window.localStorage.language;
-		}
-		catch (e) {
-			lang = 'en';
-		}
+		var lang = 'en';
 		if (!lang) return card.cardImage;
 		if (!card[lang]) return card.cardImage;
 		// console.log('localized image', lang + '/' + card.cardImage);

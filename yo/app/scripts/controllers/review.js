@@ -375,7 +375,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 				title: $scope.review.title,
 				tags: $scope.review.tags,
 				canvas: $scope.review.tempCanvas,
-				language: $scope.review.language,
 				plugins: $scope.review.plugins,
 				visibility: $scope.review.visibility,
 				participantDetails: $scope.review.participantDetails
@@ -452,10 +451,6 @@ angular.module('controllers').controller('ReviewCtrl', ['$scope', '$routeParams'
 			$(".contextual-information").hide();
 			$scope.$broadcast('$$rebind::' + 'reviewRefresh')
 		}
-
-		// $scope.editLanguage = function(lang) {
-		// 	$scope.review.language = lang;
-		// }
 
 		$scope.getSkillLevelSource = function(review) {
 			if (!review || !$scope.config || !$scope.config.images)

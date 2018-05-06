@@ -362,7 +362,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 		Profile authorProfile = profileMap.get(authorId);
 		if (authorProfile != null) {
-			authorFrame = authorProfile.getFlair(sport, author.getFrame());
+			authorFrame = authorProfile.getProfileInfo().fetchFlair(sport, author.getFrame());
 		}
 
 		if (comments != null) {

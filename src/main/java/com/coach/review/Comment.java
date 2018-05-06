@@ -153,7 +153,7 @@ public class Comment implements HasText, HasReputation {
 
 		Profile authorProfile = profileMap.get(authorId);
 		if (authorProfile != null) {
-			authorFrame = authorProfile.getFlair(sport, author.getFrame());
+			authorFrame = authorProfile.getProfileInfo().fetchFlair(sport, author.getFrame());
 		}
 
 		if (comments != null) {

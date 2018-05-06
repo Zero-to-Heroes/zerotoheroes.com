@@ -115,7 +115,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	@Indexed
 	private String author;
-	
+
 	private String lastModifiedBy;
 
 	@Indexed
@@ -171,8 +171,6 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// =================
 	// Deprecated fields (mainly legacy from the video time)
 	// =================
-	@Deprecated
-	private String description = "";
 	@Deprecated
 	private String language = "en";
 	@Deprecated
@@ -420,25 +418,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	}
 
 	@Override
-	public String getText() {
-		if (text == null) {
-			text = description;
-		}
-		return text;
-	}
-
-	@Override
 	public void setText(String newText) {
-		description = newText;
 		text = newText;
-	}
-
-	private String getDescription() {
-		return description;
-	}
-
-	private void setDescription(String description) {
-		this.description = description;
 	}
 
 	public void resetCanvas() {
@@ -520,7 +501,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	public void updateFullTextSearch() {
 		fullTextSearchField = title == null ? "" : title.toLowerCase() + " ";
-		fullTextSearchField += description == null ? "" : " " + description.toLowerCase();
+		fullTextSearchField += text == null ? "" : " " + text.toLowerCase();
 		fullTextSearchField += author == null ? "" : " author:" + author.toLowerCase();
 		if (participantDetails != null) {
 			fullTextSearchField += " player:" + participantDetails.getPlayerName();

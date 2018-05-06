@@ -169,10 +169,8 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	private Date lastScoreUpdate;
 
 	// =================
-	// Deprecated fields (mainly legacy from the video time)
+	// Deprecated fields
 	// =================
-	@Deprecated
-	private int canvasId;
 
 	// =================
 	// Data that is for internal processing only, not seen by the UI

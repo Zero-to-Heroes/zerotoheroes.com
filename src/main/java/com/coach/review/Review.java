@@ -50,25 +50,6 @@ import lombok.extern.slf4j.Slf4j;
 @EqualsAndHashCode(of = "id")
 public class Review implements HasText, HasReputation, HasSubscribers {
 
-	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
-	@AllArgsConstructor
-	public enum Sport {
-		Badminton("Badminton", "Badminton"), Squash("Squash", "Squash"), LeagueOfLegends("LeagueOfLegends",
-				"League of Legends"), HearthStone("HearthStone", "HearthStone"), HeroesOfTheStorm("HeroesOfTheStorm",
-						"Heroes of the Storm"), Meta("Meta",
-								"Meta"), Duelyst("Duelyst", "Duelyst"), Other("Other", "Other");
-
-		@Getter
-		private String key, value;
-
-		public static Sport load(String sport) {
-			for (Sport temp : Review.Sport.values()) {
-				if (temp.getKey().equalsIgnoreCase(sport)) { return temp; }
-			}
-			return null;
-		}
-	}
-
 	@Id
 	private String id;
 
@@ -87,9 +68,7 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 
 	private String text = "";
 
-	// The sport - also includes the key as string for serialization purposes
 	@Indexed
-	private Sport sport;
 	private String strSport;
 
 	// The key of the associated video / file
@@ -171,6 +150,28 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	// =================
 	// Deprecated fields
 	// =================
+	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+	@AllArgsConstructor
+	@Deprecated
+	public enum Sport {
+		Badminton("Badminton", "Badminton"), Squash("Squash", "Squash"), LeagueOfLegends("LeagueOfLegends",
+				"League of Legends"), HearthStone("HearthStone", "HearthStone"), HeroesOfTheStorm("HeroesOfTheStorm",
+				"Heroes of the Storm"), Meta("Meta",
+				"Meta"), Duelyst("Duelyst", "Duelyst"), Other("Other", "Other");
+
+		@Getter
+		private String key, value;
+
+		public static Sport load(String sport) {
+			for (Sport temp : Review.Sport.values()) {
+				if (temp.getKey().equalsIgnoreCase(sport)) { return temp; }
+			}
+			return null;
+		}
+	}
+	// The sport - also includes the key as string for serialization purposes
+	@Indexed
+	private Sport sport;
 
 	// =================
 	// Data that is for internal processing only, not seen by the UI

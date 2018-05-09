@@ -1,5 +1,12 @@
 package com.coach.plugin.hearthstone.deck;
 
+import com.zerotoheroes.hsgameparser.db.Card;
+import com.zerotoheroes.hsgameparser.metadata.GameParser;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
@@ -8,18 +15,13 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.springframework.data.util.Pair;
-import org.springframework.stereotype.Component;
-
-import com.zerotoheroes.hsgameparser.db.Card;
-import com.zerotoheroes.hsgameparser.metadata.GameParser;
-
-import lombok.extern.slf4j.Slf4j;
-
 
 @Slf4j
 @Component
 public class BlizzardDeckstring extends AbstractDeckParser {
+
+	@Autowired
+	private GameParser gameParser;
 
 	private static final String REGEX = "\\[(\\S*)\\]";
 
@@ -65,7 +67,7 @@ public class BlizzardDeckstring extends AbstractDeckParser {
 			read();
 
 			long heroId = read();
-			Card heroCard = GameParser.getCardsList().fromDbfId((int) heroId);
+			Card heroCard = gameParser.getCardsList().fromDbfId((int) heroId);
 			deck.setTitle(heroCard.getPlayerClass() + " deck");
 
 			int numSingleCards = (int) read();
@@ -105,7 +107,7 @@ public class BlizzardDeckstring extends AbstractDeckParser {
 
 		private void addCard(int dbfId, int count)
 		{
-			Card card = GameParser.getCardsList().fromDbfId(dbfId);
+			Card card = gameParser.getCardsList().fromDbfId(dbfId);
 			deck.addCard(card.getId(), count);
 		}
 	}

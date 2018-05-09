@@ -80,7 +80,7 @@
 		<dependency>
 			<groupId>com.zerotoheroes</groupId>
 			<artifactId>hs-game-parser</artifactId>
-			<version>1.0.20</version>
+			<version>1.0.21</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.zerotoheroes</groupId>

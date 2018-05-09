@@ -1,5 +1,6 @@
 package com.coach.plugin.hearthstone.deck;
 
+import com.coach.plugin.hearthstone.GameParserProvider;
 import com.zerotoheroes.hsgameparser.db.Card;
 import com.zerotoheroes.hsgameparser.metadata.GameParser;
 import lombok.extern.slf4j.Slf4j;
@@ -20,8 +21,12 @@ import java.util.regex.Pattern;
 @Component
 public class BlizzardDeckstring extends AbstractDeckParser {
 
-	@Autowired
 	private GameParser gameParser;
+
+	@Autowired
+	public BlizzardDeckstring(GameParserProvider gameParserProvider) {
+		this.gameParser = gameParserProvider.getGameParser();
+	}
 
 	private static final String REGEX = "\\[(\\S*)\\]";
 

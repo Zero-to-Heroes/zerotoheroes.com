@@ -81,11 +81,13 @@ public class ReviewS3Listener {
 		Review review = reviewService.loadReview(reviewId);
 		if (review == null) {
 			log.debug("Review shell with id " + reviewId + " doesn't exist, aborting");
+			acknowledgment.acknowledge().get();
 			return;
 		}
 
 		// The message can be received several times
 		if (review.isPublished()) { 
+			acknowledgment.acknowledge().get();
 			return; 
 		}
 		log.debug("review " + reviewId + " not yet processed, continuing");

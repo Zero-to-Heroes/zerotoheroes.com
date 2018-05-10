@@ -1,15 +1,18 @@
 package com.coach.review.api.hearthstone;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.zip.GZIPInputStream;
-
+import com.coach.core.security.User;
+import com.coach.core.storage.S3Utils;
+import com.coach.plugin.hearthstone.HSArenaDraft;
+import com.coach.plugin.hearthstone.HSReplay;
+import com.coach.plugin.hearthstone.HearthstoneMetaData;
+import com.coach.review.Review;
+import com.coach.review.Review.Sport;
+import com.coach.review.ReviewApiHandler;
+import com.coach.review.ReviewRepository;
+import com.coach.review.ReviewService;
+import com.coach.tag.Tag;
+import com.coach.user.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
@@ -23,21 +26,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.coach.core.security.User;
-import com.coach.core.storage.S3Utils;
-import com.coach.plugin.hearthstone.HSArenaDraft;
-import com.coach.plugin.hearthstone.HSReplay;
-import com.coach.plugin.hearthstone.HearthstoneMetaData;
-import com.coach.review.Review;
-import com.coach.review.Review.Sport;
-import com.coach.review.ReviewApiHandler;
-import com.coach.review.ReviewRepository;
-import com.coach.review.ReviewService;
-import com.coach.tag.Tag;
-import com.coach.user.UserRepository;
-
-import lombok.extern.slf4j.Slf4j;
-import net.lingala.zip4j.exception.ZipException;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.zip.GZIPInputStream;
 
 @RepositoryRestController
 @RequestMapping(value = "/api/hearthstone")
@@ -287,22 +284,22 @@ public class ReviewPublicApi {
 	}
 
 	private ResponseEntity<FileUploadResponse> processReviewLogs(User user, List<Review> reviews, byte[] logInfo)
-			throws IOException, ZipException {
+			throws IOException {
 		return processReviewLogs(user, reviews, logInfo, null, null);
 	}
 
 	private ResponseEntity<FileUploadResponse> processReviewLogs(User user, List<Review> reviews, byte[] logInfo,
-			String applicationKey, String userToken) throws IOException, ZipException {
+			String applicationKey, String userToken) throws IOException {
 		FileUploadResponse response;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
 		String fileType = "text/plain";
-		List<String> games = hsReplay.extractGames(null, fileType, reader);
+		List<String> games = hsReplay.extractGames(fileType, reader);
 		log.debug("\tbuilt " + games.size() + " games");
 
 		if (games.size() == 0) {
 			reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(logInfo)));
 			fileType = "text/xml";
-			games = hsReplay.extractGames(null, fileType, reader);
+			games = hsReplay.extractGames(fileType, reader);
 		}
 
 		// Process file

@@ -1,56 +1,44 @@
 package com.coach.plugin.hearthstone;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-
-import org.apache.commons.io.FileUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
-
 import com.amazonaws.services.s3.model.S3Object;
 import com.coach.core.notification.SlackNotifier;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
 import com.coach.review.Review;
-import com.coach.review.ReviewRepository;
 import com.zerotoheroes.hsgameconverter.ReplayConverter;
-
 import lombok.extern.slf4j.Slf4j;
-import net.lingala.zip4j.core.ZipFile;
-import net.lingala.zip4j.exception.ZipException;
+import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import java.util.zip.ZipInputStream;
 
 @Slf4j
 @Component
 public class HSReplay implements ReplayPlugin {
 
 	@Autowired
-	S3Utils s3utils;
+	private S3Utils s3utils;
 
 	@Autowired
-	ReviewRepository repo;
+	private HSGameParser hsParser;
 
 	@Autowired
-	GameParserProvider gameParser;
-
-	@Autowired
-	HSGameParser hsParser;
-
-	@Autowired
-	SlackNotifier slackNotifier;
+	private SlackNotifier slackNotifier;
 
 	@Override
-	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws Exception {
+	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) {
 		return textHolder.getText();
 	}
 
@@ -81,67 +69,9 @@ public class HSReplay implements ReplayPlugin {
 				xml = new ReplayConverter().xmlFromLogs(review.getTemporaryReplay());
 			}
 		}
-		else if ("hdtreplay".equals(review.getFileType())) {
-			log.debug("hdtreplay replay");
-			// Creating temp file to use the zip API
-			File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
-			// log.debug("Created temp file " + tempFile);
-			s3utils.readFromS3ToFile(review.getTemporaryKey(), tempFile);
-			// log.debug("Populated temp file from s3 " + tempFile);
-			// log.debug("tmp file size " + tempFile.length());
-
-			// Unzipping
-			ZipFile zipFile = new ZipFile(tempFile);
-			// log.debug("Created zip file " + zipFile);
-			String tempDir = System.getProperty("java.io.tmpdir");
-			// log.debug("tempFile system property: " + tempDir);
-			String destination = tempDir + "/" + new Date().getTime() + "-" + review.getSlugifiedTitle();
-			zipFile.extractFile("output_log.txt", destination);
-			// log.debug("Extracted to destination " + new File(destination));
-			// log.debug("Output extraction " + new File(destination +
-			// "/output_log.txt"));
-			// log.debug("Output extraction length " + new File(destination +
-			// "/output_log.txt").length());
-
-			// Retrieving the unzipped file
-			String logFile = readFile(destination + "/output_log.txt");
-			// All logs are correct at that point
-			// log.debug("Reading logs " + logFile);
-			xml = new ReplayConverter().xmlFromLogs(logFile);
-			// log.debug("XML file " + xml);
-
-			// Delete temp file
-			tempFile.delete();
-			FileUtils.deleteDirectory(new File(destination));
-		}
 		else if ("hszip".equals(review.getFileType())) {
 			log.debug("zip file");
-			// Creating temp file to use the zip API
-			File tempFile = File.createTempFile("" + new Date().getTime(), ".zip");
-			// log.debug("Created temp file " + tempFile);
-			s3utils.readFromS3ToFile(review.getTemporaryKey(), tempFile);
-			// log.debug("Populated temp file from s3 " + tempFile);
-			// log.debug("tmp file size " + tempFile.length());
-
-			// Unzipping
-			ZipFile zipFile = new ZipFile(tempFile);
-			// log.debug("Created zip file " + zipFile);
-			String tempDir = System.getProperty("java.io.tmpdir");
-			// log.debug("tempFile system property: " + tempDir);
-			String destination = tempDir + "/" + new Date().getTime() + "-" + review.getSlugifiedTitle();
-			zipFile.extractFile("replay.xml", destination);
-			// log.debug("Extracted to destination " + new File(destination));
-			// log.debug("Output extraction " + new File(destination +
-			// "/output_log.txt"));
-			// log.debug("Output extraction length " + new File(destination +
-			// "/output_log.txt").length());
-
-			// Retrieving the unzipped file
-			xml = readFile(destination + "/replay.xml");
-
-			// Delete temp file
-			tempFile.delete();
-			FileUtils.deleteDirectory(new File(destination));
+			xml = readZippedReplayFile(review);
 		}
 		else if (!StringUtils.isEmpty(review.getFileType())
 				&& (review.getFileType().startsWith("text/plain") || "log".equals(review.getFileType()))
@@ -186,22 +116,13 @@ public class HSReplay implements ReplayPlugin {
 		return true;
 	}
 
-	static String readFile(String path) throws IOException {
-		File file = new File(path);
-		StringBuilder fileContents = new StringBuilder();
-
-		BufferedReader reader = new BufferedReader(new FileReader(file));
-		try {
-			String line;
-			while ((line = reader.readLine()) != null) {
-				fileContents.append(line + System.lineSeparator());
-			}
-		}
-		finally {
-			reader.close();
-		}
-
-		return fileContents.toString();
+	private String readZippedReplayFile(Review review) throws Exception {
+		S3Object s3Object = s3utils.readerFromS3(review.getTemporaryKey());
+		ZipInputStream zis = new ZipInputStream(s3Object.getObjectContent());
+		zis.getNextEntry();
+		String xmlReplay = IOUtils.toString(zis, StandardCharsets.UTF_8);
+		zis.close();
+		return xmlReplay;
 	}
 
 	@Override
@@ -209,25 +130,17 @@ public class HSReplay implements ReplayPlugin {
 		return Arrays.asList(null, "game-replay");
 	}
 
-	public List<String> extractGames(String key, String fileType) throws IOException, ZipException {
+	public List<String> extractGames(String key, String fileType) throws IOException {
 		log.debug("Extracting games with " + key + ", " + fileType);
-		List<String> games = new ArrayList<>();
-
-		S3Object s3object = s3utils.readerFromS3(key);
-		try {
+		List<String> games;
+		try (S3Object s3object = s3utils.readerFromS3(key)) {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()));
-			games = extractGames(key, fileType, reader);
+			games = extractGames(fileType, reader);
 		}
-		finally {
-			s3object.close();
-		}
-
 		return games;
-
 	}
 
-	public List<String> extractGames(String key, String fileType, BufferedReader reader)
-			throws IOException, ZipException {
+	public List<String> extractGames(String fileType, BufferedReader reader) throws IOException {
 		List<String> games = new ArrayList<>();
 		StringBuilder currentGame = null;
 		if (StringUtils.isEmpty(fileType)) { return games; }
@@ -268,29 +181,11 @@ public class HSReplay implements ReplayPlugin {
 				currentGame.append(line);
 				currentGame.append(System.lineSeparator());
 			}
-			if (currentGame != null && currentGame.length() > 0) {
+			if (currentGame.length() > 0) {
 				log.debug("Added a new game");
 				// log.debug(currentGame.toString());
 				games.add(currentGame.toString());
 			}
-		}
-		else if ("hdtreplay".equals(fileType)) {
-			File tempFile = File.createTempFile("" + new Date().getTime(), ".hdtreplay");
-			s3utils.readFromS3ToFile(key, tempFile);
-
-			// Unzipping
-			ZipFile zipFile = new ZipFile(tempFile);
-			String tempDir = System.getProperty("java.io.tmpdir");
-			String destination = tempDir + "/" + new Date().getTime() + "-" + key;
-			zipFile.extractFile("output_log.txt", destination);
-
-			// Retrieving the unzipped file
-			String logFile = readFile(destination + "/output_log.txt");
-			games.add(logFile);
-
-			// Delete temp file
-			tempFile.delete();
-			FileUtils.deleteDirectory(new File(destination));
 		}
 		return games;
 	}

@@ -13,6 +13,8 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @Slf4j
@@ -29,22 +31,26 @@ public class BlizzardDeckstring extends AbstractDeckParser {
 	private static final String REGEX = "\\[(\\S*)\\]";
 
 	public void parseDeck(Map<String, String> pluginData, String initialText) {
-//		Pattern pattern = Pattern.compile(REGEX, Pattern.MULTILINE);
-//		Matcher matcher = pattern.matcher(initialText);
-//		while (matcher.find()) {
-//			String deckString = matcher.group(1);
-//
-//			try {
-//				Deck deck = new Parser().parse(deckString);
-//				deck.setDeckString(deckString);
-//				if (deck.getTitle().length() > 0) {
-//					saveDeck(pluginData, String.valueOf(deckString.hashCode()), deck);
-//				}
-//			}
-//			catch (Exception e) {
-//				// Do nothing, it just means that this was not a blizzard deck
-//			}
-//		}
+		Pattern pattern = Pattern.compile(REGEX, Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(initialText);
+		while (matcher.find()) {
+			String deckString = matcher.group(1);
+
+			try {
+				Deck deck = parseDeck(deckString);
+				deck.setDeckString(deckString);
+				if (deck.getTitle().length() > 0) {
+					saveDeck(pluginData, String.valueOf(deckString.hashCode()), deck);
+				}
+			}
+			catch (Exception e) {
+				// Do nothing, it just means that this was not a blizzard deck
+			}
+		}
+	}
+
+	Deck parseDeck(String deckString) throws Exception {
+		return new Parser().parse(deckString);
 	}
 
 	private class Parser {

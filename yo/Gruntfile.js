@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 
   	var modRewrite = require('connect-modrewrite')
 	var serveStatic = require('serve-static')
-  
+
   // Configurable paths for the application
   var appConfig = {
 	app: require('./bower.json').appPath || 'app',
@@ -302,11 +302,11 @@ module.exports = function (grunt) {
 	},
 
 	// Replace Google CDN references
-	cdnify: {
-	  	dist: {
-			html: ['.tmp/index.html', '<%= yeoman.dist %>/*.html']
-	  	}
-	},
+	// cdnify: {
+	//   	dist: {
+	// 		html: ['.tmp/index.html', '<%= yeoman.dist %>/*.html']
+	//   	}
+	// },
 
 	// Copies remaining files to places other tasks can use
 	copy: {
@@ -343,13 +343,13 @@ module.exports = function (grunt) {
 				cwd: '.tmp',
 				dest: '<%= yeoman.dist %>',
 				src: ['index.html']
-			}, 
+			},
 			{
 				expand: true,
 				cwd: '.tmp/images',
 				dest: '<%= yeoman.dist %>/images',
 				src: ['generated/*']
-			}, 
+			},
 			{
 				expand: true,
 				cwd: 'bower_components/bootstrap/dist',
@@ -386,7 +386,7 @@ module.exports = function (grunt) {
 				process: true
 			},
 			files: {
-				// Target-specific file lists and/or options go here. 
+				// Target-specific file lists and/or options go here.
 				'.tmp/index.html': ['.tmp/index.html']
 			}
 		}
@@ -402,7 +402,7 @@ module.exports = function (grunt) {
 				htmlmin: {
 					collapseBooleanAttributes:      true,
 					collapseWhitespace:             true,
-					removeComments:                 true, // Only if you don't use comment directives! 
+					removeComments:                 true, // Only if you don't use comment directives!
 					removeEmptyAttributes:          true,
 					removeRedundantAttributes:      true,
 					removeScriptTypeAttributes:     true,
@@ -416,11 +416,11 @@ module.exports = function (grunt) {
 			dest: '<%= yeoman.app %>/scripts/template.js',
 			options: {
 				module: 'app',
-				// usemin: '<%= yeoman.dist %>/vendors.js', // <~~ This came from the <!-- build:js --> block 
+				// usemin: '<%= yeoman.dist %>/vendors.js', // <~~ This came from the <!-- build:js --> block
 				htmlmin: {
 					collapseBooleanAttributes:      true,
 					collapseWhitespace:             true,
-					removeComments:                 true, // Only if you don't use comment directives! 
+					removeComments:                 true, // Only if you don't use comment directives!
 					removeEmptyAttributes:          true,
 					removeRedundantAttributes:      true,
 					removeScriptTypeAttributes:     true,
@@ -532,7 +532,7 @@ module.exports = function (grunt) {
 		'concat',
 		'ngAnnotate',
 		'copy:dist',
-		'cdnify',
+		// 'cdnify',
 		'uglify',
 		'cssmin',
 		'filerev',
@@ -556,7 +556,7 @@ module.exports = function (grunt) {
 		'concat',
 		'ngAnnotate',
 		'copy:dist',
-		'cdnify',
+		// 'cdnify',
 		'uglify',
 		'cssmin',
 		'filerev',

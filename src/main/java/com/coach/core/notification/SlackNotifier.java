@@ -56,7 +56,7 @@ public class SlackNotifier {
 
 	public void notifyNewMultiComment(Review review, Collection<Comment> comments) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
-		
+
 		SlackApi api = new SlackApi(
 				"https://hooks.slack.com/services/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");
 
@@ -107,7 +107,7 @@ public class SlackNotifier {
 
 	public void notifyNewUser(final User user) {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
-		
+
 		SlackApi api = new SlackApi(
 				"https://hooks.slack.com/services/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");
 
@@ -346,7 +346,7 @@ public class SlackNotifier {
 		api.call(message);
 	}
 
-	public void notifyError(final Exception e, final Object... params) {
+	public void notifyError(final Throwable e, final Object... params) {
 		if (!"prod".equalsIgnoreCase(environment)) {
 			log.info("Error! " + params);
 			return;

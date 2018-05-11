@@ -138,18 +138,18 @@ public class ReviewApiHandler {
 		Sport sportObj = Sport.load(sport);
 		// The case when input query contains invalid data, should not arrive
 		// during normal site usage
-		if (sportObj == null) { 
-			return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.BAD_REQUEST); 
+		if (sportObj == null) {
+			return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.BAD_REQUEST);
 		}
 
-		Collection<? extends GrantedAuthority> authorities = 
+		Collection<? extends GrantedAuthority> authorities =
 				SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 		// log.info("authorities are " + authorities);
 
 		// If user is anonymous, can only show public videos
 		if (StringUtils.isEmpty(currentUser) || UserAuthority.isAnonymous(authorities)) {
-			if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) { 
-				return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.FORBIDDEN); 
+			if (criteria.getOwnVideos() != null && criteria.getOwnVideos()) {
+				return new ResponseEntity<ListReviewResponse>((ListReviewResponse) null, HttpStatus.FORBIDDEN);
 			}
 			criteria.setVisibility("public");
 		}
@@ -172,7 +172,7 @@ public class ReviewApiHandler {
 		long queryStart = System.currentTimeMillis();
 		log.debug("Searching with criteria " + criteria);
 
-		String authorId = Boolean.TRUE.equals(criteria.getOwnVideos()) && user != null 
+		String authorId = Boolean.TRUE.equals(criteria.getOwnVideos()) && user != null
 				? user.getId()
 				: null;
 		if (!StringUtils.isEmpty(authorId)) {
@@ -975,7 +975,7 @@ public class ReviewApiHandler {
 				// log.debug("Plugin data " + review.getPlugins());
 				textHolder.setText(newText);
 			}
-			catch (Exception e) {
+			catch (Throwable e) {
 				log.warn("Incorrect plugin execution " + pluginClass, e);
 				slackNotifier.notifyError(e, "Exception during plugin execution", pluginClass, review);
 			}

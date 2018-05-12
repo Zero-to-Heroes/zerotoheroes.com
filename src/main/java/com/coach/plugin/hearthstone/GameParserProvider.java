@@ -17,7 +17,6 @@ public class GameParserProvider {
 
 	public GameParserProvider() {
 		try {
-			log.error("!!!!!!!!!!!!!!!!!!! INIT !!!!!!!!!!!!!!!!");
 			log.debug("building cards list");
 			CardsList cardsList = CardsList.create();
 			log.debug("Created cards list with " + cardsList.getDbCards().size() + " cards. ");

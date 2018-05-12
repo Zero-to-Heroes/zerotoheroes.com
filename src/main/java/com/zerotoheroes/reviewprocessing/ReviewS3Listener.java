@@ -205,6 +205,7 @@ public class ReviewS3Listener {
 				hsMetaData.setGameFormat("standard");
 			}
 		}
+		log.debug("Updated meta data: " + hsMetaData);
 	}
 
 	private void parseDeck(ObjectMetadata metadata, Review review) {

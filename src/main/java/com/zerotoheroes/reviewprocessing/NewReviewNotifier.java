@@ -45,7 +45,8 @@ public class NewReviewNotifier {
 		json.put("result", metaData.getWinStatus());
 		json.put("coinPlay", metaData.getPlayCoin());
 		json.put("gameMode", metaData.getGameMode());
-		
+		json.put("gameFormat", metaData.getGameFormat());
+
 		String deck = review.getPluginData("hearthstone", "parseDecks").get("reviewDeck");
 		if (!StringUtils.isEmpty(deck) && deck.length() > 3) {
 			deck = deck.substring(1, deck.length() - 1);

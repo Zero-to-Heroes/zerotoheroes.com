@@ -1,23 +1,22 @@
 package com.coach.plugin.hearthstone;
 
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import com.coach.review.MetaData;
+import com.coach.tag.Tag;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.coach.review.MetaData;
-import com.coach.tag.Tag;
-
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Data
 @Document
 @Slf4j
 public class HearthstoneMetaData extends MetaData {
+
 	private static final String RANKED_SKILL_REGEX = "(?:Rank\\D*)(\\d+)?";
 	private static final Pattern RANKED_PATTERN = Pattern.compile(RANKED_SKILL_REGEX, Pattern.MULTILINE);
 
@@ -37,7 +36,7 @@ public class HearthstoneMetaData extends MetaData {
 	@Indexed
 	private String winStatus;
 	@Indexed
-	private String gameMode;
+	private String gameMode, gameFormat;
 	@Indexed
 	private String playCoin;
 	@Indexed

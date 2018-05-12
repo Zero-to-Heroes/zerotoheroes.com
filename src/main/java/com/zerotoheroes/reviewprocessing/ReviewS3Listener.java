@@ -1,19 +1,6 @@
 
 package com.zerotoheroes.reviewprocessing;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.aws.messaging.listener.Acknowledgment;
-import org.springframework.cloud.aws.messaging.listener.SqsMessageDeletionPolicy;
-import org.springframework.cloud.aws.messaging.listener.annotation.SqsListener;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.event.S3EventNotification;
@@ -27,8 +14,19 @@ import com.coach.review.Review.Sport;
 import com.coach.review.ReviewApiHandler;
 import com.coach.review.ReviewService;
 import com.coach.tag.Tag;
-
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.aws.messaging.listener.Acknowledgment;
+import org.springframework.cloud.aws.messaging.listener.SqsMessageDeletionPolicy;
+import org.springframework.cloud.aws.messaging.listener.annotation.SqsListener;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/endpoint/reviewS3listener")
@@ -201,6 +199,10 @@ public class ReviewS3Listener {
 
 			if ("wild".equalsIgnoreCase(metadata.getUserMetaDataOf("game-format"))) {
 				review.getTags().add(new Tag("Wild"));
+				hsMetaData.setGameFormat("wild");
+			}
+			else {
+				hsMetaData.setGameFormat("standard");
 			}
 		}
 	}

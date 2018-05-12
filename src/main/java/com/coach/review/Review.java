@@ -1,25 +1,5 @@
 package com.coach.review;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import org.apache.commons.collections.CollectionUtils;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.index.TextIndexed;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import com.amazonaws.util.StringUtils;
 import com.coach.core.security.User;
 import com.coach.notifications.Notification;
@@ -33,13 +13,31 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.github.slugify.Slugify;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.index.TextIndexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -652,14 +650,14 @@ public class Review implements HasText, HasReputation, HasSubscribers {
 	@Override
 	public String toString() {
 		return "Review [id=" + id + ", title=" + title
-				+ "\n, author=" + author + ", authorId=" + authorId
-				+ "\n, uploaderApplicationKey=" + uploaderApplicationKey + ", uploaderToken=" + uploaderToken
-				+ "\n, key=" + key + ", temporaryKey=" + temporaryKey + ", replay=" + replay
-				+ "\n, temporaryReplay=" + !StringUtils.isNullOrEmpty(temporaryReplay)
-				+ "\n, fileType=" + fileType + ", mediaType=" + mediaType + ", reviewType=" + reviewType
-				+ "\n, participantDetails=" + participantDetails + ", metaData=" + metaData
-				+ "\n, transcodingDone=" + transcodingDone
-				+ "\n, published=" + published + ", visibility=" + visibility + ", closedDate=" + closedDate
+				+ ", author=" + author + ", authorId=" + authorId
+				+ ", uploaderApplicationKey=" + uploaderApplicationKey + ", uploaderToken=" + uploaderToken
+				+ ", key=" + key + ", temporaryKey=" + temporaryKey + ", replay=" + replay
+				+ ", temporaryReplay=" + !StringUtils.isNullOrEmpty(temporaryReplay)
+				+ ", fileType=" + fileType + ", mediaType=" + mediaType + ", reviewType=" + reviewType
+				+ ", participantDetails=" + participantDetails + ", metaData=" + metaData
+				+ ", transcodingDone=" + transcodingDone
+				+ ", published=" + published + ", visibility=" + visibility + ", closedDate=" + closedDate
 				+ ", helpScore=" + helpScore + ", debugScore=" + debugScore
 				+ ", invalidGame=" + invalidGame + ", lastMetaDataParsingDate="
 				+ lastMetaDataParsingDate + ", claimableAccount=" + claimableAccount + "]";

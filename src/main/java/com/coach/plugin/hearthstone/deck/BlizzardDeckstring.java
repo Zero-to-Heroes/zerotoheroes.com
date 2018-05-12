@@ -1,7 +1,7 @@
 package com.coach.plugin.hearthstone.deck;
 
 import com.coach.plugin.hearthstone.GameParserProvider;
-import com.zerotoheroes.hsgameparser.db.Card;
+import com.zerotoheroes.hsgameparser.db.DbCard;
 import com.zerotoheroes.hsgameparser.metadata.GameParser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +41,7 @@ public class BlizzardDeckstring extends AbstractDeckParser {
 				deck.setDeckString(deckString);
 				if (deck.getTitle().length() > 0) {
 					saveDeck(pluginData, String.valueOf(deckString.hashCode()), deck);
+					log.debug("Parsed deckstring: " + deckString);
 				}
 			}
 			catch (Exception e) {
@@ -75,8 +76,8 @@ public class BlizzardDeckstring extends AbstractDeckParser {
 			// Num Heroes - always 1
 			read();
 
-			long heroId = read();
-			Card heroCard = gameParser.getCardsList().fromDbfId((int) heroId);
+			int heroId = (int) read();
+			DbCard heroCard = gameParser.getCardsList().dbCardFromDbfId(heroId);
 			deck.setTitle(heroCard.getPlayerClass() + " deck");
 
 			int numSingleCards = (int) read();
@@ -116,7 +117,7 @@ public class BlizzardDeckstring extends AbstractDeckParser {
 
 		private void addCard(int dbfId, int count)
 		{
-			Card card = gameParser.getCardsList().fromDbfId(dbfId);
+			DbCard card = gameParser.getCardsList().dbCardFromDbfId(dbfId);
 			deck.addCard(card.getId(), count);
 		}
 	}

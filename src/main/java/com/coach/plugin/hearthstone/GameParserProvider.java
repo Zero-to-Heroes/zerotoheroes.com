@@ -1,8 +1,8 @@
 package com.coach.plugin.hearthstone;
 
-import com.zerotoheroes.hsgameparser.db.CardsList;
 import org.springframework.stereotype.Component;
 
+import com.zerotoheroes.hsgameparser.db.CardsList;
 import com.zerotoheroes.hsgameparser.metadata.GameParser;
 
 import lombok.Getter;
@@ -17,16 +17,18 @@ public class GameParserProvider {
 
 	public GameParserProvider() {
 		try {
+			log.error("!!!!!!!!!!!!!!!!!!! INIT !!!!!!!!!!!!!!!!");
 			log.debug("building cards list");
 			CardsList cardsList = CardsList.create();
-			log.debug("Created cards list with " + cardsList.getCards().size() + " cards. ");
-//			try {
-//				log.debug("Text card is " + cardsList.fromDbfId(31));
-//			}
-//			catch (Exception e) {
-//				log.error("Could not call fromDbfId");
-//				e.printStackTrace();
-//			}
+			log.debug("Created cards list with " + cardsList.getDbCards().size() + " cards. ");
+			try {
+			    log.debug("find card by id: " + cardsList.findDbCard("ICC_215"));
+				log.debug("Text card is " + cardsList.dbCardFromDbfId(31));
+			}
+			catch (Exception e) {
+				log.error("Could not call fromDbfId");
+				e.printStackTrace();
+			}
 
 			gameParser = new GameParser(cardsList);
 			log.debug("built cards list");

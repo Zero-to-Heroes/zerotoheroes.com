@@ -177,6 +177,7 @@ public class ReviewS3Listener {
 						}
 					}
 					catch (Exception e) {
+					    log.error("Could not parse ranked metadata", e);
 						slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
 					}
 				}
@@ -192,6 +193,7 @@ public class ReviewS3Listener {
 						}
 					}
 					catch (Exception e) {
+                        log.error("Could not parse arena metadata", e);
 						slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
 					}
 				}

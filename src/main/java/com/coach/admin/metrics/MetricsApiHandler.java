@@ -1,18 +1,11 @@
 package com.coach.admin.metrics;
 
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
-import static org.springframework.data.mongodb.core.query.Criteria.*;
-import static org.springframework.data.mongodb.core.query.Query.*;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import com.coach.review.ParticipantDetails;
+import com.coach.review.Review;
+import com.coach.tag.Tag;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,13 +21,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.coach.review.ParticipantDetails;
-import com.coach.review.Review;
-import com.coach.tag.Tag;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.fields;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.group;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.match;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.newAggregation;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.project;
+import static org.springframework.data.mongodb.core.query.Criteria.where;
+import static org.springframework.data.mongodb.core.query.Query.query;
 
 @RestController
 @RequestMapping(value = "/api/admin/metrics")
@@ -74,11 +76,11 @@ public class MetricsApiHandler {
 		log.debug("Starting metrics init");
 		
 		Calendar calendar = Calendar.getInstance();
-		calendar.set(2018, 3, 6, 0, 0, 0);
+		calendar.set(2018, 3, 9, 0, 0, 0);
 		
 		Aggregation agg = newAggregation(
 				match(where("creationDate").exists(true)),
-//				match(where("creationDate").gte(calendar.getTime())),
+				match(where("creationDate").gte(calendar.getTime())),
 			    project()       
 			        .andExpression("year(creationDate)").as("year")
 			        .andExpression("month(creationDate)").as("month")

@@ -1,17 +1,5 @@
 package com.coach.plugin.hearthstone;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
-
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.ReplayPlugin;
 import com.coach.review.HasText;
@@ -21,8 +9,18 @@ import com.zerotoheroes.hsgameconverter.ReplayConverter;
 import com.zerotoheroes.hsgameentities.replaydata.HearthstoneReplay;
 import com.zerotoheroes.hsgameparser.metadata.GameMetaData;
 import com.zerotoheroes.hsgameparser.metadata.InvalidGameReplayException;
-
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Component
@@ -84,7 +82,7 @@ public class HSGameParser implements ReplayPlugin {
 			review.getParticipantDetails().setOpponentCategory(meta.getOpponentClass());
 
 			MetaData metaData = review.getMetaData();
-			if (metaData == null || !(metaData instanceof HearthstoneMetaData)) {
+			if (!(metaData instanceof HearthstoneMetaData)) {
 				metaData = new HearthstoneMetaData();
 				review.setMetaData(metaData);
 			}
@@ -119,7 +117,7 @@ public class HSGameParser implements ReplayPlugin {
 			}
 
 			review.setLastMetaDataParsingDate(new Date());
-			log.debug("done adding meta ");
+			log.debug("done adding meta " + hsMeta);
 		}
 		catch (InvalidGameReplayException e) {
 			log.info("Invalid game " + e.getMessage() + ". Key is " + review.getKey());

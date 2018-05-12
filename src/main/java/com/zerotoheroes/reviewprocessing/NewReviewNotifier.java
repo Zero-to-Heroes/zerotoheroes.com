@@ -1,5 +1,6 @@
 package com.zerotoheroes.reviewprocessing;
 
+import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,6 +13,7 @@ import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.review.Review;
 
 @Component
+@Slf4j
 public class NewReviewNotifier {
 	
 	private final NotificationMessagingTemplate notificationMessagingTemplate;
@@ -50,9 +52,10 @@ public class NewReviewNotifier {
 		String deck = review.getPluginData("hearthstone", "parseDecks").get("reviewDeck");
 		if (!StringUtils.isEmpty(deck) && deck.length() > 3) {
 			deck = deck.substring(1, deck.length() - 1);
-		}
-		json.put("playerDecklist", deck);
-		
+            json.put("playerDecklist", deck);
+        }
+        log.debug("Publishing new review created message", json.toString());
+
 		return json.toString();
 	}
 

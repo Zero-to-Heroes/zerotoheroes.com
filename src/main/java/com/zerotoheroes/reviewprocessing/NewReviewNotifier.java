@@ -12,6 +12,8 @@ import com.amazonaws.services.sns.AmazonSNS;
 import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.review.Review;
 
+import java.text.SimpleDateFormat;
+
 @Component
 @Slf4j
 public class NewReviewNotifier {
@@ -48,6 +50,7 @@ public class NewReviewNotifier {
 		json.put("coinPlay", metaData.getPlayCoin());
 		json.put("gameMode", metaData.getGameMode());
 		json.put("gameFormat", metaData.getGameFormat());
+		json.put("creationDate", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(review.getCreationDate()));
 
 		String deck = review.getPluginData("hearthstone", "parseDecks").get("reviewDeck");
 		if (!StringUtils.isEmpty(deck) && deck.length() > 3) {
